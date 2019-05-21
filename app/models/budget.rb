@@ -2,6 +2,7 @@ class Budget < ApplicationRecord
 
   include Measurable
   include Sluggable
+  include StatsVersionable
 
   translates :name, touch: true
   include Globalizable
@@ -125,8 +126,12 @@ class Budget < ApplicationRecord
     Budget::Phase::PUBLISHED_PRICES_PHASES.include?(phase)
   end
 
+  def valuating_or_later?
+    current_phase&.valuating_or_later?
+  end
+
   def publishing_prices_or_later?
-    publishing_prices? || balloting_or_later?
+    current_phase&.publishing_prices_or_later?
   end
 
   def balloting_process?
@@ -134,7 +139,7 @@ class Budget < ApplicationRecord
   end
 
   def balloting_or_later?
-    balloting_process? || finished?
+    current_phase&.balloting_or_later?
   end
 
   def heading_price(heading)

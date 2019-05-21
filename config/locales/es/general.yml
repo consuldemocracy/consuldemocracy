@@ -650,15 +650,14 @@ es:
       stats_menu: "Estadísticas de participación"
       results_menu: "Resultados de la votación"
       stats:
-        title: "Datos de participación"
-        total_participation: "Participación total"
         total_votes: "Nº total de votos emitidos"
         votes: "VOTOS"
         web: "WEB"
         booth: "URNAS"
+        mail: "CORREO"
         total: "TOTAL"
         valid: "Válidos"
-        white: "En blanco"
+        white: "Totalmente en blanco"
         null_votes: "Nulos"
       results:
         title: "Preguntas"

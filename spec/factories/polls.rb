@@ -88,9 +88,12 @@ FactoryBot.define do
   end
 
   factory :poll_voter, class: "Poll::Voter" do
-    poll
     association :user, :level_two
     from_web
+
+    transient { budget nil }
+
+    poll { budget&.poll || association(:poll, budget: budget) }
 
     trait :from_web do
       origin "web"

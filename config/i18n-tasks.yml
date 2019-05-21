@@ -45,6 +45,7 @@ data:
     - config/locales/%{locale}/user_groups.yml
     - config/locales/%{locale}/i18n.yml
     - config/locales/%{locale}/milestones.yml
+    - config/locales/%{locale}/stats.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -193,6 +194,7 @@ ignore_unused:
   - "admin.site_customization.pages.page.status_*"
   - "admin.legislation.processes.process.*"
   - "legislation.processes.index.*"
+  - "stats.budgets.participants_*_phase"
   - "votes.budget_investments.different_heading_assigned*"
   - "*.form.map_skip_checkbox"
 # - "{devise,kaminari,will_paginate}.*"

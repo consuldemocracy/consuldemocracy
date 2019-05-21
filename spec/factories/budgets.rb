@@ -74,12 +74,14 @@ FactoryBot.define do
   end
 
   factory :budget_heading, class: "Budget::Heading" do
-    association :group, factory: :budget_group
     sequence(:name) { |n| "Heading #{n}" }
     price 1000000
     population 1234
     latitude "40.416775"
     longitude "-3.703790"
+
+    transient { budget nil }
+    group { association :budget_group, budget: budget || association(:budget) }
 
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
@@ -88,7 +90,7 @@ FactoryBot.define do
 
   factory :budget_investment, class: "Budget::Investment" do
     sequence(:title) { |n| "Budget Investment #{n} title" }
-    association :heading, factory: :budget_heading
+    heading { association :budget_heading, budget: budget }
     association :author, factory: :user
     description          "Spend money on this"
     price                10
@@ -189,8 +191,13 @@ FactoryBot.define do
   end
 
   factory :budget_ballot_line, class: "Budget::Ballot::Line" do
-    association :ballot, factory: :budget_ballot
     association :investment, factory: :budget_investment
+
+    transient { user nil }
+
+    ballot do
+      association :budget_ballot, budget: investment.budget.reload, user: user || association(:user)
+    end
   end
 
   factory :budget_reclassified_vote, class: "Budget::ReclassifiedVote" do

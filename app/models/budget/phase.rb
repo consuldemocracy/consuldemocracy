@@ -28,16 +28,10 @@ class Budget
 
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: "drafting") }
-    scope :drafting,          -> { find_by_kind("drafting") }
-    scope :informing,         -> { find_by_kind("informing") }
-    scope :accepting,         -> { find_by_kind("accepting")}
-    scope :reviewing,         -> { find_by_kind("reviewing")}
-    scope :selecting,         -> { find_by_kind("selecting")}
-    scope :valuating,         -> { find_by_kind("valuating")}
-    scope :publishing_prices, -> { find_by_kind("publishing_prices")}
-    scope :balloting,         -> { find_by_kind("balloting")}
-    scope :reviewing_ballots, -> { find_by_kind("reviewing_ballots")}
-    scope :finished,          -> { find_by_kind("finished")}
+
+    PHASE_KINDS.each do |phase|
+      define_singleton_method(phase) { find_by_kind(phase) }
+    end
 
     def next_enabled_phase
       next_phase&.enabled? ? next_phase : next_phase&.next_enabled_phase
@@ -53,42 +47,58 @@ class Budget
       end
     end
 
+    def valuating_or_later?
+      in_phase_or_later?("valuating")
+    end
+
+    def publishing_prices_or_later?
+      in_phase_or_later?("publishing_prices")
+    end
+
+    def balloting_or_later?
+      in_phase_or_later?("balloting")
+    end
+
     private
 
-    def adjust_date_ranges
-      if enabled?
-        next_enabled_phase&.update_column(:starts_at, ends_at)
-        prev_enabled_phase&.update_column(:ends_at, starts_at)
-      elsif enabled_changed?
-        next_enabled_phase&.update_column(:starts_at, starts_at)
-      end
-    end
-
-    def touch_budget
-      budget.touch
-    end
-
-    def prev_phase_dates_valid?
-      if enabled? && starts_at.present? && prev_enabled_phase.present?
-        prev_enabled_phase.assign_attributes(ends_at: starts_at)
-        if prev_enabled_phase.invalid_dates_range?
-          phase_name = I18n.t("budgets.phase.#{prev_enabled_phase.kind}")
-          error = I18n.t("budgets.phases.errors.prev_phase_dates_invalid", phase_name: phase_name)
-          errors.add(:starts_at, error)
+      def adjust_date_ranges
+        if enabled?
+          next_enabled_phase&.update_column(:starts_at, ends_at)
+          prev_enabled_phase&.update_column(:ends_at, starts_at)
+        elsif enabled_changed?
+          next_enabled_phase&.update_column(:starts_at, starts_at)
         end
       end
-    end
 
-    def next_phase_dates_valid?
-      if enabled? && ends_at.present? && next_enabled_phase.present?
-        next_enabled_phase.assign_attributes(starts_at: ends_at)
-        if next_enabled_phase.invalid_dates_range?
-          phase_name = I18n.t("budgets.phase.#{next_enabled_phase.kind}")
-          error = I18n.t("budgets.phases.errors.next_phase_dates_invalid", phase_name: phase_name)
-          errors.add(:ends_at, error)
+      def touch_budget
+        budget.touch
+      end
+
+      def prev_phase_dates_valid?
+        if enabled? && starts_at.present? && prev_enabled_phase.present?
+          prev_enabled_phase.assign_attributes(ends_at: starts_at)
+          if prev_enabled_phase.invalid_dates_range?
+            phase_name = I18n.t("budgets.phase.#{prev_enabled_phase.kind}")
+            error = I18n.t("budgets.phases.errors.prev_phase_dates_invalid", phase_name: phase_name)
+            errors.add(:starts_at, error)
+          end
         end
       end
-    end
+
+      def next_phase_dates_valid?
+        if enabled? && ends_at.present? && next_enabled_phase.present?
+          next_enabled_phase.assign_attributes(starts_at: ends_at)
+          if next_enabled_phase.invalid_dates_range?
+            phase_name = I18n.t("budgets.phase.#{next_enabled_phase.kind}")
+            error = I18n.t("budgets.phases.errors.next_phase_dates_invalid", phase_name: phase_name)
+            errors.add(:ends_at, error)
+          end
+        end
+      end
+
+      def in_phase_or_later?(phase)
+        PHASE_KINDS.index(kind) >= PHASE_KINDS.index(phase)
+      end
 
   end
 end

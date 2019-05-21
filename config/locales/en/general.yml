@@ -650,15 +650,14 @@ en:
       stats_menu: "Participation statistics"
       results_menu: "Poll results"
       stats:
-        title: "Participation data"
-        total_participation: "Total participation"
         total_votes: "Total amount of given votes"
         votes: "VOTES"
         web: "WEB"
+        mail: "MAIL"
         booth: "BOOTH"
         total: "TOTAL"
         valid: "Valid"
-        white: "White votes"
+        white: "Fully blank"
         null_votes: "Invalid"
       results:
         title: "Questions"

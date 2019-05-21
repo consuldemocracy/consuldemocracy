@@ -6,6 +6,7 @@ class Poll < ApplicationRecord
   include ActsAsParanoidAliases
   include Notifiable
   include Sluggable
+  include StatsVersionable
 
   translates :name,        touch: true
   translates :summary,     touch: true

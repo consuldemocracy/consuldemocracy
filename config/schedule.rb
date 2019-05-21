@@ -27,6 +27,10 @@ every 1.day, at: "5:00 am" do
   rake "-s sitemap:refresh"
 end
 
+every 2.hours do
+  rake "-s stats:generate"
+end
+
 # Temporally not send dashboard's notifications
 # every 1.day, at: "7:00 am" do
 #   rake "dashboards:send_notifications"

@@ -7,7 +7,7 @@
         <%= link_to t("polls.poll_header.back_to_proposal"), [@poll.related] %>
       <% end %>
 
-      <h2><%= @poll.name %></h2>
+      <h1><%= @poll.name %></h1>
 
       <%= safe_html_with_links simple_format(@poll.summary) %>
 
