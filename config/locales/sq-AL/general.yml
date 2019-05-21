@@ -487,8 +487,6 @@ sq:
       stats_menu: "Statistikat e pjesëmarrjes"
       results_menu: "Rezultatet e sondazhit"
       stats:
-        title: "Të dhënat pjesëmarrëse"
-        total_participation: "Totali i Pjesëmarrësve"
         total_votes: "Shuma totale e votave të dhëna"
         votes: "Votat"
         web: "WEB"
