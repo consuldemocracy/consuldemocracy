@@ -1082,9 +1082,12 @@ form {
 
 .notice-container {
   min-width: $line-height * 12;
-  position: absolute;
   right: 24px;
   top: 24px;
+
+  @include breakpoint(medium) {
+    position: absolute;
+  }
 
   .notice {
     height: $line-height * 4;
