@@ -483,8 +483,6 @@ fr:
       stats_menu: "Statistiques de participation"
       results_menu: "Résultats du vote"
       stats:
-        title: "Données de participation"
-        total_participation: "Participation totale"
         total_votes: "Nombre de votes"
         votes: "VOTES"
         web: "INTERNET"
