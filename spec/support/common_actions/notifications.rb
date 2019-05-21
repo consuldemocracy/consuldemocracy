@@ -17,7 +17,7 @@ module Notifications
     login_as(proposal.author)
     visit root_path
 
-    click_link "My activity"
+    click_link "My content"
 
     within("#proposal_#{proposal.id}") do
       click_link proposal.title

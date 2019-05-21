@@ -9,7 +9,7 @@ feature "Proposal Notifications" do
     login_as(author)
     visit root_path
 
-    click_link "My activity"
+    click_link "My content"
     click_link proposal.title
     click_link "Access the community"
     click_link "Send message to the community"

@@ -229,7 +229,7 @@ en:
       participation_title: Participation
       privacy: Privacy Policy
     header:
-      administration_menu: Admin
+      administration_menu: Menu
       administration: Administration
       available_locales: Available languages
       collaborative_legislation: Collaborative legislation
@@ -242,7 +242,7 @@ en:
       officing: Polling officers
       help: Help
       my_account_link: My account
-      my_activity_link: My activity
+      my_activity_link: My content
       open: open
       open_gov: Open government
       proposals: Proposals
@@ -679,7 +679,7 @@ en:
       info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
-      back: "Go back to my activity"
+      back: "Go back to my content"
   shared:
     edit: "Edit"
     save: "Save"

@@ -229,7 +229,7 @@ es:
       participation_title: Participación
       privacy: Política de privacidad
     header:
-      administration_menu: Admin
+      administration_menu: Menú
       administration: Administración
       available_locales: Idiomas disponibles
       collaborative_legislation: Legislación colaborativa
@@ -242,7 +242,7 @@ es:
       officing: Presidentes de mesa
       help: Ayuda
       my_account_link: Mi cuenta
-      my_activity_link: Mi actividad
+      my_activity_link: Mi contenido
       open: abierto
       open_gov: Gobierno %{open}
       proposals: Propuestas
@@ -679,7 +679,7 @@ es:
       info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
     show:
-      back: "Volver a mi actividad"
+      back: "Volver a mi contenido"
   shared:
     edit: "Editar"
     save: "Guardar"
