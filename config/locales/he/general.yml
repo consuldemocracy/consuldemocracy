@@ -692,8 +692,6 @@ he:
       stats_menu: "סטטיסטיקת השתתפות"
       results_menu: "תוצאות סקר"
       stats:
-        title: "נתוני השתתפות"
-        total_participation: "סה\"כ משתתפים"
         total_votes: "סך כל ההצבעות הנתונות"
         votes: "הצבעות"
         web: "אינטרנט"
