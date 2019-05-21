@@ -499,8 +499,6 @@ ar:
       stats_menu: "إحصائيات المشاركة"
       results_menu: "نتائج الاستطلاع"
       stats:
-        title: "بيانات المشاركة"
-        total_participation: "مجموع المشاركات"
         total_votes: "مجموع الأصوات المعطاة"
         votes: "الأصوات"
         web: "WEB"
