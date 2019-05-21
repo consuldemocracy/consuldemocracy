@@ -488,8 +488,6 @@ gl:
       stats_menu: "Estatísticas de participación"
       results_menu: "Resultados da votación"
       stats:
-        title: "Datos de participación"
-        total_participation: "Participación total"
         total_votes: "Número total de votos emitidos"
         votes: "VOTOS"
         web: "WEB"
