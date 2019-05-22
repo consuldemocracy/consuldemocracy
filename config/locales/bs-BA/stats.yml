@@ -1,1 +1,22 @@
 bs:
+  stats:
+    title: "Podaci u učešću"
+    advanced: "Napredna statistika"
+    total_participants: "Učesnici"
+    by_gender: "Učesnici po polu"
+    by_age: "Učesnici po starosnoj dobi"
+    by_geozone: "Učesnici po području"
+    men_percentage: "%{percentage} Muškarci"
+    women_percentage: "%{percentage} Žene"
+    age: "Starosna dob"
+    age_more_than: "%{start} godina i stariji"
+    age_range: "%{start} - %{finish} godina"
+    total: "Ukupno"
+    geozone: "Područje"
+    no_demographic_data:
+      one: "Bez demografskih podataka za 1 učesnika."
+      few: "Bez demografskih podataka za %{count} učesnika."
+      other: "Bez demografskih podataka za %{count} učesnika."
+    budgets:
+      link: "Statistika"
+      page_title: "%{budget} - Podaci o učešću"
