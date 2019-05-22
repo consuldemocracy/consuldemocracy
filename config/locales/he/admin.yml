@@ -708,6 +708,7 @@ he:
         content_blocks: בלוקי תוכן מותאם אישית
         information_texts: טקסט מידע מותאם אישית
         information_texts_menu:
+          basic: "התאמה אישית בסיסית"
           debates: "דיונים"
           community: "קהילה"
           proposals: "הצעות"
