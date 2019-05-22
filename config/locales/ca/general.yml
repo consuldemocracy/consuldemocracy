@@ -58,7 +58,7 @@ ca:
       oldest: Més antics primer
     select_order: Ordenar per
     show:
-      return_to_commentable: 'Tornar a '
+      return_to_commentable: "Tornar a "
   comments_helper:
     comment_button: Publicar comentari
     comment_link: Comentar
@@ -176,7 +176,7 @@ ca:
       available_locales: Idiomes disponibles
       collaborative_legislation: processos legislatius
       debates: Debats
-      locale: 'Idioma:'
+      locale: "Idioma:"
       management: gestió
       moderation: Moderación
       valuation: Evaluación
@@ -197,7 +197,7 @@ ca:
         notifications: Notificacions
         no_notifications: "No tens notificacions noves"
     admin:
-      watch_form_message: 'Has fet canvis que no han estat guardats. ¿Segur que vols abandonar la pàgina?'
+      watch_form_message: "Has fet canvis que no han estat guardats. ¿Segur que vols abandonar la pàgina?"
   notifications:
     index:
       empty_notifications: No tens notificacions noves.
@@ -260,8 +260,6 @@ ca:
       other: Una altra
     form:
       geozone: Àmbits d'actuació
-      proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta de la proposta
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
@@ -301,7 +299,7 @@ ca:
         one: "que conté <strong>'%{search_term}'</strong>"
         other: "que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
-      select_order_long: 'Estàs veient les propostes'
+      select_order_long: "Estàs veient les propostes"
       start_proposal: Crea una proposta
       title: Propostes ciutadanes
       top: Top setmanal
@@ -324,8 +322,6 @@ ca:
       share:
         guide: "Ara pots compartir-la a Twitter, Facebook, Google+, Telegram o WhatsApp (si utilitzes un dispositiu mòbil) perquè la gent comenci a recolzar-la. Qual Abans que es publiqui el text en les xarxes socials podràs modificar al teu gust"
         view_proposal: Ara no, veure la meva proposta
-      improve_info: "També pots %{improve_info_link} de com millorar la teva campanya"
-      improve_info_link: "veure més informació"
       already_supported: Ja has avalat aquesta proposta.
       comments:
         one: 1 Comentari
@@ -342,12 +338,11 @@ ca:
       archived: "Aquesta proposta ha sigut arxivada i ja no pot arreplegar avals."
     show:
       author_deleted: Usuari eliminat
-      code: 'Codi de la proposta:'
+      code: "Codi de la proposta:"
       comments:
         one: 1 Comentari
         other: "%{count} comentaris"
       comments_tab: Comentarios
-      edit_proposal_link: Editar proposta
       flag: Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris.
       login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
       notifications_tab: Notificacions
@@ -355,7 +350,6 @@ ca:
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
       retired: Proposta retirada per l'autor
       share: compartir
-      send_notification: Enviar notificació
       embed_video_title: "Video en %{proposal}"
       author: Autor
     update:
@@ -396,7 +390,6 @@ ca:
       results:
         title: "Preguntes ciutadanes"
   poll_questions:
-    create_question: "Crear pregunta per a votació"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votat %{answer}"
@@ -410,28 +403,28 @@ ca:
     show:
       back: "Tornar a la meua activitat"
   shared:
-    edit: 'Editar proposta'
-    save: 'Desar'
-    delete: Borrar
+    edit: "Editar proposta"
+    save: "Desar"
+    delete: "Borrar"
     "yes": "Sí"
     search_results: "Resultats de cerca"
     advanced_search:
-      author_type: 'Per categoria d''autor'
-      author_type_blank: 'Tria una categoria'
-      date: 'Per data'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Tria una data'
-      date_1: 'Darreres 24 hores'
-      date_2: 'Darrera setmana'
-      date_3: 'Darrer mes'
-      date_4: 'Darrer any'
-      date_5: 'Personalitzada'
-      from: 'Des de'
-      general: 'Amb el text'
-      general_placeholder: 'Escriu el text'
-      search: 'Filtrar'
-      title: 'Cerca avançada'
-      to: 'Fins a'
+      author_type: "Per categoria d'autor"
+      author_type_blank: "Tria una categoria"
+      date: "Per data"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Tria una data"
+      date_1: "Darreres 24 hores"
+      date_2: "Darrera setmana"
+      date_3: "Darrer mes"
+      date_4: "Darrer any"
+      date_5: "Personalitzada"
+      from: "Des de"
+      general: "Amb el text"
+      general_placeholder: "Escriu el text"
+      search: "Filtrar"
+      title: "Cerca avançada"
+      to: "Fins a"
     author_info:
       author_deleted: Usuari eliminat
     back: Tornar
@@ -480,8 +473,8 @@ ca:
     whatsapp: Whatsapp
   spending_proposals:
     form:
-      association_name_label: 'Si proposes en nom d''una associació afig el nom ací'
-      association_name: 'Nom de l''associació'
+      association_name_label: "Si proposes en nom d'una associació afig el nom ací"
+      association_name: "Nom de l'associació"
       description: Descripció detallada
       external_url: Enlace a documentación adicional
       geozone: Àmbits d'actuació
@@ -514,7 +507,7 @@ ca:
       start_new: Crear proposta d'inversió
     show:
       author_deleted: Usuari eliminat
-      code: 'Codi de la proposta:'
+      code: "Codi de la proposta:"
       share: compartir
     wrong_price_format: Solament pot incloure caràcters numèrics
     spending_proposal:
@@ -580,9 +573,6 @@ ca:
       no_activity: Usuari sense activitat pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       send_private_message: "Enviar un missatge privat"
-    proposals:
-      send_notification: "Enviar notificació"
-      retire: "Retirar"
   votes:
     agree: Estic d'acord
     anonymous: Massa vots anònims, per a poder votar %{verify_account}.
@@ -625,7 +615,7 @@ ca:
       user_permission_info: Amb el teu compte ja pots...
       user_permission_proposal: Crear noves propostes
       user_permission_support_proposal: Avalar propostes
-      user_permission_verify: Per a poder realitzar totes les accions, verifica el teu compte.
+      user_permission_verify: "Per a poder realitzar totes les accions, verifica el teu compte."
       user_permission_verify_info: "* Només usuaris empadronats."
       user_permission_verify_my_account: Verificar el meu compte
       user_permission_votes: Participar en les votacions finals*
