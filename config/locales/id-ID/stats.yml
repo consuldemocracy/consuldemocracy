@@ -1,0 +1,23 @@
+id:
+  stats:
+    title: "Partisipasi data"
+    advanced: "Statistik lanjutan"
+    total_participants: "Peserta"
+    by_gender: "Peserta berdasarkan kelamin"
+    by_age: "Peserta berdasarkan umur"
+    by_geozone: "Peserta berdasarkan Distrik"
+    men_percentage: "%{percentage} pria"
+    women_percentage: "%{percentage} Wanita"
+    age: "Umur"
+    age_more_than: "%{start} Tahun lahir dan Lebih tua"
+    age_range: "%{start} -%{finish} Tahun lahir"
+    total: "Total"
+    geozone: "Kelurahan"
+    no_demographic_data:
+      other: "Peserta tidak memiliki %{count} kartu tanda penduduk."
+    budgets:
+      link: "Statistik"
+      page_title: "%{budget} - statistik partisipasi"
+      total_investments: "Total proyek investasi"
+      total_selected_investments: "Proyek dalam tahap Pemungutan suara terakhir"
+      total_unfeasible_investments: "Proyek tidak layak"
