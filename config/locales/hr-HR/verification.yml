@@ -1,0 +1,108 @@
+hr:
+  verification:
+    alert:
+      lock: Iskoristili ste maksimalan broj pokušaja. Molimo vas probajte kasnije.
+    back: Vrati se na moj račun
+    email:
+      create:
+        alert:
+          failure: Došlo je do problema sa slanjem emaila na vaš račun
+        flash:
+          success: "Poslali smo vam potvrdu vašeg računa na email: %{email}"
+      show:
+        alert:
+          failure: Kod potvrde netočan
+        flash:
+          success: Vi ste potvrđeni korisnik
+    letter:
+      alert:
+        unconfirmed_code: Niste još unijeli potvrdni kod
+      create:
+        flash:
+          success_html: Hvala što ste zatražili <b> maksimalni sigurnosni kôd (potreban samo za konačna glasovanja)</b>. Za nekoliko dana poslat ćemo je na adresu koja se nalazi u podacima koje imamo u datoteci. Imajte na umu da, ako želite, možete prikupiti svoj kod iz bilo kojeg ureda za podršku građanima.
+      edit:
+        see_all: Pogledajte prijedlog
+        title: Zatraženo pismo
+      errors:
+        incorrect_code: Kod potvrđivanaj netočan
+      new:
+        explanation: "Za sudjelovanje u finalnom glasanju možete:"
+        go_to_index: Vidi prijedloge
+        office: Potvrdi u bilo kojem Uredu za Građansku Podršku
+        send_letter: Pošalji mi pismo s kodom
+        title: Čestitamo!
+        user_permission_info: Sa svojim računom možete...
+      update:
+        flash:
+          success: Kod točan. Vaš račun je sad potvrđen
+    redirect_notices:
+      already_verified: Vaš račun je već potvrđen
+      email_already_sent: Već smo poslali poruku emaila s vezom za potvrdu. Ako ne možete pronaći email, ovdje možete zatražiti ponovno slanje
+    residence:
+      alert:
+        unconfirmed_residency: Niste još potvrdili svoje prebivalište
+      create:
+        flash:
+          success: Prebivalište potvrđeno
+      new:
+        accept_terms_text: Potvrđujem %{terms_url} Cenzusa
+        accept_terms_text_title: Prihvaćam uvjete korištenja pristupanju Cenzusu
+        date_of_birth: Datum rođenja
+        document_number: Broj dokumenta
+        document_number_help_title: Pomoć
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
+        document_type:
+          passport: Putovnica
+          residence_card: Dokument prebivališta
+          spanish_id: DNI
+        document_type_label: Tip dokumenta
+        error_not_allowed_age: Nemate dovoljno godina da bi sudjelovali
+        error_not_allowed_postal_code: Kako bi vas potvrdili, morate se registrirati.
+        error_verifying_census: Popis nije mogao potvrditi vaše podatke. Molimo potvrdite da su vaši popisni podaci točni pozivom Javoj vlasti ili posjetite jedan Ured za podršku građanima.
+        form_errors: prječila se potvrda vašeg prebivališta
+        postal_code: Poštanski Broj
+        postal_code_note: Ukoliko želite potvrditi svoj račun morate biti registrirani
+        terms: uvjeti pristupa
+        title: Potvrdi stanovanje
+        verify_residence: Potvrdi stanovanje
+    sms:
+      create:
+        flash:
+          success: Unesi potvrdni kod koji smo vam poslali porukom
+      edit:
+        confirmation_code: Unesi kod koji ste dobili na svoj mobilni uređaj
+        resend_sms_link: Klinknite ovdje da pošaljete ponovno
+        resend_sms_text: Niste dobili poruku s potvrdnim kodom?
+        submit_button: Šalji
+        title: Osiguraj potvrdni kod
+      new:
+        phone: Unesi svoj broj mobilnog uređaja kako bi primili kod
+        phone_format_html: "<strong><em>(Primjer: 612345678 or +34612345678)</em></strong>"
+        phone_note: Mi koristimo vaš mobilni uređaj kako bismo vam poslali kod, ali nikad za razmjenu komunikacije.
+        phone_placeholder: "Primjer: 612345678 or +34612345678"
+        submit_button: Šalji
+        title: Pošalji potvrdni kod
+      update:
+        error: Netočan potvrdni kod
+        flash:
+          level_three:
+            success: Kod je točan. Vaš račun je sada potvrđen
+          level_two:
+            success: Kod točan
+    step_1: Stanovanje
+    step_2: Kod potvrđen
+    step_3: Finalna verifikacija
+    user_permission_debates: Sudjeluj u raspravi
+    user_permission_info: Potvrđivanjem osobnih informacija moći ćete...
+    user_permission_proposal: Stvori novi prijedlog
+    user_permission_support_proposal: Podupri prijedlog*
+    user_permission_votes: Sudjelujte u finalnom glasanju*
+    verified_user:
+      form:
+        submit_button: Pošalji kod
+      show:
+        email_title: Email-ovi
+        explanation: Trenutno imamo sljedeće podatke u Registru; molimo vas da odaberite način slanja potvrdnog koda.
+        phone_title: Broj telefona
+        title: Dostupne informacije
+        use_another_phone: Korištenje drugog telefona
