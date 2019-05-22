@@ -9,7 +9,7 @@ so:
       show:
         title: Koontada isticmaalaha
       edit:
-        title: 'Isticmaal koontada isticmaalaha: Sifar erayga'
+        title: "Isticmaal koontada isticmaalaha: Sifar erayga"
         back: Labasho
         password:
           password: Furaha sirta ah
@@ -22,11 +22,11 @@ so:
           print_help: Waxaad awoodi doontaa inaad daabacdo lambarka sirta marka la kaydinayo.
     account_info:
       change_user: Bedelo isticmalaha
-      document_number_label: 'Lambarka dukumeentiga:'
-      document_type_label: 'Qaybaha dukumentiga:'
-      email_label: 'Email:'
-      identified_label: 'Waxaa loo aqoonsaday sida:'
-      username_label: 'Magaca Isticmaalaha:'
+      document_number_label: "Lambarka dukumeentiga:"
+      document_type_label: "Qaybaha dukumentiga:"
+      email_label: "Email:"
+      identified_label: "Waxaa loo aqoonsaday sida:"
+      username_label: "Magaca Isticmaalaha:"
     check: Hubi dukumentiga
     dashboard:
       index:
@@ -38,9 +38,9 @@ so:
       already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
       has_no_account_html: Si aad u abuurto koonto, u gudub%{link} oo guji bastaha 'Diiwaangel' <b> qaybta sare ee shaashadda.
       link: Qunsul
-      in_census_has_following_permissions: 'Isticmaalahan ayaa ka qaybgeli kara website-kan leh ogolaanshaha soo socda:'
+      in_census_has_following_permissions: "Isticmaalahan ayaa ka qaybgeli kara website-kan leh ogolaanshaha soo socda:"
       not_in_census: Dukumeentigan lama diiwaan geliyo.
-      not_in_census_info: 'Muwaadiniinta aan ku jirin Tirakoobka waxay ka qaybqaadan karaan bogga internetka iyagoo leh ogolaanshaha soo socda:'
+      not_in_census_info: "Muwaadiniinta aan ku jirin Tirakoobka waxay ka qaybqaadan karaan bogga internetka iyagoo leh ogolaanshaha soo socda:"
       please_check_account_data: Fadlan hubi in xogta kor ku xusan ay sax yihiin.
       title: Maaraynta isticmaalaha
       under_age: "Ma haysatid da'da loo baahan yahay si loo xaqiijiyo koontadaada."
@@ -49,14 +49,14 @@ so:
     date_of_birth: Tarikhda Dhalashada
     email_verifications:
       already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
-      choose_options: 'Fadlan dooro mid ka mid ah xulashooyinka soo socda:'
+      choose_options: "Fadlan dooro mid ka mid ah xulashooyinka soo socda:"
       document_found_in_census: Dukumeentigan waxaa laga heley tirakoobka, laakiin ma leh xisaab biil ah oo la xidhiidha.
-      document_mismatch: 'Emaylkani waxaa iska leh qof isticmaala horey u lahaa id xiriir la leh:%{document_number}%{document_type}'
+      document_mismatch: "Emaylkani waxaa iska leh qof isticmaala horey u lahaa id xiriir la leh:%{document_number}%{document_type}"
       email_placeholder: U qor emaylka qofkan loo isticmaalo inuu abuuro akoonkiisa
       email_sent_instructions: Si buuxda loo xaqiijiyo isticmaalaha, waxaa lagama maarmaan ah in isticmaalaha uu isku xiro link oo aanu u dirnay cinwaanka emailka kor ku xusan. Talaabadaan waxaa loo baahan yahay si loo xaqiijiyo in cinwaanka isaga ka tirsan yahay.
       if_existing_account: Haddii uu qofku horayba u isticmaalay xisaab beri ah,
       if_no_existing_account: Hadii qof kani aanu weli koonto sameysaan
-      introduce_email: 'Fadlan isbar Email istmalaha ackoonka:'
+      introduce_email: "Fadlan isbar Email istmalaha ackoonka:"
       send_email: Soodir Emaylka xaqiijinta
     menu:
       create_proposal: Abuur soo jeedin
@@ -78,7 +78,7 @@ so:
       vote_proposals: Soo jeedinada cod bixinta
     print:
       proposals_info: 'Abuuro codsigaaga http: //url.consul'
-      proposals_title: 'Sojeedino:'
+      proposals_title: "Sojeedino:"
       spending_proposals_info: 'Ka qaybgal http: //url.consul'
       budget_investments_info: 'Ka qaybgal http: //url.consul'
     print_info: Daabac xogtan
