@@ -7,7 +7,10 @@ id:
         remaining: "Anda masih memiliki <span>%{amount}</span> untuk berinvestasi."
         no_balloted_group_yet: "Anda belum memilih pada kelompok ini belum, buka suara!"
         remove: Menghapus suara
+        voted_html:
+          other: "Anda telah <span>memilih</s%{count} pan>satu proyek."
         voted_info_html: "Anda dapat mengubah suara anda pada setiap waktu sampai penutupan tahap ini.<br> Tidak perlu menghabiskan semua uang yang tersedia."
+        voted_info_2: "Tapi kamu dapat mengubah pilihanmu setiap waktu sampai poling di tutup."
         zero: Anda belum memilih suara di setiap proyek investasi.
       reasons_for_not_balloting:
         not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
@@ -16,7 +19,9 @@ id:
         not_selected: Tidak dipilih proyek-proyek investasi tidak dapat didukung
         not_enough_money_html: "Anda telah ditugaskan anggaran yang tersedia.<br><small>Ingat anda dapat %{change_ballot} di setiap waktu</small>"
         no_ballots_allowed: Fase pemilihan telah ditutup
+        different_heading_assigned_html: "Anda telah memilih judul yang berbeda%{heading_link}"
         change_ballot: ubah pemberian suara anda
+        casted_offline: Anda sudah berpartisipasi secara offline
     groups:
       show:
         title: Pilih sebuah pilihan
@@ -32,9 +37,12 @@ id:
       selecting: Memilih proyek
       valuating: Menilai proyek
       publishing_prices: Menerbitkan harga proyek
+      balloting: Proyek pemilihan
+      reviewing_ballots: Meninjau pemilihan
       finished: Anggaran yang habis
     index:
       title: Anggaran partisipatif
+      empty_budgets: Tidak ada anggaran.
       section_header:
         icon_alt: Ikon anggaran partisipatif
         title: Anggaran partisipasif
@@ -49,6 +57,7 @@ id:
       see_results: Lihat hasil
       section_footer:
         title: Membantu dengan anggaran partisipatif
+        description: Dengan anggaran partisipatif, warga negara dapat memutuskan proyek yang di anggarkan.
       milestones: Tonggak
     investments:
       form:
@@ -60,9 +69,11 @@ id:
         map_location_instructions: "Menavigasi peta lokasi dan tempat penanda."
         map_remove_marker: "Menghapus penanda peta"
         location: "Info tambahan lokasi"
+        map_skip_checkbox: "Investasi ini tidak memiliki lokasi yang konkret atau aku tidak menyadari itu."
       index:
         title: Penganggaran partisipatif
         unfeasible: Proyek-proyek investasi tidak layak
+        unfeasible_text: "Proposal harus memenuhi sejumlah kriteria (legalitas, dapat dipertanggung jawabkan, tidak melebihi batas anggaran) untuk dinyatakan layak dan mencapai tahap akhir pemungutan suara. semua proposal yang tidak masuk kriteria di tandai sebagai tidak layak dan diterbitkan dalam daftar berikut, bersama dengan laporan kelayakan."
         by_heading: "Proyek investasi dengan cakupan: %{heading}"
         search_form:
           button: Cari
@@ -93,13 +104,15 @@ id:
           random: acak
           confidence_score: nilai tertinggi
           price: dengan harga
+      share:
+        message: "Saya telah membuat proposal proyek.%{title}%{handle}. Buat proyek proposal juga!"
       show:
         author_deleted: Pengguna dihapus
         price_explanation: Harga penjelasan
         unfeasibility_explanation: Unfeasibility penjelasan
-        code_html: 'Kode proyek investasi: <strong>%{code}</strong>'
-        location_html: 'Lokasi: <strong>%{location}</strong>'
-        organization_name_html: 'Diusulkan atas nama: <strong>%{name}</strong>'
+        code_html: "Kode proyek investasi: <strong>%{code}</strong>"
+        location_html: "Lokasi: <strong>%{location}</strong>"
+        organization_name_html: "Diusulkan atas nama: <strong>%{name}</strong>"
         share: Berbagi
         title: Investasi proyek
         supports: Mendukung
@@ -108,12 +121,19 @@ id:
         comments_tab: Komentar
         milestones_tab: Tonggak
         author: Penulis
+        project_unfeasible_html: "Proposal proyek telah di tandai sebagai tidak layak dan tidak akan menuju fase memungutan."
+        project_selected_html: "Proposal proyek ini telah dipilih <strong>untuk fase pemungutan."
+        project_winner: "Pemenang proposal proyek"
+        project_not_selected_html: "Proposal proyek ini sudah ditolak <strong>untuk fase pemungutan."
+        see_price_explanation: Melihat penjelasan harga
       wrong_price_format: Hanya angka bilangan bulat
       investment:
         add: Suara
         already_added: Anda telah menambahkan proyek investasi ini
         already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
         support_title: Mendukung proyek ini
+        confirm_group:
+          other: "Anda hanya dapat mendukung investasi%{count} dalam satu judul. Jika anda ragu-ragu anda tidak dapat mengubah keputusan. Apakah anda yakin?"
         supports:
           zero: Tidak ada dukungan
           other: "1 detik\n\n%{count} detik"
@@ -154,7 +174,13 @@ id:
       not_selected_investment_proyects: Daftar semua proyek-proyek investasi tidak dipilih untuk pemungutan suara
     executions:
       link: "Tonggak"
+      page_title: "%{budget} - Hasil anggaran"
+      heading: "Hasil anggaran partisipatif"
       heading_selection_title: "Oleh kecamatan"
+      no_winner_investments: "Tidak ada pemenang investasi di negara ini"
+      filters:
+        label: "Proyek anggaran negara"
+        all: "Semua%{count}"
     phases:
       errors:
         dates_range_invalid: "Tanggal mulai tidak dapat sama atau lebih lambat dari tanggal Akhir"
