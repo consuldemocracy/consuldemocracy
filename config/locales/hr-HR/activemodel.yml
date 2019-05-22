@@ -1,0 +1,22 @@
+hr:
+  activemodel:
+    models:
+      verification:
+        residence: "Prebivalište"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Tip dokumenta"
+          document_number: "Broj dokumenta (uključujuči slova)"
+          date_of_birth: "Datum rođenja"
+          postal_code: "Poštanski broj"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Kod potvrde"
+        email:
+          recipient: "Email"
+      officing/residence:
+        document_type: "Tip dokumenta"
+        document_number: "Broj dokumenta (uključujući slova)"
+        year_of_birth: "Godina rođenja"
