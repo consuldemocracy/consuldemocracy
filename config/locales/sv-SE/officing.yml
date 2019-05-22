@@ -16,6 +16,15 @@ sv:
         no_polls: Du har inga omröstningar redo för rösträkning
         select_poll: Välj omröstning
         add_results: Lägg till resultat
+    poll_budgets:
+      index:
+        ballot_sheet_name: Namn
+      new:
+        booth: Röststation
+        csv_data: CSV data
+        submit: Spara
+      show:
+        data: CSV data
     results:
       flash:
         create: "Resultatet har sparats"
@@ -51,7 +60,6 @@ sv:
         submit: Godkänn identitetshandling
         error_verifying_census: "Din identitetshandling kunde inte verifieras."
         form_errors: förhindrade godkännandet av det här dokumentet
-        no_assignments: "Du har inga arbetspass idag"
     voters:
       new:
         title: Omröstningar
