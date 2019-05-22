@@ -1,0 +1,63 @@
+mk:
+  account:
+    show:
+      show_proposals_recommendations: Покажи препораки за предлози
+      user_permission_proposal: Направи нови предлози
+      user_permission_support_proposal: Поддржи предлози
+  form:
+    proposal: Предлог
+  layouts:
+    header:
+      proposals: Предлози
+  map:
+    proposal_for_district: "Започни предлог за твојата општина"
+    start_proposal: Направи предлог
+  proposals:
+    create:
+      form:
+        submit_button: Направи предлог
+    edit:
+      editing: Измени пердлог
+      show_link: Види предлог
+    retire_form:
+      title: Затвори предлог
+      retired_reason_label: Причина за затварање на предлогот
+      retired_explanation_placeholder: Опиши на кратко зошто мислиш дека овој предлог не треба повеќе да добива поддршка
+      submit_button: Затвори предлог
+    form:
+      proposal_responsible_name: Целосно име на личноста што го поднесува предлогот
+      proposal_summary: Краток опис на предлогот
+      proposal_text: Целосен опис на предлогот
+      proposal_title: Наслов на предлогот
+      tags_instructions: "Категоризирај го овој предлог. Можеш да одбереш од предложените категории или да додатеш твои"
+      map_skip_checkbox: "Овој предлог нема конкретна локација."
+    index:
+      recommendations:
+        without_results: Нема предлози поврзани со твоите интереси
+        without_interests: Заследи предлози за да може да може да пронајдеш слични
+      retired_proposals: Затворени предлози
+      retired_proposals_link: "Предлози затворени од авторот"
+      search_form:
+        placeholder: Пребарај предлози...
+      select_order_long: "Прегледуваш предлози според:"
+      start_proposal: Направи предлог
+      title: Предлози
+      top_link_proposals: Најподдржаните предлози според категорија
+      section_header:
+        icon_alt: Икона на предлози
+        title: Предлози
+        help: Помош околку предлози
+      section_footer:
+        title: Помош околку предлози
+    new:
+      form:
+        submit_button: Направи предлог
+      more_info: Како работат граѓански предлози?
+      recommendation_one: Не користи големи букви во насловот или во цели реченици. На интернет, ова се смета како викање, а никој неќе да му се вика.
+      start_new: Направи нов предлог
+    notice:
+      retired: Предлогот е затворен
+    proposal:
+      created: "Направи нов предлог!"
+      share:
+        view_proposal: Не сега, однеси ме до мојот предлог
