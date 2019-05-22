@@ -33,3 +33,11 @@ bs:
       participants_every_phase: "Ukupno učesnika"
       percent_total_participants: "% Ukupno učesnika"
       percent_heading_census: "% Poglavlje Popis"
+      participatory_disclaimer: "** Ukupan broj učesnika se odnosi na osobe koje su kreirale, podržale ili glasale za investicione prijedloge."
+      heading_disclaimer: "*** Podaci o poglavljima se odnose na poglavlje za koje je svaki korisnik glasao, što se ne mora odnositi na ono na kojem je osoba registrovana."
+    polls:
+      by_channel: "Učesnici po mediju"
+      vote_by_channel: "Glasanje po medijima"
+      web_percentage: "%{percentage} Na internetu"
+      booth_percentage: "%{percentage} U kabinama"
+      letter_percentage: "%{percentage} Emailom"
