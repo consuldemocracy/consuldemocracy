@@ -342,8 +342,8 @@ so:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Ma xaqiijin Tirakoobka'
-              already_voted: 'Hore uso jediyey qorshahan'
+              not_in_census: "Ma xaqiijin Tirakoobka"
+              already_voted: "Hore uso jediyey qorshahan"
         site_customization/page:
           attributes:
             slug:
@@ -356,7 +356,7 @@ so:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Kama doodi kartid qiimaha'
+              cannot_comment_valuation: "Kama doodi kartid qiimaha"
       messages:
         record_invalid: "Xaqiijinta ayaa ku fashilantay%{errors}"
         restrict_dependent_destroy:
