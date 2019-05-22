@@ -15,7 +15,7 @@ fr:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmer mon compte
-        text: 'Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :'
+        text: "Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :"
         title: Bienvenue
         welcome: Bienvenue
       reset_password_instructions:
@@ -23,12 +23,12 @@ fr:
         hello: Bonjour
         ignore_text: Si vous n'avez demander à changer de mot de passe, vous pouvez ignorer ce courriel.
         info_text: Votre mot de passe ne sera pas changé si vous n'accédez pas au lien pour l'éditer.
-        text: 'Nous avons reçu une demande de changement de votre mot de passe. Vous pouvez le changer sur le lien suivant :'
+        text: "Nous avons reçu une demande de changement de votre mot de passe. Vous pouvez le changer sur le lien suivant :"
         title: Changer votre mot de passe
       unlock_instructions:
         hello: Bonjour
         info_text: Votre compte a été bloqué suite à un nombre excessif de tentatives de connexion erronées.
-        instructions_text: 'Veuillez cliquer sur ce lien pour débloquer votre compte :'
+        instructions_text: "Veuillez cliquer sur ce lien pour débloquer votre compte :"
         title: Votre compte a été bloqué
         unlock_link: Débloquer mon compte
     menu:
@@ -103,7 +103,7 @@ fr:
           password_confirmation_label: Confirmer le nouveau mot de passe
           password_label: Nouveau mot de passe
           update_submit: Mettre-à-jour
-          waiting_for: 'En attente de la confirmation de:'
+          waiting_for: "En attente de la confirmation de:"
         new:
           cancel: Annuler la connexion
           email_label: Email
