@@ -52,7 +52,7 @@ fa:
       comment_as_moderator: نظر به عنوان ناظر
     select_order: مرتب سازی بر اساس
     show:
-      return_to_commentable: 'بازگشت به '
+      return_to_commentable: "بازگشت به "
   comments_helper:
     comment_button: نشر نظر
     comment_link: توضیح
@@ -191,7 +191,6 @@ fa:
       unfeasible: غیر قابل پیش بینی
     form:
       geozone: حوزه عملیات
-      proposal_external_url: لینک به مدارک اضافی
       proposal_title: عنوان پیشنهاد
       tag_category_label: "دسته بندی ها\n"
       tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
@@ -244,18 +243,16 @@ fa:
         other: "%{count} رای"
     show:
       author_deleted: کاربر حذف شد
-      code: 'کد طرح:'
+      code: "کد طرح:"
       comments:
         zero: بدون نظر
         one: 1 نظر
         other: "%{count} نظرات"
       comments_tab: توضیحات
-      edit_proposal_link: ویرایش
       login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
       notifications_tab: اطلاعیه ها
       milestones_tab: نقطه عطف
       share: "اشتراک گذاری\n"
-      send_notification: ارسال اعلان
       title_video_url: "ویدیوهای خارجی"
       author: نویسنده
     update:
@@ -281,13 +278,8 @@ fa:
       videos: "ویدیوهای خارجی"
       info_menu: "اطلاعات"
       results_menu: "نتایج شما"
-      stats:
-        title: "مشارکت در بحث"
-        total_participation: "کل شرکت کنندگان"
       results:
         title: "سوالات"
-  poll_questions:
-    create_question: "ایجاد سوال"
   proposal_notifications:
     new:
       title: "ارسال پیام"
@@ -295,15 +287,15 @@ fa:
       body_label: "پیام"
       submit_button: "ارسال پیام"
   shared:
-    edit: 'ویرایش'
-    save: 'ذخیره کردن'
-    delete: حذف
+    edit: "ویرایش"
+    save: "ذخیره کردن"
+    delete: "حذف"
     "yes": "بله"
     "no": "نه"
     search_results: "جستجو نتایج "
     advanced_search:
       from: "از \n"
-      search: 'فیلتر'
+      search: "فیلتر"
     author_info:
       author_deleted: کاربر حذف شد
     back: برگرد
@@ -331,7 +323,7 @@ fa:
       title: توصیه ها
   spending_proposals:
     form:
-      association_name: 'نام انجمن'
+      association_name: "نام انجمن"
       description: توضیحات
       external_url: لینک به مدارک اضافی
       geozone: حوزه عملیات
@@ -360,7 +352,7 @@ fa:
       start_new: ایجاد  هزینه پیشنهاد
     show:
       author_deleted: کاربر حذف شد
-      code: 'کد طرح:'
+      code: "کد طرح:"
       share: "اشتراک گذاری\n"
     wrong_price_format: فقط اعداد صحیح 
     spending_proposal:
@@ -432,8 +424,6 @@ fa:
       send_private_message: "ارسال پیام خصوصی"
       delete_alert: "آیا مطمئن هستید که می خواهید  پروژه سرمایه گذاری را حذف کنید؟ این دستور قابل بازگشت نیست"
     proposals:
-      send_notification: "ارسال اعلان"
-      retire: "بازنشسته"
       retired: "پیشنهاد بازنشسته"
       see: "دیدن پیشنهاد"
   votes:
@@ -498,7 +488,7 @@ fa:
       user_permission_info: با حساب کاربریتان می توانید...
       user_permission_proposal: ایجاد طرح های جدید
       user_permission_support_proposal: '* پشتیبانی از طرح های پیشنهادی'
-      user_permission_verify: برای انجام همه اقدامات حساب خود را بررسی کنید.
+      user_permission_verify: "برای انجام همه اقدامات حساب خود را بررسی کنید."
       user_permission_verify_info: "* تنها برای کاربران در سرشماری."
       user_permission_verify_my_account: تأیید حساب کاربری
       user_permission_votes: شرکت در رای گیری نهایی *
