@@ -178,6 +178,27 @@ feature "Proposals" do
     end
   end
 
+  context "Show on mobile screens" do
+
+    before do
+      Capybara.page.driver.browser.manage.window.resize_to(640, 480)
+    end
+
+    after do
+      Capybara.page.driver.browser.manage.window.maximize
+    end
+
+    scenario "Show support button sticky at bottom", :js do
+      proposal = create(:proposal)
+      visit proposal_path(proposal)
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+  end
+
   context "Embedded video" do
 
     scenario "Show YouTube video" do

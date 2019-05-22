@@ -551,6 +551,15 @@
   }
 }
 
+.fixed-mobile-content {
+
+  @include breakpoint(medium down) {
+    background: #fff;
+    margin-bottom: rem-calc(-1) !important;
+    padding-top: $line-height / 2;
+  }
+}
+
 // 04. List participation
 // ----------------------
 
