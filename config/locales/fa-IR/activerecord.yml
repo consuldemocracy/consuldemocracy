@@ -349,8 +349,8 @@ fa:
         signature:
           attributes:
             document_number:
-              not_in_census: 'توسط سرشماری تایید نشده است.'
-              already_voted: 'قبلا این پیشنهاد رای گیری شده است.'
+              not_in_census: "توسط سرشماری تایید نشده است."
+              already_voted: "قبلا این پیشنهاد رای گیری شده است."
         site_customization/page:
           attributes:
             slug:
@@ -363,7 +363,7 @@ fa:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'شما نمیتوانید در ارزیابی اظهار نظر کنید.'
+              cannot_comment_valuation: "شما نمیتوانید در ارزیابی اظهار نظر کنید."
       messages:
         record_invalid: "تأیید اعتبار انجام نشد: %{errors}"
         restrict_dependent_destroy:
