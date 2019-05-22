@@ -14,7 +14,6 @@ es-PE:
       destroy:
         notice: La imagen se ha eliminado correctamente.
         alert: La imagen no se ha podido eliminar.
-        confirm: '¿Está seguro de que desea eliminar la imagen? Esta acción no se puede deshacer!'
     errors:
       messages:
         in_between: debe estar entre %{min} y %{max}
