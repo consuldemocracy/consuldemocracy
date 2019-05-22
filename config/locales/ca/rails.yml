@@ -110,7 +110,7 @@ ca:
       odd: ha de ser senar
       taken: ja està en us
     template:
-      body: 'Hi ha hagut problemes amb els següents camps:'
+      body: "Hi ha hagut problemes amb els següents camps:"
       header:
         one: No s'ha pogut desar aquest/a %{model} perquè hi ha 1 error
         other: "No s'ha pogut desar aquest/a %{model} perquè hi ha hagut %{count} errors"
