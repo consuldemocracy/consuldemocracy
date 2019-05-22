@@ -1,9 +1,41 @@
 id:
   seeds:
+    settings:
+      official_level_1_name: Posisi resmi nomor satu
+      official_level_2_name: Posisi resmi nomor dua
+      official_level_3_name: Posisi resmi nomor tiga
+      official_level_4_name: Posisi resmi nomor empat
+      official_level_5_name: Posisi resmi nomor lima
+    geozones:
+      north_district: Kelurahan utara
+      west_district: Kelurahan selatan
+      east_district: Timur kelurahan
+      central_district: Kabupaten
+    organizations:
+      human_rights: Hak asasi Manusia
+      neighborhood_association: Asosiasi persaudaraan
     categories:
+      associations: Asosiasi
+      culture: Budaya
+      sports: Olahraga
+      social_rights: Hak sosial
+      economy: Ekonomi
+      employment: Pekerjaan
+      equity: Keadilan
+      sustainability: Keberlanjutan
       participation: Partisipasi
+      mobility: Mobilitas
+      media: Media
+      health: Kesehatan
       transparency: Transparansi
+      security_emergencies: Keamanan dan darurat
+      environment: Lingkungan Hidup
     budgets:
+      budget: Anggaran Partisipatif
       currency: '€'
       groups:
+        all_city: Seluruh kota
         districts: Kabupaten
+      valuator_groups:
+        culture_and_sports: Olahraga & budaya
+        gender_and_diversity: Jenis kelamin Dan keanekaragaman
