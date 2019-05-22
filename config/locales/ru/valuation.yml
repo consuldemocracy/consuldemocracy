@@ -17,6 +17,7 @@ ru:
         table_assigned_investments_valuation_open: Назначенные проекты инвестирования с открытой оценкой
         table_actions: Действия
         evaluate: Оценить
+        no_budgets: "Нет бюджетов"
     budget_investments:
       index:
         headings_filter_all: Все заголовки
@@ -27,6 +28,11 @@ ru:
         assigned_to: "Назначено %{valuator}"
         title: Инновационные проекты
         edit: Редактировать пакет документов
+        valuators_assigned:
+          one: Назначенный оценщик
+          few: "%{count} оценщиков назначено"
+          many: "%{count} оценщиков назначено"
+          other: "%{count} оценщиков назначено"
         no_valuators_assigned: Оценщики не назначены
         table_title: Название
         table_heading_name: Название раздела
