@@ -113,7 +113,7 @@ id:
         other: "panjangnya salah (seharusnya 1 karakter)\n\npanjangnya salah (seharusnya %{count} karakter)"
       other_than: harus lain daripada %{count}
     template:
-      body: 'Ada masalah dengan bidang berikut:'
+      body: "Ada masalah dengan bidang berikut:"
       header:
         other: "1 kesalahan melarang %{model} ini supaya tidak disimpan\n\n%{count} kesalahan melarang model ini supaya tidak disimpan"
   helpers:
