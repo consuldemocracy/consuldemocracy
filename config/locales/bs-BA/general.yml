@@ -673,6 +673,7 @@ bs:
         total_votes: "Ukupno datih glasova"
         votes: "GLASOVI"
         web: "WEB"
+        mail: "MAIL"
         booth: "KABINA"
         total: "UKUPNO"
         valid: "Ispravno"
