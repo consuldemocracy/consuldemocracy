@@ -15,7 +15,7 @@ cs:
     mailer:
       confirmation_instructions:
         confirm_link: Potvrdit svůj účet
-        text: 'Váš e-mailový účet můžete potvrdit na následujícím odkazu:'
+        text: "Váš e-mailový účet můžete potvrdit na následujícím odkazu:"
         title: Vítejte
         welcome: Vítejte
       reset_password_instructions:
@@ -23,13 +23,14 @@ cs:
         hello: Zdravíme Vás
         ignore_text: Pokud jste nepožádali o změnu hesla, tento e-mail můžete ignorovat.
         info_text: Vaše heslo nebude změněno, dokud ho tímto odkazem neupravíte.
-        text: 'Obdrželi jsme žádost o změnu hesla. Můžete to udělat na následujícím odkazu:'
+        text: "Obdrželi jsme žádost o změnu hesla. Můžete to udělat na následujícím odkazu:"
         title: Změna hesla
       unlock_instructions:
         hello: Zdravíme Vás
         info_text: Váš účet byl zablokován kvůli nadměrnému počtu neúspěšných pokusů o přihlášení.
-        instructions_text: 'Klepnutím na tento odkaz odemknete svůj účet:'
+        instructions_text: "Klepnutím na tento odkaz odemknete svůj účet:"
         title: Váš účet byl uzamčen
+        unlock_link: Odemknout účet
     menu:
       login_items:
         login: Přihlásit
@@ -83,6 +84,8 @@ cs:
     unlocks:
       new:
         email_label: Email
+        submit: Instrukce k odblokování byly odeslány
+        title: Znovu poslat instrukce k odblokování
     users:
       registrations:
         delete_form:
@@ -100,7 +103,7 @@ cs:
           password_confirmation_label: Potvrďte nové heslo
           password_label: Nové heslo
           update_submit: Aktualizovat
-          waiting_for: 'Čeká na potvrzení:'
+          waiting_for: "Čeká na potvrzení:"
         new:
           cancel: Zrušit přihlášení
           email_label: Email
@@ -108,6 +111,7 @@ cs:
           organization_signup_link: Registrujte se zde
           password_confirmation_label: Potvrdit heslo
           password_label: Heslo
+          redeemable_code: Ověřovací kód získat e-mailem (volitelně)
           submit: Registrovat se
           terms: Registrováním souhlasíte se %{terms}
           terms_link: zpracováním osobních údajů a podmínkami používání portálu
