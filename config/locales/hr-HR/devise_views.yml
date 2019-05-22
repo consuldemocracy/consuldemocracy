@@ -1,0 +1,129 @@
+hr:
+  devise_views:
+    confirmations:
+      new:
+        email_label: Email
+        submit: Ponovno pošalji upute
+        title: Ponovno pošalji upute za potvrđivanje
+      show:
+        instructions_html: Potvrdi račun putem emaila %{email}
+        new_password_confirmation_label: Ponovi zaporku za pristup
+        new_password_label: Nova zaporka za pristup
+        please_set_password: Molimo vas stvorite novu zaporku (ovo će Vam omogućiti prijavu putem gornjeg emaila)
+        submit: Potvrdi
+        title: Potvrdi moj račun
+    mailer:
+      confirmation_instructions:
+        confirm_link: Potvrdi moj račun
+        text: "Račun e-pošte možete potvrditi na sljedećoj vezi:"
+        title: Dobrodošli
+        welcome: Dobrodošli
+      reset_password_instructions:
+        change_link: Promjeni moju zaporku
+        hello: Pozdrav
+        ignore_text: Ukoliko niste zatražili izmjenu zaporke, možete zanemariti ovaj email.
+        info_text: Vaša zaporka se neće mijenjati ukoliko pristupite poveznici i ponovno ju unesete.
+        text: "Zadobili smo zahtjev za izmjenu zaporke. Izmjenu možete napraviti na sljedećoj poveznici:"
+        title: Izmijeni svoju zaporku
+      unlock_instructions:
+        hello: Pozdrav
+        info_text: Vaš račun je blokiran zbog višestrukih neuspješnih prijava.
+        instructions_text: "Molimo Vas idite na ovu poveznicu kako biste otključali svoj račun:"
+        title: Vaš račun je zaključan
+        unlock_link: Otključaj moj račun
+    menu:
+      login_items:
+        login: Prijavi me
+        logout: Odjavi me
+        signup: Registriraj se
+    organizations:
+      registrations:
+        new:
+          email_label: Email
+          organization_name_label: Ime organizacije
+          password_confirmation_label: Potvrdi zaporku
+          password_label: Zaporka
+          phone_number_label: Broj telefona
+          responsible_name_label: Puno ime osobe odgovorne za skupinu
+          responsible_name_note: To bi bila osoba koja predstavlja udrugu / kolektiv u čije ime su predstavljeni prijedlozi
+          submit: Registriraj se
+          title: Registriraj organizaciju ili kolektiv
+        success:
+          back_to_index: Razumijem; idi natrag na glavnu stranicu
+          instructions_1_html: "<strong>Mi ćemo vas uskoro kontaktirati</strong> kako bismo provjerili da ste zastupnik ovog kolektiva."
+          instructions_2_html: Za vrijeme dok se Vaš <strong>email provjerava</strong>, poslali smo Vam <strong>poveznicu da potvrdite svoj račun</strong>.
+          instructions_3_html: Jednom kada dobijete potvrdu možete započeti sudjelovati kao neprovjeren kolektiv.
+          thank_you_html: Hvala vam na registraciji vašeg kolektiva na stranici. Sada se <strong>vrši verifikacija</strong>.
+          title: Registracija organizacije / kolektiva
+    passwords:
+      edit:
+        change_submit: Izmjeni moju zaporku
+        password_confirmation_label: Potvrdi novu zaporku
+        password_label: Nova zaporka
+        title: Izmijeni vašu zaporku
+      new:
+        email_label: Email
+        send_submit: Pošalji upute
+        title: Zaboravnjena zaporka?
+    sessions:
+      new:
+        login_label: Email ili korisničko ime
+        password_label: Zaporka
+        remember_me: Zapamti me
+        submit: Unesi
+        title: Prijavi
+    shared:
+      links:
+        login: Unesi
+        new_confirmation: Niste primili upute za aktivaciju vašeg računa?
+        new_password: Jeste li zaboravili vašu zaporku?
+        new_unlock: Jeste li primili upute za otključavanje?
+        signin_with_provider: Prijavi se s %{provider}
+        signup: Nemate račun? %{signup_link}
+        signup_link: Prijavite se
+    unlocks:
+      new:
+        email_label: Email
+        submit: Ponovno pošaljite upute za otključavanje
+        title: Ponovno pošaljite upute za otključavanje
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Razlog
+          info: Ova radnja se ne može poništiti. Provjerite je li to ono što želite.
+          info_reason: Ako želite, navedite razlog (neobavezno)
+          submit: Izbrišite moj račun
+          title: Izbriši račun
+        edit:
+          current_password_label: Trenutna zaporka
+          edit: Uredi
+          email_label: Email
+          leave_blank: Ostavite prazno ako ne želite uređivati
+          need_current: Potrebna nam je Vaša trenutna zaporka kako bismo potvrdili promjene
+          password_confirmation_label: Potvrdi novu zaporku
+          password_label: Nova zaporka
+          update_submit: Ažuriranje
+          waiting_for: "Čeka se potvrda:"
+        new:
+          cancel: Odustani od prijave
+          email_label: Email
+          organization_signup: Predstavljate li organizaciju ili kolektiv? %{signup_link}
+          organization_signup_link: Prijavite se ovdje
+          password_confirmation_label: Potvrdi zaporku
+          password_label: Zaporka
+          redeemable_code: Verifikacijski kod ćete primiti putem emaila (neobavezno)
+          submit: Registriraj se
+          terms: Registracijom prihvačate %{terms}
+          terms_link: uvjeti korištenja
+          terms_title: Registracijom prihvaćate uvjete korištenja
+          title: Registriraj se
+          username_is_available: Korisničko ime dostupno
+          username_is_not_available: Korisničko ime nije dostupno
+          username_label: Korisničko ime
+          username_note: Ime koje se pojavljuje pored Vaše objave
+        success:
+          back_to_index: Razumijem; idi nazad na glavnu stranicu
+          instructions_1_html: Molimo <b>provjerite vaš emial</b> - mi smo vam poslali <b> link potvrde za vaš račun</b>.
+          instructions_2_html: Nakon potvrde, možete započeti sa sudjelovanjem.
+          thank_you_html: Hvala na registraciji na stranicu. Vi morate sada <b>potvrditi vašu email adresu</b>.
+          title: Potvrdite vašu email adresu
