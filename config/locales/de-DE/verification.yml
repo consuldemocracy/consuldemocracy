@@ -8,7 +8,7 @@ de:
         alert:
           failure: Beim Versenden einer E-Mail an Ihr Benutzerkonto ist ein Problem aufgetreten
         flash:
-          success: 'Wir haben einen Bestätigungslink an Sie geschickt: %{email}'
+          success: "Wir haben einen Bestätigungslink an Sie geschickt: %{email}"
       show:
         alert:
           failure: Der Bestätigungscode ist falsch
@@ -19,7 +19,6 @@ de:
         unconfirmed_code: Sie haben den Bestätigungscode noch nicht eingegeben
       create:
         flash:
-          offices: Bürgerbüros
           success_html: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem der %{offices} verifizieren zu können.
       edit:
         see_all: Vorschläge anzeigen
@@ -27,10 +26,9 @@ de:
       errors:
         incorrect_code: Der Bestätigungscode ist falsch
       new:
-        explanation: 'Um an der finalen Abstimmungen teilzunehmen, können Sie:'
+        explanation: "Um an der finalen Abstimmungen teilzunehmen, können Sie:"
         go_to_index: Vorschläge anzeigen
         office: Verifiziere dich persönlich in jedem %{office}
-        offices: Bürgerbüros
         send_letter: Schicken Sie mir einen Brief mit dem Code
         title: Glückwunsch!
         user_permission_info: Mit Ihrem Konto können Sie...
@@ -52,7 +50,7 @@ de:
         date_of_birth: Geburtsdatum
         document_number: Dokumentennummern
         document_number_help_title: Hilfe
-        document_number_help_text_html: '<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P'
+        document_number_help_text_html: "<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P"
         document_type:
           passport: Pass
           residence_card: Aufenthaltsbescheinigung
@@ -61,7 +59,6 @@ de:
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
         error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
-        error_verifying_census_offices: Bürgerbüros
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
         postal_code: Postleitzahl
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
