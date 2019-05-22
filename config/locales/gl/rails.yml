@@ -128,7 +128,7 @@ gl:
         other: a lonxitude non é correcta (ten de ter %{count} caracteres)
       other_than: debe ser distinto de %{count}
     template:
-      body: 'Houbo problemas cos seguintes campos:'
+      body: "Houbo problemas cos seguintes campos:"
       header:
         one: Non se puido gardar este/a %{model} porque se atopou 1 erro
         other: "Non se puido gardar este/a %{model} porque se atoparon %{count} erros"
