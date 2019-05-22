@@ -44,3 +44,9 @@ id:
       statuses:
         studying_project: Mempelajari proyek
         bidding: Menawar
+        executing_project: Menjalankan proyek
+        executed: Dieksekusi
+    polls:
+      current_poll: "Jumlah diskusi"
+      current_poll_geozone_restricted: "Geozon jajak pendapat saat ini dibatasi"
+      recounting_poll: "Perhitungan ulang"
