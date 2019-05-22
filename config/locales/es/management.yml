@@ -36,7 +36,7 @@ es:
     document_type_label: Tipo de documento
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
-      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>"Registrarse"</b> en la parte superior derecha de la pantalla.
+      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
       link: CONSUL
       in_census_has_following_permissions: "Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:"
       not_in_census: Este documento no está registrado.
@@ -136,7 +136,7 @@ es:
       erased_notice: Cuenta de usuario borrada.
       erased_by_manager: "Borrada por el manager: %{manager}"
       erase_account_link: Borrar cuenta
-      erase_account_confirm: "¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer"
+      erase_account_confirm: '¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer'
       erase_warning: Esta acción no se puede deshacer. Por favor asegúrese de que quiere eliminar esta cuenta.
       erase_submit: Borrar cuenta
     user_invites:
