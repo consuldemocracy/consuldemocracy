@@ -11,11 +11,11 @@ id:
           password: Kata Sandi
     account_info:
       change_user: Ubah pengguna
-      document_number_label: 'Nomor dokumen:'
-      document_type_label: 'Jenis Dokumen:'
-      email_label: 'Email:'
-      identified_label: 'Diidentifikasi sebagai:'
-      username_label: 'Nama pengguna:'
+      document_number_label: "Nomor dokumen:"
+      document_type_label: "Jenis Dokumen:"
+      email_label: "Email:"
+      identified_label: "Diidentifikasi sebagai:"
+      username_label: "Nama pengguna:"
     dashboard:
       index:
         title: Manajemen
@@ -26,9 +26,9 @@ id:
       already_verified: Akun pengguna ini sudah diverifikasi.
       has_no_account_html: Untuk membuat akun, pergi ke %{link} dan klik di <b>'Daftar'</b>di bagian kiri atas layar.
       link: CONSUL
-      in_census_has_following_permissions: 'Pengguna ini dapat berpartisipasi dalam situs web dengan izin berikut:'
+      in_census_has_following_permissions: "Pengguna ini dapat berpartisipasi dalam situs web dengan izin berikut:"
       not_in_census: Dokumen ini tidak terdaftar.
-      not_in_census_info: 'Warga negara yang tidak berada dalam Sensus dapat berpartisipasi dalam situs web dengan izin berikut:'
+      not_in_census_info: "Warga negara yang tidak berada dalam Sensus dapat berpartisipasi dalam situs web dengan izin berikut:"
       please_check_account_data: Harap periksa apakah data akun di atas benar.
       title: Manajemen pengguna
       under_age: "Anda tidak memiliki usia yang diperlukan untuk memverifikasi akun anda."
@@ -37,14 +37,14 @@ id:
     date_of_birth: Tanggal lahir
     email_verifications:
       already_verified: Akun pengguna ini sudah diverifikasi.
-      choose_options: 'Pilih salah satu dari pilihan berikut:'
+      choose_options: "Pilih salah satu dari pilihan berikut:"
       document_found_in_census: Dokumen ini ditemukan dalam sensus, namun tidak ada akun pengguna yang terkait dengannya.
-      document_mismatch: 'Email ini milik pengguna yang sudah memiliki id terkait: %{document_number}(%{document_type})'
+      document_mismatch: "Email ini milik pengguna yang sudah memiliki id terkait: %{document_number}(%{document_type})"
       email_placeholder: Tuliskan email yang orang ini gunakan untuk membuat akunnya
       email_sent_instructions: Untuk memverifikasi pengguna ini sepenuhnya, pengguna harus mengeklik tautan yang telah kami kirim ke alamat email di atas. Langkah ini diperlukan untuk mengkonfirmasi bahwa alamat itu miliknya.
       if_existing_account: Jika orang tersebut sudah memiliki akun pengguna yang dibuat di situs web,
       if_no_existing_account: Jika orang ini belum membuat akun
-      introduce_email: 'Silahkan perkenalkan email yang digunakan di akun:'
+      introduce_email: "Silahkan perkenalkan email yang digunakan di akun:"
       send_email: Kirim email verifikasi
     menu:
       create_proposal: Buat proposal
@@ -61,7 +61,7 @@ id:
       vote_proposals: Pilih proposal
     print:
       proposals_info: 'Buat proposal anda di http: //url.consul'
-      proposals_title: 'Proposal:'
+      proposals_title: "Proposal:"
       spending_proposals_info: 'Berpartisipasi di http: //url.consul'
       budget_investments_info: 'Berpartisipasi di http: //url.consul'
     print_info: Cetak info ini
