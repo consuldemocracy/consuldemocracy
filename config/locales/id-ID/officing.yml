@@ -50,7 +50,6 @@ id:
         submit: Mengesahkan dokumen
         error_verifying_census: "Sensus itu dapat memverifikasi dokumen ini."
         form_errors: mencegah verifikasi dari dokumen ini
-        no_assignments: "Anda tidak memiliki officing pergeseran hari ini"
     voters:
       new:
         title: Jajak pendapat
