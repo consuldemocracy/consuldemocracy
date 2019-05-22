@@ -232,6 +232,8 @@ it:
         debate_start_date: Data di inizio del dibattito
         debate_end_date: Data di fine del dibattito
         draft_publication_date: Data di pubblicazione della bozza
+        proposals_phase_start_date: Inizio
+        proposals_phase_end_date: Fine
         result_publication_date: Data di pubblicazione del risultato finale
       legislation/process/translation:
         title: Titolo del Procedimento
@@ -354,8 +356,8 @@ it:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Il documento non è stato verificato negli archivi istituzionali'
-              already_voted: 'Proposta già votata'
+              not_in_census: "Il documento non è stato verificato negli archivi istituzionali"
+              already_voted: "Proposta già votata"
         site_customization/page:
           attributes:
             slug:
@@ -368,7 +370,7 @@ it:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Non si può commentare una stima'
+              cannot_comment_valuation: "Non si può commentare una stima"
       messages:
         record_invalid: "Verifica non riuscita: %{errors}"
         restrict_dependent_destroy:
