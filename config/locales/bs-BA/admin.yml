@@ -705,6 +705,7 @@ bs:
         content_blocks: Prilagođeni blokovi sadržaja
         information_texts: Prilagođeni informacijski tekstovi
         information_texts_menu:
+          basic: "Osnovno prilagođavanje"
           debates: "Debate"
           community: "Grupa"
           proposals: "Prijedlozi"
