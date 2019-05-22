@@ -58,6 +58,9 @@ sv:
       poll/officer:
         one: "funktionär"
         other: "funktionärer"
+      poll/ballot_sheet:
+        one: Valsedel
+        other: Valsedel
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
@@ -73,6 +76,9 @@ sv:
       site_customization/content_block:
         one: Anpassat innehållsblock
         other: Anpassade innehållsblock
+      document:
+        one: Dokument
+        other: Dokument
       legislation/process:
         one: "Process"
         other: "Processer"
@@ -106,6 +112,12 @@ sv:
       proposal_notification:
         one: "Avisering om förslag"
         other: "Aviseringar om förslag"
+      dashboard/administrator_task:
+        one: Åtgärd
+        other: Åtgärder
+      link:
+        one: Länk
+        other: Länk
     attributes:
       budget:
         name: "Namn"
@@ -128,6 +140,8 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
+      geozone:
+        name: Namn
       milestone:
         status_id: "Nuvarande status för budgetförslag (frivilligt fält)"
         title: "Titel"
@@ -196,6 +210,9 @@ sv:
         external_url: "Länk till ytterligare dokumentation"
       poll/question/translation:
         title: "Fråga"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Omröstning
       signature_sheet:
         signable_type: "Typ av underskrifter"
         signable_id: "Förslagets ID"
@@ -222,6 +239,9 @@ sv:
         name: Namn
         locale: språk
         body: Innehåll
+      banner:
+        background_color: Bakgrundsfärg
+        font_color: Teckenfärg
       legislation/process:
         title: Processens titel
         summary: Sammanfattning
@@ -231,10 +251,16 @@ sv:
         end_date: Slutdatum
         debate_start_date: Startdatum för diskussion
         debate_end_date: Slutdatum för diskussion
+        draft_start_date: Start
+        draft_end_date: Slut
         draft_publication_date: Publiceringsdatum för utkast
         allegations_start_date: Startdatum för att kommentera utkast
         allegations_end_date: Slutdatum för att kommentera utkast
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: Slut
         result_publication_date: Publiceringsdatum för resultat
+        background_color: Bakgrundsfärg
+        font_color: Teckenfärg
       legislation/process/translation:
         title: Processens titel
         summary: Sammanfattning
@@ -299,6 +325,18 @@ sv:
         link_text: Länktext
       widget/feed:
         limit: Antal objekt
+      dashboard/action:
+        title: Titel
+        short_description: Kort beskrivning
+        description: Beskrivning
+        link: Extern länk
+        active: Aktiv
+        action_type: Typ
+      dashboard/administrator_task:
+        source: Källa
+      link:
+        label: Titel
+        url: Länk
     errors:
       models:
         user:
@@ -341,6 +379,8 @@ sv:
               invalid_date_range: måste vara på eller efter startdatum
             debate_end_date:
               invalid_date_range: måste vara på eller efter startdatum för diskussionen
+            draft_end_date:
+              invalid_date_range: måste vara på eller efter startdatum för utkastet
             allegations_end_date:
               invalid_date_range: måste vara på eller efter startdatum för fasen för att kommentera utkast
         proposal:
@@ -358,8 +398,8 @@ sv:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Ej verifierad adress'
-              already_voted: 'Har redan röstat om förslaget'
+              not_in_census: "Ej verifierad adress"
+              already_voted: "Har redan röstat om förslaget"
         site_customization/page:
           attributes:
             slug:
@@ -372,7 +412,7 @@ sv:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Du kan inte kommentera en kostnadsberäkning'
+              cannot_comment_valuation: "Du kan inte kommentera en kostnadsberäkning"
       messages:
         record_invalid: "Felmeddelanden: %{errors}"
         restrict_dependent_destroy:
