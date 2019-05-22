@@ -9,7 +9,7 @@ gl:
       show:
         title: Conta de usuario
       edit:
-        title: 'Editar conta de usuario: Restabelecer o contrasinal'
+        title: "Editar conta de usuario: Restabelecer o contrasinal"
         back: Volver
         password:
           password: Contrasinal que empregarás para acceder a este sitio web
@@ -22,11 +22,11 @@ gl:
           print_help: Poderás imprimir o contrasinal cando se garde.
     account_info:
       change_user: Cambiar usuario
-      document_number_label: 'Número de documento:'
-      document_type_label: 'Tipo de documento:'
-      email_label: 'Correo electrónico:'
-      identified_label: 'Identificado como:'
-      username_label: 'Usuario:'
+      document_number_label: "Número de documento:"
+      document_type_label: "Tipo de documento:"
+      email_label: "Correo electrónico:"
+      identified_label: "Identificado como:"
+      username_label: "Usuario:"
     check: Comprobar documento
     dashboard:
       index:
@@ -38,9 +38,9 @@ gl:
       already_verified: Esta conta de usuario xa está verificada.
       has_no_account_html: Para crear un usuario entre en %{link} e prema na opción <b>'Rexistrarse'</b> na parte superior dereita da pantalla.
       link: CONSUL
-      in_census_has_following_permissions: 'Este usuario pode participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:'
+      in_census_has_following_permissions: "Este usuario pode participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:"
       not_in_census: Este documento non está rexistrado no Padrón Municipal de Madrid.
-      not_in_census_info: 'As persoas non empadroadas en Madrid poden participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:'
+      not_in_census_info: "As persoas non empadroadas en Madrid poden participar no Portal de Goberno Aberto do Concello de Madrid coas seguintes posibilidades:"
       please_check_account_data: Comprobe que os datos anteriores son correctos para proceder a verificar a conta completamente.
       title: Xestión de usuarios
       under_age: "Debes ser maior de 16 anos para verificar a túa conta."
@@ -49,14 +49,14 @@ gl:
     date_of_birth: Data de nacemento
     email_verifications:
       already_verified: Esta conta de usuario xa está confirmada.
-      choose_options: 'Elixe unha das opcións seguintes:'
+      choose_options: "Elixe unha das opcións seguintes:"
       document_found_in_census: Este documento está no rexistro do padrón municipal, pero inda non ten unha conta de usuario asociada.
-      document_mismatch: 'Ese correo electrónico correspóndelle a un usuario que xa ten asociado o documento %{document_number}(%{document_type})'
+      document_mismatch: "Ese correo electrónico correspóndelle a un usuario que xa ten asociado o documento %{document_number}(%{document_type})"
       email_placeholder: Introduce o correo electrónico de rexistro
       email_sent_instructions: Para rematar de verificar esta conta é necesario que prema no enlace que lle enviamos ao enderezo de correo que figura arriba. Este paso é necesario para confirmar que a dita conta de usuario é súa.
       if_existing_account: Se a persoa xa creou unha conta de usuario na web
       if_no_existing_account: Se a persoa inda non creou unha conta de usuario na web
-      introduce_email: 'Introduza o correo electrónico co que creou a conta:'
+      introduce_email: "Introduza o correo electrónico co que creou a conta:"
       send_email: Enviar correo electrónico de verificación
     menu:
       create_proposal: Crear proposta
@@ -78,7 +78,7 @@ gl:
       vote_proposals: Participar nas votacións finais
     print:
       proposals_info: Crea a túa proposta en http://url.consul
-      proposals_title: 'Propostas:'
+      proposals_title: "Propostas:"
       spending_proposals_info: Participa en http://decide.madrid.es
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta información
