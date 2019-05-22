@@ -14,7 +14,6 @@ gl:
       destroy:
         notice: A imaxe borrouse correctamente.
         alert: A imaxe non se puido borrar.
-        confirm: Tes a certeza de que queres borrar a imaxe? Esta acción non se pode desfacer!
     errors:
       messages:
         in_between: debe estar entre %{min} e %{max}
