@@ -44,7 +44,6 @@ ast:
         submit: Validar documento
         error_verifying_census: "El Padrón no pudo verificar este documento."
         form_errors: evitaron verificar este documento
-        no_assignments: "Hoy no tienes turno de presidente de mesa"
     voters:
       new:
         title: Votaciones
