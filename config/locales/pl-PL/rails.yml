@@ -158,7 +158,7 @@ pl:
         other: jest złej długości (powinno zawierać %{count} znaków)
       other_than: musi być inne niż %{count}
     template:
-      body: 'Wystąpiły problemy z następującymi polami:'
+      body: "Wystąpiły problemy z następującymi polami:"
       header:
         one: 1 błąd uniemożliwił zapis tego %{model}
         few: "%{count} błędy uniemożliwiły zapis tego %{model}"
