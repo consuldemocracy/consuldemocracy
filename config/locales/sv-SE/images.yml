@@ -14,7 +14,6 @@ sv:
       destroy:
         notice: Bilden har tagits bort.
         alert: Kunde inte raderas.
-        confirm: Är du säker på att du vill ta bort bilden? Åtgärden kan inte ångras!
     errors:
       messages:
         in_between: måste vara mellan %{min} och %{max}
