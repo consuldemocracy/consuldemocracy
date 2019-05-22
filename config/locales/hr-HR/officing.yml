@@ -1,0 +1,7 @@
+hr:
+  officing:
+    poll_budgets:
+      index:
+        ballot_sheet_author: Autor
+      show:
+        author: Autor
