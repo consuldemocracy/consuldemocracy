@@ -1,0 +1,5 @@
+hr:
+  management:
+    users:
+      erased_notice: Korisnički račun obrisan.
+      erased_by_manager: "Obrisan od strane administratora: %{manager}"
