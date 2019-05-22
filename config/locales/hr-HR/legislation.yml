@@ -1,0 +1,129 @@
+hr:
+  legislation:
+    annotations:
+      comments:
+        see_all: Vidi sve
+        see_complete: Pogledajte sve
+        comments_count:
+          one: "%{count} komentar"
+          few: "%{count} komentare"
+          other: "%{count} komentare"
+        replies_count:
+          one: "%{count} odgovor"
+          few: "%{count} odgovore"
+          other: "%{count} odgovore"
+        cancel: Otkazati
+        publish_comment: Objavi Komentar
+      form:
+        phase_not_open: Ova faza još nije otvorena
+        login_to_comment: Morate %{signin} ili %{signup} kako biste ostavili komentar.
+        signin: Ulogirajte se
+        signup: Prijavite se
+      index:
+        title: Komentari
+        comments_about: Komentari o
+        see_in_context: Vidi u kontekstu
+        comments_count:
+          one: "%{count} komentar"
+          few: "%{count} komentare"
+          other: "%{count} komentare"
+      show:
+        title: Komentar
+      version_chooser:
+        seeing_version: Komentari za verziju
+        see_text: Spremi draft teksta
+    draft_versions:
+      changes:
+        title: Promjene
+        seeing_changelog_version: Revizija mijenja sažetak
+        see_text: Pogledaj tekstualni draft
+      show:
+        loading_comments: Učitavam komentare
+        seeing_version: Šaljete draft verziju
+        select_draft_version: Odaberi draft
+        select_version_submit: pogledaj
+        updated_at: ažurirano na %{date}
+        see_changes: pogledaj promjene u sažetku
+        see_comments: Pogledaj sve komentare
+        text_toc: Tablica sadržaja
+        text_body: Tekst
+        text_comments: Komentari
+    processes:
+      header:
+        additional_info: Dodatne informacije
+        description: Opis
+        more_info: Više informacija i kontekst
+      proposals:
+        empty_proposals: Nema prijedloga
+        filters:
+          random: Nasumično
+          winners: Odabrano
+      debate:
+        empty_questions: Ne postoje pitanja
+        participate: Sudjelujte u raspravi
+      index:
+        filter: Filter
+        filters:
+          open: Otvoreni proces
+          past: Prošle
+        no_open_processes: Nema otvorenih procesa
+        no_past_processes: Nema prošlih procesa
+        section_header:
+          icon_alt: Ikona kolaborativne legislative
+          title: Kolaborativna legislativa
+          help: Pomoć oko kolaborativne legislative
+        section_footer:
+          title: Pomoć oko kolaborativne legislative
+          description: Sudjelujte u raspravama i procesima prije odobravanja novih propisa ili strategija. Vaše mišljenje će se razmotriti.
+      phase_not_open:
+        not_open: Ova faza još uvijek nije otvorena
+      phase_empty:
+        empty: Ništa nije još objavljeno
+      process:
+        see_latest_comments: Vidi zadnje komentare
+        see_latest_comments_title: Komentari ovog procesa
+      shared:
+        key_dates: Faze sudjelovanja
+        homepage: Glavna stranica
+        debate_dates: Rasprave
+        draft_publication_date: Objavljivanje drafta
+        allegations_dates: Komentari
+        result_publication_date: Konačni rezultati objave
+        milestones_date: Sljedeći
+        proposals_dates: Prijedlozi
+    questions:
+      comments:
+        comment_button: Objavi odgovor
+        comments_title: Otvoreni odgovori
+        comments_closed: Zatvorena faza
+        form:
+          leave_comment: Ostavi svoj odgovor
+      question:
+        comments:
+          zero: Nema komentara
+          one: "%{count} komentar"
+          few: "%{count} komentare"
+          other: "%{count} komentare"
+        debate: Rasprava
+      show:
+        answer_question: Pošalji odgovor
+        next_question: Sljedeće pitanje
+        first_question: Prvo pitanje
+        share: Dijeli
+        title: Proces kolaborativne legislative
+      participation:
+        phase_not_open: Ova faza još nije otvorena
+        organizations: Organizacijama nije dozvoljeno sudjelovanje u raspravama
+        signin: Prijavi se
+        signup: Registriraj se
+        unauthenticated: Vi morate %{signin} ili %{signup} kako biste sudjelovali.
+        verified_only: Samo potvrđeni korisnici mogu sudjelovati, %{verify_account}.
+        verify_account: potvrdi svoj račun
+        debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
+    shared:
+      share: Dijeli
+      share_comment: Komentiraj %{version_name} iz drafta procesa %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorije"
+      not_verified: "Za izglasavanje prijedloga %{verify_account}."
