@@ -58,7 +58,7 @@ ast:
       oldest: Más antiguos primero
     select_order: Ordenar por
     show:
-      return_to_commentable: 'Volver a '
+      return_to_commentable: "Volver a "
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentario
@@ -182,8 +182,7 @@ ast:
       available_locales: Idiomas disponibles
       collaborative_legislation: Procesos legislativos
       debates: Alderique
-      external_link_blog: Blog
-      locale: 'Idioma:'
+      locale: "Idioma:"
       management: Gestión
       moderation: Moderación
       valuation: Evaluación
@@ -204,7 +203,7 @@ ast:
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
     admin:
-      watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
+      watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
     index:
       empty_notifications: No tienes notificaciones nuevas.
@@ -270,8 +269,6 @@ ast:
       other: Otras
     form:
       geozone: Ámbitu d'actuación
-      proposal_external_url: Enllaz a documentación adicional
-      proposal_question: Pregunta de la propuesta
       proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
       proposal_summary: Resumen de la propuesta
@@ -312,7 +309,7 @@ ast:
         one: " que contien <strong>'%{search_term}'</strong>"
         other: " que contien <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
-      select_order_long: 'Estas viendo las propuestas'
+      select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
       title: Propuestes
       top: Top semanal
@@ -336,8 +333,6 @@ ast:
         guide: "Compártela para que la gente empieze a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      improve_info: "Mejora tu campaña y consigue más apoyos"
-      improve_info_link: "Ver más información"
       already_supported: '¡Ya has apoyado esta propuesta, compártela!'
       comments:
         one: 1 Comentario
@@ -355,12 +350,11 @@ ast:
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
       author_deleted: Usuariu esaniciáu
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       comments:
         one: 1 Comentario
         other: "%{count} comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar propuesta
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
@@ -369,7 +363,6 @@ ast:
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
       share: Compartir
-      send_notification: Enviar notificación
       embed_video_title: "Vídeo en %{proposal}"
       author: Autor
     update:
@@ -411,7 +404,6 @@ ast:
       results:
         title: "Entruges"
   poll_questions:
-    create_question: "Crear entruga pa votación"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
@@ -425,29 +417,29 @@ ast:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar propuesta'
-    save: 'Guardar'
-    delete: Borrar
+    edit: "Editar propuesta"
+    save: "Guardar"
+    delete: "Borrar"
     "yes": "Sí"
     "no": "Non"
     search_results: "Resultados de búsqueda"
     advanced_search:
-      author_type: 'Por categoría de autor'
-      author_type_blank: 'Elige una categoría'
-      date: 'Por fecha'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Elige una fecha'
-      date_1: 'Últimas 24 horas'
-      date_2: 'Última semana'
-      date_3: 'Último mes'
-      date_4: 'Último año'
-      date_5: 'Personalizada'
-      from: 'Desde'
-      general: 'Con el texto'
-      general_placeholder: 'Escribe el texto'
-      search: 'Filtru'
-      title: 'Búsqueda avanzada'
-      to: 'Hasta'
+      author_type: "Por categoría de autor"
+      author_type_blank: "Elige una categoría"
+      date: "Por fecha"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Elige una fecha"
+      date_1: "Últimas 24 horas"
+      date_2: "Última semana"
+      date_3: "Último mes"
+      date_4: "Último año"
+      date_5: "Personalizada"
+      from: "Desde"
+      general: "Con el texto"
+      general_placeholder: "Escribe el texto"
+      search: "Filtru"
+      title: "Búsqueda avanzada"
+      to: "Hasta"
     author_info:
       author_deleted: Usuariu esaniciáu
     back: Volver
@@ -494,7 +486,6 @@ ast:
     go_to_page: "Ir a la página de "
     share: Compartir
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
@@ -503,8 +494,8 @@ ast:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
-      association_name: 'Nome de l''asociación'
+      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
+      association_name: "Nome de l'asociación"
       description: Descripción detallada
       external_url: Enllaz a documentación adicional
       geozone: Ámbitu d'actuación
@@ -537,7 +528,7 @@ ast:
       start_new: Crear propuesta de inversión
     show:
       author_deleted: Usuariu esaniciáu
-      code: 'Código de la propuesta:'
+      code: "Código de la propuesta:"
       share: Compartir
     wrong_price_format: Solo pue incluyir calteres numbéricos
     spending_proposal:
@@ -603,9 +594,6 @@ ast:
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       send_private_message: "Enviar un mensaje privado"
-    proposals:
-      send_notification: "Enviar notificación"
-      retire: "Retirar"
   votes:
     agree: Estoy de acuerdo
     anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
@@ -648,7 +636,7 @@ ast:
       user_permission_info: Cola to cuenta yá pues...
       user_permission_proposal: Crear nueves propuestes
       user_permission_support_proposal: Apoyar propuestas
-      user_permission_verify: Pa poder realizar toles acciones, verifica la to cuenta.
+      user_permission_verify: "Pa poder realizar toles acciones, verifica la to cuenta."
       user_permission_verify_info: "* Namás usuarios empadronaos."
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar nes votaciones finales
