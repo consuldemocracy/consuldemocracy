@@ -4,7 +4,7 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
@@ -26,7 +26,7 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
@@ -54,7 +54,7 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_flag_review: Recenzja oczekująca
@@ -73,7 +73,7 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_flag_review: Oczekujące
@@ -92,7 +92,7 @@ pl:
       index:
         block_authors: Blokuj autorów
         confirm: Jesteś pewny/a?
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending_review: Recenzja oczekująca
