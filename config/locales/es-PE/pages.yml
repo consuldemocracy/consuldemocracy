@@ -2,27 +2,48 @@ es-PE:
   pages:
     conditions:
       title: Condiciones de uso
+      subtitle: AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE LA INFORMACIÓN PERSONAL DEL PORTAL PÚBLICO DEL GOBIERNO
+      description: Página de información sobre las condiciones de uso, privacidad y protección de información personal.
     help:
+      title: "%{org} es una plataforma para la participación ciudadana"
+      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de %{org}."
       menu:
+        debates: "Discusiones"
         proposals: "Propuestas"
         budgets: "Presupuestos participativos"
         polls: "Votaciones"
         other: "Otra información de interés"
         processes: "Procesos"
       debates:
+        title: "Discusiones"
+        description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas de tu interés relacionados con la ciudad. También es un lugar para generar ideas que a través de las otras secciones de %{org} conducen a acciones concretas por parte del Consejo Municipal."
+        link: "discusiones ciudadanas"
+        feature_html: "Puedes abrir discusiones, comentarlas y valorarlas con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
+        feature_link: "regístrate en %{org}"
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
       proposals:
         title: "Propuestas"
+        description: "En la sección de %{link} puedes plantear propuestas para que el Consejo Municipal las lleve a cabo. Las propuestas necesitan apoyo, y si alcanzan el apoyo necesario, se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Consejo Municipal y se llevan a cabo."
+        link: "propuestas ciudadanas"
         image_alt: "Botón para apoyar una propuesta"
+        figcaption_html: 'Botón para "Apoyar" una propuesta.'
       budgets:
         title: "Presupuestos participativos"
+        description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
+        link: "presupuestos participativos"
         image_alt: "Diferentes fases de un presupuesto participativo"
         figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
+        description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyo y pasa a votación o cuando el Consejo Municipal propone un tema para que la gente decida sobre él."
+        link: "encuentas"
+        feature_1: "Para participar en las votaciones tienes que %{link} y verificar tu cuenta."
+        feature_1_link: "regístrate en %{org_name}"
       processes:
         title: "Procesos"
+        description: "En la sección de %{link} la ciudadanía participa en la elaboración y modificación de normativa que afecta a la ciudad y puede dar su opinión sobre las políticas municipales en discusiones previas."
+        link: "procesos"
       faq:
         title: "¿Problemas técnicos?"
         description: "Lee las preguntas frecuentes y resuelve tus dudas."
@@ -30,38 +51,120 @@ es-PE:
         page:
           title: "Preguntas Frecuentes"
           description: "Utiliza esta página para resolver las Preguntas frecuentes a los usuarios del sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este es un ejemplo para la descripción de la pregunta uno."
       other:
         title: "Otra información de interés"
         how_to_use: "Utiliza %{org_name} en tu municipio"
+      how_to_use:
+        text: |-
+          Utilízalo en tu gobierno local o ayúdanos a mejorarlo, es software libre.
+
+          Este Portal de Gobierno Público usa la [aplicación CONSUL](https://github.com/consul/consul 'github consul') que es software libre, con [licencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), esto significa en palabras sencillas, que cualquiera puede libremente usar el código, copiarlo, verlo en detalle, modificarlo, y redistribuirlo al mundo con las modificaciones que quiera (manteniendo el que otros puedan a su vez hacer lo mismo). Porque creemos que la cultura es mejor y más rica cuando se libera.
+
+          Si eres programador, puedes ver el código y ayudarnos a mejorarlo en [aplicación CONSUL](https://github.com/consul/consul 'github consul').
       titles:
         how_to_use: Utilízalo en tu municipio
     privacy:
       title: Política de privacidad
+      subtitle: "Página de información de privacidad"
     accessibility:
       title: Accesibilidad
+      description: |-
+        La accesibilidad web hace referencia a la posibilidad de que todas las personas puedan acceder a la web y a sus contenidos, independientemente de las discapacidades (físicas, intelectuales o técnicas) que puedan presentar o de las que se deriven del contexto de uso (tecnológicas o ambientales).
+
+        Cuando los sitios web están diseñados pensando en la accesibilidad, todos los usuarios pueden acceder en condiciones de igualdad a los contenidos, por ejemplo:
+      examples:
+        - Proporcionando un texto alternativo a las imágenes, los usuarios invidentes o con problemas de visión pueden utilizar lectores especiales para acceder a la información.
+        - Cuando los vídeos disponen de subtítulos, los usuarios con dificultades auditivas pueden entenderlos plenamente.
+        - Si los contenidos están escritos en un lenguaje sencillo e ilustrados, los usuarios con problemas de aprendizaje están en mejores condiciones de entenderlos.
+        - Si el usuario tiene problemas de movilidad y le cuesta usar el ratón, las alternativas con el teclado le ayudan en la navegación.
       keyboard_shortcuts:
+        title: '"Atajos" de teclado'
         navigation_table:
+          description: Para poder navegar por este sitio web de forma accesible, se han programado un grupo de teclas de acceso rápido que recogen las principales secciones de interés general en las que está organizado el sitio.
+          caption: Atajos de teclado para el menú de navegación
+          key_header: Tecla
+          page_header: Página
           rows:
             - 
+              key_column: 0
+              page_column: Inicio
             - 
+              key_column: 1
+              page_column: Discusiones
             - 
+              key_column: 2
               page_column: Propuestas
             - 
               key_column: 1
               page_column: Votos
             - 
+              key_column: 4
               page_column: Presupuestos participativos
             - 
+              key_column: 5
+              page_column: Procesos legislativos
+        browser_table:
+          description: "Dependiendo del sistema operativo y del navegador que se utilice, la combinación de teclas será la siguiente:"
+          caption: Combinación de teclas dependiendo del sistema operativo y navegador
+          browser_header: Navegador
+          key_header: Combinación de teclas
+          rows:
+            - 
+              browser_column: Explorador
+              key_column: ALT + atajo y luego ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + MAYÚSCULAS + atajo
+            - 
+              browser_column: Chrome
+              key_column: ALT + atajo (CTRL + ALT + atajos para MAC)
+            - 
+              browser_column: Safari
+              key_column: ALT + atajo (CMD + atajo para MAC)
+            - 
+              browser_column: Opera
+              key_column: MAYÚSCULAS + ESC + atajo
+      textsize:
+        title: Tamaño del texto
+        browser_settings_table:
+          description: El diseño accesible de este sitio web permite que el usuario pueda elegir el tamaño del texto que le convenga. Esta acción puede llevarse a cabo de diferentes maneras según el navegador que se utilice.
+          browser_header: Navegador
+          action_header: Acción a realizar
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: Ver > Tamaño del texto
+            - 
+              browser_column: Firefox
+              action_column: Ver > Tamaño
+            - 
+              browser_column: Chrome
+              action_column: Ajustes (icono) > Opciones > Avanzada > Contenido web > Tamaño fuente
+            - 
+              browser_column: Safari
+              action_column: Vista > ampliar/reducir
+            - 
+              browser_column: Opera
+              action_column: Vista > escala
+        browser_shortcuts_table:
+          description: "Otra manera de cambiar el tamaño de texto es utilizar los atajos de teclado definidos en los navegadores, en particular la combinación de teclas:"
+          rows:
+            - 
+              shortcut_column: CTRL y + (CMD y + en MAC)
+              description_column: Para aumentar el tamaño del texto
+            - 
+              shortcut_column: CTRL y - (CMD y - en MAC)
+              description_column: Para reducir el tamaño del texto
+      compatibility:
+        title: Compatibilidad con estándares y diseño visual
+        description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
-      accessibility: Accesibilidad
-      conditions: Condiciones de uso
-      privacy: Política de privacidad
+      help: "¿Qué es %{org}? - Participación ciudadana"
     verify:
       code: Código que has recibido en tu carta
       email: Tu correo electrónico
-      info_code: 'Ahora introduce el código que has recibido en tu carta:'
+      info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
+      info_code: "Ahora introduce el código que has recibido en tu carta:"
       password: Contraseña que utilizarás para acceder a este sitio web
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
