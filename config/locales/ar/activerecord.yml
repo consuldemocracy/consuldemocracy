@@ -275,6 +275,10 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+      geozone:
+        name: الإسم
+        external_code: "الرّمز الخارجي (اختياري)"
+        census_code: "رمز مكتب التعداد (اختياري)"
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "عنوان"
@@ -373,6 +377,9 @@ ar:
         name: الإ سم
         locale: الإعدادات المحلية
         body: الهيئة
+      banner:
+        background_color: لون الخلفية
+        font_color: لون الخط
       legislation/process:
         title: عنوان العملية
         summary: ملخص
@@ -387,6 +394,8 @@ ar:
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
+        proposals_phase_start_date: بداية
+        proposals_phase_end_date: نهاية
         result_publication_date: تاريخ نشر النتيجة النهائية
         background_color: لون الخلفية
         font_color: لون الخط
@@ -516,8 +525,8 @@ ar:
         signature:
           attributes:
             document_number:
-              not_in_census: 'لم يتم التحقق من التعداد'
-              already_voted: 'بالفعل صوت هذا الاقتراح'
+              not_in_census: "لم يتم التحقق من التعداد"
+              already_voted: "بالفعل صوت هذا الاقتراح"
         site_customization/page:
           attributes:
             slug:
@@ -530,7 +539,7 @@ ar:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'لا يمكنك التعليق على التقييم'
+              cannot_comment_valuation: "لا يمكنك التعليق على التقييم"
       messages:
         record_invalid: "فشل التحقق: %{errors}"
         restrict_dependent_destroy:
