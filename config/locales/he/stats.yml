@@ -9,7 +9,7 @@ he:
     men_percentage: "%{percentage} גברים"
     women_percentage: "%{percentage} נשים"
     age: "גיל"
-    age_more_than: "%{start} בגיל למבוגרים יותר"
+    age_more_than: "%{start} בגיל ומבוגרים יותר"
     age_range: "%{start} - %{finish} בגיל"
     total: "סה\"כ"
     geozone: "רובע"
