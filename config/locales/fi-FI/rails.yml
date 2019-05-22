@@ -128,7 +128,7 @@ fi:
         other: on väärän pituinen (pitäisi olla %{count} merkkiä)
       other_than: on oltava muu kuin %{count}
     template:
-      body: 'Seuraavissa kentissä oli ongelmia:'
+      body: "Seuraavissa kentissä oli ongelmia:"
       header:
         one: 1 virhe esti tämän %{model} tallentamisen
         other: "%{count} virheettä esti tämän %{model} tallentamisen"
