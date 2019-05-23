@@ -974,10 +974,6 @@ ar:
         geozone_restricted: "خاص بالمقاطعات"
       new:
         title: "استطلاع جديد"
-        show_results_and_stats: "اظهار النتائج والإحصائيات"
-        show_results: "إظهار النتائج"
-        show_stats: "إظهار الإحصائيات"
-        results_and_stats_reminder: "عند تحديد خانات الاختيار كنتائج و / أو إحصائيات لهذا الاستطلاع ستكون متاحة للجميع وسيشاهدها كل مستخدم."
         submit_button: "إنشاء استطلاع"
       edit:
         title: "تحرير الاستطلاع"
