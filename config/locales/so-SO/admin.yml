@@ -843,10 +843,6 @@ so:
         geozone_restricted: "Xayiraadda degmooyinka"
       new:
         title: "Dorashada Cusub"
-        show_results_and_stats: "Muuji natijooyinka iyo xoogta"
-        show_results: "Tuus natiijada"
-        show_stats: "Muuji Xoogta"
-        results_and_stats_reminder: "Calaamadaynta sanduuqyadan saxda ah natiijooyinka iyo / ama tirooyinka ra'yiga ee ra'yiururintan ayaa si guud loo heli karaa iyada oo isticmaal kasta oo iyaga arki doona."
         submit_button: "Saame dorshada"
       edit:
         title: "Tafatiir dorashada"
