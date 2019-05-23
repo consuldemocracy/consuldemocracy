@@ -1056,10 +1056,6 @@ he:
         geozone_restricted: "מוגבל לרובעים"
       new:
         title: "סקר חדש"
-        show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
-        show_results: "הצג תוצאות"
-        show_stats: "הצג נתונים סטטיסטיים"
-        results_and_stats_reminder: "סימון תיבות הסימון הללו יהיה זמין ופורסם ו / או נתונים סטטיסטיים של סקר זה, וכל משתמש יראה אותן."
         submit_button: "יצירת סקר"
       edit:
         title: "ערוך סקר"
