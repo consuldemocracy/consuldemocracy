@@ -5,15 +5,23 @@ module TranslatableFormHelper
     end
   end
 
+  def translations_interface_enabled?
+    Setting["feature.translation_interface"].present? || backend_translations_enabled?
+  end
+
+  def backend_translations_enabled?
+    (controller.class.parents & [Admin, Management, Valuation]).any?
+  end
+
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
     attr_accessor :translations
 
     def translatable_fields(&block)
       @translations = {}
-      @object.globalize_locales.map do |locale|
+      visible_locales.map do |locale|
         @translations[locale] = translation_for(locale)
       end
-      @object.globalize_locales.map do |locale|
+      visible_locales.map do |locale|
         Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
       end.join.html_safe
     end
@@ -67,6 +75,14 @@ module TranslatableFormHelper
 
       def no_other_translations?(translation)
         (@object.translations - [translation]).reject(&:_destroy).empty?
+      end
+
+      def visible_locales
+        if @template.translations_interface_enabled?
+          @object.globalize_locales
+        else
+          [I18n.locale]
+        end
       end
   end
 
