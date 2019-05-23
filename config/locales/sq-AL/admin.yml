@@ -845,10 +845,6 @@ sq:
         geozone_restricted: "E kufizuar në rrethe"
       new:
         title: "Sondazhi i ri"
-        show_results_and_stats: "Trego rezultatet dhe statistikat"
-        show_results: "Shfaq rezultatet"
-        show_stats: "Shfaq statistikat"
-        results_and_stats_reminder: "Duke shënuar këto kuti kontrolli rezultatet dhe / ose statistikat e këtij sondazhi do të jenë në dispozicion të publikut dhe çdo përdorues do t'i shohë ato."
         submit_button: "Krijo sondazhin"
       edit:
         title: "Ndrysho sondazhin"
