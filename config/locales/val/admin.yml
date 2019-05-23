@@ -892,10 +892,6 @@ val:
         geozone_restricted: "Restringida als districtes"
       new:
         title: "Nova votació"
-        show_results_and_stats: "Mostrar resultats i estadístiques"
-        show_results: "Mostrar resultats"
-        show_stats: "Mostrar estadístiques"
-        results_and_stats_reminder: "Si marques aquestes caselles els resultats i/o estadístiques d'esta votació seran públics i podran vorels tots els usuaris."
         submit_button: "Crear votació"
       edit:
         title: "Editar votació"
