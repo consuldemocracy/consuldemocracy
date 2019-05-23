@@ -934,10 +934,6 @@ gl:
         geozone_restricted: "Restrinxida aos distritos"
       new:
         title: "Nova votación"
-        show_results_and_stats: "Amosar os resultados e as estatísticas"
-        show_results: "Amosar resultados"
-        show_stats: "Amosar estatísticas"
-        results_and_stats_reminder: "Se marcas estas celas, os resultados e/ou as estatísticas desta votación publicaranse e todos os usuarios poderán velos."
         submit_button: "Crear votación"
       edit:
         title: "Editar votación"
