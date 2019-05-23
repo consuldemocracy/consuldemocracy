@@ -700,10 +700,6 @@ id:
         geozone_restricted: "Terbatas untuk daerah"
       new:
         title: "Jajak pendapat baru"
-        show_results_and_stats: "Tampilkan hasil dan statistik"
-        show_results: "Tampilkan hasil"
-        show_stats: "Tampilkan statistik"
-        results_and_stats_reminder: "Menandai kotak centang ini hasil dan/atau statistik dari jajak pendapat ini akan tersedia untuk umum dan setiap pengguna akan melihat mereka."
         submit_button: "Buat jajak pendapat"
       edit:
         submit_button: "Perbarui pemilihan"
