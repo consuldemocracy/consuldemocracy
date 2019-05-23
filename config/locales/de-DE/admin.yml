@@ -922,10 +922,6 @@ de:
         geozone_restricted: "Beschränkt auf Bezirke"
       new:
         title: "Neue Abstimmung"
-        show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
-        show_results: "Ergebnisse anzeigen"
-        show_stats: "Statistiken anzeigen"
-        results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
         submit_button: "Abstimmung erstellen"
       edit:
         title: "Abstimmung bearbeiten"
