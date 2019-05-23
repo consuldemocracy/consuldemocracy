@@ -1024,10 +1024,6 @@ da:
         geozone_restricted: "Kun distrikter"
       new:
         title: "Ny afstemning"
-        show_results_and_stats: "Vis resultater og statistik"
-        show_results: "Vis resultater"
-        show_stats: "Vis statistik"
-        results_and_stats_reminder: "Ved markering af disse afkrydsningsfelter vil resultaterne og/eller statistikkerne relateret til denne afstemning blive publicere, t og alle brugere vil kunne se dem."
         submit_button: "Opret afstemning"
       edit:
         title: "Rediger afstemning"
