@@ -651,10 +651,6 @@ sl:
         geozone_restricted: "Omejeno na področja"
       new:
         title: "Novo glasovanja"
-        show_results_and_stats: "Pokaži rezultate in statistike"
-        show_results: "Pokaži rezultate"
-        show_stats: "Pokaži statistike"
-        results_and_stats_reminder: "Z izborom teh možnosti bodo rezultati in/ali statistike tega glasovanja javno na voljo in vsi uporabniki jih bodo lahko videli."
         submit_button: "Ustvari glasovanje"
       edit:
         title: "Uredi glasovanje"
