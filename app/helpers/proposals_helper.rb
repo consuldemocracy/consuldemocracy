@@ -73,11 +73,14 @@ module ProposalsHelper
       html_class = "button hollow expanded"
     end
 
-    link_to button_text,
-      toggle_selection_admin_proposal_path(proposal),
-      remote: true,
-      method: :patch,
-      class:  html_class
+    case proposal.class.to_s
+    when "Proposal"
+      path = toggle_selection_admin_proposal_path(proposal)
+    when "Legislation::Proposal"
+      path = toggle_selection_admin_legislation_process_proposal_path(proposal.process, proposal)
+    end
+
+    link_to button_text, path, remote: true, method: :patch, class: html_class
   end
 
   def css_for_proposal_info_row

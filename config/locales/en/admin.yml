@@ -556,8 +556,6 @@ en:
           id: Id
           title: Title
           supports: Total supports
-          select: Select
-          selected: Selected
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres.

@@ -555,8 +555,6 @@ es:
           back: Volver
           id: Id
           supports: Apoyos totales
-          select: Seleccionar
-          selected: Seleccionada
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta. Máximo 160 caracteres.
