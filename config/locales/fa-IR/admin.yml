@@ -756,10 +756,6 @@ fa:
         geozone_restricted: "محدود به مناطق"
       new:
         title: "نظر سنجی جدید"
-        show_results_and_stats: "نتایج و آمار نشان می دهد"
-        show_results: "مشاهده نتایج"
-        show_stats: "نمایش آمار"
-        results_and_stats_reminder: "علامتگذاری  گزینه های نتایج و / یا آمار این نظرسنجی در دسترس عموم قرار خواهد گرفت و هر کاربر آنها را مشاهده میکند."
         submit_button: "ایجاد نظرسنجی"
       edit:
         title: "ویرایش نظرسنجی "
