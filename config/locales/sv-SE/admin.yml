@@ -889,10 +889,6 @@ sv:
         geozone_restricted: "Begränsade till stadsdelar"
       new:
         title: "Ny omröstning"
-        show_results_and_stats: "Visa resultat och statistik"
-        show_results: "Visa resultat"
-        show_stats: "Visa statistik"
-        results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat att visas offentligt för alla användare."
         submit_button: "Skapa omröstning"
       edit:
         title: "Redigera omröstning"
