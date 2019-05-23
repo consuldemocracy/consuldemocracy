@@ -836,10 +836,6 @@ zh-TW:
         geozone_restricted: "限於區內"
       new:
         title: "新投票項"
-        show_results_and_stats: "顯示結果和統計資訊"
-        show_results: "顯示結果"
-        show_stats: "顯示統計資訊"
-        results_and_stats_reminder: "標記這些複選框可以公開獲得此投票項的結果和/或統計資訊，每個用戶都會看到它們。"
         submit_button: "創建投票項"
       edit:
         title: "編輯投票項"
