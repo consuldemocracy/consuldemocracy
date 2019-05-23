@@ -1,4 +1,8 @@
 he:
+  attributes:
+    results_enabled: "הצג תוצאות"
+    stats_enabled: "הצג נתונים סטטיסטיים"
+    advanced_stats_enabled: "הצג נתונים סטטיסטיים מתקדמים"
   activerecord:
     models:
       activity:
