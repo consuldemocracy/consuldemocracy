@@ -127,6 +127,7 @@ ignore_unused:
   - "budgets.index.section_header.*"
   - "activerecord.*"
   - "activemodel.*"
+  - "attributes.*"
   - "date.order"
   - "unauthorized.*"
   - "admin.officials.level_*"

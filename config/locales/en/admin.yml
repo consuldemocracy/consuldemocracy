@@ -1049,10 +1049,6 @@ en:
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
-        show_results_and_stats: "Show results and stats"
-        show_results: "Show results"
-        show_stats: "Show stats"
-        results_and_stats_reminder: "Marking these checkboxes the results and/or stats of this poll will be publicly available and every user will see them."
         submit_button: "Create poll"
       edit:
         title: "Edit poll"
@@ -1330,6 +1326,8 @@ en:
       created_at: Created at
       delete: Delete
       color_help: Hexadecimal format
+      show_results_and_stats: "Show results and stats"
+      results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
     spending_proposals:
       index:
         geozone_filter_all: All zones

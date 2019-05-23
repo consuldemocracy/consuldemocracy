@@ -522,7 +522,7 @@ feature "Budget Investments" do
 
     context "Results Phase" do
 
-      before { budget.update(phase: "finished") }
+      before { budget.update(phase: "finished", results_enabled: true) }
 
       scenario "show winners by default" do
         investment1 = create(:budget_investment, :winner, heading: heading)

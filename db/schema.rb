@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190411090023) do
+ActiveRecord::Schema.define(version: 20190429125842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1232,6 +1232,17 @@ ActiveRecord::Schema.define(version: 20190411090023) do
     t.index ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true, using: :btree
     t.index ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
     t.index ["related_content_id"], name: "opposite_related_content", using: :btree
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.boolean  "stats"
+    t.boolean  "results"
+    t.string   "process_type"
+    t.integer  "process_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.boolean  "advanced_stats"
+    t.index ["process_type", "process_id"], name: "index_reports_on_process_type_and_process_id", using: :btree
   end
 
   create_table "settings", force: :cascade do |t|

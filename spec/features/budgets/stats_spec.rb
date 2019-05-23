@@ -7,22 +7,22 @@ feature "Stats" do
   let(:heading) { create(:budget_heading, group: group, price: 1000) }
 
   describe "Show" do
+    describe "advanced stats" do
+      let(:budget) { create(:budget, :finished) }
 
-    it "is not accessible if supports phase is not finished" do
-      budget.update(phase: "selecting")
+      scenario "advanced stats enabled" do
+        budget.update(advanced_stats_enabled: true)
 
-      visit budget_stats_path(budget.id)
-      expect(page).to have_content "You do not have permission to carry out the action "\
-                                   "'read_stats' on budget."
+        visit budget_stats_path(budget)
+
+        expect(page).to have_content "Advanced statistics"
+      end
+
+      scenario "advanced stats disabled" do
+        visit budget_stats_path(budget)
+
+        expect(page).not_to have_content "Advanced statistics"
+      end
     end
-
-    it "is accessible if supports phase is finished" do
-      budget.update(phase: "valuating")
-
-      visit budget_stats_path(budget.id)
-      expect(page).to have_content "Stats"
-    end
-
   end
-
 end

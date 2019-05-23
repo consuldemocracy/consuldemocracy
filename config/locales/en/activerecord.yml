@@ -1,4 +1,8 @@
 en:
+  attributes:
+    results_enabled: "Show results"
+    stats_enabled: "Show stats"
+    advanced_stats_enabled: "Show advanced stats"
   activerecord:
     models:
       activity:

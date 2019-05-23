@@ -7,6 +7,7 @@ class Poll < ApplicationRecord
   include Notifiable
   include Sluggable
   include StatsVersionable
+  include Reportable
 
   translates :name,        touch: true
   translates :summary,     touch: true
