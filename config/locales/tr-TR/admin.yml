@@ -956,10 +956,6 @@ tr:
         geozone_restricted: "Bölgelerle sınırlıdır"
       new:
         title: "Yeni anket"
-        show_results_and_stats: "Sonuçları ve istatistikleri göster"
-        show_results: "Sonuçları göster"
-        show_stats: "İstatistikleri göster"
-        results_and_stats_reminder: "Bu onay kutularını işaretlemek, bu anketin sonuçlarını ve/veya istatistiklerini kamuya açık tutacak ve her kullanıcı bunları görecektir."
         submit_button: "Anket oluştur"
       edit:
         title: "Anketi düzenle"
