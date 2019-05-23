@@ -1335,6 +1335,7 @@ he:
       created_at: נוצרה ב
       delete: מחיקה
       color_help: בתבנית הקסדצימאלית
+      show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
