@@ -1052,10 +1052,6 @@ bs:
         geozone_restricted: "Ograničena na sljedeća područja"
       new:
         title: "Nova glasačka anketa"
-        show_results_and_stats: "Pokaži rezultate i statistiku"
-        show_results: "Pokaži rezultate"
-        show_stats: "Pokaži statistiku"
-        results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ove glasačke ankete će biti dostupni javnosti i vidljivi svakom korisniku."
         submit_button: "Formuliši glasačku anketu"
       edit:
         title: "Edituj glasačku anketu"
