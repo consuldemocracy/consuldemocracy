@@ -996,10 +996,6 @@ fr:
         geozone_restricted: "Limité aux quartiers"
       new:
         title: "Nouveau vote"
-        show_results_and_stats: "Afficher les résultats et statistiques"
-        show_results: "Afficher les résultats"
-        show_stats: "Afficher les statistiques"
-        results_and_stats_reminder: "En cochant cette case, les résultats et les statistiques du votes seront accessibles au public et tous les utilisateurs les verront."
         submit_button: "Créer le vote"
       edit:
         title: "Modifier le vote"
