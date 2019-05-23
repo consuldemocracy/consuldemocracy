@@ -838,10 +838,6 @@ it:
         geozone_restricted: "Limitato ai distretti"
       new:
         title: "Nuovo sondaggio"
-        show_results_and_stats: "Visualizza risultati e statistiche"
-        show_results: "Mostra risultati"
-        show_stats: "Mostra statistiche"
-        results_and_stats_reminder: "Contrassegnando queste caselle i risultati e/o le statistiche di questa votazione verranno resi disponibili al pubblico e ogni utente li vedrà."
         submit_button: "Crea votazione"
       edit:
         title: "Modificare il sondaggio"
