@@ -837,10 +837,6 @@ pt-BR:
         geozone_restricted: "Restrito aos distritos"
       new:
         title: "Nova votação"
-        show_results_and_stats: "Exibir resultados e estatísticas"
-        show_results: "Exibir resultados"
-        show_stats: "Exibir estatísticas"
-        results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas desta votação estarão disponíveis publicamente e qualquer usuário poderá vê-los."
         submit_button: "Criar votação"
       edit:
         title: "Editar votação"
