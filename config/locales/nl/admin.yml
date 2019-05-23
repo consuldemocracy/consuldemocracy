@@ -962,10 +962,6 @@ nl:
         geozone_restricted: "Beperkt tot buurten"
       new:
         title: "New poll"
-        show_results_and_stats: "Toon resultaten en statistieken"
-        show_results: "Toon resultaten"
-        show_stats: "Toon statistieken"
-        results_and_stats_reminder: "Als u deze vakjes selecteert, zijn de resultaten en / of statistieken van deze poll openbaar beschikbaar en ziet elke deelnemer ze."
         submit_button: "Nieuwe peiling"
       edit:
         title: "Edit poll"
