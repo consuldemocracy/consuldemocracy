@@ -1336,6 +1336,7 @@ he:
       delete: מחיקה
       color_help: בתבנית הקסדצימאלית
       show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
+      results_and_stats_reminder: "סימון תיבות הסימון יהפכו את התוצאות ו / או הנתונים סטטיסטיים של סקר זה, גלויים לכל משתמש."
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
