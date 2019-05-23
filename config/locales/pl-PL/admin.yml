@@ -959,10 +959,6 @@ pl:
         geozone_restricted: "Ograniczone do dzielnic"
       new:
         title: "Nowy sondaż"
-        show_results_and_stats: "Pokaż wyniki i statystyki"
-        show_results: "Pokaż wyniki"
-        show_stats: "Pokaż statystyki"
-        results_and_stats_reminder: "Zaznaczenie tych pól wyboru wyników i / lub statystyk tego głosowania udostępni je publicznie i każdy użytkownik je zobaczy."
         submit_button: "Utwórz sondę"
       edit:
         title: "Edytuj sondę"
