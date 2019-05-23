@@ -35,7 +35,19 @@ module Globalizable
   class_methods do
     def validates_translation(method, options = {})
       validates(method, options.merge(if: lambda { |resource| resource.translations.blank? }))
-      translation_class.instance_eval { validates method, options }
+      if options.include?(:length)
+        lenght_validate = { length: options[:length] }
+        translation_class.instance_eval do
+          validates method, lenght_validate.merge(if: lambda { |translation| translation.locale == I18n.default_locale })
+        end
+        if options.count > 1
+          translation_class.instance_eval do
+            validates method, options.reject { |key| key == :length }
+          end
+        end
+      else
+        translation_class.instance_eval { validates method, options }
+      end
     end
 
     def translation_class_delegate(method)

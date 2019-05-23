@@ -75,6 +75,11 @@ namespace :settings do
     Setting.rename_key from: "feature.homepage.widgets.feeds.processes", to: "homepage.widgets.feeds.processes"
   end
 
+  desc "Create remote translations setting"
+  task create_remote_translations_setting: :environment do
+    Setting["feature.remote_translations"] = nil
+  end
+
   desc "Create new translation interface feature setting with default value"
   task create_translation_interface_setting: :environment do
     Setting["feature.translation_interface"] = nil
