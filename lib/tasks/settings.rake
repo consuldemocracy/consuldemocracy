@@ -80,4 +80,9 @@ namespace :settings do
     Setting["feature.remote_translations"] = nil
   end
 
+  desc "Create new translation interface feature setting with default value"
+  task create_translation_interface_setting: :environment do
+    Setting["feature.translation_interface"] = nil
+  end
+
 end
