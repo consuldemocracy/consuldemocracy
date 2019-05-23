@@ -846,10 +846,6 @@ zh-CN:
         geozone_restricted: "限于区内"
       new:
         title: "新的投票项"
-        show_results_and_stats: "显示结果和统计信息"
-        show_results: "显示结果"
-        show_stats: "显示统计信息"
-        results_and_stats_reminder: "标记这些复选框可以公开得到此投票项的结果和／或统计信息，每个用户都可以看到它们。"
         submit_button: "创建投票项"
       edit:
         title: "编辑投票项"
