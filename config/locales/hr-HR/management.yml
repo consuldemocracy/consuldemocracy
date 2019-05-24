@@ -1,5 +1,7 @@
 hr:
   management:
+    budgets:
+      no_budgets: Ne postoje aktivni participativni budžeti.
     users:
       erased_notice: Korisnički račun obrisan.
       erased_by_manager: "Obrisan od strane administratora: %{manager}"
