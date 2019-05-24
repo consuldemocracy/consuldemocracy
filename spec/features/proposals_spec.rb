@@ -977,6 +977,26 @@ feature "Proposals" do
       expect(page).not_to have_selector("#proposals .proposal-featured")
       expect(page).not_to have_selector("#featured-proposals")
     end
+
+    scenario "do not show recommented proposal in selected proposals list" do
+      create(:proposal, title: "Recommended", cached_votes_up: 10, tag_list: "Economy")
+
+      user = create(:user)
+      create(:follow, followable: create(:proposal, tag_list: "Economy"), user: user)
+
+      login_as(user)
+      visit proposals_path
+
+      expect(page).to have_css(".recommendation", count: 1)
+      expect(page).to have_link "Recommended"
+      expect(page).to have_link "See more recommendations"
+
+      click_link "Selected proposals"
+
+      expect(page).not_to have_css ".recommendation"
+      expect(page).not_to have_link "Recommended"
+      expect(page).not_to have_link "See more recommendations"
+    end
   end
 
   context "Search" do
