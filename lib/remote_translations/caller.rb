@@ -1,4 +1,4 @@
-class RemoteTranslationsCaller
+class RemoteTranslations::Caller
   attr_reader :remote_translation
 
   def initialize(remote_translation)
