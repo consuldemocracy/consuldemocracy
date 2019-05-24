@@ -52,10 +52,75 @@ hr:
             other: "greške ne dozvoljavaju ovoj zastavi da se spremi"
       new:
         creating: Stvori zastavu
+    activity:
+      show:
+        action: Akcija
+        actions:
+          block: Blokirano
+          hide: Skriveno
+          restore: Obnovljeno
+        by: Uređeno od
+        content: Sadržaj
+        filter: Prikaži
+        filters:
+          all: Svi
+          on_comments: Komentari
+          on_debates: Rasprave
+          on_proposals: Prijedlozi
+          on_users: Krosnici
+          on_system_emails: Emailovi sustava
+        title: Aktivnosti moderatora
+        type: Tip
+        no_activity: Ne postoje moderatorske aktivnosti.
     budgets:
       index:
+        title: Participativni budžeti
+        new_link: Stvori novi budžet
+        filter: Filter
+        filters:
+          open: Otvoreno
+          finished: Dovršeno
+        budget_investments: Upravljaj projektima
+        table_name: Ime
+        table_phase: Faza
+        table_investments: Investicije
         table_edit_groups: Tematska grupa
+        table_edit_budget: Uredi
+        table_admin_ballots: Glasački listići
+        edit_groups: Uredi naslov grupa
+        edit_budget: Uredi budžet
+        admin_ballots: Glasovi admina
+        no_budgets: "Ne postoje budžeti."
+      create:
+        notice: Novi participativni budžet je stvoren uspješno!
+      update:
+        notice: Participativni budžet je ažuriran uspješno
+      edit:
+        title: Uredi Participativni budžet
+        delete: Obriši budžet
+        phase: Faza
+        dates: Datumi
+        enabled: Omogućeno
+        actions: Akcije
+        edit_phase: Uredi fazu
+        active: Aktivirati
+        blank_dates: Datumi su prazni
+      destroy:
+        success_notice: Budžet je uspješno obrisan
+        unable_notice: Ne možete obrisati budžet koji ima povezane investicije
+        unable_notice_polls: Nemožete obrisati budžet koji ima povezane glasove
+      new:
+        title: Novi participativni budžet
+      winners:
+        calculate: Izračunaj Pobjedničke Investicije
+        calculated: Pobjednici se izračunavaju, potrebna je minuta.
+        recalculate: Ponovno Izračunaj Pobjedničke Investicije
     budget_groups:
+      name: "Ime"
+      headings_name: "Naslovi"
+      headings_edit: "Uredi Naslove"
+      headings_manage: "Upravljaj naslovima"
+      max_votable_headings: "Maksimalni broj naslova za koje korisnik može glasati"
       no_groups: "Nema grupa."
       amount:
         one: "Postoji 1 grupa"
@@ -67,19 +132,75 @@ hr:
         notice: "Grupa je ažurirana uspješno"
       destroy:
         success_notice: "Grupa je uspješno obrisana"
+        unable_notice: "Ne možete obrisati Grupu koja ima povezane naslove"
       form:
         create: "Stvori novu grupu"
         edit: "Uredi grupu"
         name: "Ime grupe"
         submit: "Spremi grupu"
+      index:
+        back: "Idi nazad na budžet"
     budget_headings:
+      name: "Ime"
+      no_headings: "Ne postoje naslovi."
+      amount:
+        one: "Postoji 1 naslov"
+        few: "Postoje %{count} naslovi"
+        other: "Postoje %{count} naslovi"
+      create:
+        notice: "Naslov je uspješno stvoren!"
+      update:
+        notice: "Naslov je uspješno ažuriran"
+      destroy:
+        success_notice: "Naslov je uspješno obrisan"
+        unable_notice: "Ne možete obrisati Naslov koji ima povezane investicije"
+      form:
+        name: "Ime naslova"
+        amount: "Iznos"
+        population: "Populacija (neobavezno)"
+        population_info: "Naslov Budžeta kod populacijskog polja koje se koristi za Statističke svrhe je na kraju budžeta kako bi se pokazao svaki Naslov koji predstavlja područje s postotkom populacije koja je glasala. Polje je neobavezno, pa ga možete ostaviti praznom ako se ne odnosi."
+        latitude: "Visina (neobaveno)"
+        longitude: "Širina (neobavezno)"
+        coordinates_info: "Ako je visina i širina dostupna stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
+        allow_content_block: "Dopusti blokiranje sadržaja"
+        content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj je povezan s ovim naslovom od sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
+        create: "Stvori novi naslov"
+        edit: "Uredi naslov"
+        submit: "Spremi naslov"
       index:
         back: "Idi nazad na grupu"
+    budget_phases:
+      edit:
+        start_date: Datum početka
+        end_date: Datum završetka
+        summary: Sašetak
+        summary_help_text: Ovaj tekst će vas informirati korisnika o fazi. Kako biste to mogući tokom faze koja nije aktivirana odaberite kućicu dolje
+        description: Opis
+        description_help_text: Ovaj tekst će se pojavljiti u naslovu kada je ova faza aktivna
+        enabled: Faza omogućena
+        enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a tako i aktivna za ostale svrhe
+        save_changes: Spremi promjene
     budget_investments:
       index:
+        heading_filter_all: Svi naslovi
+        administrator_filter_all: Svi administratori
+        valuator_filter_all: Svi procjenitelji
+        tags_filter_all: Sve oznake
+        advanced_filters: Napredni filtri
+        placeholder: Pretraži projetke
         filters:
+          all: Svi
+          without_admin: Bez dodjeljenog admina
+          without_valuator: Bez dodijeljenog procjenitelja
+          under_valuation: U toku procjene
+          valuation_finished: Evaluacija dovršena
+          feasible: Izvodljivo
+          selected: Odabrano
+          undecided: Nije odlučeno
+          unfeasible: Nevažeč
           min_total_supports: Minimalna potpora
           max_total_supports: Maksimalna potpora
+          winners: Pobjednici
         list:
           supports: Potpore
           valuation_group: Grupa procjenitelja
