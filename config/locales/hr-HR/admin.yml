@@ -399,6 +399,9 @@ hr:
             poster: Poster
         new:
           creating: Nova akcija za glavni izbornik prijedloga
+          back: Nazad na listu
+        create:
+          notice: Djleovanje je uspješno stvoreno
     legislation:
       processes:
         proposals:
