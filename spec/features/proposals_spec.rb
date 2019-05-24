@@ -997,6 +997,22 @@ feature "Proposals" do
       expect(page).not_to have_link "Recommended"
       expect(page).not_to have_link "See more recommendations"
     end
+
+    scenario "do not show order links in selected proposals list" do
+      visit proposals_path
+
+      expect(page).to have_css  "ul.submenu"
+      expect(page).to have_link "most active"
+      expect(page).to have_link "highest rated"
+      expect(page).to have_link "newest"
+
+      click_link "Selected proposals"
+
+      expect(page).not_to have_css  "ul.submenu"
+      expect(page).not_to have_link "most active"
+      expect(page).not_to have_link "highest rated"
+      expect(page).not_to have_link "newest"
+    end
   end
 
   context "Search" do

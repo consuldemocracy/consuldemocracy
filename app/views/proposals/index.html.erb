@@ -82,7 +82,9 @@
                    search_path: proposals_path(page: 1) %>
       <% end %>
 
-      <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+      <% unless params[:selected].present? %>
+        <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+      <% end %>
 
       <% if @proposals.any? %>
         <div class="show-for-small-only">
