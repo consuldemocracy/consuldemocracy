@@ -179,13 +179,14 @@ feature "Proposals" do
   end
 
   context "Show on mobile screens" do
+    let!(:window_size) { Capybara.current_window.size }
 
     before do
-      Capybara.page.driver.browser.manage.window.resize_to(640, 480)
+      Capybara.current_window.resize_to(640, 480)
     end
 
     after do
-      Capybara.page.driver.browser.manage.window.maximize
+      Capybara.current_window.resize_to(*window_size)
     end
 
     scenario "Show support button sticky at bottom", :js do
