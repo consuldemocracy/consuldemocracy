@@ -12,6 +12,8 @@ describe RemoteTranslations::Caller do
 
   describe "#call" do
 
+    let(:client) { RemoteTranslations::Microsoft::Client }
+
     context "Debates" do
 
       let(:debate)             { create(:debate) }
@@ -21,7 +23,7 @@ describe RemoteTranslations::Caller do
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -30,7 +32,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale skip length validations" do
         response = ["TT", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -41,7 +43,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
         response = ["", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -52,7 +54,7 @@ describe RemoteTranslations::Caller do
 
       it "destroy remote translation instance" do
         response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -70,7 +72,7 @@ describe RemoteTranslations::Caller do
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida", "Pregunta traducida",
                     "Resumen traducido", nil]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -79,7 +81,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
         response = ["TT", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -90,7 +92,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale do not skip presence validations" do
         response = ["", "Descripción traducida", "Pregunta traducida", "Resumen traducido", nil]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -102,7 +104,7 @@ describe RemoteTranslations::Caller do
       it "destroy remote translation instance" do
         response = ["Título traducido", "Descripción traducida", "Pregunta traducida",
                     "Resumen traducido", nil]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -120,7 +122,7 @@ describe RemoteTranslations::Caller do
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -129,7 +131,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
         response = ["TT", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -140,7 +142,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
         response = ["", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -151,7 +153,7 @@ describe RemoteTranslations::Caller do
 
       it "destroy remote translation instance" do
         response = ["Título traducido", "Descripción traducida"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -168,7 +170,7 @@ describe RemoteTranslations::Caller do
 
       it "returns the resource with new translation persisted" do
         response = ["Body traducido"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -177,7 +179,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale skip lenght validations" do
         response = ["BT"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -188,7 +190,7 @@ describe RemoteTranslations::Caller do
 
       it "when new translation locale is distinct to default_locale not skip presence validations" do
         response = [""]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
@@ -199,7 +201,7 @@ describe RemoteTranslations::Caller do
 
       it "destroy remote translation instance" do
         response = ["Body traducido"]
-        expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(response)
+        expect_any_instance_of(client).to receive(:call).and_return(response)
 
         caller.call
 
