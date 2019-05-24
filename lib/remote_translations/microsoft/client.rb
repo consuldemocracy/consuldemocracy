@@ -1,5 +1,5 @@
 require "translator-text"
-include SentencesParser
+include RemoteTranslations::Microsoft::SentencesParser
 include RemoteTranslations::Microsoft::AvailableLocales
 
 class RemoteTranslations::Microsoft::Client
