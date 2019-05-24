@@ -142,7 +142,11 @@ class ProposalsController < ApplicationController
     end
 
     def load_selected
-      @resources = @resources.selected if params[:selected].present?
+      if params[:selected].present?
+        @resources = @resources.selected
+      else
+        @resources = @resources.not_selected
+      end
     end
 
     def load_featured

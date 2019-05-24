@@ -867,11 +867,11 @@ describe Proposal do
   end
 
   describe "selected" do
-    let!(:unselected_proposal) { create(:proposal) }
+    let!(:not_selected_proposal) { create(:proposal) }
     let!(:selected_proposal)   { create(:proposal, :selected) }
 
     it "selected? is true" do
-      expect(unselected_proposal.selected?).to be false
+      expect(not_selected_proposal.selected?).to be false
       expect(selected_proposal.selected?).to be true
     end
 
@@ -880,6 +880,13 @@ describe Proposal do
 
       expect(selected.size).to be 1
       expect(selected.first).to eq selected_proposal
+    end
+
+    it "scope not_selected" do
+      not_selected = Proposal.not_selected
+
+      expect(not_selected.size).to be 1
+      expect(not_selected.first).to eq not_selected_proposal
     end
   end
 
