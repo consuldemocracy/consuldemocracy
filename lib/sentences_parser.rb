@@ -1,7 +1,7 @@
 module SentencesParser
 
   def detect_split_position(text)
-    minimum_valid_index = text.size - MicrosoftTranslateClient::CHARACTERS_LIMIT_PER_REQUEST
+    minimum_valid_index = text.size - RemoteTranslations::Microsoft::Client::CHARACTERS_LIMIT_PER_REQUEST
     valid_point = text[minimum_valid_index..text.size].index(".")
     valid_whitespace = text[minimum_valid_index..text.size].index(" ")
 
