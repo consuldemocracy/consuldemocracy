@@ -3,7 +3,7 @@ require "uri"
 require "cgi"
 require "json"
 
-module RemoteAvailableLocales
+module RemoteTranslations::Microsoft::AvailableLocales
 
   def load_remote_locales
     remote_available_locales.map { |locale| locale.first }
