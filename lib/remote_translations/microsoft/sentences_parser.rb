@@ -1,4 +1,4 @@
-module SentencesParser
+module RemoteTranslations::Microsoft::SentencesParser
 
   def detect_split_position(text)
     minimum_valid_index = text.size - RemoteTranslations::Microsoft::Client::CHARACTERS_LIMIT_PER_REQUEST
