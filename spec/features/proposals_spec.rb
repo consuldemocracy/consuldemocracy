@@ -955,6 +955,13 @@ feature "Proposals" do
       expect(page).to have_content selected_proposal.title
       expect(page).not_to have_content not_selected_proposal.title
     end
+
+    scenario "show a selected proposal message in show view" do
+      visit proposal_path(selected_proposal)
+
+      within("aside") { expect(page).not_to have_content "SUPPORTS" }
+      within("aside") { expect(page).to have_content "Selected proposal" }
+    end
   end
 
   context "Search" do

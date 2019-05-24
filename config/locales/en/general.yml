@@ -444,6 +444,7 @@ en:
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
       successful: "This proposal has reached the required supports."
+      selected: "Selected proposal"
     show:
       author_deleted: User deleted
       code: "Proposal code:"

@@ -444,6 +444,7 @@ es:
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
+      selected: "Propuesta seleccionada"
     show:
       author_deleted: Usuario eliminado
       code: "Código de la propuesta:"
