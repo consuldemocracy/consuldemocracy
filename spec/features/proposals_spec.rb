@@ -962,6 +962,21 @@ feature "Proposals" do
       within("aside") { expect(page).not_to have_content "SUPPORTS" }
       within("aside") { expect(page).to have_content "Selected proposal" }
     end
+
+    scenario "do not show featured proposal in selected proposals list" do
+      Setting["feature.featured_proposals"] = true
+      create_featured_proposals
+
+      visit proposals_path
+
+      expect(page).to have_selector("#proposals .proposal-featured")
+      expect(page).to have_selector("#featured-proposals")
+
+      click_link "Selected proposals"
+
+      expect(page).not_to have_selector("#proposals .proposal-featured")
+      expect(page).not_to have_selector("#featured-proposals")
+    end
   end
 
   context "Search" do
