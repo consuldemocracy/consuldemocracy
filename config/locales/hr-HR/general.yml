@@ -1025,6 +1025,28 @@ hr:
   annotator:
     help:
       alt: Odaberi tekst koji želiš komentirati i pritisni gumb s olovkom.
+      text: Da biste komentirali ovaj dokument morate %{sign_in} ili %{sign_up}. Kako bi odabrali tekst koji želite komentirati pritisnite gumb s olovkom.
+      text_sign_in: prijavite se
+      text_sign_up: registriraj se
+      title: Kako mogu komentirati ovaj dokument?
+  links:
+    form:
+      delete_button: Izbriši
+      cancel_button: Otkaži
+    nested_links:
+      title: Poveznice
+      note: Dodaj poveznice koje vas zanimaju
+      add_new_link: Dodaj novu poveznicu
+    link_fields:
+      label_placeholder: Naslov poveznice
+      url_placeholder: Adresa poveznice
   communities:
     show:
+      send_notification: Pošalji poruku u zajednicu
       author: Autor
+      surveys: Ankete
+      complete_survey: Dovrši aneketu
+    subnav:
+      surveys: Ankete
+    poll:
+      take_part: Sudjeluj od %{from} do %{to}
