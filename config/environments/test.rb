@@ -1,6 +1,18 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Some tests require the following languages (en, es, fr, nl, pt-BR)
+  # so we override the available languages for the test environment.
+  config.i18n.default_locale = :en
+  available_locales = [
+    "en",
+    "es",
+    "fr",
+    "nl",
+    "pt-BR"
+  ]
+  config.i18n.available_locales = available_locales
+
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
