@@ -1,7 +1,6 @@
 class I18nContent < ApplicationRecord
 
   scope :by_key,          ->(key) { where(key: key) }
-  scope :begins_with_key, ->(key) { where("key ILIKE ?", "#{key}%") }
 
   validates :key, uniqueness: true
 
@@ -46,4 +45,55 @@ class I18nContent < ApplicationRecord
     return output
   end
 
+  def self.content_for(tab)
+    translations_for(tab).map do |string|
+      I18nContent.find_or_initialize_by(key: string)
+    end
+  end
+
+  def self.translations_for(tab)
+    if tab.to_s == "basic"
+      basic_translations
+    else
+      flat_hash(translations_hash_for(tab)).keys
+    end
+  end
+
+  def self.translations_hash_for(tab)
+    I18n.backend.send(:init_translations) unless I18n.backend.initialized?
+
+    I18n.backend.send(:translations)[I18n.locale].select do |key, _translations|
+      key.to_s == tab.to_s
+    end
+  end
+
+  def self.basic_translations
+    %w[
+      debates.index.section_footer.title
+      debates.index.section_footer.description
+      debates.index.section_footer.help_text_1
+      debates.index.section_footer.help_text_2
+      debates.new.info
+      debates.new.info_link
+      debates.new.more_info
+      debates.new.recommendation_one
+      debates.new.recommendation_two
+      debates.new.recommendation_three
+      debates.new.recommendation_four
+      debates.new.recommendations_title
+      proposals.index.section_footer.title
+      proposals.index.section_footer.description
+      proposals.new.more_info
+      proposals.new.recommendation_one
+      proposals.new.recommendation_two
+      proposals.new.recommendation_three
+      proposals.new.recommendations_title
+      polls.index.section_footer.title
+      polls.index.section_footer.description
+      legislation.processes.index.section_footer.title
+      legislation.processes.index.section_footer.description
+      budgets.index.section_footer.title
+      budgets.index.section_footer.description
+    ]
+  end
 end

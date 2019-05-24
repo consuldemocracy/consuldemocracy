@@ -1,0 +1,28 @@
+<div id="participants_by_age" class="stats-group">
+  <h4><%= t("stats.by_age") %></h4>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="small-4"><%= t("stats.age") %></th>
+        <th><%= t("stats.total") %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% stats.participants_by_age.values.each do |group| %>
+        <tr>
+          <td><%= group[:range] %></td>
+          <td>
+            <strong>
+              <%= "#{group[:count]} (#{number_to_stats_percentage(group[:percentage])})" %>
+            </strong>
+            <div class="progress" tabindex="0">
+              <span class="progress-meter" style="width: <%= group[:percentage] %>%"></span>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

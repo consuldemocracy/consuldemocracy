@@ -148,7 +148,17 @@ feature "Admin budgets" do
       click_link "Edit budget"
       click_link "Delete budget"
 
-      expect(page).to have_content("You cannot delete a Budget that has associated investments")
+      expect(page).to have_content("You cannot delete a budget that has associated investments")
+      expect(page).to have_content("There is 1 budget")
+    end
+
+    scenario "Try to destroy a budget with polls" do
+      create(:poll, budget: budget)
+
+      visit edit_admin_budget_path(budget)
+      click_link "Delete budget"
+
+      expect(page).to have_content("You cannot delete a budget that has an associated poll")
       expect(page).to have_content("There is 1 budget")
     end
   end
@@ -259,7 +269,7 @@ feature "Admin budgets" do
     end
 
     scenario "For a finished Budget" do
-      budget = create(:budget, phase: "finished")
+      budget = create(:budget, :finished)
       allow_any_instance_of(Budget).to receive(:has_winning_investments?).and_return(true)
 
       visit edit_admin_budget_path(budget)
@@ -269,7 +279,7 @@ feature "Admin budgets" do
     end
 
     scenario "Recalculate for a finished Budget" do
-      budget = create(:budget, phase: "finished")
+      budget = create(:budget, :finished)
       group = create(:budget_group, budget: budget)
       heading = create(:budget_heading, group: group)
       create(:budget_investment, :winner, heading: heading)

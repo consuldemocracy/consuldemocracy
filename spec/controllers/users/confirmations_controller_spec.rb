@@ -7,7 +7,7 @@ describe Users::ConfirmationsController do
 
   describe "GET show" do
     it "returns a 404 code with a wrong token" do
-      expect { get :show, token: "non_existent" }.to raise_error ActiveRecord::RecordNotFound
+      expect { get :show, params: { token: "non_existent" } }.to raise_error ActiveRecord::RecordNotFound
     end
   end
 end

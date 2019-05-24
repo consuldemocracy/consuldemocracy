@@ -13,7 +13,7 @@ class Poll::Question < ApplicationRecord
 
   has_many :comments, as: :commentable
   has_many :answers, class_name: "Poll::Answer"
-  has_many :question_answers, -> { order "given_order asc" }, class_name: "Poll::Question::Answer"
+  has_many :question_answers, -> { order "given_order asc" }, class_name: "Poll::Question::Answer", dependent: :destroy
   has_many :partial_results
   belongs_to :proposal
 
@@ -59,7 +59,10 @@ class Poll::Question < ApplicationRecord
   end
 
   def answers_total_votes
-    question_answers.map { |a| Poll::Answer.where(question_id: self, answer: a.title).count }.sum
+    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
+  def most_voted_answer_id
+    question_answers.max_by { |answer| answer.total_votes }.id
+  end
 end

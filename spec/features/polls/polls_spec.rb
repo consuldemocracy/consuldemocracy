@@ -114,7 +114,7 @@ feature "Polls" do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll))
+      expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
     end
 
     scenario "Poll title link to results if enabled" do
@@ -122,13 +122,23 @@ feature "Polls" do
 
       visit polls_path
 
-      expect(page).to have_link("Poll with results", href: results_poll_path(poll))
+      expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
     end
   end
 
   context "Show" do
     let(:geozone) { create(:geozone) }
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
+
+    scenario "Visit path with id" do
+      visit poll_path(poll.id)
+      expect(page).to have_current_path(poll_path(poll.id))
+    end
+
+    scenario "Visit path with slug" do
+      visit poll_path(poll.slug)
+      expect(page).to have_current_path(poll_path(poll.slug))
+    end
 
     scenario "Show answers with videos" do
       question = create(:poll_question, poll: poll)
@@ -422,7 +432,18 @@ feature "Polls" do
       expect(page).to have_content("Questions")
 
       visit stats_poll_path(poll)
+
       expect(page).to have_content("Participation data")
+      expect(page).not_to have_content "Advanced statistics"
+    end
+
+    scenario "Advanced stats enabled" do
+      poll = create(:poll, :expired, stats_enabled: true, advanced_stats_enabled: true)
+
+      visit stats_poll_path(poll)
+
+      expect(page).to have_content "Participation data"
+      expect(page).to have_content "Advanced statistics"
     end
 
     scenario "Don't show poll results and stats if not enabled" do
@@ -482,5 +503,20 @@ feature "Polls" do
       expect(page).not_to have_content("Poll results")
       expect(page).not_to have_content("Participation statistics")
     end
+
+    scenario "Generates navigation links for polls without a slug" do
+      poll = create(:poll, :expired, results_enabled: true, stats_enabled: true)
+      poll.update_column(:slug, nil)
+
+      visit poll_path(poll)
+
+      expect(page).to have_link "Participation statistics"
+      expect(page).to have_link "Poll results"
+
+      click_link "Poll results"
+
+      expect(page).to have_link "Information"
+    end
+
   end
 end

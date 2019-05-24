@@ -1407,6 +1407,32 @@ feature "Admin budget investments" do
       end
     end
 
+    scenario "Show only selected text when budget is finished" do
+      budget.update(phase: "finished")
+
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#budget_investment_#{unfeasible_bi.id} #selection") do
+        expect(page).not_to have_content("Select")
+        expect(page).not_to have_content("Selected")
+      end
+
+      within("#budget_investment_#{feasible_bi.id} #selection") do
+        expect(page).not_to have_content("Select")
+        expect(page).not_to have_content("Selected")
+      end
+
+      within("#budget_investment_#{feasible_vf_bi.id} #selection") do
+        expect(page).not_to have_content("Select")
+        expect(page).not_to have_content("Selected")
+      end
+
+      within("#budget_investment_#{selected_bi.id} #selection") do
+        expect(page).not_to contain_exactly("Select")
+        expect(page).to have_content("Selected")
+      end
+    end
+
     scenario "Selecting an investment", :js do
       visit admin_budget_budget_investments_path(budget)
 
@@ -1516,7 +1542,7 @@ feature "Admin budget investments" do
 
       login_as(valuator.user.reload)
       visit root_path
-      click_link "Admin"
+      click_link "Menu"
       click_link "Valuation"
 
       within "#budget_#{budget.id}" do

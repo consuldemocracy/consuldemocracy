@@ -1,7 +1,7 @@
 class Poll
   class Voter < ApplicationRecord
 
-    VALID_ORIGINS = %w{web booth}.freeze
+    VALID_ORIGINS = %w[web booth letter].freeze
 
     belongs_to :poll
     belongs_to :user
@@ -20,8 +20,9 @@ class Poll
 
     before_validation :set_demographic_info, :set_document_info, :set_denormalized_booth_assignment_id
 
-    scope :web,   -> { where(origin: "web") }
-    scope :booth, -> { where(origin: "booth") }
+    scope :web,    -> { where(origin: "web") }
+    scope :booth,  -> { where(origin: "booth") }
+    scope :letter, -> { where(origin: "letter") }
 
     def set_demographic_info
       return if user.blank?

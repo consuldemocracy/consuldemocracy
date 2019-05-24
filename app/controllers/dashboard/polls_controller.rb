@@ -15,8 +15,7 @@ class Dashboard::PollsController < Dashboard::BaseController
   def create
     authorize! :manage_polls, proposal
 
-    @poll = Poll.new(poll_params.merge(author: current_user, related: proposal,
-                                       stats_enabled: false))
+    @poll = Poll.new(poll_params.merge(author: current_user, related: proposal))
     if @poll.save
       redirect_to proposal_dashboard_polls_path(proposal), notice: t("flash.actions.create.poll")
     else
@@ -54,7 +53,7 @@ class Dashboard::PollsController < Dashboard::BaseController
     end
 
     def poll_attributes
-      [:name, :starts_at, :ends_at, :description, :results_enabled, :stats_enabled,
+      [:name, :starts_at, :ends_at, :description, :results_enabled,
        questions_attributes: question_attributes]
     end
 

@@ -5,6 +5,7 @@ describe Budget do
   let(:budget) { create(:budget) }
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
+  it_behaves_like "reportable"
 
   describe "name" do
     before do
@@ -97,33 +98,55 @@ describe Budget do
       expect(budget).to be_finished
     end
 
-    it "balloting_or_later?" do
-      budget.phase = "drafting"
-      expect(budget).not_to be_balloting_or_later
+    describe "#valuating_or_later?" do
+      it "returns false before valuating" do
+        budget.phase = "selecting"
+        expect(budget).not_to be_valuating_or_later
+      end
 
-      budget.phase = "accepting"
-      expect(budget).not_to be_balloting_or_later
+      it "returns true while valuating" do
+        budget.phase = "valuating"
+        expect(budget).to be_valuating_or_later
+      end
 
-      budget.phase = "reviewing"
-      expect(budget).not_to be_balloting_or_later
+      it "returns true after valuating" do
+        budget.phase = "publishing_prices"
+        expect(budget).to be_valuating_or_later
+      end
+    end
 
-      budget.phase = "selecting"
-      expect(budget).not_to be_balloting_or_later
+    describe "#publishing_prices_or_later?" do
+      it "returns false before publishing prices" do
+        budget.phase = "valuating"
+        expect(budget).not_to be_publishing_prices_or_later
+      end
 
-      budget.phase = "valuating"
-      expect(budget).not_to be_balloting_or_later
+      it "returns true while publishing prices" do
+        budget.phase = "publishing_prices"
+        expect(budget).to be_publishing_prices_or_later
+      end
 
-      budget.phase = "publishing_prices"
-      expect(budget).not_to be_balloting_or_later
+      it "returns true after publishing prices" do
+        budget.phase = "balloting"
+        expect(budget).to be_publishing_prices_or_later
+      end
+    end
 
-      budget.phase = "balloting"
-      expect(budget).to be_balloting_or_later
+    describe "#balloting_or_later?" do
+      it "returns false before balloting" do
+        budget.phase = "publishing_prices"
+        expect(budget).not_to be_balloting_or_later
+      end
 
-      budget.phase = "reviewing_ballots"
-      expect(budget).to be_balloting_or_later
+      it "returns true while balloting" do
+        budget.phase = "balloting"
+        expect(budget).to be_balloting_or_later
+      end
 
-      budget.phase = "finished"
-      expect(budget).to be_balloting_or_later
+      it "returns true after balloting" do
+        budget.phase = "finished"
+        expect(budget).to be_balloting_or_later
+      end
     end
   end
 

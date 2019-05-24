@@ -27,6 +27,28 @@ describe UserSegments do
     end
   end
 
+  describe "#all_proposal_authors" do
+    it "returns users that have created a proposal even if is archived or retired" do
+      create(:proposal, author: user1)
+      create(:proposal, :archived, author: user2)
+      create(:proposal, retired_at: Time.current, author: user3)
+
+      all_proposal_authors = described_class.all_proposal_authors
+      expect(all_proposal_authors).to include user1
+      expect(all_proposal_authors).to include user2
+      expect(all_proposal_authors).to include user3
+    end
+
+    it "does not return duplicated users" do
+      create(:proposal, author: user1)
+      create(:proposal, :archived, author: user1)
+      create(:proposal, retired_at: Time.current, author: user1)
+
+      all_proposal_authors = described_class.all_proposal_authors
+      expect(all_proposal_authors).to contain_exactly(user1)
+    end
+  end
+
   describe "#proposal_authors" do
     it "returns users that have created a proposal" do
       proposal = create(:proposal, author: user1)

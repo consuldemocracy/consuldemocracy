@@ -36,7 +36,7 @@ Lint/UselessAssignment:
   Enabled: true
 
 Metrics/LineLength:
-  Max: 100
+  Max: 110
 
 RSpec/NotToNot:
   Enabled: true

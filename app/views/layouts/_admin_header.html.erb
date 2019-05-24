@@ -19,12 +19,21 @@
       <div class="top-bar-left">
         <ul class="menu">
           <li class="menu-text">
-            <h1>
-              <%= link_to namespaced_root_path do %>
-                <%= setting["org_name"] %>
-                <br><small><%= namespaced_header_title %></small>
-              <% end %>
-            </h1>
+            <% if namespace == "officing" %>
+              <h1>
+                <%= link_to "#" do %>
+                  <%= setting["org_name"] %>
+                  <br><small><%= namespaced_header_title %></small>
+                <% end %>
+              </h1>
+            <% else %>
+              <h1>
+                <%= link_to namespaced_root_path do %>
+                  <%= setting["org_name"] %>
+                  <br><small><%= namespaced_header_title %></small>
+                <% end %>
+              </h1>
+            <% end %>
           </li>
         </ul>
       </div>
@@ -32,7 +41,6 @@
       <div id="responsive_menu">
         <div class="top-bar-right">
           <ul class="dropdown menu" data-dropdown-menu>
-            <%= render "admin/shared/admin_shortcuts" %>
             <%= render "shared/admin_login_items" %>
             <%= render "layouts/notification_item" %>
             <%= render "devise/menu/login_items" %>

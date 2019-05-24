@@ -106,7 +106,8 @@ en:
         blank_dates: Dates are blank
       destroy:
         success_notice: Budget deleted successfully
-        unable_notice: You cannot delete a Budget that has associated investments
+        unable_notice: You cannot delete a budget that has associated investments
+        unable_notice_polls: You cannot delete a budget that has an associated poll
       new:
         title: New participatory budget
       winners:
@@ -702,6 +703,7 @@ en:
         content_blocks: Custom content blocks
         information_texts: Custom information texts
         information_texts_menu:
+          basic: "Basic customization"
           debates: "Debates"
           community: "Community"
           proposals: "Proposals"
@@ -752,6 +754,7 @@ en:
     segment_recipient:
       all_users: All users
       administrators: Administrators
+      all_proposal_authors: Proposal authors (including archived and retired)
       proposal_authors: Proposal authors
       investment_authors: Investment authors in the current budget
       feasible_and_undecided_investment_authors: "Authors of some investment in the current budget that does not comply with: [valuation finished unfesasible]"
@@ -779,6 +782,8 @@ en:
       new:
         title: New newsletter
         from: E-mail address that will appear as sending the newsletter
+        header_footer_help_text_html: "The heading and footer are the same for all emails, you can modify them on <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br>You can replace header image on %{link}."
+        image_link: "custom images"
       edit:
         title: Edit newsletter
       show:
@@ -793,7 +798,7 @@ en:
         segment_recipient: Recipients
         from: E-mail address that will appear as sending the newsletter
         body: Email content
-        body_help_text: This is how the users will see the email
+        body_help_text: This is how the users will see the email.
         send_alert: Are you sure you want to send this newsletter to %{n} users?
     admin_notifications:
       create_success: Notification created successfully
@@ -949,6 +954,7 @@ en:
         email_placeholder: Search user by email
         search: Search
         user_not_found: User not found
+        help: "To add or remove Poll officers use the search form below."
     poll_officer_assignments:
       index:
         officers_title: "List of officers"
@@ -1034,7 +1040,7 @@ en:
     polls:
       index:
         title: "List of polls"
-        no_polls: "There are no polls coming up."
+        no_polls: "There are no polls."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
@@ -1043,10 +1049,6 @@ en:
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
-        show_results_and_stats: "Show results and stats"
-        show_results: "Show results"
-        show_stats: "Show stats"
-        results_and_stats_reminder: "Marking these checkboxes the results and/or stats of this poll will be publicly available and every user will see them."
         submit_button: "Create poll"
       edit:
         title: "Edit poll"
@@ -1065,6 +1067,10 @@ en:
       flash:
         question_added: "Question added to this poll"
         error_on_question_added: "Question could not be assigned to this poll"
+      destroy:
+        alert: "This action will remove the poll and all its associated questions."
+        success_notice: "Poll deleted successfully"
+        unable_notice: "You cannot delete a poll that has votes"
     questions:
       index:
         title: "Questions"
@@ -1320,6 +1326,8 @@ en:
       created_at: Created at
       delete: Delete
       color_help: Hexadecimal format
+      show_results_and_stats: "Show results and stats"
+      results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1595,6 +1603,7 @@ en:
           see_page: See page
         new:
           title: Create new custom page
+          slug_help_html: "Text to identify this page on URL, for example <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Created at
           status: Status

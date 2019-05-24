@@ -7,16 +7,7 @@ describe Budget::Phase do
   let(:second_phase)  { budget.phases.informing }
   let(:third_phase) { budget.phases.accepting }
   let(:fourth_phase)  { budget.phases.reviewing }
-  let(:fifth_phase) { budget.phases.selecting }
   let(:final_phase) { budget.phases.finished}
-
-  before do
-    first_phase.update_attributes(starts_at: Date.current - 3.days, ends_at: Date.current - 1.day)
-    second_phase.update_attributes(starts_at: Date.current - 1.days, ends_at: Date.current + 1.day)
-    third_phase.update_attributes(starts_at: Date.current + 1.days, ends_at: Date.current + 3.day)
-    fourth_phase.update_attributes(starts_at: Date.current + 3.days, ends_at: Date.current + 5.day)
-    fifth_phase.update_attributes(starts_at: Date.current + 5.days, ends_at: Date.current + 7.day)
-  end
 
   describe "validates" do
     it "is not valid without a budget" do

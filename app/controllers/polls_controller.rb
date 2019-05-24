@@ -1,6 +1,7 @@
 class PollsController < ApplicationController
   include PollsHelper
 
+  before_action :load_poll, except: [:index]
   before_action :load_active_poll, only: :index
 
   load_and_authorize_resource
@@ -32,13 +33,17 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @stats = Poll::Stats.new(@poll).generate
+    @stats = Poll::Stats.new(@poll)
   end
 
   def results
   end
 
   private
+
+    def load_poll
+      @poll = Poll.where(slug: params[:id]).first || Poll.where(id: params[:id]).first
+    end
 
     def load_active_poll
       @active_poll = ActivePoll.first

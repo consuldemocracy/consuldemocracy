@@ -551,6 +551,15 @@
   }
 }
 
+.fixed-mobile-content {
+
+  @include breakpoint(medium down) {
+    background: #fff;
+    margin-bottom: rem-calc(-1) !important;
+    padding-top: $line-height / 2;
+  }
+}
+
 // 04. List participation
 // ----------------------
 
@@ -1988,15 +1997,8 @@
 .polls-results-stats {
 
   .sidebar {
-    border-bottom: 1px solid $border;
-    margin-bottom: $line-height;
 
-    @include breakpoint(medium) {
-      border-bottom: 0;
-      border-right: 1px solid $border;
-    }
-
-    .menu {
+    .menu:not(.vertical) {
       padding: 0;
 
       li a {
@@ -2029,11 +2031,5 @@
         font-weight: bold;
       }
     }
-  }
-
-  .number {
-    font-size: rem-calc(60);
-    font-weight: bold;
-    line-height: rem-calc(60);
   }
 }

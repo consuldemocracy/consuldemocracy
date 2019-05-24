@@ -32,22 +32,11 @@ class Poll::Question::Answer < ApplicationRecord
   end
 
   def total_votes
-    Poll::Answer.where(question_id: question, answer: title).count
-  end
-
-  def most_voted?
-    most_voted
+    Poll::Answer.where(question_id: question, answer: title).count +
+      ::Poll::PartialResult.where(question: question).where(answer: title).sum(:amount)
   end
 
   def total_votes_percentage
     question.answers_total_votes.zero? ? 0 : (total_votes * 100.0) / question.answers_total_votes
-  end
-
-  def set_most_voted
-    answers = question.question_answers
-                      .map { |a| Poll::Answer.where(question_id: a.question, answer: a.title).count }
-    is_most_voted = answers.none?{ |a| a > total_votes }
-
-    update(most_voted: is_most_voted)
   end
 end

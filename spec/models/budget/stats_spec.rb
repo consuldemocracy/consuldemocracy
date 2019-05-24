@@ -1,212 +1,287 @@
 require "rails_helper"
 
 describe Budget::Stats do
+  let(:budget) { create(:budget, :finished) }
+  let(:stats) { Budget::Stats.new(budget) }
+  let(:investment) { create(:budget_investment, :selected, budget: budget) }
 
-  before(:each) do
-    @budget = create(:budget)
-    @group = create(:budget_group, budget: @budget)
-    @heading = create(:budget_heading, group: @group, price: 1000)
+  describe "#participants" do
+    let(:author) { investment.author }
+    let(:author_and_voter) { create(:user, hidden_at: Time.current) }
+    let(:voter) { create(:user) }
+    let(:voter_and_balloter) { create(:user) }
+    let(:balloter) { create(:user, hidden_at: Time.current) }
+    let(:poll_balloter) { create(:user, :level_two) }
+    let(:non_participant) { create(:user, :level_two) }
 
-    @investment1 = create(:budget_investment, :selected, author: create(:user, gender: "female"),
-                          heading: @heading, price: 200, ballot_lines_count: 900, winner: true)
-    @investment2 = create(:budget_investment, :selected, author: create(:user, gender: "female"),
-                          heading: @heading, price: 300, ballot_lines_count: 800, winner: true)
-    @investment3 = create(:budget_investment, :selected, author: create(:user, gender: "female",
-                          date_of_birth: 40.years.ago), heading: @heading, price: 400,
-                          ballot_lines_count: 880, winner: true)
-    @investment4 = create(:budget_investment, :selected, author: create(:user, gender: "male"),
-                          heading: @heading, price: 100, ballot_lines_count: 915, winner: true)
-    @investment5 = create(:budget_investment, :unfeasible, author: create(:user, gender: "male",
-                          date_of_birth: 25.years.ago), heading: @heading)
+    before do
+      create(:budget_investment, :selected, budget: budget, author: author_and_voter)
 
-    @support1 = create(:vote, votable: @investment1, voter: create(:user, gender: "male"))
-    @support2 = create(:vote, votable: @investment2, voter: create(:user))
+      create(:vote, votable: investment, voter: author_and_voter)
+      create(:vote, votable: investment, voter: voter)
+      create(:vote, votable: investment, voter: voter_and_balloter)
 
-    @budget_ballot1 = create(:budget_ballot, budget: @budget, user: create(:user, gender: "female",
-                             date_of_birth: 54.years.ago))
-    @budget_ballot2 = create(:budget_ballot, budget: @budget, user: create(:user, gender: "female"))
-    @budget_ballot3 = create(:budget_ballot, budget: @budget, user: create(:user, gender: "male"))
+      create(:budget_ballot_line, investment: investment, user: balloter)
+      create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
-    @budget_ballot_line1 = create(:budget_ballot_line, ballot: @budget_ballot1,
-                                  investment: @investment1)
-    @budget_ballot_line2 = create(:budget_ballot_line, ballot: @budget_ballot2,
-                                  investment: @investment2)
-    @budget_ballot_line3 = create(:budget_ballot_line, ballot: @budget_ballot3,
-                                  investment: @investment3)
+      create(:poll_voter, :from_booth, user: poll_balloter, budget: budget)
 
-    @poll = create(:poll, budget: @budget)
-    @poll_voter = create(:poll_voter, :from_booth, poll: @poll)
-
-    @budget_ballot4 = create(:budget_ballot, budget: @budget, physical: true, user: nil)
-    @budget_ballot_line4 = create(:budget_ballot_line, ballot: @budget_ballot4,
-                                  investment: @investment4)
-
-    @stats = Budget::Stats.new(@budget).generate
-  end
-
-  context "#total_participants" do
-
-    it "returns the number of total participants" do
-      expect(@stats[:total_participants]).to be 11
+      create(:poll_voter, :from_booth, user: non_participant, budget: create(:budget))
     end
 
+    it "returns unique participants, including authors and hidden users" do
+      expect(stats.participants).to match_array(
+        [author, author_and_voter, voter, voter_and_balloter, balloter, poll_balloter]
+      )
+      expect(stats.total_participants).to be 6
+    end
   end
 
-  context "#total_participants_support_phase" do
-
+  describe "#total_participants_support_phase" do
     it "returns the number of total participants in the support phase" do
-      expect(@stats[:total_participants_support_phase]).to be 2
+      2.times { create(:vote, votable: investment) }
+      create(:budget_ballot_line, investment: investment)
+
+      expect(stats.total_participants_support_phase).to be 2
     end
 
+    it "counts a user who is voter and balloter" do
+      voter_and_balloter = create(:user)
+      create(:vote, votable: investment, voter: voter_and_balloter)
+      create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
+
+      expect(stats.total_participants_support_phase).to be 1
+    end
   end
 
-  context "#total_participants_vote_phase" do
-
+  describe "#total_participants_vote_phase" do
     it "returns the number of total participants in the votes phase" do
-      expect(@stats[:total_participants_vote_phase]).to be 4
+      2.times { create(:budget_ballot_line, investment: investment) }
+      create(:vote, votable: investment)
+
+      expect(stats.total_participants_vote_phase).to be 2
     end
 
-  end
+    it "counts a user who is voter and balloter" do
+      voter_and_balloter = create(:user)
+      create(:vote, votable: investment, voter: voter_and_balloter)
+      create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
-  context "#total_participants_web" do
-
-    it "returns the number of total participants in the votes phase via web" do
-      expect(@stats[:total_participants_web]).to be 3
+      expect(stats.total_participants_vote_phase).to be 1
     end
 
-  end
+    it "includes balloters and poll balloters" do
+      create(:budget_ballot_line, investment: investment)
+      create(:poll_voter, :from_booth, budget: budget)
 
-  context "#total_participants_booths" do
-
-    it "returns the number of total participants in the votes phase in booths" do
-      expect(@stats[:total_participants_booths]).to be 1
+      expect(stats.total_participants_vote_phase).to be 2
     end
 
+    it "counts once a user who is balloter and poll balloter" do
+      poller_and_balloter = create(:user, :level_two)
+      create(:budget_ballot_line, investment: investment, user: poller_and_balloter)
+      create(:poll_voter, :from_booth, user: poller_and_balloter, budget: budget)
+
+      expect(stats.total_participants_vote_phase).to be 1
+    end
+
+    it "doesn't count nil user ids" do
+      create(:budget_ballot_line, investment: investment,
+        ballot: create(:budget_ballot, budget: budget, user: nil, physical: true)
+      )
+
+      expect(stats.total_participants_vote_phase).to be 0
+    end
   end
 
-  context "#total_budget_investments" do
-
+  describe "#total_budget_investments" do
     it "returns the number of total budget investments" do
-      expect(@stats[:total_budget_investments]).to be 5
-    end
+      2.times { create(:budget_investment, budget: budget) }
+      create(:budget_investment, budget: create(:budget))
 
+      expect(stats.total_budget_investments).to be 2
+    end
   end
 
-  context "#total_votes" do
-
+  describe "#total_votes" do
     it "returns the number of total votes" do
-      expect(@stats[:total_votes]).to be 4
-    end
+      create(:budget_ballot_line, investment: investment)
+      create(:budget_ballot_line, investment: create(:budget_investment, :selected, budget: budget))
 
+      expect(stats.total_votes).to be 2
+    end
   end
 
-  context "#total_selected_investments" do
-
+  describe "#total_selected_investments" do
     it "returns the number of total selected investments" do
-      expect(@stats[:total_selected_investments]).to be 4
-    end
+      3.times { create(:budget_investment, :selected, budget: budget) }
+      create(:budget_investment, :selected, budget: create(:budget))
+      create(:budget_investment, :unfeasible, budget: budget)
 
+      expect(stats.total_selected_investments).to be 3
+    end
   end
 
-  context "#total_unfeasible_investments" do
-
+  describe "#total_unfeasible_investments" do
     it "returns the number of total unfeasible investments" do
-      expect(@stats[:total_unfeasible_investments]).to be 1
-    end
+      3.times { create(:budget_investment, :unfeasible, budget: budget) }
+      create(:budget_investment, :unfeasible, budget: create(:budget))
+      create(:budget_investment, :selected, budget: budget)
 
+      expect(stats.total_unfeasible_investments).to be 3
+    end
   end
 
-  context "#total_male_participants" do
+  describe "Participants by gender" do
+    before do
+      3.times { create(:user, gender: "male") }
+      2.times { create(:user, gender: "female") }
+      create(:user, gender: nil)
 
-    it "returns the number of total male participants" do
-      expect(@stats[:total_male_participants]).to be 4
+      allow(stats).to receive(:participants).and_return(User.all)
     end
 
-  end
-
-  context "#total_female_participants" do
-
-    it "returns the number of total female participants" do
-      expect(@stats[:total_female_participants]).to be 6
+    describe "#total_male_participants" do
+      it "returns the number of total male participants" do
+        expect(stats.total_male_participants).to be 3
+      end
     end
 
-  end
-
-  context "#total_supports" do
-
-    it "returns the number of total supports" do
-      expect(@stats[:total_supports]).to be 2
+    describe "#total_female_participants" do
+      it "returns the number of total female participants" do
+        expect(stats.total_female_participants).to be 2
+      end
     end
 
-  end
-
-  context "#total_unknown_gender_or_age" do
-
-    it "returns the number of total unknown participants' gender or age" do
-      expect(@stats[:total_unknown_gender_or_age]).to be 1
+    describe "#male_percentage" do
+      it "returns the percentage of male participants" do
+        expect(stats.male_percentage).to be 60.0
+      end
     end
 
+    describe "#female_percentage" do
+      it "returns the percentage of female participants" do
+        expect(stats.female_percentage).to be 40.0
+      end
+    end
   end
 
-  context "#age_groups" do
+  describe "#participants_by_age" do
+    before do
+      [21, 22, 23, 23, 34, 42, 43, 44, 50, 51].each do |age|
+        create(:user, date_of_birth: age.years.ago)
+      end
+
+      allow(stats).to receive(:participants).and_return(User.all)
+    end
 
     it "returns the age groups hash" do
-      expect(@stats[:age_groups]["16 - 19"]).to be 0
-      expect(@stats[:age_groups]["20 - 24"]).to be 7
-      expect(@stats[:age_groups]["25 - 29"]).to be 1
-      expect(@stats[:age_groups]["30 - 34"]).to be 0
-      expect(@stats[:age_groups]["35 - 39"]).to be 1
-      expect(@stats[:age_groups]["40 - 44"]).to be 1
-      expect(@stats[:age_groups]["45 - 49"]).to be 0
-      expect(@stats[:age_groups]["50 - 54"]).to be 1
-      expect(@stats[:age_groups]["55 - 59"]).to be 0
-      expect(@stats[:age_groups]["60 - 64"]).to be 0
-      expect(@stats[:age_groups]["65 - 69"]).to be 0
-      expect(@stats[:age_groups]["70 - 140"]).to be 0
+      expect(stats.participants_by_age["16 - 19"][:count]).to be 0
+      expect(stats.participants_by_age["20 - 24"][:count]).to be 4
+      expect(stats.participants_by_age["25 - 29"][:count]).to be 0
+      expect(stats.participants_by_age["30 - 34"][:count]).to be 1
+      expect(stats.participants_by_age["35 - 39"][:count]).to be 0
+      expect(stats.participants_by_age["40 - 44"][:count]).to be 3
+      expect(stats.participants_by_age["45 - 49"][:count]).to be 0
+      expect(stats.participants_by_age["50 - 54"][:count]).to be 2
+      expect(stats.participants_by_age["55 - 59"][:count]).to be 0
+      expect(stats.participants_by_age["60 - 64"][:count]).to be 0
+      expect(stats.participants_by_age["65 - 69"][:count]).to be 0
+      expect(stats.participants_by_age["70 - 74"][:count]).to be 0
     end
-
   end
 
-  context "#male_percentage" do
-
-    it "returns the percentage of male participants" do
-      expect(@stats[:male_percentage]).to be 40.0
+  describe "#headings" do
+    before do
+      investment.heading.update_column(:population, 1234)
+      create(:budget_investment, heading: investment.heading)
+      2.times { create(:vote, votable: investment) }
+      create(:budget_ballot_line, investment: investment)
     end
-
-  end
-
-  context "#female_percentage" do
-
-    it "returns the percentage of female participants" do
-      expect(@stats[:female_percentage]).to be 60.0
-    end
-
-  end
-
-  context "#headings" do
 
     it "returns headings data" do
-      heading_stats = @stats[:headings][@heading.id]
-      expect(heading_stats[:total_investments_count]).to be 5
+      heading_stats = stats.headings[investment.heading.id]
+      expect(heading_stats[:total_investments_count]).to be 2
       expect(heading_stats[:total_participants_support_phase]).to be 2
-      expect(heading_stats[:total_participants_vote_phase]).to be 4
-      expect(heading_stats[:total_participants_all_phase]).to be 6
+      expect(heading_stats[:total_participants_vote_phase]).to be 1
+      expect(heading_stats[:total_participants_every_phase]).to be 3
       expect(heading_stats[:percentage_participants_support_phase]).to be 100.0
       expect(heading_stats[:percentage_district_population_support_phase]).to be 0.162
       expect(heading_stats[:percentage_participants_vote_phase]).to be 100.0
-      expect(heading_stats[:percentage_district_population_vote_phase]).to be 0.324
-      expect(heading_stats[:percentage_participants_all_phase]).to be 100.0
-      expect(heading_stats[:percentage_district_population_all_phase]).to be 0.486
-
-      expect(heading_stats[:total_investments_count]).to be 5
-      expect(heading_stats[:total_participants_support_phase]).to be 2
-      expect(heading_stats[:total_participants_vote_phase]).to be 4
-      expect(heading_stats[:total_participants_all_phase]).to be 6
-      expect(heading_stats[:percentage_participants_support_phase]).to be 100.0
-      expect(heading_stats[:percentage_participants_vote_phase]).to be 100.0
-      expect(heading_stats[:percentage_participants_all_phase]).to be 100.0
+      expect(heading_stats[:percentage_district_population_vote_phase]).to be 0.081
+      expect(heading_stats[:percentage_participants_every_phase]).to be 100.0
+      expect(heading_stats[:percentage_district_population_every_phase]).to be 0.243
     end
-
   end
 
+  describe "#support_phase_finished?" do
+    context "support phase isn't finished" do
+      before { budget.phase = "selecting" }
+
+      it "is false" do
+        expect(stats.support_phase_finished?).to be false
+      end
+    end
+
+    context "support phase is finished" do
+      before { budget.phase = "valuating" }
+
+      it "is false" do
+        expect(stats.support_phase_finished?).to be true
+      end
+    end
+  end
+
+  describe "#vote_phase_finished" do
+    context "support phase isn't finished" do
+      before { budget.phase = "reviewing_ballots" }
+
+      it "is false" do
+        expect(stats.vote_phase_finished?).to be false
+      end
+    end
+
+    context "vote phase is finished" do
+      before { budget.phase = "finished" }
+
+      it "is false" do
+        expect(stats.vote_phase_finished?).to be true
+      end
+    end
+  end
+
+  describe "#all_phases" do
+    context "no phases are finished" do
+      before do
+        allow(stats).to receive(:support_phase_finished?).and_return(false)
+        allow(stats).to receive(:vote_phase_finished?).and_return(false)
+      end
+
+      it "returns an empty array" do
+        expect(stats.all_phases).to eq []
+      end
+    end
+
+    context "one phase is finished" do
+      before do
+        allow(stats).to receive(:support_phase_finished?).and_return(true)
+        allow(stats).to receive(:vote_phase_finished?).and_return(false)
+      end
+
+      it "returns the finished phase" do
+        expect(stats.all_phases).to eq ["support"]
+      end
+    end
+
+    context "all phases are finished" do
+      before do
+        allow(stats).to receive(:support_phase_finished?).and_return(true)
+        allow(stats).to receive(:vote_phase_finished?).and_return(true)
+      end
+
+      it "returns the finished phases and a total phase" do
+        expect(stats.all_phases).to eq ["support", "vote", "every"]
+      end
+    end
+  end
 end

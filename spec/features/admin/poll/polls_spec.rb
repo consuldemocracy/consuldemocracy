@@ -75,6 +75,7 @@ feature "Admin polls" do
     expect(page).to have_content "Upcoming poll"
     expect(page).to have_content I18n.l(start_date.to_date)
     expect(page).to have_content I18n.l(end_date.to_date)
+    expect(Poll.last.slug).to eq "#{Poll.last.name.to_s.parameterize}"
   end
 
   scenario "Edit" do
@@ -107,6 +108,55 @@ feature "Admin polls" do
     end
 
     expect(page).to have_current_path(edit_admin_poll_path(poll))
+  end
+
+  context "Destroy" do
+
+    scenario "Can destroy poll without questions", :js do
+      poll = create(:poll)
+
+      visit admin_polls_path
+
+      within("#poll_#{poll.id}") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to have_content("Poll deleted successfully")
+      expect(page).to have_content("There are no polls.")
+    end
+
+    scenario "Can destroy poll with questions and answers", :js do
+      poll = create(:poll)
+      question = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question, title: "Yes")
+      create(:poll_question_answer, question: question, title: "No")
+
+      visit admin_polls_path
+
+      within("#poll_#{poll.id}") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to     have_content("Poll deleted successfully")
+      expect(page).not_to have_content(poll.name)
+      expect(Poll::Question.count).to eq(0)
+      expect(Poll::Question::Answer.count). to eq(0)
+    end
+
+    scenario "Can't destroy poll with votes", :js  do
+      poll = create(:poll)
+      create(:poll_question, poll: poll)
+      create(:poll_voter, :from_booth, :valid_document, poll: poll)
+
+      visit admin_polls_path
+
+      within("#poll_#{poll.id}") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to have_content("You cannot delete a poll that has votes")
+      expect(page).to have_content(poll.name)
+    end
   end
 
   context "Booths" do
