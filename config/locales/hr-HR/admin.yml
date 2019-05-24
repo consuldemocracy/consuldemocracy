@@ -201,22 +201,112 @@ hr:
           min_total_supports: Minimalna potpora
           max_total_supports: Maksimalna potpora
           winners: Pobjednici
+          one_filter_html: "Trenutni primjenjeni filtri: <b><em>%{filter}</em></b>"
+          two_filters_html: "Trenutni primjenjeni filtri: <b><em>%{filter},%{advanced_filters}</em></b>"
+        buttons:
+          filter: Filter
+        download_current_selection: "Preuzmi trenutnu selekciju"
+        no_budget_investments: "Ne postoji investicijski projekti."
+        title: Investicijski projekti
+        assigned_admin: Dodijeljen administrator
+        no_admin_assigned: Nema dodijeljenog administratora
+        no_valuators_assigned: Nema dodijeljenih procjenitelja
+        no_valuation_groups: Nema dodijeljenit grupa procjenitelja
+        feasibility:
+          feasible: "Izvodljivo"
+          unfeasible: "Neizvodljivo"
+          undecided: "Nije odlučeno"
+        selected: "Odabrano"
+        select: "Odaberi"
         list:
+          id: ID
+          title: Naziv
           supports: Potpore
+          admin: Administrator
+          valuator: Procjenitelj
           valuation_group: Grupa procjenitelja
+          geozone: Opseg djelovanja
+          feasibility: Izvodljivost
+          valuation_finished: Eval. Fin.
+          selected: Odabrano
+          visible_to_valuators: Prikaži procjenitelje
           author_username: Korisničko ime autora
+          incompatible: Nekompatabilnosti
+          price: Cijena
+        cannot_calculate_winners: Budžet mora ostati na fazi "Izglasavanje projekata", "Pregled Izglasavanja" ili "Dovršeni budžet" kako bi izračunali pobjednike projekata
+        see_results: "Pogledaj rezultate"
       show:
+        assigned_admin: Dodijeljen administrator
+        assigned_valuators: Pripisani procjenitelji
+        classification: Klasifikacija
+        info: "%{budget_name} - Grupa: %{group_name}- Investicijski projekt %{id}"
+        edit: Uredi
+        edit_classification: Uredi klasifikaciju
+        by: Od
+        sent: Pošalji
         group: Grupa
+        heading: Naslov
+        dossier: Dosje
+        edit_dossier: Uredi dosje
+        tags: Oznake
+        user_tags: Oznake korisnika
+        undefined: Nedefinirano
+        compatibility:
+          title: Kompatibilnost
+          "true": Nekompatabilno
+          "false": Kompatibilno
+        selection:
+          title: Odabir
+          "true": Odabrano
+          "false": Nije odabrano
+        winner:
+          title: Pobjednik
+          "true": "Da"
+          "false": "Ne"
+        image: "Slika"
+        see_image: "Pogledaj sliku"
+        no_image: "Bez slike"
+        documents: "Dokumenti"
+        see_documents: "Vidi dokumente (%{count})"
+        no_documents: "Bez dokumenata"
         valuator_groups: "Grupa procjenitelja"
       edit:
+        classification: Klasifikacija
+        compatibility: Kompatibilnost
+        mark_as_incompatible: Označi kao nekopatibilno
+        selection: Odabir
+        mark_as_selected: Označi kao odabrano
+        assigned_valuators: Procjenitelji
+        select_heading: Označi naslov
+        submit_button: Ažuriranje
+        user_tags: Korisnik je dopisao oznake
+        tags: Oznake
+        tags_placeholder: "Dopiši oznake koje želiš odjeliti zarezom (,)"
+        undefined: Nedefinirano
         user_groups: "Grupe"
+      search_unfeasible: Pretraga neizvediva
     milestones:
       index:
+        table_id: "ID"
+        table_title: "Naziv"
+        table_description: "Opis"
+        table_publication_date: "Datum objave"
+        table_status: Status
+        table_actions: "Akcije"
+        delete: "Obriši ključni cilj"
         no_milestones: "Nemate definirane ključne ciljeve"
+        image: "Slika"
+        show_image: "Pogledaj sliku"
+        documents: "Dokumenti"
         milestone: Ključni ciljevi
         new_milestone: Stvori novi ključni cilj
+      form:
+        admin_statuses: Upravljaj statusima
+        no_statuses_defined: Još ne postoji definirani status
       new:
         creating: Stvori ključni cilj
+        date: Datum
+        description: Opis
       edit:
         title: Uredi ključne ciljeve
       create:
@@ -225,10 +315,90 @@ hr:
         notice: Ključni ciljevi uspješno ažurirani
       delete:
         notice: Ključni ciljevi uspješno obrisani
+    statuses:
+      index:
+        title: Status ključnih ciljeva
+        empty_statuses: Nisu stvoreni statusi ključnih ciljeva
+        new_status: Stvori novi status ključnog cilja
+        table_name: Ime
+        table_description: Opis
+        table_actions: Akcije
+        delete: Izbriši
+        edit: Uredi
+      edit:
+        title: Uredi statuse ključnih ciljeva
+      update:
+        notice: Ključni ciljevi uspješno ažurirani
+      new:
+        title: Stvori status ključnih ciljeva
+      create:
+        notice: Ključni ciljevi uspješno stvoreni
+      delete:
+        notice: Ključni ciljevi uspješno obrisani
+    progress_bars:
+      manage: "Upravljaj trakom progresa"
+      index:
+        title: "Trake napretka"
+        no_progress_bars: "Ne postoji traka napretka"
+        new_progress_bar: "Stvori novu prazninu napretka"
+        primary: "Primarna praznina napretka"
+        table_id: "ID"
+        table_kind: "Tip"
+        table_title: "Naziv"
+        table_percentage: "Trenutni progres"
+      new:
+        creating: "Stvori novu traku napretka"
+      edit:
+        title:
+          primary: "Uredi primarniu traku napretka"
+          secondary: "Uredi traku napretka %{title}"
+      create:
+        notice: "Traka napretka je stvorena uspješno!"
+      update:
+        notice: "Traka napretka je uspješno ažurirana"
+      delete:
+        notice: "Traka napretka je uspješno obrisana"
+    comments:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        hidden_debate: Sakrivene debate
+        hidden_proposal: Sakriveni prijedlozi
+        title: Sakriveni komentari
+        no_hidden_comments: Ne postoje sakriveni komentari.
     dashboard:
+      index:
+        back: Idi nazad na %{org}
+        title: Administracija
+        description: Dobrodošli na %{org} ploču admina.
       actions:
+        action_type:
+          proposed_action: Predloženo djelovanje
+          resource: Resurs
         index:
+          description: "Kada korisnik stvori prijedlog može mu pristupiti kroz glavni izbornik svojih prijedloga, tamo može predložiti resurse i preporuke kako bi dobili potporu za svoju ideju."
+          create: Stvori resurs ili djelovanje
+          edit: Uredi
+          delete: Izbriši
+          active: 'Da'
+          inactive: 'Ne'
+          title: Resursi i djelovanja
+          action_title: Naziv
+          action_type: Tip
           required_supports: Potrebne potpore
+          day_offset: Potrebno dana
+          action_active: Aktivirati
+          order: Poredak
+          published_proposal: Objavljeni prijedlozi
+          default:
+            email: Email
+            polls: Ankete
+            poster: Poster
+        new:
+          creating: Nova akcija za glavni izbornik prijedloga
     legislation:
       processes:
         proposals:
