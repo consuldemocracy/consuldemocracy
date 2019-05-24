@@ -1,5 +1,57 @@
 hr:
   admin:
+    header:
+      title: Administracija
+    actions:
+      actions: Djelovanja
+      confirm: Jeste li sigurni?
+      confirm_hide: Potvrdi izmjene
+      hide: Sakrij
+      hide_author: Sakrij autora
+      restore: Obnovi
+      mark_featured: Istaknuto
+      unmark_featured: Neoznačeno istaknuto
+      edit: Uredi
+      configure: Konfiguriraj
+      delete: Izbriši
+    officing_booth:
+      title: "Odjavljujete glasačko mjesto locirano na %{booth}. Ako ovo nije točno molimo vas da nastavite i nazovete pomoćni broj. Hvala vam."
+    banners:
+      index:
+        title: Zastave
+        create: Stvori zastave
+        edit: Uredi zastavu
+        delete: Obriši zastavu
+        filters:
+          all: Svi
+          with_active: Aktivirati
+          with_inactive: Neaktivan
+        preview: Pregled
+      banner:
+        title: Naziv
+        description: Opis
+        target_url: Poveznica
+        post_started_at: Post je počeo s
+        post_ended_at: Post je završio s
+        sections_label: Odjeljci gdje će se pojaviti
+        sections:
+          homepage: Glavna stranica
+          debates: Rasprave
+          proposals: Prijedlozi
+          budgets: Participativno budžetiranje
+          help_page: Stranica za pomoć
+      edit:
+        editing: Uredi zastavu
+        form:
+          submit_button: Spremi promjene
+      errors:
+        form:
+          error:
+            one: "greška ne dozvoljava ovoj zastavi da se spremi"
+            few: "greške ne dozvoljavaju ovoj zastavi da se spremi"
+            other: "greške ne dozvoljavaju ovoj zastavi da se spremi"
+      new:
+        creating: Stvori zastavu
     budgets:
       index:
         table_edit_groups: Tematska grupa
