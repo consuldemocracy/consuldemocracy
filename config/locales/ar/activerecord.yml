@@ -145,6 +145,13 @@ ar:
         few: "ضباط"
         many: "ضباط"
         other: "ضباط"
+      poll/ballot_sheet:
+        zero: أوراق إقتراع
+        one: ورقة اقتراع
+        two: ورقة اقتراع
+        few: أوراق إقتراع
+        many: أوراق إقتراع
+        other: أوراق إقتراع
       proposal:
         zero: "مقترحات المواطنين"
         one: "مقترح المواطنين"
@@ -180,6 +187,13 @@ ar:
         few: كتل المحتوى المخصصة
         many: كتل المحتوى المخصصة
         other: كتل المحتوى المخصصة
+      document:
+        zero: وثائق
+        one: وثيقة
+        two: وثائق
+        few: وثائق
+        many: وثائق
+        other: وثائق
       legislation/process:
         zero: "العمليات"
         one: "العملية"
@@ -257,6 +271,20 @@ ar:
         few: "إشعارات المقترح"
         many: "إشعارات المقترح"
         other: "إشعارات المقترح"
+      dashboard/administrator_task:
+        zero: مهمات
+        one: مهمة
+        two: مهمات
+        few: مهمات
+        many: مهمات
+        other: مهمات
+      link:
+        zero: روابط
+        one: رابط
+        two: روابط
+        few: روابط
+        many: روابط
+        other: روابط
     attributes:
       budget:
         name: "الاسم"
@@ -471,6 +499,11 @@ ar:
         link_text: نص الرابط
       widget/feed:
         limit: عدد العناصر
+      dashboard/action:
+        title: عنوان
+        short_description: وصف قصير
+        description: الوصف
+        link: رابط خارجي
     errors:
       models:
         user:
