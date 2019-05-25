@@ -1,4 +1,8 @@
 ar:
+  attributes:
+    results_enabled: "إظهار النتائج"
+    stats_enabled: "إظهار الإحصائيات"
+    advanced_stats_enabled: "عرض احصائيات متقدمة"
   activerecord:
     models:
       activity:
