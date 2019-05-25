@@ -1,4 +1,8 @@
 id:
+  attributes:
+    results_enabled: "Hasil akhir"
+    stats_enabled: "Lihat status"
+    advanced_stats_enabled: "Lihat status keuntungan"
   activerecord:
     models:
       activity:
