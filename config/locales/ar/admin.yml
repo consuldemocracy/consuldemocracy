@@ -382,12 +382,14 @@ ar:
         description: أهلا بك %{org} في لوحة الادارة.
       actions:
         action_type:
+          proposed_action: الإجراء المقترح
           resource: مورد
         index:
           edit: تعديل
           delete: حذف
           active: 'نعم'
           inactive: 'لا'
+          title: الموارد و الإجراءات
           action_title: عنوان
           action_type: النوع
           day_offset: الأيام المطلوبة
@@ -400,6 +402,9 @@ ar:
             poster: ملصقة
         new:
           back: الرجوع إلى القائمة
+      administrator_tasks:
+        form:
+          proposal: اقتراح
     debates:
       index:
         filter: ترشيح
