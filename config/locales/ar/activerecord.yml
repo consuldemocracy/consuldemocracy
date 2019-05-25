@@ -504,6 +504,14 @@ ar:
         short_description: وصف قصير
         description: الوصف
         link: رابط خارجي
+        active: نشِط
+        action_type: النوع
+      dashboard/administrator_task:
+        source: المصدر
+        user: تم تنفيذه من طرف
+      link:
+        label: عنوان
+        url: رابط
     errors:
       models:
         user:
