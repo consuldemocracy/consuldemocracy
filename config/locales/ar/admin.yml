@@ -402,13 +402,25 @@ ar:
             poster: ملصقة
         new:
           back: الرجوع إلى القائمة
+        create:
+          notice: تم إنشاء الإجراء بنجاح
+        edit:
+          back: الرجوع إلى القائمة
+        delete:
+          success: تم حذف الإجراء بنجاح
+        form:
+          submit_button: حفظ
+          published_proposal: للمقترحات المنشورة؟
       administrator_tasks:
         index:
+          source: المصدر
           filter: ترشيح
           filters:
+            pending: معلق
             done: تم حلّه
         form:
           proposal: اقتراح
+          request: المورد المطلوب
     debates:
       index:
         filter: ترشيح
@@ -418,6 +430,10 @@ ar:
           without_confirmed_hide: معلق
         title: مناقشات المخفية
         no_hidden_debates: لا توجد أي مناقشات مخفية.
+    documents:
+      new:
+        label_attachment: "اختر وثيقة"
+        submit_button: "تحميل"
     hidden_users:
       index:
         filter: ترشيح
