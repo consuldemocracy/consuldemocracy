@@ -397,6 +397,9 @@ ar:
           default:
             email: البريد الإلكتروني
             polls: استطلاعات
+            poster: ملصقة
+        new:
+          back: الرجوع إلى القائمة
     debates:
       index:
         filter: ترشيح
