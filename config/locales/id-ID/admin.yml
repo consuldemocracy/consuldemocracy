@@ -940,6 +940,7 @@ id:
       created_at: Dibuat pada
       delete: Hapus
       show_results_and_stats: "Lihat hasil dan status"
+      results_and_stats_reminder: "Menandai kotak centang ini, hasil dan atau statistik akan tersedia untuk umum dan setiap pengguna akan melihatnya."
     spending_proposals:
       index:
         geozone_filter_all: Semua zona
