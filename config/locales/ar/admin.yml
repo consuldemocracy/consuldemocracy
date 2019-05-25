@@ -403,6 +403,10 @@ ar:
         new:
           back: الرجوع إلى القائمة
       administrator_tasks:
+        index:
+          filter: ترشيح
+          filters:
+            done: تم حلّه
         form:
           proposal: اقتراح
     debates:
