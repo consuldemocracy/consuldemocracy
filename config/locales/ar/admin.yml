@@ -447,6 +447,8 @@ ar:
       create:
         success_notice: "تم رفع الوثيقة بنجاح"
         unable_notice: "وثيقة غير صالحة"
+      destroy:
+        success_notice: "تم حذف الوثيقة بنجاح"
     hidden_users:
       index:
         filter: ترشيح
@@ -712,6 +714,9 @@ ar:
       title_booths: صناديق الاقتراع
       legislation: التشريعات التشاركية
       users: المستخدمين
+      dashboard: لوحة القيادة الخاصة بالمقترحات
+      administrator_tasks: الموارد المطلوبة
+      dashboard_actions: الموارد و الإجراءات
     administrators:
       index:
         title: مدراء
