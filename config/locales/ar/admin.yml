@@ -419,8 +419,11 @@ ar:
             pending: معلق
             done: تم حلّه
         form:
+          solve: وضع علامة تم حلها
           proposal: اقتراح
           request: المورد المطلوب
+        update:
+          success: تم وضع علامة على المهمة باعتبارها حلّت.
     debates:
       index:
         filter: ترشيح
@@ -432,8 +435,18 @@ ar:
         no_hidden_debates: لا توجد أي مناقشات مخفية.
     documents:
       new:
+        title: "تحميل الوثيقة"
         label_attachment: "اختر وثيقة"
         submit_button: "تحميل"
+      index:
+        new_link: "اضافة وثيقة جديدة"
+        no_documents: "لا يوجد وثائق."
+        title: "الوثائق"
+        size: "حجم"
+        url: "URL"
+      create:
+        success_notice: "تم رفع الوثيقة بنجاح"
+        unable_notice: "وثيقة غير صالحة"
     hidden_users:
       index:
         filter: ترشيح
