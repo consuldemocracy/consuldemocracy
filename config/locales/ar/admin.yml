@@ -380,6 +380,14 @@ ar:
         back: العودة إلى %{org}
         title: الإدارة
         description: أهلا بك %{org} في لوحة الادارة.
+      actions:
+        action_type:
+          resource: مورد
+        index:
+          edit: تعديل
+          delete: حذف
+          active: 'نعم'
+          inactive: 'لا'
     debates:
       index:
         filter: ترشيح
