@@ -388,6 +388,15 @@ ar:
           delete: حذف
           active: 'نعم'
           inactive: 'لا'
+          action_title: عنوان
+          action_type: النوع
+          day_offset: الأيام المطلوبة
+          action_active: نشِط
+          order: طلب
+          published_proposal: المقترح المنشور
+          default:
+            email: البريد الإلكتروني
+            polls: استطلاعات
     debates:
       index:
         filter: ترشيح
