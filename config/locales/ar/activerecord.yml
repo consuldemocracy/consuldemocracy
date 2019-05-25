@@ -355,6 +355,9 @@ ar:
         external_url: "رابط لوثائق إضافية"
       poll/question/translation:
         title: "سؤال"
+      poll/ballot_sheet:
+        poll_id: استطلاع
+        officer_assignment_id: مهمة الضابط
       signature_sheet:
         signable_type: "نوع القابلة"
         signable_id: "معرف القابلة"
