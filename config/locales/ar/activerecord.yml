@@ -504,6 +504,8 @@ ar:
         short_description: وصف قصير
         description: الوصف
         link: رابط خارجي
+        day_offset: كم من يوم تريد أن يبقى الاقتراح مفعلا بعد انشائه ؟
+        required_supports: ما مقدار الدعم الذي يجب أن يحصل عليه الاقتراح حتى يتم تفعيله؟
         active: نشِط
         action_type: النوع
       dashboard/administrator_task:
