@@ -939,6 +939,7 @@ id:
       content: Konten
       created_at: Dibuat pada
       delete: Hapus
+      show_results_and_stats: "Lihat hasil dan status"
     spending_proposals:
       index:
         geozone_filter_all: Semua zona
