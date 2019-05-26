@@ -1275,6 +1275,8 @@ ar:
           form:
             submit: تحديث
           how_to_enable: 'لإظهار الخريطة للمستخدمين، يجب تفعيل "الموقع الجغرافي للمقترحات والاستثمارات في الميزانية" في علامة التبويب "الميزات".'
+        dashboard:
+          title: لوحة القيادة الخاصة بالمقترحات
       setting: الميزة
       setting_actions: الإجراءات
       setting_name: إعداد
@@ -1452,6 +1454,12 @@ ar:
         balloting_phase: التصويت النهائي
       budget_balloting:
         title: "إحصائيات التصويت النهائية"
+        vote_count: الأصوات
+        participant_count: المشاركون
+        participants_per_district: المشاركون في كل مقاطعة
+      budget_supporting:
+        headings: العناوين
+        users: المستخدمين
         vote_count: الأصوات
         participant_count: المشاركون
       direct_messages:
