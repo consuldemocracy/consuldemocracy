@@ -1456,8 +1456,10 @@ ar:
         title: "إحصائيات التصويت النهائية"
         vote_count: الأصوات
         participant_count: المشاركون
+        votes_per_heading: أصوات لكل عنوان
         participants_per_district: المشاركون في كل مقاطعة
       budget_supporting:
+        title: "إحصائيات مرحلة الدعم"
         headings: العناوين
         users: المستخدمين
         vote_count: الأصوات
