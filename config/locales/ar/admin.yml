@@ -413,7 +413,9 @@ ar:
           published_proposal: للمقترحات المنشورة؟
       administrator_tasks:
         index:
+          solve: حل
           source: المصدر
+          resource: المورد المطلوب
           filter: ترشيح
           filters:
             pending: معلق
@@ -1310,6 +1312,8 @@ ar:
       created_at: أنشئت في
       delete: حذف
       color_help: تنسيق Hexadecimal
+      show_results_and_stats: "اظهار النتائج والإحصائيات"
+      results_and_stats_reminder: "عند تحديد خانات الاختيار كنتائج و / أو إحصائيات ستكون متاحة للجميع وسيشاهدها كل مستخدم."
     spending_proposals:
       index:
         geozone_filter_all: كل المناطق
@@ -1368,6 +1372,8 @@ ar:
         cost_for_geozone: التكلفة
     geozones:
       index:
+        title: رقعة جغرافية
+        create: إنشاء منطقة جغرافية
         edit: تعديل
         delete: حذف
       geozone:
