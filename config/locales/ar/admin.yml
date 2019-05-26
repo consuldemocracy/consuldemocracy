@@ -1064,6 +1064,10 @@ ar:
       flash:
         question_added: "تمت إضافة السؤال إلى هذا الاستطلاع"
         error_on_question_added: "لا يمكن إضافة السؤال إلى هذا الاستطلاع"
+      destroy:
+        alert: "سيؤدي هذا الإجراء إلى إزالة الاستطلاع وجميع الأسئلة المرتبطة به."
+        success_notice: "تم حذف الاستطلاع بنجاح"
+        unable_notice: "لا يمكنك حذف استطلاع لديه أصوات"
     questions:
       index:
         title: "أسئلة"
