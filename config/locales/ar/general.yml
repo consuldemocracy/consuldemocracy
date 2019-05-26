@@ -214,6 +214,13 @@ ar:
       chrome: Google Chrome
       firefox: فايرفوكس
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
+    dashboard:
+      proposal_header:
+        draft: مسودة
+        retired: تم سحبه
+      proposal_totals:
+        active_resources: الموارد الفعالة
+        community: المشاركون في مجتمعك
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
