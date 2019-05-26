@@ -413,11 +413,13 @@ ar:
           success: تم حذف الإجراء بنجاح
         form:
           submit_button: حفظ
+          help_text: أدخل 0 حتّى لا تؤخذ هذه القيمة بعين الاعتبار
           published_proposal: للمقترحات المنشورة؟
       administrator_tasks:
         index:
           title: الموارد المطلوبة
           solve: حل
+          no_records: لا توجد موارد مطلوبة
           source: المصدر
           resource: المورد المطلوب
           filter: ترشيح
@@ -446,7 +448,7 @@ ar:
         submit_button: "تحميل"
       index:
         new_link: "اضافة وثيقة جديدة"
-        no_documents: "لا يوجد وثائق."
+        no_documents: "لا توجد وثائق."
         title: "الوثائق"
         size: "حجم"
         url: "URL"
@@ -1439,6 +1441,7 @@ ar:
           visits: الزيارات
           votes: مجموع الأصوات
         budgets_title: الميزانية التشاركية
+        participatory_budgets: الميزانية التشاركية
         direct_messages: الرسائل المباشرة
         proposal_notifications: إشعارات المقترح
         incomplete_verifications: عملية التحقق غير مكتملة
@@ -1450,6 +1453,7 @@ ar:
         level_2_user: المستوى 2 من المستخدمين
         proposal_created: مقترحات المواطنين
       budgets:
+        title: "الميزانيات التشاركية - احصائيات المشاركة"
         supporting_phase: مرحلة الدعم
         balloting_phase: التصويت النهائي
       budget_balloting:
