@@ -216,11 +216,16 @@ ar:
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
     dashboard:
       proposal_header:
+        published: منشورة
         draft: مسودة
         retired: تم سحبه
       proposal_totals:
         active_resources: الموارد الفعالة
         community: المشاركون في مجتمعك
+        preview_proposal: معاينة المقترح
+        current_goal: الهدف الحالي
+        supports:
+          zero: لا يوجد دعم
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
@@ -296,6 +301,9 @@ ar:
     create:
       form:
         submit_button: إنشاء مقترح
+    created:
+      publish: لا ، أريد أن أنشر الاقتراح
+      dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
     share:
       message: "لقد دعمت المقترح %{title} في %{handle}. إذا كنت مهتمًا، إدعمه أيضًا!"
     edit:
@@ -456,6 +464,20 @@ ar:
     update:
       form:
         submit_button: حفظ التغييرات
+  dashboard:
+    menu:
+      progress: تقدم
+      resources: موارد
+      community: المجتمع
+      polls: استطلاعات
+      poster: ملصقة
+      recommended_actions: الإجراءات الموصى بها
+    form:
+      request: طلب
+    create_request:
+      success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
+    progress:
+      group_by_month: شهريا
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
