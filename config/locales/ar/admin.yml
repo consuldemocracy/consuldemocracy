@@ -416,6 +416,7 @@ ar:
           published_proposal: للمقترحات المنشورة؟
       administrator_tasks:
         index:
+          title: الموارد المطلوبة
           solve: حل
           source: المصدر
           resource: المورد المطلوب
@@ -693,6 +694,7 @@ ar:
       stats: الإحصائيات
       signature_sheets: أوراق التوقيع
       site_customization:
+        documents: وثائق مخصصة
         homepage: الصفحة الرئيسية
         pages: صفحات مخصصة
         images: صور مخصصة
@@ -1387,6 +1389,7 @@ ar:
       edit:
         form:
           submit_button: حفظ التغييرات
+        editing: تعديل رقعة جغرافية
         back: عودة
       new:
         back: عودة
