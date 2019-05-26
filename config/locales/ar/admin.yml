@@ -392,6 +392,7 @@ ar:
           title: الموارد و الإجراءات
           action_title: عنوان
           action_type: النوع
+          required_supports: الدعم المطلوب
           day_offset: الأيام المطلوبة
           action_active: نشِط
           order: طلب
@@ -1436,6 +1437,8 @@ ar:
         incomplete_verifications: عملية التحقق غير مكتملة
         polls: استطلاعات
       graph:
+        debate_created: الحوارات
+        spending_proposals: مشاريع استثمارية
         visit: الزيارات
         level_2_user: المستوى 2 من المستخدمين
         proposal_created: مقترحات المواطنين
@@ -1443,6 +1446,7 @@ ar:
         supporting_phase: مرحلة الدعم
         balloting_phase: التصويت النهائي
       budget_balloting:
+        title: "إحصائيات التصويت النهائية"
         vote_count: الأصوات
         participant_count: المشاركون
       direct_messages:
