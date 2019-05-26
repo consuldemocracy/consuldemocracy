@@ -1435,6 +1435,16 @@ ar:
         proposal_notifications: إشعارات المقترح
         incomplete_verifications: عملية التحقق غير مكتملة
         polls: استطلاعات
+      graph:
+        visit: الزيارات
+        level_2_user: المستوى 2 من المستخدمين
+        proposal_created: مقترحات المواطنين
+      budgets:
+        supporting_phase: مرحلة الدعم
+        balloting_phase: التصويت النهائي
+      budget_balloting:
+        vote_count: الأصوات
+        participant_count: المشاركون
       direct_messages:
         title: الرسائل المباشرة
         total: المجموع
