@@ -385,6 +385,7 @@ ar:
           proposed_action: الإجراء المقترح
           resource: مورد
         index:
+          create: إنشاء مورد أو إجراء
           edit: تعديل
           delete: حذف
           active: 'نعم'
@@ -402,6 +403,7 @@ ar:
             polls: استطلاعات
             poster: ملصقة
         new:
+          creating: إجراء جديد للوحة القيادة الخاص بالمقترح
           back: الرجوع إلى القائمة
         create:
           notice: تم إنشاء الإجراء بنجاح
