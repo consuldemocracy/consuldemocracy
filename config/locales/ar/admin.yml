@@ -426,6 +426,8 @@ ar:
           filters:
             pending: معلق
             done: تم حلّه
+        edit:
+          solving: حل المهمة المعلقة
         form:
           solve: وضع علامة تم حلها
           proposal: اقتراح
