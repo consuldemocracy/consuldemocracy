@@ -222,6 +222,7 @@ ar:
       proposal_totals:
         active_resources: الموارد الفعالة
         community: المشاركون في مجتمعك
+        show_proposal: إظهار مقترح
         preview_proposal: معاينة المقترح
         current_goal: الهدف الحالي
         supports:
@@ -478,6 +479,11 @@ ar:
       success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
     progress:
       group_by_month: شهريا
+      supports: تشجيعات
+      success: تقدم مثالي
+      new_action: جديد
+    index:
+      edit_proposal_link: تعديل المقترح
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
