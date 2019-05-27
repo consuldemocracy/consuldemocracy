@@ -50,6 +50,10 @@ hr:
       - Prosinac
   datetime:
     distance_in_words:
+      about_x_hours:
+        one: oko 1 sata
+        few: oko %{count} sati
+        other: oko %{count} sati
       half_a_minute: pola minute
     prompts:
       day: Dan
