@@ -1,4 +1,8 @@
 bs:
+  attributes:
+    results_enabled: "Pokaži rezultate"
+    stats_enabled: "Pokaži statistiku"
+    advanced_stats_enabled: "Pokaži naprednu statistiku"
   activerecord:
     models:
       activity:
