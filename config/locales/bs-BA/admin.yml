@@ -1330,6 +1330,8 @@ bs:
       created_at: Napravljeno
       delete: Obriši
       color_help: Heksadecimalni format
+      show_results_and_stats: "Pokaži rezultate i statistiku"
+      results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ove glasačke ankete će biti dostupni javnosti i vidljivi svakom korisniku."
     spending_proposals:
       index:
         geozone_filter_all: Sve zone
