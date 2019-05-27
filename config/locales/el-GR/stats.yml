@@ -1,1 +1,27 @@
 el:
+  stats:
+    advanced: "Σύνθετες στατιστικές"
+    total_participants: "Συμμετέχοντες"
+    by_gender: "Συμμετέχοντες ανά φύλο"
+    by_age: "Συμμετέχοντες ανά ηλικία"
+    by_geozone: "Συμμετέχοντες ανά περιοχή"
+    men_percentage: "%{percentage} Άνδρες"
+    women_percentage: "%{percentage} Γυναίκες"
+    age: "Ηλικία"
+    age_more_than: "%{start} ετών και άνω"
+    age_range: "%{start} - %{finish} ετών"
+    total: "Σύνολο"
+    geozone: "Περιοχή"
+    no_demographic_data:
+      one: "* Δεν υπάρχουν δημογραφικά στοιχεία για 1 συμμετέχοντα."
+      other: "* Δεν υπάρχουν δημογραφικά στοιχεία για %{count} συμμετέχοντες."
+    budgets:
+      link: "Στατιστικά δεδομένα"
+      page_title: "%{budget} - Στατιστικά δεδομενα συμμετοχής"
+      total_investments: "Συνολικά επενδυτικά έργα"
+      total_selected_investments: "Έργα σε φάση τελικής ψηφοφορίας"
+      total_unfeasible_investments: "Μη έφικτά έργα"
+      by_phase: "Συμμετέχοντες ανά φάση"
+      by_heading: "Συμμετέχοντες ανά φάση και επικεφαλίδα"
+      total: "Σύνολο"
+      heading: "Επικεφαλίδα"
