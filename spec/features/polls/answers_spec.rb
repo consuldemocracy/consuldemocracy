@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Answers' do
+feature "Answers" do
 
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
@@ -16,7 +16,7 @@ feature 'Answers' do
     visit admin_question_path(question)
 
     expect(page).to have_css(".poll_question_answer", count: 2)
-    expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+    expect(answer2.title).to appear_before(answer1.title)
 
     within("#poll_question_answer_#{answer1.id}") do
       expect(page).to have_content answer1.title
@@ -38,7 +38,7 @@ feature 'Answers' do
     expect(page).to have_content "Adding more trees, creating a play area..."
   end
 
-  scenario 'Add video to answer' do
+  scenario "Add video to answer" do
     answer1 = create(:poll_question_answer, question: question)
     answer2 = create(:poll_question_answer, question: question)
 

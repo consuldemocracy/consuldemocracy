@@ -13,15 +13,15 @@ module FeedsHelper
   end
 
   def feed_debates_enabled?
-    Setting["feature.homepage.widgets.feeds.debates"].present?
+    Setting["homepage.widgets.feeds.debates"].present?
   end
 
   def feed_proposals_enabled?
-    Setting["feature.homepage.widgets.feeds.proposals"].present?
+    Setting["homepage.widgets.feeds.proposals"].present?
   end
 
   def feed_processes_enabled?
-    Setting["feature.homepage.widgets.feeds.processes"].present?
+    Setting["homepage.widgets.feeds.processes"].present?
   end
 
   def feed_debates_and_proposals_enabled?

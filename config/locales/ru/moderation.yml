@@ -10,7 +10,7 @@ ru:
           pending_flag_review: Ожидают
           with_ignored_flag: Отметить на просмотренное
         headers:
-          comment: Комментировать
+          comment: Отзыв
           moderate: Модерировать
         hide_comments: Скрыть комментарии
         ignore_flags: Отметить как просмотренное
@@ -32,7 +32,7 @@ ru:
           pending_flag_review: Ожидают
           with_ignored_flag: отметить как просмотренное
         headers:
-          debate: Обсудить
+          debate: Обсуждение
           moderate: Модерировать
         hide_debates: Скрыть обсуждения
         ignore_flags: Отметить как просмотренное
@@ -40,14 +40,14 @@ ru:
         orders:
           created_at: Самое новое
           flags: Самое помечаемое
-        title: Дебаты
+        title: Обсуждения проблем
     header:
       title: Модерация
     menu:
       flagged_comments: Комментарии
-      flagged_debates: Дебаты
+      flagged_debates: Обсуждения проблем
       flagged_investments: Инвестирования бюджета
-      proposals: Предложения
+      proposals: Заявки
       proposal_notifications: Уведомления предложений
       users: Блокировать пользователей
     proposals:
@@ -61,14 +61,14 @@ ru:
           with_ignored_flag: Отметить как просмотренное
         headers:
           moderate: Модерировать
-          proposal: Предложение
+          proposal: Заявка
         hide_proposals: Скрыть предложения
         ignore_flags: Отметить как просмотренное
         order: Упорядочить но
         orders:
           created_at: Самое свежее
           flags: Самое помечаемое
-        title: Предложения
+        title: Заявки
     budget_investments:
       index:
         block_authors: Блокировать авторов
@@ -99,14 +99,14 @@ ru:
           ignored: Отметить как просмотренное
         headers:
           moderate: Модерировать
-          proposal_notification: Уведомления предложения
+          proposal_notification: Уведомление о предложении
         hide_proposal_notifications: Скрыть предложения
         ignore_flags: Отметить как просмотренное
         order: Упорядочить
         orders:
           created_at: Самое свежее
           moderated: Отмодерировано
-        title: Уведомления предложений
+        title: Уведомления о предложениях
     users:
       index:
         hidden: Заблокирован

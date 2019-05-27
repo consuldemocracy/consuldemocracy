@@ -1,13 +1,12 @@
 fa:
   pages:
-    general_terms: شرایط و ضوابط
     help:
       menu:
         debates: "مباحثه"
         proposals: "طرح های پیشنهادی"
         budgets: "بودجه مشارکتی"
         polls: "نظر سنجی ها"
-        other: "اطلاعات دیگر مورد علاقه"
+        other: " دیگراطلاعات  مورد علاقه "
         processes: "روندها\n"
       debates:
         title: "مباحثه"
@@ -30,10 +29,29 @@ fa:
           faq_1_title: "سوال 1"
           faq_1_description: "این یک نمونه برای توضیح یک سوال  است."
       other:
-        title: " دیگراطلاعات  مورد علاقه "
+        title: "اطلاعات دیگر مورد علاقه"
         how_to_use: "استفاده از %{org_name} در شهر شما"
       titles:
         how_to_use: از آن در دولت محلی استفاده کنید
+    privacy:
+      title: سیاست حریم خصوصی
+    accessibility:
+      title: قابلیت دسترسی
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: مباحثه
+            - 
+              key_column: 0
+              page_column: طرح های پیشنهادی
+            - 
+              key_column: 0
+              page_column: آرا
+            - 
+              page_column: بودجه مشارکتی
+            - 
     titles:
       accessibility: قابلیت دسترسی
       conditions: شرایط استفاده

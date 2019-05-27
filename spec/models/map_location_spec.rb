@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe MapLocation do
 
@@ -18,9 +18,9 @@ describe MapLocation do
   end
 
   it "is invalid when longitude/latitude/zoom are not numbers" do
-    map_location.longitude = 'wadus'
-    map_location.latitude = 'stuff'
-    map_location.zoom = '$%·'
+    map_location.longitude = "wadus"
+    map_location.latitude = "stuff"
+    map_location.zoom = "$%·"
 
     expect(map_location).not_to be_valid
     expect(map_location.errors.size).to eq(3)

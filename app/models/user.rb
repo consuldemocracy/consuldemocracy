@@ -1,9 +1,9 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
 
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
-         :trackable, :validatable, :omniauthable, :async, :password_expirable, :secure_validatable,
+         :trackable, :validatable, :omniauthable, :password_expirable, :secure_validatable,
          authentication_keys: [:login]
 
   acts_as_voter
@@ -23,14 +23,14 @@ class User < ActiveRecord::Base
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
-  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: 'Budget::Investment'
+  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: "Budget::Investment"
   has_many :comments, -> { with_hidden }
   has_many :spending_proposals, foreign_key: :author_id
   has_many :failed_census_calls
   has_many :notifications
-  has_many :direct_messages_sent,     class_name: 'DirectMessage', foreign_key: :sender_id
-  has_many :direct_messages_received, class_name: 'DirectMessage', foreign_key: :receiver_id
-  has_many :legislation_answers, class_name: 'Legislation::Answer', dependent: :destroy, inverse_of: :user
+  has_many :direct_messages_sent,     class_name: "DirectMessage", foreign_key: :sender_id
+  has_many :direct_messages_received, class_name: "DirectMessage", foreign_key: :receiver_id
+  has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
   has_many :follows
   belongs_to :geozone
 
@@ -55,6 +55,8 @@ class User < ActiveRecord::Base
   scope :moderators,     -> { joins(:moderator) }
   scope :organizations,  -> { joins(:organization) }
   scope :officials,      -> { where("official_level > 0") }
+  scope :male,           -> { where(gender: "male") }
+  scope :female,         -> { where(gender: "female") }
   scope :newsletter,     -> { where(newsletter: true) }
   scope :for_render,     -> { includes(:organization) }
   scope :by_document,    ->(document_type, document_number) do
@@ -64,11 +66,18 @@ class User < ActiveRecord::Base
   scope :active,         -> { where(erased_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
-  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).uniq }
+  scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).distinct }
   scope :by_authors,     ->(author_ids) { where("users.id IN (?)", author_ids) }
   scope :by_username_email_or_document_number, ->(search_string) do
     string = "%#{search_string}%"
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
+  end
+  scope :between_ages, -> (from, to) do
+    where(
+      "date_of_birth > ? AND date_of_birth < ?",
+      to.years.ago.beginning_of_year,
+      from.years.ago.end_of_year
+    )
   end
 
   before_validation :clean_document_number
@@ -84,7 +93,7 @@ class User < ActiveRecord::Base
       email: oauth_email,
       oauth_email: oauth_email,
       password: Devise.friendly_token[0, 20],
-      terms_of_service: '1',
+      terms_of_service: "1",
       confirmed_at: oauth_email_confirmed ? DateTime.current : nil
     )
   end
@@ -125,6 +134,16 @@ class User < ActiveRecord::Base
 
   def voted_in_group?(group)
     votes.for_budget_investments(Budget::Investment.where(group: group)).exists?
+  end
+
+  def headings_voted_within_group(group)
+    Budget::Heading.joins(:translations)
+                   .order("name")
+                   .where(id: voted_investments.by_group(group).pluck(:heading_id))
+  end
+
+  def voted_investments
+    Budget::Investment.where(id: votes.for_budget_investments.pluck(:votable_id))
   end
 
   def administrator?
@@ -169,7 +188,7 @@ class User < ActiveRecord::Base
   end
 
   def has_official_email?
-    domain = Setting['email_domain_for_officials']
+    domain = Setting["email_domain_for_officials"]
     email.present? && ((email.end_with? "@#{domain}") || (email.end_with? ".#{domain}"))
   end
 
@@ -230,7 +249,7 @@ class User < ActiveRecord::Base
     Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
-    data_log = "id: #{other_user.id} - #{Time.current.strftime('%Y-%m-%d %H:%M:%S')}"
+    data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
     update(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
 
@@ -243,11 +262,11 @@ class User < ActiveRecord::Base
   end
 
   def self.username_max_length
-    @@username_max_length ||= columns.find { |c| c.name == 'username' }.limit || 60
+    @@username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
   end
 
   def self.minimum_required_age
-    (Setting['min_age_to_participate'] || 16).to_i
+    (Setting["min_age_to_participate"] || 16).to_i
   end
 
   def show_welcome_screen?
@@ -336,6 +355,10 @@ class User < ActiveRecord::Base
   def interests
     followables = follows.map(&:followable)
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 
   private

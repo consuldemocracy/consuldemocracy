@@ -33,7 +33,7 @@ sq:
         offices: Zyrat e suportit për qytetarët
         send_letter: Më dërgoni një letër me kodin
         title: Urime!
-        user_permission_info: Me llogarinë tuaj ju mund të ...
+        user_permission_info: Me llogarinë tuaj ju mund të...
       update:
         flash:
           success: Kodi është i saktë. Llogaria juaj tani është verifikuar
@@ -49,7 +49,7 @@ sq:
       new:
         accept_terms_text: Unë pranoj %{terms_url} e regjistrimit
         accept_terms_text_title: Unë pranoj afatet dhe kushtet e qasjes së regjistrimit
-        date_of_birth: Ditëlindja
+        date_of_birth: Data e lindjes
         document_number: Numri i dokumentit
         document_number_help_title: Ndihmë
         document_number_help_text_html: '<strong>Dni</strong>: 12345678A<br><strong>Pashaport</strong>: AAA000001<br><strong>Residence card</strong>: X1234567P'
@@ -92,7 +92,7 @@ sq:
             success: Kodi është i saktë. Llogaria juaj tani është verifikuar
           level_two:
             success: Kodi është i saktë
-    step_1: Vendbanimi
+    step_1: Rezident
     step_2: Kodi i konfirmimit
     step_3: Verifikimi përfundimtar
     user_permission_debates: Merrni pjesë në debate

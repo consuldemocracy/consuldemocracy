@@ -20,20 +20,30 @@ it:
       edit:
         see_all: Vedere le proposte
         title: Lettera richiesta
+      errors:
+        incorrect_code: Codice di verifica non corretto
       new:
         explanation: 'Per partecipare alla votazione finale puoi:'
+        go_to_index: Vedere le proposte
         send_letter: Inviatemi una lettera con il codice
         title: Congratulazioni!
-        user_permission_info: Con il tuo profilo puoi...
+        user_permission_info: Con il tuo account puoi...
+      update:
+        flash:
+          success: Il codice è corretto, pertanto il tuo account è ora considerato come verificato
     redirect_notices:
       already_verified: Questo account utente è già verificato
       email_already_sent: Abbiamo già inviato un'e-mail con un link di conferma. Se non è possibile recuperare l'email, qui si può richiedere che venga reinviata
     residence:
       new:
+        date_of_birth: Data di nascita
         document_number: Numero del documento
+        document_number_help_title: Aiuto
         document_type:
           passport: Passaporto
+        document_type_label: Tipo di documento
         error_not_allowed_age: Non hai l'età minima richiesta per partecipare
+        postal_code: Cap
         terms: termini e condizioni d'uso
     sms:
       create:
@@ -47,20 +57,26 @@ it:
         title: SMS di conferma
       new:
         phone: Inserisci il tuo numero di cellulare per ricevere il codice
+        submit_button: Inviare
         title: Inviare SMS di conferma
       update:
         error: Codice di conferma non corretto
         flash:
+          level_three:
+            success: Il codice è corretto, pertanto il tuo account è ora considerato come verificato
           level_two:
             success: Codice corretto
+    step_1: Indirizzo
+    step_2: SMS di conferma
     step_3: Verifica finale
     user_permission_debates: Partecipare ai dibattiti
     user_permission_info: Una volta verificati i tuoi dati, sarai in grado di...
     user_permission_proposal: Creare nuove proposte
+    user_permission_support_proposal: Sostenere proposte*
     user_permission_votes: Partecipare al voto finale *
     verified_user:
       show:
-        email_title: E-mail
+        email_title: Email
         phone_title: Numeri di telefono
         title: Informazioni disponibili
         use_another_phone: Utilizzare un altro telefono

@@ -17,5 +17,5 @@ zh-TW:
         confirm: 您確定要刪除圖像嗎？ 此操作將無法撤消！
     errors:
       messages:
-        in_between: 必須介於%{min} 和%{max} 之間
+        in_between: 必須在%{min} 和%{max} 之間
         wrong_content_type: 內容類型%{content_type} 與任何已接受的內容類型%{accepted_content_types} 都不匹配

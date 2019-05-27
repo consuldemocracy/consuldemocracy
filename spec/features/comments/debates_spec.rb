@@ -1,26 +1,26 @@
-require 'rails_helper'
+require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature 'Commenting debates' do
+feature "Commenting debates" do
   let(:user)   { create :user }
   let(:debate) { create :debate }
 
-  scenario 'Index' do
+  scenario "Index" do
     3.times { create(:comment, commentable: debate) }
 
     visit debate_path(debate)
 
-    expect(page).to have_css('.comment', count: 3)
+    expect(page).to have_css(".comment", count: 3)
 
     comment = Comment.last
-    within first('.comment') do
+    within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
       expect(page).to have_content comment.body
     end
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     parent_comment = create(:comment, commentable: debate)
     first_child    = create(:comment, commentable: debate, parent: parent_comment)
     second_child   = create(:comment, commentable: debate, parent: parent_comment)
@@ -39,33 +39,33 @@ feature 'Commenting debates' do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
-  scenario 'Collapsable comments', :js do
+  scenario "Collapsable comments", :js do
     parent_comment = create(:comment, body: "Main comment", commentable: debate)
     child_comment  = create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
     grandchild_comment = create(:comment, body: "Last subcomment", commentable: debate, parent: child_comment)
 
     visit debate_path(debate)
 
-    expect(page).to have_css('.comment', count: 3)
+    expect(page).to have_css(".comment", count: 3)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
-    expect(page).to have_css('.comment', count: 2)
+    expect(page).to have_css(".comment", count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
-    expect(page).to have_css('.comment', count: 3)
+    expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
-    expect(page).to have_css('.comment', count: 1)
+    expect(page).to have_css(".comment", count: 1)
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end
 
-  scenario 'Comment order' do
+  scenario "Comment order" do
     c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
     c2 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 10,
@@ -89,7 +89,7 @@ feature 'Commenting debates' do
     expect(c2.body).to appear_before(c3.body)
   end
 
-  scenario 'Creation date works differently in roots and in child comments, even when sorting by confidence_score' do
+  scenario "Creation date works differently in roots and in child comments, even when sorting by confidence_score" do
     old_root = create(:comment, commentable: debate, created_at: Time.current - 10)
     new_root = create(:comment, commentable: debate, created_at: Time.current)
     old_child = create(:comment, commentable: debate, parent_id: new_root.id, created_at: Time.current - 10)
@@ -111,39 +111,39 @@ feature 'Commenting debates' do
     expect(old_child.body).to appear_before(new_child.body)
   end
 
-  scenario 'Turns links into html links' do
-    create :comment, commentable: debate, body: 'Built with http://rubyonrails.org/'
+  scenario "Turns links into html links" do
+    create :comment, commentable: debate, body: "Built with http://rubyonrails.org/"
 
     visit debate_path(debate)
 
-    within first('.comment') do
-      expect(page).to have_content 'Built with http://rubyonrails.org/'
-      expect(page).to have_link('http://rubyonrails.org/', href: 'http://rubyonrails.org/')
-      expect(find_link('http://rubyonrails.org/')[:rel]).to eq('nofollow')
-      expect(find_link('http://rubyonrails.org/')[:target]).to eq('_blank')
+    within first(".comment") do
+      expect(page).to have_content "Built with http://rubyonrails.org/"
+      expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
+      expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
+      expect(find_link("http://rubyonrails.org/")[:target]).to eq("_blank")
     end
   end
 
-  scenario 'Sanitizes comment body for security' do
+  scenario "Sanitizes comment body for security" do
     create :comment, commentable: debate,
                      body: "<script>alert('hola')</script> <a href=\"javascript:alert('sorpresa!')\">click me<a/> http://www.url.com"
 
     visit debate_path(debate)
 
-    within first('.comment') do
+    within first(".comment") do
       expect(page).to have_content "click me http://www.url.com"
-      expect(page).to have_link('http://www.url.com', href: 'http://www.url.com')
-      expect(page).not_to have_link('click me')
+      expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
+      expect(page).not_to have_link("click me")
     end
   end
 
-  scenario 'Paginated comments' do
+  scenario "Paginated comments" do
     per_page = 10
     (per_page + 2).times { create(:comment, commentable: debate)}
 
     visit debate_path(debate)
 
-    expect(page).to have_css('.comment', count: per_page)
+    expect(page).to have_css(".comment", count: per_page)
     within("ul.pagination") do
       expect(page).to have_content("1")
       expect(page).to have_content("2")
@@ -151,47 +151,47 @@ feature 'Commenting debates' do
       click_link "Next", exact: false
     end
 
-    expect(page).to have_css('.comment', count: 2)
+    expect(page).to have_css(".comment", count: 2)
   end
 
-  feature 'Not logged user' do
-    scenario 'can not see comments forms' do
+  feature "Not logged user" do
+    scenario "can not see comments forms" do
       create(:comment, commentable: debate)
       visit debate_path(debate)
 
-      expect(page).to have_content 'You must Sign in or Sign up to leave a comment'
-      within('#comments') do
-        expect(page).not_to have_content 'Write a comment'
-        expect(page).not_to have_content 'Reply'
+      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      within("#comments") do
+        expect(page).not_to have_content "Write a comment"
+        expect(page).not_to have_content "Reply"
       end
     end
   end
 
-  scenario 'Create', :js do
+  scenario "Create", :js do
     login_as(user)
     visit debate_path(debate)
 
-    fill_in "comment-body-debate_#{debate.id}", with: 'Have you thought about...?'
-    click_button 'Publish comment'
+    fill_in "comment-body-debate_#{debate.id}", with: "Have you thought about...?"
+    click_button "Publish comment"
 
     within "#comments" do
-      expect(page).to have_content 'Have you thought about...?'
-      expect(page).to have_content '(1)'
+      expect(page).to have_content "Have you thought about...?"
+      expect(page).to have_content "(1)"
     end
   end
 
-  scenario 'Errors on create', :js do
+  scenario "Errors on create", :js do
     login_as(user)
     visit debate_path(debate)
 
-    click_button 'Publish comment'
+    click_button "Publish comment"
 
     expect(page).to have_content "Can't be blank"
   end
 
-  scenario 'Reply', :js do
-    citizen = create(:user, username: 'Ana')
-    manuela = create(:user, username: 'Manuela')
+  scenario "Reply", :js do
+    citizen = create(:user, username: "Ana")
+    manuela = create(:user, username: "Manuela")
     comment = create(:comment, commentable: debate, user: citizen)
 
     login_as(manuela)
@@ -200,18 +200,18 @@ feature 'Commenting debates' do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: 'It will be done next week.'
-      click_button 'Publish reply'
+      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      click_button "Publish reply"
     end
 
     within "#comment_#{comment.id}" do
-      expect(page).to have_content 'It will be done next week.'
+      expect(page).to have_content "It will be done next week."
     end
 
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
-  scenario 'Errors on reply', :js do
+  scenario "Errors on reply", :js do
     comment = create(:comment, commentable: debate, user: user)
 
     login_as(user)
@@ -220,7 +220,7 @@ feature 'Commenting debates' do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      click_button 'Publish reply'
+      click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
 
@@ -287,29 +287,29 @@ feature 'Commenting debates' do
 
   scenario "Erasing a comment's author" do
     debate = create(:debate)
-    comment = create(:comment, commentable: debate, body: 'this should be visible')
+    comment = create(:comment, commentable: debate, body: "this should be visible")
     comment.user.erase
 
     visit debate_path(debate)
     within "#comment_#{comment.id}" do
-      expect(page).to have_content('User deleted')
-      expect(page).to have_content('this should be visible')
+      expect(page).to have_content("User deleted")
+      expect(page).to have_content("this should be visible")
     end
   end
 
-  scenario 'Submit button is disabled after clicking', :js do
+  scenario "Submit button is disabled after clicking", :js do
     debate = create(:debate)
     login_as(user)
     visit debate_path(debate)
 
-    fill_in "comment-body-debate_#{debate.id}", with: 'Testing submit button!'
-    click_button 'Publish comment'
+    fill_in "comment-body-debate_#{debate.id}", with: "Testing submit button!"
+    click_button "Publish comment"
 
-    # The button's text should now be "..."
+    # The button"s text should now be "..."
     # This should be checked before the Ajax request is finished
-    expect(page).not_to have_button 'Publish comment'
+    expect(page).not_to have_button "Publish comment"
 
-    expect(page).to have_content('Testing submit button!')
+    expect(page).to have_content("Testing submit button!")
   end
 
   feature "Moderators" do
@@ -345,7 +345,7 @@ feature 'Commenting debates' do
       within "#js-comment-form-comment_#{comment.id}" do
         fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
-        click_button 'Publish reply'
+        click_button "Publish reply"
       end
 
       within "#comment_#{comment.id}" do
@@ -401,7 +401,7 @@ feature 'Commenting debates' do
       within "#js-comment-form-comment_#{comment.id}" do
         fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
-        click_button 'Publish reply'
+        click_button "Publish reply"
       end
 
       within "#comment_#{comment.id}" do
@@ -424,7 +424,7 @@ feature 'Commenting debates' do
     end
   end
 
-  feature 'Voting comments' do
+  feature "Voting comments" do
     background do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
@@ -434,7 +434,7 @@ feature 'Commenting debates' do
       login_as(@manuela)
     end
 
-    scenario 'Show' do
+    scenario "Show" do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
@@ -453,7 +453,7 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario 'Create', :js do
+    scenario "Create", :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
@@ -471,23 +471,23 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario 'Update', :js do
+    scenario "Update", :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
-        find('.in_favor a').click
+        find(".in_favor a").click
 
-        within('.in_favor') do
+        within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        find('.against a').click
+        find(".against a").click
 
-        within('.in_favor') do
+        within(".in_favor") do
           expect(page).to have_content "0"
         end
 
-        within('.against') do
+        within(".against") do
           expect(page).to have_content "1"
         end
 
@@ -495,22 +495,22 @@ feature 'Commenting debates' do
       end
     end
 
-    scenario 'Trying to vote multiple times', :js do
+    scenario "Trying to vote multiple times", :js do
       visit debate_path(@debate)
 
       within("#comment_#{@comment.id}_votes") do
-        find('.in_favor a').click
-        within('.in_favor') do
+        find(".in_favor a").click
+        within(".in_favor") do
           expect(page).to have_content "1"
         end
 
-        find('.in_favor a').click
-        within('.in_favor') do
+        find(".in_favor a").click
+        within(".in_favor") do
           expect(page).not_to have_content "2"
           expect(page).to have_content "1"
         end
 
-        within('.against') do
+        within(".against") do
           expect(page).to have_content "0"
         end
 

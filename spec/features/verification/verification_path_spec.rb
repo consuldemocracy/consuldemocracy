@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Verification path' do
+feature "Verification path" do
 
   scenario "User is an organization" do
     user = create(:user, verified_at: Time.current)
@@ -19,7 +19,7 @@ feature 'Verification path' do
     visit verification_path
 
     expect(page).to have_current_path(account_path)
-    expect(page).to have_content 'Your account is already verified'
+    expect(page).to have_content "Your account is already verified"
   end
 
   scenario "User requested a letter" do
@@ -95,7 +95,7 @@ feature 'Verification path' do
       visit step_path
 
       expect(page).to have_current_path(account_path)
-      expect(page).to have_content 'Your account is already verified'
+      expect(page).to have_content "Your account is already verified"
     end
   end
 

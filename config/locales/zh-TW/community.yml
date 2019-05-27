@@ -1,7 +1,7 @@
 zh-TW:
   community:
     sidebar:
-      title: 社群
+      title: 社區
       description:
         proposal: 參與本建議的用戶社群。
         investment: 參與本投資的用戶社群。
@@ -56,4 +56,4 @@ zh-TW:
         recommendation_three: 享受這片空間， 並其中充滿的聲音，這也是你的空間。
   topics:
     show:
-      login_to_comment: 您必須 %{signin} 或 %{signup} 才能留下評論。
+      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。

@@ -2,17 +2,20 @@ he:
   activemodel:
     models:
       verification:
-        residence: "מקום מגורים"
+        residence: "כתובת מגורים"
         sms: "מסרון"
     attributes:
       verification:
         residence:
-          document_type: "סוג מסמך"
+          document_type: "סוג תעודה מזהה"
           document_number: "מספר מסמך (כולל אותיות)"
           date_of_birth: "תאריך לידה"
           postal_code: "מיקוד"
         sms:
           phone: "מספר טלפון"
-          confirmation_code: "אישור הקוד"
+          confirmation_code: "אישור קוד האבטחה"
         email:
-          recipient: "קבלת דואר אלקטרוני"
+          recipient: "דואר אלקטרוני"
+      officing/residence:
+        document_type: "סוג תעודה מזהה"
+        document_number: "מספר מסמך (כולל אותיות)"

@@ -1,4 +1,4 @@
-class CreatePollRecount < ActiveRecord::Migration
+class CreatePollRecount < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_recounts do |t|
       t.integer :author_id

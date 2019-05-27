@@ -23,7 +23,7 @@ fa:
       change_user: تغییر کاربر
       document_number_label: 'شماره سند:'
       document_type_label: 'نوع سند:'
-      email_label: 'پست الکترونیکی:'
+      email_label: 'پست الکترونیکی'
       identified_label: 'شناخته شده به عنوان:'
       username_label: 'نام کاربری:'
     dashboard:
@@ -33,7 +33,7 @@ fa:
     document_number: شماره سند
     document_type_label: نوع سند
     document_verifications:
-      already_verified: این حساب کاربری قبلا تأیید شده است
+      already_verified: حساب شما قبلا تایید شده است.
       has_no_account_html: برای ایجاد یک حساب، به%{link} بروید و در قسمت <b> «ثبت نام» </ b> در قسمت بالا سمت چپ صفحه کلیک کنید.
       link: کنسول
       in_census_has_following_permissions: 'این کاربر می تواند در وب سایت با مجوزهای زیر شرکت کند:'
@@ -46,7 +46,7 @@ fa:
     email_label: پست الکترونیکی
     date_of_birth: تاریخ تولد
     email_verifications:
-      already_verified: حساب شما قبلا تایید شده است.
+      already_verified: این حساب کاربری قبلا تأیید شده است
       choose_options: 'لطفا یکی از گزینه های زیر را انتخاب کنید:'
       document_found_in_census: این سند در سرشماری یافت شد، اما هیچ حساب کاربری مربوط به آن نیست.
       document_mismatch: 'این ایمیل متعلق به کاربر است که در حال حاضر دارای شناسه: %{document_number}(%{document_type})'
@@ -57,9 +57,9 @@ fa:
       introduce_email: 'لطفا ایمیل مورد استفاده در حساب را وارد کنید:'
       send_email: ارسال ایمیل تایید
     menu:
-      create_proposal: ایجاد طرح 
+      create_proposal: ایجاد طرح های جدید
       print_proposals: چاپ طرح
-      support_proposals: پشتیبانی از طرح های پیشنهادی
+      support_proposals: '* پشتیبانی از طرح های پیشنهادی'
       create_spending_proposal: ایجاد  هزینه پیشنهاد
       print_spending_proposals: چاپ پیشنهادات هزینه
       support_spending_proposals: پشتیبانی از پیشنهادات هزینه
@@ -78,9 +78,16 @@ fa:
     proposals:
       alert:
         unverified_user: کاربر تأیید نشده است
-      create_proposal: ایجاد طرح های جدید
+      create_proposal: ایجاد طرح 
       print:
         print_button: چاپ
+      index:
+        title: '* پشتیبانی از طرح های پیشنهادی'
+    budgets:
+      create_new_investment: "ایجاد بودجه سرمایه گذاری \n"
+      table_name: نام
+      table_phase: فاز
+      table_actions: اقدامات
     budget_investments:
       alert:
         unverified_user: کاربر تأیید نشده است

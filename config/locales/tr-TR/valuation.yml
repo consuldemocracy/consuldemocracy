@@ -1,1 +1,23 @@
 tr:
+  valuation:
+    budgets:
+      index:
+        filters:
+          current: Açık
+        table_actions: Aksiyon
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Açık
+        table_actions: Aksiyon
+      show:
+        currency: "€"
+    spending_proposals:
+      index:
+        filters:
+          valuation_open: Açık
+        edit: Düzenleme
+      show:
+        currency: "€"
+      edit:
+        currency: "€"

@@ -1,4 +1,4 @@
-class MoveGeozonesFromPollQuestionsToPolls < ActiveRecord::Migration
+class MoveGeozonesFromPollQuestionsToPolls < ActiveRecord::Migration[4.2]
   def change
     drop_table :geozones_poll_questions
 

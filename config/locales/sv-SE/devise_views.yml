@@ -40,7 +40,7 @@ sv:
       registrations:
         new:
           email_label: E-post
-          organization_name_label: Organisationsnamn
+          organization_name_label: Organisationens namn
           password_confirmation_label: Bekräfta lösenord
           password_label: Lösenord
           phone_number_label: Telefonnummer
@@ -58,7 +58,7 @@ sv:
     passwords:
       edit:
         change_submit: Ändra mitt lösenord
-        password_confirmation_label: Bekräfta nytt lösenord
+        password_confirmation_label: Bekräfta ditt nya lösenord
         password_label: Nytt lösenord
         title: Ändra ditt lösenord
       new:
@@ -67,7 +67,7 @@ sv:
         title: Har du glömt ditt lösenord?
     sessions:
       new:
-        login_label: E-postadress eller användarnamn
+        login_label: E-post eller användarnamn
         password_label: Lösenord
         remember_me: Kom ihåg mig
         submit: Logga in
@@ -92,7 +92,7 @@ sv:
           erase_reason_label: Anledning
           info: Åtgärden kan inte ångras. Kontrollera att detta är vad du vill.
           info_reason: Om du vill kan du skriva en anledning (frivilligt fält)
-          submit: Radera mitt konto
+          submit: Ta bort mitt konto
           title: Radera konto
         edit:
           current_password_label: Nuvarande lösenord
@@ -100,7 +100,7 @@ sv:
           email_label: E-post
           leave_blank: Lämna tomt om du inte vill ändra det
           need_current: Vi behöver ditt nuvarande lösenord för att bekräfta ändringarna
-          password_confirmation_label: Bekräfta ditt nya lösenord
+          password_confirmation_label: Bekräfta nytt lösenord
           password_label: Nytt lösenord
           update_submit: Uppdatera
           waiting_for: 'Väntar på bekräftelse av:'

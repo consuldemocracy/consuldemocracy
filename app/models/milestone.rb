@@ -1,4 +1,4 @@
-class Milestone < ActiveRecord::Base
+class Milestone < ApplicationRecord
   include Imageable
   include Documentable
   documentable max_documents_allowed: 3,
@@ -7,6 +7,7 @@ class Milestone < ActiveRecord::Base
 
   translates :title, :description, touch: true
   include Globalizable
+  translation_class_delegate :status_id
 
   belongs_to :milestoneable, polymorphic: true
   belongs_to :status
@@ -14,7 +15,7 @@ class Milestone < ActiveRecord::Base
   validates :milestoneable, presence: true
   validates :publication_date, presence: true
 
-  before_validation :assign_milestone_to_translations
+  before_validation :assign_model_to_translations
   validates_translation :description, presence: true, unless: -> { status_id.present? }
 
   scope :order_by_publication_date, -> { order(publication_date: :asc, created_at: :asc) }
@@ -25,9 +26,4 @@ class Milestone < ActiveRecord::Base
     80
   end
 
-  private
-
-    def assign_milestone_to_translations
-      translations.each { |translation| translation.globalized_model = self }
-    end
 end

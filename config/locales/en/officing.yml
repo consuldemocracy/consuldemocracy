@@ -16,6 +16,28 @@ en:
         no_polls: You are not officing final recounts in any active poll
         select_poll: Select poll
         add_results: Add results
+    poll_budgets:
+      see_ballot_sheets: See ballot sheets list
+      index:
+        title: "%{poll_budget} - Ballot sheets list"
+        ballot_sheet: "Ballot sheet %{id}"
+        ballot_sheet_name: Name
+        ballot_sheet_author: Author
+        ballot_sheet_creation_date: Creation date
+        empty_results: There are no ballot sheets for this poll yet
+      new:
+        title: "%{poll_budget} - New ballot sheet"
+        booth: Booth
+        select_booth: Select booth
+        csv_data: CSV data
+        submit: Save
+      show:
+        created_at: Creation date
+        author: Author
+        data: CSV data
+    booth:
+      new:
+        title: "Choose your booth"
     results:
       flash:
         create: "Results saved"
@@ -51,7 +73,6 @@ en:
         submit: Validate document
         error_verifying_census: "The Census was unable to verify this document."
         form_errors: prevented the verification of this document
-        no_assignments: "You don't have officing shifts today"
     voters:
       new:
         title: Polls

@@ -4,7 +4,7 @@ resources :polls, only: [:show, :index] do
     get :results
   end
 
-  resources :questions, controller: 'polls/questions', shallow: true do
+  resources :questions, controller: "polls/questions", shallow: true do
     post :answer, on: :member
   end
 end

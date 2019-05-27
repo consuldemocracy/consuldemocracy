@@ -6,7 +6,7 @@ module Galleryable
     accepts_nested_attributes_for :images, allow_destroy: true, update_only: true
 
     def image_url(style)
-      image.attachment.url(style) if image && image.attachment.exists?
+      image&.attachment&.url(style) || ""
     end
   end
 end

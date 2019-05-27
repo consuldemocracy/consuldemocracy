@@ -1,4 +1,4 @@
-class CreateBudgetHeading < ActiveRecord::Migration
+class CreateBudgetHeading < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_headings do |t|
       t.references :group, index: true

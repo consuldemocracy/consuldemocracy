@@ -17,7 +17,7 @@ de:
         first_theme_not_logged_in: Es ist kein Anliegen verfügbar, beteiligen Sie sich, indem Sie das erste erstellen.
         first_theme: Erstellen Sie das erste Community-Thema
         sub_first_theme: "Um ein Thema zu erstellen, müssen Sie %{sign_in} o %{sign_up}."
-        sign_in: "Anmelden"
+        sign_in: "anmelden"
         sign_up: "registrieren"
       tab:
         participants: Teilnehmer

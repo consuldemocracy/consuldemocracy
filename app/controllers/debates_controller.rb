@@ -46,9 +46,9 @@ class DebatesController < ApplicationController
 
   def disable_recommendations
     if current_user.update(recommended_debates: false)
-      redirect_to debates_path, notice: t('debates.index.recommendations.actions.success')
+      redirect_to debates_path, notice: t("debates.index.recommendations.actions.success")
     else
-      redirect_to debates_path, error: t('debates.index.recommendations.actions.error')
+      redirect_to debates_path, error: t("debates.index.recommendations.actions.error")
     end
   end
 
@@ -67,7 +67,7 @@ class DebatesController < ApplicationController
     end
 
     def debates_recommendations
-      if Setting['feature.user.recommendations_on_debates'] && current_user.recommended_debates
+      if Setting["feature.user.recommendations_on_debates"] && current_user.recommended_debates
         @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
       end
     end

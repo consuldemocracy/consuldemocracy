@@ -8,39 +8,39 @@ it:
         info: Qui è possibile convalidare i documenti degli utenti e archiviare i risultati delle votazioni
         no_shifts: Oggi non hai turni da scrutatore.
     menu:
-      voters: Convalida documento
+      voters: Convalidare il documento
       total_recounts: Scrutinio finale e risultati
     polls:
       final:
         title: Votazioni pronte per lo scrutinio finale
         no_polls: Non sei incaricato degli scrutini finali in alcuna votazione attiva
         select_poll: Seleziona votazione
-        add_results: Aggiungi risultati
+        add_results: Aggiungere i risultati
     results:
       flash:
         create: "Risultati salvati"
-        error_create: "Risultati NON salvati. Errore nei dati."
-        error_wrong_booth: "Seggio sbagliato. Risultati NON salvati."
+        error_create: "Risultati non salvati. Errore nei dati."
+        error_wrong_booth: "Seggio sbagliato. Risultati non salvati."
       new:
         title: "%{poll} - Aggiungi risultati"
         not_allowed: "Sei autorizzato ad aggiungere risultati per questa votazione"
-        booth: "Seggio"
+        booth: "Urna"
         date: "Data"
-        select_booth: "Seleziona seggio"
+        select_booth: "Selezionare il seggio"
         ballots_white: "Schede totalmente bianche"
-        ballots_null: "Schede invalidate"
-        ballots_total: "Schede totali"
+        ballots_null: "Voti non validi"
+        ballots_total: "Totale schede"
         submit: "Salva"
         results_list: "I tuoi risultati"
-        see_results: "Vedi risultati"
+        see_results: "Vedere i risultati"
       index:
         no_results: "Nessun risultato"
         results: Risultati
         table_answer: Risposta
         table_votes: Voti
         table_whites: "Schede totalmente bianche"
-        table_nulls: "Schede invalidate"
-        table_total: "Schede totali"
+        table_nulls: "Voti non validi"
+        table_total: "Totale schede"
     residence:
       flash:
         create: "Documento verificato con l'Anagrafe"
@@ -50,18 +50,18 @@ it:
         document_number: "Numero del documento (lettere incluse)"
         submit: Convalida documento
         error_verifying_census: "L’Anagrafe non ha potuto verificare questo documento."
-        form_errors: non hanno consentito di verificare questo documento
+        form_errors: non hanno consentito di verificare il documento
         no_assignments: "Oggi non hai turni da scrutatore"
     voters:
       new:
         title: Votazioni
-        table_poll: Votazione
+        table_poll: Sondaggio
         table_status: Status votazioni
         table_actions: Azioni
         not_to_vote: La persona ha deciso di non votare al momento
       show:
-        can_vote: Può votare
-        error_already_voted: Ha già partecipato a questa votazione
+        can_vote: Puoi votare
+        error_already_voted: Hai già partecipato a questa votazione
         submit: Conferma voto
         success: "Voto inserito!"
       can_vote:

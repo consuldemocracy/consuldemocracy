@@ -1,1 +1,401 @@
 fi:
+  account:
+    show:
+      erase_account_link: Poista tilini
+      notifications: Ilmoitukset
+      organization_name_label: Organisaation nimi
+      phone_number_label: Puhelinnumero
+      save_changes_submit: Tallenna muutokset
+      recommendations: Suositukset
+      title: Tilini
+      user_permission_info: Tililläsi voit...
+      user_permission_proposal: Luo uusia ehdotuksia
+      user_permission_support_proposal: Tue ehdotuksia
+      username_label: Käyttäjätunnus
+      verified_account: Tili vahvistettu
+      verify_my_account: Vahvista tilini
+  application:
+    close: Sulje
+    menu: Valikko
+  comments:
+    comments_closed: Kommentointi on suljettu
+    verify_account: vahvista tilisi
+    comment:
+      admin: Järjestelmänvalvoja
+      author: Tekijä
+      deleted: Tämä kommentti on poistettu
+      moderator: Moderaattori
+      responses:
+        zero: Ei vastauksia
+        one: 1 vastaus
+        other: "%{count} vastausta"
+      user_deleted: Käyttäjä poistettu
+      votes:
+        zero: Ei ääniä
+        one: 1 ääni
+        other: "%{count} ääntä"
+    form:
+      comment_as_admin: Kommentoi järjestelmänvalvojana
+      comment_as_moderator: Kommentoi moderaattorina
+      leave_comment: Jätä kommenttisi
+    orders:
+      most_voted: Äänestetyin
+      newest: Uusin ensin
+      oldest: Vanhin ensin
+      most_commented: Kommentoiduin
+    show:
+      return_to_commentable: 'Mene takaisin '
+  comments_helper:
+    comment_button: Julkaise kommentti
+    comment_link: Kommentti
+    comments_title: Kommentit
+    reply_button: Julkaise vastaus
+    reply_link: Vastaa
+  debates:
+    debate:
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      votes:
+        zero: Ei ääniä
+        one: 1 ääni
+        other: "%{count} ääntä"
+    edit:
+      form:
+        submit_button: Tallenna muutokset
+    form:
+      tags_label: Aiheet
+    index:
+      orders:
+        confidence_score: korkeimmin arvioitu
+        created_at: uusin
+        hot_score: aktiivisin
+        most_commented: kommentoiduin
+        relevance: merkityksellisyys
+        recommendations: suositukset
+      search_form:
+        button: Etsi
+        title: Etsi
+    new:
+      info_link: luo uusi ehdotus
+      more_info: Lisää tietoa
+    show:
+      author_deleted: Käyttäjä poistettu
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      comments_title: Kommentit
+      edit_debate_link: Muokkaa
+      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
+      share: Jaa
+      author: Tekijä
+    update:
+      form:
+        submit_button: Tallenna muutokset
+  errors:
+    messages:
+      user_not_found: Käyttäjää ei löydy
+  form:
+    conditions: Ehdot ja käyttöehdot
+    direct_message: yksityisviesti
+    error: virhe
+    errors: virheet
+    policy: Tietosuojakäytäntö
+    proposal: Ehdotus
+    proposal_notification: "Ilmoitus"
+    budget/investment: Sijoitus
+    poll/question/answer: Vastaus
+    user: Tili
+    verification/sms: puhelin
+    document: Asiakirja
+    topic: Aihe
+    image: Kuva
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+    footer:
+      conditions: Ehdot ja käyttöehdot
+      consul_url: https://github.com/consul/consul
+      copyright: CONSUL, %{year}
+      open_source: avoimen lähdekoodin ohjelmisto
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      privacy: Tietosuojakäytäntö
+    header:
+      administration_menu: Järjestelmänvalvoja
+      administration: Järjestelmänvalvonta
+      available_locales: Saatavilla olevat kielet
+      external_link_blog: Blogi
+      locale: 'Kieli:'
+      logo: CONSUL logo
+      help: Apua
+      my_account_link: Tilini
+      open: avaa
+      proposals: Ehdotukset
+      poll_questions: Äänestys
+      notification_item:
+        notifications: Ilmoitukset
+  notifications:
+    index:
+      empty_notifications: Sinulle ei ole uusia ilmoituksia.
+      mark_all_as_read: Merkkaa kaikki luetuiksi
+      read: Lue
+      title: Ilmoitukset
+      unread: Lukematon
+    notification:
+      mark_as_read: Merkitse luetuksi
+      mark_as_unread: Merkkaa lukemattomaksi
+  map:
+    start_proposal: Luo ehdotus
+  omniauth:
+    facebook:
+      sign_in: Kirjaudu käyttäen Facebookia
+      sign_up: Rekisteröidy käyttäen Facebookia
+      name: Facebook
+    finish_signup:
+      title: "Lisätiedot"
+    google_oauth2:
+      sign_in: Kirjaudu sisään käyttäen Googlea
+      sign_up: Rekisteröidy käyttäen Googlea
+      name: Google
+    twitter:
+      sign_in: Kirjaudu sisään käyttäen Twitteriä
+      sign_up: Rekisteröidy käyttäen Twitteriä
+      name: Twitter
+    info_sign_in: "Kirjaudu sisään käyttäen:"
+    info_sign_up: "Rekisteröidy käyttäen:"
+    or_fill: "Tai täytä alla oleva kaavake:"
+  proposals:
+    create:
+      form:
+        submit_button: Luo ehdotus
+    edit:
+      editing: Muokkaa ehdotusta
+      form:
+        submit_button: Tallenna muutokset
+      show_link: Näytä ehdotus
+    retire_form:
+      retired_explanation_label: Selitys
+    retire_options:
+      unfeasible: Toteuttamiskelvoton
+      other: Muu
+    form:
+      tag_category_label: "Kategoriat"
+      tags_label: Tunnisteet
+    index:
+      orders:
+        confidence_score: korkeimmin arvioitu
+        created_at: uusin
+        hot_score: aktiivisin
+        most_commented: kommentoiduin
+        relevance: merkityksellisyys
+        recommendations: suositukset
+      retired_links:
+        all: Kaikki
+        unfeasible: Toteuttamiskelvoton
+        other: Muu
+      search_form:
+        button: Etsi
+        title: Etsi
+      start_proposal: Luo ehdotus
+      title: Ehdotukset
+      section_header:
+        title: Ehdotukset
+    new:
+      form:
+        submit_button: Luo ehdotus
+      start_new: Luo uusi ehdotus
+    proposal:
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      support: Tue
+      supports:
+        zero: Ei tukijoita
+        one: 1 tukija
+        other: "%{count} tukijaa"
+      votes:
+        zero: Ei ääniä
+        one: 1 ääni
+        other: "%{count} ääntä"
+      total_percent: 100%
+    show:
+      author_deleted: Käyttäjä poistettu
+      comments:
+        zero: Ei kommentteja
+        one: 1 kommentti
+        other: "%{count} kommenttia"
+      comments_tab: Kommentit
+      edit_proposal_link: Muokkaa
+      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
+      notifications_tab: Ilmoitukset
+      milestones_tab: Tavoitteet
+      share: Jaa
+      send_notification: Lähetä ilmoitus
+      title_video_url: "Ulkoinen video"
+      author: Tekijä
+    update:
+      form:
+        submit_button: Tallenna muutokset
+  polls:
+    all: "Kaikki"
+    index:
+      filters:
+        current: "Avaa"
+      title: "Kyselyt"
+      section_header:
+        title: Äänestys
+    show:
+      comments_tab: Kommentit
+      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
+      signin: Kirjaudu sisään
+      signup: Rekisteröidy
+      verify_link: "vahvista tilisi"
+      more_info_title: "Lisää tietoa"
+      documents: Asiakirjat
+      videos: "Ulkoinen video"
+      info_menu: "Tiedot"
+      stats:
+        votes: "ÄÄNET"
+      results:
+        title: "Kysymykset"
+  poll_questions:
+    create_question: "Luo kysymys"
+    show:
+      vote_answer: "Äänestä %{answer}"
+  proposal_notifications:
+    new:
+      title: "Lähetä viesti"
+      body_label: "Viesti"
+      submit_button: "Lähetä viesti"
+  shared:
+    edit: 'Muokkaa'
+    save: 'Tallenna'
+    delete: Poista
+    "yes": "Kyllä"
+    "no": "Ei"
+    advanced_search:
+      author_type_blank: 'Valitse kategoria'
+      date_placeholder: 'PP/KK/VVVV'
+      date_range_blank: 'Valitse päivämäärä'
+      date_5: 'Mukautettu'
+      search: 'Suodatin'
+      title: 'Edistynyt haku'
+    author_info:
+      author_deleted: Käyttäjä poistettu
+    back: Takaisin
+    check: Valitse
+    check_all: Kaikki
+    check_none: Ei mitään
+    follow: "Seuraa"
+    follow_entity: "Seuraa %{entity}"
+    hide: Piilota
+    search: Etsi
+    show: Näytä
+    suggest:
+      debate:
+        see_all: "Näytä kaikki"
+      budget_investment:
+        see_all: "Näytä kaikki"
+      proposal:
+        see_all: "Näytä kaikki"
+    tags_cloud:
+      categories: "Kategoriat"
+    target_blank_html: " (linkit avautuvat uudessa ikkunassa)"
+    share: Jaa
+    orbit:
+      next_slide: Seuraava dia
+    recommended_index:
+      title: Suositukset
+  social:
+    instagram: "%{org} Instagram"
+  spending_proposals:
+    form:
+      description: Kuvaus
+      submit_buttons:
+        create: Luo
+        new: Luo
+    index:
+      search_form:
+        button: Etsi
+        title: Etsi
+      sidebar:
+        feasibility: Toteutettavuus
+        unfeasible: Toteuttamiskelvoton
+    show:
+      author_deleted: Käyttäjä poistettu
+      share: Jaa
+    spending_proposal:
+      support: Tue
+      support_title: Tue tätä projektia
+      supports:
+        zero: Ei tukijoita
+        one: 1 tukija
+        other: "%{count} tukijaa"
+  stats:
+    index:
+      proposals: Ehdotukset
+      comments: Kommentit
+  users:
+    direct_messages:
+      new:
+        body_label: Viesti
+        submit_button: Lähetä viesti
+        title: Lähetä yksityisviesti käyttäjälle %{receiver}
+        verify_account: vahvista tilisi
+        signin: kirjaudu
+        signup: rekisteröidy
+    show:
+      deleted: Poistettu
+      deleted_proposal: Tämä ehdotus on poistettu
+      proposals: Ehdotukset
+      comments: Kommentit
+      actions: Toiminnot
+      send_private_message: "Lähetä yksityisviesti"
+    proposals:
+      send_notification: "Lähetä ilmoitus"
+      see: "Näytä ehdotus"
+  votes:
+    agree: Hyväksyn
+    disagree: En hyväksy
+    signin: Kirjaudu sisään
+    signup: Rekisteröidy
+    verify_account: vahvista tilisi
+  welcome:
+    feed:
+      see_all_proposals: Näytä kaikki ehdotukset
+      see_all_processes: Näytä kaikki prosessit
+      process_label: Prosessi
+      see_process: Näytä prosessit
+    recommended:
+      slide: "Näytä %{title}"
+    verification:
+      i_dont_have_an_account: Minulla ei ole tunnusta
+      i_have_an_account: Minulla on jo tili
+      title: Tilin vahvistus
+    welcome:
+      title: Osallistu
+      user_permission_info: Tililläsi voit...
+      user_permission_proposal: Luo uusia ehdotuksia
+      user_permission_support_proposal: Tue ehdotuksia*
+      user_permission_verify_my_account: Vahvista tilini
+  invisible_captcha:
+    sentence_for_humans: "Jos olet ihminen, ohita tämä kenttä"
+  related_content:
+    placeholder: "%{url}"
+    submit: "Lisää"
+    score_positive: "Kyllä"
+    score_negative: "Ei"
+    content_title:
+      proposal: "Ehdotus"
+  admin/widget:
+    header:
+      title: Järjestelmänvalvonta
+  annotator:
+    help:
+      text_sign_in: kirjaudu
+      text_sign_up: rekisteröidy
+      title: Kuinka voin kommentoida tätä asiakirjaa?

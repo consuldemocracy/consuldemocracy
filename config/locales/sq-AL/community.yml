@@ -29,7 +29,7 @@ sq:
         destroy: Fshi temën
         comments:
           zero: Nuk ka komente
-          one: '%{count} komente'
+          one: 1 koment
           other: "%{count} komente"
       author: Autor
       back: Kthehu mbrapsht te %{community}%{proposal}

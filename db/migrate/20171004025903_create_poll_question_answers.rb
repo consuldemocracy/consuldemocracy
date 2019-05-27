@@ -1,4 +1,4 @@
-class CreatePollQuestionAnswers < ActiveRecord::Migration
+class CreatePollQuestionAnswers < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_question_answers do |t|
       t.string :title

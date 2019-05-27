@@ -3,7 +3,7 @@
 
 <h2 class="inline-block"><%= t("admin.banners.index.title") %></h2>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.banners.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.banners.index" %>
 
 <h3><%= page_entries_info @banners %></h3>
 
@@ -23,12 +23,12 @@
         <td>
           <div class="small-12 medium-6 column">
             <%= link_to t("admin.banners.index.edit"), edit_admin_banner_path(banner),
-                        class: 'button hollow expanded' %>
+                        class: "button hollow expanded" %>
           </div>
           <div class="small-12 medium-6 column">
             <%= link_to t("admin.banners.index.delete"), admin_banner_path(banner),
                         method: :delete,
-                        class: 'button hollow alert expanded' %>
+                        class: "button hollow alert expanded" %>
           </div>
         </td>
       </tr>

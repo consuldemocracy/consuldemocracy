@@ -14,7 +14,7 @@ pl:
       - LUT
       - MAR
       - KWI
-      - MAJ
+      - Maj
       - CZE
       - LIP
       - SIE
@@ -40,7 +40,7 @@ pl:
       - Luty
       - Marzec
       - Kwiecień
-      - Maj
+      - MAJ
       - Czerwiec
       - Lipiec
       - Sierpień
@@ -135,7 +135,7 @@ pl:
       invalid: jest nieprawidłowe
       less_than: musi być mniejsze niż %{count}
       less_than_or_equal_to: musi być mniejsze lub równe %{count}
-      model_invalid: "Sprawdzanie poprawności nie powiodło się: %{errors}"
+      model_invalid: "Walidacja nie powiodła się: %{errors}"
       not_a_number: nie jest liczbą
       not_an_integer: musi być liczbą całkowitą
       odd: musi być nieparzysta
@@ -177,14 +177,14 @@ pl:
         delimiter: ","
         format: "%n %u"
         precision: 2
-        separator: ","
+        separator: "."
         significant: false
         strip_insignificant_zeros: false
         unit: "zł"
     format:
       delimiter: ","
       precision: 3
-      separator: "."
+      separator: ","
       significant: false
       strip_insignificant_zeros: false
     human:

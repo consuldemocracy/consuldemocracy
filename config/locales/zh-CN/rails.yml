@@ -99,7 +99,7 @@ zh-CN:
       invalid: 无效的
       less_than: 必须小于%{count}
       less_than_or_equal_to: 必须小于或者等于%{count}
-      model_invalid: "验证失败：%{errors}"
+      model_invalid: "验证失败: %{errors}"
       not_a_number: 不是一个数字
       not_an_integer: 必须是整数
       odd: 必须是奇数
@@ -126,7 +126,7 @@ zh-CN:
   number:
     currency:
       format:
-        delimiter: "，"
+        delimiter: ","
         format: "%u%n"
         precision: 2
         separator: "."
@@ -134,7 +134,7 @@ zh-CN:
         strip_insignificant_zeros: false
         unit: "$"
     format:
-      delimiter: ","
+      delimiter: "，"
       precision: 3
       separator: "."
       significant: false

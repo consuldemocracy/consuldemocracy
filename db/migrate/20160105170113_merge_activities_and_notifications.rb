@@ -1,4 +1,4 @@
-class MergeActivitiesAndNotifications < ActiveRecord::Migration
+class MergeActivitiesAndNotifications < ActiveRecord::Migration[4.2]
   def change
     change_table :notifications do |t|
       t.remove :read

@@ -1,1 +1,124 @@
 ca:
+  devise_views:
+    confirmations:
+      new:
+        email_label: El teu correu electrònic
+        submit: Reenviar instruccions
+        title: Reenviar instruccions de confirmació
+      show:
+        instructions_html: Anem a procedir a confirmar el compte amb l'email <b>%{email}</b>
+        new_password_confirmation_label: Repeteix la clau de nou
+        new_password_label: Nova clau d'accés
+        please_set_password: Si us plau introdueix una nova clau d'accés per a la seva compte (et permetrà entrar com a usuari amb l'email de més amunt)
+        submit: confirmar
+        title: Confirmar el meu compte
+    mailer:
+      confirmation_instructions:
+        confirm_link: Confirmar el meu compte
+        text: 'Pots confirmar la teva compte de correu electrònic en el següent enllaç:'
+        title: Benvingut / a
+        welcome: Benvingut / a
+      reset_password_instructions:
+        change_link: Canviar la contrasenya
+        hello: Hola
+        ignore_text: Si tu no ho has sol·licitat, ignoreu aquest correu electrònic.
+        info_text: La contrasenya no canviarà fins que no accedeixis a l'enllaç i la modifiquis.
+        text: 'S''ha sol·licitat canviar la contrasenya, pots fer-ho al següent enllaç:'
+        title: Canvia la teua contrasenya
+      unlock_instructions:
+        hello: Hola
+        info_text: El teu compte ha estat bloquejat a causa d'un excessiu nombre d'intents fallits d'alta.
+        instructions_text: 'Segueix el següent enllaç per desbloquejar el teu compte:'
+        title: El teu compte ha estat bloquejat
+        unlock_link: Desbloquejar el meu compte
+    menu:
+      login_items:
+        login: Entrada
+        logout: Sortir
+        signup: Registrar
+    organizations:
+      registrations:
+        new:
+          email_label: El teu correu electrònic
+          organization_name_label: Nom de l'organització
+          password_confirmation_label: Repeteix la contrasenya anterior
+          password_label: Clau
+          phone_number_label: telèfon
+          responsible_name_label: Nom i cognoms de la persona responsable del col·lectiu
+          responsible_name_note: Serà la persona representant de l'associació / col·lectiu en nom del qual presentin les propostes
+          submit: Registrar
+          title: Registrar-se com organització / col·lectiu
+        success:
+          back_to_index: Entès, tornar a la pàgina principal
+          instructions_3_html: Un cop confirmat, podràs començar a participar com a col·lectiu no verificat.
+          title: Registre d'organització / col·lectiu
+    passwords:
+      edit:
+        change_submit: Canviar la contrasenya
+        password_confirmation_label: Confirmar contrasenya nova
+        password_label: Nova contrasenya
+        title: Canvia la teua contrasenya
+      new:
+        email_label: El teu correu electrònic
+        send_submit: rebre instruccions
+        title: '¿Ha oblidat la seva contrasenya?'
+    sessions:
+      new:
+        login_label: E-mail o nom d'usuari
+        password_label: Clau
+        remember_me: Recordar-me
+        submit: Entrada
+        title: Entrada
+    shared:
+      links:
+        login: Entrada
+        new_confirmation: No has rebut instruccions per confirmar el teu compte?
+        new_password: Heu perdut la contrasenya?
+        new_unlock: No has rebut instruccions per desbloquejar?
+        signin_with_provider: Entrar amb el %{provider}
+        signup: No tens un compte? %{signup_link}
+        signup_link: registrar-
+    unlocks:
+      new:
+        email_label: El teu correu electrònic
+        submit: Reenviar instruccions per desbloquejar
+        title: Reenviar instruccions per desbloquejar
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: Raó de la baixa
+          info: Aquesta acció no es pot desfer. Una vegada que des de baixa el teu compte, no podràs tornar a entrar com a usuari amb ella.
+          info_reason: Si vols, escriu el motiu pel qual et dones de baixa (opcional).
+          submit: Esborrar el meu compte
+          title: Donar-me de baixa
+        edit:
+          current_password_label: contrasenya actual
+          edit: Editar proposta
+          email_label: El teu correu electrònic
+          leave_blank: Deixar en blanc si no vols canviar-la
+          need_current: Necessitem la contrasenya actual per confirmar els canvis
+          password_confirmation_label: Confirmar contrasenya nova
+          password_label: Nova contrasenya
+          update_submit: Actualitzar
+          waiting_for: 'Esperant confirmació de:'
+        new:
+          email_label: El teu correu electrònic
+          organization_signup: '¿Representes a una organització / col·lectiu? %{signup_link}'
+          organization_signup_link: Registra't aquí
+          password_confirmation_label: Repeteix la contrasenya anterior
+          password_label: Clau
+          redeemable_code: El teu codi de verificació (si has rebut una carta amb ell)
+          submit: Registrar
+          terms: En registrar acceptes les %{terms}
+          terms_link: condicions d'ús
+          terms_title: En registrar acceptes les condicions d'ús
+          title: Registrar
+          username_is_available: Nom d'usuari disponible
+          username_is_not_available: Nom d'usuari ja existent
+          username_label: Nom d'usuari
+          username_note: Nom públic que apareixerà en les teves publicacions
+        success:
+          back_to_index: Entès, tornar a la pàgina principal
+          instructions_1_html: Si us plau <b>revisa el teu correu electrònic</b> - t'hem enviat un <b>enllaç per confirmar el teu compte.</b>
+          instructions_2_html: Un cop confirmat, podràs començar a participar-hi.
+          thank_you_html: Gràcies per registrar-te al web. Ara has de <b>confirmar el teu correu.</b>

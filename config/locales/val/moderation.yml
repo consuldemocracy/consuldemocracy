@@ -3,10 +3,10 @@ val:
     comments:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
+        confirm: Estas segur?
         filter: Filtre
         filters:
-          all: Tots
+          all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
         headers:
@@ -21,14 +21,14 @@ val:
         title: Comentaris
     dashboard:
       index:
-        title: Moderar
+        title: Moderació
     debates:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
-        filter: Filtrar
+        confirm: Estas segur?
+        filter: Filtre
         filters:
-          all: Tots
+          all: Totes
           pending_flag_review: Pendents
           with_ignored_flag: Marcats com revisats
         headers:
@@ -46,30 +46,34 @@ val:
     menu:
       flagged_comments: Comentaris
       flagged_debates: Debats
+      flagged_investments: Projectes de pressupostos participatius
       proposals: Propostes
       proposal_notifications: Notificacions de propostes
       users: Bloquejar usuaris
     proposals:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
+        confirm: Estas segur?
         filter: Filtre
         filters:
           all: Totes
           pending_flag_review: Pendents de revisió
-          with_ignored_flag: Marcades com revisades
+          with_ignored_flag: Marcar com revisats
         headers:
           moderate: Moderar
           proposal: Proposta
-        hide_proposals: Ocultar Propostes
-        ignore_flags: Marcar com revisades
+        hide_proposals: Ocultar propostes
+        ignore_flags: Marcar com revisats
         order: Ordenar per
         orders:
-          created_at: Más recents
-          flags: Més denunciades
+          created_at: Més recents
+          flags: Més denunciats
         title: Propostes
     budget_investments:
       index:
+        block_authors: Bloquejar autors
+        confirm: Estas segur?
+        filter: Filtre
         filters:
           all: Totes
           pending_flag_review: Pendents
@@ -78,29 +82,29 @@ val:
           moderate: Moderar
           budget_investment: Pressupost participatiu
         hide_budget_investments: Ocultar propostes d'inversió
-        ignore_flags: Marcar com revisades
+        ignore_flags: Marcar com revisats
         order: Ordenar per
         orders:
-          created_at: Més recents
-          flags: Més denunciades
-        title: Pressupostos participatius
+          created_at: Más recents
+          flags: Més denunciats
+        title: Projectes de pressupostos participatius
     proposal_notifications:
       index:
         block_authors: Bloquejar autors
-        confirm: Estàs segur?
-        filter: Filtrar
+        confirm: Estas segur?
+        filter: Filtre
         filters:
           all: Totes
           pending_review: Pendents de revisió
-          ignored: Marcar com a vistes
+          ignored: Marcar com revisats
         headers:
           moderate: Moderar
-          proposal_notification: Notificacio de proposta
-        hide_proposal_notifications: Ocultar propostes
-        ignore_flags: Marcar com a vistes
+          proposal_notification: Notificació de proposta
+        hide_proposal_notifications: Ocultar Propostes
+        ignore_flags: Marcar com revisats
         order: Ordenar per
         orders:
-          created_at: Més recents
+          created_at: Más recents
           moderated: Moderades
         title: Notificacions de propostes
     users:

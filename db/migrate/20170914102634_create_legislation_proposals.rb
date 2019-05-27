@@ -1,4 +1,4 @@
-class CreateLegislationProposals < ActiveRecord::Migration
+class CreateLegislationProposals < ActiveRecord::Migration[4.2]
   def change
     create_table :legislation_proposals do |t|
       t.references :legislation_process, index: true, foreign_key: true

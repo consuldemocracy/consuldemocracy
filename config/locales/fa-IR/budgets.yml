@@ -13,7 +13,7 @@ fa:
         voted_info_html: "شما می توانید رای خود را در هر زمان تا پایان این مرحله تغییر دهید. <br> بدون نیاز به صرف تمام پول در دسترس."
         zero: شما به پروژه سرمایه گذاری رای نداده اید
       reasons_for_not_balloting:
-        not_logged_in: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
+        not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
         not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
         organization: سازمان ها مجاز به رای دادن نیستند
         not_selected: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
@@ -30,6 +30,7 @@ fa:
         unselected: دیدن سرمایه گذاری هایی که برای مرحله رای گیری انتخاب نشده اند
     phase:
       drafting: پیش نویس ( غیرقابل مشاهده برای عموم)
+      informing: اطلاعات
       accepting: پذیرش پروژه
       reviewing: بررسی پروژه ها
       selecting: پذیرش پروژه
@@ -53,6 +54,7 @@ fa:
       see_results: مشاهده نتایج
       section_footer:
         title: کمک در مورد بودجه مشارکتی
+      milestones: نقطه عطف
     investments:
       form:
         tag_category_label: "دسته بندی ها\n"
@@ -83,7 +85,7 @@ fa:
             other: "<strong>شما %{count} پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
           voted_info: شما می توانید%{link} در هر زمانی  این مرحله را پایان دهید . بدون نیاز به صرف تمام پول در دسترس.
           voted_info_link: تغییر رای خود 
-          different_heading_assigned_html: "شما در ردیف دیگری آراء فعال دارید:%{heading_link}"
+          different_heading_assigned_html: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
           change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
           check_ballot_link: "رای من را چک کن"
           zero: شما به هیچ پروژه سرمایه گذاری در این گروه رأی نداده اید.
@@ -133,7 +135,7 @@ fa:
         give_support: پشتیبانی
       header:
         check_ballot: رای من را چک کن
-        different_heading_assigned_html: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
+        different_heading_assigned_html: "شما در ردیف دیگری آراء فعال دارید:%{heading_link}"
         change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
         check_ballot_link: "رای من را چک کن"
         price: "این عنوان یک بودجه دارد"
@@ -154,7 +156,7 @@ fa:
       heading: "نتایج بودجه مشارکتی"
       heading_selection_title: "توسط منطقه"
       spending_proposal: عنوان پیشنهاد
-      ballot_lines_count: زمان انتخاب شده است
+      ballot_lines_count: آرا
       hide_discarded_link: پنهان کردن 
       show_all_link: نمایش همه
       price: قیمت
@@ -165,6 +167,9 @@ fa:
       investment_proyects: لیست تمام پروژه های سرمایه گذاری
       unfeasible_investment_proyects: لیست پروژه های سرمایه گذاری غیرقابل پیش بینی
       not_selected_investment_proyects: فهرست همه پروژه های سرمایه گذاری که برای رای گیری انتخاب نشده اند
+    executions:
+      link: "نقطه عطف"
+      heading_selection_title: "توسط منطقه"
     phases:
       errors:
         dates_range_invalid: "تاریخ شروع نمی تواند برابر یا بعد از تاریخ پایان باشد"

@@ -9,12 +9,12 @@
 
     <h2><%= @process.title %></h2>
 
-    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
+    <%= render "admin/legislation/processes/subnav", process: @process, active: "draft_versions" %>
 
     <div class="small-12 column">
       <h3><%= t("admin.legislation.draft_versions.new.title") %></h3>
     </div>
 
-    <%= render 'form', url: admin_legislation_process_draft_versions_path(@process) %>
+    <%= render "form", url: admin_legislation_process_draft_versions_path(@process) %>
   </div>
 </div>

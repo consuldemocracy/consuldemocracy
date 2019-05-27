@@ -23,7 +23,7 @@ zh-TW:
     votes_for_proposal_success: "建議要獲得通過所需的票數"
     votes_for_proposal_success_description: "當建議達到此數目的支持時，它將不再能夠獲得更多支持，並已被視為成功"
     months_to_archive_proposals: "存檔建議的月限"
-    months_to_archive_proposals_description: 在這個數目的月限之後，建議將被存檔，並將無法再獲得支持“
+    months_to_archive_proposals_description: "在這個數目的月限之後，建議將被存檔，並將無法再獲得支持“"
     email_domain_for_officials: "公眾職員的電郵域名"
     email_domain_for_officials_description: "所有用此域名註冊的用戶都將在註冊時核實其帳戶"
     per_page_code_head: "每頁都包含的代碼 (<head>)"
@@ -75,7 +75,7 @@ zh-TW:
     verification_offices_url: 驗證辦公室 URL
     proposal_improvement_path: 建議改進資訊內部鏈接
     feature:
-      budgets: "參與性預算編制"
+      budgets: "參與式預算編制"
       budgets_description: "通過參與性預算，公民決定其鄰居提交的哪些項目將獲得市政預算的一部分"
       twitter_login: "Twitter 登錄"
       twitter_login_description: "允許用戶使用他們的Twitter帳戶登記"
@@ -93,7 +93,7 @@ zh-TW:
       signature_sheets_description: "這允許從現場收集的管理面板簽名加到參與預算的提案和投資項目"
       legislation: "立法"
       legislation_description: "在參與進程中，公民有機會參與起草和修改影響城市的法規，並就計劃實施的某些行動發表意見。"
-      spending_proposals: "開支建議"
+      spending_proposals: "支出建議"
       spending_proposals_description: "⚠️注意：此功能已被參與性預算取代，並將在新版本中消失"
       spending_proposal_features:
         voting_allowed: 投資項目投票 - 預選階段
@@ -119,5 +119,5 @@ zh-TW:
       guides_description: "如果已存在活躍的參與性預算，則顯示建議和投資項目之間差異的指南"
       public_stats: "公眾統計數據"
       public_stats_description: "在管理面板中顯示公眾統計數據"
-      help_page: "説明頁"
+      help_page: "幫助頁"
       help_page_description: "顯示説明菜單，其中包含一個頁面，內有每個已啟用功能的資訊"

@@ -1,4 +1,4 @@
-class CreateSiteCustomizationContentBlocks < ActiveRecord::Migration
+class CreateSiteCustomizationContentBlocks < ActiveRecord::Migration[4.2]
   def change
     create_table :site_customization_content_blocks do |t|
       t.string :name

@@ -2,18 +2,24 @@
 
 <%= translatable_form_for(@question, url: form_url) do |f| %>
 
-  <%= render 'shared/errors', resource: @question %>
+  <%= render "shared/errors", resource: @question %>
 
   <%= f.hidden_field :proposal_id %>
 
   <div class="small-12">
-    <div class="small-12 medium-6 large-4">
-      <% select_options = Poll.all.map { |p| [p.name, p.id] } %>
-      <%= f.select :poll_id,
-                    options_for_select(select_options),
-                    prompt: t("admin.questions.index.select_poll"),
-                    label: t("admin.questions.new.poll_label") %>
-    </div>
+    <% if @poll.present? %>
+      <%= f.hidden_field :poll_id, value: @poll.id %>
+    <% elsif @question.poll.present? %>
+      <%= f.hidden_field :poll_id, value: @question.poll.id %>
+    <% else %>
+      <div class="small-12 medium-6 large-4">
+        <% select_options = Poll.all.map { |p| [p.name, p.id] } %>
+        <%= f.select :poll_id,
+                      options_for_select(select_options),
+                      prompt: t("admin.questions.index.select_poll"),
+                      label: t("admin.questions.new.poll_label") %>
+      </div>
+    <% end %>
 
     <%= f.translatable_fields do |translations_form| %>
       <%= translations_form.text_field :title %>

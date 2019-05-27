@@ -1,1 +1,17 @@
 eu:
+  comments_helper:
+    comment_link: Iruzkin
+  form:
+    debate: Eztabaida
+    budget/investment: Inbertsioa
+    poll/question/answer: Erantzuna
+    document: Dokumentua
+    image: Irudia
+  polls:
+    show:
+      documents: Dokumentuak
+      results:
+        title: "Galderak"
+  related_content:
+    content_title:
+      debate: "Eztabaida"

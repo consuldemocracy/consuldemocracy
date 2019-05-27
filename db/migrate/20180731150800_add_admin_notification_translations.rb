@@ -1,4 +1,4 @@
-class AddAdminNotificationTranslations < ActiveRecord::Migration
+class AddAdminNotificationTranslations < ActiveRecord::Migration[4.2]
 
   def self.up
     AdminNotification.create_translation_table!(

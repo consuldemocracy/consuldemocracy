@@ -1,1 +1,21 @@
 ca:
+  images:
+    remove_image: Eliminar imatge
+    form:
+      title: Imatge descriptiva
+      title_placeholder: Afegeix un title descriptiu per la imatge
+      attachment_label: Tria la imatge
+      delete_button: Eliminar imatge
+      note: "Pots pujar una imatge del següents tipus: %{accepted_content_types}, fins un màxim de %{max_file_size} MB."
+      add_new_image: Afegir imatge
+      admin_title: "imatge"
+      admin_alt_text: "Text alternatiu per a la imatge"
+    actions:
+      destroy:
+        notice: Imatge esborrada correctament.
+        alert: No es pot eliminar la imatge.
+        confirm: Estàs segur que vols esborrar la imatge? Aquesta acció no es pot desfer!
+    errors:
+      messages:
+        in_between: ha de ser entre %{min} i %{max}
+        wrong_content_type: el tipus de contingut %{content_type} no coincideix amb cap dels tipus de contingut acceptat %{accepted_content_types}

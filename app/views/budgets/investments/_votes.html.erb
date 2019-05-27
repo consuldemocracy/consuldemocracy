@@ -4,7 +4,7 @@
 
 <div class="supports js-participation">
 
-  <span class="total-supports <%= 'no-button' unless voting_allowed || user_voted_for %>">
+  <span class="total-supports <%= "no-button" unless voting_allowed || user_voted_for %>">
     <%= t("budgets.investments.investment.supports", count: investment.total_votes) %>
   </span>
 
@@ -16,7 +16,7 @@
     <% elsif investment.should_show_votes? %>
       <%= link_to vote_url,
           class: "button button-support small expanded",
-          title: t('budgets.investments.investment.support_title'),
+          title: t("budgets.investments.investment.support_title"),
           method: "post",
           remote: (display_support_alert?(investment) ? false: true ),
           data:   (display_support_alert?(investment) ? {
@@ -28,27 +28,29 @@
   </div>
 
   <% if reason.present? && !user_voted_for %>
-    <div class="js-participation-not-allowed participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="js-participation-not-allowed participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <small>
           <%= t("votes.budget_investments.#{reason}",
                 count: investment.group.max_votable_headings,
                 verify_account: link_to(t("votes.verify_account"), verification_path),
                 signin: link_to(t("votes.signin"), new_user_session_path),
-                signup: link_to(t("votes.signup"), new_user_registration_path)
-           ).html_safe %>
+                signup: link_to(t("votes.signup"), new_user_registration_path),
+                supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).to_sentence)
+               ).html_safe %>
         </small>
       </p>
     </div>
   <% end %>
 
-  <% if user_voted_for && setting['twitter_handle'] %>
+  <% if user_voted_for && setting["twitter_handle"] %>
     <div class="share-supported">
-      <%= render partial: 'shared/social_share', locals: {
+      <%= render partial: "shared/social_share", locals: {
         title: investment.title,
         image_url: image_absolute_url(investment.image, :thumb),
         url: budget_investment_url(investment.budget, investment),
-        description: investment.title
+        description: investment.title,
+        mobile: investment.title
       } %>
     </div>
   <% end %>

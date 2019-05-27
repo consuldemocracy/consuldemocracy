@@ -19,7 +19,7 @@ module Budgets
                   .group_by(&:heading)
         else
           @budget.investments.winners
-                  .joins(:milestones).includes(:milestones)
+                  .joins(milestones: :translations)
                   .distinct.group_by(&:heading)
         end
       end

@@ -1,4 +1,4 @@
-class AddModerationFlagsToProposalNotifications < ActiveRecord::Migration
+class AddModerationFlagsToProposalNotifications < ActiveRecord::Migration[4.2]
   def change
     add_column :proposal_notifications, :moderated, :boolean, default: false
     add_column :proposal_notifications, :hidden_at, :datetime

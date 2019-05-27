@@ -1,1 +1,11 @@
 eu:
+  legislation:
+    annotations:
+      show:
+        title: Iruzkin
+    processes:
+      shared:
+        debate_dates: Eztabaida
+    questions:
+      question:
+        debate: Eztabaida

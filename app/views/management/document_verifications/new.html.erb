@@ -2,7 +2,7 @@
   <%= t("management.document_verifications.please_check_account_data") %>
 </div>
 
-<%= render 'management/user_permissions',
+<%= render "management/user_permissions",
       message: t("management.document_verifications.in_census_has_following_permissions"),
       permissions: [:debates, :create_proposals, :support_proposals] %>
 
@@ -14,4 +14,4 @@
   <%= f.submit t("management.document_verifications.verify"), class: "button success" %>
 <% end %>
 
-<%= render 'management/users/erase_user_account' %>
+<%= render "management/users/erase_user_account" %>

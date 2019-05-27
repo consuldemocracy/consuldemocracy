@@ -1,0 +1,12 @@
+<p><strong><%= link_to t("stats.title"), "#participation_statistics" %></strong></p>
+<ul class="menu vertical">
+  <li>
+    <%= link_to t("stats.total_participants"), "#total_participants" %>
+  </li>
+
+  <% stats.participations.each do |stat| %>
+    <li>
+      <%= link_to t("stats.by_#{stat}"), "#participants_by_#{stat}" %>
+    </li>
+  <% end %>
+</ul>

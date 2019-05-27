@@ -1,4 +1,4 @@
-class AddPollQuestionTranslations < ActiveRecord::Migration
+class AddPollQuestionTranslations < ActiveRecord::Migration[4.2]
 
   def self.up
     Poll::Question.create_translation_table!(

@@ -1,7 +1,7 @@
 zh-CN:
   community:
     sidebar:
-      title: 社群
+      title: 社区
       description:
         proposal: 参与此提议的用户社群。
         investment: 参与此投资的用户社群
@@ -29,7 +29,7 @@ zh-CN:
         destroy: 销毁主题
         comments:
           zero: 没有评论
-          other: "一个评论\n%{count} 个评论"
+          other: "%{count} 个评论"
       author: 作者
       back: 返回 %{community} %{proposal}
     topic:
@@ -56,4 +56,4 @@ zh-CN:
         recommendation_three: 享受这个空间，以及其中充满的声音，它也是您的。
   topics:
     show:
-      login_to_comment: 您必须%{signin} 或者%{signup} 才能留下评论。
+      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。

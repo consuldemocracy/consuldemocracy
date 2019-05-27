@@ -10,7 +10,7 @@
         <%= investment.formatted_price %>
       </p>
       <% if investment.should_show_ballots? %>
-        <%= link_to t('budgets.ballots.show.remove'),
+        <%= link_to t("budgets.ballots.show.remove"),
                     budget_ballot_line_path(id: investment.id,
                                             budget_id: investment.budget_id,
                                             investments_ids: investment_ids),
@@ -32,7 +32,7 @@
                                             budget_id: investment.budget_id,
                                             investments_ids: investment_ids),
                     class: "button button-support small expanded",
-                    title: t('budgets.investments.investment.support_title'),
+                    title: t("budgets.investments.investment.support_title"),
                     method: :post,
                     remote: true %>
       <% end %>

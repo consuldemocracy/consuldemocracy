@@ -13,7 +13,7 @@ pl:
           postal_code: "Kod pocztowy"
         sms:
           phone: "Numer telefonu"
-          confirmation_code: "Kod weryfikacyjny"
+          confirmation_code: "Kod potwierdzający"
         email:
           recipient: "E-mail"
       officing/residence:

@@ -224,6 +224,11 @@ $sidebar-active: #f4fcd0;
       label {
         color: #fff;
       }
+
+      a {
+        color: inherit;
+        white-space: nowrap;
+      }
     }
 
     .break {
@@ -367,6 +372,48 @@ $sidebar-active: #f4fcd0;
   color: $text-medium;
 }
 
+.icon-sortable {
+  font-family: "icons";
+  font-size: $small-font-size;
+  padding-right: $line-height / 2;
+  position: relative;
+
+  &::before,
+  &::after {
+    left: 6px;
+    opacity: 0.25;
+    position: absolute;
+  }
+
+  &::before {
+    content: "\57";
+    top: -2px;
+  }
+
+  &::after {
+    content: "\52";
+    bottom: -10px;
+  }
+
+  &.asc {
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.desc {
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+code {
+  word-break: break-all;
+}
+
 // 02. Sidebar
 // -----------
 
@@ -431,7 +478,7 @@ $sidebar-active: #f4fcd0;
 
     > a::after {
       border: 0;
-      content: '\61' !important;
+      content: "\61" !important;
       font-family: "icons" !important;
       height: auto;
       position: absolute !important;
@@ -1113,7 +1160,7 @@ table {
     }
 
     .map-icon::after {
-      content: '';
+      content: "";
       width: 14px;
       height: 14px;
       margin: 8px 0 0 8px;
@@ -1158,6 +1205,11 @@ table {
   .filter {
     display: inline-block;
     margin: 0 $line-height / 2;
+
+    label {
+      font-weight: normal;
+      margin: 0;
+    }
   }
 
   .button {
@@ -1173,7 +1225,7 @@ table {
 
   &.enabled::before,
   &.disabled::before {
-    font-family: 'icons';
+    font-family: "icons";
     left: 0;
     position: absolute;
   }
@@ -1183,7 +1235,7 @@ table {
 
     &::before {
       color: $check;
-      content: '\6c';
+      content: "\6c";
     }
   }
 
@@ -1192,7 +1244,7 @@ table {
 
     &::before {
       color: #000;
-      content: '\76';
+      content: "\76";
     }
   }
 }

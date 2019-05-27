@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'User invites' do
+feature "User invites" do
 
   background do
     login_as_manager

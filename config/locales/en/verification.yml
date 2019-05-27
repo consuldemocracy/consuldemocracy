@@ -8,7 +8,7 @@ en:
         alert:
           failure: There was a problem with sending an email to your account
         flash:
-          success: 'We have sent a confirmation email to your account: %{email}'
+          success: "We have sent a confirmation email to your account: %{email}"
       show:
         alert:
           failure: Verification code incorrect
@@ -19,18 +19,16 @@ en:
         unconfirmed_code: You have not yet entered the confirmation code
       create:
         flash:
-          offices: Citizen Support Offices
-          success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the %{offices}.
+          success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the Citizen Support Offices.
       edit:
         see_all: See proposals
         title: Letter requested
       errors:
         incorrect_code: Verification code incorrect
       new:
-        explanation: 'For participate on final voting you can:'
+        explanation: "For participate on final voting you can:"
         go_to_index: See proposals
-        office: Verify in any %{office}
-        offices: Citizen Support Offices
+        office: Verify in any Citizen Support Offices
         send_letter: Send me a letter with the code
         title: Congratulations!
         user_permission_info: With your account you can...
@@ -52,7 +50,7 @@ en:
         date_of_birth: Date of birth
         document_number: Document number
         document_number_help_title: Help
-        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Passport
           residence_card: Residence card
@@ -60,8 +58,7 @@ en:
         document_type_label: Document type
         error_not_allowed_age: You don't have the required age to participate
         error_not_allowed_postal_code: In order to be verified, you must be registered.
-        error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one %{offices}.
-        error_verifying_census_offices: Citizen Support Office
+        error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one Citizen Support Office.
         form_errors: prevented the verification of your residence
         postal_code: Postcode
         postal_code_note: To verify your account you must be registered

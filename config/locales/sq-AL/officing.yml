@@ -36,8 +36,8 @@ sq:
       index:
         no_results: "Nuk ka rezultate"
         results: Rezultatet
-        table_answer: Përgjigje
-        table_votes: Vota
+        table_answer: Përgjigjet
+        table_votes: Votim
         table_whites: "Vota të plota"
         table_nulls: "Votat e pavlefshme"
         table_total: "Totali i fletëvotimeve"
@@ -47,7 +47,7 @@ sq:
         not_allowed: "Ju nuk keni ndërrime zyrtare sot."
       new:
         title: Validoni dokumentin
-        document_number: "Numri i dokumentit ( përfshirë gërma)"
+        document_number: "Numri i dokumentit ( përfshirë letër)"
         submit: Validoni dokumentin
         error_verifying_census: "\nRegjistri nuk ishte në gjendje të verifikonte këtë dokument."
         form_errors: pengoi verifikimin e ketij dokumenti

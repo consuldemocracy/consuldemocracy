@@ -1,4 +1,4 @@
-class SpendingProposal < ActiveRecord::Base
+class SpendingProposal < ApplicationRecord
   include Measurable
   include Sanitizable
   include Taggable
@@ -6,7 +6,7 @@ class SpendingProposal < ActiveRecord::Base
 
   acts_as_votable
 
-  belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :geozone
   belongs_to :administrator
   has_many :valuation_assignments, dependent: :destroy
@@ -29,7 +29,7 @@ class SpendingProposal < ActiveRecord::Base
   scope :feasible,               -> { where(feasible: true) }
   scope :unfeasible,             -> { where(feasible: false) }
   scope :not_unfeasible,         -> { where("feasible IS ? OR feasible = ?", nil, true) }
-  scope :with_supports,          -> { where('cached_votes_up > 0') }
+  scope :with_supports,          -> { where("cached_votes_up > 0") }
 
   scope :by_admin,    ->(admin)    { where(administrator_id: admin.presence) }
   scope :by_tag,      ->(tag_name) { tagged_with(tag_name) }
@@ -43,10 +43,6 @@ class SpendingProposal < ActiveRecord::Base
     super.try :html_safe
   end
 
-  def self.filter_params(params)
-    params.select{|x, _| %w{geozone_id administrator_id tag_name valuator_id}.include? x.to_s }
-  end
-
   def self.scoped_filter(params, current_filter)
     results = self
     results = results.by_geozone(params[:geozone_id])             if params[:geozone_id].present?
@@ -58,10 +54,10 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def searchable_values
-    { title              => 'A',
-      author.username    => 'B',
-      geozone.try(:name) => 'B',
-      description        => 'C'
+    { title              => "A",
+      author.username    => "B",
+      geozone.try(:name) => "B",
+      description        => "C"
     }
   end
 
@@ -70,7 +66,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def self.by_geozone(geozone)
-    if geozone == 'all'
+    if geozone == "all"
       where(geozone_id: nil)
     else
       where(geozone_id: geozone.presence)
@@ -109,7 +105,7 @@ class SpendingProposal < ActiveRecord::Base
   end
 
   def code
-    "#{created_at.strftime('%Y')}-#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
+    "#{created_at.strftime("%Y")}-#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
   end
 
   def send_unfeasible_email

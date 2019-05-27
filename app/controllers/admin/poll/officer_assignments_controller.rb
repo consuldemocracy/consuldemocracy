@@ -7,7 +7,7 @@ class Admin::Poll::OfficerAssignmentsController < Admin::Poll::BaseController
   def index
     @officers = ::Poll::Officer.
                   includes(:user).
-                  order('users.username').
+                  order("users.username").
                   where(
                     id: @poll.officer_assignments.select(:officer_id).distinct.map(&:officer_id)
                   ).page(params[:page]).per(50)

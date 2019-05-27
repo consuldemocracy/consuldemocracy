@@ -1,4 +1,4 @@
-class RemovePollWhiteNullTotalResults < ActiveRecord::Migration
+class RemovePollWhiteNullTotalResults < ActiveRecord::Migration[4.2]
   def change
     remove_index :poll_null_results, column: [:booth_assignment_id]
     remove_index :poll_null_results, column: [:officer_assignment_id]

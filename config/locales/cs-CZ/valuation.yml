@@ -1,0 +1,44 @@
+cs:
+  valuation:
+    menu:
+      budgets: Participativní rozpočty
+    budgets:
+      index:
+        title: Participativní rozpočty
+        filters:
+          current: Otevřené
+          finished: Dokončené
+        table_name: Název
+        table_phase: Fáze
+        table_actions: Akce
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Otevřené
+        title: Investiční projekty
+        table_id: ID
+        table_title: Předmět
+        table_heading_name: Heading name
+        table_actions: Akce
+      show:
+        back: Zpět
+        heading: Heading
+        price: Cena
+        currency: "Kč"
+        unfeasible: Nerealizovatelné
+      edit:
+        undefined_feasible: Nevyřízený
+        save: Uložit změny
+    spending_proposals:
+      index:
+        filters:
+          valuation_open: Otevřené
+        edit: Upravit
+      show:
+        back: Zpět
+        price: Cena
+        currency: "Kč"
+      edit:
+        currency: "Kč"
+        undefined_feasible: Nevyřízený
+        save: Uložit změny

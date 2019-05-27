@@ -18,18 +18,18 @@ id:
         first_theme: Buat topik komunitas pertama
         sub_first_theme: "Untuk membuat tema Anda harus %{sign_in} o %{sign_up}."
         sign_in: "masuk"
-        sign_up: "keluar"
+        sign_up: "daftar"
       tab:
         participants: Peserta
       sidebar:
-        participate: Ikut
+        participate: Berpartisipasi
         new_topic: Buat topik
       topic:
         edit: Sunting topik
         destroy: Menghancurkan topik
         comments:
           zero: Tidak ada komentar
-          other: "1 Komentar\n%{count} komentar"
+          other: "%{count} komentar"
       author: Penulis
       back: Kembali ke %{community} %{proposal}
     topic:
@@ -56,4 +56,4 @@ id:
         recommendation_three: Nikmati ruang ini, suara yang mengisinya, itu milikmu juga.
   topics:
     show:
-      login_to_comment: Kamu harus %{signin} atau %{signup} untuk meninggalkan komentar.
+      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.

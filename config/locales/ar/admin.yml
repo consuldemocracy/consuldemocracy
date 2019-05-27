@@ -5,6 +5,7 @@ ar:
     actions:
       actions: الإجراءات
       confirm: هل أنت متأكد؟
+      confirm_hide: تأكيد
       hide: إخفاء
       hide_author: إخفاء الكاتب
       restore: إسترجاع
@@ -12,6 +13,7 @@ ar:
       unmark_featured: إلغاء تحديد مميز
       edit: تعديل
       configure: تهيئة
+      delete: حذف
     banners:
       index:
         title: لافتات
@@ -29,6 +31,15 @@ ar:
         target_url: رابط
         post_started_at: المشاركة بدأت في
         post_ended_at: المشاركة انتهت في
+        sections_label: الأقسام التي ستظهر بها
+        sections:
+          homepage: الصفحة الرئيسية
+          debates: النقاشات
+          proposals: إقتراحات
+          budgets: الميزانية التشاركية
+          help_page: صفحة المساعدة
+        background_color: لون الخلفية
+        font_color: لون الخط
       edit:
         editing: تعديل لافتة
         form:
@@ -39,7 +50,7 @@ ar:
       show:
         action: فعل
         actions:
-          block: ممنوع
+          block: محظور
           hide: مخفي
           restore: إسترجاع
         by: خاضعة لإشراف
@@ -48,67 +59,312 @@ ar:
         filters:
           all: الكل
           on_comments: تعليقات
-          on_debates: النقاشات
-          on_proposals: إقتراحات
+          on_debates: الحوارات
+          on_proposals: مقترحات
           on_users: المستخدمين
+          on_system_emails: نظام البريد الإلكتروني
         title: نشاط المشرف
         type: النوع
+        no_activity: ليس هناك أي نشاط للمشرفين.
     budgets:
       index:
         title: الميزانيات المشاركة
         new_link: إنشاء ميزانية جديدة
-        filter: إنتقاء
+        filter: ترشيح
         filters:
           open: فتح
           finished: انتهى
         budget_investments: إدارة المشاريع
+        table_name: الإ سم
+        table_phase: مرحلة
+        table_investments: إستثمارات
+        table_edit_groups: مجموعات العناوين
+        table_edit_budget: تعديل
+        edit_groups: تعديل مجموعات العناوين
+        edit_budget: تعديل الميزانية
+        no_budgets: "لا يوجد ميزانيات."
+      create:
+        notice: تم إنشاء الميزانية التشاركية الجديدة بنجاح!
+      update:
+        notice: تم تعديل الميزانية التشاركية بنجاح
+      edit:
+        title: تعديل الميزانية المشاركة
+        delete: حذف الميزانية
+        phase: مرحلة
+        dates: التواريخ
+        enabled: تفعيل
+        actions: الإجراءات
+        edit_phase: تعديل المرحلة
+        active: نشِط
+        blank_dates: التواريخ فارغة
+      destroy:
+        success_notice: تم حذف الميزانية بنجاح
+        unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
+      new:
+        title: ميزانية تشاركية جديدة
+      winners:
+        calculate: حساب الاستثمارات الفائزة
+        calculated: جاري حساب الفائزين، قد يستغرق ذلك دقيقة.
+        recalculate: إعادة حساب الاستثمارات الفائزة
+    budget_groups:
+      name: "الإ سم"
+      headings_name: "العناوين"
+      headings_edit: "تعديل العناوين"
+      headings_manage: "إدارة العناوين"
+      max_votable_headings: "العدد الأقصى للعناوين التي يمكن للمستخدم التصويت عليها"
+      no_groups: "لا توجد مجموعات."
+      amount:
+        zero: "لا يوجد هناك مجموعات %{count}"
+        one: "هناك مجموعة 1"
+        two: "هناك مجموعتان %{count}"
+        few: "هناك %{count} مجموعات"
+        many: "هناك %{count} مجموعة"
+        other: "هناك %{count} مجموعة"
+      create:
+        notice: "تم إنشاء المجموعة بنجاح!"
+      update:
+        notice: "تم تحديث المجموعة بنجاح"
+      destroy:
+        success_notice: "تم حذف المجموعة بنجاح"
+        unable_notice: "لا يمكن حذف مجموعة لها عناوين مرتبطة"
+      form:
+        create: "إنشاء مجموعة جديدة"
+        edit: "تعديل مجموعة"
+        name: "اسم المجموعة"
+        submit: "حفظ المجموعة"
+      index:
+        back: "العودة إلى الميزانيات"
+    budget_headings:
+      name: "الإ سم"
+      no_headings: "لا توجد هناك عناوين."
+      amount:
+        zero: "%{count} لا توجد هناك عناوين"
+        one: "هناك عنوان %{count}"
+        two: "هناك %{count} عناوين"
+        few: "هناك %{count} عناوين"
+        many: "هناك %{count} عنوانا"
+        other: "هناك %{count} عنوانا"
+      create:
+        notice: "تم إنشاء العنوان بنجاح!"
+      update:
+        notice: "تم تحديث العنوان بنجاح"
+      destroy:
+        success_notice: "تم حذف العنوان بنجاح"
+        unable_notice: "لا يمكن حذف عنوان له استثمارات مرتبطة"
+      form:
+        name: "اسم العنوان"
+        amount: "القيمة"
+        population: "التعداد (اختياري)"
+        population_info: "يتم استخدام حقل \"عنوان الميزانية\" لأغراض إحصائية في نهاية الميزانية لإظهار نسبة التصويت لكل عنوان يمثل منطقة بها تعداد معين. الحقل اختياري بحيث يمكنك تركه فارغًا إذا لم يكن مطبقا."
+        latitude: "خط العرض (اختياري)"
+        longitude: "خط الطول (اختياري)"
+        coordinates_info: "إذا تم توفير خطوط الطول والعرض، فإن صفحة الاستثمارات لهذا العنوان سيتم إدراجها في الخريطة. هذه الخريطة سيتم مركزتها بإستخدام تلك الإحداثيات."
+        allow_content_block: "السماح بكتل المحتوى"
+        content_blocks_info: "إذا تم اختيار \"السماح بكتل المحتوى\"، سوف تتمكن من إنشاء محتوى مخصص ذي صلة بهذا العنوان غن طريق إعدادات > كتل المحتوى المخصصة. سوف يظهر هذا المحتوى في صفحة الاستثمارات الخاصة بهذا العنوان."
+        create: "إنشاء عنوان جديد"
+        edit: "تعديل العنوان"
+        submit: "حفظ العنوان"
+      index:
+        back: "العودة إلى المجموعات"
+    budget_phases:
+      edit:
+        start_date: تاريخ البدء
+        end_date: تاريخ الإنتهاء
+        summary: ملخص
+        summary_help_text: هذا النص سوف يخبر المستخدم عن المرحلة. لإظهاره حتى إذا كانت المرحلة غير نشطة، حدد مربع الاختيار أدناه
+        description: الوصف
+        description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
+        enabled: المرحلة مفعلة
+        enabled_help_text: ستكون هذه المرحلة أحد المراحل المتاحة للعامة من بين مراحل الموازنة، إلى جانب كونها نشطة لأي غرض آخر
+        save_changes: حفظ التغييرات
     budget_investments:
       index:
+        heading_filter_all: كل العناوين
         administrator_filter_all: كل المدراء
         valuator_filter_all: كل المقيّمين
         tags_filter_all: كل العلامات
         advanced_filters: إنتقاءات متقدمة
         placeholder: بحث عن مشاريع
         sort_by:
-          placeholder: ترتيب حسب
+          placeholder: فرز حسب
           id: ID
           title: عنوان
-          supports: تشجيعات
+          supports: دعم
         filters:
           all: الكل
-          without_admin: بدون تعيين المشرف
+          without_admin: بدون تعيين المدير
           without_valuator: بدون تعيين المفيّم
           under_valuation: تحت التقييم
           valuation_finished: انتهى التقييم
-          feasible: قابلية
+          feasible: مجدي
           selected: محدّد
-          undecided: متردد
-          unfeasible: غير مجد
+          undecided: غير مقرر
+          unfeasible: غير مجدي
+          min_total_supports: الحد الأدنى من الدعم
           winners: الفائزين
           one_filter_html: "الفلتر المطبق حاليا: <b><em>%{filter}</em></b>"
           two_filters_html: "الفلتر المطبق حاليا: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: ترشيح
+        download_current_selection: "تنزيل التحديد الحالي"
+        no_budget_investments: "لا توجد مشاريع استثمارية."
         title: مشاريع استثمارية
-        assigned_admin: المشرف المعين
-        no_admin_assigned: المشرف غير المعين
+        assigned_admin: المدير الذي تم تعيينه
+        no_admin_assigned: لم يتم تعيين أي مدير
+        no_valuators_assigned: لم يتم تعيين مقيّمين
+        no_valuation_groups: لم يتم تعيين مجموعات المقيّمين
+        feasibility:
+          feasible: "مجدي (%{price})"
+          unfeasible: "غير مجدي"
+          undecided: "متردد"
+        selected: "محدّد"
+        select: "حدّد"
+        list:
+          id: ID
+          title: عنوان
+          supports: دعم
+          admin: مدير
+          valuator: مقيّم
+          valuation_group: مجموعة المقيّمين
+          geozone: نطاق العملية
+          feasibility: الجدوى
+          valuation_finished: انتهى التقييم.
+          selected: محدّد
+          visible_to_valuators: العرض على المقيمين
+          author_username: اسم الكاتب
+          incompatible: غير متوافق
+        cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
+        see_results: "رؤية النتائج"
       show:
+        assigned_admin: المشرف المعين
+        assigned_valuators: المقيمين الذين تم تعيينهم
         classification: تصنيف
+        info: "%{budget_name} -المجموعة: %{group_name} - المشروع الإستثماري %{id}"
+        edit: تعديل
+        edit_classification: تعديل التصنيف
+        by: من قبل
+        sent: تم الإرسال
+        group: مجموعة
+        heading: عنوان
+        dossier: إضبارة
+        edit_dossier: تحرير إضبارة
+        tags: علامات
+        user_tags: علامات المستخدم
+        undefined: غير معرف
+        compatibility:
+          title: التوافق
+          "true": غير متوافق
+          "false": متوافق
+        selection:
+          title: التحديد
+          "true": محدّد
+          "false": غير محدد
+        winner:
+          title: الفائز
+          "true": "نعم"
+          "false": "لا"
+        image: "صورة"
+        see_image: "رؤية الصورة"
+        no_image: "بدون صورة"
+        documents: "الوثائق"
+        see_documents: "رؤية الوثائق (%{count})"
+        no_documents: "بدون وثائق"
+        valuator_groups: "مجموعات المقيمين"
       edit:
+        classification: تصنيف
+        compatibility: التوافق
+        mark_as_incompatible: وضع علامة غير متوافق
+        selection: التحديد
+        mark_as_selected: وضع علامة مختار
+        assigned_valuators: المقيمون
         select_heading: حدد العنوان
         submit_button: تحديث
+        user_tags: العلامات المحددة للمستخدم
+        tags: علامات
+        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
+        user_groups: "المجموعات"
       search_unfeasible: بحث غير مجد
     milestones:
       index:
+        table_id: "ID"
+        table_title: "عنوان"
+        table_description: "الوصف"
         table_publication_date: "تاريخ النشر"
+        table_status: حالة
+        table_actions: "الإجراءات"
+        delete: "حذف معلم"
+        no_milestones: "لا يوجد معالم محددة"
+        image: "صورة"
+        show_image: "رؤية الصورة"
         documents: "الوثائق"
+        milestone: معلم
+        new_milestone: إنشاء معلم جديد
+      form:
+        admin_statuses: إدارة الحالات
+        no_statuses_defined: لا توجد حالات محددة حتى الآن
       new:
+        creating: إنشاء معلم
         date: تاريخ
+        description: الوصف
       edit:
         title: تعديل المعلم
+      create:
+        notice: تم إنشاء المعلم بنجاح!
+      update:
+        notice: تم تحديث المعلم بنجاح
+      delete:
+        notice: تم حذف المعلم بنجاح
+    statuses:
+      index:
+        title: حالات المعلم
+        empty_statuses: لا يوجد حالات معلم منشأة
+        new_status: إنشاء حالة معلم جديدة
+        table_name: الإ سم
+        table_description: الوصف
+        table_actions: الإجراءات
+        delete: حذف
+        edit: تعديل
+      edit:
+        title: تعديل حالة المعلم
+      update:
+        notice: تم تحديث حالة المعلم بنجاح
+      new:
+        title: إنشاء حالة معلم
+      create:
+        notice: تم إنشاء حالة المعلم بنجاح
+      delete:
+        notice: تم حذف حالة المعلم بنجاح
+    progress_bars:
+      manage: "إدارة أشرطة التقدم"
+      index:
+        title: "أشرطة التقدم"
+        no_progress_bars: "ليس هناك أية أشرطة تقدم"
+        new_progress_bar: "إنشاء شريط تقدم جديد"
+        primary: "شريط التقدم الرئيسي"
+        table_id: "ID"
+        table_kind: "النوع"
+        table_title: "عنوان"
+        table_percentage: "التقدم الحالي"
+      new:
+        creating: "إنشاء شريط التقدم"
+      edit:
+        title:
+          primary: "تعديل شريط التقدم الرئيسي"
+          secondary: "تعديل شريط التقدم %{title}"
+      create:
+        notice: "تم إنشاء شريط التقدم بنجاح!"
+      update:
+        notice: "تم تحديث شريط التقدم بنجاح"
+      delete:
+        notice: "تم حذف شريط التقدم بنجاح"
     comments:
       index:
+        filter: ترشيح
         filters:
+          all: الكل
           with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
         hidden_debate: نقاش مخفي
         hidden_proposal: اقتراح مخفي
         title: التعليقات المخفية
@@ -116,79 +372,947 @@ ar:
     dashboard:
       index:
         back: العودة إلى %{org}
+        title: الإدارة
+        description: أهلا بك %{org} في لوحة الادارة.
+    debates:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: مناقشات المخفية
+        no_hidden_debates: لا توجد أي مناقشات مخفية.
     hidden_users:
       index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: المستخدمون المخفيون
+        user: المستخدم
         no_hidden_users: لا يوجد أي مستخدمين مخفيين.
       show:
         email: 'ايمايل:'
+        hidden_at: 'مخفي في:'
         registered_at: 'تم الحفظ في:'
+        title: نشاط المستخدم (%{user})
+    hidden_budget_investments:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: استثمارات الميزانية المخفية
+        no_hidden_budget_investments: لا توجد هناك ميزانيات استثمارية مخفية
     legislation:
       processes:
+        create:
+          notice: 'تم إنشاء العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن إنشاء العملية
+        update:
+          notice: 'تم تحديث العملية بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن تحديث العملية
+        destroy:
+          notice: تم حذف العملية بنجاح
+        edit:
+          back: عودة
+          submit_button: حفظ التغييرات
+        errors:
+          form:
+            error: خطأ
         form:
+          enabled: تفعيل
+          process: عملية
+          debate_phase: مرحلة النقاش
+          draft_phase: مرحلة المسودة
+          draft_phase_description: إذا كانت هذه المرحلة نشطة، فلن يتم إدراج العملية في فهرس العمليات. اسمح بمعاينة العملية وإنشاء محتوى قبل البدء.
+          allegations_phase: مرحلة التعليقات
+          proposals_phase: مرحلة الاقتراحات
+          start: بداية
+          end: نهاية
+          use_markdown: استخدم Markdown لتنسيق النص
           title_placeholder: عنوان العملية
           summary_placeholder: موجز قصير للوصف
           description_placeholder: إضافة وصف للعملية
           additional_info_placeholder: إضافة معلومات إضافية تعتبرها مفيدة
+          homepage: الوصف
+          homepage_description: هنا يمكنك شرح محتوى العملية
+          homepage_enabled: تم تفعيل الصفحة الرئيسية
+          banner_title: لون العنوان
         index:
           create: عملية جديدة
           delete: حذف
+          title: العمليات التشريعية
           filters:
             open: فتح
-            next: التالي
-            past: السابق
+            all: الكل
         new:
           back: عودة
+          title: قم بإنشاء عملية تشريع تشاركية جديدة
           submit_button: إنشاء عملية
+        proposals:
+          select_order: فرز حسب
+          orders:
+            id: Id
+            title: عنوان
+            supports: دعم
         process:
-          status: الحالة
+          title: عملية
+          comments: تعليقات
+          status: حالة
           creation_date: تاريخ الإنشاء
+          status_open: فتح
           status_closed: مغلق
           status_planned: مخطط
         subnav:
-          info: معلومات
+          info: المعلومات
+          homepage: الصفحة الرئيسية
+          draft_versions: صياغة
+          questions: الحوارات
+          proposals: إقتراحات
+          milestones: التالية
+      homepage:
+        edit:
+          title: قم بتكوين الصفحة الرئيسية للمعالجة
       proposals:
+        index:
+          title: عنوان
+          back: عودة
+          id: Id
+          supports: دعم
+          select: حدّد
+          selected: محدّد
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
+          custom_categories_placeholder: ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل ('،') وبين الاقتباسات ("")
+      draft_versions:
+        create:
+          notice: 'تم إنشاء المسودة بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن إنشاء المسودة
+        update:
+          notice: 'تم تحديث المسودة بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: لا يمكن تحديث المسودة
+        destroy:
+          notice: تم حذف المسودّة بنجاح
+        edit:
+          back: عودة
+          submit_button: حفظ التغييرات
+          warning: لقد قمت بتحرير النص، لا تنسى أن تنقر على "حفظ" لحفظ التغييرات بشكل دائم.
+        errors:
+          form:
+            error: خطأ
+        form:
+          title_html: 'تعديل <span class="strong">%{draft_version_title}</span> من العملية <span class="strong">%{process_title}</span>'
+          launch_text_editor: تشغيل محرر النص
+          close_text_editor: إغلاق محرر النص
+          use_markdown: استخدم Markdown لتنسيق النص
+          hints:
+            final_version: سيتم نشر هذا الإصدار كنتيجة نهائية لهذه العملية. لن يسمح بالتعليقات على هذا الإصدار.
+            status:
+              draft: يمكنك المعاينة كمدير، لا يمكن لأي شخص آخر أن يرى ذلك
+              published: مرئية للجميع
+          title_placeholder: اكتب عنوان إصدار المسودّة
+          changelog_placeholder: إضافة التغييرات الرئيسية من النسخة السابقة
+          body_placeholder: كتابة نص المسودة
+        index:
+          title: إصدارا المسودّة
+          create: إنشاء إصدار
+          delete: حذف
+          preview: معاينة
+        new:
+          back: عودة
+          title: إنشاء إصدار جديد
+          submit_button: إنشاء إصدار
+        statuses:
+          draft: مسودة
+          published: منشورة
+        table:
+          title: عنوان
+          created_at: أنشئت في
+          comments: تعليقات
+          final_version: نهاية الإصدار
+          status: حالة
+      questions:
+        create:
+          notice: 'تم إنشاء السؤال بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: تعذر إنشاء السؤال
+        update:
+          notice: 'تم تحديث السؤال بنجاح. <a href="%{link}">انقر للزيارة</a>'
+          error: تعذر تحديث السؤال
+        destroy:
+          notice: تم حذف السؤال بنجاح
+        edit:
+          back: عودة
+          title: "تعديل \"%{question_title}\""
+          submit_button: حفظ التغييرات
+        errors:
+          form:
+            error: خطأ
+        form:
+          add_option: إضافة خيار
+          title: سؤال
+          title_placeholder: إضافة سؤال
+          value_placeholder: إضافة إجابة مغلقة
+          question_options: "الإجابات المحتملة (اختياري، الإجابات مفتوحة مبدئيا)"
+        index:
+          back: عودة
+          title: الأسئلة المرتبطة بهذه العملية
+          create: إنشاء سؤال
+          delete: حذف
+        new:
+          back: عودة
+          title: إنشاء سؤال جديد
+          submit_button: إنشاء سؤال
+        table:
+          title: عنوان
+          question_options: خيارات السؤال
+          answers_count: عدد الإجابات
+          comments_count: عدد التعليقات
+        question_option_fields:
+          remove_option: إزالة الخيار
+      milestones:
+        index:
+          title: التالية
+    managers:
+      index:
+        title: مدراء
+        name: الإ سم
+        email: البريد الإلكتروني
+        no_managers: لا يوجد مدراء.
+      manager:
+        add: إضافة
+        delete: حذف
+      search:
+        title: 'المدراء: البحث عن المستخدم'
     menu:
+      activity: نشاط المشرف
+      admin: قائمة المدير
+      banner: إدارة اللافتات
+      poll_questions: أسئلة
+      proposals: إقتراحات
+      proposals_topics: مواضيع المقترحات
+      budgets: الميزانيات المشاركة
+      geozones: إدارة المناطق الجغرافية
       hidden_comments: التعليقات المخفية
+      hidden_debates: المناقشات المخفية
+      hidden_proposals: مقترحات مخفية
+      hidden_budget_investments: استثمارات الميزانية المخفية
+      hidden_proposal_notifications: إخفاء إشعارات اقتراح
+      hidden_users: المستخدمون المخفيون
+      administrators: مدراء
+      managers: مدراء
+      moderators: المشرفين
+      messaging_users: رسائل للمستخدمين
+      newsletters: نشرات إخبارية
+      admin_notifications: إشعارات
+      system_emails: نظام البريد الإلكتروني
+      emails_download: تنزيل رسائل البريد الإلكتروني
+      valuators: المقيمون
+      poll_officers: ضباط الاستطلاع
+      polls: استطلاعات
+      poll_booths: موقع مكاتب الإقتراع
+      poll_booth_assignments: تعيينات مكاتب الإقتراع
+      poll_shifts: إدارة المناوبات
+      officials: المسؤولون
+      organizations: منظمات
       settings: الإعدادات العامة
+      spending_proposals: مقترحات الانفاق
+      stats: الإحصائيات
+      signature_sheets: أوراق التوقيع
+      site_customization:
+        homepage: الصفحة الرئيسية
+        pages: صفحات مخصصة
+        images: صور مخصصة
+        content_blocks: كتل محتوى مخصصة
+        information_texts: نصوص المعلومات المخصصة
+        information_texts_menu:
+          debates: "النقاشات"
+          community: "المجتمع"
+          proposals: "إقتراحات"
+          polls: "استطلاعات"
+          layouts: "تخطيطات"
+          mailers: "البريد الالكتروني"
+          management: "الإدارة"
+          welcome: "اهلاً وسهلاً"
+        buttons:
+          save: "حفظ"
+          content_block:
+            update: "تحديث الكتلة"
+      title_moderated_content: محتوى خاضع للإشراف
+      title_budgets: ميزانيات
+      title_polls: استطلاعات
+      title_profiles: ملفات التعريف
+      title_settings: إعدادات
+      title_site_customization: محتوى الموقع
+      title_booths: صناديق الاقتراع
+      legislation: التشريعات التشاركية
+      users: المستخدمين
+    administrators:
+      index:
+        title: مدراء
+        name: الإ سم
+        email: البريد الإلكتروني
+        id: معرف المدير
+        no_administrators: لا يوجد مدراء.
+      administrator:
+        add: إضافة
+        delete: حذف
+        restricted_removal: "عذراً، لا يمكنك إزالة نفسك من المدراء"
+      search:
+        title: "المسؤولين: بحث عن مستخدم"
     moderators:
       index:
-        title: المشرفون
+        title: المشرفين
+        name: الإ سم
+        email: البريد الإلكتروني
+        no_moderators: لا يوجد مشرفون.
+      moderator:
+        add: إضافة
+        delete: حذف
+      search:
+        title: 'المشرفون: البحث عن مستخدم'
+    segment_recipient:
+      all_users: كل المستخدمين
+      administrators: مدراء
+      proposal_authors: كتّاب الاقتراحات
     newsletters:
+      index:
+        title: نشرات إخبارية
+        new_newsletter: رسائلة إخبارية جديدة
+        subject: الموضوع
+        segment_recipient: المستفيدين
+        sent: تم الإرسال
+        actions: الإجراءات
+        draft: مسودة
+        edit: تعديل
+        delete: حذف
+        preview: معاينة
+        empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
+      new:
+        title: رسائلة إخبارية جديدة
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
+      edit:
+        title: تعديل الرسالة الإخبارية
       show:
+        title: معاينة الرسالة الإخبارية
+        send: ارسال
+        affected_users: (%{n} مستخدم متأثر)
+        sent_emails:
+          zero: "%{count} رسالة بريد إلكتروني مرسلة"
+          one: '%{count} رسالة بريد إلكتروني مرسلة'
+          two: "%{count} رسائل بريد إلكتروني مرسلة"
+          few: "%{count} رسائل بريد إلكتروني مرسلة"
+          many: "%{count} رسالة بريد إلكتروني مرسلة"
+          other: "%{count} رسالة بريد إلكتروني مرسلة"
+        sent_at: تم الإرسال بـ
+        subject: الموضوع
+        segment_recipient: المستفيدين
+        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال الرسالة الإخبارية
         body: محتوى البريد الإلكتروني
+        body_help_text: سيتم عرض الرسالة الإلكترونية للمستخدمين وفقا لما يلي
+        send_alert: هل أنت متأكد من أنك تريد إرسال الرسالة الإخبارية إلى المستخدمين %{n} ؟
+    admin_notifications:
+      create_success: تم إنشاء الإشعار بنجاح
+      update_success: تم تعديل الإشعار بنجاح
+      send_success: تم إرسال الإشعار بنجاح
+      delete_success: تم حذف الإشعار بنجاح
+      index:
+        section_title: إشعارات
+        new_notification: إشعار جديد
+        title: عنوان
+        segment_recipient: المستفيدين
+        sent: تم الإرسال
+        actions: الإجراءات
+        draft: مسودة
+        edit: تعديل
+        delete: حذف
+        preview: معاينة
+        view: عرض
+        empty_notifications: لايوجد عناصر للعرض
+      new:
+        section_title: إشعار جديد
+        submit_button: إنشاء إشعار
+      edit:
+        section_title: تحرير الإشعار
+        submit_button: تحديث الإشعار
+      show:
+        section_title: معاينة الإشعار
+        send: إرسال إشعار
+        will_get_notified: (سيتم إعلام %{n} مستخدم)
+        got_notified: (تم إعلام %{n} مستخدم)
+        sent_at: تم الإرسال بـ
+        title: عنوان
+        body: نص
+        link: رابط
+        segment_recipient: المستفيدين
+        preview_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
+        sent_guide: "سيعرض الإشعار للمستخدمين كما يلي:"
+        send_alert: يرجى تاكيد إرسال الإشعار لـ%{n} مستخدم؟
     system_emails:
+      preview_pending:
+        action: في انتظار المعاينة
+        preview_of: معاينة %{name}
+        pending_to_be_sent: هذا هو المحتوى في إنتظار الإرسال
+        moderate_pending: إدارة إرسال الإعلانات
+        send_pending: إرسال الرسائل المعلقة
+        send_pending_notification: تم إرسال إشعار الإيقاف
       proposal_notification_digest:
+        title: خلاصة إشعارات المقترح
+        description: جمع كل الإشعارات في رسالة واحدة للمستخدم، للتقليل من عدد الإيميلات.
         preview_detail: سيتلقى المستخدمون إشعارات فقط من المقترحات التي يتابعونها
     emails_download:
       index:
+        title: تنزيل رسائل البريد الإلكتروني
         download_segment: تحميل عناوين البريد الإلكتروني
+        download_segment_help_text: قم بالتنزيل بصيغة CSV
         download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+    valuators:
+      index:
+        title: المقيمون
+        name: الإ سم
+        email: البريد الإلكتروني
+        description: الوصف
+        no_description: بدون وصف
+        no_valuators: لا يوجد مقيمون.
+        valuator_groups: "مجموعات المقيم"
+        group: "مجموعة"
+        no_group: "لا توجد مجموعة"
+      valuator:
+        add: أضف إلى المقيمين
+        delete: حذف
+      search:
+        title: 'المقيمون: البحث عن مستخدم'
+      summary:
+        title: ملخص المقيمين للمشاريع الاستثمارية
+        valuator_name: مقيّم
+        finished_and_feasible_count: منتهي و مجدي
+        finished_and_unfeasible_count: منتهي و غير مجدي
+        finished_count: انتهى
+        in_evaluation_count: قيد التقييم
+        total_count: المجموع
+        cost: التكلفة
+      form:
+        edit_title: "المقيّمون: تعديل المقيّمين"
+        update: "تحديث المقيّم"
+        updated: "تم تحديث المقيّمين بنجاح"
+      show:
+        description: "الوصف"
+        email: "البريد الإلكتروني"
+        group: "مجموعة"
+        no_description: "بدون وصف"
+        no_group: "بدون مجموعة"
+    valuator_groups:
+      index:
+        title: "مجموعات تقييم"
+        new: "إنشاء مجموعة مقيّمين"
+        name: "الإ سم"
+        members: "الأعضاء"
+        no_groups: "لا توجد مجموعة تقييم"
+      show:
+        title: "مجموعة المقيمين: %{group}"
+        no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
+      form:
+        name: "اسم المجموعة"
+        new: "إنشاء مجموعة مقيّمين"
+        edit: "حفظ مجموعة المقيّمين"
+    poll_officers:
+      index:
+        title: ضباط الاستطلاع
+      officer:
+        add: إضافة
+        delete: حذف المنصب
+        name: الإ سم
+        email: البريد الإلكتروني
+        entry_name: ضابط
+      search:
+        email_placeholder: بحث عن مستخدم عن طريق البريد الإلكتروني
+        search: بحث
+        user_not_found: المستخدم غير موجود
+    poll_officer_assignments:
+      index:
+        officers_title: "قائمة الضباط"
+        no_officers: "لا يوجد ضباط معينون لهذا الاستطلاع."
+        table_name: "الإ سم"
+        table_email: "البريد الإلكتروني"
+      by_officer:
+        date: "تاريخ"
+        booth: "مكتب إقتراع"
+        assignments: "مناوبات العمل في هذا الاستطلاع"
+        no_assignments: "هذا المستخدم ليس لديه أية مناوبات عمل في هذا الاستطلاع."
+    poll_shifts:
+      new:
+        add_shift: "إضافة مناوبة"
+        shift: "تعيين"
+        date: "تاريخ"
+        new_shift: "مناوبة جديدة"
+        no_shifts: "لا توجد مناوبات لمكتب الإقتراع هذا"
+        officer: "ضابط"
+        remove_shift: "إزالة"
+        search_officer_button: بحث
+        search_officer_placeholder: بحث عن ضابط
+        search_officer_text: ابحث عن ضابط لتعيين مناوبة جديدة
+        select_date: "حدّد اليوم"
+        no_voting_days: "انتهت أيام التصويت"
+        select_task: "حدّد المهمة"
+        table_shift: "المناوبة"
+        table_email: "البريد الإلكتروني"
+        table_name: "الإ سم"
+      flash:
+        create: "تمت إضافة المناوبة"
+        destroy: "تمت إزالة المناوبة"
+        date_missing: "يجب تحديد تاريخ"
+      vote_collection: جمع الاصوات
+      recount_scrutiny: إعادة الفرز والتدقيق
+    booth_assignments:
+      manage_assignments: إدارة المهام
+      manage:
+        assignments_list: "تعيينات للاستطلاع '%{poll}'"
+        status:
+          assign_status: تعيين
+          assigned: تم التعيين
+          unassigned: لم يتم التعيين
+        actions:
+          assign: تعيين مكتب الإقتراع
+          unassign: إلغاء تعيين مكتب الإقتراع
+    poll_booth_assignments:
+      alert:
+        shifts: "هناك مناوبات مرتبطة بمكتب التصويت. إذا قمت بإزالة تعيين مكتب الإقتراع، سيتم حذف المناوبات أيضا. هل تريد المتابعة؟"
+      flash:
+        destroy: "تم إلغاء تعيين مكتب الإقتراع"
+        create: "تم تعيين مكتب الإقتراع"
+        error_destroy: "حدث خطأ عند إلغاء تعيين مكتب الإقتراع"
+        error_create: "حدث خطأ عند تعيين مكتب الإقتراع الخاص بالإستطلاع"
+      show:
+        location: "الموقع"
+        officers: "الضباط"
+        officers_list: "قائمة لضباط مكتب الإقتراع"
+        no_officers: "لا يوجد ضباط لمكتب الإقتراع"
+        recounts: "اعادة الحساب"
+        recounts_list: "قائمة اعادة الحساب لمكتب الإقتراع هذا"
+        results: "النتائج"
+        date: "تاريخ"
+        count_final: "إعادة فرز الأصوات النهائي (من طرف الضابط)"
+        count_by_system: "الأصوات (أوتوماتيكي)"
+        total_system: مجموع الأصوات (أوتوماتيكي)
+      index:
+        booths_title: "قائمة مكاتب الإقتراع"
+        no_booths: "لا توجد مكاتب إقتراع مخصصة لهذا الاستطلاع."
+        table_name: "الإ سم"
+        table_location: "الموقع"
+    polls:
+      index:
+        create: "إنشاء استطلاع"
+        name: "الإ سم"
+        dates: "التواريخ"
+        start_date: "تاريخ البدء"
+        closing_date: "تاريخ الإغلاق"
+        geozone_restricted: "خاص بالمقاطعات"
+      new:
+        title: "استطلاع جديد"
+        submit_button: "إنشاء استطلاع"
+      show:
+        questions_tab: أسئلة
+        officers_tab: الضباط
+        results_tab: النتائج
+        table_title: "عنوان"
     questions:
       index:
+        title: "أسئلة"
+        create: "إنشاء سؤال"
         no_questions: "لا توجد هناك أسئلة."
+        questions_tab: "أسئلة"
+        create_question: "إنشاء سؤال"
+        table_proposal: "اقتراح"
+        table_question: "سؤال"
+        table_poll: "استطلاع"
+      new:
+        poll_label: "استطلاع"
       answers:
         images:
+          add_image: "إضافة صورة"
           save_image: "حفظ الصورة"
       show:
+        author: كاتب
+        question: سؤال
         add_answer: إضافة إجابة
+        video_url: فيديو خارجي
         answers:
+          title: الإجابة
+          description: الوصف
+          videos: فيديوهات
+          images: صور
           images_list: قائمة الصور
+          documents: الوثائق
+          document_title: عنوان
+          document_actions: الإجراءات
     answers:
+      new:
+        title: إجابة جديدة
+      show:
+        title: عنوان
+        description: الوصف
+        images: صور
+        images_list: قائمة الصور
+        edit: تعديل الإجابة
+      edit:
+        title: تعديل الإجابة
       videos:
+        index:
+          title: فيديوهات
+          add_video: إضافة فيديو
+          video_title: عنوان
+          video_url: فيديو خارجي
+        new:
+          title: فيديو جديد
         edit:
           title: تعديل الفيديو
+    recounts:
+      index:
+        title: "اعادة الحساب"
+        no_recounts: "لا يوجد شيء ليعاد حسابه"
+        table_booth_name: "مكتب الإقتراع"
+        table_total_recount: "الحساب الإجمالي (من طرف الضابط)"
+        table_system_count: "الأصوات (أوتوماتيكي)"
+    results:
+      index:
+        title: "النتائج"
+        no_results: "لا توجد نتائج"
+      result:
+        table_whites: "أوراق فارغة"
+        table_nulls: "أوراق غير صالحة"
+        table_total: "مجموع الأوراق"
+        table_answer: الإجابة
+        table_votes: اصوات
+      results_by_booth:
+        booth: مكتب الإقتراع
+        results: النتائج
+        see_results: انظر للنتائج
+        title: "النتائج حسب مكتب الإقتراع"
+    booths:
+      index:
+        title: "قائمة مكاتب الإقتراع المفعلة"
+        no_booths: "لا توجد مكاتب مفعلة لأي إقتراع قادم."
+        add_booth: "إضافة مكتب إقتراع"
+        name: "الإ سم"
+        location: "الموقع"
+        no_location: "لا يوجد موقع"
+      new:
+        title: "مكتب إقتراع جديد"
+        name: "الإ سم"
+        location: "الموقع"
+        submit_button: "إنشاء مكتب إقتراع"
+      edit:
+        title: "تعديل مكتب الإقتراع"
+        submit_button: "تحديث مكتب الإقتراع"
+      show:
+        location: "الموقع"
+      booth:
+        shifts: "إدارة المناوبات"
+        edit: "تعديل مكتب الإقتراع"
+    officials:
+      edit:
+        destroy: إزالة حالة 'رسمي'
+        title: 'المسؤولون: تعديل المستخدم'
+      flash:
+        official_destroyed: 'تم حفظ التفاصيل: لم يعد المستخدم من المسؤولين'
+        official_updated: تم حفض تفاصيل المسؤول
+      index:
+        title: المسؤولين
+        no_officials: لا يوجد مسؤول.
+        name: الإ سم
+        official_position: الموقف الرسمي
+        official_level: المستوى
+      level_0: ليس رسميا
+      level_1: المستوى 1
+      level_2: المستوى 2
+      level_3: المستوى 3
+      level_4: المستوى 4
+      level_5: المستوى 5
+      search:
+        edit_official: تعديل مسؤول
+        make_official: تعيين مسؤول
+        title: 'المناصب الرسمية: البحث عن مستخدم'
+        no_results: لم يتم العثور على مناصب رسمية.
     organizations:
       index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          pending: معلق
+          rejected: مرفوضة
+          verified: تم التثبت
+        hidden_count_html:
+          zero: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          one: هناك أيضا <strong>منظمة واحدة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          two: هناك <strong>منظمتان</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          few: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          many: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+          other: هناك <strong>%{count} منظمة</strong> بدون مستخدمين أو بمستخدمين مخفيين.
+        name: الإ سم
+        email: البريد الإلكتروني
+        phone_number: الهاتف
+        responsible_name: المسؤول
+        status: حالة
+        no_organizations: لا توجد منظمات.
+        reject: رفض
+        rejected: مرفوضة
+        search: بحث
         search_placeholder: الاسم، البريد الإلكتروني أو رقم الهاتف
+        title: منظمات
+        verified: تم التثبت
+        verify: تحقق
+        pending: معلق
       search:
+        title: بحث عن منظمات
         no_results: لم يتم العثور على منظمات.
+    proposals:
+      index:
+        title: إقتراحات
+        id: ID
+        author: كاتب
+        milestones: معالم
+        no_proposals: لا توجد مقترحات.
+    hidden_proposals:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: الإقتراحات المخفية
+        no_hidden_proposals: لا توجد أي إقتراحات مخفية.
+    proposal_notifications:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: الإشعارات المخفية
+        no_hidden_proposals: لايوجد إشعارات مخفية.
+    settings:
+      flash:
+        updated: تم تحديث القيمة
+      index:
+        update_setting: تحديث
+        feature_flags: المميزات
+        features:
+          enabled: "تم تفعيل الميزة"
+          disabled: "تم إلغاء الميزة"
+          enable: "تفعيل"
+          disable: "تعطيل"
+        map:
+          title: تعديل الخريطة
+          help: هنا يمكنك تخصيص طريقة عرض الخريطة للمستخدمين. اسحب محدد الخريطة أو انقر في أي مكان على الخريطة، حدد التكبير المطلوب وانقر على زر "تحديث".
+          flash:
+            update: تم تحديث تعديلات الخريطة بنجاح.
+          form:
+            submit: تحديث
+      setting: الميزة
+      setting_actions: الإجراءات
+      setting_name: إعداد
+      setting_status: حالة
+      setting_value: القيمة
+      no_description: "بدون وصف"
     shared:
+      true_value: "نعم"
+      false_value: "لا"
+      booths_search:
+        button: بحث
+        placeholder: البحث عند مكتب إقتراع وفقا للاسم
+      poll_officers_search:
+        button: بحث
+        placeholder: البحث عن ضباط الاستطلاع
+      poll_questions_search:
+        button: بحث
+        placeholder: البحث عن أسئلة الاستطلاع
+      proposal_search:
+        button: بحث
+        placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
+      spending_proposal_search:
+        button: بحث
+        placeholder: البحث عن اقتراحات الإنفاق عن طريق العنوان أو الوصف
+      user_search:
+        button: بحث
+        placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
+      search_results: "نتائج البحث"
+      no_search_results: "لا توجد نتائج."
+      actions: الإجراءات
+      title: عنوان
       description: الوصف
+      image: صورة
+      show_image: عرض الصورة
+      moderated_content: "تحقق من المحتوى الذي يشرف عليه المشرفون، وتأكد مما إذا كان الإشراف قد تم بشكل صحيح."
+      view: عرض
+      proposal: اقتراح
+      author: كاتب
+      content: المحتوى
+      created_at: أنشئت في
+      delete: حذف
+    spending_proposals:
+      index:
+        geozone_filter_all: كل المناطق
+        administrator_filter_all: كل المدراء
+        valuator_filter_all: كل المقيّمين
+        tags_filter_all: كل العلامات
+        filters:
+          valuation_open: فتح
+          without_admin: بدون تعيين المشرف
+          managed: الإدارة
+          valuating: تحت التقييم
+          valuation_finished: انتهى التقييم
+          all: الكل
+        title: مشاريع استثمارية للميزانية المشتركة
+        assigned_admin: المشرف المعين
+        no_admin_assigned: المشرف غير المعين
+        no_valuators_assigned: لم يتم تعيين مقيّمين
+        feasibility:
+          feasible: "مجدي (%{price})"
+          not_feasible: "غير مجدي"
+          undefined: "غير معرف"
+      show:
+        assigned_admin: المشرف المعين
+        assigned_valuators: المقيمين الذين تم تعيينهم
+        back: عودة
+        classification: تصنيف
+        edit: تعديل
+        edit_classification: تعديل التصنيف
+        association_name: جمعية
+        by: من قبل
+        sent: تم الإرسال
+        geozone: نطاق
+        dossier: الملف
+        edit_dossier: تعديل الملف
+        tags: علامات
+        undefined: غير معرف
+      edit:
+        classification: تصنيف
+        assigned_valuators: المقيمون
+        submit_button: تحديث
+        tags: علامات
+        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
+        undefined: غير معرف
+      summary:
+        geozone_name: نطاق
+        finished_and_feasible_count: منتهي و مجدي
+        finished_and_unfeasible_count: منتهي و غير مجدي
+        finished_count: انتهى
+        in_evaluation_count: قيد التقييم
+        total_count: المجموع
+        cost_for_geozone: التكلفة
+    geozones:
+      index:
+        edit: تعديل
+        delete: حذف
+      geozone:
+        name: الإ سم
+      edit:
+        form:
+          submit_button: حفظ التغييرات
+      delete:
+        success: تم حذف المنطقة الجغرافية بنجاح
+        error: لا يمكن حذف هذه المنطقة الجغرافية نظراً لوجود عناصر مرتبطة بها
+    signature_sheets:
+      author: كاتب
+      created_at: تاريخ الإنشاء
+      name: الإ سم
+      no_signature_sheets: "لا توجد أوراق توقيع"
+      index:
+        title: أوراق التوقيع
+        new: أوراق توقيع جديدة
+      new:
+        title: أوراق توقيع جديدة
+        document_numbers_note: "اكتب الأرقام مفصولة بفواصل (،)"
+        submit: إنشاء ورقة توقيع
+      show:
+        created_at: تم الإنشاء
+        author: كاتب
+        documents: وثائق
+        unverified_error: (لم يتم التحقق من قبل التعداد)
+    stats:
+      show:
+        summary:
+          comments: تعليقات
+          debates: النقاشات
+          proposals: إقتراحات
+          budget_investments: مشاريع استثمارية
+          unverified_users: مستخدمين غير متحقق منهم
+          verified_users: مستخدمين تم التحقق منهم
+          votes: مجموع الأصوات
+        budgets_title: الميزانية التشاركية
+        proposal_notifications: إشعارات المقترح
+        polls: استطلاعات
+      direct_messages:
+        total: المجموع
+      proposal_notifications:
+        title: إشعارات المقترح
+        total: المجموع
+      polls:
+        all: استطلاعات
+        web_participants: المشاركون عبر ويب
+        table:
+          poll_name: استطلاع
+          question_name: سؤال
+          origin_web: المشاركون عبر ويب
+          origin_total: مجموع المشاركين
+    tags:
+      index:
+        topic: موضوع
+    users:
+      columns:
+        name: الإ سم
+        email: البريد الإلكتروني
+      index:
+        title: المستخدم
+      search:
+        search: بحث
+    site_customization:
+      content_blocks:
+        errors:
+          form:
+            error: خطأ
+        content_block:
+          body: الهيئة
+          name: الإ سم
+      images:
+        index:
+          title: صور مخصصة
+          update: تحديث
+          delete: حذف
+          image: صورة
+      pages:
+        errors:
+          form:
+            error: خطأ
+        form:
+          options: خيارات
+        page:
+          created_at: أنشئت في
+          status: حالة
+          updated_at: تم التحديث في
+          status_draft: مسودة
+          status_published: منشورة
+          title: عنوان
+          slug: سبيكة
+        cards:
+          title: عنوان
+          description: الوصف
+          link_text: نص الرابط
+          link_url: رابط URL
     homepage:
+      title: الصفحة الرئيسية
       cards:
-        title: العنوان
+        title: عنوان
+        description: الوصف
+        link_text: نص الرابط
+        link_url: رابط URL
+      feeds:
+        proposals: إقتراحات
+        debates: النقاشات
+        processes: عمليات
     translations:
       add_language: إضافة لغة

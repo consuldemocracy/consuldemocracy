@@ -1,5 +1,5 @@
 class Poll
-  class BoothAssignment < ActiveRecord::Base
+  class BoothAssignment < ApplicationRecord
     belongs_to :booth
     belongs_to :poll
 
@@ -13,6 +13,10 @@ class Poll
 
     def shifts?
       shifts.empty? ? false : true
+    end
+
+    def unable_to_destroy?
+      (partial_results.count + recounts.count).positive?
     end
 
     private

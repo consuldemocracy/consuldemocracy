@@ -13,9 +13,9 @@ val:
           postal_code: "Codi postal"
         sms:
           phone: "Telèfon"
-          confirmation_code: "Codi de confirmació"
+          confirmation_code: "SMS de confirmació"
         email:
-          recipient: "Correu electrònic"
+          recipient: "Correu electrónic"
       officing/residence:
         document_type: "Tipus de document"
         document_number: "Número de document (inclosa lletra)"

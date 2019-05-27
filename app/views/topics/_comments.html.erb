@@ -2,16 +2,16 @@
   <div class="row comments">
 
     <div id="comments" class="small-12 column">
-      <%= render 'shared/wide_order_selector', i18n_namespace: "comments" %>
+      <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
 
       <% @comment_tree.root_comments.each do |comment| %>
-        <%= render 'comments/comment', comment: comment  %>
+        <%= render "comments/comment", comment: comment  %>
       <% end %>
 
       <%= paginate @comment_tree.root_comments %>
 
       <% if user_signed_in? %>
-        <%= render 'comments/form', {commentable: @topic, parent_id: nil, toggeable: false} %>
+        <%= render "comments/form", {commentable: @topic, parent_id: nil, toggeable: false} %>
       <% else %>
 
       <div data-alert class="callout primary">

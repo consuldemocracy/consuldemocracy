@@ -6,9 +6,9 @@ pl:
         see_complete: Zobacz pełne
         comments_count:
           one: "%{count} komentarz"
-          few: "%{count} komentarze"
-          many: "%{count} komentarze"
-          other: "%{count} komentarze"
+          few: "%{count} komentarzy"
+          many: "%{count} komentarzy"
+          other: "%{count} komentarzy"
         replies_count:
           one: "%{count} odpowiedz"
           few: "%{count} odpowiedzi"
@@ -17,14 +17,19 @@ pl:
         cancel: Anuluj
         publish_comment: Opublikuj Komentarz
       form:
-        phase_not_open: Ta faza nie jest otwarta
-        login_to_comment: Musisz się %{signin} lub %{signup} by zostawić komentarz.
+        phase_not_open: Ten etap nie jest otwarty
+        login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
         signin: Zaloguj się
         signup: Zarejestruj się
       index:
         title: Komentarze
         comments_about: Komentarze na temat
         see_in_context: Zobacz w kontekście
+        comments_count:
+          one: "%{count} komentarz"
+          few: "%{count} komentarzy"
+          many: "%{count} komentarzy"
+          other: "%{count} komentarzy"
       show:
         title: Komentarz
       version_chooser:
@@ -53,6 +58,8 @@ pl:
         more_info: Więcej informacji i kontekst
       proposals:
         empty_proposals: Brak wniosków
+        filters:
+          winners: Wybrany
       debate:
         empty_questions: Brak pytań
         participate: Uczestniczyć w debacie
@@ -60,10 +67,8 @@ pl:
         filter: Filtr
         filters:
           open: Otwarte procesy
-          next: Następny
           past: Ubiegły
         no_open_processes: Nie ma otwartych procesów
-        no_next_processes: Nie ma zaplanowanych procesów
         no_past_processes: Brak ubiegłych procesów
         section_header:
           icon_alt: Ikona procesów legislacyjnych
@@ -81,10 +86,12 @@ pl:
         see_latest_comments_title: Wypowiedz się na temat tego procesu
       shared:
         key_dates: Najważniejsze daty
+        homepage: Strona główna
         debate_dates: Debata
         draft_publication_date: Projekt publikacji
         allegations_dates: Komentarze
         result_publication_date: Publikacja wyniku końcowego
+        milestones_date: Obserwowane
         proposals_dates: Wnioski
     questions:
       comments:
@@ -97,9 +104,9 @@ pl:
         comments:
           zero: Brak komentarzy
           one: "%{count} komentarz"
-          few: "%{count} komentarze"
-          many: "%{count} komentarze"
-          other: "%{count} komentarze"
+          few: "%{count} komentarzy"
+          many: "%{count} komentarzy"
+          other: "%{count} komentarzy"
         debate: Debata
       show:
         answer_question: Zatwierdź odpowiedź
@@ -108,11 +115,11 @@ pl:
         share: Udostępnij
         title: Wspólny proces legislacyjny
       participation:
-        phase_not_open: Ten etap nie jest otwarty
+        phase_not_open: Ta faza nie jest otwarta
         organizations: Organizacje nie mogą uczestniczyć w debacie
         signin: Zaloguj się
         signup: Zarejestruj się
-        unauthenticated: Muszą być %{signin} lub %{signup} do udziału.
+        unauthenticated: Aby wziąć udział, musisz %{signin} lub %{signup}.
         verified_only: Tylko zweryfikowani użytkownicy mogą uczestniczyć, %{verify_account}.
         verify_account: zweryfikuj swoje konto
         debate_phase_not_open: Faza debaty została zakończona i odpowiedzi nie są już akceptowane

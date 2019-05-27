@@ -24,7 +24,6 @@ ru:
       change_user: Сменить пользователя
       document_number_label: 'Номер документа:'
       document_type_label: 'Тип документа:'
-      email_label: 'Email:'
       identified_label: 'Идентифицирован как:'
       username_label: 'Имя пользователя:'
     check: Проверить документ
@@ -37,7 +36,6 @@ ru:
     document_verifications:
       already_verified: Аккаунт этого пользователя уже верифицирован.
       has_no_account_html: Чтобы создать аккаунт, перейдите в %{link} и нажмите <b>'Регистрация'</b> в верхней левой части экрана.
-      link: CONSUL
       in_census_has_following_permissions: 'Этот пользователь может участвовать на вебсайте со следующими разрешениями:'
       not_in_census: Этот документ не зарегистрирован.
       not_in_census_info: 'Граждане не в Цензусе могут участвовать на вебсайте со следующими разрешениями:'
@@ -45,7 +43,7 @@ ru:
       title: Управление пользователями
       under_age: "Вы не достигли требуемого возраста для верификации вашего аккаунта."
       verify: Верифицировать
-    email_label: Email
+    email_label: Электронный адрес
     date_of_birth: Дата рождения
     email_verifications:
       already_verified: Этот аккаунт пользователя уже был верифицирован.
@@ -94,34 +92,28 @@ ru:
       create_new_investment: Создать бюджетное инвестирование
       print_investments: Распечатать бюджетные инвестиции
       support_investments: Поддержать бюджетные инвестиции
-      table_name: Название
-      table_phase: Фаза
+      table_name: Имя
+      table_phase: Этап
       table_actions: Действия
       no_budgets: Нет активных совместных бюджетов.
     budget_investments:
       alert:
         unverified_user: Пользователь не верифицирован
-      create: Создать бюджетное инвестирование
+      create: Создать бюджетную инвестицию
       filters:
         heading: Идейная концепция
         unfeasible: Невыполнимое инвестирование
       print:
         print_button: Распечатать
-      search_results:
-        one: " содержит термин '%{search_term}'"
-        other: " сождержат термин '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Пользователь не верифицирован
       create: Создать предложение трат
       filters:
-        unfeasible: Невыполнимые проекты инвестирования
+        unfeasible: Неосуществимые инвестиционные проекты
         by_geozone: "Проекты инвестирования с охватом: %{geozone}"
       print:
         print_button: Распечатать
-      search_results:
-        one: " содержащий термин '%{search_term}'"
-        other: " содержащие термин '%{search_term}'"
     sessions:
       signed_out: Успешно вышли.
       signed_out_managed_user: Пользователь успешно вышел из сессии.

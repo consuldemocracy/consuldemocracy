@@ -35,9 +35,9 @@ class Admin::GeozonesController < Admin::BaseController
   def destroy
     if @geozone.safe_to_destroy?
       @geozone.destroy
-      redirect_to admin_geozones_path, notice: t('admin.geozones.delete.success')
+      redirect_to admin_geozones_path, notice: t("admin.geozones.delete.success")
     else
-      redirect_to admin_geozones_path, flash: { error: t('admin.geozones.delete.error') }
+      redirect_to admin_geozones_path, flash: { error: t("admin.geozones.delete.error") }
     end
   end
 

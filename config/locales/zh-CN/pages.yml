@@ -1,10 +1,9 @@
 zh-CN:
   pages:
     conditions:
-      title: 使用条款和条件
+      title: 使用条款及条件
       subtitle: 关于开放政府门户网站个人数据的使用条件，隐私和保护的法律声明
       description: 有关个人数据的使用条件，隐私和保护的资讯页面。
-    general_terms: 条款和条件
     help:
       title: "%{org} 是公民参与的平台"
       guide: "此指南解释了每个%{org} 部分的用途以及它们的作业原理。"
@@ -60,9 +59,9 @@ zh-CN:
       how_to_use:
         text: |-
           在您本地政府中使用它或者帮助我们改善它，它是免费的软件。
-          
-          此开放政府门户网站使用[CONSUL app](https://github.com/consul/consul 'consul github')，这是免费的软件，使用[licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。简单来说，就是任何人都可以自由使用此原代码，复制它，查看其细节，修改它，以及把他想要的修改重新发布到全球（允许其他人也可以这么做）。因为我们认为文化在发布后会更好，更丰富。
-          
+
+          此开放政府门户网站使用[CONSUL app](https://github.com/consul/consul 'consul github') ，这是免费的软件，使用 [licence AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' )。简单来说，就是任何人都可以自由使用此原代码，复制它，查看其细节，修改它，以及把他们想要的修改重新发布到全球（允许其他人也可以这么做）。因此我们认为文化在发布后会更好，更丰富。
+
           如果您是程序员，您可以在[CONSUL app](https://github.com/consul/consul 'consul github')查看原代码并帮助我们改善它。
       titles:
         how_to_use: 在您本地政府中使用它
@@ -87,18 +86,14 @@ zh-CN:
             - 
               field: '负责此文件的机构：'
               description: 负责此文件的机构
-        - 
-          text: 有关方可以在负责机构指示前行使获取，纠正，取消和反对的权利。所有这些权利都是根据12月13日第15/1999号组织法第5条关于个人数据保护的条款。
-        - 
-          text: 作为一般原则，本网站不会分享或者披露所获得的资讯，除非是得到用户的授权，或者被司法机关，检察办公室，或者司法警察要求提供资讯，或者受12月13日第15/1999 组织法第11 条关于个人数据保护的管制。
     accessibility:
-      title: 无障碍功能
+      title: 辅助功能选项
       description: |-
         网络无障碍功能指所有人都可以访问网络及其内容，以克服可能出现的残疾障碍（身体，智力或技术）或者是来自使用环境（技术或者环境）的障碍。
-        
+
         当网站在设计时已考虑到无障碍功能，所有用户都可以在同等条件下访问内容，例如：
       examples:
-        - 为图像提供替代文本，盲人或者视觉有障碍的用户可以使用特殊的阅读器来取得资讯。
+        - 为图像提供替代文本，盲人或者有视力障碍的用户可以使用特殊的阅读器来访问资讯。
         - 当视频有字幕时，有听力障碍的用户可以完全理解它们。
         - 如果内容是用简单的插图语言编写时，有学习障碍的用户也可以更好地理解它们。
         - 如果用户有行动障碍并难以使用鼠标，使用键盘的替代方法会有助于导航。
@@ -179,20 +174,20 @@ zh-CN:
               description_column: 增加字体大小
             - 
               shortcut_column: CTRL 和 - (在MAC上用CMD 和 -)
-              description_column: 减少字体大小
+              description_column: 减小字体大小
       compatibility:
         title: 与标准和视觉设计兼容
-        description_html: '本网站的所有页面均符合<strong>辅助功能指南</strong>或者由属于W3C的<abbr title = "Web Accessibility Initiative" lang = "en">WAI </ abbr>工作组建立的无障碍设计的一般原则。'
+        description_html: '本网站的所有页面均符合<strong>辅助功能指南</strong>或者属于W3C的<abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> 工作组建立的无障碍设计的一般原则。'
     titles:
-      accessibility: 无障碍功能
+      accessibility: 辅助功能选项
       conditions: 使用条款
       help: "什么是%{org}？－ 公民参与"
       privacy: 隐私政策
     verify:
       code: 您在信中收到的代码
-      email: 电子邮件
+      email: 电子邮件地址
       info: '要核实您的账户，请输入您的访问数据：'
       info_code: '现在请输入您在信里收到的代码：'
       password: 密码
-      submit: 核实我的账户
+      submit: 验证我的帐号
       title: 核实您的账户

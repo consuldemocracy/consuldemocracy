@@ -23,7 +23,7 @@ de:
     votes_for_proposal_success: "Anzahl der notwendigen Stimmen zur Genehmigung eines Vorschlags"
     votes_for_proposal_success_description: "Wenn ein Antrag diese Anzahl von Unterstützungen erreicht, kann er nicht mehr mehr unterstützt werden und gilt als erfolgreich"
     months_to_archive_proposals: "Anzahl der Monate, um Vorschläge zu archivieren"
-    months_to_archive_proposals_description: Nach dieser Anzahl von Monaten werden die Anträge archiviert und können keine Unterstützung mehr erhalten"
+    months_to_archive_proposals_description: "Nach dieser Anzahl von Monaten werden die Anträge archiviert und können keine Unterstützung mehr erhalten\""
     email_domain_for_officials: "E-Mail-Domäne für Beamte"
     email_domain_for_officials_description: "Alle Benutzer, die mit dieser Domain registriert sind, erhalten bei der Registrierung eine Bestätigung ihres Kontos"
     per_page_code_head: "Code, der auf jeder Seite eingefügt wird (<head>)"
@@ -75,7 +75,7 @@ de:
     verification_offices_url: Bestätigungsbüro URL
     proposal_improvement_path: Interner Link zur Antragsverbesserungsinformation
     feature:
-      budgets: "Bürgerhaushalt"
+      budgets: "Partizipative Haushaltsplanung"
       budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Gemeindebudgets erhalten"
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"

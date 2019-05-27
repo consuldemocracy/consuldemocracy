@@ -1,0 +1,113 @@
+cs:
+  budgets:
+    ballots:
+      reasons_for_not_balloting:
+        not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
+        organization: Organizacím není dovoleno hlasovat
+    groups:
+      show:
+        unfeasible_title: Nerealizovatelné projekty
+        unfeasible: Podívejte se na nerealizovatelné investice
+        unselected_title: Projekty, které nebyly vybrány pro fázi hlasování
+        unselected: Zobrazit projekty, které nebyly vybrány pro fázi hlasování
+    phase:
+      informing: Informace
+      accepting: Přijímání projektů
+      reviewing: Posuzování projektů
+      selecting: Výběr projektů
+      valuating: Oceňování projektů
+      publishing_prices: Zveřejnění cen projektů
+      balloting: Hlasování o projektech
+      reviewing_ballots: Přezkoumání hlasování
+      finished: Dokončený rozpočet
+    index:
+      title: Participativní rozpočty
+      empty_budgets: Neexistují žádné rozpočty.
+      section_header:
+        icon_alt: Ikona participativního rozpočtu
+        title: Participativní rozpočty
+        help: Nápověda pro paticipativní rozpočty
+        all_phases: Zobrazit všechny fáze
+      all_phases: Fáze participativního rozpočtu
+      map: Lokalizace návrhů pro participativní rozpočet
+      investment_proyects: Seznam všech investičních projektů
+      unfeasible_investment_proyects: Seznam všech nerealizovatelných investičních projektů
+      not_selected_investment_proyects: Seznam všech nerealizovatelných investičních projektů odmítnutých pro hlasování
+      finished_budgets: Ukončené participativní rozpočty
+      see_results: Zobrazit výsledky
+      section_footer:
+        title: Nápověda pro participativní rozpočet
+        description: Prostřednictvím participativních rozpočtů se občané rozhodnou, které projekty budou zahrnuty do rozpočtu.
+      milestones: Milníky
+    investments:
+      form:
+        tag_category_label: "Kategorie"
+        tags_instructions: "Štítek tohoto návrhu. Můžete si vybrat z kategorií nebo přidat vlastní"
+        tags_label: Štítky
+        tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
+        map_location: "Mapa umístění"
+        map_location_instructions: "Nalezněte mapu lokality a umístěte kliknutím značku."
+        map_remove_marker: "Odstranit značku z mapy"
+        location: "Doplňující informace k lokalitě"
+      index:
+        title: Participativní rozpočtování
+        search_form:
+          button: Vyhledat
+          title: Vyhledat
+        sidebar:
+          check_ballot_link: "kontrola mého hlasování"
+          verify_account: "ověřte Váš účet"
+          create: "Přidat investiční projekt"
+          sign_in: "přihlásit se"
+          sign_up: "registrovat se"
+        orders:
+          random: náhodné pořadí
+          confidence_score: nejlépe hodnocené
+      show:
+        author_deleted: Uživatel
+        share: Sdílet
+        supports: Podpora
+        votes: Hlasů
+        price: Cena
+        comments_tab: Komentáře
+        milestones_tab: Milníky
+        author: Autor
+      investment:
+        support_title: Podpořit tento projekt
+        give_support: Podpořte!
+      header:
+        check_ballot: Kontrola mého hlasování
+        check_ballot_link: "kontrola mého hlasování"
+        price: "Tato položka má rozpočet"
+    progress_bar:
+      assigned: "Přidělili jste: "
+      available: "Dostupný rozpočet: "
+    show:
+      group: Skupina
+      phase: Aktuální fáze
+      unfeasible_title: Nerealizovatelné projekty
+      unfeasible: Podívejte se na nerealizovatelné investice
+      unselected_title: Projekty, které nebyly vybrány pro fázi hlasování
+      unselected: Zobrazit projekty, které nebyly vybrány pro fázi hlasování
+      see_results: Zobrazit výsledky
+    results:
+      link: Výsledky
+      heading: "Výsledky participativního rozpočtu"
+      heading_selection_title: "Podle městských částí"
+      spending_proposal: Název návrhu
+      ballot_lines_count: Hlasů
+      hide_discarded_link: Skrýt vyřazené
+      show_all_link: Zobrazit vše
+      price: Price
+      amount_available: Rozpočet k dispozici
+      incompatibles: Nekompatibilní
+      investment_proyects: Seznam všech investičních projektů
+      unfeasible_investment_proyects: Seznam všech nerealizovatelných investičních projektů
+      not_selected_investment_proyects: Seznam všech nerealizovatelných investičních projektů odmítnutých pro hlasování
+    executions:
+      link: "Milníky"
+      page_title: "%{budget} - Milníky"
+      heading: "Participatory Milníky rozpočtu"
+      heading_selection_title: "Podle městských částí"
+      filters:
+        all: "Všechny (%{count})"

@@ -1,10 +1,10 @@
 <% provide :title do %><%= t("devise_views.users.registrations.new.title") %><% end %>
 <h2><%= t("devise_views.users.registrations.new.title") %></h2>
 
-<%= render 'devise/omniauth_form' %>
+<%= render "devise/omniauth_form" %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render 'shared/errors', resource: resource %>
+  <%= render "shared/errors", resource: resource %>
 
   <p>
     <%= t("devise_views.users.registrations.new.organization_signup",
@@ -41,11 +41,11 @@
       <% end %>
 
       <%= f.label :terms_of_service do %>
-        <%= f.check_box :terms_of_service, title: t('devise_views.users.registrations.new.terms_title'), label: false %>
+        <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: false %>
         <span class="checkbox">
           <%= t("devise_views.users.registrations.new.terms",
               terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
-              title: t('shared.target_blank_html'),
+              title: t("shared.target_blank_html"),
               target: "_blank")).html_safe %>
         </span>
       <% end %>

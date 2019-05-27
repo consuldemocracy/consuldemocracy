@@ -1,4 +1,4 @@
-class Geozone < ActiveRecord::Base
+class Geozone < ApplicationRecord
 
   include Graphqlable
 
@@ -15,7 +15,7 @@ class Geozone < ActiveRecord::Base
   end
 
   def self.city
-    where(name: 'city').first
+    where(name: "city").first
   end
 
   def safe_to_destroy?

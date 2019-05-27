@@ -1,6 +1,6 @@
 <h2><%= t("admin.managers.index.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_managers_path %>
+<%= render "admin/shared/user_search", url: search_admin_managers_path %>
 
 <div id="managers">
   <% if @managers.any? %>
@@ -23,13 +23,13 @@
             </td>
             <td>
               <% if manager.persisted? %>
-                <%= link_to t('admin.managers.manager.delete'),
+                <%= link_to t("admin.managers.manager.delete"),
                   admin_manager_path(manager),
                   method: :delete,
                   class: "button hollow alert expanded"
                 %>
               <% else %>
-                <%= link_to t('admin.managers.manager.add'),
+                <%= link_to t("admin.managers.manager.add"),
                              { controller: "admin/managers",
                                action: :create,
                                user_id: manager.user_id },

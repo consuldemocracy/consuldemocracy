@@ -10,7 +10,7 @@ pl:
         title: Konto użytkownika
       edit:
         title: 'Edytuj konto użytkownika: Zresetuj hasło'
-        back: Wstecz
+        back: Wróć
         password:
           password: Hasło
           send_email: Wyślij wiadomość e-mail dotyczącą resetowania hasła
@@ -24,13 +24,13 @@ pl:
       change_user: Zmień użytkownika
       document_number_label: 'Numer dokumentu:'
       document_type_label: 'Rodzaj dokumentu:'
-      email_label: 'Email:'
+      email_label: 'E-mail:'
       identified_label: 'Zidentyfikowany jako:'
       username_label: 'Nazwa użytkownika:'
     check: Sprawdź dokument
     dashboard:
       index:
-        title: Zarządzanie
+        title: Zarząd
         info: Tutaj możesz zarządzać użytkownikami poprzez wszystkie czynności wymienione w lewym menu.
     document_number: Numer dokumentu
     document_type_label: Rodzaj dokumentu
@@ -61,20 +61,20 @@ pl:
     menu:
       create_proposal: Stwórz wniosek
       print_proposals: Drukuj wnioski
-      support_proposals: Poprzyj wnioski
-      create_spending_proposal: Utwórz wniosek wydatkowy
+      support_proposals: Popieraj propozycje
+      create_spending_proposal: Utwórz propozycję wydatków
       print_spending_proposals: Drukuj wniosek wydatkowy
       support_spending_proposals: Poprzyj wniosek wydatkowy
       create_budget_investment: Utwórz inwestycję budżetową
       print_budget_investments: Wydrukuj inwestycje budżetowe
       support_budget_investments: Wspieraj inwestycje budżetowe
       users: Zarządzanie użytkownikami
-      user_invites: Wysyłać zaproszenia
+      user_invites: Wyślij zaproszenia
       select_user: Wybierz użytkownika
     permissions:
       create_proposals: Stwórz wnioski
       debates: Angażuj się w debaty
-      support_proposals: Popieraj wnioski
+      support_proposals: Popieraj propozycje
       vote_proposals: Oceń wnioski
     print:
       proposals_info: Utwórz Twój wniosek na http://url.consul
@@ -89,7 +89,7 @@ pl:
       print:
         print_button: Drukuj
       index:
-        title: Popieraj wnioski
+        title: Popieraj propozycje
     budgets:
       create_new_investment: Utwórz inwestycję budżetową
       print_investments: Wydrukuj inwestycje budżetowe
@@ -101,21 +101,31 @@ pl:
     budget_investments:
       alert:
         unverified_user: Użytkownik nie jest zweryfikowany
-      create: Utwórz inwestycję budżetową
+      create: Utwórz nowy projekt
       filters:
         heading: Koncepcja
         unfeasible: Niewykonalna inwestycja
       print:
         print_button: Drukuj
+      search_results:
+        one: " zawierające terminy '%{search_term}'"
+        few: " zawierające terminy '%{search_term}'"
+        many: " zawierające terminy '%{search_term}'"
+        other: " zawierające terminy '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Użytkownik nie jest zweryfikowany
       create: Utwórz propozycję wydatków
       filters:
         unfeasible: Niewykonalne projekty inwestycyjne
-        by_geozone: "Projekty inwestycyjne o zakresie: %{geozone}"
+        by_geozone: "Projekty inwestycyjne z zakresu: %{geozone}"
       print:
         print_button: Drukuj
+      search_results:
+        one: " zawierające terminy '%{search_term}'"
+        few: " zawierające terminy '%{search_term}'"
+        many: " zawierające terminy '%{search_term}'"
+        other: " zawierające terminy '%{search_term}'"
     sessions:
       signed_out: Wylogowano pomyślnie.
       signed_out_managed_user: Sesja użytkownika została pomyślnie wylogowana.
@@ -137,8 +147,8 @@ pl:
       new:
         label: E-maile
         info: "Wprowadź adrey e-mailowe oddzielone przecinkami (',')"
-        submit: Wyślij zaproszenia
-        title: Wyślij zaproszenia
+        submit: Wysyłać zaproszenia
+        title: Wysyłać zaproszenia
       create:
         success_html: <strong>%{count} zaproszenia </strong> zostały wysłane.
         title: Wysyłać zaproszenia

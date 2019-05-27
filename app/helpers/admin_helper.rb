@@ -1,7 +1,7 @@
 module AdminHelper
 
   def side_menu
-    if namespace == 'moderation/budgets'
+    if namespace == "moderation/budgets"
       render "/moderation/menu"
     else
       render "/#{namespace}/menu"
@@ -13,7 +13,7 @@ module AdminHelper
   end
 
   def namespaced_header_title
-    if namespace == 'moderation/budgets'
+    if namespace == "moderation/budgets"
       t("moderation.header.title")
     else
       t("#{namespace}.header.title")
@@ -30,7 +30,7 @@ module AdminHelper
   end
 
   def menu_budgets?
-    %w[budgets budget_groups budget_headings budget_investments].include?(controller_name)
+    controller_name.starts_with?("budget")
   end
 
   def menu_budget?
@@ -38,7 +38,8 @@ module AdminHelper
   end
 
   def menu_polls?
-    %w[polls questions answers recounts results].include?(controller_name)
+    %w[polls active_polls recounts results questions answers].include?(controller_name) ||
+    controller.class.parent == Admin::Poll::Questions::Answers
   end
 
   def menu_booths?
@@ -50,11 +51,12 @@ module AdminHelper
   end
 
   def menu_settings?
-    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name)
+    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name) &&
+    controller.class.parent != Admin::Poll::Questions::Answers
   end
 
   def menu_customization?
-    ["pages", "banners", "information_texts"].include?(controller_name) ||
+    ["pages", "banners", "information_texts", "documents"].include?(controller_name) ||
     menu_homepage? || menu_pages?
   end
 
@@ -66,16 +68,20 @@ module AdminHelper
     ["pages", "cards"].include?(controller_name) && params[:page_id].present?
   end
 
+  def menu_dashboard?
+    ["actions", "administrator_tasks"].include?(controller_name)
+  end
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|
-      options << [[t("admin.officials.level_#{i}"), setting["official_level_#{i}_name"]].compact.join(': '), i]
+      options << [[t("admin.officials.level_#{i}"), setting["official_level_#{i}_name"]].compact.join(": "), i]
     end
     options
   end
 
   def admin_select_options
-    Administrator.all.order('users.username asc').includes(:user).collect { |v| [ v.name, v.id ] }
+    Administrator.all.order("users.username asc").includes(:user).collect { |v| [ v.name, v.id ] }
   end
 
   def admin_submit_action(resource)

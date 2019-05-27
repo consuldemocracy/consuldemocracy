@@ -1,5 +1,5 @@
-require 'rails_helper'
-require 'cancan/matchers'
+require "rails_helper"
+require "cancan/matchers"
 
 describe Abilities::Common do
   subject(:ability) { Ability.new(user) }
@@ -15,10 +15,10 @@ describe Abilities::Common do
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
 
-  let(:accepting_budget) { create(:budget, phase: 'accepting') }
-  let(:reviewing_budget) { create(:budget, phase: 'reviewing') }
-  let(:selecting_budget) { create(:budget, phase: 'selecting') }
-  let(:balloting_budget) { create(:budget, phase: 'balloting') }
+  let(:accepting_budget) { create(:budget, phase: "accepting") }
+  let(:reviewing_budget) { create(:budget, phase: "reviewing") }
+  let(:selecting_budget) { create(:budget, phase: "selecting") }
+  let(:balloting_budget) { create(:budget, phase: "balloting") }
 
   let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
   let(:investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget) }
@@ -33,9 +33,6 @@ describe Abilities::Common do
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
 
   let(:current_poll)  { create(:poll) }
-  let(:incoming_poll) { create(:poll, :incoming) }
-  let(:incoming_poll_from_own_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [geozone]) }
-  let(:incoming_poll_from_other_geozone) { create(:poll, :incoming, geozone_restricted: true, geozones: [create(:geozone)]) }
   let(:expired_poll) { create(:poll, :expired) }
   let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
   let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
@@ -50,10 +47,6 @@ describe Abilities::Common do
   let(:expired_poll_question_from_own_geozone)   { create(:poll_question, poll: expired_poll_from_own_geozone) }
   let(:expired_poll_question_from_other_geozone) { create(:poll_question, poll: expired_poll_from_other_geozone) }
   let(:expired_poll_question_from_all_geozones)  { create(:poll_question, poll: expired_poll) }
-
-  let(:incoming_poll_question_from_own_geozone)   { create(:poll_question, poll: incoming_poll_from_own_geozone) }
-  let(:incoming_poll_question_from_other_geozone) { create(:poll_question, poll: incoming_poll_from_other_geozone) }
-  let(:incoming_poll_question_from_all_geozones)  { create(:poll_question, poll: incoming_poll) }
 
   let(:own_proposal_document)          { build(:document, documentable: own_proposal) }
   let(:proposal_document)              { build(:document, documentable: proposal) }
@@ -104,8 +97,9 @@ describe Abilities::Common do
 
   it { should be_able_to(:destroy, own_budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_image) }
+  it { should_not be_able_to(:manage, Dashboard::Action) }
 
-  describe 'flagging content' do
+  describe "flagging content" do
     it { should be_able_to(:flag, debate)   }
     it { should be_able_to(:unflag, debate) }
 
@@ -160,6 +154,40 @@ describe Abilities::Common do
     it { should_not be_able_to(:destroy, proposal_document)      }
   end
 
+  describe "proposals dashboard" do
+    it { should be_able_to(:dashboard, own_proposal) }
+    it { should_not be_able_to(:dashboard, proposal) }
+  end
+
+  describe "proposal polls" do
+    let(:poll) { create(:poll, related: own_proposal) }
+
+    it { should be_able_to(:manage_polls, own_proposal) }
+    it { should_not be_able_to(:manage_polls, proposal) }
+    it { should_not be_able_to(:stats, poll) }
+    it { should be_able_to(:results, poll) }
+  end
+
+  describe "proposal mailing" do
+    it { should be_able_to(:manage_mailing, own_proposal) }
+    it { should_not be_able_to(:manage_mailing, proposal) }
+  end
+
+  describe "proposal poster" do
+    it { should be_able_to(:manage_poster, own_proposal) }
+    it { should_not be_able_to(:manage_poster, proposal) }
+  end
+
+  describe "publishing proposals" do
+    let(:draft_own_proposal) { create(:proposal, :draft, author: user) }
+    let(:retired_proposal) { create(:proposal, :draft, :retired, author: user) }
+
+    it { should be_able_to(:publish, draft_own_proposal) }
+    it { should_not be_able_to(:publish, own_proposal) }
+    it { should_not be_able_to(:publish, proposal) }
+    it { should_not be_able_to(:publish, retired_proposal) }
+  end
+
   describe "when level 2 verified" do
     let(:own_spending_proposal) { create(:spending_proposal, author: user) }
 
@@ -188,7 +216,6 @@ describe Abilities::Common do
     describe "Poll" do
       it { should     be_able_to(:answer, current_poll)  }
       it { should_not be_able_to(:answer, expired_poll)  }
-      it { should_not be_able_to(:answer, incoming_poll) }
 
       it { should     be_able_to(:answer, poll_question_from_own_geozone)   }
       it { should     be_able_to(:answer, poll_question_from_all_geozones)  }
@@ -197,10 +224,6 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
       it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
-
-      it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
-      it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
-      it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
 
       context "without geozone" do
         before { user.geozone = nil }
@@ -212,10 +235,6 @@ describe Abilities::Common do
         it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
         it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
         it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
-
-        it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
-        it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
-        it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
       end
     end
 
@@ -270,7 +289,6 @@ describe Abilities::Common do
 
     it { should     be_able_to(:answer, current_poll)  }
     it { should_not be_able_to(:answer, expired_poll)  }
-    it { should_not be_able_to(:answer, incoming_poll) }
 
     it { should     be_able_to(:answer, poll_question_from_own_geozone)   }
     it { should     be_able_to(:answer, poll_question_from_all_geozones)  }
@@ -279,10 +297,6 @@ describe Abilities::Common do
     it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
     it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
     it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
-
-    it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
-    it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
-    it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
 
     context "without geozone" do
       before { user.geozone = nil }
@@ -293,10 +307,6 @@ describe Abilities::Common do
       it { should_not be_able_to(:answer, expired_poll_question_from_own_geozone)   }
       it { should_not be_able_to(:answer, expired_poll_question_from_all_geozones)  }
       it { should_not be_able_to(:answer, expired_poll_question_from_other_geozone) }
-
-      it { should_not be_able_to(:answer, incoming_poll_question_from_own_geozone)   }
-      it { should_not be_able_to(:answer, incoming_poll_question_from_all_geozones)  }
-      it { should_not be_able_to(:answer, incoming_poll_question_from_other_geozone) }
     end
   end
 

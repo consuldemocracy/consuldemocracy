@@ -1,1 +1,9 @@
 id:
+  seeds:
+    categories:
+      participation: Partisipasi
+      transparency: Transparansi
+    budgets:
+      currency: '€'
+      groups:
+        districts: Kabupaten

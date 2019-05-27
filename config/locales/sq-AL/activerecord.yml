@@ -9,7 +9,7 @@ sq:
         other: "Buxhet"
       budget/investment:
         one: "Investim"
-        other: "Investim"
+        other: "Investimet"
       milestone:
         one: "moment historik"
         other: "milestone"
@@ -17,20 +17,20 @@ sq:
         one: "Statusi investimeve"
         other: "Statusi investimeve"
       comment:
-        one: "Komente"
-        other: "Komente"
+        one: "Koment"
+        other: "Komentet"
       debate:
         one: "Debate"
         other: "Debate"
       tag:
         one: "Etiketë"
-        other: "Etiketë - Tag"
+        other: "Etiketë"
       user:
         one: "Përdorues"
-        other: "Përdorues"
+        other: "Përdoruesit"
       moderator:
         one: "Moderator"
-        other: "Moderator"
+        other: "Moderatorët"
       administrator:
         one: "Administrator"
         other: "Administrator"
@@ -42,16 +42,16 @@ sq:
         other: "Grup vlerësuesish"
       manager:
         one: "Manaxher"
-        other: "Manaxher"
+        other: "Menaxherët"
       newsletter:
         one: "Buletin informativ"
         other: "Buletin informativ"
       vote:
-        one: "Votim"
-        other: "Votim"
+        one: "Votë"
+        other: "Vota"
       organization:
         one: "Organizim"
-        other: "Organizim"
+        other: "Organizatat"
       poll/booth:
         one: "kabinë"
         other: "kabinë"
@@ -66,7 +66,7 @@ sq:
         other: "Projekt investimi"
       site_customization/page:
         one: Faqe e personalizuar
-        other: Faqe e personalizuar
+        other: Faqet e personalizuara
       site_customization/image:
         one: Imazhi personalizuar
         other: Imazhe personalizuara
@@ -75,16 +75,16 @@ sq:
         other: Personalizimi i blloqeve të përmbatjeve
       legislation/process:
         one: "Proçes"
-        other: "Proçes"
+        other: "Proçese"
+      legislation/proposal:
+        one: "Propozime"
+        other: "Propozime"
       legislation/draft_versions:
         one: "Version drafti"
         other: "Version drafti"
-      legislation/draft_texts:
-        one: "Drafti"
-        other: "Drafti"
       legislation/questions:
         one: "Pyetje"
-        other: "Pyetje"
+        other: "Pyetjet"
       legislation/question_options:
         one: "Opsioni i pyetjeve"
         other: "Opsioni i pyetjeve"
@@ -93,16 +93,16 @@ sq:
         other: "Përgjigjet"
       documents:
         one: "Dokument"
-        other: "Dokument"
+        other: "Dokumentet"
       images:
         one: "Imazh"
-        other: "Imazh"
+        other: "Imazhet"
       topic:
         one: "Temë"
         other: "Temë"
       poll:
         one: "Sondazh"
-        other: "Sondazh"
+        other: "Sondazhet"
       proposal_notification:
         one: "Notifikimi i propozimeve"
         other: "Notifikimi i propozimeve"
@@ -136,10 +136,13 @@ sq:
       milestone/status:
         name: "Emri"
         description: "Përshkrimi (opsional)"
+      progress_bar:
+        kind: "Tipi"
+        title: "Titull"
       budget/heading:
-        name: "Emri i kreut"
+        name: "Emri i titullit"
         price: "Çmim"
-        population: "Popullsia"
+        population: "Popullsi"
       comment:
         body: "Koment"
         user: "Përdorues"
@@ -182,11 +185,17 @@ sq:
         geozone_restricted: "E kufizuar nga gjeozoni"
         summary: "Përmbledhje"
         description: "Përshkrimi"
+      poll/translation:
+        name: "Emri"
+        summary: "Përmbledhje"
+        description: "Përshkrimi"
       poll/question:
         title: "Pyetje"
         summary: "Përmbledhje"
         description: "Përshkrimi"
         external_url: "Lidhje me dokumentacionin shtesë"
+      poll/question/translation:
+        title: "Pyetje"
       signature_sheet:
         signable_type: "Lloji i nënshkrimit"
         signable_id: "Identifikimi i nënshkrimit"
@@ -202,6 +211,10 @@ sq:
         more_info_flag: Trego në faqen ndihmëse
         print_content_flag: Butoni për shtypjen e përmbajtjes
         locale: Gjuha
+      site_customization/page/translation:
+        title: Titull
+        subtitle: Nëntitull
+        content: Përmbajtje
       site_customization/image:
         name: Emri
         image: Imazh
@@ -218,16 +231,28 @@ sq:
         end_date: Data e përfundimit
         debate_start_date: Data e fillimit të debatit
         debate_end_date: Data e mbarimit të debatit
+        draft_start_date: Data e fillimit të draftit
+        draft_end_date: Data e mbarimit të draftit
         draft_publication_date: Data e publikimit të draftit
         allegations_start_date: Data e fillimit të akuzave
         allegations_end_date: Data e përfundimit të akuzave
         result_publication_date: Data e publikimit të rezultatit përfundimtar
+      legislation/process/translation:
+        title: Titulli i procesit
+        summary: Përmbledhje
+        description: Përshkrimi
+        additional_info: Informacion shtesë
+        milestones_summary: Përmbledhje
       legislation/draft_version:
         title: Titulli i versionit
         body: Tekst
         changelog: Ndryshimet
         status: Statusi
         final_version: Versioni final
+      legislation/draft_version/translation:
+        title: Titulli i versionit
+        body: Tekst
+        changelog: Ndryshimet
       legislation/question:
         title: Titull
         question_options: Opsionet
@@ -242,7 +267,10 @@ sq:
         title: Titull
         attachment: Bashkëngjitur
       poll/question/answer:
-        title: Përgjigjet
+        title: Përgjigje
+        description: Përshkrimi
+      poll/question/answer/translation:
+        title: Përgjigje
         description: Përshkrimi
       poll/question/answer/video:
         title: Titull
@@ -252,12 +280,25 @@ sq:
         subject: Subjekt
         from: Nga
         body: Përmbajtja e postës elektronike
+      admin_notification:
+        segment_recipient: Marrësit
+        title: Titull
+        link: Link
+        body: Tekst
+      admin_notification/translation:
+        title: Titull
+        body: Tekst
       widget/card:
         label: Etiketa (opsionale)
         title: Titull
         description: Përshkrimi
         link_text: Linku tekstit
         link_url: Linku URL
+      widget/card/translation:
+        label: Etiketa (opsionale)
+        title: Titull
+        description: Përshkrimi
+        link_text: Linku tekstit
       widget/feed:
         limit: Numri i artikujve
     errors:
@@ -302,6 +343,8 @@ sq:
               invalid_date_range: duhet të jetë në ose pas datës së fillimit
             debate_end_date:
               invalid_date_range: duhet të jetë në ose pas datës së fillimit të debatit
+            draft_end_date:
+              invalid_date_range: duhet të jetë në ose pas datës së fillimit të draftit
             allegations_end_date:
               invalid_date_range: duhet të jetë në ose pas datës së fillimit të pretendimeve
         proposal:
@@ -335,7 +378,7 @@ sq:
             valuation:
               cannot_comment_valuation: 'Ju nuk mund të komentoni një vlerësim'
       messages:
-        record_invalid: "Vlefshmëria dështoi:%{errors}"
+        record_invalid: "Vlefshmëria dështoi: %{errors}"
         restrict_dependent_destroy:
           has_one: "Nuk mund të fshihet regjistrimi për shkak se ekziston një%{record} i varur"
           has_many: "Nuk mund të fshihet regjistrimi për shkak se ekziston një%{record} i varur"

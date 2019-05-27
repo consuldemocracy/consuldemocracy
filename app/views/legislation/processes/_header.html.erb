@@ -31,21 +31,22 @@
           <%= t("legislation.processes.header.more_info") %>
         </a>
       <% else %>
-        <%= render 'legislation/processes/header_full', process: @process %>
+        <%= render "legislation/processes/header_full", process: @process %>
       <% end %>
     </div>
 
     <aside class="small-12 medium-3 column">
-      <%= render partial: 'shared/social_share', locals: {
+      <%= render partial: "shared/social_share", locals: {
         share_title: t("proposals.show.share"),
         title: @process.title,
         url: legislation_process_url(@process),
-        description: @process.title
+        description: @process.title,
+        mobile: @process.title
       } %>
 
       <% if @process.image.present? %>
         <hr>
-        <%= image_tag(@process.image_url(:large), alt: @process.title, id:'image') %>
+        <%= image_tag(@process.image_url(:large), alt: @process.title, id: "image") %>
       <% end %>
 
       <% if process.draft_publication.enabled? %>

@@ -21,7 +21,7 @@
     <tbody>
       <% @officer_assignments.each do |officer_assignment| %>
         <tr id="<%= dom_id officer_assignment %>">
-          <td><%= l(officer_assignment.date.to_date)%> <%= content_tag :strong, t('polls.final_date') if officer_assignment.final %></td>
+          <td><%= l(officer_assignment.date.to_date)%> <%= content_tag :strong, t("polls.final_date") if officer_assignment.final %></td>
           <td><%= booth_name_with_location(officer_assignment.booth_assignment.booth) %></td>
         </tr>
       <% end %>

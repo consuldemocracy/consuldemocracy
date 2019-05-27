@@ -1,1 +1,79 @@
 so:
+  mailers:
+    no_reply: "Farriintan waxaa loo direy cinwaanka emailka ah ee aan aqbalin jawaab-celinta."
+    comment:
+      hi: Haye
+      new_comment_by_html: Waxa jira faalo cusub<b>%{commenter}</b>
+      subject: Qof ayaa ka falooday%{commentable}
+      title: Faalo cusub
+    config:
+      manage_email_subscriptions: Si aad u joojiso helitaanka emailladahaan waxay bedeshaa goobahaaga
+    email_verification:
+      click_here_to_verify: xidhiidhkan
+      instructions_2_html: E-maylkan ayaa xaqiijin doona koontadaada <b> %{document_type}%{document_number} </b>. Haddii aysan kuwaan ku jirin, fadlan ha guji xiriirka hore oo iska dheji emailkan.
+      instructions_html: Si aad u buuxiso xaqiijinta koontadaada akoonkaaga waa inaad gujisaa%{verification_link}.
+      subject: Xaqiiji emailka
+      thanks: Ad baad u mahadsantahay.
+      title: Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda
+    reply:
+      hi: Haye
+      new_reply_by_html: Waxaa jira jawaab cusub oo ka socota <b>%{commenter}</b> si aad faallo uga bixiso
+      subject: Qof ayaa kajawaabay faladadii
+      title: Jawaabta cusub ee faalladaada
+    unfeasible_spending_proposal:
+      hi: "Isticmalaha qaliga"
+      new_html: "Waxyaalahan oo dhan, waxaan kugu martiqaadeynaa inaad soo bandhigto soo jeedin <strong>soo jeedin cusub <strong> oo hagaajinaya xaaladaha geedi socodkan. Waxaad samayn kartaa sidan ka dib isku-xirkan:%{url}."
+      new_href: "mashruuc cusub o malgelin"
+      sincerely: "Si dacada ah"
+      sorry: "Waan ka xumahay dhibaatada iyo mar walbana waxaan kuugu mahadnaqaynaa kaqeybqaadashada aadka u qiimo badan."
+      subject: "Mashruuca maalgalinta%{code} ayaa loo calaamadeeyay mid aan macquul ahayn"
+    proposal_notification_digest:
+      info: "Halkan waxaa ku qoran ogaysiis cusub oo lagu daabacay qorayaasha soo jeedimaha aad ku taageertay%{org_name}."
+      title: "Ogeysiisyada soo jeedinta ee%{org_name}"
+      share: Lawadaag soo jeeedinta
+      comment: Faalada soo jeedinta
+      unsubscribe: "Haddii aadan rabin inaad hesho ogeysiis soo jeedin, booqo%{account} oo aanad 'helin soo koobidda ogeysiinta soo jeedinta'."
+      unsubscribe_account: Xisaabteyda
+    direct_message_for_receiver:
+      subject: "Waxaad heshay farriin cusub oo gaar ah"
+      reply: Jawaab u diir%{sender}
+      unsubscribe: "Haddii aadan rabin inaad hesho fariin toos ah, booqo%{account} oo aanad 'Helin emails wixii ku saabsan fariimaha tooska'."
+      unsubscribe_account: Xisaabteyda
+    direct_message_for_sender:
+      subject: "Waxaad soo dirtay farriin cusub oo gaar ah"
+      title_html: "Waxaad fariin gaar ah u dirtay <strong>% %{receiver}</strong> oo leh mawduuc:"
+    user_invite:
+      ignore: "Haddii aadan codsanin martiqaadkan ha walwalin, waad iska indha tiri kartaa emailkan."
+      text: "Waad ku mahadsantahay codsigaaga inaad ku biirto %{org}! marbaad waxaad bilaabi kartaa inaad kaqaybqaadato, kaliya buuxi foomka hoose:"
+      thanks: "Ad iyo Ad baad u mahadsantahay."
+      title: "Kuso dhowow%{org}"
+      button: Diiwaangelinta buuxda
+      subject: "Martiqaadka%{org_name}"
+    budget_investment_created:
+      subject: "Waad ku mahadsan tahay abuurista maalgalin!"
+      title: "Waad ku mahadsan tahay abuurista maalgalin!"
+      intro_html: "Haaye<strong>%{author}</strong>"
+      text_html: "Waad ku mahadsantahay abuurista maalgashigaga<strong>%{investment}</strong>miisaaniyadda ka qaybqaadashada<strong>%{budget}</strong>."
+      follow_html: "Waanu kuu sheegi doonnaa sida geedi socodku u socdo, oo aad sidoo kale raaci karto <strong>%{link}</strong>."
+      follow_link: "Misaaniyadaha kaqayb qadashada"
+      sincerely: "Si dacada ah"
+      share: "Mashruucaga lawadaag"
+    budget_investment_unfeasible:
+      hi: "Isticmalaha qaliga"
+      new_html: "Waxyaalahan oo dhan, waxaan kugu martiqaadeynaa in aad faahfaahinayso maalgashiga <strong>cusub </strong> ee xoojiya xaaladaha geeddi-socodkan. Waxaad samayn kartaa sidan ka dib isku-xirkan:%{url}."
+      new_href: "mashruuc cusub o malgelin"
+      sincerely: "Si dacada ah"
+      sorry: "Waan ka xumahay dhibaatada iyo mar walbana waxaan kuugu mahadnaqaynaa kaqeybqaadashada aadka u qiimo badan."
+      subject: "Mashruuca maalgalinta%{code} ayaa loo calaamadeeyay mid aan macquul ahayn"
+    budget_investment_selected:
+      subject: "Mashruucaga malgashiga '%{code} waa xushay"
+      hi: "Isticmalaha qaliga"
+      share: "Ka bilow inaad hesho codadka, mashruuca maalgalintaada la wadaago shabakadaha bulshada. Share waa lagama maarmaan in la sameeyo xaqiiqda."
+      share_button: "Lawadag mashruucaga malgelinta"
+      thanks: "Ad ayad ugu mahadsan tahay mar labad ka qaybqadashad."
+      sincerely: "Si dacad ah"
+    budget_investment_unselected:
+      subject: "Mashruucaga malgashiga '%{code} lama xushay"
+      hi: "Isticmalaha qaliga"
+      thanks: "Ad ayad ugu mahadsan tahay mar labad ka qaybqadashad."
+      sincerely: "Si dacad ah"

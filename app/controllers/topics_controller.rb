@@ -16,7 +16,7 @@ class TopicsController < ApplicationController
   def create
     @topic = Topic.new(topic_params.merge(author: current_user, community_id: params[:community_id]))
     if @topic.save
-      redirect_to community_path(@community), notice: I18n.t('flash.actions.create.topic')
+      redirect_to community_path(@community), notice: I18n.t("flash.actions.create.topic")
     else
       render :new
     end
@@ -33,7 +33,7 @@ class TopicsController < ApplicationController
 
   def update
     if @topic.update(topic_params)
-      redirect_to community_path(@community), notice: t('flash.actions.update.topic')
+      redirect_to community_path(@community), notice: t("flash.actions.update.topic")
     else
       render :edit
     end
@@ -41,7 +41,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic.destroy
-    redirect_to community_path(@community), notice: I18n.t('flash.actions.destroy.topic')
+    redirect_to community_path(@community), notice: I18n.t("flash.actions.destroy.topic")
   end
 
   private

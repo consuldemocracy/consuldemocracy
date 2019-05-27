@@ -1,7 +1,7 @@
 nl:
   community:
     sidebar:
-      title: Community
+      title: Gemeenschap
       description:
         proposal: Participeer in de gebruikerscommunity van dit voorstel.
         investment: Participeer in de gebruikerscommunity van deze investering.
@@ -17,27 +17,27 @@ nl:
         first_theme_not_logged_in: Er is nog niets geplaatst, wees de eerste die een onderwerp plaatst!
         first_theme: Creeer het eerste community onderwerp.
         sub_first_theme: "Om een thema of onderwerp te creeeren moet je %{sign_in} of %{sign_up}."
-        sign_in: "inloggen"
+        sign_in: "aanmelden"
         sign_up: "registreren"
       tab:
         participants: deelnemers
       sidebar:
-        participate: Neem deel
-        new_topic: Creeer onderwerp
+        participate: Deelnemen
+        new_topic: Nieuw Onderwerp
       topic:
         edit: Pas onderwerp aan
-        destroy: Verwijder onderwerp
+        destroy: Verwijder Onderwerp
         comments:
           zero: Geen reacties
-          one: 1 reactie
-          other: "%{count} reacties"
-      author: Auteur
+          one: 1 opmerking
+          other: "%{count} opmerkingen"
+      author: Author
       back: Terug naar %{community} %{proposal}
     topic:
       create: Creeer onderwerp
       edit: Pas onderwerp aan
       form:
-        topic_title: Titel
+        topic_title: Title
         topic_text: Tekst
         new:
           submit_button: Creeer onderwerp
@@ -49,7 +49,7 @@ nl:
           submit_button: Werk onderwerp bij
       show:
         tab:
-          comments_tab: Opmerkingen
+          comments_tab: Comments
       sidebar:
         recommendations_title: Advies bij het beginnen van een discussie.
         recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
@@ -57,4 +57,4 @@ nl:
         recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
   topics:
     show:
-      login_to_comment: Je moet %{signin} of %{signup} om een opmerking te plaatsen.
+      login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.

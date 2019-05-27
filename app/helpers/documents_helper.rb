@@ -5,7 +5,7 @@ module DocumentsHelper
   end
 
   def document_errors_on_attachment(document)
-    document.errors[:attachment].join(', ') if document.errors.key?(:attachment)
+    document.errors[:attachment].join(", ") if document.errors.key?(:attachment)
   end
 
   def bytes_to_mega(bytes)
@@ -18,7 +18,7 @@ module DocumentsHelper
 
   def render_destroy_document_link(builder, document)
     if !document.persisted? && document.cached_attachment.present?
-      link_to t('documents.form.delete_button'),
+      link_to t("documents.form.delete_button"),
                   direct_upload_destroy_url("direct_upload[resource_type]": document.documentable_type,
                                             "direct_upload[resource_id]": document.documentable_id,
                                             "direct_upload[resource_relation]": "documents",
@@ -27,7 +27,7 @@ module DocumentsHelper
                   remote: true,
                   class: "delete remove-cached-attachment"
     else
-      link_to_remove_association document.new_record? ? t('documents.form.cancel_button') : t('documents.form.delete_button') , builder, class: "delete remove-document"
+      link_to_remove_association document.new_record? ? t("documents.form.cancel_button") : t("documents.form.delete_button") , builder, class: "delete remove-document"
     end
   end
 
@@ -40,7 +40,7 @@ module DocumentsHelper
     html += builder.file_field :attachment,
                                label: false,
                                accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                               class: 'js-document-attachment',
+                               class: "js-document-attachment",
                                data: {
                                  url: document_direct_upload_url(document),
                                  nested_document: true

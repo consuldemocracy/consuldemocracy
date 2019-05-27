@@ -3,7 +3,7 @@ es:
     comments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todos
@@ -25,7 +25,7 @@ es:
     debates:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtrar
         filters:
           all: Todos
@@ -53,7 +53,7 @@ es:
     proposals:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todas
@@ -72,17 +72,17 @@ es:
     budget_investments:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todos
           pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcadas como revisadas
+          with_ignored_flag: Marcados como revisados
         headers:
           moderate: Moderar
           budget_investment: Proyecto de gasto
         hide_budget_investments: Ocultar proyectos de gasto
-        ignore_flags: Marcar como revisadas
+        ignore_flags: Marcar como revisados
         order: Ordenar por
         orders:
           created_at: Más recientes
@@ -91,7 +91,7 @@ es:
     proposal_notifications:
       index:
         block_authors: Bloquear autores
-        confirm: '¿Estás seguro?'
+        confirm: "¿Estás seguro?"
         filter: Filtro
         filters:
           all: Todas

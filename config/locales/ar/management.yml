@@ -4,10 +4,20 @@ ar:
       menu:
         reset_password_email: إعادة تعيين كلمة المرور عبر البريد الإلكتروني
       edit:
+        back: عودة
         password:
+          password: كلمة المرور
           reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
+    account_info:
+      email_label: 'ايمايل:'
+    dashboard:
+      index:
+        title: الإدارة
+    document_type_label: نوع الوثيقة
     document_verifications:
+      not_in_census: لم يتم تسجيل هذا المستند.
       please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
+      verify: تحقق
     email_label: البريد الإلكتروني
     date_of_birth: تاريخ الميلاد
     email_verifications:
@@ -22,16 +32,34 @@ ar:
     menu:
       create_proposal: إنشاء مقترح
       print_proposals: طباعة المقترحات
+      support_proposals: دعم مقترحات
       users: إدارة المستخدمين
       user_invites: إرسال الدعوات
       select_user: حدد المستخدم
     permissions:
       create_proposals: إنشاء مقترحات
+      support_proposals: دعم مقترحات
     print:
       proposals_title: 'المقترحات:'
+    proposals:
+      create_proposal: إنشاء مقترح
+      print:
+        print_button: طباعة
+      index:
+        title: دعم مقترحات
     budgets:
-      table_name: الاسم
+      table_name: الإ سم
+      table_phase: مرحلة
+      table_actions: الإجراءات
+    budget_investments:
+      create: انشاء ميزانية استثمار
+      filters:
+        unfeasible: الاستثمارات الغير مجدية
+      print:
+        print_button: طباعة
     spending_proposals:
+      filters:
+        unfeasible: الاستثمارات الغير مجدية
       print:
         print_button: طباعة
     username_label: اسم المستخدم
@@ -44,6 +72,7 @@ ar:
       erase_account_confirm: هل انت متاكد من انك تريد حذف الحساب؟ لا يمكن التراجع هن هذه الخطوة
     user_invites:
       new:
+        label: البريد الالكتروني
         info: "أدخل عناوين البريد الإلكتروني مفصولة بفواصل ('،')"
         submit: إرسال الدعوات
         title: إرسال الدعوات

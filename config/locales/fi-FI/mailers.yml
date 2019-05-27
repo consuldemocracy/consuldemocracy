@@ -1,1 +1,38 @@
 fi:
+  mailers:
+    comment:
+      hi: Hei
+      title: Uusi kommentti
+    email_verification:
+      click_here_to_verify: tämä linkki
+      subject: Vahvista sähköpostisi
+      thanks: Kiitoksia paljon.
+      title: Vahvista tilisi käyttämällä seuraavaa linkkiä
+    reply:
+      hi: Hei
+      subject: Joku on vastannut kommenttiisi
+      title: Uusi vastaus kommenttiisi
+    unfeasible_spending_proposal:
+      hi: "Hyvä käyttäjä,"
+      sincerely: "Kunnioittaen"
+    proposal_notification_digest:
+      share: Jaa ehdotus
+      comment: Kommentoi ehdotusta
+      unsubscribe_account: Tilini
+    direct_message_for_receiver:
+      unsubscribe_account: Tilini
+    user_invite:
+      thanks: "Kiitoksia paljon."
+    budget_investment_created:
+      intro_html: "Hei <strong>%{author}</strong>,"
+      sincerely: "Kunnioittaen,"
+      share: "Jaa projektisi"
+    budget_investment_unfeasible:
+      hi: "Hyvä käyttäjä,"
+      sincerely: "Kunnioittaen"
+    budget_investment_selected:
+      hi: "Hyvä käyttäjä,"
+      sincerely: "Kunnioittaen"
+    budget_investment_unselected:
+      hi: "Hyvä käyttäjä,"
+      sincerely: "Kunnioittaen"

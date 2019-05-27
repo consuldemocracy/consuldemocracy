@@ -1,1 +1,9 @@
 he:
+  settings:
+    feature:
+      budgets: "מימון השתתפותי"
+      proposals: "הצעות"
+      debates: "דיונים"
+      polls: "סקרים"
+      signature_sheets: "דפי חתימות"
+      spending_proposals: "Spending proposals"
