@@ -20,27 +20,27 @@ FactoryBot.define do
     target_url {["/proposals", "/debates" ].sample}
     post_started_at { Time.current - 7.days }
     post_ended_at { Time.current + 7.days }
-    background_color '#FF0000'
-    font_color '#FFFFFF'
+    background_color "#FF0000"
+    font_color "#FFFFFF"
   end
 
   factory :web_section do
-    name 'homepage'
+    name "homepage"
   end
 
-  factory :banner_section, class: 'Banner::Section' do
+  factory :banner_section, class: "Banner::Section" do
     association :banner_id, factory: :banner
     association :web_section, factory: :web_section
   end
 
-  factory :site_customization_page, class: 'SiteCustomization::Page' do
+  factory :site_customization_page, class: "SiteCustomization::Page" do
     slug "example-page"
     title "Example page"
     subtitle "About an example"
     content "This page is about..."
     more_info_flag false
     print_content_flag false
-    status 'draft'
+    status "draft"
 
     trait :published do
       status "published"
@@ -51,7 +51,7 @@ FactoryBot.define do
     end
   end
 
-  factory :site_customization_content_block, class: 'SiteCustomization::ContentBlock' do
+  factory :site_customization_content_block, class: "SiteCustomization::ContentBlock" do
     name "top_links"
     locale "en"
     body "Some top links content"
@@ -71,7 +71,7 @@ FactoryBot.define do
     end
   end
 
-  factory :widget_card, class: 'Widget::Card' do
+  factory :widget_card, class: "Widget::Card" do
     sequence(:title)       { |n| "Title #{n}" }
     sequence(:description) { |n| "Description #{n}" }
     sequence(:link_text)   { |n| "Link text #{n}" }
@@ -89,12 +89,12 @@ FactoryBot.define do
     end
   end
 
-  factory :widget_feed, class: 'Widget::Feed' do
+  factory :widget_feed, class: "Widget::Feed" do
   end
 
-  factory :i18n_content, class: 'I18nContent' do
-    key 'debates.index.section_footer.description'
-    value_es 'Texto en español'
-    value_en 'Text in english'
+  factory :i18n_content, class: "I18nContent" do
+    key "debates.index.section_footer.description"
+    value_es "Texto en español"
+    value_en "Text in english"
   end
 end

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe ProposalNotification do
   let(:notification) { build(:proposal_notification) }
@@ -165,7 +165,7 @@ describe ProposalNotification do
 
       it "records the moderation action in the Activity table" do
         proposal_notification.moderate_system_email(admin.user)
-        expect(Activity.last.actionable_type).to eq('ProposalNotification')
+        expect(Activity.last.actionable_type).to eq("ProposalNotification")
       end
     end
   end

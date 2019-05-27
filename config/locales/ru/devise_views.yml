@@ -2,7 +2,7 @@ ru:
   devise_views:
     confirmations:
       new:
-        email_label: Email
+        email_label: Электронный адрес
         submit: Повторно отправить инструкции
         title: Повторно отправить ниструкции подтверждения
       show:
@@ -24,7 +24,7 @@ ru:
         ignore_text: Если вы не запрашивали смену пароля, то можете проигнорировать этот email.
         info_text: Ваш пароль не будет изменен, если вы не перейдете по ссылке и не отредактируете его.
         text: 'Мы получили запрос на смену вашего пароля. Вы можете сделать это по следующей ссылке:'
-        title: Сменить ваш пароль
+        title: Измените ваш пароль
       unlock_instructions:
         hello: Здравствуйте
         info_text: Ваш аккаунт заблокирован вслествие чрезмерного количества неудачных попыток входа.
@@ -39,7 +39,7 @@ ru:
     organizations:
       registrations:
         new:
-          email_label: Email
+          email_label: Электронный адрес
           organization_name_label: Название организации
           password_confirmation_label: Подтвердить пароль
           password_label: Пароль
@@ -60,14 +60,14 @@ ru:
         change_submit: Сменить мой пароль
         password_confirmation_label: Подтвердить мой пароль
         password_label: Новый пароль
-        title: Смените ваш пароль
+        title: Измените ваш пароль
       new:
-        email_label: Email
+        email_label: Электронный адрес
         send_submit: Отправить инструкции
         title: Забыли пароль?
     sessions:
       new:
-        login_label: Email или имя пользователя
+        login_label: Электронный адрес или имя пользователя
         password_label: Пароль
         remember_me: Запомнить меня
         submit: Войти
@@ -83,7 +83,7 @@ ru:
         signup_link: Регистрация
     unlocks:
       new:
-        email_label: Email
+        email_label: Электронный адрес
         submit: Повторно отправить инструкции по разблокировке
         title: Повторно отправить инструкции по разблокировке
     users:
@@ -97,7 +97,7 @@ ru:
         edit:
           current_password_label: Текущий пароль
           edit: Редактировать
-          email_label: Email
+          email_label: Электронный адрес
           leave_blank: Оставьте пустым, если не желаете менять
           need_current: Нам нужен ваш пароль от аккаунта, чтобы подтвердить изменения
           password_confirmation_label: Подтвердить новый пароль
@@ -106,7 +106,7 @@ ru:
           waiting_for: 'Ожидаем подтверждение:'
         new:
           cancel: Отменить вход
-          email_label: Email
+          email_label: Электронный адрес
           organization_signup: Представляете ли вы организацию или коллектив? %{signup_link}
           organization_signup_link: Зарегистрироваться здесь
           password_confirmation_label: Подтвердить пароль

@@ -24,7 +24,7 @@ zh-TW:
       change_user: 更改用戶
       document_number_label: '文檔編號：'
       document_type_label: '文檔類型：'
-      email_label: '電郵：'
+      email_label: '電郵:'
       identified_label: '確定為：'
       username_label: '用戶名：'
     check: 檢查文檔
@@ -81,7 +81,7 @@ zh-TW:
       proposals_title: '建議：'
       spending_proposals_info: 在 http://url.consul 上參與
       budget_investments_info: 在 http://url.consul 上參與
-    print_info: 打印此資訊
+    print_info: 列印此信息
     proposals:
       alert:
         unverified_user: 用戶未被核實
@@ -94,7 +94,7 @@ zh-TW:
       create_new_investment: 創建預算投資
       print_investments: 打印預算投資
       support_investments: 支持預算投資
-      table_name: 名稱
+      table_name: 名字
       table_phase: 階段
       table_actions: 行動
       no_budgets: 沒有活躍的參與性預算。
@@ -111,10 +111,10 @@ zh-TW:
         other: " 包含術語'%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: 用戶未核實
+        unverified_user: 用戶未被核實
       create: 創建開支建議
       filters:
-        unfeasible: 不可行投資項目
+        unfeasible: 不可行的投資項目
         by_geozone: "投資項目範圍：%{geozone}"
       print:
         print_button: 打印

@@ -1,4 +1,5 @@
 class Admin::BudgetHeadingsController < Admin::BaseController
+  include Translatable
   include FeatureFlags
   feature_flag :budgets
 
@@ -20,7 +21,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   def create
     @heading = @group.headings.new(budget_heading_params)
     if @heading.save
-      redirect_to headings_index, notice: t('admin.budget_headings.create.notice')
+      redirect_to headings_index, notice: t("admin.budget_headings.create.notice")
     else
       render :new
     end
@@ -28,7 +29,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   def update
     if @heading.update(budget_heading_params)
-      redirect_to headings_index, notice: t('admin.budget_headings.update.notice')
+      redirect_to headings_index, notice: t("admin.budget_headings.update.notice")
     else
       render :edit
     end
@@ -37,9 +38,9 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   def destroy
     if @heading.can_be_deleted?
       @heading.destroy
-      redirect_to headings_index, notice: t('admin.budget_headings.destroy.success_notice')
+      redirect_to headings_index, notice: t("admin.budget_headings.destroy.success_notice")
     else
-      redirect_to headings_index, alert: t('admin.budget_headings.destroy.unable_notice')
+      redirect_to headings_index, alert: t("admin.budget_headings.destroy.unable_notice")
     end
   end
 
@@ -62,8 +63,8 @@ class Admin::BudgetHeadingsController < Admin::BaseController
     end
 
     def budget_heading_params
-      params.require(:budget_heading).permit(:name, :price, :population, :allow_custom_content,
-                                             :latitude, :longitude)
+      valid_attributes = [:price, :population, :allow_custom_content, :latitude, :longitude]
+      params.require(:budget_heading).permit(*valid_attributes, translation_params(Budget::Heading))
     end
 
 end

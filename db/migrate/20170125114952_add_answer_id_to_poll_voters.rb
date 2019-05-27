@@ -1,4 +1,4 @@
-class AddAnswerIdToPollVoters < ActiveRecord::Migration
+class AddAnswerIdToPollVoters < ActiveRecord::Migration[4.2]
   def change
     add_column :poll_voters, :answer_id, :integer, default: nil
 

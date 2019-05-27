@@ -12,17 +12,21 @@ id:
       comment:
         other: "Komentar"
       debate:
-        other: "Debat"
+        other: "Perdebatan"
       tag:
-        other: "Penanda"
+        other: "Tag"
       user:
         other: "Pengguna"
       moderator:
-        other: "Moderator"
+        other: "Moderasi"
       administrator:
         other: "Administrasi"
+      valuator:
+        other: "Penilai"
       manager:
-        other: "Manajer"
+        other: "Pengelola"
+      newsletter:
+        other: "Laporan berkala"
       vote:
         other: "Suara"
       organization:
@@ -33,6 +37,8 @@ id:
         other: "petugas"
       proposal:
         other: "Usulan warga"
+      spending_proposal:
+        other: "Proyek investasi"
       site_customization/page:
         other: Gambar Khusus
       site_customization/image:
@@ -41,14 +47,14 @@ id:
         other: Blok konten khusus
       legislation/process:
         other: "Proses"
+      legislation/proposal:
+        other: "Proposal"
       legislation/draft_versions:
-        other: "Rancangan versi"
-      legislation/draft_texts:
-        other: "Konsep"
+        other: "Versi rancangan"
       legislation/questions:
         other: "Pertanyaan"
       legislation/question_options:
-        other: "Opsi pertanyaan"
+        other: "Pilihan pertanyaan"
       legislation/answers:
         other: "Jawaban"
       documents:
@@ -59,6 +65,8 @@ id:
         other: "Topik"
       poll:
         other: "Jajak pendapat"
+      proposal_notification:
+        other: "Pemberitahuan proposal"
     attributes:
       budget:
         name: "Nama"
@@ -84,6 +92,12 @@ id:
       milestone:
         title: "Judul"
         publication_date: "Tanggal publikasi"
+      milestone/status:
+        name: "Nama"
+        description: "Deskripsi (opsional)"
+      progress_bar:
+        kind: "Tipe"
+        title: "Judul"
       budget/heading:
         name: "Nama judul"
         price: "Harga"
@@ -103,11 +117,11 @@ id:
         description: "Deskripsi"
         terms_of_service: "Persayaratan layanan"
       user:
-        login: "Surel atau nama pengguna"
-        email: "Surel"
+        login: "Email atau nama pengguna"
+        email: "Email"
         username: "Nama pengguna"
         password_confirmation: "Konfirmasi kata sandi"
-        password: "Kata sandi"
+        password: "Kata Sandi"
         current_password: "Kata sandi saat ini"
         phone_number: "Nomor telepon"
         official_position: "Posisi resmi"
@@ -117,6 +131,7 @@ id:
         name: "Nama organisasi"
         responsible_name: "Orang yang bertanggung jawab untuk kelompok"
       spending_proposal:
+        administrator_id: "Administrasi"
         association_name: "Asosiasi nama"
         description: "Deskripsi"
         external_url: "Tautkan ke dokumentasi tambahan"
@@ -129,26 +144,36 @@ id:
         geozone_restricted: "Dibatasi oleh geozone"
         summary: "Ringkasan"
         description: "Deskripsi"
+      poll/translation:
+        name: "Nama"
+        summary: "Ringkasan"
+        description: "Deskripsi"
       poll/question:
         title: "Pertanyaan"
         summary: "Ringkasan"
         description: "Deskripsi"
-        external_url: "Link ke dokumentasi tambahan"
+        external_url: "Tautkan ke dokumentasi tambahan"
+      poll/question/translation:
+        title: "Pertanyaan"
       signature_sheet:
         signable_type: "Tipe yang dapat dipertanggungjawabkan"
         signable_id: "ID yang dapat dicantumkan"
         document_numbers: "Dokumen nomor"
       site_customization/page:
         content: Konten
-        created_at: Dibuat pada
+        created_at: Dibuat di
         subtitle: Subtitle
         slug: Siput
         status: Status
         title: Judul
-        updated_at: Diperbarui pada
+        updated_at: Diperbarui di
         more_info_flag: Tampilkan di halaman bantuan
         print_content_flag: Cetak tombol konten
         locale: Bahasa
+      site_customization/page/translation:
+        title: Judul
+        subtitle: Subtitle
+        content: Konten
       site_customization/image:
         name: Nama
         image: Gambar
@@ -158,6 +183,7 @@ id:
         body: Tubuh
       legislation/process:
         title: Proses Judul
+        summary: Ringkasan
         description: Deskripsi
         additional_info: Info tambahan
         start_date: Tanggal mulai
@@ -168,12 +194,22 @@ id:
         allegations_start_date: Tuduhan tanggal mulai
         allegations_end_date: Tuduhan tanggal akhir
         result_publication_date: Hasil akhir tanggal publikasi
+      legislation/process/translation:
+        title: Proses Judul
+        summary: Ringkasan
+        description: Deskripsi
+        additional_info: Info tambahan
+        milestones_summary: Ringkasan
       legislation/draft_version:
         title: Versi judul
         body: Teks
         changelog: Perubahan
         status: Status
-        final_version: Versi Final
+        final_version: Versi terakhir
+      legislation/draft_version/translation:
+        title: Versi judul
+        body: Teks
+        changelog: Perubahan
       legislation/question:
         title: Judul
         question_options: Pilihan
@@ -190,9 +226,27 @@ id:
       poll/question/answer:
         title: Jawaban
         description: Deskripsi
+      poll/question/answer/translation:
+        title: Jawaban
+        description: Deskripsi
       poll/question/answer/video:
         title: Judul
         url: Video eksternal
+      newsletter:
+        from: Dari
+      admin_notification:
+        title: Judul
+        link: Tautan
+        body: Teks
+      admin_notification/translation:
+        title: Judul
+        body: Teks
+      widget/card:
+        title: Judul
+        description: Deskripsi
+      widget/card/translation:
+        title: Judul
+        description: Deskripsi
     errors:
       models:
         user:
@@ -202,7 +256,7 @@ id:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "tag harus kurang dari atau sama dengan %{count}"
+              less_than_or_equal_to: "harus kurang dari atau sama dengan %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -232,11 +286,11 @@ id:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "harus kurang dari atau sama dengan %{count}"
+              less_than_or_equal_to: "tag harus kurang dari atau sama dengan %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "harus kurang dari atau sama dengan %{count}"
+              less_than_or_equal_to: "tag harus kurang dari atau sama dengan %{count}"
         proposal_notification:
           attributes:
             minimum_interval:

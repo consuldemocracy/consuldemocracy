@@ -3,8 +3,8 @@ it:
     actions:
       create:
         notice: "%{resource_name} creato con successo."
-        debate: "Dibattito creato con successo."
-        direct_message: "Il messaggio è stato inviato con successo."
+        debate: "Dibattito creato correttamente."
+        direct_message: "Il messaggio è stato inviato correttamente."
         poll: "Sondaggio creato correttamente."
         poll_booth: "Seggio creato correttamente."
         poll_question_answer: "Risposta creata con successo"
@@ -26,7 +26,7 @@ it:
         poll_booth: "Seggio creato correttamente."
         proposal: "Proposta aggiornata correttamente."
         spending_proposal: "Progetto di investimento aggiornato correttamente."
-        budget_investment: "Progetto di investimento aggiornato con successo."
+        budget_investment: "Progetto di investimento aggiornato correttamente."
         topic: "Argomento aggiornato con successo."
         valuator_group: "Gruppo di stimatori aggiornato con successo"
         translation: "Traduzione caricata con successo"

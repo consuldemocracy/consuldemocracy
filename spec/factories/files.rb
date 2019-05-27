@@ -29,6 +29,10 @@ FactoryBot.define do
     trait :poll_question_document do
       association :documentable, factory: :poll_question
     end
+
+    trait :admin do
+      admin true
+    end
   end
 
   factory :direct_upload do

@@ -1,28 +1,28 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin booths' do
+feature "Admin booths" do
 
   background do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  scenario 'Index empty' do
+  scenario "Index empty" do
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Booths location"
     end
 
     expect(page).to have_content "There are no active booths for any upcoming poll."
   end
 
-  scenario 'Index' do
+  scenario "Index" do
     3.times { create(:poll_booth) }
 
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Booths location"
     end
 
@@ -38,32 +38,28 @@ feature 'Admin booths' do
 
   scenario "Available" do
     booth_for_current_poll  = create(:poll_booth)
-    booth_for_incoming_poll = create(:poll_booth)
     booth_for_expired_poll  = create(:poll_booth)
 
     current_poll  = create(:poll, :current)
-    incoming_poll = create(:poll, :incoming)
     expired_poll  = create(:poll, :expired)
 
     create(:poll_booth_assignment, poll: current_poll,  booth: booth_for_current_poll)
-    create(:poll_booth_assignment, poll: incoming_poll, booth: booth_for_incoming_poll)
     create(:poll_booth_assignment, poll: expired_poll,  booth: booth_for_expired_poll)
 
     visit admin_root_path
 
-    within('#side_menu') do
+    within("#side_menu") do
       click_link "Manage shifts"
     end
 
-    expect(page).to have_css(".booth", count: 2)
+    expect(page).to have_css(".booth", count: 1)
 
     expect(page).to have_content booth_for_current_poll.name
-    expect(page).to have_content booth_for_incoming_poll.name
     expect(page).not_to have_content booth_for_expired_poll.name
     expect(page).not_to have_link "Edit booth"
   end
 
-  scenario 'Show' do
+  scenario "Show" do
     booth = create(:poll_booth)
 
     visit admin_booths_path

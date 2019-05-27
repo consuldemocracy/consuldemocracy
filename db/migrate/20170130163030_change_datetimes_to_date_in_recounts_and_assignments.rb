@@ -1,4 +1,4 @@
-class ChangeDatetimesToDateInRecountsAndAssignments < ActiveRecord::Migration
+class ChangeDatetimesToDateInRecountsAndAssignments < ActiveRecord::Migration[4.2]
   def up
     change_column :poll_recounts, :date, :date, null: false
     change_column :poll_final_recounts, :date, :date, null: false

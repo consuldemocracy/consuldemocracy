@@ -6,14 +6,16 @@ es-PE:
     attributes:
       verification:
         residence:
-          document_type: "Tipo documento"
-          document_number: "Numero de documento (incluida letra)"
+          document_type: "Tipo de documento"
+          document_number: "Número de documento (incluida letra)"
           date_of_birth: "Fecha de nacimiento"
           postal_code: "Código postal"
         sms:
           phone: "Teléfono"
-          confirmation_code: "Código de confirmación"
+          confirmation_code: "SMS de confirmación"
+        email:
+          recipient: "Tu correo electrónico"
       officing/residence:
-        document_type: "Tipo documento"
-        document_number: "Numero de documento (incluida letra)"
+        document_type: "Tipo de documento"
+        document_number: "Número de documento (incluida letra)"
         year_of_birth: "Año de nacimiento"

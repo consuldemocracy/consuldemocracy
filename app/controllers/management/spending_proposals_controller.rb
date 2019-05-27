@@ -17,7 +17,7 @@ class Management::SpendingProposalsController < Management::BaseController
     @spending_proposal.author = managed_user
 
     if @spending_proposal.save
-      notice = t('flash.actions.create.notice', resource_name: t("activerecord.models.spending_proposal", count: 1))
+      notice = t("flash.actions.create.notice", resource_name: t("activerecord.models.spending_proposal", count: 1))
       redirect_to management_spending_proposal_path(@spending_proposal), notice: notice
     else
       render :new
@@ -29,12 +29,12 @@ class Management::SpendingProposalsController < Management::BaseController
   end
 
   def vote
-    @spending_proposal.register_vote(managed_user, 'yes')
+    @spending_proposal.register_vote(managed_user, "yes")
     set_spending_proposal_votes(@spending_proposal)
   end
 
   def print
-    params[:geozone] ||= 'all'
+    params[:geozone] ||= "all"
     @spending_proposals = apply_filters_and_search(SpendingProposal).order(cached_votes_up: :desc).for_render.limit(15)
     set_spending_proposal_votes(@spending_proposals)
   end
@@ -59,8 +59,8 @@ class Management::SpendingProposalsController < Management::BaseController
     end
 
     def set_geozone_name
-      if params[:geozone] == 'all'
-        @geozone_name = t('geozones.none')
+      if params[:geozone] == "all"
+        @geozone_name = t("geozones.none")
       else
         @geozone_name = Geozone.find(params[:geozone]).name
       end

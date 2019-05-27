@@ -3,14 +3,16 @@
   <head>
     <%= render "layouts/common_head", default_title: "Gobierno abierto" %>
     <%= render "layouts/meta_tags" %>
+    <%= setting["html.per_page_code_head"].try(:html_safe) %>
   </head>
 
   <body class="auth-page">
+    <%= setting["html.per_page_code_body"].try(:html_safe) %>
     <div class="wrapper">
       <div class="auth-image small-12 medium-3 column">
         <h1 class="logo margin">
           <%= link_to root_path do %>
-            <%= image_tag(image_path_for('logo_header.png'), class: 'float-left', alt: t("layouts.header.logo")) %>
+            <%= image_tag(image_path_for("logo_header.png"), class: "float-left", alt: t("layouts.header.logo")) %>
           <% end %>
         </h1>
       </div>
@@ -19,7 +21,7 @@
         <div class="row">
           <div class="small-12 medium-9 large-7 small-centered column">
             <div class="auth-form margin">
-              <%= render 'layouts/flash' %>
+              <%= render "layouts/flash" %>
 
               <%= yield %>
             </div>
@@ -31,7 +33,7 @@
     </div>
 
     <div class="footer">
-      <%= render 'layouts/footer' %>
+      <%= render "layouts/footer" %>
     </div>
   </body>
 </html>

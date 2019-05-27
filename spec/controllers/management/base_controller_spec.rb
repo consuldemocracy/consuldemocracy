@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Management::BaseController do
 
-  describe 'managed_user' do
+  describe "managed_user" do
 
     it "returns existent user with session document info if present" do
       session[:document_type] = "1"

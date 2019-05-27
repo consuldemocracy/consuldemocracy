@@ -1,20 +1,20 @@
 <div class="votes">
   <% if user_signed_in? %>
-    <%= t('comments.comment.votes', count: comment.total_votes) %>
+    <%= t("comments.comment.votes", count: comment.total_votes) %>
     &nbsp;|&nbsp;
 
     <span class="in_favor">
       <% if can?(:vote, comment) %>
-        <%= link_to vote_comment_path(comment, value: 'yes'),
-            method: "post", remote: true, title: t('votes.agree') do %>
+        <%= link_to vote_comment_path(comment, value: "yes"),
+            method: "post", remote: true, title: t("votes.agree") do %>
             <span class="icon-like">
-              <span class="show-for-sr"><%= t('votes.agree') %></span>
+              <span class="show-for-sr"><%= t("votes.agree") %></span>
             </span>
         <% end %>
       <% else %>
         <%= link_to new_user_session_path do %>
           <span class="icon-like">
-            <span class="show-for-sr"><%= t('votes.agree') %></span>
+            <span class="show-for-sr"><%= t("votes.agree") %></span>
           </span>
         <% end %>
       <% end %>
@@ -23,15 +23,15 @@
 
     <span class="against">
       <% if can?(:vote, comment) %>
-        <%= link_to vote_comment_path(comment, value: 'no'),
-            method: "post", remote: true, title: t('votes.disagree') do %>
+        <%= link_to vote_comment_path(comment, value: "no"),
+            method: "post", remote: true, title: t("votes.disagree") do %>
             <span class="icon-unlike">
-              <span class="show-for-sr"><%= t('votes.disagree') %></span>
+              <span class="show-for-sr"><%= t("votes.disagree") %></span>
             </span>
         <% end %>
       <% else %>
         <span class="icon-unlike">
-          <span class="show-for-sr"><%= t('votes.disagree') %></span>
+          <span class="show-for-sr"><%= t("votes.disagree") %></span>
         </span>
       <% end %>
       <%= comment.total_dislikes %>
@@ -40,21 +40,21 @@
   <% elsif !user_signed_in? %>
 
     <div class="participation-allowed">
-      <%= t('comments.comment.votes', count: comment.total_votes) %>
+      <%= t("comments.comment.votes", count: comment.total_votes) %>
       &nbsp;|&nbsp;
 
       <span class="in_favor">
         <% if can?(:vote, comment) %>
-          <%= link_to vote_comment_path(comment, value: 'yes'),
-              method: "post", remote: true, title: t('votes.agree') do %>
+          <%= link_to vote_comment_path(comment, value: "yes"),
+              method: "post", remote: true, title: t("votes.agree") do %>
               <span class="icon-like">
-                <span class="show-for-sr"><%= t('votes.agree') %></span>
+                <span class="show-for-sr"><%= t("votes.agree") %></span>
               </span>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
             <span class="icon-like">
-              <span class="show-for-sr"><%= t('votes.agree') %></span>
+              <span class="show-for-sr"><%= t("votes.agree") %></span>
             </span>
           <% end %>
         <% end %>
@@ -63,16 +63,16 @@
 
       <span class="against">
         <% if can?(:vote, comment) %>
-          <%= link_to vote_comment_path(comment, value: 'no'),
-              method: "post", remote: true, title: t('votes.disagree') do %>
+          <%= link_to vote_comment_path(comment, value: "no"),
+              method: "post", remote: true, title: t("votes.disagree") do %>
               <span class="icon-unlike">
-                <span class="show-for-sr"><%= t('votes.disagree') %></span>
+                <span class="show-for-sr"><%= t("votes.disagree") %></span>
               </span>
           <% end %>
         <% else %>
           <%= link_to new_user_session_path do %>
             <span class="icon-unlike">
-              <span class="show-for-sr"><%= t('votes.disagree') %></span>
+              <span class="show-for-sr"><%= t("votes.disagree") %></span>
             </span>
           <% end %>
         <% end %>
@@ -80,7 +80,7 @@
       </span>
     </div>
 
-    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+    <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <%= t("votes.comment_unauthenticated",
         signin: link_to(t("votes.signin"), new_user_session_path),
         signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>

@@ -1,4 +1,4 @@
-class CreatePollQuestions < ActiveRecord::Migration
+class CreatePollQuestions < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_questions do |t|
       t.references :proposal, index: true, foreign_key: true

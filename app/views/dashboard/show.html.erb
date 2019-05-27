@@ -1,0 +1,22 @@
+<% content_for :action_title, t("dashboard.index.title") %>
+
+<% if current_editable?(proposal) %>
+  <%= link_to t("dashboard.index.edit_proposal_link"),
+              edit_proposal_path(proposal),
+              target: "_blank",
+              class: "button hollow" %>
+<% end %>
+
+<% unless proposal.retired? %>
+  <%= link_to t("dashboard.index.retire"),
+              retire_form_proposal_path(proposal),
+              class: "button hollow alert",
+              target: "_blank" %>
+<% end %>
+
+<% if can?(:publish, proposal) %>
+  <%= link_to t("dashboard.index.publish"),
+              publish_proposal_dashboard_path(proposal),
+              class: "button success",
+              method: :patch %>
+<% end %>

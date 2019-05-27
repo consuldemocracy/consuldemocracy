@@ -1,7 +1,7 @@
 class MergedCommentTree < CommentTree
   attr_accessor :commentables, :array_order
 
-  def initialize(commentables, page, order = 'confidence_score')
+  def initialize(commentables, page, order = "confidence_score")
     @commentables = commentables
     @commentable = commentables.first
     @page = page

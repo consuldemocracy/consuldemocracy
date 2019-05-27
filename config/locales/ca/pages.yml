@@ -1,5 +1,69 @@
 ca:
   pages:
+    conditions:
+      title: Condicions d'ús
+    help:
+      menu:
+        debates: "Debats"
+        proposals: "Propostes ciutadanes"
+        budgets: "Pressupostos participatius"
+        polls: "votacions"
+        other: "Altra informació d'interès"
+        processes: "processos"
+      debates:
+        title: "Debats"
+        image_alt: "Botons per valorar els debats"
+        figcaption: 'Botons "Estic d''acord" i "No estic d''acord" per valorar els debats.'
+      proposals:
+        title: "Propostes ciutadanes"
+        image_alt: "Botó per donar suport a una proposta"
+      budgets:
+        title: "Pressupostos participatius"
+        image_alt: "Diferents fases d'un pressupost participatiu"
+      polls:
+        title: "votacions"
+      processes:
+        title: "processos"
+      faq:
+        title: "¿Problemes tècnics?"
+        description: "Llegeix les preguntes freqüents i resol els teus dubtes."
+        button: "Veure preguntes freqüents"
+        page:
+          title: "Preguntes més freqüents"
+          description: "Utilitza aquesta pàgina per resoldre les preguntes més frencuentes als usuaris del lloc."
+          faq_1_title: "pregunta 1"
+          faq_1_description: "Aquest és un exemple per a la descripció de la pregunta un."
+      other:
+        title: "Altra informació d'interès"
+        how_to_use: "Utilitza %{org_name} al teu municipi"
+      titles:
+        how_to_use: Utilitza-ho al teu municipi
+    privacy:
+      title: Política de Privacitat
+    accessibility:
+      title: Accessibilitat
+      keyboard_shortcuts:
+        navigation_table:
+          rows:
+            - 
+            - 
+              page_column: Debats
+            - 
+              page_column: Propostes ciutadanes
+            - 
+              key_column: 1
+              page_column: Votacions
+            - 
+              page_column: Pressupostos participatius
+            - 
+    titles:
+      accessibility: Accessibilitat
+      conditions: Condicions d'ús
+      privacy: Política de Privacitat
     verify:
-      email: Correu electrònic
-      password: Contrasenya
+      code: Codi que has rebut a la teva carta
+      email: El teu correu electrònic
+      info_code: 'Ara introdueix el codi que has rebut a la teva carta:'
+      password: Clau
+      submit: Verificar el meu compte
+      title: Verifica el teu compte

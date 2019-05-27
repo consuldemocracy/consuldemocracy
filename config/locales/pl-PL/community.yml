@@ -26,13 +26,13 @@ pl:
         new_topic: Stwórz temat
       topic:
         edit: Edytuj temat
-        destroy: Zniszcz tematu
+        destroy: Zniszcz temat
         comments:
           zero: Brak komentarzy
           one: 1 komentarz
-          few: "%{count} komentarze"
-          many: "%{count} komentarze"
-          other: "%{count} komentarze"
+          few: "%{count} komentarzy"
+          many: "%{count} komentarzy"
+          other: "%{count} komentarzy"
       author: Autor
       back: Powrót do %{community} %{proposal}
     topic:
@@ -59,4 +59,4 @@ pl:
         recommendation_three: Ciesz się tą przestrzenią oraz głosami, które ją wypełniają, jest także twoja.
   topics:
     show:
-      login_to_comment: Musisz się %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.

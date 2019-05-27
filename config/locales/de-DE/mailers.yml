@@ -22,22 +22,22 @@ de:
     unfeasible_spending_proposal:
       hi: "Liebe*r Benutzer*in,"
       new_html: "Deshalb laden wir Sie ein, einen <strong>neuen Vorschlag</strong> zu erstellen, der die Bedingungen für diesen Prozess erfüllt. Sie können dies mithilfe des folgenden Links machen: %{url}."
-      new_href: "neuer Ausgabenvorschlag"
+      new_href: "neues Investitionsprojekt"
       sincerely: "Mit freundlichen Grüßen"
       sorry: "Entschuldigung für die Unannehmlichkeiten und vielen Dank für Ihre wertvolle Beteiligung."
-      subject: "Ihr Ausgabenvorschlag '%{code}' wurde als undurchführbar markiert"
+      subject: "Ihr Investitionsprojekt %{code} wurde als undurchführbar markiert"
     proposal_notification_digest:
       info: "Hier sind die neuen Benachrichtigungen, die von Autoren, für den Antrag von %{org_name}, den Sie unterstützen, veröffentlicht wurden."
       title: "Antrags-Benachrichtigungen von %{org_name}"
       share: Vorschlag teilen
       comment: Vorschlag kommentieren
       unsubscribe: "Wenn Sie keine Antrags-Benachrichtigungen erhalten möchten, besuchen Sie %{account} und entfernen Sie den Haken von 'Eine Zusammenfassung für Antrags-Benachrichtigungen erhalten'."
-      unsubscribe_account: Mein Benutzerkonto
+      unsubscribe_account: Mein Konto
     direct_message_for_receiver:
       subject: "Sie haben eine neue persönliche Nachricht erhalten"
       reply: Auf %{sender} antworten
       unsubscribe: "Wenn Sie keine direkten Nachrichten erhalten möchten, besuchen Sie %{account} und deaktivieren Sie \"E-Mails zu Direktnachrichten empfangen\"."
-      unsubscribe_account: Mein Benutzerkonto
+      unsubscribe_account: Mein Konto
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
       title_html: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
@@ -59,19 +59,19 @@ de:
     budget_investment_unfeasible:
       hi: "Liebe*r Benutzer*in,"
       new_html: "Hierfür laden wir Sie ein, eine <strong>neue Investition</strong> auszuarbeiten, die an die Konditionen dieses Prozesses angepasst sind. Sie können dies über folgenden Link tun: %{url}."
-      new_href: "neues Investitionsprojekt"
+      new_href: "neuer Ausgabenvorschlag"
       sincerely: "Mit freundlichen Grüßen"
       sorry: "Entschuldigung für die Unannehmlichkeiten und vielen Dank für Ihre wertvolle Beteiligung."
-      subject: "Ihr Investitionsprojekt %{code} wurde als undurchführbar markiert"
+      subject: "Ihr Ausgabenvorschlag '%{code}' wurde als undurchführbar markiert"
     budget_investment_selected:
       subject: "Ihr Investitionsprojekt %{code} wurde ausgewählt"
-      hi: "Liebe/r Benutzer/in,"
+      hi: "Liebe*r Benutzer*in,"
       share: "Fangen Sie an Stimmen zu bekommen, indem sie Ihr Investitionsprojekt auf sozialen Netzwerken teilen. Teilen ist wichtig, um Ihr Projekt zu verwirklichen."
       share_button: "Teilen Sie Ihr Investitionsprojekt"
       thanks: "Vielen Dank für Ihre Teilnahme."
       sincerely: "Mit freundlichen Grüßen"
     budget_investment_unselected:
       subject: "Ihr Investitionsprojekt %{code} wurde nicht ausgewählt"
-      hi: "Liebe/r Benutzer/in,"
+      hi: "Liebe*r Benutzer*in,"
       thanks: "Vielen Dank für Ihre Teilnahme."
       sincerely: "Mit freundlichen Grüßen"

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Admin custom information texts" do
 
@@ -12,41 +12,48 @@ feature "Admin custom information texts" do
                   "admin_site_customization_information_texts_path",
                   %w[value]
 
-  scenario 'page is correctly loaded' do
+  scenario "page is correctly loaded" do
     visit admin_site_customization_information_texts_path
 
-    click_link 'Debates'
-    expect(page).to have_content 'Help about debates'
+    click_link "Basic customization"
+    expect(page).to have_content "Help about debates"
+    expect(page).to have_content "Help about proposals"
+    expect(page).to have_content "Help about voting"
+    expect(page).to have_content "Help about collaborative legislation"
+    expect(page).to have_content "Help with participatory budgets"
 
-    click_link 'Community'
-    expect(page).to have_content 'Access the community'
+    click_link "Debates"
+    expect(page).to have_content "Help about debates"
+
+    click_link "Community"
+    expect(page).to have_content "Access the community"
 
     within("#information-texts-tabs") { click_link "Proposals" }
-    expect(page).to have_content 'Create proposal'
+    expect(page).to have_content "Create proposal"
 
     within "#information-texts-tabs" do
       click_link "Polls"
     end
 
-    expect(page).to have_content 'Results'
+    expect(page).to have_content "Results"
 
-    click_link 'Layouts'
-    expect(page).to have_content 'Accessibility'
+    click_link "Layouts"
+    expect(page).to have_content "Accessibility"
 
-    click_link 'Emails'
-    expect(page).to have_content 'Confirm your email'
+    click_link "Emails"
+    expect(page).to have_content "Confirm your email"
 
     within "#information-texts-tabs" do
       click_link "Management"
     end
 
-    expect(page).to have_content 'This user account is already verified.'
+    expect(page).to have_content "This user account is already verified."
 
-    click_link 'Welcome'
-    expect(page).to have_content 'See all debates'
+    click_link "Welcome"
+    expect(page).to have_content "See all debates"
   end
 
-  scenario 'check that tabs are highlight when click it' do
+  scenario "check that tabs are highlight when click it" do
     visit admin_site_customization_information_texts_path
 
     within("#information-texts-tabs") { click_link "Proposals" }
@@ -57,53 +64,54 @@ feature "Admin custom information texts" do
   context "Globalization" do
 
     scenario "Add a translation", :js do
-      key = "debates.form.debate_title"
+      key = "debates.index.section_footer.title"
 
       visit admin_site_customization_information_texts_path
 
       select "Français", from: "translation_locale"
-      fill_in "contents_content_#{key}values_value_fr", with: 'Titre personalise du débat'
+      fill_in "contents[content_#{key}]values[value_fr]", with: "Aide personalise sur les débats"
 
       click_button "Save"
 
-      expect(page).to have_content 'Translation updated successfully'
-
-      select "Français", from: "translation_locale"
-
-      expect(page).to have_content 'Titre personalise du débat'
-      expect(page).not_to have_content 'Titre du débat'
-    end
-
-    scenario "Update a translation", :js do
-      key = "debates.form.debate_title"
-      content = create(:i18n_content, key: key, value_fr: 'Titre personalise du débat')
+      expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path
 
       select "Français", from: "translation_locale"
-      fill_in "contents_content_#{key}values_value_fr", with: 'Titre personalise again du débat'
+      expect(page).to have_content "Aide personalise sur les débats"
+      expect(page).not_to have_content "Aide sur les débats"
+    end
 
-      click_button 'Save'
-      expect(page).to have_content 'Translation updated successfully'
+    scenario "Update a translation", :js do
+      key = "proposals.form.proposal_title"
 
-      click_link 'Français'
+      visit admin_site_customization_information_texts_path(tab: "proposals")
 
-      expect(page).to have_content 'Titre personalise again du débat'
-      expect(page).not_to have_content 'Titre personalise du débat'
+      select "Français", from: "translation_locale"
+      fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise de la proposition"
+
+      click_button "Save"
+      expect(page).to have_content "Translation updated successfully"
+
+      visit admin_site_customization_information_texts_path(tab: "proposals")
+      click_link "Français"
+
+      expect(page).to have_content "Titre personalise de la proposition"
+      expect(page).not_to have_content "Titre de la proposition"
     end
 
     scenario "Remove a translation", :js do
       first_key = "debates.form.debate_title"
       debate_title = create(:i18n_content, key: first_key,
-                                           value_en: 'Custom debate title',
-                                           value_es: 'Título personalizado de debate')
+                                           value_en: "Custom debate title",
+                                           value_es: "Título personalizado de debate")
 
       second_key = "debates.form.debate_text"
       debate_text = create(:i18n_content, key: second_key,
-                                          value_en: 'Custom debate text',
-                                          value_es: 'Texto personalizado de debate')
+                                          value_en: "Custom debate text",
+                                          value_es: "Texto personalizado de debate")
 
-      visit admin_site_customization_information_texts_path
+      visit admin_site_customization_information_texts_path(tab: "debates")
 
       click_link "Español"
       click_link "Remove language"
@@ -111,17 +119,18 @@ feature "Admin custom information texts" do
 
       expect(page).not_to have_link "Español"
 
-      click_link 'English'
-      expect(page).to have_content 'Custom debate text'
-      expect(page).to have_content 'Custom debate title'
+      visit admin_site_customization_information_texts_path(tab: "debates")
+      click_link "English"
+      expect(page).to have_content "Custom debate text"
+      expect(page).to have_content "Custom debate title"
 
       debate_title.reload
       debate_text.reload
 
       expect(debate_text.value_es).to be(nil)
       expect(debate_title.value_es).to be(nil)
-      expect(debate_text.value_en).to eq('Custom debate text')
-      expect(debate_title.value_en).to eq('Custom debate title')
+      expect(debate_text.value_en).to eq("Custom debate text")
+      expect(debate_title.value_en).to eq("Custom debate title")
     end
   end
 

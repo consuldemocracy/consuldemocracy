@@ -1,21 +1,26 @@
 class PollsController < ApplicationController
   include PollsHelper
 
+  before_action :load_poll, except: [:index]
+  before_action :load_active_poll, only: :index
+
   load_and_authorize_resource
 
-  has_filters %w{current expired incoming}
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_filters %w[current expired]
+  has_orders %w[most_voted newest oldest], only: :show
 
   ::Poll::Answer # trigger autoload
 
   def index
-    @polls = @polls.send(@current_filter).includes(:geozones).sort_for_list.page(params[:page])
+    @polls = @polls.not_budget.public_polls.send(@current_filter).includes(:geozones)
+                              .sort_for_list.page(params[:page])
   end
 
   def show
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)
-    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions).where.not(description: "").order(:given_order)
+    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
+                                                    .where.not(description: "").order(:given_order)
 
     @answers_by_question_id = {}
     poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user.try(:id))
@@ -28,10 +33,20 @@ class PollsController < ApplicationController
   end
 
   def stats
-    @stats = Poll::Stats.new(@poll).generate
+    @stats = Poll::Stats.new(@poll)
   end
 
   def results
   end
+
+  private
+
+    def load_poll
+      @poll = Poll.where(slug: params[:id]).first || Poll.where(id: params[:id]).first
+    end
+
+    def load_active_poll
+      @active_poll = ActivePoll.first
+    end
 
 end

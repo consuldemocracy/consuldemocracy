@@ -5,7 +5,7 @@ sq:
     menu:
       title: Vlerësim
       budgets: Buxhetet  pjesëmarrës
-      spending_proposals: Propozimet e shpenzimeve
+      spending_proposals: Shpenzimet e propozimeve
     budgets:
       index:
         title: Buxhetet  pjesëmarrës
@@ -25,7 +25,7 @@ sq:
           valuating: Nën vlerësimin
           valuation_finished: Vlerësimi përfundoi
         assigned_to: "Caktuar për %{valuator}"
-        title: Projekte investimi
+        title: Projekt investimi
         edit: Ndrysho dosjen
         valuators_assigned:
           one: Vlerësuesi i caktuar
@@ -48,10 +48,10 @@ sq:
         price: Çmim
         price_first_year: Kostoja gjatë vitit të parë
         currency: "€"
-        feasibility: fizibiliteti
+        feasibility: Fizibiliteti
         feasible: I mundshëm
         unfeasible: Parealizueshme
-        undefined: E papërcaktuar
+        undefined: E padefinuar
         valuation_finished: Vlerësimi përfundoi
         duration: Shtrirja e kohës
         responsibles: Përgjegjës
@@ -83,13 +83,13 @@ sq:
           valuation_open: Hapur
           valuating: Nën vlerësimin
           valuation_finished: Vlerësimi përfundoi
-        title: Projektet e investimeve për buxhetin pjesëmarrës
+        title: Projektet e investimeve për buxhetimin me pjesëmarrje
         edit: Ndrysho
       show:
         back: Pas
         heading: Projekt investimi
         info: Informacioni i autorit
-        association_name: Shoqatë
+        association_name: Asociacion
         by: Dërguar nga
         sent: Dërguar tek
         geozone: Qëllim
@@ -101,7 +101,7 @@ sq:
         feasibility: Fizibiliteti
         feasible: I mundshëm
         not_feasible: Nuk është e realizueshme
-        undefined: E papërcaktuar
+        undefined: E padefinuar
         valuation_finished: Vlerësimi përfundoi
         time_scope: Shtrirja e kohës
         internal_comments: Komentet e brendshme
@@ -115,7 +115,7 @@ sq:
         currency: "€"
         price_explanation_html: Shpjegimi i çmimit
         feasibility: Fizibiliteti
-        feasible: I parealizueshëm
+        feasible: I mundshëm
         not_feasible: Nuk është e realizueshme
         undefined_feasible: Në pritje
         feasible_explanation_html: Shpjegim i realizuar

@@ -28,7 +28,7 @@ class TagCloud
   end
 
   def default_blacklist
-    ['']
+    [""]
   end
 
   def table_name

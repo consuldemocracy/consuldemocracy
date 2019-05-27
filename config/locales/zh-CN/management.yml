@@ -45,7 +45,7 @@ zh-CN:
       title: 用户管理
       under_age: "您没到验证账户所要求的年龄。"
       verify: 验证
-    email_label: 电子邮件
+    email_label: 电子邮件地址
     date_of_birth: 出生日期
     email_verifications:
       already_verified: 此用户账户已验证。
@@ -94,7 +94,7 @@ zh-CN:
       create_new_investment: 创建预算投资
       print_investments: 打印预算投资
       support_investments: 支持预算投资
-      table_name: 名称
+      table_name: 名字
       table_phase: 阶段
       table_actions: 行动
       no_budgets: 没有活跃的参与性预算。

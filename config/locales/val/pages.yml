@@ -4,7 +4,6 @@ val:
       title: Termes i condicions d'us
       subtitle: AVIS LEGAL SOBRE LES CONDICIONS D'US, PRIVACITAT I PROTECCIÓ DE LES DADES PERSONALS DEL PORTAL DE GOVERN OBERT
       description: Pàgina d'informació sobre les condicions d'us, privacitat i protecció de dades personals.
-    general_terms: Condicions d'us
     help:
       title: "%{org} es una plataforma de participació ciutadana"
       guide: "Esta guia explica per a qué serveixen i com funcionen cadascuna de les seccions de %{org}."
@@ -14,7 +13,7 @@ val:
         budgets: "Pressupostos participatius"
         polls: "Votacions"
         other: "Altra informació d'interés"
-        processes: "Processos legislatius"
+        processes: "Processos"
       debates:
         title: "Debats"
         description: "En la secció de %{link} pots exposar i compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats en la teua ciutat. També es un espai on generar idees que a través de les altres seccions de %{org} duguen a actuacions concretes per part de l'Ajuntament."
@@ -34,7 +33,7 @@ val:
         description: "La secció de %{link} serveix per a que la gent decidisca de manera directa a qué es estina una part del pressupost municipal."
         link: "pressupostos participatius"
         image_alt: "Diferents fases d'un pressupost participatiu"
-        figcaption_html: 'Fase d''"Avals" i fase de "Votació" dels pressupostos participatius.'
+        figcaption_html: 'Fase "d''Avals" i fase de "Votació" dels pressupostos participatius.'
       polls:
         title: "Votacions"
         description: "La secció de %{link} s'activa cada vegada que una proposta arriba a l'1% d'avals i passa a votació o quant l'Ajuntament proposa un tema per a que la gent decidisca sobre ell."
@@ -42,13 +41,13 @@ val:
         feature_1: "Per a participar en les votacions has de %{link} i verificar el teu compte."
         feature_1_link: "registrar-te en %{org_name}"
       processes:
-        title: "Processos legislatius"
+        title: "Processos"
         description: "En la secció de %{link} la ciutadania participa en l'elaboració i modificació de normativa que afecta a la ciutat i pot donar la seua opinió sobre les polítiques municipals en debats previs."
         link: "processos legislatius"
       faq:
         title: "Problemes tècnics?"
-        description: "Llig les preguntes freqüents i resol els teus dubtes."
-        button: "Veure les preguntes freqüents"
+        description: "Llig les preguntes frequents i resol els teus dubtes."
+        button: "Vore les preguntes freqüents"
         page:
           title: "Preguntes Freqüents"
           description: "Utilitza esta pàgina per a resoldre les Preguntes freqüents als usuaris del lloc."
@@ -60,12 +59,12 @@ val:
       how_to_use:
         text: |-
           Utilíza-ho en el teu municipi lliurement o ajuda'ns a millorar-lo, es software lliure.
-          
+
           Aquest Portal de Govern Obert usa la [aplicació CONSUL] (https://github.com/consul/consul 'github consul') que és software lliure, amb [llicencia AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), açò significa en paraules senzilles, que quansevol pot lliurement gastar el codi, copiar-lo, vorel en detall, modificar-lo, i redistribuirlo al mon amb les modificacions que vullga (mantenint el que altres puguen a la vegada fer el mateix). Perque creiem que la cultura es millor i més rica quant es libera.
-          
+
           Si eres programador, pots vore el codi i ajudar-nos a millorar-lo en [aplicació CONSUL](https://github.com/consul/consul 'github consul').
       titles:
-        how_to_use: Utilitza-ho en el teu municipi
+        how_to_use: Utilítzal en el teu municipi
     privacy:
       title: Política de privacitat
       subtitle: INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES
@@ -83,16 +82,26 @@ val:
               description: NOM DE L'ARXIU
             - 
               field: 'Propòsit de l''arxiu:'
+              description: Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana.
             - 
               field: 'Organització responsable de l''arxiu:'
               description: ORGANITZACIÓ RESPONSABLE DE L'ARXIU
-        - 
-        - 
     accessibility:
       title: Accessibilitat
+      description: |-
+        L'accessibilitat web es refereix a la possibilitat d'acces a la web i als seus continguts per totes les persones, independentment de les discapacitats (físiques, intelectuals o tècniques) que puguen presentar o de les que es deriven del context d'us (tecnològiques o ambientals)
+
+        Quant les pàgines web estan disenyades pensant en l'accessibilitat, tots els usuaris poden accedir en condicions d'igualtat als continguts, per exemple:
+      examples:
+        - Proporcionar un text alternatiu a les imatges, les persones amb dificultats visuals poden fer ús de lectors especials per accedir a la informació.
+        - Quant els videos disposen de subtitles, els usuaris amb dificultats auditives poden entendrel's plenament.
+        - Si els continguts estan escrits amb un llenguatge senzill i il·lustrats, els usuaris amb problemes d'aprenentatge estan en millors condicions d'entendrel's.
+        - Si l'usuari té problemes de mobilitat i li costa usar el ratolí, les alternatives amb el teclat li ajuden en la navegació.
       keyboard_shortcuts:
         title: Atalls de teclat
         navigation_table:
+          description: Per a poder navegar per este lloc web de forma accessible, s'han programat un grup de tecles d'accés ràpid que arrepleguen les principals seccions d'interés general en què està organitzat el lloc.
+          caption: Atalls de teclat per al menú de navegació
           key_header: Clau
           page_header: Pàgina
           rows:
@@ -115,6 +124,8 @@ val:
               key_column: 5
               page_column: Processos legislatius
         browser_table:
+          description: 'Depenent del sistema operatiu i del navegador que s''utilitze, la combinació de tecles sera la següent:'
+          caption: Combinació de tecles depenent del sistema operatiu i del navegador
           browser_header: Navegador
           key_header: Combinació de tecles
           rows:
@@ -129,11 +140,14 @@ val:
               key_column: ALT + atall (CTRL + ALT + atalls per a MAC)
             - 
               browser_column: Safari
+              key_column: ALT + atall (si es un MAC, CMD + atall)
             - 
               browser_column: Opera
+              key_column: MAJÚSCULES + ESC + atall
       textsize:
         title: Tamany del text
         browser_settings_table:
+          description: El disseny accessible d'aquest lloc web permet que l'usuari puga elegir el tamany del text que li convinga. Esta acció pot dur-se a terme de diferents formes segons el navegador que s'utilitze.
           browser_header: Navegador
           action_header: Acció a realitzar
           rows:
@@ -145,17 +159,25 @@ val:
               action_column: Veure > Tamany
             - 
               browser_column: Chrome
+              action_column: Ajusts (icona) > Opcions > Avançada > Contingut web > Tamany de la font
             - 
               browser_column: Safari
+              action_column: Visualització > ampliar/reduïr
             - 
               browser_column: Opera
               action_column: Veure > escala
         browser_shortcuts_table:
+          description: 'Un altra forma de modificar el tamany del text es utilitzar els atalls de teclat definits en els navegadors, en particular la combinació de tecles:'
           rows:
             - 
+              shortcut_column: CTRL i + (CMD i + en MAC)
               description_column: Incrementa el tamany del text
             - 
+              shortcut_column: CTRL i - (CMD i - en MAC)
               description_column: Reduïx el tamany del text
+      compatibility:
+        title: Compatibilitat amb estàndards i disseny visual
+        description_html: 'Totes les pàgines d''aquest lloc web compleixen amb <strong>Guia d''Accessibilitat</strong> o els Principis Generals del Disseny Accessible establers per el Grup de Treball <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertanyent al W3C.'
     titles:
       accessibility: Accessibilitat
       conditions: Condicions d'us

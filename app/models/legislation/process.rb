@@ -1,4 +1,4 @@
-class Legislation::Process < ActiveRecord::Base
+class Legislation::Process < ApplicationRecord
   include ActsAsParanoidAliases
   include Taggable
   include Milestoneable
@@ -24,16 +24,16 @@ class Legislation::Process < ActiveRecord::Base
 
   CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
 
-  has_many :draft_versions, -> { order(:id) }, class_name: 'Legislation::DraftVersion',
-                                               foreign_key: 'legislation_process_id',
+  has_many :draft_versions, -> { order(:id) }, class_name: "Legislation::DraftVersion",
+                                               foreign_key: "legislation_process_id",
                                                dependent: :destroy
-  has_one :final_draft_version, -> { where final_version: true, status: 'published' },
-                                           class_name: 'Legislation::DraftVersion',
-                                           foreign_key: 'legislation_process_id'
-  has_many :questions, -> { order(:id) }, class_name: 'Legislation::Question',
-                                          foreign_key: 'legislation_process_id', dependent: :destroy
-  has_many :proposals, -> { order(:id) }, class_name: 'Legislation::Proposal',
-                                          foreign_key: 'legislation_process_id', dependent: :destroy
+  has_one :final_draft_version, -> { where final_version: true, status: "published" },
+                                           class_name: "Legislation::DraftVersion",
+                                           foreign_key: "legislation_process_id"
+  has_many :questions, -> { order(:id) }, class_name: "Legislation::Question",
+                                          foreign_key: "legislation_process_id", dependent: :destroy
+  has_many :proposals, -> { order(:id) }, class_name: "Legislation::Proposal",
+                                          foreign_key: "legislation_process_id", dependent: :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -50,7 +50,7 @@ class Legislation::Process < ActiveRecord::Base
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
 
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current) }
-  scope :next, -> { where("start_date > ?", Date.current) }
+  scope :active, -> { where("end_date >= ?", Date.current) }
   scope :past, -> { where("end_date < ?", Date.current) }
 
   scope :published, -> { where(published: true) }

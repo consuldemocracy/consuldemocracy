@@ -3,22 +3,22 @@
   <%= render "filter_subnav" %>
 
   <div class="tabs-panel is-active" id="tab-configuration">
-    <%= render "configuration" %>
+    <%= render "configuration_settings_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-participation-processes">
+    <%= render "participation_processes_tab" %>
   </div>
 
   <div class="tabs-panel" id="tab-feature-flags">
-    <%= render "feature_flags" %>
-  </div>
-
-  <div class="tabs-panel" id="tab-banner-styles">
-    <%= render "banner_styles" %>
-  </div>
-
-  <div class="tabs-panel" id="tab-banner-images">
-    <%= render "banner_images" %>
+    <%= render "features_tab" %>
   </div>
 
   <div class="tabs-panel" id="tab-map-configuration">
-    <%= render "map_configuration" %>
+    <%= render "map_configuration_tab" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-proposals">
+    <%= render "proposals_dashboard" %>
   </div>
 </div>

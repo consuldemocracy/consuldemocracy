@@ -1,1 +1,128 @@
 eu:
+  admin:
+    budgets:
+      index:
+        table_name: Izena
+    budget_groups:
+      name: "Izena"
+    budget_headings:
+      name: "Izena"
+    budget_investments:
+      show:
+        image: "Irudia"
+        documents: "Dokumentuak"
+    milestones:
+      index:
+        image: "Irudia"
+        documents: "Dokumentuak"
+    statuses:
+      index:
+        table_name: Izena
+    hidden_users:
+      index:
+        user: Erabiltzailea
+    legislation:
+      processes:
+        subnav:
+          questions: Eztabaida
+      questions:
+        form:
+          title: Galdera
+    managers:
+      index:
+        name: Izena
+        email: E-mail
+    menu:
+      poll_questions: Galderak
+    administrators:
+      index:
+        name: Izena
+        email: E-mail
+    moderators:
+      index:
+        name: Izena
+        email: E-mail
+    valuators:
+      index:
+        name: Izena
+        email: E-mail
+      show:
+        email: "E-mail"
+    valuator_groups:
+      index:
+        name: "Izena"
+    poll_officers:
+      officer:
+        name: Izena
+        email: E-mail
+    poll_officer_assignments:
+      index:
+        table_name: "Izena"
+        table_email: "E-mail"
+    poll_shifts:
+      new:
+        table_email: "E-mail"
+        table_name: "Izena"
+    poll_booth_assignments:
+      index:
+        table_name: "Izena"
+    polls:
+      index:
+        name: "Izena"
+      show:
+        questions_tab: Galderak
+    questions:
+      index:
+        title: "Galderak"
+        questions_tab: "Galderak"
+        table_question: "Galdera"
+      show:
+        question: Galdera
+        answers:
+          title: Erantzuna
+          images: Irudiak
+          documents: Dokumentuak
+    answers:
+      show:
+        images: Irudiak
+    results:
+      result:
+        table_answer: Erantzuna
+    booths:
+      index:
+        name: "Izena"
+      new:
+        name: "Izena"
+    officials:
+      index:
+        name: Izena
+    organizations:
+      index:
+        name: Izena
+        email: E-mail
+    shared:
+      image: Irudia
+    geozones:
+      geozone:
+        name: Izena
+    signature_sheets:
+      name: Izena
+      show:
+        documents: Dokumentuak
+    stats:
+      polls:
+        table:
+          question_name: Galdera
+    users:
+      columns:
+        name: Izena
+        email: E-mail
+      index:
+        title: Erabiltzailea
+    site_customization:
+      content_blocks:
+        content_block:
+          name: Izena
+      images:
+        index:
+          image: Irudia

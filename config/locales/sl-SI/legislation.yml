@@ -4,18 +4,6 @@ sl:
       comments:
         see_all: Poglej vse
         see_complete: Poglej zaključene
-        comments_count:
-          one: "%{count} komentar"
-          two: "%{count} komentarja"
-          three: "%{count} komentarji"
-          four: "%{count} komentarji"
-          other: "%{count} komentarjev"
-        replies_count:
-          one: "%{count} odgovor"
-          two: "%{count} odgovora"
-          three: "%{count} odgovori"
-          four: "%{count} odgovori"
-          other: "%{count} odgovorov"
         cancel: Prekliči
         publish_comment: Objavi komentar
       form:
@@ -27,12 +15,6 @@ sl:
         title: Komentarji
         comments_about: Komentarji o
         see_in_context: Poglej v kontekstu
-        comments_count:
-          one: "%{count} komentar"
-          two: "%{count} komentarja"
-          three: "%{count} komentarji"
-          four: "%{count} komentarji"
-          other: "%{count} komentarjev"
       show:
         title: Komentar
       version_chooser:
@@ -68,10 +50,8 @@ sl:
         filter: Filtriraj
         filters:
           open: Odprti procesi
-          next: Naslednji
           past: Pretekli
         no_open_processes: Ni odprtih procesov
-        no_next_processes: Ni načrtovanih procesov
         no_past_processes: Ni preteklih procesov
         section_header:
           icon_alt: Ikona zakonodajnih procesov
@@ -80,13 +60,10 @@ sl:
         section_footer:
           title: Pomoč glede zakonodajnih procesov
           description: Sodeluj v razpravah in procesih pred odobritvijo uredbe ali občinske akcije. O tvojem mnenju bo razmislil tudi občinski/mestni svet.
-          help_text_1: "V participatornih procesih mestni/občinski svet ponuja svojim prebivalcem priložnost, da sodelujejo v pripravi osnutkov in sprememb mestnih/občinskih uredb in podajajo svoja mnenja."
-          help_text_2: "Posamezniki, registrirani v %{org} lahko s prispevki sodelujejo v javnih posvetih glede novih uredb in smernic. Tvoje komentarje analizira pristojno delovno telo, upoštevani so tudi v končnih verzijah uradnih besedil."
-          help_text_3: "Mestni/občinski svet prav tako odpira procese, preko katerih lahko prejme prispevke in mnenja o njihovih načrtih."
       phase_not_open:
         not_open: Ta faza še ni odprta
       phase_empty:
-          empty: Nič še ni objavljeno
+        empty: Nič še ni objavljeno
       process:
         see_latest_comments: Poglej zadnje komentarje
         see_latest_comments_title: Komentarji na ta proces
@@ -107,11 +84,6 @@ sl:
       question:
         comments:
           zero: Ni komentarjev
-          one: "%{count} komentar"
-          two: "%{count} komentarja"
-          three: "%{count} komentarji"
-          four: "%{count} komentarji"
-          other: "%{count} komentarjev"
         debate: Razprava
       show:
         answer_question: Dodaj odgovor
@@ -135,4 +107,3 @@ sl:
       form:
         tags_label: "Kategorije"
       not_verified: "Za glasovanje o predlogih %{verify_account}."
-      closed: "Ta proces je zaprt in ne more sprejemati glasov."

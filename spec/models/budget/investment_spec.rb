@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::Investment do
   let(:investment) { build(:budget_investment) }
@@ -618,15 +618,15 @@ describe Budget::Investment do
     context "attributes" do
 
       it "searches by title" do
-        budget_investment = create(:budget_investment, title: 'save the world')
-        results = described_class.search('save the world')
+        budget_investment = create(:budget_investment, title: "save the world")
+        results = described_class.search("save the world")
         expect(results).to eq([budget_investment])
       end
 
       it "searches by author name" do
-        author = create(:user, username: 'Danny Trejo')
+        author = create(:user, username: "Danny Trejo")
         budget_investment = create(:budget_investment, author: author)
-        results = described_class.search('Danny')
+        results = described_class.search("Danny")
         expect(results).to eq([budget_investment])
       end
 
@@ -634,19 +634,27 @@ describe Budget::Investment do
 
     context "tags" do
       it "searches by tags" do
-        investment = create(:budget_investment, tag_list: 'Latina')
+        investment = create(:budget_investment, tag_list: "Latina")
 
-        results = described_class.search('Latina')
+        results = described_class.search("Latina")
         expect(results.first).to eq(investment)
 
-        results = described_class.search('Latin')
+        results = described_class.search("Latin")
         expect(results.first).to eq(investment)
+      end
+
+      it "gets and sets valuation tags through virtual attributes" do
+        investment = create(:budget_investment)
+
+        investment.valuation_tag_list = %w[Code Test Refactor]
+
+        expect(investment.valuation_tag_list).to match_array(%w[Code Test Refactor])
       end
     end
 
   end
 
-  describe 'Permissions' do
+  describe "Permissions" do
     let(:budget)      { create(:budget) }
     let(:group)       { create(:budget_group, budget: budget) }
     let(:heading)     { create(:budget_heading, group: group) }
@@ -654,7 +662,7 @@ describe Budget::Investment do
     let(:luser)       { create(:user) }
     let(:district_sp) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
-    describe '#reason_for_not_being_selectable_by' do
+    describe "#reason_for_not_being_selectable_by" do
       it "rejects not logged in users" do
         expect(district_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
       end
@@ -908,7 +916,7 @@ describe Budget::Investment do
 
   describe "Final Voting" do
 
-    describe 'Permissions' do
+    describe "Permissions" do
       let(:budget)      { create(:budget) }
       let(:group)       { create(:budget_group, budget: budget) }
       let(:heading)     { create(:budget_heading, group: group) }
@@ -917,7 +925,7 @@ describe Budget::Investment do
       let(:ballot)      { create(:budget_ballot, budget: budget) }
       let(:investment)  { create(:budget_investment, :selected, budget: budget, heading: heading) }
 
-      describe '#reason_for_not_being_ballotable_by' do
+      describe "#reason_for_not_being_ballotable_by" do
         it "rejects not logged in users" do
           expect(investment.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
         end
@@ -1122,5 +1130,92 @@ describe Budget::Investment do
 
     end
 
+  end
+
+  describe "scoped_filter" do
+    let(:budget)   { create(:budget, phase: "balloting")   }
+    let(:investment) { create(:budget_investment, budget: budget) }
+
+    describe "with without_admin filter" do
+      let(:params) { {advanced_filters: ["without_admin"], budget_id: budget.id} }
+      it "returns only investment without admin" do
+        create(:budget_investment,
+          :finished,
+          budget: budget)
+        create(:budget_investment,
+          :with_administrator,
+          budget: budget)
+        investment3 = create(:budget_investment, budget: budget)
+        expect(described_class.scoped_filter(params, "all")).to eq([investment3])
+        expect(described_class.scoped_filter(params, "all").count).to eq(1)
+      end
+    end
+
+    describe "with without_valuator filter" do
+      let(:params) { {advanced_filters: ["without_valuator"], budget_id: budget.id} }
+      it "returns only investment without valuator" do
+        create(:budget_investment,
+          :finished,
+          budget: budget)
+        investment2 = create(:budget_investment,
+          :with_administrator,
+          budget: budget)
+        investment3 = create(:budget_investment,
+          budget: budget)
+        expect(described_class.scoped_filter(params, "all"))
+          .to contain_exactly(investment2, investment3)
+        expect(described_class.scoped_filter(params, "all").count)
+        .to eq(2)
+      end
+    end
+
+    describe "with under_valuation filter" do
+      let(:params) { {advanced_filters: ["under_valuation"], budget_id: budget.id} }
+      it "returns only investment under valuation" do
+        valuator1 = create(:valuator)
+        investment1 = create(:budget_investment,
+          :with_administrator,
+          valuation_finished: false,
+          budget: budget)
+        investment1.valuators << valuator1
+        create(:budget_investment, :with_administrator, budget: budget)
+        create(:budget_investment, budget: budget)
+
+        expect(described_class.scoped_filter(params, "all")).to eq([investment1])
+        expect(described_class.scoped_filter(params, "all").count).to eq(1)
+      end
+    end
+
+    describe "with valuation_finished filter" do
+      let(:params) { {advanced_filters: ["valuation_finished"], budget_id: budget.id} }
+      it "returns only investment with valuation finished" do
+        investment1 = create(:budget_investment,
+          :selected,
+          budget: budget)
+        create(:budget_investment,
+          :with_administrator,
+          budget: budget)
+        create(:budget_investment,
+          budget: budget)
+        expect(described_class.scoped_filter(params, "all")).to eq([investment1])
+        expect(described_class.scoped_filter(params, "all").count).to eq(1)
+      end
+    end
+
+    describe "with winners filter" do
+      let(:params) { {advanced_filters: ["winners"], budget_id: budget.id} }
+      it "returns only investment winners" do
+        investment1 = create(:budget_investment,
+          :winner,
+          valuation_finished: true,
+          budget: budget)
+        create(:budget_investment,
+          :with_administrator,
+          budget: budget)
+        create(:budget_investment, budget: budget)
+        expect(described_class.scoped_filter(params, "all")).to eq([investment1])
+        expect(described_class.scoped_filter(params, "all").count).to eq(1)
+      end
+    end
   end
 end

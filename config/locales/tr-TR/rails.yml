@@ -1,19 +1,27 @@
 tr:
   date:
+    abbr_day_names:
+      - Pzr
+      - Pzt
+      - Sal
+      - Çrş
+      - Prş
+      - Cum
+      - Cts
     abbr_month_names:
       - 
-      - Jan
-      - Feb
+      - Ock
+      - Şub
       - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
+      - Nis
+      - Mayıs 
+      - Haz
+      - Tem
+      - Ağu
+      - Eyl
+      - Eki
+      - Kas
+      - Ara
     day_names:
       - Pazar
       - Pazartesi
@@ -22,6 +30,10 @@ tr:
       - Perşembe
       - Cuma
       - Cumartesi
+    formats:
+      default: "%Y-%m-%d"
+      long: "%B %d,%Y"
+      short: "%b %d"
     month_names:
       - 
       - Ocak
@@ -35,12 +47,103 @@ tr:
       - Eylül
       - Ekim
       - Kasım
-      - December
+      - Aralık
   datetime:
+    distance_in_words:
+      about_x_months:
+        one: yaklaşık 1 ay
+        other: yaklaşık %{count} ay
+      about_x_years:
+        one: yaklaşık 1 yıl
+        other: yaklaşık %{count} yıl
+      almost_x_years:
+        one: neredeyse 1 yıl
+        other: neredeyse %{count} yıl
+      half_a_minute: yarım dakika
+      less_than_x_minutes:
+        one: bir dakikadan az
+        other: '%{count} dakikadan az'
+      over_x_years:
+        one: 1 yıldan fazla
+        other: '%{count} yıldan fazla'
+      x_months:
+        one: 1 ay
+        other: "%{count} ay"
+      x_years:
+        one: 1 yıl
+        other: "%{count} yıl"
+      x_seconds:
+        one: 1 saniye
+        other: "%{count} saniye"
     prompts:
       day: Gün
+      hour: Saat
+      minute: Dakika
+      month: Ay
+      second: Saniye
+      year: Yıl
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: kabul edilmeli
+      blank: boş olamaz
+      present: boş olmalıdır
+      confirmation: '%{attribute} ile eşleşmiyor'
+      empty: boş olamaz
+      equal_to: '%{count}''a denk olmalıdır'
+      even: eşit olmalı
+      exclusion: ayrılmıştır
+      greater_than: '%{count}''dan büyük olmalıdır'
+      greater_than_or_equal_to: '%{count}''dan büyük veya eşit olmalıdır'
+      inclusion: listeye dahil değildir
+      invalid: geçersizdir
+      less_than: '%{count}''dan küçük olmalıdır'
+      less_than_or_equal_to: '%{count}''dan küçük veya eşit olmalıdır'
+      model_invalid: "Doğrulama başarısız: %{errors}"
+      not_a_number: bir sayı değil
+      not_an_integer: tam sayı olmalıdır
+      odd: tek sayı olmalıdır
+      required: mevcut olmalıdır
+      taken: zaten alındı
+      too_long:
+        one: çok uzun (en fazla 1 karakter)
+        other: çok uzun (en fazla %{count} karakter)
+      too_short:
+        one: çok kısa (en az 1 karakter)
+        other: çok kısa (en az %{count} karakter)
+      wrong_length:
+        one: hatalı uzunluk (1 karakter olmalı)
+        other: hatalı uzunluk (%{count} karakter olmalı)
+      other_than: '%{count}''dan farklı olmalıdır'
+    template:
+      body: 'Aşağıdaki alanlar ile ilgili sorunlar vardır:'
+  helpers:
+    select:
+      prompt: Lütfen seçiniz
+    submit:
+      create: '%{model} Oluştur'
+      submit: '%{model} Kaydet'
+      update: '%{model} Güncelle'
   number:
     human:
+      decimal_units:
+        units:
+          billion: Milyar
+          million: Milyon
+          quadrillion: Katrilyon
+          thousand: Bin
+          trillion: Trilyon
       format:
         significant: true
         strip_insignificant_zeros: true
+      storage_units:
+        units:
+          byte:
+            one: Bayt
+            other: Bayt
+  support:
+    array:
+      two_words_connector: " ve "
+  time:
+    am: öö
+    pm: ös

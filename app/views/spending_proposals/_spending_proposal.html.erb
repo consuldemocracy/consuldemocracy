@@ -5,7 +5,7 @@
       <div class="small-12 medium-9 column">
         <div class="investment-project-content">
 
-          <% cache [locale_and_user_status(spending_proposal), 'index', spending_proposal, spending_proposal.author] do %>
+          <% cache [locale_and_user_status(spending_proposal), "index", spending_proposal, spending_proposal.author] do %>
             <span class="label-investment-project float-left"><%= t("spending_proposals.spending_proposal.spending_proposal") %></span>
             <span class="icon-budget"></span>
             <h3><%= link_to spending_proposal.title, namespaced_spending_proposal_path(spending_proposal) %></h3>
@@ -50,8 +50,8 @@
       </div>
 
       <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-3 column supports-container">
-          <%= render 'votes',
-                    { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
+          <%= render "votes",
+                    { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: "yes") } %>
       </div>
 
     </div>

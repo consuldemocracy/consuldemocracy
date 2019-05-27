@@ -2,7 +2,7 @@
 <h2><%= t("devise_views.confirmations.new.title") %></h2>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render 'shared/errors', resource: resource %>
+  <%= render "shared/errors", resource: resource %>
 
   <div class="row">
     <div class="small-12 columns">

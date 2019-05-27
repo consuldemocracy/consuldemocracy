@@ -44,7 +44,7 @@
   <% end %>
 </div>
 
-<%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
+<%= render "shared/filter_subnav", i18n_namespace: "admin.spending_proposals.index" %>
 
 <h3><%= page_entries_info @spending_proposals %></h3>
 
@@ -55,11 +55,12 @@
         <strong><%= spending_proposal.id %></strong>
       </td>
       <td>
-        <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal, SpendingProposal.filter_params(params)) %>
+        <%= link_to spending_proposal.title,
+                    admin_spending_proposal_path(spending_proposal, @filter_params.to_h) %>
       </td>
       <td class="small">
         <% if spending_proposal.administrator.present? %>
-          <span title="<%= t('admin.spending_proposals.index.assigned_admin') %>"><%= spending_proposal.administrator.name %></span>
+          <span title="<%= t("admin.spending_proposals.index.assigned_admin") %>"><%= spending_proposal.administrator.name %></span>
         <% else %>
           <%= t("admin.spending_proposals.index.no_admin_assigned") %>
         <% end %>
@@ -68,7 +69,7 @@
         <% if spending_proposal.valuators.size == 0 %>
           <%= t("admin.spending_proposals.index.no_valuators_assigned") %>
         <% else %>
-          <%= spending_proposal.valuators.collect(&:description_or_name).join(', ') %>
+          <%= spending_proposal.valuators.collect(&:description_or_name).join(", ") %>
         <% end %>
       </td>
       <td class="small">

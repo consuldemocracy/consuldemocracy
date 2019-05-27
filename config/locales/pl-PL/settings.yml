@@ -23,7 +23,7 @@ pl:
     votes_for_proposal_success: "Liczba głosów niezbędnych do zatwierdzenia wniosku"
     votes_for_proposal_success_description: "Gdy wniosek osiągnie taką liczbę wsparcia, nie będzie już mógł otrzymać więcej wsparcia i zostanie uznany za pomyślny"
     months_to_archive_proposals: "Miesiące do archiwizacji Wniosków"
-    months_to_archive_proposals_description: Po upływie tego czasu Wnioski zostaną zarchiwizowane i nie będą już mogły otrzymywać wsparcia"
+    months_to_archive_proposals_description: "Po upływie tego czasu Wnioski zostaną zarchiwizowane i nie będą już mogły otrzymywać wsparcia\""
     email_domain_for_officials: "Domena poczty e-mail dla urzędników państwowych"
     email_domain_for_officials_description: "Wszyscy użytkownicy zarejestrowani w tej domenie będą mieli zweryfikowane konto podczas rejestracji"
     per_page_code_head: "Kod do uwzględnienia na każdej stronie (<head>)"
@@ -75,7 +75,7 @@ pl:
     verification_offices_url: Adres URL biur weryfikujących
     proposal_improvement_path: Wewnętrzny link informacji dotyczącej ulepszenia wniosku
     feature:
-      budgets: "Budżetowanie Partycypacyjne"
+      budgets: "Budżetowanie partycypacyjne"
       budgets_description: "Dzięki budżetom partycypacyjnym obywatele decydują, które projekty przedstawione przez ich sąsiadów otrzymają część budżetu gminy"
       twitter_login: "Login do Twittera"
       twitter_login_description: "Zezwalaj użytkownikom na rejestrację za pomocą konta na Twitterze"
@@ -119,3 +119,4 @@ pl:
       guides_description: "Wyświetla przewodnik po różnicach między wnioskami i projektami inwestycyjnymi, jeśli istnieje aktywny budżet partycypacyjny"
       public_stats: "Publiczne statystyki"
       public_stats_description: "Wyświetl publiczne statystyki w panelu administracyjnym"
+      help_page: "Pomoc"

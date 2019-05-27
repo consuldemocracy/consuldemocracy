@@ -30,10 +30,10 @@ pt-BR:
     check: Conferir o documento
     dashboard:
       index:
-        title: Gestão
+        title: Gerenciamento
         info: Aqui você pode gerenciar os usuários através de todas as ações listadas no menu à esquerda.
     document_number: Número do documento
-    document_type_label: Tipo do documento
+    document_type_label: Tipo de documento
     document_verifications:
       already_verified: Esta conta de usuário já está verificada.
       has_no_account_html: A fim de criar uma conta, vá para %{link} e clique em <b>'Registar'</b> na parte superior esquerda da tela.
@@ -65,7 +65,7 @@ pt-BR:
       create_spending_proposal: Criar uma proposta de despesa
       print_spending_proposals: Imprimir proposta de despesa
       support_spending_proposals: Apoiar proposta de despesa
-      create_budget_investment: Criar um investimento orçamentário
+      create_budget_investment: Propor um investimento orçamentário
       print_budget_investments: Gravar investimentos do orçamento
       support_budget_investments: Apoiar investimentos orçamentários
       users: Gerenciamento de usuários
@@ -91,7 +91,7 @@ pt-BR:
       index:
         title: Apoiar propostas
     budgets:
-      create_new_investment: Propor um investimento orçamentário
+      create_new_investment: Criar um investimento orçamentário
       print_investments: Gravar investimentos do orçamento
       support_investments: Apoiar investimentos orçamentários
       table_name: Nome

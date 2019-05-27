@@ -82,7 +82,7 @@ es:
         one: 1 mes
         other: "%{count} meses"
       x_years:
-        one: '%{count} año'
+        one: "%{count} año"
         other: "%{count} años"
       x_seconds:
         one: 1 segundo
@@ -128,7 +128,7 @@ es:
         other: longitud inválida (debería tener %{count} caracteres)
       other_than: debe ser distinto de %{count}
     template:
-      body: 'Se encontraron problemas con los siguientes campos:'
+      body: "Se encontraron problemas con los siguientes campos:"
       header:
         one: No se pudo guardar este/a %{model} porque se encontró 1 error
         other: "No se pudo guardar este/a %{model} porque se encontraron %{count} errores"

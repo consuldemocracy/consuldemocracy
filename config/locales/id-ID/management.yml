@@ -5,6 +5,10 @@ id:
         unverified_user: Belum ada pengguna terverifikasi yang masuk
       show:
         title: Akun pengguna
+      edit:
+        back: Kembali
+        password:
+          password: Kata Sandi
     account_info:
       change_user: Ubah pengguna
       document_number_label: 'Nomor dokumen:'
@@ -16,8 +20,8 @@ id:
       index:
         title: Manajemen
         info: Di sini anda dapat mengatur pengguna melalui semua tindakan yang tercantum di menu sebelah kiri.
-    document_number: Nomor Dokumen
-    document_type_label: Jenis Dokumen
+    document_number: Nomor dokumen
+    document_type_label: Tipe dokumen
     document_verifications:
       already_verified: Akun pengguna ini sudah diverifikasi.
       has_no_account_html: Untuk membuat akun, pergi ke %{link} dan klik di <b>'Daftar'</b>di bagian kiri atas layar.
@@ -46,7 +50,7 @@ id:
       create_proposal: Buat proposal
       print_proposals: Cetak proposal
       support_proposals: Dukung proposal
-      create_spending_proposal: Buat proposal pengeluaran
+      create_spending_proposal: Membuat proposal pengeluaran
       print_spending_proposals: Cetak proposal pengeluaran
       support_spending_proposals: Dukung proposal pengeluaran
       create_budget_investment: Buat anggaran investasi
@@ -67,10 +71,17 @@ id:
       create_proposal: Buat proposal
       print:
         print_button: Cetak
+      index:
+        title: Dukung proposal
+    budgets:
+      create_new_investment: Buat anggaran investasi
+      table_name: Nama
+      table_phase: Fase
+      table_actions: Tindakan
     budget_investments:
       alert:
         unverified_user: Pengguna tidak diverifikasi
-      create: Buat investasi anggaran
+      create: Membuat anggaran investasi
       filters:
         unfeasible: Investasi tidak layak
       print:
@@ -80,10 +91,10 @@ id:
     spending_proposals:
       alert:
         unverified_user: Pengguna tidak diverifikasi
-      create: Buat proposal pengeluaran
+      create: Membuat proposal pengeluaran
       filters:
-        unfeasible: Proyek investasi yang tidak layak
-        by_geozone: "Proyek investasi dengan cakupan: %{geozone}"
+        unfeasible: Proyek-proyek investasi tidak layak
+        by_geozone: "Investasi proyek dengan ruang lingkup: %{geozone}"
       print:
         print_button: Cetak
       search_results:
@@ -91,7 +102,7 @@ id:
     sessions:
       signed_out: Berhasil keluar.
       signed_out_managed_user: Sesi pengguna berhasil ditandatangani.
-    username_label: Nama Pengguna
+    username_label: Nama pengguna
     users:
       create_user: Buat akun baru
       create_user_submit: Buat pengguna
@@ -106,7 +117,7 @@ id:
       erase_submit: Hapus akun
     user_invites:
       new:
-        label: Email
+        label: Emails
         info: "Masukkan email yang dipisahkan dengan koma (',')"
       create:
         success_html: <strong>%{count} undangan</strong> sudah dikirim.

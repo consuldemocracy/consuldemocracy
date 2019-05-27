@@ -18,12 +18,12 @@ module ValuationHelper
     when 0
       t("valuation.budget_investments.index.no_valuators_assigned")
     when 1
-      "<span title=\"#{t('valuation.budget_investments.index.valuators_assigned', count: 1)}\">".html_safe +
+      "<span title=\"#{t("valuation.budget_investments.index.valuators_assigned", count: 1)}\">".html_safe +
         valuators.first.name +
       "</span>".html_safe
     else
-      "<span title=\"".html_safe + valuators.map(&:name).join(', ') + "\">".html_safe +
-        t('valuation.budget_investments.index.valuators_assigned', count: valuators.size) +
+      "<span title=\"".html_safe + valuators.map(&:name).join(", ") + "\">".html_safe +
+        t("valuation.budget_investments.index.valuators_assigned", count: valuators.size) +
       "</span>".html_safe
     end
   end

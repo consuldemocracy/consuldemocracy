@@ -1,17 +1,8 @@
-<%= form_tag(admin_budget_budget_investments_path(budget: @budget), method: :get) do %>
-  <div class="small-12 medium-3 column">
-    <%= select_tag :sort_by, options_for_select(budget_investments_sorting_options, params[:sort_by]),
-                   { prompt: t("admin.budget_investments.index.sort_by.placeholder"),
-                     label: false,
-                     class: "js-submit-on-change" } %>
-  </div>
-<% end %>
-
 <%= link_to t("admin.budget_investments.index.download_current_selection"),
             admin_budget_budget_investments_path(csv_params),
             class: "float-right small clear" %>
 
-<% if params[:filter] == 'winners' %>
+<% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>
     <%= link_to calculate_winner_button_text(@budget),
                 calculate_winners_admin_budget_path(@budget),
@@ -35,9 +26,9 @@
   <table class="table-for-mobile">
     <thead>
       <tr>
-        <th><%= t("admin.budget_investments.index.list.id") %></th>
-        <th class="small-3"><%= t("admin.budget_investments.index.list.title") %></th>
-        <th><%= t("admin.budget_investments.index.list.supports") %></th>
+        <th><%= link_to_investments_sorted_by :id  %></th>
+        <th class="small-3"><%= link_to_investments_sorted_by :title %></th>
+        <th><%= link_to_investments_sorted_by :supports %></th>
         <th><%= t("admin.budget_investments.index.list.admin") %></th>
         <th>
           <%= t("admin.budget_investments.index.list.valuation_group") %>
@@ -45,6 +36,7 @@
         </th>
         <th><%= t("admin.budget_investments.index.list.geozone") %></th>
         <th><%= t("admin.budget_investments.index.list.feasibility") %></th>
+        <th><%= t("admin.budget_investments.index.list.price") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.list.valuation_finished") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.list.visible_to_valuators") %></th>
         <th class="text-center"><%= t("admin.budget_investments.index.list.selected") %></th>
@@ -57,7 +49,7 @@
     <tbody>
       <% @investments.each do |investment| %>
         <tr id="<%= dom_id(investment) %>" class="budget_investment">
-          <%= render '/admin/budget_investments/select_investment', investment: investment %>
+          <%= render "/admin/budget_investments/select_investment", investment: investment %>
         </tr>
       <% end %>
     </tbody>

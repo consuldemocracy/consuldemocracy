@@ -3,7 +3,12 @@ ar:
     months_to_archive_proposals_description: "بعد هذا العدد من الأشهر سيتم أرشفة المقترحات ولن تصبح قادرة على تلقي الدعم"
     org_name: "المنظمة"
     feature:
-      proposals: "مقترحات"
+      budgets: "الميزانية التشاركية"
+      proposals: "إقتراحات"
+      debates: "النقاشات"
+      polls: "استطلاعات"
+      signature_sheets: "أوراق التوقيع"
+      spending_proposals: "مقترحات الانفاق"
       user:
         skip_verification_description: "سيؤدي هذا إلى تعطيل عملية التحقق وسيتمكن جميع المستخدمين المسجلين من المشاركة في جميع العمليات"
       allow_images: "السماح برفع وعرض الصور"

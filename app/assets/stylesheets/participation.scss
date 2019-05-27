@@ -287,7 +287,7 @@
     margin: $line-height / 2 0;
 
     &::before {
-      content: 'l ';
+      content: "l ";
       font-family: "icons" !important;
     }
   }
@@ -319,7 +319,8 @@
 .legislation-process-edit,
 .milestone-new,
 .milestone-edit,
-.image-form {
+.image-form,
+.dashboard-action-form {
   @include direct-uploads;
 }
 
@@ -550,6 +551,15 @@
   }
 }
 
+.fixed-mobile-content {
+
+  @include breakpoint(medium down) {
+    background: #fff;
+    margin-bottom: rem-calc(-1) !important;
+    padding-top: $line-height / 2;
+  }
+}
+
 // 04. List participation
 // ----------------------
 
@@ -733,7 +743,7 @@
   }
 
   .truncate {
-    background: image-url('truncate.png');
+    background: image-url("truncate.png");
     background-repeat: repeat-x;
     bottom: 0;
     height: rem-calc(24);
@@ -938,7 +948,7 @@
 
     &::before {
       color: $text;
-      font-family: 'icons';
+      font-family: "icons";
     }
   }
 
@@ -947,7 +957,7 @@
     .button {
 
       &::before {
-        content: '\51';
+        content: "\51";
       }
     }
   }
@@ -957,7 +967,7 @@
     .button {
 
       &::before {
-        content: '\22';
+        content: "\22";
       }
     }
   }
@@ -966,8 +976,8 @@
     position: relative;
 
     &::before {
-      content: '\22';
-      font-family: 'icons';
+      content: "\22";
+      font-family: "icons";
       left: 0;
       position: absolute;
       top: 6px;
@@ -978,8 +988,8 @@
     position: relative;
 
     &::before {
-      content: '\51';
-      font-family: 'icons';
+      content: "\51";
+      font-family: "icons";
       left: 0;
       position: absolute;
       top: 6px;
@@ -990,8 +1000,8 @@
     color: $brand;
 
     &::after {
-      content: '\6c';
-      font-family: 'icons';
+      content: "\6c";
+      font-family: "icons";
       font-size: $tiny-font-size;
     }
   }
@@ -1167,6 +1177,11 @@
       text-decoration: none;
     }
 
+    .confirmed {
+      font-size: rem-calc(24);
+      font-weight: bold;
+    }
+
     .info {
       background: #6a2a72;
 
@@ -1306,8 +1321,8 @@
 
     &::before {
       color: #a5a1ff;
-      content: '\57';
-      font-family: 'icons';
+      content: "\57";
+      font-family: "icons";
       font-size: $small-font-size;
       position: absolute;
       right: -6px;
@@ -1450,8 +1465,8 @@
   font-weight: bold;
 
   &::after {
-    content: '\56';
-    font-family: 'icons';
+    content: "\56";
+    font-family: "icons";
     font-size: $small-font-size;
     font-weight: normal;
     line-height: $line-height;
@@ -1526,7 +1541,7 @@
       background-color: #fff;
       border: 4px solid $budget;
       border-radius: 100%;
-      content: '';
+      content: "";
       height: 16px;
       left: -22px;
       position: absolute;
@@ -1668,7 +1683,7 @@
 
     &::after {
       color: #1b254c;
-      content: '\59';
+      content: "\59";
       font-family: "icons" !important;
       left: 34px;
       position: absolute;
@@ -1861,7 +1876,7 @@
 
       &::after {
         color: $color-info;
-        content: '\6c';
+        content: "\6c";
       }
     }
 
@@ -1870,7 +1885,7 @@
 
       &::after {
         color: $color-alert;
-        content: '\74';
+        content: "\74";
       }
     }
 
@@ -1879,7 +1894,7 @@
 
       &::after {
         color: $color-info;
-        content: '\6f';
+        content: "\6f";
       }
     }
 
@@ -1888,7 +1903,7 @@
 
       &::after {
         color: $color-warning;
-        content: '\6f';
+        content: "\6f";
       }
     }
 
@@ -1897,7 +1912,7 @@
 
       &::after {
         color: $color-success;
-        content: '\59';
+        content: "\59";
       }
     }
   }
@@ -1963,7 +1978,7 @@
       &::after {
         background: #92ba48;
         border-radius: rem-calc(20);
-        content: '\6c';
+        content: "\6c";
         color: #fff;
         font-family: "icons" !important;
         font-size: rem-calc(12);
@@ -1982,15 +1997,8 @@
 .polls-results-stats {
 
   .sidebar {
-    border-bottom: 1px solid $border;
-    margin-bottom: $line-height;
 
-    @include breakpoint(medium) {
-      border-bottom: 0;
-      border-right: 1px solid $border;
-    }
-
-    .menu {
+    .menu:not(.vertical) {
       padding: 0;
 
       li a {
@@ -2023,11 +2031,5 @@
         font-weight: bold;
       }
     }
-  }
-
-  .number {
-    font-size: rem-calc(60);
-    font-weight: bold;
-    line-height: rem-calc(60);
   }
 }

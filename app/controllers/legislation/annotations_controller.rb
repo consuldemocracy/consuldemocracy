@@ -1,4 +1,4 @@
-class Legislation::AnnotationsController < ApplicationController
+class Legislation::AnnotationsController < Legislation::BaseController
   skip_before_action :verify_authenticity_token
 
   before_action :authenticate_user!, only: [:create, :new_comment]
@@ -18,7 +18,7 @@ class Legislation::AnnotationsController < ApplicationController
     @commentable = @annotation
 
     if params[:sub_annotation_ids].present?
-      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(','))
+      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(","))
       annotations = [@commentable, @sub_annotations]
     else
       annotations = [@commentable]

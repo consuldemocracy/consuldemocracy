@@ -4,12 +4,12 @@
       <tr>
         <td style="padding-left: 10px;">
           <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin-bottom: 0;">
-            <%= t('mailers.proposal_notification_digest.title',
-                  org_name: Setting['org_name']) %>
+            <%= t("mailers.proposal_notification_digest.title",
+                  org_name: Setting["org_name"]) %>
           </h1>
           <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-            <%= t('mailers.proposal_notification_digest.info',
-                  org_name: Setting['org_name']) %>
+            <%= t("mailers.proposal_notification_digest.info",
+                  org_name: Setting["org_name"]) %>
           </p>
         </td>
       </tr>
@@ -38,13 +38,13 @@
                 <tr>
                   <td style="padding-bottom: 12px;">
                     <%= link_to proposal_url(notification.notifiable.proposal, anchor: "social-share"), style: "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; background: #f7f5f2; border-radius: 6px; color: #3d3d66!important; font-weight: bold; margin: 0px; padding: 10px 15px; text-align: center; text-decoration: none; min-width: 160px; display: inline-block;" do %>
-                      <%= image_tag('icon_mailer_share.png',  style: "border: 0; display: inline-block; width: 100%; max-width: 16px", alt: "") %>
-                      <%= t('mailers.proposal_notification_digest.share') %>
+                      <%= image_tag("icon_mailer_share.png",  style: "border: 0; display: inline-block; width: 100%; max-width: 16px", alt: "") %>
+                      <%= t("mailers.proposal_notification_digest.share") %>
                     <% end %>
 
                     <%= link_to proposal_url(notification.notifiable.proposal, anchor: "comments"), style: "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; background: #f7f5f2; border-radius: 6px; color: #3d3d66!important; font-weight: bold; margin: 0px; padding: 10px 15px; text-align: center; text-decoration: none; min-width: 160px; display: inline-block; margin-left: 12px;" do %>
-                      <%= image_tag('icon_mailer_comment.png',  style: "border: 0; display: inline-block; width: 100%; max-width: 16px; vertical-align: middle;", alt: "") %>
-                      <%= t('mailers.proposal_notification_digest.comment') %>
+                      <%= image_tag("icon_mailer_comment.png",  style: "border: 0; display: inline-block; width: 100%; max-width: 16px; vertical-align: middle;", alt: "") %>
+                      <%= t("mailers.proposal_notification_digest.comment") %>
                     <% end %>
                   </td>
                 </tr>
@@ -61,8 +61,8 @@
       <tr>
         <td style="padding-left: 10px;">
           <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin: 0; font-style: italic; padding-bottom: 20px;">
-            <%= t('mailers.proposal_notification_digest.unsubscribe',
-                account: link_to(t('mailers.proposal_notification_digest.unsubscribe_account'),
+            <%= t("mailers.proposal_notification_digest.unsubscribe",
+                account: link_to(t("mailers.proposal_notification_digest.unsubscribe_account"),
                                 account_url, style: "color: #2895F1; text-decoration: none;")).html_safe %>
           </p>
         </td>

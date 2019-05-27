@@ -1,1 +1,8 @@
 he:
+  seeds:
+    categories:
+      participation: השתתפות
+      transparency: שקיפות
+    budgets:
+      groups:
+        districts: באזור הגאוגרפי שלי

@@ -11,7 +11,7 @@ pt-BR:
           success: 'Enviamos um e-mail de confirmação para sua conta: %{email}'
       show:
         alert:
-          failure: Código de verificação incorreto.
+          failure: Código de verificação incorreto
         flash:
           success: Você é um usuário verificado.
     letter:
@@ -25,7 +25,7 @@ pt-BR:
         see_all: Ver propostas
         title: Carta solicitada
       errors:
-        incorrect_code: Código de verificação incorreto
+        incorrect_code: Código de verificação incorreto.
       new:
         explanation: 'Para participar da votação final, você pode:'
         go_to_index: Ver propostas
@@ -33,7 +33,7 @@ pt-BR:
         offices: Escritórios de apoio ao cidadão
         send_letter: Envie-me uma carta com o código
         title: Parabéns!
-        user_permission_info: Com a sua conta você pode...
+        user_permission_info: Com sua conta, você pode...
       update:
         flash:
           success: Código correto. Sua conta está verificada
@@ -95,9 +95,9 @@ pt-BR:
     step_1: Residência
     step_2: Código de confirmação
     step_3: Verificação final
-    user_permission_debates: Participar de debates
+    user_permission_debates: Participar nos debates
     user_permission_info: Verificando suas informações, você será capaz de...
-    user_permission_proposal: Criar nova proposta
+    user_permission_proposal: Criar novas propostas
     user_permission_support_proposal: Apoiar propostas*
     user_permission_votes: Participar na votação final*
     verified_user:

@@ -1,4 +1,4 @@
-class CreateWidgetFeeds < ActiveRecord::Migration
+class CreateWidgetFeeds < ActiveRecord::Migration[4.2]
   def change
     create_table :widget_feeds do |t|
       t.string :kind

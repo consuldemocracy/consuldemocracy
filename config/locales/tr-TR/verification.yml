@@ -1,1 +1,9 @@
 tr:
+  verification:
+    residence:
+      new:
+        date_of_birth: Doğum tarihi
+        document_type_label: Belge Türü
+        postal_code: Posta kodu
+    step_1: Konut
+    step_2: Onay kodu

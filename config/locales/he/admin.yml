@@ -1,13 +1,17 @@
 he:
   admin:
+    header:
+      title: ניהול
     actions:
-      confirm: בטוח?
+      confirm: האם את/ה בטוח/ה?
       confirm_hide: אשר
-      hide: החבא
+      hide: הסתר
       hide_author: החבא יוצר
       restore: שחזר
-      mark_featured: מקודם
+      mark_featured: מוצע
       unmark_featured: לא מקודם
+      edit: ערוך
+      delete: מחיקה
     banners:
       index:
         title: באנרים
@@ -15,7 +19,7 @@ he:
         edit: ערוך באנר
         delete: מחק באנר
         filters:
-          all: הכל
+          all: כולם
           with_active: פעיל
           with_inactive: לא פעיל
       banner:
@@ -24,233 +28,472 @@ he:
         target_url: קישור
         post_started_at: החל מ
         post_ended_at: עד
+        sections:
+          debates: דיונים
+          proposals: הצעות
+          budgets: מימון השתתפותי
       edit:
         editing: ערוך באנר
         form:
-          submit_button: שמור שינויים
+          submit_button: שמירת שינויים
       new:
         creating: צור באנר
     activity:
       show:
         action: פעולה
         actions:
-          block: חסום
+          block: מוסתרים
           hide: מוחבא
           restore: משוחזר
-        by: Moderated by
         content: תוכן
-        filter: הראה
+        filter: הצג
         filters:
-          all: הכל
-          on_comments: תגובות
-          on_debates: דיוניים
+          all: כולם
+          on_comments: הערות
+          on_debates: דיונים
           on_proposals: הצעות
-          on_users: משתשמים
+          on_users: משתמשים
         title: Moderator activity
         type: סוג
     budgets:
       index:
-        title: Participatory budgets
-        new_link: Create new budget
-        filters:
-          finished: Finished
-        budget_investments: See budget investments
-        table_name: Name
-        table_phase: Phase
-        table_investments: Investments
-        table_edit_groups: Headings groups
-        table_edit_budget: Edit
-        edit_groups: Edit headings groups
-        edit_budget: Edit budget
-      create:
-        notice: New participatory budget created successfully!
-      update:
-        notice: Participatory budget updated successfully
-      edit:
-        title: Edit Participatory budget
-      new:
-        title: New participatory budget
-      form:
-        group: Group name
-        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
-        add_group: Add new group
-        create_group: Create group
-        heading: Heading name
-        add_heading: Add heading
-        amount: Amount
-        save_heading: Save heading
-        no_heading: This group has no assigned heading.
-        table_heading: Heading
-        table_amount: Amount
-    budget_investments:
-      index:
-        heading_filter_all: All headings
-        administrator_filter_all: All administrators
-        valuator_filter_all: All valuators
-        tags_filter_all: All tags
-        filters:
-          all: All
-          without_admin: Without assigned admin
-          valuation_finished: Valuation finished
-          selected: Selected
-        title: Investment projects
-        assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
-        no_valuators_assigned: No valuators assigned
-        feasibility:
-          feasible: "Feasible (%{price})"
-          unfeasible: "Unfeasible"
-          undecided: "Undecided"
-        selected: "Selected"
-        select: "Select"
-      show:
-        assigned_admin: Assigned administrator
-        assigned_valuators: Assigned valuators
-        info: "%{budget_name} - Group: %{group_name} - Investment project %{id}"
-        edit: Edit
-        edit_classification: Edit classification
-        by: By
-        sent: Sent
-        group: Grupo
-        heading: Partida
-        dossier: Dossier
-        edit_dossier: Edit dossier
-        tags: Tags
-        undefined: Undefined
-      edit:
-        assigned_valuators: Valuators
-        select_heading: Select heading
-        submit_button: Update
-        tags: Tags
-        tags_placeholder: "Write the tags you want separated by commas (,)"
-        undefined: Undefined
-      search_unfeasible: Search unfeasible
-    comments:
-      index:
+        title: תקציבים השתתפותיים
         filter: Filter
         filters:
-          all: All
+          open: Open
+          finished: הסתיים
+        budget_investments: See budget investments
+        table_name: Name
+        table_phase: שלב
+        table_edit_budget: ערוך
+      edit:
+        phase: שלב
+        active: פעיל
+    budget_groups:
+      name: "Name"
+      form:
+        name: "Group name"
+    budget_headings:
+      name: "Name"
+      form:
+        name: "Heading name"
+        amount: "Amount"
+        submit: "Save heading"
+    budget_phases:
+      edit:
+        description: תיאור
+        save_changes: שמירת שינויים
+    budget_investments:
+      index:
+        administrator_filter_all: כל מנהלי המערכת
+        valuator_filter_all: כל המעריכים
+        tags_filter_all: כל התגיות
+        sort_by:
+          placeholder: סדר לפי
+          id: ID
+          title: שם
+          supports: לחיצה לתמיכה
+        filters:
+          all: כולם
+          without_admin: מבלי להקצות מנהל/ת
+          under_valuation: Under valuation
+          valuation_finished: הערכה הסתיימה
+          selected: Selected
+          undecided: Undecided
+          unfeasible: אינו בר-ביצוע
+        buttons:
+          filter: Filter
+        assigned_admin: הוקצה מנהל לפרוייקט
+        no_admin_assigned: לא הוקצה מנהל/ת מערכת
+        no_valuators_assigned: לא הוקצו מעריכים
+        feasibility:
+          feasible: "בר ביצוע (%{price})"
+          unfeasible: "אינו בר-ביצוע"
+        selected: "Selected"
+        select: "בחר"
+        list:
+          id: ID
+          title: שם
+          supports: לחיצה לתמיכה
+          admin: מנהל/ת
+          valuator: Valuator
+          geozone: היקף הפעילות
+          feasibility: סבירות לביצוע
+          valuation_finished: Val. Fin.
+          selected: Selected
+      show:
+        assigned_admin: Assigned administrator
+        assigned_valuators: הוקצו מעריכים
+        edit: ערוך
+        edit_classification: עריכת הסיווג
+        by: מאת
+        sent: נשלח
+        group: קבוצה
+        heading: כותרת
+        dossier: מסמכים נלווים
+        edit_dossier: עריכת מסמכים נלווים
+        tags: תגיות
+        undefined: לא מוגדר
+        selection:
+          title: Selection
+          "true": Selected
+        winner:
+          "true": "כן"
+          "false": "לא"
+        image: "תמונה"
+        documents: "מסמכים"
+      edit:
+        selection: Selection
+        assigned_valuators: מעריכים
+        submit_button: עודכן
+        tags: תגיות
+        tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
+        undefined: Undefined
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "שם"
+        table_description: "תיאור"
+        image: "תמונה"
+        documents: "מסמכים"
+      new:
+        description: תיאור
+    statuses:
+      index:
+        table_name: Name
+        table_description: תיאור
+        delete: מחיקה
+        edit: ערוך
+    progress_bars:
+      index:
+        table_id: "ID"
+        table_kind: "סוג"
+        table_title: "שם"
+    comments:
+      index:
+        filter: מסנן
+        filters:
+          all: כולם
           with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        hidden_debate: Hidden debate
-        hidden_proposal: Hidden proposal
+          without_confirmed_hide: ממתין לאישור
         title: Hidden comments
     dashboard:
       index:
         back: Go back to
-        title: Administration
+        title: ניהול
     debates:
       index:
         filter: Filter
         filters:
-          all: All
+          all: כולם
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden debates
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: כולם
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden users
+        user: משתמשיםות מוסתריםות
+      show:
+        email: 'דואר אלקטרוני'
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: כולם
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+    legislation:
+      processes:
+        edit:
+          back: חזרה
+          submit_button: שמירת שינויים
+        form:
+          homepage: תיאור
+        index:
+          delete: מחיקה
+          filters:
+            open: Open
+            all: כולם
+        new:
+          back: חזרה
+        proposals:
+          select_order: סדר לפי
+          orders:
+            title: שם
+            supports: לחיצה לתמיכה
+        process:
+          comments: הערות
+          creation_date: תאריך יצירה
+          status_open: Open
+        subnav:
+          questions: דיון
+          proposals: הצעות
+      proposals:
+        index:
+          title: שם
+          back: חזרה
+          supports: לחיצה לתמיכה
+          select: בחר
+          selected: Selected
+        form:
+          custom_categories: תחומים
+      draft_versions:
+        edit:
+          back: חזרה
+          submit_button: שמירת שינויים
+        index:
+          delete: מחיקה
+        new:
+          back: חזרה
+        table:
+          title: שם
+          comments: הערות
+      questions:
+        edit:
+          back: חזרה
+          submit_button: שמירת שינויים
+        form:
+          title: שאלה
+        index:
+          back: חזרה
+          create: יצירת שאלה חדשה
+          delete: מחיקה
+        new:
+          back: חזרה
+          submit_button: יצירת שאלה חדשה
+        table:
+          title: שם
     managers:
       index:
         title: Managers
+        name: Name
+        email: דואר אלקטרוני
       manager:
         add: Add
-        delete: Delete
+        delete: מחיקה
     menu:
       activity: Moderator activity
-      admin: Admin menu
-      banner: Manage banners
-      budgets: Participatory budgets
-      geozones: Manage geozones
+      proposals: הצעות
+      budgets: תקציבים השתתפותיים
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
-      hidden_users: Hidden users
       managers: Managers
       moderators: Moderators
+      admin_notifications: התראות
       valuators: Valuators
+      polls: סקרים
       officials: Officials
       organizations: Organisations
       settings: Configuration settings
-      spending_proposals: Spending proposals
-      stats: Statistics
-      signature_sheets: Signature Sheets
+      site_customization:
+        information_texts_menu:
+          debates: "דיונים"
+          proposals: "הצעות"
+          polls: "סקרים"
+          mailers: "הודעה בדואר אלקטרוני"
+          management: "הנהלה"
+          welcome: "ברוכים/ות הבאים/ות"
+        buttons:
+          save: "שמירה"
+      title_polls: סקרים
+      users: משתמשים
+    administrators:
+      index:
+        name: Name
+        email: דואר אלקטרוני
+      administrator:
+        add: Add
+        delete: מחיקה
     moderators:
       index:
         title: Moderators
+        name: Name
+        email: דואר אלקטרוני
       moderator:
         add: Add
-        delete: Delete
+        delete: מחיקה
+    newsletters:
+      index:
+        sent: Sent
+        edit: ערוך
+        delete: מחיקה
+      show:
+        send: הקש/י לשליחה
+    admin_notifications:
+      index:
+        section_title: התראות
+        title: שם
+        sent: Sent
+        edit: ערוך
+        delete: מחיקה
+      show:
+        send: שליחת הודעה
+        title: שם
+        link: קישור
     valuators:
       index:
         title: Valuators
+        name: Name
+        email: דואר אלקטרוני
+        description: תיאור
+        group: "קבוצה"
       valuator:
-        add: Add to valuators
+        delete: מחיקה
       summary:
-        title: Valuator summary for investment projects
         valuator_name: Valuator
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
+        finished_and_feasible_count: הסתיים ובר ביצוע
+        finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
         finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost: Cost
+        in_evaluation_count: עדיין בשלב הערכה
+        total_count: סך הכל
+        cost: עלות הפרויקט
+      show:
+        description: "תיאור"
+        email: "דואר אלקטרוני"
+        group: "קבוצה"
+    valuator_groups:
+      index:
+        name: "Name"
+      form:
+        name: "Group name"
+    poll_officers:
+      officer:
+        add: Add
+        name: Name
+        email: דואר אלקטרוני
+      search:
+        search: חיפוש
+        user_not_found: משתמש/ת לא נמצא/ה
+    poll_officer_assignments:
+      index:
+        table_name: "Name"
+        table_email: "דואר אלקטרוני"
+    poll_shifts:
+      new:
+        search_officer_button: חיפוש
+        table_email: "דואר אלקטרוני"
+        table_name: "Name"
+    poll_booth_assignments:
+      show:
+        location: "מקום"
+      index:
+        table_name: "Name"
+        table_location: "מקום"
+    polls:
+      index:
+        name: "Name"
+      show:
+        table_title: "שם"
+    questions:
+      index:
+        create: "יצירת שאלה חדשה"
+        create_question: "יצירת שאלה חדשה"
+        table_proposal: "הצעה"
+        table_question: "שאלה"
+        table_poll: "הצבעה"
+      new:
+        poll_label: "הצבעה"
+      answers:
+        images:
+          add_image: "הוספת תמונה"
+      show:
+        proposal: ההצעה המקורית
+        author: מחבר/ת
+        question: שאלה
+        answers:
+          description: תיאור
+          documents: מסמכים
+          document_title: שם
+    answers:
+      show:
+        title: שם
+        description: תיאור
+      videos:
+        index:
+          video_title: שם
+    results:
+      result:
+        table_votes: הצבעות
+    booths:
+      index:
+        name: "Name"
+        location: "מקום"
+      new:
+        name: "Name"
+        location: "מקום"
+      show:
+        location: "מקום"
     officials:
-      edit:
-        destroy: Remove 'Official' status
-        title: 'Officials: Edit user'
-      flash:
-        official_destroyed: 'Details saved: the user is no longer an official'
-        official_updated: Details of official saved
       index:
         title: Officials
-      level_0: Not official
-      level_1: Level 1
-      level_2: Level 2
-      level_3: Level 3
-      level_4: Level 4
-      level_5: Level 5
-      search:
-        edit_official: Edit official
-        make_official: Make official
-        title: 'Official positions: User search'
+        name: Name
+        official_position: תפקיד
     organizations:
       index:
         filter: Filter
         filters:
-          all: All
+          all: כולם
           pending: Pending
           rejected: Rejected
           verified: Verified
-        reject: Reject
+        name: Name
+        email: דואר אלקטרוני
         rejected: Rejected
-        search: Search
-        search_placeholder: Name, email or phone number
+        search: חיפוש
         title: Organisations
         verified: Verified
-        verify: Verify
-      search:
-        title: Search Organisations
+        verify: נא לאשר
+        pending: Pending
+    proposals:
+      index:
+        title: הצעות
+        id: ID
+        author: מחבר/ת
     hidden_proposals:
       index:
         filter: Filter
         filters:
-          all: All
+          all: כולם
           with_confirmed_hide: Confirmed
           without_confirmed_hide: Pending
         title: Hidden proposals
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: כולם
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
     settings:
-      flash:
-        updated: Value updated
       index:
         banners: Estilos de banners
         banner_imgs: Imágenes para los banners
         title: Configuration settings
-        update_setting: עדכון
+        update_setting: עודכן
         feature_flags: מאפיינים
         features:
           enabled: "אפשרת איפיון"
           disabled: "השבתת איפיון"
           enable: "לאפשר"
           disable: "להשבית"
+        map:
+          form:
+            submit: עודכן
     shared:
+      true_value: "כן"
+      false_value: "לא"
+      booths_search:
+        button: חיפוש
+      poll_officers_search:
+        button: חיפוש
+      poll_questions_search:
+        button: חיפוש
       proposal_search:
         button: חיפוש
         placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
@@ -260,90 +503,87 @@ he:
       user_search:
         button: חיפוש
         placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
+      title: שם
+      description: תיאור
+      image: תמונה
+      proposal: הצעה
+      author: מחבר/ת
+      content: תוכן
+      delete: מחיקה
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
-        administrator_filter_all: כל מנהלי המערכת
-        valuator_filter_all: כל המעריכים
-        tags_filter_all: כל התגיות
+        administrator_filter_all: All administrators
+        valuator_filter_all: All valuators
+        tags_filter_all: All tags
         filters:
-          valuation_open: הערכה פתוחה
-          without_admin: מבלי להקצות מנהל/ת
-          managed: מנוהל
-          valuating: נמוך מהערכה
-          valuation_finished: הערכה הסתיימה
-          all: הכל
+          valuation_open: Open
+          without_admin: Without assigned admin
+          managed: Managed
+          valuating: Under valuation
+          valuation_finished: Valuation finished
+          all: כולם
         title: פרויקטים להשקעה בתקצוב השתתפותי
-        assigned_admin: הוקצה מנהל/ת מערכת
-        no_admin_assigned: לא הוקצה מנהל/ת מערכת
-        no_valuators_assigned: לא הוקצו מעריכים
+        assigned_admin: Assigned administrator
+        no_admin_assigned: No admin assigned
+        no_valuators_assigned: No valuators assigned
         summary_link: "סיכום השקעות בפרויקט"
         valuator_summary_link: "סיכום הערכה"
         feasibility:
-          feasible: "בר ביצוע (%{price})"
+          feasible: "Feasible (%{price})"
           not_feasible: "אינו בר ביצוע"
-          undefined: "אינו מוגדר"
+          undefined: "Undefined"
       show:
-        assigned_admin: הוקצה מנהל לפרוייקט
-        assigned_valuators: הוקצו מעריכים
+        assigned_admin: Assigned administrator
+        assigned_valuators: Assigned valuators
         back: חזרה
         heading: "השקעה כספית בפרוייקט %{id}"
-        edit: עריכה
-        edit_classification: עריכת הסיווג
+        edit: ערוך
+        edit_classification: Edit classification
         association_name: שם הארגון/עמותה
-        by: מאת
-        sent: נשלח
-        geozone: הקף הפרוייקט
-        dossier: מסמכים נלווים
-        edit_dossier: עריכת מסמכים נלווים
+        by: By
+        sent: Sent
+        geozone: הקף הפרויקט
+        dossier: Dossier
+        edit_dossier: Edit dossier
         tags: תגיות
-        undefined: לא מוגדר
+        undefined: Undefined
       edit:
-        assigned_valuators: מעריכים
-        submit_button: עדכון מצב
+        assigned_valuators: Valuators
+        submit_button: עודכן
         tags: תגיות
-        tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
-        undefined: אינו מוגדר
+        tags_placeholder: "Write the tags you want separated by commas (,)"
+        undefined: Undefined
       summary:
         title: סיכום פרויקטים להשקעה
         title_proposals_with_supports: סיכום פרויקטים להשקעה שזכו בתמיכה
         geozone_name: הקף הפרויקט
-        finished_and_feasible_count: הסתיים ובר ביצוע
-        finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
-        finished_count: הסתיים
-        in_evaluation_count: עדיין בשלב הערכה
-        total_count: סך הכל
-        cost_for_geozone: עלות הפרויקט
+        finished_and_feasible_count: Finished and feasible
+        finished_and_unfeasible_count: Finished and unfeasible
+        finished_count: Finished
+        in_evaluation_count: In evaluation
+        total_count: Total
+        cost_for_geozone: Cost
     geozones:
       index:
-        title: Geozone
-        create: Create geozone
-        edit: Edit
-        delete: Delete
+        edit: ערוך
+        delete: מחיקה
       geozone:
         name: Name
-        external_code: External code
-        census_code: Census code
-        coordinates: Coordinates
       edit:
         form:
-          submit_button: Save changes
-        editing: Editing geozone
-        back: Go back
+          submit_button: שמירת שינויים
+        back: חזרה
       new:
-        back: Go back
-        creating: Create district
-      delete:
-        success: Geozone successfully deleted
-        error: This geozone can't be deleted since there are elements attached to it
+        back: חזרה
     signature_sheets:
       author: מחבר/ת
       created_at: תאריך יצירה
-      name: שם
+      name: Name
       no_signature_sheets: "חסר דפים לחתימה"
       index:
         title: דפי חתימות
-        new: דפים חדשים לחתימות
+        new: New  דף חדש לחתימות
       new:
         title: New  דף חדש לחתימות
         document_numbers_note: "נא לכתוב את המספרים מופרדים באמצעות פסיקים (,)"
@@ -365,27 +605,36 @@ he:
           debates: דיונים
           proposal_votes: הצבעות להצעה
           proposals: הצעות
-          spending_proposals: הצעה להוצאות כספיות
-          unverified_users: משתמשים לא מאומתים
+          budget_investments: Investment projects
+          spending_proposals: הצעות להוצאת כספים
+          unverified_users: משתמשים שלא נבדקו
           user_level_three: רמה של שלושה משתמשים
           user_level_two: רמה של שני משתמשים
           users: סך משתמשים
-          verified_users: משתמשים מאומתים
+          verified_users: משתמשים מאושרים
           verified_users_who_didnt_vote_proposals: משתמשים מאומתים שלא הצביעו על הצעות
-          visits: כניסות/ביקורים
-          votes: סך הצבעות
-        spending_proposals_title: הצעות להוצאה כספית
-        visits_title: כניסות/ביקורים
+          visits: ביקורים
+          votes: סך הכל הצבעות
+        spending_proposals_title: הצעות להוצאת כספים
+        budgets_title: מימון השתתפותי
+        visits_title: ביקורים
         direct_messages: הודעות ישירות
-        proposal_notifications: הצעות להודעות
+        proposal_notifications: הצעת התראות
+        incomplete_verifications: כל אימותים מלאים
+        polls: סקרים
       direct_messages:
         title: הודעות ישירות
-        total: סך הכל
+        total: Total
         users_who_have_sent_message: משתמשים/ות ששלחו הודעות פרטיות
       proposal_notifications:
         title: הצעת התראות
-        total: סך הכל
+        total: Total
         proposals_with_notifications: הצעות המאפשרות הודעות
+      polls:
+        all: סקרים
+        table:
+          poll_name: הצבעה
+          question_name: שאלה
     tags:
       create: יצירת נושא
       destroy: מחיקת הנושא
@@ -395,10 +644,38 @@ he:
       name:
         placeholder: הקלד/י את שם הנושא
     users:
+      columns:
+        name: Name
+        email: דואר אלקטרוני
+        document_number: מספר תעודה מזהה
       index:
         title: משתמשיםות מוסתריםות
+      search:
+        search: חיפוש
     verifications:
       index:
         phone_not_given: לא ניתן מספר טלפון
         sms_code_not_confirmed: לא אושר קוד המסרון
         title: כל אימותים מלאים
+    site_customization:
+      content_blocks:
+        content_block:
+          name: Name
+      images:
+        index:
+          update: עודכן
+          delete: מחיקה
+          image: תמונה
+      pages:
+        page:
+          title: שם
+        cards:
+          title: שם
+          description: תיאור
+    homepage:
+      cards:
+        title: שם
+        description: תיאור
+      feeds:
+        proposals: הצעות
+        debates: דיונים

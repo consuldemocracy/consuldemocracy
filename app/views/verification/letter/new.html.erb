@@ -46,9 +46,7 @@
 
       <ul>
         <li>
-          <%= t("verification.letter.new.office",
-          office: link_to(t("verification.letter.new.offices"), setting['verification_offices_url'],
-          target: "blank")).html_safe %>
+          <%= t("verification.letter.new.office") %>
         </li>
         <li>
           <%= link_to t("verification.letter.new.send_letter"), letter_path, method: :post %>

@@ -1,11 +1,11 @@
-@charset 'utf-8';
+@charset "utf-8";
 
-@import 'settings';
-@import 'consul_settings';
-@import 'custom_settings';
-@import 'foundation';
+@import "settings";
+@import "consul_settings";
+@import "custom_settings";
+@import "foundation";
 
-@import 'motion-ui/motion-ui';
+@import "motion-ui/motion-ui";
 
 @include foundation-global-styles;
 // @include foundation-xy-grid-classes;

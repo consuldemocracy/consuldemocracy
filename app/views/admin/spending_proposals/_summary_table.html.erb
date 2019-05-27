@@ -8,7 +8,7 @@
   <th><%= t("admin.spending_proposals.summary.cost_for_geozone") %></th>
 
   <% spending_proposals.each do |geozone, price| %>
-    <tr id="<%= geozone.present? ? dom_id(geozone) : 'geozone_all_city' %>">
+    <tr id="<%= geozone.present? ? dom_id(geozone) : "geozone_all_city" %>">
       <td class="name">
         <%= geozone.present? ? geozone.name : t("geozones.none") %>
       </td>

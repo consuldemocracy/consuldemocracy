@@ -1,5 +1,5 @@
 <%= form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
-  <%= render 'shared/errors', resource: @investment %>
+  <%= render "shared/errors", resource: @investment %>
 
   <div class="row">
     <div class="small-12 medium-8 column">
@@ -19,20 +19,20 @@
 
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
-        <%= render 'images/nested_image', imageable: @investment, f: f %>
+        <%= render "images/nested_image", imageable: @investment, f: f %>
       </div>
     <% end %>
 
     <% if feature?(:allow_attached_documents) %>
       <div class="documents small-12 column">
-        <%= render 'documents/nested_documents', documentable: @investment, f: f %>
+        <%= render "documents/nested_documents", documentable: @investment, f: f %>
       </div>
     <% end %>
 
     <% if feature?(:map) %>
       <div class="small-12 column">
 
-        <%= render 'map_locations/form_fields',
+        <%= render "map_locations/form_fields",
                    form:     f,
                    map_location: @investment.map_location || MapLocation.new,
                    label:    t("budgets.investments.form.map_location"),
@@ -69,7 +69,7 @@
                         label: false,
                         placeholder: t("budgets.investments.form.tags_placeholder"),
                         aria: {describedby: "tags-list-help-text"},
-                        class: 'js-tag-list tag-autocomplete',
+                        class: "js-tag-list tag-autocomplete",
                         data: {js_url: suggest_tags_path} %>
     </div>
 
@@ -77,7 +77,7 @@
 
       <div class="small-12 column">
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
           <span class="checkbox">
             <%= t("form.accept_terms",
                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),

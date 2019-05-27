@@ -7,6 +7,7 @@ fa:
       title_placeholder: افزودن عنوان توصیفی برای سند 
       attachment_label: انتخاب سند 
       delete_button: حذف سند 
+      cancel_button: لغو
       note: "شما می توانید حداکثر   %{max_documents_allowed} اسناد از انواع مطالب و محتوا  آپلود کنید: %{accepted_content_types}تا %{max_file_size} مگابایت در هر فایل."
       add_new_document: افزودن  سند  جدید
     actions:

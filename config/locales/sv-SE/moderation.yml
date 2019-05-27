@@ -32,7 +32,7 @@ sv:
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
         headers:
-          debate: Diskutera
+          debate: Debattera
           moderate: Moderera
         hide_debates: Dölj debatter
         ignore_flags: Markera som läst
@@ -71,12 +71,12 @@ sv:
         title: Förslag
     budget_investments:
       index:
-        block_authors: Blockera förslagslämnare
+        block_authors: Blockera användare
         confirm: Är du säker?
         filter: Filtrera
         filters:
           all: Alla
-          pending_flag_review: Avvaktar
+          pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
         headers:
           moderate: Moderera
@@ -90,7 +90,7 @@ sv:
         title: Budgetförslag
     proposal_notifications:
       index:
-        block_authors: Blockera förslagslämnare
+        block_authors: Blockera användare
         confirm: Är du säker?
         filter: Filtrera
         filters:
@@ -99,17 +99,17 @@ sv:
           ignored: Markera som läst
         headers:
           moderate: Moderera
-          proposal_notification: Avisering om förslag
+          proposal_notification: Förslagsavisering
         hide_proposal_notifications: Dölj förslag
         ignore_flags: Markera som läst
         order: Sortera efter
         orders:
           created_at: Senaste
           moderated: Modererad
-        title: Förslagsaviseringar
+        title: Aviseringar om förslag
     users:
       index:
-        hidden: Blockerade
+        hidden: Blockerad
         hide: Blockera
         search: Sök
         search_placeholder: e-postadress eller namn på användare

@@ -4,7 +4,7 @@ module ScoreCalculator
     return 0 unless resource.created_at
 
     period = [
-      Setting['hot_score_period_in_days'].to_i,
+      Setting["hot_score_period_in_days"].to_i,
       ((Time.current - resource.created_at) / 1.day).ceil
     ].min
 

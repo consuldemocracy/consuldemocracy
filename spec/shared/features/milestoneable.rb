@@ -24,22 +24,22 @@ shared_examples "milestoneable" do |factory_name, path_name|
       find("#tab-milestones-label").click
 
       within("#tab-milestones") do
-        expect(first_milestone.description).to appear_before('Last milestone with a link to https://consul.dev')
+        expect(first_milestone.description).to appear_before("Last milestone with a link to https://consul.dev")
         expect(page).to have_content(Date.tomorrow)
         expect(page).to have_content(Date.yesterday)
         expect(page).not_to have_content(Date.current)
-        expect(page.find("#image_#{first_milestone.id}")['alt']).to have_content(image.title)
+        expect(page.find("#image_#{first_milestone.id}")["alt"]).to have_content(image.title)
         expect(page).to have_link(document.title)
         expect(page).to have_link("https://consul.dev")
         expect(page).to have_content(first_milestone.status.name)
       end
 
-      select('Español', from: 'locale-switcher')
+      select("Español", from: "locale-switcher")
 
       find("#tab-milestones-label").click
 
       within("#tab-milestones") do
-        expect(page).to have_content('Último hito con el link https://consul.dev')
+        expect(page).to have_content("Último hito con el link https://consul.dev")
         expect(page).to have_link("https://consul.dev")
       end
     end

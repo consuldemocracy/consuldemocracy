@@ -9,61 +9,250 @@ ar:
         many: "الأنشطة"
         other: "الأنشطة"
       budget:
-        zero: "ميزانية"
+        zero: "ميزانيات"
         one: "ميزانية"
         two: "ميزانيات"
         few: "ميزانيات"
         many: "ميزانيات"
         other: "ميزانيات"
       budget/investment:
-        zero: "إستثمار"
+        zero: "إستثمارات"
         one: "إستثمار"
         two: "إستثمارات"
         few: "إستثمارات"
         many: "إستثمارات"
         other: "إستثمارات"
+      milestone:
+        zero: "معالم"
+        one: "معلم"
+        two: "معالم"
+        few: "معالم"
+        many: "معالم"
+        other: "معالم"
+      milestone/status:
+        zero: "حالة المعلم"
+        one: "حالة المعلم"
+        two: "حالتا المعلم"
+        few: "حالات المعلم"
+        many: "حالات المعلم"
+        other: "حالات المعلم"
+      progress_bar:
+        zero: "أشرطة التقدم"
+        one: "شريط التقدم"
+        two: "أشرطة التقدم"
+        few: "أشرطة التقدم"
+        many: "أشرطة التقدم"
+        other: "أشرطة التقدم"
       comment:
-        zero: "تعليق"
-        one: "تعليق"
+        zero: "تعليقات"
+        one: "التعليق"
         two: "تعليقات"
         few: "تعليقات"
         many: "تعليقات"
         other: "تعليقات"
+      debate:
+        zero: "النقاشات"
+        one: "الحوارات"
+        two: "النقاشات"
+        few: "النقاشات"
+        many: "النقاشات"
+        other: "النقاشات"
       tag:
-        zero: "العلامات"
+        zero: "علامات"
         one: "علامة"
-        two: "علامتين"
-        few: "البعض من العلامات"
-        many: "الكثير من العلامات"
-        other: "العلامات"
+        two: "علامات"
+        few: "علامات"
+        many: "علامات"
+        other: "علامات"
       user:
-        zero: "المستخدم"
+        zero: "المستخدمين"
         one: "المستخدم"
-        two: "المستخدمان"
+        two: "المستخدمين"
         few: "المستخدمين"
         many: "المستخدمين"
         other: "المستخدمين"
       moderator:
-        zero: "المشرف"
+        zero: "المشرفون"
         one: "المشرف"
-        two: "المشرفين"
-        few: "المشرفين"
-        many: "المشرفين"
-        other: "المشرفين"
-      manager:
-        zero: "مدير"
+        two: "المشرفون"
+        few: "المشرفون"
+        many: "المشرفون"
+        other: "المشرفون"
+      administrator:
+        zero: "المدراء"
         one: "مدير"
-        two: "مديران"
+        two: "المدراء"
+        few: "المدراء"
+        many: "المدراء"
+        other: "المدراء"
+      valuator:
+        zero: "المقيمون"
+        one: "مقيّم"
+        two: "المقيمون"
+        few: "المقيمون"
+        many: "المقيمون"
+        other: "المقيمون"
+      valuator_group:
+        zero: "مجموعات تقييم"
+        one: "مجموعة تقييم"
+        two: "مجموعات تقييم"
+        few: "مجموعات تقييم"
+        many: "مجموعات تقييم"
+        other: "مجموعات تقييم"
+      manager:
+        zero: "مدراء"
+        one: "مدير"
+        two: "مدراء"
         few: "مدراء"
         many: "مدراء"
         other: "مدراء"
+      newsletter:
+        zero: "الرسائل الإخبارية"
+        one: "نشرة إخبارية"
+        two: "الرسائل الإخبارية"
+        few: "الرسائل الإخبارية"
+        many: "الرسائل الإخبارية"
+        other: "الرسائل الإخبارية"
       vote:
-        zero: "تصويت"
+        zero: "اصوات"
         one: "صوت"
-        two: "صوتان"
+        two: "اصوات"
         few: "اصوات"
         many: "اصوات"
         other: "اصوات"
+      organization:
+        zero: "المنظمات"
+        one: "منظمة"
+        two: "المنظمات"
+        few: "المنظمات"
+        many: "المنظمات"
+        other: "المنظمات"
+      poll/booth:
+        zero: "مكتب إقتراع"
+        one: "مكتب إقتراع"
+        two: "مكتبين إقتراع"
+        few: "مكاتب إقتراع"
+        many: "مكاتب إقتراع"
+        other: "مكاتب إنتخاب"
+      poll/officer:
+        zero: "ضابط"
+        one: "ضابط"
+        two: "ضابطان"
+        few: "ضباط"
+        many: "ضباط"
+        other: "ضباط"
+      proposal:
+        zero: "مقترحات المواطنين"
+        one: "مقترح المواطنين"
+        two: "مقترحا المواطنين"
+        few: "مقترحات المواطنين"
+        many: "مقترحات المواطنين"
+        other: "مقترحات المواطنين"
+      spending_proposal:
+        zero: "مشاريع استثمارية"
+        one: "مشروع استثماري"
+        two: "مشاريع استثمارية"
+        few: "مشاريع استثمارية"
+        many: "مشاريع استثمارية"
+        other: "مشاريع استثمارية"
+      site_customization/page:
+        zero: صفحات مخصصة
+        one: صفحة مخصصة
+        two: صفحات مخصصة
+        few: صفحات مخصصة
+        many: صفحات مخصصة
+        other: صفحات مخصصة
+      site_customization/image:
+        zero: صور مخصصة
+        one: صورة مخصصة
+        two: صور مخصصة
+        few: صور مخصصة
+        many: صور مخصصة
+        other: صور مخصصة
+      site_customization/content_block:
+        zero: كتل المحتوى المخصصة
+        one: كتلة محتوى مخصصة
+        two: كتل المحتوى المخصصة
+        few: كتل المحتوى المخصصة
+        many: كتل المحتوى المخصصة
+        other: كتل المحتوى المخصصة
+      legislation/process:
+        zero: "العمليات"
+        one: "العملية"
+        two: "العمليات"
+        few: "العمليات"
+        many: "العمليات"
+        other: "العمليات"
+      legislation/proposal:
+        zero: "إقتراحات"
+        one: "اقتراح"
+        two: "إقتراحات"
+        few: "إقتراحات"
+        many: "إقتراحات"
+        other: "إقتراحات"
+      legislation/draft_versions:
+        zero: "إصدارات المسودة"
+        one: "إصدار المسودّة"
+        two: "إصدارات المسودة"
+        few: "إصدارات المسودة"
+        many: "إصدارات المسودة"
+        other: "إصدارات المسودة"
+      legislation/questions:
+        zero: "الأسئلة"
+        one: "سؤال"
+        two: "الأسئلة"
+        few: "الأسئلة"
+        many: "الأسئلة"
+        other: "الأسئلة"
+      legislation/question_options:
+        zero: "خيارات السؤال"
+        one: "خيار السؤال"
+        two: "خيارات السؤال"
+        few: "خيارات السؤال"
+        many: "خيارات السؤال"
+        other: "خيارات السؤال"
+      legislation/answers:
+        zero: "الإجابة"
+        one: "إجابة"
+        two: "إجابتان"
+        few: "إجابات"
+        many: "إجابات"
+        other: "إجابات"
+      documents:
+        zero: "الوثائق"
+        one: "وثيقة"
+        two: "الوثائق"
+        few: "الوثائق"
+        many: "الوثائق"
+        other: "الوثائق"
+      images:
+        zero: "صور"
+        one: "صورة"
+        two: "صور"
+        few: "صور"
+        many: "صور"
+        other: "صور"
+      topic:
+        zero: "مواضبع"
+        one: "موضوع"
+        two: "موضوعان"
+        few: "مواضبع"
+        many: "مواضبع"
+        other: "مواضبع"
+      poll:
+        zero: "استطلاعات"
+        one: "استطلاع"
+        two: "استطلاعات"
+        few: "استطلاعات"
+        many: "استطلاعات"
+        other: "استطلاعات"
+      proposal_notification:
+        zero: "إشعارات المقترح"
+        one: "التنبيه لاقتراح"
+        two: "إشعارات المقترح"
+        few: "إشعارات المقترح"
+        many: "إشعارات المقترح"
+        other: "إشعارات المقترح"
     attributes:
       budget:
         name: "الاسم"
@@ -74,11 +263,11 @@ ar:
         description_balloting: "وصف خلال مرحلة الإقتراع"
         description_reviewing_ballots: "الوصف خلال مرحلة مراجعة الإقتراع"
         description_finished: "الوصف عند الإنتهاء من الميزانية"
-        phase: "مرحلة"
+        phase: "المرحلة"
         currency_symbol: "العملة"
       budget/investment:
         heading_id: "عنوان"
-        title: "العنوان"
+        title: "عنوان"
         description: "الوصف"
         external_url: "رابط لوثائق إضافية"
         administrator_id: "مدير"
@@ -87,28 +276,35 @@ ar:
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
       milestone:
-        status_id: "حالة الإستثمار الحالية (إختياري)"
-        title: "العنوان"
+        status_id: "الحالة الحالية (اختياري)"
+        title: "عنوان"
         description: "الوصف (إختياري ان كان هناك حالة معينة)"
         publication_date: "تاريخ النشر"
       milestone/status:
-        name: "الاسم"
+        name: "الإ سم"
         description: "الوصف (إختياري)"
+      progress_bar:
+        kind: "النوع"
+        title: "عنوان"
+        percentage: "التقدم الحالي"
+      progress_bar/kind:
+        primary: "ابتدائي"
+        secondary: "ثانوي"
       budget/heading:
         name: "اسم العنوان"
         price: "السعر"
         population: "عدد السكان"
       comment:
-        body: "تعليق"
-        user: "مستخدم"
+        body: "التعليق"
+        user: "المستخدم"
       debate:
-        author: "مؤلف"
+        author: "كاتب"
         description: "رأي"
         terms_of_service: "شروط الخدمة"
         title: "عنوان"
       proposal:
         author: "كاتب"
-        title: "العنوان"
+        title: "عنوان"
         question: "سؤال"
         description: "الوصف"
         terms_of_service: "شروط الخدمة"
@@ -127,21 +323,21 @@ ar:
         name: "اسم المنظمة"
         responsible_name: "الشخص المسؤول عن المجموعة"
       spending_proposal:
-        administrator_id: "المدير"
+        administrator_id: "مدير"
         association_name: "اسم الرابطة"
         description: "الوصف"
         external_url: "رابط لوثائق إضافية"
         geozone_id: "نطاق العملية"
-        title: "العنوان"
+        title: "عنوان"
       poll:
-        name: "الاسم"
+        name: "الإ سم"
         starts_at: "تاريخ البدء"
         ends_at: "تاريخ الإغلاق"
         geozone_restricted: "مقيد حسب المناطق"
         summary: "ملخص"
         description: "الوصف"
       poll/translation:
-        name: "الاسم"
+        name: "الإ سم"
         summary: "ملخص"
         description: "الوصف"
       poll/question:
@@ -161,7 +357,7 @@ ar:
         subtitle: عنوان فرعي
         slug: سبيكة
         status: حالة
-        title: العنوان
+        title: عنوان
         updated_at: تم التحديث في
         more_info_flag: ظهر في صفحة المساعدة
         print_content_flag: زر طباعة المحتوى
@@ -171,36 +367,41 @@ ar:
         subtitle: عنوان فرعي
         content: المحتوى
       site_customization/image:
-        name: الاسم
+        name: الإ سم
         image: صورة
       site_customization/content_block:
-        name: الاسم
+        name: الإ سم
         locale: الإعدادات المحلية
         body: الهيئة
       legislation/process:
         title: عنوان العملية
         summary: ملخص
-        description: وصف
+        description: الوصف
         additional_info: معلومات إضافية
         start_date: تاريخ البدء
         end_date: تاريخ الإنتهاء
         debate_start_date: تاريخ بدء المناقشة
         debate_end_date: تاريخ انتهاء المناقشة
+        draft_start_date: تاريخ بداية العمل على المسودة
+        draft_end_date: تاريخ إنتهاء المسودة
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
         result_publication_date: تاريخ نشر النتيجة النهائية
+        background_color: لون الخلفية
+        font_color: لون الخط
       legislation/process/translation:
         title: عنوان العملية
         summary: ملخص
-        description: وصف
+        description: الوصف
         additional_info: معلومات إضافية
+        milestones_summary: ملخص
       legislation/draft_version:
         title: عنوان الإصدار
         body: نص
         changelog: تغييرات
         status: حالة
-        final_version: نهاية الإصدار
+        final_version: الإصدار الأخير
       legislation/draft_version/translation:
         title: عنوان الإصدار
         body: نص
@@ -213,22 +414,22 @@ ar:
       legislation/annotation:
         text: التعليق
       document:
-        title: العنوان
+        title: عنوان
         attachment: مرفق
       image:
         title: عنوان
         attachment: مرفق
       poll/question/answer:
-        title: إجابة
+        title: الإجابة
         description: الوصف
       poll/question/answer/translation:
         title: الإجابة
         description: الوصف
       poll/question/answer/video:
-        title: العنوان
+        title: عنوان
         url: فيديو خارجي
       newsletter:
-        segment_recipient: المستفيدين
+        segment_recipient: المستلمين
         subject: الموضوع
         from: من
         body: محتوى البريد الإلكتروني
@@ -243,12 +444,13 @@ ar:
       widget/card:
         label: التسمية (إختياري)
         title: عنوان
-        description: وصف
+        description: الوصف
         link_text: نص الرابط
         link_url: رابط URL
+        columns: عدد الأعمدة
       widget/card/translation:
         label: التسمية (إختياري)
-        title: العنوان
+        title: عنوان
         description: الوصف
         link_text: نص الرابط
       widget/feed:
@@ -262,7 +464,7 @@ ar:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو يساوي %{count}"
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -295,16 +497,18 @@ ar:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ البدء
             debate_end_date:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المناقشة
+            draft_end_date:
+              invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء المسودّة
             allegations_end_date:
               invalid_date_range: يجب أن يكون في أو بعد تاريخ بدء الادعاءات
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو يساوي %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو تساوي %{count}"
+              less_than_or_equal_to: "العلامات يجب أن تكون أقل من أو يساوي %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -328,7 +532,7 @@ ar:
             valuation:
               cannot_comment_valuation: 'لا يمكنك التعليق على التقييم'
       messages:
-        record_invalid: "فشل التحقق من صحة: %{errors}"
+        record_invalid: "فشل التحقق: %{errors}"
         restrict_dependent_destroy:
           has_one: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
           has_many: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"

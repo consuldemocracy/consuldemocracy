@@ -1,9 +1,9 @@
 ar:
   documents:
-    title: مستندات
+    title: الوثائق
     max_documents_allowed_reached_html: لقد وصلت الى الحد الاقصى لعدد الوثائق المسموح به! <strong> يجب عليك ان تحذف واحدة قبل ان ترفع اخرى.</strong>
     form:
-      title: وثائق
+      title: الوثائق
       title_placeholder: اضف عنوان وصفي للمستند
       attachment_label: اختر وثيقة
       delete_button: ازالة مستند
@@ -20,5 +20,5 @@ ar:
       destroy_document: تدمير المستند
     errors:
       messages:
-        in_between: يجب ان تكون بين %{min} و %{max}
-        wrong_content_type: نوع المحتوى%{content_type} لا يطابق اي من المحتويات المقبولة %{accepted_content_types}
+        in_between: يجب أن تكون بين %{min} و %{max}
+        wrong_content_type: الإمتداد %{content_type} لا يتطابق مع الإمتداد المسموح بها %{accepted_content_types}

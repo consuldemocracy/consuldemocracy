@@ -1,22 +1,22 @@
 es-PE:
   account:
     show:
-      change_credentials_link: Cambiar mis datos de acceso
-      email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
-      email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
+      change_credentials_link: Alterar meus dados pessoais
+      email_on_comment_label: Notificar-me por email quando alguém comentar sobre minhas propostas ou debates
+      email_on_comment_reply_label: Notificar-me por email quando alguém responder sobre meus comentários
       erase_account_link: Darme de baja
-      finish_verification: Finalizar verificación
-      notifications: Notificaciones
-      organization_name_label: Nombre de la organización
-      organization_responsible_name_placeholder: Representante de la asociación/colectivo
-      personal: Datos personales
+      finish_verification: Completar verificação
+      notifications: Notificações
+      organization_name_label: Nome da organização
+      organization_responsible_name_placeholder: Representante de organização/coletivo
+      personal: Dados pessoais
       phone_number_label: Teléfono
-      public_activity_label: Mostrar públicamente mi lista de actividades
+      public_activity_label: Manter pública minha lista de atividades
       public_interests_label: Mostrar públicamente las etiquetas de los elementos que sigo
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
-      subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
+      subscription_to_website_newsletter_label: Receber por email informações relevantes deste site
       email_on_direct_message_label: Recibir emails con mensajes privados
       email_digest_label: Recibir resumen de notificaciones sobre propuestas
       official_position_badge_label: Mostrar etiqueta de tipo de usuario
@@ -24,16 +24,16 @@ es-PE:
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas*
-      user_permission_title: Participación
-      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
+      user_permission_support_proposal: Apoyar propuestas
+      user_permission_title: Participação
+      user_permission_verify: Para executar todas as ações %{verify}
       user_permission_verify_info: "* Sólo usuarios empadronados."
-      user_permission_votes: Participar en las votaciones finales*
+      user_permission_votes: Participar na votação final
       username_label: Nombre de usuario
-      verified_account: Cuenta verificada
+      verified_account: Conta verificada
       verify_my_account: Verificar mi cuenta
   application:
-    close: Cerrar
+    close: Fechar
     menu: Menú
   comments:
     comments_closed: Los comentarios están cerrados
@@ -42,44 +42,44 @@ es-PE:
     comment:
       admin: Administrador
       author: Autor
-      deleted: Este comentario ha sido eliminado
+      deleted: Este comentário foi apagado
       moderator: Moderador
       responses:
         zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
+        one: 1 resposta
+        other: "%{count} respostas"
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
         one: 1 voto
         other: "%{count} votos"
     form:
-      comment_as_admin: Comentar como administrador
+      comment_as_admin: Comentar como admin
       comment_as_moderator: Comentar como moderador
-      leave_comment: Deja tu comentario
+      leave_comment: Deixe seu comentário
     orders:
-      most_voted: Más votados
-      newest: Más nuevos primero
-      oldest: Más antiguos primero
+      most_voted: Mais votado
+      newest: Mais recente primeiro
+      oldest: Mais antigo primeiro
       most_commented: Más comentados
-    select_order: Ordenar por
+    select_order: Organizado por
     show:
-      return_to_commentable: 'Volver a '
+      return_to_commentable: 'Voltar para'
   comments_helper:
-    comment_button: Publicar comentario
-    comment_link: Comentar
+    comment_button: Publicar comentário
+    comment_link: Comentario
     comments_title: Comentarios
-    reply_button: Publicar respuesta
+    reply_button: Publicar resposta
     reply_link: Responder
   debates:
     create:
       form:
-        submit_button: Empieza un debate
+        submit_button: Iniciar um debate
     debate:
       comments:
         zero: Sin comentarios
-        one: 1 Comentario
-        other: "%{count} Comentarios"
+        one: 1 comentário
+        other: "%{count} comentarios"
       votes:
         zero: Sin votos
         one: 1 voto
@@ -90,22 +90,22 @@ es-PE:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_text: Texto inicial del debate
-      debate_title: Título del debate
-      tags_instructions: Etiqueta este debate.
-      tags_label: Temas
-      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
+      debate_text: Texto inicial do debate
+      debate_title: Título do debate
+      tags_instructions: Marcar este debate.
+      tags_label: Tópicos
+      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_debates: Destacar
       filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
+        one: " com tópico '%{topic}'"
+        other: " com tópico '%{topic}'"
       orders:
-        confidence_score: Mejor valorados
-        created_at: Nuevos
-        hot_score: Más activos hoy
-        most_commented: Más comentados
-        relevance: Más relevantes
+        confidence_score: Mejor valoradas
+        created_at: mais recente
+        hot_score: mais ativa
+        most_commented: mais comentada
+        relevance: relevância
         recommendations: Recomendaciones
       recommendations:
         without_results: No existen debates relacionados con tus intereses
@@ -115,9 +115,9 @@ es-PE:
         placeholder: Buscar debates...
         title: Buscar
       search_results_html:
-        one: " que contiene <strong>'%{search_term}'</strong>"
+        one: " que contienen <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
+      select_order: Ordenado por
       start_debate: Empieza un debate
       section_header:
         icon_alt: Icono de Debates
@@ -130,15 +130,15 @@ es-PE:
     new:
       form:
         submit_button: Empieza un debate
-      info: Si lo que quieres es hacer una propuesta, esta es la sección incorrecta, entra en %{info_link}.
-      info_link: crear nueva propuesta
-      more_info: Más información
-      recommendation_four: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
-      recommendation_one: No escribas el título del debate o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
-      recommendation_three: Las críticas despiadadas son muy bienvenidas. Este es un espacio de pensamiento. Pero te recomendamos conservar la elegancia y la inteligencia. El mundo es mejor con ellas presentes.
-      recommendation_two: Cualquier debate o comentario que implique una acción ilegal será eliminado, también los que tengan la intención de sabotear los espacios de debate, todo lo demás está permitido.
-      recommendations_title: Recomendaciones para crear un debate
-      start_new: Empezar un debate
+      info: Se quiser elaborar uma proposta, esta seção é inadequada, entre %{info_link}.
+      info_link: criar nova proposta
+      more_info: Mais informações
+      recommendation_four: Aproveite este espaço e as vozes que o preenchem. Ele pertence a você também.
+      recommendation_one: Não use letras maiúsculas para o título do debate ou para sentenças completas. Na internet, isto é considerado gritaria. Ninguém gosta de ser tratado com gritos.
+      recommendation_three: Criticismo impiedoso é bem-vindo. Este é um espaço para reflexão. Mas recomendamos que você mantenha sua inteligência e elegância. O mundo é um lugar melhor com estas virtudes em prática.
+      recommendation_two: Todo debate ou comentário sugerindo ações ilegais serão apagados, bem como aqueles tentando sabotar os espaços de debate. Tudo mais será permitido.
+      recommendations_title: Recomendações para criar um debate
+      start_new: Empieza un debate
     show:
       author_deleted: Usuario eliminado
       comments:
@@ -146,8 +146,8 @@ es-PE:
         one: 1 Comentario
         other: "%{count} Comentarios"
       comments_title: Comentarios
-      edit_debate_link: Editar debate
-      flag: Este debate ha sido marcado como inapropiado por varios usuarios.
+      edit_debate_link: Editar propuesta
+      flag: Este debate foi marcado como inapropriado por vários usuários.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
       author: Autor
@@ -159,42 +159,43 @@ es-PE:
       user_not_found: Usuario no encontrado
       invalid_date_range: "El rango de fechas no es válido"
   form:
-    accept_terms: Acepto la %{policy} y las %{conditions}
+    accept_terms: Eu concordo com a %{policy} e as %{conditions}
     accept_terms_title: Acepto la Política de privacidad y las Condiciones de uso
     conditions: Condiciones de uso
-    debate: el debate
+    debate: Debate previo
     direct_message: el mensaje privado
-    errors: errores
+    error: erro
+    errors: erros
     not_saved_html: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
-    policy: Política de privacidad
-    proposal: la propuesta
+    policy: Política de Privacidad
+    proposal: Propuesta
     proposal_notification: "la notificación"
-    spending_proposal: la propuesta de gasto
-    budget/investment: la propuesta de inversión
+    spending_proposal: Propuesta de inversión
+    budget/investment: Proyecto de inversión
     budget/heading: la partida presupuestaria
-    poll/shift: el turno
-    poll/question/answer: la respuesta
-    user: la cuenta
+    poll/shift: Turno
+    poll/question/answer: Respuesta
+    user: Conta
     verification/sms: el teléfono
     signature_sheet: la hoja de firmas
-    document: el documento
+    document: Documento
     topic: Tema
     image: Imagen
   geozones:
-    none: Toda la ciudad
+    none: Toda a cidade
     all: Todos los ámbitos de actuación
   layouts:
     application:
-      ie: Hemos detectado que estás navegando desde Internet Explorer. Para una mejor experiencia te recomendamos utilizar %{firefox} o %{chrome}.
-      ie_title: Esta web no está optimizada para tu navegador
+      ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
+      ie_title: Este website não está otimizado para o seu navegador
     footer:
       accessibility: Accesibilidad
       conditions: Condiciones de uso
       consul: aplicación CONSUL
       contact_us: Para asistencia técnica entra en
-      description: Este portal usa la %{consul} que es %{open_source}.
-      open_source: software de código abierto
-      participation_text: Decide cómo debe ser la ciudad que quieres.
+      description: Este portal usa o %{consul} que é %{open_source}. De Madrid para o mundo.
+      open_source: programa de código aberto
+      participation_text: Decida como adequar a Madrid que você deseja viver.
       participation_title: Participación
       privacy: Política de privacidad
     header:
@@ -204,49 +205,61 @@ es-PE:
       locale: 'Idioma:'
       logo: Logo de CONSUL
       management: Gestión
-      moderation: Moderar
+      moderation: Moderación
       valuation: Evaluación
       officing: Presidentes de mesa
+      help: Ayuda
       my_account_link: Mi cuenta
-      my_activity_link: Mi actividad
-      open: abierto
-      open_gov: Gobierno %{open}
+      my_activity_link: Minha atividade
+      open: aberto
+      open_gov: Governo aberto
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
       spending_proposals: Propuestas de inversión
+      notification_item:
+        new_notifications:
+          one: Tienes una nueva notificación
+          other: Tienes %{count} notificaciones nuevas
+        notifications: Notificaciones
+        no_notifications: "No tienes notificaciones nuevas"
     admin:
       watch_form_message: 'Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?'
-  legacy_legislation:
-    help:
-      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_sign_in: iniciar sesión
-      text_sign_up: registrarte
-      title: '¿Cómo puedo comentar este documento?'
   notifications:
     index:
-      empty_notifications: No tienes notificaciones nuevas.
-      mark_all_as_read: Marcar todas como leídas
+      empty_notifications: Você não possui novas notificações
+      mark_all_as_read: Marcar todos como lidos
       title: Notificaciones
+    notification:
+      action:
+        comments_on:
+          one: Hay un nuevo comentario en
+          other: Hay %{count} comentarios nuevos en
+        proposal_notification:
+          one: Hay una nueva notificación en
+          other: Hay %{count} nuevas notificaciones en
+        replies_to:
+          one: Hay una respuesta nueva a tu comentario en
+          other: Hay %{count} nuevas respuestas a tu comentario en
+      notifiable_hidden: Este elemento ya no está disponible.
   map:
     title: "Distritos"
-    proposal_for_district: "Crea una propuesta para tu distrito"
+    proposal_for_district: "Inicie uma proposta para seu distrito"
     select_district: Ámbito de actuación
-    start_proposal: Crea una propuesta
+    start_proposal: Criar proposta
   omniauth:
     facebook:
-      sign_in: Entra con Facebook
-      sign_up: Regístrate con Facebook
+      sign_in: Iniciar sessão com o Facebook
+      sign_up: Inscrever-se com o Facebook
     finish_signup:
-      title: "Detalles adicionales de tu cuenta"
+      title: "Detalhes adicionais"
       username_warning: "Debido a que hemos cambiado la forma en la que nos conectamos con redes sociales y es posible que tu nombre de usuario aparezca como 'ya en uso', incluso si antes podías acceder con él. Si es tu caso, por favor elige un nombre de usuario distinto."
     google_oauth2:
-      sign_in: Entra con Google
-      sign_up: Regístrate con Google
+      sign_in: Iniciar sessão com o Google
+      sign_up: Inscrever-se com o Google
     twitter:
-      sign_in: Entra con Twitter
-      sign_up: Regístrate con Twitter
+      sign_in: Iniciar sessão com o Twitter
+      sign_up: Inscrever-se com o Twitter
     info_sign_in: "Entra con:"
     info_sign_up: "Regístrate con:"
     or_fill: "O rellena el siguiente formulario:"
@@ -255,10 +268,10 @@ es-PE:
       form:
         submit_button: Crear propuesta
     edit:
-      editing: Editar propuesta
+      editing: Editar proposta
       form:
         submit_button: Guardar cambios
-      show_link: Ver propuesta
+      show_link: Visualizar proposta
     retire_form:
       title: Retirar propuesta
       warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
@@ -268,41 +281,41 @@ es-PE:
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
     retire_options:
-      duplicated: Duplicada
+      duplicated: Duplicadas
       started: En ejecución
       unfeasible: Inviable
-      done: Realizada
-      other: Otra
+      done: Realizadas
+      other: Otras
     form:
       geozone: Ámbito de actuación
       proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta de la propuesta
-      proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
-      proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      proposal_summary: Resumen de la propuesta
-      proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: Texto desarrollado de la propuesta
-      proposal_title: Título de la propuesta
-      proposal_video_url: Enlace a vídeo externo
-      proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
+      proposal_question: Questão proposta
+      proposal_responsible_name: Nome completo da pessoa que está submetendo a proposta
+      proposal_responsible_name_note: "(indivudualmente ou como representante de um\ncoletivo; não será mostrado publicamente)"
+      proposal_summary: Sumário da proposta
+      proposal_summary_note: "(máximo de 200 caracteres)"
+      proposal_text: Texto da proposta
+      proposal_title: Título
+      proposal_video_url: Link para vídeo externo
+      proposal_video_url_note: Você pode adicionar um link para o Youtube ou Vimeo
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
-      tags_label: Temas
-      tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      tags_label: Etiquetas
+      tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
       map_location: "Ubicación en el mapa"
       map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
       map_remove_marker: "Eliminar el marcador"
       map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
-      featured_proposals: Destacadas
+      featured_proposals: Destacar
       filter_topic:
         one: " con el tema '%{topic}'"
         other: " con el tema '%{topic}'"
       orders:
-        confidence_score: Más apoyadas
-        created_at: Nuevas
-        hot_score: Más activas hoy
-        most_commented: Más comentadas
+        confidence_score: Mejor valorados
+        created_at: Nuevos
+        hot_score: Más activos hoy
+        most_commented: Más comentados
         relevance: Más relevantes
         archival_date: Archivadas
         recommendations: Recomendaciones
@@ -313,22 +326,22 @@ es-PE:
       retired_proposals_link: "Propuestas retiradas por sus autores"
       retired_links:
         all: Todas
-        duplicated: Duplicadas
+        duplicated: Duplicada
         started: En ejecución
-        unfeasible: Inviables
-        done: Realizadas
-        other: Otras
+        unfeasible: Inviable
+        done: Realizada
+        other: Otra
       search_form:
         button: Buscar
-        placeholder: Buscar propuestas...
+        placeholder: Buscar propostas...
         title: Buscar
       search_results_html:
-        one: " que contiene <strong>'%{search_term}'</strong>"
+        one: " que contienen <strong>'%{search_term}'</strong>"
         other: " que contienen <strong>'%{search_term}'</strong>"
-      select_order: Ordenar por
-      select_order_long: 'Estas viendo las propuestas'
+      select_order: Ordenado por
+      select_order_long: 'Você está vendo propostas de acordo para:'
       start_proposal: Crea una propuesta
-      title: Propuestas ciudadanas
+      title: Propuestas
       top: Top semanal
       top_link_proposals: Propuestas más apoyadas por categoría
       section_header:
@@ -340,12 +353,12 @@ es-PE:
     new:
       form:
         submit_button: Crear propuesta
-      more_info: '¿Cómo funcionan las propuestas ciudadanas?'
-      recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
+      more_info: Como funciona as propostas cidadãs?
+      recommendation_one: Não use letras maiúsculas para o título de sua proposta ou em sentenças completas. Na internet, isto é considerado gritaria. E ninguém gosta de ouvir em gritos.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
-      recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
-      recommendations_title: Recomendaciones para crear una propuesta
-      start_new: Crear una propuesta
+      recommendation_two: Qualquer proposta ou comentário sugerindo uma ação ilegal será apagado, assim como aqueles intencionados em sabotar os espaços de debate. Tudo mais será permitido.
+      recommendations_title: Recomendações para criação de uma proposta
+      start_new: Criar nova proposta
     notice:
       retired: Propuesta retirada
     proposal:
@@ -356,13 +369,13 @@ es-PE:
         view_proposal: Ahora no, ir a mi propuesta
       improve_info: "Mejora tu campaña y consigue más apoyos"
       improve_info_link: "Ver más información"
-      already_supported: '¡Ya has apoyado esta propuesta, compártela!'
+      already_supported: Você já apoiou esta proposta. Compartilhe!
       comments:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
       support: Apoyar
-      support_title: Apoyar esta propuesta
+      support_title: Apoiar esta proposta
       supports:
         zero: Sin apoyos
         one: 1 apoyo
@@ -371,20 +384,21 @@ es-PE:
         zero: Sin votos
         one: 1 voto
         other: "%{count} votos"
-      supports_necessary: "%{number} apoyos necesarios"
+      supports_necessary: "%{number} apoios necessários"
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
     show:
       author_deleted: Usuario eliminado
-      code: 'Código de la propuesta:'
+      code: 'Código da proposta:'
       comments:
         zero: Sin comentarios
         one: 1 Comentario
         other: "%{count} Comentarios"
       comments_tab: Comentarios
       edit_proposal_link: Editar propuesta
-      flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
+      flag: Esta proposta já foi marcada como inadequada por vários usuários.
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
+      milestones_tab: Seguimiento
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
       retired_warning_link_to_explanation: Revisa su explicación antes de apoyarla.
       retired: Propuesta retirada por el autor
@@ -393,7 +407,7 @@ es-PE:
       no_notifications: "Esta propuesta no tiene notificaciones."
       embed_video_title: "Vídeo en %{proposal}"
       title_external_url: "Documentación adicional"
-      title_video_url: "Vídeo externo"
+      title_video_url: "Video externo"
       author: Autor
     update:
       form:
@@ -405,12 +419,10 @@ es-PE:
     final_date: "Recuento final/Resultados"
     index:
       filters:
-        current: "Abiertas"
-        incoming: "Próximamente"
+        current: "Abierto"
         expired: "Terminadas"
       title: "Votaciones"
       participate_button: "Participar en esta votación"
-      participate_button_incoming: "Más información"
       participate_button_expired: "Votación terminada"
       no_geozone_restricted: "Toda la ciudad"
       geozone_restricted: "Distritos"
@@ -426,22 +438,21 @@ es-PE:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
       back: Volver a votaciones
-      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
+      cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar en el debate."
       comments_tab: Comentarios
       login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       signin: iniciar sesión
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
-      cant_answer_incoming: "Esta votación todavía no ha comenzado."
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
       more_info_title: "Más información"
-      documents: Documentación
+      documents: Documentos
       zoom_plus: Ampliar imagen
       read_more: "Leer más sobre %{answer}"
       read_less: "Leer menos sobre %{answer}"
-      videos: "Vídeo externo"
+      videos: "Video externo"
       info_menu: "Información"
       stats_menu: "Estadísticas de participación"
       results_menu: "Resultados de la votación"
@@ -455,10 +466,10 @@ es-PE:
         white: "En blanco"
         null_votes: "Nulos"
       results:
-        title: "Preguntas"
+        title: "Preguntas ciudadanas"
         most_voted_answer: "Respuesta más votada: "
   poll_questions:
-    create_question: "Crear pregunta"
+    create_question: "Crear pregunta para votación"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
@@ -474,36 +485,36 @@ es-PE:
     show:
       back: "Volver a mi actividad"
   shared:
-    edit: 'Editar'
+    edit: 'Editar propuesta'
     save: 'Guardar'
     delete: Borrar
     "yes": "Si"
     search_results: "Resultados de la búsqueda"
     advanced_search:
-      author_type: 'Por categoría de autor'
-      author_type_blank: 'Elige una categoría'
-      date: 'Por fecha'
+      author_type: 'Por categoria de autor'
+      author_type_blank: 'Selecione um categoria'
+      date: 'Por data'
       date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Elige una fecha'
+      date_range_blank: 'Escolha uma data'
       date_1: 'Últimas 24 horas'
       date_2: 'Última semana'
-      date_3: 'Último mes'
-      date_4: 'Último año'
-      date_5: 'Personalizada'
-      from: 'Desde'
-      general: 'Con el texto'
-      general_placeholder: 'Escribe el texto'
+      date_3: 'Último mês'
+      date_4: 'Último ano'
+      date_5: 'Personalizado'
+      from: 'De'
+      general: 'Com o texto'
+      general_placeholder: 'Escrever o texto'
       search: 'Filtrar'
-      title: 'Búsqueda avanzada'
-      to: 'Hasta'
+      title: 'Busca avançada'
+      to: 'Para'
     author_info:
       author_deleted: Usuario eliminado
     back: Volver
     check: Seleccionar
-    check_all: Todos
-    check_none: Ninguno
-    collective: Colectivo
-    flag: Denunciar como inapropiado
+    check_all: Todas
+    check_none: Nenhum
+    collective: Coletivo
+    flag: Marcar como inapropriado
     follow: "Seguir"
     following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
@@ -529,7 +540,7 @@ es-PE:
           one: "Existe un debate con el término '%{query}', puedes participar en él en vez de abrir uno nuevo."
           other: "Existen debates con el término '%{query}', puedes participar en ellos en vez de abrir uno nuevo."
         message: "Estás viendo %{limit} de %{count} debates que contienen el término '%{query}'"
-        see_all: "Ver todos"
+        see_all: "Ver todas"
       budget_investment:
         found:
           one: "Existe una propuesta de inversión con el término '%{query}', puedes participar en ella en vez de abrir una nueva."
@@ -541,18 +552,18 @@ es-PE:
           one: "Existe una propuesta con el término '%{query}', puedes participar en ella en vez de abrir uno nuevo."
           other: "Existen propuestas con el término '%{query}', puedes participar en ellas en vez de abrir uno nuevo."
         message: "Estás viendo %{limit} de %{count} propuestas que contienen el término '%{query}'"
-        see_all: "Ver todas"
+        see_all: "Ver todos"
     tags_cloud:
-      tags: Tendencias
+      tags: Tendências
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
     target_blank_html: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
-    unflag: Deshacer denuncia
+    unflag: Desmarcar
     unfollow_entity: "Dejar de seguir %{entity}"
     outline:
-      budget: Presupuestos participativos
+      budget: Presupuesto participativo
       searcher: Buscador
     go_to_page: "Ir a la página de "
     share: Compartir
@@ -571,13 +582,13 @@ es-PE:
     form:
       association_name_label: 'Si propones en nombre de una asociación o colectivo añade el nombre aquí'
       association_name: 'Nombre de la asociación'
-      description: Descripción detallada
+      description: En qué consiste
       external_url: Enlace a documentación adicional
       geozone: Ámbito de actuación
       submit_buttons:
-        create: Crear
+        create: Criar
         new: Crear
-      title: Título de la propuesta de gasto
+      title: Título da proposta de despesa
     index:
       title: Presupuestos participativos
       unfeasible: Propuestas de inversión no viables
@@ -587,20 +598,20 @@ es-PE:
         placeholder: Propuestas de inversión...
         title: Buscar
       search_results:
-        one: " que contiene '%{search_term}'"
+        one: " que contienen '%{search_term}'"
         other: " que contienen '%{search_term}'"
       sidebar:
-        geozones: Ámbitos de actuación
+        geozones: Ámbito de actuación
         feasibility: Viabilidad
-        unfeasible: No viables
+        unfeasible: Inviable
       start_spending_proposal: Crea una propuesta de inversión
     new:
-      more_info: '¿Cómo funcionan los presupuestos participativos?'
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
-      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
+      more_info: Como funciona o orçamento participativo?
+      recommendation_one: É mandatório que a proposta faça referência a uma ação orçamentária.
+      recommendation_three: Tente descer aos detalhes quando descrever sua proposta de despesa de maneira a ajudar a equipe de revisão entender seu argumento.
+      recommendation_two: Qualquer proposta ou comentário sugerindo ações ilegais serão apagadas.
+      recommendations_title: Como criar uma proposta de despesa
+      start_new: Crear propuesta de inversión
     show:
       author_deleted: Usuario eliminado
       code: 'Código de la propuesta:'
@@ -608,9 +619,9 @@ es-PE:
     wrong_price_format: Solo puede incluir caracteres numéricos
     spending_proposal:
       spending_proposal: Propuesta de inversión
-      already_supported: Ya has apoyado este proyecto. ¡Compártelo!
+      already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
       support: Apoyar
-      support_title: Apoyar este proyecto
+      support_title: Apoyar esta propuesta
       supports:
         zero: Sin apoyos
         one: 1 apoyo
@@ -618,7 +629,7 @@ es-PE:
   stats:
     index:
       visits: Visitas
-      proposals: Propuestas ciudadanas
+      proposals: Propuestas
       comments: Comentarios
       proposal_votes: Votos en propuestas
       debate_votes: Votos en debates
@@ -627,9 +638,9 @@ es-PE:
       verified_users: Usuarios verificados
       unverified_users: Usuarios sin verificar
   unauthorized:
-    default: No tienes permiso para acceder a esta página.
+    default: Você não possui permissão de acesso a esta página.
     manage:
-      all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
+      all: "Você não possui permissão para executar esta ação '%{action}' em %{subject}."
   users:
     direct_messages:
       new:
@@ -640,15 +651,15 @@ es-PE:
         title_label: Título
         verified_only: Para enviar un mensaje privado %{verify_account}
         verify_account: verifica tu cuenta
-        authenticate: Necesitas %{signin} o %{signup}.
+        authenticate: Necesitas %{signin} o %{signup} para continuar.
         signin: iniciar sesión
         signup: registrarte
       show:
         receiver: Mensaje enviado a %{receiver}
     show:
-      deleted: Eliminado
-      deleted_debate: Este debate ha sido eliminado
-      deleted_proposal: Esta propuesta ha sido eliminada
+      deleted: Apagado
+      deleted_debate: Este debate foi apagado
+      deleted_proposal: Esta proposta foi apagado
       deleted_budget_investment: Esta propuesta de inversión ha sido eliminada
       proposals: Propuestas
       budget_investments: Proyectos de presupuestos participativos
@@ -656,18 +667,18 @@ es-PE:
       actions: Acciones
       filters:
         comments:
-          one: 1 Comentario
-          other: "%{count} Comentarios"
+          one: 1 Comentário
+          other: "%{count} Comentários"
         proposals:
-          one: 1 Propuesta
-          other: "%{count} Propuestas"
+          one: 1 Proposta
+          other: "%{count} Propostas"
         budget_investments:
           one: 1 Proyecto de presupuestos participativos
           other: "%{count} Proyectos de presupuestos participativos"
         follows:
           one: 1 Siguiendo
           other: "%{count} Siguiendo"
-      no_activity: Usuario sin actividad pública
+      no_activity: Usuário não possui atividade pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades.
       send_private_message: "Enviar un mensaje privado"
@@ -677,30 +688,36 @@ es-PE:
       retired: "Propuesta retirada"
       see: "Ver propuesta"
   votes:
-    agree: Estoy de acuerdo
-    anonymous: Demasiados votos anónimos, para poder votar %{verify_account}.
+    agree: Eu concordo
+    anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
-    disagree: No estoy de acuerdo
-    organizations: Las organizaciones no pueden votar
+    disagree: Eu discordo
+    organizations: Las organizaciones no pueden votar.
     signin: iniciar sesión
     signup: registrarte
     supports: Apoyos
-    unauthenticated: Necesitas %{signin} o %{signup} para continuar.
-    verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
+    unauthenticated: Necesitas %{signin} o %{signup}.
+    verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
     verify_account: verifica tu cuenta
     spending_proposals:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
+      not_logged_in: Necesitas %{signin} o %{signup}.
+      not_verified: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
+      organization: Las organizaciones no pueden votar
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+      not_logged_in: Necesitas %{signin} o %{signup}.
       not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
+      organization: Las organizaciones no pueden votar
       unfeasible: No se pueden votar propuestas inviables.
       not_voting_allowed: El periodo de votación está cerrado.
   welcome:
+    feed:
+      most_active:
+        processes: "Procesos activos"
+      process_label: Proceso
+    cards:
+      title: Destacar
     recommended:
       title: Recomendaciones que te pueden interesar
       debates:
@@ -717,14 +734,14 @@ es-PE:
       question: '¿Tienes ya una cuenta en %{org_name}?'
       title: Verificación de cuenta
     welcome:
-      go_to_index: Ahora no, ver propuestas
-      title: Empieza a participar
+      go_to_index: Veja propostas e debates
+      title: Colabora en la elaboración de la normativa sobre
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
-      user_permission_support_proposal: Apoyar propuestas*
-      user_permission_verify: Para poder realizar todas las acciones, verifica tu cuenta.
-      user_permission_verify_info: "* Sólo usuarios empadronados."
+      user_permission_support_proposal: Apoyar propuestas
+      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
+      user_permission_verify_info: "* Somente usuários no Censo de Madrid"
       user_permission_verify_my_account: Verificar mi cuenta
       user_permission_votes: Participar en las votaciones finales*
   invisible_captcha:
@@ -735,11 +752,22 @@ es-PE:
     add: "Añadir contenido relacionado"
     label: "Enlace a contenido relacionado"
     help: "Puedes introducir cualquier enlace de %{models} que esté dentro de %{org}."
-    submit: "Añadir"
+    submit: "Añadir como Presidente de mesa"
     error: "Enlace no válido. Recuerda que debe empezar por %{url}."
     success: "Has añadido un nuevo contenido relacionado"
     is_related: "¿Es contenido relacionado?"
-    score_positive: "Sí"
+    score_positive: "Si"
     content_title:
-      proposal: "Propuesta"
+      proposal: "la propuesta"
+      debate: "el debate"
       budget_investment: "Propuesta de inversión"
+  admin/widget:
+    header:
+      title: Administración
+  annotator:
+    help:
+      alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
+      text_sign_in: iniciar sesión
+      text_sign_up: registrarte
+      title: '¿Cómo puedo comentar este documento?'

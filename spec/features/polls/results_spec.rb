@@ -1,36 +1,36 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Poll Results' do
-  scenario 'List each Poll question', :js do
+feature "Poll Results" do
+  scenario "List each Poll question", :js do
     user1 = create(:user, :level_two)
     user2 = create(:user, :level_two)
     user3 = create(:user, :level_two)
 
     poll = create(:poll, results_enabled: true)
     question1 = create(:poll_question, poll: poll)
-    answer1 = create(:poll_question_answer, question: question1, title: 'Yes')
-    answer2 = create(:poll_question_answer, question: question1, title: 'No')
+    answer1 = create(:poll_question_answer, question: question1, title: "Yes")
+    answer2 = create(:poll_question_answer, question: question1, title: "No")
 
     question2 = create(:poll_question, poll: poll)
-    answer3 = create(:poll_question_answer, question: question2, title: 'Blue')
-    answer4 = create(:poll_question_answer, question: question2, title: 'Green')
-    answer5 = create(:poll_question_answer, question: question2, title: 'Yellow')
+    answer3 = create(:poll_question_answer, question: question2, title: "Blue")
+    answer4 = create(:poll_question_answer, question: question2, title: "Green")
+    answer5 = create(:poll_question_answer, question: question2, title: "Yellow")
 
     login_as user1
-    vote_for_poll_via_web(poll, question1, 'Yes')
-    vote_for_poll_via_web(poll, question2, 'Blue')
+    vote_for_poll_via_web(poll, question1, "Yes")
+    vote_for_poll_via_web(poll, question2, "Blue")
     expect(Poll::Voter.count).to eq(1)
     logout
 
     login_as user2
-    vote_for_poll_via_web(poll, question1, 'Yes')
-    vote_for_poll_via_web(poll, question2, 'Green')
+    vote_for_poll_via_web(poll, question1, "Yes")
+    vote_for_poll_via_web(poll, question2, "Green")
     expect(Poll::Voter.count).to eq(2)
     logout
 
     login_as user3
-    vote_for_poll_via_web(poll, question1, 'No')
-    vote_for_poll_via_web(poll, question2, 'Yellow')
+    vote_for_poll_via_web(poll, question1, "No")
+    vote_for_poll_via_web(poll, question2, "Yellow")
     expect(Poll::Voter.count).to eq(3)
     logout
 

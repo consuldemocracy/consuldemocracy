@@ -32,7 +32,7 @@ ru:
         ballots_total: "Всего бюллетеней"
         submit: "Сохранить"
         results_list: "Ваши результаты"
-        see_results: "Посмотреть результаты"
+        see_results: "Просмотр результатов"
       index:
         no_results: "Нет результатов"
         results: Результаты
@@ -54,8 +54,8 @@ ru:
         no_assignments: "У вас на сегодня нет смен в удаленном офисе"
     voters:
       new:
-        title: Голосования
-        table_poll: Голосование
+        title: Опросы
+        table_poll: Опрос
         table_status: Статус голосований
         table_actions: Действия
         not_to_vote: Лицо решило не голосовать в данный момент

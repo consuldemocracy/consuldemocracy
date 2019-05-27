@@ -2,7 +2,7 @@ zh-CN:
   devise_views:
     confirmations:
       new:
-        email_label: 电子邮件
+        email_label: 电子邮件地址
         submit: 重新发送说明
         title: 重新发送确认说明
       show:
@@ -24,7 +24,7 @@ zh-CN:
         ignore_text: 如果您没有请求更改密码，您可以忽略此电子邮件。
         info_text: 除非您访问此链接并编辑它，您的密码将不会更改。
         text: '我们已经收到更改密码的请求。您可以通过以下链接来执行此操作：'
-        title: 更改密码
+        title: 更改您的密码
       unlock_instructions:
         hello: 您好
         info_text: 由于多次登录尝试失败，您的账号已被禁用。
@@ -39,7 +39,7 @@ zh-CN:
     organizations:
       registrations:
         new:
-          email_label: 电子邮件
+          email_label: 电子邮件地址
           organization_name_label: 组织名称
           password_confirmation_label: 确认密码
           password_label: 密码
@@ -50,19 +50,19 @@ zh-CN:
           title: 注册为组织或集体
         success:
           back_to_index: 我明白；回到主页
-          instructions_1_html: "<b>我们将尽快联系您</b>以核实您确实是代表此集体。"
-          instructions_2_html: 在<b>审核您的电子邮件</b>的同时，我们已经向您发送<b>一个链接来确认您的账号</b>。
+          instructions_1_html: "<strong>我们将尽快联系您</strong>以核实您确实是代表此集体。"
+          instructions_2_html: 在<strong>审核您的电子邮件</strong>的同时，我们已经向您发送一个<strong>链接来确认您的账户</strong>。
           instructions_3_html: 一旦确认，您将以未经核实的集体开始参与。
-          thank_you_html: 感谢您在网站上注册您的集体。它现在<b>等待核实中</b>。
+          thank_you_html: 感谢您在网站上注册您的集体。它现在<strong>等待核实中</strong>。
           title: 组织/集体注册
     passwords:
       edit:
         change_submit: 更改我的密码
         password_confirmation_label: 确认新密码
         password_label: 新密码
-        title: 更改您的密码
+        title: 更改密码
       new:
-        email_label: 电子邮件
+        email_label: 电子邮件地址
         send_submit: 发送说明
         title: 忘记密码？
     sessions:
@@ -83,7 +83,7 @@ zh-CN:
         signup_link: 注册
     unlocks:
       new:
-        email_label: 电子邮件
+        email_label: 电子邮件地址
         submit: 重新发送解锁说明
         title: 重新发送解锁说明
     users:
@@ -97,7 +97,7 @@ zh-CN:
         edit:
           current_password_label: 当前密码
           edit: 编辑
-          email_label: 电子邮件
+          email_label: 电子邮件地址
           leave_blank: 如果您不希望修改请留空
           need_current: 我们需要您的当前密码来确认更改
           password_confirmation_label: 确认新密码
@@ -106,7 +106,7 @@ zh-CN:
           waiting_for: '等待确认：'
         new:
           cancel: 取消登录
-          email_label: 电子邮件
+          email_label: 电子邮件地址
           organization_signup: 您代表一个组织或集体吗？%{signup_link}
           organization_signup_link: 在此注册
           password_confirmation_label: 确认密码
@@ -126,4 +126,4 @@ zh-CN:
           instructions_1_html: 请<b>检查您的电子邮件</b>- 我们已经发送一个<b>链接来确认您的账号</b>。
           instructions_2_html: 一旦确认，您可以开始参与。
           thank_you_html: 感谢您在此网站注册。现在您必须<b>确认您的电子邮件地址</b>。
-          title: 修改您的电子邮件
+          title: 确认您的电子邮件地址

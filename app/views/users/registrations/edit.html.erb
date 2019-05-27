@@ -3,7 +3,7 @@
 <h2><%= t("devise_views.users.registrations.edit.edit") %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render "shared/errors", resource: resource %>
   <div class="row">
     <div class="small-12 column">
       <%= f.label :email, t("devise_views.users.registrations.edit.email_label") %>

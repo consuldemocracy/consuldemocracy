@@ -13,10 +13,10 @@ sv:
         cancel: Avbryt
         publish_comment: Publicera kommentar
       form:
-        phase_not_open: Fasen är inte öppen
+        phase_not_open: Denna fas är inte öppen
         login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
         signin: Logga in
-        signup: Registrera sig
+        signup: Registrera dig
       index:
         title: Kommentarer
         comments_about: Kommentarer om
@@ -52,6 +52,8 @@ sv:
         more_info: Mer information
       proposals:
         empty_proposals: Det finns inga förslag
+        filters:
+          winners: Vald
       debate:
         empty_questions: Det finns inga frågor
         participate: Delta i diskussionen
@@ -59,10 +61,8 @@ sv:
         filter: Filtrera
         filters:
           open: Pågående processer
-          next: Kommande
           past: Avslutade
         no_open_processes: Det finns inga pågående processer
-        no_next_processes: Det finns inga planerade processer
         no_past_processes: Det finns inga avslutade processer
         section_header:
           icon_alt: Ikon för dialoger
@@ -80,9 +80,12 @@ sv:
         see_latest_comments_title: Kommentera till den här processen
       shared:
         key_dates: Viktiga datum
-        debate_dates: Diskussion
+        homepage: Startsida
+        debate_dates: Debattera
         draft_publication_date: Utkastet publiceras
+        allegations_dates: Kommentarer
         result_publication_date: Resultatet publiceras
+        milestones_date: Följer
         proposals_dates: Förslag
     questions:
       comments:
@@ -96,7 +99,7 @@ sv:
           zero: Inga kommentarer
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
-        debate: Debatt
+        debate: Debattera
       show:
         answer_question: Skicka svar
         next_question: Nästa fråga
@@ -104,7 +107,7 @@ sv:
         share: Dela
         title: Medborgardialoger
       participation:
-        phase_not_open: Denna fas är inte öppen
+        phase_not_open: Fasen är inte öppen
         organizations: Organisationer får inte delta i debatten
         signin: Logga in
         signup: Registrera dig

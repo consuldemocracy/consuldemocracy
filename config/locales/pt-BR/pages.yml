@@ -4,7 +4,6 @@ pt-BR:
       title: Termos e condições de uso
       subtitle: AVISO LEGAL SOBRE AS CONDIÇÕES DE USO, PRIVACIDADE E PROTEÇÃO DE DADOS PESSOAIS DO PORTAL DO GOVERNO ABERTO
       description: Página de informações sobre as condições de uso, privacidade e proteção de dados pessoais.
-    general_terms: Termos e condições de uso
     help:
       title: "%{org} é uma plataforma de participação cidadã"
       guide: "Este guia explica para que servem e como funcionam cada uma das seções de %{org}."
@@ -60,9 +59,9 @@ pt-BR:
       how_to_use:
         text: |-
           Use-o em seu governo local ou nos ajude a melhorá-lo, é software livre.
-          
+
           Este Portal do Governo Aberto usa o [CONSUL app] (https://github.com/consul/consul 'consul github') que é um software livre, com [licença AGPLv3] (http://www.gnu.org/licenses/ agpl-3.0.html 'AGPLv3 gnu'), que significa em palavras simples que qualquer um pode usar o código livremente, copiá-lo, vê-lo em detalhes, modificá-lo e redistribuí-lo ao mundo com as modificações que quiser (permitindo que outros façam o mesmo). Porque pensamos que a cultura é melhor e mais rica quando é liberada.
-          
+
           Se você é um programador, pode ver o código e nos ajudar a melhorá-lo no [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Use-o em seu governo local
@@ -87,15 +86,11 @@ pt-BR:
             - 
               field: 'Instituição responsável pelo arquivo:'
               description: INSTITUIÇÃO RESPONSÁVEL PELO ARQUIVO
-        - 
-          text: A parte interessada pode exercer os direitos de acesso, rectificação, cancelamento e oposição, antes que o organismo responsável indicado, sendo que tudo o que é relatado está em conformidade com o artigo 5º da Lei Orgânica 15/1999, de 13 de dezembro, sobre protecção de dados de Caráter pessoal.
-        - 
-          text: Como princípio geral, este site não compartilha ou divulgar as informações obtidas, exceto quando tiver sido autorizado pelo usuário, ou quando as informações são exigidas pela autoridade judiciária, pelo escritório da promotoria, pela polícia, ou por qualquer dos casos regulados no artigo 11 da Lei Orgânica 15/1999, de 13 de dezembro, relativa à protecção dos dados pessoais.
     accessibility:
       title: Acessibilidade
       description: |-
         Acessibilidade Web refere-se à possibilidade de acesso à web e seu conteúdo por todas as pessoas, independentemente de deficiências (físicas, intelectuais ou técnicas), ou dificuldades que derivem do contexto de uso (tecnológico ou ambiental).
-        
+
         Quando sites são projetados com acessibilidade em mente, todos os usuários podem acessar o conteúdo em igualdade de condições, por exemplo:
       examples:
         - Proporcionando um texto alternativo à imagens, para que usuários cegos ou com deficiências visuais usando leitores especiais possam acessar informações.

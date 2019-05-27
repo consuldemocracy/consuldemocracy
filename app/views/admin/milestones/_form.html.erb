@@ -5,9 +5,9 @@
   <div class="small-12 medium-6 margin-bottom">
     <%= f.select :status_id,
           @statuses.collect { |s| [s.name, s.id] },
-          { include_blank: @statuses.any? ? '' : t('admin.milestones.form.no_statuses_defined') },
+          { include_blank: @statuses.any? ? "" : t("admin.milestones.form.no_statuses_defined") },
           { disabled: @statuses.blank? } %>
-    <%= link_to t('admin.milestones.form.admin_statuses'),
+    <%= link_to t("admin.milestones.form.admin_statuses"),
                 admin_milestone_statuses_path %>
   </div>
 
@@ -26,10 +26,10 @@
                    label: false,
                    class: "js-calendar-full" %>
 
-  <%= render 'images/admin_image', imageable: @milestone, f: f %>
+  <%= render "images/admin_image", imageable: @milestone, f: f %>
 
   <div class="documents">
-    <%= render 'documents/nested_documents', documentable: @milestone, f: f %>
+    <%= render "documents/nested_documents", documentable: @milestone, f: f %>
   </div>
 
   <%= f.submit nil, class: "button success" %>

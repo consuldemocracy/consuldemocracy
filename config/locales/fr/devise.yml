@@ -5,11 +5,11 @@ fr:
       change_required: "Votre mot de passe a expiré"
       change_password: "Changer votre mot de passe"
       new_password: "Nouveau mot de passe"
-      updated: "Mot de passe mis à jour avec succès"
+      updated: "Mot de passe mis-à-jour avec succès"
     confirmations:
       confirmed: "Votre compte a été confirmé."
       send_instructions: "Dans quelques minutes, vous recevrez un courriel contenant les instructions pour réinitialiser votre mot de passe."
-      send_paranoid_instructions: "Si votre adresse email est dans notre base de données, vous recevrez dans quelques minutes un email contenant les instructions pour réinitialiser votre mot de passe."
+      send_paranoid_instructions: "Si votre adresse est dans notre base de données, vous recevrez dans quelques minutes un courriel contenant les instructions pour réinitialiser votre mot de passe."
     failure:
       already_authenticated: "Vous êtes déjà connecté."
       inactive: "Votre compte n'a pas encore été activé."
@@ -17,7 +17,7 @@ fr:
       locked: "Votre compte a été bloqué."
       last_attempt: "Il vous reste un essai avant que votre compte soit bloqué."
       not_found_in_database: "%{authentication_keys} ou mot de passe invalide."
-      timeout: "Votre session a expiré. Veuillez vous reconnecter pour continuer."
+      timeout: "Votre session a expiré. Veuillez vous re-connecter pour continuer."
       unauthenticated: "Vous devez être connecté ou enregistré pour continuer."
       unconfirmed: "Pour continuer, veuillez cliquer sur le lien de confirmation envoyé par courriel"
     mailer:
@@ -31,19 +31,19 @@ fr:
       failure: "Il n'a pas été possible de vous identifier en tant que %{kind} à cause de \"%{reason}\"."
       success: "Identifié avec succès en tant que %{kind}."
     passwords:
-      no_token: "Vous ne pouvez accéder à cette page, sauf par le biais d'un lien de réinitialisation de mot de passe. Si vous y avez accédé via un lien de réinitialisation de mot de passe, veuillez vérifier que l'URL est complète."
+      no_token: "Vous ne pouvez accéder à cette page, sauf par le biais d'un lien de réinitialisation de mot de passe. Si vous y avez accéder via un lien de réinitialisation de mot de passe, veuillez vérifier que l'URL est complète."
       send_instructions: "Dans quelques minutes, vous recevrez un courriel contenant les instructions pour réinitialiser votre mot de passe."
-      send_paranoid_instructions: "Si votre adresse courriel est dans notre base de données, vous recevrez dans quelques minutes un courriel contenant les instructions pour réinitialiser votre mot de passe."
+      send_paranoid_instructions: "Si votre adresse est dans notre base de données, vous recevrez dans quelques minutes un courriel contenant les instructions pour réinitialiser votre mot de passe."
       updated: "Votre mot de passe a été modifié avec succès. Identification réussie."
       updated_not_active: "Votre mot de passe a été modifié avec succès."
     registrations:
       destroyed: "Au revoir ! Votre compte a été annulé. Nous espérons vous revoir bientôt."
       signed_up: "Bienvenue ! Vous avez été authentifié."
-      signed_up_but_inactive: "Votre enregistrement a réussi, mais vous ne pouvez pas vous connecter car votre compte n'a pas été activé."
-      signed_up_but_locked: "Votre enregistrement a réussi, mais vous ne pouvez pas vous connecter car votre compte est bloqué."
+      signed_up_but_inactive: "Votre enregistrement a été réussi, mais vous ne pouvez pas vous connecter car votre compte n'a pas été activé."
+      signed_up_but_locked: "Votre enregistrement a été réussi, mais vous ne pouvez pas vous connecter car votre compte est bloqué."
       signed_up_but_unconfirmed: "Un message vous a été envoyé contenant un lien de vérification de votre adresse. Veuillez cliquez sur le lien pour activer votre compte."
-      update_needs_confirmation: "Votre compte a été mis à jour avec succès; cependant, nous devons vérifier votre nouvelle adresse courriel. Veuillez vérifier votre boite de réception et cliquer sur le lien pour terminer la vérification de votre nouvelle adresse courriel."
-      updated: "Votre compte a été mis à jour avec succès."
+      update_needs_confirmation: "Votre compte a été mis-à-jour avec succès; cependant, nous devons vérifier votre nouvelle adresse. Veuillez vérifier votre boite de réception et cliquer sur le lien pour terminer la vérification de votre nouvelle adresse."
+      updated: "Votre compte a été mis-à-jour avec succès."
     sessions:
       signed_in: "Vous êtes connecté avec succès."
       signed_out: "Vous avez été déconnecté avec succès."
@@ -55,7 +55,7 @@ fr:
   errors:
     messages:
       already_confirmed: "Votre compte a déjà été vérifié; veuillez essayer de vous connecter."
-      confirmation_period_expired: "Votre compte doit être vérifié d'ici %{period}; veuillez refaire une demande."
+      confirmation_period_expired: "Votre compte doit être vérifié en %{period}; veuillez refaire une demande."
       expired: "a expiré; veuillez refaire une demande."
       not_found: "non trouvé."
       not_locked: "n'était pas bloqué."

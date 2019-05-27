@@ -32,7 +32,7 @@ sv:
       index:
         title: Användarhantering
         info: Här kan du hantera användare med åtgärderna som listas i menyn till vänster.
-    document_number: Dokumentnummer
+    document_number: Identitetshandlingens nummer
     document_type_label: Identitetshandling
     document_verifications:
       already_verified: Användarkontot är redan verifierat.
@@ -61,7 +61,7 @@ sv:
     menu:
       create_proposal: Skapa förslag
       print_proposals: Skriv ut förslag
-      support_proposals: Stöd förslag
+      support_proposals: Stödja förslag
       create_spending_proposal: Skapa budgetförslag
       print_spending_proposals: Skriv ut budgetförslag
       support_spending_proposals: Stöd budgetförslag
@@ -74,7 +74,7 @@ sv:
     permissions:
       create_proposals: Skapa förslag
       debates: Delta i debatter
-      support_proposals: Stöd förslag
+      support_proposals: Stödja förslag
       vote_proposals: Rösta på förslag
     print:
       proposals_info: Skapa ditt förslag på http://url.consul
@@ -84,12 +84,12 @@ sv:
     print_info: Skriv ut informationen
     proposals:
       alert:
-        unverified_user: Användare är inte verifierad
+        unverified_user: Användaren är inte verifierad
       create_proposal: Skapa förslag
       print:
         print_button: Skriv ut
       index:
-        title: Stöd förslag
+        title: Stödja förslag
     budgets:
       create_new_investment: Skapa budgetförslag
       print_investments: Skriv ut budgetförslag
@@ -100,19 +100,19 @@ sv:
       no_budgets: Det finns ingen aktiv medborgarbudget.
     budget_investments:
       alert:
-        unverified_user: Användaren är inte verifierad
-      create: Skapa budgetförslag
+        unverified_user: Användare är inte verifierad
+      create: Skapa ett budgetförslag
       filters:
         heading: Koncept
         unfeasible: Ej genomförbara budgetförslag
       print:
         print_button: Skriv ut
       search_results:
-        one: " innehåller '%{search_term}'"
-        other: " innehåller '%{search_term}'"
+        one: " som innehåller '%{search_term}'"
+        other: " som innehåller '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Användaren är inte verifierad
+        unverified_user: Användare är inte verifierad
       create: Skapa budgetförslag
       filters:
         unfeasible: Ej genomförbara budgetförslag
@@ -120,8 +120,8 @@ sv:
       print:
         print_button: Skriv ut
       search_results:
-        one: " innehåller '%{search_term}'"
-        other: " innehåller '%{search_term}'"
+        one: " som innehåller '%{search_term}'"
+        other: " som innehåller '%{search_term}'"
     sessions:
       signed_out: Du har loggat ut.
       signed_out_managed_user: Användaren är utloggad.

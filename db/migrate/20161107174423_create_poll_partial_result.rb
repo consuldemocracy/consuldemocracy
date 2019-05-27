@@ -1,4 +1,4 @@
-class CreatePollPartialResult < ActiveRecord::Migration
+class CreatePollPartialResult < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_partial_results do |t|
       t.integer :question_id, index: true

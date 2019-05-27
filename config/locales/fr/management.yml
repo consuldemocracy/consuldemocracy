@@ -24,7 +24,7 @@ fr:
       change_user: Changer l'utilisateur
       document_number_label: 'Numéro de document :'
       document_type_label: 'Type de document :'
-      email_label: 'Courriel :'
+      email_label: 'Courriel:'
       identified_label: 'Identifié en tant que :'
       username_label: 'Nom d''utilisateur :'
     check: Vérifier le document
@@ -45,7 +45,7 @@ fr:
       title: Gestion des utilisateurs
       under_age: "Vous n'avez pas l'âge requis pour avoir un compte vérifié."
       verify: Vérifier
-    email_label: Courriel
+    email_label: Email
     date_of_birth: Date de naissance
     email_verifications:
       already_verified: Ce compte utilisateur est déjà vérifié.
@@ -59,39 +59,39 @@ fr:
       introduce_email: 'Veuillez saisir le courriel utilisé par le compte :'
       send_email: Envoyer le courriel de vérification
     menu:
-      create_proposal: Créer une proposition
+      create_proposal: Créer la proposition
       print_proposals: Imprimer des propositions
-      support_proposals: Supporter une proposition
-      create_spending_proposal: Créer un proposition d'investissement
+      support_proposals: Soutenir des propositions
+      create_spending_proposal: Créer la proposition de dépenses
       print_spending_proposals: Imprimer des propositions d'investissement
       support_spending_proposals: Supporter des propositions d'investissement
-      create_budget_investment: Créer un projet d'investissement
+      create_budget_investment: Créer un nouveau projet
       print_budget_investments: Imprimer le budget d'investissement
       support_budget_investments: Soutenir le budget d'investissement
       users: Gestion des utilisateurs
-      user_invites: Invitations de l'utilisateur
+      user_invites: Envoyer les invitations
       select_user: Sélectionner l'utilisateur
     permissions:
       create_proposals: Créer des propositions
       debates: Participer aux débats
-      support_proposals: Supporter des propositions
+      support_proposals: Soutenir des propositions
       vote_proposals: Voter sur des propositions
     print:
       proposals_info: Faites votre proposition sur http://url.consul
       proposals_title: 'Propositions :'
       spending_proposals_info: Participer sur http://url.consul
       budget_investments_info: Participer sur http://url.consul
-    print_info: Imprimer cette information
+    print_info: Imprimer cette info
     proposals:
       alert:
-        unverified_user: Cet utilisateur n'est pas vérifié
-      create_proposal: Créer une proposition
+        unverified_user: Utilisateur non vérifié
+      create_proposal: Créer la proposition
       print:
         print_button: Imprimer
       index:
         title: Soutenir des propositions
     budgets:
-      create_new_investment: Créer un budget d'investissement
+      create_new_investment: Créer un nouveau projet
       print_investments: Imprimer le budget d'investissement
       support_investments: Soutenir le budget d'investissement
       table_name: Nom
@@ -101,25 +101,26 @@ fr:
     budget_investments:
       alert:
         unverified_user: Utilisateur non vérifié
-      create: Créer un nouveau projet
+      create: Créer un projet d'investissement
       filters:
+        heading: Concept
         unfeasible: Projets infaisables
       print:
         print_button: Imprimer
       search_results:
-        one: " contenant le terme '%{search_term}'"
-        other: " contenant les termes '%{search_term}'"
+        one: " contenant les termes  '%{search_term}'"
+        other: " contenant les termes  '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: Utilisateur non vérifié
-      create: Créer une proposition d'investissement
+      create: Créer la proposition de dépenses
       filters:
-        unfeasible: Propositions d'investissement infaisables
-        by_geozone: "Portée des propositions d'investissement : %{geozone}"
+        unfeasible: Propositions d'investissement irréalisables
+        by_geozone: "Propositions d'investissement avec un périmètre : %{geozone}"
       print:
         print_button: Imprimer
       search_results:
-        one: " contenant le terme '%{search_term}'"
+        one: " contenant les termes  '%{search_term}'"
         other: " contenant les termes  '%{search_term}'"
     sessions:
       signed_out: Déconnecté avec succès.
@@ -142,8 +143,8 @@ fr:
       new:
         label: Courriels
         info: "Entrer les courriels supprimés par des virgules (',')"
-        submit: Envoyer les invitations
-        title: Invitations utilisateur
+        submit: Invitations de l'utilisateur
+        title: Invitations de l'utilisateur
       create:
         success_html: <strong>%{count} invitations</strong> ont été envoyées.
-        title: Invitations utilisateur
+        title: Invitations de l'utilisateur

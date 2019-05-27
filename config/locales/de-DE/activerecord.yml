@@ -5,10 +5,10 @@ de:
         one: "Aktivität"
         other: "Aktivitäten"
       budget:
-        one: "Bürger*innenhaushalt"
-        other: "Bürger*innenhaushalte"
+        one: "Bürgerhaushalt"
+        other: "Bürgerhaushalte"
       budget/investment:
-        one: "Ausgabenvorschlag"
+        one: "Investitionsvorschlag"
         other: "Ausgabenvorschläge"
       milestone:
         one: "Meilenstein"
@@ -16,6 +16,9 @@ de:
       milestone/status:
         one: "Status des Ausgabenvorschlags"
         other: "Status der Ausgabenvorschläge"
+      progress_bar:
+        one: "Fortschrittsbalken"
+        other: "Fortschrittsbalken"
       comment:
         one: "Kommentar"
         other: "Kommentare"
@@ -23,19 +26,19 @@ de:
         one: "Diskussion"
         other: "Diskussionen"
       tag:
-        one: "Kennzeichen"
-        other: "Themen"
+        one: "Tag"
+        other: "Tags"
       user:
-        one: "Benutzer*in"
-        other: "Benutzer*innen"
+        one: "Benutzer*innen"
+        other: "Benutzer"
       moderator:
-        one: "Moderator*in"
+        one: "Moderator"
         other: "Moderator*innen"
       administrator:
-        one: "Administrator*in"
+        one: "Administrator"
         other: "Administrator*innen"
       valuator:
-        one: "Begutachter*in"
+        one: "Begutachter/in"
         other: "Begutachter*innen"
       valuator_group:
         one: "Begutachtungsgruppe"
@@ -47,8 +50,8 @@ de:
         one: "Newsletter"
         other: "Newsletter"
       vote:
-        one: "Stimme"
-        other: "Stimmen"
+        one: "Abstimmen"
+        other: "Bewertung"
       organization:
         one: "Organisation"
         other: "Organisationen"
@@ -59,32 +62,29 @@ de:
         one: "Wahlvorsteher*in"
         other: "Wahlvorsteher*innen"
       proposal:
-        one: "Bürgervorschlag"
-        other: "Bürgervorschläge"
+        one: "Bürger*innenvorschlag"
+        other: "Bürger*innenvorschläge"
       spending_proposal:
-        one: "Ausgabenvorschlag"
+        one: "Investitionsprojekt"
         other: "Ausgabenvorschläge"
       site_customization/page:
         one: Meine Seite
         other: Meine Seiten
       site_customization/image:
         one: Bild
-        other: Bilder
+        other: Benutzer*definierte Bilder
       site_customization/content_block:
         one: Benutzerspezifischer Inhaltsdatenblock
-        other: Benutzerspezifische Inhaltsdatenblöcke
+        other: Benutzer*definierte Inhaltsdatenblöcke
       legislation/process:
-        one: "Verfahren"
-        other: "Beteiligungsverfahren"
+        one: "Beteiligungsverfahren"
+        other: "Gesetzgebungsverfahren"
       legislation/proposal:
         one: "Vorschlag"
         other: "Vorschläge"
       legislation/draft_versions:
         one: "Entwurfsfassung"
-        other: "Entwurfsfassungen"
-      legislation/draft_texts:
-        one: "Entwurf"
-        other: "Entwürfe"
+        other: "Entwurfsversionen"
       legislation/questions:
         one: "Frage"
         other: "Fragen"
@@ -102,12 +102,12 @@ de:
         other: "Bilder"
       topic:
         one: "Thema"
-        other: "Themen"
+        other: "Inhalte"
       poll:
         one: "Abstimmung"
-        other: "Abstimmungen"
+        other: "Umfragen"
       proposal_notification:
-        one: "Benachrichtigung zu einem Vorschlag"
+        one: "Antrags-Benachrichtigung"
         other: "Benachrichtigungen zu einem Vorschlag"
     attributes:
       budget:
@@ -125,34 +125,41 @@ de:
         heading_id: "Rubrik"
         title: "Titel"
         description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
-        administrator_id: "Administrator*in"
+        external_url: "Link zur weiteren Dokumentation"
+        administrator_id: "Administrator"
         location: "Standort (optional)"
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
         image_title: "Bildtitel"
       milestone:
-        status_id: "Derzeitiger Status des Ausgabenvorschlags (optional)"
+        status_id: "Aktueller Status (optional)"
         title: "Titel"
         description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
         publication_date: "Datum der Veröffentlichung"
       milestone/status:
         name: "Name"
         description: "Beschreibung (optional)"
+      progress_bar:
+        kind: "Typ"
+        title: "Titel"
+        percentage: "Aktueller Fortschritt"
+      progress_bar/kind:
+        primary: "Primär"
+        secondary: "Sekundär"
       budget/heading:
         name: "Name der Rubrik"
-        price: "Kosten"
+        price: "Preis"
         population: "Bevölkerung"
       comment:
         body: "Kommentar"
         user: "Benutzer*in"
       debate:
-        author: "Verfasser*in"
+        author: "Autor"
         description: "Beitrag"
         terms_of_service: "Nutzungsbedingungen"
         title: "Titel"
       proposal:
-        author: "Verfasser*in"
+        author: "Autor"
         title: "Titel"
         question: "Frage"
         description: "Beschreibung"
@@ -165,31 +172,37 @@ de:
         password: "Passwort"
         current_password: "Aktuelles Passwort"
         phone_number: "Telefonnummer"
-        official_position: "Beamter/Beamtin"
+        official_position: "Beamte/in"
         official_level: "Amtsebene"
         redeemable_code: "Bestätigungscode per Post (optional)"
       organization:
         name: "Name der Organisation"
         responsible_name: "Der/die* Gruppenverantwortliche"
       spending_proposal:
-        administrator_id: "Administrator*in"
-        association_name: "Name des Vereins"
+        administrator_id: "Administrator"
+        association_name: "Vereinsname"
         description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
-        geozone_id: "Tätigkeitsfeld"
+        external_url: "Link zur weiteren Dokumentation"
+        geozone_id: "Rahmenbedingungen"
         title: "Titel"
       poll:
         name: "Name"
         starts_at: "Anfangsdatum"
-        ends_at: "Einsendeschluss"
+        ends_at: "Enddatum"
         geozone_restricted: "Beschränkt auf Gebiete"
+        summary: "Zusammenfassung"
+        description: "Beschreibung"
+      poll/translation:
+        name: "Name"
         summary: "Zusammenfassung"
         description: "Beschreibung"
       poll/question:
         title: "Frage"
         summary: "Zusammenfassung"
         description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
+        external_url: "Link zur weiteren Dokumentation"
+      poll/question/translation:
+        title: "Frage"
       signature_sheet:
         signable_type: "Unterschriftentyp"
         signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
@@ -201,10 +214,14 @@ de:
         slug: URL
         status: Status
         title: Titel
-        updated_at: Aktualisiert am
+        updated_at: Letzte Aktualisierung
         more_info_flag: Auf der Hilfeseite anzeigen
         print_content_flag: Taste Inhalt drucken
         locale: Sprache
+      site_customization/page/translation:
+        title: Titel
+        subtitle: Untertitel
+        content: Inhalt
       site_customization/image:
         name: Name
         image: Bild
@@ -213,27 +230,39 @@ de:
         locale: Sprache
         body: Inhalt
       legislation/process:
-        title: Titel des Verfahrens
+        title: Titel des Beteiligungsverfahrens
         summary: Zusammenfassung
         description: Beschreibung
         additional_info: Zusätzliche Information
         start_date: Anfangsdatum
-        end_date: Enddatum des Verfahrens
+        end_date: Enddatum
         debate_start_date: Anfangsdatum Diskussion
         debate_end_date: Enddatum Diskussion
+        draft_start_date: Anfangsdatum Entwurfsphase
+        draft_end_date: Enddatum Entwurfsphase
         draft_publication_date: Veröffentlichungsdatum des Entwurfs
         allegations_start_date: Anfangsdatum Überprüfung
         allegations_end_date: Enddatum Überprüfung
         result_publication_date: Veröffentlichungsdatum Endergebnis
+      legislation/process/translation:
+        title: Titel des Verfahrens
+        summary: Zusammenfassung
+        description: Beschreibung
+        additional_info: Zusätzliche Information
+        milestones_summary: Zusammenfassung
       legislation/draft_version:
         title: Titel der Fassung
         body: Text
         changelog: Änderungen
         status: Status
-        final_version: Endgültige Fassung
+        final_version: Endgültige Version
+      legislation/draft_version/translation:
+        title: Titel der Fassung
+        body: Text
+        changelog: Änderungen
       legislation/question:
         title: Titel
-        question_options: Antworten
+        question_options: Optionen
       legislation/question_option:
         value: Wert
       legislation/annotation:
@@ -247,6 +276,9 @@ de:
       poll/question/answer:
         title: Antwort
         description: Beschreibung
+      poll/question/answer/translation:
+        title: Antwort
+        description: Beschreibung
       poll/question/answer/video:
         title: Titel
         url: Externes Video
@@ -255,12 +287,25 @@ de:
         subject: Betreff
         from: Von
         body: Inhalt der E-Mail
+      admin_notification:
+        segment_recipient: Empfänger*innen
+        title: Titel
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Titel
+        body: Text
       widget/card:
         label: Tag (optional)
         title: Titel
         description: Beschreibung
         link_text: Linktext
         link_url: URL des Links
+      widget/card/translation:
+        label: Tag (optional)
+        title: Titel
+        description: Beschreibung
+        link_text: Linktext
       widget/feed:
         limit: Anzahl der Elemente
     errors:
@@ -285,11 +330,11 @@ de:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "Das Benutzer*innensegment ist ungültig"
+              invalid: "Das Empfänger*innensegment ist ungültig"
         admin_notification:
           attributes:
             segment_recipient:
-              invalid: "Das Empfänger*innensegment ist ungültig"
+              invalid: "Das Benutzer*innensegment ist ungültig"
         map_location:
           attributes:
             map:
@@ -305,6 +350,8 @@ de:
               invalid_date_range: muss an oder nach dem Anfangsdatum sein
             debate_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Diskussion sein
+            draft_end_date:
+              invalid_date_range: muss an oder nach dem Anfangsdatum der Entwurfsphase sein
             allegations_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Überprüfung sein
         proposal:

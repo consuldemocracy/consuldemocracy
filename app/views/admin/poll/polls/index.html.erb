@@ -1,5 +1,9 @@
 <h2 class="inline-block"><%= t("admin.polls.index.title") %></h2>
 
+<%= link_to t("admin.active_polls.edit.title"),
+            edit_admin_active_polls_path,
+            class: "button hollow float-right" %>
+
 <%= link_to t("admin.polls.index.create"),
             new_admin_poll_path,
             class: "button float-right" %>

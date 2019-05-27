@@ -23,7 +23,7 @@ pt-BR:
     votes_for_proposal_success: "Número de votos necessários para aprovar uma Proposta"
     votes_for_proposal_success_description: "Quando a proposta alcançar esse número de suportes não poderá mais receber mais suportes e será considerada com sucesso"
     months_to_archive_proposals: "Meses para arquivar Propostas"
-    months_to_archive_proposals_description: Depois desse número de meses as propostas serão arquivadas e não vão mais receber suportes
+    months_to_archive_proposals_description: "Depois desse número de meses as propostas serão arquivadas e não vão mais receber suportes"
     email_domain_for_officials: "Dominio de email para cargos públicos"
     email_domain_for_officials_description: "Todos os usuários registrados nesse domínio vão ter seuas contas verificasda no registro"
     per_page_code_head: "Código a incluir em cada página (<head>)"
@@ -88,7 +88,7 @@ pt-BR:
       debates: "Debates"
       debates_description: "O espaço de debate dos cidadãos é focado em qualquer um que possa apresentar porvlemas que os envolvam e sobre como eles quere compartilhas suas visões com outros"
       polls: "Votações"
-      polls_description: "Votações dos cidadãos são um mecanismo de participação na qual os cidadãos podem ter decisões diretas"
+      polls_description: "As pesquisas dos cidadãos são um mecanismo participativo através do qual os cidadãos com direito de voto podem tomar decisões diretas"
       signature_sheets: "Folhas de assinatura"
       signature_sheets_description: "Permite adicionar do painel de administração as assinaturas coletadas no site para propostas e projetos de investimento do orçamento participativo"
       legislation: "Legislação"

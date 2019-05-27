@@ -59,7 +59,6 @@ he:
       second: שניות
       year: שנה
   errors:
-    format: "%{attribute} %{message}"
     messages:
       accepted: חייב באישור
       blank: לא יכול להיות ריק
@@ -92,7 +91,6 @@ he:
       format:
         delimiter: ","
         format: "%u %n"
-        precision: 2
         separator: "."
         significant: false
         strip_insignificant_zeros: false
@@ -127,12 +125,8 @@ he:
     array:
       last_word_connector: " ו"
       two_words_connector: " ו"
-      words_connector: ", "
   time:
-    am: am
     formats:
       datetime: "%a %d %b %H:%M:%S %Z %Y"
       default: "%a %d %b %H:%M:%S %Z %Y"
       long: "%d ב%B, %Y %H:%M"
-      short: "%d %b %H:%M"
-    pm: pm

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Legislation::Process do
   let(:process) { create(:legislation_process) }
@@ -82,7 +82,7 @@ describe Legislation::Process do
                                             allegations_end_date: Date.current - 1.day)
       expect(process).to be_invalid
       expect(process.errors.messages[:allegations_end_date])
-      .to include("must be on or after the allegations start date")
+      .to include("must be on or after the comments start date")
     end
 
     it "is valid if allegations_end_date is the same as allegations_start_date" do
@@ -142,14 +142,6 @@ describe Legislation::Process do
       expect(processes_not_in_draft).to include(process_with_draft_disabled)
       expect(processes_not_in_draft).not_to include(process_with_draft_enabled)
       expect(processes_not_in_draft).not_to include(process_with_draft_only_today)
-    end
-
-    it "filters next" do
-      next_processes = ::Legislation::Process.next
-
-      expect(next_processes).to include(process_2)
-      expect(next_processes).not_to include(process_1)
-      expect(next_processes).not_to include(process_3)
     end
 
     it "filters past" do

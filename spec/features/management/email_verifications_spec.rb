@@ -1,20 +1,20 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'EmailVerifications' do
+feature "EmailVerifications" do
 
-  scenario 'Verifying a level 1 user via email' do
+  scenario "Verifying a level 1 user via email" do
     login_as_manager
 
     user = create(:user)
 
     visit management_document_verifications_path
-    fill_in 'document_verification_document_number', with: '12345678Z'
-    click_button 'Check document'
+    fill_in "document_verification_document_number", with: "12345678Z"
+    click_button "Check document"
 
     expect(page).to have_content "Please introduce the email used on the account"
 
-    fill_in 'email_verification_email', with: user.email
-    click_button 'Send verification email'
+    fill_in "email_verification_email", with: user.email
+    click_button "Send verification email"
 
     expect(page).to have_content("In order to completely verify this user, it is necessary that the user clicks on a link")
 
@@ -30,7 +30,7 @@ feature 'EmailVerifications' do
     expect(page).not_to have_link "Verify my account"
     expect(page).to have_content "Account verified"
 
-    expect(user.reload.document_number).to eq('12345678Z')
+    expect(user.reload.document_number).to eq("12345678Z")
     expect(user).to be_level_three_verified
   end
 
