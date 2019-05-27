@@ -471,14 +471,103 @@ hr:
         no_hidden_users: Ne postoje sakriveni korisnici.
       show:
         email: "Email:"
+        hidden_at: "Sakriveno u:"
+        registered_at: "Registrirano u:"
+        title: Aktivnost korisnika (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Sakriveni investicijski budžeti
+        no_hidden_budget_investments: Ne postoje sakriveni investicijski budžeti
     legislation:
       processes:
+        create:
+          notice: 'Proces je uspješno stvoren. <a href="%{link}">Pritisni kako bi posjetio</a>'
+          error: Proces ne može biti stvoren
+        update:
+          notice: 'Proces je učitan uspješno. <a href="%{link}">Klikni kako bi posjetio</a>'
+          error: Proces ne može biti ažuriran
+        destroy:
+          notice: Proces uspješno obrisan
+        edit:
+          back: Nazad
+          submit_button: Spremi promjene
+        errors:
+          form:
+            error: Pogreška
+        form:
+          enabled: Omogućeno
+          process: Proces
+          debate_phase: Faza rasprave
+          draft_phase: Faza drafta
+          draft_phase_description: Ukoliko je ova faza aktivna, proces neće biti naveden na indeksu precesa. Dopustite pregled procesa i stvorite sadržaj prije početka.
+          allegations_phase: Faza komentara
+          proposals_phase: Faza prijedloga
+          use_markdown: Koristi Smanjenje kako bi formatirali tekst
+          title_placeholder: Naziv procesa
+          summary_placeholder: Kratki sažetak opisa
+          description_placeholder: Dodaj opis procesa
+          additional_info_placeholder: Dodaj dodatne informacije koje smatraš korisnima
+          homepage: Opis
+          homepage_description: Ovdje možeš objasniti sadržaj procesa
+          homepage_enabled: Glavna stranica omogućena
+          banner_title: Boje naslova
+        index:
+          create: Novi proces
+          delete: Izbriši
+          title: Kolaborativna legislativa
+          filters:
+            active: Aktivirati
+            all: Svi
+        new:
+          back: Nazad
+          title: Svori novi proces za kolaborativnu legislativu
+          submit_button: Stvori proces
         proposals:
+          select_order: Sortiraj po
           orders:
+            id: Id
+            title: Naziv
             supports: Ukupne potpore
+        process:
+          title: Proces
+          comments: Komentari
+          status: Status
+          start_date: Datum početka
+          end_date: Datum završetka
+          status_open: Otvoren
+          status_closed: Zatvoren
+          status_planned: Planirano
+        subnav:
+          info: Informacija
+          homepage: Glavna stranica
+          draft_versions: Skiciranje
+          questions: Rasprava
+          proposals: Prijedlozi
+          milestones: Pratiti
+      homepage:
+        edit:
+          title: Uredi glavnu stranicu svojih procesa
       proposals:
         index:
+          title: Naziv
+          back: Nazad
+          id: Id
           supports: Ukupne potpore
+          select: Odaberi
+          selected: Odabrano
+        form:
+          custom_categories: Kategorije
+          custom_categories_description: Kategorije koje korisnik može odabrati pri stvaranju prijedloga. Maksimalno 160 znakova.
+          custom_categories_placeholder: Unesi oznake koje bi htio koristiti, odvojene zarezima (,) i između navodnim znakovima ("")
+      draft_versions:
+        create:
+          notice: 'Draft uspješno stvoren. <a href="%{link}">Kliknite ovdje da posjetite</a>'
+          error: Draft nije uspješno stvoren
     segment_recipient:
       proposal_authors: Prijedlozi autora
     valuators:
