@@ -440,7 +440,7 @@ hr:
           all: Svi
           with_confirmed_hide: Potvrđeno
           without_confirmed_hide: U tijeku
-        title: Sakrivene debate
+        title: Sakrivene rasprave
         no_hidden_debates: Ne postoje sakrivene debate.
     documents:
       new:
@@ -568,6 +568,111 @@ hr:
         create:
           notice: 'Draft uspješno stvoren. <a href="%{link}">Kliknite ovdje da posjetite</a>'
           error: Draft nije uspješno stvoren
+        update:
+          notice: 'Draft uspješno ažuriran. <a href="%{link}">Kliknite ovdje kako bi posjetili</a>'
+          error: Draft se nemože ažurirati
+        destroy:
+          notice: Draft je uspješno obrisan
+        edit:
+          back: Nazad
+          submit_button: Spremi promjene
+          warning: Možete urediti tekst, nemojte zaboraviti klinuti Spremi kako bi trajno spremili promjene.
+        errors:
+          form:
+            error: Pogreška
+        form:
+          title_html: 'Uređivanjem <span class="strong">%{draft_version_title}</span> od procesa <span class="strong">%{process_title}</span>'
+          launch_text_editor: Upali uređivač teksta
+          close_text_editor: Zatvori uređivač teksta
+          use_markdown: Koristi Smanjenje kako bi formatirali tekst
+          hints:
+            final_version: Ova verzija će se objaviti kao Konačni rezultat ovog procesa. Komentari neće biti dopušteni u ovoj verziji.
+            status:
+              draft: Ovo možete pregledati kao admin, nitko drugi nema uvid
+              published: Vidljivo svima
+          title_placeholder: Napiši naziv draft verzije
+          changelog_placeholder: Dodaj glavne promejene od prošle verzije
+          body_placeholder: Napiši tekst drafta
+        index:
+          title: Draft verzije
+          create: Stvori verziju
+          delete: Izbriši
+          preview: Pregled
+        new:
+          back: Nazad
+          title: Stvori novu verziju
+          submit_button: Stvori verziju
+        statuses:
+          draft: Draft
+          published: Objavljeno
+        table:
+          title: Naziv
+          created_at: Stvoreno u
+          comments: Komentari
+          final_version: Finalna verzija
+          status: Status
+      questions:
+        create:
+          notice: 'Pitanja uspješno stvorena. <a href="%{link}">Kliknite ovdje da posjetite</a>'
+          error: Ne možete stvoriti pitanje
+        update:
+          notice: 'Pitanje uspješno ažurirano. <a href="%{link}">Kliknite ovdje da posjetite</a>'
+          error: Pitanje se ne može ažurirati
+        destroy:
+          notice: Pitanje uspješno obrisano
+        edit:
+          back: Nazad
+          title: "Uredi \"%{question_title}\""
+          submit_button: Spremi promjene
+        errors:
+          form:
+            error: Pogreška
+        form:
+          add_option: Dodaj opciju
+          title: Pitanje
+          title_placeholder: Dodaj pitanje
+          value_placeholder: Dodaj zatvreni odgovor
+          question_options: "Mogući odgovori (opcije, zadani otvoreni odgovori)"
+        index:
+          back: Nazad
+          title: Pitanja povezana s ovim procesom
+          create: Stvori pitanje
+          delete: Izbriši
+        new:
+          back: Nazad
+          title: Stvori novo pitanje
+          submit_button: Stvori pitanje
+        table:
+          title: Naziv
+          question_options: Opcije pitanja
+          answers_count: Odgovori se broje
+          comments_count: Broj komentara
+        question_option_fields:
+          remove_option: Ukloni opciju
+      milestones:
+        index:
+          title: Pratiti
+    managers:
+      index:
+        title: Menadžeri
+        name: Ime
+        email: Email
+        no_managers: Ne postoje menadžeri.
+      manager:
+        add: Dodaj
+        delete: Izbriši
+      search:
+        title: "Menadžeri: Pretraga korisnika"
+    menu:
+      activity: Aktivnosti moderatora
+      admin: Meni admina
+      banner: Upravljaj zastavama
+      proposals: Prijedlozi
+      proposals_topics: Teme prijedloga
+      budgets: Participativni budžeti
+      geozones: Uredi geozone
+      hidden_comments: Sakriveni komentari
+      hidden_debates: Sakrivene rasprave
     segment_recipient:
       proposal_authors: Prijedlozi autora
     valuators:
