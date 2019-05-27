@@ -510,7 +510,18 @@ ar:
       without_done_actions: لا توجد إجراءات موصى بها منتهية
     next_goal:
       title: هدف
+    goal:
+      ideal_time: الوقت المثالي
+    community:
+      access_community: الوصول إلى المجتمع
+      participants: المشاركون
+      debates: مناقشات
+      comments: تعليقات
     polls:
+      index:
+        title: استطلاعات
+        create: إنشاء استطلاع
+        links: روابط
       new:
         title: استطلاع جديد
         submit: إنشاء استطلاع
@@ -781,6 +792,7 @@ ar:
       deleted_proposal: تم حذف هذا المقترح
       deleted_budget_investment: تم حذف هذا المشروع الاستثماري
       proposals: إقتراحات
+      proposals_status: حالة
       debates: النقاشات
       budget_investments: استثمارات الميزانية
       comments: تعليقات
@@ -788,8 +800,15 @@ ar:
       no_activity: لا يوجد اجراءات للمستخدم
       no_private_messages: "لا يمكن ارسال رسالة خاصة لهذا المسنخدم."
       private_activity: قائمة النشاطات الخاصة بهذا المستخدم غير متاحة.
+      send_private_message: "إرسال رسالة خاصة"
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
+    proposals:
+      retired: "المقترح المسحوبة"
+      draft: مسودة
+      published: منشورة
+      actions: الإجراءات
   votes:
+    agree: أنا أوافق
     disagree: أنا لا أوافق
     organizations: المنظمات لا يسمح لها بالتصويت
     signin: تسجيل الدخول
@@ -799,12 +818,16 @@ ar:
     verify_account: التحقق من حسابك
     spending_proposals:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
+      not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات %{verify_account}.
       organization: المنظمات لا يسمح لها بالتصويت
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
+      not_voting_allowed: مرحلة التصويت مغلقة
     budget_investments:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
+      not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على مشاريع الاستثمارات; %{verify_account}.
       organization: المنظمات لا يسمح لها بالتصويت
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
+      not_voting_allowed: مرحلة التصويت مغلقة
   welcome:
     feed:
       most_active:
