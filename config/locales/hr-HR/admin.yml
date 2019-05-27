@@ -402,6 +402,75 @@ hr:
           back: Nazad na listu
         create:
           notice: Djleovanje je uspješno stvoreno
+        edit:
+          editing: Uredi akciju za glavni izbornik prijedloga
+          back: Nazad na listu
+        delete:
+          success: Akcija uspješno obrisana
+        form:
+          submit_button: Spremi
+          help_text: Unesi 0 kako ova vrijednost ne bi bila uračunata
+          published_proposal: Za objavljene prijedloge?
+          published_proposal_help_text: Označi ovu kućicu kako bi stvorili akciju samo za objavljene prijedloge
+      administrator_tasks:
+        index:
+          description: "Objavljeni resursi na pokretnoj traci prijedloga mogu uključivati gumb za koji su potrebni administratori.\nZahtjevi korisnika su prikazani dolje."
+          title: Zatraženi resursi
+          solve: Riješiti
+          no_records: Ne postoje zatraženi resursi
+          source: Izvor
+          resource: Zatraženi resursi
+          filter: Filter
+          filters:
+            pending: U tijeku
+            done: Riješeno
+        edit:
+          back: Natrag na popis zadataka na čekanju
+          solving: Riješi zadatak na čekanju
+        form:
+          solve: Označi kao riješeno
+          proposal: Prijedlog
+          request: Zatraženi resurs
+        update:
+          success: Zadatak je označen kao riješen.
+    debates:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Sakrivene debate
+        no_hidden_debates: Ne postoje sakrivene debate.
+    documents:
+      new:
+        title: "Učitaj dokument"
+        label_attachment: "Odaberi dokument"
+        submit_button: "Učitaj"
+      index:
+        new_link: "Dodaj novi dokument"
+        no_documents: "Ne postoje dokumenti."
+        title: "Dokumenti"
+        format: "Format"
+        size: "Veličina"
+        url: "URL"
+      create:
+        success_notice: "Dokument je učitan uspješno"
+        unable_notice: "Nevažeč dokument"
+      destroy:
+        success_notice: "Dokument je uspješno obrisan"
+    hidden_users:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Sakriveni korisnici
+        user: Korisnik
+        no_hidden_users: Ne postoje sakriveni korisnici.
+      show:
+        email: "Email:"
     legislation:
       processes:
         proposals:
