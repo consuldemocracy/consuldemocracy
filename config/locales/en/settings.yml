@@ -70,11 +70,11 @@ en:
       poll_link: Additional information link
       poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
       email_short_title: Email
-      email_short_title_description: Short description of the email feature. Allows users to send an email to promote their proposal
+      email_short_title_description: 'Short description of the email feature. Allows users to send an email to promote their proposal. You can find all the content of this email in "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Email description
       email_description_description: Detailed description of the email feature
       poster_short_title: Poster
-      poster_short_title_description: Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal
+      poster_short_title_description: 'Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal. You can find all the content of this poster in "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Poster description
       poster_description_description: Detailed description of the poster feature
     analytics_url: "Analytics URL"

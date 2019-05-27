@@ -75,11 +75,11 @@ es:
       poll_link: Enlace de información adicional
       poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
       email_short_title: Correo electrónico
-      email_short_title_description: Breve descripción de la funcionalidad de correo electrónico. Permite a los usuarios enviar un email para difundir su propuesta
+      email_short_title_description: 'Breve descripción de la funcionalidad de correo electrónico. Permite a los usuarios enviar un email para difundir su propuesta. Puedes encontrar todo el contenido de este correo electrónico en "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Descripción correo electrónico
       email_description_description: Descripción detallada de la funcionalidad de correo electrónico
       poster_short_title: Póster
-      poster_short_title_description: Breve descripción de la funcionalidad de póster. Permite a los usuarios descargar un póster en formato PDF para difundir su propuesta
+      poster_short_title_description: 'Breve descripción de la funcionalidad de póster. Permite a los usuarios descargar un póster en formato PDF para difundir su propuesta. Puedes encontrar todo el contenido de este póster en "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Descripción póster
       poster_description_description: Descripción detallada de la funcionalidad de póster
     feature:
