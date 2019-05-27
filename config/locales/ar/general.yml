@@ -820,6 +820,12 @@ ar:
     recommended:
       title: التوصيات التي قد تهمك
       help: "يتم إنشاء هذه التوصيات بواسطة وسوم المناقشات والمقترحات التي تتابعها."
+      debates:
+        title: المناقشات الموصى بها
+        btn_text_link: كل المناقشات الموصى بها
+      proposals:
+        title: المقترحات الموصى بها
+        btn_text_link: كل المقترحات الموصى بها
       slide: "انظر %{title}"
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
@@ -864,3 +870,14 @@ ar:
       text_sign_in: تسجيل الدخول
       text_sign_up: انشاء حساب
       title: كيف يمكنني التعليق على هذه الوثيقة؟
+  links:
+    form:
+      delete_button: حذف
+      cancel_button: إلغاء
+    nested_links:
+      title: روابط
+    link_fields:
+      label_placeholder: عنوان الرابط
+  communities:
+    show:
+      author: كاتب
