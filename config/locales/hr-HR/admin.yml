@@ -673,6 +673,29 @@ hr:
       geozones: Uredi geozone
       hidden_comments: Sakriveni komentari
       hidden_debates: Sakrivene rasprave
+      hidden_proposals: Sakriveni prijedlozi
+      hidden_budget_investments: Sakriveni investicijski budžeti
+      hidden_proposal_notifications: Sakrivene obavijesti prijedloga
+      hidden_users: Sakriveni korisnici
+      administrators: Administratori
+      managers: Menadžeri
+      moderators: Moderatori
+      messaging_users: Poruke korisnicima
+      newsletters: Newsletteri
+      admin_notifications: Obavijesti
+      system_emails: Emailovi Sustava
+      emails_download: Prezumi emailove
+      valuators: Procjenitelji
+      poll_officers: Službenici za bilježenje glasova
+      polls: Ankete
+      poll_booths: Položaj glasačkih mjesta
+      poll_booth_assignments: Zadaci Glasačkih Mjesta
+      poll_shifts: Upravljaj smjenama
+      officials: Službenici
+      organizations: Organizacije
+      settings: Globalne postavke
+      spending_proposals: Potrošnja prijedloga
+      stats: Statistike
     segment_recipient:
       proposal_authors: Prijedlozi autora
     valuators:
