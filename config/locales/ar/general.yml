@@ -467,6 +467,7 @@ ar:
         submit_button: حفظ التغييرات
   dashboard:
     menu:
+      my_proposal: تعديل مقترحي
       progress: تقدم
       resources: موارد
       community: المجتمع
@@ -479,11 +480,34 @@ ar:
       success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
     progress:
       group_by_month: شهريا
+      group_by_week: أسبوعيا
+      group_by_date: اليومي
       supports: تشجيعات
       success: تقدم مثالي
       new_action: جديد
     index:
+      title: تعديل
       edit_proposal_link: تعديل المقترح
+      publish: نشر مقترح
+      retire: سحب المقترح
+    new_request:
+      links: روابط
+    resources:
+      available_resources: الموارد المتاحة
+    resource:
+      and: و
+      request_resource: طلب المورد
+    recommended_actions:
+      title: الإجراءات الموصى بها
+      goto_proposed_actions: إذهب إلى الإجراءات الموصى بها
+      hide_proposed_actions: إخفاء الإجراءات الموصى بها
+      pending_title: معلق
+      show_description: إظهار الوصف
+      without_pending_actions: لا توجد إجراءات موصى بها معلقة
+      done_title: منتهي
+      without_done_actions: لا توجد إجراءات موصى بها منتهية
+    next_goal:
+      title: هدف
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
