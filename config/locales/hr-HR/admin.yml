@@ -761,6 +761,84 @@ hr:
       investment_authors: Investicije autora u trenutni budžet
       feasible_and_undecided_investment_authors: "Autori nekih investicija u trenutnom budžetu se ne slažu: [evaluacija dovršena te neizvediva]"
       selected_investment_authors: Autori su odabrali investicije u trenutnom budžetu
+      winner_investment_authors: Autori pobjedničkih investicija u trenutnom budžetu
+      not_supported_on_current_budget: Korisnici koji nisu poduprli investicije u trenutnom budžetu
+      invalid_recipients_segment: "Korsnički segment primatelja nije valjan"
+    newsletters:
+      create_success: Newsletter je stvoren uspješno
+      update_success: Newsletter je uspješno ažuriran
+      send_success: Newsletter je uspješno poslan
+      delete_success: Newsletter je uspješno izbrisan
+      index:
+        title: Newsletteri
+        new_newsletter: Novi newsletter
+        subject: Predmet
+        segment_recipient: Primatelji
+        sent: Pošalji
+        actions: Akcije
+        draft: Draft
+        edit: Uredi
+        delete: Izbriši
+        preview: Pregled
+        empty_newsletters: Ne postoje newsletteri za prikaz
+      new:
+        title: Novi newsletter
+        from: Email adresa koja se pojavljuje kada se šalje newsletter
+        header_footer_help_text_html: "Naslov i podnaslov su isti za sve emailove, možete ih modificirati na <code>app/views/layouts/mailer_header</code> i <code>app/views/layouts/mailer_footer</code>.<br>Možete nadomjestiti naslovnu sliku na %{link}."
+        image_link: "prilagođene slike"
+      edit:
+        title: Uredi newsletter
+      show:
+        title: Pogledaj newsletter
+        send: Šalji
+        affected_users: (%{n} utječe na korisnike)
+        sent_emails:
+          one: 1 email poslan
+          few: "%{count} emailova poslano"
+          other: "%{count} emailova poslano"
+        sent_at: Poslano u
+        subject: Predmet
+        segment_recipient: Primatelji
+        from: Email adresa koja se pojavljuje kada se šalje newsletter
+        body: Sadržaj emaila
+        body_help_text: Ovo je kako će korisnici vidjeti email.
+        send_alert: Jeste li sigurni da želite poslati ovaj newsltter prema %{n} korisnika?
+    admin_notifications:
+      create_success: Obavijest je uspješno stvorena
+      update_success: Obavijest je uspješno ažurirana
+      send_success: Obavijest je uspješno poslana
+      delete_success: Obavijest je uspješno obriasna
+      index:
+        section_title: Obavijesti
+        new_notification: Nova obavijest
+        title: Naziv
+        segment_recipient: Primatelji
+        sent: Poslano
+        actions: Akcije
+        draft: Draft
+        edit: Uredi
+        delete: Izbriši
+        preview: Pregled
+        view: Pogled
+        empty_notifications: Ne postoje obavijesti za prikaz
+      new:
+        section_title: Nova obavijest
+        submit_button: Stvori obavijest
+      edit:
+        section_title: Uredi obavijest
+        submit_button: Ažuriraj obavijest
+      show:
+        section_title: Pregledaj obavijest
+        send: Pošalji obavijest
+        will_get_notified: (%{n} korsnika će biti obaviješteno)
+        got_notified: (%{n} korsnika je obaviješteno)
+        sent_at: Pošalji u
+        title: Naziv
+        body: Tekst
+        link: Poveznica
+        segment_recipient: Primatelji
+        preview_guide: "Ovako će korsnici vidjeti obavijest:"
+        sent_guide: "Ovako korisnici vide obavijest:"
     valuators:
       index:
         valuator_groups: "Grupe procjenitelja"
