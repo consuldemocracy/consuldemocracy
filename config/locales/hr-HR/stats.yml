@@ -1,1 +1,18 @@
 hr:
+  stats:
+    budgets:
+      heading: "Naslov"
+      investments_sent_html: "Investicijski prijedlozi poslani"
+      participants_support_phase: "Sudionici su u fazi iskaza potpore"
+      participants_vote_phase: "Sudionici su u glasačkoj fazi"
+      participants_every_phase: "Ukupno sudionika"
+      percent_total_participants: "% Totalno sudionika"
+      percent_heading_census: "% Naslova cenzusa"
+      participatory_disclaimer: "** Totalan broj sudionika koji se referiraju na osobe koje su stvorile, poduprle ili glasale za investicijske prijedloge."
+      heading_disclaimer: "*** Podaci o naslovima odnose se na naslove za koje je pojedini korisnik glasao, ne nužno za one koje je osoba registrirana."
+    polls:
+      by_channel: "Sudionici prema kanalu"
+      vote_by_channel: "Glasaj putem tipa kanala"
+      web_percentage: "%{percentage} Web"
+      booth_percentage: "%{percentage} Glasačkih kabina"
+      letter_percentage: "%{percentage} Pošta"
