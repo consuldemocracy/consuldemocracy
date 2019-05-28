@@ -1,7 +1,16 @@
 hr:
   officing:
+    menu:
+      total_recounts: Ukupno prebrojavanja i rezultata
     poll_budgets:
       index:
         ballot_sheet_author: Autor
       show:
         author: Autor
+    results:
+      new:
+        ballots_white: "Ukupno praznih glasova"
+        ballots_total: "Ukupno glasova"
+      index:
+        table_whites: "Ukupno praznih glasova"
+        table_total: "Ukupno glasova"
