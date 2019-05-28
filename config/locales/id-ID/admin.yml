@@ -14,6 +14,8 @@ id:
       edit: Sunting
       configure: Konfigurasikan
       delete: Hapus
+    officing_booth:
+      title: "Anda memimpin stan yang berlokasi di %{booth}. Jika ini tidak benar, jangan lanjutkan dan hubungi nomor telepon bantuan. Terima kasih."
     banners:
       index:
         title: Spanduk
@@ -31,6 +33,7 @@ id:
         target_url: Tautan
         post_started_at: Postingan yang dimulai pada
         post_ended_at: Postingan yang berakhir pada
+        sections_label: Bagian di mana ia akan muncul
         sections:
           homepage: Halaman depan
           debates: Perdebatan
@@ -63,8 +66,10 @@ id:
           on_debates: Perdebatan
           on_proposals: Proposal
           on_users: Pengguna
+          on_system_emails: Email sistem
         title: Aktivitas moderator
         type: Tipe
+        no_activity: Tidak ada aktivitas moderator.
     budgets:
       index:
         title: Anggaran partisipasif
@@ -79,8 +84,11 @@ id:
         table_investments: Investasi
         table_edit_groups: Judul Kelompok
         table_edit_budget: Sunting
+        table_admin_ballots: Surat suara
         edit_groups: Edit judul grup
         edit_budget: Edit anggaran
+        admin_ballots: Admin surat suara
+        no_budgets: "Tidak ada anggaran."
       create:
         notice: Anggaran partisipatif telah berhasil dibuat!
       update:
