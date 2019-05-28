@@ -1,1 +1,22 @@
 hr:
+  flash:
+    actions:
+      update:
+        notice: "%{resource_name} ažurirano uspješno."
+        debate: "Rasprave ažurirane uspješno."
+        poll: "Anekata ažurirana uspješno."
+        poll_booth: "Glasačko mjesto ažurirano uspješno."
+        active_poll: "Opis ankete uspješno ažurirano."
+        proposal: "Prijedlog uspješno ažuriran."
+        spending_proposal: "Investicijski projekt uspješno ažuriran."
+        budget_investment: "Investicijski projekt uspješno ažuriran."
+        topic: "Tema je uspješno ažurirana."
+        valuator_group: "Grupa evaluatora uspješno ažurirana"
+        translation: "Prijevod uspješno ažuriran"
+      destroy:
+        spending_proposal: "Potrošeni prijedlozi uspješno obrisani."
+        budget_investment: "Investicijski projekti uspješno obrisani."
+        error: "Ne mogu biti obrisani"
+        topic: "Tema je uspješno obrisana."
+        poll_question_answer_video: "Video odgovora uspješno obrisan."
+        valuator_group: "Grupa evaluatora uspješno obrisana"
