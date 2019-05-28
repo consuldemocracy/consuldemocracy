@@ -696,8 +696,71 @@ hr:
       settings: Globalne postavke
       spending_proposals: Potrošnja prijedloga
       stats: Statistike
+      signature_sheets: Liste za potpise
+      site_customization:
+        documents: Prilagođeni dokumenti
+        homepage: Glavna stranica
+        pages: Prilagođene stranice
+        images: Prilagođene slike
+        content_blocks: Prilagođeni blokovi sadržaja
+        information_texts: Prilagođeni informativni tekstovi
+        information_texts_menu:
+          basic: "Osnovna prilagodba"
+          debates: "Rasprave"
+          community: "Zajednica"
+          proposals: "Prijedlozi"
+          polls: "Ankete"
+          layouts: "Slojevi"
+          mailers: "Email-ovi"
+          management: "Menadžment"
+          welcome: "Dobrodošli"
+        buttons:
+          save: "Spremi"
+          content_block:
+            update: "Ažuriraj Blok"
+      title_moderated_content: Moderirani sadržaj
+      title_budgets: Budžeti
+      title_profiles: Profili
+      title_settings: Postavke
+      title_site_customization: Sadržaj stranice
+      title_booths: Glasačke kabine
+      legislation: Kolaborativna Legislativa
+      users: Krosnici
+      dashboard: Glavni izbornik prijedloga
+      administrator_tasks: Zatraženi resursi
+      dashboard_actions: Resursi i djelovanja
+    administrators:
+      index:
+        title: Administratori
+        name: Ime
+        email: Email
+        id: Administrator ID
+        no_administrators: Ne postoje administratori.
+      administrator:
+        add: Dodaj
+        delete: Izbriši
+        restricted_removal: "Oprostite, ne možete sebe ukloniti kao administratora"
+      search:
+        title: "Administratori: Korisnička pretraga"
+    moderators:
+      index:
+        title: Moderatori
+        name: Ime
+        email: Email
+        no_moderators: Ne postoje moderatori.
+      moderator:
+        add: Dodaj
+        delete: Izbriši
+      search:
+        title: "Moderatori: Korisnička pretraga"
     segment_recipient:
+      all_users: Svi korisnici
+      administrators: Administratori
+      all_proposal_authors: Autori prijedloga (uključivo arhivirane i one koji su povućeni)
       proposal_authors: Prijedlozi autora
+      investment_authors: Investicije autora u trenutni budžet
+      feasible_and_undecided_investment_authors: "Autori nekih investicija u trenutnom budžetu se ne slažu: [evaluacija dovršena te neizvediva]"
+      selected_investment_authors: Autori su odabrali investicije u trenutnom budžetu
     valuators:
       index:
         valuator_groups: "Grupe procjenitelja"
