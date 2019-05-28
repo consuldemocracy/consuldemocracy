@@ -1,1 +1,22 @@
 hr:
+  seeds:
+    categories:
+      mobility: Mobilnost
+      media: Mediji
+      health: Zdravlje
+      transparency: Transparentnost
+      security_emergencies: Sigurnost i Hitni slučajevi
+      environment: Okoliš
+    budgets:
+      budget: Paritcipativni Budžet
+      currency: '€'
+      groups:
+        all_city: Cijeli Grad
+        districts: Distrikti
+      valuator_groups:
+        culture_and_sports: Kultura & Sportovi
+        gender_and_diversity: Spol & Politika Raznolikosti
+        urban_development: Održivi Urbani Razvoj
+        equity_and_employment: Jednakost & Zaposlenje
+      statuses:
+        studying_project: Proučavanje projekta
