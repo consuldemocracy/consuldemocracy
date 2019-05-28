@@ -868,6 +868,8 @@ hr:
         valuator_groups: "Grupe procjenitelja"
         group: "Grupa"
         no_group: "Nema grupe"
+      summary:
+        total_count: Ukupno
       show:
         group: "Grupa"
         no_group: "Bez grupe"
@@ -883,16 +885,45 @@ hr:
         name: "Ime grupe"
         new: "Stvori grupu procjenitelja"
         edit: "Spremi grupu procjenitelja"
+    poll_booth_assignments:
+      show:
+        total_system: Ukupno glasova (automatski)
     questions:
       show:
         author: Autor
+    recounts:
+      index:
+        all_booths_total: "Ukupno kumulativno od svih glasačkih mjesta:"
+        total_final: "Završno prebrojavanje"
+        total_system: "Glasovi (automatski)"
+        table_total_recount: "Ukupno prebrojeno (po činovniku)"
+    results:
+      result:
+        table_whites: "Ukupno praznih glasova"
+        table_total: "Ukupno glasova"
     proposals:
       index:
         author: Autor
         milestones: Ključni ciljevi
     shared:
       author: Autor
+    spending_proposals:
+      summary:
+        total_count: Ukupno
     signature_sheets:
       author: Autor
       show:
         author: Autor
+    stats:
+      show:
+        summary:
+          users: Ukupno korisnika
+          votes: Ukupno glasova
+      direct_messages:
+        total: Ukupno
+      proposal_notifications:
+        total: Ukupno
+      polls:
+        total_participants: Ukupno Sudionika
+        table:
+          origin_total: Ukupno sudionika
