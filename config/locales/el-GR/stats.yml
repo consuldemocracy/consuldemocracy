@@ -31,3 +31,11 @@ el:
       participants_every_phase: "Σύνολο συμμετεχόντων"
       percent_total_participants: "% Σύνολο συμμετεχόντων"
       percent_heading_census: "% Επικεφαλίδα απογραφής"
+      participatory_disclaimer: "** Ο αριθμός των συνολικών συμμετεχόντων αναφέρεται σε άτομα που δημιούργησαν, υποστήριξαν ή ψήφισαν επενδυτικές προτάσεις."
+      heading_disclaimer: "***Τα δεδομένα σχετικά με τις επικεφαλίδες αναφέρονται στην επικεφαλίδα την οποία ψήφισε ο κάθε χρήστης, όχι κατ 'ανάγκη εκείνη στην οποία είναι εγγεγραμμένος."
+    polls:
+      by_channel: "Συμμετέχοντες ανά κανάλι"
+      vote_by_channel: "Τύπος ψήφου ανά κανάλι"
+      web_percentage: "%{percentage} ιστότοπος"
+      booth_percentage: "%{percentage} Περίπτερα"
+      letter_percentage: "%{percentage} Ταχυδρομείο\n"
