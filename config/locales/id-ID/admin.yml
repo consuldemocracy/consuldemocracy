@@ -106,24 +106,55 @@ id:
       destroy:
         success_notice: Anggaran berhasil dihapus
         unable_notice: Anda tidak bisa menghancurkan Anggaran yang telah mempunyai investasi terkait
+        unable_notice_polls: Anda tidak dapat menghapus anggaran yang sudah di diskusikan
       new:
         title: Anggaran partisipatif baru
       winners:
         calculate: Menghitung Pemenang Investasi
         calculated: Pemenang dihitung, mungkin perlu waktu beberapa menit.
+        recalculate: Penghitungan ulang pemenang investasi
     budget_groups:
       name: "Nama"
+      headings_name: "Judul"
+      headings_edit: "Edit judul"
+      headings_manage: "Kelola judul"
+      max_votable_headings: "Maksimum Jumlah judul tempat pengguna dapat memilih"
+      no_groups: "Tidak ada pemilihan."
+      amount:
+        other: "Tersedia 1%{count} grup"
+      create:
+        notice: "Jumlah suara berhasil dibuat!"
+      update:
+        notice: "Jumlah suaran berhasil diperbaharui"
+      destroy:
+        success_notice: "Surat suara berhasil terhapus"
+        unable_notice: "Kamu tidak dapat menghapus suara terkain dengan judul"
       form:
         create: "Buat grup baru"
         edit: "Edit grup"
         name: "Nama grup"
+        submit: "Surat suara disimpan"
+      index:
+        back: "Kembali ke Anggaran"
     budget_headings:
       name: "Nama"
+      no_headings: "Tidak ada judul."
+      amount:
+        other: "1 judul%{count} tersedia"
+      create:
+        notice: "Tajuk berhasil dibuat!"
+      update:
+        notice: "Tajuk berhasil diperbaharui"
+      destroy:
+        success_notice: "Tajuk berhasil dihapus"
+        unable_notice: "Kamu tidak dapat menghapus judul terkait dengan investasi"
       form:
         name: "Nama judul"
         amount: "Jumlah"
         population: "Populasi (pilihan)"
         population_info: "Bidang kependudukan Anggaran Kepala digunakan untuk keperluan statistik pada akhir Anggaran untuk ditampilkan pada setiap Pos yang mewakili area dengan populasi berapa persentase yang dipilih. Bidang ini opsional sehingga anda bisa membiarkannya kosong jika tidak berlaku."
+        latitude: "Lintang (Pilihan)"
+        longitude: "Garis bujur (pilihan)"
         submit: "Menyimpan judul"
     budget_phases:
       edit:
