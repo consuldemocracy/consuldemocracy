@@ -1,7 +1,7 @@
 id:
   attributes:
-    results_enabled: "Hasil akhir"
-    stats_enabled: "Lihat status"
+    results_enabled: "Tampilkan hasil"
+    stats_enabled: "Tampilkan statistik"
     advanced_stats_enabled: "Lihat status keuntungan"
   activerecord:
     models:
