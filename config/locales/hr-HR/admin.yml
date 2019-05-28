@@ -839,6 +839,30 @@ hr:
         segment_recipient: Primatelji
         preview_guide: "Ovako će korsnici vidjeti obavijest:"
         sent_guide: "Ovako korisnici vide obavijest:"
+        send_alert: Jeste li sigurni da želite poslati ovu obavijest prema %{n} korisnika?
+    system_emails:
+      preview_pending:
+        action: Pregled U Tijeku
+        preview_of: Pregled %{name}
+        pending_to_be_sent: Ovo je sadržaj koji je u redu za slanje
+        moderate_pending: Uredi poslane obavijesti
+        send_pending: Poslati na čekanje
+        send_pending_notification: Obavijesti na čekanju su uspješno poslane
+      proposal_notification_digest:
+        title: "Obavijesti prijedloga su klasificirane"
+        description: "Sakuplja sve obavijesti prijedloga za korisnike u pojedinačnoj poruci, kako bi se izbjeglo previše emailova."
+        preview_detail: "Korisnici će samo primati obavijesti od strane prijedloga koje sljede"
+      budget_investment_created:
+        title: "Investicija za budžet stvorena"
+        description: "Pošalji kada korisnik stvara budžet investicije."
+      budget_investment_selected:
+        title: "Investicijski budžet odabran"
+        description: "Pošalji autoru kada je investicijski budžet odabran."
+      budget_investment_unfeasible:
+        title: "Investicijski budžet neizvediv"
+        description: "Pošalji autoru kad je njegov investicijski budžet označen kao neizvediv."
+      budget_investment_unselected:
+        title: "Investicijski budžet nije odabran"
     valuators:
       index:
         valuator_groups: "Grupe procjenitelja"
