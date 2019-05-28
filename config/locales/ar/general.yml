@@ -499,6 +499,7 @@ ar:
     resource:
       and: و
       request_resource: طلب المورد
+      resource_locked: الموارد مغلقة
     recommended_actions:
       title: الإجراءات الموصى بها
       goto_proposed_actions: إذهب إلى الإجراءات الموصى بها
