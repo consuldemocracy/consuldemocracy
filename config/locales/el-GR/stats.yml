@@ -27,3 +27,7 @@ el:
       heading: "Επικεφαλίδα"
       investments_sent_html: "Επενδυτικές προτάσεις οι οποίες έχουν σταλεί"
       participants_support_phase: "Φάση υποστήριξης από τους συμμετέχοντες"
+      participants_vote_phase: "Φάση ψηφοφορίας συμμετεχόντων"
+      participants_every_phase: "Σύνολο συμμετεχόντων"
+      percent_total_participants: "% Σύνολο συμμετεχόντων"
+      percent_heading_census: "% Επικεφαλίδα απογραφής"
