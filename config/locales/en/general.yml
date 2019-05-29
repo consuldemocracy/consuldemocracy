@@ -1019,8 +1019,6 @@ en:
       url_placeholder: Link address
   communities:
     show:
-      send_notification: Send message to the community
-      author: Author
       surveys: Surveys
       complete_survey: Complete the survey
     subnav:
