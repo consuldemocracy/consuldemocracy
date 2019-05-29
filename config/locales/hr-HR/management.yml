@@ -3,5 +3,6 @@ hr:
     budgets:
       no_budgets: Ne postoje aktivni participativni budžeti.
     users:
+      create_user_submit: Stvori korisnika
       erased_notice: Korisnički račun obrisan.
       erased_by_manager: "Obrisan od strane administratora: %{manager}"
