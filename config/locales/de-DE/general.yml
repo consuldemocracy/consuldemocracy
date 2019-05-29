@@ -499,7 +499,6 @@ de:
     show:
       vote_answer: "Für %{answer} abstimmen"
       voted: "Sie haben für %{answer} abgestimmt"
-      voted_token: "Sie können diese Wahlkennung notieren, um Ihre Stimme im endgültigen Ergebniss zu überprüfen:"
   proposal_notifications:
     new:
       title: "Nachricht senden"
