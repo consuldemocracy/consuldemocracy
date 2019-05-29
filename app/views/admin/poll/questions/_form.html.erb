@@ -25,6 +25,38 @@
       <%= translations_form.text_field :title %>
     <% end %>
 
+    <% if !@question.persisted? %>
+      <%= fields_for :votation_type do |votation_f| %>
+        <div class="small-12 medium-6">
+          <%= votation_f.select :enum_type,
+                                options_for_select(VotationType.enum_types.map {|k, v| [t(k, scope: :enum_type), v]},
+                                params.dig(:votation_type, :enum_type)), default: 0,
+                                disabled: @question.persisted?,  label: t("enum_type.title") %>
+        </div>
+
+        <div class="info-type">
+          <span class="js-description_text">
+            <%= t("polls.index.descriptions.unique") %>
+          </span>
+          <div class="small-12 medium-6 margin-description js-max_votes hidden ">
+            <%= votation_f.number_field :max_votes, min: 1, max: 999,
+                                        value: params.dig(:votation_type, :max_votes),
+                                        label: t("question.max_votes") %>
+          </div>
+          <div class="small-12 medium-6 js-prioritization_type hidden">
+            <%= votation_f.select :prioritization_type,
+                                  options_for_select(VotationType.prioritization_types.map {|k, v| [t(k, scope: :prioritization_type), v]},
+                                  params.dig(:votation_type, :prioritization_type) ), default: 0,
+                                  disabled: @question.persisted?, label: t("prioritization_type.title") %>
+          </div>
+          <div class="small-12 medium-6 js-max_group_votes hidden">
+            <%= votation_f.number_field :max_groups_answers, min: 1, max: 999,
+                                        value: params.dig(:votation_type, :max_groups_answers), label: t("question.max_group_answers") %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
     <div class="small-12 medium-4 large-2 margin-top">
       <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
     </div>

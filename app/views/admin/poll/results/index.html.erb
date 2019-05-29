@@ -11,10 +11,14 @@
     </div>
   <% end %>
 
-  <% if @partial_results.present? %>
-    <%= render "recount", resource: @poll %>
-    <%= render "result" %>
-    <%= render "results_by_booth" %>
+  <% if @poll.questions.any? { |question| question.votation_type.present? } %>
+    <%= render "votation_types_results" %>
+  <% else %>
+    <% if @partial_results.present? %>
+      <%= render "recount", resource: @poll %>
+      <%= render "result" %>
+      <%= render "results_by_booth" %>
+    <% end %>
   <% end %>
 
   <% if @poll.voters.any? %>

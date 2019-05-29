@@ -17,6 +17,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   before_action :load_change_log, only: [:show]
 
   def index
+    load_tags
     respond_to do |format|
       format.html
       format.js

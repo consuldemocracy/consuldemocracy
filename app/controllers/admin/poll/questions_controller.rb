@@ -22,6 +22,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
 
   def create
     @question.author = @question.proposal.try(:author) || current_user
+    @question.votation_type = VotationType.build_by_type(@question, params[:votation_type])
 
     if @question.save
       redirect_to admin_question_path(@question)
@@ -53,11 +54,18 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
     redirect_to admin_questions_path, notice: notice
   end
 
+  def get_options_traductions
+    render json: {
+      traduction: t("polls.index.descriptions.#{VotationType.enum_types.key params[:enum_type].to_i}")
+    }
+  end
+
   private
 
     def question_params
       attributes = [:poll_id, :question, :proposal_id]
-      params.require(:poll_question).permit(*attributes, translation_params(Poll::Question))
+      params.require(:poll_question).permit(*attributes, translation_params(Poll::Question),
+        :votation_type, :max_votes, :prioritization_type, :max_groups_answers)
     end
 
     def search_params

@@ -248,14 +248,17 @@ describe "Admin polls" do
       scenario "Question list", :js do
         poll = create(:poll)
         question = create(:poll_question, poll: poll)
+        votation_type_question = create(:poll_question_unique, poll: poll)
         other_question = create(:poll_question)
 
         visit admin_poll_path(poll)
 
-        expect(page).to have_content "Questions (1)"
+        expect(page).to have_content "Questions (2)"
         expect(page).to have_content question.title
+        expect(page).to have_content votation_type_question.title
         expect(page).not_to have_content other_question.title
         expect(page).not_to have_content "There are no questions assigned to this poll"
+
       end
 
     end

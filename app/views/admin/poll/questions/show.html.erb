@@ -26,6 +26,35 @@
         <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
       </p>
     <% end %>
+
+    <% unless @question.votation_type.nil? %>
+      <p>
+        <strong><%= t("question.votation_type") %></strong>
+        <br>
+        <%= t("enum_type.#{@question.votation_type.enum_type}") %>
+      </p>
+      <% if !@question.votation_type.max_votes.nil? %>
+        <p>
+          <strong><%= t("question.max_votes") %></strong>
+          <br>
+          <%= @question.votation_type.max_votes %>
+        </p>
+      <% end %>
+      <% if !@question.votation_type.prioritization_type.nil? %>
+        <p>
+          <strong><%= t("prioritization_type.title") %></strong>
+          <br>
+          <%= t("prioritization_type.#{@question.votation_type.prioritization_type}") %>
+        </p>
+      <% end %>
+      <% if !@question.votation_type.max_groups_answers.nil? %>
+        <p>
+          <strong><%= t("question.max_group_answers") %></strong>
+          <br>
+          <%= @question.votation_type.max_groups_answers %>
+        </p>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
