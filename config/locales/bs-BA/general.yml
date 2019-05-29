@@ -688,7 +688,6 @@ bs:
     show:
       vote_answer: "Glasaj za (odgovor) %{answer}"
       voted: "Glasali ste za (odgovor) %{answer}"
-      voted_token: "Zapišite identifikacioni broj glasa kako bi mogli izvršiti provjeru u konačnim rezultatima:"
   proposal_notifications:
     new:
       title: "Pošalji poruku"
