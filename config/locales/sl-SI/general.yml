@@ -429,7 +429,6 @@ sl:
     show:
       vote_answer: "Glasuj %{answer}"
       voted: "Glasoval/-a si %{answer}"
-      voted_token: "Lahko si zapišeš ta identifikator glasu, da preveriš svoj glas ob končnih rezultatih:"
   proposal_notifications:
     new:
       title: "Pošlji sporočilo"
