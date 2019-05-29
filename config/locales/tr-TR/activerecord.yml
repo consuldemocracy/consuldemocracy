@@ -430,6 +430,7 @@ tr:
               cannot_comment_valuation: "Bir değerlendirmeye yorum yapamazsınız"
       messages:
         record_invalid: "Onaylama başarısız: %{errors}"
+        another_poll_active: Belirtilen sürede aktif olan başka bir anket daha var
         restrict_dependent_destroy:
           has_one: "Bir bağlı %{record} bulunduğundan kayıt silinemiyor"
           has_many: "Bağlı %{record} bulunduğundan kayıt silinemiyor"
