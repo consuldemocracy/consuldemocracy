@@ -153,6 +153,34 @@ describe "Polls" do
     end
   end
 
+  scenario "Can destroy poll without responses", :js do
+    poll = create(:poll, related: proposal)
+
+    visit proposal_dashboard_polls_path(proposal)
+
+    within("#poll_#{poll.id}") do
+      accept_confirm { click_link "Delete survey" }
+    end
+
+    expect(page).to have_content("Survey deleted successfully")
+    expect(page).not_to have_content(poll.name)
+  end
+
+  scenario "Can't destroy poll with responses", :js  do
+    poll = create(:poll, related: proposal)
+    create(:poll_question, poll: poll)
+    create(:poll_voter, poll: poll)
+
+    visit proposal_dashboard_polls_path(proposal)
+
+    within("#poll_#{poll.id}") do
+      accept_confirm { click_link "Delete survey" }
+    end
+
+    expect(page).to have_content("You cannot destroy a survey that has responses")
+    expect(page).to have_content(poll.name)
+  end
+
   scenario "View results not available for upcoming polls" do
     poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
 

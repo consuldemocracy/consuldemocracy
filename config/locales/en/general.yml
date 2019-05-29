@@ -558,6 +558,10 @@ en:
         edit_poll: Edit survey
         show_results: Show results
         show_results_help: If you check this box the results will be public and all users will be able to see them
+        delete: Delete survey
+        alert_notice: This action will remove the survey and all its associated questions.
+        success_notice: Survey deleted successfully
+        unable_notice: You cannot destroy a survey that has responses
       form:
         name: Survey title
         add_question: Add question

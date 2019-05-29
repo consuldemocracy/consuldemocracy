@@ -1,8 +1,8 @@
 <div id="<%= dom_id(poll) %>" class="small-12 medium-6 large-4 column end">
   <div class="poll-card" data-equalizer-watch="poll-cards">
     <h4>
-      <%= link_to poll.title, 
-                  proposal_poll_path(proposal, poll), 
+      <%= link_to poll.title,
+                  proposal_poll_path(proposal, poll),
                   target: "_blank" %>
     </h4>
     <span class="small">
@@ -19,7 +19,7 @@
                     edit_proposal_dashboard_poll_path(proposal, poll), class: "button hollow" %>
       <% else %>
         <%= link_to t("dashboard.polls.poll.view_results"),
-                    results_proposal_poll_path(proposal, poll), 
+                    results_proposal_poll_path(proposal, poll),
                     class: "button", target: "_blank" %>
       <% end %>
     </div>
@@ -31,5 +31,11 @@
         class: "js-submit-on-change" %>
     <% end %>
     <p class="help-text"><%= t("dashboard.polls.poll.show_results_help") %></p>
+
+    <%= link_to t("dashboard.polls.poll.delete"),
+                proposal_dashboard_poll_path(proposal, poll),
+                method: :delete,
+                "data-confirm": t("dashboard.polls.poll.alert_notice"),
+                class: "delete" %>
   </div>
 </div>

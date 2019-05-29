@@ -35,6 +35,16 @@ class Dashboard::PollsController < Dashboard::BaseController
     end
   end
 
+  def destroy
+    if ::Poll::Voter.where(poll: poll).any?
+      redirect_to proposal_dashboard_polls_path(proposal), alert: t("dashboard.polls.poll.unable_notice")
+    else
+      poll.destroy
+
+      redirect_to proposal_dashboard_polls_path(proposal), notice: t("dashboard.polls.poll.success_notice")
+    end
+  end
+
   private
 
     def poll
