@@ -1,3 +1,24 @@
 tr:
   stats:
     title: "Katılım verileri"
+    advanced: "Gelişmiş istatistikler"
+    total_participants: "Katılımcılar"
+    by_gender: "Katılımcıların cinsiyete göre yüzdelik dağılım sonuçları"
+    by_age: "Katılımcıların cinsiyete göre dağılımı"
+    by_geozone: "Katılımcıların bölgelere göre dağılımı"
+    men_percentage: "%{percentage} Erkek"
+    women_percentage: "%{percentage} Kadın"
+    age: "Yaş"
+    age_more_than: "%{start} yaşında veya daha büyük"
+    age_range: "%{start} - %{finish} yaşında"
+    total: "Toplam"
+    geozone: "Bölge"
+    no_demographic_data:
+      one: "* Bir katılımcıyla ilgili demografik veri bulunmamaktadır."
+      other: "Katılımcıların %{count} yla ilgili demografik veri bulunmamaktadır."
+    budgets:
+      link: "İstatistikler"
+      page_title: "%{budget} - Katılımcı istatistikleri"
+      total_selected_investments: "Final oylama aşamasındaki projeler"
+      total_unfeasible_investments: "Uygulanabilir olmayan projeler"
+      by_phase: "Aşamalara göre katılımcılar"
