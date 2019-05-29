@@ -665,7 +665,6 @@ da:
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
-      voted_token: "Skriv verificeringskoden ned så du kan tjekke din stemme i slutresultatet:"
   proposal_notifications:
     new:
       title: "Send besked"
