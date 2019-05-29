@@ -119,6 +119,15 @@ tr:
       proposal_notification:
         one: "Öneri bildirimi"
         other: "Öneri bildirimleri"
+      dashboard/action:
+        one: Öneri panosu - Yapılması gereken
+        other: Öneri panosu - Yapılması gerekenler
+      dashboard/administrator_task:
+        one: Görev
+        other: Görevler
+      link:
+        one: Bağlantı
+        other: Bağlantılar
     attributes:
       budget:
         name: "İsim"
@@ -218,6 +227,9 @@ tr:
         external_url: "Ek belgelere bağlantı"
       poll/question/translation:
         title: "Soru"
+      poll/ballot_sheet:
+        data: CSV verisi
+        poll_id: Anket
       signature_sheet:
         signable_type: "İmzalanır tür"
         signable_id: "İmzalanır KİMLİK"
@@ -331,6 +343,10 @@ tr:
         link_text: Bağlantı metni
       widget/feed:
         limit: Öğelerin sayısı
+      dashboard/action:
+        title: Başlık
+        short_description: Kısa tanımlama
+        description: Tanımlama
     errors:
       models:
         user:
