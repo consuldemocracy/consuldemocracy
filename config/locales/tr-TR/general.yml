@@ -503,7 +503,6 @@ tr:
     show:
       vote_answer: "Oy %{answer}"
       voted: "%{answer} 'a oy verdiniz"
-      voted_token: "Final sonuçlarda oyunuzu kontrol etmek için bu oy tanımlayıcısını yazabilirsiniz:"
   proposal_notifications:
     new:
       title: "Mesaj gönder"
