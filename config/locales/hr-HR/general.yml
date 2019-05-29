@@ -687,7 +687,6 @@ hr:
     show:
       vote_answer: "Glas %{answer}"
       voted: "Vi ste glasali %{answer}"
-      voted_token: "Možete naisati identifikator glasova kako biste provjerili svoje završne rezultate glasovanja:"
   proposal_notifications:
     new:
       title: "Pošalji poruku"
