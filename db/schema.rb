@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "action"
-    t.integer  "actionable_id"
     t.string   "actionable_type"
+    t.integer  "actionable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
@@ -501,8 +501,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.integer  "attachment_file_size"
     t.datetime "attachment_updated_at"
     t.integer  "user_id"
-    t.integer  "documentable_id"
     t.string   "documentable_type"
+    t.integer  "documentable_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.boolean  "admin",                   default: false
@@ -538,8 +538,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "follows", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "followable_id"
     t.string   "followable_type"
+    t.integer  "followable_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["followable_type", "followable_id"], name: "index_follows_on_followable_type_and_followable_id", using: :btree
@@ -587,8 +587,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.integer  "imageable_id"
     t.string   "imageable_type"
+    t.integer  "imageable_id"
     t.string   "title",                   limit: 80
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
@@ -865,8 +865,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "milestones", force: :cascade do |t|
-    t.integer  "milestoneable_id"
     t.string   "milestoneable_type"
+    t.integer  "milestoneable_id"
     t.string   "title",              limit: 80
     t.text     "description"
     t.datetime "publication_date"
@@ -894,8 +894,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "notifications", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "notifiable_id"
     t.string   "notifiable_type"
+    t.integer  "notifiable_id"
     t.integer  "counter",         default: 1
     t.datetime "emailed_at"
     t.datetime "read_at"
@@ -1151,8 +1151,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   create_table "progress_bars", force: :cascade do |t|
     t.integer  "kind"
     t.integer  "percentage"
-    t.integer  "progressable_id"
     t.string   "progressable_type"
+    t.integer  "progressable_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
@@ -1217,10 +1217,10 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "related_contents", force: :cascade do |t|
-    t.integer  "parent_relationable_id"
     t.string   "parent_relationable_type"
-    t.integer  "child_relationable_id"
+    t.integer  "parent_relationable_id"
     t.string   "child_relationable_type"
+    t.integer  "child_relationable_id"
     t.integer  "related_content_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -1252,8 +1252,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "signature_sheets", force: :cascade do |t|
-    t.integer  "signable_id"
     t.string   "signable_type"
+    t.integer  "signable_id"
     t.text     "document_numbers"
     t.boolean  "processed",        default: false
     t.integer  "author_id"
@@ -1355,10 +1355,10 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
-    t.integer  "taggable_id"
     t.string   "taggable_type"
-    t.integer  "tagger_id"
+    t.integer  "taggable_id"
     t.string   "tagger_type"
+    t.integer  "tagger_id"
     t.string   "context",       limit: 128
     t.datetime "created_at"
     t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
@@ -1530,10 +1530,10 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer  "votable_id"
     t.string   "votable_type"
-    t.integer  "voter_id"
+    t.integer  "votable_id"
     t.string   "voter_type"
+    t.integer  "voter_id"
     t.boolean  "vote_flag"
     t.string   "vote_scope"
     t.integer  "vote_weight"
