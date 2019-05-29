@@ -462,7 +462,6 @@ id:
     show:
       vote_answer: "Suara %{answer}"
       voted: "Anda telah suara %{answer}"
-      voted_token: "Anda dapat menuliskan suara ini pengenal, untuk memeriksa suara anda pada hasil akhir:"
   proposal_notifications:
     new:
       title: "Kirim pesan"
