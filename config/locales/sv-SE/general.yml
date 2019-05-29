@@ -565,7 +565,6 @@ sv:
     show:
       vote_answer: "Rösta på %{answer}"
       voted: "Du har röstat på %{answer}"
-      voted_token: "Skriv ner den här verifieringskoden för att kunna kontrollera din röst i slutresultatet:"
   proposal_notifications:
     new:
       title: "Skicka meddelande"
