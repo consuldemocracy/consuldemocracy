@@ -1029,6 +1029,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.string   "answer"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "positive"
+    t.integer  "order"
+    t.integer  "value"
     t.index ["author_id"], name: "index_poll_answers_on_author_id", using: :btree
     t.index ["question_id", "answer"], name: "index_poll_answers_on_question_id_and_answer", using: :btree
     t.index ["question_id"], name: "index_poll_answers_on_question_id", using: :btree
@@ -1084,6 +1087,19 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["user_id"], name: "index_poll_officers_on_user_id", using: :btree
   end
 
+  create_table "poll_pair_answers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "author_id"
+    t.integer  "answer_rigth_id"
+    t.integer  "answer_left_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["answer_left_id"], name: "index_poll_pair_answers_on_answer_left_id", using: :btree
+    t.index ["answer_rigth_id"], name: "index_poll_pair_answers_on_answer_rigth_id", using: :btree
+    t.index ["author_id"], name: "index_poll_pair_answers_on_author_id", using: :btree
+    t.index ["question_id"], name: "index_poll_pair_answers_on_question_id", using: :btree
+  end
+
   create_table "poll_partial_results", force: :cascade do |t|
     t.integer "question_id"
     t.integer "author_id"
@@ -1127,6 +1143,7 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer "question_id"
     t.integer "given_order", default: 1
     t.boolean "most_voted",  default: false
+    t.boolean "hidden",      default: false
     t.index ["question_id"], name: "index_poll_question_answers_on_question_id", using: :btree
   end
 
@@ -1613,6 +1630,29 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["user_id"], name: "index_visits_on_user_id", using: :btree
   end
 
+  create_table "votation_set_answers", force: :cascade do |t|
+    t.integer  "author_id"
+    t.integer  "votation_type_id"
+    t.string   "answer"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["author_id"], name: "index_votation_set_answers_on_author_id", using: :btree
+    t.index ["votation_type_id"], name: "index_votation_set_answers_on_votation_type_id", using: :btree
+  end
+
+  create_table "votation_types", force: :cascade do |t|
+    t.integer  "questionable_id"
+    t.string   "questionable_type"
+    t.integer  "enum_type"
+    t.boolean  "open_answer"
+    t.boolean  "prioritized"
+    t.integer  "prioritization_type"
+    t.integer  "max_votes"
+    t.integer  "max_groups_answers"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
   create_table "votes", force: :cascade do |t|
     t.string   "votable_type"
     t.integer  "votable_id"
@@ -1721,4 +1761,5 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   add_foreign_key "trackers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
+  add_foreign_key "votation_set_answers", "votation_types"
 end
