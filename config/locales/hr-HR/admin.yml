@@ -863,20 +863,78 @@ hr:
         description: "Pošalji autoru kad je njegov investicijski budžet označen kao neizvediv."
       budget_investment_unselected:
         title: "Investicijski budžet nije odabran"
+        description: "Pošalji kada je autorov budžet nije odabran za glasačku fazu."
+      comment:
+        title: "Komentar"
+        description: "Pošalji autoru kada dobije komentar."
+      reply:
+        title: "Odgovor"
+        description: "Pošalji autoru komentaru kada dobije odgovor."
+      direct_message_for_receiver:
+        title: "Primatelj privatne poruke"
+        description: "Pošalji privatnu poruku primatelju."
+      direct_message_for_sender:
+        title: "Pošiljatelj privatne poruke"
+        description: "Pošalji privatnu poruku pošiljatelju."
+      email_verification:
+        title: "Email verificiran"
+        description: "Pošalji novom korisniku kako bi se potvrdio račun."
+      user_invite:
+        title: "Korisnička Pozivnica"
+        description: "Pošalji osobi koja je pozvana za registraciju računa."
+      edit_info: "Možete urediti ovaj email u"
+      message_title: "Naziv Poruke"
+      message_body: "Ovo je uzorak sadržaja poruke."
+      alert:
+        no_investments: "Nisu stvoreni investicijski budžeti. Neki primjeri podataka su potrebni kako bi se dobio uvid u email."
+        no_comments: "Nisu stvoreni komentari. Neki primjeri podataka su potrebni kako bi se dobio pregled emiala."
+        no_replies: "Ne postoje odgovori. Primjeri podataka su potrebni kako bi se dobio pregled emaila."
+    emails_download:
+      index:
+        title: Prezumi emailove
+        download_segment: Preuzmi email adresu
+        download_segment_help_text: Preuzmi u CSV formatu
+        download_emails_button: Preuzmi listu emailova
     valuators:
       index:
+        title: Procjenitelji
+        name: Ime
+        email: Email
+        description: Opis
+        no_description: Nema opisa
+        no_valuators: Ne postoje procjenitelji.
         valuator_groups: "Grupe procjenitelja"
         group: "Grupa"
         no_group: "Nema grupe"
+      valuator:
+        add: Dodaj procjenitelje
+        delete: Izbriši
+      search:
+        title: "Procjenitelji: Pretraga korisnika"
       summary:
+        title: Procijeniteljski sažetak za investicijske projekte
+        valuator_name: Procjenitelj
+        finished_and_feasible_count: Dovrđeni i izvedivi
+        finished_and_unfeasible_count: Dovršeni i neizvedivi
+        finished_count: Dovršeno
+        in_evaluation_count: U procesu evaluacije
         total_count: Ukupno
+        cost: Trošak
+      form:
+        edit_title: "Procjenitelji: Uredi procjenitelja"
+        update: "Ažuriraj procjenitelja"
+        updated: "Procjenitelje uspješno ažuriran"
       show:
+        description: "Opis"
+        email: "Email"
         group: "Grupa"
+        no_description: "Bez opisa"
         no_group: "Bez grupe"
     valuator_groups:
       index:
         title: "Grupa procjenitelja"
         new: "Stvori grupu procjenitelja"
+        name: "Ime"
         no_groups: "Ne postoji grupa procjenitelja"
       show:
         title: "Grupa procjenitelja: %{group}"
