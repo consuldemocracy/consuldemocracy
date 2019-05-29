@@ -502,7 +502,6 @@ val:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votat %{answer}"
-      voted_token: "Pots apuntar este identificador de vot, per a comprobar la teua votació en el resultat final:"
   proposal_notifications:
     new:
       title: "Enviar missatge"
