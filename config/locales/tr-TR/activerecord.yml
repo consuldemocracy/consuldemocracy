@@ -347,6 +347,11 @@ tr:
         title: Başlık
         short_description: Kısa tanımlama
         description: Tanımlama
+        link: Dış bağlantı
+        active: Aktif
+        action_type: Tür
+      dashboard/administrator_task:
+        source: Kaynak
     errors:
       models:
         user:
