@@ -1,0 +1,5 @@
+<%= form_tag(create_answer_question_path(question, token: token), method: :post, remote: true) do %>
+  <label> You can add your own answer</label>
+  <input type="text" class="medium-10" name="answer">
+  <input class="button success" type="submit" value="<%= t("poll_questions.show.add_answer") %>">
+<% end %>

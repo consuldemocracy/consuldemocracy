@@ -1,33 +1,22 @@
-<div class="poll-question-answers">
-  <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
-    <% question.question_answers.each do |answer| %>
-      <% if @answers_by_question_id[question.id] == answer.title &&
-            (!voted_before_sign_in(question) ||
-             question.poll.voted_in_booth?(current_user)) %>
-        <span class="button answered"
-              title="<%= t("poll_questions.show.voted", answer: answer.title)%>">
-          <%= answer.title %>
-        </span>
-      <% else %>
-        <%= link_to answer.title,
-          answer_question_path(question, answer: answer.title, token: token),
-          method: :post,
-          remote: true,
-          title: t("poll_questions.show.vote_answer", answer: answer.title),
-          class: "button secondary hollow js-question-answer" %>
-      <% end %>
-    <% end %>
-  <% elsif !user_signed_in? %>
-    <% question.question_answers.order(id: :desc).each do |answer| %>
-      <%= link_to answer.title, new_user_session_path, class: "button secondary hollow" %>
-    <% end %>
-  <%  elsif !current_user.level_two_or_three_verified? %>
-    <% question.question_answers.order(id: :desc).each do |answer| %>
-      <%= link_to answer.title, verification_path, class: "button secondary hollow" %>
-    <% end %>
+<% if question.votation_type.nil? %>
+  <%= render "polls/questions/answers_unique", question: question, answers: answers, token: token %>
+<% else %>
+  <% case question.votation_type.enum_type %>
+  <% when "unique" %>
+    <%= render "polls/questions/answers_unique", question: question, answers: answers, token: token %>
+  <% when "multiple", "positive_open" %>
+    <%= render "polls/questions/answers_multiple", question: question, answers: answers, token: token %>
+  <% when "positive_negative_open" %>
+    <%= render "polls/questions/answers_positive_negative", question: question, answers: answers, token: token, page: page %>
+  <% when "answer_couples_closed" %>
+    <%= render "polls/questions/answers_couples", answers_open: false, question: question, token: token %>
+  <% when "answer_couples_open" %>
+    <%= render "polls/questions/answers_couples", answers_open: true, question: question, token: token %>
+  <% when "answer_set_closed", "answer_set_open" %>
+    <%= render "polls/questions/answers_set", question: question, token: token, answers: question.votation_type.votation_set_answers.by_author(current_user) %>
+  <% when "prioritized" %>
+    <%= render "polls/questions/answers_prioritized", answers_open: false, question: question, answers: answers, token: token %>
   <% else %>
-    <% question.question_answers.order(id: :desc).each do |answer| %>
-      <span class="button secondary hollow disabled"><%= answer.title %></span>
-    <% end %>
+    <%= render "polls/questions/answers_unique", question: question, answers: answers, token: token %>
   <% end %>
-</div>
+<% end %>
