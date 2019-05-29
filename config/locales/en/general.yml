@@ -559,6 +559,7 @@ en:
         show_results: Show results
         show_results_help: If you check this box the results will be public and all users will be able to see them
       form:
+        name: Survey title
         add_question: Add question
       question_fields:
         remove_question: Remove question
