@@ -4,6 +4,7 @@ hr:
       total_recounts: Ukupno prebrojavanja i rezultata
     poll_budgets:
       index:
+        ballot_sheet_name: Ime
         ballot_sheet_author: Autor
       show:
         author: Autor
