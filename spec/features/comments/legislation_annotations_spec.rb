@@ -44,6 +44,22 @@ describe "Commenting legislation questions" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: legislation_annotation, user: user)
+
+    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
+                                                            legislation_annotation.draft_version,
+                                                            legislation_annotation)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+      click_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    expect(page).to have_link "Go back to #{legislation_annotation.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = legislation_annotation.comments.first
     child_comment  = create(:comment, body: "First subcomment", commentable: legislation_annotation, parent: parent_comment)

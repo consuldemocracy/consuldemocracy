@@ -39,6 +39,23 @@ describe "Commenting topics from proposals" do
     expect(page).to have_link "Go back to #{topic.title}", href: community_topic_path(community, topic)
   end
 
+  scenario "Link to comment show" do
+    community = proposal.community
+    topic = create(:topic, community: community)
+    comment = create(:comment, commentable: topic, user: user)
+
+    visit community_topic_path(community, topic)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{topic.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     community = proposal.community
     topic = create(:topic, community: community)

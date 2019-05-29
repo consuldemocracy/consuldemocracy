@@ -38,6 +38,21 @@ describe "Commenting proposals" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: proposal, user: user)
+
+    visit proposal_path(proposal)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{proposal.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = create(:comment, body: "Main comment", commentable: proposal)
     child_comment  = create(:comment, body: "First subcomment", commentable: proposal, parent: parent_comment)

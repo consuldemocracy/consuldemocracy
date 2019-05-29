@@ -61,7 +61,12 @@
 
           <% end %>
 
-          &nbsp;&bull;&nbsp;<span><%= l comment.created_at.to_datetime, format: :datetime %></span>
+          &nbsp;&bull;&nbsp;
+          <span>
+            <%= link_to comment_path(comment) do %>
+              <%= l comment.created_at.to_datetime, format: :datetime %>
+            <% end %>
+          </span>
         </div>
 
         <div class="comment-user
