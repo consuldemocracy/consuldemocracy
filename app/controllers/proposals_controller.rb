@@ -129,7 +129,9 @@ class ProposalsController < ApplicationController
     end
 
     def discard_archived
-      @resources = @resources.not_archived unless @current_order == "archival_date"
+      unless @current_order == "archival_date" || params[:selected].present?
+        @resources = @resources.not_archived
+      end
     end
 
     def load_retired

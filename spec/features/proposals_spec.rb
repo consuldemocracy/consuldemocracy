@@ -1013,6 +1013,16 @@ feature "Proposals" do
       expect(page).not_to have_link "highest rated"
       expect(page).not_to have_link "newest"
     end
+
+    scenario "show archived proposals in selected proposals list" do
+      archived_proposal = create(:proposal, :selected, :archived)
+
+      visit proposals_path
+      expect(page).not_to have_content archived_proposal.title
+
+      click_link "Selected proposals"
+      expect(page).to have_content archived_proposal.title
+    end
   end
 
   context "Search" do
