@@ -935,6 +935,7 @@ hr:
         title: "Grupa procjenitelja"
         new: "Stvori grupu procjenitelja"
         name: "Ime"
+        members: "Članovi"
         no_groups: "Ne postoji grupa procjenitelja"
       show:
         title: "Grupa procjenitelja: %{group}"
@@ -943,9 +944,78 @@ hr:
         name: "Ime grupe"
         new: "Stvori grupu procjenitelja"
         edit: "Spremi grupu procjenitelja"
+    poll_officers:
+      index:
+        title: Službenici za bilježenje glasova
+      officer:
+        add: Dodaj
+        delete: Obriši poziciju
+        name: Ime
+        email: Email
+        entry_name: činovnik
+      search:
+        email_placeholder: Pretraži korisnika po emailu
+        search: Pretraga
+        user_not_found: Korisnik nije pronađen
+        help: "Dodaj ili ukloni činovnike ankete iz pretrage od ispod."
+    poll_officer_assignments:
+      index:
+        officers_title: "Popis činovnika"
+        no_officers: "Ne postoje činovnici pripisani ovoj anketi."
+        table_name: "Ime"
+        table_email: "Email"
+      by_officer:
+        date: "Datum"
+        booth: "Glasačko mjesto"
+        assignments: "Promjene u službi u ovoj anketi"
+        no_assignments: "Ovaj korisnik nema činovnika u smjeni u ovoj anketi."
+    poll_shifts:
+      new:
+        add_shift: "Dodaj smjenu"
+        shift: "Zadatak"
+        shifts: "Smjene na ovom glasačkom mjestu"
+        date: "Datum"
+        task: "Zadatak"
+        edit_shifts: Uredi smjene
+        new_shift: "Nova smjena"
+        no_shifts: "Ova glasačka kabina nema smjena"
+        officer: "Činovnik"
+        remove_shift: "Ukloni"
+        search_officer_button: Pretraga
+        search_officer_placeholder: Pretraži činovnike
+        search_officer_text: Pretraži činovnike koji su pripisani novoj smjeni
+        select_date: "Odaberi dan"
+        no_voting_days: "Glasanje je dovršeno"
+        select_task: "Odaberi zadatak"
+        table_shift: "Smjena"
+        table_email: "Email"
+        table_name: "Ime"
+      flash:
+        create: "Smjena dodana"
+        destroy: "Smjena uklonjena"
+        unable_to_destroy: "Smjene koje su povezane s rezultatima i prebrojavanjem se ne mogu obrisati"
+        date_missing: "Mora se odabrati datum"
+      vote_collection: Sakupi Glasove
+      recount_scrutiny: Prebrojavanje & Ispitivanje
+    booth_assignments:
+      manage_assignments: Upravljanje zadacima
+      manage:
+        assignments_list: "Zadaci za anektu '%{poll}'"
+        status:
+          assign_status: Zadatak
+          assigned: Dodjeljeno
+          unassigned: Nije dodjeljeno
+        actions:
+          assign: Glasačko mjesto dodjeljeno
+          unassign: Glasačko mjesto nije dodjeljeno
     poll_booth_assignments:
       show:
         total_system: Ukupno glasova (automatski)
+      index:
+        table_name: "Ime"
+    polls:
+      index:
+        name: "Ime"
     questions:
       show:
         author: Autor
@@ -959,6 +1029,17 @@ hr:
       result:
         table_whites: "Ukupno praznih glasova"
         table_total: "Ukupno glasova"
+    booths:
+      index:
+        name: "Ime"
+      new:
+        name: "Ime"
+    officials:
+      index:
+        name: Ime
+    organizations:
+      index:
+        name: Ime
     proposals:
       index:
         author: Autor
@@ -968,8 +1049,12 @@ hr:
     spending_proposals:
       summary:
         total_count: Ukupno
+    geozones:
+      geozone:
+        name: Ime
     signature_sheets:
       author: Autor
+      name: Ime
       show:
         author: Autor
     stats:
@@ -985,3 +1070,13 @@ hr:
         total_participants: Ukupno Sudionika
         table:
           origin_total: Ukupno sudionika
+    tags:
+      name:
+        placeholder: Upiši ime teme
+    users:
+      columns:
+        name: Ime
+    site_customization:
+      content_blocks:
+        content_block:
+          name: Ime
