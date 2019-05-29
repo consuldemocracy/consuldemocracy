@@ -22,3 +22,6 @@ tr:
       total_selected_investments: "Final oylama aşamasındaki projeler"
       total_unfeasible_investments: "Uygulanabilir olmayan projeler"
       by_phase: "Aşamalara göre katılımcılar"
+      total: "Toplam"
+      heading: "Başlık"
+      investments_sent_html: "Gönderilen yatırım önerileri"
