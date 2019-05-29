@@ -460,7 +460,6 @@ cs:
     show:
       vote_answer: "Hlasování %{answer}"
       voted: "Hlasovali jste %{answer}"
-      voted_token: "Můžete si zapsat tento identifikátor hlasování, abyste si ověřili svůj hlas v konečných výsledcích:"
   proposal_notifications:
     new:
       title: "Odeslat zprávu"
