@@ -86,7 +86,9 @@
             <%= link_to "", class: "js-toggle-children relative", data: {"id": "#{dom_id(comment)}"} do %>
               <span class="show-for-sr js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
               <span class="show-for-sr js-child-toggle"><%= t("shared.hide") %></span>
-              <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
+              <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span>
+              <span class="js-child-toggle" style="display: none;"><%= t("comments.comment.responses_show", count: comment.children.size) %></span>
+              <span class="js-child-toggle"><%= t("comments.comment.responses_collapse", count: comment.children.size) %></span>
             <% end %>
           <% else %>
             <%= t("comments.comment.responses", count: 0) %>

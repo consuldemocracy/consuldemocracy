@@ -51,6 +51,14 @@ en:
         one: 1 response
         other: "%{count} responses"
         zero: No responses
+      responses_show:
+        one: "1 response (show)"
+        other: "%{count} responses (show)"
+        zero: No responses
+      responses_collapse:
+        one: "1 response (collapse)"
+        other: "%{count} responses (collapse)"
+        zero: No responses
       user_deleted: User deleted
       votes:
         one: 1 vote

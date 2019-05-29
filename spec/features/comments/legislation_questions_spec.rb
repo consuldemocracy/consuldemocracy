@@ -69,20 +69,25 @@ describe "Commenting legislation questions" do
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end

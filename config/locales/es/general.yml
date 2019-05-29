@@ -49,8 +49,16 @@ es:
       moderator: Moderador
       responses:
         zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
+        one: 1 respuesta
+        other: "%{count} respuestas"
+      responses_show:
+        one: "1 respuesta (mostrar)"
+        other: "%{count} respuestas (mostrar)"
+        zero: Sin respuestas
+      responses_collapse:
+        one: "1 respuesta (colapsar)"
+        other: "%{count} respuestas (colapsar)"
+        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
