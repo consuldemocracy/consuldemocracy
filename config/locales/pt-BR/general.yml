@@ -500,7 +500,6 @@ pt-BR:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Você votou %{answer}"
-      voted_token: "Você pode anotar este identificador de votos para verificar seu voto nos resultados finais:"
   proposal_notifications:
     new:
       title: "Enviar mensagem"
