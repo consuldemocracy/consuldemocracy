@@ -485,7 +485,6 @@ zh-CN:
     show:
       vote_answer: "投票%{answer}"
       voted: "您已经投票%{answer}"
-      voted_token: "您可以写下此投票标识符号，以便在最终结果中检查您的投票："
   proposal_notifications:
     new:
       title: "发送信息"
