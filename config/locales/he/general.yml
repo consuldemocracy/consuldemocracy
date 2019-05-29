@@ -710,7 +710,6 @@ he:
     show:
       vote_answer: "הצבעה %{answer}"
       voted: "עליך להצביע %{answer}"
-      voted_token: "אתה יכול לכתוב את מזהה ההצבעה הזה, בכדי לבדוק את הצבעתך בתוצאות הסופיות:"
   proposal_notifications:
     new:
       title: "שלח הודעה"
