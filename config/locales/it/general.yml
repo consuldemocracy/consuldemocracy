@@ -500,7 +500,6 @@ it:
     show:
       vote_answer: "Voto %{answer}"
       voted: "Hai votato %{answer}"
-      voted_token: "Puoi appuntarti questo identificativo di voto, per controllare il tuo voto nei risultati finali:"
   proposal_notifications:
     new:
       title: "Invia messaggio"
