@@ -498,7 +498,6 @@ fr:
     show:
       vote_answer: "Voter %{answer}"
       voted: "Vous avez voté %{answer}"
-      voted_token: "Vous pouvez conserver cet identifiant de vote pour vérifier qu'il a bien été pris en compte lors des résultats finaux:"
   proposal_notifications:
     new:
       title: "Envoyer un message"
