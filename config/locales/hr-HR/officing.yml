@@ -10,8 +10,24 @@ hr:
         author: Autor
     results:
       new:
+        booth: "Glasačko mjesto"
+        date: "Datum"
+        select_booth: "Odaberi glasačko mjesto"
         ballots_white: "Ukupno praznih glasova"
+        ballots_null: "Nevažeči glasovi"
         ballots_total: "Ukupno glasova"
+        submit: "Spremi"
+        results_list: "Vaši rezultati"
+        see_results: "Pogledaj rezultate"
       index:
+        no_results: "Nema rezultata"
+        results: Rezultati
+        table_answer: Odgovor
+        table_votes: Glasovi
         table_whites: "Ukupno praznih glasova"
+        table_nulls: "Nevažeči glasovi"
         table_total: "Ukupno glasova"
+    residence:
+      flash:
+        create: "Dokument potvrđen s Cenzusom"
+        not_allowed: "Danas nemate službene smjene"
