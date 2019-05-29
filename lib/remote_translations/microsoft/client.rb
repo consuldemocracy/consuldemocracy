@@ -1,8 +1,8 @@
 require 'translator-text'
-include SentencesParser
-include RemoteAvailableLocales
+include RemoteTranslations::Microsoft::SentencesParser
+include RemoteTranslations::Microsoft::AvailableLocales
 
-class MicrosoftTranslateClient
+class RemoteTranslations::Microsoft::Client
   CHARACTERS_LIMIT_PER_REQUEST = 5000
   PREVENTING_TRANSLATION_KEY = "notranslate"
 

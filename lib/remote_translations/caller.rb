@@ -1,4 +1,4 @@
-class RemoteTranslationsCaller
+class RemoteTranslations::Caller
   attr_reader :remote_translation
 
   def initialize(remote_translation)
@@ -35,7 +35,7 @@ class RemoteTranslationsCaller
     end
 
     def translations
-      @translations ||= MicrosoftTranslateClient.new.call(fields_values, locale)
+      @translations ||= RemoteTranslations::Microsoft::Client.new.call(fields_values, locale)
     end
 
     def fields_values
