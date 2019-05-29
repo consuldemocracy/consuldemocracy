@@ -60,6 +60,8 @@ tr:
     meta_keywords_description: 'Anahtar Kelimeler <meta name="keywords">, SEO’yu geliştirmek için kullanılır'
     min_age_to_participate: Katılmak için gereken minimum yaş
     min_age_to_participate_description: "Bu yaşın üzerindeki kullanıcılar, bir kullanıcı tarafından doğrulanmış bir hesabın gerekli olduğu tüm işlemlere katılabilir"
+    proposals:
+      successful_proposal_id: Başarılı öneri
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
