@@ -502,7 +502,6 @@ so:
     show:
       vote_answer: "Cod%{answer}"
       voted: "Wad codeysay%{answer}"
-      voted_token: "Waxaad ku qori kartaa liiska codbixinta, si aad u hubiso codkaaga natiijooyinka kama dambaysta ah:"
   proposal_notifications:
     new:
       title: "Fariin dir"
