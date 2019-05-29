@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin Budgets" do
+describe "Admin Budgets" do
 
-  background do
+  before do
     admin = create(:administrator).user
     login_as(admin)
   end

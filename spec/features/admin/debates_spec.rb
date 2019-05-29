@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin debates" do
+describe "Admin debates" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
@@ -12,7 +12,7 @@ feature "Admin debates" do
     Setting["process.debates"] = true
   end
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

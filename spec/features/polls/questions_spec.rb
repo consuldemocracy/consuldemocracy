@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Poll Questions" do
+describe "Poll Questions" do
 
   scenario "Lists questions from proposals before regular questions" do
     poll = create(:poll)

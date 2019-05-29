@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting legislation questions" do
+describe "Commenting legislation questions" do
   let(:user) { create :user }
   let(:legislation_annotation) { create :legislation_annotation, author: user }
 
@@ -186,7 +186,7 @@ feature "Commenting legislation questions" do
     expect(page).to have_css(".comment", count: 3)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: legislation_annotation)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
@@ -369,7 +369,7 @@ feature "Commenting legislation questions" do
     expect(page).to have_content("Testing submit button!")
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -432,7 +432,7 @@ feature "Commenting legislation questions" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
 
@@ -495,8 +495,8 @@ feature "Commenting legislation questions" do
     end
   end
 
-  feature "Voting comments" do
-    background do
+  describe "Voting comments" do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @legislation_annotation = create(:legislation_annotation)
@@ -598,7 +598,7 @@ feature "Commenting legislation questions" do
     end
   end
 
-  feature "Merged comment threads", :js do
+  describe "Merged comment threads", :js do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
@@ -609,7 +609,7 @@ feature "Commenting legislation questions" do
                                       ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10}])
     end
 
-    background do
+    before do
       login_as user
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)

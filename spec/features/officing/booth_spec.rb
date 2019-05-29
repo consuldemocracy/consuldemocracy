@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Booth", :with_frozen_time do
+describe "Booth", :with_frozen_time do
 
   scenario "Officer with no booth assignments today" do
     officer = create(:poll_officer)

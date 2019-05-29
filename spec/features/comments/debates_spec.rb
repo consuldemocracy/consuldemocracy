@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting debates" do
+describe "Commenting debates" do
   let(:user)   { create :user }
   let(:debate) { create :debate }
 
@@ -154,7 +154,7 @@ feature "Commenting debates" do
     expect(page).to have_css(".comment", count: 2)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: debate)
       visit debate_path(debate)
@@ -312,7 +312,7 @@ feature "Commenting debates" do
     expect(page).to have_content("Testing submit button!")
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -368,7 +368,7 @@ feature "Commenting debates" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
 
@@ -424,8 +424,8 @@ feature "Commenting debates" do
     end
   end
 
-  feature "Voting comments" do
-    background do
+  describe "Voting comments" do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @debate = create(:debate)

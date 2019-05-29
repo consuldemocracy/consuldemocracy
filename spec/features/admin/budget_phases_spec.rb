@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin budget phases" do
+describe "Admin budget phases" do
   let(:budget) { create(:budget) }
 
   context "Edit" do

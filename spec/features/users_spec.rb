@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Users" do
+describe "Users" do
 
-  feature "Show (public page)" do
+  describe "Show (public page)" do
 
-    background do
+    before do
       @user = create(:user)
       1.times {create(:debate, author: @user)}
       2.times {create(:proposal, author: @user)}
@@ -137,8 +137,8 @@ feature "Users" do
 
   end
 
-  feature "Public activity" do
-    background do
+  describe "Public activity" do
+    before do
       @user = create(:user)
     end
 
@@ -201,9 +201,9 @@ feature "Users" do
       expect(page).not_to have_content("activity list private")
     end
 
-    feature "User email" do
+    describe "User email" do
 
-      background do
+      before do
         @user = create(:user)
       end
 
@@ -234,8 +234,8 @@ feature "Users" do
 
   end
 
-  feature "Public interests" do
-    background do
+  describe "Public interests" do
+    before do
       @user = create(:user)
     end
 
@@ -366,7 +366,7 @@ feature "Users" do
     end
   end
 
-  feature "Special comments" do
+  describe "Special comments" do
 
     scenario "comments posted as moderator are not visible in user activity" do
       moderator = create(:administrator).user
@@ -419,7 +419,7 @@ feature "Users" do
     end
   end
 
-  feature "Following (public page)" do
+  describe "Following (public page)" do
 
     before do
       @user = create(:user)

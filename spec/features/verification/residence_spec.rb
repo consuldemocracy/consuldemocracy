@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Residence" do
+describe "Residence" do
 
-  background { create(:geozone) }
+  before { create(:geozone) }
 
   scenario "Verify resident" do
     user = create(:user)

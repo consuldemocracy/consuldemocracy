@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Budget Poll Officing" do
+describe "Budget Poll Officing" do
 
   scenario "Show sidebar menus if officer has shifts assigned" do
     poll = create(:poll)

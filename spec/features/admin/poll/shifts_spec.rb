@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin shifts" do
+describe "Admin shifts" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

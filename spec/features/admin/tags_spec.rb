@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin tags" do
+describe "Admin tags" do
 
-  background do
+  before do
     @tag1 = create(:tag, :category)
     login_as(create(:administrator).user)
   end

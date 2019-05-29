@@ -1,12 +1,12 @@
 require "rails_helper"
 
-feature "Voters" do
+describe "Voters" do
 
   let(:poll) { create(:poll, :current) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
 
-  background do
+  before do
     login_as(officer.user)
     create(:geozone, :in_census)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Banner" do
+describe "Banner" do
 
   scenario "The banner is shown correctly" do
     create(:web_section, name: "homepage")

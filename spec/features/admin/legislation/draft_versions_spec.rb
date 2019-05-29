@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin legislation draft versions" do
+describe "Admin legislation draft versions" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

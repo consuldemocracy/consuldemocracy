@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "System Emails" do
+describe "System Emails" do
 
   let(:admin) { create(:administrator) }
 
-  background do
+  before do
     login_as(admin.user)
   end
 

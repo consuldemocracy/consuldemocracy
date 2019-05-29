@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Internal valuation comments on Budget::Investments" do
+describe "Internal valuation comments on Budget::Investments" do
   let(:user) { create(:user) }
   let(:valuator_user) { create(:valuator).user }
   let(:admin_user) { create(:administrator).user }
@@ -9,14 +9,14 @@ feature "Internal valuation comments on Budget::Investments" do
   let(:heading) { create(:budget_heading, group: group) }
   let(:investment) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
-  background do
+  before do
     investment.valuators << valuator_user.valuator
     login_as(valuator_user)
   end
 
   context "Show valuation comments" do
     context "Show valuation comments without public comments" do
-      background do
+      before do
         public_comment = create(:comment, commentable: investment, body: "Public comment")
         create(:comment, commentable: investment, author: valuator_user,
                          body: "Public valuator comment")
@@ -251,7 +251,7 @@ feature "Internal valuation comments on Budget::Investments" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create valuation comment as an administrator", :js do
       login_as(admin_user)
       visit valuation_budget_budget_investment_path(budget, investment)

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Ballots" do
+describe "Ballots" do
 
   let!(:user)       { create(:user, :level_two) }
   let!(:budget)     { create(:budget, phase: "balloting") }
@@ -10,7 +10,7 @@ feature "Ballots" do
 
   context "Voting" do
 
-    background do
+    before do
       login_as(user)
       visit budget_path(budget)
     end
@@ -280,7 +280,7 @@ feature "Ballots" do
 
     let!(:investment) { create(:budget_investment, :selected, heading: california) }
 
-    background { login_as(user) }
+    before { login_as(user) }
 
     scenario "Select my heading", :js do
       visit budget_path(budget)

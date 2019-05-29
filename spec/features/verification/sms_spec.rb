@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "SMS Verification" do
+describe "SMS Verification" do
 
   scenario "Verify" do
     user = create(:user, residence_verified_at: Time.current)

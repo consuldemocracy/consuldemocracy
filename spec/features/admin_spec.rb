@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin" do
+describe "Admin" do
   let(:user) { create(:user) }
   let(:administrator) do
     create(:administrator, user: user)

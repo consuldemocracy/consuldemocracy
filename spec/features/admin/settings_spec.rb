@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin settings" do
+describe "Admin settings" do
 
-  background do
+  before do
     @setting1 = create(:setting)
     @setting2 = create(:setting)
     @setting3 = create(:setting)

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Mailing" do
+describe "Mailing" do
   let!(:proposal) { create(:proposal, :draft) }
 
   before do

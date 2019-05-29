@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Admin download user emails" do
+describe "Admin download user emails" do
 
   let(:admin_user) { create(:user, newsletter: false, email: "admin@consul.dev") }
 
-  background do
+  before do
     create(:administrator, user: admin_user)
     login_as(admin_user)
   end

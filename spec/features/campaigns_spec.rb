@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Email campaigns" do
+describe "Email campaigns" do
 
-  background do
+  before do
     @campaign1 = create(:campaign)
     @campaign2 = create(:campaign)
 

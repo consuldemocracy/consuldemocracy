@@ -1,9 +1,9 @@
 require "rails_helper"
 
-feature "Residence", :with_frozen_time do
+describe "Residence", :with_frozen_time do
   let(:officer) { create(:poll_officer) }
 
-  feature "Officers without assignments" do
+  describe "Officers without assignments" do
 
     scenario "Can not access residence verification" do
       login_as(officer.user)
@@ -21,9 +21,9 @@ feature "Residence", :with_frozen_time do
 
   end
 
-  feature "Assigned officers" do
+  describe "Assigned officers" do
 
-    background do
+    before do
       create(:poll_officer_assignment, officer: officer)
       login_through_form_as_officer(officer.user)
       visit officing_root_path

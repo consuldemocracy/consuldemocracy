@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin hidden users" do
+describe "Admin hidden users" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

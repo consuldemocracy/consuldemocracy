@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Signature sheets" do
+describe "Signature sheets" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
