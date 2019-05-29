@@ -503,7 +503,6 @@ gl:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Votaches %{answer}"
-      voted_token: "Podes apuntar este identificador de voto para comprobares a túa votación no resultado final:"
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
