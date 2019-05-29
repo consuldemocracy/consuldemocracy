@@ -1,4 +1,8 @@
 tr:
+  attributes:
+    results_enabled: "Sonuçları göster"
+    stats_enabled: "İstatistikleri göster"
+    advanced_stats_enabled: "Gelişmiş istatistikleri göster"
   activerecord:
     models:
       activity:
@@ -61,6 +65,9 @@ tr:
       poll/officer:
         one: "memur"
         other: "memurlar"
+      poll/ballot_sheet:
+        one: Oy verme formu
+        other: Oy verme formu
       proposal:
         one: "Vatandaş teklifi"
         other: "Vatandaş teklifleri"
@@ -76,6 +83,9 @@ tr:
       site_customization/content_block:
         one: Özel içerik bloğu
         other: Özel içerik blokları
+      document:
+        one: Belge
+        other: Belgeler
       legislation/process:
         one: "İşlem"
         other: "İşlemler"
