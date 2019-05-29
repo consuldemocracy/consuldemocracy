@@ -1,20 +1,16 @@
 class Dashboard::PollsController < Dashboard::BaseController
   helper_method :poll
+  before_action :authorize_manage_polls
 
   def index
-    authorize! :manage_polls, proposal
-
     @polls = Poll.for(proposal)
   end
 
   def new
-    authorize! :manage_polls, proposal
     @poll = Poll.new
   end
 
   def create
-    authorize! :manage_polls, proposal
-
     @poll = Poll.new(poll_params.merge(author: current_user, related: proposal))
     if @poll.save
       redirect_to proposal_dashboard_polls_path(proposal), notice: t("flash.actions.create.poll")
@@ -24,12 +20,9 @@ class Dashboard::PollsController < Dashboard::BaseController
   end
 
   def edit
-    authorize! :manage_polls, proposal
   end
 
   def update
-    authorize! :manage_polls, proposal
-
     respond_to do |format|
       if poll.update(poll_params)
         format.html { redirect_to proposal_dashboard_polls_path(proposal),
@@ -69,5 +62,9 @@ class Dashboard::PollsController < Dashboard::BaseController
 
     def documents_attributes
       [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+    end
+
+    def authorize_manage_polls
+      authorize! :manage_polls, proposal
     end
 end
