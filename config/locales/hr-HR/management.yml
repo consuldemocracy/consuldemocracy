@@ -1,7 +1,9 @@
 hr:
   management:
     budgets:
+      table_name: Ime
       no_budgets: Ne postoje aktivni participativni budžeti.
+    username_label: Korisničko ime
     users:
       create_user_submit: Stvori korisnika
       erased_notice: Korisnički račun obrisan.
