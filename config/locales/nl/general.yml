@@ -503,7 +503,6 @@ nl:
     show:
       vote_answer: "Stem %{answer}"
       voted: "U heeft %{answer} gestemd"
-      voted_token: "Je kunt deze code voor de stemming noteren, om je stem bij de eindresultaten te kunnen bekijken:"
   proposal_notifications:
     new:
       title: "Stuur bericht"
