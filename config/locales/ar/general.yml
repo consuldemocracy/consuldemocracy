@@ -619,7 +619,6 @@ ar:
     show:
       vote_answer: "صوّت على %{answer}"
       voted: "لقد قمت بالتصويت على %{answer}"
-      voted_token: "يمكنك تسجيل معرف التصويت هذا، للتحقق من تصويتك عند خروج النتائج النهائية:"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
