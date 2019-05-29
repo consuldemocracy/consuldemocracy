@@ -483,7 +483,6 @@ zh-TW:
     show:
       vote_answer: "投票%{answer}"
       voted: "您已投票%{answer}"
-      voted_token: "您可以寫下此投票識別符號，以便在最終結果中檢查您的投票："
   proposal_notifications:
     new:
       title: "發送消息"
