@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20190117123547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "pg_trgm"
   enable_extension "unaccent"
+  enable_extension "pg_trgm"
 
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id"
@@ -263,9 +263,11 @@ ActiveRecord::Schema.define(version: 20190117123547) do
     t.boolean  "winner",                                      default: false
     t.boolean  "incompatible",                                default: false
     t.integer  "community_id"
-    t.boolean  "selected_by_assembly",                        default: false,       null: false
     t.boolean  "visible_to_valuators",                        default: false
     t.integer  "valuator_group_assignments_count",            default: 0
+    t.boolean  "selected_by_assembly",                        default: false,       null: false
+    t.datetime "confirmed_hide_at"
+    t.datetime "accepted_at"
     t.integer  "sub_area_id"
     t.integer  "geozone_id"
   end
