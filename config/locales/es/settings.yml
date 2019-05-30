@@ -68,6 +68,7 @@ es:
       poll_description: Descripción encuestas
       poll_description_description: Descripción detallada de la funcionalidad de encuestas
       poll_link: Enlace de información adicional
+      poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
       email_short_title: Correo electrónico
       email_short_title_description: Breve descripción de la funcionalidad de correo electrónico. Permite a los usuarios enviar un email para difundir su propuesta
       email_description: Descripción correo electrónico
@@ -125,8 +126,10 @@ es:
       latitude_description: "Latitud para mostrar la posición del mapa"
       longitude: "Longitud"
       longitude_description: "Longitud para mostrar la posición del mapa"
+      zoom: "Zoom"
       zoom_description: "Zoom para mostrar la posición del mapa"
     process:
+      debates: "Debates"
       debates_description: "El espacio de debates ciudadanos está dirigido a que cualquier persona pueda exponer temas que le preocupan y sobre los que quiera compartir puntos de vista con otras personas"
       proposals: "Propuestas"
       proposals_description: "Las propuestas ciudadanas son una oportunidad para que los vecinos y colectivos decidan directamente cómo quieren que sea su sociedad, después de conseguir los apoyos suficientes y de someterse a votación ciudadana"
