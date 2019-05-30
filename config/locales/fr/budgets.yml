@@ -21,6 +21,7 @@ fr:
         no_ballots_allowed: La phase de sélection est terminée.
         different_heading_assigned_html: "Vous avez déjà voté pour une autre section : %{heading_link}"
         change_ballot: modifier votre vote
+        casted_offline: Vous avez déjà participé en mode hors connexion
     groups:
       show:
         title: Sélectionner une option
@@ -105,13 +106,15 @@ fr:
           random: aléatoire
           confidence_score: la plus votée
           price: par coût
+      share:
+        message: "J’ai créé le projet de placement %{title} à %{handle}. Créez vous aussi un projet d’investissement!"
       show:
         author_deleted: Utilisateur effacé
         price_explanation: Informations sur le coût <small>(optionnel, données publiques)</small>
         unfeasibility_explanation: Explication de l'infaisabilité
-        code_html: 'Code de la proposition de dépense: <strong>%{code}</strong>'
-        location_html: 'Lieu: <strong>%{location}</strong>'
-        organization_name_html: 'Proposé au nom de : <strong>%{name}</strong>'
+        code_html: "Code de la proposition de dépense: <strong>%{code}</strong>"
+        location_html: "Lieu: <strong>%{location}</strong>"
+        organization_name_html: "Proposé au nom de : <strong>%{name}</strong>"
         share: Partager
         title: Propositions d'investissement
         supports: Soutiens
@@ -120,10 +123,11 @@ fr:
         comments_tab: Commentaires
         milestones_tab: Jalons
         author: Auteur
-        project_unfeasible_html: 'Ce projet d''investissement <strong>a été marqué comme irréalisable</strong> et n''ira pas en phase de vote.'
-        project_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
-        project_winner: 'Projet d''investissement gagnant'
-        project_not_selected_html: 'Ce projet d''investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote.'
+        project_unfeasible_html: "Ce projet d'investissement <strong>a été marqué comme irréalisable</strong> et n'ira pas en phase de vote."
+        project_selected_html: "Ce projet d'investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote."
+        project_winner: "Projet d'investissement gagnant"
+        project_not_selected_html: "Ce projet d'investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote."
+        see_price_explanation: Voir les informations détaillés du prix
       wrong_price_format: Nombres entiers uniquement
       investment:
         add: Vote
@@ -174,7 +178,11 @@ fr:
       not_selected_investment_proyects: Liste des projets d'investissement non sélectionnés pour le vote
     executions:
       link: "Jalons"
+      page_title: "%{budget} - jalons"
+      heading: "Jalons du budget participatif"
       heading_selection_title: "Par quartier"
+      filters:
+        label: "État actuel du projet"
     phases:
       errors:
         dates_range_invalid: "La date de début ne peut pas être égale ou postérieure à la date de fin"
