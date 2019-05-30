@@ -377,6 +377,7 @@ en:
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
       selected_proposals: Selected proposals
+      selected_proposals_link: View selected proposals
       archived_proposals: Archived proposals
       proposals_lists: Proposals lists
       retired_links:
