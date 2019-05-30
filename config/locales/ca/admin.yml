@@ -108,10 +108,6 @@ ca:
         administrator_filter_all: Tots els administradors
         valuator_filter_all: Tots els avaluadors
         tags_filter_all: Totes les etiquetes
-        sort_by:
-          placeholder: Ordenar per
-          title: Títol
-          supports: Avals
         filters:
           all: tots
           without_admin: Sense administrador
@@ -224,9 +220,9 @@ ca:
         title: Usuaris bloquejats
         user: usuaris bloquejats
       show:
-        email: 'E-mail:'
-        hidden_at: 'Bloquejat:'
-        registered_at: 'Data d''alta:'
+        email: "E-mail:"
+        hidden_at: "Bloquejat:"
+        registered_at: "Data d'alta:"
         title: Activitat de l'usuari (%{user})
     hidden_budget_investments:
       index:
@@ -255,8 +251,6 @@ ca:
           enabled: activa
           process: procés
           debate_phase: fase prèvia
-          start: Inici
-          end: fi
           use_markdown: Fes servir Markdown per formatar el text
           title_placeholder: Escriu el títol del procés
           summary_placeholder: Resum curt de la descripció
@@ -268,7 +262,6 @@ ca:
           delete: Borrar
           title: processos legislatius
           filters:
-            open: obert
             all: tots
         new:
           back: Tornar
@@ -283,7 +276,6 @@ ca:
           title: procés
           comments: Comentarios
           status: Estat
-          creation_date: Data de creació
           status_open: obert
           status_closed: tancat
           status_planned: Properament
@@ -393,7 +385,6 @@ ca:
       activity: Activitat de moderadors
       admin: Menú d'administració
       banner: Gestionar banners
-      poll_questions: Preguntes ciutadanes
       proposals: Propostes ciutadanes
       proposals_topics: Temes de propostes
       budgets: Pressupostos participatius
@@ -431,7 +422,6 @@ ca:
           save: "Desar"
       title_moderated_content: Contingut moderat
       title_budgets: Pressupostos
-      title_polls: votacions
       title_profiles: Perfils
       legislation: legislació col·laborativa
       users: usuaris
@@ -676,9 +666,9 @@ ca:
     officials:
       edit:
         destroy: Eliminar condició de 'Càrrec Público'
-        title: 'Càrrecs Públics: Edita usuari'
+        title: "Càrrecs Públics: Edita usuari"
       flash:
-        official_destroyed: 'Dades guardats: l''usuari ja no és càrrec públic'
+        official_destroyed: "Dades guardats: l'usuari ja no és càrrec públic"
         official_updated: Dades del càrrec públic guardats
       index:
         title: Càrrecs Públics
@@ -693,7 +683,7 @@ ca:
       search:
         edit_official: Edita càrrec públic
         make_official: Convertir a càrrec públic
-        title: 'Càrrecs Públics: Cerca d''usuaris'
+        title: "Càrrecs Públics: Cerca d'usuaris"
     organizations:
       index:
         filter: Filtrar
@@ -907,9 +897,7 @@ ca:
           verified_users_who_didnt_vote_proposals: Usuaris verificats que no han votat propostes
           visits: Visites
           votes: Vots
-        spending_proposals_title: Propostes d'inversió
         budgets_title: Pressupostos ciutadans
-        visits_title: Visites
         direct_messages: missatges directes
         proposal_notifications: Notificacions de propostes
         incomplete_verifications: Verificacions incompletes
