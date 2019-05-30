@@ -128,7 +128,7 @@ it:
         other: lunghezza sbagliata (dovrebbe essere %{count} caratteri)
       other_than: deve essere diversa da %{count}
     template:
-      body: 'Ci sono stati problemi con i seguenti campi:'
+      body: "Ci sono stati problemi con i seguenti campi:"
       header:
         one: Questo %{model} non può essere salvato a causa di 1 errore
         other: "Questo %{model} non può essere salvato a causa di %{count} errori"
