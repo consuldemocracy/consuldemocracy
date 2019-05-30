@@ -32,6 +32,14 @@ describe LocalCensusRecord do
       expect(local_census_record).not_to be_valid
     end
 
+    it "is not valid when a record already exists with same document_number and document_type" do
+      create(:local_census_record, document_number: "#DOC_NUMBER", document_type: "#DOC_TYPE")
+      local_census_record = build(:local_census_record, document_number: "#DOC_NUMBER",
+        document_type: "#DOC_TYPE")
+
+      expect(local_census_record).not_to be_valid
+    end
+
     it "sanitizes text attributes values before validation" do
       local_census_record.document_type = " DNI "
       local_census_record.document_number = " #DOCUMENT_NUMBER "
