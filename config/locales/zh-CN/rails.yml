@@ -113,7 +113,7 @@ zh-CN:
         other: 是错误长度（应该是%{count} 个字符）
       other_than: 必须不是%{count}
     template:
-      body: '以下字段有问题：'
+      body: "以下字段有问题："
       header:
         other: "%{count} 个错误阻止%{model} 被保存"
   helpers:
