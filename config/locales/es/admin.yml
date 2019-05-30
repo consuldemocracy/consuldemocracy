@@ -381,6 +381,7 @@ es:
           edit: Editar
           delete: Borrar
           active: 'Si'
+          inactive: 'No'
           title: Recursos y acciones
           action_title: Título
           action_type: Tipo
@@ -449,6 +450,7 @@ es:
         title: "Documentos"
         format: "Formato"
         size: "Tamaño"
+        url: "URL"
       create:
         success_notice: "Documento creado correctamente"
         unable_notice: "Documento inválido"
@@ -1463,6 +1465,7 @@ es:
         incomplete_verifications: Verificaciones incompletas
         polls: Votaciones
       graph:
+        debate_created: Debates
         spending_proposals: Propuestas de inversión
         visit: Visitas
         level_2_user: Usuarios nivel 2
