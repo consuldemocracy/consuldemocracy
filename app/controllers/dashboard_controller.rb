@@ -1,9 +1,9 @@
 class DashboardController < Dashboard::BaseController
   helper_method :dashboard_action, :active_resources, :course
   before_action :set_done_and_pending_actions, only: [:recommended_actions, :progress]
+  before_action :authorize_dashboard, only: [:show, :progress, :community, :recommended_actions, :messages]
 
   def show
-    authorize! :dashboard, proposal
   end
 
   def publish
@@ -14,15 +14,15 @@ class DashboardController < Dashboard::BaseController
   end
 
   def progress
-    authorize! :dashboard, proposal
   end
 
   def community
-    authorize! :dashboard, proposal
   end
 
   def recommended_actions
-    authorize! :dashboard, proposal
+  end
+
+  def messages
   end
 
   private
@@ -41,5 +41,9 @@ class DashboardController < Dashboard::BaseController
     def set_done_and_pending_actions
       @done_actions = proposed_actions.joins(:proposals).where("proposals.id = ?", proposal.id)
       @pending_actions = proposed_actions - @done_actions
+    end
+
+    def authorize_dashboard
+      authorize! :dashboard, proposal
     end
 end

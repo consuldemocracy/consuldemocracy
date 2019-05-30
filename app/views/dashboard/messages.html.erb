@@ -1,0 +1,7 @@
+<% content_for :action_title, t("dashboard.menu.messages") %>
+
+<%= link_to t("dashboard.messages.send_notification"),
+            new_proposal_notification_path(proposal_id: proposal.id), class: "button" %>
+
+<%= link_to t("dashboard.messages.previous_notifications"),
+            proposal_path(proposal, anchor: "tab-notifications"), class: "button hollow" %>

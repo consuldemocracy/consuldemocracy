@@ -5,6 +5,7 @@ resources :proposals do
       get :progress
       get :community
       get :recommended_actions
+      get :messages
     end
 
     resources :resources, only: [:index], controller: "dashboard/resources"

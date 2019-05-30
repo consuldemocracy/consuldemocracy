@@ -358,6 +358,37 @@ describe "Proposal's dashboard" do
     expect(page).to have_content("Done")
   end
 
+  scenario "Dashboard has a link to messages" do
+    expect(page).to have_link("Message to users")
+
+    within("#side_menu") do
+      click_link "Message to users"
+    end
+
+    expect(page).to have_link("Send message to proposal supporters")
+    expect(page).to have_link("See previous notifications")
+  end
+
+  scenario "Dashboard has a link to send message to proposal supporters" do
+    visit messages_proposal_dashboard_path(proposal)
+    click_link("Send message to proposal supporters")
+
+    fill_in "Title", with: "Thank you for supporting my proposal"
+    fill_in "Message", with: "Please share it with others!"
+    click_button "Send message"
+
+    expect(page).to have_content "Your message has been sent correctly."
+    expect(page).to have_content "Thank you for supporting my proposal"
+    expect(page).to have_content "Please share it with others!"
+  end
+
+  scenario "Dashboard has a link to see previous notifications" do
+    visit messages_proposal_dashboard_path(proposal)
+
+    expect(page).to have_link("See previous notifications", href: proposal_path(proposal,
+                                                            anchor: "tab-notifications"))
+  end
+
   scenario "On recommended actions section display from the fourth proposed actions
             when click see_proposed_actions_link", js: true do
     create_list(:dashboard_action, 4, :proposed_action, :active)

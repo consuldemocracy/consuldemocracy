@@ -483,6 +483,7 @@ en:
       mailing: E-mail
       poster: Poster
       recommended_actions: Recommended actions
+      messages: Message to users
     form:
       request: Request
     create_request:
@@ -544,6 +545,9 @@ en:
       debates: Debates
       comments: Comments
       latest_comments: Latest messages
+    messages:
+      send_notification: Send message to proposal supporters
+      previous_notifications: See previous notifications
     polls:
       index:
         title: Polls
