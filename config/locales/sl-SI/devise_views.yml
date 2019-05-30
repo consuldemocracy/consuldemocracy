@@ -15,7 +15,7 @@ sl:
     mailer:
       confirmation_instructions:
         confirm_link: Potrdi moj račun
-        text: 'Svoj e-naslov lahko potrdiš na spodnji povezavi:'
+        text: "Svoj e-naslov lahko potrdiš na spodnji povezavi:"
         title: Dobrodošli na Open Government Portal
         welcome: Dobrodošli
       reset_password_instructions:
@@ -23,12 +23,12 @@ sl:
         hello: Živjo
         ignore_text: Če nisi zahteval/-a spremembe gesla, lahko ignoriraš to e-sporočilo.
         info_text: Tvoje geslo ne bo spremenjeno, v kolikor ne obiščeš spletne povezave in ga spremeniš.
-        text: 'Prejeli smo zahtevek o spremembi tvojega gesla. To lahko storiš na spodnji povezavi:'
+        text: "Prejeli smo zahtevek o spremembi tvojega gesla. To lahko storiš na spodnji povezavi:"
         title: Spremeni svoje geslo
       unlock_instructions:
         hello: Živjo
         info_text: Tvoj račun smo blokirali zaradi prevelikega števila neuspešnih poskusov prijav.
-        instructions_text: 'Prosim, klikni na spodnjo povezavo, da odkleneš svoj račun:'
+        instructions_text: "Prosim, klikni na spodnjo povezavo, da odkleneš svoj račun:"
         title: Tvoj račun je zaklenjen
         unlock_link: Odkleni moj račun
     menu:
@@ -103,7 +103,7 @@ sl:
           password_confirmation_label: Potrdi novo geslo
           password_label: Novo geslo
           update_submit: Posodobi
-          waiting_for: 'Čakam potrditev:'
+          waiting_for: "Čakam potrditev:"
         new:
           cancel: Prekliči prijavo
           email_label: E-naslov
