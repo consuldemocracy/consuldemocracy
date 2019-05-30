@@ -44,7 +44,6 @@ ca:
         submit: validar document
         error_verifying_census: "El Padró no va poder verificar aquest document."
         form_errors: van evitar verificar aquest document
-        no_assignments: "Avui no tens torn de president de taula"
     voters:
       new:
         title: votacions
