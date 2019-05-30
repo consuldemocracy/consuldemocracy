@@ -51,7 +51,6 @@ zh-CN:
         submit: 验证文档
         error_verifying_census: "人口普查无法核实此文档。"
         form_errors: 阻止了此文档的核实
-        no_assignments: "您今天没有当值轮班"
     voters:
       new:
         title: 投票
