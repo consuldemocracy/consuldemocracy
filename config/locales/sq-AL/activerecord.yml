@@ -362,8 +362,8 @@ sq:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Nuk vërtetohet nga Regjistrimi'
-              already_voted: 'Ka votuar tashmë këtë propozim'
+              not_in_census: "Nuk vërtetohet nga Regjistrimi"
+              already_voted: "Ka votuar tashmë këtë propozim"
         site_customization/page:
           attributes:
             slug:
@@ -376,7 +376,7 @@ sq:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Ju nuk mund të komentoni një vlerësim'
+              cannot_comment_valuation: "Ju nuk mund të komentoni një vlerësim"
       messages:
         record_invalid: "Vlefshmëria dështoi: %{errors}"
         restrict_dependent_destroy:
