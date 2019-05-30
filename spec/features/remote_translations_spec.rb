@@ -1,5 +1,4 @@
 require "rails_helper"
-include RemoteTranslations::Microsoft::AvailableLocales
 
 describe "Remote Translations" do
 
@@ -8,8 +7,8 @@ describe "Remote Translations" do
     create(:proposal)
     available_locales_response = ["ar", "de", "en", "es", "fa", "fr", "he", "it", "nl", "pl",
                                   "pt", "sv", "zh-Hans", "zh-Hant"]
-    expect_any_instance_of(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).
-                                                      and_return(available_locales_response)
+    expect(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).
+                                                            and_return(available_locales_response)
   end
 
   after do
