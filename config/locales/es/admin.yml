@@ -210,7 +210,7 @@ es:
         no_valuators_assigned: Sin evaluador
         no_valuation_groups: Sin grupos evaluadores
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionado"
@@ -1001,7 +1001,7 @@ es:
           unassigned: No asignada
         actions:
           assign: Asignar urna
-          unassign: Asignar urna
+          unassign: Desasignar urna
     poll_booth_assignments:
       alert:
         shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
@@ -1037,7 +1037,7 @@ es:
     polls:
       index:
         title: "Listado de votaciones"
-        no_polls: "No hay ninguna votación próximamente."
+        no_polls: "No hay votaciones."
         create: "Crear votación"
         name: "Nombre"
         dates: "Fechas"
@@ -1397,8 +1397,8 @@ es:
       errors:
         form:
           error:
-            one: "error impidió guardar el distrito"
-            other: "errores impidieron guardar el distrito."
+            one: "error impidió guardar la zona."
+            other: "errores impidieron guardar la zona."
       edit:
         form:
           submit_button: Guardar cambios
