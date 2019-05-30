@@ -117,7 +117,7 @@ class Setting < ApplicationRecord
         "twitter_handle": nil,
         "twitter_hashtag": nil,
         "url": "http://example.com", # Public-facing URL of the app.
-        "votes_for_proposal_success": 53726,
+        "votes_for_proposal_success": 10000,
         "youtube_handle": nil
       }
     end
