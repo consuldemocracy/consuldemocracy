@@ -14,7 +14,7 @@ describe "Commenting legislation questions" do
 
     expect(page).to have_css(".comment", count: 4)
 
-    comment = Comment.first
+    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -144,7 +144,7 @@ describe "Commenting legislation questions" do
                                                             legislation_annotation.draft_version,
                                                             legislation_annotation)
 
-    within all(".comment").last do
+    within all(".comment").first do
       expect(page).to have_content "Built with http://rubyonrails.org/"
       expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
       expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
@@ -160,7 +160,7 @@ describe "Commenting legislation questions" do
                                                             legislation_annotation.draft_version,
                                                             legislation_annotation)
 
-    within all(".comment").last do
+    within all(".comment").first do
       expect(page).to have_content "click me http://www.url.com"
       expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
       expect(page).not_to have_link("click me")
