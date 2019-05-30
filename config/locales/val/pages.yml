@@ -51,8 +51,6 @@ val:
         page:
           title: "Preguntes Freqüents"
           description: "Utilitza esta pàgina per a resoldre les Preguntes freqüents als usuaris del lloc."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Aquest es un exemple per a la descripció de la pregunta u."
       other:
         title: "Altra informació d'interés"
         how_to_use: "Utilitza %{org_name} en el teu municipi"
@@ -67,25 +65,7 @@ val:
         how_to_use: Utilítzal en el teu municipi
     privacy:
       title: Política de privacitat
-      subtitle: INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES
-      info_items:
-        - 
-          text: La navegació per la informació disponible en el Portal de Govern Obert es anònima.
-        - 
-          text: Per tal de poder utilitzar els serveis del Portal de Govern Obert, l'usuari ha de registrarse i proporcionar dades de caràcter personal d'acord amb les especificacions incloses en cada tipus de registre.
-        - 
-          text: 'Les dades oferides seran incorporades i processades per l''entitat local d''acord a les condicions establides en el següent arxiu:'
-        - 
-          subitems:
-            - 
-              field: 'Nom d''arxiu:'
-              description: NOM DE L'ARXIU
-            - 
-              field: 'Propòsit de l''arxiu:'
-              description: Gestionar els processos participatius per al control de l'habilitació de les persones que participen en els mateixos i recompte merament numèric i estadístic dels resultats derivats dels processos de participació ciutadana.
-            - 
-              field: 'Organització responsable de l''arxiu:'
-              description: ORGANITZACIÓ RESPONSABLE DE L'ARXIU
+      subtitle: "INFORMACIÓ RELACIONADA AMB LA PRIVACITAT DE LES DADES"
     accessibility:
       title: Accessibilitat
       description: |-
@@ -124,7 +104,7 @@ val:
               key_column: 5
               page_column: Processos legislatius
         browser_table:
-          description: 'Depenent del sistema operatiu i del navegador que s''utilitze, la combinació de tecles sera la següent:'
+          description: "Depenent del sistema operatiu i del navegador que s'utilitze, la combinació de tecles sera la següent:"
           caption: Combinació de tecles depenent del sistema operatiu i del navegador
           browser_header: Navegador
           key_header: Combinació de tecles
@@ -167,7 +147,7 @@ val:
               browser_column: Opera
               action_column: Veure > escala
         browser_shortcuts_table:
-          description: 'Un altra forma de modificar el tamany del text es utilitzar els atalls de teclat definits en els navegadors, en particular la combinació de tecles:'
+          description: "Un altra forma de modificar el tamany del text es utilitzar els atalls de teclat definits en els navegadors, en particular la combinació de tecles:"
           rows:
             - 
               shortcut_column: CTRL i + (CMD i + en MAC)
@@ -179,15 +159,12 @@ val:
         title: Compatibilitat amb estàndards i disseny visual
         description_html: 'Totes les pàgines d''aquest lloc web compleixen amb <strong>Guia d''Accessibilitat</strong> o els Principis Generals del Disseny Accessible establers per el Grup de Treball <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertanyent al W3C.'
     titles:
-      accessibility: Accessibilitat
-      conditions: Condicions d'us
       help: "Qué es %{org}? - Participació ciutadana"
-      privacy: Política de privacitat
     verify:
       code: Codi que has rebut en la teua carta
       email: Correu electrònic
-      info: 'Per a verificar el teu compte introdueix les dades amb les que et vas registrar:'
-      info_code: 'Ara introdueix el codi que has rebut en la teua carta:'
+      info: "Per a verificar el teu compte introdueix les dades amb les que et vas registrar:"
+      info_code: "Ara introdueix el codi que has rebut en la teua carta:"
       password: Contrasenya
       submit: Verificar el meu compte
       title: Verifica el teu compte
