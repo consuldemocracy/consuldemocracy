@@ -501,6 +501,7 @@ es:
     resource:
       required_days: "%{days} días necesarios"
       required_supports: "%{supports} apoyos necesarios"
+      and: "y"
       view_resource: Ver recurso
       resource_requested: Recurso solicitado
       request_resource: Solicitar recurso
@@ -532,6 +533,7 @@ es:
       access_community: Acceder a la comunidad
       latest_activity: "Última actividad de la comunidad: %{at}"
       participants: Participantes
+      debates: Debates
       comments: Comentarios
       latest_comments: Últimos mensajes
     polls:
