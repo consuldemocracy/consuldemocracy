@@ -51,7 +51,6 @@ zh-TW:
         submit: 驗證文檔
         error_verifying_census: "人口普查無法核實此文件。"
         form_errors: 阻止了對此文件的核實
-        no_assignments: "你今天沒有辦公室輪班"
     voters:
       new:
         title: 投票
