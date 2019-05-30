@@ -9,7 +9,7 @@ nl:
       show:
         title: Gebruikers account
       edit:
-        title: 'Gebruikersaccount bewerken: Reset wachtwoord'
+        title: "Gebruikersaccount bewerken: Reset wachtwoord"
         back: Terug
         password:
           password: Wachtwoord
@@ -22,11 +22,11 @@ nl:
           print_help: U kunt het wachtwoord afdrukken wanneer het is opgeslagen.
     account_info:
       change_user: Wijzig gebruiker
-      document_number_label: 'Document nummer:'
-      document_type_label: 'Document soort:'
-      email_label: 'E-mail:'
-      identified_label: 'Geïdentificeerd als:'
-      username_label: 'Gebruikersnaam:'
+      document_number_label: "Document nummer:"
+      document_type_label: "Document soort:"
+      email_label: "E-mail:"
+      identified_label: "Geïdentificeerd als:"
+      username_label: "Gebruikersnaam:"
     check: Kies bestand
     dashboard:
       index:
@@ -38,25 +38,25 @@ nl:
       already_verified: Dit gebruikersaccount is al geverifieerd.
       has_no_account_html: In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen.
       link: Consul
-      in_census_has_following_permissions: 'Deze gebruiker kan deelnemen aan de website met de volgende permissies:'
+      in_census_has_following_permissions: "Deze gebruiker kan deelnemen aan de website met de volgende permissies:"
       not_in_census: Dit document is niet geregistreerd.
-      not_in_census_info: 'Burgers niet in de volkstelling kunnen deelnemen aan de website met de volgende permissies:'
+      not_in_census_info: "Burgers niet in de volkstelling kunnen deelnemen aan de website met de volgende permissies:"
       please_check_account_data: Controleer alstublieft of de bovenstaande accountgegevens correct zijn.
       title: Gebruikersbeheer
       under_age: "You don't have the required age to verify your account."
       verify: Verifieer
     email_label: E-mail
-    date_of_birth: Date of birth
+    date_of_birth: Geboortedatum
     email_verifications:
       already_verified: Dit gebruikersaccount is al geverifieerd.
-      choose_options: 'Please choose one of the following options:'
+      choose_options: "Please choose one of the following options:"
       document_found_in_census: This document was found in the census, but it has no user account associated to it.
-      document_mismatch: 'This email belongs to a user which already has an associated id: %{document_number}(%{document_type})'
+      document_mismatch: "This email belongs to a user which already has an associated id: %{document_number}(%{document_type})"
       email_placeholder: Write the email this person used to create his or her account
       email_sent_instructions: In order to completely verify this user, it is necessary that the user clicks on a link which we have sent to the email address above. This step is needed in order to confirm that the address belongs to him.
       if_existing_account: If the person has already a user account created in the website,
       if_no_existing_account: If this person has not created an account yet
-      introduce_email: 'Please introduce the email used on the account:'
+      introduce_email: "Please introduce the email used on the account:"
       send_email: Send verification email
     menu:
       create_proposal: Maak voorstel
@@ -78,7 +78,7 @@ nl:
       vote_proposals: Vote proposals
     print:
       proposals_info: Maak je eigen voorstel op http://url.consul
-      proposals_title: 'Proposals:'
+      proposals_title: "Proposals:"
       spending_proposals_info: Participate at http://url.consul
       budget_investments_info: Neem deel op http://url.consul
     print_info: Print deze informatie
