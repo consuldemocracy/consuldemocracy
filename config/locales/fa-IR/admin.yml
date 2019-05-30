@@ -136,11 +136,6 @@ fa:
         tags_filter_all: همه برچسب ها
         advanced_filters: فیلترهای پیشرفته
         placeholder: جستجو در پروژه ها
-        sort_by:
-          placeholder: مرتب سازی بر اساس
-          id: شناسه
-          title: عنوان
-          supports: پشتیبانی ها
         filters:
           all: همه
           without_admin: بدون تعیین مدیر
@@ -309,9 +304,9 @@ fa:
         user: کاربر
         no_hidden_users: هیچ کاربر پنهانی وجود ندارد
       show:
-        email: 'پست الکترونیکی:'
-        hidden_at: 'پنهان در:'
-        registered_at: 'ثبت در:'
+        email: "پست الکترونیکی:"
+        hidden_at: "پنهان در:"
+        registered_at: "ثبت در:"
         title: فعالیت های کاربر (%{user})
     hidden_budget_investments:
       index:
@@ -341,8 +336,6 @@ fa:
           process: "روند\n"
           debate_phase: فاز بحث
           proposals_phase: ' فاز طرحها'
-          start: شروع
-          end: پایان
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
           title_placeholder: عنوان فرایند
           summary_placeholder: خلاصه توضیحات
@@ -354,7 +347,6 @@ fa:
           delete: حذف
           title: فرآیندهای قانونی
           filters:
-            open: بازکردن
             all: همه
         new:
           back: برگشت
@@ -369,7 +361,6 @@ fa:
           title: "روند\n"
           comments: توضیحات
           status: وضعیت ها
-          creation_date: ' ایجاد تاریخ'
           status_open: بازکردن
           status_closed: بسته
           status_planned: برنامه ریزی شده
@@ -481,12 +472,11 @@ fa:
         add: اضافه کردن
         delete: حذف
       search:
-        title: 'مدیران: جستجوی کاربر'
+        title: "مدیران: جستجوی کاربر"
     menu:
       activity: فعالیت مدیر
       admin: منوی ادمین
       banner: مدیریت آگهی ها
-      poll_questions: سوالات
       proposals: طرح های پیشنهادی
       proposals_topics: موضوعات پیشنهادی
       budgets: بودجه مشارکتی
@@ -529,7 +519,6 @@ fa:
           save: "ذخیره کردن"
       title_moderated_content: کنترل محتویات
       title_budgets: بودجه ها
-      title_polls: نظر سنجی ها
       title_profiles: پروفایل
       legislation: قانون همکاری
       users: کاربران
@@ -555,7 +544,7 @@ fa:
         add: اضافه کردن
         delete: حذف
       search:
-        title: 'مدیران: جستجوی کاربر'
+        title: "مدیران: جستجوی کاربر"
     segment_recipient:
       all_users: "تمام کاربران\n"
       administrators: مدیران
@@ -636,7 +625,7 @@ fa:
         add: افزودن به ارزیابان
         delete: حذف
       search:
-        title: 'ارزیابی کنندگان: جستجوی کاربر'
+        title: "ارزیابی کنندگان: جستجوی کاربر"
       summary:
         title: خلاصه ارزشیابی برای پروژه های سرمایه گذاری
         valuator_name: ارزیابی
@@ -767,10 +756,6 @@ fa:
         geozone_restricted: "محدود به مناطق"
       new:
         title: "نظر سنجی جدید"
-        show_results_and_stats: "نتایج و آمار نشان می دهد"
-        show_results: "مشاهده نتایج"
-        show_stats: "نمایش آمار"
-        results_and_stats_reminder: "علامتگذاری  گزینه های نتایج و / یا آمار این نظرسنجی در دسترس عموم قرار خواهد گرفت و هر کاربر آنها را مشاهده میکند."
         submit_button: "ایجاد نظرسنجی"
       edit:
         title: "ویرایش نظرسنجی "
@@ -893,9 +878,9 @@ fa:
     officials:
       edit:
         destroy: حذف وضعیت 'رسمی'
-        title: 'مقام: ویرایش کاربر'
+        title: "مقام: ویرایش کاربر"
       flash:
-        official_destroyed: 'جزئیات ذخیره شده: کاربر دیگر رسمی نیست'
+        official_destroyed: "جزئیات ذخیره شده: کاربر دیگر رسمی نیست"
         official_updated: جزئیات رسمی ذخیره شده
       index:
         title: مقامات
@@ -912,7 +897,7 @@ fa:
       search:
         edit_official: ویرایش رسمی
         make_official: رسمی
-        title: 'موقعیت های رسمی: جستجوی کاربر'
+        title: "موقعیت های رسمی: جستجوی کاربر"
         no_results: موقعیت های رسمی یافت نشد
     organizations:
       index:
@@ -968,10 +953,6 @@ fa:
       flash:
         updated: ارزش به روز شد
       index:
-        banners: سبک بنر
-        banner_imgs: تصاویر بنر
-        no_banners_images: ' بنربدون تصویر'
-        no_banners_styles: هیچ سبک بنری نیست
         title: تنظیمات پیکربندی
         update_setting: به روز رسانی
         feature_flags: ویژگی ها
@@ -1095,7 +1076,7 @@ fa:
         form:
           error:
             one: "خطا باعث می شود که این geozone نجات یابد"
-            other: 'خطاها باعث می شود که این geozone نجات یابد'
+            other: "خطاها باعث می شود که این geozone نجات یابد"
       edit:
         form:
           submit_button: ذخیره تغییرات
@@ -1153,9 +1134,7 @@ fa:
           verified_users_who_didnt_vote_proposals: کاربران تأیید شده که آرا پیشنهاد نموده اند
           visits: بازديد
           votes: کل رای
-        spending_proposals_title: هزینه های طرح ها
         budgets_title: بودجه مشارکتی
-        visits_title: بازديد
         direct_messages: پیام های مستقیم
         proposal_notifications: اطلاعیه های پیشنهاد
         incomplete_verifications: تأیید ناقص
