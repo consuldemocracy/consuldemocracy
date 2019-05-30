@@ -24,9 +24,9 @@
         <tr>
           <td><strong><%= t("admin.recounts.index.all_booths_total") %></strong></td>
           <% unless @poll.budget_poll? %>
-            <td class="text-center" id="total_final"><%= @all_booths_counts[:final] %></td>
+            <td class="text-center" id="total_final"><%= @stats.total_participants_booth %></td>
           <% end %>
-          <td class="text-center" id="total_system"><%= @all_booths_counts[:system] %></td>
+          <td class="text-center" id="total_system"><%= @stats.total_registered_booth %></td>
         </tr>
       </tbody>
     </table>
