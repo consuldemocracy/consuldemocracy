@@ -10,7 +10,7 @@ es:
         voted_html:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
-        voted_info_html: "¡Tus votos están confirmados!"
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         voted_info_2: "Pero puedes cambiarlos en cualquier momento hasta el cierre de esta fase."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:
@@ -92,7 +92,7 @@ es:
           voted_info_link: cambiar tus votos
           different_heading_assigned_html: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
-          check_ballot_link: "revisar y confirmar mis votos"
+          check_ballot_link: "revisar mis votos"
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           verify_account: "verifica tu cuenta"
@@ -144,10 +144,10 @@ es:
           other: "%{count} apoyos"
         give_support: Apoyar
       header:
-        check_ballot: Revisar y confirmar mis votos
+        check_ballot: Revisar mis votos
         different_heading_assigned_html: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
-        check_ballot_link: "revisar y confirmar mis votos"
+        check_ballot_link: "revisar mis votos"
         price: "Esta partida tiene un presupuesto de"
     progress_bar:
       assigned: "Has asignado: "
