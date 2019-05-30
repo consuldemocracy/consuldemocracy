@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :local_census_record, class: "LocalCensusRecord" do
-    document_number "12345678A"
+    sequence(:document_number) { |n| "DOC_NUMBER#{n}" }
     document_type 1
     date_of_birth Date.new(1970, 1, 31)
     postal_code "28002"
