@@ -118,7 +118,7 @@ es:
         other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
-        other: "Notificaciones de propuesta"
+        other: "Notificaciones de propuestas"
       dashboard/action:
         one: Acción del panel de control de propuestas
         other: Acciones del panel de control de propuestas
