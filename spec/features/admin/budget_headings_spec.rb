@@ -1,11 +1,11 @@
 require "rails_helper"
 
-feature "Admin budget headings" do
+describe "Admin budget headings" do
 
   let(:budget) { create(:budget, phase: "drafting") }
   let(:group) { create(:budget_group, budget: budget) }
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -17,7 +17,7 @@ feature "Admin budget headings" do
 
   context "Feature flag" do
 
-    background do
+    before do
       Setting["process.budgets"] = nil
     end
 

@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin comments" do
+describe "Admin comments" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

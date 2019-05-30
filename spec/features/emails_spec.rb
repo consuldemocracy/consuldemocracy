@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Emails" do
+describe "Emails" do
 
-  background do
+  before do
     reset_mailer
   end
 
@@ -379,7 +379,7 @@ feature "Emails" do
 
   context "Budgets" do
 
-    background do
+    before do
       Setting["process.budgets"] = true
     end
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Poll Questions" do
+describe "Poll Questions" do
 
   before do
     admin = create(:administrator).user

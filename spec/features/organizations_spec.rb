@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Organizations" do
+describe "Organizations" do
 
   scenario "Organizations can be created" do
     user = User.organizations.where(email: "green@peace.com").first

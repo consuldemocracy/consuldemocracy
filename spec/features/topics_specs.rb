@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Topics" do
+describe "Topics" do
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", Topic

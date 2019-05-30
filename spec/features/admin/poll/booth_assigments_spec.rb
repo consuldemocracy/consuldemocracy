@@ -1,13 +1,13 @@
 require "rails_helper"
 
-feature "Admin booths assignments" do
+describe "Admin booths assignments" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  feature "Admin Booth Assignment management" do
+  describe "Admin Booth Assignment management" do
 
     let!(:poll) { create(:poll) }
     let!(:booth) { create(:poll_booth) }
@@ -143,7 +143,7 @@ feature "Admin booths assignments" do
     end
   end
 
-  feature "Show" do
+  describe "Show" do
     scenario "Lists all assigned poll officers" do
       poll = create(:poll)
       booth = create(:poll_booth)

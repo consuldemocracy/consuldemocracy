@@ -1,13 +1,13 @@
 require "rails_helper"
 
-feature "Valuation budget investments" do
+describe "Valuation budget investments" do
 
   let(:budget) { create(:budget, :valuating) }
   let(:valuator) do
     create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
   end
 
-  background do
+  before do
     login_as(valuator.user)
   end
 
@@ -23,7 +23,7 @@ feature "Valuation budget investments" do
     expect(page).to have_link "Valuation", href: valuation_root_path
   end
 
-  feature "Index" do
+  describe "Index" do
     scenario "Index shows budget investments assigned to current valuator" do
       investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
       investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
@@ -209,7 +209,7 @@ feature "Valuation budget investments" do
     end
   end
 
-  feature "Show" do
+  describe "Show" do
     let(:administrator) do
       create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
     end
@@ -222,7 +222,7 @@ feature "Valuation budget investments" do
                                  administrator: administrator,)
     end
 
-    background do
+    before do
       investment.valuators << [valuator, second_valuator]
     end
 
@@ -280,7 +280,7 @@ feature "Valuation budget investments" do
 
   end
 
-  feature "Valuate" do
+  describe "Valuate" do
     let(:admin) { create(:administrator) }
     let(:investment) do
       group = create(:budget_group, budget: budget)
@@ -289,7 +289,7 @@ feature "Valuation budget investments" do
                                  administrator: admin)
     end
 
-    background do
+    before do
       investment.valuators << valuator
     end
 
@@ -427,7 +427,7 @@ feature "Valuation budget investments" do
     end
 
     context "Reopen valuation" do
-      background do
+      before do
         investment.update(
           valuation_finished: true,
           feasibility: "feasible",

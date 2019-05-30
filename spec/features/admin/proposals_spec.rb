@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature "Admin proposals" do
-  background do
+describe "Admin proposals" do
+  before do
     login_as create(:administrator).user
   end
 

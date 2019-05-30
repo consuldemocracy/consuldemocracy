@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Voter" do
+describe "Voter" do
 
   context "Origin", :with_frozen_time do
 
@@ -12,7 +12,7 @@ feature "Voter" do
     let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
     let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
-    background do
+    before do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -29,11 +29,6 @@ feature "Voter" do
         click_link answer_yes.title
         expect(page).not_to have_link(answer_yes.title)
       end
-
-      expect(page).to have_css(".js-token-message", visible: true)
-      token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, "").gsub("token=", "")
-
-      expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")
@@ -187,20 +182,16 @@ feature "Voter" do
           expect(page).not_to have_link(answer_yes.title)
         end
 
+        travel_back
+
         click_link "Sign out"
 
-        # Time needs to pass between the moment we vote and the moment
-        # we log in; otherwise the link to vote won't be available.
-        # It's safe to advance one second because this test isn't
-        # affected by possible date changes.
-        travel 1.second do
-          login_as user
-          visit poll_path(poll)
+        login_as user
+        visit poll_path(poll)
 
-          within("#poll_question_#{question.id}_answers") do
-            expect(page).to have_link(answer_yes.title)
-            expect(page).to have_link(answer_no.title)
-          end
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).to have_link(answer_yes.title)
+          expect(page).to have_link(answer_no.title)
         end
       end
     end

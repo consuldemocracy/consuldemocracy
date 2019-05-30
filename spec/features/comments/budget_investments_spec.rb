@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting Budget::Investments" do
+describe "Commenting Budget::Investments" do
   let(:user) { create :user }
   let(:investment) { create :budget_investment }
 
@@ -159,7 +159,7 @@ feature "Commenting Budget::Investments" do
     expect(page).to have_css(".comment", count: 2)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: investment)
       visit budget_investment_path(investment.budget, investment)
@@ -305,7 +305,7 @@ feature "Commenting Budget::Investments" do
     end
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -361,7 +361,7 @@ feature "Commenting Budget::Investments" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
 
@@ -417,9 +417,9 @@ feature "Commenting Budget::Investments" do
     end
   end
 
-  feature "Voting comments" do
+  describe "Voting comments" do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @investment = create(:budget_investment)

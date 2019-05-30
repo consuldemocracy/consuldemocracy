@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin poll officers" do
+describe "Admin poll officers" do
 
-  background do
+  before do
     @admin = create(:administrator)
     @user  = create(:user, username: "Pedro Jose Garcia")
     @officer = create(:poll_officer)

@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Account" do
+describe "Account" do
 
-  background do
+  before do
     @user = create(:user, username: "Manuela Colau")
     login_as(@user)
   end
@@ -177,7 +177,7 @@ feature "Account" do
 
   context "Recommendations" do
 
-    background do
+    before do
       Setting["feature.user.recommendations"] = true
       Setting["feature.user.recommendations_on_debates"] = true
       Setting["feature.user.recommendations_on_proposals"] = true

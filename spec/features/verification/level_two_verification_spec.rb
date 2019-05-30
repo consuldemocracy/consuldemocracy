@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Level two verification" do
+describe "Level two verification" do
 
   scenario "Verification with residency and sms" do
     create(:geozone)

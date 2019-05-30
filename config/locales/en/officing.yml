@@ -51,7 +51,7 @@ en:
         select_booth: "Select booth"
         ballots_white: "Totally blank ballots"
         ballots_null: "Invalid ballots"
-        ballots_total: "Total ballots"
+        ballots_total: "Valid ballots"
         submit: "Save"
         results_list: "Your results"
         see_results: "See results"
@@ -62,7 +62,7 @@ en:
         table_votes: Votes
         table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
-        table_total: "Total ballots"
+        table_total: "Valid ballots"
     residence:
       flash:
         create: "Document verified with Census"
@@ -82,6 +82,7 @@ en:
         not_to_vote: The person has decided not to vote at this time
       show:
         can_vote: Can vote
+        cannot_vote: The person cannot vote because they are not registered in the district(s) where the voting takes place.
         error_already_voted: Has already participated in this poll
         submit: Confirm vote
         success: "Vote introduced!"

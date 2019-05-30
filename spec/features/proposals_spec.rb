@@ -1,7 +1,7 @@
 # coding: utf-8
 require "rails_helper"
 
-feature "Proposals" do
+describe "Proposals" do
 
   it_behaves_like "milestoneable",
                   :proposal,
@@ -179,13 +179,14 @@ feature "Proposals" do
   end
 
   context "Show on mobile screens" do
+    let!(:window_size) { Capybara.current_window.size }
 
     before do
-      Capybara.page.driver.browser.manage.window.resize_to(640, 480)
+      Capybara.current_window.resize_to(640, 480)
     end
 
     after do
-      Capybara.page.driver.browser.manage.window.maximize
+      Capybara.current_window.resize_to(*window_size)
     end
 
     scenario "Show support button sticky at bottom", :js do
@@ -645,7 +646,7 @@ feature "Proposals" do
     expect(page).to have_content error_message
   end
 
-  feature "Proposal index order filters" do
+  describe "Proposal index order filters" do
 
     scenario "Default order is hot_score", :js do
       create_featured_proposals
@@ -830,7 +831,7 @@ feature "Proposals" do
     end
   end
 
-  feature "Archived proposals" do
+  describe "Archived proposals" do
 
     scenario "show on archived tab" do
       create_featured_proposals
@@ -1555,7 +1556,7 @@ feature "Proposals" do
 
     context "By geozone" do
 
-      background do
+      before do
         @california = Geozone.create(name: "California")
         @new_york   = Geozone.create(name: "New York")
 
@@ -1744,7 +1745,7 @@ feature "Proposals" do
 
 end
 
-feature "Successful proposals" do
+describe "Successful proposals" do
 
   scenario "Successful proposals do not show support buttons in index" do
     successful_proposals = create_successful_proposals

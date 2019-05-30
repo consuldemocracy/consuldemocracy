@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Officer Assignments" do
+describe "Officer Assignments" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

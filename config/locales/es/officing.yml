@@ -51,7 +51,7 @@ es:
         select_booth: "Elige urna"
         ballots_white: "Papeletas totalmente en blanco"
         ballots_null: "Papeletas nulas"
-        ballots_total: "Papeletas totales"
+        ballots_total: "Papeletas válidas"
         submit: "Guardar"
         results_list: "Tus resultados"
         see_results: "Ver resultados"
@@ -62,7 +62,7 @@ es:
         table_votes: Votos
         table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
-        table_total: "Papeletas totales"
+        table_total: "Papeletas válidas"
     residence:
       flash:
         create: "Documento verificado con el Padrón"
@@ -82,6 +82,7 @@ es:
         not_to_vote: La persona ha decidido no votar por el momento
       show:
         can_vote: Puede votar
+        cannot_vote: La persona no puede votar porque no está empadronada en el/los distrito/s en los que la votación tiene lugar.
         error_already_voted: Ya ha participado en esta votación.
         submit: Confirmar voto
         success: "¡Voto introducido!"

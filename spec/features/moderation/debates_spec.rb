@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Moderate debates" do
+describe "Moderate debates" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
@@ -44,16 +44,16 @@ feature "Moderate debates" do
     end
   end
 
-  feature "/moderation/ screen" do
+  describe "/moderation/ screen" do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When a debate has been selected for moderation" do
-        background do
+    describe "moderate in bulk" do
+      describe "When a debate has been selected for moderation" do
+        before do
           @debate = create(:debate)
           visit moderation_debates_path
           within(".menu.simple") do

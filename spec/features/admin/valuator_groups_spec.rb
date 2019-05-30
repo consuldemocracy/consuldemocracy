@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Valuator groups" do
+describe "Valuator groups" do
 
   let(:admin) { create(:administrator).user }
 
-  background do
+  before do
     login_as(admin)
   end
 

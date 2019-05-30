@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Legislation" do
+describe "Legislation" do
   context "process debate page" do
     before do
       @process = create(:legislation_process, debate_start_date: Date.current - 3.days, debate_end_date: Date.current + 2.days)

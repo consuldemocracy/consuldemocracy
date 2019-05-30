@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Management" do
+describe "Management" do
   let(:user) { create(:user) }
 
   scenario "Should show admin menu if logged user is admin" do

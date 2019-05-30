@@ -1152,7 +1152,7 @@ en:
       result:
         table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
-        table_total: "Total ballots"
+        table_total: "Valid ballots"
         table_answer: Answer
         table_votes: Votes
       results_by_booth:

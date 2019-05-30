@@ -1,12 +1,12 @@
 require "rails_helper"
 
-feature "Voters" do
+describe "Voters" do
 
   let(:poll) { create(:poll, :current) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
 
-  background do
+  before do
     login_as(officer.user)
     create(:geozone, :in_census)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
@@ -36,7 +36,22 @@ feature "Voters" do
     expect(Poll::Voter.last.officer_id).to eq(officer.id)
   end
 
-  scenario "Already voted", :js do
+  scenario "Cannot vote" do
+    unvotable_poll = create(:poll, :current, geozone_restricted: true, geozones: [create(:geozone, census_code: "02")])
+    booth_assignment = create(:poll_booth_assignment, poll: unvotable_poll, booth: booth)
+    officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+    set_officing_booth(booth)
+    visit new_officing_residence_path
+    officing_verify_residence
+
+    within("#poll_#{unvotable_poll.id}") do
+      expect(page).to have_content "The person cannot vote"
+      expect(page).not_to have_button "Confirm vote"
+    end
+  end
+
+  scenario "Already voted" do
     poll2 = create(:poll, :current)
     booth_assignment = create(:poll_booth_assignment, poll: poll2, booth: booth)
     create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
@@ -71,35 +86,89 @@ feature "Voters" do
     expect(page).to have_content poll.name
   end
 
-  scenario "Display only current polls on which officer has a voting shift today, and user can answer", :js do
-    poll_current = create(:poll, :current)
-    second_booth = create(:poll_booth)
-    booth_assignment = create(:poll_booth_assignment, poll: poll_current, booth: second_booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
-    create(:poll_shift, officer: officer, booth: second_booth, date: Date.current, task: :recount_scrutiny)
-    create(:poll_shift, officer: officer, booth: second_booth, date: Date.tomorrow, task: :vote_collection)
+  context "Polls displayed to officers" do
 
-    poll_expired = create(:poll, :expired)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: create(:poll_booth_assignment, poll: poll_expired, booth: booth))
+    scenario "Display current polls assigned to a booth" do
+      poll = create(:poll, :current)
+      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
-    poll_geozone_restricted_in = create(:poll, :current, geozone_restricted: true, geozones: [Geozone.first])
-    booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_in, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      set_officing_booth(booth)
+      visit new_officing_residence_path
+      officing_verify_residence
 
-    poll_geozone_restricted_out = create(:poll, :current, geozone_restricted: true, geozones: [create(:geozone, census_code: "02")])
-    booth_assignment = create(:poll_booth_assignment, poll: poll_geozone_restricted_out, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      expect(page).to have_content "Polls"
+      expect(page).to have_content poll.name
+    end
 
-    set_officing_booth(second_booth)
-    visit new_officing_residence_path
-    officing_verify_residence
+    scenario "Display polls that the user can vote" do
+      votable_poll = create(:poll, :current, geozone_restricted: true, geozones: [Geozone.first])
+      booth_assignment = create(:poll_booth_assignment, poll: votable_poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
 
-    expect(page).to have_content "Polls"
-    expect(page).to have_content poll.name
-    expect(page).not_to have_content poll_current.name
-    expect(page).not_to have_content poll_expired.name
-    expect(page).to have_content poll_geozone_restricted_in.name
-    expect(page).not_to have_content poll_geozone_restricted_out.name
+      set_officing_booth(booth)
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to have_content "Polls"
+      expect(page).to have_content votable_poll.name
+    end
+
+    scenario "Display polls that the user cannot vote" do
+      unvotable_poll = create(:poll, :current, geozone_restricted: true, geozones: [create(:geozone, census_code: "02")])
+      booth_assignment = create(:poll_booth_assignment, poll: unvotable_poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+      set_officing_booth(booth)
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to have_content "Polls"
+      expect(page).to have_content unvotable_poll.name
+    end
+
+    scenario "Do not display expired polls" do
+      expired_poll = create(:poll, :expired)
+      booth_assignment = create(:poll_booth_assignment, poll: expired_poll, booth: booth)
+      officer_assignment = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+
+      set_officing_booth(booth)
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to have_content "Polls"
+      expect(page).not_to have_content expired_poll.name
+    end
+
+    scenario "Do not display polls from other booths" do
+      poll1 = create(:poll, :current)
+      poll2 = create(:poll, :current)
+
+      booth1 = create(:poll_booth)
+      booth2 = create(:poll_booth)
+
+      booth_assignment1 = create(:poll_booth_assignment, poll: poll1, booth: booth1)
+      booth_assignment2 = create(:poll_booth_assignment, poll: poll2, booth: booth2)
+
+      officer_assignment1 = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment1)
+      officer_assignment2 = create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment2)
+
+      set_officing_booth(booth1)
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to have_content "Polls"
+      expect(page).to have_content poll1.name
+      expect(page).not_to have_content poll2.name
+
+      set_officing_booth(booth2)
+      visit new_officing_residence_path
+      officing_verify_residence
+
+      expect(page).to have_content "Polls"
+      expect(page).to have_content poll2.name
+      expect(page).not_to have_content poll1.name
+    end
   end
 
   scenario "Store officer and booth information", :js do

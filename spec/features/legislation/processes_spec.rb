@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Legislation" do
+describe "Legislation" do
 
   let!(:administrator) { create(:administrator).user }
 

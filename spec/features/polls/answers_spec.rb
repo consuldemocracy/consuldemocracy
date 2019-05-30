@@ -1,11 +1,11 @@
 require "rails_helper"
 
-feature "Answers" do
+describe "Answers" do
 
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
 
-  background do
+  before do
     login_as(admin.user)
   end
 

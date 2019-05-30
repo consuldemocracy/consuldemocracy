@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Polls" do
+describe "Polls" do
 
   context "Public index" do
 

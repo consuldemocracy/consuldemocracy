@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Proposal Notifications" do
+describe "Proposal Notifications" do
 
   scenario "Send a notification" do
     author = create(:user)
@@ -363,7 +363,7 @@ feature "Proposal Notifications" do
 
     context "Group notifications" do
 
-      background do
+      before do
         Setting[:proposal_notification_minimum_interval_in_days] = 0
       end
 

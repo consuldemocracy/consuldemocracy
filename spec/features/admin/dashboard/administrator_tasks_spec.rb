@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin administrator tasks" do
+describe "Admin administrator tasks" do
   let(:admin) { create :administrator }
 
   before do

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Stats" do
+describe "Stats" do
 
   let(:budget)  { create(:budget) }
   let(:group)   { create(:budget_group, budget: budget) }

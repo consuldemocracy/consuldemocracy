@@ -19,8 +19,10 @@
         </td>
         <% if poll.votable_by?(@user) %>
           <%= render "can_vote", poll: poll %>
-        <% else %>
+        <% elsif poll.voted_by?(@user) || poll.user_has_an_online_ballot?(@user) %>
           <%= render "already_voted" %>
+        <% else %>
+          <%= render "cannot_vote" %>
         <% end %>
       </tr>
       <% end %>

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Poster" do
+describe "Poster" do
   let!(:proposal) { create(:proposal, :draft) }
 
   before do

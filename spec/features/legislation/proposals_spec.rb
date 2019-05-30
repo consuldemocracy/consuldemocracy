@@ -1,7 +1,7 @@
 require "rails_helper"
 require "sessions_helper"
 
-feature "Legislation Proposals" do
+describe "Legislation Proposals" do
 
   let(:user)     { create(:user) }
   let(:user2)    { create(:user) }
@@ -20,7 +20,7 @@ feature "Legislation Proposals" do
     end
   end
 
-  feature "Random pagination" do
+  describe "Random pagination" do
     before do
       allow(Legislation::Proposal).to receive(:default_per_page).and_return(12)
 

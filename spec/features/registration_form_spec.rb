@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Registration form" do
+describe "Registration form" do
 
   scenario "username is not available", :js do
     user = create(:user)

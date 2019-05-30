@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Incomplete verifications" do
+describe "Incomplete verifications" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

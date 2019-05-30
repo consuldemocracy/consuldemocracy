@@ -1,7 +1,7 @@
 class Poll::BallotSheet < ApplicationRecord
   belongs_to :poll
   belongs_to :officer_assignment
-  has_many :ballots, class_name: Poll::Ballot
+  has_many :ballots, class_name: "Poll::Ballot"
 
   validates :data, presence: true
   validates :poll_id, presence: true
