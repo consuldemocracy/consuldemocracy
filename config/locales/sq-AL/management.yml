@@ -9,7 +9,7 @@ sq:
       show:
         title: Llogaria e përdoruesit
       edit:
-        title: 'Ndrysho llogarinë e përdoruesit: Rivendos fjalëkalimin'
+        title: "Ndrysho llogarinë e përdoruesit: Rivendos fjalëkalimin"
         back: Pas
         password:
           password: Fjalëkalim
@@ -22,11 +22,11 @@ sq:
           print_help: Ju do të jeni në gjendje të printoni fjalëkalimin kur të jetë ruajtur.
     account_info:
       change_user: Ndrysho përdoruesin
-      document_number_label: 'Numri i dokumentit'
-      document_type_label: 'Tipi i dokumentit'
-      email_label: 'Email:'
-      identified_label: 'Identifikuar si:'
-      username_label: 'Emer përdoruesi:'
+      document_number_label: "Numri i dokumentit"
+      document_type_label: "Tipi i dokumentit"
+      email_label: "Email:"
+      identified_label: "Identifikuar si:"
+      username_label: "Emer përdoruesi:"
     check: Kontrrollo dokumentin
     dashboard:
       index:
@@ -38,9 +38,9 @@ sq:
       already_verified: Kjo llogari përdoruesi është verifikuar tashmë
       has_no_account_html: Për të krijuar një llogari, shkoni te %{link} dhe klikoni në <b> 'Regjistrohu' </ b> në pjesën e sipërme të majtë të ekranit.
       link: KONSUL
-      in_census_has_following_permissions: 'Ky përdorues mund të marrë pjesë në faqe me lejet e mëposhtme:'
+      in_census_has_following_permissions: "Ky përdorues mund të marrë pjesë në faqe me lejet e mëposhtme:"
       not_in_census: Ky dokument nuk është i regjistruar.
-      not_in_census_info: 'Qytetarët që nuk janë rregjistruar mund të marrin pjesë në faqen me lejet e mëposhtme:'
+      not_in_census_info: "Qytetarët që nuk janë rregjistruar mund të marrin pjesë në faqen me lejet e mëposhtme:"
       please_check_account_data: Kontrollo nëse të dhënat e llogarisë më sipër janë  të sakta.
       title: Menaxhimi i përdoruesve
       under_age: "Ju nuk keni moshën e kërkuar për të verifikuar llogarinë tuaj."
@@ -49,14 +49,14 @@ sq:
     date_of_birth: Data e lindjes
     email_verifications:
       already_verified: Kjo llogari përdoruesi është verifikuar tashmë
-      choose_options: 'Zgjidh një nga opsionet e mëposhtme:'
+      choose_options: "Zgjidh një nga opsionet e mëposhtme:"
       document_found_in_census: Ky dokument është gjetur i rregjistruar, por nuk ka ndonjë llogari përdoruesi të lidhur me të.
-      document_mismatch: 'Kjo email i takon një përdoruesi i cili tashmë ka një id të lidhur:%{document_number}%{document_type}'
+      document_mismatch: "Kjo email i takon një përdoruesi i cili tashmë ka një id të lidhur:%{document_number}%{document_type}"
       email_placeholder: Shkruani emailin që ky person ka përdorur për të krijuar llogarinë e tij ose të saj
       email_sent_instructions: Për të verifikuar tërësisht këtë përdorues, është e nevojshme që përdoruesi të klikojë në një lidhje që i kemi dërguar në adresën e emailit të mësipërm. Ky hap është i nevojshëm për të konfirmuar se adresa i takon atij.
       if_existing_account: Nëse personi ka tashmë një llogari përdoruesi të krijuar në faqe,
       if_no_existing_account: Nëse ky person ende nuk ka krijuar një llogari
-      introduce_email: 'Ju lutemi vendosni email-in e përdorur në llogari:'
+      introduce_email: "Ju lutemi vendosni email-in e përdorur në llogari:"
       send_email: Dërgo mesazhin e verifikimit
     menu:
       create_proposal: Krijo propozim
@@ -78,7 +78,7 @@ sq:
       vote_proposals: Voto propozimet
     print:
       proposals_info: 'Krijo propozimin tuaj në http: //url.consul'
-      proposals_title: 'Propozime'
+      proposals_title: "Propozime"
       spending_proposals_info: 'Merrni pjesë në http: //url.consul'
       budget_investments_info: 'Merrni pjesë në http: //url.consul'
     print_info: Printoni këtë informacion
