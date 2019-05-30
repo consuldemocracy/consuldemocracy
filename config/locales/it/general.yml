@@ -67,7 +67,7 @@ it:
       most_commented: Più commentati
     select_order: Ordina per
     show:
-      return_to_commentable: 'Torna indietro a '
+      return_to_commentable: "Torna indietro a "
   comments_helper:
     comment_button: Pubblica il commento
     comment_link: Commentare
@@ -218,8 +218,7 @@ it:
       available_locales: Lingue disponibili
       collaborative_legislation: Procedimenti legislativi
       debates: Dibattiti
-      external_link_blog: Blog
-      locale: 'Lingua:'
+      locale: "Lingua:"
       logo: CONSUL logo
       management: Gestione
       moderation: Moderare
@@ -241,7 +240,7 @@ it:
         notifications: Notifiche
         no_notifications: "Non hai nuove notifiche"
     admin:
-      watch_form_message: 'Non sono state salvate le modifiche. Confermate per uscire dalla pagina?'
+      watch_form_message: "Non sono state salvate le modifiche. Confermate per uscire dalla pagina?"
   notifications:
     index:
       empty_notifications: Non hai nuove notifiche.
@@ -312,9 +311,6 @@ it:
       other: Altri
     form:
       geozone: Ambito operativo
-      proposal_external_url: Link alla documentazione addizionale
-      proposal_question: Quesito della proposta
-      proposal_question_example_html: "Dev’essere riassunto in un’unico quesito con risposta Sì o No"
       proposal_responsible_name: Nome e cognome della persona che presenta la proposta
       proposal_responsible_name_note: "(individualmente o come rappresentante di un’associazione; non sarà reso pubblico)"
       proposal_summary: Riepilogo della proposta
@@ -368,7 +364,7 @@ it:
         one: " contenenti il termine <strong>'%{search_term}'</strong>"
         other: " contenenti il termine <strong>'%{search_term}'</strong>"
       select_order: Ordinare per
-      select_order_long: 'Stai visualizzando le proposte in base a:'
+      select_order_long: "Stai visualizzando le proposte in base a:"
       start_proposal: Crea una proposta
       title: Proposte
       top: Top settimanale
@@ -397,8 +393,6 @@ it:
         guide: "Ora puoi condividerlo in modo che le persone possano iniziare a supportare."
         edit: "Prima che venga condiviso, potrai modificare il testo come preferisci."
         view_proposal: Non ora, vai alla mia proposta
-      improve_info: "Migliora la tua campagna e ottieni più supporti"
-      improve_info_link: "Visualizza ulteriori informazioni"
       already_supported: Hai già sostenuto questa proposta. Condividila!
       comments:
         zero: Non ci sono commenti
@@ -420,13 +414,12 @@ it:
       successful: "Questa proposta ha raggiunto gli appoggi richiesti."
     show:
       author_deleted: Utente cancellato
-      code: 'Codice proposta:'
+      code: "Codice proposta:"
       comments:
         zero: Non ci sono commenti
         one: 1 commento
         other: "%{count} commenti"
       comments_tab: Commenti
-      edit_proposal_link: Modificare
       flag: Questa proposta è stata contrassegnata come inappropriata da diversi utenti.
       login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
       notifications_tab: Notifiche
@@ -435,10 +428,8 @@ it:
       retired_warning_link_to_explanation: Leggi la spiegazione prima di votarla.
       retired: Proposta ritirata dall'autore
       share: Condividere
-      send_notification: Invia notifica
       no_notifications: "Questa proposta non ha notifiche."
       embed_video_title: "Video su %{proposal}"
-      title_external_url: "Documentazione aggiuntiva"
       title_video_url: "Video esterno"
       author: Autore
     update:
@@ -494,8 +485,6 @@ it:
       stats_menu: "Statistiche di partecipazione"
       results_menu: "Risultati di voto"
       stats:
-        title: "Dati di partecipazione"
-        total_participation: "Totale partecipazione"
         total_votes: "Totale complessivo di voti dati"
         votes: "VOTI"
         web: "WEB"
@@ -508,11 +497,9 @@ it:
         title: "Quesiti"
         most_voted_answer: "Risposta più votata: "
   poll_questions:
-    create_question: "Creare la domanda"
     show:
       vote_answer: "Voto %{answer}"
       voted: "Hai votato %{answer}"
-      voted_token: "Puoi appuntarti questo identificativo di voto, per controllare il tuo voto nei risultati finali:"
   proposal_notifications:
     new:
       title: "Invia messaggio"
@@ -524,29 +511,29 @@ it:
     show:
       back: "Torna alle mie attività"
   shared:
-    edit: 'Modificare'
-    save: 'Salvare'
-    delete: Eliminare
+    edit: "Modificare"
+    save: "Salvare"
+    delete: "Eliminare"
     "yes": "Sì"
     "no": "No"
     search_results: "Risultati della ricerca"
     advanced_search:
-      author_type: 'Per categoria di autore'
-      author_type_blank: 'Seleziona una categoria'
-      date: 'Per data'
-      date_placeholder: 'GG/MM/AAAA'
-      date_range_blank: 'Scegli una data'
-      date_1: 'Ultime 24 ore'
-      date_2: 'Settimana scorsa'
-      date_3: 'Mese scorso'
-      date_4: 'Anno scorso'
-      date_5: 'Personalizzata'
-      from: 'Da'
-      general: 'Con il testo'
-      general_placeholder: 'Scrivi il testo'
-      search: 'Filtra'
-      title: 'Ricerca avanzata'
-      to: 'A'
+      author_type: "Per categoria di autore"
+      author_type_blank: "Seleziona una categoria"
+      date: "Per data"
+      date_placeholder: "GG/MM/AAAA"
+      date_range_blank: "Scegli una data"
+      date_1: "Ultime 24 ore"
+      date_2: "Settimana scorsa"
+      date_3: "Mese scorso"
+      date_4: "Anno scorso"
+      date_5: "Personalizzata"
+      from: "Da"
+      general: "Con il testo"
+      general_placeholder: "Scrivi il testo"
+      search: "Filtra"
+      title: "Ricerca avanzata"
+      to: "A"
     author_info:
       author_deleted: Utente cancellato
     back: Indietro
@@ -620,7 +607,6 @@ it:
       see_more: Visualizza ulteriori raccomandazioni
       hide: Nascondi raccomandazioni
   social:
-    blog: "Blog di %{org}"
     facebook: "Facebook di %{org}"
     twitter: "Twitter di %{org}"
     youtube: "YouTube di %{org}"
@@ -629,8 +615,8 @@ it:
     instagram: "Instagram di %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Se proponete in nome di un''associazione o altro gruppo aggiungete qui il nome'
-      association_name: 'Nome Associazione'
+      association_name_label: "Se proponete in nome di un'associazione o altro gruppo aggiungete qui il nome"
+      association_name: "Nome Associazione"
       description: Descrizione
       external_url: Link alla documentazione integrativa
       geozone: Ambito operativo
@@ -663,7 +649,7 @@ it:
       start_new: Creare una proposta di spesa
     show:
       author_deleted: Utente cancellato
-      code: 'Codice proposta:'
+      code: "Codice proposta:"
       share: Condividere
     wrong_price_format: Solo numeri interi
     spending_proposal:
@@ -738,8 +724,6 @@ it:
       send_private_message: "Invia messaggio privato"
       delete_alert: "Sei sicuro di voler eliminare il tuo progetto di investimento? Questa azione non può essere annullata"
     proposals:
-      send_notification: "Invia notifica"
-      retire: "Ritira"
       retired: "Ritira proposta"
       see: "Visualizza proposta"
   votes:
@@ -806,7 +790,7 @@ it:
       user_permission_info: Con il tuo account puoi...
       user_permission_proposal: Creare nuove proposte
       user_permission_support_proposal: Appoggiare le proposte
-      user_permission_verify: Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza.
+      user_permission_verify: "Per eseguire poter eseguire tutte le azioni occorre verificare la tua utenza."
       user_permission_verify_info: "* Solo per gli utenti in Anagrafe."
       user_permission_verify_my_account: Verifica il tuo account
       user_permission_votes: Partecipare al voto finale
