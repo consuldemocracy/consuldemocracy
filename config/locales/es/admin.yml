@@ -1151,7 +1151,7 @@ es:
       result:
         table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
-        table_total: "Papeletas totales"
+        table_total: "Papeletas válidas"
         table_answer: Respuesta
         table_votes: Votos
       results_by_booth:

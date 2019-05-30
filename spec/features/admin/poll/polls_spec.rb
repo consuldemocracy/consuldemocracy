@@ -273,7 +273,7 @@ describe "Admin polls" do
         end
 
         2.times do
-          create(:poll_voter, poll: poll, booth_assignment: booth_assignment_final_recounted)
+          create(:poll_voter, :from_booth, poll: poll, booth_assignment: booth_assignment_final_recounted)
         end
 
         create(:poll_recount,
