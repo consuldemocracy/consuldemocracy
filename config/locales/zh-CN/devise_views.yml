@@ -15,7 +15,7 @@ zh-CN:
     mailer:
       confirmation_instructions:
         confirm_link: 确认我的账号
-        text: '您可以通过以下链接确认您的电子邮件账号：'
+        text: "您可以通过以下链接确认您的电子邮件账号："
         title: 欢迎
         welcome: 欢迎
       reset_password_instructions:
@@ -23,12 +23,12 @@ zh-CN:
         hello: 您好
         ignore_text: 如果您没有请求更改密码，您可以忽略此电子邮件。
         info_text: 除非您访问此链接并编辑它，您的密码将不会更改。
-        text: '我们已经收到更改密码的请求。您可以通过以下链接来执行此操作：'
+        text: "我们已经收到更改密码的请求。您可以通过以下链接来执行此操作："
         title: 更改您的密码
       unlock_instructions:
         hello: 您好
         info_text: 由于多次登录尝试失败，您的账号已被禁用。
-        instructions_text: '请点击此链接来解锁您的账号：'
+        instructions_text: "请点击此链接来解锁您的账号："
         title: 您的账号被锁了
         unlock_link: 解锁我的账号
     menu:
@@ -103,7 +103,7 @@ zh-CN:
           password_confirmation_label: 确认新密码
           password_label: 新密码
           update_submit: 更新
-          waiting_for: '等待确认：'
+          waiting_for: "等待确认："
         new:
           cancel: 取消登录
           email_label: 电子邮件地址
