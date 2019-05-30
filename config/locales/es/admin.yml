@@ -4,7 +4,7 @@ es:
       title: Administración
     actions:
       actions: Acciones
-      confirm: "¿Estás seguro?"
+      confirm: '¿Estás seguro?'
       confirm_hide: Confirmar moderación
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -91,7 +91,7 @@ es:
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
-        notice: "¡Presupuestos participativos creados con éxito!"
+        notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
       edit:
@@ -307,7 +307,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: "¡Nuevo hito creado con éxito!"
+        notice: '¡Nuevo hito creado con éxito!'
       update:
         notice: Hito actualizado
       delete:
@@ -402,13 +402,13 @@ es:
         edit:
           editing: Editar acción para el dashboard de propuestas
           back: Volver a la lista
+        delete:
+          success: Acción borrada con éxito
         form:
           submit_button: Guardar
           help_text: Introduce 0 para que este valor no se tenga en cuenta
-          published_proposal: ¿Para propuestas publicadas?
+          published_proposal: '¿Para propuestas publicadas?'
           published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
-        delete:
-          success: Acción borrada con éxito
       administrator_tasks:
         index:
           description: "Los recursos publicados en el panel de progreso de las propuestas pueden incluir un botón para ser solicitados a los administradores. A continuación se muestran las solicitudes de los usuarios."
@@ -445,9 +445,9 @@ es:
         label_attachment: "Selecciona un documento"
         submit_button: "Subir documento"
       index:
-        title: "Documentos"
         new_link: "Subir un documento"
         no_documents: "No hay documentos."
+        title: "Documentos"
         format: "Formato"
         size: "Tamaño"
         url: "URL"
@@ -797,8 +797,8 @@ es:
         segment_recipient: Destinatarios
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
-        body_help_text: Así es como verán el email los usuarios.
-        send_alert: "¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?"
+        body_help_text: Así es como verán el email los usuarios
+        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
     admin_notifications:
       create_success: Notificación creada correctamente
       update_success: Notificación actualizada correctamente
@@ -835,7 +835,7 @@ es:
         segment_recipient: Destinatarios
         preview_guide: "Así es como los usuarios verán la notificación:"
         sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: "¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?"
+        send_alert: '¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?'
     system_emails:
       preview_pending:
         action: Previsualizar pendientes
@@ -1182,7 +1182,7 @@ es:
         edit: "Editar urna"
     officials:
       edit:
-        destroy: Eliminar condición de "Cargo Público"
+        destroy: Eliminar condición de 'Cargo Público'
         title: "Cargos Públicos: Editar usuario"
       flash:
         official_destroyed: "Datos guardados: el usuario ya no es cargo público"
@@ -1275,7 +1275,7 @@ es:
           disable: "Desactivar"
         map:
           title: Configuración del mapa
-          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón "Actualizar".
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
           flash:
             update: La configuración del mapa se ha guardado correctamente.
           form:

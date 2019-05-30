@@ -8,6 +8,7 @@ ru:
         no_balloted_group_yet: "Вы еще не голосовали в этой группе, проголосуйте!"
         remove: Удалить голос
         voted_info_html: "Вы можете изменить свой голос в любое время до конца этого этапа.<br> Нет необходимости тратить все имеющиеся деньги."
+        voted_info_2: "Но вы можете изменить свой голос в любое время до закрытия этой фазы."
         zero: Вы не проголосовали ни по одному инвестиционному проекту.
       reasons_for_not_balloting:
         not_logged_in: Вы должны %{signin} или %{signup}, чтобы продолжить.
@@ -96,13 +97,15 @@ ru:
           random: случайный
           confidence_score: наивысший рейтинг
           price: по цене
+      share:
+        message: "Я создал инвестиционный проект %{title} на %{handle}. Создайте тоже инвестиционный проект!"
       show:
         author_deleted: Пользователь удален
         price_explanation: Описание цены
         unfeasibility_explanation: Объяснение невозможности
-        code_html: 'Код инвестиционного проекта: <strong>%{code}</strong>'
-        location_html: 'Местоположение: <strong>%{location}</strong>'
-        organization_name_html: 'Предлагается от имени: <strong>%{name}</strong>'
+        code_html: "Код инвестиционного проекта: <strong>%{code}</strong>"
+        location_html: "Местоположение: <strong>%{location}</strong>"
+        organization_name_html: "Предлагается от имени: <strong>%{name}</strong>"
         share: Доля
         title: Инвестиционный проект
         supports: Поддержки
@@ -111,10 +114,11 @@ ru:
         comments_tab: Комментарии
         milestones_tab: Основные этапы
         author: Автор
-        project_unfeasible_html: 'Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования.'
-        project_selected_html: 'Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования.'
-        project_winner: 'Победный инвестиционный проект'
-        project_not_selected_html: 'Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования.'
+        project_unfeasible_html: "Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования."
+        project_selected_html: "Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования."
+        project_winner: "Победный инвестиционный проект"
+        project_not_selected_html: "Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования."
+        see_price_explanation: Смотреть описание цены
       wrong_price_format: Только целые числа
       investment:
         add: Голос
@@ -160,7 +164,13 @@ ru:
       not_selected_investment_proyects: Список всех инвестиционных проектов, не отобранных для голосования
     executions:
       link: "Основные этапы"
+      page_title: "%{budget} - Этапы"
+      heading: "Этапы совместного бюджета"
       heading_selection_title: "По участкам"
+      no_winner_investments: "Нет выигравшей инвестиции в этой области"
+      filters:
+        label: "Текущее состояние проекта"
+        all: "Все (%{count})"
     phases:
       errors:
         dates_range_invalid: "Дата начала не может быть равна или позже даты окончания"

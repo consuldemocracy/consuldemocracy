@@ -67,7 +67,7 @@ sv:
       most_commented: Mest kommenterade
     select_order: Sortera efter
     show:
-      return_to_commentable: 'Gå tillbaka till '
+      return_to_commentable: "Gå tillbaka till "
   comments_helper:
     comment_button: Publicera kommentar
     comment_link: Kommentera
@@ -199,6 +199,17 @@ sv:
       firefox: Firefox
       ie: Vi har upptäckt att du använder Internet Explorer. För en förbättrad upplevelse rekommenderar vi %{firefox} eller %{chrome}.
       ie_title: Webbplatsen är inte optimerad för din webbläsare
+    dashboard:
+      proposal_header:
+        published: Publicerad
+        draft: Utkast
+      proposal_totals:
+        active_resources: Aktiva resurser
+        preview_proposal: Förhandsvisa förslag
+        supports:
+          zero: Inget stöd
+          one: 1 stöd
+          other: "Stöd"
     footer:
       accessibility: Tillgänglighet
       conditions: användarvillkoren
@@ -218,8 +229,7 @@ sv:
       available_locales: Tillgängliga språk
       collaborative_legislation: Dialoger
       debates: Debatter
-      external_link_blog: Blogg
-      locale: 'Språk:'
+      locale: "Språk:"
       logo: CONSULs logotyp
       management: Användarhantering
       moderation: Moderering
@@ -241,7 +251,7 @@ sv:
         notifications: Aviseringar
         no_notifications: "Du har inga nya aviseringar"
     admin:
-      watch_form_message: 'Du har inte sparat dina ändringar. Vill du verkligen lämna sidan?'
+      watch_form_message: "Du har inte sparat dina ändringar. Vill du verkligen lämna sidan?"
   notifications:
     index:
       empty_notifications: Du har inga nya aviseringar.
@@ -312,9 +322,6 @@ sv:
       other: Annat
     form:
       geozone: Område
-      proposal_external_url: Länk till ytterligare dokumentation
-      proposal_question: Frågeställning
-      proposal_question_example_html: "Måste skrivas som en ja- eller nej-fråga"
       proposal_responsible_name: Förslagslämnarens fullständiga namn
       proposal_responsible_name_note: "(individuellt eller som representant för en grupp; kommer inte att visas offentligt)"
       proposal_summary: Sammanfattning av förslaget
@@ -368,7 +375,7 @@ sv:
         one: " som innehåller <strong>'%{search_term}'</strong>"
         other: " som innehåller <strong>'%{search_term}'</strong>"
       select_order: Sortera efter
-      select_order_long: 'Du visar förslag enligt:'
+      select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
       title: Förslag
       top: Veckans populäraste förslag
@@ -397,8 +404,6 @@ sv:
         guide: "Nu kan du dela förslaget så att folk kan börja stödja det."
         edit: "Du kan ändra texten fram tills att förslaget har delats."
         view_proposal: Inte nu, gå till mitt förslag
-      improve_info: "Få mer stöd genom att förbättra ditt förslag"
-      improve_info_link: "Visa mer information"
       already_supported: Du stöder redan det här förslaget. Dela det!
       comments:
         zero: Inga kommentarer
@@ -420,13 +425,12 @@ sv:
       successful: "Förslaget har fått tillräckligt med stöd."
     show:
       author_deleted: Användaren är borttagen
-      code: 'Förslagskod:'
+      code: "Förslagskod:"
       comments:
         zero: Inga kommentarer
         one: 1 kommentar
         other: "%{count} kommentarer"
       comments_tab: Kommentarer
-      edit_proposal_link: Redigera
       flag: Förslaget har markerats som olämpligt av flera användare.
       login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
       notifications_tab: Aviseringar
@@ -435,15 +439,67 @@ sv:
       retired_warning_link_to_explanation: Läs beskrivningen innan du röstar på förslaget.
       retired: Förslag som dragits tillbaka av förslagslämnaren
       share: Dela
-      send_notification: Skicka aviseringar
       no_notifications: "Förslaget har inte några aviseringar."
       embed_video_title: "Video om %{proposal}"
-      title_external_url: "Ytterligare dokumentation"
       title_video_url: "Extern video"
       author: Skribent
     update:
       form:
         submit_button: Spara ändringar
+  dashboard:
+    menu:
+      my_proposal: Redigera mitt förslag
+      resources: Resurser
+      community: Gemenskap
+      polls: Omröstningar
+      recommended_actions: Rekommenderade åtgärder
+    progress:
+      group_by_date: Daglig
+      supports: Stöd
+      new_action: Ny
+    index:
+      publish: Publicera förslag
+      retire: Ta tillbaka förslaget
+    new_request:
+      links: Länkar
+    resources:
+      available_resources: Tillgängliga resurser
+    resource:
+      and: och
+    recommended_actions:
+      title: Rekommenderade åtgärder
+      show_description: Visa beskrivning
+      done_title: Genomfört
+    next_goal:
+      title: Mål
+    community:
+      comments: Kommentarer
+      latest_comments: Senaste meddelande
+    polls:
+      index:
+        title: Omröstningar
+        create: Skapa omröstning
+        links: Länkar
+      new:
+        title: Ny omröstning
+        submit: Skapa omröstning
+      edit:
+        submit: Uppdatera omröstning
+      poll:
+        responses:
+          one: "%{count} svar"
+          other: "%{count} svar"
+        edit_poll: Redigera omröstning
+      question_fields:
+        add_answer: Lägg till svar
+    poster:
+      index:
+        support: Stöd mitt förslag
+      options:
+        download: Ladda ner
+    mailer:
+      forward:
+        share_in: Dela på
   polls:
     all: "Alla"
     no_dates: "inget datum har valts"
@@ -491,11 +547,10 @@ sv:
       stats_menu: "Deltagandestatistik"
       results_menu: "Röstningsresultat"
       stats:
-        title: "Deltagardata"
-        total_participation: "Totalt antal deltagare"
         total_votes: "Totalt antal röster"
         votes: "RÖSTER"
         web: "WEBB"
+        mail: "MAIL"
         booth: "RÖSTSTATION"
         total: "TOTALT"
         valid: "Giltiga"
@@ -504,12 +559,12 @@ sv:
       results:
         title: "Frågor"
         most_voted_answer: "Högst rankade svar: "
+    poll_header:
+      back_to_proposal: Tillbaka till förslaget
   poll_questions:
-    create_question: "Skapa fråga"
     show:
       vote_answer: "Rösta på %{answer}"
       voted: "Du har röstat på %{answer}"
-      voted_token: "Skriv ner den här verifieringskoden för att kunna kontrollera din röst i slutresultatet:"
   proposal_notifications:
     new:
       title: "Skicka meddelande"
@@ -521,29 +576,29 @@ sv:
     show:
       back: "Gå tillbaka till min aktivitet"
   shared:
-    edit: 'Redigera'
-    save: 'Spara'
-    delete: Ta bort
+    edit: "Redigera"
+    save: "Spara"
+    delete: "Ta bort"
     "yes": "Ja"
     "no": "Nej"
     search_results: "Sökresultat"
     advanced_search:
-      author_type: 'Efter kategori av förslagslämnare'
-      author_type_blank: 'Välj en kategori'
-      date: 'Efter datum'
-      date_placeholder: 'DD/MM/ÅÅÅÅ'
-      date_range_blank: 'Välj ett datum'
-      date_1: 'Det senaste dygnet'
-      date_2: 'Senaste veckan'
-      date_3: 'Senaste månaden'
-      date_4: 'Senaste året'
-      date_5: 'Anpassad'
-      from: 'Från'
-      general: 'Med texten'
-      general_placeholder: 'Fyll i texten'
-      search: 'Filtrera'
-      title: 'Avancerad sökning'
-      to: 'Till'
+      author_type: "Efter kategori av förslagslämnare"
+      author_type_blank: "Välj en kategori"
+      date: "Efter datum"
+      date_placeholder: "DD/MM/ÅÅÅÅ"
+      date_range_blank: "Välj ett datum"
+      date_1: "Det senaste dygnet"
+      date_2: "Senaste veckan"
+      date_3: "Senaste månaden"
+      date_4: "Senaste året"
+      date_5: "Anpassad"
+      from: "Från"
+      general: "Med texten"
+      general_placeholder: "Fyll i texten"
+      search: "Filtrera"
+      title: "Avancerad sökning"
+      to: "Till"
     author_info:
       author_deleted: Användaren är borttagen
     back: Gå tillbaka
@@ -617,7 +672,6 @@ sv:
       see_more: Visa fler rekommendationer
       hide: Dölj rekommendationer
   social:
-    blog: "%{org} Blogg"
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
     youtube: "%{org} på YouTube"
@@ -626,8 +680,8 @@ sv:
     instagram: "%{org} på Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Namn på grupp eller organisation som förslaget kommer från'
-      association_name: 'Föreningens namn'
+      association_name_label: "Namn på grupp eller organisation som förslaget kommer från"
+      association_name: "Föreningens namn"
       description: Beskrivning
       external_url: Länk till ytterligare dokumentation
       geozone: Område
@@ -660,7 +714,7 @@ sv:
       start_new: Skapa budgetförslag
     show:
       author_deleted: Användaren är borttagen
-      code: 'Förslagskod:'
+      code: "Förslagskod:"
       share: Dela
     wrong_price_format: Endast heltal
     spending_proposal:
@@ -735,9 +789,9 @@ sv:
       send_private_message: "Skicka privat meddelande"
       delete_alert: "Är du säker på att du vill ta bort budgetförslaget? Åtgärden kan inte ångras"
     proposals:
-      send_notification: "Skicka avisering"
-      retire: "Dra tillbaka"
       retired: "Förslag som dragits tillbaka"
+      draft: Utkast
+      published: Publicerad
       see: "Visa förslag"
   votes:
     agree: Jag håller med
@@ -798,12 +852,13 @@ sv:
       title: Kontoverifiering
     welcome:
       go_to_index: Visa förslag och debatter
+      start_using_consul: Gå till hemsidan
       title: Delta
       user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
       user_permission_proposal: Skapa nya förslag
       user_permission_support_proposal: Stödja förslag
-      user_permission_verify: Verifiera ditt konto för att få tillgång till alla funktioner.
+      user_permission_verify: "Verifiera ditt konto för att få tillgång till alla funktioner."
       user_permission_verify_info: "* Endast för användare skrivna i staden."
       user_permission_verify_my_account: Verifiera mitt konto
       user_permission_votes: Delta i slutomröstningar
@@ -837,3 +892,8 @@ sv:
       text_sign_in: logga in
       text_sign_up: registrera dig
       title: Hur kommenterar jag det här dokumentet?
+  links:
+    nested_links:
+      title: Länkar
+    link_fields:
+      label_placeholder: Länktitel

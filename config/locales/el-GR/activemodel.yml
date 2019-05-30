@@ -1,0 +1,22 @@
+el:
+  activemodel:
+    models:
+      verification:
+        residence: "Τόπος Κατοικίας"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Τύπος εγγράφου"
+          document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων των γραμμάτων)"
+          date_of_birth: "Ημερομηνία γέννησης"
+          postal_code: "Ταχυδρομικός κώδικας"
+        sms:
+          phone: "Τηλέφωνο"
+          confirmation_code: "Κωδικός επιβεβαίωσης"
+        email:
+          recipient: "E-Mail"
+      officing/residence:
+        document_type: "Τύπος εγγράφου"
+        document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων των γραμμάτων)"
+        year_of_birth: "Χρονολογία γέννησης"

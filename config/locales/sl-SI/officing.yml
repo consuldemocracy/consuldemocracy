@@ -50,7 +50,6 @@ sl:
         submit: Preveri dokument
         error_verifying_census: "Popis ni mogel verificirati tega dokumenta."
         form_errors: preprečuje verifikacijo tega dokumenta
-        no_assignments: "Danes tukaj nimaš opravkov"
     voters:
       new:
         title: Glasovanja

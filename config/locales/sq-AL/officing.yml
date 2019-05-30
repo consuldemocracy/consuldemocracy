@@ -51,7 +51,6 @@ sq:
         submit: Validoni dokumentin
         error_verifying_census: "\nRegjistri nuk ishte në gjendje të verifikonte këtë dokument."
         form_errors: pengoi verifikimin e ketij dokumenti
-        no_assignments: "Ju nuk keni ndërrime zyrtare sot."
     voters:
       new:
         title: Sondazhet

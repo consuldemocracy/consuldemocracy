@@ -14,7 +14,6 @@ cs:
       destroy:
         notice: Obrázek byl úspěšně smazán.
         alert: Obrázek nelze odstranit
-        confirm: Opravdu chcete obrázek smazat? Tuto akci nelze vrátit zpět!
     errors:
       messages:
         in_between: musí být mezi %{min} a %{max}

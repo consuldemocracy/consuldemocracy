@@ -67,7 +67,7 @@ fr:
       most_commented: Plus commentés
     select_order: Trier par
     show:
-      return_to_commentable: 'Revenir à'
+      return_to_commentable: "Revenir à"
   comments_helper:
     comment_button: Publier un commentaire
     comment_link: Commentaire
@@ -218,8 +218,7 @@ fr:
       available_locales: Langues disponibles
       collaborative_legislation: Processus législatifs
       debates: Débats
-      external_link_blog: Blog
-      locale: 'Langue :'
+      locale: "Langue :"
       logo: Consul logo
       management: Gestion
       moderation: Modération
@@ -241,7 +240,7 @@ fr:
         notifications: Notifications
         no_notifications: "Vous n'avez pas de nouvelles notifications"
     admin:
-      watch_form_message: 'Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?'
+      watch_form_message: "Vous avez des modifications non sauvegardées. Êtes-vous sûr(e) de vouloir quitter cette page ?"
   notifications:
     index:
       empty_notifications: Vous n'avez pas de nouvelles notifications
@@ -312,9 +311,6 @@ fr:
       other: Autre
     form:
       geozone: Portée de l'opération
-      proposal_external_url: Lien vers de la documentation supplémentaire
-      proposal_question: Question proposée
-      proposal_question_example_html: "Doivent être résumés en une question nécessitant une réponse en oui ou non"
       proposal_responsible_name: Nom complet de la personne qui soumet la proposition
       proposal_responsible_name_note: "(individuellement ou comme représentant d'un\ncollectif; ne sera pas public)"
       proposal_summary: Résumé de la proposition
@@ -368,7 +364,7 @@ fr:
         one: " contenant le terme <strong>'%{search_term}'</strong>"
         other: " contenant le terme <strong>'%{search_term}'</strong>"
       select_order: Trier par
-      select_order_long: 'Vous êtes en train de voir les propositions en fonction de'
+      select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
       title: Propositions
       top: Top de la semaine
@@ -397,8 +393,6 @@ fr:
         guide: "Vous pouvez maintenant la partager pour qu'elle commence à recueillir des soutiens."
         edit: "Avant qu'elle soit partagée, vous pouvez changer le texte autant que vous le désirez."
         view_proposal: Pas maintenant, revenir à la proposition
-      improve_info: "Améliorez votre campagne et recueillez plus de soutiens"
-      improve_info_link: "Voir plus d’informations"
       already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
       comments:
         zero: Aucun commentaires
@@ -420,13 +414,12 @@ fr:
       successful: "Cette proposition a atteint les soutiens requis."
     show:
       author_deleted: Utilisateur effacé
-      code: 'Code de la proposition'
+      code: "Code de la proposition"
       comments:
         zero: Aucun commentaires
         one: 1 commentaire
         other: "%{count} commentaires"
       comments_tab: Commentaires
-      edit_proposal_link: Éditer
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
       login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
       notifications_tab: Notifications
@@ -435,10 +428,8 @@ fr:
       retired_warning_link_to_explanation: Lisez l'explication avant de la soutenir.
       retired: Proposition retirée par l'auteur
       share: Partager
-      send_notification: Envoyer une notification
       no_notifications: "Cette proposition n'a pas de notification."
       embed_video_title: "Vidéo de %{proposal}"
-      title_external_url: "Documentation supplémentaire"
       title_video_url: "Vidéo externe"
       author: Auteur
     update:
@@ -492,8 +483,6 @@ fr:
       stats_menu: "Statistiques de participation"
       results_menu: "Résultats du vote"
       stats:
-        title: "Données de participation"
-        total_participation: "Participation totale"
         total_votes: "Nombre de votes"
         votes: "VOTES"
         web: "INTERNET"
@@ -506,11 +495,9 @@ fr:
         title: "Questions"
         most_voted_answer: "Choix le plus voté : "
   poll_questions:
-    create_question: "Créer une question"
     show:
       vote_answer: "Voter %{answer}"
       voted: "Vous avez voté %{answer}"
-      voted_token: "Vous pouvez conserver cet identifiant de vote pour vérifier qu'il a bien été pris en compte lors des résultats finaux:"
   proposal_notifications:
     new:
       title: "Envoyer un message"
@@ -522,29 +509,29 @@ fr:
     show:
       back: "Retour à mon activité"
   shared:
-    edit: 'Éditer'
-    save: 'Sauvegarder'
-    delete: Supprimer
+    edit: "Éditer"
+    save: "Sauvegarder"
+    delete: "Supprimer"
     "yes": "Oui"
     "no": "Non"
     search_results: "Résultats de recherche"
     advanced_search:
-      author_type: 'Par catégorie d''auteur'
-      author_type_blank: 'Sélectionner une catégorie'
-      date: 'Par date'
-      date_placeholder: 'JJ/MM/AAAA'
-      date_range_blank: 'Choisir une date'
-      date_1: 'Dernières 24 heures'
-      date_2: 'La semaine passée'
-      date_3: 'Le mois passé'
-      date_4: 'L''année passée'
-      date_5: 'La période de votre choix'
-      from: 'Depuis'
-      general: 'Avec le texte'
-      general_placeholder: 'Écrire le texte'
-      search: 'Filtre'
-      title: 'Recherche avancée'
-      to: 'Pour'
+      author_type: "Par catégorie d'auteur"
+      author_type_blank: "Sélectionner une catégorie"
+      date: "Par date"
+      date_placeholder: "JJ/MM/AAAA"
+      date_range_blank: "Choisir une date"
+      date_1: "Dernières 24 heures"
+      date_2: "La semaine passée"
+      date_3: "Le mois passé"
+      date_4: "L'année passée"
+      date_5: "La période de votre choix"
+      from: "Depuis"
+      general: "Avec le texte"
+      general_placeholder: "Écrire le texte"
+      search: "Filtre"
+      title: "Recherche avancée"
+      to: "Pour"
     author_info:
       author_deleted: Utilisateur effacé
     back: Revenir
@@ -618,7 +605,6 @@ fr:
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
   social:
-    blog: "Blog"
     facebook: "Facebook"
     twitter: "Twitter"
     youtube: "YouTube"
@@ -627,8 +613,8 @@ fr:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Si vous proposez au nom d’une association ou un collectif, ajoutez le nom ici'
-      association_name: 'Nom de l''association'
+      association_name_label: "Si vous proposez au nom d’une association ou un collectif, ajoutez le nom ici"
+      association_name: "Nom de l'association"
       description: Description
       external_url: Lien vers de la documentation supplémentaire
       geozone: Portée de l'opération
@@ -661,7 +647,7 @@ fr:
       start_new: Créer la proposition de dépenses
     show:
       author_deleted: Utilisateur effacé
-      code: 'Code de la proposition'
+      code: "Code de la proposition"
       share: Partager
     wrong_price_format: Nombres entiers uniquement
     spending_proposal:
@@ -736,8 +722,6 @@ fr:
       send_private_message: "Envoyer un message privé"
       delete_alert: "Êtes-vous sûr. e de vouloir supprimer votre projet d'investissement ? Cette action est irréversible"
     proposals:
-      send_notification: "Envoyer une notification"
-      retire: "Retirer"
       retired: "Proposition retirée"
       see: "Voir la proposition"
   votes:
@@ -804,7 +788,7 @@ fr:
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_proposal: Créer des propositions
       user_permission_support_proposal: Soutenir des propositions
-      user_permission_verify: Réaliser toutes ces actions %{verify}.
+      user_permission_verify: "Réaliser toutes ces actions %{verify}."
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_verify_my_account: Vérifier mon compte
       user_permission_votes: Participer au vote final

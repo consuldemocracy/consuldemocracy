@@ -1,11 +1,67 @@
 tr:
   officing:
-    results:
+    header:
+      title: Seçim
+    dashboard:
       index:
-        table_votes: Oylar
-    residence:
+        title: Anket memuru
+        info: Burada kullanıcı belgelerini doğrulayabilir ve oylama sonuçlarını saklayabilirsiniz
+        no_shifts: Bugün memur vardiyanız yok.
+    menu:
+      voters: Belgeyi doğrula
+      total_recounts: Toplam yeniden sayımlar ve sonuçlar
+    polls:
+      final:
+        title: Anketler son yeniden sayıma hazır
+        no_polls: Herhangi bir aktif ankette son sayımlarda memurluk yapmıyorsunuz
+        select_poll: Anket seç
+        add_results: Sonuçları ekle
+    results:
+      flash:
+        create: "Sonuçlar kaydedildi"
+        error_create: "Sonuçlar KAYDEDİLMEDİ. Veri hatası."
+        error_wrong_booth: "Yanlış kabin. Sonuçlar KAYDEDİLMEDİ."
       new:
+        title: "%{poll} - Sonuçları ekle"
+        not_allowed: "Bu anket için sonuçlar eklemeye yetkiniz yok"
+        booth: "Kabin"
+        date: "Tarih"
+        select_booth: "Kabin seç"
+        ballots_white: "Tamamen boş oylar"
+        ballots_null: "Geçersiz oylar"
+        ballots_total: "Toplam oylar"
+        submit: "Kaydet"
+        results_list: "Sonuçlarınız"
+        see_results: "Sonuçları gör"
+      index:
+        no_results: "Sonuç yok"
+        results: Sonuçlar
+        table_answer: Cevap
+        table_votes: Oylar
+        table_whites: "Tamamen boş oylar"
+        table_nulls: "Geçersiz oylar"
+        table_total: "Toplam oylar"
+    residence:
+      flash:
+        create: "Census ile doğrulanan belge"
+        not_allowed: "Bugün memur vardiyanız yok"
+      new:
+        title: Belgeyi doğrula
         document_number: "Belge numarası (harfler de dahil)"
+        submit: Belgeyi doğrula
+        error_verifying_census: "Census bu belgeyi doğrulayamadı."
+        form_errors: bu belgenin doğrulanmasını engelledi
     voters:
       new:
+        title: Anketler
+        table_poll: Anket
+        table_status: Anket durumu
         table_actions: Aksiyon
+        not_to_vote: Kişi şu anda oy kullanmamaya karar verdi
+      show:
+        can_vote: Oy verebilir
+        error_already_voted: Bu ankete zaten katıldı
+        submit: Oyu onayla
+        success: "Oy verildi!"
+      can_vote:
+        submit_disable_with: "Bekleyin, oy onaylanıyor..."

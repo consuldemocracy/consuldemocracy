@@ -51,7 +51,6 @@ de:
         submit: Dokument überprüfen
         error_verifying_census: "Die Volkszählung konnte dieses Dokument nicht bestätigen."
         form_errors: verhinderte die Bestätigung dieses Dokumentes
-        no_assignments: "Sie haben heute keine Amtswechsel"
     voters:
       new:
         title: Umfragen

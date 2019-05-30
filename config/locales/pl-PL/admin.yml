@@ -38,8 +38,6 @@ pl:
           proposals: Wnioski
           budgets: Budżetowanie partycypacyjne
           help_page: Pomoc
-        background_color: Kolor tła
-        font_color: Kolor czcionki
       edit:
         editing: Edytuj baner
         form:
@@ -77,7 +75,7 @@ pl:
       index:
         title: Budżety partycypacyjne
         new_link: Utwórz nowy budżet
-        filter: Filtr
+        filter: Filtruj
         filters:
           open: Otwórz
           finished: Zakończone
@@ -115,19 +113,60 @@ pl:
         recalculate: Przelicz inwestycje na zwycięzcę
     budget_groups:
       name: "Nazwa"
+      headings_name: "Nagłówki"
+      headings_edit: "Edytowanie nagłówków"
+      headings_manage: "Zarządzanie nagłówkami"
       max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
+      no_groups: "Brak grup."
+      amount:
+        one: "Istnieje 1 grupa"
+        few: "Istnieje %{count} grup"
+        many: "Istnieje %{count} grup"
+        other: "Istnieje %{count} grup"
+      create:
+        notice: "Pomyślnie utworzono grupę!"
+      update:
+        notice: "Grupa zaktualizowana"
+      destroy:
+        success_notice: "Grupa skasowana"
+        unable_notice: "Nie można zniszczyć grupy, która ma powiązanie z nagłówkiem"
       form:
+        create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
         name: "Nazwa grupy"
         submit: "Zapisz grupę"
+      index:
+        back: "Wróć do budżetów"
     budget_headings:
       name: "Nazwa"
+      no_headings: "Nie ma nagłówków."
+      amount:
+        one: "Jest 1 nagłówek"
+        few: "Jest %{count} nagłówków"
+        many: "Jest %{count} nagłówków"
+        other: "Jest %{count} nagłówków"
+      create:
+        notice: "Pomyślnie utworzono nagłówek!"
+      update:
+        notice: "Nagłówek pomyślnie zaktualizowany"
+      destroy:
+        success_notice: "Nagłówek pomyślnie usunięty"
+        unable_notice: "Nie można zniszczyć nagłówek, który jest skojarzony z inwestycją"
       form:
         name: "Nazwa nagłówka"
         amount: "Ilość"
         population: "Populacja (opcjonalnie)"
         population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
+        latitude: "Szerokość geograficzna (opcjonalnie)"
+        longitude: "Długość geograficzna (opcjonalnie)"
+        coordinates_info: "Jeśli podane są szerokość i długość geograficzna, strony inwestycji dla tego nagłówka będzie zawierać mapę. Mapa będzie wyśrodkowany przy użyciu tych współrzędnych."
+        allow_content_block: "Pozwól na załączenie treści"
+        content_blocks_info: "Jeśli załączanie treści jest zaznaczone, będzie mógł/a stworzyć treści związane z tym Nagłówkiem: Ustawienia > Niestandardowe bloki Zawartość pojawi się na stronie inwestycji dla tego nagłówka."
+        create: "Utwórz nowy nagłówek"
+        edit: "Edytuj nagłówek"
         submit: "Zapisz nagłówek"
+      index:
+        back: "Powrót do grup"
     budget_phases:
       edit:
         start_date: Data rozpoczęcia
@@ -147,11 +186,6 @@ pl:
         tags_filter_all: Wszystkie tagi
         advanced_filters: Zaawansowane filtry
         placeholder: Wyszukaj projekty
-        sort_by:
-          placeholder: Sortuj według
-          id: Numer ID
-          title: Tytuł
-          supports: Wsparcie
         filters:
           all: Wszystkie
           without_admin: Bez przypisanego administratora
@@ -167,7 +201,7 @@ pl:
           one_filter_html: "Bieżące zastosowane filtry: <b><em>%{filter}</em></b>"
           two_filters_html: "Bieżące zastosowane filtry: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          filter: Filtr
+          filter: Filtruj
         download_current_selection: "Pobierz bieżący wybór"
         no_budget_investments: "Brak projektów inwestycyjnych."
         title: Projekty inwestycyjne
@@ -188,7 +222,7 @@ pl:
           admin: Administrator
           valuator: Wyceniający
           valuation_group: Grupa Wyceniająca
-          geozone: Zakres operacji
+          geozone: Część dzielnicy, której dotyczy pomysł
           feasibility: Wykonalność
           valuation_finished: Val. Fin.
           selected: Wybrany
@@ -298,13 +332,31 @@ pl:
       delete:
         notice: Status inwestycji został pomyślnie usunięty
     progress_bars:
+      manage: "Zarządzaj paskami postępu"
       index:
+        title: "Pasek postępu"
+        no_progress_bars: "Nie ma paska postępów"
+        new_progress_bar: "Stwórz nowy pasek postępu"
+        primary: "Główny pasek postępu"
         table_id: "Numer ID"
         table_kind: "Typ"
         table_title: "Tytuł"
+        table_percentage: "Aktualny etap"
+      new:
+        creating: "Stwórz pasek postępów"
+      edit:
+        title:
+          primary: "Edytuj główny pasek postępu"
+          secondary: "Edytuj pasek postępu %{title}"
+      create:
+        notice: "Pasek postępu utworzony."
+      update:
+        notice: "Pasek postępu pomyśle zaktualizowany"
+      delete:
+        notice: "Pasek postępu usunięty"
     comments:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -320,7 +372,7 @@ pl:
         description: Witamy w panelu administracyjnym %{org}.
     debates:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -329,7 +381,7 @@ pl:
         no_hidden_debates: Nie ma ukrytych debat.
     hidden_users:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -338,13 +390,13 @@ pl:
         user: Użytkownik
         no_hidden_users: Nie ma żadnych ukrytych użytkowników.
       show:
-        email: 'Email:'
-        hidden_at: 'Ukryte w:'
-        registered_at: 'Zarejestrowany:'
+        email: "Email:"
+        hidden_at: "Ukryte w:"
+        registered_at: "Zarejestrowany:"
         title: Aktywność użytkownika (%{user})
     hidden_budget_investments:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -371,22 +423,25 @@ pl:
           enabled: Włączone
           process: Proces
           debate_phase: Faza debaty
+          draft_phase: Faza robocza
+          draft_phase_description: Jeśli faza ta jest aktywna, proces nie będzie wyświetlany na indeksie procesów. Pozwala na podgląd procesu i tworzenie treści przed jego rozpoczęciem.
           allegations_phase: Faza Komentarzy
           proposals_phase: Etap składania wniosków
-          start: Początek
-          end: Koniec
           use_markdown: Sformatuj tekst za pomocą Markdown
           title_placeholder: Tytuł procesu
           summary_placeholder: Krótkie podsumowanie opisu
           description_placeholder: Dodaj opis procesu
           additional_info_placeholder: Dodaj dodatkowe informacje, które uważasz za przydatne
           homepage: Opis
+          homepage_description: Tutaj można wyjaśnić kontekst procesu
+          homepage_enabled: Strona domowa włączona
+          banner_title: Kolory nagłówków
         index:
           create: Nowy proces
           delete: Usuń
           title: Procesy legislacyjne
           filters:
-            open: Otwórz
+            active: Aktywne
             all: Wszystkie
         new:
           back: Wróć
@@ -395,13 +450,15 @@ pl:
         proposals:
           select_order: Sortuj według
           orders:
+            id: Identyfikator
             title: Tytuł
             supports: Wsparcie
         process:
           title: Proces
           comments: Komentarze
           status: Status
-          creation_date: Data utworzenia
+          start_date: Data rozpoczęcia
+          end_date: Data zakończenia
           status_open: Otwórz
           status_closed: Zamknięty
           status_planned: Zaplanowany
@@ -412,10 +469,14 @@ pl:
           questions: Debata
           proposals: Wnioski
           milestones: Obserwowane
+      homepage:
+        edit:
+          title: Konfigurowanie procesów strony głównej
       proposals:
         index:
           title: Tytuł
           back: Wróć
+          id: Identyfikator
           supports: Wsparcie
           select: Wybierz
           selected: Wybrany
@@ -521,12 +582,11 @@ pl:
         add: Dodaj
         delete: Usuń
       search:
-        title: 'Menedżerowie: wyszukiwanie użytkowników'
+        title: "Menedżerowie: wyszukiwanie użytkowników"
     menu:
       activity: Aktywność moderatora
       admin: Menu admina
       banner: Zarządzaj banerami
-      poll_questions: Pytania
       proposals: Wnioski
       proposals_topics: Tematy propozycji
       budgets: Budżety partycypacyjne
@@ -574,9 +634,10 @@ pl:
           welcome: "Witaj"
         buttons:
           save: "Zapisz"
+          content_block:
+            update: "Aktualizacja bloku"
       title_moderated_content: Zawartość moderowana
       title_budgets: Budżety
-      title_polls: Ankiety
       title_profiles: Profile
       title_settings: Ustawienia
       title_site_customization: Zawartość witryny
@@ -588,6 +649,7 @@ pl:
         title: Administratorów
         name: Nazwa
         email: E-mail
+        id: Identyfikator administratora
         no_administrators: Brak administratorów.
       administrator:
         add: Dodaj
@@ -605,7 +667,7 @@ pl:
         add: Dodaj
         delete: Usuń
       search:
-        title: 'Moderatorzy: Wyszukiwanie użytkownika'
+        title: "Moderatorzy: Wyszukiwanie użytkownika"
     segment_recipient:
       all_users: Wszyscy użytkownicy
       administrators: Administratorów
@@ -695,9 +757,46 @@ pl:
         send_pending: Wyślij oczekujące
         send_pending_notification: Oczekujące powiadomienia wysłane pomyślnie
       proposal_notification_digest:
-        title: Przegląd powiadomień o wnioskach
-        description: Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail.
-        preview_detail: Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują
+        title: "Przegląd powiadomień o wnioskach"
+        description: "Zbiera wszystkie powiadomienia o wnioskach dla użytkownika w pojedynczej wiadomości, aby uniknąć zbyt wielu wiadomości e-mail."
+        preview_detail: "Użytkownicy otrzymają jedynie powiadomienia odnośnie wniosków, które obserwują"
+      budget_investment_created:
+        title: "Budżet inwestycji stworzony"
+        description: "Wysyłane, gdy użytkownik tworzy budżet inwestycji."
+      budget_investment_selected:
+        title: "Budżet inwestycji wybrany"
+        description: "Wysyłane do autora, po wybraniu budżetu inwestycji."
+      budget_investment_unfeasible:
+        title: "Budżet inwestycji niewykonalny"
+        description: "Wysyłane do autora,/ki jeśli jego/jej budżet uzyskał status \"niewykonalny\"."
+      budget_investment_unselected:
+        title: "Budżet inwestycji niewybrany"
+        description: "Wysyłane do autora/ki, jeśli jej/jego wniosek inwestycyjny nie został wybrany do fazy głosowania."
+      comment:
+        title: "Komentarz"
+        description: "Wysyłane do autora, gdy otrzymuje komentarz."
+      reply:
+        title: "Odpowiedz"
+        description: "Wysyłane do autora/ki komentarza, gdy autor otrzyma odpowiedź."
+      direct_message_for_receiver:
+        title: "Odbiorca wiadomości prywatnej"
+        description: "Wysłane do odbiorcy wiadomości prywatnej."
+      direct_message_for_sender:
+        title: "Nadawcy wiadomości prywatnej"
+        description: "Wysyłane do nadawcy wiadomości prywatnej."
+      email_verification:
+        title: "Weryfikacja adresu e-mail"
+        description: "Wysłane do nowego użytkownika w celu weryfikacji jego konta."
+      user_invite:
+        title: "Zaproszenie użytkownika"
+        description: "Wysłane do osoby, która została zaproszona do zarejestrowania konta."
+      edit_info: "Można edytować ten e-mail w"
+      message_title: "Tytuł wiadomości"
+      message_body: "Jest to próbka treści wiadomości."
+      alert:
+        no_investments: "Nie ma żadnych utworzonych inwestycji budżetowych. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
+        no_comments: "Nie ma żadnych utworzonych komentarzy. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
+        no_replies: "Nie ma żadnych udzielonych odpowiedzi. Przykładowe dane są konieczne do podglądu wiadomości e-mail."
     emails_download:
       index:
         title: Pobieranie e-mail
@@ -719,7 +818,7 @@ pl:
         add: Dodaj do wyceniających
         delete: Usuń
       search:
-        title: 'Wyceniający: wyszukiwanie użytkowników'
+        title: "Wyceniający: wyszukiwanie użytkowników"
       summary:
         title: Podsumowanie Wyceniającego dla projektów inwestycyjnych
         valuator_name: Osoba weryfikująca
@@ -801,6 +900,7 @@ pl:
       flash:
         create: "Zmiana dodana"
         destroy: "Zmiana usunięta"
+        unable_to_destroy: "Przesunięcia wraz z powiązanymi wynikami lub przeliczeniami nie mogą być usunięte"
         date_missing: "Data musi być zaznaczona"
       vote_collection: Zbierz Głosy
       recount_scrutiny: Przeliczenie & Kontrola
@@ -840,26 +940,29 @@ pl:
         no_booths: "Brak stanowisk przydzielonych do tego głosowania."
         table_name: "Nazwa"
         table_location: "Lokalizacja"
+    active_polls:
+      edit:
+        title: "Opis sondy"
+      form:
+        description:
+          text: "Opis"
+          help_text: "Ten tekst będzie wyświetlany w nagłówku strony sondy. Można go użyć do dodania kontekstu w stosunku do aktywnych sond."
     polls:
       index:
         title: "Lista aktywnych głosowań"
         no_polls: "Brak nadchodzących głosowań."
-        create: "Utwórz głosowanie"
+        create: "Utwórz sondaż"
         name: "Nazwa"
         dates: "Daty"
         start_date: "Data Rozpoczęcia"
         closing_date: "Data Zakończenia"
         geozone_restricted: "Ograniczone do dzielnic"
       new:
-        title: "Nowe głosowanie"
-        show_results_and_stats: "Pokaż wyniki i statystyki"
-        show_results: "Pokaż wyniki"
-        show_stats: "Pokaż statystyki"
-        results_and_stats_reminder: "Zaznaczenie tych pól wyboru wyników i / lub statystyk tego głosowania udostępni je publicznie i każdy użytkownik je zobaczy."
-        submit_button: "Utwórz głosowanie"
+        title: "Nowy sondaż"
+        submit_button: "Utwórz sondę"
       edit:
-        title: "Edytuj głosowanie"
-        submit_button: "Aktualizuj głosowanie"
+        title: "Edytuj sondę"
+        submit_button: "Aktualizuj sondę"
       show:
         questions_tab: Pytania
         booths_tab: Stanowiska
@@ -869,6 +972,8 @@ pl:
         no_questions: "Brak pytań przydzielonych do tego głosowania."
         questions_title: "Lista pytań"
         table_title: "Tytuł"
+        edit_answers: Edytowanie odpowiedzi
+        see_proposal: "(Zobacz wnioski)"
       flash:
         question_added: "Pytanie dodane do tego głosowania"
         error_on_question_added: "Pytanie nie mogło zostać przypisane do tego głosowania"
@@ -877,19 +982,21 @@ pl:
         title: "Pytania"
         create: "Utwórz pytanie"
         no_questions: "Nie ma pytań."
-        filter_poll: Filtruj według ankiety
+        filter_poll: Filtruj według głosowania
         select_poll: Wybierz ankietę
         questions_tab: "Pytania"
         successful_proposals_tab: "Udane wnioski"
         create_question: "Utwórz pytanie"
         table_proposal: "Wniosek"
         table_question: "Pytanie"
-        table_poll: "Głosowanie"
+        table_poll: "Sondaż"
+        poll_not_assigned: "Punkt nie przypisany"
       edit:
         title: "Edytuj Pytanie"
       new:
         title: "Utwórz Pytanie"
-        poll_label: "Ankieta"
+        title_proposal: "Stwórz pytanie"
+        poll_label: "Sondaż"
       answers:
         images:
           add_image: "Dodaj obraz"
@@ -938,6 +1045,9 @@ pl:
       index:
         title: "Przeliczenia"
         no_recounts: "Nie ma nic do przeliczenia"
+        all_booths_total: "Łączna suma z wszystkich kabin:"
+        total_final: "Wynik przeliczenia"
+        total_system: "Głosy (automatyczne)"
         table_booth_name: "Kabina wyborcza"
         table_total_recount: "Całkowite przeliczenie (przez urzędnika)"
         table_system_count: "Głosy (automatyczne)"
@@ -980,12 +1090,13 @@ pl:
     officials:
       edit:
         destroy: Usuń status 'Oficjalny'
-        title: 'Urzędnicy: Edytuj użytkownika'
+        title: "Urzędnicy: Edytuj użytkownika"
       flash:
-        official_destroyed: 'Szczegóły zapisane: użytkownik nie jest już oficjalny'
+        official_destroyed: "Szczegóły zapisane: użytkownik nie jest już oficjalny"
         official_updated: Szczegóły o urzędniku zapisane
       index:
         title: Urzędnicy
+        help: Konta użytkowników oznaczone jako urzędnicy na portalu, będą miały swoje podświetlenia. Można zdefiniować etykiety, które pojawią się obok nazwy użytkownika. Najwyższy poziom (poziom 1) a najniższy (poziom 5).
         no_officials: Brak urzędników.
         name: Nazwa
         official_position: Oficjalne stanowisko
@@ -999,11 +1110,11 @@ pl:
       search:
         edit_official: Edytuj urzędnika
         make_official: Uczyń urzędowym
-        title: 'Oficjalne stanowiska: Szukaj użytkownika'
+        title: "Oficjalne stanowiska: Szukaj użytkownika"
         no_results: Oficjalne stanowiska nie znalezione.
     organizations:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           pending: Oczekujące
@@ -1032,9 +1143,12 @@ pl:
         id: Numer ID
         author: Autor
         milestones: Kamienie milowe
+        no_proposals: Brak wniosków.
+      show:
+        create_question: Poddaj ten pomysł pod głosowanie w sondzie
     hidden_proposals:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -1043,7 +1157,7 @@ pl:
         no_hidden_proposals: Brak ukrytych wniosków.
     proposal_notifications:
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           all: Wszystkie
           with_confirmed_hide: Potwierdzone
@@ -1054,12 +1168,9 @@ pl:
       flash:
         updated: Wartość zaktualizowana
       index:
-        banners: Style banerów
-        banner_imgs: Obrazy banerów
-        no_banners_images: Brak obrazów banerów
-        no_banners_styles: Brak styli banerów
         title: Ustawienia konfiguracji
         update_setting: Zaktualizuj
+        participation_processes: "Procesy partycypacyjne"
         feature_flags: Funkcje
         features:
           enabled: "Funkcja włączona"
@@ -1073,6 +1184,7 @@ pl:
             update: Aktualizacja mapy została pomyślnie zaktualizowana.
           form:
             submit: Zaktualizuj
+          how_to_enable: 'Aby pokazać mapę użytkownikom musisz włączyć opcję "Propozycje i geolokalizacja inwestycji budżetowych" w zakładce Ustawienia -> Ustawienia globalne'
       setting: Funkcja
       setting_actions: Akcje
       setting_name: Ustawienie
@@ -1114,6 +1226,7 @@ pl:
       content: Zawartość
       created_at: Utworzony w
       delete: Usuń
+      color_help: Format szesnastkowy
     spending_proposals:
       index:
         geozone_filter_all: Wszystkie strefy
@@ -1180,14 +1293,16 @@ pl:
         name: Nazwa
         external_code: Kod zewnętrzny
         census_code: Kod spisu ludności
+        code_help: Kod odpowiedzi dla tej strefy zgodnie ze spisem API
         coordinates: Współrzędne
+        coordinates_help: Współrzędne, które będą generować klikalny obszar na mapie obrazu HTML
       errors:
         form:
           error:
             one: "błąd uniemożliwił zapisanie tej geostrefy"
-            few: 'błędy uniemożliwiły zapisanie tej geostrefy'
-            many: 'błędy uniemożliwiły zapisanie tej geostrefy'
-            other: 'błędy uniemożliwiły zapisanie tej geostrefy'
+            few: "błędy uniemożliwiły zapisanie tej geostrefy"
+            many: "błędy uniemożliwiły zapisanie tej geostrefy"
+            other: "błędy uniemożliwiły zapisanie tej geostrefy"
       edit:
         form:
           submit_button: Zapisz zmiany
@@ -1239,9 +1354,7 @@ pl:
           verified_users_who_didnt_vote_proposals: Zweryfikowani użytkownicy, którzy nie głosowali na wnioski
           visits: Odwiedziny
           votes: Liczba głosów
-        spending_proposals_title: Wnioski wydatkowe
         budgets_title: Budżetowanie partycypacyjne
-        visits_title: Odwiedziny
         direct_messages: Bezpośrednie wiadomości
         proposal_notifications: Powiadomienie o wnioskach
         incomplete_verifications: Niekompletne weryfikacje
@@ -1254,6 +1367,7 @@ pl:
         title: Powiadomienie o wnioskach
         total: Łączny
         proposals_with_notifications: Wnioski z powiadomieniami
+        not_available: "Wniosek nie jest dostępny"
       polls:
         title: Statystyki ankiet
         all: Ankiety
@@ -1261,7 +1375,7 @@ pl:
         total_participants: Wszystkich uczestników
         poll_questions: "Pytania z ankiety: %{poll}"
         table:
-          poll_name: Głosowanie
+          poll_name: Sondaż
           question_name: Pytanie
           origin_web: Uczestnicy sieci
           origin_total: Całkowity udział
@@ -1297,6 +1411,7 @@ pl:
       content_blocks:
         information: Informacje dotyczące bloków zawartości
         about: "Możesz tworzyć bloki zawartości HTML, które będą wstawiane do nagłówka lub stopki twojego CONSUL."
+        html_format: "Zawartość bloku jest grupą linków, i musi mieć następujący format:"
         no_blocks: "Nie ma bloków treści."
         create:
           notice: Zawartość bloku została pomyślnie utworzona
@@ -1369,12 +1484,22 @@ pl:
           title: Tytuł
           slug: Ścieżka
           cards_title: Karty
+          see_cards: Zobacz karty
         cards:
+          cards_title: karty
           create_card: Utwórz kartę
+          no_cards: Nie ma kart.
           title: Tytuł
           description: Opis
           link_text: Tekst łącza
           link_url: Łącze URL
+          columns_help: "Szerokość karty w liczbie kolumn. Na smartfonie screeny są zawsze o szerokości 100%."
+          create:
+            notice: "Strona utworzona pomyślnie!"
+          update:
+            notice: "Strona pomyślnie zaktualizowana"
+          destroy:
+            notice: "Strona pomyślnie usunięta"
     homepage:
       title: Strona główna
       description: Aktywne moduły pojawiają się na stronie głównej w tej samej kolejności co tutaj.

@@ -14,7 +14,6 @@ pt-BR:
       destroy:
         notice: Imagem excluída com sucesso.
         alert: Não é possível destruir a imagem.
-        confirm: Tem certeza que deseja excluir esta imagem? Esta ação não pode ser desfeita!
     errors:
       messages:
         in_between: deve estar entre %{min} e %{max}

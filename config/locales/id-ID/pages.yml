@@ -46,8 +46,6 @@ id:
         page:
           title: "Pertanyaan yang Sering Diajukan"
           description: "Gunakan halaman ini untuk menyelesaikan FAQ umum bagi pengguna situs."
-          faq_1_title: "Pertanyaan 1"
-          faq_1_description: "Ini adalah contoh untuk deskripsi pertanyaan."
       other:
         title: "Informasi lain yang menarik"
         how_to_use: "Gunakan %{org_name} di kota anda"
@@ -98,14 +96,11 @@ id:
             - 
             - 
     titles:
-      accessibility: Aksesibilitas
-      conditions: Ketentuan penggunaan
       help: "Apa %{org}? - Partisipasi warga"
-      privacy: Kebijakan Privasi
     verify:
       code: Kode yang anda terima di surat
       email: Email
-      info_code: 'Sekarang memperkenalkan kode yang anda terima di surat:'
+      info_code: "Sekarang memperkenalkan kode yang anda terima di surat:"
       password: Kata Sandi
       submit: Memverifikasi account saya
       title: Verifikasi akun anda

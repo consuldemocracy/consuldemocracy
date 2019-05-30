@@ -106,9 +106,9 @@ fa:
         author_deleted: کاربر حذف شد
         price_explanation: توضیح قیمت
         unfeasibility_explanation: توضیح امکان سنجی 
-        code_html: 'کد پروژه سرمایه گذاری:<strong>%{code}</strong>'
+        code_html: "کد پروژه سرمایه گذاری:<strong>%{code}</strong>"
         location_html: "محل:\n%{location}</strong>"
-        organization_name_html: 'پیشنهاد از طرف:<strong>%{name}</strong>'
+        organization_name_html: "پیشنهاد از طرف:<strong>%{name}</strong>"
         share: "اشتراک گذاری\n"
         title: پروژه سرمایه گذاری
         supports: پشتیبانی ها
@@ -117,8 +117,8 @@ fa:
         comments_tab: توضیحات
         milestones_tab: نقطه عطف
         author: نویسنده
-        project_unfeasible_html: 'این پروژه سرمایه گذاری <strong> به عنوان غیرقابل توصیف مشخص شده است </ strong> و به مرحله رای گیری نرسیده است'
-        project_not_selected_html: 'این پروژه سرمایه گذاری <strong> انتخاب نشده است </ strong> برای مرحله رای گیری .'
+        project_unfeasible_html: "این پروژه سرمایه گذاری <strong> به عنوان غیرقابل توصیف مشخص شده است </ strong> و به مرحله رای گیری نرسیده است"
+        project_not_selected_html: "این پروژه سرمایه گذاری <strong> انتخاب نشده است </ strong> برای مرحله رای گیری ."
       wrong_price_format: فقط اعداد صحیح 
       investment:
         add: رای

@@ -31,6 +31,9 @@ ast:
       valuator:
         one: "Evaluaor"
         other: "Evaluaores"
+      manager:
+        one: "Xestor"
+        other: "Xestores"
       vote:
         one: "Votu"
         other: "Votos"
@@ -76,6 +79,9 @@ ast:
       legislation/answers:
         one: "Respuesta"
         other: "Respuestes"
+      images:
+        one: "Imaxe"
+        other: "Imaxes"
       poll:
         one: "Votación"
         other: "Votaciones"
@@ -292,8 +298,8 @@ ast:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non verificáu por Padrón'
-              already_voted: 'Yá votó esta propuesta'
+              not_in_census: "Non verificáu por Padrón"
+              already_voted: "Yá votó esta propuesta"
         site_customization/page:
           attributes:
             slug:

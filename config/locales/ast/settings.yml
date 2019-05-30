@@ -11,8 +11,6 @@ ast:
     proposal_code_prefix: "Prefijo para los códigos de Propuestas"
     months_to_archive_proposals: "Meses para archivar las Propuestas"
     email_domain_for_officials: "Dominio de email para cargos públicos"
-    per_page_code_head: "Código a incluir en cada página (<head>)"
-    per_page_code_body: "Código a incluir en cada página (<body>)"
     twitter_handle: "Usuario de Twitter"
     twitter_hashtag: "Hashtag para Twitter"
     facebook_handle: "Identificador de Facebook"
@@ -21,23 +19,12 @@ ast:
     instagram_handle: "Usuario de Instagram"
     url: "URL general de la web"
     org_name: "Nombre de la organización"
-    place_name: "Nombre del lugar"
     meta_description: "Descripción del sitio (SEO)"
     meta_keywords: "Palabras clave (SEO)"
     min_age_to_participate: Edad mínima para participar
-    blog_url: "URL del blog"
-    transparency_url: "URL de transparencia"
-    opendata_url: "URL de open data"
-    verification_offices_url: URL oficinas verificación
-    proposal_improvement_path: Link a información para mejorar propuestas
     feature:
-      budgets: "Presupuestos participativos"
       twitter_login: "Registro con Twitter"
       facebook_login: "Registro con Facebook"
       google_login: "Registro con Google"
-      proposals: "Propuestes"
-      debates: "Alderique"
-      polls: "Votaciones"
       signature_sheets: "Hojas de firmas"
-      legislation: "Legislación"
       spending_proposals: "Propuestes d'inversión"

@@ -15,7 +15,7 @@ nl:
     mailer:
       confirmation_instructions:
         confirm_link: Bevestig mijn account
-        text: 'U kunt uw email adres bevestigen via de volgende link:'
+        text: "U kunt uw email adres bevestigen via de volgende link:"
         title: Welkom
         welcome: Welkom
       reset_password_instructions:
@@ -23,12 +23,12 @@ nl:
         hello: Hallo
         ignore_text: Negeer deze mail als u geen wachtwoord aanpassing heeft aangevraagd.
         info_text: Uw wachtwoord zal niet worden aangepast tot u dit via de link edit.
-        text: 'We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:'
+        text: "We hebben een verzoek tot wijziging van uw wachtwoord ontvangen. U kunt dit doen via de volgende link:"
         title: Pas wachtwoord aan
       unlock_instructions:
         hello: Hallo
         info_text: Uw account is geblokkeerd vanwege een te groot aantal mislukte inlogpogingen.
-        instructions_text: 'Klik deze link om uw account te de-blokkeren:'
+        instructions_text: "Klik deze link om uw account te de-blokkeren:"
         title: Uw account is geblokkeerd
         unlock_link: De-blokkeer mijn account
     menu:
@@ -103,7 +103,7 @@ nl:
           password_confirmation_label: Bevestig nieuw wachtwoord
           password_label: Nieuw wachtwoord
           update_submit: Update
-          waiting_for: 'In afwachting van bevestiging:'
+          waiting_for: "In afwachting van bevestiging:"
         new:
           cancel: Annuleren inloggen
           email_label: E-mail

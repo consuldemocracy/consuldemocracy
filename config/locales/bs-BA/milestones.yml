@@ -1,0 +1,8 @@
+bs:
+  milestones:
+    index:
+      no_milestones: Nema utvrđenih rokova
+      progress: Dosad urađeno
+    show:
+      publication_date: "Objavljeno %{publication_date}"
+      status_changed: 'Status promijenjen:'
