@@ -1,6 +1,5 @@
 require "translator-text"
 include RemoteTranslations::Microsoft::SentencesParser
-include RemoteTranslations::Microsoft::AvailableLocales
 
 class RemoteTranslations::Microsoft::Client
   CHARACTERS_LIMIT_PER_REQUEST = 5000
@@ -13,7 +12,7 @@ class RemoteTranslations::Microsoft::Client
 
   def call(fields_values, locale)
     texts = prepare_texts(fields_values)
-    valid_locale = parse_locale(locale)
+    valid_locale = RemoteTranslations::Microsoft::AvailableLocales.parse_locale(locale)
     request_translation(texts, valid_locale)
   end
 
