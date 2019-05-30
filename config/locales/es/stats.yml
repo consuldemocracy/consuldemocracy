@@ -11,10 +11,8 @@ es:
     age: "Edad"
     age_more_than: "De %{start} y más años"
     age_range: "De %{start} a %{finish} años"
-    total: "Total"
     geozone: "Distrito"
     no_demographic_data:
-      zero: ""
       one: "* No se dispone de los datos demográficos de 1 participante."
       other: "* No se dispone de los datos demográficos de %{count} participantes."
     budgets:
@@ -25,12 +23,11 @@ es:
       total_unfeasible_investments: "Proyectos inviables"
       by_phase: "Participantes por fases"
       by_heading: "Participantes por distritos y fase"
-      total: "Total"
       heading: "Distrito"
       investments_sent_html: "Propuestas<br>enviadas"
-      participants_support_phase: Participantes fase apoyos
-      participants_vote_phase: Participantes fase votación
-      participants_every_phase: Total de participantes
+      participants_support_phase: "Participantes fase apoyos"
+      participants_vote_phase: "Participantes fase votación"
+      participants_every_phase: "Total de participantes"
       percent_total_participants: "% Total participantes"
       percent_heading_census: "% Censo distrito"
       participatory_disclaimer: "** Las cifras de total de participantes se refieren a personas que han creado, apoyado o votado propuestas."
@@ -38,6 +35,5 @@ es:
     polls:
       by_channel: "Participantes por medio"
       vote_by_channel: "Votos emitidos por medio"
-      web_percentage: "%{percentage} Web"
       booth_percentage: "%{percentage} Urnas"
       letter_percentage: "%{percentage} Correo"
