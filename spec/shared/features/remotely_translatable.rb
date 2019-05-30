@@ -27,7 +27,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     scenario "should be present when current locale translation does not exists", :js do
       visit path
 
-      select('Deutsch', from: 'locale-switcher')
+      select("Deutsch", from: "locale-switcher")
 
       expect(page).to have_button("Translate page")
     end
@@ -37,7 +37,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       visit path
       expect(page).not_to have_button("Translate page")
 
-      select('Deutsch', from: 'locale-switcher')
+      select("Deutsch", from: "locale-switcher")
 
       expect(page).not_to have_button("Translate page")
     end
@@ -47,7 +47,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       resource.destroy
       visit path
 
-      select('Deutsch', from: 'locale-switcher')
+      select("Deutsch", from: "locale-switcher")
 
       expect(page).not_to have_button("Translate page")
     end
@@ -81,7 +81,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         expect(page).not_to have_button("Translate page")
       end
@@ -102,7 +102,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         expect(page).to have_button("Translate page")
       end
@@ -113,7 +113,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         expect(page).not_to have_button("Translate page")
       end
@@ -130,7 +130,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         expect(page).to have_button("Translate page")
       end
@@ -147,7 +147,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         expect(page).to have_button("Translate page")
       end
@@ -170,7 +170,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
       scenario "the remote translation button should not be present", :js do
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         click_button "Translate page"
 
@@ -179,14 +179,14 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
       scenario "the remote translation is pending to translate", :js do
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         expect { click_button "Translate page" }.to change { RemoteTranslation.count }.from(0).to(1)
       end
 
       scenario "should be present enqueued notice and informative text", :js do
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         click_button "Translate page"
 
@@ -196,14 +196,14 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
       scenario "should be present only informative text when user visit page with all content enqueued", :js do
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
         click_button "Translate page"
         expect(page).to have_content("Translations have been correctly requested.")
 
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
-        expect(page).not_to have_button 'Translate text'
+        expect(page).not_to have_button "Translate text"
         expect(page).not_to have_content("Translations have been correctly requested.")
         expect(page).to have_content("In a short period of time refreshing the page you will be able to see all the content in your language.")
       end
@@ -216,7 +216,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         microsoft_translate_client_response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         click_button "Translate page"
 
@@ -227,7 +227,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         microsoft_translate_client_response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
         visit path
-        select('Deutsch', from: 'locale-switcher')
+        select("Deutsch", from: "locale-switcher")
 
         click_button "Translate page"
 

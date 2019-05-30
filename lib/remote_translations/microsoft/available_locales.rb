@@ -49,7 +49,7 @@ module RemoteTranslations::Microsoft::AvailableLocales
     end
 
     def daily_cache(key, &block)
-      Rails.cache.fetch("remote_available_locales/#{Time.current.strftime('%Y-%m-%d')}/#{key}", &block)
+      Rails.cache.fetch("remote_available_locales/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &block)
     end
 
 end
