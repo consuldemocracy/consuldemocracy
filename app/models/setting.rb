@@ -90,11 +90,11 @@ class Setting < ApplicationRecord
         "months_to_archive_proposals": 12,
         # Names for the moderation console, as a hint for moderators
         # to know better how to assign users with official positions
-        "official_level_1_name": "Cargo oficial 1",
-        "official_level_2_name": "Cargo oficial 2",
-        "official_level_3_name": "Cargo oficial 3",
-        "official_level_4_name": "Cargo oficial 4",
-        "official_level_5_name": "Cargo oficial 5",
+        "official_level_1_name": I18n.t("seeds.settings.official_level_1_name"),
+        "official_level_2_name": I18n.t("seeds.settings.official_level_2_name"),
+        "official_level_3_name": I18n.t("seeds.settings.official_level_3_name"),
+        "official_level_4_name": I18n.t("seeds.settings.official_level_4_name"),
+        "official_level_5_name": I18n.t("seeds.settings.official_level_5_name"),
         # CONSUL installation's organization name
         "org_name": "CONSUL",
         "process.budgets": true,
