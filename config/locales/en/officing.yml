@@ -51,7 +51,7 @@ en:
         select_booth: "Select booth"
         ballots_white: "Totally blank ballots"
         ballots_null: "Invalid ballots"
-        ballots_total: "Total ballots"
+        ballots_total: "Valid ballots"
         submit: "Save"
         results_list: "Your results"
         see_results: "See results"
@@ -62,7 +62,7 @@ en:
         table_votes: Votes
         table_whites: "Totally blank ballots"
         table_nulls: "Invalid ballots"
-        table_total: "Total ballots"
+        table_total: "Valid ballots"
     residence:
       flash:
         create: "Document verified with Census"
