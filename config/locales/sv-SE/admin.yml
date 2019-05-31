@@ -581,7 +581,6 @@ sv:
       officials: Representanter för staden
       organizations: Organisationer
       settings: Globala inställningar
-      spending_proposals: Investeringsförslag
       stats: Statistik
       signature_sheets: Namninsamlingar
       site_customization:
@@ -603,7 +602,6 @@ sv:
         buttons:
           save: "Spara"
       title_moderated_content: Modererat innehåll
-      title_budgets: Budgetar
       title_profiles: Profiler
       title_settings: Inställningar
       title_site_customization: Webbplatsens innehåll
@@ -749,15 +747,6 @@ sv:
         delete: Ta bort
       search:
         title: "Bedömare: Sök användare"
-      summary:
-        title: Sammanfattning av bedömning av budgetförslag
-        valuator_name: Bedömare
-        finished_and_feasible_count: Avslutat och genomförbart
-        finished_and_unfeasible_count: Avslutat och ej genomförbart
-        finished_count: Avslutade
-        in_evaluation_count: Under utvärdering
-        total_count: Totalt
-        cost: Kostnad
       form:
         edit_title: "Bedömare: Redigera bedömare"
         update: "Uppdatera bedömare"
@@ -1123,9 +1112,6 @@ sv:
       proposal_search:
         button: Sök
         placeholder: Sök förslag efter titel, kod, beskrivning eller fråga
-      spending_proposal_search:
-        button: Sök
-        placeholder: Sök budgetförslag efter titel eller beskrivning
       user_search:
         button: Sök
         placeholder: Sök användare efter namn eller e-post
@@ -1143,62 +1129,6 @@ sv:
       content: Innehåll
       created_at: Skapad den
       delete: Ta bort
-    spending_proposals:
-      index:
-        geozone_filter_all: Alla stadsdelar
-        administrator_filter_all: Alla administratörer
-        valuator_filter_all: Alla bedömare
-        tags_filter_all: Alla taggar
-        filters:
-          valuation_open: Öppna
-          without_admin: Utan ansvarig administratör
-          managed: Hanterade
-          valuating: Under kostnadsberäkning
-          valuation_finished: Kostnadsberäkning avslutad
-          all: Alla
-        title: Budgetförslag för medborgarbudget
-        assigned_admin: Ansvarig administratör
-        no_admin_assigned: Saknar ansvarig administratör
-        no_valuators_assigned: Inga ansvariga bedömare
-        summary_link: "Sammanfattning av budgetförslag"
-        valuator_summary_link: "Sammanfattning från bedömare"
-        feasibility:
-          feasible: "Genomförbart (%{price})"
-          not_feasible: "Ej genomförbart"
-          undefined: "Odefinierat"
-      show:
-        assigned_admin: Ansvarig administratör
-        assigned_valuators: Ansvariga bedömare
-        back: Tillbaka
-        classification: Klassificering
-        heading: "Budgetförslag %{id}"
-        edit: Redigera
-        edit_classification: Redigera klassificering
-        association_name: Förening
-        by: Av
-        sent: Skickat
-        geozone: Område
-        dossier: Rapport
-        edit_dossier: Redigera rapport
-        tags: Taggar
-        undefined: Odefinierat
-      edit:
-        classification: Klassificering
-        assigned_valuators: Bedömare
-        submit_button: Uppdatera
-        tags: Taggar
-        tags_placeholder: "Fyll i taggar separerade med kommatecken (,)"
-        undefined: Odefinierat
-      summary:
-        title: Sammanfattning av budgetförslag
-        title_proposals_with_supports: Sammanfattning av budgetförslag med stöd
-        geozone_name: Område
-        finished_and_feasible_count: Avslutat och genomförbart
-        finished_and_unfeasible_count: Avslutat och ej genomförbart
-        finished_count: Avslutade
-        in_evaluation_count: Under utvärdering
-        total_count: Totalt
-        cost_for_geozone: Kostnad
     geozones:
       index:
         title: Geografiska områden
@@ -1263,7 +1193,6 @@ sv:
           proposals: Förslag
           budgets: Pågående budgetar
           budget_investments: Budgetförslag
-          spending_proposals: Budgetförslag
           unverified_users: Ej verifierade användare
           user_level_three: Användare nivå tre
           user_level_two: Användare nivå två
