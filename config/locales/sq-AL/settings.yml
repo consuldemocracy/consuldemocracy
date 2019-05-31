@@ -66,11 +66,6 @@ sq:
       google_login_description: "\nLejo përdoruesit të regjistrohen me llogarinë e tyre në Google"
       signature_sheets: "Nënshkrimi i fletëve"
       signature_sheets_description: "Kjo lejon shtimin e nënshkrimit të paneleve të Administratës të mbledhura në vend të Propozimeve dhe projekteve të investimeve të buxheteve pjesëmarrëse"
-      spending_proposals: "Shpenzimet e propozimeve"
-      spending_proposals_description: "Shënim: Ky funksionalitet është zëvendësuar nga Buxheti pjesmarrës dhe do të zhduket në versione të reja"
-      spending_proposal_features:
-        voting_allowed: Votimi në projektet e investimeve - Faza e zgjedhjes
-        voting_allowed_description: "Shënim: Ky funksionalitet është zëvendësuar nga Buxheti pjesmarrës dhe do të zhduket në versione të reja"
       user:
         recommendations: "Rekomandimet"
         recommendations_description: "Tregon rekomandimet e përdoruesve në faqen kryesore bazuar në etiketat e artikujve në vijim"
