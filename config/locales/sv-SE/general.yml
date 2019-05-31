@@ -179,7 +179,6 @@ sv:
     policy: Sekretesspolicy
     proposal: Förslag
     proposal_notification: "Avisering"
-    spending_proposal: Investeringsförslag
     budget/investment: Budgetförslag
     budget/heading: Budgetrubrik
     poll/shift: Arbetspass
@@ -192,7 +191,6 @@ sv:
     image: Bild
   geozones:
     none: Hela staden
-    all: Alla områden
   layouts:
     application:
       chrome: Google Chrome
@@ -243,7 +241,6 @@ sv:
       proposals: Förslag
       poll_questions: Omröstning
       budgets: Medborgarbudget
-      spending_proposals: Budgetförslag
       notification_item:
         new_notifications:
           one: Du har %{count} ny avisering
@@ -655,7 +652,6 @@ sv:
     unflag: Ta bort flagga
     unfollow_entity: "Sluta följa %{entity}"
     outline:
-      budget: Medborgarbudget
       searcher: Sökmotor
     go_to_page: "Gå till sidan för "
     share: Dela
@@ -678,54 +674,6 @@ sv:
     whatsapp: WhatsApp
     telegram: "%{org} på Telegram"
     instagram: "%{org} på Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Namn på grupp eller organisation som förslaget kommer från"
-      association_name: "Föreningens namn"
-      description: Beskrivning
-      external_url: Länk till ytterligare dokumentation
-      geozone: Område
-      submit_buttons:
-        create: Skapa
-        new: Skapa
-      title: Titel på budgetförslag
-    index:
-      title: Medborgarbudgetar
-      unfeasible: Ej genomförbara budgetförslag
-      by_geozone: "Budgetförslag för område: %{geozone}"
-      search_form:
-        button: Sök
-        placeholder: Budgetförslag...
-        title: Sök
-      search_results:
-        one: " innehåller '%{search_term}'"
-        other: " innehåller '%{search_term}'"
-      sidebar:
-        geozones: Område
-        feasibility: Genomförbarhet
-        unfeasible: Ej genomförbart
-      start_spending_proposal: Skapa ett budgetförslag
-    new:
-      more_info: Hur funkar medborgarbudgetar?
-      recommendation_one: Förslaget måste hänvisa till faktiska kostnader.
-      recommendation_three: Beskriv ditt förslag så detaljerat som möjligt, så att att de som granskar det förstår vad du menar.
-      recommendation_two: Förslag som förespråkar olagliga handlingar kommer att raderas.
-      recommendations_title: Så skapar du ett budgetförslag
-      start_new: Skapa budgetförslag
-    show:
-      author_deleted: Användaren är borttagen
-      code: "Förslagskod:"
-      share: Dela
-    wrong_price_format: Endast heltal
-    spending_proposal:
-      spending_proposal: Budgetförslag
-      already_supported: Du stöder redan det här projektet. Dela det!
-      support: Stöd
-      support_title: Stöd projektet
-      supports:
-        zero: Inget stöd
-        one: 1 stöd
-        other: "%{count} stöd"
   stats:
     index:
       visits: Visningar
@@ -805,12 +753,6 @@ sv:
     unauthenticated: Du behöver %{signin} eller %{signup} för att fortsätta.
     verified_only: Endast verifierade användare kan rösta på förslag; %{verify_account}.
     verify_account: verifiera ditt konto
-    spending_proposals:
-      not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
-      not_verified: Endast verifierade användare kan rösta på förslag; %{verify_account}.
-      organization: Organisationer kan inte rösta
-      unfeasible: Det går inte att stödja budgetförslag som inte godkänts
-      not_voting_allowed: Omröstningsfasen är avslutad
     budget_investments:
       not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
       not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
