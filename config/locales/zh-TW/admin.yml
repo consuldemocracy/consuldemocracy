@@ -537,7 +537,6 @@ zh-TW:
       officials: 官員
       organizations: 組織
       settings: 全域設置
-      spending_proposals: 開支建議
       stats: 統計
       signature_sheets: 簽名表
       site_customization:
@@ -558,7 +557,6 @@ zh-TW:
         buttons:
           save: "儲存"
       title_moderated_content: 已審核的內容
-      title_budgets: 預算
       title_profiles: 配置檔
       title_settings: 設置
       title_site_customization: 網站內容
@@ -702,15 +700,6 @@ zh-TW:
         delete: 刪除
       search:
         title: "評估員：用戶搜索"
-      summary:
-        title: 評估員為投資項目作出的總結
-        valuator_name: 評估員
-        finished_and_feasible_count: 已完成和可行
-        finished_and_unfeasible_count: 已完成和不可行
-        finished_count: 完成
-        in_evaluation_count: 正在評估中
-        total_count: 總
-        cost: 成本
       form:
         edit_title: "評估員：編輯評估員"
         update: "更新評估員"
@@ -1070,9 +1059,6 @@ zh-TW:
       proposal_search:
         button: 搜尋
         placeholder: 按標題，代碼，描述或問題來搜尋建議
-      spending_proposal_search:
-        button: 搜尋
-        placeholder: 按標題或描述搜尋開支建議
       user_search:
         button: 搜尋
         placeholder: 按名稱或電郵搜索用戶
@@ -1090,62 +1076,6 @@ zh-TW:
       content: 內容
       created_at: 創建於
       delete: 刪除
-    spending_proposals:
-      index:
-        geozone_filter_all: 所有區域
-        administrator_filter_all: 所有管理員
-        valuator_filter_all: 所有評估員
-        tags_filter_all: 所有標籤
-        filters:
-          valuation_open: 開
-          without_admin: 沒有指定的管理員
-          managed: 已管理
-          valuating: 評估中
-          valuation_finished: 評估完成
-          all: 所有
-        title: 參與性預算的投資項目
-        assigned_admin: 指定的管理員
-        no_admin_assigned: 未分配管理員
-        no_valuators_assigned: 未分配評估員
-        summary_link: "投資項目摘要"
-        valuator_summary_link: "評估員摘要"
-        feasibility:
-          feasible: "可行 (%{price})"
-          not_feasible: "不可行"
-          undefined: "未定義"
-      show:
-        assigned_admin: 指定的管理員
-        assigned_valuators: 指定的評估員
-        back: 返回
-        classification: 分類
-        heading: "投資項目 %{id}"
-        edit: 編輯
-        edit_classification: 編輯分類
-        association_name: 協會
-        by: 由
-        sent: 發送
-        geozone: 範圍
-        dossier: 檔案
-        edit_dossier: 編輯檔案
-        tags: 標籤
-        undefined: 未定義
-      edit:
-        classification: 分類
-        assigned_valuators: 評估員
-        submit_button: 更新
-        tags: 標籤
-        tags_placeholder: "寫下你想要的標籤，用逗號 (,) 作分隔"
-        undefined: 未定義
-      summary:
-        title: 投資項目摘要
-        title_proposals_with_supports: 具有支援的投資項目摘要
-        geozone_name: 範圍
-        finished_and_feasible_count: 完成和可行
-        finished_and_unfeasible_count: 完成和不可行
-        finished_count: 完成
-        in_evaluation_count: 正在評估中
-        total_count: 總
-        cost_for_geozone: 成本
     geozones:
       index:
         title: 地理區域
@@ -1207,7 +1137,6 @@ zh-TW:
           proposals: 建議
           budgets: 開放式預算
           budget_investments: 投資項目
-          spending_proposals: 開支建議
           unverified_users: 未核實的用戶
           user_level_three: 三級用戶
           user_level_two: 二級用戶
