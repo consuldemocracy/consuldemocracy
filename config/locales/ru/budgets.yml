@@ -165,7 +165,6 @@ ru:
       page_title: "%{budget} - Результаты"
       heading: "Результаты совместного бюджета"
       heading_selection_title: "По району"
-      spending_proposal: Заголовок предложения
       ballot_lines_count: Голоса
       hide_discarded_link: Скрыть отброшенные
       show_all_link: Показать все
