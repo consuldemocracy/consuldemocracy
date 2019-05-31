@@ -65,11 +65,6 @@ de:
       google_login: "Google login"
       google_login_description: "Anmeldung mit Google-Account erlauben"
       signature_sheets: "Unterschriftenbögen"
-      spending_proposals: "Ausgabenvorschläge"
-      spending_proposals_description: "⚠️ Hinweis: Diese Funktionalität wurde durch Bürgerhaushaltung ersetzt und verschwindet in neuen Versionen"
-      spending_proposal_features:
-        voting_allowed: Abstimmung über Investitionsprojekte - Vorauswahlphase
-        voting_allowed_description: "⚠️ Hinweis: Diese Funktionalität wurde durch Bürgerhaushaltung ersetzt und verschwindet in neuen Versionen"
       user:
         recommendations: "Empfehlungen"
         recommendations_description: "Zeigt Nutzerempfehlungen auf der Startseite auf Grundlage der Tags aus den folgenden Objekten"
