@@ -193,7 +193,6 @@ he:
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
-    spending_proposal: הצעה למסגרת תקציב
     budget/investment: השקעה
     budget/group: תקציב הקבוצה
     budget/heading: כותרת התקציב
@@ -207,7 +206,6 @@ he:
     image: תמונה
   geozones:
     none: בכל העיר
-    all: כל התחומים
   layouts:
     application:
       chrome: גוגל כרום
@@ -264,7 +262,6 @@ he:
       proposals: הצעות
       poll_questions: הצבעות
       budgets: מימון השתתפותי
-      spending_proposals: הצעות למסגרת תקציב
       notification_item:
         new_notifications:
           one: . יש לך התרעה חדשה
@@ -806,7 +803,6 @@ he:
     unflag: הסרת דגל
     unfollow_entity: "הפסק לעקוב אחר %{entity}"
     outline:
-      budget: מימון השתתפותי
       searcher: חיפוש
     go_to_page: "עבור אל דף "
     share: שיתוף
@@ -829,58 +825,6 @@ he:
     whatsapp: ווטסאפ
     telegram: "טלגרם Telegram"
     instagram: "אינסטגרם Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "אם הצעתך היא בשם ארגון או התאגדות, נא לרשום את שם הארגון/ההתאגדות פה"
-      association_name: "שם הארגון/התאגדות"
-      description: תיאור
-      external_url: קישור למידע נוסף
-      geozone: היקף הפעילות
-      submit_buttons:
-        create: צור
-        new: צור
-      title: כותרת הצעה לתקציב כספי
-    index:
-      title: מימון השתתפותי
-      unfeasible: פרויקטים להשקעה אינם ברי ביצוע
-      by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
-      search_form:
-        button: חיפוש
-        placeholder: פרויקטים להשקעה...
-        title: חיפוש
-      search_results:
-        one: " המכיל את המונח '%{search_term}'"
-        two: " המכיל את המונחים '%{search_term}'"
-        many: " המכיל את המונחים '%{search_term}'"
-        other: " המכיל את המונחים '%{search_term}'"
-      sidebar:
-        geozones: היקף הפעילות
-        feasibility: סבירות לביצוע
-        unfeasible: אינו בר ביצוע
-      start_spending_proposal: התחל/י פרוייקט השקעה
-    new:
-      more_info: איך עובד מימון השתתפותי?
-      recommendation_one: חובה שהצעה זו תתייחס לפעולה שאפשר לקבוע לה תקציב לביצוע.
-      recommendation_three: נסה/י לתאר בפרטים מלאים את הפעולות להן את/ה מבקש/ת להוציא כסף, כדי שהצוות הבוחן את הבקשה יבין את כוונתך.
-      recommendation_two: כל הצעה או תגובה הקוראת לפעילות בלתי-חוקית תימחק.
-      recommendations_title: כיצד ליצור הצעה להוצאה כספית
-      start_new: יצירת הצעה תקציב
-    show:
-      author_deleted: משתמש/ת זה/ו נמחק/ה
-      code: "קוד ההצעה:"
-      share: שיתוף
-    wrong_price_format: נא לרשום סכום בשקלים שלמים
-    spending_proposal:
-      spending_proposal: פרויקט להשקעה
-      already_supported: כבר תמכת בהצעה זו. שתף אותה!
-      support: בעד
-      support_title: תמיכה בפרויקט זה
-      supports:
-        zero: אין תמיכה
-        one: תמיכה 1
-        two: "%{count} תומכים"
-        many: "%{count} תומכים"
-        other: "%{count} תומכים"
   stats:
     index:
       visits: ביקורים
@@ -973,12 +917,6 @@ he:
     unauthenticated: נדרשת %{signin} או %{signup} בכדי להמשיך
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
     verify_account: אמת את החשבון
-    spending_proposals:
-      not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
-      not_verified: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
-      organization: ארגונים אינם רשאים להצביע
-      unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
-      not_voting_allowed: שלב ההצבעות נסגר
     budget_investments:
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
       not_verified: רק משתמשים שאומת חשבונם יכולים להצביע על ההצעות; %{verify_account}.
