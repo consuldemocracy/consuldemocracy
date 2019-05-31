@@ -1,7 +1,7 @@
 module GlobalizeHelper
 
-  def options_for_locale_select
-    options_for_select(locale_options, nil)
+  def options_for_select_language(resource)
+    options_for_select(available_locales(resource), first_available_locale(resource))
   end
 
   def available_locales(resource)
@@ -60,8 +60,12 @@ module GlobalizeHelper
     end
   end
 
+  def display_translation_style(resource, locale)
+    "display: none;" unless display_translation?(resource, locale)
+  end
+
   def display_translation?(resource, locale)
-    if !resource || resource.translations.blank? ||
+    if !resource || resource.translations.empty? ||
        resource.locales_not_marked_for_destruction.include?(I18n.locale)
       locale == I18n.locale
     else
@@ -69,28 +73,31 @@ module GlobalizeHelper
     end
   end
 
-  def display_translation_style(resource, locale)
-    "display: none;" unless display_translation?(resource, locale)
+  def display_destroy_locale_style(resource, locale)
+    "display: none;" unless display_destroy_locale_link?(resource, locale)
+  end
+
+  def display_destroy_locale_link?(resource, locale)
+    first_available_locale(resource) == locale
+  end
+
+  def options_for_add_language
+    options_for_select(all_language_options, nil)
+  end
+
+  def all_language_options
+    I18n.available_locales.map do |locale|
+      [name_for_locale(locale), locale]
+    end
+  end
+
+  def can_manipulate_languages?
+    params[:controller] != "admin/legislation/milestones" &&
+      params[:controller] != "admin/legislation/homepages"
   end
 
   def translation_enabled_tag(locale, enabled)
     hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
-  end
-
-  def enable_translation_style(resource, locale)
-    "display: none;" unless enable_locale?(resource, locale)
-  end
-
-  def enable_locale?(resource, locale)
-    if resource.translations.any?
-      resource.locales_not_marked_for_destruction.include?(locale)
-    else
-      locale == I18n.locale
-    end
-  end
-
-  def highlight_class(resource, locale)
-    "is-active" if display_translation?(resource, locale)
   end
 
   def globalize(locale, &block)
@@ -98,9 +105,4 @@ module GlobalizeHelper
       yield
     end
   end
-
-  def same_locale?(locale1, locale2)
-    locale1 == locale2
-  end
-
 end
