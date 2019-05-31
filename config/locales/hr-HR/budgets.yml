@@ -155,7 +155,6 @@ hr:
       page_title: "%{budget} - Rezultati"
       heading: "Rezultati participativnog budžetiranja"
       heading_selection_title: "Po distriktu"
-      spending_proposal: Naslov prijedloga
       ballot_lines_count: Glasovi
       hide_discarded_link: Sakrij odbačene
       show_all_link: Pokaži sve
