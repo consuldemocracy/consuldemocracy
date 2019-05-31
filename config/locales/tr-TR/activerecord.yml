@@ -71,9 +71,6 @@ tr:
       proposal:
         one: "Vatandaş teklifi"
         other: "Vatandaş teklifleri"
-      spending_proposal:
-        one: "Yatırım projesi"
-        other: "Yatırım projeleri"
       site_customization/page:
         one: Özel sayfa
         other: Özel sayfalar
@@ -202,13 +199,6 @@ tr:
       organization:
         name: "Organizasyon adı"
         responsible_name: "Gruptan sorumlu kişi"
-      spending_proposal:
-        administrator_id: "Yönetici"
-        association_name: "İlişkilendirme adı"
-        description: "Tanımlama"
-        external_url: "Ek belgelere bağlantı"
-        geozone_id: "İşlem kapsamı"
-        title: "İsim"
       poll:
         name: "Ad"
         starts_at: "Başlangıç Tarihi"
