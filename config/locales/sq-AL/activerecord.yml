@@ -61,9 +61,6 @@ sq:
       proposal:
         one: "Propozimi qytetar"
         other: "Propozimi qytetar"
-      spending_proposal:
-        one: "Projekt investimi"
-        other: "Projekt investimi"
       site_customization/page:
         one: Faqe e personalizuar
         other: Faqet e personalizuara
@@ -171,13 +168,6 @@ sq:
       organization:
         name: "Emri i organizatës"
         responsible_name: "Personi përgjegjës për grupin"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Emri i shoqatës"
-        description: "Përshkrimi"
-        external_url: "Lidhje me dokumentacionin shtesë"
-        geozone_id: "Fusha e veprimit"
-        title: "Titull"
       poll:
         name: "Emri"
         starts_at: "Data e fillimit"
