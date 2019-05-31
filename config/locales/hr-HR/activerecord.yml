@@ -89,10 +89,6 @@ hr:
         one: "Prijedlog građana"
         few: "Prijedlozi građana"
         other: "Prijedlozi građana"
-      spending_proposal:
-        one: "Investicijski projekt"
-        few: "Investicijski projekti"
-        other: "Investicijski projekti"
       site_customization/page:
         one: Prilagođena stranica
         few: Prilagođene stranice
@@ -239,13 +235,6 @@ hr:
       organization:
         name: "Ime organizacije"
         responsible_name: "Osoba odgovorna za grupu"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Ime udruženja"
-        description: "Opis"
-        external_url: "Poveznica na dodatnu dokumentaciju"
-        geozone_id: "Opseg djelovanja"
-        title: "Naziv"
       poll:
         name: "Ime"
         starts_at: "Datum početka"
