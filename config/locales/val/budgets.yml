@@ -163,7 +163,6 @@ val:
       page_title: "%{budget} - Resultats"
       heading: "Resultats pressupostos participatius"
       heading_selection_title: "Per districte"
-      spending_proposal: Títol de la proposta
       ballot_lines_count: Vots
       hide_discarded_link: Oculta descartades
       show_all_link: Mostrar totes
