@@ -78,11 +78,6 @@ tr:
       featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
       signature_sheets: "İmza sayfaları"
       signature_sheets_description: "Bu, sitede toplanan imzaların Yönetici panelinden Önerilere ve Katılımcı Bütçelerin yatırım projelerine eklenmesini sağlar"
-      spending_proposals: "Harcama önerileri"
-      spending_proposals_description: "⚠️ NOT: Bu işlevsellik Katılımcı Bütçeleme ile değiştirildi ve yeni sürümlerde kaybolacak"
-      spending_proposal_features:
-        voting_allowed: Yatırım projelerinde oy kullanma - Ön seçim aşaması
-        voting_allowed_description: "⚠️ NOT: Bu işlevsellik Katılımcı Bütçeleme ile değiştirildi ve yeni sürümlerde kaybolacak"
       user:
         recommendations: "Tavsiyeler"
         recommendations_description: "Ana sayfada takip edilen öğelerin etiketlerine dayalı olarak kullanıcı tavsiyeleri gösterir"
