@@ -149,7 +149,6 @@ ca:
     policy: Política de Privacitat
     proposal: la proposta
     proposal_notification: "la notificació"
-    spending_proposal: la proposta d'inversió
     budget/investment: la proposta d'inversió
     poll/question/answer: Resposta
     user: el compte
@@ -158,7 +157,6 @@ ca:
     image: imatge
   geozones:
     none: Tota la ciutat
-    all: Tots els àmbits d'actuació
   layouts:
     application:
       ie: Hem detectat que estàs navegant des d'Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
@@ -189,7 +187,6 @@ ca:
       proposals: Propostes ciutadanes
       poll_questions: Votacions
       budgets: Pressupostos ciutadans
-      spending_proposals: Propostes d'inversió
       notification_item:
         new_notifications:
           one: Tens una nova notificació
@@ -465,59 +462,11 @@ ca:
     you_are_in: "Estàs en"
     unflag: Desfer denúncia
     outline:
-      budget: Pressupostos participatius
       searcher: Cercador
     go_to_page: "Anar a la pàgina de"
     share: compartir
   social:
     whatsapp: Whatsapp
-  spending_proposals:
-    form:
-      association_name_label: "Si proposes en nom d'una associació afig el nom ací"
-      association_name: "Nom de l'associació"
-      description: Descripció detallada
-      external_url: Enlace a documentación adicional
-      geozone: Àmbits d'actuació
-      submit_buttons:
-        create: Crear
-        new: Crear
-      title: Títol de la proposta d'inversió
-    index:
-      title: Pressupostos ciutadans
-      unfeasible: Propostes d'inversió no viables
-      by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
-      search_form:
-        button: Buscar
-        placeholder: Propostes d'inversió...
-        title: Buscar
-      search_results:
-        one: " que contenen '%{search_term}'"
-        other: " que contenen '%{search_term}'"
-      sidebar:
-        geozones: Àmbits d'actuació
-        feasibility: Viabilitat
-        unfeasible: No viables
-      start_spending_proposal: Crea una proposta d'inversió
-    new:
-      more_info: Com funcionen els pressupostos participatius?
-      recommendation_one: És fonamental que faça referència a una actuació pressupostària.
-      recommendation_three: Intenta detallar el màxim possible la proposta perquè l'equip de govern encarregat d'estudiar-la tinga els menors dubtes possibles.
-      recommendation_two: Qualsevol proposta o comentari que implique accions il·legals serà eliminada.
-      recommendations_title: Com crear una proposta d'inversió
-      start_new: Crear proposta d'inversió
-    show:
-      author_deleted: Usuari eliminat
-      code: "Codi de la proposta:"
-      share: compartir
-    wrong_price_format: Solament pot incloure caràcters numèrics
-    spending_proposal:
-      spending_proposal: Proposta d'inversió
-      already_supported: Ja has avalat aquesta proposta d'inversió.
-      support: Avalar
-      support_title: Avalar aquesta proposta d'inversió
-      supports:
-        one: 1 aval
-        other: "%{count} avals"
   stats:
     index:
       visits: Visites
@@ -585,12 +534,6 @@ ca:
     unauthenticated: Necessites %{signin} o %{signup}.
     verified_only: Les propostes només poden ser votades per usuaris verificats, %{verify_account}.
     verify_account: verifica el teu compte
-    spending_proposals:
-      not_logged_in: Necessites %{signin} o %{signup}.
-      not_verified: Les propostes només poden ser votades per usuaris verificats, %{verify_account}.
-      organization: Les associacions no poden avalar
-      unfeasible: No es poden avalar propostes inviables
-      not_voting_allowed: El periode de recollida d'avals esta tancat.
     budget_investments:
       not_logged_in: Necessites %{signin} o %{signup}.
       organization: Les associacions no poden avalar
