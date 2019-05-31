@@ -165,7 +165,6 @@ da:
       page_title: "%{budget} - Resultater"
       heading: "Resultat af deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
-      spending_proposal: Titel på forslag
       ballot_lines_count: Stemmer
       hide_discarded_link: Skjule kasserede
       show_all_link: Vis alle
