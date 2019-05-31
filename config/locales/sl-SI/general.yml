@@ -154,7 +154,6 @@ sl:
     policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
-    spending_proposal: Predlog porabe
     budget/investment: Naložba
     budget/heading: Proračunska postavka
     poll/question/answer: Odgovor
@@ -166,7 +165,6 @@ sl:
     image: Slika
   geozones:
     none: Celo mesto/občina
-    all: Vse
   layouts:
     application:
       ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
@@ -199,7 +197,6 @@ sl:
       proposals: Predlogi
       poll_questions: Glasovanje
       budgets: Participatorni proračun
-      spending_proposals: Predlogi porabe
       notification_item:
         notifications: Obvestila
         no_notifications: "Nimaš novih obvestil"
@@ -508,7 +505,6 @@ sl:
     unflag: Odznači
     unfollow_entity: "Prenehaj slediti %{entity}"
     outline:
-      budget: Participatorni proračun
       searcher: Iskalnik
     go_to_page: "Pojdi na stran "
     share: Išči
@@ -520,49 +516,6 @@ sl:
       title: Način prikaza
       cards: Kartice
       list: Seznam
-  spending_proposals:
-    form:
-      association_name_label: "Če predlagaš v imenu organizacije, društva ali kolektiva, tukaj dodaj ime"
-      association_name: "Ime organizacije"
-      description: Opis
-      external_url: Povezava do dodatne dokumentacije
-      geozone: Področje uporabe
-      submit_buttons:
-        create: Ustvari
-        new: Ustvari
-      title: Naslov predloga porabe
-    index:
-      title: Participatorni proračun
-      unfeasible: Neizvedljivi naložbeni projekti
-      by_geozone: "Investicijski projekti z obsegom: %{geozone}"
-      search_form:
-        button: Išči
-        placeholder: Investicijski projekti...
-        title: Išči
-      sidebar:
-        geozones: Področje uporabe
-        feasibility: Izvedljivost
-        unfeasible: Neizvedljiv
-      start_spending_proposal: Ustvari naložbeni projekt
-    new:
-      more_info: Kako deluje participatorni proračun?
-      recommendation_one: Obvezno je, da se predlog nanaša na to, kar je možno pokriti s proračunom.
-      recommendation_three: Poksusi zapisati čim več podrobnosti v opisu svoj predlog porabe, da lahko ekipa, ki preverja predloge, čim bolje razume tvojega.
-      recommendation_two: Vsak predlog ali komentar, ki predlaga nezakonito delovanje, bo izbrisan.
-      recommendations_title: Kako ustvariti predlog porabe
-      start_new: Ustvari predlog porabe
-    show:
-      author_deleted: Uporabnik izbrisan
-      code: "Koda predloga:"
-      share: Deli
-    wrong_price_format: Samo cela števila
-    spending_proposal:
-      spending_proposal: Investicijski projekt
-      already_supported: To si že podprl/-a. Deli naprej!
-      support: Podpri
-      support_title: Podpri ta projekt
-      supports:
-        zero: Brez podpornikov
   stats:
     index:
       visits: Obiski
@@ -624,12 +577,6 @@ sl:
     unauthenticated: Za nadaljevanje se moraš %{signin} ali %{signup}.
     verified_only: Samo verificirani uporabniki lahko glasujejo o predlogih; %{verify_account}.
     verify_account: potrdi svoj račun
-    spending_proposals:
-      not_logged_in: Za nadaljevanje se moraš %{signin} ali %{signup}.
-      not_verified: Le verificirani uporabniki lahko glasujejo o predlogih; %{verify_account}.
-      organization: Organizacijam ni dovoljeno glasovati.
-      unfeasible: Neizvedljivih investicijskih projektov ni mogoče podpreti
-      not_voting_allowed: Faza glasovanja je zaključena
     budget_investments:
       not_logged_in: Za nadaljevanje se moraš %{signin} ali %{signup}.
       not_verified: Samo verificirani uporabniki lahko glasujejo o investicijskih projektih; %{verify_account}.
