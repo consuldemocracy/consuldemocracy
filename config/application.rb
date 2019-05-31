@@ -21,13 +21,18 @@ module Consul
     config.i18n.default_locale = :en
     available_locales = [
       "ar",
+      "bs",
+      "cs",
+      "da",
       "de",
+      "el",
       "en",
       "es",
       "fa",
       "fr",
       "gl",
       "he",
+      "hr",
       "id",
       "it",
       "nl",
@@ -38,6 +43,7 @@ module Consul
       "sq",
       "so",
       "sv",
+      "tr",
       "val",
       "zh-CN",
       "zh-TW"]
