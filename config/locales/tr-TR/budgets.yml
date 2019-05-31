@@ -163,7 +163,6 @@ tr:
       page_title: "%{budget} - Sonuçlar"
       heading: "Katılımcı bütçe sonuçları"
       heading_selection_title: "Bölgeye göre"
-      spending_proposal: Öneri başlığı
       ballot_lines_count: Oylar
       hide_discarded_link: Atılanı gizle
       show_all_link: Tümünü göster
