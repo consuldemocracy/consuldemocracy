@@ -5,7 +5,6 @@ tr:
     menu:
       title: Değerlendirme
       budgets: Katılımcı bütçeler
-      spending_proposals: Harcama önerileri
     budgets:
       index:
         title: Katılımcı bütçeler
@@ -77,52 +76,3 @@ tr:
         valuate: "Dosya güncellendi"
       valuation_comments: Değerlendirme yorumları
       not_in_valuating_phase: Yatırımlar sadece Bütçe değerlendirme aşamasındayken değerlendirilebilir
-    spending_proposals:
-      index:
-        geozone_filter_all: Tüm bölgeler
-        filters:
-          valuation_open: Açık
-          valuating: Değerlendirme altında
-          valuation_finished: Değerlendirme bitti
-        title: Katılımcı bütçeleme için yatırım projeleri
-        edit: Düzenleme
-      show:
-        back: Geri
-        heading: Yatırım projesi
-        info: Yazar bilgisi
-        association_name: Dernek
-        by: Tarafından gönderildi
-        sent: Tarihinde gönderildi
-        geozone: Kapsam
-        dossier: Dosya
-        edit_dossier: Dosya düzenleme
-        price: Fiyat
-        price_first_year: İlk yıl sırasındaki maliyet
-        currency: "€"
-        feasibility: Fizibilite
-        feasible: Uygulanabilir
-        not_feasible: Uygulanamaz
-        undefined: Tanımsız
-        valuation_finished: Değerlendirme bitti
-        time_scope: Zaman kapsamı
-        internal_comments: Dahili yorumlar
-        responsibles: Sorumlular
-        assigned_admin: Atanmış yönetici
-        assigned_valuators: Atanmış bilirkişiler
-      edit:
-        dossier: Dosya
-        price_html: "Fiyat (%{currency})"
-        price_first_year_html: "İlk yıl sırasındaki maliyet (%{currency})"
-        currency: "€"
-        price_explanation_html: Fiyat açıklaması
-        feasibility: Fizibilite
-        feasible: Uygulanabilir
-        not_feasible: Uygulanamaz
-        undefined_feasible: Beklemede
-        feasible_explanation_html: Fizibilite açıklaması
-        valuation_finished: Değerlendirme bitti
-        time_scope_html: Zaman kapsamı
-        internal_comments_html: Dahili yorumlar
-        save: Değişiklikleri kaydet
-      notice:
-        valuate: "Dosya güncellendi"
