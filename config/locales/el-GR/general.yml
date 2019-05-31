@@ -179,7 +179,6 @@ el:
     policy: Πολιτική Απορρήτου
     proposal: Πρόταση
     proposal_notification: "Ειδοποιήσεις"
-    spending_proposal: Προτάσεις δαπανών
     budget/investment: Επένδυση
     budget/group: Ομάδα προϋπολογισμού
     budget/heading: Επικεφαλίδα προϋπολογισμού
@@ -193,7 +192,6 @@ el:
     image: Εικόνα
   geozones:
     none: Όλη την πόλη
-    all: Όλες οι ζώνες
   layouts:
     application:
       chrome: Google Chrome
@@ -248,7 +246,6 @@ el:
       proposals: Προτάσεις
       poll_questions: Ψηφοφορία
       budgets: Συμμετοχικός προϋπολογισμός
-      spending_proposals: Προτάσεις δαπανών
       notification_item:
         new_notifications:
           one: Έχετε νέα ειδοποίηση
@@ -756,7 +753,6 @@ el:
     unflag: Αφαίρεση σημαίας
     unfollow_entity: "Σταματήστε να ακολουθείτε %{entity}"
     outline:
-      budget: Συμμετοχικοί προϋπολογισμοί
       searcher: Ερευνητής
     go_to_page: "Πηγαίνετε στη σελίδα του "
     share: Μοιραστείτε
@@ -779,54 +775,6 @@ el:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Εάν προτείνετε στο όνομα μιας ένωσης ή μιας συλλογικής ομάδας, προσθέστε το όνομα εδώ"
-      association_name: "Όνομα ένωσης"
-      description: Περιγραφή
-      external_url: Σύνδεσμος σε πρόσθετη τεκμηρίωση
-      geozone: Εμβέλεια λειτουργίας
-      submit_buttons:
-        create: Δημιουργήθηκε
-        new: Δημιουργήθηκε
-      title: Τίτλος πρότασης δαπανών
-    index:
-      title: Συμμετοχικός προϋπολογισμός
-      unfeasible: Ανέφικτα επενδυτικά έργα
-      by_geozone: "Επενδυτικά σχέδια με πεδίο εφαρμογής: %{geozone}"
-      search_form:
-        button: Αναζήτηση
-        placeholder: Επενδυτικά έργα...
-        title: Αναζήτηση
-      search_results:
-        one: " που περιέχουν τον όρο '%{search_term} '"
-        other: " που περιέχουν τον όρο '%{search_term} '"
-      sidebar:
-        geozones: Εμβέλεια λειτουργίας
-        feasibility: Σκοπιμότητα
-        unfeasible: Δεν είναι εφικτό
-      start_spending_proposal: Δημιουργείστε ένα επενδυτικό έργο
-    new:
-      more_info: Πώς λειτουργεί ο συμμετοχικός προϋπολογισμός;
-      recommendation_one: Είναι υποχρεωτική η πρόταση να αναφέρεται σε μια δράση με δυνατότητα προϋπολογισμού.
-      recommendation_three: Προσπαθήστε να μπείτε σε λεπτομέρειες όταν περιγράφετε την πρότασή σας για δαπάνες, έτσι ώστε η ομάδα αναθεώρησης να κατανοεί τις θέσεις σας.
-      recommendation_two: Κάθε πρόταση ή σχόλιο που υποδηλώνει παράνομη δράση θα διαγραφεί.
-      recommendations_title: Πώς να δημιουργήσετε μια πρόταση δαπανών
-      start_new: Δημιουργία πρότασης δαπανών
-    show:
-      author_deleted: Χρήστης διεγραμμένος
-      code: "Κωδικός πρότασης:"
-      share: Μοιραστείτε
-    wrong_price_format: Μόνο ακέραιους αριθμούς
-    spending_proposal:
-      spending_proposal: Επενδυτικό έργο
-      already_supported: Έχετε ήδη υποστηρίξει αυτή την πρόταση. Μοιραστείτε τη!
-      support: Υποστήριξη
-      support_title: Υποστήριξη του έργου αυτού
-      supports:
-        zero: Καθόλου υποστηρίξεις
-        one: 1 υποστήριξη
-        other: "%{count} υποστηρίξεις"
   stats:
     index:
       visits: Επισκέψεις
@@ -909,12 +857,6 @@ el:
     unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
     verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
     verify_account: επαλήθευση του λογαριασμού σας
-    spending_proposals:
-      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
-      not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
-      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
-      unfeasible: Δεν μπορούν να υποστηριχθούν ανέφικτα επενδυτικά σχέδια
-      not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
     budget_investments:
       not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
       not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν επενδυτικά έργα; %{verify_account}.
