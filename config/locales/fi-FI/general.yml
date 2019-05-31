@@ -308,29 +308,6 @@ fi:
       title: Suositukset
   social:
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      description: Kuvaus
-      submit_buttons:
-        create: Luo
-        new: Luo
-    index:
-      search_form:
-        button: Etsi
-        title: Etsi
-      sidebar:
-        feasibility: Toteutettavuus
-        unfeasible: Toteuttamiskelvoton
-    show:
-      author_deleted: Käyttäjä poistettu
-      share: Jaa
-    spending_proposal:
-      support: Tue
-      support_title: Tue tätä projektia
-      supports:
-        zero: Ei tukijoita
-        one: 1 tukija
-        other: "%{count} tukijaa"
   stats:
     index:
       proposals: Ehdotukset
