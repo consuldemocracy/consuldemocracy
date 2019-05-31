@@ -62,9 +62,6 @@ pl:
       create_proposal: Zaproponuj swój pomysł
       print_proposals: Drukuj wnioski
       support_proposals: Popieraj propozycje
-      create_spending_proposal: Utwórz propozycję wydatków
-      print_spending_proposals: Drukuj wniosek wydatkowy
-      support_spending_proposals: Poprzyj wniosek wydatkowy
       create_budget_investment: Utwórz inwestycję budżetową
       print_budget_investments: Wydrukuj inwestycje budżetowe
       support_budget_investments: Wspieraj inwestycje budżetowe
@@ -79,7 +76,6 @@ pl:
     print:
       proposals_info: Utwórz Twój wniosek na http://url.consul
       proposals_title: "Wnioski:"
-      spending_proposals_info: Weź udział w http://url.consul
       budget_investments_info: Weź udział w http://url.consul
     print_info: Wydrukuj tę informację
     proposals:
@@ -105,20 +101,6 @@ pl:
       filters:
         heading: Koncepcja
         unfeasible: Niewykonalna inwestycja
-      print:
-        print_button: Drukuj
-      search_results:
-        one: " zawierające terminy '%{search_term}'"
-        few: " zawierające terminy '%{search_term}'"
-        many: " zawierające terminy '%{search_term}'"
-        other: " zawierające terminy '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Użytkownik nie jest zweryfikowany
-      create: Utwórz propozycję wydatków
-      filters:
-        unfeasible: Niewykonalne projekty inwestycyjne
-        by_geozone: "Projekty inwestycyjne z zakresu: %{geozone}"
       print:
         print_button: Drukuj
       search_results:
