@@ -651,6 +651,7 @@ el:
         total_votes: "Συνολικοί ψήφοι των δεδομένων ψήφων"
         votes: "ΨΉΦΟΙ"
         web: "WEB"
+        mail: "E-mail"
         booth: "ΠΕΡΊΠΤΕΡΟ"
         total: "ΣΎΝΟΛΟ"
         valid: "Έγκυρο"
