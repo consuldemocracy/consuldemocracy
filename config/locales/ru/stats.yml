@@ -1,1 +1,19 @@
 ru:
+  stats:
+    title: "Данные по участию"
+    advanced: "Расширенная статистика"
+    total_participants: "Участники"
+    by_gender: "Участники по полу"
+    by_age: "Участники по возрасту"
+    by_geozone: "Участники по районам"
+    men_percentage: "%{percentage} Мужчин"
+    women_percentage: "%{percentage} Женщин"
+    age: "Возраст"
+    total: "Всего"
+    geozone: "Район"
+    budgets:
+      link: "Статистика"
+      total: "Всего"
+      heading: "Заглавие"
+      participants_every_phase: "Всего участников"
+      percent_total_participants: "% Всего участников"
