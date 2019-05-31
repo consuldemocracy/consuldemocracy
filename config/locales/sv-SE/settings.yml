@@ -36,7 +36,6 @@ sv:
       facebook_login: "Facebook-inloggning"
       google_login: "Google-inloggning"
       signature_sheets: "Namninsamlingar"
-      spending_proposals: "Investeringsförslag"
       user:
         recommendations: "Rekommendationer"
         skip_verification: "Hoppa över användarverifiering"
