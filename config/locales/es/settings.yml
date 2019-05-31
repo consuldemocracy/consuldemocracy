@@ -93,11 +93,6 @@ es:
       featured_proposals_description: "Muestra propuestas destacadas en la página principal de propuestas"
       signature_sheets: "Hojas de firmas"
       signature_sheets_description: "Permite añadir desde el panel de Administración firmas recogidas de forma presencial a Propuestas y proyectos de gasto de los Presupuestos participativos"
-      spending_proposals: "Propuestas de inversión"
-      spending_proposals_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
-      spending_proposal_features:
-        voting_allowed: Votaciones de preselección sobre propuestas de inversión.
-        voting_allowed_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
       user:
         recommendations: "Recomendaciones"
         recommendations_description: "Muestra a los usuarios recomendaciones en la homepage basado en las etiquetas de los elementos que sigue"
