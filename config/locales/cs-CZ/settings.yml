@@ -72,11 +72,6 @@ cs:
       featured_proposals_description: "Zobrazit doporučené návrhy na hlavní stránce návrhů"
       signature_sheets: "Podpisové archy"
       signature_sheets_description: "Umožnit v administrativním panelu přidávat podpisy shromážděné v terénu k návrhům a investičním projektům v rámci participativních rozpočtů"
-      spending_proposals: "Návrhy výdajů"
-      spending_proposals_description: "⚠️ Poznámka: Tato funkce byla nahrazena sekcí participativní rozpočtování a neobjeví se v nových verzích"
-      spending_proposal_features:
-        voting_allowed: Hlasování o investičních projektech - Fáze předvoleb
-        voting_allowed_description: "⚠️ Poznámka: Tato funkce byla nahrazena sekcí Participativní rozpočtování a neobjeví se v nových verzích"
       user:
         recommendations: "Doporučení"
         recommendations_description: "Zobrazuje na domovské stránce doporučení uživatelům založené na štítcích následujících položek"
