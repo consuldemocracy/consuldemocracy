@@ -350,7 +350,6 @@ fi:
           welcome: "Tervetuloa"
         buttons:
           save: "Tallenna"
-      title_budgets: Budjetit
       users: Käyttäjät
     administrators:
       index:
@@ -402,8 +401,6 @@ fi:
         group: "Ryhmä"
       valuator:
         delete: Poista
-      summary:
-        finished_count: Päättynyt
       show:
         description: "Kuvaus"
         email: "Sähköposti"
@@ -556,8 +553,6 @@ fi:
         button: Etsi
       proposal_search:
         button: Etsi
-      spending_proposal_search:
-        button: Etsi
       user_search:
         button: Etsi
       actions: Toiminnot
@@ -569,28 +564,6 @@ fi:
       content: Sisältö
       created_at: Luotu
       delete: Poista
-    spending_proposals:
-      index:
-        administrator_filter_all: Kaikki järjestelmänvalvojat
-        tags_filter_all: Kaikki tunnisteet
-        filters:
-          valuation_open: Avaa
-          all: Kaikki
-        feasibility:
-          undefined: "Määrittelemätön"
-      show:
-        back: Takaisin
-        classification: Luokitus
-        edit: Muokkaa
-        tags: Tunnisteet
-        undefined: Määrittelemätön
-      edit:
-        classification: Luokitus
-        submit_button: Päivitä
-        tags: Tunnisteet
-        undefined: Määrittelemätön
-      summary:
-        finished_count: Päättynyt
     geozones:
       index:
         edit: Muokkaa
