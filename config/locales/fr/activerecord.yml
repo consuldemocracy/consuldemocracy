@@ -61,9 +61,6 @@ fr:
       proposal:
         one: "Proposition citoyenne"
         other: "Propositions citoyennes"
-      spending_proposal:
-        one: "Propositions d'investissement"
-        other: "Propositions d'investissement"
       site_customization/page:
         one: Page personnalisée
         other: Pages personnalisées
@@ -186,13 +183,6 @@ fr:
       organization:
         name: "Nom de l'organisation"
         responsible_name: "Personne responsable pour le groupe"
-      spending_proposal:
-        administrator_id: "Administrateur"
-        association_name: "Nom de l'association"
-        description: "Description"
-        external_url: "Lien vers de la documentation supplémentaire"
-        geozone_id: "Portée de l'opération"
-        title: "Titre"
       poll:
         name: "Nom"
         starts_at: "Date de début"
