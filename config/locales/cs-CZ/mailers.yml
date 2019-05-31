@@ -20,13 +20,6 @@ cs:
       new_reply_by_html: Nová odpověď od <b>%{commenter} </b> na Váš komentář
       subject: Někdo odpověděl na váš komentář
       title: Nová odpověď na váš komentář
-    unfeasible_spending_proposal:
-      hi: "Vážený uživateli,"
-      new_html: "Pro všechny tyto skutečnosti vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
-      new_href: "nový investiční projekt"
-      sincerely: "S pozdravem"
-      sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
-      subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
     proposal_notification_digest:
       info: "Josu zde nová oznámení, která byla publikována autory návrhů, které jste podpořili v %{org_name}."
       title: "Oznámení o návrhu v %{org_name}"
