@@ -692,7 +692,6 @@ hr:
       officials: Službenici
       organizations: Organizacije
       settings: Globalne postavke
-      spending_proposals: Potrošnja prijedloga
       stats: Statistike
       signature_sheets: Liste za potpise
       site_customization:
@@ -717,7 +716,6 @@ hr:
           content_block:
             update: "Ažuriraj Blok"
       title_moderated_content: Moderirani sadržaj
-      title_budgets: Budžeti
       title_profiles: Profili
       title_settings: Postavke
       title_site_customization: Sadržaj stranice
@@ -909,15 +907,6 @@ hr:
         delete: Izbriši
       search:
         title: "Procjenitelji: Pretraga korisnika"
-      summary:
-        title: Procijeniteljski sažetak za investicijske projekte
-        valuator_name: Procjenitelj
-        finished_and_feasible_count: Dovrđeni i izvedivi
-        finished_and_unfeasible_count: Dovršeni i neizvedivi
-        finished_count: Dovršeno
-        in_evaluation_count: U procesu evaluacije
-        total_count: Ukupno
-        cost: Trošak
       form:
         edit_title: "Procjenitelji: Uredi procjenitelja"
         update: "Ažuriraj procjenitelja"
@@ -1044,9 +1033,6 @@ hr:
         milestones: Ključni ciljevi
     shared:
       author: Autor
-    spending_proposals:
-      summary:
-        total_count: Ukupno
     geozones:
       geozone:
         name: Ime
