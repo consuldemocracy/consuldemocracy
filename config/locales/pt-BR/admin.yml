@@ -538,7 +538,6 @@ pt-BR:
       officials: Cargos públicos
       organizations: Organizações
       settings: Configurações globais
-      spending_proposals: Propostas de gastos
       stats: Estatísticas
       signature_sheets: Folhas de assinatura
       site_customization:
@@ -559,7 +558,6 @@ pt-BR:
         buttons:
           save: "Salvar"
       title_moderated_content: Conteúdo moderado
-      title_budgets: Orçamentos
       title_profiles: Perfis
       title_settings: Configurações
       title_site_customization: Conteúdo do site
@@ -703,15 +701,6 @@ pt-BR:
         delete: Apagar
       search:
         title: "Avaliadores: Pesquisa de usuário"
-      summary:
-        title: Resumo do avaliador para projetos de investimento
-        valuator_name: Avaliador
-        finished_and_feasible_count: Finalizado e factível
-        finished_and_unfeasible_count: Finalizado e infactível
-        finished_count: Terminados
-        in_evaluation_count: Em avaliação
-        total_count: Total
-        cost: Custo
       form:
         edit_title: "Avaliadores: editar avaliador"
         update: "Atualizar avaliador"
@@ -1074,9 +1063,6 @@ pt-BR:
       proposal_search:
         button: Buscar
         placeholder: Buscar propostas por título, código, descrição ou pergunta
-      spending_proposal_search:
-        button: Buscar
-        placeholder: Pesquisar propostas de gastos por título ou descrição
       user_search:
         button: Buscar
         placeholder: Pesquisar usuário por nome ou pelo email
@@ -1094,62 +1080,6 @@ pt-BR:
       content: Conteúdo
       created_at: Criado em
       delete: Apagar
-    spending_proposals:
-      index:
-        geozone_filter_all: Todas as zonas
-        administrator_filter_all: Todos administradores
-        valuator_filter_all: Todos avaliadores
-        tags_filter_all: Todas as marcações
-        filters:
-          valuation_open: Aberto
-          without_admin: Sem administrador designado
-          managed: Gerenciado
-          valuating: Em avaliação
-          valuation_finished: Avaliação terminada
-          all: Tudo
-        title: Projetos de investimento para orçamento participativo
-        assigned_admin: Administrador designado
-        no_admin_assigned: Não há administrador designado
-        no_valuators_assigned: Não há avaliadores designados
-        summary_link: "Resumo do projeto de investimento"
-        valuator_summary_link: "Resumo do avaliador"
-        feasibility:
-          feasible: "Factível (%{price})"
-          not_feasible: "Não viável"
-          undefined: "Não definido"
-      show:
-        assigned_admin: Administrador designado
-        assigned_valuators: Avaliadores designados
-        back: Voltar
-        classification: Classificação
-        heading: "Projeto de investimento %{id}"
-        edit: Editar
-        edit_classification: Editar classificação
-        association_name: Associação
-        by: Por
-        sent: Enviados
-        geozone: Escopo
-        dossier: Relatório
-        edit_dossier: Editar relatório
-        tags: Marcação
-        undefined: Não definido
-      edit:
-        classification: Classificação
-        assigned_valuators: Avaliadores
-        submit_button: Atualizar
-        tags: Marcação
-        tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas ()"
-        undefined: Não definido
-      summary:
-        title: Resumo para projetos de investimento
-        title_proposals_with_supports: Resumo para projetos de investimento com suportes
-        geozone_name: Âmbito
-        finished_and_feasible_count: Finalizado e factível
-        finished_and_unfeasible_count: Finalizado e infactível
-        finished_count: Terminados
-        in_evaluation_count: Em avaliação
-        total_count: Total
-        cost_for_geozone: Custo
     geozones:
       index:
         title: Geozona
@@ -1214,7 +1144,6 @@ pt-BR:
           proposals: Propostas
           budgets: Orçamentos abertos
           budget_investments: Projetos de investimento
-          spending_proposals: Propostas de despesas
           unverified_users: Usuários não verificados
           user_level_three: Usuários de nível três
           user_level_two: Usuários de nível dois
