@@ -115,11 +115,6 @@ he:
         two: "הצעת תושבים"
         many: "הצעת תושבים"
         other: "הצעת תושבים"
-      spending_proposal:
-        one: "פרויקט להשקעה"
-        two: "פרויקטים להשקעה"
-        many: "פרויקטים להשקעה"
-        other: "פרויקטים להשקעה"
       site_customization/page:
         one: דף מותאם אישית
         two: דפים מותאמים אישית
@@ -284,13 +279,6 @@ he:
       organization:
         name: "שם הארגון"
         responsible_name: "האחראי/ת לקבוצה"
-      spending_proposal:
-        administrator_id: "מנהל/ת מערכת"
-        association_name: "שם הארגון/ההתאגדות"
-        description: "תיאור"
-        external_url: "קישור למידע נוסף"
-        geozone_id: "היקף הפעולה"
-        title: "כותרת"
       poll:
         name: "שם"
         starts_at: "תאריך פתיחה"
