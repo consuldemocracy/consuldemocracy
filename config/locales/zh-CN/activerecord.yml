@@ -41,8 +41,6 @@ zh-CN:
         other: "官员"
       proposal:
         other: "公民提议"
-      spending_proposal:
-        other: "投资项目"
       site_customization/page:
         other: 定制页面
       site_customization/image:
@@ -136,13 +134,6 @@ zh-CN:
       organization:
         name: "组织名称"
         responsible_name: "组织的负责人"
-      spending_proposal:
-        administrator_id: "管理员"
-        association_name: "协会名称"
-        description: "说明"
-        external_url: "链接到其他文档"
-        geozone_id: "经营范围"
-        title: "标题"
       poll:
         name: "名字"
         starts_at: "开始日期"
