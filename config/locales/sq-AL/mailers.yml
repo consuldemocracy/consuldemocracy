@@ -20,13 +20,6 @@ sq:
       new_reply_by_html: Ka një përgjigje të re nga <b>%{commenter}</b> në komentin tuaj
       subject: Dikush i është përgjigjur komentit tuaj
       title: Përgjigje e re tek komentit tuaj
-    unfeasible_spending_proposal:
-      hi: "I dashur përdorues,"
-      new_html: "Për të gjitha këto, ne ju ftojmë të përpunoni një <strong>propozim të ri </ strong> që i nënshtrohet kushteve të këtij procesi. Ju mund ta bëni këtë duke ndjekur këtë lidhje: %{url}"
-      new_href: "projekt i ri investimi"
-      sincerely: "Sinqerisht"
-      sorry: "Ju kërkojmë ndjesë për shqetësimin dhe përsëri ju falënderojmë për pjesëmarrjen tuaj të paçmuar."
-      subject: "Projekti juaj i investimit %{code} është shënuar si i papërfillshëm"
     proposal_notification_digest:
       info: "Këtu janë njoftimet e reja që janë publikuar nga autorët e propozimeve që keni mbështetur %{org_name}."
       title: "Njoftimet e propozimeve në %{org_name}"
