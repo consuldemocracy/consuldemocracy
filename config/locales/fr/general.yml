@@ -179,7 +179,6 @@ fr:
     policy: Vie privée
     proposal: Proposition
     proposal_notification: "Notification"
-    spending_proposal: Proposition de dépense
     budget/investment: Projet d'investissement
     budget/heading: Rubrique
     poll/shift: Période de travail
@@ -192,7 +191,6 @@ fr:
     image: Image
   geozones:
     none: Toute la ville
-    all: Tous les districts
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +230,6 @@ fr:
       proposals: Propositions
       poll_questions: Vote
       budgets: Budget participatif
-      spending_proposals: Propositions de dépense
       notification_item:
         new_notifications:
           one: Vous avez une nouvelle notification
@@ -588,7 +585,6 @@ fr:
     unflag: Désignaler
     unfollow_entity: "Ne plus suivre %{entity}"
     outline:
-      budget: Budget participatif
       searcher: Moteur de recherche
     go_to_page: "Aller à la page de "
     share: Partager
@@ -611,54 +607,6 @@ fr:
     whatsapp: WhatsApp
     telegram: "Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Si vous proposez au nom d’une association ou un collectif, ajoutez le nom ici"
-      association_name: "Nom de l'association"
-      description: Description
-      external_url: Lien vers de la documentation supplémentaire
-      geozone: Portée de l'opération
-      submit_buttons:
-        create: Créer
-        new: Créer
-      title: Titre de la proposition de dépense
-    index:
-      title: Budget participatif
-      unfeasible: Propositions d'investissement infaisables
-      by_geozone: "Portée des propositions d'investissement : %{geozone}"
-      search_form:
-        button: Chercher
-        placeholder: Propositions d'investissement...
-        title: Chercher
-      search_results:
-        one: " contenant les termes  '%{search_term}'"
-        other: " contenant les termes  '%{search_term}'"
-      sidebar:
-        geozones: Portée de l'opération
-        feasibility: Faisabilité
-        unfeasible: Infaisable
-      start_spending_proposal: Créer une proposition d'investissement
-    new:
-      more_info: Comment le budget participatif marche ?
-      recommendation_one: Faire référence à une action budgétaire est obligatoire pour la proposition.
-      recommendation_three: N'hésitez pas à détailler votre proposition pour que l'équipe d'analyse la comprenne
-      recommendation_two: Toute proposition ou commentaire qui appelle à une action illégale sera supprimée.
-      recommendations_title: Comment cŕeer une proposition de dépense
-      start_new: Créer la proposition de dépenses
-    show:
-      author_deleted: Utilisateur effacé
-      code: "Code de la proposition"
-      share: Partager
-    wrong_price_format: Nombres entiers uniquement
-    spending_proposal:
-      spending_proposal: Propositions d'investissement
-      already_supported: Vous avez déjà soutenu cette proposition. Partagez-la !
-      support: Soutenir
-      support_title: Soutenir cette proposition
-      supports:
-        zero: Aucun soutien
-        one: 1 soutien
-        other: "%{count} soutiens"
   stats:
     index:
       visits: Visites
@@ -736,12 +684,6 @@ fr:
     unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
     verified_only: Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
     verify_account: vérifier votre compte
-    spending_proposals:
-      not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
-      not_verified: Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
-      organization: Les organisations ne sont pas autorisées à voter
-      unfeasible: Les propositions d'investissement jugées irréalisables ne peuvent être soutenues
-      not_voting_allowed: La phase de vote est terminée
     budget_investments:
       not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
       not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions d'investissement, %{verify_account}.
