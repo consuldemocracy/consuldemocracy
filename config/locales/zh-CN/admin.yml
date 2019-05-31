@@ -408,8 +408,6 @@ zh-CN:
           back: 返回
           id: Id
           supports: 支持
-          select: 选择
-          selected: 已选
         form:
           custom_categories: 类别
           custom_categories_description: 用户可以选择创建提议的类别。
