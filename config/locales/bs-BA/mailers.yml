@@ -20,13 +20,6 @@ bs:
       new_reply_by_html: Novi odgovor od <b>%{commenter}</b> na vaš komentar na
       subject: Neko je odgovorio na vaš komentar
       title: Novi odgovor na vaš komentar
-    unfeasible_spending_proposal:
-      hi: "Poštovani korisniče,"
-      new_html: "Za sve ovo, pozivamo vas da razradite <strong> novi prijedlog </strong>, prilagođen uvjetima u ovom procesu. To možete uraditi preko ovog linka: %{url}."
-      new_href: "novi investicioni projekat"
-      sincerely: "S poštovanjem"
-      sorry: "Žao nam je zbog neugodnosti i hvala još jednom na vašem dragocjenom učešću."
-      subject: "Vaš investicioni projekat %{code} je označen kao neizvodiv"
     proposal_notification_digest:
       info: "Ovo su nove obavijesti autora prijedloga koje ste podržali u %{org_name}."
       title: "Obavijesti o prijedlozima u %{org_name}"
