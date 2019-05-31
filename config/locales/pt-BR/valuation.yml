@@ -5,7 +5,6 @@ pt-BR:
     menu:
       title: Avaliação
       budgets: Orçamentos participativos
-      spending_proposals: Propostas de gastos
     budgets:
       index:
         title: Orçamentos participativos
@@ -76,52 +75,3 @@ pt-BR:
         valuate: "Dossiê atualizado"
       valuation_comments: Comentários de avaliação
       not_in_valuating_phase: Investimentos só podem ser avaliados quando o Orçamento estiver na fase de avaliação
-    spending_proposals:
-      index:
-        geozone_filter_all: Todas as zonas
-        filters:
-          valuation_open: Aberto
-          valuating: Em avaliação
-          valuation_finished: Avaliação terminada
-        title: Projectos de investimento para orçamento participativo
-        edit: Editar
-      show:
-        back: Voltar
-        heading: Projeto de investimento
-        info: Informação do autor
-        association_name: Associação
-        by: Enviado por
-        sent: Enviado em
-        geozone: Âmbito
-        dossier: Relatório
-        edit_dossier: Editar relatório
-        price: Preço
-        price_first_year: Custo durante o primeiro ano
-        currency: "€"
-        feasibility: Viabilidade
-        feasible: Viável
-        not_feasible: Não viável
-        undefined: Não definido
-        valuation_finished: Avaliação terminada
-        time_scope: Prazo
-        internal_comments: Comentários internos
-        responsibles: Responsáveis
-        assigned_admin: Administrador designado
-        assigned_valuators: Avaliadores designados
-      edit:
-        dossier: Relatório
-        price_html: "Preço (%{currency})"
-        price_first_year_html: "Custo durante o primeiro ano (%{currency})"
-        currency: "€"
-        price_explanation_html: Explanação do preço
-        feasibility: Viabilidade
-        feasible: Viável
-        not_feasible: Não viável
-        undefined_feasible: Pendente
-        feasible_explanation_html: Explicação de viabilidade
-        valuation_finished: Avaliação terminada
-        time_scope_html: Prazo
-        internal_comments_html: Comentários internos
-        save: Salvar alterações
-      notice:
-        valuate: "Dossiê atualizado"
