@@ -63,7 +63,7 @@ describe "Admin legislation draft versions" do
       fill_in "Changes", with: "Version 3 changes"
       fill_in "Text", with: "Version 3 body"
 
-      within(".end") do
+      within("form .end") do
         click_button "Create version"
       end
 
