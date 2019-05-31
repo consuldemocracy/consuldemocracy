@@ -1,15 +1,13 @@
 <div class="row globalize-languages column padding-top <%= highlight_translation_html_class %>"
-     data-zero-languages-description="<%= t("shared.translations.languages_in_use", count: 0) %>"
-     data-one-languages-description="<%= t("shared.translations.languages_in_use", count: 1) %>"
-     data-other-languages-description="<%= t("shared.translations.languages_in_use", count: 2) %>">
+     data-zero-languages-description="<%= t("shared.translations.languages_in_use_html", count: 0) %>"
+     data-one-languages-description="<%= t("shared.translations.languages_in_use_html", count: 1) %>"
+     data-other-languages-description="<%= t("shared.translations.languages_in_use_html", count: 2) %>">
   <div class="small-6 large-3 column">
-    <small>
-      <strong>
-        <div class="inline"><%= active_languages_text(resource) %></div>
-      </strong>
-    </small>
+    <span class="small">
+      <strong class="js-languages-description"><%= selected_languages_description(resource) %></strong>
+    </span>
     <%= select_tag :select_language,
-                   active_languages(resource),
+                   options_for_select_language(resource),
                    prompt: "Choose language",
                    class: "js-select-language" %>
 
@@ -27,7 +25,7 @@
   <div class="small-6 large-3 column margin-top end">
     <% if manage_languages %>
       <%= select_tag :add_language,
-                     options_for_locale_select,
+                     options_for_add_language,
                      prompt: t("admin.translations.add_language"),
                      class: "js-add-language" %>
     <% end %>

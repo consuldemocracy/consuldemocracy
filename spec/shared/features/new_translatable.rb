@@ -154,6 +154,30 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
 
       expect(page).not_to have_link "English"
     end
+
+    context "Languages in use" do
+      scenario "Show default description" do
+        visit new_translatable_path
+
+        expect(page).to have_content "1 language in use"
+      end
+
+      scenario "Increase description count after add new language", :js do
+        visit new_translatable_path
+
+        select "Español", from: :add_language
+
+        expect(page).to have_content "2 languages in use"
+      end
+
+      scenario "Decrease description count after remove a language", :js do
+        visit new_translatable_path
+
+        click_link "Remove language"
+
+        expect(page).to have_content "0 languages in use"
+      end
+    end
   end
 end
 

@@ -335,6 +335,30 @@ shared_examples "edit_translatable" do |factory_name, path_name, input_fields, t
 
       expect_page_to_have_translatable_field fields.sample, :fr, with: ""
     end
+
+    context "Languages in use" do
+      scenario "Show default description" do
+        visit path
+
+        expect(page).to have_content "2 languages in use"
+      end
+
+      scenario "Increase description count after add new language", :js do
+        visit path
+
+        select "Français", from: :add_language
+
+        expect(page).to have_content "3 languages in use"
+      end
+
+      scenario "Decrease description count after remove a language", :js do
+        visit path
+
+        click_link "Remove language"
+
+        expect(page).to have_content "1 language in use"
+      end
+    end
   end
 end
 
