@@ -155,7 +155,6 @@ fa:
       page_title: "%{budget} - نتایج"
       heading: "نتایج بودجه مشارکتی"
       heading_selection_title: "توسط منطقه"
-      spending_proposal: عنوان پیشنهاد
       ballot_lines_count: آرا
       hide_discarded_link: پنهان کردن 
       show_all_link: نمایش همه
