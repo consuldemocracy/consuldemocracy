@@ -179,7 +179,6 @@ gl:
     policy: Política de privacidade
     proposal: a proposta
     proposal_notification: "a notificación"
-    spending_proposal: Proposta de investimento
     budget/investment: Investimento
     budget/group: Grupo orzamento
     budget/heading: a partida orzamentaria
@@ -193,7 +192,6 @@ gl:
     image: Imaxe
   geozones:
     none: Toda a cidade
-    all: Todos os ámbitos
   layouts:
     application:
       chrome: Google Chrome
@@ -233,7 +231,6 @@ gl:
       proposals: Propostas cidadás
       poll_questions: Votacións
       budgets: Orzamentos participativos
-      spending_proposals: Propostas de investimento
       notification_item:
         new_notifications:
           one: Tes unha nova notificación
@@ -593,7 +590,6 @@ gl:
     unflag: Desfacer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
     outline:
-      budget: Orzamento participativo
       searcher: Buscador
     go_to_page: "Ir á páxina de "
     share: Compartir
@@ -616,54 +612,6 @@ gl:
     whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Se propós no nome dunha asociación ou colectivo engade o nome aquí"
-      association_name: "Nome da asociación"
-      description: Descrición
-      external_url: Ligazón a documentación adicional
-      geozone: Ámbitos de actuación
-      submit_buttons:
-        create: Crear
-        new: Crear
-      title: Título da proposta de gasto
-    index:
-      title: Orzamentos participativos
-      unfeasible: Propostas de investimento non viables
-      by_geozone: "Propostas de investimento con ámbito: %{geozone}"
-      search_form:
-        button: Procurar
-        placeholder: Propostas de investimento...
-        title: Procurar
-      search_results:
-        one: " que contén '%{search_term}'"
-        other: " que contén '%{search_term}'"
-      sidebar:
-        geozones: Ámbitos de actuación
-        feasibility: Viabilidade
-        unfeasible: Non viables
-      start_spending_proposal: Crea unha proposta de investimento
-    new:
-      more_info: Como funcionan os orzamentos participativos?
-      recommendation_one: É fundamental que haxa referencia a unha actuación orzamentable.
-      recommendation_three: Intenta detallar o máximo posible a proposta para que o equipo de goberno encargado de estudala teña as menos dúbidas posibles.
-      recommendation_two: Calquera proposta ou comentario que implique accións ilegais será eliminada.
-      recommendations_title: Cómo crear unha proposta de gasto
-      start_new: Crear unha proposta de gasto
-    show:
-      author_deleted: Usuario/a borrado/a
-      code: "Código da proposta:"
-      share: Compartir
-    wrong_price_format: Só pode incluír caracteres numéricos
-    spending_proposal:
-      spending_proposal: Proposta de investimento
-      already_supported: Xa apoiaches este proxecto. Compárteo!
-      support: Apoiar
-      support_title: Apoiar este proxecto
-      supports:
-        zero: Sen apoio
-        one: 1 apoio
-        other: "%{count} apoios"
   stats:
     index:
       visits: Visitas
@@ -741,12 +689,6 @@ gl:
     unauthenticated: Debes %{signin} ou %{signup} para continuares.
     verified_only: As propostas de investimento só poden ser apoiadas por usuarios verificados, %{verify_account}.
     verify_account: verificar a túa conta
-    spending_proposals:
-      not_logged_in: Debes %{signin} ou %{signup} para continuares.
-      not_verified: As propostas só poden ser votadas por usuarios con contas verificadas, %{verify_account}.
-      organization: As organizacións non poden votar.
-      unfeasible: Non se poden votar propostas inviables.
-      not_voting_allowed: O período de votación está cerrado.
     budget_investments:
       not_logged_in: Debes %{signin} ou %{signup} para continuares.
       not_verified: Os proxectos de investimento só poden ser votados por usuarios con contas verificadas, polo que %{verify_account}.
