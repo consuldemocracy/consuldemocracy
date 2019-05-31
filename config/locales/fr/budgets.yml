@@ -164,7 +164,6 @@ fr:
       page_title: "%{budget} - Résultats"
       heading: "Résultats du budget participatif"
       heading_selection_title: "Par quartier"
-      spending_proposal: Titre de la proposition
       ballot_lines_count: Votes
       hide_discarded_link: Cacher les résultats rejetés
       show_all_link: Tout afficher
