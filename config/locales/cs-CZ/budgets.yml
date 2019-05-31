@@ -149,7 +149,6 @@ cs:
       page_title: "%{budget} - výsledky"
       heading: "Výsledky participativního rozpočtu"
       heading_selection_title: "Podle městských částí"
-      spending_proposal: Název návrhu
       ballot_lines_count: Hlasů
       hide_discarded_link: Skrýt vyřazené
       show_all_link: Zobrazit vše
