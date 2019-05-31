@@ -692,7 +692,6 @@ bs:
       officials: Službenici
       organizations: Organizacije
       settings: Opšte postavke
-      spending_proposals: Prijedlozi troškova
       stats: Statistika
       signature_sheets: Potpisni listovi
       site_customization:
@@ -717,7 +716,6 @@ bs:
           content_block:
             update: "Ažuriraj blok"
       title_moderated_content: Moderirani sadržaj
-      title_budgets: Budžeti
       title_profiles: Profili
       title_settings: Postavke
       title_site_customization: Materijali na glasačkom mjestu
@@ -909,15 +907,6 @@ bs:
         delete: Obriši
       search:
         title: "Procjenitelji: traženje korisnika"
-      summary:
-        title: Procjeniteljev sažetak za investicione projekte
-        valuator_name: Procjenitelj
-        finished_and_feasible_count: Završeno i izvodivo
-        finished_and_unfeasible_count: Završeno i neizvodivo
-        finished_count: Završeno
-        in_evaluation_count: Ocjena u toku
-        total_count: Ukupno
-        cost: Troškovi
       form:
         edit_title: "Procjenitelji: Editovanje podataka za procjenitelja"
         update: "Ažuriraj podatke za procjenitelja"
@@ -1307,9 +1296,6 @@ bs:
       proposal_search:
         button: Traži
         placeholder: Pretraga prijedloga po nazivu, šifri, opisu ili pitanju
-      spending_proposal_search:
-        button: Traži
-        placeholder: Pretraga prijedloga troškova po nazivu ili opisu
       user_search:
         button: Traži
         placeholder: Pretraga korisnika po imenu ili email-adresi
@@ -1330,62 +1316,6 @@ bs:
       color_help: Heksadecimalni format
       show_results_and_stats: "Pokaži rezultate i statistiku"
       results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ove glasačke ankete će biti dostupni javnosti i vidljivi svakom korisniku."
-    spending_proposals:
-      index:
-        geozone_filter_all: Sve zone
-        administrator_filter_all: Svi administratori
-        valuator_filter_all: Svi procjenitelji
-        tags_filter_all: Svi tagovi
-        filters:
-          valuation_open: Otvori
-          without_admin: Bez dodijeljenog administratora
-          managed: Radi se
-          valuating: Procjena u toku
-          valuation_finished: Procjena završena
-          all: Sve
-        title: Investicioni projekti za participativno budžetiranje
-        assigned_admin: Dodijeljeni administrator
-        no_admin_assigned: Nema dodijeljenih administratora
-        no_valuators_assigned: Nema dodijeljenih ocjenitelja
-        summary_link: "Sažetak investicionog projekta"
-        valuator_summary_link: "Sažetak procjenitelja"
-        feasibility:
-          feasible: "Izvodivo (cijena) (%{price})"
-          not_feasible: "Nije izvodivo"
-          undefined: "Nije definisano"
-      show:
-        assigned_admin: Dodijeljeni administrator
-        assigned_valuators: Dodijeljeni procjenitelji
-        back: Nazad
-        classification: Klasifikacija
-        heading: "Investicioni projekat (identifikacioni broj) %{id}"
-        edit: Edituj
-        edit_classification: Edituj klasifikaciju
-        association_name: Udruženje
-        by: Od
-        sent: Poslano
-        geozone: Područje
-        dossier: Spis
-        edit_dossier: Izmjeni spis
-        tags: Tagovi
-        undefined: Nije definisano
-      edit:
-        classification: Klasifikacija
-        assigned_valuators: Procjenitelji
-        submit_button: Ažuriraj
-        tags: Tagovi
-        tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
-        undefined: Nije definisano
-      summary:
-        title: Sažetak za investicione projekte
-        title_proposals_with_supports: Sažetak za investicione projekte, sa podrškom
-        geozone_name: Područje
-        finished_and_feasible_count: Završeno i izvodivo
-        finished_and_unfeasible_count: Završeno i neizvodivo
-        finished_count: Završeno
-        in_evaluation_count: Ocjena u toku
-        total_count: Ukupno
-        cost_for_geozone: Troškovi
     geozones:
       index:
         title: Geozona
@@ -1455,7 +1385,6 @@ bs:
           proposals: Prijedlozi
           budgets: Otvoreni budžeti
           budget_investments: Investicioni projekti
-          spending_proposals: Prijedlozi troškova
           unverified_users: Nepotvrđeni korisnici
           user_level_three: Korisnici na trećem stupnju
           user_level_two: Korisnici na drugom stupnju
@@ -1472,7 +1401,6 @@ bs:
         polls: Glasačke ankete
       graph:
         debate_created: Debate
-        spending_proposals: Investicioni projekti
         visit: Posjete
         level_2_user: Korisnici na drugom stupnju
         proposal_created: Građanski prijedlozi
