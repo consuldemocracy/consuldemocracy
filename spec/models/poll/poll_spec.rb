@@ -359,4 +359,58 @@ describe Poll do
 
   end
 
+  describe "#sort_for_list" do
+    it "returns polls sorted by name ASC" do
+      starts_at = Time.current + 1.day
+      poll1 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Zzz...")
+      poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Mmmm...")
+      poll3 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaah!")
+
+      expect(Poll.sort_for_list).to eq [poll3, poll2, poll1]
+    end
+
+    it "returns not geozone restricted polls first" do
+      starts_at = Time.current + 1.day
+      poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Zzz...")
+      poll2 = create(:poll, geozone_restricted: true, starts_at: starts_at, name: "Aaaaaah!")
+
+      expect(Poll.sort_for_list).to eq [poll1, poll2]
+    end
+
+    it "returns polls earlier to start first" do
+      starts_at = Time.current + 1.day
+      poll1 = create(:poll, geozone_restricted: false, starts_at: starts_at - 1.hour, name: "Zzz...")
+      poll2 = create(:poll, geozone_restricted: false, starts_at: starts_at, name: "Aaaaah!")
+
+      expect(Poll.sort_for_list).to eq [poll1, poll2]
+    end
+
+    it "returns polls with multiple translations only once" do
+      create(:poll, name_en: "English", name_es: "Spanish")
+
+      expect(Poll.sort_for_list.count).to eq 1
+    end
+
+    context "fallback locales" do
+      before do
+        allow(I18n.fallbacks).to receive(:[]).and_return([:es])
+        Globalize.set_fallbacks_to_all_available_locales
+      end
+
+      it "orders by name considering fallback locales" do
+        starts_at = Time.current + 1.day
+        poll1 = create(:poll, starts_at: starts_at, name: "Charlie")
+        poll2 = create(:poll, starts_at: starts_at, name: "Delta")
+        poll3 = Globalize.with_locale(:es) do
+          create(:poll, starts_at: starts_at, name: "Zzz...", name_fr: "Aaaah!")
+        end
+        poll4 = Globalize.with_locale(:es) do
+          create(:poll, starts_at: starts_at, name: "Bravo")
+        end
+
+        expect(Poll.sort_for_list.count).to eq 4
+        expect(Poll.sort_for_list).to eq [poll4, poll1, poll2, poll3]
+      end
+    end
+  end
 end
