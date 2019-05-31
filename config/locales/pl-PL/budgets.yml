@@ -169,7 +169,6 @@ pl:
       page_title: "%{budget} - wyniki"
       heading: "Wyniki budżetu partycypacyjnego"
       heading_selection_title: "Przez powiat"
-      spending_proposal: Tytuł wniosku
       ballot_lines_count: Głosów
       hide_discarded_link: Ukryj odrzucone
       show_all_link: Pokaż wszystkie
