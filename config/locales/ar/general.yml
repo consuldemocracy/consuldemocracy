@@ -194,7 +194,6 @@ ar:
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
-    spending_proposal: مقترح الانفاق
     budget/investment: إستثمار
     budget/group: مجموعة الميزانية
     budget/heading: عنوان الميزانية
@@ -208,7 +207,6 @@ ar:
     image: صورة
   geozones:
     none: جميع المدن
-    all: جميع النطاقات
   layouts:
     application:
       chrome: Google Chrome
@@ -257,7 +255,6 @@ ar:
       proposals: إقتراحات
       poll_questions: التصويت
       budgets: الميزانية التشاركية
-      spending_proposals: مقترحات الانفاق
       notification_item:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
@@ -695,7 +692,6 @@ ar:
     you_are_in: "أنت في"
     unfollow_entity: "توقف عن متابعة %{entity}"
     outline:
-      budget: الميزانية التشاركية
       searcher: محرك البحث
     go_to_page: "انتقل إلى صفحة "
     share: مشاركة
@@ -715,52 +711,6 @@ ar:
     whatsapp: واتساب
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name: "اسم الرابطة"
-      description: الوصف
-      external_url: رابط لوثائق إضافية
-      geozone: نطاق العملية
-      submit_buttons:
-        create: إنشاء
-        new: إنشاء
-      title: عنوان مقترح الانفاق
-    index:
-      title: الميزانية التشاركية
-      unfeasible: مشاريع استثمارات الغير مجدية
-      by_geozone: "المشاريع الاستثمارية ذات النطاق: %{geozone}"
-      search_form:
-        button: بحث
-        placeholder: مشاريع استثمارية...
-        title: بحث
-      sidebar:
-        geozones: نطاق العملية
-        feasibility: الجدوى
-        unfeasible: غير مجدي
-      start_spending_proposal: إنشاء مشروع استثماري
-    new:
-      recommendation_one: من الضروري أن يشير المقترح إلى إجراء ذي ميزانية.
-      recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني.
-      recommendations_title: كيفية إنشاء مقترح الإنفاق
-      start_new: إنشاء مقترح إنفاق
-    show:
-      author_deleted: تم حذف المستخدم
-      code: "رمز الاقتراح:"
-      share: مشاركة
-    wrong_price_format: الاعداد الصحيحة فقط
-    spending_proposal:
-      spending_proposal: مشروع استثماري
-      already_supported: لقد دعمت هذا بالفعل. شاركه!
-      support: دعم
-      support_title: ادعم هذا المشروع
-      supports:
-        zero: لا يوجد دعم
-        zero: "%{count} يدعم"
-        one: 1 دعم
-        two: "%{count} يدعم"
-        few: "%{count} يدعم"
-        many: "%{count} يدعم"
-        other: "%{count} يدعم"
   stats:
     index:
       visits: الزيارات
@@ -816,12 +766,6 @@ ar:
     supports: دعم
     unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
     verify_account: التحقق من حسابك
-    spending_proposals:
-      not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
-      not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات %{verify_account}.
-      organization: المنظمات لا يسمح لها بالتصويت
-      unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
-      not_voting_allowed: مرحلة التصويت مغلقة
     budget_investments:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
       not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على مشاريع الاستثمارات; %{verify_account}.
