@@ -606,7 +606,6 @@ tr:
       officials: Yetkililer
       organizations: Organizasyonlar
       settings: Genel ayarlar
-      spending_proposals: Harcama önerileri
       stats: İstatistikler
       signature_sheets: İmza Sayfaları
       site_customization:
@@ -629,7 +628,6 @@ tr:
           content_block:
             update: "Bloğu Güncelle"
       title_moderated_content: Denetlenen içerik
-      title_budgets: Bütçeler
       title_profiles: Profiller
       title_settings: Ayarlar
       title_site_customization: Site içeriği
@@ -814,15 +812,6 @@ tr:
         delete: Sil
       search:
         title: "Bilirkişiler: Kullanıcı arama"
-      summary:
-        title: Yatırım projeleri için bilirkişi özeti
-        valuator_name: Bilirkişi
-        finished_and_feasible_count: Bitmiş ve uygulanabilir
-        finished_and_unfeasible_count: Bitmiş ve uygulanamaz
-        finished_count: Bitmiş
-        in_evaluation_count: Değerlendirmede
-        total_count: Toplam
-        cost: Maliyet
       form:
         edit_title: "Bilirkişiler: Bilirkişi düzenle"
         update: "Bilirkişi güncelle"
@@ -1202,9 +1191,6 @@ tr:
       proposal_search:
         button: Ara
         placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
-      spending_proposal_search:
-        button: Ara
-        placeholder: Bekleyen önerileri başlığa veya tanımlamaya göre ara
       user_search:
         button: Ara
         placeholder: İsim veya e-posta ile kullanıcı ara
@@ -1223,62 +1209,6 @@ tr:
       created_at: Oluşturuldu
       delete: Sil
       color_help: Onaltılık format
-    spending_proposals:
-      index:
-        geozone_filter_all: Tüm bölgeler
-        administrator_filter_all: Tüm yöneticiler
-        valuator_filter_all: Tüm bilirkişiler
-        tags_filter_all: Tüm etiketler
-        filters:
-          valuation_open: Açık
-          without_admin: Atanmış yönetici olmadan
-          managed: Yönetilen
-          valuating: Değerlendirme altında
-          valuation_finished: Değerlendirme bitti
-          all: Tüm
-        title: Katılımcı bütçeleme için yatırım projeleri
-        assigned_admin: Atanmış yönetici
-        no_admin_assigned: Hiç yönetici atanmamış
-        no_valuators_assigned: Hiç bilirkişi atanmamış
-        summary_link: "Yatırım projesi özeti"
-        valuator_summary_link: "Bilirkişi özeti"
-        feasibility:
-          feasible: "Uygulanabilir (%{price})"
-          not_feasible: "Mümkün değil"
-          undefined: "Tanımsız"
-      show:
-        assigned_admin: Atanmış yönetici
-        assigned_valuators: Atanmış bilirkişiler
-        back: Geri
-        classification: Sınıflandırma
-        heading: "Yatırım projesi %{id}"
-        edit: Düzenleme
-        edit_classification: Sınıflandırmayı düzenle
-        association_name: Dernek
-        by: Tarafından
-        sent: Gönder
-        geozone: Kapsam
-        dossier: Dosya
-        edit_dossier: Dosyayı düzenle
-        tags: Etiketler
-        undefined: Tanımsız
-      edit:
-        classification: Sınıflandırma
-        assigned_valuators: Bilirkişiler
-        submit_button: Güncelleme
-        tags: Etiketler
-        tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
-        undefined: Tanımsız
-      summary:
-        title: Yatırım projelerinin özeti
-        title_proposals_with_supports: Desteklenen yatırım projeleri için özet
-        geozone_name: Kapsam
-        finished_and_feasible_count: Bitmiş ve uygulanabilir
-        finished_and_unfeasible_count: Bitmiş ve uygulanamaz
-        finished_count: Bitmiş
-        in_evaluation_count: Değerlendirmede
-        total_count: Toplam
-        cost_for_geozone: Maliyet
     geozones:
       index:
         title: Coğrafi Bölge (Geozone)
@@ -1345,7 +1275,6 @@ tr:
           proposals: Öneriler
           budgets: Açık bütçeler
           budget_investments: Yatırım projeleri
-          spending_proposals: Bekleyen Öneriler
           unverified_users: Doğrulanmamış kullanıcılar
           user_level_three: Üçüncü seviye kullanıcılar
           user_level_two: İkinci seviye kullanıcılar
