@@ -159,13 +159,6 @@ ar:
         few: "مقترحات المواطنين"
         many: "مقترحات المواطنين"
         other: "مقترحات المواطنين"
-      spending_proposal:
-        zero: "مشاريع استثمارية"
-        one: "مشروع استثماري"
-        two: "مشاريع استثمارية"
-        few: "مشاريع استثمارية"
-        many: "مشاريع استثمارية"
-        other: "مشاريع استثمارية"
       site_customization/page:
         zero: صفحات مخصصة
         one: صفحة مخصصة
@@ -358,13 +351,6 @@ ar:
       organization:
         name: "اسم المنظمة"
         responsible_name: "الشخص المسؤول عن المجموعة"
-      spending_proposal:
-        administrator_id: "مدير"
-        association_name: "اسم الرابطة"
-        description: "الوصف"
-        external_url: "رابط لوثائق إضافية"
-        geozone_id: "نطاق العملية"
-        title: "عنوان"
       poll:
         name: "الإ سم"
         starts_at: "تاريخ البدء"
