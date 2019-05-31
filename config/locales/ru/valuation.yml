@@ -34,6 +34,7 @@ ru:
           many: "%{count} оценщиков назначено"
           other: "%{count} оценщиков назначено"
         no_valuators_assigned: Оценщики не назначены
+        table_id: ID
         table_title: Название
         table_heading_name: Название раздела
         table_actions: Действия
@@ -49,6 +50,7 @@ ru:
         edit_dossier: Редактировать пакет документов
         price: Цена
         price_first_year: Стоимость в течение первого года
+        currency: "€"
         feasibility: Выполнимость
         feasible: Выполнимо
         unfeasible: Не выполнимо
@@ -98,6 +100,7 @@ ru:
         edit_dossier: Редактировать пакет документов
         price: Цена
         price_first_year: Стоимость в первый год
+        currency: "€"
         feasibility: Выполнимость
         feasible: Выполнимо
         not_feasible: Не выполнимо
@@ -112,6 +115,7 @@ ru:
         dossier: Пакет документов
         price_html: "Стоимость (%{currency})"
         price_first_year_html: "Стоимость в первый год (%{currency})"
+        currency: "€"
         price_explanation_html: Описание цены
         feasibility: Выполнимость
         feasible: Выполнимо
