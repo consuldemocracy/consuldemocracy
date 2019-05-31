@@ -64,9 +64,6 @@ de:
       proposal:
         one: "Bürgervorschlag"
         other: "Bürgervorschläge"
-      spending_proposal:
-        one: "Investitionsprojekt"
-        other: "Ausgabenvorschläge"
       site_customization/page:
         one: Meine Seite
         other: Meine Seiten
@@ -178,13 +175,6 @@ de:
       organization:
         name: "Name der Organisation"
         responsible_name: "Der/die* Gruppenverantwortliche"
-      spending_proposal:
-        administrator_id: "Administrator*in"
-        association_name: "Vereinsname"
-        description: "Beschreibung"
-        external_url: "Link zu zusätzlicher Dokumentation"
-        geozone_id: "Rahmenbedingungen"
-        title: "Titel"
       poll:
         name: "Name"
         starts_at: "Anfangsdatum"
