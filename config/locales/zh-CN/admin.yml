@@ -542,7 +542,6 @@ zh-CN:
       officials: 官员
       organizations: 组织
       settings: 全局设置
-      spending_proposals: 支出建议
       stats: 统计
       signature_sheets: 签名表
       site_customization:
@@ -565,7 +564,6 @@ zh-CN:
           content_block:
             update: "更新模块"
       title_moderated_content: 已审核的内容
-      title_budgets: 预算
       title_profiles: 个人资料
       title_settings: 设置
       title_site_customization: 站点内容
@@ -712,15 +710,6 @@ zh-CN:
         delete: 删除
       search:
         title: "评估员：用户搜索"
-      summary:
-        title: 投资项目的评估员总结
-        valuator_name: 评估员
-        finished_and_feasible_count: 已完成并可行
-        finished_and_unfeasible_count: 已完成和不可行
-        finished_count: 已完成
-        in_evaluation_count: 评估中
-        total_count: 总计
-        cost: 成本
       form:
         edit_title: "评估员：编辑评估员"
         update: "更新评估员"
@@ -1081,9 +1070,6 @@ zh-CN:
       proposal_search:
         button: 搜索
         placeholder: 按标题，代码，描述或问题搜索提议
-      spending_proposal_search:
-        button: 搜索
-        placeholder: 按标题或描述搜索支出提议
       user_search:
         button: 搜索
         placeholder: 按名字或电子邮件搜索用户
@@ -1101,62 +1087,6 @@ zh-CN:
       content: 内容
       created_at: 创建于
       delete: 删除
-    spending_proposals:
-      index:
-        geozone_filter_all: 所有区域
-        administrator_filter_all: 所有管理员
-        valuator_filter_all: 所有评估员
-        tags_filter_all: 所有标签
-        filters:
-          valuation_open: 开
-          without_admin: 没有指定的管理员
-          managed: 已管理
-          valuating: 评估中
-          valuation_finished: 评估已完成
-          all: 所有
-        title: 参与性预算编织的投资项目
-        assigned_admin: 指定的管理员
-        no_admin_assigned: 没有指定管理员
-        no_valuators_assigned: 没有指定评估员
-        summary_link: "投资项目总结"
-        valuator_summary_link: "评估员总结"
-        feasibility:
-          feasible: "可行 (%{price})"
-          not_feasible: "不可行"
-          undefined: "未定义"
-      show:
-        assigned_admin: 指定的管理员
-        assigned_valuators: 指定的评估员
-        back: 返回
-        classification: 分类
-        heading: "投资项目%{id}"
-        edit: 编辑
-        edit_classification: 编辑分类
-        association_name: 协会
-        by: 由
-        sent: 已发送
-        geozone: 范围
-        dossier: 档案
-        edit_dossier: 编辑档案
-        tags: 标签
-        undefined: 未定义
-      edit:
-        classification: 分类
-        assigned_valuators: 评估者
-        submit_button: 更新
-        tags: 标签
-        tags_placeholder: "编写您想要的标签，用逗号(,) 分隔"
-        undefined: 未定义
-      summary:
-        title: 投资项目总结
-        title_proposals_with_supports: 得到支持的投资项目总结
-        geozone_name: 范围
-        finished_and_feasible_count: 已完成并可行
-        finished_and_unfeasible_count: 已完成和不可行
-        finished_count: 已完成
-        in_evaluation_count: 评估中
-        total_count: 总计
-        cost_for_geozone: 成本
     geozones:
       index:
         title: 地理区域
@@ -1218,7 +1148,6 @@ zh-CN:
           proposals: 提议
           budgets: 开放式预算
           budget_investments: 投资项目
-          spending_proposals: 支出提议
           unverified_users: 未验证的用户
           user_level_three: 三级用户
           user_level_two: 二级用户
