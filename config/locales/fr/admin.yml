@@ -549,8 +549,6 @@ fr:
           back: Retour
           id: Id
           supports: Soutiens
-          select: Sélectionner
-          selected: Sélectionné
         form:
           custom_categories: Catégories
           custom_categories_description: Catégories que les utilisateurs peuvent sélectionner créer une proposition.
