@@ -605,7 +605,6 @@ de:
       officials: Beamte/innen
       organizations: Organisationen
       settings: Globale Einstellungen
-      spending_proposals: Ausgabenvorschläge
       stats: Statistiken
       signature_sheets: Unterschriftenbögen
       site_customization:
@@ -628,7 +627,6 @@ de:
           content_block:
             update: "Block aktualisieren"
       title_moderated_content: Moderierter Inhalt
-      title_budgets: Bürgerhaushalte
       title_profiles: Profile
       title_settings: Einstellungen
       title_site_customization: Seiteninhalt
@@ -781,15 +779,6 @@ de:
         delete: Löschen
       search:
         title: "Begutachter*innen: Benutzer*innensuche"
-      summary:
-        title: Begutachter*innen-Zusammenfassung der Ausgabenvorschläge
-        valuator_name: Begutachter/in
-        finished_and_feasible_count: Abgeschlossen und durchführbar
-        finished_and_unfeasible_count: Abgeschlossen und nicht durchführbar
-        finished_count: Abgeschlossen
-        in_evaluation_count: In Auswertung
-        total_count: Gesamt
-        cost: Gesamtkosten
       form:
         edit_title: "Begutachter*innen: Begutachter*in bearbeiten"
         update: "Begutachter*in aktualisieren"
@@ -1159,9 +1148,6 @@ de:
       proposal_search:
         button: Suche
         placeholder: Suche Vorschläge nach Titel, Code, Beschreibung oder Frage
-      spending_proposal_search:
-        button: Suche
-        placeholder: Suche Ausgabenvorschläge nach Titel oder Beschreibung
       user_search:
         button: Suche
         placeholder: Suche Benutzer*in nach Name oder E-Mail
@@ -1179,62 +1165,6 @@ de:
       content: Inhalt
       created_at: Erstellt am
       delete: Löschen
-    spending_proposals:
-      index:
-        geozone_filter_all: Alle Bereiche
-        administrator_filter_all: Alle Administrator*innen
-        valuator_filter_all: Alle Begutachter*innen
-        tags_filter_all: Alle Tags
-        filters:
-          valuation_open: Offen
-          without_admin: Ohne zugewiesene*n Administrator*in
-          managed: Verwaltet
-          valuating: Unter Bewertung
-          valuation_finished: Begutachtung abgeschlossen
-          all: Alle
-        title: Investitionsprojekte für den Bürgerhaushalt
-        assigned_admin: Zugewiesene*r Administrator*in
-        no_admin_assigned: Kein*e Administrator*in zugewiesen
-        no_valuators_assigned: Kein*e Begutacher*in zugewiesen
-        summary_link: "Zusammenfassung der Ausgabenvorschläge"
-        valuator_summary_link: "Zusammenfassung der Begutachter*innen"
-        feasibility:
-          feasible: "Durchführbar (%{price})"
-          not_feasible: "Undurchführbar"
-          undefined: "Undefiniert"
-      show:
-        assigned_admin: Zugewiesene*r Administrator*in
-        assigned_valuators: Zugewiesene Begutachter*innen
-        back: Zurück
-        classification: Klassifizierung
-        heading: "Ausgabenvorschlag %{id}"
-        edit: Bearbeiten
-        edit_classification: Klassifizierung bearbeiten
-        association_name: Verein
-        by: Verfasser*in
-        sent: Gesendet
-        geozone: Bereich
-        dossier: Bericht
-        edit_dossier: Bericht bearbeiten
-        tags: Tags
-        undefined: Undefiniert
-      edit:
-        classification: Klassifizierung
-        assigned_valuators: Begutachter*innen
-        submit_button: Aktualisieren
-        tags: Tags
-        tags_placeholder: "Geben Sie die gewünschten Tags durch Kommas (,) getrennt ein"
-        undefined: Undefiniert
-      summary:
-        title: Zusammenfassung der Ausgabenvorschläge
-        title_proposals_with_supports: Zusammenfassung der Ausgabenvorschläge, die die Unterstützungsphase passiert haben
-        geozone_name: Bereich
-        finished_and_feasible_count: Abgeschlossen und durchführbar
-        finished_and_unfeasible_count: Abgeschlossen und undurchführbar
-        finished_count: Abgeschlossen
-        in_evaluation_count: In Auswertung
-        total_count: Gesamt
-        cost_for_geozone: Gesamtkosten
     geozones:
       index:
         title: Bezirke
@@ -1299,7 +1229,6 @@ de:
           proposals: Vorschläge
           budgets: Offene Haushalte
           budget_investments: Ausgabenvorschläge
-          spending_proposals: Ausgabenvorschläge
           unverified_users: Nicht verifizierte Benutzer*innen
           user_level_three: Benutzer*innen auf Stufe 3
           user_level_two: Benutzer*innen auf Stufe 2
