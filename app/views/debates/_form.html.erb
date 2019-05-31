@@ -4,8 +4,7 @@
 
   <%= render "shared/errors", resource: @debate %>
 
-  <div class="row">
-
+  <div class="row column">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 column">
         <%= translations_form.text_field :title,
