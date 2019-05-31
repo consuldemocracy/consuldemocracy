@@ -408,8 +408,6 @@ sq:
           back: Pas
           id: Id
           supports: Suporti
-          select: Zgjidh
-          selected: I zgjedhur
         form:
           custom_categories: Kategoritë
           custom_categories_description: Kategoritë që përdoruesit mund të zgjedhin duke krijuar propozimin.
