@@ -471,8 +471,6 @@ de:
           back: Zurück
           id: ID
           supports: Unterstützung
-          select: Auswählen
-          selected: Ausgewählt
         form:
           custom_categories: Kategorien
           custom_categories_description: Kategorien, die Benutzer*innen bei der Erstellung eines Vorschlags auswählen können.
