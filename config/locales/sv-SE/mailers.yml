@@ -20,13 +20,6 @@ sv:
       new_reply_by_html: Det finns ett nytt svar från <b>%{commenter}</b> till din kommentar på
       subject: Någon har svarat på din kommentar
       title: Nytt svar på din kommentar
-    unfeasible_spending_proposal:
-      hi: "Kära användare,"
-      new_html: "Med anledning av det ber vi dig att skapa ett <strong>nytt förslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
-      new_href: "nytt budgetförslag"
-      sincerely: "Vänliga hälsningar"
-      sorry: "Ledsen för besväret och vi återigen tack för din ovärderliga medverkan."
-      subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
     proposal_notification_digest:
       info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag som du stöder på %{org_name}."
       title: "Aviseringar om förslag på %{org_name}"
