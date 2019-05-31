@@ -160,7 +160,6 @@ it:
       page_title: "%{budget} - risultati"
       heading: "Risultati per il bilancio partecipativo"
       heading_selection_title: "Per circoscrizione"
-      spending_proposal: Titolo della proposta
       ballot_lines_count: Voti
       hide_discarded_link: Nascondere le scartate
       show_all_link: Visualizzare tutti
