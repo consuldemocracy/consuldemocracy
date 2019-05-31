@@ -179,7 +179,6 @@ pt-BR:
     policy: Política de privacidade
     proposal: Proposta
     proposal_notification: "Notificação"
-    spending_proposal: Porposta de despesa
     budget/investment: Investimento
     budget/heading: Rubrica Orçamental
     poll/shift: Turno
@@ -192,7 +191,6 @@ pt-BR:
     image: Imagem
   geozones:
     none: Toda a cidade
-    all: Todos âmbitos de atuação
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +230,6 @@ pt-BR:
       proposals: Propostas
       poll_questions: Votação
       budgets: Orçamento participativo
-      spending_proposals: Propostas de despesas
       notification_item:
         new_notifications:
           one: Você tem uma nova notificação
@@ -590,7 +587,6 @@ pt-BR:
     unflag: Desmarcar
     unfollow_entity: "Deixar de seguir %{entity}"
     outline:
-      budget: Orçamento participativo
       searcher: Pesquisador
     go_to_page: "Ir para página de "
     share: Compartilhar
@@ -613,54 +609,6 @@ pt-BR:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Se sua proposta é feita em nome de uma associação ou coletivo, adicione o nome aqui"
-      association_name: "Nome da Associação"
-      description: Descrição
-      external_url: Link para documentação adicional
-      geozone: Escopo da operação
-      submit_buttons:
-        create: Criar
-        new: Criar
-      title: Título da proposta de despesa
-    index:
-      title: Orçamento participativo
-      unfeasible: Projetos de investimento inviáveis
-      by_geozone: "Projectos de investimento com escopo: %{geozone}"
-      search_form:
-        button: Buscar
-        placeholder: Projetos de investimento...
-        title: Buscar
-      search_results:
-        one: " contendo o termo '%{search_term}'"
-        other: " contendo o termo '%{search_term}'"
-      sidebar:
-        geozones: Escopo da operação
-        feasibility: Factibilidade
-        unfeasible: Inviável
-      start_spending_proposal: Criar um projeto de investimento
-    new:
-      more_info: Como funciona o orçamento participativo?
-      recommendation_one: É mandatório que a proposta faça referência a uma ação orçamentária.
-      recommendation_three: Tente descer aos detalhes quando descrever sua proposta de despesa de maneira a ajudar a equipe de revisão entender seu argumento.
-      recommendation_two: Qualquer proposta ou comentário sugerindo ações ilegais serão apagadas.
-      recommendations_title: Como criar uma proposta de despesa
-      start_new: Criar uma proposta de despesa
-    show:
-      author_deleted: Usuário excluído
-      code: "Código da proposta:"
-      share: Compartilhar
-    wrong_price_format: Apenas números inteiros
-    spending_proposal:
-      spending_proposal: Projeto de investimento
-      already_supported: Você já apoiou esta proposta. Compartilhe!
-      support: Apoiar
-      support_title: Apoiar este projeto
-      supports:
-        zero: Nenhum apoio
-        one: 1 apoio
-        other: "%{count} apoios"
   stats:
     index:
       visits: Visitas
@@ -738,12 +686,6 @@ pt-BR:
     unauthenticated: Você precisa %{signin} ou %{signup} para continuar.
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
     verify_account: verifique sua conta
-    spending_proposals:
-      not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
-      not_verified: Somente usuários verificados podem votar em propostas;  %{verify_account}.
-      organization: Organizações não tem permissão de voto
-      unfeasible: Projetos de investimento inviáveis não podem ser apoiados
-      not_voting_allowed: A fase de votação está fechada
     budget_investments:
       not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
       not_verified: Somente usuários verificados podem votar em projetos de investimento; %{verify_account}.
