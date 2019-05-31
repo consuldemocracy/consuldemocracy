@@ -20,13 +20,6 @@ hr:
       new_reply_by_html: Postoji novi odgovor od <b>%{commenter}</b> na vaš komentar na temu
       subject: Netko je odgovorio na Vaš komentar
       title: Novi odgovor na vaš komentar
-    unfeasible_spending_proposal:
-      hi: "Dragi korisniče,"
-      new_html: "Za sve ove, pozivamo Vas da razradite <strong>novi prijedlog</strong> koji se pridržava uvjeta ovog procesa. Možete to učiniti na sljedećem linku: %{url}."
-      new_href: "novi investicijski projekt"
-      sincerely: "Iskreno"
-      sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na vašem sudjelovanju."
-      subject: "Vaš investicijski projekt '%{code}' je označen kao neizvediv"
     proposal_notification_digest:
       info: "Evo novih obavijesti koje su objavili autori prijedloga koje ste podržali u %{org_name}."
       title: "Obavijesti prijedloga u %{org_name}"
