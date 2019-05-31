@@ -179,7 +179,6 @@ sq:
     policy: Politika e privatësisë
     proposal: Propozime
     proposal_notification: "Njoftimet"
-    spending_proposal: Shpenzimet e propozimeve
     budget/investment: Investim
     budget/heading: Titulli i buxhetit
     poll/shift: Ndryshim
@@ -192,7 +191,6 @@ sq:
     image: Imazh
   geozones:
     none: I gjithë qyteti
-    all: Të gjitha qëllimet
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +230,6 @@ sq:
       proposals: Propozime
       poll_questions: Votim
       budgets: Buxhetet  pjesëmarrës
-      spending_proposals: Shpenzimet e propozimeve
       notification_item:
         new_notifications:
           one: Ju keni një njoftim të ri
@@ -592,7 +589,6 @@ sq:
     unflag: I pa shënjuar
     unfollow_entity: "Mos Ndiq %{entity}"
     outline:
-      budget: Buxhetet  pjesëmarrës
       searcher: Kërkues
     go_to_page: "Shkoni në faqen e"
     share: Shpërndaj
@@ -615,54 +611,6 @@ sq:
     whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: " Instagram %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Nëse propozoni në emër të një shoqate apo kolektivi shtoni emrin këtu"
-      association_name: "Emri i shoqatës"
-      description: Përshkrimi
-      external_url: Lidhje me dokumentacionin shtesë
-      geozone: Fusha e veprimit
-      submit_buttons:
-        create: Krijo
-        new: Krijo
-      title: Titulli i Shpenzimeve të propozimeve
-    index:
-      title: Buxhetet  pjesëmarrës
-      unfeasible: Projektet investuese të papërshtatshme 
-      by_geozone: "Projektet e investimeve me qëllim: %{geozone}"
-      search_form:
-        button: Kërko
-        placeholder: Projekte investimi...
-        title: Kërko
-      search_results:
-        one: "që përmbajnë termin %{search_term}"
-        other: "që përmbajnë termin %{search_term}"
-      sidebar:
-        geozones: Fusha e veprimit
-        feasibility: Fizibiliteti
-        unfeasible: Parealizueshme
-      start_spending_proposal: Krijo një projekt investimi
-    new:
-      more_info: Si funksionon buxheti  pjesëmarrjës?
-      recommendation_one: Është e detyrueshme që propozimi t'i referohet një veprimi buxhetor.
-      recommendation_three: Mundohuni të hyni në detaje kur përshkruani propozimin tuaj të shpenzimeve, që ekipi shqyrtues ti kuptojë pikat tuaja.
-      recommendation_two: Çdo propozim ose koment që sugjeron veprime të paligjshme do të fshihet.
-      recommendations_title: Si të krijoni një propozim shpenzimi
-      start_new: Krijo propozimin e shpenzimeve
-    show:
-      author_deleted: Përdoruesi u fshi
-      code: "Kodi Propozimit"
-      share: Shpërndaj
-    wrong_price_format: Vetëm numra të plotë
-    spending_proposal:
-      spending_proposal: Projekt investimi
-      already_supported: Ju e keni mbështetur tashmë këtë propozim. Shperndaje!
-      support: Suporti
-      support_title: Mbështetni këtë projekt
-      supports:
-        zero: Asnjë mbështetje
-        one: 1  mbështetje
-        other: "1%{count} mbështetje"
   stats:
     index:
       visits: Vizitat
@@ -740,12 +688,6 @@ sq:
     unauthenticated: Ju duhet %{signin} ose %{signup} për të vazhduar.
     verified_only: Vetëm përdoruesit e verifikuar mund të votojnë për propozimet; %{verify_account}.
     verify_account: verifikoni llogarinë tuaj
-    spending_proposals:
-      not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
-      not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për propozimet; %{verify_account}.
-      organization: Organizatat nuk lejohen të votojnë
-      unfeasible: Projektet e papërshtatshme të investimeve nuk mund të mbështeten
-      not_voting_allowed: Faza e zgjedhjes është e mbyllur
     budget_investments:
       not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
       not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për projektet e investimeve; %{verify_account}.
