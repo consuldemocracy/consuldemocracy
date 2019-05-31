@@ -5,7 +5,6 @@ sl:
     menu:
       title: Cenitev
       budgets: Participatorni proračun
-      spending_proposals: Predlogi porabe
     budgets:
       index:
         title: Participatorni proračun
@@ -70,50 +69,3 @@ sl:
         valuate: "Dosje posodobljen"
       valuation_comments: Komentarji cenitve
       not_in_valuating_phase: Naložbe so lahko ocenjene le, ko je proračun v fazi vrednotenja
-    spending_proposals:
-      index:
-        geozone_filter_all: Vse geocone
-        filters:
-          valuation_open: Odprti
-          valuating: V cenitvi
-          valuation_finished: Cenitev končana
-        title: Naložbeni projekti za participatorni proračun
-        edit: Uredi
-      show:
-        back: Nazaj
-        heading: Investicijski projekt
-        info: Informacije o avtorju
-        association_name: Združenje
-        by: Poslano od
-        sent: Poslano za
-        geozone: Obseg
-        dossier: Dosje
-        edit_dossier: Uredi dosje
-        price: Cena
-        price_first_year: Cena tekom prvega leta
-        feasibility: Izvedljivost
-        feasible: Izvedljiv
-        not_feasible: Neizvedljiv
-        undefined: Nedefinirano
-        valuation_finished: Cenitev končana
-        time_scope: Časovni obseg
-        internal_comments: Interni komentarji
-        responsibles: Zadolžitve
-        assigned_admin: Zadolžen admin
-        assigned_valuators: Zadolženi cenilci
-      edit:
-        dossier: Dosje
-        price_html: "Cena (%{currency})"
-        price_first_year_html: "Cena tekom prvega leta (%{currency})"
-        price_explanation_html: Razlaga cene
-        feasibility: Izvedljivost
-        feasible: Izvedljiv
-        not_feasible: Neizvedljiv
-        undefined_feasible: V teku
-        feasible_explanation_html: Razlaga izvedljivosti
-        valuation_finished: Cenitev končana
-        time_scope_html: Časovni obseg
-        internal_comments_html: Interni komentarji
-        save: Shrani spremembe
-      notice:
-        valuate: "Dosje posodobljen"
