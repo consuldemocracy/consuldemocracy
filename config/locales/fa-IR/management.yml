@@ -60,9 +60,6 @@ fa:
       create_proposal: ایجاد طرح های جدید
       print_proposals: چاپ طرح
       support_proposals: '* پشتیبانی از طرح های پیشنهادی'
-      create_spending_proposal: ایجاد  هزینه پیشنهاد
-      print_spending_proposals: چاپ پیشنهادات هزینه
-      support_spending_proposals: پشتیبانی از پیشنهادات هزینه
       create_budget_investment: "ایجاد بودجه سرمایه گذاری \n"
     permissions:
       create_proposals: ایجاد طرح های جدید
@@ -72,7 +69,6 @@ fa:
     print:
       proposals_info: ایجاد پیشنهاد  در http://url.consul
       proposals_title: "طرح های پیشنهادی:"
-      spending_proposals_info: شرکت درhttp://url.consul
       budget_investments_info: شرکت درhttp://url.consul
     print_info: این اطلاعات را چاپ کنید
     proposals:
@@ -94,18 +90,6 @@ fa:
       create: "ایجاد بودجه سرمایه گذاری \n"
       filters:
         unfeasible: سرمایه گذاری غیر قابل پیش بینی
-      print:
-        print_button: چاپ
-      search_results:
-        one: "حاوی اصطلاح%{search_term}"
-        other: "حاوی اصطلاح%{search_term}"
-    spending_proposals:
-      alert:
-        unverified_user: کاربر تأیید نشده است
-      create: ایجاد  هزینه پیشنهاد
-      filters:
-        unfeasible: سرمایه گذاری غیر قابل پیش بینی
-        by_geozone: "پروژه های سرمایه گذاری با دامنه:%{geozone}"
       print:
         print_button: چاپ
       search_results:
