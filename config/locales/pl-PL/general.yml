@@ -193,7 +193,6 @@ pl:
     policy: Polityka prywatności
     proposal: Wniosek
     proposal_notification: "Powiadomienie"
-    spending_proposal: Wniosek wydatkowy
     budget/investment: Inwestycja
     budget/group: Grupa budżetowa
     budget/heading: Nagłówek budżetu
@@ -207,7 +206,6 @@ pl:
     image: Obraz
   geozones:
     none: Cała dzielnica
-    all: Wszystkie zakresy
   layouts:
     application:
       chrome: Google Chrome
@@ -247,7 +245,6 @@ pl:
       proposals: Zrealizowane projekty
       poll_questions: Sondaż
       budgets: Budżetowanie Partycypacyjne
-      spending_proposals: Wnioski wydatkowe
       notification_item:
         new_notifications:
           one: Masz nowe powiadomienie
@@ -633,7 +630,6 @@ pl:
     unflag: Odznacz
     unfollow_entity: "Nie obserwuj %{entity}"
     outline:
-      budget: Budżet partycypacyjny
       searcher: Wyszukiwarka
     go_to_page: "Wejdź na stronę "
     share: Udostępnij
@@ -656,58 +652,6 @@ pl:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Jeśli proponujesz nazwę stowarzyszenia lub zespołu, dodaj tutaj tę nazwę"
-      association_name: "Nazwa stowarzyszenia"
-      description: Opis
-      external_url: Link do dodatkowej dokumentacji
-      geozone: Część dzielnicy, której dotyczy pomysł
-      submit_buttons:
-        create: Utwórz
-        new: Utwórz
-      title: Tytuł wniosku dotyczącego wydatków
-    index:
-      title: Budżetowanie partycypacyjne
-      unfeasible: Niewykonalne projekty inwestycyjne
-      by_geozone: "Projekty inwestycyjne o zakresie: %{geozone}"
-      search_form:
-        button: Szukaj
-        placeholder: Projekty inwestycyjne...
-        title: Szukaj
-      search_results:
-        one: " zawierające termin '%{search_term}'"
-        few: " zawierające termin '%{search_term}'"
-        many: " zawierające termin '%{search_term}'"
-        other: " zawierające termin '%{search_term}'"
-      sidebar:
-        geozones: Część dzielnicy, której dotyczy pomysł
-        feasibility: Wykonalność
-        unfeasible: Niewykonalne
-      start_spending_proposal: Utwórz projekt inwestycyjny
-    new:
-      more_info: Jak działa budżetowanie partycypacyjne?
-      recommendation_one: Obowiązkowe jest, aby wniosek odwoływał się do działania podlegającego procedurze budżetowej.
-      recommendation_three: Spróbuj opisać swoją propozycję wydatków, aby zespół oceniający zrozumiał Twoje myślenie.
-      recommendation_two: Wszelkie propozycje lub komentarze sugerujące nielegalne działania zostaną usunięte.
-      recommendations_title: Jak utworzyć propozycję wydatków
-      start_new: Utwórz wniosek wydatkowy
-    show:
-      author_deleted: Użytkownik usunięty
-      code: "Kod wniosku:"
-      share: Udostępnij
-    wrong_price_format: Tylko liczby całkowite
-    spending_proposal:
-      spending_proposal: Projekt inwestycyjny
-      already_supported: Już to poparłeś. Udostępnij to!
-      support: Poparcie
-      support_title: Wesprzyj ten projekt
-      supports:
-        zero: Brak poparcia
-        one: 1 popierający
-        few: "%{count} popierających"
-        many: "%{count} popierających"
-        other: "%{count} popierających"
   stats:
     index:
       visits: Odwiedziny
@@ -795,12 +739,6 @@ pl:
     unauthenticated: Aby kontynuować, musisz %{signin} lub %{signup}.
     verified_only: Tylko zweryfikowani użytkownicy mogą głosować na propozycje; %{verify_account}.
     verify_account: zweryfikuj swoje konto
-    spending_proposals:
-      not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
-      not_verified: Tylko zweryfikowani użytkownicy mogą głosować na propozycje; %{verify_account}.
-      organization: Organizacje nie mogą głosować
-      unfeasible: Nie można zrealizować niemożliwych do zrealizowania projektów inwestycyjnych
-      not_voting_allowed: Faza głosowania jest zamknięta
     budget_investments:
       not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
       not_verified: Tylko zweryfikowani użytkownicy mogą głosować na projekty inwestycyjne; %{verify_account}.
