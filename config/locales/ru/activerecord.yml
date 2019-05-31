@@ -1,4 +1,8 @@
 ru:
+  attributes:
+    results_enabled: "Показать результаты"
+    stats_enabled: "Показать статистику"
+    advanced_stats_enabled: "Показать расширенную статистику"
   activerecord:
     models:
       activity:
@@ -101,6 +105,11 @@ ru:
         few: "сотрудники"
         many: "сотрудники"
         other: "офицеры"
+      poll/ballot_sheet:
+        one: Бюллетень
+        few: Бюллетени
+        many: Бюллетени
+        other: Бюллетени
       proposal:
         one: "Предложение гражданина"
         few: "Предложения граждан"
@@ -126,6 +135,11 @@ ru:
         few: Пользовательские блоки содержимого
         many: Пользовательские блоки содержимого
         other: Пользовательские блоки содержимого
+      document:
+        one: Документ
+        few: Документы
+        many: Документы
+        other: Документы
       legislation/process:
         one: "Процесс"
         few: "Процессы"
@@ -181,6 +195,21 @@ ru:
         few: "Уведомления о предложениях"
         many: "Уведомления о предложениях"
         other: "Уведомления о предложениях"
+      dashboard/action:
+        one: Действие панели управления предложением
+        few: Действия панели управления предложением
+        many: Действия панели управления предложением
+        other: Действия панели управления предложением
+      dashboard/administrator_task:
+        one: Задача
+        few: Задачи
+        many: Задачи
+        other: Задачи
+      link:
+        one: Ссылка
+        few: Ссылки
+        many: Ссылки
+        other: Ссылки
     attributes:
       budget:
         name: "Имя"
@@ -280,6 +309,10 @@ ru:
         external_url: "Ссылка на дополнительную документацию"
       poll/question/translation:
         title: "Вопрос"
+      poll/ballot_sheet:
+        data: Данные в CSV
+        poll_id: Голосование
+        officer_assignment_id: Назначение служащего
       signature_sheet:
         signable_type: "Тип подписываемого"
         signable_id: "Подписываемое ID"
@@ -393,6 +426,11 @@ ru:
         link_text: Текст ссылки
       widget/feed:
         limit: Количество предметов
+      dashboard/action:
+        title: Заголовок
+        short_description: Краткое описание
+        description: Описание
+        link: Внешняя ссылка
     errors:
       models:
         user:
