@@ -62,9 +62,6 @@ gl:
       create_proposal: Crear proposta
       print_proposals: Imprimir propostas
       support_proposals: Apoiar propostas*
-      create_spending_proposal: Crear unha proposta de gasto
-      print_spending_proposals: Imprimir propostas de investimento
-      support_spending_proposals: Apoiar propostas de investimento
       create_budget_investment: Crear investimento orzamentario
       print_budget_investments: Imprimir investimentos orzamentarios
       support_budget_investments: Apoiar investimentos orzamentarios
@@ -79,7 +76,6 @@ gl:
     print:
       proposals_info: Crea a túa proposta en http://url.consul
       proposals_title: "Propostas:"
-      spending_proposals_info: Participa en http://decide.madrid.es
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta información
     proposals:
@@ -105,18 +101,6 @@ gl:
       filters:
         heading: Concepto
         unfeasible: Proxectos non factibles
-      print:
-        print_button: Imprimir
-      search_results:
-        one: " conteñen os termos '%{search_term}'"
-        other: " conteñen os termos '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Este usuario non ten a conta verificada
-      create: Crear unha proposta de gasto
-      filters:
-        unfeasible: Propostas de investimento non viables
-        by_geozone: "Propostas de investimento con zona: %{geozone}"
       print:
         print_button: Imprimir
       search_results:
