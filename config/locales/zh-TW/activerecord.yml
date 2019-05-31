@@ -41,8 +41,6 @@ zh-TW:
         other: "職員"
       proposal:
         other: "公民提議"
-      spending_proposal:
-        other: "投資項目"
       site_customization/page:
         other: 自訂頁
       site_customization/image:
@@ -136,13 +134,6 @@ zh-TW:
       organization:
         name: "組織名稱"
         responsible_name: "組織的負責人"
-      spending_proposal:
-        administrator_id: "管理員"
-        association_name: "協會名稱"
-        description: "描述"
-        external_url: "鏈接到額外文檔"
-        geozone_id: "經營範圍"
-        title: "標題"
       poll:
         name: "名字"
         starts_at: "開始日期"
