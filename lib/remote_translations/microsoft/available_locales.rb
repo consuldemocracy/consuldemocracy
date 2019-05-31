@@ -3,13 +3,15 @@ require "uri"
 require "cgi"
 require "json"
 
-module RemoteTranslations::Microsoft::AvailableLocales
+class RemoteTranslations::Microsoft::AvailableLocales
 
-  def load_remote_locales
-    remote_available_locales.map { |locale| locale.first }
+  def self.available_locales
+    daily_cache("locales") do
+      remote_available_locales.map { |locale| locale.first }
+    end
   end
 
-  def parse_locale(locale)
+  def self.parse_locale(locale)
     case locale
     when :"pt-BR"
       :pt
@@ -22,9 +24,13 @@ module RemoteTranslations::Microsoft::AvailableLocales
     end
   end
 
+  def self.include_locale?(locale)
+    available_locales.include?(parse_locale(locale).to_s)
+  end
+
   private
 
-    def remote_available_locales
+    def self.remote_available_locales
       host = "https://api.cognitive.microsofttranslator.com"
       path = "/languages?api-version=3.0"
 
@@ -40,6 +46,10 @@ module RemoteTranslations::Microsoft::AvailableLocales
       result = response.body.force_encoding("utf-8")
 
       JSON.parse(result)["translation"]
+    end
+
+    def self.daily_cache(key, &block)
+      Rails.cache.fetch("remote_available_locales/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &block)
     end
 
 end

@@ -106,7 +106,7 @@ de:
           confidence_score: am besten bewertet
           price: nach Preis
       share:
-        message: "Ich habe einen Ausgabenvorschlag %{title} in %{org} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
+        message: "Ich habe einen Ausgabenvorschlag %{title} in %{handle} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
         author_deleted: Benutzer gelöscht
         price_explanation: Preiserklärung

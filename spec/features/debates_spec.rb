@@ -21,6 +21,14 @@ feature "Debates" do
                     "edit_debate_path",
                     %w[title],
                     { "description" => :ckeditor }
+    it_behaves_like "remotely_translatable",
+                    :debate,
+                    "debates_path",
+                    {}
+    it_behaves_like "remotely_translatable",
+                    :debate,
+                    "debate_path",
+                    { "id": "id" }
   end
 
   scenario "Index" do
