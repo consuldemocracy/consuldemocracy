@@ -157,7 +157,6 @@ zh-CN:
       page_title: "%{budget}- 结果"
       heading: "参与性预算结果"
       heading_selection_title: "按区域"
-      spending_proposal: 提议标题
       ballot_lines_count: 投票
       hide_discarded_link: 隐藏放弃的
       show_all_link: 显示所有
