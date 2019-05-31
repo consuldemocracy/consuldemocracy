@@ -179,7 +179,6 @@ nl:
     policy: Privacy Verklaring
     proposal: Voorstel
     proposal_notification: "Melding"
-    spending_proposal: Investering
     budget/investment: Investering
     budget/group: Budgetgroep
     budget/heading: Budget onderdeel
@@ -193,7 +192,6 @@ nl:
     image: Afbeelding
   geozones:
     none: Hele stad
-    all: Alle bereiken
   layouts:
     application:
       chrome: Google Chrome
@@ -233,7 +231,6 @@ nl:
       proposals: Voorstellen
       poll_questions: Stemmen
       budgets: Participatory budgeting
-      spending_proposals: Investeringen
       notification_item:
         new_notifications:
           one: U heeft een nieuwe melding
@@ -593,7 +590,6 @@ nl:
     unflag: Hef markering op
     unfollow_entity: "Ontvolg %{entity}"
     outline:
-      budget: Participatieve begroting
       searcher: Zoeker
     go_to_page: "Ga naar de pagina van "
     share: Deel
@@ -616,54 +612,6 @@ nl:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Voeg hier de naam toe als u een voorstel doet namens een vereniging of collectief"
-      association_name: "Verenigingsnaam"
-      description: Beschrijving
-      external_url: Link naar meer informatie
-      geozone: Betreffende regio
-      submit_buttons:
-        create: Voeg toe
-        new: Maak
-      title: Titel begrotingsvoorstel
-    index:
-      title: Burgerbegrotingen
-      unfeasible: Unfeasible investment projects
-      by_geozone: "Investment projects with scope: %{geozone}"
-      search_form:
-        button: Search
-        placeholder: Begrotingsvoorstellen...
-        title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
-      sidebar:
-        geozones: Betreffende regio
-        feasibility: Feasibility
-        unfeasible: Unfeasible
-      start_spending_proposal: Initieer een begrotingsvoorstel
-    new:
-      more_info: Hoe werkt een burgerbegroting?
-      recommendation_one: Het voorstel moet refereren aan een begrootbare activiteit.
-      recommendation_three: Geef voldoende en gedetailleerde informatie, zodat de beoordelingscommissie goed begrijpt waar het over gaat.
-      recommendation_two: Voorstellen die illegale activiteiten stimuleren worden verwijderd.
-      recommendations_title: Hoe doet u een begrotingsvoorstel
-      start_new: Create spending proposal
-    show:
-      author_deleted: Gebruiker verwijderd
-      code: "Voorstel code:"
-      share: Deel
-    wrong_price_format: Alleen hele nummers
-    spending_proposal:
-      spending_proposal: Investment project
-      already_supported: U heeft dit al gestuend. Deel 't!
-      support: Support
-      support_title: Steun dit voorstel
-      supports:
-        zero: Geen steunbetuigingen
-        one: 1 steunbetuiging
-        other: "%{count} steunbetuigingen"
   stats:
     index:
       visits: Visits
@@ -741,12 +689,6 @@ nl:
     unauthenticated: Je moet %{signin} of %{signup} om verder te gaan.
     verified_only: Alleen geverifieerde deelnemers kunnen stemmen op voorstellen; %{verify_account}.
     verify_account: je account verifieren
-    spending_proposals:
-      not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
-      not_verified: Alleen geverifieerde gebruikers kunnen stemmen op voorstellen; %{verify_account}.
-      organization: Organisaties mogen niet stemmen
-      unfeasible: Onhaalbare voorstellen kunnen niet worden gesteund
-      not_voting_allowed: Stemronde is gesloten
     budget_investments:
       not_logged_in: Je moet %{signin} of %{signup} om verder te gaan.
       not_verified: Alleen geverifieerde gebruikers mogen stemmen op begrotingsvoorstellen; %{verify_account}.
