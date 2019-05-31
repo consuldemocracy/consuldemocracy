@@ -502,6 +502,7 @@ ru:
       ideal_time: Идеальное время
     community:
       access_community: Доступ к сообществу
+      latest_activity: "Свежая активность в сообществе: %{at}"
       participants: Участники
       debates: Дебаты
       comments: Комментарии
@@ -510,6 +511,11 @@ ru:
       index:
         title: Голосования
         create: Создать голосование
+        count:
+          one: Вы создали %{count} голосование.
+          few: Вы создали %{count} голосований.
+          many: Вы создали %{count} голосований.
+          other: Вы создали %{count} голосований.
         links: Ссылки
         additiontal_information: Дополнительная информация
       new:
@@ -536,6 +542,8 @@ ru:
     poster:
       index:
         title: Предпросмотр анонса
+        poster_title: "Не продолжать просмотр,"
+        poster_subtitle: "создать резервную копию! ;)"
         support: Поддержать мое предложение
       new:
         title: Анонс вашего предложения
@@ -545,11 +553,18 @@ ru:
     mailing:
       index:
         title: Предпросмотр e-mail
+      new:
+        title: Модель e-mail для распространения
       mailing_options:
+        send: Отправить на %{address}
         preview: Предпросмотр
+      create:
+        sent: E-mail отправлено
     mailer:
       forward:
+        subtitle_html: "Мы добьемся результата<br>при вашей поддержке."
         support_button: Поддержать это предложение
+        share_in: Поделиться в
         hi: "Здравствуйте!"
   polls:
     all: "Все"
@@ -604,6 +619,7 @@ ru:
         total_votes: "Общее количество поданых голосов"
         votes: "ГОЛОСА"
         web: "СЕТЬ"
+        mail: "ПОЧТА"
         booth: "КАБИНКА"
         total: "ВСЕГО"
         valid: "Верно"
