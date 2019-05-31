@@ -472,8 +472,6 @@ tr:
           back: Geri
           id: Kimlik
           supports: Tam destek
-          select: Seç
-          selected: Seçilmiş
         form:
           custom_categories: Kategoriler
           custom_categories_description: Kullanıcıların öneri oluşturmayı seçebileceği kategoriler. Kategori başına maksimum 160 karakter.
