@@ -62,9 +62,6 @@ sv:
       create_proposal: Skapa förslag
       print_proposals: Skriv ut förslag
       support_proposals: Stödja förslag
-      create_spending_proposal: Skapa budgetförslag
-      print_spending_proposals: Skriv ut budgetförslag
-      support_spending_proposals: Stöd budgetförslag
       create_budget_investment: Skapa budgetförslag
       print_budget_investments: Skriv ut budgetförslag
       support_budget_investments: Stöd budgetförslag
@@ -79,7 +76,6 @@ sv:
     print:
       proposals_info: Skapa ditt förslag på http://url.consul
       proposals_title: "Förslag:"
-      spending_proposals_info: Delta på http://url.consul
       budget_investments_info: Delta på http://url.consul
     print_info: Skriv ut informationen
     proposals:
@@ -105,18 +101,6 @@ sv:
       filters:
         heading: Koncept
         unfeasible: Ej genomförbara budgetförslag
-      print:
-        print_button: Skriv ut
-      search_results:
-        one: " som innehåller '%{search_term}'"
-        other: " som innehåller '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Användare är inte verifierad
-      create: Skapa budgetförslag
-      filters:
-        unfeasible: Ej genomförbara budgetförslag
-        by_geozone: "Budgetförslag för område: %{geozone}"
       print:
         print_button: Skriv ut
       search_results:
