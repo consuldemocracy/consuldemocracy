@@ -62,9 +62,6 @@ cs:
       create_proposal: Vytvořit návrh
       print_proposals: Tisk návrhů
       support_proposals: Podpora návrhů
-      create_spending_proposal: Vytvořit nový návrh
-      print_spending_proposals: Vytiskněte návrhy výdajů
-      support_spending_proposals: Podpořte návrhy výdajů
       create_budget_investment: Přidat investiční projekt
       print_budget_investments: Tisk investic rozpočtu
       support_budget_investments: Podpora investic rozpočtu
@@ -79,7 +76,6 @@ cs:
     print:
       proposals_info: Vytvořte svůj návrh na http://url.consul
       proposals_title: "Návrhy:"
-      spending_proposals_info: Zapojte se na http://url.consul
       budget_investments_info: Zapojte se na http://url.consul
     print_info: Vytisknout tuto informaci
     proposals:
@@ -105,15 +101,6 @@ cs:
       filters:
         heading: Koncepce
         unfeasible: Nerealizovatelná investuce
-      print:
-        print_button: Tisk
-    spending_proposals:
-      alert:
-        unverified_user: Uživatel není ověřen
-      create: Vytvořit návrh výdajů
-      filters:
-        unfeasible: Nerealizovatelné investiční projekty
-        by_geozone: "Investiční projekty s působností: %{geozone}"
       print:
         print_button: Tisk
     sessions:
