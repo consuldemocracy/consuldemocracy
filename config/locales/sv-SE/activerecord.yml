@@ -64,9 +64,6 @@ sv:
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
-      spending_proposal:
-        one: "Budgetförslag"
-        other: "Budgetförslag"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -185,13 +182,6 @@ sv:
       organization:
         name: "Organisationsnamn"
         responsible_name: "Representant för gruppen"
-      spending_proposal:
-        administrator_id: "Administratör"
-        association_name: "Föreningens namn"
-        description: "Beskrivning"
-        external_url: "Länk till ytterligare dokumentation"
-        geozone_id: "Område"
-        title: "Titel"
       poll:
         name: "Namn"
         starts_at: "Startdatum"
