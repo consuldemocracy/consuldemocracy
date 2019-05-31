@@ -137,7 +137,7 @@ es:
       polls_description: "Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa"
       budgets: "Presupuestos participativos"
       budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto"
-      legislation: "Legislación"
+      legislation: "Legislación colaborativa"
       legislation_description: "En los procesos participativos se ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la sociedad y de dar su opinión sobre ciertas actuaciones que se tiene previsto llevar a cabo"
     html:
       per_page_code_head: "Código a incluir en cada página (<head>)"

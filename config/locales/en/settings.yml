@@ -137,7 +137,7 @@ en:
       polls_description:  "Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions"
       budgets: "Participatory budgeting"
       budgets_description: "With participatory budgets, citizens decide which projects presented by their neighbours will receive a part of the budget"
-      legislation: "Legislation"
+      legislation: "Collaborative Legislation"
       legislation_description: "In participatory processes, citizens are offered the opportunity to participate in the drafting and modification of regulations that affect the society and to give their opinion on certain actions that are planned to be carried out"
     html:
       per_page_code_head: "Code to be included on every page (<head>)"
