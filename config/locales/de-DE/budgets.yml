@@ -163,7 +163,6 @@ de:
       page_title: "%{budget} - Ergebnisse"
       heading: "Ergebnisse des Bürgerhaushalts"
       heading_selection_title: "Nach Bezirk"
-      spending_proposal: Titel des Vorschlages
       ballot_lines_count: Stimmen
       hide_discarded_link: Verworfene ausblenden
       show_all_link: Alle anzeigen
