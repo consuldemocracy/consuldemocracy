@@ -67,9 +67,6 @@ el:
       proposal:
         one: "Πρόταση πολίτη"
         other: "Πρόταση πολίτη"
-      spending_proposal:
-        one: "Επενδυτικό έργο"
-        other: "Επενδυτικά έργα"
       site_customization/page:
         one: Προσαρμοσμένη σελίδα
         other: Προσαρμοσμένες σελίδες
@@ -198,13 +195,6 @@ el:
       organization:
         name: "Επωνυμία οργανισμού"
         responsible_name: "Υπεύθυνος ομάδας"
-      spending_proposal:
-        administrator_id: "Διαχειριστής"
-        association_name: "Όνομα οργανισμού"
-        description: "Περιγραφή"
-        external_url: "Σύνδεσμος πρόσθετης τεκμηρίωσης"
-        geozone_id: "Πεδίο Δράσεως"
-        title: "Τίτλος"
       poll:
         name: "Όνομα"
         starts_at: "Ημερομηνία έναρξης"
