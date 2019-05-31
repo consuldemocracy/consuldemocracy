@@ -19,12 +19,6 @@ ca:
       new_reply_by_html: Hi ha una nova resposta de <b>%{commenter}</b> al teu comentari en
       subject: Algú ha respost al teu comentari
       title: Nova resposta al teu comentari
-    unfeasible_spending_proposal:
-      hi: "Benvolgut usuari,"
-      new_href: "nova proposta d'inversió"
-      sincerely: "Atentament"
-      sorry: "Sentim les molèsties ocasionades i tornem a donar-te les gràcies per la teua inestimable participació."
-      subject: "La teua proposta d'inversió '%{code}' ha sigut marcada com a inviable"
     proposal_notification_digest:
       info: "A continuació et mostrem les noves notificacions que han publicat els autors de les propostes que estàs avalant en %{org_name}."
       title: "Notificacions de propostes en %{org_name}"
