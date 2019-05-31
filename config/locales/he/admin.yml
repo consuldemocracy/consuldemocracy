@@ -561,8 +561,6 @@ he:
           back: חזרה
           id: מזהה
           supports: לחיצה לתמיכה
-          select: בחר
-          selected: נבחר
         form:
           custom_categories: תחומים
           custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
