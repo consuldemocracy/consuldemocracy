@@ -555,8 +555,6 @@ el:
           back: Πίσω
           id: Id
           supports: Όλες οι υποστηρίξεις
-          select: Επιλέξτε
-          selected: Επιλεγμένο
         form:
           custom_categories: Κατηγορίες
           custom_categories_description: Κατηγορίες που μπορούν να επιλέξουν οι χρήστες δημιουργώντας την πρόταση. Μαξ 160 χαρακτήρες.
