@@ -172,7 +172,6 @@ zh-TW:
     policy: 隱私政策
     proposal: 建議
     proposal_notification: "通知"
-    spending_proposal: 開支建議
     budget/investment: 投資
     budget/heading: 預算標題
     poll/shift: 輪班
@@ -185,7 +184,6 @@ zh-TW:
     image: 圖像
   geozones:
     none: 所有城市
-    all: 所有範圍
   layouts:
     application:
       chrome: Google Chrome
@@ -225,7 +223,6 @@ zh-TW:
       proposals: 建議
       poll_questions: 投票中
       budgets: 參與性預算編制
-      spending_proposals: 開支建議
       notification_item:
         new_notifications:
           other: 您有%{count} 個新通知
@@ -570,7 +567,6 @@ zh-TW:
     unflag: 取消標記
     unfollow_entity: "取消跟隨%{entity}"
     outline:
-      budget: 參與性預算
       searcher: 搜尋者
     go_to_page: "轉到頁面 "
     share: 共用
@@ -593,52 +589,6 @@ zh-TW:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "如果您以協會或集體的名義提建議，請在這裡添加名稱"
-      association_name: "協會名稱"
-      description: 說明
-      external_url: 鏈接到額外文檔
-      geozone: 經營範圍
-      submit_buttons:
-        create: 創建
-        new: 創建
-      title: 開支建議標題
-    index:
-      title: 參與式預算編制
-      unfeasible: 不可行投資項目
-      by_geozone: "投資項目範圍：%{geozone}"
-      search_form:
-        button: 搜尋
-        placeholder: 投資項目...
-        title: 搜尋
-      search_results:
-        other: " 包含術語'%{search_term}'"
-      sidebar:
-        geozones: 經營範圍
-        feasibility: 可行性
-        unfeasible: 不可行
-      start_spending_proposal: 創建一個投資項目
-    new:
-      more_info: 參與性預算如何運作？
-      recommendation_one: 建議必須提及的一個可預算的行動。
-      recommendation_three: 在描述您的開支建議時，嘗試詳細說明，以便審查小組能明白您的觀點。
-      recommendation_two: 任何暗示非法行為的建議或評論都將被刪除。
-      recommendations_title: 如何創建一個開支建議
-      start_new: 創建開支建議
-    show:
-      author_deleted: 用戶已刪除
-      code: "建議編號："
-      share: 共用
-    wrong_price_format: 只供整數
-    spending_proposal:
-      spending_proposal: 投資項目
-      already_supported: 你已經支持此項目。 把它分享吧！
-      support: 支持
-      support_title: 支持此項目
-      supports:
-        zero: 沒有支持
-        other: "%{count} 個支持"
   stats:
     index:
       visits: 訪問
@@ -711,12 +661,6 @@ zh-TW:
     unauthenticated: 您必須%{signin} 或%{signup} 才能繼續。
     verified_only: 只有已核實的用戶才能對建議投票；%{verify_account}。
     verify_account: 核實您的帳戶
-    spending_proposals:
-      not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
-      not_verified: 只有已核實的用戶才能對建議投票；%{verify_account}。
-      organization: 組織不允許投票
-      unfeasible: 不可行的投資項目不能獲得支持
-      not_voting_allowed: 投票階段已結束
     budget_investments:
       not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
       not_verified: 只有已核實的用戶才能對投資項目投票；%{verify_account}。
