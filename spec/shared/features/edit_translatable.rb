@@ -354,6 +354,52 @@ shared_examples "edit_translatable" do |factory_name, path_name, input_fields, t
         expect(page).to have_content "1 language in use"
       end
     end
+
+    context "When translation interface feature setting" do
+      describe "At frontend" do
+        before do
+          unless front_end_path_to_visit?(path_name)
+            skip "When path is from backend"
+          end
+        end
+
+        scenario "Is enabled translation interface should be rendered" do
+          visit path
+
+          expect(page).to have_css ".globalize-languages"
+        end
+
+        scenario "Is disabled translation interface should not be rendered" do
+          Setting["feature.translation_interface"] = nil
+
+          visit path
+
+          expect(page).not_to have_css ".globalize-languages"
+        end
+      end
+
+      describe "At backend" do
+        before do
+          if front_end_path_to_visit?(path_name)
+            skip "When path is from frontend"
+          end
+        end
+
+        scenario "Is enabled translation interface should be rendered" do
+          visit path
+
+          expect(page).to have_css ".globalize-languages"
+        end
+
+        scenario "Is disabled translation interface should be rendered" do
+          Setting["feature.translation_interface"] = nil
+
+          visit path
+
+          expect(page).to have_css ".globalize-languages"
+        end
+      end
+    end
   end
 end
 
