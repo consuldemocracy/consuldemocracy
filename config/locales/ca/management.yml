@@ -49,9 +49,6 @@ ca:
       create_proposal: crear proposta
       print_proposals: Imprimir propostes
       support_proposals: Donar suport propostes
-      create_spending_proposal: Crear proposta d'inversió
-      print_spending_proposals: Imprimir propts. d'inversió
-      support_spending_proposals: Donar suport propts. d'inversió
       create_budget_investment: Crear projectes d'inversió
     permissions:
       create_proposals: Crear noves propostes
@@ -60,7 +57,6 @@ ca:
       vote_proposals: Participar en les votacions finals
     print:
       proposals_title: "propostes:"
-      spending_proposals_info: 'Participa a http: //url.consul'
       budget_investments_info: 'Participa a http: //url.consul'
     print_info: Imprimir aquesta informació
     proposals:
@@ -81,18 +77,6 @@ ca:
         unverified_user: Aquest usuari no està verificat
       filters:
         unfeasible: Projectes no factibles
-      print:
-        print_button: Imprimir
-      search_results:
-        one: " que contenen '%{search_term}'"
-        other: " que contenen '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Aquest usuari no està verificat
-      create: Crear proposta d'inversió
-      filters:
-        unfeasible: Propostes d'inversió no viables
-        by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
       print:
         print_button: Imprimir
       search_results:
