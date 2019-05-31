@@ -20,13 +20,6 @@ zh-TW:
       new_reply_by_html: <b>%{commenter}</b>對您的評論有新的回覆
       subject: 有人回覆了您的評論
       title: 對您的評論的新回覆
-    unfeasible_spending_proposal:
-      hi: "親愛的用戶，"
-      new_html: "僅此，我們邀請您詳細說明一個<strong>新建議</strong>，以符合此進程的條件。 您可以按照以下鏈接執行此操作：%{url}。"
-      new_href: "新投資項目"
-      sincerely: "真誠的"
-      sorry: "很抱歉給您帶來不便，我們再次感謝您的寶貴參與。"
-      subject: "您的投資項目'%{code}'已被標記為不可行"
     proposal_notification_digest:
       info: "以下是您在%{org_name} 中支持的建議的作者發佈的新通知。"
       title: "在%{org_name} 中的建議通知"
