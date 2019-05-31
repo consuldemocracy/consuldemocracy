@@ -93,11 +93,6 @@ da:
       featured_proposals_description: "Viser udvalgte forslag på indeks"
       signature_sheets: "Signaturark"
       signature_sheets_description: "Det giver mulighed for at tilføje underskrifter fra Administrationspanelet indsamlet fysisk i forbindelse med Borgerforslag og investeringsforslag til deltagerbudgetter"
-      spending_proposals: "Udgiftsforslag"
-      spending_proposals_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
-      spending_proposal_features:
-        voting_allowed: Stem på investeringsprojekter - forhåndsudvælgelsesfase
-        voting_allowed_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
       user:
         recommendations: "Anbefalinger"
         recommendations_description: "Viser brugeranbefalinger på startsiden baseret på hashtags og følgere"
