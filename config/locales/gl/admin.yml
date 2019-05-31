@@ -472,8 +472,6 @@ gl:
           back: Volver
           id: Id
           supports: Apoios
-          select: Seleccionar
-          selected: Seleccionadas
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que o usuario pode seleccionar o crear a proposta.
