@@ -461,8 +461,6 @@ cs:
           back: Zpět
           id: Id
           supports: Podpora
-          select: Vybrat
-          selected: Vybrané
         form:
           custom_categories: Kategorie
           custom_categories_description: Kategorie, které uživatelé mohou vybrat při vytvoření návrhu.
