@@ -537,8 +537,6 @@ da:
           back: Tilbage
           id: ID
           supports: Samlet støtte
-          select: Vælg
-          selected: Valgt
         form:
           custom_categories: Kategorier
           custom_categories_description: Kategorier, som brugere kan vælge ved oprettelse af borgerforslag. Max 160 tegn pr. kategori.
