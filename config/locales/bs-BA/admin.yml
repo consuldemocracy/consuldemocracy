@@ -558,8 +558,6 @@ bs:
           back: Nazad
           id: Identifikacioni broj
           supports: Ukupna podrška
-          select: Odaberi
-          selected: Odabrano
         form:
           custom_categories: Kategorije
           custom_categories_description: Kategorije koje korisnici mogu odabrati za pravljenje prijedloga. Maksimalno 160 karaktera.
