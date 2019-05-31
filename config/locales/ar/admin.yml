@@ -558,8 +558,6 @@ ar:
           back: عودة
           id: Id
           supports: دعم
-          select: حدّد
-          selected: محدّد
         form:
           custom_categories: فئات
           custom_categories_description: الفئات أن يمكن للمستخدمين تحديدها لإنشاء مقترح.
