@@ -179,7 +179,6 @@ so:
     policy: Qaanuunka Arrimaha Khaaska ah
     proposal: Sojeedin
     proposal_notification: "Ogaysiis"
-    spending_proposal: Soo jeedinta qarashka
     budget/investment: Maalgashi
     budget/heading: Ciwaanka misaniyada
     poll/shift: Wareeg
@@ -192,7 +191,6 @@ so:
     image: Sawiir
   geozones:
     none: Dhaman magaloyinka
-    all: Dhaman baxadaha
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +230,6 @@ so:
       proposals: Sojeedino
       poll_questions: Codeynta
       budgets: Misaaniyada kaqayb qadashada
-      spending_proposals: Soo-jeedinta Kharashka
       notification_item:
         new_notifications:
           one: Waxaad heysataa ogeysiis cusub
@@ -592,7 +589,6 @@ so:
     unflag: Foolxumo
     unfollow_entity: "Lama socdaan\n%{entity}"
     outline:
-      budget: Misaaniyada kaqayb qadashada
       searcher: Raadiye
     go_to_page: "Tag bogga "
     share: Lawadag
@@ -615,54 +611,6 @@ so:
     whatsapp: Wat isaaab
     telegram: "%{org} telegaraam"
     instagram: "%{org} istigraam"
-  spending_proposals:
-    form:
-      association_name_label: "Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan"
-      association_name: "Magaca ururka"
-      description: Sharaxaad
-      external_url: Isku xirka dukumentiyada dheeraadka ah
-      geozone: Baxada Hawlgalka
-      submit_buttons:
-        create: Abuur
-        new: Abuur
-      title: Soo jeedinta hindisaha
-    index:
-      title: Misaaniyada kaqayb qadashada
-      unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
-      by_geozone: "Baxaada mashruuca malgashiga%{geozone}"
-      search_form:
-        button: Raadin
-        placeholder: Mashariicda malgashiga...
-        title: Raadin
-      search_results:
-        one: " oo ku jira ereyga'%{search_term}"
-        other: " oo ku jira ereyga'%{search_term}"
-      sidebar:
-        geozones: Baxada Hawlgalka
-        feasibility: Suurta galnimada
-        unfeasible: An surtgak ahayn
-      start_spending_proposal: Abaabul mashruuc maalgashi
-    new:
-      more_info: Sidee ayay miisaaniyad-dejinta uga qaybqaadataa?
-      recommendation_one: Waa khasab in hindise-soo-jeedinta ay tixraac ku tahay tallaabada miisaaniyadda.
-      recommendation_three: Isku day inaad tagto faahfaahinta markaad sharaxdo soo jeedintaada kharashka si markaa kooxda dib u eegista ay fahmaan qodobadaada.
-      recommendation_two: Soo jeedinta ama faallooyinka soo jeedinaya tallaabo sharci ah ayaa lagu tirtiri doonaa.
-      recommendations_title: Sida loo abuuro soo jeedinta kharashka
-      start_new: Samee qorshaha kharashad
-    show:
-      author_deleted: Isticmalaha la tirtiray
-      code: "Talo soo jeedin:"
-      share: Lawadag
-    wrong_price_format: Tirooyinka keliya e isku dhafka ah
-    spending_proposal:
-      spending_proposal: Mashruuca Malgelinta
-      already_supported: Waxaad hore u taageertay kan. La wadaag!
-      support: Tageero
-      support_title: Tageer Mashruucaan
-      supports:
-        zero: Tageero la an
-        one: 1 tagere
-        other: "%{count} tagerayal"
   stats:
     index:
       visits: Boqashooyinka
@@ -740,12 +688,6 @@ so:
     unauthenticated: Waa inad igu %{signin} ama%{signup} si wada.
     verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
     verify_account: hubi xisaabtaada
-    spending_proposals:
-      not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
-      not_verified: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
-      organization: Ururada loma fasixin iney codeyaan
-      unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
-      not_voting_allowed: Heerka codbixinta waa la xiray
     budget_investments:
       not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
       not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara Mashariicdamaalgashiga; %{verify_account}.
