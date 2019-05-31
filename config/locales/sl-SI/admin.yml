@@ -421,7 +421,6 @@ sl:
       officials: Uradniki
       organizations: Organizacije
       settings: Konfiguracijske nastavitve
-      spending_proposals: Predlogi porabe
       stats: Statistika
       signature_sheets: Podpisni listi
       site_customization:
@@ -430,7 +429,6 @@ sl:
         images: Slike po meri
         content_blocks: Bloki vsebine po meri
       title_moderated_content: Moderirana vsebina
-      title_budgets: Proračuni
       title_profiles: Profili
       title_site_customization: Prilagajanje spletnega mesta
       legislation: Kolaborativna zakonodaja
@@ -521,15 +519,6 @@ sl:
         delete: Izbriši
       search:
         title: "Cenilci: Išči uporabnika/-co"
-      summary:
-        title: Povzetek vrednotenja naložbenih projektov
-        valuator_name: Cenilec
-        finished_and_feasible_count: Končani in izvedljivi
-        finished_and_unfeasible_count: Končani in neizvedljivi
-        finished_count: Končani
-        in_evaluation_count: V vrednotenju
-        total_count: Skupaj
-        cost: Cena
       form:
         edit_title: "Cenilci: Uredi cenilce"
         update: "Posodobi cenilca"
@@ -854,9 +843,6 @@ sl:
       proposal_search:
         button: Išči
         placeholder: Išči predloge po naslovu, kodi, opisu ali vprašanju
-      spending_proposal_search:
-        button: Išči
-        placeholder: Išči predloge porabe po naslovu ali opisu
       user_search:
         button: Išči
         placeholder: Išči uporabnika/-co po imenu ali e-naslovu
@@ -867,62 +853,6 @@ sl:
       description: Opis
       image: Slika
       show_image: Pokaži sliko
-    spending_proposals:
-      index:
-        geozone_filter_all: Vse cone
-        administrator_filter_all: Vsi administratorji
-        valuator_filter_all: Vsi cenilci
-        tags_filter_all: Vse oznake
-        filters:
-          valuation_open: Odprto
-          without_admin: Brez dodeljenega admina
-          managed: Upravljan
-          valuating: Se vrednoti
-          valuation_finished: Vrednotenje končano
-          all: Vsi
-        title: Naložbeni projekti za participatorni proračun
-        assigned_admin: Dodeljen administrator
-        no_admin_assigned: Ni dodeljenega administratorja
-        no_valuators_assigned: Ni dodeljenih cenilcev
-        summary_link: "Povzetek naložbenega projekta"
-        valuator_summary_link: "Povzetek cenilca"
-        feasibility:
-          feasible: "Izvedljivo (%{price})"
-          not_feasible: "Neizvedljivo"
-          undefined: "Nedefinirano"
-      show:
-        assigned_admin: Dodeljen administrator
-        assigned_valuators: Dodeljeni cenilci
-        back: Nazaj
-        classification: Klasifikacija
-        heading: "Naložbeni projekt %{id}"
-        edit: Uredi
-        edit_classification: Uredi klasifikacijo
-        association_name: Organizacija
-        by: Od
-        sent: Poslano
-        geozone: Obseg
-        dossier: Dosje
-        edit_dossier: Uredi dosje
-        tags: Oznake
-        undefined: Nedefinirano
-      edit:
-        classification: Klasifikacija
-        assigned_valuators: Cenilci
-        submit_button: Posodobi
-        tags: Oznake
-        tags_placeholder: "Napiši oznake in jih loči z vejico (,)"
-        undefined: Nedefinirano
-      summary:
-        title: Povzetek za naložbene projekte
-        title_proposals_with_supports: Povzetek za naložbene projekte s podporniki
-        geozone_name: Obseg
-        finished_and_feasible_count: Končani in izvedljivi
-        finished_and_unfeasible_count: Končani in neizvedljivi
-        finished_count: Končani
-        in_evaluation_count: V postopku vrednotenja
-        total_count: Skupaj
-        cost_for_geozone: Cena
     geozones:
       index:
         title: Geocona
@@ -976,7 +906,6 @@ sl:
           proposals: Predlogi
           budgets: Odprti proračuni
           budget_investments: Naložbeni projekti
-          spending_proposals: Predlogi porabe
           unverified_users: Nepreverjeni uporabniki
           user_level_three: Uporabniki tretjega nivoja
           user_level_two: Uporabniki drugega nivoja
