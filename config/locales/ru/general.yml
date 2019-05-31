@@ -211,6 +211,23 @@ ru:
     application:
       ie: Мы обнаружили, что вы используете Internet Explorer. Для лучшей работы с сайтом, мы рекомендуем вам использовать %{firefox} или %{chrome}.
       ie_title: Этот сайт не оптимизирован для вашего браузера
+    dashboard:
+      proposal_header:
+        published: Опубликовано
+        draft: Черновик
+        retired: Утратил силу
+      proposal_totals:
+        active_resources: Активные ресурсы
+        community: Участники в вашем сообществе
+        show_proposal: Показать предложение
+        preview_proposal: Предпросмотр предложения
+        current_goal: Текущая цель
+        supports:
+          zero: Нет поддержек
+          one: 1 Поддержка
+          few: "Поддержек"
+          many: "Поддержек"
+          other: "Поддержек"
     footer:
       accessibility: Доступность
       conditions: Положения и условия пользования
@@ -304,7 +321,10 @@ ru:
     create:
       form:
         submit_button: Отменить предложение
+    created:
+      title: Поздравляем! Вы выполнили первый шаг.
     share:
+      dashboard: Показать больше информации
       message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
     edit:
       editing: Редактировать предложение
@@ -443,6 +463,7 @@ ru:
         many: "%{count} комментария(иев)"
         other: "%{count} комментария(иев)"
       comments_tab: Комментарии
+      dashboard_proposal_link: Рабочий стол
       flag: Это предложение было помечено несколькими пользователями как неуместное.
       login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
       notifications_tab: Уведомления
@@ -458,6 +479,93 @@ ru:
     update:
       form:
         submit_button: Сохранить изменения
+  dashboard:
+    menu:
+      progress: Ход выполнения
+      resources: Ресурсы
+      community: Сообщество
+      polls: Голосования
+      mailing: E-mail
+      poster: Анонс
+    form:
+      request: Запрос
+    progress:
+      title: График
+      group_by_month: Ежемесячно
+      group_by_week: Еженедельно
+      group_by_date: Ежедневно
+      progress: Общий ход выполнения
+      supports: Поддержки
+      success: Идеальный ход выполнения
+      new_action: Новый
+    goal:
+      ideal_time: Идеальное время
+    community:
+      access_community: Доступ к сообществу
+      latest_activity: "Свежая активность в сообществе: %{at}"
+      participants: Участники
+      debates: Дебаты
+      comments: Комментарии
+      latest_comments: Свежие сообщения
+    polls:
+      index:
+        title: Голосования
+        create: Создать голосование
+        count:
+          one: Вы создали %{count} голосование.
+          few: Вы создали %{count} голосований.
+          many: Вы создали %{count} голосований.
+          other: Вы создали %{count} голосований.
+        links: Ссылки
+        additiontal_information: Дополнительная информация
+      new:
+        title: Новое голосование
+        submit: Создать голосование
+      edit:
+        submit: Обновить голосование
+      poll:
+        responses:
+          one: "%{count} ответ"
+          few: "%{count} ответов"
+          many: "%{count} ответов"
+          other: "%{count} ответов"
+        view_results: Посмотреть результаты
+        edit_poll: Изменить опрос
+        show_results: Показать результаты
+      form:
+        add_question: Добавить вопрос
+      question_fields:
+        remove_question: Убрать вопрос
+        add_answer: Добавить ответ
+      question_answer_fields:
+        remove_answer: Убрать ответ
+    poster:
+      index:
+        title: Предпросмотр анонса
+        poster_title: "Не продолжать просмотр,"
+        poster_subtitle: "создать резервную копию! ;)"
+        support: Поддержать мое предложение
+      new:
+        title: Анонс вашего предложения
+      options:
+        preview: Предпросмотр
+        download: Скачать
+    mailing:
+      index:
+        title: Предпросмотр e-mail
+      new:
+        title: Модель e-mail для распространения
+      mailing_options:
+        send: Отправить на %{address}
+        preview: Предпросмотр
+      create:
+        sent: E-mail отправлено
+    mailer:
+      forward:
+        subtitle_html: "Мы добьемся результата<br>при вашей поддержке."
+        support_button: Поддержать это предложение
+        share_in: Поделиться в
+        hi: "Здравствуйте!"
   polls:
     all: "Все"
     no_dates: "дата не назначена"
@@ -511,6 +619,7 @@ ru:
         total_votes: "Общее количество поданых голосов"
         votes: "ГОЛОСА"
         web: "СЕТЬ"
+        mail: "ПОЧТА"
         booth: "КАБИНКА"
         total: "ВСЕГО"
         valid: "Верно"
@@ -519,6 +628,8 @@ ru:
       results:
         title: "Вопросы"
         most_voted_answer: "Самый голосуемый ответ: "
+    poll_header:
+      back_to_proposal: Вернуться к предложению
   poll_questions:
     show:
       vote_answer: "Голосовать по %{answer}"
