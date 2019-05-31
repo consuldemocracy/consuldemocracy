@@ -68,7 +68,7 @@ describe "Admin custom information texts" do
 
       visit admin_site_customization_information_texts_path
 
-      select "Français", from: "translation_locale"
+      select "Français", from: :add_language
       fill_in "contents[content_#{key}]values[value_fr]", with: "Aide personalise sur les débats"
 
       click_button "Save"
@@ -76,8 +76,8 @@ describe "Admin custom information texts" do
       expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path
+      select "Français", from: :select_language
 
-      select "Français", from: "translation_locale"
       expect(page).to have_content "Aide personalise sur les débats"
       expect(page).not_to have_content "Aide sur les débats"
     end
@@ -87,14 +87,14 @@ describe "Admin custom information texts" do
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
-      select "Français", from: "translation_locale"
+      select "Français", from: :select_language
       fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise de la proposition"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
-      click_link "Français"
+      select "Français", from: :select_language
 
       expect(page).to have_content "Titre personalise de la proposition"
       expect(page).not_to have_content "Titre de la proposition"
@@ -113,14 +113,15 @@ describe "Admin custom information texts" do
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 
-      click_link "Español"
+      select "Español", from: :select_language
       click_link "Remove language"
       click_button "Save"
 
       expect(page).not_to have_link "Español"
 
       visit admin_site_customization_information_texts_path(tab: "debates")
-      click_link "English"
+      select "English", from: :select_language
+
       expect(page).to have_content "Start a new debate"
       expect(page).to have_content "Custom debate title"
 
