@@ -60,4 +60,16 @@ module Translations
   def front_end_path_to_visit?(path)
     path[/admin|managment|valuation/].blank?
   end
+
+  def expect_to_have_language(language)
+    expect(page).to have_select :select_language, with_options: [language]
+  end
+
+  def expect_not_to_have_language(language)
+    expect(page).not_to have_select :select_language, with_options: [language]
+  end
+
+  def expect_to_have_language_selected(language)
+    expect(page).to have_select :select_language, selected: language
+  end
 end
