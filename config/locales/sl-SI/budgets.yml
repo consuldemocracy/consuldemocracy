@@ -143,7 +143,6 @@ sl:
       page_title: "%{budget} - Rezultati"
       heading: "Rezultati participatornega proračuna"
       heading_selection_title: "Po občini"
-      spending_proposal: Naslov predloga
       ballot_lines_count: Kolikokrat izbran
       hide_discarded_link: Skrij zavržene
       show_all_link: Pokaži vse
