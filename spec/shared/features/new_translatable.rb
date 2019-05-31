@@ -71,7 +71,7 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
       visit new_translatable_path
 
       fill_in_new_translatable_form :en
-      select "Français", from: "translation_locale"
+      select "Français", from: :add_language
       fill_in_new_translatable_form :fr
       click_button create_button_text
 
@@ -81,7 +81,7 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
     scenario "Add only single translation at once not having the current locale", :js do
       visit new_translatable_path
       click_link "Remove language"
-      select "Français", from: "translation_locale"
+      select "Français", from: :add_language
 
       fill_in_new_translatable_form :fr
       click_button create_button_text
@@ -92,7 +92,7 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
     scenario "Add a translation for a locale with non-underscored name", :js do
       visit new_translatable_path
       click_link "Remove language"
-      select "Português brasileiro", from: "translation_locale"
+      select "Português brasileiro", from: :add_language
 
       fill_in_new_translatable_form :"pt-BR"
       click_button create_button_text
@@ -127,7 +127,7 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
     scenario "Highlight current locale", :js do
       visit new_translatable_path
 
-      expect(find("a.js-globalize-locale-link.is-active")).to have_content "English"
+      expect_to_have_language_selected "English"
     end
 
     scenario "Highlight new locale added", :js do
@@ -135,24 +135,24 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
 
       select("Español", from: "locale-switcher")
 
-      expect(find("a.js-globalize-locale-link.is-active")).to have_content "Español"
+      expect_to_have_language_selected "Español"
     end
 
     scenario "Select a locale and add it to the form", :js do
       visit new_translatable_path
 
-      select "Français", from: "translation_locale"
+      select "Français", from: :add_language
 
-      expect(find("a.js-globalize-locale-link.is-active")).to have_content "Français"
       expect_page_to_have_translatable_field fields.sample, :fr, with: ""
     end
 
     scenario "Remove a translation", :js do
       visit new_translatable_path
 
+      expect(find("#select_language").value).to eq "en"
       click_link "Remove language"
 
-      expect(page).not_to have_link "English"
+      expect_not_to_have_language("English")
     end
 
     context "Languages in use" do
