@@ -62,9 +62,6 @@ nl:
       create_proposal: Maak voorstel
       print_proposals: Print proposals
       support_proposals: Support proposals
-      create_spending_proposal: Maak een begrotingsvoorstel
-      print_spending_proposals: Print spending proposals
-      support_spending_proposals: Support spending proposals
       create_budget_investment: Nieuw begrotingsvoorstel
       print_budget_investments: Druk begrotinginvestering af
       support_budget_investments: Steun budgetinvestering
@@ -79,7 +76,6 @@ nl:
     print:
       proposals_info: Maak je eigen voorstel op http://url.consul
       proposals_title: "Proposals:"
-      spending_proposals_info: Participate at http://url.consul
       budget_investments_info: Neem deel op http://url.consul
     print_info: Print deze informatie
     proposals:
@@ -105,18 +101,6 @@ nl:
       filters:
         heading: Concept
         unfeasible: Unfeasible investment
-      print:
-        print_button: Afdrukken
-      search_results:
-        one: " bevat de term'%{search_term}'"
-        other: " bevat de term'%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Gebruiker is niet geverifieerd
-      create: Maak een begrotingsvoorstel
-      filters:
-        unfeasible: Unfeasible investment projects
-        by_geozone: "Investment projects with scope: %{geozone}"
       print:
         print_button: Afdrukken
       search_results:
