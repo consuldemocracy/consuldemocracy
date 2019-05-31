@@ -404,8 +404,6 @@ pt-BR:
           title: Título
           back: Voltar
           supports: Apoios
-          select: Selecionar
-          selected: Selecionado
         form:
           custom_categories: Categorias
           custom_categories_description: Categorias que os usuários podem selecionar criando a proposta.
