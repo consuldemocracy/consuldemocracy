@@ -58,9 +58,6 @@ fa:
       proposal:
         one: "پیشنهاد شهروند"
         other: "پیشنهادات شهروند"
-      spending_proposal:
-        one: "پروژه سرمایه گذاری"
-        other: "پروژه سرمایه گذاری"
       site_customization/page:
         one: صفحه سفارشی
         other: صفحه سفارشی
@@ -162,13 +159,6 @@ fa:
       organization:
         name: "نام سازمان"
         responsible_name: "شخص مسئول گروه"
-      spending_proposal:
-        administrator_id: "مدیران"
-        association_name: "نام انجمن"
-        description: "توضیحات"
-        external_url: "لینک به مدارک اضافی"
-        geozone_id: "حوزه عملیات"
-        title: "عنوان"
       poll:
         name: "نام"
         starts_at: "تاریخ شروع\n"
