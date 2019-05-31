@@ -62,9 +62,6 @@ da:
       create_proposal: Opret borgerforslag
       print_proposals: Udskriv forslag
       support_proposals: Støt på om forslag
-      create_spending_proposal: Opret udgiftsforslag
-      print_spending_proposals: Udskriv udgiftsforslag
-      support_spending_proposals: Støt op om udgiftsforslag
       create_budget_investment: Opret budgetinvestering
       print_budget_investments: Udskriv budgetinvesteringer
       support_budget_investments: Støt budgetinvesteringer
@@ -79,7 +76,6 @@ da:
     print:
       proposals_info: Opret dit forslag på https://deltagbudget.aarhus.dk/
       proposals_title: "Borgerforslag:"
-      spending_proposals_info: Deltag på https://deltagbudget.aarhus.dk/
       budget_investments_info: Deltag på https://deltagbudget.aarhus.dk/
     print_info: Udskriv information
     proposals:
@@ -105,18 +101,6 @@ da:
       filters:
         heading: Koncept
         unfeasible: Uigennemførligt projekt
-      print:
-        print_button: Udskriv
-      search_results:
-        one: " indeholder betegnelsen '%{search_term}'"
-        other: " indeholder betegnelserne '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Brugeren er ikke verificeret
-      create: Opret udgiftsforslag
-      filters:
-        unfeasible: Investeringsprojekter der ikke kan gennemføres
-        by_geozone: "Investeringsprojekter tilknyttet et område: %{geozone}"
       print:
         print_button: Udskriv
       search_results:
