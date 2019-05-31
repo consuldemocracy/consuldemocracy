@@ -689,7 +689,6 @@ el:
       officials: Επίσημοι
       organizations: Οργανισμοί
       settings: Καθολικές ρυθμίσεις
-      spending_proposals: Προτάσεις δαπανών
       stats: Στατιστικά στοιχεία
       signature_sheets: Φύλλα υπογραφών
       site_customization:
@@ -713,7 +712,6 @@ el:
           content_block:
             update: "Ενημερωμένη έκδοση μπλοκ"
       title_moderated_content: Ελεγχόμενο περιεχόμενο
-      title_budgets: Προϋπολογισμοί
       title_profiles: Προφίλ
       title_settings: Ρυθμίσεις
       title_site_customization: Περιεχόμενο δικτυακού τόπου
@@ -901,15 +899,6 @@ el:
         delete: Διαγραφή
       search:
         title: "Εκτιμητές: Αναζήτηση χρήστη"
-      summary:
-        title: Περίληψη του εκτιμητή για επενδυτικά σχέδια
-        valuator_name: Αξιολογητής
-        finished_and_feasible_count: Τελειωμένο και εφικτό
-        finished_and_unfeasible_count: Τελειωμένο και ανέφικτο
-        finished_count: Τελείωσε
-        in_evaluation_count: Σε αξιολόγηση
-        total_count: Όλα
-        cost: Κόστος
       form:
         edit_title: "Εκτιμητές: Επεξεργασία εκτιμητή"
         update: "Ανανέωση εκτιμητή"
@@ -1297,9 +1286,6 @@ el:
       proposal_search:
         button: Αναζήτηση
         placeholder: Αναζήτηση προτάσεων από τον τίτλο, κωδικό, περιγραφή ή ερώτηση
-      spending_proposal_search:
-        button: Αναζήτηση
-        placeholder: Αναζήτηση προτάσεων δαπανών ανά τίτλο ή περιγραφή
       user_search:
         button: Αναζήτηση
         placeholder: Αναζήτηση χρηστών με όνομα ή ηλεκτρονικό ταχυδρομείο
@@ -1318,62 +1304,6 @@ el:
       created_at: Δημιουργήθηκε στις
       delete: Διαγραφή
       color_help: Δεκαεξαδική μορφή
-    spending_proposals:
-      index:
-        geozone_filter_all: Όλες οι ζώνες
-        administrator_filter_all: Όλους τους διαχειριστές
-        valuator_filter_all: Όλοι οι εκτιμητές
-        tags_filter_all: Όλες οι ετικέτες
-        filters:
-          valuation_open: Ανοιχτό
-          without_admin: Χωρίς να ανατεθεί διαχειριστής
-          managed: Διευθετημένο
-          valuating: Υπό αξιολόγηση
-          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-          all: Όλα
-        title: Επενδυτικά σχέδια για συμμετοχικό προϋπολογισμό
-        assigned_admin: Διαχειριστής που έχει ανατεθεί
-        no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
-        no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
-        summary_link: "Περίληψη επενδυτικών έργων"
-        valuator_summary_link: "Περίληψη του αξιολογητή"
-        feasibility:
-          feasible: "Εφικτή (%{price})"
-          not_feasible: "Δεν είναι εφικτό"
-          undefined: "Απροσδιόριστο"
-      show:
-        assigned_admin: Διαχειριστής που έχει ανατεθεί
-        assigned_valuators: Εκχωρημένοι αξιολογητές
-        back: Πίσω
-        classification: Ταξινόμηση
-        heading: "Επενδυτικό έργο %{id}"
-        edit: Επεξεργασία
-        edit_classification: Επεξεργασία ταξινόμησης
-        association_name: Ένωση
-        by: Από
-        sent: Απεσταλμένα
-        geozone: Εμβέλεια
-        dossier: Φάκελος
-        edit_dossier: Επεξεργασία φακέλου
-        tags: Ετικέτες
-        undefined: Απροσδιόριστο
-      edit:
-        classification: Ταξινόμηση
-        assigned_valuators: Αξιολογητές
-        submit_button: Ενημέρωση
-        tags: Ετικέτες
-        tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρισμένες με κόμματα (,)"
-        undefined: Απροσδιόριστο
-      summary:
-        title: Περίληψη για επενδυτικά έργα
-        title_proposals_with_supports: Περίληψη για επενδυτικά έργα με υποστηρίξεις
-        geozone_name: Εμβέλεια
-        finished_and_feasible_count: Τελειωμένο και εφικτό
-        finished_and_unfeasible_count: Τελειωμένο και ανέφικτο
-        finished_count: Τελείωσε
-        in_evaluation_count: Σε αξιολόγηση
-        total_count: Όλα
-        cost_for_geozone: Κόστος
     geozones:
       index:
         title: Γεωζώνη
@@ -1440,7 +1370,6 @@ el:
           proposals: Προτάσεις
           budgets: Άνοιξε προϋπολογισμούς
           budget_investments: Επενδυτικά έργα
-          spending_proposals: Προτάσεις δαπανών
           unverified_users: Μη επαληθευμένοι χρήστες
           user_level_three: Χρήστες τρίτου επιπέδου
           user_level_two: Χρήστες δεύτερου επιπέδου
@@ -1457,7 +1386,6 @@ el:
         polls: Δημοσκοπήσεις
       graph:
         debate_created: Συζητήσεις
-        spending_proposals: Επενδυτικά έργα
         visit: Επισκέψεις
         level_2_user: Χρήστες δεύτερου επιπέδου
         proposal_created: Προτάσεις πολιτών
