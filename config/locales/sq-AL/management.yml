@@ -62,9 +62,6 @@ sq:
       create_proposal: Krijo propozim
       print_proposals: Printo propozimin
       support_proposals: Përkrahni propozimet
-      create_spending_proposal: Krijo propozimin e shpenzimeve
-      print_spending_proposals: Printo propozimin e shpenzimeve
-      support_spending_proposals: Mbështet propozimin e shpenzimeve
       create_budget_investment: Krijo  investimin buxhetor
       print_budget_investments: Printo investimin buxhetor
       support_budget_investments: Mbështet investimin buxhetor
@@ -79,7 +76,6 @@ sq:
     print:
       proposals_info: 'Krijo propozimin tuaj në http: //url.consul'
       proposals_title: "Propozime"
-      spending_proposals_info: 'Merrni pjesë në http: //url.consul'
       budget_investments_info: 'Merrni pjesë në http: //url.consul'
     print_info: Printoni këtë informacion
     proposals:
@@ -105,18 +101,6 @@ sq:
       filters:
         heading: Koncept
         unfeasible: Investim i papërshtatshëm
-      print:
-        print_button: Printo
-      search_results:
-        one: "që përmbajnë termin '%{search_term}'"
-        other: "që përmbajnë termin '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Përdoruesi nuk verifikohet
-      create: Krijo propozimin e shpenzimeve
-      filters:
-        unfeasible: Investimet e papranueshme
-        by_geozone: "Projektet e investimeve me qëllim: %{geozone}"
       print:
         print_button: Printo
       search_results:
