@@ -61,9 +61,6 @@ sl:
       create_proposal: Ustvari predlog
       print_proposals: Natisni predloge
       support_proposals: Podpri predloge
-      create_spending_proposal: Ustvari predlog porabe
-      print_spending_proposals: Natisni predloge porabe
-      support_spending_proposals: Podpri predloge porabe
       create_budget_investment: Dodaj svoj predlog!
       print_budget_investments: Natisni proračunske naložbe
       support_budget_investments: Podpri proračunske naložbe
@@ -77,7 +74,6 @@ sl:
     print:
       proposals_info: Ustvari svoj predlog na http://url.consul
       proposals_title: "Predlogi:"
-      spending_proposals_info: Sodeluj na http://url.consul
       budget_investments_info: Sodeluj na http://url.consul
     print_info: Natisni te informacije
     proposals:
@@ -97,15 +93,6 @@ sl:
       filters:
         heading: Koncept
         unfeasible: Neizvedljiva naložba
-      print:
-        print_button: Natisni
-    spending_proposals:
-      alert:
-        unverified_user: Uporabnik ni verificiran
-      create: Ustvari predlog porabe
-      filters:
-        unfeasible: Neizvedljivi naložbeni projekti
-        by_geozone: "Naložbeni projekti v: %{geozone}"
       print:
         print_button: Natisni
     sessions:
