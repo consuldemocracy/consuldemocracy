@@ -165,7 +165,6 @@ nl:
       page_title: "%{budget} - resultaten"
       heading: "Resultaten burgerbegroting"
       heading_selection_title: "Per wijk"
-      spending_proposal: Titel
       ballot_lines_count: Votes
       hide_discarded_link: Verberg verworpen voorstellen
       show_all_link: Toon alle
