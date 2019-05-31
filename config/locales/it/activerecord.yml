@@ -61,9 +61,6 @@ it:
       proposal:
         one: "Proposta cittadina"
         other: "Proposte cittadine"
-      spending_proposal:
-        one: "Progetto di investimento"
-        other: "Progetti di investimento"
       site_customization/page:
         one: Pagina personalizzata
         other: Pagine personalizzate
@@ -171,13 +168,6 @@ it:
       organization:
         name: "Nome dell'organizzazione"
         responsible_name: "La persona responsabile per l'organzzazione"
-      spending_proposal:
-        administrator_id: "Amministratore"
-        association_name: "Nome Associazione"
-        description: "Descrizione"
-        external_url: "Link alla documentazione integrativa"
-        geozone_id: "Ambito operativo"
-        title: "Titolo"
       poll:
         name: "Nominativo"
         starts_at: "Data inizio"
