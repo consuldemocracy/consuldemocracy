@@ -49,9 +49,6 @@ so:
       poll/booth:
         one: "labadaba"
         other: "labadodaba"
-      spending_proposal:
-        one: "Mashruuca Malgelinta"
-        other: "Mashariicda malgashiga"
       site_customization/page:
         one: Bog gaara
         other: Bog gaara
@@ -155,13 +152,6 @@ so:
       organization:
         name: "Magaca ururka"
         responsible_name: "Qofka masuulka ka ah kooxda"
-      spending_proposal:
-        administrator_id: "Mamulaha"
-        association_name: "Magaca ururka"
-        description: "Sharaxaad"
-        external_url: "Isku xirka dukumentiyada dheeraadka ah"
-        geozone_id: "Baxada Hawlgalka"
-        title: "Ciwaan"
       poll:
         name: "Magac"
         starts_at: "Tariikhda biloowga"
