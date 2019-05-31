@@ -179,7 +179,6 @@ de:
     policy: Datenschutzbestimmungen
     proposal: Vorschlag
     proposal_notification: "Benachrichtigung"
-    spending_proposal: Ausgabenvorschlag
     budget/investment: Ausgabenvorschlag
     budget/heading: Haushaltsbereich
     poll/shift: Arbeitsschicht
@@ -192,7 +191,6 @@ de:
     image: Bild
   geozones:
     none: Ganze Stadt
-    all: Alle Bereiche
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +230,6 @@ de:
       proposals: Vorschläge
       poll_questions: Abstimmung
       budgets: Bürgerhaushalte
-      spending_proposals: Ausgabenvorschläge
       notification_item:
         new_notifications:
           one: Sie haben eine neue Benachrichtigung
@@ -589,7 +586,6 @@ de:
     unflag: Markierung aufheben
     unfollow_entity: "Nicht länger folgen %{entity}"
     outline:
-      budget: Bürgerhaushalt
       searcher: Suchende*r
     go_to_page: "Gehe zur Seite von "
     share: Teilen
@@ -612,54 +608,6 @@ de:
     whatsapp: WhatsApp
     telegram: "%{org} Telegramm"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Wenn Sie einen Vorschlag im Namen eines Vereins oder Verbands äußern, fügen Sie bitte den Namen hinzu"
-      association_name: "Name des Vereins"
-      description: Beschreibung
-      external_url: Link zur weiteren Dokumentation
-      geozone: Rahmenbedingungen
-      submit_buttons:
-        create: Erstellen
-        new: Erstellen
-      title: Titel des Ausgabenantrags
-    index:
-      title: Partizipative Haushaltsplanung
-      unfeasible: Undurchführbare Investitionsprojekte
-      by_geozone: "Investitionsvorschläge im Bereich: %{geozone}"
-      search_form:
-        button: Suche
-        placeholder: Investitionsprojekte...
-        title: Suche
-      search_results:
-        one: "die den Begriff '%{search_term}' enthalten"
-        other: "die den Begriff '%{search_term}' enthalten"
-      sidebar:
-        geozones: Rahmenbedingungen
-        feasibility: Durchführbarkeit
-        unfeasible: Undurchführbar
-      start_spending_proposal: Investitionsprojekt erstellen
-    new:
-      more_info: Wie funktioniert partizipative Haushaltsplanung?
-      recommendation_one: Es ist wingend notwendig das der Antrag auf eine berechenbare Handlung hinweist.
-      recommendation_three: Versuchen Sie Ihren Ausgabenvorschlag so detailliert wie möglich zu beschreiben, damit das Überprüfungsteam ihre Argumente leicht versteht.
-      recommendation_two: Jeder Vorschlag oder Kommentar der auf verbotene Handlung abzielt, wird gelöscht.
-      recommendations_title: Wie erstelle ich einen Ausgabenvorschlag
-      start_new: Ausgabenvorschlag erstellen
-    show:
-      author_deleted: Benutzer gelöscht
-      code: "Antrags-Code:"
-      share: Teilen
-    wrong_price_format: Nur ganze Zahlen
-    spending_proposal:
-      spending_proposal: Investitionsprojekt
-      already_supported: Sie haben dies bereits unterstützt. Teilen Sie es!
-      support: Unterstützung
-      support_title: Unterstützen Sie dieses Projekt
-      supports:
-        zero: Keine Unterstützung
-        one: 1 Unterstützer/in
-        other: "%{count} Unterstützer/innen"
   stats:
     index:
       visits: Besuche
@@ -737,12 +685,6 @@ de:
     unauthenticated: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
     verify_account: verifizieren Sie Ihr Konto
-    spending_proposals:
-      not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
-      not_verified: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
-      organization: Organisationen ist es nicht erlaubt abzustimmen
-      unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
-      not_voting_allowed: Die Abstimmungsphase ist beendet
     budget_investments:
       not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
       not_verified: Nur verifizierte Benutzer können über ein Investitionsprojekt abstimmen; %{verify_account}.
