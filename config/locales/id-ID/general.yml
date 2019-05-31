@@ -165,7 +165,6 @@ id:
     policy: Kebijakan Privasi
     proposal: Usulan
     proposal_notification: "Pemberitahuan"
-    spending_proposal: Pengeluaran proposal
     budget/investment: Investasi
     budget/heading: Anggaran judul
     poll/shift: Regu
@@ -178,7 +177,6 @@ id:
     image: Gambar
   geozones:
     none: Semua kota
-    all: Semua cangkupan
   layouts:
     application:
       chrome: Google Chrome
@@ -218,7 +216,6 @@ id:
       proposals: Proposal
       poll_questions: Suara
       budgets: Penganggaran partisipatif
-      spending_proposals: Belanja proposal
       notification_item:
         new_notifications:
           other: Anda memiliki %{count} pemberitahuan baru
@@ -548,7 +545,6 @@ id:
     you_are_in: "Anda berada di"
     unfollow_entity: "Berhenti ikuti %{entity}"
     outline:
-      budget: Anggaran partisipatif
       searcher: Pencarian
     go_to_page: "Pergi ke halaman "
     share: Berbagi
@@ -563,52 +559,6 @@ id:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Jika anda mengusulkan nama sebuah asosiasi atau kolektif menambahkan nama di sini"
-      association_name: "Asosiasi nama"
-      description: Deskripsi
-      external_url: Tautkan ke dokumentasi tambahan
-      geozone: Lingkup operasi
-      submit_buttons:
-        create: Membuat
-        new: Membuat
-      title: Belanja proposal judul
-    index:
-      title: Penganggaran partisipatif
-      unfeasible: Proyek investasi yang tidak layak
-      by_geozone: "Proyek investasi dengan cakupan: %{geozone}"
-      search_form:
-        button: Cari
-        placeholder: Proyek-proyek investasi...
-        title: Cari
-      search_results:
-        other: " mengandung istilah '%{search_term}'"
-      sidebar:
-        geozones: Lingkup operasi
-        feasibility: Kelayakan
-        unfeasible: Tidak layak
-      start_spending_proposal: Membuat suatu proyek investasi
-    new:
-      more_info: Bagaimana penganggaran partisipatif bekerja?
-      recommendation_one: Itu adalah wajib bahwa proposal membuat referensi ke budgetable tindakan.
-      recommendation_three: Cobalah untuk pergi ke rincian ketika menggambarkan pengeluaran anda usulan agar meninjau tim memahami poin anda.
-      recommendation_two: Setiap usulan atau komentar yang menunjukkan tindakan ilegal akan dihapus.
-      recommendations_title: Cara membuat proposal pengeluaran
-      start_new: Buat proposal pengeluaran
-    show:
-      author_deleted: Pengguna dihapus
-      code: "Usulan kode:"
-      share: Berbagi
-    wrong_price_format: Hanya angka bilangan bulat
-    spending_proposal:
-      spending_proposal: Investasi proyek
-      already_supported: Anda sudah mendukung ini. Berbagi!
-      support: Mendukung
-      support_title: Mendukung proyek ini
-      supports:
-        zero: Tidak ada dukungan
-        other: "1 detik\n\n%{count} detik"
   stats:
     index:
       visits: Mengunjungi
@@ -680,12 +630,6 @@ id:
     unauthenticated: Anda harus %{signin} atau %{signup} untuk melanjutkan.
     verified_only: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
     verify_account: verivikasi akun anda
-    spending_proposals:
-      not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
-      not_verified: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
-      organization: Organisasi tidak diizinkan untuk memilih
-      unfeasible: Tidak layak proyek-proyek investasi tidak dapat didukung
-      not_voting_allowed: Tahap memilih ditutup
     budget_investments:
       not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
       not_verified: Hanya memverifikasi pengguna dapat memilih pada proyek-proyek investasi; %{verify_account}.
