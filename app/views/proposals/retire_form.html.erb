@@ -10,7 +10,7 @@
      <%= t("proposals.retire_form.warning") %>
     </div>
 
-    <%= render "admin/shared/globalize_locales", resource: @proposal %>
+    <%= render "shared/globalize_locales", resource: @proposal %>
 
     <%= translatable_form_for(@proposal, url: retire_proposal_path(@proposal)) do |f| %>
       <%= render "shared/errors", resource: @proposal %>
