@@ -497,7 +497,6 @@ fa:
       poll_shifts: مدیریت تغییرات
       officials: مقامات
       organizations: سازمان ها
-      spending_proposals: هزینه های طرح ها
       stats: آمار
       signature_sheets: ورق امضا
       site_customization:
@@ -516,7 +515,6 @@ fa:
         buttons:
           save: "ذخیره کردن"
       title_moderated_content: کنترل محتویات
-      title_budgets: بودجه ها
       title_profiles: پروفایل
       legislation: قانون همکاری
       users: کاربران
@@ -624,15 +622,6 @@ fa:
         delete: حذف
       search:
         title: "ارزیابی کنندگان: جستجوی کاربر"
-      summary:
-        title: خلاصه ارزشیابی برای پروژه های سرمایه گذاری
-        valuator_name: ارزیابی
-        finished_and_feasible_count: تمام شده و امکان پذیر است
-        finished_and_unfeasible_count: تمام شده  و غیر قابل پیش بینی 
-        finished_count: به پایان رسید
-        in_evaluation_count: در ارزیابی
-        total_count: "جمع\n"
-        cost: "هزینه\n"
       form:
         edit_title: "ارزیابی کنندگان: ویرایش ارزیاب"
         update: "به روزرسانی ارزیابی "
@@ -985,9 +974,6 @@ fa:
       proposal_search:
         button: جستجو
         placeholder: پیشنهادات را با عنوان، کد، توضیحات یا سوال جستجو کنید
-      spending_proposal_search:
-        button: جستجو
-        placeholder: جستجو پیشنهادات هزینه با عنوان یا توضیحات
       user_search:
         button: جستجو
         placeholder: جستجوی کاربر توسط ایمیل
@@ -1003,62 +989,6 @@ fa:
       content: محتوا
       created_at: "ایجاد شده در\n"
       delete: حذف
-    spending_proposals:
-      index:
-        geozone_filter_all: تمام مناطق
-        administrator_filter_all: همه مدیران
-        valuator_filter_all: همه ارزیابان
-        tags_filter_all: همه برچسب ها
-        filters:
-          valuation_open: بازکردن
-          without_admin: بدون تعیین مدیر
-          managed: مدیریت شده
-          valuating: تحت ارزیابی
-          valuation_finished: ' اتمام ارزیابی '
-          all: همه
-        title: پروژه های سرمایه گذاری برای بودجه مشارکتی
-        assigned_admin: سرپرست تعیین شده
-        no_admin_assigned: بدون  تعیین مدیر
-        no_valuators_assigned: بدون  تعیین ارزیاب
-        summary_link: "خلاصه پروژه سرمایه گذاری"
-        valuator_summary_link: "خلاصه ارزیابی"
-        feasibility:
-          feasible: "امکان پذیر %{price}\n"
-          not_feasible: "امکان پذیر نیست"
-          undefined: "تعریف نشده"
-      show:
-        assigned_admin: سرپرست تعیین شده
-        assigned_valuators: اختصاص ارزیاب ها
-        back: برگشت
-        classification: طبقه بندی
-        heading: "پروژه سرمایه گذاری%{id}"
-        edit: ویرایش
-        edit_classification: ویرایش طبقه بندی
-        association_name: انجمن
-        by: "توسط\n"
-        sent: "ارسال شد\n"
-        geozone: دامنه
-        dossier: پرونده
-        edit_dossier: ویرایش پرونده
-        tags: برچسب ها
-        undefined: تعریف نشده
-      edit:
-        classification: طبقه بندی
-        assigned_valuators: ارزیاب ها
-        submit_button: به روز رسانی
-        tags: برچسب ها
-        tags_placeholder: "برچسبهایی را که میخواهید با کاما (،) جدا کنید"
-        undefined: تعریف نشده
-      summary:
-        title: خلاصه ای برای پروژه های سرمایه گذاری
-        title_proposals_with_supports: خلاصه ای برای پروژه های سرمایه گذاری با پشتیبانی
-        geozone_name: دامنه
-        finished_and_feasible_count: تمام شده و امکان پذیر است
-        finished_and_unfeasible_count: تمام شده  و غیر قابل پیش بینی 
-        finished_count: به پایان رسید
-        in_evaluation_count: در ارزیابی
-        total_count: "جمع\n"
-        cost_for_geozone: "هزینه\n"
     geozones:
       index:
         title: Geozone
@@ -1123,7 +1053,6 @@ fa:
           proposals: طرح های پیشنهادی
           budgets: بودجه های باز
           budget_investments: پروژه سرمایه گذاری
-          spending_proposals: هزینه های طرح ها
           unverified_users: کاربران تایید نشده
           user_level_three: کاربران سطح سه
           user_level_two: کاربران سطح دو
