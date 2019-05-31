@@ -29,22 +29,3 @@ fi:
         feasibility: Toteutettavuus
         undefined_feasible: Vireillä
         save: Tallenna muutokset
-    spending_proposals:
-      index:
-        filters:
-          valuation_open: Avaa
-        edit: Muokkaa
-      show:
-        back: Takaisin
-        info: Tietoa tekijästä
-        by: Lähettäjä
-        price: Hinta
-        currency: "€"
-        feasibility: Toteutettavuus
-        undefined: Määrittelemätön
-      edit:
-        price_html: "Hinta (%{currency})"
-        currency: "€"
-        feasibility: Toteutettavuus
-        undefined_feasible: Vireillä
-        save: Tallenna muutokset
