@@ -531,7 +531,6 @@ id:
       poll_shifts: Mengelola perubahan
       officials: Pejabat
       organizations: Organisasi
-      spending_proposals: Pengeluaran proposal
       stats: Statistik
       signature_sheets: Lembar Tanda Tangan
       site_customization:
@@ -550,7 +549,6 @@ id:
         buttons:
           save: "Simpan"
       title_moderated_content: Konten moderasi
-      title_budgets: Anggaran
       title_profiles: Profil
       legislation: Undang-undang kolaboratif
       users: Pengguna
@@ -622,15 +620,6 @@ id:
         delete: Hapus
       search:
         title: "Penilai: Pencarian pengguna"
-      summary:
-        title: Ringkasan rujukan untuk proyek investasi
-        valuator_name: Penilai
-        finished_and_feasible_count: Selesai dan layak
-        finished_and_unfeasible_count: Selesai dan tidak layak
-        finished_count: Diselesaikan
-        in_evaluation_count: Dalam evaluasi
-        total_count: Total
-        cost: Biaya
       show:
         description: "Deskripsi"
         email: "Email"
@@ -959,9 +948,6 @@ id:
       proposal_search:
         button: Cari
         placeholder: Pencarian proposal dengan judul, kode, deskripsi, atau pertanyaan
-      spending_proposal_search:
-        button: Cari
-        placeholder: Pencarian pengeluaran proposal dengan judul atau deskripsi
       user_search:
         button: Cari
         placeholder: Pengguna pencarian berdasarkan nama atau email
@@ -978,61 +964,6 @@ id:
       delete: Hapus
       show_results_and_stats: "Lihat hasil dan status"
       results_and_stats_reminder: "Menandai kotak centang ini, hasil dan atau statistik akan tersedia untuk umum dan setiap pengguna akan melihatnya."
-    spending_proposals:
-      index:
-        geozone_filter_all: Semua zona
-        administrator_filter_all: Semua administrator
-        valuator_filter_all: Semua penilai
-        tags_filter_all: Semua tag
-        filters:
-          valuation_open: Buka
-          without_admin: Tanpa ditugaskan admin
-          valuating: Di bawah penilaian
-          valuation_finished: Penilaian selesai
-          all: Semua
-        title: Proyek-proyek investasi untuk penganggaran partisipatif
-        assigned_admin: Pengurus yang ditugaskan
-        no_admin_assigned: Tidak ada pengurus yang ditugaskan
-        no_valuators_assigned: Tidak ada penilai yang ditugaskan
-        summary_link: "Investasi proyek ringkasan"
-        valuator_summary_link: "Ringkasan penilai"
-        feasibility:
-          feasible: "Layak (%{price})"
-          not_feasible: "Tidak layak"
-          undefined: "Tidak terdefinisi"
-      show:
-        assigned_admin: Pengurus yang ditugaskan
-        assigned_valuators: Ditugaskan penilai
-        back: Kembali
-        classification: Klasifikasi
-        heading: "Proyek investasi %{id}"
-        edit: Sunting
-        edit_classification: Sunting klasifikasi
-        association_name: Asosiasi
-        by: Oleh
-        sent: Terkirim
-        geozone: Ruang lingkup
-        dossier: Berkas
-        edit_dossier: Mengedit berkas
-        tags: Tag
-        undefined: Tidak terdefinisi
-      edit:
-        classification: Klasifikasi
-        assigned_valuators: Penilai
-        submit_button: Perbarui
-        tags: Tag
-        tags_placeholder: "Tuliskan tag yang ingin anda pisahkan dengan koma (,)"
-        undefined: Tidak terdefinisi
-      summary:
-        title: Ringkasan untuk proyek-proyek investasi
-        title_proposals_with_supports: Ringkasan untuk proyek-proyek investasi dengan mendukung
-        geozone_name: Ruang lingkup
-        finished_and_feasible_count: Selesai dan layak
-        finished_and_unfeasible_count: Selesai dan tidak layak
-        finished_count: Diselesaikan
-        in_evaluation_count: Dalam evaluasi
-        total_count: Total
-        cost_for_geozone: Biaya
     geozones:
       index:
         title: Geozone
@@ -1094,7 +1025,6 @@ id:
           proposals: Proposal
           budgets: Buka anggaran
           budget_investments: Proyek investasi
-          spending_proposals: Belanja Proposal
           unverified_users: Pengguna tidak terverifikasi
           user_level_three: Pengguna tingkat tiga
           user_level_two: Pengguna tingkat satu
