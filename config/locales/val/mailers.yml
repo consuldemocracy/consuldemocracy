@@ -20,13 +20,6 @@ val:
       new_reply_by_html: Hi ha noves respostes de <b>%{commenter}</b> al teu comentari en
       subject: Algú ha contestat el teu comentari
       title: Nova resposta al teu comentari
-    unfeasible_spending_proposal:
-      hi: "Estimat usuari,"
-      new_html: "Per tot això, t'invitem a que elabores una <strong>nova proposta</strong> que s'ajuste a les condicions d'aquest procés. Això ho pots fer en aquest enllaç: %{url}."
-      new_href: "nova proposta d'inversió"
-      sincerely: "Atentament"
-      sorry: "Sentim les molesties ocasionades i tornem a donarte les gràcies per la teua inestimable participació."
-      subject: "La teua proposta d'inversió '%{code}' ha segut marcada com inviable"
     proposal_notification_digest:
       info: "A continuació et mostrem les noves modificacions que han publicat els autors de les propostes que estas avalant en %{org_name}."
       title: "Notificacions de propostes en %{org_name}"
