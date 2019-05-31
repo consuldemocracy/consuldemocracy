@@ -186,7 +186,6 @@ bs:
     policy: Politika privatnosti
     proposal: Prijedlog
     proposal_notification: "Obavijest"
-    spending_proposal: Prijedlog troškova
     budget/investment: Investicija
     budget/group: Budžetska grupa
     budget/heading: Budžetsko poglavlje
@@ -200,7 +199,6 @@ bs:
     image: Slika
   geozones:
     none: Cijelo mjesto
-    all: Sva područja
   layouts:
     application:
       chrome: Google Chrome
@@ -256,7 +254,6 @@ bs:
       proposals: Prijedlozi
       poll_questions: Glasanje
       budgets: Participativno budžetiranje
-      spending_proposals: Prijedlozi troškova
       notification_item:
         new_notifications:
           one: Imate jednu novu obavijest
@@ -781,7 +778,6 @@ bs:
     unflag: Ukloni oznaku
     unfollow_entity: "Ne prati više %{entity}"
     outline:
-      budget: Participativni budžet
       searcher: Tražitelj
     go_to_page: "Idite na stranu od "
     share: Podijeli
@@ -804,56 +800,6 @@ bs:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Ako podnosite prijedlog u ime udruženja ili zajednice, navedite naziv ili ime ovdje"
-      association_name: "Naziv udruženja"
-      description: Opis
-      external_url: Link za dodatnu dokumentaciju
-      geozone: Područje
-      submit_buttons:
-        create: Kreiraj
-        new: Kreiraj
-      title: Naziv prijedloga troškova
-    index:
-      title: Participativno budžetiranje
-      unfeasible: Neizvodivi investicioni projekti
-      by_geozone: "Investicioni projekti u područjima: %{geozone}"
-      search_form:
-        button: Traži
-        placeholder: Investicioni projekti...
-        title: Traži
-      search_results:
-        one: " sadrži pojam %{search_term}"
-        few: " sadrži pojam %{search_term}"
-        other: " sadrži pojam %{search_term}"
-      sidebar:
-        geozones: Područje
-        feasibility: Izvodivost
-        unfeasible: Nije izvodivo
-      start_spending_proposal: Kreiraj investicioni projekat
-    new:
-      more_info: Kako funkcioniše participativno budžetiranje?
-      recommendation_one: Prijedlog se obavezno odnosi na mjeru koju je moguće budžetirati.
-      recommendation_three: Budite što detaljniji u opisu svog prijedloga troškova, kako bi tim za selekciju shvatio svrhu vašeg prijedloga.
-      recommendation_two: Svaki prijedlog ili komentar koji implicira nezakonite radnje se briše.
-      recommendations_title: Kako napraviti prijedlog troškova
-      start_new: Napravite prijedlog troškova
-    show:
-      author_deleted: Korisnik obrisan
-      code: "Šifra prijedloga:"
-      share: Podijeli
-    wrong_price_format: Samo cijeli brojevi
-    spending_proposal:
-      spending_proposal: Investicioni projekat
-      already_supported: Već ste podržali ovaj prijedlog. Podijelite ga!
-      support: Podrška
-      support_title: Podrži prijedlog
-      supports:
-        zero: Nema podrške
-        one: 1 glas podrške
-        few: "%{count} glasa/glasova podrške"
-        other: "%{count} glasa/glasova podrške"
   stats:
     index:
       visits: Posjete
@@ -941,12 +887,6 @@ bs:
     unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
     verified_only: Samo korisnici sa potvrđenim nalogom mogu glasati za prijedloge; %{verify_account}.
     verify_account: potvrdi nalog
-    spending_proposals:
-      not_logged_in: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
-      not_verified: Samo korisnici sa potvrđenim nalogom mogu glasati za prijedloge; %{verify_account}.
-      organization: Organizacije ne mogu glasati
-      unfeasible: Neizvodivi investicioni projekti ne mogu dobiti podršku
-      not_voting_allowed: Faza glasanja je završena
     budget_investments:
       not_logged_in: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
       not_verified: Samo korisnici sa potvrđenim nalogom mogu glasati za investicione projekte; %{verify_account}.
