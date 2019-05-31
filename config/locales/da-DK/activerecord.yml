@@ -67,9 +67,6 @@ da:
       proposal:
         one: "Borgerforslag"
         other: "Borgerforslag"
-      spending_proposal:
-        one: "Investeringsprojekter"
-        other: "Investeringsprojekter"
       site_customization/page:
         one: Brugerdefineret side
         other: Brugerdefinerede sider
@@ -195,13 +192,6 @@ da:
       organization:
         name: "Navn på organisation"
         responsible_name: "Den ansvarlige for gruppen"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Navn på forening"
-        description: "Beskrivelse"
-        external_url: "Link til yderligere dokumentation"
-        geozone_id: "Projektets omfang"
-        title: "Titel"
       poll:
         name: "Navn"
         starts_at: "Startdato"
