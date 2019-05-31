@@ -19,6 +19,7 @@ ru:
         no_ballots_allowed: Фаза выбора закрыта
         different_heading_assigned_html: "Вы уже проголосовали за другой заголовок: %{heading_link}"
         change_ballot: изменить ваши голоса
+        casted_offline: Вы уже участвовали без Интернета
     groups:
       show:
         title: Выберите вариант
@@ -76,8 +77,18 @@ ru:
           button: Поиск
           placeholder: Поиск инвестиционных проектов...
           title: Поиск
+        search_results_html:
+          one: " содержащие термин <strong>'%{search_term}'</strong>"
+          few: " содержащие термин <strong>'%{search_term}'</strong>"
+          many: " содержащие термин <strong>'%{search_term}'</strong>"
+          other: " содержащие термин <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Мой голос
+          voted_html:
+            one: "<strong>Вы проголосовали за одно предложение со стоимостью %{amount_spent}</strong>"
+            few: "<strong>Вы проголосовали за %{count} предложений со стоимостью %{amount_spent}</strong>"
+            many: "<strong>Вы проголосовали за %{count} предложений со стоимостью %{amount_spent}</strong>"
+            other: "<strong>Вы проголосовали за %{count} предложений со стоимостью %{amount_spent}</strong>"
           voted_info: Вы можете %{link} в любое время до конца этого этапа. Нет необходимости тратить все имеющиеся деньги.
           voted_info_link: изменить ваш голос
           different_heading_assigned_html: "У вас есть активные голоса в другом заголовке: %{heading_link}"
@@ -127,6 +138,10 @@ ru:
         support_title: Поддержать этот проект
         supports:
           zero: Нет поддержки
+          one: 1 поддержка
+          few: "поддерживает %{count}"
+          many: "поддерживает %{count}"
+          other: "поддерживает %{count}"
         give_support: Поддержка
       header:
         check_ballot: Проверить мой бюллетень
