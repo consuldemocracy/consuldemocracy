@@ -5,7 +5,6 @@ ru:
     menu:
       title: Оценка
       budgets: Партисипаторные бюджеты
-      spending_proposals: Отправка предложений
     budgets:
       index:
         title: Партисипаторные бюджеты
@@ -79,52 +78,3 @@ ru:
         valuate: "Пакет документов обновлен"
       valuation_comments: Комментарии к оценке
       not_in_valuating_phase: Инвестиции можно оценивать только когда бюджет находится в фазе оценки
-    spending_proposals:
-      index:
-        geozone_filter_all: Все зоны
-        filters:
-          valuation_open: Открытые
-          valuating: Оцениваемые
-          valuation_finished: Оценка завершена
-        title: Проекты инвестирования для совместного бюджета
-        edit: Редактировать
-      show:
-        back: Назад
-        heading: Инвестиционный проект
-        info: Об авторе
-        association_name: Ассоциация
-        by: Отправил(а)
-        sent: Дата отправки
-        geozone: Охват
-        dossier: Пакет документов
-        edit_dossier: Редактировать пакет документов
-        price: Цена
-        price_first_year: Стоимость в первый год
-        currency: "€"
-        feasibility: Выполнимость
-        feasible: Выполнимо
-        not_feasible: Не выполнимо
-        undefined: Неопределено
-        valuation_finished: Оценка окончена
-        time_scope: Объем времени
-        internal_comments: Внутренние комментарии
-        responsibles: Ответственные
-        assigned_admin: Назначенный администратор
-        assigned_valuators: Назначенные оценщики
-      edit:
-        dossier: Пакет документов
-        price_html: "Стоимость (%{currency})"
-        price_first_year_html: "Стоимость в первый год (%{currency})"
-        currency: "€"
-        price_explanation_html: Описание цены
-        feasibility: Выполнимость
-        feasible: Выполнимо
-        not_feasible: Не выполнимо
-        undefined_feasible: На рассмотрении
-        feasible_explanation_html: Разъяснение выполнимости
-        valuation_finished: Оценка окончена
-        time_scope_html: Объем времени
-        internal_comments_html: Внутренние комментарии
-        save: Сохранить изменения
-      notice:
-        valuate: "Пакет документов обновлен"
