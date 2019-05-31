@@ -49,8 +49,6 @@ id:
         other: Lembar suara
       proposal:
         other: "Usulan warga"
-      spending_proposal:
-        other: "Proyek investasi"
       site_customization/page:
         other: Gambar Khusus
       site_customization/image:
@@ -161,13 +159,6 @@ id:
       organization:
         name: "Nama organisasi"
         responsible_name: "Orang yang bertanggung jawab untuk kelompok"
-      spending_proposal:
-        administrator_id: "Administrasi"
-        association_name: "Asosiasi nama"
-        description: "Deskripsi"
-        external_url: "Tautkan ke dokumentasi tambahan"
-        geozone_id: "Lingkup operasi"
-        title: "Judul"
       poll:
         name: "Nama"
         starts_at: "Tanggal Mulai"
