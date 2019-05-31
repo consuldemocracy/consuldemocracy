@@ -66,11 +66,6 @@ so:
       google_login_description: "U ogolow dadka isticmaala inay iska diiwaan galiyaan akoonka Google"
       signature_sheets: "Warqadaha Saxixyada"
       signature_sheets_description: "Waxay u ogolaataa in lagu daro golaha maamulka ee loo soo ururiyey barta-mashruucyada soo jeedinta iyo mashaariicda maalgashiga miisaaniyadda ka qaybqaadashada"
-      spending_proposals: "Bixinta soo jeedinta"
-      spending_proposals_description: "⚠️ XUSUUS: Shaqadani waxaa lagu bedelay Miisaaniyadda Ka Qaybqaadashada waxayna kudhici doontaa qaybaha cusub"
-      spending_proposal_features:
-        voting_allowed: Codeynta mashaariicda maalgashiga - Heerka hore ee doorashada
-        voting_allowed_description: "⚠️ XUSUUS: Shaqadani waxaa lagu bedelay Miisaaniyadda Ka Qaybqaadashada waxayna kudhici doontaa qaybaha cusub"
       user:
         recommendations: "Talloyin"
         recommendations_description: "Waxay muujineysaa talooyinka dadka isticmaala bogga ku saleysan summadaha waxyaabaha soo socda"
