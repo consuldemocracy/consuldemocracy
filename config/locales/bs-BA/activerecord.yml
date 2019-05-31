@@ -93,10 +93,6 @@ bs:
         one: "Građanski prijedlog"
         few: "Građanski prijedlozi"
         other: "Građanski prijedlozi"
-      spending_proposal:
-        one: "Investicioni projekat"
-        few: "Investicioni projekti"
-        other: "Investicioni projekti"
       site_customization/page:
         one: Prilagođena stranica
         few: Prilagođene stranice
@@ -243,13 +239,6 @@ bs:
       organization:
         name: "Naziv organizacije"
         responsible_name: "Osoba nadležna za grupu"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Naziv udruženja"
-        description: "Opis"
-        external_url: "Link za dodatnu dokumentaciju"
-        geozone_id: "Ciljano područje"
-        title: "Naziv"
       poll:
         name: "Naziv"
         starts_at: "Početni datum"
