@@ -1436,6 +1436,10 @@ es:
           one: "Hay %{count} firma inválida"
           other: "Hay %{count} firmas inválidas"
         unverified_error: (No verificadas por el Padrón)
+        voted:
+          zero: "No hay votos asociados con las firmas verificadas."
+          one: "Hay %{count} voto asociado a las firmas verificadas."
+          other: "Hay %{count} votos asociados a las firmas verificadas."
         loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
     stats:
       show:
