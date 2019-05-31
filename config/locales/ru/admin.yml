@@ -85,8 +85,10 @@ ru:
         table_investments: Инвестиции
         table_edit_groups: Группы заголовков
         table_edit_budget: Редактировать
+        table_admin_ballots: Бюллетени
         edit_groups: Редактировать группы заголовков
         edit_budget: Редактировать бюджет
+        admin_ballots: Администрирование бюллетеней
         no_budgets: "Нет бюджетов."
       create:
         notice: Новый совместный бюджет успешно создан!
@@ -372,6 +374,49 @@ ru:
         back: Вернуться к %{org}
         title: Администрирование
         description: Добро пожаловать в панель администрирования %{org}.
+      actions:
+        action_type:
+          proposed_action: Предлагаемое действие
+          resource: Ресурс
+        index:
+          edit: Редактировать
+          delete: Удалить
+          active: 'Да'
+          inactive: 'Нет'
+          title: Ресурсы и действия
+          action_title: Заголовок
+          action_type: Тип
+          required_supports: Требуемая поддержка
+          day_offset: Требуемые дни
+          action_active: Активные
+          order: Порядок
+          published_proposal: Опубликованное предложение
+          default:
+            email: E-mail
+            polls: Голосования
+            poster: Анонс
+        new:
+          back: Вернуться к списку
+        create:
+          notice: Действие успешно создано
+        edit:
+          editing: Редактировать действие для панели управления предложениями
+          back: Вернуться к списку
+        delete:
+          success: Действие успешно удалено
+        form:
+          submit_button: Сохранить
+      administrator_tasks:
+        index:
+          solve: Решить
+          source: Источник
+          filter: Фильтр
+          filters:
+            pending: На рассмотрении
+            done: Решено
+        form:
+          proposal: Предложение
+          request: Запрошенный ресурс
     debates:
       index:
         filter: Фильтр
@@ -381,6 +426,10 @@ ru:
           without_confirmed_hide: Ожидают
         title: Скрытые дебаты
         no_hidden_debates: Нет скрытых дебатов.
+    documents:
+      new:
+        title: "Загрузить документ"
+        label_attachment: "Выберите документ"
     hidden_users:
       index:
         filter: Фильтр
@@ -1369,6 +1418,28 @@ ru:
         proposal_notifications: Уведомления о предложениях
         incomplete_verifications: Незавершенные верификации
         polls: Опросы
+      graph:
+        debate_created: Дебаты
+        spending_proposals: Проекты инвестирования
+        visit: Посещения
+        level_2_user: Пользователи второго уровня
+        proposal_created: Предложения граждан
+      budgets:
+        title: "Совместные бюджеты - Статистика участия"
+        supporting_phase: Фаза поддержки
+        balloting_phase: Конечное голосование
+      budget_balloting:
+        title: "Статистика конечного голосования"
+        vote_count: Голоса
+        participant_count: Участники
+        votes_per_heading: Голосов на заголовок
+        participants_per_district: Участников на район
+      budget_supporting:
+        title: "Статистика фазы поддержки"
+        headings: Заголовки
+        users: Пользователи
+        vote_count: Голоса
+        participant_count: Участники
       direct_messages:
         title: Прямые сообщения
         total: Всего
@@ -1485,6 +1556,7 @@ ru:
           see_page: Смотреть страницу
         new:
           title: Создать новую настраиваемую страницу
+          slug_help_html: "Текст для идентификации этой страницы в адресе URL, к примеру <code>https://consulproject.org/страница-заголовок</code>"
         page:
           created_at: Создано в
           status: Статус
