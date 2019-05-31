@@ -403,8 +403,6 @@ zh-TW:
           title: 標題
           back: 返回
           supports: 支持
-          select: 選擇
-          selected: 已選擇
         form:
           custom_categories: 類別
           custom_categories_description: 用戶可以選擇創建建議的類別。
