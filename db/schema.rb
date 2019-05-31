@@ -1316,36 +1316,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.string   "locale"
   end
 
-  create_table "spending_proposals", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "author_id"
-    t.string   "external_url"
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
-    t.integer  "geozone_id"
-    t.bigint   "price"
-    t.boolean  "feasible"
-    t.string   "association_name"
-    t.text     "price_explanation"
-    t.text     "feasible_explanation"
-    t.text     "internal_comments"
-    t.boolean  "valuation_finished",                     default: false
-    t.text     "explanations_log"
-    t.integer  "administrator_id"
-    t.integer  "valuation_assignments_count",            default: 0
-    t.bigint   "price_first_year"
-    t.string   "time_scope"
-    t.datetime "unfeasible_email_sent_at"
-    t.integer  "cached_votes_up",                        default: 0
-    t.tsvector "tsv"
-    t.string   "responsible_name",            limit: 60
-    t.integer  "physical_votes",                         default: 0
-    t.index ["author_id"], name: "index_spending_proposals_on_author_id", using: :btree
-    t.index ["geozone_id"], name: "index_spending_proposals_on_geozone_id", using: :btree
-    t.index ["tsv"], name: "index_spending_proposals_on_tsv", using: :gin
-  end
-
   create_table "stats_versions", force: :cascade do |t|
     t.string   "process_type"
     t.integer  "process_id"
@@ -1371,7 +1341,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.integer "taggings_count",                          default: 0
     t.integer "debates_count",                           default: 0
     t.integer "proposals_count",                         default: 0
-    t.integer "spending_proposals_count",                default: 0
     t.string  "kind"
     t.integer "budget/investments_count",                default: 0
     t.integer "legislation/proposals_count",             default: 0
@@ -1381,7 +1350,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.index ["legislation/proposals_count"], name: "index_tags_on_legislation/proposals_count", using: :btree
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
     t.index ["proposals_count"], name: "index_tags_on_proposals_count", using: :btree
-    t.index ["spending_proposals_count"], name: "index_tags_on_spending_proposals_count", using: :btree
   end
 
   create_table "topics", force: :cascade do |t|
@@ -1467,13 +1435,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
-  create_table "valuation_assignments", force: :cascade do |t|
-    t.integer  "valuator_id"
-    t.integer  "spending_proposal_id"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-  end
-
   create_table "valuator_groups", force: :cascade do |t|
     t.string  "name"
     t.integer "budget_investments_count", default: 0
@@ -1482,7 +1443,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
   create_table "valuators", force: :cascade do |t|
     t.integer "user_id"
     t.string  "description"
-    t.integer "spending_proposals_count", default: 0
     t.integer "budget_investments_count", default: 0
     t.integer "valuator_group_id"
     t.index ["user_id"], name: "index_valuators_on_user_id", using: :btree

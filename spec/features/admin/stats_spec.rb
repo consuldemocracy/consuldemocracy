@@ -103,6 +103,7 @@ describe "Stats" do
   end
 
   describe "Budget investments" do
+
     context "Supporting phase" do
       before do
         @budget = create(:budget)
@@ -244,6 +245,7 @@ describe "Stats" do
   end
 
   context "graphs" do
+
     scenario "event graphs", :js do
       campaign = create(:campaign)
 
@@ -260,6 +262,7 @@ describe "Stats" do
         expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
       end
     end
+
   end
 
   context "Proposal notifications" do

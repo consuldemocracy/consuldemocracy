@@ -218,34 +218,6 @@ describe "Emails" do
     expect(email).to have_subject("Instrucciones de confirmación")
   end
 
-  scenario "Email on unfeasible spending proposal" do
-    Setting["feature.spending_proposals"] = true
-
-    spending_proposal = create(:spending_proposal)
-    administrator = create(:administrator)
-    valuator = create(:valuator)
-    spending_proposal.update(administrator: administrator)
-    spending_proposal.valuators << valuator
-
-    login_as(valuator.user)
-    visit edit_valuation_spending_proposal_path(spending_proposal)
-
-    choose  "spending_proposal_feasible_false"
-    fill_in "spending_proposal_feasible_explanation", with: "This is not legal as stated in Article 34.9"
-    check "spending_proposal_valuation_finished"
-    click_button "Save changes"
-
-    expect(page).to have_content "Dossier updated"
-    spending_proposal.reload
-
-    email = open_last_email
-    expect(email).to have_subject("Your investment project '#{spending_proposal.code}' has been marked as unfeasible")
-    expect(email).to deliver_to(spending_proposal.author.email)
-    expect(email).to have_body_text(spending_proposal.feasible_explanation)
-
-    Setting["feature.spending_proposals"] = nil
-  end
-
   context "Direct Message" do
 
     scenario "Receiver email" do

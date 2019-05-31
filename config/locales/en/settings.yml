@@ -93,11 +93,6 @@ en:
       featured_proposals_description: "Shows featured proposals on index proposals page"
       signature_sheets: "Signature sheets"
       signature_sheets_description: "It allows adding from the Administration panel signatures collected on-site to Proposals and investment projects of the Participative Budgets"
-      spending_proposals: "Spending proposals"
-      spending_proposals_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
-      spending_proposal_features:
-        voting_allowed: Voting on investment projects - Preselection phase
-        voting_allowed_description: "⚠️ NOTE: This functionality has been replaced by Participatory Budgeting and will disappear in new versions"
       user:
         recommendations: "Recommendations"
         recommendations_description: "Shows users recommendations on the homepage based on the tags of the following items"

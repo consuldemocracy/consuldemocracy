@@ -24,9 +24,6 @@ describe Abilities::Everyone do
 
   it { should be_able_to(:show, Comment) }
 
-  it { should be_able_to(:index, SpendingProposal) }
-  it { should_not be_able_to(:create, SpendingProposal) }
-
   it { should be_able_to(:index, Budget) }
 
   it { should_not be_able_to(:manage, Dashboard::Action) }

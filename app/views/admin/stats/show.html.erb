@@ -25,7 +25,6 @@
                         graph_admin_stats_path(id: "visits", count: @visits) %> <br>
             <span class="number"><%= number_with_delimiter(@visits) %></span>
           </p>
-
           <p>
             <%= t "admin.stats.show.summary.debates" %> <br>
             <span class="number"><%= number_with_delimiter(@debates) %></span>
@@ -55,7 +54,6 @@
             <%= t "admin.stats.show.summary.proposal_votes" %> <br>
             <span class="number"><%= number_with_delimiter(@proposal_votes) %> <br></span>
           </p>
-
           <p>
             <%= t "admin.stats.show.summary.debate_votes" %> <br>
             <span class="number"><%= number_with_delimiter(@debate_votes) %></span>
@@ -108,14 +106,6 @@
           </p>
         </div>
 
-        <% if feature?(:spending_proposals) %>
-          <div class="small-12 medium-3 column">
-            <p class="featured">
-              <%= t "admin.stats.show.summary.spending_proposals" %> <br>
-              <span class="number"><%= number_with_delimiter(@spending_proposals) %></span>
-            </p>
-          </div>
-        <% end %>
       </div>
 
       <div class="small-12 column">

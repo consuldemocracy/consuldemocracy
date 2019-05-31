@@ -31,11 +31,6 @@ namespace :management do
     get :print, on: :collection
   end
 
-  resources :spending_proposals, only: [:index, :new, :create, :show] do
-    post :vote, on: :member
-    get :print, on: :collection
-  end
-
   resources :budgets, only: :index do
     collection do
       get :create_investments

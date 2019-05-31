@@ -71,9 +71,6 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      spending_proposal:
-        one: "Propuesta de inversión"
-        other: "Proyectos de gasto"
       site_customization/page:
         one: Página
         other: Páginas
@@ -203,13 +200,6 @@ es:
       organization:
         name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nombre de la asociación"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
-        geozone_id: "Ámbito de actuación"
-        title: "Título"
       poll:
         name: "Nombre"
         starts_at: "Fecha de apertura"

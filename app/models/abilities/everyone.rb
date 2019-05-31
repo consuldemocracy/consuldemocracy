@@ -14,9 +14,8 @@ module Abilities
         poll.expired? && poll.stats_enabled?
       end
       can :read, Poll::Question
-      can [:read, :welcome], Budget
-      can :read, SpendingProposal
       can :read, User
+      can [:read, :welcome], Budget
       can [:read], Budget
       can [:read], Budget::Group
       can [:read, :print, :json_data], Budget::Investment

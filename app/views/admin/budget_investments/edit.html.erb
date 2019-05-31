@@ -11,11 +11,14 @@
 
   <div class="row expanded">
     <div class="small-12 column">
-      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
+      <%= f.text_field :title,
+                        maxlength: Budget::Investment.title_max_length %>
     </div>
 
     <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area :description,
+                        maxlength: Budget::Investment.description_max_length,
+                        ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">

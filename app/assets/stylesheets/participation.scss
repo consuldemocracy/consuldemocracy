@@ -249,7 +249,6 @@
 .debate-form,
 .proposal-form,
 .budget-investment-form,
-.spending-proposal-form,
 .document-form,
 .topic-new,
 .topic-form {
@@ -1463,6 +1462,7 @@
   border-radius: rem-calc(3);
   color: $budget;
   font-weight: bold;
+  padding: $line-height / 4;
 
   &::after {
     content: "\56";

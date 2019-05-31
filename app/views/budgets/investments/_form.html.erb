@@ -7,14 +7,20 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>
+      <%= f.text_field :title,
+                        maxlength: Budget::Investment.title_max_length,
+                        data: { js_suggest_result: "js_suggest_result",
+                                js_suggest: "#js-suggest",
+                                js_url: suggest_budget_investments_path(@budget) } %>
     </div>
     <div id="js-suggest"></div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area :description,
+                        maxlength: Budget::Investment.description_max_length,
+                        ckeditor: { language: I18n.locale } %>
     </div>
 
     <% if feature?(:allow_images) %>

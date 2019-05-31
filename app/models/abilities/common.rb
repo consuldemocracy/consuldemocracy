@@ -89,8 +89,6 @@ module Abilities
           proposal.published?
         end
         can :vote_featured, Proposal
-        can :vote, SpendingProposal
-        can :create, SpendingProposal
 
         can :vote, Legislation::Proposal
         can :vote_featured, Legislation::Proposal

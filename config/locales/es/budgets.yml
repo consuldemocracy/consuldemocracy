@@ -165,7 +165,6 @@ es:
       page_title: "%{budget} - Resultados"
       heading: "Resultados presupuestos participativos"
       heading_selection_title: "Ámbito de actuación"
-      spending_proposal: Título de la propuesta
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartados
       show_all_link: Mostrar todos
@@ -174,6 +173,7 @@ es:
       accepted: "Proyecto de gasto aceptado: "
       discarded: "Proyecto de gasto descartado: "
       incompatibles: Incompatibles
+      investment_title: Título del proyecto de gasto
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
       not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
