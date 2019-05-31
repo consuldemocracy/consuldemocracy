@@ -178,6 +178,22 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
         expect(page).to have_content "0 languages in use"
       end
     end
+
+    context "When translation interface feature setting" do
+      scenario "Is enabled translation interface should be rendered" do
+        visit new_translatable_path
+
+        expect(page).to have_css ".globalize-languages"
+      end
+
+      scenario "Is disabled translation interface should not be rendered" do
+        Setting["feature.translation_interface"] = nil
+
+        visit new_translatable_path
+
+        expect(page).not_to have_css ".globalize-languages"
+      end
+    end
   end
 end
 
