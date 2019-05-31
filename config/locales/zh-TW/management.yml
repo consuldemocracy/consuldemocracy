@@ -62,9 +62,6 @@ zh-TW:
       create_proposal: 創建建議
       print_proposals: 打印建議
       support_proposals: 支持建議
-      create_spending_proposal: 創建開支建議
-      print_spending_proposals: 打印開支建議
-      support_spending_proposals: 支持開支建議
       create_budget_investment: 創建預算投資
       print_budget_investments: 打印預算投資
       support_budget_investments: 支持預算投資
@@ -79,7 +76,6 @@ zh-TW:
     print:
       proposals_info: 在http://url.consul 上創建您的建議
       proposals_title: "建議："
-      spending_proposals_info: 在 http://url.consul 上參與
       budget_investments_info: 在 http://url.consul 上參與
     print_info: 列印此信息
     proposals:
@@ -105,17 +101,6 @@ zh-TW:
       filters:
         heading: 概念
         unfeasible: 不可行投資
-      print:
-        print_button: 打印
-      search_results:
-        other: " 包含術語'%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: 用戶未被核實
-      create: 創建開支建議
-      filters:
-        unfeasible: 不可行的投資項目
-        by_geozone: "投資項目範圍：%{geozone}"
       print:
         print_button: 打印
       search_results:
