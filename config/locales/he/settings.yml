@@ -93,11 +93,6 @@ he:
       featured_proposals_description: "מציג הצעות מובלטות בדף הבית של ההצעות"
       signature_sheets: "דפי חתימות"
       signature_sheets_description: "מאפשר להוסיף מתוך פאנל ניהול החתימות אשר נאספו באתר עבור ההצעות והצעות ההשקעה של התקציבים ההשתתפותיים"
-      spending_proposals: "הצעות לניצול"
-      spending_proposals_description: "⚠️ הערה: פונקציונליות זו הוחלפה בתקציב השתתפותי ותיעלם בגרסאות חדשות"
-      spending_proposal_features:
-        voting_allowed: ההצבעה על פרויקטי השקעות - שלב הבחירה מראש
-        voting_allowed_description: "⚠️ הערה: פונקציונליות זו הוחלפה בתקציב השתתפותי ותיעלם בגרסאות חדשות"
       user:
         recommendations: "המלצות"
         recommendations_description: "מראה המלצות משתמשים בדף הבית בהתבסס על התגים של הפריטים הבאים"
