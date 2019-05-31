@@ -695,7 +695,6 @@ he:
       officials: גורמים רשמיים
       organizations: ארגונים
       settings: הגדרות כלליות
-      spending_proposals: הצעות למסגרת תקציב
       stats: סטטיסטיקה
       signature_sheets: דפי חתימות
       site_customization:
@@ -720,7 +719,6 @@ he:
           content_block:
             update: "עדכן בלוק"
       title_moderated_content: תוכן מונחה
-      title_budgets: תקציבים
       title_profiles: פרופילים
       title_settings: הגדרות
       title_site_customization: תוכן האתר
@@ -913,15 +911,6 @@ he:
         delete: מחיקה
       search:
         title: "מעריכים: חיפוש משתמשים"
-      summary:
-        title: סיכום מעריך לפרויקטים להשקעה
-        valuator_name: מעריך
-        finished_and_feasible_count: הסתיים ובר ביצוע
-        finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
-        finished_count: הסתיים
-        in_evaluation_count: עדיין בשלב הערכה
-        total_count: סך הכל
-        cost: עלות הפרויקט
       form:
         edit_title: "מעריכים: עריכת מעריך"
         update: "עדכון מעריך"
@@ -1312,9 +1301,6 @@ he:
       proposal_search:
         button: חיפוש
         placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
-      spending_proposal_search:
-        button: חיפוש
-        placeholder: חיפוש הצעות להוצאה כספית לפי כותרת או תיאור
       user_search:
         button: חיפוש
         placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
@@ -1335,62 +1321,6 @@ he:
       color_help: בתבנית הקסדצימאלית
       show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
       results_and_stats_reminder: "סימון תיבות הסימון יהפכו את התוצאות ו / או הנתונים סטטיסטיים של סקר זה, גלויים לכל משתמש."
-    spending_proposals:
-      index:
-        geozone_filter_all: כל האזורים
-        administrator_filter_all: כל מנהלי המערכת
-        valuator_filter_all: כל המעריכים
-        tags_filter_all: כל התגים
-        filters:
-          valuation_open: פתוח
-          without_admin: ללא מנהל מערכת מוקצה
-          managed: מנוהל
-          valuating: תחת הערכה
-          valuation_finished: הערכה הסתיימה
-          all: כולם
-        title: פרויקטים להשקעה בתקצוב השתתפותי
-        assigned_admin: מנהל מערכת מוקצה
-        no_admin_assigned: אין מנהל מערכת שהוקצה
-        no_valuators_assigned: לא הוקצו מעריכים
-        summary_link: "סיכום השקעות בפרויקט"
-        valuator_summary_link: "סיכום הערכה"
-        feasibility:
-          feasible: "בר ביצוע (%{price})"
-          not_feasible: "אינו בר ביצוע"
-          undefined: "לא מוגדר"
-      show:
-        assigned_admin: מנהל מערכת שהוקצה
-        assigned_valuators: מעריכים שהוקצו
-        back: חזרה
-        classification: סיווג
-        heading: "השקעה כספית בפרוייקט %{id}"
-        edit: ערוך
-        edit_classification: ערוך קטגוריות
-        association_name: ארגון/עמותה
-        by: מאת
-        sent: נשלח
-        geozone: הקף הפרויקט
-        dossier: תיק
-        edit_dossier: ערוך תיק
-        tags: תגיות
-        undefined: לא מוגדר
-      edit:
-        classification: סיווג
-        assigned_valuators: מעריכים
-        submit_button: עדכן
-        tags: תגיות
-        tags_placeholder: "הכנס תגים מופרדים בפסיק (,)"
-        undefined: לא מוגדר
-      summary:
-        title: סיכום פרויקטים להשקעה
-        title_proposals_with_supports: סיכום פרויקטים להשקעה שזכו בתמיכה
-        geozone_name: הקף הפרויקט
-        finished_and_feasible_count: הסתיים ובר ביצוע
-        finished_and_unfeasible_count: הסתיים ולא בר ביצוע
-        finished_count: הסתיים
-        in_evaluation_count: עדיין בשלב הערכה
-        total_count: סך הכל
-        cost_for_geozone: עלות
     geozones:
       index:
         title: איזור גיאוגרפי
@@ -1463,7 +1393,6 @@ he:
           proposals: הצעות
           budgets: תקציבים פתוחים
           budget_investments: פרויקטי השקעה
-          spending_proposals: הצעות למסגרת תקציב
           unverified_users: משתמשים שלא אושרו
           user_level_three: רמה של שלושה משתמשים
           user_level_two: רמה של שני משתמשים
@@ -1480,7 +1409,6 @@ he:
         polls: סקרים
       graph:
         debate_created: דיונים
-        spending_proposals: פרויקטי השקעה
         visit: ביקורים
         level_2_user: משתמשים ברמה 2
         proposal_created: הצעות תושבים
