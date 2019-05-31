@@ -172,7 +172,6 @@ zh-CN:
     policy: 隐私政策
     proposal: 提议
     proposal_notification: "通知"
-    spending_proposal: 支出提议
     budget/investment: 投资
     budget/heading: 预算标题
     poll/shift: 轮班
@@ -185,7 +184,6 @@ zh-CN:
     image: 图像
   geozones:
     none: 所有城市
-    all: 所有范围
   layouts:
     application:
       chrome: Google Chrome
@@ -225,7 +223,6 @@ zh-CN:
       proposals: 提议
       poll_questions: 投票
       budgets: 参与性预算编制
-      spending_proposals: 支出提议
       notification_item:
         new_notifications:
           other: 您有%{count} 个新通知
@@ -572,7 +569,6 @@ zh-CN:
     unflag: 取消标记
     unfollow_entity: "取消跟随%{entity}"
     outline:
-      budget: 参与性预算
       searcher: 搜寻者
     go_to_page: "转到页面 "
     share: 共用
@@ -595,52 +591,6 @@ zh-CN:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "如果您以协会或集体的名义提出提议，请在此添加名称"
-      association_name: "协会名称"
-      description: 说明
-      external_url: 链接到其他文档
-      geozone: 经营范围
-      submit_buttons:
-        create: 创建
-        new: 创建
-      title: 支出提议标题
-    index:
-      title: 参与性预算
-      unfeasible: 不可行的投资项目
-      by_geozone: "投资项目范围：%{geozone}"
-      search_form:
-        button: 搜索
-        placeholder: 投资项目...
-        title: 搜索
-      search_results:
-        other: " 包含术语'%{search_term}'"
-      sidebar:
-        geozones: 经营范围
-        feasibility: 可行性
-        unfeasible: 不可行
-      start_spending_proposal: 创建一个投资项目
-    new:
-      more_info: 参与性预算编制是如何运作的？
-      recommendation_one: 提议必须提及可预算的行动。
-      recommendation_three: 在描述支出提议的时候请尽可能详细说明，以便审阅小组可以明白您的观点。
-      recommendation_two: 任何暗示非法行动的提议或评论都将被删除。
-      recommendations_title: 如果创建支出提议
-      start_new: 创建支出提议
-    show:
-      author_deleted: 已删除的用户
-      code: "提议编号："
-      share: 共用
-    wrong_price_format: 仅限整数
-    spending_proposal:
-      spending_proposal: 投资项目
-      already_supported: 您已支持此提议。请分享它吧！
-      support: 支持
-      support_title: 支持此项目
-      supports:
-        zero: 没有支持
-        other: "%{count} 个支持"
   stats:
     index:
       visits: 访问
@@ -713,12 +663,6 @@ zh-CN:
     unauthenticated: 您必须%{signin} 或者%{signup} 才能继续。
     verified_only: 只有已验证的用户可以对提议进行投票；%{verify_account}。
     verify_account: 验证您的账户
-    spending_proposals:
-      not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
-      not_verified: 只有已验证的用户可以对提议进行投票；%{verify_account}。
-      organization: 组织不得投票
-      unfeasible: 不可行的投资项目无法得到支持
-      not_voting_allowed: 投票阶段已结束
     budget_investments:
       not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
       not_verified: 只有已验证的用户可以对投资项目进行投票；%{verify_account}。
