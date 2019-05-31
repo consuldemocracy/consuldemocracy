@@ -59,11 +59,6 @@ ar:
         unfeasible: الاستثمارات الغير مجدية
       print:
         print_button: طباعة
-    spending_proposals:
-      filters:
-        unfeasible: الاستثمارات الغير مجدية
-      print:
-        print_button: طباعة
     username_label: اسم المستخدم
     users:
       create_user: إنشاء حساب جديد
