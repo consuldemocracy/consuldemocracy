@@ -64,9 +64,6 @@ bn:
       proposal:
         one: "নাগরিক প্রস্তাবনা"
         other: "নাগরিক প্রস্তাবনা গুলো"
-      spending_proposal:
-        one: "বিনিয়োগ প্রকল্প"
-        other: "বিনিয়োগ প্রকল্প গুলো"
       site_customization/page:
         one: প্রচলন পৃষ্ঠা
         other: প্রচলিত পৃষ্ঠগুলো
