@@ -179,7 +179,6 @@ da:
     policy: Privatpolitik
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
-    spending_proposal: Udgiftsforslag
     budget/investment: Investering
     budget/group: Budget gruppe
     budget/heading: Budget Rubrik
@@ -193,7 +192,6 @@ da:
     image: Billede
   geozones:
     none: Hele byen
-    all: Alle felter
   layouts:
     application:
       chrome: Google Chrome
@@ -248,7 +246,6 @@ da:
       proposals: Forslag
       poll_questions: Afstemning
       budgets: Deltagerbudget
-      spending_proposals: Udgiftsforslag
       notification_item:
         new_notifications:
           one: Du har en ny notifikation
@@ -755,7 +752,6 @@ da:
     unflag: Fjern flag
     unfollow_entity: "Følg ikke længere %{entity}"
     outline:
-      budget: Deltagerbudget
       searcher: Søgemaskine
     go_to_page: "Gå til siden "
     share: Del
@@ -778,54 +774,6 @@ da:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Hvis du opretter et forslag på vegne af en forening eller en gruppe, tilføj navnet på den her"
-      association_name: "Navn på forening"
-      description: Beskrivelse
-      external_url: Link til yderligere dokumentation
-      geozone: Område
-      submit_buttons:
-        create: Opret
-        new: Opret
-      title: Titel på udgiftsforslag
-    index:
-      title: Deltagerbudget
-      unfeasible: Ikke mulige investeringsprojekter
-      by_geozone: "Investeringsprojekter tilknyttet et område: %{geozone}"
-      search_form:
-        button: Søg
-        placeholder: Investeringsprojekter...
-        title: Søg
-      search_results:
-        one: " indeholder '%{search_term}'"
-        other: " indeholder '%{search_term}'"
-      sidebar:
-        geozones: Område
-        feasibility: Kan gennemføres
-        unfeasible: Kan ikke gennemføres
-      start_spending_proposal: Opret et investeringsprojekt
-    new:
-      more_info: Hvad fungerer deltagerbudgetter?
-      recommendation_one: Forslaget skal henvise til faktiske omkostninger.
-      recommendation_three: Forsøg at beskrive dit udgiftsforslag med så mange detaljer som muligt, så den professionelle vurderingsgruppe forstår, hvad du mener.
-      recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling, vil blive slettet.
-      recommendations_title: Hvordan opretter jeg et udgiftsforslag?
-      start_new: Opret udgiftsforslag
-    show:
-      author_deleted: Bruger slettet
-      code: "Forslagskode:"
-      share: Del
-    wrong_price_format: Kun hele tal
-    spending_proposal:
-      spending_proposal: Investeringsprojekt
-      already_supported: Du har allerede støttet forslaget. Del det!
-      support: Støt
-      support_title: Støt projektet
-      supports:
-        zero: Ingen opbakning
-        one: 1 støtter forslaget
-        other: "%{count} støtter forslaget"
   stats:
     index:
       visits: Besøg
@@ -908,12 +856,6 @@ da:
     unauthenticated: Du skal %{signin} eller %{signup} for at fortsætte.
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
     verify_account: verificer din konto
-    spending_proposals:
-      not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
-      not_verified: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
-      organization: Det er ikke tilladt for organisationer at stemme
-      unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
-      not_voting_allowed: Afstemningsfasen er afsluttet
     budget_investments:
       not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
       not_verified: Kun verificerede brugere kan stemme på investeringsprojekter; %{verify_account}.
