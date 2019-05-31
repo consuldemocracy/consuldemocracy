@@ -661,7 +661,6 @@ ru:
       officials: Официальные лица
       organizations: Организации
       settings: Глобальные настройки
-      spending_proposals: Предложения трат
       stats: Статистика
       signature_sheets: Подписные листы
       site_customization:
@@ -684,7 +683,6 @@ ru:
           content_block:
             update: "Обновить блок"
       title_moderated_content: Модерируемое содержимое
-      title_budgets: Бюджеты
       title_profiles: Профили
       title_settings: Настройки
       title_site_customization: Содержимое сайта
@@ -869,15 +867,6 @@ ru:
         delete: Удалить
       search:
         title: "Оценщики: Поиск пользователя"
-      summary:
-        title: Обзок оценщиков по проектам инвестиций
-        valuator_name: Эксперт
-        finished_and_feasible_count: Оконченные и выполнимые
-        finished_and_unfeasible_count: Оконченные и невыполнимые
-        finished_count: Оконченные
-        in_evaluation_count: В оценке
-        total_count: Всего
-        cost: Стоимость
       form:
         edit_title: "Оценщики: Редактировать оценщика"
         update: "Обновить оценщика"
@@ -1253,9 +1242,6 @@ ru:
       proposal_search:
         button: Поиск
         placeholder: Искать предложения по названию, коду, описанию или вопросу
-      spending_proposal_search:
-        button: Поиск
-        placeholder: Искать предложения трат по названию или описанию
       user_search:
         button: Поиск
         placeholder: Искать пользователя по имени или email
@@ -1274,62 +1260,6 @@ ru:
       created_at: Создано в
       delete: Удалить
       color_help: Шестнадцатеричный формат
-    spending_proposals:
-      index:
-        geozone_filter_all: Все зоны
-        administrator_filter_all: Все администраторы
-        valuator_filter_all: Все оценщики
-        tags_filter_all: Все метки
-        filters:
-          valuation_open: Открыто
-          without_admin: Без назначенного администратора
-          managed: Управляемые
-          valuating: Оцениваются
-          valuation_finished: Оценка завершена
-          all: Все
-        title: Проекты инвестиций для совместного финансирования
-        assigned_admin: Назначенный администратор
-        no_admin_assigned: Нет назначенного администратора
-        no_valuators_assigned: Нет назначенных оценщиков
-        summary_link: "Сводка по проекту инвестиции"
-        valuator_summary_link: "Сводка по оценке"
-        feasibility:
-          feasible: "Выполнимо (%{price})"
-          not_feasible: "Не выполнимо"
-          undefined: "Неопределено"
-      show:
-        assigned_admin: Назначенный администратор
-        assigned_valuators: Назначенные оценщики
-        back: Назад
-        classification: Классификация
-        heading: "Проект инвестиции %{id}"
-        edit: Редактировать
-        edit_classification: Редактировать классификацию
-        association_name: Ассоциация
-        by: Кем
-        sent: Отправлено
-        geozone: Зона
-        dossier: Пакет документов
-        edit_dossier: Редактировать пакет документов
-        tags: Метки
-        undefined: Неопределено
-      edit:
-        classification: Классификация
-        assigned_valuators: Эксперты
-        submit_button: Обновить
-        tags: Метки
-        tags_placeholder: "Впишите желаемые метки, разделенные запятыми (,)"
-        undefined: Неопределено
-      summary:
-        title: Сводка по инвестиционным проектам
-        title_proposals_with_supports: Сводка по инвестиционным проектам, имеющим поддержку
-        geozone_name: Зона
-        finished_and_feasible_count: Оконченные и выполнимые
-        finished_and_unfeasible_count: Оконченные и невыполнимые
-        finished_count: Оконченные
-        in_evaluation_count: На оценке
-        total_count: Всего
-        cost_for_geozone: Стоимость
     geozones:
       index:
         title: Геозона
@@ -1402,7 +1332,6 @@ ru:
           proposals: Заявки
           budgets: Открытые бюджеты
           budget_investments: Инновационные проекты
-          spending_proposals: Проекты трат
           unverified_users: Неверифицированные пользователи
           user_level_three: Пользователи третьего уровня
           user_level_two: Пользователи второго уровня
@@ -1418,7 +1347,6 @@ ru:
         polls: Опросы
       graph:
         debate_created: Дебаты
-        spending_proposals: Проекты инвестирования
         visit: Посещения
         level_2_user: Пользователи второго уровня
         proposal_created: Предложения граждан
