@@ -62,9 +62,6 @@ so:
       create_proposal: Abuur soo jeedin
       print_proposals: Dabac soojedinta
       support_proposals: Tageer so jedinta
-      create_spending_proposal: Samee qorshaha kharashad
-      print_spending_proposals: Dabaac so jedinada Kharashaadka
-      support_spending_proposals: Tageer Soojeedinada Kharashadka
       create_budget_investment: Saame misaaniyad malgashelin
       print_budget_investments: Dabac misaniyada malgashiyada
       support_budget_investments: Tageer misaniyada malgashiyada
@@ -79,7 +76,6 @@ so:
     print:
       proposals_info: 'Abuuro codsigaaga http: //url.consul'
       proposals_title: "Sojeedino:"
-      spending_proposals_info: 'Ka qaybgal http: //url.consul'
       budget_investments_info: 'Ka qaybgal http: //url.consul'
     print_info: Daabac xogtan
     proposals:
@@ -105,18 +101,6 @@ so:
       filters:
         heading: Fikradda
         unfeasible: Malgashi an macqul ahayn
-      print:
-        print_button: Dabac
-      search_results:
-        one: " oo ku jira ereyga %{search_term}"
-        other: " oo ku jira ereyga %{search_term}"
-    spending_proposals:
-      alert:
-        unverified_user: Isticmaalaha lama hubin
-      create: Samee qorshaha kharashad
-      filters:
-        unfeasible: Mashaariicda maalgashiga aan macquulka ahayn
-        by_geozone: "Baxaada mashruuca malgashiga%{geozone}"
       print:
         print_button: Dabac
       search_results:
