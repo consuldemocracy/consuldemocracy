@@ -692,7 +692,6 @@ ar:
       officials: المسؤولون
       organizations: منظمات
       settings: الإعدادات العامة
-      spending_proposals: مقترحات الانفاق
       stats: الإحصائيات
       signature_sheets: أوراق التوقيع
       site_customization:
@@ -716,7 +715,6 @@ ar:
           content_block:
             update: "تحديث الكتلة"
       title_moderated_content: محتوى خاضع للإشراف
-      title_budgets: ميزانيات
       title_profiles: ملفات التعريف
       title_settings: إعدادات
       title_site_customization: محتوى الموقع
@@ -906,15 +904,6 @@ ar:
         delete: حذف
       search:
         title: "المقيمون: البحث عن مستخدم"
-      summary:
-        title: ملخص المقيمين للمشاريع الاستثمارية
-        valuator_name: مقيّم
-        finished_and_feasible_count: منتهي و مجدي
-        finished_and_unfeasible_count: منتهي و غير مجدي
-        finished_count: انتهى
-        in_evaluation_count: قيد التقييم
-        total_count: المجموع
-        cost: التكلفة
       form:
         edit_title: "المقيّمون: تعديل المقيّمين"
         update: "تحديث المقيّم"
@@ -1304,9 +1293,6 @@ ar:
       proposal_search:
         button: بحث
         placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
-      spending_proposal_search:
-        button: بحث
-        placeholder: البحث عن اقتراحات الإنفاق عن طريق العنوان أو الوصف
       user_search:
         button: بحث
         placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
@@ -1327,62 +1313,6 @@ ar:
       color_help: تنسيق Hexadecimal
       show_results_and_stats: "اظهار النتائج والإحصائيات"
       results_and_stats_reminder: "عند تحديد خانات الاختيار كنتائج و / أو إحصائيات ستكون متاحة للجميع وسيشاهدها كل مستخدم."
-    spending_proposals:
-      index:
-        geozone_filter_all: كل المناطق
-        administrator_filter_all: كل المدراء
-        valuator_filter_all: كل المقيّمين
-        tags_filter_all: كل العلامات
-        filters:
-          valuation_open: فتح
-          without_admin: بدون تعيين المشرف
-          managed: الإدارة
-          valuating: تحت التقييم
-          valuation_finished: انتهى التقييم
-          all: الكل
-        title: مشاريع استثمارية للميزانية المشتركة
-        assigned_admin: المشرف المعين
-        no_admin_assigned: المشرف غير المعين
-        no_valuators_assigned: لم يتم تعيين مقيّمين
-        summary_link: "ملخص مشروع الاستثمار"
-        valuator_summary_link: "ملخص المقيّم"
-        feasibility:
-          feasible: "مجدي (%{price})"
-          not_feasible: "غير مجدي"
-          undefined: "غير معرف"
-      show:
-        assigned_admin: المشرف المعين
-        assigned_valuators: المقيمين الذين تم تعيينهم
-        back: عودة
-        classification: تصنيف
-        heading: "مشروع الاستثمار %{id}"
-        edit: تعديل
-        edit_classification: تعديل التصنيف
-        association_name: جمعية
-        by: من قبل
-        sent: تم الإرسال
-        geozone: نطاق
-        dossier: الملف
-        edit_dossier: تعديل الملف
-        tags: علامات
-        undefined: غير معرف
-      edit:
-        classification: تصنيف
-        assigned_valuators: المقيمون
-        submit_button: تحديث
-        tags: علامات
-        tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
-        undefined: غير معرف
-      summary:
-        title: ملخص للمشاريع الاستثمارية
-        title_proposals_with_supports: ملخص للمشاريع الاستثمارية مع المستندات
-        geozone_name: نطاق
-        finished_and_feasible_count: منتهي و مجدي
-        finished_and_unfeasible_count: منتهي و غير مجدي
-        finished_count: انتهى
-        in_evaluation_count: قيد التقييم
-        total_count: المجموع
-        cost_for_geozone: التكلفة
     geozones:
       index:
         title: رقعة جغرافية
@@ -1436,7 +1366,6 @@ ar:
           proposals: إقتراحات
           budgets: الميزانيات المفتوحة
           budget_investments: مشاريع استثمارية
-          spending_proposals: مقترحات الانفاق
           unverified_users: مستخدمين غير متحقق منهم
           user_level_three: المستوى الثالث من المستخدمين
           user_level_two: المستوى الثني من المستخدمين
@@ -1453,7 +1382,6 @@ ar:
         polls: استطلاعات
       graph:
         debate_created: الحوارات
-        spending_proposals: مشاريع استثمارية
         visit: الزيارات
         level_2_user: المستوى 2 من المستخدمين
         proposal_created: مقترحات المواطنين
