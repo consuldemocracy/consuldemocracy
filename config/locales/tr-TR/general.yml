@@ -179,7 +179,6 @@ tr:
     policy: Gizlilik Politikası
     proposal: Öneri
     proposal_notification: "Bildirim"
-    spending_proposal: Harcama önerisi
     budget/investment: yatırım
     budget/group: Bütçe Grubu
     budget/heading: Bütçe Başlığı
@@ -193,7 +192,6 @@ tr:
     image: Fotoğraf
   geozones:
     none: Tüm şehir
-    all: Tüm kapsamlar
   layouts:
     application:
       chrome: Google Chrome
@@ -233,7 +231,6 @@ tr:
       proposals: Öneriler
       poll_questions: Oylama
       budgets: Katılımcı bütçeleme
-      spending_proposals: Harcama Önerileri
       notification_item:
         new_notifications:
           one: Bir yeni bildiriminiz var
@@ -593,7 +590,6 @@ tr:
     unflag: İşaretini Kaldır
     unfollow_entity: "Takibi bırak %{entity}"
     outline:
-      budget: Katılımcı bütçe
       searcher: Araştırmacı
     go_to_page: "Sayfasına git "
     share: Paylaş
@@ -616,54 +612,6 @@ tr:
     whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: "Instagram %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Eğer bir dernek veya topluluk adına önerirseniz, ismi buraya ekleyin"
-      association_name: "Dernek adı"
-      description: Tanımlama
-      external_url: Ek belgeye bağlantı
-      geozone: İşlem kapsamı
-      submit_buttons:
-        create: Oluştur
-        new: Oluştur
-      title: Harcama önerisi başlığı
-    index:
-      title: Katılımcı bütçeleme
-      unfeasible: Uygulanamaz yatırım projeleri
-      by_geozone: "Kapsam ile yatırım projeleri: %{geozone}"
-      search_form:
-        button: Ara
-        placeholder: Yatırım projeleri...
-        title: Ara
-      search_results:
-        one: " '%{search_term}' i içeren terim"
-        other: " '%{search_term}' i içeren terim"
-      sidebar:
-        geozones: İşlem kapsamı
-        feasibility: Fizibilite
-        unfeasible: Uygulanamaz
-      start_spending_proposal: Bir yatırım projesi oluştur
-    new:
-      more_info: Katılımcı bütçeleme nasıl çalışır?
-      recommendation_one: Önerinin bütçeye uygun bir eyleme göndermede bulunması zorunludur.
-      recommendation_three: Harcama önerinizi açıklarken ayrıntılara girmeyi deneyin, böylece gözden geçirme ekibi amaçlarınızı anlar.
-      recommendation_two: Yasadışı işlem öneren herhangi bir öneri veya yorum silinir.
-      recommendations_title: Harcama önerisi nasıl oluşturulur
-      start_new: Harcama önerisi oluştur
-    show:
-      author_deleted: Kullanıcı silindi
-      code: "Öneri kodu:"
-      share: Paylaş
-    wrong_price_format: Sadece tam sayılar
-    spending_proposal:
-      spending_proposal: Yatırım projesi
-      already_supported: Bunu zaten desteklediniz. Paylaşın!
-      support: Destek
-      support_title: Bu projeyi destekle
-      supports:
-        zero: Destek yok
-        one: 1 destek
-        other: "%{count} destekler"
   stats:
     index:
       visits: Ziyaretler
@@ -741,12 +689,6 @@ tr:
     unauthenticated: Devam etmek için %{signin} veya %{signup} yapmalısınız.
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
     verify_account: hesabınızı doğrulayın
-    spending_proposals:
-      not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
-      not_verified: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
-      organization: Organizasyonların oy kullanmalarına izin verilmez
-      unfeasible: Uygulanamaz yatırım projeleri desteklenemez
-      not_voting_allowed: Oy kullanma aşaması kapanmıştır
     budget_investments:
       not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
       not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
