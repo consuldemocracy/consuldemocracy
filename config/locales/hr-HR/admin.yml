@@ -558,8 +558,6 @@ hr:
           back: Nazad
           id: Id
           supports: Ukupne potpore
-          select: Odaberi
-          selected: Odabrano
         form:
           custom_categories: Kategorije
           custom_categories_description: Kategorije koje korisnik može odabrati pri stvaranju prijedloga. Maksimalno 160 znakova.
