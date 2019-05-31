@@ -541,7 +541,6 @@ it:
       officials: Pubblici ufficiali
       organizations: Organizzazioni
       settings: Impostazioni globali
-      spending_proposals: Proposte di spesa
       stats: Statistiche
       signature_sheets: Fogli firma
       site_customization:
@@ -562,7 +561,6 @@ it:
         buttons:
           save: "Salva"
       title_moderated_content: Contenuto moderato
-      title_budgets: Bilanci
       title_profiles: Profili
       title_settings: Impostazioni
       title_site_customization: Contenuto del sito
@@ -704,15 +702,6 @@ it:
         delete: Eliminare
       search:
         title: "Stimatori: Ricerca utenti"
-      summary:
-        title: Riassunto della valutazione dei progetti di investimento
-        valuator_name: Valutatore
-        finished_and_feasible_count: Finito e fattibile
-        finished_and_unfeasible_count: Finito e non realizzabile
-        finished_count: Terminati
-        in_evaluation_count: Valutazione in corso
-        total_count: Totale
-        cost: Costi
       form:
         edit_title: "Stimatori: Modificare stimatore"
         update: "Aggiorna stimatore"
@@ -1073,9 +1062,6 @@ it:
       proposal_search:
         button: Ricercare
         placeholder: Ricercare le proposte per titolo, codice. descrizione o domanda
-      spending_proposal_search:
-        button: Ricercare
-        placeholder: Ricercare le proposte di spesa per titolo o descrizione
       user_search:
         button: Ricercare
         placeholder: Cerca utente in base al nome o all’email
@@ -1093,62 +1079,6 @@ it:
       content: Contenuto
       created_at: Creato al
       delete: Eliminare
-    spending_proposals:
-      index:
-        geozone_filter_all: Tutti gli ambiti
-        administrator_filter_all: Tutti gli amministratori
-        valuator_filter_all: Tutti gli stimatori
-        tags_filter_all: Tutte le etichette
-        filters:
-          valuation_open: Aperti
-          without_admin: Senza amministratore designato
-          managed: Gestito
-          valuating: Valutazione in corso
-          valuation_finished: Stima conclusa
-          all: Tutti
-        title: Progetti di investimento per bilancio partecipativo
-        assigned_admin: Amministratore assegnato
-        no_admin_assigned: Nessun amministratore assegnato
-        no_valuators_assigned: Nessuno stimatore assegnato
-        summary_link: "Sintesi del progetto di investimento"
-        valuator_summary_link: "Riepilogo del valutatore"
-        feasibility:
-          feasible: "Realizzabile (%{price})"
-          not_feasible: "Non è fattibile"
-          undefined: "Non definito"
-      show:
-        assigned_admin: Amministratore assegnato
-        assigned_valuators: Stimatori assegnati
-        back: Indietro
-        classification: Classificazione
-        heading: "Progetto di investimento %{id}"
-        edit: Modificare
-        edit_classification: Modifica classificazione
-        association_name: Associazione
-        by: Autore
-        sent: Inviato
-        geozone: Ambito
-        dossier: Dossier
-        edit_dossier: Modificare il dossier
-        tags: Etichette
-        undefined: Non definito
-      edit:
-        classification: Classificazione
-        assigned_valuators: Stimatori
-        submit_button: Aggiorna
-        tags: Etichette
-        tags_placeholder: "Scrivi le etichette che vuoi separate da virgole (,)"
-        undefined: Non definito
-      summary:
-        title: Riepilogo per progetti di investimento
-        title_proposals_with_supports: Riepilogo per progetti di investimento che hanno superato la fase di 'appoggio'
-        geozone_name: Ambito
-        finished_and_feasible_count: Concluso e realizzabile
-        finished_and_unfeasible_count: Concluso e irrealizzabile
-        finished_count: Terminati
-        in_evaluation_count: Stima in corso
-        total_count: Totale
-        cost_for_geozone: Costi
     geozones:
       index:
         title: Geozona
@@ -1213,7 +1143,6 @@ it:
           proposals: Proposte
           budgets: Bilanci aperti
           budget_investments: Progetti di investimento
-          spending_proposals: Proposte di spesa
           unverified_users: Utenti non verificati
           user_level_three: Utenti di livello 3
           user_level_two: Utenti di livello 2
