@@ -595,7 +595,6 @@ cs:
       officials: Úředníci
       organizations: Organizace
       settings: Hlavní nastavení
-      spending_proposals: Náklady návrhů
       stats: Statistiky
       signature_sheets: Podpisové archy
       site_customization:
@@ -618,7 +617,6 @@ cs:
           content_block:
             update: "Aktualizace bloku"
       title_moderated_content: Moderovaný obsah
-      title_budgets: Rozpočty
       title_profiles: Profily
       title_settings: Nastavení
       title_site_customization: Obsah webu
@@ -763,15 +761,6 @@ cs:
         delete: Smazat
       search:
         title: "Hodnotitelé: Vyhledávání uživatelů"
-      summary:
-        title: Přehled o vyhodnocení investičních projektů
-        valuator_name: Hodnotitel
-        finished_and_feasible_count: Ukončené a proveditelné
-        finished_and_unfeasible_count: Ukončené a neproveditelné
-        finished_count: Dokončené
-        in_evaluation_count: V procesu hodnocení
-        total_count: Celkem
-        cost: Náklady
       form:
         edit_title: "Hodnotitelé: Upravit hodnotitele"
         update: "Aktualizovat hodnotitele"
@@ -1139,9 +1128,6 @@ cs:
       proposal_search:
         button: Vyhledat
         placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
-      spending_proposal_search:
-        button: Vyhledat
-        placeholder: Vyhledat výdaje návrhů podle názvu nebo popisu
       user_search:
         button: Vyhledat
         placeholder: Vyhledat uživatele podle jména nebo e-mailu
@@ -1159,62 +1145,6 @@ cs:
       content: Obsah
       created_at: Vytvořeno v
       delete: Smazat
-    spending_proposals:
-      index:
-        geozone_filter_all: Všechny oblasti
-        administrator_filter_all: Všichni administrátoři
-        valuator_filter_all: Všichni hodnotitelé
-        tags_filter_all: Všechny štítky
-        filters:
-          valuation_open: Otevřené
-          without_admin: Bez přidělené role admin
-          managed: Spravované
-          valuating: Podhodnoceno
-          valuation_finished: Naceňování bylo ukončeno
-          all: Vše
-        title: Investiční projekty pro participativní rozpočet
-        assigned_admin: Přiřazený administrátor
-        no_admin_assigned: Administrátor není přiřazen
-        no_valuators_assigned: Žádný hodnotitel není přiřazen
-        summary_link: "Investiční projekt souhrn"
-        valuator_summary_link: "Shrnutí hodnotitele"
-        feasibility:
-          feasible: "Proveditelné (%{price})"
-          not_feasible: "Neproveditelný"
-          undefined: "Nedefinováno"
-      show:
-        assigned_admin: Přiřazený administrátor
-        assigned_valuators: Přiřazení hodnotitelé
-        back: Zpět
-        classification: Klasifikace
-        heading: "Investiční projekt %{id}"
-        edit: Upravit
-        edit_classification: Upravit klasifikaci
-        association_name: Sdružení
-        by: uživatelem
-        sent: Odesláno
-        geozone: Rozsah
-        dossier: Dokumentace
-        edit_dossier: Upravit dokumentaci
-        tags: Štítky
-        undefined: Nedefinováno
-      edit:
-        classification: Klasifikace
-        assigned_valuators: Hodnotitelé
-        submit_button: Aktualizovat
-        tags: Štítky
-        tags_placeholder: "Napište štítky které chcete a oddělte je čárkami (,)"
-        undefined: Nedefinováno
-      summary:
-        title: Přehled o vyhodnocení investičních projektů
-        title_proposals_with_supports: Shrnutí pro investiční projekty s podporovateli
-        geozone_name: Rozsah
-        finished_and_feasible_count: Ukončené a proveditelné
-        finished_and_unfeasible_count: Ukončené a neproveditelné
-        finished_count: Dokončené
-        in_evaluation_count: V procesu hodnocení
-        total_count: Celkem
-        cost_for_geozone: Náklady
     geozones:
       index:
         title: Geozóna
@@ -1275,7 +1205,6 @@ cs:
           proposals: Návrhy
           budgets: Otevřené rozpočty
           budget_investments: Investiční projekty
-          spending_proposals: Náklady návrhů
           unverified_users: Neověření uživatelé
           user_level_three: Počet uživatelů třetí úrovně
           user_level_two: Počet uživatelů druhé úrovně
