@@ -61,9 +61,6 @@ pt-BR:
       proposal:
         one: "Proposta dos cidadãos"
         other: "Propostas dos cidadãos"
-      spending_proposal:
-        one: "Projeto de investimento"
-        other: "Projetos de investimento"
       site_customization/page:
         one: Página personalizada
         other: Páginas personalizadas
@@ -171,13 +168,6 @@ pt-BR:
       organization:
         name: "Nome da organização"
         responsible_name: "Pessoa responsável pelo grupo"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nome da Associação"
-        description: "Descrição"
-        external_url: "Link para documentação adicional"
-        geozone_id: "Escopo da operação"
-        title: "Título"
       poll:
         name: "Nome"
         starts_at: "Data de início"
