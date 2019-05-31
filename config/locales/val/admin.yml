@@ -453,8 +453,6 @@ val:
           back: Tornar
           id: Id
           supports: Avals
-          select: Seleccionar
-          selected: Seleccionades
         form:
           custom_categories: Categoríes
           custom_categories_description: Categoríes que l'usuari pot seleccionar al crear la proposta.
