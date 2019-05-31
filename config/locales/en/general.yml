@@ -376,6 +376,10 @@ en:
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
+      selected_proposals: Selected proposals
+      selected_proposals_link: View selected proposals
+      archived_proposals: Archived proposals
+      proposals_lists: Proposals lists
       retired_links:
         all: All
         duplicated: Duplicated
@@ -437,9 +441,11 @@ en:
         other: "%{count} votes"
         zero: No votes
       supports_necessary: "%{number} supports needed"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
       successful: "This proposal has reached the required supports."
+      selected: "Selected proposal"
     show:
       author_deleted: User deleted
       code: "Proposal code:"

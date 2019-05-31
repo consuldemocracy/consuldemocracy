@@ -9,7 +9,13 @@
 <% end %>
 
 <main>
-  <% if @search_terms || @advanced_search_terms || @tag_filter || params[:retired].present? %>
+  <% if [
+          @search_terms,
+          @advanced_search_terms,
+          @tag_filter,
+          params[:retired].present?,
+          params[:selected].present?
+        ].any? %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
         <div class="small-12 column">
@@ -29,6 +35,8 @@
             </p>
           <% elsif params[:retired].present? %>
             <h2><%= t("proposals.index.retired_proposals") %></h2>
+          <% elsif params[:selected].present? %>
+            <h2><%= t("proposals.index.selected_proposals") %></h2>
           <% end %>
         </div>
       </div>
@@ -37,7 +45,7 @@
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
-  <% if feature?("user.recommendations") && @recommended_proposals.present? %>
+  <% if show_recommended_proposals? %>
     <%= render "shared/recommended_index", recommended: @recommended_proposals,
                                            disable_recommendations_path: recommendations_disable_proposals_path,
                                            namespace: "proposals" %>
@@ -50,7 +58,7 @@
         <%= render "shared/banner" %>
       <% end %>
 
-      <% if @featured_proposals.present? %>
+      <% if show_featured_proposals? %>
         <div id="featured-proposals" class="row featured-proposals">
           <div class="small-12 column">
             <h2>
@@ -69,9 +77,14 @@
         </div>
       </div>
 
-      <%= render("shared/advanced_search", search_path: proposals_path(page: 1)) unless params[:retired].present? %>
+      <% unless params[:retired].present? || params[:selected].present? %>
+        <%= render "shared/advanced_search",
+                   search_path: proposals_path(page: 1) %>
+      <% end %>
 
-      <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+      <% unless params[:selected].present? %>
+        <%= render "shared/order_links", i18n_namespace: "proposals.index" %>
+      <% end %>
 
       <% if @proposals.any? %>
         <div class="show-for-small-only">
@@ -111,13 +124,21 @@
         <%= link_to t("proposals.index.start_proposal"),
                     new_proposal_path,
                     class: "button expanded" %>
+
+        <div class="sidebar-divider"></div>
+        <h2 class="sidebar-title"><%= t("proposals.index.selected_proposals") %></h2>
+        <br>
+        <p class="small">
+          <%= link_to t("proposals.index.selected_proposals_link"), proposals_path(selected: "all") %>
+        </p>
+
         <% if params[:retired].blank? %>
           <%= render "categories" %>
           <%= render "shared/tag_cloud", taggable: "proposal" %>
           <%= render "geozones" %>
-          <%= render "popular" %>
         <% end %>
         <%= render "retired" %>
+        <%= render "proposals_lists" %>
       </aside>
     </div>
 

@@ -187,6 +187,7 @@ en:
         title: "Title"
         question: "Question"
         description: "Description"
+        selected: "Mark as selected"
         terms_of_service: "Terms of service"
       user:
         login: "Email or username"

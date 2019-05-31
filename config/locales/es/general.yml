@@ -376,6 +376,10 @@ es:
           error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
+      selected_proposals: Propuestas seleccionadas
+      selected_proposals_link: Ver propuestas seleccionadas
+      archived_proposals: Propuestas archivadas
+      proposals_lists: Listas de propuestas
       retired_links:
         all: Todas
         duplicated: Duplicadas
@@ -437,9 +441,11 @@ es:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoyos necesarios"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
+      selected: "Propuesta seleccionada"
     show:
       author_deleted: Usuario eliminado
       code: "Código de la propuesta:"
