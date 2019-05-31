@@ -165,7 +165,6 @@ el:
       page_title: "%{budget} - αποτελέσματα"
       heading: "Αποτελέσματα συμμετοχικού προϋπολογισμού"
       heading_selection_title: "Κατά περιοχή"
-      spending_proposal: Τίτλος πρότασης
       ballot_lines_count: Ψήφοι
       hide_discarded_link: Η απόκρυψη απορρίπτεται
       show_all_link: Εμφάνιση όλων
