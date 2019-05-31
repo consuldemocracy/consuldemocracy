@@ -115,11 +115,6 @@ ru:
         few: "Предложения граждан"
         many: "Предложения граждан"
         other: "Предложения граждан"
-      spending_proposal:
-        one: "Инвестиционный проект"
-        few: "Инвестиционные проекты"
-        many: "Инвестиционные проекты"
-        other: "Инновационные проекты"
       site_customization/page:
         one: Пользовательская страница
         few: Пользовательские страницы
@@ -284,13 +279,6 @@ ru:
       organization:
         name: "Название организации"
         responsible_name: "Лицо, ответственное за группу"
-      spending_proposal:
-        administrator_id: "Администратор"
-        association_name: "Название ассоциации"
-        description: "Описание"
-        external_url: "Ссылка на дополнительную документацию"
-        geozone_id: "Сфера деятельности"
-        title: "Название"
       poll:
         name: "Имя"
         starts_at: "Дата начала"
