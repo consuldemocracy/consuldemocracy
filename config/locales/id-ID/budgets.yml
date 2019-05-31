@@ -160,7 +160,6 @@ id:
       page_title: "%{budget} - Hasil"
       heading: "Partisipatif anggaran hasil"
       heading_selection_title: "Oleh kecamatan"
-      spending_proposal: Proposal teks
       ballot_lines_count: Suara
       hide_discarded_link: Menyembunyikan dibuang
       show_all_link: Tampilkan semua
