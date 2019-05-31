@@ -542,7 +542,6 @@ sq:
       officials: Zyrtarët
       organizations: Organizim
       settings: Parametrat globale
-      spending_proposals: Propozimet e shpenzimeve
       stats: Të dhëna statistikore
       signature_sheets: Nënshkrimi i fletëve
       site_customization:
@@ -563,7 +562,6 @@ sq:
         buttons:
           save: "Ruaj"
       title_moderated_content: Përmbajtja e moderuar
-      title_budgets: Buxhet
       title_profiles: Profilet
       title_settings: Opsione
       title_site_customization: Përmbajtja e faqes
@@ -711,15 +709,6 @@ sq:
         delete: Fshi
       search:
         title: "Vlerësuesit: Kërkimi i përdoruesit"
-      summary:
-        title: Përmbledhja e vlerësuesit për projektet e investimeve
-        valuator_name: Vlerësues
-        finished_and_feasible_count: Përfunduar dhe e realizueshme
-        finished_and_unfeasible_count: Përfunduar dhe e parealizueshme
-        finished_count: Përfunduar
-        in_evaluation_count: Në vlerësim
-        total_count: Totali
-        cost: Kosto
       form:
         edit_title: "Vlerësuesit: Ndrysho vlerësuesin"
         update: "Përditëso vlerësuesin"
@@ -1080,9 +1069,6 @@ sq:
       proposal_search:
         button: Kërko
         placeholder: Kërkoni propozime sipas titullit, kodit, përshkrimit ose pyetjes
-      spending_proposal_search:
-        button: Kërko
-        placeholder: Kërko shpenzimet e propozimeve sipas titullit ose përshkrimit
       user_search:
         button: Kërko
         placeholder: Kërko përdoruesin sipas emrit ose email
@@ -1100,62 +1086,6 @@ sq:
       content: Përmbajtje
       created_at: Krijuar në
       delete: Fshi
-    spending_proposals:
-      index:
-        geozone_filter_all: Të gjitha zonat
-        administrator_filter_all: Administrator
-        valuator_filter_all: Të gjithë vlerësuesit
-        tags_filter_all: Të gjitha etiketat
-        filters:
-          valuation_open: Hapur
-          without_admin: Pa caktuar administratorin
-          managed: Menaxhuar
-          valuating: Nën vlerësimin
-          valuation_finished: Vlerësimi përfundoi
-          all: Të gjithë
-        title: Projektet e investimeve për buxhetin pjesëmarrës
-        assigned_admin: Administrator i caktuar
-        no_admin_assigned: Asnjë admin i caktuar
-        no_valuators_assigned: Asnjë vlerësues nuk është caktuar
-        summary_link: "Përmbledhje e projektit të investimeve"
-        valuator_summary_link: "Përmbledhja e vlerësuesit"
-        feasibility:
-          feasible: "I mundshëm%{price}"
-          not_feasible: "Nuk është e realizueshme"
-          undefined: "E padefinuar"
-      show:
-        assigned_admin: Administrator i caktuar
-        assigned_valuators: Vlerësuesit e caktuar
-        back: Pas
-        classification: Klasifikim
-        heading: "Projekt investimi%{id}"
-        edit: Ndrysho
-        edit_classification: Ndrysho klasifikimin
-        association_name: Shoqatë
-        by: Nga
-        sent: Dërguar
-        geozone: Qëllim
-        dossier: Dosje
-        edit_dossier: Ndrysho dosjen
-        tags: Etiketë
-        undefined: E padefinuar
-      edit:
-        classification: Klasifikim
-        assigned_valuators: Vlerësues
-        submit_button: Përditëso
-        tags: Etiketë
-        tags_placeholder: "Shkruani etiketat që dëshironi të ndahen me presje (,)"
-        undefined: E padefinuar
-      summary:
-        title: Përmbledhje për projektet e investimeve
-        title_proposals_with_supports: Përmbledhje për projektet e investimeve me mbështetje
-        geozone_name: Qëllim
-        finished_and_feasible_count: Përfunduar dhe e realizueshme
-        finished_and_unfeasible_count: Përfunduar dhe e parealizueshme
-        finished_count: Përfunduar
-        in_evaluation_count: Në vlerësim
-        total_count: Totali
-        cost_for_geozone: Kosto
     geozones:
       index:
         title: Gjeozona
@@ -1220,7 +1150,6 @@ sq:
           proposals: Propozime
           budgets: Hap buxhetin
           budget_investments: Projekt investimi
-          spending_proposals: Propozimet e shpenzimeve
           unverified_users: Përdoruesit e paverifikuar
           user_level_three: Përdoruesit e nivelit të tretë
           user_level_two: Përdoruesit e nivelit të dytë
