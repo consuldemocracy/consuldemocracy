@@ -66,11 +66,6 @@ zh-TW:
       google_login_description: "允許用戶使用他們的Google 帳戶登記"
       signature_sheets: "簽名表"
       signature_sheets_description: "這允許從現場收集的管理面板簽名加到參與預算的提案和投資項目"
-      spending_proposals: "支出建議"
-      spending_proposals_description: "⚠️注意：此功能已被參與性預算取代，並將在新版本中消失"
-      spending_proposal_features:
-        voting_allowed: 投資項目投票 - 預選階段
-        voting_allowed_description: "⚠️注意：此功能已被參與性預算取代，並將在新版本中消失"
       user:
         recommendations: "推薦"
         recommendations_description: "根據以下項目的標記，在主頁上顯示用戶推薦"
