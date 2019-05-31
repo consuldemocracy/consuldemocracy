@@ -103,9 +103,6 @@ fi:
         phone_number: "Puhelinnumero"
       organization:
         name: "Organisaation nimi"
-      spending_proposal:
-        administrator_id: "Järjestelmänvalvoja"
-        description: "Kuvaus"
       poll:
         name: "Nimi"
         starts_at: "Aloituspäivä"
