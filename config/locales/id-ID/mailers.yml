@@ -19,13 +19,6 @@ id:
       new_reply_by_html: Ada respon baru dari <b>%{commenter}</b> untuk komentar anda
       subject: Seseorang telah menanggapi komentar anda
       title: Tanggapan baru atas komentar anda
-    unfeasible_spending_proposal:
-      hi: "Pengguna yang terhormat,"
-      new_html: "Untuk semua ini, kami mengundang Anda untuk menguraikan sebuah <strong>proposal baru</strong> yang menyesuaikan dengan kondisi dari proses ini. Anda dapat melakukannya di tautan berikut ini: %{url}."
-      new_href: "proyek investasi baru"
-      sincerely: "Hormat kami"
-      sorry: "Maaf atas ketidaknyamanan ini dan kami berterima kasih atas partisipasi anda yang tak ternilai harganya."
-      subject: "Proyek investasi anda '%{code}' telah ditandai sebagai tidak layak"
     proposal_notification_digest:
       info: "Berikut adalah pemberitahuan baru yang telah dipublikasikan oleh penulis proposal yang telah anda dukung di %{org_name}."
       title: "Notifikasi proposal di %{org_name}"
