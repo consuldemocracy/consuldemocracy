@@ -175,7 +175,6 @@ he:
       page_title: "%{budget} - תוצאות"
       heading: "תוצאות מימון השתתפותי"
       heading_selection_title: "על פי רובע"
-      spending_proposal: כותרת ההצעה
       ballot_lines_count: הצבעות
       hide_discarded_link: הסתר לא מאושרים
       show_all_link: הצג הכל
