@@ -76,11 +76,6 @@ nl:
       featured_proposals_description: "Toon de uitgelichte voorstellen op de voorstellen-pagina"
       signature_sheets: "Handtekeninglijsten"
       signature_sheets_description: "Hiermee kunnen handtekeningen van het beheerderspaneel ter plaatse worden verzameld bij voorstellen en investeringsprojecten van de participatieve begrotingen"
-      spending_proposals: "Spending proposals"
-      spending_proposals_description: "⚠️ OPMERKING: Deze functionaliteit is vervangen door participatieve budgettering en verdwijnt in nieuwe versies"
-      spending_proposal_features:
-        voting_allowed: Stemming over investeringsprojecten - voorselectiefase
-        voting_allowed_description: "⚠️ OPMERKING: Deze functionaliteit is vervangen door participatieve budgettering en verdwijnt in nieuwe versies"
       user:
         recommendations: "Aanbevelingen"
         recommendations_description: "Toont gebruikers aanbevelingen op de homepage op basis van de codes van de volgende items"
