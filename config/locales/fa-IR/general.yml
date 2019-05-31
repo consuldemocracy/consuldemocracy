@@ -137,7 +137,6 @@ fa:
     policy: سیاست حریم خصوصی
     proposal: طرح های پیشنهادی
     proposal_notification: "اطلاعیه ها"
-    spending_proposal: هزینه های طرح
     budget/investment: سرمایه گذاری
     poll/shift: تغییر 
     poll/question/answer: پاسخ
@@ -149,7 +148,6 @@ fa:
     image: تصویر
   geozones:
     none: تمام شهر
-    all: تمام مناطق
   layouts:
     footer:
       accessibility: قابلیت دسترسی
@@ -166,7 +164,6 @@ fa:
       my_account_link: حساب من
       proposals: طرح های پیشنهادی
       budgets: بودجه مشارکتی
-      spending_proposals: هزینه های طرح ها
       notification_item:
         notifications: اطلاعیه ها
   notifications:
@@ -321,48 +318,6 @@ fa:
       cards: کارتها
     recommended_index:
       title: توصیه ها
-  spending_proposals:
-    form:
-      association_name: "نام انجمن"
-      description: توضیحات
-      external_url: لینک به مدارک اضافی
-      geozone: حوزه عملیات
-      submit_buttons:
-        create: ایجاد شده
-        new: ایجاد شده
-      title: عنوان هزینه های پیشنهادی 
-    index:
-      title: بودجه مشارکتی
-      unfeasible: سرمایه گذاری غیر قابل پیش بینی
-      by_geozone: "پروژه های سرمایه گذاری با دامنه:%{geozone}"
-      search_form:
-        button: جستجو
-        placeholder: پروژه سرمایه گذاری
-        title: جستجو
-      search_results:
-        one: "حاوی اصطلاح%{search_term}"
-        other: "حاوی اصطلاح%{search_term}"
-      sidebar:
-        geozones: حوزه عملیات
-        feasibility: "امکان پذیری\n"
-        unfeasible: غیر قابل پیش بینی
-      start_spending_proposal: هیچ پروژه سرمایه گذاری وجود ندارد.
-    new:
-      more_info: چگونه بودجه مشارکتی کار می کند؟
-      start_new: ایجاد  هزینه پیشنهاد
-    show:
-      author_deleted: کاربر حذف شد
-      code: "کد طرح:"
-      share: "اشتراک گذاری\n"
-    wrong_price_format: فقط اعداد صحیح 
-    spending_proposal:
-      spending_proposal: پروژه سرمایه گذاری
-      support: پشتیبانی
-      support_title: پشتیبانی از این پروژه
-      supports:
-        zero: بدون پشتیبانی 
-        one: 1 پشتیبانی
-        other: "%{count}پشتیبانی"
   stats:
     index:
       visits: بازديد
@@ -436,12 +391,6 @@ fa:
     unauthenticated: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
     verified_only: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
     verify_account: "حساب کاربری خودراتایید کنید\n"
-    spending_proposals:
-      not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
-      not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
-      organization: سازمان ها مجاز به رای دادن نیستند
-      unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
-      not_voting_allowed: فازانتخاب  بسته است
     budget_investments:
       not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
       not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
