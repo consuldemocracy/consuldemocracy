@@ -62,9 +62,6 @@ de:
       create_proposal: Vorschlag erstellen
       print_proposals: Vorschläge drucken
       support_proposals: Vorschläge unterstützen
-      create_spending_proposal: Ausgabenvorschlag erstellen
-      print_spending_proposals: Ausgabenvorschläge drucken
-      support_spending_proposals: Ausgabenvorschläge unterstützen
       create_budget_investment: Budgetinvestitionen erstellen
       print_budget_investments: Budgetinvestitionen drucken
       support_budget_investments: Budgetinvestitionen unterstützen
@@ -79,7 +76,6 @@ de:
     print:
       proposals_info: Erstellen Sie Ihren Antrag auf http://url.consul
       proposals_title: "Vorschläge:"
-      spending_proposals_info: Auf http://url.consul teilnehmen
       budget_investments_info: Auf http://url.consul teilnehmen
     print_info: Die Info drucken
     proposals:
@@ -105,18 +101,6 @@ de:
       filters:
         heading: Konzept
         unfeasible: Undurchführbare Investition
-      print:
-        print_button: Drucken
-      search_results:
-        one: "enthält die Begriffe  '%{search_term}'"
-        other: "enthält die Begriffe  '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Benutzer ist nicht bestätigt
-      create: Ausgabenvorschlag erstellen
-      filters:
-        unfeasible: Undurchführbare Investitionsvorschläge
-        by_geozone: "Investitionsvorschläge im Bereich: %{geozone}"
       print:
         print_button: Drucken
       search_results:
