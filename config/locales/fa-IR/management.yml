@@ -9,7 +9,7 @@ fa:
       show:
         title: "حساب کاربری\n"
       edit:
-        title: 'ویرایش حساب کاربر: تنظیم مجدد رمز عبور'
+        title: "ویرایش حساب کاربر: تنظیم مجدد رمز عبور"
         back: برگشت
         password:
           password: رمز عبور
@@ -21,11 +21,11 @@ fa:
           print_help: شما می توانید رمز عبور را پس از ذخیره شدن چاپ کنید.
     account_info:
       change_user: تغییر کاربر
-      document_number_label: 'شماره سند:'
-      document_type_label: 'نوع سند:'
-      email_label: 'پست الکترونیکی'
-      identified_label: 'شناخته شده به عنوان:'
-      username_label: 'نام کاربری:'
+      document_number_label: "شماره سند:"
+      document_type_label: "نوع سند:"
+      email_label: "پست الکترونیکی"
+      identified_label: "شناخته شده به عنوان:"
+      username_label: "نام کاربری:"
     dashboard:
       index:
         title: مدیریت
@@ -36,9 +36,9 @@ fa:
       already_verified: حساب شما قبلا تایید شده است.
       has_no_account_html: برای ایجاد یک حساب، به%{link} بروید و در قسمت <b> «ثبت نام» </ b> در قسمت بالا سمت چپ صفحه کلیک کنید.
       link: کنسول
-      in_census_has_following_permissions: 'این کاربر می تواند در وب سایت با مجوزهای زیر شرکت کند:'
+      in_census_has_following_permissions: "این کاربر می تواند در وب سایت با مجوزهای زیر شرکت کند:"
       not_in_census: این سند ثبت نشده است.
-      not_in_census_info: 'شهروندان که در سرشماری نیستند می توانند در وب سایت با مجوزهای زیر شرکت کنند:'
+      not_in_census_info: "شهروندان که در سرشماری نیستند می توانند در وب سایت با مجوزهای زیر شرکت کنند:"
       please_check_account_data: لطفا بررسی کنید که داده های حساب کاربری بالا صحیح است.
       title: مدیریت کاربر
       under_age: "شما سن قانونی برای تأیید حساب کاربری خود ندارید"
@@ -47,14 +47,14 @@ fa:
     date_of_birth: تاریخ تولد
     email_verifications:
       already_verified: این حساب کاربری قبلا تأیید شده است
-      choose_options: 'لطفا یکی از گزینه های زیر را انتخاب کنید:'
+      choose_options: "لطفا یکی از گزینه های زیر را انتخاب کنید:"
       document_found_in_census: این سند در سرشماری یافت شد، اما هیچ حساب کاربری مربوط به آن نیست.
-      document_mismatch: 'این ایمیل متعلق به کاربر است که در حال حاضر دارای شناسه: %{document_number}(%{document_type})'
+      document_mismatch: "این ایمیل متعلق به کاربر است که در حال حاضر دارای شناسه: %{document_number}(%{document_type})"
       email_placeholder: نامه ای را که این فرد برای ایجاد حساب کاربری خود استفاده کرده است بنویسید
       email_sent_instructions: به منظور تکمیل کامل این کاربر، ضروری است که کاربر بر روی یک لینک کلیک کند که ما به آدرس ایمیل در بالا فرستاده ایم. این مرحله برای تأیید اینکه آدرس به او تعلق دارد مورد نیاز است.
       if_existing_account: اگر فرد قبلا یک حساب کاربری ایجاد شده در وب سایت داشته باشد،
       if_no_existing_account: اگر این فرد هنوز حساب کاربری ایجاد نکرده است
-      introduce_email: 'لطفا ایمیل مورد استفاده در حساب را وارد کنید:'
+      introduce_email: "لطفا ایمیل مورد استفاده در حساب را وارد کنید:"
       send_email: ارسال ایمیل تایید
     menu:
       create_proposal: ایجاد طرح های جدید
@@ -71,7 +71,7 @@ fa:
       vote_proposals: پیشنهادات رای دهی
     print:
       proposals_info: ایجاد پیشنهاد  در http://url.consul
-      proposals_title: 'طرح های پیشنهادی:'
+      proposals_title: "طرح های پیشنهادی:"
       spending_proposals_info: شرکت درhttp://url.consul
       budget_investments_info: شرکت درhttp://url.consul
     print_info: این اطلاعات را چاپ کنید

@@ -1,0 +1,11 @@
+nn:
+  activerecord:
+    models:
+      budget/investment:
+        zero: "Investeringer"
+        one: "Investering"
+        other: "Investeringer"
+      debate:
+        zero: "Debatter"
+        one: "Diskusjoner"
+        other: "Diskusjoner"

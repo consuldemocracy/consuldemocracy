@@ -15,7 +15,7 @@ ca:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar el meu compte
-        text: 'Pots confirmar la teva compte de correu electrònic en el següent enllaç:'
+        text: "Pots confirmar la teva compte de correu electrònic en el següent enllaç:"
         title: Benvingut / a
         welcome: Benvingut / a
       reset_password_instructions:
@@ -23,12 +23,12 @@ ca:
         hello: Hola
         ignore_text: Si tu no ho has sol·licitat, ignoreu aquest correu electrònic.
         info_text: La contrasenya no canviarà fins que no accedeixis a l'enllaç i la modifiquis.
-        text: 'S''ha sol·licitat canviar la contrasenya, pots fer-ho al següent enllaç:'
+        text: "S'ha sol·licitat canviar la contrasenya, pots fer-ho al següent enllaç:"
         title: Canvia la teua contrasenya
       unlock_instructions:
         hello: Hola
         info_text: El teu compte ha estat bloquejat a causa d'un excessiu nombre d'intents fallits d'alta.
-        instructions_text: 'Segueix el següent enllaç per desbloquejar el teu compte:'
+        instructions_text: "Segueix el següent enllaç per desbloquejar el teu compte:"
         title: El teu compte ha estat bloquejat
         unlock_link: Desbloquejar el meu compte
     menu:
@@ -100,7 +100,7 @@ ca:
           password_confirmation_label: Confirmar contrasenya nova
           password_label: Nova contrasenya
           update_submit: Actualitzar
-          waiting_for: 'Esperant confirmació de:'
+          waiting_for: "Esperant confirmació de:"
         new:
           email_label: El teu correu electrònic
           organization_signup: '¿Representes a una organització / col·lectiu? %{signup_link}'

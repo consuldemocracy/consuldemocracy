@@ -30,7 +30,7 @@ es:
         go_to_index: Ver propuestas
         office: Verificarte presencialmente en cualquier Oficina de Atención al Ciudadano
         send_letter: Solicitar una carta por correo postal
-        title: "¡Felicidades!"
+        title: '¡Felicidades!'
         user_permission_info: Con tu cuenta ya puedes...
       update:
         flash:
@@ -72,7 +72,7 @@ es:
       edit:
         confirmation_code: Introduce el código que has recibido en tu móvil
         resend_sms_link: Solicitar un nuevo código
-        resend_sms_text: "¿No has recibido un mensaje de texto con tu código de confirmación?"
+        resend_sms_text: '¿No has recibido un mensaje de texto con tu código de confirmación?'
         submit_button: Enviar
         title: SMS de confirmación
       new:

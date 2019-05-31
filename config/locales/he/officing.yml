@@ -1,14 +1,90 @@
 he:
   officing:
-    results:
-      new:
-        submit: "שמירה"
+    header:
+      title: הסקרים
+    dashboard:
       index:
-        table_votes: הצבעות
-    residence:
+        title: בודקי סקרים
+        info: כאן אתה יכול לבצע אימות למסמכי משתמש ולשמור את תוצאות ההצבעה
+        no_shifts: אין לך משמרות היום.
+    menu:
+      voters: אמת את המסמך
+      total_recounts: סה"כ ספירה חוזרת ותוצאות
+    polls:
+      final:
+        title: הסקרים מוכנים לספירה סופית
+        no_polls: אתה לא מורשה לבצע ספירה סופית בכל סקר פעיל כלשהו
+        select_poll: בחר סקר
+        add_results: הוסף תוצאות
+    poll_budgets:
+      see_ballot_sheets: ראה רשימת גיליונות ההצבעה
+      index:
+        title: "%{poll_budget} - רשימת גיליון ההצבעות"
+        ballot_sheet: "גיליונות הצבעה %{id}"
+        ballot_sheet_name: שם
+        ballot_sheet_author: מחבר/ת
+        ballot_sheet_creation_date: תאריך יצירה
+        empty_results: אין עדין גיליונות הצבעה לסקר זה
       new:
+        title: "%{poll_budget} - גיליון הצבעה חדש"
+        booth: דוכן
+        select_booth: בחר דוכן
+        csv_data: נתוני ה-CSV
+        submit: שמור
+      show:
+        created_at: תאריך יצירה
+        author: מחבר/ת
+        data: נתוני ה-CSV
+    booth:
+      new:
+        title: "בחר את הדוכן שלך"
+    results:
+      flash:
+        create: "התוצאות נשמרו"
+        error_create: "התוצאות לא נשמרו. שגיאת נתונים."
+        error_wrong_booth: "דוכן לא נכון. תוצאות לא נשמרו."
+      new:
+        title: "%{poll} - הוסף תוצאות"
+        not_allowed: "אינך רשאי להוסיף תוצאות עבור סקר זה"
+        booth: "דוכן"
+        date: "תאריך"
+        select_booth: "בחר דוכן"
+        ballots_white: "הצבעות ריקות לחלוטין"
+        ballots_null: "הצבעות לא חוקיות"
+        ballots_total: "סך כל ההצבעות"
+        submit: "שמירה"
+        results_list: "התוצאות שלך"
+        see_results: "הצג תוצאות"
+      index:
+        no_results: "אין תוצאות"
+        results: תוצאות
+        table_answer: תשובה
+        table_votes: הצבעות
+        table_whites: "הצבעות ריקות לחלוטין"
+        table_nulls: "הצבעות לא חוקיות"
+        table_total: "סך כל ההצבעות"
+    residence:
+      flash:
+        create: "מסמך מאומת עם מפקד האוכלוסין"
+        not_allowed: "אין לך משמרות היום"
+      new:
+        title: אמת את המסמך
         document_number: "מספר מסמך (כולל אותיות)"
+        submit: אמת את המסמך
+        error_verifying_census: "מפקד האוכלוסין לא הצליח לאמת את המסמך הזה."
+        form_errors: מונע את אימות המסמך הזה
     voters:
       new:
         title: סקרים
-        table_poll: הצבעה
+        table_poll: סקר
+        table_status: סטטיסטיקת סקר
+        table_actions: פעולות
+        not_to_vote: האדם החליט לא להצביע בשלב זה
+      show:
+        can_vote: יכול להצביע
+        cannot_vote: האדם אינו יכול להצביע משום שאינו רשום ברובע (ים) שבהם מתבצעת ההצבעה.
+        error_already_voted: השתתפת כבר בהצבעה זו
+        submit: אשר הצבעה
+        success: "ההצבעה מוצגת!"
+      can_vote:
+        submit_disable_with: "המתן, מאשר את ההצבעה..."

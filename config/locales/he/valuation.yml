@@ -5,73 +5,126 @@ he:
     menu:
       title: הערכה
       budgets: תקציבים השתתפותיים
-      spending_proposals: Spending proposals
+      spending_proposals: תקציב להצעה
     budgets:
       index:
         title: תקציבים השתתפותיים
         filters:
-          current: Open
-          finished: Finished
-        table_name: Name
+          current: פתוח
+          finished: הסתיים
+        table_name: שם
         table_phase: שלב
+        table_assigned_investments_valuation_open: פרויקטים להשקעה שהוקצו עם תקציב מוערך פתוח
+        table_actions: פעולות
+        evaluate: להעריך
+        no_budgets: "לא נמצאו תקציבים"
     budget_investments:
       index:
-        headings_filter_all: All headings
+        headings_filter_all: כל הכותרות
         filters:
-          valuation_open: Open
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-        title: Investment projects
-        edit: Edit dossier
-        no_valuators_assigned: No valuators assigned
-        table_id: ID
+          valuation_open: פתוח
+          valuating: תחת הערכה
+          valuation_finished: ההערכה הסתיימה
+        assigned_to: "שהוקצה ל- %{valuator}"
+        title: פרויקטי השקעה
+        edit: עריכת תיקים
+        valuators_assigned:
+          one: מעריך שהוקצה
+          two: "%{count} מעריכים שהוקצו"
+          many: "%{count} מעריכים שהוקצו"
+          other: "%{count} מעריכים שהוקצו"
+        no_valuators_assigned: לא הוקצו מעריכים
+        table_id: מזהה
         table_title: שם
-        table_heading_name: Heading name
+        table_heading_name: שם כותרת
+        table_actions: פעולות
+        no_investments: "אין פרויקטי השקעה זמינים."
       show:
         back: חזרה
         title: פרויקט להשקעה
+        info: פרטי המחבר
+        by: נשלח על ידי
+        sent: נשלח ב
         heading: כותרת
-        dossier: Dossier
-        edit_dossier: Edit dossier
+        dossier: תיק
+        edit_dossier: ערוך תיק
+        price: מחיר
+        price_first_year: עלות במהלך השנה הראשונה
+        currency: "שקלים"
         feasibility: סבירות לביצוע
+        feasible: בר ביצוע
         unfeasible: אינו בר-ביצוע
-        undefined: Undefined
-        valuation_finished: Valuation finished
-        assigned_valuators: Assigned valuators
+        undefined: לא מוגדר
+        valuation_finished: ההערכה הסתיימה
+        duration: טווח זמן
+        responsibles: אחראים
+        assigned_admin: מנהל מערכת אשר הוקצה
+        assigned_valuators: מעריכים שהוקצו
       edit:
-        dossier: Dossier
+        dossier: תיק
+        price_html: "מחיר (%{currency})"
+        price_first_year_html: "עלות במהלך השנה הראשונה (%{currency}) <small>(אופציונלי, הנתונים אינם ציבורים)</small>"
         price_explanation_html: פירוט למחיר
         feasibility: סבירות לביצוע
+        feasible: בר ביצוע
         unfeasible: אינו בר ביצוע
-        undefined_feasible: Pending
-        valuation_finished: Valuation finished
+        undefined_feasible: ממתין לאישור
+        feasible_explanation_html: הסבר להיתכנות
+        valuation_finished: ההערכה הסתיימה
+        valuation_finished_alert: "האם אתה בטוח שברצונך לסמן דו\"ח זה כמשימה שהושלמה? אם תעשה זאת, לא יהיה ניתן ניתן לשנותו."
+        not_feasible_alert: "דוא\"ל יישלח מיד למחבר הפרויקט עם דו\"ח של חוסר היתכנות לביצוע."
+        duration_html: טווח זמן
         save: שמירת שינויים
+      notice:
+        valuate: "התיק עודכן"
+      valuation_comments: הערות הערכה
+      not_in_valuating_phase: ניתן להעריך השקעות רק כאשר התקציב נמצא בשלב הערכות
     spending_proposals:
       index:
         geozone_filter_all: כל האזורים
         filters:
-          valuation_open: Open
-          valuating: Under valuation
-          valuation_finished: Valuation finished
+          valuation_open: פתוח
+          valuating: תחת הערכה
+          valuation_finished: ההערכה הסתיימה
         title: פרויקטים להשקעה בתקצוב השתתפותי
         edit: ערוך
       show:
         back: חזרה
         heading: פרויקט להשקעה
+        info: פרטי המחבר
         association_name: שם הארגון/עמותה
+        by: נשלח על ידי
+        sent: נשלח ב
         geozone: הקף הפרויקט
-        dossier: Dossier
-        edit_dossier: Edit dossier
+        dossier: תיק
+        edit_dossier: ערוך תיק
+        price: מחיר
+        price_first_year: עלות במהלך השנה הראשונה
+        currency: "שקלים"
         feasibility: סבירות לביצוע
+        feasible: בר ביצוע
         not_feasible: אינו בר ביצוע
-        undefined: Undefined
-        valuation_finished: Valuation finished
-        assigned_valuators: Assigned valuators
+        undefined: אינו מוגדר
+        valuation_finished: ההערכה הסתיימה
+        time_scope: טווח זמן
+        internal_comments: הערה פנימית
+        responsibles: אחראים
+        assigned_admin: מנהל מערכת אשר הוקצה
+        assigned_valuators: מעריכים שהוקצו
       edit:
-        dossier: Dossier
+        dossier: תיק
+        price_html: "מחיר (%{currency})"
+        price_first_year_html: "עלות במהלך השנה הראשונה (%{currency})"
+        currency: "שקלים"
         price_explanation_html: פירוט למחיר
         feasibility: סבירות לביצוע
+        feasible: בר ביצוע
         not_feasible: אינו בר ביצוע
-        undefined_feasible: Pending
-        valuation_finished: Valuation finished
+        undefined_feasible: ממתין לאישור
+        feasible_explanation_html: הסבר להיתכנות
+        valuation_finished: ההערכה הסתיימה
+        time_scope_html: טווח זמן
+        internal_comments_html: הערה פנימית
         save: שמירת שינויים
+      notice:
+        valuate: "התיק עודכן"

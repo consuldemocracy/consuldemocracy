@@ -1,8 +1,24 @@
 he:
   documents:
     title: מסמכים
+    max_documents_allowed_reached_html: הגעת למספר המרבי המותר של מסמכים! <strong> עליך למחוק אחד לפני שתוכל להעלות קובץ אחר. </strong>
+    additional: תיעוד נוסף
     form:
       title: מסמכים
+      title_placeholder: הוספת כותרת המתארת את המסמך
+      attachment_label: בחר מסמך
+      delete_button: הסר מסמך
+      cancel_button: ביטול
+      note: "ניתן לטעון עד \"%{max_documents_allowed}\"מסמכים מסוגי התוכן הבאים:\n\"%{accepted_content_types}\", עד \"%{max_file_size}\" מגה בייט לקובץ."
+      add_new_document: הוסף מסמך חדש
+    actions:
+      destroy:
+        notice: המסמך נמחק בהצלחה.
+        alert: לא ניתן למחוק את המסמך.
+        confirm: בטוח שברצונך למחוק את המסמך? לא ניתן לבטל פעולה זו!
+    buttons:
+      download_document: הורד קובץ
+      destroy_document: מחיקת המסמך
     errors:
       messages:
         in_between: חייב להיות בין %{min} ו %{max}

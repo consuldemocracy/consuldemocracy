@@ -82,8 +82,8 @@ ca:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost <small>(opcional, dada pública)</small>
         unfeasibility_explanation: Informe de inviabilitat
-        code_html: 'Codi proposta d''inversió: <strong>%{code}</strong>'
-        location_html: 'Ubicació: <strong>%{location}</strong>'
+        code_html: "Codi proposta d'inversió: <strong>%{code}</strong>"
+        location_html: "Ubicació: <strong>%{location}</strong>"
         share: compartir
         title: Proposta d'inversió
         supports: Avals

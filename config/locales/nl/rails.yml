@@ -128,7 +128,7 @@ nl:
         other: heeft onjuiste lengte (moet %{count} tekens lang zijn)
       other_than: moet anders zijn dan %{count}
     template:
-      body: 'Er zijn problemen met de volgende velden:'
+      body: "Er zijn problemen met de volgende velden:"
       header:
         one: '%{model} niet opgeslagen: 1 fout gevonden'
         other: "%{model} niet opgeslagen: %{count} fouten gevonden"

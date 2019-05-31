@@ -303,8 +303,8 @@ ca:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificat per Padró'
-              already_voted: 'Ja ha votat aquesta proposta'
+              not_in_census: "No verificat per Padró"
+              already_voted: "Ja ha votat aquesta proposta"
         site_customization/page:
           attributes:
             slug:

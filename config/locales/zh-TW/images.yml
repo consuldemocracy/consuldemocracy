@@ -14,7 +14,6 @@ zh-TW:
       destroy:
         notice: 圖像已成功刪除。
         alert: 無法銷毀圖像。
-        confirm: 您確定要刪除圖像嗎？ 此操作將無法撤消！
     errors:
       messages:
         in_between: 必須在%{min} 和%{max} 之間

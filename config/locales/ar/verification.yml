@@ -8,7 +8,7 @@ ar:
         alert:
           failure: هناك مشكلة في إرسال بريد إلكتروني إلى الحساب الخاص بك
         flash:
-          success: 'لقد أرسلنا رسالة تأكيد إلكترونية إلى حسابك:%{email}'
+          success: "لقد أرسلنا رسالة تأكيد إلكترونية إلى حسابك:%{email}"
       show:
         alert:
           failure: رمز التحقق غير صحيح
@@ -17,22 +17,23 @@ ar:
     letter:
       alert:
         unconfirmed_code: لم تقم بادخال رمز التحقق
-      create:
-        flash:
-          offices: مكاتب دعم المواطنين
       edit:
         see_all: انظر جميع المقترحات
+        title: أحرف مطلوبة
       errors:
         incorrect_code: رمز التحقق غير صحيح
       new:
-        explanation: 'للمشاركة في التصويت النهائي يمكن لك أن:'
+        explanation: "للمشاركة في التصويت النهائي يمكن لك أن:"
         go_to_index: انظر جميع المقترحات
         office: التحقق من أي %{office}
-        offices: مكاتب دعم المواطنين
         send_letter: أرسل لي رسالة مع الرمز
         title: تهانينا!
         user_permission_info: من خلال حسابك يمكنك...
+      update:
+        flash:
+          success: الكود صحيح. تم التأكد من حسابك بنجاح
     redirect_notices:
+      already_verified: تم تأكيد حسابك مسبقاً
       email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
     residence:
       new:
@@ -41,14 +42,35 @@ ar:
         document_type_label: نوع الوثيقة
         postal_code: الرمز البريدي
         postal_code_note: لتتمكن من تاكيد حسابك يرجى التسجيل
+        title: التحقق من مكان الإقامة
+        verify_residence: التحقق من مكان الإقامة
     sms:
+      create:
+        flash:
+          success: ادخل الرمز الذي ارسل إلك برسالة نصية
       edit:
+        confirmation_code: أدخل الرمز الذي وصلك على هاتفك
         resend_sms_link: اضغط هنا لاعادة الارسال
+        resend_sms_text: لم احصل على رمز التاكيد ؟
         submit_button: إرسال
+        title: رمز التأكيد
       new:
+        phone: ادخل رقم الموبايل ليصلك الرمز
+        phone_format_html: "<strong><em>(مثال: 0958044933 أو +963934543234)</em></strong>"
+        phone_note: سوف نستخدم رقم الموبايل لإرسال الرمز فقط ، لن يتم الاتصال بك مطلقاً.
+        phone_placeholder: "على سبيل المثال: 612345678 أو +34612345678"
         submit_button: ارسال
+        title: إرسال رمز التأكيد
+      update:
+        error: كود تأكيد غير صحيح
+        flash:
+          level_three:
+            success: الرمز صحيح. تم التأكد من حسابك بنجاح
+          level_two:
+            success: الرمز الصحيح
     step_1: الإقامة
     step_2: رمز التأكيد
+    step_3: الخطوة الأخيرة للتحقق
     user_permission_debates: المشاركة بالحوارات
     user_permission_info: التحقق من معلومات سيمنحك...
     user_permission_proposal: انشاء مقترحات جديدة

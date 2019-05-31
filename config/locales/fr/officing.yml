@@ -16,6 +16,25 @@ fr:
         no_polls: Vous n'êtes responsable d'aucun dépouillement final pour aucun des votes actifs
         select_poll: Sélectionner un vote
         add_results: Ajouter les résultats
+    poll_budgets:
+      see_ballot_sheets: Voir la liste de feuilles de bulletin de vote
+      index:
+        title: "%{poll_budget} - liste des feuilles de bulletin de vote"
+        ballot_sheet: "Bulletin de vote %{id}"
+        ballot_sheet_name: Nom
+        ballot_sheet_author: Auteur
+        ballot_sheet_creation_date: Date de création
+        empty_results: Il n’y a pas encore de feuille de bulletins de vote pour ce sondage
+      new:
+        title: "%{poll_budget} - Nouvelle feuille de bulletins de vote"
+        booth: Bureau de vote
+        select_booth: Sélectionner un bureau de vote
+        csv_data: Données CSV
+        submit: Sauvegarder
+      show:
+        created_at: Date de création
+        author: Auteur
+        data: Données CSV
     results:
       flash:
         create: "Résultats sauvegardés"
@@ -51,7 +70,6 @@ fr:
         submit: Valider le document
         error_verifying_census: "Le recensement n'a pas pu vérifier ce document."
         form_errors: a empêché la vérification de ce document
-        no_assignments: "Vous n'avez pas de votes à superviser aujourd'hui"
     voters:
       new:
         title: Votes

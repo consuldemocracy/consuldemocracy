@@ -51,7 +51,6 @@ gl:
         submit: Validar documento
         error_verifying_census: "O Servizo de padrón non puido verificar este documento."
         form_errors: evitaron verificar este documento
-        no_assignments: "Hoxe non tes quenda de presidente de mesa"
     voters:
       new:
         title: Votacións

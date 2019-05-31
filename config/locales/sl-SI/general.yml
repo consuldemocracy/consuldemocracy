@@ -58,7 +58,7 @@ sl:
       most_commented: Največ komentarjev
     select_order: Uredi po
     show:
-      return_to_commentable: 'Pojdi nazaj na '
+      return_to_commentable: "Pojdi nazaj na "
   comments_helper:
     comment_button: Objavi komentar
     comment_link: Komentiraj
@@ -186,7 +186,7 @@ sl:
       available_locales: Razpoložljivi jeziki
       collaborative_legislation: Zakonodajni procesi
       debates: Razprave
-      locale: 'Jezik:'
+      locale: "Jezik:"
       management: Upravljanje
       moderation: Moderacija
       valuation: Vrednotenje
@@ -204,7 +204,7 @@ sl:
         notifications: Obvestila
         no_notifications: "Nimaš novih obvestil"
     admin:
-      watch_form_message: 'Imaš neshranjene spremembe. Res želiš zapustiti to stran?'
+      watch_form_message: "Imaš neshranjene spremembe. Res želiš zapustiti to stran?"
   notifications:
     index:
       empty_notifications: Nimaš novih obvestil.
@@ -262,9 +262,6 @@ sl:
       other: Drugo
     form:
       geozone: Področje uporabe
-      proposal_external_url: Povezava do dodatne dokumentacije
-      proposal_question: Predlagano vprašanje
-      proposal_question_example_html: "Treba ga je povzeti v eno vprašanje z jasnim 'da' ali 'ne' odgovorom. <br>Npr. 'Ali se strinjate, da Prešernova cesta postane peš cona?'"
       proposal_responsible_name: Polno ime predlagatelja
       proposal_responsible_name_note: "(posamično ali kot predstavnik kolektiva; ne bo javno prikazano)"
       proposal_summary: Povzetek predloga
@@ -308,7 +305,7 @@ sl:
         placeholder: Išči predloge...
         title: Išči
       select_order: Razvrsti po
-      select_order_long: 'Predloge si ogleduješ glede na:'
+      select_order_long: "Predloge si ogleduješ glede na:"
       start_proposal: Ustvari predlog
       title: Predlogi
       top: Najboljši tega tedna
@@ -337,8 +334,6 @@ sl:
         guide: "Zdaj ga lahko deliš z drugimi, da lahko začne pridobivati podporo."
         edit: "Preden ga deliš, lahko še spremeniš besedilo."
         view_proposal: Ne zdaj, pojdi v moj predlog
-      improve_info: "Izboljšaj svojo kampanjo in pridobi več podpore"
-      improve_info_link: "Oglej si več informacij"
       already_supported: Ta predlog si že podprl/-a. Deli ga z drugimi!
       comments:
         zero: Brez komentarjev
@@ -354,11 +349,10 @@ sl:
       successful: "Ta predlog je dosegel zahtevano število podpornikov in bo na voljo v %{voting}."
     show:
       author_deleted: Uporabnik izbrisan
-      code: 'Koda predloga:'
+      code: "Koda predloga:"
       comments:
         zero: Brez komentarjev
       comments_tab: Komentarji
-      edit_proposal_link: Uredi
       flag: Ta predlog je več uporabnikov označilo kot neprimeren.
       login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
       notifications_tab: Obvestila
@@ -366,10 +360,8 @@ sl:
       retired_warning_link_to_explanation: Preberi razlago, preden glasuješ zanj.
       retired: Predlog upokojen s strani avtorja
       share: Deli
-      send_notification: Pošlji obvestilo
       no_notifications: "Ta predlog nima obvestil."
       embed_video_title: "Video o %{proposal}"
-      title_external_url: "Dodatna dokumentacija"
       title_video_url: "Zunanji video"
       author: Avtor
     update:
@@ -422,8 +414,6 @@ sl:
       stats_menu: "Statistika o sodelovanju"
       results_menu: "Rezultati glasovanja"
       stats:
-        title: "Podatki o sodelovanju"
-        total_participation: "Skupno sodelujočih"
         total_votes: "Skupno število glasov"
         votes: "GLASOV"
         web: "SPLETNI"
@@ -436,11 +426,9 @@ sl:
         title: "Vprašanja"
         most_voted_answer: "Najbolj izglasovan odgovor: "
   poll_questions:
-    create_question: "Ustvari vprašanje"
     show:
       vote_answer: "Glasuj %{answer}"
       voted: "Glasoval/-a si %{answer}"
-      voted_token: "Lahko si zapišeš ta identifikator glasu, da preveriš svoj glas ob končnih rezultatih:"
   proposal_notifications:
     new:
       title: "Pošlji sporočilo"
@@ -452,28 +440,28 @@ sl:
     show:
       back: "Vrni se na mojo aktivnost"
   shared:
-    edit: 'Uredi'
-    save: 'Shrani'
-    delete: Izbriši
+    edit: "Uredi"
+    save: "Shrani"
+    delete: "Izbriši"
     "yes": "Da"
     "no": "Ne"
     search_results: "Rezultati iskanja"
     advanced_search:
-      author_type: 'Po kategoriji avtorja'
-      author_type_blank: 'Izberi kategorijo'
-      date: 'Po datumu'
-      date_range_blank: 'Izberi datum'
-      date_1: 'Zadnjih 24 ur'
-      date_2: 'Zadnji teden'
-      date_3: 'Zadnji mesec'
-      date_4: 'Zadnje leto'
-      date_5: 'Po meri'
-      from: 'Od'
-      general: 'Z besedilom'
-      general_placeholder: 'napiši besedilo'
-      search: 'Filtriraj'
-      title: 'Napredno iskanje'
-      to: 'Za'
+      author_type: "Po kategoriji avtorja"
+      author_type_blank: "Izberi kategorijo"
+      date: "Po datumu"
+      date_range_blank: "Izberi datum"
+      date_1: "Zadnjih 24 ur"
+      date_2: "Zadnji teden"
+      date_3: "Zadnji mesec"
+      date_4: "Zadnje leto"
+      date_5: "Po meri"
+      from: "Od"
+      general: "Z besedilom"
+      general_placeholder: "napiši besedilo"
+      search: "Filtriraj"
+      title: "Napredno iskanje"
+      to: "Za"
     author_info:
       author_deleted: Uporabnik izbrisan
     back: Pojdi nazaj
@@ -534,8 +522,8 @@ sl:
       list: Seznam
   spending_proposals:
     form:
-      association_name_label: 'Če predlagaš v imenu organizacije, društva ali kolektiva, tukaj dodaj ime'
-      association_name: 'Ime organizacije'
+      association_name_label: "Če predlagaš v imenu organizacije, društva ali kolektiva, tukaj dodaj ime"
+      association_name: "Ime organizacije"
       description: Opis
       external_url: Povezava do dodatne dokumentacije
       geozone: Področje uporabe
@@ -565,7 +553,7 @@ sl:
       start_new: Ustvari predlog porabe
     show:
       author_deleted: Uporabnik izbrisan
-      code: 'Koda predloga:'
+      code: "Koda predloga:"
       share: Deli
     wrong_price_format: Samo cela števila
     spending_proposal:
@@ -622,8 +610,6 @@ sl:
       send_private_message: "Pošlji zasebno sporočilo"
       delete_alert: "Si prepričan/-a, da želiš izbrisati svoj naložbeni projekt? Tega ni mogoče razveljaviti."
     proposals:
-      send_notification: "Pošlji obvestilo"
-      retire: "Upokojitev"
       retired: "Upokoji predlog"
       see: "Poglej predlog"
   votes:
@@ -687,7 +673,7 @@ sl:
       user_permission_info: S svojim računom lahko ...
       user_permission_proposal: Ustvari nove predloge
       user_permission_support_proposal: Podpri predloge*
-      user_permission_verify: Za izvedbo vseh dejanj verificiraj svoj račun.
+      user_permission_verify: "Za izvedbo vseh dejanj verificiraj svoj račun."
       user_permission_verify_info: "* Samo za uporabnike, ki so na popisu."
       user_permission_verify_my_account: Preveri moj račun
       user_permission_votes: Sodeluj v končnem glasovanju

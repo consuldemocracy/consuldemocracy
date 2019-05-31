@@ -350,15 +350,14 @@ es:
         description: Descripción
         link: Enlace externo
         request_to_administrators: Incluir en el recurso un botón para solicitar el recurso a los administradores
-        day_offset: ¿En cuántos días tras la creación de la propuesta quieres que se active?
-        required_supports: ¿Cuántos apoyos tiene que conseguir la propuesta para que se active?
+        day_offset: '¿En cuántos días tras la creación de la propuesta quieres que se active?'
+        required_supports: '¿Cuántos apoyos tiene que conseguir la propuesta para que se active?'
         order: Puedes introducir la posición en la que se mostrará al usuario esta acción en la lista de acciones
         active: Activa
         action_type: Tipo
       dashboard/administrator_task:
         source: Fuente
         user: Ejecutado por
-        executed_at: Ejecutado el
       link:
         label: Título
         url: Enlace

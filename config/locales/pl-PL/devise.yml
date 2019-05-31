@@ -59,4 +59,4 @@ pl:
       expired: "utracił/a ważność; proszę wysłać ponowny wniosek."
       not_found: "nie znaleziono."
       not_locked: "nie był zablokowany."
-      equal_to_current_password: "musi być inne od obecnego hasła."
+      equal_to_current_password: "musi być inne niż stare hasło."

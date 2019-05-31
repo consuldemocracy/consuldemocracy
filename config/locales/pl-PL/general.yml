@@ -1,24 +1,24 @@
 pl:
   account:
     show:
-      change_credentials_link: Zmień moje referencje
-      email_on_comment_label: Powiadom mnie drogą mailową, gdy ktoś skomentuje moje propozycje lub debaty
-      email_on_comment_reply_label: Powiadom mnie drogą mailową, gdy ktoś odpowie na moje komentarze
+      change_credentials_link: Zmień moje dane logowania
+      email_on_comment_label: gdy ktoś skomentuje moje pomysły
+      email_on_comment_reply_label: gdy ktoś odpowie na mój komentarz
       erase_account_link: Usuń moje konto
       finish_verification: Zakończ weryfikację
-      notifications: Powiadomienia
+      notifications: 'Informuj mnie drogą mailową:'
       organization_name_label: Nazwa organizacji
       organization_responsible_name_placeholder: Reprezentant organizacji/kolektywu
       personal: Dane osobowe
       phone_number_label: Numer telefonu
-      public_activity_label: Utrzymaj moją listę aktywności publiczną
-      public_interests_label: Utrzymaj etykiety elementów, które obserwuję, publicznymi
+      public_activity_label: Pokazuj publicznie moją listę aktywności
+      public_interests_label: Pokaż publicznie etykiety elementów, które obserwuję
       public_interests_my_title_list: Tagi elementów, które obserwuję
       public_interests_user_title_list: Tagi elementów, które obserwuje ten użytkownik
       save_changes_submit: Zapisz zmiany
-      subscription_to_website_newsletter_label: Otrzymuj informacje dotyczące strony drogą mailową
-      email_on_direct_message_label: Otrzymuj e-maile o wiadomościach bezpośrednich
-      email_digest_label: Otrzymuj podsumowanie powiadomień dotyczących propozycji
+      subscription_to_website_newsletter_label: o innych, ważnych informacjach dotyczących portalu
+      email_on_direct_message_label: gdy ktoś wyśle mi wiadomość bezpośrednią
+      email_digest_label: o podsumowaniu powiadomień dotyczących pomysłów
       official_position_badge_label: Pokaż odznakę oficjalnej pozycji
       recommendations: Rekomendacje
       show_debates_recommendations: Pokaż zalecenia debat
@@ -26,12 +26,12 @@ pl:
       title: Moje konto
       user_permission_debates: Uczestnicz w debatach
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Stwórz nowe propozycje
+      user_permission_proposal: Stwórz nowy pomysł
       user_permission_support_proposal: Poprzyj wnioski
       user_permission_title: Partycypacja
       user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
       user_permission_verify_info: "* Tylko dla użytkowników Census."
-      user_permission_votes: Uczestnicz w głosowaniu końcowym
+      user_permission_votes: Weź udział w głosowaniu ostatecznym
       username_label: Nazwa użytkownika
       verified_account: Konto zweryfikowane
       verify_my_account: Zweryfikuj moje konto
@@ -71,7 +71,7 @@ pl:
       most_commented: Najczęściej komentowane
     select_order: Sortuj według
     show:
-      return_to_commentable: 'Wróć do '
+      return_to_commentable: "Wróć do "
   comments_helper:
     comment_button: Opublikuj komentarz
     comment_link: Komentarz
@@ -171,7 +171,7 @@ pl:
       comments_title: Komentarze
       edit_debate_link: Edytuj
       flag: Ta debata została oznaczona jako nieodpowiednia przez kilku użytkowników.
-      login_to_comment: Musisz się %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       share: Udostępnij
       author: Autor
     update:
@@ -195,6 +195,7 @@ pl:
     proposal_notification: "Powiadomienie"
     spending_proposal: Wniosek wydatkowy
     budget/investment: Inwestycja
+    budget/group: Grupa budżetowa
     budget/heading: Nagłówek budżetu
     poll/shift: Zmiana
     poll/question/answer: Odpowiedź
@@ -205,7 +206,7 @@ pl:
     topic: Temat
     image: Obraz
   geozones:
-    none: Wszystkie miasta
+    none: Cała dzielnica
     all: Wszystkie zakresy
   layouts:
     application:
@@ -232,8 +233,7 @@ pl:
       available_locales: Dostępne wersje językowe
       collaborative_legislation: Procesy legislacyjne
       debates: Debaty
-      external_link_blog: Blog
-      locale: 'Język:'
+      locale: "Język:"
       logo: Logo CONSUL
       management: Zarządzanie
       moderation: Moderacja
@@ -244,8 +244,8 @@ pl:
       my_activity_link: Moja aktywność
       open: otwórz
       open_gov: Otwarty rząd
-      proposals: Wnioski
-      poll_questions: Głosowanie
+      proposals: Zrealizowane projekty
+      poll_questions: Sondaż
       budgets: Budżetowanie Partycypacyjne
       spending_proposals: Wnioski wydatkowe
       notification_item:
@@ -257,7 +257,7 @@ pl:
         notifications: Powiadomienia
         no_notifications: "Nie masz nowych powiadomień"
     admin:
-      watch_form_message: 'Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?'
+      watch_form_message: "Posiadasz niezapisane zmiany. Czy potwierdzasz opuszczenie strony?"
   notifications:
     index:
       empty_notifications: Nie masz nowych powiadomień.
@@ -286,10 +286,10 @@ pl:
       mark_as_unread: Oznacz jako nieprzeczytane
       notifiable_hidden: Ten zasób nie jest już dostępny.
   map:
-    title: "Dzielnice"
-    proposal_for_district: "Zacznij wniosek dla Twojej dzielnicy"
-    select_district: Zakres operacji
-    start_proposal: Stwórz wniosek
+    title: "Podział dzielnicy"
+    proposal_for_district: " "
+    select_district: Część dzielnicy, której dotyczy pomysł
+    start_proposal: Zaproponuj swój pomysł
   omniauth:
     facebook:
       sign_in: Zaloguj się przez Facebook
@@ -312,7 +312,9 @@ pl:
   proposals:
     create:
       form:
-        submit_button: Stwórz wniosek
+        submit_button: Stwórz pomysł
+    share:
+      message: "Poparłem/am wniosek %{title} w %{handle}. Dołącz do mnie i także go poprzyj!"
     edit:
       editing: Edytuj wniosek
       form:
@@ -333,10 +335,7 @@ pl:
       done: Gotowe
       other: Inne
     form:
-      geozone: Zakres operacji
-      proposal_external_url: Link do dodatkowej dokumentacji
-      proposal_question: Pytanie dotyczące wniosku
-      proposal_question_example_html: "Musi zostać podsumowany w jednym pytaniu z odpowiedzią Tak lub Nie"
+      geozone: Część dzielnicy, której dotyczy pomysł
       proposal_responsible_name: Pełne nazwisko osoby składającej wniosek
       proposal_responsible_name_note: "(indywidualnie lub jako przedstawiciel zbiorowości; nie będzie wyświetlone publicznie)"
       proposal_summary: Podsumowanie wniosku
@@ -394,27 +393,27 @@ pl:
         many: " zawierające termin <strong>%{search_term}</strong>"
         other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
-      select_order_long: 'Przeglądasz wnioski według:'
-      start_proposal: Stwórz wniosek
-      title: Wnioski
-      top: Najwyższe tygodniowo
-      top_link_proposals: Najbardziej wspierane propozycje według kategorii
+      select_order_long: "Przeglądasz wnioski według:"
+      start_proposal: Zaproponuj swój pomysł
+      title: Zrealizowane projekty
+      top: TOP w tym tygodniu
+      top_link_proposals: Najbardziej popularne propozycje według kategorii
       section_header:
         icon_alt: Ikona wniosków
-        title: Wnioski
-        help: Pomoc na temat wniosków
+        title: Zrealizowane projekty
+        help: Pomoc na temat zrealizowanych projektów
       section_footer:
-        title: Pomoc na temat wniosków
+        title: Pomoc na temat zrealizowanych projektów
         description: Wnioski obywatelskie są okazją dla sąsiadów i grup do bezpośredniego decydowania, w jaki sposób chcą, by wyglądało ich miasto, po uzyskaniu wystarczającego wsparcia i poddaniu się głosowaniu obywateli.
     new:
       form:
-        submit_button: Stwórz wniosek
+        submit_button: Zaproponuj swój pomysł
       more_info: Jak działają wnioski obywatelskie?
       recommendation_one: Nie należy używać wielkich liter dla tytuł wniosku lub całych zdań. W Internecie uznawane jest to za krzyk. I nikt nie lubi jak się na niego krzyczy.
       recommendation_three: Ciesz się tą przestrzenią oraz głosami, które ją wypełniają. Należy również do Ciebie.
       recommendation_two: Wszelkie wnioski lub komentarze sugerujące nielegalne działania zostaną usunięte, a także te, które zamierzają sabotować przestrzenie debaty. Wszystko inne jest dozwolone.
       recommendations_title: Rekomendacje do utworzenia wniosku
-      start_new: Stwórz nowy wniosek
+      start_new: Zaproponuj swój pomysł
     notice:
       retired: Wniosek wycofany
     proposal:
@@ -423,8 +422,6 @@ pl:
         guide: "Teraz możesz go udostępnić, aby inni mogli zacząć popierać."
         edit: "Zanim zostanie udostępniony, będziesz mógł zmieniać tekst według własnego uznania."
         view_proposal: Nie teraz, idź do mojego wniosku
-      improve_info: "Ulepsz swoją kampanię i uzyskaj więcej poparcia"
-      improve_info_link: "Zobacz więcej informacji"
       already_supported: Już poparłeś ten wniosek. Udostępnij go!
       comments:
         zero: Brak komentarzy
@@ -452,7 +449,7 @@ pl:
       successful: "Ten wniosek osiągnął wymagane poparcie."
     show:
       author_deleted: Użytkownik usunięty
-      code: 'Kod wniosku:'
+      code: "Kod wniosku:"
       comments:
         zero: Brak komentarzy
         one: 1 komentarz
@@ -460,19 +457,16 @@ pl:
         many: "%{count} komentarzy"
         other: "%{count} komentarzy"
       comments_tab: Komentarze
-      edit_proposal_link: Edytuj
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
-      login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       notifications_tab: Powiadomienia
       milestones_tab: Kamienie milowe
       retired_warning: "Autor uważa, że niniejszy wniosek nie powinien otrzymywać więcej poparcia."
       retired_warning_link_to_explanation: Przed głosowaniem przeczytaj wyjaśnienie.
       retired: Wniosek wycofany przez autora
       share: Udostępnij
-      send_notification: Wyślij powiadomienie
       no_notifications: "Niniejszy wniosek ma żadnych powiadomień."
       embed_video_title: "Wideo na %{proposal}"
-      title_external_url: "Dodatkowa dokumentacja"
       title_video_url: "Zewnętrzne video"
       author: Autor
     update:
@@ -490,8 +484,8 @@ pl:
       title: "Głosowania"
       participate_button: "Weź udział w tej sondzie"
       participate_button_expired: "Sonda zakończyła się"
-      no_geozone_restricted: "Całe miasto"
-      geozone_restricted: "Dzielnice"
+      no_geozone_restricted: "Cała dzielnica"
+      geozone_restricted: "Podział dzielnicy"
       geozone_info: "Mogą brać udział osoby w Census: "
       already_answer: "Brałeś już udział w tej sondzie"
       not_logged_in: "Musisz się zalogować lub zarejestrować, by wziąć udział"
@@ -499,7 +493,7 @@ pl:
       cant_answer: "To głosowanie nie jest dostępne w Twojej geostrefie"
       section_header:
         icon_alt: Ikona głosowania
-        title: Głosowanie
+        title: Sondaż
         help: Pomóż w głosowaniu
       section_footer:
         title: Pomóż w głosowaniu
@@ -509,9 +503,9 @@ pl:
       already_voted_in_booth: "Wziąłeś już udział w fizycznym stanowisku. Nie możesz wziąć udziału ponownie."
       already_voted_in_web: "Brałeś już udział w tej sondzie. Jeśli zagłosujesz ponownie, zostanie to nadpisane."
       back: Wróć do głosowania
-      cant_answer_not_logged_in: "Muszą być %{signin} lub %{signup} do udziału."
+      cant_answer_not_logged_in: "%{signin} lub %{signup} aby wziąć udział."
       comments_tab: Komentarze
-      login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       signin: Zaloguj się
       signup: Zarejestruj się
       cant_answer_verify_html: "Aby odpowiedzieć, musisz %{verify_link}."
@@ -528,8 +522,6 @@ pl:
       stats_menu: "Statystyki uczestnictwa"
       results_menu: "Wyniki sondy"
       stats:
-        title: "Dane uczestnictwa"
-        total_participation: "Całkowity udział"
         total_votes: "Łączna liczba oddanych głosów"
         votes: "GŁOSY"
         web: "SIEĆ"
@@ -542,11 +534,9 @@ pl:
         title: "Pytania"
         most_voted_answer: "Najczęściej wybierana odpowiedź: "
   poll_questions:
-    create_question: "Utwórz pytanie"
     show:
       vote_answer: "Głosuj %{answer}"
       voted: "Głosowałeś %{answer}"
-      voted_token: "Możesz zapisać ten identyfikator głosowania, aby sprawdzić swój głos na temat ostatecznych wyników:"
   proposal_notifications:
     new:
       title: "Wyślij wiadomość"
@@ -558,29 +548,29 @@ pl:
     show:
       back: "Wróć do mojej aktywności"
   shared:
-    edit: 'Edytuj'
-    save: 'Zapisz'
-    delete: Usuń
+    edit: "Edytuj"
+    save: "Zapisz"
+    delete: "Usuń"
     "yes": "Tak"
     "no": "Nie"
     search_results: "Szukaj wyników"
     advanced_search:
-      author_type: 'Wg kategorii autora'
-      author_type_blank: 'Wybierz kategorię'
-      date: 'Według daty'
-      date_placeholder: 'DD/MM/RRRR'
-      date_range_blank: 'Wybierz datę'
-      date_1: 'Ostatnie 24 godziny'
-      date_2: 'Ostatni tydzień'
-      date_3: 'Ostatni miesiąc'
-      date_4: 'Ostatni rok'
-      date_5: 'Dostosowane'
-      from: 'Od'
-      general: 'Z tekstem'
-      general_placeholder: 'Pisz tekst'
-      search: 'Filtr'
-      title: 'Wyszukiwanie zaawansowane'
-      to: 'Do'
+      author_type: "Wg kategorii autora"
+      author_type_blank: "Wybierz kategorię"
+      date: "Według daty"
+      date_placeholder: "DD/MM/RRRR"
+      date_range_blank: "Wybierz datę"
+      date_1: "Ostatnie 24 godziny"
+      date_2: "Ostatni tydzień"
+      date_3: "Ostatni miesiąc"
+      date_4: "Ostatni rok"
+      date_5: "Dostosowane"
+      from: "Od"
+      general: "Wyszukaj tekst w treści"
+      general_placeholder: "Tu wpisz szukaną frazę..."
+      search: "Filtruj"
+      title: "Wyszukiwanie zaawansowane"
+      to: "Do"
     author_info:
       author_deleted: Użytkownik usunięty
     back: Wróć
@@ -600,7 +590,7 @@ pl:
           notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
       proposal:
         create:
-          notice_html: "Obserwujesz teraz ten wniosek obywatelski! </br> Powiadomimy Cię o zaistniałych zmianach, abyś był na bieżąco."
+          notice_html: "Obserwujesz teraz ten pomysł! </br> Powiadomimy Cię o zmianach, abyś był/a na bieżąco."
         destroy:
           notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
     hide: Ukryj
@@ -634,8 +624,8 @@ pl:
         message: "Widzisz %{limit} z %{count} wniosków zawierających termin %{query}"
         see_all: "Zobacz wszystkie"
     tags_cloud:
-      tags: Dążenie
-      districts: "Dzielnice"
+      tags: Popularne
+      districts: "Podział dzielnicy"
       districts_list: "Lista dzielnic"
       categories: "Kategorie"
     target_blank_html: " (link otwiera się w nowym oknie)"
@@ -660,7 +650,6 @@ pl:
       see_more: Zobacz więcej rekomendacji
       hide: Ukryj rekomendacje
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -669,11 +658,11 @@ pl:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Jeśli proponujesz nazwę stowarzyszenia lub zespołu, dodaj tutaj tę nazwę'
-      association_name: 'Nazwa stowarzyszenia'
+      association_name_label: "Jeśli proponujesz nazwę stowarzyszenia lub zespołu, dodaj tutaj tę nazwę"
+      association_name: "Nazwa stowarzyszenia"
       description: Opis
       external_url: Link do dodatkowej dokumentacji
-      geozone: Zakres operacji
+      geozone: Część dzielnicy, której dotyczy pomysł
       submit_buttons:
         create: Utwórz
         new: Utwórz
@@ -692,7 +681,7 @@ pl:
         many: " zawierające termin '%{search_term}'"
         other: " zawierające termin '%{search_term}'"
       sidebar:
-        geozones: Zakres operacji
+        geozones: Część dzielnicy, której dotyczy pomysł
         feasibility: Wykonalność
         unfeasible: Niewykonalne
       start_spending_proposal: Utwórz projekt inwestycyjny
@@ -705,7 +694,7 @@ pl:
       start_new: Utwórz wniosek wydatkowy
     show:
       author_deleted: Użytkownik usunięty
-      code: 'Kod wniosku:'
+      code: "Kod wniosku:"
       share: Udostępnij
     wrong_price_format: Tylko liczby całkowite
     spending_proposal:
@@ -723,7 +712,7 @@ pl:
     index:
       visits: Odwiedziny
       debates: Debaty
-      proposals: Wnioski
+      proposals: Zrealizowane projekty
       comments: Komentarze
       proposal_votes: Głosy na propozycje
       debate_votes: Głosy na debaty
@@ -755,7 +744,7 @@ pl:
       deleted_debate: Ta debata została usunięta
       deleted_proposal: Ta propozycja została usunięta
       deleted_budget_investment: Ten projekt inwestycyjny został usunięty
-      proposals: Wnioski
+      proposals: Zrealizowane projekty
       debates: Debaty
       budget_investments: Inwestycje budżetowe
       comments: Komentarze
@@ -775,25 +764,23 @@ pl:
           one: 1 Wniosek
           few: "%{count} Wnioski"
           many: "%{count} Wniosków"
-          other: "%{count} Wniosków"
+          other: "%{count} wniosków"
         budget_investments:
           one: 1 Inwestycja
           few: "%{count} Inwestycje"
           many: "%{count} Inwestycji"
           other: "%{count} Inwestycji"
         follows:
-          one: 1 Obserwujący
-          few: "%{count} Obserwujących"
-          many: "%{count} Obserwujących"
-          other: "%{count} Obserwujących"
+          one: 1 obserwowany
+          few: "%{count} obserwowane"
+          many: "%{count} obserwowanych"
+          other: "%{count} obserwowanych"
       no_activity: Użytkownik nie ma publicznej aktywności
       no_private_messages: "Ten użytkownik nie przyjmuje wiadomości prywatnych."
       private_activity: Ten użytkownik postanowił zachować listę aktywności jako prywatną.
       send_private_message: "Wyślij prywatną wiadomość"
       delete_alert: "Czy na pewno chcesz usunąć swój projekt inwestycyjny? Tego działania nie można cofnąć"
     proposals:
-      send_notification: "Wyślij powiadomienie"
-      retire: "Wycofać"
       retired: "Wniosek wycofany"
       see: "Zobacz wniosek"
   votes:
@@ -827,7 +814,7 @@ pl:
         proposals: "Najbardziej aktywne propozycje"
         processes: "Otwarte procesy"
       see_all_debates: Zobacz wszystkie debaty
-      see_all_proposals: Zobacz wszystkie propozycje
+      see_all_proposals: Zobacz wszystkie zrealizowane projekty
       see_all_processes: Zobacz wszystkie procesy
       process_label: Proces
       see_process: Zobacz proces
@@ -840,7 +827,7 @@ pl:
         title: Rekomendowane debaty
         btn_text_link: Wszystkie rekomendowane debaty
       proposals:
-        title: Rekomendowane propozycje
+        title: Rekomendowane zrealizowane projekty
         btn_text_link: Wszystkie rekomendowane propozycje
       budget_investments:
         title: Rekomendowane inwestycje
@@ -852,15 +839,16 @@ pl:
       title: Weryfikacja konta
     welcome:
       go_to_index: Zobacz propozycje i debaty
-      title: Weź udział
-      user_permission_debates: Uczestnicz w debatach
+      start_using_consul: Przejdź do strony indeksu
+      title: Twoje konto zostało poprawnie zweryfikowane
+      user_permission_debates: ' '
       user_permission_info: Z Twoim kontem możesz...
-      user_permission_proposal: Stwórz nowe wnioski
+      user_permission_proposal: Twórz i dołączaj do pomysłów
       user_permission_support_proposal: Popieraj propozycje*
-      user_permission_verify: Aby wykonać wszystkie czynności, zweryfikuj swoje konto.
+      user_permission_verify: "Aby wykonać wszystkie czynności, zweryfikuj swoje konto."
       user_permission_verify_info: "* Tylko dla użytkowników Census."
       user_permission_verify_my_account: Zweryfikuj swoje konto
-      user_permission_votes: Uczestnicz w głosowaniu końcowym
+      user_permission_votes: ' '
   invisible_captcha:
     sentence_for_humans: "Jeśli jesteś człowiekiem, zignoruj to pole"
     timestamp_error_message: "Wybacz, to było zbyt szybkie! Prześlij ponownie."

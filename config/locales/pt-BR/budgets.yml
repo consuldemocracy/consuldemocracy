@@ -109,9 +109,9 @@ pt-BR:
         author_deleted: Usuário excluído
         price_explanation: Explicação do preço
         unfeasibility_explanation: Explanação da inviabilidade
-        code_html: 'Código do projeto de investimento: <strong>%{code}</strong>'
-        location_html: 'Localização: <strong>%{location}</strong>'
-        organization_name_html: 'Proposta no nome de: <strong>%{name}</strong>'
+        code_html: "Código do projeto de investimento: <strong>%{code}</strong>"
+        location_html: "Localização: <strong>%{location}</strong>"
+        organization_name_html: "Proposta no nome de: <strong>%{name}</strong>"
         share: Compartilhar
         title: Projeto de investimento
         supports: Apoios
@@ -120,10 +120,10 @@ pt-BR:
         comments_tab: Comentários
         milestones_tab: Marcos
         author: Autor
-        project_unfeasible_html: 'Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação.'
-        project_selected_html: 'Este projeto de investimento <strong>está selecionado</strong> para a fase de votação.'
-        project_winner: 'Projeto de investimento ganhando'
-        project_not_selected_html: 'Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação.'
+        project_unfeasible_html: "Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação."
+        project_selected_html: "Este projeto de investimento <strong>está selecionado</strong> para a fase de votação."
+        project_winner: "Projeto de investimento ganhando"
+        project_not_selected_html: "Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação."
       wrong_price_format: Apenas números inteiros
       investment:
         add: Voto

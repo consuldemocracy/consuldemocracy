@@ -9,7 +9,7 @@ pl:
       show:
         title: Konto użytkownika
       edit:
-        title: 'Edytuj konto użytkownika: Zresetuj hasło'
+        title: "Edytuj konto użytkownika: Zresetuj hasło"
         back: Wróć
         password:
           password: Hasło
@@ -22,11 +22,11 @@ pl:
           print_help: Będziesz mógł wydrukować hasło po zapisaniu.
     account_info:
       change_user: Zmień użytkownika
-      document_number_label: 'Numer dokumentu:'
-      document_type_label: 'Rodzaj dokumentu:'
-      email_label: 'E-mail:'
-      identified_label: 'Zidentyfikowany jako:'
-      username_label: 'Nazwa użytkownika:'
+      document_number_label: "Numer dokumentu:"
+      document_type_label: "Rodzaj dokumentu:"
+      email_label: "E-mail:"
+      identified_label: "Zidentyfikowany jako:"
+      username_label: "Nazwa użytkownika:"
     check: Sprawdź dokument
     dashboard:
       index:
@@ -38,9 +38,9 @@ pl:
       already_verified: To konto użytkownika jest już zweryfikowane.
       has_no_account_html: Aby założyć konto, przejdź do %{link} i kliknij <b>"Zarejestruj się"</b> w lewej górnej części ekranu.
       link: KONSUL
-      in_census_has_following_permissions: 'Ten użytkownik może uczestniczyć w witrynie z następującymi uprawnieniami:'
+      in_census_has_following_permissions: "Ten użytkownik może uczestniczyć w witrynie z następującymi uprawnieniami:"
       not_in_census: Ten dokument nie jest zarejestrowany.
-      not_in_census_info: 'Obywatele spoza Census mogą w nim uczestniczyć z następującymi uprawnieniami:'
+      not_in_census_info: "Obywatele spoza Census mogą w nim uczestniczyć z następującymi uprawnieniami:"
       please_check_account_data: Sprawdź, czy powyższe dane konta są poprawne.
       title: Zarządzanie użytkownikami
       under_age: "Nie masz wymaganego wieku, aby zweryfikować swoje konto."
@@ -49,17 +49,17 @@ pl:
     date_of_birth: Data urodzenia
     email_verifications:
       already_verified: To konto użytkownika jest już zweryfikowane.
-      choose_options: 'Wybierz jedną z następujących opcji:'
+      choose_options: "Wybierz jedną z następujących opcji:"
       document_found_in_census: Ten dokument został znaleziony w census, ale nie ma powiązania z nim konta użytkownika.
-      document_mismatch: 'Ten adres e-mail należy do użytkownika, który ma już powiązany identyfikator: %{document_number}(%{document_type})'
+      document_mismatch: "Ten adres e-mail należy do użytkownika, który ma już powiązany identyfikator: %{document_number}(%{document_type})"
       email_placeholder: Napisz wiadomość e-mail, której ta osoba użyła do utworzenia swojego konta
       email_sent_instructions: Aby całkowicie zweryfikować tego użytkownika, konieczne jest, aby użytkownik kliknął link, który wysłaliśmy na powyższy adres e-mail. Ten krok jest potrzebny, aby potwierdzić, że adres należy do niego.
       if_existing_account: Jeśli dana osoba ma już konto użytkownika utworzone na stronie internetowej,
       if_no_existing_account: Jeśli dana osoba jeszcze nie utworzyła konta
-      introduce_email: 'Wprowadź adres e-mail użyty dla konta:'
+      introduce_email: "Wprowadź adres e-mail użyty dla konta:"
       send_email: Wyślij email weryfikacyjny
     menu:
-      create_proposal: Stwórz wniosek
+      create_proposal: Zaproponuj swój pomysł
       print_proposals: Drukuj wnioski
       support_proposals: Popieraj propozycje
       create_spending_proposal: Utwórz propozycję wydatków
@@ -78,14 +78,14 @@ pl:
       vote_proposals: Oceń wnioski
     print:
       proposals_info: Utwórz Twój wniosek na http://url.consul
-      proposals_title: 'Wnioski:'
+      proposals_title: "Wnioski:"
       spending_proposals_info: Weź udział w http://url.consul
       budget_investments_info: Weź udział w http://url.consul
     print_info: Wydrukuj tę informację
     proposals:
       alert:
         unverified_user: Użytkownik nie jest zweryfikowany
-      create_proposal: Stwórz wniosek
+      create_proposal: Zaproponuj swój pomysł
       print:
         print_button: Drukuj
       index:
