@@ -407,8 +407,6 @@ it:
           title: Titolo
           back: Indietro
           supports: Sostegni
-          select: Selezionare
-          selected: Selezionato
         form:
           custom_categories: Categorie
           custom_categories_description: Categorie che gli utenti possono selezionare creando la proposta.
