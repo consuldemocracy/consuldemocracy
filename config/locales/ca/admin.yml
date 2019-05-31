@@ -288,8 +288,6 @@ ca:
           title: Títol
           back: Tornar
           supports: Avals
-          select: Seleccionar
-          selected: seleccionada
       draft_versions:
         create:
           notice: 'Esborrany creat correctament. <a href="%{link}"> Fes click per veure-ho </a>'
