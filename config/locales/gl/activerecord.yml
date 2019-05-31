@@ -64,9 +64,6 @@ gl:
       proposal:
         one: "Proposta cidadá"
         other: "Propostas cidadás"
-      spending_proposal:
-        one: "Proposta de investimento"
-        other: "Proxectos de investimento"
       site_customization/page:
         one: Páxina
         other: Páxinas personalizadas
@@ -178,13 +175,6 @@ gl:
       organization:
         name: "Nome de organización"
         responsible_name: "Persoa responsable do colectivo"
-      spending_proposal:
-        administrator_id: "Administración"
-        association_name: "Nome da asociación"
-        description: "Descrición"
-        external_url: "Ligazón a documentación adicional"
-        geozone_id: "Ámbitos de actuación"
-        title: "Título"
       poll:
         name: "Nome"
         starts_at: "Data de apertura"
