@@ -77,3 +77,7 @@ ru:
       hi: "Дорогой пользователь,"
       thanks: "Спасибо еще раз за участие."
       sincerely: "С уважением"
+    new_actions_notification_on_create:
+      dashboard_button: "Узнайте о них больше!"
+    new_actions_notification_on_published:
+      text_2: "Почему 100?"
