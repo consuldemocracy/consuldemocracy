@@ -406,8 +406,6 @@ id:
           title: Judul
           back: Kembali
           supports: Mendukung
-          select: Pilih
-          selected: Dipilih
         form:
           custom_categories: Kategori
           custom_categories_description: Kategori itu yang dapat dipilih pengguna membuat proposal.
