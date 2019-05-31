@@ -62,9 +62,6 @@ zh-CN:
       create_proposal: 创建提议
       print_proposals: 打印提议
       support_proposals: 支持提议
-      create_spending_proposal: 创建支出提议
-      print_spending_proposals: 打印支出提议
-      support_spending_proposals: 支持支出提议
       create_budget_investment: 创建预算投资
       print_budget_investments: 打印预算投资
       support_budget_investments: 支持预算投资
@@ -79,7 +76,6 @@ zh-CN:
     print:
       proposals_info: 在http://url.consul上创建您的提议
       proposals_title: "提议："
-      spending_proposals_info: 在http://url.consul上参与
       budget_investments_info: 在http://url.consul上参与
     print_info: 打印此信息
     proposals:
@@ -105,17 +101,6 @@ zh-CN:
       filters:
         heading: 概念
         unfeasible: 不可行投资
-      print:
-        print_button: 打印
-      search_results:
-        other: " 包含术语'%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: 用户尚未被验证
-      create: 创建支出提议
-      filters:
-        unfeasible: 不可行的投资项目
-        by_geozone: "投资项目范围：%{geozone}"
       print:
         print_button: 打印
       search_results:
