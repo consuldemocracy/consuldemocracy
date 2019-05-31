@@ -118,7 +118,6 @@ ca:
       page_title: "%{budget} - Resultats"
       heading: "Resultats pressupostos participatius"
       heading_selection_title: "Àmbit d'actuació"
-      spending_proposal: Títol de la proposta
       ballot_lines_count: Votacions
       hide_discarded_link: Amaga descartades
       show_all_link: Mostra totes
