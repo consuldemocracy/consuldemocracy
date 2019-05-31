@@ -19,12 +19,6 @@ ar:
       new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
       subject: يوجد رد على تعليقك
       title: اجابة جديدة على تعليقك
-    unfeasible_spending_proposal:
-      hi: "عزيزي المستخدم،"
-      new_href: "مشروع استثماري جديد"
-      sincerely: "مع خالص التقدير،"
-      sorry: "عذراً للإزعاج وشكر على مشاركتكم."
-      subject: "المشروع الاستثماري المقترح %{code} تم تصنيفه بغير مجدي"
     proposal_notification_digest:
       share: مشاركة مقترح
       comment: تعليق على مقترح
