@@ -143,7 +143,6 @@ es-PE:
       page_title: "%{budget} - Resultados"
       heading: "Resultados presupuestos participativos"
       heading_selection_title: "Ámbito de actuación"
-      spending_proposal: Título de la propuesta
       ballot_lines_count: Votos
       hide_discarded_link: Ocultar descartadas
       show_all_link: Mostrar todas
