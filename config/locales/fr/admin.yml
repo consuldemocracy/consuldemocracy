@@ -683,7 +683,6 @@ fr:
       officials: Fonctionnaires
       organizations: Organisations
       settings: Paramétres de configuration
-      spending_proposals: Propositions d'investissement
       stats: Statistiques
       signature_sheets: Feuilles de signature
       site_customization:
@@ -706,7 +705,6 @@ fr:
           content_block:
             update: "Mettre à jour le bloc"
       title_moderated_content: Contenu modéré
-      title_budgets: Budgets participatifs
       title_profiles: Profils
       title_settings: Paramètres
       title_site_customization: Personnalisation du site
@@ -862,15 +860,6 @@ fr:
         delete: Supprimer
       search:
         title: "Évaluateurs : Recherche d'utilisateur"
-      summary:
-        title: Résumé de l'évaluateur pour les projets d'investissement
-        valuator_name: Évaluateur
-        finished_and_feasible_count: Terminé et réalisable
-        finished_and_unfeasible_count: Terminé et irréalisable
-        finished_count: Terminé
-        in_evaluation_count: En évaluation
-        total_count: Total
-        cost: Coût
       form:
         edit_title: "Évaluateurs : modifier l'évaluateur"
         update: "Modifier l'évaluateur"
@@ -1231,9 +1220,6 @@ fr:
       proposal_search:
         button: Chercher
         placeholder: Rechercher des propositions par titre, code, description ou question
-      spending_proposal_search:
-        button: Chercher
-        placeholder: Rechercher des propositions de dépenses par titre ou description
       user_search:
         button: Chercher
         placeholder: Rechercher un utilisateur par nom ou courriel
@@ -1251,62 +1237,6 @@ fr:
       content: Contenu
       created_at: Créé le
       delete: Supprimer
-    spending_proposals:
-      index:
-        geozone_filter_all: Tous les districts
-        administrator_filter_all: Tous les administrateurs
-        valuator_filter_all: Tous les évaluateurs
-        tags_filter_all: Toutes les étiquettes
-        filters:
-          valuation_open: Ouvert
-          without_admin: Sans administrateur affecté
-          managed: Géré
-          valuating: En cours d'évaluation
-          valuation_finished: Évaluation terminée
-          all: Toutes
-        title: Propositions d'investissement pour les budgets participatifs
-        assigned_admin: Administrateur affecté
-        no_admin_assigned: Aucun administrateur affecté
-        no_valuators_assigned: Aucun évaluateur affecté
-        summary_link: "Résumé de la proposition d'investissement"
-        valuator_summary_link: "Résumé de l'évaluateur"
-        feasibility:
-          feasible: "Réalisable (%{price})"
-          not_feasible: "Infaisable"
-          undefined: "Indéfini"
-      show:
-        assigned_admin: Administrateur affecté
-        assigned_valuators: Évaluateurs assignés
-        back: Retour
-        classification: Classement
-        heading: "Proposition d'investissement %{id}"
-        edit: Éditer
-        edit_classification: Mettre-à-jour la classification
-        association_name: Association
-        by: Par
-        sent: Envoyé
-        geozone: Domaines
-        dossier: Rapport
-        edit_dossier: Éditer le rapport
-        tags: Sujets
-        undefined: Indéfini
-      edit:
-        classification: Classement
-        assigned_valuators: Évaluateurs
-        submit_button: Mettre-à-jour
-        tags: Sujets
-        tags_placeholder: "Saisir les étiquettes souhaitées séparées par des virgules (,)"
-        undefined: Indéfini
-      summary:
-        title: Résumé des propositions d'investissement
-        title_proposals_with_supports: Résumé des propositions d'investissement avec soutiens
-        geozone_name: Domaines
-        finished_and_feasible_count: Terminé et réalisable
-        finished_and_unfeasible_count: Terminé et irréalisable
-        finished_count: Terminé
-        in_evaluation_count: En évaluation
-        total_count: Total
-        cost_for_geozone: Coût
     geozones:
       index:
         title: District
@@ -1371,7 +1301,6 @@ fr:
           proposals: Propositions
           budgets: Budgets ouverts
           budget_investments: Propositions d'investissement
-          spending_proposals: Propositions de dépense
           unverified_users: Utilisateurs non-vérifiés
           user_level_three: Utilisateurs de niveau 3
           user_level_two: Utilisateurs de niveau 2
@@ -1386,7 +1315,6 @@ fr:
         incomplete_verifications: Vérifications incomplètes
         polls: Votes
       graph:
-        spending_proposals: Projets d'investissement
         visit: Visites
         level_2_user: Utilisateurs de niveau 2
         proposal_created: Propositions citoyennes
