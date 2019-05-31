@@ -312,8 +312,6 @@ ast:
           title: Títulu
           back: Volver
           supports: Sofitos
-          select: Escoyer
-          selected: Escoyía
         form:
           custom_categories: Categoríes
       draft_versions:
