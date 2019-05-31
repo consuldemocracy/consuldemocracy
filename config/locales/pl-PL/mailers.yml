@@ -20,13 +20,6 @@ pl:
       new_reply_by_html: Nowa odpowiedź od <b>%{commenter}</b> na Twój komentarz odnośnie
       subject: Ktoś odpowiedział na Twój komentarz
       title: Nowa odpowiedź na Twój komentarz
-    unfeasible_spending_proposal:
-      hi: "Drogi Użytkowniku,"
-      new_html: "Dla tych wszystkich, zachęcamy do opracowania <strong>nowej propozycji</strong>, która dostosowana jest do warunków tego procesu. Można to zrobić wchodząc w ten link: %{url}."
-      new_href: "nowy projekt inwestycyjny"
-      sincerely: "Z poważaniem"
-      sorry: "Przepraszamy za niedogodności i ponownie dziękujemy Ci za Twoje nieocenione uczestnictwo."
-      subject: "Twój projekt inwestycyjny '%{code}' został oznaczony jako niewykonalny"
     proposal_notification_digest:
       info: "Oto nowe powiadomienia opublikowane przez autorów propozycji, które wsparłeś w %{org_name}."
       title: "Powiadomienia o wniosku w %{org_name}"
