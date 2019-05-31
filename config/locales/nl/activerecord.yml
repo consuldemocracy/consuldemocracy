@@ -67,9 +67,6 @@ nl:
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
-      spending_proposal:
-        one: "Investment project"
-        other: "Budget bestemmingen"
       site_customization/page:
         one: Aangepaste pagina
         other: Aangepaste pagina's
@@ -195,13 +192,6 @@ nl:
       organization:
         name: "Organisatienaam"
         responsible_name: "Verantwoordelijke"
-      spending_proposal:
-        administrator_id: "Beheerder"
-        association_name: "Verenigingsnaam"
-        description: "Omschrijving"
-        external_url: "Link naar aanvullende informatie"
-        geozone_id: "Reikwijdte van het werk"
-        title: "Titel"
       poll:
         name: "Naam"
         starts_at: "Begindatum"
