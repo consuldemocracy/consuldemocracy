@@ -179,7 +179,6 @@ it:
     policy: Informativa sulla privacy
     proposal: Proposta
     proposal_notification: "Notifica"
-    spending_proposal: Proposta di spesa
     budget/investment: Investimento
     budget/heading: Voce di bilancio
     poll/shift: Turno
@@ -192,7 +191,6 @@ it:
     image: Immagine
   geozones:
     none: Tutta la città
-    all: Tutti gli ambiti
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +230,6 @@ it:
       proposals: Proposte
       poll_questions: Voto
       budgets: Bilancio partecipativo
-      spending_proposals: Proposte di spesa
       notification_item:
         new_notifications:
           one: "Hai una nuova notifica\nHai %{count} nuove notifiche"
@@ -590,7 +587,6 @@ it:
     unflag: Rimuovi il flag
     unfollow_entity: "Non seguire più %{entity}"
     outline:
-      budget: Bilancio partecipativo
       searcher: Motore di ricerca
     go_to_page: "Vai alla pagina di "
     share: Condividere
@@ -613,54 +609,6 @@ it:
     whatsapp: WhatsApp
     telegram: "Telegram di %{org}"
     instagram: "Instagram di %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Se proponete in nome di un'associazione o altro gruppo aggiungete qui il nome"
-      association_name: "Nome Associazione"
-      description: Descrizione
-      external_url: Link alla documentazione integrativa
-      geozone: Ambito operativo
-      submit_buttons:
-        create: Crea
-        new: Crea
-      title: Titolo della proposta di spesa
-    index:
-      title: Bilancio partecipativo
-      unfeasible: Progetti di investimento irrealizzabili
-      by_geozone: "Progetti di investimento con ambito di applicazione: %{geozone}"
-      search_form:
-        button: Ricercare
-        placeholder: Progetti di investimento...
-        title: Ricercare
-      search_results:
-        one: " che contengono i termini '%{search_term}'"
-        other: " che contengono i termini '%{search_term}'"
-      sidebar:
-        geozones: Ambito operativo
-        feasibility: Fattibilità
-        unfeasible: Irrealizzabile
-      start_spending_proposal: Crea un progetto di investimento
-    new:
-      more_info: Come funziona il bilancio partecipativo?
-      recommendation_one: È obbligatorio che la proposta faccia riferimento a un’attività inseribile a bilancio.
-      recommendation_three: Cerca di entrare molto nel dettaglio descrivendo la tua proposta di spesa così che il gruppo dei revisori capisca le tue argomentazioni.
-      recommendation_two: Qualsiasi proposta o commento che suggerisca azioni illegali verrà eliminato.
-      recommendations_title: Come creare una proposta di spesa
-      start_new: Creare una proposta di spesa
-    show:
-      author_deleted: Utente cancellato
-      code: "Codice proposta:"
-      share: Condividere
-    wrong_price_format: Solo numeri interi
-    spending_proposal:
-      spending_proposal: Progetto di investimento
-      already_supported: Hanno già sostenuto questo progetto. Condividilo!
-      support: Sostieni
-      support_title: Sostenere questo progetto
-      supports:
-        zero: Nessun sostegno
-        one: 1 sostegno
-        other: "%{count} sostegni"
   stats:
     index:
       visits: Visite
@@ -738,12 +686,6 @@ it:
     unauthenticated: È necessario %{signin} o %{signup} per continuare.
     verified_only: Solo gli utenti verificati possono votare le proposte; %{verify_account}.
     verify_account: verifica il tuo account
-    spending_proposals:
-      not_logged_in: È necessario %{signin} o %{signup} per continuare.
-      not_verified: Solo gli utenti verificati possono votare le proposte; %{verify_account}.
-      organization: Alle organizzazioni non è permesso votare
-      unfeasible: I progetti di investimento irrealizzabili non possono essere sostenuti
-      not_voting_allowed: La fase di votazione è chiusa
     budget_investments:
       not_logged_in: È necessario %{signin} o %{signup} per continuare.
       not_verified: Solo gli utenti verificati possono votare i progetti di investimento; %{verify_account}.
