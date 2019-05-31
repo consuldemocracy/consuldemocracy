@@ -671,7 +671,6 @@ da:
       officials: Embedsmænd
       organizations: Organisationer
       settings: Globale indstillinger
-      spending_proposals: Forslag til udgifter
       stats: Statistikker
       signature_sheets: Signaturark
       site_customization:
@@ -694,7 +693,6 @@ da:
           content_block:
             update: "Opdater blokering"
       title_moderated_content: Modereret indhold
-      title_budgets: Budgetter
       title_profiles: Profiler
       title_settings: Indstillinger
       title_site_customization: Sidens indhold
@@ -882,15 +880,6 @@ da:
         delete: Slet
       search:
         title: "Evaluatorer: Søg bruger"
-      summary:
-        title: Vurderingsresumé for investeringsprojekter
-        valuator_name: Evaluator
-        finished_and_feasible_count: Færdiggjort og kan gennemføres
-        finished_and_unfeasible_count: Færdiggjort og kan ikke gennemføres
-        finished_count: Færdiggjort
-        in_evaluation_count: I evaluering
-        total_count: Total
-        cost: Pris
       form:
         edit_title: "Evaluator: Rediger evaluator"
         update: "Opdater evaluator"
@@ -1274,9 +1263,6 @@ da:
       proposal_search:
         button: Søg
         placeholder: Søg borgerforslag via titel, kode, beskrivelse eller spørgsmål
-      spending_proposal_search:
-        button: Søg
-        placeholder: Søg efter udgiftsforslag via titel eller beskrivelse
       user_search:
         button: Søg
         placeholder: Søg bruger vis navn eller e-mail
@@ -1295,62 +1281,6 @@ da:
       created_at: Oprettet den
       delete: Slet
       color_help: Hexadecimalt format
-    spending_proposals:
-      index:
-        geozone_filter_all: Alle zoner
-        administrator_filter_all: Alle administratorer
-        valuator_filter_all: Alle evaluatorer
-        tags_filter_all: Alle tags
-        filters:
-          valuation_open: Åben
-          without_admin: Ingen tildelt administrator
-          managed: Administrer
-          valuating: Under vurdering
-          valuation_finished: Vurderingen færdig
-          all: Alle
-        title: Investeringsprojekter for deltagerbudgettet
-        assigned_admin: Tilknyttet administrator
-        no_admin_assigned: Ingen administrator tildelt
-        no_valuators_assigned: Ingen evaluator tildelt
-        summary_link: "Resumé af budgetforslag"
-        valuator_summary_link: "Resumé af evaluering"
-        feasibility:
-          feasible: "Kan gennemføres (%{price})"
-          not_feasible: "Kan ikke gennemføres"
-          undefined: "Uafklaret"
-      show:
-        assigned_admin: Tildelt administrator
-        assigned_valuators: Tildelte evaluatorer
-        back: Tilbage
-        classification: Klassificering
-        heading: "Investeringsprojekt %{id}"
-        edit: Rediger
-        edit_classification: Rediger klassificering
-        association_name: Forening
-        by: Af
-        sent: Sendt
-        geozone: Område
-        dossier: Rapport
-        edit_dossier: Rediger rapport
-        tags: Tags
-        undefined: Udefineret
-      edit:
-        classification: Klassificering
-        assigned_valuators: Evaluatorer
-        submit_button: Opdater
-        tags: Tags
-        tags_placeholder: "Tilføj tags adskilt med komma (,)"
-        undefined: Udefineret
-      summary:
-        title: Resumé over budgetforslag
-        title_proposals_with_supports: Oversigt over investeringsforslag, der har modtaget støtte
-        geozone_name: Område
-        finished_and_feasible_count: Afsluttet og kan gennemføres
-        finished_and_unfeasible_count: Afsluttet og kan ikke gennemføres
-        finished_count: Afsluttet
-        in_evaluation_count: Under evaluering
-        total_count: I alt
-        cost_for_geozone: Pris
     geozones:
       index:
         title: Geografisk område
@@ -1417,7 +1347,6 @@ da:
           proposals: Borgerforslag
           budgets: Åbne budgetter
           budget_investments: Investeringsforslag
-          spending_proposals: Udgiftsforslag
           unverified_users: Ikke verificerede brugere
           user_level_three: Niveau tre brugere
           user_level_two: Niveau to brugere
