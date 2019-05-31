@@ -374,8 +374,6 @@ fa:
           title: عنوان
           back: برگشت
           supports: پشتیبانی ها
-          select: انتخاب
-          selected: انتخاب شده
         form:
           custom_categories: "دسته بندی ها\n"
           custom_categories_description: دسته بندی هایی که کاربران می توانند ایجاد پیشنهاد را انتخاب کنند.
