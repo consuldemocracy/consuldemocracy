@@ -485,6 +485,72 @@ ru:
       resources: Ресурсы
       community: Сообщество
       polls: Голосования
+      mailing: E-mail
+      poster: Анонс
+    form:
+      request: Запрос
+    progress:
+      title: График
+      group_by_month: Ежемесячно
+      group_by_week: Еженедельно
+      group_by_date: Ежедневно
+      progress: Общий ход выполнения
+      supports: Поддержки
+      success: Идеальный ход выполнения
+      new_action: Новый
+    goal:
+      ideal_time: Идеальное время
+    community:
+      access_community: Доступ к сообществу
+      participants: Участники
+      debates: Дебаты
+      comments: Комментарии
+      latest_comments: Свежие сообщения
+    polls:
+      index:
+        title: Голосования
+        create: Создать голосование
+        links: Ссылки
+        additiontal_information: Дополнительная информация
+      new:
+        title: Новое голосование
+        submit: Создать голосование
+      edit:
+        submit: Обновить голосование
+      poll:
+        responses:
+          one: "%{count} ответ"
+          few: "%{count} ответов"
+          many: "%{count} ответов"
+          other: "%{count} ответов"
+        view_results: Посмотреть результаты
+        edit_poll: Изменить опрос
+        show_results: Показать результаты
+      form:
+        add_question: Добавить вопрос
+      question_fields:
+        remove_question: Убрать вопрос
+        add_answer: Добавить ответ
+      question_answer_fields:
+        remove_answer: Убрать ответ
+    poster:
+      index:
+        title: Предпросмотр анонса
+        support: Поддержать мое предложение
+      new:
+        title: Анонс вашего предложения
+      options:
+        preview: Предпросмотр
+        download: Скачать
+    mailing:
+      index:
+        title: Предпросмотр e-mail
+      mailing_options:
+        preview: Предпросмотр
+    mailer:
+      forward:
+        support_button: Поддержать это предложение
+        hi: "Здравствуйте!"
   polls:
     all: "Все"
     no_dates: "дата не назначена"
@@ -546,6 +612,8 @@ ru:
       results:
         title: "Вопросы"
         most_voted_answer: "Самый голосуемый ответ: "
+    poll_header:
+      back_to_proposal: Вернуться к предложению
   poll_questions:
     show:
       vote_answer: "Голосовать по %{answer}"
