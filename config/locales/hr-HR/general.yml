@@ -186,7 +186,6 @@ hr:
     policy: Politika Privatnosti
     proposal: Prijedlog
     proposal_notification: "Obavijest"
-    spending_proposal: Prijedlog za trošenje
     budget/investment: Investicija
     budget/group: Grupa za budžet
     budget/heading: Naslov Budžeta
@@ -200,7 +199,6 @@ hr:
     image: Slika
   geozones:
     none: Svi gradovi
-    all: Svi ciljevi
   layouts:
     application:
       chrome: Google Chrome
@@ -256,7 +254,6 @@ hr:
       proposals: Prijedlozi
       poll_questions: Glasanje
       budgets: Participativno budžetiranje
-      spending_proposals: Prijedlozi Potrošnje
       notification_item:
         new_notifications:
           one: Imate novu obavijest
@@ -780,7 +777,6 @@ hr:
     unflag: Odznači
     unfollow_entity: "Prestani pratiti %{entity}"
     outline:
-      budget: Participativni budžet
       searcher: Pretraživač
     go_to_page: "Idi na stranicu od "
     share: Dijeli
@@ -803,56 +799,6 @@ hr:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Ako predlažete ime društva ili kolektiva dodajte ime ovdje"
-      association_name: "Ime udruženja"
-      description: Opis
-      external_url: Poveznica na dodatnu dokumentaciju
-      geozone: Opseg djelovanja
-      submit_buttons:
-        create: Stvori
-        new: Stvori
-      title: Naslov prijedloga za trošenje
-    index:
-      title: Participativno budžetiranje
-      unfeasible: Neizvedive investicije za projekte
-      by_geozone: "Investicijski projekti s ciljem: %{geozone}"
-      search_form:
-        button: Pretraga
-        placeholder: Investicijski projekti...
-        title: Pretraga
-      search_results:
-        one: " sadrži termin '%{search_term}'"
-        few: " sadrži termine '%{search_term}'"
-        other: " sadrži termine '%{search_term}'"
-      sidebar:
-        geozones: Opseg djelovanja
-        feasibility: Izvodljivost
-        unfeasible: Neizvodljivo
-      start_spending_proposal: Stvori investicijski prijedlog
-    new:
-      more_info: Kako funkcionira participativno budžetiranje?
-      recommendation_one: Obvezno je da se referencira prijedlog za djelovanje u budžetu.
-      recommendation_three: Pokušajte ući u detalje kada opisujete svoj prijedlog troškova, kako bi tim za reviziju razumio vaše viđenje.
-      recommendation_two: Svaki prijedlog ili komentar koji predlaže ilegalno djelovanje biti će obrisan.
-      recommendations_title: Kako napraviti prijedlog trošenja
-      start_new: Stvari prijedlog troškova
-    show:
-      author_deleted: Korisnik obrisan
-      code: "Kod prijedloga:"
-      share: Dijeli
-    wrong_price_format: Samo cijeli brojevi
-    spending_proposal:
-      spending_proposal: Investicijski projekt
-      already_supported: Vi ste već poduprli ovaj prijedlog. Podijelite ga!
-      support: Potpora
-      support_title: Podupri ovaj projekt
-      supports:
-        zero: Nema potpore
-        one: 1 potpora
-        few: "%{count} potpore"
-        other: "%{count} potopra"
   stats:
     index:
       visits: Broj posjeta
@@ -940,12 +886,6 @@ hr:
     unauthenticated: Vi morate %{signin} ili %{signup} kako biste nastavili.
     verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
     verify_account: potvrdi svoj račun
-    spending_proposals:
-      not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
-      not_verified: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
-      organization: Organizacijama nije dopušteno glasanje
-      unfeasible: Projekti koji nisu izvedivi ne mogu dobiti podršku
-      not_voting_allowed: Faza glasanja je zatvorena
     budget_investments:
       not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
