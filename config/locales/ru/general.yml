@@ -211,6 +211,23 @@ ru:
     application:
       ie: Мы обнаружили, что вы используете Internet Explorer. Для лучшей работы с сайтом, мы рекомендуем вам использовать %{firefox} или %{chrome}.
       ie_title: Этот сайт не оптимизирован для вашего браузера
+    dashboard:
+      proposal_header:
+        published: Опубликовано
+        draft: Черновик
+        retired: Утратил силу
+      proposal_totals:
+        active_resources: Активные ресурсы
+        community: Участники в вашем сообществе
+        show_proposal: Показать предложение
+        preview_proposal: Предпросмотр предложения
+        current_goal: Текущая цель
+        supports:
+          zero: Нет поддержек
+          one: 1 Поддержка
+          few: "Поддержек"
+          many: "Поддержек"
+          other: "Поддержек"
     footer:
       accessibility: Доступность
       conditions: Положения и условия пользования
@@ -304,7 +321,10 @@ ru:
     create:
       form:
         submit_button: Отменить предложение
+    created:
+      title: Поздравляем! Вы выполнили первый шаг.
     share:
+      dashboard: Показать больше информации
       message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
     edit:
       editing: Редактировать предложение
@@ -443,6 +463,7 @@ ru:
         many: "%{count} комментария(иев)"
         other: "%{count} комментария(иев)"
       comments_tab: Комментарии
+      dashboard_proposal_link: Рабочий стол
       flag: Это предложение было помечено несколькими пользователями как неуместное.
       login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
       notifications_tab: Уведомления
@@ -458,6 +479,12 @@ ru:
     update:
       form:
         submit_button: Сохранить изменения
+  dashboard:
+    menu:
+      progress: Ход выполнения
+      resources: Ресурсы
+      community: Сообщество
+      polls: Голосования
   polls:
     all: "Все"
     no_dates: "дата не назначена"
