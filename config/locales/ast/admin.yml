@@ -428,7 +428,6 @@ ast:
       poll_booths: Allugamientu d'urnes
       officials: Cargos Públicos
       organizations: Organizaciones
-      spending_proposals: Propuestes d'inversión
       stats: Estadístiques
       signature_sheets: Fueyes de firmes
       site_customization:
@@ -445,7 +444,6 @@ ast:
         buttons:
           save: "Guardar"
       title_moderated_content: Conteníu moderao
-      title_budgets: Presupuestos
       title_profiles: Perfiles
       legislation: Lexislación collaborativa
       users: Usuarios
@@ -506,15 +504,6 @@ ast:
       valuator:
         add: Añedir como evaluaor
         delete: Borrar
-      summary:
-        title: Resume d'evaluación de propuestes d'inversión
-        valuator_name: Evaluaor
-        finished_and_feasible_count: Remataes vidables
-        finished_and_unfeasible_count: Remataes invidables
-        finished_count: Remataes
-        in_evaluation_count: N'evaluación
-        total_count: Total
-        cost: Costu
       show:
         description: "Descripción detallada"
         email: "Corréu electrónicu"
@@ -783,9 +772,6 @@ ast:
       proposal_search:
         button: Atopar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
-      spending_proposal_search:
-        button: Atopar
-        placeholder: Buscar propuestas por título o descripción
       user_search:
         button: Atopar
         placeholder: Buscar usuario por nombre o email
@@ -800,60 +786,6 @@ ast:
       content: Conteníu
       created_at: Creáu
       delete: Borrar
-    spending_proposals:
-      index:
-        geozone_filter_all: Todos los ámbitos de actuación
-        administrator_filter_all: Tolos alministradores
-        valuator_filter_all: Tolos evaluadores
-        tags_filter_all: Toles etiquetes
-        filters:
-          valuation_open: Abiertu
-          without_admin: Ensin alministrador
-          managed: Xestionando
-          valuating: N'evaluación
-          valuation_finished: Evaluación rematada
-          all: Toes
-        title: Propuestas de inversión para presupuestos participativos
-        assigned_admin: Alministrador asignáu
-        no_admin_assigned: Ensin almin asignáu
-        no_valuators_assigned: Ensin evaluaor
-        summary_link: "Resumen de propuestas"
-        valuator_summary_link: "Resumen de evaluadores"
-        feasibility:
-          feasible: "Vidable (%{price})"
-          not_feasible: "No viable"
-          undefined: "Ensin definir"
-      show:
-        assigned_admin: Alministrador asignáu
-        assigned_valuators: Evaluaores asignaos
-        back: Volver
-        heading: "Propuesta de inversión %{id}"
-        edit: Editar propuesta
-        edit_classification: Editar clasificación
-        association_name: Asociación
-        by: Autor
-        sent: Fecha
-        geozone: Ámbito de ciudad
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Temes
-        undefined: Ensin definir
-      edit:
-        assigned_valuators: Evaluaores
-        submit_button: Actualizar
-        tags: Temes
-        tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
-        undefined: Ensin definir
-      summary:
-        title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
-        geozone_name: Ámbito de ciudad
-        finished_and_feasible_count: Remataes vidables
-        finished_and_unfeasible_count: Remataes invidables
-        finished_count: Remataes
-        in_evaluation_count: N'evaluación
-        total_count: Total
-        cost_for_geozone: Costu
     geozones:
       index:
         title: Distritos
@@ -913,7 +845,6 @@ ast:
           proposals: Propuestes
           budgets: Presupuestos abiertos
           budget_investments: Propuestes d'inversión
-          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
