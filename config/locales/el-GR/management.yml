@@ -62,9 +62,6 @@ el:
       create_proposal: Δημιουργήστε μια πρόταση
       print_proposals: Εκτύπωση προτάσεων
       support_proposals: Υποστήριξη προτάσεων
-      create_spending_proposal: Δημιουργία πρότασης δαπανών
-      print_spending_proposals: Εκτύπωση προτάσεων δαπανών
-      support_spending_proposals: Υποστήριξε τις προτάσεις δαπανών
       create_budget_investment: Δημιουργία προϋπολογισμού επενδύσεων
       print_budget_investments: Εκτύπωση προϋπολογισμού επενδύσεων
       support_budget_investments: Υποστήριξη προϋπολογισμού επενδύσεων
@@ -79,7 +76,6 @@ el:
     print:
       proposals_info: Δημιουργήστε την πρότασή σας στο http://url.consul
       proposals_title: "Προτάσεις:"
-      spending_proposals_info: Συμμετάσχετε στο http://url.consul
       budget_investments_info: Συμμετάσχετε στο http://url.consul
     print_info: Εκτυπώστε αυτές τις πληροφορίες
     proposals:
@@ -105,18 +101,6 @@ el:
       filters:
         heading: Έννοια
         unfeasible: Ανέφικτη επένδυση
-      print:
-        print_button: Εκτύπωση
-      search_results:
-        one: " που περιέχουν τον όρο '%{search_term} '"
-        other: " που περιέχουν τον όρο '%{search_term} '"
-    spending_proposals:
-      alert:
-        unverified_user: Χρήστης δεν επαληθεύεται
-      create: Δημιουργία πρότασης δαπανών
-      filters:
-        unfeasible: Ανέφικτα επενδυτικά έργα
-        by_geozone: "Επενδυτικά σχέδια με πεδίο εφαρμογής: %{geozone}"
       print:
         print_button: Εκτύπωση
       search_results:
