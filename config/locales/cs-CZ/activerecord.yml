@@ -41,11 +41,6 @@ cs:
         few: "Návrhy občanů"
         many: "Návrhy občanů"
         other: "Návrhů občanů"
-      spending_proposal:
-        one: "Investiční projekt"
-        few: "Investiční projekty"
-        many: "Investiční projekty"
-        other: "Investiční projekty"
       legislation/process:
         one: "Proces"
         few: "Procesy"
@@ -145,13 +140,6 @@ cs:
       organization:
         name: "Název organizace"
         responsible_name: "Osoba zodpovědná za organizaci či skupinu"
-      spending_proposal:
-        administrator_id: "Administrátor"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Odkaz na další dokumenty"
-        geozone_id: "Vymezení oblasti města"
-        title: "Předmět"
       poll:
         name: "Název"
         starts_at: "Start Date"
