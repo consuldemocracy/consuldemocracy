@@ -163,7 +163,6 @@ sv:
       page_title: "%{budget} - Resultat"
       heading: "Resultat av medborgarbudget"
       heading_selection_title: "Efter stadsdel"
-      spending_proposal: Förslagets titel
       ballot_lines_count: Röster
       hide_discarded_link: Göm avvisade
       show_all_link: Visa alla
