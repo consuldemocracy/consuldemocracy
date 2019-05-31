@@ -62,9 +62,6 @@ val:
       create_proposal: Crear proposta
       print_proposals: Imprimir Propostes
       support_proposals: Avalar propostes
-      create_spending_proposal: Crear proposta d'inversió
-      print_spending_proposals: Imprimir propostes d'inversió
-      support_spending_proposals: Avalar propostes d'inversió
       create_budget_investment: Crear nou projecte
       print_budget_investments: Imprimir projectes d'inversió
       support_budget_investments: Avalar projectes d'inversió
@@ -79,7 +76,6 @@ val:
     print:
       proposals_info: Crea la teua proposta en http://url.consul
       proposals_title: "Propostes:"
-      spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta informació
     proposals:
@@ -105,18 +101,6 @@ val:
       filters:
         heading: Concepte
         unfeasible: Projectes no factibles
-      print:
-        print_button: Imprimir
-      search_results:
-        one: " que contenen '%{search_term}'"
-        other: " que contenen '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Este usuari no està verificat
-      create: Crear proposta d'inversió
-      filters:
-        unfeasible: Propostes d'inversió no viables
-        by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
       print:
         print_button: Imprimir
       search_results:
