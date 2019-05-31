@@ -62,9 +62,6 @@ he:
       create_proposal: יצירת הצעה חדשה
       print_proposals: הדפסת הצעות
       support_proposals: תמיכה בהצעות
-      create_spending_proposal: יצירת הצעה תקציב
-      print_spending_proposals: הדפסת הצעות תקציב
-      support_spending_proposals: תמיכה בהצעות תקציב
       create_budget_investment: יצירת תקציב להשקעה
       print_budget_investments: הדפס תקציב השקעות
       support_budget_investments: תמוך בתקציב השקעות
@@ -79,7 +76,6 @@ he:
     print:
       proposals_info: יצירת http://url.consul אישי
       proposals_title: "הצעות:"
-      spending_proposals_info: השתתף ב http://yoururl.com
       budget_investments_info: משתתף ב http://url.consul
     print_info: הדפסת מידע זה
     proposals:
@@ -105,20 +101,6 @@ he:
       filters:
         heading: רעיון
         unfeasible: השקעה אינה ברת ביצוע
-      print:
-        print_button: הדפסה
-      search_results:
-        one: " המכיל את המונח '%{search_term}'"
-        two: " המכיל את המונחים '%{search_term}'"
-        many: " המכיל את המונחים '%{search_term}'"
-        other: " המכיל את המונחים '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: המשתמש אינו מאומת
-      create: צור מסגרת תקציב
-      filters:
-        unfeasible: פרויקטים להשקעה אינם ברי ביצוע
-        by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
       print:
         print_button: הדפסה
       search_results:
