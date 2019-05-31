@@ -448,8 +448,6 @@ sv:
           back: Tillbaka
           id: Id
           supports: Stöd
-          select: Välj
-          selected: Vald
         form:
           custom_categories: Kategorier
           custom_categories_description: Kategorier som användare kan välja när de skapar förslaget.
