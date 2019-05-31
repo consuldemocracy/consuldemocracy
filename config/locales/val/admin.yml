@@ -587,7 +587,6 @@ val:
       officials: Càrrecs públics
       organizations: Associacions
       settings: Configuració global
-      spending_proposals: Propostes d'inversió
       stats: Estadístiques
       signature_sheets: Fulls de signatures
       site_customization:
@@ -610,7 +609,6 @@ val:
           content_block:
             update: "Actualitzar bloc"
       title_moderated_content: Contingut moderat
-      title_budgets: Pressupostos
       title_profiles: Perfils
       title_settings: Configuració
       title_site_customization: Personalitzar lloc
@@ -758,15 +756,6 @@ val:
         delete: Eliminar
       search:
         title: "Avaluadors: Cerca d'usuaris"
-      summary:
-        title: Resum d'avaluació de propostes d'inversió
-        valuator_name: Avaluador
-        finished_and_feasible_count: Finalitzades viables
-        finished_and_unfeasible_count: Finalitzades inviables
-        finished_count: Finalitzats
-        in_evaluation_count: En avaluació
-        total_count: Total
-        cost: Cost total
       form:
         edit_title: "Avaluadors: Editar avaluador"
         update: "Actualitzar avaluador"
@@ -1129,9 +1118,6 @@ val:
       proposal_search:
         button: Cercar
         placeholder: Cercar propostes per títol, codi, descripció o pregunta
-      spending_proposal_search:
-        button: Cercar
-        placeholder: Cercar propostes per títol o descripció
       user_search:
         button: Cercar
         placeholder: Cercar usuari per nom o correu electrònic
@@ -1149,62 +1135,6 @@ val:
       content: Contingut
       created_at: Creada el
       delete: Eliminar
-    spending_proposals:
-      index:
-        geozone_filter_all: Tots els àmbits d'actuació
-        administrator_filter_all: Tots els administradors
-        valuator_filter_all: Tots els avaluadors
-        tags_filter_all: Totes les etiquetes
-        filters:
-          valuation_open: Oberts
-          without_admin: Sense administrador
-          managed: Gestor
-          valuating: En avaluació
-          valuation_finished: Avaluació finalitzada
-          all: Totes
-        title: Propostes d'inversió per a pressupostos participatius
-        assigned_admin: Administrador assignat
-        no_admin_assigned: Sense admin assignat
-        no_valuators_assigned: Sense avaluador
-        summary_link: "Resum de propostes"
-        valuator_summary_link: "Resum d'avaluadors"
-        feasibility:
-          feasible: "Viable (%{price})"
-          not_feasible: "Inviable"
-          undefined: "Sense definir"
-      show:
-        assigned_admin: Administrador assignat
-        assigned_valuators: Evaluadors asignats
-        back: Tornar
-        classification: Classificació
-        heading: "Proposta d'inversió %{id}"
-        edit: Editar
-        edit_classification: Edita classificació
-        association_name: Associació
-        by: Autor
-        sent: Data
-        geozone: Àmbit de la ciutat
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Temes
-        undefined: Sense definir
-      edit:
-        classification: Classificació
-        assigned_valuators: Avaluadors
-        submit_button: Actualitzar
-        tags: Temes
-        tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
-        undefined: Sense definir
-      summary:
-        title: Resum de propostes d'inversió
-        title_proposals_with_supports: Resum per a propostes que han superat la fase de suports
-        geozone_name: Àmbit
-        finished_and_feasible_count: Finalitzades viables
-        finished_and_unfeasible_count: Finalitzades inviables
-        finished_count: Finalitzats
-        in_evaluation_count: En avaluació
-        total_count: Total
-        cost_for_geozone: Cost total
     geozones:
       index:
         title: Districtes
@@ -1269,7 +1199,6 @@ val:
           proposals: Propostes
           budgets: Pressupostos oberts
           budget_investments: Propostes d'inversió
-          spending_proposals: Propostes d'inversió
           unverified_users: Usuaris sense verificar
           user_level_three: Usuaris de nivell tres
           user_level_two: Usuaris de nivell dos
