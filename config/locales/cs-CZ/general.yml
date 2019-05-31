@@ -163,7 +163,6 @@ cs:
     policy: Zásady ochrany osobních údajů
     proposal: Návrhy
     proposal_notification: "upozornění"
-    spending_proposal: Výdaje návrhu
     budget/investment: Investice
     budget/group: Rozpočtová skupina
     budget/heading: Rozpočtová skupina
@@ -177,7 +176,6 @@ cs:
     image: Image
   geozones:
     none: Celé město
-    all: Všechny oblasti
   layouts:
     application:
       chrome: Google Chrome
@@ -217,7 +215,6 @@ cs:
       proposals: Návrhy
       poll_questions: Průzkumy
       budgets: Participativní rozpočet
-      spending_proposals: Výdaje návrhů
       notification_item:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
@@ -541,7 +538,6 @@ cs:
     unflag: Odblokovat
     unfollow_entity: "Přestat sledovat %{entity}"
     outline:
-      budget: Participativní rozpočet
       searcher: Vyhledavač
     go_to_page: "Přejděte na stránku "
     share: Sdílet
@@ -564,49 +560,6 @@ cs:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Pokud navrhujete jménem sdružení nebo kolektivu, přidejte zde jméno"
-      association_name: "Association name"
-      description: Description
-      external_url: Odkaz na další dokumenty
-      geozone: Vymezení oblasti města
-      submit_buttons:
-        create: Vytvořit
-        new: Vytvořit
-      title: Název výdaje návrhu
-    index:
-      title: Participativní rozpočtování
-      unfeasible: Nerealizovatelné investiční projekty
-      by_geozone: "Investiční projekty s působností: %{geozone}"
-      search_form:
-        button: Vyhledat
-        placeholder: Investiční projekty...
-        title: Vyhledat
-      sidebar:
-        geozones: Vymezení oblasti města
-        feasibility: Proveditelnost
-        unfeasible: Nerealizovatelné
-      start_spending_proposal: Vytvořit investiční projekt
-    new:
-      more_info: Jak funguje participativní rozpočtování?
-      recommendation_one: Je povinné propojit návrh s položkou rozpočtu.
-      recommendation_three: Snažte se jít do podrobností při popisu výdajů svého návrhu tak, aby hodnotitelský tým chápal vaše body.
-      recommendation_two: Jakýkoli návrh nebo komentář, který naznačuje nezákonnou akci, bude smazán.
-      recommendations_title: Jak vytvořit výdaje návrhu
-      start_new: Vytvořit výdaje návrhu
-    show:
-      author_deleted: Uživatel
-      code: "Kód návrhu:"
-      share: Sdílet
-    wrong_price_format: Pouze celá čísla
-    spending_proposal:
-      spending_proposal: Investiční projekt
-      already_supported: Tento návrh jste již podpořili. Sdílejte jej!
-      support: Podpořte!
-      support_title: Podpořit tento projekt
-      supports:
-        zero: Žádná podpora
   stats:
     index:
       visits: Návštěvy
@@ -668,12 +621,6 @@ cs:
     unauthenticated: Pro pokračování je nutné %{signin} nebo %{signup}.
     verified_only: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
     verify_account: ověřte Váš účet
-    spending_proposals:
-      not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
-      not_verified: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
-      organization: Organizacím není dovoleno hlasovat
-      unfeasible: Neuskutečnitelné investiční projekty nelze podpořit
-      not_voting_allowed: Fáze hlasování byla ukončena
     budget_investments:
       not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
       not_verified: O investičních projektech mohou hlasovat pouze ověření uživatelé; %{verify_account}.
