@@ -540,7 +540,6 @@ so:
       officials: Saraakiisha
       organizations: Ururo
       settings: Dejinta Aduunka
-      spending_proposals: Bixinta soo jeedinta
       stats: Tirakoob
       signature_sheets: Warqada Saxixyada
       site_customization:
@@ -561,7 +560,6 @@ so:
         buttons:
           save: "Badbaado"
       title_moderated_content: Mawduuc dhexdhexaad ah
-      title_budgets: Misaniyaado
       title_profiles: Aqoosi
       title_settings: Settings
       title_site_customization: Macluumaadka bogga
@@ -709,15 +707,6 @@ so:
         delete: Titiriid
       search:
         title: "Raadi isticmalka qimeyayasha"
-      summary:
-        title: Qimeeyn ta kooban mal gelinta mashariicda
-        valuator_name: Qimeeye
-        finished_and_feasible_count: Dhammeeyeen oo macquul ah
-        finished_and_unfeasible_count: Dhammeeyey oo aan macquul ahayn
-        finished_count: Dhamaday
-        in_evaluation_count: Laqimeeynayo
-        total_count: Wadarta guud
-        cost: Kharashaad
       form:
         edit_title: "Qiimeeyayaasha: Tafatiraha qiimeeyaha"
         update: "Cusboneysi Qimeeyaha"
@@ -1078,9 +1067,6 @@ so:
       proposal_search:
         button: Raadin
         placeholder: Raadinta soo jeedinta adoo cinwaanka, koodhka, sharaxaadda ama su'aasha
-      spending_proposal_search:
-        button: Raadin
-        placeholder: Raadinta soo-jeedinta kharash-celinta ee cinwaanka ama sharaxaadda
       user_search:
         button: Raadin
         placeholder: Raadi isticmaal adoo magacaaga ama email
@@ -1098,62 +1084,6 @@ so:
       content: Mawduuc
       created_at: Abuuray
       delete: Titiriid
-    spending_proposals:
-      index:
-        geozone_filter_all: Dhammaan soonaha
-        administrator_filter_all: Dhamaan Mamulayasha
-        valuator_filter_all: Dhamaan qimeeyayasha
-        tags_filter_all: Dhamaan Taagyada
-        filters:
-          valuation_open: Furan
-          without_admin: Anlahayn maamul
-          managed: Mamulay
-          valuating: Qimeeyni kusocoto
-          valuation_finished: Qimeeyn ayaa dhamatay
-          all: Dhamaan
-        title: Mashaariicda maalgalinta ee miisaaniyadda ka qaybqaadashada
-        assigned_admin: Mamulaha lamagcaabay
-        no_admin_assigned: Mamule lama magcabin
-        no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
-        summary_link: "Sookobida Mashaariicda Malelinta"
-        valuator_summary_link: "Soo kobida qimeeynta"
-        feasibility:
-          feasible: "Waa suurtogal%{price}"
-          not_feasible: "Aan suurtoobi karin"
-          undefined: "Aan la garanayn"
-      show:
-        assigned_admin: Mamulaha lamagcaabay
-        assigned_valuators: Qimeyayasha lo xilsaray
-        back: Labasho
-        classification: Qeybinta
-        heading: "Mashariicda malgashiga%{id}"
-        edit: Isbedel
-        edit_classification: Beddelida qeexitaanka
-        association_name: Urur
-        by: An kadanbayn
-        sent: Diray
-        geozone: Baxaad
-        dossier: Koob
-        edit_dossier: Tafatiraha Warqadaha
-        tags: Tagyada
-        undefined: Aan la garanayn
-      edit:
-        classification: Qeybinta
-        assigned_valuators: Qimeeyayal
-        submit_button: Cusboneysiin
-        tags: Tagyada
-        tags_placeholder: "Qoor Tagyada ad rabto inaad kasocdo qooska (,)"
-        undefined: Aan la garanayn
-      summary:
-        title: Soo koob mashariicda malgashiga
-        title_proposals_with_supports: Sookobida Mashariicda Malgelinta oo leh tageerooyin
-        geozone_name: Baxaad
-        finished_and_feasible_count: Dhammeeyeen oo macquul ah
-        finished_and_unfeasible_count: Dhammeeyey oo aan macquul ahayn
-        finished_count: Dhamaday
-        in_evaluation_count: Laqimeeynayo
-        total_count: Wadarta guud
-        cost_for_geozone: Kharashaad
     geozones:
       index:
         title: Dusha sare
@@ -1218,7 +1148,6 @@ so:
           proposals: Sojeedino
           budgets: Misaaniyada furan
           budget_investments: Mashariicda malgashiga
-          spending_proposals: Soo-jeedinta Kharashka
           unverified_users: Isticmalayaasha an la aqonsaneyn
           user_level_three: Isticmalayasha heerka sadexaad
           user_level_two: Isticmalayasha heerka labaad
