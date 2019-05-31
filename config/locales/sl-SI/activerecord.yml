@@ -50,12 +50,6 @@ sl:
       organization:
         name: "Ime organizacije"
         responsible_name: "Odgovorna oseba"
-      spending_proposal:
-        association_name: "Ime združenja"
-        description: "Opis"
-        external_url: "Povezava do dodatne dokumentacije"
-        geozone_id: "Področje uporabe"
-        title: "Naslov"
       poll:
         name: "Ime"
         starts_at: "Začetni datum"
