@@ -996,16 +996,101 @@ hr:
           assign: Glasačko mjesto dodjeljeno
           unassign: Glasačko mjesto nije dodjeljeno
     poll_booth_assignments:
+      alert:
+        shifts: "Postoje promjene povezane s ovim glasačkim mjestom. Ukoliko uklonite ono što je dodijeljeno glasačkom mjestu, promjene ne će biti spremljene. Želite li nastaviti?"
+      flash:
+        destroy: "Glasačko mjesto nije pripisano više"
+        create: "Glasačko mjesto pripisano"
+        error_destroy: "Došlo je do pogreške prilikom uklanjanja dodjele kabine"
+        error_create: "Došlo je do pogreške prilikom dodavanja ankete glasačkom mjestu"
       show:
+        location: "Lokacija"
+        officers: "Činovnici"
+        officers_list: "Lista činovnika u ovom glasačkom mjestu"
+        no_officers: "Ne postoje činovnici na ovom glasačkom mjestu"
+        recounts: "Prebrojavanje"
+        recounts_list: "Prebrojite listu za ovo glasačko mjesto"
+        results: "Rezultati"
+        date: "Datum"
+        count_final: "Konačno prebrojavanje (od strane činovnika)"
+        count_by_system: "Glasovi (automatski)"
         total_system: Ukupno glasova (automatski)
       index:
+        booths_title: "Popis glasačkih mjesta"
+        no_booths: "Ne postoje glasačka mjesta pripisana ovoj anketi."
         table_name: "Ime"
+        table_location: "Lokacija"
+    active_polls:
+      edit:
+        title: "Opis ankete"
+      form:
+        description:
+          text: "Opis"
+          help_text: "Ovaj tekst će se pojaviit na naslovu ove ankete. Može se koristiti za dodavnaje konteksta kako bi otvorili ankete."
     polls:
       index:
+        title: "Popis anketa"
+        no_polls: "Ne postoje ankete."
+        create: "Stvori anketu"
         name: "Ime"
-    questions:
+        dates: "Datumi"
+        start_date: "Datum Početka"
+        closing_date: "Datum Zatvaranja"
+        geozone_restricted: "Zabranjeno za distrikte"
+      new:
+        title: "Nova anketa"
+        submit_button: "Stvori anketu"
+      edit:
+        title: "Uredi anketu"
+        submit_button: "Ažuriraj anketu"
       show:
+        questions_tab: Pitanja
+        booths_tab: Glasačka mjesta
+        officers_tab: Činovnici
+        recounts_tab: Prebrojavanje
+        results_tab: Rezultati
+        no_questions: "Ne postoje pitanja pripisana ovoj anketi."
+        questions_title: "Popis pitanja"
+        table_title: "Naziv"
+        edit_answers: Uredi odgovore
+        see_proposal: "(Vidi prijedlog)"
+      flash:
+        question_added: "Dodana pitanja ovoj anketi"
+        error_on_question_added: "Pitanja nisu mogla biti pripisana ovoj anketi"
+      destroy:
+        alert: "Akcija će e ukloniti s ankete i svih povezanih pitanja."
+        success_notice: "Anketa uspješno obrisana"
+        unable_notice: "Ne možete obrisati anketu koja ima glasove"
+    questions:
+      index:
+        title: "Pitanja"
+        create: "Stvori pitanje"
+        no_questions: "Ne postoje pitanja."
+        filter_poll: Filtriraj po Anketi
+        select_poll: Odaberi Anketu
+        questions_tab: "Pitanja"
+        successful_proposals_tab: "Uspješni prijedlozi"
+        create_question: "Stvori pitanje"
+        table_proposal: "Prijedlog"
+        table_question: "Pitanje"
+        table_poll: "Anketa"
+        poll_not_assigned: "Anketa nije dodijeljena"
+      edit:
+        title: "Uredi Pitanje"
+      new:
+        title: "Stvori pitanje za anketu %{poll}"
+        title_proposal: "Stvori pitanje"
+        poll_label: "Anketa"
+      answers:
+        images:
+          add_image: "Dodaj sliku"
+          save_image: "Spremi sliku"
+      show:
+        proposal: Izvorni prijedlog
         author: Autor
+        question: Pitanje
+        edit_question: Uredi pitanje
+        valid_answers: Valjani odgovori
     recounts:
       index:
         all_booths_total: "Ukupno kumulativno od svih glasačkih mjesta:"
