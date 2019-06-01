@@ -1,5 +1,32 @@
 hr:
   management:
+    account:
+      menu:
+        reset_password_email: Obnovi zaporku putem emaila
+        reset_password_manually: Obnovi zaporku ručno
+      alert:
+        unverified_user: Nema ulogiranih verificiranih korisnika
+      show:
+        title: Korisnički račun
+      edit:
+        title: "Uredi korisnički račun: Obnovi zaporku"
+        back: Nazad
+        password:
+          password: Zaporka
+          send_email: Pošalji obnovljenu zaporku emal-om
+          reset_email_send: Email poslan točno.
+          reseted: Zaporka je uspješno obnovljena
+          random: Stvori nasumičnu zaporku
+          save: Spremi zaporku
+          print: Printaj zaporku
+          print_help: Moći ćete printati zaporku kada ju spremite.
+    account_info:
+      change_user: Promjeni korisnika
+      document_number_label: "Broj dokumenta:"
+      document_type_label: "Tip dokumenta:"
+      email_label: "Email:"
+      identified_label: "Identificiraj kao:"
+      username_label: "Korisničko ime:"
     budgets:
       table_name: Ime
       no_budgets: Ne postoje aktivni participativni budžeti.
