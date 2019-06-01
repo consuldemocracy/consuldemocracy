@@ -951,8 +951,6 @@ el:
       url_placeholder: Διεύθυνση συνδέσμου
   communities:
     show:
-      send_notification: Αποστολή μηνύματος στην κοινότητα
-      author: Συγγραφέας
       surveys: Έρευνες
       complete_survey: Ολοκληρώστε την έρευνα
     subnav:
