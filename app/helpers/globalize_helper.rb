@@ -60,6 +60,11 @@ module GlobalizeHelper
     end
   end
 
+  def languages_count
+    count = I18nContentTranslation.existing_languages.count
+    count > 0 ? count : 1
+  end
+
   def display_translation_style(resource, locale)
     "display: none;" unless display_translation?(resource, locale)
   end
