@@ -1383,11 +1383,48 @@ hr:
           one: "Postoji %{count} glas stvoren od strane potvrđenih potpisa."
           few: "Postoji %{count} glasovi stvoreni od strane potvrđenih potpisa."
           other: "Postoji %{count} glasovi stvoreni od strane potvrđenih potpisa."
+        loading: "Još ima potpisa koji se provjeravaju Cenzusom, molimo vas osvježite stranicu za nekoliko trenutaka"
     stats:
       show:
+        stats_title: Statistika
         summary:
+          comment_votes: Komentari glasova
+          comments: Komentari
+          debate_votes: Glasovi rasprave
+          debates: Rasprave
+          proposal_votes: Glasovi prijedloga
+          proposals: Prijedlozi
+          budgets: Otvoreni budžeti
+          budget_investments: Investicijski projekti
+          unverified_users: Korisnici koji nisu potvrđeni
+          user_level_three: Razina tri korisnika
+          user_level_two: Razina dva korisnika
           users: Ukupno korisnika
+          verified_users: Potvrđeni korisnici
+          verified_users_who_didnt_vote_proposals: Potvrđeni korisnici koji nemaju prijedloge za izglasavanje
+          visits: Broj posjeta
           votes: Ukupno glasova
+        budgets_title: Participativno budžetiranje
+        participatory_budgets: Participativni Budžeti
+        direct_messages: Izravne poruke
+        proposal_notifications: Obavijesti prijedloga
+        incomplete_verifications: Nedovršene verifikacije
+        polls: Ankete
+      graph:
+        debate_created: Rasprave
+        visit: Broj posjeta
+        level_2_user: Razina 2 korisnika
+        proposal_created: Prijedlozi građana
+      budgets:
+        title: "Participativni Budžeti - Participativne statistike"
+        supporting_phase: Faza potpore
+        balloting_phase: Finalno glasanje
+      budget_balloting:
+        title: "Statistika finalnog glasanja"
+        vote_count: Glasovi
+        participant_count: Sudionici
+        votes_per_heading: Glasova po naslovu
+        participants_per_district: Sudionika po distriktu
       direct_messages:
         total: Ukupno
       proposal_notifications:
