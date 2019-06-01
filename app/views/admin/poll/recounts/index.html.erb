@@ -50,8 +50,6 @@
       </thead>
       <tbody>
         <% @booth_assignments.each do |booth_assignment| %>
-          <% total_recounts = total_recounts_by_booth(booth_assignment) %>
-          <% system_count = booth_assignment.voters.size %>
           <tr id="<%= dom_id(booth_assignment) %>_recounts" class="booth_recounts">
             <td>
               <strong>
@@ -60,21 +58,13 @@
             </td>
             <% unless @poll.budget_poll? %>
               <td class="text-center" id="<%= dom_id(booth_assignment) %>_recount">
-                <% if total_recounts.present? %>
-                  <strong><%= total_recounts %></strong>
-                <% else %>
-                  <span>-</span>
-                <% end %>
+                <%= total_recounts_by_booth(booth_assignment) || "-" %>
               </td>
             <% end %>
 
             <% unless @poll.recounts_confirmed? %>
               <td class="text-center" id="<%= dom_id(booth_assignment) %>_system">
-                <% if system_count.present? %>
-                  <strong><%= system_count %></strong>
-                <% else %>
-                  <span>0</span>
-                <% end %>
+                <%= booth_assignment.voters.size || 0 %>
               </td>
             <% end %>
           </tr>
