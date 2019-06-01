@@ -1304,10 +1304,37 @@ hr:
         placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
       user_search:
         button: Pretraga
+        placeholder: Pretraži korisnika po imenu ili emailu
+      search_results: "Pretraži rezultate"
+      no_search_results: "Rezultati nisu pronađeni."
+      actions: Djelovanja
+      title: Naziv
+      description: Opis
+      image: Slika
+      show_image: Prikaži sliku
+      moderated_content: "Prikaži sadržaj moderiran od strane moderatora i potvrdi da su promjene točne."
+      view: Pregeld
+      proposal: Prijedlog
       author: Autor
+      content: Sadržaj
+      created_at: Stvoreno kod
+      delete: Izbriši
+      color_help: Heksadecimalni format
+      show_results_and_stats: "Prikaži rezultate i statistike"
+      results_and_stats_reminder: "Označi ove kućice rezultata i/ili status koji može biti javno dostupan i svaki korisnik će ih vidjeti."
     geozones:
+      index:
+        title: Geozona
+        create: Stvori geozonu
+        edit: Uredi
+        delete: Izbriši
       geozone:
         name: Ime
+        external_code: Vanjski kod
+        census_code: Kod cenzusa
+        code_help: Kod odgovora za ovu geozonu na cenzus API
+        coordinates: Coordinate
+        coordinates_help: Koordinate koje će stvoriti područja koja mogu biti označena na HTML mapi slika
     signature_sheets:
       author: Autor
       name: Ime
