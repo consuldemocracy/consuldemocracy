@@ -44,6 +44,21 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: investment, user: user)
+
+    visit budget_investment_path(investment.budget, investment)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{investment.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
     child_comment  = create(:comment, body: "First subcomment", commentable: investment, parent: parent_comment)
@@ -52,20 +67,25 @@ describe "Commenting Budget::Investments" do
     visit budget_investment_path(investment.budget, investment)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end

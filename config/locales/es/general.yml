@@ -49,8 +49,16 @@ es:
       moderator: Moderador
       responses:
         zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
+        one: 1 respuesta
+        other: "%{count} respuestas"
+      responses_show:
+        one: "1 respuesta (mostrar)"
+        other: "%{count} respuestas (mostrar)"
+        zero: Sin respuestas
+      responses_collapse:
+        one: "1 respuesta (colapsar)"
+        other: "%{count} respuestas (colapsar)"
+        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
@@ -478,6 +486,7 @@ es:
       mailing: Correo electrónico
       poster: Póster
       recommended_actions: Acciones recomendadas
+      messages: Mensajes a usuarios
     form:
       request: Solicitar
     create_request:
@@ -539,6 +548,9 @@ es:
       debates: Debates
       comments: Comentarios
       latest_comments: Últimos mensajes
+    messages:
+      send_notification: Enviar mensaje a los que han apoyado la propuesta
+      previous_notifications: Ver notificaciones anteriores
     polls:
       index:
         title: Encuestas
@@ -957,8 +969,6 @@ es:
       url_placeholder: Dirección del enlace
   communities:
     show:
-      send_notification: Enviar mensaje a la Comunidad
-      author: Autor
       surveys: Encuestas
       complete_survey: Completa la encuesta
     subnav:

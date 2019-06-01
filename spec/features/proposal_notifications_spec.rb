@@ -4,15 +4,19 @@ describe "Proposal Notifications" do
 
   scenario "Send a notification" do
     author = create(:user)
-    proposal = create(:proposal, author: author)
+    create(:proposal, author: author)
 
     login_as(author)
     visit root_path
 
     click_link "My content"
-    click_link proposal.title
-    click_link "Access the community"
-    click_link "Send message to the community"
+    click_link "Dashboard"
+
+    within("#side_menu") do
+      click_link "Message to users"
+    end
+
+    click_link "Send message to proposal supporters"
 
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
     fill_in "proposal_notification_body", with: "Please share it with "\
@@ -178,9 +182,19 @@ describe "Proposal Notifications" do
       proposal = create(:proposal, author: author)
 
       login_as(author)
-      visit community_path(proposal.community)
+      visit root_path
 
-      expect(page).to have_link "Send message to the community"
+      click_link "My content"
+
+      within("#proposal_#{proposal.id}") do
+        click_link "Dashboard"
+      end
+
+      within("#side_menu") do
+        click_link "Message to users"
+      end
+
+      expect(page).to have_link "Send message to proposal supporters"
     end
 
     scenario "Accessing form directly" do

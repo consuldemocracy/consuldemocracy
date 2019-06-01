@@ -74,20 +74,25 @@ describe "Internal valuation comments on Budget::Investments" do
       visit valuation_budget_budget_investment_path(budget, investment)
 
       expect(page).to have_css(".comment", count: 3)
+      expect(page).to have_content("1 response (collapse)", count: 2)
 
       find("#comment_#{child_comment.id}_children_arrow").click
 
       expect(page).to have_css(".comment", count: 2)
+      expect(page).to have_content("1 response (collapse)")
+      expect(page).to have_content("1 response (show)")
       expect(page).not_to have_content grandchild_comment.body
 
       find("#comment_#{child_comment.id}_children_arrow").click
 
       expect(page).to have_css(".comment", count: 3)
+      expect(page).to have_content("1 response (collapse)", count: 2)
       expect(page).to have_content grandchild_comment.body
 
       find("#comment_#{parent_comment.id}_children_arrow").click
 
       expect(page).to have_css(".comment", count: 1)
+      expect(page).to have_content("1 response (show)")
       expect(page).not_to have_content child_comment.body
       expect(page).not_to have_content grandchild_comment.body
     end
