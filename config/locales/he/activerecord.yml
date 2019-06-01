@@ -264,6 +264,7 @@ he:
         title: "כותרת"
         question: "שאלה"
         description: "תיאור"
+        selected: "סמן כנבחר"
         terms_of_service: "תנאי השימוש"
       user:
         login: "כתובת דוא\"ל או שם משתמש"
