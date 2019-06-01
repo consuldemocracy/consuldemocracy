@@ -573,7 +573,12 @@ es:
         edit_poll: Editar encuesta
         show_results: Mostrar resultados
         show_results_help: Si marcas esta casilla los resultados serán públicos y todos los usuarios podrán verlos
+        delete: Eliminar encuesta
+        alert_notice: Esta acción eliminará la encuesta y todas sus preguntas asociadas.
+        success_notice: Encuesta eliminada correctamente
+        unable_notice: No se pueden eliminar encuestas con respuestas
       form:
+        name: Título de la encuesta
         add_question: Añadir pregunta
       question_fields:
         remove_question: Borrar pregunta

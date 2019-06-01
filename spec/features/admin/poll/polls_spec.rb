@@ -150,6 +150,7 @@ describe "Admin polls" do
 
       expect(page).to     have_content("Poll deleted successfully")
       expect(page).not_to have_content(poll.name)
+
       expect(Poll::Question.count).to eq(0)
       expect(Poll::Question::Answer.count). to eq(0)
     end
