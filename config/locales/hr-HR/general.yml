@@ -981,8 +981,6 @@ hr:
       url_placeholder: Adresa poveznice
   communities:
     show:
-      send_notification: Pošalji poruku u zajednicu
-      author: Autor
       surveys: Ankete
       complete_survey: Dovrši aneketu
     subnav:
