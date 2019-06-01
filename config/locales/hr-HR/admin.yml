@@ -1180,16 +1180,130 @@ hr:
         official_updated: Detalji činovnika spremljeni
       index:
         title: Službenici
+        help: Korisnički računi označen kao služben čime će intervencije na platformi biti označene. Oznaku koja se pojavljuje pokraj korisničkih imena tih računa može se definirati od najvažnije (razina 1) do najmanje važne (razina 5).
         no_officials: Ne postoje službenici.
         name: Ime
+        official_position: Službena pozicija
+        official_level: Razina
+      level_0: Nije službeno
+      level_1: Razina 1
+      level_2: Razina 2
+      level_3: Razina 3
+      level_4: Razina 4
+      level_5: Razina 5
+      search:
+        edit_official: Uredi službenika
+        make_official: Napravi službeno
+        title: "Službene pozicije: Pretraga korisnika"
+        no_results: Službena pozicija nije pronađena.
     organizations:
       index:
+        filter: Filter
+        filters:
+          all: Svi
+          pending: U tijeku
+          rejected: Odbijeno
+          verified: Dopušteno
+        hidden_count_html:
+          one: Ne postoji <strong> organizacija </strong> bez korisnika ili skrivenih korisnika.
+          few: Ne postoje <strong>%{count} organizacije </strong> bez korisnika ili skrivenih korisnika.
+          other: Ne postoje <strong>%{count} organizacije </strong> bez korisnika ili skrivenih korisnika.
         name: Ime
+        email: Email
+        phone_number: Telefon
+        responsible_name: Odgovnornost
+        status: Status
+        no_organizations: Ne postoje organizacije.
+        reject: Odbiti
+        rejected: Odbijeno
+        search: Pretraga
+        search_placeholder: Ime, email ili telfonski broj
+        title: Organizacije
+        verified: Dopušteno
+        verify: Potvrdi
+        pending: U tijeku
+      search:
+        title: Pretraga Organizacija
+        no_results: Organizacije nisu pronađene.
     proposals:
       index:
+        title: Prijedlozi
+        id: ID
         author: Autor
+        select: Odaberi
+        selected: Odabrano
         milestones: Ključni ciljevi
+        no_proposals: Ne postoje prijedlozi.
+      show:
+        create_question: Dodaj ovaj prijedlog anketi kako bi glasali
+      form:
+        update: Ažuriraj prijedlog
+      update:
+        notice: Projedlog je uspješno ažuriran
+    hidden_proposals:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Sakriveni prijedlozi
+        no_hidden_proposals: Ne postoje skriveni prijedlozi.
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Sakrivene obavijesti
+        no_hidden_proposals: Ne postoje sakrivene obavijesti.
+    settings:
+      flash:
+        updated: Vrijednost ažurirana
+      index:
+        title: Postavke konfiguracije
+        update_setting: Ažuriranje
+        participation_processes: "Participativni procesi"
+        feature_flags: Značajke
+        features:
+          enabled: "Značajke omogućene"
+          disabled: "Značajke isključene"
+          enable: "Omogućiti"
+          disable: "Isključi"
+        map:
+          title: Mapa konfiguracije
+          help: Ovdje možete prilagoditi način prikaza karte korisnicima. Povucite oznaku karte ili kliknite bilo gdje na karti, postavite željeno zumiranje i kliknite gumb "Ažuriraj".
+          flash:
+            update: Konfiguracija mape je uspješno ažurirana.
+          form:
+            submit: Ažuriranje
+          how_to_enable: 'Prikažite na mapi korisnike koje morate omogućiti "Prijedlozi i investicijski budžeti geolokacije" na "Značajke" kartici.'
+        dashboard:
+          title: Glavni izbornik prijedloga
+      setting: Značajka
+      setting_actions: Djelovanja
+      setting_name: Postavka
+      setting_status: Status
+      setting_value: Vrijednost
+      no_description: "Nema opisa"
     shared:
+      true_value: "Da"
+      false_value: "Ne"
+      booths_search:
+        button: Pretraga
+        placeholder: Pretraži glasačko mjesto po imenu
+      poll_officers_search:
+        button: Pretraga
+        placeholder: Pretraži činovnike ankete
+      poll_questions_search:
+        button: Pretraga
+        placeholder: Pretraga pitanja ankete
+      proposal_search:
+        button: Pretraga
+        placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
+      user_search:
+        button: Pretraga
       author: Autor
     geozones:
       geozone:
