@@ -1481,5 +1481,126 @@ hr:
         title: Nedovršene verifikacije
     site_customization:
       content_blocks:
+        information: Informacije o blokovima sadržaja
+        about: "Možete stvoriti HTML blokove sadržaja koji se mogu unijeti u druga mjesta na vašoj stranici."
+        html_format: "Blok sadržaja je za grupu poveznica, i mora imati sljedeći format:"
+        no_blocks: "Ne postoje blokovi sadržaja."
+        create:
+          notice: Blokovi sadržaja stvoreni su uspješno
+          error: Trenutni blokovi se ne mogu stvoriti
+        update:
+          notice: Blokovi sadržaja su uspješno ažurirani
+          error: Blokovi sadržaja se ne mogu ažuririati
+        destroy:
+          notice: Blokovi sadržaja su uspješno obrisani
+        edit:
+          title: Uređivanje sadržaja blokova
+        errors:
+          form:
+            error: Pogreška
+        index:
+          create: Stvori novi sadržaj blokova
+          delete: Obriši blok
+          title: Blokovi sadržaja
+        new:
+          title: Stvori novi sadržaj blokova
         content_block:
+          body: Tijelo
           name: Ime
+          names:
+            top_links: Gornje Poveznice
+            footer: Podnožje
+            subnavigation_left: Glavna Lijeva Navigacija
+            subnavigation_right: Glavna Desna Navigacija
+      images:
+        index:
+          title: Prilagođene slike
+          update: Ažuriranje
+          delete: Izbriši
+          image: Slika
+        update:
+          notice: Slika je uspješno ažurirana
+          error: Slika nije uspješno ažurirana
+        destroy:
+          notice: Slika je uspješno ažurirana
+          error: Sliku nije moguće obrisati
+      pages:
+        create:
+          notice: Slika je uspješno stvorena
+          error: Sliku nije moguće stvoriti
+        update:
+          notice: Slika je uspješno ažurirana
+          error: Slika se ne može ažurirati
+        destroy:
+          notice: Slika je uspješno obrisana
+        edit:
+          title: Uređivanje %{page_title}
+        errors:
+          form:
+            error: Pogreška
+        form:
+          options: Opcije
+        index:
+          create: Stvori novu stranicu
+          delete: Izbriši stranicu
+          title: Prilagođene Stranice
+          see_page: Pogledaj stranicu
+        new:
+          title: Stvori novu prilagođenu stranicu
+          slug_help_html: "Tekst je identificiran na URL-u ove stranice, na primjer <code>https://consulproject.org/page-slug</code>"
+        page:
+          created_at: Stvoreno kod
+          status: Status
+          updated_at: Ažurirano u
+          status_draft: Draft
+          status_published: Objavljeno
+          title: Naziv
+          slug: Žeton
+          cards_title: Kartice
+          see_cards: Pogledaj Kartice
+        cards:
+          cards_title: kartice
+          create_card: Stvori karticu
+          no_cards: Ne postoje kartice.
+          title: Naziv
+          description: Opis
+          link_text: Poveznica teksta
+          link_url: Poveznica URL-a
+          columns_help: "Širina kartice u brojevima stupaca. Na mobilnom ekranu je uvijek širine koja iznosi 100%."
+          create:
+            notice: "Kartica uspješno stvorena!"
+          update:
+            notice: "Kartica uspješno ažurirana"
+          destroy:
+            notice: "Kartica uspješno uklonjena"
+    homepage:
+      title: Glavna stranica
+      description: Aktivni moduli pojavljuju se na glavnoj stranici u istom poretku kao i ovdje.
+      header_title: Naslov
+      no_header: Ne postoje naslovi.
+      create_header: Stvori naslov
+      cards_title: Kartice
+      create_card: Stvori karticu
+      no_cards: Ne postoje kartice.
+      cards:
+        title: Naziv
+        description: Opis
+        link_text: Poveznica teksta
+        link_url: Poveznica URL-a
+      feeds:
+        proposals: Prijedlozi
+        debates: Rasprave
+        processes: Procesi
+      new:
+        header_title: Novi naslov
+        submit_header: Stvori naslov
+        card_title: Nova kartica
+        submit_card: Stvori karticu
+      edit:
+        header_title: Uredi naslov
+        submit_header: Spremi naslov
+        card_title: Uredi karticu
+        submit_card: Spremi karticu
+    translations:
+      remove_language: Ukloni jezik
+      add_language: Dodaj jezik
