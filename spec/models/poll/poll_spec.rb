@@ -414,4 +414,30 @@ describe Poll do
       end
     end
   end
+
+  describe "#recounts_confirmed" do
+    it "is false for current polls" do
+      poll = create(:poll, :current)
+
+      expect(poll.recounts_confirmed?).to be false
+    end
+
+    it "is false for recounting polls" do
+      poll = create(:poll, :recounting)
+
+      expect(poll.recounts_confirmed?).to be false
+    end
+
+    it "is false for polls which finished less than a month ago" do
+      poll = create(:poll, starts_at: 3.months.ago, ends_at: 27.days.ago )
+
+      expect(poll.recounts_confirmed?).to be false
+    end
+
+    it "is true for polls which finished more than a month ago" do
+      poll = create(:poll, starts_at: 3.months.ago, ends_at: 1.month.ago - 1.day)
+
+      expect(poll.recounts_confirmed?).to be true
+    end
+  end
 end

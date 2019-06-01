@@ -328,6 +328,27 @@ describe "Admin polls" do
           expect(page).to have_content("2")
         end
       end
+
+      scenario "Recounts list with old polls" do
+        poll = create(:poll, :old)
+        booth_assignment = create(:poll_booth_assignment, poll: poll)
+
+        create(:poll_recount, booth_assignment: booth_assignment, total_amount: 10)
+        create(:poll_voter, :from_booth, poll: poll, booth_assignment: booth_assignment)
+
+        visit admin_poll_recounts_path(poll)
+
+        within("#totals") do
+          within("#total_final") do
+            expect(page).to have_content("10")
+          end
+
+          expect(page).not_to have_selector "#total_system"
+        end
+
+        expect(page).to have_selector "#poll_booth_assignment_#{booth_assignment.id}_recounts"
+        expect(page).not_to have_selector "#poll_booth_assignment_#{booth_assignment.id}_system"
+      end
     end
   end
 
