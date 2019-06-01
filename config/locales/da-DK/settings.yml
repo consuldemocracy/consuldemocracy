@@ -70,11 +70,11 @@ da:
       poll_link: Link til yderligere information
       poll_link_description: Tilføj et link for yderligere information vedrørende kontrolpanelets undersøgelse
       email_short_title: E-mail
-      email_short_title_description: Kort beskrivelse af mail-funktionen. Tillader brugere at sende mails, hvori de promoverer deres forslag
+      email_short_title_description: 'Kort beskrivelse af mail-funktionen. Tillader brugere at sende mails, hvori de promoverer deres forslag'
       email_description: Beskrivelse af e-mail
       email_description_description: Detaljeret beskrivelse af mail-funktionen
       poster_short_title: Plakat
-      poster_short_title_description: Kort beskrivelse af plakatfunktionen. Tillader brugere at downloade plakater i PDF format for at promovere deres forslag
+      poster_short_title_description: 'Kort beskrivelse af plakatfunktionen. Tillader brugere at downloade plakater i PDF format for at promovere deres forslag'
       poster_description: Beskrivelse af plakat
       poster_description_description: Detaljeret beskrivelse af plakatfunktionen
     analytics_url: "Analytisk URL"
