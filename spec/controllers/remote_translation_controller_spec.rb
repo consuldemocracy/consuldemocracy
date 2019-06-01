@@ -9,7 +9,7 @@ describe RemoteTranslationsController do
       @remote_translations_params = [{ remote_translatable_id: debate.id.to_s,
                                        remote_translatable_type: debate.class.to_s,
                                        locale: :es }].to_json
-      allow(controller.request).to receive(:referer).and_return("any_path")
+      request.env["HTTP_REFERER"] = "any_path"
       Delayed::Worker.delay_jobs = true
     end
 
