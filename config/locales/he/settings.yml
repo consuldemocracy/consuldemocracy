@@ -70,11 +70,11 @@ he:
       poll_link: קישור למידע נוסף
       poll_link_description: הוספת קישור למידע נוסף לפונקציונליות הסקר של לוח הבקרה
       email_short_title: דואר אלקטרוני
-      email_short_title_description: תיאור קצר של תכונות הדוא"ל. מאפשר למשתמשים לשלוח דוא"ל כדי לקדם את ההצעה שלהם
+      email_short_title_description: 'תיאור קצר של תכונות הדוא"ל. מאפשר למשתמשים לשלוח דוא"ל כדי לקדם את ההצעה שלהם'
       email_description: תיאור הדוא"ל
       email_description_description: תיאור מפורט של תכונות הדוא"ל
       poster_short_title: פוסטר
-      poster_short_title_description: תיאור קצר של תכונות הפוסטר. מאפשר למשתמשים להוריד את הפוסטר ב - PDF כדי לקדם את ההצעה שלהם
+      poster_short_title_description: 'תיאור קצר של תכונות הפוסטר. מאפשר למשתמשים להוריד את הפוסטר ב - PDF כדי לקדם את ההצעה שלהם'
       poster_description: תיאור הפוסטר
       poster_description_description: תיאור מפורט של תכונות הפוסטר
     analytics_url: "ניתוח כתובת URL"
