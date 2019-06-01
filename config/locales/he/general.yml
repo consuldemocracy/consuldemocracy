@@ -1013,8 +1013,6 @@ he:
       url_placeholder: כתובת הקישור
   communities:
     show:
-      send_notification: שלח מסר לקהילה
-      author: מחבר/ת
       surveys: סקרים
       complete_survey: השלם את הסקר
     subnav:
