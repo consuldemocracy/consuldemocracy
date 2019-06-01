@@ -1335,11 +1335,54 @@ hr:
         code_help: Kod odgovora za ovu geozonu na cenzus API
         coordinates: Coordinate
         coordinates_help: Koordinate koje će stvoriti područja koja mogu biti označena na HTML mapi slika
+      errors:
+        form:
+          error:
+            one: "greška je spriječena u ovoj geozoni od spremanja"
+            few: "greške su spriječene u ovoj geozoni od spremanja"
+            other: "greške su spriječene u ovoj geozoni od spremanja"
+      edit:
+        form:
+          submit_button: Spremi promjene
+        editing: Uredi geozonu
+        back: Idi nazad
+      new:
+        back: Idi nazad
+        creating: Stvori distrikt
+      delete:
+        success: Geozona je uspješno obrisana
+        error: Ova geozona ne može biti obrisana zbog elemenata koji su u privitku
     signature_sheets:
       author: Autor
+      created_at: Stvoren datum
       name: Ime
+      no_signature_sheets: "Ne postoje potpisne liste"
+      index:
+        title: Potpisne liste
+        new: Nove potpisne liste
+      new:
+        title: Nove potpisne liste
+        document_numbers_note: "Napiši broj koji je odvojen zarezom (,)"
+        submit: Stvori potpisnu listu
       show:
+        created_at: Stvoreno
         author: Autor
+        documents: Dokumenti
+        document_count: "Broj dokumenata:"
+        verified:
+          one: "Postoji %{count} valjani potpis"
+          few: "Postoji %{count} valjani potpisi"
+          other: "Postoji %{count} valjani potpisi"
+        unverified:
+          one: "Postoji %{count} nevažeč potpis"
+          few: "Postoji %{count} nevažeči potpisi"
+          other: "Postoji %{count} nevažeči potpisi"
+        unverified_error: (Nije potvrđeno Cenzusom)
+        voted:
+          zero: "Ne postoje glasovi stvoreni od strane potvrđenih potpisa."
+          one: "Postoji %{count} glas stvoren od strane potvrđenih potpisa."
+          few: "Postoji %{count} glasovi stvoreni od strane potvrđenih potpisa."
+          other: "Postoji %{count} glasovi stvoreni od strane potvrđenih potpisa."
     stats:
       show:
         summary:
