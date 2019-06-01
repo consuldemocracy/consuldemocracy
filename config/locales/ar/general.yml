@@ -845,6 +845,3 @@ ar:
       title: روابط
     link_fields:
       label_placeholder: عنوان الرابط
-  communities:
-    show:
-      author: كاتب
