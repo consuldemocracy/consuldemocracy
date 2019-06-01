@@ -1,5 +1,8 @@
 App.Globalize =
 
+  selected_language: ->
+    $("#select_language").val()
+
   display_locale: (locale) ->
     App.Globalize.enable_locale(locale)
     App.Globalize.add_language(locale)
