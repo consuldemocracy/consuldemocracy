@@ -950,8 +950,6 @@ da:
       url_placeholder: Link
   communities:
     show:
-      send_notification: Send besked til Fællesskabet
-      author: Bruger
       surveys: Undersøgelser
       complete_survey: Gennemfør undersøgelsen
     subnav:
