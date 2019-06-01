@@ -1091,23 +1091,96 @@ hr:
         question: Pitanje
         edit_question: Uredi pitanje
         valid_answers: Valjani odgovori
+        add_answer: Dodaj odgovor
+        video_url: Vanjski video
+        answers:
+          title: Odgovor
+          description: Opis
+          videos: Više video zapisa
+          video_list: Popis video zapisa
+          images: Slike
+          images_list: Popis slika
+          documents: Dokumenti
+          documents_list: Popis dokumenata
+          document_title: Naziv
+          document_actions: Djelovanja
+    answers:
+      new:
+        title: Novi odgovor
+      show:
+        title: Naziv
+        description: Opis
+        images: Slike
+        images_list: Popis slika
+        edit: Uredi odgovor
+      edit:
+        title: Uredi odgovor
+      videos:
+        index:
+          title: Više video zapisa
+          add_video: Dodaj video
+          video_title: Naziv
+          video_url: Vanjski video
+        new:
+          title: Novi video
+        edit:
+          title: Uredi video
     recounts:
       index:
+        title: "Prebrojavanje"
+        no_recounts: "Ne postoje glasovi koje možemo prebrojati"
         all_booths_total: "Ukupno kumulativno od svih glasačkih mjesta:"
         total_final: "Završno prebrojavanje"
         total_system: "Glasovi (automatski)"
+        table_booth_name: "Glasačko mjesto"
         table_total_recount: "Ukupno prebrojeno (po činovniku)"
+        table_system_count: "Glasovi (automatski)"
     results:
+      index:
+        title: "Rezultati"
+        no_results: "Ne postoje rezultati"
       result:
         table_whites: "Ukupno praznih glasova"
+        table_nulls: "Nevažeči glasovi"
         table_total: "Ukupno glasova"
+        table_answer: Odgovor
+        table_votes: Glasovi
+      results_by_booth:
+        booth: Glasačko mjesto
+        results: Rezultati
+        see_results: Pogledaj rezultate
+        title: "Rezultati po glasačkim mjestima"
     booths:
       index:
+        title: "Popis aktivnih glasačkih mjesta"
+        no_booths: "Ne postoje aktivna glasačka mjesta za nadolazeču anketu."
+        add_booth: "Dodaj glasačko mjesto"
         name: "Ime"
+        location: "Lokacija"
+        no_location: "Nema Lokacije"
       new:
+        title: "Novo glasačko mjesto"
         name: "Ime"
+        location: "Lokacija"
+        submit_button: "Stvori glasačko mjesto"
+      edit:
+        title: "Uredi glasačko mjesto"
+        submit_button: "Ažuriraj glasačko mjesto"
+      show:
+        location: "Lokacija"
+      booth:
+        shifts: "Upravljaj smjenama"
+        edit: "Uredi glasačko mjesto"
     officials:
+      edit:
+        destroy: Ukloni "Službeni" status
+        title: "Činovnici: Uredi korisnika"
+      flash:
+        official_destroyed: "Spremljeni detalji: korsnik više nije činovnik"
+        official_updated: Detalji činovnika spremljeni
       index:
+        title: Službenici
+        no_officials: Ne postoje službenici.
         name: Ime
     organizations:
       index:
