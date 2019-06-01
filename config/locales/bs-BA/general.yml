@@ -982,8 +982,6 @@ bs:
       url_placeholder: Link za adresu
   communities:
     show:
-      send_notification: Pošalji poruku grupi
-      author: Autor
       surveys: Ankete
       complete_survey: Učestvuj u anketi
     subnav:
