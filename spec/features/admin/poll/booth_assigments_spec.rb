@@ -204,6 +204,26 @@ describe "Admin booths assignments" do
       end
     end
 
+    scenario "Doesn't show system recounts for old polls" do
+      poll = create(:poll, :old)
+      booth_assignment = create(:poll_booth_assignment, poll: poll)
+
+      create(:poll_voter, poll: poll, booth_assignment: booth_assignment)
+      create(:poll_recount, booth_assignment: booth_assignment, total_amount: 10)
+
+      visit admin_poll_booth_assignment_path(poll, booth_assignment)
+
+      within("#totals") do
+        within("#total_final") do
+          expect(page).to have_content "10"
+        end
+
+        expect(page).not_to have_selector "#total_system"
+      end
+
+      expect(page).not_to have_selector "#recounts_list"
+    end
+
     scenario "Results for a booth assignment" do
       poll = create(:poll)
       booth_assignment = create(:poll_booth_assignment, poll: poll)
