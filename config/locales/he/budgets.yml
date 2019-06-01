@@ -183,6 +183,7 @@ he:
       accepted: "הצעות תקציב אשר התקבלו: "
       discarded: "הצעות תקציב אשר נדחו: "
       incompatibles: אינו מתאים
+      investment_title: כותרת הפרויקט
       investment_proyects: רשימת כל פרויקטי ההשקעה
       unfeasible_investment_proyects: רשימת כל הפרויקטים אשר אינם ישימים
       not_selected_investment_proyects: רשימת כל הפרויקטים שלא עברו לשלב ההצבעות
