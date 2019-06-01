@@ -61,6 +61,10 @@ he:
         other: "%{count} תגובות (הצג)"
       responses_collapse:
         zero: אין תגובות
+        one: "תגובה אחת (collapse)"
+        two: "%{count} תגובות (collapse)"
+        many: "%{count} תגובות (collapse)"
+        other: "%{count} תגובות (collapse)"
       user_deleted: משתמש/ת זה/ו נמחק/ה
       votes:
         zero: אין הצבעות
@@ -407,6 +411,10 @@ he:
           error: "ארעה שגיאה. עבור אל דף 'החשבון שלי' בכדי להשבית באופן ידני את ההמלצות לדיונים"
       retired_proposals: הצעות שהוסרו
       retired_proposals_link: "הצעות שהוסרו על-ידי המחבר/ת"
+      selected_proposals: הצעות נבחרות
+      selected_proposals_link: הצג הצעות נבחרות
+      archived_proposals: הצעות בארכיון
+      proposals_lists: רשימת הצעות
       retired_links:
         all: כולם
         duplicated: כפולות
@@ -479,6 +487,7 @@ he:
       total_percent: 100%
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
       successful: "הצעה זו הגיעה לתמיכה הנדרשת."
+      selected: "הצעה נבחרת"
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
       code: "קוד ההצעה:"
@@ -516,6 +525,7 @@ he:
       mailing: דואר אלקטרוני
       poster: פוסטר
       recommended_actions: פעולות מומלצות
+      messages: הודעות למשתמשים
     form:
       request: בקשה
     create_request:
@@ -581,6 +591,9 @@ he:
       debates: דיונים
       comments: הערות
       latest_comments: הודעות אחרונות
+    messages:
+      send_notification: שלח הודעה לתומכי ההצעה
+      previous_notifications: ראה התראות קודמות
     polls:
       index:
         title: סקרים
@@ -607,7 +620,12 @@ he:
         edit_poll: ערוך סקר
         show_results: הצג תוצאות
         show_results_help: אם תבחר בתיבת סימון זו התוצאות יהיו ציבוריות, כל המשתמשים יוכלו לראות אותם
+        delete: מחק סקר
+        alert_notice: פעולה זו תסיר את הסקר ואת כל השאלות הקשורות אליו.
+        success_notice: הסקר נמחק בהצלחה
+        unable_notice: לא ניתן למחוק סקר שקיבל תגובות
       form:
+        name: כותרת הסקר
         add_question: הוסף שאלה
       question_fields:
         remove_question: הסר שאלה
