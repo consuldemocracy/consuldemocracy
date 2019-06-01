@@ -131,3 +131,4 @@ he:
       form:
         tags_label: "קטגוריות"
       not_verified: "עבור הצבעה להצעות %{verify_account}."
+      process_title: תהליך חקיקה שיתופית
