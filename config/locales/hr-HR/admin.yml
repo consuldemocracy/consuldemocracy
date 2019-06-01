@@ -1425,20 +1425,60 @@ hr:
         participant_count: Sudionici
         votes_per_heading: Glasova po naslovu
         participants_per_district: Sudionika po distriktu
+      budget_supporting:
+        title: "Statistika faze statistike"
+        headings: Naslovi
+        users: Korisnici
+        vote_count: Glasovi
+        participant_count: Sudionici
       direct_messages:
+        title: Izravne poruke
         total: Ukupno
+        users_who_have_sent_message: Korisnici koji su poslali privatne poruke
       proposal_notifications:
+        title: Obavijesti prijedloga
         total: Ukupno
+        proposals_with_notifications: Prijedlozi s obavijestima
+        not_available: "Prijedlozi nisu dostupni"
       polls:
+        title: Statstike Anketa
+        all: Ankete
+        web_participants: Web sudionici
         total_participants: Ukupno Sudionika
+        poll_questions: "Pitanja iz ankete: %{poll}"
         table:
+          poll_name: Anketa
+          question_name: Pitanje
+          origin_web: Web sudionici
           origin_total: Ukupno sudionika
     tags:
+      create: Stvori temu
+      destroy: Izbriši temu
+      index:
+        add_tag: Dodaj novu temu prijedloga
+        title: Teme prijedloga
+        topic: Tema
+        help: "Kada korisnik stvori prijedlog, sljedeće teme biti će preporučene kao različite oznake."
       name:
         placeholder: Upiši ime teme
     users:
       columns:
         name: Ime
+        email: Email
+        document_number: Broj dokumenta
+        roles: Uloge
+        verification_level: Razina verifikacije
+      index:
+        title: Korisnik
+        no_users: Ne postoje korisnici.
+      search:
+        placeholder: Pretražite korisnike putem emaila, ime ili broj dokumenta
+        search: Pretraga
+    verifications:
+      index:
+        phone_not_given: Broj telefona nije dostupan
+        sms_code_not_confirmed: Nije potvrđen SMS kodom
+        title: Nedovršene verifikacije
     site_customization:
       content_blocks:
         content_block:
