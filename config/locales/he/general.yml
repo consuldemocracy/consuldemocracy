@@ -53,6 +53,14 @@ he:
         two: "%{count} תגובות"
         many: "%{count} תגובות"
         other: "%{count} תגובות"
+      responses_show:
+        zero: אין תגובות
+        one: "תגובה אחת (הצג)"
+        two: "%{count} תגובות (הצג)"
+        many: "%{count} תגובות (הצג)"
+        other: "%{count} תגובות (הצג)"
+      responses_collapse:
+        zero: אין תגובות
       user_deleted: משתמש/ת זה/ו נמחק/ה
       votes:
         zero: אין הצבעות
