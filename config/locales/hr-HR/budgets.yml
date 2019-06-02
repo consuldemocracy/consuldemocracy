@@ -7,6 +7,10 @@ hr:
         remaining: "Vi još morate<span>%{amount}</span> investirati."
         no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
         remove: Ukloni glas
+        voted_html:
+          one: "Vi ste glasali za <span>jednu</span>investiciju."
+          few: "Vi se glasali za <span>%{count}</span> investicija."
+          other: "Vi se glasali za <span>%{count}</span> investicija."
         voted_info_html: "Vaše glasanje je potvrđeno!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Vi niste glasali niti za jedan projetk.
