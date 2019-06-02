@@ -1354,7 +1354,7 @@ hr:
         error: Ova geozona ne može biti obrisana zbog elemenata koji su u privitku
     signature_sheets:
       author: Autor
-      created_at: Stvoren datum
+      created_at: Datum stvaranja
       name: Ime
       no_signature_sheets: "Ne postoje potpisne liste"
       index:
