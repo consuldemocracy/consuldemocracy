@@ -142,9 +142,9 @@ hr:
         few: "Teme"
         other: "Teme"
       poll:
-        one: "Anketa"
-        few: "Ankete"
-        other: "Ankete"
+        one: "Glas"
+        few: "Glasovi"
+        other: "Glasovi"
       proposal_notification:
         one: "Obavijest o prijedlogu"
         few: "Obavijesti o prijedlogu"
@@ -255,7 +255,7 @@ hr:
         title: "Pitanje"
       poll/ballot_sheet:
         data: CSV podaci
-        poll_id: Anketa
+        poll_id: Glas
         officer_assignment_id: Pripisani činovnik
       signature_sheet:
         signable_type: "Tip potpisa"
@@ -465,7 +465,7 @@ hr:
               cannot_comment_valuation: "Ne možete komentirati procjenu"
       messages:
         record_invalid: "Valicaija nije uspjela: %{errors}"
-        another_poll_active: Postoji još jedna aktivna anketa za dat period
+        another_poll_active: Postoji još jedno aktivno glasovanje za dat period
         restrict_dependent_destroy:
           has_one: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
           has_many: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
