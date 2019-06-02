@@ -131,3 +131,11 @@ hr:
       polls: "Ankete"
       polls_description: "Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke"
       budgets: "Participativno budžetiranje"
+      budgets_description: "S participativnim budžetima građani odlučuju koje projekti će dobiti financiranje u njihovom susjedstvu"
+      legislation: "Kolaborativna Legislativa"
+      legislation_description: "U participativnim procesima građanima se nudi prilika za sudjelovanjem i pripremi zakona koji utječu na društvo i daju svoje mišljenje na određene akcije koje su u planu"
+    html:
+      per_page_code_head: "Kod se mora uključiti na svakoj stranici (<head>)"
+      per_page_code_head_description: "Ovaj kod se pojavljuje unutar <head> oznake. Korisno je za unošenje prilagođenih skripti, analitika..."
+      per_page_code_body: "Kod se mora uključiti na svakoj stranici (<body>)"
+      per_page_code_body_description: "Ovaj kod se pojavljuje unutar <body> oznake. Korisno je za unošenje prilagođenih skripti, analitika..."
