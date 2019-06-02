@@ -1,4 +1,8 @@
 hr:
+  attributes:
+    results_enabled: "Prikaži rezultate"
+    stats_enabled: "Prikaži statistike"
+    advanced_stats_enabled: "Prikaži napredne statistike"
   activerecord:
     models:
       activity:
@@ -220,6 +224,7 @@ hr:
         title: "Naziv"
         question: "Pitanje"
         description: "Opis"
+        selected: "Označi kao odabrano"
         terms_of_service: "Uvjeti usluge"
       user:
         login: "Email ili korisničko ime"
