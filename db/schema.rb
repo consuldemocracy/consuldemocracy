@@ -134,9 +134,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer  "budget_id"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.integer  "ballot_lines_count", default: 0
     t.boolean  "physical",           default: false
     t.integer  "poll_ballot_id"
+    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_content_blocks", force: :cascade do |t|
@@ -186,6 +186,16 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.text    "latitude"
     t.text    "longitude"
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
+  end
+
+  create_table "budget_investment_change_logs", force: :cascade do |t|
+    t.integer  "investment_id"
+    t.integer  "author_id"
+    t.string   "field"
+    t.string   "new_value"
+    t.string   "old_value"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "budget_investment_milestone_translations", force: :cascade do |t|
@@ -1177,12 +1187,12 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer  "comments_count",     default: 0
     t.integer  "author_id"
     t.datetime "hidden_at"
-    t.string   "slug"
     t.boolean  "results_enabled",    default: false
     t.boolean  "stats_enabled",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "budget_id"
+    t.string   "slug"
     t.string   "related_type"
     t.integer  "related_id"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true, using: :btree

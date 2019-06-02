@@ -595,6 +595,17 @@ code {
   }
 }
 
+.log-value {
+  max-height: rem-calc(65);
+  overflow: hidden;
+  max-width: rem-calc(200);
+
+  &:hover {
+    max-height: rem-calc(1000);
+    transition: max-height 0.9s;
+  }
+}
+
 // 04. Stats
 // ---------
 

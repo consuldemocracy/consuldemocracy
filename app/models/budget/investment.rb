@@ -3,6 +3,7 @@ class Budget
   class Investment < ApplicationRecord
     SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
+    include ActiveModel::Dirty
     include Rails.application.routes.url_helpers
     include Measurable
     include Sanitizable
@@ -100,6 +101,7 @@ class Budget
     after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
+    after_update :change_log
 
     def comments_count
       comments.count
@@ -391,5 +393,18 @@ class Budget
         self.budget_id ||= heading.try(:group).try(:budget_id)
       end
 
+      def change_log
+        self.changed.each do |field|
+          unless field == "updated_at"
+            log = Budget::Investment::ChangeLog.new
+            log.field = field
+            log.author_id = User.current_user.id unless User.current_user.nil?
+            log.investment_id = self.id
+            log.new_value = self.send field
+            log.old_value = self.send "#{field}_was"
+            !log.save
+          end
+        end
+      end
   end
 end
