@@ -117,7 +117,7 @@ describe "Admin activity" do
     scenario "Shows admin restores" do
       debate = create(:debate, :hidden)
 
-      visit admin_debates_path
+      visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
         click_on "Restore"
@@ -181,7 +181,7 @@ describe "Admin activity" do
     scenario "Shows admin restores" do
       comment = create(:comment, :hidden)
 
-      visit admin_comments_path
+      visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
         click_on "Restore"

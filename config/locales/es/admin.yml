@@ -355,7 +355,7 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -430,7 +430,7 @@ es:
           request: Recurso solicitado
         update:
           success: La tarea ha sido marcada como resuelta
-    debates:
+    hidden_debates:
       index:
         filter: Filtro
         filters:

@@ -355,7 +355,7 @@ en:
         notice: "Progress bar updated successfully"
       delete:
         notice: "Progress bar deleted successfully"
-    comments:
+    hidden_comments:
       index:
         filter: Filter
         filters:
@@ -430,7 +430,7 @@ en:
           request: Requested resource
         update:
           success: The task has been marked as solved.
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:
