@@ -486,7 +486,7 @@ hr:
       progress: Napredak
       resources: Resursi
       community: Zajednica
-      polls: Ankete
+      polls: Glasovi
       mailing: Email
       poster: Poster
       recommended_actions: Preporučeno djelovanje
@@ -556,18 +556,18 @@ hr:
     polls:
       index:
         title: Ankete
-        create: Stvori anketu
+        create: Stvori glasanje
         count:
-          one: Stvorili ste %{count} aketu.
-          few: Stvorili ste %{count} akete.
-          other: Stvorili ste %{count} akete.
+          one: Stvorili ste %{count} glasanje.
+          few: Stvorili ste %{count} glasovanje.
+          other: Stvorili ste %{count} glasovanje.
         links: Poveznice
         additiontal_information: Dodatne informacije
       new:
-        title: Nova anketa
-        submit: Stvori anketu
+        title: Novo glasanje
+        submit: Stvori glasanje
       edit:
-        submit: Ažuriraj anketu
+        submit: Ažuriraj glasanje
       poll:
         responses:
           one: "%{count} odgovor"
@@ -577,7 +577,12 @@ hr:
         edit_poll: Uredi pregled
         show_results: Prikaži rezultate
         show_results_help: Ako označite taj okvir, rezultati će biti javni i svi će ih korisnici moći vidjeti
+        delete: Obriši pregled
+        alert_notice: Akcija će se ukloniti s pregleda i svih povezanih pitanja.
+        success_notice: Pregled je uspješno obrisan
+        unable_notice: Ne možete uništiti pregled koji ima odgovore
       form:
+        name: Naziv pregleda
         add_question: Dodaj pitanje
       question_fields:
         remove_question: Ukloni pitanje
@@ -626,16 +631,16 @@ hr:
       filters:
         current: "Otvoreno"
         expired: "Isteklo"
-      title: "Ankete"
-      participate_button: "Sudjelujte u ovoj anketi"
-      participate_button_expired: "Aneketa završila"
+      title: "Glasovanje"
+      participate_button: "Sudjelujte u ovom glasanju"
+      participate_button_expired: "Glasanje završilo"
       no_geozone_restricted: "Svi gradovi"
       geozone_restricted: "Distrikti"
       geozone_info: "Mogu sudjelovati građani u Cenzusu od: "
-      already_answer: "Vo ste već sudjelovali u ovoj anketi"
+      already_answer: "Vi ste već sudjelovali u ovom glasanju"
       not_logged_in: "Morate biti ulogirani ili prijavljeni kako bi sudjelovali"
       unverified: "Morate potvrditi svoj račun da sudjelujete"
-      cant_answer: "Ova anketa nije dostupna za vašu geozonu"
+      cant_answer: "Ovo glasanje nije dostupno za vašu geozonu"
       section_header:
         icon_alt: Ikona glasanja
         title: Glasanje
@@ -646,7 +651,7 @@ hr:
       no_polls: "Ne postoji otvoreno izglasavanje."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
-      already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan preko."
+      already_voted_in_web: "Već ste sudjelovali u ovom glasanju. Ako glasate ponovno, vaš glas će biti prepisan preko."
       back: Nazad na glasanje
       cant_answer_not_logged_in: "Vi morate %{signin} ili %{signup} kako biste sudjelovali."
       comments_tab: Komentari
@@ -655,7 +660,7 @@ hr:
       signup: Prijavite se
       cant_answer_verify_html: "Vi morate %{verify_link} kako biste odgovorili."
       verify_link: "potvrdi svoj račun"
-      cant_answer_expired: "Ova anketa je završila."
+      cant_answer_expired: "Ovo glasanje je završilo."
       cant_answer_wrong_geozone: "Ovo pitanje nije dostupno za vašu geozonu."
       more_info_title: "Više informacija"
       documents: Dokumenti
@@ -665,11 +670,12 @@ hr:
       videos: "Vanjski video"
       info_menu: "Informacija"
       stats_menu: "Statistike sudjelovanja"
-      results_menu: "Rezultati aknete"
+      results_menu: "Rezultati glasanja"
       stats:
         total_votes: "Ukupna količina datih glasova"
         votes: "GLASOVI"
         web: "WEB"
+        mail: "MAIL"
         booth: "GLASAČKA KABINA"
         total: "UKUPNO"
         valid: "Vrijedi"
