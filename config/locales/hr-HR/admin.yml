@@ -395,7 +395,7 @@ hr:
           published_proposal: Objavljeni prijedlozi
           default:
             email: Email
-            polls: Ankete
+            polls: Glasanje
             poster: Poster
         new:
           creating: Nova akcija za glavni izbornik prijedloga
@@ -685,7 +685,7 @@ hr:
       emails_download: Prezumi emailove
       valuators: Procjenitelji
       poll_officers: Službenici za bilježenje glasova
-      polls: Ankete
+      polls: Glasanje
       poll_booths: Položaj glasačkih mjesta
       poll_booth_assignments: Zadaci Glasačkih Mjesta
       poll_shifts: Upravljaj smjenama
@@ -706,7 +706,7 @@ hr:
           debates: "Rasprave"
           community: "Zajednica"
           proposals: "Prijedlozi"
-          polls: "Ankete"
+          polls: "Glasanje"
           layouts: "Slojevi"
           mailers: "Email-ovi"
           management: "Menadžment"
@@ -944,7 +944,7 @@ hr:
         email_placeholder: Pretraži korisnika po emailu
         search: Pretraga
         user_not_found: Korisnik nije pronađen
-        help: "Dodaj ili ukloni činovnike ankete iz pretrage od ispod."
+        help: "Dodaj ili ukloni činovnike za pregled glasova iz pretrage od ispod."
     poll_officer_assignments:
       index:
         officers_title: "Popis činovnika"
@@ -954,8 +954,8 @@ hr:
       by_officer:
         date: "Datum"
         booth: "Glasačko mjesto"
-        assignments: "Promjene u službi u ovoj anketi"
-        no_assignments: "Ovaj korisnik nema činovnika u smjeni u ovoj anketi."
+        assignments: "Promjene u službi u ovom glasanju"
+        no_assignments: "Ovaj korisnik nema činovnika u smjeni u ovom glasanju."
     poll_shifts:
       new:
         add_shift: "Dodaj smjenu"
@@ -987,7 +987,7 @@ hr:
     booth_assignments:
       manage_assignments: Upravljanje zadacima
       manage:
-        assignments_list: "Zadaci za anektu '%{poll}'"
+        assignments_list: "Zadaci za glasanje '%{poll}'"
         status:
           assign_status: Zadatak
           assigned: Dodjeljeno
@@ -1017,70 +1017,70 @@ hr:
         total_system: Ukupno glasova (automatski)
       index:
         booths_title: "Popis glasačkih mjesta"
-        no_booths: "Ne postoje glasačka mjesta pripisana ovoj anketi."
+        no_booths: "Ne postoje glasačka mjesta pripisana ovom glasanju."
         table_name: "Ime"
         table_location: "Lokacija"
     active_polls:
       edit:
-        title: "Opis ankete"
+        title: "Opis glasanja"
       form:
         description:
           text: "Opis"
-          help_text: "Ovaj tekst će se pojaviit na naslovu ove ankete. Može se koristiti za dodavnaje konteksta kako bi otvorili ankete."
+          help_text: "Ovaj tekst će se pojaviti na naslovu ovog glasanja. Može se koristiti za dodavnaje konteksta kako bi otvorili glasanje."
     polls:
       index:
-        title: "Popis anketa"
-        no_polls: "Ne postoje ankete."
-        create: "Stvori anketu"
+        title: "Popis glasanja"
+        no_polls: "Ne postoje glasanja."
+        create: "Stvori glasanje"
         name: "Ime"
         dates: "Datumi"
         start_date: "Datum Početka"
         closing_date: "Datum Zatvaranja"
         geozone_restricted: "Zabranjeno za distrikte"
       new:
-        title: "Nova anketa"
-        submit_button: "Stvori anketu"
+        title: "Novo glasanje"
+        submit_button: "Stvori glasanje"
       edit:
-        title: "Uredi anketu"
-        submit_button: "Ažuriraj anketu"
+        title: "Uredi glasanje"
+        submit_button: "Ažuriraj glasanje"
       show:
         questions_tab: Pitanja
         booths_tab: Glasačka mjesta
         officers_tab: Činovnici
         recounts_tab: Prebrojavanje
         results_tab: Rezultati
-        no_questions: "Ne postoje pitanja pripisana ovoj anketi."
+        no_questions: "Ne postoje pitanja pripisana ovom glasovanju."
         questions_title: "Popis pitanja"
         table_title: "Naziv"
         edit_answers: Uredi odgovore
         see_proposal: "(Vidi prijedlog)"
       flash:
-        question_added: "Dodana pitanja ovoj anketi"
-        error_on_question_added: "Pitanja nisu mogla biti pripisana ovoj anketi"
+        question_added: "Dodana pitanja ovom glasanju"
+        error_on_question_added: "Pitanja nisu mogla biti pripisana ovom glasanju"
       destroy:
-        alert: "Akcija će e ukloniti s ankete i svih povezanih pitanja."
-        success_notice: "Anketa uspješno obrisana"
-        unable_notice: "Ne možete obrisati anketu koja ima glasove"
+        alert: "Akcija će se ukloniti s glasanja i svih povezanih pitanja."
+        success_notice: "Glasanje uspješno obrisano"
+        unable_notice: "Ne možete obrisati glasanje koje ima zabilježene glasove"
     questions:
       index:
         title: "Pitanja"
         create: "Stvori pitanje"
         no_questions: "Ne postoje pitanja."
-        filter_poll: Filtriraj po Anketi
-        select_poll: Odaberi Anketu
+        filter_poll: Filtriraj po Glasanju
+        select_poll: Odaberi Glasanje
         questions_tab: "Pitanja"
         successful_proposals_tab: "Uspješni prijedlozi"
         create_question: "Stvori pitanje"
         table_proposal: "Prijedlog"
         table_question: "Pitanje"
-        table_poll: "Anketa"
-        poll_not_assigned: "Anketa nije dodijeljena"
+        table_poll: "Glasanje"
+        poll_not_assigned: "Glasanje nije dodijeljeno"
       edit:
         title: "Uredi Pitanje"
       new:
-        title: "Stvori pitanje za anketu %{poll}"
+        title: "Stvori pitanje za glasanje %{poll}"
         title_proposal: "Stvori pitanje"
-        poll_label: "Anketa"
+        poll_label: "Glasanje"
       answers:
         images:
           add_image: "Dodaj sliku"
@@ -1153,7 +1153,7 @@ hr:
     booths:
       index:
         title: "Popis aktivnih glasačkih mjesta"
-        no_booths: "Ne postoje aktivna glasačka mjesta za nadolazeču anketu."
+        no_booths: "Ne postoje aktivna glasačka mjesta za nadolazeće glasanje."
         add_booth: "Dodaj glasačko mjesto"
         name: "Ime"
         location: "Lokacija"
@@ -1235,7 +1235,7 @@ hr:
         milestones: Ključni ciljevi
         no_proposals: Ne postoje prijedlozi.
       show:
-        create_question: Dodaj ovaj prijedlog anketi kako bi glasali
+        create_question: Dodaj ovaj prijedlog glasanju kako bi glasali
       form:
         update: Ažuriraj prijedlog
       update:
@@ -1295,10 +1295,10 @@ hr:
         placeholder: Pretraži glasačko mjesto po imenu
       poll_officers_search:
         button: Pretraga
-        placeholder: Pretraži činovnike ankete
+        placeholder: Pretraži činovnike za glasanje
       poll_questions_search:
         button: Pretraga
-        placeholder: Pretraga pitanja ankete
+        placeholder: Pretraga pitanja glasanja
       proposal_search:
         button: Pretraga
         placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
@@ -1409,7 +1409,7 @@ hr:
         direct_messages: Izravne poruke
         proposal_notifications: Obavijesti prijedloga
         incomplete_verifications: Nedovršene verifikacije
-        polls: Ankete
+        polls: Glasovanje
       graph:
         debate_created: Rasprave
         visit: Broj posjeta
@@ -1441,13 +1441,13 @@ hr:
         proposals_with_notifications: Prijedlozi s obavijestima
         not_available: "Prijedlozi nisu dostupni"
       polls:
-        title: Statstike Anketa
-        all: Ankete
+        title: Statstike Glasanja
+        all: Glasovanje
         web_participants: Web sudionici
         total_participants: Ukupno Sudionika
-        poll_questions: "Pitanja iz ankete: %{poll}"
+        poll_questions: "Pitanja iz glasanja: %{poll}"
         table:
-          poll_name: Anketa
+          poll_name: Glasanje
           question_name: Pitanje
           origin_web: Web sudionici
           origin_total: Ukupno sudionika
