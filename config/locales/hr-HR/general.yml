@@ -52,6 +52,16 @@ hr:
         one: 1 odgovor
         few: "%{count} odgovore"
         other: "%{count} odgovore"
+      responses_show:
+        zero: Bez odgovora
+        one: "1 odgovor (prikaži)"
+        few: "%{count} odgovore (prikaži)"
+        other: "%{count} odgovore (prikaži)"
+      responses_collapse:
+        zero: Bez odgovora
+        one: "1 odgovor (slom)"
+        few: "%{count} odgovore (slom)"
+        other: "%{count} odgovore (slom)"
       user_deleted: Korisnik obrisan
       votes:
         zero: Nema glasova
@@ -386,6 +396,10 @@ hr:
           error: "Greška se pojavila. Molimo vas idite na stranicu 'Moj račun' kako biste uklonili preporuke za prijedloge"
       retired_proposals: Prijedlozi koji su povučeni
       retired_proposals_link: "Prijedlozi su povučeni od strane autora"
+      selected_proposals: Odabrani prijedlozi
+      selected_proposals_link: Pregledaj odabrane prijedloge
+      archived_proposals: Arhivirani prijedlozi
+      proposals_lists: Lista prijedloga
       retired_links:
         all: Svi
         duplicated: Duplicirani
@@ -454,6 +468,7 @@ hr:
       total_percent: 100%
       archived: "Ovaj je prijedlog arhiviran i ne može više prikupljati podršku."
       successful: "Prijedlog je dobio dovoljno potpore."
+      selected: "Odabrani prijedlog"
     show:
       author_deleted: Korisnik obrisan
       code: "Kod prijedloga:"
@@ -490,6 +505,7 @@ hr:
       mailing: Email
       poster: Poster
       recommended_actions: Preporučeno djelovanje
+      messages: Poruka korisnicima
     form:
       request: Zahtjev
     create_request:
@@ -553,6 +569,9 @@ hr:
       debates: Rasprave
       comments: Komentari
       latest_comments: Posljednje poruke
+    messages:
+      send_notification: Pošalji poruku podupirateljima prijedloga
+      previous_notifications: Vidi prošle obavijesti
     polls:
       index:
         title: Ankete
