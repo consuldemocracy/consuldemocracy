@@ -11,7 +11,7 @@ hr:
         debates: "Rasprave"
         proposals: "Prijedlozi"
         budgets: "Participativni budžeti"
-        polls: "Ankete"
+        polls: "Glasanje"
         other: "Ostale informacije o interesima"
         processes: "Procesi"
       debates:
@@ -35,9 +35,9 @@ hr:
         image_alt: "Različite faze participativnog budžetiranja"
         figcaption_html: '"Potpora" i "Glasanje" su faze participativnog budžetiranja.'
       polls:
-        title: "Ankete"
+        title: "Glasanje"
         description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
-        link: "ankete"
+        link: "glasanje"
         feature_1: "Kako bi sudjelovali u izglasavanju morate %{link} i potvrditi svoj račun."
         feature_1_link: "registrirajte se %{org_name}"
       processes:
