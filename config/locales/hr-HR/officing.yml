@@ -12,8 +12,8 @@ hr:
       total_recounts: Ukupno prebrojavanja i rezultata
     polls:
       final:
-        title: Ankete su spremne za finalno prebrojavanje
-        no_polls: Nemate službeno prebrojavanje u niti jednoj aktinvoj anketu
+        title: Glasovanje je spremljeno za finalno prebrojavanje
+        no_polls: Nemate službeno prebrojavanje u niti jednom aktivnom glasanju
         select_poll: Odaberi glasanje
         add_results: Vidi rezultate
     poll_budgets:
