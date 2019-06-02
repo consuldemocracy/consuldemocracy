@@ -63,9 +63,9 @@ hr:
     proposals:
       successful_proposal_id: Uspješni prijedlog
       successful_proposal_id_description: Ovaj prijedlog se koristi kao referenca za uspješni prijedlog u potpornom broju te će biti prikazan u grafu na upravljačkoj ploči.
-      poll_short_title: Ankete
+      poll_short_title: Glasovanje
       poll_short_title_description: Kratki opis značajke istraživanja. Dopušta korisnicima da stvore istraživanje o prijedlogu
-      poll_description: Opis ankete
+      poll_description: Opis glovanja
       poll_description_description: Detaljni opis značajki istraživanja
       poll_link: Dodatna poveznica s informacijama
       poll_link_description: Dodajte vezu za dodatne informacije u upravljačku ploču
@@ -128,8 +128,8 @@ hr:
       debates_description: "Prostor za građanske rasprave namijenjen je za sve koji žele predstaviti probleme koji ih muče te žele podijeliti svoje vidike s drugima"
       proposals: "Prijedlozi"
       proposals_description: "Prijedlozi građana prilika su da susjedstva i kolektivi izravno odluče kako žele da njihovo društvo izgleda, nakon dobivanja dovoljne potpore i podnošenja glasova građana"
-      polls: "Ankete"
-      polls_description: "Građanske ankete su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke"
+      polls: "Glasovanje"
+      polls_description: "Građansko glasanje su participativni mehanizmi pomoću kojih građani s glasačkim pravima mogu provoditi direktne odluke"
       budgets: "Participativno budžetiranje"
       budgets_description: "S participativnim budžetima građani odlučuju koje projekti će dobiti financiranje u njihovom susjedstvu"
       legislation: "Kolaborativna Legislativa"
