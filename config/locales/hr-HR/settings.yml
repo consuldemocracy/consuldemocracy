@@ -50,3 +50,25 @@ hr:
     hot_score_period_in_days_description: "Filter 'najviše aktivan' koji se koristi u više sekcija biti će baziran na glasovima tokom zadnjih X dana"
     mailer_from_name: "Ime pošiljatelja emaila"
     mailer_from_name_description: "Ovo ime pojavit će se kao ime pošiljatelja u emailu poslanom s aplikacije"
+    mailer_from_address: "Email adresa pošiljatelja"
+    mailer_from_address_description: "Ova email adresa će se pojaviti u email-ovima poslanim od strane aplikacije"
+    meta_title: "Naziv stranice (SEO)"
+    meta_title_description: "Naziv stranice <title>, korišten kako bi se poboljšao SEO"
+    meta_description: "Opis stranice (SEO)"
+    meta_description_description: 'Opis stranice <meta name="description">, korišten kako bi se poboljšao SEO'
+    meta_keywords: "Ključne riječi (SEO)"
+    meta_keywords_description: 'Ključne riječi <meta name="keywords">, korištene kako bi se poboljšao SEO'
+    min_age_to_participate: Minimalno godina kako bi bili u mogućnosti sudjelovati
+    min_age_to_participate_description: "Korisnici stariji od dobne granice mogu sudjelovati u svim procesima gdje korisnik treba potvrditi svoj račun"
+    proposals:
+      successful_proposal_id: Uspješni prijedlog
+      successful_proposal_id_description: Ovaj prijedlog se koristi kao referenca za uspješni prijedlog u potpornom broju te će biti prikazan u grafu na upravljačkoj ploči.
+      poll_short_title: Ankete
+      poll_short_title_description: Kratki opis značajke istraživanja. Dopušta korisnicima da stvore istraživanje o prijedlogu
+      poll_description: Opis ankete
+      poll_description_description: Detaljni opis značajki istraživanja
+      poll_link: Dodatna poveznica s informacijama
+      poll_link_description: Dodajte vezu za dodatne informacije u upravljačku ploču
+      email_short_title: Email
+      email_short_title_description: 'Kratki opis o sadržaju email-a. Dopušta korisnicima da pošalju email kako bi promovirali svoj prijedlog. Možete pronaći sadržaj emaila u "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: Opis email-a
