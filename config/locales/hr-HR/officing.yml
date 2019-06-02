@@ -76,7 +76,7 @@ hr:
     voters:
       new:
         title: Glasovanje
-        table_poll: Anketa
+        table_poll: Glasanje
         table_status: Stanje glasovanja
         table_actions: Djelovanja
         not_to_vote: Osoba je odlučila da neće glasati ovaj puta
