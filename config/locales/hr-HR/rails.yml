@@ -83,6 +83,10 @@ hr:
         one: 1 dan
         few: "%{count} dana"
         other: "%{count} dana"
+      x_minutes:
+        one: 1 minuta
+        few: "%{count} minute"
+        other: "%{count} minute"
       x_months:
         one: 1 mjesec
         few: "%{count} mjeseci"
