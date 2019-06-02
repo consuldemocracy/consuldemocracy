@@ -72,3 +72,28 @@ hr:
       email_short_title: Email
       email_short_title_description: 'Kratki opis o sadržaju email-a. Dopušta korisnicima da pošalju email kako bi promovirali svoj prijedlog. Možete pronaći sadržaj emaila u "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Opis email-a
+      email_description_description: Detaljan opis značajki email-a
+      poster_short_title: Poster
+      poster_short_title_description: 'Kratki opis o sadržaju postera. Dopušta korisnicima da preuzmu postar u PDF formatu kako bi promovirali svoj prijedlog. Možete pronaći sadržaj postera u "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Opis postera
+      poster_description_description: Detaljni opis značajki postera
+    analytics_url: "Analitika URL-a"
+    proposal_notification_minimum_interval_in_days: "Minimalni interval (u danima) za autore prijedloga da pošalju nove obavijesti prijedloga"
+    proposal_notification_minimum_interval_in_days_description: "Broj dana u kojima korisnik može poslati obavijest za sve one koji podupiru prijelog"
+    direct_message_max_per_day: "Izravna Poruka je dostigla maksimalan broj po danu"
+    direct_message_max_per_day_description: "Maksimalni broj izravnih poruka koje jedan korisnik može poslati po danu"
+    feature:
+      twitter_login: "Twitter prijava"
+      twitter_login_description: "Dopusti da se korisnik može prijaviti sa svojim Twitter računom"
+      facebook_login: "Facebook prijava"
+      facebook_login_description: "Dopusti da se korisnik može prijaviti sa svojim Facebook računom"
+      google_login: "Google prijava"
+      google_login_description: "Dopusti da se korisnik može prijaviti sa svojim Google računom"
+      featured_proposals: "Istaknuti prijedlozi"
+      featured_proposals_description: "Prikaži istaknute prijedloge na indeksnoj stranici prijedloga"
+      signature_sheets: "Potpisne liste"
+      signature_sheets_description: "Dopušta dodavanje Administracijskog panela potpisa koji se sakupljaju na stranicu Prijedloga i investicijskih projekata Participativnih Budžeta"
+      user:
+        recommendations: "Preporuke"
+        recommendations_description: "Prikaži korisničke preporuke na glavnoj stranici koji su bazirani na oznakama sljedećih stavaka"
+        skip_verification: "Preskoči korisničku verifikaciju"
