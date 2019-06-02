@@ -81,8 +81,16 @@ hr:
           button: Pretraga
           placeholder: Pretraga investicijskih projekata...
           title: Pretraga
+        search_results_html:
+          one: " sadrži termin <strong>'%{search_term}'</strong>"
+          few: " sadrži termine <strong>'%{search_term}'</strong>"
+          other: " sadržava termin <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Moj glas
+          voted_html:
+            one: "<strong>Glasali ste za jedan prijedlog s troškom od %{amount_spent}</strong>"
+            few: "<strong>Vi ste glasali %{count} za prijedlog s troškovima od %{amount_spent}</strong>"
+            other: "<strong>Vi ste glasali %{count} za prijedloga s iznosom od %{amount_spent}</strong>"
           voted_info: Vi možete %{link} u bilo koje vrijeme dok se ne završi ova faza. Nema potrebe da se potroši sav dostupan novac.
           voted_info_link: izmjeni svoj glas
           different_heading_assigned_html: "Imate aktivne glasove u drugoj temi: %{heading_link}"
@@ -136,6 +144,9 @@ hr:
           other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
         supports:
           zero: Nema potpore
+          one: 1 potpora
+          few: "%{count} potpore"
+          other: "%{count} potpora"
         give_support: Potpora
       header:
         check_ballot: Provjeri i potvrdi moj glas
@@ -167,6 +178,7 @@ hr:
       accepted: "Prihvati prijedlog potrošnje: "
       discarded: "Odbaci prijedlog potrošnje: "
       incompatibles: Nekompatabilni
+      investment_title: Naslov projekta
       investment_proyects: Lista svih investicijskih projekata
       unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
       not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za izglasavanje
