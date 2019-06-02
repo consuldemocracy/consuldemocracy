@@ -1,6 +1,14 @@
 hr:
   officing:
+    header:
+      title: Bilježenje glasova
+    dashboard:
+      index:
+        title: Službeno prebrojavanje
+        info: Ovdje možete potvrditi dokumente korisnika i spremiti rezultate glasova
+        no_shifts: Danas nemate službene smjene.
     menu:
+      voters: Potvrdi dokument
       total_recounts: Ukupno prebrojavanja i rezultata
     poll_budgets:
       index:
