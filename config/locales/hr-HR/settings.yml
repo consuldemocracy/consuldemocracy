@@ -18,3 +18,6 @@ hr:
     max_votes_for_proposal_edit_description: "Od ovog broja osoba koje podupiru autora Prijedloga više se ne može Prijedlog uređivati"
     max_votes_for_debate_edit: "Broj glasova nakon kojih se Rasprava više ne može uređivati"
     max_votes_for_debate_edit_description: "Od ovog broja glasova autor Rasprave više ne može Raspravu uređivati"
+    proposal_code_prefix: "Prefiks za kodove Prijedloga"
+    proposal_code_prefix_description: "Ovaj prefiks će se pojaviti u Prijedlozima prije stvaranja datuma i njegovog ID-a"
+    featured_proposals_number: "Broj istaknutih prijedloga"
