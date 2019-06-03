@@ -135,3 +135,12 @@ nn:
         one: " som inneholder <strong>'%{search_term}'</strong>"
         other: " som inneholder <strong>'%{search_term}'</strong>"
       select_order: Sortere etter
+      start_debate: Start en debatt
+      title: Debatter
+      section_header:
+        icon_alt: Debatt-ikon
+        title: Debatter
+        help: Hjelp til debatter
+      section_footer:
+        title: Hjelp med debatter
+        description: Start en debatt for å dele meninger med andre om temaer du er opptatt av.
