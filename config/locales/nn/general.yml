@@ -51,3 +51,24 @@ nn:
         zero: Ingen svar
       responses_show:
         zero: Ingen svar
+      responses_collapse:
+        zero: Ingen svar
+      user_deleted: Brukeren er slettet
+      votes:
+        zero: Ingen stemmer
+    form:
+      comment_as_admin: Kommenter som administrator
+      comment_as_moderator: Kommenter som moderator
+      leave_comment: Kommenter
+    orders:
+      most_voted: Flest stemmer
+      newest: Nyeste først
+      oldest: Eldste først
+      most_commented: Mest kommentert
+    select_order: Sorter etter
+    show:
+      return_to_commentable: "Gå tilbake til "
+  comments_helper:
+    comment_button: Publiser kommentar
+    comment_link: Kommenter
+    comments_title: Kommentarer
