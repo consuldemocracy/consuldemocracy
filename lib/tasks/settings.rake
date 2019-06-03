@@ -46,4 +46,8 @@ namespace :settings do
     Setting.rename_key from: "feature.homepage.widgets.feeds.processes", to: "homepage.widgets.feeds.processes"
   end
 
+  desc "Add new settings"
+  task add_new_settings: :environment do
+    Setting.add_new_settings
+  end
 end

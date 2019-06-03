@@ -125,5 +125,11 @@ class Setting < ApplicationRecord
     def reset_defaults
       defaults.each { |name, value| self[name] = value }
     end
+
+    def add_new_settings
+      defaults.each do |name, value|
+        self[name] = value unless find_by(key: name)
+      end
+    end
   end
 end
