@@ -13,4 +13,20 @@ nn:
       phone_number_label: Telefonnr
       public_activity_label: Vis min liste over aktiviteter offentlig
       public_interests_label: Vis etikettene for de elementene jeg følger offentlig
+      public_interests_my_title_list: Tagger for emnene du følger
+      public_interests_user_title_list: Tagger for emner denne brukeren følger
       save_changes_submit: Lagre endringer
+      subscription_to_website_newsletter_label: Motta relevante oppdateringer om nettsiden via e-post
+      email_on_direct_message_label: Motta e-post om direktemeldinger
+      email_digest_label: Motta oppsummering av forslag
+      official_position_badge_label: Vis etikett for representant fra kommunen
+      recommendations: Anbefalinger
+      show_debates_recommendations: Vise anbefalte debatter
+      show_proposals_recommendations: Vis anbefalte forslag
+      title: Min konto
+      user_permission_debates: Delta i debatter
+      user_permission_info: Med din konto kan du...
+      user_permission_proposal: Lag nye forslag
+      user_permission_support_proposal: Støtt forslag
+      user_permission_title: Deltakelse
+      user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
