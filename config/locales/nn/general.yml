@@ -445,3 +445,55 @@ nn:
           other: Du har laget %{count} avstemninger.
         links: Linker
         additiontal_information: Tilleggsinformasjon
+      new:
+        title: Ny avstemning
+        submit: Opprett avstemning
+      edit:
+        submit: Oppdater avstemning
+      poll:
+        view_results: Se resultater
+        edit_poll: Rediger undersøkelse
+        show_results: Se resultater
+        show_results_help: Om du krysser av her, vil resultatene bli offentliggjort og alle brukere vil ha muligheten til å se dem
+        delete: Slett undersøkelse
+        alert_notice: Denne handlingen vil fjerne undersøkelsen og alle tilhørende spørsmål.
+        success_notice: Undersøkelsen er slettet
+        unable_notice: Du kan slette en undersøkelse som har fått respons
+      form:
+        name: Tittel på undersøkelse
+        add_question: Legg til spørsmål
+      question_fields:
+        remove_question: Fjern spørsmål
+        add_answer: Legg til svar
+      question_answer_fields:
+        remove_answer: Fjern svar
+    poster:
+      index:
+        title: Forhåndsvisning av plakat
+        poster_title: "Du trenger ikke å lete mer,"
+        poster_subtitle: "støtt meg! "
+        intro_text_html: "<strong>Jeg deltar i %{org}</strong> med mitt eget innbyggerforslag, og trenger at du også oppretter en bruker, om jeg skal kunne motta nok støtte til å bidra til å  forme den byen vi alle ønsker å bo i."
+        proposal_code: "Forslagets kode: %{code}"
+        support: Støtt mitt forslag
+        footer_html: "<strong>Gå til %{link} og støtt forslaget.</strong> Vi er nødt til å være mange. Din stemme teller. Takk!"
+      new:
+        title: Plakat for ditt forslag
+      options:
+        preview: Forhåndsvisning
+        download: Last ned
+    mailing:
+      index:
+        title: Forhåndsvisning av epost
+      new:
+        title: Epost modell for deling
+      mailing_options:
+        send: Send til %{address}
+        preview: Forhåndsvisning
+      create:
+        sent: Eposten har blitt sendt
+    mailer:
+      forward:
+        subtitle_html: "Om du støtte meg, <br> vil vi oppnå det."
+        support_button: Støtt forslag
+        share_in: Del i
+        hi: "Hei!"
