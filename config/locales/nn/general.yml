@@ -531,3 +531,9 @@ nn:
     search_results: "Søk i resultater"
     advanced_search:
       author_type: "Per kategori for forslagsstillere"
+      author_type_blank: "Velg en kategori"
+      date: "Etter dato"
+      date_placeholder: "DD/MM/ÅÅÅÅ"
+      date_range_blank: "Velg en dato"
+      date_1: "Siste 24 timer"
+      date_2: "Forrige uke"
