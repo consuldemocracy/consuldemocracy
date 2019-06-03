@@ -604,6 +604,21 @@ describe "Proposals" do
       expect(page).to have_content unfeasible.title
       expect(page).not_to have_content duplicated.title
     end
+
+    context "Special interface translation behaviour" do
+      before { Setting["feature.translation_interface"] = true }
+      after { Setting["feature.translation_interface"] = nil }
+
+      scenario "Cant manage translations" do
+        proposal = create(:proposal)
+        login_as(proposal.author)
+
+        visit retire_form_proposal_path(proposal)
+
+        expect(page).not_to have_css "#add_language"
+        expect(page).not_to have_link "Remove language"
+      end
+    end
   end
 
   scenario "Update should not be posible if logged user is not the author" do
