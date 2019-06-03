@@ -30,3 +30,20 @@ nn:
       user_permission_support_proposal: Støtt forslag
       user_permission_title: Deltakelse
       user_permission_verify: Verifiser din konto for å få tilgang til alle funksjoner.
+      user_permission_verify_info: "* Kun for brukere av Census."
+      user_permission_votes: Delta i endelig avstemning
+      username_label: Brukernavn
+      verified_account: Konto er verifisert
+      verify_my_account: Verifiser min konto
+  application:
+    close: Lukk
+    menu: Meny
+  comments:
+    comments_closed: Kommentarer er avstengt
+    verified_only: For å delta %{verify_account}
+    verify_account: verifiser din konto
+    comment:
+      admin: Administrator
+      author: Forfatter
+      deleted: Denne kommentaren har blitt slettet
+      moderator: Moderator
