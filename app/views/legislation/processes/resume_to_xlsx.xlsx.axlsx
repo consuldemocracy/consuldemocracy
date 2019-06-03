@@ -1,0 +1,37 @@
+wb = xlsx_package.workbook
+space = " "
+wb.add_worksheet(name: "Resume") do |sheet|
+  if @process.debate_phase.enabled? && !@process.questions.empty?
+    sheet.add_row [t("legislation.summary.debates_phase"), t("legislation.questions.question.total", count: @process.questions.count)]
+    @process.questions.each do |question|
+      sheet.add_row [question.title, t("legislation.summary.comments", count: question.comments.count)]
+      sheet.add_hyperlink :location => legislation_process_question_url(question.process, question), :ref => sheet.rows.last.cells.first
+      question.best_comments(3).each do |comment|
+        sheet.add_row [comment.body, (comment.cached_votes_up - comment.cached_votes_down).to_s + space +t("legislation.summary.votes")]
+        sheet.add_hyperlink :location => comment_url(comment), :ref => sheet.rows.last.cells.first
+      end
+      sheet.add_row ["",""]
+    end
+  end
+
+  if @process.proposals_phase.enabled? && !Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).empty?
+    sheet.add_row [t("legislation.summary.proposal_phase"), t("legislation.proposals.total", count: Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).count)]
+    Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).order('cached_votes_score desc').each do |proposal|
+      sheet.add_row [proposal.title,
+                     (proposal.cached_votes_total - proposal.cached_votes_down).to_s + space + t("legislation.summary.votes")]
+      sheet.add_hyperlink :location => legislation_process_proposal_url(proposal.legislation_process_id, proposal), :ref => sheet.rows.last.cells.first
+    end
+    sheet.add_row ["",""]
+  end
+
+  if @process.allegations_phase.enabled? && !@process.get_last_draft_version.nil? && !@process.get_last_draft_version.annotations.empty?
+    sheet.add_row [t("legislation.summary.comments_phase")+" ("+t("legislation.summary.version")+@process.get_last_draft_version.title+")",
+                   t("legislation.annotations.index.comments_count", count: @process.get_best_annotation_comments.count)]
+    @process.get_best_annotation_comments.take(10).each do |comment|
+      sheet.add_row [Legislation::Annotation.find_by(id: comment.commentable_id).quote,""]
+      sheet.add_row [comment.body, (comment.cached_votes_up - comment.cached_votes_down).to_s + space + t("legislation.summary.votes")]
+      sheet.add_hyperlink :location => comment_url(comment), :ref => sheet.rows.last.cells.first
+    end
+  end
+
+end

@@ -1006,3 +1006,39 @@
     font-weight: bold;
   }
 }
+
+// 10. Legislation resumes
+// -------------------------
+.resume_title {
+  padding-left: 0;
+}
+
+.panel_resume {
+  margin-left: rem-calc(16);
+}
+
+.question_title {
+  margin-bottom: 1.5%;
+}
+
+.comment_box {
+  border-radius: rem-calc(10);
+  padding: 1.5%;
+  background-color: rgba(217, 216, 243, 0.2);
+  margin-bottom: 1%;
+}
+
+.centered_votes {
+  padding: rem-calc(10);
+}
+
+.annotation_text {
+  border: 1px solid $black;
+  padding: rem-calc(10);
+}
+
+.download-button {
+  position: absolute;
+  margin-top: rem-calc(25);
+  margin-left: 85%;
+}

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="debate-chooser">
+    <div class="resume_title small-12 medium-9 column">
+      <h3><%= t("legislation.summary.debates_phase") %></h3>
+    </div>
+    <div class="small-12 medium-3 column">
+      <h3><%= t("legislation.questions.question.total", count: @process.questions.count) %></h3>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-11 column">
+        <div class="debate-list">
+          <% if @process.questions.empty? %>
+            <div class="callout primary">
+              <p><%= t("legislation.processes.debate.empty_questions") %></p>
+            </div>
+          <% else %>
+            <%= render "resume_questions", process: @process %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

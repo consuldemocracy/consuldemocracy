@@ -20,8 +20,10 @@ en:
       index:
         title: Comments
         comments_about: Comments about
+        comment_about: "Comment about:"
         see_in_context: See in context
         comments_count:
+          zero: No comments
           one: "%{count} comment"
           other: "%{count} comments"
       show:
@@ -96,6 +98,10 @@ en:
         form:
           leave_comment: Leave your answer
       question:
+        total:
+          zero: No debates
+          one: "%{count} debate"
+          other: "%{count} debates"
         comments:
           zero: No comments
           one: "%{count} comment"
@@ -124,3 +130,21 @@ en:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
       process_title: Collaborative legislation process
+      total:
+        zero: No proposals
+        one: "%{count} proposal"
+        other: "%{count} proposals"
+    summary:
+      title: Resume
+      votes: votes
+      debates_phase: Debates phase
+      proposal_phase: Proposal phase
+      comments_phase: Text comment phase
+      comments:
+        zero: No comments
+        one: "%{count} comment"
+        other: "%{count} comments"
+      most_voted_comments: "Most voted comments: "
+      no_allegation: There are no text comments
+      version: version
+      process_empty: The process have no phases.

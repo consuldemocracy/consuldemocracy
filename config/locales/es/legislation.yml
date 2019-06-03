@@ -20,6 +20,7 @@ es:
       index:
         title: Comentarios
         comments_about: Comentarios sobre
+        comment_about: "Comentario sobre:"
         see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
@@ -96,6 +97,10 @@ es:
         form:
           leave_comment: Deja tu respuesta
       question:
+        total:
+          zero: No hay debates
+          one: "%{count} debate"
+          other: "%{count} debates"
         comments:
           zero: Sin comentarios
           one: "%{count} comentario"
@@ -124,3 +129,21 @@ es:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
       process_title: Proceso de legislación colaborativa
+      total:
+        zero: No hay propuestas
+        one: "%{count} propuesta"
+        other: "%{count} propuestas"
+    summary:
+      title: Resumen
+      votes: votos
+      debates_phase: Fase de debates
+      proposal_phase: Fase de propuestas
+      comments_phase: Fase de comentarios de texto
+      comments:
+        zero: No hay comentarios
+        one: "%{count} comentario"
+        other: "%{count} comentarios"
+      most_voted_comments: "Comentarios más votados:"
+      no_allegation: No hay comentarios de texto.
+      version: versión
+      process_empty: The proces have no phases.
