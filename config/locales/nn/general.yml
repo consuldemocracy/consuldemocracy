@@ -214,6 +214,30 @@ nn:
       chrome: Google Chrome
       firefox: Firefox
       ie: Vi har oppdaget at du bruker Internet Explorer. For en bedre opplevelse anbefaler vi %{firefox} eller %{chrome}.
+      ie_title: Denne siden er ikke optimalisert for din nettleser
+    dashboard:
+      proposal_header:
+        published: Publisert
+        draft: Utkast
+        retired: Tilbakekalt
+      proposal_totals:
+        active_resources: Aktive ressurser
+        community: Deltakere i fellesskap
+        show_proposal: Vis forslag
+        preview_proposal: Forhåndsvis forslag
+        current_goal: Nåværende mål
+        supports:
+          zero: Ingen støtte
+          zero: "Støtte"
+          one: Støtte
+          other: "Støtte"
+    footer:
+      accessibility: Tilgjengelighet
+      conditions: Brukervilkår
+      consul: CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: For teknisk support gå til
+      copyright: CONSUL, %{year}
   notifications:
     index:
       unread: Ulest
