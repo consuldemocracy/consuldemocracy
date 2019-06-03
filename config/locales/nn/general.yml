@@ -341,10 +341,45 @@ nn:
       title: Trekk tilbake forslag
       warning: "Hvis du trekker tilbake forslaget ditt, kan andre brukere fortsatt støtte det. Forslaget fjernes likevel fra hovedlista, og andre brukere vil bli informert om at du ikke lenger mener forslaget bør støttes"
       retired_reason_label: Grunn til å trekke forslaget
+      retired_reason_blank: Velg et alternativ
+      retired_explanation_label: Forklaring
+      retired_explanation_placeholder: Forklar kort hvorfor du ikke mener dette forslaget burde få mer støtte
+      submit_button: Ta tilbake forslaget
     retire_options:
+      duplicated: Duplikert
       started: Pågående
       unfeasible: Ikke gjennomførbart
       done: Ferdig
       other: Annet
     form:
       geozone: Område
+      proposal_responsible_name: Fullt navn på personen som eier forslaget
+      proposal_responsible_name_note: "(individuelt eller som representant for en gruppe; vil ikke bli publisert offentlig)"
+      proposal_summary: Oppsummering av forslag
+      proposal_summary_note: "(Maks 200 tegn)"
+      proposal_text: Forslagstekst
+      proposal_title: Tittel på forslag
+      proposal_video_url: Link til ekstern video
+      proposal_video_url_note: Du kan legge til en link fra Youtube eller Vimeo
+      tag_category_label: "Kategorier"
+      tags_instructions: "Tagg forslaget. Du kan velge fra de foreslåtte kategoriene, eller legge til egne"
+      tags_label: Tagger
+    new:
+      recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
+      recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
+      start_new: Lag et nytt forslag
+    notice:
+      retired: Forslaget er trukket
+      published: Forslaget har blitt offentliggjort
+    proposal:
+      created: "Du har opprettet et forslag!"
+      share:
+        guide: "Nå kan du dele forslaget, så folk kan støtte deg."
+        edit: "Før forslaget deles, har du mulighet til å endre teksten som du vil."
+        view_proposal: Ikke nå, gå til mitt forslag
+      already_supported: Du har allerede støttet dette forslaget. Del det!
+      comments:
+        zero: Ingen kommentarer
+        zero: "%{count} kommentarer"
+        one: 1 kommentarer
+        other: "%{count} kommentarer"
