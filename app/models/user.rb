@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_one :administrator
   has_one :moderator
   has_one :valuator
+  has_one :tracker
   has_one :manager
   has_one :poll_officer, class_name: "Poll::Officer"
   has_one :organization
@@ -149,6 +150,10 @@ class User < ApplicationRecord
 
   def valuator?
     valuator.present?
+  end
+
+  def tracker?
+    tracker.present?
   end
 
   def manager?

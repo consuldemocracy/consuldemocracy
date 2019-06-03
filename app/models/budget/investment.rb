@@ -26,6 +26,8 @@ class Budget
     include Milestoneable
     include Randomizable
 
+    extend DownloadSettings::BudgetInvestmentCsv
+
     belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
     belongs_to :heading
     belongs_to :group
@@ -41,7 +43,9 @@ class Budget
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: "Comment"
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: "Comment"
 
-    extend DownloadSettings::BudgetInvestmentCsv
+    has_many :tracker_assignments, dependent: :destroy
+    has_many :trackers, through: :tracker_assignments
+
     delegate :name, :email, to: :author, prefix: true
 
     validates :title, presence: true
@@ -93,6 +97,7 @@ class Budget
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
     scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
+    scope :by_tracker,        ->(tracker_id) { where("budget_tracker_assignments.tracker_id = ?", tracker_id).joins(:tracker_assignments) }
     scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
 
     scope :for_render, -> { includes(:heading) }

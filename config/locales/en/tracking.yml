@@ -1,0 +1,92 @@
+en:
+  tracking:
+    header:
+      title: Tracking
+    menu:
+      title: Tracking
+      budgets: Participatory budgets
+    budgets:
+      index:
+        title: Participatory budgets
+        table_name: Name
+        table_phase: Phase
+        table_assigned_investments_tracking_open: Investment projects assigned with tracking open
+        table_actions: Actions
+        tracking: Tracking
+        no_budgets: "There are no budgets"
+    budget_investments:
+      index:
+        assigned_to: "Assigned to %{tracker}"
+        title: Investment projects
+        edit: Edit milestones
+        table_id: ID
+        table_title: Title
+        table_heading_name: Heading name
+        table_actions: Actions
+        no_investments: "There are no investment projects."
+      show:
+        title: Investment project
+        info: Author info
+        by: Sent by
+        sent: Sent at
+        heading: Heading
+        undefined: "Undefined"
+        responsibles: Responsibles
+        assigned_admin: Assigned admin
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Title"
+        table_description: "Description"
+        table_publication_date: "Publication date"
+        table_status: Status
+        table_actions: "Actions"
+        delete: "Delete milestone"
+        no_milestones: "Don't have defined milestones"
+        image: "Image"
+        show_image: "Show image"
+        documents: "Documents"
+        milestone: Milestone
+        new_milestone: Create new milestone
+      form:
+        admin_statuses: Manage statuses
+        no_statuses_defined: There are no defined statuses yet
+      new:
+        creating: Create milestone
+        date: Date
+        description: Description
+      edit:
+        title: Edit milestone
+      create:
+        notice: New milestone created successfully!
+      update:
+        notice: Milestone updated successfully
+      delete:
+        notice: Milestone successfully deleted
+    progress_bars:
+      manage: "Manage progress bars"
+      index:
+        title: "Progress bars"
+        no_progress_bars: "There are no progress bars"
+        new_progress_bar: "Create new progress bar"
+        primary: "Primary progress bar"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Title"
+        table_percentage: "Current progress"
+      new:
+        creating: "Create progress bar"
+      edit:
+        title:
+          primary: "Edit primary progress bar"
+          secondary: "Edit progress bar %{title}"
+      create:
+        notice: "Progress bar created successfully!"
+      update:
+        notice: "Progress bar updated successfully"
+      delete:
+        notice: "Progress bar deleted successfully"
+  trackers:
+    budget_investments:
+      show:
+        assigned_trackers: "Assigned trackers"

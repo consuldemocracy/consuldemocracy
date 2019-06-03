@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   draw :tag
   draw :user
   draw :valuation
+  draw :tracking
   draw :verification
 
   root "welcome#index"

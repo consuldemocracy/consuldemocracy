@@ -1,13 +1,13 @@
 <%= render "admin/shared/globalize_locales", resource: @milestone %>
 
-<%= translatable_form_for [:admin, *resource_hierarchy_for(@milestone)] do |f| %>
+<%= translatable_form_for [:tracking, *resource_hierarchy_for(@milestone)] do |f| %>
 
   <div class="small-12 medium-6 margin-bottom">
     <%= f.select :status_id,
           @statuses.collect { |s| [s.name, s.id] },
-          { include_blank: @statuses.any? ? "" : t("admin.milestones.form.no_statuses_defined") },
+          { include_blank: @statuses.any? ? "" : t("tracking.milestones.form.no_statuses_defined") },
           { disabled: @statuses.blank? } %>
-    <%= link_to t("admin.milestones.form.admin_statuses"),
+    <%= link_to t("tracking.milestones.form.admin_statuses"),
                 admin_milestone_statuses_path %>
   </div>
 
@@ -17,10 +17,10 @@
 
     <%= translations_form.text_area :description,
                                     rows: 5,
-                                    label: t("admin.milestones.new.description") %>
+                                    label: t("tracking.milestones.new.description") %>
   <% end %>
 
-  <%= f.label :publication_date, t("admin.milestones.new.date") %>
+  <%= f.label :publication_date, t("tracking.milestones.new.date") %>
   <%= f.text_field :publication_date,
                    value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,
                    label: false,

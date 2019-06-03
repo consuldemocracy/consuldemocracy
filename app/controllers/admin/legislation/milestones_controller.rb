@@ -1,4 +1,4 @@
-class Admin::Legislation::MilestonesController < Admin::MilestonesController
+class Admin::Legislation::MilestonesController < Tracking::MilestonesController
   include FeatureFlags
   feature_flag :legislation
 
@@ -10,9 +10,5 @@ class Admin::Legislation::MilestonesController < Admin::MilestonesController
 
     def milestoneable
       ::Legislation::Process.find(params[:process_id])
-    end
-
-    def milestoneable_path
-      admin_legislation_process_milestones_path(milestoneable)
     end
 end

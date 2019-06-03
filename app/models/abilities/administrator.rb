@@ -99,6 +99,7 @@ module Abilities
       can [:create, :destroy], DirectUpload
 
       can [:deliver], Newsletter, hidden_at: nil
+      can [:manage], ::Tracker
       can [:manage], Dashboard::AdministratorTask
 
       can [:edit, :update], DownloadSetting
