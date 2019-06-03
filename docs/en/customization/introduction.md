@@ -46,22 +46,22 @@ In the previous section we have commented that once subscribed to the translatio
 Once we have the new key in the `secrets.yml` we can now proceed to activate the module. To activate the functionality you must follow 2 steps:
 1. Execute the following command `bin/rake settings:create_remote_translations_setting RAILS_ENV=production`
 1. Accessing through the administration panel of your application to the section **Configuración > Funcionalidades** and activate module **Traducciones Remotas** as shown below:
-![Active remote translations](../../img/translations/remote_translations/active-remote-translations-es.png)
+![Active remote translations](../../img/translations/remote_translations/active-remote-translations-en.png)
 
 #### Use Cases
 Once we have the api key in our `secrets.yml` and the activated module, users will already be able to use the functionality.
 We attach some screenshots of how the application interacts with our users:
 * When a user visits a page in a language without translated content, an informative text will appear at the top of the page and a button to request the translation. (**Note:** *If user visit page with a language not supported by the translation service, no text or translation button will be displayed. See section: Available languages for remote translation*)
-![Display text and button](../../img/translations/remote_translations/display-text-and-button-es.png)
+![Display text and button](../../img/translations/remote_translations/display-text-and-button-en.png)
 
 * Once the user click the `Translate page` button, the translations are enqueued and the page is reloaded with a notice (*Informing that the translations have been requested correctly*) and an informative text in the header (*explaining when you will be able to see these translations*).
-![Display notice and text after enqueued translations](../../img/translations/remote_translations/display-notice-and-text-after-enqueued-es.png)
+![Display notice and text after enqueued translations](../../img/translations/remote_translations/display-notice-and-text-after-enqueued-en.png)
 
 * If an user visit a page that does not have translations but have already been requested by another user. The application will not show you the translate button, but an informative text in the header (*explaining when you will be able to see these translations*).
-![Display text explaining that translations are pending](../../img/translations/remote_translations/display-text-translations-pending-es.png)
+![Display text explaining that translations are pending](../../img/translations/remote_translations/display-text-translations-pending-en.png)
 
 * The translation request, response processing and data saving are delegated to `Delayed Jobs` and as soon as they are processed, the user will be able to read them after page refresh.
-![Display translated content](../../img/translations/remote_translations/display-translated-content-es.png)
+![Display translated content](../../img/translations/remote_translations/display-translated-content-en.png)
 
 
 #### Available languages for remote translation
