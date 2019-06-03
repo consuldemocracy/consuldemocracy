@@ -1182,8 +1182,8 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.datetime "confirmed_hide_at"
     t.bigint   "hot_score",                      default: 0
     t.integer  "confidence_score",               default: 0
-    t.datetime "created_at",                                 null: false
-    t.datetime "updated_at",                                 null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "responsible_name",    limit: 60
     t.text     "summary"
     t.string   "video_url"
