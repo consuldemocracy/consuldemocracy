@@ -418,3 +418,30 @@ nn:
       retired_warning_link_to_explanation: Les forklaringen før du avgir en stemme.
       retired: Forslaget er trukket tilbake av forslagsstiller
       share: Del
+      no_notifications: "Dette forslaget har ingen notifikasjoner."
+      embed_video_title: "Video for %{proposal}"
+      title_video_url: "Ekstern video"
+      author: Forslagsstiller
+      draft: Forslag står som utkast. Utkastet kan ikke motta støtte enda, og vil ikke komme opp på lista for forslag.
+    update:
+      form:
+        submit_button: Lagre endringer
+  dashboard:
+    menu:
+      my_proposal: Rediger mitt forslag
+      progress: Fremdrift
+      resources: Ressurser
+      community: Fellesskap
+      polls: Avstemninger
+      mailing: Epost
+      poster: Plakat
+    polls:
+      index:
+        title: Avstemninger
+        create: Lag avstemning
+        count:
+          zero: Du har laget %{count} avstemninger.
+          one: Du har laget %{count} avstemninger.
+          other: Du har laget %{count} avstemninger.
+        links: Linker
+        additiontal_information: Tilleggsinformasjon
