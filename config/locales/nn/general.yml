@@ -248,17 +248,22 @@ nn:
       administration_menu: Meny
       administration: Administrasjon
       available_locales: Tilgjengelige språk
+      collaborative_legislation: Deltakende lovgivning
       debates: Debatter
       locale: "Språk:"
       logo: CONSUL logo
+      management: Ledelse
       moderation: Moderering
       valuation: Vurdering
+      officing: Avstemningskontrollører
       help: Hjelp
       my_account_link: Min konto
       my_activity_link: Min aktivitet
       open: åpen
+      open_gov: Open Government
       proposals: Forslag
       poll_questions: Avstemming
+      budgets: Deltakende budsjettering
       notification_item:
         new_notifications:
           zero: Du har %{count} nye varsler
@@ -276,6 +281,11 @@ nn:
       title: Varsler
       unread: Ulest
     notification:
+      action:
+        comments_on:
+          zero: Det er %{count} nye kommentarer
+          one: Noen kommenterte på
+          other: Det er %{count} nye kommentarer på
       mark_as_read: Marker som lest
       mark_as_unread: Marker som ulest
       notifiable_hidden: Denne ressursen er ikke lenger tilgjengelig.
