@@ -47,3 +47,7 @@ nn:
       author: Forfatter
       deleted: Denne kommentaren har blitt slettet
       moderator: Moderator
+      responses:
+        zero: Ingen svar
+      responses_show:
+        zero: Ingen svar
