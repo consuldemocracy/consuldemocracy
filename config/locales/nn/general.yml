@@ -383,3 +383,38 @@ nn:
         zero: "%{count} kommentarer"
         one: 1 kommentarer
         other: "%{count} kommentarer"
+      support: Støtte
+      support_title: Støtt dette forslaget
+      supports:
+        zero: Ingen støtte
+        zero: "%{count} støtte"
+        one: 1 støtte
+        other: "%{count} støtte"
+      votes:
+        zero: Ingen stemmer
+        zero: "%{count} stemmer"
+        one: 1 stemme
+        other: "%{count} stemmer"
+      supports_necessary: "%{number} støtter trengs"
+      total_percent: 100%
+      archived: "Dette forslaget har blitt arkivert og kan ikke samle støtte."
+      successful: "Dette forslaget har nådd nok støtte."
+      selected: "Valgt forslag"
+    show:
+      author_deleted: Bruker er slettet
+      code: "Forslagskode:"
+      comments:
+        zero: Ingen kommentarer
+        zero: "%{count} kommentarer"
+        one: 1 kommentar
+        other: "%{count} kommentarer"
+      comments_tab: Kommentarer
+      dashboard_proposal_link: Dashboard
+      flag: Dette forslaget har blitt flagget som upassende av flere brukere.
+      login_to_comment: Du må %{signin} eller %{signup} for å legge inn en kommentar.
+      notifications_tab: Notifikasjoner
+      milestones_tab: Milepæler
+      retired_warning: "Forslagstilleren ønsker ikke at dette forslaget skal få mer støtte."
+      retired_warning_link_to_explanation: Les forklaringen før du avgir en stemme.
+      retired: Forslaget er trukket tilbake av forslagsstiller
+      share: Del
