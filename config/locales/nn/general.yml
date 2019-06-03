@@ -130,3 +130,8 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
+      search_results_html:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
+      select_order: Sortere etter
