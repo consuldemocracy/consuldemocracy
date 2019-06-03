@@ -2,5 +2,8 @@ nn:
   account:
     show:
       erase_account_link: Slett min konto
+      finish_verification: Fullfør verifisering
       notifications: Varsler
+      organization_name_label: Navn på organisasjonen
+      personal: Personlige detaljer
       save_changes_submit: Lagre endringer
