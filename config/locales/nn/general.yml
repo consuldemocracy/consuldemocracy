@@ -238,6 +238,21 @@ nn:
       consul_url: https://github.com/consul/consul
       contact_us: For teknisk support gå til
       copyright: CONSUL, %{year}
+      description: Denne portalen bruker %{consul} som er %{open_source}.
+      open_source: open-source software
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Vær med å forme den byen du vil bo i.
+      participation_title: Deltakelse
+      privacy: Personvernpolicy
+    header:
+      administration_menu: Meny
+      administration: Administrasjon
+      available_locales: Tilgjengelige språk
+      debates: Debatter
+      locale: "Språk:"
+      logo: CONSUL logo
+      moderation: Moderering
+      valuation: Vurdering
   notifications:
     index:
       unread: Ulest
