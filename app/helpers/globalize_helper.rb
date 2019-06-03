@@ -96,11 +96,6 @@ module GlobalizeHelper
     end
   end
 
-  def can_manipulate_languages?
-    params[:controller] != "admin/legislation/milestones" &&
-      params[:controller] != "admin/legislation/homepages"
-  end
-
   def translation_enabled_tag(locale, enabled)
     hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
   end
