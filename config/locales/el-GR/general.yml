@@ -51,6 +51,8 @@ el:
         zero: Δεν υπάρχουν απαντήσεις
         one: 1 απάντηση
         other: "%{count} απαντήσεις"
+      responses_show:
+        zero: Χωρίς ανταπόκριση
       user_deleted: Χρήστης διεγραμμένος
       votes:
         zero: Δεν υπάρχουν ψήφοι
