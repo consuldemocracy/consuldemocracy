@@ -173,6 +173,7 @@ el:
       accepted: "Αποδεκτή πρόταση δαπανών: "
       discarded: "Απορριφθείσα πρόταση δαπανών: "
       incompatibles: Ασυμβίβαστα
+      investment_title: Τίτλος έργου
       investment_proyects: Λίστα με όλα τα επενδυτικά έργα
       unfeasible_investment_proyects: Λίστα με όλα τα ανέφικτα επενδυτικά έργα
       not_selected_investment_proyects: Λίστα με όλα τα επενδυτικά έργα που δεν είχαν επιλεγεί για ψηφοφορία
