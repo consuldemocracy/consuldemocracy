@@ -323,6 +323,24 @@ nn:
         submit_button: Lag nye forslag
     created:
       title: Gratulerer! Du har gjennomført først steg.
+      motivation: "Det er viktig å forberede en introduksjonskampanje for at forslaget ditt skal bli en suksess. Det første dagene er avgjørende."
+      motivation_2_html: "<strong>Hvis du vil ha anbefalinger til forberedelsene før forslaget blir offentliggjort, kan du la forslaget stå som utkast, og vi vil veilede deg.</strong>"
+      publish: Nei, jeg vil offentliggjøre forslaget
+      dashboard: Ja, jeg ønsker hjelp, og offentligjør forslaget senere
+      preview_title: Dette er hvordan forslaget ditt vil se ut når det er offentliggjort
+    share:
+      improve_it: Gjør kampanjen din bedre og få mer støtte.
+      dashboard: Mer informasjon
+      message: "Jeg støttet dette forslaget %{title} i %{handle}. Hvis du er interesseret, så kan du også gå inn og støtte!"
+    edit:
+      editing: Rediger forslag
+      form:
+        submit_button: Lagre endringer
+      show_link: Se forslag
+    retire_form:
+      title: Trekk tilbake forslag
+      warning: "Hvis du trekker tilbake forslaget ditt, kan andre brukere fortsatt støtte det. Forslaget fjernes likevel fra hovedlista, og andre brukere vil bli informert om at du ikke lenger mener forslaget bør støttes"
+      retired_reason_label: Grunn til å trekke forslaget
     retire_options:
       started: Pågående
       unfeasible: Ikke gjennomførbart
