@@ -286,12 +286,43 @@ nn:
           zero: Det er %{count} nye kommentarer
           one: Noen kommenterte på
           other: Det er %{count} nye kommentarer på
+        replies_to:
+          zero: Du har fått %{count} svar på din kommentar om
+          one: Noen svarte på kommentaren om
+          other: Det er %{count} nye svar på din kommentar om
       mark_as_read: Marker som lest
       mark_as_unread: Marker som ulest
       notifiable_hidden: Denne ressursen er ikke lenger tilgjengelig.
   map:
     title: "Distrikter"
+    proposal_for_district: "Opprett et forslag for distriktet ditt"
+    select_district: Område
+    start_proposal: Lag nye forslag
+  omniauth:
+    facebook:
+      sign_in: Logg på med Facebook
+      sign_up: Registrer deg med Facebook
+      name: Facebook
+    finish_signup:
+      title: "Tilleggsdetaljer"
+      username_warning: "På grunn av endringer i måten vi interagerer med sosiale medier, er det mulig at brukernavnet ditt fremstår som \"allerede i bruk\". Hvis dette er tilfelle, kan du velge et annet brukernavn."
+    google_oauth2:
+      sign_in: Logg på med Google
+      sign_up: Registrer deg med Google
+      name: Google
+    twitter:
+      sign_in: Logg inn via Twitter
+      sign_up: Registrer deg med Twitter
+      name: Twitter
+    info_sign_in: "Logg på med:"
+    info_sign_up: "Registrer deg med:"
+    or_fill: "Eller fyll ut følgende skjema:"
   proposals:
+    create:
+      form:
+        submit_button: Lag nye forslag
+    created:
+      title: Gratulerer! Du har gjennomført først steg.
     retire_options:
       started: Pågående
       unfeasible: Ikke gjennomførbart
