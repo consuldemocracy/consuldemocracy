@@ -33,6 +33,8 @@ class User < ApplicationRecord
   has_many :direct_messages_received, class_name: "DirectMessage", foreign_key: :receiver_id
   has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
   has_many :follows
+  has_many :budget_rol_assignments
+  has_many :budgets, through: :budget_rol_assignments
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?

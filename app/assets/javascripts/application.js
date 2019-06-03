@@ -86,6 +86,7 @@
 //= require settings
 //= require cookies
 //= require columns_selector
+//= require budget_edit_associations.js.coffee
 
 var initialize_modules = function() {
   App.Answers.initialize();
@@ -138,6 +139,7 @@ var initialize_modules = function() {
   App.Cookies.initialize();
   if ( $('#js-columns-selector').length )
     App.ColumnsSelector.initialize();
+  App.BudgetEditAssociations.initialize();
 };
 
 $(function(){

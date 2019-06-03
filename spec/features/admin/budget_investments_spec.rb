@@ -1123,6 +1123,11 @@ describe "Admin budget investments" do
       user = create(:user, username: "Marta", email: "marta@admins.org")
       create(:administrator, user: user, description: "Marta desc")
 
+      visit edit_admin_budget_path(budget_investment.budget)
+
+      check "administrator_#{user.id}"
+      click_button "Update Budget"
+
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"
 
@@ -1143,6 +1148,12 @@ describe "Admin budget investments" do
       valuator1 = create(:valuator, user: user1)
       valuator3 = create(:valuator, user: user3)
       create(:valuator, user: user2)
+
+      visit edit_admin_budget_path(budget_investment.budget)
+
+      check "valuator_#{user1.id}"
+      check "valuator_#{user3.id}"
+      click_button "Update Budget"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit classification"

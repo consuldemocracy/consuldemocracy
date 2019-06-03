@@ -17,9 +17,15 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def new
+    load_admins
+    load_valuators
+    load_trackers
   end
 
   def edit
+    load_admins
+    load_valuators
+    load_trackers
   end
 
   def calculate_winners
@@ -35,6 +41,9 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.update(budget_params)
       redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
     else
+      load_admins
+      load_valuators
+      load_trackers
       render :edit
     end
   end
@@ -44,6 +53,9 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.save
       redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
     else
+      load_admins
+      load_valuators
+      load_trackers
       render :new
     end
   end
@@ -59,16 +71,43 @@ class Admin::BudgetsController < Admin::BaseController
     end
   end
 
+  def assigned_users_translation
+    render json: { administrators: t("admin.budgets.edit.administrators", count: params[:administrators].to_i),
+                   valuators: t("admin.budgets.edit.valuators", count: params[:valuators].to_i),
+                   trackers: t("admin.budgets.edit.trackers", count: params[:trackers].to_i)
+    }
+  end
+
   private
 
     def budget_params
       descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
-      valid_attributes = [:phase, :currency_symbol] + descriptions
+      valid_attributes = [:phase,
+                          :currency_symbol,
+                          :help_link,
+                          :budget_milestone_tags,
+                          :budget_valuation_tags,
+                          administrator_ids: [],
+                          valuator_ids: [],
+                          tracker_ids: []
+      ] + descriptions
       params.require(:budget).permit(*valid_attributes, *report_attributes, translation_params(Budget))
     end
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:id]
+    end
+
+    def load_admins
+      @admins = Administrator.includes(:user).all
+    end
+
+    def load_trackers
+      @trackers = Tracker.includes(:user).all.order(description: :asc).order("users.email ASC")
+    end
+
+    def load_valuators
+      @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
     end
 
 end

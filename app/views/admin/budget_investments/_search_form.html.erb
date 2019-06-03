@@ -57,6 +57,13 @@
                      label: false} %>
   </div>
 
+  <div class="small-12 medium-3 column">
+    <%= select_tag :milestone_tag_name,
+                   options_for_select(investment_milestone_tags_select_options(@budget), params[:milestone_tag_name]),
+                   { prompt: t("admin.budget_investments.index.milestone_tags_filter_all"),
+                     label: false} %>
+  </div>
+
   <div class="small-12 medium-6 column">
     <div class="input-group">
       <%= text_field_tag :title_or_id, params["title_or_id"], placeholder: t("admin.budget_investments.index.placeholder") %>
