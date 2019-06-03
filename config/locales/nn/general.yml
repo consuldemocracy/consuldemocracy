@@ -49,8 +49,14 @@ nn:
       moderator: Moderator
       responses:
         zero: Ingen svar
+        zero: "%{count} svar"
+        one: '%{count} svar'
+        other: "%{count} svar"
       responses_show:
         zero: Ingen svar
+        zero: "%{count} svar (vis)"
+        one: "%{count} svar (vis)"
+        other: "%{count} svar (vis)"
       responses_collapse:
         zero: Ingen svar
         zero: "%{count} svar (skjul)"
@@ -155,3 +161,59 @@ nn:
       recommendation_four: Dette er din plass, du skal kunne trives og sørge for at din stemme blir hørt.
       recommendation_one: Ikke bruk bare store bokstaver i debatt-titler eller i hele setninger. På internet blir dette oppfattet som roping, og ingen liker og bli ropt til.
       recommendation_three: Hensynsløs kritikk ønskes velkommen. Dette er rommet for refleksjon. Men vi anbefaler at du holder diskusjonen elegant og intelligent. Verden blir et bedre sted om vi alle tenker slik.
+      recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
+      recommendations_title: Anbefalinger for debattinnlegg
+      start_new: Start en debatt
+    show:
+      author_deleted: Brukeren er slettet
+      comments:
+        zero: Ingen kommentarer
+        zero: "%{count} kommentarer"
+        one: '%{count} kommentar'
+        other: "%{count} kommentarer"
+      comments_title: Kommentarer
+      edit_debate_link: Rediger
+      flag: Denne debatten har blitt flagget som upassende av flere brukere.
+      login_to_comment: Du må %{signin} eller %{signup} for å kunne kommentere.
+      share: Del
+      author: Forfatter
+    update:
+      form:
+        submit_button: Lagre endringer
+  errors:
+    messages:
+      user_not_found: Finner ikke bruker
+      invalid_date_range: "Ugyldig dato"
+  form:
+    accept_terms: Jeg er enig i %{policy} og %{conditions}
+    accept_terms_title: Jeg er enig i personvern- og brukervilkår
+    conditions: Brukervilkår
+    debate: Debatt
+    direct_message: private meldinger
+    error: feil
+    errors: feil
+    not_saved_html: "gjorde at %{resource} ikke kunne lagres. <br>Kontroller og endre de markerte feltene:"
+    policy: Personvernpolicy
+    proposal: Forslag
+    proposal_notification: "Varsler"
+    budget/investment: Budsjettforslag
+    budget/group: Budsjettgruppe
+    budget/heading: Budsjettoverskrift
+    poll/shift: Shift
+    poll/question/answer: Svar
+    user: Konto
+    verification/sms: telefon
+    signature_sheet: Signaturside
+    document: Dokument
+    topic: Emne
+    image: Bilde
+  geozones:
+    none: Hele byen
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Vi har oppdaget at du bruker Internet Explorer. For en bedre opplevelse anbefaler vi %{firefox} eller %{chrome}.
+  notifications:
+    index:
+      unread: Ulest
