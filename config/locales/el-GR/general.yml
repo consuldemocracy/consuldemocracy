@@ -53,6 +53,10 @@ el:
         other: "%{count} απαντήσεις"
       responses_show:
         zero: Χωρίς ανταπόκριση
+        one: "1 απάντηση (εμφάνιση)"
+        other: "%{count} απαντήσεις (εμφάνιση)"
+      responses_collapse:
+        zero: Χωρίς ανταπόκριση
       user_deleted: Χρήστης διεγραμμένος
       votes:
         zero: Δεν υπάρχουν ψήφοι
