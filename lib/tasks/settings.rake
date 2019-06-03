@@ -2,6 +2,8 @@ namespace :settings do
 
   desc "Remove deprecated settings"
   task remove_deprecated_settings: :environment do
+    ApplicationLogger.new.info "Removing deprecated settings"
+
     deprecated_keys = [
       "place_name",
       "banner-style.banner-style-one",
