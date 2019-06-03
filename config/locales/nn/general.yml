@@ -253,6 +253,39 @@ nn:
       logo: CONSUL logo
       moderation: Moderering
       valuation: Vurdering
+      help: Hjelp
+      my_account_link: Min konto
+      my_activity_link: Min aktivitet
+      open: åpen
+      proposals: Forslag
+      poll_questions: Avstemming
+      notification_item:
+        new_notifications:
+          zero: Du har %{count} nye varsler
+          one: Du har %{count} nye varsel
+          other: Du har %{count} nye varsler
+        notifications: Varsler
+        no_notifications: "Du har ingen nye varsler"
+    admin:
+      watch_form_message: "Du har gjort endringer som ikke er lagret. Ønsker du fortsatt å forlate siden?"
   notifications:
     index:
+      empty_notifications: Du har ingen nye varsler.
+      mark_all_as_read: Marker alle som lest
+      read: Les
+      title: Varsler
       unread: Ulest
+    notification:
+      mark_as_read: Marker som lest
+      mark_as_unread: Marker som ulest
+      notifiable_hidden: Denne ressursen er ikke lenger tilgjengelig.
+  map:
+    title: "Distrikter"
+  proposals:
+    retire_options:
+      started: Pågående
+      unfeasible: Ikke gjennomførbart
+      done: Ferdig
+      other: Annet
+    form:
+      geozone: Område
