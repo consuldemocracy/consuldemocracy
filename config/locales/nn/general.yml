@@ -1,9 +1,16 @@
 nn:
   account:
     show:
+      change_credentials_link: Endre mine opplysninger
+      email_on_comment_label: Gi meg varsel via e-post når noen kommenterer på mine forslag eller debatter
+      email_on_comment_reply_label: Gi meg varsel via e-post når noen kommenterer på mine kommentarer
       erase_account_link: Slett min konto
       finish_verification: Fullfør verifisering
       notifications: Varsler
       organization_name_label: Navn på organisasjonen
+      organization_responsible_name_placeholder: Representant for organisasjonen/gruppen
       personal: Personlige detaljer
+      phone_number_label: Telefonnr
+      public_activity_label: Vis min liste over aktiviteter offentlig
+      public_interests_label: Vis etikettene for de elementene jeg følger offentlig
       save_changes_submit: Lagre endringer
