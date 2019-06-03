@@ -144,3 +144,11 @@ nn:
       section_footer:
         title: Hjelp med debatter
         description: Start en debatt for å dele meninger med andre om temaer du er opptatt av.
+        help_text_1: "Rommet for innbyggerdebatt er rettet mot alle som vil ta opp spørsmål som de er opptatt av og som de ønsker å diskutere med andre."
+        help_text_2: 'For å starte en debatt må du registrere deg på %{org}. Brukere kan også kommentere i åpne debatter og rangere de med knappene "jeg er enig" eller "jeg er uenig".'
+    new:
+      form:
+        submit_button: Start en debatt
+      info: Hvis du vil legge til et forslag, så er dette feil seksjon, gå inn på %{info_link}.
+      info_link: opprett et nytt forslag
+      more_info: Mer informasjon
