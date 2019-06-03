@@ -53,9 +53,15 @@ nn:
         zero: Ingen svar
       responses_collapse:
         zero: Ingen svar
+        zero: "%{count} svar (skjul)"
+        one: "%{count} svar (skjul)"
+        other: "%{count} svar (skjul)"
       user_deleted: Brukeren er slettet
       votes:
         zero: Ingen stemmer
+        zero: "%{count} stemmer"
+        one: '%{count} stemme'
+        other: "%{count} stemmer"
     form:
       comment_as_admin: Kommenter som administrator
       comment_as_moderator: Kommenter som moderator
@@ -72,3 +78,55 @@ nn:
     comment_button: Publiser kommentar
     comment_link: Kommenter
     comments_title: Kommentarer
+    reply_button: Publiser svar
+    reply_link: Svar
+  debates:
+    create:
+      form:
+        submit_button: Start en debatt
+    debate:
+      comments:
+        zero: Ingen kommentarer
+        zero: "%{count} kommentarer"
+        one: '%{count} kommentar'
+        other: "%{count} kommentarer"
+      votes:
+        zero: Ingen stemmer
+        zero: "%{count} stemmer"
+        one: '%{count} stemme'
+        other: "%{count} stemmer"
+    edit:
+      editing: Rediger debatt
+      form:
+        submit_button: Lagre endringer
+      show_link: Vis debatt
+    form:
+      debate_text: Innledende debatt-tekst
+      debate_title: Tittel på debatt
+      tags_instructions: Tag denne debatten.
+      tags_label: Emner
+      tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
+    index:
+      featured_debates: Utvalgte
+      filter_topic:
+        zero: " med emne '%{topic}'"
+        one: " med emne '%{topic}'"
+        other: " med emne '%{topic}'"
+      orders:
+        confidence_score: mest populære
+        created_at: nyeste
+        hot_score: mest aktive
+        most_commented: mest kommenterte
+        relevance: relevans
+        recommendations: anbefalinger
+      recommendations:
+        without_results: Det finnes ingen debatter relatert til dine interesser
+        without_interests: Følg forslag så vi kan gi deg anbefalinger
+        disable: "Anbefalte debatter vil ikke vises vis du deaktiverer de. Du kan aktivere funksjonen igjen under \"Min konto\""
+        actions:
+          success: "Anbefalte debatter er nå deaktivert for denne kontoen"
+          error: "En feil har oppstått. Gå til \"Min konto\" for å manuelt deaktivere anbefalte debatter"
+      search_form:
+        button: Søk
+        placeholder: Søk debatter...
+        title: Søk
