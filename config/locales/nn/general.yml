@@ -427,7 +427,13 @@ nn:
         help: Hjelp til forslag
       section_footer:
         title: Hjelp til forslag
+        description: Innbyggere sine forslag er en mulighet for naboer og foreninger å få direkte innflytelse på hvordan deres by skal være. Det skjer ved at forslagene oppnår støtte fra andre brukere og deretter går videre til en offentlig avstemming.
     new:
+      form:
+        submit_button: Opprett forslag
+      more_info: Hvordan fungerer innbyggerforslag?
+      recommendation_one: Ikke bruk bare store bokstaver i tittel på forslag eller i hele setninger. På internet blir dette oppfattet som roping, og ingen liker og bli ropt til.
+      recommendation_three: Dette er din plass, du skal kunne trives og sørge for at din stemme blir hørt.
       recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
       recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
       start_new: Lag et nytt forslag
@@ -498,6 +504,12 @@ nn:
       polls: Avstemninger
       mailing: Epost
       poster: Plakat
+      recommended_actions: Anbefalte handlinger
+      messages: Melding til brukere
+    form:
+      request: Forespørsel
+    create_request:
+      success: Forespørselen har blitt sendt. Vi vil kontakte deg så snart som mulig med informasjon.
     polls:
       index:
         title: Avstemninger
