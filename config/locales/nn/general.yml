@@ -387,6 +387,35 @@ nn:
         relevance: relevans
         archival_date: arkivert
         recommendations: anbefalinger
+      recommendations:
+        without_results: Det finnes ingen forslag relatert til dine interesser
+        without_interests: Følg forslag så vi kan gi deg anbefalinger
+        disable: "Anbefalte forslag vil ikke vises vis du deaktiverer de. Du kan aktivere funksjonen igjen under \"Min konto\""
+        actions:
+          success: "Anbefalte forslag er nå deaktivert for denne kontoen"
+          error: "En feil har oppstått. Gå til \"Min konto\" for å manuelt deaktivere anbefalte forslag"
+      retired_proposals: Trekk tilbake forslag
+      retired_proposals_link: "Forslaget er trukket tilbake av forslagsstiller"
+      selected_proposals: Valgte forslag
+      selected_proposals_link: Vis valgte forslag
+      archived_proposals: Arkiverte forslag
+      proposals_lists: Liste over forslag
+      retired_links:
+        all: Alle
+        duplicated: Duplikert
+        started: Pågående
+        unfeasible: Ikke gjennomførbart
+        done: Gjennomført
+        other: Andre
+      search_form:
+        button: Søk
+        placeholder: Søk forslag...
+        title: Søk
+      search_results_html:
+        zero: " som inneholder <strong>'%{search_term}'</strong>"
+        one: " som inneholder <strong>'%{search_term}'</strong>"
+        other: " som inneholder <strong>'%{search_term}'</strong>"
+      select_order: Sorter etter
     new:
       recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
       recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
