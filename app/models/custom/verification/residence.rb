@@ -35,7 +35,8 @@ class Verification::Residence
       document_number: document_number,
       document_type: document_type,
       date_of_birth: @census_api_response.date_of_birth,
-      residence_verified_at: Time.now
+      residence_verified_at: Time.now,
+      verified_at: Time.now
     )
   end
 

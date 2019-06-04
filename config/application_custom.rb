@@ -25,6 +25,8 @@ end
 
 CENSUS_DICTIONARY = census_dictionary.freeze
 
+puts JSON.pretty_generate(CENSUS_DICTIONARY) if Rails.env.development?
+
 module Consul
   class Application < Rails::Application
     require Rails.root.join("lib/custom/census_api")
