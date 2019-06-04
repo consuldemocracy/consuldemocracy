@@ -1,7 +1,8 @@
 <% commentable = comment_tree.commentable %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
 <% allow_comments = local_assigns.fetch(:allow_comments, true) %>
-<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags] do %>
+<% admin_layout = local_assigns.fetch(:admin_layout, false) %>
+<% cache [locale_and_user_status, comment_tree.order, commentable_cache_key(commentable), comment_tree.comments, comment_tree.comment_authors, commentable.comments_count, comment_flags, admin_layout] do %>
   <section class="expanded comments">
     <div class="row">
       <div id="comments" class="small-12 column">
@@ -46,7 +47,8 @@
                                            valuation: valuation,
                                            allow_votes: !valuation,
                                            allow_actions: !valuation,
-                                           allow_comments: allow_comments } %>
+                                           allow_comments: allow_comments,
+                                           admin_layout: admin_layout } %>
         <% end %>
         <%= paginate comment_tree.root_comments %>
       </div>
