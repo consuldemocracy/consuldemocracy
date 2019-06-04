@@ -370,6 +370,23 @@ nn:
       tags_label: Tagger
       tags_placeholder: "Skriv taggene du ønsker å bruke, avgrenset med komma (',')"
       map_location: "Kartposisjon"
+      map_location_instructions: "Naviger til plassen på kartet og plasser markøren."
+      map_remove_marker: "Fjern kartmarkøren"
+      map_skip_checkbox: "Det finnes ingen konkret geografisk plassering for forslaget, eller jeg kjenner ikke til plasseringen."
+    index:
+      featured_proposals: Utvalgte
+      filter_topic:
+        zero: " med emne '%{topic}'"
+        one: " med emnet '%{topic}'"
+        other: " med emnene '%{topic}'"
+      orders:
+        confidence_score: populære
+        created_at: nyeste
+        hot_score: mest aktive
+        most_commented: mest kommenterte
+        relevance: relevans
+        archival_date: arkivert
+        recommendations: anbefalinger
     new:
       recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
       recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
