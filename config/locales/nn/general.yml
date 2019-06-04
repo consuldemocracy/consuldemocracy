@@ -510,6 +510,38 @@ nn:
       request: Forespørsel
     create_request:
       success: Forespørselen har blitt sendt. Vi vil kontakte deg så snart som mulig med informasjon.
+      archived: Dette forslaget er arkivert og du kan derfor ikke etterspørre ressurser.
+    progress:
+      title: Grafikk
+      group_by_month: Månedlig
+      group_by_week: Ukentlig
+      group_by_date: Daglig
+      progress: Akkumulert fremdrift
+      supports: Støtte
+      success: Idéell fremdrift
+      new_action: Ny
+    index:
+      title: Utgave
+      edit_proposal_link: Rediger forslag
+      publish: Publiser forslag
+      retire: Trekk tilbake forslag
+    new_request:
+      links: Linker
+    resources:
+      available_resources: Tilgjengelige ressurser
+    resource:
+      required_days: "%{days} dager påkrevd"
+      required_supports: "%{supports} støtte påkrevd"
+      and: og
+      view_resource: Se ressurser
+      resource_requested: Ressurs allerede forespurt
+      request_resource: Be om ressurs
+      resource_locked: Låst ressurs
+    recommended_actions:
+      title: Anbefalte handlinger
+      goto_proposed_actions: Gå til anbefalte handlinger
+      see_proposed_actions: Sjekk ut anbefalte handlinger
+      hide_proposed_actions: Skjul anbefalte handlinger
     polls:
       index:
         title: Avstemninger
