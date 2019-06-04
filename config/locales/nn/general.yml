@@ -542,6 +542,15 @@ nn:
       goto_proposed_actions: Gå til anbefalte handlinger
       see_proposed_actions: Sjekk ut anbefalte handlinger
       hide_proposed_actions: Skjul anbefalte handlinger
+      pending_title: Under behandling
+      show_description: Vis beskrivelse
+      without_pending_actions: Ingen anbefalte handlinger
+      done_title: Gjennomført
+      without_done_actions: Ingen anbefalte handlinger gjennomført
+    next_goal:
+      title: Mål
+      see_complete_course: Sjekk ut det komplette forløpet
+      hide_course: Skjul forløp
     polls:
       index:
         title: Avstemninger
