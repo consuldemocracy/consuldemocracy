@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get '/sandbox/*template' => 'sandbox#show'
   end
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development? || Rails.env.staging?
 
   draw :account
   draw :admin
