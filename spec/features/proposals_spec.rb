@@ -100,6 +100,15 @@ describe "Proposals" do
       end
     end
 
+    scenario "Index view mode is not shown with selected filter" do
+      visit proposals_path
+
+      click_link "View selected proposals"
+
+      expect(page).not_to have_selector(".view-mode")
+      expect(page).not_to have_button("View mode")
+    end
+
     scenario "Pagination" do
       per_page = Kaminari.config.default_per_page
       (per_page + 5).times { create(:proposal) }

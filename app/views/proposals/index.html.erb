@@ -71,11 +71,13 @@
         </div>
       <% end %>
 
-      <div class="row">
-        <div class="small-12 column">
-          <%= render "view_mode" %>
+      <% unless params[:selected].present? %>
+        <div class="row">
+          <div class="small-12 column">
+            <%= render "view_mode" %>
+          </div>
         </div>
-      </div>
+      <% end %>
 
       <% unless params[:retired].present? || params[:selected].present? %>
         <%= render "shared/advanced_search",
