@@ -211,6 +211,15 @@ describe "Proposals" do
       expect(page).not_to have_content proposal.code
       expect(page).not_to have_content("Proposal code:")
     end
+
+    scenario "Selected proposals does not show related content section" do
+      proposal = create(:proposal, :selected)
+      login_as(create(:user))
+
+      visit proposal_path(proposal)
+      expect(page).not_to have_content("Related content")
+      expect(page).not_to have_button("Add related content")
+    end
   end
 
   context "Show on mobile screens" do

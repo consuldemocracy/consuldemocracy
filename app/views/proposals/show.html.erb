@@ -40,7 +40,10 @@
 
         <%= render "proposals/info", proposal: @proposal %>
         <%= render "shared/geozone", geozonable: @proposal %>
-        <%= render "relationable/related_content", relationable: @proposal %>
+
+        <% unless @proposal.selected? %>
+          <%= render "relationable/related_content", relationable: @proposal %>
+        <% end %>
 
         <div class="js-moderator-proposal-actions margin">
           <%= render "proposals/actions", proposal: @proposal %>
