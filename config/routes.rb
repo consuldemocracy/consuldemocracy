@@ -40,7 +40,6 @@ Rails.application.routes.draw do
   resources :images, only: [:destroy]
   resources :documents, only: [:destroy]
   resources :follows, only: [:create, :destroy]
-  resource :verification, controller: "verificationva", only: [:show]
 
   # More info pages
   get 'help',             to: 'pages#show', id: 'help/index',             as: 'help'

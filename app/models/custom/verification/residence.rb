@@ -58,7 +58,7 @@ class Verification::Residence
     end
 
     def call_census_api
-      @census_api_response = ValladolidCensusApi.new.call( document_type, document_number, postal_code )
+      @census_api_response = CensusApi.new.call(document_type, document_number, postal_code)
     end
 
     def residence_in_va

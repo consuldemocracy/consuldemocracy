@@ -1,7 +1,8 @@
-require 'csv'
-class CensusvaApi
+require "csv"
 
-	def call( document_type, document_number, postal_code )
+class CensusApi
+
+	def call(document_type, document_number, postal_code)
 		response = nil
 
 		nonce = 18.times.map{rand(10)}.join
