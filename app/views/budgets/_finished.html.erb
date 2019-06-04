@@ -15,9 +15,12 @@
 
               <div class="small-12 medium-6 column table" data-equalizer-watch>
                 <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
-                  <%= link_to t("budgets.index.see_results"),
-                              budget_results_path(budget),
-                              class: "button" %>
+                  <% if can?(:read_results, budget) %>
+                    <%= link_to t("budgets.index.see_results"),
+                                budget_results_path(budget),
+                                class: "button" %>
+                  <% end %>
+
                   <%= link_to t("budgets.index.milestones"),
                               budget_executions_path(budget),
                               class: "button" %>

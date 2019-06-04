@@ -15,6 +15,22 @@ describe "Results" do
     Budget::Result.new(budget, heading).calculate_winners
   end
 
+  scenario "No links to budget results with results disabled" do
+    budget.update(results_enabled: false)
+
+    visit budgets_path
+
+    expect(page).not_to have_link "See results"
+
+    visit budget_path(budget)
+
+    expect(page).not_to have_link "See results"
+
+    visit budget_executions_path(budget)
+
+    expect(page).not_to have_link "See results"
+  end
+
   scenario "Diplays winner investments" do
     create(:budget_heading, group: group)
 
