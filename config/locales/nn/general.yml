@@ -419,6 +419,7 @@ nn:
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
       title: Forslag
+      top: Ukens mest populære forslag
     new:
       recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
       recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
