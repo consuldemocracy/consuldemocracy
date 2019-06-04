@@ -220,6 +220,16 @@ describe "Proposals" do
       expect(page).not_to have_content("Related content")
       expect(page).not_to have_button("Add related content")
     end
+
+    scenario "Selected proposals does not show comments count" do
+      proposal = create(:proposal, :selected)
+
+      visit proposal_path(proposal)
+
+      within(".proposal-info") do
+        expect(page).not_to have_link("No comments", href: "#comments")
+      end
+    end
   end
 
   context "Show on mobile screens" do
