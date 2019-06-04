@@ -368,6 +368,8 @@ nn:
       tag_category_label: "Kategorier"
       tags_instructions: "Tagg forslaget. Du kan velge fra de foreslåtte kategoriene, eller legge til egne"
       tags_label: Tagger
+      tags_placeholder: "Skriv taggene du ønsker å bruke, avgrenset med komma (',')"
+      map_location: "Kartposisjon"
     new:
       recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
       recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
