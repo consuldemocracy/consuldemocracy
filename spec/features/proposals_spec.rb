@@ -203,6 +203,14 @@ describe "Proposals" do
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
     end
+
+    scenario "Selected proposals does not show proposal code" do
+      proposal = create(:proposal, :selected)
+
+      visit proposal_path(proposal)
+      expect(page).not_to have_content proposal.code
+      expect(page).not_to have_content("Proposal code:")
+    end
   end
 
   context "Show on mobile screens" do
