@@ -420,6 +420,13 @@ nn:
       start_proposal: Opprett et forslag
       title: Forslag
       top: Ukens mest populære forslag
+      top_link_proposals: Mest populære forslag fra hver kategori
+      section_header:
+        icon_alt: Forslagsikon
+        title: Forslag
+        help: Hjelp til forslag
+      section_footer:
+        title: Hjelp til forslag
     new:
       recommendation_two: Alle debattinnlegg eller kommentarer som foreslår ulovlige handlinger eller forsøker og sabotere diskusjoner vil bli slettet. Alt annet er tillatt.
       recommendations_title: Anbefalinger hvis du ønsker å opprette et forslag
