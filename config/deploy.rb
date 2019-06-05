@@ -77,7 +77,7 @@ task :refresh_sitemap do
 end
 
 task :add_new_settings do
-  on roles(:app) do
+  on roles(:db) do
     within release_path do
       with rails_env: fetch(:rails_env) do
         execute :rake, "settings:add_new_settings"
