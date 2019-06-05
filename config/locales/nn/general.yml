@@ -562,6 +562,13 @@ nn:
         other: "%{count} dager"
       locked_resource: Låst ressurs
       ideal_time: Ideelt tidspunkt
+    community:
+      participants: Deltakere
+      debates: Debatter
+      comments: Kommentarer
+      latest_comments: Siste meldinger
+    messages:
+      send_notification: Send melding til brukere som støtter forslaget
     polls:
       index:
         title: Avstemninger
