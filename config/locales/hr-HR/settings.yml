@@ -139,3 +139,9 @@ hr:
       per_page_code_head_description: "Ovaj kod se pojavljuje unutar <head> oznake. Korisno je za unošenje prilagođenih skripti, analitika..."
       per_page_code_body: "Kod se mora uključiti na svakoj stranici (<body>)"
       per_page_code_body_description: "Ovaj kod se pojavljuje unutar <body> oznake. Korisno je za unošenje prilagođenih skripti, analitika..."
+    uploads:
+      images:
+        min_width: "Minimalna širina slike"
+        min_width_description: "Minimalna širina douštena za učitanu sliku (u pikselima)"
+        min_height: "Minimalna visina slike"
+        min_height_description: "Minimalna visina dopuštena za učitanu sliku (u pikselima)"
