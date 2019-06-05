@@ -8,7 +8,7 @@
     </span>
     <%= select_tag :select_language,
                    options_for_select_language(resource),
-                   prompt: "Choose language",
+                   prompt: t("admin.translations.select_language_prompt"),
                    class: "js-select-language" %>
     <div class="margin-bottom">
       <% if manage_languages %>

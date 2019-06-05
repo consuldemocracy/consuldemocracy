@@ -1629,6 +1629,7 @@ es:
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
     translations:
+      select_language_prompt: "Seleccionar idioma"
       remove_language: Eliminar idioma
       add_language: Añadir idioma
     change_log:
