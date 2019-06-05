@@ -268,31 +268,11 @@ fa:
         table_id: "شناسه"
         table_kind: "نوع"
         table_title: "عنوان"
-    comments:
-      index:
-        filter: فیلتر
-        filters:
-          all: همه
-          with_confirmed_hide: تایید
-          without_confirmed_hide: انتظار
-        hidden_debate: بحث های پنهان
-        hidden_proposal: پیشنهاد های پنهان
-        title: نظرات مخفی
-        no_hidden_comments: نظر پنهان وجود ندارد.
     dashboard:
       index:
         back: بازگشت به %{org}
         title: مدیر
         description: خوش آمدید به پنل مدیریت %{org}.
-    debates:
-      index:
-        filter: فیلتر
-        filters:
-          all: همه
-          with_confirmed_hide: تایید
-          without_confirmed_hide: انتظار
-        title: بحث های پنهان
-        no_hidden_debates: بحث های پنهان وجود ندارد.
     hidden_users:
       index:
         filter: فیلتر
