@@ -292,31 +292,11 @@ zh-TW:
         table_id: "ID"
         table_kind: "類型"
         table_title: "標題"
-    comments:
-      index:
-        filter: 篩選器
-        filters:
-          all: 所有
-          with_confirmed_hide: 確認
-          without_confirmed_hide: 有待
-        hidden_debate: 隱藏的辯論
-        hidden_proposal: 隱藏的建議
-        title: 隱藏的評論
-        no_hidden_comments: 沒有隱藏的評論。
     dashboard:
       index:
         back: 返回 %{org}
         title: 管理
         description: 歡迎使用 %{org} 管理面板。
-    debates:
-      index:
-        filter: 篩選器
-        filters:
-          all: 所有
-          with_confirmed_hide: 確認
-          without_confirmed_hide: 有待
-        title: 隱藏的辯論
-        no_hidden_debates: 沒有隱藏的辯論。
     hidden_users:
       index:
         filter: 篩選器
