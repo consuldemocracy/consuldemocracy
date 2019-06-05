@@ -348,31 +348,11 @@ tr:
         notice: "İşlem çubuğu başarıyla güncellendi"
       delete:
         notice: "İşlem çubuğu başarıyla silindi"
-    comments:
-      index:
-        filter: Filtre
-        filters:
-          all: Tüm
-          with_confirmed_hide: Onaylanmış
-          without_confirmed_hide: Beklemede
-        hidden_debate: Gizli tartışma
-        hidden_proposal: Gizli öneri
-        title: Gizli yorumlar
-        no_hidden_comments: Hiç gizli yorumlar yok.
     dashboard:
       index:
         back: Geri dön %{org}
         title: Yönetim
         description: '%{org} yönetici paneline hoş geldiniz.'
-    debates:
-      index:
-        filter: Filtre
-        filters:
-          all: Tüm
-          with_confirmed_hide: Onaylanmış
-          without_confirmed_hide: Beklemede
-        title: Gizli tartışmalar
-        no_hidden_debates: Hiç gizli tartışmalar yok.
     hidden_users:
       index:
         filter: Filtre
