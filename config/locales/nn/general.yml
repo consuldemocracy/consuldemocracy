@@ -551,6 +551,17 @@ nn:
       title: Mål
       see_complete_course: Sjekk ut det komplette forløpet
       hide_course: Skjul forløp
+    goal:
+      target_supports:
+        zero: Få %{count} antall brukere som støtter ditt forslag
+        one: Få %{count} antall brukere som støtter ditt forslag
+        other: Få %{count} antall brukere som støtter ditt forslag
+      days:
+        zero: "%{count} dager"
+        one: "%{count} dag"
+        other: "%{count} dager"
+      locked_resource: Låst ressurs
+      ideal_time: Ideelt tidspunkt
     polls:
       index:
         title: Avstemninger
