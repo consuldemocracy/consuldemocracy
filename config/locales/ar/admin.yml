@@ -364,17 +364,6 @@ ar:
         notice: "تم تحديث شريط التقدم بنجاح"
       delete:
         notice: "تم حذف شريط التقدم بنجاح"
-    comments:
-      index:
-        filter: ترشيح
-        filters:
-          all: الكل
-          with_confirmed_hide: مؤكد
-          without_confirmed_hide: معلق
-        hidden_debate: نقاش مخفي
-        hidden_proposal: اقتراح مخفي
-        title: التعليقات المخفية
-        no_hidden_comments: لا توجد أي تعليقات مخفية.
     dashboard:
       index:
         back: العودة إلى %{org}
@@ -434,15 +423,6 @@ ar:
           request: المورد المطلوب
         update:
           success: تم وضع علامة على المهمة باعتبارها حلّت.
-    debates:
-      index:
-        filter: ترشيح
-        filters:
-          all: الكل
-          with_confirmed_hide: مؤكد
-          without_confirmed_hide: معلق
-        title: مناقشات المخفية
-        no_hidden_debates: لا توجد أي مناقشات مخفية.
     documents:
       new:
         title: "تحميل الوثيقة"
