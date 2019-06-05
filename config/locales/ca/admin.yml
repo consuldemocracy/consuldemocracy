@@ -189,27 +189,9 @@ ca:
       index:
         table_kind: "tipus"
         table_title: "Títol"
-    comments:
-      index:
-        filter: Filtrar
-        filters:
-          all: tots
-          with_confirmed_hide: Confirmades
-          without_confirmed_hide: Sense decidir
-        hidden_debate: debat ocult
-        hidden_proposal: proposta oculta
-        title: Comentaris ocults
     dashboard:
       index:
         title: Administrar
-    debates:
-      index:
-        filter: Filtrar
-        filters:
-          all: tots
-          with_confirmed_hide: Confirmades
-          without_confirmed_hide: Sense decidir
-        title: Debats ocults
     hidden_users:
       index:
         filter: Filtrar
