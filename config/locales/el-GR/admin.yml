@@ -355,17 +355,6 @@ el:
         notice: "Η γραμμή προόδου ενημερώθηκε επιτυχώς"
       delete:
         notice: "Η γραμμή προόδου διαγράφηκε επιτυχώς"
-    comments:
-      index:
-        filter: Φίλτρο
-        filters:
-          all: Όλα
-          with_confirmed_hide: Επιβεβαιωμένο
-          without_confirmed_hide: Σε εκκρεμότητα
-        hidden_debate: Κρυφή συζήτηση
-        hidden_proposal: Κρυφή πρόταση
-        title: Κρυφά σχόλια
-        no_hidden_comments: Δεν υπάρχουν κρυφά σχόλια.
     dashboard:
       index:
         back: Πίσω στο %{org}
@@ -430,15 +419,6 @@ el:
           request: Απαιτούμενος πόρος
         update:
           success: Η ενέργεια αυτή έχει σημειωθεί ως επίλυμένη.
-    debates:
-      index:
-        filter: Φίλτρο
-        filters:
-          all: Όλα
-          with_confirmed_hide: Επιβεβαιωμένο
-          without_confirmed_hide: Σε εκκρεμότητα
-        title: Κρυφές συζητήσεις
-        no_hidden_debates: Δεν υπάρχουν κρυφές συζητήσεις.
     documents:
       new:
         title: "Ανεβάσε ένα έγγραφο"
