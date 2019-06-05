@@ -299,17 +299,6 @@ sv:
         table_id: "Legitimation"
         table_kind: "Typ"
         table_title: "Titel"
-    comments:
-      index:
-        filter: Filtrera
-        filters:
-          all: Alla
-          with_confirmed_hide: Godkända
-          without_confirmed_hide: Väntande
-        hidden_debate: Dold debatt
-        hidden_proposal: Gömt förslag
-        title: Dolda kommentarer
-        no_hidden_comments: Det finns inga dolda kommentarer.
     dashboard:
       index:
         back: Gå tillbaka till %{org}
@@ -338,15 +327,6 @@ sv:
             pending: Väntande
         form:
           proposal: Förslag
-    debates:
-      index:
-        filter: Filtrera
-        filters:
-          all: Alla
-          with_confirmed_hide: Godkända
-          without_confirmed_hide: Väntande
-        title: Dolda debatter
-        no_hidden_debates: Det finns inga dolda kommentarer.
     documents:
       new:
         label_attachment: "Välj dokument"
