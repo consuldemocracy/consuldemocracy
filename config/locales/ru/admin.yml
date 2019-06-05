@@ -358,17 +358,6 @@ ru:
         notice: "Индикатор выполнения успешно обновлен"
       delete:
         notice: "Индикатор выполнения успешно удален"
-    comments:
-      index:
-        filter: Фильтр
-        filters:
-          all: Все
-          with_confirmed_hide: Неподтвержденные
-          without_confirmed_hide: Ожидающие
-        hidden_debate: Скрытые дебаты
-        hidden_proposal: Скрытое предложение
-        title: Скрытые комментарии
-        no_hidden_comments: Нет скрытых комментариев.
     dashboard:
       index:
         back: Вернуться к %{org}
@@ -417,15 +406,6 @@ ru:
         form:
           proposal: Предложение
           request: Запрошенный ресурс
-    debates:
-      index:
-        filter: Фильтр
-        filters:
-          all: Все
-          with_confirmed_hide: Подтвержденные
-          without_confirmed_hide: Ожидают
-        title: Скрытые дебаты
-        no_hidden_debates: Нет скрытых дебатов.
     documents:
       new:
         title: "Загрузить документ"
