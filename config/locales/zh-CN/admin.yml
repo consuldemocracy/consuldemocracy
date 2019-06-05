@@ -293,31 +293,11 @@ zh-CN:
         table_id: "ID"
         table_kind: "类型"
         table_title: "标题"
-    comments:
-      index:
-        filter: 过滤器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已确认
-          without_confirmed_hide: 有待
-        hidden_debate: 隐藏的辩论
-        hidden_proposal: 隐藏的提议
-        title: 隐藏的评论
-        no_hidden_comments: 没有隐藏的评论
     dashboard:
       index:
         back: 返回%{org}
         title: 管理
         description: 欢迎使用%{org} 管理面板。
-    debates:
-      index:
-        filter: 过滤器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已确认
-          without_confirmed_hide: 有待
-        title: 隐藏的辩论
-        no_hidden_debates: 没有隐藏的辩论。
     hidden_users:
       index:
         filter: 过滤器
