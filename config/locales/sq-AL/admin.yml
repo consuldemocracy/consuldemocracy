@@ -293,31 +293,11 @@ sq:
         table_id: "ID"
         table_kind: "Tipi"
         table_title: "Titull"
-    comments:
-      index:
-        filter: Filtër
-        filters:
-          all: Të gjithë
-          with_confirmed_hide: Konfirmuar
-          without_confirmed_hide: Në pritje
-        hidden_debate: Debati i fshehtë
-        hidden_proposal: Propozimi i fshehur
-        title: Komentet e fshehura
-        no_hidden_comments: Nuk ka komente të fshehura.
     dashboard:
       index:
         back: Shko pas tek %{org}
         title: Administrim
         description: Mirë se erdhët në panelin %{org} të admin.
-    debates:
-      index:
-        filter: Filtër
-        filters:
-          all: Të gjithë
-          with_confirmed_hide: Konfirmuar
-          without_confirmed_hide: Në pritje
-        title: Debate të fshehta
-        no_hidden_debates: Nuk ka debate të fshehura.
     hidden_users:
       index:
         filter: Filtër
