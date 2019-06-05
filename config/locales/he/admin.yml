@@ -361,17 +361,6 @@ he:
         notice: "סרגל ההתקדמות עודכן בהצלחה"
       delete:
         notice: "סרגל ההתקדמות הוסר בהצלחה"
-    comments:
-      index:
-        filter: מסנן
-        filters:
-          all: כולם
-          with_confirmed_hide: אושר
-          without_confirmed_hide: ממתין לאישור
-        hidden_debate: דיון מוסתר
-        hidden_proposal: הצעה מוסתרת
-        title: הערות מוסתרות
-        no_hidden_comments: לא נמצאו תגובות מוסתרות.
     dashboard:
       index:
         back: חזור אל %{org}
@@ -436,15 +425,6 @@ he:
           request: משאב מבוקש
         update:
           success: המשימה סומנה כנפתרה.
-    debates:
-      index:
-        filter: מסנן
-        filters:
-          all: כולם
-          with_confirmed_hide: אושר
-          without_confirmed_hide: ממתין לאישור
-        title: דיונים מוסתרים
-        no_hidden_debates: לא נמצאו דיונים מוסתרים.
     documents:
       new:
         title: "העלה מסמך"
