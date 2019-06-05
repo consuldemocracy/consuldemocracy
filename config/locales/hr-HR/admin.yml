@@ -358,6 +358,17 @@ hr:
         notice: "Traka napretka je uspješno ažurirana"
       delete:
         notice: "Traka napretka je uspješno obrisana"
+    hidden_comments:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        hidden_debate: Sakrivene debate
+        hidden_proposal: Sakriveni prijedlozi
+        title: Sakriveni komentari
+        no_hidden_comments: Ne postoje sakriveni komentari.
     dashboard:
       index:
         back: Idi nazad na %{org}
@@ -422,6 +433,15 @@ hr:
           request: Zatraženi resurs
         update:
           success: Zadatak je označen kao riješen.
+    hidden_debates:
+      index:
+        filter: Filter
+        filters:
+          all: Svi
+          with_confirmed_hide: Potvrđeno
+          without_confirmed_hide: U tijeku
+        title: Sakrivene rasprave
+        no_hidden_debates: Ne postoje sakrivene debate.
     documents:
       new:
         title: "Učitaj dokument"
@@ -710,6 +730,7 @@ hr:
         title: Administratori
         name: Ime
         email: Email
+        description: Opis
         id: Administrator ID
         no_administrators: Ne postoje administratori.
       administrator:
@@ -718,6 +739,9 @@ hr:
         restricted_removal: "Oprostite, ne možete sebe ukloniti kao administratora"
       search:
         title: "Administratori: Korisnička pretraga"
+      form:
+        edit_title: "Uredi administratore"
+        updated: "Uspješno ažuriran administrator"
     moderators:
       index:
         title: Moderatori
@@ -1245,6 +1269,7 @@ hr:
         title: Postavke konfiguracije
         update_setting: Ažuriranje
         participation_processes: "Participativni procesi"
+        images_and_documents: "Slike i dokumenti"
         feature_flags: Značajke
         features:
           enabled: "Značajke omogućene"
