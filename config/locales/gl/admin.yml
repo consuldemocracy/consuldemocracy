@@ -348,31 +348,11 @@ gl:
         notice: "A barra de progreso actualizouse correctamente"
       delete:
         notice: "A barra de progreso foi eliminada correctamente"
-    comments:
-      index:
-        filter: Filtro
-        filters:
-          all: Todo
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendentes
-        hidden_debate: Debate oculto
-        hidden_proposal: Proposta oculta
-        title: Comentarios ocultos
-        no_hidden_comments: Non hai comentarios agochados.
     dashboard:
       index:
         back: Volver a %{org}
         title: Administración
         description: Benvido ao panel de administración de %{org}.
-    debates:
-      index:
-        filter: Filtro
-        filters:
-          all: Todo
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Pendentes
-        title: Debates ocultos
-        no_hidden_debates: Non hai debates agochados.
     hidden_users:
       index:
         filter: Filtro
