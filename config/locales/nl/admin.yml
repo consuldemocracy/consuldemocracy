@@ -354,31 +354,11 @@ nl:
         notice: "Voortgangsbalk bijgewerkt"
       delete:
         notice: "Voortgangsbalk verwijderd"
-    comments:
-      index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        hidden_debate: Hidden debate
-        hidden_proposal: Hidden proposal
-        title: Hidden comments
-        no_hidden_comments: Er is geen verborgen commentaar.
     dashboard:
       index:
         back: Terug naar %{org}
         title: Administration
         description: Welkom op de %{org} beheers pagina.
-    debates:
-      index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Bevestigd
-          without_confirmed_hide: In afwachting
-        title: Hidden debates
-        no_hidden_debates: Er zijn geen verborgen debatten.
     hidden_users:
       index:
         filter: Filter
