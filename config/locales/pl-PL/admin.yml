@@ -354,31 +354,11 @@ pl:
         notice: "Pasek postępu pomyśle zaktualizowany"
       delete:
         notice: "Pasek postępu usunięty"
-    comments:
-      index:
-        filter: Filtruj
-        filters:
-          all: Wszystkie
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
-        hidden_debate: Ukryta debata
-        hidden_proposal: Ukryta propozycja
-        title: Ukryte komentarze
-        no_hidden_comments: Nie ma żadnych ukrytych komentarzy.
     dashboard:
       index:
         back: Wróć do %{org}
         title: Administracja
         description: Witamy w panelu administracyjnym %{org}.
-    debates:
-      index:
-        filter: Filtruj
-        filters:
-          all: Wszystkie
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
-        title: Ukryte debaty
-        no_hidden_debates: Nie ma ukrytych debat.
     hidden_users:
       index:
         filter: Filtruj
