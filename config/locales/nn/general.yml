@@ -839,3 +839,8 @@ nn:
     anonymous: For mange anonyme stemmer til å godkjenne stemme %{verify_account}.
     comment_unauthenticated: Du må %{signin} eller %{signup} for å stemme.
     disagree: Jeg er uenig
+    organizations: Organisasjoner er ikke berettiget til å stemme
+    signin: Logg inn
+    signup: Registrer deg
+    supports: Støtte
+    unauthenticated: Du må %{signin} eller %{signup} for å fortsette.
