@@ -724,6 +724,7 @@ en:
       to: "To"
     author_info:
       author_deleted: User deleted
+      email_deleted: Email deleted
     back: Go back
     check: Select
     check_all: All
