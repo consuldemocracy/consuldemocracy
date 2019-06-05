@@ -297,31 +297,11 @@ it:
         table_id: "ID"
         table_kind: "Tipo"
         table_title: "Titolo"
-    comments:
-      index:
-        filter: Filtro
-        filters:
-          all: Tutti
-          with_confirmed_hide: Confermato
-          without_confirmed_hide: In sospeso
-        hidden_debate: Dibattito nascosto
-        hidden_proposal: Proposta nascosta
-        title: Commenti nascosti
-        no_hidden_comments: Non ci sono commenti nascosti.
     dashboard:
       index:
         back: Torna a %{org}
         title: Amministrazione
         description: Benvenuto nel pannello di amministrazione di %{org}.
-    debates:
-      index:
-        filter: Filtra
-        filters:
-          all: Tutti
-          with_confirmed_hide: Confermato
-          without_confirmed_hide: In sospeso
-        title: Dibattiti nascosti
-        no_hidden_debates: Non ci sono dibattiti nascosti.
     hidden_users:
       index:
         filter: Filtra
