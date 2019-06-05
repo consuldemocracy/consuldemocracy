@@ -563,6 +563,7 @@ nn:
       locked_resource: Låst ressurs
       ideal_time: Ideelt tidspunkt
     community:
+      access_community: Gå til fellesskapet
       participants: Deltakere
       debates: Debatter
       comments: Kommentarer
