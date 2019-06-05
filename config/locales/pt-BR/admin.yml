@@ -293,31 +293,11 @@ pt-BR:
         table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
-    comments:
-      index:
-        filter: Filtro
-        filters:
-          all: Tudo
-          with_confirmed_hide: Confirmado
-          without_confirmed_hide: Pendente
-        hidden_debate: Debate oculto
-        hidden_proposal: Proposta oculta
-        title: Comentários ocultos
-        no_hidden_comments: Não há comentários ocultos.
     dashboard:
       index:
         back: Voltar para %{org}
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
-    debates:
-      index:
-        filter: Filtro
-        filters:
-          all: Tudo
-          with_confirmed_hide: Confirmado
-          without_confirmed_hide: Pendente
-        title: Debates ocultos
-        no_hidden_debates: Não há debates ocultos.
     hidden_users:
       index:
         filter: Filtro
