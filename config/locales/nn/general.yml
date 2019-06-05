@@ -909,3 +909,26 @@ nn:
     verify_account: verifiser din konto
     budget_investments:
       not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
+      not_verified: Kun verifiserte brukere kan stemme på investeringsprosjekter; %{verify_account}.
+      organization: Organisasjoner er ikke berettiget til å stemme
+      unfeasible: Du kan ikke gi støtte til investeringsprojekter, som ikke kan gennemføres
+      not_voting_allowed: Avstemmingsfasen er avsluttet
+      different_heading_assigned:
+        zero: "Du kan kun gi støtte til investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+        one: "Du kan kun gi støtte til investeringsprojekter i %{count} distrikt. Du har allerede støttet investeringer i %{supported_headings}."
+        other: "Du kan kun gi støtte til investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Mest aktive debattinnlegg"
+        proposals: "Mest aktive forslag"
+        processes: "Åpne prosesser"
+      see_all_debates: Se alle debattinnlegg
+      see_all_proposals: Se alle forslag
+      see_all_processes: Se alle prosesser
+      process_label: Prosess
+      see_process: Se prosess
+    cards:
+      title: Utvalgte
+    recommended:
+      title: Anbefalinger som kan være interessante for deg
