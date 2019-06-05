@@ -661,6 +661,41 @@ nn:
       section_footer:
         title: Hjelp til avstemning
         description: Innbyggeravstemning er en deltakende prosess hvor innbyggere kan få direkte innflytelse og være med å påvirke lokalpolitiske beslutninger
+      no_polls: "Det er ingen pågående avstemninger."
+    show:
+      already_voted_in_booth: "Du har allerede deltatt via en fysisk stemmeboks. Du kan ikke delta igjen."
+      already_voted_in_web: "Du har allerede deltatt i avstemningen. Hvis du stemmer igjen vil den bli overskrevet."
+      back: Tilbake til avstemningen
+      cant_answer_not_logged_in: "Du må %{signin} eller %{signup} for å delta."
+      comments_tab: Kommentarer
+      login_to_comment: Du må %{signin} eller %{signup} for å legge igjen en kommentar.
+      signin: Logg inn
+      signup: Registrer deg
+      cant_answer_verify_html: "Du må %{verify_link} for å svare."
+      verify_link: "verifiser din konto"
+      cant_answer_expired: "Denne avstemningen er avsluttet."
+      cant_answer_wrong_geozone: "Dette spørsmålet er ikke tilgjengelig i ditt geografiske område."
+      more_info_title: "Mer informasjon"
+      documents: Dokumenter
+      zoom_plus: Utvid bilde
+      read_more: "Les mer om %{answer}"
+      read_less: "Les mindre om %{answer}"
+      videos: "Ekstern video"
+      info_menu: "Informasjon"
+      stats_menu: "Statistikk over deltakelse"
+      results_menu: "Resultat av avstemning"
+      stats:
+        total_votes: "Totalt antall avgitte stemmer"
+        votes: "STEMMER"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "STEMMEBOKS"
+        total: "TOTALT"
+        valid: "Gyldig"
+        white: "Blanke stemmer"
+        null_votes: "Ugyldig"
+      results:
+        title: "Spørsmål"
   poll_questions:
     show:
       voted: "Du har stemt%{answer}"
