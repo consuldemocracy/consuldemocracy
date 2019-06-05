@@ -29,10 +29,11 @@ FactoryBot.define do
     end
 
     factory :votation_type_positive_negative_open do
-      enum_type "answer_couples_open"
+      enum_type "positive_negative_open"
       open_answer true
       prioritized false
       max_votes 5
+      prioritization_type "borda"
     end
 
     factory :votation_type_answer_couples_open do
@@ -53,16 +54,16 @@ FactoryBot.define do
       enum_type "answer_set_open"
       open_answer true
       prioritized false
-      max_votes 5
-      max_groups_answers 3
+      max_votes 3
+      max_groups_answers 5
     end
 
     factory :votation_type_answer_set_closed do
       enum_type "answer_set_open"
       open_answer false
       prioritized false
-      max_votes 5
-      max_groups_answers 3
+      max_votes 3
+      max_groups_answers 5
     end
 
     trait :open do
