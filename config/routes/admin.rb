@@ -22,7 +22,7 @@ namespace :admin do
     end
   end
 
-  resources :debates, only: :index do
+  resources :hidden_debates, only: :index do
     member do
       put :restore
       put :confirm_hide
@@ -75,7 +75,7 @@ namespace :admin do
     collection { get :search }
   end
 
-  resources :comments, only: :index do
+  resources :hidden_comments, only: :index do
     member do
       put :restore
       put :confirm_hide
