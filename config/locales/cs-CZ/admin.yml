@@ -337,31 +337,11 @@ cs:
         notice: "Ukazatel průběhu byl úspěšně aktualizován"
       delete:
         notice: "Ukazatel průběhu byl smazán"
-    comments:
-      index:
-        filter: Filtr
-        filters:
-          all: Vše
-          with_confirmed_hide: Potvrzeno
-          without_confirmed_hide: Nevyřízený
-        hidden_debate: Skryté debaty
-        hidden_proposal: Skryté návrhy
-        title: Skrýt komentáře
-        no_hidden_comments: Neexistují žádné skryté komentáře.
     dashboard:
       index:
         back: Přejít zpět na %{org}
         title: Administrace
         description: Vítejte v admin panelu portálu %{org}.
-    debates:
-      index:
-        filter: Filtr
-        filters:
-          all: Vše
-          with_confirmed_hide: Potvrzeno
-          without_confirmed_hide: Nevyřízený
-        title: Skryté debaty
-        no_hidden_debates: Nemáte žádné skryté debaty.
     hidden_users:
       index:
         filter: Filtr
