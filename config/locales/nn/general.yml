@@ -564,6 +564,7 @@ nn:
       ideal_time: Ideelt tidspunkt
     community:
       access_community: Gå til fellesskapet
+      latest_activity: "Siste aktiviteter i fellesskapet: %{at}"
       participants: Deltakere
       debates: Debatter
       comments: Kommentarer
@@ -798,8 +799,67 @@ nn:
     unfollow_entity: "Ikke lenger følg %{entity}"
     outline:
       searcher: Søkemotor
+    go_to_page: "Gå til siden "
+    share: Del
+    orbit:
+      previous_slide: Forrige side
+      next_slide: Neste side
+    documentation: Ytterligere dokumentasjon
+    view_mode:
+      title: Visningsmodus
+      cards: Kort
+      list: Liste
+    recommended_index:
+      title: Anbefalinger
+      see_more: Se flere anbefalinger
+      hide: Skjul anbefalinger
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: Besøk
+      debates: Debatter
+      proposals: Forslag
+      comments: Kommentarer
+      proposal_votes: Stemmer på forslag
+      debate_votes: Stemmer på debattinnlegg
+      comment_votes: Stemmer på kommentarer
+      votes: Totalt antall stemmer
+      verified_users: Verifiserte brukere
+      unverified_users: Uverifiserte brukere
+  unauthorized:
+    default: Du har ikke tilgang til denne siden.
+    manage:
+      all: "Du har ikke tillatelse til å utføre handlingen '%{action}' på %{subject}."
   users:
+    direct_messages:
+      new:
+        body_label: Melding
+        direct_messages_bloqued: "Denne brukeren har besluttet å ikke motta direktemeldinger"
+        submit_button: Send melding
+        title: Send privat melding til %{receiver}
+        title_label: Tittel
+        verified_only: For å sende en privat melding %{verify_account}
+        verify_account: verifiser din konto
+        authenticate: Du må %{signin} eller %{signup} for å fortsette.
+        signin: logg inn
+        signup: registrer deg
+      show:
+        receiver: Melding sendt til %{receiver}
     show:
+      deleted: Slettet
+      deleted_debate: Denne debatten har blitt slettet
+      deleted_proposal: Dette forslaget har blitt slettet
+      deleted_budget_investment: Dette investeringsprosjektet har blitt slettet
+      proposals: Forslag
+      proposals_status: Status
+      debates: Debatter
+      budget_investments: Budsjettinvesteringer
       comments: Kommentarer
       actions: Handlinger
       filters:
@@ -845,3 +905,7 @@ nn:
     signup: Registrer deg
     supports: Støtte
     unauthenticated: Du må %{signin} eller %{signup} for å fortsette.
+    verified_only: Kun verifiserte brukere kan stemme på forslag; %{verify_account}.
+    verify_account: verifiser din konto
+    budget_investments:
+      not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
