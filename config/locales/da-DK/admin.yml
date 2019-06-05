@@ -354,17 +354,6 @@ da:
         notice: "Statuslinjen blev opdateret"
       delete:
         notice: "Statuslinjen blev slettet"
-    comments:
-      index:
-        filter: Filtrere
-        filters:
-          all: Alle
-          with_confirmed_hide: Bekræftet
-          without_confirmed_hide: Under behandling
-        hidden_debate: Skjulte debatindlæg
-        hidden_proposal: Skjulte forslag
-        title: Skjulte kommentarer
-        no_hidden_comments: Der er ingen skjulte kommentarer.
     dashboard:
       index:
         back: Gå tilbage til %{org}
@@ -429,15 +418,6 @@ da:
           request: Efterspurgt funktion
         update:
           success: Opgaven blev markeret som løst.
-    debates:
-      index:
-        filter: Filtrere
-        filters:
-          all: Alle
-          with_confirmed_hide: Bekræftet
-          without_confirmed_hide: Under behandling
-        title: Skjulte debatindlæg
-        no_hidden_debates: Der er ingen skjulte debatindlæg.
     hidden_users:
       index:
         filter: Filtrere
