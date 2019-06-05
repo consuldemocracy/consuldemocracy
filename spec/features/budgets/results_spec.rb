@@ -52,6 +52,30 @@ describe "Results" do
     end
   end
 
+  scenario "Does not raise error if budget (slug or id) is not found" do
+    visit budget_results_path("wrong budget")
+
+    within(".budgets-stats") do
+      expect(page).to have_content "Participatory budget results"
+    end
+
+    visit budget_results_path(0)
+
+    within(".budgets-stats") do
+      expect(page).to have_content "Participatory budget results"
+    end
+  end
+
+  scenario "Loads budget and heading by slug" do
+    visit budget_results_path(budget.slug, heading.slug)
+
+    expect(page).to have_selector("a.is-active", text: heading.name)
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
+    end
+  end
+
   scenario "Load first budget heading if not specified" do
     other_heading = create(:budget_heading, group: group)
     other_investment = create(:budget_investment, :winner, heading: other_heading)
