@@ -355,17 +355,6 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
-    comments:
-      index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        hidden_debate: Debate oculto
-        hidden_proposal: Propuesta oculta
-        title: Comentarios ocultos
-        no_hidden_comments: No hay comentarios ocultos.
     dashboard:
       index:
         back: Volver a %{org}
@@ -430,15 +419,6 @@ es:
           request: Recurso solicitado
         update:
           success: La tarea ha sido marcada como resuelta
-    debates:
-      index:
-        filter: Filtro
-        filters:
-          all: Todos
-          with_confirmed_hide: Confirmados
-          without_confirmed_hide: Pendientes
-        title: Debates ocultos
-        no_hidden_debates: No hay debates ocultos.
     documents:
       new:
         title: "Subir un documento"
