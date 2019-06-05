@@ -769,6 +769,7 @@ he:
       to: "אל"
     author_info:
       author_deleted: משתמש/ת זה/ו נמחק/ה
+      email_deleted: האימייל נמחק
     back: חזרה
     check: בחר
     check_all: כולם
