@@ -212,29 +212,11 @@ sl:
         notice: Mejnik uspešno posodobljen
       delete:
         notice: Mejnik uspešno izbrisan
-    comments:
-      index:
-        filters:
-          all: Vse
-          with_confirmed_hide: Potrjen
-          without_confirmed_hide: V teku
-        hidden_debate: Skrita debata
-        hidden_proposal: Skrit predlog
-        title: Skriti komentarji
-        no_hidden_comments: Ni skritih komentarjev.
     dashboard:
       index:
         back: Pojdi nazaj na %{org}
         title: Administracija
         description: Dobrodošel na %{org} administratorski vmesnik.
-    debates:
-      index:
-        filters:
-          all: Vse
-          with_confirmed_hide: Potrjen
-          without_confirmed_hide: V teku
-        title: Skrite debate
-        no_hidden_debates: Ni skritih debat.
     hidden_users:
       index:
         filters:
