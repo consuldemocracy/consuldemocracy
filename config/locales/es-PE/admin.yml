@@ -232,31 +232,11 @@ es-PE:
       index:
         table_kind: "Tipo"
         table_title: "Título"
-    comments:
-      index:
-        filter: Filtrar
-        filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
-        hidden_debate: Debate oculto
-        hidden_proposal: Propuesta oculta
-        title: Comentarios ocultos
-        no_hidden_comments: No hay comentarios ocultos.
     dashboard:
       index:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
-    debates:
-      index:
-        filter: Filtrar
-        filters:
-          all: Todas
-          with_confirmed_hide: Confirmadas
-          without_confirmed_hide: Sin decidir
-        title: Debates ocultos
-        no_hidden_debates: No hay debates ocultos.
     hidden_users:
       index:
         filter: Filtrar
