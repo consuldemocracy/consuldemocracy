@@ -358,17 +358,6 @@ bs:
         notice: "Traka za praćenje napretka uspješno ažurirana"
       delete:
         notice: "Traka za praćenje napretka uspješno obrisana"
-    comments:
-      index:
-        filter: Filter (suzi pretragu)
-        filters:
-          all: Sve
-          with_confirmed_hide: Potvrđeno
-          without_confirmed_hide: U toku
-        hidden_debate: Skrivena debata
-        hidden_proposal: Skriveni prijedlog
-        title: Skriveni komentari
-        no_hidden_comments: Nema skrivenih komentara.
     dashboard:
       index:
         back: Vrati se na %{org}
@@ -433,15 +422,6 @@ bs:
           request: Zatraženi resurs
         update:
           success: Zadatak označen kao riješen.
-    debates:
-      index:
-        filter: Filter (suzi pretragu)
-        filters:
-          all: Sve
-          with_confirmed_hide: Potvrđeno
-          without_confirmed_hide: U toku
-        title: Skrivene debate
-        no_hidden_debates: Nema skrivenih debata.
     documents:
       new:
         title: "Učitaj dokument"
