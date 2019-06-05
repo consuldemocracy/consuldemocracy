@@ -1,5 +1,5 @@
 <%= link_to t("admin.banners.index.create"),
-              new_admin_banner_path, class: "button success float-right" %>
+              new_admin_banner_path, class: "button float-right" %>
 
 <h2 class="inline-block"><%= t("admin.banners.index.title") %></h2>
 
@@ -13,14 +13,14 @@
       <tr id="<%= dom_id(banner) %>">
         <th scope="col"><%= t("admin.banners.banner.post_started_at")%></th>
         <th scope="col"><%= t("admin.banners.banner.post_ended_at")%></th>
-        <th scope="col" class="text-center"><%= t("admin.actions.actions")%></th>
+        <th scope="col" class="small-4"><%= t("admin.actions.actions")%></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><%= banner.post_started_at %></td>
         <td><%= banner.post_ended_at %></td>
-        <td class="text-right">
+        <td>
           <div class="small-12 medium-6 column">
             <%= link_to t("admin.banners.index.edit"), edit_admin_banner_path(banner),
                         class: 'button hollow expanded' %>
@@ -33,17 +33,13 @@
         </td>
       </tr>
       <tr>
-        <th colspan="3" scope="col" class="text-center"><%= t("admin.banners.index.preview") %></th>
-      </tr>
-      <tr>
         <td colspan="3">
-          <div class="<%= banner.style %>">
-            <div class="<%= banner.image %>">
-              <%= link_to banner.target_url do %>
-                <h2><%= banner.title %></h2>
-                <h3><%= banner.description %></h3>
-              <% end %>
-            </div>
+          <span class="help-text"><%= t("admin.banners.index.preview") %></span>
+          <div class="banner" style="background-color:<%= banner.background_color %>">
+            <%= link_to banner.target_url do %>
+              <h2 style="color:<%= banner.font_color %>"><%= banner.title %></h2>
+              <h3 style="color:<%= banner.font_color %>"><%= banner.description %></h3>
+            <% end %>
           </div>
         </td>
       </tr>

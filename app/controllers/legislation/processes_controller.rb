@@ -1,16 +1,26 @@
 class Legislation::ProcessesController < Legislation::BaseController
-  has_filters %w{open next past}, only: :index
+  include RandomSeed
+
+  has_filters %w[open past], only: :index
+  has_filters %w[random winners], only: :proposals
+
   load_and_authorize_resource
+
+  before_action :set_random_seed, only: :proposals
 
   def index
     @current_filter ||= 'open'
-    @processes = ::Legislation::Process.send(@current_filter).published.page(params[:page])
+    @processes = ::Legislation::Process.send(@current_filter).published
+                 .not_in_draft.order(start_date: :desc).page(params[:page])
   end
 
   def show
     draft_version = @process.draft_versions.published.last
+    allegations_phase = @process.allegations_phase
 
-    if @process.allegations_phase.enabled? && @process.allegations_phase.started? && draft_version.present?
+    if @process.homepage_enabled? && @process.homepage.present?
+      render :show
+    elsif  allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to debate_legislation_process_path(@process)
@@ -25,7 +35,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :debate_phase
 
-    if @process.debate_phase.started?
+    if @process.debate_phase.started? || (current_user && current_user.administrator?)
       render :debate
     else
       render :phase_not_open
@@ -83,12 +93,27 @@ class Legislation::ProcessesController < Legislation::BaseController
     end
   end
 
+  def milestones
+    @phase = :milestones
+  end
+
   def proposals
     set_process
     @phase = :proposals_phase
 
-    if @process.proposals_phase.started?
-      legislation_proposal_votes(@process.proposals)
+    @proposals = ::Legislation::Proposal.where(process: @process)
+    @proposals = @proposals.search(params[:search]) if params[:search].present?
+
+    @current_filter = "winners" if params[:filter].blank? && @proposals.winners.any?
+
+    if @current_filter == "random"
+      @proposals = @proposals.sort_by_random(session[:random_seed]).page(params[:page])
+    else
+      @proposals = @proposals.send(@current_filter).page(params[:page])
+    end
+
+    if @process.proposals_phase.started? || (current_user && current_user.administrator?)
+      legislation_proposal_votes(@proposals)
       render :proposals
     else
       render :phase_not_open

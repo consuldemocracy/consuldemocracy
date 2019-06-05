@@ -7,6 +7,11 @@ feature 'Admin polls' do
     login_as(admin.user)
   end
 
+  it_behaves_like "translatable",
+                  "poll",
+                  "edit_admin_poll_path",
+                  %w[name summary description]
+
   scenario 'Index empty', :js do
     visit admin_root_path
 
@@ -18,16 +23,19 @@ feature 'Admin polls' do
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index', :js do
-    3.times { create(:poll) }
+  scenario "Index show polls list order by starts at date", :js do
+    poll_1 = create(:poll, name: "Poll first",  starts_at: 15.days.ago)
+    poll_2 = create(:poll, name: "Poll second", starts_at: 1.month.ago)
+    poll_3 = create(:poll, name: "Poll third",  starts_at: 2.days.ago)
 
     visit admin_root_path
 
     click_link "Polls"
-    within('#polls_menu') do
+    within("#polls_menu") do
       click_link "Polls"
     end
 
+    expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
     polls = Poll.all
@@ -36,6 +44,9 @@ feature 'Admin polls' do
         expect(page).to have_content poll.name
       end
     end
+
+    expect(poll_3.name).to appear_before(poll_1.name)
+    expect(poll_1.name).to appear_before(poll_2.name)
     expect(page).not_to have_content "There are no polls"
   end
 
@@ -55,11 +66,11 @@ feature 'Admin polls' do
     start_date = 1.week.from_now
     end_date = 2.weeks.from_now
 
-    fill_in "poll_name", with: "Upcoming poll"
+    fill_in "Name", with: "Upcoming poll"
     fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
-    fill_in 'poll_summary', with: "Upcoming poll's summary. This poll..."
-    fill_in 'poll_description', with: "Upcomming poll's description. This poll..."
+    fill_in 'Summary', with: "Upcoming poll's summary. This poll..."
+    fill_in 'Description', with: "Upcomming poll's description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")
@@ -83,25 +94,67 @@ feature 'Admin polls' do
 
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
-    expect(page).to have_css("#poll_results_enabled")
-    expect(page).to have_css("#poll_stats_enabled")
-
-    fill_in "poll_name", with: "Next Poll"
+    fill_in "Name", with: "Next Poll"
     fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
-    check 'poll_results_enabled'
-    check 'poll_stats_enabled'
 
     click_button "Update poll"
 
     expect(page).to have_content "Poll updated successfully"
     expect(page).to have_content "Next Poll"
     expect(page).to have_content I18n.l(end_date.to_date)
+  end
 
-    click_link "Edit poll"
+  scenario 'Enable stats and results' do
+    poll = create(:poll)
 
-    expect(page).to have_field('poll_results_enabled', checked: true)
+    booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
+    booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
+    booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
+
+    question_1 = create(:poll_question, poll: poll)
+    create(:poll_question_answer, title: 'Oui', question: question_1)
+    create(:poll_question_answer, title: 'Non', question: question_1)
+
+    question_2 = create(:poll_question, poll: poll)
+    create(:poll_question_answer, title: "Aujourd'hui", question: question_2)
+    create(:poll_question_answer, title: 'Demain', question: question_2)
+
+    [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
+      create(:poll_partial_result,
+             booth_assignment: ba,
+             question: question_1,
+             answer: 'Oui',
+             amount: 11)
+
+      create(:poll_partial_result,
+             booth_assignment: ba,
+             question: question_2,
+             answer: 'Demain',
+             amount: 5)
+    end
+
+    create(:poll_recount,
+           booth_assignment: booth_assignment_1,
+           white_amount: 21,
+           null_amount: 44,
+           total_amount: 66)
+
+    visit admin_poll_results_path(poll)
+
+    expect(page).to have_field('poll_stats_enabled', checked: false)
+    expect(page).to have_field('poll_results_enabled', checked: false)
+
+    check 'poll_stats_enabled'
+    check 'poll_results_enabled'
+
+    click_button 'Update poll'
+
+    expect(page).to have_content('Poll updated successfully')
+
+    click_link 'Results'
+
     expect(page).to have_field('poll_stats_enabled', checked: true)
-
+    expect(page).to have_field('poll_results_enabled', checked: true)
   end
 
   scenario 'Edit from index' do

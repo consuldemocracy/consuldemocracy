@@ -1,0 +1,22 @@
+fa:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: "ورودی ها\n"
+        one: "ورودی \n"
+        other: "ورودی ها\n"
+      more_pages:
+        display_entries: نمایش  <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} پیدا نشد."
+          one: '  وجود دارد<strong>  %{entry_name} ۱ </strong>'
+          other: '  وجود دارد <strong>%{count} %{entry_name}</strong>'
+  views:
+    pagination:
+      current: شما در صفحه هستید.
+      first: اول
+      last: آخرین
+      next: بعدی
+      previous: قبلی
+      truncate: "&hellip;"

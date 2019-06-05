@@ -1,19 +1,16 @@
----
 nl:
   moderation:
-    header:
-      title: Moderation
     comments:
       index:
         block_authors: Block authors
-        confirm: Are you sure?
+        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
-          pending_flag_review: Pending
+          pending_flag_review: In afwachting
           with_ignored_flag: Marked as viewed
         headers:
-          comment: Comment
+          comment: Commentaar
           moderate: Moderate
         hide_comments: Hide comments
         ignore_flags: Mark as viewed
@@ -27,52 +24,94 @@ nl:
         title: Moderation
     debates:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
-          pending_flag_review: Pending
-          with_ignored_flag: Marked as viewed
+          pending_flag_review: In afwachting
+          with_ignored_flag: Markeer als gelezen
         headers:
-          debate: Debate
-          moderate: Moderate
+          debate: Discussie
+          moderate: Modereer
         hide_debates: Hide debates
-        ignore_flags: Mark as viewed
-        order: Order
+        ignore_flags: Markeer als gelezen
+        order: order
         orders:
-          created_at: Newest
-          flags: Most flagged
-        title: Debates
+          created_at: Nieuwste
+          flags: Meest gemarkeerd
+        title: Discussie
+    header:
+      title: Moderation
     menu:
       flagged_comments: Comments
-      flagged_debates: Debates
+      flagged_debates: Discussie
+      flagged_investments: Begrotingsvoorstellen
       proposals: Proposals
+      proposal_notifications: Voorgestelde notificaties
       users: Block users
     proposals:
       index:
-        block_authors: Block authors
-        confirm: Are you sure?
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
         filter: Filter
         filters:
           all: All
           pending_flag_review: Pending review
-          with_ignored_flag: Mark as viewed
+          with_ignored_flag: Markeer als gelezen
         headers:
-          moderate: Moderate
+          moderate: Modereer
           proposal: Proposal
         hide_proposals: Hide proposals
-        ignore_flags: Mark as viewed
+        ignore_flags: Markeer als gelezen
         order: Order by
         orders:
           created_at: Most recent
-          flags: Most flagged
+          flags: Meest gemarkeerd
         title: Proposals
+    budget_investments:
+      index:
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
+        filter: Filter
+        filters:
+          all: All
+          pending_flag_review: In afwachting
+          with_ignored_flag: Markeer als gelezen
+        headers:
+          moderate: Modereer
+          budget_investment: Begrotingsvoorstel
+        hide_budget_investments: Verbergen begrotingsinvesteringen
+        ignore_flags: Markeer als gelezen
+        order: Order by
+        orders:
+          created_at: Meest recent
+          flags: Meest gemarkeerd
+        title: Begrotingsvoorstellen
+    proposal_notifications:
+      index:
+        block_authors: Blokkeer auteurs
+        confirm: Bent u zeker?
+        filter: Filter
+        filters:
+          all: All
+          pending_review: In afwachting van evaluatie
+          ignored: Markeer als gelezen
+        headers:
+          moderate: Modereer
+          proposal_notification: Voorstelnotificatie
+        hide_proposal_notifications: Verberg voorstellen
+        ignore_flags: Markeer als gelezen
+        order: Order by
+        orders:
+          created_at: Meest recent
+          moderated: Gemodereerd door
+        title: Voorstel notificaties
     users:
       index:
-        hidden: Blocked
+        hidden: Geblokkeerd
         hide: Block
         search: Search
         search_placeholder: email or name of user
-        title: Block users
+        title: Blokkeer deelnemers
       notice_hide: User blocked. All of this user's debates and comments have been hidden.

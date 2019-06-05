@@ -1,0 +1,8 @@
+fi:
+  flash:
+    actions:
+      create:
+        poll_question_answer_video: "Video luotu onnistuneesti"
+      destroy:
+        error: "Ei voitu poistaa"
+        topic: "Aihe poistettu onnistuneesti."

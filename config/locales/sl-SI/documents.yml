@@ -1,0 +1,24 @@
+sl:
+  documents:
+    title: Dokumenti
+    max_documents_allowed_reached_html: Dosegel si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>
+    form:
+      title: Dokumenti
+      title_placeholder: Dodaj poveden naslov dokumenta
+      attachment_label: Izberi dokument
+      delete_button: Odstrani dokument
+      cancel_button: Prekliči
+      note: "Naložiš lahko največ %{max_documents_allowed} dokumentov naslednjih vrst: %{accepted_content_types}, velikih največ %{max_file_size} MB na datoteko."
+      add_new_document: Dodaj nov dokument
+    actions:
+      destroy:
+        notice: Dokument uspešno izbrisan.
+        alert: Ni mogoče izbrisati dokumenta.
+        confirm: Si prepričan/-a, da želiš izbrisati dokument? Tega ni mogoče razveljaviti!
+    buttons:
+      download_document: Prenesi dokument
+      destroy_document: Uniči dokument
+    errors:
+      messages:
+        in_between: mora biti med %{min} in %{max}
+        wrong_content_type: tip dokumenta %{content_type} se ne ujema s sprejemljivi %{accepted_content_types}

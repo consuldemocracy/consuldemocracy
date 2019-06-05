@@ -5,7 +5,7 @@ class BudgetsController < ApplicationController
 
   load_and_authorize_resource
   before_action :set_default_budget_filter, only: :show
-  has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: :show
+  has_filters %w[not_unfeasible feasible unfeasible unselected selected winners], only: :show
 
   respond_to :html, :js
 
@@ -16,6 +16,7 @@ class BudgetsController < ApplicationController
   def index
     @finished_budgets = @budgets.finished.order(created_at: :desc)
     @budgets_coordinates = current_budget_map_locations
+    @banners = Banner.in_section('budgets').with_active
   end
 
 end

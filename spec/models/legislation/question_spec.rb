@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Legislation::Question do
   let(:question) { create(:legislation_question) }
@@ -65,7 +65,7 @@ describe Legislation::Question do
   end
 
   describe "notifications" do
-    it_behaves_like 'notifiable'
+    it_behaves_like "notifiable"
   end
 
 end

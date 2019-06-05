@@ -1,12 +1,12 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe InstallationController, type: :request do
 
   describe "consul.json" do
     let(:test_feature_settings) do
       {
-        'disabled_feature' => nil,
-        'enabled_feature' => 't'
+        "disabled_feature" => nil,
+        "enabled_feature" => "t"
       }
     end
 
@@ -30,11 +30,11 @@ describe InstallationController, type: :request do
     end
 
     specify "with query string inside query params" do
-      get '/consul.json'
+      get "/consul.json"
 
       expect(response).to have_http_status(:ok)
-      expect(JSON.parse(response.body)['release']).not_to be_empty
-      expect(JSON.parse(response.body)['features']).to eq(test_feature_settings)
+      expect(JSON.parse(response.body)["release"]).not_to be_empty
+      expect(JSON.parse(response.body)["features"]).to eq(test_feature_settings)
     end
   end
 end

@@ -1,0 +1,50 @@
+fi:
+  valuation:
+    budgets:
+      index:
+        filters:
+          current: Avaa
+          finished: Päättynyt
+        table_name: Nimi
+        table_phase: Vaihe
+        table_actions: Toiminnot
+        evaluate: Arvioi
+    budget_investments:
+      index:
+        filters:
+          valuation_open: Avaa
+        table_id: ID
+        table_actions: Toiminnot
+      show:
+        back: Takaisin
+        info: Tietoa tekijästä
+        by: Lähettäjä
+        price: Hinta
+        currency: "€"
+        feasibility: Toteutettavuus
+        unfeasible: Toteuttamiskelvoton
+        undefined: Määrittelemätön
+      edit:
+        price_html: "Hinta (%{currency})"
+        feasibility: Toteutettavuus
+        undefined_feasible: Vireillä
+        save: Tallenna muutokset
+    spending_proposals:
+      index:
+        filters:
+          valuation_open: Avaa
+        edit: Muokkaa
+      show:
+        back: Takaisin
+        info: Tietoa tekijästä
+        by: Lähettäjä
+        price: Hinta
+        currency: "€"
+        feasibility: Toteutettavuus
+        undefined: Määrittelemätön
+      edit:
+        price_html: "Hinta (%{currency})"
+        currency: "€"
+        feasibility: Toteutettavuus
+        undefined_feasible: Vireillä
+        save: Tallenna muutokset

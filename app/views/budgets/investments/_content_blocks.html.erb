@@ -1,0 +1,7 @@
+<% if @heading.allow_custom_content %>
+  <ul class="no-bullet categories">
+    <% @heading_content_blocks.each do |content_block| %>
+    	<%= raw content_block.body %>
+    <% end %>
+  </ul>
+<% end %>

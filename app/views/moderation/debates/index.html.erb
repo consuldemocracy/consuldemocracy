@@ -2,72 +2,67 @@
 
 <%= render 'shared/filter_subnav', i18n_namespace: "moderation.debates.index" %>
 
-<div class="row">
-  <h3 class="small-8 large-8 columns"><%= page_entries_info @debates %></h3>
-  <div class="small-4 large-4 columns">
-    <div class="float-right">
-      <%= t("moderation.debates.index.order") %>
-      <%= render 'shared/order_selector', i18n_namespace: "moderation.debates.index" %>
-    </div>
-  </div>
+<h3 class="inline-block"><%= page_entries_info @debates %></h3>
+<div class="float-right">
+  <%= t("moderation.debates.index.order") %>
+  <%= render 'shared/order_selector', i18n_namespace: "moderation.debates.index" %>
 </div>
 
 <%= form_tag moderate_moderation_debates_path(request.query_parameters), method: :put do %>
   <p class="float-left js-check">
     <%= t('shared.check') %>:
-    <%= link_to t('shared.check_all'), '#', data: {check_all: "debate_ids[]"} %>
+    <%= link_to t('shared.check_all'), '#', data: { check_all: "debate_ids[]" } %>
     |
-    <%= link_to t('shared.check_none'), '#', data: {check_none: "debate_ids[]"} %>
+    <%= link_to t('shared.check_none'), '#', data: { check_none: "debate_ids[]" } %>
   </p>
 
   <table class="clear">
-    <tr>
-      <th>
-        <%= t("moderation.debates.index.headers.debate") %>
-      </th>
-      <th>
-       <%= t("moderation.debates.index.headers.moderate") %>
-      </th>
-    </tr>
-    <% @debates.each do |debate| %>
-      <tr id="debate_<%= debate.id %>">
-        <td>
-          <%= link_to debate.title, debate, target: "_blank" %>
-          <br>
-          <span class="date"><%= l debate.updated_at.to_date %></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= debate.flags_count %><span class="icon-flag flag-disable"></span>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= debate.author.username %>
-          <br>
-          <div class="moderation-description">
-            <%= debate.description %>
-          </div>
-        </td>
-        <td class="text-center">
-          <%= check_box_tag "debate_ids[]", debate.id, nil, id: "#{dom_id(debate)}_check" %>
-        </td>
+    <thead>
+      <tr>
+        <th><%= t("moderation.debates.index.headers.debate") %></th>
+        <th><%= t("moderation.debates.index.headers.moderate") %></th>
       </tr>
-    <% end %>
+    </thead>
+
+    <tbody>
+      <% @debates.each do |debate| %>
+        <tr id="debate_<%= debate.id %>">
+          <td>
+            <%= link_to debate.title, debate, target: "_blank" %>
+            <br>
+            <span class="date"><%= l debate.updated_at.to_date %></span>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= debate.flags_count %><span class="icon-flag flag-disable"></span>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <%= debate.author.username %>
+            <br>
+            <div class="moderation-description">
+              <%= debate.description %>
+            </div>
+          </td>
+          <td class="text-center">
+            <%= check_box_tag "debate_ids[]", debate.id, nil, id: "#{dom_id(debate)}_check" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 
   <%= submit_tag t('moderation.debates.index.block_authors'),
-    name: "block_authors",
-    class: "button alert",
-    data: {confirm: t('moderation.debates.index.confirm')}
-  %>
+                 name: "block_authors",
+                 class: "button hollow alert",
+                 data: { confirm: t('moderation.debates.index.confirm') } %>
 
   <div class="float-right">
     <%= submit_tag t('moderation.debates.index.hide_debates'),
-      name: "hide_debates",
-      class: "button alert",
-      data: {confirm: t('moderation.debates.index.confirm')}
-    %>
+                   name: "hide_debates",
+                   class: "button hollow alert",
+                   data: { confirm: t('moderation.debates.index.confirm') } %>
+
     <%= submit_tag t('moderation.debates.index.ignore_flags'),
-      name: "ignore_flags",
-      class: "button success",
-      data: {confirm: t('moderation.debates.index.confirm')}
-    %>
+                   name: "ignore_flags",
+                   class: "button hollow",
+                   data: { confirm: t('moderation.debates.index.confirm') } %>
   </div>
 
   <%= paginate @debates %>

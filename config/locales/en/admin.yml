@@ -5,7 +5,7 @@ en:
     actions:
       actions: Actions
       confirm: Are you sure?
-      confirm_hide: Confirm
+      confirm_hide: Confirm moderation
       hide: Hide
       hide_author: Hide author
       restore: Restore
@@ -27,12 +27,19 @@ en:
         preview: Preview
       banner:
         title: Title
-        description:  Description
-        target_url:  Link
-        style: Style
-        image: Image
+        description: Description
+        target_url: Link
         post_started_at: Post started at
         post_ended_at: Post ended at
+        sections_label: Sections where it will appear
+        sections:
+          homepage: Homepage
+          debates: Debates
+          proposals: Proposals
+          budgets: Participatory budgeting
+          help_page: Help page
+        background_color: Background colour
+        font_color: Font colour
       edit:
         editing: Edit banner
         form:
@@ -41,7 +48,7 @@ en:
         form:
           error:
             one: "error prevented this banner from being saved"
-            other: 'errors prevented this banner from being saved'
+            other: "errors prevented this banner from being saved"
       new:
         creating: Create banner
     activity:
@@ -60,9 +67,10 @@ en:
           on_debates: Debates
           on_proposals: Proposals
           on_users: Users
+          on_system_emails: System emails
         title: Moderator activity
         type: Type
-        no_activity: There ares no moderators activity.
+        no_activity: There are no moderators activity.
     budgets:
       index:
         title: Participatory budgets
@@ -71,7 +79,7 @@ en:
         filters:
           open: Open
           finished: Finished
-        budget_investments: See budget investments
+        budget_investments: Manage projects
         table_name: Name
         table_phase: Phase
         table_investments: Investments
@@ -79,6 +87,7 @@ en:
         table_edit_budget: Edit
         edit_groups: Edit headings groups
         edit_budget: Edit budget
+        no_budgets: "There are no budgets."
       create:
         notice: New participatory budget created successfully!
       update:
@@ -98,32 +107,62 @@ en:
         unable_notice: You cannot destroy a Budget that has associated investments
       new:
         title: New participatory budget
-      show:
-        groups:
-          one: 1 Group of budget headings
-          other: "%{count} Groups of budget headings"
-      form:
-        group: Group name
-        no_groups: No groups created yet. Each user will be able to vote in only one heading per group.
-        add_group: Add new group
-        create_group: Create group
-        edit_group: Edit group
-        submit: Save group
-        heading: Heading name
-        add_heading: Add heading
-        amount: Amount
-        population: "Population (optional)"
-        population_help_text: "This data is used exclusively to calculate the participation statistics"
-        save_heading: Save heading
-        no_heading: This group has no assigned heading.
-        table_heading: Heading
-        table_amount: Amount
-        table_population: Population
-        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
-        max_votable_headings: "Maxium number of headings in which a user can vote"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
+        recalculate: Recalculate Winner Investments
+    budget_groups:
+      name: "Name"
+      headings_name: "Headings"
+      headings_edit: "Edit Headings"
+      headings_manage: "Manage headings"
+      max_votable_headings: "Maximum number of headings in which a user can vote"
+      no_groups: "There are no groups."
+      amount:
+        one: "There is 1 group"
+        other: "There are %{count} groups"
+      create:
+        notice: "Group created successfully!"
+      update:
+        notice: "Group updated successfully"
+      destroy:
+        success_notice: "Group deleted successfully"
+        unable_notice: "You cannot destroy a Group that has associated headings"
+      form:
+        create: "Create new group"
+        edit: "Edit group"
+        name: "Group name"
+        submit: "Save group"
+      index:
+        back: "Go back to budgets"
+    budget_headings:
+      name: "Name"
+      no_headings: "There are no headings."
+      amount:
+        one: "There is 1 heading"
+        other: "There are %{count} headings"
+      create:
+        notice: "Heading created successfully!"
+      update:
+        notice: "Heading updated successfully"
+      destroy:
+        success_notice: "Heading deleted successfully"
+        unable_notice: "You cannot destroy a Heading that has associated investments"
+      form:
+        name: "Heading name"
+        amount: "Amount"
+        population: "Population (optional)"
+        population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
+        latitude: "Latitude (optional)"
+        longitude: "Longitude (optional)"
+        coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
+        allow_content_block: "Allow content block"
+        content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Settings > Custom content blocks. This content will appear on the investments page for this heading."
+        create: "Create new heading"
+        edit: "Edit heading"
+        submit: "Save heading"
+      index:
+        back: "Go back to groups"
     budget_phases:
       edit:
         start_date: Start date
@@ -143,11 +182,6 @@ en:
         tags_filter_all: All tags
         advanced_filters: Advanced filters
         placeholder: Search projects
-        sort_by:
-          placeholder: Sort by
-          id: ID
-          title: Title
-          supports: Supports
         filters:
           all: All
           without_admin: Without assigned admin
@@ -158,12 +192,11 @@ en:
           selected: Selected
           undecided: Undecided
           unfeasible: Unfeasible
-          max_per_heading: Max. supports per heading
+          min_total_supports: Minimum supports
           winners: Winners
           one_filter_html: "Current applied filters: <b><em>%{filter}</em></b>"
           two_filters_html: "Current applied filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
-          search: Search
           filter: Filter
         download_current_selection: "Download current selection"
         no_budget_investments: "There are no investment projects."
@@ -178,18 +211,22 @@ en:
           undecided: "Undecided"
         selected: "Selected"
         select: "Select"
-        table_id: "ID"
-        table_title: "Title"
-        table_supports: "Supports"
-        table_admin: "Administrator"
-        table_valuator: "Valuator"
-        table_valuation_group: "Valuation Group"
-        table_geozone: "Scope of operation"
-        table_feasibility: "Feasibility"
-        table_valuation_finished: "Val. Fin."
-        table_selection: "Selected"
-        table_evaluation: "Show to valuators"
-        table_incompatible: "Incompatible"
+        list:
+          id: ID
+          title: Title
+          supports: Supports
+          admin: Administrator
+          valuator: Valuator
+          valuation_group: Valuation Group
+          geozone: Scope of operation
+          feasibility: Feasibility
+          valuation_finished: Val. Fin.
+          selected: Selected
+          visible_to_valuators: Show to valuators
+          author_username: Author username
+          incompatible: Incompatible
+        cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
+        see_results: "See results"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators
@@ -206,8 +243,6 @@ en:
         tags: Tags
         user_tags: User tags
         undefined: Undefined
-        milestone: Milestone
-        new_milestone: Create new milestone
         compatibility:
           title: Compatibility
           "true": Incompatible
@@ -248,15 +283,18 @@ en:
         table_title: "Title"
         table_description: "Description"
         table_publication_date: "Publication date"
+        table_status: Status
         table_actions: "Actions"
         delete: "Delete milestone"
         no_milestones: "Don't have defined milestones"
         image: "Image"
         show_image: "Show image"
         documents: "Documents"
+        milestone: Milestone
+        new_milestone: Create new milestone
       form:
-        add_language: Add language
-        remove_language: Remove language
+        admin_statuses: Manage statuses
+        no_statuses_defined: There are no defined statuses yet
       new:
         creating: Create milestone
         date: Date
@@ -269,6 +307,49 @@ en:
         notice: Milestone updated successfully
       delete:
         notice: Milestone successfully deleted
+    statuses:
+      index:
+        title: Milestone statuses
+        empty_statuses: There are no milestone statuses created
+        new_status: Create new milestone status
+        table_name: Name
+        table_description: Description
+        table_actions: Actions
+        delete: Delete
+        edit: Edit
+      edit:
+        title: Edit milestone status
+      update:
+        notice: Milestone status updated successfully
+      new:
+        title: Create milestone status
+      create:
+        notice: Milestone status created successfully
+      delete:
+        notice: Milestone status deleted successfully
+    progress_bars:
+      manage: "Manage progress bars"
+      index:
+        title: "Progress bars"
+        no_progress_bars: "There are no progress bars"
+        new_progress_bar: "Create new progress bar"
+        primary: "Primary progress bar"
+        table_id: "ID"
+        table_kind: "Type"
+        table_title: "Title"
+        table_percentage: "Current progress"
+      new:
+        creating: "Create progress bar"
+      edit:
+        title:
+          primary: "Edit primary progress bar"
+          secondary: "Edit progress bar %{title}"
+      create:
+        notice: "Progress bar created successfully!"
+      update:
+        notice: "Progress bar updated successfully"
+      delete:
+        notice: "Progress bar deleted successfully"
     comments:
       index:
         filter: Filter
@@ -303,12 +384,21 @@ en:
           without_confirmed_hide: Pending
         title: Hidden users
         user: User
-        no_hidden_users: There is no hidden users.
+        no_hidden_users: There are no hidden users.
       show:
         email: 'Email:'
         hidden_at: 'Hidden at:'
         registered_at: 'Registered at:'
         title: Activity of user (%{user})
+    hidden_budget_investments:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden budgets investments
+        no_hidden_budget_investments: There are no hidden budget investments
     legislation:
       processes:
         create:
@@ -329,7 +419,9 @@ en:
           enabled: Enabled
           process: Process
           debate_phase: Debate phase
-          allegations_phase: Allegations phase
+          draft_phase: Draft phase
+          draft_phase_description: If this phase is active, the process won't be listed on processes index. Allow to preview the process and create content before the start.
+          allegations_phase: Comments phase
           proposals_phase: Proposals phase
           start: Start
           end: End
@@ -338,42 +430,60 @@ en:
           summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
           additional_info_placeholder: Add an additional information you consider useful
+          homepage: Description
+          homepage_description: Here you can explain the content of the process
+          homepage_enabled: Homepage enabled
+          banner_title: Header colors
+          color_help: Hexadecimal format
         index:
           create: New process
           delete: Delete
-          title: Legislation processess
+          title: Collaborative legislation
           filters:
-            open: Open
-            next: Next
-            past: Past
+            active: Active
             all: All
         new:
           back: Back
           title: Create new collaborative legislation process
           submit_button: Create process
+        proposals:
+          select_order: Sort by
+          orders:
+            id: Id
+            title: Title
+            supports: Total supports
         process:
           title: Process
           comments: Comments
           status: Status
-          creation_date: Creation date
+          start_date: Start date
+          end_date: End date
           status_open: Open
           status_closed: Closed
           status_planned: Planned
         subnav:
           info: Information
-          draft_texts: Text
+          homepage: Homepage
+          draft_versions: Drafting
           questions: Debate
           proposals: Proposals
+          milestones: Following
+      homepage:
+        edit:
+          title: Configure your process homepage
       proposals:
         index:
           title: Proposals
           back: Back
+          id: Id
+          title: Title
+          supports: Total supports
+          select: Select
+          selected: Selected
         form:
-          header_information: Information header
-          header_information_description: Provide information about the proposals. This text will be displayed as an alert in the Proposals section inside this Process. Use Markdown to format the text.
-          header_information_placeholder: Add information for the proposals' header
           custom_categories: Categories
-          custom_categories_description: Categories that users can select creating the proposal.
+          custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres by category.
+          custom_categories_placeholder: Enter the tags you would like to use, separated by commas (,) and between quotes ("")
       draft_versions:
         create:
           notice: 'Draft created successfully. <a href="%{link}">Click to visit</a>'
@@ -439,8 +549,10 @@ en:
             error: Error
         form:
           add_option: Add option
-          title_placeholder: Add a title
+          title: Question
+          title_placeholder: Add question
           value_placeholder: Add a closed answer
+          question_options: "Possible answers (optional, by default open answers)"
         index:
           back: Back
           title: Questions associated to this process
@@ -457,6 +569,9 @@ en:
           comments_count: Comments count
         question_option_fields:
           remove_option: Remove option
+      milestones:
+        index:
+          title: Following
     managers:
       index:
         title: Managers
@@ -472,19 +587,24 @@ en:
       activity: Moderator activity
       admin: Admin menu
       banner: Manage banners
-      poll_questions: Poll questions
+      poll_questions: Questions
+      proposals: Proposals
       proposals_topics: Proposals topics
       budgets: Participatory budgets
       geozones: Manage geozones
       hidden_comments: Hidden comments
       hidden_debates: Hidden debates
       hidden_proposals: Hidden proposals
+      hidden_budget_investments: Hidden budget investments
+      hidden_proposal_notifications: Hidden proposal notifications
       hidden_users: Hidden users
       administrators: Administrators
       managers: Managers
       moderators: Moderators
-      emails: Sending of emails
+      messaging_users: Messages to users
       newsletters: Newsletters
+      admin_notifications: Notifications
+      system_emails: System Emails
       emails_download: Emails download
       valuators: Valuators
       poll_officers: Poll officers
@@ -494,21 +614,36 @@ en:
       poll_shifts: Manage shifts
       officials: Officials
       organizations: Organisations
-      settings: Configuration settings
+      settings: Global settings
       spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
-        pages: Custom Pages
-        images: Custom Images
+        homepage: Homepage
+        pages: Custom pages
+        images: Custom images
         content_blocks: Custom content blocks
-      title_categories: Categories
+        information_texts: Custom information texts
+        information_texts_menu:
+          debates: "Debates"
+          community: "Community"
+          proposals: "Proposals"
+          polls: "Polls"
+          layouts: "Layouts"
+          mailers: "Emails"
+          management: "Management"
+          welcome: "Welcome"
+        buttons:
+          save: "Save"
+          content_block:
+            update: "Update Block"
       title_moderated_content: Moderated content
       title_budgets: Budgets
       title_polls: Polls
       title_profiles: Profiles
-      title_banners: Banners
-      title_site_customization: Site customization
+      title_settings: Settings
+      title_site_customization: Site content
+      title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
     administrators:
@@ -516,6 +651,7 @@ en:
         title: Administrators
         name: Name
         email: Email
+        id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
         add: Add
@@ -563,19 +699,109 @@ en:
         empty_newsletters: There are no newsletters to show
       new:
         title: New newsletter
+        from: E-mail address that will appear as sending the newsletter
       edit:
         title: Edit newsletter
       show:
         title: Newsletter preview
         send: Send
         affected_users: (%{n} affected users)
+        sent_emails:
+          one: 1 email sent
+          other: "%{count} emails sent"
         sent_at: Sent at
         subject: Subject
         segment_recipient: Recipients
-        from: From
+        from: E-mail address that will appear as sending the newsletter
         body: Email content
         body_help_text: This is how the users will see the email
         send_alert: Are you sure you want to send this newsletter to %{n} users?
+    admin_notifications:
+      create_success: Notification created successfully
+      update_success: Notification updated successfully
+      send_success: Notification sent successfully
+      delete_success: Notification deleted successfully
+      index:
+        section_title: Notifications
+        new_notification: New notification
+        title: Title
+        segment_recipient: Recipients
+        sent: Sent
+        actions: Actions
+        draft: Draft
+        edit: Edit
+        delete: Delete
+        preview: Preview
+        view: View
+        empty_notifications: There are no notifications to show
+      new:
+        section_title: New notification
+        submit_button: Create notification
+      edit:
+        section_title: Edit notification
+        submit_button: Update notification
+      show:
+        section_title: Notification preview
+        send: Send notification
+        will_get_notified: (%{n} users will be notified)
+        got_notified: (%{n} users got notified)
+        sent_at: Sent at
+        title: Title
+        body: Text
+        link: Link
+        segment_recipient: Recipients
+        preview_guide: "This is how the users will see the notification:"
+        sent_guide: "This is how the users see the notification:"
+        send_alert: Are you sure you want to send this notification to %{n} users?
+    system_emails:
+      preview_pending:
+        action: Preview Pending
+        preview_of: Preview of %{name}
+        pending_to_be_sent: This is the content pending to be sent
+        moderate_pending: Moderate notification send
+        send_pending: Send pending
+        send_pending_notification: Pending notifications sent succesfully
+      proposal_notification_digest:
+        title: "Proposal notification digest"
+        description: "Gathers all proposal notifications for an user in a single message, to avoid too much emails."
+        preview_detail: "Users will only recieve notifications from the proposals they are following"
+      budget_investment_created:
+        title: "Budget investment created"
+        description: "Sent when a user creates a budget investment."
+      budget_investment_selected:
+        title: "Budget investment selected"
+        description: "Sent to the author when its budget investment has been selected."
+      budget_investment_unfeasible:
+        title: "Budget investment unfeasible"
+        description: "Sent to the author when its budget investment has been marked as unfeasible."
+      budget_investment_unselected:
+        title: "Budget investment unselected"
+        description: "Sent to the author when its budget investment hasn't been selected for voting phase."
+      comment:
+        title: "Comment"
+        description: "Sent to the author when recieves a comment."
+      reply:
+        title: "Reply"
+        description: "Sent to the comment's author when recieves a reply."
+      direct_message_for_receiver:
+        title: "Private message receiver"
+        description: "Sent to the private message's receiver."
+      direct_message_for_sender:
+        title: "Private message sender"
+        description: "Sent to the private message's sender."
+      email_verification:
+        title: "Email verification"
+        description: "Sent to a new user to verify its account."
+      user_invite:
+        title: "User Invitation"
+        description: "Sent to the person that has been invited to register an account."
+      edit_info: "You can edit this email in"
+      message_title: "Message's Title"
+      message_body: "This is a sample of message's content."
+      alert:
+        no_investments: "There aren't any budget investment created. Some example data is needed in order to preview the email."
+        no_comments: "There aren't any comments created. Some example data is needed in order to preview the email."
+        no_replies: "There aren't any replies created. Some example data is needed in order to preview the email."
     emails_download:
       index:
         title: Emails download
@@ -671,7 +897,7 @@ en:
         search_officer_placeholder: Search officer
         search_officer_text: Search for an officer to assign a new shift
         select_date: "Select day"
-        no_voting_days: "Los dias de votación terminaron"
+        no_voting_days: "Voting days ended"
         select_task: "Select task"
         table_shift: "Shift"
         table_email: "Email"
@@ -679,6 +905,7 @@ en:
       flash:
         create: "Shift added"
         destroy: "Shift removed"
+        unable_to_destroy: "Shifts with associated results or recounts cannot be deleted"
         date_missing: "A date must be selected"
       vote_collection: Collect Votes
       recount_scrutiny: Recount & Scrutiny
@@ -718,13 +945,22 @@ en:
         no_booths: "There are no booths assigned to this poll."
         table_name: "Name"
         table_location: "Location"
+    active_polls:
+      edit:
+        title: "Polls description"
+      form:
+        description:
+          text: "Description"
+          help_text: "This text will appear in the header of the polls page. It can be used to add a context to the open polls."
     polls:
       index:
         title: "List of polls"
-        no_polls: "There are no polls."
+        no_polls: "There are no polls coming up."
         create: "Create poll"
         name: "Name"
         dates: "Dates"
+        start_date: "Start Date"
+        closing_date: "Closing Date"
         geozone_restricted: "Restricted to districts"
       new:
         title: "New poll"
@@ -760,6 +996,8 @@ en:
         create_question: "Create question"
         table_proposal: "Proposal"
         table_question: "Question"
+        table_poll: "Poll"
+        poll_not_assigned: "Poll not assigned"
       edit:
         title: "Edit Question"
       new:
@@ -833,8 +1071,8 @@ en:
         title: "Results by booth"
     booths:
       index:
-        title: "List of booths"
-        no_booths: "There are no booths."
+        title: "List of active booths"
+        no_booths: "There are no active booths for any upcoming poll."
         add_booth: "Add booth"
         name: "Name"
         location: "Location"
@@ -862,7 +1100,7 @@ en:
       index:
         title: Officials
         no_officials: There are no officials.
-        name: Nombre
+        name: Name
         official_position: Official position
         official_level: Level
       level_0: Not official
@@ -906,6 +1144,13 @@ en:
         no_results: No organizations found.
     proposals:
       index:
+        title: Proposals
+        id: ID
+        author: Author
+        milestones: Milestones
+        no_proposals: There are no proposals.
+    hidden_proposals:
+      index:
         filter: Filter
         filters:
           all: All
@@ -913,12 +1158,19 @@ en:
           without_confirmed_hide: Pending
         title: Hidden proposals
         no_hidden_proposals: There is no hidden proposals.
+    proposal_notifications:
+      index:
+        filter: Filter
+        filters:
+          all: All
+          with_confirmed_hide: Confirmed
+          without_confirmed_hide: Pending
+        title: Hidden notifications
+        no_hidden_proposals: There is no hidden notifications.
     settings:
       flash:
         updated: Value updated
       index:
-        banners: Banner styles
-        banner_imgs: Banner images
         title: Configuration settings
         update_setting: Update
         feature_flags: Features
@@ -934,7 +1186,15 @@ en:
             update: Map configuration updated succesfully.
           form:
             submit: Update
+      setting: Feature
+      setting_actions: Actions
+      setting_name: Setting
+      setting_status: Status
+      setting_value: Value
+      no_description: "No description"
     shared:
+      true_value: "Yes"
+      false_value: "No"
       booths_search:
         button: Search
         placeholder: Search booth by name
@@ -958,6 +1218,15 @@ en:
       actions: Actions
       title: Title
       description: Description
+      image: Image
+      show_image: Show image
+      moderated_content: "Check the content moderated by the moderators, and confirm if the moderation has been done correctly."
+      view: View
+      proposal: Proposal
+      author: Author
+      content: Content
+      created_at: Created at
+      delete: Delete
     spending_proposals:
       index:
         geozone_filter_all: All zones
@@ -1102,6 +1371,7 @@ en:
         title: Proposal notifications
         total: Total
         proposals_with_notifications: Proposals with notifications
+        not_available: "Proposal not available"
       polls:
         title: Poll Stats
         all: Polls
@@ -1120,6 +1390,7 @@ en:
         add_tag: Add a new proposal topic
         title: Proposal topics
         topic: Topic
+        help: "When a user creates a proposal, the following topics are suggested as default tags."
       name:
         placeholder: Type the name of the topic
     users:
@@ -1142,11 +1413,10 @@ en:
         title: Incomplete verifications
     site_customization:
       content_blocks:
-        form:
-          content_blocks_information: Information about content blocks
-          content_block_about: You can create HTML content blocks to be inserted in the header or the footer of your CONSUL.
-          content_block_top_links_html: "<strong>Header blocks (top_links)</strong> are blocks of links that must have this format:"
-          content_block_footer_html: "<strong>Footer blocks</strong> can have any format and can be used to insert Javascript, CSS or custom HTML."
+        information: Information about content blocks
+        about: "You can create HTML content blocks that can be inserted in different places of your website."
+        html_format: "A content block is a group of links, and it must have the following format:"
+        no_blocks: "There are no content blocks."
         create:
           notice: Content block created successfully
           error: Content block couldn't be created
@@ -1169,6 +1439,11 @@ en:
         content_block:
           body: Body
           name: Name
+          names:
+            top_links: Top Links
+            footer: Footer
+            subnavigation_left: Main Navigation Left
+            subnavigation_right: Main Navigation Right
       images:
         index:
           title: Custom images
@@ -1207,8 +1482,56 @@ en:
         page:
           created_at: Created at
           status: Status
-          title: Title
           updated_at: Updated at
           status_draft: Draft
           status_published: Published
-          locale: Language
+          title: Title
+          slug: Slug
+          cards_title: Cards
+          see_cards: See Cards
+        cards:
+          cards_title: cards
+          create_card: Create card
+          no_cards: There are no cards.
+          title: Title
+          description: Description
+          link_text: Link text
+          link_url: Link URL
+          columns_help: "Width of the card in number of columns. On mobile screens it's always a width of 100%."
+          create:
+            notice: "Card created successfully!"
+          update:
+            notice: "Card updated successfully"
+          destroy:
+            notice: "Card removed successfully"
+    homepage:
+      title: Homepage
+      description: The active modules appear in the homepage in the same order as here.
+      header_title: Header
+      no_header: There are no headers.
+      create_header: Create header
+      cards_title: Cards
+      create_card: Create card
+      no_cards: There are no cards.
+      cards:
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+      feeds:
+        proposals: Proposals
+        debates: Debates
+        processes: Processes
+      new:
+        header_title: New header
+        submit_header: Create header
+        card_title: New card
+        submit_card: Create card
+      edit:
+        header_title: Edit header
+        submit_header: Save header
+        card_title: Edit card
+        submit_card: Save card
+    translations:
+        remove_language: Remove language
+        add_language: Add language

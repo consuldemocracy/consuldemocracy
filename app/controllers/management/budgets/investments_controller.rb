@@ -4,7 +4,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   load_resource :investment, through: :budget, class: 'Budget::Investment'
 
   before_action :only_verified_users, except: :print
-  before_action :load_heading, only: [:index, :show, :print]
 
   def index
     @investments = @investments.apply_filters_and_search(@budget, params).page(params[:page])
@@ -23,6 +22,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
       notice = t('flash.actions.create.notice', resource_name: Budget::Investment.model_name.human, count: 1)
       redirect_to management_budget_investment_path(@budget, @investment), notice: notice
     else
+      load_categories
       render :new
     end
   end
@@ -52,15 +52,12 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     end
 
     def investment_params
-      params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id, :tag_list, :organization_name, :location)
+      params.require(:budget_investment).permit(:title, :description, :external_url, :heading_id,
+                                                :tag_list, :organization_name, :location, :skip_map)
     end
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
-    end
-
-    def load_heading
-      @heading = @budget.headings.find(params[:heading_id]) if params[:heading_id].present?
     end
 
     def load_categories

@@ -17,6 +17,7 @@ es:
         table_assigned_investments_valuation_open: Prop. Inv. asignadas en evaluación
         table_actions: Acciones
         evaluate: Evaluar
+        no_budgets: "No hay presupuestos"
     budget_investments:
       index:
         headings_filter_all: Todas las partidas
@@ -35,6 +36,7 @@ es:
         table_title: Título
         table_heading_name: Nombre de la partida
         table_actions: Acciones
+        no_investments: "No hay proyectos de gasto."
       show:
         back: Volver
         title: Proyecto de gasto
@@ -70,11 +72,11 @@ es:
         valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
         not_feasible_alert: "Un email será enviado inmediatamente al autor del proyecto con el informe de inviabilidad."
         duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
-        save: Guardar Cambios
+        save: Guardar cambios
       notice:
         valuate: "Dossier actualizado"
       valuation_comments: Comentarios de evaluación
-      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto este en fase de evaluación
+      not_in_valuating_phase: Los proyectos sólo pueden ser evaluados cuando el Presupuesto esté en fase de evaluación
     spending_proposals:
       index:
         geozone_filter_all: Todos los ámbitos de actuación
@@ -91,7 +93,7 @@ es:
         association_name: Asociación
         by: Enviada por
         sent: Fecha de creación
-        geozone: Ámbito
+        geozone: Ámbito de actuación
         dossier: Informe
         edit_dossier: Editar informe
         price: Coste

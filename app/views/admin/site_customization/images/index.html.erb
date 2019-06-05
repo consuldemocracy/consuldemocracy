@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <% @images.each do |image| %>
-      <tr class="<%= image.name %>">
+      <tr id="image_<%= image.name %>">
         <td class="small-12 medium-4">
           <strong><%= image.name %></strong> (<%= image.required_width %>x<%= image.required_height %>)
         </td>

@@ -1,0 +1,13 @@
+<%= render "admin/shared/globalize_tabs",
+           resource: @process,
+           display_style: lambda { |locale| enable_translation_style(@process, locale) } %>
+
+<%= translatable_form_for [:admin, @process] do |f| %>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="ckeditor">
+      <%= translations_form.cktext_area :milestones_summary, ckeditor: { language: I18n.locale } %>
+    </div>
+  <% end %>
+
+  <%= f.submit class: "button success" %>
+<% end %>

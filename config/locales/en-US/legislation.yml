@@ -1,0 +1,17 @@
+en-US:
+  legislation:
+    annotations:
+      index:
+        title: Kommentare
+      show:
+        title: Kommentar
+    draft_versions:
+      show:
+        text_comments: Kommentare
+    processes:
+      shared:
+        debate_dates: Debatte
+        allegations_dates: Kommentare
+    questions:
+      question:
+        debate: Debatte

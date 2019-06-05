@@ -1,0 +1,6 @@
+ca:
+  date:
+    order:
+      - :day
+      - :month
+      - :year

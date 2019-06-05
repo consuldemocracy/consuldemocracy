@@ -1,9 +1,7 @@
 <% banner = @banners.sample %>
-<div class="<%= banner.style %>">
-  <div class="<%= banner.image %>">
-    <%= link_to banner.target_url do %>
-      <h2><%=banner.title %></h2>
-      <h3><%=banner.description %></h3>
-    <% end %>
-  </div>
+<div class="banner" style="background-color:<%= banner.background_color %>">
+  <%= link_to banner.target_url do %>
+    <h2 style="color:<%= banner.font_color %>"><%=banner.title %></h2>
+    <h3 style="color:<%= banner.font_color %>"><%=banner.description %></h3>
+  <% end %>
 </div>

@@ -33,7 +33,7 @@ shared_examples "document validations" do |documentable_factory|
   end
 
   it "is not valid for attachments larger than documentable max_file_size definition" do
-    document.stub(:attachment_file_size).and_return(maxfilesize.megabytes + 1.byte)
+    allow(document).to receive(:attachment_file_size).and_return(maxfilesize.megabytes + 1.byte)
     max_size_error_message = "must be in between 0 Bytes and #{maxfilesize} MB"
 
     expect(document).not_to be_valid

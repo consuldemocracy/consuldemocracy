@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="debate-chooser">
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <div class="legislation-proposals">
+          <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.proposals" %>
+          <% if proposals.empty? %>
+            <div class="callout primary">
+              <p><%= t("legislation.processes.proposals.empty_proposals") %></p>
+            </div>
+          <% else %>
+            <%= render proposals %>
+            <%= paginate proposals %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="small-12 medium-3 column">
+        <% if process.proposals_phase.open? %>
+          <p><%= link_to new_legislation_proposal_link_text(process),
+                         new_legislation_process_proposal_path(process),
+                         class: 'button expanded',
+                         id: 'create-new-proposal' %></p>
+        <% end %>
+        <%= render 'legislation/proposals/categories', taggable: process %>
+      </div>
+    </div>
+  </div>
+</div>

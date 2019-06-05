@@ -1,0 +1,22 @@
+tr:
+  activemodel:
+    models:
+      verification:
+        residence: "Konut"
+        sms: "Kısa mesaj"
+    attributes:
+      verification:
+        residence:
+          document_type: "Belge Türü"
+          document_number: "Belge numarası (harfler de dahil)"
+          date_of_birth: "Doğum tarihi"
+          postal_code: "Posta kodu"
+        sms:
+          phone: "Telefon numarası"
+          confirmation_code: "Onay kodu"
+        email:
+          recipient: "E-posta"
+      officing/residence:
+        document_type: "Belge Türü"
+        document_number: "Belge numarası (harfler de dahil)"
+        year_of_birth: "Doğum yılı"

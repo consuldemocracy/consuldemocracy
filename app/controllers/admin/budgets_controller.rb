@@ -1,4 +1,5 @@
 class Admin::BudgetsController < Admin::BaseController
+  include Translatable
   include FeatureFlags
   feature_flag :budgets
 
@@ -11,12 +12,13 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def show
-    @budget = Budget.includes(groups: :headings).find(params[:id])
   end
 
-  def new; end
+  def new
+  end
 
-  def edit; end
+  def edit
+  end
 
   def calculate_winners
     return unless @budget.balloting_process?
@@ -55,8 +57,8 @@ class Admin::BudgetsController < Admin::BaseController
 
     def budget_params
       descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
-      valid_attributes = [:name, :phase, :currency_symbol] + descriptions
-      params.require(:budget).permit(*valid_attributes)
+      valid_attributes = [:phase, :currency_symbol] + descriptions
+      params.require(:budget).permit(*valid_attributes, translation_params(Budget))
     end
 
 end

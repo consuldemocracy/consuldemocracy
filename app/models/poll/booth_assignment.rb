@@ -15,6 +15,10 @@ class Poll
       shifts.empty? ? false : true
     end
 
+    def unable_to_destroy?
+      (partial_results.count + recounts.count).positive?
+    end
+
     private
 
       def shifts

@@ -1,0 +1,39 @@
+sv:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} har skapats."
+        debate: "Debatten har skapats."
+        direct_message: "Ditt meddelande har skickats."
+        poll: "Omröstningen har skapats."
+        poll_booth: "Röststationen har skapats."
+        poll_question_answer: "Ditt svar har skapats"
+        poll_question_answer_video: "Videon har skapats"
+        poll_question_answer_image: "Bilden har laddats upp"
+        proposal: "Förslaget har skapats."
+        proposal_notification: "Ditt meddelande har skickats."
+        spending_proposal: "Budgetförslaget har skapats. Du kan nå det från %{activity}"
+        budget_investment: "Budgetförslaget har skapats."
+        signature_sheet: "Namninsamlingen har skapats"
+        topic: "Ämnet har skapats."
+        valuator_group: "Bedömningsgruppen har skapats"
+      save_changes:
+        notice: Ändringarna har sparats
+      update:
+        notice: "%{resource_name} har uppdaterats."
+        debate: "Debatten har uppdaterats."
+        poll: "Omröstningen har uppdaterats."
+        poll_booth: "Röststationen har uppdaterats."
+        proposal: "Förslaget har uppdaterats."
+        spending_proposal: "Budgetförslaget har uppdaterats."
+        budget_investment: "Budgetförslaget har uppdaterats."
+        topic: "Ämnet har uppdaterats."
+        valuator_group: "Bedömningsgruppen har uppdaterats"
+        translation: "Översättningen har uppdaterats"
+      destroy:
+        spending_proposal: "Budgetförslaget har raderats."
+        budget_investment: "Budgetförslaget har raderats."
+        error: "Kunde inte radera"
+        topic: "Ämnet har raderats."
+        poll_question_answer_video: "Videosvaret har raderats."
+        valuator_group: "Bedömningsgruppen har tagits bort"

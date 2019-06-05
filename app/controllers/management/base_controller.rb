@@ -6,6 +6,7 @@ class Management::BaseController < ActionController::Base
 
   helper_method :managed_user
   helper_method :current_user
+  helper_method :manager_logged_in
 
   private
 
@@ -22,7 +23,10 @@ class Management::BaseController < ActionController::Base
     end
 
     def managed_user
-      @managed_user ||= Verification::Management::ManagedUser.find(session[:document_type], session[:document_number])
+      @managed_user ||= Verification::Management::ManagedUser.find(
+        session[:document_type],
+        session[:document_number]
+      )
     end
 
     def check_verified_user(alert_msg)
@@ -39,6 +43,7 @@ class Management::BaseController < ActionController::Base
       session[:locale] ||= I18n.default_locale
 
       I18n.locale = session[:locale]
+      Globalize.locale = I18n.locale
     end
 
     def current_budget
@@ -48,4 +53,11 @@ class Management::BaseController < ActionController::Base
     def clear_password
       session[:new_password] = nil
     end
+
+    def manager_logged_in
+      if current_manager
+        @manager_logged_in = User.find_by_manager_login(session[:manager]["login"])
+      end
+    end
+
 end

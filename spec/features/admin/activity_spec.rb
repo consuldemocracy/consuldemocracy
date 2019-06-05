@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin activity' do
+feature "Admin activity" do
 
   background do
     @admin = create(:administrator)
@@ -14,7 +14,7 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        accept_confirm { click_link 'Hide' }
+        accept_confirm { click_link "Hide" }
       end
 
       visit admin_activity_path
@@ -31,7 +31,7 @@ feature 'Admin activity' do
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
 
-      visit moderation_proposals_path(filter: 'all')
+      visit moderation_proposals_path(filter: "all")
 
       within("#proposal_#{proposal1.id}") do
         check "proposal_#{proposal1.id}_check"
@@ -53,7 +53,7 @@ feature 'Admin activity' do
     scenario "Shows admin restores" do
       proposal = create(:proposal, :hidden)
 
-      visit admin_proposals_path
+      visit admin_hidden_proposals_path
 
       within("#proposal_#{proposal.id}") do
         click_on "Restore"
@@ -76,7 +76,7 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#debate_#{debate.id}") do
-        accept_confirm { click_link 'Hide' }
+        accept_confirm { click_link "Hide" }
       end
 
       visit admin_activity_path
@@ -93,7 +93,7 @@ feature 'Admin activity' do
       debate2 = create(:debate)
       debate3 = create(:debate)
 
-      visit moderation_debates_path(filter: 'all')
+      visit moderation_debates_path(filter: "all")
 
       within("#debate_#{debate1.id}") do
         check "debate_#{debate1.id}_check"
@@ -139,7 +139,7 @@ feature 'Admin activity' do
       visit debate_path(debate)
 
       within("#comment_#{comment.id}") do
-        accept_confirm { click_link 'Hide' }
+        accept_confirm { click_link "Hide" }
       end
 
       visit admin_activity_path
@@ -156,7 +156,7 @@ feature 'Admin activity' do
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
 
-      visit moderation_comments_path(filter: 'all')
+      visit moderation_comments_path(filter: "all")
 
       within("#comment_#{comment1.id}") do
         check "comment_#{comment1.id}_check"
@@ -201,7 +201,7 @@ feature 'Admin activity' do
       visit proposal_path(proposal)
 
       within("#proposal_#{proposal.id}") do
-        click_link 'Hide author'
+        click_link "Hide author"
       end
 
       visit admin_activity_path
@@ -221,7 +221,7 @@ feature 'Admin activity' do
       visit moderation_users_path(name_or_email: user.username)
 
       within("#moderation_users") do
-        click_link 'Block'
+        click_link "Block"
       end
 
       visit admin_activity_path
@@ -238,7 +238,7 @@ feature 'Admin activity' do
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
 
-      visit moderation_proposals_path(filter: 'all')
+      visit moderation_proposals_path(filter: "all")
 
       within("#proposal_#{proposal1.id}") do
         check "proposal_#{proposal1.id}_check"
@@ -264,7 +264,7 @@ feature 'Admin activity' do
       debate2 = create(:debate)
       debate3 = create(:debate)
 
-      visit moderation_debates_path(filter: 'all')
+      visit moderation_debates_path(filter: "all")
 
       within("#debate_#{debate1.id}") do
         check "debate_#{debate1.id}_check"
@@ -290,7 +290,7 @@ feature 'Admin activity' do
       comment2 = create(:comment)
       comment3 = create(:comment, body: "Offensive!")
 
-      visit moderation_comments_path(filter: 'all')
+      visit moderation_comments_path(filter: "all")
 
       within("#comment_#{comment1.id}") do
         check "comment_#{comment1.id}_check"
@@ -326,6 +326,24 @@ feature 'Admin activity' do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content("Restored")
+        expect(page).to have_content(@admin.user.username)
+      end
+    end
+  end
+
+  context "System emails" do
+    scenario "Shows moderation activity on system emails" do
+      proposal = create(:proposal, title: "Proposal A")
+      proposal_notification = create(:proposal_notification, proposal: proposal,
+                                                               title: "Proposal A Title",
+                                                               body: "Proposal A Notification Body")
+      proposal_notification.moderate_system_email(@admin.user)
+
+      visit admin_activity_path
+
+      within("#activity_#{Activity.last.id}") do
+        expect(page).to have_content(proposal_notification.title)
+        expect(page).to have_content("Hidden")
         expect(page).to have_content(@admin.user.username)
       end
     end

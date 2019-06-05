@@ -37,6 +37,12 @@
     <%= render "shared/section_header", i18n_namespace: "proposals.index.section_header", image: "proposals" %>
   <% end %>
 
+  <% if feature?('user.recommendations') && @recommended_proposals.present? %>
+    <%= render "shared/recommended_index", recommended: @recommended_proposals,
+                                           disable_recommendations_path: recommendations_disable_proposals_path,
+                                           namespace: "proposals" %>
+  <% end %>
+
   <div class="row">
     <div id="proposals" class="proposals-list small-12 medium-9 column">
 
@@ -70,7 +76,7 @@
       <% if @proposals.any? %>
         <div class="show-for-small-only">
           <%= link_to t("proposals.index.start_proposal"),
-                      new_proposal_guide,
+                      new_proposal_path,
                       class: 'button expanded' %>
         </div>
       <% end %>
@@ -95,11 +101,6 @@
               <strong><%= t("proposals.index.section_footer.title") %></strong>
             </p>
             <p><%= t("proposals.index.section_footer.description") %></p>
-            <p><%= t("proposals.index.section_footer.help_text_1") %></p>
-            <p><%= t("proposals.index.section_footer.help_text_2",
-                      org: link_to(setting['org_name'], new_user_registration_path),
-                      supports: setting["votes_for_proposal_success"]).html_safe %></p>
-            <p><%= t("proposals.index.section_footer.help_text_3") %></p>
           </div>
         <% end %>
       </div>
@@ -108,7 +109,7 @@
     <div class="small-12 medium-3 column">
       <aside class="margin-bottom">
         <%= link_to t("proposals.index.start_proposal"),
-                    new_proposal_guide,
+                    new_proposal_path,
                     class: 'button expanded' %>
         <% if params[:retired].blank? %>
           <%= render 'categories' %>
