@@ -293,31 +293,11 @@ so:
         table_id: "Aqoonsi"
         table_kind: "Noca"
         table_title: "Ciwaan"
-    comments:
-      index:
-        filter: Sifeeyee
-        filters:
-          all: Dhamaan
-          with_confirmed_hide: Xaqiijiyey
-          without_confirmed_hide: Joojin
-        hidden_debate: Dood qarsoodi ah
-        hidden_proposal: Soojedin qarsoon
-        title: Falooyin Qarsoon
-        no_hidden_comments: Majiraan Falooyin qarsoon.
     dashboard:
       index:
         back: Dib ugu labo ilaa %{org}
         title: Mamul
         description: Kuso dhowow gudiga Mamulka %{org}.
-    debates:
-      index:
-        filter: Sifeeyee
-        filters:
-          all: Dhamaan
-          with_confirmed_hide: Xaqiijiyey
-          without_confirmed_hide: Joojin
-        title: Doodo qarsoodi ah
-        no_hidden_debates: Majiraan Doodo qarsoon.
     hidden_users:
       index:
         filter: Sifeeyee
