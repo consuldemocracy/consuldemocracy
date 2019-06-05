@@ -696,8 +696,12 @@ nn:
         null_votes: "Ugyldig"
       results:
         title: "Spørsmål"
+        most_voted_answer: "Mest populære svar: "
+    poll_header:
+      back_to_proposal: Tilbake til forslag
   poll_questions:
     show:
+      vote_answer: "Stem %{answer}"
       voted: "Du har stemt%{answer}"
   proposal_notifications:
     new:
@@ -724,3 +728,27 @@ nn:
       date_range_blank: "Velg en dato"
       date_1: "Siste 24 timer"
       date_2: "Forrige uke"
+      date_3: "Siste måned"
+      date_4: "Siste år"
+      date_5: "Tilpasset"
+      from: "Fra"
+      general: "Med teksten"
+      general_placeholder: "Skriv tekst"
+      search: "Filter"
+      title: "Avansert søk"
+      to: "Til"
+    author_info:
+      author_deleted: Bruker slettet
+    back: Gå tilbake
+    check: Velg
+    check_all: Alle
+    check_none: Ingen
+    collective: Grupper
+    flag: Marker som upassende
+    follow: "Følg"
+    following: "Følger"
+    follow_entity: "Følg %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Du følger nå dette investeringsprosjektet! </br> Vi vil gi deg beskjed om eventuelle endringer slik at du kan holde deg oppdatert."
