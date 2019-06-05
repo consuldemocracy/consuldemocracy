@@ -792,3 +792,44 @@ nn:
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
     target_blank_html: " (link åpnes i et nytt vindu)"
+    you_are_in: "Du er inne"
+    unflag: Ta bort flagg
+    unfollow_entity: "Ikke lenger følg %{entity}"
+    outline:
+      searcher: Søkemotor
+  users:
+    show:
+      comments: Kommentarer
+      actions: Handlinger
+      filters:
+        comments:
+          zero: "%{count} kommentarer"
+          one: '%{count} kommentar'
+          other: "%{count} kommentarer"
+        debates:
+          zero: "%{count} debatter"
+          one: '%{count} debatt'
+          other: "%{count} debatter"
+        proposals:
+          zero: "%{count} Forslag"
+          one: '%{count} Forslag'
+          other: "%{count} Forslag"
+        budget_investments:
+          zero: "%{count} investeringer"
+          one: '%{count} investering'
+          other: "%{count} investeringer"
+        follows:
+          zero: "%{count} Følgere"
+          one: '%{count} Følger'
+          other: "%{count} Følgere"
+      no_activity: Brukeren har ingen offentlig aktivitet
+      no_private_messages: "Denne brukeren aksepterer ikke private meldinger."
+      private_activity: Denne brukeren har valgt at holde sine aktiviteter private.
+      send_private_message: "Send private meldinger"
+      delete_alert: "Er du sikker på at du ønsker at slette ditt investeringsprojekt? Denne handlingen kan ikke gjøres om"
+    proposals:
+      retired: "Forslaget er trukket tilbake"
+      draft: Utkast
+      published: Publisert
+      see: "Se forslag"
+      actions: Handlinger
