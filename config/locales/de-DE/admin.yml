@@ -348,31 +348,11 @@ de:
         notice: "Fortschrittsbalken erfolgreich aktualisiert"
       delete:
         notice: "Fortschrittsbalken erfolgreich gelöscht"
-    comments:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bestätigt
-          without_confirmed_hide: Ausstehend
-        hidden_debate: Verborgene Diskussion
-        hidden_proposal: Verborgener Vorschlag
-        title: Verborgene Kommentare
-        no_hidden_comments: Keine verborgenen Kommentare vorhanden.
     dashboard:
       index:
         back: Zurück zu %{org}
         title: Verwaltung
         description: Willkommen auf dem Admin-Panel für %{org}.
-    debates:
-      index:
-        filter: Filter
-        filters:
-          all: Alle
-          with_confirmed_hide: Bestätigt
-          without_confirmed_hide: Ausstehend
-        title: Verborgene Diskussionen
-        no_hidden_debates: Keine verborgenen Diskussionen vorhanden.
     hidden_users:
       index:
         filter: Filter
