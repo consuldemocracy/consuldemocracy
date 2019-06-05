@@ -764,3 +764,31 @@ nn:
       print_button: Skriv ut denne informasjonen
     search: Søk
     show: Vis
+    suggest:
+      debate:
+        found:
+          zero: "Det er allerede flere debattinnlegg om '%{query}', du kan delta i de i stedet for å starte en ny."
+          one: "Det er allerede et debattinnlegg om '%{query}', du kan delta i den i stedet for å starte en ny."
+          other: "Det er allerede flere debattinnlegg om '%{query}', du kan delta i de i stedet for å starte en ny."
+        message: "Du ser %{limit} av %{count} debattinnlegg, som inneholder '%{query}'"
+        see_all: "Se alle"
+      budget_investment:
+        found:
+          zero: "Det er allerede flere investeringsforslag om '%{query}', du kan delta i de i stedet for å starte en ny."
+          one: "Det er allerede et investeringsforslag om '%{query}', du kan delta i den i stedet for å starte en ny."
+          other: "Det er allerede flere investeringsforslag om '%{query}', du kan delta i de i stedet for å starte en ny."
+        message: "Du ser %{limit} av %{count} investeringsforslag, som inneholder '%{query}'"
+        see_all: "Se alle"
+      proposal:
+        found:
+          zero: "Det er allerede flere forslag om '%{query}', du kan delta i de i stedet for å starte en ny"
+          one: "Det er allerede et forslag om '%{query}', du kan delta i den i stedet for å starte en ny"
+          other: "Det er allerede flere forslag om '%{query}', du kan delta i de i stedet for å starte en ny"
+        message: "Du ser %{limit} av %{count} forslag, som inneholder '%{query}'"
+        see_all: "Se alle"
+    tags_cloud:
+      tags: Populære
+      districts: "Distrikter"
+      districts_list: "Liste over distrikter"
+      categories: "Kategorier"
+    target_blank_html: " (link åpnes i et nytt vindu)"
