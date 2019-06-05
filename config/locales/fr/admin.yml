@@ -352,17 +352,6 @@ fr:
         notice: "Barre de progrès mise à jour avec succès"
       delete:
         notice: "Barre de progrès supprimée avec succès"
-    comments:
-      index:
-        filter: Filtre
-        filters:
-          all: Toutes
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: Indécis
-        hidden_debate: Débat masqué
-        hidden_proposal: Proposition masquée
-        title: Commentaires masqués
-        no_hidden_comments: Il n’y a aucun commentaire caché.
     dashboard:
       index:
         back: Revenir
@@ -427,15 +416,6 @@ fr:
           request: Ressource demandées
         update:
           success: La tâche a été marquée comme résolue.
-    debates:
-      index:
-        filter: Filtre
-        filters:
-          all: Toutes
-          with_confirmed_hide: Confirmé
-          without_confirmed_hide: Indécis
-        title: Débats masqués
-        no_hidden_debates: Il n’y a aucun commentaire caché.
     documents:
       new:
         title: "Mettre en ligne un document"
