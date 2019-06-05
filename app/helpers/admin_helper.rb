@@ -77,7 +77,9 @@ module AdminHelper
   end
 
   def admin_select_options
-    Administrator.all.order("users.username asc").includes(:user).collect { |v| [ v.name, v.id ] }
+    Administrator.with_user
+                 .collect { |v| [ v.description_or_name, v.id ] }
+                 .sort_by { |a| a[0] }
   end
 
   def admin_submit_action(resource)

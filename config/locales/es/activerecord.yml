@@ -126,6 +126,8 @@ es:
         one: Enlace
         other: Enlaces
     attributes:
+      administrator:
+        description: Descripción
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"

@@ -1,0 +1,15 @@
+<%= back_link_to admin_administrators_path %>
+
+<h2><%= t("admin.administrators.form.edit_title") %></h2>
+
+<div class="callout highlight">
+  <strong><%= @administrator.name %></strong><br>
+  <%= @administrator.email %>
+</div>
+
+<div class="margin-top">
+  <%= form_for [:admin, @administrator] do |f| %>
+    <%= f.text_field :description %>
+    <%= f.submit class: "button success" %>
+  <% end %>
+</div>

@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20190429125842) do
 
   create_table "administrators", force: :cascade do |t|
     t.integer "user_id"
+    t.string  "description"
     t.index ["user_id"], name: "index_administrators_on_user_id", using: :btree
   end
 

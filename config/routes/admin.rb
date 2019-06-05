@@ -106,7 +106,7 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :administrators, only: [:index, :create, :destroy] do
+  resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
     get :search, on: :collection
   end
 
