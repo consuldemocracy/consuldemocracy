@@ -206,27 +206,10 @@ fi:
       index:
         table_id: "ID"
         table_kind: "Tyyppi"
-    comments:
-      index:
-        filter: Suodatin
-        filters:
-          all: Kaikki
-          with_confirmed_hide: Vahvistettu
-          without_confirmed_hide: Vireillä
-        hidden_proposal: Piilotettu ehdotus
-        title: Piilotetut kommentit
-        no_hidden_comments: Ei piilotettuja kommentteja.
     dashboard:
       index:
         back: Mene takaisin %{org}
         title: Järjestelmänvalvonta
-    debates:
-      index:
-        filter: Suodatin
-        filters:
-          all: Kaikki
-          with_confirmed_hide: Vahvistettu
-          without_confirmed_hide: Vireillä
     hidden_users:
       index:
         filter: Suodatin
