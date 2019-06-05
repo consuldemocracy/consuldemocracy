@@ -754,3 +754,13 @@ nn:
           notice_html: "Du følger nå dette investeringsprosjektet! </br> Vi vil gi deg beskjed om eventuelle endringer slik at du kan holde deg oppdatert."
         destroy:
           notice_html: "Du følger ikke lenger dette investeringsprosjektet. </br> Du vil ikke lenger få varsler relatert til dette prosjektet."
+      proposal:
+        create:
+          notice_html: "Du følger nå dette forslaget! </br> Vi vil gi deg beskjed om eventuelle endringer slik at du kan holde deg oppdatert."
+        destroy:
+          notice_html: "Du følger ikke lenger dette forslaget. </br> Du vil ikke lenger få varsler relatert til dette prosjektet."
+    hide: Skjul
+    print:
+      print_button: Skriv ut denne informasjonen
+    search: Søk
+    show: Vis
