@@ -213,27 +213,9 @@ ast:
         table_id: "ID"
         table_kind: "Tipu"
         table_title: "Títulu"
-    comments:
-      index:
-        filter: Filtru
-        filters:
-          all: Toes
-          with_confirmed_hide: Confirmaos
-          without_confirmed_hide: Pindios
-        hidden_debate: Alderique ocultu
-        hidden_proposal: Propuesta oculta
-        title: Comentarios ocultos
     dashboard:
       index:
         title: Alministración
-    debates:
-      index:
-        filter: Filtru
-        filters:
-          all: Toes
-          with_confirmed_hide: Confirmaos
-          without_confirmed_hide: Pindios
-        title: Alderiques ocultos
     hidden_users:
       index:
         filter: Filtru
