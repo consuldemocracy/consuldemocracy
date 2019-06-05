@@ -332,31 +332,11 @@ val:
         table_kind: "Tipus"
         table_title: "Títol"
         table_percentage: "Progrés actual"
-    comments:
-      index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmats
-          without_confirmed_hide: Pendents
-        hidden_debate: Debat ocults
-        hidden_proposal: Proposta oculta
-        title: Comentaris ocults
-        no_hidden_comments: No hi ha comentaris ocults.
     dashboard:
       index:
         back: Tornar a %{org}
         title: Administració
         description: Benvingut al panell d'administració de %{org}.
-    debates:
-      index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmats
-          without_confirmed_hide: Pendents
-        title: Debats ocults
-        no_hidden_debates: No hi ha debats ocults.
     hidden_users:
       index:
         filter: Filtre
