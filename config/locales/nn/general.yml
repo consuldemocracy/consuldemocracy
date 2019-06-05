@@ -833,3 +833,9 @@ nn:
       published: Publisert
       see: "Se forslag"
       actions: Handlinger
+      retired_help_text: Dashboardet er ikke tilgjengelig for forslag som er trukket tilbake
+  votes:
+    agree: Jeg er enig
+    anonymous: For mange anonyme stemmer til å godkjenne stemme %{verify_account}.
+    comment_unauthenticated: Du må %{signin} eller %{signup} for å stemme.
+    disagree: Jeg er uenig
