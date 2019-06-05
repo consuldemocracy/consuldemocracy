@@ -569,6 +569,7 @@ nn:
       latest_comments: Siste meldinger
     messages:
       send_notification: Send melding til brukere som støtter forslaget
+      previous_notifications: Se tidligere varsler
     polls:
       index:
         title: Avstemninger
@@ -643,6 +644,23 @@ nn:
       filters:
         current: "Åpen"
         expired: "Utgått"
+      title: "Avstemninger"
+      participate_button: "Delta i avstemningen"
+      participate_button_expired: "Avstemningen er avsluttet"
+      no_geozone_restricted: "Hele byen"
+      geozone_restricted: "Distrikter"
+      geozone_info: "Åpen for beboere fra: "
+      already_answer: "Du har allerede deltatt i denne avstemmingen"
+      not_logged_in: "Du må logge inn eller opprette bruker for å delta"
+      unverified: "Du må verifisere kontoen din for å kunne delta"
+      cant_answer: "Denne avstemningen er ikke tilgjengelig i ditt geografiske område"
+      section_header:
+        icon_alt: Avstemningsikon
+        title: Avstemning
+        help: Hjelp til avstemning
+      section_footer:
+        title: Hjelp til avstemning
+        description: Innbyggeravstemning er en deltakende prosess hvor innbyggere kan få direkte innflytelse og være med å påvirke lokalpolitiske beslutninger
   poll_questions:
     show:
       voted: "Du har stemt%{answer}"
