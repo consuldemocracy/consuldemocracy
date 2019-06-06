@@ -1,6 +1,8 @@
 el:
   attributes:
     results_enabled: "Εμφάνιση αποτελεσμάτων"
+    stats_enabled: "Εμφάνιση στατιστικών στοιχείων "
+    advanced_stats_enabled: "Εμφάνιση σύνθετων στατιστικών στοιχείων "
   activerecord:
     models:
       activity:
