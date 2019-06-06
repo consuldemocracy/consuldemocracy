@@ -14,8 +14,6 @@ class Legislation::PeopleProposal < ApplicationRecord
   include Imageable
   include Randomizable
 
-  accepts_nested_attributes_for :documents, allow_destroy: true
-
   acts_as_votable
   acts_as_paranoid column: :hidden_at
 
