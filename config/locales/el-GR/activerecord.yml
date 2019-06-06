@@ -1,4 +1,6 @@
 el:
+  attributes:
+    results_enabled: "Εμφάνιση αποτελεσμάτων"
   activerecord:
     models:
       activity:
