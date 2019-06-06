@@ -374,6 +374,12 @@ class Budget
       milestones.published.with_status.order_by_publication_date.last&.status_id
     end
 
+    def admin_and_valuator_users_associated
+      valuator_users = (valuator_groups.map(&:valuators) + valuators).flatten
+      all_users = valuator_users << administrator
+      all_users.compact.uniq
+    end
+
     private
 
       def set_denormalized_ids

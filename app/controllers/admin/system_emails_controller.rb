@@ -14,7 +14,8 @@ class Admin::SystemEmailsController < Admin::BaseController
       direct_message_for_receiver:  %w[view edit_info],
       direct_message_for_sender:    %w[view edit_info],
       email_verification:           %w[view edit_info],
-      user_invite:                  %w[view edit_info]
+      user_invite:                  %w[view edit_info],
+      evaluation_comment:           %w[view edit_info]
     }
   end
 
@@ -34,6 +35,8 @@ class Admin::SystemEmailsController < Admin::BaseController
       load_sample_user
     when "user_invite"
       @subject = t("mailers.user_invite.subject", org_name: Setting["org_name"])
+    when "evaluation_comment"
+      load_sample_valuation_comment
     end
   end
 
@@ -94,6 +97,17 @@ class Admin::SystemEmailsController < Admin::BaseController
         @email = ReplyEmail.new(reply)
       else
         redirect_to admin_system_emails_path, alert: t("admin.system_emails.alert.no_replies")
+      end
+    end
+
+    def load_sample_valuation_comment
+      comment = Comment.where(commentable_type: "Budget::Investment").last
+      if comment
+        @email = EvaluationCommentEmail.new(comment)
+        @email_to = @email.to.first
+      else
+        redirect_to admin_system_emails_path,
+                    alert: t("admin.system_emails.alert.no_evaluation_comments")
       end
     end
 
