@@ -412,6 +412,10 @@ describe "Commenting Budget::Investments" do
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
+        within "#comments" do
+          expect(page).to have_content "I am your Admin!"
+        end
+
         visit admin_budget_budget_investment_path(investment.budget, investment)
 
         within "#comments" do
