@@ -184,6 +184,7 @@ el:
         title: "Τίτλος"
         question: "Ερώτηση"
         description: "Περιγραφή"
+        selected: "Σημείωστε ως επιλεγμένο"
         terms_of_service: "Όροι υπηρεσίας"
       user:
         login: "E-mail ή όνομα χρήστη"
