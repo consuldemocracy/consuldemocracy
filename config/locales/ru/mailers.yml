@@ -70,7 +70,21 @@ ru:
       hi: "Дорогой пользователь,"
       thanks: "Спасибо еще раз за участие."
       sincerely: "С уважением"
+    evaluation_comment:
+      subject: "Новый комментарий оценки"
+      hi: Здравствуйте
+    new_actions_notification_rake_created:
+      subject: "Больше новостей о вашем предложении гражданина"
+      new_resource: "НОВЫЙ НЕЗАБЛОКИРОВАННЫЙ РЕСУРС"
+      text_4: "Взгляните на это НОВОЕ рекомендуемое ДЕЙСТВИЕ:"
+      text_5: "Следующее действие, которое мы рекомендуем:"
+      dashboard_button: "Узнайте о них больше!"
+    new_actions_notification_rake_published:
+      subject: "Больше новостей о вашем предложении гражданина"
+      dashboard_button: "Узнайте о них больше!"
     new_actions_notification_on_create:
+      subject: "Ваш черновик предложения гражданина создан"
       dashboard_button: "Узнайте о них больше!"
     new_actions_notification_on_published:
+      text_1: "А теперь идите за вашей первой 100 поддержек!"
       text_2: "Почему 100?"
