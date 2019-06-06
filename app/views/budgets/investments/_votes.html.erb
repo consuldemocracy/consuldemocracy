@@ -36,7 +36,7 @@
                 verify_account: link_to(t("votes.verify_account"), verification_path),
                 signin: link_to(t("votes.signin"), new_user_session_path),
                 signup: link_to(t("votes.signup"), new_user_registration_path),
-                supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).to_sentence)
+                supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).sort.to_sentence)
                ).html_safe %>
         </small>
       </p>
