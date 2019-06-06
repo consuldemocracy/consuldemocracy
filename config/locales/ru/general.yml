@@ -321,6 +321,7 @@ ru:
     created:
       title: Поздравляем! Вы выполнили первый шаг.
     share:
+      improve_it: Улучшите вашу кампанию и получите больше поддержки.
       dashboard: Показать больше информации
       message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
     edit:
@@ -379,6 +380,10 @@ ru:
           error: "Произошла ошибка. Пожалуйста перейдите на страницу 'Ваш аккаунт', чтобы вручную отключить рекомендации по предложениям"
       retired_proposals: Отозванные предложения
       retired_proposals_link: "Предложения, отозванные автором"
+      selected_proposals: Выбранные предложения
+      selected_proposals_link: Просмотреть выбранные предложения
+      archived_proposals: Предложения в архиве
+      proposals_lists: Списки предложений
       retired_links:
         all: Все
         duplicated: Дубли
@@ -419,6 +424,7 @@ ru:
       start_new: Создать новое предложение
     notice:
       retired: Предложение отозвано
+      published: Предложение опубликовано
     proposal:
       created: "Вы создали предложение!"
       share:
@@ -450,6 +456,7 @@ ru:
       total_percent: 100%
       archived: "Это предложение перенесено в архив и не может получать поддержки."
       successful: "Это предложение достигло требуемого уровня поддержки."
+      selected: "Выбранное предложение"
     show:
       author_deleted: Пользователь удален
       code: "Код предложения:"
@@ -478,12 +485,15 @@ ru:
         submit_button: Сохранить изменения
   dashboard:
     menu:
+      my_proposal: Редактировать мое предложение
       progress: Ход выполнения
       resources: Ресурсы
       community: Сообщество
       polls: Голосования
       mailing: E-mail
       poster: Анонс
+      recommended_actions: Рекомендуемые действия
+      messages: Сообщение пользователям
     form:
       request: Запрос
     progress:
@@ -495,6 +505,15 @@ ru:
       supports: Поддержки
       success: Идеальный ход выполнения
       new_action: Новый
+    index:
+      title: Издание
+      edit_proposal_link: Редактировать предложение
+      publish: Опубликовать предложение
+      retire: Снять предложение
+    new_request:
+      links: Ссылки
+    resources:
+      available_resources: Доступные ресурсы
     goal:
       ideal_time: Идеальное время
     community:
