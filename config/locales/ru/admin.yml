@@ -414,6 +414,7 @@ ru:
         index:
           title: Ресурсы запрошены
           solve: Решить
+          no_records: Нет запрошенных ресурсов
           source: Источник
           resource: Запрошенный ресурс
           filter: Фильтр
@@ -779,6 +780,7 @@ ru:
       new:
         title: Новое новостное письмо
         from: Адрес Email, который появится в качестве отправителя новостного письма
+        image_link: "пользовательские изображения"
       edit:
         title: Редактировать новостное письмо
       show:
@@ -1214,10 +1216,14 @@ ru:
         title: Заявки
         id: ID
         author: Автор
+        select: Выбрать
+        selected: Выбрано
         milestones: Основные этапы
         no_proposals: Предложений нет.
       show:
         create_question: Добавить это предложение к опросу для голосования
+      form:
+        update: Обновить предложение
     hidden_proposals:
       index:
         filter: Фильтровать
