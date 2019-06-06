@@ -70,6 +70,10 @@ he:
       hi: "משתמש/ת יקר/ה,"
       thanks: "תודה שוב על השתתפותך."
       sincerely: "בברכה,"
+    evaluation_comment:
+      subject: "הערת הערכה חדשה"
+      title: הערת הערכה חדשה עבור %{investment}
+      hi: שלום
     new_actions_notification_rake_created:
       subject: "עוד חדשות על הצעת התושב שלך"
       hi: "שלום %{name},"
