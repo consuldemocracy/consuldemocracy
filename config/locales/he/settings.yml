@@ -139,3 +139,20 @@ he:
       per_page_code_head_description: "קוד זה יופיע בתוך תווית ה- <head>. שימושי עבור הזנת סקריפטים מותאמים אישית, אנליטיקה..."
       per_page_code_body: "קוד שייכלל בכל דף (<body>)"
       per_page_code_body_description: "קוד זה יופיע בתוך תווית ה- <body>. שימושי עבור הזנת סקריפטים מותאמים אישית, ואנליטיקה..."
+    uploads:
+      images:
+        min_width: "רוחב תמונה מינימלי"
+        min_width_description: "רוחב תמונה מינימלי להעלאת תמונה ( בפיקסלים)"
+        min_height: "גובה תמונה מינימלי"
+        min_height_description: "גובה תמונה מינימלי להעלאה ( בפיקסלים)"
+        max_size: "גודל תמונה מקסימלי"
+        max_size_description: "גודל תמונה מקסימלי להעלאה ( במגה בייט)"
+        content_types: "פורמט מותר עבור תמונות"
+        content_types_description: "בחר את הפורמט המותר להעלאת תמונות"
+        title:
+          min_length: "אורך מינימלי לכותרת התמונה"
+          min_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
+          max_length: "אורך מקסימלי לכותרת תמונה"
+          max_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
+      documents:
+        max_amount: "מספר מסמכים מקסימלי"
