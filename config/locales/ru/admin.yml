@@ -107,6 +107,7 @@ ru:
       destroy:
         success_notice: Бюджет успешно удален
         unable_notice: Вы не можете уничтожить бюджет, для которого есть связанные инвестиции
+        unable_notice_polls: Вы не можете удалить бюджет, который связан с голосованием
       new:
         title: Новый совместный бюджет
       winners:
@@ -358,6 +359,17 @@ ru:
         notice: "Индикатор выполнения успешно обновлен"
       delete:
         notice: "Индикатор выполнения успешно удален"
+    hidden_comments:
+      index:
+        filter: Фильтровать
+        filters:
+          all: Все
+          with_confirmed_hide: Подтвержденные
+          without_confirmed_hide: На рассмотрении
+        hidden_debate: Скрытые дебаты
+        hidden_proposal: Скрытое предложение
+        title: Скрытые комментарии
+        no_hidden_comments: Нет скрытых комментариев.
     dashboard:
       index:
         back: Вернуться к %{org}
@@ -368,6 +380,7 @@ ru:
           proposed_action: Предлагаемое действие
           resource: Ресурс
         index:
+          create: Создать ресурс или действие
           edit: Редактировать
           delete: Удалить
           active: 'Да'
@@ -385,6 +398,7 @@ ru:
             polls: Голосования
             poster: Анонс
         new:
+          creating: Новое действие для панели управления предложениями
           back: Вернуться к списку
         create:
           notice: Действие успешно создано
@@ -395,21 +409,52 @@ ru:
           success: Действие успешно удалено
         form:
           submit_button: Сохранить
+          published_proposal: Для опубликованных предложений?
       administrator_tasks:
         index:
+          title: Ресурсы запрошены
           solve: Решить
           source: Источник
+          resource: Запрошенный ресурс
           filter: Фильтр
           filters:
             pending: На рассмотрении
             done: Решено
+        edit:
+          back: Вернуться к списку ожидающих задач
+          solving: Решить рассматриваемую задачу
         form:
+          solve: Пометить как решенную
           proposal: Предложение
           request: Запрошенный ресурс
+        update:
+          success: Задача была помечена как решенная.
+    hidden_debates:
+      index:
+        filter: Фильтровать
+        filters:
+          all: Все
+          with_confirmed_hide: Подтвержденные
+          without_confirmed_hide: На рассмотрении
+        title: Скрытые дебаты
+        no_hidden_debates: Нет скрытых дебатов.
     documents:
       new:
         title: "Загрузить документ"
         label_attachment: "Выберите документ"
+        submit_button: "Загрузить"
+      index:
+        new_link: "Добавить новый документ"
+        no_documents: "Нет документов."
+        title: "Документы"
+        format: "Формат"
+        size: "Размер"
+        url: "Ссылка"
+      create:
+        success_notice: "Документ успешно загружен"
+        unable_notice: "Неверный документ"
+      destroy:
+        success_notice: "Документ успешно удален"
     hidden_users:
       index:
         filter: Фильтр
@@ -481,6 +526,7 @@ ru:
         proposals:
           select_order: Сортировать по
           orders:
+            id: Id
             title: Название
             supports: Поддержки
         process:
@@ -506,6 +552,7 @@ ru:
         index:
           title: Название
           back: Назад
+          id: Id
           supports: Поддержки
         form:
           custom_categories: Категории
@@ -644,12 +691,14 @@ ru:
       stats: Статистика
       signature_sheets: Подписные листы
       site_customization:
+        documents: Пользовательские документы
         homepage: Главная страница
         pages: Настраиваемые страницы
         images: Настраиваемые изображения
         content_blocks: Настраиваемые блоки содержимого
         information_texts: Настраиваемые информационные тексты
         information_texts_menu:
+          basic: "Базовая настройка"
           debates: "Обсуждения проблем"
           community: "Сообщество"
           proposals: "Заявки"
@@ -669,11 +718,15 @@ ru:
       title_booths: Кабинки для голосования
       legislation: Совместное законотворчество
       users: Пользователи
+      dashboard: Панель управления предложениями
+      administrator_tasks: Запрошенные ресурсы
+      dashboard_actions: Ресурсы и действия
     administrators:
       index:
         title: Администраторы
         name: Имя
         email: Электронный адрес
+        description: Описание
         id: ID администратора
         no_administrators: Нет администраторов.
       administrator:
@@ -682,6 +735,9 @@ ru:
         restricted_removal: "Извините, вы не можете удалить сами себя из администраторов"
       search:
         title: "Администраторы: Поиск пользователей"
+      form:
+        edit_title: "Редактировать администратора"
+        updated: "Администратор успешно обновлен"
     moderators:
       index:
         title: Модераторы
