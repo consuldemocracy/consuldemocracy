@@ -753,6 +753,7 @@ ru:
     segment_recipient:
       all_users: Все пользователи
       administrators: Администраторы
+      all_proposal_authors: Авторы предложений (включая архивные и устаревшие)
       proposal_authors: Авторы предложений
       investment_authors: Авторы инвестиций в текущем бюджете
       feasible_and_undecided_investment_authors: "Авторы некоторых инвестиций в текущий бюджет, которые не соответствуют: [оценка окончено невыполнимо]"
