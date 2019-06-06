@@ -514,6 +514,17 @@ ru:
       links: Ссылки
     resources:
       available_resources: Доступные ресурсы
+    resource:
+      view_resource: Просмотреть ресурс
+      resource_requested: Ресурс уже запрошен
+      request_resource: Запросить ресурс
+      resource_locked: Ресурс заперт
+    recommended_actions:
+      title: Рекомендуемые действия
+      goto_proposed_actions: Перейти к рекомендуемым действиям
+      see_proposed_actions: Просмотреть рекомендуемые действия
+      hide_proposed_actions: Скрыть рекомендуемые действия
+      pending_title: На рассмотрении
     goal:
       ideal_time: Идеальное время
     community:
@@ -798,6 +809,7 @@ ru:
       deleted_proposal: Это предложение было удалено
       deleted_budget_investment: Это инвестирование было удалено
       proposals: Заявки
+      proposals_status: Статус
       debates: Обсуждения проблем
       budget_investments: Инвестиции бюджета
       comments: Комментарии
@@ -835,7 +847,11 @@ ru:
       delete_alert: "Вы уверены, что хотите удалить ваш проект инвестирования? Это действие необратимо"
     proposals:
       retired: "Снятое предложение"
+      draft: Черновик
+      published: Опубликовано
       see: "Просмотреть предложение"
+      actions: Действия
+      retired_help_text: Для снятых предложений панель управления не доступна
   votes:
     agree: Я согласен
     anonymous: Слишком много анонимных голосов, чтобы признать голос %{verify_account}.
@@ -926,3 +942,20 @@ ru:
       text_sign_in: войти
       text_sign_up: регистрация
       title: Как я могу прокомментировать этот документ?
+  links:
+    form:
+      delete_button: Удалить
+      cancel_button: Отменить
+    nested_links:
+      title: Ссылки
+      note: Добавьте интересующие ссылки
+      add_new_link: Добавить новую ссылку
+    link_fields:
+      label_placeholder: Название ссылки
+      url_placeholder: Адрес ссылки
+  communities:
+    show:
+      surveys: Опросы
+      complete_survey: Завершить опрос
+    subnav:
+      surveys: Опросы
