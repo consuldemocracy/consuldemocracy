@@ -11,6 +11,10 @@ module ProposalsDashboardHelper
     controller_name == "dashboard" && action_name == "messages"
   end
 
+  def related_content_menu_active?
+    controller_name == "dashboard" && action_name == "related_content"
+  end
+
   def progress_menu_active?
     is_proposed_action_request? || (controller_name == "dashboard" && action_name == "progress")
   end

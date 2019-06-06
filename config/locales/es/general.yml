@@ -488,6 +488,7 @@ es:
       poster: Póster
       recommended_actions: Acciones recomendadas
       messages: Mensajes a usuarios
+      related_content: Contenido relacionado
     form:
       request: Solicitar
     create_request:

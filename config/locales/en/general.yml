@@ -488,6 +488,7 @@ en:
       poster: Poster
       recommended_actions: Recommended actions
       messages: Message to users
+      related_content: Related content
     form:
       request: Request
     create_request:
