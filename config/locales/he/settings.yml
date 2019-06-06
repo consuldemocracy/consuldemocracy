@@ -156,3 +156,8 @@ he:
           max_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
       documents:
         max_amount: "מספר מסמכים מקסימלי"
+        max_amount_description: "מספר מרבי של מסמכים שניתן לצרף להצעה, להשקעה..."
+        max_size: "משקל מקסימלי למסמך"
+        max_size_description: "הגודל המרבי המותר למסמך שהועלה (ב- מגה בייט/ MB)"
+        content_types: "סוגי תוכן שאושרו עבור מסמכים"
+        content_types_description: "בחר את כל סוגי התוכן המותרים עבור מסמכים שהועלו"
