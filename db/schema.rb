@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20190205131722) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "unaccent"
   enable_extension "pg_trgm"
+  enable_extension "unaccent"
 
   create_table "active_poll_translations", force: :cascade do |t|
     t.integer  "active_poll_id", null: false
@@ -33,18 +33,6 @@ ActiveRecord::Schema.define(version: 20190205131722) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "activities", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "action"
-    t.integer  "actionable_id"
-    t.string   "actionable_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "activities", ["actionable_id", "actionable_type"], name: "index_activities_on_actionable_id_and_actionable_type", using: :btree
-  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "admin_notification_translations", force: :cascade do |t|
     t.integer  "admin_notification_id", null: false
