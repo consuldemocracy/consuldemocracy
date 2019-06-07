@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190429125842) do
+ActiveRecord::Schema.define(version: 20190607160900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -671,7 +671,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.integer  "legislation_process_id"
     t.string   "title",                  limit: 80
     t.text     "description"
-    t.string   "question"
     t.integer  "author_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                       default: 0
@@ -703,10 +702,7 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.string   "instagram"
     t.string   "youtube"
     t.string   "website"
-    t.string   "external_url"
-    t.integer  "geozone_id"
     t.index ["cached_votes_score"], name: "index_legislation_people_proposals_on_cached_votes_score", using: :btree
-    t.index ["geozone_id"], name: "index_legislation_people_proposals_on_geozone_id", using: :btree
   end
 
   create_table "legislation_process_translations", force: :cascade do |t|
@@ -1468,10 +1464,10 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.boolean  "created_from_signature",                    default: false
     t.integer  "failed_email_digests_count",                default: 0
     t.text     "former_users_data_log",                     default: ""
+    t.integer  "balloted_heading_id"
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
-    t.integer  "balloted_heading_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree

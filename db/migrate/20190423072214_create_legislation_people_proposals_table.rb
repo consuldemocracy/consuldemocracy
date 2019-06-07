@@ -1,4 +1,4 @@
-class CreateLegislationPeopleProposalsTable < ActiveRecord::Migration
+class CreateLegislationPeopleProposalsTable < ActiveRecord::Migration[4.2]
   def change
     create_table :legislation_people_proposals, force: :cascade do |t|
       t.integer  "legislation_process_id"
