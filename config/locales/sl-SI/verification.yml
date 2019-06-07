@@ -1,0 +1,111 @@
+sl:
+  verification:
+    alert:
+      lock: Dosegel/-la si največje število poskusov. Poskusi znova kasneje.
+    back: Vrni se v moj račun
+    email:
+      create:
+        alert:
+          failure: Ni bilo mogoče poslati e-pošte na tvoj naslov
+        flash:
+          success: 'Na tvoj naslov %{email} smo ti poslali e-pošto'
+      show:
+        alert:
+          failure: Napačna potrditvena koda
+        flash:
+          success: Postal/-a si verificiran/-a uporabnik/-ca
+    letter:
+      alert:
+        unconfirmed_code: Nisi še vnesel/-la potrditvene kode
+      create:
+        flash:
+          offices: Podpora državljanom
+          success_html: Hvala za poslan zahtevek za <b>največjo varnostno kodo (potrebuješ jo le za končno glasovanje)</b>. V nekaj dneh ti jo bomo poslali na naslov, ki si ga nam posredoval/-a. Če želiš, lahko svojo kodo dvigneš osebno v naših prostorih %{offices}.
+      edit:
+        see_all: Poglej predloge
+        title: Zahtevano pismo
+      errors:
+        incorrect_code: Napačna potrditvena koda
+      new:
+        explanation: 'Za sodelovanje v končnem glasovanju lahko:'
+        go_to_index: Pogledaš predloge
+        office: Verificiraš račun v katerikoli %{office}
+        offices: Pisarna za podporo državljanom
+        send_letter: Pošljite mi pismo s kodo
+        title: Čestitke!
+        user_permission_info: S svojim računom lahko ...
+      update:
+        flash:
+          success: Koda pravilna. Tvoj račun je zdaj verificiran.
+    redirect_notices:
+      already_verified: Tvoj račun je že verificiran.
+      email_already_sent: E-pošto s potrditveno povezavo smo ti že poslali. Če ga ne najdeš, lahko tukaj zahtevaš novo kodo.
+    residence:
+      alert:
+        unconfirmed_residency: Nisi še potrdil/-a svojega prebivališča.
+      create:
+        flash:
+          success: Prebivališče potrjeno
+      new:
+        accept_terms_text: Sprejmem %{terms_url} popisa
+        accept_terms_text_title: Sprejmem pogoje uporabe dostopa do popisa
+        date_of_birth: Datum rojstva
+        document_number: Številka dokumenta
+        document_number_help_title: Pomoč
+        document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Potni list</strong>: AAA000001<br> <strong>Potrdilo o prebivališču</strong>: X1234567P'
+        document_type:
+          passport: Potni list
+          residence_card: Potrdilo o prebivališču
+          spanish_id: EMŠO
+        document_type_label: Vrsta dokumenta
+        error_not_allowed_age: Za sodelovanje nisi dovolj star/-a
+        error_not_allowed_postal_code: Za verifikacijo se moraš najprej registirati.
+        error_verifying_census: Popis ni mogel verificirati tvojih podatkov. Prosimo, pokliči ali obišči %{offices}.
+        error_verifying_census_offices: Pisarna za pomoč državljanom
+        form_errors: je preprečilo verifikacijo tvojega prebivališča
+        postal_code: Poštna številka
+        postal_code_note: Za verifikacijo tvojega računa se moraš najprej registrirati
+        terms: pogoji uporabe in dostopa
+        title: Verificiraj prebivališče
+        verify_residence: Verificiraj prebivališče
+    sms:
+      create:
+        flash:
+          success: Vnesi potrditveno kodo, ki smo ti po poslali po SMS
+      edit:
+        confirmation_code: Vnesi kodo, ki si jo dobil/-a po SMS
+        resend_sms_link: Klikni tukaj za ponovno pošiljanje SMS
+        resend_sms_text: Nisi dobil/-a SMS s potrditveno kodo?
+        submit_button: Pošlji
+        title: Potrditev varnostne kode
+      new:
+        phone: Vnesi svojo mobilno številko
+        phone_format_html: "<strong><em>(Primer: 041218401 ali +38631572849)</em></strong>"
+        phone_note: Tvojo številko bomo uporabili le za pošiljanje kode, nikoli te ne bomo poklicali.
+        phone_placeholder: "Primer: 041218401 ali +38631572849"
+        submit_button: Pošlji
+        title: Pošlji potrditveno kodo
+      update:
+        error: Napačna potrditvena koda
+        flash:
+          level_three:
+            success: Koda pravilna. Tvoj račun je zdaj verificiran.
+          level_two:
+            success: Koda pravilna
+    step_1: Prebivališče
+    step_2: Potrditvena koda
+    step_3: Konča verifikacija
+    user_permission_debates: Sodeluj v razpravah
+    user_permission_info: Verifikacija računa ti omogoča ...
+    user_permission_proposal: Ustvarjanje novih predlogov
+    user_permission_support_proposal: Podpora predlogom*
+    user_permission_votes: Sodelovanje v končnem glasovanju*
+    verified_user:
+      form:
+        submit_button: Pošlji kodo
+      show:
+        email_title: E-pošta
+        explanation: Trenutno imamo naslednje podatke; prosimo izberi metodo za pošiljanje potrditvene kode.
+        phone_title: Telefonske številke
+        title: Dostopne informacije
+        use_another_phone: Uporabi drugo telefonsko številko

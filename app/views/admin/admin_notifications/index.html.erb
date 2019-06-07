@@ -1,0 +1,64 @@
+<h2 class="inline-block"><%= t("admin.admin_notifications.index.section_title") %></h2>
+<%= link_to t("admin.admin_notifications.index.new_notification"), new_admin_admin_notification_path,
+                                                         class: "button float-right" %>
+
+<% if @admin_notifications.any? %>
+  <table id="admin_notifications">
+    <thead>
+      <tr>
+        <th><%= t("admin.admin_notifications.index.title") %></th>
+        <th><%= t("admin.admin_notifications.index.segment_recipient") %></th>
+        <th><%= t("admin.admin_notifications.index.sent") %></th>
+        <th class="small-5"><%= t("admin.admin_notifications.index.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @admin_notifications.order(created_at: :desc).each do |admin_notification| %>
+      <tr id="<%= dom_id(admin_notification) %>" class="admin_notification">
+        <td>
+          <%= admin_notification.title %>
+        </td>
+        <td>
+          <%= segment_name(admin_notification.segment_recipient) %>
+        </td>
+        <td>
+          <% if admin_notification.draft? %>
+            <%= t("admin.admin_notifications.index.draft") %>
+          <% else %>
+            <%= l admin_notification.sent_at.to_date %>
+          <% end %>
+        </td>
+        <td>
+          <% if admin_notification.draft? %>
+            <div class="small-4 column">
+              <%= link_to t("admin.admin_notifications.index.edit"),
+                          edit_admin_admin_notification_path(admin_notification),
+                          method: :get, class: "button expanded hollow" %>
+            </div>
+            <div class="small-4 column">
+              <%= link_to t("admin.admin_notifications.index.delete"),
+                          admin_admin_notification_path(admin_notification),
+                          method: :delete, class: "button expanded hollow alert" %>
+            </div>
+            <div class="small-4 column">
+              <%= link_to t("admin.admin_notifications.index.preview"),
+                          admin_admin_notification_path(admin_notification),
+                          class: "button expanded" %>
+            </div>
+          <% else %>
+            <div class="small-4 column">
+              <%= link_to t("admin.admin_notifications.index.view"),
+                          admin_admin_notification_path(admin_notification),
+                          class: "button expanded" %>
+            </div>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div data-alert class="callout primary margin-top clear">
+    <%= t("admin.admin_notifications.index.empty_notifications") %>
+  </div>
+<% end %>

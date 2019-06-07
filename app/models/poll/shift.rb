@@ -24,7 +24,7 @@ class Poll
     end
 
     def create_officer_assignments
-      booth.booth_assignments.each do |booth_assignment|
+      booth.booth_assignments.order(:id).each do |booth_assignment|
         attrs = {
           officer_id:          officer_id,
           date:                date,
@@ -33,6 +33,10 @@ class Poll
         }
         Poll::OfficerAssignment.create!(attrs)
       end
+    end
+
+    def unable_to_destroy?
+      booth.booth_assignments.map(&:unable_to_destroy?).any?
     end
 
     def destroy_officer_assignments

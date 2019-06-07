@@ -1,0 +1,38 @@
+fa:
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} با موفقیت ایجاد شده."
+        debate: "بحث با موفقیت ایجاد شده."
+        direct_message: "پیام شما با موفقیت ارسال شده است."
+        poll: "نظر سنجی با موفقیت ایجاد شده."
+        poll_booth: "غرفه با موفقیت ایجاد شده."
+        poll_question_answer: "پاسخ با موفقیت ایجاد شده"
+        poll_question_answer_video: "فیلم با موفقیت ایجاد شده"
+        poll_question_answer_image: " تصویر با موفقیت بارگذاری ایجاد شده"
+        proposal: "پیشنهاد با موفقیت ایجاد شده است ."
+        proposal_notification: "پیام شما صحیح ارسال شده است."
+        spending_proposal: "هزینه پیشنهادی با موفقیت ایجاد شد شما می توانید به آن از طریق %{activity} دسترسی داشته باشید."
+        budget_investment: "بودجه سرمایه گذاری با موفقیت ایجاد شد."
+        signature_sheet: "ورق امضا با موفقیت ایجاد شد."
+        topic: "موضوع با موفقیت ایجاد شده."
+        valuator_group: "گروه ارزیابی با موفقیت ایجاد شده"
+      save_changes:
+        notice: ذخیره تغییرات
+      update:
+        notice: "%{resource_name} با موفقیت به روز رسانی شده است."
+        debate: "بحث با موفقیت به روز رسانی شده است."
+        poll: "نظر سنجی با موفقیت به روز رسانی شده است."
+        poll_booth: "جای ویژه با موفقیت به روز شد."
+        proposal: "پیشنهاد با موفقیت به روز رسانی شده است."
+        spending_proposal: "پروژه سرمایه گذاری با موفقیت به روز رسانی شد."
+        budget_investment: "پروژه سرمایه گذاری با موفقیت به روز رسانی شد."
+        topic: "موضوع با موفقیت به روز رسانی  شده است."
+        valuator_group: " ارزیابی  با موفقیت به روز رسانی شده"
+      destroy:
+        spending_proposal: "پیشنهاد هزینه با موفقیت حذف شد."
+        budget_investment: "پروژه سرمایه گذاری با موفقیت حذف شد."
+        error: "حذف نشد."
+        topic: "موضوع با موفقیت حذف شد."
+        poll_question_answer_video: " ویدئو پاسخ با موفقیت حذف شد."
+        valuator_group: "گروه ارزیابی با موفقیت حذف شده"

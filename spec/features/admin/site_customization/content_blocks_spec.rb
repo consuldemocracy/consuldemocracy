@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Admin custom content blocks" do
 
@@ -9,10 +9,13 @@ feature "Admin custom content blocks" do
 
   scenario "Index" do
     block = create(:site_customization_content_block)
+    heading_block = create(:heading_content_block)
     visit admin_site_customization_content_blocks_path
 
     expect(page).to have_content(block.name)
     expect(page).to have_content(block.body)
+    expect(page).to have_content(heading_block.heading.name)
+    expect(page).to have_content(heading_block.body)
   end
 
   context "Create" do
@@ -27,7 +30,8 @@ feature "Admin custom content blocks" do
 
       click_link "Create new content block"
 
-      select "footer", from: "site_customization_content_block_name"
+      select I18n.t("admin.site_customization.content_blocks.content_block.names.footer"),
+                   from: "site_customization_content_block_name"
       select "es", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -50,7 +54,8 @@ feature "Admin custom content blocks" do
 
       click_link "Create new content block"
 
-      select "top_links", from: "site_customization_content_block_name"
+      select I18n.t("admin.site_customization.content_blocks.content_block.names.top_links"),
+                   from: "site_customization_content_block_name"
       select "en", from: "site_customization_content_block_locale"
       fill_in "site_customization_content_block_body", with: "Some custom content"
 
@@ -88,7 +93,7 @@ feature "Admin custom content blocks" do
       expect(page).to have_content("#{block.name} (#{block.locale})")
       expect(page).to have_content(block.body)
 
-      click_button "Delete block"
+      click_link "Delete block"
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)
@@ -98,7 +103,7 @@ feature "Admin custom content blocks" do
       block = create(:site_customization_content_block)
       visit edit_admin_site_customization_content_block_path(block)
 
-      click_button "Delete block"
+      click_link "Delete block"
 
       expect(page).not_to have_content("#{block.name} (#{block.locale})")
       expect(page).not_to have_content(block.body)

@@ -5,6 +5,10 @@ he:
         unverified_user: אף משתתף/ת לא הצטרף/ה עדין
       show:
         title: חשבון משתמש/ת
+      edit:
+        back: חזרה
+        password:
+          password: סיסמה
     account_info:
       change_user: שינוי חשבון משתמש/ת
       document_number_label: 'מספר תעודה מזהה'
@@ -12,7 +16,6 @@ he:
       email_label: 'דואר אלקטרוני'
       identified_label: 'זוהה כ'
       username_label: 'שם משתמש/ת'
-    check: בדוק
     dashboard:
       index:
         title: הנהלה
@@ -20,7 +23,7 @@ he:
     document_number: מספר תעודה מזהה
     document_type_label: סוג תעודה מזהה
     document_verifications:
-      already_verified: חשבון משתמש זה אושר
+      already_verified: חשבון משתמש/ת זה אושר בעבר
       has_no_account_html: ' כדי ליצור חשבון  %{link} נא ללחוץ על<b>''Register''</b> בחלק השמאלי העליון של המסך'
       link: מנהל מערכת
       in_census_has_following_permissions: 'משתמשים/ות אלו יכולים/ות להשתתף במערכת עם ההרשאות הבאות'
@@ -29,8 +32,9 @@ he:
       please_check_account_data: נא לבדוק בבקשה שהנתונים מעל מדויקים
       title: ' ניהול חשבון'
       under_age: "אינך בגיל המאפשר רישומך באתר"
-      verify: נא לאשר
+      verify: Verify
     email_label: דואר אלקטרוני
+    date_of_birth: תאריך לידה
     email_verifications:
       already_verified: חשבון משתמש/ת זה אושר בעבר
       choose_options: 'נא לבחור באחת מהאפשרויות הבאות:'
@@ -46,15 +50,11 @@ he:
       create_proposal: יצירת הצעה חדשה
       print_proposals: הדפסת הצעות
       support_proposals: תמיכה בהצעות
-      create_spending_proposal: יצירת הצעת תקציב
+      create_spending_proposal: יצירת הצעה תקציב
       print_spending_proposals: הדפסת הצעות תקציב
       support_spending_proposals: תמיכה בהצעות תקציב
       create_budget_investment: יצירת תקציב להשקעה
-      print_budget_investments: הדפסת תקציבים להשקעה
-      support_budget_investments: תמיכה בתקציבים להשקעה
-      users: משתמשים
-      edit_user_accounts: עריכת חשבונך
-      user_invites: הזמנות של המשתמש/ת
+      user_invites: שליחת הזמנות
     permissions:
       create_proposals: יצירת הצעות
       debates: השתתפות בדיונים
@@ -62,12 +62,9 @@ he:
       vote_proposals: הצבעה על הצעות
     print:
       proposals_info: יצירת http://url.consul אישי
-      proposals_note: ההצעות הנתמכות ביותר יעברו להצבעה. אם יתקבלו ברוב הצבעות, יעברו לשלב  הביצוע
       proposals_title: 'הצעות:'
       spending_proposals_info: משתתף ב http://url.consul
-      spending_proposals_note: תקציב השתתפותי יוקצה להצבעה עם רוב קולות
       budget_investments_info: משתתף ב http://url.consul
-      budget_investments_note: תקציב השתתפותי יוקצה להצבעה עם רוב קולות
     print_info: הדפסת מידע זה
     proposals:
       alert:
@@ -75,15 +72,16 @@ he:
       create_proposal: יצירת הצעה חדשה
       print:
         print_button: הדפסה
+      index:
+        title: תמיכה בהצעות
     budgets:
-      create_new_investment: יצירת השקעה חדשה
-      print_investments: הדפסת תקציב השקעות
-      support_investments: תמיכה בתקציב השקעות
+      create_new_investment: יצירת תקציב להשקעה
+      table_name: Name
+      table_phase: שלב
     budget_investments:
       alert:
         unverified_user: המשתמש אינו מאומת
       filters:
-        heading: קונספט/רעיון כללי
         unfeasible: השקעה אינה ברת ביצוע
       print:
         print_button: הדפסה
@@ -93,7 +91,7 @@ he:
       create: יצירת הצעה תקציב
       filters:
         unfeasible: פרויקטים להשקעה אינם ברי ביצוע
-        by_geozone: 'פרויקטים להשקעה בהיקפים של:: %{geozone}'
+        by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
       print:
         print_button: הדפסה
     sessions:
@@ -102,20 +100,19 @@ he:
     username_label: שם המשתמש/ת
     users:
       create_user: יצירת חשבון חדש
-      create_user_info: 'אנו ניצור חשבון עם הנתונים הבאים:'
       create_user_submit: יצירת משתמש/ת
       create_user_success_html: שלחנו הודעה לכתובת הדואר אלקטרוני <b>%{email}</b> כדי לוודא שהוא שייך למשתמש/ת. ההודעה מכילה קישור שעליך ללחוץ עליו. לאחר מכן יש צורך להגדיר את סיסמת הגישה שלך לפני שיתאפשר להיכנס לאתר
       erased_notice: חשבון המשתמש/ת נמחק
-      erased_by_manager: 'נמחק על ידי מנהל: %{manager}'
+      erased_by_manager: "נמחק על ידי מנהל: %{manager}"
       erase_account_link: מחיקת משתמש
       erase_account_confirm: בטוח שברצונך למחוק את החשבון? לא ניתן לבטל פעולה זו
       erase_warning: לא ניתן לבטל פעולה זו. נא לוודא שכוונתך למחוק את החשבון הזה
       erase_submit: מחיקת החשבון
     user_invites:
       new:
-        label: הודעות דואר אלקטרוני
+        label: הודעה בדואר אלקטרוני
         info: "הזנת כתובות דואר אלקטרוני מופרדות בפסיקים (',')"
-        submit: שליחת הזמנות
+        submit: הזמנות של המשתמש/ת
         title: הזמנות של המשתמש/ת
       create:
         success_html: <strong>%{count} ההזמנות</strong> נשלחו

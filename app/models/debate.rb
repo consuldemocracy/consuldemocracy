@@ -12,6 +12,7 @@ class Debate < ActiveRecord::Base
   include Graphqlable
   include Relationable
   include Notifiable
+  include Randomizable
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -37,7 +38,6 @@ class Debate < ActiveRecord::Base
   scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc) }
   scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
   scope :sort_by_most_commented,   -> { reorder(comments_count: :desc) }
-  scope :sort_by_random,           -> { reorder("RANDOM()") }
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
@@ -88,6 +88,10 @@ class Debate < ActiveRecord::Base
     cached_votes_total
   end
 
+  def votes_score
+    cached_votes_score
+  end
+
   def total_anonymous_votes
     cached_anonymous_votes_total
   end
@@ -122,14 +126,11 @@ class Debate < ActiveRecord::Base
   end
 
   def after_commented
-    save # updates the hot_score because there is a before_save
+    save # update cache when it has a new comment
   end
 
   def calculate_hot_score
-    self.hot_score = ScoreCalculator.hot_score(created_at,
-                                               cached_votes_total,
-                                               cached_votes_up,
-                                               comments_count)
+    self.hot_score = ScoreCalculator.hot_score(self)
   end
 
   def calculate_confidence_score
@@ -151,7 +152,7 @@ class Debate < ActiveRecord::Base
 
   def self.debates_orders(user)
     orders = %w{hot_score confidence_score created_at relevance}
-    orders << "recommendations" if user.present?
-    orders
+    orders << "recommendations" if Setting['feature.user.recommendations_on_debates'] && user&.recommended_debates
+    return orders
   end
 end

@@ -1,0 +1,5 @@
+sl:
+  social_share_button:
+    share_to: "Deli z %{name}"
+    weibo: "Deli na Weibo"
+    email: "E-naslov"

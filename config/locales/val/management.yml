@@ -1,10 +1,25 @@
 val:
   management:
     account:
+      menu:
+        reset_password_email: Restablir contrasenya via email
+        reset_password_manually: Restablir contrasenya manualment
       alert:
         unverified_user: Sols es poden editar comptes d'usuaris verificats
       show:
         title: Compte d'usuari
+      edit:
+        title: 'Editar compte d''usuari: Restablir contrasenya'
+        back: Tornar
+        password:
+          password: Contrasenya
+          send_email: Enviar email per a restablir contrasenya
+          reset_email_send: Email enviat correctament.
+          reseted: Contrasenya restablida correctament
+          random: Generar contrasenya aleatoria
+          save: Guardar contrasenya
+          print: Imprimir contrasenya
+          print_help: Podràs imprimir la contrasenya quant s'haja guardat.
     account_info:
       change_user: Canviar usuari
       document_number_label: 'Número de document:'
@@ -12,7 +27,7 @@ val:
       email_label: 'Correu electrònic:'
       identified_label: 'Identificat com:'
       username_label: 'Nom d''usuari:'
-    check: Comprovar
+    check: Revisa document
     dashboard:
       index:
         title: Gestió
@@ -20,7 +35,7 @@ val:
     document_number: Número de document
     document_type_label: Tipus de document
     document_verifications:
-      already_verified: Aquest usuari ja està verificat.
+      already_verified: Este compte d'usuari ja està verificat.
       has_no_account_html: Per a crear un usuari entra %{link} i fes clic en la opció <strong>'Registrar-se'</strong> en la part superior dreta de la pantalla.
       link: CONSUL
       in_census_has_following_permissions: 'Este usuari pot participar en el Portal de Govern Obert amb les següents posibilitats:'
@@ -33,7 +48,7 @@ val:
     email_label: Correu electrònic
     date_of_birth: Data de naixement
     email_verifications:
-      already_verified: Este compte d'usuari ja està verificat.
+      already_verified: Aquest usuari ja està verificat.
       choose_options: 'Eligeix una de les opcions següents:'
       document_found_in_census: Este document està en el registre del padró municipal, però encara no te un compte d'usuari associat.
       document_mismatch: 'Este correu electrònic correspon a un usuari que ya te associat el document %{document_number}(%{document_type})'
@@ -50,51 +65,54 @@ val:
       create_spending_proposal: Crear proposta d'inversió
       print_spending_proposals: Imprimir propostes d'inversió
       support_spending_proposals: Avalar propostes d'inversió
-      create_budget_investment: Crear projectes d'inversió
-      print_budget_investments: Imprimir Projectes d'Inversió
-      support_budget_investments: Avalar Projectes d'Inversió
-      users: Usuaris
-      edit_user_accounts: Editar compte d'usuari
-      user_invites: Invitacions per a usuaris
+      create_budget_investment: Crear nou projecte
+      print_budget_investments: Imprimir projectes d'inversió
+      support_budget_investments: Avalar projectes d'inversió
+      users: Gestió d'usuaris
+      user_invites: Enviar invitacions
+      select_user: Seleccionar usuari
     permissions:
       create_proposals: Crear noves propostes
       debates: Participar en debats
       support_proposals: Avalar propostes
       vote_proposals: Participar en les votacions finals
     print:
-      proposals_info: Fes la teua proposta en http://url.consul
-      proposals_note: Les propostes més avalades seran dutes a votació. I si les accepta una majoría, l'Ajuntament les durà a terme.
+      proposals_info: Crea la teua proposta en http://url.consul
       proposals_title: 'Propostes:'
       spending_proposals_info: Participa en http://url.consul
-      spending_proposals_note: Els pressupostos participatius s'invertiran en les propostes d'inversió més avalades.
       budget_investments_info: Participa en http://url.consul
-      budget_investments_note: Els pressupostos participatius s'invertiran en les propostes d'inversió més avalades.
     print_info: Imprimir esta informació
     proposals:
       alert:
-        unverified_user: Este usuari no està verificat
-      create_proposal: Crear una proposta
+        unverified_user: Usuari no verificat
+      create_proposal: Crear proposta
       print:
         print_button: Imprimir
+      index:
+        title: Avalar propostes
     budgets:
-      create_new_investment: Crear nou projecte
-      print_investments: Imprimir Propostes d'Inversió
-      support_investments: Avalar Propostes d'Inversió
+      create_new_investment: Crear projectes d'inversió
+      print_investments: Imprimir projectes d'inversió
+      support_investments: Avalar projectes d'inversió
+      table_name: Nom
+      table_phase: Fase
+      table_actions: Accions
+      no_budgets: No hi ha pressupostos participatius actius.
     budget_investments:
       alert:
-        unverified_user: Usuari no verificat
-      create: Crear nou projecte
+        unverified_user: Este usuari no està verificat
+      create: Crear proposta d'inversió
       filters:
         heading: Concepte
         unfeasible: Projectes no factibles
       print:
         print_button: Imprimir
       search_results:
-        one: " que conté '%{search_term}'"
+        one: " que contenen '%{search_term}'"
         other: " que contenen '%{search_term}'"
     spending_proposals:
       alert:
-        unverified_user: Usuari no verificat
+        unverified_user: Este usuari no està verificat
       create: Crear proposta d'inversió
       filters:
         unfeasible: Propostes d'inversió no viables
@@ -102,7 +120,7 @@ val:
       print:
         print_button: Imprimir
       search_results:
-        one: " que conté '%{search_term}'"
+        one: " que contenen '%{search_term}'"
         other: " que contenen '%{search_term}'"
     sessions:
       signed_out: Has tancat la sessió correctament.
@@ -110,7 +128,7 @@ val:
     username_label: Nom d'usuari
     users:
       create_user: Crear nou compte d'usuari
-      create_user_info: 'Procedim a crear un usuari amb la següent informació:'
+      create_user_info: Procedim a crear un compte amb la següent informació
       create_user_submit: Crear usuari
       create_user_success_html: Hem enviat un correu electrònic a <strong>%{email}</strong> per a verificar que es seua. El correu enviat conté un enllaç que l'usuari haurà de polsar. Entonces podrà seleccionar una contrasenya, i entrar en la web de participació
       autogenerated_password_html: "S'ha asignat la contrasenya <strong>%{password}</strong> a este usuari. Pots modificarla desde l'apartat 'El meu compte' de la web"
@@ -125,7 +143,7 @@ val:
       new:
         label: Correus electrònics
         info: "Introdueix els correus electrònics separats per comes (',')"
-        submit: Enviar invitacions
+        submit: Invitacions per a usuaris
         title: Invitacions per a usuaris
       create:
         success_html: S'han enviat <strong>%{count} invitacions</strong>.

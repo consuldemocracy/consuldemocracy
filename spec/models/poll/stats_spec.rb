@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Poll::Stats do
 
@@ -7,10 +7,10 @@ describe Poll::Stats do
       poll = create(:poll)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_voter, poll: poll, origin: 'web')
-      3.times {create(:poll_voter, poll: poll, origin: 'booth')}
+      create(:poll_voter, poll: poll, origin: "web")
+      3.times {create(:poll_voter, poll: poll, origin: "booth")}
       create(:poll_voter, poll: poll)
-      create(:poll_recount, origin: 'booth', white_amount: 1, null_amount: 0, total_amount: 2, booth_assignment_id: booth_assignment.id)
+      create(:poll_recount, origin: "booth", white_amount: 1, null_amount: 0, total_amount: 2, booth_assignment_id: booth_assignment.id)
       stats = described_class.new(poll).generate
 
       expect(stats[:total_participants]).to eq(5)

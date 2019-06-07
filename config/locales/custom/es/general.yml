@@ -13,8 +13,9 @@ es:
     footer:
       participation_text: Decide cómo debe ser la provincia que quieres.
       transparency_text: Obtén cualquier información sobre la provincia.
+      transparency_title: Transparencia
     header:
-      collaborative_legislation: Procesos normativos
+      collaborative_legislation: Legislación colaborativa
       notifications: Notificaciones
       new_notifications:
         one: Tienes una nueva notificación
@@ -50,6 +51,11 @@ es:
       no_geozone_restricted: "Toda la provincia"
       geozone_restricted: "Comarcas"
       section_footer:
+        help_text_1: |
+          Las votaciones se convocan cuando una propuesta ciudadana alcanza el
+          1% de apoyos del censo con derecho a voto. En las votaciones también
+          se pueden incluir cuestiones que el Ayuntamiento somete a decisión
+          directa de la ciudadanía.
         help_text_2: "Para participar en la próxima votación tienes que registrarte en %{org} y verificar tu cuenta. Pueden votar todas las personas empadronadas en la provincia mayores de 16 años. Los resultados de todas las votaciones serán vinculantes para el gobierno."
   shared:
     tags_cloud:
@@ -60,12 +66,16 @@ es:
       different_heading_assigned: Sólo puedes apoyar proyectos de gasto de una partida
   welcome:
     debates:
+      title: Debates
       description: Comparte y debate lo que te parezca importante para nuestra provincia.
     decide:
+      title: Decides
       description: Todos los habitantes de la provincia podremos decidir si las propuestas realizadas se llevan a cabo.
     do:
+      title: Se hace
       description: Si la propuesta es aceptada mayoritariamente, tu Ayuntamiento o la Diputación la llevarán a cabo.
     proposal:
+      title: Propones
       description: Realiza propuestas concretas para mejorar el lugar donde vives.
   related_content:
     content_title:

@@ -29,13 +29,15 @@
   </div>
 </div>
 
+<div class="clear">
+  <%= link_to t("admin.questions.show.add_answer"), new_admin_question_answer_path(@question),
+              class: "button float-right" %>
+</div>
+
 <table class="margin-top">
   <tr>
     <th colspan="5" scope="col" class="with-button">
       <%= t('admin.questions.show.valid_answers') %>
-      <%= link_to t("admin.questions.show.add_answer"),
-                  new_admin_question_answer_path(@question),
-                  class: "button float-right" %>
     </th>
   </tr>
 

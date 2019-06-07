@@ -1,0 +1,18 @@
+fi:
+  officing:
+    results:
+      new:
+        date: "Päivämäärä"
+        submit: "Tallenna"
+        see_results: "Näytä tulokset"
+      index:
+        table_answer: Vastaus
+        table_votes: Äänet
+    residence:
+      new:
+        document_number: "Asiakirjan numero (myös kirjaimet)"
+    voters:
+      new:
+        title: Kyselyt
+        table_poll: Kysely
+        table_actions: Toiminnot

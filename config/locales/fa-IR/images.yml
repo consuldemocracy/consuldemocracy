@@ -1,0 +1,21 @@
+fa:
+  images:
+    remove_image: حذف تصویر
+    form:
+      title: تصویر توصيفي
+      title_placeholder: افزودن عنوان توصیفی برای تصویر
+      attachment_label: انتخاب تصویر
+      delete_button: حذف تصویر
+      note: "شما می توانید یک تصویر از انواع مطالب زیر آپلود کنید: %{accepted_content_types}تا %{max_file_size} مگابایت."
+      add_new_image: اضافه کردن تصویر
+      admin_title: "تصویر"
+      admin_alt_text: "متن جایگزین برای تصویر"
+    actions:
+      destroy:
+        notice: تصویر با موفقیت حذف شد.
+        alert: نمی توان تصویر را از بین برد.
+        confirm: آیا مطمئن هستید که می خواهید تصویر را  حذف کنید؟ این دستور قابل بازگشت نیست!
+    errors:
+      messages:
+        in_between: باید بین %{min} و %{max} باشد.
+        wrong_content_type: نوع محتوا %{content_type} با هیچ یک از انواع مطالب و محتوا پذیرفته شده %{accepted_content_types} مطابقت ندارد

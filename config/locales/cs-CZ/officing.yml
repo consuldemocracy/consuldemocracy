@@ -1,0 +1,18 @@
+cs:
+  officing:
+    results:
+      new:
+        submit: "Uložit"
+        see_results: "Zobrazit výsledky"
+      index:
+        results: Výsledky
+        table_answer: Answer
+        table_votes: Hlasů
+    residence:
+      new:
+        document_number: "Identifikátor dokumentu (včetně písmen)"
+    voters:
+      new:
+        title: Průzkum
+        table_poll: Průzkum
+        table_actions: Akce

@@ -1,6 +1,6 @@
 class Budget
   class Investment < ActiveRecord::Base
-    SORTING_OPTIONS = %w(id title supports).freeze
+    SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
     include Rails.application.routes.url_helpers
     include Measurable
@@ -23,6 +23,9 @@ class Budget
     include Relationable
     include Notifiable
     include Filterable
+    include Flaggable
+    include Milestoneable
+    include Randomizable
 
     belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
     belongs_to :heading
@@ -39,8 +42,6 @@ class Budget
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
 
-    has_many :milestones
-
     validates :title, presence: true
     validates :author, presence: true
     validates :description, presence: true
@@ -55,11 +56,15 @@ class Budget
     scope :sort_by_confidence_score, -> { reorder(confidence_score: :desc, id: :desc) }
     scope :sort_by_ballots,          -> { reorder(ballot_lines_count: :desc, id: :desc) }
     scope :sort_by_price,            -> { reorder(price: :desc, confidence_score: :desc, id: :desc) }
-    scope :sort_by_random,           ->(seed) { reorder("budget_investments.id % #{seed.to_f.nonzero? ? seed.to_f : 1}, budget_investments.id") }
+
+    scope :sort_by_id, -> { order("id DESC") }
+    scope :sort_by_title, -> { order("title ASC") }
+    scope :sort_by_supports, -> { order("cached_votes_up DESC") }
 
     scope :valuation_open,              -> { where(valuation_finished: false) }
     scope :without_admin,               -> { valuation_open.where(administrator_id: nil) }
-    scope :without_valuator,            -> { valuation_open.where(valuator_assignments_count: 0) }
+    scope :without_valuator_group,      -> { where(valuator_group_assignments_count: 0) }
+    scope :without_valuator,            -> { valuation_open.without_valuator_group.where(valuator_assignments_count: 0) }
     scope :under_valuation,             -> { valuation_open.valuating.where("administrator_id IS NOT ?", nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
     scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0" ) }
@@ -77,6 +82,8 @@ class Budget
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
     scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
+    scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
     scope :by_budget,         ->(budget)      { where(budget: budget) }
     scope :by_group,          ->(group_id)    { where(group_id: group_id) }
@@ -89,7 +96,7 @@ class Budget
     scope :for_render, -> { includes(:heading) }
 
     before_save :calculate_confidence_score
-    after_save :recalculate_heading_winners if :incompatible_changed?
+    after_save :recalculate_heading_winners
     before_validation :set_responsible_name
     before_validation :set_denormalized_ids
 
@@ -109,14 +116,16 @@ class Budget
       budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
       results = Investment.by_budget(budget)
 
-      results = limit_results(budget, params, results)                if params[:max_per_heading].present?
-      results = results.where(group_id: params[:group_id])            if params[:group_id].present?
-      results = results.by_tag(params[:tag_name])                     if params[:tag_name].present?
-      results = results.by_heading(params[:heading_id])               if params[:heading_id].present?
-      results = results.by_valuator(params[:valuator_id])             if params[:valuator_id].present?
-      results = results.by_valuator_group(params[:valuator_group_id]) if params[:valuator_group_id].present?
-      results = results.by_admin(params[:administrator_id])           if params[:administrator_id].present?
-      results = advanced_filters(params, results)                     if params[:advanced_filters].present?
+      results = results.where("cached_votes_up + physical_votes >= ?",
+                              params[:min_total_supports])                    if params[:min_total_supports].present?
+      results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
+      results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
+      results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
+      results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
+      results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
+      results = results.by_admin(params[:administrator_id])                if params[:administrator_id].present?
+      results = advanced_filters(params, results)                          if params[:advanced_filters].present?
+      results = search_by_title_or_id(params[:title_or_id].strip, results) if params[:title_or_id]
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
@@ -131,6 +140,18 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
+    def self.order_filter(params)
+      sorting_key = params[:sort_by]&.downcase&.to_sym
+      allowed_sort_option = SORTING_OPTIONS[sorting_key]
+
+      if allowed_sort_option.present?
+        direction = params[:direction] == "desc" ? "desc" : "asc"
+        order("#{allowed_sort_option} #{direction}")
+      else
+        order(cached_votes_up: :desc).order(id: :desc)
+      end
+    end
+
     def self.limit_results(budget, params, results)
       max_per_heading = params[:max_per_heading].to_i
       return results if max_per_heading <= 0
@@ -143,11 +164,12 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.search_by_title_or_id(params)
-      results = Investment.where(budget_id: params[:budget_id])
-
-      return results.where(id: params[:title_or_id]) if params[:title_or_id] =~ /\A[0-9]+\z/
-      results.where("title ILIKE ?", "%#{params[:title_or_id].strip}%")
+    def self.search_by_title_or_id(title_or_id, results)
+      if title_or_id =~ /^[0-9]+$/
+        results.where(id: title_or_id)
+      else
+        results.where("title ILIKE ?", "%#{title_or_id}%")
+      end
     end
 
     def searchable_values
@@ -240,7 +262,7 @@ class Budget
     end
 
     def can_vote_in_another_heading?(user)
-      headings_voted_by_user(user).count < group.max_votable_headings
+      user.headings_voted_within_group(group).count < group.max_votable_headings
     end
 
     def headings_voted_by_user(user)
@@ -248,7 +270,7 @@ class Budget
     end
 
     def voted_in?(heading, user)
-      headings_voted_by_user(user).include?(heading.id)
+      user.headings_voted_within_group(group).where(id: heading.id).exists?
     end
 
     def ballotable_by?(user)
@@ -325,6 +347,24 @@ class Budget
 
     def assigned_valuation_groups
       self.valuator_groups.collect(&:name).compact.join(', ').presence
+    end
+
+    def valuation_tag_list
+      tag_list_on(:valuation)
+    end
+
+    def valuation_tag_list=(tags)
+      set_tag_list_on(:valuation, tags)
+    end
+
+    def self.with_milestone_status_id(status_id)
+      joins(:milestones).includes(:milestones).select do |investment|
+        investment.milestone_status_id == status_id.to_i
+      end
+    end
+
+    def milestone_status_id
+      milestones.published.with_status.order_by_publication_date.last&.status_id
     end
 
     private

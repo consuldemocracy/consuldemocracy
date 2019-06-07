@@ -1,6 +1,8 @@
 <%= back_link_to admin_booths_path %>
 
-<h2><%= t("admin.booths.new.title") %></h2>
+<div class="small-12 column">
+  <h2><%= t("admin.booths.new.title") %></h2>
+</div>
 
 <%= form_for @booth, url: admin_booths_path(@booth) do |f| %>
   <%= render "form", f: f %>

@@ -7,38 +7,16 @@
 </head>
 <body style="background: #fff; font-family:font-family: 'Open Sans','Helvetica Neue',arial,sans-serif !important; margin: 0 10px; padding: 0; text-align: left;">
 
+  <%= render "layouts/mailer_header" %>
+
   <table cellpadding="0" cellspacing="0" border="0" style="background: #fff; margin: 0 auto; max-width: 700px; width:100%;">
-    <tr>
-      <td>
-        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
-          <tr>
-            <td style="border-bottom: 1px solid #dadfe1; padding: 20px 0;">
-              <a href="#" target="_blank">
-                <%= image_tag('logo_email.png',  style: "border: 0; display: block; width: 100%;max-width: 370px", alt: setting['org_name']) %>
-              </a>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-    <tr>
-      <%= yield %>
-    </tr>
-  </table>
-
-  <table cellpadding="0" cellspacing="0" border="0" style="margin: 0 auto; max-width: 700px; width:100%; margin-bottom: 40px; padding: 0 20px;">
     <tbody>
-    <tr>
-      <td style="text-align: center; border-top: 1px solid #dadfe1; padding-top: 20px;">
-        <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin: 0;padding: 0;line-height: 1.5em;color: #797f7f; font-size: 12px;">
-        <%= setting['org_name'] %></p>
-
-        <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; margin: 0;padding: 0;line-height: 1.5em;color: #222; font-size: 10px; margin-top: 12px;">
-        <%= t('mailers.no_reply') %></p>
-
-      </td>
-    </tr>
+      <tr>
+        <%= yield %>
+      </tr>
     </tbody>
   </table>
+
+  <%= render "layouts/mailer_footer" %>
 </body>
 </html>

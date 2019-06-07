@@ -2,11 +2,11 @@ val:
   legislation:
     annotations:
       comments:
-        see_all: Vore tots
+        see_all: Vore totes
         see_complete: Vore complet
         comments_count:
           one: "%{count} comentari"
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
         replies_count:
           one: "%{count} resposta"
           other: "%{count} respostes"
@@ -23,7 +23,7 @@ val:
         see_in_context: Vore en context
         comments_count:
           one: "%{count} comentari"
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
       show:
         title: Comentari
       version_chooser:
@@ -46,18 +46,24 @@ val:
         text_body: Text
         text_comments: Comentaris
     processes:
+      header:
+        additional_info: Informació adicional
+        description: Descripció
+        more_info: Més informació y contexte
       proposals:
         empty_proposals: No hi ha propostes
+        filters:
+          random: Aleatòries
+          winners: Seleccionades
       debate:
         empty_questions: No hi ha preguntes
         participate: Realitza les teues aportacions al debat previ participant en els seguents temes
       index:
+        filter: Filtre
         filters:
-          open: Processos actius
-          next: Pròximament
+          open: Processos oberts
           past: Finalitzats
         no_open_processes: No hi ha processos actius
-        no_next_processes: No hi ha processos planejats
         no_past_processes: No hi ha processos finalitzats
         section_header:
           icon_alt: Icona de Processos legislatius
@@ -65,9 +71,7 @@ val:
           help: Ajuda sobre processos legislatius
         section_footer:
           title: Ajuda sobre processos legislatius
-          help_text_1: "En els processos participatius, l'Ajuntament ofereix a la ciutadania l'oportunitat de participar en l'elaboració i modificació de normativa que afecta a la ciutat i de donar la seua opinió sobre certes actuacions que te previst dur a terme."
-          help_text_2: "Les persones registrades en %{org} poden participar amb aportacions en la consulta pública de noves ordenances, reglaments y directrius, entre altres. Els seus comentaris son analitzats per l'àrea corresponent y tenguts en compte de cara a la redacció final de les normes."
-          help_text_3: "L'Ajuntament també obre processos per a rebre aportacions i opinions sobre les actuacions municipals."
+          description: Participa en els debats y processos previs a la aprovació d'una norma o d'una actuació municipal. La teua opinió serà tinguda en compte per l'Ajuntament.
       phase_not_open:
         not_open: Esta fase del procés encara no esta oberta
       phase_empty:
@@ -77,10 +81,12 @@ val:
         see_latest_comments_title: Aportar a aquest procés
       shared:
         key_dates: Dates clau
+        homepage: Pàgina principal
         debate_dates: Debat
         draft_publication_date: Data de publicació de l'esborrany
-        allegations_dates: Alegacions
+        allegations_dates: Comentaris
         result_publication_date: Publicació de resultats
+        milestones_date: Seguint
         proposals_dates: Propostes
     questions:
       comments:
@@ -93,7 +99,7 @@ val:
         comments:
           zero: Sense comentaris
           one: "%{count} comentari"
-          other: "%{count} comentaris"
+          other: "%{count} Comentaris"
         debate: Debat
       show:
         answer_question: Publicar resposta
@@ -117,4 +123,3 @@ val:
       form:
         tags_label: "Categoríes"
       not_verified: "Per a votar propostes %{verify_account}."
-      closed: "Aquest procés esta tancat i ja no accepta vots."

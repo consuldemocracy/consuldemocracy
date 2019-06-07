@@ -1,18 +1,18 @@
 <main>
+  <h2><%= t("management.proposals.index.title") %></h2>
+
   <%= render 'admin/shared/proposal_search', url: management_proposals_path %>
 
-  <div class="row">
-    <div class="proposals-list small-12 column">
+  <div class="management-list">
+    <div class="proposals-list">
 
       <div class="filters">
-        <div class="small-12 medium-7 float-left">
-          <% if @search_terms %>
-            <h2>
-              <%= page_entries_info @proposals %>
-              <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
-            </h2>
-          <% end %>
-        </div>
+        <% if @search_terms %>
+          <h3>
+            <%= page_entries_info @proposals %>
+            <%= t("proposals.index.search_results_html", count: @proposals.size, search_term: @search_terms) %>
+          </h3>
+        <% end %>
 
         <%= render @proposals %>
         <%= paginate @proposals %>

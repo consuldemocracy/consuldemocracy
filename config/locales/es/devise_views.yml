@@ -16,7 +16,7 @@ es:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
         text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
-        title: Te damos la bienvenida al Portal de Gobierno Abierto
+        title: Bienvenido/a
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña
@@ -91,7 +91,7 @@ es:
         delete_form:
           erase_reason_label: Razón de la baja
           info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a entrar con ella.
-          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional)
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
           submit: Darme de baja
           title: Darme de baja
         edit:

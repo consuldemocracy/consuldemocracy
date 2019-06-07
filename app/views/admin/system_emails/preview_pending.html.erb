@@ -1,0 +1,16 @@
+<%= back_link_to admin_system_emails_path %>
+
+<% system_email_name = t("admin.system_emails.#{@system_email}.title") %>
+<h2><%= t("admin.system_emails.preview_pending.preview_of", name: system_email_name) %></h2>
+
+<div class="small-12 column">
+  <h4><%= t("admin.system_emails.preview_pending.pending_to_be_sent") %></h4>
+  <p><%= t("admin.system_emails.#{@system_email}.preview_detail") %></p>
+
+  <% @previews.each do |preview| %>
+    <%= render partial: "admin/system_emails/preview_pending/#{@system_email}",
+               locals: { preview: preview } %>
+  <% end %>
+</div>
+
+<%= paginate @previews %>

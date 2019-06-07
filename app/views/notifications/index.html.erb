@@ -10,7 +10,7 @@
             class: "button hollow float-right-medium" %>
 
     <ul class="menu simple clear">
-      <li class="active">
+      <li class="is-active">
         <h2><%= link_to t("notifications.index.unread"), notifications_path %></h2>
       </li>
       <li>
@@ -24,7 +24,9 @@
       </div>
     <% else %>
       <ul class="no-bullet clear notifications-list">
-        <%= render @notifications %>
+        <% @notifications.each do |notification| %>
+          <%= render partial: '/notifications/notification', locals: {notification: notification} %>
+        <% end %>
       </ul>
     <% end %>
   </div>

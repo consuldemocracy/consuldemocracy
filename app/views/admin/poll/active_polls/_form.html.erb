@@ -1,0 +1,20 @@
+<%= render "admin/shared/globalize_locales", resource: @active_poll %>
+
+<%= translatable_form_for(@active_poll, url: form_url) do |f| %>
+
+  <%= render 'shared/errors', resource: @active_poll %>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="ckeditor">
+      <span class="help-text"><%= t("admin.active_polls.form.description.help_text") %></span>
+      <%= translations_form.cktext_area :description,
+                                         maxlength: ActivePoll.description_max_length,
+                                         label: t("admin.active_polls.form.description.text") %>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-4 large-2 margin-top">
+    <%= f.submit(class: "button success", value: t("shared.save")) %>
+  </div>
+
+<% end %>

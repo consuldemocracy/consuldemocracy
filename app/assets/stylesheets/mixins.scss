@@ -11,25 +11,13 @@
 @mixin logo {
   color: #fff;
   display: inline-block;
-  font-family: 'Lato' !important;
+  font-family: "Lato" !important;
   font-size: rem-calc(24);
   font-weight: lighter;
 
   @include breakpoint(medium) {
     line-height: $line-height * 2;
     margin-top: 0;
-  }
-
-  img {
-    height: 48px;
-    width: 48px;
-
-    @include breakpoint(medium) {
-      height: 80px;
-      margin-right: $line-height / 2;
-      margin-top: 0;
-      width: 80px;
-    }
   }
 }
 

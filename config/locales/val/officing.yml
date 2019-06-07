@@ -6,8 +6,9 @@ val:
       index:
         title: Presidir taula de votacions
         info: Ací pots validar documents de ciutadans i guardar els resultats de les urnes
+        no_shifts: Hui no tens torn de president de taula.
     menu:
-      voters: Validar document i votar
+      voters: Validar document
       total_recounts: Recompte total i escrutini
     polls:
       final:
@@ -22,7 +23,7 @@ val:
         error_wrong_booth: "Urna incorrecta. Resultats NO guardats."
       new:
         title: "%{poll} - Afegir resultats"
-        not_allowed: "No tens permís per a introduir resultats"
+        not_allowed: "No tens permís per a introduir resultats en aquesta votació"
         booth: "Urna"
         date: "Data"
         select_booth: "Eligeix urna"
@@ -45,9 +46,9 @@ val:
         create: "Document verificat per el Padró"
         not_allowed: "Hui no tens torn de president de taula"
       new:
-        title: Validar document
+        title: Validar document i votar
         document_number: "Número de document (inclosa lletra)"
-        submit: Validar document
+        submit: Validar document i votar
         error_verifying_census: "El Padró no ha pogut verificar aquest document."
         form_errors: evitaren verificar aquest document
         no_assignments: "Hui no tens torn de president de taula"
@@ -57,6 +58,7 @@ val:
         table_poll: Votació
         table_status: Estat de les votacions
         table_actions: Accions
+        not_to_vote: Aquesta persona ha decidit no votar en aquest moment
       show:
         can_vote: Pot votar
         error_already_voted: Ya has participat en esta votació

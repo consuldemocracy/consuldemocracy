@@ -1,4 +1,9 @@
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<% provide :title do %><%= t('budgets.index.title') %><% end %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
@@ -31,7 +36,7 @@
             <% if current_user %>
               <% if current_user.level_two_or_three_verified? %>
                 <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
+                            new_budget_investment_path(current_budget),
                             class: "button margin-top expanded" %>
               <% else %>
                 <div class="callout warning margin-top">
@@ -51,8 +56,7 @@
             <% end %>
           <% end %>
 
-
-        <% if current_budget.finished? || (current_budget.balloting? && can?(:read_results, current_budget)) %>
+        <% if current_budget.finished? %>
           <%= link_to t("budgets.show.see_results"),
                       budget_results_path(current_budget, heading_id: current_budget.headings.first),
                       class: "button margin-top expanded" %>
@@ -68,15 +72,16 @@
         <div id="groups_and_headings" class="groups-and-headings">
           <% current_budget.groups.each do |group| %>
             <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
-            <ul class="no-bullet">
-              <% group.headings.order_by_group_name.each do |heading| %>
-                <li class="heading small-12 medium-4 large-2">
-                  <% unless current_budget.informing? %>
-                    <%= link_to budget_investments_path(current_budget.id, heading_id: heading.id) do %>
+            <ul class="no-bullet" data-equalizer data-equalizer-on="medium">
+              <% group.headings.sort_by_name.each do |heading| %>
+                <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
+                  <% unless current_budget.informing? || current_budget.finished? %>
+                    <%= link_to budget_investments_path(current_budget.id,
+                                                        heading_id: heading.id) do %>
                       <%= heading_name_and_price_html(heading, current_budget) %>
                     <% end %>
                   <% else %>
-                    <div>
+                    <div class="heading-name">
                       <%= heading_name_and_price_html(heading, current_budget) %>
                     </div>
                   <% end %>
@@ -87,28 +92,37 @@
         </div>
 
         <% unless current_budget.informing? %>
-          <!-- Entiendo que este mapa es sustituido por el mapa inferior -->
-          <!--<div id="map">
+          <div class="map inline">
             <h3><%= t("budgets.index.map") %></h3>
             <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
-          </div> -->
-          <small><%= link_to t("budgets.index.section_footer.help_text_10"), "#section_zona" %></small>
-          <p>
+          </div>
+
+          <ul class="no-bullet margin-top">
+            <li>
+              <small><%= link_to t("budgets.index.section_footer.help_text_10"), "#section_zona" %></small>
+            </li>
+
             <% show_links = show_links_to_budget_investments(current_budget) %>
             <% if show_links %>
-              <%= link_to budget_investments_path(current_budget.id) do %>
-                <small><%=link_to t("budgets.index.investment_proyects") , "/budgets/2/results" %></small>
-              <% end %><br>
+              <li>
+                <%= link_to budget_url(current_budget) do %>
+                  <small><%= t("budgets.index.investment_proyects") %></small>
+                <% end %>
+              </li>
             <% end %>
-            <%= link_to budget_investments_path(budget_id: current_budget.id, filter: 'unfeasible') do %>
-              <small><%=link_to t("budgets.index.unfeasible_investment_proyects") , "/budgets/2?filter=unfeasible" %></small>
-            <% end %><br>
-            <% if show_links %>
-              <%= link_to budget_investments_path(budget_id: current_budget.id, filter: 'unselected') do %>
-                <small><%=link_to t("budgets.index.not_selected_investment_proyects") , "/budgets/2?filter=unselected" %></small>
+            <li>
+              <%= link_to budget_url(current_budget, filter: "unfeasible") do %>
+                <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
               <% end %>
+            </li>
+            <% if show_links %>
+              <li>
+                <%= link_to budget_url(current_budget, filter: "unselected") do %>
+                  <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
+                <% end %>
+              </li>
             <% end %>
-          </p>
+          </ul>
         <% end %>
 
         <div id="all_phases">
@@ -123,7 +137,7 @@
         <div class="small-12 medium-9 column">
           <ul class="no-bullet submenu">
             <li class="inline-block">
-              <%= link_to "#other_budgets", class: "active" do %>
+              <%= link_to "#other_budgets", class: "is-active" do %>
                 <h2>
                   <%= t("budgets.index.finished_budgets") %>
                 </h2>
@@ -136,16 +150,20 @@
               <div class="budget-investment clear">
                 <div class="panel past-budgets">
                   <div class="row" data-equalizer data-equalizer-on="medium">
-                    <div class="small-12 medium-9 column table" data-equalizer-watch>
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div class="table-cell align-middle">
                         <h3><%= budget.name %></h3>
                       </div>
                     </div>
-                    <div class="small-12 medium-3 column table" data-equalizer-watch>
+
+                    <div class="small-12 medium-6 column table" data-equalizer-watch>
                       <div id="budget_<%= budget.id %>_results" class="table-cell align-middle">
                         <%= link_to t("budgets.index.see_results"),
                                     budget_results_path(budget.id),
-                                    class: "button expanded" %>
+                                    class: "button" %>
+                        <%= link_to t("budgets.index.milestones"),
+                                    budget_executions_path(budget.id),
+                                    class: "button" %>
                       </div>
                     </div>
                   </div>
@@ -175,102 +193,8 @@
   </div>
 <% end %>
 
-<div class="row">
-  <div class="small-12 column">
-    <div id="section_help" class="margin" data-magellan-target="section_help">
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.title") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.description") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_titulo1") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_1") %></p>
-       <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_titulo2") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_3") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_titulo3") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_3_1") %></p>
-      <p> <%= t("budgets.index.section_footer.help_text_3_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_3_3") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_3_4") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_titulo4") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_4_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4_2") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_2_1") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_2_2") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_2_3") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_2_4") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_4_3") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_4_3_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4_3_2") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_4_4") %></strong>
-      </p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_1") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_2") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_3") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_4") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_5") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_6") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_7") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_4_8") %></p>
-       <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_4_5") %></strong>
-      </p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_1") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_2") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_3") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_4") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_5") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_6") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_7") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_8") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_9") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_10") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_11") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_12") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_13") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_14") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_15") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_4_5_16") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_5") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_5_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_5_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_5_3") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_5_4") %></p>
-      <p class="lead">
-        <strong><%= t("budgets.index.section_footer.help_text_titulo6") %></strong>
-      </p>
-      <p><%= t("budgets.index.section_footer.help_text_6_1") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_6_2") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_6_2_1") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_6_2_2") %></p>
-      <p><%= t("budgets.index.section_footer.help_text_6_2_3") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_6_2_2_1") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_6_2_2_2") %></p>
-      <p>&nbsp;&nbsp;&nbsp;<%= t("budgets.index.section_footer.help_text_6_2_2_3") %></p>
+<%= render "help" %>
 
-
-      <!--<p><%= t("budgets.index.section_footer.help_text_3",
-                org: link_to(setting['org_name'], new_user_registration_path)).html_safe %></p>
-      <p><%= t("budgets.index.section_footer.help_text_4") %></p> -->
-    </div>
-  </div>
-</div>
-
-<!-- Metemos todo el código(pasado por la diputación) para que la funcionalidad Java Script Tenga Efecto -->
 <div class="row">
   <div class="small-12 column">
     <div id="section_zona" class="margin" data-magellan-target="section_zona">

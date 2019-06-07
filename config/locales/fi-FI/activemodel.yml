@@ -1,0 +1,22 @@
+fi:
+  activemodel:
+    models:
+      verification:
+        residence: "Asuinpaikka"
+        sms: "Tekstiviesti"
+    attributes:
+      verification:
+        residence:
+          document_type: "Asiakirjatyyppi"
+          document_number: "Asiakirjan numero (myös kirjaimet)"
+          date_of_birth: "Syntymäaika"
+          postal_code: "Postinumero"
+        sms:
+          phone: "Puhelin"
+          confirmation_code: "Vahvistuskoodi"
+        email:
+          recipient: "Sähköposti"
+      officing/residence:
+        document_type: "Asiakirjatyyppi"
+        document_number: "Asiakirjan numero (myös kirjaimet)"
+        year_of_birth: "Syntymävuosi"

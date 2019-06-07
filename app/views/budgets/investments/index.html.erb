@@ -57,7 +57,18 @@
 
       <%= render("shared/advanced_search", search_path: budget_investments_url(@budget)) %>
 
-      <%= render('shared/order_links', i18n_namespace: "budgets.investments.index") unless @current_filter == "unfeasible" %>
+      <% if unfeasible_or_unselected_filter %>
+        <ul class="no-bullet submenu">
+          <li class="inline-block">
+            <%= link_to current_path_with_query_params(order: "random", page: 1),
+                        class: "is-active" do %>
+              <h2><%= t("budgets.investments.index.orders.random") %></h2>
+            <% end %>
+          </li>
+        </ul>
+      <% else %>
+        <%= render("shared/order_links", i18n_namespace: "budgets.investments.index") %>
+      <% end %>
 
       <% if investments_default_view? %>
 

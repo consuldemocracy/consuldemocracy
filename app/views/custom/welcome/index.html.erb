@@ -4,169 +4,29 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: root_url %>
 <% end %>
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<%= render "header", header: @header %>
 
-<div class="jumbow3 highlight">
-  <div class="w3-content w3-display-container">
-    <%= image_tag(image_path_for('slide1.jpg'), class: 'mySlides w3-animate-right', alt: t("layouts.slide1")) %>
-    <%= image_tag(image_path_for('slide2.jpg'), class: 'mySlides w3-animate-right', alt: t("layouts.slide2")) %>
-    <%= image_tag(image_path_for('slide3.jpg'), class: 'mySlides w3-animate-right', alt: t("layouts.slide3")) %>   
-    <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-      <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-      <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
-      <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>     
-    </div>
-  </div>
-</div>
+<main>
+  <%= render "carousel" %>
 
-<script>
-var slideIndex = 1;
-var myIndex = 0;
-showDivs(slideIndex);
-carousel();
+  <%= render "cta" %>
 
-function carousel() {
-    var i, j;
-    var x = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";
-    slideIndex = myIndex;
-    for (j = 0; j < dots.length; j++) {
-     dots[j].className = dots[j].className.replace(" w3-white", "");
-    }
-    dots[slideIndex-1].className += " w3-white";  
-    setTimeout(carousel, 10000);    
-}
+  <%= render "feeds" %>
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  if (n > x.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-white", "");
-  }
-  x[slideIndex-1].style.display = "block";
-  myIndex = slideIndex-1;  
-  dots[slideIndex-1].className += " w3-white";
-}
-</script>
-
-<!-- Presupuestos participativos 2019 -->
-<div class="jumbo highlight">
-  <div class="row">
-    <div class="small-12 medium-9 small-centered column text-center">
-      <h1><%= t("layouts.header.presupuestos_provinciales_title") %></h1>
-      <p class="lead">
-        <%= t("layouts.header.presupuestos_provinciales_description") %>
-      </p>
-      <div class="small-12 medium-6 large-4 small-centered">
-      
-       <% if current_budget.accepting? %>
-            <% if current_user %>
-              <% if current_user.level_two_or_three_verified? %>
-                <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
-                            class: "button margin-top expanded" %>
-              <% else %>
-                <div class="callout warning margin-top">
-                  <%= t("budgets.investments.index.sidebar.verified_only",
-                      verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
-                                      verification_path)).html_safe %>
-                </div>
-              <% end %>
-            <% else %>
-              <div class="callout primary margin-top">
-                <%= t("budgets.investments.index.sidebar.not_logged_in",
-                      sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"),
-                      new_user_session_path),
-                      sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"),
-                      new_user_registration_path)).html_safe %>
-              </div>
-            <% end %>
-          <% end %>
-            
-      
-      <!--  <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_guide,
-                            class: "button margin-top expanded" %> -->
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<!--<div class="jumbo highlight">
-  <div class="row">
-    <div class="small-12 medium-9 small-centered column text-center">
-      <h1><%= t("layouts.header.open_city_title") %></h1>
-      <p class="lead">
-        <%= t("layouts.header.open_city_slogan_html") %>
-      </p>
-      <div class="small-12 medium-6 large-4 small-centered">
-        <%= link_to t("shared.more_info"), help_path, class: "button expanded large" %>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
-  <%= render "recommended",
-              recommended_debates: @recommended_debates,
-              recommended_proposals: @recommended_proposals %>
-  <hr>
-<% end %>
-
-<% cache [locale_and_user_status, @featured_debates, @featured_proposals, 'featured'] do %>
-  <main>
-    <div class="small-12 column text-center">
-      <div class="row margin padding">
-        <div class="small-12 medium-3 column">
-          <%= image_tag(image_path_for('conversation.png'), class: 'float-center', size: '150x150', alt: t("layouts.conversation")) %>
-          <h2><%= t("welcome.debates.title") %></h2>
-          <p><%= t("welcome.debates.description") %></p>
-        </div>
-        <div class="small-12 medium-3 column">
-          <%= image_tag(image_path_for('point-at.png'), class: 'float-center', size: '150x150', alt: t("layouts.point-at")) %>
-          <h2><%= t("welcome.proposal.title") %></h2>
-          <p><%= t("welcome.proposal.description") %></p>
-        </div>
-        <div class="small-12 medium-3 column">
-          <%= image_tag(image_path_for('like.png'), class: 'float-center', size: '150x150', alt: t("layouts.like")) %>
-          <h2><%= t("welcome.decide.title") %></h2>
-          <p><%= t("welcome.decide.description") %></p>
-        </div>
-        <div class="small-12 medium-3 column">
-          <%= image_tag(image_path_for('calendar.png'), class: 'float-center', size: '150x150', alt: t("layouts.calendar")) %>
-          <h2><%= t("welcome.do.title") %></h2>
-          <p><%= t("welcome.do.description") %></p>
-        </div>
-      </div>
-    </div>
-  </main>
-<% end %>
+  <%= render "actions" %>
+</main>

@@ -1,8 +1,8 @@
 <table class="fixed">
   <thead>
     <tr>
-      <th><%= t('admin.questions.index.table_proposal') %></th>
-      <th class="text-right"><%= t("admin.actions.actions") %></th>
+      <th class="small-9"><%= t("admin.questions.index.table_proposal") %></th>
+      <th><%= t("admin.actions.actions") %></th>
     </tr>
   </thead>
   <tbody>
@@ -15,7 +15,7 @@
             <strong><%= proposal.question %></strong>
           </p>
         </td>
-        <td class="text-right">
+        <td>
           <%= link_to t("admin.questions.index.create_question"),
                 new_admin_question_path(proposal_id: proposal.id),
                 class: "button hollow" %>

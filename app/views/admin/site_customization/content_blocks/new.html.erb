@@ -1,12 +1,11 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.site_customization.content_blocks") %> - <%= t("admin.site_customization.content_blocks.new.title") %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.content_blocks") %> - <%= t("admin.site_customization.content_blocks.new.title") %>
 <% end %>
 
 <%= back_link_to admin_site_customization_content_blocks_path %>
 
-<div class="row">
-  <div class="small-12 column">
-    <h2><%= t("admin.site_customization.content_blocks.new.title") %></h2>
-    <%= render 'form' %>
-  </div>
+<div class="small-12 column">
+  <h2><%= t("admin.site_customization.content_blocks.new.title") %></h2>
 </div>
+
+<%= render 'form' %>
