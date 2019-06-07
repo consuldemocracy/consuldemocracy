@@ -8,6 +8,7 @@ ar:
         no_balloted_group_yet: "انت لم تقم بالتصويت على هذه المجموعة بعد، اذهب للتصويت!"
         remove: ازالة التصويت
         voted_info_html: "يمكنك تغيير تصويتك في اي وقت حتى اغلاق هذه المرحلة.<br> لا حاجة لانفاق كل الاموال المتاحة."
+        voted_info_2: "ولكن يمكنك تغيير تصويتك في أي وقت إلى أن يتم إغلاق هذه المرحلة."
         zero: أنت لم تصوت على أي مشروع استثماري.
       reasons_for_not_balloting:
         not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
@@ -157,6 +158,7 @@ ar:
       accepted: "اقرتاح الإنفاق المقبول: "
       discarded: "اقرتاح الإنفاق الغير مقبولة: "
       incompatibles: غير متوافق
+      investment_title: عنوان المشروع
       investment_proyects: قائمة بجميع المشاريع الاستثمارية
       unfeasible_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مجدية
       not_selected_investment_proyects: قائمة بجميع المشاريع الاستثمارية الغير مختارة للاقتراع
