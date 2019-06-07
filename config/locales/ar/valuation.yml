@@ -71,3 +71,4 @@ ar:
       notice:
         valuate: "تم تحديث الملف"
       valuation_comments: تعليقات التقييم
+      not_in_valuating_phase: لا يمكن تقييم الاستثمارات إلا عندما تكون الميزانية في مرحلة التقييم
