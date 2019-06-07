@@ -2,8 +2,11 @@ ar:
   legislation:
     annotations:
       comments:
+        see_all: اظهار الكل
         cancel: إلغاء
+        publish_comment: نشر التعليق
       form:
+        phase_not_open: هذه المرحلة ليست مفتوحة
         login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
         signin: تسجيل الدخول
         signup: تسجيل
@@ -11,6 +14,8 @@ ar:
         title: تعليقات
       show:
         title: التعليق
+      version_chooser:
+        see_text: رؤية مسودة النص
     draft_versions:
       changes:
         title: تغييرات
