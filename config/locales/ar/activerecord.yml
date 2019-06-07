@@ -336,6 +336,7 @@ ar:
         title: "عنوان"
         question: "سؤال"
         description: "الوصف"
+        selected: "وضع علامة مختار"
         terms_of_service: "شروط الخدمة"
       user:
         login: "البريد الإلكتروني أو اسم المستخدم"
