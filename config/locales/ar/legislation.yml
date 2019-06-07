@@ -19,7 +19,12 @@ ar:
     draft_versions:
       changes:
         title: تغييرات
+        seeing_changelog_version: ملخص مراجعة التغييرات
+        see_text: رؤية مسودة النص
       show:
+        select_version_submit: رؤية
+        updated_at: تم التحديث في %{date}
+        see_changes: رؤية ملخص التغييرات
         text_body: نص
         text_comments: تعليقات
     processes:
@@ -65,8 +70,11 @@ ar:
         signup: تسجيل
         unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
         verify_account: التحقق من حسابك
+        debate_phase_not_open: انتهت مرحلة النقاش ولم تعد الإجابات مقبولة
     shared:
       share: مشاركة
+      share_comment: التعليق على %{version_name} من مسودة العملية %{process_name}
     proposals:
       form:
         tags_label: "فئات"
+      process_title: عملية تشريع تشاركية
