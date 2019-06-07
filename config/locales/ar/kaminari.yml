@@ -1,4 +1,16 @@
 ar:
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: عرض <strong>%{first}&nbsp;-&nbsp;%{last}</strong> من <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "لا يمكن العثور على %{entry_name}"
   views:
     pagination:
+      current: أنت في الصفحة
+      first: الأولى
+      last: الاخيرة
       next: التالي
+      previous: سابقة
+      truncate: "&hellip;"
