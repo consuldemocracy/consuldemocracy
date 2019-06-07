@@ -4,22 +4,29 @@
   <%= render "shared/canonical", href: root_url %>
 <% end %>
 
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
 <% provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
               social_url: root_url %>
 <% end %>
 
-<%= render "carousel" %>
-
-<%= render "cta" %>
-
-<% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
-  <%= render "recommended",
-              recommended_debates: @recommended_debates,
-              recommended_proposals: @recommended_proposals %>
-  <hr>
-<% end %>
+<%= render "header", header: @header %>
 
 <main>
+  <%= render "carousel" %>
+
+  <%= render "cta" %>
+
+  <%= render "feeds" %>
+
+  <% if feature?("user.recommendations") && (@recommended_debates.present? || @recommended_proposals.present?) %>
+    <%= render "recommended",
+                recommended_debates: @recommended_debates,
+                recommended_proposals: @recommended_proposals %>
+  <% end %>
+
   <%= render "actions" %>
 </main>

@@ -26,10 +26,12 @@
         <p><%= t("layouts.footer.transparency_text") %></p>
       </div>
 
-      <!--<div class="small-12 medium-4 column">
+      <% skip_html do %>
+      <div class="small-12 medium-4 column">
         <%= link_to t("layouts.footer.open_data_title"), setting['opendata_url'].presence || t("layouts.header.external_link_opendata_url"), class: "title", rel: "nofollow" %>
         <p><%= t("layouts.footer.open_data_text") %></p>
-      </div>-->
+      </div>
+      <% end %>
     </div>
   </div>
 
@@ -45,7 +47,6 @@
 
     <div>
       <%= image_tag(image_path_for('logo_comrural.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.comrural.logo")) %>
-
       <%= image_tag(image_path_for('logo_esport.png'), class: 'hide-for-small-only float-left', size: '234x80', alt: t("layouts.esport.logo")) %>
     </div>
 

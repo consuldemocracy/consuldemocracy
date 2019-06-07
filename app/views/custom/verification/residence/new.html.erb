@@ -2,10 +2,25 @@
   <%track_event(category: "verification", action: "start_census" )%>
   <div class="small-12 column">
 
-    <%= link_to account_path, class: "back" do %>
-      <span class="icon-angle-left"></span>
-      <%= t("verification.back") %>
+    <% skip_html do %>
+    <div class="text-center">
+      <div class="small-4 column verification-step is-active">
+        <span class="number">1</span> <%= t("verification.step_1") %>
+      </div>
+      <div class="small-4 column verification-step">
+        <span class="number">2</span> <%= t("verification.step_2") %>
+      </div>
+      <div class="small-4 column verification-step">
+        <span class="number">3</span> <%= t("verification.step_3") %>
+      </div>
+    </div>
+
+    <div class="progress small-12 success">
+      <span class="meter" style="width: 33%"></span>
+    </div>
     <% end %>
+
+    <%= back_link_to account_path, t("verification.back") %>
 
     <h1><%= t("verification.residence.new.title") %></h1>
 
@@ -13,7 +28,7 @@
       <p><%= t("verification.user_permission_info") %></p>
 
       <ul>
-        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_view_proposal") %></li>
+        <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_debates") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_proposal") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_support_proposal") %></li>
         <li><span class="icon-check"></span>&nbsp;<%= t("verification.user_permission_votes") %></li>
@@ -37,7 +52,7 @@
 
           <div class="inline-block" data-toggle="info-document-number">
             <span class="icon-help"></span>
-            <span class="sr-only"><%= t("verification.residence.new.document_number_help_title") %></span>
+            <span class="show-for-sr"><%= t("verification.residence.new.document_number_help_title") %></span>
           </div>
 
           <div class="dropdown-pane" id="info-document-number" data-dropdown
@@ -59,11 +74,13 @@
       </div>
 
       <div class="small-12 medium-5 clear">
+        <% skip_html do %>
         <%= f.label t("verification.residence.new.postal_code") %>
-        <p class="note"><%= t("verification.residence.new.postal_code_note") %></p>
+        <p class="help-text" id="postal-code-help-text"><%= t("verification.residence.new.postal_code_note") %></p>
         <div class="medium-6">
-          <%= f.text_field :postal_code, label: false %>
+          <%= f.text_field :postal_code, label: false, aria: {describedby: "postal-code-help-text"} %>
         </div>
+        <% end %>
       </div>
 
       <div class="small-12">
@@ -73,12 +90,6 @@
             <%= t("verification.residence.new.accept_terms_text",
                 terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
                 title: t('shared.target_blank_html'),
-                target: "_blank"),
-                terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
-                title: t('shared.target_blank_html'),
-                target: "_blank"),
-                privacy: link_to(t("verification.residence.new.privacy"), "/privacy",
-                title: t('shared.target_blank_html'),
                 target: "_blank")).html_safe
             %>
           </span>
@@ -86,7 +97,9 @@
       </div>
 
       <div class="small-12 medium-3 clear">
-        <%= f.submit t("verification.residence.new.verify_residence"), class: "button success expanded" %>
+        <%= f.submit t("verification.residence.new.verify_residence"),
+                     id: "new_residence_submit",
+                     class: "button success expanded" %>
       </div>
     <% end %>
   </div>
