@@ -1,4 +1,4 @@
-class Legislation::PeopleProposal < ActiveRecord::Base
+class Legislation::PeopleProposal < ApplicationRecord
   include ActsAsParanoidAliases
   include Flaggable
   include Taggable
