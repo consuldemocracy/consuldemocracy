@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190429125842) do
+ActiveRecord::Schema.define(version: 20190607160900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -671,7 +671,6 @@ ActiveRecord::Schema.define(version: 20190429125842) do
     t.integer  "legislation_process_id"
     t.string   "title",                  limit: 80
     t.text     "description"
-    t.string   "question"
     t.integer  "author_id"
     t.datetime "hidden_at"
     t.integer  "flags_count",                       default: 0
