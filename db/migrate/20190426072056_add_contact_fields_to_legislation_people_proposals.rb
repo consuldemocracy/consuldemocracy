@@ -1,4 +1,4 @@
-class AddContactFieldsToLegislationPeopleProposals < ActiveRecord::Migration
+class AddContactFieldsToLegislationPeopleProposals < ActiveRecord::Migration[4.2]
   def change
     add_column :legislation_people_proposals, :email, :string
     add_column :legislation_people_proposals, :phone, :string
