@@ -38,8 +38,14 @@ ar:
     residence:
       new:
         date_of_birth: تاريخ الميلاد
+        document_number: رقم الوثيقة
         document_number_help_title: المساعدة
+        document_type:
+          passport: جواز السفر
+          residence_card: بطاقة الإقامة
         document_type_label: نوع الوثيقة
+        error_not_allowed_age: ليس لديك العمر المطلوب للمشاركة
+        error_not_allowed_postal_code: من أجل التحقق ، يجب أن تكون مسجلا.
         postal_code: الرمز البريدي
         postal_code_note: لتتمكن من تاكيد حسابك يرجى التسجيل
         title: التحقق من مكان الإقامة
