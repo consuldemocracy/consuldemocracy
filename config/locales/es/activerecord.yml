@@ -450,6 +450,7 @@ es:
             valuation:
               cannot_comment_valuation: "No puedes comentar una evaluación"
       messages:
+        translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"
         another_poll_active: Hay otra encuesta activa para este periodo.
         restrict_dependent_destroy:

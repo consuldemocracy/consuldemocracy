@@ -1,4 +1,5 @@
 module Globalizable
+  MIN_TRANSLATIONS = 1
   extend ActiveSupport::Concern
 
   included do
@@ -8,9 +9,16 @@ module Globalizable
     def locales_not_marked_for_destruction
       translations.reject(&:_destroy).map(&:locale)
     end
+    validate :check_translations_number, on: :update, if: :translations_required?
+    after_validation :copy_error_to_current_translation, on: :update
 
     def description
       self.read_attribute(:description).try :html_safe
+    end
+
+
+    def translations_required?
+      translated_attribute_names.any?{|attr| required_attribute?(attr)}
     end
 
     if self.paranoid? && translation_class.attribute_names.include?("hidden_at")
@@ -20,6 +28,38 @@ module Globalizable
     scope :with_translation, -> { joins("LEFT OUTER JOIN #{translations_table_name} ON #{table_name}.id = #{translations_table_name}.#{reflections["translations"].foreign_key} AND #{translations_table_name}.locale='#{I18n.locale }'") }
 
     private
+
+      def required_attribute?(attribute)
+        presence_validators = [ActiveModel::Validations::PresenceValidator,
+          ActiveRecord::Validations::PresenceValidator]
+
+        attribute_validators(attribute).any?{|validator| presence_validators.include? validator }
+      end
+
+      def attribute_validators(attribute)
+        self.class.validators_on(attribute).map(&:class)
+      end
+
+      def check_translations_number
+        errors.add(:base, :translations_too_short) unless traslations_count_valid?
+      end
+
+      def traslations_count_valid?
+        translations.reject(&:marked_for_destruction?).count >= MIN_TRANSLATIONS
+      end
+
+      def copy_error_to_current_translation
+        return unless errors.added?(:base, :translations_too_short)
+
+        if locales_persisted_and_marked_for_destruction.include?(I18n.locale)
+          locale = I18n.locale
+        else
+          locale = locales_persisted_and_marked_for_destruction.first
+        end
+
+        translation = translation_for(locale)
+        translation.errors.add(:base, :translations_too_short)
+      end
 
       def searchable_globalized_values
         values = {}

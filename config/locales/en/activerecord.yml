@@ -448,6 +448,7 @@ en:
             valuation:
               cannot_comment_valuation: "You cannot comment a valuation"
       messages:
+        translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"
         another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:
