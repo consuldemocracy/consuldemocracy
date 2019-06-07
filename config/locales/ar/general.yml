@@ -52,6 +52,10 @@ ar:
         few: "%{count} ردود"
         many: "%{count} ردود"
         other: "%{count} ردود"
+      responses_show:
+        zero: لا توجد ردود
+      responses_collapse:
+        zero: لا توجد ردود
       user_deleted: حذف المستخدم
       votes:
         zero: لا توجد أصوات
