@@ -67,6 +67,17 @@ module GlobalizeHelper
     t("shared.translations.languages_in_use_html", count: active_languages_count(resource))
   end
 
+  def select_language_error(resource)
+    return if resource.blank?
+
+    current_translation = resource.translation_for(selected_locale(resource))
+    if current_translation.errors.added? :base, :translations_too_short
+      content_tag :div, class: "small error" do
+        current_translation.errors[:base].join(", ")
+      end
+    end
+  end
+
   def active_languages_count(resource)
     if resource.blank?
       no_resource_languages_count
