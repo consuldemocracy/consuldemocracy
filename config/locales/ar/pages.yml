@@ -53,6 +53,13 @@ ar:
       other:
         title: "معلومات أخرى مفيدة"
         how_to_use: "استخدم %{org_name} في مدينتك"
+      how_to_use:
+        text: |-
+          استخدمه في حكومتك المحلية أو ساعدنا في تحسينه ، فهو برنامج مجاني.
+
+          بوابة الحوكمة المفتوحة هذه تستخدم [CONSUL app] (https://github.com/consul/consul 'consul github') الذي يعد برنامجًا مجانيًا ، مع [رخصة AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ) ، وهذا يعني بكلمات بسيطة أنه يمكن لأي شخص استخدام البرنامج بحرية ، ونسخه ، ورؤيته بالتفصيل ، وتعديله وإعادة توزيعه على العالم مع التعديلات التي يريدها (مع السماح للآخرين بالقيام بنفس الشيء). لأننا نعتقد أن الثقافة أفضل وأكثر ثراءً عندما يتم نشرها.
+
+          إذا كنت مبرمجًا ، فيمكنك الاطلاع على الكود ومساعدتنا على تحسينه في [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: استخدامه في المؤسسات العامة
     privacy:
@@ -65,8 +72,8 @@ ar:
 
         عندما يتم تصميم المواقع الإلكترونية وفقا لمفهوم (سهولة التصفح)،سيتمكن كافة المستخدمين من الوصول إلى المحتوى في ظروف متساوية، على سبيل المثال:
       examples:
-        - Providing alternative text to the images, blind or visually impaired users can use special readers to access the information.
-        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - بتوفير نص بديل للصور ، يمكن للمستخدمين المكفوفين وضعاف البصر استخدام قارئات خاصة للوصول إلى المعلومات.
+        - عندما تحتوي مقاطع الفيديو على نصوص، يمكن للمستخدمين الذين يعانون من صعوبات في السمع فهمها تمامًا.
         - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
         - إذا كان المستخدم لديه مشاكل في التنقل ومن الصعب عليه استخدام الفأرة، فهناك بدائل في لوحة المفاتيح ستساعده في عملية التصفح.
       keyboard_shortcuts:
@@ -116,6 +123,7 @@ ar:
       textsize:
         title: حجم النص
         browser_settings_table:
+          description: يسمح التصميم المتاح لهذا الموقع للمستخدم باختيار حجم النص الذي يناسبه. يمكن تنفيذ هذا الإجراء بطرق مختلفة حسب المستعرض المستخدم.
           browser_header: مستعرض
           action_header: إجراءات واجب اتخاذها
           rows:
