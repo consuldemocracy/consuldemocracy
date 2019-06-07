@@ -3,6 +3,77 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
+## [1.0.0](https://github.com/consul/consul/tree/1.0.0) (2019-06-10)
+[Full Changelog](https://github.com/consul/consul/compare/1.0.0-beta...1.0.0)
+
+### Added
+- **Accounts:** Add description field to administrator users like evaluators description [\#3389](https://github.com/consul/consul/pull/3389)
+- **Admin:** Add document uploads from admin section [\#3466](https://github.com/consul/consul/pull/3466)
+- **Admin:** Images and documents settings [\#3585](https://github.com/consul/consul/pull/3585)
+- **Budgets:** notify by email new evaluation comments [\#3413](https://github.com/consul/consul/pull/3413)
+- **Installation:** Add deploy-secrets.yml.example file [\#3516](https://github.com/consul/consul/pull/3516)
+- **Installation:** Add new settings automatically on every deployment [\#3576](https://github.com/consul/consul/pull/3576)
+- **Installation:** Add task to upgrade to a new release [\#3590](https://github.com/consul/consul/pull/3590)
+- **Legislations:** Create Legislation::PeopleProposal model [\#3591](https://github.com/consul/consul/pull/3591)
+- **Translations:** Update translations from Crowdin [\#3378](https://github.com/consul/consul/pull/3378)
+- **Translations:** Admin basic customization texts [\#3488](https://github.com/consul/consul/pull/3488)
+- **Translations:** Add Bosnian, Croatian, Czech, Danish, Greek, and Turkish locales [\#3571](https://github.com/consul/consul/pull/3571)
+- **Newsletters:** Proposals authors user segment [\#3507](https://github.com/consul/consul/pull/3507)
+- **Polls:** Add slug to polls [\#3504](https://github.com/consul/consul/pull/3504)
+- **Statistics:** Add budget stats [\#3438](https://github.com/consul/consul/pull/3438)
+- **Statistics:** Add admin budget stats [\#3499](https://github.com/consul/consul/pull/3499)
+- **Statistics:** Add options to show advanced stats [\#3520](https://github.com/consul/consul/pull/3520)
+
+### Changed
+- **Accounts:** Change devise configuration [\#3561](https://github.com/consul/consul/pull/3561)
+- **Admin:** Show count of votes associated to verified signatures [\#2616](https://github.com/consul/consul/pull/2616)
+- **Budgets:** Don't destroy budgets with an associated poll [\#3492](https://github.com/consul/consul/pull/3492)
+- **Budgets:** Add task to regenerate ballot\_lines\_count cache [\#3563](https://github.com/consul/consul/pull/3563)
+- **Dashboard:** Hide polls created by users from proposals dashboard on admin poll index [\#3572](https://github.com/consul/consul/pull/3572)
+- **Dashboard:** Allow users to delete dashboard polls [\#3574](https://github.com/consul/consul/pull/3574)
+- **Maintenance:** Add Rails 5.1 compatibility [\#3562](https://github.com/consul/consul/pull/3562)
+- **Maintenance:** Update migrations and schema file [\#3598](https://github.com/consul/consul/pull/3598)
+- **Maintenance-Refactoring:** Refactor admin/debates and admin/comments to hidden [\#3376](https://github.com/consul/consul/pull/3376)
+- **Maintenance-Refactoring:** Simplify stats caching [\#3510](https://github.com/consul/consul/pull/3510)
+- **Maintenance-Refactoring:** Refactor gender and age stats methods [\#3511](https://github.com/consul/consul/pull/3511)
+- **Maintenance-Refactoring:** Simplify link to poll [\#3519](https://github.com/consul/consul/pull/3519)
+- **Maintenance-Refactoring:** Extract partial with mobile sticky content [\#3577](https://github.com/consul/consul/pull/3577)
+- **Maintenance-Refactoring:** Use find instead of find by [\#3580](https://github.com/consul/consul/pull/3580)
+- **Maintenance-Rubocop:** Allow lines to be 110 characters long by Rubocop [\#3529](https://github.com/consul/consul/pull/3529)
+- **Maintenance-Seeds:** Simplify settings seeds [\#3564](https://github.com/consul/consul/pull/3564)
+- **Polls:** Display all polls for current booth [\#3361](https://github.com/consul/consul/pull/3361)
+- **Polls:** Allow delete polls with associated questions and answers [\#3476](https://github.com/consul/consul/pull/3476)
+- **Polls:** Remove redirect for poll officers [\#3506](https://github.com/consul/consul/pull/3506)
+- **Polls:** Remove token on views [\#3539](https://github.com/consul/consul/pull/3539)
+- **Proposals:** Remove question and external_url fields from proposals and legislation proposals [\#3397](https://github.com/consul/consul/pull/3397)
+- **Proposals:** Proposals support on mobile [\#3515](https://github.com/consul/consul/pull/3515)
+- **Proposals:** Make proposals to be selected by administrators [\#3567](https://github.com/consul/consul/pull/3567)
+- **Statistics:** Improve poll stats [\#3503](https://github.com/consul/consul/pull/3503)
+- **Statistics:** Change stats layout [\#3512](https://github.com/consul/consul/pull/3512)
+- **UX/UI:** Improve help texts on Admin UI [\#3508](https://github.com/consul/consul/pull/3508)
+- **UX/UI:** Users menu [\#3509](https://github.com/consul/consul/pull/3509)
+- **UX/UI:** Add help texs, links and new message section to improve UX [\#3573](https://github.com/consul/consul/pull/3573)
+
+### Fixed
+- **Budgets:** Don't show links to disabled budget results [\#3592](https://github.com/consul/consul/pull/3592)
+- **Legislations:** Fix order in annotation comments with same score [\#3565](https://github.com/consul/consul/pull/3565)
+- **Maintenance:** Fix obsolete `respond\_with\_bip` usage [\#3483](https://github.com/consul/consul/pull/3483)
+- **Maintenance:** Remove Rspec deprecation warning [\#3530](https://github.com/consul/consul/pull/3530)
+- **Maintenance:** Fix column order in schema file [\#3533](https://github.com/consul/consul/pull/3533)
+- **Maintenance:** Fix indentation in schema file [\#3595](https://github.com/consul/consul/pull/3595)
+- **Maintenance-Specs:** Fix typo in budget executions spec [\#3486](https://github.com/consul/consul/pull/3486)
+- **Maintenance-Specs:** Remove unused \(and flaky\) card code and its spec [\#3487](https://github.com/consul/consul/pull/3487)
+- **Maintenance-Specs:** Resize Capybara window back to its original size [\#3534](https://github.com/consul/consul/pull/3534)
+- **Maintenance-Specs:** Check the comment is present after commenting [\#3596](https://github.com/consul/consul/pull/3596)
+- **Maintenance-Specs:** Reset globalize fallbacks before every test [\#3601](https://github.com/consul/consul/pull/3601)
+- **Multi-language:** Avoid duplicate records using translations [\#3581](https://github.com/consul/consul/pull/3581)
+- **Polls:** Fix valid votes labels [\#3570](https://github.com/consul/consul/pull/3570)
+- **Polls:** Show name and email for deleted poll officer's user account [\#3587](https://github.com/consul/consul/pull/3587)
+- **UX/UI:** Always use map image from admin site customization images [\#3472](https://github.com/consul/consul/pull/3472)
+
+### Removed
+- **Maintenance-Deprecated:** Delete spending proposals [\#3569](https://github.com/consul/consul/pull/3569)
+
 ## [1.0.0-beta](https://github.com/consul/consul/compare/v0.19...1.0.0-beta) (2019-04-29)
 
 ### Added
@@ -782,7 +853,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/1.0.0-beta...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/1.0.0...consul:master
+[1.0.0]: https://github.com/consul/consul/compare/1.0.0-beta...1.0.0
 [1.0.0-beta]: https://github.com/consul/consul/compare/v0.19...1.0.0-beta
 [0.19.0]: https://github.com/consul/consul/compare/v0.18...v.019
 [0.18.0]: https://github.com/consul/consul/compare/v0.17...v.018
