@@ -22,6 +22,7 @@ ar:
     proposal_notification_digest:
       share: مشاركة مقترح
       comment: تعليق على مقترح
+      unsubscribe: "إذا كنت لا ترغب في تلقي إعلامات الاقتراح ، فقم بزيارة %{account} وإلغاء تحديد \"تلقي ملخص إعلامات الاقتراح\"."
       unsubscribe_account: حسابي
     direct_message_for_receiver:
       subject: "لقد تلقيت رسالة خاصة جديدة"
@@ -49,6 +50,7 @@ ar:
       share: "شارك مشروعك"
     budget_investment_unfeasible:
       hi: "عزيزي المستخدم،"
+      new_html: "على كل ، ندعوك لوضع <strong> استثمار جديد </strong> يتوافق مع شروط هذه العملية. يمكنك القيام بذلك باتباع هذا الرابط: %{url}."
       new_href: "مشروع استثماري جديد"
       sincerely: "مع خالص التقدير،"
       sorry: "عذراً للإزعاج وشكر على مشاركتكم."
@@ -65,3 +67,13 @@ ar:
       hi: "عزيزي المستخدم،"
       thanks: "شكراً مرة أخرى على المشاركة."
       sincerely: "مع خالص التقدير"
+    evaluation_comment:
+      subject: "تعليق تقييم جديد"
+      title: تعليق تقييم جديد لـ %{investment}
+      hi: مرحبا
+      new_comment_by_html: هناك تعليق تقييم جديد من <strong>%{commenter}</strong> على استثمار الميزانية %{investment}
+      commenter_info: "%{commenter} ، %{time}:"
+    new_actions_notification_rake_created:
+      subject: "المزيد من الأخبار حول اقتراح المواطن الخاص بك"
+      hi: "مرحبا %{name} ،"
+      introduction: "كما تعلمون ، في يوم %{created_at_day} من شهر %{created_at_month} قمت بإنشاء الاقتراح %{title} في وضع المسودة."
