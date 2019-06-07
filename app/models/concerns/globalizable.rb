@@ -6,9 +6,6 @@ module Globalizable
     globalize_accessors
     accepts_nested_attributes_for :translations, allow_destroy: true
 
-    def locales_not_marked_for_destruction
-      translations.reject(&:_destroy).map(&:locale)
-    end
     validate :check_translations_number, on: :update, if: :translations_required?
     after_validation :copy_error_to_current_translation, on: :update
 
@@ -16,6 +13,17 @@ module Globalizable
       self.read_attribute(:description).try :html_safe
     end
 
+    def locales_not_marked_for_destruction
+      translations.reject(&:marked_for_destruction?).map(&:locale)
+    end
+
+    def locales_marked_for_destruction
+      I18n.available_locales - locales_not_marked_for_destruction
+    end
+
+    def locales_persisted_and_marked_for_destruction
+      translations.select{|t| t.persisted? && t.marked_for_destruction? }.map(&:locale)
+    end
 
     def translations_required?
       translated_attribute_names.any?{|attr| required_attribute?(attr)}
