@@ -72,7 +72,7 @@ ar:
       title: تعليق تقييم جديد لـ %{investment}
       hi: مرحبا
       new_comment_by_html: هناك تعليق تقييم جديد من <strong>%{commenter}</strong> على استثمار الميزانية %{investment}
-      commenter_info: "%{commenter} ، %{time}:"
+      commenter_info: "%{commenter}، %{time}:"
     new_actions_notification_rake_created:
       subject: "المزيد من الأخبار حول اقتراح المواطن الخاص بك"
       hi: "مرحبا %{name}،"
@@ -82,7 +82,7 @@ ar:
       text_4: "ألقِ نظرة على هذا الإجراء الجديد الموصى به:"
       text_5: "الإجراء التالي الذي نوصي به هو:"
       footer_text: "كالمعتاد ، أدخل \"لوحة المقترحات\" وسنخبرك بالتفصيل بكيفية استخدام هذه الموارد وكيفية الحصول على أقصى استفادة منها."
-      dashboard_button: "امض قدما ، قم باكتشافهم!"
+      dashboard_button: "امض قدما، قم باكتشافهم!"
     new_actions_notification_rake_published:
       subject: "المزيد من الأخبار حول اقتراح المواطن الخاص بك"
       hi: "مرحبا %{name}،"
