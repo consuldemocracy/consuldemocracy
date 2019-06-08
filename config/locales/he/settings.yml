@@ -116,6 +116,8 @@ he:
       public_stats_description: "הצגת סטטיסטיקה ציבורית בלוח ניהול"
       help_page: "דף עזרה"
       help_page_description: 'מציג תפריט עזרה המכיל דף עם מקטע מידע לגבי כל תכונה זמינה. גם דפים מותאמים אישית ותפריטים יכולים להיווצר ב "דפים מותאמים אישית", ו "בלוקים מותאמים אישית"'
+      valuation_comment_notification: "התראת תגובה להערכה"
+      valuation_comment_notification_description: "שלח אימייל לכל המשתמשים המשויכים למעט מעריכים שהגיבו להשקעה בתקציב, כאשר נוצרת הערה חדשה להערכה"
     map:
       latitude: "קו רוחב"
       latitude_description: "קו רוחב להצגת המיקום מפה"
