@@ -361,6 +361,17 @@ he:
         notice: "סרגל ההתקדמות עודכן בהצלחה"
       delete:
         notice: "סרגל ההתקדמות הוסר בהצלחה"
+    hidden_comments:
+      index:
+        filter: סינון
+        filters:
+          all: הכל
+          with_confirmed_hide: אושר
+          without_confirmed_hide: ממתין לאישור
+        hidden_debate: דיון מוסתר
+        hidden_proposal: הצעה מוסתרת
+        title: הערות מוסתרות
+        no_hidden_comments: לא נמצאו תגובות מוסתרות.
     dashboard:
       index:
         back: חזור אל %{org}
@@ -425,6 +436,15 @@ he:
           request: משאב מבוקש
         update:
           success: המשימה סומנה כנפתרה.
+    hidden_debates:
+      index:
+        filter: סינון
+        filters:
+          all: הכל
+          with_confirmed_hide: אושר
+          without_confirmed_hide: ממתין לאישור
+        title: דיונים מוסתרים
+        no_hidden_debates: לא נמצאו דיונים מוסתרים.
     documents:
       new:
         title: "העלה מסמך"
@@ -713,6 +733,7 @@ he:
         title: מנהלים
         name: שם
         email: דואר אלקטרוני
+        description: תיאור
         id: מזהה מנהל
         no_administrators: אין מנהלי מערכת.
       administrator:
@@ -721,6 +742,9 @@ he:
         restricted_removal: "מצטערים, אין באפשרותך להסיר את עצמך ממנהלי המערכת"
       search:
         title: "מנהלי מערכת: חיפוש משתמשים"
+      form:
+        edit_title: "ערוך מנהל"
+        updated: "מנהל המערכת עודכן בהצלחה"
     moderators:
       index:
         title: מנחים
@@ -862,6 +886,9 @@ he:
       user_invite:
         title: "הזמנת משתמש"
         description: "נשלח לאדם אשר הוזמן לפתוח חשבון."
+      evaluation_comment:
+        title: "הערת הערכה חדשה"
+        description: "נשלח למנהלי המערכת ולמעריכים הקשורים להערות בהשקעות הללו"
       edit_info: "תוכל לערוך אימייל זה ב"
       message_title: "כותרת ההודעה"
       message_body: "זהו תוכן לדוגמא של הודעה."
@@ -869,6 +896,7 @@ he:
         no_investments: "לא נוצרת כל השקעה בתקציב. יש צורך בנתוני דוגמה כדי להציג את האימייל."
         no_comments: "אין תגובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
         no_replies: "אין תשובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
+        no_evaluation_comments: "אין תגובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
     emails_download:
       index:
         title: הורדת אימיילים
@@ -1250,6 +1278,7 @@ he:
         title: הגדרות תצורה
         update_setting: עדכן
         participation_processes: "השתתפות בתהליכים"
+        images_and_documents: "תמונות ומסמכים"
         feature_flags: מאפיינים
         features:
           enabled: "התכונה מופעלת"
