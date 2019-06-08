@@ -74,6 +74,7 @@ he:
       subject: "הערת הערכה חדשה"
       title: הערת הערכה חדשה עבור %{investment}
       hi: שלום
+      new_comment_by_html: יש הערת הערכה חדשה מ- <strong>%{commenter}</strong> לתקציב ההשקעה %{investment}
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "עוד חדשות על הצעת התושב שלך"
