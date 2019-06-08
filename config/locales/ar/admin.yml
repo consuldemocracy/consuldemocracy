@@ -1513,7 +1513,6 @@ ar:
           description: الوصف
           link_text: نص الرابط
           link_url: رابط URL
-          columns_help: "عرض البطاقة حسب عدد الأعمدة. على شاشات المحمول ، يكون العرض دائمًا 100٪."
           create:
             notice: "تم إنشاء البطاقة بنجاح!"
           update:
