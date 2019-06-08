@@ -51,7 +51,7 @@ ar:
         success:
           back_to_index: العودة إلى الصفحة الرئيسية
           instructions_1_html: "<strong>سوف نتواصل معك قريبا</strong> للتحقق من أن كنت في الواقع تمثل هذه الوحدة."
-          instructions_2_html: بينما تتم <strong>مراجعة بريدك الإلكتروني</strong> ، فقد أرسلنا لك <strong>رابط لتأكيد حسابك</strong>.
+          instructions_2_html: لقد أرسلنا لك <strong>رابط لتأكيد حسابك</strong>، بينما تتم <strong>مراجعة بريدك الإلكتروني</strong>.
           thank_you_html: شكرا على تسجيل وحدتك على الموقع. هي الآن <strong>في مرحلة التحقق</strong>.
           title: تسجيل المنظمة / الوحدة
     passwords:
