@@ -11,6 +11,7 @@ gl:
           one: "Votaches <span>unha</span> proposta."
           other: "Votastes <span>%{count}</span> propostas."
         voted_info_html: "Podes mudar os teus votos cando quixeres até o peche desta fase.<br> Non é necesario que gastes todo o diñeiro dispoñible."
+        voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
         zero: Aínda non votaches ningunha proposta de investimento.
       reasons_for_not_balloting:
         not_logged_in: Debes %{signin} ou %{signup} para continuares.
@@ -21,6 +22,7 @@ gl:
         no_ballots_allowed: O período de votacións está pechado
         different_heading_assigned_html: "Xa votaches nunha sección distinta do orzamento: %{heading_link}"
         change_ballot: cambiar os teus votos
+        casted_offline: Xa tes participado en modo «fóra de liña»
     groups:
       show:
         title: Escolle unha opción
@@ -171,6 +173,7 @@ gl:
       accepted: "Proposta de investimento aceptada: "
       discarded: "Proposta de investimento rexeitada: "
       incompatibles: Incompatibles
+      investment_title: Título do proxecto
       investment_proyects: Ver a relación completa dos proxectos de investimento
       unfeasible_investment_proyects: Ver a relación de proxectos de investimento inviables
       not_selected_investment_proyects: Ver a relación de proxectos de investimento non seleccionados para a votación final
