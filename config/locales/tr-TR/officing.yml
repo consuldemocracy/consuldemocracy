@@ -16,6 +16,28 @@ tr:
         no_polls: Herhangi bir aktif ankette son sayımlarda memurluk yapmıyorsunuz
         select_poll: Anket seç
         add_results: Sonuçları ekle
+    poll_budgets:
+      see_ballot_sheets: Oy pusulası listesini gör
+      index:
+        title: "%{poll_budget} - Oy pusulası listesi"
+        ballot_sheet: "Oy pusulası %{id}"
+        ballot_sheet_name: İsim
+        ballot_sheet_author: Yazar
+        ballot_sheet_creation_date: Oluşturma tarihi
+        empty_results: Bu anket için henüz bir oy pusulası bulunmamaktadır
+      new:
+        title: "%{poll_budget} - Yeni oy pusulası"
+        booth: Kabin
+        select_booth: Kabin seç
+        csv_data: CSV verisi
+        submit: Kaydet
+      show:
+        created_at: Oluşturma tarihi
+        author: Yazar
+        data: CSV verisi
+    booth:
+      new:
+        title: "Kabininizi seçiniz"
     results:
       flash:
         create: "Sonuçlar kaydedildi"
@@ -60,6 +82,7 @@ tr:
         not_to_vote: Kişi şu anda oy kullanmamaya karar verdi
       show:
         can_vote: Oy verebilir
+        cannot_vote: Kişi oylamanın yapılacağı bölge(lerde)de kayıtlı olmadığı için oy kullanamaz.
         error_already_voted: Bu ankete zaten katıldı
         submit: Oyu onayla
         success: "Oy verildi!"
