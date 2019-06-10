@@ -70,3 +70,5 @@ tr:
       hi: "Sevgili kullanıcı,"
       thanks: "Katıldığınız için tekrar teşekkür ederiz."
       sincerely: "İçtenlikle"
+    evaluation_comment:
+      subject: "Yeni değerlendirme yorumu"
