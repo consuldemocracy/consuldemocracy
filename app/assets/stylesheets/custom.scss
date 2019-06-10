@@ -96,7 +96,7 @@ a.button.hollow {
 }
 
 .jumbo.highlight {
-  background: #E6E6E6;
+  background: $light-gray;
 }
 
 .expanded.budget .info {
@@ -125,6 +125,14 @@ a.button.hollow {
 
 .more-info-content h3 {
   color: black;
+}
+
+/* HomePage */
+
+.home-page .background-header {
+  background: $light-gray;
+  clip-path: none;
+  margin-top: rem-calc(-48);
 }
 
 /* Admin */
