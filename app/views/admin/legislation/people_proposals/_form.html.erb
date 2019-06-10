@@ -48,17 +48,6 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :question %>
-      <p class="help-text" id="question-help-text">
-        <%= t("admin.legislation.people_proposals.form.question_example_html") %>
-      </p>
-      <%= f.text_field :question, maxlength: Legislation::PeopleProposal.question_max_length,
-                                  placeholder: true,
-                                  label: false,
-                                  aria: {describedby: "question-help-text"} %>
-    </div>
-
-    <div class="small-12 column">
       <%= f.label :summary %>
       <p class="help-text" id="summary-help-text"><%= t("admin.legislation.people_proposals.form.summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,

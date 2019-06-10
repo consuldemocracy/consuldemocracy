@@ -303,7 +303,6 @@ es:
       legislation/people_proposal:
         author: Autor
         title: Nombre
-        question: Pregunta
         description: Descripción
         phone: Teléfono
         email: Email

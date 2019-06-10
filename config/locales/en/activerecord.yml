@@ -301,7 +301,6 @@ en:
       legislation/people_proposal:
         author: Author
         title: Name
-        question: Question
         description: Description
         phone: Phone
         email: Email

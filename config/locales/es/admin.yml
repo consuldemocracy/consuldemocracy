@@ -587,7 +587,6 @@ es:
         form:
           contact_info:
             title: Información de contacto
-          question_example_html: "Debe ser resumida en una pregunta cuya respuesta sea Sí o No"
           summary_note: "(máximo 200 caracteres)"
           video_url_note: Puedes añadir un enlace a YouTube o Vimeo
           custom_categories: Categorías
