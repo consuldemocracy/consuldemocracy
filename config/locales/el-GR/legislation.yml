@@ -123,3 +123,4 @@ el:
       form:
         tags_label: "Κατηγορίες"
       not_verified: "Για υποψηφιότητες %{verify_account}."
+      process_title: Διαδικασία συνεργατικής νομοθεσίας
