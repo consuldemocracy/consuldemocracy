@@ -787,6 +787,7 @@ ru:
       new:
         title: Новое новостное письмо
         from: Адрес Email, который появится в качестве отправителя новостного письма
+        header_footer_help_text_html: "Заголовок и подвал одинаковы для всех e-mail'ов. Вы можете их изменить по адресу <code>app/views/layouts/mailer_header</code> и <code>app/views/layouts/mailer_footer</code>.<br>Вы можете заменить изображение в заголовке по ссылке %{link}."
         image_link: "пользовательские изображения"
       edit:
         title: Редактировать новостное письмо
@@ -955,6 +956,7 @@ ru:
         email_placeholder: Искать пользователя по email
         search: Поиск
         user_not_found: Пользователь не найден
+        help: "Чтобы добавить или удалить служащих голосования, используйте форму поиска ниже."
     poll_officer_assignments:
       index:
         officers_title: "Список сотрудников"
@@ -990,6 +992,7 @@ ru:
       flash:
         create: "Смена добавлена"
         destroy: "Смена удалена"
+        unable_to_destroy: "Смены с ассоциированными результатами или пересчетами не могут быть удалены"
         date_missing: "Должна быть выбрана дата"
       vote_collection: Собрать голоса
       recount_scrutiny: Пересчет и проверка правильности подсчета голосов
