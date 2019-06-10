@@ -52,4 +52,5 @@ namespace :settings do
   task add_new_settings: :environment do
     Setting.add_new_settings
   end
+
 end
