@@ -72,3 +72,4 @@ tr:
       sincerely: "İçtenlikle"
     evaluation_comment:
       subject: "Yeni değerlendirme yorumu"
+      title: '%{investment} için yeni değerlendirme yorumu'
