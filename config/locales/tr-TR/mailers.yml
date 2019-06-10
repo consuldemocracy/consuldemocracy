@@ -74,3 +74,5 @@ tr:
       subject: "Yeni değerlendirme yorumu"
       title: '%{investment} için yeni değerlendirme yorumu'
       hi: Merhaba
+      new_comment_by_html: <strong>%{commenter}</strong> bütçe yatırımı %{investment} ile ilgili yeni değerlendirme yorumu paylaştı
+      commenter_info: "%{commenter}, %{time}:"
