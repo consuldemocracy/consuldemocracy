@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="small-12 column">
+    <div id="section_zona" class="margin" data-magellan-target="section_zona">
+        <p class="lead">
+          <strong><%= t("budgets.index.section_footer.help_text_6") %></strong>
+        </p>
+        <p><%= t("budgets.index.section_footer.help_text_7") %></p>
+		<p>
+		    <%=  link_to 'Más Información: Reglamento de los Presupuestos Participativos.', asset_path('/docs/ReglamentoPresupuestos.pdf')  %>
+		</p>
+        <p><a href="users/sign_up"><%= t("budgets.index.section_footer.help_text_9")%></a></p>
+
+       <iframe  src="<%= Rails.application.secrets.server_name %>/consulmapa.html"
+                width="900" height="750" allowtransparency="true" marginwidth="0"
+                marginheight="0" frameborder="no" scrolling="no">
+       </iframe>
+    </div>
+  </div>
+</div>
