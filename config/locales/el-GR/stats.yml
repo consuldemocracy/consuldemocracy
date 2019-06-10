@@ -1,5 +1,6 @@
 el:
   stats:
+    title: "Δεδομένα συμμετοχής"
     advanced: "Σύνθετες στατιστικές"
     total_participants: "Συμμετέχοντες"
     by_gender: "Συμμετέχοντες ανά φύλο"
