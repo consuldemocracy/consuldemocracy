@@ -76,3 +76,6 @@ tr:
       hi: Merhaba
       new_comment_by_html: <strong>%{commenter}</strong> bütçe yatırımı %{investment} ile ilgili yeni değerlendirme yorumu paylaştı
       commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"
+      hi: "Merhaba %{name},"
