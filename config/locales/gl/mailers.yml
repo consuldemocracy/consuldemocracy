@@ -70,3 +70,17 @@ gl:
       hi: "Estimado usuario,"
       thanks: "Grazas de novo pola túa participación."
       sincerely: "Un saúdo cordial,"
+    evaluation_comment:
+      subject: "Nova avaliación de comentario"
+      title: Nova avaliación de comentario para %{investment}
+      hi: Ola
+      new_comment_by_html: Hai unha nova avaliación do comentario de <strong>%{commenter}</strong> para a partida de investimento %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Máis novas sobre a túa proposta cidadá"
+      hi: "Ola %{name},"
+      new_resource: "NOVO RECURSO DESBLOQUEADO"
+      introduction: "Como ben sabes, o día %{created_at_day} de %{created_at_month} creaches a proposta %{title} en modo borrador."
+      text_1: "Cando o desexes, podes publicar nesta ligazón: %{link_to_published}. Se aínda non estás seguro..."
+      text_2: "Aproveita este momento! Aprende, engade a outras persoas cos mesmos intereses e prepara a difusión que necesitarás cando publiques a túa proposta definitivamente."
+      text_3: "E para acompañarte neste desafío, aquí tes as noticias..."
