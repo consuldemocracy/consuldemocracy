@@ -53,6 +53,10 @@ ru:
         few: "%{count} ответа"
         many: "%{count} ответов"
         other: "%{count} ответов"
+      responses_show:
+        zero: Нет ответов
+      responses_collapse:
+        zero: Нет ответов
       user_deleted: Пользователь удален
       votes:
         zero: Нет голосов
@@ -194,6 +198,7 @@ ru:
     proposal: Заявка
     proposal_notification: "Уведомление"
     budget/investment: Инвестиция
+    budget/group: Бюджетная группа
     budget/heading: Заголовок бюджета
     poll/shift: Смена
     poll/question/answer: Ответ
