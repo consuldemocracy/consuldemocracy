@@ -70,6 +70,12 @@ el:
       hi: "Αγαπητέ χρήστη,"
       thanks: "Σας ευχαριστώ και πάλι για τη συμμετοχή."
       sincerely: "Με εκτίμηση"
+    evaluation_comment:
+      subject: "Νέο σχόλιο αξιολόγησης "
+      title: Νέο σχόλιο αξιολόγησης για %{investment}
+      hi: Γεια 
+      new_comment_by_html: Υπάρχει νέο σχόλιο αξιολόγησης από <strong>%{commenter}</strong> στην επένδυση του προϋπολογισμού %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Περισσότερες ειδήσεις σχετικά με την πρότασή σας ως πολίτης"
       hi: "Γεια %{name},"
