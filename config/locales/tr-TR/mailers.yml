@@ -82,3 +82,4 @@ tr:
       new_resource: "SERBEST BIRAKILAN YENİ KAYNAK"
       introduction: "Bildiğiniz gibi, %{created_at_day} %{created_at_month} tarihinde %{title} başlıklı bir öneri taslağı oluşturdunuz."
       text_1: "İstediğiniz zaman önerinizi bu link'e tıklayarak paylaşabilirsiniz: %{link_to_published}. Eğer henüz emin değilseniz..."
+      text_2: "Zamanı değerlenirin! Öğrenin, ayni ilgi alanlarına sahip farklı insanları ekleyin ve önerinizi açık şekilde paylaşacağınız zaman ihtiyacınız olan bağlantıları şimdiden kurmaya başlayın."
