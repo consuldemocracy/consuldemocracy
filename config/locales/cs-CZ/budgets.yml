@@ -166,9 +166,6 @@ cs:
       heading: "Participatory Milníky rozpočtu"
       heading_selection_title: "Podle městských částí"
       no_winner_investments: "V tomto stavu není žádná vítězná investice"
-      filters:
-        label: "Aktuální stav projektu"
-        all: "Všechny (%{count})"
     phases:
       errors:
         dates_range_invalid: "Počáteční datum nemůže být stejné nebo pozdější než koncové datum"
