@@ -188,9 +188,6 @@ hr:
       heading: "Ključni ciljevi participativnog budžetiranja"
       heading_selection_title: "Po distriktu"
       no_winner_investments: "Nema pobjedničkih investicija u ovom stadiju"
-      filters:
-        label: "Trenutno stanje projekta"
-        all: "Svi (%{count})"
     phases:
       errors:
         dates_range_invalid: "Datum početka ne može biti jedank ili kasnije od Datuma završetka"
