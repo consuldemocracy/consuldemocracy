@@ -202,7 +202,6 @@ gl:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sen administrador asignado
         no_valuators_assigned: Sen avaliador
-        no_valuation_groups: Grupos asignados sen valoración
         feasibility:
           feasible: "Viable (%{price})"
           unfeasible: "Non viables"
@@ -765,7 +764,6 @@ gl:
         title: "Avaliadores: busca de usuarios"
       form:
         edit_title: "Avaliadores: Editar avaliador"
-        update: "Actualizar avaliador"
         updated: "Avaliador actualizado correctamente"
       show:
         description: "Descrición"
