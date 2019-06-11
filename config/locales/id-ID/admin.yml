@@ -229,7 +229,6 @@ id:
         dossier: Berkas
         edit_dossier: Sunting berkas
         tags: Tag
-        user_tags: Tag Pengguna
         undefined: Tidak terdefinisi
         compatibility:
           title: Kecocokan
@@ -243,10 +242,6 @@ id:
           title: Pemenang
           "true": "Ya"
           "false": "Tidak"
-        image: "Gambar"
-        see_image: "Lihat gambar"
-        no_image: "Tanpa gambar"
-        documents: "Dokumen"
       edit:
         classification: Klasifikasi
         compatibility: Kecocokan
