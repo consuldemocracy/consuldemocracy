@@ -180,9 +180,6 @@ tr:
       heading: "Katılımcı bütçe Kilometre taşları"
       heading_selection_title: "Bölgeye göre"
       no_winner_investments: "Bu mevkide kazanan yatırım yok"
-      filters:
-        label: "Projenin mevcut durumu"
-        all: "Tüm (%{count})"
     phases:
       errors:
         dates_range_invalid: "Başlangıç tarihi Bitiş tarihine eşit veya ondan sonra olamaz"
