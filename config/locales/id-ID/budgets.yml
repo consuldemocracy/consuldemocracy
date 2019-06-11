@@ -177,9 +177,6 @@ id:
       heading: "Hasil anggaran partisipatif"
       heading_selection_title: "Oleh kecamatan"
       no_winner_investments: "Tidak ada pemenang investasi di negara ini"
-      filters:
-        label: "Proyek anggaran negara"
-        all: "Semua%{count}"
     phases:
       errors:
         dates_range_invalid: "Tanggal mulai tidak dapat sama atau lebih lambat dari tanggal Akhir"
