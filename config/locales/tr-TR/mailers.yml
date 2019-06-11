@@ -83,6 +83,7 @@ tr:
       introduction: "Bildiğiniz gibi, %{created_at_day} %{created_at_month} tarihinde %{title} başlıklı bir öneri taslağı oluşturdunuz."
       text_1: "İstediğiniz zaman önerinizi bu link'e tıklayarak paylaşabilirsiniz: %{link_to_published}. Eğer henüz emin değilseniz..."
       text_2: "Zamanı değerlenirin! Öğrenin, ayni ilgi alanlarına sahip farklı insanları ekleyin ve önerinizi açık şekilde paylaşacağınız zaman ihtiyacınız olan bağlantıları şimdiden kurmaya başlayın."
+      text_3: "Ve bu süreçte size yardımcı olacak haberlerimiz var..."
       text_4: "Bu YENİ önerilen EYLEM'e bir göz atın:"
       text_5: "Bir sonraki eylem önerimiz:"
       footer_text: "Her zaman olduğu gibi, Öneriler Paneline ilerleyin; size bu kaynakları nasıl kullanacağınızı ve en iyi şekilde nasıl yararlanabileceğinizi ayrıntılı olarak anlatacağız."
@@ -99,6 +100,7 @@ tr:
       text_5: "Dahası fazlası için, bir sonraki adımı görebilirsiniz:"
       dashboard_button: "Devam edin, onları keşfedin!"
     new_actions_notification_on_create:
+      subject: "Taslak vatandaş öneriniz oluşturuldu"
       hi: "Merhaba %{name}!"
       introduction: "%{title} başlıklı öneriniz başarıyla oluşturuldu."
       text_1: "Teklifinizin henüz halka açık olmadığından yararlanın ve birçok kişiyle iletişim kurmaya hazır olun."
