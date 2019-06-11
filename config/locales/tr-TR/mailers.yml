@@ -98,6 +98,7 @@ tr:
       text_3: "Teklifinizin %{max_votes_count} desteği alarak oylamaya gitmesine yalnızca %{days_count} gün kaldı. Bu sürecin keyfini çıkarın ve fikrinizi yaymaya devam edin. Yeni fikirlere mi ihtiyacınız var?"
       text_4: "YENİ DUYURU ÖNERİSİ"
       text_5: "Dahası fazlası için, bir sonraki adımı görebilirsiniz:"
+      footer_text: "Her zaman olduğu gibi, Öneriler Paneline ilerleyin; size bu kaynakları nasıl kullanacağınızı ve en iyi şekilde nasıl yararlanabileceğinizi ayrıntılı olarak anlatacağız."
       dashboard_button: "Devam edin, onları keşfedin!"
     new_actions_notification_on_create:
       subject: "Taslak vatandaş öneriniz oluşturuldu"
@@ -105,4 +106,6 @@ tr:
       introduction: "%{title} başlıklı öneriniz başarıyla oluşturuldu."
       text_1: "Teklifinizin henüz halka açık olmadığından yararlanın ve birçok kişiyle iletişim kurmaya hazır olun."
       text_2: "Hazır olduğunuz zaman, bu linke tıklayarak <a href='%{link}'>link</a> vatandaş önerinizi yayınlayın."
+      text_3: "Alışılmışın dışında bir öneri oluşturmanın ve gerekli desteği almanın ilk bakışta başarması zor gibi göründüğünü biliyoruz. Ama endişelenmeyin, çünkü sana yardım edeceğiz!"
+      text_4: "Size yardımcı olacak bir aracınız var: Vatandaş Önerileri paneli."
       dashboard_button: "Devam edin, onları keşfedin!"
