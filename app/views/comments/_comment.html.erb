@@ -3,7 +3,8 @@
 <% allow_votes = local_assigns.fetch(:allow_votes, true) %>
 <% allow_actions = local_assigns.fetch(:allow_actions, true) %>
 <% allow_comments = local_assigns.fetch(:allow_comments, true) %>
-<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags)] do %>
+<% admin_layout = local_assigns.fetch(:admin_layout, false) %>
+<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags), (admin_layout if admin_layout)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
       <% if comment.hidden? || comment.user.hidden? %>
@@ -30,7 +31,14 @@
         <div class="comment-info">
 
           <% if comment.as_administrator? %>
-            <span class="user-name"><%= t("comments.comment.admin") %> #<%= comment.administrator_id %></span>
+            <span class="user-name">
+              <%= t("comments.comment.admin") %>
+              <% if admin_layout %>
+                <%= Administrator.find(comment.administrator_id).description_or_name %>
+              <% else %>
+                #<%= comment.administrator_id %>
+              <% end %>
+            </span>
           <% elsif comment.as_moderator? %>
             <span class="user-name"><%= t("comments.comment.moderator") %> #<%= comment.moderator_id %></span>
           <% else %>
@@ -61,7 +69,12 @@
 
           <% end %>
 
-          &nbsp;&bull;&nbsp;<span><%= l comment.created_at.to_datetime, format: :datetime %></span>
+          &nbsp;&bull;&nbsp;
+          <span>
+            <%= link_to comment_path(comment) do %>
+              <%= l comment.created_at.to_datetime, format: :datetime %>
+            <% end %>
+          </span>
         </div>
 
         <div class="comment-user
@@ -81,7 +94,9 @@
             <%= link_to "", class: "js-toggle-children relative", data: {"id": "#{dom_id(comment)}"} do %>
               <span class="show-for-sr js-child-toggle" style="display: none;"><%= t("shared.show") %></span>
               <span class="show-for-sr js-child-toggle"><%= t("shared.hide") %></span>
-              <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span> <%= t("comments.comment.responses", count: comment.children.size) %>
+              <span id="<%= dom_id(comment) %>_children_arrow" class="icon-arrow-down"></span>
+              <span class="js-child-toggle" style="display: none;"><%= t("comments.comment.responses_show", count: comment.children.size) %></span>
+              <span class="js-child-toggle"><%= t("comments.comment.responses_collapse", count: comment.children.size) %></span>
             <% end %>
           <% else %>
             <%= t("comments.comment.responses", count: 0) %>

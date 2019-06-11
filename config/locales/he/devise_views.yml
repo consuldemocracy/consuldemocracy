@@ -7,6 +7,7 @@ he:
         title: שליחה חוזרת של אישור הוראות
       show:
         instructions_html: מאשרים את החשבון בדואר אלקטרוני %{email}
+        new_password_confirmation_label: חזור על סיסמת הגישה
         new_password_label: הכנסת סיסמה חדשה
         please_set_password: לבחור בבקשה סיסמה חדשה (זה יאפשר לך להתחבר עם הדואר האלקטרוני שלמעלה)
         submit: אישור
@@ -14,7 +15,7 @@ he:
     mailer:
       confirmation_instructions:
         confirm_link: מאשר/ת את חשבוני
-        text: 'ניתן לאשר את חשבון הדואר האלקטרוני שלך בקישור  הבא:'
+        text: "ניתן לאשר את חשבון הדואר האלקטרוני שלך בקישור  הבא:"
         title: ברוכים/ות הבאים/ות
         welcome: ברוכים/ות הבאים/ות
       reset_password_instructions:
@@ -22,12 +23,12 @@ he:
         hello: שלום
         ignore_text: אם לא ביקשת לשנות סיסמה, בבקשה להתעלם מההודעה
         info_text: סיסמתך לא תשונה אלא אם תיכנס/י לקישור ותערוך/י אותו
-        text: 'קיבלנו בקשה לשנות את הסיסמה. הנך יכול/ה לעשות זאת בקישור הבא:'
-        title: שנה את הסיסמה
+        text: "קיבלנו בקשה לשנות את הסיסמה. הנך יכול/ה לעשות זאת בקישור הבא:"
+        title: שנה את הסיסמתך
       unlock_instructions:
         hello: שלום
         info_text: חשבונך נחסם בגלל מספר כשלונות גדול בניסינות כניסה לחשבון
-        instructions_text: 'נא להקיש על הקישור הזה לביטול נעילת החשבון:'
+        instructions_text: "נא להקיש על הקישור הזה לביטול נעילת החשבון:"
         title: חשבונך נחסם
         unlock_link: שחררו את נעילת חשבוני
     menu:
@@ -66,6 +67,7 @@ he:
         title: שכחת את הסיסמה?
     sessions:
       new:
+        login_label: כתובת דוא"ל או שם משתמש
         password_label: סיסמה
         remember_me: זכור אותי
         submit: הקש/י לאישור
@@ -101,7 +103,7 @@ he:
           password_confirmation_label: הסיסמה החדשה שלך  אושרה
           password_label: סיסמה חדשה
           update_submit: עודכן
-          waiting_for: '‘הסיבה ממתין לאישור של:’'
+          waiting_for: "‘הסיבה ממתין לאישור של:’"
         new:
           cancel: הכניסה בוטלה
           email_label: דואר אלקטרוני

@@ -2,6 +2,34 @@ require "rails_helper"
 
 describe Poll::Officer do
 
+  describe "#name" do
+    let(:officer) { create(:poll_officer) }
+
+    it "returns user name if user is not deleted" do
+      expect(officer.name).to eq officer.user.name
+    end
+
+    it "returns 'User deleted' if user is deleted" do
+      officer.user.destroy
+
+      expect(officer.reload.name).to eq "User deleted"
+    end
+  end
+
+  describe "#email" do
+    let(:officer) { create(:poll_officer) }
+
+    it "returns user email if user is not deleted" do
+      expect(officer.email).to eq officer.user.email
+    end
+
+    it "returns 'Email deleted' if user is deleted" do
+      officer.user.destroy
+
+      expect(officer.reload.email).to eq "Email deleted"
+    end
+  end
+
   describe "#voting_days_assigned_polls" do
     it "returns all polls with this officer assigned during voting days" do
       officer = create(:poll_officer)

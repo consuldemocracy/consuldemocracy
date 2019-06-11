@@ -190,4 +190,15 @@ describe "Legislation Proposals" do
     visit legislation_process_proposal_path(process, legislation_proposal_negative)
     expect(page).to have_content("-6 votes")
   end
+
+  scenario "Show link to process on show" do
+    create(:legislation_proposal, legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    within(".process-proposal") do
+      expect(page).to have_content("Collaborative legislation process")
+      expect(page).to have_link(process.title)
+    end
+  end
 end

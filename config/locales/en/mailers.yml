@@ -3,7 +3,7 @@ en:
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
-      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
+      new_comment_by_html: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
@@ -17,16 +17,9 @@ en:
       title: Confirm your account using the following link
     reply:
       hi: Hi
-      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
+      new_reply_by_html: There is a new response from <strong>%{commenter}</strong> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
-    unfeasible_spending_proposal:
-      hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new proposal</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
-      new_href: "new investment project"
-      sincerely: "Sincerely"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
     proposal_notification_digest:
       info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
       title: "Proposal notifications in %{org_name}"
@@ -77,6 +70,12 @@ en:
       hi: "Dear user,"
       thanks: "Thank you again for participating."
       sincerely: "Sincererly"
+    evaluation_comment:
+      subject: "New evaluation comment"
+      title: New evaluation comment for %{investment}
+      hi: Hi
+      new_comment_by_html: There is a new evaluation comment from <strong>%{commenter}</strong> to the budget investment %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "More news about your citizen proposal"
       hi: "Hello %{name},"

@@ -8,8 +8,10 @@ ar:
         password:
           password: كلمة المرور
           reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
+          save: حفظ كلمة السر
+          print_help: سوف تكون قادراً على طباعة كلمة المرور بعد حفظها.
     account_info:
-      email_label: 'ايمايل:'
+      email_label: "ايمايل:"
     dashboard:
       index:
         title: الإدارة
@@ -21,13 +23,13 @@ ar:
     email_label: البريد الإلكتروني
     date_of_birth: تاريخ الميلاد
     email_verifications:
-      choose_options: 'الرجاء اختيار أحد الخيارات التالية:'
-      document_mismatch: 'ينتمي هذا البريد الإلكتروني لمستخدم لديه معرف: %{document_number}(%{document_type})'
+      choose_options: "الرجاء اختيار أحد الخيارات التالية:"
+      document_mismatch: "ينتمي هذا البريد الإلكتروني لمستخدم لديه معرف: %{document_number}(%{document_type})"
       email_placeholder: اكتب عنوان البريد الإلكتروني الذي إستعمله هذا الشخص لإنشاء حسابه
       email_sent_instructions: للتحقق من هذا المستخدم تماما، من الضروري أن يقوم المستخدم بالنقر على الرابط الذي أرسلناه إلى البريد الإلكتروني المذكور أعلاه. هذه الخطوة تعد ضرورية من أجل التأكد أن عنوان البريد الإلكتروني ينتمي إليه.
       if_existing_account: إذا كان هذا الشخص قد فتح حساب مسبقا على الموقع الإلكتروني،
       if_no_existing_account: إذا لم يقم هذا الشخص بفتح حساب بعد
-      introduce_email: 'الرجاء إدخال عنوان البريد الإلكتروني المستخدم في الحساب:'
+      introduce_email: "الرجاء إدخال عنوان البريد الإلكتروني المستخدم في الحساب:"
       send_email: إرسال البريد الإلكتروني للتحقق
     menu:
       create_proposal: إنشاء مقترح
@@ -40,7 +42,7 @@ ar:
       create_proposals: إنشاء مقترحات
       support_proposals: دعم مقترحات
     print:
-      proposals_title: 'المقترحات:'
+      proposals_title: "المقترحات:"
     proposals:
       create_proposal: إنشاء مقترح
       print:

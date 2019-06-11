@@ -3,7 +3,7 @@ sv:
     no_reply: "Det går inte att svara till den här e-postadressen."
     comment:
       hi: Hej
-      new_comment_by_html: Det finns en ny kommentar från <b>%{commenter}</b>
+      new_comment_by_html: Det finns en ny kommentar från <strong>%{commenter}</strong>
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
     config:
@@ -17,7 +17,7 @@ sv:
       title: Bekräfta kontot via länken nedan
     reply:
       hi: Hej
-      new_reply_by_html: Det finns ett nytt svar från <b>%{commenter}</b> till din kommentar på
+      new_reply_by_html: Det finns ett nytt svar från <strong>%{commenter}</strong> till din kommentar på
       subject: Någon har svarat på din kommentar
       title: Nytt svar på din kommentar
     unfeasible_spending_proposal:
@@ -77,3 +77,9 @@ sv:
       hi: "Kära användare,"
       thanks: "Tack återigen för att du deltar."
       sincerely: "Vänliga hälsningar"
+    new_actions_notification_rake_created:
+      hi: "Hej %{name},"
+    new_actions_notification_rake_published:
+      hi: "Hej %{name},"
+    new_actions_notification_on_published:
+      text_2: "Varför 100?"

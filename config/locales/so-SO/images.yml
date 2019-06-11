@@ -14,7 +14,6 @@ so:
       destroy:
         notice: Sawirka siguul ah ayaa loo tirtiraay.
         alert: Sawirkka lama bur burin karo.
-        confirm: Ma hubtaa inaad rabto inaad tirtirto Sawirka? Ficilkan looma diidi karo!
     errors:
       messages:
         in_between: waa inuu u dhexeeya %{min} iyo%{max}

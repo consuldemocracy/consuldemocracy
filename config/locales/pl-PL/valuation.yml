@@ -17,6 +17,7 @@ pl:
         table_assigned_investments_valuation_open: Projekty inwestycyjne powiązane z wyceną otwarte
         table_actions: Akcje
         evaluate: Oceń
+        no_budgets: "Brak budżetów"
     budget_investments:
       index:
         headings_filter_all: Wszystkie nagłówki

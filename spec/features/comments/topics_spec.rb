@@ -39,6 +39,23 @@ describe "Commenting topics from proposals" do
     expect(page).to have_link "Go back to #{topic.title}", href: community_topic_path(community, topic)
   end
 
+  scenario "Link to comment show" do
+    community = proposal.community
+    topic = create(:topic, community: community)
+    comment = create(:comment, commentable: topic, user: user)
+
+    visit community_topic_path(community, topic)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{topic.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     community = proposal.community
     topic = create(:topic, community: community)
@@ -49,20 +66,25 @@ describe "Commenting topics from proposals" do
     visit community_topic_path(community, topic)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end

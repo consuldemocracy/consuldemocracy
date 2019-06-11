@@ -14,7 +14,6 @@ fi:
       destroy:
         notice: Kuva poistettiin onnistuneesti.
         alert: Kuvaa ei voida tuhota.
-        confirm: Haluatko varmasti poistaa kuvan? Tätä toimintoa ei voida peruuttaa!
     errors:
       messages:
         in_between: pitää olla %{min} ja %{max} väliltä

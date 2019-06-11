@@ -15,7 +15,7 @@ so:
     mailer:
       confirmation_instructions:
         confirm_link: Xaqiiji Akoonkayga
-        text: 'Waxaad xaqiijin kartaa koontadaada emailka kuxiran ee soo socda:'
+        text: "Waxaad xaqiijin kartaa koontadaada emailka kuxiran ee soo socda:"
         title: Sodhowow
         welcome: Sodhowow
       reset_password_instructions:
@@ -23,12 +23,12 @@ so:
         hello: Haloow
         ignore_text: Haddii aadan codsan isbeddel sir ah, waad iska indha tiri kartaa emailkan.
         info_text: Furaha sirta ah lama beddeli doono ilaa aad ka heleyso xiriirka oo aad saxdo.
-        text: 'Waxaan helnay codsi aan ku badalno eraygaaga sirta ah. Waxaad ku samayn kartaa sidan:'
+        text: "Waxaan helnay codsi aan ku badalno eraygaaga sirta ah. Waxaad ku samayn kartaa sidan:"
         title: Furahaga bedel
       unlock_instructions:
         hello: Haloow
         info_text: Koontadaada waa la xanimay sababtoo ah tirooyin xad dhaaf ah oo isku-day ah oo isku-day ah.
-        instructions_text: 'Fadlan riix linkagan this si aad u furto xisaabtaada:'
+        instructions_text: "Fadlan riix linkagan this si aad u furto xisaabtaada:"
         title: Akoonkaga waa la xiray
         unlock_link: Furo sixaabtada
     menu:
@@ -103,7 +103,7 @@ so:
           password_confirmation_label: Hubi Lambar siredka cusub
           password_label: Fure cusub
           update_submit: Cusboneysiin
-          waiting_for: 'Sugitaanka xaqiijinta:'
+          waiting_for: "Sugitaanka xaqiijinta:"
         new:
           cancel: Joojiso galitaanka
           email_label: Email

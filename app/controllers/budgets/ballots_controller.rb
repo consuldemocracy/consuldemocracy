@@ -1,6 +1,7 @@
 module Budgets
   class BallotsController < ApplicationController
     before_action :authenticate_user!
+    before_action :load_budget
     load_and_authorize_resource :budget
     before_action :load_ballot
     after_action :store_referer, only: [:show]
@@ -12,6 +13,10 @@ module Budgets
     end
 
     private
+
+      def load_budget
+        @budget = Budget.find_by_slug_or_id! params[:budget_id]
+      end
 
       def load_ballot
         query = Budget::Ballot.where(user: current_user, budget: @budget)

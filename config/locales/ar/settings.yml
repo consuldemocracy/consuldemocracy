@@ -3,10 +3,6 @@ ar:
     months_to_archive_proposals_description: "بعد هذا العدد من الأشهر سيتم أرشفة المقترحات ولن تصبح قادرة على تلقي الدعم"
     org_name: "المنظمة"
     feature:
-      budgets: "الميزانية التشاركية"
-      proposals: "إقتراحات"
-      debates: "النقاشات"
-      polls: "استطلاعات"
       signature_sheets: "أوراق التوقيع"
       spending_proposals: "مقترحات الانفاق"
       user:

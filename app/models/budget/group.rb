@@ -28,7 +28,9 @@ class Budget
     validates :budget_id, presence: true
     validates :slug, presence: true, format: /\A[a-z0-9\-_]+\z/
 
-    scope :sort_by_name, -> { joins(:translations).order(:name) }
+    def self.sort_by_name
+      all.sort_by(&:name)
+    end
 
     def single_heading_group?
       headings.count == 1

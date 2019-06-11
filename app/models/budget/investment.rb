@@ -13,9 +13,6 @@ class Budget
     include Imageable
     include Mappable
     include Documentable
-    documentable max_documents_allowed: 3,
-                 max_file_size: 3.megabytes,
-                 accepted_content_types: [ "application/pdf" ]
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
@@ -113,7 +110,7 @@ class Budget
     end
 
     def self.scoped_filter(params, current_filter)
-      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      budget  = Budget.find_by_slug_or_id params[:budget_id]
       results = Investment.by_budget(budget)
 
       results = results.where("cached_votes_up + physical_votes >= ?",
@@ -375,6 +372,12 @@ class Budget
 
     def milestone_status_id
       milestones.published.with_status.order_by_publication_date.last&.status_id
+    end
+
+    def admin_and_valuator_users_associated
+      valuator_users = (valuator_groups.map(&:valuators) + valuators).flatten
+      all_users = valuator_users << administrator
+      all_users.compact.uniq
     end
 
     private

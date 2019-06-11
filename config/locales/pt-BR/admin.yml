@@ -38,8 +38,6 @@ pt-BR:
           proposals: Propostas
           budgets: Orçamento participativo
           help_page: Página de ajuda
-        background_color: Cor de fundo
-        font_color: Cor da fonte
       edit:
         editing: Editar banner
         form:
@@ -145,11 +143,6 @@ pt-BR:
         tags_filter_all: Todas as marcações
         advanced_filters: Filtros avançados
         placeholder: Buscar projetos
-        sort_by:
-          placeholder: Organizado por
-          id: ID
-          title: Título
-          supports: Apoios
         filters:
           all: Tudo
           without_admin: Sem administrador designado
@@ -336,9 +329,9 @@ pt-BR:
         user: Usuário
         no_hidden_users: Não há usuários ocultos.
       show:
-        email: 'Email:'
-        hidden_at: 'Oculto em:'
-        registered_at: 'Registrado em:'
+        email: "Email:"
+        hidden_at: "Oculto em:"
+        registered_at: "Registrado em:"
         title: Atividade do usuário (%{user})
     hidden_budget_investments:
       index:
@@ -371,8 +364,6 @@ pt-BR:
           debate_phase: Fase de debate
           allegations_phase: Fase de comentários
           proposals_phase: Fase de propostas
-          start: Início
-          end: Final
           use_markdown: Usar Remarcação para formatar o texto
           title_placeholder: O título do processo
           summary_placeholder: Breve resumo da descrição
@@ -384,7 +375,6 @@ pt-BR:
           delete: Apagar
           title: Processos legislativos
           filters:
-            open: Aberto
             all: Tudo
         new:
           back: Voltar
@@ -399,7 +389,6 @@ pt-BR:
           title: Processo
           comments: Comentários
           status: Status
-          creation_date: Data de criação
           status_open: Aberto
           status_closed: Fechados
           status_planned: Planejados
@@ -519,12 +508,11 @@ pt-BR:
         add: Adicionar
         delete: Apagar
       search:
-        title: 'Gerentes: Pesquisa de usuário'
+        title: "Gerentes: Pesquisa de usuário"
     menu:
       activity: Atividade do moderador
       admin: Menu de admin
       banner: Gerenciar banners
-      poll_questions: Perguntas
       proposals: Propostas
       proposals_topics: Tópicos de propostas
       budgets: Orçamentos participativos
@@ -574,7 +562,6 @@ pt-BR:
           save: "Salvar"
       title_moderated_content: Conteúdo moderado
       title_budgets: Orçamentos
-      title_polls: Votações
       title_profiles: Perfis
       title_settings: Configurações
       title_site_customization: Conteúdo do site
@@ -603,7 +590,7 @@ pt-BR:
         add: Adicionar
         delete: Apagar
       search:
-        title: 'Moderadores: Pesquisa de usuário'
+        title: "Moderadores: Pesquisa de usuário"
     segment_recipient:
       all_users: Todos os usuários
       administrators: Administradores
@@ -693,9 +680,9 @@ pt-BR:
         send_pending: Enviar pendente
         send_pending_notification: Notificações pendentes enviadas com sucesso
       proposal_notification_digest:
-        title: Resumo danotificação da proposta
-        description: Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails.
-        preview_detail: Usuários apenas vão receber notificações das rpopostas que eles estão seguindo
+        title: "Resumo danotificação da proposta"
+        description: "Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails."
+        preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
     emails_download:
       index:
         title: Download de emails
@@ -717,7 +704,7 @@ pt-BR:
         add: Adicionar aos avaliadores
         delete: Apagar
       search:
-        title: 'Avaliadores: Pesquisa de usuário'
+        title: "Avaliadores: Pesquisa de usuário"
       summary:
         title: Resumo do avaliador para projetos de investimento
         valuator_name: Avaliador
@@ -850,10 +837,6 @@ pt-BR:
         geozone_restricted: "Restrito aos distritos"
       new:
         title: "Nova votação"
-        show_results_and_stats: "Exibir resultados e estatísticas"
-        show_results: "Exibir resultados"
-        show_stats: "Exibir estatísticas"
-        results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas desta votação estarão disponíveis publicamente e qualquer usuário poderá vê-los."
         submit_button: "Criar votação"
       edit:
         title: "Editar votação"
@@ -936,6 +919,8 @@ pt-BR:
       index:
         title: "Recontagens"
         no_recounts: "Não há nada para ser recontado"
+        total_final: "Recontagens finais"
+        total_system: "Votos (automático)"
         table_booth_name: "Urna"
         table_total_recount: "Recontagem total (por presidente)"
         table_system_count: "Votos (automático)"
@@ -978,9 +963,9 @@ pt-BR:
     officials:
       edit:
         destroy: Remover condição de 'Cargo Público'
-        title: 'Cargos públicos: Editar usuário'
+        title: "Cargos públicos: Editar usuário"
       flash:
-        official_destroyed: 'Detalhes salvos: o usuário não possui mais cargo público'
+        official_destroyed: "Detalhes salvos: o usuário não possui mais cargo público"
         official_updated: Detalhes do cargo público salvos
       index:
         title: Cargos públicos
@@ -997,7 +982,7 @@ pt-BR:
       search:
         edit_official: Editar cargo público
         make_official: Converter em cargo público
-        title: 'Cargos públicos: Busca de usuários'
+        title: "Cargos públicos: Busca de usuários"
         no_results: Cargos públicos não encontrados.
     organizations:
       index:
@@ -1055,10 +1040,6 @@ pt-BR:
       flash:
         updated: Valor atualizado
       index:
-        banners: Estilos de banner
-        banner_imgs: Imagens de banner
-        no_banners_images: Sem imagens de banner
-        no_banners_styles: Sem estilos de banner
         title: Definições de configuração
         update_setting: Atualizar
         feature_flags: Atributos
@@ -1186,7 +1167,7 @@ pt-BR:
         form:
           error:
             one: "erro impediu esta geozona de ser salva"
-            other: 'erros impediram esta geozona de ser salva'
+            other: "erros impediram esta geozona de ser salva"
       edit:
         form:
           submit_button: Salvar alterações
@@ -1244,9 +1225,7 @@ pt-BR:
           verified_users_who_didnt_vote_proposals: Usuários verificados que não votaram em propostas
           visits: Visitas
           votes: Total de votos
-        spending_proposals_title: Propostas de despesas
         budgets_title: Orçamento participativo
-        visits_title: Visitas
         direct_messages: Mensagens diretas
         proposal_notifications: Notificações de proposta
         incomplete_verifications: Verificações incompletas

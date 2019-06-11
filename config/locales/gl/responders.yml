@@ -24,6 +24,7 @@ gl:
         debate: "Debate actualizado correctamente."
         poll: "A votación actualizouse correctamente."
         poll_booth: "A urna actualizouse correctamente."
+        active_poll: "A descrición das votacións foi actualizada correctamente."
         proposal: "Proposta actualizada correctamente."
         spending_proposal: "Proposta de investimento actualizada correctamente."
         budget_investment: "A proposta de investimento actualizouse correctamente."

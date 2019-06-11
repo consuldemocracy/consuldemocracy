@@ -833,12 +833,12 @@ describe "Proposals" do
 
   describe "Archived proposals" do
 
-    scenario "show on archived tab" do
+    scenario "show on proposals list" do
       create_featured_proposals
       archived_proposals = create_archived_proposals
 
       visit proposals_path
-      click_link "archived"
+      click_link "Archived proposals"
 
       within("#proposals-list") do
         archived_proposals.each do |proposal|
@@ -906,7 +906,7 @@ describe "Proposals" do
         expect(page).not_to have_content(archived_proposal.title)
       end
 
-      click_link "archived"
+      click_link "Archived proposals"
 
       within("#featured-proposals") do
         expect(page).to have_content(featured_proposal.title)
@@ -924,7 +924,7 @@ describe "Proposals" do
       create(:proposal, :archived, title: "Some votes").update_column(:confidence_score, 25)
 
       visit proposals_path
-      click_link "archived"
+      click_link "Archived proposals"
 
       within("#proposals-list") do
         expect(all(".proposal")[0].text).to match "Most voted"
@@ -933,6 +933,96 @@ describe "Proposals" do
       end
     end
 
+  end
+
+  context "Selected Proposals" do
+    let!(:selected_proposal)     { create(:proposal, :selected) }
+    let!(:not_selected_proposal) { create(:proposal) }
+
+    scenario "do not show in index by default" do
+      visit proposals_path
+
+      expect(page).to have_selector("#proposals .proposal", count: 1)
+      expect(page).to have_content not_selected_proposal.title
+      expect(page).not_to have_content selected_proposal.title
+    end
+
+    scenario "show in selected proposals list" do
+      visit proposals_path
+      click_link "View selected proposals"
+
+      expect(page).to have_selector("#proposals .proposal", count: 1)
+      expect(page).to have_content selected_proposal.title
+      expect(page).not_to have_content not_selected_proposal.title
+    end
+
+    scenario "show a selected proposal message in show view" do
+      visit proposal_path(selected_proposal)
+
+      within("aside") { expect(page).not_to have_content "SUPPORTS" }
+      within("aside") { expect(page).to have_content "Selected proposal" }
+    end
+
+    scenario "do not show featured proposal in selected proposals list" do
+      Setting["feature.featured_proposals"] = true
+      create_featured_proposals
+
+      visit proposals_path
+
+      expect(page).to have_selector("#proposals .proposal-featured")
+      expect(page).to have_selector("#featured-proposals")
+
+      click_link "View selected proposals"
+
+      expect(page).not_to have_selector("#proposals .proposal-featured")
+      expect(page).not_to have_selector("#featured-proposals")
+    end
+
+    scenario "do not show recommented proposal in selected proposals list" do
+      create(:proposal, title: "Recommended", cached_votes_up: 10, tag_list: "Economy")
+
+      user = create(:user)
+      create(:follow, followable: create(:proposal, tag_list: "Economy"), user: user)
+
+      login_as(user)
+      visit proposals_path
+
+      expect(page).to have_css(".recommendation", count: 1)
+      expect(page).to have_link "Recommended"
+      expect(page).to have_link "See more recommendations"
+
+      click_link "View selected proposals"
+
+      expect(page).not_to have_css ".recommendation"
+      expect(page).not_to have_link "Recommended"
+      expect(page).not_to have_link "See more recommendations"
+    end
+
+    scenario "do not show order links in selected proposals list" do
+      visit proposals_path
+
+      expect(page).to have_css  "ul.submenu"
+      expect(page).to have_link "most active"
+      expect(page).to have_link "highest rated"
+      expect(page).to have_link "newest"
+
+      click_link "View selected proposals"
+
+      expect(page).not_to have_css  "ul.submenu"
+      expect(page).not_to have_link "most active"
+      expect(page).not_to have_link "highest rated"
+      expect(page).not_to have_link "newest"
+    end
+
+    scenario "show archived proposals in selected proposals list" do
+      archived_proposal = create(:proposal, :selected, :archived)
+
+      visit proposals_path
+      expect(page).not_to have_content archived_proposal.title
+
+      click_link "View selected proposals"
+      expect(page).to have_content archived_proposal.title
+    end
   end
 
   context "Search" do
@@ -1754,8 +1844,8 @@ describe "Successful proposals" do
 
     successful_proposals.each do |proposal|
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).not_to have_css(".supports")
-        expect(page).to have_content "This proposal has reached the required supports"
+        expect(page).not_to have_link "Support"
+        expect(page).to have_content "100% / 100%"
       end
     end
   end
@@ -1766,8 +1856,8 @@ describe "Successful proposals" do
     successful_proposals.each do |proposal|
       visit proposal_path(proposal)
       within("#proposal_#{proposal.id}_votes") do
-        expect(page).not_to have_css(".supports")
-        expect(page).to have_content "This proposal has reached the required supports"
+        expect(page).not_to have_link "Support"
+        expect(page).to have_content "100% / 100%"
       end
     end
   end

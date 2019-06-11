@@ -49,8 +49,16 @@ es:
       moderator: Moderador
       responses:
         zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
+        one: 1 respuesta
+        other: "%{count} respuestas"
+      responses_show:
+        one: "1 respuesta (mostrar)"
+        other: "%{count} respuestas (mostrar)"
+        zero: Sin respuestas
+      responses_collapse:
+        one: "1 respuesta (colapsar)"
+        other: "%{count} respuestas (colapsar)"
+        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
@@ -179,7 +187,6 @@ es:
     policy: Política de privacidad
     proposal: la propuesta
     proposal_notification: "la notificación"
-    spending_proposal: la propuesta de gasto
     budget/investment: el proyecto de gasto
     budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
@@ -193,7 +200,6 @@ es:
     image: Imagen
   geozones:
     none: Toda la ciudad
-    all: Todos los ámbitos de actuación
   layouts:
     application:
       chrome: Google Chrome
@@ -248,7 +254,6 @@ es:
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
-      spending_proposals: Propuestas de inversión
       notification_item:
         new_notifications:
           one: Tienes una nueva notificación
@@ -307,7 +312,7 @@ es:
       form:
         submit_button: Crear propuesta
     created:
-      title: ¡Enhorabuena! Has dado el primer paso.
+      title: '¡Enhorabuena! Has dado el primer paso.'
       motivation: "Es importante preparar la campaña de lanzamiento de tu propuesta para que tenga éxito. Los primeros días son decisivos."
       motivation_2_html: "<strong>Si quieres recomendaciones para preparar la publicación deja tu propuesta como borrador y te guiaremos.</strong>"
       publish: No, quiero publicar la propuesta ya
@@ -376,6 +381,10 @@ es:
           error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
+      selected_proposals: Propuestas seleccionadas
+      selected_proposals_link: Ver propuestas seleccionadas
+      archived_proposals: Propuestas archivadas
+      proposals_lists: Listas de propuestas
       retired_links:
         all: Todas
         duplicated: Duplicadas
@@ -406,7 +415,7 @@ es:
     new:
       form:
         submit_button: Crear propuesta
-      more_info: "¿Cómo funcionan las propuestas ciudadanas?"
+      more_info: '¿Cómo funcionan las propuestas ciudadanas?'
       recommendation_one: No escribas el título de la propuesta o frases enteras en mayúsculas. En internet eso se considera gritar. Y a nadie le gusta que le griten.
       recommendation_three: Disfruta de este espacio, de las voces que lo llenan, también es tuyo.
       recommendation_two: Cualquier propuesta o comentario que implique una acción ilegal será eliminada, también las que tengan la intención de sabotear los espacios de propuesta, todo lo demás está permitido.
@@ -421,7 +430,7 @@ es:
         guide: "Compártela para que la gente empiece a apoyarla."
         edit: "Antes de que se publique podrás modificar el texto a tu gusto."
         view_proposal: Ahora no, ir a mi propuesta
-      already_supported: "¡Ya has apoyado esta propuesta, compártela!"
+      already_supported: '¡Ya has apoyado esta propuesta, compártela!'
       comments:
         zero: Sin comentarios
         one: 1 Comentario
@@ -437,9 +446,11 @@ es:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoyos necesarios"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
+      selected: "Propuesta seleccionada"
     show:
       author_deleted: Usuario eliminado
       code: "Código de la propuesta:"
@@ -475,6 +486,7 @@ es:
       mailing: Correo electrónico
       poster: Póster
       recommended_actions: Acciones recomendadas
+      messages: Mensajes a usuarios
     form:
       request: Solicitar
     create_request:
@@ -501,7 +513,7 @@ es:
     resource:
       required_days: "%{days} días necesarios"
       required_supports: "%{supports} apoyos necesarios"
-      and: y
+      and: "y"
       view_resource: Ver recurso
       resource_requested: Recurso solicitado
       request_resource: Solicitar recurso
@@ -536,6 +548,9 @@ es:
       debates: Debates
       comments: Comentarios
       latest_comments: Últimos mensajes
+    messages:
+      send_notification: Enviar mensaje a los que han apoyado la propuesta
+      previous_notifications: Ver notificaciones anteriores
     polls:
       index:
         title: Encuestas
@@ -558,7 +573,12 @@ es:
         edit_poll: Editar encuesta
         show_results: Mostrar resultados
         show_results_help: Si marcas esta casilla los resultados serán públicos y todos los usuarios podrán verlos
+        delete: Eliminar encuesta
+        alert_notice: Esta acción eliminará la encuesta y todas sus preguntas asociadas.
+        success_notice: Encuesta eliminada correctamente
+        unable_notice: No se pueden eliminar encuestas con respuestas
       form:
+        name: Título de la encuesta
         add_question: Añadir pregunta
       question_fields:
         remove_question: Borrar pregunta
@@ -570,9 +590,7 @@ es:
         title: Previsualización del poster
         poster_title: "No te quedes mirando,"
         poster_subtitle: "¡apóyame! ;)"
-        intro_text_html:
-          "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el
-          apoyo necesario para hacer la ciudad que todos queremos."
+        intro_text_html: "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el apoyo necesario para hacer la ciudad que todos queremos."
         proposal_code: "Código de la propuesta: %{code}"
         support: Apoya mi propuesta
         footer_html: "<strong>Entra en %{link} y apoya esta propuesta.</strong> Necesitamos ser muchos. Decide tu también. ¡Gracias!"
@@ -597,7 +615,7 @@ es:
         support_button: Apoyar esta propuesta
         share_in: Compartir en
         hi: "¡Hola!"
-        introduction: "Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué ciudad queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo."
+        introduction: Te escribo para comunicarte que estoy participando en %{org}, la plataforma para que podamos decidir qué ciudad queremos. Y para ello, he creado mi propia propuesta ciudadana y ahora, ¡voy a necesitar tu apoyo! Pero no te preocupes porque es muy sencillo.
         support: "Tan sólo tienes que hacer clic en el botón que verás a continuación 'Apoyar esta propuesta' y directamente podrás informarte acerca de ella antes de impulsarla. Sólo las propuestas que consigan el máximo apoyo se llevarán a cabo por parte del Ayuntamiento, y he pensado que tú ¡seguro que me ayudas a lograrlo!"
         share: "Y si además, me haces el gran favor de compartir mi propuesta con tus amigos, familiares y contactos ¡sería perfecto!"
   polls:
@@ -653,8 +671,8 @@ es:
         total_votes: "Nº total de votos emitidos"
         votes: "VOTOS"
         web: "WEB"
-        booth: "URNAS"
         mail: "CORREO"
+        booth: "URNAS"
         total: "TOTAL"
         valid: "Válidos"
         white: "Totalmente en blanco"
@@ -681,7 +699,7 @@ es:
   shared:
     edit: "Editar"
     save: "Guardar"
-    delete: Borrar
+    delete: "Borrar"
     "yes": "Si"
     "no": "No"
     search_results: "Resultados de la búsqueda"
@@ -704,6 +722,7 @@ es:
       to: "Hasta"
     author_info:
       author_deleted: Usuario eliminado
+      email_deleted: Email eliminado
     back: Volver
     check: Seleccionar
     check_all: Todos
@@ -758,7 +777,6 @@ es:
     unflag: Deshacer denuncia
     unfollow_entity: "Dejar de seguir %{entity}"
     outline:
-      budget: Presupuestos participativos
       searcher: Buscador
     go_to_page: "Ir a la página de "
     share: Compartir
@@ -781,54 +799,6 @@ es:
     whatsapp: WhatsApp
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
-      association_name: "Nombre de la asociación"
-      description: Descripción detallada
-      external_url: Enlace a documentación adicional
-      geozone: Ámbito de actuación
-      submit_buttons:
-        create: Crear
-        new: Crear
-      title: Título de la propuesta de gasto
-    index:
-      title: Presupuestos participativos
-      unfeasible: Propuestas de inversión no viables
-      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
-      search_form:
-        button: Buscar
-        placeholder: Propuestas de inversión...
-        title: Buscar
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
-      sidebar:
-        geozones: Ámbitos de actuación
-        feasibility: Viabilidad
-        unfeasible: No viables
-      start_spending_proposal: Crea una propuesta de inversión
-    new:
-      more_info: "¿Cómo funcionan los presupuestos participativos?"
-      recommendation_one: Es fundamental que haga referencia a una actuación presupuestable.
-      recommendation_three: Intenta detallar lo máximo posible la propuesta para que el equipo de gobierno encargado de estudiarla tenga las menor dudas posibles.
-      recommendation_two: Cualquier propuesta o comentario que implique acciones ilegales será eliminada.
-      recommendations_title: Cómo crear una propuesta de gasto
-      start_new: Crear una propuesta de gasto
-    show:
-      author_deleted: Usuario eliminado
-      code: "Código de la propuesta:"
-      share: Compartir
-    wrong_price_format: Solo puede incluir caracteres numéricos
-    spending_proposal:
-      spending_proposal: Propuesta de inversión
-      already_supported: Ya has apoyado este proyecto. ¡Compártelo!
-      support: Apoyar
-      support_title: Apoyar este proyecto
-      supports:
-        zero: Sin apoyos
-        one: 1 apoyo
-        other: "%{count} apoyos"
   stats:
     index:
       visits: Visitas
@@ -911,12 +881,6 @@ es:
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
-    spending_proposals:
-      not_logged_in: Necesitas %{signin} o %{signup} para continuar.
-      not_verified: Las propuestas de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar.
-      unfeasible: No se pueden votar propuestas inviables.
-      not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
@@ -954,7 +918,7 @@ es:
     verification:
       i_dont_have_an_account: No tengo cuenta, quiero crear una y verificarla
       i_have_an_account: Ya tengo una cuenta que quiero verificar
-      question: "¿Tienes ya una cuenta en %{org_name}?"
+      question: '¿Tienes ya una cuenta en %{org_name}?'
       title: Verificación de cuenta
     welcome:
       go_to_index: Ahora no, ir a la página de inicio
@@ -997,7 +961,7 @@ es:
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text_sign_in: iniciar sesión
       text_sign_up: registrarte
-      title: "¿Cómo puedo comentar este documento?"
+      title: '¿Cómo puedo comentar este documento?'
   links:
     form:
       delete_button: Borrar
@@ -1011,8 +975,6 @@ es:
       url_placeholder: Dirección del enlace
   communities:
     show:
-      send_notification: Enviar mensaje a la Comunidad
-      author: Autor
       surveys: Encuestas
       complete_survey: Completa la encuesta
     subnav:

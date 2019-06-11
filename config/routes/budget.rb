@@ -19,11 +19,5 @@ resources :budgets, only: [:show, :index] do
   resource :executions, only: :show, controller: "budgets/executions"
 end
 
-scope "/participatory_budget" do
-  resources :spending_proposals, only: [:index, :new, :create, :show, :destroy], path: "investment_projects" do
-    post :vote, on: :member
-  end
-end
-
 get "investments/:id/json_data", action: :json_data, controller: "budgets/investments"
 get "/budgets/:budget_id/investments/:id/json_data", action: :json_data, controller: "budgets/investments"

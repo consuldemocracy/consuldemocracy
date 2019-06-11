@@ -44,7 +44,7 @@ fi:
       oldest: Vanhin ensin
       most_commented: Kommentoiduin
     show:
-      return_to_commentable: 'Mene takaisin '
+      return_to_commentable: "Mene takaisin "
   comments_helper:
     comment_button: Julkaise kommentti
     comment_link: Kommentti
@@ -127,8 +127,7 @@ fi:
       administration_menu: Järjestelmänvalvoja
       administration: Järjestelmänvalvonta
       available_locales: Saatavilla olevat kielet
-      external_link_blog: Blogi
-      locale: 'Kieli:'
+      locale: "Kieli:"
       logo: CONSUL logo
       help: Apua
       my_account_link: Tilini
@@ -229,12 +228,10 @@ fi:
         one: 1 kommentti
         other: "%{count} kommenttia"
       comments_tab: Kommentit
-      edit_proposal_link: Muokkaa
       login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet
       share: Jaa
-      send_notification: Lähetä ilmoitus
       title_video_url: "Ulkoinen video"
       author: Tekijä
     update:
@@ -263,7 +260,6 @@ fi:
       results:
         title: "Kysymykset"
   poll_questions:
-    create_question: "Luo kysymys"
     show:
       vote_answer: "Äänestä %{answer}"
   proposal_notifications:
@@ -272,18 +268,18 @@ fi:
       body_label: "Viesti"
       submit_button: "Lähetä viesti"
   shared:
-    edit: 'Muokkaa'
-    save: 'Tallenna'
-    delete: Poista
+    edit: "Muokkaa"
+    save: "Tallenna"
+    delete: "Poista"
     "yes": "Kyllä"
     "no": "Ei"
     advanced_search:
-      author_type_blank: 'Valitse kategoria'
-      date_placeholder: 'PP/KK/VVVV'
-      date_range_blank: 'Valitse päivämäärä'
-      date_5: 'Mukautettu'
-      search: 'Suodatin'
-      title: 'Edistynyt haku'
+      author_type_blank: "Valitse kategoria"
+      date_placeholder: "PP/KK/VVVV"
+      date_range_blank: "Valitse päivämäärä"
+      date_5: "Mukautettu"
+      search: "Suodatin"
+      title: "Edistynyt haku"
     author_info:
       author_deleted: Käyttäjä poistettu
     back: Takaisin
@@ -356,7 +352,6 @@ fi:
       actions: Toiminnot
       send_private_message: "Lähetä yksityisviesti"
     proposals:
-      send_notification: "Lähetä ilmoitus"
       see: "Näytä ehdotus"
   votes:
     agree: Hyväksyn

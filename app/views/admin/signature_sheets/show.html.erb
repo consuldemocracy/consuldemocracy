@@ -24,6 +24,12 @@
     <%= t("admin.signature_sheets.show.verified",
         count: @signature_sheet.signatures.verified.count ) %>
   </strong>
+  <br />
+  <strong>
+    <%= t("admin.signature_sheets.show.voted",
+        count: @voted_signatures) %>
+  </strong>
+
 </div>
 
 <div id="unverified_signatures" class="callout alert">

@@ -1,9 +1,6 @@
 class Milestone < ApplicationRecord
   include Imageable
   include Documentable
-  documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
 
   translates :title, :description, touch: true
   include Globalizable

@@ -112,11 +112,6 @@ ast:
         administrator_filter_all: Tolos alministradores
         valuator_filter_all: Tolos evaluadores
         tags_filter_all: Toles etiquetes
-        sort_by:
-          placeholder: Ordenar por
-          id: ID
-          title: Títulu
-          supports: Sofitos
         filters:
           all: Toes
           without_admin: Ensin alministrador
@@ -249,9 +244,9 @@ ast:
         title: Usuarios bloquiaos
         user: Usuariu
       show:
-        email: 'Email:'
-        hidden_at: 'Bloqueao:'
-        registered_at: 'Fecha d''alta:'
+        email: "Email:"
+        hidden_at: "Bloqueao:"
+        registered_at: "Fecha d'alta:"
         title: Actividá del usuariu (%{user})
     hidden_budget_investments:
       index:
@@ -280,8 +275,6 @@ ast:
           enabled: Habilitáu
           process: Procesu
           debate_phase: Fase previa
-          start: Entamu
-          end: Fin
           use_markdown: Usa Markdown pa dar formatu al testu
           title_placeholder: Escribe'l títulu del procesu
           summary_placeholder: Resume curtiu de la descripción
@@ -293,7 +286,6 @@ ast:
           delete: Borrar
           title: Procesos legislativos
           filters:
-            open: Abiertu
             all: Toes
         new:
           back: Volver
@@ -308,7 +300,6 @@ ast:
           title: Procesu
           comments: Comentarios
           status: Estáu
-          creation_date: Fecha de creación
           status_open: Abiertu
           status_closed: Pesllao
           status_planned: Próximamente
@@ -420,7 +411,6 @@ ast:
       activity: Actividá de moderadores
       admin: Menú d'alministración
       banner: Xestionar banners
-      poll_questions: Entruges
       proposals: Propuestes
       proposals_topics: Temes de propuestes
       budgets: Presupuestu participativu
@@ -458,7 +448,6 @@ ast:
           save: "Guardar"
       title_moderated_content: Conteníu moderao
       title_budgets: Presupuestos
-      title_polls: Votaciones
       title_profiles: Perfiles
       legislation: Lexislación collaborativa
       users: Usuarios
@@ -700,9 +689,9 @@ ast:
     officials:
       edit:
         destroy: Esaniciar condición de 'Cargu Públicu'
-        title: 'Cargos Públicos: Editar usuariu'
+        title: "Cargos Públicos: Editar usuariu"
       flash:
-        official_destroyed: 'Datos guardaos: l''usuariu yá nun ye cargu públicu'
+        official_destroyed: "Datos guardaos: l'usuariu yá nun ye cargu públicu"
         official_updated: Datos del cargu públicu guardaos
       index:
         title: Cargos Públicos
@@ -717,7 +706,7 @@ ast:
       search:
         edit_official: Editar cargu públicu
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: "Cargos Públicos: Búsqueda de usuarios"
     organizations:
       index:
         filter: Filtru
@@ -935,9 +924,7 @@ ast:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        spending_proposals_title: Propuestas de inversión
         budgets_title: Presupuestos participativos
-        visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas

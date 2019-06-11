@@ -36,7 +36,7 @@ es:
     document_type_label: Tipo de documento
     document_verifications:
       already_verified: Esta cuenta de usuario ya está verificada.
-      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>"Registrarse"</b> en la parte superior derecha de la pantalla.
+      has_no_account_html: Para crear un usuario entre en %{link} y haga clic en la opción <b>'Registrarse'</b> en la parte superior derecha de la pantalla.
       link: CONSUL
       in_census_has_following_permissions: "Este usuario puede participar en el Portal de Gobierno Abierto con las siguientes posibilidades:"
       not_in_census: Este documento no está registrado.
@@ -62,9 +62,6 @@ es:
       create_proposal: Crear propuesta
       print_proposals: Imprimir propuestas
       support_proposals: Apoyar propuestas
-      create_spending_proposal: Crear una propuesta de gasto
-      print_spending_proposals: Imprimir propts. de inversión
-      support_spending_proposals: Apoyar propts. de inversión
       create_budget_investment: Crear proyectos de gasto
       print_budget_investments: Imprimir proyectos de gasto
       support_budget_investments: Apoyar proyectos de gasto
@@ -79,7 +76,6 @@ es:
     print:
       proposals_info: Haz tu propuesta en http://url.consul
       proposals_title: "Propuestas:"
-      spending_proposals_info: Participa en http://url.consul
       budget_investments_info: Participa en http://url.consul
     print_info: Imprimir esta información
     proposals:
@@ -110,18 +106,6 @@ es:
       search_results:
         one: " que contiene '%{search_term}'"
         other: " que contienen '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: Usuario no verificado
-      create: Crear una propuesta de gasto
-      filters:
-        unfeasible: Propuestas de inversión no viables
-        by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
-      print:
-        print_button: Imprimir
-      search_results:
-        one: " que contiene '%{search_term}'"
-        other: " que contienen '%{search_term}'"
     sessions:
       signed_out: Has cerrado la sesión correctamente.
       signed_out_managed_user: Se ha cerrado correctamente la sesión del usuario.
@@ -136,7 +120,7 @@ es:
       erased_notice: Cuenta de usuario borrada.
       erased_by_manager: "Borrada por el manager: %{manager}"
       erase_account_link: Borrar cuenta
-      erase_account_confirm: "¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer"
+      erase_account_confirm: '¿Seguro que quieres borrar a este usuario? Esta acción no se puede deshacer'
       erase_warning: Esta acción no se puede deshacer. Por favor asegúrese de que quiere eliminar esta cuenta.
       erase_submit: Borrar cuenta
     user_invites:

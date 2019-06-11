@@ -14,7 +14,6 @@ zh-CN:
       destroy:
         notice: 图像已成功删除。
         alert: 无法销毁图像
-        confirm: 您确定要删除此图像吗？此操作无法被撤销！
     errors:
       messages:
         in_between: 必须在%{min} 和%{max} 之间

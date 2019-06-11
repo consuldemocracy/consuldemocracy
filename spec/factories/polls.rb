@@ -94,7 +94,6 @@ FactoryBot.define do
     transient { budget nil }
 
     poll { budget&.poll || association(:poll, budget: budget) }
-
     trait :from_web do
       origin "web"
       token SecureRandom.hex(32)

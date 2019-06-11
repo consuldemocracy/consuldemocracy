@@ -4,9 +4,6 @@ class Legislation::Process < ApplicationRecord
   include Milestoneable
   include Imageable
   include Documentable
-  documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
@@ -20,7 +17,8 @@ class Legislation::Process < ApplicationRecord
   include Globalizable
 
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
-                               proposals_phase draft_publication result_publication].freeze
+                               proposals_phase people_proposals_phase draft_publication
+                               result_publication].freeze
 
   CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
 
@@ -34,6 +32,8 @@ class Legislation::Process < ApplicationRecord
                                           foreign_key: "legislation_process_id", dependent: :destroy
   has_many :proposals, -> { order(:id) }, class_name: "Legislation::Proposal",
                                           foreign_key: "legislation_process_id", dependent: :destroy
+  has_many :people_proposals, -> { order(:id) }, class_name: "Legislation::PeopleProposal",
+                                          foreign_key: "legislation_process_id", dependent: :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -45,6 +45,8 @@ class Legislation::Process < ApplicationRecord
   validates :allegations_start_date, presence: true, if: :allegations_end_date?
   validates :allegations_end_date, presence: true, if: :allegations_start_date?
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
+  validates :people_proposals_phase_end_date, presence: true,
+              if: :people_proposals_phase_start_date?
   validate :valid_date_ranges
   validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
@@ -78,6 +80,11 @@ class Legislation::Process < ApplicationRecord
   def proposals_phase
     Legislation::Process::Phase.new(proposals_phase_start_date,
                                     proposals_phase_end_date, proposals_phase_enabled)
+  end
+
+  def people_proposals_phase
+    Legislation::Process::Phase.new(people_proposals_phase_start_date,
+                                    people_proposals_phase_end_date, people_proposals_phase_enabled)
   end
 
   def draft_publication

@@ -59,12 +59,7 @@ es:
     meta_keywords: "Palabras clave (SEO)"
     meta_keywords_description: 'Palabras clave <meta name="keywords">, utilizadas para mejorar el SEO'
     min_age_to_participate: Edad mínima para participar
-    min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos donde se necesite una cueta verificada"
-    analytics_url: "URL de estadísticas externas"
-    proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que los autores de propuestas puedan enviar nuevas notificaciones de propuesta"
-    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
-    direct_message_max_per_day: "Mensajes directos máximos por día"
-    direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
+    min_age_to_participate_description: "Los usuarios mayores de esta edad podrán participar en todos los procesos donde se necesite una cuenta verificada"
     proposals:
       successful_proposal_id: Propuesta exitosa
       successful_proposal_id_description: Esta propuesta se utiliza como referencia de una propuesta exitosa en número de apoyos y se mostrará en el gráfico del panel de control
@@ -75,13 +70,18 @@ es:
       poll_link: Enlace de información adicional
       poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
       email_short_title: Correo electrónico
-      email_short_title_description: Breve descripción de la funcionalidad de correo electrónico. Permite a los usuarios enviar un email para difundir su propuesta
+      email_short_title_description: 'Breve descripción de la funcionalidad de correo electrónico. Permite a los usuarios enviar un email para difundir su propuesta. Puedes encontrar todo el contenido de este correo electrónico en "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: Descripción correo electrónico
       email_description_description: Descripción detallada de la funcionalidad de correo electrónico
       poster_short_title: Póster
-      poster_short_title_description: Breve descripción de la funcionalidad de póster. Permite a los usuarios descargar un póster en formato PDF para difundir su propuesta
+      poster_short_title_description: 'Breve descripción de la funcionalidad de póster. Permite a los usuarios descargar un póster en formato PDF para difundir su propuesta. Puedes encontrar todo el contenido de este póster en "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Descripción póster
       poster_description_description: Descripción detallada de la funcionalidad de póster
+    analytics_url: "URL de estadísticas externas"
+    proposal_notification_minimum_interval_in_days: "Intervalo mínimo (en días) para que los autores de propuestas puedan enviar nuevas notificaciones de propuesta"
+    proposal_notification_minimum_interval_in_days_description: "El número de días en los que un usuario puede enviar una notificación a todos los que apoyan su propuesta"
+    direct_message_max_per_day: "Mensajes directos máximos por día"
+    direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
       twitter_login: "Registro con Twitter"
       twitter_login_description: "Permitir que los usuarios se registren con su cuenta de Twitter"
@@ -93,11 +93,6 @@ es:
       featured_proposals_description: "Muestra propuestas destacadas en la página principal de propuestas"
       signature_sheets: "Hojas de firmas"
       signature_sheets_description: "Permite añadir desde el panel de Administración firmas recogidas de forma presencial a Propuestas y proyectos de gasto de los Presupuestos participativos"
-      spending_proposals: "Propuestas de inversión"
-      spending_proposals_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
-      spending_proposal_features:
-        voting_allowed: Votaciones de preselección sobre propuestas de inversión.
-        voting_allowed_description: "⚠️ NOTA: Esta funcionalidad ha sido sustituida por Pesupuestos Participativos y desaparecerá en nuevas versiones"
       user:
         recommendations: "Recomendaciones"
         recommendations_description: "Muestra a los usuarios recomendaciones en la homepage basado en las etiquetas de los elementos que sigue"
@@ -121,6 +116,8 @@ es:
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
+      valuation_comment_notification: "Notificar comentarios de evaluación"
+      valuation_comment_notification_description: "Envía un email a todos los usuarios menos al que haya comentado asociados a un presupuesto participativo cuando se cree un nuevo comentario de evaluación"
     map:
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"
@@ -137,10 +134,32 @@ es:
       polls_description: "Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa"
       budgets: "Presupuestos participativos"
       budgets_description: "Con los presupuestos participativos la ciudadanía decide a qué proyectos presentados por los vecinos y vecinas va destinada una parte del presupuesto"
-      legislation: "Legislación"
+      legislation: "Legislación colaborativa"
       legislation_description: "En los procesos participativos se ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la sociedad y de dar su opinión sobre ciertas actuaciones que se tiene previsto llevar a cabo"
     html:
       per_page_code_head: "Código a incluir en cada página (<head>)"
       per_page_code_head_description: "Esté código aparecerá dentro de la etiqueta <head>. Útil para introducir scripts personalizados, analitycs..."
       per_page_code_body: "Código a incluir en cada página (<body>)"
       per_page_code_body_description: "Esté código aparecerá dentro de la etiqueta <body>. Útil para introducir scripts personalizados, analitycs..."
+    uploads:
+      images:
+        min_width: "Ancho mínimo de imagen"
+        min_width_description: "Ancho mínimo permitido al subir una imagen (en pixeles)"
+        min_height: "Alto mínimo de imagen"
+        min_height_description: "Alto mínimo permitido al subir una imagen (en pixeles)"
+        max_size: "Tamaño máximo de imagen"
+        max_size_description: "Tamaño máximo permitido al subir una imagen (en Megabytes/MB)"
+        content_types: "Tipos de imagenes permitidos"
+        content_types_description: "Selecciona todos los tipos permitidos para las imágenes subidas"
+        title:
+          min_length: "Longitud mínima del título de la imagen"
+          min_length_description: "El título es proporcionado por el usuario cuando se sube una imagen (usado como atributo HTML alt)"
+          max_length: "Longitud máxima del título de la imagen"
+          max_length_description: "El título es proporcionado por el usuario cuando se sube una imagen (usado como atributo HTML alt)"
+      documents:
+        max_amount: "Número máximo de documentos"
+        max_amount_description: "Número máximo de documentos que se pueden añadir a una propuesta, proyecto de gasto..."
+        max_size: "Tamaño máximo de documento"
+        max_size_description: "Tamaño máximo permitido al subir un documento (en Megabytes/MB)"
+        content_types: "Tipos de documentos permitidos"
+        content_types_description: "Selecciona todos los tipos permitidos para los documentos subidos"

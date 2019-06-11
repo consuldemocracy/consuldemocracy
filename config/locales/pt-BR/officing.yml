@@ -51,7 +51,6 @@ pt-BR:
         submit: Validar documento
         error_verifying_census: "O Censo foi incapaz de verificar este documento."
         form_errors: impediu a verificação deste documento
-        no_assignments: "Você não tem turnos como presidente hoje"
     voters:
       new:
         title: Votações

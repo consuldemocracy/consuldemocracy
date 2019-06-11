@@ -10,6 +10,7 @@ module Budgets
     PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
+    before_action :load_budget, except: :json_data
 
     load_and_authorize_resource :budget, except: :json_data
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
@@ -136,7 +137,7 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
+          @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
           load_map
         end
@@ -152,6 +153,10 @@ module Budgets
 
       def tag_cloud
         TagCloud.new(Budget::Investment, params[:search])
+      end
+
+      def load_budget
+        @budget = Budget.find_by_slug_or_id! params[:budget_id]
       end
 
       def set_view

@@ -69,34 +69,5 @@ describe "Official positions" do
       end
 
     end
-
-    context "Spending proposals" do
-
-      before do
-        Setting["feature.spending_proposals"] = true
-        @spending_proposal1 = create(:spending_proposal, author: @user1)
-        @spending_proposal2 = create(:spending_proposal, author: @user2)
-      end
-
-      after do
-        Setting["feature.spending_proposals"] = nil
-      end
-
-      scenario "Index" do
-        visit spending_proposals_path
-
-        expect_badge_for("spending_proposal", @spending_proposal1)
-        expect_no_badge_for("spending_proposal", @spending_proposal2)
-      end
-
-      scenario "Show" do
-        visit spending_proposal_path(@spending_proposal1)
-        expect_badge_for("spending_proposal", @spending_proposal1)
-
-        visit spending_proposal_path(@spending_proposal2)
-        expect_no_badge_for("spending_proposal", @spending_proposal2)
-      end
-
-    end
   end
 end

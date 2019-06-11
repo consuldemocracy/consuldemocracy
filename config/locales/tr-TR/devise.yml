@@ -1,1 +1,65 @@
 tr:
+  devise:
+    password_expired:
+      expire_password: "Şifre süresi doldu"
+      change_required: "Şifrenizin süresi doldu"
+      change_password: "Şifrenizi değiştirin"
+      new_password: "Yeni şifre"
+      updated: "Şifre başarıyla güncellendi"
+    confirmations:
+      confirmed: "Hesabınız onaylanmıştır."
+      send_instructions: "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınıza dair talimatları içeren bir e-posta alacaksınız."
+    failure:
+      already_authenticated: "Zaten oturum açtınız."
+      inactive: "Hesabınız henüz aktif değil."
+      invalid: "Geçersiz %{authentication_keys} veya şifre."
+      locked: "Hesabınız kilitlenmiştir."
+      last_attempt: "Hesabınız engellenmeden önce bir denemeniz daha var."
+      not_found_in_database: "Geçersiz %{authentication_keys} veya şifre."
+      timeout: "Oturumunuzun süresi doldu. Devam etmek için lütfen tekrar oturum açın."
+      unauthenticated: "Devam etmek için oturum açmanız veya kaydolmanız gerekir."
+      unconfirmed: "Devam etmek için, lütfen size e-posta ile gönderdiğimiz onay bağlantısını tıklayın"
+    mailer:
+      confirmation_instructions:
+        subject: "Onay talimatları"
+      reset_password_instructions:
+        subject: "Hesabınızı sıfırlamanız için talimatlar"
+      unlock_instructions:
+        subject: "Kilit açma talimatları"
+    omniauth_callbacks:
+      failure: "Sizi %{kind} olarak yetkilendirmek \"%{reason}\" dan dolayı mümkün olmadı."
+      success: "Başarılı şekilde %{kind} olarak tanımlandı."
+    passwords:
+      no_token: "Bir şifre sıfırlama bağlantısı dışında bu sayfaya erişemezsiniz. Bir şifre sıfırlama bağlantısı yoluyla eriştiyseniz, lütfen URL’nin tam olup olmadığını kontrol edin."
+      send_instructions: "Birkaç dakika içinde şifrenizi sıfırlamanızla ilgili talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "E-posta adresiniz veritabanımızda bulunuyorsa, birkaç dakika içinde şifrenizi sıfırlamak için bir bağlantı alacaksınız."
+      updated: "Şifreniz başarıyla değiştirilmiştir. Kimlik doğrulama başarılı."
+      updated_not_active: "Şifreniz başarıyla değiştirilmiştir."
+    registrations:
+      destroyed: "Güle güle! Hesabınız iptal edildi. Seni en yakın zamanda tekrar görmeyi umarız."
+      signed_up: "Hoş geldin! Kimliğiniz doğrulandı."
+      signed_up_but_inactive: "Kaydınız başarılı oldu, ancak hesabınız aktif olmadığı için oturum açamadınız."
+      signed_up_but_locked: "Kaydınız başarılı oldu, ancak hesabınız kilitli olduğundan oturum açamadınız."
+      signed_up_but_unconfirmed: "Bir doğrulama bağlantısı içeren bir mesaj gönderdiniz. Hesabınızı etkinleştirmek için lütfen bu bağlantıya tıklayın."
+      update_needs_confirmation: "Hesabınız başarıyla güncellendi; ancak yeni e-posta adresinizi doğrulamamız gerekiyor. Lütfen yeni e-posta adresinizin onayını tamamlamak için e-postanızı kontrol edin ve bağlantıya tıklayın."
+      updated: "Hesabınız başarıyla güncellenmiştir."
+    sessions:
+      signed_in: "Başarılı şekilde giriş yaptınız."
+      signed_out: "Başarılı şekilde çıkış yaptınız."
+      already_signed_out: "Başarılı şekilde çıkış yaptınız."
+    unlocks:
+      send_instructions: "Birkaç dakika içinde, hesabınızın kilidinin açılmasıyla ilgili talimatları içeren bir e-posta alacaksınız."
+      send_paranoid_instructions: "Bir hesabınız varsa, birkaç dakika içinde hesabınızın kilidini açma talimatlarını içeren bir e-posta alacaksınız."
+      unlocked: "Hesabınızın kilidi açıldı. Devam etmek için lütfen giriş yapın."
+  errors:
+    messages:
+      already_confirmed: "Zaten doğruladınız; lütfen giriş yapmayı deneyin."
+      confirmation_period_expired: "Sizin %{period} içinde doğrulanmış olmanız gerekiyor; lütfen tekrar bir talepte bulunun."
+      expired: "süresi doldu; lütfen tekrar bir talepte bulunun."
+      not_found: "bulunamadı."
+      not_locked: "kilitlenmedi."
+      not_saved:
+        one: "1 hata, bu %{resource} 'un kaydedilmesini engelledi. Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+        other: "%{count} hatalar, bu %{resource} 'un kaydedilmesini engelledi. Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
+      equal_to_current_password: "mevcut şifreden farklı olmalıdır."

@@ -4,7 +4,7 @@ es:
       title: Administración
     actions:
       actions: Acciones
-      confirm: "¿Estás seguro?"
+      confirm: '¿Estás seguro?'
       confirm_hide: Confirmar moderación
       hide: Ocultar
       hide_author: Bloquear al autor
@@ -91,7 +91,7 @@ es:
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
-        notice: "¡Presupuestos participativos creados con éxito!"
+        notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
       edit:
@@ -307,7 +307,7 @@ es:
       edit:
         title: Editar hito
       create:
-        notice: "¡Nuevo hito creado con éxito!"
+        notice: '¡Nuevo hito creado con éxito!'
       update:
         notice: Hito actualizado
       delete:
@@ -355,7 +355,7 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -402,13 +402,13 @@ es:
         edit:
           editing: Editar acción para el dashboard de propuestas
           back: Volver a la lista
+        delete:
+          success: Acción borrada con éxito
         form:
           submit_button: Guardar
           help_text: Introduce 0 para que este valor no se tenga en cuenta
-          published_proposal: ¿Para propuestas publicadas?
+          published_proposal: '¿Para propuestas publicadas?'
           published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
-        delete:
-          success: Acción borrada con éxito
       administrator_tasks:
         index:
           description: "Los recursos publicados en el panel de progreso de las propuestas pueden incluir un botón para ser solicitados a los administradores. A continuación se muestran las solicitudes de los usuarios."
@@ -430,7 +430,7 @@ es:
           request: Recurso solicitado
         update:
           success: La tarea ha sido marcada como resuelta
-    debates:
+    hidden_debates:
       index:
         filter: Filtro
         filters:
@@ -445,9 +445,9 @@ es:
         label_attachment: "Selecciona un documento"
         submit_button: "Subir documento"
       index:
-        title: "Documentos"
         new_link: "Subir un documento"
         no_documents: "No hay documentos."
+        title: "Documentos"
         format: "Formato"
         size: "Tamaño"
         url: "URL"
@@ -555,8 +555,6 @@ es:
           back: Volver
           id: Id
           supports: Apoyos totales
-          select: Seleccionar
-          selected: Seleccionada
         form:
           custom_categories: Categorías
           custom_categories_description: Categorías que el usuario puede seleccionar al crear la propuesta. Máximo 160 caracteres.
@@ -691,7 +689,6 @@ es:
       officials: Cargos públicos
       organizations: Organizaciones
       settings: Configuración global
-      spending_proposals: Propuestas de inversión
       stats: Estadísticas
       signature_sheets: Hojas de firmas
       site_customization:
@@ -716,7 +713,6 @@ es:
           content_block:
             update: "Actualizar Bloque"
       title_moderated_content: Contenido moderado
-      title_budgets: Presupuestos
       title_profiles: Perfiles
       title_settings: Configuración
       title_site_customization: Contenido del sitio
@@ -731,6 +727,7 @@ es:
         title: Administradores
         name: Nombre
         email: Email
+        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
@@ -739,6 +736,9 @@ es:
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
+      form:
+        edit_title: "Editar administrador"
+        updated: "Administrador actualizado correctamente"
     moderators:
       index:
         title: Moderadores
@@ -797,8 +797,8 @@ es:
         segment_recipient: Destinatarios
         from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         body: Contenido del email
-        body_help_text: Así es como verán el email los usuarios.
-        send_alert: "¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?"
+        body_help_text: Así es como verán el email los usuarios
+        send_alert: '¿Estás seguro/a de que quieres enviar esta newsletter a %{n} usuarios?'
     admin_notifications:
       create_success: Notificación creada correctamente
       update_success: Notificación actualizada correctamente
@@ -835,7 +835,7 @@ es:
         segment_recipient: Destinatarios
         preview_guide: "Así es como los usuarios verán la notificación:"
         sent_guide: "Así es como los usuarios ven la notificación:"
-        send_alert: "¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?"
+        send_alert: '¿Estás seguro/a de que quieres enviar esta notificación a %{n} usuarios?'
     system_emails:
       preview_pending:
         action: Previsualizar pendientes
@@ -878,6 +878,9 @@ es:
       user_invite:
         title: "Invitación de usuarios"
         description: "Enviado a la persona que ha sido invitada a registrar una cuenta."
+      evaluation_comment:
+        title: "Nuevo comentario de evaluación"
+        description: "Enviado a administradores y evaluadores del presupuesto."
       edit_info: "Puedes editar este email en"
       message_title: "Título del mensaje"
       message_body: "Este es un ejemplo de contenido de un mensaje."
@@ -885,6 +888,7 @@ es:
         no_investments: "No se ha creado ningún proyecto de gasto. Se necesita algún ejemplo para poder previsualizar el email."
         no_comments: "No se ha creado ningún comentario. Se necesita algún ejemplo para poder previsualizar el email."
         no_replies: "No se ha creado ninguna respuesta. Se necesita algún ejemplo para poder previsualizar el email."
+        no_evaluation_comments: "No se ha creado ningún comentario de evaluación. Se necesita algún ejemplo para poder previsualizar el email."
     emails_download:
       index:
         title: Descarga de emails
@@ -907,15 +911,6 @@ es:
         delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
-      summary:
-        title: Resumen de evaluación de proyectos de gasto
-        valuator_name: Evaluador
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
-        in_evaluation_count: En evaluación
-        total_count: Total
-        cost: Coste total
       form:
         edit_title: "Evaluadores: Editar evaluador"
         update: "Actualizar evaluador"
@@ -1182,7 +1177,7 @@ es:
         edit: "Editar urna"
     officials:
       edit:
-        destroy: Eliminar condición de "Cargo Público"
+        destroy: Eliminar condición de 'Cargo Público'
         title: "Cargos Públicos: Editar usuario"
       flash:
         official_destroyed: "Datos guardados: el usuario ya no es cargo público"
@@ -1239,9 +1234,15 @@ es:
         id: ID
         author: Autor
         milestones: Hitos
+        select: Seleccionar
+        selected: Seleccionada
         no_proposals: No hay propuestas.
       show:
         create_question: Añadir esta propuesta a una votación para ser votada
+      form:
+        update: Actualizar propuesta ciudadana
+      update:
+        notice: Propuesta actualizada correctamente
     hidden_proposals:
       index:
         filter: Filtro
@@ -1267,6 +1268,7 @@ es:
         title: Configuración global
         update_setting: Actualizar
         participation_processes: "Procesos de participación"
+        images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"
@@ -1275,7 +1277,7 @@ es:
           disable: "Desactivar"
         map:
           title: Configuración del mapa
-          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón "Actualizar".
+          help: Aquí puedes personalizar la manera en la que se muestra el mapa a los usuarios. Arrastra el marcador o pulsa sobre cualquier parte del mapa, ajusta el zoom y pulsa el botón 'Actualizar'.
           flash:
             update: La configuración del mapa se ha guardado correctamente.
           form:
@@ -1304,9 +1306,6 @@ es:
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
-      spending_proposal_search:
-        button: Buscar
-        placeholder: Buscar propuestas por título o descripción
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
@@ -1327,62 +1326,6 @@ es:
       color_help: Formato hexadecimal
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
-    spending_proposals:
-      index:
-        geozone_filter_all: Todos los ámbitos de actuación
-        administrator_filter_all: Todos los administradores
-        valuator_filter_all: Todos los evaluadores
-        tags_filter_all: Todas las etiquetas
-        filters:
-          valuation_open: Abiertas
-          without_admin: Sin administrador
-          managed: Gestionando
-          valuating: En evaluación
-          valuation_finished: Evaluación finalizada
-          all: Todas
-        title: Propuestas de inversión para presupuestos participativos
-        assigned_admin: Administrador asignado
-        no_admin_assigned: Sin admin asignado
-        no_valuators_assigned: Sin evaluador
-        summary_link: "Resumen de propuestas"
-        valuator_summary_link: "Resumen de evaluadores"
-        feasibility:
-          feasible: "Viable (%{price})"
-          not_feasible: "Inviable"
-          undefined: "Sin definir"
-      show:
-        assigned_admin: Administrador asignado
-        assigned_valuators: Evaluadores asignados
-        back: Volver
-        classification: Clasificación
-        heading: "Propuesta de inversión %{id}"
-        edit: Editar
-        edit_classification: Editar clasificación
-        association_name: Asociación
-        by: Autor
-        sent: Fecha
-        geozone: Ámbito
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Etiquetas
-        undefined: Sin definir
-      edit:
-        classification: Clasificación
-        assigned_valuators: Evaluadores
-        submit_button: Actualizar
-        tags: Etiquetas
-        tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
-        undefined: Sin definir
-      summary:
-        title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
-        geozone_name: Ámbito de ciudad
-        finished_and_feasible_count: Finalizadas viables
-        finished_and_unfeasible_count: Finalizadas inviables
-        finished_count: Finalizadas
-        in_evaluation_count: En evaluación
-        total_count: Total
-        cost_for_geozone: Coste total
     geozones:
       index:
         title: Zonas
@@ -1436,6 +1379,10 @@ es:
           one: "Hay %{count} firma inválida"
           other: "Hay %{count} firmas inválidas"
         unverified_error: (No verificadas por el Padrón)
+        voted:
+          zero: "No hay votos asociados con las firmas verificadas."
+          one: "Hay %{count} voto asociado a las firmas verificadas."
+          other: "Hay %{count} votos asociados a las firmas verificadas."
         loading: "Aún hay firmas que se están verificando por el Padrón, por favor refresca la página en unos instantes"
     stats:
       show:
@@ -1449,7 +1396,6 @@ es:
           proposals: Propuestas
           budgets: Presupuestos abiertos
           budget_investments: Proyectos de gasto
-          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
@@ -1466,7 +1412,6 @@ es:
         polls: Votaciones
       graph:
         debate_created: Debates
-        spending_proposals: Propuestas de inversión
         visit: Visitas
         level_2_user: Usuarios nivel 2
         proposal_created: Propuestas Ciudadanas

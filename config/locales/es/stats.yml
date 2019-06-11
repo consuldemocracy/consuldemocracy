@@ -14,7 +14,6 @@ es:
     total: "Total"
     geozone: "Distrito"
     no_demographic_data:
-      zero: ""
       one: "* No se dispone de los datos demográficos de 1 participante."
       other: "* No se dispone de los datos demográficos de %{count} participantes."
     budgets:
@@ -28,9 +27,9 @@ es:
       total: "Total"
       heading: "Distrito"
       investments_sent_html: "Propuestas<br>enviadas"
-      participants_support_phase: Participantes fase apoyos
-      participants_vote_phase: Participantes fase votación
-      participants_every_phase: Total de participantes
+      participants_support_phase: "Participantes fase apoyos"
+      participants_vote_phase: "Participantes fase votación"
+      participants_every_phase: "Total de participantes"
       percent_total_participants: "% Total participantes"
       percent_heading_census: "% Censo distrito"
       participatory_disclaimer: "** Las cifras de total de participantes se refieren a personas que han creado, apoyado o votado propuestas."

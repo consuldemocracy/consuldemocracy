@@ -22,14 +22,15 @@ namespace :admin do
     end
   end
 
-  resources :debates, only: :index do
+  resources :hidden_debates, only: :index do
     member do
       put :restore
       put :confirm_hide
     end
   end
 
-  resources :proposals, only: [:index, :show] do
+  resources :proposals, only: [:index, :show, :update] do
+    member { patch :toggle_selection }
     resources :milestones, controller: "proposal_milestones"
     resources :progress_bars, except: :show, controller: "proposal_progress_bars"
   end
@@ -39,15 +40,6 @@ namespace :admin do
       put :restore
       put :confirm_hide
     end
-  end
-
-  resources :spending_proposals, only: [:index, :show, :edit, :update] do
-    member do
-      patch :assign_admin
-      patch :assign_valuators
-    end
-
-    get :summary, on: :collection
   end
 
   resources :proposal_notifications, only: :index do
@@ -83,7 +75,7 @@ namespace :admin do
     collection { get :search }
   end
 
-  resources :comments, only: :index do
+  resources :hidden_comments, only: :index do
     member do
       put :restore
       put :confirm_hide
@@ -98,6 +90,7 @@ namespace :admin do
 
   resources :settings, only: [:index, :update]
   put :update_map, to: "settings#update_map"
+  put :update_content_types, to: "settings#update_content_types"
 
   resources :moderators, only: [:index, :create, :destroy] do
     get :search, on: :collection
@@ -114,7 +107,7 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :administrators, only: [:index, :create, :destroy] do
+  resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
     get :search, on: :collection
   end
 

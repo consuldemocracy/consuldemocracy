@@ -83,7 +83,7 @@ ar:
       taken: محجوز مسبقاً
       other_than: يجب أن يكون خلاف %{count}
     template:
-      body: 'هناك مشاكل مع الحقول التالية:'
+      body: "هناك مشاكل مع الحقول التالية:"
   helpers:
     select:
       prompt: الرجاء تحديد

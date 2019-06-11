@@ -13,10 +13,13 @@ FactoryBot.define do
     allegations_end_date { Date.current + 3.days }
     proposals_phase_start_date { Date.current }
     proposals_phase_end_date { Date.current + 2.days }
+    people_proposals_phase_start_date { Date.current }
+    people_proposals_phase_end_date { Date.current + 2.days }
     result_publication_date { Date.current + 5.days }
     debate_phase_enabled true
     allegations_phase_enabled true
     proposals_phase_enabled true
+    people_proposals_phase_enabled true
     draft_publication_enabled true
     result_publication_enabled true
     published true
@@ -63,6 +66,18 @@ FactoryBot.define do
       proposals_phase_enabled true
     end
 
+    trait :in_people_proposals_phase do
+      people_proposals_phase_start_date { Date.current - 1.day }
+      people_proposals_phase_end_date { Date.current + 2.days }
+      people_proposals_phase_enabled true
+    end
+
+    trait :upcoming_people_proposals_phase do
+      people_proposals_phase_start_date { Date.current + 1.day }
+      people_proposals_phase_end_date { Date.current + 2.days }
+      people_proposals_phase_enabled true
+    end
+
     trait :published do
       published true
     end
@@ -86,15 +101,17 @@ FactoryBot.define do
       allegations_end_date nil
       proposals_phase_start_date nil
       proposals_phase_end_date nil
+      people_proposals_phase_start_date nil
+      people_proposals_phase_end_date nil
       result_publication_date nil
       debate_phase_enabled false
       allegations_phase_enabled false
       proposals_phase_enabled false
+      people_proposals_phase_enabled false
       draft_publication_enabled false
       result_publication_enabled false
       published true
     end
-
   end
 
   factory :legislation_draft_version, class: "Legislation::DraftVersion" do
@@ -161,5 +178,28 @@ LOREM_IPSUM
     terms_of_service "1"
     process factory: :legislation_process
     author factory: :user
+  end
+
+  factory :legislation_people_proposal, class: "Legislation::PeopleProposal" do
+    sequence(:title) { |n| "People and group #{n} for a legislation" }
+    summary "This law should be implemented by..."
+    terms_of_service "1"
+    process factory: :legislation_process
+    author factory: :user
+    validated false
+
+    trait :with_contact_info do
+      email "proposal@test.com"
+      website "https://proposal.io"
+      phone "666666666"
+      facebook "facebook.id"
+      twitter "TwitterId"
+      youtube "youtubechannelid"
+      instagram "instagramid"
+    end
+
+    trait :validated do
+      validated true
+    end
   end
 end

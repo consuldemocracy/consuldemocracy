@@ -1,6 +1,8 @@
 namespace :stats do
   desc "Generates stats which are not cached yet"
   task generate: :environment do
+    ApplicationLogger.new.info "Updating budget and poll stats"
+
     Budget.find_each do |budget|
       Budget::Stats.new(budget).generate
       print "."

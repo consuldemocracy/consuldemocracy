@@ -3,7 +3,8 @@ ar:
     no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
     comment:
       hi: مرحبا
-      new_comment_by_html: هناك تعليق جديد من <b>%{commenter}</b>
+      new_comment_by_html: هناك تعليق جديد من <strong>%{commenter}</strong>
+      subject: تم التعليق على %{commentable}
       title: تعليق جديد
     config:
       manage_email_subscriptions: لإيقاف استلام رسائل البريد الإلكتروني هذه عليك بتغيير الإعدادات الخاصة بك في
@@ -15,7 +16,8 @@ ar:
       title: أكد حسابك باستخدام الرابط التالي
     reply:
       hi: مرحبا
-      new_reply_by_html: وهناك رد جديد من <b>%{commenter}</b> على التعليق الخاص بك
+      new_reply_by_html: وهناك رد جديد من <strong>%{commenter}</strong> على التعليق الخاص بك
+      subject: يوجد رد على تعليقك
       title: اجابة جديدة على تعليقك
     unfeasible_spending_proposal:
       hi: "عزيزي المستخدم،"
@@ -29,6 +31,8 @@ ar:
       unsubscribe_account: حسابي
     direct_message_for_receiver:
       subject: "لقد تلقيت رسالة خاصة جديدة"
+      reply: الرد على %{sender}
+      unsubscribe: "إذا كنت لا تريد استلام رسائل مباشرة ، قم بزيارة %{account} وقم بإلغاء تفعيل هذا الخيار."
       unsubscribe_account: حسابي
     direct_message_for_sender:
       subject: "لقد قمت بإرسال رسالة خاصة جديدة"

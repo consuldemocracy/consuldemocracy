@@ -10,6 +10,17 @@
   <%= render "shared/canonical", href: legislation_process_proposal_url(process_id: @process) %>
 <% end %>
 
+<div class="row process-proposal">
+  <div class="small-12 column">
+    <div class="header">
+      <p class="process-title">
+        <strong><%= t("legislation.proposals.process_title") %></strong>
+      </p>
+      <%= link_to @process.title, @process, class: "process-link" %>
+    </div>
+  </div>
+</div>
+
 <% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @legislation_proposal_votes] do %>
   <div class="proposal-show legislation-proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">

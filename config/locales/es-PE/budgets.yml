@@ -99,9 +99,9 @@ es-PE:
         author_deleted: Usuario eliminado
         price_explanation: Informe de coste <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidad
-        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
-        location_html: 'Ubicación: <strong>%{location}</strong>'
-        organization_name_html: 'Propuesto en nombre de: <strong>%{name}</strong>'
+        code_html: "Código propuesta de gasto: <strong>%{code}</strong>"
+        location_html: "Ubicación: <strong>%{location}</strong>"
+        organization_name_html: "Propuesto en nombre de: <strong>%{name}</strong>"
         share: Compartir
         title: Propuesta de inversión
         supports: Apoyos

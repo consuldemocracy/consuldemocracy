@@ -15,9 +15,6 @@ class Proposal < ApplicationRecord
   include Mappable
   include Notifiable
   include Documentable
-  documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
   include EmbedVideosHelper
   include Relationable
   include Milestoneable
@@ -74,6 +71,8 @@ class Proposal < ApplicationRecord
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
   scope :unsuccessful,             -> { where("cached_votes_up < ?", Proposal.votes_needed_for_success) }
   scope :public_for_api,           -> { all }
+  scope :selected,                 -> { where(selected: true) }
+  scope :not_selected,             -> { where(selected: false) }
   scope :not_supported_by_user,    ->(user) { where.not(id: user.find_voted_items(votable_type: "Proposal").compact.map(&:id)) }
   scope :published,                -> { where.not(published_at: nil) }
   scope :draft,                    -> { where(published_at: nil) }

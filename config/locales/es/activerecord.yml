@@ -71,9 +71,6 @@ es:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      spending_proposal:
-        one: "Propuesta de inversión"
-        other: "Proyectos de gasto"
       site_customization/page:
         one: Página
         other: Páginas
@@ -129,6 +126,8 @@ es:
         one: Enlace
         other: Enlaces
     attributes:
+      administrator:
+        description: Descripción
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"
@@ -187,6 +186,7 @@ es:
         title: "Título"
         question: "Pregunta"
         description: "Descripción"
+        selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
@@ -202,13 +202,6 @@ es:
       organization:
         name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nombre de la asociación"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
-        geozone_id: "Ámbito de actuación"
-        title: "Título"
       poll:
         name: "Nombre"
         starts_at: "Fecha de apertura"
@@ -350,15 +343,14 @@ es:
         description: Descripción
         link: Enlace externo
         request_to_administrators: Incluir en el recurso un botón para solicitar el recurso a los administradores
-        day_offset: ¿En cuántos días tras la creación de la propuesta quieres que se active?
-        required_supports: ¿Cuántos apoyos tiene que conseguir la propuesta para que se active?
+        day_offset: '¿En cuántos días tras la creación de la propuesta quieres que se active?'
+        required_supports: '¿Cuántos apoyos tiene que conseguir la propuesta para que se active?'
         order: Puedes introducir la posición en la que se mostrará al usuario esta acción en la lista de acciones
         active: Activa
         action_type: Tipo
       dashboard/administrator_task:
         source: Fuente
         user: Ejecutado por
-        executed_at: Ejecutado el
       link:
         label: Título
         url: Enlace

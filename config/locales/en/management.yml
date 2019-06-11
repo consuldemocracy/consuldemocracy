@@ -62,9 +62,6 @@ en:
       create_proposal: Create proposal
       print_proposals: Print proposals
       support_proposals: Support proposals
-      create_spending_proposal: Create spending proposal
-      print_spending_proposals: Print spending proposals
-      support_spending_proposals: Support spending proposals
       create_budget_investment: Create budget investment
       print_budget_investments: Print budget investments
       support_budget_investments: Support budget investments
@@ -79,7 +76,6 @@ en:
     print:
       proposals_info: Create your proposal on http://url.consul
       proposals_title: "Proposals:"
-      spending_proposals_info: Participate at http://url.consul
       budget_investments_info: Participate at http://url.consul
     print_info: Print this info
     proposals:
@@ -105,18 +101,6 @@ en:
       filters:
         heading: Concept
         unfeasible: Unfeasible investment
-      print:
-        print_button: Print
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
-    spending_proposals:
-      alert:
-        unverified_user: User is not verified
-      create: Create spending proposal
-      filters:
-        unfeasible: Unfeasible investment projects
-        by_geozone: "Investment projects with scope: %{geozone}"
       print:
         print_button: Print
       search_results:

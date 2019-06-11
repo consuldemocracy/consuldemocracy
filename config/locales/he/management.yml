@@ -1,50 +1,62 @@
 he:
   management:
     account:
+      menu:
+        reset_password_email: איפוס סיסמה באמצעות דואר אלקטרוני
+        reset_password_manually: איפוס סיסמה באופן ידני
       alert:
         unverified_user: אף משתתף/ת לא הצטרף/ה עדין
       show:
         title: חשבון משתמש/ת
       edit:
+        title: "עריכת חשבון משתמש: איפוס סיסמה"
         back: חזרה
         password:
           password: סיסמה
+          send_email: שלח דואר אלקטרוני על איפוס סיסמה
+          reset_email_send: דואר אלקטרוני נשלח כראוי.
+          reseted: הסיסמה אופסה בהצלחה
+          random: יצירת סיסמה אקראית
+          save: שמור סיסמה
+          print: הדפס סיסמה
+          print_help: ניתן יהיה להדפיס את הסיסמה בעת שמירתה.
     account_info:
       change_user: שינוי חשבון משתמש/ת
-      document_number_label: 'מספר תעודה מזהה'
-      document_type_label: 'סוג תעודה מזהה'
-      email_label: 'דואר אלקטרוני'
-      identified_label: 'זוהה כ'
-      username_label: 'שם משתמש/ת'
+      document_number_label: "מספר תעודה מזהה"
+      document_type_label: "סוג תעודה מזהה"
+      email_label: "דואר אלקטרוני"
+      identified_label: "זוהה כ"
+      username_label: "שם משתמש/ת"
+    check: בדוק מסמך
     dashboard:
       index:
         title: הנהלה
-        info: כאן ניתן לנהל משתמשים לפי כל הנושאים המופיעים בתפריט משמאל
+        info: כאן ניתן לנהל משתמשים לפי כל הפעולות המופיעות בתפריט משמאל.
     document_number: מספר תעודה מזהה
     document_type_label: סוג תעודה מזהה
     document_verifications:
       already_verified: חשבון משתמש/ת זה אושר בעבר
       has_no_account_html: ' כדי ליצור חשבון  %{link} נא ללחוץ על<b>''Register''</b> בחלק השמאלי העליון של המסך'
       link: מנהל מערכת
-      in_census_has_following_permissions: 'משתמשים/ות אלו יכולים/ות להשתתף במערכת עם ההרשאות הבאות'
+      in_census_has_following_permissions: "משתמשים/ות אלו יכולים/ות להשתתף במערכת עם ההרשאות הבאות"
       not_in_census: תעודה מזהה זו לא רשומה
-      not_in_census_info: ' אזרחים/ות שאינם/ן מתפקדים/ות יכולים/ות להשתתף באתר עם ההרשאות הבאות :'
+      not_in_census_info: "תושבים/ות שאינם/ן נמצאים ברשומות יכולים/ות להשתתף באתר עם ההרשאות הבאות:"
       please_check_account_data: נא לבדוק בבקשה שהנתונים מעל מדויקים
       title: ' ניהול חשבון'
       under_age: "אינך בגיל המאפשר רישומך באתר"
-      verify: Verify
+      verify: אמת
     email_label: דואר אלקטרוני
     date_of_birth: תאריך לידה
     email_verifications:
       already_verified: חשבון משתמש/ת זה אושר בעבר
-      choose_options: 'נא לבחור באחת מהאפשרויות הבאות:'
+      choose_options: "נא לבחור באחת מהאפשרויות הבאות:"
       document_found_in_census: מסמך זה נמצא בארכיון אבל הוא לא מקושר לחשבון של אף אחד/ת
-      document_mismatch: 'דואר אלקטרוני זה שייך למשתמש/ת מזוהה: %{document_number}(%{document_type})'
+      document_mismatch: "דואר אלקטרוני זה שייך למשתמש/ת מזוהה: %{document_number}(%{document_type})"
       email_placeholder: נא להכניס את כתובת הדואר אלקטרוני בו השתמשת ליצירת החשבון 
       email_sent_instructions: כדי לזהותך בוודאות, עליך ללחוץ על קישור שנשלח לכתובת הדואר אלקטרוני שהכנסת למערכת. צעד זה נחוץ כדי לוודא שכתובת הדואר אלקטרוני שייכת לך
-      if_existing_account: אם יש לך כבר חשבון באתר זה
-      if_no_existing_account: אם לא יצרת עדין חשבון
-      introduce_email: 'נא להכניס את הדואר אלקטרוני בו השתמשת בפתיחת החשבון'
+      if_existing_account: באם לתושב יש כבר חשבון משתמש באתר זה
+      if_no_existing_account: באם התושב טרם יצר חשבון משתמש
+      introduce_email: "נא להכניס את הדואר אלקטרוני בו השתמשת בפתיחת החשבון"
       send_email: שליחת דואר אלקטרוני לאימות
     menu:
       create_proposal: יצירת הצעה חדשה
@@ -54,7 +66,11 @@ he:
       print_spending_proposals: הדפסת הצעות תקציב
       support_spending_proposals: תמיכה בהצעות תקציב
       create_budget_investment: יצירת תקציב להשקעה
+      print_budget_investments: הדפס תקציב השקעות
+      support_budget_investments: תמוך בתקציב השקעות
+      users: ניהול משתמשים
       user_invites: שליחת הזמנות
+      select_user: בחר משתמש
     permissions:
       create_proposals: יצירת הצעות
       debates: השתתפות בדיונים
@@ -62,8 +78,8 @@ he:
       vote_proposals: הצבעה על הצעות
     print:
       proposals_info: יצירת http://url.consul אישי
-      proposals_title: 'הצעות:'
-      spending_proposals_info: משתתף ב http://url.consul
+      proposals_title: "הצעות:"
+      spending_proposals_info: השתתף ב http://yoururl.com
       budget_investments_info: משתתף ב http://url.consul
     print_info: הדפסת מידע זה
     proposals:
@@ -76,32 +92,51 @@ he:
         title: תמיכה בהצעות
     budgets:
       create_new_investment: יצירת תקציב להשקעה
-      table_name: Name
+      print_investments: הדפסת תקציב השקעות
+      support_investments: תמוך בתקציב השקעות
+      table_name: שם
       table_phase: שלב
+      table_actions: פעולות
+      no_budgets: אין תקציבים השתתפותים פעילים.
     budget_investments:
       alert:
         unverified_user: המשתמש אינו מאומת
+      create: צור תקציב להשקעה
       filters:
+        heading: רעיון
         unfeasible: השקעה אינה ברת ביצוע
       print:
         print_button: הדפסה
+      search_results:
+        one: " המכיל את המונח '%{search_term}'"
+        two: " המכיל את המונחים '%{search_term}'"
+        many: " המכיל את המונחים '%{search_term}'"
+        other: " המכיל את המונחים '%{search_term}'"
     spending_proposals:
       alert:
         unverified_user: המשתמש אינו מאומת
-      create: יצירת הצעה תקציב
+      create: צור מסגרת תקציב
       filters:
         unfeasible: פרויקטים להשקעה אינם ברי ביצוע
         by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
       print:
         print_button: הדפסה
+      search_results:
+        one: " המכיל את המונח '%{search_term}'"
+        two: " המכיל את המונחים '%{search_term}'"
+        many: " המכיל את המונחים '%{search_term}'"
+        other: " המכיל את המונחים '%{search_term}'"
     sessions:
       signed_out: יצאת בהצלחה
-      signed_out_managed_user: יצאת בהצלחה משם המשתמש/ת
-    username_label: שם המשתמש/ת
+      signed_out_managed_user: התנתקת בהצלחה משם המשתמש/ת.
+    username_label: שם משתמש/ת
     users:
       create_user: יצירת חשבון חדש
+      create_user_info: אנו ניצור חשבון עם הנתונים הבאים
       create_user_submit: יצירת משתמש/ת
       create_user_success_html: שלחנו הודעה לכתובת הדואר אלקטרוני <b>%{email}</b> כדי לוודא שהוא שייך למשתמש/ת. ההודעה מכילה קישור שעליך ללחוץ עליו. לאחר מכן יש צורך להגדיר את סיסמת הגישה שלך לפני שיתאפשר להיכנס לאתר
+      autogenerated_password_html: "סיסמה שנוצרה באופן אוטומטי הוא <b>%{password}</b>, אתה יכול לשנות את זה, ב 'החשבון שלי'"
+      email_optional_label: דואר אלקטרוני (אופציונאלי)
       erased_notice: חשבון המשתמש/ת נמחק
       erased_by_manager: "נמחק על ידי מנהל: %{manager}"
       erase_account_link: מחיקת משתמש

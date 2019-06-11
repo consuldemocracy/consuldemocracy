@@ -5,13 +5,14 @@ resources :proposals do
       get :progress
       get :community
       get :recommended_actions
+      get :messages
     end
 
     resources :resources, only: [:index], controller: "dashboard/resources"
     resources :achievements, only: [:index], controller: "dashboard/achievements"
     resources :successful_supports, only: [:index], controller: "dashboard/successful_supports"
     resources :supports, only: [:index], controller: "dashboard/supports"
-    resources :polls, except: [:show, :destroy], controller: "dashboard/polls"
+    resources :polls, except: [:show], controller: "dashboard/polls"
     resources :mailing, only: [:index, :new, :create], controller: "dashboard/mailing"
     resources :poster, only: [:index, :new], controller: "dashboard/poster"
     resources :actions, only: [], controller: "dashboard/actions" do

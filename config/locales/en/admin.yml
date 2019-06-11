@@ -355,7 +355,7 @@ en:
         notice: "Progress bar updated successfully"
       delete:
         notice: "Progress bar deleted successfully"
-    comments:
+    hidden_comments:
       index:
         filter: Filter
         filters:
@@ -430,7 +430,7 @@ en:
           request: Requested resource
         update:
           success: The task has been marked as solved.
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:
@@ -556,8 +556,6 @@ en:
           id: Id
           title: Title
           supports: Total supports
-          select: Select
-          selected: Selected
         form:
           custom_categories: Categories
           custom_categories_description: Categories that users can select creating the proposal. Max 160 characteres.
@@ -692,7 +690,6 @@ en:
       officials: Officials
       organizations: Organisations
       settings: Global settings
-      spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
@@ -717,7 +714,6 @@ en:
           content_block:
             update: "Update Block"
       title_moderated_content: Moderated content
-      title_budgets: Budgets
       title_profiles: Profiles
       title_settings: Settings
       title_site_customization: Site content
@@ -732,6 +728,7 @@ en:
         title: Administrators
         name: Name
         email: Email
+        description: Description
         id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
@@ -740,6 +737,9 @@ en:
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Administrators: User search"
+      form:
+        edit_title: "Edit administrator"
+        updated: "Administrator updated successfully"
     moderators:
       index:
         title: Moderators
@@ -879,6 +879,9 @@ en:
       user_invite:
         title: "User Invitation"
         description: "Sent to the person that has been invited to register an account."
+      evaluation_comment:
+        title: "New evaluation comment"
+        description: "Sent to administrators and evaluators related to commented investment"
       edit_info: "You can edit this email in"
       message_title: "Message's Title"
       message_body: "This is a sample of message's content."
@@ -886,6 +889,7 @@ en:
         no_investments: "There aren't any budget investment created. Some example data is needed in order to preview the email."
         no_comments: "There aren't any comments created. Some example data is needed in order to preview the email."
         no_replies: "There aren't any replies created. Some example data is needed in order to preview the email."
+        no_evaluation_comments: "There aren't any evaluation comments created. Some example data is needed in order to preview the email."
     emails_download:
       index:
         title: Emails download
@@ -908,15 +912,6 @@ en:
         delete: Delete
       search:
         title: "Valuators: User search"
-      summary:
-        title: Valuator summary for investment projects
-        valuator_name: Valuator
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost: Cost
       form:
         edit_title: "Valuators: Edit valuator"
         update: "Update valuator"
@@ -1239,10 +1234,16 @@ en:
         title: Proposals
         id: ID
         author: Author
+        select: Select
+        selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
       show:
         create_question: Add this proposal to a poll to be voted
+      form:
+        update: Update proposal
+      update:
+        notice: Proposal updated successfully
     hidden_proposals:
       index:
         filter: Filter
@@ -1268,6 +1269,7 @@ en:
         title: Configuration settings
         update_setting: Update
         participation_processes: "Participation processes"
+        images_and_documents: "Images and documents"
         feature_flags: Features
         features:
           enabled: "Feature enabled"
@@ -1305,9 +1307,6 @@ en:
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
-      spending_proposal_search:
-        button: Search
-        placeholder: Search spending proposals by title or description
       user_search:
         button: Search
         placeholder: Search user by name or email
@@ -1328,62 +1327,6 @@ en:
       color_help: Hexadecimal format
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
-    spending_proposals:
-      index:
-        geozone_filter_all: All zones
-        administrator_filter_all: All administrators
-        valuator_filter_all: All valuators
-        tags_filter_all: All tags
-        filters:
-          valuation_open: Open
-          without_admin: Without assigned admin
-          managed: Managed
-          valuating: Under valuation
-          valuation_finished: Valuation finished
-          all: All
-        title: Investment projects for participatory budgeting
-        assigned_admin: Assigned administrator
-        no_admin_assigned: No admin assigned
-        no_valuators_assigned: No valuators assigned
-        summary_link: "Investment project summary"
-        valuator_summary_link: "Valuator summary"
-        feasibility:
-          feasible: "Feasible (%{price})"
-          not_feasible: "Not feasible"
-          undefined: "Undefined"
-      show:
-        assigned_admin: Assigned administrator
-        assigned_valuators: Assigned valuators
-        back: Back
-        classification: Classification
-        heading: "Investment project %{id}"
-        edit: Edit
-        edit_classification: Edit classification
-        association_name: Association
-        by: By
-        sent: Sent
-        geozone: Scope
-        dossier: Dossier
-        edit_dossier: Edit dossier
-        tags: Tags
-        undefined: Undefined
-      edit:
-        classification: Classification
-        assigned_valuators: Valuators
-        submit_button: Update
-        tags: Tags
-        tags_placeholder: "Write the tags you want separated by commas (,)"
-        undefined: Undefined
-      summary:
-        title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
-        geozone_name: Scope
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Finished
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost_for_geozone: Cost
     geozones:
       index:
         title: Geozone
@@ -1437,6 +1380,10 @@ en:
           one: "There is %{count} invalid signature"
           other: "There are %{count} invalid signatures"
         unverified_error: (Not verified by Census)
+        voted:
+          zero: "There is no votes created from the verified signatures."
+          one: "There is %{count} vote created from the verified signatures."
+          other: "There is %{count} votes created from verified signatures."
         loading: "There are still signatures that are being verified by the Census, please refresh the page in a few moments"
     stats:
       show:
@@ -1450,7 +1397,6 @@ en:
           proposals: Proposals
           budgets: Open budgets
           budget_investments: Investment projects
-          spending_proposals: Spending Proposals
           unverified_users: Unverified users
           user_level_three: Level three users
           user_level_two: Level two users
@@ -1467,7 +1413,6 @@ en:
         polls: Polls
       graph:
         debate_created: Debates
-        spending_proposals: Investment projects
         visit: Visits
         level_2_user: Level 2 users
         proposal_created: Citizen proposals

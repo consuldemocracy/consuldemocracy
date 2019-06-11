@@ -123,3 +123,4 @@ en:
       form:
         tags_label: "Categories"
       not_verified: "For vote proposals %{verify_account}."
+      process_title: Collaborative legislation process

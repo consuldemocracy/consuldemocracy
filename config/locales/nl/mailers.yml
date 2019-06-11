@@ -3,7 +3,7 @@ nl:
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
-      new_comment_by_html: There is a new comment from <b>%{commenter}</b>
+      new_comment_by_html: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
@@ -17,22 +17,22 @@ nl:
       title: Confirm your account using the following link
     reply:
       hi: Hoi
-      new_reply_by_html: There is a new response from <b>%{commenter}</b> to your comment on
+      new_reply_by_html: There is a new response from <strong>%{commenter}</strong> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
     unfeasible_spending_proposal:
       hi: "Beste deelnemer,"
-      new_html: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
+      new_html: "Voor al deze vragen nodigen we je uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. Je kunt dit doen door deze link te volgen: %{url}."
       new_href: "new investment project"
       sincerely: "Sincerely"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
       subject: "Your investment project '%{code}' has been marked as unfeasible"
     proposal_notification_digest:
-      info: "Here are the new notifications that have been published by authors of the proposals that you have supported in %{org_name}."
-      title: "Proposal notifications in %{org_name}"
-      share: Share proposal
-      comment: Comment proposal
-      unsubscribe: "Als u geen kennisgeving van voorstellen wilt ontvangen, gaat u naar %{account} en verwijdert u het vinkje bij 'Een samenvatting van de kennisgevingsvoorstellen ontvangen'."
+      info: "Dit zijn nieuwe notificaties gerelateerd aan voorstellen die je hebt gesteund in %{org_name}."
+      title: "Notifications in %{org_name}"
+      share: Voorstel delen
+      comment: Reageren op het voorstel
+      unsubscribe: "Als je geen notificaties van voorstellen wilt ontvangen, ga je naar %{account} en verwijder je het vinkje bij 'Een samenvatting van notificaties ontvangen'."
       unsubscribe_account: My account
     direct_message_for_receiver:
       subject: "You have received a new private message"

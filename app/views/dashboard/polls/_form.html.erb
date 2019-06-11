@@ -1,7 +1,7 @@
 <%= form_for [proposal, :dashboard, poll] do |f| %>
   <div class="row expanded">
     <div class="small-12 medium-6 column">
-      <%= f.text_field :name %>
+      <%= f.text_field :name, label: t("dashboard.polls.form.name") %>
     </div>
   </div>
 

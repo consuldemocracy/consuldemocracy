@@ -15,6 +15,22 @@ describe "Results" do
     Budget::Result.new(budget, heading).calculate_winners
   end
 
+  scenario "No links to budget results with results disabled" do
+    budget.update(results_enabled: false)
+
+    visit budgets_path
+
+    expect(page).not_to have_link "See results"
+
+    visit budget_path(budget)
+
+    expect(page).not_to have_link "See results"
+
+    visit budget_executions_path(budget)
+
+    expect(page).not_to have_link "See results"
+  end
+
   scenario "Diplays winner investments" do
     create(:budget_heading, group: group)
 
@@ -49,6 +65,30 @@ describe "Results" do
 
     within("#budget-investments-incompatible") do
       expect(page).to have_content investment3.title
+    end
+  end
+
+  scenario "Does not raise error if budget (slug or id) is not found" do
+    visit budget_results_path("wrong budget")
+
+    within(".budgets-stats") do
+      expect(page).to have_content "Participatory budget results"
+    end
+
+    visit budget_results_path(0)
+
+    within(".budgets-stats") do
+      expect(page).to have_content "Participatory budget results"
+    end
+  end
+
+  scenario "Loads budget and heading by slug" do
+    visit budget_results_path(budget.slug, heading.slug)
+
+    expect(page).to have_selector("a.is-active", text: heading.name)
+
+    within("#budget-investments-compatible") do
+      expect(page).to have_content investment1.title
     end
   end
 
