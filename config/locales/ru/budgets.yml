@@ -182,9 +182,6 @@ ru:
       heading: "Этапы совместного бюджета"
       heading_selection_title: "По участкам"
       no_winner_investments: "Нет выигравшей инвестиции в этой области"
-      filters:
-        label: "Текущее состояние проекта"
-        all: "Все (%{count})"
     phases:
       errors:
         dates_range_invalid: "Дата начала не может быть равна или позже даты окончания"
