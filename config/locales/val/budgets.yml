@@ -182,8 +182,9 @@ val:
       heading_selection_title: "Àmbit d'actuació"
       no_winner_investments: "No hi ha propostes en aquest estat"
       filters:
-        label: "Estat actual del projecte"
-        all: "Tots (%{count})"
+        status:
+          label: "Estat actual del projecte"
+          all: "Tots (%{count})"
     phases:
       errors:
         dates_range_invalid: "La data d'inici no ha de ser igual o posterior a la data de fi"

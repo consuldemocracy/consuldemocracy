@@ -306,4 +306,46 @@ describe Budget do
       expect(budget.formatted_amount(1000.00)).to eq ("€1,000")
     end
   end
+
+  describe "#milestone_tags" do
+    let(:investment1) { build(:budget_investment, :winner) }
+    let(:investment2) { build(:budget_investment, :winner) }
+    let(:investment3) { build(:budget_investment) }
+
+    it "returns an empty array if not investments milestone_tags" do
+      budget.investments << investment1
+
+      expect(budget.milestone_tags).to eq([])
+    end
+
+    it "returns array of investments milestone_tags" do
+      investment1.milestone_tag_list = "tag1"
+      investment1.save
+      budget.investments << investment1
+
+      expect(budget.milestone_tags).to eq(["tag1"])
+    end
+
+    it "returns uniq list of investments milestone_tags" do
+      investment1.milestone_tag_list = "tag1"
+      investment1.save
+      investment2.milestone_tag_list = "tag1"
+      investment2.save
+      budget.investments << investment1
+      budget.investments << investment2
+
+      expect(budget.milestone_tags).to eq(["tag1"])
+    end
+
+    it "returns tags only for winner investments" do
+      investment1.milestone_tag_list = "tag1"
+      investment1.save
+      investment3.milestone_tag_list = "tag2"
+      investment3.save
+      budget.investments << investment1
+      budget.investments << investment3
+
+      expect(budget.milestone_tags).to eq(["tag1"])
+    end
+  end
 end

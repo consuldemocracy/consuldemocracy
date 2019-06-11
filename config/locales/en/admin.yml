@@ -281,6 +281,7 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
         user_groups: "Groups"
+        milestone_tags: Milestone tags
       search_unfeasible: Search unfeasible
     milestones:
       index:
@@ -297,6 +298,7 @@ en:
         documents: "Documents"
         milestone: Milestone
         new_milestone: Create new milestone
+        milestone_tags: Milestone Tags
       form:
         admin_statuses: Manage statuses
         no_statuses_defined: There are no defined statuses yet

@@ -184,8 +184,12 @@ en:
       heading_selection_title: "By district"
       no_winner_investments: "No winner investments in this state"
       filters:
-        label: "Project's current state"
-        all: "All (%{count})"
+        status:
+          label: "Project's current state"
+          all: "All (%{count})"
+        milestone_tag:
+          label: "Milestone tag"
+          all: "All (%{count})"
     phases:
       errors:
         dates_range_invalid: "Start date can't be equal or later than End date"

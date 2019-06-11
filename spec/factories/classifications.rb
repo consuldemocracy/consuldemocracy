@@ -5,6 +5,10 @@ FactoryBot.define do
     trait :category do
       kind "category"
     end
+
+    trait :milestone do
+      kind "milestone"
+    end
   end
 
   factory :tagging, class: "ActsAsTaggableOn::Tagging" do

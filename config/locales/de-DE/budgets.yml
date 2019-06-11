@@ -182,8 +182,9 @@ de:
       heading_selection_title: "Nach Bezirk"
       no_winner_investments: "Keine erfolgreichen Ausgabenvorschläge in diesem Status"
       filters:
-        label: "Aktueller Stand des Projekts"
-        all: "Alle (%{count})"
+        status:
+          label: "Aktueller Stand des Projekts"
+          all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "Das Anfangsdatum kann nicht gleich oder später als das Enddatum sein"

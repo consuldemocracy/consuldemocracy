@@ -195,6 +195,10 @@ class Budget < ApplicationRecord
     investments.winners.any?
   end
 
+  def milestone_tags
+    investments.winners.map(&:milestone_tag_list).flatten.uniq.sort
+  end
+
   private
 
   def sanitize_descriptions

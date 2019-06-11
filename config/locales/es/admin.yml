@@ -281,6 +281,7 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
         user_groups: "Grupos"
+        milestone_tags: Etiquetas de Seguimiento
       search_unfeasible: Buscar inviables
     milestones:
       index:
@@ -297,6 +298,7 @@ es:
         documents: "Documentos"
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
+        milestone_tags: Etiquetas de Seguimiento
       form:
         admin_statuses: Gestionar estados
         no_statuses_defined: No hay estados definidos
