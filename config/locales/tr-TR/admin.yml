@@ -202,7 +202,6 @@ tr:
         assigned_admin: Atanmış yönetici
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
-        no_valuation_groups: Hiç değerlendirme grupları atanmamış
         feasibility:
           feasible: "Uygulanabilir (%{price})"
           unfeasible: "Uygulanamaz"
@@ -787,7 +786,6 @@ tr:
         title: "Bilirkişiler: Kullanıcı arama"
       form:
         edit_title: "Bilirkişiler: Bilirkişi düzenle"
-        update: "Bilirkişi güncelle"
         updated: "Bilirkişi başarıyla güncellendi"
       show:
         description: "Tanımlama"
