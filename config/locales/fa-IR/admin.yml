@@ -193,7 +193,6 @@ fa:
         dossier: پرونده
         edit_dossier: ویرایش پرونده
         tags: برچسب ها
-        user_tags: برچسب های کاربر
         undefined: تعریف نشده
         compatibility:
           title: سازگاری
@@ -207,12 +206,6 @@ fa:
           title: برندگان
           "true": "بله"
           "false": "نه"
-        image: "تصویر"
-        see_image: "دیدن تصویر"
-        no_image: "بدون تصویر"
-        documents: "اسناد"
-        see_documents: "دیدن اسناد (%{count})"
-        no_documents: "بدون اسناد"
         valuator_groups: "گروهای ارزيابي"
       edit:
         classification: طبقه بندی
