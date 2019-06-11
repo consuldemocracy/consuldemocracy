@@ -113,4 +113,8 @@ tr:
       list_3: "Daha fazla destek kazandıkça, yeni ve daha iyi kaynaklara erişim hakkı elde edeceksiniz. Şu anda, tüm kişisel bağlantılarınıza toplu olarak gönderebileceğiniz bir e-posta taslağınız, çıktısını alabileceğiniz bir poster, keşfedeceğiniz diğer özellikler ve ödüller var. Destek aramaya devam ettiğiniz sürece, ödüllerimiz ve yardımlarımız devam edecektir!"
       list_4: "Önerinizi yayınladığınız tarihten itirbaren %{max_votes} desteği almak içindan %{max_month} ayınız var. Bu süreç sonunda öneriniz gerçeğe dönüşebilir. Ancak başlangıç dönemi son derece önemli. Bu bir meydan okuma. Hazır olun!"
       text_5: "Ve güçlü bir motivasyonla başlamanız için,"
+      text_6: "burada, vatandaşların desteğini almak için yapmanız gerekenlerle ilgili düzenli olarak güncellenen birçok kaynağa ve önerilere ulaşabilirsiniz!"
       dashboard_button: "Devam edin, onları keşfedin!"
+    new_actions_notification_on_published:
+      subject: "Vatandaş önerin daha önce yayınlandı. Paylaşmaya devam et! "
+      hi: "Tebrikler %{name}! %{title} başlıklı öneriniz başarıyla oluşturuldu."
