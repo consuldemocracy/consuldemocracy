@@ -158,7 +158,6 @@ ca:
           "true": seleccionada
         winner:
           "true": "Sí"
-        image: "imatge"
       edit:
         selection: selecció
         assigned_valuators: Avaluadors
