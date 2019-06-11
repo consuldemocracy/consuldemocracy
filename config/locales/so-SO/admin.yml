@@ -202,7 +202,6 @@ so:
         dossier: Koob
         edit_dossier: Tafatiraha Warqadaha
         tags: Tagyada
-        user_tags: Isamalaha taaga
         undefined: Aan la garanayn
         compatibility:
           title: U Hogaansanan
@@ -216,12 +215,6 @@ so:
           title: Guleyste
           "true": "Haa"
           "false": "Maya"
-        image: "Sawiir"
-        see_image: "Muuji sawir"
-        no_image: "Sawir la an"
-        documents: "Dukumentiyo"
-        see_documents: "Arag dukumeentiyada%{count}"
-        no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
       edit:
         classification: Qeybinta
