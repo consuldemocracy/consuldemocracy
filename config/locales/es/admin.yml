@@ -208,7 +208,6 @@ es:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
-        no_valuation_groups: Sin grupos evaluadores
         feasibility:
           feasible: "Viable"
           unfeasible: "Inviable"
@@ -878,7 +877,6 @@ es:
         title: "Evaluadores: Búsqueda de usuarios"
       form:
         edit_title: "Evaluadores: Editar evaluador"
-        update: "Actualizar evaluador"
         updated: "Evaluador actualizado correctamente"
       show:
         description: "Descripción"
