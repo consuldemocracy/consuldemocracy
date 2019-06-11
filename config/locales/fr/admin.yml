@@ -243,7 +243,6 @@ fr:
         dossier: Rapport
         edit_dossier: Éditer le rapport
         tags: Sujets
-        user_tags: Tags de l’utilisateur
         undefined: Indéfini
         compatibility:
           title: Compatibilité
@@ -257,12 +256,6 @@ fr:
           title: Gagnants
           "true": "Oui"
           "false": "Non"
-        image: "Image"
-        see_image: "Voir l’image"
-        no_image: "Sans image"
-        documents: "Documents"
-        see_documents: "Voir les documents (%{count})"
-        no_documents: "Sans document"
         valuator_groups: "Groupes de l’évaluateur"
       edit:
         classification: Classement
