@@ -207,7 +207,6 @@ nl:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        no_valuation_groups: Geen beoordelingsgroep toegewezen
         feasibility:
           feasible: "Feasible (%{price})"
           unfeasible: "Unfeasible"
@@ -793,7 +792,6 @@ nl:
         title: "Beoordelaars: zoek deelnemers"
       form:
         edit_title: "Beoordelaars: Bewerk Beoordelaar"
-        update: "Sla op"
         updated: "Beoordelaar aangepast"
       show:
         description: "Beschrijving"
