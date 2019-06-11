@@ -58,6 +58,7 @@ class Admin::SettingsController < Admin::BaseController
        "banner-img.banner-img-two",
        "banner-img.banner-img-three",
        "proposal_improvement_path"]
+    end
 
     def content_type_params
       params.permit(:jpg, :png, :gif, :pdf, :doc, :docx, :xls, :xlsx, :csv, :zip)
