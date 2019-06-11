@@ -217,7 +217,6 @@ ar:
         assigned_admin: المدير الذي تم تعيينه
         no_admin_assigned: لم يتم تعيين أي مدير
         no_valuators_assigned: لم يتم تعيين مقيّمين
-        no_valuation_groups: لم يتم تعيين مجموعات المقيّمين
         feasibility:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"

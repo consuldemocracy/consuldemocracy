@@ -165,7 +165,6 @@ so:
         assigned_admin: Mamulaha lamagcaabay
         no_admin_assigned: Mamule lama magcabin
         no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
-        no_valuation_groups: Majiraan koox qimeyayala o loo qondeyey
         feasibility:
           feasible: "Suurto gal %{price}"
           unfeasible: "An surtgak ahayn"

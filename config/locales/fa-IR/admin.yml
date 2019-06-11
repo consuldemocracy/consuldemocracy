@@ -157,7 +157,6 @@ fa:
         assigned_admin: سرپرست تعیین شده
         no_admin_assigned: بدون  تعیین مدیر
         no_valuators_assigned: بدون  تعیین ارزیاب
-        no_valuation_groups: بدون  تعیین گروه ارزیاب
         feasibility:
           feasible: "امکان پذیر %{price}\n"
           unfeasible: "غیر قابل پیش بینی"

@@ -202,7 +202,6 @@ de:
         assigned_admin: Zugewiesene*r Administrator*in
         no_admin_assigned: Kein*e Administrator*in zugewiesen
         no_valuators_assigned: Kein*e Begutacher*in zugewiesen
-        no_valuation_groups: Keine Begutachtungsgruppe zugewiesen
         feasibility:
           feasible: "Durchführbar (%{price})"
           unfeasible: "Undurchführbar"

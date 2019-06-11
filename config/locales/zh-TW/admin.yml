@@ -164,7 +164,6 @@ zh-TW:
         assigned_admin: 指定的管理員
         no_admin_assigned: 未分配管理員
         no_valuators_assigned: 未分配評估員
-        no_valuation_groups: 未分配評估組
         feasibility:
           feasible: "可行 (%{price})"
           unfeasible: "不可行"

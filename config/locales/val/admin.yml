@@ -202,7 +202,6 @@ val:
         assigned_admin: Administrador asignat
         no_admin_assigned: Sense admin assignat
         no_valuators_assigned: Sense avaluador asignat
-        no_valuation_groups: Sense grups avaluadors
         feasibility:
           feasible: "Viable (%{price})"
           unfeasible: "Inviable"

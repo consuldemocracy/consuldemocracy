@@ -95,25 +95,26 @@ describe "Admin budget investments" do
       miriam = create(:user, username: "Miriam")
       valuator1 = create(:valuator, user: olga, description: "Valuator Olga")
       valuator2 = create(:valuator, user: miriam, description: "Valuator Miriam")
+      valuator_group = create(:valuator_group, name: "Health")
       admin = create(:administrator, user: create(:user, username: "Gema"))
 
       budget_investment1.valuators << valuator1
       budget_investment2.valuators << valuator1
       budget_investment2.valuators << valuator2
+      budget_investment2.valuator_groups << valuator_group
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       within("#budget_investment_#{budget_investment1.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
-        expect(page).to have_content("No valuation groups assigned")
       end
 
       within("#budget_investment_#{budget_investment2.id}") do
         expect(page).to have_content("No admin assigned")
         expect(page).to have_content("Valuator Olga")
         expect(page).to have_content("Valuator Miriam")
-        expect(page).to have_content("No valuation groups assigned")
+        expect(page).to have_content("Health")
       end
 
       budget_investment3.update(administrator_id: admin.id)
@@ -1756,6 +1757,124 @@ describe "Admin budget investments" do
 
       expect(page).to have_content("Finished Investment")
       expect(page).not_to have_content("Unfeasible one")
+    end
+  end
+
+  context "Columns chooser" do
+    let!(:investment) do
+      create(:budget_investment,
+              :winner,
+              budget: budget,
+              visible_to_valuators: true,
+              author: create(:user, username: "Jon Doe")
+            )
+    end
+    let(:default_columns) do
+      %w[id title supports admin valuator geozone feasibility price
+         valuation_finished visible_to_valuators selected]
+    end
+    let(:selectable_columns) do
+      %w[title supports admin author valuator geozone feasibility price
+         valuation_finished visible_to_valuators selected]
+    end
+
+    scenario "Display default columns", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      within("table.column-selecteable") do
+        default_columns.each do |default_column|
+          columns_header = I18n.t("admin.budget_investments.index.list.#{default_column}")
+          expect(page).to have_content(columns_header)
+        end
+
+        expect(page).to have_content(investment.title)
+      end
+    end
+
+    scenario "Display incompatible column as default if selected filter was set", :js do
+      visit admin_budget_budget_investments_path(budget, advanced_filters: ["selected"])
+
+      within("table.column-selecteable") do
+        expect(page).to have_content("Incompatible")
+      end
+
+      expect(page).to have_content(investment.title)
+    end
+
+    scenario "Set cookie with default columns value if undefined", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      cookies = page.driver.browser.manage.all_cookies
+      cookie = cookies.find{|cookie| cookie[:name] == "investments-columns"}
+      cookie_value = cookie[:value]
+
+      expect(cookie_value).to eq("id,title,supports,admin,valuator,geozone," +
+        "feasibility,price,valuation_finished,visible_to_valuators,selected,incompatible")
+    end
+
+    scenario "Use column selector to display visible columns", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#js-columns-selector") do
+        find("strong", text: "Columns").click
+      end
+
+      within("#js-columns-selector-wrapper") do
+        selectable_columns.each do |column|
+          check_text = I18n.t("admin.budget_investments.index.list.#{column}")
+
+          expect(page).to have_content(check_text)
+        end
+      end
+
+      within("#js-columns-selector-wrapper") do
+        uncheck "Title"
+        uncheck "Price"
+        check "Author"
+      end
+
+      within("table.column-selecteable") do
+        expect(page).not_to have_content("Title")
+        expect(page).not_to have_content("Price")
+        expect(page).to have_content("Author")
+
+        expect(page).not_to have_content(investment.title)
+        expect(page).not_to have_content(investment.formatted_price)
+        expect(page).to have_content("Jon Doe")
+      end
+    end
+
+    scenario "Cookie will be updated after change columns selection", :js do
+      visit admin_budget_budget_investments_path(budget)
+
+      within("#js-columns-selector") do
+        find("strong", text: "Columns").click
+      end
+
+      within("#js-columns-selector-wrapper") do
+        uncheck "Title"
+        uncheck "Price"
+        uncheck "Valuation Group / Valuator"
+        check "Author"
+      end
+
+      cookies = page.driver.browser.manage.all_cookies
+      cookie = cookies.find{|cookie| cookie[:name] == "investments-columns"}
+      cookie_value = cookie[:value]
+
+      expect(cookie_value).to eq("id,supports,admin,geozone," +
+        "feasibility,valuation_finished,visible_to_valuators,selected,incompatible,author")
+
+
+      visit admin_budget_budget_investments_path(budget)
+
+      cookies = page.driver.browser.manage.all_cookies
+      cookie = cookies.find{|cookie| cookie[:name] == "investments-columns"}
+      cookie_value = cookie[:value]
+
+      expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," +
+        "visible_to_valuators,selected,incompatible,author")
+
     end
   end
 

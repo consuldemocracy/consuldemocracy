@@ -208,7 +208,6 @@ pl:
         assigned_admin: Przypisany administrator
         no_admin_assigned: Nie przypisano administratora
         no_valuators_assigned: Brak przypisanych wyceniających
-        no_valuation_groups: Nie przypisano żadnych grup wyceny
         feasibility:
           feasible: "Wykonalne (%{price})"
           unfeasible: "Niewykonalne"

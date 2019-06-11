@@ -20,29 +20,39 @@
 <% end %>
 
 <% if @investments.any? %>
-  <h3 class="inline-block"><%= page_entries_info @investments %></h3><br>
+  <h3 class="inline-block"><%= page_entries_info @investments %></h3>
+  <%= render partial: "admin/shared/columns_selector",
+        locals: { cookie: "investments-columns", default: %w[id title supports admin valuator geozone feasibility price valuation_finished visible_to_valuators selected incompatible] } %>
+  <br>
 
   <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
 
-  <table class="table-for-mobile">
+  <table class="table-for-mobile column-selecteable">
     <thead>
       <tr>
         <th><%= link_to_investments_sorted_by :id  %></th>
-        <th class="small-3"><%= link_to_investments_sorted_by :title %></th>
-        <th><%= link_to_investments_sorted_by :supports %></th>
-        <th><%= t("admin.budget_investments.index.list.admin") %></th>
-        <th>
-          <%= t("admin.budget_investments.index.list.valuation_group") %>
+        <th data-field="title"><%= link_to_investments_sorted_by :title %></th>
+        <th data-field="supports"><%= link_to_investments_sorted_by :supports %></th>
+        <th data-field="admin"><%= t("admin.budget_investments.index.list.admin") %></th>
+        <th data-field="author">
+          <%= t("admin.budget_investments.index.list.author") %>
+        </th>
+        <th data-field="valuator">
+          <%= t("admin.budget_investments.index.list.valuation_group") %> /
           <%= t("admin.budget_investments.index.list.valuator") %>
         </th>
-        <th><%= t("admin.budget_investments.index.list.geozone") %></th>
-        <th><%= t("admin.budget_investments.index.list.feasibility") %></th>
-        <th><%= t("admin.budget_investments.index.list.price") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.list.valuation_finished") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.list.visible_to_valuators") %></th>
-        <th class="text-center"><%= t("admin.budget_investments.index.list.selected") %></th>
-        <% if params[:filter]  == "selected" %>
-          <th class="text-center"><%= t("admin.budget_investments.index.list.incompatible") %></th>
+        <th data-field="geozone"><%= t("admin.budget_investments.index.list.geozone") %></th>
+        <th data-field="feasibility"><%= t("admin.budget_investments.index.list.feasibility") %></th>
+        <th data-field="price"><%= t("admin.budget_investments.index.list.price") %></th>
+        <th data-field="valuation_finished">
+          <%= t("admin.budget_investments.index.list.valuation_finished") %>
+        </th>
+        <th data-field="visible_to_valuators">
+          <%= t("admin.budget_investments.index.list.visible_to_valuators") %>
+        </th>
+        <th data-field="selected"><%= t("admin.budget_investments.index.list.selected") %></th>
+        <% if params[:advanced_filters]&.include?("selected") %>
+          <th data-field="incompatible"><%= t("admin.budget_investments.index.list.incompatible") %></th>
         <% end %>
       </tr>
     </thead>
