@@ -193,9 +193,6 @@ he:
       heading: "אבני דרך בתקציב"
       heading_selection_title: "על פי רובע"
       no_winner_investments: "אין השקעות אשר נבחרו במדינה זו"
-      filters:
-        label: "המצב הנוכחי של הפרויקט"
-        all: "כל (%{count})"
     phases:
       errors:
         dates_range_invalid: "תאריך ההתחלה לא יכול להיות שווה או מאוחר מתאריך סיום"
