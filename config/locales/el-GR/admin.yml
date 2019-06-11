@@ -208,7 +208,6 @@ el:
         assigned_admin: Ανατεθημένος διαχειριστής
         no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
         no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
-        no_valuation_groups: Δεν έχουν ανατεθεί ομάδες αξιολόγησης
         feasibility:
           feasible: "Εφικτό"
           unfeasible: "Δεν είναι έφικτο"
@@ -874,7 +873,6 @@ el:
         title: "Εκτιμητές: Αναζήτηση χρήστη"
       form:
         edit_title: "Εκτιμητές: Επεξεργασία εκτιμητή"
-        update: "Ανανέωση εκτιμητή"
         updated: "Ο εκτιμητής ανανεώθηκε με επιτυχία"
       show:
         description: "Περιγραφή"
