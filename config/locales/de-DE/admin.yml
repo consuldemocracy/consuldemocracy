@@ -239,7 +239,6 @@ de:
         dossier: Bericht
         edit_dossier: Bericht bearbeiten
         tags: Tags
-        user_tags: Benutzer*innentags
         undefined: Undefiniert
         compatibility:
           title: Kompatibilität
@@ -253,12 +252,6 @@ de:
           title: Bestbewerteter Vorschlag
           "true": "Ja"
           "false": "Nein"
-        image: "Bild"
-        see_image: "Bild anzeigen"
-        no_image: "Ohne Bild"
-        documents: "Dokumente"
-        see_documents: "Dokumente anzeigen (%{count})"
-        no_documents: "Ohne Dokumente"
         valuator_groups: "Begutachtungsgruppen"
       edit:
         classification: Klassifizierung
