@@ -110,4 +110,7 @@ tr:
       text_4: "Size yardımcı olacak bir aracınız var: Vatandaş Önerileri paneli."
       list_1: "Sizinle paylaşacağımız ipuçlarını ve kaynakları kullanmak için teklif panelini her gün ziyaret edin."
       list_2: "Bu ipuçları, eylem önerileri ve kaynaklar size daha fazla destek almak ve daha geniş bir topluluğa ulaşmak için fikirler ve pratik çözümler sunacaktır. Onları unutmayın!"
+      list_3: "Daha fazla destek kazandıkça, yeni ve daha iyi kaynaklara erişim hakkı elde edeceksiniz. Şu anda, tüm kişisel bağlantılarınıza toplu olarak gönderebileceğiniz bir e-posta taslağınız, çıktısını alabileceğiniz bir poster, keşfedeceğiniz diğer özellikler ve ödüller var. Destek aramaya devam ettiğiniz sürece, ödüllerimiz ve yardımlarımız devam edecektir!"
+      list_4: "Önerinizi yayınladığınız tarihten itirbaren %{max_votes} desteği almak içindan %{max_month} ayınız var. Bu süreç sonunda öneriniz gerçeğe dönüşebilir. Ancak başlangıç dönemi son derece önemli. Bu bir meydan okuma. Hazır olun!"
+      text_5: "Ve güçlü bir motivasyonla başlamanız için,"
       dashboard_button: "Devam edin, onları keşfedin!"
