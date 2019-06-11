@@ -165,8 +165,6 @@ ast:
           title: Ganadora
           "true": "Sí"
           "false": "Non"
-        image: "Imaxe"
-        documents: "Documentos"
       edit:
         selection: Selección
         assigned_valuators: Evaluaores
