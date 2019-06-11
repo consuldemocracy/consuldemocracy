@@ -1,0 +1,34 @@
+<% @process.questions.each do |question| %>
+  <div class="row">
+    <div class="proposal">
+      <div class="panel panel_resume" style="min-height: 5rem;">
+        <div class="row question_title">
+          <div class="small-12 medium-9 column">
+            <div>
+              <h4><%= link_to question.title, legislation_process_question_path(question.process, question) %></h4>
+            </div>
+          </div>
+          <div id="<%= dom_id(question) %>_votes" class="small-12 medium-3 column">
+            <span class="icon-comments" aria-hidden="true"></span>
+            <span class="debate-comments">
+              <%= link_to t("legislation.summary.comments", count: question.comments.count), legislation_process_question_path(question.process, question) %>
+            </span>
+          </div>
+        </div>
+        <% if question.comments.count > 0 %>
+          <span><%= t("legislation.summary.most_voted_comments") %> </span>
+        <% end %>
+        <div class="row">
+          <% question.best_comments(3).each do |comment| %>
+            <div class="small-12 medium-9 column">
+              <p class="comment_box"> <%= link_to comment.body, comment_path(comment) %></p>
+            </div>
+            <div class="small-12 medium-3 column">
+              <p class="centered_votes"> <%= comment.cached_votes_up - comment.cached_votes_down %> <%= t("legislation.summary.votes") %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

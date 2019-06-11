@@ -60,6 +60,10 @@ class Legislation::Process < ApplicationRecord
                                    draft_end_date IS NOT NULL and (draft_start_date > ? or
                                    draft_end_date < ?))", Date.current, Date.current) }
 
+  def past?
+    end_date < Date.current
+  end
+
   def homepage_phase
     Legislation::Process::Phase.new(start_date, end_date, homepage_enabled)
   end
@@ -119,6 +123,20 @@ class Legislation::Process < ApplicationRecord
     end
   end
 
+  def get_last_draft_version
+    Legislation::DraftVersion.where(process: self, status: "published").last
+  end
+
+  def get_annotations_from_draft
+    Legislation::Annotation.where(legislation_draft_version_id: get_last_draft_version)
+  end
+
+  def get_best_annotation_comments
+    Comment.where(commentable_id: get_annotations_from_draft,
+                  commentable_type: "Legislation::Annotation", ancestry: nil)
+      .order("cached_votes_up - cached_votes_down DESC")
+  end
+
   private
 
     def valid_date_ranges
@@ -136,5 +154,4 @@ class Legislation::Process < ApplicationRecord
         errors.add(:allegations_end_date, :invalid_date_range)
       end
     end
-
 end

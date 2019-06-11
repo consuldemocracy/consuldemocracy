@@ -1,0 +1,28 @@
+<% provide(:title) {@process.title} %>
+
+<%= render "legislation/processes/header", process: @process, header: :full %>
+
+<%= render "key_dates", process: @process, phase: @phase %>
+
+<% if !@process.debate_phase.enabled? && !@process.proposals_phase.enabled? && !@process.allegations_phase.enabled? %>
+  <div class="callout primary">
+    <p><%= t("legislation.summary.process_empty") %></p>
+  </div>
+<% else %>
+  <button class="button hollow download-button">
+    <%= link_to 'Download', resume_legislation_process_path(format: :xlsx) %>
+  </button>
+
+  <% if @process.debate_phase.enabled? %>
+    <%= render "debate_phase", process: @process %>
+  <% end %>
+
+  <% if @process.proposals_phase.enabled? %>
+    <%= render "proposal_phase", process: @process %>
+  <% end %>
+
+  <% if @process.allegations_phase.enabled? %>
+    <%= render "text_comment_phase", process: @process %>
+  <% end %>
+
+<% end %>

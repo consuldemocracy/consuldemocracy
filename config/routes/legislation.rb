@@ -7,6 +7,8 @@ namespace :legislation do
       get :result_publication
       get :proposals
       get :milestones
+      get :resume
+
     end
 
     resources :questions, only: [:show] do

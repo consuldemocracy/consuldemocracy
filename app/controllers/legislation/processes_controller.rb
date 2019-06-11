@@ -7,6 +7,8 @@ class Legislation::ProcessesController < Legislation::BaseController
   load_and_authorize_resource
 
   before_action :set_random_seed, only: :proposals
+  before_action :check_past, only: :resume
+
 
   def index
     @current_filter ||= "open"
@@ -20,7 +22,7 @@ class Legislation::ProcessesController < Legislation::BaseController
 
     if @process.homepage_enabled? && @process.homepage.present?
       render :show
-    elsif  allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
+    elsif allegations_phase.enabled? && allegations_phase.started? && draft_version.present?
       redirect_to legislation_process_draft_version_path(@process, draft_version)
     elsif @process.debate_phase.enabled?
       redirect_to debate_legislation_process_path(@process)
@@ -95,6 +97,21 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   def milestones
     @phase = :milestones
+  end
+
+  def resume
+    @phase = :resume
+    respond_to do |format|
+      format.html
+      format.xlsx {render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.today.to_s + ".xlsx")}
+    end
+  end
+
+  def check_past
+    set_process
+    if !@process.past?
+      redirect_to legislation_process_path
+    end
   end
 
   def proposals

@@ -1,0 +1,17 @@
+<% Legislation::Proposal.where(legislation_process_id: @process)
+     .where(selected: true).order('cached_votes_score desc').each do |proposal| %>
+  <div class="row">
+    <div class="proposal">
+      <div class="panel panel_resume" style="min-height: 5rem;">
+        <div class="small-12 medium-9 column">
+          <h3>
+            <%= link_to proposal.title, legislation_process_proposal_path(proposal.legislation_process_id, proposal) %>
+          </h3>
+        </div>
+        <div id="<%= dom_id(proposal) %>_votes" class="small-12 medium-3 column">
+          <p class="centered_votes"> <%= proposal.cached_votes_total - proposal.cached_votes_down %> <%= t("legislation.summary.votes") %> </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

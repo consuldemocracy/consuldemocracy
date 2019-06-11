@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="debate-chooser">
+    <div class="small-12 medium-9 column resume_title">
+      <h3><%= t("legislation.summary.comments_phase") %>
+        <% if !@process.get_last_draft_version.nil? %>
+          (<%= t("legislation.summary.version") %> <%= @process.get_last_draft_version.title %>)</h3>
+        <% end %>
+        </div>
+    <div class="small-12 medium-3 column">
+      <h3><%= t("legislation.annotations.index.comments_count", count: @process.get_best_annotation_comments.count) %></h3>
+    </div>
+    <div class="row">
+      <div class="small-12 medium-11 column">
+        <div class="debate-list">
+          <% if !@process.get_last_draft_version.nil? %>
+            <% if @process.get_last_draft_version.annotations.empty? %>
+              <div class="callout primary">
+                <p><%= t("legislation.summary.no_allegation") %></p>
+              </div>
+            <% else %>
+              <%= render "resume_text", process: @process %>
+            <% end %>
+          <% else %>
+            <div class="callout primary">
+              <p><%= t("legislation.summary.no_allegation") %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
