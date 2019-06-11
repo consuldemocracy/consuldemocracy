@@ -432,6 +432,11 @@ he:
       link:
         label: כותרת
         url: קישור
+      valuator:
+        description: תיאור
+        valuator_group_id: קבוצת מעריך
+        can_comment: ניתן ליצור הערות
+        can_edit_dossier: ניתן לערוך את התיק
     errors:
       models:
         user:
