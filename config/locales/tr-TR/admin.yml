@@ -239,7 +239,6 @@ tr:
         dossier: Dosya
         edit_dossier: Dosya düzenleme
         tags: Etiketler
-        user_tags: Kullanıcı etiketleri
         undefined: Tanımsız
         compatibility:
           title: Uygunluk
@@ -253,12 +252,6 @@ tr:
           title: Kazanan
           "true": "Evet"
           "false": "Hayır"
-        image: "Fotoğraf"
-        see_image: "Görüntüyü göster"
-        no_image: "Görüntü olmadan"
-        documents: "Belgeler"
-        see_documents: "Belgeleri göster (%{count})"
-        no_documents: "Belgeler olmadan"
         valuator_groups: "Bilirkişi Grupları"
       edit:
         classification: Sınıflandırma
