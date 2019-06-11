@@ -239,7 +239,6 @@ val:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Temes
-        user_tags: Etiquetes de l'usuari
         undefined: Sense definir
         compatibility:
           title: Compatibilitat
@@ -253,12 +252,6 @@ val:
           title: Guanyadores
           "true": "Si"
           "false": "No"
-        image: "Imatge"
-        see_image: "Veure imatge"
-        no_image: "Sense imatge"
-        documents: "Documents"
-        see_documents: "Veure documents (%{count})"
-        no_documents: "Sense documents"
         valuator_groups: "Grups d'Avaluadors"
       edit:
         classification: Classificació

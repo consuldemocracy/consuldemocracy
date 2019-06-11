@@ -202,7 +202,6 @@ pt-BR:
         dossier: Dossiê
         edit_dossier: Editar dossiê
         tags: Marcação
-        user_tags: Marcações do usuário
         undefined: Não definido
         compatibility:
           title: Compatibilidade
@@ -216,12 +215,6 @@ pt-BR:
           title: Vencedor
           "true": "Sim"
           "false": "Não"
-        image: "Imagem"
-        see_image: "Exibir imagem"
-        no_image: "Sem imagem"
-        documents: "Documentos"
-        see_documents: "Exibir documentos (%{count})"
-        no_documents: "Sem documentos"
         valuator_groups: "Grupos de avaliação"
       edit:
         classification: Classificação

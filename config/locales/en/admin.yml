@@ -246,7 +246,6 @@ en:
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
-        user_tags: User tags
         undefined: Undefined
         compatibility:
           title: Compatibility
@@ -260,13 +259,8 @@ en:
           title: Winner
           "true": "Yes"
           "false": "No"
-        image: "Image"
-        see_image: "See image"
-        no_image: "Without image"
-        documents: "Documents"
-        see_documents: "See documents (%{count})"
-        no_documents: "Without documents"
         valuator_groups: "Valuator Groups"
+        preview: Investment preview
       edit:
         classification: Classification
         compatibility: Compatibility
