@@ -174,8 +174,6 @@ it:
     executions:
       link: "Traguardi"
       heading_selection_title: "Per circoscrizione"
-      filters:
-        all: "Tutto (%{count})"
     phases:
       errors:
         dates_range_invalid: "La Data di inizio non può essere uguale o successiva alla Data finale"
