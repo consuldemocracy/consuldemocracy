@@ -170,7 +170,6 @@ sv:
         assigned_admin: Ansvarig administratör
         no_admin_assigned: Saknar ansvarig administratör
         no_valuators_assigned: Inga ansvariga bedömare
-        no_valuation_groups: Inga ansvariga bedömningsgrupper
         feasibility:
           feasible: "Genomförbart (%{price})"
           unfeasible: "Ej genomförbart"
@@ -722,7 +721,6 @@ sv:
         title: "Bedömare: Sök användare"
       form:
         edit_title: "Bedömare: Redigera bedömare"
-        update: "Uppdatera bedömare"
         updated: "Bedömaren har uppdaterats"
       show:
         description: "Beskrivning"
