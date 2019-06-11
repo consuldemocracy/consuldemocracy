@@ -245,7 +245,6 @@ da:
         dossier: Rapport
         edit_dossier: Rediger rapport
         tags: Tags
-        user_tags: Bruger tags
         undefined: Udefineret
         compatibility:
           title: Kompatibilitet
@@ -259,12 +258,6 @@ da:
           title: Vinderen
           "true": "Ja"
           "false": "Nej"
-        image: "Billede"
-        see_image: "Se billede"
-        no_image: "Uden billede"
-        documents: "Dokumenter"
-        see_documents: "Se dokumenter (%{count})"
-        no_documents: "Uden dokumenter"
         valuator_groups: "Vurderingsgrupper"
       edit:
         classification: Klassificering
