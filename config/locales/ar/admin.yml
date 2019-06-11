@@ -912,7 +912,6 @@ ar:
         cost: التكلفة
       form:
         edit_title: "المقيّمون: تعديل المقيّمين"
-        update: "تحديث المقيّم"
         updated: "تم تحديث المقيّمين بنجاح"
       show:
         description: "الوصف"

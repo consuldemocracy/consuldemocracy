@@ -50,4 +50,13 @@ describe Valuator do
       expect(assigned_investment_ids).not_to include investment3.id
     end
   end
+
+  describe "abilities" do
+    context "by default" do
+      let(:valuator) { Valuator.new }
+      it { expect(valuator.can_comment).to be_truthy }
+      it { expect(valuator.can_edit_dossier).to be_truthy }
+    end
+  end
+
 end

@@ -710,7 +710,6 @@ it:
         cost: Costi
       form:
         edit_title: "Stimatori: Modificare stimatore"
-        update: "Aggiorna stimatore"
         updated: "Stimatore aggiornato con successo"
       show:
         description: "Descrizione"

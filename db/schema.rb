@@ -1487,6 +1487,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.string  "description"
     t.integer "budget_investments_count", default: 0
     t.integer "valuator_group_id"
+    t.boolean "can_comment",              default: true
+    t.boolean "can_edit_dossier",         default: true
     t.index ["user_id"], name: "index_valuators_on_user_id", using: :btree
   end
 

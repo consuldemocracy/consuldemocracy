@@ -1,0 +1,30 @@
+<tr>
+  <td><%= link_to valuator.name, admin_valuator_path(valuator) %></td>
+  <td><%= valuator.email %></td>
+  <td>
+    <% if valuator.description.present? %>
+      <%= valuator.description %>
+    <% else %>
+      <%= t("admin.valuators.index.no_description") %>
+    <% end %>
+  </td>
+  <td>
+    <% if valuator.valuator_group.present? %>
+      <%= valuator.valuator_group.try(:name) %>
+    <% else %>
+      <%= t("admin.valuators.index.no_group") %>
+    <% end %>
+  </td>
+  <td>
+    <%= valuator_abilities(valuator) %>
+  </td>
+  <td>
+    <%= link_to t("admin.actions.edit"),
+                edit_admin_valuator_path(valuator),
+                class: "button hollow" %>
+    <%= link_to t("admin.valuators.valuator.delete"),
+                admin_valuator_path(valuator),
+                method: :delete,
+                class: "button hollow alert" %>
+  </td>
+</tr>

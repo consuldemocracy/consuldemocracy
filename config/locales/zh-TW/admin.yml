@@ -708,7 +708,6 @@ zh-TW:
         cost: 成本
       form:
         edit_title: "評估員：編輯評估員"
-        update: "更新評估員"
         updated: "評估員已成功更新"
       show:
         description: "描述"

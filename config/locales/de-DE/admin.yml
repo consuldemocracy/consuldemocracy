@@ -787,7 +787,6 @@ de:
         cost: Gesamtkosten
       form:
         edit_title: "Begutachter*innen: Begutachter*in bearbeiten"
-        update: "Begutachter*in aktualisieren"
         updated: "Begutachter*in erfolgreich aktualisiert"
       show:
         description: "Beschreibung"

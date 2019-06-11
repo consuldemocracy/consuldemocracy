@@ -718,7 +718,6 @@ zh-CN:
         cost: 成本
       form:
         edit_title: "评估员：编辑评估员"
-        update: "更新评估员"
         updated: "评估员已成功更新"
       show:
         description: "说明"
