@@ -208,7 +208,6 @@ sv:
         dossier: Rapport
         edit_dossier: Redigera rapport
         tags: Taggar
-        user_tags: Användartaggar
         undefined: Odefinierad
         compatibility:
           title: Kompatibilitet
@@ -222,12 +221,6 @@ sv:
           title: Vinnare
           "true": "Ja"
           "false": "Nej"
-        image: "Bild"
-        see_image: "Visa bild"
-        no_image: "Utan bild"
-        documents: "Dokument"
-        see_documents: "Visa dokument (%{count})"
-        no_documents: "Utan dokument"
         valuator_groups: "Bedömningsgrupper"
       edit:
         classification: Klassificering
