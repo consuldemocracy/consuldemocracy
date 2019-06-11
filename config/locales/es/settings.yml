@@ -116,6 +116,8 @@ es:
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
+      valuation_comment_notification: "Notificar comentarios de evaluación"
+      valuation_comment_notification_description: "Envía un email a todos los usuarios menos al que haya comentado asociados a un presupuesto participativo cuando se cree un nuevo comentario de evaluación"
     map:
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"
@@ -139,3 +141,25 @@ es:
       per_page_code_head_description: "Esté código aparecerá dentro de la etiqueta <head>. Útil para introducir scripts personalizados, analitycs..."
       per_page_code_body: "Código a incluir en cada página (<body>)"
       per_page_code_body_description: "Esté código aparecerá dentro de la etiqueta <body>. Útil para introducir scripts personalizados, analitycs..."
+    uploads:
+      images:
+        min_width: "Ancho mínimo de imagen"
+        min_width_description: "Ancho mínimo permitido al subir una imagen (en pixeles)"
+        min_height: "Alto mínimo de imagen"
+        min_height_description: "Alto mínimo permitido al subir una imagen (en pixeles)"
+        max_size: "Tamaño máximo de imagen"
+        max_size_description: "Tamaño máximo permitido al subir una imagen (en Megabytes/MB)"
+        content_types: "Tipos de imagenes permitidos"
+        content_types_description: "Selecciona todos los tipos permitidos para las imágenes subidas"
+        title:
+          min_length: "Longitud mínima del título de la imagen"
+          min_length_description: "El título es proporcionado por el usuario cuando se sube una imagen (usado como atributo HTML alt)"
+          max_length: "Longitud máxima del título de la imagen"
+          max_length_description: "El título es proporcionado por el usuario cuando se sube una imagen (usado como atributo HTML alt)"
+      documents:
+        max_amount: "Número máximo de documentos"
+        max_amount_description: "Número máximo de documentos que se pueden añadir a una propuesta, proyecto de gasto..."
+        max_size: "Tamaño máximo de documento"
+        max_size_description: "Tamaño máximo permitido al subir un documento (en Megabytes/MB)"
+        content_types: "Tipos de documentos permitidos"
+        content_types_description: "Selecciona todos los tipos permitidos para los documentos subidos"

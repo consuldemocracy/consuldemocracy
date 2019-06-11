@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Budget Investments" do
 
   let(:manager) { create(:manager) }
-  let(:budget)  { create(:budget, phase: "selecting", name: "2033") }
+  let(:budget)  { create(:budget, phase: "selecting", name: "2033", slug: "budget_slug") }
   let(:group)   { create(:budget_group, budget: budget, name: "Whole city") }
   let(:heading) { create(:budget_heading, group: group, name: "Health") }
 
@@ -17,6 +17,33 @@ describe "Budget Investments" do
                   "management_budget_investment_path",
                   { "budget_id": "budget_id" },
                   management = true
+
+  context "Load" do
+
+    let(:investment) { create(:budget_investment, budget: budget) }
+    let(:user)       { create(:user, :level_two) }
+
+    before { login_managed_user(user) }
+
+    scenario "finds investment using budget slug" do
+      visit management_budget_investment_path("budget_slug", investment)
+
+      expect(page).to have_content investment.title
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit management_budget_investment_path("wrong_budget", investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit management_budget_investment_path(0, investment)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
 
   context "Create" do
     before { heading.budget.update(phase: "accepting") }

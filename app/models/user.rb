@@ -23,6 +23,7 @@ class User < ApplicationRecord
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id
+  has_many :people_proposals, -> { with_hidden }, foreign_key: :author_id
   has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: "Budget::Investment"
   has_many :comments, -> { with_hidden }
   has_many :failed_census_calls
@@ -131,9 +132,7 @@ class User < ApplicationRecord
   end
 
   def headings_voted_within_group(group)
-    Budget::Heading.joins(:translations)
-                   .order("name")
-                   .where(id: voted_investments.by_group(group).pluck(:heading_id))
+    Budget::Heading.where(id: voted_investments.by_group(group).pluck(:heading_id))
   end
 
   def voted_investments

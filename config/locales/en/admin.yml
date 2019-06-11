@@ -281,6 +281,7 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
         user_groups: "Groups"
+        milestone_tags: Milestone tags
       search_unfeasible: Search unfeasible
     milestones:
       index:
@@ -297,6 +298,7 @@ en:
         documents: "Documents"
         milestone: Milestone
         new_milestone: Create new milestone
+        milestone_tags: Milestone Tags
       form:
         admin_statuses: Manage statuses
         no_statuses_defined: There are no defined statuses yet
@@ -355,7 +357,7 @@ en:
         notice: "Progress bar updated successfully"
       delete:
         notice: "Progress bar deleted successfully"
-    comments:
+    hidden_comments:
       index:
         filter: Filter
         filters:
@@ -430,7 +432,7 @@ en:
           request: Requested resource
         update:
           success: The task has been marked as solved.
-    debates:
+    hidden_debates:
       index:
         filter: Filter
         filters:
@@ -728,6 +730,7 @@ en:
         title: Administrators
         name: Name
         email: Email
+        description: Description
         id: Administrator ID
         no_administrators: There are no administrators.
       administrator:
@@ -736,6 +739,9 @@ en:
         restricted_removal: "Sorry, you can't remove yourself from the administrators"
       search:
         title: "Administrators: User search"
+      form:
+        edit_title: "Edit administrator"
+        updated: "Administrator updated successfully"
     moderators:
       index:
         title: Moderators
@@ -875,6 +881,9 @@ en:
       user_invite:
         title: "User Invitation"
         description: "Sent to the person that has been invited to register an account."
+      evaluation_comment:
+        title: "New evaluation comment"
+        description: "Sent to administrators and evaluators related to commented investment"
       edit_info: "You can edit this email in"
       message_title: "Message's Title"
       message_body: "This is a sample of message's content."
@@ -882,6 +891,7 @@ en:
         no_investments: "There aren't any budget investment created. Some example data is needed in order to preview the email."
         no_comments: "There aren't any comments created. Some example data is needed in order to preview the email."
         no_replies: "There aren't any replies created. Some example data is needed in order to preview the email."
+        no_evaluation_comments: "There aren't any evaluation comments created. Some example data is needed in order to preview the email."
     emails_download:
       index:
         title: Emails download
@@ -1261,6 +1271,7 @@ en:
         title: Configuration settings
         update_setting: Update
         participation_processes: "Participation processes"
+        images_and_documents: "Images and documents"
         feature_flags: Features
         features:
           enabled: "Feature enabled"

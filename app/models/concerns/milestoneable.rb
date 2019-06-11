@@ -8,6 +8,8 @@ module Milestoneable
 
     has_many :progress_bars, as: :progressable
 
+    acts_as_taggable_on :milestone_tags
+
     def primary_progress_bar
       progress_bars.primary.first
     end

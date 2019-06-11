@@ -7,16 +7,17 @@ module Documentable
   end
 
   module ClassMethods
-    attr_reader :max_documents_allowed, :max_file_size, :accepted_content_types
-
-    private
-
-    def documentable(options = {})
-      @max_documents_allowed = options[:max_documents_allowed]
-      @max_file_size = options[:max_file_size]
-      @accepted_content_types = options[:accepted_content_types]
+    def max_documents_allowed
+      Setting["uploads.documents.max_amount"].to_i
     end
 
+    def max_file_size
+      Setting["uploads.documents.max_size"].to_i.megabytes
+    end
+
+    def accepted_content_types
+      Setting["uploads.documents.content_types"]&.split(" ") || [ "application/pdf" ]
+    end
   end
 
 end

@@ -1,4 +1,4 @@
-class Admin::DebatesController < Admin::BaseController
+class Admin::HiddenDebatesController < Admin::BaseController
   include FeatureFlags
 
   feature_flag :debates

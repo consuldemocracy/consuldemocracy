@@ -184,8 +184,12 @@ es:
       heading_selection_title: "Ámbito de actuación"
       no_winner_investments: "No hay proyectos de gasto ganadores en este estado"
       filters:
-        label: "Estado actual del proyecto"
-        all: "Todos (%{count})"
+        status:
+          label: "Estado actual del proyecto"
+          all: "Todos (%{count})"
+        milestone_tag:
+          label: "Etiquetas de Seguimiento"
+          all: "Todos (%{count})"
     phases:
       errors:
         dates_range_invalid: "La fecha de comienzo no puede ser igual o superior a la de finalización"

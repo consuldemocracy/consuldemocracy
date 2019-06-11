@@ -105,4 +105,18 @@ module BudgetsHelper
                               ends_at:   balloting_phase.ends_at }),
             method: :post
   end
+
+  def budget_subnav_items_for(budget)
+    {
+      results:    t("budgets.results.link"),
+      stats:      t("stats.budgets.link"),
+      executions: t("budgets.executions.link")
+    }.select { |section, _| can?(:"read_#{section}", budget) }.map do |section, text|
+      {
+        text: text,
+        url:  send("budget_#{section}_path", budget),
+        active: controller_name == section.to_s
+      }
+    end
+  end
 end

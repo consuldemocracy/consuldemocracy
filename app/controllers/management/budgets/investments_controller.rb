@@ -1,4 +1,5 @@
 class Management::Budgets::InvestmentsController < Management::BaseController
+  before_action :load_budget
 
   load_resource :budget
   load_resource :investment, through: :budget, class: "Budget::Investment"
@@ -58,6 +59,10 @@ class Management::Budgets::InvestmentsController < Management::BaseController
 
     def only_verified_users
       check_verified_user t("management.budget_investments.alert.unverified_user")
+    end
+
+    def load_budget
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
 
     def load_categories

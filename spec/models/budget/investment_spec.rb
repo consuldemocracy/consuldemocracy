@@ -382,6 +382,30 @@ describe Budget::Investment do
     end
   end
 
+  describe "scoped_filter" do
+
+    let!(:budget)     { create(:budget, slug: "budget_slug") }
+    let!(:group)      { create(:budget_group, budget: budget) }
+    let!(:heading)    { create(:budget_heading, group: group) }
+    let!(:investment) { create(:budget_investment, :feasible, heading: heading) }
+
+    it "finds budget by id or slug" do
+      result = described_class.scoped_filter({budget_id: budget.id}, nil)
+      expect(result.count).to be 1
+      expect(result.first.id).to be investment.id
+
+      result = described_class.scoped_filter({budget_id: "budget_slug"}, nil)
+      expect(result.count).to be 1
+      expect(result.first.id).to be investment.id
+    end
+
+    it "does not raise error if budget is not found" do
+      result = described_class.scoped_filter({budget_id: "wrong_budget"}, nil)
+      expect(result).to be_empty
+    end
+
+  end
+
   describe "scopes" do
     describe "valuation_open" do
       it "returns all investments with false valuation_finished" do
@@ -1215,6 +1239,59 @@ describe Budget::Investment do
         create(:budget_investment, budget: budget)
         expect(described_class.scoped_filter(params, "all")).to eq([investment1])
         expect(described_class.scoped_filter(params, "all").count).to eq(1)
+      end
+    end
+  end
+
+  describe "admin_and_valuator_users_associated" do
+    let(:investment) { create(:budget_investment) }
+    let(:valuator_group) { create(:valuator_group) }
+    let(:valuator) { create(:valuator) }
+    let(:administrator) { create(:administrator) }
+
+    it "returns empty array if not valuators or administrator assigned" do
+      expect(investment.admin_and_valuator_users_associated).to eq([])
+    end
+
+    it "returns all valuator and administrator users" do
+      valuator_group.valuators << valuator
+      investment.valuator_groups << valuator_group
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator])
+      investment.administrator = administrator
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator, administrator])
+    end
+
+    it "returns uniq valuators or administrator users" do
+      valuator_group.valuators << valuator
+      investment.valuator_groups << valuator_group
+      investment.valuators << valuator
+      investment.administrator = administrator
+      expect(investment.admin_and_valuator_users_associated).to eq([valuator, administrator])
+
+    end
+  end
+
+  describe "milestone_tags" do
+    context "without milestone_tags" do
+      let(:investment) {create(:budget_investment)}
+
+      it "do not have milestone_tags" do
+        expect(investment.milestone_tag_list).to eq([])
+        expect(investment.milestone_tags).to eq([])
+      end
+
+      it "add a new milestone_tag" do
+        investment.milestone_tag_list = "tag1,tag2"
+
+        expect(investment.milestone_tag_list).to eq(["tag1", "tag2"])
+      end
+    end
+
+    context "with milestone_tags" do
+      let(:investment) {create(:budget_investment, :with_milestone_tags)}
+
+      it "has milestone_tags" do
+        expect(investment.milestone_tag_list.count).to eq(1)
       end
     end
   end

@@ -49,7 +49,19 @@ class Poll < ApplicationRecord
   scope :not_budget,    -> { where(budget_id: nil) }
   scope :created_by_admin, -> { where(related_type: nil) }
 
-  scope :sort_for_list, -> { joins(:translations).order(:geozone_restricted, :starts_at, "poll_translations.name") }
+  def self.sort_for_list
+    all.sort do |poll, another_poll|
+      if poll.geozone_restricted? == another_poll.geozone_restricted?
+        [poll.starts_at, poll.name] <=> [another_poll.starts_at, another_poll.name]
+      else
+        if poll.geozone_restricted?
+          1
+        else
+          -1
+        end
+      end
+    end
+  end
 
   def self.overlaping_with(poll)
     where("? < ends_at and ? >= starts_at", poll.starts_at.beginning_of_day,

@@ -2,6 +2,8 @@ namespace :settings do
 
   desc "Remove deprecated settings"
   task remove_deprecated_settings: :environment do
+    ApplicationLogger.new.info "Removing deprecated settings"
+
     deprecated_keys = [
       "place_name",
       "banner-style.banner-style-one",
@@ -46,4 +48,8 @@ namespace :settings do
     Setting.rename_key from: "feature.homepage.widgets.feeds.processes", to: "homepage.widgets.feeds.processes"
   end
 
+  desc "Add new settings"
+  task add_new_settings: :environment do
+    Setting.add_new_settings
+  end
 end

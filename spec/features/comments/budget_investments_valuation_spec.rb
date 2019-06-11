@@ -171,7 +171,7 @@ describe "Internal valuation comments on Budget::Investments" do
     scenario "Create comment", :js do
       visit valuation_budget_budget_investment_path(budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "Have you thought about...?"
+      fill_in "Leave your comment", with: "Have you thought about...?"
       click_button "Publish comment"
 
       within "#comments" do
@@ -199,7 +199,7 @@ describe "Internal valuation comments on Budget::Investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+        fill_in "Leave your comment", with: "It will be done next week."
         click_button "Publish reply"
       end
 
@@ -261,8 +261,8 @@ describe "Internal valuation comments on Budget::Investments" do
       login_as(admin_user)
       visit valuation_budget_budget_investment_path(budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
-      check "comment-as-administrator-budget_investment_#{investment.id}"
+      fill_in "Leave your comment", with: "I am your Admin!"
+      check "Comment as admin"
       click_button "Publish comment"
 
       within "#comments" do
@@ -282,8 +282,8 @@ describe "Internal valuation comments on Budget::Investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
-        check "comment-as-administrator-comment_#{comment.id}"
+        fill_in "Leave your comment", with: "Top of the world!"
+        check "Comment as admin"
         click_button "Publish reply"
       end
 
@@ -296,6 +296,27 @@ describe "Internal valuation comments on Budget::Investments" do
 
       expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
+  end
+
+  scenario "Send email notification", :js do
+    ActionMailer::Base.deliveries = []
+
+    login_as(admin_user)
+
+    expect(ActionMailer::Base.deliveries).to eq([])
+
+    visit valuation_budget_budget_investment_path(budget, investment)
+    fill_in "Leave your comment", with: "I am your Admin!"
+    check "Comment as admin"
+    click_button "Publish comment"
+
+    within "#comments" do
+      expect(page).to have_content("I am your Admin!")
+    end
+
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
+    expect(ActionMailer::Base.deliveries.first.to).to eq([valuator_user.email])
+    expect(ActionMailer::Base.deliveries.first.subject).to eq("New evaluation comment")
   end
 
 end

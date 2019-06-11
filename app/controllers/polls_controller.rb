@@ -12,8 +12,9 @@ class PollsController < ApplicationController
   ::Poll::Answer # trigger autoload
 
   def index
-    @polls = @polls.not_budget.public_polls.send(@current_filter).includes(:geozones)
-                              .sort_for_list.page(params[:page])
+    @polls = Kaminari.paginate_array(
+      @polls.public_polls.not_budget.send(@current_filter).includes(:geozones).sort_for_list
+    ).page(params[:page])
   end
 
   def show

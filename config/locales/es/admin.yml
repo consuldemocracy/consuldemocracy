@@ -281,6 +281,7 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
         user_groups: "Grupos"
+        milestone_tags: Etiquetas de Seguimiento
       search_unfeasible: Buscar inviables
     milestones:
       index:
@@ -297,6 +298,7 @@ es:
         documents: "Documentos"
         milestone: Seguimiento
         new_milestone: Crear nuevo hito
+        milestone_tags: Etiquetas de Seguimiento
       form:
         admin_statuses: Gestionar estados
         no_statuses_defined: No hay estados definidos
@@ -355,7 +357,7 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
-    comments:
+    hidden_comments:
       index:
         filter: Filtro
         filters:
@@ -430,7 +432,7 @@ es:
           request: Recurso solicitado
         update:
           success: La tarea ha sido marcada como resuelta
-    debates:
+    hidden_debates:
       index:
         filter: Filtro
         filters:
@@ -727,6 +729,7 @@ es:
         title: Administradores
         name: Nombre
         email: Email
+        description: Descripción
         id: ID de Administrador
         no_administrators: No hay administradores.
       administrator:
@@ -735,6 +738,9 @@ es:
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
+      form:
+        edit_title: "Editar administrador"
+        updated: "Administrador actualizado correctamente"
     moderators:
       index:
         title: Moderadores
@@ -874,6 +880,9 @@ es:
       user_invite:
         title: "Invitación de usuarios"
         description: "Enviado a la persona que ha sido invitada a registrar una cuenta."
+      evaluation_comment:
+        title: "Nuevo comentario de evaluación"
+        description: "Enviado a administradores y evaluadores del presupuesto."
       edit_info: "Puedes editar este email en"
       message_title: "Título del mensaje"
       message_body: "Este es un ejemplo de contenido de un mensaje."
@@ -881,6 +890,7 @@ es:
         no_investments: "No se ha creado ningún proyecto de gasto. Se necesita algún ejemplo para poder previsualizar el email."
         no_comments: "No se ha creado ningún comentario. Se necesita algún ejemplo para poder previsualizar el email."
         no_replies: "No se ha creado ninguna respuesta. Se necesita algún ejemplo para poder previsualizar el email."
+        no_evaluation_comments: "No se ha creado ningún comentario de evaluación. Se necesita algún ejemplo para poder previsualizar el email."
     emails_download:
       index:
         title: Descarga de emails
@@ -1260,6 +1270,7 @@ es:
         title: Configuración global
         update_setting: Actualizar
         participation_processes: "Procesos de participación"
+        images_and_documents: "Imágenes y documentos"
         feature_flags: Funcionalidades
         features:
           enabled: "Funcionalidad activada"

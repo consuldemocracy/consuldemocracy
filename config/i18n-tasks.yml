@@ -115,9 +115,12 @@ ignore_missing:
   - "activerecord.errors.models.direct_message.*"
   - "errors.messages.blank"
   - "errors.messages.taken"
+  - "errors.messages.too_short"
+  - "errors.messages.too_long"
   - "devise.failure.invalid"
   - "devise.registrations.destroyed"
   - "devise.password_expired.*"
+  - "seeds.settings.*"
 
 ## Consider these keys used:
 ignore_unused:
@@ -130,9 +133,9 @@ ignore_unused:
   - "date.order"
   - "unauthorized.*"
   - "admin.officials.level_*"
-  - "admin.comments.index.filter*"
+  - "admin.hidden_comments.index.filter*"
   - "admin.banners.index.filters.*"
-  - "admin.debates.index.filter*"
+  - "admin.hidden_debates.index.filter*"
   - "admin.hidden_proposals.index.filter*"
   - "admin.proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
@@ -147,7 +150,7 @@ ignore_unused:
   - "admin.legislation.processes.proposals.select_order"
   - "admin.legislation.draft_versions.*.submit_button"
   - "admin.legislation.questions.*.submit_button"
-  - "admin.comments.index.hidden_*"
+  - "admin.hidden_comments.index.hidden_*"
   - "admin.settings.index.features.*"
   - "admin.polls.*.submit_button"
   - "admin.booths.*.submit_button"
@@ -206,7 +209,7 @@ ignore_unused:
   - admin.stats.polls.expired
   - "stats.polls.*_percentage"
   - landings.cambia_tu_ciudad.*
-  - 'seeds.settings.*'
+  - "seeds.settings.*"
   - "dashboard.polls.*.submit"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:

@@ -3,7 +3,7 @@ ast:
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
     comment:
       hi: Hola
-      new_comment_by_html: Hay un nuevo comentario de <b>%{commenter}</b> en
+      new_comment_by_html: Hay un nuevo comentario de <strong>%{commenter}</strong> en
       subject: Alguien ha comentado en tu %{commentable}
       title: Nuevo comentario
     config:
@@ -16,7 +16,7 @@ ast:
       title: Verifica tu cuenta con el siguiente enlace
     reply:
       hi: Hola
-      new_reply_by_html: Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en
+      new_reply_by_html: Hay una nueva respuesta de <strong>%{commenter}</strong> a tu comentario en
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:

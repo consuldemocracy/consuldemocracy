@@ -22,7 +22,7 @@ namespace :admin do
     end
   end
 
-  resources :debates, only: :index do
+  resources :hidden_debates, only: :index do
     member do
       put :restore
       put :confirm_hide
@@ -75,7 +75,7 @@ namespace :admin do
     collection { get :search }
   end
 
-  resources :comments, only: :index do
+  resources :hidden_comments, only: :index do
     member do
       put :restore
       put :confirm_hide
@@ -90,6 +90,7 @@ namespace :admin do
 
   resources :settings, only: [:index, :update]
   put :update_map, to: "settings#update_map"
+  put :update_content_types, to: "settings#update_content_types"
 
   resources :moderators, only: [:index, :create, :destroy] do
     get :search, on: :collection
@@ -106,7 +107,7 @@ namespace :admin do
     get :search, on: :collection
   end
 
-  resources :administrators, only: [:index, :create, :destroy] do
+  resources :administrators, only: [:index, :create, :destroy, :edit, :update] do
     get :search, on: :collection
   end
 

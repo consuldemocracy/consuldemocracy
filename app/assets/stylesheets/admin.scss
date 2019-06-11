@@ -414,6 +414,15 @@ code {
   word-break: break-all;
 }
 
+.content-type {
+  white-space: nowrap;
+  padding-right: $line-height;
+
+  label {
+    margin-left: 0 !important;
+  }
+}
+
 // 02. Sidebar
 // -----------
 
