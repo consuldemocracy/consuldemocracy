@@ -202,7 +202,6 @@ sq:
         dossier: Dosje
         edit_dossier: Ndrysho dosjen
         tags: Etiketë
-        user_tags: Përdorues të etiketuar
         undefined: E padefinuar
         compatibility:
           title: Pajtueshmëri
@@ -216,12 +215,6 @@ sq:
           title: Fitues
           "true": "Po"
           "false": "Jo"
-        image: "Imazh"
-        see_image: "Shiko imazhin"
-        no_image: "Pa imazh"
-        documents: "Dokumentet"
-        see_documents: "Shiko dokumentet (%{count})"
-        no_documents: "Pa dokumentet"
         valuator_groups: "Grup vlerësuesish"
       edit:
         classification: Klasifikim
