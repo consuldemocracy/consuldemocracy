@@ -59,6 +59,7 @@ he:
         responsibles: אחראים
         assigned_admin: מנהל מערכת אשר הוקצה
         assigned_valuators: מעריכים שהוקצו
+        preview: תצוגה מקדימה לפרויקט ההשקעה
       edit:
         dossier: תיק
         price_html: "מחיר (%{currency})"
