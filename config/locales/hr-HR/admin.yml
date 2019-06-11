@@ -249,7 +249,6 @@ hr:
         dossier: Dosje
         edit_dossier: Uredi dosje
         tags: Oznake
-        user_tags: Oznake korisnika
         undefined: Nedefinirano
         compatibility:
           title: Kompatibilnost
@@ -263,12 +262,6 @@ hr:
           title: Pobjednik
           "true": "Da"
           "false": "Ne"
-        image: "Slika"
-        see_image: "Pogledaj sliku"
-        no_image: "Bez slike"
-        documents: "Dokumenti"
-        see_documents: "Vidi dokumente (%{count})"
-        no_documents: "Bez dokumenata"
         valuator_groups: "Grupa procjenitelja"
       edit:
         classification: Klasifikacija
