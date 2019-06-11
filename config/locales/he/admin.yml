@@ -235,6 +235,7 @@ he:
           author_username: שם העורך
           incompatible: אינו תואם
           price: מחיר
+          author: מחבר/ת
         cannot_calculate_winners: התקציב צריך להישאר על שלב "הצבעה לפרויקטים", "סקירת הצבעות" או "סיים תקציב" על מנת לחשב את הפרויקטים הזוכים
         see_results: "ראו תוצאות"
       show:
@@ -909,6 +910,9 @@ he:
         valuator_groups: "קבוצת המעריכים"
         group: "קבוצה"
         no_group: "אין קבוצה"
+        abilities: "יכולות"
+        can_comment: "ניתן להגיב"
+        can_edit_dossier: "ניתן לערוך תיק"
       valuator:
         add: הוסף למעריכים
         delete: מחיקה
@@ -921,8 +925,10 @@ he:
         description: "תיאור"
         email: "דואר אלקטרוני"
         group: "קבוצה"
+        abilities: "יכולות"
         no_description: "ללא תיאור"
         no_group: "ללא קבוצה"
+        no_abilities: "ללא יכולות"
     valuator_groups:
       index:
         title: "קבוצת המעריכים"
