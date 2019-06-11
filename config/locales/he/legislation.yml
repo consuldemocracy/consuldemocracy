@@ -142,3 +142,23 @@ he:
       process_title: תהליך חקיקה שיתופית
       total:
         zero: אין הצעות
+        one: "%{count} הצעה"
+        two: "%{count} הצעות"
+        many: "%{count} הצעות"
+        other: "%{count} הצעות"
+    summary:
+      title: תקציר
+      votes: הצבעות
+      debates_phase: שלב הדיונים
+      proposal_phase: שלב ההצעה
+      comments_phase: שלב הערות הטקסט
+      comments:
+        zero: אין תגובות
+        one: "%{count} תגובה"
+        two: "%{count} תגובות"
+        many: "%{count} תגובות"
+        other: "%{count} תגובות"
+      most_voted_comments: "ההערות עם הכי הרבה הצבעות: "
+      no_allegation: אין תגובות לטקסט
+      version: גירסה
+      process_empty: לתהליך אין שלבים.
