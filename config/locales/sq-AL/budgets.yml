@@ -179,9 +179,6 @@ sq:
       heading: "Buxhetet pjesëmarrës i Pikës së arritjes"
       heading_selection_title: "Nga rrethi"
       no_winner_investments: "Asnjë investim fitues në këtë gjendje"
-      filters:
-        label: "Gjendja aktuale e projektit"
-        all: "Të gjitha (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data e fillimit nuk mund të jetë e barabartë ose më vonë se data e përfundimit"
