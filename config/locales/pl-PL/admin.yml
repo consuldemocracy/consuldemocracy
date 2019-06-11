@@ -245,7 +245,6 @@ pl:
         dossier: Dokumentacja
         edit_dossier: Edytuj dokumentację
         tags: Tagi
-        user_tags: Tagi użytkownika
         undefined: Niezdefiniowany
         compatibility:
           title: Zgodność
@@ -259,12 +258,6 @@ pl:
           title: Zwycięzca
           "true": "Tak"
           "false": "Nie"
-        image: "Obraz"
-        see_image: "Zobacz obraz"
-        no_image: "Bez obrazu"
-        documents: "Dokumenty"
-        see_documents: "Zobacz dokumenty (%{count})"
-        no_documents: "Bez dokumentów"
         valuator_groups: "Grupy Wyceniające"
       edit:
         classification: Klasyfikacja
