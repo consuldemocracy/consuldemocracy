@@ -1,5 +1,4 @@
-<% Legislation::Proposal.where(legislation_process_id: @process)
-     .where(selected: true).order('cached_votes_score desc').each do |proposal| %>
+<% @process.proposals.selected.order('cached_votes_score desc').each do |proposal| %>
   <div class="row">
     <div class="proposal">
       <div class="panel panel_resume" style="min-height: 5rem;">

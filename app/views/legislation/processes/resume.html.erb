@@ -4,7 +4,7 @@
 
 <%= render "key_dates", process: @process, phase: @phase %>
 
-<% if !@process.debate_phase.enabled? && !@process.proposals_phase.enabled? && !@process.allegations_phase.enabled? %>
+<% unless @process.debate_phase.enabled? || @process.proposals_phase.enabled? || @process.allegations_phase.enabled? %>
   <div class="callout primary">
     <p><%= t("legislation.summary.process_empty") %></p>
   </div>
