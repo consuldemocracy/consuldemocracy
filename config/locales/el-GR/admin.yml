@@ -246,7 +246,6 @@ el:
         dossier: Φάκελος
         edit_dossier: Επεξεργασία φακέλου
         tags: Ετικέτες
-        user_tags: Ετικέτες χρήστη
         undefined: Δεν έχει προσδιοριστεί
         compatibility:
           title: Συμβατότητα
@@ -260,12 +259,6 @@ el:
           title: Νικητής
           "true": "Ναι"
           "false": "Όχι"
-        image: "Εικόνα"
-        see_image: "Προβολή εικόνας"
-        no_image: "Χωρίς εικόνα"
-        documents: "Έγγραφα"
-        see_documents: "Προβολή εγγράφων (%{count})"
-        no_documents: "Χωρίς έγγραφα"
         valuator_groups: "Ομάδες αξιολογητών"
       edit:
         classification: Ταξινόμηση
