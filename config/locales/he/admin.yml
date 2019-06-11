@@ -214,7 +214,6 @@ he:
         assigned_admin: הוקצה מנהל לפרויקט
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
-        no_valuation_groups: לא הוקצו קבוצות מעריכים
         feasibility:
           feasible: "בר ביצוע (%{price})"
           unfeasible: "אינו בר ביצוע"
@@ -266,6 +265,7 @@ he:
           "true": "כן"
           "false": "לא"
         valuator_groups: "קבוצת המעריכים"
+        preview: תצוגה מקדימה לפרויקט ההשקעה
       edit:
         classification: סיווג
         compatibility: תאימות
@@ -280,6 +280,7 @@ he:
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
         undefined: לא מוגדר
         user_groups: "קבוצות"
+        milestone_tags: תגיות אבני דרך
       search_unfeasible: חיפוש אינו ישים
     milestones:
       index:
@@ -296,6 +297,7 @@ he:
         documents: "מסמכים"
         milestone: אבני דרך
         new_milestone: יצירת אבן דרך חדשה
+        milestone_tags: תגיות אבני דרך
       form:
         admin_statuses: ניהול קצב התקדמות
         no_statuses_defined: טרם הוגדר קצב התקדמות
@@ -914,7 +916,6 @@ he:
         title: "מעריכים: חיפוש משתמשים"
       form:
         edit_title: "מעריכים: עריכת מעריך"
-        update: "עדכון מעריך"
         updated: "המעריך עודכן בהצלחה"
       show:
         description: "תיאור"
@@ -1427,6 +1428,7 @@ he:
         level_2_user: משתמשים ברמה 2
         proposal_created: הצעות תושבים
       budgets:
+        no_data_before_balloting_phase: "אין נתונים להצגה לפני שלב ההצבעה."
         title: "תקציבים שיתופיים - מצב השתתפות"
         supporting_phase: שלב בתמיכה
         balloting_phase: הצבעה מסכמת
