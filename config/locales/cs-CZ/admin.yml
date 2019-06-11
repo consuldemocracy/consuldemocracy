@@ -191,7 +191,6 @@ cs:
         assigned_admin: Přiřazený administrátor
         no_admin_assigned: Administrátor není přiřazen
         no_valuators_assigned: Žádný hodnotitel není přiřazen
-        no_valuation_groups: Není přiřazena žádná skupina hodnotitelů
         feasibility:
           feasible: "Proveditelné (%{price})"
           unfeasible: "Nerealizovatelné"
@@ -736,7 +735,6 @@ cs:
         title: "Hodnotitelé: Vyhledávání uživatelů"
       form:
         edit_title: "Hodnotitelé: Upravit hodnotitele"
-        update: "Aktualizovat hodnotitele"
         updated: "Hodnotitel byl úspěšně aktualizován"
       show:
         description: "Description"
