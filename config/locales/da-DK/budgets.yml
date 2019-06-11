@@ -182,9 +182,6 @@ da:
       heading: "Milepæle i deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
       no_winner_investments: "Ingen vinder investeringer i denne tilstand"
-      filters:
-        label: "Projektets aktuelle tilstand"
-        all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "Startdatoen kan ikke være den samme eller senere end slutdatoen"
