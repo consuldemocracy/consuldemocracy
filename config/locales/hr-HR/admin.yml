@@ -211,7 +211,6 @@ hr:
         assigned_admin: Dodijeljen administrator
         no_admin_assigned: Nema dodijeljenog administratora
         no_valuators_assigned: Nema dodijeljenih procjenitelja
-        no_valuation_groups: Nema dodijeljenit grupa procjenitelja
         feasibility:
           feasible: "Izvodljivo"
           unfeasible: "Neizvodljivo"
@@ -906,7 +905,6 @@ hr:
         title: "Procjenitelji: Pretraga korisnika"
       form:
         edit_title: "Procjenitelji: Uredi procjenitelja"
-        update: "Ažuriraj procjenitelja"
         updated: "Procjenitelje uspješno ažuriran"
       show:
         description: "Opis"
