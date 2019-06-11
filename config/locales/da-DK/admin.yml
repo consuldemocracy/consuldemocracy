@@ -207,7 +207,6 @@ da:
         assigned_admin: Tilknyttet administrator
         no_admin_assigned: Der er ikke tilknyttet en administrator
         no_valuators_assigned: Der er ikke tilknyttet nogle evaluatorer
-        no_valuation_groups: Der er ikke tilknyttet en vurderingsgruppe
         feasibility:
           feasible: "Kan gennemføres (%{price})"
           unfeasible: "Kan ikke gennemføres"
@@ -855,7 +854,6 @@ da:
         title: "Evaluatorer: Søg bruger"
       form:
         edit_title: "Evaluator: Rediger evaluator"
-        update: "Opdater evaluator"
         updated: "Evaluator blev opdateret"
       show:
         description: "Beskrivelse"
