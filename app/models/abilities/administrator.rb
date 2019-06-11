@@ -66,6 +66,8 @@ module Abilities
       can [:valuate, :comment_valuation], Budget::Investment
       can :create, Budget::ValuatorAssignment
 
+      can(:read_admin_stats, Budget) { |budget| budget.balloting_or_later? }
+
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 
       can [:index, :create, :edit, :update, :destroy], Geozone
