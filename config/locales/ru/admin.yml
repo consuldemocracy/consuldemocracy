@@ -214,7 +214,6 @@ ru:
         assigned_admin: Назначенный администратор
         no_admin_assigned: Ни один администратор не назначен
         no_valuators_assigned: Ни один оценщик не назначен
-        no_valuation_groups: Не назначено ни одной группы оценки
         feasibility:
           feasible: "Приемлемая (%{price})"
           unfeasible: "Неприемлемая"
@@ -914,7 +913,6 @@ ru:
         title: "Оценщики: Поиск пользователя"
       form:
         edit_title: "Оценщики: Редактировать оценщика"
-        update: "Обновить оценщика"
         updated: "Оценщик обновлен успешно"
       show:
         description: "Описание"
