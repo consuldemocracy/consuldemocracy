@@ -227,6 +227,8 @@ GEM
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
+    font-awesome-sass (5.8.1)
+      sassc (>= 1.11)
     foundation-rails (6.4.3.0)
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
@@ -616,6 +618,7 @@ DEPENDENCIES
   erb_lint
   factory_bot_rails (~> 4.8.2)
   faker (~> 1.8.7)
+  font-awesome-sass (~> 5.8.1)
   foundation-rails (~> 6.4.3.0)
   foundation_rails_helper (~> 3.0.0)
   globalize (~> 5.2.0)
