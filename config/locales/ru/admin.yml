@@ -252,7 +252,6 @@ ru:
         dossier: Пакет документов
         edit_dossier: Редактировать пакет документов
         tags: Метки
-        user_tags: Метки пользователя
         undefined: Неопределено
         compatibility:
           title: Совместимость
@@ -266,12 +265,6 @@ ru:
           title: Победитель
           "true": "Да"
           "false": "Нет"
-        image: "Изображение"
-        see_image: "Смотреть изображение"
-        no_image: "Без изображения"
-        documents: "Документы"
-        see_documents: "Смотреть документы (%{count})"
-        no_documents: "Без документов"
         valuator_groups: "Группы оценки"
       edit:
         classification: Классификация
