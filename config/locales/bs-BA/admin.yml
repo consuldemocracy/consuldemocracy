@@ -211,7 +211,6 @@ bs:
         assigned_admin: Dodijeljeni administrator
         no_admin_assigned: Nema dodijeljenih administratora
         no_valuators_assigned: Nema dodijeljenih procjenitelja
-        no_valuation_groups: Nema dodijeljenih grupa za procjenu
         feasibility:
           feasible: "Izvodivo"
           unfeasible: "Nije izvodivo"
@@ -882,7 +881,6 @@ bs:
         title: "Procjenitelji: traženje korisnika"
       form:
         edit_title: "Procjenitelji: Editovanje podataka za procjenitelja"
-        update: "Ažuriraj podatke za procjenitelja"
         updated: "Podaci za procjenitelja uspješno ažurirani"
       show:
         description: "Opis"
