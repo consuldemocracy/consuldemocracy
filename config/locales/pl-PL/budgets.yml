@@ -186,9 +186,6 @@ pl:
       heading: "Kamienie milowe budżetu partycypacyjnego"
       heading_selection_title: "Przez powiat"
       no_winner_investments: "Brak zwycięskich inwestycji"
-      filters:
-        label: "Bieżący stan projektu"
-        all: "Wszystko (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data rozpoczęcia nie może być taka sama lub późniejsza od daty zakończenia"
