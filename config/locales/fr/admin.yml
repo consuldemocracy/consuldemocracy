@@ -205,7 +205,6 @@ fr:
         assigned_admin: Administrateur affecté
         no_admin_assigned: Aucun administrateur affecté
         no_valuators_assigned: Aucun évaluateur affecté
-        no_valuation_groups: Aucun groupe d’évaluation assignés
         feasibility:
           feasible: "Réalisable (%{price})"
           unfeasible: "Infaisable"
@@ -835,7 +834,6 @@ fr:
         title: "Évaluateurs : Recherche d'utilisateur"
       form:
         edit_title: "Évaluateurs : modifier l'évaluateur"
-        update: "Modifier l'évaluateur"
         updated: "L'évaluateur a bien été modifié"
       show:
         description: "Description"
