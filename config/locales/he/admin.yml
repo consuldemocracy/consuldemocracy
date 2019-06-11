@@ -252,7 +252,6 @@ he:
         dossier: תיק
         edit_dossier: עריכת תיק
         tags: תגיות
-        user_tags: תגיות משתמשים
         undefined: לא מוגדר
         compatibility:
           title: תאימות
@@ -266,12 +265,6 @@ he:
           title: זוכה
           "true": "כן"
           "false": "לא"
-        image: "תמונה"
-        see_image: "ראה תמונה"
-        no_image: "ללא תמונה"
-        documents: "מסמכים"
-        see_documents: "ראה את המסמכים (%{count})"
-        no_documents: "ללא מסמכים"
         valuator_groups: "קבוצת המעריכים"
       edit:
         classification: סיווג
