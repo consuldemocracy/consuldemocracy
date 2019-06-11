@@ -246,7 +246,6 @@ es:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
-        user_tags: Etiquetas del usuario
         undefined: Sin definir
         compatibility:
           title: Compatibilidad
@@ -260,12 +259,6 @@ es:
           title: Ganador
           "true": "Si"
           "false": "No"
-        image: "Imagen"
-        see_image: "Ver imagen"
-        no_image: "Sin imagen"
-        documents: "Documentos"
-        see_documents: "Ver documentos (%{count})"
-        no_documents: "Sin documentos"
         valuator_groups: "Grupos de evaluadores"
       edit:
         classification: Clasificación
