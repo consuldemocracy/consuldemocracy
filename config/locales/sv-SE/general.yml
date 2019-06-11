@@ -51,6 +51,10 @@ sv:
         zero: Inga svar
         one: 1 svar
         other: "%{count} svar"
+      responses_show:
+        zero: Inga svar
+      responses_collapse:
+        zero: Inga svar
       user_deleted: Användaren är borttagen
       votes:
         zero: Inga röster
@@ -180,6 +184,7 @@ sv:
     proposal: Förslag
     proposal_notification: "Avisering"
     budget/investment: Budgetförslag
+    budget/group: Budgetgrupp
     budget/heading: Budgetrubrik
     poll/shift: Arbetspass
     poll/question/answer: Svar
@@ -203,7 +208,9 @@ sv:
         draft: Utkast
       proposal_totals:
         active_resources: Aktiva resurser
+        show_proposal: Visa förslag
         preview_proposal: Förhandsvisa förslag
+        current_goal: Nuvarande mål
         supports:
           zero: Inget stöd
           one: 1 stöd
@@ -357,6 +364,7 @@ sv:
           error: "Ett fel har uppstått. Var vänlig och gå till \"Mitt konto\" för att manuellt inaktivera rekommenderade förslag"
       retired_proposals: Förslag som dragits tillbaka
       retired_proposals_link: "Förslag som dragits tillbaka av förslagslämnaren"
+      proposals_lists: Förslagslista
       retired_links:
         all: Alla
         duplicated: Dubbletter
@@ -428,6 +436,7 @@ sv:
         one: 1 kommentar
         other: "%{count} kommentarer"
       comments_tab: Kommentarer
+      dashboard_proposal_link: Dashboard
       flag: Förslaget har markerats som olämpligt av flera användare.
       login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
       notifications_tab: Aviseringar
@@ -449,12 +458,14 @@ sv:
       resources: Resurser
       community: Gemenskap
       polls: Omröstningar
+      mailing: E-post
       recommended_actions: Rekommenderade åtgärder
     progress:
       group_by_date: Daglig
       supports: Stöd
       new_action: Ny
     index:
+      edit_proposal_link: Redigera förslag
       publish: Publicera förslag
       retire: Ta tillbaka förslaget
     new_request:
@@ -463,13 +474,20 @@ sv:
       available_resources: Tillgängliga resurser
     resource:
       and: och
+      view_resource: Se resurs
     recommended_actions:
       title: Rekommenderade åtgärder
       show_description: Visa beskrivning
       done_title: Genomfört
     next_goal:
       title: Mål
+    goal:
+      days:
+        one: "%{count} dag"
+        other: "%{count} dagar"
     community:
+      participants: Deltagare
+      debates: Debatter
       comments: Kommentarer
       latest_comments: Senaste meddelande
     polls:
@@ -486,17 +504,30 @@ sv:
         responses:
           one: "%{count} svar"
           other: "%{count} svar"
+        view_results: Se resultat
         edit_poll: Redigera omröstning
+        show_results: Visa resultat
+        delete: Ta bort enkät
+      form:
+        name: Enkättitel
+        add_question: Lägg till fråga
       question_fields:
         add_answer: Lägg till svar
+      question_answer_fields:
+        remove_answer: Ta bort svar
     poster:
       index:
         support: Stöd mitt förslag
       options:
+        preview: Förhandsvisning
         download: Ladda ner
+    mailing:
+      mailing_options:
+        preview: Förhandsvisning
     mailer:
       forward:
         share_in: Dela på
+        hi: "Hej!"
   polls:
     all: "Alla"
     no_dates: "inget datum har valts"
@@ -598,6 +629,7 @@ sv:
       to: "Till"
     author_info:
       author_deleted: Användaren är borttagen
+      email_deleted: E-post raderad
     back: Gå tillbaka
     check: Välj
     check_all: Alla
@@ -711,6 +743,7 @@ sv:
       deleted_proposal: Det här förslaget har tagits bort
       deleted_budget_investment: Det här budgetförslaget har tagits bort
       proposals: Förslag
+      proposals_status: Status
       debates: Debatter
       budget_investments: Budgetförslag
       comments: Kommentarer
@@ -741,6 +774,7 @@ sv:
       draft: Utkast
       published: Publicerad
       see: "Visa förslag"
+      actions: Åtgärder
   votes:
     agree: Jag håller med
     anonymous: För många anonyma röster för att godkänna omröstningen %{verify_account}.
@@ -835,7 +869,17 @@ sv:
       text_sign_up: registrera dig
       title: Hur kommenterar jag det här dokumentet?
   links:
+    form:
+      delete_button: Ta bort
+      cancel_button: Avbryt
     nested_links:
       title: Länkar
+      add_new_link: Lägg till ny länk
     link_fields:
       label_placeholder: Länktitel
+      url_placeholder: Länkadress
+  communities:
+    show:
+      surveys: Enkäter
+    subnav:
+      surveys: Enkäter
