@@ -154,7 +154,6 @@ sl:
         dossier: Dosje
         edit_dossier: Uredi dosje
         tags: Oznake
-        user_tags: Uporabniške oznake
         undefined: Nedefinirano
         compatibility:
           title: Kompatibilnost
@@ -168,12 +167,6 @@ sl:
           title: Zmagovalec
           "true": "Da"
           "false": "Ne"
-        image: "Slika"
-        see_image: "Poglej sliko"
-        no_image: "Brez slike"
-        documents: "Dokumenti"
-        see_documents: "Poglej dokumente (%{count})"
-        no_documents: "Brez dokumentov"
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
