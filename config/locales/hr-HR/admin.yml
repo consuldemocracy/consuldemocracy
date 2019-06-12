@@ -277,36 +277,6 @@ hr:
         undefined: Nedefinirano
         user_groups: "Grupe"
       search_unfeasible: Pretraga neizvediva
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Naziv"
-        table_description: "Opis"
-        table_publication_date: "Datum objave"
-        table_status: Status
-        table_actions: "Akcije"
-        delete: "Obriši ključni cilj"
-        no_milestones: "Nemate definirane ključne ciljeve"
-        image: "Slika"
-        show_image: "Pogledaj sliku"
-        documents: "Dokumenti"
-        milestone: Ključni ciljevi
-        new_milestone: Stvori novi ključni cilj
-      form:
-        admin_statuses: Upravljaj statusima
-        no_statuses_defined: Još ne postoji definirani status
-      new:
-        creating: Stvori ključni cilj
-        date: Datum
-        description: Opis
-      edit:
-        title: Uredi ključne ciljeve
-      create:
-        notice: Novi ključni ciljevi stvoreni su uspješno!
-      update:
-        notice: Ključni ciljevi uspješno ažurirani
-      delete:
-        notice: Ključni ciljevi uspješno obrisani
     statuses:
       index:
         title: Status ključnih ciljeva
@@ -328,28 +298,8 @@ hr:
       delete:
         notice: Ključni ciljevi uspješno obrisani
     progress_bars:
-      manage: "Upravljaj trakom progresa"
       index:
         title: "Trake napretka"
-        no_progress_bars: "Ne postoji traka napretka"
-        new_progress_bar: "Stvori novu prazninu napretka"
-        primary: "Primarna praznina napretka"
-        table_id: "ID"
-        table_kind: "Tip"
-        table_title: "Naziv"
-        table_percentage: "Trenutni progres"
-      new:
-        creating: "Stvori novu traku napretka"
-      edit:
-        title:
-          primary: "Uredi primarniu traku napretka"
-          secondary: "Uredi traku napretka %{title}"
-      create:
-        notice: "Traka napretka je stvorena uspješno!"
-      update:
-        notice: "Traka napretka je uspješno ažurirana"
-      delete:
-        notice: "Traka napretka je uspješno obrisana"
     hidden_comments:
       index:
         filter: Filter
