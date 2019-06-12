@@ -78,4 +78,8 @@ module PollsHelper
   def show_polls_description?
     @active_poll.present? && @current_filter == "current"
   end
+
+  def stored_positive_negative_value(question, answer)
+    question.answers.find_by(author_id: current_user.id, answer: answer.title).positive
+  end
 end

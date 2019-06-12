@@ -1,0 +1,19 @@
+<%= link_to answer_question_path(question, answer: answer.title, positive: positive, token: token, page: page),
+            method: method.to_sym,
+            remote: true,
+            title: t("poll_questions.show.vote_answer", answer: answer.title),
+            class: "expand js-question-answer" do %>
+  <% if positive %>
+    <% if active %>
+      <span class="icon-like active-like"></span>
+    <% else %>
+      <span class="icon-like"></span>
+    <% end %>
+  <% else %>
+    <% if active %>
+      <span class="icon-unlike active-unlike"></span>
+    <% else %>
+      <span class="icon-unlike"></span>
+    <% end %>
+  <% end %>
+<% end %>

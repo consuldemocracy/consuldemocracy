@@ -19,12 +19,20 @@ describe "Admin poll questions" do
     question1 = create(:poll_question, poll: poll1)
     question2 = create(:poll_question, poll: poll2)
     question3 = create(:poll_question, poll: poll3, proposal: proposal)
+    question4 = create(:poll_question_unique, poll: poll1)
 
     visit admin_poll_path(poll1)
     expect(page).to have_content(poll1.name)
 
     within("#poll_question_#{question1.id}") do
       expect(page).to have_content(question1.title)
+      expect(page).to have_content("Edit answers")
+      expect(page).to have_content("Edit")
+      expect(page).to have_content("Delete")
+    end
+
+    within("#poll_question_#{question4.id}") do
+      expect(page).to have_content(question4.title)
       expect(page).to have_content("Edit answers")
       expect(page).to have_content("Edit")
       expect(page).to have_content("Delete")
@@ -52,16 +60,35 @@ describe "Admin poll questions" do
     end
   end
 
-  scenario "Show" do
-    geozone = create(:geozone)
-    poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
-    question = create(:poll_question, poll: poll)
+  context "Show" do
+    scenario "Without Votation type" do
+      geozone = create(:geozone)
+      poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+      question = create(:poll_question, poll: poll)
 
-    visit admin_poll_path(poll)
-    click_link "#{question.title}"
+      visit admin_poll_path(poll)
+      click_link question.title
 
-    expect(page).to have_content(question.title)
-    expect(page).to have_content(question.author.name)
+      expect(page).to have_content(question.title)
+      expect(page).to have_content(question.author.name)
+      expect(page).not_to have_content("Votation type")
+    end
+
+    scenario "With Votation type" do
+      geozone = create(:geozone)
+      poll = create(:poll, geozone_restricted: true, geozone_ids: [geozone.id])
+      question = create(:poll_question_multiple, poll: poll)
+
+      visit admin_poll_path(poll)
+      click_link "#{question.title}"
+
+      expect(page).to have_content(question.title)
+      expect(page).to have_content(question.author.name)
+      expect(page).to have_content("Votation type")
+      expect(page).to have_content("Multiple")
+      expect(page).to have_content("Maximum number of votes")
+      expect(page).to have_content("5")
+    end
   end
 
   scenario "Create" do
@@ -121,6 +148,179 @@ describe "Admin poll questions" do
     visit admin_questions_path
 
     expect(page).to have_content(proposal.title)
+  end
+
+  context "create with votation type" do
+    before do
+      poll = create(:poll, name: "Movies")
+      visit admin_poll_path(poll)
+      click_link "Create question"
+    end
+
+    scenario "unique" do
+      title = "unique question"
+      fill_in "Question", with: title
+      select "Unique answer, closed", from: "votation_type_enum_type"
+
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Unique answer, closed")
+    end
+
+    scenario "multiple" do
+      title = "multiple question"
+      fill_in "Question", with: title
+      select "Multiple answers, closed", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Multiple answers, closed")
+    end
+
+    scenario "prioritized" do
+      title = "prioritized question"
+      fill_in "Question", with: title
+      select "Multiple prioritized answer, closed", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Multiple prioritized answer, closed")
+    end
+
+    scenario "positive_open" do
+      title = "positive open question"
+      fill_in "Question", with: title
+      select "Votable positive, open", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Votable positive, open")
+    end
+
+    scenario "positive_negative_open" do
+      title = "positive negative open question"
+      fill_in "Question", with: title
+      select "Votable positive and negative, open", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Votable positive and negative, open")
+    end
+
+    scenario "answer_couples_open" do
+      title = "answer couples open question"
+      fill_in "Question", with: title
+      select "Couples of answers, open", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Couples of answers, open")
+    end
+
+    scenario "answer_couples_closed" do
+      title = "answer couples closed question"
+      fill_in "Question", with: title
+      select "Couples of answers, closed", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Couples of answers, closed")
+    end
+
+    scenario "answer_set_open" do
+      title = "answer set open question"
+      fill_in "Question", with: title
+      select "Set of answers, open", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of answers in the set", with: 3
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Set of answers, open")
+    end
+
+    scenario "answer_set_closed" do
+      title = "answer set closed question"
+      fill_in "Question", with: title
+      select "Set of answers, closed", from: "votation_type_enum_type"
+
+      expect(page).to have_content("Maximum number of votes")
+
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of votes", with: 6
+      click_button "Save"
+
+      expect(page).to have_content("1 error prevented this Poll/Question from being saved.")
+
+      fill_in "Maximum number of answers in the set", with: 3
+      click_button "Save"
+
+      expect(page).to have_content(title)
+      expect(page).to have_content("Set of answers, closed")
+    end
   end
 
   scenario "Update" do

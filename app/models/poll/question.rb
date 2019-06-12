@@ -15,13 +15,21 @@ class Poll::Question < ApplicationRecord
   has_many :answers, class_name: "Poll::Answer"
   has_many :question_answers, -> { order "given_order asc" }, class_name: "Poll::Question::Answer", dependent: :destroy
   has_many :partial_results
+  has_many :pair_answers, class_name: "Poll::PairAnswer"
+  has_one :votation_type, as: :questionable
   belongs_to :proposal
+
+  attr_accessor :enum_type, :max_votes, :prioritization_type
 
   validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
   validates :poll_id, presence: true, if: Proc.new { |question| question.poll.nil? }
 
+  validates_associated :votation_type
   accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
+
+  delegate :enum_type, :max_votes, :prioritization_type, :max_groups_answers,
+    to: :votation_type, allow_nil: true
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
@@ -59,10 +67,24 @@ class Poll::Question < ApplicationRecord
   end
 
   def answers_total_votes
-    question_answers.inject(0) { |total, question_answer| total + question_answer.total_votes }
+    question_answers.visibles.inject(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
   def most_voted_answer_id
     question_answers.max_by { |answer| answer.total_votes }.id
+  end
+
+  def answers_with_read_more?
+    question_answers.visibles.any? do |answer| answer.description.present? || answer.images.any? ||
+      answer.documents.present? || answer.videos.present?
+    end
+  end
+
+  def user_can_vote(user)
+    max_votes.nil? || max_votes > answers.where(author: user).count
+  end
+
+  def is_positive_negative?
+    votation_type.present? && enum_type == "positive_negative_open"
   end
 end

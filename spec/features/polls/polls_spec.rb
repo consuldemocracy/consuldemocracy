@@ -231,11 +231,12 @@ describe "Polls" do
 
       visit poll_path(expired_poll)
 
-      expect(page).to have_content("Luke")
-      expect(page).to have_content("Leia")
-      expect(page).not_to have_link("Luke")
-      expect(page).not_to have_link("Leia")
-
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_content("Luke")
+        expect(page).to have_content("Leia")
+        expect(page).not_to have_link("Luke")
+        expect(page).not_to have_link("Leia")
+      end
       expect(page).to have_content("This poll has finished")
     end
 
@@ -251,10 +252,12 @@ describe "Polls" do
 
       visit poll_path(poll)
 
-      expect(page).to have_content("Vader")
-      expect(page).to have_content("Palpatine")
-      expect(page).not_to have_link("Vader")
-      expect(page).not_to have_link("Palpatine")
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_content("Vader")
+        expect(page).to have_content("Palpatine")
+        expect(page).not_to have_link("Vader")
+        expect(page).not_to have_link("Palpatine")
+      end
     end
 
     scenario "Level 2 users reading a same-geozone poll" do
@@ -268,8 +271,10 @@ describe "Polls" do
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
-      expect(page).to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
+      end
     end
 
     scenario "Level 2 users reading a all-geozones poll" do
@@ -280,8 +285,10 @@ describe "Polls" do
       login_as(create(:user, :level_two))
       visit poll_path(poll)
 
-      expect(page).to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
+      end
     end
 
     scenario "Level 2 users who have already answered" do
@@ -294,8 +301,10 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      expect(page).to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
+      end
     end
 
     scenario "Level 2 users answering", :js do
@@ -311,10 +320,12 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      click_link "Han Solo"
+      within("#poll_question_#{question.id}_answers") do
+        click_link "Han Solo"
 
-      expect(page).not_to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
+      end
     end
 
     scenario "Level 2 users changing answer", :js do
@@ -330,15 +341,17 @@ describe "Polls" do
       login_as user
       visit poll_path(poll)
 
-      click_link "Han Solo"
+      within("#poll_question_#{question.id}_answers") do
+        click_link "Han Solo"
 
-      expect(page).not_to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
 
-      click_link "Chewbacca"
+        click_link "Chewbacca"
 
-      expect(page).not_to have_link("Chewbacca")
-      expect(page).to have_link("Han Solo")
+        expect(page).not_to have_link("Chewbacca")
+        expect(page).to have_link("Han Solo")
+      end
     end
 
     scenario "Level 2 votes, signs out, signs in, votes again", :js do
@@ -353,26 +366,33 @@ describe "Polls" do
 
       login_as user
       visit poll_path(poll)
-      click_link "Han Solo"
 
-      expect(page).not_to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+      within("#poll_question_#{question.id}_answers") do
+        click_link "Han Solo"
 
-      click_link "Sign out"
-      login_as user
-      visit poll_path(poll)
-      click_link "Han Solo"
-
-      expect(page).not_to have_link("Han Solo")
-      expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
+      end
 
       click_link "Sign out"
       login_as user
       visit poll_path(poll)
-      click_link "Chewbacca"
+      within("#poll_question_#{question.id}_answers") do
+        click_link "Han Solo"
 
-      expect(page).not_to have_link("Chewbacca")
-      expect(page).to have_link("Han Solo")
+        expect(page).not_to have_link("Han Solo")
+        expect(page).to have_link("Chewbacca")
+      end
+
+      click_link "Sign out"
+      login_as user
+      visit poll_path(poll)
+      within("#poll_question_#{question.id}_answers") do
+        click_link "Chewbacca"
+
+        expect(page).not_to have_link("Chewbacca")
+        expect(page).to have_link("Han Solo")
+      end
     end
   end
 

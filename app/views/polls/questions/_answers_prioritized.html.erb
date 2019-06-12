@@ -1,0 +1,44 @@
+<div class="poll-question-answers">
+  <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
+    <ol type="1" class="sortable-priotirized-votation" data-js-url="<%= prioritized_answers_question_path(question, token: token) %>">
+      <% @answers_by_question_id[question.id].each do |answer| %>
+        <li data-answer-id="<%= answer %>">
+          <span class="button answered expanded"
+                title="<%= t("poll_questions.show.voted", answer: answer) %>">
+            <%= answer %>
+          </span>
+        </li>
+      <% end %>
+    </ol>
+
+    <% answers&.each do |answer| %>
+      <% if @answers_by_question_id[question.id].include?(answer.title) %>
+        <%= link_to answer.title,
+                    answer_question_path(question, answer: answer.title, token: token),
+                    method: :delete,
+                    remote: true,
+                    title: t("poll_questions.show.voted", answer: answer.title),
+                    class: "button answered expand" %>
+      <% else %>
+        <%= link_to answer.title,
+                    answer_question_path(question, answer: answer.title, token: token),
+                    method: :post,
+                    remote: true,
+                    title: t("poll_questions.show.vote_answer", answer: answer.title),
+                    class: "button secondary hollow js-question-answer" %>
+      <% end %>
+    <% end %>
+  <% elsif !user_signed_in? %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <%= link_to answer.title, new_user_session_path, class: "button secondary hollow" %>
+    <% end %>
+  <% elsif !current_user.level_two_or_three_verified? %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <%= link_to answer.title, verification_path, class: "button secondary hollow" %>
+    <% end %>
+  <% else %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <span class="button secondary hollow disabled"><%= answer.title %></span>
+    <% end %>
+  <% end %>
+</div>

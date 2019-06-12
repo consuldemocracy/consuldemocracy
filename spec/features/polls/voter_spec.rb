@@ -150,7 +150,9 @@ describe "Voter" do
         login_as user
         visit poll_path(poll)
 
-        expect(page).not_to have_link(answer_yes.title)
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).not_to have_link(answer_yes.title)
+        end
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
 
@@ -214,7 +216,10 @@ describe "Voter" do
 
       visit poll_path(poll)
 
-      expect(page).not_to have_link(answer_yes.title)
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).not_to have_link(answer_yes.title)
+      end
+
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
       expect(Poll::Voter.count).to eq(1)
 

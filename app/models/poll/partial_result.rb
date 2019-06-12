@@ -11,6 +11,7 @@ class Poll::PartialResult < ApplicationRecord
   validates :author, presence: true
   validates :answer, presence: true
   validates :answer, inclusion: { in: ->(a) { a.question.question_answers
+                                                        .visibles
                                                         .joins(:translations)
                                                         .pluck("poll_question_answer_translations.title") }},
                      unless: ->(a) { a.question.blank? }

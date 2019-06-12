@@ -87,6 +87,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations.js.coffee
+//= require votations
 
 var initialize_modules = function() {
   App.Answers.initialize();
@@ -140,6 +141,8 @@ var initialize_modules = function() {
   if ( $('#js-columns-selector').length )
     App.ColumnsSelector.initialize();
   App.BudgetEditAssociations.initialize();
+  if ( $("#votation_type_enum_type").length )
+    App.Votations.initialize();
 };
 
 $(function(){

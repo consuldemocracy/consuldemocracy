@@ -35,6 +35,7 @@ class User < ApplicationRecord
   has_many :follows
   has_many :budget_rol_assignments
   has_many :budgets, through: :budget_rol_assignments
+  has_many :votation_set_answers
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
