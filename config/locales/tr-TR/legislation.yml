@@ -20,6 +20,7 @@ tr:
       index:
         title: Yorumlar
         comments_about: Yorumlar hakkında
+        comment_about: "Hakkında yorum:"
         see_in_context: Bağlam içinde gör
         comments_count:
           one: "%{count} yorum"
