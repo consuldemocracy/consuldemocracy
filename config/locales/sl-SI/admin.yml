@@ -182,29 +182,6 @@ sl:
         undefined: Nedefiniran
         user_groups: "Skupine"
       search_unfeasible: Iskanje neizvedljivo
-    milestones:
-      index:
-        table_title: "Naslov"
-        table_description: "Opis"
-        table_publication_date: "Datum objave"
-        table_actions: "Dejanja"
-        delete: "Izbriši mejnik"
-        no_milestones: "Nima definiranih mejnikov"
-        image: "Slika"
-        show_image: "Pokaži sliko"
-        documents: "Dokumenti"
-      new:
-        creating: Ustvari mejnik
-        date: Datum
-        description: Opis
-      edit:
-        title: Uredi mejnik
-      create:
-        notice: Nov mejnik uspešno ustvarjen!
-      update:
-        notice: Mejnik uspešno posodobljen
-      delete:
-        notice: Mejnik uspešno izbrisan
     dashboard:
       index:
         back: Pojdi nazaj na %{org}
