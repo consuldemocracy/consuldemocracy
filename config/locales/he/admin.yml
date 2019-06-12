@@ -285,35 +285,7 @@ he:
       search_unfeasible: חיפוש אינו ישים
     milestones:
       index:
-        table_id: "ID"
-        table_title: "כותרת"
-        table_description: "תיאור"
-        table_publication_date: "תאריך פרסום"
-        table_status: מצב
-        table_actions: "פעולות"
-        delete: "מחיקת אבני דרך"
-        no_milestones: "לא הגדרו אבני דרך"
-        image: "תמונה"
-        show_image: "הצג תמונה"
-        documents: "מסמכים"
-        milestone: אבני דרך
-        new_milestone: יצירת אבן דרך חדשה
         milestone_tags: תגיות אבני דרך
-      form:
-        admin_statuses: ניהול קצב התקדמות
-        no_statuses_defined: טרם הוגדר קצב התקדמות
-      new:
-        creating: צור אבני דרך
-        date: תאריך
-        description: תיאור
-      edit:
-        title: ערוך אבן דרך
-      create:
-        notice: אבן דרך חדשה נוצרה בהצלחה!
-      update:
-        notice: אבן דרך חדשה עודכנה בהצלחה
-      delete:
-        notice: אבן דרך הוסרה בהצלחה
     statuses:
       index:
         title: קצב התקדמות באבני הדרך
@@ -335,28 +307,8 @@ he:
       delete:
         notice: סטטוס אבן דרך נמחק בהצלחה
     progress_bars:
-      manage: "ניהול סרגל התקדמות"
       index:
         title: "סרגל התקדמות"
-        no_progress_bars: "אין סרגלי התקדמות"
-        new_progress_bar: "יצירת סרגל התקדמות חדש"
-        primary: "סרגל התקדמות ראשי"
-        table_id: "ID"
-        table_kind: "סוג"
-        table_title: "כותרת"
-        table_percentage: "ההתקדמות הנוכחית"
-      new:
-        creating: "יצירת סרגל התקדמות"
-      edit:
-        title:
-          primary: "עריכת סרגל התקדמות ראשי"
-          secondary: "עריכת סרגל התקדמות %{title}"
-      create:
-        notice: "סרגל ההתקדמות נוצר בהצלחה!"
-      update:
-        notice: "סרגל ההתקדמות עודכן בהצלחה"
-      delete:
-        notice: "סרגל ההתקדמות הוסר בהצלחה"
     hidden_comments:
       index:
         filter: סינון
