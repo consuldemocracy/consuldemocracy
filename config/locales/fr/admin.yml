@@ -271,36 +271,6 @@ fr:
         undefined: Indéfini
         user_groups: "Groupes"
       search_unfeasible: Recherche impossible
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Titre"
-        table_description: "Description"
-        table_publication_date: "Date de publication"
-        table_status: Statut
-        table_actions: "Actions"
-        delete: "Supprimer le jalon"
-        no_milestones: "Aucun jalon défini"
-        image: "Image"
-        show_image: "Afficher l'image"
-        documents: "Documents"
-        milestone: Jalon
-        new_milestone: Créer nouveau jalon
-      form:
-        admin_statuses: Administrer les statuts d'investissement
-        no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis
-      new:
-        creating: Créer un nouveau jalon
-        date: Date
-        description: Description
-      edit:
-        title: Modifier le jalon
-      create:
-        notice: Nouveau jalon créé avec succès !
-      update:
-        notice: Mise à jour du jalon réussie
-      delete:
-        notice: Jalon supprimé avec succès
     statuses:
       index:
         title: Statuts d’investissement
@@ -322,28 +292,8 @@ fr:
       delete:
         notice: Le statut d'investissement a été supprimé avec succès
     progress_bars:
-      manage: "Gérer la barre de progrès"
       index:
         title: "Barres de progrès"
-        no_progress_bars: "Il n'y a pas de barres de progrès"
-        new_progress_bar: "Créer une nouvelle barre de progrès"
-        primary: "Barre de progrès primaire"
-        table_id: "ID"
-        table_kind: "Type"
-        table_title: "Titre"
-        table_percentage: "Progrès actuel"
-      new:
-        creating: "Créer une nouvelle barre de progrès"
-      edit:
-        title:
-          primary: "Editer la barre de progrès primaire"
-          secondary: "Editer la barre de progrès %{title}"
-      create:
-        notice: "Barre de progrès créée avec succès!"
-      update:
-        notice: "Barre de progrès mise à jour avec succès"
-      delete:
-        notice: "Barre de progrès supprimée avec succès"
     dashboard:
       index:
         back: Revenir
