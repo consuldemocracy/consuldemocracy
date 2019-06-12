@@ -274,36 +274,6 @@ el:
         undefined: Δεν έχει προσδιοριστεί
         user_groups: "Ομάδες"
       search_unfeasible: Η αναζήτηση αυτή δεν είναι εφικτή
-    milestones:
-      index:
-        table_id: "Ταυτότητα"
-        table_title: "Τίτλος"
-        table_description: "Περιγραφή"
-        table_publication_date: "Ημερομηνία δημοσίευσης"
-        table_status: Κατάσταση
-        table_actions: "Ενέργειες"
-        delete: "Διαγραφή ορόσημου"
-        no_milestones: "Δεν υπάρχουν καθορισμένα ορόσημα"
-        image: "Εικόνα"
-        show_image: "Προβολή εικόνας"
-        documents: "Έγγραφα"
-        milestone: Ορόσημο
-        new_milestone: Δημιουργία νέου ορόσημου
-      form:
-        admin_statuses: Διαχείριση καταστάσεων
-        no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις 
-      new:
-        creating: Δημιουργία ορόσημου
-        date: Ημερομηνία
-        description: Περιγραφή
-      edit:
-        title: Επεξεργασία ορόσημου
-      create:
-        notice: Το νέο ορόσημο δημιουργήθηκε επιτυχώς!
-      update:
-        notice: Το ορόσημο ενημερώθηκε επιτυχώς
-      delete:
-        notice: Το ορόσημο διαγράφηκε επιτυχώς
     statuses:
       index:
         title: Καταστάσεις οροσήμων
@@ -325,28 +295,8 @@ el:
       delete:
         notice: Η κατάσταση του οροσήμου διαγράφηκε επιτυχώς
     progress_bars:
-      manage: "Διαχείριση γραμμής προόδου"
       index:
         title: "Γραμμές προόδου"
-        no_progress_bars: "Δεν υπάρχουν γραμμές προόδου"
-        new_progress_bar: "Δημιουργία νέας γραμμής προόδου"
-        primary: "Βασική γραμμή προόδου"
-        table_id: "Ταυτότητα"
-        table_kind: "Τύπος"
-        table_title: "Τίτλος"
-        table_percentage: "Τρέχουσα πρόοδος"
-      new:
-        creating: "Δημιουργία γραμμής προόδου"
-      edit:
-        title:
-          primary: "Επεξεργασία βασικής γραμμής προόδου"
-          secondary: "Επεξεργασία γραμμής προόδου %{title}"
-      create:
-        notice: "Η γραμμή προόδου δημιουργήθηκε επιτυχώς!"
-      update:
-        notice: "Η γραμμή προόδου ενημερώθηκε επιτυχώς"
-      delete:
-        notice: "Η γραμμή προόδου διαγράφηκε επιτυχώς"
     dashboard:
       index:
         back: Πίσω στο %{org}
