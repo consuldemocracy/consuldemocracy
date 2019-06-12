@@ -273,36 +273,6 @@ nl:
         undefined: Niet gedefinieerd
         user_groups: "Groepen"
       search_unfeasible: Search unfeasible
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Title"
-        table_description: "Beschrijving"
-        table_publication_date: "Publicatiedatum"
-        table_status: Status
-        table_actions: "Activiteiten"
-        delete: "Verwijder mijlpaal"
-        no_milestones: "Zonder gedefinieerde mijlpalen"
-        image: "Afbeelding"
-        show_image: "Toon afbeelding"
-        documents: "Documenten"
-        milestone: Mijlpaal
-        new_milestone: Nieuwe mijlpaal
-      form:
-        admin_statuses: Beheerderstatussen
-        no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
-      new:
-        creating: Nieuwe mijlpaal
-        date: Datum
-        description: Beschrijving
-      edit:
-        title: Bewerk mijlpaal
-      create:
-        notice: Nieuwe mijlpaal aangemaakt
-      update:
-        notice: Mijlpaal opgeslagen
-      delete:
-        notice: Mijlpaal verwijderd
     statuses:
       index:
         title: Investeringsstatussen
@@ -324,28 +294,8 @@ nl:
       delete:
         notice: Investeringsstatus succesvol verwijderd
     progress_bars:
-      manage: "Voortgangsbalken beheren"
       index:
         title: "Voortgangsbalken"
-        no_progress_bars: "Er zijn geen voortgangsbalken"
-        new_progress_bar: "Nieuwe voortgangsbalk maken"
-        primary: "Primaire voortgangsbalk"
-        table_id: "ID"
-        table_kind: "Type"
-        table_title: "Title"
-        table_percentage: "Huidige voortgang"
-      new:
-        creating: "Nieuwe voortgangsbalk maken"
-      edit:
-        title:
-          primary: "Primaire voortgangsbalk bewerken"
-          secondary: "Voortgangsbalk %{title} bewerken"
-      create:
-        notice: "Voortgangsbalk aangemaakt"
-      update:
-        notice: "Voortgangsbalk bijgewerkt"
-      delete:
-        notice: "Voortgangsbalk verwijderd"
     dashboard:
       index:
         back: Terug naar %{org}
