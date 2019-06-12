@@ -37,6 +37,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     load_admins
     load_valuators
     load_valuator_groups
+    load_trackers
     load_tags
   end
 
@@ -50,6 +51,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       load_admins
       load_valuators
       load_valuator_groups
+      load_trackers
       load_tags
       render :edit
     end
@@ -88,7 +90,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
-                    :milestone_tag_list, valuator_ids: [], valuator_group_ids: [])
+                    :milestone_tag_list, tracker_ids: [], valuator_ids: [], valuator_group_ids: [])
     end
 
     def load_budget
@@ -101,6 +103,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_admins
       @admins = Administrator.includes(:user).all
+    end
+
+    def load_trackers
+      @trackers = Tracker.includes(:user).all.order(description: :asc).order("users.email ASC")
     end
 
     def load_valuators

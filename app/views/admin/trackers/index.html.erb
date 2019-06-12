@@ -1,0 +1,48 @@
+<h2 class="inline-block"><%= t("admin.trackers.index.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_trackers_path %>
+
+<div id="trackers">
+  <% if @trackers.any? %>
+    <h3 class="margin"><%= page_entries_info @trackers %></h3>
+
+    <table>
+      <thead>
+      <th scope="col"><%= t("admin.trackers.index.name") %></th>
+      <th scope="col"><%= t("admin.trackers.index.email") %></th>
+      <th scope="col"><%= t("admin.valuators.index.description") %></th>
+      <th scope="col" class="small-3"><%= t("admin.actions.actions") %></th>
+      </thead>
+      <tbody>
+      <% @trackers.each do |tracker| %>
+        <tr>
+          <td><%= link_to tracker.name, admin_tracker_path(tracker) %></td>
+          <td><%= tracker.email %></td>
+          <td>
+            <% if tracker.description.present? %>
+              <%= tracker.description %>
+            <% else %>
+              <%= t("admin.trackers.index.no_description") %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to t("admin.actions.edit"),
+                        edit_admin_tracker_path(tracker),
+                        class: "button hollow" %>
+            <%= link_to t("admin.valuators.valuator.delete"),
+                        admin_tracker_path(tracker),
+                        method: :delete,
+                        class: "button hollow alert" %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <%= paginate @trackers %>
+  <% else %>
+    <div class="callout primary">
+      <%= t("admin.trackers.index.no_trackers") %>
+    </div>
+  <% end %>
+</div>

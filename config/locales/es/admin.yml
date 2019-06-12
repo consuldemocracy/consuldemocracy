@@ -261,6 +261,7 @@ es:
           "false": "No"
         valuator_groups: "Grupos de evaluadores"
         preview: Vista previa
+        assigned_trackers: "Gestores de seguimiento asignados"
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
@@ -275,39 +276,12 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
         user_groups: "Grupos"
+        assigned_trackers: "Gestores de seguimiento"
         milestone_tags: Etiquetas de Seguimiento
       search_unfeasible: Buscar inviables
     milestones:
       index:
-        table_id: "ID"
-        table_title: "Título"
-        table_description: "Descripción"
-        table_publication_date: "Fecha de publicación"
-        table_status: Estado
-        table_actions: "Acciones"
-        delete: "Eliminar hito"
-        no_milestones: "No hay hitos definidos"
-        image: "Imagen"
-        show_image: "Mostrar imagen"
-        documents: "Documentos"
-        milestone: Seguimiento
-        new_milestone: Crear nuevo hito
         milestone_tags: Etiquetas de Seguimiento
-      form:
-        admin_statuses: Gestionar estados
-        no_statuses_defined: No hay estados definidos
-      new:
-        creating: Crear hito
-        date: Fecha
-        description: Descripción
-      edit:
-        title: Editar hito
-      create:
-        notice: '¡Nuevo hito creado con éxito!'
-      update:
-        notice: Hito actualizado
-      delete:
-        notice: Hito borrado correctamente
     statuses:
       index:
         title: Estados de seguimiento
@@ -735,6 +709,7 @@ es:
       title_booths: Urnas de votación
       legislation: Legislación colaborativa
       users: Usuarios
+      trackers: "Gestores de seguimiento"
       dashboard: Panel de progreso de propuestas
       administrator_tasks: Recursos solicitados
       dashboard_actions: Recursos y acciones
@@ -1637,12 +1612,35 @@ es:
       remove_language: Eliminar idioma
       add_language: Añadir idioma
     change_log:
-        title: "Historial"
-        id: "ID"
-        field: "Campo"
-        new_value: "Valor nuevo"
-        old_value: "Valor anterior"
-        edited_at: "Editado el"
-        edited_by: "Editado por"
-        actions: "Acciones"
-        empty: "No hay cambios registrados"
+      title: "Historial"
+      id: "ID"
+      field: "Campo"
+      new_value: "Valor nuevo"
+      old_value: "Valor anterior"
+      edited_at: "Editado el"
+      edited_by: "Editado por"
+      actions: "Acciones"
+      empty: "No hay cambios registrados"
+    trackers:
+      index:
+        title: Gestores de seguimiento
+        name: Nombre
+        email: Email
+        description: Descripción
+        no_description: Sin descripción
+        no_trackers: No hay gestores de seguimiento.
+      tracker:
+        add: "Añadir a gestores de seguimiento"
+      form:
+        update: "Actualizar gestor"
+        updated: "Gestor de seguimiento actualizado correctamente."
+        edit_title: "Gestores de seguimiento: Editar gestor"
+      show:
+        email: Email
+        description: Descripción
+        no_description: Sin descripción.
+      search:
+        title: Trackers
+    progress_bars:
+      index:
+        title: "Barras de progreso"

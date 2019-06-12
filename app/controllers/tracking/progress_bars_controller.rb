@@ -1,4 +1,4 @@
-class Admin::ProgressBarsController < Admin::BaseController
+class Tracking::ProgressBarsController < Tracking::BaseController
   include Translatable
 
   before_action :load_progressable
@@ -15,7 +15,7 @@ class Admin::ProgressBarsController < Admin::BaseController
   def create
     @progress_bar = @progressable.progress_bars.new(progress_bar_params)
     if @progress_bar.save
-      redirect_to progress_bars_index, notice: t("admin.progress_bars.create.notice")
+      redirect_to progress_bars_index, notice: t("tracking.progress_bars.create.notice")
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::ProgressBarsController < Admin::BaseController
 
   def update
     if @progress_bar.update(progress_bar_params)
-      redirect_to progress_bars_index, notice: t("admin.progress_bars.update.notice")
+      redirect_to progress_bars_index, notice: t("tracking.progress_bars.update.notice")
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::ProgressBarsController < Admin::BaseController
 
   def destroy
     @progress_bar.destroy
-    redirect_to progress_bars_index, notice: t("admin.progress_bars.delete.notice")
+    redirect_to progress_bars_index, notice: t("tracking.progress_bars.delete.notice")
   end
 
   private
@@ -64,6 +64,6 @@ class Admin::ProgressBarsController < Admin::BaseController
     end
 
     def progress_bars_index
-      polymorphic_path([:admin, *resource_hierarchy_for(@progressable), ProgressBar.new])
+      polymorphic_path([:tracking, *resource_hierarchy_for(@progressable), ProgressBar.new])
     end
 end

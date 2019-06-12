@@ -1,0 +1,58 @@
+<h2>
+  <%= @budget.name %> - <%= t("tracking.budget_investments.index.title") %>
+  <small><%= t("tracking.budget_investments.index.assigned_to", tracker: current_user.name) %></small>
+</h2>
+
+<div class="row expanded collapse margin-bottom">
+  <% @heading_filters.each_slice(8) do |slice| %>
+    <div class="small-12 medium-4 column select-heading">
+      <% slice.each do |filter| %>
+        <%= link_to tracking_budget_budget_investments_path(budget_id: @budget.id, heading_id: filter[:id]),
+                    class: "#{"is-active" if params[:heading_id].to_s == filter[:id].to_s}" do %>
+          <%= filter[:name] %> (<%= filter[:count] %>)
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<% if @investments.any? %>
+  <h3><%= page_entries_info @investments %></h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th><%= t("tracking.budget_investments.index.table_id") %></th>
+        <th><%= t("tracking.budget_investments.index.table_title") %></th>
+        <th><%= t("tracking.budget_investments.index.table_heading_name") %></th>
+        <th><%= t("tracking.budget_investments.index.table_actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @investments.each do |investment| %>
+        <tr id="<%= dom_id(investment) %>" class="budget_investment">
+          <td>
+            <strong><%= investment.id %></strong>
+          </td>
+          <td>
+            <%= link_to investment.title, tracking_budget_budget_investment_path(@budget, investment) %>
+          </td>
+          <td class="small">
+            <%= investment.heading.name %>
+          </td>
+          <td class="small">
+            <%= link_to t("tracking.budget_investments.index.edit"),
+                        edit_tracking_budget_budget_investment_path(@budget, investment),
+                        class: "button hollow expanded" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @investments %>
+<% else %>
+  <div class="callout primary">
+    <%= t("tracking.budget_investments.index.no_investments") %>
+  </div>
+<% end %>

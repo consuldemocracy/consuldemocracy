@@ -1,4 +1,4 @@
-class Admin::ProposalProgressBarsController <  Admin::ProgressBarsController
+class Tracking::ProposalProgressBarsController <  Tracking::ProgressBarsController
 
   private
     def progressable

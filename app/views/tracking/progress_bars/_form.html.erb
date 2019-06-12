@@ -1,6 +1,6 @@
 <%= render "admin/shared/globalize_locales", resource: @progress_bar %>
 
-<%= translatable_form_for [:admin, *resource_hierarchy_for(@progress_bar)] do |f| %>
+<%= translatable_form_for [:tracking, *resource_hierarchy_for(@progress_bar)] do |f| %>
 
   <div class="small-12 medium-6">
     <%= f.enum_select :kind %>

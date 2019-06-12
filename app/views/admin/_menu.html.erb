@@ -212,6 +212,10 @@
           <%= link_to t("admin.menu.valuators"), admin_valuators_path %>
         </li>
 
+        <li <%= "class=is-active" if controller_name == "trackers" %>>
+          <%= link_to t("admin.menu.trackers"), admin_trackers_path %>
+        </li>
+
         <li <%= "class=is-active" if controller_name == "managers" %>>
           <%= link_to t("admin.menu.managers"), admin_managers_path %>
         </li>

@@ -56,11 +56,13 @@ module UsersHelper
     current_user && current_user.poll_officer?
   end
 
+  def current_tracker?
+    current_user && current_user.tracker?
+  end
+
   def show_admin_menu?(user = nil)
-    unless namespace == "officing"
-      current_administrator? || current_moderator? || current_valuator? || current_manager? ||
-      (user && user.administrator?) || current_poll_officer?
-    end
+    current_administrator? || current_moderator? || current_valuator? || current_manager? ||
+      current_tracker? || (user && user.administrator?) || current_poll_officer?
   end
 
   def interests_title_text(user)

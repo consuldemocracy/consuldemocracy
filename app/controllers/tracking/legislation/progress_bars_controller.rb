@@ -1,4 +1,4 @@
-class Admin::Legislation::ProgressBarsController < Admin::ProgressBarsController
+class Tracking::Legislation::ProgressBarsController < Tracking::ProgressBarsController
   include FeatureFlags
   feature_flag :legislation
 

@@ -1,0 +1,47 @@
+<%= back_link_to tracking_budget_budget_investments_path %>
+
+<h2><%= t("tracking.budget_investments.show.title") %> <%= @investment.id %> </h2>
+<h1><%= @investment.title %></h1>
+
+<%= safe_html_with_links @investment.description %>
+
+<% if @investment.external_url.present? %>
+  <p><%= text_with_links @investment.external_url %></p>
+<% end %>
+
+<h2><%= t("tracking.budget_investments.show.info") %></h2>
+
+<p><strong><%= t("tracking.budget_investments.show.by") %>:</strong>
+  <%= @investment.author.name %>
+</p>
+
+<p><strong><%= t("tracking.budget_investments.show.heading") %>:</strong>
+  <%= @investment.heading.name %>
+</p>
+
+<p><strong><%= t("tracking.budget_investments.show.sent") %>:</strong>
+  <%= l @investment.created_at, format: :datetime %>
+</p>
+
+<h2><%= t("tracking.budget_investments.show.responsibles") %></h2>
+
+<p><strong><%= t("tracking.budget_investments.show.assigned_admin") %>:</strong>
+  <% if @investment.administrator.present? %>
+    <%= @investment.administrator.name_and_email %>
+  <% else %>
+    <%= t("tracking.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<p><strong><%= t("trackers.budget_investments.show.assigned_trackers") %>:</strong></p>
+<div id="assigned_trackers">
+  <ul>
+    <% @investment.trackers.each do |tracker| %>
+      <li><%= tracker.name_and_email %></li>
+    <% end %>
+
+    <% if @investment.trackers.empty? %>
+      <li><%= t("tracking.budget_investments.show.undefined") %></li>
+    <% end %>
+  </ul>
+</div>

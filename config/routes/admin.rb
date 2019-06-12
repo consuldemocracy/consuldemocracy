@@ -61,8 +61,6 @@ namespace :admin do
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
-      resources :milestones, controller: "budget_investment_milestones"
-      resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
       member { patch :toggle_selection }
     end
 
@@ -101,6 +99,11 @@ namespace :admin do
   end
 
   resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
+    get :search, on: :collection
+    get :summary, on: :collection
+  end
+
+  resources :trackers, only: [:show, :index, :edit, :update, :create, :destroy] do
     get :search, on: :collection
     get :summary, on: :collection
   end
@@ -207,8 +210,7 @@ namespace :admin do
         member { patch :toggle_selection }
       end
       resources :draft_versions
-      resources :milestones
-      resources :progress_bars, except: :show
+      resources :milestones, only: :index
       resource :homepage, only: [:edit, :update]
     end
   end

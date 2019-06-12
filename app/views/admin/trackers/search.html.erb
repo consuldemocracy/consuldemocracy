@@ -1,0 +1,58 @@
+<h2><%= t("admin.trackers.search.title") %></h2>
+
+<%= render "admin/shared/user_search", url: search_admin_trackers_path %>
+
+<div id="trackers">
+  <% if @users.any? %>
+    <h3 class="margin"><%= page_entries_info @users %></h3>
+
+    <table>
+      <thead>
+      <th scope="col"><%= t("admin.trackers.index.name") %></th>
+      <th scope="col"><%= t("admin.trackers.index.email") %></th>
+      <th scope="col"><%= t("admin.trackers.index.description") %></th>
+      <th scope="col"><%= t("admin.shared.actions") %></th>
+      </thead>
+      <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td>
+            <% if user.tracker %>
+              <% if user.tracker.description.present? %>
+                <%= user.tracker.description %>
+              <% else %>
+                <%= t("admin.trackers.index.no_description") %>
+              <% end %>
+            <% else %>
+              <%= t("admin.trackers.index.no_description") %>
+            <% end %>
+          <td>
+            <% if user.tracker? %>
+              <%= link_to t("admin.actions.edit"),
+                          edit_admin_tracker_path(user.tracker),
+                          class: "button hollow" %>
+
+              <%= link_to t("admin.valuators.valuator.delete"),
+                          admin_tracker_path(user.tracker),
+                          method: :delete,
+                          class: "button hollow alert" %>
+            <% else %>
+              <%= form_for Tracker.new(user: user), url: admin_trackers_path do |f| %>
+                <%= f.hidden_field :user_id %>
+                <%= f.submit t("admin.trackers.tracker.add"),
+                             class: "button success expanded" %>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <div class="callout alert margin">
+      <%= t("admin.shared.no_search_results") %>
+    </div>
+  <% end %>
+</div>
