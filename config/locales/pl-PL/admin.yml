@@ -273,36 +273,6 @@ pl:
         undefined: Niezdefiniowany
         user_groups: "Grupy"
       search_unfeasible: Szukaj niewykonalne
-    milestones:
-      index:
-        table_id: "Numer ID"
-        table_title: "Tytuł"
-        table_description: "Opis"
-        table_publication_date: "Data publikacji"
-        table_status: Status
-        table_actions: "Akcje"
-        delete: "Usuń wydarzenie"
-        no_milestones: "Nie ma zdefiniowanych kamieni milowych"
-        image: "Obraz"
-        show_image: "Pokaż obraz"
-        documents: "Dokumenty"
-        milestone: Wydarzenie
-        new_milestone: Utwórz wydarzenie
-      form:
-        admin_statuses: Zarządzaj statusami inwestycyjnymi
-        no_statuses_defined: Nie ma jeszcze zdefiniowanych statusów inwestycyjnych
-      new:
-        creating: Utwórz wydarzenie
-        date: Data
-        description: Opis
-      edit:
-        title: Edytuj kamień milowy
-      create:
-        notice: Pomyślnie utworzono nowy kamień milowy!
-      update:
-        notice: Kamień milowy został pomyślnie zaktualizowany
-      delete:
-        notice: Pomyślnie usunięto kamień milowy
     statuses:
       index:
         title: Statusy inwestycyjne
@@ -324,28 +294,8 @@ pl:
       delete:
         notice: Status inwestycji został pomyślnie usunięty
     progress_bars:
-      manage: "Zarządzaj paskami postępu"
       index:
         title: "Pasek postępu"
-        no_progress_bars: "Nie ma paska postępów"
-        new_progress_bar: "Stwórz nowy pasek postępu"
-        primary: "Główny pasek postępu"
-        table_id: "Numer ID"
-        table_kind: "Typ"
-        table_title: "Tytuł"
-        table_percentage: "Aktualny etap"
-      new:
-        creating: "Stwórz pasek postępów"
-      edit:
-        title:
-          primary: "Edytuj główny pasek postępu"
-          secondary: "Edytuj pasek postępu %{title}"
-      create:
-        notice: "Pasek postępu utworzony."
-      update:
-        notice: "Pasek postępu pomyśle zaktualizowany"
-      delete:
-        notice: "Pasek postępu usunięty"
     dashboard:
       index:
         back: Wróć do %{org}
