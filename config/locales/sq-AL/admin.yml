@@ -230,36 +230,6 @@ sq:
         undefined: E padefinuar
         user_groups: "Grupet"
       search_unfeasible: Kërkoni të papërshtatshëm
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Titull"
-        table_description: "Përshkrimi"
-        table_publication_date: "Data e publikimit"
-        table_status: Statusi
-        table_actions: "Veprimet"
-        delete: "Fshi momentet historik"
-        no_milestones: "Nuk  keni pikëarritje të përcaktuara"
-        image: "Imazh"
-        show_image: "Trego imazhin"
-        documents: "Dokumentet"
-        milestone: Moment historik
-        new_milestone: Krijo momentet historik të ri
-      form:
-        admin_statuses: Statusi i investimeve të administratorit
-        no_statuses_defined: Ende nuk ka statuse të përcaktuara për investime
-      new:
-        creating: Krijo momentet historik
-        date: Data
-        description: Përshkrimi
-      edit:
-        title: Modifiko momentet historike
-      create:
-        notice: Momentet historike te reja u krijuan me sukses!
-      update:
-        notice: Momentet historike te reja u përditësuan me sukses
-      delete:
-        notice: Momentet historike te reja u fshinë me sukses
     statuses:
       index:
         title: Statusi investimeve
@@ -280,11 +250,6 @@ sq:
         notice: Statusi i investimeve krijua me sukses
       delete:
         notice: Statusi i investimeve u fshi me sukses
-    progress_bars:
-      index:
-        table_id: "ID"
-        table_kind: "Tipi"
-        table_title: "Titull"
     dashboard:
       index:
         back: Shko pas tek %{org}
