@@ -17,6 +17,14 @@ describe "Admin debates" do
     login_as(admin.user)
   end
 
+  scenario "Show debate" do
+    debate = create(:debate)
+    visit admin_debate_path(debate)
+
+    expect(page).to have_content(debate.title)
+    expect(page).to have_content(debate.description)
+  end
+
   scenario "Restore" do
     debate = create(:debate, :hidden)
     visit admin_hidden_debates_path

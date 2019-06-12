@@ -2,6 +2,7 @@ module Budgets
   class ResultsController < ApplicationController
     before_action :load_budget
     before_action :load_heading
+    include DownloadSettingsHelper
 
     load_and_authorize_resource :budget
 
@@ -9,6 +10,14 @@ module Budgets
       authorize! :read_results, @budget
       @investments = Budget::Result.new(@budget, @heading).investments
       @headings = @budget.headings.sort_by_name
+
+      respond_to do |format|
+        format.html
+        format.csv { send_data to_csv(@investments.compatible, Budget::Investment),
+                               type: "text/csv",
+                               disposition: "attachment",
+                               filename: "budget_investment_results.csv" }
+      end
     end
 
     private

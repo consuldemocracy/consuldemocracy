@@ -512,6 +512,16 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["user_id"], name: "index_documents_on_user_id", using: :btree
   end
 
+  create_table "download_settings", force: :cascade do |t|
+    t.string   "name_model",                   null: false
+    t.string   "name_field",                   null: false
+    t.boolean  "downloadable", default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "config",       default: 0,     null: false
+    t.index ["name_model", "name_field", "config"], name: "index_download_settings_on_name_model_and_name_field_and_config", unique: true, using: :btree
+  end
+
   create_table "failed_census_calls", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "document_number"

@@ -1,3 +1,5 @@
+require "csv"
+
 class Legislation::Process < ApplicationRecord
   include ActsAsParanoidAliases
   include Taggable
@@ -15,6 +17,7 @@ class Legislation::Process < ApplicationRecord
   translates :milestones_summary, touch: true
   translates :homepage,           touch: true
   include Globalizable
+  extend DownloadSettings::LegislationProcessCsv
 
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
                                proposals_phase people_proposals_phase draft_publication

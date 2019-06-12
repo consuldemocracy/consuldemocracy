@@ -1,3 +1,5 @@
+require "csv"
+
 class Proposal < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -33,6 +35,12 @@ class Proposal < ApplicationRecord
   has_many :dashboard_executed_actions, dependent: :destroy, class_name: "Dashboard::ExecutedAction"
   has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
   has_many :polls, as: :related
+
+  extend DownloadSettings::ProposalCsv
+  delegate :name, :email, to: :author, prefix: true
+
+  extend DownloadSettings::ProposalCsv
+  delegate :name, :email, to: :author, prefix: true
 
   validates :title, presence: true
   validates :summary, presence: true

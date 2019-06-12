@@ -1,0 +1,13 @@
+<div class="small reveal" id="download-modal" data-reveal>
+  <h1><%= t('download.modal.title') %></h1>
+  <%= form_tag current_path_with_query_params(format: :csv), method: :get do |f| %>
+    <%= render 'admin/download_settings/form_hidden_params' %>
+    <%= render 'admin/download_settings/form', resource: resource, download_settings: get_attrs(get_model(resource[:name])) %>
+    <div class="medium-5 column clear end">
+      <button type="submit" data-close id="js-download-modal-submit" class="button success expanded"><%= t("download.modal.submit") %></button>
+    </div>
+  <% end %>
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

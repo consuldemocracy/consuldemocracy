@@ -1,0 +1,4 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("shared.download.title") %></h2>
+
+<p><%= link_to t("shared.download.link.#{downloadable}"), current_path_with_query_params(format: :csv), class: "small" %></p>

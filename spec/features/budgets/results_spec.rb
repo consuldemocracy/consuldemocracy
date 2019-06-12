@@ -83,7 +83,7 @@ describe "Results" do
   end
 
   scenario "Loads budget and heading by slug" do
-    visit budget_results_path(budget.slug, heading.slug)
+    visit budget_results_path(budget.slug, heading_id: heading.slug)
 
     expect(page).to have_selector("a.is-active", text: heading.name)
 

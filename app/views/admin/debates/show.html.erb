@@ -1,0 +1,56 @@
+<% provide :title do %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.debates") %> - <%= @debate.title %>
+<% end %>
+
+<div class="debate-show">
+  <h2><%= @debate.title %></h2>
+
+  <% if @debate.conflictive? %>
+    <div data-alert class="callout alert margin-top">
+      <strong><%= t("debates.show.flag") %></strong>
+    </div>
+  <% end %>
+
+  <div class="debate-info">
+    <%= render '/shared/author_info', resource: @debate %>
+
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <%= l @debate.created_at.to_date %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <span class="icon-comments"></span>&nbsp;
+    <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <span class="js-flag-actions">
+            <%= render 'debates/flag_actions', debate: @debate %>
+          </span>
+  </div>
+
+  <%= safe_html_with_links @debate.description %>
+
+  <h3><%= t("votes.supports") %></h3>
+
+  <span class="total-votes">
+    <%= t("debates.debate.votes", count: @debate.votes_score) %>
+  </span>
+
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+
+  <div class="in-favor inline-block">
+    <span class="icon-like">
+          <span class="show-for-sr"><%= t('votes.agree') %></span>
+        </span>
+    <span class="percentage"><%= votes_percentage('likes', @debate) %></span>
+  </div>
+
+  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+
+  <div class="against inline-block">
+        <span class="icon-unlike">
+          <span class="show-for-sr"><%= t('votes.disagree') %></span>
+        </span>
+    <span class="percentage"><%= votes_percentage('dislikes', @debate) %></span>
+  </div>
+
+</div>
+
+<%= render 'shared/tags', taggable: @debate %>

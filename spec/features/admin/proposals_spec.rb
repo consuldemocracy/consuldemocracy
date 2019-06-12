@@ -16,7 +16,7 @@ describe "Admin proposals" do
       create(:proposal, title: "Build a monument to honour CONSUL developers")
 
       visit admin_root_path
-      within("#side_menu") { click_link "Proposals" }
+      within("#side_menu") { first(:link, "Proposals").click }
 
       expect(page).to have_content "Make Pluto a planet again"
       expect(page).to have_content "Build a monument"

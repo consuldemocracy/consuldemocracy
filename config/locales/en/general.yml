@@ -794,6 +794,14 @@ en:
         title: Recommendations
         see_more: See more recommendations
         hide: Hide recommendations
+    download:
+      title: "Downloads"
+      link:
+        proposal: "Download proposals"
+        debate: "Download debates"
+        legislation_process: "Download legislation processes"
+        budget: "Download budgets"
+        investments: "Download projects"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
