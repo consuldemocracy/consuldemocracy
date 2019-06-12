@@ -104,6 +104,25 @@ en:
         edit_phase: Edit phase
         active: Active
         blank_dates: Dates are blank
+        administrators:
+          zero: "Select administrators"
+          one: "1 administrator selected"
+          other: "%{count} administrators selected"
+        valuators:
+          zero: "Select valuators"
+          one: "1 valuator selected"
+          other: "%{count} valuators selected"
+        trackers:
+          zero: "Select trackers"
+          one: "1 tracker selected"
+          other: "%{count} trackers selected"
+        empty_administrators: "There are no administrators"
+        empty_valuators: "There are no valuators"
+        empty_trackers: "There are no trackers"
+        name: "Name"
+        selected: "Selected"
+        cancel: "Cancel"
+        save: "Save"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments
@@ -232,6 +251,7 @@ en:
           author: Author
         cannot_calculate_winners: The budget has to stay on phase "Balloting projects", "Reviewing Ballots" or "Finished budget" in order to calculate winners projects
         see_results: "See results"
+        milestone_tags_filter_all: "All milestone tags"
       show:
         assigned_admin: Assigned administrator
         assigned_valuators: Assigned valuators

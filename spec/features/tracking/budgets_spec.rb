@@ -3,7 +3,8 @@ require "rails_helper"
 feature "Tracking budgets" do
 
   background do
-    @tracker = create(:tracker, user: create(:user, username: "Rachel", email: "rachel@trackers.org"))
+    @tracker = create(:tracker, user: create(:user, username: "Rachel",
+                                             email: "rachel@trackers.org"))
     login_as(@tracker.user)
   end
 

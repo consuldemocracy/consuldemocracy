@@ -2,6 +2,8 @@
 
 <%= translatable_form_for [:admin, @budget] do |f| %>
 
+  <div class="js-budget-id" id="<%= @budget.id %>"></div>
+
   <%= render "shared/errors", resource: @budget %>
 
   <div class="small-12 medium-9 column">
@@ -19,6 +21,39 @@
     </div>
     <div class="small-12 medium-3 column end">
       <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
+    </div>
+  </div>
+
+  <div class="margin-top">
+    <div class="small-12 medium-4 column end">
+      <a id="administrators_button" class="button expanded hollow js-budget-show-users-list js-budget-show-administrators-list" data-toggle="administrators_list"><%= t("admin.budgets.edit.administrators", count: @budget.administrators.count) %>
+      </a>
+    </div>
+    <div class="small-12 medium-4 column end">
+      <a id="valuators_button" class="button expanded hollow js-budget-show-users-list js-budget-show-valuators-list" data-toggle="valuators_list"><%= t("admin.budgets.edit.valuators", count: @budget.valuators.count) %>
+      </a>
+    </div>
+    <div class="small-12 medium-4 column end">
+      <a id="trackers_button" class="button expanded hollow js-budget-show-users-list js-budget-show-trackers-list" data-toggle="trackers_list"><%= t("admin.budgets.edit.trackers", count: @budget.trackers.count) %>
+      </a>
+    </div>
+  </div>
+
+  <div class="margin-top">
+      <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, budget: @budget %>
+      <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, budget: @budget %>
+      <%= render "/admin/budgets/association", assignable_type: "trackers", assignables: @trackers, budget: @budget %>
+  </div>
+
+  <div class="margin-top">
+    <div class="small-12 medium-9 column end">
+      <%= f.text_field :budget_milestone_tags, placeholder: t("admin.budget_investments.edit.tags_placeholder") %>
+    </div>
+    <div class="small-12 medium-9 column end">
+      <%= f.text_field :budget_valuation_tags, placeholder: t("admin.budget_investments.edit.tags_placeholder") %>
+    </div>
+    <div class="small-12 medium-9 column end">
+      <%= f.text_field :help_link %>
     </div>
   </div>
 
@@ -95,5 +130,4 @@
       <% end %>
     </div>
   </div>
-
 <% end %>

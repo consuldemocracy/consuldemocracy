@@ -54,6 +54,7 @@ namespace :admin do
   resources :budgets do
     member do
       put :calculate_winners
+      get :assigned_users_translation
     end
 
     resources :groups, except: [:show], controller: "budget_groups" do
@@ -65,6 +66,7 @@ namespace :admin do
     end
 
     resources :budget_phases, only: [:edit, :update]
+
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
@@ -252,5 +254,4 @@ namespace :admin do
   put 'download_settings/:resource', to: 'download_settings#update', as: 'update_download_settings'
 
   get "/change_log/:id", to: "budget_investments#show_investment_log", as: "change_log"
-
 end

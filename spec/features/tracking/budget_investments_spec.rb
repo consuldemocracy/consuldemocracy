@@ -78,7 +78,7 @@ feature "Valuation budget investments" do
       investment2 = create(:budget_investment,
                            budget: budget, title: "investment 2",
                            heading: create(:budget_heading, name: "last_heading"))
-      investment3 = create(:budget_investment,
+      create(:budget_investment,
                            budget: budget,
                            title: "investment 3",
                            heading: create(:budget_heading, name: "no_heading"))
@@ -320,7 +320,7 @@ feature "Valuation budget investments" do
     end
 
     scenario "delete" do
-      primary_progress_bar = create(:progress_bar, progressable: investment)
+      create(:progress_bar, progressable: investment)
       secondary_progress_bar = create(:progress_bar,
                                       :secondary,
                                       title: "to delete",
@@ -340,7 +340,7 @@ feature "Valuation budget investments" do
     end
 
     scenario "edit" do
-      primary_progress_bar = create(:progress_bar, progressable: investment)
+      create(:progress_bar, progressable: investment)
       secondary_progress_bar = create(:progress_bar,
                                       :secondary,
                                       title: "to edit",

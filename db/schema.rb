@@ -116,6 +116,15 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.index ["hidden_at"], name: "index_banners_on_hidden_at", using: :btree
   end
 
+  create_table "budget_administrators", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "administrator_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["administrator_id"], name: "index_budget_administrators_on_administrator_id", using: :btree
+    t.index ["budget_id"], name: "index_budget_administrators_on_budget_id", using: :btree
+  end
+
   create_table "budget_ballot_lines", force: :cascade do |t|
     t.integer  "ballot_id"
     t.integer  "investment_id"
@@ -134,9 +143,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer  "budget_id"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
+    t.integer  "ballot_lines_count", default: 0
     t.boolean  "physical",           default: false
     t.integer  "poll_ballot_id"
-    t.integer  "ballot_lines_count", default: 0
   end
 
   create_table "budget_content_blocks", force: :cascade do |t|
@@ -311,6 +320,16 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "budget_rol_assignments", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "user_id"
+    t.string   "rol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["budget_id"], name: "index_budget_rol_assignments_on_budget_id", using: :btree
+    t.index ["user_id"], name: "index_budget_rol_assignments_on_user_id", using: :btree
+  end
+
   create_table "budget_tracker_assignments", force: :cascade do |t|
     t.integer  "tracker_id"
     t.integer  "investment_id"
@@ -318,6 +337,15 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.datetime "updated_at",    null: false
     t.index ["investment_id"], name: "index_budget_tracker_assignments_on_investment_id", using: :btree
     t.index ["tracker_id"], name: "index_budget_tracker_assignments_on_tracker_id", using: :btree
+  end
+
+  create_table "budget_trackers", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "tracker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["budget_id"], name: "index_budget_trackers_on_budget_id", using: :btree
+    t.index ["tracker_id"], name: "index_budget_trackers_on_tracker_id", using: :btree
   end
 
   create_table "budget_translations", force: :cascade do |t|
@@ -343,6 +371,15 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer "investment_id"
   end
 
+  create_table "budget_valuators", force: :cascade do |t|
+    t.integer  "budget_id"
+    t.integer  "valuator_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["budget_id"], name: "index_budget_valuators_on_budget_id", using: :btree
+    t.index ["valuator_id"], name: "index_budget_valuators_on_valuator_id", using: :btree
+  end
+
   create_table "budgets", force: :cascade do |t|
     t.string   "name",                          limit: 80
     t.string   "currency_symbol",               limit: 10
@@ -360,6 +397,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
     t.text     "description_informing"
+    t.string   "help_link"
+    t.string   "budget_milestone_tags"
+    t.string   "budget_valuation_tags"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -1197,12 +1237,12 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer  "comments_count",     default: 0
     t.integer  "author_id"
     t.datetime "hidden_at"
+    t.string   "slug"
     t.boolean  "results_enabled",    default: false
     t.boolean  "stats_enabled",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "budget_id"
-    t.string   "slug"
     t.string   "related_type"
     t.integer  "related_id"
     t.index ["budget_id"], name: "index_polls_on_budget_id", unique: true, using: :btree
@@ -1630,8 +1670,16 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   add_foreign_key "administrators", "users"
+  add_foreign_key "budget_administrators", "administrators"
+  add_foreign_key "budget_administrators", "budgets"
   add_foreign_key "budget_investments", "communities"
+  add_foreign_key "budget_rol_assignments", "budgets"
+  add_foreign_key "budget_rol_assignments", "users"
   add_foreign_key "budget_tracker_assignments", "trackers"
+  add_foreign_key "budget_trackers", "budgets"
+  add_foreign_key "budget_trackers", "trackers"
+  add_foreign_key "budget_valuators", "budgets"
+  add_foreign_key "budget_valuators", "valuators"
   add_foreign_key "dashboard_administrator_tasks", "users"
   add_foreign_key "dashboard_executed_actions", "dashboard_actions", column: "action_id"
   add_foreign_key "dashboard_executed_actions", "proposals"
