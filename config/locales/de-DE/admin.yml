@@ -267,36 +267,6 @@ de:
         undefined: Undefiniert
         user_groups: "Gruppen"
       search_unfeasible: Suche undurchführbar
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Titel"
-        table_description: "Beschreibung"
-        table_publication_date: "Datum der Veröffentlichung"
-        table_status: Status
-        table_actions: "Aktionen"
-        delete: "Meilenstein löschen"
-        no_milestones: "Keine Meilensteine definiert"
-        image: "Bild"
-        show_image: "Bild anzeigen"
-        documents: "Dokumente"
-        milestone: Meilenstein
-        new_milestone: Neuen Meilenstein erstellen
-      form:
-        admin_statuses: Status des Ausgabenvorschlags verwalten
-        no_statuses_defined: Es wurde noch kein Status für diese Ausgabenvorschläge definiert
-      new:
-        creating: Meilenstein erstellen
-        date: Datum
-        description: Beschreibung
-      edit:
-        title: Meilenstein bearbeiten
-      create:
-        notice: Neuer Meilenstein erfolgreich erstellt!
-      update:
-        notice: Meilenstein erfolgreich aktualisiert
-      delete:
-        notice: Meilenstein erfolgreich gelöscht
     statuses:
       index:
         title: Status der Ausgabenvorschläge
@@ -318,28 +288,8 @@ de:
       delete:
         notice: Status für Ausgabenvorschlag erfolgreich gelöscht
     progress_bars:
-      manage: "Fortschrittsbalken verwalten"
       index:
         title: "Fortschrittsbalken"
-        no_progress_bars: "Keine Fortschrittsbalken vorhanden"
-        new_progress_bar: "Neuen Fortschrittsbalken erstellen"
-        primary: "Primärer Fortschrittsbalken"
-        table_id: "ID"
-        table_kind: "Typ"
-        table_title: "Titel"
-        table_percentage: "Aktueller Fortschritt"
-      new:
-        creating: "Fortschrittsbalken erstellen"
-      edit:
-        title:
-          primary: "Primären Fortschrittsbalken bearbeiten"
-          secondary: "Fortschrittsbalken %{title} bearbeiten"
-      create:
-        notice: "Fortschrittsbalken erfolgreich erstellt!"
-      update:
-        notice: "Fortschrittsbalken erfolgreich aktualisiert"
-      delete:
-        notice: "Fortschrittsbalken erfolgreich gelöscht"
     dashboard:
       index:
         back: Zurück zu %{org}
