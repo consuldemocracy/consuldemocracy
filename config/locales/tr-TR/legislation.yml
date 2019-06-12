@@ -23,6 +23,7 @@ tr:
         comment_about: "Hakkında yorum:"
         see_in_context: Bağlam içinde gör
         comments_count:
+          zero: Yorum yok
           one: "%{count} yorum"
           other: "%{count} yorumlar"
       show:
@@ -97,6 +98,10 @@ tr:
         form:
           leave_comment: Cevabını bırak
       question:
+        total:
+          zero: Herhangi bir tartışma bulunmamaktadır
+          one: "%{count} tartışma"
+          other: "%{count} tartışmalar"
         comments:
           zero: Yorum yok
           one: "%{count} yorum"
@@ -124,3 +129,8 @@ tr:
       form:
         tags_label: "Kategoriler"
       not_verified: "Önerileri oylamak için %{verify_account}."
+      process_title: Katılımcı mevzuat süreci
+      total:
+        zero: Herhangi bir öneri bulunmamaktadır
+        one: "%{count} öneri"
+        other: "%{count} öneriler"
