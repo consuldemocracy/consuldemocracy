@@ -58,7 +58,7 @@ module Translations
   end
 
   def front_end_path_to_visit?(path)
-    path[/admin|managment|valuation/].blank?
+    path[/admin|managment|valuation|tracking/].blank?
   end
 
   def expect_to_have_language(language)
