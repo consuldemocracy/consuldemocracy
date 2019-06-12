@@ -280,36 +280,6 @@ ru:
         undefined: Неопределено
         user_groups: "Группы"
       search_unfeasible: Поиск невыполним
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Название"
-        table_description: "Описание"
-        table_publication_date: "Дата публикации"
-        table_status: Статус
-        table_actions: "Действия"
-        delete: "Удалить этап"
-        no_milestones: "Не имеет определенных основных этапов"
-        image: "Изображение"
-        show_image: "Показать изображение"
-        documents: "Документы"
-        milestone: Этап
-        new_milestone: Создать этап
-      form:
-        admin_statuses: Администрировать статусы инвестиций
-        no_statuses_defined: Пока что нет определенных статусов инвестиций
-      new:
-        creating: Создать этап
-        date: Дата
-        description: Описание
-      edit:
-        title: Редактировать этап
-      create:
-        notice: Новый этап успешно создан!
-      update:
-        notice: Этап успешно обновлен
-      delete:
-        notice: Этап успешно удален
     statuses:
       index:
         title: Статус инвестиции
@@ -331,28 +301,8 @@ ru:
       delete:
         notice: Статус инвестиции успешно удален
     progress_bars:
-      manage: "Управление индикаторами выполнения"
       index:
         title: "Индикаторы выполнения"
-        no_progress_bars: "Нет индикаторов выполнения"
-        new_progress_bar: "Создать индикатор выполнения"
-        primary: "Основной индикатор выполнения"
-        table_id: "ID"
-        table_kind: "Тип"
-        table_title: "Название"
-        table_percentage: "Ход выполнения"
-      new:
-        creating: "Создать индикатор выполнения"
-      edit:
-        title:
-          primary: "Редактировать основной индикатор выполнения"
-          secondary: "Редактировать индикатор выполнения %{title}"
-      create:
-        notice: "Индикатор выполнения успешно создан!"
-      update:
-        notice: "Индикатор выполнения успешно обновлен"
-      delete:
-        notice: "Индикатор выполнения успешно удален"
     hidden_comments:
       index:
         filter: Фильтровать
