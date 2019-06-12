@@ -256,33 +256,6 @@ id:
         tags_placeholder: "Menulis tag-tag yang anda ingin pisahkan dengan koma (,)"
         undefined: Tidak terdefinisi
       search_unfeasible: Mencari yang tidak layak
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Judul"
-        table_description: "Deskripsi"
-        table_publication_date: "Tanggal publikasi"
-        table_status: Status
-        table_actions: "Tindakan"
-        delete: "Menghapus batu peringatan"
-        no_milestones: "Jangan telah ditetapkan tonggak"
-        image: "Gambar"
-        show_image: "Tampilkan gambar"
-        documents: "Dokumen"
-        milestone: Batu peringatan
-        new_milestone: Membuat batu peringatan baru
-      new:
-        creating: Membuat batu peringatan
-        date: Tanggal
-        description: Deskripsi
-      edit:
-        title: Mengedit batu peringatan
-      create:
-        notice: Tonggak baru talah berhasil diciptakan!
-      update:
-        notice: Tonggak telah berhasil diperbarui
-      delete:
-        notice: Tonggak telah berhasil dihapus
     statuses:
       index:
         table_name: Nama
@@ -290,11 +263,6 @@ id:
         table_actions: Tindakan
         delete: Hapus
         edit: Sunting
-    progress_bars:
-      index:
-        table_id: "ID"
-        table_kind: "Tipe"
-        table_title: "Judul"
     dashboard:
       index:
         back: Kembali ke %{org}
