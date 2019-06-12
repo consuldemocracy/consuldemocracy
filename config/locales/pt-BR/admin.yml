@@ -230,36 +230,6 @@ pt-BR:
         undefined: Não definido
         user_groups: "Grupos"
       search_unfeasible: Pesquisar inviáveis
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Título"
-        table_description: "Descrição"
-        table_publication_date: "Data de publicação"
-        table_status: Status
-        table_actions: "Ações"
-        delete: "Deletar marco"
-        no_milestones: "Não possui marcos definidos"
-        image: "Imagem"
-        show_image: "Mostrar imagem"
-        documents: "Documentos"
-        milestone: Marco
-        new_milestone: Criar marco
-      form:
-        admin_statuses: Status dos investimentos para administrador
-        no_statuses_defined: Ainda não há status de investimento definidos
-      new:
-        creating: Criar marco
-        date: Data
-        description: Descrição
-      edit:
-        title: Editar marco
-      create:
-        notice: Novo marco criado com sucesso!
-      update:
-        notice: Marco atualizado com sucesso
-      delete:
-        notice: Marco excluído com sucesso
     statuses:
       index:
         title: Status de investimento
@@ -280,11 +250,6 @@ pt-BR:
         notice: Status de investimento criado com sucesso
       delete:
         notice: Status de investimento excluído com sucesso
-    progress_bars:
-      index:
-        table_id: "ID"
-        table_kind: "Tipo"
-        table_title: "Título"
     dashboard:
       index:
         back: Voltar para %{org}
