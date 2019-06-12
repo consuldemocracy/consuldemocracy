@@ -230,36 +230,6 @@ zh-CN:
         undefined: 未定义
         user_groups: "组"
       search_unfeasible: 搜索不可行
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "标题"
-        table_description: "说明"
-        table_publication_date: "出版日期"
-        table_status: 状态
-        table_actions: "行动"
-        delete: "删除里程碑"
-        no_milestones: "没有已定义的里程碑"
-        image: "图像"
-        show_image: "显示图像"
-        documents: "文档"
-        milestone: 里程碑
-        new_milestone: 创建新的里程碑
-      form:
-        admin_statuses: 管理投资状态
-        no_statuses_defined: 尚未有已定义的投资状态
-      new:
-        creating: 创建里程碑
-        date: 日期
-        description: 说明
-      edit:
-        title: 编辑里程碑
-      create:
-        notice: 新的里程碑已成功创建！
-      update:
-        notice: 里程碑已成功更新
-      delete:
-        notice: 里程碑已成功删除
     statuses:
       index:
         title: 投资状态
@@ -280,11 +250,6 @@ zh-CN:
         notice: 投资状态已成功创建
       delete:
         notice: 投资状态已成功删除
-    progress_bars:
-      index:
-        table_id: "ID"
-        table_kind: "类型"
-        table_title: "标题"
     dashboard:
       index:
         back: 返回%{org}
