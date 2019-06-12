@@ -357,6 +357,16 @@ en:
         notice: "Progress bar updated successfully"
       delete:
         notice: "Progress bar deleted successfully"
+    comments:
+      index:
+        id: "ID"
+        content: "Content"
+        author: "Author"
+        commentable_type: "Type"
+        link: "Download comments"
+        title: Comments
+        no_comments: There is no comments.
+        table_link: "Link"
     hidden_comments:
       index:
         filter: Filter
@@ -432,6 +442,13 @@ en:
           request: Requested resource
         update:
           success: The task has been marked as solved.
+    debates:
+      index:
+        id: ID
+        author: Author
+        title: Debates
+        no_debates: There is no debates.
+        link: "Download debates"
     hidden_debates:
       index:
         filter: Filter
@@ -522,6 +539,7 @@ en:
           filters:
             active: Active
             all: All
+          link: "Download legislation process"
         new:
           back: Back
           title: Create new collaborative legislation process
@@ -725,6 +743,16 @@ en:
       dashboard: Proposals dashboard
       administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
+      download_settings:
+        title: "Download settings"
+        debates: "Debates"
+        proposals: "Proposals"
+        legislation_processes: "Legislation process"
+        budget_investments: "Participatory budgeting"
+        comments: "Comments"
+        budget_investments_milestones: "Participatory budgeting (Milestones)"
+      debates: "Debates"
+      comments: "Comments"
     administrators:
       index:
         title: Administrators
@@ -1240,6 +1268,7 @@ en:
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
+        link: "Download proposals"
       show:
         create_question: Add this proposal to a poll to be voted
       form:
@@ -1309,6 +1338,9 @@ en:
       proposal_search:
         button: Search
         placeholder: Search proposals by title, code, description or question
+      debate_search:
+        button: Search
+        placeholder: Search debates by title or description
       user_search:
         button: Search
         placeholder: Search user by name or email

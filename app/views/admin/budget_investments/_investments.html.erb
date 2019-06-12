@@ -1,6 +1,4 @@
-<%= link_to t("admin.budget_investments.index.download_current_selection"),
-            admin_budget_budget_investments_path(csv_params),
-            class: "float-right small clear" %>
+<a class="small float-right clear" data-open="download-modal"><%= t("admin.budget_investments.index.download_current_selection") %></a>
 
 
 <% if params[:advanced_filters].include?("winners") %>
@@ -62,3 +60,5 @@
     <%= t("admin.budget_investments.index.no_budget_investments") %>
   </div>
 <% end %>
+
+<%= render "admin/download_settings/modal", resource: { name: "budget_investments" } %>

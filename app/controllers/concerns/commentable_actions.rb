@@ -2,6 +2,7 @@ module CommentableActions
   extend ActiveSupport::Concern
   include Polymorphic
   include Search
+  include DownloadSettingsHelper
 
   def index
     @resources = resource_model.all
@@ -10,6 +11,7 @@ module CommentableActions
     @resources = @resources.search(@search_terms) if @search_terms.present?
     @resources = @advanced_search_terms.present? ? @resources.filter(@advanced_search_terms) : @resources
     @resources = @resources.tagged_with(@tag_filter) if @tag_filter
+    resources_csv = @resources
 
     @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
 
@@ -21,6 +23,13 @@ module CommentableActions
     set_resource_votes(@resources)
 
     set_resources_instance
+    respond_to do |format|
+      format.html
+      format.csv {send_data to_csv(resources_csv, resource_model),
+                            type: "text/csv",
+                            disposition: "attachment",
+                            filename: "#{get_resource(resource_model)}.csv" }
+    end
   end
 
   def show

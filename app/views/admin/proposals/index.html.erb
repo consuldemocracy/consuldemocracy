@@ -7,7 +7,9 @@
 <% if @proposals.any? %>
   <%= render "/admin/shared/proposal_search", url: admin_proposals_path %>
 
-  <h3><%= page_entries_info @proposals %></h3>
+  <h3 class="inline-block"><%= page_entries_info @proposals %></h3>
+
+  <a class="small float-right clear" data-open="download-modal"><%= t("admin.proposals.index.link") %></a>
 
   <table>
     <thead>
@@ -39,3 +41,5 @@
     <%= t("admin.proposals.index.no_proposals") %>
   </div>
 <% end %>
+
+<%= render "admin/download_settings/modal", resource: { name: "proposals" } %>

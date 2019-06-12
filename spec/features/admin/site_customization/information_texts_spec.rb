@@ -22,10 +22,10 @@ describe "Admin custom information texts" do
     expect(page).to have_content "Help about collaborative legislation"
     expect(page).to have_content "Help with participatory budgets"
 
-    click_link "Debates"
+    within("#information-texts-tabs") { click_link "Debates" }
     expect(page).to have_content "Help about debates"
 
-    click_link "Community"
+    within("#information-texts-tabs") { click_link "Community" }
     expect(page).to have_content "Access the community"
 
     within("#information-texts-tabs") { click_link "Proposals" }

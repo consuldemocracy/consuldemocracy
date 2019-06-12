@@ -357,6 +357,18 @@ es:
         notice: "Barra de progreso actualizada"
       delete:
         notice: "Barra de progreso eliminada correctamente"
+    comments:
+      index:
+        id: "ID"
+        content: "Contenido"
+        author: "Autor"
+        commentable_type: "Tipo"
+        link: "Descargar comentarios"
+        title: Comentarios
+        no_comments: No hay comentarios.
+        hidden_debate: Debate oculto
+        hidden_proposal: Propuesta oculta
+        table_link: "Link"
     hidden_comments:
       index:
         filter: Filtro
@@ -432,6 +444,13 @@ es:
           request: Recurso solicitado
         update:
           success: La tarea ha sido marcada como resuelta
+    debates:
+      index:
+        id: ID
+        author: Autor
+        title: Debates
+        no_debates: No hay debates.
+        link: "Descargar debates"
     hidden_debates:
       index:
         filter: Filtro
@@ -522,6 +541,7 @@ es:
           filters:
             active: Activos
             all: Todos
+          link: "Descargar procesos legislativos"
         new:
           back: Volver
           title: Crear nuevo proceso de legislación colaborativa
@@ -724,6 +744,16 @@ es:
       dashboard: Panel de progreso de propuestas
       administrator_tasks: Recursos solicitados
       dashboard_actions: Recursos y acciones
+      download_settings:
+        title: "Configuración de descarga"
+        debates: "Debates"
+        proposals: "Propuestas"
+        legislation_processes: "Procesos legislativos"
+        budget_investments: "Pressupuestos participativos"
+        comments: "Comentarios"
+        budget_investments_milestones: "Pressupuestos participativos (Seguimiento)"
+      debates: "Debates"
+      comments: "Comentarios"
     administrators:
       index:
         title: Administradores
@@ -1239,6 +1269,7 @@ es:
         select: Seleccionar
         selected: Seleccionada
         no_proposals: No hay propuestas.
+        link: "Descargar propuestas"
       show:
         create_question: Añadir esta propuesta a una votación para ser votada
       form:

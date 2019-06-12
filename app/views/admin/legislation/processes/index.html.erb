@@ -12,6 +12,8 @@
 <% if @processes.any? %>
   <h3><%= page_entries_info @processes %></h3>
 
+  <a class="small float-right clear" data-open="download-modal"><%= t("admin.legislation.processes.index.link") %></a>
+
   <table class="stack">
     <thead>
       <tr>
@@ -50,3 +52,5 @@
     <%= page_entries_info @processes %>
   </div>
 <% end %>
+
+<%= render "admin/download_settings/modal", resource: { name: "legislation_processes" } %>

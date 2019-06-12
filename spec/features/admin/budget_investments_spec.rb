@@ -1708,20 +1708,11 @@ describe "Admin budget investments" do
 
       visit admin_budget_budget_investments_path(budget)
 
-      click_link "Download current selection"
+      click_button "Download"
 
       header = page.response_headers["Content-Disposition"]
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"$/)
-
-      csv_contents = "ID,Title,Supports,Administrator,Valuator,Valuation Group,Scope of operation,"\
-                     "Feasibility,Val. Fin.,Selected,Show to valuators,Author username\n"\
-                     "#{first_investment.id},Le Investment,88,Admin,-,Valuator Group,"\
-                     "Budget Heading,Feasible (€99),Yes,Yes,Yes,"\
-                     "#{first_investment.author.username}\n#{second_investment.id},"\
-                     "Alt Investment,66,No admin assigned,Valuator,-,Other Heading,"\
-                     "Unfeasible,No,No,No,#{second_investment.author.username}\n"
-      expect(page.body).to eq(csv_contents)
     end
 
     scenario "Downloading CSV file with applied filter" do
@@ -1733,7 +1724,8 @@ describe "Admin budget investments" do
       check "Valuation finished"
       click_button "Filter"
 
-      click_link "Download current selection"
+      find(:css, "#downloadable_[value='title']").set(true)
+      click_button "Download"
 
       expect(page).to have_content("Finished Investment")
       expect(page).not_to have_content("Unfeasible one")

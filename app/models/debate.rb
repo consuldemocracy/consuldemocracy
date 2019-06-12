@@ -1,4 +1,6 @@
 require "numeric"
+require "csv"
+
 class Debate < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -21,6 +23,9 @@ class Debate < ApplicationRecord
   belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :geozone
   has_many :comments, as: :commentable
+
+  extend DownloadSettings::DebateCsv
+  delegate :name, :email, to: :author, prefix: true
 
   validates :title, presence: true
   validates :description, presence: true

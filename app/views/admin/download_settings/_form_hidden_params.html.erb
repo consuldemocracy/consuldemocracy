@@ -1,0 +1,30 @@
+<% if params[:search].present? %>
+  <%= hidden_field_tag "search", params[:search] %>
+<% end %>
+<% if params[:commit].present? %>
+  <%= hidden_field_tag "commit", params[:commit] %>
+<% end %>
+<% if params[:filter].present? %>
+  <%= hidden_field_tag "filter", params[:filter] %>
+<% end %>
+<% if params[:page].present? %>
+  <%= hidden_field_tag "page", params[:page] %>
+<% end %>
+<% if params[:administrator_id].present? %>
+  <%= hidden_field_tag "administrator_id", params[:administrator_id] %>
+<% end %>
+<% if params[:valuator_or_group_id].present? %>
+  <%= hidden_field_tag "valuator_or_group_id", params[:valuator_or_group_id] %>
+<% end %>
+<% if params[:heading_id].present? %>
+  <%= hidden_field_tag "heading_id", params[:heading_id] %>
+<% end %>
+<% if params[:title_or_id].present? %>
+  <%= hidden_field_tag "title_or_id", params[:title_or_id] %>
+<% end %>
+<% if params[:tag_name].present? %>
+  <%= hidden_field_tag "tag_name", params[:tag_name] %>
+<% end %>
+<% if params[:min_total_supports].present? %>
+  <%= hidden_field_tag "min_total_supports", params[:min_total_supports] %>
+<% end %>

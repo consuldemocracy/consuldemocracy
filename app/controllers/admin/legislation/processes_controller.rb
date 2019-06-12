@@ -1,6 +1,7 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
   include Translatable
   include ImageAttributes
+  include DownloadSettingsHelper
 
   has_filters %w[active all], only: :index
 
@@ -9,6 +10,13 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   def index
     @processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc)
                  .page(params[:page])
+    respond_to do |format|
+      format.html
+      format.csv {send_data to_csv(process_for_download, Legislation::Process),
+                            type: "text/csv",
+                            disposition: "attachment",
+                            filename: "legislation_processes.csv" }
+    end
   end
 
   def create
@@ -42,6 +50,10 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   end
 
   private
+
+    def process_for_download
+      ::Legislation::Process.send(@current_filter).order(start_date: :desc)
+    end
 
     def process_params
       params.require(:legislation_process).permit(allowed_params)

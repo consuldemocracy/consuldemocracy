@@ -82,6 +82,7 @@
 //= require managers
 //= require globalize
 //= require send_admin_notification_alert
+//= require modal_download
 //= require settings
 
 var initialize_modules = function() {
@@ -130,6 +131,7 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
+  App.ModalDownload.initialize();
   App.Settings.initialize();
 };
 

@@ -1,4 +1,5 @@
 class Budget
+  require "csv"
   class Investment < ApplicationRecord
     SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
@@ -38,6 +39,9 @@ class Budget
 
     has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: "Comment"
     has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: "Comment"
+
+    extend DownloadSettings::BudgetInvestmentCsv
+    delegate :name, :email, to: :author, prefix: true
 
     validates :title, presence: true
     validates :author, presence: true

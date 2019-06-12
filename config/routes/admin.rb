@@ -29,6 +29,8 @@ namespace :admin do
     end
   end
 
+  resources :debates, only: [:index, :show]
+
   resources :proposals, only: [:index, :show, :update] do
     member { patch :toggle_selection }
     resources :milestones, controller: "proposal_milestones"
@@ -81,6 +83,8 @@ namespace :admin do
       put :confirm_hide
     end
   end
+
+  resources :comments, only: :index
 
   resources :tags, only: [:index, :create, :update, :destroy]
 
@@ -241,4 +245,6 @@ namespace :admin do
     resources :actions, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :administrator_tasks, only: [:index, :edit, :update]
   end
+  get 'download_settings/:resource', to: 'download_settings#edit', as: 'edit_download_settings'
+  put 'download_settings/:resource', to: 'download_settings#update', as: 'update_download_settings'
 end
