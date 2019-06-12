@@ -134,3 +134,17 @@ tr:
         zero: Herhangi bir öneri bulunmamaktadır
         one: "%{count} öneri"
         other: "%{count} öneriler"
+    summary:
+      title: Yeniden başlat
+      votes: oylar
+      debates_phase: Tartışma aşaması
+      proposal_phase: Öneri aşaması
+      comments_phase: Yorum aşaması
+      comments:
+        zero: Yorum yok
+        one: "%{count} yorum"
+        other: "%{count} yorumlar"
+      most_voted_comments: "En fazla oy alan yorumlar: "
+      no_allegation: Herhangi bir yorum bulunmamaktadır
+      version: versiyon
+      process_empty: Bu sürecin herhangi bir aşaması bulunmamaktadır.
