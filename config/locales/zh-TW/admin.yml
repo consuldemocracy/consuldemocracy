@@ -229,36 +229,6 @@ zh-TW:
         undefined: 未定義
         user_groups: "組"
       search_unfeasible: 搜尋不可行
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "標題"
-        table_description: "描述"
-        table_publication_date: "出版日期"
-        table_status: 狀態
-        table_actions: "行動"
-        delete: "刪除里程碑"
-        no_milestones: "沒有已定義的里程碑"
-        image: "圖像"
-        show_image: "顯示圖像"
-        documents: "文檔"
-        milestone: 里程碑
-        new_milestone: 創建新的里程碑
-      form:
-        admin_statuses: 管理投資狀態
-        no_statuses_defined: 尚未有定義投資狀態
-      new:
-        creating: 創建里程碑
-        date: 日期
-        description: 描述
-      edit:
-        title: 編輯里程碑
-      create:
-        notice: 新的里程碑已創建成功!
-      update:
-        notice: 里程碑已成功更新
-      delete:
-        notice: 里程碑已成功刪除
     statuses:
       index:
         title: 投資狀態
@@ -279,11 +249,6 @@ zh-TW:
         notice: 投資狀態已創建成功
       delete:
         notice: 投資狀態已成功刪除
-    progress_bars:
-      index:
-        table_id: "ID"
-        table_kind: "類型"
-        table_title: "標題"
     dashboard:
       index:
         back: 返回 %{org}
