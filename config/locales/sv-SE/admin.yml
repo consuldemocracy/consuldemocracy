@@ -236,36 +236,6 @@ sv:
         undefined: Odefinierat
         user_groups: "Grupper"
       search_unfeasible: Sökningen misslyckades
-    milestones:
-      index:
-        table_id: "Legitimation"
-        table_title: "Titel"
-        table_description: "Beskrivning"
-        table_publication_date: "Publiceringsdatum"
-        table_status: Status
-        table_actions: "Åtgärder"
-        delete: "Ta bort milstolpe"
-        no_milestones: "Har inga definierade milstolpar"
-        image: "Bild"
-        show_image: "Visa bild"
-        documents: "Dokument"
-        milestone: Milstolpe
-        new_milestone: Skapa ny milstolpe
-      form:
-        admin_statuses: Administrativ status för budgetförslag
-        no_statuses_defined: Det finns ingen definierad status för budgetförslag än
-      new:
-        creating: Skapa milstolpe
-        date: Datum
-        description: Beskrivning
-      edit:
-        title: Redigera milstolpe
-      create:
-        notice: Ny milstolpe har skapats!
-      update:
-        notice: Milstolpen har uppdaterats
-      delete:
-        notice: Milstolpen har tagits bort
     statuses:
       index:
         title: Status för budgetförslag
@@ -286,11 +256,6 @@ sv:
         notice: Status för budgetförslag har skapats
       delete:
         notice: Status för budgetförslag har tagits bort
-    progress_bars:
-      index:
-        table_id: "Legitimation"
-        table_kind: "Typ"
-        table_title: "Titel"
     dashboard:
       index:
         back: Gå tillbaka till %{org}
