@@ -1636,3 +1636,13 @@ es:
     translations:
       remove_language: Eliminar idioma
       add_language: Añadir idioma
+    change_log:
+        title: "Historial"
+        id: "ID"
+        field: "Campo"
+        new_value: "Valor nuevo"
+        old_value: "Valor anterior"
+        edited_at: "Editado el"
+        edited_by: "Editado por"
+        actions: "Acciones"
+        empty: "No hay cambios registrados"

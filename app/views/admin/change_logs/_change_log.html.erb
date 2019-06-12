@@ -1,0 +1,44 @@
+<h2 class="inline-block"><%= t("admin.change_log.title") %></h2>
+
+<% if logs.empty? %>
+  <label><%= t("admin.change_log.empty") %></label>
+<% else %>
+  <table>
+    <thead>
+    <tr>
+      <th><%= t("admin.change_log.id") %></th>
+      <th><%= t("admin.change_log.field") %></th>
+      <th><%= t("admin.change_log.old_value") %></th>
+      <th><%= t("admin.change_log.new_value") %></th>
+      <th><%= t("admin.change_log.edited_at") %></th>
+      <th><%= t("admin.change_log.edited_by") %></th>
+      <th><%= t("admin.change_log.actions") %></th>
+    </tr>
+    </thead>
+    <tbody>
+    <% logs.each do |log| %>
+      <tr id="log_<%= log.id %>">
+        <td class="text-center"><%= log.id %></td>
+        <td class="small"><%= log.field.capitalize %></td>
+        <td class="small">
+          <div class="log-value"><%= log.old_value %></div>
+        </td>
+        <td class="small">
+          <div class="log-value"><%= log.new_value %></div>
+        </td>
+        <td class="small">
+          <%= log.created_at.to_date %>
+        </td>
+        <td class="small">
+          <%= log.author.name unless log.author.nil? %>
+        </td>
+        <td>
+          <%= link_to admin_change_log_path(id: log) do %>
+            <button class="button hollow primary"><%= t("shared.show") %></button>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% end %>

@@ -350,6 +350,15 @@ class User < ApplicationRecord
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
+
+  def self.current_user
+    Thread.current[:user]
+  end
+
+  def self.current_user=(user)
+    Thread.current[:user] = user
+  end
+
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
   end

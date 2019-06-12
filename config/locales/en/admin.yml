@@ -1638,3 +1638,13 @@ en:
     translations:
         remove_language: Remove language
         add_language: Add language
+    change_log:
+        title: "Change Log"
+        id: "ID"
+        field: "Field"
+        new_value: "New Value"
+        old_value: "Old Value"
+        edited_at: "Edited at"
+        edited_by: "Edited by"
+        actions: "Actions"
+        empty: "There are not changes logged"
