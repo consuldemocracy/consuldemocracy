@@ -5,7 +5,7 @@ he:
     actions:
       actions: פעולות
       confirm: האם את/ה בטוח/ה?
-      confirm_hide: אשר
+      confirm_hide: אשר מנחה
       hide: הסתר
       hide_author: הסתר את יוצר התוכן
       restore: שחזר
@@ -1641,3 +1641,5 @@ he:
       field: "שדה"
       new_value: "ערך חדש"
       old_value: "ערך ישן"
+      edited_at: "נערך ב"
+      edited_by: "נערך על ידי"
