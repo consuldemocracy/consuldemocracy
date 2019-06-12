@@ -1,1 +1,28 @@
 he:
+  download:
+    edit:
+      fields: "שדות"
+      description: "תיאור"
+      downloadable: "ניתן להורדה"
+      debates: "דיונים"
+      proposals: "הצעות"
+      legislation_processes: "תהליכי חקיקה"
+      budget_investments: "תקציב השתתפותי"
+      comments: "הערות"
+      submit: "שמירת שינויים"
+      config:
+        "0": ""
+        "1": "- אבני דרך"
+    fielddescription:
+      debates:
+        id: "מספר מזהה"
+        title: "כותרת"
+        description: "תיאור"
+        author_id: "מספר מזהה מחבר\\ת"
+        created_at: "נוצר ב"
+        updated_at: "עודכן ב"
+        hidden_at: "מוסתר ב"
+        comments_count: "ההערות נחשבות"
+        geozone_id: "מזהה איזור גיאוגרפי"
+        author_name: "שם מחבר\\ת"
+        author_email: "דוא\"ל מחבר\\ת"
