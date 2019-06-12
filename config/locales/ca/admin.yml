@@ -167,16 +167,6 @@ ca:
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Cercar inviables
-    milestones:
-      index:
-        table_title: "Títol"
-        table_description: "Descripció detallada"
-        table_status: Estat
-        table_actions: "Accions"
-        image: "imatge"
-      new:
-        date: data
-        description: Descripció detallada
     statuses:
       index:
         table_name: Nome
@@ -184,10 +174,6 @@ ca:
         table_actions: Accions
         delete: Borrar
         edit: Editar proposta
-    progress_bars:
-      index:
-        table_kind: "tipus"
-        table_title: "Títol"
     dashboard:
       index:
         title: Administrar
