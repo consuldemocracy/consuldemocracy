@@ -84,6 +84,7 @@ describe "Admin custom information texts" do
 
     scenario "Update a translation", :js do
       key = "proposals.form.proposal_title"
+      create(:i18n_content, key: key, value_fr: "Titre de la proposition")
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
