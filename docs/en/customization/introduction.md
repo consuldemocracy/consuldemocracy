@@ -24,21 +24,21 @@ Also these are the files where you can apply some customization:
 
 ## Translation interface
 
-The aim of this functionality is to allow the introduction of all the dynamic contents of the application (proposals, debates, budgetary investments and comments) in different languages. From the administration panel you can activate or deactivate the translation interface.
+The aim of this feature is to allow users the introduction of dynamic contents in many languages at the same time. From the administration panel you can activate or deactivate it. If you deactivate this feature (default configuration) users will be able to enter one single translation.
 
 #### Enable module
-To activate the functionality you must follow 2 steps:
-1. Execute the following command `bin/rake settings:create_translation_interface_setting RAILS_ENV=production`
-1. Accessing through the administration panel of your application to the section **Configuration > Funcionalidades** and activate the module **Translation Interface** as you can see below:
+To activate this feature you must follow 2 steps:
+1. Execute the following command `bin/rake settings:create_translation_interface_setting RAILS_ENV=production` (This is only required for already existing intallations, for new consul installations this step is not needed).
+2. Accessing as administrator user to the administration panel of your Consul application to the section **Configuration > Features** and activating the feature called **Translation Interface** as you can see next:
 ![Active interface translations](../../img/translations/interface_translations/active-interface-translations-en.png)
 
 #### Use Cases
 
 * When the translation interface is active:
-As we can see in the image appears a selector to add languages where each time we select one appears in the selector of languages in use and the translatable fields appears with a blue background.  Also we have a button `Remove language` to delete a language in case of needing it.
-This feature is visible both for the creation pages and for the editing pages.
+As you can see in the image below translation interface has two selectors, the firt one "Select language" is to switch between enabled languages and the second one "Add language" is to add new languages to the form. Translatable fields appears with a blue background to facilitate users to distinguish between translatable and not translatable fields. Additionally interface provides a link `Remove language` to delete the current language shown at "Select language". If a user accidentally removes a translation he can recover it re-adding it to the form.
+This feature is visible during creation and edition of translatable resources.
 ![Translations inteface enabled](../../img/translations/interface_translations/translations-interface-enabled-en.png)
 
 * When the translation interface is disabled:
-As you can see in the image when this feature is deactivated, the current rendering is maintained in both the creation and edition forms:
+When this feature is deactivated users will see standard forms without translation interface and without translation highlight.
 ![Translations inteface enabled](../../img/translations/interface_translations/translations-interface-disabled-en.png)
