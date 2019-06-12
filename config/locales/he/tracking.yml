@@ -1,1 +1,92 @@
 he:
+  tracking:
+    header:
+      title: מעקב
+    menu:
+      title: מעקב
+      budgets: תקציבים השתתפותיים
+    budgets:
+      index:
+        title: תקציבים השתתפותיים
+        table_name: שם
+        table_phase: שלב
+        table_assigned_investments_tracking_open: פרויקטים להשקעה שהוקצו עם מעקב תקציב פתוח
+        table_actions: פעולות
+        tracking: מעקב
+        no_budgets: "לא נמצאו תקציבים"
+    budget_investments:
+      index:
+        assigned_to: "מוקצה ל %{tracker}"
+        title: פרויקטים להשקעה
+        edit: ערוך אבני דרך
+        table_id: מזהה
+        table_title: כותרת
+        table_heading_name: שם כותר
+        table_actions: פעולות
+        no_investments: "אין פרויקטי השקעה זמינים."
+      show:
+        title: פרויקט להשקעה
+        info: פרטי המחבר\ת
+        by: נשלח על ידי
+        sent: נשלח ב
+        heading: כותר
+        undefined: "אינו מוגדר"
+        responsibles: אחראים
+        assigned_admin: מנהל מערכת אשר הוקצה
+    milestones:
+      index:
+        table_id: "מזהה"
+        table_title: "כותרת"
+        table_description: "תיאור"
+        table_publication_date: "תאריך פרסום"
+        table_status: סטטוס
+        table_actions: "פעולות"
+        delete: "מחיקת אבן דרך"
+        no_milestones: "לא הוגדרו אבני דרך"
+        image: "תמונה"
+        show_image: "הצג תמונה"
+        documents: "מסמכים"
+        milestone: אבני דרך
+        new_milestone: יצירת אבן דרך חדשה
+      form:
+        admin_statuses: ניהול קצב התקדמות
+        no_statuses_defined: טרם הוגדר קצב התקדמות
+      new:
+        creating: יצירת אבן דרך
+        date: תאריך
+        description: תיאור
+      edit:
+        title: ערוך אבן דרך
+      create:
+        notice: אבן דרך חדשה נוצרה בהצלחה!
+      update:
+        notice: אבן דרך חדשה עודכנה בהצלחה
+      delete:
+        notice: אבן דרך הוסרה בהצלחה
+    progress_bars:
+      manage: "ניהול סרגל התקדמות"
+      index:
+        title: "סרגלי התקדמות"
+        no_progress_bars: "אין סרגלי התקדמות"
+        new_progress_bar: "יצירת סרגל התקדמות חדש"
+        primary: "סרגל התקדמות ראשי"
+        table_id: "מזהה"
+        table_kind: "סוג"
+        table_title: "כותרת"
+        table_percentage: "התקדמות נוכחית"
+      new:
+        creating: "יצירת סרגל התקדמות"
+      edit:
+        title:
+          primary: "עריכת סרגל התקדמות ראשי"
+          secondary: "עריכת סרגל התקדמות %{title}"
+      create:
+        notice: "סרגל ההתקדמות נוצר בהצלחה!"
+      update:
+        notice: "סרגל ההתקדמות עודכן בהצלחה"
+      delete:
+        notice: "סרגל ההתקדמות הוסר בהצלחה"
+  trackers:
+    budget_investments:
+      show:
+        assigned_trackers: "עוקבים מוקצים"
