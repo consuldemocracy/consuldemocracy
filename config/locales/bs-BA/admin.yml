@@ -277,36 +277,6 @@ bs:
         undefined: Nije definisano
         user_groups: "Grupe"
       search_unfeasible: Traži među neizvodivim
-    milestones:
-      index:
-        table_id: "Identifikacioni broj"
-        table_title: "Naziv"
-        table_description: "Opis"
-        table_publication_date: "Datum objave"
-        table_status: Status
-        table_actions: "Radnje"
-        delete: "Obriši rok"
-        no_milestones: "Nema utvrđenih rokova"
-        image: "Slika"
-        show_image: "Pokaži sliku"
-        documents: "Dokumenti"
-        milestone: Rok
-        new_milestone: Odredi novi rok
-      form:
-        admin_statuses: Uredi statuse
-        no_statuses_defined: Još uvijek nema utvrđenih statusa
-      new:
-        creating: Odredi rok
-        date: Datum
-        description: Opis
-      edit:
-        title: Izmjeni rok
-      create:
-        notice: Novi rok uspješno postavljen!
-      update:
-        notice: Rok uspješno ažuriran
-      delete:
-        notice: Rok uspješno obrisan
     statuses:
       index:
         title: Statusi za utvrđeni rok
@@ -328,28 +298,8 @@ bs:
       delete:
         notice: Status utvrđenog roka uspješno obrisan
     progress_bars:
-      manage: "Uredi trake za praćenje napretka"
       index:
         title: "Trake za praćenje napretka"
-        no_progress_bars: "Nema traka za praćenje napretka"
-        new_progress_bar: "Napravi novu traku za praćenje napretka"
-        primary: "Primarna traka za praćenje napretka"
-        table_id: "Identifikacioni broj"
-        table_kind: "Vrsta"
-        table_title: "Naziv"
-        table_percentage: "Trenutni napredak"
-      new:
-        creating: "Napravi traku za praćenje napretka"
-      edit:
-        title:
-          primary: "Edituj primarnu traku za praćenje napretka"
-          secondary: "Edituj traku za praćenje napretka %{title}"
-      create:
-        notice: "Traka za praćenje napretka uspješno napravljena!"
-      update:
-        notice: "Traka za praćenje napretka uspješno ažurirana"
-      delete:
-        notice: "Traka za praćenje napretka uspješno obrisana"
     dashboard:
       index:
         back: Vrati se na %{org}
