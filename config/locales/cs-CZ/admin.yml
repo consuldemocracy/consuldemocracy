@@ -256,36 +256,6 @@ cs:
         undefined: Nedefinováno
         user_groups: "Skupiny"
       search_unfeasible: Hledat neproveditelné
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Předmět"
-        table_description: "Description"
-        table_publication_date: "Datum publikace"
-        table_status: Status
-        table_actions: "Akce"
-        delete: "Odstranit milník"
-        no_milestones: "Milníky nejsou definovány"
-        image: "Image"
-        show_image: "Zobrazit obrázek"
-        documents: "Dokumenty"
-        milestone: Milník
-        new_milestone: Vytvořit nový milník
-      form:
-        admin_statuses: Admin investment statuses
-        no_statuses_defined: There are no defined investment statuses yet
-      new:
-        creating: Vytvořit milník
-        date: Datum
-        description: Description
-      edit:
-        title: Upravit fázi
-      create:
-        notice: Úspěšně vytvořen nový milník!
-      update:
-        notice: Milník úspěšně aktualizován
-      delete:
-        notice: Milník byl odstraněn
     statuses:
       index:
         title: Investment statuses
@@ -307,28 +277,8 @@ cs:
       delete:
         notice: Investment status deleted successfully
     progress_bars:
-      manage: "Spravovat ukazatel průběhu"
       index:
         title: "Ukazatele průběhu"
-        no_progress_bars: "Neexistují žádné ukazatele průběhu"
-        new_progress_bar: "Vytvořit nový ukazatel průběhu"
-        primary: "Hlavní ukazatel průběhu"
-        table_id: "ID"
-        table_kind: "Typ"
-        table_title: "Předmět"
-        table_percentage: "Aktuální pokrok"
-      new:
-        creating: "Vytvořit nový ukazatel průběhu"
-      edit:
-        title:
-          primary: "Upravit hlavní ukazatel průběhu"
-          secondary: "Upravit ukazatel průběhu %{title}"
-      create:
-        notice: "Ukazatel průběhu byl úspěšně vytvořen!"
-      update:
-        notice: "Ukazatel průběhu byl úspěšně aktualizován"
-      delete:
-        notice: "Ukazatel průběhu byl smazán"
     dashboard:
       index:
         back: Přejít zpět na %{org}
