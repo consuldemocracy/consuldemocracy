@@ -1,4 +1,7 @@
 da:
+  attributes:
+    results_enabled: "Vis resultater"
+    stats_enabled: "Vis statistik"
   activerecord:
     models:
       activity:
@@ -76,6 +79,9 @@ da:
       site_customization/content_block:
         one: Tilpassede indholdsblok
         other: Tilpassede indholdsblokke
+      document:
+        one: Dokument
+        other: Dokumenter
       legislation/process:
         one: "Proces"
         other: "Processer"
@@ -177,6 +183,7 @@ da:
         title: "Titel"
         question: "Spørgsmål"
         description: "Beskrivelse"
+        selected: "Markeret som valgt"
         terms_of_service: "Servicevilkår"
       user:
         login: "E-mail eller brugernavn"
@@ -344,6 +351,9 @@ da:
       link:
         label: Titel
         url: Link
+      valuator:
+        description: Beskrivelse
+        valuator_group_id: Evaluatorer
     errors:
       models:
         user:
