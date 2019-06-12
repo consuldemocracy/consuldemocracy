@@ -106,6 +106,18 @@ he:
         edit_phase: ערוך שלב
         active: פעיל
         blank_dates: התאריכים ריקים
+        administrators:
+          zero: "בחירת מנהלי מערכת"
+          one: "מנהל מערכת אחד נבחר"
+          two: "%{count} מנהלי מערכת נבחרו"
+          many: "%{count} מנהלי מערכת נבחרו"
+          other: "%{count} מנהלי מערכת נבחרו"
+        valuators:
+          zero: "בחירת מעריכים"
+          one: "מעריך אחד נבחר"
+          two: "%{count} מעריכים נבחרו"
+          many: "%{count} מעריכים נבחרו"
+          other: "%{count} מעריכים נבחרו"
       destroy:
         success_notice: התקציב נמחק בהצלחה
         unable_notice: אינך יכול להסיר תקציב הקשור להשקעות קיימות
