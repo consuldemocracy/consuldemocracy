@@ -68,7 +68,7 @@ describe Signature do
       expect(signature).not_to be_valid
     end
 
-   end
+  end
 
   describe "#clean_document_number" do
     it "removes non alphanumeric characters" do
