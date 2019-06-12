@@ -221,33 +221,6 @@ fa:
         undefined: تعریف نشده
         user_groups: "گروه ها"
       search_unfeasible: جستجو غیر قابل انجام است
-    milestones:
-      index:
-        table_id: "شناسه"
-        table_title: "عنوان"
-        table_description: "توضیحات"
-        table_publication_date: "تاریخ انتشار"
-        table_status: وضعیت ها
-        table_actions: "اقدامات"
-        delete: "حذف نقطه عطف"
-        no_milestones: "نقاط قوت را مشخص نکرده اید"
-        image: "تصویر"
-        show_image: "نمایش تصویر"
-        documents: "اسناد"
-        milestone: نقطه عطف
-        new_milestone: ایجاد نقطه عطف جدید
-      new:
-        creating: ایجاد نقطه عطف جدید
-        date: تاریخ
-        description: توضیحات
-      edit:
-        title: ویرایش نقطه عطف
-      create:
-        notice: نقطه عطف جدید با موفقیت ایجاد شده!
-      update:
-        notice: نقطه عطف با موفقیت به روز رسانی شده
-      delete:
-        notice: نقطه عطف با موفقیت حذف شد.
     statuses:
       index:
         table_name: نام
@@ -255,11 +228,6 @@ fa:
         table_actions: اقدامات
         delete: حذف
         edit: ویرایش
-    progress_bars:
-      index:
-        table_id: "شناسه"
-        table_kind: "نوع"
-        table_title: "عنوان"
     dashboard:
       index:
         back: بازگشت به %{org}
