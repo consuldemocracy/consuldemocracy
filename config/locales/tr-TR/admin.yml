@@ -267,36 +267,6 @@ tr:
         undefined: Tanımsız
         user_groups: "Gruplar"
       search_unfeasible: Arama uygulanamaz
-    milestones:
-      index:
-        table_id: "KİMLİK"
-        table_title: "İsim"
-        table_description: "Tanımlama"
-        table_publication_date: "Yayın tarihi"
-        table_status: Durum
-        table_actions: "Aksiyon"
-        delete: "Kilometre taşı sil"
-        no_milestones: "Tanımlanmış kilometre taşları yok"
-        image: "Fotoğraf"
-        show_image: "Resmi göster"
-        documents: "Belgeler"
-        milestone: Kilometre taşı
-        new_milestone: Yeni kilometre taşı oluştur
-      form:
-        admin_statuses: Durumları yönet
-        no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
-      new:
-        creating: Kilometre taşı oluştur
-        date: Tarih
-        description: Tanımlama
-      edit:
-        title: Kilometre taşı düzenle
-      create:
-        notice: Yeni kilometre taşı başarıyla oluşturuldu!
-      update:
-        notice: Kilometre taşı başarıyla güncellendi
-      delete:
-        notice: Kilometre taşı başarıyla silindi
     statuses:
       index:
         title: Kilometre taşı durumları
@@ -318,28 +288,8 @@ tr:
       delete:
         notice: Kilometre taşı durumu başarıyla silindi
     progress_bars:
-      manage: "İşlem çubuklarını yönet"
       index:
         title: "İşlem çubukları"
-        no_progress_bars: "İşlem çubukları yok"
-        new_progress_bar: "Yeni işlem çubuğu oluştur"
-        primary: "Birincil işlem çubuğu"
-        table_id: "KİMLİK"
-        table_kind: "Tür"
-        table_title: "İsim"
-        table_percentage: "Mevcut işlem"
-      new:
-        creating: "İşlem çubuğu oluştur"
-      edit:
-        title:
-          primary: "Birincil işlem çubuğunu düzenle"
-          secondary: "İşlem çubuğunu düzenle %{title}"
-      create:
-        notice: "İşlem çubuğu başarıyla oluşturuldu!"
-      update:
-        notice: "İşlem çubuğu başarıyla güncellendi"
-      delete:
-        notice: "İşlem çubuğu başarıyla silindi"
     dashboard:
       index:
         back: Geri dön %{org}
