@@ -120,3 +120,7 @@ tr:
       hi: "Tebrikler %{name}! %{title} başlıklı öneriniz başarıyla oluşturuldu."
       text_1: "Ve şimdi, ilk 100 desteğiniz için ilerleyin!"
       text_2: "Neden 100?"
+      text_3: "Deneyimlerimiz bize ilk günün son derece önemli olduğunu gösteriyor. Çünkü yeni bir şey başlatmak için enerjiye sahip olmanın yanı sıra, öne çıkan yeni öneriler arasında olmanın sağlayacağı önemli görünürlüğüne sahip olacaksınız."
+      text_4: "İlk gün 100 destek alın ve sizi destekleyen kamuoyunu oluşturmaya başlayın."
+      text_5: "Bu yüzden sizi bir mücadeleye davet ediyoruz, fakat mutlaka yardım edeceğiz!"
+      text_6: "Öneri Panelinizde yeni kaynaklara ve önerinin yayılmasıyla ilgili tavsiyelere ulaşabileceğinizi unutmayın."
