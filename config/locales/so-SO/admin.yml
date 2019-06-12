@@ -230,36 +230,6 @@ so:
         undefined: Aan la garanayn
         user_groups: "Kooxo"
       search_unfeasible: Raadinta aan macquul ahayn
-    milestones:
-      index:
-        table_id: "Aqoonsi"
-        table_title: "Ciwaan"
-        table_description: "Sharaxaad"
-        table_publication_date: "Taariikhda daabacaadda"
-        table_status: Status
-        table_actions: "Tilaabooyin"
-        delete: "Tirtir hiigsiga/guleeysiga"
-        no_milestones: "An lahayn yool qeexaan"
-        image: "Sawiir"
-        show_image: "Muuji sawir"
-        documents: "Dukumentiyo"
-        milestone: Marayan/ Yool
-        new_milestone: Sameynta hiigsiga/guleeysiga
-      form:
-        admin_statuses: Xaladaha mamulka Malgelinta
-        no_statuses_defined: Weli ma jiraan xaalado maalgashi oo la qeexay
-      new:
-        creating: Abuurida hiigsiga/guleeysiga
-        date: Tariikh
-        description: Sharaxaad
-      edit:
-        title: Wax ka bedel yolka
-      create:
-        notice: Guuleysi cusub ayaa abuuray guul!
-      update:
-        notice: Waxa siguula loo cusboneysiyey Higsiga
-      delete:
-        notice: Siguula ayaa loo tirtiray higsigaa
     statuses:
       index:
         title: Herarka maalgelinta
@@ -280,11 +250,6 @@ so:
         notice: Siguula ayaa lo Sameyey Xalada Malgashiga
       delete:
         notice: Siguula ayaa lo tiritiray Xalada Malgashiga
-    progress_bars:
-      index:
-        table_id: "Aqoonsi"
-        table_kind: "Noca"
-        table_title: "Ciwaan"
     dashboard:
       index:
         back: Dib ugu labo ilaa %{org}
