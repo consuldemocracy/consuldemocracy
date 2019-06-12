@@ -118,3 +118,5 @@ tr:
     new_actions_notification_on_published:
       subject: "Vatandaş önerin daha önce yayınlandı. Paylaşmaya devam et! "
       hi: "Tebrikler %{name}! %{title} başlıklı öneriniz başarıyla oluşturuldu."
+      text_1: "Ve şimdi, ilk 100 desteğiniz için ilerleyin!"
+      text_2: "Neden 100?"
