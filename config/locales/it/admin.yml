@@ -235,35 +235,6 @@ it:
         undefined: Non definito
         user_groups: "Gruppi"
       search_unfeasible: Ricerca irrealizzabile
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Titolo"
-        table_description: "Descrizione"
-        table_publication_date: "Data di pubblicazione"
-        table_status: Status
-        table_actions: "Azioni"
-        delete: "Cancellare il traguardo-milestone"
-        no_milestones: "Non ci sono traguardi-milestone definiti"
-        image: "Immagine"
-        show_image: "Mostra immagine"
-        documents: "Documenti"
-        milestone: Traguardo
-        new_milestone: Crea nuovo traguardo
-      form:
-        no_statuses_defined: Non ci sono ancora status d’investimento definiti
-      new:
-        creating: Crea traguardo-milestone
-        date: Data
-        description: Descrizione
-      edit:
-        title: Modifica traguardo-milestone
-      create:
-        notice: Il nuovo traguardo-milestone è stato definito con successo!
-      update:
-        notice: Il traguardo-milestone è stato aggiornato con successo
-      delete:
-        notice: Il traguardo-milestone è stato cancellato con successo
     statuses:
       index:
         title: Status di investimento
@@ -284,11 +255,6 @@ it:
         notice: Status di investimento creato con successo
       delete:
         notice: Status di investimento eliminato con successo
-    progress_bars:
-      index:
-        table_id: "ID"
-        table_kind: "Tipo"
-        table_title: "Titolo"
     dashboard:
       index:
         back: Torna a %{org}
