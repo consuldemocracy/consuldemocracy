@@ -273,36 +273,6 @@ da:
         undefined: Udefineret
         user_groups: "Grupper"
       search_unfeasible: Søg uigennemførlige projekter
-    milestones:
-      index:
-        table_id: "ID"
-        table_title: "Titel"
-        table_description: "Beskrivelse"
-        table_publication_date: "Dato for offentliggørelse"
-        table_status: Status
-        table_actions: "Handlinger"
-        delete: "Slet proces"
-        no_milestones: "Har ingen definerede processer"
-        image: "Billede"
-        show_image: "Vis billede"
-        documents: "Dokumenter"
-        milestone: Processer
-        new_milestone: Opret ny proces
-      form:
-        admin_statuses: Administrer statusser
-        no_statuses_defined: Der er endnu ingen definerede statusser
-      new:
-        creating: Opret proces
-        date: Dato
-        description: Beskrivelse
-      edit:
-        title: Rediger proces
-      create:
-        notice: Processen blev oprettet!
-      update:
-        notice: Processen blev opdateret
-      delete:
-        notice: Processen blev slettet
     statuses:
       index:
         title: Processtatus
@@ -324,28 +294,8 @@ da:
       delete:
         notice: Processtatussen blev slettet
     progress_bars:
-      manage: "Administrer statuslinje"
       index:
         title: "Statuslinjer"
-        no_progress_bars: "Der er ingen statuslinjer"
-        new_progress_bar: "Opret ny statuslinje"
-        primary: "Primære statuslinje"
-        table_id: "ID"
-        table_kind: "Type"
-        table_title: "Titel"
-        table_percentage: "Aktuelle forløb"
-      new:
-        creating: "Opret statuslinje"
-      edit:
-        title:
-          primary: "Rediger primær statuslinje"
-          secondary: "Rediger statuslinje %{title}"
-      create:
-        notice: "Statuslinjen blev oprettet!"
-      update:
-        notice: "Statuslinjen blev opdateret"
-      delete:
-        notice: "Statuslinjen blev slettet"
     dashboard:
       index:
         back: Gå tilbage til %{org}
