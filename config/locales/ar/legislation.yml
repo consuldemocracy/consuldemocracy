@@ -40,6 +40,7 @@ ar:
       header:
         additional_info: معلومات اضافية
         description: الوصف
+        more_info: مزيد من المعلومات والسياق
       proposals:
         empty_proposals: لا توجد مقترحات
         filters:
@@ -54,8 +55,13 @@ ar:
           open: إجراءات مفتوحة
           past: السابق
         no_open_processes: لا توجد إجراءات مفتوحة
+        no_past_processes: لا توجد إجراءات سابقة
         section_header:
+          icon_alt: أيقونة التشريع التشاركي
           title: العمليات التشريعية
+          help: مساعدة حول التشريع التشاركي
+        section_footer:
+          title: مساعدة حول التشريع التشاركي
       phase_empty:
         empty: لم ينشر شيء بعد
       process:
