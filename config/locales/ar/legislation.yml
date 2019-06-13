@@ -106,9 +106,11 @@ ar:
         title: عملية تشريع تشاركية
       participation:
         phase_not_open: هذه المرحلة ليست مفتوحة
+        organizations: لا يُسمح للمنظمات بالمشاركة في النقاش
         signin: تسجيل الدخول
         signup: تسجيل
         unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
+        verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط المشاركة %{verify_account}.
         verify_account: التحقق من حسابك
         debate_phase_not_open: انتهت مرحلة النقاش ولم تعد الإجابات مقبولة
     shared:
@@ -117,4 +119,13 @@ ar:
     proposals:
       form:
         tags_label: "فئات"
+      not_verified: "لمقترحات التصويت %{verify_account}."
       process_title: عملية تشريع تشاركية
+      total:
+        zero: لا توجد مقترحات
+        zero: "%{count} مقترحات"
+        one: "مقترح %{count}"
+        two: "مقترحان %{count}"
+        few: "%{count} مقترحات"
+        many: "%{count} مقترحات"
+        other: "%{count} مقترحات"
