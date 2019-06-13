@@ -134,6 +134,14 @@ describe "Admin settings" do
 
   describe "Update Remote Census Configuration" do
 
+    before do
+      Setting["feature.remote_census"] = true
+    end
+
+    after do
+      Setting["feature.remote_census"] = nil
+    end
+
     scenario "Should not be able when remote census feature deactivated" do
       Setting["feature.remote_census"] = nil
       admin = create(:administrator).user
@@ -147,7 +155,6 @@ describe "Admin settings" do
     end
 
     scenario "Should be able when remote census feature activated" do
-      Setting["feature.remote_census"] = true
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -159,28 +166,40 @@ describe "Admin settings" do
       expect(page).not_to have_content 'To configure remote census (SOAP) you must enable ' \
                                        '"Configure connection to remote census (SOAP)" ' \
                                        'on "Features" tab.'
-      Setting["feature.remote_census"] = nil
     end
 
-    scenario "Should redirect to #tab-remote-census-configuration after update any remote census setting", :js do
-      remote_census_setting = create(:setting, key: "remote_census.general.any_remote_census_general_setting")
-      Setting["feature.remote_census"] = true
-      admin = create(:administrator).user
-      login_as(admin)
-      visit admin_settings_path
-      find("#remote-census-tab").click
+  end
 
-      within("#edit_setting_#{remote_census_setting.id}") do
-        fill_in "setting_#{remote_census_setting.id}", with: "New value"
-        click_button "Update"
+  describe "Should redirect to same tab after update setting" do
+
+    context "remote census" do
+
+      before do
+        Setting["feature.remote_census"] = true
       end
 
-      expect(page).to have_current_path(admin_settings_path)
-      expect(page).to have_css("div#tab-remote-census-configuration.is-active")
-      Setting["feature.remote_census"] = nil
+      after do
+        Setting["feature.remote_census"] = nil
+      end
+
+      scenario "On #tab-remote-census-configuration", :js do
+        remote_census_setting = create(:setting, key: "remote_census.general.whatever")
+        admin = create(:administrator).user
+        login_as(admin)
+        visit admin_settings_path
+        find("#remote-census-tab").click
+
+        within("#edit_setting_#{remote_census_setting.id}") do
+          fill_in "setting_#{remote_census_setting.id}", with: "New value"
+          click_button "Update"
+        end
+
+        expect(page).to have_current_path(admin_settings_path)
+        expect(page).to have_css("div#tab-remote-census-configuration.is-active")
+      end
     end
 
-    scenario "Should redirect to #tab-configuration after update any configuration setting", :js do
+    scenario "On #tab-configuration", :js do
       configuration_setting = Setting.create(key: "whatever")
       admin = create(:administrator).user
       login_as(admin)
@@ -196,25 +215,34 @@ describe "Admin settings" do
       expect(page).to have_css("div#tab-configuration.is-active")
     end
 
-    scenario "Should redirect to #tab-map-configuration after update any map configuration setting", :js do
-      map_setting = Setting.create(key: "map.whatever")
-      Setting["feature.map"] = true
-      admin = create(:administrator).user
-      login_as(admin)
-      visit admin_settings_path
-      find("#map-tab").click
+    context "map configuration" do
 
-      within("#edit_setting_#{map_setting.id}") do
-        fill_in "setting_#{map_setting.id}", with: "New value"
-        click_button "Update"
+      before do
+        Setting["feature.map"] = true
       end
 
-      expect(page).to have_current_path(admin_settings_path)
-      expect(page).to have_css("div#tab-map-configuration.is-active")
-      Setting["feature.map"] = nil
+      after do
+        Setting["feature.map"] = nil
+      end
+
+      scenario "On #tab-map-configuration", :js do
+        map_setting = Setting.create(key: "map.whatever")
+        admin = create(:administrator).user
+        login_as(admin)
+        visit admin_settings_path
+        find("#map-tab").click
+
+        within("#edit_setting_#{map_setting.id}") do
+          fill_in "setting_#{map_setting.id}", with: "New value"
+          click_button "Update"
+        end
+
+        expect(page).to have_current_path(admin_settings_path)
+        expect(page).to have_css("div#tab-map-configuration.is-active")
+      end
     end
 
-    scenario "Should redirect to #tab-proposals after update any proposal dashboard setting", :js do
+    scenario "On #tab-proposals", :js do
       proposal_dashboard_setting = Setting.create(key: "proposals.whatever")
       admin = create(:administrator).user
       login_as(admin)
@@ -230,7 +258,7 @@ describe "Admin settings" do
       expect(page).to have_css("div#tab-proposals.is-active")
     end
 
-    scenario "Should redirect to #tab-participation-processes after update any participation_processes setting", :js do
+    scenario "On #tab-participation-processes", :js do
       process_setting = Setting.create(key: "process.whatever")
       admin = create(:administrator).user
       login_as(admin)
@@ -245,7 +273,7 @@ describe "Admin settings" do
       expect(page).to have_css("div#tab-participation-processes.is-active")
     end
 
-    scenario "Should redirect to #tab-feature-flags after update any feature flag setting", :js do
+    scenario "On #tab-feature-flags", :js do
       feature_setting = Setting.create(key: "feature.whatever")
       admin = create(:administrator).user
       login_as(admin)
