@@ -20,6 +20,7 @@ ar:
       subject: يوجد رد على تعليقك
       title: اجابة جديدة على تعليقك
     proposal_notification_digest:
+      title: "إشعارات المقترح في %{org_name}"
       share: مشاركة مقترح
       comment: تعليق على مقترح
       unsubscribe: "إذا كنت لا تريد تلقي إشعارات المقترح، قم بزيارة %{account} وإلغاء تحديد 'تلقي ملخص إشهارات المقترح'."
