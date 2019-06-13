@@ -62,6 +62,9 @@ ar:
           help: مساعدة حول التشريع التشاركي
         section_footer:
           title: مساعدة حول التشريع التشاركي
+          description: شارك في المناقشات وإجراءات ما قبل الموافقة على الوائح أو الاستراتيجيات الجديدة. سيتم اعتبار رأيك.
+      phase_not_open:
+        not_open: هذه المرحلة ليست مفتوحة بعد
       phase_empty:
         empty: لم ينشر شيء بعد
       process:
@@ -71,11 +74,21 @@ ar:
         key_dates: مراحل المشاركة
         homepage: الصفحة الرئيسية
         debate_dates: الحوارات
+        draft_publication_date: نشر المسودة
         allegations_dates: تعليقات
+        result_publication_date: نشر النتيجة النهائية
         milestones_date: التالية
         proposals_dates: إقتراحات
     questions:
+      comments:
+        comment_button: نشر الاجابة
+        comments_title: الإجابات المفتوحة
+        comments_closed: مرحلة مغلقة
+        form:
+          leave_comment: اترك إجابتك
       question:
+        total:
+          zero: لا توجد مناقشات
         comments:
           zero: لا توجد تعليقات
         debate: الحوارات
