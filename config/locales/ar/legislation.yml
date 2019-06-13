@@ -89,12 +89,23 @@ ar:
       question:
         total:
           zero: لا توجد مناقشات
+          zero: "%{count} مناقشات"
+          one: "مناقشة %{count}"
+          two: "مناقشتان %{count}"
+          few: "%{count} مناقشات"
+          many: "%{count} مناقشات"
+          other: "%{count} مناقشات"
         comments:
           zero: لا توجد تعليقات
         debate: الحوارات
       show:
+        answer_question: سلم الاجابة
+        next_question: السّؤال التّالي
+        first_question: السّؤال الأوّل
         share: مشاركة
+        title: عملية تشريع تشاركية
       participation:
+        phase_not_open: هذه المرحلة ليست مفتوحة
         signin: تسجيل الدخول
         signup: تسجيل
         unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
