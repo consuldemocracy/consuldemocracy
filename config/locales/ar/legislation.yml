@@ -129,3 +129,19 @@ ar:
         few: "%{count} مقترحات"
         many: "%{count} مقترحات"
         other: "%{count} مقترحات"
+    summary:
+      title: استئنف
+      votes: اصوات
+      debates_phase: مرحلة المناقشات
+      proposal_phase: مرحلة الاقتراح
+      comments_phase: مرحلة التعليق على النص
+      comments:
+        zero: لا توجد تعليقات
+        zero: "%{count} تعليقات"
+        one: "تعليق %{count}"
+        two: "تعليقان %{count}"
+        few: "%{count} تعليقات"
+        many: "%{count} تعليقات"
+        other: "%{count} تعليقات"
+      most_voted_comments: "التعليقات الأكثر تصويتا: "
+      version: النسخة
