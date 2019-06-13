@@ -12,9 +12,14 @@ ar:
         signup: تسجيل
       index:
         title: تعليقات
+        comments_about: تعليقات حول
+        comment_about: "تعليق حول:"
+        comments_count:
+          zero: لا توجد تعليقات
       show:
         title: التعليق
       version_chooser:
+        seeing_version: تعليقات على النسخة
         see_text: رؤية مسودة النص
     draft_versions:
       changes:
@@ -22,13 +27,18 @@ ar:
         seeing_changelog_version: ملخص مراجعة التغييرات
         see_text: رؤية مسودة النص
       show:
+        seeing_version: أنت تشاهد النسخة المسودة
+        select_draft_version: حدّد المسودة
         select_version_submit: رؤية
         updated_at: تم التحديث في %{date}
         see_changes: رؤية ملخص التغييرات
+        see_comments: مشاهدة كلّ التعليقات
+        text_toc: جدول المحتويات
         text_body: نص
         text_comments: تعليقات
     processes:
       header:
+        additional_info: معلومات اضافية
         description: الوصف
       proposals:
         empty_proposals: لا توجد مقترحات
