@@ -183,6 +183,13 @@ el:
       heading: "Ορόσημα συμμετοχικού προϋπολογισμού"
       heading_selection_title: "Κατά περιοχή"
       no_winner_investments: "Χωρίς νικητήριες επενδύσεις σε αυτή την κατάσταση"
+      filters:
+        status:
+          label: "Τρέχουσα κατάσταση έργου"
+          all: "Όλα (%{count})"
+        milestone_tag:
+          label: "Ετικέτα Ορόσημου"
+          all: "Όλα (%{count})"
     phases:
       errors:
         dates_range_invalid: "Η ημερομηνία έναρξης δεν μπορεί να είναι ίδια ή μεταγενέστερη από την ημερομηνία λήξης"
