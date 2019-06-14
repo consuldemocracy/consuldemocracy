@@ -56,7 +56,7 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def booth_assignments
-    @polls = Poll.current
+    @polls = Poll.current.created_by_admin
   end
 
   def destroy
