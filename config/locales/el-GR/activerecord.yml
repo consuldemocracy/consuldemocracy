@@ -137,6 +137,9 @@ el:
         description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
+        budget_milestone_tags: "Ετικέτες οροσήμου"
+        budget_valuation_tags: "Ετικέτες αποτίμησης"
+        help_link: "Σύνδεσμος βοήθειας"
       budget/investment:
         heading_id: "Επικεφαλίδα"
         title: "Τίτλος"
@@ -352,6 +355,11 @@ el:
       link:
         label: Τίτλος
         url: Σύνδεσμος
+      valuator:
+        description: Περιγραφή
+        valuator_group_id: Ομάδα αξιολόγησης
+        can_comment: Μπορεί να σχολιάσει
+        can_edit_dossier: Μπορεί να επεξεργαστεί φακέλους
     errors:
       models:
         user:
