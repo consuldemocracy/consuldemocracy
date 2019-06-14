@@ -273,7 +273,11 @@ el:
         tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρίζοντας τις με κόμματα (,)"
         undefined: Δεν έχει προσδιοριστεί
         user_groups: "Ομάδες"
+        milestone_tags: Ετικέτες οροσήμου
       search_unfeasible: Η αναζήτηση αυτή δεν είναι εφικτή
+    milestones:
+      index:
+        milestone_tags: Ετικέτες οροσήμου
     statuses:
       index:
         title: Καταστάσεις οροσήμων
