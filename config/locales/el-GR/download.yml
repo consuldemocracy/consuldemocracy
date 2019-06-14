@@ -1,1 +1,25 @@
 el:
+  download:
+    edit:
+      fields: "Πεδία"
+      description: "Περιγραφή"
+      debates: "Συζητήσεις"
+      proposals: "Προτάσεις"
+      legislation_processes: "Νομοθετικές διαδικασίες"
+      budget_investments: "Συμμετοχικός προϋπολογισμός"
+      comments: "Σχόλια"
+      submit: "Αποθήκευση αλλαγών"
+      config:
+        "0": ""
+        "1": "Ορόσημα"
+    fielddescription:
+      debates:
+        id: "Αριθμός αναγνώρισης"
+        title: "Τίτλος"
+        description: "Περιγραφή"
+        author_id: "Αριθμός αναγνώρισης συντάκτη"
+        created_at: "Δημιουργήθηκε στις"
+        updated_at: "Ενημερώθηκε στις"
+        visit_id: "Ταυτότητα επίσκεψης"
+        hidden_at: "Κρύφτηκε στις:"
+        flags_count: "Μέτρηση σημειώσεων "
