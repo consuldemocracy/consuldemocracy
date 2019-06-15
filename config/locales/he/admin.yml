@@ -1637,9 +1637,19 @@ he:
       remove_language: הסרת שפה
       add_language: הוספת שפה
     change_log:
+      title: "יומן שינויים"
       id: "מזהה"
       field: "שדה"
       new_value: "ערך חדש"
       old_value: "ערך ישן"
       edited_at: "נערך ב"
       edited_by: "נערך על ידי"
+      actions: "פעולות"
+      empty: "לא נרשמו שינויים"
+    trackers:
+      index:
+        title: עוקבים
+        name: שם
+        email: דואר אלקטרוני
+        description: תיאור
+        no_description: אין תיאור
