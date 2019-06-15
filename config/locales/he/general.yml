@@ -871,6 +871,12 @@ he:
       hide: הסתר המלצות
     download:
       title: "הורדות"
+      link:
+        proposal: "הורדת הצעות"
+        debate: "הורדת דיונים"
+        legislation_process: "הורדת תהליכי חקיקה"
+        budget: "הורדת תקציבים"
+        investments: "הורדת פרויקטים"
   social:
     facebook: "פייסבוק"
     twitter: "טוויטר"
@@ -1072,3 +1078,21 @@ he:
       surveys: סקרים
     poll:
       take_part: קח חלק מ- %{from} ל- %{to}
+  question:
+    max_votes: מספר הצבעות מקסימלי
+    max_group_answers: מספר התשובות המקסימלי בקבוצה
+    votation_type: סוג ההצבעה
+  enum_type:
+    title: סוג ההצבעה
+    unique: תשובה ייחודית, סגורה
+    multiple: תשובות מרובות, סגורות
+    prioritized: ריבוי תשובות מועדפות, סגורות
+    positive_open: בר הצבעה חיובית, פתוח
+    positive_negative_open: בר הצבעה חיובית ושלילית, פתוח
+    answer_couples_open: זוג תשובות, פתוח
+    answer_couples_closed: זוג תשובות, סגור
+    answer_set_open: קבוצת תשובות, פתוח
+    answer_set_closed: קבוצת תשובות, סגור
+  prioritization_type:
+    title: סוג תיעדוף
+    borda: הצבעה מסוג בורדה (שיטת בחירות שבה נבחר המועמד שסך מספר המועמדים המדורגים תחתיו מכל אחד מהבוחרים - הוא הגבוה ביותר)
