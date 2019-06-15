@@ -1653,3 +1653,16 @@ he:
         email: דואר אלקטרוני
         description: תיאור
         no_description: אין תיאור
+        no_trackers: לא נמצאו עוקבים.
+      tracker:
+        add: "נוספו לעוקבים"
+      form:
+        update: עדכן עוקבים
+        updated: "העוקבים עודכנו בהצלחה."
+        edit_title: "עוקבים: ערוך עוקב"
+      show:
+        email: דואר אלקטרוני
+        description: תיאור
+        no_description: אין תיאור.
+      search:
+        title: עוקבים
