@@ -217,6 +217,9 @@ he:
         description_finished: "תיאור כאשר התקציב מסתיים"
         phase: "שלב"
         currency_symbol: "מטבע"
+        budget_milestone_tags: "תגיות אבני דרך"
+        budget_valuation_tags: "תגי הערכה"
+        help_link: "קישור לעזרה"
       budget/investment:
         heading_id: "כותרת"
         title: "כותרת"
