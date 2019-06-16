@@ -173,6 +173,7 @@ da:
       accepted: "Accepterede udgiftsforslag: "
       discarded: "Kasserede udgiftsforslag: "
       incompatibles: Uforeneligede
+      investment_title: Titel på projekt
       investment_proyects: Liste over alle investeringsprojekter
       unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
       not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
