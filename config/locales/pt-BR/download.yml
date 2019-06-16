@@ -49,3 +49,11 @@ pt-BR:
         updated_at: "Atualizado em"
         selected: "Selecionado"
         location: "Localização"
+        organization_name: "Nome da organização"
+      comments:
+        body: "Corpo"
+        subject: "Assunto"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        hidden_at: "Oculto em"
+        valuation: "Avaliação"
