@@ -278,6 +278,8 @@ pt-BR:
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
       actions:
+        action_type:
+          resource: Recurso
         index:
           edit: Editar
           delete: Excluir
@@ -296,6 +298,12 @@ pt-BR:
           success: Ação excluída com sucesso
         form:
           submit_button: Salvar
+      administrator_tasks:
+        index:
+          source: Fonte
+    documents:
+      destroy:
+        success_notice: "Documento excluído com sucesso"
     hidden_users:
       index:
         filter: Filtro
@@ -353,6 +361,7 @@ pt-BR:
           delete: Apagar
           title: Processos legislativos
           filters:
+            active: Ativo
             all: Tudo
         new:
           back: Voltar
@@ -367,6 +376,8 @@ pt-BR:
           title: Processo
           comments: Comentários
           status: Status
+          start_date: Data de início
+          end_date: Data de término
           status_open: Aberto
           status_closed: Fechados
           status_planned: Planejados
@@ -542,11 +553,21 @@ pt-BR:
       title_booths: Cabines de votação
       legislation: Legislação colaborativa
       users: Usuários
+      download_settings:
+        debates: "Debates"
+        proposals: "Propostas"
+        legislation_processes: "Processo legislativo"
+        budget_investments: "Orçamento participativo"
+        comments: "Comentários"
+        budget_investments_milestones: "Orçamento participativo (Marcos)"
+      debates: "Debates"
+      comments: "Comentários"
     administrators:
       index:
         title: Administradores
         name: Nome
         email: Email
+        description: Descrição
         no_administrators: Não há administradores.
       administrator:
         add: Adicionar
@@ -554,6 +575,8 @@ pt-BR:
         restricted_removal: "Desculpe, você não pode se remover dos administradores"
       search:
         title: "Administradores: busca de usuário"
+      form:
+        updated: "Administrador atualizado com sucesso"
     moderators:
       index:
         title: Moderadores
@@ -595,6 +618,7 @@ pt-BR:
       new:
         title: Novo boletim informativo
         from: Endereço de e-mail para envio de boletim informativo
+        image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
       show:
