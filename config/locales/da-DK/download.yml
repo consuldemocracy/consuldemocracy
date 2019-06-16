@@ -1,1 +1,5 @@
 da:
+  download:
+    fielddescription:
+      budget_investments:
+        created_at: "Oprettet den"
