@@ -681,6 +681,8 @@ pt-BR:
         title: "Resumo danotificação da proposta"
         description: "Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails."
         preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
+      comment:
+        title: "Comentário"
     emails_download:
       index:
         title: Download de emails
