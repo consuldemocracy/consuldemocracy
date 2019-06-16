@@ -100,6 +100,7 @@ pt-BR:
         edit_phase: Editar estágio
         active: Ativo
         blank_dates: Datas estão em branco
+        name: "Nome"
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
@@ -123,6 +124,8 @@ pt-BR:
         amount: "Quantidade"
         population: "População (opcional)"
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
+        latitude: "Latitude (opcional)"
+        longitude: "Longitude (opcional)"
         submit: "Salvar título"
     budget_phases:
       edit:
@@ -185,6 +188,7 @@ pt-BR:
           visible_to_valuators: Apresentar aos avaliadores
           author_username: Username do autor
           incompatible: Incompatível
+          price: Preço
         cannot_calculate_winners: O orçamento tem que ficar na fase "Projetos de votação", "Revendo votos" ou "Orçamento concluído" em ordem para calcular os projetos vencedores
         see_results: "Exibir resultados"
       show:
@@ -250,11 +254,48 @@ pt-BR:
         notice: Status de investimento criado com sucesso
       delete:
         notice: Status de investimento excluído com sucesso
+    comments:
+      index:
+        author: "Autor"
+        commentable_type: "Tipo"
+        title: Comentários
+        no_comments: Não há comentários.
+        table_link: "Link"
+    hidden_comments:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmado
+          without_confirmed_hide: Pendente
+        hidden_debate: Debate oculto
+        hidden_proposal: Proposta oculta
+        title: Comentários ocultos
+        no_hidden_comments: Não há comentários ocultos.
     dashboard:
       index:
         back: Voltar para %{org}
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
+      actions:
+        index:
+          edit: Editar
+          delete: Excluir
+          active: 'Sim'
+          inactive: 'Não'
+          action_title: Título
+          action_type: Tipo
+          action_active: Ativo
+          order: Ordem
+          default:
+            email: Email
+            polls: Votações
+        create:
+          notice: Ação criada com sucesso
+        delete:
+          success: Ação excluída com sucesso
+        form:
+          submit_button: Salvar
     hidden_users:
       index:
         filter: Filtro
