@@ -700,6 +700,7 @@ pt-BR:
         valuator_groups: "Grupos de avaliação"
         group: "Grupo"
         no_group: "Sem grupo"
+        abilities: "Habilidades"
       valuator:
         add: Adicionar aos avaliadores
         delete: Apagar
@@ -712,8 +713,10 @@ pt-BR:
         description: "Descrição"
         email: "Email"
         group: "Grupo"
+        abilities: "Habilidades"
         no_description: "Sem descrição"
         no_group: "Sem grupo"
+        no_abilities: "Sem habilidades"
     valuator_groups:
       index:
         title: "Grupos de avaliação"
@@ -815,6 +818,10 @@ pt-BR:
         no_booths: "Não há urnas atribuídas a esta votação."
         table_name: "Nome"
         table_location: "Localização"
+    active_polls:
+      form:
+        description:
+          text: "Descrição"
     polls:
       index:
         title: "Lista de votações"
@@ -840,6 +847,8 @@ pt-BR:
         no_questions: "Não há perguntas atribuídas a esta votação."
         questions_title: "Lista de perguntas"
         table_title: "Título"
+        edit_answers: Editar respostas
+        see_proposal: "(Ver proposta)"
       flash:
         question_added: "Perguntas adicionadas a essa votação"
         error_on_question_added: "Pergunta não pode ser atribuída a essa votação"
@@ -860,6 +869,7 @@ pt-BR:
         title: "Editar pergunta"
       new:
         title: "Criar Questão"
+        title_proposal: "Criar pergunta"
         poll_label: "Votação"
       answers:
         images:
@@ -1007,7 +1017,14 @@ pt-BR:
         title: Propostas
         id: ID
         author: Autor
+        select: Selecionar
+        selected: Selecionado
         milestones: Marcos
+        no_proposals: Não existem propostas.
+      form:
+        update: Atualizar proposta
+      update:
+        notice: Proposta atualizada com sucesso
     hidden_proposals:
       index:
         filter: Filtro
@@ -1066,6 +1083,8 @@ pt-BR:
       proposal_search:
         button: Buscar
         placeholder: Buscar propostas por título, código, descrição ou pergunta
+      debate_search:
+        button: Pesquisar
       user_search:
         button: Buscar
         placeholder: Pesquisar usuário por nome ou pelo email
@@ -1083,6 +1102,8 @@ pt-BR:
       content: Conteúdo
       created_at: Criado em
       delete: Apagar
+      show_results_and_stats: "Exibir resultados e estatísticas"
+      results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
     geozones:
       index:
         title: Geozona
@@ -1156,10 +1177,16 @@ pt-BR:
           visits: Visitas
           votes: Total de votos
         budgets_title: Orçamento participativo
+        participatory_budgets: Orçamentos Participativos
         direct_messages: Mensagens diretas
         proposal_notifications: Notificações de proposta
         incomplete_verifications: Verificações incompletas
         polls: Votações
+      graph:
+        debate_created: Debates
+        visit: Visitas
+        level_2_user: Usuários de nível 2
+        proposal_created: Propostas dos cidadãos
       direct_messages:
         title: Mensagens diretas
         total: Total
@@ -1320,3 +1347,5 @@ pt-BR:
     translations:
       remove_language: Remover idioma
       add_language: Adicionar idioma
+    change_log:
+      id: "ID"
