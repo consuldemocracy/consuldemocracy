@@ -16,6 +16,7 @@ pt-BR:
         table_assigned_investments_valuation_open: Projetos de investimento atribuídos com avaliação aberta
         table_actions: Ações
         evaluate: Avaliar
+        no_budgets: "Não há orçamentos"
     budget_investments:
       index:
         headings_filter_all: Todos os títulos
@@ -56,6 +57,7 @@ pt-BR:
         responsibles: Responsáveis
         assigned_admin: Administrador designado
         assigned_valuators: Avaliadores designados
+        preview: Pré-visualização de investimento
       edit:
         dossier: Relatório
         price_html: "Preço (%{currency})"
