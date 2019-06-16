@@ -51,6 +51,10 @@ pt-BR:
         zero: Nenhuma resposta
         one: 1 resposta
         other: "%{count} respostas"
+      responses_show:
+        zero: Nenhuma resposta
+      responses_collapse:
+        zero: Nenhuma resposta
       user_deleted: Usuário apagado
       votes:
         zero: Nenhum voto
@@ -197,6 +201,15 @@ pt-BR:
       firefox: Firefox
       ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
       ie_title: Este website não está otimizado para o seu navegador
+    dashboard:
+      proposal_header:
+        published: Publicado
+        draft: Rascunho
+      proposal_totals:
+        supports:
+          zero: Nenhum apoio
+          one: 1 Apoio
+          other: "Apoios"
     footer:
       accessibility: Acessibilidade
       conditions: Termos e condições de uso
@@ -236,6 +249,7 @@ pt-BR:
           other: Você tem %{count} novas notificações
         notifications: Notificações
         no_notifications: "Vocie nnao possui novas notificações"
+      tracking: "Rastreamento"
     admin:
       watch_form_message: "Você possui alterações não salvas. Tem certeza que deseja sair da página?"
   notifications:
@@ -287,6 +301,9 @@ pt-BR:
     create:
       form:
         submit_button: Criar proposta
+    share:
+      improve_it: Melhore sua campanha e obtenha mais apoio.
+      dashboard: Mais informações
     edit:
       editing: Editar proposta
       form:
@@ -346,6 +363,7 @@ pt-BR:
           error: "Ocorreu um erro. Por favor, vá à página 'Sua conta' para desativar manualmente recomendações de propostas"
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas pelo autor"
+      archived_proposals: Propostas arquivadas
       retired_links:
         all: Todos
         duplicated: Duplicado
@@ -432,6 +450,44 @@ pt-BR:
     update:
       form:
         submit_button: Salvar alterações
+  dashboard:
+    menu:
+      resources: Recursos
+      community: Comunidade
+      polls: Votações
+      mailing: E-mail
+      messages: Mensagem para os usuários
+    progress:
+      title: Gráfico
+      group_by_month: Mensal
+      group_by_week: Semanal
+      group_by_date: Diário
+    recommended_actions:
+      pending_title: Pendente
+      done_title: Feito
+    next_goal:
+      title: Objetivo
+    goal:
+      days:
+        one: "%{count} dia"
+        other: "%{count} dias"
+      locked_resource: Recurso bloqueado
+    community:
+      participants: Participantes
+      debates: Debates
+      comments: Comentários
+      latest_comments: Últimas mensagens
+    polls:
+      index:
+        title: Votações
+        create: Criar votação
+        links: Links
+        additiontal_information: Informação adicional
+      new:
+        title: Nova votação
+        submit: Criar votação
+      edit:
+        submit: Atualizar votação
   polls:
     all: "Tudo"
     no_dates: "nenhuma data atribuída"
