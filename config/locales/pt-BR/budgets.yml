@@ -168,12 +168,19 @@ pt-BR:
       accepted: "Proposta de gasto aceita: "
       discarded: "Proposta de gasto descartada: "
       incompatibles: Incompatíveis
+      investment_title: Título do projeto
       investment_proyects: Lista de todos os projetos de investimento
       unfeasible_investment_proyects: Lista de todos os projetos de investimento inviáveis
       not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
     executions:
       link: "Marcos"
       heading_selection_title: "Por distrito"
+      filters:
+        status:
+          label: "Estado atual do projeto"
+          all: "Todo (%{count})"
+        milestone_tag:
+          all: "Todo (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data de início não pode ser igual ou posterior à data de término"
