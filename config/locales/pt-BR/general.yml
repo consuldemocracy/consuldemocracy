@@ -488,6 +488,16 @@ pt-BR:
         submit: Criar votação
       edit:
         submit: Atualizar votação
+      poll:
+        view_results: Exibir resultados
+        show_results: Exibir resultados
+      form:
+        add_question: Adicionar pergunta
+      question_fields:
+        add_answer: Adicionar resposta
+    poster:
+      index:
+        support: Apoiar minha proposta
   polls:
     all: "Tudo"
     no_dates: "nenhuma data atribuída"
@@ -553,6 +563,7 @@ pt-BR:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Você votou %{answer}"
+      add_answer: "Adicionar resposta"
   proposal_notifications:
     new:
       title: "Enviar mensagem"
@@ -729,7 +740,10 @@ pt-BR:
       delete_alert: "Tem certeza que deseja excluir seu projeto de investimento? Esta ação não pode ser desfeita"
     proposals:
       retired: "Proposta retirada"
+      draft: Rascunho
+      published: Publicado
       see: "Ver proposta"
+      actions: Ações
   votes:
     agree: Eu concordo
     anonymous: Excesso de votos anônimos para admitir voto %{verify_account}
@@ -822,3 +836,9 @@ pt-BR:
       text_sign_in: iniciar sessão
       text_sign_up: inscrever-se
       title: Como eu posso comentar este documento?
+  links:
+    form:
+      delete_button: Excluir
+      cancel_button: Cancelar
+    nested_links:
+      title: Links
