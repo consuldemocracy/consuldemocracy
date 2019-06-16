@@ -1,12 +1,16 @@
 pt-BR:
   tracking:
+    header:
+      title: Rastreamento
     menu:
+      title: Rastreamento
       budgets: Orçamentos participativos
     budgets:
       index:
         title: Orçamentos participativos
         table_name: Nome
         table_actions: Ações
+        tracking: Rastreamento
         no_budgets: "Não há orçamentos"
     budget_investments:
       index:
@@ -41,3 +45,15 @@ pt-BR:
         documents: "Documentos"
         milestone: Marco
         new_milestone: Criar marco
+      new:
+        creating: Criar marco
+        date: Data
+        description: Descrição
+      edit:
+        title: Editar marco
+      create:
+        notice: Novo marco criado com sucesso!
+      update:
+        notice: Marco atualizado com sucesso
+      delete:
+        notice: Marco excluído com sucesso
