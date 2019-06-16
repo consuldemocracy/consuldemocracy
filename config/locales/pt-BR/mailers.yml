@@ -70,3 +70,13 @@ pt-BR:
       hi: "Caro usuário,"
       thanks: "Obrigada novamente por participar."
       sincerely: "Atenciosamente"
+    evaluation_comment:
+      hi: Oi
+    new_actions_notification_rake_created:
+      hi: "Olá %{name},"
+    new_actions_notification_rake_published:
+      hi: "Olá %{name},"
+    new_actions_notification_on_create:
+      hi: "Oi %{name}!"
+    new_actions_notification_on_published:
+      text_2: "Por que 100?"
