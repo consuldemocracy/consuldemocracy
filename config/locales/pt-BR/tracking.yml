@@ -1,1 +1,43 @@
 pt-BR:
+  tracking:
+    menu:
+      budgets: Orçamentos participativos
+    budgets:
+      index:
+        title: Orçamentos participativos
+        table_name: Nome
+        table_actions: Ações
+        no_budgets: "Não há orçamentos"
+    budget_investments:
+      index:
+        title: Projetos de investimento
+        edit: Editar marcos
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nome do título
+        table_actions: Ações
+        no_investments: "Não há projetos de investimento."
+      show:
+        title: Projeto de investimento
+        info: Informação do autor
+        by: Enviado por
+        sent: Enviado em
+        heading: Título
+        undefined: "Não definido"
+        responsibles: Responsáveis
+        assigned_admin: Administrador designado
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Título"
+        table_description: "Descrição"
+        table_publication_date: "Data de publicação"
+        table_status: Status
+        table_actions: "Ações"
+        delete: "Deletar marco"
+        no_milestones: "Não há marcos definidos"
+        image: "Imagem"
+        show_image: "Exibir imagem"
+        documents: "Documentos"
+        milestone: Marco
+        new_milestone: Criar marco
