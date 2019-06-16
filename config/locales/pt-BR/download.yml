@@ -1,1 +1,51 @@
 pt-BR:
+  download:
+    edit:
+      description: "Descrição"
+      debates: "Debates"
+      proposals: "Propostas"
+      legislation_processes: "Processo legislativo"
+      budget_investments: "Orçamento participativo"
+      comments: "Comentários"
+      submit: "Salvar alterações"
+      config:
+        "0": ""
+        "1": "- Marcos"
+    fielddescription:
+      debates:
+        title: "Título"
+        description: "Descrição"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        hidden_at: "Oculto em"
+        comments_count: "Contagem de comentários"
+      proposals:
+        title: "Título"
+        description: "Descrição"
+        question: "Pergunta"
+        hidden_at: "Oculto em"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        summary: "Resumo"
+      legislation_processes:
+        hidden_at: "Oculto em"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        summary: "Resumo"
+        published: "Publicado"
+        background_color: "Cor de fundo"
+        font_color: "Cor da fonte"
+      budget_investments:
+        title: "Título"
+        description: "Descrição"
+        price: "Preço"
+        feasibility: "Viabilidade"
+        price_explanation: "Explanação do preço"
+        unfeasibility_explanation: "Explanação da inviabilidade"
+        valuation_finished: "Avaliação terminada"
+        hidden_at: "Oculto em"
+        comments_count: "Contagem de comentários"
+        created_at: "Criado em"
+        updated_at: "Atualizado em"
+        selected: "Selecionado"
+        location: "Localização"
