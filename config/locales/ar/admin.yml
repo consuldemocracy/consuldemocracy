@@ -1198,10 +1198,17 @@ ar:
         title: إقتراحات
         id: ID
         author: كاتب
+        select: حدّد
+        selected: محدّد
         milestones: معالم
         no_proposals: لا توجد مقترحات.
+        link: "تحميل المقترحات"
       show:
         create_question: أضف هذا المقترح إلى استطلاع للتصويت
+      form:
+        update: تحديث المقترح
+      update:
+        notice: تم تحديث المقترح بنجاح
     hidden_proposals:
       index:
         filter: ترشيح
@@ -1226,6 +1233,7 @@ ar:
       index:
         update_setting: تحديث
         participation_processes: "عمليات المشاركة"
+        images_and_documents: "الصور والوثائق"
         feature_flags: المميزات
         features:
           enabled: "تم تفعيل الميزة"
@@ -1263,6 +1271,9 @@ ar:
       proposal_search:
         button: بحث
         placeholder: البحث عن الاقتراحات عن طريق العنوان أو الرمز أو الوصف أو السؤال
+      debate_search:
+        button: بحث
+        placeholder: بحث في المناقشات حسب العنوان أو الوصف
       user_search:
         button: بحث
         placeholder: بحث عن مستخدم عن طريق الاسم أو البريد الإلكتروني
