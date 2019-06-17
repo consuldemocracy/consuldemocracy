@@ -317,6 +317,7 @@ ar:
       preview_title: سيضهر مقترحك بهذا الشكل عند نشره
     share:
       improve_it: حسّن حملتك واحصل على المزيد من الدعم.
+      dashboard: رؤية المزيد من المعلومات
       message: "لقد دعمت المقترح %{title} في %{handle}. إذا كنت مهتمًا، إدعمه أيضًا!"
     edit:
       editing: تعديل المقترح
@@ -371,6 +372,9 @@ ar:
           error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
       retired_proposals: المقترحات المسحوبة
       retired_proposals_link: "المقترحات المسحوبة من قبل المؤلف"
+      selected_proposals: المقترحات المختارة
+      selected_proposals_link: رؤية المقترحات المختارة
+      proposals_lists: قائمات المقترحات
       retired_links:
         all: الكل
         duplicated: مكرّر
@@ -451,6 +455,7 @@ ar:
       total_percent: 100%
       archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع الدعم."
       successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
+      selected: "المقترح المختار"
     show:
       author_deleted: تم حذف المستخدم
       code: "رمز المقترح:"
@@ -485,8 +490,10 @@ ar:
       resources: موارد
       community: المجتمع
       polls: استطلاعات
+      mailing: البريد الإلكتروني
       poster: ملصقة
       recommended_actions: الإجراءات الموصى بها
+      messages: رسالة للمستخدمين
     form:
       request: طلب
     create_request:
@@ -495,6 +502,7 @@ ar:
       group_by_month: شهريا
       group_by_week: أسبوعيا
       group_by_date: اليومي
+      progress: التقدم المتراكم
       supports: تشجيعات
       success: تقدم مثالي
       new_action: جديد
@@ -508,12 +516,16 @@ ar:
     resources:
       available_resources: الموارد المتاحة
     resource:
+      required_days: "%{days} أيام مطلوبة"
+      required_supports: "%{supports} دعم مطلوب"
       and: و
+      view_resource: رؤية الموارد
       request_resource: طلب المورد
       resource_locked: الموارد مغلقة
     recommended_actions:
       title: الإجراءات الموصى بها
       goto_proposed_actions: إذهب إلى الإجراءات الموصى بها
+      see_proposed_actions: مراجعة الإجراءات الموصى بها
       hide_proposed_actions: إخفاء الإجراءات الموصى بها
       pending_title: معلق
       show_description: إظهار الوصف
@@ -522,6 +534,7 @@ ar:
       without_done_actions: لا توجد إجراءات موصى بها منتهية
     next_goal:
       title: هدف
+      see_complete_course: مراجعة الدورة كاملة
     goal:
       ideal_time: الوقت المثالي
     community:
@@ -550,17 +563,27 @@ ar:
         remove_answer: إزالة الإجابة
     poster:
       index:
+        title: معاينة الملصق
+        proposal_code: "رمز المقترح: %{code}"
         support: دعم مقترحي
+      new:
+        title: ملصق المقترح الخاص بك
       options:
         preview: معاينة
         download: تحميل
     mailing:
+      index:
+        title: معاينة البريد الإلكتروني
+      new:
+        title: نموذج بريد إلكتروني للمشاركة
       mailing_options:
         preview: معاينة
       create:
         sent: تم إرسال البريد الإلكتروني
     mailer:
       forward:
+        subtitle_html: "إذا قمت بدعمي ، <br>فسوف نحقق ذلك."
+        support_button: دعم هذا المقترح
         hi: "مرحبا!"
   polls:
     all: "الكل"
@@ -589,6 +612,10 @@ ar:
         title: تعليمات حول التصويت
         description: استطلاعات المواطنين هي آلية تشاركية يمكن من خلالها للمواطنين الذين يتمتعون بحقوق التصويت اتخاذ قرارات مباشرة
       no_polls: "جميع الاستبيانات منتهية."
+      max_votes_reached: "لقد بلغت الحد الأقصى لعدد الأصوات. شكرا جزيلا لك على المشاركة"
+      descriptions:
+        unique: يمكن الإجابة مرة واحدة فقط على السؤال.
+        multiple: يسمح باختيار إجابات متعددة. من الممكن تعيين الحد الأقصى لعدد الإجابات.
     show:
       already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
       already_voted_in_web: "لقد شاركت سابقا في هذا الاستطلاع. إذا قمت بالتصويت مرة أخرى، سيتم استبدال التصويت السّابق."
@@ -630,6 +657,7 @@ ar:
     show:
       vote_answer: "صوّت على %{answer}"
       voted: "لقد قمت بالتصويت على %{answer}"
+      add_answer: "إضافة إجابة"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
