@@ -290,6 +290,7 @@ ar:
         description_finished: "الوصف عند الإنتهاء من الميزانية"
         phase: "المرحلة"
         currency_symbol: "العملة"
+        help_link: "رابط المساعدة"
       budget/investment:
         heading_id: "عنوان"
         title: "عنوان"
@@ -501,6 +502,9 @@ ar:
       link:
         label: عنوان
         url: رابط
+      valuator:
+        description: الوصف
+        valuator_group_id: مجموعة تقييم
     errors:
       models:
         user:
