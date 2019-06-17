@@ -16,7 +16,7 @@ wb.add_worksheet(name: "Resume") do |sheet|
 
   if @process.proposals_phase.enabled? && !Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).empty?
     sheet.add_row [t("legislation.summary.proposal_phase"), t("legislation.proposals.total", count: Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).count)]
-    Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).order('cached_votes_score desc').each do |proposal|
+    Legislation::Proposal.where(legislation_process_id: @process).where(selected: true).order("cached_votes_score desc").each do |proposal|
       sheet.add_row [proposal.title,
                      (proposal.cached_votes_total - proposal.cached_votes_down).to_s + space + t("legislation.summary.votes")]
       sheet.add_hyperlink :location => legislation_process_proposal_url(proposal.legislation_process_id, proposal), :ref => sheet.rows.last.cells.first

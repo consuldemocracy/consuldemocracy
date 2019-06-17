@@ -30,12 +30,12 @@
 
   <div class="tabs-content" data-tabs-content="communities_show_tabs">
     <div class="tabs-panel is-active" id="tab-participants">
-      <%= render partial: 'participant', collection: @participants %>
+      <%= render partial: "participant", collection: @participants %>
     </div>
 
     <% if @community.proposal.present? %>
       <div class="tabs-panel topic-show" id="tab-polls">
-        <%= render partial: 'poll', collection: @community.proposal.polls %>
+        <%= render partial: "poll", collection: @community.proposal.polls %>
       </div>
     <% end %>
   </div>

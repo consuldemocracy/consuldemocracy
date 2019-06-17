@@ -18,7 +18,7 @@
 
     <div class="mail-body">
       <p><%= t("dashboard.mailer.forward.hi") %></p>
-      <p><%= t("dashboard.mailer.forward.introduction", org: setting['org_name']) %></p>
+      <p><%= t("dashboard.mailer.forward.introduction", org: setting["org_name"]) %></p>
       <p><%= t("dashboard.mailer.forward.support") %></p>
 
       <div class="text-center">
@@ -40,5 +40,5 @@
     </div>
   </div>
 
-  <%= render 'mailing_options' %>
+  <%= render "mailing_options" %>
 </div>

@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <%= render "layouts/tracking_data" %>
     <%= render "layouts/meta_tags" %>
-    <title><%= content_for?(:title) ? yield(:title) : setting['org_name'] %></title>
+    <title><%= content_for?(:title) ? yield(:title) : setting["org_name"] %></title>
     <%= content_for :canonical %>
     <%= stylesheet_link_tag    "application" %>
     <!--[if lt IE 9]>
       <%= stylesheet_link_tag "ie" %>
     <![endif]-->
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
     <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
@@ -21,12 +21,12 @@
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= setting['per_page_code_head'].try(:html_safe) %>
+    <%= setting["per_page_code_head"].try(:html_safe) %>
   </head>
   <body class="proposal-dashboard">
-    <%= setting['per_page_code_body'].try(:html_safe) %>
+    <%= setting["per_page_code_body"].try(:html_safe) %>
 
-    <h1 class="show-for-sr"><%= setting['org_name'] %></h1>
+    <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
