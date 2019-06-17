@@ -9,7 +9,7 @@ describe Tag do
 
     expect(tag.taggings_count).to eq(1)
 
-    debate.update(hidden_at: Time.now)
+    debate.update(hidden_at: Time.current)
 
     tag.reload
     expect(tag.taggings_count).to eq(0)
@@ -22,7 +22,7 @@ describe Tag do
 
     expect(tag.taggings_count).to eq(1)
 
-    proposal.update(hidden_at: Time.now)
+    proposal.update(hidden_at: Time.current)
 
     tag.reload
     expect(tag.taggings_count).to eq(0)

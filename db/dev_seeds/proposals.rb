@@ -39,7 +39,7 @@ section "Creating Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now)
+                                published_at: Time.current)
     random_locales.map do |locale|
       Globalize.with_locale(locale) do
         proposal.title = "Title for locale #{locale}"
@@ -97,7 +97,7 @@ section "Creating Successful Proposals" do
                                 skip_map: "1",
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"],
-                                published_at: Time.now)
+                                published_at: Time.current)
     random_locales.map do |locale|
       Globalize.with_locale(locale) do
         proposal.title = "Successful proposal title for locale #{locale}"
@@ -123,7 +123,7 @@ section "Creating Successful Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now)
+                                published_at: Time.current)
     random_locales.map do |locale|
       Globalize.with_locale(locale) do
         proposal.title = "Tagged proposal title for locale #{locale}"

@@ -30,19 +30,19 @@ describe Budget::Phase do
 
     describe "#dates_range_valid?" do
       it "is valid when start & end dates are different & consecutive" do
-        first_phase.update_attributes(starts_at: Date.today, ends_at: Date.tomorrow)
+        first_phase.update_attributes(starts_at: Date.current, ends_at: Date.tomorrow)
 
         expect(first_phase).to be_valid
       end
 
       it "is not valid when dates are equal" do
-        first_phase.update_attributes(starts_at: Date.today, ends_at: Date.today)
+        first_phase.update_attributes(starts_at: Date.current, ends_at: Date.current)
 
         expect(first_phase).not_to be_valid
       end
 
       it "is not valid when start date is later than end date" do
-        first_phase.update_attributes(starts_at: Date.tomorrow, ends_at: Date.today)
+        first_phase.update_attributes(starts_at: Date.tomorrow, ends_at: Date.current)
 
         expect(first_phase).not_to be_valid
       end

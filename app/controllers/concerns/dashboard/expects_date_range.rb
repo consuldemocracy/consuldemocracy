@@ -10,6 +10,6 @@ module Dashboard::ExpectsDateRange
 
   def end_date
     return Date.parse(params[:end_date]) unless params[:end_date].blank?
-    Date.today
+    Date.current
   end
 end

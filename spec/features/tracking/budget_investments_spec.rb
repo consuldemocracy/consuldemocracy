@@ -200,7 +200,7 @@ describe "Valuation budget investments" do
 
       expect(page).to have_content("Create milestone")
       fill_in("Description", with: "Test Description")
-      page.find("#milestone_publication_date").set(Date.today)
+      page.find("#milestone_publication_date").set(Date.current)
 
       click_button "Create milestone"
 
