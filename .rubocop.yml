@@ -351,12 +351,6 @@ RSpec/VerifiedDoubles:
 RSpec/VoidExpect:
   Enabled: true
 
-FactoryBot/StaticAttributeDefinedDynamically:
-  Enabled: true
-
-FactoryBot/DynamicAttributeDefinedStatically:
-  Enabled: false
-
 Security/Eval:
   Enabled: true
 
