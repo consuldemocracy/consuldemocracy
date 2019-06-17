@@ -757,7 +757,8 @@ ar:
       hide: إخفاء التوصيات
     download:
       link:
-        proposal: "حميل المقترحات"
+        proposal: "تحميل المقترحات"
+        debate: "تحميل المناقشات"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -899,3 +900,10 @@ ar:
       title: روابط
     link_fields:
       label_placeholder: عنوان الرابط
+  question:
+    max_votes: العدد الأقصى للأصوات
+    votation_type: نوع التصويت
+  enum_type:
+    title: نوع التصويت
+    unique: إجابة واحدة ، مغلقة
+    multiple: إجابات متعددة ، مغلقة
