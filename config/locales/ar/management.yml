@@ -31,6 +31,7 @@ ar:
     email_label: البريد الإلكتروني
     date_of_birth: تاريخ الميلاد
     email_verifications:
+      already_verified: تم تأكيد هذا الحساب مسبقاً.
       choose_options: "الرجاء اختيار أحد الخيارات التالية:"
       document_mismatch: "ينتمي هذا البريد الإلكتروني لمستخدم لديه معرف: %{document_number}(%{document_type})"
       email_placeholder: اكتب عنوان البريد الإلكتروني الذي إستعمله هذا الشخص لإنشاء حسابه
@@ -43,38 +44,58 @@ ar:
       create_proposal: إنشاء مقترح
       print_proposals: طباعة المقترحات
       support_proposals: دعم مقترحات
+      create_budget_investment: انشاء ميزانية استثمار
+      print_budget_investments: طباعة استثمارات الميزانية
+      support_budget_investments: دعم استثمارات الميزانية
       users: إدارة المستخدمين
       user_invites: إرسال الدعوات
       select_user: حدد المستخدم
     permissions:
       create_proposals: إنشاء مقترحات
+      debates: الانخراط في المناقشات
       support_proposals: دعم مقترحات
     print:
+      proposals_info: 'قم بإنشاء مقترحك على http: //url.consul'
       proposals_title: "المقترحات:"
+      budget_investments_info: 'قم بالمشاركة في http: //url.consul'
+    print_info: طباعة هذه المعلومات
     proposals:
+      alert:
+        unverified_user: لم يتم التحقق من المستخدم
       create_proposal: إنشاء مقترح
       print:
         print_button: طباعة
       index:
         title: دعم مقترحات
     budgets:
+      create_new_investment: انشاء ميزانية استثمار
+      print_investments: طباعة استثمارات الميزانية
+      support_investments: دعم استثمارات الميزانية
       table_name: الإ سم
       table_phase: مرحلة
       table_actions: الإجراءات
     budget_investments:
+      alert:
+        unverified_user: لم يتم التحقق من المستخدم
       create: انشاء ميزانية استثمار
       filters:
         unfeasible: الاستثمارات الغير مجدية
       print:
         print_button: طباعة
+    sessions:
+      signed_out: تم الخروج بنجاح.
     username_label: اسم المستخدم
     users:
       create_user: إنشاء حساب جديد
       create_user_submit: إنشاء مستخدم
       create_user_success_html: لقد أرسلنا رسالة إلكترونية إلى عنوان البريد الإلكتروني <b>%{email}</b> من أجل التحقق أنه ملك لهذا المستخدم. تحتوي الرسالة على رابط يجب النقر عليه. ثم عليهم بعدها بتعيين كلمة المرور الخاص بهم قبل التمكن من تسجيل الدخول إلى الموقع الإلكتروني
       email_optional_label: البريد الإلكتروني (اختياري)
+      erased_notice: تم حذف حساب المستخدم.
+      erased_by_manager: "تم حذفه من قبل المدير: %{manager}"
       erase_account_link: حذف المستخدم
       erase_account_confirm: هل انت متاكد من انك تريد حذف الحساب؟ لا يمكن التراجع هن هذه الخطوة
+      erase_warning: لا يمكن التراجع عن هذا الإجراء. يرجى التأكد من أنك تريد محو هذا الحساب.
+      erase_submit: حذف الحساب
     user_invites:
       new:
         label: البريد الالكتروني
@@ -82,4 +103,5 @@ ar:
         submit: إرسال الدعوات
         title: إرسال الدعوات
       create:
+        success_html: تم إرسال <strong>%{count} دعوات</strong>.
         title: إرسال الدعوات
