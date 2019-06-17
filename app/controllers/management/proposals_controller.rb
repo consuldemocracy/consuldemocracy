@@ -13,7 +13,7 @@ class Management::ProposalsController < Management::BaseController
 
   def create
     @resource = resource_model.new(strong_params.merge(author: current_user,
-                                                       published_at: Time.now))
+                                                       published_at: Time.current))
 
     if @resource.save
       track_event

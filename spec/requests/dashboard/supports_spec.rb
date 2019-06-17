@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Dashboard::GroupSupports do
-  let(:created_at) { Time.now - 9.days }
+  let(:created_at) { Time.current - 9.days }
   let(:proposal) { create(:proposal, created_at: created_at, published_at: created_at) }
 
   before do

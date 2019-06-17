@@ -36,7 +36,7 @@ section "Creating Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now)
+                                published_at: Time.current)
     add_image_to proposal
   end
 end
@@ -78,7 +78,7 @@ section "Creating Successful Proposals" do
                                 skip_map: "1",
                                 terms_of_service: "1",
                                 cached_votes_up: Setting["votes_for_proposal_success"],
-                                published_at: Time.now)
+                                published_at: Time.current)
     add_image_to proposal
   end
 
@@ -96,7 +96,7 @@ section "Creating Successful Proposals" do
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now)
+                                published_at: Time.current)
     add_image_to proposal
   end
 end
