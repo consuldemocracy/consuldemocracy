@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :legislation_process, class: "Legislation::Process" do
-    title "A collaborative legislation process"
-    description "Description of the process"
-    summary "Summary of the process"
+    title { "A collaborative legislation process" }
+    description { "Description of the process" }
+    summary { "Summary of the process" }
 
     start_date { Date.current - 5.days }
     end_date { Date.current + 5.days }
@@ -16,13 +16,13 @@ FactoryBot.define do
     people_proposals_phase_start_date { Date.current }
     people_proposals_phase_end_date { Date.current + 2.days }
     result_publication_date { Date.current + 5.days }
-    debate_phase_enabled true
-    allegations_phase_enabled true
-    proposals_phase_enabled true
-    people_proposals_phase_enabled true
-    draft_publication_enabled true
-    result_publication_enabled true
-    published true
+    debate_phase_enabled { true }
+    allegations_phase_enabled { true }
+    proposals_phase_enabled { true }
+    people_proposals_phase_enabled { true }
+    draft_publication_enabled { true }
+    result_publication_enabled { true }
+    published { true }
 
     trait :past do
       start_date { Date.current - 12.days }
@@ -40,7 +40,7 @@ FactoryBot.define do
       end_date { Date.current + 5.days }
       draft_start_date { Date.current - 2.days }
       draft_end_date { Date.current + 2.days }
-      draft_phase_enabled true
+      draft_phase_enabled { true }
     end
 
     trait :in_debate_phase do
@@ -57,33 +57,33 @@ FactoryBot.define do
     trait :in_proposals_phase do
       proposals_phase_start_date { Date.current - 1.day }
       proposals_phase_end_date { Date.current + 2.days }
-      proposals_phase_enabled true
+      proposals_phase_enabled { true }
     end
 
     trait :upcoming_proposals_phase do
       proposals_phase_start_date { Date.current + 1.day }
       proposals_phase_end_date { Date.current + 2.days }
-      proposals_phase_enabled true
+      proposals_phase_enabled { true }
     end
 
     trait :in_people_proposals_phase do
       people_proposals_phase_start_date { Date.current - 1.day }
       people_proposals_phase_end_date { Date.current + 2.days }
-      people_proposals_phase_enabled true
+      people_proposals_phase_enabled { true }
     end
 
     trait :upcoming_people_proposals_phase do
       people_proposals_phase_start_date { Date.current + 1.day }
       people_proposals_phase_end_date { Date.current + 2.days }
-      people_proposals_phase_enabled true
+      people_proposals_phase_enabled { true }
     end
 
     trait :published do
-      published true
+      published { true }
     end
 
     trait :not_published do
-      published false
+      published { false }
     end
 
     trait :open do
@@ -94,23 +94,23 @@ FactoryBot.define do
     trait :empty do
       start_date { Date.current - 5.days }
       end_date { Date.current + 5.days }
-      debate_start_date nil
-      debate_end_date nil
-      draft_publication_date nil
-      allegations_start_date nil
-      allegations_end_date nil
-      proposals_phase_start_date nil
-      proposals_phase_end_date nil
-      people_proposals_phase_start_date nil
-      people_proposals_phase_end_date nil
-      result_publication_date nil
-      debate_phase_enabled false
-      allegations_phase_enabled false
-      proposals_phase_enabled false
-      people_proposals_phase_enabled false
-      draft_publication_enabled false
-      result_publication_enabled false
-      published true
+      debate_start_date { nil }
+      debate_end_date { nil }
+      draft_publication_date { nil }
+      allegations_start_date { nil }
+      allegations_end_date { nil }
+      proposals_phase_start_date { nil }
+      proposals_phase_end_date { nil }
+      people_proposals_phase_start_date { nil }
+      people_proposals_phase_end_date { nil }
+      result_publication_date { nil }
+      debate_phase_enabled { false }
+      allegations_phase_enabled { false }
+      proposals_phase_enabled { false }
+      people_proposals_phase_enabled { false }
+      draft_publication_enabled { false }
+      result_publication_enabled { false }
+      published { true }
     end
 
     trait :with_milestone_tags do
@@ -120,11 +120,11 @@ FactoryBot.define do
 
   factory :legislation_draft_version, class: "Legislation::DraftVersion" do
     process factory: :legislation_process
-    title "Version 1"
-    changelog "What changed in this version"
-    status "draft"
-    final_version false
-    body <<-LOREM_IPSUM
+    title { "Version 1" }
+    changelog { "What changed in this version" }
+    status { "draft" }
+    final_version { false }
+    body { <<-LOREM_IPSUM }
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 
 Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.
@@ -139,29 +139,29 @@ Lorem salutandi eu mea, eam in soleat iriure assentior. Tamquam lobortis id qui.
 LOREM_IPSUM
 
     trait :published do
-      status "published"
+      status { "published" }
     end
 
     trait :final_version do
-      final_version true
+      final_version { true }
     end
   end
 
   factory :legislation_annotation, class: "Legislation::Annotation" do
     draft_version factory: :legislation_draft_version
     author factory: :user
-    quote "ipsum"
-    text "a comment"
-    ranges [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}]
-    range_start "/p[1]"
-    range_start_offset 6
-    range_end "/p[1]"
-    range_end_offset 11
+    quote { "ipsum" }
+    text { "a comment" }
+    ranges { [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}] }
+    range_start { "/p[1]" }
+    range_start_offset { 6 }
+    range_end { "/p[1]" }
+    range_end_offset { 11 }
   end
 
   factory :legislation_question, class: "Legislation::Question" do
     process factory: :legislation_process
-    title "Question text"
+    title { "Question text" }
     author factory: :user
   end
 
@@ -178,55 +178,55 @@ LOREM_IPSUM
 
   factory :legislation_proposal, class: "Legislation::Proposal" do
     sequence(:title) { |n| "Proposal #{n} for a legislation" }
-    summary "This law should include..."
-    terms_of_service "1"
+    summary { "This law should include..." }
+    terms_of_service { "1" }
     process factory: :legislation_process
     author factory: :user
   end
 
   factory :debate_comment, class: "Comment" do
-    commentable_id "10"
-    commentable_type Legislation::Question
-    body "This is a comment"
-    user_id "1"
-    cached_votes_down "0"
-    cached_votes_total "0"
-    cached_votes_up "0"
-    confidence_score "0"
+    commentable_id { "10" }
+    commentable_type { Legislation::Question }
+    body { "This is a comment" }
+    user_id { "1" }
+    cached_votes_down { "0" }
+    cached_votes_total { "0" }
+    cached_votes_up { "0" }
+    confidence_score { "0" }
   end
 
   factory :text_comment, class: "Comment" do
-    commentable_id "10"
-    commentable_type Legislation::Annotation
-    body "This is a comment"
-    user_id "1"
-    cached_votes_down "0"
-    cached_votes_total "0"
-    cached_votes_up "0"
-    confidence_score "0"
-    ancestry nil
+    commentable_id { "10" }
+    commentable_type { Legislation::Annotation }
+    body { "This is a comment" }
+    user_id { "1" }
+    cached_votes_down { "0" }
+    cached_votes_total { "0" }
+    cached_votes_up { "0" }
+    confidence_score { "0" }
+    ancestry { nil }
   end
 
   factory :legislation_people_proposal, class: "Legislation::PeopleProposal" do
     sequence(:title) { |n| "People and group #{n} for a legislation" }
-    summary "This law should be implemented by..."
-    terms_of_service "1"
+    summary { "This law should be implemented by..." }
+    terms_of_service { "1" }
     process factory: :legislation_process
     author factory: :user
-    validated false
+    validated { false }
 
     trait :with_contact_info do
-      email "proposal@test.com"
-      website "https://proposal.io"
-      phone "666666666"
-      facebook "facebook.id"
-      twitter "TwitterId"
-      youtube "youtubechannelid"
-      instagram "instagramid"
+      email { "proposal@test.com" }
+      website { "https://proposal.io" }
+      phone { "666666666" }
+      facebook { "facebook.id" }
+      twitter { "TwitterId" }
+      youtube { "youtubechannelid" }
+      instagram { "instagramid" }
     end
 
     trait :validated do
-      validated true
+      validated { true }
     end
   end
 end

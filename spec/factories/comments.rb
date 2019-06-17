@@ -27,7 +27,7 @@ FactoryBot.define do
     end
 
     trait :valuation do
-      valuation true
+      valuation { true }
       association :commentable, factory: :budget_investment
       before :create do |valuation|
         valuator = create(:valuator)
