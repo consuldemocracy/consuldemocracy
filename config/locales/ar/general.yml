@@ -658,12 +658,19 @@ ar:
       vote_answer: "صوّت على %{answer}"
       voted: "لقد قمت بالتصويت على %{answer}"
       add_answer: "إضافة إجابة"
+    description:
+      multiple: "يمكنك تحديد %{maximum} إجابات كحد أقصى."
+      answer_set_closed: "يمكنك اختيار %{maximum} إجابات كحد أقصى."
+      prioritized: "يمكنك تحديد %{maximum} إجابات كحد أقصى. سيستخدم هذا السؤال نظام%{system} للعدّ."
+      positive_open: "يمكنك تحديد %{maximum} إجابات كحد أقصى وإضافة إجاباتك الخاصة."
+    read_more_about: "اقرأ المزيد حول:"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
       title_label: "عنوان"
       body_label: "رسالة"
       submit_button: "إرسال رسالة"
+      info_about_receivers_html: "سيتم إرسال هذه الرسالة إلى <strong>%{count} أشخاص </strong> وستظهر في %{proposal_page}.<br> لن يتم إرسال الرسائل على الفور ، وسيتلقى المستخدمون بريدًا إلكترونيًا دوريًا يتضمن جميع إشعارات المقترحات."
       proposal_page: "صفحة المقترح"
     show:
       back: "عودة"
@@ -683,6 +690,7 @@ ar:
       date_2: "الأسبوع الماضي"
       date_3: "الشهر الماضي"
       date_4: "العام الماضي"
+      date_5: "حسب الطلب"
       from: "من"
       general: "مع النص"
       general_placeholder: "اكتب النص"
@@ -691,6 +699,7 @@ ar:
       to: "إلى"
     author_info:
       author_deleted: تم حذف المستخدم
+      email_deleted: تم حذف البريد الإلكتروني
     back: عودة
     check: حدّد
     check_all: الكل
