@@ -48,9 +48,6 @@ Performance/FixedSize:
 Performance/FlatMap:
   Enabled: true
 
-Performance/LstripRstrip:
-  Enabled: true
-
 Performance/RangeInclude:
   Enabled: true
 
@@ -63,16 +60,10 @@ Performance/RedundantMatch:
 Performance/RedundantMerge:
   Enabled: true
 
-Performance/RedundantSortBy:
-  Enabled: true
-
 Performance/RegexpMatch:
   Enabled: true
 
 Performance/ReverseEach:
-  Enabled: true
-
-Performance/Sample:
   Enabled: true
 
 Performance/Size:
