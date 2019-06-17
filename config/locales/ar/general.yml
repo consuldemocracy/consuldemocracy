@@ -755,6 +755,9 @@ ar:
       title: التوصيات
       see_more: رؤية المزيد من التوصيات
       hide: إخفاء التوصيات
+    download:
+      link:
+        proposal: "حميل المقترحات"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
