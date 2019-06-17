@@ -905,5 +905,5 @@ ar:
     votation_type: نوع التصويت
   enum_type:
     title: نوع التصويت
-    unique: إجابة واحدة ، مغلقة
+    unique: إجابة واحدة، مغلقة
     multiple: إجابات متعددة، مغلقة
