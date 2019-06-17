@@ -675,13 +675,13 @@ ar:
       dashboard_actions: الموارد و الإجراءات
       download_settings:
         title: "تنزيل الإعدادات"
-        debates: "الحوارات"
+        debates: "المناقشات"
         proposals: "المقترحات"
         legislation_processes: "العملية التشريعية"
         budget_investments: "الميزانية التشاركية"
         comments: "التعليقات"
         budget_investments_milestones: "الميزانية التشاركية (المعالم)"
-      debates: "الحوارات"
+      debates: "المناقشات"
       comments: "التعليقات"
     administrators:
       index:
