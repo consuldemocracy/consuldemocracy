@@ -187,6 +187,7 @@ ar:
       user_not_found: لم يتم العثور على المستخدم
       invalid_date_range: "نطاق التاريخ غير صالح"
   form:
+    accept_terms: أوافق على %{policy} و %{conditions}
     accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
@@ -228,6 +229,12 @@ ar:
         current_goal: الهدف الحالي
         supports:
           zero: لا يوجد دعم
+          zero: "دعم"
+          one: 1 دعم
+          two: "دعم"
+          few: "دعم"
+          many: "دعم"
+          other: "دعم"
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
@@ -303,9 +310,13 @@ ar:
       form:
         submit_button: إنشاء مقترح
     created:
+      title: تهانينا! لقد اتخذت الخطوة الأولى.
+      motivation: "من المهم تحضير حملة الإطلاق لمقترحك حتى يكون ناجحًا. الأيام القليلة الأولى حاسمة."
       publish: لا ، أريد أن أنشر الاقتراح
       dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
+      preview_title: سيضهر مقترحك بهذا الشكل عند نشره
     share:
+      improve_it: حسّن حملتك واحصل على المزيد من الدعم.
       message: "لقد دعمت المقترح %{title} في %{handle}. إذا كنت مهتمًا، إدعمه أيضًا!"
     edit:
       editing: تعديل المقترح
