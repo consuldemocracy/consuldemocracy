@@ -111,6 +111,11 @@ ar:
         valuators:
           zero: "حدّد المقيمين"
         empty_administrators: "لا يوجد مدراء"
+        empty_valuators: "لا يوجد مقيمون"
+        name: "الإسم"
+        selected: "محدّد"
+        cancel: "إلغاء"
+        save: "حفظ"
       destroy:
         success_notice: تم حذف الميزانية بنجاح
         unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
@@ -243,6 +248,7 @@ ar:
           author_username: اسم الكاتب
           incompatible: غير متوافق
           price: السعر
+          author: الكاتب
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
       show:
@@ -273,6 +279,7 @@ ar:
           "true": "نعم"
           "false": "لا"
         valuator_groups: "مجموعات المقيمين"
+        preview: معاينة الاستثمار
       edit:
         classification: تصنيف
         compatibility: التوافق
@@ -287,7 +294,11 @@ ar:
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
         user_groups: "المجموعات"
+        milestone_tags: علامات المعلم
       search_unfeasible: بحث غير مجد
+    milestones:
+      index:
+        milestone_tags: علامات المعلم
     statuses:
       index:
         title: حالات المعلم
@@ -311,6 +322,16 @@ ar:
     progress_bars:
       index:
         title: "أشرطة التقدم"
+    comments:
+      index:
+        id: "ID"
+        content: "المحتوى"
+        author: "الكاتب"
+        commentable_type: "النوع"
+        link: "تحميل التعليقات"
+        title: التعليقات
+        no_comments: لا توجد أي تعليقات.
+        table_link: "رابط"
     dashboard:
       index:
         back: العودة إلى %{org}
@@ -450,6 +471,7 @@ ar:
           filters:
             active: نشِط
             all: الكل
+          link: "تحميل العملية التشريعية"
         new:
           back: عودة
           title: قم بإنشاء عملية تشريع تشاركية جديدة
@@ -651,11 +673,22 @@ ar:
       dashboard: لوحة القيادة الخاصة بالمقترحات
       administrator_tasks: الموارد المطلوبة
       dashboard_actions: الموارد و الإجراءات
+      download_settings:
+        title: "تنزيل الإعدادات"
+        debates: "الحوارات"
+        proposals: "المقترحات"
+        legislation_processes: "العملية التشريعية"
+        budget_investments: "الميزانية التشاركية"
+        comments: "التعليقات"
+        budget_investments_milestones: "الميزانية التشاركية (المعالم)"
+      debates: "الحوارات"
+      comments: "التعليقات"
     administrators:
       index:
         title: مدراء
         name: الإ سم
         email: البريد الإلكتروني
+        description: الوصف
         id: معرف المدير
         no_administrators: لا يوجد مدراء.
       administrator:
@@ -664,6 +697,8 @@ ar:
         restricted_removal: "عذراً، لا يمكنك إزالة نفسك من المدراء"
       search:
         title: "المسؤولين: بحث عن مستخدم"
+      form:
+        updated: "تم تحديث المدير بنجاح"
     moderators:
       index:
         title: المشرفين
@@ -703,6 +738,7 @@ ar:
       new:
         title: رسائلة إخبارية جديدة
         from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
+        image_link: "صور مخصصة"
       edit:
         title: تعديل الرسالة الإخبارية
       show:
@@ -802,6 +838,8 @@ ar:
       user_invite:
         title: "دعوة المستخدم"
         description: "ترسل إلى من تمت دعوته لتسجيل حساب."
+      evaluation_comment:
+        title: "تعليق تقييم جديد"
       edit_info: "يمكنك تعديل هذا البريد الإلكتروني في"
       message_title: "عنوان الرسالة"
       message_body: "هذه عينة محتوى الرسالة."
@@ -809,6 +847,7 @@ ar:
         no_investments: "لم يتم إنشاء أي ميزانيات إستثمارية. نحتاج إلى بعض الأمثلة من البيانات من أجل معاينة البريد الإلكتروني."
         no_comments: "لم يتم إنشاء أي تعليقات. نحتاج إلى بعض الأمثلة من البيانات من أجل معاينة البريد الإلكتروني."
         no_replies: "لم يتم إنشاء أي ردود. نحتاج إلى بعض الأمثلة من البيانات من أجل معاينة البريد الإلكتروني."
+        no_evaluation_comments: "لم يتم إنشاء أي تعليقات تقييم. نحتاج إلى بعض الأمثلة من البيانات من أجل معاينة البريد الإلكتروني."
     emails_download:
       index:
         title: تنزيل رسائل البريد الإلكتروني
@@ -826,6 +865,9 @@ ar:
         valuator_groups: "مجموعات المقيم"
         group: "مجموعة"
         no_group: "لا توجد مجموعة"
+        abilities: "قدرات"
+        can_comment: "يمكن التعليق"
+        can_edit_dossier: "يمكن تعديل الملف"
       valuator:
         add: أضف إلى المقيمين
         delete: حذف
@@ -838,8 +880,10 @@ ar:
         description: "الوصف"
         email: "البريد الإلكتروني"
         group: "مجموعة"
+        abilities: "قدرات"
         no_description: "بدون وصف"
         no_group: "بدون مجموعة"
+        no_abilities: "بدون قدرات"
     valuator_groups:
       index:
         title: "مجموعات تقييم"
