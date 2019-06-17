@@ -9,14 +9,22 @@ ar:
           password: كلمة المرور
           reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
           save: حفظ كلمة السر
+          print: طباعة كلمة المرور
           print_help: سوف تكون قادراً على طباعة كلمة المرور بعد حفظها.
     account_info:
+      change_user: تغيير المستخدم
+      document_number_label: "رقم الوثيقة:"
+      document_type_label: "نوع الوثيقة:"
       email_label: "ايمايل:"
+      username_label: "اسم المستخدم:"
+    check: التحقق من الوثيقة
     dashboard:
       index:
         title: الإدارة
+    document_number: رقم الوثيقة
     document_type_label: نوع الوثيقة
     document_verifications:
+      link: CONSUL
       not_in_census: لم يتم تسجيل هذا المستند.
       please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
       verify: تحقق
