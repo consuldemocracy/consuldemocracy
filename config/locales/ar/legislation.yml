@@ -19,7 +19,7 @@ ar:
       show:
         title: التعليق
       version_chooser:
-        seeing_version: تعليقات على النسخة
+        seeing_version: تعليقات على الإصدار
         see_text: رؤية مسودة النص
     draft_versions:
       changes:
