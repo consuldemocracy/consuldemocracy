@@ -271,7 +271,7 @@ sv:
         title: Titel
         question_options: Alternativ
       legislation/question_option:
-        value: Kostnad
+        value: Värde
       legislation/annotation:
         text: Kommentera
       document:
