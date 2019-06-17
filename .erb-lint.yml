@@ -8,6 +8,8 @@ linters:
     enabled: true
   SpaceInHtmlTag:
     enabled: true
+  TrailingWhitespace:
+    enabled: true
   Rubocop:
     enabled: true
     only:
