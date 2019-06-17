@@ -1012,7 +1012,7 @@ sv:
         no_hidden_proposals: Det finns inga dolda aviseringar.
     settings:
       flash:
-        updated: Uppdaterat
+        updated: Uppdaterad värde
       index:
         title: Konfigurationsinställningar
         update_setting: Uppdatera
@@ -1029,9 +1029,10 @@ sv:
             update: Kartinställningarna har uppdaterats.
           form:
             submit: Uppdatera
+          how_to_enable: 'För att visa kartan måste man aktivera "Geografisk plats för förslag och budgetförslag" på sidan "Funktioner".'
       setting_actions: Åtgärder
       setting_status: Status
-      setting_value: Kostnad
+      setting_value: Värde
       no_description: "Ingen beskrivning"
     shared:
       true_value: "Ja"
