@@ -3,12 +3,12 @@ FactoryBot.define do
     sequence(:name) { |n| "Tag #{n} name" }
 
     trait :category do
-      kind "category"
+      kind { "category" }
     end
   end
 
   factory :tagging, class: "ActsAsTaggableOn::Tagging" do
-    context "tags"
+    context { "tags" }
     association :taggable, factory: :proposal
     tag
   end

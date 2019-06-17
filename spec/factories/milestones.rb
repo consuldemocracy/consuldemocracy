@@ -8,17 +8,17 @@ FactoryBot.define do
     association :milestoneable, factory: :budget_investment
     association :status, factory: :milestone_status
     sequence(:title)     { |n| "Milestone #{n} title" }
-    description          "Milestone description"
+    description          { "Milestone description" }
     publication_date     { Date.current }
   end
 
   factory :progress_bar do
     association :progressable, factory: :budget_investment
     percentage { rand(0..100) }
-    kind :primary
+    kind { :primary }
 
     trait(:secondary) do
-      kind :secondary
+      kind { :secondary }
       sequence(:title) { |n| "Progress bar #{n} title" }
     end
   end
