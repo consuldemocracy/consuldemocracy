@@ -1,1 +1,30 @@
 el:
+  tracking:
+    header:
+      title: Παρακολούθηση
+    menu:
+      title: Παρακολούθηση
+      budgets: Συμμετοχικοί προϋπολογισμοί
+    budgets:
+      index:
+        title: Συμμετοχικοί προϋπολογισμοί
+        table_name: Όνομα
+        table_phase: Φάση
+        table_assigned_investments_tracking_open: Επενδυτικά σχέδια που έχουν ανατεθεί με ανοικτή παρακολούθηση
+        table_actions: Ενέργειες
+        tracking: Παρακολούθηση
+        no_budgets: "Δεν υπάρχουν προϋπολογισμοί"
+    budget_investments:
+      index:
+        assigned_to: "Έχει ανατεθεί σε %{tracker}"
+        title: Επενδυτικά έργα
+        edit: Επεξεργασία οροσήμων
+        table_id: Ταυτότητα
+        table_title: Τίτλος
+        table_heading_name: Όνομα επικεφαλίδας
+        table_actions: Ενέργειες
+        no_investments: "Δεν υπάρχουν επενδυτικά έργα."
+      show:
+        title: Επενδυτικό έργο
+        info: Πληροφορίες συντάκτη
+        by: Απεστάλει από
