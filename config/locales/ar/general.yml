@@ -661,7 +661,7 @@ ar:
     description:
       multiple: "يمكنك تحديد %{maximum} إجابات كحد أقصى."
       answer_set_closed: "يمكنك اختيار %{maximum} إجابات كحد أقصى."
-      prioritized: "يمكنك تحديد %{maximum} إجابات كحد أقصى. سيستخدم هذا السؤال نظام%{system} للعدّ."
+      prioritized: "يمكنك تحديد %{maximum} إجابات كحد أقصى. سيستخدم هذا السؤال نظام %{system} للعدّ."
       positive_open: "يمكنك تحديد %{maximum} إجابات كحد أقصى وإضافة إجاباتك الخاصة."
     read_more_about: "اقرأ المزيد حول:"
   proposal_notifications:
