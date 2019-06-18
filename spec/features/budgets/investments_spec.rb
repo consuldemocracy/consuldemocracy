@@ -944,7 +944,7 @@ describe "Budget Investments" do
       scenario "Show up to 5 suggestions", :js do
         login_as(author)
 
-        %w(first second third fourth fifth sixth).each do |ordinal|
+        %w[first second third fourth fifth sixth].each do |ordinal|
           create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
         end
         create(factory, title: "This is the last #{factory}", budget: budget)
@@ -960,7 +960,7 @@ describe "Budget Investments" do
       scenario "No found suggestions", :js do
         login_as(author)
 
-        %w(first second third fourth fifth sixth).each do |ordinal|
+        %w[first second third fourth fifth sixth].each do |ordinal|
           create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
         end
 
@@ -975,7 +975,7 @@ describe "Budget Investments" do
       scenario "Don't show suggestions from a different budget", :js do
         login_as(author)
 
-        %w(first second third fourth fifth sixth).each do |ordinal|
+        %w[first second third fourth fifth sixth].each do |ordinal|
           create(factory, title: "#{ordinal.titleize} #{factory}, has search term", budget: budget)
         end
 

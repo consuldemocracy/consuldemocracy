@@ -9,8 +9,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
-  has_orders %w{oldest}, only: [:show, :edit]
-  has_filters %w{valuating valuation_finished}, only: :index
+  has_orders %w[oldest], only: [:show, :edit]
+  has_filters %w[valuating valuation_finished], only: :index
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
 

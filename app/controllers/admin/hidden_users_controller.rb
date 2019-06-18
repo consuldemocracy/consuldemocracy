@@ -1,5 +1,5 @@
 class Admin::HiddenUsersController < Admin::BaseController
-  has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
+  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_user, only: [:confirm_hide, :restore]
 

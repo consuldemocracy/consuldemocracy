@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  TOPIC_ORDERS = %w{newest most_commented oldest}.freeze
+  TOPIC_ORDERS = %w[newest most_commented oldest].freeze
   before_action :set_order, :set_community, :load_topics, :load_participants
 
   has_orders TOPIC_ORDERS

@@ -1,6 +1,6 @@
 class Poll::Recount < ApplicationRecord
 
-  VALID_ORIGINS = %w{web booth letter}.freeze
+  VALID_ORIGINS = %w[web booth letter].freeze
 
   belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :booth_assignment

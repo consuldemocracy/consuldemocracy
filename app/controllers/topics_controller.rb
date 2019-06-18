@@ -4,7 +4,7 @@ class TopicsController < ApplicationController
   before_action :load_community
   before_action :load_topic, only: [:show, :edit, :update, :destroy]
 
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   skip_authorization_check only: :show
   load_and_authorize_resource except: :show

@@ -14,7 +14,7 @@ class DebatesController < ApplicationController
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders ->(c) { Debate.debates_orders(c.current_user) }, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   load_and_authorize_resource
   helper_method :resource_model, :resource_name

@@ -890,7 +890,7 @@ describe "Proposals" do
         expect(page).not_to have_content archived_proposal.title
       end
 
-      orders = %w{hot_score confidence_score created_at relevance}
+      orders = %w[hot_score confidence_score created_at relevance]
       orders.each do |order|
         visit proposals_path(order: order)
 
