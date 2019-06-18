@@ -27,7 +27,7 @@ ar:
         seeing_changelog_version: ملخص مراجعة التغييرات
         see_text: رؤية مسودة النص
       show:
-        seeing_version: أنت تشاهد النسخة المسودة
+        seeing_version: أنت تشاهد إصدار المسودة
         select_draft_version: حدّد المسودة
         select_version_submit: رؤية
         updated_at: تم التحديث في %{date}
