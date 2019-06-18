@@ -25,6 +25,7 @@ class ProposalsController < ApplicationController
 
   def show
     super
+    @proposal = @proposal.not_retired  #showing only proposal which is not Retired
     @notifications = @proposal.notifications
     @notifications = @proposal.notifications.not_moderated
     @related_contents = Kaminari.paginate_array(@proposal.relationed_contents)
