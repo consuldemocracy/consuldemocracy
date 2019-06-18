@@ -49,7 +49,7 @@ shared_examples "edit_translatable" do |factory_name, path_name, input_fields, t
 
     if front_end_path_to_visit?(path_name)
       Setting["feature.translation_interface"] = true
-      translatable.update(author: user)
+      translatable.update(author: user) if translatable.respond_to?(:author)
     end
   end
 
