@@ -75,11 +75,11 @@ describe DirectMessage do
 
   describe "scopes" do
 
-    describe "today" do
+    describe "today", :with_non_utc_time_zone do
       it "returns direct messages created today" do
-        direct_message1 = create(:direct_message, created_at: Time.now.utc.beginning_of_day + 3.hours)
-        direct_message2 = create(:direct_message, created_at: Time.now.utc)
-        direct_message3 = create(:direct_message, created_at: Time.now.utc.end_of_day)
+        create(:direct_message, created_at: Date.current.beginning_of_day)
+        create(:direct_message, created_at: Time.current)
+        create(:direct_message, created_at: Date.current.end_of_day)
 
         expect(described_class.today.count).to eq 3
       end
