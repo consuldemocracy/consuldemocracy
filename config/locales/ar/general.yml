@@ -670,7 +670,7 @@ ar:
       title_label: "عنوان"
       body_label: "رسالة"
       submit_button: "إرسال رسالة"
-      info_about_receivers_html: "سيتم إرسال هذه الرسالة إلى <strong>%{count} أشخاص </strong> وستظهر في %{proposal_page}.<br> لن يتم إرسال الرسائل على الفور ، وسيتلقى المستخدمون بريدًا إلكترونيًا دوريًا يتضمن جميع إشعارات المقترحات."
+      info_about_receivers_html: "سيتم إرسال هذه الرسالة إلى <strong>%{count} شخص</strong> وستظهر في %{proposal_page}.<br> لن يتم إرسال الرسائل على الفور، سيتلقى المستخدمون بريدًا إلكترونيًا دوريًا يتضمن جميع إشعارات المقترحات."
       proposal_page: "صفحة المقترح"
     show:
       back: "عودة"
