@@ -9,43 +9,43 @@ shared_examples "map validations" do
     end
 
     after do
-     Setting["feature.map"] = nil
+      Setting["feature.map"] = nil
     end
 
     it "is valid with a map location" do
-     mappable.map_location = build(:map_location)
-     mappable.skip_map = nil
+      mappable.map_location = build(:map_location)
+      mappable.skip_map = nil
 
-     expect(mappable).to be_valid
+      expect(mappable).to be_valid
     end
 
     it "is valid accepting that the mappable has no map" do
-     mappable.skip_map = "1"
-     mappable.map_location = nil
+      mappable.skip_map = "1"
+      mappable.map_location = nil
 
-     expect(mappable).to be_valid
+      expect(mappable).to be_valid
     end
 
     it "is valid when the feature map is deactivated" do
-     Setting["feature.map"] = nil
+      Setting["feature.map"] = nil
 
-     mappable.map_location = nil
-     mappable.skip_map = nil
+      mappable.map_location = nil
+      mappable.skip_map = nil
 
-     expect(mappable).to be_valid
+      expect(mappable).to be_valid
     end
 
     it "is not valid without a map location" do
-     mappable.map_location = nil
-     mappable.skip_map = nil
+      mappable.map_location = nil
+      mappable.skip_map = nil
 
-     expect(mappable).not_to be_valid
+      expect(mappable).not_to be_valid
     end
 
     it "is not valid without accepting that the mappable has no map" do
-     mappable.skip_map = nil
+      mappable.skip_map = nil
 
-     expect(mappable).not_to be_valid
+      expect(mappable).not_to be_valid
     end
 
   end

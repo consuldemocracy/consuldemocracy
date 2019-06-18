@@ -46,16 +46,16 @@ class RelatedContentsController < ApplicationController
   end
 
   def related_object
-      if valid_url?
-        url = params[:url]
+    if valid_url?
+      url = params[:url]
 
-        related_klass = url.scan(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)
-                           .flatten.map { |i| i.to_s.singularize.camelize }.join("::")
-        related_id = url.match(/\/(\d+)(?!.*\/\d)/)[1]
+      related_klass = url.scan(/\/(#{RelatedContent::RELATIONABLE_MODELS.join("|")})\//)
+                         .flatten.map { |i| i.to_s.singularize.camelize }.join("::")
+      related_id = url.match(/\/(\d+)(?!.*\/\d)/)[1]
 
-        @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
-      end
+      @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
+    end
   rescue
-      nil
+    nil
   end
 end

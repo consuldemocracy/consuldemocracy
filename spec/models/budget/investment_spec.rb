@@ -104,14 +104,14 @@ describe Budget::Investment do
   describe "#code" do
     let(:investment) { create(:budget_investment) }
 
-      it "returns the proposal id" do
-        expect(investment.code).to include(investment.id.to_s)
-      end
+    it "returns the proposal id" do
+      expect(investment.code).to include(investment.id.to_s)
+    end
 
-      it "returns the administrator id when assigned" do
-        investment.administrator = create(:administrator)
-        expect(investment.code).to include("#{investment.id}-A#{investment.administrator.id}")
-      end
+    it "returns the administrator id when assigned" do
+      investment.administrator = create(:administrator)
+      expect(investment.code).to include("#{investment.id}-A#{investment.administrator.id}")
+    end
   end
 
   describe "#send_unfeasible_email" do
@@ -307,24 +307,24 @@ describe Budget::Investment do
   describe "#by_budget" do
 
     it "returns investments scoped by budget" do
-       budget1 = create(:budget)
-       budget2 = create(:budget)
+      budget1 = create(:budget)
+      budget2 = create(:budget)
 
-       group1 = create(:budget_group, budget: budget1)
-       group2 = create(:budget_group, budget: budget2)
+      group1 = create(:budget_group, budget: budget1)
+      group2 = create(:budget_group, budget: budget2)
 
-       heading1 = create(:budget_heading, group: group1)
-       heading2 = create(:budget_heading, group: group2)
+      heading1 = create(:budget_heading, group: group1)
+      heading2 = create(:budget_heading, group: group2)
 
-       investment1 = create(:budget_investment, heading: heading1)
-       investment2 = create(:budget_investment, heading: heading1)
-       investment3 = create(:budget_investment, heading: heading2)
+      investment1 = create(:budget_investment, heading: heading1)
+      investment2 = create(:budget_investment, heading: heading1)
+      investment3 = create(:budget_investment, heading: heading2)
 
-       investments_by_budget = Budget::Investment.by_budget(budget1)
+      investments_by_budget = Budget::Investment.by_budget(budget1)
 
-       expect(investments_by_budget).to include investment1
-       expect(investments_by_budget).to include investment2
-       expect(investments_by_budget).not_to include investment3
+      expect(investments_by_budget).to include investment1
+      expect(investments_by_budget).to include investment2
+      expect(investments_by_budget).not_to include investment3
     end
   end
 

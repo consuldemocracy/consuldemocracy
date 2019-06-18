@@ -159,14 +159,14 @@ FactoryBot.define do
     end
 
     trait :flagged do
-       after :create do |investment|
-         Flag.flag(create(:user), investment)
-       end
-     end
+      after :create do |investment|
+        Flag.flag(create(:user), investment)
+      end
+    end
 
-     trait :with_confirmed_hide do
-       confirmed_hide_at { Time.current }
-     end
+    trait :with_confirmed_hide do
+      confirmed_hide_at { Time.current }
+    end
 
     trait :with_milestone_tags do
       after(:create) { |investment| investment.milestone_tags << create(:tag, :milestone) }

@@ -29,7 +29,7 @@ describe Legislation::DraftVersion do
   end
 
   def body_markdown
-<<-BODY_MARKDOWN
+    <<-BODY_MARKDOWN
 # Title 1
 
 Some paragraph.
@@ -50,7 +50,7 @@ BODY_MARKDOWN
   end
 
   def body_html
-<<-BODY_HTML
+    <<-BODY_HTML
 <h1 id="title-1">Title 1</h1>
 
 <p>Some paragraph.</p>
@@ -73,7 +73,7 @@ BODY_HTML
   end
 
   def toc_html
-<<-TOC_HTML
+    <<-TOC_HTML
 <ul>
 <li>
 <a href="#title-1">Title 1</a>

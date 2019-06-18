@@ -88,14 +88,14 @@ describe Proposal do
       proposal.responsible_name = "12345678Z"
     end
 
-     it "is the document_number if level three user" do
+    it "is the document_number if level three user" do
       author = create(:user, :level_three, document_number: "12345678Z")
       proposal.author = author
       proposal.responsible_name = nil
 
       expect(proposal).to be_valid
       proposal.responsible_name = "12345678Z"
-     end
+    end
 
     it "is not updated when the author is deleted" do
       author = create(:user, :level_three, document_number: "12345678Z")
