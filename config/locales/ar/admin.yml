@@ -328,7 +328,7 @@ ar:
         content: "المحتوى"
         author: "الكاتب"
         commentable_type: "النوع"
-        link: "تحميل التعليقات"
+        link: "تنزيل التعليقات"
         title: التعليقات
         no_comments: لا توجد أي تعليقات.
         table_link: "رابط"
