@@ -46,15 +46,15 @@ class TopicsController < ApplicationController
 
   private
 
-  def topic_params
-    params.require(:topic).permit(:title, :description)
-  end
+    def topic_params
+      params.require(:topic).permit(:title, :description)
+    end
 
-  def load_community
-    @community = Community.find(params[:community_id])
-  end
+    def load_community
+      @community = Community.find(params[:community_id])
+    end
 
-  def load_topic
-    @topic = Topic.find(params[:id])
-  end
+    def load_topic
+      @topic = Topic.find(params[:id])
+    end
 end

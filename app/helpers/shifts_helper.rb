@@ -37,7 +37,7 @@ module ShiftsHelper
 
   private
 
-  def officer_shifts(task_id, booth)
-    @officer.shifts.where(task: task_id, booth: booth).map(&:date)
-  end
+    def officer_shifts(task_id, booth)
+      @officer.shifts.where(task: task_id, booth: booth).map(&:date)
+    end
 end

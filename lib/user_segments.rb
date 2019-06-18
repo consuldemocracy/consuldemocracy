@@ -60,11 +60,11 @@ class UserSegments
 
   private
 
-  def self.current_budget_investments
-    Budget.current.investments
-  end
+    def self.current_budget_investments
+      Budget.current.investments
+    end
 
-  def self.author_ids(author_ids)
-    all_users.where(id: author_ids)
-  end
+    def self.author_ids(author_ids)
+      all_users.where(id: author_ids)
+    end
 end

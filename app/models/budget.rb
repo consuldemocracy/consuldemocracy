@@ -205,28 +205,28 @@ class Budget < ApplicationRecord
 
   private
 
-  def sanitize_descriptions
-    s = WYSIWYGSanitizer.new
-    Budget::Phase::PHASE_KINDS.each do |phase|
-      sanitized = s.sanitize(send("description_#{phase}"))
-      send("description_#{phase}=", sanitized)
+    def sanitize_descriptions
+      s = WYSIWYGSanitizer.new
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        sanitized = s.sanitize(send("description_#{phase}"))
+        send("description_#{phase}=", sanitized)
+      end
     end
-  end
 
-  def generate_phases
-    Budget::Phase::PHASE_KINDS.each do |phase|
-      Budget::Phase.create(
-        budget: self,
-        kind: phase,
-        prev_phase: phases&.last,
-        starts_at: phases&.last&.ends_at || Date.current,
-        ends_at: (phases&.last&.ends_at || Date.current) + 1.month
-      )
+    def generate_phases
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        Budget::Phase.create(
+          budget: self,
+          kind: phase,
+          prev_phase: phases&.last,
+          starts_at: phases&.last&.ends_at || Date.current,
+          ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+        )
+      end
     end
-  end
 
-  def generate_slug?
-    slug.nil? || drafting?
-  end
+    def generate_slug?
+      slug.nil? || drafting?
+    end
 
 end

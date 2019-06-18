@@ -13,12 +13,12 @@ class Officing::BoothController < Officing::BaseController
 
   private
 
-  def booth_params
-    params.require(:booth).permit(:id)
-  end
+    def booth_params
+      params.require(:booth).permit(:id)
+    end
 
-  def set_booth(booth)
-    session[:booth_id] = booth.id
-  end
+    def set_booth(booth)
+      session[:booth_id] = booth.id
+    end
 
 end

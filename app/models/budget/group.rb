@@ -36,8 +36,8 @@ class Budget
 
     private
 
-    def generate_slug?
-      slug.nil? || budget.drafting?
-    end
+      def generate_slug?
+        slug.nil? || budget.drafting?
+      end
   end
 end

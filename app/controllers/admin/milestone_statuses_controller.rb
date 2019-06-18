@@ -41,11 +41,11 @@ class Admin::MilestoneStatusesController < Admin::BaseController
 
   private
 
-  def load_status
-    @status = Milestone::Status.find(params[:id])
-  end
+    def load_status
+      @status = Milestone::Status.find(params[:id])
+    end
 
-  def status_params
-    params.require(:milestone_status).permit([:name, :description])
-  end
+    def status_params
+      params.require(:milestone_status).permit([:name, :description])
+    end
 end
