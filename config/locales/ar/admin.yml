@@ -393,9 +393,9 @@ ar:
           success: تم وضع علامة على المهمة باعتبارها حلّت.
     documents:
       new:
-        title: "تحميل الوثيقة"
+        title: "رفع الوثيقة"
         label_attachment: "اختر وثيقة"
-        submit_button: "تحميل"
+        submit_button: "رفع"
       index:
         new_link: "اضافة وثيقة جديدة"
         no_documents: "لا توجد وثائق."
@@ -471,7 +471,7 @@ ar:
           filters:
             active: نشِط
             all: الكل
-          link: "تحميل العملية التشريعية"
+          link: "تنزيل العملية التشريعية"
         new:
           back: عودة
           title: قم بإنشاء عملية تشريع تشاركية جديدة
@@ -851,9 +851,9 @@ ar:
     emails_download:
       index:
         title: تنزيل رسائل البريد الإلكتروني
-        download_segment: تحميل عناوين البريد الإلكتروني
+        download_segment: تنزيل عناوين البريد الإلكتروني
         download_segment_help_text: قم بالتنزيل بصيغة CSV
-        download_emails_button: تحميل قائمة عناوين البريد الإلكتروني
+        download_emails_button: تنزيل قائمة عناوين البريد الإلكتروني
     valuators:
       index:
         title: المقيمون
@@ -1202,7 +1202,7 @@ ar:
         selected: محدّد
         milestones: معالم
         no_proposals: لا توجد مقترحات.
-        link: "تحميل المقترحات"
+        link: "تنزيل المقترحات"
       show:
         create_question: أضف هذا المقترح إلى استطلاع للتصويت
       form:
