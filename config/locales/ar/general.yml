@@ -187,7 +187,7 @@ ar:
       user_not_found: لم يتم العثور على المستخدم
       invalid_date_range: "نطاق التاريخ غير صالح"
   form:
-    accept_terms: أوافق على %{policy} و %{conditions}
+    accept_terms: أوافق على %{policy} و%{conditions}
     accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
@@ -314,7 +314,7 @@ ar:
       motivation: "من المهم تحضير حملة الإطلاق لمقترحك حتى يكون ناجحًا. الأيام القليلة الأولى حاسمة."
       publish: لا ، أريد أن أنشر الاقتراح
       dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
-      preview_title: سيضهر مقترحك بهذا الشكل عند نشره
+      preview_title: سيظهر مقترحك بهذا الشكل عند نشره
     share:
       improve_it: حسّن حملتك واحصل على المزيد من الدعم.
       dashboard: رؤية المزيد من المعلومات
@@ -373,7 +373,7 @@ ar:
       retired_proposals: المقترحات المسحوبة
       retired_proposals_link: "المقترحات المسحوبة من قبل المؤلف"
       selected_proposals: المقترحات المختارة
-      selected_proposals_link: رؤية المقترحات المختارة
+      selected_proposals_link: رؤية المقترحات المحددة
       proposals_lists: قائمات المقترحات
       retired_links:
         all: الكل
@@ -570,7 +570,7 @@ ar:
         title: ملصق المقترح الخاص بك
       options:
         preview: معاينة
-        download: تحميل
+        download: تنزيل
     mailing:
       index:
         title: معاينة البريد الإلكتروني
@@ -582,7 +582,7 @@ ar:
         sent: تم إرسال البريد الإلكتروني
     mailer:
       forward:
-        subtitle_html: "إذا قمت بدعمي ، <br>فسوف نحقق ذلك."
+        subtitle_html: "إذا قمت بدعمي، <br>فسوف نحقق ذلك."
         support_button: دعم هذا المقترح
         hi: "مرحبا!"
   polls:
@@ -757,8 +757,8 @@ ar:
       hide: إخفاء التوصيات
     download:
       link:
-        proposal: "تحميل المقترحات"
-        debate: "تحميل المناقشات"
+        proposal: "تنزيل المقترحات"
+        debate: "تنزيل المناقشات"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
