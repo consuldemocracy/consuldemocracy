@@ -57,7 +57,7 @@ ar:
     print:
       proposals_info: 'قم بإنشاء مقترحك على http: //url.consul'
       proposals_title: "المقترحات:"
-      budget_investments_info: 'قم بالمشاركة في http: //url.consul'
+      budget_investments_info: 'قم بالمشاركة على http: //url.consul'
     print_info: طباعة هذه المعلومات
     proposals:
       alert:
