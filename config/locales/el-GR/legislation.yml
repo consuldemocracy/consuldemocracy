@@ -20,8 +20,10 @@ el:
       index:
         title: Σχόλια
         comments_about: Σχόλια σχετικά με
+        comment_about: "Σχολιάστε σχετικά με:"
         see_in_context: Δείτε στο περιεχόμενο
         comments_count:
+          zero: Δεν υπάρχουν σχόλια
           one: "%{count} σχόλιο"
           other: "%{count} σχόλια"
       show:
@@ -96,6 +98,10 @@ el:
         form:
           leave_comment: Αφήστε μια απάντηση
       question:
+        total:
+          zero: Δεν υπάρχουν συζητήσεις
+          one: "%{count} συζήτηση"
+          other: "%{count} συζητήσεις"
         comments:
           zero: Δεν υπάρχουν σχόλια
           one: "%{count} σχόλιο"
@@ -124,3 +130,21 @@ el:
         tags_label: "Κατηγορίες"
       not_verified: "Για υποψηφιότητες %{verify_account}."
       process_title: Διαδικασία συνεργατικής νομοθεσίας
+      total:
+        zero: Δεν υπάρχουν προτάσεις
+        one: "%{count} πρόταση"
+        other: "%{count} πρότάσεις"
+    summary:
+      title: Επανέναρξη 
+      votes: Ψήφοι
+      debates_phase: Φάση συζητήσεων
+      proposal_phase: Φάση προτάσεων
+      comments_phase: Φάση γραπτών σχόλιων
+      comments:
+        zero: Δεν υπάρχουν σχόλια
+        one: "%{count} σχόλιο"
+        other: "%{count} σχόλια"
+      most_voted_comments: "Σχόλια με τις περισσότερες ψήφους"
+      no_allegation: "Δεν υπάρχουν γραπτά σχόλια \n"
+      version: εκδοχή
+      process_empty: Η διαδικασία δεν έχει φάσεις
