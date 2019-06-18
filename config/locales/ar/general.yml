@@ -534,7 +534,7 @@ ar:
       without_done_actions: لا توجد إجراءات موصى بها منتهية
     next_goal:
       title: هدف
-      see_complete_course: مراجعة الدورة كاملة
+      see_complete_course: مراجعة الدورة الكاملة
     goal:
       ideal_time: الوقت المثالي
     community:
