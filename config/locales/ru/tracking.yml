@@ -1,1 +1,69 @@
 ru:
+  tracking:
+    header:
+      title: Отслеживание
+    menu:
+      title: Отслеживание
+      budgets: Совместные бюджеты
+    budgets:
+      index:
+        title: Совместные бюджеты
+        table_name: Имя
+        table_phase: Этап
+        table_assigned_investments_tracking_open: Назначенные проекты инвестирования с открытым отслеживанием
+        table_actions: Действия
+        tracking: Отслеживание
+        no_budgets: "Нет бюджетов"
+    budget_investments:
+      index:
+        assigned_to: "Назначено для %{tracker}"
+        title: Проекты инвестирования
+        edit: Редактировать этапы
+        table_id: ID
+        table_title: Заголовок
+        table_heading_name: Название заголовка
+        table_actions: Действия
+        no_investments: "Нет проектов инвестирования."
+      show:
+        title: Инвестиционный проект
+        info: Об авторе
+        by: Отправил(а)
+        sent: Дата отправки
+        heading: Заглавие
+        undefined: "Неопределено"
+        responsibles: Ответственные
+        assigned_admin: Назначенный администратор
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Заголовок"
+        table_description: "Описание"
+        table_publication_date: "Дата публикации"
+        table_status: Статус
+        table_actions: "Действия"
+        delete: "Удалить этап"
+        no_milestones: "Не имеет определенных этапов"
+        image: "Изображение"
+        show_image: "Показать изображение"
+        documents: "Документы"
+        milestone: Этап
+        new_milestone: Создать этап
+      form:
+        admin_statuses: Управление статусами
+        no_statuses_defined: Пока что нет определенных статусов
+      new:
+        creating: Создать этап
+        date: Дата
+        description: Описание
+      edit:
+        title: Редактировать этап
+      create:
+        notice: Новый этап успешно создан!
+      update:
+        notice: Этап успешно обновлен
+      delete:
+        notice: Этап успешно удален
+    progress_bars:
+      manage: "Управление индикаторами выполнения"
+      index:
+        title: "Индикаторы выполнения"
