@@ -13,6 +13,9 @@ ru:
     geozone: "Район"
     budgets:
       link: "Статистика"
+      total_investments: "Всего проектов инвестирования"
+      total_selected_investments: "Проекты на заключительном этапе голосования"
+      total_unfeasible_investments: "Невыполнимые прокты"
       total: "Всего"
       heading: "Заглавие"
       participants_every_phase: "Всего участников"
