@@ -274,10 +274,6 @@ describe Budget do
   end
 
   describe "#formatted_amount" do
-    after do
-      I18n.locale = :en
-    end
-
     it "correctly formats Euros with Spanish" do
       budget.update(currency_symbol: "€")
       I18n.locale = :es
