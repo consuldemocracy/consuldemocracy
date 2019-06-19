@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Tracking budgets" do
+describe "Tracking budgets" do
 
-  background do
+  before do
     @tracker = create(:tracker, user: create(:user, username: "Rachel",
                                              email: "rachel@trackers.org"))
     login_as(@tracker.user)

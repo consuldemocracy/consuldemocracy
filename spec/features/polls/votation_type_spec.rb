@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Poll Votation Type" do
+describe "Poll Votation Type" do
 
   context "Unique" do
 
@@ -10,7 +10,7 @@ feature "Poll Votation Type" do
     let!(:answer1) { create(:poll_question_answer, question: unique, title: "answer_1") }
     let!(:answer2) { create(:poll_question_answer, question: unique, title: "answer_2") }
 
-    background do
+    before do
       login_as(user)
     end
 
@@ -64,7 +64,7 @@ feature "Poll Votation Type" do
     let!(:answer4) { create(:poll_question_answer, question: question, title: "answer_4") }
     let!(:answer5) { create(:poll_question_answer, question: question, title: "answer_5") }
 
-    background do
+    before do
       login_as(user)
     end
 
@@ -148,7 +148,7 @@ feature "Poll Votation Type" do
     let!(:answer4) { create(:poll_question_answer, question: question, title: "answer_4") }
     let!(:answer5) { create(:poll_question_answer, question: question, title: "answer_5") }
 
-    background do
+    before do
       login_as(user)
     end
 
@@ -210,7 +210,7 @@ feature "Poll Votation Type" do
     let!(:answer4) { create(:poll_question_answer, question: question, title: "answer_4") }
     let!(:answer5) { create(:poll_question_answer, question: question, title: "answer_5") }
 
-    background do
+    before do
       login_as(user)
     end
 
@@ -306,7 +306,7 @@ feature "Poll Votation Type" do
     let!(:answer4) { create(:poll_question_answer, question: question, title: "answer_4") }
     let!(:answer5) { create(:poll_question_answer, question: question, title: "answer_5") }
 
-    background do
+    before do
       login_as(user)
     end
 
