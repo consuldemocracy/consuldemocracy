@@ -517,7 +517,7 @@ describe "Commenting Budget::Investments" do
       create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
       create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
 
-      visit budget_investment_path(@budget, @budget, @investment)
+      visit budget_investment_path(@budget, @investment)
 
       within("#comment_#{@comment.id}_votes") do
         within(".in_favor") do
