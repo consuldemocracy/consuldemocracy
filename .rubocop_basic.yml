@@ -38,6 +38,15 @@ Lint/UselessAssignment:
 Metrics/LineLength:
   Max: 110
 
+Rails/ActionFilter:
+  Enabled: true
+
+Rails/ApplicationJob:
+  Enabled: true
+
+Rails/ApplicationRecord:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 

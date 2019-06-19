@@ -1460,10 +1460,10 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "signature_sheets", force: :cascade do |t|
-    t.integer  "signable_id"
     t.string   "signable_type"
-    t.boolean  "processed",        default: false
+    t.integer  "signable_id"
     t.text     "required_fields_to_verify"
+    t.boolean  "processed",                 default: false
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"

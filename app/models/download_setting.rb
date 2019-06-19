@@ -1,4 +1,4 @@
-class DownloadSetting < ActiveRecord::Base
+class DownloadSetting < ApplicationRecord
   validates :name_model, presence: true
   validates :name_field, presence: true
 
