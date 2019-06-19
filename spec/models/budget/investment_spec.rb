@@ -1327,7 +1327,7 @@ describe Budget::Investment do
       let(:investment) { create(:budget_investment, :with_milestone_tags) }
 
       it "has milestone_tags" do
-        expect(investment.milestone_tag_list.count).to eq(1)
+        expect(investment.reload.milestone_tag_list.count).to eq(1)
       end
     end
   end
