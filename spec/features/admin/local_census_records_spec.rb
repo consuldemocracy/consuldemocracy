@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin local census records" do
+describe "Admin local census records" do
 
-  background do
+  before do
     login_as(create(:administrator).user)
   end
 
@@ -50,7 +50,7 @@ feature "Admin local census records" do
     end
 
     context "Search" do
-      background do
+      before do
         create(:local_census_record, document_number: "X66777888" )
       end
 

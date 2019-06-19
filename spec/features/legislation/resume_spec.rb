@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Legislation" do
+describe "Legislation" do
   context "process resume page" do
 
     scenario "resume tab not show" do
