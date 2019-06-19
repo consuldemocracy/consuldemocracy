@@ -1,4 +1,4 @@
-class CreateBudgetInvestmentChangeLogs < ActiveRecord::Migration
+class CreateBudgetInvestmentChangeLogs < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_investment_change_logs do |t|
       t.integer :investment_id

@@ -1,4 +1,4 @@
-class Budget::Investment::ChangeLog < ActiveRecord::Base
+class Budget::Investment::ChangeLog < ApplicationRecord
   belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id", required: false
 
   validates :old_value, presence: true
