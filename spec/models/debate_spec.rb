@@ -370,7 +370,7 @@ describe Debate do
 
     it "expires cache when it has a new comment" do
       expect { create(:comment, commentable: debate) }
-      .to change { debate.updated_at }
+      .to change { debate.reload.updated_at }
     end
 
     it "expires cache when it has a new vote" do

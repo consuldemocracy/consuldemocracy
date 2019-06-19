@@ -363,7 +363,7 @@ describe Proposal do
 
     it "expires cache when it has a new comment" do
       expect { create(:comment, commentable: proposal) }
-      .to change { proposal.updated_at }
+      .to change { proposal.reload.updated_at }
     end
 
     it "expires cache when it has a new vote" do
