@@ -89,12 +89,6 @@ describe "Signature sheets" do
       Setting["remote_census.response.valid"] = access_user_data
     end
 
-    after do
-      Setting["feature.remote_census"] = nil
-      Setting["remote_census.request.date_of_birth"] = nil
-      Setting["remote_census.request.postal_code"] = nil
-    end
-
     scenario "Proposal" do
       proposal = create(:proposal)
       visit new_admin_signature_sheet_path

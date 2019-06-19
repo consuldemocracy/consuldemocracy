@@ -19,10 +19,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     imageable.update(author: user) if imageable.respond_to?(:author)
   end
 
-  after do
-    Setting["feature.allow_images"] = nil
-  end
-
   describe "at #{path}" do
 
     scenario "Should show new image link when imageable has not an associated image defined" do

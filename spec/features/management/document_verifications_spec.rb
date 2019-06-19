@@ -73,12 +73,6 @@ describe "DocumentVerifications" do
         Setting["remote_census.response.valid"] = access_user_data
       end
 
-      after do
-        Setting["feature.remote_census"] = nil
-        Setting["remote_census.request.date_of_birth"] = nil
-        Setting["remote_census.request.postal_code"] = nil
-      end
-
       scenario "Verifying a user which does not exist and is not in the census shows an error" do
 
         expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).

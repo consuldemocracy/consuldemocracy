@@ -183,12 +183,6 @@ describe "Account" do
       Setting["feature.user.recommendations_on_proposals"] = true
     end
 
-    after do
-      Setting["feature.user.recommendations"] = nil
-      Setting["feature.user.recommendations_on_debates"] = nil
-      Setting["feature.user.recommendations_on_proposals"] = nil
-    end
-
     scenario "are enabled by default" do
       visit account_path
 

@@ -187,10 +187,6 @@ shared_examples_for "verifiable" do
       Setting["feature.user.skip_verification"] = "true"
     end
 
-    after do
-      Setting["feature.user.skip_verification"] = nil
-    end
-
     describe "#residence_verified?" do
       it "is true if skipped" do
         expect(user.residence_verified?).to eq(true)

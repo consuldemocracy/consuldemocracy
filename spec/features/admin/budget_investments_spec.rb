@@ -28,10 +28,6 @@ describe "Admin budget investments" do
       Setting["process.budgets"] = nil
     end
 
-    after do
-      Setting["process.budgets"] = true
-    end
-
     scenario "Disabled with a feature flag" do
       expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end

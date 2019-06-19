@@ -41,12 +41,6 @@ describe Signature do
       Setting["remote_census.request.postal_code"] = "some.value"
     end
 
-    after do
-      Setting["feature.remote_census"] = nil
-      Setting["remote_census.request.date_of_birth"] = nil
-      Setting["remote_census.request.postal_code"] = nil
-    end
-
     it "is valid" do
       expect(signature).to be_valid
     end
@@ -253,12 +247,6 @@ describe Signature do
         Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
         Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
         Setting["remote_census.response.valid"] = access_user_data
-      end
-
-      after do
-        Setting["feature.remote_census"] = nil
-        Setting["remote_census.request.date_of_birth"] = nil
-        Setting["remote_census.request.postal_code"] = nil
       end
 
       it "calls assign_vote_to_user" do

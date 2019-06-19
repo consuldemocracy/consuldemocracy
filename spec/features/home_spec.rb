@@ -32,10 +32,6 @@ describe "Home" do
         login_as(user)
       end
 
-      after do
-        Setting["feature.user.recommendations"] = nil
-      end
-
       scenario "Display recommended section when feature flag recommended is active" do
         debate = create(:debate, tag_list: "Sport")
         visit root_path

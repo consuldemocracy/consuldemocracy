@@ -6,10 +6,6 @@ describe "Communities" do
     Setting["feature.community"] = true
   end
 
-  after do
-    Setting["feature.community"] = nil
-  end
-
   context "Show" do
 
     scenario "Should display default content" do

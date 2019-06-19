@@ -340,8 +340,6 @@ describe "Commenting topics from proposals" do
       page.find("#flag-expand-comment-#{comment.id}").click
       expect(page).to have_selector("#flag-comment-#{comment.id}")
     end
-
-    Setting["feature.community"] = nil
   end
 
   scenario "Erasing a comment's author" do
@@ -893,8 +891,6 @@ describe "Commenting topics from budget investments" do
       page.find("#flag-expand-comment-#{comment.id}").click
       expect(page).to have_selector("#flag-comment-#{comment.id}")
     end
-
-    Setting["feature.community"] = nil
   end
 
   scenario "Erasing a comment's author" do

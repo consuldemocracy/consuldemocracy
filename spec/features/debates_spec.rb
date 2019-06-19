@@ -460,11 +460,6 @@ describe "Debates" do
         Setting["feature.user.recommendations_on_debates"] = true
       end
 
-      after do
-        Setting["feature.user.recommendations"] = nil
-        Setting["feature.user.recommendations_on_debates"] = nil
-      end
-
       scenario "can't be sorted if there's no logged user" do
         visit debates_path
         expect(page).not_to have_selector("a", text: "recommendations")
@@ -1005,9 +1000,6 @@ describe "Debates" do
         expect(page).not_to have_content "Do not display with same tag"
         expect(page).not_to have_content "Do not display"
       end
-
-      Setting["feature.user.recommendations"] = nil
-      Setting["feature.user.recommendations_on_debates"] = nil
     end
 
     scenario "After a search do not show featured debates" do

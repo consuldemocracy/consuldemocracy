@@ -127,12 +127,6 @@ describe "Residence", :with_frozen_time do
       visit officing_root_path
     end
 
-    after do
-      Setting["feature.remote_census"] = nil
-      Setting["remote_census.request.date_of_birth"] = nil
-      Setting["remote_census.request.postal_code"] = nil
-    end
-
     describe "Display form fields according to the remote census configuration" do
 
       scenario "by default (without custom census) not display date_of_birth and postal_code" do

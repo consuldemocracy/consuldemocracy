@@ -98,10 +98,6 @@ describe "Moderation" do
       Setting["org_name"] = "OrgName"
     end
 
-    after do
-      Setting["org_name"] = "CONSUL"
-    end
-
     scenario "Contains correct elements" do
       create(:moderator, user: user)
       login_as(user)

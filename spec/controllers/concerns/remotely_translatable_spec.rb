@@ -7,10 +7,6 @@ describe RemotelyTranslatable do
     Setting["feature.remote_translations"] = true
   end
 
-  after do
-    Setting["feature.remote_translations"] = nil
-  end
-
   describe "#detect_remote_translations" do
 
     describe "Should detect remote_translations" do

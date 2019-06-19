@@ -82,10 +82,6 @@ describe SignatureSheet do
         Setting["feature.remote_census"] = true
       end
 
-      after do
-        Setting["feature.remote_census"] = nil
-      end
-
       it "creates signatures for each group with document_number" do
         required_fields_to_verify = "123A; 456B"
         signature_sheet = create(:signature_sheet, required_fields_to_verify: required_fields_to_verify)

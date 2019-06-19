@@ -12,10 +12,6 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     Setting["feature.remote_translations"] = true
   end
 
-  after do
-    Setting["feature.remote_translations"] = false
-  end
-
   context "Button to request remote translation" do
 
     scenario "should not be present when current locale translation exists", :js do
