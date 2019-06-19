@@ -1,1 +1,27 @@
 ru:
+  download:
+    edit:
+      fields: "Поля"
+      description: "Описание"
+      downloadable: "Скачиваемое"
+      debates: "Дебаты"
+      proposals: "Предложения"
+      legislation_processes: "Процесс законотворчества"
+      budget_investments: "Совместное финансирование"
+      comments: "Комментарии"
+      submit: "Сохранить изменения"
+      config:
+        "0": ""
+        "1": "- Этапы"
+    fielddescription:
+      debates:
+        id: "Идентификационный Номер"
+        title: "Заголовок"
+        description: "Описание"
+        author_id: "Идентификационный Номер Автора"
+        created_at: "Создано"
+        updated_at: "Обновлено"
+        visit_id: "ID посещения"
+        hidden_at: "Скрыто в"
+        flags_count: "Количество флагов"
+        ignored_flag_at: "Проигнорированный флаг в"
