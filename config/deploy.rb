@@ -7,7 +7,6 @@ def deploysecret(key)
 end
 
 set :rails_env, fetch(:stage)
-set :rvm1_ruby_version, "2.3.2"
 
 set :application, "consul"
 set :full_app_name, deploysecret(:full_app_name)
@@ -41,10 +40,6 @@ set(:config_files, %w(
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  #before :starting, "rvm1:install:rvm"  # install/update RVM
-  #before :starting, "rvm1:install:ruby" # install Ruby and create gemset
-  #before :starting, "install_bundler_gem" # install bundler gem
-
   after "deploy:migrate", "add_new_settings"
   after :publishing, "deploy:restart"
   after :published, "delayed_job:restart"
@@ -52,17 +47,10 @@ namespace :deploy do
 
   after :finishing, "deploy:cleanup"
 
-
   desc "Deploys and runs the tasks needed to upgrade to a new release"
   task :upgrade do
     after "add_new_settings", "execute_release_tasks"
     invoke "deploy"
-  end
-end
-
-task :install_bundler_gem do
-  on roles(:app) do
-    execute "rvm use #{fetch(:rvm1_ruby_version)}; gem install bundler"
   end
 end
 
