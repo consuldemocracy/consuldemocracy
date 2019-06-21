@@ -56,10 +56,16 @@ Rails/ApplicationJob:
 Rails/ApplicationRecord:
   Enabled: true
 
+Rails/Date:
+  Enabled: true
+
 Rails/HttpPositionalArguments:
   Enabled: true
 
 Rails/RelativeDateConstant:
+  Enabled: true
+
+Rails/TimeZone:
   Enabled: true
 
 RSpec/NotToNot:
