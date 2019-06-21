@@ -251,6 +251,7 @@ ar:
           author: الكاتب
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
+        milestone_tags_filter_all: "جميع علامات المعلم"
       show:
         assigned_admin: المشرف المعين
         assigned_valuators: المقيمين الذين تم تعيينهم
@@ -332,6 +333,17 @@ ar:
         title: التعليقات
         no_comments: لا توجد أي تعليقات.
         table_link: "رابط"
+    hidden_comments:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        hidden_debate: نقاش مخفي
+        hidden_proposal: اقتراح مخفي
+        title: التعليقات المخفية
+        no_hidden_comments: لا توجد أي تعليقات مخفية.
     dashboard:
       index:
         back: العودة إلى %{org}
@@ -365,6 +377,7 @@ ar:
         create:
           notice: تم إنشاء الإجراء بنجاح
         edit:
+          editing: تعديل الإجراء للوحة القيادة الخاص بالمقترح
           back: الرجوع إلى القائمة
         delete:
           success: تم حذف الإجراء بنجاح
@@ -372,6 +385,7 @@ ar:
           submit_button: حفظ
           help_text: أدخل 0 حتّى لا تؤخذ هذه القيمة بعين الاعتبار
           published_proposal: للمقترحات المنشورة؟
+          published_proposal_help_text: حدد هذه الخانة لإنشاء الإجراء فقط للمقترحات المنشورة
       administrator_tasks:
         index:
           title: الموارد المطلوبة
@@ -391,6 +405,22 @@ ar:
           request: المورد المطلوب
         update:
           success: تم وضع علامة على المهمة باعتبارها حلّت.
+    debates:
+      index:
+        id: ID
+        author: كاتب
+        title: النقاشات
+        no_debates: لا توجد أي مناقشات.
+        link: "تنزيل المناقشات"
+    hidden_debates:
+      index:
+        filter: ترشيح
+        filters:
+          all: الكل
+          with_confirmed_hide: مؤكد
+          without_confirmed_hide: معلق
+        title: المناقشات المخفية
+        no_hidden_debates: لا توجد أي مناقشات مخفية.
     documents:
       new:
         title: "رفع الوثيقة"
@@ -1565,3 +1595,15 @@ ar:
     translations:
       remove_language: إزالة اللغة
       add_language: إضافة لغة
+    change_log:
+      actions: "الإجراءات"
+    trackers:
+      index:
+        name: الإسم
+        email: البريد الإلكتروني
+        description: الوصف
+        no_description: بدون وصف
+      show:
+        email: البريد الإلكتروني
+        description: الوصف
+        no_description: بدون وصف.
