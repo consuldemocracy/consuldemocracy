@@ -2,6 +2,13 @@ ar:
   settings:
     months_to_archive_proposals_description: "بعد هذا العدد من الأشهر سيتم أرشفة المقترحات ولن تصبح قادرة على تلقي الدعم"
     org_name: "المنظمة"
+    proposals:
+      successful_proposal_id: مقترح ناجح
+      poll_short_title: استطلاعات
+      poll_description: وصف استطلاعات الرأي
+      poll_link: رابط المعلومات الاضافية
+      email_short_title: البريد الإلكتروني
+      poster_short_title: ملصقة
     feature:
       signature_sheets: "أوراق التوقيع"
       user:
