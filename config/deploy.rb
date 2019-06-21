@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml config/unicorn.rb config/environments/production.rb}
+set :linked_files, %W{config/database.yml config/secrets.yml config/unicorn.rb config/environments/#{fetch(:stage)}.rb config/initializers/delayed_job_config.rb}
 set :linked_dirs, %w{log tmp public/system public/assets public/ckeditor_assets}
 
 set :keep_releases, 5
