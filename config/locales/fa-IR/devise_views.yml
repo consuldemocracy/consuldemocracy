@@ -15,19 +15,20 @@ fa:
     mailer:
       confirmation_instructions:
         confirm_link: تایید حساب
-        text: 'شما می توانید حساب ایمیل خود را در لینک زیر تأیید کنید:'
+        text: "شما می توانید حساب ایمیل خود را در لینک زیر تأیید کنید:"
+        title: خوش آمدید 
         welcome: خوش آمدید 
       reset_password_instructions:
         change_link: تغییر کلمه عبور
         hello: سلام
         ignore_text: اگر تغییر رمز عبور را درخواست نکردید، می توانید این ایمیل را نادیده بگیرید.
         info_text: گذرواژه شما تغییر نخواهد کرد مگر اینکه به پیوند دسترسی داشته باشید و آن را ویرایش کنید.
-        text: 'ما یک درخواست برای تغییر رمز عبوردریافت کرده ایم. شما می توانید این کار را در لینک زیر انجام دهید:'
+        text: "ما یک درخواست برای تغییر رمز عبوردریافت کرده ایم. شما می توانید این کار را در لینک زیر انجام دهید:"
         title: تغییر کلمه عبور
       unlock_instructions:
         hello: سلام
         info_text: حساب شما به علت تعداد بیشماری از تلاشهای ثبت نام شکست خورده مسدود شده است.
-        instructions_text: 'لطفا برای باز کردن قفل حساب خود روی این لینک کلیک کنید:'
+        instructions_text: "لطفا برای باز کردن قفل حساب خود روی این لینک کلیک کنید:"
         title: حساب شما قفل شده است.
         unlock_link: باز کردن حساب
     menu:
@@ -57,7 +58,7 @@ fa:
     passwords:
       edit:
         change_submit: تغییر کلمه عبور
-        password_confirmation_label: تایید رمز عبور
+        password_confirmation_label: تأیید رمز عبور جديد
         password_label: رمز عبور جدید
         title: تغییر کلمه عبور
       new:
@@ -99,10 +100,10 @@ fa:
           email_label: پست الکترونیکی
           leave_blank: اگر تمایل ندارید تغییر دهید، خالی بگذارید
           need_current: ما برای تایید تغییرات نیاز به رمزعبور فعلی داریم
-          password_confirmation_label: تأیید رمز عبور جديد
+          password_confirmation_label: تایید رمز عبور
           password_label: رمز عبور جدید
           update_submit: به روز رسانی
-          waiting_for: 'در انتظار تایید:'
+          waiting_for: "در انتظار تایید:"
         new:
           cancel: لغو کردن ورود
           email_label: پست الکترونیکی

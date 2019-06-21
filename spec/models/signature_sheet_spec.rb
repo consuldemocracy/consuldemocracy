@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe SignatureSheet do
 
@@ -14,7 +14,7 @@ describe SignatureSheet do
       signature_sheet.signable = create(:proposal)
       expect(signature_sheet).to be_valid
 
-      signature_sheet.signable = create(:spending_proposal)
+      signature_sheet.signable = create(:budget_investment)
       expect(signature_sheet).to be_valid
     end
 
@@ -47,13 +47,6 @@ describe SignatureSheet do
       expect(signature_sheet.name).to eq("Citizen proposal #{proposal.id}")
     end
 
-    it "returns name for spending proposal signature sheets" do
-      spending_proposal = create(:spending_proposal)
-      signature_sheet.signable = spending_proposal
-
-      expect(signature_sheet.name).to eq("Investment project #{spending_proposal.id}")
-    end
-
     it "returns name for budget investment signature sheets" do
       budget_investment = create(:budget_investment)
       signature_sheet.signable = budget_investment
@@ -82,13 +75,13 @@ describe SignatureSheet do
     it "returns an array after spliting document numbers by newlines or commas" do
       signature_sheet.document_numbers = "123A\r\n456B\n789C,123B"
 
-      expect(signature_sheet.parsed_document_numbers).to eq(['123A', '456B', '789C', '123B'])
+      expect(signature_sheet.parsed_document_numbers).to eq(["123A", "456B", "789C", "123B"])
     end
 
     it "strips spaces between number and letter" do
       signature_sheet.document_numbers = "123 A\n456 B \n 789C"
 
-      expect(signature_sheet.parsed_document_numbers).to eq(['123A', '456B', '789C'])
+      expect(signature_sheet.parsed_document_numbers).to eq(["123A", "456B", "789C"])
     end
   end
 

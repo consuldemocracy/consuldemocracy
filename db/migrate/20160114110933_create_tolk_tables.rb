@@ -1,4 +1,4 @@
-class CreateTolkTables < ActiveRecord::Migration
+class CreateTolkTables < ActiveRecord::Migration[4.2]
   def self.up
     create_table :tolk_locales do |t|
       t.string   :name

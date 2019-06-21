@@ -1,4 +1,4 @@
-class AddTsvectorToDebates < ActiveRecord::Migration
+class AddTsvectorToDebates < ActiveRecord::Migration[4.2]
 
   def up
     add_column :debates, :tsv, :tsvector

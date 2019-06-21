@@ -1,13 +1,12 @@
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   include ImagesHelper
   include ImageablesHelper
 
-  TITLE_LENGTH_RANGE = 4..80
-  MIN_SIZE = 475
-  MAX_IMAGE_SIZE = 1.megabyte
-  ACCEPTED_CONTENT_TYPE = %w(image/jpeg image/jpg).freeze
-
-  has_attached_file :attachment, styles: { large: "x#{MIN_SIZE}", medium: "300x300#", thumb: "140x245#" },
+  has_attached_file :attachment, styles: {
+                                   large: "x#{Setting["uploads.images.min_height"]}",
+                                   medium: "300x300#",
+                                   thumb: "140x245#"
+                                 },
                                  url: "/system/:class/:prefix/:style/:hash.:extension",
                                  hash_data: ":class/:style",
                                  use_timestamp: false,
@@ -23,7 +22,8 @@ class Image < ActiveRecord::Base
   validate :attachment_presence
   validate :validate_attachment_content_type,         if: -> { attachment.present? }
   validate :validate_attachment_size,                 if: -> { attachment.present? }
-  validates :title, presence: true, length: { in: TITLE_LENGTH_RANGE }
+  validates :title, presence: true
+  validate :validate_title_length
   validates :user_id, presence: true
   validates :imageable_id, presence: true,         if: -> { persisted? }
   validates :imageable_type, presence: true,       if: -> { persisted? }
@@ -71,31 +71,50 @@ class Image < ActiveRecord::Base
         return true if imageable_class == Widget::Card
 
         dimensions = Paperclip::Geometry.from_file(attachment.queued_for_write[:original].path)
-        errors.add(:attachment, :min_image_width, required_min_width: MIN_SIZE) if dimensions.width < MIN_SIZE
-        errors.add(:attachment, :min_image_height, required_min_height: MIN_SIZE) if dimensions.height < MIN_SIZE
+        min_width = Setting["uploads.images.min_width"].to_i
+        min_height = Setting["uploads.images.min_height"].to_i
+        errors.add(:attachment, :min_image_width, required_min_width: min_width) if dimensions.width < min_width
+        errors.add(:attachment, :min_image_height, required_min_height: min_height) if dimensions.height < min_height
       end
     end
 
     def validate_attachment_size
       if imageable_class &&
-         attachment_file_size > 1.megabytes
-        errors[:attachment] = I18n.t("images.errors.messages.in_between",
-                                      min: "0 Bytes",
-                                      max: "#{imageable_max_file_size} MB")
+         attachment_file_size > Setting["uploads.images.max_size"].to_i.megabytes
+        errors.add(:attachment, I18n.t("images.errors.messages.in_between",
+                                     min: "0 Bytes",
+                                     max: "#{imageable_max_file_size} MB"))
+      end
+    end
+
+    def validate_title_length
+      if title.present?
+
+        title_min_length = Setting["uploads.images.title.min_length"].to_i
+        title_max_length = Setting["uploads.images.title.max_length"].to_i
+
+        if title.size < title_min_length
+          errors.add(:title, I18n.t("errors.messages.too_short", count: title_min_length))
+        end
+
+        if title.size > title_max_length
+          errors.add(:title, I18n.t("errors.messages.too_long", count: title_max_length))
+        end
       end
     end
 
     def validate_attachment_content_type
       if imageable_class && !attachment_of_valid_content_type?
-        errors[:attachment] = I18n.t("images.errors.messages.wrong_content_type",
-                                      content_type: attachment_content_type,
-                                      accepted_content_types: imageable_humanized_accepted_content_types)
+        message = I18n.t("images.errors.messages.wrong_content_type",
+                         content_type: attachment_content_type,
+                         accepted_content_types: imageable_humanized_accepted_content_types)
+        errors.add(:attachment, message)
       end
     end
 
     def attachment_presence
       if attachment.blank? && cached_attachment.blank?
-        errors[:attachment] = I18n.t("errors.messages.blank")
+        errors.add(:attachment, I18n.t("errors.messages.blank"))
       end
     end
 

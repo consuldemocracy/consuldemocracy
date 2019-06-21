@@ -3,7 +3,7 @@ es-PE:
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
     comment:
       hi: Hola
-      new_comment_by_html: Hay un nuevo comentario de <b>%{commenter}</b> en
+      new_comment_by_html: Hay un nuevo comentario de <strong>%{commenter}</strong> en
       subject: Alguien ha comentado en tu %{commentable}
       title: Nuevo comentario
     config:
@@ -16,11 +16,11 @@ es-PE:
       title: Verifica tu cuenta con el siguiente enlace
     reply:
       hi: Hola
-      new_reply_by_html: Hay una nueva respuesta de <b>%{commenter}</b> a tu comentario en
+      new_reply_by_html: Hay una nueva respuesta de <strong>%{commenter}</strong> a tu comentario en
       subject: Alguien ha respondido a tu comentario
       title: Nueva respuesta a tu comentario
     unfeasible_spending_proposal:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       new_html: "Por todo ello, te invitamos a que elabores una <strong>nueva propuesta</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"
@@ -57,7 +57,7 @@ es-PE:
       sincerely: "Atentamente,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
-      hi: "Estimado usuario,"
+      hi: "Estimado/a usuario/a"
       new_html: "Por todo ello, te invitamos a que elabores un <strong>nuevo proyecto de gasto</strong> que se ajuste a las condiciones de este proceso. Esto lo puedes hacer en este enlace: %{url}."
       new_href: "nueva propuesta de inversión"
       sincerely: "Atentamente"

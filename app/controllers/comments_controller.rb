@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     if @comment.save
       CommentNotifier.new(comment: @comment).process
       add_notification @comment
+      EvaluationCommentNotifier.new(comment: @comment).process if send_evaluation_notification?
     else
       render :new
     end
@@ -36,13 +37,13 @@ class CommentsController < ApplicationController
   def flag
     Flag.flag(current_user, @comment)
     set_comment_flags(@comment)
-    respond_with @comment, template: 'comments/_refresh_flag_actions'
+    respond_with @comment, template: "comments/_refresh_flag_actions"
   end
 
   def unflag
     Flag.unflag(current_user, @comment)
     set_comment_flags(@comment)
-    respond_with @comment, template: 'comments/_refresh_flag_actions'
+    respond_with @comment, template: "comments/_refresh_flag_actions"
   end
 
   private
@@ -103,8 +104,11 @@ class CommentsController < ApplicationController
       return if current_user.administrator? || current_user.moderator?
 
       if @commentable.respond_to?(:comments_closed?) && @commentable.comments_closed?
-        redirect_to @commentable, alert: t('comments.comments_closed')
+        redirect_to @commentable, alert: t("comments.comments_closed")
       end
     end
 
+    def send_evaluation_notification?
+      @comment.valuation && Setting["feature.valuation_comment_notification"]
+    end
 end

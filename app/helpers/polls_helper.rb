@@ -42,11 +42,44 @@ module PollsHelper
   end
 
   def poll_voter_token(poll, user)
-    Poll::Voter.where(poll: poll, user: user, origin: "web").first&.token || ''
+    Poll::Voter.where(poll: poll, user: user, origin: "web").first&.token || ""
   end
 
   def voted_before_sign_in(question)
     question.answers.where(author: current_user).any? { |vote| current_user.current_sign_in_at > vote.updated_at }
   end
 
+  def link_to_poll(text, poll)
+    if poll.results_enabled?
+      link_to text, results_poll_path(id: poll.slug || poll.id)
+    elsif poll.stats_enabled?
+      link_to text, stats_poll_path(id: poll.slug || poll.id)
+    else
+      link_to text, poll_path(id: poll.slug || poll.id)
+    end
+  end
+
+  def show_stats_or_results?
+    @poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)
+  end
+
+  def results_menu?
+    controller_name == "polls" && action_name == "results"
+  end
+
+  def stats_menu?
+    controller_name == "polls" && action_name == "stats"
+  end
+
+  def info_menu?
+    controller_name == "polls" && action_name == "show"
+  end
+
+  def show_polls_description?
+    @active_poll.present? && @current_filter == "current"
+  end
+
+  def stored_positive_negative_value(question, answer)
+    question.answers.find_by(author_id: current_user.id, answer: answer.title).positive
+  end
 end

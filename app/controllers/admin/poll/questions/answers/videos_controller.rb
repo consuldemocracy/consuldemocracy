@@ -38,7 +38,7 @@ class Admin::Poll::Questions::Answers::VideosController < Admin::Poll::BaseContr
              else
       t("flash.actions.destroy.error")
              end
-    redirect_to :back, notice: notice
+    redirect_back(fallback_location: (request.referrer || root_path), notice: notice)
   end
 
   private

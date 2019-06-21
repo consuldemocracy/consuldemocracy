@@ -249,7 +249,6 @@
 .debate-form,
 .proposal-form,
 .budget-investment-form,
-.spending-proposal-form,
 .document-form,
 .topic-new,
 .topic-form {
@@ -287,7 +286,7 @@
     margin: $line-height / 2 0;
 
     &::before {
-      content: 'l ';
+      content: "l ";
       font-family: "icons" !important;
     }
   }
@@ -319,7 +318,8 @@
 .legislation-process-edit,
 .milestone-new,
 .milestone-edit,
-.image-form {
+.image-form,
+.dashboard-action-form {
   @include direct-uploads;
 }
 
@@ -523,118 +523,6 @@
   }
 }
 
-.tab-milestones ul {
-  margin-top: rem-calc(40);
-  position: relative;
-
-  li {
-    margin: 0 auto;
-    position: relative;
-    width: 0;
-  }
-
-  li::before {
-    background: $budget;
-    border-radius: rem-calc(20);
-    content: '';
-    height: rem-calc(20);
-    position: absolute;
-    top: 5px;
-    transform: translateX(-50%);
-    width: rem-calc(20);
-    z-index: 2;
-  }
-
-  li::after {
-    background: $light-gray;
-    bottom: 100%;
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 25px;
-    width: 1px;
-    z-index: 1;
-  }
-}
-
-.tab-milestones ul .milestone-content {
-  padding: $line-height / 6 $line-height / 2;
-  position: relative;
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  .milestone-date {
-    color: $text-medium;
-    font-size: $small-font-size;
-  }
-}
-
-.tab-milestones .timeline ul li:nth-child(odd),
-.tab-milestones .timeline ul li:nth-child(even) {
-
-  .milestone-content {
-
-    @include breakpoint(medium) {
-      width: rem-calc(300);
-    }
-
-    @include breakpoint(large) {
-      width: rem-calc(450);
-    }
-  }
-}
-
-.tab-milestones .timeline ul li:nth-child(odd) {
-
-  .milestone-content {
-    text-align: right;
-
-    @include breakpoint(medium) {
-      margin-left: rem-calc(-315);
-    }
-
-    @include breakpoint(large) {
-      margin-left: rem-calc(-465);
-    }
-  }
-}
-
-.tab-milestones .timeline ul li:nth-child(even) {
-
-  .milestone-content {
-    left: 15px;
-  }
-}
-
-.tab-milestones {
-  @include breakpoint(small only) {
-
-    .timeline ul li {
-      width: 100%;
-
-      &:nth-child(odd),
-      &:nth-child(even) {
-
-        .milestone-content {
-          left: 15px;
-          text-align: left;
-        }
-      }
-    }
-  }
-}
-
-.milestone-status {
-  background: $budget;
-  border-radius: rem-calc(4);
-  color: #fff;
-  display: inline-block;
-  margin-top: $line-height / 6;
-  padding: $line-height / 4 $line-height / 2;
-}
-
 .show-actions-menu {
 
   [class^="icon-"] {
@@ -659,6 +547,15 @@
     background: $highlight;
     margin-bottom: $line-height;
     padding-top: $line-height / 4;
+  }
+}
+
+.fixed-mobile-content {
+
+  @include breakpoint(medium down) {
+    background: #fff;
+    margin-bottom: rem-calc(-1) !important;
+    padding-top: $line-height / 2;
   }
 }
 
@@ -845,7 +742,7 @@
   }
 
   .truncate {
-    background: image-url('truncate.png');
+    background: image-url("truncate.png");
     background-repeat: repeat-x;
     bottom: 0;
     height: rem-calc(24);
@@ -1050,7 +947,7 @@
 
     &::before {
       color: $text;
-      font-family: 'icons';
+      font-family: "icons";
     }
   }
 
@@ -1059,7 +956,7 @@
     .button {
 
       &::before {
-        content: '\51';
+        content: "\51";
       }
     }
   }
@@ -1069,7 +966,7 @@
     .button {
 
       &::before {
-        content: '\22';
+        content: "\22";
       }
     }
   }
@@ -1078,8 +975,8 @@
     position: relative;
 
     &::before {
-      content: '\22';
-      font-family: 'icons';
+      content: "\22";
+      font-family: "icons";
       left: 0;
       position: absolute;
       top: 6px;
@@ -1090,8 +987,8 @@
     position: relative;
 
     &::before {
-      content: '\51';
-      font-family: 'icons';
+      content: "\51";
+      font-family: "icons";
       left: 0;
       position: absolute;
       top: 6px;
@@ -1102,8 +999,8 @@
     color: $brand;
 
     &::after {
-      content: '\6c';
-      font-family: 'icons';
+      content: "\6c";
+      font-family: "icons";
       font-size: $tiny-font-size;
     }
   }
@@ -1279,6 +1176,11 @@
       text-decoration: none;
     }
 
+    .confirmed {
+      font-size: rem-calc(24);
+      font-weight: bold;
+    }
+
     .info {
       background: #6a2a72;
 
@@ -1365,16 +1267,12 @@
     display: inline-block;
     margin-bottom: $line-height / 2;
 
-    &:hover {
-      background: $highlight;
-      text-decoration: none;
-    }
-
     a {
       display: block;
       padding: $line-height / 2;
 
       &:hover {
+        background: $highlight;
         text-decoration: none;
       }
     }
@@ -1422,8 +1320,8 @@
 
     &::before {
       color: #a5a1ff;
-      content: '\57';
-      font-family: 'icons';
+      content: "\57";
+      font-family: "icons";
       font-size: $small-font-size;
       position: absolute;
       right: -6px;
@@ -1564,10 +1462,11 @@
   border-radius: rem-calc(3);
   color: $budget;
   font-weight: bold;
+  padding: $line-height / 4;
 
   &::after {
-    content: '\56';
-    font-family: 'icons';
+    content: "\56";
+    font-family: "icons";
     font-size: $small-font-size;
     font-weight: normal;
     line-height: $line-height;
@@ -1581,7 +1480,6 @@
 }
 
 .progress-bar-nav {
-  padding: $line-height 0;
   position: relative;
   z-index: 3;
 
@@ -1643,7 +1541,7 @@
       background-color: #fff;
       border: 4px solid $budget;
       border-radius: 100%;
-      content: '';
+      content: "";
       height: 16px;
       left: -22px;
       position: absolute;
@@ -1785,7 +1683,7 @@
 
     &::after {
       color: #1b254c;
-      content: '\59';
+      content: "\59";
       font-family: "icons" !important;
       left: 34px;
       position: absolute;
@@ -1847,8 +1745,12 @@
   background: #fafafa;
   border-bottom: 1px solid #eee;
 
-  .column:nth-child(odd) {
-    border-right: 2px solid $text;
+  .margin-bottom {
+    margin-bottom: 0;
+  }
+
+  .orbit-bullets {
+    margin-bottom: 0;
   }
 
   .answer-divider {
@@ -1858,14 +1760,35 @@
     padding-bottom: $line-height;
   }
 
+  .answer-left-divider {
+    border-left: solid 1px $text;
+    padding-left: rem-calc(10);
+  }
+
+  .margin-top {
+    margin-top: rem-calc(10);
+  }
+
+  .margin-bottom {
+    margin-bottom: rem-calc(20);
+  }
+
   .answer-description {
-    height: 100%;
+    max-height: rem-calc(1000);
 
     &.short {
-      height: rem-calc(300);
+      max-height: rem-calc(70);
       overflow: hidden;
+      max-width: rem-calc(700);
     }
   }
+
+  .question-divider {
+    border-bottom: rgba(219, 219, 219, 0.62) solid 1px;
+    margin-bottom: 1rem;
+    padding: rem-calc(24);
+  }
+
 }
 
 .orbit-bullets button {
@@ -1978,7 +1901,7 @@
 
       &::after {
         color: $color-info;
-        content: '\6c';
+        content: "\6c";
       }
     }
 
@@ -1987,7 +1910,7 @@
 
       &::after {
         color: $color-alert;
-        content: '\74';
+        content: "\74";
       }
     }
 
@@ -1996,7 +1919,7 @@
 
       &::after {
         color: $color-info;
-        content: '\6f';
+        content: "\6f";
       }
     }
 
@@ -2005,7 +1928,7 @@
 
       &::after {
         color: $color-warning;
-        content: '\6f';
+        content: "\6f";
       }
     }
 
@@ -2014,7 +1937,7 @@
 
       &::after {
         color: $color-success;
-        content: '\59';
+        content: "\59";
       }
     }
   }
@@ -2080,7 +2003,7 @@
       &::after {
         background: #92ba48;
         border-radius: rem-calc(20);
-        content: '\6c';
+        content: "\6c";
         color: #fff;
         font-family: "icons" !important;
         font-size: rem-calc(12);
@@ -2093,21 +2016,77 @@
   }
 }
 
+.icon-like,
+.icon-unlike {
+  background: #fff;
+  border: 2px solid $text-light;
+  border-radius: rem-calc(3);
+  color: $text-light;
+  display: inline-block;
+  font-size: rem-calc(30);
+  line-height: rem-calc(30);
+  padding: rem-calc(3) rem-calc(6);
+  position: relative;
+
+  &:hover,
+  &:active {
+    color: #fff;
+    cursor: pointer;
+    opacity: 1 !important;
+  }
+}
+
+.active-like {
+  color: #fff;
+  cursor: pointer;
+  opacity: 1 !important;
+  background: $like;
+  border: 2px solid $like;
+}
+
+.active-unlike {
+  color: #fff;
+  cursor: pointer;
+  opacity: 1 !important;
+  background: $unlike;
+  border: 2px solid $unlike;
+}
+
+.icon-like {
+
+  &:hover,
+  &:active,
+  .picked {
+    background: $like;
+    border: 2px solid $like;
+  }
+}
+
+.icon-unlike {
+
+  &:hover,
+  &:active {
+    background: $unlike;
+    border: 2px solid $unlike;
+  }
+}
+
+.vote-align {
+  float: right;
+}
+
+.vote-divider {
+  border-bottom: 1px solid $text-light;
+}
+
 // 09. Polls results and stats
 // ---------------------------
 
 .polls-results-stats {
 
   .sidebar {
-    border-bottom: 1px solid $border;
-    margin-bottom: $line-height;
 
-    @include breakpoint(medium) {
-      border-bottom: 0;
-      border-right: 1px solid $border;
-    }
-
-    .menu {
+    .menu:not(.vertical) {
       padding: 0;
 
       li a {
@@ -2140,11 +2119,5 @@
         font-weight: bold;
       }
     }
-  }
-
-  .number {
-    font-size: rem-calc(60);
-    font-weight: bold;
-    line-height: rem-calc(60);
   }
 }

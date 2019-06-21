@@ -1,0 +1,57 @@
+<%= back_link_to budgets_admin_stats_path %>
+
+<h2><%= @budget.name %> - <%= t("admin.stats.budget_balloting.title") %></h2>
+
+<div class="stats">
+  <div class="row stats-numbers">
+    <div class="small-12 medium-3 column">
+      <p class="featured">
+        <%= t("admin.stats.budget_balloting.vote_count") %>
+        <br>
+        <span id="total_votes_count" class="number">
+          <%= @vote_count %>
+        </span>
+      </p>
+    </div>
+
+    <div class="small-12 medium-6 column end">
+      <p>
+        <%= t("admin.stats.budget_balloting.participant_count") %>
+        <br>
+        <span id="total_participants_count" class="number">
+          <%= @user_count %>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<table class="investment-projects-summary">
+  <th colspan="2"><%= t("admin.stats.budget_balloting.votes_per_heading") %></th>
+
+  <% @vote_count_by_heading.each do |heading_name, count| %>
+    <tr id="vote_count_<%= heading_name.parameterize %>">
+      <td class="name">
+        <%= heading_name %>
+      </td>
+      <td class="name">
+        <%= number_with_delimiter count %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<table class="investment-projects-summary">
+  <th colspan="2"><%= t("admin.stats.budget_balloting.participants_per_district") %></th>
+
+  <% @user_count_by_district.each do |heading_name, count| %>
+    <tr id="user_count_<%= heading_name.parameterize %>">
+      <td class="name">
+        <%= heading_name %>
+      </td>
+      <td class="name">
+        <%= number_with_delimiter count %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+<% provide :title do %>
+  <%= "#{t("admin.header.title")} - #{t("tracking.progress_bars.index.title")}" %>
+<% end %>
+
+<%= back_link_to tracker_back_path(@progressable) %>
+
+<div class="clear"></div>
+
+<%= render "tracking/progress_bars/progress_bars", progressable: @progressable %>

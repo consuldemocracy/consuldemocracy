@@ -2,6 +2,7 @@ en:
   documents:
     title: Documents
     max_documents_allowed_reached_html: You have reached the maximum number of documents allowed! <strong>You have to delete one before you can upload another.</strong>
+    additional: Additional documentation
     form:
       title: Documents
       title_placeholder: Add a descriptive title for the document
@@ -13,11 +14,11 @@ en:
     actions:
       destroy:
         notice: Document was deleted successfully.
-        alert: Cannot destroy document.
+        alert: Cannot delete document.
         confirm: Are you sure you want to delete the document? This action cannot be undone!
     buttons:
       download_document: Download file
-      destroy_document: Destroy document
+      destroy_document: Delete document
     errors:
       messages:
         in_between: must be in between %{min} and %{max}

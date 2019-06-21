@@ -1,0 +1,12 @@
+<%= link_to tracking_budget_budget_investment_path(@budget, @investment), class: "back" do %>
+  <span class="icon-angle-left"></span>
+  <%= "#{t("tracking.budget_investments.show.title")} #{@investment.id}" %>
+<% end %>
+
+<br>
+
+<h1><%= @investment.title %></h1>
+
+<%= safe_html_with_links @investment.description %>
+
+<%= render "tracking/milestones/milestones", milestoneable: @investment %>

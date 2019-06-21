@@ -1,18 +1,21 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature "Admin custom content blocks" do
+describe "Admin custom content blocks" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   scenario "Index" do
     block = create(:site_customization_content_block)
+    heading_block = create(:heading_content_block)
     visit admin_site_customization_content_blocks_path
 
     expect(page).to have_content(block.name)
     expect(page).to have_content(block.body)
+    expect(page).to have_content(heading_block.heading.name)
+    expect(page).to have_content(heading_block.body)
   end
 
   context "Create" do

@@ -1,0 +1,92 @@
+es:
+  tracking:
+    header:
+      title: Seguimiento
+    menu:
+      title: Seguimiento
+      budgets: Presupuestos participativos
+    budgets:
+      index:
+        title: Presupuestos participativos
+        table_name: Nombre
+        table_phase: Fase
+        table_assigned_investments_tracking_open: Prop. Inv. asignadas en segumiento
+        table_actions: Acciones
+        tracking: Seguimiento
+        no_budgets: "No hay presupuestos"
+    budget_investments:
+      index:
+        assigned_to: "Asignadas a %{tracker}"
+        title: Proyectos de gasto
+        edit: Editar seguimiento
+        table_id: ID
+        table_title: Título
+        table_heading_name: Nombre de la partida
+        table_actions: Acciones
+        no_investments: "No hay proyectos de gasto."
+      show:
+        title: Proyecto de gasto
+        info: Datos de envío
+        by: Enviada por
+        sent: Fecha de creación
+        heading: Partida
+        undefined: Sin definir
+        responsibles: Responsables
+        assigned_admin: Administrador asignado
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Título"
+        table_description: "Descripción"
+        table_publication_date: "Fecha de publicación"
+        table_status: Estado
+        table_actions: "Acciones"
+        delete: "Eliminar hito"
+        no_milestones: "No hay hitos definidos"
+        image: "Imagen"
+        show_image: "Mostrar imagen"
+        documents: "Documentos"
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
+      form:
+        admin_statuses: Gestionar estados
+        no_statuses_defined: No hay estados definidos
+      new:
+        creating: Crear hito
+        date: Fecha
+        description: Descripción
+      edit:
+        title: Editar hito
+      create:
+        notice: "¡Nuevo hito creado con éxito!"
+      update:
+        notice: Hito actualizado
+      delete:
+        notice: Hito borrado correctamente
+    progress_bars:
+      manage: "Gestionar barras de progreso"
+      index:
+        title: "Barras de progreso"
+        no_progress_bars: "No hay barras de progreso"
+        new_progress_bar: "Crear nueva barra de progreso"
+        primary: "Barra de progreso principal"
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Título"
+        table_percentage: "Progreso"
+      new:
+        creating: "Crear barra de progreso"
+      edit:
+        title:
+          primary: "Editar barra de progreso principal"
+          secondary: "Editar barra de progreso %{title}"
+      create:
+        notice: "¡Barra de progreso creada con éxito!"
+      update:
+        notice: "Barra de progreso actualizada"
+      delete:
+        notice: "Barra de progreso eliminada correctamente"
+  trackers:
+    budget_investments:
+      show:
+        assigned_trackers: "Gestores de seguimiento asignados"

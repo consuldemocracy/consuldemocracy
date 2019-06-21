@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <th scope="col"><%= t("admin.valuators.index.name") %></th>
+    <th scope="col"><%= t("admin.valuators.index.email") %></th>
+    <th scope="col"><%= t("admin.valuators.index.description") %></th>
+    <th scope="col"><%= t("admin.valuators.index.group") %></th>
+    <th scope="col"><%= t("admin.valuators.index.abilities") %></th>
+    <th scope="col" class="small-3"><%= t("admin.actions.actions") %></th>
+  </thead>
+  <tbody>
+    <% valuators.each do |valuator| %>
+      <% if valuator.is_a?(Valuator) %>
+        <%= render partial: 'valuator_row', locals: {valuator: valuator} %>
+      <% elsif valuator.valuator? %>
+        <%= render partial: 'valuator_row', locals: {valuator: valuator.valuator} %>
+      <% else %>
+        <%= render partial: 'user_row', locals: {user: valuator} %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

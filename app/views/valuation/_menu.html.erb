@@ -4,15 +4,6 @@
       <%= link_to t("valuation.menu.title"), valuation_root_path %>
     </li>
 
-    <% if feature?(:spending_proposals) %>
-      <li <%= "class=is-active" if controller_name == "spending_proposals" %>>
-        <%= link_to valuation_spending_proposals_path do %>
-          <span class="icon-budget"></span>
-          <%= t("valuation.menu.spending_proposals") %>
-        <% end %>
-      </li>
-    <% end %>
-
     <% if feature?(:budgets) %>
       <li <%= "class=is-active" if controller_name == "budget_investments" %>>
         <%= link_to valuation_budgets_path do %>

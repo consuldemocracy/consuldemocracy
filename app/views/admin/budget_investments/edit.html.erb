@@ -1,27 +1,30 @@
-<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params)), class: 'back' do %>
+<%= link_to admin_budget_budget_investment_path(@budget, @investment, Budget::Investment.filter_params(params).to_h), class: "back" do %>
   <span class="icon-angle-left"></span> <%= t("shared.back") %>
 <% end %>
 
 <%= form_for @investment,
              url: admin_budget_budget_investment_path(@budget, @investment) do |f| %>
 
-  <% Budget::Investment.filter_params(params).each do |filter_name, filter_value| %>
+  <% Budget::Investment.filter_params(params).to_h.each do |filter_name, filter_value| %>
    <%= hidden_field_tag filter_name, filter_value %>
   <% end %>
 
   <div class="row expanded">
     <div class="small-12 column">
-      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length %>
+      <%= f.text_field :title,
+                        maxlength: Budget::Investment.title_max_length %>
     </div>
 
     <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale } %>
+      <%= f.cktext_area :description,
+                        maxlength: Budget::Investment.description_max_length,
+                        ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">
       <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
       <%= f.text_field :tag_list,
-                       value: @investment.tag_list.sort.join(','),
+                       value: @investment.tag_list.sort.join(","),
                        label: false %>
     </div>
 
@@ -43,7 +46,7 @@
 
       <div class="small-12 medium-6">
         <%= f.select(:administrator_id,
-                       @admins.collect{ |a| [a.name_and_email, a.id ] },
+                       @admins.collect{ |a| [a.description_or_name_and_email, a.id ] },
                        { include_blank: t("admin.budget_investments.edit.undefined") }) %>
       </div>
     </div>
@@ -57,10 +60,10 @@
         <% end %>
       </div>
       <%= f.text_field :valuation_tag_list,
-                        value: @investment.tag_list_on(:valuation).sort.join(','),
+                        value: @investment.valuation_tag_list.sort.join(","),
                         label: false,
                         placeholder: t("admin.budget_investments.edit.tags_placeholder"),
-                        class: 'js-tag-list' %>
+                        class: "js-tag-list" %>
     </div>
 
     <div class="small-12 column margin-top">
@@ -81,6 +84,16 @@
         <% end %>
       </ul>
     </div>
+
+    <div class="small-12 column">
+      <hr>
+      <%= f.label :tracker_ids, t("admin.budget_investments.edit.assigned_trackers") %>
+      <ul>
+        <%= f.collection_check_boxes :tracker_ids, @trackers, :id, :email do |b| %>
+          <li><%= b.label(title: tracker_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <div class="row expanded margin-top">
@@ -88,7 +101,7 @@
     <div class="small-12 medium-3 column">
       <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
       <%= f.label :incompatible do %>
-        <%= f.check_box :incompatible, title: t('admin.budget_investments.edit.compatibility'), label: false %>
+        <%= f.check_box :incompatible, title: t("admin.budget_investments.edit.compatibility"), label: false %>
         <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
       <% end %>
     </div>
@@ -96,11 +109,18 @@
     <div class="small-12 medium-3 column float-left">
       <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
       <%= f.label :selected do %>
-        <%= f.check_box :selected, title: t('admin.budget_investments.edit.selection'), label: false %>
+        <%= f.check_box :selected, title: t("admin.budget_investments.edit.selection"), label: false %>
         <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_selected") %></span>
       <% end %>
     </div>
   </div>
+
+  <div class="small-12 column">
+    <%= f.text_field :milestone_tag_list,
+                   value: @investment.milestone_tag_list.sort.join(", "),
+                   label: t("admin.budget_investments.edit.milestone_tags") %>
+  </div>
+
 
   <div class="small-12 column margin-top">
     <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>

@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :debate do
     sequence(:title)     { |n| "Debate #{n} title" }
-    description          'Debate description'
-    terms_of_service     '1'
+    description          "Debate description"
+    terms_of_service     "1"
     association :author, factory: :user
 
     trait :hidden do

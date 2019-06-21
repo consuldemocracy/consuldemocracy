@@ -1,4 +1,5 @@
-<% provide :title do %><%= @poll.name %><% end %>
+<% provide :title do %><%= @poll.name %>
+<% end %>
 
 <div class="polls-results-stats">
   <%= render "poll_header" %>
@@ -10,7 +11,7 @@
       <p><strong><%= t("polls.show.results.title") %></strong></p>
       <ul class="menu vertical">
         <%- @poll.questions.each do |question| %>
-          <li><%=link_to question.title, "##{question.title.parameterize}" %></li>
+          <li><%= link_to question.title, "##{question.title.parameterize}" %></li>
         <% end %>
       </ul>
     </div>
@@ -19,27 +20,23 @@
       <%- @poll.questions.each do |question| %>
         <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
         <table id="question_<%= question.id %>_results_table">
-          <thead>
-            <tr>
-              <%- question.question_answers.each do |answer| %>
-                <th scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
-                  <% if answer.most_voted %>
-                    <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
-                  <% end %>
-                  <%= answer.title %>
-                </th>
-              <% end %>
-            </tr>
-          </thead>
           <tbody>
-            <tr>
-              <%- question.question_answers.each do |answer| %>
-                <td id="answer_<%= answer.id %>_result" <%= answer.most_voted? ? "class=win" : "" %>>
-                  <%= answer.total_votes %>
+          <%- question.question_answers.visibles.each do |answer| %>
+            <tr scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
+              <td>
+                <% if answer.most_voted %>
+                  <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
+                <% end %>
+                <%= answer.title %>
+              </td>
+              <td id="answer_<%= answer.id %>_result" <%= answer.most_voted? ? "class=win" : "" %>>
+                <%= answer.total_votes %>
+                <% unless question.enum_type == "positive_negative_open" || question.enum_type == "prioritized" %>
                   (<%= answer.total_votes_percentage.round(2) %>%)
-                </td>
-              <% end %>
+                <% end %>
+              </td>
             </tr>
+          <% end %>
           </tbody>
         </table>
       <% end %>

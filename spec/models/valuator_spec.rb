@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Valuator do
 
@@ -30,7 +30,7 @@ describe Valuator do
       assigned_investment_ids = valuator.assigned_investment_ids
       expect(assigned_investment_ids).to include investment1.id
       expect(assigned_investment_ids).to include investment2.id
-      expect(assigned_investment_ids).to_not include investment3.id
+      expect(assigned_investment_ids).not_to include investment3.id
     end
 
     it "returns investments assigned to a valuator group" do
@@ -47,7 +47,16 @@ describe Valuator do
       assigned_investment_ids = valuator.assigned_investment_ids
       expect(assigned_investment_ids).to include investment1.id
       expect(assigned_investment_ids).to include investment2.id
-      expect(assigned_investment_ids).to_not include investment3.id
+      expect(assigned_investment_ids).not_to include investment3.id
     end
   end
+
+  describe "abilities" do
+    context "by default" do
+      let(:valuator) { Valuator.new }
+      it { expect(valuator.can_comment).to be_truthy }
+      it { expect(valuator.can_edit_dossier).to be_truthy }
+    end
+  end
+
 end

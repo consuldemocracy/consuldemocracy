@@ -1,0 +1,22 @@
+nn:
+  activemodel:
+    models:
+      verification:
+        residence: "Adresse"
+        sms: "SMS"
+    attributes:
+      verification:
+        residence:
+          document_type: "Dokumenttype"
+          document_number: "Dokumentnummer (inkludert bokstaver)"
+          date_of_birth: "Fødselsdato"
+          postal_code: "Postnummer"
+        sms:
+          phone: "Telefon"
+          confirmation_code: "Bekreftelseskode"
+        email:
+          recipient: "E-post"
+      officing/residence:
+        document_type: "Dokumenttype"
+        document_number: "Dokumentnummer (inkludert bokstaver)"
+        year_of_birth: "Fødselsår"

@@ -1,4 +1,4 @@
-class RemoveTolk < ActiveRecord::Migration
+class RemoveTolk < ActiveRecord::Migration[4.2]
   def change
     remove_index :tolk_translations, column: [:phrase_id, :locale_id]
     remove_index :tolk_locales, column: :name

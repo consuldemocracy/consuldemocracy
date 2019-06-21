@@ -1,16 +1,18 @@
-class SiteCustomization::Image < ActiveRecord::Base
+class SiteCustomization::Image < ApplicationRecord
   VALID_IMAGES = {
     "logo_header" => [260, 80],
     "social_media_icon" => [470, 246],
     "social_media_icon_twitter" => [246, 246],
     "apple-touch-icon-200" => [200, 200],
-    "budget_execution_no_image" => [800, 600]
+    "budget_execution_no_image" => [800, 600],
+    "map" => [420, 500],
+    "logo_email" => [400, 80]
   }
 
   has_attached_file :image
 
   validates :name, presence: true, uniqueness: true, inclusion: { in: VALID_IMAGES.keys }
-  validates_attachment_content_type :image, content_type: ["image/png"]
+  validates_attachment_content_type :image, content_type: ["image/png", "image/jpeg"]
   validate :check_image
 
   def self.all_images

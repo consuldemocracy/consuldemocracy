@@ -1,0 +1,29 @@
+<% @process.get_best_annotation_comments.take(10).each do |comment| %>
+  <div class="row">
+    <div class="proposal">
+      <div class="panel panel_resume" style="min-height: 5rem;">
+        <div class="row">
+          <div class="small-12 medium-9 column">
+            <span><%= t("legislation.annotations.index.comment_about") %> </span>
+          </div>
+        </div>
+        <div class="row question_title">
+          <div class="small-12 medium-9 column">
+            <div class="annotation_text question_title">
+              <span> "<%= Legislation::Annotation.find_by(id: comment.commentable_id).quote %>" </span>
+            </div>
+          </div>
+          <div class="small-12 medium-3 column">
+            <span> <%= comment.cached_votes_up - comment.cached_votes_down %> <%= t("legislation.summary.votes") %>  </span>
+          </div>
+        </div>
+        <span><%= t("legislation.annotations.show.title") %>:</span>
+        <div class="row">
+          <div class="small-12 medium-9 column">
+            <p class="comment_box"> <%= link_to comment.body, comment_path(comment) %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

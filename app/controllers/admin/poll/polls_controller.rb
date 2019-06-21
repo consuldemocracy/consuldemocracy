@@ -1,17 +1,18 @@
 class Admin::Poll::PollsController < Admin::Poll::BaseController
   include Translatable
+  include ImageAttributes
+  include ReportAttributes
   load_and_authorize_resource
 
   before_action :load_search, only: [:search_booths, :search_officers]
   before_action :load_geozones, only: [:new, :create, :edit, :update]
 
   def index
+    @polls = Poll.not_budget.created_by_admin.order(starts_at: :desc)
   end
 
   def show
-    @poll = Poll.includes(:questions).
-                          order('poll_questions.title').
-                          find(params[:id])
+    @poll = Poll.find(params[:id])
   end
 
   def new
@@ -20,7 +21,12 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   def create
     @poll = Poll.new(poll_params.merge(author: current_user))
     if @poll.save
-      redirect_to [:admin, @poll], notice: t("flash.actions.create.poll")
+      notice = t("flash.actions.create.poll")
+      if @poll.budget.present?
+        redirect_to admin_poll_booth_assignments_path(@poll), notice: notice
+      else
+        redirect_to [:admin, @poll], notice: notice
+      end
     else
       render :new
     end
@@ -50,7 +56,17 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def booth_assignments
-    @polls = Poll.current_or_incoming
+    @polls = Poll.current
+  end
+
+  def destroy
+    if ::Poll::Voter.where(poll: @poll).any?
+      redirect_to admin_poll_path(@poll), alert: t("admin.polls.destroy.unable_notice")
+    else
+      @poll.destroy
+
+      redirect_to admin_polls_path, notice: t("admin.polls.destroy.success_notice")
+    end
   end
 
   private
@@ -60,11 +76,10 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
     end
 
     def poll_params
-      image_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-      attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :results_enabled,
-                    :stats_enabled, geozone_ids: [],
-                    image_attributes: image_attributes]
-      params.require(:poll).permit(*attributes, translation_params(Poll))
+      attributes = [:name, :starts_at, :ends_at, :geozone_restricted, :budget_id,
+                    geozone_ids: [], image_attributes: image_attributes]
+
+      params.require(:poll).permit(*attributes, *report_attributes, translation_params(Poll))
     end
 
     def search_params

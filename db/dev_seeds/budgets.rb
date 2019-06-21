@@ -1,11 +1,11 @@
-INVESTMENT_IMAGE_FILES = %w{
+INVESTMENT_IMAGE_FILES = %w[
   brennan-ehrhardt-25066-unsplash_713x513.jpg
   carl-nenzen-loven-381554-unsplash_713x475.jpg
   carlos-zurita-215387-unsplash_713x475.jpg
   hector-arguello-canals-79584-unsplash_713x475.jpg
   olesya-grichina-218176-unsplash_713x475.jpg
   sole-d-alessandro-340443-unsplash_713x475.jpg
-}.map do |filename|
+].map do |filename|
   File.new(Rails.root.join("db",
                            "dev_seeds",
                            "images",
@@ -26,35 +26,93 @@ end
 
 section "Creating Budgets" do
   Budget.create(
-    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year - 1}",
-    currency_symbol: I18n.t('seeds.budgets.currency'),
-    phase: 'finished'
+    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
+    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
+    currency_symbol: I18n.t("seeds.budgets.currency"),
+    phase: "finished"
   )
+
   Budget.create(
-    name: "#{I18n.t('seeds.budgets.budget')} #{Date.current.year}",
-    currency_symbol: I18n.t('seeds.budgets.currency'),
-    phase: 'accepting'
+    name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
+    name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
+    currency_symbol: I18n.t("seeds.budgets.currency"),
+    phase: "accepting"
   )
+
+  Budget.find_each do |budget|
+    budget.phases.each do |phase|
+      random_locales.map do |locale|
+        Globalize.with_locale(locale) do
+          phase.description = "Description for locale #{locale}"
+          phase.summary = "Summary for locale #{locale}"
+          phase.save!
+        end
+      end
+    end
+  end
 
   Budget.all.each do |budget|
-    city_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.all_city'))
-    city_group.headings.create!(name: I18n.t('seeds.budgets.groups.all_city'),
-                                price: 1000000,
-                                population: 1000000)
+    city_group_params = {
+      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
+      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es)
+    }
+    city_group = budget.groups.create!(city_group_params)
 
-    districts_group = budget.groups.create!(name: I18n.t('seeds.budgets.groups.districts'))
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.north_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 350000)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.west_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 300000)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.east_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 200000)
-    districts_group.headings.create!(name: I18n.t('seeds.geozones.central_district'),
-                                     price: rand(5..10) * 100000,
-                                     population: 150000)
+    city_heading_params = {
+      name_en: I18n.t("seeds.budgets.groups.all_city", locale: :en),
+      name_es: I18n.t("seeds.budgets.groups.all_city", locale: :es),
+      price: 1000000,
+      population: 1000000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    city_group.headings.create!(city_heading_params)
+
+    districts_group_params = {
+      name_en: I18n.t("seeds.budgets.groups.districts", locale: :en),
+      name_es: I18n.t("seeds.budgets.groups.districts", locale: :es)
+    }
+    districts_group = budget.groups.create!(districts_group_params)
+
+    north_heading_params = {
+      name_en: I18n.t("seeds.geozones.north_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.north_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 350000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(north_heading_params)
+
+    west_heading_params = {
+      name_en: I18n.t("seeds.geozones.west_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.west_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 300000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(west_heading_params)
+
+    east_heading_params = {
+      name_en: I18n.t("seeds.geozones.east_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.east_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 200000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(east_heading_params)
+
+    central_heading_params = {
+      name_en: I18n.t("seeds.geozones.central_district", locale: :en),
+      name_es: I18n.t("seeds.geozones.central_district", locale: :es),
+      price: rand(5..10) * 100000,
+      population: 150000,
+      latitude: "40.416775",
+      longitude: "-3.703790"
+    }
+    districts_group.headings.create!(central_heading_params)
   end
 end
 
@@ -69,12 +127,12 @@ section "Creating Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
-      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+      description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
-      feasibility: %w{undecided unfeasible feasible feasible feasible feasible}.sample,
+      feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
       valuation_finished: [false, true].sample,
-      tag_list: tags.sample(3).join(','),
+      tag_list: tags.sample(3).join(","),
       price: rand(1..100) * 100000,
       skip_map: "1",
       terms_of_service: "1"
@@ -93,9 +151,9 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting['map_latitude'].to_f + rand(-10..10)/100.to_f,
-                         longitude: Setting['map_longitude'].to_f + rand(-10..10)/100.to_f,
-                         zoom: Setting['map_zoom'],
+      MapLocation.create(latitude: Setting["map.latitude"].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting["map.longitude"].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting["map.zoom"],
                          investment_id: investment.id)
     end
   end
@@ -117,7 +175,7 @@ section "Winner Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
-      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+      description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: "feasible",
       valuation_finished: true,
@@ -136,25 +194,5 @@ end
 section "Creating Valuation Assignments" do
   (1..50).to_a.sample.times do
     Budget::Investment.all.sample.valuators << Valuator.first
-  end
-end
-
-section "Creating default Milestone Statuses" do
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.studying_project'))
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.bidding'))
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.executing_project'))
-  Milestone::Status.create(name: I18n.t('seeds.budgets.statuses.executed'))
-end
-
-section "Creating investment milestones" do
-  Budget::Investment.find_each do |investment|
-    milestone = investment.milestones.build(publication_date: Date.tomorrow, status_id: Milestone::Status.all.sample)
-    I18n.available_locales.map do |locale|
-      Globalize.with_locale(locale) do
-        milestone.description = "Description for locale #{locale}"
-        milestone.title = I18n.l(Time.current, format: :datetime)
-        milestone.save!
-      end
-    end
   end
 end

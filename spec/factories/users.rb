@@ -3,9 +3,10 @@ FactoryBot.define do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 
-    password            'judgmentday'
-    terms_of_service    '1'
+    password            "judgmentday"
+    terms_of_service    "1"
     confirmed_at        { Time.current }
+    date_of_birth       { 20.years.ago }
     public_activity     true
 
     trait :incomplete_verification do
@@ -66,6 +67,10 @@ FactoryBot.define do
     user
   end
 
+  factory :tracker do
+    user
+  end
+
   factory :valuator do
     user
   end
@@ -74,7 +79,7 @@ FactoryBot.define do
     user
   end
 
-  factory :poll_officer, class: 'Poll::Officer' do
+  factory :poll_officer, class: "Poll::Officer" do
     user
   end
 

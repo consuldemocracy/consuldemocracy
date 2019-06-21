@@ -1,0 +1,55 @@
+<div class="poll-question-answers">
+  <% if can?(:answer, question) && !question.poll.voted_in_booth?(current_user) %>
+    <table class="voting-list">
+      <% answers&.each do |answer| %>
+        <tr class="answer medium-12 inline-block" style="border-bottom: 1px solid lightslategrey;">
+          <td class="title-answer medium-9 inline-block">
+            <span class="inline-block"><%= answer.title %></span>
+          </td>
+          <td class="votes inline-block vote-align">
+            <div class="in-favor inline-block">
+              <% if @answers_by_question_id[question.id].include?(answer.title) &&
+                stored_positive_negative_value(question, answer) %>
+                <%= render "polls/questions/like_dislike", question: question,
+                           answer: answer, method: "delete", positive: true,
+                           token: token, active: true, page: page %>
+              <% else %>
+                <%= render "polls/questions/like_dislike", question: question,
+                           answer: answer, method: "post", positive: true,
+                           token: token, active: false, page: page %>
+              <% end %>
+            </div>
+            <div class="against inline-block">
+              <% if @answers_by_question_id[question.id].include?(answer.title) &&
+                !stored_positive_negative_value(question, answer) %>
+                <%= render "polls/questions/like_dislike", question: question,
+                           answer: answer, method: "delete", positive: false,
+                           token: token, active: true, page: page %>
+              <% else %>
+                <%= render "polls/questions/like_dislike", question: question,
+                           answer: answer, method: "post", positive: false,
+                           token: token, active: false, page: page %>
+              <% end %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= paginate answers, params: {controller: "polls/questions", action: :load_answers, id: question}, remote: true %>
+
+    <%= render "/polls/questions/new_answer", question: question, token: token %>
+
+  <% elsif !user_signed_in? %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <%= link_to answer.title, new_user_session_path, class: "button secondary hollow" %>
+    <% end %>
+  <% elsif !current_user.level_two_or_three_verified? %>
+    <% answers.visibles.order(id: :desc).each do |answer| %>
+      <%= link_to answer.title, verification_path, class: "button secondary hollow" %>
+    <% end %>
+  <% else %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <span class="button secondary hollow disabled"><%= answer.title %></span>
+    <% end %>
+  <% end %>
+</div>

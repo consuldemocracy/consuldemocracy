@@ -8,7 +8,7 @@ sv:
         alert:
           failure: Det gick inte att skicka e-postmeddelandet till ditt konto
         flash:
-          success: 'Vi har skickat ett bekräftelsemeddelande till ditt konto: %{email}'
+          success: "Vi har skickat ett bekräftelsemeddelande till ditt konto: %{email}"
       show:
         alert:
           failure: Verifieringskoden är felaktig
@@ -19,7 +19,6 @@ sv:
         unconfirmed_code: Du har inte angett bekräftelsekoden ännu
       create:
         flash:
-          offices: Medborgarkontor
           success_html: Tack för att du begärt din <b>säkerhetskod (krävs endast för slutomröstningar) </b>. Vi skickar koden inom några dagar till den adress som du registrerat. Kom ihåg att du även kan få din kod från något av %{offices}.
       edit:
         see_all: Visa förslag
@@ -27,16 +26,15 @@ sv:
       errors:
         incorrect_code: Verifieringskoden är felaktig
       new:
-        explanation: 'För att delta i slutomröstningen kan du:'
+        explanation: "För att delta i slutomröstningen kan du:"
         go_to_index: Visa förslag
         office: Verifiera dig personligen på något %{office}
-        offices: Medborgarkontor
         send_letter: Skicka ett brev till mig med koden
         title: Grattis!
         user_permission_info: Med ditt konto kan du...
       update:
         flash:
-          success: Koden är giltig. Ditt konto har verifierats
+          success: Giltig kod. Ditt konto har verifierats
     redirect_notices:
       already_verified: Ditt konto är redan verifierat
       email_already_sent: Vi har redan skickat ett e-postmeddelande med en bekräftelselänk. Om du inte hittar e-postmeddelandet, kan du begära ett nytt här
@@ -50,9 +48,9 @@ sv:
         accept_terms_text: Jag accepterar %{terms_url} för adressregistret
         accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
         date_of_birth: Födelsedatum
-        document_number: Identitetshandlingens nummer
+        document_number: Dokumentnummer
         document_number_help_title: Hjälp
-        document_number_help_text_html: '<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P'
+        document_number_help_text_html: "<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P"
         document_type:
           passport: Pass
           residence_card: Övrig identitetshandling
@@ -61,7 +59,6 @@ sv:
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
         error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett %{offices}.
-        error_verifying_census_offices: medborgarkontor
         form_errors: gjorde att din adress inte kunde bekräftas
         postal_code: Postnummer
         postal_code_note: För att verifiera ditt konto måste du vara registrerad
@@ -89,7 +86,7 @@ sv:
         error: Ogiltig bekräftelsekod
         flash:
           level_three:
-            success: Giltig kod. Ditt konto har verifierats
+            success: Koden är giltig. Ditt konto har verifierats
           level_two:
             success: Giltig kod
     step_1: Adress
@@ -98,7 +95,7 @@ sv:
     user_permission_debates: Delta i debatter
     user_permission_info: Genom att verifiera din information kommer du kunna...
     user_permission_proposal: Skapa nya förslag
-    user_permission_support_proposal: Stödja förslag
+    user_permission_support_proposal: Stödja förslag*
     user_permission_votes: Delta i slutomröstningar*
     verified_user:
       form:

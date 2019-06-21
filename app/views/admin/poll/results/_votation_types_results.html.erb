@@ -1,0 +1,40 @@
+<div class="polls-results-stats">
+
+  <div class="row margin">
+    <div class="small-12 medium-3 column">
+      <p><strong><%= t("polls.show.results.title") %></strong></p>
+      <ul class="menu vertical">
+        <%- @poll.questions.each do |question| %>
+          <li><%= link_to question.title, "##{question.title.parameterize}" %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-9 column">
+      <%- @poll.questions.each do |question| %>
+        <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+        <table id="question_<%= question.id %>_results_table">
+          <tbody>
+          <%- question.question_answers.visibles.each do |answer| %>
+            <tr scope="col" <%= answer.most_voted? ? "class=win" : "" %>>
+              <td>
+                <% if answer.most_voted %>
+                  <span class="show-for-sr"><%= t("polls.show.results.most_voted_answer") %></span>
+                <% end %>
+                <%= answer.title %>
+              </td>
+              <td id="answer_<%= answer.id %>_result" <%= answer.most_voted? ? "class=win" : "" %>>
+                <%= answer.total_votes %>
+                <% unless question.enum_type == "positive_negative_open" %>
+                  (<%= answer.total_votes_percentage.round(2) %>%)
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% end %>
+
+    </div>
+  </div>
+</div>

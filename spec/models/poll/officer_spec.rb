@@ -1,6 +1,34 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Poll::Officer do
+
+  describe "#name" do
+    let(:officer) { create(:poll_officer) }
+
+    it "returns user name if user is not deleted" do
+      expect(officer.name).to eq officer.user.name
+    end
+
+    it "returns 'User deleted' if user is deleted" do
+      officer.user.destroy
+
+      expect(officer.reload.name).to eq "User deleted"
+    end
+  end
+
+  describe "#email" do
+    let(:officer) { create(:poll_officer) }
+
+    it "returns user email if user is not deleted" do
+      expect(officer.email).to eq officer.user.email
+    end
+
+    it "returns 'Email deleted' if user is deleted" do
+      officer.user.destroy
+
+      expect(officer.reload.email).to eq "Email deleted"
+    end
+  end
 
   describe "#voting_days_assigned_polls" do
     it "returns all polls with this officer assigned during voting days" do
@@ -119,6 +147,23 @@ describe Poll::Officer do
       expect(assigned_polls.first).to eq(poll_2)
       expect(assigned_polls.second).to eq(poll_1)
       expect(assigned_polls.last).to eq(poll_3)
+    end
+  end
+
+  describe "todays_booths" do
+    let(:officer) { create(:poll_officer) }
+
+    it "returns booths for the application's time zone date", :with_different_time_zone do
+      assignment_with_local_time_zone = create(:poll_officer_assignment,
+                                               date:    Date.today,
+                                               officer: officer)
+
+      assignment_with_application_time_zone = create(:poll_officer_assignment,
+                                                     date:    Date.current,
+                                                     officer: officer)
+
+      expect(officer.todays_booths).to include(assignment_with_application_time_zone.booth)
+      expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
     end
   end
 end

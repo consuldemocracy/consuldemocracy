@@ -27,7 +27,7 @@
 //= require app
 //= require check_all_none
 //= require comments
-//= require dropdown
+//= require foundation_extras
 //= require ie_alert
 //= require location_changer
 //= require moderator_comment
@@ -49,7 +49,6 @@
 //= require forms
 //= require tracks
 //= require valuation_budget_investment_form
-//= require valuation_spending_proposal_form
 //= require embed_video
 //= require fixed_bar
 //= require banners
@@ -58,6 +57,8 @@
 //= require markdown-it
 //= require markdown_editor
 //= require cocoon
+//= require answers
+//= require questions
 //= require legislation_admin
 //= require legislation
 //= require legislation_allegations
@@ -82,14 +83,22 @@
 //= require managers
 //= require globalize
 //= require send_admin_notification_alert
+//= require modal_download
+//= require settings
+//= require cookies
+//= require columns_selector
+//= require budget_edit_associations.js.coffee
+//= require votations
 
 var initialize_modules = function() {
+  App.Answers.initialize();
+  App.Questions.initialize();
   App.Comments.initialize();
   App.Users.initialize();
   App.Votes.initialize();
   App.AllowParticipation.initialize();
   App.Tags.initialize();
-  App.Dropdown.initialize();
+  App.FoundationExtras.initialize();
   App.LocationChanger.initialize();
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();
@@ -101,7 +110,6 @@ var initialize_modules = function() {
   App.Forms.initialize();
   App.Tracks.initialize();
   App.ValuationBudgetInvestmentForm.initialize();
-  App.ValuationSpendingProposalForm.initialize();
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
   App.Banners.initialize();
@@ -128,12 +136,20 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
+  App.ModalDownload.initialize();
+  App.Settings.initialize();
+  App.Cookies.initialize();
+  if ( $('#js-columns-selector').length )
+    App.ColumnsSelector.initialize();
+  App.BudgetEditAssociations.initialize();
+  if ( $("#votation_type_enum_type").length )
+    App.Votations.initialize();
 };
 
 $(function(){
   Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);
-  $(document).on('page:load', initialize_modules);
-  $(document).on('ajax:complete', initialize_modules);
+  $(document).on("page:load", initialize_modules);
+  $(document).on("ajax:complete", initialize_modules);
 });

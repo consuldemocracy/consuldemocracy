@@ -1,0 +1,79 @@
+cs:
+  mailers:
+    no_reply: "Tato zpráva byla odeslána z e-mailové adresy, která nepřijímá odpovědi."
+    comment:
+      hi: Dobrý den
+      new_comment_by_html: K dispozici je nový komentář od <b>%{commenter}</b>
+      subject: Někdo komentoval váš příspěvek %{commentable}
+      title: Nový komentář
+    config:
+      manage_email_subscriptions: Chcete-li tyto e-maily přestat přijímat, změňte nastavení v
+    email_verification:
+      click_here_to_verify: tento odkaz
+      instructions_2_html: Tento e-mail ověří váš účet pomocí <b>%{document_type} %{document_number} </b>. Pokud Vám email nepatří, prosím, neklikněte na předchozí odkaz a ignorujte tento e-mail.
+      instructions_html: K dokončení ověření uživatelského účtu musíte klikněte na %{verification_link}.
+      subject: Potvrďte svoji emailovou adresu
+      thanks: Mockrát děkujeme.
+      title: Potvrďte svůj účet pomocí následujícího odkazu
+    reply:
+      hi: Dobrý den
+      new_reply_by_html: Nová odpověď od <b>%{commenter} </b> na Váš komentář
+      subject: Někdo odpověděl na váš komentář
+      title: Nová odpověď na váš komentář
+    unfeasible_spending_proposal:
+      hi: "Vážený uživateli,"
+      new_html: "Pro všechny tyto skutečnosti vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
+      new_href: "nový investiční projekt"
+      sincerely: "S pozdravem"
+      sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
+      subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
+    proposal_notification_digest:
+      info: "Josu zde nová oznámení, která byla publikována autory návrhů, které jste podpořili v %{org_name}."
+      title: "Oznámení o návrhu v %{org_name}"
+      share: Sdílet návrh
+      comment: Připomínky k návrhu
+      unsubscribe: "Pokud nechcete dostávat oznámení o návrhu, přejděte na adresu %{account} a zrušte zaškrtnutí políčka \"Příjem oznámení o návrzích\"."
+      unsubscribe_account: Můj účet
+    direct_message_for_receiver:
+      subject: "Obdrželi jste novou soukromou zprávu"
+      reply: Odpovědět uživateli %{sender}
+      unsubscribe: "Pokud nechcete přijímat přímé zprávy, navštivte stránku %{account} a zrušte zaškrtnutí políčka \"Příjem e-mailů o přímých zprávách\"."
+      unsubscribe_account: Můj účet
+    direct_message_for_sender:
+      subject: "Odeslali jste novou soukromou zprávu"
+      title_html: "Do <strong>%{receiver} </strong> jste odeslali novou soukromou zprávu s obsahem:"
+    user_invite:
+      ignore: "Pokud jste o tuto pozvánku nepožádali, nemusíte se obávat a můžete tento e-mail ignorovat."
+      text: "Děkujeme za žádost o připojení k %{org}! Za pár vteřin se můžete zapojit, stačí vyplnit formulář níže:"
+      thanks: "Mockrát děkujeme."
+      title: "Vítejte v %{org}"
+      button: Dokončit registraci
+      subject: "Pozvánka k účasti na %{org_name}"
+    budget_investment_created:
+      subject: "Děkujeme za vytvoření investice!"
+      title: "Děkujeme za vytvoření investice!"
+      intro_html: "Zdravíme uživatele <strong>%{author}</strong>,"
+      text_html: "Děkujeme za vytvoření <strong>%{investment} </strong> v rámci participativního rozpočtu <strong>%{budget}</strong>."
+      follow_html: "Budeme vás informovat o tom jak postup probíhá a můžete ho také sledovat prostřednictvím tohoto odkazu <strong>%{link}</strong>."
+      follow_link: "Prticipativní rozpočty"
+      sincerely: "S pozdravem,"
+      share: "Sdílet projekt"
+    budget_investment_unfeasible:
+      hi: "Vážený uživateli,"
+      new_html: "Kvůli těmto skutečnostem Vás vyzýváme k vypracování <strong>nového návrhu</strong>, který se přizpůsobí podmínkám tohoto procesu. Můžete to udělat prostřednictvím tohoto odkazu: %{url}."
+      new_href: "nový investiční projekt"
+      sincerely: "S pozdravem"
+      sorry: "Omlouváme se za nepříjemnost a opět vám děkujeme za neocenitelnou účast."
+      subject: "Váš investiční projekt '%{code}' byl označen jako nerealizovatelný"
+    budget_investment_selected:
+      subject: "Váš investiční projekt '%{code}' byl vybrán"
+      hi: "Vážený uživateli,"
+      share: "Pro získání podpory sdílejte svůj investiční projekt na sociálních sítích. Sdílení je nezbytné pro získání široké podpory."
+      share_button: "Sdílejte svůj investiční projekt"
+      thanks: "Ještě jednou děkujeme za vaši účast."
+      sincerely: "S pozdravem"
+    budget_investment_unselected:
+      subject: "Váš investiční projekt '%{code}' nebyl vybrán"
+      hi: "Vážený uživateli,"
+      thanks: "Ještě jednou děkujeme za vaši účast."
+      sincerely: "S pozdravem"

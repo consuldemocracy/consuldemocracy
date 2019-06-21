@@ -2,8 +2,8 @@ sq:
   mailers:
     no_reply: "Ky mesazh u dërgua nga një adresë e-mail që nuk pranon përgjigje."
     comment:
-      hi: Hi
-      new_comment_by_html: Ka një koment të ri nga<b>%{commenter}</b>
+      hi: Përshëndetje!
+      new_comment_by_html: Ka një koment të ri nga<strong>%{commenter}</strong>
       subject: Dikush ka komentuar mbi %{commentable} tuaj
       title: Komenti i ri
     config:
@@ -16,8 +16,8 @@ sq:
       thanks: "Shumë Faleminderit \n"
       title: Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme
     reply:
-      hi: Përshëndetje!
-      new_reply_by_html: Ka një përgjigje të re nga <b>%{commenter}</b> në komentin tuaj
+      hi: Hi
+      new_reply_by_html: Ka një përgjigje të re nga <strong>%{commenter}</strong> në komentin tuaj
       subject: Dikush i është përgjigjur komentit tuaj
       title: Përgjigje e re tek komentit tuaj
     unfeasible_spending_proposal:

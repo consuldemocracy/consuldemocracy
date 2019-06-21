@@ -1,7 +1,7 @@
 gl:
   pages:
     conditions:
-      title: Termos e condicións de uso
+      title: Condicións de uso
       subtitle: AVISO LEGAL DAS CONDICIÓNS DE USO, PRIVACIDADE E PROTECCIÓN DOS DATOS DE CARÁCTER PERSOAL DO PORTAL DE GOBERNO ABERTO
       description: Páxina de información sobre as condicións de uso, privacidade e protección de datos de carácter persoal.
     help:
@@ -9,7 +9,7 @@ gl:
       guide: "Esta guía explica para que serven e como funcionan cada unha das seccións de %{org}."
       menu:
         debates: "Debates"
-        proposals: "Propostas"
+        proposals: "Propostas cidadás"
         budgets: "Orzamentos participativos"
         polls: "Votacións"
         other: "Outra información de interese"
@@ -23,7 +23,7 @@ gl:
         image_alt: "Botóns para avaliar os debates"
         figcaption: 'Botones "estou de acordo" e "non estou de acordo" para avaliar os debates.'
       proposals:
-        title: "Propostas"
+        title: "Propostas cidadás"
         description: "Na sección %{link} podes formular propostas para que o Concello as leve a cabo. As propostas obteñen apoios e se alcanzan abondos sométense a votación cidadá. As propostas aprobadas nestas votacións cidadás son asumidas polo Concello e lévanse a cabo."
         link: "propostas cidadás"
         image_alt: "Botón para apoiar unha proposta"
@@ -51,46 +51,26 @@ gl:
         page:
           title: "Preguntas frecuentes"
           description: "Emprega esta páxina para resolveres as preguntas frecuentes ás persoas usuarias do sitio."
-          faq_1_title: "Pregunta 1"
-          faq_1_description: "Este é un exemplo para a descrición da primeira pregunta."
       other:
         title: "Outra información de interese"
         how_to_use: "Emprega %{org_name} no teu concello"
       how_to_use:
         text: |-
-          Emprégao no teu concello ou axúdanos a melloralo, é software libre. 
-          
+          Emprégao no teu concello ou axúdanos a melloralo, é software libre.
+
           Este portal de goberno aberto emprega a [aplicación CONSUL] (https://github.com/consul/consul 'consul github') que é software libre con [licenza AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), o que significa que calquera pode usar libremente o código, copialo, velo en detalle, modificalo e redistribuílo ao mundo coas modificacións que quixer (mantendo o que outros poidan facer á súa vez o mesmo). Porque xulgamos que a cultura é mellor e máis rica cando se libera.
-          
+
           Se sabes programar, podes ver o código e axudáresnos a melloralo en [CONSUL app](https://github.com/consul/consul 'consul github').
       titles:
         how_to_use: Emprégao no teu concello
     privacy:
       title: Política de privacidade
-      subtitle: INFORMACIÓN RELACIONADA COA PRIVACIDADE DOS DATOS
-      info_items:
-        - 
-          text: A navegación a través da información dispoñible no Portal de Goberno Aberto é anónima.
-        - 
-          text: Para poder usar os servizos ofrecidos no Portal de Goberno Aberto, o usuario debe rexistrarse e proporcionar datos de carácter persoal de acordo coas especificacións incluídas en cada tipo de rexistro.
-        - 
-          text: 'Os datos proporcionados serán incorporados e procesados pola entidade local de acordo coas condicións estabelecidas no seguinte ficheiro:'
-        - 
-          subitems:
-            - 
-              field: 'Nome de ficheiro:'
-              description: NOME DO FICHEIRO
-            - 
-              field: 'Uso do ficheiro:'
-              description: A xestión dos procesos participativos para controlar a cualificación das persoas que participan nel, basease en fontes numéricas e en recontos estatísticos dos resultados que se derivan dos procesos participativos.
-            - 
-              field: 'Organismo responsable do ficheiro:'
-              description: ORGANISMO RESPONSABLE DO FICHEIRO
+      subtitle: "INFORMACIÓN RELACIONADA COA PRIVACIDADE DOS DATOS"
     accessibility:
       title: Accesibilidade
       description: |-
-        A accesibilidade web refírese á posibilidade de acceso a Internet e os seus contidos por parte de todas as persoas, independentemente das discapacidades (físicas, intelectuais ou técnicas) que poidan xurdir, ou das derivadas do contexto de uso (tecnolóxico ou ambiental). 
-        
+        A accesibilidade web refírese á posibilidade de acceso a Internet e os seus contidos por parte de todas as persoas, independentemente das discapacidades (físicas, intelectuais ou técnicas) que poidan xurdir, ou das derivadas do contexto de uso (tecnolóxico ou ambiental).
+
         Cando os sitios web son deseñados coa accesibilidade en mente, todos os usuarios poden acceder ao contido en condicións iguais, por exemplo:
       examples:
         - Engadindo un texto alternativo ás imaxes, as persoas con dificultades visuais poden facer uso de lectores especiais para acceder á información.
@@ -113,7 +93,7 @@ gl:
               page_column: Debates
             - 
               key_column: 2
-              page_column: Propostas
+              page_column: Propostas cidadás
             - 
               key_column: 3
               page_column: Votos
@@ -124,7 +104,7 @@ gl:
               key_column: 5
               page_column: Procesos lexislativos
         browser_table:
-          description: 'Dependendo do sistema operativo e do navegador, o atallo de teclado configurase do seguinte xeito:'
+          description: "Dependendo do sistema operativo e do navegador, o atallo de teclado configurase do seguinte xeito:"
           caption: O atallo de teclado dependo do sistema operativo e navegador
           browser_header: Navegador
           key_header: Atallo de teclado
@@ -167,7 +147,7 @@ gl:
               browser_column: Opera
               action_column: Ver > escala
         browser_shortcuts_table:
-          description: 'Outro xeito de modificar o tamaño da letra é usar un atallo de teclado propio dos navegadores, por exemplo:'
+          description: "Outro xeito de modificar o tamaño da letra é usar un atallo de teclado propio dos navegadores, por exemplo:"
           rows:
             - 
               shortcut_column: CTRL e + (CMD e + en MAC)
@@ -179,15 +159,12 @@ gl:
         title: Compatibilidade cos estándares e o deseño visual
         description_html: 'Todas as páxinas deste sitio web cumpren coa <strong>Guía de Accesibilidade</strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title="Web Accessibility Initiative" lang="en"> WAI </abbr> pertencente ao W3C.'
     titles:
-      accessibility: Accesibilidade
-      conditions: Condicións de uso
       help: "Que é %{org}? - Participación cidadá"
-      privacy: Política de privacidade
     verify:
       code: Código que recibiches na túa carta
-      email: Correo electrónico
-      info: 'Para verificares a túa conta, introduce os datos de acceso:'
-      info_code: 'Agora escribe o código que recibiches na carta:'
-      password: Contrasinal
+      email: O teu correo electrónico
+      info: "Para verificares a túa conta, introduce os datos de acceso:"
+      info_code: "Agora escribe o código que recibiches na carta:"
+      password: Contrasinal que empregarás para acceder a este sitio web
       submit: Verificar a miña conta
       title: Verifica a túa conta

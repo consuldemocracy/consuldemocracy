@@ -2,6 +2,7 @@ es-PE:
   devise_views:
     confirmations:
       new:
+        email_label: Tu correo electrónico
         submit: Reenviar instrucciones
         title: Reenviar instrucciones de confirmación
       show:
@@ -14,29 +15,31 @@ es-PE:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
-        text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
+        text: "Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:"
+        title: Bienvenido/a
         welcome: Bienvenido/a
       reset_password_instructions:
         change_link: Cambiar mi contraseña
         hello: Hola
         ignore_text: Si tú no lo has solicitado, puedes ignorar este email.
         info_text: Tu contraseña no cambiará hasta que no accedas al enlace y la modifiques.
-        text: 'Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:'
+        text: "Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:"
         title: Cambia tu contraseña
       unlock_instructions:
         hello: Hola
         info_text: Tu cuenta ha sido bloqueada debido a un excesivo número de intentos fallidos de alta.
-        instructions_text: 'Sigue el siguiente enlace para desbloquear tu cuenta:'
+        instructions_text: "Sigue el siguiente enlace para desbloquear tu cuenta:"
         title: Tu cuenta ha sido bloqueada
         unlock_link: Desbloquear mi cuenta
     menu:
       login_items:
-        login: Entrar
+        login: iniciar sesión
         logout: Salir
         signup: Registrarse
     organizations:
       registrations:
         new:
+          email_label: Tu correo electrónico
           organization_name_label: Nombre de la organización
           password_confirmation_label: Repite la contraseña anterior
           password_label: Contraseña que utilizarás para acceder a este sitio web
@@ -59,6 +62,7 @@ es-PE:
         password_label: Contraseña nueva
         title: Cambia tu contraseña
       new:
+        email_label: Tu correo electrónico
         send_submit: Recibir instrucciones
         title: '¿Has olvidado tu contraseña?'
     sessions:
@@ -67,7 +71,7 @@ es-PE:
         password_label: Contraseña que utilizarás para acceder a este sitio web
         remember_me: Recordarme
         submit: Entrar
-        title: Iniciar sesión
+        title: iniciar sesión
     shared:
       links:
         login: Entrar
@@ -76,28 +80,30 @@ es-PE:
         new_unlock: '¿No has recibido instrucciones para desbloquear?'
         signin_with_provider: Entrar con %{provider}
         signup: '¿No tienes una cuenta? %{signup_link}'
-        signup_link: Regístrate
+        signup_link: registrarte
     unlocks:
       new:
+        email_label: Tu correo electrónico
         submit: Reenviar instrucciones para desbloquear
         title: Reenviar instrucciones para desbloquear
     users:
       registrations:
         delete_form:
           erase_reason_label: Razón de la baja
-          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a entrar con ella.
-          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional)
-          submit: Darme de baja
+          info: Esta acción no se puede deshacer. Una vez que des de baja tu cuenta, no podrás volver a hacer login con ella.
+          info_reason: Si quieres, escribe el motivo por el que te das de baja (opcional).
+          submit: Borrar mi cuenta
           title: Darme de baja
         edit:
           current_password_label: Contraseña actual
-          edit: Editar propuesta
+          edit: Editar
+          email_label: Tu correo electrónico
           leave_blank: Dejar en blanco si no deseas cambiarla
           need_current: Necesitamos tu contraseña actual para confirmar los cambios
           password_confirmation_label: Confirmar contraseña nueva
           password_label: Contraseña nueva
           update_submit: Actualizar
-          waiting_for: 'Esperando confirmación de:'
+          waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
           email_label: Tu correo electrónico

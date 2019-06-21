@@ -9,7 +9,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
   let!(:administrator)          { create(:user) }
   let!(:user)                   { create(:user, :level_two) }
   let!(:arguments)              { {} }
-  let!(:documentable)           { create(documentable_factory_name, author: user) }
+  if documentable_factory_name == "dashboard_action"
+    let!(:documentable)           { create(documentable_factory_name) }
+  else
+    let!(:documentable)           { create(documentable_factory_name, author: user) }
+  end
   let!(:user_to_login)          { send(login_as_name)}
 
   before do
@@ -52,11 +56,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
       documentable.class.max_documents_allowed.times.each do
-        documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+        documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
       end
 
       expect(page).to have_css ".max-documents-notice", visible: true
-      expect(page).to have_content 'Remove document'
+      expect(page).to have_content "Remove document"
     end
 
     scenario "Should hide max documents warning after any document removal", :js do
@@ -81,7 +85,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         document = find(".document input[type=file]", visible: false)
         attach_file(
           document[:id],
-          Rails.root.join('spec/fixtures/files/empty.pdf'),
+          Rails.root.join("spec/fixtures/files/empty.pdf"),
           make_visible: true
         )
       end
@@ -94,7 +98,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
 
       expect_document_has_title(0, "empty.pdf")
     end
@@ -111,7 +115,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         document_input = find("input[type=file]", visible: false)
         attach_file(
           document_input[:id],
-          Rails.root.join('spec/fixtures/files/empty.pdf'),
+          Rails.root.join("spec/fixtures/files/empty.pdf"),
           make_visible: true
         )
       end
@@ -123,7 +127,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
 
       expect(page).to have_css ".loading-bar.complete"
     end
@@ -133,7 +137,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       documentable_attach_new_file(
-        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        Rails.root.join("spec/fixtures/files/logo_header.gif"),
         false
       )
 
@@ -144,7 +148,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
 
       expect_document_has_cached_attachment(0, ".pdf")
     end
@@ -154,7 +158,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
 
       documentable_attach_new_file(
-        Rails.root.join('spec/fixtures/files/logo_header.png'),
+        Rails.root.join("spec/fixtures/files/logo_header.gif"),
         false
       )
 
@@ -178,7 +182,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       login_as user_to_login
       visit send(path, arguments)
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
       click_link "Remove document"
 
       expect(page).not_to have_css("#nested-documents .document")
@@ -201,18 +205,21 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
       click_on submit_button
 
       expect(page).to have_content documentable_success_notice
     end
 
     scenario "Should show new document after successful creation with one uploaded file", :js do
+      if documentable_factory_name == "dashboard_action"
+        skip("Not render Documents count on dashboard_actions")
+      end
       login_as user_to_login
       visit send(path, arguments)
       send(fill_resource_method_name) if fill_resource_method_name
 
-      documentable_attach_new_file(Rails.root.join('spec/fixtures/files/empty.pdf'))
+      documentable_attach_new_file(Rails.root.join("spec/fixtures/files/empty.pdf"))
       click_on submit_button
 
       documentable_redirected_to_resource_show_or_navigate_to
@@ -227,9 +234,12 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     scenario "Should show resource with new document after successful creation with
               maximum allowed uploaded files", :js do
+      if documentable_factory_name == "dashboard_action"
+        skip("Not render Documents count on dashboard_actions")
+      end
       login_as user_to_login
       visit send(path, arguments)
-      FILENAMES ||= %w(clippy empty logo).freeze
+      FILENAMES ||= %w[clippy empty logo].freeze
 
       send(fill_resource_method_name) if fill_resource_method_name
 
@@ -287,11 +297,11 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
     describe "When allow attached documents setting is disabled" do
       before do
-        Setting['feature.allow_attached_documents'] = false
+        Setting["feature.allow_attached_documents"] = false
       end
 
       after do
-        Setting['feature.allow_attached_documents'] = true
+        Setting["feature.allow_attached_documents"] = true
       end
 
       scenario "Add new document button should not be available" do
@@ -355,8 +365,12 @@ end
 def documentable_fill_new_valid_proposal
   fill_in :proposal_title, with: "Proposal title #{rand(9999)}"
   fill_in :proposal_summary, with: "Proposal summary"
-  fill_in :proposal_question, with: "Proposal question?"
   check :proposal_terms_of_service
+end
+
+def documentable_fill_new_valid_dashboard_action
+  fill_in :dashboard_action_title, with: "Dashboard title"
+  fill_in_ckeditor :dashboard_action_description, with: "Dashboard description"
 end
 
 def documentable_fill_new_valid_budget_investment

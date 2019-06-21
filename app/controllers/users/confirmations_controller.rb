@@ -27,7 +27,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   def show
     # In the default implementation, this already confirms the resource:
     # self.resource = self.resource = resource_class.confirm_by_token(params[:confirmation_token])
-    self.resource = resource_class.find_by(confirmation_token: params[:confirmation_token])
+    self.resource = resource_class.find_by!(confirmation_token: params[:confirmation_token])
 
     yield resource if block_given?
 
@@ -53,7 +53,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
   private
 
     def set_official_position
-      resource.add_official_position! (Setting['official_level_1_name']), 1
+      resource.add_official_position! (Setting["official_level_1_name"]), 1
     end
 
 end

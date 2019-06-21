@@ -1,0 +1,37 @@
+<div class="poll-question-answers">
+  <% if can?(:answer, question) %>
+    <% answers.each do |answer| %>
+      <% if @answers_by_question_id[question.id].include?(answer.answer) %>
+        <%= link_to answer.answer,
+                    answer_question_path(question, answer: answer.answer, token: token),
+                    method: :delete,
+                    remote: true,
+                    title: t("poll_questions.show.voted", answer: answer.answer),
+                    class: "button answered" %>
+      <% else %>
+        <%= link_to answer.answer,
+                    answer_question_path(question, answer: answer.answer, token: token),
+                    method: :post,
+                    remote: true,
+                    title: t("poll_questions.show.vote_answer", answer: answer.answer),
+                    class: "button secondary hollow js-question-answer" %>
+      <% end %>
+    <% end %>
+    <% if question.enum_type == "answer_set_open" %>
+      <%= render "/polls/questions/new_answer", question: question, token: token %>
+      <%= flash[:notice] %>
+    <% end %>
+  <% elsif !user_signed_in? %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <%= link_to answer.answer, new_user_session_path, class: "button secondary hollow" %>
+    <% end %>
+  <% elsif !current_user.level_two_or_three_verified? %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <%= link_to answer.answer, verification_path, class: "button secondary hollow" %>
+    <% end %>
+  <% else %>
+    <% answers.order(id: :desc).each do |answer| %>
+      <span class="button secondary hollow disabled"><%= answer.answer %></span>
+    <% end %>
+  <% end %>
+</div>

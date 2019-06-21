@@ -1,1 +1,125 @@
 so:
+  legislation:
+    annotations:
+      comments:
+        see_all: Eegida dhaaman
+        see_complete: Fiiri dhamaystiran
+        comments_count:
+          one: "%{count} Falo"
+          other: "%{count} falooyinka"
+        replies_count:
+          one: "%{count} j Jawab celin"
+          other: "%{count} j Jawabo celin"
+        cancel: Jooji
+        publish_comment: Dabaac falada
+      form:
+        phase_not_open: Wejigan ma furan yahay
+        login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
+        signin: Geliid
+        signup: Saxiixid
+      index:
+        title: Faalo
+        comments_about: Faaloyin ku sabsan
+        see_in_context: Fiiri macnaha guud
+        comments_count:
+          one: "%{count} Falo"
+          other: "%{count} falooyinka"
+      show:
+        title: Faalo
+      version_chooser:
+        seeing_version: Ballan-qaadka loogu talagalay
+        see_text: Arag qoralka qabyada ah
+    draft_versions:
+      changes:
+        title: Isbedel
+        seeing_changelog_version: Koobida isbedelka dib u eegida
+        see_text: Arag qoralka qabyada ah
+      show:
+        loading_comments: Faallooyinka dejinta
+        seeing_version: Waxaad aragtaa qaabka qabyo-qoraalka
+        select_draft_version: Doro Qabya qoral
+        select_version_submit: eegid
+        updated_at: cusboneysiyey%{date}
+        see_changes: fiiri isbedel kooban
+        see_comments: Eeg dhamaan faallooyinka
+        text_toc: Shaxada mowduuca
+        text_body: Qoraal
+        text_comments: Faalo
+    processes:
+      header:
+        additional_info: Xog dheraad ah
+        description: Sharaxaad
+        more_info: Macluumaad dheeri ah iyo macne
+      proposals:
+        empty_proposals: Majiraan waxa soo jedina ah
+        filters:
+          random: Isbedel
+          winners: Ladoortay
+      debate:
+        empty_questions: Wax sual ah miyeysan jirin
+        participate: Kaqayb qadashada dooda
+      index:
+        filter: Sifeeyee
+        filters:
+          open: Gedisocodka furaan
+          past: Hore
+        no_open_processes: Miyeysan geedi socodku furneyn
+        no_past_processes: Miyeysan geedi socodku hore
+        section_header:
+          icon_alt: Nidaamka Sharciga icon
+          title: Nidaamka Sharciga
+          help: Caawinaad ku sabsan nidaamka sharciaga ah
+        section_footer:
+          title: Caawinaad ku sabsan nidaamka sharciaga ah
+          description: Ka qaybqaataan doodaha iyo geedi socodka ka hor inta ansaxin sharciga ama ficilka degmada. Fikraddaada waxaa fiirin doona Golaha Magaalada.
+      phase_not_open:
+        not_open: Marxaladani weli ma furna
+      phase_empty:
+        empty: Weli waxba lama shaaciin
+      process:
+        see_latest_comments: Arag Faloyinka ugu danbeyey
+        see_latest_comments_title: Falada kusabsan Habkan
+      shared:
+        key_dates: Tarikhaha muhiimka ah
+        homepage: Bogga
+        debate_dates: Dood
+        draft_publication_date: Daabacaadda qoraalka
+        allegations_dates: Faalo
+        result_publication_date: Daabacaadda natiijada kama dambaysta ah
+        milestones_date: Kuxiga
+        proposals_dates: Sojeedino
+    questions:
+      comments:
+        comment_button: So dabicida jawaabta
+        comments_title: Jawaabaha furan
+        comments_closed: Wejiga xiraan
+        form:
+          leave_comment: Jawaabtaada ka tag
+      question:
+        comments:
+          zero: Falooyin majiraan
+          one: "%{count} Falo"
+          other: "%{count} falooyinka"
+        debate: Dood
+      show:
+        answer_question: Soo gudbi jawaabta
+        next_question: Suasha xigtaa
+        first_question: Suasha ugu horeysa
+        share: Lawadag
+        title: Nidaamka sharciyeed ee wadajirka ah
+      participation:
+        phase_not_open: Wejigan ma furan yahay
+        organizations: Ururada looma oggola inay ka qaybqaataan doodda
+        signin: Geliid
+        signup: Saxiixid
+        unauthenticated: Waa inaad%{signin}%{signup} inaad ka qayb qaadato.
+        verified_only: Kaliya isticmaalayaasha ayaa xaqiijin kara,%{verify_account}.
+        verify_account: hubi xisaabtaada
+        debate_phase_not_open: Marxaladda dooddu way dhammaatay, jawaabahana lama aqbalo
+    shared:
+      share: Lawadag
+      share_comment: Faallada ku jirta%{version_name} ka socota qabyo-socodka%{process_name}
+    proposals:
+      form:
+        tags_label: "Qaybaha"
+      not_verified: "Soo jeedinta cod bixinta%{verify_account}."

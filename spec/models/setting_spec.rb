@@ -1,37 +1,67 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Setting do
   before do
-    described_class["official_level_1_name"] = 'Stormtrooper'
+    described_class["official_level_1_name"] = "Stormtrooper"
   end
 
   it "returns the overriden setting" do
-    expect(described_class['official_level_1_name']).to eq('Stormtrooper')
+    expect(described_class["official_level_1_name"]).to eq("Stormtrooper")
   end
 
   it "shoulds return nil" do
-    expect(described_class['undefined_key']).to eq(nil)
+    expect(described_class["undefined_key"]).to eq(nil)
   end
 
   it "persists a setting on the db" do
-    expect(described_class.where(key: 'official_level_1_name', value: 'Stormtrooper')).to exist
+    expect(described_class.where(key: "official_level_1_name", value: "Stormtrooper")).to exist
   end
 
-  describe "#feature_flag?" do
-    it "is true if key starts with 'feature.'" do
-      setting = described_class.create(key: 'feature.whatever')
-      expect(setting.feature_flag?).to eq true
+  describe "#prefix" do
+    it "returns the prefix of its key" do
+      expect(Setting.create(key: "prefix.key_name").prefix).to eq "prefix"
     end
 
-    it "is false if key does not start with 'feature.'" do
-      setting = described_class.create(key: 'whatever')
-      expect(setting.feature_flag?).to eq false
+    it "returns the whole key for a non prefixed key" do
+      expect(Setting.create(key: "key_name").prefix).to eq "key_name"
+    end
+  end
+
+  describe "#type" do
+    it "returns the key prefix for 'process' settings" do
+      process_setting = Setting.create(key: "process.whatever")
+      expect(process_setting.type).to eq "process"
+    end
+
+    it "returns the key prefix for 'feature' settings" do
+      feature_setting = Setting.create(key: "feature.whatever")
+      expect(feature_setting.type).to eq "feature"
+    end
+
+    it "returns the key prefix for 'map' settings" do
+      map_setting = Setting.create(key: "map.whatever")
+      expect(map_setting.type).to eq "map"
+    end
+
+    it "returns the key prefix for 'html' settings" do
+      html_setting = Setting.create(key: "html.whatever")
+      expect(html_setting.type).to eq "html"
+    end
+
+    it "returns the key prefix for 'homepage' settings" do
+      homepage_setting = Setting.create(key: "homepage.whatever")
+      expect(homepage_setting.type).to eq "homepage"
+    end
+
+    it "returns 'configuration' for the rest of the settings" do
+      configuration_setting = Setting.create(key: "whatever")
+      expect(configuration_setting.type).to eq "configuration"
     end
   end
 
   describe "#enabled?" do
-    it "is true if feature_flag and value present" do
-      setting = described_class.create(key: 'feature.whatever', value: 1)
+    it "is true if value is present" do
+      setting = described_class.create(key: "feature.whatever", value: 1)
       expect(setting.enabled?).to eq true
 
       setting.value = "true"
@@ -41,41 +71,154 @@ describe Setting do
       expect(setting.enabled?).to eq true
     end
 
-    it "is false if feature_flag and value blank" do
-      setting = described_class.create(key: 'feature.whatever')
+    it "is false if value is blank" do
+      setting = described_class.create(key: "feature.whatever")
       expect(setting.enabled?).to eq false
 
       setting.value = ""
       expect(setting.enabled?).to eq false
     end
+  end
 
-    it "is false if not feature_flag" do
-      setting = described_class.create(key: 'whatever', value: "whatever")
-      expect(setting.enabled?).to eq false
+  describe "#content_type?" do
+    it "returns true if the last part of the key is content_types" do
+      expect(Setting.create(key: "key_name.content_types").content_type?).to be true
+    end
+
+    it "returns false if the last part of the key is not content_types" do
+      expect(Setting.create(key: "key_name.whatever").content_type?).to be false
     end
   end
 
-  describe "#banner_style?" do
-    it "is true if key starts with 'banner-style.'" do
-      setting = described_class.create(key: 'banner-style.whatever')
-      expect(setting.banner_style?).to eq true
-    end
+  describe "#content_type_group" do
+    it "returns the group for content_types settings" do
+      images =    Setting.create(key: "update.images.content_types")
+      documents = Setting.create(key: "update.documents.content_types")
 
-    it "is false if key does not start with 'banner-style.'" do
-      setting = described_class.create(key: 'whatever')
-      expect(setting.banner_style?).to eq false
+      expect(images.content_type_group).to    eq "images"
+      expect(documents.content_type_group).to eq "documents"
     end
   end
 
-  describe "#banner_img?" do
-    it "is true if key starts with 'banner-img.'" do
-      setting = described_class.create(key: 'banner-img.whatever')
-      expect(setting.banner_img?).to eq true
+  describe ".rename_key" do
+    it "renames the setting keeping the original value and deletes the old setting" do
+      Setting["old_key"] = "old_value"
+
+      Setting.rename_key from: "old_key", to: "new_key"
+
+      expect(Setting.where(key: "new_key", value: "old_value")).to exist
+      expect(Setting.where(key: "old_key")).not_to exist
     end
 
-    it "is false if key does not start with 'banner-img.'" do
-      setting = described_class.create(key: 'whatever')
-      expect(setting.banner_img?).to eq false
+    it "initialize the setting with null value if old key doesn't exist" do
+      expect(Setting.where(key: "old_key")).not_to exist
+
+      Setting.rename_key from: "old_key", to: "new_key"
+
+      expect(Setting.where(key: "new_key", value: nil)).to exist
+      expect(Setting.where(key: "old_key")).not_to exist
+    end
+
+    it "does not change value if new key already exists, but deletes setting with old key" do
+      Setting["new_key"] = "new_value"
+      Setting["old_key"] = "old_value"
+
+      Setting.rename_key from: "old_key", to: "new_key"
+
+      expect(Setting["new_key"]).to eq "new_value"
+      expect(Setting.where(key: "old_key")).not_to exist
+    end
+  end
+
+  describe ".remove" do
+    it "deletes the setting by given key" do
+      expect(Setting.where(key: "official_level_1_name")).to exist
+
+      Setting.remove("official_level_1_name")
+
+      expect(Setting.where(key: "official_level_1_name")).not_to exist
+    end
+
+    it "does nothing if key doesn't exists" do
+      all_settings = Setting.all
+
+      Setting.remove("not_existing_key")
+
+      expect(Setting.all).to eq all_settings
+    end
+  end
+
+  describe ".accepted_content_types_for" do
+    it "returns the formats accepted according to the setting value" do
+      Setting["uploads.images.content_types"] =    "image/jpeg image/gif"
+      Setting["uploads.documents.content_types"] = "application/pdf application/msword"
+
+      expect(Setting.accepted_content_types_for("images")).to    eq ["jpg", "gif"]
+      expect(Setting.accepted_content_types_for("documents")).to eq ["pdf", "doc"]
+    end
+
+    it "returns empty array if setting does't exist" do
+      Setting.remove("uploads.images.content_types")
+      Setting.remove("uploads.documents.content_types")
+
+      expect(Setting.accepted_content_types_for("images")).to    be_empty
+      expect(Setting.accepted_content_types_for("documents")).to be_empty
+    end
+  end
+
+  describe ".add_new_settings" do
+    context "default settings with strings" do
+      before do
+        allow(Setting).to receive(:defaults).and_return({ stub: "stub" })
+      end
+
+      it "creates the setting if it doesn't exist" do
+        expect(Setting.where(key: :stub)).to be_empty
+
+        Setting.add_new_settings
+
+        expect(Setting.where(key: :stub)).not_to be_empty
+        expect(Setting.find_by(key: :stub).value).to eq "stub"
+      end
+
+      it "doesn't modify custom values" do
+        Setting["stub"] = "custom"
+
+        Setting.add_new_settings
+
+        expect(Setting.find_by(key: :stub).value).to eq "custom"
+      end
+
+      it "doesn't modify custom nil values" do
+        Setting["stub"] = nil
+
+        Setting.add_new_settings
+
+        expect(Setting.find_by(key: :stub).value).to be_nil
+      end
+    end
+
+    context "nil default settings" do
+      before do
+        allow(Setting).to receive(:defaults).and_return({ stub: nil })
+      end
+
+      it "creates the setting if it doesn't exist" do
+        expect(Setting.where(key: :stub)).to be_empty
+
+        Setting.add_new_settings
+
+        expect(Setting.where(key: :stub)).not_to be_empty
+        expect(Setting.find_by(key: :stub).value).to be_nil
+      end
+
+      it "doesn't modify custom values" do
+        Setting["stub"] = "custom"
+
+        Setting.add_new_settings
+
+        expect(Setting.find_by(key: :stub).value).to eq "custom"
+      end
     end
   end
 end

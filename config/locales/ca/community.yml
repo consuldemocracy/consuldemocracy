@@ -1,1 +1,22 @@
 ca:
+  community:
+    show:
+      create_first_community_topic:
+        sign_in: "iniciar sessió"
+        sign_up: "registrar-"
+      sidebar:
+        participate: Col·labora en l'elaboració de la normativa sobre
+      topic:
+        comments:
+          one: 1 Comentari
+          other: "%{count} comentaris"
+      author: Autor
+    topic:
+      form:
+        topic_title: Títol
+      show:
+        tab:
+          comments_tab: Comentarios
+  topics:
+    show:
+      login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.

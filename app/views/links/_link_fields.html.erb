@@ -1,0 +1,13 @@
+<div id="<%= dom_id(f.object) %>" class="nested-fields">
+  <div class="small-12 column attachment-actions">
+    <%= f.text_field :label, placeholder: t("links.link_fields.label_placeholder") %>
+
+    <%= f.text_field :url, placeholder: t("links.link_fields.url_placeholder") %>
+
+    <div class="action-remove text-right">
+      <%= render_destroy_element_link(f, f.object) %>
+    </div>
+  </div>
+
+  <hr>
+</div>

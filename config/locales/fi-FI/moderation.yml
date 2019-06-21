@@ -1,1 +1,83 @@
 fi:
+  moderation:
+    comments:
+      index:
+        block_authors: Estä tekijät
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_flag_review: Vireillä
+          with_ignored_flag: Merkitty katsotuksi
+        headers:
+          comment: Kommentti
+        hide_comments: Piilota kommentit
+        ignore_flags: Merkitse katsotuksi
+        order: Järjestys
+        orders:
+          newest: Uusin
+        title: Kommentit
+    debates:
+      index:
+        block_authors: Estä tekijät
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_flag_review: Vireillä
+          with_ignored_flag: Merkitty katsotuksi
+        ignore_flags: Merkitse katsotuksi
+        order: Järjestys
+        orders:
+          created_at: Uusin
+    menu:
+      flagged_comments: Kommentit
+      proposals: Ehdotukset
+      users: Estä käyttäjiä
+    proposals:
+      index:
+        block_authors: Estä tekijät
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_flag_review: Odottaa tarkastelua
+          with_ignored_flag: Merkitse katsotuksi
+        headers:
+          proposal: Ehdotus
+        hide_proposals: Piilota ehdotukset
+        ignore_flags: Merkitse katsotuksi
+        orders:
+          created_at: Viimeisin
+        title: Ehdotukset
+    budget_investments:
+      index:
+        block_authors: Estä tekijät
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_flag_review: Vireillä
+          with_ignored_flag: Merkitty katsotuksi
+        ignore_flags: Merkitse katsotuksi
+        orders:
+          created_at: Viimeisin
+    proposal_notifications:
+      index:
+        block_authors: Estä tekijät
+        confirm: Oletko varma?
+        filter: Suodatin
+        filters:
+          all: Kaikki
+          pending_review: Odottaa tarkastelua
+          ignored: Merkitse katsotuksi
+        hide_proposal_notifications: Piilota ehdotukset
+        ignore_flags: Merkitse katsotuksi
+        orders:
+          created_at: Viimeisin
+    users:
+      index:
+        hidden: Estetty
+        hide: Estä
+        search: Etsi
+        title: Estä käyttäjiä

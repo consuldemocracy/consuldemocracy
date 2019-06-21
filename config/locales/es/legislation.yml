@@ -20,6 +20,7 @@ es:
       index:
         title: Comentarios
         comments_about: Comentarios sobre
+        comment_about: "Comentario sobre:"
         see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
@@ -62,18 +63,16 @@ es:
         filter: Filtro
         filters:
           open: Procesos activos
-          next: Próximamente
           past: Terminados
         no_open_processes: No hay procesos activos
-        no_next_processes: No hay procesos planeados
         no_past_processes: No hay procesos terminados
         section_header:
-          icon_alt: Icono de Procesos legislativos
-          title: Procesos legislativos
-          help: Ayuda sobre procesos legislativos
+          icon_alt: Icono de legislación colaborativa
+          title: Legislación colaborativa
+          help: Ayuda sobre legislación colaborativa
         section_footer:
-          title: Ayuda sobre procesos legislativos
-          description: Participa en los debates y procesos previos a la aprobación de una norma o de una actuación municipal. Tu opinión será tenida en cuenta por el Ayuntamiento.
+          title: Ayuda sobre Legislación colaborativa
+          description: Participa en los debates y procesos previos a la aprobación de nuevas normas o planes. Tu opinión será tenida en cuenta.
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:
@@ -82,11 +81,13 @@ es:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso
       shared:
-        key_dates: Fechas clave
+        key_dates: Fases de participación
+        homepage: Inicio
         debate_dates: Debate previo
         draft_publication_date: Publicación borrador
         allegations_dates: Comentarios
         result_publication_date: Publicación resultados
+        milestones_date: Seguimiento
         proposals_dates: Propuestas
     questions:
       comments:
@@ -96,6 +97,10 @@ es:
         form:
           leave_comment: Deja tu respuesta
       question:
+        total:
+          zero: No hay debates
+          one: "%{count} debate"
+          other: "%{count} debates"
         comments:
           zero: Sin comentarios
           one: "%{count} comentario"
@@ -123,3 +128,22 @@ es:
       form:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
+      process_title: Proceso de legislación colaborativa
+      total:
+        zero: No hay propuestas
+        one: "%{count} propuesta"
+        other: "%{count} propuestas"
+    summary:
+      title: Resumen
+      votes: votos
+      debates_phase: Fase de debates
+      proposal_phase: Fase de propuestas
+      comments_phase: Fase de comentarios de texto
+      comments:
+        zero: No hay comentarios
+        one: "%{count} comentario"
+        other: "%{count} comentarios"
+      most_voted_comments: "Comentarios más votados:"
+      no_allegation: No hay comentarios de texto.
+      version: versión
+      process_empty: The proces have no phases.

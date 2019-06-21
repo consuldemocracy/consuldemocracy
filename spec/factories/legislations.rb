@@ -1,18 +1,5 @@
 FactoryBot.define do
-  factory :legacy_legislation do
-    sequence(:title) { |n| "Legacy Legislation #{n}" }
-    body "In order to achieve this..."
-  end
-
-  factory :annotation do
-    quote "ipsum"
-    text "Loremp ipsum dolor"
-    ranges [{"start" => "/div[1]", "startOffset" => 5, "end" => "/div[1]", "endOffset" => 10}]
-    legacy_legislation
-    user
-  end
-
-  factory :legislation_process, class: 'Legislation::Process' do
+  factory :legislation_process, class: "Legislation::Process" do
     title "A collaborative legislation process"
     description "Description of the process"
     summary "Summary of the process"
@@ -26,24 +13,16 @@ FactoryBot.define do
     allegations_end_date { Date.current + 3.days }
     proposals_phase_start_date { Date.current }
     proposals_phase_end_date { Date.current + 2.days }
+    people_proposals_phase_start_date { Date.current }
+    people_proposals_phase_end_date { Date.current + 2.days }
     result_publication_date { Date.current + 5.days }
     debate_phase_enabled true
     allegations_phase_enabled true
     proposals_phase_enabled true
+    people_proposals_phase_enabled true
     draft_publication_enabled true
     result_publication_enabled true
     published true
-
-    trait :next do
-      start_date { Date.current + 2.days }
-      end_date { Date.current + 8.days }
-      debate_start_date { Date.current + 2.days }
-      debate_end_date { Date.current + 4.days }
-      draft_publication_date { Date.current + 5.days }
-      allegations_start_date { Date.current + 5.days }
-      allegations_end_date { Date.current + 7.days }
-      result_publication_date { Date.current + 8.days }
-    end
 
     trait :past do
       start_date { Date.current - 12.days }
@@ -87,6 +66,18 @@ FactoryBot.define do
       proposals_phase_enabled true
     end
 
+    trait :in_people_proposals_phase do
+      people_proposals_phase_start_date { Date.current - 1.day }
+      people_proposals_phase_end_date { Date.current + 2.days }
+      people_proposals_phase_enabled true
+    end
+
+    trait :upcoming_people_proposals_phase do
+      people_proposals_phase_start_date { Date.current + 1.day }
+      people_proposals_phase_end_date { Date.current + 2.days }
+      people_proposals_phase_enabled true
+    end
+
     trait :published do
       published true
     end
@@ -100,9 +91,34 @@ FactoryBot.define do
       end_date   { 1.week.from_now }
     end
 
+    trait :empty do
+      start_date { Date.current - 5.days }
+      end_date { Date.current + 5.days }
+      debate_start_date nil
+      debate_end_date nil
+      draft_publication_date nil
+      allegations_start_date nil
+      allegations_end_date nil
+      proposals_phase_start_date nil
+      proposals_phase_end_date nil
+      people_proposals_phase_start_date nil
+      people_proposals_phase_end_date nil
+      result_publication_date nil
+      debate_phase_enabled false
+      allegations_phase_enabled false
+      proposals_phase_enabled false
+      people_proposals_phase_enabled false
+      draft_publication_enabled false
+      result_publication_enabled false
+      published true
+    end
+
+    trait :with_milestone_tags do
+      after(:create) { |legislation| legislation.milestone_tags << create(:tag, :milestone) }
+    end
   end
 
-  factory :legislation_draft_version, class: 'Legislation::DraftVersion' do
+  factory :legislation_draft_version, class: "Legislation::DraftVersion" do
     process factory: :legislation_process
     title "Version 1"
     changelog "What changed in this version"
@@ -131,7 +147,7 @@ LOREM_IPSUM
     end
   end
 
-  factory :legislation_annotation, class: 'Legislation::Annotation' do
+  factory :legislation_annotation, class: "Legislation::Annotation" do
     draft_version factory: :legislation_draft_version
     author factory: :user
     quote "ipsum"
@@ -143,28 +159,74 @@ LOREM_IPSUM
     range_end_offset 11
   end
 
-  factory :legislation_question, class: 'Legislation::Question' do
+  factory :legislation_question, class: "Legislation::Question" do
     process factory: :legislation_process
     title "Question text"
     author factory: :user
   end
 
-  factory :legislation_question_option, class: 'Legislation::QuestionOption' do
+  factory :legislation_question_option, class: "Legislation::QuestionOption" do
     question factory: :legislation_question
     sequence(:value) { |n| "Option #{n}" }
   end
 
-  factory :legislation_answer, class: 'Legislation::Answer' do
+  factory :legislation_answer, class: "Legislation::Answer" do
     question factory: :legislation_question
     question_option factory: :legislation_question_option
     user
   end
 
-  factory :legislation_proposal, class: 'Legislation::Proposal' do
+  factory :legislation_proposal, class: "Legislation::Proposal" do
     sequence(:title) { |n| "Proposal #{n} for a legislation" }
     summary "This law should include..."
-    terms_of_service '1'
+    terms_of_service "1"
     process factory: :legislation_process
     author factory: :user
+  end
+
+  factory :debate_comment, class: "Comment" do
+    commentable_id "10"
+    commentable_type Legislation::Question
+    body "This is a comment"
+    user_id "1"
+    cached_votes_down "0"
+    cached_votes_total "0"
+    cached_votes_up "0"
+    confidence_score "0"
+  end
+
+  factory :text_comment, class: "Comment" do
+    commentable_id "10"
+    commentable_type Legislation::Annotation
+    body "This is a comment"
+    user_id "1"
+    cached_votes_down "0"
+    cached_votes_total "0"
+    cached_votes_up "0"
+    confidence_score "0"
+    ancestry nil
+  end
+
+  factory :legislation_people_proposal, class: "Legislation::PeopleProposal" do
+    sequence(:title) { |n| "People and group #{n} for a legislation" }
+    summary "This law should be implemented by..."
+    terms_of_service "1"
+    process factory: :legislation_process
+    author factory: :user
+    validated false
+
+    trait :with_contact_info do
+      email "proposal@test.com"
+      website "https://proposal.io"
+      phone "666666666"
+      facebook "facebook.id"
+      twitter "TwitterId"
+      youtube "youtubechannelid"
+      instagram "instagramid"
+    end
+
+    trait :validated do
+      validated true
+    end
   end
 end

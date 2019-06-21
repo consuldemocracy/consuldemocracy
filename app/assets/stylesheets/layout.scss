@@ -372,7 +372,7 @@ a {
       text-decoration: none;
     }
 
-    &[aria-selected='true'],
+    &[aria-selected="true"],
     &.is-active {
       border-bottom: 0;
       color: $brand;
@@ -382,7 +382,7 @@ a {
         background: $brand;
         border-bottom: 2px solid $brand;
         bottom: 0;
-        content: '';
+        content: "";
         left: 0;
         position: absolute;
         width: 100%;
@@ -434,6 +434,11 @@ a {
   text-transform: uppercase;
 }
 
+.help-text {
+  line-height: rem-calc(20);
+  margin-top: 0;
+}
+
 // 02. Header
 // ----------
 
@@ -441,6 +446,11 @@ header {
   background: $brand;
   border-bottom: 1px solid $border;
   margin-bottom: $line-height;
+
+  @include breakpoint(small down) {
+    position: relative;
+    z-index: 10;
+  }
 
   .selected {
     border-bottom: 1px solid #fff;
@@ -450,6 +460,18 @@ header {
     float: left;
     height: $line-height * 1.5;
     margin-left: $line-height / 2;
+    position: relative;
+
+    &::after {
+      color: #808080;
+      content: "\61";
+      font-family: "icons" !important;
+      font-size: $small-font-size;
+      pointer-events: none;
+      position: absolute;
+      right: 2px;
+      top: 9px;
+    }
   }
 
   .external-links {
@@ -484,7 +506,7 @@ header {
     a {
       color: #fff;
       display: inline-block;
-      font-family: 'Lato' !important;
+      font-family: "Lato" !important;
       font-size: rem-calc(24);
       font-weight: lighter;
       line-height: $line-height * 2;
@@ -629,7 +651,7 @@ header {
       display: inline-block;
 
       &::after {
-        content: '|';
+        content: "|";
       }
 
       &:last-child::after {
@@ -777,7 +799,7 @@ footer {
   color: $text;
 
   .logo a {
-    font-family: 'Lato' !important;
+    font-family: "Lato" !important;
     text-decoration: none;
 
     &:hover {
@@ -861,6 +883,13 @@ footer {
   }
 }
 
+.sidebar-map {
+
+  .map {
+    z-index: 0;
+  }
+}
+
 .sidebar-title {
   border-top: 2px solid $brand;
   display: inline-block;
@@ -882,7 +911,7 @@ footer {
 }
 
 .auth-image {
-  background: $brand image-url('auth_bg.jpg');
+  background: $brand image-url("auth_bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -941,15 +970,11 @@ footer {
 
   label {
     color: #fff;
-    font-size: $small-font-size;
+    font-size: $tiny-font-size;
     font-weight: normal;
   }
 
   select {
-    background-image: image-url('language_select.png');
-    background-origin: border-box;
-    background-position: right;
-    background-size: 24px 24px;
 
     option {
       background: #fff;
@@ -960,14 +985,16 @@ footer {
   }
 
   .locale-switcher {
-    background-color: transparent;
+    background: #001d33;
     border: 0;
+    border-radius: rem-calc(4);
     color: #fff;
     font-size: $small-font-size;
+    height: $line-height;
     margin-bottom: 0;
+    margin-top: $line-height / 4;
     outline: none;
-    padding-left: rem-calc(3);
-    padding-right: $line-height;
+    padding: 0 $line-height / 4;
     width: auto;
 
     &:focus {
@@ -1055,9 +1082,12 @@ form {
 
 .notice-container {
   min-width: $line-height * 12;
-  position: absolute;
   right: 24px;
   top: 24px;
+
+  @include breakpoint(medium) {
+    position: absolute;
+  }
 
   .notice {
     height: $line-height * 4;
@@ -1070,6 +1100,7 @@ form {
 
 .callout {
   font-size: $small-font-size;
+  overflow: hidden;
 
   a:not(.button) {
     font-weight: bold;
@@ -1108,6 +1139,10 @@ form {
 
   .close {
     text-decoration: none !important;
+  }
+
+  .button {
+    margin-bottom: 0;
   }
 }
 
@@ -1252,7 +1287,7 @@ form {
 
   &::before {
     background: $border;
-    content: '';
+    content: "";
     height: 100%;
     left: 7px;
     position: absolute;
@@ -1298,14 +1333,14 @@ form {
     }
 
     &::before {
-      content: '\43';
+      content: "\43";
     }
   }
 
   &::before {
     background: #fff;
     color: $brand;
-    content: '\4d';
+    content: "\4d";
     font-family: "icons" !important;
     font-size: $small-font-size;
     height: rem-calc(20);
@@ -1460,7 +1495,7 @@ table {
 
   &::before {
     color: #45b0e3;
-    content: 'f';
+    content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1480,7 +1515,7 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: 'f';
+    content: "f";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1503,7 +1538,7 @@ table {
 
   &::before {
     color: #3b5998;
-    content: 'A';
+    content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1523,7 +1558,7 @@ table {
   width: rem-calc(48) !important;
 
   &::before {
-    content: 'A';
+    content: "A";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1546,7 +1581,7 @@ table {
 
   &::before {
     color: #de4c34;
-    content: 'B';
+    content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1566,7 +1601,7 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: 'B';
+    content: "B";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1589,7 +1624,7 @@ table {
 
   &::before {
     color: #08c;
-    content: '1';
+    content: "1";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 0;
@@ -1609,7 +1644,7 @@ table {
   width: $line-height * 2 !important;
 
   &::before {
-    content: '1';
+    content: "1";
     font-family: "icons" !important;
     font-size: rem-calc(24);
     left: 50%;
@@ -1662,7 +1697,7 @@ table {
     width: $line-height * 2;
 
     &::before {
-      content: 'f';
+      content: "f";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1687,7 +1722,7 @@ table {
     width: rem-calc(48);
 
     &::before {
-      content: 'A';
+      content: "A";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1712,7 +1747,7 @@ table {
     width: rem-calc(48);
 
     &::before {
-      content: 'B';
+      content: "B";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1737,7 +1772,7 @@ table {
     width: $line-height * 2;
 
     &::before {
-      content: '1';
+      content: "1";
       font-family: "icons" !important;
       font-size: rem-calc(24);
       left: 50%;
@@ -1781,7 +1816,7 @@ table {
       top: 24px;
 
       @include breakpoint(medium) {
-        content: 'c';
+        content: "c";
       }
     }
   }
@@ -2218,76 +2253,6 @@ table {
 // 18. Banners
 // -----------
 
-.banner-style-one {
-  background-color: $brand;
-}
-
-.banner-style-two {
-  background-color: $budget;
-}
-
-.banner-style-three {
-  background-color: #33dadf;
-}
-
-@include breakpoint(large) {
-
-  .banner-img-one {
-    background-image: image-url('banners/banner1.png');
-  }
-
-  .banner-img-two {
-    background-image: image-url('banners/banner2.png');
-  }
-
-  .banner-img-three {
-    background-image: image-url('banners/banner3.png');
-  }
-}
-
-.banner-img-one,
-.banner-img-two,
-.banner-img-three {
-  background-position: bottom right;
-  background-repeat: no-repeat;
-}
-
-.banner-style-one,
-.banner-style-two,
-.banner-style-three,
-.banner {
-  margin: 0;
-  margin-bottom: $line-height;
-
-  @include breakpoint(large) {
-
-    h3 {
-      width: 80%;
-    }
-  }
-
-  h2,
-  h3,
-  a {
-    color: #eaeaf2;
-  }
-
-  h2 {
-    padding: $line-height / 2;
-    padding-bottom: 0;
-  }
-
-  h3 {
-    padding: $line-height / 2;
-    padding-top: 0;
-  }
-
-  a:hover h2,
-  a:hover h3 {
-    color: #eaeaf2 !important;
-    text-decoration: none;
-  }
-}
 
 // 19. Recommendations
 // -------------------
@@ -2358,7 +2323,7 @@ table {
   }
 
   .card .orbit .orbit-wrapper .truncate {
-    background: image-url('truncate.png');
+    background: image-url("truncate.png");
     background-repeat: repeat-x;
     bottom: 0;
     height: rem-calc(20);
@@ -2508,7 +2473,7 @@ table {
     border-radius: rem-calc(5);
     display: block;
     margin: $line-height / 2 0;
-    padding: 0 $line-height / 2;
+    padding: $line-height / 2;
     position: relative;
 
     .icon-document {
@@ -2641,7 +2606,7 @@ table {
 
     &.score-positive::before,
     &.score-negative::before {
-      font-family: 'icons';
+      font-family: "icons";
       left: 0;
       position: absolute;
     }
@@ -2651,7 +2616,7 @@ table {
 
       &::before {
         color: $color-success;
-        content: '\6c';
+        content: "\6c";
       }
     }
 
@@ -2660,7 +2625,7 @@ table {
 
       &::before {
         color: $color-alert;
-        content: '\76';
+        content: "\76";
       }
     }
   }
@@ -2698,10 +2663,28 @@ table {
   }
 }
 
+.leaflet-container {
+
+  .leaflet-control-attribution {
+    background: rgba(255, 255, 255, 0.9) !important;
+  }
+
+  a {
+    color: $link !important;
+  }
+}
+
+.leaflet-bottom,
+.leaflet-pane,
+.leaflet-top {
+  z-index: 4 !important;
+}
+
 // 24. Homepage
 // ------------
 
-.home-page {
+.home-page,
+.custom-page {
 
   a {
 
@@ -2808,15 +2791,15 @@ table {
   display: inline-block;
   height: rem-calc(120);
   overflow: hidden;
+  width: 100%;
 
   @include breakpoint(medium) {
     height: rem-calc(96);
   }
 
   img {
-    margin-left: rem-calc(-15);
     max-width: none;
-    width: rem-calc(120);
+    width: 100%;
   }
 }
 
@@ -2841,11 +2824,19 @@ table {
 .figure-card {
   display: flex;
   margin: 0 0 $line-height;
+  overflow: hidden;
   position: relative;
+
+  @include breakpoint(medium down) {
+    min-height: $line-height * 4;
+  }
 
   @include breakpoint(medium) {
     max-height: rem-calc(185);
-    overflow: hidden;
+  }
+
+  @include breakpoint(large) {
+    min-height: rem-calc(185);
   }
 
   a {
@@ -2877,8 +2868,16 @@ table {
 
     h3,
     .title {
-      font-size: rem-calc(24);
-      line-height: rem-calc(24);
+      font-size: $base-font-size;
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(20);
+      }
+
+      @include breakpoint(large) {
+        font-size: rem-calc(24);
+        line-height: rem-calc(24);
+      }
     }
 
     span {

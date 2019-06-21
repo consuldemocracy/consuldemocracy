@@ -21,4 +21,12 @@
       </h3>
     <% end %>
   </li>
+  <li class="tabs-title">
+    <%= link_to "#tab-milestones" do %>
+      <h3>
+        <%= t("proposals.show.milestones_tab") %>
+        (<%= @proposal.milestones.count %>)
+      </h3>
+    <% end %>
+  </li>
 </ul>

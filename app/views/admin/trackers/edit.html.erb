@@ -1,0 +1,15 @@
+<%= back_link_to admin_trackers_path %>
+
+<h2><%= t("admin.trackers.form.edit_title") %></h2>
+
+<div class="callout highlight">
+  <strong><%= @tracker.name %></strong><br>
+  <%= @tracker.email %>
+</div>
+
+<div class="margin-top">
+  <%= form_for [:admin, @tracker] do |f| %>
+    <%= f.text_field :description %>
+    <%= f.submit t("admin.trackers.form.update"), class: "button success" %>
+  <% end %>
+</div>

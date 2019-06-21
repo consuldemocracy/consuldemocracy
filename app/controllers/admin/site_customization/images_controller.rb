@@ -12,10 +12,10 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
     end
 
     if @image.update(image_params)
-      notice = t('admin.site_customization.images.update.notice')
+      notice = t("admin.site_customization.images.update.notice")
       redirect_to admin_site_customization_images_path, notice: notice
     else
-      flash.now[:error] = t('admin.site_customization.images.update.error')
+      flash.now[:error] = t("admin.site_customization.images.update.error")
 
       @images = SiteCustomization::Image.all_images
       idx = @images.index {|e| e.name == @image.name }
@@ -28,10 +28,10 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
   def destroy
     @image.image = nil
     if @image.save
-      notice = t('admin.site_customization.images.destroy.notice')
+      notice = t("admin.site_customization.images.destroy.notice")
       redirect_to admin_site_customization_images_path, notice: notice
     else
-      notice = t('admin.site_customization.images.destroy.error')
+      notice = t("admin.site_customization.images.destroy.error")
       redirect_to admin_site_customization_images_path, notice: notice
     end
   end

@@ -1,0 +1,12 @@
+<h2 class="inline-block"><%= t("admin.change_log.title") %></h2>
+
+<label><strong><%= t("admin.change_log.id") %></strong></label>
+<p><%= @log.id %></p>
+<label><strong><%= t("admin.change_log.old_value") %></strong></label>
+<p><%= @log.old_value %></p>
+<label><strong><%= t("admin.change_log.new_value") %></strong></label>
+<p><%= @log.new_value %></p>
+<label><strong><%= t("admin.change_log.edited_at") %></strong></label>
+<p><%= @log.created_at.to_date %></p>
+<label><strong><%= t("admin.change_log.edited_by") %></strong></label>
+<p><%= @log.author.name unless @log.author.nil? %></p>

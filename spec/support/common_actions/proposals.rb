@@ -1,8 +1,8 @@
 module Proposals
   def create_successful_proposals
-    [create(:proposal, title: "Winter is coming", question: "Do you speak it?",
+    [create(:proposal, title: "Winter is coming",
                        cached_votes_up: Proposal.votes_needed_for_success + 100),
-     create(:proposal, title: "Fire and blood", question: "You talking to me?",
+     create(:proposal, title: "Fire and blood",
                        cached_votes_up: Proposal.votes_needed_for_success + 1)]
   end
 
@@ -17,8 +17,8 @@ module Proposals
   end
 
   def create_featured_proposals
-    [create(:proposal, :with_confidence_score, cached_votes_up: 100),
-     create(:proposal, :with_confidence_score, cached_votes_up: 90),
-     create(:proposal, :with_confidence_score, cached_votes_up: 80)]
+    [create(:proposal, :with_confidence_score, cached_votes_up: 200),
+     create(:proposal, :with_confidence_score, cached_votes_up: 100),
+     create(:proposal, :with_confidence_score, cached_votes_up: 90)]
   end
 end

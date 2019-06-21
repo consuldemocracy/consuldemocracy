@@ -1,0 +1,114 @@
+cs:
+  legislation:
+    annotations:
+      comments:
+        see_all: Zobrazit vše
+        see_complete: Zobrazit vše
+        cancel: Zrušit
+        publish_comment: Zveřejnit komentář
+      form:
+        phase_not_open: Tato fáze není otevřena
+        login_to_comment: Pro vložení komentáře se musíte %{signin} nebo %{signup}.
+        signin: Přihlásit se
+        signup: Registrujte se!
+      index:
+        title: Komentáře
+        comments_about: Komentáře k
+        see_in_context: Zobrazit v textu
+      show:
+        title: Komentář
+      version_chooser:
+        seeing_version: Komentáře pro tuto verzi
+        see_text: Zobrazit pracovní verzi
+    draft_versions:
+      changes:
+        title: Changes
+        seeing_changelog_version: Popis změn v revizi
+        see_text: Zobrazit pracovní verzi
+      show:
+        loading_comments: Nahrát komentáře
+        seeing_version: Vidíte verzi konceptu
+        select_draft_version: Vybrat pracovní verzi
+        select_version_submit: zobrazit
+        updated_at: aktualizováno dne %{date}
+        see_changes: zobrazit shrnutí změn
+        see_comments: Zobrazit všechny komentáře
+        text_toc: Obsah
+        text_body: Text
+        text_comments: Komentáře
+    processes:
+      header:
+        additional_info: Doplňující informace
+        description: Description
+        more_info: Další informace a souvislosti
+      proposals:
+        empty_proposals: Neexistují žádné návrhy
+        filters:
+          random: Náhodné pořadí
+          winners: Vybrané
+      debate:
+        empty_questions: Nejsou k dispozici žádné otázky
+        participate: Účastnit se dabaty
+      index:
+        filter: Filtr
+        filters:
+          open: Aktivní procesy
+          past: Ukončené
+        no_open_processes: Neexistují otevřené procesy
+        no_past_processes: Neexistují ukončené procesy
+        section_header:
+          icon_alt: Právní procesy - ikona
+          title: Legislativní procesy
+          help: Nápověda pro legislativní procesy
+        section_footer:
+          title: Nápověda pro legislativní procesy
+          description: Účastněte se debat a procesů před schválením finální podoby nařízení nebo obecního opatření. Váš názor nás zajímá!
+      phase_not_open:
+        not_open: Tato fáze zatím není aktivní
+      phase_empty:
+        empty: Dosud není nic publikováno
+      process:
+        see_latest_comments: Zobrazit poslední komentáře
+        see_latest_comments_title: Komentář k tomuto procesu
+      shared:
+        key_dates: Fáze procesu
+        homepage: Úvodní strana
+        debate_dates: Debata
+        draft_publication_date: Návrh publikace
+        allegations_dates: Komentáře
+        result_publication_date: Finální výsledek
+        milestones_date: Sledované
+        proposals_dates: Návrhy
+    questions:
+      comments:
+        comment_button: Publikovat odpověď
+        comments_title: Otevřené otázky
+        comments_closed: Fáze uzavřena
+        form:
+          leave_comment: Napište odpověď
+      question:
+        comments:
+          zero: Žádné komentáře
+        debate: Debata
+      show:
+        answer_question: Odeslat odpověď
+        next_question: Následující otázka
+        first_question: První otázka
+        share: Sdílet
+        title: Participativní legislativní proces
+      participation:
+        phase_not_open: Tato fáze není otevřena
+        organizations: Organizacím není dovoleno účastnit se v debatě
+        signin: Přihlásit se
+        signup: Registrujte se!
+        unauthenticated: Chcete-li se zapojit, musíte se %{signin} nebo %{signup}.
+        verified_only: Pouze ověření uživatelé se mohou zapojit, %{verify_account}.
+        verify_account: ověřte Váš účet
+        debate_phase_not_open: Fáze debaty skončila a odpovědi již nejsou přijímány
+    shared:
+      share: Sdílet
+      share_comment: Komentář k %{version_name} z fáze návrhu %{process_name}
+    proposals:
+      form:
+        tags_label: "Kategorie"
+      not_verified: "Pro hlasování o návrzích %{verify_account}."

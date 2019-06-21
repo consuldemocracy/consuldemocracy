@@ -1,6 +1,7 @@
 sv:
   pages:
-    general_terms: Regler och villkor
+    conditions:
+      title: användarvillkoren
     help:
       title: "%{org} är en plattform för medborgardeltagande"
       guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
@@ -9,7 +10,7 @@ sv:
         proposals: "Förslag"
         budgets: "Medborgarbudgetar"
         polls: "Omröstningar"
-        other: "Annan information av intresse"
+        other: "Andra intresseområden"
         processes: "Processer"
       debates:
         title: "Debatter"
@@ -17,8 +18,8 @@ sv:
         link: "debatter"
         feature_html: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
         feature_link: "registrera dig på %{org}"
-        image_alt: "Knappar för att betygsätta debatter"
-        figcaption: '"Jag håller med"- och "Jag håller inte med"-knappar för att betygsätta debatter.'
+        image_alt: "Knappar för att betygsätta diskussioner"
+        figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
       proposals:
         title: "Förslag"
         description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
@@ -48,30 +49,77 @@ sv:
         page:
           title: "Vanliga frågor"
           description: "Använd den här sidan för att hjälpa dina användare med deras vanligaste frågor."
-          faq_1_title: "Fråga 1"
-          faq_1_description: "Det här är ett exempel på beskrivning till fråga ett."
       other:
-        title: "Annan information av intresse"
+        title: "Andra intresseområden"
         how_to_use: "Använd %{org_name} i din stad"
       how_to_use:
         text: |-
           Använd plattformen i din stad eller hjälp oss att förbättra den, den är fri programvara.
-          
+
           Den här plattformen för Open Government använder [CONSUL](https://github.com/consul/consul 'CONSUL på GitHub'), som är fri programvara licensierad under [AGPLv3](http://www.gnu.org/licenses/agpl-3.0.html 'AGPLv3 gnu' ), vilket kortfattat betyder att vem som helst kan använda, kopiera, granska eller ändra i koden och dela den vidare under samma licens. Vi tycker att bra tjänster ska vara tillgängliga för fler.
-          
+
           Om du är programmerare får du gärna hjälpa oss att förbättra koden på [CONSUL](https://github.com/consul/consul 'CONSUL på GitHub'), eller den svenska implementeringen på [Digidem Lab/CONSUL](https://github.com/digidemlab/consul 'CONSUL Sweden på GitHub').
       titles:
         how_to_use: Använd det i din kommun
+    privacy:
+      title: sekretesspolicyn
+    accessibility:
+      title: Tillgänglighet
+      keyboard_shortcuts:
+        navigation_table:
+          page_header: Sida
+          rows:
+            - 
+              key_column: 0
+              page_column: Hem
+            - 
+              key_column: 1
+              page_column: Debatter
+            - 
+              key_column: 2
+              page_column: Förslag
+            - 
+              key_column: 3
+              page_column: Röster
+            - 
+              key_column: 4
+              page_column: Medborgarbudgetar
+            - 
+              key_column: 5
+        browser_table:
+          rows:
+            - 
+              browser_column: IE
+            - 
+              browser_column: Firefox
+            - 
+              browser_column: Chrome
+            - 
+              browser_column: Safari
+            - 
+              browser_column: Opera
+      textsize:
+        title: Textstorlek
+        browser_settings_table:
+          rows:
+            - 
+              browser_column: IE
+              action_column: Visa > Textstorlek
+            - 
+              browser_column: Firefox
+              action_column: Visa > Storlek
+            - 
+              browser_column: Chrome
+            - 
+            - 
+              browser_column: Opera
     titles:
-      accessibility: Tillgänglighet
-      conditions: Användarvillkor
       help: "Vad är %{org}? - Medborgardeltagande"
-      privacy: Sekretesspolicy
     verify:
       code: Koden du fick i ett brev
       email: E-post
-      info: 'För att verifiera ditt konto måste du fylla i dina uppgifter:'
-      info_code: 'Nu kan du skriva in koden du fick i ett brev:'
+      info: "För att verifiera ditt konto måste du fylla i dina uppgifter:"
+      info_code: "Nu kan du skriva in koden du fick i ett brev:"
       password: Lösenord
       submit: Verifiera mitt konto
       title: Verifiera ditt konto

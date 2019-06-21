@@ -6,15 +6,15 @@ nl:
         one: Bijdrage
         other: Bijdragen
       more_pages:
-        display_entries: <strong>%{first}&nbsp;-&nbsp;%{last}</strong> van <strong>%{total} %{entry_name}</strong> getoond
+        display_entries: <b>%{first}&nbsp;-&nbsp;%{last}</b> van <b>%{total}</b> %{entry_name} getoond
       one_page:
         display_entries:
           zero: "%{entry_name} niet gevonden"
-          one: Er is <strong>1 %{entry_name}</strong>
-          other: Er zijn <strong>%{count} %{entry_name}</strong>
+          one: Er is <b>1</b> %{entry_name}
+          other: Er zijn <b> %{count}</b> %{entry_name}
   views:
     pagination:
-      current: Je bent op pagina
+      current: U bent op pagina
       first: Eerste
       last: Laatste
       next: Volgende

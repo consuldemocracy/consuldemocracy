@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Residence', :with_frozen_time do
+describe "Residence", :with_frozen_time do
   let(:officer) { create(:poll_officer) }
 
-  feature "Officers without assignments" do
+  describe "Officers without assignments" do
 
     scenario "Can not access residence verification" do
       login_as(officer.user)
@@ -21,11 +21,11 @@ feature 'Residence', :with_frozen_time do
 
   end
 
-  feature "Assigned officers" do
+  describe "Assigned officers" do
 
-    background do
+    before do
       create(:poll_officer_assignment, officer: officer)
-      login_as(officer.user)
+      login_through_form_as_officer(officer.user)
       visit officing_root_path
     end
 
@@ -34,13 +34,13 @@ feature 'Residence', :with_frozen_time do
         click_link "Validate document"
       end
 
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "12345678Z"
-      fill_in 'residence_year_of_birth', with: '1980'
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "12345678Z"
+      fill_in "residence_year_of_birth", with: "1980"
 
-      click_button 'Validate document'
+      click_button "Validate document"
 
-      expect(page).to have_content 'Document verified with Census'
+      expect(page).to have_content "Document verified with Census"
     end
 
     scenario "Error on verify" do
@@ -61,13 +61,13 @@ feature 'Residence', :with_frozen_time do
         click_link "Validate document"
       end
 
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "9999999A"
-      fill_in 'residence_year_of_birth', with: '1980'
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "9999999A"
+      fill_in "residence_year_of_birth", with: "1980"
 
-      click_button 'Validate document'
+      click_button "Validate document"
 
-      expect(page).to have_content 'The Census was unable to verify this document'
+      expect(page).to have_content "The Census was unable to verify this document"
 
       officer.reload
       fcc = FailedCensusCall.last
@@ -82,15 +82,38 @@ feature 'Residence', :with_frozen_time do
         click_link "Validate document"
       end
 
-      select 'DNI', from: 'residence_document_type'
-      fill_in 'residence_document_number', with: "12345678Z"
-      fill_in 'residence_year_of_birth', with: '1981'
+      select "DNI", from: "residence_document_type"
+      fill_in "residence_document_number", with: "12345678Z"
+      fill_in "residence_year_of_birth", with: "1981"
 
-      click_button 'Validate document'
+      click_button "Validate document"
 
-      expect(page).to have_content 'The Census was unable to verify this document'
+      expect(page).to have_content "The Census was unable to verify this document"
     end
 
+  end
+
+  scenario "Verify booth", :js do
+    booth = create(:poll_booth)
+    poll = create(:poll)
+
+    ba = create(:poll_booth_assignment, poll: poll, booth: booth)
+    create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+    create(:poll_shift, officer: officer, booth: booth, date: Date.current)
+
+    login_as(officer.user)
+
+    visit new_officing_residence_path
+    within("#officing-booth") do
+      expect(page).to have_content "You are officing the booth located at #{booth.location}."
+    end
+
+    officing_verify_residence
+
+    expect(page).to have_content poll.name
+    click_button "Confirm vote"
+
+    expect(page).to have_content "Vote introduced!"
   end
 
 end

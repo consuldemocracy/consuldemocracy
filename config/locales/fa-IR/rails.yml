@@ -111,7 +111,7 @@ fa:
       invalid: نامعتبر است
       less_than: باید کمتر از %{count} باشند 
       less_than_or_equal_to: باید کمتر یا برابر با %{count} باشد
-      model_invalid: "تأیید اعتبار انجام نشد: %{errors}"
+      model_invalid: "تأیید اعتبار ناموفق بود:%{errors}"
       not_a_number: شماره نیست
       not_an_integer: باید یک عدد صحیح باشد 
       odd: باید فرد باشد 
@@ -128,7 +128,7 @@ fa:
         other: طول اشتباه (باید %{count} حرف باشد)
       other_than: باید غیر از%{count} باشد
     template:
-      body: 'مشکلات در زمینه های زیر وجود دارد:'
+      body: "مشکلات در زمینه های زیر وجود دارد:"
       header:
         one: 1 خطا این%{model} از ذخیره شدن جلوگیری کرد
         other: "%{count} خطا این%{model} از ذخیره شدن جلوگیری کرد"

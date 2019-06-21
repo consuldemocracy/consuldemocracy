@@ -1,5 +1,5 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
-  <%= render 'shared/errors', resource: @proposal %>
+  <%= render "shared/errors", resource: @proposal %>
 
   <div class="row">
     <div class="small-12 column">
@@ -11,21 +11,10 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.label :question, t("proposals.form.proposal_question") %>
-      <p class="help-text" id="question-help-text">
-        <%= t("proposals.form.proposal_question_example_html") %>
-      </p>
-      <%= f.text_field :question, maxlength: Proposal.question_max_length,
-                                  placeholder: t("proposals.form.proposal_question"),
-                                  label: false,
-                                  aria: {describedby: "question-help-text"} %>
-    </div>
-
-    <div class="small-12 column">
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
       <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t('proposals.form.proposal_summary'),
+                      placeholder: t("proposals.form.proposal_summary"),
                       aria: {describedby: "summary-help-text"} %>
     </div>
 
@@ -41,20 +30,15 @@
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.label :external_url, t("proposals.form.proposal_external_url") %>
-      <%= f.text_field :external_url, placeholder: t("proposals.form.proposal_external_url"), label: false %>
-    </div>
-
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
-        <%= render 'images/nested_image', imageable: @proposal, f: f %>
+        <%= render "images/nested_image", imageable: @proposal, f: f %>
       </div>
     <% end %>
 
     <% if feature?(:allow_attached_documents) %>
       <div class="documents small-12 column">
-        <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+        <%= render "documents/nested_documents", documentable: @proposal, f: f %>
       </div>
     <% end %>
 
@@ -66,7 +50,7 @@
     <% if feature?(:map) %>
       <div class="small-12 column">
 
-        <%= render 'map_locations/form_fields',
+        <%= render "map_locations/form_fields",
                    form:     f,
                    map_location: @proposal.map_location || MapLocation.new,
                    label:    t("proposals.form.map_location"),
@@ -93,7 +77,7 @@
       <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list tag-autocomplete',
+                        class: "js-tag-list tag-autocomplete",
                         aria: {describedby: "tag-list-help-text"},
                         data: {js_url: suggest_tags_path} %>
     </div>
@@ -110,7 +94,7 @@
     <div class="small-12 column">
       <% if @proposal.new_record? %>
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
           <span class="checkbox">
             <%= t("form.accept_terms",
                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),

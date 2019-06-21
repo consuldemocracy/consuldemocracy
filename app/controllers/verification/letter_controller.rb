@@ -30,7 +30,7 @@ class Verification::LetterController < ApplicationController
     @letter = Verification::Letter.new(letter_params.merge(user: current_user, verify: true))
     if @letter.valid?
       current_user.update(verified_at: Time.current)
-      redirect_to account_path, notice: t('verification.letter.update.flash.success')
+      redirect_to account_path, notice: t("verification.letter.update.flash.success")
     else
       Lock.increase_tries(@letter.user) if @letter.user
       render :edit
@@ -45,7 +45,7 @@ class Verification::LetterController < ApplicationController
 
     def verify_phone!
       unless current_user.sms_verified?
-        redirect_to verified_user_path, alert: t('verification.letter.alert.unconfirmed_code')
+        redirect_to verified_user_path, alert: t("verification.letter.alert.unconfirmed_code")
       end
     end
 

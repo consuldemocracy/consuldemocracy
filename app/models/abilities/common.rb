@@ -16,6 +16,26 @@ module Abilities
       can :update, Proposal do |proposal|
         proposal.editable_by?(user)
       end
+      can :publish, Proposal do |proposal|
+        proposal.draft? && proposal.author.id == user.id && !proposal.retired?
+      end
+      can :dashboard, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+      can :manage_polls, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+      can :manage_mailing, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+      can :manage_poster, Proposal do |proposal|
+        proposal.author.id == user.id
+      end
+
+      can :results, Poll do |poll|
+        poll.related&.author&.id == user.id
+      end
+
       can [:retire_form, :retire], Proposal, author_id: user.id
 
       can :read, Legislation::Proposal
@@ -26,7 +46,7 @@ module Abilities
 
       can :create, Comment
       can :create, Debate
-      can :create, Proposal
+      can [:create, :created], Proposal
       can :create, Legislation::Proposal
 
       can :suggest, Debate
@@ -51,7 +71,9 @@ module Abilities
 
       can [:create, :destroy], Follow
 
-      can [:destroy], Document, documentable: { author_id: user.id }
+      can [:destroy], Document do |document|
+        document.documentable.try(:author_id) == user.id
+      end
 
       can [:destroy], Image, imageable: { author_id: user.id }
 
@@ -63,10 +85,10 @@ module Abilities
       end
 
       if user.level_two_or_three_verified?
-        can :vote, Proposal
+        can :vote, Proposal do |proposal|
+          proposal.published?
+        end
         can :vote_featured, Proposal
-        can :vote, SpendingProposal
-        can :create, SpendingProposal
 
         can :vote, Legislation::Proposal
         can :vote_featured, Legislation::Proposal
@@ -82,18 +104,21 @@ module Abilities
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
-        can :answer, Poll do |poll|
+
+        can [:load_answers], Poll::Question
+        can [:answer], Poll do |poll|
           poll.answerable_by?(user)
         end
-        can :answer, Poll::Question do |question|
+        can [:answer, :prioritized_answers], Poll::Question do |question|
           question.answerable_by?(user)
+        end
+
+        can [:create, :delete], Poll::Answer do |answer|
+          answer.question.answerable_by?(user)
         end
       end
 
       can [:create, :show], ProposalNotification, proposal: { author_id: user.id }
-
-      can :create, Annotation
-      can [:update, :destroy], Annotation, user_id: user.id
 
       can [:create], Topic
       can [:update, :destroy], Topic, author_id: user.id

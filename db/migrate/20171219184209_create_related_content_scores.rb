@@ -1,4 +1,4 @@
-class CreateRelatedContentScores < ActiveRecord::Migration
+class CreateRelatedContentScores < ActiveRecord::Migration[4.2]
   def change
     create_table :related_content_scores do |t|
       t.references :user, index: true, foreign_key: true

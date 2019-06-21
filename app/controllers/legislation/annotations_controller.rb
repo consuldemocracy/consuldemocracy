@@ -1,4 +1,4 @@
-class Legislation::AnnotationsController < ApplicationController
+class Legislation::AnnotationsController < Legislation::BaseController
   skip_before_action :verify_authenticity_token
 
   before_action :authenticate_user!, only: [:create, :new_comment]
@@ -8,7 +8,7 @@ class Legislation::AnnotationsController < ApplicationController
   load_and_authorize_resource :draft_version, through: :process
   load_and_authorize_resource
 
-  has_orders %w{most_voted newest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   def index
     @annotations = @draft_version.annotations
@@ -18,7 +18,7 @@ class Legislation::AnnotationsController < ApplicationController
     @commentable = @annotation
 
     if params[:sub_annotation_ids].present?
-      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(','))
+      @sub_annotations = Legislation::Annotation.where(id: params[:sub_annotation_ids].split(","))
       annotations = [@commentable, @sub_annotations]
     else
       annotations = [@commentable]

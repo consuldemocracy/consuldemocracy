@@ -1,11 +1,15 @@
-class Comment < ActiveRecord::Base
+require "csv"
+
+class Comment < ApplicationRecord
   include Flaggable
   include HasPublicAuthor
   include Graphqlable
   include Notifiable
+  extend DownloadSettings::CommentCsv
 
-  COMMENTABLE_TYPES = %w(Debate Proposal Budget::Investment Poll Topic Legislation::Question
-                        Legislation::Annotation Legislation::Proposal).freeze
+  COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
+                        Legislation::Question Legislation::Annotation
+                        Legislation::Proposal Legislation::PeopleProposal].freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -22,7 +26,7 @@ class Comment < ActiveRecord::Base
   validate :validate_body_length
   validate :comment_valuation, if: -> { valuation }
 
-  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true
+  belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true, touch: true
   belongs_to :user, -> { with_hidden }
 
   before_save :calculate_confidence_score
@@ -117,7 +121,7 @@ class Comment < ActiveRecord::Base
   end
 
   def self.body_max_length
-    Setting['comments_body_max_length'].to_i
+    Setting["comments_body_max_length"].to_i
   end
 
   def calculate_confidence_score

@@ -2,7 +2,7 @@
     <div>
       <%= f.label :image, t("images.form.admin_title") %>
 
-      <%= link_to_add_association t('images.form.add_new_image'), f, :image,
+      <%= link_to_add_association t("images.form.add_new_image"), f, :image,
                             force_non_association_create: true,
                             partial: "images/image_fields",
                             id: "new_image_link",

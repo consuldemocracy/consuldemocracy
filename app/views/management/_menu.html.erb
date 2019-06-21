@@ -29,7 +29,7 @@
           <%= link_to t("management.menu.support_proposals"), management_proposals_path %>
         </li>
 
-        <% if Setting['feature.budgets'] %>
+        <% if Setting["process.budgets"] %>
           <li <%= "class=is-active" if menu_create_investments? %>>
             <%= link_to t("management.menu.create_budget_investment"), create_investments_management_budgets_path %>
           </li>
@@ -42,7 +42,7 @@
       </ul>
     </li>
 
-    <% if Setting['feature.budgets'] %>
+    <% if Setting["process.budgets"] %>
       <li <%= "class=is-active" if menu_print_investments? %>>
         <%= link_to print_investments_management_budgets_path do %>
             <span class="icon-print"></span>
@@ -64,29 +64,5 @@
         <%= t("management.menu.user_invites") %>
       <% end %>
     </li>
-
-    <%# temporarily commenting until obsolete spending_proposals is removed %>
-    <% if false %>
-      <li <%= "class=is-active" if controller_name == "spending_proposals" && action_name == "new" %>>
-        <%= link_to new_management_spending_proposal_path do %>
-          <span class="icon-budget"></span>
-          <%= t("management.menu.create_spending_proposal") %>
-        <% end %>
-      </li>
-
-      <li <%= "class=is-active" if controller_name == "spending_proposals" && action_name == "index" %>>
-        <%= link_to management_spending_proposals_path do %>
-          <span class="icon-like"></span>
-          <%= t("management.menu.support_spending_proposals") %>
-        <% end %>
-      </li>
-
-      <li <%= "class=is-active" if controller_name == "spending_proposals" && action_name == "print" %>>
-        <%= link_to print_management_spending_proposals_path do %>
-          <span class="icon-print"></span>
-          <%= t("management.menu.print_spending_proposals") %>
-        <% end %>
-      </li>
-    <% end %>
   </ul>
 </div>

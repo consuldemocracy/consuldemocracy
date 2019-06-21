@@ -77,12 +77,12 @@ es:
         filters:
           all: Todos
           pending_flag_review: Pendientes de revisión
-          with_ignored_flag: Marcadas como revisadas
+          with_ignored_flag: Marcados como revisados
         headers:
           moderate: Moderar
           budget_investment: Proyecto de gasto
         hide_budget_investments: Ocultar proyectos de gasto
-        ignore_flags: Marcar como revisadas
+        ignore_flags: Marcar como revisados
         order: Ordenar por
         orders:
           created_at: Más recientes

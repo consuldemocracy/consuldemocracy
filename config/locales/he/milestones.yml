@@ -1,0 +1,8 @@
+he:
+  milestones:
+    index:
+      no_milestones: לא הוגדרו אבני דרך
+      progress: התקדמות
+    show:
+      publication_date: "אשר פורסם %{publication_date}"
+      status_changed: סטטוס השתנה ל

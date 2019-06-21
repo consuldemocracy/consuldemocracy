@@ -1,10 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature "Valuator groups" do
+describe "Valuator groups" do
 
   let(:admin) { create(:administrator).user }
 
-  background do
+  before do
     login_as(admin)
   end
 
@@ -88,7 +88,7 @@ feature "Valuator groups" do
       visit edit_admin_valuator_path(valuator)
 
       select "Health", from: "valuator_valuator_group_id"
-      click_button "Update valuator"
+      click_button "Update Valuator"
 
       expect(page).to have_content "Valuator updated successfully"
       expect(page).to have_content "Health"
@@ -102,7 +102,7 @@ feature "Valuator groups" do
 
       visit edit_admin_valuator_path(valuator)
       select "Economy", from: "valuator_valuator_group_id"
-      click_button "Update valuator"
+      click_button "Update Valuator"
 
       expect(page).to have_content "Valuator updated successfully"
       expect(page).to have_content "Economy"
@@ -115,10 +115,10 @@ feature "Valuator groups" do
 
       visit edit_admin_valuator_path(valuator)
       select "", from: "valuator_valuator_group_id"
-      click_button "Update valuator"
+      click_button "Update Valuator"
 
       expect(page).to have_content "Valuator updated successfully"
-      expect(page).to_not have_content "Health"
+      expect(page).not_to have_content "Health"
     end
 
   end

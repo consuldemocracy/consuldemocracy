@@ -1,0 +1,7 @@
+sq:
+  milestones:
+    index:
+      no_milestones: Mos keni afate të përcaktuara
+    show:
+      publication_date: "Publikuar %{publication_date}"
+      status_changed: Statusi i investimeve u ndryshua

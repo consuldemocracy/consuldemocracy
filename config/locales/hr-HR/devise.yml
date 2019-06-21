@@ -1,0 +1,62 @@
+hr:
+  devise:
+    password_expired:
+      expire_password: "Istekla zaporka"
+      change_required: "Vaša zaporka je istekla"
+      change_password: "Izmjenite zaporku"
+      new_password: "Nova zaporka"
+      updated: "Zaporka je uspješno ažurirana"
+    confirmations:
+      confirmed: "Vaš račun je potvrđen."
+      send_instructions: "U nekoliko minuta ćete prihvatiti email koji sadrži upute za ponovno postavljanje zaporke."
+      send_paranoid_instructions: "Ako vaša email adresa nije u našoj bazi podataka u nekoliko minuta ćete zaprimiti email koji sadrži upute za ponovno postavljanje zaporke."
+    failure:
+      already_authenticated: "Već ste prijavljeni."
+      inactive: "Vaš račun još nije aktiviran."
+      invalid: "Nevažeć %{authentication_keys} ili zaporka."
+      locked: "Vaš račun je zaključan."
+      last_attempt: "Preostao vam je još jedan pokušaj prije nego što se račun blokira."
+      not_found_in_database: "Nevažeć %{authentication_keys} ili zaporka."
+      timeout: "Vaša sesija je istekla. Molimo vas da se ponovno prijavite."
+      unauthenticated: "Morate se prijaviti ili registirati kako biste nastavili."
+      unconfirmed: "Kako biste nastavili potvrdite konfirmacijski link koji Vam šaljemo putem emaila"
+    mailer:
+      confirmation_instructions:
+        subject: "Upute za potvrdu"
+      reset_password_instructions:
+        subject: "Upute za ponovno uspostavljanje zaporke"
+      unlock_instructions:
+        subject: "Otključavanje uputa"
+    omniauth_callbacks:
+      failure: "Nije Vas moguće autorizirati kao %{kind} zbog \"%{reason}\"."
+      success: "Uspješno idencifirali kao %{kind}."
+    passwords:
+      no_token: "Ne možete pristupiti ovoj stranici osim putem linka za ponovno uspostavljanje zaporke. Ukoliko ste probali pristupiti preko linka, molimo vas da provjerite URL."
+      send_instructions: "U par minuta dobit ćete email koji se odnosi na upute za ponovno uspotavljanje zaporke."
+      send_paranoid_instructions: "Ako je Vaš email u našoj bazi podataka u nekoliko minuta ćete dobiti link za ponovno uspostavljanje zaporke."
+      updated: "Vaša zaporka je uspješno izmijenjena. Autentifikacija je provedena uspješno."
+      updated_not_active: "Vaša zaporka je uspješno izmijenjena."
+    registrations:
+      destroyed: "Doviđenja! Vaš račun je poništen. Nadamo se da ćemo vas ponovno vidjeti."
+      signed_up: "Dobrodošli! Potvrđena je vaša autentičnost."
+      signed_up_but_inactive: "Vaša registracija je uspješna, ali ne možete se prijaviti dok ne aktivirate Vaš račun."
+      signed_up_but_locked: "Vaša registracija je uspješna, ali ne možete se prijaviti zato što je Vaš račnun zaključan."
+      signed_up_but_unconfirmed: "Poslana Vam je poruka s verifikacijskom poveznicom. Molim Vas da pronađete poveznicu kako biste aktivirali Vaš račun."
+      update_needs_confirmation: "Vaš račun je uspješno ažuriran; sada još moramo potvrditi Vašu novu email adresu. Molimo Vas da provjerite email i krenete na poveznicu kako biste potvrdili novu emial adresu."
+      updated: "Vaš račun je uspješno ažuriran."
+    sessions:
+      signed_in: "Uspješno ste se prijavili."
+      signed_out: "Uspješno ste odjevljeni."
+      already_signed_out: "Uspješno ste odjevljeni."
+    unlocks:
+      send_instructions: "U nekoliko minuta zaprimiti ćete email koji sadrži upute za otključavanje Vašeg računa."
+      send_paranoid_instructions: "Ukoliko imate račun u nekoliko minuta ćete zaprimiti email koji sadrži upute za otključavanje vašeg računa."
+      unlocked: "Vaš račun je otključan. Ponovno se ulogirajte kako bi nastavili."
+  errors:
+    messages:
+      already_confirmed: "Vaš račun je potvrđen; molimo vas da se ponovno prijavite."
+      confirmation_period_expired: "Potrebno je potvrditi Vaš račun s %{period}; molimo vas da ponovite zahtjev za prijavu."
+      expired: "je istekao; molimo vas da ponovno pošaljete zahtjev."
+      not_found: "nije pronađeno."
+      not_locked: "nije zaključano."
+      equal_to_current_password: "mora biti različita od trenutne zaporke."

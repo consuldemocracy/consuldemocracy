@@ -6,7 +6,7 @@
       <li>
         <%= layout_menu_link_to t("layouts.header.debates"),
                                 debates_path,
-                                controller_name == 'debates',
+                                controller_name == "debates",
                                 accesskey: "1",
                                 title: t("shared.go_to_page") + t("layouts.header.debates") %>
       </li>
@@ -35,14 +35,6 @@
                                 legislation_processes_path,
                                 controller.class.parent == Legislation,
                                 accesskey: "4" %>
-      </li>
-    <% end %>
-    <% if feature?(:spending_proposals) %>
-      <li>
-        <%= layout_menu_link_to t("layouts.header.spending_proposals"),
-                                  spending_proposals_path,
-                                  controller_name == 'spending_proposals',
-                                  accesskey: "s" %>
       </li>
     <% end %>
     <% if feature?(:budgets) %>

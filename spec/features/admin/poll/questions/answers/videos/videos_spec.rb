@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Videos' do
+describe "Videos" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -21,8 +21,8 @@ feature 'Videos' do
 
     click_link "Add video"
 
-    fill_in 'poll_question_answer_video_title', with: video_title
-    fill_in 'poll_question_answer_video_url', with: video_url
+    fill_in "poll_question_answer_video_title", with: video_title
+    fill_in "poll_question_answer_video_url", with: video_url
 
     click_button "Save"
 

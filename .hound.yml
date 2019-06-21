@@ -2,3 +2,8 @@ rubocop:
   config_file: .rubocop_basic.yml
 scss:
   config_file: .scss-lint.yml
+coffeescript:
+  config_file: .coffeelint.json
+erblint:
+  enabled: true
+  config_file: .erb-lint.yml

@@ -6,14 +6,14 @@ class SandboxController < ApplicationController
   helper_method(:namespace)
 
   def index
-    @templates = Dir.glob(Rails.root.join('app', 'views', 'sandbox', '*.html.erb').to_s).map do |filename|
+    @templates = Dir.glob(Rails.root.join("app", "views", "sandbox", "*.html.erb").to_s).map do |filename|
       filename = File.basename(filename, File.extname(filename))
-      filename unless filename.starts_with?('_') || filename == 'index.html'
+      filename unless filename.starts_with?("_") || filename == "index.html"
     end.compact
   end
 
   def show
-    if params[:template].index('.') # CVE-2014-0130
+    if params[:template].index(".") # CVE-2014-0130
       render action: "index"
     elsif lookup_context.exists?("sandbox/#{params[:template]}")
       if params[:template] == "index"

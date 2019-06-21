@@ -55,7 +55,7 @@
                     title: @admin_notification.title,
                     body: @admin_notification.body,
                     timestamp: Time.current } %>
-      <% link_text = render partial: '/notifications/notification_body', locals: locals %>
+      <% link_text = render partial: "/notifications/notification_body", locals: locals %>
       <%= link_to_if @admin_notification.link.present?, link_text, @admin_notification.link %>
     </li>
   </ul>

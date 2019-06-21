@@ -15,6 +15,12 @@
                    @valuator_groups.map {|group| [group.name, group.id] },
                    { include_blank: true } %>
     </div>
-    <%= f.submit t("admin.valuators.form.update"), class: "button success" %>
+    <div>
+      <div class="filter">
+        <%= f.check_box :can_comment %>
+        <%= f.check_box :can_edit_dossier %>
+      </div>
+    </div>
+    <%= f.submit class: "button success" %>
   <% end %>
 </div>

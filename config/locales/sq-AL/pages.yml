@@ -4,7 +4,6 @@ sq:
       title: Termat dhe kushtet e përdorimit
       subtitle: NJOFTIM LIGJOR PËR KUSHTET E PËRDORIMIT, PRIVATIZIMIT DHE MBROJTJEN E TË DHËNAVE PERSONALE TË PORTALIT TË QEVERISË SË HAPUR
       description: Faqe informuese mbi kushtet e përdorimit, privatësinë dhe mbrojtjen e të dhënave personale.
-    general_terms: Termat dhe kushtet 
     help:
       title: "%{org}është një platformë për pjesëmarrjen e qytetarëve"
       guide: "Ky udhëzues shpjegon se çfarë janë secila nga seksionet e %{org} dhe se si funksionojnë."
@@ -14,7 +13,7 @@ sq:
         budgets: "Buxhetet  pjesëmarrës"
         polls: "Sondazhet"
         other: "Informacione të tjera me interes"
-        processes: "Proçese"
+        processes: "Proçes"
       debates:
         title: "Debate"
         description: "Në seksionin %{link} ju mund të paraqisni dhe të ndani mendimin tuaj me njerëzit e tjerë për çështjet që kanë lidhje me ju në lidhje me qytetin. Është gjithashtu një vend për të krijuar ide që përmes seksioneve të tjera të %{org} të çojnë në veprime konkrete nga Këshilli i Qytetit."
@@ -42,7 +41,7 @@ sq:
         feature_1: "Për të marrë pjesë në votim duhet të %{link} dhe të verifikoni llogarinë tuaj."
         feature_1_link: "regjistrohuni në  %{org_name}"
       processes:
-        title: "Proçese"
+        title: "Proçes"
         description: "Në seksionin %{link}, qytetarët marrin pjesë në hartimin dhe modifikimin e rregulloreve që ndikojnë në qytet dhe mund të japin mendimin e tyre mbi politikat komunale në debatet e mëparshme."
         link: "Proçese"
       faq:
@@ -52,8 +51,6 @@ sq:
         page:
           title: "Pyetjet e bëra shpesh"
           description: "Përdorni këtë faqe për të zgjidhur FAQ e përbashkët tek përdoruesit e faqes."
-          faq_1_title: "Pyetja 1"
-          faq_1_description: "Ky është një shembull për përshkrimin e pyetjes së parë."
       other:
         title: "Informacione të tjera me interes"
         how_to_use: "Përdorni %{org_name} në qytetin tuaj"
@@ -65,29 +62,7 @@ sq:
         how_to_use: Përdoreni atë në qeverinë tuaj lokale
     privacy:
       title: Politika e privatësisë
-      subtitle: INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE
-      info_items:
-        - 
-          text: Navigimi përmes informacionit që gjendet në Portalin e hapur të Qeverisë  është anonime.
-        - 
-          text: Për të përdorur shërbimet e përmbajtura në Portalin e hapur të Qeverisë përdoruesi duhet të regjistrohet më parë dhe të ofrojë të dhëna personale sipas informatave specifike të përfshira në çdo lloj regjistrimi.
-        - 
-          text: 'Të dhënat e siguruara do të përfshihen dhe përpunohen nga Këshilli i Qytetit në përputhje me përshkrimin e dokumentit të mëposhtëm:'
-        - 
-          subitems:
-            - 
-              field: 'Emri i skedarit:'
-              description: EMRI I DOKUMENTAVE
-            - 
-              field: 'Qëllimi i dokumentit:'
-              description: Menaxhimi i proceseve pjesëmarrëse për të kontrolluar kualifikimin e njerëzve që marrin pjesë në to dhe thjesht numërimin numerik dhe statistikor të rezultateve të nxjerra nga proceset e pjesëmarrjes qytetare.
-            - 
-              field: 'Institucioni përgjegjës për dokumentin:'
-              description: 'Institucioni përgjegjës për dosjen:'
-        - 
-          text: Pala e interesuar mund të ushtrojë të drejtat e qasjes, korrigjimit, anulimit dhe kundërshtimit, përpara se të tregohet organi përgjegjës, i cili raportohet në përputhje me nenin 5 të Ligjit Organik 15/1999, të datës 13 dhjetor, për Mbrojtjen e të Dhënave të Karakterit personal.
-        - 
-          text: Si parim i përgjithshëm, kjo uebfaqe nuk ndan ose zbulon informacionin e marrë, përveç kur është autorizuar nga përdoruesi ose informacioni kërkohet nga autoriteti gjyqësor, prokuroria ose policia gjyqësore, ose në ndonjë nga rastet e rregulluara në Neni 11 i Ligjit Organik 15/1999, datë 13 dhjetor, mbi Mbrojtjen e të Dhënave Personale.
+      subtitle: "INFORMACIONE NË LIDHJE ME PRIVATËSIN E TË DHËNAVE"
     accessibility:
       title: Aksesueshmëria
       description: |-
@@ -116,7 +91,7 @@ sq:
               page_column: Propozime
             - 
               key_column: 3
-              page_column: Vota
+              page_column: Votim
             - 
               key_column: 4
               page_column: Buxhetet  pjesëmarrës
@@ -124,13 +99,13 @@ sq:
               key_column: 5
               page_column: Proceset legjislative
         browser_table:
-          description: 'Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:'
+          description: "Në varësi të sistemit operativ dhe shfletuesit të përdorur, kombinimi kyç do të jetë si vijon:"
           caption: Kombinimi kyç në varësi të sistemit operativ dhe shfletuesit
           browser_header: Shfletues
           key_header: Kombinim i celsave
           rows:
             - 
-              browser_column: Explorer
+              browser_column: Eksploro
               key_column: ALT + shkurtore pastaj ENTER
             - 
               browser_column: Firefox
@@ -152,7 +127,7 @@ sq:
           action_header: Veprimi që duhet marrë
           rows:
             - 
-              browser_column: Eksploro
+              browser_column: Explorer
               action_column: Shiko> Madhësia e tekstit
             - 
               browser_column: Firefox
@@ -167,7 +142,7 @@ sq:
               browser_column: Opera
               action_column: Shiko> masë
         browser_shortcuts_table:
-          description: 'Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:'
+          description: "Një mënyrë tjetër për të ndryshuar madhësinë e tekstit është të përdorni shkurtoret e tastierës të përcaktuara në shfletues, në veçanti kombinimin kyç:"
           rows:
             - 
               shortcut_column: CTRL dhe + (CMD dhe + në MAC)
@@ -179,15 +154,12 @@ sq:
         title: Pajtueshmëria me standardet dhe dizajni vizual
         description_html: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> W3C.'
     titles:
-      accessibility: Dispnueshmësia
-      conditions: Kushtet e përdorimit
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
-      privacy: Politika e privatësisë
     verify:
       code: Kodi që keni marrë në letër
       email: Email
-      info: 'Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:'
-      info_code: 'Tani futni kodin që keni marrë në letër:'
+      info: "Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:"
+      info_code: "Tani futni kodin që keni marrë në letër:"
       password: Fjalëkalim
       submit: Verifikoni llogarinë time
       title: verifikoni llogarinë tuaj

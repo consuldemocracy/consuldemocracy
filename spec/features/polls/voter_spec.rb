@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature "Voter" do
+describe "Voter" do
 
   context "Origin", :with_frozen_time do
 
@@ -8,10 +8,11 @@ feature "Voter" do
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
-    let!(:answer_yes) { create(:poll_question_answer, question: question, title: 'Yes') }
-    let!(:answer_no) { create(:poll_question_answer, question: question, title: 'No') }
+    let(:admin) { create(:administrator) }
+    let!(:answer_yes) { create(:poll_question_answer, question: question, title: "Yes") }
+    let!(:answer_no) { create(:poll_question_answer, question: question, title: "No") }
 
-    background do
+    before do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
@@ -28,11 +29,6 @@ feature "Voter" do
         click_link answer_yes.title
         expect(page).not_to have_link(answer_yes.title)
       end
-
-      expect(page).to have_css(".js-token-message", visible: true)
-      token = find(:css, ".js-question-answer")[:href].gsub(/.+?(?=token)/, '').gsub('token=', '')
-
-      expect(page).to have_content "You can write down this vote identifier, to check your vote on the final results: #{token}"
 
       expect(Poll::Voter.count).to eq(1)
       expect(Poll::Voter.first.origin).to eq("web")
@@ -53,7 +49,7 @@ feature "Voter" do
       expect(page).not_to have_content("You have already participated in this poll. If you vote again it will be overwritten")
     end
 
-    scenario 'Voting in booth', :js do
+    scenario "Voting in booth", :js do
       user = create(:user, :in_census)
 
       login_through_form_as_officer(officer.user)
@@ -64,13 +60,63 @@ feature "Voter" do
       expect(page).to have_content poll.name
 
       within("#poll_#{poll.id}") do
-        click_button('Confirm vote')
-        expect(page).not_to have_button('Confirm vote')
-        expect(page).to have_content('Vote introduced!')
+        click_button("Confirm vote")
+        expect(page).not_to have_button("Confirm vote")
+        expect(page).to have_content("Vote introduced!")
       end
 
       expect(Poll::Voter.count).to eq(1)
-      expect(Poll::Voter.first.origin).to eq('booth')
+      expect(Poll::Voter.first.origin).to eq("booth")
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
+    end
+
+    context "The person has decided not to vote at this time" do
+      let!(:user) { create(:user, :in_census) }
+
+      scenario "Show not to vote at this time button" do
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+        expect(page).to have_button "Confirm vote"
+        expect(page).to have_content "Can vote"
+        expect(page).to have_link "The person has decided not to vote at this time"
+      end
+
+      scenario "Hides not to vote at this time button if already voted", :js do
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        within("#poll_#{poll.id}") do
+          click_button("Confirm vote")
+          expect(page).not_to have_button("Confirm vote")
+          expect(page).to have_content "Vote introduced!"
+          expect(page).not_to have_content "The person has decided not to vote at this time"
+        end
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content "Has already participated in this poll"
+        expect(page).not_to have_content "The person has decided not to vote at this time"
+      end
+
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -104,9 +150,24 @@ feature "Voter" do
         login_as user
         visit poll_path(poll)
 
-        expect(page).not_to have_link(answer_yes.title)
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).not_to have_link(answer_yes.title)
+        end
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
+
+        visit root_path
+        click_link "Sign out"
+        login_as(admin.user)
+        visit admin_poll_recounts_path(poll)
+
+        within("#total_system") do
+          expect(page).to have_content "1"
+        end
+
+        within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+          expect(page).to have_content "1"
+        end
       end
 
       scenario "Trying to vote in web again", :js do
@@ -116,27 +177,23 @@ feature "Voter" do
 
         visit poll_path(poll)
 
-        expect(page).not_to have_selector('.js-token-message')
+        expect(page).not_to have_selector(".js-token-message")
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
           expect(page).not_to have_link(answer_yes.title)
         end
 
+        travel_back
+
         click_link "Sign out"
 
-        # Time needs to pass between the moment we vote and the moment
-        # we log in; otherwise the link to vote won't be available.
-        # It's safe to advance one second because this test isn't
-        # affected by possible date changes.
-        travel 1.second do
-          login_as user
-          visit poll_path(poll)
+        login_as user
+        visit poll_path(poll)
 
-          within("#poll_question_#{question.id}_answers") do
-            expect(page).to have_link(answer_yes.title)
-            expect(page).to have_link(answer_no.title)
-          end
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).to have_link(answer_yes.title)
+          expect(page).to have_link(answer_no.title)
         end
       end
     end
@@ -152,18 +209,76 @@ feature "Voter" do
 
       login_as user
       visit account_path
-      click_link 'Verify my account'
+      click_link "Verify my account"
 
       verify_residence
       confirm_phone(user)
 
       visit poll_path(poll)
 
-      expect(page).not_to have_link(answer_yes.title)
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).not_to have_link(answer_yes.title)
+      end
+
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
       expect(Poll::Voter.count).to eq(1)
+
+      visit root_path
+      click_link "Sign out"
+      login_as(admin.user)
+      visit admin_poll_recounts_path(poll)
+
+      within("#total_system") do
+        expect(page).to have_content "1"
+      end
+
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        expect(page).to have_content "1"
+      end
     end
 
-  end
+    context "Side menu" do
+      scenario "'Validate document' menu item with votable polls", :js do
+        login_through_form_as_officer(officer.user)
 
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+
+        within("#side_menu") do
+          expect(page).not_to have_content("Validate document")
+        end
+
+        within("#poll_#{poll.id}") do
+          click_button("Confirm vote")
+          expect(page).to have_content "Vote introduced!"
+        end
+
+        within("#side_menu") do
+          expect(page).to have_content("Validate document")
+        end
+      end
+
+      scenario "'Validate document' menu item without votable polls", :js do
+        create(:poll_voter, poll: poll, user: create(:user, :in_census))
+
+        login_through_form_as_officer(officer.user)
+
+        visit new_officing_residence_path
+        officing_verify_residence
+
+        expect(page).to have_content poll.name
+
+        within("#poll_#{poll.id}") do
+          expect(page).to have_content "Has already participated in this poll"
+        end
+
+        within("#side_menu") do
+          expect(page).to have_content("Validate document")
+        end
+      end
+
+    end
+  end
 end

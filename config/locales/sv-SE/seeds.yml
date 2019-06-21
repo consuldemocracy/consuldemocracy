@@ -49,7 +49,6 @@ sv:
     polls:
       current_poll: "Aktuell omröstning"
       current_poll_geozone_restricted: "Omröstningen är begränsad till ett geografiskt område"
-      incoming_poll: "Kommande omröstning"
       recounting_poll: "Rösträkning"
       expired_poll_without_stats: "Avslutad omröstning (utan statistik eller resultat)"
       expired_poll_with_stats: "Avslutad omröstning (med statistik och resultat)"

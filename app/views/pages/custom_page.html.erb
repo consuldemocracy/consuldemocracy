@@ -1,3 +1,4 @@
+<%= content_for :body_class, "custom-page" %>
 <% provide :title do %><%= @custom_page.title %><% end %>
 
 <div class="row margin-top">
@@ -13,7 +14,14 @@
 
   <% if @custom_page.print_content_flag %>
     <div class="small-12 medium-3 column">
-      <%= render '/shared/print' %>
+      <%= render "/shared/print" %>
     </div>
   <% end %>
+
+  <% if @cards.any? %>
+    <div class="small-12 column">
+      <%= render "cards" %>
+    </div>
+  <% end %>
+
 </div>

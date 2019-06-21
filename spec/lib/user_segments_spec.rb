@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe UserSegments do
   let(:user1) { create(:user) }
@@ -24,6 +24,28 @@ describe UserSegments do
       expect(described_class.administrators).to include active_admin
       expect(described_class.administrators).not_to include active_user
       expect(described_class.administrators).not_to include erased_user
+    end
+  end
+
+  describe "#all_proposal_authors" do
+    it "returns users that have created a proposal even if is archived or retired" do
+      create(:proposal, author: user1)
+      create(:proposal, :archived, author: user2)
+      create(:proposal, retired_at: Time.current, author: user3)
+
+      all_proposal_authors = described_class.all_proposal_authors
+      expect(all_proposal_authors).to include user1
+      expect(all_proposal_authors).to include user2
+      expect(all_proposal_authors).to include user3
+    end
+
+    it "does not return duplicated users" do
+      create(:proposal, author: user1)
+      create(:proposal, :archived, author: user1)
+      create(:proposal, retired_at: Time.current, author: user1)
+
+      all_proposal_authors = described_class.all_proposal_authors
+      expect(all_proposal_authors).to contain_exactly(user1)
     end
   end
 
@@ -178,8 +200,8 @@ describe UserSegments do
       investment1 = create(:budget_investment)
       investment2 = create(:budget_investment)
       budget = create(:budget)
-      investment1.vote_by(voter: user1, vote: 'yes')
-      investment2.vote_by(voter: user2, vote: 'yes')
+      investment1.vote_by(voter: user1, vote: "yes")
+      investment2.vote_by(voter: user2, vote: "yes")
       investment1.update(budget: budget)
       investment2.update(budget: budget)
 
@@ -187,6 +209,17 @@ describe UserSegments do
       expect(not_supported_on_current_budget).to include user3
       expect(not_supported_on_current_budget).not_to include user1
       expect(not_supported_on_current_budget).not_to include user2
+    end
+  end
+
+  describe "#user_segment_emails" do
+    it "returns list of emails sorted by user creation date" do
+      create(:user, email: "first@email.com", created_at: 1.day.ago)
+      create(:user, email: "last@email.com")
+
+      emails = described_class.user_segment_emails(:all_users)
+      expect(emails.first).to eq "first@email.com"
+      expect(emails.last).to eq "last@email.com"
     end
   end
 

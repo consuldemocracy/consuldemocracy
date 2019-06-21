@@ -1,7 +1,7 @@
 module SettingsHelper
 
   def feature?(name)
-    setting["feature.#{name}"].presence
+    setting["feature.#{name}"].presence || setting["process.#{name}"].presence
   end
 
   def setting

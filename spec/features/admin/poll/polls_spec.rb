@@ -1,8 +1,8 @@
-require 'rails_helper'
+require "rails_helper"
 
-feature 'Admin polls' do
+describe "Admin polls" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -12,27 +12,24 @@ feature 'Admin polls' do
                   "edit_admin_poll_path",
                   %w[name summary description]
 
-  scenario 'Index empty', :js do
+  scenario "Index empty", :js do
     visit admin_root_path
 
     click_link "Polls"
-    within('#polls_menu') do
-      click_link "Polls"
-    end
 
     expect(page).to have_content "There are no polls"
   end
 
-  scenario 'Index', :js do
-    3.times { create(:poll) }
+  scenario "Index show polls list order by starts at date", :js do
+    poll_1 = create(:poll, name: "Poll first",  starts_at: 15.days.ago)
+    poll_2 = create(:poll, name: "Poll second", starts_at: 1.month.ago)
+    poll_3 = create(:poll, name: "Poll third",  starts_at: 2.days.ago)
 
     visit admin_root_path
 
     click_link "Polls"
-    within('#polls_menu') do
-      click_link "Polls"
-    end
 
+    expect(page).to have_content "List of polls"
     expect(page).to have_css ".poll", count: 3
 
     polls = Poll.all
@@ -41,10 +38,24 @@ feature 'Admin polls' do
         expect(page).to have_content poll.name
       end
     end
+
+    expect(poll_3.name).to appear_before(poll_1.name)
+    expect(poll_1.name).to appear_before(poll_2.name)
     expect(page).not_to have_content "There are no polls"
   end
 
-  scenario 'Show' do
+  scenario "Index do not show polls created by users from proposals dashboard" do
+    create(:poll, name: "Poll created by admin")
+    create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
+
+    visit admin_polls_path
+
+    expect(page).to have_css ".poll", count: 1
+    expect(page).to have_content "Poll created by admin"
+    expect(page).not_to have_content "Poll from user's proposal"
+  end
+
+  scenario "Show" do
     poll = create(:poll)
 
     visit admin_polls_path
@@ -61,10 +72,10 @@ feature 'Admin polls' do
     end_date = 2.weeks.from_now
 
     fill_in "Name", with: "Upcoming poll"
-    fill_in 'poll_starts_at', with: start_date.strftime("%d/%m/%Y")
-    fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
-    fill_in 'Summary', with: "Upcoming poll's summary. This poll..."
-    fill_in 'Description', with: "Upcomming poll's description. This poll..."
+    fill_in "poll_starts_at", with: start_date.strftime("%d/%m/%Y")
+    fill_in "poll_ends_at", with: end_date.strftime("%d/%m/%Y")
+    fill_in "Summary", with: "Upcoming poll's summary. This poll..."
+    fill_in "Description", with: "Upcomming poll's description. This poll..."
 
     expect(page).not_to have_css("#poll_results_enabled")
     expect(page).not_to have_css("#poll_stats_enabled")
@@ -75,6 +86,7 @@ feature 'Admin polls' do
     expect(page).to have_content "Upcoming poll"
     expect(page).to have_content I18n.l(start_date.to_date)
     expect(page).to have_content I18n.l(end_date.to_date)
+    expect(Poll.last.slug).to eq "#{Poll.last.name.to_s.parameterize}"
   end
 
   scenario "Edit" do
@@ -89,7 +101,7 @@ feature 'Admin polls' do
     expect(page).to have_css("img[alt='#{poll.image.title}']")
 
     fill_in "Name", with: "Next Poll"
-    fill_in 'poll_ends_at', with: end_date.strftime("%d/%m/%Y")
+    fill_in "poll_ends_at", with: end_date.strftime("%d/%m/%Y")
 
     click_button "Update poll"
 
@@ -98,60 +110,7 @@ feature 'Admin polls' do
     expect(page).to have_content I18n.l(end_date.to_date)
   end
 
-  scenario 'Enable stats and results' do
-    poll = create(:poll)
-
-    booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
-    booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
-    booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
-
-    question_1 = create(:poll_question, poll: poll)
-    create(:poll_question_answer, title: 'Oui', question: question_1)
-    create(:poll_question_answer, title: 'Non', question: question_1)
-
-    question_2 = create(:poll_question, poll: poll)
-    create(:poll_question_answer, title: "Aujourd'hui", question: question_2)
-    create(:poll_question_answer, title: 'Demain', question: question_2)
-
-    [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
-      create(:poll_partial_result,
-             booth_assignment: ba,
-             question: question_1,
-             answer: 'Oui',
-             amount: 11)
-
-      create(:poll_partial_result,
-             booth_assignment: ba,
-             question: question_2,
-             answer: 'Demain',
-             amount: 5)
-    end
-
-    create(:poll_recount,
-           booth_assignment: booth_assignment_1,
-           white_amount: 21,
-           null_amount: 44,
-           total_amount: 66)
-
-    visit admin_poll_results_path(poll)
-
-    expect(page).to have_field('poll_stats_enabled', checked: false)
-    expect(page).to have_field('poll_results_enabled', checked: false)
-
-    check 'poll_stats_enabled'
-    check 'poll_results_enabled'
-
-    click_button 'Update poll'
-
-    expect(page).to have_content('Poll updated successfully')
-
-    click_link 'Results'
-
-    expect(page).to have_field('poll_stats_enabled', checked: true)
-    expect(page).to have_field('poll_results_enabled', checked: true)
-  end
-
-  scenario 'Edit from index' do
+  scenario "Edit from index" do
     poll = create(:poll)
     visit admin_polls_path
 
@@ -160,6 +119,56 @@ feature 'Admin polls' do
     end
 
     expect(page).to have_current_path(edit_admin_poll_path(poll))
+  end
+
+  context "Destroy" do
+
+    scenario "Can destroy poll without questions", :js do
+      poll = create(:poll)
+
+      visit admin_polls_path
+
+      within("#poll_#{poll.id}") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to have_content("Poll deleted successfully")
+      expect(page).to have_content("There are no polls.")
+    end
+
+    scenario "Can destroy poll with questions and answers", :js do
+      poll = create(:poll)
+      question = create(:poll_question, poll: poll)
+      create(:poll_question_answer, question: question, title: "Yes")
+      create(:poll_question_answer, question: question, title: "No")
+
+      visit admin_polls_path
+
+      within("#poll_#{poll.id}") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to     have_content("Poll deleted successfully")
+      expect(page).not_to have_content(poll.name)
+
+      expect(Poll::Question.count).to eq(0)
+      expect(Poll::Question::Answer.count). to eq(0)
+    end
+
+    scenario "Can't destroy poll with votes", :js  do
+      poll = create(:poll)
+      create(:poll_question, poll: poll)
+      create(:poll_voter, :from_booth, :valid_document, poll: poll)
+
+      visit admin_polls_path
+
+      within("#poll_#{poll.id}") do
+        accept_confirm { click_link "Delete" }
+      end
+
+      expect(page).to have_content("You cannot delete a poll that has votes")
+      expect(page).to have_content(poll.name)
+    end
   end
 
   context "Booths" do
@@ -239,14 +248,17 @@ feature 'Admin polls' do
       scenario "Question list", :js do
         poll = create(:poll)
         question = create(:poll_question, poll: poll)
+        votation_type_question = create(:poll_question_unique, poll: poll)
         other_question = create(:poll_question)
 
         visit admin_poll_path(poll)
 
-        expect(page).to have_content "Questions (1)"
+        expect(page).to have_content "Questions (2)"
         expect(page).to have_content question.title
+        expect(page).to have_content votation_type_question.title
         expect(page).not_to have_content other_question.title
         expect(page).not_to have_content "There are no questions assigned to this poll"
+
       end
 
     end
@@ -275,7 +287,9 @@ feature 'Admin polls' do
                  total_amount: 21)
         end
 
-        2.times { create(:poll_voter, booth_assignment: booth_assignment_final_recounted) }
+        2.times do
+          create(:poll_voter, :from_booth, poll: poll, booth_assignment: booth_assignment_final_recounted)
+        end
 
         create(:poll_recount,
                booth_assignment: booth_assignment_final_recounted,
@@ -286,22 +300,32 @@ feature 'Admin polls' do
 
         click_link "Recounting"
 
+        within("#totals") do
+          within("#total_final") do
+            expect(page).to have_content("#{55555 + 63}")
+          end
+
+          within("#total_system") do
+            expect(page).to have_content("2")
+          end
+        end
+
         expect(page).to have_css ".booth_recounts", count: 3
 
         within("#poll_booth_assignment_#{booth_assignment.id}_recounts") do
           expect(page).to have_content(booth_assignment.booth.name)
-          expect(page).to have_content('63')
+          expect(page).to have_content("63")
         end
 
         within("#poll_booth_assignment_#{booth_assignment_recounted.id}_recounts") do
           expect(page).to have_content(booth_assignment_recounted.booth.name)
-          expect(page).to have_content('-')
+          expect(page).to have_content("-")
         end
 
         within("#poll_booth_assignment_#{booth_assignment_final_recounted.id}_recounts") do
           expect(page).to have_content(booth_assignment_final_recounted.booth.name)
-          expect(page).to have_content('55555')
-          expect(page).to have_content('2')
+          expect(page).to have_content("55555")
+          expect(page).to have_content("2")
         end
       end
     end
@@ -317,6 +341,81 @@ feature 'Admin polls' do
         expect(page).to have_content "There are no results"
       end
 
+      scenario "Show partial results" do
+        poll = create(:poll)
+
+        booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
+        booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
+
+        question_1 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: "Oui", question: question_1)
+        create(:poll_question_answer, title: "Non", question: question_1)
+
+        question_2 = create(:poll_question, poll: poll)
+        create(:poll_question_answer, title: "Aujourd'hui", question: question_2)
+        create(:poll_question_answer, title: "Demain", question: question_2)
+
+        [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
+          create(:poll_partial_result,
+                 booth_assignment: ba,
+                 question: question_1,
+                 answer: "Oui",
+                 amount: 11)
+
+          create(:poll_partial_result,
+                 booth_assignment: ba,
+                 question: question_2,
+                 answer: "Demain",
+                 amount: 5)
+        end
+
+        create(:poll_recount,
+               booth_assignment: booth_assignment_1,
+               white_amount: 21,
+               null_amount: 44,
+               total_amount: 66)
+
+        visit admin_poll_results_path(poll)
+
+        expect(page).to have_content "Results by booth"
+      end
+
+      scenario "Enable stats and results for booth polls" do
+        unvoted_poll = create(:poll)
+
+        voted_poll = create(:poll)
+        create(:poll_voter, :from_booth, :valid_document, poll: voted_poll)
+
+        visit admin_poll_results_path(unvoted_poll)
+
+        expect(page).to have_content "There are no results"
+        expect(page).not_to have_content "Show results and stats"
+
+        visit admin_poll_results_path(voted_poll)
+
+        expect(page).to have_content "Show results and stats"
+        expect(page).not_to have_content "There are no results"
+      end
+
+      scenario "Enable stats and results for online polls" do
+        unvoted_poll = create(:poll)
+
+        voted_poll = create(:poll)
+        create(:poll_voter, poll: voted_poll)
+
+        visit admin_poll_results_path(unvoted_poll)
+
+        expect(page).to have_content "There are no results"
+        expect(page).not_to have_content "Show results and stats"
+
+        visit admin_poll_results_path(voted_poll)
+
+        expect(page).to have_content "Show results and stats"
+        expect(page).not_to have_content "There are no results"
+        expect(page).not_to have_content "Results by booth"
+      end
+
       scenario "Results by answer", :js do
         poll = create(:poll)
         booth_assignment_1 = create(:poll_booth_assignment, poll: poll)
@@ -324,23 +423,23 @@ feature 'Admin polls' do
         booth_assignment_3 = create(:poll_booth_assignment, poll: poll)
 
         question_1 = create(:poll_question, poll: poll)
-        create(:poll_question_answer, title: 'Yes', question: question_1)
-        create(:poll_question_answer, title: 'No', question: question_1)
+        create(:poll_question_answer, title: "Yes", question: question_1)
+        create(:poll_question_answer, title: "No", question: question_1)
 
         question_2 = create(:poll_question, poll: poll)
-        create(:poll_question_answer, title: 'Today', question: question_2)
-        create(:poll_question_answer, title: 'Tomorrow', question: question_2)
+        create(:poll_question_answer, title: "Today", question: question_2)
+        create(:poll_question_answer, title: "Tomorrow", question: question_2)
 
         [booth_assignment_1, booth_assignment_2, booth_assignment_3].each do |ba|
           create(:poll_partial_result,
                   booth_assignment: ba,
                   question: question_1,
-                  answer: 'Yes',
+                  answer: "Yes",
                   amount: 11)
           create(:poll_partial_result,
                   booth_assignment: ba,
                   question: question_2,
-                  answer: 'Tomorrow',
+                  answer: "Tomorrow",
                   amount: 5)
         end
         create(:poll_recount,
@@ -369,9 +468,9 @@ feature 'Admin polls' do
           end
         end
 
-        within('#white_results') { expect(page).to have_content('21') }
-        within('#null_results') { expect(page).to have_content('44') }
-        within('#total_results') { expect(page).to have_content('66') }
+        within("#white_results") { expect(page).to have_content("21") }
+        within("#null_results") { expect(page).to have_content("44") }
+        within("#total_results") { expect(page).to have_content("66") }
       end
 
       scenario "Link to results by booth" do
@@ -380,19 +479,19 @@ feature 'Admin polls' do
         booth_assignment2 = create(:poll_booth_assignment, poll: poll)
 
         question = create(:poll_question, poll: poll)
-        create(:poll_question_answer, title: 'Yes', question: question)
-        create(:poll_question_answer, title: 'No', question: question)
+        create(:poll_question_answer, title: "Yes", question: question)
+        create(:poll_question_answer, title: "No", question: question)
 
         create(:poll_partial_result,
                booth_assignment: booth_assignment1,
                question: question,
-               answer: 'Yes',
+               answer: "Yes",
                amount: 5)
 
         create(:poll_partial_result,
                booth_assignment: booth_assignment2,
                question: question,
-               answer: 'Yes',
+               answer: "Yes",
                amount: 6)
 
         visit admin_poll_path(poll)

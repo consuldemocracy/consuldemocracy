@@ -1,0 +1,25 @@
+<div class="secondary callout is-hidden js-budget-users-list small-12" data-toggler="is-hidden" data-closable id="<%= assignable_type %>_list">
+  <% if assignables.nil? || assignables.empty? %>
+    <p><%= t("admin.budgets.edit.empty_#{assignable_type}") %></p>
+  <% else %>
+    <h3><%= t("admin.budgets.edit.#{assignable_type}", count: 0) %></h3>
+    <table class="table-for-mobile">
+      <thead>
+      <tr>
+        <th class="small-8"><%= t("admin.budgets.edit.name") %></th>
+        <th class="small-4"><%= t("admin.budgets.edit.selected") %></th>
+      </tr>
+      </thead>
+      <tbody>
+      <% assignables.each do |assignable| %>
+        <tr>
+          <td class="small-8"><%= assignable.name %></td>
+          <td class="small-4 text-center">
+            <input type="checkbox" id="<%= assignable_type.singularize %>_<%= assignable.user.id %>" name="budget[<%= assignable_type.singularize %>_ids][]" value="<%= assignable.id %>" <%= "checked" if @budget.send(assignable_type).include? assignable %> class="js-budget-list-checkbox-<%= assignable_type %> js-budget-list-checkbox-user">
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

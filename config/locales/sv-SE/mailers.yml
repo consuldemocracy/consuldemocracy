@@ -3,7 +3,7 @@ sv:
     no_reply: "Det går inte att svara till den här e-postadressen."
     comment:
       hi: Hej
-      new_comment_by_html: Det finns en ny kommentar från <b>%{commenter}</b>
+      new_comment_by_html: Det finns en ny kommentar från <strong>%{commenter}</strong>
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
     config:
@@ -17,7 +17,7 @@ sv:
       title: Bekräfta kontot via länken nedan
     reply:
       hi: Hej
-      new_reply_by_html: Det finns ett nytt svar från <b>%{commenter}</b> till din kommentar på
+      new_reply_by_html: Det finns ett nytt svar från <strong>%{commenter}</strong> till din kommentar på
       subject: Någon har svarat på din kommentar
       title: Nytt svar på din kommentar
     unfeasible_spending_proposal:
@@ -25,7 +25,7 @@ sv:
       new_html: "Med anledning av det ber vi dig att skapa ett <strong>nytt förslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
       sincerely: "Vänliga hälsningar"
-      sorry: "Ledsen för besväret och tack för din ovärderliga medverkan."
+      sorry: "Ledsen för besväret och vi återigen tack för din ovärderliga medverkan."
       subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
     proposal_notification_digest:
       info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag som du stöder på %{org_name}."
@@ -63,17 +63,23 @@ sv:
       new_html: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
       sincerely: "Vänliga hälsningar"
-      sorry: "Ledsen för besväret och vi återigen tack för din ovärderliga medverkan."
+      sorry: "Ledsen för besväret och tack för din ovärderliga medverkan."
       subject: "Ditt budgetförslag '%{code}' har markerats som ej genomförbart"
     budget_investment_selected:
       subject: "Ditt budgetförslag '%{code}' har valts"
       hi: "Kära användare,"
       share: "Börja samla röster och dela i sociala medier för att ditt förslag ska kunna bli verklighet."
       share_button: "Dela ditt budgetförslag"
-      thanks: "Tack återigen för att du deltar."
+      thanks: "Tack igen för att du deltar."
       sincerely: "Vänliga hälsningar"
     budget_investment_unselected:
       subject: "Ditt budgetförslag '%{code}' har inte valts"
       hi: "Kära användare,"
-      thanks: "Tack igen för att du deltar."
+      thanks: "Tack återigen för att du deltar."
       sincerely: "Vänliga hälsningar"
+    new_actions_notification_rake_created:
+      hi: "Hej %{name},"
+    new_actions_notification_rake_published:
+      hi: "Hej %{name},"
+    new_actions_notification_on_published:
+      text_2: "Varför 100?"

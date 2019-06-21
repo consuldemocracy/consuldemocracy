@@ -43,15 +43,12 @@ class Admin::ValuatorsController < Admin::BaseController
     redirect_to admin_valuators_path
   end
 
-  def summary
-    @valuators = Valuator.order(spending_proposals_count: :desc)
-  end
-
   private
 
     def valuator_params
       params[:valuator][:description] = nil if params[:valuator][:description].blank?
-      params.require(:valuator).permit(:user_id, :description, :valuator_group_id)
+      params.require(:valuator).permit(:user_id, :description, :valuator_group_id,
+                                       :can_comment, :can_edit_dossier)
     end
 
 end

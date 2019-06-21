@@ -1,4 +1,4 @@
-section "Creating legislation processes" do
+section "Creating collaborative legislation" do
   9.times do |i|
     Legislation::Process.create!(title: Faker::Lorem.sentence(3).truncate(60),
                                  description: Faker::Lorem.paragraphs.join("\n\n"),
@@ -11,6 +11,8 @@ section "Creating legislation processes" do
                                  debate_end_date: Date.current + (i - 5).days,
                                  proposals_phase_start_date: Date.current + (i - 7).days,
                                  proposals_phase_end_date: Date.current + (i - 5).days,
+                                 people_proposals_phase_start_date: Date.current + (i - 7).days,
+                                 people_proposals_phase_end_date: Date.current + (i - 5).days,
                                  draft_publication_date: Date.current + (i - 3).days,
                                  allegations_start_date: Date.current + (i - 2).days,
                                  allegations_end_date: Date.current + (i - 1).days,
@@ -20,6 +22,7 @@ section "Creating legislation processes" do
                                  draft_publication_enabled: true,
                                  result_publication_enabled: true,
                                  proposals_phase_enabled: true,
+                                 people_proposals_phase_enabled: true,
                                  published: true)
   end
 

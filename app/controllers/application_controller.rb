@@ -3,6 +3,9 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   include HasFilters
   include HasOrders
+  include AccessDeniedHandler
+
+  protect_from_forgery with: :exception
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
 
@@ -10,18 +13,11 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
+  before_action :set_current_user
+  before_action :set_fallbacks_to_all_available_locales
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
-
-  protect_from_forgery with: :exception
-
-  rescue_from CanCan::AccessDenied do |exception|
-    respond_to do |format|
-      format.html { redirect_to main_app.root_url, alert: exception.message }
-      format.json { render json: {error: exception.message}, status: :forbidden }
-    end
-  end
 
   layout :set_layout
   respond_to :html
@@ -41,7 +37,7 @@ class ApplicationController < ActionController::Base
 
     def verify_lock
       if current_user.locked?
-        redirect_to account_path, alert: t('verification.alert.lock')
+        redirect_to account_path, alert: t("verification.alert.lock")
       end
     end
 
@@ -78,10 +74,6 @@ class ApplicationController < ActionController::Base
       @proposal_votes = current_user ? current_user.proposal_votes(proposals) : {}
     end
 
-    def set_spending_proposal_votes(spending_proposals)
-      @spending_proposal_votes = current_user ? current_user.spending_proposal_votes(spending_proposals) : {}
-    end
-
     def set_comment_flags(comments)
       @comment_flags = current_user ? current_user.comment_flags(comments) : {}
     end
@@ -94,13 +86,13 @@ class ApplicationController < ActionController::Base
 
     def verify_resident!
       unless current_user.residence_verified?
-        redirect_to new_residence_path, alert: t('verification.residence.alert.unconfirmed_residency')
+        redirect_to new_residence_path, alert: t("verification.residence.alert.unconfirmed_residency")
       end
     end
 
     def verify_verified!
       if current_user.level_three_verified?
-        redirect_to(account_path, notice: t('verification.redirect_notices.already_verified'))
+        redirect_to(account_path, notice: t("verification.redirect_notices.already_verified"))
       end
     end
 
@@ -112,7 +104,7 @@ class ApplicationController < ActionController::Base
     end
 
     def set_return_url
-      if !devise_controller? && controller_name != 'welcome' && is_navigational_format?
+      if !devise_controller? && controller_name != "welcome" && is_navigational_format?
         store_location_for(:user, request.path)
       end
     end
@@ -120,10 +112,20 @@ class ApplicationController < ActionController::Base
     def set_default_budget_filter
       if @budget.try(:balloting?) || @budget.try(:publishing_prices?)
         params[:filter] ||= "selected"
+      elsif @budget.try(:finished?)
+        params[:filter] ||= "winners"
       end
     end
 
     def current_budget
       Budget.current
+    end
+
+    def set_current_user
+      User.current_user = current_user
+    end
+
+    def set_fallbacks_to_all_available_locales
+      Globalize.set_fallbacks_to_all_available_locales
     end
 end

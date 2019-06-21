@@ -1,0 +1,146 @@
+cs:
+  date:
+    abbr_day_names:
+      - ned
+      - pon
+      - úte
+      - stř
+      - čtv
+      - pát
+      - sob
+    abbr_month_names:
+      - 
+      - led
+      - úno
+      - bře
+      - dub
+      - květen
+      - čer
+      - črv
+      - srp
+      - zář
+      - říj
+      - lis
+      - pro
+    day_names:
+      - neděle
+      - pondělí
+      - úterý
+      - středa
+      - čtvrtek
+      - pátek
+      - sobota
+    formats:
+      default: "%d-%m-%Y"
+      long: "%d. %B %Y"
+      short: "%d %b"
+    month_names:
+      - 
+      - leden
+      - únor
+      - březen
+      - duben
+      - kvě
+      - červen
+      - červenec
+      - srpen
+      - září
+      - říjen
+      - listopad
+      - prosinec
+  datetime:
+    distance_in_words:
+      half_a_minute: p
+    prompts:
+      day: Den
+      hour: Hodina
+      minute: Minuta
+      month: Měsíc
+      second: Sekund
+      year: Rok
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: musí být přijata
+      blank: nemůže být prázdné
+      present: musí být prázdné
+      confirmation: neodpovídá %{attribute}
+      empty: nemůže být prázdné
+      equal_to: musí být rovno %{count}
+      even: musí být sudé
+      exclusion: je vyhrazeno
+      greater_than: musí být větší než %{count}
+      greater_than_or_equal_to: musí být větší nebo rovno %{count}
+      inclusion: není zahrnuto v seznamu
+      invalid: je neplatné
+      less_than: musí být menší než %{count}
+      less_than_or_equal_to: musí být menší nebo rovno %{count}
+      model_invalid: "Validation failed: %{errors}"
+      not_a_number: není číslo
+      not_an_integer: musí být celé číslo
+      odd: musí být liché
+      required: musí existovat
+      taken: již byla přijata
+      other_than: musí být jiný než %{count}
+    template:
+      body: "Došlo k problémům s následujícími poli:"
+  helpers:
+    select:
+      prompt: Prosím vyberte
+    submit:
+      create: Vytvořte %{model}
+      submit: Uložte %{model}
+      update: Aktualizujte %{model}
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: miliarda
+          million: milión
+          quadrillion: kvadrilion
+          thousand: tisíc
+          trillion: bilión
+      format:
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        format: "%n%"
+  support:
+    array:
+      last_word_connector: ", a "
+      two_words_connector: " a "
+      words_connector: ", "
+  time:
+    am: dopoledne
+    formats:
+      datetime: "%d.%m.%Y %H:%M:%S"
+      default: "%a %d. %B %Y %H:%M %z"
+      long: "%A %d. %B %Y %H:%M"
+      short: "%d. %m. %H:%M"
+      api: "%d.%m.%Y %H"
+    pm: odpoledne

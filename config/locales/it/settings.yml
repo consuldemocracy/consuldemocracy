@@ -13,8 +13,6 @@ it:
     votes_for_proposal_success: "Numero di voti necessari per approvare una proposta"
     months_to_archive_proposals: "Mesi per archiviare una proposta"
     email_domain_for_officials: "Dominio di posta elettronica per funzionari pubblici"
-    per_page_code_head: "Codice da inserire in ogni pagina (<head>)"
-    per_page_code_body: "Codice da inserire in ogni pagina (<body>)"
     twitter_handle: "Utente Twitter"
     twitter_hashtag: "Hashtag per Twitter"
     facebook_handle: "Utente Facebook"
@@ -23,17 +21,15 @@ it:
     instagram_handle: "Utente Instagram"
     url: "URL principale"
     org_name: "Organizzazione"
-    place_name: "Luogo"
     meta_description: "Descrizione del sito (SEO)"
     meta_keywords: "Parole chiave (SEO)"
     min_age_to_participate: Età minima necessaria per partecipare
-    blog_url: "URL del Blog"
-    transparency_url: "URL per la trasparenza"
-    opendata_url: "URL per Open Data"
-    verification_offices_url: URL dell'ufficio che verifica
-    proposal_improvement_path: Informazioni su come migliorare le proposte
     feature:
       twitter_login: "Accesso con Twitter"
       facebook_login: "Accesso con Facebook"
       google_login: "Accesso con Google"
-      legislation: "Legislazione"
+      signature_sheets: "Fogli firma"
+      spending_proposals: "Proposte di spesa"
+      user:
+        recommendations: "Raccomandazioni"
+      help_page: "Guida"

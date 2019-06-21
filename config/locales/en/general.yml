@@ -51,6 +51,14 @@ en:
         one: 1 response
         other: "%{count} responses"
         zero: No responses
+      responses_show:
+        one: "1 response (show)"
+        other: "%{count} responses (show)"
+        zero: No responses
+      responses_collapse:
+        one: "1 response (collapse)"
+        other: "%{count} responses (collapse)"
+        zero: No responses
       user_deleted: User deleted
       votes:
         one: 1 vote
@@ -67,7 +75,7 @@ en:
       most_commented: Most commented
     select_order: Sort by
     show:
-      return_to_commentable: 'Go back to '
+      return_to_commentable: "Go back to "
   comments_helper:
     comment_button: Publish comment
     comment_link: Comment
@@ -179,8 +187,8 @@ en:
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
-    spending_proposal: Spending proposal
     budget/investment: Investment
+    budget/group: Budget Group
     budget/heading: Budget Heading
     poll/shift: Shift
     poll/question/answer: Answer
@@ -192,13 +200,27 @@ en:
     image: Image
   geozones:
     none: All city
-    all: All scopes
   layouts:
     application:
       chrome: Google Chrome
       firefox: Firefox
       ie: We have detected that you are browsing with Internet Explorer. For an enhanced experience, we recommend using %{firefox} or %{chrome}.
       ie_title: This website is not optimised for your browser
+    dashboard:
+      proposal_header:
+        published: Published
+        draft: Draft
+        retired: Retired
+      proposal_totals:
+        active_resources: Active resources
+        community: Participants in your community
+        show_proposal: Show proposal
+        preview_proposal: Preview proposal
+        current_goal: Current goal
+        supports:
+          zero: No supports
+          one: 1 Support
+          other: "Supports"
     footer:
       accessibility: Accessibility
       conditions: Terms and conditions of use
@@ -213,13 +235,12 @@ en:
       participation_title: Participation
       privacy: Privacy Policy
     header:
-      administration_menu: Admin
+      administration_menu: Menu
       administration: Administration
       available_locales: Available languages
-      collaborative_legislation: Legislation processes
+      collaborative_legislation: Collaborative legislation
       debates: Debates
-      external_link_blog: Blog
-      locale: 'Language:'
+      locale: "Language:"
       logo: CONSUL logo
       management: Management
       moderation: Moderation
@@ -227,28 +248,21 @@ en:
       officing: Polling officers
       help: Help
       my_account_link: My account
-      my_activity_link: My activity
+      my_activity_link: My content
       open: open
       open_gov: Open government
       proposals: Proposals
       poll_questions: Voting
       budgets: Participatory budgeting
-      spending_proposals: Spending Proposals
       notification_item:
         new_notifications:
           one: You have a new notification
           other: You have %{count} new notifications
         notifications: Notifications
         no_notifications: "You don't have new notifications"
+      tracking: "Tracking"
     admin:
-      watch_form_message: 'You have unsaved changes. Do you confirm to leave the page?'
-  legacy_legislation:
-    help:
-      alt: Select the text you want to comment and press the button with the pencil.
-      text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
-      title: How I can comment this document?
+      watch_form_message: "You have unsaved changes. Do you confirm to leave the page?"
   notifications:
     index:
       empty_notifications: You don't have new notifications.
@@ -298,6 +312,17 @@ en:
     create:
       form:
         submit_button: Create proposal
+    created:
+      title: Congratulations! You have taken the first step.
+      motivation: "It is important to prepare the launch campaign for your proposal to be successful. The first few days are decisive."
+      motivation_2_html: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
+      publish: No, I want to publish the proposal
+      dashboard: Yes, I want help and I'll publish later
+      preview_title: This is how your proposal will look when you publish it
+    share:
+      improve_it: Improve your campaign and get more support.
+      dashboard: See more information
+      message: "I supported the proposal %{title} in %{handle}. If you're interested, support it too!"
     edit:
       editing: Edit proposal
       form:
@@ -319,9 +344,6 @@ en:
       other: Other
     form:
       geozone: Scope of operation
-      proposal_external_url: Link to additional documentation
-      proposal_question: Proposal question
-      proposal_question_example_html: "Must be summarised in one question with a Yes or No answer"
       proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
       proposal_summary: Proposal summary
@@ -360,6 +382,10 @@ en:
           error: "An error has occured. Please go to 'My account' page to manually disable recommendations for proposals"
       retired_proposals: Retired proposals
       retired_proposals_link: "Proposals retired by the author"
+      selected_proposals: Selected proposals
+      selected_proposals_link: View selected proposals
+      archived_proposals: Archived proposals
+      proposals_lists: Proposals lists
       retired_links:
         all: All
         duplicated: Duplicated
@@ -375,7 +401,7 @@ en:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
-      select_order_long: 'You are viewing proposals according to:'
+      select_order_long: "You are viewing proposals according to:"
       start_proposal: Create a proposal
       title: Proposals
       top: Top weekly
@@ -398,14 +424,13 @@ en:
       start_new: Create new proposal
     notice:
       retired: Proposal retired
+      published: The proposal has been published
     proposal:
       created: "You've created a proposal!"
       share:
         guide: "Now you can share it so people can start supporting."
         edit: "Before it gets shared you'll be able to change the text as you like."
         view_proposal: Not now, go to my proposal
-      improve_info: "Improve your campaign and get more supports"
-      improve_info_link: "See more information"
       already_supported: You have already supported this proposal. Share it!
       comments:
         one: 1 comment
@@ -422,37 +447,181 @@ en:
         other: "%{count} votes"
         zero: No votes
       supports_necessary: "%{number} supports needed"
+      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "This proposal has been archived and can't collect supports."
       successful: "This proposal has reached the required supports."
+      selected: "Selected proposal"
     show:
       author_deleted: User deleted
-      code: 'Proposal code:'
+      code: "Proposal code:"
       comments:
         one: 1 comment
         other: "%{count} comments"
         zero: No comments
       comments_tab: Comments
-      edit_proposal_link: Edit
+      dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
       login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
+      milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
       retired_warning_link_to_explanation: Read the explanation before voting for it.
       retired: Proposal retired by the author
       share: Share
-      send_notification: Send notification
       no_notifications: "This proposal has no notifications."
       embed_video_title: "Video on %{proposal}"
-      title_external_url: "Additional documentation"
       title_video_url: "External video"
       author: Author
+      draft: Proposal in draft. Cannot yet get supports, nor does it appear in the list of proposals.
     update:
       form:
         submit_button: Save changes
-    share:
-      message: "I supported the proposal %{summary} in %{org}. If you're interested, support it too!"
-      message_mobile: "I supported the proposal %{summary} in %{handle}. If you're interested, support it too!"
+  dashboard:
+    menu:
+      my_proposal: Edit my proposal
+      progress: Progress
+      resources: Resources
+      community: Community
+      polls: Polls
+      mailing: E-mail
+      poster: Poster
+      recommended_actions: Recommended actions
+      messages: Message to users
+    form:
+      request: Request
+    create_request:
+      success: The request has been successfully sent. We will contact you as soon as possible to inform you about it.
+      archived: This proposal is archived and can not request resources.
+    progress:
+      title: Graphic
+      group_by_month: Monthly
+      group_by_week: Weekly
+      group_by_date: Daily
+      progress: Acumulated progress
+      supports: Supports
+      success: Ideal progress
+      new_action: New
+    index:
+      title: Edition
+      edit_proposal_link: Edit proposal
+      publish: Publish proposal
+      retire: Retire proposal
+    new_request:
+      links: Links
+    resources:
+      available_resources: Available resources
+    resource:
+      required_days: "%{days} days required"
+      required_supports: "%{supports} supports required"
+      and: and
+      view_resource: See resource
+      resource_requested: Resource already requested
+      request_resource: Request resource
+      resource_locked: Resource locked
+    recommended_actions:
+      title: Recommended actions
+      goto_proposed_actions: Go to recommended actions
+      see_proposed_actions: Check out recommended actions
+      hide_proposed_actions: Hide recommended actions
+      pending_title: Pending
+      show_description: Show description
+      without_pending_actions: No recommended actions pending
+      done_title: Done
+      without_done_actions: No recommended actions done
+    next_goal:
+      title: Goal
+      see_complete_course: Check out the complete course
+      hide_course: Hide course
+    goal:
+      target_supports:
+        one: Get %{count} support for your proposal
+        other: Get %{count} supports for your proposal
+      days:
+        one: "%{count} day"
+        other: "%{count} days"
+      locked_resource: Resource locked
+      ideal_time: Ideal time
+    community:
+      access_community: Access the community
+      latest_activity: "Latest activity of the community: %{at}"
+      participants: Participants
+      debates: Debates
+      comments: Comments
+      latest_comments: Latest messages
+    messages:
+      send_notification: Send message to proposal supporters
+      previous_notifications: See previous notifications
+    polls:
+      index:
+        title: Polls
+        create: Create poll
+        succesfull: Answer added succesfully
+        count:
+          one: You have created %{count} poll.
+          other: You have created %{count} polls.
+        links: Links
+        additiontal_information: Additional information
+      new:
+        title: New poll
+        submit: Create poll
+      edit:
+        submit: Update poll
+      poll:
+        responses:
+          one: "%{count} response"
+          other: "%{count} responses"
+        view_results: View results
+        edit_poll: Edit survey
+        show_results: Show results
+        show_results_help: If you check this box the results will be public and all users will be able to see them
+        delete: Delete survey
+        alert_notice: This action will remove the survey and all its associated questions.
+        success_notice: Survey deleted successfully
+        unable_notice: You cannot destroy a survey that has responses
+      form:
+        name: Survey title
+        add_question: Add question
+      question_fields:
+        remove_question: Remove question
+        add_answer: Add answer
+      question_answer_fields:
+        remove_answer: Remove answer
+    poster:
+      index:
+        title: Poster preview
+        poster_title: "Do not keep looking,"
+        poster_subtitle: "back me up! ;)"
+        intro_text_html:
+          "<strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
+          necessary support to make the city we all want."
+        proposal_code: "Code of the proposal: %{code}"
+        support: Support my proposal
+        footer_html: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
+      new:
+        title: Poster of your proposal
+      options:
+        preview: Preview
+        download: Download
+    mailing:
+      index:
+        title: E-mail preview
+      new:
+        title: E-mail model to share
+      mailing_options:
+        send: Send to %{address}
+        preview: Preview
+      create:
+        sent: The email has been sent
+    mailer:
+      forward:
+        subtitle_html: "If you support me, <br>we will achieve it."
+        support_button: Support this proposal
+        share_in: Share in
+        hi: "Hello!"
+        introduction: I am writing to let you know that I am participating in %{org}, the platform we can decide which city we want. And for that, I created my own citizen proposal and now, I'm going to need your support! But do not worry because It is very simple.
+        support: "You just have to click on the button that you will see below 'Support this proposal' and you can inform yourself about before promoting it. Only the proposals that achieve the maximum support will be carried out by the City Council, and I thought that you, I'm sure you help me achieve it!"
+        share: "And if you also do me the great favor of sharing my proposal with your friends, family and contacts, it would be perfect!"
   polls:
     all: "All"
     no_dates: "no date assigned"
@@ -461,11 +630,9 @@ en:
     index:
       filters:
         current: "Open"
-        incoming: "Incoming"
         expired: "Expired"
       title: "Polls"
       participate_button: "Participate in this poll"
-      participate_button_incoming: "More information"
       participate_button_expired: "Poll ended"
       no_geozone_restricted: "All city"
       geozone_restricted: "Districts"
@@ -482,6 +649,17 @@ en:
         title: Help about voting
         description: Citizens' polls are a participatory mechanism by which citizens with voting rights can make direct decisions
       no_polls: "There are no open votings."
+      max_votes_reached: "You have already made the maximum number of votes. Thank you very much for participating"
+      descriptions:
+        unique: It's only possible to answer one time to the question.
+        multiple: Allows to choose multiple answers. It's possible to set the maximum number of answers.
+        prioritized: Allows to choose more than one answer and they will be prioritized. It's possible to set the maximum number of answers chosen and the answer count type.
+        positive_open: Allows to vote positively a maximum number of times to questions. It's possible to set the maximum number of answers and add other answers.
+        positive_negative_open:  Allows to vote positively and negatively a maximum number of times to questions. It's possible to set the maximum number of answers and add other answers.
+        answer_couples_open: Allows to vote a maximum number of times to couples of possible answers. It's possible to set the maximum number of couples and add other answers.
+        answer_couples_closed: Allows to vote a maximum number of times to couples of possible answers. It's possible to set the maximum number of couples and it's not possible to add other answers.
+        answer_set_open: Allows to vote a maximum number of answers to a group of them. It's possible to set the maximum number of answers, the size of the group and add other answers.
+        answer_set_closed: Allows to vote a maximum number of answers to a group of them. It's possible to set the maximum number of answers and the size of the group.
     show:
       already_voted_in_booth: "You have already participated in a physical booth. You can not participate again."
       already_voted_in_web: "You have already participated in this poll. If you vote again it will be overwritten."
@@ -493,7 +671,6 @@ en:
       signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
       verify_link: "verify your account"
-      cant_answer_incoming: "This poll has not yet started."
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
       more_info_title: "More information"
@@ -506,25 +683,36 @@ en:
       stats_menu: "Participation statistics"
       results_menu: "Poll results"
       stats:
-        title: "Participation data"
-        total_participation: "Total participation"
         total_votes: "Total amount of given votes"
         votes: "VOTES"
         web: "WEB"
+        mail: "MAIL"
         booth: "BOOTH"
         total: "TOTAL"
         valid: "Valid"
-        white: "White votes"
+        white: "Fully blank"
         null_votes: "Invalid"
       results:
         title: "Questions"
         most_voted_answer: "Most voted answer: "
+    poll_header:
+      back_to_proposal: Back to proposal
   poll_questions:
-    create_question: "Create question"
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
-      voted_token: "You can write down this vote identifier, to check your vote on the final results:"
+      add_answer: "Add answer"
+    description:
+      multiple: "You can select a maximum of %{maximum} answers."
+      positive_negative_open: "You can vote positive or negative a maximum of %{maximum} answers. And you can add your own answers."
+      answer_couples_open: "Choose an option from the following pair. You can choose a maximum of %{maximum} answers."
+      answer_couples_closed: "Choose an option from the following pair. You can choose a maximum of %{maximum} answers."
+      answer_set_open: "You can choose a maximum of %{maximum} answers."
+      answer_set_closed: "You can choose a maximum of %{maximum} answers."
+      prioritized: "You can select a maximum of %{maximum} answers. This question will use the %{system} system for count."
+      positive_open: "You can select a maximum of %{maximum} answers and add your own answers."
+      unique: ""
+    read_more_about: "Read more about:"
   proposal_notifications:
     new:
       title: "Send message"
@@ -534,34 +722,34 @@ en:
       info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
-      back: "Go back to my activity"
+      back: "Go back to my content"
   shared:
-    edit: 'Edit'
-    save: 'Save'
-    delete: 'Delete'
+    edit: "Edit"
+    save: "Save"
+    delete: "Delete"
     "yes": "Yes"
     "no": "No"
     search_results: "Search results"
     advanced_search:
-      author_type: 'By author category'
-      author_type_blank: 'Select a category'
-      date: 'By date'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: 'Choose a date'
-      date_1: 'Last 24 hours'
-      date_2: 'Last week'
-      date_3: 'Last month'
-      date_4: 'Last year'
-      date_5: 'Customized'
-      from: 'From'
-      general: 'With the text'
-      general_placeholder: 'Write the text'
-      search: 'Filter'
-      title: 'Advanced search'
-      to: 'To'
-    delete: Delete
+      author_type: "By author category"
+      author_type_blank: "Select a category"
+      date: "By date"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "Choose a date"
+      date_1: "Last 24 hours"
+      date_2: "Last week"
+      date_3: "Last month"
+      date_4: "Last year"
+      date_5: "Customized"
+      from: "From"
+      general: "With the text"
+      general_placeholder: "Write the text"
+      search: "Filter"
+      title: "Advanced search"
+      to: "To"
     author_info:
       author_deleted: User deleted
+      email_deleted: Email deleted
     back: Go back
     check: Select
     check_all: All
@@ -616,7 +804,6 @@ en:
     unflag: Unflag
     unfollow_entity: "Unfollow %{entity}"
     outline:
-      budget: Participatory budget
       searcher: Searcher
     go_to_page: "Go to page of "
     share: Share
@@ -632,62 +819,21 @@ en:
         title: Recommendations
         see_more: See more recommendations
         hide: Hide recommendations
+    download:
+      title: "Downloads"
+      link:
+        proposal: "Download proposals"
+        debate: "Download debates"
+        legislation_process: "Download legislation processes"
+        budget: "Download budgets"
+        investments: "Download projects"
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: 'If you propose in name of an assocation or collective add the name here'
-      association_name: 'Association name'
-      description: Description
-      external_url: Link to additional documentation
-      geozone: Scope of operation
-      submit_buttons:
-        create: Create
-        new: Create
-      title: Spending proposal title
-    index:
-      title: Participatory budgeting
-      unfeasible: Unfeasible investment projects
-      by_geozone: "Investment projects with scope: %{geozone}"
-      search_form:
-        button: Search
-        placeholder: Investment projects...
-        title: Search
-      search_results:
-        one: " containing the term '%{search_term}'"
-        other: " containing the term '%{search_term}'"
-      sidebar:
-        geozones: Scope of operation
-        feasibility: Feasibility
-        unfeasible: Unfeasible
-      start_spending_proposal: Create an investment project
-    new:
-      more_info: How do participatory budgeting works?
-      recommendation_one: It's mandatory that the proposal makes reference to a budgetable action.
-      recommendation_three: Try to go into details when describing your spending proposal so the reviewing team undertands your points.
-      recommendation_two: Any proposal or comment suggesting illegal action will be deleted.
-      recommendations_title: How to create a spending proposal
-      start_new: Create spending proposal
-    show:
-      author_deleted: User deleted
-      code: 'Proposal code:'
-      share: Share
-    wrong_price_format: Only integer numbers
-    spending_proposal:
-      spending_proposal: Investment project
-      already_supported: You have already supported this. Share it!
-      support: Support
-      support_title: Support this project
-      supports:
-        one: 1 support
-        other: "%{count} supports"
-        zero: No supports
   stats:
     index:
       visits: Visits
@@ -725,6 +871,7 @@ en:
       deleted_proposal: This proposal has been deleted
       deleted_budget_investment: This investment project has been deleted
       proposals: Proposals
+      proposals_status: Status
       debates: Debates
       budget_investments: Budget investments
       comments: Comments
@@ -751,10 +898,12 @@ en:
       send_private_message: "Send private message"
       delete_alert: "Are you sure you want to delete your investment project? This action can't be undone"
     proposals:
-      send_notification: "Send notification"
-      retire: "Retire"
       retired: "Retired proposal"
+      draft: Draft
+      published: Published
       see: "See proposal"
+      actions: Actions
+      retired_help_text: Dashboard not available for retired proposals
   votes:
     agree: I agree
     anonymous: Too many anonymous votes to admit vote %{verify_account}.
@@ -767,12 +916,6 @@ en:
     unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     verify_account: verify your account
-    spending_proposals:
-      not_logged_in: You must %{signin} or %{signup} to continue.
-      not_verified: Only verified users can vote on proposals; %{verify_account}.
-      organization: Organizations are not permitted to vote
-      unfeasible: Unfeasible investment projects can not be supported
-      not_voting_allowed: Voting phase is closed
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on investment projects; %{verify_account}.
@@ -780,8 +923,8 @@ en:
       unfeasible: Unfeasible investment projects can not be supported
       not_voting_allowed: Voting phase is closed
       different_heading_assigned:
-        one: "You can only support investment projects in %{count} district"
-        other: "You can only support investment projects in %{count} districts"
+        one: "You can only support investment projects in %{count} district. You have already supported investments in %{supported_headings}."
+        other: "You can only support investment projects in %{count} districts. You have already supported investments in %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -813,13 +956,14 @@ en:
       question: Do you already have an account in %{org_name}?
       title: Account verification
     welcome:
-      go_to_index: See proposals and debates
+      go_to_index: Not now, go to index page
+      start_using_consul: Go to index page
       title: Participate
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
       user_permission_proposal: Create new proposals
       user_permission_support_proposal: Support proposals*
-      user_permission_verify: To perform all the actions verify your account.
+      user_permission_verify: "To perform the following actions verify your account."
       user_permission_verify_info: "* Only for users on Census."
       user_permission_verify_my_account: Verify my account
       user_permission_votes: Participate on final voting
@@ -853,3 +997,41 @@ en:
       text_sign_in: login
       text_sign_up: sign up
       title: How I can comment this document?
+  links:
+    form:
+      delete_button: Delete
+      cancel_button: Cancel
+    nested_links:
+      title: Links
+      note: Add the links that are of interest
+      add_new_link: Add new link
+    link_fields:
+      label_placeholder: Link title
+      url_placeholder: Link address
+  communities:
+    show:
+      surveys: Surveys
+      complete_survey: Complete the survey
+    subnav:
+      surveys: Surveys
+    poll:
+      take_part: Take part from %{from} to %{to}
+  question:
+    max_votes: Maximum number of votes
+    max_group_answers: Maximum number of answers in the set
+    votation_type: Votation type
+  enum_type:
+    title: Votation type
+    unique: Unique answer, closed
+    multiple: Multiple answers, closed
+    prioritized: Multiple prioritized answer, closed
+    positive_open: Votable positive, open
+    positive_negative_open: Votable positive and negative, open
+    answer_couples_open: Couples of answers, open
+    answer_couples_closed: Couples of answers, closed
+    answer_set_open: Set of answers, open
+    answer_set_closed: Set of answers, closed
+  prioritization_type:
+    title: Prioritization type
+    borda: Borda votation
+    dowdall: Dowdall votation

@@ -1,4 +1,4 @@
-class AddCollaborativeLegislationTranslations < ActiveRecord::Migration
+class AddCollaborativeLegislationTranslations < ActiveRecord::Migration[4.2]
 
   def self.up
     Legislation::Process.create_translation_table!(

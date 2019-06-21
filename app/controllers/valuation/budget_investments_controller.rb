@@ -33,7 +33,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       end
 
       Activity.log(current_user, :valuate, @investment)
-      notice = t('valuation.budget_investments.notice.valuate')
+      notice = t("valuation.budget_investments.notice.valuate")
       redirect_to valuation_budget_budget_investment_path(@budget, @investment), notice: notice
     else
       render action: :edit
@@ -61,11 +61,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def resource_name
-      resource_model.parameterize('_')
+      resource_model.parameterize(separator: "_")
     end
 
     def load_budget
-      @budget = Budget.find(params[:budget_id])
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
     end
 
     def load_investment
@@ -75,13 +75,11 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     def heading_filters
       investments = @budget.investments.by_valuator(current_user.valuator.try(:id))
                                        .visible_to_valuators.distinct
-
-      investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id).uniq)
-                                           .order(name: :asc)
+      investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id)).sort_by(&:name)
 
       all_headings_filter = [
                               {
-                                name: t('valuation.budget_investments.index.headings_filter_all'),
+                                name: t("valuation.budget_investments.index.headings_filter_all"),
                                 id: nil,
                                 count: investments.size
                               }
@@ -97,8 +95,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def params_for_current_valuator
-      Budget::Investment.filter_params(params).merge(valuator_id: current_user.valuator.id,
-                                                     budget_id: @budget.id)
+      Budget::Investment.filter_params(params).to_h.merge({ valuator_id: current_user.valuator.id,
+                                                            budget_id: @budget.id })
     end
 
     def valuation_params
@@ -109,7 +107,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
     def restrict_access
       unless current_user.administrator? || current_budget.valuating?
-        raise CanCan::AccessDenied.new(I18n.t('valuation.budget_investments.not_in_valuating_phase'))
+        raise CanCan::AccessDenied.new(I18n.t("valuation.budget_investments.not_in_valuating_phase"))
       end
     end
 
@@ -117,16 +115,16 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       return if current_user.administrator? ||
                 Budget::ValuatorAssignment.exists?(investment_id: params[:id],
                                                    valuator_id: current_user.valuator.id)
-      raise ActionController::RoutingError.new('Not Found')
+      raise ActionController::RoutingError.new("Not Found")
     end
 
     def valid_price_params?
       if /\D/.match params[:budget_investment][:price]
-        @investment.errors.add(:price, I18n.t('budgets.investments.wrong_price_format'))
+        @investment.errors.add(:price, I18n.t("budgets.investments.wrong_price_format"))
       end
 
       if /\D/.match params[:budget_investment][:price_first_year]
-        @investment.errors.add(:price_first_year, I18n.t('budgets.investments.wrong_price_format'))
+        @investment.errors.add(:price_first_year, I18n.t("budgets.investments.wrong_price_format"))
       end
 
       @investment.errors.empty?

@@ -1,0 +1,129 @@
+bs:
+  valuation:
+    header:
+      title: Procjena
+    menu:
+      title: Procjena
+      budgets: Participativni budžeti
+      spending_proposals: Prijedlozi troškova
+    budgets:
+      index:
+        title: Participativni budžeti
+        filters:
+          current: Otvoreno
+          finished: Završeno
+        table_name: Naziv
+        table_phase: Faza
+        table_assigned_investments_valuation_open: Dodijeljeni investicioni projekti, sa nedovršenom procjenom
+        table_actions: Radnje
+        evaluate: Napravi procjenu
+        no_budgets: "Nema budžeta"
+    budget_investments:
+      index:
+        headings_filter_all: Sva poglavlja
+        filters:
+          valuation_open: Otvori
+          valuating: Procjena u toku
+          valuation_finished: Procjena završena
+        assigned_to: "Dodijeljeno %{valuator}"
+        title: Investicioni projekti
+        edit: Izmjeni spis
+        valuators_assigned:
+          one: Dodijeljeni procjenitelj
+          few: "Dodijeljenih procjenitelja: %{count}"
+          other: "Dodijeljenih procjenitelja: %{count}"
+        no_valuators_assigned: Nema dodijeljenih procjenitelja
+        table_id: Identifikacioni broj
+        table_title: Naziv
+        table_heading_name: Naziv kategorije
+        table_actions: Radnje
+        no_investments: "Nema investicionih projekata."
+      show:
+        back: Nazad
+        title: Investicioni projekat
+        info: Podaci o autoru
+        by: Poslao/la
+        sent: 'Poslano:'
+        heading: Poglavlje
+        dossier: Spis
+        edit_dossier: Izmjeni spis
+        price: Cijena
+        price_first_year: Troškovi u prvoj godini
+        currency: "€"
+        feasibility: Izvodivost
+        feasible: Izvodivo
+        unfeasible: Nije izvodivo
+        undefined: Nije definisano
+        valuation_finished: Procjena završena
+        duration: Vremenski okvir
+        responsibles: Nadležni
+        assigned_admin: Dodijeljeni administrator
+        assigned_valuators: Dodijeljeni procjenitelji
+      edit:
+        dossier: Spis
+        price_html: "Cijena (moneta) %{currency}"
+        price_first_year_html: "Troškovi tokom prve godine (moneta) %{currency} <small> (nije obavezno navesti, nije javni podatak) </small>"
+        price_explanation_html: Objašnjenje za cijenu
+        feasibility: Izvodivost
+        feasible: Izvodivo
+        unfeasible: Nije izvodivo
+        undefined_feasible: U toku
+        feasible_explanation_html: Objašnjenje za izvodivost
+        valuation_finished: Procjena završena
+        valuation_finished_alert: "Jeste sigurni da želite označiti izvještaj kao kompletiran? Više nećete moći unositi izmjene."
+        not_feasible_alert: "Email sa izvještajem o izvodivosti će odmah biti upućen autoru projekta."
+        duration_html: Vremenski okvir
+        save: Spasi izmjene
+      notice:
+        valuate: "Spis ažuriran"
+      valuation_comments: Komentari na procjenu
+      not_in_valuating_phase: Za investicije se može uraditi procjena samo kad je budžet u fazi procjene
+    spending_proposals:
+      index:
+        geozone_filter_all: Sva područja
+        filters:
+          valuation_open: Otvori
+          valuating: Procjena u toku
+          valuation_finished: Procjena završena
+        title: Investicioni projekti za participativno budžetiranje
+        edit: Izmjeni
+      show:
+        back: Nazad
+        heading: Investicioni projekat
+        info: Podaci o autoru
+        association_name: Udruženje
+        by: Poslao/la
+        sent: 'Poslano:'
+        geozone: Područje
+        dossier: Spis
+        edit_dossier: Izmjeni spis
+        price: Cijena
+        price_first_year: Troškovi u prvoj godini
+        currency: "€"
+        feasibility: Izvodivost
+        feasible: Izvodivo
+        not_feasible: Nije izvodivo
+        undefined: Nije definisano
+        valuation_finished: Procjena završena
+        time_scope: Vremenski okvir
+        internal_comments: Interni komentari
+        responsibles: Nadležni
+        assigned_admin: Dodijeljeni administrator
+        assigned_valuators: Dodijeljeni procjenitelji
+      edit:
+        dossier: Spis
+        price_html: "Cijena (moneta) %{currency}"
+        price_first_year_html: "Troškovi tokom prve godine (moneta) (%{currency})"
+        currency: "€"
+        price_explanation_html: Objašnjenje za cijenu
+        feasibility: Izvodivost
+        feasible: Izvodivo
+        not_feasible: Nije izvodivo
+        undefined_feasible: U toku
+        feasible_explanation_html: Objašnjenje za izvodivost
+        valuation_finished: Procjena završena
+        time_scope_html: Vremenski okvir
+        internal_comments_html: Interni komentari
+        save: Spasi izmjene
+      notice:
+        valuate: "Spis ažuriran"

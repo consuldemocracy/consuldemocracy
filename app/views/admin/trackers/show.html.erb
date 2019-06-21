@@ -1,0 +1,22 @@
+<%= back_link_to admin_trackers_path %>
+
+<%= link_to t("admin.actions.edit"), edit_admin_tracker_path(@tracker), class: "button hollow float-right" %>
+
+<div class="clear"></div>
+
+<h2><%= @tracker.name %></h2>
+
+<div class="callout highlight">
+  <p>
+    <strong><%= t("admin.trackers.show.email") %></strong><br>
+    <%= @tracker.email %>
+  </p>
+  <p>
+    <strong><%= t("admin.trackers.show.description") %></strong><br>
+    <% if @tracker.description.present? %>
+      <%= @tracker.description %>
+    <% else %>
+      <%= t("admin.trackers.show.no_description") %>
+    <% end %>
+  </p>
+</div>

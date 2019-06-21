@@ -2,7 +2,7 @@ fr:
   devise_views:
     confirmations:
       new:
-        email_label: Courriel
+        email_label: Email
         submit: Renvoyer les instructions
         title: Renvoyer les instructions de confirmation
       show:
@@ -15,19 +15,20 @@ fr:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmer mon compte
-        text: 'Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :'
+        text: "Vous pouvez confirmer votre courriel en cliquant sur le lien suivant :"
+        title: Bienvenue
         welcome: Bienvenue
       reset_password_instructions:
         change_link: Changer mon mot de passe
         hello: Bonjour
         ignore_text: Si vous n'avez demander à changer de mot de passe, vous pouvez ignorer ce courriel.
         info_text: Votre mot de passe ne sera pas changé si vous n'accédez pas au lien pour l'éditer.
-        text: 'Nous avons reçu une demande de changement de votre mot de passe. Vous pouvez le changer sur le lien suivant :'
+        text: "Nous avons reçu une demande de changement de votre mot de passe. Vous pouvez le changer sur le lien suivant :"
         title: Changer votre mot de passe
       unlock_instructions:
         hello: Bonjour
         info_text: Votre compte a été bloqué suite à un nombre excessif de tentatives de connexion erronées.
-        instructions_text: 'Veuillez cliquer sur ce lien pour débloquer votre compte :'
+        instructions_text: "Veuillez cliquer sur ce lien pour débloquer votre compte :"
         title: Votre compte a été bloqué
         unlock_link: Débloquer mon compte
     menu:
@@ -38,7 +39,7 @@ fr:
     organizations:
       registrations:
         new:
-          email_label: Courriel
+          email_label: Email
           organization_name_label: Nom de l'organisation
           password_confirmation_label: Confirmer le mot de passe
           password_label: Mot de passe
@@ -61,7 +62,7 @@ fr:
         password_label: Nouveau mot de passe
         title: Changer votre mot de passe
       new:
-        email_label: Courriel
+        email_label: Email
         send_submit: Envoyer les instructions
         title: Mot de passe oublié ?
     sessions:
@@ -79,10 +80,10 @@ fr:
         new_unlock: Vous n'avez pas reçu les instructions pour débloquer votre compte?
         signin_with_provider: Se connecter avec %{provider}
         signup: Vous n'avez pas encore de compte ? %{signup_link}
-        signup_link: S'enregistrer
+        signup_link: S'inscrire
     unlocks:
       new:
-        email_label: Courriel
+        email_label: Email
         submit: Renvoyer les instructions de déblocage
         title: Renvoyer les instructions de déblocage
     users:
@@ -96,16 +97,16 @@ fr:
         edit:
           current_password_label: Mot de passe actuel
           edit: Éditer
-          email_label: Courriel
+          email_label: Email
           leave_blank: Laissez vide si vous ne souhaitez pas le modifier
           need_current: Nous avons besoin de votre mot de passe actuel pour confirmer les modifications
           password_confirmation_label: Confirmer le nouveau mot de passe
           password_label: Nouveau mot de passe
           update_submit: Mettre-à-jour
-          waiting_for: 'En attente de la confirmation de:'
+          waiting_for: "En attente de la confirmation de:"
         new:
           cancel: Annuler la connexion
-          email_label: Courriel
+          email_label: Email
           organization_signup: Représentez-vous une organisation ou un collectif? %{signup_link}
           organization_signup_link: Enregistrez-vous ici
           password_confirmation_label: Confirmer le mot de passe

@@ -1,4 +1,8 @@
 en:
+  attributes:
+    results_enabled: "Show results"
+    stats_enabled: "Show stats"
+    advanced_stats_enabled: "Show advanced stats"
   activerecord:
     models:
       activity:
@@ -16,6 +20,9 @@ en:
       milestone/status:
         one: "Milestone Status"
         other: "Milestone Statuses"
+      progress_bar:
+        one: "Progress bar"
+        other: "Progress bars"
       comment:
         one: "Comment"
         other: "Comments"
@@ -58,12 +65,12 @@ en:
       poll/officer:
         one: "officer"
         other: "officers"
+      poll/ballot_sheet:
+        one: Ballot sheet
+        other: Ballot sheets
       proposal:
         one: "Citizen proposal"
         other: "Citizen proposals"
-      spending_proposal:
-        one: "Investment project"
-        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -73,6 +80,9 @@ en:
       site_customization/content_block:
         one: Custom content block
         other: Custom content blocks
+      document:
+        one: Document
+        other: Documents
       legislation/process:
         one: "Process"
         other: "Processes"
@@ -106,6 +116,15 @@ en:
       proposal_notification:
         one: "Proposal notification"
         other: "Proposal notifications"
+      dashboard/action:
+        one: Proposal dashboard action
+        other: Proposal dashboard actions
+      dashboard/administrator_task:
+        one: Task
+        other: Tasks
+      link:
+        one: Link
+        other: Links
     attributes:
       budget:
         name: "Name"
@@ -118,6 +137,9 @@ en:
         description_finished: "Description when the budget is finished"
         phase: "Phase"
         currency_symbol: "Currency"
+        budget_milestone_tags: "Milestone tags"
+        budget_valuation_tags: "Valuation tags"
+        help_link: "Help link"
       budget/investment:
         heading_id: "Heading"
         title: "Title"
@@ -128,14 +150,26 @@ en:
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
+      geozone:
+        name: Name
+        external_code: "External code (optional)"
+        census_code: "Census code (optional)"
+        html_map_coordinates: "HTML <map> Coordinates (optional)"
       milestone:
-        status_id: "Current investment status (optional)"
+        status_id: "Current status (optional)"
         title: "Title"
         description: "Description (optional if there's an status assigned)"
         publication_date: "Publication date"
       milestone/status:
         name: "Name"
         description: "Description (optional)"
+      progress_bar:
+        kind: "Type"
+        title: "Title"
+        percentage: "Current progress"
+      progress_bar/kind:
+        primary: "Primary"
+        secondary: "Secondary"
       budget/heading:
         name: "Heading name"
         price: "Price"
@@ -153,6 +187,7 @@ en:
         title: "Title"
         question: "Question"
         description: "Description"
+        selected: "Mark as selected"
         terms_of_service: "Terms of service"
       user:
         login: "Email or username"
@@ -168,13 +203,6 @@ en:
       organization:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Link to additional documentation"
-        geozone_id: "Scope of operation"
-        title: "Title"
       poll:
         name: "Name"
         starts_at: "Start Date"
@@ -193,6 +221,10 @@ en:
         external_url: "Link to additional documentation"
       poll/question/translation:
         title: "Question"
+      poll/ballot_sheet:
+        data: CSV data
+        poll_id: Poll
+        officer_assignment_id: Officer assignment
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -219,26 +251,34 @@ en:
         name: Name
         locale: locale
         body: Body
+      banner:
+        background_color: Background color
+        font_color: Font color
       legislation/process:
         title: Process Title
         summary: Summary
         description: Description
         additional_info: Additional info
-        start_date: Start date
-        end_date: End date
-        debate_start_date: Debate start date
-        debate_end_date: Debate end date
-        draft_start_date: Draft start date
-        draft_end_date: Draft end date
+        start_date: Start
+        end_date: End
+        debate_start_date: Start
+        debate_end_date: End
+        draft_start_date: Start
+        draft_end_date: End
         draft_publication_date: Draft publication date
-        allegations_start_date: Allegations start date
-        allegations_end_date: Allegations end date
+        allegations_start_date: Start
+        allegations_end_date: End
+        proposals_phase_start_date: Start
+        proposals_phase_end_date: End
         result_publication_date: Final result publication date
+        background_color: Background color
+        font_color: Font color
       legislation/process/translation:
         title: Process Title
         summary: Summary
         description: Description
         additional_info: Additional info
+        milestones_summary: Summary
       legislation/draft_version:
         title: Version title
         body: Text
@@ -290,6 +330,7 @@ en:
         description: Description
         link_text: Link text
         link_url: Link URL
+        columns: Number of columns
       widget/card/translation:
         label: Label (optional)
         title: Title
@@ -297,6 +338,28 @@ en:
         link_text: Link text
       widget/feed:
         limit: Number of items
+      dashboard/action:
+        title: Title
+        short_description: Short description
+        description: Description
+        link: External link
+        request_to_administrators: Include in the resource a button to request the resource from administrators
+        day_offset: How many days after the creation of the proposal do you want it to be activated?
+        required_supports: How much supports does the proposal have to get in order to be activated?
+        order: You can enter the position where this action will be shown to the user in the list of actions
+        active: Active
+        action_type: Type
+      dashboard/administrator_task:
+        source: Source
+        user: Executed by
+      link:
+        label: Title
+        url: Link
+      valuator:
+        description: Description
+        valuator_group_id: Valuator group
+        can_comment: Can create comments
+        can_edit_dossier: Can edit dossiers
     errors:
       models:
         user:
@@ -342,7 +405,7 @@ en:
             draft_end_date:
               invalid_date_range: must be on or after the draft start date
             allegations_end_date:
-              invalid_date_range: must be on or after the allegations start date
+              invalid_date_range: must be on or after the comments start date
         proposal:
           attributes:
             tag_list:
@@ -354,12 +417,12 @@ en:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "You have to wait a minimum of %{interval} days between notifications"
         signature:
           attributes:
             document_number:
-              not_in_census: 'Not verified by Census'
-              already_voted: 'Already voted this proposal'
+              not_in_census: "Not verified by Census"
+              already_voted: "Already voted this proposal"
         site_customization/page:
           attributes:
             slug:
@@ -372,9 +435,10 @@ en:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'You cannot comment a valuation'
+              cannot_comment_valuation: "You cannot comment a valuation"
       messages:
         record_invalid: "Validation failed: %{errors}"
+        another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:
           has_one: "Cannot delete record because a dependent %{record} exists"
           has_many: "Cannot delete record because dependent %{record} exist"

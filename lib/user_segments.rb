@@ -1,12 +1,13 @@
 class UserSegments
-  SEGMENTS = %w(all_users
+  SEGMENTS = %w[all_users
                 administrators
+                all_proposal_authors
                 proposal_authors
                 investment_authors
                 feasible_and_undecided_investment_authors
                 selected_investment_authors
                 winner_investment_authors
-                not_supported_on_current_budget)
+                not_supported_on_current_budget]
 
   def self.all_users
     User.active
@@ -14,6 +15,10 @@ class UserSegments
 
   def self.administrators
     all_users.administrators
+  end
+
+  def self.all_proposal_authors
+    author_ids(Proposal.pluck(:author_id).uniq)
   end
 
   def self.proposal_authors
@@ -41,16 +46,16 @@ class UserSegments
   def self.not_supported_on_current_budget
     author_ids(
       User.where(
-                  'id NOT IN (SELECT DISTINCT(voter_id) FROM votes'\
-                  ' WHERE votable_type = ? AND votes.votable_id IN (?))',
-                  'Budget::Investment',
+                  "id NOT IN (SELECT DISTINCT(voter_id) FROM votes"\
+                  " WHERE votable_type = ? AND votes.votable_id IN (?))",
+                  "Budget::Investment",
                   current_budget_investments.pluck(:id)
                 )
     )
   end
 
   def self.user_segment_emails(users_segment)
-    UserSegments.send(users_segment).newsletter.pluck(:email).compact
+    UserSegments.send(users_segment).newsletter.order(:created_at).pluck(:email).compact
   end
 
   private
