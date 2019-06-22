@@ -129,6 +129,9 @@ Rails/Date:
 Rails/HttpPositionalArguments:
   Enabled: true
 
+Rails/PluralizationGrammar:
+  Enabled: true
+
 Rails/RelativeDateConstant:
   Enabled: true
 

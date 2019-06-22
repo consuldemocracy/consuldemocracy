@@ -97,7 +97,7 @@ describe "Admin collaborative legislation" do
       fill_in "legislation_process[draft_start_date]",
                with: (base_date - 3.days).strftime("%d/%m/%Y")
       fill_in "legislation_process[draft_end_date]",
-               with: (base_date - 1.days).strftime("%d/%m/%Y")
+               with: (base_date - 1.day).strftime("%d/%m/%Y")
       fill_in "legislation_process[draft_publication_date]",
                with: (base_date + 3.days).strftime("%d/%m/%Y")
       fill_in "legislation_process[allegations_start_date]",
