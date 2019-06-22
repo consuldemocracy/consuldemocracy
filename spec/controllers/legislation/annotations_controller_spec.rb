@@ -16,7 +16,6 @@ describe Legislation::AnnotationsController do
                                                              title: "Final version") }
     let(:user) { create(:user, :level_two) }
 
-
     it "creates an ahoy event" do
       sign_in user
 

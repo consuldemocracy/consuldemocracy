@@ -32,7 +32,6 @@ describe "Admin Budgets" do
                       name_en: "Budget for climate change",
                       name_fr: "Budget pour le changement climatique")
 
-
       visit admin_budgets_path
       select("Français", from: "locale-switcher")
 

@@ -168,7 +168,6 @@ describe Budget::Heading do
     end
   end
 
-
   describe "save longitude" do
 
     it "Doesn't allow longitude < -180" do
@@ -266,7 +265,6 @@ describe Budget::Heading do
       expect(heading).to be_valid
     end
   end
-
 
   describe "heading" do
     it "can be deleted if no budget's investments associated" do

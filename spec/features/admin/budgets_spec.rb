@@ -286,7 +286,6 @@ describe "Admin budgets" do
       expect(page).not_to have_content unselected.title
       expect(page).not_to have_content selected.title
 
-
       visit edit_admin_budget_path(budget)
       expect(page).to have_content "See results"
     end

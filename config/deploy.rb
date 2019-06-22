@@ -52,7 +52,6 @@ namespace :deploy do
 
   after :finishing, "deploy:cleanup"
 
-
   desc "Deploys and runs the tasks needed to upgrade to a new release"
   task :upgrade do
     after "add_new_settings", "execute_release_tasks"

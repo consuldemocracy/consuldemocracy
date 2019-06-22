@@ -547,7 +547,6 @@ describe "Valuation budget investments" do
       investment = create(:budget_investment, budget: budget)
       investment.valuators << [valuator]
 
-
       login_as(admin.user)
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"

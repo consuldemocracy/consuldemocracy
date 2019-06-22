@@ -367,5 +367,4 @@ describe "Poll Votation Type" do
     end
   end
 
-
 end

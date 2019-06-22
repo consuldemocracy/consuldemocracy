@@ -687,7 +687,6 @@ describe "Admin budget investments" do
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals")
 
-
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
       expect(page).to have_css(".budget_investment", count: 3)
@@ -766,7 +765,6 @@ describe "Admin budget investments" do
       create(:budget_investment, budget: budget, title: "More hospitals",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hostals")
-
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
@@ -1883,7 +1881,6 @@ describe "Admin budget investments" do
 
       expect(cookie_value).to eq("id,supports,admin,geozone," +
         "feasibility,valuation_finished,visible_to_valuators,selected,incompatible,author")
-
 
       visit admin_budget_budget_investments_path(budget)
 

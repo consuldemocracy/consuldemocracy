@@ -1,6 +1,5 @@
 <a class="small float-right clear" data-open="download-modal"><%= t("admin.budget_investments.index.download_current_selection") %></a>
 
-
 <% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>
     <%= link_to calculate_winner_button_text(@budget),
