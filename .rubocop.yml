@@ -159,9 +159,6 @@ Rails/ReadWriteAttribute:
 Rails/RedundantReceiverInWithOptions:
   Enabled: true
 
-Rails/RelativeDateConstant:
-  Enabled: true
-
 Rails/RequestReferer:
   Enabled: true
 

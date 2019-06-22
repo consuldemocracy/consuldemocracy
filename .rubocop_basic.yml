@@ -59,6 +59,9 @@ Rails/ApplicationRecord:
 Rails/HttpPositionalArguments:
   Enabled: true
 
+Rails/RelativeDateConstant:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 
