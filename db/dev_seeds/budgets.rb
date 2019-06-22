@@ -159,8 +159,8 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting["map.latitude"].to_f + rand(-10..10)/100.to_f,
-                         longitude: Setting["map.longitude"].to_f + rand(-10..10)/100.to_f,
+      MapLocation.create(latitude: Setting["map.latitude"].to_f + rand(-10..10) / 100.to_f,
+                         longitude: Setting["map.longitude"].to_f + rand(-10..10) / 100.to_f,
                          zoom: Setting["map.zoom"],
                          investment_id: investment.id)
     end

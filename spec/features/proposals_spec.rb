@@ -9,7 +9,7 @@ describe "Proposals" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.proposals"] = nil
-    expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   context "Concerns" do
@@ -1621,7 +1621,7 @@ describe "Proposals" do
   it_behaves_like "nested imageable",
                   "proposal",
                   "new_proposal_path",
-                  { },
+                  {},
                   "imageable_fill_new_valid_proposal",
                   "Create proposal",
                   "Proposal created successfully"
@@ -1640,7 +1640,7 @@ describe "Proposals" do
                   "user",
                   "proposal",
                   "new_proposal_path",
-                  { },
+                  {},
                   "documentable_fill_new_valid_proposal",
                   "Create proposal",
                   "Proposal created successfully"
@@ -1660,7 +1660,7 @@ describe "Proposals" do
                   "new_proposal_path",
                   "edit_proposal_path",
                   "proposal_path",
-                  { }
+                  {}
 
   scenario "Erased author" do
     user = create(:user)

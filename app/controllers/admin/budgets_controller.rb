@@ -81,7 +81,7 @@ class Admin::BudgetsController < Admin::BaseController
   private
 
     def budget_params
-      descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
+      descriptions = Budget::Phase::PHASE_KINDS.map { |p| "description_#{p}" }.map(&:to_sym)
       valid_attributes = [:phase,
                           :currency_symbol,
                           :help_link,

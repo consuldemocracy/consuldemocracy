@@ -166,7 +166,7 @@ describe "Commenting legislation questions" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: legislation_question)}
+    (per_page + 2).times { create(:comment, commentable: legislation_question) }
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 

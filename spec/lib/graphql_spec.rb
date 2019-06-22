@@ -435,7 +435,7 @@ describe "Consul Schema" do
 
   describe "Geozones" do
     it "returns geozones" do
-      geozone_names = [ create(:geozone), create(:geozone) ].map { |geozone| geozone.name }
+      geozone_names = [create(:geozone), create(:geozone)].map { |geozone| geozone.name }
 
       response = execute("{ geozones { edges { node { name } } } }")
       received_names = extract_fields(response, "geozones", "name")

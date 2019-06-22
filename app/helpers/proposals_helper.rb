@@ -29,7 +29,7 @@ module ProposalsHelper
   end
 
   def retire_proposals_options
-    Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
+    Proposal::RETIRE_OPTIONS.collect { |option| [t("proposals.retire_options.#{option}"), option] }
   end
 
   def empty_recommended_proposals_message_text(user)

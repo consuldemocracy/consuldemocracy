@@ -18,7 +18,7 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
       flash.now[:error] = t("admin.site_customization.images.update.error")
 
       @images = SiteCustomization::Image.all_images
-      idx = @images.index {|e| e.name == @image.name }
+      idx = @images.index { |e| e.name == @image.name }
       @images[idx] = @image
 
       render :index

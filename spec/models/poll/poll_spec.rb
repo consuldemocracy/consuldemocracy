@@ -139,7 +139,7 @@ describe Poll do
   end
 
   describe "answerable_by" do
-    let(:geozone) {create(:geozone) }
+    let(:geozone) { create(:geozone) }
 
     let!(:current_poll) { create(:poll) }
     let!(:expired_poll) { create(:poll, :expired) }
@@ -429,7 +429,7 @@ describe Poll do
     end
 
     it "is false for polls which finished less than a month ago" do
-      poll = create(:poll, starts_at: 3.months.ago, ends_at: 27.days.ago )
+      poll = create(:poll, starts_at: 3.months.ago, ends_at: 27.days.ago)
 
       expect(poll.recounts_confirmed?).to be false
     end

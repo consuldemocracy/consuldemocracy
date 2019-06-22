@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :ahoy_event, class: Ahoy::Event do
     id { SecureRandom.uuid }
     time { DateTime.current }
-    sequence(:name) {|n| "Event #{n} type"}
+    sequence(:name) { |n| "Event #{n} type" }
   end
 
   factory :visit  do

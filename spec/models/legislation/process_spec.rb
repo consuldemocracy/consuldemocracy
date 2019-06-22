@@ -198,7 +198,7 @@ describe Legislation::Process do
 
   describe "milestone_tags" do
     context "without milestone_tags" do
-      let(:process) {create(:legislation_process)}
+      let(:process) { create(:legislation_process) }
 
       it "do not have milestone_tags" do
         expect(process.milestone_tag_list).to eq([])
@@ -214,7 +214,7 @@ describe Legislation::Process do
 
     context "with milestone_tags" do
 
-      let(:process) {create(:legislation_process, :with_milestone_tags)}
+      let(:process) { create(:legislation_process, :with_milestone_tags) }
 
       it "has milestone_tags" do
         expect(process.milestone_tag_list.count).to eq(1)

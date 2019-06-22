@@ -9,7 +9,7 @@ describe "Valuation budgets" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
-    expect{ visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   context "Index" do

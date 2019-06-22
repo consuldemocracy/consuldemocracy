@@ -60,7 +60,7 @@ module Dashboard::GroupSupports
     end
 
     def calculate_year_of_week(date)
-      year =  date.year
+      year = date.year
       if first_week_of_year?(date) && date.end_of_week.year != date.year
         year = year + 1
       elsif last_week_of_year?(date) && date.beginning_of_week.year != date.year

@@ -20,7 +20,7 @@ class Dashboard::ActionsController < Dashboard::BaseController
       Dashboard::AdministratorTask.create(source: @dashboard_executed_action)
 
       redirect_to progress_proposal_dashboard_path(proposal.to_param),
-                  { flash: { info: t("dashboard.create_request.success") } }
+                  { flash: { info: t("dashboard.create_request.success") }}
     else
       flash.now[:alert] = @dashboard_executed_action.errors.full_messages.join("<br>")
       render :new_request

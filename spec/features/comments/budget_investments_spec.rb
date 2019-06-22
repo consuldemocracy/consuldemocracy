@@ -164,7 +164,7 @@ describe "Commenting Budget::Investments" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: investment)}
+    (per_page + 2).times { create(:comment, commentable: investment) }
 
     visit budget_investment_path(investment.budget, investment)
 

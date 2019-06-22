@@ -21,7 +21,7 @@ class RemoteTranslations::Microsoft::Client
 
     split_position = detect_split_position(text)
     start_text = text[0..split_position]
-    end_text = text[split_position + 1 .. text.size]
+    end_text = text[split_position + 1..text.size]
 
     fragments_for(start_text) + [end_text]
   end

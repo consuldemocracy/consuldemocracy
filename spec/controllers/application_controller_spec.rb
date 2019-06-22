@@ -10,7 +10,7 @@ describe ApplicationController do
       current_budget  = create(:budget, phase: "accepting", created_at: 1.month.ago)
       next_budget     = create(:budget, phase: "drafting",  created_at: 1.week.ago)
 
-      budget = subject.instance_eval{ current_budget }
+      budget = subject.instance_eval { current_budget }
       expect(budget).to eq(current_budget)
     end
 

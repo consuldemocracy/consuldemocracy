@@ -173,7 +173,7 @@ describe "Commenting topics from proposals" do
     community = proposal.community
     topic = create(:topic, community: community)
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: topic)}
+    (per_page + 2).times { create(:comment, commentable: topic) }
 
     visit community_topic_path(community, topic)
 
@@ -726,7 +726,7 @@ describe "Commenting topics from budget investments" do
     community = investment.community
     topic = create(:topic, community: community)
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: topic)}
+    (per_page + 2).times { create(:comment, commentable: topic) }
 
     visit community_topic_path(community, topic)
 

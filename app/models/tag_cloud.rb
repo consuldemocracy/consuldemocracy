@@ -20,7 +20,7 @@ class TagCloud
   end
 
   def geozone_names
-    Geozone.all.map {|geozone| geozone.name.downcase }
+    Geozone.all.map { |geozone| geozone.name.downcase }
   end
 
   def resource_model_scoped

@@ -8,7 +8,7 @@
     <%= render "layouts/meta_tags" %>
     <title><%= content_for?(:title) ? yield(:title) : setting["org_name"] %></title>
     <%= content_for :canonical %>
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag "application" %>
     <!--[if lt IE 9]>
       <%= stylesheet_link_tag "ie" %>
     <![endif]-->

@@ -64,7 +64,7 @@ class RemoteCensusApi
     end
 
     def parse_path(path_value)
-      path_value.split(".").map{ |section| section.to_sym } if path_value.present?
+      path_value.split(".").map { |section| section.to_sym } if path_value.present?
     end
   end
 
@@ -105,7 +105,7 @@ class RemoteCensusApi
     end
 
     def parse_path(path_value)
-      path_value.split(".").map{ |section| section.to_sym } if path_value.present?
+      path_value.split(".").map { |section| section.to_sym } if path_value.present?
     end
 
     def update_value(structure, path, value)
@@ -153,7 +153,7 @@ class RemoteCensusApi
     end
 
     def stubbed_invalid_response
-      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}
+      { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}}}
     end
 
 end

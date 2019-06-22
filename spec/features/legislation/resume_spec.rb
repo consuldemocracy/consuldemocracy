@@ -180,13 +180,13 @@ describe "Legislation" do
                                status: "published")
       annotation0 = create(:legislation_annotation,
                            draft_version: draft_version_1, text: "my annotation123",
-                           ranges: [{"start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10}])
+                           ranges: [{ "start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10 }])
       annotation1 = create(:legislation_annotation,
                            draft_version: draft_version_2, text: "hola",
-                           ranges: [{"start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10}])
+                           ranges: [{ "start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10 }])
       annotation2 = create(:legislation_annotation,
                            draft_version: draft_version_2,
-                           ranges: [{"start" => "/p[1]", "startOffset" => 12, "end" => "/p[1]", "endOffset" => 19}])
+                           ranges: [{ "start" => "/p[1]", "startOffset" => 12, "end" => "/p[1]", "endOffset" => 19 }])
       create(:text_comment, user: user, commentable_id: annotation0.id, body: "Comment 0")
       create(:text_comment, user: user, commentable_id: annotation1.id, body: "Comment 1")
       create(:text_comment, user: user, commentable_id: annotation2.id, body: "Comment 2")
@@ -238,7 +238,7 @@ describe "Legislation" do
     end
 
     it "download execl file test" do
-      get :resume, params: {id: @process, format: :xlsx}
+      get :resume, params: { id: @process, format: :xlsx }
       expect(response).to be_success
     end
   end

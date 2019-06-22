@@ -20,7 +20,7 @@ describe "Admin collaborative legislation" do
 
     scenario "Disabled with a feature flag" do
       Setting["process.legislation"] = nil
-      expect{ visit admin_legislation_processes_path }
+      expect { visit admin_legislation_processes_path }
       .to raise_exception(FeatureFlags::FeatureDisabled)
     end
 

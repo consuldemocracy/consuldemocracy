@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Admin change log" do
-  let(:budget) {create(:budget)}
+  let(:budget) { create(:budget) }
   let(:administrator) do
     create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
   end

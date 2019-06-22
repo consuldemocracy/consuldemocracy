@@ -7,7 +7,7 @@ class SignatureSheet < ApplicationRecord
   has_many :signatures
 
   validates :author, presence: true
-  validates :signable_type, inclusion: {in: VALID_SIGNABLES}
+  validates :signable_type, inclusion: { in: VALID_SIGNABLES }
   validates :required_fields_to_verify, presence: true
   validates :signable, presence: true
   validate  :signable_found
@@ -35,7 +35,7 @@ class SignatureSheet < ApplicationRecord
   end
 
   def parsed_required_fields_to_verify_groups
-    required_fields_to_verify.split(/[;]/).collect {|d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/)}
+    required_fields_to_verify.split(/[;]/).collect { |d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/) }
   end
 
   def signable_found

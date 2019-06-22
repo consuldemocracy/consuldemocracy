@@ -45,7 +45,7 @@ describe ManagerAuthenticator do
 
   describe "SOAP" do
     it "calls the verification user method" do
-      message = { ub: {user_key: "31415926", date: "20151031135905"} }
+      message = { ub: { user_key: "31415926", date: "20151031135905" }}
       allow(authenticator).to receive(:application_authorized?).and_return(true)
       allow(authenticator.send(:client)).to receive(:call).with(:get_status_user_data, message: message)
       authenticator.auth
@@ -53,7 +53,7 @@ describe ManagerAuthenticator do
 
     it "calls the permissions check method" do
       allow(authenticator).to receive(:manager_exists?).and_return(true)
-      allow(authenticator.send(:client)).to receive(:call).with(:get_applications_user_list, message: { ub: {user_key: "31415926"} })
+      allow(authenticator.send(:client)).to receive(:call).with(:get_applications_user_list, message: { ub: { user_key: "31415926" }})
       authenticator.auth
     end
   end

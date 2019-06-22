@@ -1,5 +1,7 @@
 ---
 linters:
+  ExtraNewline:
+    enabled: true
   FinalNewline:
     enabled: true
   SelfClosingTag:
@@ -16,5 +18,27 @@ linters:
     enabled: true
     only:
       - Layout/EndOfLine
+      - Layout/SpaceAfterColon
+      - Layout/SpaceAfterComma
+      - Layout/SpaceAfterMethodName
+      - Layout/SpaceAfterNot
+      - Layout/SpaceAfterSemicolon
+      - Layout/SpaceAroundBlockParameters
+      - Layout/SpaceAroundOperators
+      - Layout/SpaceBeforeBlockBraces
+      - Layout/SpaceBeforeComma
+      - Layout/SpaceBeforeComment
+      - Layout/SpaceBeforeFirstArg
+      - Layout/SpaceBeforeSemicolon
+      - Layout/SpaceInsideArrayLiteralBrackets
+      - Layout/SpaceInsideArrayPercentLiteral
+      - Layout/SpaceInsideBlockBraces
+      - Layout/SpaceInsideHashLiteralBraces
+      - Layout/SpaceInsideParens
+      - Layout/SpaceInsidePercentLiteralDelimiters
+      - Layout/SpaceInsideRangeLiteral
+      - Layout/SpaceInsideReferenceBrackets
+      - Layout/SpaceInsideStringInterpolation
+      - Layout/Tab
       - Lint/LiteralAsCondition
       - Style/PercentLiteralDelimiters

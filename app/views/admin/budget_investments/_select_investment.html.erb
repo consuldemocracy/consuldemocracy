@@ -47,7 +47,7 @@
 </td>
 
 <td class="small text-center" data-field="valuation_finished">
-  <%= investment.valuation_finished? ? t("shared.yes"): t("shared.no") %>
+  <%= investment.valuation_finished? ? t("shared.yes") : t("shared.no") %>
 </td>
 
 <td class="small text-center" data-field="visible_to_valuators">
@@ -94,6 +94,6 @@
 
 <% if params[:advanced_filters]&.include?("selected") %>
   <td class="small text-center" data-field="incompatible">
-    <%= investment.incompatible? ? t("shared.yes"): t("shared.no") %>
+    <%= investment.incompatible? ? t("shared.yes") : t("shared.no") %>
   </td>
 <% end %>

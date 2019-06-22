@@ -1,6 +1,6 @@
 <%= render "shared/globalize_locales", resource: @draft_version %>
 
-<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: { data: { watch_changes: true }} do |f| %>
 
   <% if @draft_version.errors.any? %>
     <div id="error_explanation" data-alert class="callout alert" data-closable>
@@ -38,7 +38,7 @@
           <div class="markdown-editor-header truncate">
             <%= t("admin.legislation.draft_versions.form.title_html",
                    draft_version_title: @draft_version.title,
-                   process_title: @process.title ) %>
+                   process_title: @process.title) %>
           </div>
 
           <div class="markdown-editor-buttons">

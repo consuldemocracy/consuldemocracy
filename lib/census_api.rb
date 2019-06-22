@@ -116,7 +116,7 @@ class CensusApi
     end
 
     def stubbed_invalid_response
-      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}
+      { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}}}
     end
 
 end

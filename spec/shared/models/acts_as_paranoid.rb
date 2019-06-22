@@ -22,14 +22,14 @@ shared_examples "acts as paranoid" do |factory_name|
     end
 
     it "should be destroyed after parent resource really_destroy" do
-      expect{ resource.really_destroy! }.to change { resource.translations.with_deleted.count }.from(1).to(0)
+      expect { resource.really_destroy! }.to change { resource.translations.with_deleted.count }.from(1).to(0)
     end
 
     it "cannot be recovered through non recursive restore" do
       resource.destroy
       resource.reload
 
-      expect{ resource.restore }.not_to change { resource.translations.with_deleted.first.hidden_at }
+      expect { resource.restore }.not_to change { resource.translations.with_deleted.first.hidden_at }
     end
 
     it "can be recovered through recursive restore after non-recursive restore" do
@@ -38,7 +38,7 @@ shared_examples "acts as paranoid" do |factory_name|
       resource.destroy
       resource.reload
 
-      expect{ resource.restore(recursive: true) }.to change { resource.translations.with_deleted.first.hidden_at }
+      expect { resource.restore(recursive: true) }.to change { resource.translations.with_deleted.first.hidden_at }
     end
 
     it "can be recovered after soft deletion through recursive restore" do

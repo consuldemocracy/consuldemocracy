@@ -20,7 +20,7 @@
         <strong><%= t("dashboard.menu.recommended_actions") %></strong>
       <% end %>
       <% if new_resources_since_last_login?(proposed_actions, @new_actions_since_last_login) %>
-        <span class="label"><%= t("dashboard.progress.new_action" ) %></span>
+        <span class="label"><%= t("dashboard.progress.new_action") %></span>
       <% end %>
     </li>
   <% end %>
@@ -30,7 +30,7 @@
       <span class="icon-zip"></span>
       <strong><%= t("dashboard.menu.resources") %></strong>
       <% if new_resources_since_last_login?(resources, @new_actions_since_last_login) %>
-        <span class="label"><%= t("dashboard.progress.new_action" ) %></span>
+        <span class="label"><%= t("dashboard.progress.new_action") %></span>
       <% end %>
       <ul class="no-bullet resources">
         <% if can?(:manage_polls, proposal) %>

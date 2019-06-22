@@ -14,7 +14,7 @@ describe "Admin hidden budget investments" do
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
 
-    expect{ visit admin_hidden_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_hidden_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "List shows all relevant info" do

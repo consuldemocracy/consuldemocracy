@@ -152,7 +152,7 @@ LOREM_IPSUM
     author factory: :user
     quote { "ipsum" }
     text { "a comment" }
-    ranges { [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}] }
+    ranges { [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11 }] }
     range_start { "/p[1]" }
     range_start_offset { 6 }
     range_end { "/p[1]" }

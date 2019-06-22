@@ -190,7 +190,7 @@ describe "Commenting legislation questions" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: legislation_annotation)}
+    (per_page + 2).times { create(:comment, commentable: legislation_annotation) }
 
     visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
                                                             legislation_annotation.draft_version,
@@ -623,11 +623,11 @@ describe "Commenting legislation questions" do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
-                                      ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5}])
+                                      ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5 }])
     end
     let!(:annotation2) do
       create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
-                                      ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10}])
+                                      ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
     end
 
     before do

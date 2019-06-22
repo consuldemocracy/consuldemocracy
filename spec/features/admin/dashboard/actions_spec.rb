@@ -11,7 +11,7 @@ describe "Admin dashboard actions" do
                   "administrator",
                   "dashboard_action",
                   "new_admin_dashboard_action_path",
-                  { },
+                  {},
                   "documentable_fill_new_valid_dashboard_action",
                   "Save",
                   "Action created successfully"
