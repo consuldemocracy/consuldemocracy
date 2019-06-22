@@ -25,7 +25,7 @@ module ModerateActions
       @resources.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
 
     elsif params[:block_authors].present?
-      author_ids = @resources.pluck(author_id).uniq
+      author_ids = @resources.pluck(author_id)
       User.where(id: author_ids).accessible_by(current_ability, :block).each { |user| block_user user }
     end
 

@@ -93,9 +93,6 @@ Rails/SaveBang:
 Rails/SkipsModelValidations:
   Enabled: true
 
-Rails/UniqBeforePluck:
-  Enabled: true
-
 RSpec/AlignLeftLetBrace:
   Enabled: false
 
