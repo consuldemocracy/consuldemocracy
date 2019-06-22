@@ -30,12 +30,9 @@ class VotationType < ApplicationRecord
 
   validates :questionable, presence: true
   validates :questionable_type, inclusion: { in: QUESTIONABLE_TYPES }
-  validates_presence_of :max_votes, allow_blank: false,
-                        if: :max_votes_required?
-  validates_presence_of :max_groups_answers, allow_blank: false,
-                        if: :max_groups_answers_required?
-  validates_presence_of :prioritization_type, allow_blank: false,
-                        if: :prioritization_type_required?
+  validates :max_votes, presence: { allow_blank: false, if: :max_votes_required? }
+  validates :max_groups_answers, presence: { allow_blank: false, if: :max_groups_answers_required? }
+  validates :prioritization_type, presence: { allow_blank: false, if: :prioritization_type_required? }
 
   after_create :add_skip_question_answer, if: :display_skip_question?
 

@@ -157,6 +157,9 @@ Rails/UnknownEnv:
     - preproduction
     - staging
 
+Rails/Validation:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 

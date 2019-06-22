@@ -165,9 +165,6 @@ Rails/SkipsModelValidations:
 Rails/UniqBeforePluck:
   Enabled: true
 
-Rails/Validation:
-  Enabled: true
-
 RSpec/AlignLeftLetBrace:
   Enabled: false
 

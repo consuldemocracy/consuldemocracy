@@ -3,11 +3,9 @@ class Newsletter < ApplicationRecord
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true
-  validates :from, presence: true
+  validates :from, presence: true, format: { with: /@/ }
   validates :body, presence: true
   validate :validate_segment_recipient
-
-  validates_format_of :from, :with => /@/
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
