@@ -37,7 +37,7 @@ class Polls::QuestionsController < ApplicationController
   private
 
     def load_for_answers
-      @page = params[:page].present? ? params[:page] : 1
+      @page = params[:page].presence || 1
       question_answers
       @answers_by_question_id = { @question.id => @question.answers
                                                    .by_author(current_user)
