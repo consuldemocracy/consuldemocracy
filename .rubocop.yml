@@ -18,22 +18,7 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Rails/ActiveSupportAliases:
-  Enabled: true
-
-Rails/Blank:
-  Enabled: true
-
 Rails/CreateTableWithTimestamps:
-  Enabled: true
-
-Rails/Delegate:
-  Enabled: true
-
-Rails/DelegateAllowBlank:
-  Enabled: true
-
-Rails/DynamicFindBy:
   Enabled: true
 
 Rails/EnumUniqueness:
@@ -43,9 +28,6 @@ Rails/EnvironmentComparison:
   Enabled: true
 
 Rails/Exit:
-  Enabled: true
-
-Rails/FilePath:
   Enabled: true
 
 Rails/FindBy:
@@ -63,25 +45,10 @@ Rails/HasManyOrHasOneDependent:
 Rails/InverseOf:
   Enabled: true
 
-Rails/LexicallyScopedActionFilter:
-  Enabled: true
-
 Rails/NotNullColumn:
   Enabled: true
 
-Rails/Output:
-  Enabled: true
-
 Rails/OutputSafety:
-  Enabled: true
-
-Rails/Present:
-  Enabled: true
-
-Rails/ReadWriteAttribute:
-  Enabled: true
-
-Rails/RedundantReceiverInWithOptions:
   Enabled: true
 
 Rails/ReversibleMigration:
@@ -182,12 +149,6 @@ RSpec/NamedSubject:
 RSpec/NestedGroups:
   Enabled: true
   Max: 4
-
-RSpec/PredicateMatcher:
-  Enabled: true
-
-Rails/HttpStatus:
-  Enabled: true
 
 RSpec/RepeatedDescription:
   Enabled: true
