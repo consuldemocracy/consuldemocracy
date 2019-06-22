@@ -14,14 +14,14 @@ shared_examples "acts as paranoid" do |factory_name|
 
   describe "#{described_class} translations" do
 
-    it "should be hidden after parent resource destroy" do
+    it "is hidden after parent resource destroy" do
       resource.destroy
       resource.reload
 
       expect(resource.translations.with_deleted.first.hidden_at).not_to be_blank
     end
 
-    it "should be destroyed after parent resource really_destroy" do
+    it "is destroyed after parent resource really_destroy" do
       expect { resource.really_destroy! }.to change { resource.translations.with_deleted.count }.from(1).to(0)
     end
 

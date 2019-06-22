@@ -160,6 +160,9 @@ Rails/UnknownEnv:
 Rails/Validation:
   Enabled: true
 
+RSpec/ExampleWording:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 
