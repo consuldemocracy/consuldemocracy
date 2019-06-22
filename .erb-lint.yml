@@ -6,6 +6,8 @@ linters:
     enabled: false
   SpaceAroundErbTag:
     enabled: true
+  SpaceIndentation:
+    enabled: true
   SpaceInHtmlTag:
     enabled: true
   TrailingWhitespace:
