@@ -205,7 +205,7 @@
         </li>
 
         <li <%= "class=is-active" if controller_name == "moderators" %>>
-          <%= link_to t("admin.menu.moderators"), admin_moderators_path%>
+          <%= link_to t("admin.menu.moderators"), admin_moderators_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "valuators" %>>
@@ -281,7 +281,7 @@
         <span class="icon-settings"></span>
         <strong><%= t("admin.menu.title_settings") %></strong>
       </a>
-      <ul <%="class=is-active" if menu_settings? %>>
+      <ul <%= "class=is-active" if menu_settings? %>>
         <li <%= "class=is-active" if controller_name == "settings" %>>
           <%= link_to t("admin.menu.settings"), admin_settings_path %>
         </li>
@@ -300,7 +300,7 @@
         </li>
 
         <li <%= "class=is-active" if controller_name == "content_blocks" %>>
-          <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
+          <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path %>
         </li>
 
         <li <%= "class=is-active" if submenu_local_census_records? %>>

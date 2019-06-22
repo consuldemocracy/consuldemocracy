@@ -29,7 +29,7 @@
         <% @comment_tree.root_comments.each do |comment| %>
           <%= render "comments/comment", { comment: comment,
                                            valuation: valuation,
-                                           allow_comments: allow_comments }  %>
+                                           allow_comments: allow_comments } %>
         <% end %>
         <%= paginate @comment_tree.root_comments %>
       </div>

@@ -1,4 +1,4 @@
-<% description = local_assigns[:social_description] || setting["meta_description"]%>
+<% description = local_assigns[:social_description] || setting["meta_description"] %>
 <% description = truncate(ActionView::Base.full_sanitizer.sanitize(description), length: 140) %>
 <!-- Twitter -->
 <meta name="twitter:card" content="summary"/>

@@ -8,7 +8,7 @@
                 class: "button hollow float-right clear" %>
   <% else %>
     <span class="button hollow disabled float-right clear">
-      <%= t("admin.budgets.winners.calculate")%>
+      <%= t("admin.budgets.winners.calculate") %>
     </span>
     <div class="callout warning clear">
       <%= t("admin.budget_investments.index.cannot_calculate_winners") %>
@@ -27,7 +27,7 @@
   <table class="table-for-mobile column-selecteable">
     <thead>
       <tr>
-        <th><%= link_to_investments_sorted_by :id  %></th>
+        <th><%= link_to_investments_sorted_by :id %></th>
         <th data-field="title"><%= link_to_investments_sorted_by :title %></th>
         <th data-field="supports"><%= link_to_investments_sorted_by :supports %></th>
         <th data-field="admin"><%= t("admin.budget_investments.index.list.admin") %></th>
