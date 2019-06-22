@@ -90,9 +90,6 @@ Rails/ReversibleMigration:
 Rails/SaveBang:
   Enabled: true
 
-Rails/ScopeArgs:
-  Enabled: true
-
 Rails/SkipsModelValidations:
   Enabled: true
 
