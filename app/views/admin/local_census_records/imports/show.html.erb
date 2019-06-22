@@ -8,12 +8,12 @@
 
 <h3><%= t("admin.local_census_records.imports.show.subtitle") %></h3>
 
-<%= render partial: "local_census_records", locals: {
+<%= render "local_census_records",
   title: t("admin.local_census_records.imports.show.errored"),
   id: "invalid-local-census-records",
-  local_census_records: @import.invalid_records } %>
+  local_census_records: @import.invalid_records %>
 
-<%= render partial: "local_census_records", locals: {
+<%= render "local_census_records",
   title: t("admin.local_census_records.imports.show.created"),
   id: "created-local-census-records",
-  local_census_records: @import.created_records } %>
+  local_census_records: @import.created_records %>

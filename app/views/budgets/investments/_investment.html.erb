@@ -60,11 +60,11 @@
           <div id="<%= dom_id(investment) %>_votes"
                class="small-12 medium-3 column text-center"
                <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
-               <%= render partial: "/budgets/investments/votes", locals: {
+               <%= render "/budgets/investments/votes",
                  investment: investment,
                  investment_votes: investment_votes,
                  vote_url: namespaced_budget_investment_vote_path(investment, value: "yes")
-               } %>
+               %>
           </div>
         <% elsif investment.should_show_vote_count? %>
           <div id="<%= dom_id(investment) %>_votes"
@@ -81,11 +81,11 @@
           <div id="<%= dom_id(investment) %>_ballot"
                 class="small-12 medium-3 column text-center"
                 <%= "data-equalizer-watch" if feature?(:allow_images) && investment.image.present? %>>
-                <%= render partial: "/budgets/investments/ballot", locals: {
+                <%= render "/budgets/investments/ballot",
                   investment: investment,
                   investment_ids: investment_ids,
                   ballot: ballot
-                } %>
+                %>
           </div>
         <% elsif investment.should_show_price? %>
           <div id="<%= dom_id(investment) %>_price"
