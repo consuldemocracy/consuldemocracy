@@ -148,6 +148,15 @@ Rails/SafeNavigation:
 Rails/TimeZone:
   Enabled: true
 
+Rails/UnknownEnv:
+  Enabled: true
+  Environments:
+    - development
+    - test
+    - production
+    - preproduction
+    - staging
+
 RSpec/NotToNot:
   Enabled: true
 
