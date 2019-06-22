@@ -3,15 +3,6 @@ inherit_from: .rubocop_basic.yml
 Bundler/InsecureProtocolSource:
   Enabled: true
 
-Gemspec/DuplicatedAssignment:
-  Enabled: true
-
-Gemspec/OrderedDependencies:
-  Enabled: true
-
-Gemspec/RequiredRubyVersion:
-  Enabled: true
-
 Performance/CompareWithBlock:
   Enabled: true
 
