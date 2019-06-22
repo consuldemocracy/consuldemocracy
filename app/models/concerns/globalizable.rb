@@ -10,7 +10,7 @@ module Globalizable
     after_validation :copy_error_to_current_translation, on: :update
 
     def description
-      self.read_attribute(:description).try :html_safe
+      self.read_attribute(:description)&.html_safe
     end
 
     def locales_not_marked_for_destruction

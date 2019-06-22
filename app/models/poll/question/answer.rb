@@ -20,7 +20,7 @@ class Poll::Question::Answer < ApplicationRecord
   scope :visibles, -> { where(hidden: false) }
 
   def description
-    self[:description].try :html_safe
+    self[:description]&.html_safe
   end
 
   def self.order_answers(ordered_array)

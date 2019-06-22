@@ -29,11 +29,11 @@ class SiteCustomization::Image < ApplicationRecord
   end
 
   def required_width
-    VALID_IMAGES[name].try(:first)
+    VALID_IMAGES[name]&.first
   end
 
   def required_height
-    VALID_IMAGES[name].try(:second)
+    VALID_IMAGES[name]&.second
   end
 
   private

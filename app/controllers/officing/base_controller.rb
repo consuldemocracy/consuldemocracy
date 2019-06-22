@@ -10,7 +10,7 @@ class Officing::BaseController < ApplicationController
   private
 
     def verify_officer
-      raise CanCan::AccessDenied unless current_user.try(:poll_officer?)
+      raise CanCan::AccessDenied unless current_user&.poll_officer?
     end
 
     def check_officer_assignment

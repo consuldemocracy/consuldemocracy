@@ -8,7 +8,7 @@ class Verification::Email
 
   def initialize(verified_user)
     @verified_user = verified_user
-    @recipient = @verified_user.try(:email)
+    @recipient = @verified_user&.email
   end
 
   def save

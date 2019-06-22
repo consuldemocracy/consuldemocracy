@@ -135,7 +135,7 @@ class Proposal < ApplicationRecord
     {
       author.username       => "B",
       tag_list.join(" ")    => "B",
-      geozone.try(:name)    => "B"
+      geozone&.name         => "B"
     }.merge!(searchable_globalized_values)
   end
 

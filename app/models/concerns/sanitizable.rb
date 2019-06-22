@@ -7,7 +7,7 @@ module Sanitizable
 
     unless included_modules.include? Globalizable
       def description
-        super.try :html_safe
+        super&.html_safe
       end
     end
   end

@@ -153,9 +153,6 @@ Rails/RedundantReceiverInWithOptions:
 Rails/ReversibleMigration:
   Enabled: true
 
-Rails/SafeNavigation:
-  Enabled: true
-
 Rails/SaveBang:
   Enabled: true
 

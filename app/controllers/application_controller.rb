@@ -110,9 +110,9 @@ class ApplicationController < ActionController::Base
     end
 
     def set_default_budget_filter
-      if @budget.try(:balloting?) || @budget.try(:publishing_prices?)
+      if @budget&.balloting? || @budget&.publishing_prices?
         params[:filter] ||= "selected"
-      elsif @budget.try(:finished?)
+      elsif @budget&.finished?
         params[:filter] ||= "winners"
       end
     end

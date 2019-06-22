@@ -79,7 +79,7 @@ class Budget < ApplicationRecord
     if phases.exists? && phases.send(phase).description.present?
       phases.send(phase).description
     else
-      send("description_#{phase}").try(:html_safe)
+      send("description_#{phase}")&.html_safe
     end
   end
 

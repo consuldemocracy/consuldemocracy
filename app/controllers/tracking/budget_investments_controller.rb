@@ -47,8 +47,7 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_tracker(current_user.tracker.try(:id))
-                                       .distinct
+      investments = @budget.investments.by_tracker(current_user.tracker&.id).distinct
       investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id).uniq)
                                            .order(name: :asc)
       all_headings_filter = [

@@ -54,7 +54,7 @@ module Users
   end
 
   def confirm_email
-    body = ActionMailer::Base.deliveries.last.try(:body)
+    body = ActionMailer::Base.deliveries.last&.body
     expect(body).to be_present
 
     sent_token = /.*confirmation_token=(.*)".*/.match(body.to_s)[1]

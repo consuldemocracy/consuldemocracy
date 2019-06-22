@@ -319,7 +319,7 @@ class Budget
     end
 
     def set_responsible_name
-      self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
+      self.responsible_name = author&.document_number if author&.document_number.present?
     end
 
     def should_show_aside?
@@ -400,8 +400,8 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id = heading.try(:group_id) if heading_id_changed?
-        self.budget_id ||= heading.try(:group).try(:budget_id)
+        self.group_id = heading&.group_id if heading_id_changed?
+        self.budget_id ||= heading&.group&.budget_id
       end
 
       def change_log
