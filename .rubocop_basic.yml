@@ -163,6 +163,9 @@ Rails/Validation:
 RSpec/ExampleWording:
   Enabled: true
 
+RSpec/LetSetup:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 

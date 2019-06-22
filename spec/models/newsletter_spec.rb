@@ -66,12 +66,12 @@ describe Newsletter do
 
   describe "#deliver" do
     let!(:proposals) { Array.new(3) { create(:proposal) } }
-    let!(:debate) { create(:debate) }
 
     let!(:recipients) { proposals.map(&:author).map(&:email) }
     let!(:newsletter) { create(:newsletter, segment_recipient: "proposal_authors") }
 
     before do
+      create(:debate)
       reset_mailer
       Delayed::Worker.delay_jobs = true
     end
