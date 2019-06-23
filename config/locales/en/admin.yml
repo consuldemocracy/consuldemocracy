@@ -224,6 +224,7 @@ en:
         download_current_selection: "Download current selection"
         no_budget_investments: "There are no investment projects."
         title: Investment projects
+        columns: Columns
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
@@ -1291,7 +1292,8 @@ en:
       flash:
         updated: Value updated
       index:
-        title: Configuration settings
+        title: Settings
+        general: Configuration settings
         update_setting: Update
         participation_processes: "Participation processes"
         images_and_documents: "Images and documents"

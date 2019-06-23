@@ -1,5 +1,6 @@
 es:
   mailers:
+    title: "Gobierno abierto"
     no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
     comment:
       hi: Hola
