@@ -1,8 +1,5 @@
 inherit_from: .rubocop_basic.yml
 
-Bundler/InsecureProtocolSource:
-  Enabled: true
-
 Performance/CompareWithBlock:
   Enabled: true
 
