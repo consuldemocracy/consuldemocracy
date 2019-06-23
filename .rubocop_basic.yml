@@ -11,6 +11,12 @@ AllCops:
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
 
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
 Capybara/CurrentPathExpectation:
   Enabled: true
 

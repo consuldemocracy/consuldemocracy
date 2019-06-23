@@ -1,12 +1,6 @@
 inherit_from: .rubocop_basic.yml
 
-Bundler/DuplicatedGem:
-  Enabled: true
-
 Bundler/InsecureProtocolSource:
-  Enabled: true
-
-Bundler/OrderedGems:
   Enabled: true
 
 Gemspec/DuplicatedAssignment:
