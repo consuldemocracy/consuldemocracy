@@ -699,6 +699,7 @@ es:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
+      your_answer: "Puedes añadir tu propia respuesta"
       add_answer: "Añadir respuesta"
     description:
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
