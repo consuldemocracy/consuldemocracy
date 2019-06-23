@@ -183,9 +183,6 @@ RSpec/BeEql:
 RSpec/BeforeAfterAll:
   Enabled: true
 
-Capybara/CurrentPathExpectation:
-  Enabled: true
-
 Capybara/FeatureMethods:
   Enabled: false
 
