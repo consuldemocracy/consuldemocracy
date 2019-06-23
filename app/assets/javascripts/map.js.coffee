@@ -42,7 +42,6 @@ App.Map =
       if editable
         marker.on "dragend", updateFormfields
       markers.addLayer(marker)
-      map.addLayer(markers)
       return marker
 
     removeMarker = (e) ->
@@ -90,6 +89,8 @@ App.Map =
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
     L.tileLayer(mapTilesProvider, attribution: mapAttribution).addTo map
+
+    map.addLayer(markers)
 
     if markerLatitude && markerLongitude && !addMarkerInvestments
       marker  = createMarker(markerLatitude, markerLongitude)
