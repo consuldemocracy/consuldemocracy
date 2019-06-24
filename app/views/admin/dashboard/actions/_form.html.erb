@@ -34,7 +34,9 @@
       <%= f.text_field :short_description, label: false %>
     </div>
 
-    <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
+    <div class="ckeditor">
+      <%= f.cktext_area :description, ckeditor: { language: I18n.locale } %>
+    </div>
   </div>
 </div>
 
