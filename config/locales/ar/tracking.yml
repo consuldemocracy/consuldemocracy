@@ -1,5 +1,11 @@
 ar:
   tracking:
+    menu:
+      budgets: الميزانية التشاركية
+    budgets:
+      index:
+        title: الميزانية التشاركية
+        table_name: الإسم
     budget_investments:
       index:
         table_title: العنوان
