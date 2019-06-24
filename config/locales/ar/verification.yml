@@ -41,6 +41,7 @@ ar:
           success: تم التحقق من الإقامة
       new:
         accept_terms_text: أقبل %{terms_url} للتّعداد
+        accept_terms_text_title: أوافق على أحكام وشروط النّفوذ إلى التعداد
         date_of_birth: تاريخ الميلاد
         document_number: رقم الوثيقة
         document_number_help_title: المساعدة
@@ -51,8 +52,10 @@ ar:
         document_type_label: نوع الوثيقة
         error_not_allowed_age: ليس لديك العمر المطلوب للمشاركة
         error_not_allowed_postal_code: يجب أن تكون مسجلا ليتم التحقق منك.
+        form_errors: منعَ التحقق من إقامتك
         postal_code: الرمز البريدي
         postal_code_note: لتتمكن من تاكيد حسابك يرجى التسجيل
+        terms: أحكام وشروط النّفوذ
         title: التحقق من مكان الإقامة
         verify_residence: التحقق من مكان الإقامة
     sms:
