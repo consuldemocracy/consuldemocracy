@@ -13,11 +13,17 @@
 }
 
 header {
-  background: white !important;
-
-  .top-links > .row {
-    display: none;
+  > .top-links {
+    background: white !important;
+    .row {
+      color: black;
+      a {
+        color: black;
+      }
+    }
   }
+
+  background: white !important;
 
   .row > .top-bar {
     span {
