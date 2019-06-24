@@ -3,6 +3,13 @@ ar:
     annotations:
       comments:
         see_all: اظهار الكل
+        comments_count:
+          zero: "%{count} تعليق"
+          one: "تعليق %{count}"
+          two: "%{count} تعليق"
+          few: "%{count} تعليق"
+          many: "%{count} تعليق"
+          other: "%{count} تعليق"
         cancel: إلغاء
         publish_comment: نشر التعليق
       form:
@@ -16,6 +23,12 @@ ar:
         comment_about: "تعليق حول:"
         comments_count:
           zero: لا توجد تعليقات
+          zero: "%{count} تعليق"
+          one: "تعليق %{count}"
+          two: "%{count} تعليق"
+          few: "%{count} تعليق"
+          many: "%{count} تعليق"
+          other: "%{count} تعليق"
       show:
         title: التعليق
       version_chooser:
@@ -97,6 +110,12 @@ ar:
           other: "%{count} مناقشات"
         comments:
           zero: لا توجد تعليقات
+          zero: "%{count} تعليق"
+          one: "تعليق %{count}"
+          two: "%{count} تعليق"
+          few: "%{count} تعليق"
+          many: "%{count} تعليق"
+          other: "%{count} تعليق"
         debate: الحوارات
       show:
         answer_question: سلم الاجابة
