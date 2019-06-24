@@ -32,3 +32,39 @@ ar:
         new_milestone: إنشاء معلم جديد
       form:
         admin_statuses: إدارة الحالات
+        no_statuses_defined: لا توجد حالات محددة حتى الآن
+      new:
+        creating: إنشاء معلم
+        date: تاريخ
+        description: الوصف
+      edit:
+        title: تعديل المعلم
+      create:
+        notice: تم إنشاء المعلم الجديد بنجاح!
+      update:
+        notice: تم تحديث المعلم بنجاح
+      delete:
+        notice: تم حذف المعلم بنجاح
+    progress_bars:
+      manage: "إدارة أشرطة التقدم"
+      index:
+        title: "أشرطة التقدم"
+        no_progress_bars: "ليس هناك أية أشرطة تقدم"
+        new_progress_bar: "إنشاء شريط تقدم جديد"
+        primary: "شريط التقدم الرئيسي"
+        table_id: "ID"
+        table_kind: "النوع"
+        table_title: "العنوان"
+        table_percentage: "التقدم الحالي"
+      new:
+        creating: "إنشاء شريط التقدم"
+      edit:
+        title:
+          primary: "تعديل شريط التقدم الرئيسي"
+          secondary: "تعديل شريط التقدم %{title}"
+      create:
+        notice: "تم إنشاء شريط التقدم بنجاح!"
+      update:
+        notice: "تم تحديث شريط التقدم بنجاح"
+      delete:
+        notice: "تم حذف شريط التقدم بنجاح"
