@@ -55,3 +55,6 @@ ar:
           max_length: "الطّول الأقصى لعنوان الصورة"
       documents:
         max_amount: "العدد الأقصى للوثائق"
+        max_amount_description: "العدد الأقصى للوثائق التي يمكن إرفاقها باقتراح ، استثمار ..."
+        max_size: "الحجم الأقصى للوثيقة"
+        max_size_description: "الحجم الأقصى المسموح به للوثيقة المحمّلة (بال Megabytes/MB)"
