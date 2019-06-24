@@ -3,6 +3,8 @@ ar:
     polls:
       final:
         title: الاستطلاعات جاهزة لعملية العد النهائي
+        select_poll: تحديد الاستطلاع
+        add_results: إضافة نتائج
     poll_budgets:
       see_ballot_sheets: رؤية قائمة أوراق الاقتراع
       index:
@@ -16,10 +18,12 @@ ar:
         title: "%{poll_budget} - ورقة اقتراع جديدة"
         booth: مكتب الإقتراع
         select_booth: حدّد مكتب الإقتراع
+        csv_data: بيانات CSV
         submit: حفظ
       show:
         created_at: تاريخ الإنشاء
         author: الكاتب
+        data: بيانات CSV
     booth:
       new:
         title: "اختر مكتب الإقتراع"
