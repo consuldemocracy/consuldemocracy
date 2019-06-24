@@ -1,1 +1,20 @@
 ar:
+  download:
+    edit:
+      debates: "المناقشات"
+      proposals: "المقترحات"
+      legislation_processes: "العملية التشريعية"
+      budget_investments: "الميزانية التشاركية"
+      comments: "التعليقات"
+      submit: "حفظ التغييرات"
+      config:
+        "0": ""
+        "1": "- معالم"
+    fielddescription:
+      debates:
+        id: "رقم الهوية"
+        title: "العنوان"
+        description: "الوصف"
+        author_id: "رقم هوية الكاتب"
+        created_at: "أنشئت في"
+        updated_at: "تم التحديث في"
