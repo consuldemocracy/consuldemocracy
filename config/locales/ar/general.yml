@@ -865,6 +865,14 @@ ar:
       budget_investments: استثمارات الميزانية
       comments: تعليقات
       actions: الإجراءات
+      filters:
+        comments:
+          zero: "%{count} تعليقات"
+          one: تعليق 1
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
       no_activity: لا يوجد اجراءات للمستخدم
       no_private_messages: "لا يمكن ارسال رسالة خاصة لهذا المسنخدم."
       private_activity: قائمة النشاطات الخاصة بهذا المستخدم غير متاحة.
