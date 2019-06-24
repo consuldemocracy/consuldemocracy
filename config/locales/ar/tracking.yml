@@ -1,1 +1,34 @@
 ar:
+  tracking:
+    budget_investments:
+      index:
+        table_title: العنوان
+        table_heading_name: اسم العنوان
+        table_actions: الإجراءات
+        no_investments: "لا توجد مشاريع استثمارية."
+      show:
+        title: مشروع استثماري
+        info: معلومات المشارك
+        by: تم الإرسال بواسطة
+        sent: تم الإرسال في
+        heading: عنوان
+        undefined: "غير معرف"
+        responsibles: المسؤولون
+        assigned_admin: المشرف المكلف
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "العنوان"
+        table_description: "الوصف"
+        table_publication_date: "تاريخ النشر"
+        table_status: الحالة
+        table_actions: "الإجراءات"
+        delete: "حذف معلم"
+        no_milestones: "لا توجد معالم محددة"
+        image: "صورة"
+        show_image: "عرض الصورة"
+        documents: "الوثائق"
+        milestone: معلم
+        new_milestone: إنشاء معلم جديد
+      form:
+        admin_statuses: إدارة الحالات
