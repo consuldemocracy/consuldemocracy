@@ -1609,6 +1609,7 @@ ar:
       remove_language: إزالة اللغة
       add_language: إضافة لغة
     change_log:
+      id: "ID"
       actions: "الإجراءات"
     trackers:
       index:
