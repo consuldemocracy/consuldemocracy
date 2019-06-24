@@ -13,7 +13,7 @@ class SignatureSheet < ApplicationRecord
   validate  :signable_found
 
   def name
-    "#{signable_name} #{signable_id}"
+    title ? "#{signable_name} #{signable_id}: #{title}" : "#{signable_name} #{signable_id}"
   end
 
   def signable_name

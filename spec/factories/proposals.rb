@@ -100,6 +100,11 @@ FactoryBot.define do
     association :signable, factory: :proposal
     association :author, factory: :user
     document_numbers "123A, 456B, 789C"
+
+    trait :with_title do
+      title { Faker::Lorem.sentence }
+    end
+
   end
 
   factory :signature do
