@@ -290,6 +290,8 @@ ar:
         description_finished: "الوصف عند الإنتهاء من الميزانية"
         phase: "المرحلة"
         currency_symbol: "العملة"
+        budget_milestone_tags: "علامات المعلم"
+        budget_valuation_tags: "علامات التقييم"
         help_link: "رابط المساعدة"
       budget/investment:
         heading_id: "عنوان"
@@ -305,6 +307,7 @@ ar:
         name: الإسم
         external_code: "الرّمز الخارجي (اختياري)"
         census_code: "رمز مكتب التعداد (اختياري)"
+        html_map_coordinates: "HTML <map> الإحداثيات (اختياري)"
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "عنوان"
@@ -372,6 +375,7 @@ ar:
       poll/question/translation:
         title: "سؤال"
       poll/ballot_sheet:
+        data: بيانات CSV
         poll_id: استطلاع
         officer_assignment_id: مهمة الضابط
       signature_sheet:
@@ -505,6 +509,8 @@ ar:
       valuator:
         description: الوصف
         valuator_group_id: مجموعة تقييم
+        can_comment: يمكنك إنشاء تعليقات
+        can_edit_dossier: يمكنك تعديل الملفات
     errors:
       models:
         user:
