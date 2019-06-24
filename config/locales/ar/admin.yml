@@ -108,8 +108,20 @@ ar:
         blank_dates: التواريخ فارغة
         administrators:
           zero: "حدّد المدراء"
+          zero: "%{count} مشرفين محدّدين"
+          one: "مشرف 1 محدّد"
+          two: "%{count} مشرفين محدّدين"
+          few: "%{count} مشرفين محدّدين"
+          many: "%{count} مشرفين محدّدين"
+          other: "%{count} مشرفين محدّدين"
         valuators:
           zero: "حدّد المقيمين"
+          zero: "%{count} مقيّمين محدّدين"
+          one: "مقيّم 1 محدّد"
+          two: "%{count} مقيّمين محدّدين"
+          few: "%{count} مقيّمين محدّدين"
+          many: "%{count} مقيّمين محدّدين"
+          other: "%{count} مقيّمين محدّدين"
         empty_administrators: "لا يوجد مدراء"
         empty_valuators: "لا يوجد مقيمون"
         name: "الإسم"
@@ -398,6 +410,7 @@ ar:
             pending: معلق
             done: تم حلّه
         edit:
+          back: العودة إلى قائمة المهام المعلقة
           solving: حل المهمة المعلقة
         form:
           solve: وضع علامة تم حلها
