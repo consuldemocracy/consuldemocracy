@@ -46,11 +46,11 @@ ar:
       edit:
         title: تعديل المعلم
       create:
-        notice: تم إنشاء المعلم الجديد بنجاح!
+        notice: تم إنشاء المَعلم الجديد بنجاح!
       update:
         notice: تم تحديث المعلم بنجاح
       delete:
-        notice: تم حذف المعلم بنجاح
+        notice: تم حذف المَعلم بنجاح
     progress_bars:
       manage: "إدارة أشرطة التقدم"
       index:
