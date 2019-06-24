@@ -967,6 +967,7 @@ ar:
       cancel_button: إلغاء
     nested_links:
       title: روابط
+      add_new_link: إضافة رابط جديد
     link_fields:
       label_placeholder: عنوان الرابط
   question:
