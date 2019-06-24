@@ -168,13 +168,7 @@ RSpec/AlignRightLetBrace:
 RSpec/AnyInstance:
   Enabled: false
 
-RSpec/AroundBlock:
-  Enabled: true
-
 RSpec/BeEql:
-  Enabled: true
-
-RSpec/BeforeAfterAll:
   Enabled: true
 
 Capybara/FeatureMethods:
@@ -192,12 +186,6 @@ RSpec/DescribeMethod:
 RSpec/DescribeSymbol:
   Enabled: true
 
-RSpec/EmptyExampleGroup:
-  Enabled: true
-
-RSpec/EmptyLineAfterSubject:
-  Enabled: true
-
 RSpec/ExampleLength:
   Enabled: false
 
@@ -211,9 +199,6 @@ RSpec/ExpectOutput:
   Enabled: true
 
 RSpec/FilePath:
-  Enabled: true
-
-RSpec/Focus:
   Enabled: true
 
 RSpec/ImplicitExpect:
@@ -236,9 +221,6 @@ RSpec/IteratedExpectation:
   Enabled: true
 
 RSpec/LeadingSubject:
-  Enabled: true
-
-RSpec/LetBeforeExamples:
   Enabled: true
 
 RSpec/MessageChain:
@@ -267,9 +249,6 @@ RSpec/NestedGroups:
   Enabled: true
   Max: 4
 
-RSpec/OverwritingSetup:
-  Enabled: true
-
 RSpec/PredicateMatcher:
   Enabled: true
 
@@ -282,12 +261,6 @@ RSpec/RepeatedDescription:
 RSpec/ReturnFromStub:
   Enabled: true
 
-RSpec/ScatteredLet:
-  Enabled: true
-
-RSpec/ScatteredSetup:
-  Enabled: true
-
 RSpec/SharedContext:
   Enabled: true
 
@@ -298,9 +271,6 @@ RSpec/SubjectStub:
   Enabled: true
 
 RSpec/VerifiedDoubles:
-  Enabled: true
-
-RSpec/VoidExpect:
   Enabled: true
 
 Security/Eval:

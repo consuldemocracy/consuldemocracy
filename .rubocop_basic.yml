@@ -169,10 +169,32 @@ Rails/UnknownEnv:
 Rails/Validation:
   Enabled: true
 
+RSpec/AroundBlock:
+  Enabled: true
+
+RSpec/BeforeAfterAll:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+  Exclude:
+    - spec/factories/**/*
+
+RSpec/EmptyLineAfterExampleGroup:
+  Enabled: true
+  Exclude:
+    - spec/factories/**/*
+
 RSpec/ExampleWording:
   Enabled: true
 
+RSpec/Focus:
+  Enabled: true
+
 RSpec/HookArgument:
+  Enabled: true
+
+RSpec/LetBeforeExamples:
   Enabled: true
 
 RSpec/LetSetup:
@@ -181,7 +203,19 @@ RSpec/LetSetup:
 RSpec/NotToNot:
   Enabled: true
 
+RSpec/OverwritingSetup:
+  Enabled: true
+
 RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/VoidExpect:
   Enabled: true
 
 Style/PercentLiteralDelimiters:
