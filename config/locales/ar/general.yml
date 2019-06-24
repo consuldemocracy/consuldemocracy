@@ -878,12 +878,14 @@ ar:
       actions: الإجراءات
   votes:
     agree: أنا أوافق
+    comment_unauthenticated: تحتاج الى %{signin} او %{signup} للتّصويت.
     disagree: أنا لا أوافق
     organizations: المنظمات لا يسمح لها بالتصويت
     signin: تسجيل الدخول
     signup: تسجيل
     supports: دعم
     unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
+    verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات %{verify_account}.
     verify_account: التحقق من حسابك
     budget_investments:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
@@ -894,6 +896,7 @@ ar:
   welcome:
     feed:
       most_active:
+        debates: "المناقشات الأكثر نشاطا"
         proposals: "المقترحات الأكثر نشاطا"
         processes: "إجراءات مفتوحة"
       see_all_debates: انظر جميع الحوارات
@@ -912,6 +915,8 @@ ar:
       proposals:
         title: المقترحات الموصى بها
         btn_text_link: كل المقترحات الموصى بها
+      budget_investments:
+        title: الاستثمارات الموصى بها
       slide: "انظر %{title}"
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
