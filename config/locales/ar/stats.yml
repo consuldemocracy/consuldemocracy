@@ -1,1 +1,10 @@
 ar:
+  stats:
+    geozone: "مقاطعة"
+    budgets:
+      link: "الإحصائيات"
+      page_title: "%{budget} - إحصائيات المشاركة"
+      total_investments: "مجموع المشاريع الاستثمارية"
+      total_unfeasible_investments: "مشاريع غير مجدية"
+      total: "المجموع"
+      heading: "عنوان"
