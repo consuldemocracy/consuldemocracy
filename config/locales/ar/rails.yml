@@ -51,6 +51,13 @@ ar:
   datetime:
     distance_in_words:
       half_a_minute: نصف دقيقة
+      x_minutes:
+        zero: "%{count} دقيقة"
+        one: '%{count} دقيقة'
+        two: "%{count} دقيقة"
+        few: "%{count} دقيقة"
+        many: "%{count} دقيقة"
+        other: "%{count} دقيقة"
     prompts:
       day: اليوم
       hour: الساعة
@@ -81,6 +88,20 @@ ar:
       odd: يجب أن يكون عدد فردي
       required: مطلوب
       taken: محجوز مسبقاً
+      too_short:
+        zero: قصير جداً (الحد الأدنى %{count} حروف)
+        one: قصير جداً (الحد الأدنى حرف 1)
+        two: قصير جداً (الحد الأدنى %{count} حروف)
+        few: قصير جداً (الحد الأدنى %{count} حروف)
+        many: قصير جداً (الحد الأدنى %{count} حروف)
+        other: طويل جداً (الحد الأقصى %{count} حرفاً)
+      wrong_length:
+        zero: الطول غير صحيح (يجب أن يكون %{count} حروف)
+        one: الطول غير صحيح (يجب أن يكون حرف واحد)
+        two: الطول غير صحيح (يجب أن يكون %{count} حروف)
+        few: الطول غير صحيح (يجب أن يكون %{count} حروف)
+        many: الطول غير صحيح (يجب أن يكون %{count} حروف)
+        other: طول خاطئ (يجب أن يكون عدد الأحرف %{count})
       other_than: يجب أن يكون خلاف %{count}
     template:
       body: "هناك مشاكل مع الحقول التالية:"
