@@ -123,6 +123,13 @@ ar:
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
       featured_debates: مميز
+      filter_topic:
+        zero: " حول موضوع '%{topic}'"
+        one: " حول موضوع '%{topic}'"
+        two: " حول موضوع '%{topic}'"
+        few: " حول موضوع '%{topic}'"
+        many: " حول موضوع '%{topic}'"
+        other: " حول موضوع '%{topic}'"
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
@@ -249,6 +256,7 @@ ar:
       contact_us: للحصول على المساعدة الفنية، قم بزيارة
       copyright: CONSUL, %{year}
       description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
+      open_source: برنامج مفتوح المصدر
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: قرر كيف ستتشكل المدينة التي تريد العيش فيها.
       participation_title: المشاركة
@@ -547,16 +555,29 @@ ar:
       title: هدف
       see_complete_course: مراجعة الدورة الكاملة
     goal:
+      days:
+        zero: "%{count} أيام"
+        one: "يوم %{count}"
+        two: "%{count} أيام"
+        few: "%{count} أيام"
+        many: "%{count} أيام"
+        other: "%{count} أيام"
+      locked_resource: مورد مغلق
       ideal_time: الوقت المثالي
     community:
       access_community: الوصول إلى المجتمع
+      latest_activity: "أحدث نشاط للمجتمع: %{at}"
       participants: المشاركون
       debates: مناقشات
       comments: تعليقات
+      latest_comments: أحدث الرسائل
+    messages:
+      send_notification: إرسال رسالة إلى مؤيدي المقترح
     polls:
       index:
         title: استطلاعات
         create: إنشاء استطلاع
+        succesfull: تم إضافة الإجابة بنجاح
         links: روابط
       new:
         title: استطلاع جديد
