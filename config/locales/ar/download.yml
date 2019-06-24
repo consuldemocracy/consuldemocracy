@@ -2,7 +2,7 @@ ar:
   download:
     edit:
       description: "الوصف"
-      downloadable: "قابل للتحميل"
+      downloadable: "قابل للتنزيل"
       debates: "المناقشات"
       proposals: "المقترحات"
       legislation_processes: "العملية التشريعية"
@@ -14,7 +14,7 @@ ar:
         "1": "- معالم"
     fielddescription:
       debates:
-        id: "رقم الهوية"
+        id: "رقم المعرف"
         title: "العنوان"
         description: "الوصف"
         author_id: "رقم هوية الكاتب"
@@ -28,7 +28,7 @@ ar:
         author_name: "اسم الكاتب"
         author_email: "البريد الإلكتروني للكاتب"
       proposals:
-        id: "رقم الهوية"
+        id: "رقم المعرف"
         title: "العنوان"
         description: "الوصف"
         question: "سؤال"
@@ -59,7 +59,7 @@ ar:
         background_color: "لون الخلفية"
         font_color: "لون الخط"
       budget_investments:
-        id: "رقم الهوية"
+        id: "رقم المعرف"
         author_id: "معرف الكاتب"
         administrator_id: "معرف المدير"
         title: "العنوان"
@@ -92,7 +92,7 @@ ar:
         author_name: "اسم الكاتب"
         author_email: "البريد الإلكتروني للكاتب"
       comments:
-        id: "رقم الهوية"
+        id: "رقم المعرف"
         subject: "الموضوع"
         user_id: "هوية المستخدم"
         created_at: "أنشئت في"
