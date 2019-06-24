@@ -23,7 +23,7 @@ ar:
         assigned_admin: المشرف المكلف
     milestones:
       index:
-        table_id: "ID"
+        table_id: "معرف"
         table_title: "العنوان"
         table_description: "الوصف"
         table_publication_date: "تاريخ النشر"
@@ -58,7 +58,7 @@ ar:
         no_progress_bars: "ليس هناك أية أشرطة تقدم"
         new_progress_bar: "إنشاء شريط تقدم جديد"
         primary: "شريط التقدم الرئيسي"
-        table_id: "ID"
+        table_id: "معرف"
         table_kind: "النوع"
         table_title: "العنوان"
         table_percentage: "التقدم الحالي"
