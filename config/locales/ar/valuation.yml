@@ -13,6 +13,7 @@ ar:
           finished: انتهى
         table_name: الإ سم
         table_phase: مرحلة
+        table_assigned_investments_valuation_open: مقترحات الاستثمار المخصصة مع تقييم مفتوح
         table_actions: الإجراءات
         evaluate: تقييم
         no_budgets: "لا يوجد ميزانيات"
@@ -53,6 +54,7 @@ ar:
         responsibles: المسؤوليات
         assigned_admin: المشرف المكلف
         assigned_valuators: المقيمين الذين تم تعيينهم
+        preview: معاينة الاستثمار
       edit:
         dossier: الملف
         price_html: "السعر (%{currency})"
