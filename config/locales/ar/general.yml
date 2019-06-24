@@ -244,6 +244,7 @@ ar:
       copyright: CONSUL, %{year}
       description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: قرر كيف ستتشكل المدينة التي تريد العيش فيها.
       participation_title: المشاركة
       privacy: سياسة الخصوصية
     header:
@@ -262,6 +263,7 @@ ar:
       my_account_link: حسابي
       my_activity_link: نشاطي
       open: فتح
+      open_gov: حكومة مفتوحة
       proposals: إقتراحات
       poll_questions: التصويت
       budgets: الميزانية التشاركية
