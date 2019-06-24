@@ -375,6 +375,13 @@ ar:
       map_skip_checkbox: "هذا المقترح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
+      filter_topic:
+        zero: " حول موضوع '%{topic}'"
+        one: " حول موضوع '%{topic}'"
+        two: " حول موضوع '%{topic}'"
+        few: " حول موضوع '%{topic}'"
+        many: " حول موضوع '%{topic}'"
+        other: " حول موضوع '%{topic}'"
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
@@ -578,15 +585,30 @@ ar:
         title: استطلاعات
         create: إنشاء استطلاع
         succesfull: تم إضافة الإجابة بنجاح
+        count:
+          zero: لقد أنشأت %{count} استطلاعات.
+          one: لقد أنشأت استطلاع %{count}.
+          two: لقد أنشأت %{count} استطلاعات.
+          few: لقد أنشأت %{count} استطلاعات.
+          many: لقد أنشأت %{count} استطلاعات.
+          other: لقد أنشأت %{count} استطلاعات.
         links: روابط
+        additiontal_information: معلومات اضافية
       new:
         title: استطلاع جديد
         submit: إنشاء استطلاع
       edit:
         submit: تحديث الاستطلاع
       poll:
+        view_results: رؤية النتائج
+        edit_poll: تحرير الاستبيان
         show_results: إظهار النتائج
+        delete: حذف الاستبيان
+        alert_notice: سيؤدي هذا الإجراء إلى إزالة الاستبيان وجميع الأسئلة المرتبطة به.
+        success_notice: تم حذف الاستبيان بنجاح
+        unable_notice: لا يمكنك حذف استبيان تلقى تعليقات
       form:
+        name: عنوان الاستبيان
         add_question: إضافة سؤال
       question_fields:
         remove_question: إزالة السؤال
@@ -596,6 +618,8 @@ ar:
     poster:
       index:
         title: معاينة الملصق
+        poster_title: "توقّف عن المشاهدة ،"
+        poster_subtitle: "ادعمني! ;)"
         proposal_code: "رمز المقترح: %{code}"
         support: دعم مقترحي
       new:
@@ -791,6 +815,9 @@ ar:
       link:
         proposal: "تنزيل المقترحات"
         debate: "تنزيل المناقشات"
+        legislation_process: "تنزيل العمليات التّشريعية"
+        budget: "تنزيل الميزانيات"
+        investments: "تنزيل المشاريع"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -805,9 +832,13 @@ ar:
       proposals: إقتراحات
       comments: تعليقات
       proposal_votes: التصويت على المقترحات
+      debate_votes: الأصوات على المناقشات
+      comment_votes: الأصوات على التعليقات
       votes: مجموع الأصوات
       verified_users: مستخدمين تم التحقق منهم
       unverified_users: مستخدمين غير متحقق منهم
+  unauthorized:
+    default: ليس لديك الصلاحية لدخول هذه الصفحة.
   users:
     direct_messages:
       new:
@@ -843,6 +874,7 @@ ar:
       retired: "المقترح المسحوبة"
       draft: مسودة
       published: منشورة
+      see: "الإطلاع على المقترح"
       actions: الإجراءات
   votes:
     agree: أنا أوافق
