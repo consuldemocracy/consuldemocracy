@@ -3,7 +3,7 @@ ar:
     polls:
       final:
         title: الاستطلاعات جاهزة لعملية العد النهائي
-        select_poll: تحديد الاستطلاع
+        select_poll: تحديد استطلاع
         add_results: إضافة نتائج
     poll_budgets:
       see_ballot_sheets: رؤية قائمة أوراق الاقتراع
