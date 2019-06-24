@@ -8,3 +8,8 @@ ar:
       total_unfeasible_investments: "مشاريع غير مجدية"
       total: "المجموع"
       heading: "عنوان"
+      investments_sent_html: "تمّ ارسال مقترح الاستثمار"
+      participants_every_phase: "مجموع المشاركين"
+      percent_total_participants: "% مجموع المشاركين"
+    polls:
+      booth_percentage: "%{percentage} مكاتب الإقتراع"
