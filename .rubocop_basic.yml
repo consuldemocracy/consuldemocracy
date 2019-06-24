@@ -172,6 +172,9 @@ Rails/Validation:
 RSpec/ExampleWording:
   Enabled: true
 
+RSpec/HookArgument:
+  Enabled: true
+
 RSpec/LetSetup:
   Enabled: true
 

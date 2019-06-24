@@ -216,9 +216,6 @@ RSpec/FilePath:
 RSpec/Focus:
   Enabled: true
 
-RSpec/HookArgument:
-  Enabled: true
-
 RSpec/ImplicitExpect:
   Enabled: true
   EnforcedStyle: should
