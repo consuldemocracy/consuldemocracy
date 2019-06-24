@@ -420,9 +420,9 @@ ar:
           success: تم وضع علامة على المهمة باعتبارها حلّت.
     debates:
       index:
-        id: ID
+        id: معرف
         author: كاتب
-        title: النقاشات
+        title: المناقشات
         no_debates: لا توجد أي مناقشات.
         link: "تنزيل المناقشات"
     hidden_debates:
@@ -1609,7 +1609,7 @@ ar:
       remove_language: إزالة اللغة
       add_language: إضافة لغة
     change_log:
-      id: "ID"
+      id: "معرف"
       actions: "الإجراءات"
     trackers:
       index:
