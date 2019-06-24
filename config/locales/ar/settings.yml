@@ -9,6 +9,8 @@ ar:
       poll_link: رابط المعلومات الاضافية
       email_short_title: البريد الإلكتروني
       poster_short_title: ملصقة
+      poster_description: وصف الملصق
+      poster_description_description: وصف مفصل لميزات الملصق
     direct_message_max_per_day_description: "الحد الأقصى لعدد الرسائل المباشرة التي يمكن لمستخدم واحد إرسالها يوميًا"
     feature:
       twitter_login: "تسجيل الدخول عبر Twitter"
@@ -45,3 +47,11 @@ ar:
       budgets_description: "من خلال الميزانيات التشاركية ، يقرر المواطنون المشاريع التي تحصل على جزء من الميزانية من بين \nالمشاريع التي يقدمها جيرانهم"
       legislation: "التشريعات التشاركية"
       legislation_description: "في العمليات التشاركية ، تُتاح للمواطنين فرصة المشاركة في صياغة وتعديل اللوائح التي تؤثر على المجتمع وإبداء رأيهم في بعض الإجراءات التي يتم التّخطيط لتنفيذها"
+    uploads:
+      images:
+        max_size_description: "الحجم الأقصى المسموح به للصورة المحمّلة (بال Megabytes/MB)"
+        title:
+          min_length: "الطّول الأدنى لعنوان الصورة"
+          max_length: "الطّول الأقصى لعنوان الصورة"
+      documents:
+        max_amount: "العدد الأقصى للوثائق"
