@@ -118,6 +118,12 @@ FactoryBot.define do
     association :signable, factory: :proposal
     association :author, factory: :user
     required_fields_to_verify { "123A, 456B, 789C" }
+    document_numbers "123A, 456B, 789C"
+
+    trait :with_title do
+      title { Faker::Lorem.sentence }
+    end
+
   end
 
   factory :signature do
