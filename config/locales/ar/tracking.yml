@@ -14,13 +14,13 @@ ar:
         no_investments: "لا توجد مشاريع استثمارية."
       show:
         title: مشروع استثماري
-        info: معلومات المشارك
+        info: معلومات الكاتب
         by: تم الإرسال بواسطة
         sent: تم الإرسال في
         heading: عنوان
         undefined: "غير معرف"
         responsibles: المسؤولون
-        assigned_admin: المشرف المكلف
+        assigned_admin: المدير المكلف
     milestones:
       index:
         table_id: "معرف"
