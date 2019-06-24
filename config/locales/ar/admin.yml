@@ -353,7 +353,7 @@ ar:
           with_confirmed_hide: مؤكد
           without_confirmed_hide: معلق
         hidden_debate: المناقشة مخفية
-        hidden_proposal: اقتراح مخفي
+        hidden_proposal: مقترح مخفي
         title: التعليقات المخفية
         no_hidden_comments: لا توجد أي تعليقات مخفية.
     dashboard:
