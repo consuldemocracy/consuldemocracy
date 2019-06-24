@@ -54,6 +54,12 @@ ar:
         other: "%{count} ردود"
       responses_show:
         zero: لا توجد ردود
+        zero: "%{count} ردود (عرض)"
+        one: "رد ّ 1 (عرض)"
+        two: "%{count} ردود (عرض)"
+        few: "%{count} ردود (عرض)"
+        many: "%{count} ردود (عرض)"
+        other: "%{count} ردود (عرض)"
       responses_collapse:
         zero: لا توجد ردود
       user_deleted: حذف المستخدم
@@ -270,6 +276,7 @@ ar:
       notification_item:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
+      tracking: "تتبّع"
     admin:
       watch_form_message: "لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟"
   notifications:
@@ -343,6 +350,7 @@ ar:
     form:
       geozone: نطاق العملية
       proposal_responsible_name: الاسم الكامل للشخص الذي قدم الاقتراح
+      proposal_responsible_name_note: "(بصفة فرديّة أو كممثل لجماعة ؛ لن يتم عرضه للعموم)"
       proposal_summary: ملخص المقترح
       proposal_summary_note: "(200 حرف كحد أقصى)"
       proposal_text: نص المقترح
@@ -500,6 +508,7 @@ ar:
       request: طلب
     create_request:
       success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
+      archived: تم أرشفة هذا المقترح ولا يمكن طلب موارد.
     progress:
       group_by_month: شهريا
       group_by_week: أسبوعيا
