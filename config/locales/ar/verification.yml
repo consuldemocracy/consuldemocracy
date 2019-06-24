@@ -36,13 +36,18 @@ ar:
       already_verified: تم تأكيد حسابك مسبقاً
       email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
     residence:
+      create:
+        flash:
+          success: تم التحقق من الإقامة
       new:
+        accept_terms_text: أقبل %{terms_url} للتّعداد
         date_of_birth: تاريخ الميلاد
         document_number: رقم الوثيقة
         document_number_help_title: المساعدة
         document_type:
           passport: جواز السفر
           residence_card: بطاقة الإقامة
+          spanish_id: بطاقة الهوية
         document_type_label: نوع الوثيقة
         error_not_allowed_age: ليس لديك العمر المطلوب للمشاركة
         error_not_allowed_postal_code: يجب أن تكون مسجلا ليتم التحقق منك.
