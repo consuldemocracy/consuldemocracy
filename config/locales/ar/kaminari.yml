@@ -6,6 +6,12 @@ ar:
       one_page:
         display_entries:
           zero: "لا يمكن العثور على %{entry_name}"
+          zero: يوجد <strong>%{count} %{entry_name}</strong>
+          one: يوجد <strong>1 %{entry_name}</strong>
+          two: يوجد <strong>%{count} %{entry_name}</strong>
+          few: يوجد <strong>%{count} %{entry_name}</strong>
+          many: يوجد <strong>%{count} %{entry_name}</strong>
+          other: يوجد <strong>%{count} %{entry_name}</strong>
   views:
     pagination:
       current: أنت في الصفحة
