@@ -24,7 +24,7 @@ ar:
         comments_count: "عدد التعليقات"
         confirmed_hide_at: "تمّ تأكيد الإخفاء في"
         geozone_id: "معرف الرقعة الجغرافية"
-        featured_at: "مميز في"
+        featured_at: "بارز في"
         author_name: "اسم الكاتب"
         author_email: "البريد الإلكتروني للكاتب"
       proposals:
