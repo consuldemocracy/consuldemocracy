@@ -11,7 +11,7 @@ ar:
       submit: "حفظ التغييرات"
       config:
         "0": ""
-        "1": "- معالم"
+        "1": "- مَعالم"
     fielddescription:
       debates:
         id: "رقم المعرف"
