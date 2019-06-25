@@ -4,11 +4,11 @@ ar:
       comments:
         see_all: اظهار الكل
         comments_count:
-          zero: "%{count} تعليق"
-          one: "تعليق %{count}"
-          two: "%{count} تعليق"
-          few: "%{count} تعليق"
-          many: "%{count} تعليق"
+          zero: "%{count} تعليقات"
+          one: "%{count} تعليقات"
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
           other: "%{count} تعليق"
         cancel: إلغاء
         publish_comment: نشر التعليق
@@ -23,12 +23,12 @@ ar:
         comment_about: "تعليق حول:"
         comments_count:
           zero: لا توجد تعليقات
-          zero: "%{count} تعليق"
-          one: "تعليق %{count}"
-          two: "%{count} تعليق"
-          few: "%{count} تعليق"
-          many: "%{count} تعليق"
-          other: "%{count} تعليق"
+          zero: "%{count} تعليقات"
+          one: "%{count} تعليقات"
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
       show:
         title: التعليق
       version_chooser:
