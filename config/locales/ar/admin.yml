@@ -263,7 +263,7 @@ ar:
           author: الكاتب
         cannot_calculate_winners: على الميزانية أن تبقى في المرحلة "اقتراع المشاريع"، "استعراض بطاقات الاقتراع" أو "الميزانيات المنتهية" ليتم حساب المشاريع الفائزة
         see_results: "رؤية النتائج"
-        milestone_tags_filter_all: "جميع علامات المعلم"
+        milestone_tags_filter_all: "جميع علامات المَعلم"
       show:
         assigned_admin: المشرف المعين
         assigned_valuators: المقيمين الذين تم تعيينهم
