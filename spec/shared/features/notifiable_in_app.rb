@@ -25,15 +25,15 @@ shared_examples "notifiable in-app" do |described_class|
   end
 
   scenario "Multiple users commented on my notifiable", :js do
-    3.times do
+    3.times do |n|
       login_as(create(:user, :verified))
 
       visit path_for(notifiable)
 
-      fill_in comment_body(notifiable), with: "I agree"
+      fill_in comment_body(notifiable), with: "Number #{n + 1} is the best!"
       click_button "publish_comment"
       within "#comments" do
-        expect(page).to have_content "I agree"
+        expect(page).to have_content "Number #{n + 1} is the best!"
       end
       logout
     end
