@@ -39,4 +39,5 @@ val:
     title_html: "Seguiment: "
 
   progress:
+    progress_message: "Encara no hi han informes d'execució."
     progress_link: Informe d'execució
