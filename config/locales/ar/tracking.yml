@@ -48,7 +48,7 @@ ar:
       create:
         notice: تم إنشاء المَعلم الجديد بنجاح!
       update:
-        notice: تم تحديث المعلم بنجاح
+        notice: تم تحديث المَعلم بنجاح
       delete:
         notice: تم حذف المَعلم بنجاح
     progress_bars:
