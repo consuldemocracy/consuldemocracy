@@ -29,7 +29,7 @@ ar:
         table_publication_date: "تاريخ النشر"
         table_status: الحالة
         table_actions: "الإجراءات"
-        delete: "حذف معلم"
+        delete: "حذف المَعلم"
         no_milestones: "لا توجد مَعالم محددة"
         image: "صورة"
         show_image: "عرض الصورة"
@@ -40,7 +40,7 @@ ar:
         admin_statuses: إدارة الحالات
         no_statuses_defined: لا توجد حالات محددة حتى الآن
       new:
-        creating: إنشاء معلم
+        creating: إنشاء مَعلم
         date: تاريخ
         description: الوصف
       edit:
