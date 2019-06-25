@@ -31,7 +31,7 @@ ar:
       allow_attached_documents: "السماح برفع وعرض المستندات المرفقة"
       allow_attached_documents_description: "يتيح للمستخدمين رفع الوثائق عند إنشاء المقترحات والمشاريع الاستثمارية ضمن الميزانيات التشاركية"
       guides: "توجيهات لإنشاء مقترحات أو مشاريع الاستثمار"
-      public_stats: "احصائيات عمومية"
+      public_stats: "احصائيات عامة"
       public_stats_description: "عرض الإحصائيات العامة في لوحة الإدارة"
       help_page: "صفحة المساعدة"
     map:
