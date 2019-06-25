@@ -70,4 +70,4 @@ ar:
         error_already_voted: شارك سابقا في هذا الاستطلاع
         submit: تأكيد التصويت
       can_vote:
-        submit_disable_with: "انتظر ، جاري تأكيد التصويت ..."
+        submit_disable_with: "انتظر، جاري تأكيد التصويت..."
