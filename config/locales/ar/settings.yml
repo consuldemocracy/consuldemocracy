@@ -14,11 +14,11 @@ ar:
     direct_message_max_per_day_description: "الحد الأقصى لعدد الرسائل المباشرة التي يمكن لمستخدم واحد إرسالها يوميًا"
     feature:
       twitter_login: "تسجيل الدخول عبر Twitter"
-      twitter_login_description: "يسمح للمستخدمين بالتسجيل باستخدام حسابهم على Twitter"
+      twitter_login_description: "السمال للمستخدمين بالتسجيل باستخدام حسابهم على Twitter"
       facebook_login: "تسجيل الدخول عبر Facebook"
-      facebook_login_description: "يسمح للمستخدمين بالتسجيل باستخدام حسابهم على Facebook"
+      facebook_login_description: "السماء للمستخدمين بالتسجيل باستخدام حسابهم على Facebook"
       google_login: "تسجيل الدخول عبر Google"
-      google_login_description: "يسمح للمستخدمين بالتسجيل باستخدام حسابهم على Google"
+      google_login_description: "السماح للمستخدمين بالتسجيل باستخدام حسابهم على Google"
       signature_sheets: "أوراق التوقيع"
       user:
         recommendations: "التوصيات"
