@@ -7,7 +7,7 @@ module Budgets
 
     def show
       authorize! :read_results, @budget
-      @investments = Budget::Result.new(@budget, @heading).investments.order(cached_ballots_up: :desc)
+      @investments = Budget::Result.new(@budget, @heading).investments
     end
 
     private
