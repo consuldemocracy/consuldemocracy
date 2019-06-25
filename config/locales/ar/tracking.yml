@@ -30,7 +30,7 @@ ar:
         table_status: الحالة
         table_actions: "الإجراءات"
         delete: "حذف معلم"
-        no_milestones: "لا توجد معالم محددة"
+        no_milestones: "لا توجد مَعالم محددة"
         image: "صورة"
         show_image: "عرض الصورة"
         documents: "الوثائق"
