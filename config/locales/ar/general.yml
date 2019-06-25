@@ -523,7 +523,7 @@ ar:
       request: طلب
     create_request:
       success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
-      archived: تم أرشفة هذا المقترح ولا يمكن طلب موارد.
+      archived: تم أرشفة هذا المقترح ولا يمكنه طلب موارد.
     progress:
       group_by_month: شهريا
       group_by_week: أسبوعيا
@@ -893,7 +893,7 @@ ar:
     signup: تسجيل
     supports: دعم
     unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
-    verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات %{verify_account}.
+    verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات؛ %{verify_account}.
     verify_account: التحقق من حسابك
     budget_investments:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
