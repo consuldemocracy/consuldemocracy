@@ -5,11 +5,11 @@ ar:
         see_all: اظهار الكل
         comments_count:
           zero: "%{count} تعليقات"
-          one: "%{count} تعليقات"
+          one: "تعليق %{count}"
           two: "%{count} تعليقات"
           few: "%{count} تعليقات"
           many: "%{count} تعليقات"
-          other: "%{count} تعليق"
+          other: "%{count} تعليقات"
         cancel: إلغاء
         publish_comment: نشر التعليق
       form:
@@ -112,10 +112,10 @@ ar:
           zero: لا توجد تعليقات
           zero: "%{count} تعليق"
           one: "تعليق %{count}"
-          two: "%{count} تعليق"
-          few: "%{count} تعليق"
-          many: "%{count} تعليق"
-          other: "%{count} تعليق"
+          two: "%{count} تعليقات"
+          few: "%{count} تعليقات"
+          many: "%{count} تعليقات"
+          other: "%{count} تعليقات"
         debate: الحوارات
       show:
         answer_question: سلم الاجابة
