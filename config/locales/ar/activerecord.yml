@@ -290,7 +290,7 @@ ar:
         description_finished: "الوصف عند الإنتهاء من الميزانية"
         phase: "المرحلة"
         currency_symbol: "العملة"
-        budget_milestone_tags: "علامات المعلم"
+        budget_milestone_tags: "علامات المَعلم"
         budget_valuation_tags: "علامات التقييم"
         help_link: "رابط المساعدة"
       budget/investment:
