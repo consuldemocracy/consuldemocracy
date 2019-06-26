@@ -18,7 +18,7 @@ ar:
       save_changes:
         notice: تم حفظ التغييرات
       update:
-        notice: "%{resource_name} أحدثت بنجاح."
+        notice: "تم تحديث %{resource_name} بنجاح."
         debate: "تم تحديث المناقشة بنجاح."
         poll: "تم تحديث الاستطلاع بنجاح."
         poll_booth: "تم تحديث مكتب الإقتراع بنجاح."
