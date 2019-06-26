@@ -108,12 +108,12 @@ ar:
         blank_dates: التواريخ فارغة
         administrators:
           zero: "حدّد المدراء"
-          zero: "%{count} مشرفين محدّدين"
-          one: "مشرف 1 محدّد"
-          two: "%{count} مشرفين محدّدين"
-          few: "%{count} مشرفين محدّدين"
-          many: "%{count} مشرفين محدّدين"
-          other: "%{count} مشرفين محدّدين"
+          zero: "%{count} مدراء محدّدين"
+          one: "مدير 1 محدّد"
+          two: "%{count} مدراء محدّدين"
+          few: "%{count} مدراء محدّدين"
+          many: "%{count} مدراء محدّدين"
+          other: "%{count} مدراء محدّدين"
         valuators:
           zero: "حدّد المقيمين"
           zero: "%{count} مقيّمين محدّدين"
