@@ -618,7 +618,7 @@ ar:
     poster:
       index:
         title: معاينة الملصق
-        poster_title: "توقّف عن المشاهدة ،"
+        poster_title: "توقّف عن البحث،"
         poster_subtitle: "ادعمني! ;)"
         proposal_code: "رمز المقترح: %{code}"
         support: دعم مقترحي
@@ -985,5 +985,5 @@ ar:
     title: نوع التصويت
     unique: إجابة واحدة، مغلقة
     multiple: إجابات متعددة، مغلقة
-    answer_set_open: إجابات متعدّدة ، مفتوحة
+    answer_set_open: وضع الإجابات، متاحة
     answer_set_closed: إجابات متعدّدة، مغلق
