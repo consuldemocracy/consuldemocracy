@@ -886,7 +886,7 @@ ar:
       actions: الإجراءات
   votes:
     agree: أنا أوافق
-    comment_unauthenticated: تحتاج الى %{signin} او %{signup} للتّصويت.
+    comment_unauthenticated: تحتاج الى %{signin} او %{signup} كي تصبح قدرا على التصويت.
     disagree: أنا لا أوافق
     organizations: المنظمات لا يسمح لها بالتصويت
     signin: تسجيل الدخول
