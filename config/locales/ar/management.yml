@@ -29,7 +29,7 @@ ar:
     document_type_label: نوع الوثيقة
     document_verifications:
       already_verified: تم تأكيد هذا الحساب مسبقاً.
-      has_no_account_html: لإنشاء حساب ، اذهب إلى %{link} وانقر على <b> "تسجيل" </b> في أعلى يسار الشاشة.
+      has_no_account_html: لإنشاء حساب، اذهب إلى %{link} وانقر على <b>"تسجيل"</b> في أعلى يسار الشاشة.
       link: CONSUL
       not_in_census: لم يتم تسجيل هذا المستند.
       please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
