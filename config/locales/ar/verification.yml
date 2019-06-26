@@ -41,7 +41,7 @@ ar:
           success: تم التحقق من الإقامة
       new:
         accept_terms_text: أقبل %{terms_url} التعداد
-        accept_terms_text_title: أوافق على أحكام وشروط النّفوذ إلى التعداد
+        accept_terms_text_title: أوافق على أحكام وشروط النّفاذ إلى التعداد
         date_of_birth: تاريخ الميلاد
         document_number: رقم الوثيقة
         document_number_help_title: المساعدة
