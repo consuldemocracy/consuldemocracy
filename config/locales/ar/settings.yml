@@ -22,7 +22,7 @@ ar:
       signature_sheets: "أوراق التوقيع"
       user:
         recommendations: "التوصيات"
-        skip_verification: "تجاوز التحقق من المستخدم"
+        skip_verification: "تجاوز عملية التحقق من المستخدم"
         skip_verification_description: "سيؤدي هذا إلى تعطيل عملية التحقق وسيتمكن جميع المستخدمين المسجلين من المشاركة في جميع العمليات"
         recommendations_on_debates: "توصيات حول المناقشات"
         recommendations_on_proposals: "توصيات حول المقترحات"
