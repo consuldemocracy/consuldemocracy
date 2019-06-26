@@ -68,7 +68,7 @@ ar:
         price: "السعر"
         feasibility: "إمكانية التنفيذ"
         price_explanation: "شرح السعر"
-        unfeasibility_explanation: "تفسير عدم الجدوى"
+        unfeasibility_explanation: "تفسير عدم إمكانية التنفيذ"
         valuation_finished: "انتهى التقييم"
         duration: "المدة الزمنية"
         hidden_at: "مخفي في"
