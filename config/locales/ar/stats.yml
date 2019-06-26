@@ -5,7 +5,7 @@ ar:
       link: "الإحصائيات"
       page_title: "%{budget} - إحصائيات المشاركة"
       total_investments: "مجموع المشاريع الاستثمارية"
-      total_unfeasible_investments: "مشاريع غير مجدية"
+      total_unfeasible_investments: "مشاريع غير قابلة للإنجاز"
       total: "المجموع"
       heading: "عنوان"
       investments_sent_html: "تمّ ارسال مقترح الاستثمار"
