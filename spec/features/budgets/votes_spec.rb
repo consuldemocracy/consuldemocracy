@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Votes" do
-    
+
   let(:manuela) { create(:user, verified_at: Time.current) }
 
   context "Investments - Knapsack" do
