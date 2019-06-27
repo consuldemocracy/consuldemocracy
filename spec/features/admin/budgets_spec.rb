@@ -115,7 +115,7 @@ describe "Admin budgets" do
 
   context "New" do
 
-    scenario "Create budget" do
+    scenario "Create budget - Knapsack voting (default)" do
       visit admin_budgets_path
       click_link "Create new budget"
 
@@ -131,7 +131,7 @@ describe "Admin budgets" do
       expect(budget.knapsack_voting?).to be true
     end
 
-    scenario "Create budget - voting style approval", :js do
+    scenario "Create budget - Approval voting", :js do
       visit admin_budgets_path
       click_link "Create new budget"
 
