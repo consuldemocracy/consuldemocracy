@@ -349,25 +349,33 @@ describe Budget do
     end
   end
 
-  describe "Validation" do
-    it { expect(build(:budget)).to be_valid }
-    it { expect(build(:budget, :approval)).to be_valid }
-    it { expect(build(:budget, :knapsack)).to be_valid }
-    it { expect(build(:budget, voting_style: "Oups!")).not_to be_valid }
+  describe "#voting_style" do
+    context "Validations" do
+      it { expect(build(:budget)).to be_valid }
+      it { expect(build(:budget, :approval)).to be_valid }
+      it { expect(build(:budget, :knapsack)).to be_valid }
+      it { expect(build(:budget, voting_style: "Oups!")).not_to be_valid }
+    end
+
+    context "Related supportive methods" do
+      describe "#approval_voting?" do
+        it { expect(build(:budget, :approval).approval_voting?).to be true }
+        it { expect(build(:budget, :knapsack).approval_voting?).to be false }
+      end
+
+      describe "#knapsack_voting?" do
+        it { expect(build(:budget, :knapsack).knapsack_voting?).to be true }
+        it { expect(build(:budget, :approval).knapsack_voting?).to be false }
+      end
+    end
+
+    context "Defaults" do
+      it "defaults to knapsack voting style" do
+        expect(build(:budget).knapsack_voting?).to be true
+      end
+    end
   end
 
-  describe "Defaults" do
-    it { expect(build(:budget).knapsack_voting?).to be true }
-  end
 
-  describe "#approval_voting?" do
-    it { expect(build(:budget, :approval).approval_voting?).to be true }
-    it { expect(build(:budget, :knapsack).approval_voting?).to be false }
-  end
-
-  describe "#knapsack_voting?" do
-    it { expect(build(:budget, :knapsack).knapsack_voting?).to be true }
-    it { expect(build(:budget, :approval).knapsack_voting?).to be false }
-  end
 
 end
