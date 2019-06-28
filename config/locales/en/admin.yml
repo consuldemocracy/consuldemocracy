@@ -1391,6 +1391,7 @@ en:
       index:
         title: Signature sheets
         new: New signature sheets
+        delete: Delete signature sheets
       new:
         title: New signature sheets
         document_numbers_note: "Write the numbers separated by commas (,)"

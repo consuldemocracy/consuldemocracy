@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190607160900) do
+ActiveRecord::Schema.define(version: 20190628221958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1389,6 +1389,9 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+    t.datetime "hidden_at"
+    t.index ["hidden_at"], name: "index_signature_sheets_on_hidden_at", using: :btree
   end
 
   create_table "signatures", force: :cascade do |t|

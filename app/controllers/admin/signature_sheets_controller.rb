@@ -1,4 +1,5 @@
 class Admin::SignatureSheetsController < Admin::BaseController
+  before_action :set_signature_sheet, only: [:show, :destroy]
 
   def index
     @signature_sheets = SignatureSheet.all.order(created_at: :desc)
@@ -20,8 +21,12 @@ class Admin::SignatureSheetsController < Admin::BaseController
   end
 
   def show
-    @signature_sheet = SignatureSheet.find(params[:id])
     @voted_signatures = Vote.where(signature: @signature_sheet.signatures.verified).count
+  end
+
+  def destroy
+    @signature_sheet.destroy
+    redirect_to admin_signature_sheets_path
   end
 
   private
@@ -30,4 +35,7 @@ class Admin::SignatureSheetsController < Admin::BaseController
       params.require(:signature_sheet).permit(:signable_type, :signable_id, :document_numbers)
     end
 
+    def set_signature_sheet
+      @signature_sheet = SignatureSheet.find(params[:id])
+    end
 end

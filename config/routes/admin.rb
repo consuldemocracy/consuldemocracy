@@ -71,7 +71,7 @@ namespace :admin do
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
-  resources :signature_sheets, only: [:index, :new, :create, :show]
+  resources :signature_sheets, only: [:index, :new, :create, :show, :destroy]
 
   resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection { get :search }

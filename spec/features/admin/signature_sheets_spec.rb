@@ -113,4 +113,17 @@ describe "Signature sheets" do
     end
   end
 
+  describe "Destroy" do
+    let!(:signature_sheet) { create(:signature_sheet) }
+
+    before do
+      visit admin_signature_sheets_path
+    end
+
+    it "deletes signature sheets" do
+      click_link "Delete signature sheets"
+
+      expect(page).to have_no_link(href: "/admin/signature_sheets/#{signature_sheet.id}")
+    end
+  end
 end
