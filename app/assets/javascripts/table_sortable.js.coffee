@@ -11,7 +11,7 @@ App.TableSortable =
   initialize: ->
     $("table.sortable th").click ->
       table = $(this).parents("table").eq(0)
-      rows = table.find("tr:gt(0)").not("tfoot tr").toArray().sort(App.TableSortable.comparer($(this).index()))
+      rows = table.find("tbody tr").toArray().sort(App.TableSortable.comparer($(this).index()))
       @asc = !@asc
 
       if @asc
