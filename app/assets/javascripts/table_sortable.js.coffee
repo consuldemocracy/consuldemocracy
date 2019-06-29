@@ -13,10 +13,10 @@ App.TableSortable =
       table = $(this).parents("table").eq(0)
       rows = table.find("tr:gt(0)").not("tfoot tr").toArray().sort(App.TableSortable.comparer($(this).index()))
       @asc = !@asc
-      if !@asc
-        rows = rows.reverse()
-      i = 0
-      while i < rows.length
-        table.append rows[i]
-        i++
+
+      if @asc
+        table.append rows
+      else
+        table.append rows.reverse()
+
       return
