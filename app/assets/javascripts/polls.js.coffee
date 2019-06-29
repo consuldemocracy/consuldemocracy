@@ -9,15 +9,15 @@ App.Polls =
     token = token.substring(0, 64)
     return token
 
-  replaceToken: ->
-    for link in $(".js-question-answer")
-      token_param = link.search.slice(-6)
+  replaceToken: (token) ->
+    $(".js-question-answer").each ->
+      token_param = this.search.slice(-6)
       if token_param == "token="
-        link.href = link.href + @token
+        this.href = this.href + token
 
   initialize: ->
-    @token = App.Polls.generateToken()
-    App.Polls.replaceToken()
+    token = App.Polls.generateToken()
+    App.Polls.replaceToken(token)
 
     $(".zoom-link").on "click", (event) ->
       element = event.target

@@ -19,7 +19,6 @@ App.BudgetEditAssociations =
     $(".js-budget-show-users-list").on
       click: ->
         div_id = $(this).data().toggle
-        for list in $(".js-budget-users-list")
-          do ->
-            if (list.id != div_id)
-              $(list).addClass("is-hidden") if !$(list).hasClass("is-hidden")
+        $(".js-budget-users-list").each ->
+          if this.id != div_id
+            $(this).addClass("is-hidden") if !$(this).hasClass("is-hidden")

@@ -158,7 +158,7 @@ App.LegislationAnnotatable =
 
       checkExist = setInterval((->
         if $("span[data-annotation-id='#{last_annotation.id}']").length
-          for annotation in annotations
+          annotations.forEach (annotation) ->
             ann_weight = App.LegislationAnnotatable.propotionalWeight(annotation.weight, max_weight)
             el = $("span[data-annotation-id='#{annotation.id}']")
             el.addClass("weight-#{ann_weight}")

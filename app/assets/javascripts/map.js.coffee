@@ -98,10 +98,10 @@ App.Map =
       map.on    "click",   moveOrPlaceMarker
 
     if addMarkerInvestments
-      for i in addMarkerInvestments
-        if App.Map.validCoordinates(i)
-          marker = createMarker(i.lat, i.long)
-          marker.options["id"] = i.investment_id
+      addMarkerInvestments.forEach (coordinates) ->
+        if App.Map.validCoordinates(coordinates)
+          marker = createMarker(coordinates.lat, coordinates.long)
+          marker.options["id"] = coordinates.investment_id
 
           marker.on "click", openMarkerPopup
 

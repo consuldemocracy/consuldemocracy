@@ -8,4 +8,4 @@ buildGraph = (el) ->
 
 App.Stats =
   initialize: ->
-    buildGraph(g) for g in $("[data-graph]")
+    $("[data-graph]").each -> buildGraph(this)
