@@ -2,9 +2,6 @@ App.TreeNavigator =
   setNodes: (nodes) ->
     children = nodes.children("ul")
 
-    if(children.length == 0)
-      return
-
     children.each ->
       link = $(this).prev("a")
       $('<span class="open"></span>').insertBefore(link)
@@ -30,7 +27,6 @@ App.TreeNavigator =
           elem.siblings("ul").show()
 
     if anchor = $(location).attr("hash")
-      if link = elem.find("a[href='#{anchor}']")
-        link.parents("ul").each ->
-          $(this).show()
-          $(this).siblings("span").removeClass("closed").addClass("open")
+      elem.find("a[href='#{anchor}']").parents("ul").each ->
+        $(this).show()
+        $(this).siblings("span").removeClass("closed").addClass("open")

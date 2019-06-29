@@ -1,9 +1,7 @@
 App.RegistrationForm =
 
   initialize: ->
-
-    registrationForm = $("form#new_user[action=\"/users\"]")
-    usernameInput = $("input#user_username")
+    usernameInput = $("form#new_user[action=\"/users\"] input#user_username")
 
     clearUsernameMessage = ->
       $("small").remove()
@@ -18,8 +16,7 @@ App.RegistrationForm =
         showUsernameMessage(response)
 
 
-    if registrationForm.length > 0
-      usernameInput.on "focusout", ->
-        clearUsernameMessage()
-        username = usernameInput.val()
-        validateUsername(username) if username != ""
+    usernameInput.on "focusout", ->
+      clearUsernameMessage()
+      username = usernameInput.val()
+      validateUsername(username) if username != ""

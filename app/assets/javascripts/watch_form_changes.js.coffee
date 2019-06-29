@@ -3,8 +3,7 @@ App.WatchFormChanges =
     return $("form[data-watch-changes]")
 
   msg: ->
-    if($("[data-watch-form-message]").length)
-      return $("[data-watch-form-message]").data("watch-form-message")
+    return $("[data-watch-form-message]").data("watch-form-message")
 
   hasChanged: ->
     App.WatchFormChanges.forms().is ->

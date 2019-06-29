@@ -9,8 +9,7 @@ App.Imageable =
       $("#new_image_link").removeClass("hide")
 
     $("#nested-image").on "cocoon:before-insert", ->
-      if $(".js-image-attachment").length > 0
-        $(".js-image-attachment").closest(".image").remove()
+      $(".js-image-attachment").closest(".image").remove()
 
     $("#nested-image").on "cocoon:after-insert", (e, nested_image) ->
       $("#new_image_link").addClass("hide")
