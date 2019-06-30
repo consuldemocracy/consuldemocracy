@@ -85,7 +85,7 @@ App.LegislationAnnotatable =
       return
 
   customShow: (position) ->
-    $(@element).html ""
+    $(this.element).html ""
     # Clean comments section and open it
     $("#comments-box").html ""
     App.LegislationAllegations.show_comments()
@@ -96,8 +96,8 @@ App.LegislationAnnotatable =
       method: "GET"
       url: "#{annotation_url}/annotations/new"
       dataType: "script").done (->
-        $("#new_legislation_annotation #legislation_annotation_quote").val(@annotation.quote)
-        $("#new_legislation_annotation #legislation_annotation_ranges").val(JSON.stringify(@annotation.ranges))
+        $("#new_legislation_annotation #legislation_annotation_quote").val(this.annotation.quote)
+        $("#new_legislation_annotation #legislation_annotation_ranges").val(JSON.stringify(this.annotation.ranges))
         $("#comments-box").css({ top: position.top - $(".calc-comments").offset().top })
 
         unless  $("[data-legislation-open-phase]").data("legislation-open-phase") == false

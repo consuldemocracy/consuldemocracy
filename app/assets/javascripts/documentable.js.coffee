@@ -17,9 +17,9 @@ App.Documentable =
 
   initializeDirectUploadInput: (input) ->
 
-    inputData = @buildData([], input)
+    inputData = this.buildData([], input)
 
-    @initializeRemoveCachedDocumentLink(input, inputData)
+    this.initializeRemoveCachedDocumentLink(input, inputData)
 
     $(input).fileupload
 

@@ -18,9 +18,9 @@ App.Imageable =
 
   initializeDirectUploadInput: (input) ->
 
-    inputData = @buildData([], input)
+    inputData = this.buildData([], input)
 
-    @initializeRemoveCachedImageLink(input, inputData)
+    this.initializeRemoveCachedImageLink(input, inputData)
 
     $(input).fileupload
 

@@ -12,9 +12,9 @@ App.TableSortable =
     $("table.sortable th").click ->
       table = $(this).parents("table").eq(0)
       rows = table.find("tbody tr").toArray().sort(App.TableSortable.comparer($(this).index()))
-      @asc = !@asc
+      this.asc = !this.asc
 
-      if @asc
+      if this.asc
         table.append rows
       else
         table.append rows.reverse()
