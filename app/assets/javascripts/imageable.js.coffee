@@ -29,10 +29,10 @@ App.Imageable =
       formData: null
 
       add: (e, data) ->
-        data = App.Imageable.buildFileUploadData(e, data)
-        App.Imageable.clearProgressBar(data)
-        App.Imageable.setProgressBar(data, "uploading")
-        data.submit()
+        upload_data = App.Imageable.buildFileUploadData(e, data)
+        App.Imageable.clearProgressBar(upload_data)
+        App.Imageable.setProgressBar(upload_data, "uploading")
+        upload_data.submit()
 
       change: (e, data) ->
         data.files.forEach (file) ->

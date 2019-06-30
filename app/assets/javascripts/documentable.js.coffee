@@ -28,10 +28,10 @@ App.Documentable =
       formData: null
 
       add: (e, data) ->
-        data = App.Documentable.buildFileUploadData(e, data)
-        App.Documentable.clearProgressBar(data)
-        App.Documentable.setProgressBar(data, "uploading")
-        data.submit()
+        upload_data = App.Documentable.buildFileUploadData(e, data)
+        App.Documentable.clearProgressBar(upload_data)
+        App.Documentable.setProgressBar(upload_data, "uploading")
+        upload_data.submit()
 
       change: (e, data) ->
         data.files.forEach (file) ->
