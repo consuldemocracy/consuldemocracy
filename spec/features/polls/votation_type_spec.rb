@@ -100,6 +100,8 @@ describe "Poll Votation Type" do
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
           click_link answer.title
+
+          expect(page).to have_link text: answer.title, class: "answered"
         end
       end
 
@@ -127,6 +129,8 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer1.title
+
+        expect(page).not_to have_link text: answer1.title, class: "answered"
       end
 
       answer6 = create(:poll_question_answer, question: question, title: "answer_6")
@@ -191,6 +195,8 @@ describe "Poll Votation Type" do
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
           click_link answer.title
+
+          expect(page).to have_link text: answer.title, class: "answered"
         end
       end
 
@@ -249,6 +255,8 @@ describe "Poll Votation Type" do
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
           click_link answer.title
+
+          expect(page).to have_link text: answer.title, class: "answered"
         end
       end
 
@@ -269,6 +277,8 @@ describe "Poll Votation Type" do
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
           click_link answer.title
+
+          expect(page).to have_link text: answer.title, class: "answered"
         end
       end
 
@@ -276,6 +286,8 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer1.title
+
+        expect(page).not_to have_link text: answer1.title, class: "answered"
       end
 
       answer6 = create(:poll_question_answer, question: question, title: "answer_6")
@@ -295,11 +307,11 @@ describe "Poll Votation Type" do
       fill_in "answer", with: "Added answer"
       click_button "Add answer"
 
+      expect(page).to have_link "Added answer"
+
       visit poll_path(poll_current)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).not_to have_link "Added answer", class: "answered"
-
         click_link "Added answer"
 
         expect(page).to have_link "Added answer", class: "answered"
