@@ -20,5 +20,5 @@ App.BudgetEditAssociations =
       click: ->
         div_id = $(this).data().toggle
         $(".js-budget-users-list").each ->
-          if this.id != div_id
-            $(this).addClass("is-hidden") if !$(this).hasClass("is-hidden")
+          if this.id != div_id && !$(this).hasClass("is-hidden")
+            $(this).addClass("is-hidden")
