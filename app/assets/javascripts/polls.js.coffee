@@ -2,14 +2,10 @@
 
 App.Polls =
   generateToken: ->
-    token = ""
-    rand = ""
-    for n in [0..5]
-      rand = Math.random().toString(36).substr(2) # remove `0.`
-      token = token + rand
+    strings = Array.apply(null, length: 6).map ->
+      Math.random().toString(36).substr(2) # remove `0.`
 
-    token = token.substring(0, 64)
-    return token
+    strings.join("").substring(0, 64)
 
   replaceToken: (token) ->
     $(".js-question-answer").each ->
