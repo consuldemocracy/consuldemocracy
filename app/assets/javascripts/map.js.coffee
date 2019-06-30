@@ -3,9 +3,8 @@ App.Map =
   initialize: ->
     maps = $("*[data-map]")
 
-    if maps.length > 0
-      $.each maps, (index, map) ->
-        App.Map.initializeMap map
+    maps.each ->
+      App.Map.initializeMap(this)
 
     $(".js-toggle-map").on
       click: ->

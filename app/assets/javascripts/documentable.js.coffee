@@ -3,8 +3,8 @@ App.Documentable =
   initialize: ->
 
     inputFiles = $(".js-document-attachment")
-    $.each inputFiles, (index, input) ->
-      App.Documentable.initializeDirectUploadInput(input)
+    inputFiles.each ->
+      App.Documentable.initializeDirectUploadInput(this)
 
     $("#nested-documents").on "cocoon:after-remove", ->
       App.Documentable.unlockUploads()
