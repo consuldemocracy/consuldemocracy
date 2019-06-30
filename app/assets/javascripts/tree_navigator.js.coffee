@@ -1,3 +1,5 @@
+"use strict"
+
 App.TreeNavigator =
   setNodes: (nodes) ->
     children = nodes.children("ul")

@@ -1,3 +1,5 @@
+"use strict"
+
 App.LegislationAllegations =
 
   toggle_comments: ->

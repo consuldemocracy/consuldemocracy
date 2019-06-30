@@ -88,6 +88,8 @@
 //= require votations
 
 var initialize_modules = function() {
+  "use strict";
+
   App.Answers.initialize();
   App.Questions.initialize();
   App.Comments.initialize();
@@ -141,6 +143,8 @@ var initialize_modules = function() {
 };
 
 $(function(){
+  "use strict";
+
   Turbolinks.enableProgressBar();
 
   $(document).ready(initialize_modules);

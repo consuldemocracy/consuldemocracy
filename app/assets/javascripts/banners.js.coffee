@@ -1,3 +1,5 @@
+"use strict"
+
 App.Banners =
   initialize: ->
     $("[data-js-banner-title]").on

@@ -1,3 +1,5 @@
+"use strict"
+
 App.FoundationExtras =
   clearSticky: ->
     $("[data-sticky]").foundation("destroy") if $("[data-sticky]").length

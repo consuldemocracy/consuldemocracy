@@ -1,3 +1,5 @@
+"use strict"
+
 App.WatchFormChanges =
   forms: ->
     return $("form[data-watch-changes]")

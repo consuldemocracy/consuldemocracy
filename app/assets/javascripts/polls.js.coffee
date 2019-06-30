@@ -1,3 +1,5 @@
+"use strict"
+
 App.Polls =
   generateToken: ->
     token = ""

@@ -1,3 +1,5 @@
+"use strict"
+
 App.SendNewsletterAlert =
   initialize: ->
     $("#js-send-newsletter-alert").on "click", ->

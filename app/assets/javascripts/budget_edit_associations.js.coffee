@@ -1,3 +1,5 @@
+"use strict"
+
 App.BudgetEditAssociations =
 
   set_text: (response)->

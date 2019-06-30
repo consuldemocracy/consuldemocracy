@@ -1,3 +1,5 @@
+"use strict"
+
 App.Comments =
 
   add_comment: (parent_id, response_html) ->

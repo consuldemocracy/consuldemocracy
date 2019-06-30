@@ -1,3 +1,5 @@
+"use strict"
+
 App.TableSortable =
   getCellValue: (row, index) ->
     $(row).children("td").eq(index).text()

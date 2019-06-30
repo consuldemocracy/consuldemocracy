@@ -1,3 +1,5 @@
+"use strict"
+
 App.Cookies =
 
   saveCookie: (name, value, days) ->

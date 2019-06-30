@@ -1,3 +1,5 @@
+"use strict"
+
 App.MarkdownEditor =
 
   refresh_preview: (element, md) ->

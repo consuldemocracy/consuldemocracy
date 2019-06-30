@@ -1,3 +1,5 @@
+"use strict"
+
 App.LegislationAnnotatable =
 
   makeEditableAndHighlight: (colour) ->

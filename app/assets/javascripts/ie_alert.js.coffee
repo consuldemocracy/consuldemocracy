@@ -1,3 +1,5 @@
+"use strict"
+
 App.IeAlert =
   set_cookie_and_hide: (event) ->
     event.preventDefault()
