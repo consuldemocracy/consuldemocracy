@@ -34,8 +34,9 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{unique.id}_answers") do
         click_link answer1.title
-        expect(page).to have_css("a", text: answer2.title)
-        expect(page).not_to have_css("a", text: answer1.title)
+
+        expect(page).to have_link answer2.title
+        expect(page).not_to have_link answer1.title
       end
     end
 
@@ -44,11 +45,14 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{unique.id}_answers") do
         click_link answer1.title
-        expect(page).to have_css("a", text: answer2.title)
-        expect(page).not_to have_css("a", text: answer1.title)
+
+        expect(page).to have_link answer2.title
+        expect(page).not_to have_link answer1.title
+
         click_link answer2.title
-        expect(page).to have_css("a", text: answer1.title)
-        expect(page).not_to have_css("a", text: answer2.title)
+
+        expect(page).to have_link answer1.title
+        expect(page).not_to have_link answer2.title
       end
     end
   end
@@ -84,7 +88,8 @@ describe "Poll Votation Type" do
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
           click_link answer.title
-          expect(page).to have_css(".answered", text: answer.title)
+
+          expect(page).to have_link answer.title, class: "answered"
         end
       end
     end
@@ -104,7 +109,8 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer6.title
-        expect(page).not_to have_css(".answered", text: answer6.title)
+
+        expect(page).not_to have_link text: answer6.title, class: "answered"
       end
     end
 
@@ -128,11 +134,11 @@ describe "Poll Votation Type" do
       visit poll_path(poll_current)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_css("a", text: answer6.title)
+        expect(page).to have_link answer6.title
 
         click_link answer6.title
 
-        expect(page).to have_css(".answered", text: answer6.title)
+        expect(page).to have_link answer6.title, class: "answered"
       end
     end
   end
@@ -173,7 +179,7 @@ describe "Poll Votation Type" do
 
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
-          expect(page).to have_css("a", text: answer.title)
+          expect(page).to have_link answer.title
         end
       end
 
@@ -194,7 +200,8 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer6.title
-        expect(page).not_to have_css(".answered", text: answer6.title)
+
+        expect(page).not_to have_link answer6.title, class: "answered"
       end
     end
   end
@@ -230,7 +237,8 @@ describe "Poll Votation Type" do
       question.question_answers.each do |answer|
         within("#poll_question_#{question.id}_answers") do
           click_link answer.title
-          expect(page).to have_css(".answered", text: answer.title)
+
+          expect(page).to have_link answer.title, class: "answered"
         end
       end
     end
@@ -250,7 +258,8 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer6.title
-        expect(page).not_to have_css(".answered", text: answer6.title)
+
+        expect(page).not_to have_link answer6.title, class: "answered"
       end
     end
 
@@ -275,22 +284,25 @@ describe "Poll Votation Type" do
 
       within("#poll_question_#{question.id}_answers") do
         click_link answer6.title
-        expect(page).to have_css(".answered", text: answer6.title)
+
+        expect(page).to have_link answer6.title, class: "answered"
       end
     end
 
     scenario "add answer", :js do
       visit poll_path(poll_current)
 
-      fill_in "answer", with: "added_answer"
+      fill_in "answer", with: "Added answer"
       click_button "Add answer"
 
       visit poll_path(poll_current)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_css("a", text: "added_answer")
-        click_link "added_answer"
-        expect(page).to have_css(".answered", text: "added_answer")
+        expect(page).not_to have_link "Added answer", class: "answered"
+
+        click_link "Added answer"
+
+        expect(page).to have_link "Added answer", class: "answered"
       end
     end
   end
