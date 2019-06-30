@@ -28,7 +28,9 @@ App.TreeNavigator =
           elem.removeClass("closed").addClass("open")
           elem.siblings("ul").show()
 
-    if anchor = $(location).attr("hash")
+    anchor = $(location).attr("hash")
+
+    if anchor
       elem.find("a[href='#{anchor}']").parents("ul").each ->
         $(this).show()
         $(this).siblings("span").removeClass("closed").addClass("open")
