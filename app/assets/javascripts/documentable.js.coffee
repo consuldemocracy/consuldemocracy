@@ -28,7 +28,7 @@ App.Documentable =
       formData: null
 
       add: (e, data) ->
-        upload_data = App.Documentable.buildFileUploadData(e, data)
+        upload_data = App.Documentable.buildData(data, e.target)
         App.Documentable.clearProgressBar(upload_data)
         App.Documentable.setProgressBar(upload_data, "uploading")
         upload_data.submit()
@@ -71,10 +71,6 @@ App.Documentable =
         progress = parseInt(data.loaded / data.total * 100, 10)
         $(data.progressBar).find(".loading-bar").css "width", "#{progress}%"
         return
-
-  buildFileUploadData: (e, data) ->
-    data = @buildData(data, e.target)
-    return data
 
   buildData: (data, input) ->
     wrapper = $(input).closest(".direct-upload")

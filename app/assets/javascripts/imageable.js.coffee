@@ -29,7 +29,7 @@ App.Imageable =
       formData: null
 
       add: (e, data) ->
-        upload_data = App.Imageable.buildFileUploadData(e, data)
+        upload_data = App.Imageable.buildData(data, e.target)
         App.Imageable.clearProgressBar(upload_data)
         App.Imageable.setProgressBar(upload_data, "uploading")
         upload_data.submit()
@@ -71,10 +71,6 @@ App.Imageable =
         progress = parseInt(data.loaded / data.total * 100, 10)
         $(data.progressBar).find(".loading-bar").css "width", "#{progress}%"
         return
-
-  buildFileUploadData: (e, data) ->
-    data = @buildData(data, e.target)
-    return data
 
   buildData: (data, input) ->
     wrapper = $(input).closest(".direct-upload")
