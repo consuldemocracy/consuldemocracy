@@ -44,15 +44,12 @@
   };
 
   ProposalGraph.prototype.parseGoals = function(data) {
-    var i, l;
-
-    this.goals = [];
-    for (i = 0, l = data.length; i < l; i += 1) {
-      this.goals.push({
-        value: data[i].required_supports,
-        text: data[i].title
-      });
-    }
+    this.goals = data.map(function(item) {
+      return {
+        value: item.required_supports,
+        text: item.title
+      };
+    });
   };
 
   ProposalGraph.prototype.refreshData = function () {

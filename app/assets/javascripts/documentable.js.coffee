@@ -34,7 +34,7 @@ App.Documentable =
         data.submit()
 
       change: (e, data) ->
-        $.each data.files, (index, file) ->
+        data.files.forEach (file) ->
           App.Documentable.setFilename(inputData, file.name)
 
       fail: (e, data) ->

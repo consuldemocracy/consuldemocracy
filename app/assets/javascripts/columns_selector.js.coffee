@@ -17,7 +17,7 @@ App.ColumnsSelector =
   initChecks: () ->
     $(".column-selecteable th[data-field]").each ->
       field = $(this).data("field")
-      text = $.trim($(this).text())
+      text = $(this).text().trim()
       item = $("#column_selector_item_template").clone()
       item.prop("id", "column_selector_item_" + field)
       input = item.find("input")

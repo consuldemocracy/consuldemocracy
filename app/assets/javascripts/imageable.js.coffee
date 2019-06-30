@@ -36,7 +36,7 @@ App.Imageable =
         data.submit()
 
       change: (e, data) ->
-        $.each data.files, (index, file) ->
+        data.files.forEach (file) ->
           App.Imageable.setFilename(inputData, file.name)
 
       fail: (e, data) ->

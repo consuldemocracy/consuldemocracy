@@ -97,7 +97,5 @@ App.Globalize =
       App.Globalize.remove_language(locale)
 
     $(".js-add-fields-container").on "cocoon:after-insert", ->
-      $.each(
-        App.Globalize.enabled_locales(),
-        (index, locale) -> App.Globalize.enable_locale(locale)
-      )
+      App.Globalize.enabled_locales().forEach (locale) ->
+        App.Globalize.enable_locale(locale)
