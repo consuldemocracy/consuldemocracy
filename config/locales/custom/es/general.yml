@@ -5,8 +5,17 @@ es:
         help: ¿Cómo funcionan los debates?
       section_footer:
         title: ¿Cómo funcionan los debates?
-        help_text_2: 'Para abrir un debate es necesario registrarse en la Plataforma de Participación de la Diputación de Valladolid. Los usuarios ya registrados también pueden comentar los debates abiertos y valorarlos con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se encuentran en cada uno de ellos.'
-        help_text_3: "Ten en cuenta que un debate no activa ningún mecanismo de actuación concreto. Si quieres hacer una %{proposal} para la provincia a través de los %{budget} cuando se abra la convocatoria, ve a la sección correspondiente."
+        help_text_2: |
+          <p>Para abrir un debate es necesario registrarse en la Plataforma de
+          Participación de la Diputación de Valladolid. Los usuarios ya
+          registrados también pueden comentar los debates abiertos y valorarlos
+          con los botones de "Estoy de acuerdo" o "No estoy de acuerdo" que se
+          encuentran en cada uno de ellos.</p>
+
+          <p>Ten en cuenta que un debate no activa ningún mecanismo de actuación
+          concreto. Si quieres hacer una propuesta para la provincia a través
+          de los <a href="/budgets">presupuestos participativos</a> cuando se abra la convocatoria, ve a la sección
+          correspondiente.</p>
   geozones:
     none: Toda la provincia
   layouts:
@@ -14,6 +23,7 @@ es:
       participation_text: Decide cómo debe ser la provincia que quieres.
       transparency_text: Obtén cualquier información sobre la provincia.
       transparency_title: Transparencia
+      faq: Asistencia técnica
     header:
       collaborative_legislation: Legislación colaborativa
       notifications: Notificaciones

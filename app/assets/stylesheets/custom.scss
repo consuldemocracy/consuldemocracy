@@ -86,10 +86,6 @@ a.button.hollow {
   height: 60%;
 }
 
-.subfooter .medium-4 {
-  width: 31.333% !important;
-}
-
 .w3-left, .w3-right, .w3-badge {
   cursor: pointer;
 }
@@ -146,4 +142,39 @@ a.button.hollow {
 .admin table th {
   background: white;
   color: black;
+}
+
+/* Footer */
+
+.footer {
+  border-top: 6px solid $brand;
+}
+
+.subfooter .medium-4 {
+  width: 31.333% !important;
+}
+
+/* Buttons */
+
+#print_link {
+  background: $brand;
+  color: white;
+}
+
+#search_form {
+  button {
+    background: $brand;
+    color: black;
+  }
+}
+
+/* Varios */
+
+#section_help {
+  p > a {
+    color: $brand-original !important;
+    &:hover {
+      color: black !important;
+    }
+  }
 }
