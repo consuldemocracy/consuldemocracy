@@ -41,12 +41,10 @@ App.ColumnsSelector =
     $(".column-selector-item input").prop("checked", false)
 
   toggleColumn: (event) ->
-    column = $(event.target).data("column")
-    App.ColumnsSelector.displayColumn(column)
+    App.ColumnsSelector.displayColumn($(event.target).data("column"))
 
   displayColumn: (column) ->
-    item = $("#column_selector_" + column)
-    if item.prop("checked")
+    if $("#column_selector_" + column).prop("checked")
       $("[data-field=" + column + "]").removeClass("hidden")
     else
       $("[data-field=" + column + "]").addClass("hidden")

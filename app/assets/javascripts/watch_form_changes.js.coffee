@@ -24,5 +24,4 @@ App.WatchFormChanges =
     $(document).off("page:before-change").on("page:before-change", App.WatchFormChanges.checkChanges)
 
     App.WatchFormChanges.forms().each ->
-      form = $(this)
-      form.data("watchChanges", form.serialize())
+      $(this).data("watchChanges", $(this).serialize())

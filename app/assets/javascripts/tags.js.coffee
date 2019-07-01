@@ -6,10 +6,8 @@ App.Tags =
     $tag_input = $("input.js-tag-list")
 
     $("body .js-add-tag-link").each ->
-      $this = $(this)
-
-      unless $this.data("initialized") is "yes"
-        $this.on("click", ->
+      unless $(this).data("initialized") is "yes"
+        $(this).on("click", ->
           name = "\"#{$(this).text()}\""
           current_tags = $tag_input.val().split(",").filter(Boolean)
 

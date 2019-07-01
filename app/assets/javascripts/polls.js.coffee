@@ -18,8 +18,7 @@ App.Polls =
     App.Polls.replaceToken(token)
 
     $(".zoom-link").on "click", (event) ->
-      element = event.target
-      answer = $(element).closest("div.answer")
+      answer = $(event.target).closest("div.answer")
 
       if $(answer).hasClass("medium-6")
         $(answer).removeClass("medium-6")

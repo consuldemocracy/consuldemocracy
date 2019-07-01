@@ -3,8 +3,7 @@
 App.Imageable =
 
   initialize: ->
-    inputFiles = $(".js-image-attachment")
-    inputFiles.each ->
+    $(".js-image-attachment").each ->
       App.Imageable.initializeDirectUploadInput(this)
 
     $("#nested-image").on "cocoon:after-remove", ->

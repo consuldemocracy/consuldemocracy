@@ -27,9 +27,7 @@ App.Forms =
 
   synchronizeInputs: ->
     progress_bar = "[name='progress_bar[percentage]']"
-    process_background = "[name='legislation_process[background_color]']"
-    process_font = ", [name='legislation_process[font_color]']"
-    processes = process_background + process_font
+    processes = "[name='legislation_process[background_color]'], [name='legislation_process[font_color]']"
     banners = "[name='banner[background_color]'], [name='banner[font_color]']"
 
     inputs = $("#{progress_bar}, #{processes}, #{banners}")

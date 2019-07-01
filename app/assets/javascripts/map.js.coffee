@@ -3,9 +3,7 @@
 App.Map =
 
   initialize: ->
-    maps = $("*[data-map]")
-
-    maps.each ->
+    $("*[data-map]").each ->
       App.Map.initializeMap(this)
 
     $(".js-toggle-map").on
@@ -83,8 +81,7 @@ App.Map =
           e.target.bindPopup(getPopupContent(data)).openPopup()
 
     getPopupContent = (data) ->
-      content = "<a href='/budgets/#{data["budget_id"]}/investments/#{data["investment_id"]}'>#{data["investment_title"]}</a>"
-      return content
+      "<a href='/budgets/#{data["budget_id"]}/investments/#{data["investment_id"]}'>#{data["investment_title"]}</a>"
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)

@@ -34,8 +34,8 @@ App.MarkdownEditor =
         editor.toggleClass("fullscreen")
         $(".fullscreen-container").toggleClass("medium-8", "medium-12")
         span = $(this).find("span")
-        current_html = span.html()
-        if(current_html == span.data("open-text"))
+
+        if(span.html() == span.data("open-text"))
           span.html(span.data("closed-text"))
         else
           span.html(span.data("open-text"))

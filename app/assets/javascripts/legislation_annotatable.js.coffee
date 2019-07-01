@@ -20,7 +20,7 @@ App.LegislationAnnotatable =
     try
       if !document.execCommand("BackColor", false, colour)
         App.LegislationAnnotatable.makeEditableAndHighlight colour
-    catch ex
+    catch
       App.LegislationAnnotatable.makeEditableAndHighlight colour
 
     return
@@ -182,9 +182,8 @@ App.LegislationAnnotatable =
     current_user_id = $("html").data("current-user-id")
 
     $(".legislation-annotatable").each ->
-      $this          = $(this)
-      ann_id         = $this.data("legislation-draft-version-id")
-      base_url       = $this.data("legislation-annotatable-base-url")
+      ann_id   = $(this).data("legislation-draft-version-id")
+      base_url = $(this).data("legislation-annotatable-base-url")
 
       App.LegislationAnnotatable.app = new annotator.App()
         .include ->
@@ -203,7 +202,4 @@ App.LegislationAnnotatable =
 
       App.LegislationAnnotatable.app.start().then ->
         App.LegislationAnnotatable.app.ident.identity = current_user_id
-
-        options = {}
-        options["legislation_draft_version_id"] = ann_id
-        App.LegislationAnnotatable.app.annotations.load(options)
+        App.LegislationAnnotatable.app.annotations.load(legislation_draft_version_id: ann_id)

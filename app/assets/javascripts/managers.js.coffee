@@ -16,8 +16,7 @@ App.Managers =
 
   initialize: ->
     $(".generate-random-value").on "click", ->
-      password = App.Managers.generatePassword()
-      $("#user_password").val(password)
+      $("#user_password").val(App.Managers.generatePassword())
 
     $(".show-password").on "click", ->
       if $("#user_password").is("input[type='password']")
