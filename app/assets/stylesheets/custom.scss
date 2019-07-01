@@ -167,3 +167,9 @@ a.button.hollow {
     color: black;
   }
 }
+
+/* Varios */
+
+p > a {
+  color: $brand;
+}
