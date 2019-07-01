@@ -1960,7 +1960,7 @@ describe "Budget Investments" do
 
     context "Approval Voting" do
       context "Balloting Phase" do
-        scenario "Add an investment to ballot" do
+        scenario "Add an investment to ballot", :js do
           budget.update(phase: "balloting", voting_style: "approval")
           user = create(:user, :level_two)
 
