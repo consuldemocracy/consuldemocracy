@@ -170,6 +170,11 @@ a.button.hollow {
 
 /* Varios */
 
-p > a {
-  color: $brand;
+#section_help {
+  p > a {
+    color: $brand-original !important;
+    &:hover {
+      color: black !important;
+    }
+  }
 }
