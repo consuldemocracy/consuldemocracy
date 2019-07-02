@@ -76,3 +76,4 @@ rules:
         - "-"
   strict: error
   switch-colon-spacing: error
+  yoda: error
