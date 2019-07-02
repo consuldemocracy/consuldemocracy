@@ -25,7 +25,6 @@ App.Votations =
       $("#max_groups_answers").attr(disabled: true)
 
   setTraduction: (response) ->
-    console.log response
     $(".js-description_text").text(response["traduction"])
 
   updateChecks: () ->
