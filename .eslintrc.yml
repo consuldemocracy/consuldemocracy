@@ -14,6 +14,7 @@ parserOptions:
   ecmaVersion: 5
 rules:
   array-bracket-spacing: error
+  array-callback-return: error
   block-spacing: error
   brace-style: error
   comma-spacing: error
