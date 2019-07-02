@@ -18,7 +18,7 @@
       $(".js-toggle-link").unbind("click").on("click", function() {
         var toggle_txt;
         $($(this).data("toggle-selector")).toggle("down");
-        if ($(this).data("toggle-text") !== void 0) {
+        if ($(this).data("toggle-text") !== undefined) {
           toggle_txt = $(this).text();
           $(this).text($(this).data("toggle-text"));
           $(this).data("toggle-text", toggle_txt);

@@ -20,7 +20,7 @@
       }
     },
     initialize: function() {
-      if (App.WatchFormChanges.forms().length === 0 || App.WatchFormChanges.msg() === void 0) {
+      if (App.WatchFormChanges.forms().length === 0 || App.WatchFormChanges.msg() === undefined) {
         return;
       }
       $(document).off("page:before-change").on("page:before-change", App.WatchFormChanges.checkChanges);

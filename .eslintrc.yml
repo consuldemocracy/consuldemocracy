@@ -36,6 +36,7 @@ rules:
   no-spaced-func: error
   no-tabs: error
   no-trailing-spaces: error
+  no-void: error
   no-whitespace-before-property: error
   object-curly-spacing:
     - error
