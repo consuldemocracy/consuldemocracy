@@ -20,6 +20,10 @@ rules:
   computed-property-spacing: error
   curly: error
   eol-last: error
+  eqeqeq:
+    - error
+    - always
+    - "null": ignore
   func-call-spacing: error
   indent:
     - error
