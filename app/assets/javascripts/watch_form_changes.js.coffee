@@ -26,5 +26,3 @@ App.WatchFormChanges =
     App.WatchFormChanges.forms().each ->
       form = $(this)
       form.data("watchChanges", form.serialize())
-
-    false

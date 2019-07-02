@@ -58,4 +58,3 @@ App.Forms =
     App.Forms.toggleLink()
     App.Forms.synchronizeInputs()
     App.Forms.hideOrShowFieldsAfterSelection()
-    false
