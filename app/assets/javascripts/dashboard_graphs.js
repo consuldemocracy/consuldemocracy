@@ -5,7 +5,7 @@
 // TODO: This module is complex enough to require its own tests. Rewrite it using Ecma6 class syntax and
 // write tests for this feature after consul has been migrated to Rails 5.1
 (function(){
-  'use strict';
+  "use strict";
 
   var ProposalGraph = function(url) {
     this.url = url;
@@ -15,9 +15,9 @@
     this.groupBy = null;
     this.proposalSuccess = null;
     this.maximumValue = 0;
-    this.progressLabel = 'Progress';
-    this.supportsLabel = 'Supports';
-    this.successLabel = 'Success';
+    this.progressLabel = "Progress";
+    this.supportsLabel = "Supports";
+    this.successLabel = "Success";
     this.goals = null;
     this.achievements = null;
     this.xColumnValues = null;
@@ -132,7 +132,7 @@
         this.achievements.push({
           value: this.formatGroup(group),
           text: data[group].title,
-          position: 'start'
+          position: "start"
         });
       }
     }
@@ -150,13 +150,13 @@
 
     this.formatXColumnValues();
 
-    colors[this.progressColumnValues[0]] = '#004a83';
-    colors[this.successfulColumnValues[0]] = '#ff7f0e';
+    colors[this.progressColumnValues[0]] = "#004a83";
+    colors[this.successfulColumnValues[0]] = "#ff7f0e";
 
     c3.generate({
-      bindto: '#' + this.targetId,
+      bindto: "#" + this.targetId,
       data: {
-        x: 'x',
+        x: "x",
         columns: [
           this.xColumnValues,
           this.progressColumnValues,
@@ -166,7 +166,7 @@
         color: function (color, d) {
           var achievement;
 
-          if (d.id === this.successfulColumnValues[0] || !Object.prototype.hasOwnProperty.call(d, 'x')) {
+          if (d.id === this.successfulColumnValues[0] || !Object.prototype.hasOwnProperty.call(d, "x")) {
             return color;
           }
 
@@ -175,7 +175,7 @@
           }.bind(this));
 
           if (achievement !== undefined) {
-            return '#ff0000';
+            return "#ff0000";
           }
 
           return color;
@@ -190,11 +190,11 @@
           max: maximumValue,
           label: {
             text: this.supportsLabel,
-            position: 'outer-middle'
+            position: "outer-middle"
           }
         },
         x: {
-          type: 'category',
+          type: "category",
           tick: {
             values: this.tickXValues(),
             centered: true
@@ -217,7 +217,7 @@
             }.bind(this));
 
             if (achievement !== undefined) {
-              return this.xColumnValues[d + 1] + ': ' + achievement.text;
+              return this.xColumnValues[d + 1] + ": " + achievement.text;
             }
 
             return this.xColumnValues[d + 1];
@@ -270,7 +270,7 @@
       }
     }
 
-    this.xColumnValues.unshift('x');
+    this.xColumnValues.unshift("x");
   };
 
   ProposalGraph.prototype.formatGroup = function(group) {
@@ -283,21 +283,21 @@
   };
 
   ProposalGraph.prototype.isDailyGrouped = function() {
-    return this.groupBy === undefined || this.groupBy === '' || this.groupBy === null;
+    return this.groupBy === undefined || this.groupBy === "" || this.groupBy === null;
   };
 
   $(document).ready(function () {
-    $('[data-proposal-graph-url]').each(function () {
-      var graph = new ProposalGraph($(this).data('proposal-graph-url'));
-      graph.successfulProposalDataUrl = $(this).data('successful-proposal-graph-url');
-      graph.proposalAchievementsUrl = $(this).data('proposal-achievements-url');
-      graph.targetId = $(this).attr('id');
-      graph.groupBy = $(this).data('proposal-graph-group-by');
-      graph.progressLabel = $(this).data('proposal-graph-progress-label');
-      graph.supportsLabel = $(this).data('proposal-graph-supports-label');
-      graph.successLabel = $(this).data('proposal-graph-success-label');
-      graph.proposalSuccess = parseInt($(this).data('proposal-success'), 10);
-      graph.resourcesUrl = $(this).data('proposal-resources-url');
+    $("[data-proposal-graph-url]").each(function () {
+      var graph = new ProposalGraph($(this).data("proposal-graph-url"));
+      graph.successfulProposalDataUrl = $(this).data("successful-proposal-graph-url");
+      graph.proposalAchievementsUrl = $(this).data("proposal-achievements-url");
+      graph.targetId = $(this).attr("id");
+      graph.groupBy = $(this).data("proposal-graph-group-by");
+      graph.progressLabel = $(this).data("proposal-graph-progress-label");
+      graph.supportsLabel = $(this).data("proposal-graph-supports-label");
+      graph.successLabel = $(this).data("proposal-graph-success-label");
+      graph.proposalSuccess = parseInt($(this).data("proposal-success"), 10);
+      graph.resourcesUrl = $(this).data("proposal-resources-url");
 
       graph.refresh();
     });

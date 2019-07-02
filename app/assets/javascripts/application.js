@@ -135,7 +135,7 @@ var initialize_modules = function() {
   App.SendAdminNotificationAlert.initialize();
   App.ModalDownload.initialize();
   App.Settings.initialize();
-  if ( $('#js-columns-selector').length )
+  if ( $("#js-columns-selector").length )
     App.ColumnsSelector.initialize();
   App.BudgetEditAssociations.initialize();
   if ( $("#votation_type_enum_type").length )

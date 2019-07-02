@@ -3,7 +3,7 @@
 App.Answers =
 
   initializeAnswers: (answers) ->
-    $(answers).on 'cocoon:after-insert', (e, new_answer) ->
+    $(answers).on "cocoon:after-insert", (e, new_answer) ->
       given_order = App.Answers.maxGivenOrder(answers) + 1
       $(new_answer).find("[name$='[given_order]']").val(given_order)
 
@@ -15,7 +15,7 @@ App.Answers =
     return max_order
 
   nestedAnswers: ->
-    $('.js-answers').each (index, answers) ->
+    $(".js-answers").each (index, answers) ->
       App.Answers.initializeAnswers(answers)
 
   initialize: ->
