@@ -124,6 +124,24 @@ describe "Admin shifts" do
     expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day", *recount_scrutiny_dates])
   end
 
+  scenario "Change option from Recount & Scrutinity to Collect Votes", :js do
+    booth = create(:poll_booth)
+    officer = create(:poll_officer)
+
+    create(:poll_shift, :vote_collection_task, officer: officer, booth: booth)
+    create(:poll_shift, :recount_scrutiny_task, officer: officer, booth: booth)
+
+    visit new_admin_booth_shift_path(booth, officer_id: officer.id)
+
+    select "Recount & Scrutiny", from: "shift_task"
+
+    expect(page).to have_select("shift_date_recount_scrutiny_date", options: ["Select day"])
+
+    select "Collect Votes", from: "shift_task"
+
+    expect(page).to have_select("shift_date_vote_collection_date", options: ["Voting days ended"])
+  end
+
   scenario "Error on create", :js do
     poll = create(:poll, :current)
     booth = create(:poll_booth)
