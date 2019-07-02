@@ -3,10 +3,6 @@ App.Banners =
   update_banner: (selector, text) ->
     $(selector).html(text)
 
-  update_style: (selector, style) ->
-    $(selector).removeClass($(selector).attr("class"), true)
-      .addClass(style, true)
-
   update_background_color: (selector, background_color) ->
     $(selector).css("background-color", background_color)
 
