@@ -19,14 +19,6 @@ App.Polls =
     @token = App.Polls.generateToken()
     App.Polls.replaceToken()
 
-    $(".js-question-answer").on
-      click: =>
-        token_message = $(".js-token-message")
-        if !token_message.is(":visible")
-          token_message.html("#{token_message.html()}<br><strong>#{@token}</strong>")
-          token_message.show()
-    false
-
     $(".zoom-link").on "click", (event) ->
       element = event.target
       answer = $(element).closest("div.answer")
