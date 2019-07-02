@@ -1,8 +1,5 @@
 App.Cookies =
 
-  removeCookie: (name) ->
-    document.cookie("name", null, { path: '/' })
-
   saveCookie: (name, value, days) ->
     expires = undefined
     if days
@@ -23,7 +20,4 @@ App.Cookies =
         if c_end == -1
           c_end = document.cookie.length
         return unescape(document.cookie.substring(c_start, c_end))
-    ''
-
-  initialize: ->
     ''
