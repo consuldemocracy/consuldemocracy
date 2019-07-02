@@ -49,6 +49,9 @@ rules:
     - error
     - double
     - avoidEscape: true
+  semi:
+    - error
+    - always
   semi-spacing: error
   space-before-blocks: error
   space-before-function-paren:
