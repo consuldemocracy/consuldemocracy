@@ -61,9 +61,9 @@
           App.Imageable.setPreview(data);
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-          $(destroyAttachmentLink).on("click", function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+          $(destroyAttachmentLink).on("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
             App.Imageable.doDeleteCachedAttachmentRequest(this.href, data);
           });
         },

@@ -59,9 +59,9 @@
           $(data.wrapper).find(".attachment-actions .action-remove").removeClass("small-3").addClass("small-12");
           destroyAttachmentLink = $(data.result.destroy_link);
           $(data.destroyAttachmentLinkContainer).html(destroyAttachmentLink);
-          $(destroyAttachmentLink).on("click", function(e) {
-            e.preventDefault();
-            e.stopPropagation();
+          $(destroyAttachmentLink).on("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
             App.Documentable.doDeleteCachedAttachmentRequest(this.href, data);
           });
           if (input["lockUpload"]) {

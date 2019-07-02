@@ -40,6 +40,8 @@ rules:
   no-multiple-empty-lines:
     - error
     - max: 1
+  no-param-reassign: error
+  no-shadow: error
   no-spaced-func: error
   no-tabs: error
   no-trailing-spaces: error
