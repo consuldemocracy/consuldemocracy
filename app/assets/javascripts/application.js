@@ -46,7 +46,6 @@
 //= require registration_form
 //= require suggest
 //= require forms
-//= require tracks
 //= require valuation_budget_investment_form
 //= require embed_video
 //= require fixed_bar
@@ -105,7 +104,6 @@ var initialize_modules = function() {
   App.RegistrationForm.initialize();
   App.Suggest.initialize();
   App.Forms.initialize();
-  App.Tracks.initialize();
   App.ValuationBudgetInvestmentForm.initialize();
   App.EmbedVideo.initialize();
   App.FixedBar.initialize();
