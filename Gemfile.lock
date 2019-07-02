@@ -594,7 +594,6 @@ DEPENDENCIES
   capybara-webmock (~> 0.5.3)
   ckeditor (~> 4.2.3)
   cocoon (~> 1.2.9)
-  coffee-rails (~> 4.2.2)
   coveralls (~> 0.8.22)
   daemons (~> 1.2.4)
   dalli (~> 2.7.6)

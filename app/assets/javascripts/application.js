@@ -84,7 +84,7 @@
 //= require settings
 //= require cookies
 //= require columns_selector
-//= require budget_edit_associations.js.coffee
+//= require budget_edit_associations
 //= require votations
 
 var initialize_modules = function() {
