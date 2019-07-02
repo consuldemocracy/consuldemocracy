@@ -42,7 +42,6 @@
 //= require users
 //= require votes
 //= require allow_participation
-//= require annotatable
 //= require advanced_search
 //= require registration_form
 //= require suggest
@@ -102,7 +101,6 @@ var initialize_modules = function() {
   App.CheckAllNone.initialize();
   App.PreventDoubleSubmission.initialize();
   App.IeAlert.initialize();
-  App.Annotatable.initialize();
   App.AdvancedSearch.initialize();
   App.RegistrationForm.initialize();
   App.Suggest.initialize();
