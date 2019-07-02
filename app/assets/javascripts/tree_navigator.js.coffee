@@ -20,7 +20,7 @@ App.TreeNavigator =
       App.TreeNavigator.setNodes(ul.children())
 
     $("[data-tree-navigator] span").on
-      click: (e) ->
+      click: ->
         elem = $(this)
         if(elem.hasClass("open"))
           elem.removeClass("open").addClass("closed")

@@ -6,7 +6,7 @@ App.Documentable =
     $.each inputFiles, (index, input) ->
       App.Documentable.initializeDirectUploadInput(input)
 
-    $("#nested-documents").on "cocoon:after-remove", (e, insertedItem) ->
+    $("#nested-documents").on "cocoon:after-remove", ->
       App.Documentable.unlockUploads()
 
     $("#nested-documents").on "cocoon:after-insert", (e, nested_document) ->

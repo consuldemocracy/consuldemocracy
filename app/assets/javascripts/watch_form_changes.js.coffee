@@ -6,7 +6,7 @@ App.WatchFormChanges =
     if($("[data-watch-form-message]").length)
       return $("[data-watch-form-message]").data("watch-form-message")
 
-  checkChanges: (event) ->
+  checkChanges: ->
     changes = false
     App.WatchFormChanges.forms().each ->
       form = $(this)
@@ -21,7 +21,7 @@ App.WatchFormChanges =
     if App.WatchFormChanges.forms().length == 0 || App.WatchFormChanges.msg() == undefined
       return
 
-    $(document).off("page:before-change").on("page:before-change", (e) -> App.WatchFormChanges.checkChanges(e))
+    $(document).off("page:before-change").on("page:before-change", -> App.WatchFormChanges.checkChanges())
 
     App.WatchFormChanges.forms().each ->
       form = $(this)

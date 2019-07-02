@@ -5,10 +5,10 @@ App.Imageable =
     $.each inputFiles, (index, input) ->
       App.Imageable.initializeDirectUploadInput(input)
 
-    $("#nested-image").on "cocoon:after-remove", (e, item) ->
+    $("#nested-image").on "cocoon:after-remove", ->
       $("#new_image_link").removeClass("hide")
 
-    $("#nested-image").on "cocoon:before-insert", (e, nested_image) ->
+    $("#nested-image").on "cocoon:before-insert", ->
       if $(".js-image-attachment").length > 0
         $(".js-image-attachment").closest(".image").remove()
 

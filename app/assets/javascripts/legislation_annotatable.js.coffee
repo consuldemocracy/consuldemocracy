@@ -1,5 +1,3 @@
-_t = (key) -> new Gettext().gettext(key)
-
 App.LegislationAnnotatable =
 
   makeEditableAndHighlight: (colour) ->
@@ -83,7 +81,7 @@ App.LegislationAnnotatable =
     return window.innerWidth <= 652
 
   viewerExtension: (viewer) ->
-    viewer._onHighlightMouseover = (event) ->
+    viewer._onHighlightMouseover = ->
       return
 
   customShow: (position) ->
@@ -106,7 +104,7 @@ App.LegislationAnnotatable =
           App.LegislationAnnotatable.highlight("#7fff9a")
           $("#comments-box textarea").focus()
 
-          $("#new_legislation_annotation").on("ajax:complete", (e, data, status, xhr) ->
+          $("#new_legislation_annotation").on("ajax:complete", (e, data) ->
             App.LegislationAnnotatable.app.destroy()
             if data.status == 200
               App.LegislationAnnotatable.remove_highlight()
@@ -127,7 +125,7 @@ App.LegislationAnnotatable =
     editor.show = App.LegislationAnnotatable.customShow
 
   scrollToAnchor: ->
-    annotationsLoaded: (annotations) ->
+    annotationsLoaded: ->
       anchor = $(location).attr("hash")
       if anchor && anchor.startsWith("#annotation")
         ann_id = anchor.split("-")[-1..]
@@ -183,7 +181,6 @@ App.LegislationAnnotatable =
 
     $(".legislation-annotatable").each ->
       $this          = $(this)
-      ann_type       = "legislation_draft_version"
       ann_id         = $this.data("legislation-draft-version-id")
       base_url       = $this.data("legislation-annotatable-base-url")
 
