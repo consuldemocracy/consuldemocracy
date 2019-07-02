@@ -33,5 +33,4 @@
       App.ValuationBudgetInvestmentForm.showFeasibilityFieldsOnChange();
     }
   };
-
 }).call(this);

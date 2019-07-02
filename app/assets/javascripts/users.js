@@ -5,5 +5,4 @@
       $(".initialjs-avatar").initial();
     }
   };
-
 }).call(this);

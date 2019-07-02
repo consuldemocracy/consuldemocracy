@@ -8,5 +8,4 @@
       $("#" + id + " .js-moderator-comment-actions").hide();
     }
   };
-
 }).call(this);

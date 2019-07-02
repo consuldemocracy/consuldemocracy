@@ -9,5 +9,4 @@
       $("#" + id + " .js-moderator-debate-actions:first").hide();
     }
   };
-
 }).call(this);

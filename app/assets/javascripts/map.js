@@ -128,5 +128,4 @@
       return !isNaN(parseFloat(n)) && isFinite(n);
     }
   };
-
 }).call(this);

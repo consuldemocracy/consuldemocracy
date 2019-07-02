@@ -8,5 +8,4 @@
       $("#" + id + " .js-moderator-proposal-notifications-actions:first").hide();
     }
   };
-
 }).call(this);

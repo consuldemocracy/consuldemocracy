@@ -10,5 +10,4 @@
       App.Questions.nestedQuestions();
     }
   };
-
 }).call(this);

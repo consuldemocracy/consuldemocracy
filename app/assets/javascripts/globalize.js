@@ -83,12 +83,12 @@
     },
     language_description: function(count) {
       switch (count) {
-        case 0:
-          return $(".globalize-languages").data("zero-languages-description");
-        case 1:
-          return $(".globalize-languages").data("one-languages-description");
-        default:
-          return $(".globalize-languages").data("other-languages-description");
+      case 0:
+        return $(".globalize-languages").data("zero-languages-description");
+      case 1:
+        return $(".globalize-languages").data("one-languages-description");
+      default:
+        return $(".globalize-languages").data("other-languages-description");
       }
     },
     initialize: function() {
@@ -114,5 +114,4 @@
       });
     }
   };
-
 }).call(this);

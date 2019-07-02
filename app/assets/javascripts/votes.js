@@ -20,5 +20,4 @@
       App.Votes.hoverize("div.comment-footer");
     }
   };
-
 }).call(this);

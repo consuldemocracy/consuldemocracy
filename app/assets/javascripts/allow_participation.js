@@ -14,5 +14,4 @@
       }, ".js-participation");
     }
   };
-
 }).call(this);

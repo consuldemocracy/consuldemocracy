@@ -9,5 +9,4 @@
       $("#" + id + " .js-moderator-investment-actions:first").hide();
     }
   };
-
 }).call(this);

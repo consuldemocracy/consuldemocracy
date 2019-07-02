@@ -171,5 +171,4 @@
       $("#new_image_link").removeClass("hide");
     }
   };
-
 }).call(this);

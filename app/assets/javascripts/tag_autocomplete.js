@@ -44,5 +44,4 @@
       App.TagAutocomplete.init_autocomplete();
     }
   };
-
 }).call(this);

@@ -27,5 +27,4 @@
       App.Answers.nestedAnswers();
     }
   };
-
 }).call(this);

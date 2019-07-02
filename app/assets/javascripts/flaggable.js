@@ -5,5 +5,4 @@
       $("#" + resource_id + " .js-flag-actions").html(button).foundation();
     }
   };
-
 }).call(this);
