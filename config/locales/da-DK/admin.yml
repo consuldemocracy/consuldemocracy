@@ -1302,6 +1302,14 @@ da:
         proposal_notifications: Underretning om forslag
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
+      budget_balloting:
+        votes_per_heading: Stemmer pr. hovedområde
+        participants_per_district: Deltagere pr. distrikt
+      budget_supporting:
+        title: "Statistik over støttefasen"
+        users: Brugere
+        vote_count: Stemmer
+        participant_count: Deltagere
       direct_messages:
         title: Direkte beskeder
         total: Total
@@ -1418,6 +1426,7 @@ da:
           see_page: Vis side
         new:
           title: Opret ny brugerdefineret side
+          slug_help_html: "Tekst til at identificere siden på URL, for eksempel <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oprettet den
           status: Status
@@ -1474,3 +1483,6 @@ da:
     translations:
       remove_language: Fjern sprog
       add_language: Tilføj sprog
+    change_log:
+      id: "ID"
+      new_value: "Ny værdi"
