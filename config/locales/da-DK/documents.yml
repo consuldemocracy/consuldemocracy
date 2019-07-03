@@ -2,6 +2,7 @@ da:
   documents:
     title: Dokumenter
     max_documents_allowed_reached_html: Du har nået det maksimale antal filer! <strong>Du bliver nødt til at slette en fil før du kan uploade en ny.</strong>
+    additional: Supplerende dokumentation
     form:
       title: Dokumenter
       title_placeholder: Tilføj en beskrivende titel til dokumentet
