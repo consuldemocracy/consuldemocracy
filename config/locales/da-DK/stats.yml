@@ -6,6 +6,11 @@ da:
     women_percentage: "%{percentage} Kvinder"
     age: "Alder"
     budgets:
+      link: "Statistik"
+      page_title: "%{budget} - statistik over deltagelse"
       total_investments: "Antal projektidéer"
       total_selected_investments: "Antal projektidéer i den endelige afstemningsfase"
       total_unfeasible_investments: "Fravalgte projektidéer"
+      total: "I alt"
+      participants_every_phase: "Antal deltagere i alt"
+      percent_total_participants: "% antal deltagere i alt"
