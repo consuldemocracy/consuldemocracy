@@ -126,6 +126,7 @@ da:
       destroy:
         success_notice: Budgettet blev slettet
         unable_notice: Du kan ikke slette et Budget, der har tilknyttede investeringer
+        unable_notice_polls: Du kan ikke slette et budget med et tilknyttet valgsted
       new:
         title: Nyt deltagerbudget
       winners:
@@ -247,6 +248,7 @@ da:
           author_username: Brugernavn
           incompatible: Uforenelig
           price: Pris
+          author: Oprettet af
         cannot_calculate_winners: Budgettet skal enten være i "Afstemningsfasen", "Gennemgangsfasen" eller "Afslutningsfasen" for at kunne beregne, hvilke projekter, der har fået flest stemmer
         see_results: "Se resultat"
       show:
