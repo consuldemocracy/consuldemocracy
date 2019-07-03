@@ -279,6 +279,7 @@ da:
           "true": "Ja"
           "false": "Nej"
         valuator_groups: "Vurderingsgrupper"
+        preview: Forhåndsvisning af projekt
       edit:
         classification: Klassificering
         compatibility: Kompatibilitet
@@ -317,6 +318,23 @@ da:
     progress_bars:
       index:
         title: "Statuslinjer"
+    comments:
+      index:
+        id: "ID"
+        content: "Indhold"
+        author: "Oprettet af"
+        commentable_type: "Type"
+        link: "Download kommentarer"
+        title: Kommentarer
+        no_comments: Der er ingen kommentarer.
+        table_link: "Link"
+    hidden_comments:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
     dashboard:
       index:
         back: Gå tilbage til %{org}
@@ -381,6 +399,22 @@ da:
           request: Efterspurgt funktion
         update:
           success: Opgaven blev markeret som løst.
+    documents:
+      new:
+        label_attachment: "Vælg dokument"
+        submit_button: "Upload"
+      index:
+        new_link: "Tilføj fil"
+        no_documents: "Der er ingen dokumenter."
+        title: "Dokumenter"
+        format: "Format"
+        size: "Størrelse"
+        url: "URL"
+      create:
+        success_notice: "Dokumentet blev uploadet"
+        unable_notice: "Ugyldigt dokument"
+      destroy:
+        success_notice: "Dokumentet blev slettet"
     hidden_users:
       index:
         filter: Filtrere
@@ -445,6 +479,7 @@ da:
           filters:
             active: Aktive
             all: Alle
+          link: "Download høringsprocessen"
         new:
           back: Tilbage
           title: Opret ny medborgerdialog
@@ -617,6 +652,7 @@ da:
       stats: Statistikker
       signature_sheets: Signaturark
       site_customization:
+        documents: Brugerdokumenter
         homepage: Startside
         pages: Brugerdefinerede sider
         images: Brugerdefinerede billeder
