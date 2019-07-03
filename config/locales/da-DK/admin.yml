@@ -104,6 +104,25 @@ da:
         edit_phase: Rediger fase
         active: Aktiv
         blank_dates: Ingen datoer
+        administrators:
+          zero: "Vælg administrator"
+          one: "1 administrator er valgt"
+          other: "%{count} administratorer er valgt"
+        valuators:
+          zero: "Vælg evaluator"
+          one: "1 evaluator er valgt"
+          other: "%{count} evaluatorer er valgt"
+        trackers:
+          zero: "Vælg tracker"
+          one: "1 tracker er valgt"
+          other: "%{count} trackere er valgt"
+        empty_administrators: "Der findes ingen administratorer"
+        empty_valuators: "Der findes ingen evaluatorer"
+        empty_trackers: "Der findes ingen trackere"
+        name: "Navn"
+        selected: "Valgt"
+        cancel: "Annuller"
+        save: "Gem"
       destroy:
         success_notice: Budgettet blev slettet
         unable_notice: Du kan ikke slette et Budget, der har tilknyttede investeringer
