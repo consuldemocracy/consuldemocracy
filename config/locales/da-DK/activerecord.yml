@@ -137,6 +137,8 @@ da:
         description_finished: "Synlig beskrivelse, når budgettet er færdiggjort"
         phase: "Fase"
         currency_symbol: "Valuta"
+        budget_milestone_tags: "Tags (proces)"
+        budget_valuation_tags: "Tags (vurdering)"
         help_link: "Hjælpelink"
       budget/investment:
         heading_id: "Overskrift"
@@ -356,6 +358,8 @@ da:
       valuator:
         description: Beskrivelse
         valuator_group_id: Evaluatorer
+        can_comment: Kan oprette kommentarer
+        can_edit_dossier: Kan redigere projektinformation
     errors:
       models:
         user:
