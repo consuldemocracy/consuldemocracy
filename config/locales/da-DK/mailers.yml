@@ -70,6 +70,12 @@ da:
       hi: "Kære bruger,"
       thanks: "Endnu engang tak for din deltagelse."
       sincerely: "Med venlig hilsen"
+    evaluation_comment:
+      subject: "Ny kommentar"
+      title: Ny kommentar til projektidéen %{investment}
+      hi: Hej
+      new_comment_by_html: <strong>%{commenter}</strong> har tilføjet en ny kommentar til projektidéen %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Flere nyheder vedrørende dit borgerforslag"
       hi: "Hej %{name},"
