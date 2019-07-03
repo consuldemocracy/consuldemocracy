@@ -156,3 +156,4 @@ da:
         max_size: "Maksimale dokumentstørrelse"
         max_size_description: "Maksimale størrelse på et uploadet dokument (i Megabytes/MB)"
         content_types: "Accepterede filformater for dokumenter"
+        content_types_description: "Vælg alle tilladte filformater for dokumenter"
