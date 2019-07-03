@@ -188,6 +188,7 @@ da:
           label: "Projektstatus"
           all: "Alle (%{count})"
         milestone_tag:
+          label: "Milepæl"
           all: "Alle (%{count})"
     phases:
       errors:
