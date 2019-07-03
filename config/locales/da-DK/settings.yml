@@ -142,3 +142,7 @@ da:
     uploads:
       images:
         min_height: "Minimum højde"
+        min_height_description: "Minimum billedehøjde (i pixels)"
+        max_size: "Billedets maksimale størrelse"
+        max_size_description: "Maksimal størrelse (i Megabytes/MB)"
+        content_types: "Billedet kan være af følgende type"
