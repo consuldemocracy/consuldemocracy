@@ -37,6 +37,7 @@ rules:
   max-len:
     - warn
     - code: 110
+  no-array-constructor: error
   no-console: error
   no-multi-spaces: error
   no-multiple-empty-lines:
