@@ -251,6 +251,7 @@ da:
           author: Oprettet af
         cannot_calculate_winners: Budgettet skal enten være i "Afstemningsfasen", "Gennemgangsfasen" eller "Afslutningsfasen" for at kunne beregne, hvilke projekter, der har fået flest stemmer
         see_results: "Se resultat"
+        milestone_tags_filter_all: "Alle proces tags"
       show:
         assigned_admin: Tildelt administrator
         assigned_valuators: Tildelt evaluatorer
@@ -294,7 +295,11 @@ da:
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
         user_groups: "Grupper"
+        milestone_tags: Tags (proces)
       search_unfeasible: Søg uigennemførlige projekter
+    milestones:
+      index:
+        milestone_tags: Tags (proces)
     statuses:
       index:
         title: Processtatus
@@ -335,6 +340,10 @@ da:
           all: Alle
           with_confirmed_hide: Bekræftet
           without_confirmed_hide: Under behandling
+        hidden_debate: Skjulte debatindlæg
+        hidden_proposal: Skjulte borgerforslag
+        title: Skjulte kommentarer
+        no_hidden_comments: Der er ingen skjulte kommentarer.
     dashboard:
       index:
         back: Gå tilbage til %{org}
@@ -399,8 +408,25 @@ da:
           request: Efterspurgt funktion
         update:
           success: Opgaven blev markeret som løst.
+    debates:
+      index:
+        id: ID
+        author: Oprettet af
+        title: Debatindlæg
+        no_debates: Der er ingen debatindlæg.
+        link: "Download debatindlæg"
+    hidden_debates:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bekræftet
+          without_confirmed_hide: Under behandling
+        title: Skjulte debatindlæg
+        no_hidden_debates: Der er ingen skjulte debatindlæg.
     documents:
       new:
+        title: "Upload et dokument"
         label_attachment: "Vælg dokument"
         submit_button: "Upload"
       index:
@@ -1338,7 +1364,13 @@ da:
         proposal_notifications: Underretning om forslag
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
+      budgets:
+        supporting_phase: Støttefasen
+        balloting_phase: Endelig afstemning
       budget_balloting:
+        title: "Statistik over den endelige afstemning"
+        vote_count: Stemmer
+        participant_count: Deltagere
         votes_per_heading: Stemmer pr. hovedområde
         participants_per_district: Deltagere pr. distrikt
       budget_supporting:
