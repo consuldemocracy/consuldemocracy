@@ -139,3 +139,6 @@ da:
       per_page_code_head_description: "Denne kode vises i <head>. Brugbar i forhold til indlæsning af brugerdefinerede fremstillinger, analyser..."
       per_page_code_body: "Kode inkluderet på alle sidesektioner (<body>)"
       per_page_code_body_description: "Denne kode vises i <body>. Brugbar i forhold til indlæsning af brugerdefinerede fremsitllinger, analyser..."
+    uploads:
+      images:
+        min_height: "Minimum højde"
