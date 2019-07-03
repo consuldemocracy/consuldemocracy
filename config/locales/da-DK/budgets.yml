@@ -185,6 +185,7 @@ da:
       no_winner_investments: "Ingen vinder investeringer i denne tilstand"
       filters:
         status:
+          label: "Projektstatus"
           all: "Alle (%{count})"
         milestone_tag:
           all: "Alle (%{count})"
