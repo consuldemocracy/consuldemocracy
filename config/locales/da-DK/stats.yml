@@ -1,3 +1,5 @@
 da:
   stats:
     title: "Deltagelse"
+    total_participants: "Deltagere"
+    age: "Alder"
