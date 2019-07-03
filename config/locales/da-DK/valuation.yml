@@ -57,6 +57,7 @@ da:
         responsibles: Ansvarlige
         assigned_admin: Tildel admin
         assigned_valuators: Tilknyttet evaluatorer
+        preview: Forhåndsvisning af projekt
       edit:
         dossier: Rapport
         price_html: "Pris (%{currency})"
