@@ -70,7 +70,7 @@
         type: "renderLegislationAnnotation",
         annotation_id: target.data("annotation-id"),
         annotation_url: target.closest(".legislation-annotatable").data("legislation-annotatable-base-url"),
-        offset: target.offset()["top"]
+        offset: target.offset().top
       });
       parents_ids.each(function(i, pid) {
         $.event.trigger({
@@ -149,7 +149,7 @@
                   type: "renderLegislationAnnotation",
                   annotation_id: ann_id,
                   annotation_url: el.closest(".legislation-annotatable").data("legislation-annotatable-base-url"),
-                  offset: el.offset()["top"]
+                  offset: el.offset().top
                 });
                 clearInterval(checkExist);
               }
@@ -205,7 +205,7 @@
         App.LegislationAnnotatable.app = new annotator.App().include(function() {
           return {
             beforeAnnotationCreated: function(ann) {
-              ann["legislation_draft_version_id"] = ann_id;
+              ann.legislation_draft_version_id = ann_id;
               ann.permissions = ann.permissions || {};
               ann.permissions.admin = [];
             }

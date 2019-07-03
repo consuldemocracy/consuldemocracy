@@ -20,6 +20,7 @@ rules:
   comma-spacing: error
   computed-property-spacing: error
   curly: error
+  dot-notation: error
   eol-last: error
   eqeqeq:
     - error

@@ -11,9 +11,9 @@
       $("#nested-documents").on("cocoon:after-insert", function(e, nested_document) {
         var input;
         input = $(nested_document).find(".js-document-attachment");
-        input["lockUpload"] = $(nested_document).closest("#nested-documents").find(".document:visible").length >= $("#nested-documents").data("max-documents-allowed");
+        input.lockUpload = $(nested_document).closest("#nested-documents").find(".document:visible").length >= $("#nested-documents").data("max-documents-allowed");
         App.Documentable.initializeDirectUploadInput(input);
-        if (input["lockUpload"]) {
+        if (input.lockUpload) {
           App.Documentable.lockUploads();
         }
       });
@@ -64,7 +64,7 @@
             event.stopPropagation();
             App.Documentable.doDeleteCachedAttachmentRequest(this.href, data);
           });
-          if (input["lockUpload"]) {
+          if (input.lockUpload) {
             App.Documentable.showNotice();
           }
         },

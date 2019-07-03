@@ -2,9 +2,9 @@
   "use strict";
   App.BudgetEditAssociations = {
     set_text: function(response) {
-      $(".js-budget-show-administrators-list").text(response["administrators"]);
-      $(".js-budget-show-valuators-list").text(response["valuators"]);
-      $(".js-budget-show-trackers-list").text(response["trackers"]);
+      $(".js-budget-show-administrators-list").text(response.administrators);
+      $(".js-budget-show-valuators-list").text(response.valuators);
+      $(".js-budget-show-trackers-list").text(response.trackers);
     },
     initialize: function() {
       $(".js-budget-list-checkbox-user").on({

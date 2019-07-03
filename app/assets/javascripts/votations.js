@@ -29,7 +29,7 @@
       }
     },
     setTraduction: function(response) {
-      $(".js-description_text").text(response["traduction"]);
+      $(".js-description_text").text(response.traduction);
     },
     updateChecks: function() {
       App.Votations.checkMaxVotes();

@@ -75,7 +75,7 @@
       };
       openMarkerPopup = function(e) {
         marker = e.target;
-        $.ajax("/investments/" + marker.options["id"] + "/json_data", {
+        $.ajax("/investments/" + marker.options.id + "/json_data", {
           type: "GET",
           dataType: "json",
           success: function(data) {
@@ -84,7 +84,7 @@
         });
       };
       getPopupContent = function(data) {
-        return "<a href='/budgets/" + data["budget_id"] + "/investments/" + data["investment_id"] + "'>" + data["investment_title"] + "</a>";
+        return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
       map = L.map(element.id).setView(mapCenterLatLng, zoom);
@@ -103,7 +103,7 @@
         addMarkerInvestments.forEach(function(coordinates) {
           if (App.Map.validCoordinates(coordinates)) {
             marker = createMarker(coordinates.lat, coordinates.long);
-            marker.options["id"] = coordinates.investment_id;
+            marker.options.id = coordinates.investment_id;
             marker.on("click", openMarkerPopup);
           }
         });
