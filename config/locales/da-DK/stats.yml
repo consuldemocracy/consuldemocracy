@@ -2,4 +2,10 @@ da:
   stats:
     title: "Deltagelse"
     total_participants: "Deltagere"
+    men_percentage: "%{percentage} Mænd"
+    women_percentage: "%{percentage} Kvinder"
     age: "Alder"
+    budgets:
+      total_investments: "Antal projektidéer"
+      total_selected_investments: "Antal projektidéer i den endelige afstemningsfase"
+      total_unfeasible_investments: "Fravalgte projektidéer"
