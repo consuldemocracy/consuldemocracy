@@ -116,6 +116,8 @@ da:
       public_stats_description: "Viser offentlig statistik i Administrationspanelet"
       help_page: "Hjælp"
       help_page_description: 'Viser en Hjælpeside, der indeholder en informationssektion omkring enhver aktiveret funktion. Derudover kan brugerdefinerede sider og sektioner oprettes under "Brugerdefinerede sider" og "Brugerdefinerede indholdsblokke"'
+      valuation_comment_notification: "Notifikation"
+      valuation_comment_notification_description: "Send en e-mail til alle brugere (med undtagelse af evaluatorerne) når en ny vurdering af foretaget"
     map:
       latitude: "Breddegrad"
       latitude_description: "Breddegrader"
@@ -141,6 +143,8 @@ da:
       per_page_code_body_description: "Denne kode vises i <body>. Brugbar i forhold til indlæsning af brugerdefinerede fremsitllinger, analyser..."
     uploads:
       images:
+        min_width: "Minimum bredde"
+        min_width_description: "Minimum billedbredde (i pixels)"
         min_height: "Minimum højde"
         min_height_description: "Minimum billedehøjde (i pixels)"
         max_size: "Billedets maksimale størrelse"
@@ -149,7 +153,9 @@ da:
         content_types_description: "Vælg hvilke filformater billeder kan uploades i"
         title:
           min_length: "Minimum længde på billedtitel"
+          min_length_description: "Brugerens valgte billedtitel (HTML)"
           max_length: "Maksimal længde på billedtitel"
+          max_length_description: "Brugerens valgte billedtitel (HTML)"
       documents:
         max_amount: "Max antal dokumenter"
         max_amount_description: "Max antal dokumenter, der kan vedhæftes borgerforslag, projektidéer..."
