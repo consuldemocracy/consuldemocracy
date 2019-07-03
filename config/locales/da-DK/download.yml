@@ -1,5 +1,26 @@
 da:
   download:
+    edit:
+      description: "Beskrivelse"
+      downloadable: "Kan downloades"
+      debates: "Debatindlæg"
+      proposals: "Borgerforslag"
+      legislation_processes: "Lovgivningsprocesser"
+      budget_investments: "Deltagerbudgetter"
+      comments: "Kommentarer"
+      submit: "Gem ændringer"
+      config:
+        "0": ""
+        "1": "- Processer"
     fielddescription:
+      debates:
+        id: "Identifikationsnummer"
+        title: "Titel"
+        description: "Beskrivelse"
+        author_id: "Identifikationsnummer på forfatter"
+        created_at: "Oprettet den"
+        updated_at: "Opdateret den"
+        visit_id: "Besøg id"
+        hidden_at: "Skjult den"
       budget_investments:
         created_at: "Oprettet den"
