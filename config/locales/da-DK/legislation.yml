@@ -20,8 +20,10 @@ da:
       index:
         title: Kommentarer
         comments_about: Kommentarer om
+        comment_about: "Kommentar om:"
         see_in_context: Se i context
         comments_count:
+          zero: Ingen kommentarer
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
       show:
@@ -96,6 +98,10 @@ da:
         form:
           leave_comment: Svar
       question:
+        total:
+          zero: Ingen debatindlæg
+          one: "%{count} debatindlæg"
+          other: "%{count} debatindlæg"
         comments:
           zero: Ingen kommentarer
           one: "%{count} kommentar"
@@ -123,3 +129,22 @@ da:
       form:
         tags_label: "Kategorier"
       not_verified: "For at stemme på borgerforslag %{verify_account}."
+      process_title: Høringsproces
+      total:
+        zero: Ingen borgerforslag
+        one: "%{count} borgerforslag"
+        other: "%{count} borgerforslag"
+    summary:
+      title: Resume
+      votes: stemmer
+      debates_phase: Debatfase
+      proposal_phase: Forslagsfase
+      comments_phase: Responsfase
+      comments:
+        zero: Ingen kommentarer
+        one: "%{count} kommentar"
+        other: "%{count} kommentarer"
+      most_voted_comments: "Kommentarer med flest stemmer: "
+      no_allegation: Der er ingen kommentarer til teksten
+      version: version
+      process_empty: Processen har ingen faser.
