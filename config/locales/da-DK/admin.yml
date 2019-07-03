@@ -1486,3 +1486,17 @@ da:
     change_log:
       id: "ID"
       new_value: "Ny værdi"
+      old_value: "Tidligere værdi"
+      edited_at: "Redigeret den"
+      edited_by: "Redigeret af"
+      actions: "Handlinger"
+    trackers:
+      index:
+        name: Navn
+        email: E-mail
+        description: Beskrivelse
+        no_description: Ingen beskrivelse
+      show:
+        email: E-mail
+        description: Beskrivelse
+        no_description: Ingen beskrivelse.
