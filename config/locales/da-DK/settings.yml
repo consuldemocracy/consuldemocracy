@@ -146,3 +146,13 @@ da:
         max_size: "Billedets maksimale størrelse"
         max_size_description: "Maksimal størrelse (i Megabytes/MB)"
         content_types: "Billedet kan være af følgende type"
+        content_types_description: "Vælg hvilke filformater billeder kan uploades i"
+        title:
+          min_length: "Minimum længde på billedtitel"
+          max_length: "Maksimal længde på billedtitel"
+      documents:
+        max_amount: "Max antal dokumenter"
+        max_amount_description: "Max antal dokumenter, der kan vedhæftes borgerforslag, projektidéer..."
+        max_size: "Maksimale dokumentstørrelse"
+        max_size_description: "Maksimale størrelse på et uploadet dokument (i Megabytes/MB)"
+        content_types: "Accepterede filformater for dokumenter"
