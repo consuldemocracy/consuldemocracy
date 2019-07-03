@@ -7,7 +7,54 @@ da:
         title: Deltagerbudgetter
         table_name: Navn
         table_phase: Fase
+        table_actions: Handlinger
+        no_budgets: "Der er ingen deltagerbudgetter"
     budget_investments:
       index:
+        title: Projekter
+        edit: Rediger milepæl
         table_id: ID
         table_title: Titel
+        table_actions: Handlinger
+        no_investments: "Der er ingen projektidéer"
+      show:
+        title: Projekter
+        info: Brugerinformation
+        by: Sendt af
+        sent: Sendt den
+        responsibles: Ansvarshavere
+        assigned_admin: Tilknyttet admin
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titel"
+        table_description: "Beskrivelse"
+        table_publication_date: "Dato for offentliggørelse"
+        table_status: Status
+        table_actions: "Handlinger"
+        delete: "Slet proces"
+        image: "Billede"
+        show_image: "Vis billede"
+        documents: "Dokumenter"
+        milestone: Proces
+        new_milestone: Opret ny proces
+      form:
+        admin_statuses: Administrer status
+      new:
+        date: Dato
+        description: Beskrivelse
+      edit:
+        title: Rediger proces
+      create:
+        notice: Processen blev oprettet!
+      update:
+        notice: Processen blev opdateret
+      delete:
+        notice: Processen blev slettet
+    progress_bars:
+      manage: "Administrer statuslinje"
+      index:
+        title: "Statuslinje"
+        table_id: "ID"
+        table_title: "Titel"
+        table_percentage: "Aktuelle forløb"
