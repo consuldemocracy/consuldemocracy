@@ -16,5 +16,6 @@
 # end
 
 ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.plural(/^(\d+)$/i, '\1')
   inflect.irregular 'organización', 'organizaciones'
 end

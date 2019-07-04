@@ -1,14 +1,13 @@
 <% provide :title do %>
-  Admin - <%= t("admin.menu.site_customization.pages") %> - <%= @page.title %>
+  <%= t("admin.header.title") %> - <%= t("admin.menu.site_customization.pages") %> - <%= @page.title %>
 <% end %>
 
 <%= back_link_to admin_site_customization_pages_path %>
 
-<%= button_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(@page), method: :delete, class: "button hollow alert small float-right" %>
+<div class="small-12 column">
+  <h2 class="inline-block"><%= t("admin.site_customization.pages.edit.title", page_title: @page.title) %></h2>
 
-<div class="row">
-  <div class="small-12 column">
-    <h2><%= t("admin.site_customization.pages.edit.title", page_title: @page.title) %></h2>
-    <%= render 'form' %>
-  </div>
+  <%= link_to t("admin.site_customization.pages.index.delete"), admin_site_customization_page_path(@page), method: :delete, class: "delete float-right" %>
 </div>
+
+<%= render 'form' %>

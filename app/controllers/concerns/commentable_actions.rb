@@ -16,7 +16,7 @@ module CommentableActions
     index_customization if index_customization.present?
 
     @tag_cloud = tag_cloud
-    @banners = Banner.with_active
+    @banners = Banner.in_section(section(resource_model.name)).with_active
 
     set_resource_votes(@resources)
 
@@ -112,6 +112,15 @@ module CommentableActions
 
     def index_customization
       nil
+    end
+
+    def section(resource_name)
+      case resource_name
+      when "Proposal"
+        'proposals'
+      when "Debate"
+        'debates'
+      end
     end
 
 end

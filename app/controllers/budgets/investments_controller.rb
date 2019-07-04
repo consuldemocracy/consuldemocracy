@@ -1,8 +1,13 @@
 module Budgets
   class InvestmentsController < ApplicationController
+
     include FeatureFlags
     include CommentableActions
     include FlagActions
+    include RandomSeed
+    include ImageAttributes
+
+    PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
 
@@ -17,6 +22,7 @@ module Budgets
     before_action :load_categories, only: [:index, :new, :create]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
+    before_action :load_content_blocks, only: :index
 
     skip_authorization_check only: :json_data
 
@@ -24,7 +30,9 @@ module Budgets
 
     has_orders %w{most_voted newest oldest}, only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
-    has_filters %w{not_unfeasible feasible unfeasible unselected selected}, only: [:index, :show, :suggest]
+
+    valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners]
+    has_filters valid_filters, only: [:index, :show, :suggest]
 
     invisible_captcha only: [:create, :update], honeypot: :subtitle, scope: :budget_investment
 
@@ -32,9 +40,11 @@ module Budgets
     respond_to :html, :js
 
     def index
-      @investments = investments.page(params[:page]).per(10).for_render
+      @investments = investments.page(params[:page]).per(PER_PAGE).for_render
 
       @investment_ids = @investments.pluck(:id)
+      @investments_map_coordinates = MapLocation.where(investment: investments).map(&:json_data)
+
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
     end
@@ -110,20 +120,11 @@ module Budgets
         @investment_votes = current_user ? current_user.budget_investment_votes(investments) : {}
       end
 
-      def set_random_seed
-        if params[:order] == 'random' || params[:order].blank?
-          seed = params[:random_seed] || session[:random_seed] || rand(-100000..100000)
-          params[:random_seed] ||= Float(seed) rescue 0
-        else
-          params[:random_seed] = nil
-        end
-      end
-
       def investment_params
         params.require(:budget_investment)
               .permit(:title, :description, :heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
-                      image_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
+                      image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
                       map_location_attributes: [:latitude, :longitude, :zoom])
       end
@@ -137,11 +138,16 @@ module Budgets
         if params[:heading_id].present?
           @heading = @budget.headings.find(params[:heading_id])
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          load_map
         end
       end
 
       def load_categories
         @categories = ActsAsTaggableOn::Tag.category.order(:name)
+      end
+
+      def load_content_blocks
+        @heading_content_blocks = @heading.content_blocks.where(locale: I18n.locale) if @heading
       end
 
       def tag_cloud
@@ -154,12 +160,16 @@ module Budgets
 
       def investments
         if @current_order == 'random'
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}", params[:random_seed])
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .sort_by_random(session[:random_seed])
         else
-          @investments.apply_filters_and_search(@budget, params, @current_filter)
-                      .send("sort_by_#{@current_order}")
+          @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
+                             .send("sort_by_#{@current_order}")
         end
+      end
+
+      def load_map
+        @map_location = MapLocation.load_from_heading(@heading)
       end
 
   end

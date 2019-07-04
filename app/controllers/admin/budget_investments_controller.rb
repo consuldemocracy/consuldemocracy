@@ -38,7 +38,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def update
-    set_valuation_tags
     if @investment.update(budget_investment_params)
       redirect_to admin_budget_budget_investment_path(@budget,
                                                       @investment,
@@ -75,29 +74,18 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       resource_model.parameterize('_')
     end
 
-    def sort_by(params)
-      if params.present? && Budget::Investment::SORTING_OPTIONS.include?(params)
-        "#{params == 'supports' ? 'cached_votes_up' : params} ASC"
-      else
-        "cached_votes_up DESC, created_at DESC"
-      end
-    end
-
     def load_investments
-      @investments = if params[:title_or_id].present?
-                       Budget::Investment.search_by_title_or_id(params)
-                     else
-                       Budget::Investment.scoped_filter(params, @current_filter)
-                                         .order(sort_by(params[:sort_by]))
-                     end
+      @investments = Budget::Investment.scoped_filter(params, @current_filter)
+                                       .order_filter(params)
+
       @investments = @investments.page(params[:page]) unless request.format.csv?
     end
 
     def budget_investment_params
       params.require(:budget_investment)
             .permit(:title, :description, :external_url, :heading_id, :administrator_id, :tag_list,
-                    :valuation_tag_list, :incompatible, :visible_to_valuators, :selected, valuator_ids: [],
-                    valuator_group_ids: [])
+                    :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
+                    valuator_ids: [], valuator_group_ids: [])
     end
 
     def load_budget
@@ -129,11 +117,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
     end
 
-    def set_valuation_tags
-      @investment.set_tag_list_on(:valuation, budget_investment_params[:valuation_tag_list])
-      params[:budget_investment] = params[:budget_investment].except(:valuation_tag_list)
-    end
-
     def parse_valuation_filters
       if params[:valuator_or_group_id]
         model, id = params[:valuator_or_group_id].split("_")
@@ -145,5 +128,4 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
         end
       end
     end
-
 end

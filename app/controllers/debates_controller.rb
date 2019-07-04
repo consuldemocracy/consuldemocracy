@@ -6,6 +6,7 @@ class DebatesController < ApplicationController
   before_action :parse_tag_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
   before_action :set_view, only: :index
+  before_action :debates_recommendations, only: :index, if: :current_user
 
   feature_flag :debates
 
@@ -43,6 +44,14 @@ class DebatesController < ApplicationController
     redirect_to request.query_parameters.merge(action: :index)
   end
 
+  def disable_recommendations
+    if current_user.update(recommended_debates: false)
+      redirect_to debates_path, notice: t('debates.index.recommendations.actions.success')
+    else
+      redirect_to debates_path, error: t('debates.index.recommendations.actions.error')
+    end
+  end
+
   private
 
     def debate_params
@@ -55,6 +64,12 @@ class DebatesController < ApplicationController
 
     def set_view
       @view = (params[:view] == "minimal") ? "minimal" : "default"
+    end
+
+    def debates_recommendations
+      if Setting['feature.user.recommendations_on_debates'] && current_user.recommended_debates
+        @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
+      end
     end
 
 end

@@ -52,6 +52,9 @@ es:
         more_info: Más información y contexto
       proposals:
         empty_proposals: No hay propuestas
+        filters:
+          random: Aleatorias
+          winners: Seleccionadas
       debate:
         empty_questions: No hay preguntas
         participate: Realiza tus aportaciones al debate previo participando en los siguientes temas.
@@ -59,21 +62,16 @@ es:
         filter: Filtro
         filters:
           open: Procesos activos
-          next: Próximamente
           past: Terminados
         no_open_processes: No hay procesos activos
-        no_next_processes: No hay procesos planeados
         no_past_processes: No hay procesos terminados
         section_header:
-          icon_alt: Icono de Procesos legislativos
-          title: Procesos legislativos
-          help: Ayuda sobre procesos legislativos
+          icon_alt: Icono de legislación colaborativa
+          title: Legislación colaborativa
+          help: Ayuda sobre legislación colaborativa
         section_footer:
-          title: Ayuda sobre procesos legislativos
+          title: Ayuda sobre Legislación colaborativa
           description: Participa en los debates y procesos previos a la aprobación de una norma o de una actuación municipal. Tu opinión será tenida en cuenta por el Ayuntamiento.
-          help_text_1: "En los procesos participativos, el Ayuntamiento ofrece a la ciudadanía la oportunidad de participar en la elaboración y modificación de normativa que afecta a la ciudad y de dar su opinión sobre ciertas actuaciones que tiene previsto llevar a cabo."
-          help_text_2: "Las personas registradas en %{org} pueden participar con aportaciones en la consulta pública de nuevas ordenanzas, reglamentos y directrices, entre otros. Sus comentarios son analizados por el área correspondiente y tenidos en cuenta de cara a la redacción final de las normas."
-          help_text_3: "El Ayuntamiento también abre procesos para recibir aportaciones y opiniones sobre actuaciones municipales."
       phase_not_open:
         not_open: Esta fase del proceso todavía no está abierta
       phase_empty:
@@ -82,11 +80,13 @@ es:
         see_latest_comments: Ver últimas aportaciones
         see_latest_comments_title: Aportar a este proceso
       shared:
-        key_dates: Fechas clave
+        key_dates: Fases de participación
+        homepage: Inicio
         debate_dates: Debate previo
         draft_publication_date: Publicación borrador
-        allegations_dates: Alegaciones
+        allegations_dates: Comentarios
         result_publication_date: Publicación resultados
+        milestones_date: Seguimiento
         proposals_dates: Propuestas
     questions:
       comments:
@@ -123,4 +123,3 @@ es:
       form:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
-      closed: "Este proceso se ha cerrado y ya no puede recoger votos."

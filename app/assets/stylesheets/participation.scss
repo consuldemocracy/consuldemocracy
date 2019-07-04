@@ -9,7 +9,6 @@
 // 07. Proposals successful
 // 08. Polls
 // 09. Polls results and stats
-// 10. Guides
 //
 
 // 01. Votes and supports
@@ -288,7 +287,7 @@
     margin: $line-height / 2 0;
 
     &::before {
-      content: 'l ';
+      content: "l ";
       font-family: "icons" !important;
     }
   }
@@ -319,7 +318,8 @@
 .legislation-process-new,
 .legislation-process-edit,
 .milestone-new,
-.milestone-edit {
+.milestone-edit,
+.image-form {
   @include direct-uploads;
 }
 
@@ -523,109 +523,6 @@
   }
 }
 
-.tab-milestones ul {
-  margin-top: rem-calc(40);
-  position: relative;
-
-  li {
-    margin: 0 auto;
-    position: relative;
-    width: 0;
-  }
-
-  li::before {
-    background: $budget;
-    border-radius: rem-calc(20);
-    content: '';
-    height: rem-calc(20);
-    position: absolute;
-    top: 5px;
-    transform: translateX(-50%);
-    width: rem-calc(20);
-    z-index: 2;
-  }
-
-  li::after {
-    background: $light-gray;
-    bottom: 100%;
-    content: '';
-    height: 100%;
-    position: absolute;
-    top: 25px;
-    width: 1px;
-    z-index: 1;
-  }
-}
-
-.tab-milestones ul .milestone-content {
-  padding: $line-height / 6 $line-height / 2;
-  position: relative;
-
-  h3 {
-    margin-bottom: 0;
-  }
-
-  .milestone-date {
-    color: $text-medium;
-    font-size: $small-font-size;
-  }
-}
-
-.tab-milestones .timeline ul li:nth-child(odd),
-.tab-milestones .timeline ul li:nth-child(even) {
-
-  .milestone-content {
-
-    @include breakpoint(medium) {
-      width: rem-calc(300);
-    }
-
-    @include breakpoint(large) {
-      width: rem-calc(450);
-    }
-  }
-}
-
-.tab-milestones .timeline ul li:nth-child(odd) {
-
-  .milestone-content {
-    text-align: right;
-
-    @include breakpoint(medium) {
-      margin-left: rem-calc(-315);
-    }
-
-    @include breakpoint(large) {
-      margin-left: rem-calc(-465);
-    }
-  }
-}
-
-.tab-milestones .timeline ul li:nth-child(even) {
-
-  .milestone-content {
-    left: 15px;
-  }
-}
-
-.tab-milestones {
-  @include breakpoint(small only) {
-
-    .timeline ul li {
-      width: 100%;
-
-      &:nth-child(odd),
-      &:nth-child(even) {
-
-        .milestone-content {
-          left: 15px;
-          text-align: left;
-        }
-      }
-    }
-  }
-}
-
 .show-actions-menu {
 
   [class^="icon-"] {
@@ -675,7 +572,8 @@
 }
 
 .budget-investments-list .budget-investment,
-.proposals-list .proposal {
+.proposals-list .proposal,
+.legislation-proposals .proposal {
 
   @include breakpoint(medium) {
 
@@ -750,6 +648,10 @@
 
     &.past-budgets {
       min-height: 0;
+
+      .button ~ .button {
+        margin-left: $line-height / 2;
+      }
     }
   }
 
@@ -831,7 +733,7 @@
   }
 
   .truncate {
-    background: image-url('truncate.png');
+    background: image-url("truncate.png");
     background-repeat: repeat-x;
     bottom: 0;
     height: rem-calc(24);
@@ -873,6 +775,13 @@
     .against {
       margin-left: $line-height / 4;
     }
+  }
+}
+
+.legislation-proposals {
+
+  .votes {
+    min-height: $line-height * 8;
   }
 }
 
@@ -1029,7 +938,7 @@
 
     &::before {
       color: $text;
-      font-family: 'icons';
+      font-family: "icons";
     }
   }
 
@@ -1038,7 +947,7 @@
     .button {
 
       &::before {
-        content: '\51';
+        content: "\51";
       }
     }
   }
@@ -1048,7 +957,7 @@
     .button {
 
       &::before {
-        content: '\22';
+        content: "\22";
       }
     }
   }
@@ -1057,8 +966,8 @@
     position: relative;
 
     &::before {
-      content: '\22';
-      font-family: 'icons';
+      content: "\22";
+      font-family: "icons";
       left: 0;
       position: absolute;
       top: 6px;
@@ -1069,20 +978,20 @@
     position: relative;
 
     &::before {
-      content: '\51';
-      font-family: 'icons';
+      content: "\51";
+      font-family: "icons";
       left: 0;
       position: absolute;
       top: 6px;
     }
   }
 
-  .active {
+  .is-active {
     color: $brand;
 
     &::after {
-      content: '\6c';
-      font-family: 'icons';
+      content: "\6c";
+      font-family: "icons";
       font-size: $tiny-font-size;
     }
   }
@@ -1344,19 +1253,18 @@
     display: inline-block;
     margin-bottom: $line-height / 2;
 
-    &:hover {
-      background: $highlight;
-      text-decoration: none;
-    }
-
-    a,
-    div {
+    a {
       display: block;
       padding: $line-height / 2;
 
       &:hover {
+        background: $highlight;
         text-decoration: none;
       }
+    }
+
+    .heading-name {
+      padding: $line-height / 2;
     }
 
     span {
@@ -1398,8 +1306,8 @@
 
     &::before {
       color: #a5a1ff;
-      content: '\57';
-      font-family: 'icons';
+      content: "\57";
+      font-family: "icons";
       font-size: $small-font-size;
       position: absolute;
       right: -6px;
@@ -1535,15 +1443,15 @@
   padding: $line-height / 4;
 }
 
-.select-district .active a {
+.select-district .is-active a {
   background: #f9f9f9;
   border-radius: rem-calc(3);
   color: $budget;
   font-weight: bold;
 
   &::after {
-    content: '\56';
-    font-family: 'icons';
+    content: "\56";
+    font-family: "icons";
     font-size: $small-font-size;
     font-weight: normal;
     line-height: $line-height;
@@ -1557,7 +1465,6 @@
 }
 
 .progress-bar-nav {
-  padding: $line-height 0;
   position: relative;
   z-index: 3;
 
@@ -1619,7 +1526,7 @@
       background-color: #fff;
       border: 4px solid $budget;
       border-radius: 100%;
-      content: '';
+      content: "";
       height: 16px;
       left: -22px;
       position: absolute;
@@ -1628,7 +1535,7 @@
       z-index: 99;
     }
 
-    &.active {
+    &.is-active {
 
       h3 {
         background: $budget;
@@ -1657,6 +1564,60 @@
     &.budget {
       color: $budget;
     }
+  }
+}
+
+.budget-execution {
+  border: 1px solid $border;
+  overflow: hidden;
+  position: relative;
+
+  a {
+    color: $text;
+    display: block;
+
+    img {
+      height: $line-height * 9;
+      min-width: 100%;
+      max-width: none;
+      transition-duration: 0.3s;
+      transition-property: transform;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      img {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  h5 {
+    font-size: $base-font-size;
+    margin-bottom: 0;
+  }
+
+  .budget-execution-info {
+    padding: $line-height / 2;
+  }
+
+  .author {
+    color: $text-medium;
+    font-size: $small-font-size;
+  }
+
+  .budget-execution-content {
+    min-height: $line-height * 3;
+  }
+
+  .price {
+    color: $budget;
+    font-size: rem-calc(24);
+  }
+
+  &:hover {
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -1707,7 +1668,7 @@
 
     &::after {
       color: #1b254c;
-      content: '\59';
+      content: "\59";
       font-family: "icons" !important;
       left: 34px;
       position: absolute;
@@ -1811,10 +1772,6 @@
 
 .orbit-slide {
   max-height: none !important;
-
-  img {
-    image-rendering: pixelated;
-  }
 }
 
 .orbit-caption {
@@ -1904,7 +1861,7 @@
 
       &::after {
         color: $color-info;
-        content: '\6c';
+        content: "\6c";
       }
     }
 
@@ -1913,7 +1870,7 @@
 
       &::after {
         color: $color-alert;
-        content: '\74';
+        content: "\74";
       }
     }
 
@@ -1922,7 +1879,7 @@
 
       &::after {
         color: $color-info;
-        content: '\6f';
+        content: "\6f";
       }
     }
 
@@ -1931,7 +1888,7 @@
 
       &::after {
         color: $color-warning;
-        content: '\6f';
+        content: "\6f";
       }
     }
 
@@ -1940,7 +1897,7 @@
 
       &::after {
         color: $color-success;
-        content: '\59';
+        content: "\59";
       }
     }
   }
@@ -2006,7 +1963,7 @@
       &::after {
         background: #92ba48;
         border-radius: rem-calc(20);
-        content: '\6c';
+        content: "\6c";
         color: #fff;
         font-family: "icons" !important;
         font-size: rem-calc(12);
@@ -2072,96 +2029,5 @@
     font-size: rem-calc(60);
     font-weight: bold;
     line-height: rem-calc(60);
-  }
-}
-
-// 10. Guides
-// ----------------------
-
-.guides {
-
-  h2 {
-    margin: $line-height 0 $line-height * 2;
-  }
-
-  .guide-budget,
-  .guide-proposal {
-    border-radius: rem-calc(3);
-    margin: $line-height 0;
-    padding: $line-height;
-    position: relative;
-
-    .button {
-      color: $text;
-      font-weight: bold;
-    }
-
-    &::before {
-      border-radius: 100%;
-      color: #fff;
-      font-family: "icons" !important;
-      height: rem-calc(80);
-      left: 50%;
-      line-height: rem-calc(80);
-      margin-left: rem-calc(-40);
-      position: absolute;
-      text-align: center;
-      top: -40px;
-      width: rem-calc(80);
-      z-index: 99;
-    }
-  }
-
-  .guide-budget {
-    border: 1px solid $budget;
-
-    &::before {
-      background: $budget;
-      content: '\53';
-      font-size: rem-calc(40);
-    }
-
-    .button {
-      background: #f8f5f9;
-      border: 1px solid $budget;
-    }
-  }
-
-  .guide-proposal {
-    border: 1px solid $proposals;
-
-    &::before {
-      background: $proposals;
-      content: '\68';
-      font-size: rem-calc(40);
-    }
-
-    .button {
-      background: #fffaf4;
-      border: 1px solid $proposals;
-    }
-  }
-
-  ul {
-
-    @include breakpoint(medium) {
-      min-height: $line-height * 14;
-    }
-
-    li {
-      margin-bottom: $line-height;
-      padding-left: $line-height;
-      position: relative;
-
-      &::before {
-        color: #37af65;
-        content: '\56';
-        font-family: "icons" !important;
-        font-size: $small-font-size;
-        left: 0;
-        position: absolute;
-        top: 1px;
-      }
-    }
   }
 }

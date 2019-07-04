@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Budget::Investment do
   let(:investment) { build(:budget_investment) }
@@ -308,6 +308,30 @@ describe Budget::Investment do
     end
   end
 
+  describe "#by_budget" do
+
+    it "returns investments scoped by budget" do
+       budget1 = create(:budget)
+       budget2 = create(:budget)
+
+       group1 = create(:budget_group, budget: budget1)
+       group2 = create(:budget_group, budget: budget2)
+
+       heading1 = create(:budget_heading, group: group1)
+       heading2 = create(:budget_heading, group: group2)
+
+       investment1 = create(:budget_investment, heading: heading1)
+       investment2 = create(:budget_investment, heading: heading1)
+       investment3 = create(:budget_investment, heading: heading2)
+
+       investments_by_budget = Budget::Investment.by_budget(budget1)
+
+       expect(investments_by_budget).to include investment1
+       expect(investments_by_budget).to include investment2
+       expect(investments_by_budget).not_to include investment3
+    end
+  end
+
   describe "#by_admin" do
     it "returns investments assigned to specific administrator" do
       investment1 = create(:budget_investment, administrator_id: 33)
@@ -594,15 +618,15 @@ describe Budget::Investment do
     context "attributes" do
 
       it "searches by title" do
-        budget_investment = create(:budget_investment, title: 'save the world')
-        results = described_class.search('save the world')
+        budget_investment = create(:budget_investment, title: "save the world")
+        results = described_class.search("save the world")
         expect(results).to eq([budget_investment])
       end
 
       it "searches by author name" do
-        author = create(:user, username: 'Danny Trejo')
+        author = create(:user, username: "Danny Trejo")
         budget_investment = create(:budget_investment, author: author)
-        results = described_class.search('Danny')
+        results = described_class.search("Danny")
         expect(results).to eq([budget_investment])
       end
 
@@ -610,19 +634,27 @@ describe Budget::Investment do
 
     context "tags" do
       it "searches by tags" do
-        investment = create(:budget_investment, tag_list: 'Latina')
+        investment = create(:budget_investment, tag_list: "Latina")
 
-        results = described_class.search('Latina')
+        results = described_class.search("Latina")
         expect(results.first).to eq(investment)
 
-        results = described_class.search('Latin')
+        results = described_class.search("Latin")
         expect(results.first).to eq(investment)
+      end
+
+      it "gets and sets valuation tags through virtual attributes" do
+        investment = create(:budget_investment)
+
+        investment.valuation_tag_list = %w[Code Test Refactor]
+
+        expect(investment.valuation_tag_list).to match_array(%w[Code Test Refactor])
       end
     end
 
   end
 
-  describe 'Permissions' do
+  describe "Permissions" do
     let(:budget)      { create(:budget) }
     let(:group)       { create(:budget_group, budget: budget) }
     let(:heading)     { create(:budget_heading, group: group) }
@@ -630,7 +662,7 @@ describe Budget::Investment do
     let(:luser)       { create(:user) }
     let(:district_sp) { create(:budget_investment, budget: budget, group: group, heading: heading) }
 
-    describe '#reason_for_not_being_selectable_by' do
+    describe "#reason_for_not_being_selectable_by" do
       it "rejects not logged in users" do
         expect(district_sp.reason_for_not_being_selectable_by(nil)).to eq(:not_logged_in)
       end
@@ -787,11 +819,11 @@ describe Budget::Investment do
 
       expect(another_investment.headings_voted_by_user(user1)).to include(new_york.id)
       expect(another_investment.headings_voted_by_user(user1)).to include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user1)).to_not include(another_heading.id)
+      expect(another_investment.headings_voted_by_user(user1)).not_to include(another_heading.id)
 
-      expect(another_investment.headings_voted_by_user(user2)).to_not include(new_york.id)
-      expect(another_investment.headings_voted_by_user(user2)).to_not include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user2)).to_not include(another_heading.id)
+      expect(another_investment.headings_voted_by_user(user2)).not_to include(new_york.id)
+      expect(another_investment.headings_voted_by_user(user2)).not_to include(san_franciso.id)
+      expect(another_investment.headings_voted_by_user(user2)).not_to include(another_heading.id)
     end
   end
 
@@ -884,7 +916,7 @@ describe Budget::Investment do
 
   describe "Final Voting" do
 
-    describe 'Permissions' do
+    describe "Permissions" do
       let(:budget)      { create(:budget) }
       let(:group)       { create(:budget_group, budget: budget) }
       let(:heading)     { create(:budget_heading, group: group) }
@@ -893,7 +925,7 @@ describe Budget::Investment do
       let(:ballot)      { create(:budget_ballot, budget: budget) }
       let(:investment)  { create(:budget_investment, :selected, budget: budget, heading: heading) }
 
-      describe '#reason_for_not_being_ballotable_by' do
+      describe "#reason_for_not_being_ballotable_by" do
         it "rejects not logged in users" do
           expect(investment.reason_for_not_being_ballotable_by(nil, ballot)).to eq(:not_logged_in)
         end

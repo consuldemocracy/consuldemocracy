@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "welcome#index" do
 
-  it 'Display images on orbit carrousel when we have defined image_default' do
+  it "Display images on orbit carrousel when we have defined image_default" do
     debate = create(:debate)
 
     render template: "welcome/_recommended_carousel.html.erb",
@@ -21,7 +21,7 @@ RSpec.describe "welcome#index" do
 
   end
 
-  it 'Not display images on orbit carrousel when we have not defined image_default' do
+  it "Not display images on orbit carrousel when we have not defined image_default" do
     debate = create(:debate)
 
     render template: "welcome/_recommended_carousel.html.erb",

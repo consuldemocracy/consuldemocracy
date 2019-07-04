@@ -1,0 +1,7 @@
+eu:
+  management:
+    document_type_label: Agiri mota
+    email_label: E-mail
+    date_of_birth: Jaiotze data
+    budgets:
+      table_name: Izena

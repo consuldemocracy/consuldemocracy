@@ -1,0 +1,9 @@
+en-US:
+  verification:
+    residence:
+      new:
+        date_of_birth: Date of birth
+        document_type_label: Document type
+        postal_code: Postcode
+    step_1: Residence
+    step_2: Confirmation code

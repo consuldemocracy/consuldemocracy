@@ -1,16 +1,13 @@
----
 fr:
   moderation:
-    header:
-      title: Modération
     comments:
       index:
         block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
-        filter: Filtrer
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtre
         filters:
-          all: Tous
-          pending_flag_review: En attente
+          all: Toutes
+          pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
         headers:
           comment: Commentaire
@@ -28,11 +25,11 @@ fr:
     debates:
       index:
         block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
-        filter: Filtrer
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtre
         filters:
-          all: Tous
-          pending_flag_review: En attente
+          all: Toutes
+          pending_flag_review: Indécis
           with_ignored_flag: Marqué comme vu
         headers:
           debate: Débat
@@ -44,18 +41,22 @@ fr:
           created_at: Les plus récents
           flags: Les plus signalés
         title: Débats
+    header:
+      title: Modération
     menu:
       flagged_comments: Commentaires
       flagged_debates: Débats
+      flagged_investments: Propositions d'investissement
       proposals: Propositions
+      proposal_notifications: Notifications des propositions
       users: Bloquer les utilisateurs
     proposals:
       index:
         block_authors: Bloquer un auteur
-        confirm: "Êtes-vous sûr(e) ?"
-        filter: Filtrer
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtre
         filters:
-          all: Tous
+          all: Toutes
           pending_flag_review: En attente de revue
           with_ignored_flag: Marqué comme vu
         headers:
@@ -68,11 +69,49 @@ fr:
           created_at: Les plus récents
           flags: Les plus signalés
         title: Propositions
+    budget_investments:
+      index:
+        block_authors: Bloquer un auteur
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtre
+        filters:
+          all: Toutes
+          pending_flag_review: Indécis
+          with_ignored_flag: Marqué comme vu
+        headers:
+          moderate: Modérer
+          budget_investment: Proposition d'investissement
+        hide_budget_investments: Cacher les propositions d'investissement
+        ignore_flags: Marqué comme vu
+        order: Trier par
+        orders:
+          created_at: Les plus récents
+          flags: Les plus signalés
+        title: Propositions d'investissement
+    proposal_notifications:
+      index:
+        block_authors: Bloquer un auteur
+        confirm: Êtes-vous sûr(e) ?
+        filter: Filtre
+        filters:
+          all: Toutes
+          pending_review: En attente de revue
+          ignored: Marqué comme vu
+        headers:
+          moderate: Modérer
+          proposal_notification: Notification de proposition
+        hide_proposal_notifications: Masquer les propositions
+        ignore_flags: Marqué comme vu
+        order: Trier par
+        orders:
+          created_at: Les plus récents
+          moderated: Modéré
+        title: Notifications des propositions
     users:
       index:
         hidden: Bloqué
         hide: Bloquer
-        search: Rechercher
+        search: Chercher
         search_placeholder: courriel ou nom de l'utilisateur
         title: Bloquer les utilisateurs
       notice_hide: Utilisateur bloqué. Tous les débats et les propositions de cet utilisateur ont été masqués.

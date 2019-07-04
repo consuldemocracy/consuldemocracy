@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 feature "Valuator groups" do
 
@@ -118,7 +118,7 @@ feature "Valuator groups" do
       click_button "Update valuator"
 
       expect(page).to have_content "Valuator updated successfully"
-      expect(page).to_not have_content "Health"
+      expect(page).not_to have_content "Health"
     end
 
   end

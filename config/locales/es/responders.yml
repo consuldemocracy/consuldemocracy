@@ -24,11 +24,13 @@ es:
         debate: "Debate actualizado correctamente."
         poll: "Votación actualizada correctamente."
         poll_booth: "Urna actualizada correctamente."
+        active_poll: "Descripción general de votaciones actualizada correctamente."
         proposal: "Propuesta actualizada correctamente."
         spending_proposal: "Propuesta de inversión actualizada correctamente."
         budget_investment: "Proyecto de gasto actualizado correctamente"
         topic: "Tema actualizado correctamente."
         valuator_group: "Grupo de evaluadores actualizado correctamente"
+        translation: "Traducción actualizada correctamente"
       destroy:
         spending_proposal: "Propuesta de inversión eliminada."
         budget_investment: "Proyecto de gasto eliminado."

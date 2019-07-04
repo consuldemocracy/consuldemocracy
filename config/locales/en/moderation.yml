@@ -46,7 +46,9 @@ en:
     menu:
       flagged_comments: Comments
       flagged_debates: Debates
+      flagged_investments: Budget investments
       proposals: Proposals
+      proposal_notifications: Proposals notifications
       users: Block users
     proposals:
       index:
@@ -67,6 +69,44 @@ en:
           created_at: Most recent
           flags: Most flagged
         title: Proposals
+    budget_investments:
+      index:
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
+        filters:
+          all: All
+          pending_flag_review: Pending
+          with_ignored_flag: Marked as viewed
+        headers:
+          moderate: Moderate
+          budget_investment: Budget investment
+        hide_budget_investments: Hide budget investments
+        ignore_flags: Mark as viewed
+        order: Order by
+        orders:
+          created_at: Most recent
+          flags: Most flagged
+        title: Budget investments
+    proposal_notifications:
+      index:
+        block_authors: Block authors
+        confirm: Are you sure?
+        filter: Filter
+        filters:
+          all: All
+          pending_review: Pending review
+          ignored: Mark as viewed
+        headers:
+          moderate: Moderate
+          proposal_notification: Proposal notification
+        hide_proposal_notifications: Hide proposals
+        ignore_flags: Mark as viewed
+        order: Order by
+        orders:
+          created_at: Most recent
+          moderated: Moderated
+        title: Proposal notifications
     users:
       index:
         hidden: Blocked

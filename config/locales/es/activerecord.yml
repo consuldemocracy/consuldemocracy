@@ -10,9 +10,15 @@ es:
       budget/investment:
         one: "Proyecto de gasto"
         other: "Proyectos de gasto"
-      budget/investment/milestone:
+      milestone:
         one: "hito"
         other: "hitos"
+      milestone/status:
+        one: "Estado de seguimiento"
+        other: "Estados de seguimiento"
+      progress_bar:
+        one: "Barra de progreso"
+        other: "Barras de progreso"
       comment:
         one: "Comentario"
         other: "Comentarios"
@@ -20,8 +26,8 @@ es:
         one: "Debate"
         other: "Debates"
       tag:
-        one: "Tema"
-        other: "Temas"
+        one: "Etiqueta"
+        other: "Etiquetas"
       user:
         one: "Usuario"
         other: "Usuarios"
@@ -35,8 +41,8 @@ es:
         one: "Evaluador"
         other: "Evaluadores"
       valuator_group:
-        one: "Grupo de Evaluadores"
-        other: "Grupos de Evaluadores"
+        one: "Grupo de evaluadores"
+        other: "Grupos de evaluadores"
       manager:
         one: "Gestor"
         other: "Gestores"
@@ -60,7 +66,7 @@ es:
         other: "Propuestas ciudadanas"
       spending_proposal:
         one: "Propuesta de inversión"
-        other: "Propuestas de inversión"
+        other: "Proyectos de gasto"
       site_customization/page:
         one: Página
         other: Páginas
@@ -73,12 +79,12 @@ es:
       legislation/process:
         one: "Proceso"
         other: "Procesos"
+      legislation/proposal:
+        one: "Propuesta"
+        other: "Propuestas"
       legislation/draft_versions:
-        one: "Versión borrador"
-        other: "Versiones borrador"
-      legislation/draft_texts:
-        one: "Borrador"
-        other: "Borradores"
+        one: "Versión del borrador"
+        other: "Versiones del borrador"
       legislation/questions:
         one: "Pregunta"
         other: "Preguntas"
@@ -100,6 +106,9 @@ es:
       poll:
         one: "Votación"
         other: "Votaciones"
+      proposal_notification:
+        one: "Notificación de propuesta"
+        other: "Notificaciones de propuesta"
     attributes:
       budget:
         name: "Nombre"
@@ -122,13 +131,24 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
-      budget/investment/milestone:
+      milestone:
+        status_id: "Estado actual (opcional)"
         title: "Título"
-        description: "Descripción"
+        description: "Descripción (opcional si hay un estado asignado)"
         publication_date: "Fecha de publicación"
+      milestone/status:
+        name: "Nombre"
+        description: "Descripción (opcional)"
+      progress_bar:
+        kind: "Tipo"
+        title: "Título"
+        percentage: "Progreso"
+      progress_bar/kind:
+        primary: "Principal"
+        secondary: "Secundaria"
       budget/heading:
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Coste"
         population: "Población"
       comment:
         body: "Comentario"
@@ -146,7 +166,7 @@ es:
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
-        email: "Correo electrónico"
+        email: "Email"
         username: "Nombre de usuario"
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña"
@@ -156,7 +176,7 @@ es:
         official_level: "Nivel del cargo"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
-        name: "Nombre de organización"
+        name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
       spending_proposal:
         administrator_id: "Administrador"
@@ -172,11 +192,17 @@ es:
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
         description: "Descripción"
+      poll/translation:
+        name: "Nombre"
+        summary: "Resumen"
+        description: "Descripción"
       poll/question:
         title: "Pregunta"
         summary: "Resumen"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
+      poll/question/translation:
+        title: "Pregunta"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
@@ -188,10 +214,14 @@ es:
         slug: Slug
         status: Estado
         title: Título
-        updated_at: última actualización
+        updated_at: Última actualización
         more_info_flag: Mostrar en la página de ayuda
         print_content_flag: Botón de imprimir contenido
         locale: Idioma
+      site_customization/page/translation:
+        title: Título
+        subtitle: Subtítulo
+        content: Contenido
       site_customization/image:
         name: Nombre
         image: Imagen
@@ -201,22 +231,37 @@ es:
         body: Contenido
       legislation/process:
         title: Título del proceso
+        summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
         start_date: Fecha de inicio del proceso
         end_date: Fecha de fin del proceso
         debate_start_date: Fecha de inicio del debate
         debate_end_date: Fecha de fin del debate
+        draft_start_date: Fecha de inicio del borrador
+        draft_end_date: Fecha de fin del borrador
         draft_publication_date: Fecha de publicación del borrador
         allegations_start_date: Fecha de inicio de alegaciones
         allegations_end_date: Fecha de fin de alegaciones
         result_publication_date: Fecha de publicación del resultado final
+        background_color: Color del fondo
+        font_color: Color del texto
+      legislation/process/translation:
+        title: Título del proceso
+        summary: Resumen
+        description: En qué consiste
+        additional_info: Información adicional
+        milestones_summary: Seguimiento del proceso
       legislation/draft_version:
-        title: Título de la version
+        title: Título de la versión
         body: Texto
         changelog: Cambios
         status: Estado
         final_version: Versión final
+      legislation/draft_version/translation:
+        title: Título de la versión
+        body: Texto
+        changelog: Cambios
       legislation/question:
         title: Título
         question_options: Respuestas
@@ -233,6 +278,9 @@ es:
       poll/question/answer:
         title: Respuesta
         description: Descripción
+      poll/question/answer/translation:
+        title: Respuesta
+        description: Descripción
       poll/question/answer/video:
         title: Título
         url: Vídeo externo
@@ -241,6 +289,28 @@ es:
         subject: Asunto
         from: Enviado por
         body: Contenido del email
+      admin_notification:
+        segment_recipient: Destinatarios
+        title: Título
+        link: Enlace
+        body: Texto
+      admin_notification/translation:
+        title: Título
+        body: Texto
+      widget/card:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+        link_url: URL del enlace
+        columns: Número de columnas
+      widget/card/translation:
+        label: Etiqueta (opcional)
+        title: Título
+        description: Descripción
+        link_text: Texto del enlace
+      widget/feed:
+        limit: Número de elementos
     errors:
       models:
         user:
@@ -263,7 +333,11 @@ es:
         newsletter:
           attributes:
             segment_recipient:
-              invalid: "El segmento de usuarios es inválido"
+              invalid: "El usuario del destinatario es inválido"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "El usuario del destinatario es inválido"
         map_location:
           attributes:
             map:
@@ -279,6 +353,8 @@ es:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio
             debate_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del debate
+            draft_end_date:
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
         proposal:
@@ -312,7 +388,7 @@ es:
             valuation:
               cannot_comment_valuation: 'No puedes comentar una evaluación'
       messages:
-        record_invalid: 'Error de validación: %{errors}'
+        record_invalid: "Error de validación: %{errors}"
         restrict_dependent_destroy:
           has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
           has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

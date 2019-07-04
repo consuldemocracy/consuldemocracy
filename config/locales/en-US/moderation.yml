@@ -1,0 +1,15 @@
+en-US:
+  moderation:
+    comments:
+      index:
+        headers:
+          comment: Kommentar
+        title: Kommentare
+    debates:
+      index:
+        headers:
+          debate: Debatte
+        title: Debatten
+    menu:
+      flagged_comments: Kommentare
+      flagged_debates: Debatten

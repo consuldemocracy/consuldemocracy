@@ -1,10 +1,7 @@
 module LocalesHelper
 
   def name_for_locale(locale)
-    default = I18n.t("locale", locale: locale)
-    I18n.backend.translate(locale, "i18n.language.name", default: default)
-  rescue
-    nil
+    I18n.t("i18n.language.name", locale: locale, fallback: false, default: locale.to_s)
   end
 
 end

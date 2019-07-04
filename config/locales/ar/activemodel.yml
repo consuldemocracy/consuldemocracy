@@ -1,0 +1,22 @@
+ar:
+  activemodel:
+    models:
+      verification:
+        residence: "الإقامة"
+        sms: "الرسائل القصيرة"
+    attributes:
+      verification:
+        residence:
+          document_type: "نوع الوثيقة"
+          document_number: "رقم المستند (بما في ذلك الاحرف)"
+          date_of_birth: "تاريخ الميلاد"
+          postal_code: "الرمز البريدي"
+        sms:
+          phone: "رقم الهاتف"
+          confirmation_code: "رمز التأكيد"
+        email:
+          recipient: "البريد الإلكتروني"
+      officing/residence:
+        document_type: "نوع الوثيقة"
+        document_number: "رقم المستند (بما في ذلك الاحرف)"
+        year_of_birth: "ولد في العام"

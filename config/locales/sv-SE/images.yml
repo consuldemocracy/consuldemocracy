@@ -1,0 +1,21 @@
+sv:
+  images:
+    remove_image: Ta bort bild
+    form:
+      title: Beskrivande bild
+      title_placeholder: Lägg till en beskrivning för bilden
+      attachment_label: Välj bild
+      delete_button: Ta bort bild
+      note: "Du kan ladda upp bilder med följande filformat: %{accepted_content_types}. Bildens filstorlek får inte överstiga %{max_file_size} MB."
+      add_new_image: Lägg till bild
+      admin_title: "Bild"
+      admin_alt_text: "Alternativ beskrivning för bilden"
+    actions:
+      destroy:
+        notice: Bilden har tagits bort.
+        alert: Kunde inte raderas.
+        confirm: Är du säker på att du vill ta bort bilden? Åtgärden kan inte ångras!
+    errors:
+      messages:
+        in_between: måste vara mellan %{min} och %{max}
+        wrong_content_type: innehållstypen %{content_type} finns inte bland de tillåtna innehållstyperna %{accepted_content_types}

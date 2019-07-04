@@ -1,6 +1,8 @@
 class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseController
-  load_and_authorize_resource :process, class: "Legislation::Process"
-  load_and_authorize_resource :draft_version, class: "Legislation::DraftVersion", through: :process
+  include Translatable
+
+  load_and_authorize_resource :draft_version, class: "Legislation::DraftVersion", through: :process, prepend: true
+  load_and_authorize_resource :process, class: "Legislation::Process", prepend: true
 
   def index
     @draft_versions = @process.draft_versions
@@ -39,12 +41,13 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
 
     def draft_version_params
       params.require(:legislation_draft_version).permit(
-        :title,
-        :changelog,
         :status,
         :final_version,
-        :body,
-        :body_html
+        translation_params(Legislation::DraftVersion)
       )
+    end
+
+    def resource
+      @draft_version
     end
 end

@@ -66,12 +66,18 @@ es:
         help_text_titulo6: "¿Cómo hago mi propuesta?"
         help_text_6_1 : "Puedes hacer un máximo de tres propuestas."
         help_text_6_2 : "Hay dos formas de presentar las propuestas:"
-        help_text_6_2_1 : "- Personalmente, usando el sobre respuesta que llegará a tu domicilio. Encontrarás unas papeletas que puedes rellenar e introducir en el sobre para  enviarlo de forma gratuita a la Diputación."
-        help_text_6_2_2 : "- A través de esta Plataforma, dándote de alta y cumplimentando el formulario que en ella aparece."
+        help_text_6_2_1 :
+          Personalmente, usando el sobre respuesta que llegará a tu domicilio.
+          Encontrarás unas papeletas que puedes rellenar e introducir en el
+          sobre para  enviarlo de forma gratuita a la Diputación.
+        help_text_6_2_2 : A través de esta Plataforma, dándote de alta y cumplimentando el formulario que en ella aparece."
         help_text_6_2_3 : "Tanto si lo haces de una u otra forma, debes indicar:"
-        help_text_6_2_2_1 : "- Título de la propuesta."
-        help_text_6_2_2_2 : "- Breve descripción."
-        help_text_6_2_2_3 : "- Deberás limitarte al espacio que aparece en el formulario. Cuanto más detallada sea, se podrá evaluar mejor por el equipo técnico, además de ser fácilmente entendible para la ciudadanía en la votación final."
+        help_text_6_2_2_1 : Título de la propuesta.
+        help_text_6_2_2_2 : Breve descripción.
+        help_text_6_2_2_3 : |
+          Deberás limitarte al espacio que aparece en el formulario. Cuanto más
+          detallada sea, se podrá evaluar mejor por el equipo técnico, además
+          de ser fácilmente entendible para la ciudadanía en la votación final.
         help_text_6: "¿Qué zona te corresponde?"
         help_text_7: "Encuentra tu localidad en el mapa y podrás identificar a qué zona perteneces."
         help_text_8: "Más Información: Reglamento de los Presupuestos Participativos."

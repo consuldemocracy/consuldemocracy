@@ -32,7 +32,10 @@ class Verification::Residence
   end
 
   def save
-    return false unless valid? && @census_api_response.valid?
+    unless valid? && @census_api_response.valid?
+      puts errors.full_messages
+      return false
+    end
 
     user.update(
       document_number: document_number,

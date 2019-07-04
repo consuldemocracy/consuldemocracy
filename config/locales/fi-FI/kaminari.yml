@@ -1,0 +1,18 @@
+fi:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Merkinnät
+        one: Merkintä
+        other: Merkinnät
+      one_page:
+        display_entries:
+          zero: "%{entry_name} ei löydy"
+  views:
+    pagination:
+      current: Olet sivulla
+      first: Ensimmäinen
+      last: Viimeinen
+      next: Seuraava
+      previous: Edellinen
+      truncate: "&hellip;"

@@ -1,5 +1,3 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
 fr:
   devise:
     password_expired:
@@ -39,8 +37,7 @@ fr:
       updated: "Votre mot de passe a été modifié avec succès. Identification réussie."
       updated_not_active: "Votre mot de passe a été modifié avec succès."
     registrations:
-      destroyed:
-        "Au revoir ! Votre compte a été annulé. Nous espérons vous revoir bientôt. Conformément à votre demande, les données personnelles enregistrées en tant qu'utilisateur de cette plateforme et faisant partie du fichier 'Fichier' sous la responsabilité du 'Responsable' ont été supprimées conformément aux dispositions prévues à l'article 16 de la Loi Organique 15/1999 sur la protection des données à caractère personnel et à l'article 31 de son règlement sur le développement (RD 1720/2007)."
+      destroyed: "Au revoir ! Votre compte a été annulé. Nous espérons vous revoir bientôt."
       signed_up: "Bienvenue ! Vous avez été authentifié."
       signed_up_but_inactive: "Votre enregistrement a été réussi, mais vous ne pouvez pas vous connecter car votre compte n'a pas été activé."
       signed_up_but_locked: "Votre enregistrement a été réussi, mais vous ne pouvez pas vous connecter car votre compte est bloqué."
@@ -63,6 +60,6 @@ fr:
       not_found: "non trouvé."
       not_locked: "n'était pas bloqué."
       not_saved:
-        one: "1 erreur a empêché cette %{resource} d'être sauvegardée :"
-        other: "%{count} erreurs ont empêchés cette %{resource} d'être sauvegardée :"
+        one: "1 erreur a empêché cette %{resource} d’être enregistré. Veuillez vérifier les champs marqués pour savoir comment y remédier :"
+        other: "%{count} erreurs ont empêché cette %{resource} d'être sauvegardée. Veuillez vérifier les champs indiqués pour savoir comment les corriger :"
       equal_to_current_password: "doit être différent du mot de passe actuel."

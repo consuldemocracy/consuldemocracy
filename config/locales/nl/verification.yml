@@ -1,4 +1,3 @@
----
 nl:
   verification:
     alert:
@@ -26,15 +25,15 @@ nl:
         see_all: See proposals
         title: Letter requested
       errors:
-        incorrect_code: Verification code incorrect
+        incorrect_code: De verificatiecode is onjuist
       new:
         explanation: 'For participate on final voting you can:'
         go_to_index: See proposals
         office: Verify in any %{office}
-        offices: Citizen Support Offices
+        offices: Ondersteuning
         send_letter: Send me a letter with the code
         title: Congratulations!
-        user_permission_info: With your account you can...
+        user_permission_info: Met je account kun je...
       update:
         flash:
           success: Code correct. Your account is now verified
@@ -51,14 +50,14 @@ nl:
         accept_terms_text: I accept %{terms_url} of the Census
         accept_terms_text_title: I accept the terms and conditions of access of the Census
         date_of_birth: Date of birth
-        document_number: Document number
+        document_number: Document nummer
         document_number_help_title: Help
         document_number_help_text_html: '<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P'
         document_type:
           passport: Passport
           residence_card: Residence card
           spanish_id: DNI
-        document_type_label: Document type
+        document_type_label: Documentsoort
         error_not_allowed_age: You don't have the required age to participate
         error_not_allowed_postal_code: In order to be verified, you must be registered.
         error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one %{offices}.
@@ -82,24 +81,24 @@ nl:
       new:
         phone: Enter your mobile phone number to receive the code
         phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
-        phone_note: We only use your phone to send you a code, never to contact you.
+        phone_note: We gebruiken uw mobiele telefoonnummer alleen om u een code toe te sturen, nooit om u te contacten.  
         phone_placeholder: "Example: 612345678 or +34612345678"
-        submit_button: Send
+        submit_button: Verzenden
         title: Send confirmation code
       update:
         error: Incorrect confirmation code
         flash:
           level_three:
-            success: Code correct. Your account is now verified
+            success: Code correct. Je account is nu geverifieerd
           level_two:
             success: Code correct
     step_1: Residence
     step_2: Confirmation code
     step_3: Final verification
-    user_permission_debates: Participate on debates
-    user_permission_info: Verifing your information you'll be able to...
+    user_permission_debates: Neem deel aan discussies
+    user_permission_info: Als u uw gegevens verifieert, kunt u...
     user_permission_proposal: Create new proposals
-    user_permission_support_proposal: Support proposals*
+    user_permission_support_proposal: Voorstellen steunen*
     user_permission_votes: Participate on final voting*
     verified_user:
       form:

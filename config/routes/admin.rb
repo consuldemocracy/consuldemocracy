@@ -15,6 +15,13 @@ namespace :admin do
     end
   end
 
+  resources :hidden_budget_investments, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :debates, only: :index do
     member do
       put :restore
@@ -22,7 +29,12 @@ namespace :admin do
     end
   end
 
-  resources :proposals, only: :index do
+  resources :proposals, only: [:index, :show] do
+    resources :milestones, controller: "proposal_milestones"
+    resources :progress_bars, except: :show, controller: "proposal_progress_bars"
+  end
+
+  resources :hidden_proposals, only: :index do
     member do
       put :restore
       put :confirm_hide
@@ -38,22 +50,32 @@ namespace :admin do
     get :summary, on: :collection
   end
 
+  resources :proposal_notifications, only: :index do
+    member do
+      put :restore
+      put :confirm_hide
+    end
+  end
+
   resources :budgets do
     member do
       put :calculate_winners
     end
 
-    resources :budget_groups do
-      resources :budget_headings
+    resources :groups, except: [:show], controller: "budget_groups" do
+      resources :headings, except: [:show], controller: "budget_headings"
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
-      resources :budget_investment_milestones
+      resources :milestones, controller: 'budget_investment_milestones'
+      resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
       member { patch :toggle_selection }
     end
 
     resources :budget_phases, only: [:edit, :update]
   end
+
+  resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
 
   resources :signature_sheets, only: [:index, :new, :create, :show]
 
@@ -69,6 +91,7 @@ namespace :admin do
   end
 
   resources :tags, only: [:index, :create, :update, :destroy]
+
   resources :officials, only: [:index, :edit, :update, :destroy] do
     get :search, on: :collection
   end
@@ -84,6 +107,7 @@ namespace :admin do
     get :search, on: :collection
     get :summary, on: :collection
   end
+
   resources :valuator_groups
 
   resources :managers, only: [:index, :create, :destroy] do
@@ -115,7 +139,7 @@ namespace :admin do
       resources :results, only: :index
     end
 
-    resources :officers do
+    resources :officers, only: [:index, :new, :create, :destroy] do
       get :search, on: :collection
     end
 
@@ -135,6 +159,8 @@ namespace :admin do
       end
       post '/answers/order_answers', to: 'questions/answers#order_answers'
     end
+
+    resource :active_polls, only: [:create, :edit, :update]
   end
 
   resources :verifications, controller: :verifications, only: :index do
@@ -150,6 +176,19 @@ namespace :admin do
     get :users, on: :collection
   end
 
+  resources :admin_notifications do
+    member do
+      post :deliver
+    end
+  end
+
+  resources :system_emails, only: [:index] do
+    get :view
+    get :preview_pending
+    put :moderate_pending
+    put :send_pending
+  end
+
   resources :emails_download, only: :index do
     get :generate_csv, on: :collection
   end
@@ -163,8 +202,13 @@ namespace :admin do
   namespace :legislation do
     resources :processes do
       resources :questions
-      resources :proposals
+      resources :proposals do
+        member { patch :toggle_selection }
+      end
       resources :draft_versions
+      resources :milestones
+      resources :progress_bars, except: :show
+      resource :homepage, only: [:edit, :update]
     end
   end
 
@@ -175,8 +219,23 @@ namespace :admin do
   resources :geozones, only: [:index, :new, :create, :edit, :update, :destroy]
 
   namespace :site_customization do
-    resources :pages, except: [:show]
+    resources :pages, except: [:show] do
+      resources :cards, only: [:index]
+    end
     resources :images, only: [:index, :update, :destroy]
     resources :content_blocks, except: [:show]
+    delete '/heading_content_blocks/:id', to: 'content_blocks#delete_heading_content_block', as: 'delete_heading_content_block'
+    get '/edit_heading_content_blocks/:id', to: 'content_blocks#edit_heading_content_block', as: 'edit_heading_content_block'
+    put '/update_heading_content_blocks/:id', to: 'content_blocks#update_heading_content_block', as: 'update_heading_content_block'
+    resources :information_texts, only: [:index] do
+      post :update, on: :collection
+    end
+  end
+
+  resource :homepage, controller: :homepage, only: [:show]
+
+  namespace :widget do
+    resources :cards
+    resources :feeds, only: [:update]
   end
 end

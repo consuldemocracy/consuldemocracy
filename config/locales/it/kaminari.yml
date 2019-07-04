@@ -1,0 +1,22 @@
+it:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Voci
+        one: Voce
+        other: Voce
+      more_pages:
+        display_entries: Visualizzati da <strong>%{first} -%{last}</strong> a <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} non può essere trovato"
+          one: C'è <strong>1 %{entry_name}</strong>
+          other: Ci sono <strong>%{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Sei nella pagina
+      first: Primo
+      last: Ultimo
+      next: Successivo
+      previous: Precedente
+      truncate: "&hellip;"

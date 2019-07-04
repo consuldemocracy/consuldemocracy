@@ -1,8 +1,8 @@
 # Overrides and adds customized gems in this file
-# Read more on documentation: 
+# Read more on documentation:
 # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
 gem 'rest-client'
 gem 'csv'
-gem 'letter_opener_web', '~> 1.3.2'
+gem 'letter_opener_web', '~> 1.3.4'

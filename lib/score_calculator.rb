@@ -1,19 +1,19 @@
 module ScoreCalculator
 
-  EPOC           = Time.new(2015, 6, 15).in_time_zone
-  COMMENT_WEIGHT = 1.0 / 5 # 1 positive vote / x comments
-  TIME_UNIT      = 24.hours.to_f
+  def self.hot_score(resource)
+    return 0 unless resource.created_at
 
-  def self.hot_score(date, votes_total, votes_up, comments_count)
-    total   = (votes_total + COMMENT_WEIGHT * comments_count).to_f
-    ups     = (votes_up    + COMMENT_WEIGHT * comments_count).to_f
-    downs   = total - ups
-    score   = ups - downs
-    offset  = Math.log([score.abs, 1].max, 10) * (ups / [total, 1].max)
-    sign    = score <=> 0
-    seconds = ((date || Time.current) - EPOC).to_f
+    period = [
+      Setting['hot_score_period_in_days'].to_i,
+      ((Time.current - resource.created_at) / 1.day).ceil
+    ].min
 
-    (((offset * sign) + (seconds / TIME_UNIT)) * 10000000).round
+    votes_total = resource.votes_for.where("created_at >= ?", period.days.ago).count
+    votes_up  = resource.get_upvotes.where("created_at >= ?", period.days.ago).count
+    votes_down  = votes_total - votes_up
+    votes_score = votes_up - votes_down
+
+    (votes_score.to_f / period).round
   end
 
   def self.confidence_score(votes_total, votes_up)

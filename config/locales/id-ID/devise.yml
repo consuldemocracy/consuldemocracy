@@ -1,0 +1,63 @@
+id:
+  devise:
+    password_expired:
+      expire_password: "Kata sandi kadaluarsa"
+      change_required: "Kata sandi anda sudah kadaluarsa"
+      change_password: "Ubah kata sandi anda"
+      new_password: "Kata sandi baru"
+      updated: "Kata sandi berhasil diperbarui"
+    confirmations:
+      confirmed: "Akun anda telah dikonfirmasi."
+      send_instructions: "Dalam beberapa menit anda akan menerima email berisi petunjuk tentang cara mereset kata sandi anda."
+      send_paranoid_instructions: "Jika alamat email anda ada di database kami, dalam beberapa menit anda akan menerima email berisi petunjuk tentang cara mereset kata sandi anda."
+    failure:
+      already_authenticated: "Anda sudah masuk."
+      inactive: "Akun anda belum diaktifkan."
+      invalid: "Tidak sah %{authentication_keys} atau kata sandi."
+      locked: "Akun anda telah dikunci."
+      last_attempt: "Anda memiliki satu upaya lagi sebelum akun anda diblokir."
+      not_found_in_database: "Tidak sah %{authentication_keys} atau kata sandi."
+      timeout: "Sesi anda telah kedaluwarsa. Silakan masuk lagi untuk melanjutkan."
+      unauthenticated: "Anda harus masuk atau mendaftar untuk melanjutkan."
+      unconfirmed: "Untuk melanjutkan, klik pada tautan konfirmasi yang telah kami kirim melalui email anda"
+    mailer:
+      confirmation_instructions:
+        subject: "Konfirmasi intruksi"
+      reset_password_instructions:
+        subject: "Petunjuk untuk menyetel ulang kata sandi anda"
+      unlock_instructions:
+        subject: "Membuka kunci petunjuk"
+    omniauth_callbacks:
+      failure: "Sudah tidak mungkin mengotorisasi anda sebagai %{kind} karena “%{reason}”."
+      success: "Berhasil diidentifikasi sebagai %{kind}."
+    passwords:
+      no_token: "Anda tidak dapat mengakses halaman ini kecuali melalui tautan setel ulang kata sandi. Jika anda telah diakses melalui tautan setel ulang sandi, periksa bahwa URL sudah selesai."
+      send_instructions: "Dalam beberapa menit anda akan menerima email berisi petunjuk tentang cara mereset kata sandi anda."
+      send_paranoid_instructions: "Jika alamat email anda ada di database kami, dalam beberapa menit anda akan menerima tautan yang akan digunakan untuk mereset kata sandi anda."
+      updated: "Kata sandi anda telah berhasil diubah. Otentikasi berhasil."
+      updated_not_active: "Kata sandi anda telah berhasil diubah."
+    registrations:
+      signed_up: "Selamat datang! Anda telah dikonfirmasi."
+      signed_up_but_inactive: "Pendaftaran anda telas berhasil, namun anda tidak dapat masuk karena akun anda belum diaktifkan."
+      signed_up_but_locked: "Pendaftaran anda telah berhasil, namun anda tidak dapat masuk karena akun anda terkunci."
+      signed_up_but_unconfirmed: "Anda telah mengirim pesan berisi tautan verifikasi. Silahkan klik tautan ini untuk mengaktifkan akun anda."
+      update_needs_confirmation: "Akun anda telah berhasil diperbarui; Namun, kami perlu memverifikasi alamat email baru anda. Silakan cek email anda dan klik tautan untuk melengkapi konfirmasi alamat email baru anda."
+      updated: "Akun anda telah berhasil diperbarui."
+    sessions:
+      signed_in: "Anda telah berhasil masuk."
+      signed_out: "Anda telah berhasil keluar."
+      already_signed_out: "Anda telah berhasil keluar."
+    unlocks:
+      send_instructions: "Dalam beberapa menit, anda akan menerima email berisi instruksi untuk membuka kunci akun anda."
+      send_paranoid_instructions: "Jika anda memiliki akun, dalam beberapa menit anda akan menerima email berisi instruksi untuk membuka kunci akun anda."
+      unlocked: "Akun anda telah dibuka. Silakan masuk untuk melanjutkan."
+  errors:
+    messages:
+      already_confirmed: "Anda sudah diverifikasi; Silakan untuk mencoba masuk."
+      confirmation_period_expired: "Anda perlu untuk diverifikasi dalam %{period}; silahkan buat sebuah permintaan berulang."
+      expired: "sudah kadaluarsa, silakan membuat ulangi permintaan."
+      not_found: "tidak ditemukan."
+      not_locked: "tidak terkunci."
+      not_saved:
+        other: "%{count} kesalahan dicegah ini %{resource} tidak dapat disimpan. Silahkan periksa bidang yang ditandai untuk mengetahui bagaimana cara untuk memperbaiki mereka:"
+      equal_to_current_password: "harus berbeda dari kata sandi saat ini."

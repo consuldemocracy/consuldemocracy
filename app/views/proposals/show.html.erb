@@ -1,18 +1,22 @@
 <% provide :title do %><%= @proposal.title %><% end %>
 <% content_for :meta_description do %><%= @proposal.summary %><% end %>
 <% provide :social_media_meta_tags do %>
-<%= render "shared/social_media_meta_tags",
-            social_url: proposal_url(@proposal),
-            social_title: @proposal.title,
-            social_description: @proposal.summary,
-            twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
-            og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
+  <%= render "shared/social_media_meta_tags",
+              social_url: proposal_url(@proposal),
+              social_title: @proposal.title,
+              social_description: @proposal.summary,
+              twitter_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil),
+              og_image_url: (@proposal.image.present? ? @proposal.image_url(:thumb) : nil) %>
 <% end %>
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: proposal_url(@proposal) %>
 <% end %>
 
-<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+<% cache [locale_and_user_status(@proposal),
+          @proposal,
+          @proposal.author,
+          Flag.flagged?(current_user, @proposal),
+          @proposal_votes] do %>
   <div class="proposal-show">
     <div id="<%= dom_id(@proposal) %>" class="row">
       <div class="small-12 medium-9 column">
@@ -23,7 +27,8 @@
           <div data-alert class="callout alert margin-top proposal-retired">
             <strong>
               <%= t("proposals.show.retired_warning") %><br>
-              <%= link_to t("proposals.show.retired_warning_link_to_explanation"), "#retired_explanation" %>
+              <%= link_to t("proposals.show.retired_warning_link_to_explanation"),
+                          "#retired_explanation" %>
             </strong>
           </div>
         <% elsif @proposal.conflictive? %>
@@ -32,90 +37,8 @@
           </div>
         <% end %>
 
-        <div class="proposal-info">
-          <%= render '/shared/author_info', resource: @proposal %>
-
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= l @proposal.created_at.to_date %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="icon-comments"></span>&nbsp;
-          <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
-
-          <% if current_user %>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <span class="js-flag-actions">
-              <%= render 'proposals/flag_actions', proposal: @proposal %>
-            </span>
-          <% end %>
-
-        </div>
-
-        <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
-
-        <br>
-        <p>
-          <%= t("proposals.show.code") %>
-          <strong><%= @proposal.code %></strong>
-        </p>
-
-        <blockquote><%= @proposal.summary %></blockquote>
-
-        <% if @proposal.video_url.present? %>
-          <div class="small-12 medium-7 small-centered">
-            <div class="flex-video">
-              <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
-            </div>
-          </div>
-        <% end %>
-
-        <%= safe_html_with_links @proposal.description %>
-
-        <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
-          <div class="margin">
-            <%= render_map(@proposal.map_location, "proposal", false, nil) %>
-          </div>
-        <% end %>
-
-        <% if @proposal.external_url.present? %>
-          <div class="document-link">
-            <p>
-              <span class="icon-document"></span>&nbsp;
-              <strong><%= t('proposals.show.title_external_url') %></strong>
-            </p>
-              <%= text_with_links @proposal.external_url %>
-          </div>
-        <% end %>
-
-        <% if @proposal.video_url.present? %>
-          <div class="video-link">
-            <p>
-              <span class="icon-video"></span>&nbsp;
-              <strong><%= t('proposals.show.title_video_url') %></strong>
-            </p>
-            <%= text_with_links @proposal.video_url %>
-          </div>
-
-        <% end %>
-
-        <h4><%= @proposal.question %></h4>
-
-        <% if @proposal.retired? %>
-          <div id="retired_explanation" class="callout">
-            <h2><%= t('proposals.show.retired') %>: <%= t("proposals.retire_options.#{@proposal.retired_reason}") unless @proposal.retired_reason == 'other' %></h2>
-            <%= simple_format text_with_links(@proposal.retired_explanation), {}, sanitize: false %>
-          </div>
-        <% end %>
-
-        <% if feature?(:allow_attached_documents) %>
-          <%= render 'documents/documents',
-                      documents: @proposal.documents,
-                      max_documents_allowed: Proposal.max_documents_allowed %>
-        <% end %>
-
-        <%= render 'shared/tags', taggable: @proposal %>
-
+        <%= render "proposals/info", proposal: @proposal %>
         <%= render 'shared/geozone', geozonable: @proposal %>
-
         <%= render 'relationable/related_content', relationable: @proposal %>
 
         <div class="js-moderator-proposal-actions margin">
@@ -163,16 +86,8 @@
 
           <% if @proposal.successful? %>
             <p>
-              <%= t("proposals.proposal.successful",
-                  voting: link_to(t("proposals.proposal.voting"), polls_path)).html_safe %>
+              <%= t("proposals.proposal.successful") %>
             </p>
-            <% if can? :create, Poll::Question %>
-              <p class="text-center">
-                <%= link_to t('poll_questions.create_question'),
-                            new_admin_question_path(proposal_id: @proposal.id),
-                            class: "button hollow expanded" %>
-              </p>
-            <% end %>
           <% elsif @proposal.archived? %>
             <div class="padding text-center">
               <p>
@@ -185,12 +100,8 @@
                       { proposal: @proposal, vote_url: vote_proposal_path(@proposal, value: 'yes') } %>
           <% end %>
         </div>
-        <%= render partial: 'shared/social_share', locals: {
-          share_title: t("proposals.show.share"),
-          title: @proposal.title,
-          url: proposal_url(@proposal),
-          description: @proposal.summary
-        } %>
+
+        <%= render 'proposals/social_share', proposal: @proposal, share_title: t("proposals.show.share") %>
 
         <% if current_user %>
           <div class="sidebar-divider"></div>
@@ -206,11 +117,21 @@
   </div>
 <% end %>
 
-<div class="tabs-content" data-tabs-content="proposals-tabs" role="tablist">
-  <%= render "proposals/filter_subnav" %>
-  <%= render "proposals/notifications" %>
+<div class="additional-content">
+  <div class="filter-subnav">
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "proposals/filter_subnav" %>
+      </div>
+    </div>
+  </div>
+</div>
 
+<div class="tabs-content" data-tabs-content="proposals_tabs">
   <div class="tabs-panel is-active" id="tab-comments">
     <%= render "proposals/comments" %>
   </div>
+
+  <%= render "proposals/notifications" %>
+  <%= render "milestones/milestones", milestoneable: @proposal %>
 </div>

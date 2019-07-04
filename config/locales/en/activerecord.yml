@@ -10,9 +10,15 @@ en:
       budget/investment:
         one: "Investment"
         other: "Investments"
-      budget/investment/milestone:
+      milestone:
         one: "milestone"
         other: "milestones"
+      milestone/status:
+        one: "Milestone Status"
+        other: "Milestone Statuses"
+      progress_bar:
+        one: "Progress bar"
+        other: "Progress bars"
       comment:
         one: "Comment"
         other: "Comments"
@@ -59,8 +65,8 @@ en:
         one: "Citizen proposal"
         other: "Citizen proposals"
       spending_proposal:
-        one: "Spending proposal"
-        other: "Spending proposals"
+        one: "Investment project"
+        other: "Investment projects"
       site_customization/page:
         one: Custom page
         other: Custom pages
@@ -73,12 +79,12 @@ en:
       legislation/process:
         one: "Process"
         other: "Processes"
+      legislation/proposal:
+        one: "Proposal"
+        other: "Proposals"
       legislation/draft_versions:
         one: "Draft version"
         other: "Draft versions"
-      legislation/draft_texts:
-          one: "Draft"
-          other: "Drafts"
       legislation/questions:
         one: "Question"
         other: "Questions"
@@ -100,6 +106,9 @@ en:
       poll:
         one: "Poll"
         other: "Polls"
+      proposal_notification:
+        one: "Proposal notification"
+        other: "Proposal notifications"
     attributes:
       budget:
         name: "Name"
@@ -113,23 +122,30 @@ en:
         phase: "Phase"
         currency_symbol: "Currency"
       budget/investment:
-        heading_id: "Sección de presupuesto"
-        title: "Title"
-        description: "Description"
-        external_url: "External url"
-        administrator_id: "Administrator"
-        description: "Description"
-        external_url: "Link to additional documentation"
         heading_id: "Heading"
         title: "Title"
+        description: "Description"
+        external_url: "Link to additional documentation"
+        administrator_id: "Administrator"
         location: "Location (optional)"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
-      budget/investment/milestone:
+      milestone:
+        status_id: "Current status (optional)"
         title: "Title"
-        description: "Description"
+        description: "Description (optional if there's an status assigned)"
         publication_date: "Publication date"
+      milestone/status:
+        name: "Name"
+        description: "Description (optional)"
+      progress_bar:
+        kind: "Type"
+        title: "Title"
+        percentage: "Current progress"
+      progress_bar/kind:
+        primary: "Primary"
+        secondary: "Secondary"
       budget/heading:
         name: "Heading name"
         price: "Price"
@@ -163,7 +179,7 @@ en:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
       spending_proposal:
-        administrator_id: "Administrador"
+        administrator_id: "Administrator"
         association_name: "Association name"
         description: "Description"
         external_url: "Link to additional documentation"
@@ -176,11 +192,17 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+      poll/translation:
+        name: "Name"
+        summary: "Summary"
+        description: "Description"
       poll/question:
         title: "Question"
         summary: "Summary"
         description: "Description"
         external_url: "Link to additional documentation"
+      poll/question/translation:
+        title: "Question"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -196,6 +218,10 @@ en:
         more_info_flag: Show in help page
         print_content_flag: Print content button
         locale: Language
+      site_customization/page/translation:
+        title: Title
+        subtitle: Subtitle
+        content: Content
       site_customization/image:
         name: Name
         image: Image
@@ -205,22 +231,37 @@ en:
         body: Body
       legislation/process:
         title: Process Title
+        summary: Summary
         description: Description
         additional_info: Additional info
         start_date: Start date
         end_date: End date
         debate_start_date: Debate start date
         debate_end_date: Debate end date
+        draft_start_date: Draft start date
+        draft_end_date: Draft end date
         draft_publication_date: Draft publication date
         allegations_start_date: Allegations start date
         allegations_end_date: Allegations end date
         result_publication_date: Final result publication date
+        background_color: Background color
+        font_color: Font color
+      legislation/process/translation:
+        title: Process Title
+        summary: Summary
+        description: Description
+        additional_info: Additional info
+        milestones_summary: Summary
       legislation/draft_version:
         title: Version title
         body: Text
         changelog: Changes
         status: Status
         final_version: Final version
+      legislation/draft_version/translation:
+        title: Version title
+        body: Text
+        changelog: Changes
       legislation/question:
         title: Title
         question_options: Options
@@ -237,6 +278,9 @@ en:
       poll/question/answer:
         title: Answer
         description: Description
+      poll/question/answer/translation:
+        title: Answer
+        description: Description
       poll/question/answer/video:
         title: Title
         url: External video
@@ -245,6 +289,28 @@ en:
         subject: Subject
         from: From
         body: Email content
+      admin_notification:
+        segment_recipient: Recipients
+        title: Title
+        link: Link
+        body: Text
+      admin_notification/translation:
+        title: Title
+        body: Text
+      widget/card:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+        link_url: Link URL
+        columns: Number of columns
+      widget/card/translation:
+        label: Label (optional)
+        title: Title
+        description: Description
+        link_text: Link text
+      widget/feed:
+        limit: Number of items
     errors:
       models:
         user:
@@ -268,6 +334,10 @@ en:
           attributes:
             segment_recipient:
               invalid: "The user recipients segment is invalid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "The user recipients segment is invalid"
         map_location:
           attributes:
             map:
@@ -283,6 +353,8 @@ en:
               invalid_date_range: must be on or after the start date
             debate_end_date:
               invalid_date_range: must be on or after the debate start date
+            draft_end_date:
+              invalid_date_range: must be on or after the draft start date
             allegations_end_date:
               invalid_date_range: must be on or after the allegations start date
         proposal:
@@ -296,7 +368,7 @@ en:
         proposal_notification:
           attributes:
             minimum_interval:
-              invalid: "You have to wait a minium of %{interval} days between notifications"
+              invalid: "You have to wait a minimum of %{interval} days between notifications"
         signature:
           attributes:
             document_number:

@@ -1,0 +1,24 @@
+pl:
+  documents:
+    title: Dokumenty
+    max_documents_allowed_reached_html: Osiągnąłeś maksymalną dozwoloną liczbę dokumentów! <strong> Musisz usunąć jeden, zanim prześlesz inny. </strong>
+    form:
+      title: Dokumenty
+      title_placeholder: Dodaj tytuł opisowy dla dokumentu
+      attachment_label: Wybierz dokument
+      delete_button: Usuń dokument
+      cancel_button: Anuluj
+      note: "Możesz przesłać maksymalnie do %{max_documents_allowed} dokumentów o następujących typach treści: %{accepted_content_types} aż do %{max_file_size} MB na plik."
+      add_new_document: Dodaj nowy dolument
+    actions:
+      destroy:
+        notice: Dokument został pomyślnie usunięty.
+        alert: Nie można zniszczyć dokumentu.
+        confirm: Czy na pewno chcesz usunąć dokument? Tego działania nie można cofnąć!
+    buttons:
+      download_document: Pobierz plik
+      destroy_document: Zniszcz dokument
+    errors:
+      messages:
+        in_between: musi być pomiędzy %{min} i %{max}
+        wrong_content_type: typ treści %{content_type} nie pasuje do żadnego z akceptowanych typów treści %{accepted_content_types}

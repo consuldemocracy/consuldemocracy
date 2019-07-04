@@ -26,3 +26,7 @@ end
 every 1.day, at: '5:00 am' do
   rake "-s sitemap:refresh"
 end
+
+every 1.day, at: '3:00 am', roles: [:cron] do
+  rake "votes:reset_hot_score"
+end
