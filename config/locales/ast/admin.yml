@@ -886,13 +886,11 @@ ast:
         new: Nueva hoja de firmas
       new:
         title: Nueva hoja de firmas
-        document_numbers_note: "Introduce los números separados por comas (,)"
+        document_numbers_note: "Introduce los números separados por punto y coma (;)"
         submit: Crear hoja de firmas
       show:
         created_at: Creado
         author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
         verified:
           one: "Hay %{count} firma válida"
           other: "Hay %{count} firmas válidas"

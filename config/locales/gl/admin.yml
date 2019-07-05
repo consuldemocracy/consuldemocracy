@@ -1277,13 +1277,11 @@ gl:
         new: Nova folla de sinaturas
       new:
         title: Nova folla de sinaturas
-        document_numbers_note: "Escribe os números separados por comas (,)"
+        document_numbers_note: "Escribe os números separados por puntos y comas (;)"
         submit: Crear folla de sinaturas
       show:
         created_at: Creado
         author: Autoría
-        documents: Docuemntos
-        document_count: "Número de documentos:"
         verified:
           one: "Hai %{count} sinatura válida"
           other: "Hai %{count} sinaturas válidas"

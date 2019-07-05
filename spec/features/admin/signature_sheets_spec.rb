@@ -39,7 +39,7 @@ describe "Signature sheets" do
 
       select "Citizen proposal", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: proposal.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z; 1234567L; 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
@@ -61,13 +61,69 @@ describe "Signature sheets" do
 
       select "Investment", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z; 1234567L; 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
       expect(page).to have_content "There is 1 valid signature"
       expect(page).to have_content "There is 1 vote created from the verified signatures"
       expect(page).to have_content "There are 2 invalid signatures"
+
+      visit budget_investment_path(budget, investment)
+
+      expect(page).to have_content "1 support"
+    end
+
+  end
+
+  context "Create throught all required_fields_to_verify of custom census api" do
+
+    before do
+      Setting["feature.remote_census"] = true
+      Setting["remote_census.request.date_of_birth"] = "some.value"
+      Setting["remote_census.request.postal_code"] = "some.value"
+      access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
+      access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
+      Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
+      Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
+      Setting["remote_census.response.valid"] = access_user_data
+    end
+
+    after do
+      Setting["feature.remote_census"] = nil
+      Setting["remote_census.request.date_of_birth"] = nil
+      Setting["remote_census.request.postal_code"] = nil
+    end
+
+    scenario "Proposal" do
+      proposal = create(:proposal)
+      visit new_admin_signature_sheet_path
+
+      select "Citizen proposal", from: "signature_sheet_signable_type"
+      fill_in "signature_sheet_signable_id", with: proposal.id
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 31/12/1980, 28013; 99999999Z, 31/12/1980, 28013"
+      click_button "Create signature sheet"
+
+      expect(page).to have_content "Signature sheet created successfully"
+
+      visit proposal_path(proposal)
+
+      expect(page).to have_content "1 support"
+    end
+
+    scenario "Budget Investment" do
+      investment = create(:budget_investment)
+      budget = investment.budget
+      budget.update(phase: "selecting")
+
+      visit new_admin_signature_sheet_path
+
+      select "Investment", from: "signature_sheet_signable_type"
+      fill_in "signature_sheet_signable_id", with: investment.id
+      fill_in "signature_sheet_required_fields_to_verify", with: "12345678Z, 31/12/1980, 28013; 99999999Z, 31/12/1980, 28013"
+      click_button "Create signature sheet"
+
+      expect(page).to have_content "Signature sheet created successfully"
 
       visit budget_investment_path(budget, investment)
 
@@ -89,18 +145,18 @@ describe "Signature sheets" do
     user = Administrator.first.user
     signature_sheet = create(:signature_sheet,
                              signable: proposal,
-                             document_numbers: "12345678Z, 123A, 123B",
+                             required_fields_to_verify: "12345678Z; 123A; 123B",
                              author: user)
     signature_sheet.verify_signatures
 
     visit admin_signature_sheet_path(signature_sheet)
 
     expect(page).to have_content "Citizen proposal #{proposal.id}"
-    expect(page).to have_content "12345678Z, 123A, 123B"
+    expect(page).to have_content "12345678Z; 123A; 123B"
     expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 
-    within("#document_count") do
+    within("#signature_count") do
       expect(page).to have_content 3
     end
 

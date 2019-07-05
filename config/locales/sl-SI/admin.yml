@@ -947,13 +947,11 @@ sl:
         new: Novi podpisni listi
       new:
         title: Novi podpisni listi
-        document_numbers_note: "Napiši številke in jih loči z vejico (,)"
+        document_numbers_note: "Napiši številke in jih loči s podpičjem (;)"
         submit: Ustvair podpisni list
       show:
         created_at: Ustvarjen
         author: Avtor
-        documents: Dokumenti
-        document_count: "Število dokumentov:"
         unverified_error: (Ni verificirano s strani popisa)
         loading: "Obstajajo še podpisi, ki so v postopku verifikacije s strani popisa, prosimo osveži stran čez nekaj trenutkov"
     stats:

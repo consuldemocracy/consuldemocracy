@@ -1337,13 +1337,11 @@ fr:
         new: Nouvelle feuilles de signature
       new:
         title: Nouvelle feuilles de signature
-        document_numbers_note: "Saisir les numéros séparés par des virgules (,)"
+        document_numbers_note: "Saisir les numéros séparés par des points-virgules (;)"
         submit: Créer la feuille de signature
       show:
         created_at: Créé le
         author: Auteur
-        documents: Documents
-        document_count: "Nombre de documents :"
         verified:
           one: "Il y a %{count} signature valide"
           other: "Il y a %{count} signatures valides"
