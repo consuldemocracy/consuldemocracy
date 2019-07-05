@@ -3,6 +3,8 @@ require:
   - rubocop-rails
   - rubocop-rspec
 
+inherit_from: .rubocop_ruby_and_erb.yml
+
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
@@ -55,9 +57,6 @@ Layout/EmptyLinesAroundMethodBody:
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
 
-Layout/EndOfLine:
-  EnforcedStyle: lf
-
 Layout/ExtraSpacing:
   Enabled: true
 
@@ -66,9 +65,6 @@ Layout/HeredocIndentation:
 
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
-
-Layout/IndentationStyle:
-  Enabled: true
 
 Layout/IndentationWidth:
   Enabled: true
@@ -83,77 +79,13 @@ Layout/LineLength:
 Layout/MultilineBlockLayout:
   Enabled: true
 
-Layout/SpaceAfterColon:
-  Enabled: true
-
-Layout/SpaceAfterComma:
-  Enabled: true
-
-Layout/SpaceAfterMethodName:
-  Enabled: true
-
-Layout/SpaceAfterNot:
-  Enabled: true
-
-Layout/SpaceAfterSemicolon:
-  Enabled: true
-
-Layout/SpaceAroundBlockParameters:
-  Enabled: true
-
 Layout/SpaceAroundEqualsInParameterDefault:
   Enabled: true
 
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
-Layout/SpaceAroundOperators:
-  Enabled: true
-
-Layout/SpaceBeforeBlockBraces:
-  Enabled: true
-
-Layout/SpaceBeforeComma:
-  Enabled: true
-
-Layout/SpaceBeforeComment:
-  Enabled: true
-
-Layout/SpaceBeforeFirstArg:
-  Enabled: true
-
-Layout/SpaceBeforeSemicolon:
-  Enabled: true
-
 Layout/SpaceInLambdaLiteral:
-  Enabled: true
-
-Layout/SpaceInsideArrayLiteralBrackets:
-  Enabled: true
-
-Layout/SpaceInsideArrayPercentLiteral:
-  Enabled: true
-
-Layout/SpaceInsideBlockBraces:
-  Enabled: true
-
-Layout/SpaceInsideHashLiteralBraces:
-  Enabled: true
-  EnforcedStyle: compact
-
-Layout/SpaceInsideParens:
-  Enabled: true
-
-Layout/SpaceInsidePercentLiteralDelimiters:
-  Enabled: true
-
-Layout/SpaceInsideRangeLiteral:
-  Enabled: true
-
-Layout/SpaceInsideReferenceBrackets:
-  Enabled: true
-
-Layout/SpaceInsideStringInterpolation:
   Enabled: true
 
 Layout/TrailingEmptyLines:
@@ -399,9 +331,6 @@ Style/Not:
   Enabled: true
 
 Style/OrAssignment:
-  Enabled: true
-
-Style/PercentLiteralDelimiters:
   Enabled: true
 
 Style/Proc:
