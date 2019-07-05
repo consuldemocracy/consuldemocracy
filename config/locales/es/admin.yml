@@ -1628,9 +1628,6 @@ es:
         submit_header: Guardar encabezado
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
-    translations:
-      remove_language: Eliminar idioma
-      add_language: Añadir idioma
     change_log:
       title: "Historial"
       id: "ID"

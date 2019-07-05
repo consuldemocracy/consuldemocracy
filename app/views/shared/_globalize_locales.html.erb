@@ -1,0 +1,6 @@
+<% if translations_interface_enabled? %>
+  <%= render "shared/common_globalize_locales",
+    resource: resource,
+    display_style: lambda { |locale| enable_translation_style(resource, locale) },
+    manage_languages: defined?(manage_languages) ? manage_languages : true %>
+<% end %>

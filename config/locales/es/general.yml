@@ -822,6 +822,14 @@ es:
         legislation_process: "Descargar procesos legislativos"
         budget: "Descargar presupuestos"
         investments: "Descargar proyectos"
+    translations:
+      select_language_prompt: Seleccionar idioma
+      remove_language: Eliminar idioma
+      add_language: Añadir idioma
+      languages_in_use_html:
+        zero: "<span class='js-languages-count'>0</span> idiomas en uso"
+        one: "<span class='js-languages-count'>1</span> idioma en uso"
+        other: "<span class='js-languages-count'>%{count}</span> idiomas en uso"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"

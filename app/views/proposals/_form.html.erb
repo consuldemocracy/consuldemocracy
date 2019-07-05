@@ -1,10 +1,10 @@
-<%= render "admin/shared/globalize_locales", resource: @proposal %>
+<%= render "shared/globalize_locales", resource: @proposal %>
 
 <%= translatable_form_for(@proposal, url: form_url) do |f| %>
 
   <%= render "shared/errors", resource: @proposal %>
 
-  <div class="row">
+  <div class="row column">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 column">
         <%= translations_form.text_field :title,

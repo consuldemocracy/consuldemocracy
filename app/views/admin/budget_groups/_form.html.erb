@@ -1,24 +1,34 @@
-<%= render "admin/shared/globalize_locales", resource: @group %>
+<%= render "shared/globalize_locales", resource: @group %>
 
-<div class="small-12 medium-6">
-  <%= translatable_form_for [:admin, @budget, @group], url: path do |f| %>
+<%= translatable_form_for [:admin, @budget, @group], url: path do |f| %>
 
-    <%= render "shared/errors", resource: @group %>
+  <%= render "shared/errors", resource: @group %>
 
+  <div class="row">
     <%= f.translatable_fields do |translations_form| %>
-      <%= translations_form.text_field :name,
-                                       label: t("admin.budget_groups.form.name"),
-                                       maxlength: 50,
-                                       placeholder: t("admin.budget_groups.form.name") %>
+      <div class="small-12 medium-6 column end">
+        <%= translations_form.text_field :name,
+                                         label: t("admin.budget_groups.form.name"),
+                                         maxlength: 50,
+                                         placeholder: t("admin.budget_groups.form.name") %>
+      </div>
     <% end %>
+  </div>
 
-    <% if @group.persisted? %>
+  <% if @group.persisted? %>
+    <div class="row">
+      <div class="small-12 medium-6 column">
         <%= f.select :max_votable_headings,
                      (1..@group.headings.count),
                      label: t("admin.budget_groups.max_votable_headings"),
                      placeholder: t("admin.budget_groups.max_votable_headings") %>
-    <% end %>
-
-    <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button success" %>
+      </div>
+    </div>
   <% end %>
-</div>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button success" %>
+    </div>
+  </div>
+<% end %>

@@ -1,12 +1,15 @@
-<%= render "admin/shared/globalize_locales", resource: @investment %>
-
 <%= translatable_form_for(@investment, url: form_url, method: :post, html: { multipart: true }) do |f| %>
 
   <%= render "shared/errors", resource: @investment %>
 
-  <div class="row">
+  <div class="row column">
     <div class="small-12 medium-8 column">
       <%= f.select :heading_id, budget_heading_select_options(@budget), {include_blank: true, } %>
+    </div>
+    <div class="row">
+      <div class="small-12 column">
+        <%= render "shared/globalize_locales", resource: @investment %>
+      </div>
     </div>
 
     <%= f.translatable_fields do |translations_form| %>

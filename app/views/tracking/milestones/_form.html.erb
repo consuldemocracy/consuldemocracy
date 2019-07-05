@@ -1,36 +1,45 @@
-<%= render "admin/shared/globalize_locales", resource: @milestone %>
+<%= render "shared/globalize_locales", resource: @milestone %>
 
 <%= translatable_form_for [:tracking, *resource_hierarchy_for(@milestone)] do |f| %>
 
-  <div class="small-12 medium-6 margin-bottom">
-    <%= f.select :status_id,
-          @statuses.collect { |s| [s.name, s.id] },
-          { include_blank: @statuses.any? ? "" : t("tracking.milestones.form.no_statuses_defined") },
-          { disabled: @statuses.blank? } %>
-    <%= link_to t("tracking.milestones.form.admin_statuses"),
-                admin_milestone_statuses_path %>
+  <div class="row">
+    <div class="small-12 medium-6 margin-bottom column">
+      <%= f.select :status_id,
+            @statuses.collect { |s| [s.name, s.id] },
+            { include_blank: @statuses.any? ? "" : t("tracking.milestones.form.no_statuses_defined") },
+            { disabled: @statuses.blank? } %>
+      <%= link_to t("tracking.milestones.form.admin_statuses"),
+                  admin_milestone_statuses_path %>
+    </div>
   </div>
 
-  <%= f.translatable_fields do |translations_form| %>
-    <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
-                               maxlength: Milestone.title_max_length %>
-
-    <%= translations_form.text_area :description,
-                                    rows: 5,
-                                    label: t("tracking.milestones.new.description") %>
-  <% end %>
-
-  <%= f.label :publication_date, t("tracking.milestones.new.date") %>
-  <%= f.text_field :publication_date,
-                   value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,
-                   label: false,
-                   class: "js-calendar-full" %>
-
-  <%= render "images/admin_image", imageable: @milestone, f: f %>
-
-  <div class="documents">
-    <%= render "documents/nested_documents", documentable: @milestone, f: f %>
+  <div class="row">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="column">
+        <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
+                                                   maxlength: Milestone.title_max_length %>
+        <%= translations_form.text_area :description,
+                                        rows: 5,
+                                        label: t("tracking.milestones.new.description") %>
+      </div>
+    <% end %>
   </div>
 
-  <%= f.submit nil, class: "button success" %>
+  <div class="row">
+    <div class="column">
+      <%= f.label :publication_date, t("tracking.milestones.new.date") %>
+      <%= f.text_field :publication_date,
+                       value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,
+                       label: false,
+                       class: "js-calendar-full" %>
+
+      <%= render "images/admin_image", imageable: @milestone, f: f %>
+
+      <div class="documents">
+        <%= render "documents/nested_documents", documentable: @milestone, f: f %>
+      </div>
+
+      <%= f.submit nil, class: "button success" %>
+    </div>
+  </div>
 <% end %>

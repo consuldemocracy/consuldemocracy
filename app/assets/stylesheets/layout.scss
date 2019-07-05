@@ -197,6 +197,10 @@ a {
   padding-top: $line-height;
 }
 
+.padding-top {
+  padding-top: $line-height;
+}
+
 .light {
   background: $light;
 }
@@ -1078,6 +1082,19 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
+}
+
+.translatable-fields {
+
+  &.highlight {
+    display: inline-block;
+    padding-top: $line-height;
+    width: 100%;
+  }
+}
+
+.translation-locale {
+  padding-top: $line-height;
 }
 
 // 07. Callout

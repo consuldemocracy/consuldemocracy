@@ -11,7 +11,11 @@ module TranslatableFormHelper
   end
 
   def backend_translations_enabled?
-    (controller.class.parents & [Admin, Management, Valuation]).any?
+    (controller.class.parents & [Admin, Management, Valuation, Tracking]).any?
+  end
+
+  def highlight_translation_html_class
+    "highlight" if translations_interface_enabled?
   end
 
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
@@ -66,9 +70,13 @@ module TranslatableFormHelper
         end
       end
 
+      def highlight_translation_html_class
+        @template.highlight_translation_html_class
+      end
+
       def translations_options(resource, locale)
         {
-          class: "translatable-fields js-globalize-attribute",
+          class: "translatable-fields js-globalize-attribute #{highlight_translation_html_class}",
           style: @template.display_translation_style(resource.globalized_model, locale),
           data:  { locale: locale }
         }
