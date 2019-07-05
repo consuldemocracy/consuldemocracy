@@ -10,6 +10,7 @@
                    options_for_select_language(resource),
                    prompt: t("shared.translations.select_language_prompt"),
                    class: "js-select-language" %>
+    <%= select_language_error(resource) %>
     <div class="margin-bottom">
       <% if manage_languages %>
         <% I18n.available_locales.each do |locale| %>

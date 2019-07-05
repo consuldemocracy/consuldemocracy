@@ -38,6 +38,7 @@ module TranslatableFormHelper
           @template.content_tag :div, translations_options(translations_form.object, locale) do
             @template.concat translations_form.hidden_field(
               :_destroy,
+              value: !@template.enabled_locale?(translations_form.object.globalized_model, locale),
               data: { locale: locale }
             )
 
@@ -64,9 +65,7 @@ module TranslatableFormHelper
 
       def new_translation_for(locale)
         @object.translations.new(locale: locale).tap do |translation|
-          unless locale == I18n.locale && no_other_translations?(translation)
-            translation.mark_for_destruction
-          end
+          translation.mark_for_destruction
         end
       end
 
