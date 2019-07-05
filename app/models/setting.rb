@@ -10,6 +10,8 @@ class Setting < ApplicationRecord
   def type
     if %w[feature process proposals map html homepage uploads].include? prefix
       prefix
+    elsif %w[remote_census].include? prefix
+      key.rpartition(".").first
     else
       "configuration"
     end
@@ -93,6 +95,7 @@ class Setting < ApplicationRecord
         "feature.allow_attached_documents": true,
         "feature.allow_images": true,
         "feature.help_page": true,
+        "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
@@ -165,7 +168,21 @@ class Setting < ApplicationRecord
         "hot_score_period_in_days": 31,
         "related_content_score_threshold": -0.3,
         "featured_proposals_number": 3,
-        "dashboard.emails": nil
+        "dashboard.emails": nil,
+        "remote_census.general.endpoint": "",
+        "remote_census.request.method_name": "",
+        "remote_census.request.structure": "",
+        "remote_census.request.document_type": "",
+        "remote_census.request.document_number": "",
+        "remote_census.request.date_of_birth": "",
+        "remote_census.request.postal_code": "",
+        "remote_census.response.date_of_birth": "",
+        "remote_census.response.postal_code": "",
+        "remote_census.response.district": "",
+        "remote_census.response.gender": "",
+        "remote_census.response.name": "",
+        "remote_census.response.surname": "",
+        "remote_census.response.valid": ""
       }
     end
 

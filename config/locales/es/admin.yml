@@ -1312,6 +1312,12 @@ es:
           how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
         dashboard:
           title: Panel de progreso de propuestas
+        remote_census:
+          title: Configuración del Censo Remoto
+          how_to_enable: 'Para configurar la conexión con el Censo Remoto (SOAP) se debe activar "Configurar la conexión al censo remoto (SOAP)" en la pestaña "Funcionalidades".'
+      remote_census_general_name: Datos Generales
+      remote_census_request_name: Datos Petición
+      remote_census_response_name: Datos Respuesta
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración

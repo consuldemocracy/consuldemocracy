@@ -53,6 +53,21 @@ describe Setting do
       expect(homepage_setting.type).to eq "homepage"
     end
 
+    it "returns the key prefix for 'remote_census.general' settings" do
+      remote_census_general_setting = Setting.create(key: "remote_census.general.whatever")
+      expect(remote_census_general_setting.type).to eq "remote_census.general"
+    end
+
+    it "returns the key prefix for 'remote_census_request' settings" do
+      remote_census_request_setting = Setting.create(key: "remote_census.request.whatever")
+      expect(remote_census_request_setting.type).to eq "remote_census.request"
+    end
+
+    it "returns the key prefix for 'remote_census_response' settings" do
+      remote_census_response_setting = Setting.create(key: "remote_census.response.whatever")
+      expect(remote_census_response_setting.type).to eq "remote_census.response"
+    end
+
     it "returns 'configuration' for the rest of the settings" do
       configuration_setting = Setting.create(key: "whatever")
       expect(configuration_setting.type).to eq "configuration"

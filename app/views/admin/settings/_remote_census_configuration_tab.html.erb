@@ -1,0 +1,11 @@
+<% if feature?(:remote_census) %>
+  <h2><%= t("admin.settings.index.remote_census.title") %></h2>
+
+  <%= render "settings_table", settings: @remote_census_general_settings, setting_name: "remote_census_general_name", tab: "#tab-remote-census-configuration" %>
+  <%= render "settings_table", settings: @remote_census_request_settings, setting_name: "remote_census_request_name", tab: "#tab-remote-census-configuration" %>
+  <%= render "settings_table", settings: @remote_census_response_settings, setting_name: "remote_census_response_name", tab: "#tab-remote-census-configuration" %>
+<% else %>
+  <div class="callout primary">
+    <%= t("admin.settings.index.remote_census.how_to_enable") %>
+  </div>
+<% end %>
