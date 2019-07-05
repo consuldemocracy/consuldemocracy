@@ -3,9 +3,6 @@ require: rubocop-rspec
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
-  Include:
-    - "**/Rakefile"
-    - "**/config.ru"
   Exclude:
     - "db/migrate/**/*"
     - "db/schema.rb"
