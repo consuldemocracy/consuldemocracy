@@ -1,6 +1,7 @@
 ar:
   download:
     edit:
+      fields: "الحقول"
       description: "الوصف"
       downloadable: "قابل للتنزيل"
       debates: "المناقشات"
