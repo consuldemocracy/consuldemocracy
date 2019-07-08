@@ -137,7 +137,7 @@ en:
         support_title: Support this project
         confirm_group:
           one: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
-          other: "You can only support investments in %{count} district. If you continue you cannot change the election of your district. Are you sure?"
+          other: "You can only support investments in %{count} districts. If you continue you cannot change the election of your district. Are you sure?"
         supports:
           one: 1 support
           other: "%{count} supports"

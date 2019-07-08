@@ -20,7 +20,7 @@
           method: "post",
           remote: (display_support_alert?(investment) ? false : true),
           data:   (display_support_alert?(investment) ? {
-                  confirm: t("budgets.investments.investment.confirm_group") } : nil),
+                  confirm: t("budgets.investments.investment.confirm_group", count: investment.group.max_votable_headings) } : nil),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>

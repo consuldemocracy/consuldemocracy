@@ -191,6 +191,13 @@ describe "Votes" do
                                          "Share it!"
       end
 
+      scenario "Confirm message shows the right text", :js do
+        visit budget_investments_path(budget, heading_id: new_york.id)
+        find(".in-favor a").click
+
+        expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
+      end
+
     end
   end
 end
