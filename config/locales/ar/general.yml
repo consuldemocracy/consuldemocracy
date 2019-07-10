@@ -62,6 +62,12 @@ ar:
         other: "%{count} ردود (عرض)"
       responses_collapse:
         zero: لا توجد ردود
+        zero: "%{count} إجابة (إخفاء)"
+        one: "إجابة 1 (إخفاء)"
+        two: "%{count} إجابة (إخفاء)"
+        few: "%{count} إجابة (إخفاء)"
+        many: "%{count} إجابة (إخفاء)"
+        other: "%{count} إجابة (إخفاء)"
       user_deleted: حذف المستخدم
       votes:
         zero: لا توجد أصوات
@@ -535,6 +541,7 @@ ar:
       embed_video_title: "فيديو حول %{proposal}"
       title_video_url: "فيديو خارجي"
       author: كاتب
+      draft: المقترح في مسودة. لا يمكنه الحصول على الدعم بعد، ولا يظهر في قائمة المقترحات.
     update:
       form:
         submit_button: حفظ التغييرات
