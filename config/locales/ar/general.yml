@@ -310,6 +310,20 @@ ar:
           few: يوجد %{count} تعليقات جديدة على
           many: يوجد %{count} تعليق جديد
           other: يوجد %{count} تعليقات جديدة على
+        proposal_notification:
+          zero: يوجد %{count} إشعارات جديدة على
+          one: يوجد إشعار جديد على
+          two: يوجد %{count} إشعارات جديدة على
+          few: يوجد %{count} إشعارات جديدة على
+          many: يوجد %{count} إشعارات جديدة على
+          other: '%{count} إشعارات جديدة على'
+        replies_to:
+          zero: يوجد %{count} ردود جديدة على تعليقك على
+          one: يوجد رد على تعليقك على
+          two: يوجد %{count} ردود جديدة على تعليقك على
+          few: يوجد %{count} ردود جديدة على تعليقك على
+          many: يوجد %{count} ردود جديدة على تعليقك على
+          other: يوجد %{count} ردود جديدة على تعليقك على
       mark_as_read: الكل مقروءة
       mark_as_unread: الكل غير مقروءة
       notifiable_hidden: هذ المصدر عم يعد متاح.
@@ -905,6 +919,27 @@ ar:
           few: "%{count} تعليقات"
           many: "%{count} تعليقات"
           other: "%{count} تعليقات"
+        debates:
+          zero: "%{count} مناقشات"
+          one: مناقشة 1
+          two: "%{count} مناقشات"
+          few: "%{count} مناقشات"
+          many: "%{count} مناقشات"
+          other: "%{count} حوار"
+        proposals:
+          zero: "%{count} مقترحات"
+          one: مقترح 1
+          two: "%{count} مقترحات"
+          few: "%{count} مقترحات"
+          many: "%{count} مقترحات"
+          other: "%{count} اقتراح"
+        budget_investments:
+          zero: "%{count} استثمار"
+          one: إستثمار 1
+          two: "%{count} استثمار"
+          few: "%{count} استثمار"
+          many: "%{count} استثمار"
+          other: "%{count} استثمار"
       no_activity: لا يوجد اجراءات للمستخدم
       no_private_messages: "لا يمكن ارسال رسالة خاصة لهذا المسنخدم."
       private_activity: قائمة النشاطات الخاصة بهذا المستخدم غير متاحة.
