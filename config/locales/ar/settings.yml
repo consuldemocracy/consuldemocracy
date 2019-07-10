@@ -6,8 +6,18 @@ ar:
     max_votes_for_debate_edit: "عدد الأصوات الذي لا يمكن تعديل النقاش بعده"
     max_votes_for_debate_edit_description: "بعد بلوغ هذا العدد من الأصوات ، لا يمكن لمؤلف النقاش تحريره"
     featured_proposals_number: "عدد المقترحات المميزة"
+    votes_for_proposal_success: "عدد الأصوات اللازمة للموافقة على المقترح"
+    votes_for_proposal_success_description: "عندما يبلغ المقترح هذا العدد من الأصوات، لا يمكنه تلقي المزيد من الدعم ويعتبر ناجحًا"
+    months_to_archive_proposals: "أشهر لأرشفة المقترحات"
     months_to_archive_proposals_description: "بعد هذا العدد من الأشهر سيتم أرشفة المقترحات ولن تصبح قادرة على تلقي الدعم"
+    email_domain_for_officials: "مجال البريد الإلكتروني للموظفين العموميين"
+    url: "الصّفحة الرئيسية"
+    url_description: "الصّفحة الرئيسية لموقعك الالكتروني"
     org_name: "المنظمة"
+    related_content_score_threshold_description: "وفقًا لتصنيف الأصوات في محتوى ذي صلة، يخفي المحتوى الذي يحدده المستخدمون على أنه غير مرتبط"
+    hot_score_period_in_days: "الفترة (الأيام) التي يستخدمها المرشح \"الأكثر نشاطًا\""
+    mailer_from_name: "اسم البريد الإلكتروني المرسل"
+    mailer_from_name_description: "سيظهر هذا الاسم كاسم المرسل في رسائل البريد الإلكتروني المرسلة من التطبيق"
     proposals:
       successful_proposal_id: مقترح ناجح
       poll_short_title: استطلاعات
