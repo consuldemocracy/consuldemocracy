@@ -18,6 +18,10 @@ ar:
     hot_score_period_in_days: "الفترة (الأيام) التي يستخدمها المرشح \"الأكثر نشاطًا\""
     mailer_from_name: "اسم البريد الإلكتروني المرسل"
     mailer_from_name_description: "سيظهر هذا الاسم كاسم المرسل في رسائل البريد الإلكتروني المرسلة من التطبيق"
+    mailer_from_address: "عنوان البريد الإلكتروني للمرسل"
+    mailer_from_address_description: "سيظهر هذا البريد الإلكتروني في رسائل البريد الإلكتروني المرسلة من التطبيق"
+    meta_title: "عنوان الموقع (SEO)"
+    meta_description: "وصف الموقع (SEO)"
     proposals:
       successful_proposal_id: مقترح ناجح
       poll_short_title: استطلاعات
@@ -65,6 +69,11 @@ ar:
       legislation_description: "في العمليات التشاركية، يُتاح للمواطنين فرصة المشاركة في صياغة وتعديل اللوائح التي تؤثر على المجتمع وإبداء رأيهم في بعض الإجراءات التي يتم التّخطيط لتنفيذها"
     uploads:
       images:
+        min_width: "العرض الأدنى للصّورة"
+        min_width_description: "العرض الأدنى المسموح به للصورة المرفوعة (بالـ pixels)"
+        min_height: "الطّول الأدنى للصّورة"
+        min_height_description: "الطّول الأدنى المسموح به للصورة المرفوعة (بالـ pixels)"
+        max_size: "الحجم الأقصى للصورة"
         max_size_description: "الحجم الأقصى المسموح به للصورة المرفوعة (بالـ Megabytes/MB)"
         title:
           min_length: "الطّول الأدنى لعنوان الصورة"
