@@ -526,6 +526,7 @@ ar:
       success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
       archived: تم أرشفة هذا المقترح ولا يمكنه طلب موارد.
     progress:
+      title: الرسومات
       group_by_month: شهريا
       group_by_week: أسبوعيا
       group_by_date: اليومي
@@ -547,6 +548,7 @@ ar:
       required_supports: "%{supports} دعم مطلوب"
       and: و
       view_resource: رؤية الموارد
+      resource_requested: المورد مطلوب سابقا
       request_resource: طلب المورد
       resource_locked: الموارد مغلقة
     recommended_actions:
@@ -601,6 +603,13 @@ ar:
       edit:
         submit: تحديث الاستطلاع
       poll:
+        responses:
+          zero: "%{count} ردود"
+          one: "ردّ %{count}"
+          two: "%{count} ردود"
+          few: "%{count} ردود"
+          many: "%{count} ردود"
+          other: "%{count} ردود"
         view_results: رؤية النتائج
         edit_poll: تعديل الاستبيان
         show_results: إظهار النتائج
@@ -634,6 +643,7 @@ ar:
       new:
         title: نموذج بريد إلكتروني للمشاركة
       mailing_options:
+        send: إرسال إلى %{address}
         preview: معاينة
       create:
         sent: تم إرسال البريد الإلكتروني
@@ -742,6 +752,7 @@ ar:
       author_type: "حسب فئة المؤلف"
       author_type_blank: "حدد فئة"
       date: "حسب التاريخ"
+      date_placeholder: "DD/MM/YYYY"
       date_range_blank: "اختر التاريخ"
       date_1: "الـ 24 ساعة الماضية"
       date_2: "الأسبوع الماضي"
@@ -803,6 +814,9 @@ ar:
       searcher: محرك البحث
     go_to_page: "انتقل إلى صفحة "
     share: مشاركة
+    orbit:
+      previous_slide: الصفحة السابقة
+      next_slide: الصفحة التالية
     documentation: وثائق إضافية
     view_mode:
       title: نمط العرض
@@ -840,6 +854,8 @@ ar:
       unverified_users: مستخدمين غير متحقق منهم
   unauthorized:
     default: ليس لديك الصلاحية لدخول هذه الصفحة.
+    manage:
+      all: "ليس لديك إذن لتنفيذ عملية '%{action}' على %{subject}."
   users:
     direct_messages:
       new:
@@ -885,6 +901,7 @@ ar:
       published: منشورة
       see: "الإطلاع على المقترح"
       actions: الإجراءات
+      retired_help_text: لوحة القيادة غير متوفرة للاقتراحات المسحوبة
   votes:
     agree: أنا أوافق
     comment_unauthenticated: تحتاج الى %{signin} او %{signup} كي تصبح قدرا على التصويت.
@@ -930,6 +947,7 @@ ar:
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
       i_have_an_account: لدي حساب بالفعل
+      question: هل لديك بالفعل حساب في %{org_name}؟
       title: التحقق من الحساب
     welcome:
       go_to_index: ليس الآن، انتقل إلى صفحة الفهرس
