@@ -388,6 +388,7 @@ ar:
         hot_score: الأكثر نشاطا
         most_commented: الأكثر تعليقات
         relevance: الأهمية
+        archival_date: تمّت الأرشفة
         recommendations: التوصيات
       recommendations:
         without_results: لا توجد اقتراحات تتعلق باهتماماتك
