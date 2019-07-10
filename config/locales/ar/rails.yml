@@ -80,12 +80,26 @@ ar:
         many: "%{count} دقيقة"
         other: "%{count} دقيقة"
       x_months:
-        zero: "%{count} أشهر"
+        zero: "%{count} شهور"
         one: شهر 1
-        two: "%{count} أشهر"
-        few: "%{count} أشهر"
-        many: "%{count} أشهر"
+        two: "%{count} شهور"
+        few: "%{count} شهور"
+        many: "%{count} شهور"
         other: "%{count} شهور"
+      x_years:
+        zero: "%{count} سنوات"
+        one: سنة 1
+        two: "%{count} سنوات"
+        few: "%{count} سنوات"
+        many: "%{count} سنوات"
+        other: "%{count} سنوات"
+      x_seconds:
+        zero: "%{count} ثانية"
+        one: ثانية 1
+        two: "%{count} ثانية"
+        few: "%{count} ثانية"
+        many: "%{count} ثانية"
+        other: "%{count} ثانية"
     prompts:
       day: اليوم
       hour: الساعة
@@ -116,6 +130,13 @@ ar:
       odd: يجب أن يكون عدد فردي
       required: مطلوب
       taken: محجوز مسبقاً
+      too_long:
+        zero: طويل جداً (الحد الأقصى %{count} حرفاً)
+        one: طويل جداً (الحد الأقصى حرف 1)
+        two: طويل جداً (الحد الأقصى %{count} حرفاً)
+        few: طويل جداً (الحد الأقصى %{count} حرفاً)
+        many: طويل جداً (الحد الأقصى %{count} حرفاً)
+        other: طويل جداً (الحد الأقصى %{count} حرفاً)
       too_short:
         zero: قصير جداً (الحد الأدنى %{count} حروف)
         one: قصير جداً (الحد الأدنى حرف 1)
@@ -133,6 +154,13 @@ ar:
       other_than: يجب أن يكون خلاف %{count}
     template:
       body: "هناك مشاكل مع الحقول التالية:"
+      header:
+        zero: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        one: هناك خطأ يمنع عملية حفظ %{model}
+        two: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        few: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        many: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
+        other: "هناك %{count} خطأ يمنع عملية حفظ %{model}"
   helpers:
     select:
       prompt: الرجاء تحديد
