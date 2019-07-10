@@ -51,6 +51,27 @@ ar:
   datetime:
     distance_in_words:
       half_a_minute: نصف دقيقة
+      less_than_x_seconds:
+        zero: أقل من %{count} ثانية
+        one: أقل من 1 ثانية
+        two: أقل من %{count} ثانية
+        few: أقل من %{count} ثانية
+        many: أقل من %{count} ثانية
+        other: أقل من %{count} ثانية
+      over_x_years:
+        zero: أكثر من %{count} سنوات
+        one: أكثر من 1 سنة
+        two: أكثر من سنتين %{count}
+        few: أكثر من %{count} سنوات
+        many: أكثر من %{count} سنوات
+        other: أكثر من %{count} سنين
+      x_days:
+        zero: "%{count} أيام"
+        one: يوم %{count}
+        two: "%{count} أيام"
+        few: "%{count} أيام"
+        many: "%{count} أيام"
+        other: "%{count} أيام"
       x_minutes:
         zero: "%{count} دقيقة"
         one: '%{count} دقيقة'
@@ -58,6 +79,13 @@ ar:
         few: "%{count} دقيقة"
         many: "%{count} دقيقة"
         other: "%{count} دقيقة"
+      x_months:
+        zero: "%{count} أشهر"
+        one: شهر 1
+        two: "%{count} أشهر"
+        few: "%{count} أشهر"
+        many: "%{count} أشهر"
+        other: "%{count} شهور"
     prompts:
       day: اليوم
       hour: الساعة
