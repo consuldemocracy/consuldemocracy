@@ -27,6 +27,13 @@ ar:
         assigned_to: "تم تعيين %{valuator}"
         title: مشاريع استثمارية
         edit: تعديل الملف
+        valuators_assigned:
+          zero: "%{count} مقيّمين معيّنين"
+          one: مقيّم معيّن
+          two: "%{count} مقيّمين معيّنين"
+          few: "%{count} مقيّمين معيّنين"
+          many: "%{count} مقيّمين معيّنين"
+          other: "%{count} عدد المقييمين"
         no_valuators_assigned: لم يتم تعيين مقيّمين
         table_id: ID
         table_title: عنوان
