@@ -2,6 +2,7 @@ ar:
   flash:
     actions:
       create:
+        notice: "تم إنشاء %{resource_name} بنجاح."
         debate: "تم إنشاء المناقشة بنجاح."
         direct_message: "تم إرسال رسالتك بنجاح."
         poll: "تم إنشاء الاستطلاع بنجاح."
@@ -33,3 +34,4 @@ ar:
         error: "لا يمكن الحذف"
         topic: "تم حذف الموضوع بنجاح."
         poll_question_answer_video: "تم حذف إجابة الفيديو بنجاح."
+        valuator_group: "تم حذف مجموعة المقيّمين بنجاح"
