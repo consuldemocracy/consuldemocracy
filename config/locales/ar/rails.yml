@@ -200,6 +200,13 @@ ar:
       storage_units:
         format: "%n %u"
         units:
+          byte:
+            zero: Bytes
+            one: Byte
+            two: Bytes
+            few: Bytes
+            many: Bytes
+            other: بايت
           gb: غيغا بايت
           kb: كيلو بايت
           mb: ميغابايت
