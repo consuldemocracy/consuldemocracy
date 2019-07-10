@@ -164,3 +164,4 @@ ar:
         other: "%{count} تعليقات"
       most_voted_comments: "التعليقات الأكثر تصويتا: "
       version: النسخة
+      process_empty: ليس للعملية مراحل.
