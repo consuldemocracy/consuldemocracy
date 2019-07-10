@@ -69,10 +69,12 @@ ar:
         table_poll: استطلاع
         table_status: حالة الاستطلاع
         table_actions: الإجراءات
+        not_to_vote: قرر الشخص عدم التصويت في هذه المرحلة
       show:
         can_vote: يمكنه التصويت
         cannot_vote: لا يمكن لهذا الشخص التصويت لأنه غير مسجل في المنطقة أو المناطق التي يتم فيها التصويت.
         error_already_voted: شارك سابقا في هذا الاستطلاع
         submit: تأكيد التصويت
+        success: "تم التصويت!"
       can_vote:
         submit_disable_with: "انتظر، جاري تأكيد التصويت..."
