@@ -7,7 +7,7 @@
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="ckeditor column">
-        <%= translations_form.cktext_area :milestones_summary, ckeditor: { language: I18n.locale } %>
+        <%= translations_form.text_area :milestones_summary, class: "html-area" %>
       </div>
     <% end %>
   </div>

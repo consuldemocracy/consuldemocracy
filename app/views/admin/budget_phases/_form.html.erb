@@ -23,17 +23,19 @@
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 column">
         <div class="ckeditor">
-          <%= translations_form.cktext_area :description,
-                                             maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                                             hint: t("admin.budget_phases.edit.description_help_text") %>
+          <%= translations_form.text_area :description,
+                                           maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
+                                           class: "html-area",
+                                           hint: t("admin.budget_phases.edit.description_help_text") %>
         </div>
       </div>
 
       <div class="small-12 column">
         <div class="ckeditor">
-          <%= translations_form.cktext_area :summary,
-                                             maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                                             hint: t("admin.budget_phases.edit.summary_help_text") %>
+          <%= translations_form.text_area :summary,
+                                           maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
+                                           class: "html-area",
+                                           hint: t("admin.budget_phases.edit.summary_help_text") %>
         </div>
       </div>
     <% end %>

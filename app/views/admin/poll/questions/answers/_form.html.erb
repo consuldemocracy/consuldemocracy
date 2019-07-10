@@ -15,7 +15,7 @@
         <%= translations_form.text_field :title %>
       </div>
       <div class="ckeditor column">
-        <%= translations_form.cktext_area :description, maxlength: Poll::Question.description_max_length %>
+        <%= translations_form.text_area :description, maxlength: Poll::Question.description_max_length, class: "html-area" %>
       </div>
     <% end %>
   </div>

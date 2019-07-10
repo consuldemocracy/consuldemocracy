@@ -22,9 +22,9 @@
         </div>
 
         <div class="ckeditor small-12 column">
-          <%= translations_form.cktext_area :description,
+          <%= translations_form.text_area :description,
                 maxlength: Budget::Investment.description_max_length,
-                ckeditor: { language: I18n.locale } %>
+                class: "html-area" %>
         </div>
       <% end %>
 
