@@ -1,5 +1,9 @@
 ar:
   officing:
+    dashboard:
+      index:
+        title: ضبط الاستطلاع
+        no_shifts: ليس لديك مناوبة اليوم.
     polls:
       final:
         title: الاستطلاعات جاهزة لعملية العد النهائي
@@ -55,6 +59,7 @@ ar:
     residence:
       flash:
         create: "وثيقة تم التحقق منها من خلال التعداد"
+        not_allowed: "ليس لديك مناوبة اليوم"
       new:
         document_number: "رقم المستند (بما في ذلك الاحرف)"
         error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
