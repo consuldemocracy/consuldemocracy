@@ -961,6 +961,8 @@ ar:
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_verify_my_account: التحقق من حسابي
       user_permission_votes: المشاركة في التصويت النهائي
+  invisible_captcha:
+    sentence_for_humans: "إذا كنت إنسانا، فتجاهل هذا الحقل"
   related_content:
     title: "محتوى ذات الصلة"
     add: "إضافة محتوى ذات الصلة"
@@ -994,15 +996,28 @@ ar:
       cancel_button: إلغاء
     nested_links:
       title: روابط
+      note: أضف الروابط التي تهمك
       add_new_link: إضافة رابط جديد
     link_fields:
       label_placeholder: عنوان الرابط
+      url_placeholder: عنوان الرابط
+  communities:
+    show:
+      surveys: الاستطلاعات
+      complete_survey: اكمل الاستطلاع
+    subnav:
+      surveys: الاستطلاعات
+    poll:
+      take_part: شارك من %{from} إلى %{to}
   question:
     max_votes: العدد الأقصى للأصوات
+    max_group_answers: الحد الأقصى لعدد الإجابات في المجموعة
     votation_type: نوع التصويت
   enum_type:
     title: نوع التصويت
     unique: إجابة واحدة، مغلقة
     multiple: إجابات متعددة، مغلقة
+    positive_open: التصويت الإيجابي، مفتوح
+    positive_negative_open: التصويت الإيجابي والسلبي، مفتوح
     answer_set_open: وضع الإجابات، متاحة
     answer_set_closed: إجابات متعدّدة، مغلق
