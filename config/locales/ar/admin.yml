@@ -1610,6 +1610,7 @@ ar:
       add_language: إضافة لغة
     change_log:
       id: "معرف"
+      field: "حقل"
       actions: "الإجراءات"
     trackers:
       index:
