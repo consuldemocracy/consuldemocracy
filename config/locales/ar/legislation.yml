@@ -10,6 +10,13 @@ ar:
           few: "%{count} تعليقات"
           many: "%{count} تعليقات"
           other: "%{count} تعليقات"
+        replies_count:
+          zero: "%{count} ردود"
+          one: "ردّ %{count}"
+          two: "%{count} ردود"
+          few: "%{count} ردود"
+          many: "%{count} ردود"
+          other: "%{count} ردود"
         cancel: إلغاء
         publish_comment: نشر التعليق
       form:
