@@ -1,5 +1,11 @@
 ar:
   stats:
+    title: "بيانات المشاركة"
+    advanced: "إحصائيات متقدمة"
+    total_participants: "المشاركون"
+    by_gender: "المشاركون حسب الجنس"
+    by_age: "المشاركون حسب العمر"
+    by_geozone: "المشاركون حسب المقاطعة"
     geozone: "مقاطعة"
     budgets:
       link: "الإحصائيات"
@@ -13,3 +19,4 @@ ar:
       percent_total_participants: "% مجموع المشاركين"
     polls:
       booth_percentage: "%{percentage} مكاتب الإقتراع"
+      letter_percentage: "%{percentage} بريد"
