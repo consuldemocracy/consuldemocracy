@@ -33,7 +33,7 @@ ar:
           two: "%{count} مقيّمين معيّنين"
           few: "%{count} مقيّمين معيّنين"
           many: "%{count} مقيّمين معيّنين"
-          other: "%{count} عدد المقييمين"
+          other: "%{count} مقيّمين معيّنين"
         no_valuators_assigned: لم يتم تعيين مقيّمين
         table_id: ID
         table_title: عنوان
