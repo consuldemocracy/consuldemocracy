@@ -67,7 +67,7 @@ ar:
         other: أكثر من %{count} سنين
       x_days:
         zero: "%{count} أيام"
-        one: يوم %{count}
+        one: يوم واحد
         two: "%{count} أيام"
         few: "%{count} أيام"
         many: "%{count} أيام"
@@ -81,14 +81,14 @@ ar:
         other: "%{count} دقيقة"
       x_months:
         zero: "%{count} شهور"
-        one: شهر 1
+        one: شهر واحد
         two: "%{count} شهور"
         few: "%{count} شهور"
         many: "%{count} شهور"
         other: "%{count} شهور"
       x_years:
         zero: "%{count} سنوات"
-        one: سنة 1
+        one: سنة واحدة
         two: "%{count} سنوات"
         few: "%{count} سنوات"
         many: "%{count} سنوات"
@@ -206,7 +206,7 @@ ar:
             two: Bytes
             few: Bytes
             many: Bytes
-            other: بايت
+            other: Bytes
           gb: غيغا بايت
           kb: كيلو بايت
           mb: ميغابايت
