@@ -2,7 +2,7 @@ ar:
   officing:
     dashboard:
       index:
-        title: ضبط الاستطلاع
+        title: مكتب الاستطلاع
         no_shifts: ليس لديك مناوبة اليوم.
     polls:
       final:
