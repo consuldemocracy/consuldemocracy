@@ -84,21 +84,21 @@ ar:
           placeholder: البحث عن المشاريع الاستثمارية...
           title: بحث
         search_results_html:
-          zero: "يحتوي على المصطلح <strong>%{search_term}</strong>"
-          one: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          two: "يحتوي على المصطلح <strong>%{search_term}</strong>"
-          few: "يحتوي على المصطلح <strong>%{search_term}</strong>"
-          many: "يحتوي على المصطلح <strong>%{search_term}</strong>"
-          other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
+          zero: " تحتوي على المصطلح <strong>%{search_term}</strong>"
+          one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
+          two: " تحتوي على المصطلح <strong>%{search_term}</strong>"
+          few: " تحتوي على المصطلح <strong>%{search_term}</strong>"
+          many: " تحتوي على المصطلح <strong>%{search_term}</strong>"
+          other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: قرعتي
           voted_html:
-            zero: "<strong> لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            one: "<strong> لقد قمت بتصويت اقتراح واحد بتكلفة %{amount_spent}</strong>"
-            two: "<strong> لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            few: "<strong> لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            many: "<strong> لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            other: "<strong> لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
+            zero: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
+            one: "<strong>لقد قمت بتصويت اقتراح واحد بتكلفة %{amount_spent}</strong>"
+            two: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
+            few: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
+            many: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
+            other: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
           voted_info: يمكنك %{link} في اي وقت حتى اغلاف هذه المرحلة. لا داعي لانفاق جميع الاموال المتاحة.
           voted_info_link: غيير الصوت الخاص بك
           different_heading_assigned_html: "لديك تصويت فعال في عنوان مختلف: %{heading_link}"
