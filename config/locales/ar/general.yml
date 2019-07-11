@@ -945,14 +945,14 @@ ar:
           other: "%{count} تعليقات"
         debates:
           zero: "%{count} مناقشات"
-          one: مناقشة 1
+          one: مناقشة واحدة
           two: "%{count} مناقشات"
           few: "%{count} مناقشات"
           many: "%{count} مناقشات"
           other: "%{count} حوار"
         proposals:
           zero: "%{count} مقترحات"
-          one: مقترح 1
+          one: مقترح واحد
           two: "%{count} مقترحات"
           few: "%{count} مقترحات"
           many: "%{count} مقترحات"
