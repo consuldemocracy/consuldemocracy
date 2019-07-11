@@ -94,12 +94,12 @@ ar:
         many: "%{count} سنوات"
         other: "%{count} سنوات"
       x_seconds:
-        zero: "%{count} ثانية"
-        one: ثانية 1
-        two: "%{count} ثانية"
-        few: "%{count} ثانية"
-        many: "%{count} ثانية"
-        other: "%{count} ثانية"
+        zero: "%{count} ثواني"
+        one: ثانية واحدة
+        two: "%{count} ثواني"
+        few: "%{count} ثواني"
+        many: "%{count} ثواني"
+        other: "%{count} ثواني"
     prompts:
       day: اليوم
       hour: الساعة
