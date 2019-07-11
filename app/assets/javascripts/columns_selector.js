@@ -1,7 +1,7 @@
 (function() {
   "use strict";
   App.ColumnsSelector = {
-    initColums: function() {
+    initColumns: function() {
       var c_value, columns;
       App.ColumnsSelector.hideAll();
       c_value = App.ColumnsSelector.currentValue();
@@ -71,7 +71,7 @@
     },
     initialize: function() {
       App.ColumnsSelector.initChecks();
-      App.ColumnsSelector.initColums();
+      App.ColumnsSelector.initColumns();
       $("#js-columns-selector").on({
         click: function(event) {
           App.ColumnsSelector.toggleOptions(event);
