@@ -63,7 +63,7 @@ ar:
       responses_collapse:
         zero: لا توجد ردود
         zero: "%{count} إجابة (إخفاء)"
-        one: "إجابة 1 (إخفاء)"
+        one: "إجابة واحدة (إخفاء)"
         two: "%{count} إجابة (إخفاء)"
         few: "%{count} إجابة (إخفاء)"
         many: "%{count} إجابة (إخفاء)"
