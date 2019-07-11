@@ -60,7 +60,7 @@ ar:
         other: أقل من %{count} ثانية
       over_x_years:
         zero: أكثر من %{count} سنوات
-        one: أكثر من 1 سنة
+        one: أكثر من سنة واحدة
         two: أكثر من سنتين %{count}
         few: أكثر من %{count} سنوات
         many: أكثر من %{count} سنوات
