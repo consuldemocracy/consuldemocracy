@@ -1,10 +1,10 @@
 ar:
   settings:
     comments_body_max_length_description: "عدد الحروف"
-    max_votes_for_proposal_edit: "عدد الأصوات التي لا يمكن تعديل المقترح بعدها"
+    max_votes_for_proposal_edit: "عدد الأصوات الذي لا يمكن تعديل المقترح بعده"
     max_votes_for_proposal_edit_description: "بعد بلوغ هذا العدد من الأصوات، لا يمكن لكاتب المقترح تعديله"
-    max_votes_for_debate_edit: "عدد الأصوات الذي لا يمكن تعديل النقاش بعده"
-    max_votes_for_debate_edit_description: "بعد بلوغ هذا العدد من الأصوات ، لا يمكن لمؤلف النقاش تحريره"
+    max_votes_for_debate_edit: "عدد الأصوات الذي لا يمكن تعديل المناقشة بعده"
+    max_votes_for_debate_edit_description: "بعد بلوغ هذا العدد من الأصوات، لا يمكن لمؤلف النقاش تعديله"
     featured_proposals_number: "عدد المقترحات البارزة"
     votes_for_proposal_success: "عدد الأصوات اللازمة للموافقة على المقترح"
     votes_for_proposal_success_description: "عندما يبلغ المقترح هذا العدد من الأصوات، لا يمكنه تلقي المزيد من الدعم ويعتبر ناجحًا"
