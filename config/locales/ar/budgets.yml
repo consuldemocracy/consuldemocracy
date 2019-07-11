@@ -149,11 +149,11 @@ ar:
         supports:
           zero: لا يوجد دعم
           zero: "%{count} دعم"
-          one: 1 دعم
+          one: دعم واحد
           two: "%{count} دعم"
           few: "%{count} دعم"
           many: "%{count} دعم"
-          other: "%{count} يدعم"
+          other: "%{count} دعم"
         give_support: دعم
       header:
         check_ballot: تحقق من قرعتي
