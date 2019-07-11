@@ -956,7 +956,7 @@ ar:
           two: "%{count} مقترحات"
           few: "%{count} مقترحات"
           many: "%{count} مقترحات"
-          other: "%{count} اقتراح"
+          other: "%{count} مقترحات"
         budget_investments:
           zero: "%{count} استثمار"
           one: إستثمار 1
