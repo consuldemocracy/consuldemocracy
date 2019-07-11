@@ -1585,6 +1585,8 @@ describe "Admin budget investments" do
 
         within("#budget_investment_#{selected_bi.id}") do
           click_link("Selected")
+
+          expect(page).to have_link "Select"
         end
 
         click_link("Next")
