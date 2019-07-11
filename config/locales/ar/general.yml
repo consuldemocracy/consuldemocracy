@@ -959,7 +959,7 @@ ar:
           other: "%{count} مقترحات"
         budget_investments:
           zero: "%{count} استثمار"
-          one: إستثمار 1
+          one: إستثمار واحد
           two: "%{count} استثمار"
           few: "%{count} استثمار"
           many: "%{count} استثمار"
