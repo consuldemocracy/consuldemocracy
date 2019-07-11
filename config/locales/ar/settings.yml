@@ -18,7 +18,7 @@ ar:
     hot_score_period_in_days: "الفترة (الأيام) التي يستخدمها المرشح \"الأكثر نشاطًا\""
     mailer_from_name: "عنوان البريد الإلكتروني المُرسِل"
     mailer_from_name_description: "سيظهر هذا الاسم كاسم المرسل في رسائل البريد الإلكتروني المرسلة من التطبيق"
-    mailer_from_address: "عنوان البريد الإلكتروني للمرسل"
+    mailer_from_address: "عنوان البريد الإلكتروني المُرسِل"
     mailer_from_address_description: "سيظهر هذا البريد الإلكتروني في رسائل البريد الإلكتروني المرسلة من التطبيق"
     meta_title: "عنوان الموقع (SEO)"
     meta_description: "وصف الموقع (SEO)"
