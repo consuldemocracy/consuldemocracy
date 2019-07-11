@@ -1892,6 +1892,21 @@ describe "Admin budget investments" do
         "visible_to_valuators,selected,incompatible,author")
 
     end
+
+    scenario "Select an investment when some columns are not displayed", :js do
+      investment.update_attribute(:title, "Don't display me, please!")
+
+      visit admin_budget_budget_investments_path(budget)
+      within("#js-columns-selector") { find("strong", text: "Columns").click }
+      within("#js-columns-selector-wrapper") { uncheck "Title" }
+
+      within("#budget_investment_#{investment.id}") do
+        click_link "Selected"
+
+        expect(page).to have_link "Select"
+        expect(page).not_to have_content "Don't display me, please!"
+      end
+    end
   end
 
 end

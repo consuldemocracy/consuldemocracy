@@ -82,6 +82,9 @@
           App.ColumnsSelector.toggleColumn(event);
         }
       });
+      $(".column-selecteable").on("inserted", function() {
+        App.ColumnsSelector.initColumns();
+      });
     }
   };
 }).call(this);
