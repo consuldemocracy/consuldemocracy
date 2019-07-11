@@ -53,7 +53,7 @@ ar:
       half_a_minute: نصف دقيقة
       less_than_x_seconds:
         zero: أقل من %{count} ثانية
-        one: أقل من 1 ثانية
+        one: أقل من ثانية واحدة
         two: أقل من %{count} ثانية
         few: أقل من %{count} ثانية
         many: أقل من %{count} ثانية
