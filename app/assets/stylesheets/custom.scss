@@ -186,3 +186,13 @@ a.button.hollow {
 main {
   margin-top: 22px;
 }
+
+.menu-icon {
+  &.dark {
+    &:hover::after,
+    &::after {
+      background: black;
+      box-shadow: 0 7px 0 black, 0 14px 0 black;
+    }
+  }
+}
