@@ -1620,6 +1620,8 @@ ar:
     change_log:
       id: "معرف"
       field: "حقل"
+      edited_at: "تم التحرير في"
+      edited_by: "تم التحرير من قبل"
       actions: "الإجراءات"
     trackers:
       index:
