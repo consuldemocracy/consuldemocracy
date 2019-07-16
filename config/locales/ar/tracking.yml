@@ -1,13 +1,24 @@
 ar:
   tracking:
+    header:
+      title: تتبّع
     menu:
+      title: تتبّع
       budgets: الميزانيات التشاركية
     budgets:
       index:
         title: الميزانية التشاركية
         table_name: الإسم
+        table_phase: المرحلة
+        table_assigned_investments_tracking_open: مقترحات الاستثمار المخصصة مع تتبّع مفتوح
+        table_actions: الإجراءات
+        tracking: تتبّع
+        no_budgets: "لا يوجد ميزانيات"
     budget_investments:
       index:
+        assigned_to: "أحيلت إلى %{tracker}"
+        title: مشاريع استثمارية
+        edit: تعديل المعالم
         table_id: ID
         table_title: العنوان
         table_heading_name: اسم العنوان
