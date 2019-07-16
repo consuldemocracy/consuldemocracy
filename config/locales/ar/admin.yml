@@ -122,6 +122,14 @@ ar:
           few: "%{count} مقيّمين محدّدين"
           many: "%{count} مقيّمين محدّدين"
           other: "%{count} مقيّمين محدّدين"
+        trackers:
+          zero: "تعيين متتبّعين"
+          zero: "%{count} متتبّعين محدّدين"
+          one: "متتبّع واحد محدّد"
+          two: "%{count} متتبّعين محدّدين"
+          few: "%{count} متتبّعين محدّدين"
+          many: "%{count} متتبّعين محدّدين"
+          other: "%{count} متتبّعين محدّدين"
         empty_administrators: "لا يوجد مدراء"
         empty_valuators: "لا يوجد مقيمون"
         name: "الإسم"
@@ -293,6 +301,7 @@ ar:
           "false": "لا"
         valuator_groups: "مجموعات المقيمين"
         preview: معاينة الاستثمار
+        assigned_trackers: "متتبّعون معيّنون"
       edit:
         classification: تصنيف
         compatibility: التوافق
