@@ -50,6 +50,34 @@ ar:
       - ديسمبر
   datetime:
     distance_in_words:
+      about_x_hours:
+        zero: منذ %{count} ساعة
+        one: منذ ساعة
+        two: منذ %{count} ساعة
+        few: منذ %{count} ساعة
+        many: منذ %{count} ساعة
+        other: منذ %{count} ساعة
+      about_x_months:
+        zero: منذ %{count} شهر
+        one: منذ شهر واحد
+        two: منذ %{count} شهر
+        few: منذ %{count} شهر
+        many: منذ %{count} شهر
+        other: منذ %{count} شهر
+      about_x_years:
+        zero: منذ %{count} سنة
+        one: منذ سنة
+        two: منذ %{count} سنة
+        few: منذ %{count} سنة
+        many: منذ %{count} سنة
+        other: منذ %{count} سنة
+      almost_x_years:
+        zero: '%{count} سنة تقريباً'
+        one: سنة واحدة تقريباً
+        two: '%{count} سنة تقريباً'
+        few: '%{count} سنة تقريباً'
+        many: '%{count} سنة تقريباً'
+        other: '%{count} سنة تقريباً'
       half_a_minute: نصف دقيقة
       less_than_x_minutes:
         zero: أقل من %{count} دقيقة
