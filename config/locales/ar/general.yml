@@ -601,6 +601,13 @@ ar:
       title: هدف
       see_complete_course: مراجعة الدورة الكاملة
     goal:
+      target_supports:
+        zero: احصل على %{count} دعم لمقترحك
+        one: احصل على %{count} دعم لمقترحك
+        two: احصل على %{count} دعم لمقترحك
+        few: احصل على %{count} دعم لمقترحك
+        many: احصل على %{count} دعم لمقترحك
+        other: احصل على %{count} دعم لمقترحك
       days:
         zero: "%{count} أيام"
         one: "يوم %{count}"
