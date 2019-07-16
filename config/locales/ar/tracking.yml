@@ -8,6 +8,7 @@ ar:
         table_name: الإسم
     budget_investments:
       index:
+        table_id: ID
         table_title: العنوان
         table_heading_name: اسم العنوان
         table_actions: الإجراءات
