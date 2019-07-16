@@ -51,6 +51,13 @@ ar:
   datetime:
     distance_in_words:
       half_a_minute: نصف دقيقة
+      less_than_x_minutes:
+        zero: أقل من %{count} دقيقة
+        one: أقل من دقيقة واحدة
+        two: أقل من %{count} دقيقة
+        few: أقل من %{count} دقيقة
+        many: أقل من %{count} دقيقة
+        other: أقل من %{count} دقيقة
       less_than_x_seconds:
         zero: أقل من %{count} ثانية
         one: أقل من ثانية واحدة
