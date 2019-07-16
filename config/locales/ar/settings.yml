@@ -28,6 +28,7 @@ ar:
       poll_description: وصف استطلاعات الرأي
       poll_link: رابط المعلومات الاضافية
       email_short_title: البريد الإلكتروني
+      email_description: وصف البريد الإلكتروني
       poster_short_title: ملصقة
       poster_description: وصف الملصق
       poster_description_description: وصف مفصل لميزات الملصق
@@ -39,6 +40,7 @@ ar:
       facebook_login_description: "السماء للمستخدمين بالتسجيل باستخدام حسابهم على Facebook"
       google_login: "تسجيل الدخول عبر Google"
       google_login_description: "السماح للمستخدمين بالتسجيل باستخدام حسابهم على Google"
+      featured_proposals: "المقترحات المميّزة"
       signature_sheets: "أوراق التوقيع"
       user:
         recommendations: "التوصيات"
