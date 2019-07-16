@@ -22,6 +22,8 @@ ar:
       total: "المجموع"
       heading: "عنوان"
       investments_sent_html: "تمّ ارسال مقترح الاستثمار"
+      participants_support_phase: "المشاركون في مرحلة الدّعم"
+      participants_vote_phase: "المشاركون في مرحلة التصويت"
       participants_every_phase: "مجموع المشاركين"
       percent_total_participants: "% مجموع المشاركين"
     polls:
