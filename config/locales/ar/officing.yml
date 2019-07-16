@@ -1,9 +1,13 @@
 ar:
   officing:
+    header:
+      title: الاقتراع
     dashboard:
       index:
         title: مكتب الاستطلاع
         no_shifts: ليس لديك مناوبة اليوم.
+    menu:
+      total_recounts: إجمالي إعادة فرز الأصوات والنتائج
     polls:
       final:
         title: الاستطلاعات جاهزة لعملية العد النهائي
