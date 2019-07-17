@@ -25,7 +25,7 @@ sv:
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
       show:
-        title: Kommentera
+        title: Kommentar
       version_chooser:
         seeing_version: Kommentarer för version
         see_text: Visa utkast
