@@ -17,7 +17,7 @@ sv:
         one: "Budgetförslagets status"
         other: "Budgetförslagens status"
       comment:
-        one: "Kommentera"
+        one: "Kommentar"
         other: "Kommentarer"
       debate:
         one: "Debattera"
@@ -155,7 +155,7 @@ sv:
         price: "Kostnad"
         population: "Befolkning"
       comment:
-        body: "Kommentera"
+        body: "Kommentar"
         user: "Användare"
       debate:
         author: "Skribent"
@@ -273,7 +273,7 @@ sv:
       legislation/question_option:
         value: Värde
       legislation/annotation:
-        text: Kommentera
+        text: Kommentar
       document:
         title: Titel
         attachment: Bilaga
