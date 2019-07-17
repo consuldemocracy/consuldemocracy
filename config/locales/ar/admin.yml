@@ -316,6 +316,7 @@ ar:
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
         user_groups: "المجموعات"
+        assigned_trackers: "متتبّعون"
         milestone_tags: علامات المعلم
       search_unfeasible: بحث غير مجد
     milestones:
@@ -722,6 +723,7 @@ ar:
       title_booths: صناديق الاقتراع
       legislation: التشريعات التشاركية
       users: المستخدمين
+      trackers: "متتبّعون"
       dashboard: لوحة القيادة الخاصة بالمقترحات
       administrator_tasks: الموارد المطلوبة
       dashboard_actions: الموارد و الإجراءات
@@ -1634,10 +1636,16 @@ ar:
       actions: "الإجراءات"
     trackers:
       index:
+        title: متتبّعون
         name: الإسم
         email: البريد الإلكتروني
         description: الوصف
         no_description: بدون وصف
+        no_trackers: لا يوجد متتبّعون.
+      tracker:
+        add: "اظافة متتبّعين"
+      form:
+        update: تحديث متتبّع
       show:
         email: البريد الإلكتروني
         description: الوصف
