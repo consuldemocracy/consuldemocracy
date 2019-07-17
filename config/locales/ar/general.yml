@@ -896,6 +896,7 @@ ar:
       see_more: رؤية المزيد من التوصيات
       hide: إخفاء التوصيات
     download:
+      title: "التنزيلات"
       link:
         proposal: "تنزيل المقترحات"
         debate: "تنزيل المناقشات"
@@ -1116,5 +1117,7 @@ ar:
     multiple: إجابات متعددة، مغلقة
     positive_open: التصويت الإيجابي، مفتوح
     positive_negative_open: التصويت الإيجابي والسلبي، مفتوح
+    answer_couples_open: أزواج من الإجابات، متاحة
+    answer_couples_closed: أزواج من الإجابات، مغلق
     answer_set_open: وضع الإجابات، متاحة
     answer_set_closed: إجابات متعدّدة، مغلق
