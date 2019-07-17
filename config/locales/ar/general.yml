@@ -435,6 +435,7 @@ ar:
       retired_proposals_link: "المقترحات المسحوبة من قبل المؤلف"
       selected_proposals: المقترحات المختارة
       selected_proposals_link: رؤية المقترحات المحددة
+      archived_proposals: المقترحات المأرشفة
       proposals_lists: قائمات المقترحات
       retired_links:
         all: الكل
@@ -626,6 +627,7 @@ ar:
       latest_comments: أحدث الرسائل
     messages:
       send_notification: إرسال رسالة إلى مؤيدي المقترح
+      previous_notifications: رؤية الإشعارات السّابقة
     polls:
       index:
         title: استطلاعات
