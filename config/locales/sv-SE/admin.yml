@@ -171,7 +171,7 @@ sv:
         no_admin_assigned: Saknar ansvarig administratör
         no_valuators_assigned: Inga ansvariga bedömare
         feasibility:
-          feasible: "Genomförbart (%{price})"
+          feasible: "Genomförbart"
           unfeasible: "Ej genomförbart"
           undecided: "Ej beslutat"
         selected: "Vald"
