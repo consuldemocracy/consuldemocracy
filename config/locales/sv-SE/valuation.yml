@@ -30,7 +30,7 @@ sv:
           one: Ansvarig bedömare
           other: "%{count} ansvariga bedömare"
         no_valuators_assigned: Inga ansvariga bedömare
-        table_id: Legitimation
+        table_id: ID
         table_title: Titel
         table_heading_name: Område
         table_actions: Åtgärder
