@@ -177,7 +177,7 @@ sv:
         selected: "Vald"
         select: "Välj"
         list:
-          id: Legitimation
+          id: ID
           title: Titel
           supports: Stöd
           admin: Administratör
@@ -989,7 +989,7 @@ sv:
     proposals:
       index:
         title: Förslag
-        id: Legitimation
+        id: ID
         author: Skribent
         milestones: Milstolpar
     hidden_proposals:
