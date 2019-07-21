@@ -107,6 +107,26 @@ This tutorial assumes that you have already managed to clone CONSUL on your mach
 
   See [our S3 guide](./using-aws-s3-as-storage.md) for more details about configuring Paperclip with S3.
 
+### Configure Sendgrid
+
+Add the SendGrid add-on in Heroku. It will create a SendGrid account for you with `ENV["SENDGRID_USERNAME"]` and `ENV["SENDGRID_PASSWORD"]`.
+
+Add this to `config/secrets.yml`, under the `production:` section:
+
+```
+  mailer_delivery_method: :smtp
+  smtp_settings:
+    :address: "smtp.sendgrid.net"
+    :port: 587
+    :domain: "heroku.com"
+    :user_name: ENV["SENDGRID_USERNAME"]
+    :password: ENV["SENDGRID_PASSWORD"]
+    :authentication: "plain"
+    :enable_starttls_auto: true
+```
+
+Important: Turn on one worker dyno so that emails get sent.
+
 ## Optional but recommended:
 
 ### Install rails\_12factor and specify the Ruby version
