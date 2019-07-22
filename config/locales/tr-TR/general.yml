@@ -548,6 +548,52 @@ tr:
       debates: Tartışmalar
       comments: Yorumlar
       latest_comments: En son gönderilen mesajlar
+    messages:
+      send_notification: Öneriyi destekleyenlere mesaj gönder
+      previous_notifications: Önceki bildirimleri görüntüle
+    polls:
+      index:
+        title: Anketler
+        create: Anket oluştur
+        succesfull: Yanıt başarıyla oluşturuldu
+        count:
+          one: '%{count} anket oluşturdunuz.'
+          other: '%{count} anket oluşturdunuz.'
+        links: Bağlantılar
+        additiontal_information: Ek bilgi
+      new:
+        title: Yeni anket
+        submit: Anket oluştur
+      edit:
+        submit: Anketi güncelle
+      poll:
+        responses:
+          one: "%{count} yanıt"
+          other: "%{count} yanıt"
+        view_results: Sonuçları görüntüle
+        edit_poll: Anketi düzenle
+        show_results: Sonuçları görüntüle
+        show_results_help: Bu kutuyu işaretlerseniz sonuçlar herkese açık olacak ve tüm kullanıcılar bunları görebilecek
+        delete: Anketi sil
+        alert_notice: Bu işlem anketi ve onunla ilişkili tüm soruları silecektir.
+        success_notice: Anket başarıyla silindi
+        unable_notice: Yanıtlanmış olan bir anketi silemezsiniz
+      form:
+        name: Anket başlığı
+        add_question: Soru ekle
+      question_fields:
+        remove_question: Soruyu çıkar
+        add_answer: Cevap ekle
+      question_answer_fields:
+        remove_answer: Cevabı kaldır
+    poster:
+      index:
+        title: Görsel önizlemesi
+        poster_title: "Bakmaya devam etmeyin,"
+        poster_subtitle: "bana destek verin! ;)"
+        intro_text_html: "<strong> Kendi vatandaş önerim ile %{org}</strong>'ya katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
+        proposal_code: "Öneri kodu: %{code}"
+        support: Önerimi destekle
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
