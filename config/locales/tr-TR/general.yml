@@ -616,6 +616,7 @@ tr:
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
+        introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
