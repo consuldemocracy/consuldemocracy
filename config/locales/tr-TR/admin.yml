@@ -1375,6 +1375,8 @@ tr:
           one: "%{count} geçersiz imza var"
           other: "%{count} geçersiz imzalar var"
         unverified_error: (Census tarafından doğrulanmadı)
+        voted:
+          zero: "Doğrulanmış imzalardan oluşturulan oy yok."
         loading: "Census tarafından doğrulanan imzalar var, lütfen sayfayı birkaç dakika içinde yenileyin"
     stats:
       show:
@@ -1397,11 +1399,15 @@ tr:
           visits: Ziyaretler
           votes: Toplam oylar
         budgets_title: Katılımcı bütçeleme
+        participatory_budgets: Katılımcı Bütçeler
         direct_messages: Doğrudan mesajlar
         proposal_notifications: Öneri bildirimleri
         incomplete_verifications: Tamamlanmamış doğrulamalar
         polls: Anketler
       graph:
+        debate_created: Tartışmalar
+        visit: Ziyaretler
+        level_2_user: 2. seviye kullanıcılar
         proposal_created: Vatandaş önerileri
       budgets:
         no_data_before_balloting_phase: "Oy pusulasından önce gösterilecek veri yok."
