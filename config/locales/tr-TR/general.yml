@@ -51,6 +51,14 @@ tr:
         zero: Hiç yanıt yok
         one: 1 yanıt
         other: "%{count} yanıtlar"
+      responses_show:
+        zero: Hiç yanıt yok
+        one: "1 yanıt (göster)"
+        other: "%{count} yanıt (göster)"
+      responses_collapse:
+        zero: Hiç yanıt yok
+        one: "1 yanıt (daralt)"
+        other: "%{count} yanıt (daralt)"
       user_deleted: Kullanıcı silindi
       votes:
         zero: Hiç oy yok
