@@ -125,5 +125,12 @@ tr:
       budgets: "Katılımcı bütçeleme"
       legislation: "Katılımcı Mevzuat"
     uploads:
+      images:
+        title:
+          max_length_description: "Resim yüklerken kullanıcı tarafından sağlanan başlık (alt HTML özelliği olarak kullanılır)"
       documents:
+        max_amount_description: "Bir öneriye, yatırıma... eklenebilecek maksimum belge sayısı"
+        max_size: "Belge maksimum boyutu"
+        max_size_description: "Yüklenen bir belge için izin verilen maksimum boyut (Megabayt/MB cinsinden)"
+        content_types: "Dokümanlar için kabul edilen içerik türleri"
         content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"
