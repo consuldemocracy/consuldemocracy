@@ -215,6 +215,10 @@ tr:
         active_resources: Aktif kaynaklar
         community: Toplumunuzdaki katılımcılar
         show_proposal: Öneriyi göster
+        preview_proposal: Öneri önizlemesi
+        current_goal: Mevcut hedef
+        supports:
+          zero: Destek yok
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım şartları ve koşulları
