@@ -70,6 +70,7 @@ tr:
       poll_link: Ek bilgi bağlantısı
       email_short_title: E-posta
       email_description: E-posta tanımlaması
+      email_description_description: E-posta özelliğinin ayrıntılı açıklaması
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
@@ -109,6 +110,20 @@ tr:
       public_stats_description: "Yönetim panelinde kamu istatistiklerini görüntüleme"
       help_page: "Yardım sayfası"
       help_page_description: 'Etkinleştirilen her özellik hakkında bir bilgi bölümü içeren bir sayfa içeren bir Yardım menüsü görüntüler. Ayrıca "Özel sayfalar" ve "Özel içerik blokları" bölümlerinde özel sayfalar ve menüler oluşturulabilir'
+    map:
+      latitude: "Enlem"
+      latitude_description: "Harita konumunu göstermek için enlem"
+      longitude: "Boylam"
+      longitude_description: "Harita konumunu göstermek için boylam"
+      zoom: "Yakınlaştırma"
+      zoom_description: "Harita konumunu göstermek için yakınlaştırma"
+    process:
+      debates: "Tartışmalar"
+      proposals: "Öneriler"
+      polls: "Anketler"
+      polls_description: "Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır"
+      budgets: "Katılımcı bütçeleme"
+      legislation: "Katılımcı Mevzuat"
     uploads:
       documents:
         content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"
