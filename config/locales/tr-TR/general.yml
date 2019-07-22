@@ -382,6 +382,10 @@ tr:
           error: "Bir hata oluştu. Lütfen öneri tavsiyelerini manuel olarak devre dışı bırakmak için 'Hesabım' sayfasına gidin"
       retired_proposals: Çekilen öneriler
       retired_proposals_link: "Yazar tarafından çekilen öneriler"
+      selected_proposals: Seçilen öneriler
+      selected_proposals_link: Seçilen önerileri görüntüle
+      archived_proposals: Arşivlenmiş öneriler
+      proposals_lists: Öneri listeleri
       retired_links:
         all: Tüm
         duplicated: Çoğaltılmış
