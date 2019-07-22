@@ -649,8 +649,14 @@ tr:
       max_votes_reached: "Mümkün olan en fazla sayıda oy verdiniz. Katıldığınız için çok teşekkür ederim"
       descriptions:
         unique: Soruya sadece bir kez cevap vermek mümkün.
-        multiple: Birden fazla cevap seçimesine izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
+        multiple: Birden fazla cevap seçilmesine izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
         prioritized: Birden fazla cevap seçmenize izin verir ve bu cevaplara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
+        positive_open: Sorulara en fazla sayıda olumlu oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
+        positive_negative_open: Sorulara en fazla sayıda olumlu ve olumsuz oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
+        answer_couples_open: Her olası cevap çiftinde gönderebileceğiniz maksimum oy sayısının bir sınırı vardır. Maksimum çift sayısını önceden tanımlayabilir ve diğer cevapları ekleyebilirsiniz.
+        answer_couples_closed: Her olası cevap çiftinde gönderebileceğiniz maksimum oy sayısının bir sınırı vardır. Maksimum çift sayısını önceden tanımlayabilir ve başka cevaplar ekleyemezsiniz.
+        answer_set_open: Bir grup öneriye en fazla sayıda yanıt verilmesine izin verir. Maksimum cevap sayısını belirlemek, grubun büyüklüğünü ayarlamak ve başka cevaplar eklemek mümkündür.
+        answer_set_closed: Bir grup öneriye en fazla sayıda yanıt verilmesine izin verir. Maksimum cevap sayısını ve grubun boyutunu ayarlamak mümkündür.
     show:
       already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
       already_voted_in_web: "Siz zaten bu ankete katıldınız. Yine oy verirseniz, üzerine yazılacaktır."
