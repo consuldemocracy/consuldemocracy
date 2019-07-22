@@ -617,6 +617,8 @@ tr:
         share_in: Paylaş
         hi: "Merhaba!"
         introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
+        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz butonu tıklamanız yeterlidir ve bunu yapmadan önce öneriyle ilgili bilgi edinebilirsiniz. Yalnızca, en fazla desteği alan öneri uygulanacak ve bunu başarmama yardım edeceğinizden eminim!"
+        share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
@@ -644,6 +646,11 @@ tr:
         title: Oylama ile ilgili yardım
         description: Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
       no_polls: "Hiç açık oy yok."
+      max_votes_reached: "Mümkün olan en fazla sayıda oy verdiniz. Katıldığınız için çok teşekkür ederim"
+      descriptions:
+        unique: Soruya sadece bir kez cevap vermek mümkün.
+        multiple: Birden fazla cevap seçimesine izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
+        prioritized: Birden fazla cevap seçmenize izin verir ve bu cevaplara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
     show:
       already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
       already_voted_in_web: "Siz zaten bu ankete katıldınız. Yine oy verirseniz, üzerine yazılacaktır."
