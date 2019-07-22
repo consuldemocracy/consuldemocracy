@@ -206,6 +206,15 @@ tr:
       firefox: Firefox
       ie: Internet Explorer ile taradığınızı fark ettik. Gelişmiş bir deneyim için, %{firefox} veya %{chrome} kullanmanızı öneririz.
       ie_title: Bu web sitesi tarayıcınız için optimize edilmemiştir
+    dashboard:
+      proposal_header:
+        published: Yayınlandı
+        draft: Taslak
+        retired: Kullanım dışı kalmış
+      proposal_totals:
+        active_resources: Aktif kaynaklar
+        community: Toplumunuzdaki katılımcılar
+        show_proposal: Öneriyi göster
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım şartları ve koşulları
