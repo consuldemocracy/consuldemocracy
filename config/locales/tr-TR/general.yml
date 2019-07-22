@@ -745,6 +745,7 @@ tr:
       to: "Şuna"
     author_info:
       author_deleted: Kullanıcı silindi
+      email_deleted: E-posta silindi
     back: Geri git
     check: Seç
     check_all: Tüm
