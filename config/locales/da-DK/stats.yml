@@ -1,6 +1,7 @@
 da:
   stats:
     title: "Deltagelse"
+    advanced: "Avanceret statistik"
     total_participants: "Deltagere"
     by_gender: "Køn"
     by_age: "Alder"
@@ -12,6 +13,9 @@ da:
     age_range: "%{start} - %{finish} årige"
     total: "I alt"
     geozone: "Distrikt"
+    no_demographic_data:
+      one: "*Der findes ingen demografisk data for 1 deltager."
+      other: "* Der findes ingen demografisk data for %{count} deltagere."
     budgets:
       link: "Statistik"
       page_title: "%{budget} - statistik over deltagelse"
@@ -19,6 +23,7 @@ da:
       total_selected_investments: "Antal projektidéer i den endelige afstemningsfase"
       total_unfeasible_investments: "Fravalgte projektidéer"
       by_phase: "Antal deltagere i de enkelte faser"
+      by_heading: "Deltagere pr. fase"
       total: "I alt"
       participants_support_phase: "Deltagere i støttefasen"
       participants_vote_phase: "Deltagere i afstemningsfasen"
