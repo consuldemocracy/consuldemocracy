@@ -662,6 +662,7 @@ da:
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
+    read_more_about: "Læs mere om:"
   proposal_notifications:
     new:
       title: "Send besked"
@@ -698,6 +699,7 @@ da:
       to: "Til"
     author_info:
       author_deleted: Bruger slettet
+      email_deleted: E-mailen blev slettet
     back: Gå tilbage
     check: Vælg
     check_all: Alle
@@ -767,6 +769,14 @@ da:
       title: Anbefalinger
       see_more: Se flere anbefalinger
       hide: Skjul anbefalinger
+    download:
+      title: "Downloads"
+      link:
+        proposal: "Download forslag"
+        debate: "Download debatindlæg"
+        legislation_process: "Download høringsprocesser"
+        budget: "Download budgetter"
+        investments: "Download projektidéer"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -956,3 +966,5 @@ da:
       surveys: Undersøgelser
     poll:
       take_part: Forløber fra %{from} til %{to}
+  question:
+    max_votes: Maksimalt antal stemmer
