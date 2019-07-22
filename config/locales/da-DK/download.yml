@@ -29,4 +29,9 @@ da:
         font_color: "Skriftfarve"
       budget_investments:
         id: "Identifikationsnummer"
+        title: "Titel"
+        description: "Beskrivelse"
+        external_url: "Ekstern url"
+        price: "Pris"
+        price_explanation: "Prisforklaring"
         created_at: "Oprettet den"
