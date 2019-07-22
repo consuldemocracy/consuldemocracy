@@ -102,9 +102,29 @@ tr:
         edit_phase: Aşama düzenleme
         active: Aktif
         blank_dates: Tarihler boş
+        administrators:
+          zero: "Yöneticileri seç"
+          one: "1 yönetici seçildi"
+          other: "%{count} yöneticiler seçildi"
+        valuators:
+          zero: "Bilirkişileri seç"
+          one: "1 bilirkişi seçildi"
+          other: "%{count} bilirkişiler seçildi"
+        trackers:
+          zero: "İzleyicileri seç"
+          one: "1 izleyici seçildi"
+          other: "%{count} izleyiciler seçildi"
+        empty_administrators: "Hiç yönetici yok"
+        empty_valuators: "Hiç bilirkişi yok"
+        empty_trackers: "Hiç izleyici yok"
+        name: "İsim"
+        selected: "Seçildi"
+        cancel: "İptal"
+        save: "Kaydet"
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
+        unable_notice_polls: İlişkili bir ankete sahip bir bütçeyi silemezsiniz
       new:
         title: Yeni katılımcı bütçe
       winners:
@@ -193,6 +213,7 @@ tr:
           undecided: Kararsız
           unfeasible: Uygulanamaz
           min_total_supports: Minimum destek
+          max_total_supports: Minimum destek
           winners: Kazananlar
           one_filter_html: "Mevcut uygulanan filtreler: <b><em>%{filter}</em></b>"
           two_filters_html: "Mevcut uygulanan filtreler: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -224,6 +245,7 @@ tr:
           visible_to_valuators: Bilirkişileri göster
           author_username: Yazar kullanıcı adı
           incompatible: Uyumsuz
+          price: Fiyat
         cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
         see_results: "Sonuçları gör"
       show:
