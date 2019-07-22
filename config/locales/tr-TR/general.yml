@@ -899,6 +899,7 @@ tr:
       published: Yayınlandı
       see: "Öneriyi gör"
       actions: Eylemler
+      retired_help_text: Geri çekilen öneriler için gösterge panosu mevcut değil
   votes:
     agree: Kabul ediyorum
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
@@ -992,3 +993,35 @@ tr:
       text_sign_in: oturum aç
       text_sign_up: kaydol
       title: Ben bu belgeye nasıl yorum yapabilirim?
+  links:
+    form:
+      delete_button: Sil
+      cancel_button: İptal
+    nested_links:
+      title: Bağlantılar
+      note: İlgilendiğiniz bağlantıları ekleyin
+      add_new_link: Yeni bağlantı ekle
+    link_fields:
+      label_placeholder: Bağlantı başlığı
+      url_placeholder: Bağlantı adresi
+  communities:
+    show:
+      surveys: Anketler
+      complete_survey: Anketi tamamla
+    subnav:
+      surveys: Anketler
+    poll:
+      take_part: '%{from}''dan %{to}''ya kadar yer alın'
+  question:
+    max_votes: Maksimum oy sayısı
+    max_group_answers: Setteki maksimum cevap sayısı
+  enum_type:
+    unique: Benzersiz cevap, kapalı
+    multiple: Birden fazla cevap, kapalı
+    prioritized: Birden çok öncelikli cevap, kapalı
+    answer_couples_open: Cevap çiftleri, açık
+    answer_couples_closed: Cevap çiftleri, kapalı
+    answer_set_open: Cevap seti, açık
+    answer_set_closed: Cevap seti, kapalı
+  prioritization_type:
+    title: Önceliklendirme tipi
