@@ -25,6 +25,8 @@ da:
       by_phase: "Antal deltagere i de enkelte faser"
       by_heading: "Deltagere pr. fase"
       total: "I alt"
+      heading: "Budgetområde"
+      investments_sent_html: "Forslag sendt"
       participants_support_phase: "Deltagere i støttefasen"
       participants_vote_phase: "Deltagere i afstemningsfasen"
       participants_every_phase: "Antal deltagere i alt"
