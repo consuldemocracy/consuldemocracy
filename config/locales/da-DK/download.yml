@@ -22,5 +22,11 @@ da:
         updated_at: "Opdateret den"
         visit_id: "Besøg id"
         hidden_at: "Skjult den"
+      legislation_processes:
+        start_date: "Startdato"
+        end_date: "Slutdato"
+        background_color: "Baggrundsfarve"
+        font_color: "Skriftfarve"
       budget_investments:
+        id: "Identifikationsnummer"
         created_at: "Oprettet den"
