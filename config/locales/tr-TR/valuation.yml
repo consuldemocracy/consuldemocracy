@@ -57,6 +57,7 @@ tr:
         responsibles: Sorumlular
         assigned_admin: Atanmış yönetici
         assigned_valuators: Atanmış bilirkişiler
+        preview: Yatırım ön izleme
       edit:
         dossier: Dosya
         price_html: "Fiyat (%{currency})"
