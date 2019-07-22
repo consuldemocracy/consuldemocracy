@@ -219,6 +219,8 @@ tr:
         current_goal: Mevcut hedef
         supports:
           zero: Destek yok
+          one: 1 Destek
+          other: "Destek"
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım şartları ve koşulları
@@ -258,6 +260,7 @@ tr:
           other: '%{count} yeni bildirimleriniz var'
         notifications: Bildirimler
         no_notifications: "Yeni bildiriminiz yok"
+      tracking: "İzleme"
     admin:
       watch_form_message: "Değişiklikleri kaydetmediniz. Sayfadan ayrılmayı onaylıyor musunuz?"
   notifications:
