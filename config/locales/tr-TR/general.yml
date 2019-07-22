@@ -424,6 +424,7 @@ tr:
       start_new: Yeni öneri oluştur
     notice:
       retired: Öneri çekildi
+      published: Öneri yayınlandı
     proposal:
       created: "Bir öneri oluşturdunuz!"
       share:
