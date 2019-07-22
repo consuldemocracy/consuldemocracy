@@ -1,1 +1,17 @@
 tr:
+  download:
+    edit:
+      fields: "Alanlar"
+      description: "Tanımlama"
+      debates: "Tartışmalar"
+      proposals: "Öneriler"
+      budget_investments: "Katılımcı bütçeleme"
+      comments: "Yorumlar"
+      submit: "Değişiklikleri kaydet"
+      config:
+        "0": ""
+        "1": "- Kilometre taşları"
+    fielddescription:
+      debates:
+        title: "Başlık"
+        description: "Tanımlama"
