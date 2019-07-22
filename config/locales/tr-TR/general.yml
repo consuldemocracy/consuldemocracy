@@ -815,6 +815,14 @@ tr:
       title: Tavsiyeler
       see_more: Daha fazla tavsiyeye bakın
       hide: Tavsiyeleri gizle
+    download:
+      title: "İndirilenler"
+      link:
+        proposal: "Önerileri indir"
+        debate: "Tartışmaları indir"
+        legislation_process: "Mevzuat sürecini indir"
+        budget: "Bütçeleri indir"
+        investments: "Projeleri indir"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
@@ -859,6 +867,7 @@ tr:
       deleted_proposal: Bu öneri silindi
       deleted_budget_investment: Bu yatırım projesi silindi
       proposals: Öneriler
+      proposals_status: Durum
       debates: Tartışmalar
       budget_investments: Bütçe yatırımları
       comments: Yorumlar
@@ -886,7 +895,10 @@ tr:
       delete_alert: "Yatırım projenizi silmek istediğinize emin misiniz? Bu işlem geri alınamaz"
     proposals:
       retired: "Çekilen öneri"
+      draft: Taslak
+      published: Yayınlandı
       see: "Öneriyi gör"
+      actions: Eylemler
   votes:
     agree: Kabul ediyorum
     anonymous: Oy kullanmak için çok fazla isimsiz oy kullanıldı %{verify_account}.
