@@ -501,6 +501,53 @@ tr:
       supports: Destekler
       success: İdeal ilerleme
       new_action: Yeni
+    index:
+      title: Düzenleme
+      edit_proposal_link: Öneriyi düzenle
+      publish: Öneriyi yayınla
+      retire: Öneriyi geri çek
+    new_request:
+      links: Bağlantılar
+    resources:
+      available_resources: Mevcut kaynaklar
+    resource:
+      required_days: "%{days} gün gerekli"
+      required_supports: "%{supports} destek gerekli"
+      and: ve
+      view_resource: Kaynak görüntüle
+      resource_requested: Kaynak zaten talep edildi
+      request_resource: Kaynak talep et
+      resource_locked: Kaynak bağlandı
+    recommended_actions:
+      title: Önerilen eylemler
+      goto_proposed_actions: Önerilen eylemlere git
+      see_proposed_actions: Önerilen eylemleri gözden geçir
+      hide_proposed_actions: Önerilen eylemleri gizle
+      pending_title: Beklemede
+      show_description: Açıklamayı göster
+      without_pending_actions: Herhangi bir önerilen eylem beklemede değil
+      done_title: Tamam
+      without_done_actions: Herhangi bir önerilen eylem gerçekleşmedi
+    next_goal:
+      title: Hedef
+      see_complete_course: Tüm süreci görüntüle
+      hide_course: Tüm süreci gizle
+    goal:
+      target_supports:
+        one: Öneriniz için %{count} destek alın
+        other: Öneriniz için %{count} destek alın
+      days:
+        one: "%{count} gün"
+        other: "%{count} gün"
+      locked_resource: Kaynak bağlandı
+      ideal_time: İdeal zaman
+    community:
+      access_community: Topluma erişim
+      latest_activity: "Toplum tarafından yapılan son etkinlik: %{at}"
+      participants: Katılımcılar
+      debates: Tartışmalar
+      comments: Yorumlar
+      latest_comments: En son gönderilen mesajlar
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
