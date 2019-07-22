@@ -499,6 +499,8 @@ tr:
       group_by_date: Günlük
       progress: Mevcut ilerleme
       supports: Destekler
+      success: İdeal ilerleme
+      new_action: Yeni
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
