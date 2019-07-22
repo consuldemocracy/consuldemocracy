@@ -63,7 +63,7 @@ da:
         one: "valgsted"
         other: "valgsteder"
       poll/officer:
-        one: "ansvarlig medarbejder"
+        one: "valgtilforordnede"
         other: "ansvarlig medarbejdere"
       poll/ballot_sheet:
         one: Stemmeseddel
