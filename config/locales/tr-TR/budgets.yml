@@ -11,6 +11,7 @@ tr:
           one: "<span>Bir</span> yatırıma oy verdiniz."
           other: "<span>%{count}</span> yatırımlara oy verdiniz."
         voted_info_html: "Oyunuzu, bu aşamanın sonuna kadar istediğiniz zaman değiştirebilirsiniz. <br>Mevcut tüm parayı harcamanıza gerek yok."
+        voted_info_2: "Ancak bu aşama kapanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
         not_logged_in: Devam etmelisin %{signin} veya %{signup} devam et.
@@ -21,6 +22,7 @@ tr:
         no_ballots_allowed: Seçim aşaması kapanmıştır
         different_heading_assigned_html: "Zaten farklı bir başlığa oy verdiniz: %{heading_link}"
         change_ballot: oylarınızı değiştirin
+        casted_offline: Siz zaten çevrimdışı olarak katıldınız
     groups:
       show:
         title: Bir seçenek seçin
@@ -171,6 +173,7 @@ tr:
       accepted: "Kabul edilen harcama teklifi: "
       discarded: "Atılan harcama teklifi: "
       incompatibles: Uyuşmayanlar
+      investment_title: Proje başlığı
       investment_proyects: Tüm yatırım projelerinin listesi
       unfeasible_investment_proyects: Tüm uygulanamaz yatırım projelerinin listesi
       not_selected_investment_proyects: Oylama için seçilmeyen tüm yatırım projelerinin listesi
@@ -180,6 +183,13 @@ tr:
       heading: "Katılımcı bütçe Kilometre taşları"
       heading_selection_title: "Bölgeye göre"
       no_winner_investments: "Bu mevkide kazanan yatırım yok"
+      filters:
+        status:
+          label: "Projenin mevcut durumu"
+          all: "Tüm (%{count})"
+        milestone_tag:
+          label: "Kilometre taşı etiketi"
+          all: "Tüm (%{count})"
     phases:
       errors:
         dates_range_invalid: "Başlangıç tarihi Bitiş tarihine eşit veya ondan sonra olamaz"
