@@ -248,6 +248,7 @@ tr:
           price: Fiyat
         cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
         see_results: "Sonuçları gör"
+        milestone_tags_filter_all: "Tüm kilometre taşı etiketleri"
       show:
         assigned_admin: Atanmış yönetici
         assigned_valuators: Atanmış bilirkişiler
@@ -276,6 +277,7 @@ tr:
           "true": "Evet"
           "false": "Hayır"
         valuator_groups: "Bilirkişi Grupları"
+        preview: Yatırım ön izleme
       edit:
         classification: Sınıflandırma
         compatibility: Uygunluk
@@ -319,6 +321,71 @@ tr:
         back: Geri dön %{org}
         title: Yönetim
         description: '%{org} yönetici paneline hoş geldiniz.'
+      actions:
+        create:
+          notice: Eylem başarıyla oluşturuldu
+        edit:
+          back: Listeye dön
+        delete:
+          success: Eylem başarıyla silindi
+        form:
+          submit_button: Kaydet
+          help_text: Bu değerin dikkate alınmaması için 0 girin
+          published_proposal: Yayınlanan öneriler için mi?
+          published_proposal_help_text: Yalnızca yayınlanmış öneriler için eylem oluşturmak üzere bu onay kutusunu işaretleyin
+      administrator_tasks:
+        index:
+          title: İstenilen kaynaklar
+          solve: Çöz
+          no_records: İstenilen kaynak yok
+          source: Kaynak
+          resource: İstenen kaynak
+          filter: Filtre
+          filters:
+            pending: Beklemede
+            done: Çözüldü
+        edit:
+          back: Bekleyen görevler listesine dön
+          solving: Bekleyen görevi çöz
+        form:
+          solve: Çözülmüş olarak işaretle
+          proposal: Öneri
+          request: İstenen kaynak
+        update:
+          success: Görev çözüldü olarak işaretlendi.
+    debates:
+      index:
+        id: Kimlik
+        author: Yazar
+        title: Tartışmalar
+        no_debates: Hiç tartışma yok.
+        link: "Tartışmaları indir"
+    hidden_debates:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        title: Gizli tartışmalar
+        no_hidden_debates: Hiç gizli tartışma yok.
+    documents:
+      new:
+        title: "Bir belge yükle"
+        label_attachment: "Belge seç"
+        submit_button: "Yükle"
+      index:
+        new_link: "Yeni belge ekle"
+        no_documents: "Belge yok."
+        title: "Belgeler"
+        format: "Biçim"
+        size: "Boyut"
+        url: "URL"
+      create:
+        success_notice: "Belge başarıyla yüklendi"
+        unable_notice: "Geçersiz belge"
+      destroy:
+        success_notice: "Belge başarıyla silindi"
     hidden_users:
       index:
         filter: Filtre
@@ -383,6 +450,7 @@ tr:
           filters:
             active: Aktif
             all: Tüm
+          link: "Mevzuat sürecini indir"
         new:
           back: Geri
           title: Yeni katılımcı mevzuat süreci oluşturun
@@ -555,12 +623,14 @@ tr:
       stats: İstatistikler
       signature_sheets: İmza Sayfaları
       site_customization:
+        documents: Özel belgeler
         homepage: Ana sayfa
         pages: Özel sayfalar
         images: Özel resimler
         content_blocks: Özel içerik blokları
         information_texts: Özel bilgi metinleri
         information_texts_menu:
+          basic: "Temel özelleştirme"
           debates: "Tartışmalar"
           community: "Topluluk"
           proposals: "Öneriler"
@@ -580,6 +650,8 @@ tr:
       title_booths: Oylama kabinleri
       legislation: Katılımcı Mevzuat
       users: Kullanıcılar
+      trackers: "İzleyiciler"
+      dashboard: Öneriler gösterge tablosu
     administrators:
       index:
         title: Yöneticiler
@@ -1233,6 +1305,25 @@ tr:
         proposal_notifications: Öneri bildirimleri
         incomplete_verifications: Tamamlanmamış doğrulamalar
         polls: Anketler
+      graph:
+        proposal_created: Vatandaş önerileri
+      budgets:
+        no_data_before_balloting_phase: "Oy pusulasından önce gösterilecek veri yok."
+        title: "Katılımcı Bütçeler - Katılım istatistikleri"
+        supporting_phase: Destek aşaması
+        balloting_phase: Son oylama
+      budget_balloting:
+        title: "Son oylama istatistikleri"
+        vote_count: Oylar
+        participant_count: Katılımcılar
+        votes_per_heading: Başlık başına oy
+        participants_per_district: Bölge başına katılımcılar
+      budget_supporting:
+        title: "Destek aşaması istatistikleri"
+        headings: Başlıklar
+        users: Kullanıcılar
+        vote_count: Oylar
+        participant_count: Katılımcılar
       direct_messages:
         title: Doğrudan mesajlar
         total: Toplam
