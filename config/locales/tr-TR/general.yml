@@ -450,6 +450,7 @@ tr:
       total_percent: '%100'
       archived: "Bu öneri arşivlendi ve destek toplayamaz."
       successful: "Bu öneri gereken desteğe ulaştı."
+      selected: "Seçilen öneri"
     show:
       author_deleted: Kullanıcı silindi
       code: "Öneri kodu:"
@@ -458,6 +459,7 @@ tr:
         one: 1 yorum
         other: "%{count} yorumlar"
       comments_tab: Yorumlar
+      dashboard_proposal_link: Gösterge paneli
       flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
       login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
       notifications_tab: Bildirimler
@@ -470,9 +472,33 @@ tr:
       embed_video_title: "%{proposal} ile ilgili video"
       title_video_url: "Harici video"
       author: Yazar
+      draft: Öneri taslak aşamasında. Henüz destek alamıyor, teklif listesinde de görünmüyor.
     update:
       form:
         submit_button: Değişiklikleri kaydet
+  dashboard:
+    menu:
+      my_proposal: Önerimi düzenle
+      progress: İlerleme
+      resources: Kaynaklar
+      community: Toplum
+      polls: Anketler
+      mailing: E-posta
+      poster: Görsel
+      recommended_actions: Önerilen eylemler
+      messages: Kullanıcılara mesajlar
+    form:
+      request: Talep
+    create_request:
+      success: İstek başarıyla gönderildi. Size bilgi vermek için en kısa sürede sizinle iletişim kuracağız.
+      archived: Bu teklif arşivlendi ve kaynak talep edemiyor.
+    progress:
+      title: Grafik
+      group_by_month: Aylık
+      group_by_week: Haftalık
+      group_by_date: Günlük
+      progress: Mevcut ilerleme
+      supports: Destekler
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
