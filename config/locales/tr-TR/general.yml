@@ -210,7 +210,7 @@ tr:
       proposal_header:
         published: Yayınlandı
         draft: Taslak
-        retired: Kullanım dışı kalmış
+        retired: Geri çekildi
       proposal_totals:
         active_resources: Aktif kaynaklar
         community: Toplumunuzdaki katılımcılar
@@ -312,7 +312,16 @@ tr:
     create:
       form:
         submit_button: Öneri oluştur
+    created:
+      title: Tebrikler! İlk adımı attınız.
+      motivation: "Önerinizin başarılı olması için iletişim stratejinizi hazırlamak önemlidir. İlk birkaç gün son derece belirleyicidir."
+      motivation_2_html: "<strong>İletişim stratejinizle ilgili yardım almak istiyorsanız, teklifinizi taslak olarak bırakın. Size yol göstereceğiz.</strong>"
+      publish: Hayır, öneriyi yayınlamak istiyorum
+      dashboard: Evet, yardım istiyorum ve önerimi daha sonra yayınlayacağım
+      preview_title: Önerinizi yayınladığınız zaman bu şekilde görünecektir
     share:
+      improve_it: Stratejinizi geliştirin ve daha fazla destek alın.
+      dashboard: Daha fazla bilgi görüntüle
       message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
     edit:
       editing: Öneriyi düzenle
