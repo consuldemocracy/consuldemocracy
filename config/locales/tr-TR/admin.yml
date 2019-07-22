@@ -14,6 +14,8 @@ tr:
       edit: Düzenleme
       configure: Yapılandırma
       delete: Sil
+    officing_booth:
+      title: "Siz %{booth}'ta bulunan kabini görüyorsunuz. Eğer bu doğru değilse, devam etmeyin ve yardım telefon numarasını aramayın. Teşekkürler."
     banners:
       index:
         title: Bannerlar
