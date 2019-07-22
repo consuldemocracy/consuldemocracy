@@ -683,6 +683,7 @@ tr:
         total_votes: "Verilen oyların toplam miktarı"
         votes: "OYLAR"
         web: "WEB"
+        mail: "POSTA"
         booth: "KABİN"
         total: "TOPLAM"
         valid: "Geçerli"
@@ -691,10 +692,23 @@ tr:
       results:
         title: "Sorular"
         most_voted_answer: "En çok oy alan cevap: "
+    poll_header:
+      back_to_proposal: Öneriye geri dön
   poll_questions:
     show:
       vote_answer: "Oy %{answer}"
       voted: "%{answer} 'a oy verdiniz"
+      add_answer: "Cevap ekle"
+    description:
+      multiple: "En fazla %{maximum} cevap seçebilirsiniz."
+      positive_negative_open: "En fazla %{maximum} cevapla olumlu veya olumsuz oy verebilirsiniz. Ve kendi cevaplarınızı da ekleyebilirsiniz."
+      answer_couples_open: "Aşağıdaki çiftlerden birini seçin. En fazla %{maximum} cevap seçebilirsiniz."
+      answer_couples_closed: "Aşağıdaki çiftlerden birini seçin. En fazla %{maximum} cevap seçebilirsiniz."
+      answer_set_open: "En fazla %{maximum} cevap seçebilirsiniz."
+      answer_set_closed: "En fazla %{maximum} cevap seçebilirsiniz."
+      prioritized: "En fazla %{maximum} cevap seçebilirsiniz. Bu soru, sayım için %{system} sistemini kullanacaktır."
+      positive_open: "En fazla %{maximum} cevap seçebilir ve kendi cevaplarınızı ekleyebilirsiniz."
+    read_more_about: "Daha fazla bilgi için:"
   proposal_notifications:
     new:
       title: "Mesaj gönder"
