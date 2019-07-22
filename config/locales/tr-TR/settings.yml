@@ -62,6 +62,14 @@ tr:
     min_age_to_participate_description: "Bu yaşın üzerindeki kullanıcılar, bir kullanıcı tarafından doğrulanmış bir hesabın gerekli olduğu tüm işlemlere katılabilir"
     proposals:
       successful_proposal_id: Başarılı öneri
+      successful_proposal_id_description: Bu öneri, destek numarasında başarılı bir teklif için referans olarak kullanıldı ve gösterge tablosunda gösterilecektir.
+      poll_short_title: Anketler
+      poll_short_title_description: Anket özelliğinin kısa açıklaması. Kullanıcıların bir öneri ile ilgili anket oluşturmasına izin verir
+      poll_description: Anketlerin tanımlaması
+      poll_description_description: Anket özelliğinin ayrıntılı açıklaması
+      poll_link: Ek bilgi bağlantısı
+      email_short_title: E-posta
+      email_description: E-posta tanımlaması
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
@@ -101,3 +109,6 @@ tr:
       public_stats_description: "Yönetim panelinde kamu istatistiklerini görüntüleme"
       help_page: "Yardım sayfası"
       help_page_description: 'Etkinleştirilen her özellik hakkında bir bilgi bölümü içeren bir sayfa içeren bir Yardım menüsü görüntüler. Ayrıca "Özel sayfalar" ve "Özel içerik blokları" bölümlerinde özel sayfalar ve menüler oluşturulabilir'
+    uploads:
+      documents:
+        content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"
