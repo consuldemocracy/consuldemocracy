@@ -137,6 +137,9 @@ tr:
         description_finished: "Bütçe bittiğinde tanımlama"
         phase: "Aşama"
         currency_symbol: "Para Birimi"
+        budget_milestone_tags: "Kilometre taşı etiketleri"
+        budget_valuation_tags: "Değerlendirme etiketleri"
+        help_link: "Yardım bağlantısı"
       budget/investment:
         heading_id: "Başlık"
         title: "İsim"
@@ -184,6 +187,7 @@ tr:
         title: "İsim"
         question: "Soru"
         description: "Tanımlama"
+        selected: "Seçilmiş olarak işaretle"
         terms_of_service: "Hizmet şartları"
       user:
         login: "E-posta veya kullanıcı adı"
@@ -220,6 +224,7 @@ tr:
       poll/ballot_sheet:
         data: CSV verisi
         poll_id: Anket
+        officer_assignment_id: Memur ataması
       signature_sheet:
         signable_type: "İmzalanır tür"
         signable_id: "İmzalanır KİMLİK"
@@ -338,10 +343,18 @@ tr:
         short_description: Kısa tanımlama
         description: Tanımlama
         link: Dış bağlantı
+        request_to_administrators: Kaynağa yöneticilerden kaynak istemek için bir düğme ekleyin
+        day_offset: Teklifin oluşturulmasından kaç gün sonra etkinleştirilmesini istiyorsunuz?
+        required_supports: Teklifin aktif hale getirilmesi için ne kadar destek alması gerekiyor?
+        order: Bu eylemin kullanıcıya gösterileceği konumu eylemler listesine girebilirsiniz
         active: Aktif
         action_type: Tür
       dashboard/administrator_task:
         source: Kaynak
+        user: Tarafından yürütülen
+      link:
+        label: Başlık
+        url: Bağlantı
     errors:
       models:
         user:
