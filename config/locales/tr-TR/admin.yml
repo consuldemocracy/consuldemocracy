@@ -85,8 +85,10 @@ tr:
         table_investments: Yatırımlar
         table_edit_groups: Başlıklar grupları
         table_edit_budget: Düzenleme
+        table_admin_ballots: Oylar
         edit_groups: Başlıklar gruplarını düzenle
         edit_budget: Bütçe düzenleme
+        admin_ballots: Yönetici oyları
         no_budgets: "Hiç bütçe yok."
       create:
         notice: Yeni katılımcı bütçe başarıyla oluşturuldu!
@@ -246,6 +248,7 @@ tr:
           author_username: Yazar kullanıcı adı
           incompatible: Uyumsuz
           price: Fiyat
+          author: Yazar
         cannot_calculate_winners: Kazananın projelerin hesaplanması için bütçenin "Oylama Projeleri", "Oyların İncelenmesi" veya "Tamamlanan Bütçe" aşamasında kalması gerekiyor
         see_results: "Sonuçları gör"
         milestone_tags_filter_all: "Tüm kilometre taşı etiketleri"
@@ -278,6 +281,7 @@ tr:
           "false": "Hayır"
         valuator_groups: "Bilirkişi Grupları"
         preview: Yatırım ön izleme
+        assigned_trackers: "Atanan izleyiciler"
       edit:
         classification: Sınıflandırma
         compatibility: Uygunluk
@@ -292,7 +296,12 @@ tr:
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımsız
         user_groups: "Gruplar"
+        assigned_trackers: "İzleyiciler"
+        milestone_tags: Kilometre taşı etiketleri
       search_unfeasible: Arama uygulanamaz
+    milestones:
+      index:
+        milestone_tags: Kilometre Taşı Etiketleri
     statuses:
       index:
         title: Kilometre taşı durumları
@@ -316,12 +325,55 @@ tr:
     progress_bars:
       index:
         title: "İşlem çubukları"
+    comments:
+      index:
+        id: "Kimlik"
+        content: "İçerik"
+        author: "Yazar"
+        commentable_type: "Tür"
+        link: "Yorumları indir"
+        title: Yorumlar
+        no_comments: Hiç yorum yok.
+        table_link: "Bağlantı"
+    hidden_comments:
+      index:
+        filter: Filtre
+        filters:
+          all: Tüm
+          with_confirmed_hide: Onaylanmış
+          without_confirmed_hide: Beklemede
+        hidden_debate: Gizli tartışma
+        hidden_proposal: Gizli öneri
+        title: Gizli yorumlar
+        no_hidden_comments: Hiç gizli yorum yok.
     dashboard:
       index:
         back: Geri dön %{org}
         title: Yönetim
         description: '%{org} yönetici paneline hoş geldiniz.'
       actions:
+        action_type:
+          proposed_action: Önerilen eylem
+          resource: Kaynak
+        index:
+          create: Kaynak veya eylem oluştur
+          edit: Düzenle
+          delete: Sil
+          active: 'Evet'
+          inactive: 'Hayır'
+          title: Kaynaklar ve eylemler
+          action_title: Başlık
+          action_type: Tür
+          required_supports: Gereken destekler
+          day_offset: Gereken günler
+          action_active: Aktif
+          published_proposal: Yayınlanan öneri
+          default:
+            email: E-posta
+            polls: Anketler
+        new:
+          creating: Öneri gösterge panosu için yeni eylem
+          back: Listeye dön
         create:
           notice: Eylem başarıyla oluşturuldu
         edit:
@@ -978,6 +1030,9 @@ tr:
       flash:
         question_added: "Bu ankete soru eklendi"
         error_on_question_added: "Bu ankete soru atanamadı"
+      destroy:
+        success_notice: "Anket başarıyla silindi"
+        unable_notice: "Oyu olan bir anketi silemezsiniz"
     questions:
       index:
         title: "Sorular"
@@ -1146,10 +1201,17 @@ tr:
         title: Öneriler
         id: KİMLİK
         author: Yazar
+        select: Seç
+        selected: Seçildi
         milestones: Kilometre taşı
         no_proposals: Hiç öneri yok.
+        link: "Önerileri indir"
       show:
         create_question: Bu öneriyi oylanacak bir ankete ekleyin
+      form:
+        update: Önerileri güncelle
+      update:
+        notice: Öneri başarıyla güncellendi
     hidden_proposals:
       index:
         filter: Filtre
@@ -1174,6 +1236,8 @@ tr:
       index:
         title: Yapılandırma ayarları
         update_setting: Güncelleme
+        participation_processes: "Katılım süreçleri"
+        images_and_documents: "Görüntüler ve belgeler"
         feature_flags: Özellikler
         features:
           enabled: "Özellik etkinleştirildi"
@@ -1187,6 +1251,9 @@ tr:
             update: Harita yapılandırma başarıyla güncellendi.
           form:
             submit: Güncelleme
+          how_to_enable: 'Haritayı kullanıcılara göstermek için "Özellikler" sekmesinde "Öneriler ve bütçe yatırımları coğrafi konum belirleme" özelliğini etkinleştirmeniz gerekir.'
+        dashboard:
+          title: Öneriler gösterge tablosu
       setting: Özellik
       setting_actions: Aksiyon
       setting_name: Ayar
@@ -1208,6 +1275,8 @@ tr:
       proposal_search:
         button: Ara
         placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
+      debate_search:
+        button: Ara
       user_search:
         button: Ara
         placeholder: İsim veya e-posta ile kullanıcı ara
@@ -1440,6 +1509,7 @@ tr:
           see_page: Sayfayı göster
         new:
           title: Yeni kişisel sayfa oluştur
+          slug_help_html: "URL’de bu sayfayı tanımlayan metin, örneğin <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oluşturuldu
           status: Durum
@@ -1496,3 +1566,29 @@ tr:
     translations:
       remove_language: Dil kaldır
       add_language: Dil ekle
+    change_log:
+      id: "Kimlik"
+      field: "Alan"
+      new_value: "Yeni Değer"
+      old_value: "Eski Değer"
+      actions: "Eylemler"
+    trackers:
+      index:
+        title: İzleyiciler
+        name: İsim
+        email: E-posta
+        description: Tanımlama
+        no_description: Tanımlama yok
+        no_trackers: Hiç izleyici yok.
+      tracker:
+        add: "İzleyicilere ekle"
+      form:
+        update: İzleyiciyi Güncelle
+        updated: "İzleyici başarıyla güncellendi."
+        edit_title: "İzleyiciler: İzleyiciyi düzenle"
+      show:
+        email: E-posta
+        description: Tanımlama
+        no_description: Tanımlama yok.
+      search:
+        title: İzleyiciler
