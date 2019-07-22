@@ -594,6 +594,28 @@ tr:
         intro_text_html: "<strong> Kendi vatandaş önerim ile %{org}</strong>'ya katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
         proposal_code: "Öneri kodu: %{code}"
         support: Önerimi destekle
+        footer_html: "<strong> Bu bağlantıyı %{link} ziyaret edin ve önerimi destekleyin.</strong> Çok fazla desteğe ihtiyacım var. Senin de destekle. Teşekkür ederim!"
+      new:
+        title: Önerinizin görseli
+      options:
+        preview: Önizleme
+        download: İndir
+    mailing:
+      index:
+        title: E-posta önizleme
+      new:
+        title: Paylaşılacak e-posta örneği
+      mailing_options:
+        send: '%{address} adresine gönder'
+        preview: Önizleme
+      create:
+        sent: E-posta gönderildi
+    mailer:
+      forward:
+        subtitle_html: "Beni destekliyorsanız, <br> başaracağız."
+        support_button: Bu öneriyi destekle
+        share_in: Paylaş
+        hi: "Merhaba!"
   polls:
     all: "Tüm"
     no_dates: "tarih atanmamış"
