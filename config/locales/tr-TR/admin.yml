@@ -377,6 +377,7 @@ tr:
         create:
           notice: Eylem başarıyla oluşturuldu
         edit:
+          editing: Öneri gösterge panosu için eylemi düzenle
           back: Listeye dön
         delete:
           success: Eylem başarıyla silindi
@@ -387,6 +388,7 @@ tr:
           published_proposal_help_text: Yalnızca yayınlanmış öneriler için eylem oluşturmak üzere bu onay kutusunu işaretleyin
       administrator_tasks:
         index:
+          description: "Öneri gösterge panosunda yayınlanan kaynaklar, yöneticilere talep edilmesi gereken bir düğme içerebilir. Kullanıcı istekleri aşağıda gösterilmiştir."
           title: İstenilen kaynaklar
           solve: Çöz
           no_records: İstenilen kaynak yok
@@ -704,11 +706,23 @@ tr:
       users: Kullanıcılar
       trackers: "İzleyiciler"
       dashboard: Öneriler gösterge tablosu
+      administrator_tasks: İstenilen kaynaklar
+      dashboard_actions: Kaynaklar ve eylemler
+      download_settings:
+        title: "Ayarları indir"
+        debates: "Tartışmalar"
+        proposals: "Öneriler"
+        budget_investments: "Katılımcı bütçeleme"
+        comments: "Yorumlar"
+        budget_investments_milestones: "Katılımcı bütçeleme (Kilometre taşları)"
+      debates: "Tartışmalar"
+      comments: "Yorumlar"
     administrators:
       index:
         title: Yöneticiler
         name: İsim
         email: E-posta
+        description: Tanımlama
         id: Yönetici KİMLİĞİ
         no_administrators: Hiç yönetici yok.
       administrator:
@@ -717,6 +731,9 @@ tr:
         restricted_removal: "Üzgünüm, kendinizi yöneticilerden kaldıramazsınız"
       search:
         title: "Yöneticiler: Kullanıcı ara"
+      form:
+        edit_title: "Yöneticiyi düzenle"
+        updated: "Yönetici başarıyla güncellendi"
     moderators:
       index:
         title: Moderatörler
@@ -731,6 +748,7 @@ tr:
     segment_recipient:
       all_users: Tüm kullanıcılar
       administrators: Yöneticiler
+      all_proposal_authors: Öneri yazarları (arşivlenmiş ve geri çekilmiş dahil)
       proposal_authors: Öneri yazarları
       investment_authors: Cari bütçede yatırım yazarları
       feasible_and_undecided_investment_authors: "Cari bütçeye uymayan bazı yatırımların yazarları: [değerleme imkansız sonuçlandı]"
@@ -758,6 +776,7 @@ tr:
       new:
         title: Yeni bülten
         from: Bülten gönderirken görünecek e-posta adresi
+        image_link: "özel görüntüler"
       edit:
         title: Bülteni düzenle
       show:
@@ -853,6 +872,9 @@ tr:
       user_invite:
         title: "Kullanıcı Daveti"
         description: "Bir hesap açması için davet edilen kişiye gönder."
+      evaluation_comment:
+        title: "Yeni değerlendirme yorumu"
+        description: "Yorum yapılan yatırımla ilgili yöneticilere ve değerlendiricilere gönderilir"
       edit_info: "Bu e-postayı şurda düzenleyebilirsiniz"
       message_title: "Mesaj Başlığı"
       message_body: "Bu mesajın içeriğinin bir örneğidir."
@@ -860,6 +882,7 @@ tr:
         no_investments: "Hiç bütçe yatırımı oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
         no_comments: "Hiç yorum oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
         no_replies: "Hiç yanıt oluşturulmadı. E-postayı ön izlemek için bazı örnek veriler gerekir."
+        no_evaluation_comments: "Oluşturulan değerlendirme yorumu bulunmuyor. E-postayı önizlemek için bazı örnek veriler gerekir."
     emails_download:
       index:
         title: E-postaları indirme
@@ -918,6 +941,7 @@ tr:
         email_placeholder: E-posta ile kullanıcı ara
         search: Ara
         user_not_found: Kullanıcı bulunamadı
+        help: "Anket memurlarını eklemek veya kaldırmak için aşağıdaki arama formunu kullanın."
     poll_officer_assignments:
       index:
         officers_title: "Memurların listesi"
@@ -1031,6 +1055,7 @@ tr:
         question_added: "Bu ankete soru eklendi"
         error_on_question_added: "Bu ankete soru atanamadı"
       destroy:
+        alert: "Bu işlem anketi ve onunla ilişkili tüm soruları kaldıracaktır."
         success_notice: "Anket başarıyla silindi"
         unable_notice: "Oyu olan bir anketi silemezsiniz"
     questions:
@@ -1277,6 +1302,7 @@ tr:
         placeholder: Başlığa, koda, tanımlamaya veya soruya göre önerileri ara
       debate_search:
         button: Ara
+        placeholder: Tartışmaları başlığa veya açıklamaya göre ara
       user_search:
         button: Ara
         placeholder: İsim veya e-posta ile kullanıcı ara
@@ -1295,6 +1321,7 @@ tr:
       created_at: Oluşturuldu
       delete: Sil
       color_help: Onaltılık format
+      show_results_and_stats: "Sonuçları ve istatistikleri göster"
     geozones:
       index:
         title: Coğrafi Bölge (Geozone)
