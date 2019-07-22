@@ -344,8 +344,8 @@ tr:
         description: Tanımlama
         link: Dış bağlantı
         request_to_administrators: Kaynağa yöneticilerden kaynak istemek için bir düğme ekleyin
-        day_offset: Teklifin oluşturulmasından kaç gün sonra etkinleştirilmesini istiyorsunuz?
-        required_supports: Teklifin aktif hale getirilmesi için ne kadar destek alması gerekiyor?
+        day_offset: Önerinin oluşturulmasından kaç gün sonra etkinleştirilmesini istiyorsunuz?
+        required_supports: Önerinin aktif hale getirilmesi için ne kadar destek alması gerekiyor?
         order: Bu eylemin kullanıcıya gösterileceği konumu eylemler listesine girebilirsiniz
         active: Aktif
         action_type: Tür
@@ -355,6 +355,11 @@ tr:
       link:
         label: Başlık
         url: Bağlantı
+      valuator:
+        description: Tanımlama
+        valuator_group_id: Bilirkişi grubu
+        can_comment: Yorumlar oluşturabilir
+        can_edit_dossier: Dosyaları düzenleyebilir
     errors:
       models:
         user:
