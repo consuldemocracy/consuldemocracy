@@ -1,1 +1,33 @@
 tr:
+  tracking:
+    budget_investments:
+      index:
+        no_investments: "Hiç yatırım projesi yok."
+      show:
+        undefined: "Tanımsız"
+        responsibles: Sorumlular
+        assigned_admin: Atanmış yönetici
+    milestones:
+      index:
+        table_id: "Kimlik"
+        milestone: Kilometre taşı
+        new_milestone: Yeni kilometre taşı oluştur
+      form:
+        admin_statuses: Durumları yönet
+        no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
+      new:
+        creating: Kilometre taşı oluştur
+        date: Tarih
+        description: Tanımlama
+      edit:
+        title: Kilometre taşı düzenle
+      create:
+        notice: Yeni kilometre taşı başarıyla oluşturuldu!
+      update:
+        notice: Kilometre taşı başarıyla güncellendi
+      delete:
+        notice: Kilometre taşı başarıyla silindi
+    progress_bars:
+      manage: "İlerleme çubuklarını yönet"
+      index:
+        title: "İlerleme çubukları"
