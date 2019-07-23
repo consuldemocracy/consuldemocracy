@@ -1021,10 +1021,14 @@ tr:
   question:
     max_votes: Maksimum oy sayısı
     max_group_answers: Setteki maksimum cevap sayısı
+    votation_type: Oylama türü
   enum_type:
+    title: Oylama türü
     unique: Benzersiz cevap, kapalı
     multiple: Birden fazla cevap, kapalı
     prioritized: Birden çok öncelikli cevap, kapalı
+    positive_open: Oylanabilir olumlu, aç
+    positive_negative_open: Oylanabilir olumlu ve olumsuz, aç
     answer_couples_open: Cevap çiftleri, açık
     answer_couples_closed: Cevap çiftleri, kapalı
     answer_set_open: Cevap seti, açık
