@@ -20,6 +20,7 @@ tr:
         author_id: "Yazar Kimlik Numarası"
         visit_id: "Ziyaret kimliği"
         cached_votes_total: "Toplam önbelleğe alınmış oy"
+        cached_votes_down: "Önbelleğe alınmış oy düşürme"
         comments_count: "Yorumların sayısı"
         cached_anonymous_votes_total: "Önbelleğe alınmış anonim oy toplamı"
         cached_votes_score: "Önbellek oyu puanı"
@@ -38,6 +39,9 @@ tr:
         responsible_name: "Sorumlu isim"
         summary: "Özet"
         video_url: "Video url"
+        community_id: "Topluluk kimliği"
+        author_name: "Yazar adı"
+        author_email: "Yazar e-postası"
       legislation_processes:
         title: "Başlık"
         description: "Tanımlama"
