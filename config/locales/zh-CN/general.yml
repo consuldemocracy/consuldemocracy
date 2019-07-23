@@ -89,7 +89,6 @@ zh-CN:
         submit_button: 保存更改
       show_link: 查看辩论
     form:
-      debate_text: 最初辩论文本
       debate_title: 辩论标题
       tags_instructions: 为此辩论加标签。
       tags_label: 主题
@@ -288,7 +287,6 @@ zh-CN:
       warning: "如果您撤回提议，它仍然能接受支持，但是它将从主列表中删除，而且所有用户都将看到一条信息，声明作者认为此提议不应再被支持"
       retired_reason_label: 撤回提议的原因
       retired_reason_blank: 选择一个选项
-      retired_explanation_label: 解释
       retired_explanation_placeholder: 简短解释为什么您认为此提议不应该再接受更多的支持
       submit_button: 撤回提议
     retire_options:
