@@ -132,6 +132,7 @@ ar:
           other: "%{count} متتبّعين محدّدين"
         empty_administrators: "لا يوجد مدراء"
         empty_valuators: "لا يوجد مقيمون"
+        empty_trackers: "لا يوجد متتبّعون"
         name: "الإسم"
         selected: "محدّد"
         cancel: "إلغاء"
@@ -139,6 +140,7 @@ ar:
       destroy:
         success_notice: تم حذف الميزانية بنجاح
         unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
+        unable_notice_polls: لا يمكنك حذف ميزانية لها استطلاع مقترن
       new:
         title: ميزانية تشاركية جديدة
       winners:
@@ -752,6 +754,7 @@ ar:
       search:
         title: "المسؤولين: بحث عن مستخدم"
       form:
+        edit_title: "تحرير المدير"
         updated: "تم تحديث المدير بنجاح"
     moderators:
       index:
@@ -767,6 +770,7 @@ ar:
     segment_recipient:
       all_users: كل المستخدمين
       administrators: مدراء
+      all_proposal_authors: مؤلفو المقترحات (بما في ذلك المؤرشفة والمسحوبة)
       proposal_authors: كتّاب الاقتراحات
       investment_authors: مؤلفو الاستثمار في الميزانية الحالية
       selected_investment_authors: مؤلفو الاستثمارات المحددة في الميزانية الحالية
