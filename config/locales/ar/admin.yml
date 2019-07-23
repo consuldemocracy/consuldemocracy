@@ -1629,9 +1629,6 @@ ar:
         submit_header: حفظ العنوان
         card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
-    translations:
-      remove_language: إزالة اللغة
-      add_language: إضافة لغة
     change_log:
       id: "معرف"
       field: "حقل"
