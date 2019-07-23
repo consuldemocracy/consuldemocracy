@@ -69,8 +69,10 @@ tr:
       poll_description_description: Anket özelliğinin ayrıntılı açıklaması
       poll_link: Ek bilgi bağlantısı
       email_short_title: E-posta
+      email_short_title_description: 'E-posta özelliğinin kısa açıklaması. Kullanıcıların önerilerini tanıtmak için bir e-posta göndermelerine izin verir. Bu e-postanın tüm içeriğini "/uyg/görünümler/göstergepanosu/postacı/ilet.html.erb" adresinde bulabilirsiniz'
       email_description: E-posta tanımlaması
       email_description_description: E-posta özelliğinin ayrıntılı açıklaması
+      poster_short_title: Görsel
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
@@ -114,6 +116,8 @@ tr:
       remote_translations_description: "Kullanıcıların, dillerinde içerik olmadığında çeviri isteğinde bulunmalarını sağlayan bir düğme görüntüler."
       translation_interface: "Çeviri arayüzü"
       translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
+      valuation_comment_notification: "Değerlendirme yorumu bildirimi"
+      valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"
