@@ -1245,6 +1245,3 @@ it:
         submit_header: Salva intestazione
         card_title: Modifica scheda
         submit_card: Salva scheda
-    translations:
-      remove_language: Rimuovi lingua
-      add_language: Aggiungi lingua
