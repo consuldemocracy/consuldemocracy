@@ -93,7 +93,6 @@ it:
         submit_button: Salva modifiche
       show_link: Vedi il dibattito
     form:
-      debate_text: Testo iniziale del dibattito
       debate_title: Titolo del dibattito
       tags_instructions: Etichetta questo dibatto.
       tags_label: Argomenti
@@ -297,7 +296,6 @@ it:
       warning: "Anche se ritirata la proposta potrà ricevere comunque sostegni, ma sarà rimossa dall’elenco principale e tutti gli utenti visualizzeranno il messaggio che l’autore ritiene che la proposta non debba più essere sostenuta"
       retired_reason_label: Motivo del ritiro della proposta
       retired_reason_blank: Scegli un'opzione
-      retired_explanation_label: Spiegazione
       retired_explanation_placeholder: Spiega brevemente perché ritieni che questa proposta non debba ricevere ulteriori sostegni
       submit_button: Ritira proposta
     retire_options:
