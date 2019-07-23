@@ -1412,6 +1412,3 @@ fr:
         submit_header: Sauvegarder l'entête
         card_title: Modifier l'encart
         submit_card: Sauvegarder l'encart
-    translations:
-      remove_language: Supprimer une langue
-      add_language: Ajouter une langue
