@@ -93,7 +93,6 @@ gl:
         submit_button: Gardar so cambios
       show_link: Ver debate
     form:
-      debate_text: Texto inicial do debate
       debate_title: Título do debate
       tags_instructions: Etiqueta este debate.
       tags_label: Temas
@@ -300,7 +299,6 @@ gl:
       warning: "Se segues adiante, a túa proposta poderá seguir recibindo apoios, pero deixará de ser listada na lista principal, e aparecerá unha mensaxe para todas as persoas usuarias avisándoas de que o autor considera que esta proposta non debe seguir recollendo apoios."
       retired_reason_label: Razón pola que se retira a proposta
       retired_reason_blank: Selecciona unha opción
-      retired_explanation_label: Explicación
       retired_explanation_placeholder: Explica brevemente por que consideras que esta proposta non debe recoller máis apoios
       submit_button: Eliminar proposta
     retire_options:
