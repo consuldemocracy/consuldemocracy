@@ -38,6 +38,8 @@ ar:
       link: CONSUL
       not_in_census: لم يتم تسجيل هذا المستند.
       please_check_account_data: الرجاء تحقق من صحة بيانات الحساب المذكور أعلاه.
+      title: إدارة المستخدم
+      under_age: "ليس لديك العمر المطلوب للتحقق من حسابك."
       verify: تحقق
     email_label: البريد الإلكتروني
     date_of_birth: تاريخ الميلاد
@@ -65,6 +67,7 @@ ar:
       create_proposals: إنشاء مقترحات
       debates: الانخراط في المناقشات
       support_proposals: دعم مقترحات
+      vote_proposals: مقترحات التّصويت
     print:
       proposals_info: 'قم بإنشاء مقترحك على http: //url.consul'
       proposals_title: "المقترحات:"
@@ -85,6 +88,7 @@ ar:
       table_name: الإ سم
       table_phase: مرحلة
       table_actions: الإجراءات
+      no_budgets: لا توجد ميزانيات تشاركية نشطة.
     budget_investments:
       alert:
         unverified_user: لم يتم التحقق من المستخدم
@@ -93,8 +97,16 @@ ar:
         unfeasible: الاستثمارات الغير مجدية
       print:
         print_button: طباعة
+      search_results:
+        zero: "يحتوي على المصطلح '%{search_term}'"
+        one: " يحتوي على المصطلح '%{search_term}'"
+        two: "يحتوي على المصطلح '%{search_term}'"
+        few: "يحتوي على المصطلح '%{search_term}'"
+        many: "يحتوي على المصطلح '%{search_term}'"
+        other: "يحتوي على المصطلح '%{search_term}'"
     sessions:
       signed_out: تم الخروج بنجاح.
+      signed_out_managed_user: تم تسجيل خروج المستخدم بنجاح.
     username_label: اسم المستخدم
     users:
       create_user: إنشاء حساب جديد
