@@ -7,6 +7,7 @@ ar:
         title: مكتب الاستطلاع
         no_shifts: ليس لديك مناوبة اليوم.
     menu:
+      voters: التحقق من الوثيقة
       total_recounts: إجمالي إعادة فرز الأصوات والنتائج
     polls:
       final:
@@ -65,8 +66,11 @@ ar:
         create: "وثيقة تم التحقق منها من خلال التعداد"
         not_allowed: "ليس لديك مناوبة اليوم"
       new:
+        title: التحقق من الوثيقة
         document_number: "رقم المستند (بما في ذلك الاحرف)"
+        submit: التحقق من الوثيقة
         error_verifying_census: "التعداد غير قادر على التحقق من هذه الوثيقة."
+        form_errors: منعَ التحقق من هذه الوثيقة
     voters:
       new:
         title: استطلاعات
