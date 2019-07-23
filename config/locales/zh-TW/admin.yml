@@ -1243,6 +1243,3 @@ zh-TW:
         submit_header: 儲存頁首
         card_title: 編輯卡
         submit_card: 儲存卡
-    translations:
-      remove_language: 刪除語言
-      add_language: 添加語言
