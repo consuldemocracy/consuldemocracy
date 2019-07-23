@@ -1386,6 +1386,3 @@ nl:
         submit_header: Bewaar koptekst
         card_title: Kaart bewerken
         submit_card: Kaart opslaan
-    translations:
-      remove_language: Verwijder taal
-      add_language: Taal toevoegen
