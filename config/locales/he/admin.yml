@@ -1633,9 +1633,6 @@ he:
         submit_header: שמירה כותרת דף עליונה
         card_title: עריכת כרטיס
         submit_card: שמור כרטיס
-    translations:
-      remove_language: הסרת שפה
-      add_language: הוספת שפה
     change_log:
       title: "יומן שינויים"
       id: "מזהה"
