@@ -1344,6 +1344,3 @@ gl:
         submit_header: Gardar cabeceira
         card_title: Editar tarxeta
         submit_card: Gardar tarxeta
-    translations:
-      remove_language: Eliminar idioma
-      add_language: Engadir idioma
