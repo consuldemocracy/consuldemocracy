@@ -97,7 +97,6 @@ pt-BR:
         submit_button: Salvar alterações
       show_link: Ver debate
     form:
-      debate_text: Texto inicial do debate
       debate_title: Título do debate
       tags_instructions: Marcar este debate.
       tags_label: Tópicos
@@ -314,7 +313,6 @@ pt-BR:
       warning: "Se você retirar a proposta ela ainda poderá receber apoio, mas será removida da lista principal, e uma mensagem ficará visível para todos os usuários informando que o autor considera que a proposta não deve mais receber suporte"
       retired_reason_label: Motivo para retirar a proposta
       retired_reason_blank: Escolha uma opção
-      retired_explanation_label: Explicação
       retired_explanation_placeholder: Explique brevemente por que você acha que esta proposta não deve mais receber apoio
       submit_button: Retirar proposta
     retire_options:
