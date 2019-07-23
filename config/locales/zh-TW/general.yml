@@ -89,7 +89,6 @@ zh-TW:
         submit_button: 儲存更改
       show_link: 查看辯論
     form:
-      debate_text: 初始辯論文本
       debate_title: 辯論標題
       tags_instructions: 為此辯論加標籤。
       tags_label: 主題
@@ -286,7 +285,6 @@ zh-TW:
       warning: "如果您把建議撤回，此建議仍能接受支持，但將會從主列表中刪除，並且所有用戶都可以看到一條消息，表明作者認為此建議不應再受支持"
       retired_reason_label: 把建議撤回的原因
       retired_reason_blank: 選擇一個選項
-      retired_explanation_label: 解釋
       retired_explanation_placeholder: 簡單地解釋為什麼您認為此提案不應再獲得支持
       submit_button: 撤回建議
     retire_options:
