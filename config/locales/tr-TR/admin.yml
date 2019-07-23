@@ -1596,9 +1596,6 @@ tr:
         submit_header: Üstbilgiyi kaydet
         card_title: Kart düzenle
         submit_card: Kart kaydet
-    translations:
-      remove_language: Dil kaldır
-      add_language: Dil ekle
     change_log:
       id: "Kimlik"
       field: "Alan"
