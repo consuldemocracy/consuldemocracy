@@ -107,7 +107,6 @@ hr:
         submit_button: Spremi promjene
       show_link: Pogledaj raspravu
     form:
-      debate_text: Početni tekst rasprave
       debate_title: Naslov rasprave
       tags_instructions: Označi ovu raspravu.
       tags_label: Teme
@@ -346,7 +345,6 @@ hr:
       warning: "Ako povučete prijedlog, on će i dalje prihvaćati podršku, ali će biti uklonjen s glavnog popisa i poruka će biti vidljiva svim korisnicima navodeći da autor smatra da prijedlog ne bi trebao više biti podržan"
       retired_reason_label: Razlog za povlačenje prijedloga
       retired_reason_blank: Odaberi opciju
-      retired_explanation_label: Objašnjenje
       retired_explanation_placeholder: Ukratko objasni zašto mislite da ovaj prijedlog više ne bi trebao primati potporu
       submit_button: Povuci prijedlog
     retire_options:
