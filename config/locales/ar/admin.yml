@@ -1635,9 +1635,12 @@ ar:
     change_log:
       id: "معرف"
       field: "حقل"
+      new_value: "القيمة الجديدة"
+      old_value: "القيمة القديمة"
       edited_at: "تم التحرير في"
       edited_by: "تم التحرير من قبل"
       actions: "الإجراءات"
+      empty: "لا توجد تغييرات مسجلة"
     trackers:
       index:
         title: متتبّعون
@@ -1650,7 +1653,11 @@ ar:
         add: "اظافة متتبّعين"
       form:
         update: تحديث متتبّع
+        updated: "تم تحديث المتتبّع بنجاح."
+        edit_title: "المتتبّعون: تحرير المتتبّع"
       show:
         email: البريد الإلكتروني
         description: الوصف
         no_description: بدون وصف.
+      search:
+        title: متتبّعون
