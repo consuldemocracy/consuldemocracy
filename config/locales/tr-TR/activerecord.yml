@@ -448,6 +448,7 @@ tr:
             valuation:
               cannot_comment_valuation: "Bir değerlendirmeye yorum yapamazsınız"
       messages:
+        translations_too_short: En az bir çeviri sağlamak zorunludur
         record_invalid: "Onaylama başarısız: %{errors}"
         another_poll_active: Belirtilen sürede aktif olan başka bir anket daha var
         restrict_dependent_destroy:
