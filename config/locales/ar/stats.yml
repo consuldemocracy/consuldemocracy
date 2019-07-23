@@ -17,8 +17,10 @@ ar:
       link: "الإحصائيات"
       page_title: "%{budget} - إحصائيات المشاركة"
       total_investments: "مجموع المشاريع الاستثمارية"
+      total_selected_investments: "مشاريع في مرحلة التصويت النهائي"
       total_unfeasible_investments: "مشاريع غير قابلة للإنجاز"
       by_phase: "المشاركون حسب المرحلة"
+      by_heading: "المشاركون حسب المرحلة والعنوان"
       total: "المجموع"
       heading: "عنوان"
       investments_sent_html: "تمّ ارسال مقترح الاستثمار"
@@ -27,5 +29,6 @@ ar:
       participants_every_phase: "مجموع المشاركين"
       percent_total_participants: "% مجموع المشاركين"
     polls:
+      by_channel: "المشاركون حسب القناة"
       booth_percentage: "%{percentage} مكاتب الإقتراع"
       letter_percentage: "%{percentage} بريد"
