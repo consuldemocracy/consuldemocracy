@@ -113,7 +113,6 @@ he:
         submit_button: שמירת שינויים
       show_link: צפייה בדיון
     form:
-      debate_text: מלל הדיון
       debate_title: כותרת הדיון
       tags_instructions: תגיות סימון נושאים בדיון זה
       tags_label: נושאים
@@ -361,7 +360,6 @@ he:
       warning: "“הסרת ההצעה שלך היא לא מחיקה. ההצעה עדיין תוכל לצבור תמיכה, אך היא תוסר מהרשימה הראשית ולכל המשתמשים שצופים בה תוצג ההודעה שלדעת מציע/ת ההצעה, לא כדאי לתמוך בהצעה הזו יותר.\""
       retired_reason_label: הסיבה להסרת ההצעה
       retired_reason_blank: בחר/י אפשרות
-      retired_explanation_label: הסבר
       retired_explanation_placeholder: הסבר/י בקיצור מדוע לדעתך לא כדאי לתמוך בהצעה זו כבר
       submit_button: הסרת הצעה
     retire_options:
