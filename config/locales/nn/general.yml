@@ -107,7 +107,6 @@ nn:
         submit_button: Lagre endringer
       show_link: Vis debatt
     form:
-      debate_text: Innledende debatt-tekst
       debate_title: Tittel på debatt
       tags_instructions: Tag denne debatten.
       tags_label: Emner
@@ -346,7 +345,6 @@ nn:
       warning: "Hvis du trekker tilbake forslaget ditt, kan andre brukere fortsatt støtte det. Forslaget fjernes likevel fra hovedlista, og andre brukere vil bli informert om at du ikke lenger mener forslaget bør støttes"
       retired_reason_label: Grunn til å trekke forslaget
       retired_reason_blank: Velg et alternativ
-      retired_explanation_label: Forklaring
       retired_explanation_placeholder: Forklar kort hvorfor du ikke mener dette forslaget burde få mer støtte
       submit_button: Ta tilbake forslaget
     retire_options:
