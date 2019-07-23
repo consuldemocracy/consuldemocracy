@@ -128,15 +128,35 @@ tr:
     process:
       debates: "Tartışmalar"
       proposals: "Öneriler"
+      proposals_description: "Vatandaşların' önerileri, komşuların ve toplulukların çevrelerinin nasıl olmasını istediklerine doğrudan karar vermeleri için yeterli destek almalarını ve vatandaşların oylarına sunmalarını sağlayan bir fırsattır"
       polls: "Anketler"
       polls_description: "Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır"
       budgets: "Katılımcı bütçeleme"
+      budgets_description: "Katılımcı bütçeler ile vatandaşlar, komşuları tarafından sunulan hangi projelerin bütçenin bir parçasını alacağına karar verir"
       legislation: "Katılımcı Mevzuat"
+      legislation_description: "Katılımcı işlemlerde vatandaşlara, toplumu etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılma ve yapılması planlanan belirli eylemler hakkında fikirlerini bildirme fırsatı sunulur"
+    html:
+      per_page_code_head: "Her sayfaya dahil edilecek kod (<head>)"
+      per_page_code_head_description: "Bu kod <head> etiketinin içinde görünecektir.Özel scriptler, analitikler... girmek için kullanışlıdır"
+      per_page_code_body: "Her sayfaya dahil edilecek kod (<body>)"
+      per_page_code_body_description: "Bu kod <body> etiketinin içinde görünecektir. Özel komutlar, analitikler girmek için kullanışlıdır..."
     uploads:
       images:
+        min_width: "Görüntü minimum genişlik"
+        min_width_description: "Yüklenen bir görüntü için izin verilen minimum genişlik (piksel cinsinden)"
+        min_height: "Görüntü minimum yükseklik"
+        min_height_description: "Yüklenen bir görüntü için izin verilen minimum yükseklik (piksel cinsinden)"
+        max_size: "Görüntü maksimum boyut"
+        max_size_description: "Yüklenen bir görüntü için izin verilen maksimum boyut (Megabayt/MB cinsinden)"
+        content_types: "Görüntüler için kabul edilen içerik türleri"
+        content_types_description: "Yüklenen görüntüler için izin verilen tüm içerik türlerini seçin"
         title:
+          min_length: "Görüntü başlığı minimum uzunluk"
+          min_length_description: "Resim yüklerken kullanıcı tarafından sağlanan başlık (alt HTML özelliği olarak kullanılır)"
+          max_length: "Görüntü başlığı maksimum uzunluk"
           max_length_description: "Resim yüklerken kullanıcı tarafından sağlanan başlık (alt HTML özelliği olarak kullanılır)"
       documents:
+        max_amount: "Maksimum belge sayısı"
         max_amount_description: "Bir öneriye, yatırıma... eklenebilecek maksimum belge sayısı"
         max_size: "Belge maksimum boyutu"
         max_size_description: "Yüklenen bir belge için izin verilen maksimum boyut (Megabayt/MB cinsinden)"
