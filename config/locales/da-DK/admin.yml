@@ -1548,9 +1548,6 @@ da:
         submit_header: Gem topmargintekst
         card_title: Rediger informationsboks
         submit_card: Gem informationsboks
-    translations:
-      remove_language: Fjern sprog
-      add_language: Tilføj sprog
     change_log:
       id: "ID"
       new_value: "Ny værdi"
