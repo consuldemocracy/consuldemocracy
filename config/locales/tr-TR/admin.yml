@@ -368,10 +368,12 @@ tr:
           required_supports: Gereken destekler
           day_offset: Gereken günler
           action_active: Aktif
+          order: Düzen
           published_proposal: Yayınlanan öneri
           default:
             email: E-posta
             polls: Anketler
+            poster: Görsel
         new:
           creating: Öneri gösterge panosu için yeni eylem
           back: Listeye dön
@@ -1612,7 +1614,10 @@ tr:
       field: "Alan"
       new_value: "Yeni Değer"
       old_value: "Eski Değer"
+      edited_at: "Düzenlendi"
+      edited_by: "Tarafından düzenlendi"
       actions: "Eylemler"
+      empty: "Günlüğe kaydedilen değişiklik yok"
     trackers:
       index:
         title: İzleyiciler
