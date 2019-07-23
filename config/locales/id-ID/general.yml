@@ -86,7 +86,6 @@ id:
         submit_button: Simpan perubahan
       show_link: Melihat perdebatan
     form:
-      debate_text: Awal debat teks
       debate_title: Debat judul
       tags_instructions: Tag debat ini.
       tags_label: Topik
@@ -275,7 +274,6 @@ id:
       warning: "Jika Anda pensiun proposal itu masih akan menerima mendukung, tetapi akan dihapus dari daftar utama dan pesan akan terlihat oleh semua pengguna yang menyatakan bahwa penulis menganggap proposal harus tidak didukung lagi"
       retired_reason_label: Alasan untuk pensiun proposal
       retired_reason_blank: Pilih opsi
-      retired_explanation_label: Penjelasan
       retired_explanation_placeholder: Segera menjelaskan mengapa Anda berpikir proposal ini seharusnya tidak menerima lebih mendukung
       submit_button: Bagikan proposal
     retire_options:
