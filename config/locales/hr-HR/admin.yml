@@ -1547,6 +1547,3 @@ hr:
         submit_header: Spremi naslov
         card_title: Uredi karticu
         submit_card: Spremi karticu
-    translations:
-      remove_language: Ukloni jezik
-      add_language: Dodaj jezik
