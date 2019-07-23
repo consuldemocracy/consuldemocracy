@@ -21,17 +21,25 @@ ar:
     twitter_hashtag: "Twitter hashtag"
     twitter_hashtag_description: "Hashtag الذي سيظهر عند مشاركة المحتوى على Twitter"
     facebook_handle_description: "إذا تم ملؤها ، فستظهر في تذييل الصفحة"
+    youtube_handle_description: "إذا تم ملؤها ، فستظهر في تذييل الصفحة"
+    telegram_handle_description: "إذا تم ملؤها ، فستظهر في تذييل الصفحة"
+    instagram_handle_description: "إذا تم ملؤها ، فستظهر في تذييل الصفحة"
     url: "الصّفحة الرئيسية"
     url_description: "الصّفحة الرئيسية لموقعك الالكتروني"
     org_name: "المنظمة"
     related_content_score_threshold_description: "وفقًا لتصنيف (rating) الأصوات في محتوى ذي صلة، يخفي المحتوى الذي يحدده المستخدمون على أنه غير مرتبط"
     hot_score_period_in_days: "الفترة (الأيام) التي يستخدمها المرشح \"الأكثر نشاطًا\""
+    hot_score_period_in_days_description: "يعتمد المرشح \"الأكثر نشاطًا\" المستخدم في أقسام متعددة على الأصوات خلال الأيام X الأخيرة"
     mailer_from_name: "عنوان البريد الإلكتروني المُرسِل"
     mailer_from_name_description: "سيظهر هذا الاسم كاسم المرسل في رسائل البريد الإلكتروني المرسلة من التطبيق"
     mailer_from_address: "عنوان البريد الإلكتروني المُرسِل"
     mailer_from_address_description: "سيظهر هذا البريد الإلكتروني في رسائل البريد الإلكتروني المرسلة من التطبيق"
     meta_title: "عنوان الموقع (SEO)"
+    meta_title_description: "عنوان الموقع <title>، يُستخدم لتحسين الSEO"
     meta_description: "وصف الموقع (SEO)"
+    meta_description_description: 'وصف الموقع <meta name="description">، يُستخدم لتحسين الSEO'
+    meta_keywords: "الكلمات المفاتيح (SEO)"
+    meta_keywords_description: 'الكلمات المفاتيح <meta name="keywords">، تُستخدم لتحسين الSEO'
     proposals:
       successful_proposal_id: مقترح ناجح
       poll_short_title: استطلاعات
