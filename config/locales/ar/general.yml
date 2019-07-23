@@ -123,7 +123,6 @@ ar:
         submit_button: حفظ التغييرات
       show_link: عرض المناقشة
     form:
-      debate_text: نص المناقشة الأوّلي
       debate_title: عنوان المناقشة
       tags_instructions: ضع علامة على هذا النقاش.
       tags_label: مواضبع
@@ -384,7 +383,6 @@ ar:
       warning: "سيتسمر الإقتراح في إستقبال الدعم حتى في حالة قمت بسحبه، ولكن ستتم إزالته من القائمة الرئيسية وستظهر رسالة لجميع المستخدمين تفيد بأن المؤلف يرى أنه لا ينبغي دعم الاقتراح بعد الآن"
       retired_reason_label: سبب سحب المقترح
       retired_reason_blank: إختر خيار
-      retired_explanation_label: تفسير
       retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا القترح يجب ألا يحصل على المزيد من الدعم
       submit_button: سحب المقترح
     retire_options:
