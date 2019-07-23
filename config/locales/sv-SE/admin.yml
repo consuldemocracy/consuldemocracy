@@ -1310,6 +1310,3 @@ sv:
         submit_header: Spara sidhuvud
         card_title: Redigera kort
         submit_card: Spara kort
-    translations:
-      remove_language: Ta bort språk
-      add_language: Lägg till språk
