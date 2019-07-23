@@ -1376,6 +1376,3 @@ pl:
         submit_header: Zapisz nagłówek
         card_title: Edytuj kartę
         submit_card: Zapisz kartę
-    translations:
-      remove_language: Usuń język
-      add_language: Dodaj język
