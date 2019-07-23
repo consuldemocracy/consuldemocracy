@@ -15,6 +15,7 @@ ar:
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
+      subscription_to_website_newsletter_label: تلقي المعلومات المهمّة عن طريق البريد الإلكتروني
       email_on_direct_message_label: تلقي رسائل البريد الإلكتروني عند الحصول على الرسائل المباشرة
       email_digest_label: استلام ملخص عن إشعارات مقترح
       recommendations: التوصيات
@@ -175,6 +176,7 @@ ar:
     new:
       form:
         submit_button: بدء مناقشة
+      info: إذا كنت تريد تقديم اقتراح ، فهذا القسم الخاطئ ، إذهب إلى %{info_link}.
       info_link: انشاء مقترح جديدة
       more_info: مزيد من المعلومات
       recommendation_four: استمتع بهذه المساحة والأصوات التي تملأها. إنها ملكك أيضًا.
