@@ -90,7 +90,6 @@ es-PE:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_text: Texto inicial do debate
       debate_title: Título do debate
       tags_instructions: Marcar este debate.
       tags_label: Tópicos
@@ -274,7 +273,6 @@ es-PE:
       warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
       retired_reason_label: Razón por la que se retira la propuesta
       retired_reason_blank: Selecciona una opción
-      retired_explanation_label: Explicación
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
     retire_options:
