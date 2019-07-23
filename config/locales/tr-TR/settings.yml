@@ -110,6 +110,10 @@ tr:
       public_stats_description: "Yönetim panelinde kamu istatistiklerini görüntüleme"
       help_page: "Yardım sayfası"
       help_page_description: 'Etkinleştirilen her özellik hakkında bir bilgi bölümü içeren bir sayfa içeren bir Yardım menüsü görüntüler. Ayrıca "Özel sayfalar" ve "Özel içerik blokları" bölümlerinde özel sayfalar ve menüler oluşturulabilir'
+      remote_translations: "Uzaktan çeviri"
+      remote_translations_description: "Kullanıcıların, dillerinde içerik olmadığında çeviri isteğinde bulunmalarını sağlayan bir düğme görüntüler."
+      translation_interface: "Çeviri arayüzü"
+      translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
     map:
       latitude: "Enlem"
       latitude_description: "Harita konumunu göstermek için enlem"
