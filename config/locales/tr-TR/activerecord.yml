@@ -150,6 +150,9 @@ tr:
         organization_name: "Eğer bir ortaklık/organizasyon adına veya daha fazla kişi adına teklif ediyorsanız, ismini yazın"
         image: "Teklif betimleyici resmi"
         image_title: "Resim ismi"
+      budget/investment/translation:
+        title: "Başlık"
+        description: "Tanımlama"
       geozone:
         name: İsim
         external_code: "Harici kod (isteğe bağlı)"
@@ -182,6 +185,9 @@ tr:
         description: "Fikir"
         terms_of_service: "Hizmet şartları"
         title: "İsim"
+      debate/translation:
+        title: "Tartışma başlığı"
+        description: "İlk tartışma metni"
       proposal:
         author: "Yazar"
         title: "İsim"
@@ -189,6 +195,11 @@ tr:
         description: "Tanımlama"
         selected: "Seçilmiş olarak işaretle"
         terms_of_service: "Hizmet şartları"
+      proposal/translation:
+        title: "Öneri başlığı"
+        description: "Öneri metni"
+        summary: "Öneri özeti"
+        retired_explanation: "Açıklama"
       user:
         login: "E-posta veya kullanıcı adı"
         email: "E-posta"
