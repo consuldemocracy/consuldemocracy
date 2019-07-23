@@ -77,6 +77,7 @@ ar:
     new_actions_notification_rake_created:
       subject: "المزيد من الأخبار حول اقتراح المواطن الخاص بك"
       hi: "مرحبا %{name}،"
+      new_resource: "موارد جديدة متاحة"
       introduction: "كما تعلم، في يوم %{created_at_day} من شهر %{created_at_month} قمت بإنشاء المقترح %{title} في وضع المسودة."
       text_1: "يمكنك النشر متى كنت تريد ذلك عبر هذا الرابط: %{link_to_published}. إذا كنت لا تزال غير متأكد..."
       text_3: "ولمرافقتك في هذا التحدي، إليك هذه الأخبار..."
@@ -87,6 +88,7 @@ ar:
     new_actions_notification_rake_published:
       subject: "المزيد من الأخبار حول اقتراح المواطن الخاص بك"
       hi: "مرحبا %{name}،"
+      new_resource: "موارد جديدة متاحة"
       introduction: "كما تعلم، في يوم %{published_at_day} من شهر %{published_at_month} قمت بنشر المقترح %{title}."
       text_1: "حسنًا، لقد حصلت على %{votes_count} دعم حتى الآن. تهانينا!"
       text_2: "وهكذا، لديك مورد جديد متاح لمساعدتك على المضي قدمًا."
