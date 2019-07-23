@@ -93,7 +93,6 @@ sq:
         submit_button: Ruaj ndryshimet
       show_link: Shiko debatin
     form:
-      debate_text: Teksti i debatit fillestar
       debate_title: Titulli i Debatit
       tags_instructions: Etiketoni këtë debat.
       tags_label: Temë
@@ -299,7 +298,6 @@ sq:
       warning: "Nëse tërhiqeni nga propozimi ajo do të pranonte ende mbështetje, por do të hiqesh nga lista kryesore dhe një mesazh do të jetë i dukshëm për të gjithë përdoruesit duke deklaruar se autori e konsideron propozimin që nuk duhet të mbështetur më"
       retired_reason_label: Arsyeja për të tërhequr propozimin
       retired_reason_blank: Zgjidhni një mundësi
-      retired_explanation_label: Shpjegim
       retired_explanation_placeholder: Shpjegoni shkurtimisht pse mendoni se ky propozim nuk duhet të marrë më shumë mbështetje
       submit_button: Heq dorë nga propozimi
     retire_options:
