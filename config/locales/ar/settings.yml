@@ -52,6 +52,8 @@ ar:
       poster_short_title: ملصقة
       poster_description: وصف الملصق
       poster_description_description: وصف مفصل لميزات الملصق
+    proposal_notification_minimum_interval_in_days_description: "عدد الأيام التي يمكن للمستخدم فيها إرسال إشعار لجميع مؤيدي اقتراحهم"
+    direct_message_max_per_day: "العدد الأقصى للرّسائل المباشرة في اليوم الواحد"
     direct_message_max_per_day_description: "الحد الأقصى لعدد الرسائل المباشرة التي يمكن لمستخدم واحد إرسالها يوميًا"
     feature:
       twitter_login: "تسجيل الدخول عبر Twitter"
