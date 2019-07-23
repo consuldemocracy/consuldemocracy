@@ -99,7 +99,7 @@ tr:
           leave_comment: Cevabını bırak
       question:
         total:
-          zero: Herhangi bir tartışma bulunmamaktadır
+          zero: Tartışma yok
           one: "%{count} tartışma"
           other: "%{count} tartışmalar"
         comments:
@@ -129,9 +129,9 @@ tr:
       form:
         tags_label: "Kategoriler"
       not_verified: "Önerileri oylamak için %{verify_account}."
-      process_title: Katılımcı mevzuat süreci
+      process_title: Katılımcı mevzuat işlemi
       total:
-        zero: Herhangi bir öneri bulunmamaktadır
+        zero: Öneri yok
         one: "%{count} öneri"
         other: "%{count} öneriler"
     summary:
@@ -139,12 +139,12 @@ tr:
       votes: oylar
       debates_phase: Tartışma aşaması
       proposal_phase: Öneri aşaması
-      comments_phase: Yorum aşaması
+      comments_phase: Metin yorum aşaması
       comments:
         zero: Yorum yok
         one: "%{count} yorum"
         other: "%{count} yorumlar"
       most_voted_comments: "En fazla oy alan yorumlar: "
-      no_allegation: Herhangi bir yorum bulunmamaktadır
-      version: versiyon
-      process_empty: Bu sürecin herhangi bir aşaması bulunmamaktadır.
+      no_allegation: Metin yorumu yok
+      version: sürüm
+      process_empty: Sürecin aşaması yok.
