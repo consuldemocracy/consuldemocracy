@@ -93,7 +93,6 @@ da:
         submit_button: Gem ændringer
       show_link: Se debatindlæg
     form:
-      debate_text: Indledende tekst
       debate_title: Titel på debatindlæg
       tags_instructions: Tag denne debat.
       tags_label: Emner
@@ -324,7 +323,6 @@ da:
       warning: "Hvis du trækker dit forslag tilbage, kan andre brugere fortsat støtte op om det. Forslaget fjernes dog fra den primære liste, og andre brugere vil blive informeret om, at du ikke længere mener, at forslaget skal understøttes"
       retired_reason_label: Begrundelse for at trække forslaget tilbage
       retired_reason_blank: Vælg en mulighed
-      retired_explanation_label: Forklaring
       retired_explanation_placeholder: Forklar kort hvorfor du tænker, at dette forslag ikke bør modtage mere opbakning
       submit_button: Træk forslaget tilbage
     retire_options:
