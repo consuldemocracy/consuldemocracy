@@ -78,7 +78,6 @@ fa:
         submit_button: ذخیره تغییرات
       show_link: مشاهده بحث
     form:
-      debate_text: متن اولیه بحث
       debate_title: عنوان بحث
       tags_instructions: برچسب این بحث.
       tags_label: موضوع ها
