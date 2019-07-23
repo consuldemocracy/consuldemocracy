@@ -1499,6 +1499,3 @@ el:
         submit_header: Αποθήκευση επικεφαλίδας
         card_title: Επεξεργασία καρτών
         submit_card: Αποθήκευση καρτών
-    translations:
-      remove_language: Κατάργηση γλώσσας
-      add_language: Προσθήκη γλώσσας
