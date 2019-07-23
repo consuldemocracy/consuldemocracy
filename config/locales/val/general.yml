@@ -93,7 +93,6 @@ val:
         submit_button: Guardar canvis
       show_link: Vore debat
     form:
-      debate_text: Text inicial del debat
       debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
       tags_label: Temes
@@ -299,7 +298,6 @@ val:
       warning: "Si segueixes avant la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la lista principal, i apareixerà un missatge per a tots els usuaris avisant-los de que l'autor considera que esta proposta no ha de seguir rebent avals"
       retired_reason_label: Raó per la que es retira la proposta
       retired_reason_blank: Selecciona una opció
-      retired_explanation_label: Explicació
       retired_explanation_placeholder: Explica breument per qué consideres que esta proposta no ha de recollir més avals
       submit_button: Retirar proposta
     retire_options:
