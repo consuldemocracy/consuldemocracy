@@ -82,7 +82,6 @@ ca:
         submit_button: Guardar canvis
       show_link: Veure debat
     form:
-      debate_text: Text inicial del debat
       debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
       tags_label: Temes
@@ -246,7 +245,6 @@ ca:
       warning: "Si segueixes endavant, la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la llista principal, i apareixerà un missatge per a tots els usuaris avisant-los que l'autor considera que aquesta proposta no ha de seguir arreplegant avals."
       retired_reason_label: Raó per la qual es retira la proposta
       retired_reason_blank: Selecciona una opció
-      retired_explanation_label: Explicació
       retired_explanation_placeholder: Explica breument per que consideres que aquesta proposta no ha d'arreplegar més avals
       submit_button: Retirar proposta
     retire_options:
