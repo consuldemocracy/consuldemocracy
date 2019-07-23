@@ -586,17 +586,17 @@ tr:
         remove_answer: Cevabı kaldır
     poster:
       index:
-        title: Görsel önizlemesi
+        title: Görsel ön izlemesi
         poster_title: "Bakmaya devam etmeyin,"
         poster_subtitle: "bana destek verin! ;)"
-        intro_text_html: "<strong> Kendi vatandaş önerim ile %{org}</strong>'ya katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
+        intro_text_html: "Kendi vatandaş önerim ile <strong>ben %{org}</strong>'a katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
         proposal_code: "Öneri kodu: %{code}"
-        support: Önerimi destekle
-        footer_html: "<strong> Bu bağlantıyı %{link} ziyaret edin ve önerimi destekleyin.</strong> Çok fazla desteğe ihtiyacım var. Senin de destekle. Teşekkür ederim!"
+        support: Benim önerimi destekle
+        footer_html: "<strong>%{link}'i ziyaret edin ve bu öneriyi destekleyin.</strong> Çok olmamız gerekiyor. Karar senin de. Teşekkür ederim!"
       new:
         title: Önerinizin görseli
       options:
-        preview: Önizleme
+        preview: Ön izleme
         download: İndir
     mailing:
       index:
