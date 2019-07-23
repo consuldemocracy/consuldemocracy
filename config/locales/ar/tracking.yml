@@ -86,3 +86,7 @@ ar:
         notice: "تم تحديث شريط التقدم بنجاح"
       delete:
         notice: "تم حذف شريط التقدم بنجاح"
+  trackers:
+    budget_investments:
+      show:
+        assigned_trackers: "متتبّعون معيّنون"
