@@ -1255,6 +1255,3 @@ zh-CN:
         submit_header: 保存页眉
         card_title: 编辑卡
         submit_card: 保存卡
-    translations:
-      remove_language: 删除语音
-      add_language: 添加语音
