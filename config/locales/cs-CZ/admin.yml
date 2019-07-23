@@ -1308,6 +1308,3 @@ cs:
         submit_header: Uložit záhlaví
         card_title: Upravit kartu
         submit_card: Uložit kartu
-    translations:
-      remove_language: Odstranit jazykovou sadu
-      add_language: Přidat jazykovou sadu
