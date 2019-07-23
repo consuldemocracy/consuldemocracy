@@ -97,7 +97,6 @@ sv:
         submit_button: Spara ändringar
       show_link: Visa debatt
     form:
-      debate_text: Inledande debatt-text
       debate_title: Debatt-titel
       tags_instructions: Tagga debatten.
       tags_label: Ämnen
@@ -315,7 +314,6 @@ sv:
       warning: "Om du tar tillbaka ditt förslag går det fortfarande att stödja det, men det tas bort från listan och det visas ett meddelande om att du inte anser att förslaget bör stödjas längre"
       retired_reason_label: Anledning att ta tillbaka förslaget
       retired_reason_blank: Välj en anledning
-      retired_explanation_label: Förklaring
       retired_explanation_placeholder: Förklara varför du inte längre vill att förslaget ska stödjas
       submit_button: Ta tillbaka förslaget
     retire_options:
