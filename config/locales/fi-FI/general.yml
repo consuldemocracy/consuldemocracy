@@ -175,8 +175,6 @@ fi:
       form:
         submit_button: Tallenna muutokset
       show_link: Näytä ehdotus
-    retire_form:
-      retired_explanation_label: Selitys
     retire_options:
       unfeasible: Toteuttamiskelvoton
       other: Muu
