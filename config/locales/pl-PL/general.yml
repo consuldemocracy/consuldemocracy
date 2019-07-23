@@ -101,7 +101,6 @@ pl:
         submit_button: Zapisz zmiany
       show_link: Zobacz debatę
     form:
-      debate_text: Początkowy tekst debaty
       debate_title: Tytuł debaty
       tags_instructions: Oznacz tę debatę.
       tags_label: Tematów
@@ -322,7 +321,6 @@ pl:
       warning: "Jeśli wycofasz wniosek, nadal będzie on otrzymywał wsparcie, ale zostanie usunięty z głównej listy, a wiadomość będzie widoczna dla wszystkich użytkowników, oświadczając, że zdaniem autora wniosek nie powinien już być obsługiwany"
       retired_reason_label: Powód do wycofania wniosku
       retired_reason_blank: Wybierz opcję
-      retired_explanation_label: Wyjaśnienie
       retired_explanation_placeholder: Wyjaśnij krótko, dlaczego Twoim zdaniem ten wniosek nie powinien otrzymać więcej wsparcia
       submit_button: Wycofaj wniosek
     retire_options:
