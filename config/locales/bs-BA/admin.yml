@@ -1511,6 +1511,3 @@ bs:
         submit_header: Spasi zaglavlje
         card_title: Edituj karticu
         submit_card: Spasi karticu
-    translations:
-      remove_language: Ukloni tekst
-      add_language: Dodaj tekst
