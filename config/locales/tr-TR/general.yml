@@ -101,7 +101,6 @@ tr:
         submit_button: Değişiklikleri kaydet
       show_link: Tartışmayı göster
     form:
-      debate_text: İlk tartışma metni
       debate_title: Tartışma başlığı
       tags_instructions: Bu tartışmayı etiketle.
       tags_label: Konular
@@ -333,7 +332,6 @@ tr:
       warning: "Öneriyi çekseniz bile yine de destekleri kabul eder ancak ana listeden kaldırılır ve yazarın önerinin artık desteklenmemesi gerektiğini düşündüğünü belirten bir mesaj tüm kullanıcılar tarafından görülebilir"
       retired_reason_label: Öneriyi çekme nedeni
       retired_reason_blank: Bir seçenek seçin
-      retired_explanation_label: Açıklama
       retired_explanation_placeholder: Bu önerinin neden daha fazla destek almaması gerektiğini düşündüğünüzü kısaca açıklayın
       submit_button: Öneriyi çek
     retire_options:
