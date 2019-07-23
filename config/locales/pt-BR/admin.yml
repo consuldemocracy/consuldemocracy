@@ -1344,9 +1344,6 @@ pt-BR:
         submit_header: Salvar cabeçalho
         card_title: Editar cartão
         submit_card: Salvar cartão
-    translations:
-      remove_language: Remover idioma
-      add_language: Adicionar idioma
     change_log:
       id: "ID"
       actions: "Ações"
