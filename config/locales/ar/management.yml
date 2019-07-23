@@ -4,14 +4,18 @@ ar:
       menu:
         reset_password_email: إعادة تعيين كلمة المرور عبر البريد الإلكتروني
         reset_password_manually: إعادة تعيين كلمة المرور يدويّا
+      alert:
+        unverified_user: لم يتم تسجيل دخول مستخدم متحقق منه حتى الآن
       show:
         title: حساب المستخدم
       edit:
+        title: "تحرير حساب المستخدم: إعادة تعيين كلمة المرور"
         back: عودة
         password:
           password: كلمة المرور
           reset_email_send: تم إرسال البريد الإلكتروني بشكل صحيح.
           reseted: تمّت إعادة تعيين كلمة المرور بنجاح
+          random: انتاج كلمة مرور عشوائية
           save: حفظ كلمة السر
           print: طباعة كلمة المرور
           print_help: سوف تكون قادراً على طباعة كلمة المرور بعد حفظها.
@@ -20,6 +24,7 @@ ar:
       document_number_label: "رقم الوثيقة:"
       document_type_label: "نوع الوثيقة:"
       email_label: "ايمايل:"
+      identified_label: "معرف ب:"
       username_label: "اسم المستخدم:"
     check: التحقق من الوثيقة
     dashboard:
