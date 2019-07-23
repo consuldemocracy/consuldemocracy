@@ -10,42 +10,47 @@ tr:
         title: Katılımcı bütçeler
         table_name: İsim
         table_phase: Aşama
+        table_assigned_investments_tracking_open: Açık değerlendirmeye tabi olan yatırım projeleri
+        table_actions: Eylemler
+        tracking: İzleme
         no_budgets: "Bütçe yok"
     budget_investments:
       index:
-        assigned_to: "%{tracker}'e atandı"
+        assigned_to: "%{tracker} tarafından izleniyor"
         title: Yatırım projeleri
         edit: Kilometre taşlarını düzenle
         table_id: Kimlik
         table_title: Başlık
-        table_heading_name: Başlık adı
+        table_heading_name: Başlık
         table_actions: Eylemler
-        no_investments: "Hiç yatırım projesi yok."
+        no_investments: "Yatırım projesi bulunmamaktadır."
       show:
         title: Yatırım projesi
         info: Yazar bilgisi
+        by: Tarafından gönderildi
+        sent: Tarihinde gönderildi
         heading: Başlık
-        undefined: "Tanımsız"
+        undefined: "Tanımlanamadı"
         responsibles: Sorumlular
-        assigned_admin: Atanmış yönetici
+        assigned_admin: Görevli yönetici
     milestones:
       index:
         table_id: "Kimlik"
         table_title: "Başlık"
-        table_description: "Tanımlama"
+        table_description: "Tanım"
         table_publication_date: "Yayın tarihi"
         table_status: Durum
         table_actions: "Eylemler"
         delete: "Kilometre taşı sil"
         no_milestones: "Tanımlanmış kilometre taşları yok"
-        image: "Resim"
+        image: "Görsel"
         show_image: "Resmi göster"
         documents: "Belgeler"
         milestone: Kilometre taşı
         new_milestone: Yeni kilometre taşı oluştur
       form:
-        admin_statuses: Durumları yönet
-        no_statuses_defined: Henüz tanımlanmış durumlar bulunmamaktadır
+        admin_statuses: Durum düzenle
+        no_statuses_defined: Henüz düzenlenmiş durum bulunmamaktadır
       new:
         creating: Kilometre taşı oluştur
         date: Tarih
@@ -62,9 +67,9 @@ tr:
       manage: "İlerleme çubuklarını yönet"
       index:
         title: "İlerleme çubukları"
-        no_progress_bars: "İşlem çubukları yok"
-        new_progress_bar: "Yeni işlem çubuğu oluştur"
-        primary: "Birincil işlem çubuğu"
+        no_progress_bars: "İlerleme çubuğu bulunmadı"
+        new_progress_bar: "İlerleme çubuğu oluştur"
+        primary: "Birincil ilerleme çubuğu"
         table_id: "Kimlik"
         table_kind: "Tür"
         table_title: "Başlık"
@@ -84,4 +89,4 @@ tr:
   trackers:
     budget_investments:
       show:
-        assigned_trackers: "Atanan izleyiciler"
+        assigned_trackers: "Görevlendirilmiş izleyiciler"
