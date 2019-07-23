@@ -93,7 +93,6 @@ nl:
         submit_button: Bewaar wijzigingen
       show_link: Debat bekijken
     form:
-      debate_text: Omschrijving
       debate_title: Onderwerp
       tags_instructions: Voeg termen toe.
       tags_label: Onderwerpen
@@ -300,7 +299,6 @@ nl:
       warning: "Als u het voorstel terugtrekt kan het nog steeds ondersteund worden. Het wordt verwijderd van de hoofdlijst en er wordt een bericht zichtbaar voor alle deelnemers waarin wordt verklaard dat de auteur van mening is dat het voorstel niet meer ondersteund zou moeten worden"
       retired_reason_label: Reden het voorstel terug te trekken
       retired_reason_blank: Kies één van de mogelijkheden
-      retired_explanation_label: Uitleg
       retired_explanation_placeholder: Leg kort uit waarom u denkt dat dit voorstel niet meer gesteund moet worden
       submit_button: Trek voorstel terug
     retire_options:
