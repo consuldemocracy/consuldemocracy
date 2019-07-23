@@ -80,7 +80,6 @@ sl:
         submit_button: Shrani spremembe
       show_link: Poglej razpravo
     form:
-      debate_text: Začetno besedilo razprave
       debate_title: Naslov razprave
       tags_instructions: Dodaj oznake tej razpravi.
       tags_label: Tematike
@@ -248,7 +247,6 @@ sl:
       warning: "Če upokojiš predlog, lahko še vedno prejema podporo, ampak bo odstranjen iz glavnega seznama, vsem uporabnikom pa bo vidno sporočilo, da avtor meni, da predlog ni več vreden podpore"
       retired_reason_label: Razlog za upokojitev predloga
       retired_reason_blank: Izberi možnost
-      retired_explanation_label: Razlaga
       retired_explanation_placeholder: Na kratko razloži, zakaj meniš, da ta predlog ne bi smel več dobivati podpore
       submit_button: Upokoji predlog
     retire_options:
