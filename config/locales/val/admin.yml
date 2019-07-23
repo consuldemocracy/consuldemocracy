@@ -1311,6 +1311,3 @@ val:
         submit_header: Guardar capçalera
         card_title: Editar targeta
         submit_card: Guardar targeta
-    translations:
-      remove_language: Eliminar idioma
-      add_language: Afegir idioma
