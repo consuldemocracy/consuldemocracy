@@ -1,7 +1,15 @@
 tr:
   tracking:
+    header:
+      title: İzleme
+    menu:
+      title: İzleme
+      budgets: Katılımcı bütçeler
     budgets:
       index:
+        title: Katılımcı bütçeler
+        table_name: İsim
+        table_phase: Aşama
         no_budgets: "Bütçe yok"
     budget_investments:
       index:
