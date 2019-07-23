@@ -212,14 +212,14 @@ tr:
         retired: Geri çekildi
       proposal_totals:
         active_resources: Aktif kaynaklar
-        community: Toplumunuzdaki katılımcılar
+        community: Topluluğunuzdaki katılımcılar
         show_proposal: Öneriyi göster
-        preview_proposal: Öneri önizlemesi
+        preview_proposal: Öneri ön izlemesi
         current_goal: Mevcut hedef
         supports:
           zero: Destek yok
           one: 1 Destek
-          other: "Destek"
+          other: "Destekler"
     footer:
       accessibility: Erişilebilirlik
       conditions: Kullanım şartları ve koşulları
@@ -313,13 +313,13 @@ tr:
         submit_button: Öneri oluştur
     created:
       title: Tebrikler! İlk adımı attınız.
-      motivation: "Önerinizin başarılı olması için iletişim stratejinizi hazırlamak önemlidir. İlk birkaç gün son derece belirleyicidir."
-      motivation_2_html: "<strong>İletişim stratejinizle ilgili yardım almak istiyorsanız, teklifinizi taslak olarak bırakın. Size yol göstereceğiz.</strong>"
+      motivation: "Önerinizin başarılı olması için 	fırlatma kampanyası hazırlamak önemlidir. İlk birkaç gün belirleyicidir."
+      motivation_2_html: "<strong>Eğer yayını hazırlamak için öneriler almak istiyorsanız önerinizi taslak olarak bırakın ve biz size yol göstereceğiz.</strong>"
       publish: Hayır, öneriyi yayınlamak istiyorum
-      dashboard: Evet, yardım istiyorum ve önerimi daha sonra yayınlayacağım
+      dashboard: Evet, yardım istiyorum ve daha sonra yayınlayacağım
       preview_title: Önerinizi yayınladığınız zaman bu şekilde görünecektir
     share:
-      improve_it: Stratejinizi geliştirin ve daha fazla destek alın.
+      improve_it: Kampanyanızı geliştirin ve daha fazla destek alın.
       dashboard: Daha fazla bilgi görüntüle
       message: "Ben %{handle} içindeki öneri %{summary} 'i destekledim. Eğer ilgileniyorsanız, siz de destekleyin!"
     edit:
@@ -470,7 +470,7 @@ tr:
       embed_video_title: "%{proposal} ile ilgili video"
       title_video_url: "Harici video"
       author: Yazar
-      draft: Öneri taslak aşamasında. Henüz destek alamıyor, teklif listesinde de görünmüyor.
+      draft: Öneri taslakta. Henüz destek alamıyor, öneri listesinde de görünmüyor.
     update:
       form:
         submit_button: Değişiklikleri kaydet
@@ -479,17 +479,17 @@ tr:
       my_proposal: Önerimi düzenle
       progress: İlerleme
       resources: Kaynaklar
-      community: Toplum
+      community: Topluluk
       polls: Anketler
       mailing: E-posta
       poster: Görsel
       recommended_actions: Önerilen eylemler
-      messages: Kullanıcılara mesajlar
+      messages: Kullanıcılara mesaj
     form:
       request: Talep
     create_request:
       success: İstek başarıyla gönderildi. Size bilgi vermek için en kısa sürede sizinle iletişim kuracağız.
-      archived: Bu teklif arşivlendi ve kaynak talep edemiyor.
+      archived: Bu öneri arşivlendi ve kaynak talep edemiyor.
     progress:
       title: Grafik
       group_by_month: Aylık
@@ -512,10 +512,10 @@ tr:
       required_days: "%{days} gün gerekli"
       required_supports: "%{supports} destek gerekli"
       and: ve
-      view_resource: Kaynak görüntüle
+      view_resource: Kaynağa bak
       resource_requested: Kaynak zaten talep edildi
       request_resource: Kaynak talep et
-      resource_locked: Kaynak bağlandı
+      resource_locked: Kaynak kilitli
     recommended_actions:
       title: Önerilen eylemler
       goto_proposed_actions: Önerilen eylemlere git
