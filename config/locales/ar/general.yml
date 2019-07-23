@@ -827,6 +827,7 @@ ar:
     check_all: الكل
     check_none: لا شيء
     collective: جماعي
+    flag: الإبلاغ عنه كغير ملائم
     follow: "تابع"
     following: "التالية"
     follow_entity: "تابع %{entity}"
@@ -884,6 +885,7 @@ ar:
       categories: "فئات"
     target_blank_html: " (سيفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
+    unflag: حذف بلاغ عن عدم الملاءمة
     unfollow_entity: "توقف عن متابعة %{entity}"
     outline:
       searcher: محرك البحث
@@ -1023,6 +1025,13 @@ ar:
       organization: المنظمات لا يسمح لها بالتصويت
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
       not_voting_allowed: مرحلة التصويت مغلقة
+      different_heading_assigned:
+        zero: "يمكنك فقط دعم المشاريع الاستثمارية في %{count} مناطق. لقد قمت بالفعل بدعم الاستثمارات في %{supported_headings}."
+        one: "يمكنك فقط دعم المشاريع الاستثمارية في منطقة %{count}. لقد قمت بالفعل بدعم الاستثمارات في %{supported_headings}."
+        two: "يمكنك فقط دعم المشاريع الاستثمارية في %{count} مناطق. لقد قمت بالفعل بدعم الاستثمارات في %{supported_headings}."
+        few: "يمكنك فقط دعم المشاريع الاستثمارية في %{count} مناطق. لقد قمت بالفعل بدعم الاستثمارات في %{supported_headings}."
+        many: "يمكنك فقط دعم المشاريع الاستثمارية في %{count} مناطق. لقد قمت بالفعل بدعم الاستثمارات في %{supported_headings}."
+        other: "يمكنك فقط دعم المشاريع الاستثمارية في %{count} مناطق. لقد قمت بالفعل بدعم الاستثمارات في %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -1067,6 +1076,7 @@ ar:
       user_permission_votes: المشاركة في التصويت النهائي
   invisible_captcha:
     sentence_for_humans: "إذا كنت إنسانا، فتجاهل هذا الحقل"
+    timestamp_error_message: "آسف ، كان ذلك سريعًا جدًا! يرجى إعادة التقديم."
   related_content:
     title: "محتوى ذات الصلة"
     add: "إضافة محتوى ذات الصلة"
@@ -1121,9 +1131,12 @@ ar:
     title: نوع التصويت
     unique: إجابة واحدة، مغلقة
     multiple: إجابات متعددة، مغلقة
+    prioritized: إجابة متعددة الأولويات ، مغلقة
     positive_open: التصويت الإيجابي، مفتوح
     positive_negative_open: التصويت الإيجابي والسلبي، مفتوح
     answer_couples_open: أزواج من الإجابات، متاحة
     answer_couples_closed: أزواج من الإجابات، مغلق
     answer_set_open: وضع الإجابات، متاحة
     answer_set_closed: إجابات متعدّدة، مغلق
+  prioritization_type:
+    title: نوع الأولوية
