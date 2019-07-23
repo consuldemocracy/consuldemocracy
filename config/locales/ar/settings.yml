@@ -40,6 +40,8 @@ ar:
     meta_description_description: 'وصف الموقع <meta name="description">، يُستخدم لتحسين الSEO'
     meta_keywords: "الكلمات المفاتيح (SEO)"
     meta_keywords_description: 'الكلمات المفاتيح <meta name="keywords">، تُستخدم لتحسين الSEO'
+    min_age_to_participate: العمر الأدنى المطلوب للمشاركة
+    min_age_to_participate_description: "يمكن للمستخدمين الذين تجاوزوا هذا العمر المشاركة في جميع العمليات التي يلزم فيها حساب مستخدم تم التحقق منه"
     proposals:
       successful_proposal_id: مقترح ناجح
       poll_short_title: استطلاعات
