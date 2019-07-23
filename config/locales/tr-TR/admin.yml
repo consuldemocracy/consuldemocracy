@@ -356,6 +356,7 @@ tr:
           proposed_action: Önerilen eylem
           resource: Kaynak
         index:
+          description: "Kullanıcılar öneriler oluşturduklarında, fikirlerine destek almak için kaynakları ve tavsiyeleri önerebileceğiniz, tekliflerinin bir gösterge panosuna erişebilirler."
           create: Kaynak veya eylem oluştur
           edit: Düzenle
           delete: Sil
@@ -777,6 +778,7 @@ tr:
       new:
         title: Yeni bülten
         from: Bülten gönderirken görünecek e-posta adresi
+        header_footer_help_text_html: "Başlık ve altbilgi tüm e-postalar için aynıdır, bunları \n<code>uyg/görünümler/düzenler/postacı_üstbilgi'de</code> ve\n<code>uyg/görünümler/düzenler/postacı_altbilgi'de</code>değiştirebilirsiniz. <br>%{link} üzerindeki üstbilgi görüntüsünü değiştirebilirsiniz."
         image_link: "özel görüntüler"
       edit:
         title: Bülteni düzenle
@@ -1328,6 +1330,7 @@ tr:
       delete: Sil
       color_help: Onaltılık format
       show_results_and_stats: "Sonuçları ve istatistikleri göster"
+      results_and_stats_reminder: "Bu onay kutularını işaretleyince sonuçlar ve/veya istatistikleri herkese açık olacak ve her kullanıcı bunları görecek."
     geozones:
       index:
         title: Coğrafi Bölge (Geozone)
