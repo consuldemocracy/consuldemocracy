@@ -1,52 +1,57 @@
-<%= render "admin/shared/globalize_locales", resource: @heading %>
+<%= render "shared/globalize_locales", resource: @heading %>
 
-<div class="small-12 medium-6">
+<%= translatable_form_for [:admin, @budget, @group, @heading], url: path do |f| %>
 
-  <%= translatable_form_for [:admin, @budget, @group, @heading], url: path do |f| %>
+  <%= render "shared/errors", resource: @heading %>
 
-    <%= render "shared/errors", resource: @heading %>
-
+  <div class="row">
     <%= f.translatable_fields do |translations_form| %>
-      <%= translations_form.text_field :name,
-                                        label: t("admin.budget_headings.form.name"),
-                                        maxlength: 50,
-                                        placeholder: t("admin.budget_headings.form.name") %>
+      <div class="small-12 medium-6 column end">
+        <%= translations_form.text_field :name,
+                                          label: t("admin.budget_headings.form.name"),
+                                          maxlength: 50,
+                                          placeholder: t("admin.budget_headings.form.name") %>
+      </div>
     <% end %>
+  </div>
 
-    <%= f.text_field :price,
-                      label: t("admin.budget_headings.form.amount"),
-                      maxlength: 8,
-                      placeholder: t("admin.budget_headings.form.amount") %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= f.text_field :price,
+                        label: t("admin.budget_headings.form.amount"),
+                        maxlength: 8,
+                        placeholder: t("admin.budget_headings.form.amount") %>
 
-    <%= f.label :population, t("admin.budget_headings.form.population") %>
-    <p class="help-text" id="budgets-population-help-text">
-      <%= t("admin.budget_headings.form.population_info") %>
-    </p>
-    <%= f.text_field :population,
-                      label: false,
-                      maxlength: 8,
-                      placeholder: t("admin.budget_headings.form.population"),
-                      data: {toggle_focus: "population-info"},
-                      aria: {describedby: "budgets-population-help-text"} %>
+      <%= f.label :population, t("admin.budget_headings.form.population") %>
+      <p class="help-text" id="budgets-population-help-text">
+        <%= t("admin.budget_headings.form.population_info") %>
+      </p>
+      <%= f.text_field :population,
+                        label: false,
+                        maxlength: 8,
+                        placeholder: t("admin.budget_headings.form.population"),
+                        data: {toggle_focus: "population-info"},
+                        aria: {describedby: "budgets-population-help-text"} %>
 
-    <%= f.text_field :latitude,
-                      label: t("admin.budget_headings.form.latitude"),
-                      maxlength: 22,
-                      placeholder: "latitude" %>
+      <%= f.text_field :latitude,
+                        label: t("admin.budget_headings.form.latitude"),
+                        maxlength: 22,
+                        placeholder: "latitude" %>
 
-    <%= f.text_field :longitude,
-                      label: t("admin.budget_headings.form.longitude"),
-                      maxlength: 22,
-                      placeholder: "longitude" %>
-    <p class="help-text" id="budgets-coordinates-help-text">
-      <%= t("admin.budget_headings.form.coordinates_info") %>
-    </p>
+      <%= f.text_field :longitude,
+                        label: t("admin.budget_headings.form.longitude"),
+                        maxlength: 22,
+                        placeholder: "longitude" %>
+      <p class="help-text" id="budgets-coordinates-help-text">
+        <%= t("admin.budget_headings.form.coordinates_info") %>
+      </p>
 
-    <%= f.check_box :allow_custom_content, label: t("admin.budget_headings.form.allow_content_block") %>
-    <p class="help-text" id="budgets-content-blocks-help-text">
-      <%= t("admin.budget_headings.form.content_blocks_info") %>
-    </p>
+      <%= f.check_box :allow_custom_content, label: t("admin.budget_headings.form.allow_content_block") %>
+      <p class="help-text" id="budgets-content-blocks-help-text">
+        <%= t("admin.budget_headings.form.content_blocks_info") %>
+      </p>
 
-    <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
-  <% end %>
-</div>
+      <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
+    </div>
+  </div>
+<% end %>

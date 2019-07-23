@@ -3,6 +3,7 @@ class ProposalsController < ApplicationController
   include CommentableActions
   include FlagActions
   include ImageAttributes
+  include Translatable
 
   before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
@@ -37,7 +38,6 @@ class ProposalsController < ApplicationController
 
   def create
     @proposal = Proposal.new(proposal_params.merge(author: current_user))
-
     if @proposal.save
       redirect_to created_proposal_path(@proposal), notice: I18n.t("flash.actions.create.proposal")
     else
@@ -62,7 +62,7 @@ class ProposalsController < ApplicationController
   end
 
   def retire
-    if valid_retired_params? && @proposal.update(retired_params.merge(retired_at: Time.current))
+    if @proposal.update(retired_params.merge(retired_at: Time.current))
       redirect_to proposal_path(@proposal), notice: t("proposals.notice.retired")
     else
       render action: :retire_form
@@ -98,22 +98,20 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      params.require(:proposal).permit(:title, :summary, :description, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service,
-                                       :geozone_id, :skip_map, image_attributes: image_attributes,
-                                       documents_attributes: [:id, :title, :attachment,
-                                       :cached_attachment, :user_id, :_destroy],
-                                       map_location_attributes: [:latitude, :longitude, :zoom])
+      attributes = [:video_url,:responsible_name, :tag_list,
+                    :terms_of_service, :geozone_id, :skip_map,
+                    image_attributes: image_attributes,
+                    documents_attributes: [:id, :title, :attachment, :cached_attachment,
+                                           :user_id, :_destroy],
+                    map_location_attributes: [:latitude, :longitude, :zoom]]
+      translations_attributes = translation_params(Proposal, except: :retired_explanation)
+      params.require(:proposal).permit(attributes, translations_attributes)
     end
 
     def retired_params
-      params.require(:proposal).permit(:retired_reason, :retired_explanation)
-    end
-
-    def valid_retired_params?
-      @proposal.errors.add(:retired_reason, I18n.t("errors.messages.blank")) if params[:proposal][:retired_reason].blank?
-      @proposal.errors.add(:retired_explanation, I18n.t("errors.messages.blank")) if params[:proposal][:retired_explanation].blank?
-      @proposal.errors.empty?
+      attributes = [:retired_reason]
+      translations_attributes = translation_params(Proposal, only: :retired_explanation)
+      params.require(:proposal).permit(attributes, translations_attributes)
     end
 
     def resource_model

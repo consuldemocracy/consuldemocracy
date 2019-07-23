@@ -64,6 +64,10 @@ module ProposalsHelper
     proposals_current_view == "default" ? "minimal" : "default"
   end
 
+  def summary_help_text_id(translations_form)
+    "summary-help-text-#{translations_form.locale}"
+  end
+
   def link_to_toggle_proposal_selection(proposal)
     if proposal.selected?
       button_text = t("admin.proposals.index.selected")

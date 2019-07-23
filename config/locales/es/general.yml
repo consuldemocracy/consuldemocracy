@@ -101,7 +101,6 @@ es:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_text: Texto inicial del debate
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
       tags_label: Temas
@@ -333,7 +332,6 @@ es:
       warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
       retired_reason_label: Razón por la que se retira la propuesta
       retired_reason_blank: Selecciona una opción
-      retired_explanation_label: Explicación
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
     retire_options:
@@ -824,6 +822,14 @@ es:
         legislation_process: "Descargar procesos legislativos"
         budget: "Descargar presupuestos"
         investments: "Descargar proyectos"
+    translations:
+      select_language_prompt: Seleccionar idioma
+      remove_language: Eliminar idioma
+      add_language: Añadir idioma
+      languages_in_use_html:
+        zero: "<span class='js-languages-count'>0</span> idiomas en uso"
+        one: "<span class='js-languages-count'>1</span> idioma en uso"
+        other: "<span class='js-languages-count'>%{count}</span> idiomas en uso"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
@@ -1032,3 +1038,9 @@ es:
     title: Tipo de priorizacion
     borda: Votación con recuento Borda
     dowdall: Votación con recuento Dowdall
+  remote_translations:
+    text: El contenido de esta página no está disponible en tu idioma
+    all_remote_translations_enqueued_text: "En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma"
+    create:
+      enqueue_remote_translation: Se han solicitado correctamente las traducciones.
+    button: Traducir página

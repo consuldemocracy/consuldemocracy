@@ -116,6 +116,10 @@ es:
       public_stats_description: "Muestra las estadísticas públicas en el panel de Administración"
       help_page: "Página de ayuda"
       help_page_description: 'Muestra un menú Ayuda que contiene una página con una sección de información sobre cada funcionalidad habilitada. También se pueden crear páginas y menús personalizados en las secciones "Personalizar páginas" y "Personalizar bloques"'
+      remote_translations: "Traducciones remotas"
+      remote_translations_description: "Muestra un botón que permite a los usuarios solicitar una traducción de una página no traducida en su idioma."
+      translation_interface: "Interfaz de traducción"
+      translation_interface_description: "Muestra la interfaz de traducción manual permitiendo a los usuarios introducir sus contenidos en todos los idiomas disponibles de la aplicación si así lo desean. Esta opción solo afecta a las vistas de usuarios de la aplicación, en el panel de administración está activa siempre."
       valuation_comment_notification: "Notificar comentarios de evaluación"
       valuation_comment_notification_description: "Envía un email a todos los usuarios menos al que haya comentado asociados a un presupuesto participativo cuando se cree un nuevo comentario de evaluación"
     map:

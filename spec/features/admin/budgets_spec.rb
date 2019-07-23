@@ -7,7 +7,7 @@ describe "Admin budgets" do
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "budget",
                   "edit_admin_budget_path",
                   %w[name]
@@ -227,7 +227,7 @@ describe "Admin budgets" do
 
       visit edit_admin_budget_path(budget)
 
-      select "Español", from: "translation_locale"
+      select "Español", from: :add_language
       fill_in "Name", with: "Spanish name"
       click_button "Update Budget"
 
@@ -236,7 +236,7 @@ describe "Admin budgets" do
 
       visit edit_admin_budget_path(budget)
 
-      click_link "English"
+      select "English", from: :select_language
       fill_in "Name", with: "New English Name"
       click_button "Update Budget"
 

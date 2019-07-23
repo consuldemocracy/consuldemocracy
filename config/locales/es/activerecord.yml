@@ -152,6 +152,9 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
+      budget/investment/translation:
+        title: "Título"
+        description: "Descripción"
       geozone:
         name: Nombre
         external_code: "Código externo (opcional)"
@@ -183,7 +186,10 @@ es:
         author: "Autor"
         description: "Opinión"
         terms_of_service: "Términos de servicio"
-        title: "Título"
+        title: "Título del debate"
+      debate/translation:
+        title: "Título del debate"
+        description: "Texto inicial del debate"
       proposal:
         author: "Autor"
         title: "Título"
@@ -191,6 +197,11 @@ es:
         description: "Descripción"
         selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
+      proposal/translation:
+        title: "Título de la propuesta"
+        description: "Texto desarrollado de la propuesta"
+        summary: "Resumen de la propuesta"
+        retired_explanation: "Explicación"
       user:
         login: "Email o nombre de usuario"
         email: "Email"
@@ -439,6 +450,7 @@ es:
             valuation:
               cannot_comment_valuation: "No puedes comentar una evaluación"
       messages:
+        translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"
         another_poll_active: Hay otra encuesta activa para este periodo.
         restrict_dependent_destroy:

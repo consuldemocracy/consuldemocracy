@@ -9,7 +9,7 @@ describe "Admin budget groups" do
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "budget_group",
                   "edit_admin_budget_group_path",
                   %w[name]
@@ -188,7 +188,7 @@ describe "Admin budget groups" do
 
       visit edit_admin_budget_group_path(budget, group)
 
-      select "Español", from: "translation_locale"
+      select "Español", from: :add_language
       fill_in "Group name", with: "Spanish name"
       click_button "Save group"
 
@@ -197,7 +197,7 @@ describe "Admin budget groups" do
 
       visit edit_admin_budget_group_path(budget, group)
 
-      click_link "English"
+      select "English", from: :select_language
       fill_in "Group name", with: "New English Name"
       click_button "Save group"
 

@@ -19,7 +19,7 @@ class Admin::HiddenBudgetInvestmentsController < Admin::BaseController
   end
 
   def restore
-    @investment.restore
+    @investment.restore(recursive: true)
     @investment.ignore_flag
     Activity.log(current_user, :restore, @investment)
     redirect_to request.query_parameters.merge(action: :index)

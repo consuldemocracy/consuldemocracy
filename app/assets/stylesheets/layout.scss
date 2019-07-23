@@ -197,6 +197,10 @@ a {
   padding-top: $line-height;
 }
 
+.padding-top {
+  padding-top: $line-height;
+}
+
 .light {
   background: $light;
 }
@@ -471,6 +475,26 @@ header {
       position: absolute;
       right: 2px;
       top: 9px;
+    }
+  }
+
+  .remote-translations-button {
+
+    &.callout {
+      margin: 0;
+      padding: rem-calc(6);
+
+      [type="submit"] {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        color: $brand;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -1058,6 +1082,19 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
+}
+
+.translatable-fields {
+
+  &.highlight {
+    display: inline-block;
+    padding-top: $line-height;
+    width: 100%;
+  }
+}
+
+.translation-locale {
+  padding-top: $line-height;
 }
 
 // 07. Callout

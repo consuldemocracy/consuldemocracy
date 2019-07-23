@@ -11,6 +11,12 @@ describe "Admin budget investments" do
                   :budget_investment,
                   "admin_budget_budget_investment_path"
 
+  it_behaves_like "edit_translatable",
+                  :budget_investment,
+                  "edit_admin_budget_budget_investment_path",
+                  %w[title],
+                  { "description" => :ckeditor }
+
   before do
     @admin = create(:administrator)
     login_as(@admin.user)
@@ -826,33 +832,43 @@ describe "Admin budget investments" do
     end
 
     before do
-      create(:budget_investment, title: "Some investment", budget: budget)
+      I18n.with_locale(:es) do
+        Globalize.with_locale(:es) do
+          create(:budget_investment, title: "Proyecto de inversión", budget: budget)
+        end
+      end
     end
 
     scenario "Search investments by title" do
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
-      fill_in "title_or_id", with: "Some investment"
+      fill_in "title_or_id", with: "Proyecto de inversión"
       click_button "Filter"
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).not_to have_content("Some other investment")
+
+      fill_in "title_or_id", with: "Some other investment"
+      click_button "Filter"
+
+      expect(page).not_to have_content("Proyecto de inversión")
+      expect(page).to have_content("Some other investment")
     end
 
     scenario "Search investments by ID" do
       visit admin_budget_budget_investments_path(budget)
 
-      expect(page).to have_content("Some investment")
+      expect(page).to have_content("Proyecto de inversión")
       expect(page).to have_content("Some other investment")
 
       fill_in "title_or_id", with: first_investment.id
       click_button "Filter"
 
       expect(page).to have_content("Some other investment")
-      expect(page).not_to have_content("Some investment")
+      expect(page).not_to have_content("Proyecto de inversión")
     end
   end
 
@@ -1092,8 +1108,8 @@ describe "Admin budget investments" do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit"
 
-      fill_in "budget_investment_title", with: "Potatoes"
-      fill_in "budget_investment_description", with: "Carrots"
+      fill_in "Title", with: "Potatoes"
+      fill_in "Description", with: "Carrots"
       select "#{budget_investment.group.name}: Barbate", from: "budget_investment[heading_id]"
       uncheck "budget_investment_incompatible"
       check "budget_investment_selected"
@@ -1355,7 +1371,7 @@ describe "Admin budget investments" do
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
       click_link "Edit"
 
-      fill_in "budget_investment_title", with: ""
+      fill_in "Title", with: ""
 
       click_button "Update"
 

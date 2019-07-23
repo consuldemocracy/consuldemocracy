@@ -1,37 +1,47 @@
 App.Globalize =
 
+  selected_language: ->
+    $("#select_language").val()
+
   display_locale: (locale) ->
     App.Globalize.enable_locale(locale)
-    $(".js-globalize-locale-link").each ->
-      if $(this).data("locale") == locale
-        $(this).show()
-        App.Globalize.highlight_locale($(this))
-      $(".js-globalize-locale option:selected").removeAttr("selected")
-      return
+    App.Globalize.add_language(locale)
+    $(".js-add-language option:selected").removeAttr("selected")
 
   display_translations: (locale) ->
+    $(".js-select-language option[value=#{locale}]").prop("selected", true)
     $(".js-globalize-attribute").each ->
       if $(this).data("locale") == locale
         $(this).show()
       else
         $(this).hide()
       $(".js-delete-language").hide()
-      $("#js_delete_#{locale}").show()
+      $(".js-delete-" + locale).show()
 
-  highlight_locale: (element) ->
-    $(".js-globalize-locale-link").removeClass("is-active")
-    element.addClass("is-active")
+  add_language: (locale) ->
+    language_option = $(".js-add-language [value=#{locale}]")
+    if $(".js-select-language option[value=#{locale}]").length == 0
+      option = new Option(language_option.text(), language_option.val())
+      $(".js-select-language").append(option)
+    $(".js-select-language option[value=#{locale}]").prop("selected", true)
 
   remove_language: (locale) ->
     $(".js-globalize-attribute[data-locale=#{locale}]").each ->
       $(this).val("").hide()
-      if CKEDITOR.instances[$(this).attr("id")]
-        CKEDITOR.instances[$(this).attr("id")].setData("")
-    $(".js-globalize-locale-link[data-locale=#{locale}]").hide()
-    next = $(".js-globalize-locale-link:visible").first()
-    App.Globalize.highlight_locale(next)
-    App.Globalize.display_translations(next.data("locale"))
+      App.Globalize.resetEditor(this)
+
+    $(".js-select-language option[value=#{locale}]").remove()
+    next = $(".js-select-language option:not([value=''])").first()
+    App.Globalize.display_translations(next.val())
     App.Globalize.disable_locale(locale)
+    App.Globalize.update_description()
+
+    if $(".js-select-language option").length == 1
+      $(".js-select-language option").prop("selected", true)
+
+  resetEditor: (element) ->
+    if CKEDITOR.instances[$(element).attr("id")]
+      CKEDITOR.instances[$(element).attr("id")].setData("")
 
   enable_locale: (locale) ->
     App.Globalize.destroy_locale_field(locale).val(false)
@@ -43,8 +53,8 @@ App.Globalize =
 
   enabled_locales: ->
     $.map(
-      $(".js-globalize-locale-link:visible"),
-      (element) -> $(element).data("locale")
+      $(".js-select-language:first option:not([value=''])"),
+      (element) -> $(element).val()
     )
 
   destroy_locale_field: (locale) ->
@@ -54,20 +64,34 @@ App.Globalize =
     $("#enabled_translations_#{locale}")
 
   refresh_visible_translations: ->
-    locale = $(".js-globalize-locale-link.is-active").data("locale")
+    locale = $(".js-select-language").val()
     App.Globalize.display_translations(locale)
 
+  update_description: ->
+    count = App.Globalize.enabled_locales().length
+    description = App.Globalize.language_description(count)
+    $(".js-languages-description").html(description)
+    $(".js-languages-count").text(count)
+
+  language_description: (count) ->
+    switch count
+      when 0 then $(".globalize-languages").data("zero-languages-description")
+      when 1 then $(".globalize-languages").data("one-languages-description")
+      else $(".globalize-languages").data("other-languages-description")
+
   initialize: ->
-    $(".js-globalize-locale").on "change", ->
-      App.Globalize.display_translations($(this).val())
-      App.Globalize.display_locale($(this).val())
-
-    $(".js-globalize-locale-link").on "click", ->
-      locale = $(this).data("locale")
+    $(".js-add-language").on "change", ->
+      locale = $(this).val()
       App.Globalize.display_translations(locale)
-      App.Globalize.highlight_locale($(this))
+      App.Globalize.display_locale(locale)
+      App.Globalize.update_description()
 
-    $(".js-delete-language").on "click", ->
+    $(".js-select-language").on "change", ->
+      locale = $(this).val()
+      App.Globalize.display_translations(locale)
+
+    $(".js-delete-language").on "click", (e) ->
+      e.preventDefault()
       locale = $(this).data("locale")
       $(this).hide()
       App.Globalize.remove_language(locale)

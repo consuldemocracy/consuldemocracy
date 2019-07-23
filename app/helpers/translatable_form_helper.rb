@@ -6,15 +6,27 @@ module TranslatableFormHelper
     end
   end
 
+  def translations_interface_enabled?
+    Setting["feature.translation_interface"].present? || backend_translations_enabled?
+  end
+
+  def backend_translations_enabled?
+    (controller.class.parents & [Admin, Management, Valuation, Tracking]).any?
+  end
+
+  def highlight_translation_html_class
+    "highlight" if translations_interface_enabled?
+  end
+
   class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
     attr_accessor :translations
 
     def translatable_fields(&block)
       @translations = {}
-      @object.globalize_locales.map do |locale|
+      visible_locales.map do |locale|
         @translations[locale] = translation_for(locale)
       end
-      @object.globalize_locales.map do |locale|
+      visible_locales.map do |locale|
         Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
       end.join.html_safe
     end
@@ -26,6 +38,7 @@ module TranslatableFormHelper
           @template.content_tag :div, translations_options(translations_form.object, locale) do
             @template.concat translations_form.hidden_field(
               :_destroy,
+              value: !@template.enabled_locale?(translations_form.object.globalized_model, locale),
               data: { locale: locale }
             )
 
@@ -52,15 +65,17 @@ module TranslatableFormHelper
 
       def new_translation_for(locale)
         @object.translations.new(locale: locale).tap do |translation|
-          unless locale == I18n.locale && no_other_translations?(translation)
-            translation.mark_for_destruction
-          end
+          translation.mark_for_destruction
         end
+      end
+
+      def highlight_translation_html_class
+        @template.highlight_translation_html_class
       end
 
       def translations_options(resource, locale)
         {
-          class: "translatable-fields js-globalize-attribute",
+          class: "translatable-fields js-globalize-attribute #{highlight_translation_html_class}",
           style: @template.display_translation_style(resource.globalized_model, locale),
           data:  { locale: locale }
         }
@@ -68,6 +83,14 @@ module TranslatableFormHelper
 
       def no_other_translations?(translation)
         (@object.translations - [translation]).reject(&:_destroy).empty?
+      end
+
+      def visible_locales
+        if @template.translations_interface_enabled?
+          @object.globalize_locales
+        else
+          [I18n.locale]
+        end
       end
   end
 

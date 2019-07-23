@@ -1,32 +1,47 @@
-<%= form_for(@proposal, url: form_url) do |f| %>
+<%= render "shared/globalize_locales", resource: @proposal %>
+
+<%= translatable_form_for(@proposal, url: form_url) do |f| %>
+
   <%= render "shared/errors", resource: @proposal %>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%= f.label :title, t("proposals.form.proposal_title") %>
-      <%= f.text_field :title, maxlength: Proposal.title_max_length, placeholder: t("proposals.form.proposal_title"), label: false, data: {js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_proposals_path}%>
-    </div>
-    <div id="js-suggest"></div>
+  <div class="row column">
+    <%= f.translatable_fields do |translations_form| %>
+      <div class="small-12 column">
+        <%= translations_form.text_field :title,
+              maxlength: Proposal.title_max_length,
+              placeholder: t("proposals.form.proposal_title"),
+              data: { js_suggest_result: "js_suggest_result",
+                      js_suggest: ".js-suggest",
+                      js_url: suggest_proposals_path } %>
+      </div>
+      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+      <div class="small-12 column">
+        <%= translations_form.label :summary %>
+        <p class="help-text" id="<%= summary_help_text_id(translations_form) %>">
+          <%= t("proposals.form.proposal_summary_note") %>
+        </p>
+        <%= translations_form.text_area :summary,
+                                        rows: 4, maxlength: 200,
+                                        label: false,
+                                        placeholder: t("proposals.form.proposal_summary"),
+                                        aria: {describedby: summary_help_text_id(translations_form)} %>
+      </div>
+
+      <div class="ckeditor small-12 column">
+        <%= translations_form.cktext_area :description,
+                                          maxlength: Proposal.description_max_length,
+                                          ckeditor: { language: I18n.locale } %>
+      </div>
+    <% end %>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
-      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t("proposals.form.proposal_summary"),
-                      aria: {describedby: "summary-help-text"} %>
-    </div>
-
-    <div class="ckeditor small-12 column">
-      <%= f.label :description, t("proposals.form.proposal_text") %>
-      <%= f.cktext_area :description, maxlength: Proposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
-    </div>
-
-    <div class="small-12 column">
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
+      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"),
+                                   label: false,
                                    aria: {describedby: "video-url-help-text"} %>
     </div>
 

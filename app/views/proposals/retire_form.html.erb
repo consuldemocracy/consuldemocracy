@@ -10,7 +10,9 @@
      <%= t("proposals.retire_form.warning") %>
     </div>
 
-    <%= form_for(@proposal, url: retire_proposal_path(@proposal)) do |f| %>
+    <%= render "shared/globalize_locales", resource: @proposal, manage_languages: false %>
+
+    <%= translatable_form_for(@proposal, url: retire_proposal_path(@proposal)) do |f| %>
       <%= render "shared/errors", resource: @proposal %>
       <div class="row">
         <div class="small-12 medium-6 large-4 column">
@@ -20,11 +22,13 @@
       </div>
 
       <div class="row">
-        <div class="small-12 medium-9 column">
-          <%= f.label :retired_explanation, t("proposals.retire_form.retired_explanation_label") %>
-          <%= f.text_area :retired_explanation, rows: 4, maxlength: 500, label: false,
-                          placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
-        </div>
+        <%= f.translatable_fields do |translations_form| %>
+          <div class="small-12 medium-9 column float-left">
+            <%= translations_form.text_area :retired_explanation,
+                  rows: 4, maxlength: 500,
+                  placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
+          </div>
+        <% end %>
       </div>
 
       <div class="row">

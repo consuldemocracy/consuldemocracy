@@ -150,6 +150,9 @@ en:
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
+      budget/investment/translation:
+        title: "Title"
+        description: "Description"
       geozone:
         name: Name
         external_code: "External code (optional)"
@@ -182,6 +185,9 @@ en:
         description: "Opinion"
         terms_of_service: "Terms of service"
         title: "Title"
+      debate/translation:
+        title: "Debate title"
+        description: "Initial debate text"
       proposal:
         author: "Author"
         title: "Title"
@@ -189,6 +195,11 @@ en:
         description: "Description"
         selected: "Mark as selected"
         terms_of_service: "Terms of service"
+      proposal/translation:
+        title: "Proposal title"
+        description: "Proposal text"
+        summary: "Proposal summary"
+        retired_explanation: "Explanation"
       user:
         login: "Email or username"
         email: "Email"
@@ -437,6 +448,7 @@ en:
             valuation:
               cannot_comment_valuation: "You cannot comment a valuation"
       messages:
+        translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"
         another_poll_active: There is another poll active for the given period
         restrict_dependent_destroy:

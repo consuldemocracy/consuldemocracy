@@ -7,7 +7,7 @@ describe "Admin custom information texts" do
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "i18n_content",
                   "admin_site_customization_information_texts_path",
                   %w[value]
@@ -68,7 +68,7 @@ describe "Admin custom information texts" do
 
       visit admin_site_customization_information_texts_path
 
-      select "Français", from: "translation_locale"
+      select "Français", from: :add_language
       fill_in "contents[content_#{key}]values[value_fr]", with: "Aide personalise sur les débats"
 
       click_button "Save"
@@ -76,25 +76,26 @@ describe "Admin custom information texts" do
       expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path
+      select "Français", from: :select_language
 
-      select "Français", from: "translation_locale"
       expect(page).to have_content "Aide personalise sur les débats"
       expect(page).not_to have_content "Aide sur les débats"
     end
 
     scenario "Update a translation", :js do
       key = "proposals.form.proposal_title"
+      create(:i18n_content, key: key, value_fr: "Titre de la proposition")
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
-      select "Français", from: "translation_locale"
+      select "Français", from: :select_language
       fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise de la proposition"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
-      click_link "Français"
+      select "Français", from: :select_language
 
       expect(page).to have_content "Titre personalise de la proposition"
       expect(page).not_to have_content "Titre de la proposition"
@@ -106,30 +107,31 @@ describe "Admin custom information texts" do
                                            value_en: "Custom debate title",
                                            value_es: "Título personalizado de debate")
 
-      second_key = "debates.form.debate_text"
-      debate_text = create(:i18n_content, key: second_key,
-                                          value_en: "Custom debate text",
-                                          value_es: "Texto personalizado de debate")
+      second_key = "debates.new.start_new"
+      page_title = create(:i18n_content, key: second_key,
+                                          value_en: "Start a new debate",
+                                          value_es: "Empezar un debate")
 
       visit admin_site_customization_information_texts_path(tab: "debates")
 
-      click_link "Español"
+      select "Español", from: :select_language
       click_link "Remove language"
       click_button "Save"
 
       expect(page).not_to have_link "Español"
 
       visit admin_site_customization_information_texts_path(tab: "debates")
-      click_link "English"
-      expect(page).to have_content "Custom debate text"
+      select "English", from: :select_language
+
+      expect(page).to have_content "Start a new debate"
       expect(page).to have_content "Custom debate title"
 
       debate_title.reload
-      debate_text.reload
+      page_title.reload
 
-      expect(debate_text.value_es).to be(nil)
+      expect(page_title.value_es).to be(nil)
       expect(debate_title.value_es).to be(nil)
-      expect(debate_text.value_en).to eq("Custom debate text")
+      expect(page_title.value_en).to eq("Start a new debate")
       expect(debate_title.value_en).to eq("Custom debate title")
     end
   end

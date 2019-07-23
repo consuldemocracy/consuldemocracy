@@ -1630,9 +1630,6 @@ en:
         submit_header: Save header
         card_title: Edit card
         submit_card: Save card
-    translations:
-      remove_language: Remove language
-      add_language: Add language
     change_log:
       title: "Change Log"
       id: "ID"

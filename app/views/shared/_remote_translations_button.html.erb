@@ -1,0 +1,11 @@
+<div class="remote-translations-button callout primary text-center">
+  <% if display_remote_translation_button?(remote_translations) %>
+    <%= form_tag remote_translations_path do %>
+      <%= hidden_field_tag :remote_translations, remote_translations.to_json %>
+      <%= t("remote_translations.text") %>
+      <%= submit_tag t("remote_translations.button") %>
+    <% end %>
+  <% else %>
+    <%= t("remote_translations.all_remote_translations_enqueued_text") %>
+  <% end %>
+</div>

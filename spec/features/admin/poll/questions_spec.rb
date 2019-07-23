@@ -6,7 +6,7 @@ describe "Admin poll questions" do
     login_as(create(:administrator).user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "poll_question",
                   "edit_admin_question_path",
                   %w[title]

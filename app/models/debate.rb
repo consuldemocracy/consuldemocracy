@@ -20,6 +20,10 @@ class Debate < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
+  translates :title, touch: true
+  translates :description, touch: true
+  include Globalizable
+
   belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :geozone
   has_many :comments, as: :commentable
@@ -27,12 +31,9 @@ class Debate < ApplicationRecord
   extend DownloadSettings::DebateCsv
   delegate :name, :email, to: :author, prefix: true
 
-  validates :title, presence: true
-  validates :description, presence: true
+  validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
+  validates_translation :description, presence: true, length: { in: 10..Debate.description_max_length }
   validates :author, presence: true
-
-  validates :title, length: { in: 4..Debate.title_max_length }
-  validates :description, length: { in: 10..Debate.description_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -64,13 +65,17 @@ class Debate < ApplicationRecord
       .where("author_id != ?", user.id)
   end
 
+  def searchable_translations_definitions
+    { title       => "A",
+      description => "D" }
+  end
+
   def searchable_values
-    { title              => "A",
+    {
       author.username    => "B",
       tag_list.join(" ") => "B",
       geozone.try(:name) => "B",
-      description        => "D"
-    }
+    }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)

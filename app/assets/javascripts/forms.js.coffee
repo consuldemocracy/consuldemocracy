@@ -40,14 +40,15 @@ App.Forms =
   hideOrShowFieldsAfterSelection: ->
     $("[name='progress_bar[kind]']").on
       change: ->
-        title_field = $("[name^='progress_bar'][name$='[title]']").parent()
+        locale = App.Globalize.selected_language()
+        title_field = $(".translatable-fields[data-locale=#{locale}]")
 
         if this.value == "primary"
           title_field.hide()
-          $("#globalize_locales").hide()
+          $(".globalize-languages").hide()
         else
           title_field.show()
-          $("#globalize_locales").show()
+          $(".globalize-languages").show()
 
     $("[name='progress_bar[kind]']").change()
 

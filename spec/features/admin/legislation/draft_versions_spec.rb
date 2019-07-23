@@ -7,7 +7,7 @@ describe "Admin legislation draft versions" do
     login_as(admin.user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "legislation_draft_version",
                   "edit_admin_legislation_process_draft_version_path",
                   %w[title changelog],
@@ -63,7 +63,7 @@ describe "Admin legislation draft versions" do
       fill_in "Changes", with: "Version 3 changes"
       fill_in "Text", with: "Version 3 body"
 
-      within(".end") do
+      within("form .end") do
         click_button "Create version"
       end
 

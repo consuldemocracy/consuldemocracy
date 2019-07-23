@@ -101,7 +101,6 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
-      debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
       tags_label: Topics
@@ -333,7 +332,6 @@ en:
       warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
       retired_reason_label: Reason to retire the proposal
       retired_reason_blank: Choose an option
-      retired_explanation_label: Explanation
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
       submit_button: Retire proposal
     retire_options:
@@ -827,6 +825,14 @@ en:
         legislation_process: "Download legislation processes"
         budget: "Download budgets"
         investments: "Download projects"
+    translations:
+      select_language_prompt: Choose language
+      remove_language: Remove language
+      add_language: Add language
+      languages_in_use_html:
+        zero: "<span class='js-languages-count'>0</span> languages in use"
+        one: "<span class='js-languages-count'>1</span> language in use"
+        other: "<span class='js-languages-count'>%{count}</span> languages in use"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -1035,3 +1041,9 @@ en:
     title: Prioritization type
     borda: Borda votation
     dowdall: Dowdall votation
+  remote_translations:
+    text: The content of this page is not available in your language
+    all_remote_translations_enqueued_text: In a short period of time refreshing the page you will be able to see all the content in your language.
+    create:
+      enqueue_remote_translation: Translations have been correctly requested.
+    button: Translate page

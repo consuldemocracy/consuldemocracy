@@ -6,6 +6,7 @@ module Budgets
     include FlagActions
     include RandomSeed
     include ImageAttributes
+    include Translatable
 
     PER_PAGE = 10
 
@@ -48,6 +49,7 @@ module Budgets
 
       load_investment_votes(@investments)
       @tag_cloud = tag_cloud
+      @remote_translations = detect_remote_translations(@investments)
     end
 
     def new
@@ -60,6 +62,7 @@ module Budgets
       set_comment_flags(@comment_tree.comments)
       load_investment_votes(@investment)
       @investment_ids = [@investment.id]
+      @remote_translations = detect_remote_translations([@investment], @comment_tree.comments)
     end
 
     def create
@@ -122,12 +125,12 @@ module Budgets
       end
 
       def investment_params
-        params.require(:budget_investment)
-              .permit(:title, :description, :heading_id, :tag_list,
+        attributes = [:heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
-                      map_location_attributes: [:latitude, :longitude, :zoom])
+                      map_location_attributes: [:latitude, :longitude, :zoom]]
+        params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
       end
 
       def load_ballot

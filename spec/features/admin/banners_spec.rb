@@ -6,7 +6,7 @@ describe "Admin banners magement" do
     login_as(create(:administrator).user)
   end
 
-  it_behaves_like "translatable",
+  it_behaves_like "edit_translatable",
                   "banner",
                   "edit_admin_banner_path",
                   %w[title description]
@@ -113,10 +113,10 @@ describe "Admin banners magement" do
   scenario "Publish a banner with a translation different than the current locale", :js do
     visit new_admin_banner_path
 
-    expect(page).to have_link "English"
+    expect_to_have_language_selected "English"
 
     click_link "Remove language"
-    select "Français", from: "translation_locale"
+    select "Français", from: "add_language"
 
     fill_in "Title", with: "En Français"
     fill_in "Description", with: "Link en Français"
@@ -132,8 +132,7 @@ describe "Admin banners magement" do
     click_button "Save changes"
     click_link "Edit banner"
 
-    expect(page).to have_link "Français"
-    expect(page).not_to have_link "English"
+    expect_to_have_language_selected "Français"
     expect(page).to have_field "Title", with: "En Français"
   end
 

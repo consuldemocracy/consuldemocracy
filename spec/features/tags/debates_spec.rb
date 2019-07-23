@@ -66,8 +66,8 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "debate_title", with: "Title"
-    fill_in "debate_description", with: "Description"
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda"
@@ -85,8 +85,8 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "debate_title", with: "Title"
-    fill_in "debate_description", with: "Description"
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -103,8 +103,8 @@ describe "Tags" do
 
     visit new_debate_path
 
-    fill_in "debate_title", with: "A test of dangerous strings"
-    fill_in "debate_description", with: "A description suitable for this test"
+    fill_in "Debate title", with: "A test of dangerous strings"
+    fill_in "Initial debate text", with: "A description suitable for this test"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
