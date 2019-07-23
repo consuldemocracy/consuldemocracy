@@ -3,6 +3,7 @@ ar:
     annotations:
       comments:
         see_all: اظهار الكل
+        see_complete: رؤية الكلّ
         comments_count:
           zero: "%{count} تعليقات"
           one: "تعليق %{count}"
@@ -28,6 +29,7 @@ ar:
         title: تعليقات
         comments_about: تعليقات حول
         comment_about: "تعليق حول:"
+        see_in_context: رؤيتها في السياق
         comments_count:
           zero: لا توجد تعليقات
           zero: "%{count} تعليقات"
@@ -47,6 +49,7 @@ ar:
         seeing_changelog_version: ملخص مراجعة التغييرات
         see_text: رؤية مسودة النص
       show:
+        loading_comments: جاري تحميل التعليقات
         seeing_version: أنت تشاهد إصدار المسودة
         select_draft_version: حدّد المسودة
         select_version_submit: رؤية
@@ -170,5 +173,6 @@ ar:
         many: "%{count} تعليقات"
         other: "%{count} تعليقات"
       most_voted_comments: "التعليقات الأكثر تصويتا: "
+      no_allegation: لا توجد تعليقات مكتوبة
       version: النسخة
       process_empty: ليس للعملية مراحل.
