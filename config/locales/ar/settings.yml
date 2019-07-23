@@ -1,5 +1,6 @@
 ar:
   settings:
+    comments_body_max_length: "الطول الأقصى لجسم التعليقات"
     comments_body_max_length_description: "عدد الحروف"
     max_ratio_anon_votes_on_debates: "الحد الأقصى لنسبة الأصوات المجهولة لكل نقاش"
     max_ratio_anon_votes_on_debates_description: "الأصوات المجهولة هي من قبل المستخدمين المسجلين مع حساب لم يتم التحقق منه"
