@@ -93,7 +93,6 @@ so:
         submit_button: Badbaadi beddelka
       show_link: Aragtida doodda
     form:
-      debate_text: Qoraalka hore ee doodda
       debate_title: Ciwaanka dooda
       tags_instructions: Taaga dooda.
       tags_label: Mawduucyada
@@ -299,7 +298,6 @@ so:
       warning: "Haddii aad ka fariisato hindise-gelinta, weli waa ay aqbali doontaa taageerada, laakiin waa laga saari doonaa liiska ugu weyn oo farriin ayaa loo arki doonaa dhammaan dadka isticmaala oo sheegaya in qoruhu uu tixgelinayo hindisaha aan la taageereynin mar dambe"
       retired_reason_label: Sababta loo joojiyo soo jeedinta
       retired_reason_blank: Dooro ikhtiyaar
-      retired_explanation_label: Sharaxaad
       retired_explanation_placeholder: Si kooban u sharax sababta aad u maleyneyso in hindisahan aan la siin karin taageerooyin dheeraad ah
       submit_button: Soo jeedinta hawlgabka
     retire_options:
