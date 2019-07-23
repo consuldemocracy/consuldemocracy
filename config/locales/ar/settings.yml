@@ -99,6 +99,8 @@ ar:
         min_height_description: "الطّول الأدنى المسموح به للصورة المرفوعة (بالـ pixels)"
         max_size: "الحجم الأقصى للصورة"
         max_size_description: "الحجم الأقصى المسموح به للصورة المرفوعة (بالـ Megabytes/MB)"
+        content_types: "أنواع المحتويات المقبولة للصور"
+        content_types_description: "حدد جميع أنواع المحتوى المسموح بها للصور المحمّلة"
         title:
           min_length: "الطّول الأدنى لعنوان الصورة"
           max_length: "الطّول الأقصى لعنوان الصورة"
@@ -107,3 +109,5 @@ ar:
         max_amount_description: "العدد الأقصى للوثائق التي يمكن إرفاقها بالمقترح، استثمار..."
         max_size: "الحجم الأقصى للوثيقة"
         max_size_description: "الحجم الأقصى المسموح به للوثيقة المرفوعة (بالـ Megabytes/MB)"
+        content_types: "أنواع المحتويات المقبولة للوثائق"
+        content_types_description: "حدد جميع أنواع المحتوى المسموح بها للوثائق المحمّلة"
