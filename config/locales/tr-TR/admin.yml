@@ -712,6 +712,7 @@ tr:
         title: "Ayarları indir"
         debates: "Tartışmalar"
         proposals: "Öneriler"
+        legislation_processes: "Mevzuat süreci"
         budget_investments: "Katılımcı bütçeleme"
         comments: "Yorumlar"
         budget_investments_milestones: "Katılımcı bütçeleme (Kilometre taşları)"
@@ -900,6 +901,9 @@ tr:
         valuator_groups: "Bilirkişi Grupları"
         group: "Grup"
         no_group: "Grup yok"
+        abilities: "Yetenekler"
+        can_comment: "Yorum yapabilir"
+        can_edit_dossier: "Dosyayı düzenleyebilir"
       valuator:
         add: Bilirkişilere ekle
         delete: Sil
@@ -912,8 +916,10 @@ tr:
         description: "Tanımlama"
         email: "E-posta"
         group: "Grup"
+        abilities: "Yetenekler"
         no_description: "Tanımlama olmadan"
         no_group: "Grup olmadan"
+        no_abilities: "Yetenekleri olmadan"
     valuator_groups:
       index:
         title: "Bilirkişi grupları"
@@ -1377,6 +1383,8 @@ tr:
         unverified_error: (Census tarafından doğrulanmadı)
         voted:
           zero: "Doğrulanmış imzalardan oluşturulan oy yok."
+          one: "Doğrulanmış imzalardan oluşturulan %{count} oy var."
+          other: "Doğrulanmış imzalardan oluşturulan %{count} oylar var."
         loading: "Census tarafından doğrulanan imzalar var, lütfen sayfayı birkaç dakika içinde yenileyin"
     stats:
       show:
