@@ -523,7 +523,7 @@ tr:
       hide_proposed_actions: Önerilen eylemleri gizle
       pending_title: Beklemede
       show_description: Açıklamayı göster
-      without_pending_actions: Herhangi bir önerilen eylem beklemede değil
+      without_pending_actions: Beklemede tavsiye edilen eylem yok
       done_title: Tamam
       without_done_actions: Herhangi bir önerilen eylem gerçekleşmedi
     next_goal:
@@ -533,22 +533,22 @@ tr:
     goal:
       target_supports:
         one: Öneriniz için %{count} destek alın
-        other: Öneriniz için %{count} destek alın
+        other: Öneriniz için %{count} destekler alın
       days:
         one: "%{count} gün"
-        other: "%{count} gün"
-      locked_resource: Kaynak bağlandı
+        other: "%{count} günler"
+      locked_resource: Kaynak kilitli
       ideal_time: İdeal zaman
     community:
-      access_community: Topluma erişim
-      latest_activity: "Toplum tarafından yapılan son etkinlik: %{at}"
+      access_community: Topluluğa erişim
+      latest_activity: "Topluluğun son etkinliği: %{at}"
       participants: Katılımcılar
       debates: Tartışmalar
       comments: Yorumlar
-      latest_comments: En son gönderilen mesajlar
+      latest_comments: Son mesajlar
     messages:
-      send_notification: Öneriyi destekleyenlere mesaj gönder
-      previous_notifications: Önceki bildirimleri görüntüle
+      send_notification: Öneri destekçilerine mesaj gönder
+      previous_notifications: Önceki bildirimlere bak
     polls:
       index:
         title: Anketler
@@ -556,7 +556,7 @@ tr:
         succesfull: Yanıt başarıyla oluşturuldu
         count:
           one: '%{count} anket oluşturdunuz.'
-          other: '%{count} anket oluşturdunuz.'
+          other: '%{count} anketler oluşturdunuz.'
         links: Bağlantılar
         additiontal_information: Ek bilgi
       new:
@@ -567,7 +567,7 @@ tr:
       poll:
         responses:
           one: "%{count} yanıt"
-          other: "%{count} yanıt"
+          other: "%{count} yanıtlar"
         view_results: Sonuçları görüntüle
         edit_poll: Anketi düzenle
         show_results: Sonuçları görüntüle
@@ -600,22 +600,22 @@ tr:
         download: İndir
     mailing:
       index:
-        title: E-posta önizleme
+        title: E-posta ön izleme
       new:
         title: Paylaşılacak e-posta örneği
       mailing_options:
-        send: '%{address} adresine gönder'
-        preview: Önizleme
+        send: '%{address}''e gönder'
+        preview: Ön izleme
       create:
         sent: E-posta gönderildi
     mailer:
       forward:
-        subtitle_html: "Beni destekliyorsanız, <br> başaracağız."
+        subtitle_html: "Eğer beni destekliyorsanız, <br> başaracağız."
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
-        introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
-        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz butonu tıklamanız yeterlidir ve bunu yapmadan önce öneriyle ilgili bilgi edinebilirsiniz. Yalnızca, en fazla desteği alan öneri uygulanacak ve bunu başarmama yardım edeceğinizden eminim!"
+        introduction: Hangi şehri istediğimize karar verebileceğimiz platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi vatandaş önerimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin çünkü bu çok basit.
+        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz düğmeyi tıklamanız yeterlidir ve tanıtımını yapmadan önce kendinizi haberdar edebilirsiniz. Yalnızca, azami desteği sağlayan teklifler Belediye Meclisi tarafından yerine getirilecek ve sanırım bunu başarmama yardım edeceğinize eminim!"
         share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
     all: "Tüm"
@@ -644,11 +644,11 @@ tr:
         title: Oylama ile ilgili yardım
         description: Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
       no_polls: "Hiç açık oy yok."
-      max_votes_reached: "Mümkün olan en fazla sayıda oy verdiniz. Katıldığınız için çok teşekkür ederim"
+      max_votes_reached: "Zaten maksimum oy sayısını verdiniz. Katıldığınız için çok teşekkür ederim"
       descriptions:
         unique: Soruya sadece bir kez cevap vermek mümkün.
-        multiple: Birden fazla cevap seçilmesine izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
-        prioritized: Birden fazla cevap seçmenize izin verir ve bu cevaplara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
+        multiple: Birden fazla cevap seçmenize izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
+        prioritized: Birden fazla cevap seçmenize izin verir ve bunlara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
         positive_open: Sorulara en fazla sayıda olumlu oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
         positive_negative_open: Sorulara en fazla sayıda olumlu ve olumsuz oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
         answer_couples_open: Her olası cevap çiftinde gönderebileceğiniz maksimum oy sayısının bir sınırı vardır. Maksimum çift sayısını önceden tanımlayabilir ve diğer cevapları ekleyebilirsiniz.
