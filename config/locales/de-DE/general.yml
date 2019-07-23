@@ -93,7 +93,6 @@ de:
         submit_button: Änderungen speichern
       show_link: Diskussion anzeigen
     form:
-      debate_text: Beitrag
       debate_title: Titel der Diskussion
       tags_instructions: Diskussion markieren.
       tags_label: Themen
@@ -297,7 +296,6 @@ de:
       warning: "Wenn Sie den Antrag zurückziehen, würde er weiterhin Unterstützung akzeptieren, wird jedoch von der Hauptliste entfernt und eine Nachricht wird sichtbar für alle Nutzer, die besagt, dass der Autor des Vorschlages denkt, er sollte nicht mehr unterstützt werden"
       retired_reason_label: Grund für das Zurückziehen des Antrags
       retired_reason_blank: Option auswählen
-      retired_explanation_label: Erläuterung
       retired_explanation_placeholder: Erläutern Sie kurz, warum der Vorschlag nicht weiter unterstützt werden sollte
       submit_button: Vorschlag zurückziehen
     retire_options:
