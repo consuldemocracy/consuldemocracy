@@ -185,7 +185,7 @@ tr:
       no_winner_investments: "Bu mevkide kazanan yatırım yok"
       filters:
         status:
-          label: "Projenin mevcut durumu"
+          label: "Projenin şimdiki durumu"
           all: "Tüm (%{count})"
         milestone_tag:
           label: "Kilometre taşı etiketi"
