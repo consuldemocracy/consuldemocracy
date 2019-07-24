@@ -11,7 +11,7 @@ tr:
           one: "<span>Bir</span> yatırıma oy verdiniz."
           other: "<span>%{count}</span> yatırımlara oy verdiniz."
         voted_info_html: "Oyunuzu, bu aşamanın sonuna kadar istediğiniz zaman değiştirebilirsiniz. <br>Mevcut tüm parayı harcamanıza gerek yok."
-        voted_info_2: "Ancak bu aşama kapanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
+        voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
         not_logged_in: Devam etmelisin %{signin} veya %{signup} devam et.
