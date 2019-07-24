@@ -22,7 +22,7 @@ tr:
         no_ballots_allowed: Seçim aşaması kapanmıştır
         different_heading_assigned_html: "Zaten farklı bir başlığa oy verdiniz: %{heading_link}"
         change_ballot: oylarınızı değiştirin
-        casted_offline: Siz zaten çevrimdışı olarak katıldınız
+        casted_offline: Daha önce çevrimdışı olarak katıldınız
     groups:
       show:
         title: Bir seçenek seçin
