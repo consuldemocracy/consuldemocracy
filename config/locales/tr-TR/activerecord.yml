@@ -117,7 +117,7 @@ tr:
         one: "Öneri bildirimi"
         other: "Öneri bildirimleri"
       dashboard/action:
-        one: Öneri panosu - Yapılması gereken
+        one: Öneri panosu - Yapılması gerekenler
         other: Öneri panosu - Yapılması gerekenler
       dashboard/administrator_task:
         one: Görev
@@ -152,7 +152,7 @@ tr:
         image_title: "Resim ismi"
       budget/investment/translation:
         title: "Başlık"
-        description: "Tanımlama"
+        description: "Açıklama"
       geozone:
         name: İsim
         external_code: "Harici kod (isteğe bağlı)"
