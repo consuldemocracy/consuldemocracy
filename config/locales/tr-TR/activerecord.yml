@@ -354,7 +354,7 @@ tr:
         short_description: Kısa tanımlama
         description: Tanımlama
         link: Dış bağlantı
-        request_to_administrators: Kaynağa yöneticilerden kaynak istemek için bir düğme ekleyin
+        request_to_administrators: Yöneticilerden kaynak isteme butonu
         day_offset: Önerinin oluşturulmasından kaç gün sonra etkinleştirilmesini istiyorsunuz?
         required_supports: Önerinin aktif hale getirilmesi için ne kadar destek alması gerekiyor?
         order: Bu eylemin kullanıcıya gösterileceği konumu eylemler listesine girebilirsiniz
