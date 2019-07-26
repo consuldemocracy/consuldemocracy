@@ -310,6 +310,9 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+      budget/investment/translation:
+        title: "العنوان"
+        description: "الوصف"
       geozone:
         name: الإسم
         external_code: "الرّمز الخارجي (اختياري)"
@@ -342,6 +345,9 @@ ar:
         description: "رأي"
         terms_of_service: "شروط الخدمة"
         title: "عنوان"
+      debate/translation:
+        title: "عنوان المناقشة"
+        description: "نص المناقشة الأوّلي"
       proposal:
         author: "كاتب"
         title: "عنوان"
@@ -349,6 +355,10 @@ ar:
         description: "الوصف"
         selected: "وضع علامة مختار"
         terms_of_service: "شروط الخدمة"
+      proposal/translation:
+        title: "عنوان المقترح"
+        description: "نص المقترح"
+        summary: "ملخص المقترح"
       user:
         login: "البريد الإلكتروني أو اسم المستخدم"
         email: "البريد الإلكتروني"
