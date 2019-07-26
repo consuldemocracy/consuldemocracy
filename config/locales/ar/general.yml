@@ -909,6 +909,18 @@ ar:
         legislation_process: "تنزيل العمليات التّشريعية"
         budget: "تنزيل الميزانيات"
         investments: "تنزيل المشاريع"
+    translations:
+      select_language_prompt: اخيار لغة
+      remove_language: إزالة اللغة
+      add_language: إضافة لغة
+      languages_in_use_html:
+        zero: "<span class='js-languages-count'>0</span> لغات مستخدمة"
+        zero: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
+        one: "لغة <span class='js-languages-count'>1</span> مستخدمة"
+        two: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
+        few: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
+        many: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
+        other: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -1138,3 +1150,9 @@ ar:
     answer_set_closed: إجابات متعدّدة، مغلق
   prioritization_type:
     title: نوع الأولوية
+  remote_translations:
+    text: محتوى هذه الصفحة غير متاح بلغتك
+    all_remote_translations_enqueued_text: بعد فترة قصيرة، ستتمكن من رؤية كل المحتوى بلغتك عند تحديث الصفحة.
+    create:
+      enqueue_remote_translation: تم طلب الترجمات بشكل صحيح.
+    button: ترجمة الصفحة
