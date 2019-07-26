@@ -79,6 +79,10 @@ ar:
       public_stats: "احصائيات عامة"
       public_stats_description: "عرض الإحصائيات العامة في لوحة الإدارة"
       help_page: "صفحة المساعدة"
+      remote_translations: "ترجمة عن بعد"
+      remote_translations_description: "يعرض زرًا يتيح للمستخدمين طلب الترجمة عند عدم وجود محتويات بلغتهم."
+      translation_interface: "واجهة الترجمة"
+      translation_interface_description: "يعرض واجهة الترجمة اليدوية التي تتيح للمستخدمين إدخال المحتوى الخاص بهم بجميع اللغات المتاحة في التطبيق. يؤثر هذا الخيار فقط على نماذج طلبات المستخدم وسيظل دائمًا نشطًا في لوحة الإدارة."
     map:
       latitude: "خط العرض"
       longitude: "خط الطول"
