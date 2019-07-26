@@ -514,8 +514,10 @@ ar:
         short_description: وصف قصير
         description: الوصف
         link: رابط خارجي
+        request_to_administrators: تزويد المورد بزر لطلب المورد من المسؤولين
         day_offset: كم من يوم تريد أن يبقى الاقتراح مفعلا بعد انشائه ؟
         required_supports: ما مقدار الدعم الذي يجب أن يحصل عليه الاقتراح حتى يتم تفعيله؟
+        order: يمكنك تحديد مكان عرض هذا الإجراء للمستخدم في قائمة الإجراءات
         active: نشِط
         action_type: النوع
       dashboard/administrator_task:
@@ -608,6 +610,7 @@ ar:
       messages:
         translations_too_short: يجب توفير ترجمة واحدة على الأقل
         record_invalid: "فشل التحقق: %{errors}"
+        another_poll_active: هناك استطلاع آخر نشط للفترة المحددة
         restrict_dependent_destroy:
           has_one: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
           has_many: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
