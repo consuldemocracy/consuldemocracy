@@ -359,6 +359,7 @@ ar:
         title: "عنوان المقترح"
         description: "نص المقترح"
         summary: "ملخص المقترح"
+        retired_explanation: "تفسير"
       user:
         login: "البريد الإلكتروني أو اسم المستخدم"
         email: "البريد الإلكتروني"
@@ -605,6 +606,7 @@ ar:
             valuation:
               cannot_comment_valuation: "لا يمكنك التعليق على التقييم"
       messages:
+        translations_too_short: يجب توفير ترجمة واحدة على الأقل
         record_invalid: "فشل التحقق: %{errors}"
         restrict_dependent_destroy:
           has_one: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
