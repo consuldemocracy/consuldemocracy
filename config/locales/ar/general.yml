@@ -197,6 +197,7 @@ ar:
         other: "%{count} تعليق"
       comments_title: تعليقات
       edit_debate_link: تعديل
+      flag: تم التبليغ على أنّ هذا النقاش غير لائق من قبل العديد من المستخدمين.
       login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       share: مشاركة
       author: كاتب
@@ -237,6 +238,7 @@ ar:
       chrome: Google Chrome
       firefox: فايرفوكس
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
+      ie_title: هذا الموقع لا يتناسب مع متصفحك
     dashboard:
       proposal_header:
         published: منشورة
@@ -430,6 +432,7 @@ ar:
       recommendations:
         without_results: لا توجد اقتراحات تتعلق باهتماماتك
         without_interests: تابع المقترحات حتى نتمكن من تقديم توصيات لك
+        disable: "ستتوقف توصيات المقترحات عن الظهور إذا رفضتها. يمكنك تمكينهم مرة أخرى في صفحة \"حسابي\""
         actions:
           success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
           error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
@@ -533,6 +536,7 @@ ar:
         other: "%{count} تعليق"
       comments_tab: تعليقات
       dashboard_proposal_link: لوحة القيادة
+      flag: تم التبليغ على أنّ هذا المقترح غير لائق من قبل العديد من المستخدمين.
       login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       notifications_tab: إشعارات
       milestones_tab: معالم
@@ -603,6 +607,7 @@ ar:
     next_goal:
       title: هدف
       see_complete_course: مراجعة الدورة الكاملة
+      hide_course: إخفاء الطريق
     goal:
       target_supports:
         zero: احصل على %{count} دعم لمقترحك
@@ -660,6 +665,7 @@ ar:
         view_results: رؤية النتائج
         edit_poll: تعديل الاستبيان
         show_results: إظهار النتائج
+        show_results_help: إذا حددت هذا المربع، فستكون النتائج عامة وسيتمكن جميع المستخدمين من رؤيتها
         delete: حذف الاستبيان
         alert_notice: سيؤدي هذا الإجراء إلى إزالة الاستبيان وجميع الأسئلة المرتبطة به.
         success_notice: تم حذف الاستبيان بنجاح
@@ -677,6 +683,7 @@ ar:
         title: معاينة الملصق
         poster_title: "توقّف عن البحث،"
         poster_subtitle: "ادعمني! ;)"
+        intro_text_html: "<strong>أنا أشارك في %{org}</strong> مع اقتراح المواطن الخاص بي وفقط إذا انضممت إليّ، يمكنني تحقيق الدعم اللازم لجعل المدينة كما نريدها جميعًا."
         proposal_code: "رمز المقترح: %{code}"
         support: دعم مقترحي
         footer_html: "<strong> تفضل بزيارة %{link} ودعم هذا الاقتراح. </strong> نحن بحاجة إلى أن نكون كثيرين. اتخذ قرارك. شكرا لك!"
