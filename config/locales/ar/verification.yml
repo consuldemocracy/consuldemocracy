@@ -17,6 +17,9 @@ ar:
     letter:
       alert:
         unconfirmed_code: لم تقم بادخال رمز التحقق
+      create:
+        flash:
+          success_html: شكرًا لك على طلب <b>رمز الحماية الأقصى (مطلوب فقط للأصوات النهائية)</b>. في غضون أيام قليلة، سوف نرسلها إلى العنوان الذي يظهر في البيانات الموجودة لدينا في الملف. يرجى تذكر أنه، إذا كنت تفضل ذلك، يمكنك أخذ الشفرة الخاصة بك من أي من مكتب لدعم المواطنين.
       edit:
         see_all: انظر جميع المقترحات
         title: أحرف مطلوبة
@@ -36,6 +39,8 @@ ar:
       already_verified: تم تأكيد حسابك مسبقاً
       email_already_sent: لقد أرسلنا بالفعل رسالة إلكترونية تحتوي على رابط التأكيد. إذا لم تتمكن من إيجاد الرسالة الإلكترونية، يمكنك طلب إرسال رسالة أخرى
     residence:
+      alert:
+        unconfirmed_residency: لم تؤكد إقامتك بعد
       create:
         flash:
           success: تم التحقق من الإقامة
@@ -45,6 +50,7 @@ ar:
         date_of_birth: تاريخ الميلاد
         document_number: رقم الوثيقة
         document_number_help_title: المساعدة
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>جواز السّفر</strong>: AAA000001<br> <strong>بطاقة الإقامة</strong>: X1234567P"
         document_type:
           passport: جواز السفر
           residence_card: بطاقة الإقامة
