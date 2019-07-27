@@ -28,7 +28,10 @@ ar:
       participants_vote_phase: "المشاركون في مرحلة التصويت"
       participants_every_phase: "مجموع المشاركين"
       percent_total_participants: "% مجموع المشاركين"
+      participatory_disclaimer: "** تشير أعداد إجمالي المشاركين إلى الأشخاص الذين قاموا بإنشاء أو دعم أو التصويت على مقترحات استثمارية."
     polls:
       by_channel: "المشاركون حسب القناة"
+      vote_by_channel: "نوع التصويت حسب القناة"
+      web_percentage: "%{percentage} موقع الكتروني"
       booth_percentage: "%{percentage} مكاتب الإقتراع"
       letter_percentage: "%{percentage} بريد"
