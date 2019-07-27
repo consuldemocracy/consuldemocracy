@@ -49,11 +49,14 @@ ar:
       poll_short_title: استطلاعات
       poll_short_title_description: وصف موجز لميزة استطلاع الرأي. يتيح للمستخدمين إنشاء استطلاعات الرأي حول مقترح
       poll_description: وصف استطلاعات الرأي
-      poll_description_description: وصف مفصل لميزات استطلاع الرأي
+      poll_description_description: وصف مفصل لميزة استطلاع الرأي
       poll_link: رابط المعلومات الاضافية
       email_short_title: البريد الإلكتروني
+      email_short_title_description: 'وصف موجز لميزة البريد الإلكتروني. يسمح للمستخدمين بإرسال بريد إلكتروني للترويج لمقترحهم. يمكنك العثور على جميع محتويات هذه الرسالة في "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: وصف البريد الإلكتروني
+      email_description_description: وصف مفصل لميزة البريد الإلكتروني
       poster_short_title: ملصقة
+      poster_short_title_description: 'وصف موجز لميزة الملصق. يسمح للمستخدمين بتنزيل ملصق في شكل PDF للترويج لاقتراحهم. يمكنك العثور على جميع محتويات هذا الملصق في "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: وصف الملصق
       poster_description_description: وصف مفصل لميزات الملصق
     proposal_notification_minimum_interval_in_days_description: "عدد الأيام التي يمكن للمستخدم فيها إرسال إشعار لجميع مؤيدي اقتراحهم"
