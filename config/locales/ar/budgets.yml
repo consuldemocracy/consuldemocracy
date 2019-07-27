@@ -26,6 +26,7 @@ ar:
         no_ballots_allowed: مرحلة التحديد مغلقة
         different_heading_assigned_html: "أنت بالفعل قمت بتصويت عنوان مختلف: %{heading_link}"
         change_ballot: تغيير الأصوات الخاصة بك
+        casted_offline: لقد شاركت مسبقا في وضع عدم الاتصال
     groups:
       show:
         title: قم بتحديد خيار
