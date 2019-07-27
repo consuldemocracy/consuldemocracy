@@ -779,9 +779,11 @@ ar:
       all_proposal_authors: مؤلفو المقترحات (بما في ذلك المؤرشفة والمسحوبة)
       proposal_authors: كتّاب الاقتراحات
       investment_authors: مؤلفو الاستثمار في الميزانية الحالية
+      feasible_and_undecided_investment_authors: "مؤلفو بعض الاستثمارات في الميزانية الحالية التي لا تتوافق مع: [انتهى التقييم غير ممكن]"
       selected_investment_authors: مؤلفو الاستثمارات المحددة في الميزانية الحالية
       winner_investment_authors: مؤلفو الاستثمارات الفائزة في الميزانية الحالية
       not_supported_on_current_budget: المستخدميون الذين لم يدعمو استثمارات في الميزانية الحالية
+      invalid_recipients_segment: "قسم مستخدم المستفيدين غير صالح"
     newsletters:
       create_success: تم إنشاء الرسالة الإخبارية بنجاح
       update_success: تم تحديث الرسالة الإخبارية بنجاح
