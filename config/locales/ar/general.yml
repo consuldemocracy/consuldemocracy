@@ -12,12 +12,14 @@ ar:
       personal: البيانات الشخصية
       phone_number_label: رقم الهاتف
       public_activity_label: أترك قائمة الأنشطة الخاصة بي عامة
+      public_interests_label: ابق على تسميات العناصر التي أتابعها عامة
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
       subscription_to_website_newsletter_label: تلقي المعلومات المهمّة عن طريق البريد الإلكتروني
       email_on_direct_message_label: تلقي رسائل البريد الإلكتروني عند الحصول على الرسائل المباشرة
       email_digest_label: استلام ملخص عن إشعارات مقترح
+      official_position_badge_label: اظهر بطاقة الموقف الرسمي
       recommendations: التوصيات
       show_debates_recommendations: إظهار توصيات المناقشات
       show_proposals_recommendations: إظهار توصيات المقترحات
@@ -742,6 +744,7 @@ ar:
       descriptions:
         unique: يمكن الإجابة مرة واحدة فقط على السؤال.
         multiple: يسمح باختيار إجابات متعددة. من الممكن تعيين الحد الأقصى لعدد الإجابات.
+        prioritized: يسمح باختيار أكثر من إجابة مع تحديد أولوياتها. من الممكن اختيار الحد الأقصى لعدد الإجابات المختارة ونوع تعداد الإجابات.
         positive_open: يسمح بالتصويت الإيجابي لعدد أقصى من المرات على الأسئلة. من الممكن تعيين الحد الأقصى لعدد الإجابات وإضافة إجابات أخرى.
         positive_negative_open: يسمح بالتصويت الإيجابي والسّلبي لعدد أقصى من المرات على الأسئلة. من الممكن تعيين الحد الأقصى لعدد الإجابات وإضافة إجابات أخرى.
     show:
