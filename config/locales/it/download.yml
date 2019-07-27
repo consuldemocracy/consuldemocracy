@@ -95,3 +95,18 @@ it:
         proposals_description: "Descrizione proposte"
         draft_start_date: "Data di inizio della bozza"
         draft_end_date: "Data di conclusione della bozza"
+        draft_phase_enabled: "Fase della bozza abilitata"
+        homepage_enabled: "Homepage abilitata"
+        background_color: "Colore sfondo"
+        font_color: "Colore caratteri"
+      budget_investments:
+        id: "Numero Identificativo"
+        author_id: "Id autore"
+        administrator_id: "Id amministratore"
+        title: "Titolo"
+        description: "Descrizione"
+        external_url: "Url Esterno"
+      comments:
+        cached_votes_up: "Voti nascosti favorevoli"
+        cached_votes_down: "Voti nascosti sfavorevoli"
+        confirmed_hide_at: "Occultamento confermato"
