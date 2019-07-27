@@ -1,1 +1,27 @@
 it:
+  download:
+    edit:
+      fields: "Campi"
+      description: "Descrizione"
+      downloadable: "Scaricabile"
+      debates: "Dibattiti"
+      proposals: "Proposte"
+      legislation_processes: "Procedimento legislativo"
+      budget_investments: "Redazione del bilancio partecipativo"
+      comments: "Commenti"
+      submit: "Salva modifiche"
+      config:
+        "0": ""
+        "1": "- Traguardi"
+    fielddescription:
+      debates:
+        id: "Numero Identificativo"
+        title: "Titolo"
+        description: "Descrizione"
+        author_id: "Numero Identificativo Autore"
+        created_at: "Creato"
+        updated_at: "Aggiornato"
+        visit_id: "Id visita"
+        hidden_at: "Nascosto"
+        flags_count: "Conteggio flag"
+        ignored_flag_at: "Flag ignorato"
