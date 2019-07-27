@@ -45,8 +45,11 @@ ar:
     min_age_to_participate_description: "يمكن للمستخدمين الذين تجاوزوا هذا العمر المشاركة في جميع العمليات التي يلزم فيها حساب مستخدم تم التحقق منه"
     proposals:
       successful_proposal_id: مقترح ناجح
+      successful_proposal_id_description: يتم استخدام هذا المقترح كمرجع لمقترح ناجح من حيث الدعم وسيتم عرضه في الرسم البياني للوحة القيادة.
       poll_short_title: استطلاعات
+      poll_short_title_description: وصف موجز لميزة استطلاع الرأي. يتيح للمستخدمين إنشاء استطلاعات الرأي حول مقترح
       poll_description: وصف استطلاعات الرأي
+      poll_description_description: وصف مفصل لميزات استطلاع الرأي
       poll_link: رابط المعلومات الاضافية
       email_short_title: البريد الإلكتروني
       email_description: وصف البريد الإلكتروني
