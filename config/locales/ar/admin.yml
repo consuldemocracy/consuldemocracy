@@ -89,8 +89,10 @@ ar:
         table_investments: إستثمارات
         table_edit_groups: مجموعات العناوين
         table_edit_budget: تعديل
+        table_admin_ballots: بطاقات الاقتراع
         edit_groups: تعديل مجموعات العناوين
         edit_budget: تعديل الميزانية
+        admin_ballots: بطاقات الاقتراع الادارية
         no_budgets: "لا يوجد ميزانيات."
       create:
         notice: تم إنشاء الميزانية التشاركية الجديدة بنجاح!
@@ -378,6 +380,7 @@ ar:
           proposed_action: الإجراء المقترح
           resource: مورد
         index:
+          description: "عندما ينشئ المستخدمون اقتراحات ، يمكنهم الوصول إلى اللوحة الخاصة باقتراحهم ، اين يمكنك اقتراح الموارد والتوصيات للحصول على الدعم لفكرتهم."
           create: إنشاء مورد أو إجراء
           edit: تعديل
           delete: حذف
