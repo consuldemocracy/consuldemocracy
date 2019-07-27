@@ -459,6 +459,7 @@ ar:
         new_link: "اضافة وثيقة جديدة"
         no_documents: "لا توجد وثائق."
         title: "الوثائق"
+        format: "الشكل"
         size: "حجم"
         url: "URL"
       create:
