@@ -1595,6 +1595,7 @@ ar:
           description: الوصف
           link_text: نص الرابط
           link_url: رابط URL
+          columns_help: "عرض البطاقة في عدد الأعمدة. يكون العرض دائمًا 100٪ على شاشات المحمول."
           create:
             notice: "تم إنشاء البطاقة بنجاح!"
           update:
