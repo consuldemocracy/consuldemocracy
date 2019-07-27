@@ -28,6 +28,7 @@ ar:
       participants_vote_phase: "المشاركون في مرحلة التصويت"
       participants_every_phase: "مجموع المشاركين"
       percent_total_participants: "% مجموع المشاركين"
+      percent_heading_census: "% عنوان التعداد"
       participatory_disclaimer: "** تشير أعداد إجمالي المشاركين إلى الأشخاص الذين قاموا بإنشاء أو دعم أو التصويت على مقترحات استثمارية."
     polls:
       by_channel: "المشاركون حسب القناة"
