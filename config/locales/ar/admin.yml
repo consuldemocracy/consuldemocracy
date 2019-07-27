@@ -711,6 +711,7 @@ ar:
         content_blocks: كتل محتوى مخصصة
         information_texts: نصوص المعلومات المخصصة
         information_texts_menu:
+          basic: "تخصيص الأساسي"
           debates: "النقاشات"
           community: "المجتمع"
           proposals: "إقتراحات"
