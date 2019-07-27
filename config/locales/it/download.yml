@@ -110,3 +110,5 @@ it:
         cached_votes_up: "Voti nascosti favorevoli"
         cached_votes_down: "Voti nascosti sfavorevoli"
         confirmed_hide_at: "Occultamento confermato"
+        ancestry: "Ascendenza"
+        confidence_score: "Punteggio Fiducia"
