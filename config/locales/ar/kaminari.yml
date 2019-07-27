@@ -1,6 +1,8 @@
 ar:
   helpers:
     page_entries_info:
+      entry:
+        zero: السّجلات
       more_pages:
         display_entries: عرض <strong>%{first}&nbsp;-&nbsp;%{last}</strong> من <strong>%{total} %{entry_name}</strong>
       one_page:
