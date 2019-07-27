@@ -157,7 +157,7 @@ ar:
               description_column: تصغير حجم النص
       compatibility:
         title: التوافق مع المعايير والتصميم المرئي
-        description_html: 'تتوافق جميع صفحات هذا الموقع مع <strong> إرشادات إمكانية الوصول </strong> أو المبادئ العامة للتصميم المتاح التي وضعتها مجموعة العمل <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> التي تنتمي إلى W3C.'
+        description_html: 'تتوافق جميع صفحات هذا الموقع مع <strong>إرشادات إمكانية الوصول </strong> أو المبادئ العامة للتصميم المتاح التي وضعتها مجموعة العمل <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> التي تنتمي إلى W3C.'
     titles:
       help: "ما هو %{org}؟ - مشاركة المواطن"
     verify:
