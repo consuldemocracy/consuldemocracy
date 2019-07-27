@@ -12,6 +12,7 @@ ar:
         investment: مجتمع ميزانية الاستثمار
       create_first_community_topic:
         first_theme_not_logged_in: لا توجد مواضيع مفتوحة، شارك بإنشاء الموضوع الأول.
+        first_theme: أنشئ أول موضوع للمجتمع
         sub_first_theme: "لانشاء موضوع يجب عليك %{sign_in} او %{sign_up}."
         sign_in: "تسجيل الدخول"
         sign_up: "انشاء حساب"
