@@ -1465,6 +1465,7 @@ ar:
         level_2_user: المستوى 2 من المستخدمين
         proposal_created: مقترحات المواطنين
       budgets:
+        no_data_before_balloting_phase: "لا توجد أي بيانات لإظهارها قبل مرحلة الاقتراع."
         title: "الميزانيات التشاركية - احصائيات المشاركة"
         supporting_phase: مرحلة الدعم
         balloting_phase: التصويت النهائي
@@ -1559,6 +1560,8 @@ ar:
           names:
             top_links: أهم الروابط
             footer: ذيل الصفحة
+            subnavigation_left: مفتاح التنقل الاساسي الأيسر
+            subnavigation_right: مفتاح التنقل الاساسي الأيمن
       images:
         index:
           title: صور مخصصة
