@@ -1597,6 +1597,7 @@ ar:
           see_page: رؤية الصفحة
         new:
           title: إنشاء صفحة مخصصة جديدة
+          slug_help_html: "نص لتعريف هذه الصفحة على عنوان URL ، على سبيل المثال <code> https://consulproject.org/page-slug</code>>"
         page:
           created_at: أنشئت في
           status: حالة
@@ -1651,6 +1652,7 @@ ar:
         card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
     change_log:
+      title: "تغيير السجل"
       id: "معرف"
       field: "حقل"
       new_value: "القيمة الجديدة"
