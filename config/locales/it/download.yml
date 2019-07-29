@@ -161,7 +161,7 @@ it:
         cached_votes_down: "Voti nascosti sfavorevoli"
         confirmed_hide_at: "Occultamento confermato"
         ancestry: "Ascendenza"
-        confidence_score: "Punteggio Fiducia"
+        confidence_score: "Punteggio fiducia"
         valuation: "Stima"
         author_name: "Nome autore"
         author_email: "Email autore"
