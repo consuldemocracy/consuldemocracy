@@ -129,6 +129,8 @@ ar:
         selected: "محدّد"
         location: "الموقع"
         organization_name: "إسم المنظمة"
+        unfeasible_email_sent_at: "بريد إلكتروني غير ممكن إرسل في"
+        ballot_lines_count: "عدد خطوط الاقتراع"
         previous_heading_id: "معرف العنوان السابق"
         winner: "الفائز"
         incompatible: "غير متوافق"
@@ -142,6 +144,8 @@ ar:
         author_email: "البريد الإلكتروني للكاتب"
       comments:
         id: "رقم المعرف"
+        commentable_id: "هوية يمكن التعليق عليها"
+        commentable_type: "نوع يمكن التعليق عليه"
         body: "الجسم"
         subject: "الموضوع"
         user_id: "هوية المستخدم"
