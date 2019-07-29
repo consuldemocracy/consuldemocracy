@@ -68,6 +68,7 @@ ar:
       poll_description: وصف استطلاعات الرأي
       poll_description_description: وصف مفصل لميزة استطلاع الرأي
       poll_link: رابط المعلومات الاضافية
+      poll_link_description: أضف رابطًا لمعرفة المزيد حول وظيفة مسح لوحة التحكم
       email_short_title: البريد الإلكتروني
       email_short_title_description: 'وصف موجز لميزة البريد الإلكتروني. يسمح للمستخدمين بإرسال بريد إلكتروني للترويج لمقترحهم. يمكنك العثور على جميع محتويات هذه الرسالة في "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: وصف البريد الإلكتروني
