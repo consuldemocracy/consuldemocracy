@@ -3,6 +3,12 @@ ar:
     page_entries_info:
       entry:
         zero: السّجلات
+        zero: السّجلات
+        one: السّجلّ
+        two: السّجلات
+        few: السّجلات
+        many: السّجلات
+        other: السّجلات
       more_pages:
         display_entries: عرض <strong>%{first}&nbsp;-&nbsp;%{last}</strong> من <strong>%{total} %{entry_name}</strong>
       one_page:
