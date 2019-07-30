@@ -41,6 +41,7 @@
   * [OAuth](en/features/oauth.md)
   * [GraphQL](en/features/graphql.md)
   * [Recommendations](en/features/recommendations.md)
+  * [Local Census](en/features/local_census.md)
 
 * [Open Source project](en/open_source/open_source.md)
   * [Code of conduct](en/open_source/code_of_conduct.md)
@@ -75,7 +76,7 @@
     * [Servidor local de correo](es/installation/dev_mailserver.md)
   * [Configuración básica](es/installation/basic_configuration.md)
   * [Documentación y guías sobre CONSUL](es/installation/documentation_and_guides.md)
-    
+
 * [Personalización](es/customization/customization.md)
   * [Introducción](es/customization/introduction.md)
   * [Textos & Traducciones](es/customization/translations.md)
@@ -90,6 +91,7 @@
   * [OAuth](es/features/oauth.md)
   * [GraphQL](es/features/graphql.md)
   * [Recomendaciones](es/features/recommendations.md)
+  * [Local Census](es/features/local_census.md)
 
 * [Proyecto Open Source](es/open_source/open_source.md)
   * [Código de conducta](es/open_source/code_of_conduct.md)

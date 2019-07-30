@@ -3,3 +3,4 @@
 * [OAuth](oauth.md)
 * [GraphQL](graphql.md)
 * [Recomendaciones](recommendations.md)
+* [Censo Local](local_census.md)
