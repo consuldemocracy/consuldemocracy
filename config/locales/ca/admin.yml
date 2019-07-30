@@ -764,7 +764,6 @@ ca:
       show:
         created_at: Creat
         author: Autor
-        document_count: "Nombre de documents:"
         verified:
           one: "Hi ha %{count} signatura vàlida"
           other: "Hi ha %{count} signatures vàlides"
