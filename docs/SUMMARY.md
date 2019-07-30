@@ -42,6 +42,7 @@
   * [GraphQL](en/features/graphql.md)
   * [Recommendations](en/features/recommendations.md)
   * [Configure Census Conexion](en/features/census_configuration.md)
+  * [Local Census](en/features/local_census.md)
 
 * [Open Source project](en/open_source/open_source.md)
   * [Code of conduct](en/open_source/code_of_conduct.md)
@@ -92,6 +93,7 @@
   * [GraphQL](es/features/graphql.md)
   * [Recomendaciones](es/features/recommendations.md)
   * [Configurar conexión con el Censo](es/features/census_configuration.md)
+  * [Local Census](es/features/local_census.md)
 
 * [Proyecto Open Source](es/open_source/open_source.md)
   * [Código de conducta](es/open_source/code_of_conduct.md)
