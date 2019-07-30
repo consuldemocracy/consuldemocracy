@@ -1282,8 +1282,6 @@ bs:
       show:
         created_at: Napravljeno
         author: Autor
-        documents: Dokumenti
-        document_count: "Broj dokumenata:"
         verified:
           one: "%{count} neispravni potpis"
           few: "%{count} neispravna/neispravnih potpisa"
