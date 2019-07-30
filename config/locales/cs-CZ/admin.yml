@@ -1110,8 +1110,6 @@ cs:
       show:
         created_at: Vytvořen
         author: Autor
-        documents: Dokumenty
-        document_count: "Počet dokumentů:"
         unverified_error: (Není ověřeno statistickým úřadem)
         loading: "Stále existují podpisy, které nejsou ověřeny základními datovými registry, prosíme aktualizujte stránku za pár okamžiků"
     stats:
