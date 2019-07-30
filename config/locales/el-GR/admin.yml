@@ -1273,8 +1273,6 @@ el:
       show:
         created_at: Δημιουργήθηκε
         author: Συγγραφέας
-        documents: Έγγραφα
-        document_count: "Αριθμός εγγράφων:"
         verified:
           one: "Υπάρχει %{count} έγκυρη υπογραφή"
           other: "Υπάρχουν %{count} έγκυρες υπογραφές"
