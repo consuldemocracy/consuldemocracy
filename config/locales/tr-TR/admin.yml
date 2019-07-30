@@ -1377,8 +1377,6 @@ tr:
       show:
         created_at: Oluşturuldu
         author: Yazar
-        documents: Belgeler
-        document_count: "Belgelerin sayısı:"
         verified:
           one: "%{count} geçerli imza var"
           other: "%{count} geçerli imzalar var"
