@@ -1313,8 +1313,6 @@ hr:
       show:
         created_at: Stvoreno
         author: Autor
-        documents: Dokumenti
-        document_count: "Broj dokumenata:"
         verified:
           one: "Postoji %{count} valjani potpis"
           few: "Postoji %{count} valjani potpisi"
