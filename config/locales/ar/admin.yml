@@ -1413,8 +1413,6 @@ ar:
       show:
         created_at: تم الإنشاء
         author: كاتب
-        documents: وثائق
-        document_count: "عدد الوثائق:"
         verified:
           zero: "هناك %{count} توقيعات صالحة"
           one: "هناك توقيع %{count} صالح"
