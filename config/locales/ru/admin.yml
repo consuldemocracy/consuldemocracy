@@ -1318,8 +1318,6 @@ ru:
       show:
         created_at: Создано
         author: Автор
-        documents: Документы
-        document_count: "Количество документов:"
         verified:
           one: "Найдена %{count} верная подпись"
           few: "Найдено %{count} верных подписей"
