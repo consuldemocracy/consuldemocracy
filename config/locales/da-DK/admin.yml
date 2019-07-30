@@ -1329,8 +1329,6 @@ da:
       show:
         created_at: Oprettet
         author: Oprettet af
-        documents: Dokumenter
-        document_count: "Antal dokumenter:"
         verified:
           one: "Der er %{count} gyldig underskrift"
           other: "Der er %{count} gyldige underskrifter"
