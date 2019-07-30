@@ -742,6 +742,7 @@ en:
         budget_investments_milestones: "Participatory budgeting (Milestones)"
       debates: "Debates"
       comments: "Comments"
+      local_census_records: Manage local census
     administrators:
       index:
         title: Administrators
@@ -1310,6 +1311,12 @@ en:
           how_to_enable: 'To show the map to users you must enable "Proposals and budget investments geolocation" on "Features" tab.'
         dashboard:
           title: Proposals dashboard
+        remote_census:
+          title: Remote Census configuration
+          how_to_enable: 'To configure remote census (SOAP) you must enable "Configure connection to remote census (SOAP)" on "Features" tab.'
+      remote_census_general_name: General Information
+      remote_census_request_name: Request Data
+      remote_census_response_name: Response Data
       setting: Feature
       setting_actions: Actions
       setting_name: Setting
@@ -1393,13 +1400,19 @@ en:
         new: New signature sheets
       new:
         title: New signature sheets
-        document_numbers_note: "Write the numbers separated by commas (,)"
+        document_numbers_note: "Write the numbers separated by semicolons (;)"
         submit: Create signature sheet
+        text_help:
+          required_fields_note: "To verify a user, your application needs: Document number"
+          date_of_birth_note: ", Day of birth (dd/mm/yyyy)"
+          postal_code_note: " and Postal Code"
+          required_fields_structure_note: "Required fields for each user must be separated by commas and each user must be separated by semicolons."
+          example_text: "Example: "
       show:
         created_at: Created
         author: Author
-        documents: Documents
-        document_count: "Number of documents:"
+        users: Users
+        signature_count: "Number of signatures:"
         verified:
           one: "There is %{count} valid signature"
           other: "There are %{count} valid signatures"
@@ -1663,3 +1676,42 @@ en:
     progress_bars:
       index:
         title: "Progress bars"
+    local_census_records:
+      index:
+        title: Manage local census
+        create: Create new local census record
+        no_local_census_records: There are no local census records.
+        document_type: Document type
+        document_number: Document number
+        date_of_birth: Date of birth
+        postal_code: Postal code
+        search:
+          placeholder: Search by document number
+          search: Search
+        import: Import CSV
+      form:
+        date_of_birth: Date of birth
+      new:
+        creating: Creating new local census record
+      create:
+        notice: New local census record created successfully!
+      edit:
+        editing: Editing local census record
+      update:
+        notice: Local census record updated successfully!
+      destroy:
+        notice: Local census record removed successfully!
+      imports:
+        new:
+          title: Local census records
+          subtitle: Import CSV file
+        create:
+          notice: Local census records import process executed successfully!
+        show:
+          title: Manage local census
+          subtitle: Import process results
+          import: Import again
+          errored: Errored rows
+          created: Created records
+        local_census_records:
+          no_records_found: No records found.

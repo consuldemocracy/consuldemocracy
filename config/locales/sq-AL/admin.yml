@@ -1186,13 +1186,11 @@ sq:
         new: Fletë të reja nënshkrimi
       new:
         title: Fletë të reja nënshkrimi
-        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me presje (,)"
+        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me pikëpresje (;)"
         submit: Krijo Fletë nënshkrimi
       show:
         created_at: Krijuar
         author: Autor
-        documents: Dokumentet
-        document_count: "Numri i dokumenteve:"
         verified:
           one: "Ky është %{count} nënshkrim i vlefshëm"
           other: "Këto janë %{count} nënshkrime të vlefshme"

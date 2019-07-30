@@ -132,6 +132,163 @@ describe "Admin settings" do
 
   end
 
+  describe "Update Remote Census Configuration" do
+
+    before do
+      Setting["feature.remote_census"] = true
+    end
+
+    after do
+      Setting["feature.remote_census"] = nil
+    end
+
+    scenario "Should not be able when remote census feature deactivated" do
+      Setting["feature.remote_census"] = nil
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#remote-census-tab").click
+
+      expect(page).to have_content 'To configure remote census (SOAP) you must enable ' \
+                                   '"Configure connection to remote census (SOAP)" ' \
+                                   'on "Features" tab.'
+    end
+
+    scenario "Should be able when remote census feature activated" do
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#remote-census-tab").click
+
+      expect(page).to have_content("General Information")
+      expect(page).to have_content("Request Data")
+      expect(page).to have_content("Response Data")
+      expect(page).not_to have_content 'To configure remote census (SOAP) you must enable ' \
+                                       '"Configure connection to remote census (SOAP)" ' \
+                                       'on "Features" tab.'
+    end
+
+  end
+
+  describe "Should redirect to same tab after update setting" do
+
+    context "remote census" do
+
+      before do
+        Setting["feature.remote_census"] = true
+      end
+
+      after do
+        Setting["feature.remote_census"] = nil
+      end
+
+      scenario "On #tab-remote-census-configuration", :js do
+        remote_census_setting = create(:setting, key: "remote_census.general.whatever")
+        admin = create(:administrator).user
+        login_as(admin)
+        visit admin_settings_path
+        find("#remote-census-tab").click
+
+        within("#edit_setting_#{remote_census_setting.id}") do
+          fill_in "setting_#{remote_census_setting.id}", with: "New value"
+          click_button "Update"
+        end
+
+        expect(page).to have_current_path(admin_settings_path)
+        expect(page).to have_css("div#tab-remote-census-configuration.is-active")
+      end
+    end
+
+    scenario "On #tab-configuration", :js do
+      configuration_setting = Setting.create(key: "whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#tab-configuration").click
+
+      within("#edit_setting_#{configuration_setting.id}") do
+        fill_in "setting_#{configuration_setting.id}", with: "New value"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-configuration.is-active")
+    end
+
+    context "map configuration" do
+
+      before do
+        Setting["feature.map"] = true
+      end
+
+      after do
+        Setting["feature.map"] = nil
+      end
+
+      scenario "On #tab-map-configuration", :js do
+        map_setting = Setting.create(key: "map.whatever")
+        admin = create(:administrator).user
+        login_as(admin)
+        visit admin_settings_path
+        find("#map-tab").click
+
+        within("#edit_setting_#{map_setting.id}") do
+          fill_in "setting_#{map_setting.id}", with: "New value"
+          click_button "Update"
+        end
+
+        expect(page).to have_current_path(admin_settings_path)
+        expect(page).to have_css("div#tab-map-configuration.is-active")
+      end
+    end
+
+    scenario "On #tab-proposals", :js do
+      proposal_dashboard_setting = Setting.create(key: "proposals.whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#proposals-tab").click
+
+      within("#edit_setting_#{proposal_dashboard_setting.id}") do
+        fill_in "setting_#{proposal_dashboard_setting.id}", with: "New value"
+        click_button "Update"
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-proposals.is-active")
+    end
+
+    scenario "On #tab-participation-processes", :js do
+      process_setting = Setting.create(key: "process.whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#participation-processes-tab").click
+
+      accept_alert do
+        find("#edit_setting_#{process_setting.id} .button").click
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-participation-processes.is-active")
+    end
+
+    scenario "On #tab-feature-flags", :js do
+      feature_setting = Setting.create(key: "feature.whatever")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#features-tab").click
+
+      accept_alert do
+        find("#edit_setting_#{feature_setting.id} .button").click
+      end
+
+      expect(page).to have_current_path(admin_settings_path)
+      expect(page).to have_css("div#tab-feature-flags.is-active")
+    end
+  end
+
   describe "Skip verification" do
 
     scenario "deactivate skip verification", :js do

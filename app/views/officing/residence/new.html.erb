@@ -13,9 +13,23 @@
                          autocomplete: "off" %>
       </div>
 
-      <div class="date-of-birth small-12 medium-6">
-        <%= f.text_field :year_of_birth, type: "number", autocomplete: "off" %>
-      </div>
+      <% if Setting.force_presence_date_of_birth? %>
+        <div class="date-of-birth small-12 medium-6 clear">
+          <%= f.date_select :date_of_birth,
+                            prompt: true,
+                            start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+        </div>
+      <% else %>
+        <div class="date-of-birth small-12 medium-6">
+          <%= f.text_field :year_of_birth, type: "number", autocomplete: "off" %>
+        </div>
+      <% end %>
+
+      <% if Setting.force_presence_postal_code? %>
+        <div class="small-12 medium-6">
+          <%= f.text_field :postal_code, aria: {describedby: "postal-code-help-text"} %>
+        </div>
+      <% end %>
 
       <div class="small-12 medium-6">
         <input type="submit" value="<%= t("officing.residence.new.submit") %>" class="button expanded">

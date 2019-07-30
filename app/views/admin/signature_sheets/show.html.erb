@@ -8,14 +8,14 @@
   <strong><%= @signature_sheet.author.name %></strong>
 </div>
 
-<h3 id="document_count" class="block">
-  <%= t("admin.signature_sheets.show.document_count") %>
+<h3 id="signature_count" class="block">
+  <%= t("admin.signature_sheets.show.signature_count") %>
   <%= @signature_sheet.signatures.count %>
 </h3>
 
 <div class="callout margin-top">
-  <p><strong><%= t("admin.signature_sheets.show.documents") %></strong></p>
-  <%= simple_format @signature_sheet.document_numbers %>
+  <p><strong><%= t("admin.signature_sheets.show.users") %></strong></p>
+  <%= simple_format @signature_sheet.required_fields_to_verify %>
 </div>
 
 

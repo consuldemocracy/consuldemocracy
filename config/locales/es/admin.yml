@@ -743,6 +743,7 @@ es:
         budget_investments_milestones: "Pressupuestos participativos (Seguimiento)"
       debates: "Debates"
       comments: "Comentarios"
+      local_census_records: Gestionar censo local
     administrators:
       index:
         title: Administradores
@@ -1311,6 +1312,12 @@ es:
           how_to_enable: 'Para mostrar el mapa a los usuarios se debe de activar "Geolocalización de propuestas y proyectos de gasto" en la pestaña "Funcionalidades".'
         dashboard:
           title: Panel de progreso de propuestas
+        remote_census:
+          title: Configuración del Censo Remoto
+          how_to_enable: 'Para configurar la conexión con el Censo Remoto (SOAP) se debe activar "Configurar la conexión al censo remoto (SOAP)" en la pestaña "Funcionalidades".'
+      remote_census_general_name: Datos Generales
+      remote_census_request_name: Datos Petición
+      remote_census_response_name: Datos Respuesta
       setting: Funcionalidad
       setting_actions: Acciones
       setting_name: Configuración
@@ -1391,13 +1398,19 @@ es:
         new: Nueva hoja de firmas
       new:
         title: Nueva hoja de firmas
-        document_numbers_note: "Introduce los números separados por comas (,)"
+        document_numbers_note: "Introduce los números separados por punto y coma (;)"
         submit: Crear hoja de firmas
+        text_help:
+          required_fields_note: "Para verificar un usuario, su aplicación necesita: Número de documento"
+          date_of_birth_note: ", Día de nacimiento (dd/mm/yyyy)"
+          postal_code_note: " y Código Postal"
+          required_fields_structure_note: "Los campos requeridos para cada usuario deben ir separados por comas y cada usuario debe ir separado por punto y coma."
+          example_text: "Ejemplo: "
       show:
         created_at: Creado
         author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
+        users: Usuarios
+        signature_count: "Número de firmas:"
         verified:
           one: "Hay %{count} firma válida"
           other: "Hay %{count} firmas válidas"
@@ -1661,3 +1674,42 @@ es:
     progress_bars:
       index:
         title: "Barras de progreso"
+    local_census_records:
+      index:
+        title: Gestionar censo local
+        create: Crear nuevo registro en el censo local
+        no_local_census_records: No hay registros de censo local
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Fecha de nacimiento
+        postal_code: Código postal
+        search:
+          placeholder: Búsqueda por número de documento
+          search: Buscar
+        import: Importar CSV
+      form:
+        date_of_birth: Fecha de nacimiento
+      new:
+        creating: Creando nuevo registro de censo local
+      create:
+        notice: ¡Nuevo registro de censo local creado correctamente!
+      edit:
+        editing: Editando registro del censo local
+      update:
+        notice: ¡Registro del censo local actualizado correctamente!
+      destroy:
+        notice: ¡Registro del censo local eliminado correctamente!
+      imports:
+        new:
+          title: Registros del censo local
+          subtitle: Importar archivo CSV
+        create:
+          notice: ¡Proceso de import de registros del censo local ejecutado correctamente!
+        show:
+          title: Gestionar censo local
+          subtitle: Resultados del proceso de importación
+          import: Importar otro fichero
+          errored: Filas erróneas
+          created: Registros creados
+        local_census_records:
+          no_records_found: No se han encontrado registros.

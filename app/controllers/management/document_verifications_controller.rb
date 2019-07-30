@@ -34,7 +34,8 @@ class Management::DocumentVerificationsController < Management::BaseController
   private
 
     def document_verification_params
-      params.require(:document_verification).permit(:document_type, :document_number)
+      params.require(:document_verification).permit(:document_type, :document_number,
+                                                    :date_of_birth, :postal_code)
     end
 
     def set_document

@@ -24,6 +24,7 @@
 // 22. Images
 // 23. Maps
 // 24. Homepage
+// 25. LocalCensusRecords
 //
 
 // 01. Global styles
@@ -2926,6 +2927,21 @@ table {
       font-weight: bold;
       margin-bottom: $line-height / 4;
       padding: rem-calc(4) rem-calc(8);
+    }
+  }
+}
+
+// 25. Local Census Records
+// ------------------------
+
+.local-census-record-new,
+.local-census-record-edit {
+
+  .date-of-birth {
+    select {
+      float: left;
+      width: 30%;
+      margin-right: $line-height / 4;
     }
   }
 }

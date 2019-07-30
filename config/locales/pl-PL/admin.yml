@@ -1315,13 +1315,11 @@ pl:
         new: Nowe arkusze podpisów
       new:
         title: Nowe arkusze podpisów
-        document_numbers_note: "Napisz liczby oddzielone przecinkami (,)"
+        document_numbers_note: "Napisz liczby oddzielone średnikami (;)"
         submit: Utwórz arkusz podpisu
       show:
         created_at: Stworzony
         author: Autor
-        documents: Dokumenty
-        document_count: "Liczba dokumentów:"
         unverified_error: (Nie zweryfikowany przez Census)
         loading: "Nadal istnieją podpisy, które są weryfikowane przez Census, proszę odświeżyć stronę za kilka chwil"
     stats:

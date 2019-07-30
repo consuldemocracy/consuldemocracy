@@ -1184,13 +1184,11 @@ so:
         new: Warqadaha Cusub ee Saxixyada
       new:
         title: Warqadaha Cusub ee Saxixyada
-        document_numbers_note: "Qoor Lamaradaa oo ay ka socanyihiin qooyska(,)"
+        document_numbers_note: "Qoor Lamaradaa oo ay ka socanyihiin qooyska(;)"
         submit: Saame Warqada saxiixa
       show:
         created_at: Abuuray
         author: Qoraa
-        documents: Dukumentiyo
-        document_count: "Lamabarka Dukumeentiyada:"
         verified:
           one: "Waxa jira %{count} saxiixya ah oo saxa"
           other: "Waxa jira %{count} tiro saxiixya ah oo saxa"

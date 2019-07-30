@@ -978,6 +978,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.string   "postal_code",     null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["document_number", "document_type"], name: "index_local_census_records_on_document_number_and_document_type", unique: true, using: :btree
+    t.index ["document_number"], name: "index_local_census_records_on_document_number", using: :btree
   end
 
   create_table "locks", force: :cascade do |t|
@@ -1458,10 +1460,10 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "signature_sheets", force: :cascade do |t|
-    t.string   "signable_type"
     t.integer  "signable_id"
-    t.text     "document_numbers"
+    t.string   "signable_type"
     t.boolean  "processed",        default: false
+    t.text     "required_fields_to_verify"
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -1474,6 +1476,8 @@ ActiveRecord::Schema.define(version: 20190607160900) do
     t.boolean  "verified",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date_of_birth"
+    t.string   "postal_code"
   end
 
   create_table "site_customization_content_blocks", force: :cascade do |t|

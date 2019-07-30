@@ -1,9 +1,15 @@
 FactoryBot.define do
   factory :local_census_record, class: "LocalCensusRecord" do
-    document_number "12345678A"
+    sequence(:document_number) { |n| "DOC_NUMBER#{n}" }
     document_type 1
     date_of_birth Date.new(1970, 1, 31)
     postal_code "28002"
+  end
+  factory :local_census_records_import, class: "LocalCensusRecords::Import" do
+    file {
+      path = %w[spec fixtures files local_census_records import valid.csv]
+      Rack::Test::UploadedFile.new(Rails.root.join(*path))
+    }
   end
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, "0")}X" }
@@ -49,5 +55,12 @@ FactoryBot.define do
   factory :verified_user do
     document_number
     document_type "dni"
+  end
+
+  factory :verification_document, class: Verification::Management::Document do
+    document_number
+    document_type "1"
+    date_of_birth Date.new(1980, 12, 31)
+    postal_code "28013"
   end
 end

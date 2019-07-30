@@ -11,7 +11,7 @@
     <% end %>
   </li>
 
-  <li class="tabs-title">
+  <li class="tabs-title" id="participation-processes-tab">
     <%= link_to "#tab-participation-processes" do %>
       <%= t("admin.settings.index.participation_processes") %>
     <% end %>
@@ -40,4 +40,11 @@
       <%= t("admin.settings.index.dashboard.title") %>
     <% end %>
   </li>
+
+  <li class="tabs-title" id="remote-census-tab">
+   <%= link_to "#tab-remote-census-configuration" do %>
+      <%= t("admin.settings.index.remote_census.title") %>
+    <% end %>
+  </li>
+
 </ul>

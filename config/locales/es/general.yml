@@ -197,6 +197,8 @@ es:
     document: el documento
     topic: Tema
     image: Imagen
+    local_census_record: el registro del censo local
+    local_census_records/import: la importación de registros del censo local
   geozones:
     none: Toda la ciudad
   layouts:

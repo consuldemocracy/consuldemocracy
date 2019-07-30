@@ -63,8 +63,4 @@ class LocalCensus
       LocalCensusRecord.find_by(document_type: document_type, document_number: document_number)
     end
 
-    def dni?(document_type)
-      document_type.to_s == "1"
-    end
-
 end

@@ -1270,8 +1270,6 @@ de:
       show:
         created_at: Erstellt
         author: Autor
-        documents: Unterlagen
-        document_count: "Anzahl der Dokumente:"
         verified:
           one: "Es gibt %{count} gültige Unterschrift"
           other: "Es gibt %{count} gültige Unterschriften"

@@ -101,7 +101,7 @@ FactoryBot.define do
   factory :signature_sheet do
     association :signable, factory: :proposal
     association :author, factory: :user
-    document_numbers "123A, 456B, 789C"
+    required_fields_to_verify "123A, 456B, 789C"
   end
 
   factory :signature do
