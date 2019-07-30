@@ -528,7 +528,6 @@ fi:
       name: Nimi
       show:
         author: Tekijä
-        documents: Asiakirjat
     stats:
       show:
         summary:
