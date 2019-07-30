@@ -97,8 +97,6 @@ eu:
         name: Izena
     signature_sheets:
       name: Izena
-      show:
-        documents: Dokumentuak
     stats:
       polls:
         table:
