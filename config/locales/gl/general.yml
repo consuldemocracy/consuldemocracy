@@ -189,6 +189,7 @@ gl:
     document: Documento
     topic: Tema
     image: Imaxe
+    local_census_records/import: Importar rexistros do censo local
   geozones:
     none: Toda a cidade
   layouts:
@@ -197,6 +198,21 @@ gl:
       firefox: Firefox
       ie: Detectamos que estás navegando dende Internet Explorer. Para unha mellor experiencia recomendámosche empregar %{chrome} ou %{firefox}.
       ie_title: Esta web non está optimizada para o teu navegador
+    dashboard:
+      proposal_header:
+        published: Publicada
+        draft: Bosquexo
+        retired: Retirada
+      proposal_totals:
+        active_resources: Recursos activos
+        community: Participantes na túa comunidade
+        show_proposal: Amosar proposta
+        preview_proposal: Vista previa da proposta
+        current_goal: Obxectivo actual
+        supports:
+          zero: Sen apoios
+          one: 1 apoio
+          other: "Apoios"
     footer:
       accessibility: Accesibilidade
       conditions: Condicións de uso
@@ -236,6 +252,7 @@ gl:
           other: Tes %{count} notificacións novas
         notifications: Notificacións
         no_notifications: "Non tes notificacións novas"
+      tracking: "Seguimento"
     admin:
       watch_form_message: "Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?"
   notifications:
