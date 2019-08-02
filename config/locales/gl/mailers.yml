@@ -112,6 +112,11 @@ gl:
       list_2: "Estes consellos, accións e recursos daranche ideas e tamén solucións prácticas para obter máis apoio e unha comunidade máis ampla. Non os esquezas!"
       list_3: "Segundo gañes máis apoios, desbloquearás novos e mellores recursos. Polo momento, tes un modelo de correo electrónico para enviar de xeito masivo a todos os teus contactos, un cartel para imprimir, entre outras funcións e recompensas que descubrirás. Non deixes de engadir apoios e non deixaremos de recompensar e axudarche!"
       list_4: "Tes %{max_month} meses desde que publicas a túa proposta para acadar %{max_votes} apoios e facer que a túa proposta se convirta en realidade. Pero os primeiros días son os máis importantes. É todo un reto. Anímate!"
+      text_5: "E para que comeces con toda a motivación posible,"
+      text_6: "aquí podes atopar diferentes recursos e unha lista completa de trucos que recibirás cada día para preparar a túa emisión!"
       dashboard_button: "Adiante, descóbreos!"
     new_actions_notification_on_published:
+      subject: "A túa proposta cidadá xa está publicada. Non deixes de difundir!"
+      hi: "Parabéns %{name}! A túa proposta %{title} foi creada con éxito."
+      text_1: "E agora, a polos primeiros 100 apoios!"
       text_2: "Por que 100?"
