@@ -520,6 +520,22 @@ gl:
       options:
         preview: Vista previa
         download: Descarga
+    mailing:
+      index:
+        title: Vista previa da mensaxe de correo
+      new:
+        title: Modelo de mensaxe de correo para compartir
+      mailing_options:
+        send: Enviar a %{address}
+        preview: Vista previa
+      create:
+        sent: A mensaxe foi enviada
+    mailer:
+      forward:
+        subtitle_html: "Se me apoias, <br>conseguirémolo."
+        support_button: Apoia esta proposta
+        share_in: Compartir en
+        hi: "Ola!"
   polls:
     all: "Todo"
     no_dates: "sen data asignada"
@@ -573,6 +589,7 @@ gl:
         total_votes: "Número total de votos emitidos"
         votes: "VOTOS"
         web: "WEB"
+        mail: "Correo electrónico"
         booth: "URNAS"
         total: "TOTAL"
         valid: "Validos"
@@ -581,10 +598,13 @@ gl:
       results:
         title: "Preguntas"
         most_voted_answer: "Resposta máis votada: "
+    poll_header:
+      back_to_proposal: Volver á proposta
   poll_questions:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Votaches %{answer}"
+      add_answer: "Engadir resposta"
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
