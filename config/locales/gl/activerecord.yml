@@ -348,6 +348,22 @@ gl:
         link_text: Texto da ligazón
       widget/feed:
         limit: Número de elementos
+      dashboard/action:
+        title: Título
+        short_description: Descrición curta
+        description: Descrición
+        link: Ligazón externa
+        active: Activo
+        action_type: Tipo
+      dashboard/administrator_task:
+        source: Orixe
+        user: Executado por
+      link:
+        label: Título
+        url: Ligazón
+      valuator:
+        description: Descrición
+        valuator_group_id: Grupo de avaliadores
     errors:
       models:
         user:
