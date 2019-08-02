@@ -463,9 +463,63 @@ gl:
       embed_video_title: "Vídeo en %{proposal}"
       title_video_url: "Vídeo externo"
       author: Autoría
+      draft: Proposta en borrador. Non se poden obter apoios, nin aparecerá na lista de propostas.
     update:
       form:
         submit_button: Gardar so cambios
+  dashboard:
+    menu:
+      my_proposal: Editar a miña proposta
+      progress: Progreso
+      resources: Recursos
+      community: Comunidade
+      polls: Votacións
+      mailing: Correo electrónico
+      poster: Cartel
+      recommended_actions: Accións recomendadas
+      messages: Mensaxe aos usuarios
+    form:
+      request: Petición
+    create_request:
+      success: A petición foi enviada. Contactaremos o máis axiña posible para informarte sobre ela.
+      archived: Esta proposta está arquivada e non pode solicitar recursos.
+    progress:
+      title: Gráfico
+      group_by_month: Mensualmente
+      group_by_week: Semanalmente
+      group_by_date: Diariamente
+      progress: Progreso acumulado
+      supports: Apoios
+      success: Progreso ideal
+      new_action: Novo
+    index:
+      title: Edición
+      edit_proposal_link: Editar proposta
+    polls:
+      poll:
+        alert_notice: Esta acción eliminará a enquisa e todas as preguntas relacionadas.
+        success_notice: Enquisa eliminada correctamente
+        unable_notice: Non se pode eliminar unha enquisa con respostas
+      form:
+        name: Título da enquisa
+        add_question: Engadir pregunta
+      question_fields:
+        remove_question: Eliminar pregunta
+        add_answer: Engadir resposta
+      question_answer_fields:
+        remove_answer: Eliminar resposta
+    poster:
+      index:
+        title: Vista previa do cartel
+        poster_title: "Non sigas mirando"
+        poster_subtitle: "apóiame! ;-)"
+        proposal_code: "Código da proposta: %{code}"
+        support: Apoia a miña proposta
+      new:
+        title: Cartel da túa proposta
+      options:
+        preview: Vista previa
+        download: Descarga
   polls:
     all: "Todo"
     no_dates: "sen data asignada"
