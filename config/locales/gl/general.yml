@@ -304,7 +304,16 @@ gl:
     create:
       form:
         submit_button: Crear proposta
+    created:
+      title: Noraboa! Acabas de dar o primeiro paso.
+      motivation: "É importante preparar a campaña de lanzamento para que a túa proposta teña éxito. Os primeiros días son decisivos."
+      motivation_2_html: "<strong>Se queres recomendacións para preparar a publicación, deixa a proposta en modo borrador e guiarémoste.</strong>"
+      publish: Non, quero publicar a proposta
+      dashboard: Si, preciso axuda e publicarei máis tarde
+      preview_title: Este é o aspecto que terá a túa proposta cando se publique
     share:
+      improve_it: Mellora a túa campaña e consegue máis apoios.
+      dashboard: Ver máis información
       message: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
     edit:
       editing: Editar proposta
@@ -364,6 +373,10 @@ gl:
           error: "Produciuse un erro. Por favor, accede á páxina 'A miña conta' para deshabilitar de xeito manual as recomendacións para as propostas"
       retired_proposals: Propostas retiradas
       retired_proposals_link: "Propostas retiradas polos seus autores"
+      selected_proposals: Propostas seleccionadas
+      selected_proposals_link: Ver propostas seleccionadas
+      archived_proposals: Propostas arquivadas
+      proposals_lists: Listas de propostas
       retired_links:
         all: Todo
         duplicated: Duplicadas
@@ -402,6 +415,7 @@ gl:
       start_new: Crear unha proposta
     notice:
       retired: Proposta retirada
+      published: A proposta foi publicada
     proposal:
       created: "Creaches unha proposta!"
       share:
@@ -427,6 +441,7 @@ gl:
       total_percent: 100%
       archived: "Esta proposta foi arquivada e xa non pode recoller apoios."
       successful: "Esta proposta acadou os apoios necesarios."
+      selected: "Propostas seleccionadas"
     show:
       author_deleted: Usuario/a borrado/a
       code: "Código da proposta:"
@@ -435,6 +450,7 @@ gl:
         one: 1 comentario
         other: "%{count} comentarios"
       comments_tab: Comentarios
+      dashboard_proposal_link: Panel de control
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
       login_to_comment: Precisas %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
