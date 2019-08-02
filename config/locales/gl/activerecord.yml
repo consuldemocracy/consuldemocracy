@@ -1,4 +1,8 @@
 gl:
+  attributes:
+    results_enabled: "Amosar resultados"
+    stats_enabled: "Amosar estatísticas"
+    advanced_stats_enabled: "Amosar estatísticas avanzadas"
   activerecord:
     models:
       activity:
@@ -61,6 +65,9 @@ gl:
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      poll/ballot_sheet:
+        one: Papeleta
+        other: Papeletas
       proposal:
         one: "Proposta cidadá"
         other: "Propostas cidadás"
@@ -73,6 +80,9 @@ gl:
       site_customization/content_block:
         one: Bloque
         other: Personalizar bloques
+      document:
+        one: Documento
+        other: Documentos
       legislation/process:
         one: "Proceso"
         other: "Procesos"
@@ -106,6 +116,15 @@ gl:
       proposal_notification:
         one: "Notificación de proposta"
         other: "Notificacións das propostas"
+      dashboard/administrator_task:
+        one: Tarefa
+        other: Tarefas
+      link:
+        one: Ligazón
+        other: Ligazóns
+      local_census_record:
+        one: Rexistro do censo local
+        other: Rexistros do censo local
     attributes:
       budget:
         name: "Nome"
@@ -118,6 +137,9 @@ gl:
         description_finished: "Descrición cando o orzamento está rematado"
         phase: "Fase"
         currency_symbol: "Moeda"
+        budget_milestone_tags: "Etiquetas do investimento"
+        budget_valuation_tags: "Etiquetas de valoración"
+        help_link: "Ligazón de axuda"
       budget/investment:
         heading_id: "Partida"
         title: "Título"
@@ -128,6 +150,14 @@ gl:
         organization_name: "Se estás a propor no nome dunha organización, dun colectivo ou de mais xente, escribe o seu nome"
         image: "Imaxe descritiva da proposta"
         image_title: "Título da imaxe"
+      budget/investment/translation:
+        title: "Título"
+        description: "Descrición"
+      geozone:
+        name: Nome
+        external_code: "Código externo (opcional)"
+        census_code: "Código censal (opcional)"
+        html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado do investimento actual (opcional)"
         title: "Título"
@@ -155,12 +185,21 @@ gl:
         description: "Opinión"
         terms_of_service: "Termos de servizo"
         title: "Título"
+      debate/translation:
+        title: "Título do debate"
+        description: "Texto inicial do debate"
       proposal:
         author: "Autoría"
         title: "Título"
         question: "Pregunta"
         description: "Descrición"
+        selected: "Marcar como seleccionado"
         terms_of_service: "Termos de servizo"
+      proposal/translation:
+        title: "Título da proposta"
+        description: "Texto da proposta"
+        summary: "Resumo da proposta"
+        retired_explanation: "Explicación"
       user:
         login: "Correo electrónico ou nome de usuaria"
         email: "O teu correo electrónico"
@@ -193,6 +232,9 @@ gl:
         external_url: "Ligazón a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
+      poll/ballot_sheet:
+        data: Datos CSV
+        poll_id: Votación
       signature_sheet:
         signable_type: "Tipo de sinaturas"
         signable_id: "ID de proposta cidadá/proposta de investimento"
@@ -219,6 +261,9 @@ gl:
         name: Nome
         locale: idioma
         body: Contido
+      banner:
+        background_color: Cor de fondo
+        font_color: Cor da letra
       legislation/process:
         title: Título do proceso
         summary: Resumo
