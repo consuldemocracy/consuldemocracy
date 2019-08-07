@@ -93,16 +93,7 @@ Performance/UnfreezeString:
 Performance/UriDefaultParser:
   Enabled: true
 
-Rails/ActionFilter:
-  Enabled: true
-
 Rails/ActiveSupportAliases:
-  Enabled: true
-
-Rails/ApplicationJob:
-  Enabled: true
-
-Rails/ApplicationRecord:
   Enabled: true
 
 Rails/Blank:
@@ -145,9 +136,6 @@ Rails/HasAndBelongsToMany:
   Enabled: true
 
 Rails/HasManyOrHasOneDependent:
-  Enabled: true
-
-Rails/HttpPositionalArguments:
   Enabled: true
 
 Rails/InverseOf:
