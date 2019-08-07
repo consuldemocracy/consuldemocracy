@@ -53,6 +53,9 @@ Rails/ApplicationJob:
 Rails/ApplicationRecord:
   Enabled: true
 
+Rails/HttpPositionalArguments:
+  Enabled: true
+
 RSpec/NotToNot:
   Enabled: true
 

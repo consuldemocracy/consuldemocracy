@@ -138,9 +138,6 @@ Rails/HasAndBelongsToMany:
 Rails/HasManyOrHasOneDependent:
   Enabled: true
 
-Rails/HttpPositionalArguments:
-  Enabled: true
-
 Rails/InverseOf:
   Enabled: true
 
