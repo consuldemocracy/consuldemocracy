@@ -17,6 +17,11 @@ FactoryBot.define do
       ends_at { 15.days.ago }
     end
 
+    trait :old do
+      starts_at { 3.months.ago }
+      ends_at { 2.months.ago }
+    end
+
     trait :recounting do
       starts_at { 1.month.ago }
       ends_at { Date.current }
