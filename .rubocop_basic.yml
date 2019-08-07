@@ -14,6 +14,12 @@ AllCops:
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
 
+Capybara/FeatureMethods:
+  Enabled: true
+  EnabledMethods:
+    - scenario
+    - xscenario
+
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
