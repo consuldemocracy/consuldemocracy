@@ -119,6 +119,8 @@ es:
       remote_translations: "Traducción remota"
       remote_translations_description: "Muestra un botón que permite al usuario pedir una traducción cuando no hay contenido en su idioma."
       translation_interface: "Interfaz de traducción"
+      remote_census: "Configura la conexión al censo remoto (SOAP)"
+      remote_census_description: "Permite configurar la conexión al censo remoto de cada institución"
     map:
       latitude: "Latitud"
       latitude_description: "Latitud para mostrar la posición del mapa"
