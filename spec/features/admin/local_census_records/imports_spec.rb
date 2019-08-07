@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Imports", type: :feature do
+describe "Imports" do
 
   let(:base_files_path) { %w[spec fixtures files local_census_records import] }
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

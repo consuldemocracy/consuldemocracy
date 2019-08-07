@@ -24,7 +24,7 @@ describe DebatesController do
       }
       sign_in create(:user)
 
-      post :create, debate: debate_attributes
+      post :create, params: { debate: debate_attributes }
       expect(Ahoy::Event.where(name: :debate_created).count).to eq 1
       expect(Ahoy::Event.last.properties["debate_id"]).to eq Debate.last.id
     end

@@ -18,7 +18,7 @@ describe RemoteTranslationsController do
     end
 
     it "create correctly remote translation" do
-      post :create, remote_translations: @remote_translations_params
+      post :create, params: { remote_translations: @remote_translations_params }
 
       expect(RemoteTranslation.count).to eq(1)
     end
@@ -26,7 +26,7 @@ describe RemoteTranslationsController do
     it "create remote translation when same remote translation with error_message is enqueued" do
       create(:remote_translation, remote_translatable: debate, locale: :es, error_message: "Has errors")
 
-      post :create, remote_translations: @remote_translations_params
+      post :create, params: { remote_translations: @remote_translations_params }
 
       expect(RemoteTranslation.count).to eq(2)
     end
@@ -34,13 +34,13 @@ describe RemoteTranslationsController do
     it "not create remote translation when same remote translation is enqueued" do
       create(:remote_translation, remote_translatable: debate, locale: :es)
 
-      post :create, remote_translations: @remote_translations_params
+      post :create, params: { remote_translations: @remote_translations_params }
 
       expect(RemoteTranslation.count).to eq(1)
     end
 
     it "redirect_to request referer after create" do
-      post :create, remote_translations: @remote_translations_params
+      post :create, params: { remote_translations: @remote_translations_params }
 
       expect(subject).to redirect_to("any_path")
     end

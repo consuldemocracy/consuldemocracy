@@ -1,4 +1,4 @@
-class AddConfigToDownloadSettings < ActiveRecord::Migration
+class AddConfigToDownloadSettings < ActiveRecord::Migration[4.2]
   def change
     add_column :download_settings, :config, :integer, default: 0, null: false
 
