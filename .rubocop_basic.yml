@@ -20,6 +20,9 @@ Capybara/FeatureMethods:
     - scenario
     - xscenario
 
+FactoryBot/AttributeDefinedStatically:
+  Enabled: true
+
 Layout/IndentationConsistency:
   EnforcedStyle: rails
 
@@ -54,6 +57,9 @@ Rails/ApplicationRecord:
   Enabled: true
 
 Rails/HttpPositionalArguments:
+  Enabled: true
+
+Rails/RelativeDateConstant:
   Enabled: true
 
 RSpec/NotToNot:

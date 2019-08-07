@@ -2,11 +2,11 @@ FactoryBot.define do
   factory :proposal do
     sequence(:title)     { |n| "Proposal #{n} title" }
     sequence(:summary)   { |n| "In summary, what we want is... #{n}" }
-    description          "Proposal description"
-    video_url            "https://youtu.be/nhuNb0XtRhQ"
-    responsible_name     "John Snow"
-    terms_of_service     "1"
-    skip_map             "1"
+    description          { "Proposal description" }
+    video_url            { "https://youtu.be/nhuNb0XtRhQ" }
+    responsible_name     { "John Snow" }
+    terms_of_service     { "1" }
+    skip_map             { "1" }
     published_at         { Time.current }
 
     association :author, factory: :user
@@ -34,7 +34,7 @@ FactoryBot.define do
     end
 
     trait :selected do
-      selected true
+      selected { true }
     end
 
     trait :with_hot_score do
@@ -57,13 +57,13 @@ FactoryBot.define do
     end
 
     trait :draft do
-      published_at nil
+      published_at { nil }
     end
 
     trait :retired do
       retired_at { Time.current }
-      retired_reason "unfeasible"
-      retired_explanation "Retired explanation"
+      retired_reason { "unfeasible" }
+      retired_explanation { "Retired explanation" }
     end
 
     trait :published do
@@ -82,7 +82,7 @@ FactoryBot.define do
     association :author, factory: :user
 
     trait :moderated do
-      moderated true
+      moderated { true }
     end
 
     trait :ignored do
@@ -101,7 +101,7 @@ FactoryBot.define do
   factory :signature_sheet do
     association :signable, factory: :proposal
     association :author, factory: :user
-    required_fields_to_verify "123A, 456B, 789C"
+    required_fields_to_verify { "123A, 456B, 789C" }
   end
 
   factory :signature do
@@ -111,24 +111,24 @@ FactoryBot.define do
 
   factory :activity do
     user
-    action "hide"
+    action { "hide" }
     association :actionable, factory: :proposal
   end
 
   factory :dashboard_action, class: "Dashboard::Action" do
     title { Faker::Lorem.sentence[0..79] }
     description { Faker::Lorem.sentence }
-    link nil
-    request_to_administrators true
-    day_offset 0
-    required_supports 0
-    order 0
-    active true
-    hidden_at nil
-    action_type "proposed_action"
+    link { nil }
+    request_to_administrators { true }
+    day_offset { 0 }
+    required_supports { 0 }
+    order { 0 }
+    active { true }
+    hidden_at { nil }
+    action_type { "proposed_action" }
 
     trait :admin_request do
-      request_to_administrators true
+      request_to_administrators { true }
     end
 
     trait :external_link do
@@ -136,11 +136,11 @@ FactoryBot.define do
     end
 
     trait :inactive do
-      active false
+      active { false }
     end
 
     trait :active do
-      active true
+      active { true }
     end
 
     trait :deleted do
@@ -148,11 +148,11 @@ FactoryBot.define do
     end
 
     trait :proposed_action do
-      action_type "proposed_action"
+      action_type { "proposed_action" }
     end
 
     trait :resource do
-      action_type "resource"
+      action_type { "resource" }
     end
   end
 

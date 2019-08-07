@@ -3,11 +3,11 @@ FactoryBot.define do
     sequence(:username) { |n| "Manuela#{n}" }
     sequence(:email)    { |n| "manuela#{n}@consul.dev" }
 
-    password            "judgmentday"
-    terms_of_service    "1"
+    password            { "judgmentday" }
+    terms_of_service    { "1" }
     confirmed_at        { Time.current }
     date_of_birth       { 20.years.ago }
-    public_activity     true
+    public_activity     { true }
 
     trait :incomplete_verification do
       after :create do |user|
@@ -17,19 +17,19 @@ FactoryBot.define do
 
     trait :level_two do
       residence_verified_at { Time.current }
-      unconfirmed_phone "611111111"
-      confirmed_phone "611111111"
-      sms_confirmation_code "1234"
-      document_type "1"
+      unconfirmed_phone { "611111111" }
+      confirmed_phone { "611111111" }
+      sms_confirmation_code { "1234" }
+      document_type { "1" }
       document_number
-      date_of_birth Date.new(1980, 12, 31)
-      gender "female"
+      date_of_birth { Date.new(1980, 12, 31) }
+      gender { "female" }
       geozone
     end
 
     trait :level_three do
       verified_at { Time.current }
-      document_type "1"
+      document_type { "1" }
       document_number
     end
 
@@ -47,16 +47,16 @@ FactoryBot.define do
     end
 
     trait :in_census do
-      document_number "12345678Z"
-      document_type "1"
+      document_number { "12345678Z" }
+      document_type { "1" }
       verified_at { Time.current }
     end
   end
 
   factory :identity do
-    user nil
-    provider "Twitter"
-    uid "MyString"
+    user { nil }
+    provider { "Twitter" }
+    uid { "MyString" }
   end
 
   factory :administrator do
@@ -96,8 +96,8 @@ FactoryBot.define do
   end
 
   factory :direct_message do
-    title    "Hey"
-    body     "How are You doing?"
+    title    { "Hey" }
+    body     { "How are You doing?" }
     association :sender,   factory: :user
     association :receiver, factory: :user
   end

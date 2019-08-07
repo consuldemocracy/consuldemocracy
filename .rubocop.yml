@@ -48,9 +48,6 @@ Performance/FixedSize:
 Performance/FlatMap:
   Enabled: true
 
-Performance/LstripRstrip:
-  Enabled: true
-
 Performance/RangeInclude:
   Enabled: true
 
@@ -63,16 +60,10 @@ Performance/RedundantMatch:
 Performance/RedundantMerge:
   Enabled: true
 
-Performance/RedundantSortBy:
-  Enabled: true
-
 Performance/RegexpMatch:
   Enabled: true
 
 Performance/ReverseEach:
-  Enabled: true
-
-Performance/Sample:
   Enabled: true
 
 Performance/Size:
@@ -166,9 +157,6 @@ Rails/ReadWriteAttribute:
   Enabled: true
 
 Rails/RedundantReceiverInWithOptions:
-  Enabled: true
-
-Rails/RelativeDateConstant:
   Enabled: true
 
 Rails/RequestReferer:
@@ -359,12 +347,6 @@ RSpec/VerifiedDoubles:
 
 RSpec/VoidExpect:
   Enabled: true
-
-FactoryBot/StaticAttributeDefinedDynamically:
-  Enabled: true
-
-FactoryBot/DynamicAttributeDefinedStatically:
-  Enabled: false
 
 Security/Eval:
   Enabled: true
