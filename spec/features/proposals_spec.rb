@@ -1478,7 +1478,11 @@ describe "Proposals" do
       visit proposals_path
       fill_in "search", with: "Show what you got"
       click_button "Search"
+
+      expect(page).to have_content "Search results"
+
       click_link "newest"
+
       expect(page).to have_selector("a.is-active", text: "newest")
 
       within("#proposals") do
