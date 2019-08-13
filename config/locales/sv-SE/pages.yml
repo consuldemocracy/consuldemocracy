@@ -147,6 +147,16 @@ sv:
               action_column: Visa > skala
         browser_shortcuts_table:
           description: "Ett annat sätt att justera textstorlek är att använda tangentbordets genvägar som definieras i webbläsare, särskilt tangentkombinationen:"
+          rows:
+            - 
+              shortcut_column: CTRL och + (CMD och + på MAC)
+              description_column: Ökar textstorlek
+            - 
+              shortcut_column: CTRL och - (CMD och - på MAC)
+              description_column: Minskar textstorlek
+      compatibility:
+        title: Förenlighet med standarder och visuell design
+        description_html: 'Alla sidor av denna webbplats följer <strong>Riktlinjer för Tillgänglighet</strong> eller generella principer för tillgänglig design som etablerats av Arbetsgruppen <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> som tillhör W3C.'
     titles:
       help: "Vad är %{org}? - Medborgardeltagande"
     verify:
