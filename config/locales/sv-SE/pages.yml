@@ -2,6 +2,8 @@ sv:
   pages:
     conditions:
       title: användarvillkoren
+      subtitle: Rättsligt meddelande om användarvillkor, säkerhet och skydd av personlig data för Open Government portalen
+      description: Informationssida om användarvillkor, säkerhet och skydd av personlig data.
     help:
       title: "%{org} är en plattform för medborgardeltagande"
       guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
@@ -63,6 +65,7 @@ sv:
         how_to_use: Använd det i din kommun
     privacy:
       title: sekretesspolicyn
+      subtitle: "Informationssida om säkerhet"
     accessibility:
       title: Tillgänglighet
       keyboard_shortcuts:
