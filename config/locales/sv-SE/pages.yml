@@ -68,6 +68,15 @@ sv:
       subtitle: "Informationssida om säkerhet"
     accessibility:
       title: Tillgänglighet
+      description: |-
+        Tillgänglighet på webben hänvisar till allas möjlighet att tillträda webben och dess innehåll oavsett de funktionshinder (fysiska, intellektuella eller tekniska) som kan uppstå eller från det som beror på användarsammanhang (teknisk eller miljömässig). 
+
+        När webbplatser designas med tillgänglighet i åtanke, kan alla användare få tillgång till innehållet på jämlika villkor, exempelvis:
+      examples:
+        - Erbjuda syntolkning till bilder som användare med synnedsättningar med hjälp av textläsare kan använda för att få tillgång till information.
+        - When videos have subtitles, users with hearing difficulties can fully understand them.
+        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
+        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
       keyboard_shortcuts:
         navigation_table:
           page_header: Sida
