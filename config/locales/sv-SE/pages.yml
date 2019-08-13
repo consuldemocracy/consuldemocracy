@@ -74,11 +74,15 @@ sv:
         När webbplatser designas med tillgänglighet i åtanke, kan alla användare få tillgång till innehållet på jämlika villkor, exempelvis:
       examples:
         - Erbjuda syntolkning till bilder som användare med synnedsättningar med hjälp av textläsare kan använda för att få tillgång till information.
-        - When videos have subtitles, users with hearing difficulties can fully understand them.
-        - If the contents are written in a simple and illustrated language, users with learning problems are better able to understand them.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - När videos har undertext kan användare med hörselskador fullt förstå dem.
+        - Om innehållet är skrivet på ett lätt och illustrerat språk kan användare med inlärningssvårigheter bättre förstå det.
+        - Om användaren har problem med rörlighet och det är svårt att använda musen kan tangentbordets alternativ hjälpa att navigera.
       keyboard_shortcuts:
+        title: Genvägar för tangentbord
         navigation_table:
+          description: För att kunna navigera denna webbsida på ett tillgängligt sätt har ett gäng snabbkommandon programmerats för att samla de huvudsakliga delar av sidan som är av allmänt intresse.
+          caption: Genvägar för tangentbordet som når navigeringsmenyn
+          key_header: Tangent
           page_header: Sida
           rows:
             - 
@@ -99,13 +103,20 @@ sv:
             - 
               key_column: 5
         browser_table:
+          description: "Beroende på det operativsystem och webbläsare som används är tangentkombinationen följande:"
+          caption: Tangentkombinationen beror på operativsystemet och webbläsare
+          browser_header: Webbläsare
+          key_header: Tangentkombination
           rows:
             - 
               browser_column: IE
+              key_column: ALT + genväg sen ENTER
             - 
               browser_column: Firefox
+              key_column: ALT + CAPS + genväg
             - 
               browser_column: Chrome
+              key_column: ALT + genväg (CTRL + ALT + genvägar för MAC)
             - 
               browser_column: Safari
             - 
