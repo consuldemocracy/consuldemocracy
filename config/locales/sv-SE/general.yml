@@ -542,6 +542,8 @@ sv:
       geozone_restricted: "Stadsdelar"
       geozone_info: "Öppen för invånare från: "
       already_answer: "Du har redan deltagit i den här omröstningen"
+      not_logged_in: "Du måste logga in eller registrera dig för att delta"
+      unverified: "Du måste verifiera ditt konto för att delta"
       section_header:
         icon_alt: Omröstningsikon
         title: Omröstningar
