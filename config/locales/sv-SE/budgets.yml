@@ -11,6 +11,7 @@ sv:
           one: "Du har röstat på <span>ett</span> budgetförslag."
           other: "Du har röstat på <span>%{count}</span> budgetförslag."
         voted_info_html: "Du kan ändra din röst när som helst under den här fasen.<br> Du behöver inte spendera hela din budget."
+        voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fasen stängt."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
         not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
@@ -21,6 +22,7 @@ sv:
         no_ballots_allowed: Urvalsfasen är stängd
         different_heading_assigned_html: "Du har redan röstat inom ett annat område: %{heading_link}"
         change_ballot: ändra dina röster
+        casted_offline: Du har redan deltagit offline
     groups:
       show:
         title: Välj ett alternativ
@@ -171,12 +173,23 @@ sv:
       accepted: "Accepterade budgetförslag: "
       discarded: "Avvisade budgetförslag: "
       incompatibles: Oförenliga
+      investment_title: Projekttitel
       investment_proyects: Lista över budgetförslag
       unfeasible_investment_proyects: Lista över ej genomförbara budgetförslag
       not_selected_investment_proyects: Lista över budgetförslag som inte gått vidare till omröstning
     executions:
       link: "Milstolpar"
+      page_title: "%{budget} - Milstolpar"
+      heading: "Medborgarbudgetens milstolpar"
       heading_selection_title: "Efter stadsdel"
+      no_winner_investments: "Inga vinnande förslag i denna stadsdel"
+      filters:
+        status:
+          label: "Projektets nuvarande tillstånd"
+          all: "Alla (%{count})"
+        milestone_tag:
+          label: "Milstolpe tagg"
+          all: "Alla (%{count})"
     phases:
       errors:
         dates_range_invalid: "Startdatum kan inte vara samma eller senare än slutdatum"
