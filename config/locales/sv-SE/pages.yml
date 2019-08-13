@@ -119,11 +119,16 @@ sv:
               key_column: ALT + genväg (CTRL + ALT + genvägar för MAC)
             - 
               browser_column: Safari
+              key_column: ALT + genväg (CMD + genvägar för MAC)
             - 
               browser_column: Opera
+              key_column: CAPS + ESC + genväg
       textsize:
         title: Textstorlek
         browser_settings_table:
+          description: Webbplatsens tillgängliga design tillåter användaren att välja den storlek på texten som passar hen. Detta kan göras på olika sätt beroende på vilken webbläsare som används.
+          browser_header: Webbläsare
+          action_header: Åtgärd att ta
           rows:
             - 
               browser_column: IE
@@ -133,9 +138,15 @@ sv:
               action_column: Visa > Storlek
             - 
               browser_column: Chrome
+              action_column: Inställningar (ikon) > Alternativ > Avancerat > Webbinnehåll > Textstorlek
             - 
+              browser_column: Safari
+              action_column: Visa > Zooma in/Zooma ut
             - 
               browser_column: Opera
+              action_column: Visa > skala
+        browser_shortcuts_table:
+          description: "Ett annat sätt att justera textstorlek är att använda tangentbordets genvägar som definieras i webbläsare, särskilt tangentkombinationen:"
     titles:
       help: "Vad är %{org}? - Medborgardeltagande"
     verify:
