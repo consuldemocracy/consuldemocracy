@@ -70,6 +70,11 @@ sv:
       hi: "Kära användare,"
       thanks: "Tack återigen för att du deltar."
       sincerely: "Vänliga hälsningar"
+    evaluation_comment:
+      subject: "Ny kommentar kring utvärdering"
+      title: Ny kommentar kring utvärdering för %{investment}
+      hi: Hej
+      new_comment_by_html: Det finns en nya kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
     new_actions_notification_rake_created:
       hi: "Hej %{name},"
     new_actions_notification_rake_published:
