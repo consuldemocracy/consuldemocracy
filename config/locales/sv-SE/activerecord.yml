@@ -1,4 +1,8 @@
 sv:
+  attributes:
+    results_enabled: "Visa resultat"
+    stats_enabled: "Visa statistik"
+    advanced_stats_enabled: "Visa avancerad statistik"
   activerecord:
     models:
       activity:
