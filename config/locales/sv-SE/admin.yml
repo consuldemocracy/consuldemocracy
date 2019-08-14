@@ -114,7 +114,6 @@ sv:
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
-      headings_edit: "Redigera områden"
       headings_manage: "Hantera områden"
       max_votable_headings: "Högst antal områden som användare kan rösta inom"
       no_groups: "Det finns inga grupper."
@@ -125,7 +124,6 @@ sv:
         submit: "Spara delbudget"
     budget_headings:
       name: "Namn"
-      no_headings: "Det finns inga områden."
       form:
         name: "Område"
         amount: "Antal"
@@ -289,8 +287,15 @@ sv:
             pending: Väntande
         form:
           proposal: Förslag
+    debates:
+      index:
+        title: Debatter
+    hidden_debates:
+      index:
+        title: Dolda debatter
     documents:
       new:
+        title: "Ladda upp ett dokument"
         label_attachment: "Välj dokument"
       index:
         new_link: "Lägg till ett nytt dokument"
@@ -352,6 +357,7 @@ sv:
           additional_info_placeholder: Lägga till ytterligare information som du anser vara användbar
           homepage: Beskrivning
           homepage_enabled: Hemsida aktiverad
+          banner_title: Färger för sidhuvud
         index:
           create: Ny process
           delete: Ta bort
@@ -563,6 +569,8 @@ sv:
         restricted_removal: "Tyvärr, du kan inte ta bort dig själv från administratörerna"
       search:
         title: "Administratörer: Sök användare"
+      form:
+        edit_title: "Redigera administratör"
     moderators:
       index:
         title: Moderatorer
@@ -664,6 +672,10 @@ sv:
         title: "Sammanfattande avisering om förslag"
         description: "Samlar alla aviseringar om förslag till en användare i ett meddelande för att undvika för mycket e-post."
         preview_detail: "Användare kommer endast få aviseringar från förslag de följer"
+      budget_investment_created:
+        title: "Budgetförslag skapat"
+      budget_investment_selected:
+        title: "Budgetförslag valt"
       reply:
         title: "Svara"
       message_title: "Meddelandes titel"
@@ -1071,6 +1083,8 @@ sv:
       content: Innehåll
       created_at: Skapad den
       delete: Ta bort
+      show_results_and_stats: "Visa resultat och statistik"
+      results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
     geozones:
       index:
         title: Geografiska områden
