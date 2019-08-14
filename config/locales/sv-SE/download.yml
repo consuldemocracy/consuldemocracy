@@ -1,1 +1,13 @@
 sv:
+  download:
+    fielddescription:
+      debates:
+        title: "Titel"
+      proposals:
+        title: "Titel"
+      legislation_processes:
+        title: "Titel"
+      budget_investments:
+        title: "Titel"
+    modal:
+      title: "Ladda ner"
