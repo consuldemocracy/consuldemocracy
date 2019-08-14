@@ -675,25 +675,34 @@ sv:
         preview_detail: "Användare kommer endast få aviseringar från förslag de följer"
       budget_investment_created:
         title: "Budgetförslag skapat"
-        description: "Skickat när en användare skapar ett budgetförslag."
+        description: "Skickas när en användare skapar ett budgetförslag."
       budget_investment_selected:
         title: "Budgetförslag markerat"
+        description: "Skickas till författaren när dennes budgetförslag har blivit valt."
       budget_investment_unfeasible:
         title: "Budgetförslag ogenomförbart"
+        description: "Skickas till författaren när dennes budgetförslag blivit markerat som ogenomförbart."
       budget_investment_unselected:
         title: "Budgetförslag avmarkerat"
+        description: "Skickas till författaren när dennes budgetförslag inte gått vidare till omröstningsfasen."
       comment:
         title: "Kommentera"
+        description: "Skickas till författaren när den får en kommentar."
       reply:
         title: "Svara"
+        description: "Skickas till den som skrivit kommentaren när den får svar."
       direct_message_for_receiver:
         title: "Mottagare av privatmeddelande"
+        description: "Skickas till mottagaren av privatmeddelandet."
       direct_message_for_sender:
         title: "Avsändare av privatmeddelande"
+        description: "Skickas till avsändaren av privatmeddelandet."
       email_verification:
         title: "E-mejl verifiering"
+        description: "Skickas till en ny användare för att verifiera deras konto."
       user_invite:
         title: "Inbjudan till användare"
+        description: "Skickas till personen som bjudits in till att registrera ett konto."
       evaluation_comment:
         title: "Ny kommentar kring utvärdering"
       message_title: "Meddelandes titel"
