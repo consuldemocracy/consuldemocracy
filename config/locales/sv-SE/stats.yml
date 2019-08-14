@@ -1,8 +1,10 @@
 sv:
   stats:
+    title: "Deltagardata"
     age: "Ålder"
     total: "Totalt"
     geozone: "Stadsdel"
     budgets:
       link: "Statistik"
+      page_title: "%{budget} - Deltagarstatistik"
       total: "Totalt"
