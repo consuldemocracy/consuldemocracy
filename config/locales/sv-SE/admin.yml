@@ -83,6 +83,7 @@ sv:
         table_investments: Budgetförslag
         table_edit_groups: Delbudgetar
         table_edit_budget: Redigera
+        table_admin_ballots: Röstsedel
         edit_groups: Redigera delbudgetar
         edit_budget: Redigera budget
         no_budgets: "Det finns inga budgetar."
