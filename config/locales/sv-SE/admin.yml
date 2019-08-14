@@ -675,9 +675,25 @@ sv:
       budget_investment_created:
         title: "Budgetförslag skapat"
       budget_investment_selected:
-        title: "Budgetförslag valt"
+        title: "Budgetförslag markerat"
+      budget_investment_unfeasible:
+        title: "Budgetförslag ogenomförbart"
+      budget_investment_unselected:
+        title: "Budgetförslag avmarkerat"
+      comment:
+        title: "Kommentera"
       reply:
         title: "Svara"
+      direct_message_for_receiver:
+        title: "Mottagare av privatmeddelande"
+      direct_message_for_sender:
+        title: "Avsändare av privatmeddelande"
+      email_verification:
+        title: "E-mejl verifiering"
+      user_invite:
+        title: "Inbjudan till användare"
+      evaluation_comment:
+        title: "Ny kommentar kring utvärdering"
       message_title: "Meddelandes titel"
     emails_download:
       index:
@@ -1047,6 +1063,8 @@ sv:
           form:
             submit: Uppdatera
           how_to_enable: 'För att visa kartan måste man aktivera "Geografisk plats för förslag och budgetförslag" på sidan "Funktioner".'
+        dashboard:
+          title: Instrumentbräda för förslag
       setting_actions: Åtgärder
       setting_status: Status
       setting_value: Värde
