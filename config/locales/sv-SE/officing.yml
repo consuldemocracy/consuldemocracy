@@ -25,6 +25,9 @@ sv:
         submit: Spara
       show:
         data: CSV data
+    booth:
+      new:
+        title: "Välj din röststation"
     results:
       flash:
         create: "Resultatet har sparats"
