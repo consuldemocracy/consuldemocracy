@@ -561,6 +561,7 @@ sv:
         title: Administratörer
         name: Namn
         email: E-post
+        description: Beskrivning
         id: Administratör ID
         no_administrators: Det finns inga administratörer.
       administrator:
@@ -674,6 +675,7 @@ sv:
         preview_detail: "Användare kommer endast få aviseringar från förslag de följer"
       budget_investment_created:
         title: "Budgetförslag skapat"
+        description: "Skickat när en användare skapar ett budgetförslag."
       budget_investment_selected:
         title: "Budgetförslag markerat"
       budget_investment_unfeasible:
@@ -1084,6 +1086,8 @@ sv:
       proposal_search:
         button: Sök
         placeholder: Sök förslag efter titel, kod, beskrivning eller fråga
+      debate_search:
+        placeholder: Sök debatter med titel eller beskrivning
       user_search:
         button: Sök
         placeholder: Sök användare efter namn eller e-post
@@ -1345,3 +1349,10 @@ sv:
         submit_header: Spara sidhuvud
         card_title: Redigera kort
         submit_card: Spara kort
+    trackers:
+      index:
+        description: Beskrivning
+        no_description: Ingen beskrivning
+      show:
+        description: Beskrivning
+        no_description: Ingen beskrivning.
