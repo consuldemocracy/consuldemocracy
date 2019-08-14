@@ -86,6 +86,7 @@ sv:
         table_admin_ballots: Röstsedel
         edit_groups: Redigera delbudgetar
         edit_budget: Redigera budget
+        admin_ballots: Administrera röstsedlar
         no_budgets: "Det finns inga budgetar."
       create:
         notice: En ny medborgarbudget har skapats!
@@ -113,8 +114,10 @@ sv:
     budget_groups:
       name: "Namn"
       headings_name: "Områden"
+      headings_edit: "Redigera områden"
       headings_manage: "Hantera områden"
       max_votable_headings: "Högst antal områden som användare kan rösta inom"
+      no_groups: "Det finns inga grupper."
       form:
         create: "Skapa ny grupp"
         edit: "Redigera delbudget"
@@ -122,6 +125,7 @@ sv:
         submit: "Spara delbudget"
     budget_headings:
       name: "Namn"
+      no_headings: "Det finns inga områden."
       form:
         name: "Område"
         amount: "Antal"
