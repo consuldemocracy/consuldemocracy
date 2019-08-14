@@ -143,6 +143,7 @@ sv:
         image_title: "Bildtext"
       budget/investment/translation:
         title: "Titel"
+        description: "Beskrivning"
       geozone:
         name: Namn
       milestone:
@@ -168,12 +169,16 @@ sv:
         description: "Inlägg"
         terms_of_service: "Användarvillkor"
         title: "Titel"
+      debate/translation:
+        description: "Inledande debatt-text"
       proposal:
         author: "Skribent"
         title: "Titel"
         question: "Fråga"
         description: "Beskrivning"
         terms_of_service: "Användarvillkor"
+      proposal/translation:
+        description: "Förslagstext"
       user:
         login: "E-postadress eller användarnamn"
         email: "E-post"
@@ -333,6 +338,8 @@ sv:
       link:
         label: Titel
         url: Länk
+      valuator:
+        description: Beskrivning
     errors:
       models:
         user:
