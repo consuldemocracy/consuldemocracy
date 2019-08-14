@@ -141,6 +141,8 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
+      budget/investment/translation:
+        title: "Titel"
       geozone:
         name: Namn
       milestone:
