@@ -1,1 +1,19 @@
 sv:
+  tracking:
+    budgets:
+      index:
+        title: Medborgarbudgetar
+    budget_investments:
+      index:
+        title: Budgetförslag
+        table_title: Titel
+      show:
+        title: Budgetförslag
+    milestones:
+      index:
+        table_title: "Titel"
+      edit:
+        title: Redigera milstolpe
+    progress_bars:
+      index:
+        table_title: "Titel"
