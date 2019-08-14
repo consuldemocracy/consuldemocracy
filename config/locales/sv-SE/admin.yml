@@ -705,6 +705,7 @@ sv:
         description: "Skickas till personen som bjudits in till att registrera ett konto."
       evaluation_comment:
         title: "Ny kommentar kring utvärdering"
+        description: "Skickas till administratörer och bedömare knutna till ett kommenterat budgetförslag"
       message_title: "Meddelandes titel"
     emails_download:
       index:
