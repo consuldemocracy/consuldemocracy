@@ -4,19 +4,30 @@ sv:
       index:
         title: Medborgarbudgetar
         table_name: Namn
+        table_phase: Fas
+        table_actions: Åtgärder
     budget_investments:
       index:
         title: Budgetförslag
         table_id: ID
         table_title: Titel
+        table_actions: Åtgärder
       show:
         title: Budgetförslag
+        by: Skickat av
+        sent: Skickat den
+        heading: Område
     milestones:
       index:
         table_id: "ID"
         table_title: "Titel"
+        table_description: "Beskrivning"
+        table_actions: "Åtgärder"
+        image: "Bild"
+        show_image: "Visa bild"
       new:
         date: Datum
+        description: Beskrivning
       edit:
         title: Redigera milstolpe
     progress_bars:
