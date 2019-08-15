@@ -22,6 +22,7 @@ sv:
         comments_about: Kommentarer om
         see_in_context: Visa i sammanhang
         comments_count:
+          zero: Inga kommentarer
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
       show:
@@ -95,6 +96,9 @@ sv:
         form:
           leave_comment: Svara
       question:
+        total:
+          one: "%{count} debatt"
+          other: "%{count} debatter"
         comments:
           zero: Inga kommentarer
           one: "%{count} kommentar"
@@ -122,5 +126,9 @@ sv:
       form:
         tags_label: "Kategorier"
       not_verified: "Rösta på förslag %{verify_account}."
+      total:
+        zero: Inga förslag
     summary:
       votes: röster
+      comments:
+        zero: Inga kommentarer
