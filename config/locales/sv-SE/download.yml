@@ -1,19 +1,50 @@
 sv:
   download:
+    edit:
+      description: "Beskrivning"
+      proposals: "Förslag"
+      comments: "Kommentarer"
+      submit: "Spara ändringar"
+      config:
+        "0": ""
+        "1": "- Milstolpar"
     fielddescription:
       debates:
         title: "Titel"
+        description: "Beskrivning"
+        hidden_at: "Dold"
+        flags_count: "Antal flaggor"
         tsv: "TSV"
       proposals:
         title: "Titel"
+        description: "Beskrivning"
+        question: "Fråga"
+        hidden_at: "Dold"
+        flags_count: "Antal flaggor"
+        video_url: "Video URL"
         tsv: "TSV"
       legislation_processes:
         title: "Titel"
+        description: "Beskrivning"
+        additional_info: "Ytterligare Information"
+        end_date: "Slutdatum"
+        debate_end_date: "Slutdatum för debatt"
+        hidden_at: "Dold"
+        published: "Publicerad"
       budget_investments:
         title: "Titel"
+        description: "Beskrivning"
         price: "Kostnad"
+        feasibility: "Genomförbarhet"
+        duration: "Längd"
+        physical_votes: "Fysiska röster"
         tsv: "TSV"
+        selected: "Vald"
+        location: "Plats"
+        flags_count: "Antal flaggor"
       comments:
         body: "Innehåll"
+        flags_count: "Antal flaggor"
     modal:
       title: "Ladda ner"
+      submit: "Ladda ner"
