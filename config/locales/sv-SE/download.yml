@@ -3,11 +3,17 @@ sv:
     fielddescription:
       debates:
         title: "Titel"
+        tsv: "TSV"
       proposals:
         title: "Titel"
+        tsv: "TSV"
       legislation_processes:
         title: "Titel"
       budget_investments:
         title: "Titel"
+        price: "Kostnad"
+        tsv: "TSV"
+      comments:
+        body: "Innehåll"
     modal:
       title: "Ladda ner"
