@@ -103,6 +103,7 @@ sv:
         active: Aktiva
         blank_dates: Datumfälten är tomma
         name: "Namn"
+        selected: "Vald"
         save: "Spara"
       destroy:
         success_notice: Budgeten raderades
@@ -264,12 +265,17 @@ sv:
     comments:
       index:
         id: "ID"
+        content: "Innehåll"
         commentable_type: "Typ"
+        title: Kommentarer
         table_link: "Länk"
     hidden_comments:
       index:
         filters:
           all: Alla
+          with_confirmed_hide: Godkända
+        hidden_proposal: Gömt förslag
+        title: Dolda kommentarer
     dashboard:
       index:
         back: Gå tillbaka till %{org}
@@ -280,22 +286,31 @@ sv:
           resource: Resurs
         index:
           edit: Redigera
+          delete: Radera
           active: 'Ja'
           inactive: 'Nej'
           action_title: Titel
           action_type: Typ
           required_supports: Minsta stöd som krävs
+          action_active: Aktiva
           order: Sortera efter
           default:
             email: E-post
             polls: Omröstningar
+        new:
+          back: Tillbaka till lista
+        edit:
+          back: Tillbaka till lista
         form:
           submit_button: Spara
       administrator_tasks:
         index:
           solve: Lösa
+          source: Källa
+          filter: Filtrera
           filters:
             pending: Väntande
+            done: Löst
         form:
           proposal: Förslag
     debates:
@@ -306,6 +321,7 @@ sv:
       index:
         filters:
           all: Alla
+          with_confirmed_hide: Godkända
         title: Dolda debatter
     documents:
       new:
@@ -377,6 +393,7 @@ sv:
           delete: Ta bort
           title: Dialoger
           filters:
+            active: Aktiva
             all: Alla
         new:
           back: Tillbaka
@@ -570,6 +587,11 @@ sv:
       title_booths: Röststationer
       legislation: Medborgardialoger
       users: Användare
+      download_settings:
+        debates: "Debatter"
+        comments: "Kommentarer"
+      debates: "Debatter"
+      comments: "Kommentarer"
     administrators:
       index:
         title: Administratörer
@@ -738,6 +760,7 @@ sv:
         valuator_groups: "Bedömningsgrupper"
         group: "Delbudget"
         no_group: "Ingen grupp"
+        can_comment: "Kan kommentera"
       valuator:
         add: Lägg till bedömare
         delete: Ta bort
@@ -884,6 +907,8 @@ sv:
         no_questions: "Det finns inga frågor till den här omröstningen."
         questions_title: "Lista med frågor"
         table_title: "Titel"
+        edit_answers: Redigera svar
+        see_proposal: "(Visa förslag)"
       flash:
         question_added: "Frågan har lagts till i omröstningen"
         error_on_question_added: "Frågan kunde inte läggas till i omröstningen"
@@ -1050,7 +1075,10 @@ sv:
         title: Förslag
         id: ID
         author: Skribent
+        selected: Vald
         milestones: Milstolpar
+      form:
+        update: Uppdatera förslag
     hidden_proposals:
       index:
         filter: Filtrera
@@ -1173,6 +1201,7 @@ sv:
       show:
         created_at: Skapad
         author: Skribent
+        users: Användare
         verified:
           one: "Det finns %{count} giltig underskrift"
           other: "Det finns %{count} giltiga underskrifter"
@@ -1212,10 +1241,12 @@ sv:
         supporting_phase: Stödfas
       budget_balloting:
         vote_count: Röster
+        participant_count: Deltagare
       budget_supporting:
         headings: Områden
         users: Användare
         vote_count: Röster
+        participant_count: Deltagare
       direct_messages:
         title: Direktmeddelanden
         total: Totalt
@@ -1375,11 +1406,23 @@ sv:
         submit_card: Spara kort
     change_log:
       id: "ID"
+      field: "Fält"
+      actions: "Åtgärder"
     trackers:
       index:
         name: Namn
+        email: E-post
         description: Beskrivning
         no_description: Ingen beskrivning
       show:
+        email: E-post
         description: Beskrivning
         no_description: Ingen beskrivning.
+    local_census_records:
+      index:
+        document_type: Dokumenttyp
+        date_of_birth: Födelsedatum
+        postal_code: Postkod
+        import: Importera CSV
+      form:
+        date_of_birth: Födelsedatum
