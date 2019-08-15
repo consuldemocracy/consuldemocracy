@@ -157,6 +157,8 @@ sv:
       progress_bar:
         kind: "Typ"
         title: "Titel"
+      progress_bar/kind:
+        secondary: "Sekundär"
       budget/heading:
         name: "Område"
         price: "Kostnad"
@@ -179,6 +181,7 @@ sv:
         terms_of_service: "Användarvillkor"
       proposal/translation:
         description: "Förslagstext"
+        retired_explanation: "Förklaring"
       user:
         login: "E-postadress eller användarnamn"
         email: "E-post"
@@ -340,6 +343,10 @@ sv:
         url: Länk
       valuator:
         description: Beskrivning
+      local_census_record:
+        document_type: Dokumenttyp
+        date_of_birth: Födelsedatum
+        postal_code: Postkod
     errors:
       models:
         user:
