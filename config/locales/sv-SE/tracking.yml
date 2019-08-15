@@ -3,17 +3,24 @@ sv:
     budgets:
       index:
         title: Medborgarbudgetar
+        table_name: Namn
     budget_investments:
       index:
         title: Budgetförslag
+        table_id: ID
         table_title: Titel
       show:
         title: Budgetförslag
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titel"
+      new:
+        date: Datum
       edit:
         title: Redigera milstolpe
     progress_bars:
       index:
+        table_id: "ID"
+        table_kind: "Typ"
         table_title: "Titel"
