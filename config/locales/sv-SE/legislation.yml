@@ -122,3 +122,5 @@ sv:
       form:
         tags_label: "Kategorier"
       not_verified: "Rösta på förslag %{verify_account}."
+    summary:
+      votes: röster
