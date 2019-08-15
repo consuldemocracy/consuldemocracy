@@ -86,7 +86,7 @@ sv:
         table_admin_ballots: Röstsedel
         edit_groups: Redigera delbudgetar
         edit_budget: Redigera budget
-        admin_ballots: Administrera röstsedlar
+        admin_ballots: Administratörs röstsedlar
         no_budgets: "Det finns inga budgetar."
       create:
         notice: En ny medborgarbudget har skapats!
@@ -722,7 +722,7 @@ sv:
         title: "Budgetförslag avmarkerat"
         description: "Skickas till författaren när dennes budgetförslag inte gått vidare till omröstningsfasen."
       comment:
-        title: "Kommentera"
+        title: "Kommentar"
         description: "Skickas till författaren när den får en kommentar."
       reply:
         title: "Svara"
