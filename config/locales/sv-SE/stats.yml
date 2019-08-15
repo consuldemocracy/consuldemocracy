@@ -1,6 +1,7 @@
 sv:
   stats:
     title: "Deltagardata"
+    total_participants: "Deltagare"
     age: "Ålder"
     total: "Totalt"
     geozone: "Stadsdel"
