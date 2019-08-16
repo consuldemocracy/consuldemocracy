@@ -732,9 +732,9 @@ da:
         see_all: "Se alle"
       budget_investment:
         found:
-          one: "Der findes allerede et investeringsforslag vedrørende '%{query}'. Du kan deltage i det i stedet for at oprette et nyt."
-          other: "Der findes allerede flere investeringsforslag vedrørende '%{query}'. Du kan deltage i dem i stedet for at oprette et nyt."
-        message: "Du ser %{limit} ud af %{count} investeringsforslag, som indeholder '%{query}'"
+          one: "Der findes allerede en projektidé vedrørende '%{query}'. Se idéen an, i stedet for at oprette en ny."
+          other: "Der findes allerede flere projektidéer vedrørende '%{query}'. Se dem an, i stedet for at oprette en ny idé."
+        message: "Du ser %{limit} ud af %{count} projektidéer, som indeholder '%{query}'"
         see_all: "Se alle"
       proposal:
         found:
@@ -817,11 +817,11 @@ da:
       deleted: Slettet
       deleted_debate: Denne debat er blevet slettet
       deleted_proposal: Dette forslag er blevet slettet
-      deleted_budget_investment: Dette investeringsprojekt er blevet slettet
+      deleted_budget_investment: Projektet er blevet slettet
       proposals: Forslag
       proposals_status: Status
       debates: Debatindlæg
-      budget_investments: Budgetinvesteringer
+      budget_investments: Projektidéer
       comments: Kommentarer
       actions: Handlinger
       filters:
@@ -835,8 +835,8 @@ da:
           one: 1 Forslag
           other: "%{count} Forslag"
         budget_investments:
-          one: 1 Investering
-          other: "%{count} Investeringer"
+          one: 1 projekt
+          other: "%{count} Projekter"
         follows:
           one: 1 Følger
           other: "%{count} Følgere"
@@ -844,7 +844,7 @@ da:
       no_private_messages: "Denne bruger accepterer ikke private beskeder."
       private_activity: Denne bruger har valgt at holde sine aktiviteter private.
       send_private_message: "Send privat besked"
-      delete_alert: "Er du sikker på, du ønsker at slette dit investeringsprojekt? Denne handling kan ikke fortrydes"
+      delete_alert: "Er du sikker på, du ønsker at slette din projektidé? Denne handling kan ikke fortrydes"
     proposals:
       retired: "Tilbagetrukket borgerforslag"
       draft: Udkast
@@ -866,13 +866,13 @@ da:
     verify_account: verificer din konto
     budget_investments:
       not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
-      not_verified: Kun verificerede brugere kan stemme på investeringsprojekter; %{verify_account}.
+      not_verified: Kun verificerede brugere kan stemme på projektidéer; %{verify_account}.
       organization: Det er ikke tilladt for organisationer at stemme
-      unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
+      unfeasible: Du kan ikke støtte op om projekter, der ikke kan gennemføres
       not_voting_allowed: Afstemningsfasen er afsluttet
       different_heading_assigned:
-        one: "Du kan kun støtte op om investeringsprojekter i %{count} distrikt. Du har allerede støttet investeringer i %{supported_headings}."
-        other: "Du kan kun støtte op om investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+        one: "Du kan kun støtte op om projekter i %{count} distrikt. Du har allerede støttet projekter i %{supported_headings}."
+        other: "Du kan kun støtte op om projektidéer i %{count} distrikter. Du har allerede støttet projekter i %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -896,7 +896,7 @@ da:
         title: Borgerforslag, der kunne have din interesse
         btn_text_link: Alle borgerforslag, der kunne have din interesse
       budget_investments:
-        title: Investeringer, der kunne have din interesse
+        title: Projekter, der kunne have din interesse
       slide: "Se %{title}"
     verification:
       i_dont_have_an_account: Jeg er ikke tilmeldt
@@ -934,7 +934,7 @@ da:
     content_title:
       proposal: "Borgerforslag"
       debate: "Debatindlæg"
-      budget_investment: "Budgetinvestering"
+      budget_investment: "Projekt"
   admin/widget:
     header:
       title: Administration
