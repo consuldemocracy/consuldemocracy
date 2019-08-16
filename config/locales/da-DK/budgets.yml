@@ -51,9 +51,9 @@ da:
         all_phases: Se alle faser
       all_phases: Deltagerbudgettets faseforløb
       map: Projekternes geografiske placering
-      investment_proyects: Liste over alle investeringsprojekter
-      unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
-      not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
+      investment_proyects: Alle projekter
+      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
+      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
       finished_budgets: Afsluttede deltagerbudetter
       see_results: Se resultat
       section_footer:
@@ -174,9 +174,9 @@ da:
       discarded: "Kasserede udgiftsforslag: "
       incompatibles: Uforeneligede
       investment_title: Titel på projekt
-      investment_proyects: Liste over alle investeringsprojekter
-      unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
-      not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
+      investment_proyects: Alle projekter
+      unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
+      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
     executions:
       link: "Milepæle"
       page_title: "%{budget} - Milepæle"
