@@ -178,9 +178,9 @@ da:
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
       not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
     executions:
-      link: "Milepæle"
-      page_title: "%{budget} - Milepæle"
-      heading: "Milepæle i deltagerbudgettet"
+      link: "Processer"
+      page_title: "%{budget} - Proces"
+      heading: "Processer i deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
       no_winner_investments: "Ingen vinder investeringer i denne tilstand"
       filters:
