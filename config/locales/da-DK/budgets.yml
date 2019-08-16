@@ -47,7 +47,7 @@ da:
       section_header:
         icon_alt: Deltagerbudgetter ikon
         title: Deltagerbudgetter
-        help: Hjælp med deltagerbudgetter
+        help: Hvad er et deltagerbudget?
         all_phases: Se alle faser
       all_phases: Deltagerbudgettets faseforløb
       map: Forslag til budget investeringer geografisk placeret
@@ -55,9 +55,9 @@ da:
       unfeasible_investment_proyects: Liste over alle investeringsprojekter, der ikke er mulige at gennemføre
       not_selected_investment_proyects: Liste over alle investeringsprojekter, der ikke er udvalgt til afstemningsfasen
       finished_budgets: Afsluttede deltagerbudetter
-      see_results: Se resultater
+      see_results: Se resultat
       section_footer:
-        title: Hjælp med deltagerbudgetter
+        title: Hvad er et deltagerbudget?
         description: Med deltagerbudgetter beslutter borgerne, hvilke projekter der skal have del i budgettet.
       milestones: Proces
     investments:
@@ -159,7 +159,7 @@ da:
       unfeasible: Se ikke mulige investeringsforslag
       unselected_title: Investeringsforslag, der ikke er udvalgt til afstemningsfasen
       unselected: Se investeringsforslag, der ikke er udvalgt til afstemningsfasen
-      see_results: Se resultater
+      see_results: Se resultat
     results:
       link: Resultater
       page_title: "%{budget} - Resultater"
@@ -185,7 +185,7 @@ da:
       no_winner_investments: "Ingen vinder investeringer i denne tilstand"
       filters:
         status:
-          label: "Projektstatus"
+          label: "Status"
           all: "Alle (%{count})"
         milestone_tag:
           label: "Milepæl"
