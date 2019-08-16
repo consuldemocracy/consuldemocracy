@@ -33,11 +33,11 @@ da:
     phase:
       drafting: Udkast (Ikke offentligt)
       informing: Information
-      accepting: Modtagelse af projekteridéer
+      accepting: Modtagelse af projektidéer
       reviewing: Gennemgang af projekter
       selecting: Projektudvælgelse
       valuating: Vurdering af projekter
-      publishing_prices: Publicering af projekternes prisvurdering
+      publishing_prices: Publicering af prisvurderinger
       balloting: Afstemning
       reviewing_ballots: Gennemgang af afstemningsresultatet
       finished: Budgettet er færdiggjort
