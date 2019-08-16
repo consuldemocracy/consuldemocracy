@@ -70,15 +70,15 @@ da:
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
         map_remove_marker: "Fjern markøren"
         location: "Yderligere information vedrørende lokation"
-        map_skip_checkbox: "Denne investering har ikke en konkret lokation, eller også kender jeg ikke til den."
+        map_skip_checkbox: "Denne investering har ikke en konkret lokation"
       index:
         title: Deltagerbudgetter
         unfeasible: Investeringer, der ikke er mulige at gennemføre
         unfeasible_text: "Projektidéerne skal imødekomme en række kriterier for at kunne indgå i den endelige afstemningsfase. De projektidéer, der ikke opfylder kriterierne bliver fravalgt og er at finde på listen nedenunder sammen med en rapport, der begrunder projektets manglende opfyldelse af de angivede krav. "
-        by_heading: "Investeringsprojekter tilknyttet et område: %{heading}"
+        by_heading: "Projektidéer tilknyttet: %{heading}"
         search_form:
           button: Søg
-          placeholder: Søg investeringsprojekter...
+          placeholder: Søg efter projekter...
           title: Søg
         search_results_html:
           one: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
@@ -93,11 +93,11 @@ da:
           different_heading_assigned_html: "Du har aktive stemmer i en anden post: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
-          zero: Du har ikke stemt på nogle investeringsprojekter i denne gruppe.
-          verified_only: "For at oprette en ny budget investering %{verify}."
+          zero: Du har endnu ikke stemt på projektidéer i denne gruppe.
+          verified_only: "For at oprette en projektidé til det aktuelle deltagerbudget %{verify}."
           verify_account: "verificer din konto"
-          create: "Opret en budgetinvestering"
-          not_logged_in: "For at oprette en budgetinvestering skal du %{sign_in} eller %{sign_up}."
+          create: "Opret din projektidé"
+          not_logged_in: "For at oprette en projektidé skal du %{sign_in} eller %{sign_up}."
           sign_in: "log ind"
           sign_up: "tilmeld dig"
           by_feasibility: Efter gennemførlighed
@@ -108,7 +108,7 @@ da:
           confidence_score: højest rangeret
           price: pris
       share:
-        message: "Jeg har oprettet et investeringsprojekt %{title} i %{handle}. Du kan gøre det samme!"
+        message: "Jeg har oprettet en projektidé %{title} i %{handle}. Du kan gøre det samme!"
       show:
         author_deleted: Bruger slettet
         price_explanation: Prisforklaring
@@ -117,27 +117,27 @@ da:
         location_html: "Lokation: <strong>%{location}</strong>"
         organization_name_html: "Oprettet på vegne af: <strong>%{name}</strong>"
         share: Del
-        title: Investeringsprojekt
+        title: Projekt
         supports: Støtte
         votes: Stemmer
         price: Pris
         comments_tab: Kommentarer
         milestones_tab: Processer
         author: Forfatter
-        project_unfeasible_html: "Investeringsprojektet <strong>er blevet vurderet til ikke at kunne gennemføres</strong> og vil derfor ikke gå videre til afstemningsfasen."
-        project_selected_html: "Investeringsprojektet <strong>er blevet valgt</strong> til afstemningsfasen."
+        project_unfeasible_html: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre din projektidé</strong>, og den vil derfor ikke gå videre til afstemningsfasen."
+        project_selected_html: "Projektet <strong>er blevet valgt</strong> til afstemningsfasen."
         project_winner: "Projekt med flest stemmer"
-        project_not_selected_html: "Investeringsprojektet <strong>er ikke blevet valgt</strong> til afstemningsfasen."
+        project_not_selected_html: "Projektet <strong>er ikke blevet valgt</strong> til afstemningsfasen."
         see_price_explanation: Se prisforklaring
       wrong_price_format: Kun hele tal
       investment:
         add: Stem
-        already_added: Du har allerede tilføjet investeringsprojektet
+        already_added: Du har allerede tilføjet projektet
         already_supported: Du har allerede støttet dette forslag. Del det!
         support_title: Støt forslaget
         confirm_group:
-          one: "Du kan kun støtte op om investeringsforslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
-          other: "Du kan kun støtte op om investeringsforslag i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+          one: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
+          other: "Du kan kun støtte op om projektidéer i %{count} distrikt. Hvis du fortsætter, kan du ikke ændre valget af dit distrikt. Er du sikker?"
         supports:
           zero: Ingen støtte
           one: 1 støtter op om projektet
