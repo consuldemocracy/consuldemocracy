@@ -155,10 +155,10 @@ da:
     show:
       group: Gruppe
       phase: Aktuelle fase
-      unfeasible_title: Ikke mulige investeringsforslag
-      unfeasible: Se ikke mulige investeringsforslag
-      unselected_title: Investeringsforslag, der ikke er udvalgt til afstemningsfasen
-      unselected: Se investeringsforslag, der ikke er udvalgt til afstemningsfasen
+      unfeasible_title: Projekter, der ikke kan gennemføres
+      unfeasible: Se projekter, der ikke kan gennemføres
+      unselected_title: Projekter, der ikke er udvalgt til afstemningsfasen
+      unselected: Se projekter, der ikke er udvalgt til afstemningsfasen
       see_results: Se resultat
     results:
       link: Resultater
