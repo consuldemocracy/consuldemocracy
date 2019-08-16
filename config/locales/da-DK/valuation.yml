@@ -13,7 +13,7 @@ da:
           finished: Færdig
         table_name: Navn
         table_phase: Fase
-        table_assigned_investments_valuation_open: Investeringsprojekter åbne for vurdering
+        table_assigned_investments_valuation_open: Projektidéerne er klar til vurdering
         table_actions: Handlinger
         evaluate: Evaluere
         no_budgets: "Der er ingen budgetter"
@@ -25,7 +25,7 @@ da:
           valuating: Under vurdering
           valuation_finished: Vurderingen er færdig
         assigned_to: "Tildelt til %{valuator}"
-        title: Investeringsprojekter
+        title: Projekter
         edit: Rediger rapport
         valuators_assigned:
           one: Tilknyttet evaluator
@@ -35,10 +35,10 @@ da:
         table_title: Titel
         table_heading_name: Område
         table_actions: Handlinger
-        no_investments: "Der er ingen investeringsprojekter."
+        no_investments: "Der er ingen projekter."
       show:
         back: Tilbage
-        title: Investeringsprojekt
+        title: Projekt
         info: Brugerinformation
         by: Sendt af
         sent: Sendt den
@@ -76,4 +76,4 @@ da:
       notice:
         valuate: "Rapporten blev opdateret"
       valuation_comments: Kommentarer på vurdering
-      not_in_valuating_phase: Investeringer kan kun vurderes, når budgettet befinder sig i vurderingsfasen
+      not_in_valuating_phase: Projektidéer kan kun vurderes, når budgettet befinder sig i vurderingsfasen
