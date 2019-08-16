@@ -9,10 +9,10 @@ da:
     show:
       title:
         proposal: Fællesskabet omkring forslaget
-        investment: Fællesskabet omkring budgetinvesteringen
+        investment: Fællesskab relateret til dette projekt
       description:
         proposal: Deltag i fællesskabet omkring dette forslag. Et aktivt fællesskab kan bidrage til at forbedre forslagets indhold og øge dets udbredelse. Det skaber mulighed for, at flere brugere kan støtte op om forslaget.
-        investment: Deltag i fællesskabet omkring denne budgetinvestering. Et aktivt fællesskab kan bidrage til at forbedre budgetinvesteringens indhold og øge dens udbredelse. Det skaber mulighed for, at flere brugere kan støtte op om investeringsforslaget.
+        investment: Deltag i fællesskabet relateret til denne projektidé. Et aktivt fællesskab kan bidrage til at forbedre projektets indhold og øge udbredelsen af din idé. Det skaber mulighed for, at flere brugere kan støtte op dit forslag.
       create_first_community_topic:
         first_theme_not_logged_in: Der er ingen tilgængelige indlæg - vær den første til at oprette et.
         first_theme: Opret det første indlæg i dette fællesskab
