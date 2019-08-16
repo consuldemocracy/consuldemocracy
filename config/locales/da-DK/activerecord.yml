@@ -12,8 +12,8 @@ da:
         one: "Budget"
         other: "Budgetter"
       budget/investment:
-        one: "Investering"
-        other: "Investeringer"
+        one: "Projekt"
+        other: "Projekter"
       milestone:
         one: "proces"
         other: "processer"
