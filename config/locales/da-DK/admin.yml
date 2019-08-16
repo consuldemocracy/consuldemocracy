@@ -82,7 +82,7 @@ da:
         budget_investments: Administrer projekter
         table_name: Navn
         table_phase: Fase
-        table_investments: Investeringer
+        table_investments: Projektidéer
         table_edit_groups: Område grupper
         table_edit_budget: Rediger
         table_admin_ballots: Stemmesedler
@@ -125,14 +125,14 @@ da:
         save: "Gem"
       destroy:
         success_notice: Budgettet blev slettet
-        unable_notice: Du kan ikke slette et Budget, der har tilknyttede investeringer
+        unable_notice: Du kan ikke slette et budget, der har modtaget projektidéer fra brugere
         unable_notice_polls: Du kan ikke slette et budget med et tilknyttet valgsted
       new:
         title: Nyt deltagerbudget
       winners:
-        calculate: Beregn Vinder Investeringer
+        calculate: Beregn resultat
         calculated: Udregner vinderne, det kan tage et minut.
-        recalculate: Genberegn vinder investeringer
+        recalculate: Beregn resultat igen
     budget_groups:
       name: "Navn"
       headings_name: "Områder"
@@ -169,7 +169,7 @@ da:
         notice: "Post opdateret"
       destroy:
         success_notice: "Post slettet"
-        unable_notice: "Du kan ikke slette en post, der har tilknyttede investeringer"
+        unable_notice: "Du kan ikke slette en gruppe, der har modtaget projektidéer fra brugere"
       form:
         name: "Navn på post"
         amount: "Beløb"
@@ -177,9 +177,9 @@ da:
         population_info: "Feltet over befolkningsantallet inden for et område anvendes til at holde statistikker over, hvor stor en andel af befolkningen, der deltog i afstemningen. Feltet er valgfrit."
         latitude: "Breddegrad (valgfri)"
         longitude: "Længdegrad (valgfri)"
-        coordinates_info: "Hvis du angiver breddegrad og længdegrad, så vil investeringssiden inkludere et kort centreret omkring de angivne koordinator."
+        coordinates_info: "Hvis du angiver bredde- og længdegrader, så vil der på siden vises et kort centreret omkring de angivne koordinatorer."
         allow_content_block: "Tillad indholdsblok"
-        content_blocks_info: "Hvis indholdsblokke er tilladt, kan du oprette brugerdefineret indhold relateret til dette område. Det gøres via Indstillinger > Brugerdefinerede indholdsblokke. Indholdet vil være synligt på websiden for investeringsforslag til dette område."
+        content_blocks_info: "Hvis indholdsblokke er tilladt, kan du oprette brugerdefineret indhold relateret til dette område. Det gøres via Indstillinger > Brugerdefinerede indholdsblokke. Indholdet vil være synligt på websiden for projektidéer til dette område."
         create: "Opret nyt område"
         edit: "Rediger område"
         submit: "Gem position"
@@ -222,8 +222,8 @@ da:
         buttons:
           filter: Filtrere
         download_current_selection: "Download aktuel markering"
-        no_budget_investments: "Der er ingen investeringsprojekter."
-        title: Investeringsprojekter
+        no_budget_investments: "Der er ingen projekter."
+        title: Projekter
         assigned_admin: Tilknyttet administrator
         no_admin_assigned: Der er ikke tilknyttet en administrator
         no_valuators_assigned: Der er ikke tilknyttet nogle evaluatorer
@@ -256,7 +256,7 @@ da:
         assigned_admin: Tildelt administrator
         assigned_valuators: Tildelt evaluatorer
         classification: Klassificering
-        info: "%{budget_name} - Gruppe: %{group_name} - Investeringsprojekt %{id}"
+        info: "%{budget_name} - Gruppe: %{group_name} - Projekt %{id}"
         edit: Rediger
         edit_classification: Rediger klassificering
         by: Af
@@ -463,8 +463,8 @@ da:
           all: Alle
           with_confirmed_hide: Bekræftet
           without_confirmed_hide: Under behandling
-        title: Skjulte budgetinvesteringer
-        no_hidden_budget_investments: Der er ingen skjulte budgetinvesteringer
+        title: Skjulte budgetforslag
+        no_hidden_budget_investments: Der er ingen skjulte budgetforslag
     legislation:
       processes:
         create:
@@ -735,11 +735,11 @@ da:
       all_users: Alle brugere
       administrators: Administratorer
       proposal_authors: Brugere der har oprettet et forslag
-      investment_authors: Brugere der har oprettet et investeringsforslag i det aktuelle budget
-      feasible_and_undecided_investment_authors: "Brugere der har oprettet investeringsforslag til det aktuelle budget, men som ikke svarer til: [valuation finished unfesasible]"
+      investment_authors: Brugere, der har oprettet en projektidé i det aktuelle budget
+      feasible_and_undecided_investment_authors: "Brugere der har oprettet projektidéer til det aktuelle budget, men som ikke svarer til: [valuation finished unfesasible]"
       selected_investment_authors: Brugere hvis forslag er udvalgt i det aktuelle budget
-      winner_investment_authors: Brugere hvis investeringsforslag har opnået flest stemmer i det aktuelle budget
-      not_supported_on_current_budget: Brugere, der ikke har støttet op om investeringer i det nuværende budget
+      winner_investment_authors: Brugere, hvis projektidéer har opnået flest stemmer i det aktuelle budget
+      not_supported_on_current_budget: Brugere, der ikke har støttet op om projektidéer i det nuværende budget
       invalid_recipients_segment: "Modtagersegmentet er ugyldigt"
     newsletters:
       create_success: Nyhedsbrevet blev oprettet
@@ -827,17 +827,17 @@ da:
         description: "Samler alle notifikationer vedrørende borgerforslag i én besked til brugeren for at undgå for mange e-mails."
         preview_detail: "Brugerne vil kun modtage notifikation om de forslag, de følger"
       budget_investment_created:
-        title: "Budgetinvestering oprettet"
-        description: "Sendt når en bruger opretter en budgetinvestering."
+        title: "Din idé blev oprettet"
+        description: "Sendt når en bruger opretter en projektidé."
       budget_investment_selected:
-        title: "Budgetinvestering valgt"
+        title: "Projektidé valgt"
         description: "Sendt til brugeren, hvis vedkommendes budgetforslag er blevet udvalgt."
       budget_investment_unfeasible:
-        title: "Budgetinvesteringen kan ikke gennemføres"
-        description: "Sendt til brugeren, hvis vedkommendes budgetforslag er markeret som uigennemførlig."
+        title: "Projektet kan ikke gennemføres"
+        description: "Send besked til brugeren, hvis vedkommendes projekt ikke kan gennemføres."
       budget_investment_unselected:
-        title: "Budgetforslag ikke valgt"
-        description: "Sendt til brugeren, hvis vedkommendes budgetforslag ikke er blevet valgt til afstemningsfasen."
+        title: "Projektidé ikke valgt"
+        description: "Send besked til brugeren, hvis vedkommendes projektidé ikke er blevet udvalgt til afstemningsfasen."
       comment:
         title: "Kommentar"
         description: "Sendt til brugeren, når vedkommende modtager en kommentar."
@@ -860,7 +860,7 @@ da:
       message_title: "Meddelelses titel"
       message_body: "Dette er et udkast til beskedens indhold."
       alert:
-        no_investments: "Der er ikke oprettet nogle investeringsforslag. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
+        no_investments: "Der er endnu ikke oprettet nogle projektidéer. Eksempler er nødvendig for at kunne forhåndsvise e-mailen."
         no_comments: "Der er ikke oprettet nogle kommentarer. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
         no_replies: "Der er ikke oprette nogle tilbagesvar. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
     emails_download:
@@ -1348,7 +1348,7 @@ da:
           proposal_votes: Stemmer på forslag
           proposals: Borgerforslag
           budgets: Åbne budgetter
-          budget_investments: Investeringsforslag
+          budget_investments: Projekter
           unverified_users: Ikke verificerede brugere
           user_level_three: Niveau tre brugere
           user_level_two: Niveau to brugere
