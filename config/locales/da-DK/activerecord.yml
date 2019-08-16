@@ -15,8 +15,8 @@ da:
         one: "Investering"
         other: "Investeringer"
       milestone:
-        one: "Milepæl"
-        other: "Milepæle"
+        one: "proces"
+        other: "processer"
       milestone/status:
         one: "Status for milepæl"
         other: "Status for milepæle"
