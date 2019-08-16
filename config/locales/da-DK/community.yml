@@ -3,8 +3,8 @@ da:
     sidebar:
       title: Fællesskab
       description:
-        proposal: Deltag i brugerfællesskabet omkring dette forslag.
-        investment: Deltag i brugerfællesskabet omkring denne investering.
+        proposal: Deltag i brugerfællesskabet relateret til dette projekt.
+        investment: Deltag i brugerfællesskabet relateret til dette projekt.
       button_to_access: Deltag i fællesskabet
     show:
       title:
