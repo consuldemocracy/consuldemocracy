@@ -62,9 +62,9 @@ da:
       create_proposal: Opret borgerforslag
       print_proposals: Udskriv forslag
       support_proposals: Støt på om forslag
-      create_budget_investment: Opret budgetinvestering
-      print_budget_investments: Udskriv budgetinvesteringer
-      support_budget_investments: Støt budgetinvesteringer
+      create_budget_investment: Opret din idé
+      print_budget_investments: Udskriv projektidéer
+      support_budget_investments: Støt projekter
       users: Brugeradministration
       user_invites: Send invitationer
       select_user: Vælg bruger
@@ -87,9 +87,9 @@ da:
       index:
         title: Støt op om forslag
     budgets:
-      create_new_investment: Opret budgetinvestering
-      print_investments: Udskriv budgetinvesteringer
-      support_investments: Støt budgetinvesteringer
+      create_new_investment: Opret din idé
+      print_investments: Udskriv projektidéer
+      support_investments: Støt projekter
       table_name: Navn
       table_phase: Fase
       table_actions: Handlinger
@@ -97,7 +97,7 @@ da:
     budget_investments:
       alert:
         unverified_user: Brugeren er ikke verificeret
-      create: Opret budgetinvestering
+      create: Opret din idé
       filters:
         heading: Koncept
         unfeasible: Uigennemførligt projekt
