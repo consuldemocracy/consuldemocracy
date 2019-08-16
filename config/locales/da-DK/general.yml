@@ -219,11 +219,11 @@ da:
       consul_url: https://github.com/consul/consul
       contact_us: For teknisk assistance besøg
       copyright: CONSUL, %{year}
-      description: Denne portal anvender %{consul}, som er %{open_source}.
+      description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_text: Vær med til at forme den by du gerne vil bo i.
-      participation_title: Deltagelse
+      participation_title: Deltag og...
       privacy: Persondatapolitik
     header:
       administration_menu: Admin
