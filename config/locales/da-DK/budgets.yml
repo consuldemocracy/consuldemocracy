@@ -166,7 +166,7 @@ da:
       heading: "Resultat af deltagerbudgettet"
       heading_selection_title: "Efter distrikt"
       ballot_lines_count: Stemmer
-      hide_discarded_link: Skjule kasserede
+      hide_discarded_link: Skjul fravalgte projekter
       show_all_link: Vis alle
       price: Pris
       amount_available: Tilgængeligt budget
