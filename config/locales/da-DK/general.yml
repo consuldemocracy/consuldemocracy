@@ -710,9 +710,9 @@ da:
     followable:
       budget_investment:
         create:
-          notice_html: "Du følger nu investeringsprojektet! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+          notice_html: "Du følger nu projektidéen! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
         destroy:
-          notice_html: "Du er stoppet med at følge investeringsprojektet! </br> Du vil ikke længere modtage notifikationer relateret til projektet."
+          notice_html: "Du er stoppet med at følge projektidéen! </br> Du vil ikke længere modtage notifikationer relateret til projektet."
       proposal:
         create:
           notice_html: "Du følger nu borgerforslaget! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
