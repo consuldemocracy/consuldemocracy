@@ -9,3 +9,5 @@ nn:
         remove: Fjern stemme
         voted_info_html: "Din stemme er bekreftet!"
         voted_info_2: "Men du kan endre stemmen din når som helst frem til denne fasen lukkes."
+    phase:
+      informing: Informasjon
