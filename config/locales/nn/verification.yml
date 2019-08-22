@@ -1,1 +1,5 @@
 nn:
+  verification:
+    alert:
+      lock: Du har ikke flere forsøk igjen. Prøv igjen senere.
+    back: Tilbake til min konto
