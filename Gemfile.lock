@@ -63,6 +63,9 @@ GEM
       safely_block (>= 0.1.1)
       user_agent_parser
       uuidtools
+    airbrake (5.8.1)
+      airbrake-ruby (~> 1.8)
+    airbrake-ruby (1.8.0)
     airbrussh (1.3.0)
       sshkit (>= 1.6.1, != 1.7.0)
     akami (1.3.1)
@@ -391,8 +394,6 @@ GEM
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
     rinku (2.0.4)
-    rollbar (2.18.0)
-      multi_json
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.2)
@@ -529,6 +530,7 @@ DEPENDENCIES
   acts-as-taggable-on (~> 5.0.0)
   acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
+  airbrake (~> 5.0)
   ancestry (~> 3.0.2)
   autoprefixer-rails (~> 8.2.0)
   browser (~> 2.5.3)
@@ -590,7 +592,6 @@ DEPENDENCIES
   redcarpet (~> 3.4.0)
   responders (~> 2.4.0)
   rinku (~> 2.0.2)
-  rollbar (~> 2.18.0)
   rspec-rails (~> 3.8)
   rubocop (~> 0.54.0)
   rubocop-rspec (~> 1.26.0)
