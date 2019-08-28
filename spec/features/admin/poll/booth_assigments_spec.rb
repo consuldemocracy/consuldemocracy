@@ -25,7 +25,7 @@ describe "Admin booths assignments" do
         click_link "Manage assignments"
       end
 
-      expect(page).to have_content "Assignments for poll "#{second_poll.name}""
+      expect(page).to have_content "Assignments for poll '#{second_poll.name}'"
 
       expect(page).to have_content(booth.name)
       expect(page).to have_content(second_booth.name)
@@ -46,7 +46,7 @@ describe "Admin booths assignments" do
 
       visit manage_admin_poll_booth_assignments_path(poll)
 
-      expect(page).to have_content "Assignments for poll "#{poll.name}""
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
 
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)
@@ -85,7 +85,7 @@ describe "Admin booths assignments" do
 
       visit manage_admin_poll_booth_assignments_path(poll)
 
-      expect(page).to have_content "Assignments for poll "#{poll.name}""
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
 
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)

@@ -701,6 +701,7 @@ en:
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
+      your_answer: "You can add your own answer"
       add_answer: "Add answer"
     description:
       multiple: "You can select a maximum of %{maximum} answers."

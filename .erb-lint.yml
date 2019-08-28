@@ -2,10 +2,12 @@
 linters:
   FinalNewline:
     enabled: true
-  SpaceAroundErbTag:
-    enabled: true
   SelfClosingTag:
     enabled: false
+  SpaceAroundErbTag:
+    enabled: true
+  SpaceInHtmlTag:
+    enabled: true
   Rubocop:
     enabled: true
     only:

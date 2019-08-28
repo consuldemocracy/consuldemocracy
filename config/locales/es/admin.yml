@@ -224,6 +224,7 @@ es:
         download_current_selection: "Descargar selección actual"
         no_budget_investments: "No hay proyectos de gasto."
         title: Proyectos de gasto
+        columns: Columnas
         assigned_admin: Administrador asignado
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
@@ -1293,6 +1294,7 @@ es:
         updated: Valor actualizado
       index:
         title: Configuración global
+        general: Configuración global
         update_setting: Actualizar
         participation_processes: "Procesos de participación"
         images_and_documents: "Imágenes y documentos"

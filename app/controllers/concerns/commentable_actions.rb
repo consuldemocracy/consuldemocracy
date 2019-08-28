@@ -16,7 +16,7 @@ module CommentableActions
 
     @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
 
-    index_customization if index_customization.present?
+    index_customization
 
     @tag_cloud = tag_cloud
     @banners = Banner.in_section(section(resource_model.name)).with_active
