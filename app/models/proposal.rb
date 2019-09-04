@@ -96,7 +96,7 @@ class Proposal < ApplicationRecord
   end
 
   def publish
-    update(published_at: Time.now)
+    update(published_at: Time.current)
     send_new_actions_notification_on_published
   end
 

@@ -112,7 +112,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :resume
     respond_to do |format|
       format.html
-      format.xlsx {render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.today.to_s + ".xlsx")}
+      format.xlsx {render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.current.to_s + ".xlsx")}
     end
   end
 

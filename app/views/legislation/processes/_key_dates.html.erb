@@ -53,7 +53,7 @@
           </li>
         <% end %>
 
-        <% if process.result_publication.enabled? && process.end_date <= Date.today %>
+        <% if process.result_publication.enabled? && process.end_date <= Date.current %>
           <li <%= "class=is-active" if phase == :resume %>>
             <%= link_to resume_legislation_process_path(process) do %>
               <h4><%= t("legislation.summary.title") %></h4>

@@ -1,8 +1,7 @@
 require "rails_helper"
 
 describe Dashboard::AchievementsController do
-  let(:created_at) { DateTime.parse("2018-01-01 12:00:00") }
-  let(:proposal) { create(:proposal, created_at: created_at) }
+  let(:proposal) { create(:proposal, created_at: 7.days.ago.beginning_of_month) }
   let(:executed_actions) { create_list(:dashboard_action, 8, :active, :proposed_action) }
   let!(:non_executed_actions) { create_list(:dashboard_action, 8, :active, :proposed_action) }
 
