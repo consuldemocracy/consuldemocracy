@@ -32,10 +32,10 @@
 
       <div class="text-center">
         <h3><%= t("dashboard.mailer.forward.share_in") %></h3>
-        <%= render partial: 'shared/social_share', locals: {
+        <%= render "shared/social_share",
                    title: @proposal.title,
                    url: proposal_url(@proposal),
-                   description: @proposal.summary } %>
+                   description: @proposal.summary %>
       </div>
     </div>
   </div>

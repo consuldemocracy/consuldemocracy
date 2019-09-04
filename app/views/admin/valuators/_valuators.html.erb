@@ -10,11 +10,11 @@
   <tbody>
     <% valuators.each do |valuator| %>
       <% if valuator.is_a?(Valuator) %>
-        <%= render partial: 'valuator_row', locals: {valuator: valuator} %>
+        <%= render "valuator_row", valuator: valuator %>
       <% elsif valuator.valuator? %>
-        <%= render partial: 'valuator_row', locals: {valuator: valuator.valuator} %>
+        <%= render "valuator_row", valuator: valuator.valuator %>
       <% else %>
-        <%= render partial: 'user_row', locals: {user: valuator} %>
+        <%= render "user_row", user: valuator %>
       <% end %>
     <% end %>
   </tbody>

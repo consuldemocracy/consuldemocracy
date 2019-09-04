@@ -71,7 +71,7 @@
           <%= render @debates %>
         <% else %>
           <% @debates.each do |debate| %>
-            <%= render partial: "debates/debate_minimal", locals: { debate: debate } %>
+            <%= render "debates/debate_minimal", debate: debate %>
           <% end %>
         <% end %>
       <% else %>

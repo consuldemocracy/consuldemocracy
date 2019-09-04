@@ -65,9 +65,9 @@ module ImagesHelper
 
   def render_image(image, version, show_caption = true)
     version = image.persisted? ? version : :original
-    render partial: "images/image", locals: { image: image,
-                                              version: version,
-                                              show_caption: show_caption }
+    render "images/image", image: image,
+                           version: version,
+                           show_caption: show_caption
   end
 
   def image_direct_upload_url(imageable)

@@ -70,12 +70,12 @@
 
   <% if voted_for?(@legislation_proposal_votes, proposal) && setting["twitter_handle"] %>
     <div class="share-supported">
-      <%= render partial: "shared/social_share", locals: {
+      <%= render "shared/social_share",
           title: proposal.title,
           url: proposal_url(proposal),
           description: proposal.summary,
           mobile: proposal.title
-      } %>
+      %>
     </div>
   <% end %>
 </div>

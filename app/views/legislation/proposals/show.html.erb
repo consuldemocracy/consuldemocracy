@@ -103,13 +103,13 @@
           <%= render "votes",
                     { proposal: @proposal, vote_url: vote_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal, value: "yes") } %>
         </div>
-        <%= render partial: "shared/social_share", locals: {
+        <%= render "shared/social_share",
           share_title: t("proposals.show.share"),
           title: @proposal.title,
           url: legislation_process_proposal_url(process_id: @process),
           description: @proposal.summary,
           mobile: @proposal.title
-        } %>
+        %>
       </aside>
     </div>
   </div>

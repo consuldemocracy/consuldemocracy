@@ -17,7 +17,7 @@
 </div>
 
 <hr>
-<%= render partial: "/budgets/investments/investment_detail", locals: {investment: @investment, preview: true} %>
+<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
 <hr>
 
 <h2 id="classification"><%= t("admin.budget_investments.show.classification") %></h2>

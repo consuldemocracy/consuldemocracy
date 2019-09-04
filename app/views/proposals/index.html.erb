@@ -100,7 +100,7 @@
             <%= render partial: "proposals/proposal", collection: @proposals %>
           <% else %>
             <% @proposals.each do |proposal| %>
-              <%= render partial: "/proposals/proposal_minimal", locals: { proposal: proposal } %>
+              <%= render "/proposals/proposal_minimal", proposal: proposal %>
             <% end %>
           <% end %>
         <% else %>
