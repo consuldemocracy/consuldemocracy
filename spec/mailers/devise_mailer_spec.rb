@@ -12,5 +12,14 @@ describe DeviseMailer do
 
       expect(email.subject).to include("confirmación")
     end
+
+    it "reads the from address at runtime" do
+      Setting["mailer_from_name"] = "New organization"
+      Setting["mailer_from_address"] = "new@consul.dev"
+
+      email = DeviseMailer.confirmation_instructions(create(:user), "ABC")
+
+      expect(email).to deliver_from "'New organization' <new@consul.dev>"
+    end
   end
 end
