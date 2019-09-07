@@ -34,4 +34,23 @@ describe Tag do
       expect(tag).to be_valid
     end
   end
+
+  context "Same tag uppercase and lowercase" do
+    before do
+      create(:tag, name: "Health")
+      create(:tag, name: "health")
+    end
+
+    it "assigns only one of the existing tags (we can't control which one)" do
+      debate = create(:debate, tag_list: "Health")
+
+      expect([["Health"], ["health"]]).to include debate.reload.tag_list
+    end
+
+    it "assigns existing tags instead of creating new similar ones" do
+      debate = create(:debate, tag_list: "hEaLth")
+
+      expect([["Health"], ["health"]]).to include debate.reload.tag_list
+    end
+  end
 end
