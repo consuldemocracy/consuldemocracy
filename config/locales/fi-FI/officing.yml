@@ -1,5 +1,10 @@
 fi:
   officing:
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nimi
+      new:
+        submit: Tallenna
     results:
       new:
         date: "Päivämäärä"
