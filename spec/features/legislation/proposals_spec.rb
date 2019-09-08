@@ -4,7 +4,6 @@ require "sessions_helper"
 describe "Legislation Proposals" do
 
   let(:user)     { create(:user) }
-  let(:user2)    { create(:user) }
   let(:process)  { create(:legislation_process) }
   let(:proposal) { create(:legislation_proposal) }
 
@@ -21,8 +20,10 @@ describe "Legislation Proposals" do
   end
 
   describe "Random pagination" do
+    let(:per_page) { 4 }
+
     before do
-      allow(Legislation::Proposal).to receive(:default_per_page).and_return(12)
+      allow(Legislation::Proposal).to receive(:default_per_page).and_return(per_page)
 
       create_list(
         :legislation_proposal,
@@ -31,29 +32,34 @@ describe "Legislation Proposals" do
       )
     end
 
-    scenario "Each user has a different and consistent random proposals order", :js do
-      in_browser(:one) do
-        login_as user
-        visit legislation_process_proposals_path(process)
-        @first_user_proposals_order = legislation_proposals_order
-      end
+    context "for several users" do
+      let(:user2)    { create(:user) }
+      let(:per_page) { 12 }
 
-      in_browser(:two) do
-        login_as user2
-        visit legislation_process_proposals_path(process)
-        @second_user_proposals_order = legislation_proposals_order
-      end
+      scenario "Each user has a different and consistent random proposals order", :js do
+        in_browser(:one) do
+          login_as user
+          visit legislation_process_proposals_path(process)
+          @first_user_proposals_order = legislation_proposals_order
+        end
 
-      expect(@first_user_proposals_order).not_to eq(@second_user_proposals_order)
+        in_browser(:two) do
+          login_as user2
+          visit legislation_process_proposals_path(process)
+          @second_user_proposals_order = legislation_proposals_order
+        end
 
-      in_browser(:one) do
-        visit legislation_process_proposals_path(process)
-        expect(legislation_proposals_order).to eq(@first_user_proposals_order)
-      end
+        expect(@first_user_proposals_order).not_to eq(@second_user_proposals_order)
 
-      in_browser(:two) do
-        visit legislation_process_proposals_path(process)
-        expect(legislation_proposals_order).to eq(@second_user_proposals_order)
+        in_browser(:one) do
+          visit legislation_process_proposals_path(process)
+          expect(legislation_proposals_order).to eq(@first_user_proposals_order)
+        end
+
+        in_browser(:two) do
+          visit legislation_process_proposals_path(process)
+          expect(legislation_proposals_order).to eq(@second_user_proposals_order)
+        end
       end
     end
 
