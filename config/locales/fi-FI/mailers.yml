@@ -33,3 +33,5 @@ fi:
     budget_investment_unselected:
       hi: "Hyvä käyttäjä,"
       sincerely: "Kunnioittaen"
+    evaluation_comment:
+      hi: Hei
