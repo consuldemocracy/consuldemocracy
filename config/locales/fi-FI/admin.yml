@@ -170,10 +170,30 @@ fi:
         edit: Muokkaa
       edit:
         title: Muokkaa tavoitteen tilaa
+    comments:
+      index:
+        id: "ID"
+    hidden_comments:
+      index:
+        filters:
+          all: Kaikki
     dashboard:
       index:
         back: Mene takaisin %{org}
         title: Järjestelmänvalvonta
+      actions:
+        index:
+          active: 'Kyllä'
+    debates:
+      index:
+        id: ID
+    hidden_debates:
+      index:
+        filters:
+          all: Kaikki
+    documents:
+      index:
+        url: "URL"
     hidden_users:
       index:
         filter: Suodatin
@@ -452,6 +472,7 @@ fi:
           pending: Vireillä
         name: Nimi
         email: Sähköposti
+        phone_number: Puhelin
         status: Tila
         search: Etsi
         title: Organisaatiot
@@ -592,3 +613,8 @@ fi:
       feeds:
         proposals: Ehdotukset
         processes: Prosessit
+    change_log:
+      id: "ID"
+    trackers:
+      index:
+        name: Nimi
