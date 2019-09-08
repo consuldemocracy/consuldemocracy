@@ -235,6 +235,11 @@ fi:
     update:
       form:
         submit_button: Tallenna muutokset
+  dashboard:
+    progress:
+      new_action: Uusi
+    resource:
+      and: ja
   polls:
     all: "Kaikki"
     index:
