@@ -68,6 +68,8 @@ fi:
         administrator_id: "Järjestelmänvalvoja"
         location: "Sijainti (vapaaehtoinen)"
         image_title: "Kuvan otsikko"
+      geozone:
+        name: Nimi
       milestone:
         status_id: "Nykyinen tila (valinnainen)"
         publication_date: "Julkaisupäivä"
