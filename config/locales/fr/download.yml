@@ -1,1 +1,26 @@
 fr:
+  download:
+    edit:
+      fields: "Champs"
+      description: "Description"
+      downloadable: "Téléchargeable"
+      debates: "Débats"
+      proposals: "Propositions"
+      legislation_processes: "Processus législatifs"
+      budget_investments: "Budget participatif"
+      comments: "Commentaires"
+      submit: "Sauvegarder les changements"
+      config:
+        "0": ""
+        "1": "- Jalons"
+    fielddescription:
+      debates:
+        id: "Numéro d'identification"
+        title: "Titre"
+        description: "Description"
+        author_id: "Numéro d'identification de l'auteur"
+        created_at: "Créé le"
+        updated_at: "Mis-à-jour le"
+        visit_id: "Idéntifiant de visite"
+        hidden_at: "Masqué le"
+        comments_count: "Nombre de commentaires"
