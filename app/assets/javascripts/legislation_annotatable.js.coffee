@@ -17,17 +17,12 @@ App.LegislationAnnotatable =
     return
 
   highlight: (colour) ->
-    if window.getSelection
-      # IE9 and non-IE
-      try
-        if !document.execCommand("BackColor", false, colour)
-          App.LegislationAnnotatable.makeEditableAndHighlight colour
-      catch ex
+    try
+      if !document.execCommand("BackColor", false, colour)
         App.LegislationAnnotatable.makeEditableAndHighlight colour
-    else if document.selection and document.selection.createRange
-      # IE <= 8 case
-      range = document.selection.createRange()
-      range.execCommand "BackColor", false, colour
+    catch ex
+      App.LegislationAnnotatable.makeEditableAndHighlight colour
+
     return
 
   remove_highlight: ->

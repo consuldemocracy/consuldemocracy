@@ -5,9 +5,6 @@
     <%= render "layouts/tracking_data" %>
     <%= render "layouts/meta_tags" %>
     <%= content_for :canonical %>
-    <!--[if lt IE 9]>
-      <%= stylesheet_link_tag "ie" %>
-    <![endif]-->
     <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),
                      rel: "icon apple-touch-icon",
                      sizes: "200x200",
@@ -54,7 +51,4 @@
       <%= render "layouts/footer" %>
     </div>
   </body>
-  <!--[if lt IE 9]>
-    <%= javascript_include_tag "ie_lt9" %>
-  <![endif]-->
 </html>
