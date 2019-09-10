@@ -42,7 +42,7 @@ class Poll
     private
 
       def set_denormalized_booth_assignment_id
-        self.booth_assignment_id ||= officer_assignment.try(:booth_assignment_id)
+        self.booth_assignment_id ||= officer_assignment&.booth_assignment_id
       end
 
       def in_census?
@@ -56,7 +56,7 @@ class Poll
       def fill_stats_fields
         if in_census?
           self.gender = census_api_response.gender
-          self.geozone_id = Geozone.select(:id).where(census_code: census_api_response.district_code).first.try(:id)
+          self.geozone_id = Geozone.select(:id).where(census_code: census_api_response.district_code).first&.id
           self.age = voter_age(census_api_response.date_of_birth)
         end
       end

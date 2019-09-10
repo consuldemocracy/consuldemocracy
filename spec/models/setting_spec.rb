@@ -9,7 +9,7 @@ describe Setting do
     expect(described_class["official_level_1_name"]).to eq("Stormtrooper")
   end
 
-  it "shoulds return nil" do
+  it "returns nil" do
     expect(described_class["undefined_key"]).to eq(nil)
   end
 

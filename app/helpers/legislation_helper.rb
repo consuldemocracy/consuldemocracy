@@ -35,11 +35,11 @@ module LegislationHelper
   end
 
   def bg_color_or_default
-    @process.background_color.present? ? @process.background_color : default_bg_color
+    @process.background_color.presence || default_bg_color
   end
 
   def font_color_or_default
-    @process.font_color.present? ? @process.font_color : default_font_color
+    @process.font_color.presence || default_font_color
   end
 
   def css_for_process_header

@@ -11,6 +11,15 @@ AllCops:
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
 
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true
+
 Capybara/FeatureMethods:
   Enabled: true
   EnabledMethods:
@@ -129,13 +138,84 @@ Rails/Date:
 Rails/HttpPositionalArguments:
   Enabled: true
 
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/Presence:
+  Enabled: true
+
 Rails/RelativeDateConstant:
   Enabled: true
+
+Rails/RequestReferer:
+  Enabled: true
+
+Rails/SafeNavigation:
+  Enabled: true
+  ConvertTry: true
 
 Rails/TimeZone:
   Enabled: true
 
+Rails/UnknownEnv:
+  Enabled: true
+  Environments:
+    - development
+    - test
+    - production
+    - preproduction
+    - staging
+
+Rails/Validation:
+  Enabled: true
+
+RSpec/AroundBlock:
+  Enabled: true
+
+RSpec/BeforeAfterAll:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+  Exclude:
+    - spec/factories/**/*
+
+RSpec/EmptyLineAfterExampleGroup:
+  Enabled: true
+  Exclude:
+    - spec/factories/**/*
+
+RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/Focus:
+  Enabled: true
+
+RSpec/HookArgument:
+  Enabled: true
+
+RSpec/LetBeforeExamples:
+  Enabled: true
+
+RSpec/LetSetup:
+  Enabled: true
+
 RSpec/NotToNot:
+  Enabled: true
+
+RSpec/OverwritingSetup:
+  Enabled: true
+
+RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/VoidExpect:
   Enabled: true
 
 Style/PercentLiteralDelimiters:

@@ -135,13 +135,13 @@ class Proposal < ApplicationRecord
     {
       author.username       => "B",
       tag_list.join(" ")    => "B",
-      geozone.try(:name)    => "B"
+      geozone&.name         => "B"
     }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
     by_code = search_by_code(terms.strip)
-    by_code.present? ? by_code : pg_search(terms)
+    by_code.presence || pg_search(terms)
   end
 
   def self.search_by_code(terms)

@@ -240,7 +240,7 @@ describe Debate do
     it "remains the same for not voted debates" do
       new = create(:debate, created_at: now)
       old = create(:debate, created_at: 1.day.ago)
-      older = create(:debate, created_at: 2.month.ago)
+      older = create(:debate, created_at: 2.months.ago)
       expect(new.hot_score).to be 0
       expect(old.hot_score).to be 0
       expect(older.hot_score).to be 0

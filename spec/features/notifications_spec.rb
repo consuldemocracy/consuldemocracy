@@ -186,11 +186,11 @@ describe "Notifications" do
     let!(:user2) { create(:user) }
     let!(:user3) { create(:user) }
     let!(:proposal_notification) { create(:proposal_notification) }
-    let!(:notification1) { create(:notification, notifiable: proposal_notification, user: user1) }
-    let!(:notification2) { create(:notification, notifiable: proposal_notification, user: user2) }
-    let!(:notification3) { create(:notification, notifiable: proposal_notification, user: user3) }
 
     before do
+      create(:notification, notifiable: proposal_notification, user: user1)
+      create(:notification, notifiable: proposal_notification, user: user2)
+      create(:notification, notifiable: proposal_notification, user: user3)
       reset_mailer
       Delayed::Worker.delay_jobs = true
     end

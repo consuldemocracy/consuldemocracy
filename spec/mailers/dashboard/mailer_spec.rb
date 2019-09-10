@@ -221,13 +221,12 @@ describe Dashboard::Mailer do
 
     before do
       ActionMailer::Base.deliveries.clear
+
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
     end
 
     let!(:proposal) { build(:proposal, :draft) }
-    let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                 published_proposal: true) }
-    let!(:proposed_action) { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                        published_proposal: true) }
 
     it "Disables email delivery using setting" do
       Setting["dashboard.emails"] = nil

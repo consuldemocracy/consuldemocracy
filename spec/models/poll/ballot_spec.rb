@@ -9,7 +9,7 @@ describe Poll::Ballot do
   let(:poll) { create(:poll, budget: budget) }
   let(:poll_ballot_sheet) { create(:poll_ballot_sheet, poll: poll) }
   let(:poll_ballot) { create(:poll_ballot, ballot_sheet: poll_ballot_sheet, external_id: 1, data: investment.id) }
-  let!(:ballot) { create(:budget_ballot, budget: budget, physical: true, poll_ballot: poll_ballot) }
+  before { create(:budget_ballot, budget: budget, physical: true, poll_ballot: poll_ballot) }
 
   describe "#verify" do
 

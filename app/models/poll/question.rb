@@ -44,10 +44,10 @@ class Poll::Question < ApplicationRecord
   end
 
   def searchable_values
-    { title                 => "A",
-      proposal.try(:title)  => "A",
-      author.username       => "C",
-      author_visible_name   => "C" }
+    { title               => "A",
+      proposal&.title     => "A",
+      author.username     => "C",
+      author_visible_name => "C" }
   end
 
   def copy_attributes_from_proposal(proposal)

@@ -1,12 +1,6 @@
 inherit_from: .rubocop_basic.yml
 
-Bundler/DuplicatedGem:
-  Enabled: true
-
 Bundler/InsecureProtocolSource:
-  Enabled: true
-
-Bundler/OrderedGems:
   Enabled: true
 
 Gemspec/DuplicatedAssignment:
@@ -141,12 +135,6 @@ Rails/Output:
 Rails/OutputSafety:
   Enabled: true
 
-Rails/PluralizationGrammar:
-  Enabled: true
-
-Rails/Presence:
-  Enabled: true
-
 Rails/Present:
   Enabled: true
 
@@ -156,13 +144,7 @@ Rails/ReadWriteAttribute:
 Rails/RedundantReceiverInWithOptions:
   Enabled: true
 
-Rails/RequestReferer:
-  Enabled: true
-
 Rails/ReversibleMigration:
-  Enabled: true
-
-Rails/SafeNavigation:
   Enabled: true
 
 Rails/SaveBang:
@@ -177,12 +159,6 @@ Rails/SkipsModelValidations:
 Rails/UniqBeforePluck:
   Enabled: true
 
-Rails/UnknownEnv:
-  Enabled: true
-
-Rails/Validation:
-  Enabled: true
-
 RSpec/AlignLeftLetBrace:
   Enabled: false
 
@@ -192,16 +168,7 @@ RSpec/AlignRightLetBrace:
 RSpec/AnyInstance:
   Enabled: false
 
-RSpec/AroundBlock:
-  Enabled: true
-
 RSpec/BeEql:
-  Enabled: true
-
-RSpec/BeforeAfterAll:
-  Enabled: true
-
-Capybara/CurrentPathExpectation:
   Enabled: true
 
 Capybara/FeatureMethods:
@@ -219,17 +186,8 @@ RSpec/DescribeMethod:
 RSpec/DescribeSymbol:
   Enabled: true
 
-RSpec/EmptyExampleGroup:
-  Enabled: true
-
-RSpec/EmptyLineAfterSubject:
-  Enabled: true
-
 RSpec/ExampleLength:
   Enabled: false
-
-RSpec/ExampleWording:
-  Enabled: true
 
 RSpec/ExpectActual:
   Enabled: true
@@ -241,12 +199,6 @@ RSpec/ExpectOutput:
   Enabled: true
 
 RSpec/FilePath:
-  Enabled: true
-
-RSpec/Focus:
-  Enabled: true
-
-RSpec/HookArgument:
   Enabled: true
 
 RSpec/ImplicitExpect:
@@ -269,12 +221,6 @@ RSpec/IteratedExpectation:
   Enabled: true
 
 RSpec/LeadingSubject:
-  Enabled: true
-
-RSpec/LetBeforeExamples:
-  Enabled: true
-
-RSpec/LetSetup:
   Enabled: true
 
 RSpec/MessageChain:
@@ -303,9 +249,6 @@ RSpec/NestedGroups:
   Enabled: true
   Max: 4
 
-RSpec/OverwritingSetup:
-  Enabled: true
-
 RSpec/PredicateMatcher:
   Enabled: true
 
@@ -315,16 +258,7 @@ Rails/HttpStatus:
 RSpec/RepeatedDescription:
   Enabled: true
 
-RSpec/RepeatedExample:
-  Enabled: true
-
 RSpec/ReturnFromStub:
-  Enabled: true
-
-RSpec/ScatteredLet:
-  Enabled: true
-
-RSpec/ScatteredSetup:
   Enabled: true
 
 RSpec/SharedContext:
@@ -337,9 +271,6 @@ RSpec/SubjectStub:
   Enabled: true
 
 RSpec/VerifiedDoubles:
-  Enabled: true
-
-RSpec/VoidExpect:
   Enabled: true
 
 Security/Eval:

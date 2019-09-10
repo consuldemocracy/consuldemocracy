@@ -223,7 +223,7 @@ describe Budget do
   end
 
   describe "#has_winning_investments?" do
-    it "should return true if there is a winner investment" do
+    it "returns true if there is a winner investment" do
       budget.investments << build(:budget_investment, :winner, price: 3, ballot_lines_count: 2)
 
       expect(budget.has_winning_investments?).to eq true
