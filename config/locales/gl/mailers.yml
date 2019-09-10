@@ -1,5 +1,6 @@
 gl:
   mailers:
+    title: "Goberno aberto"
     no_reply: "Esta mensaxe enviouse desde un enderezo de correo electrónico que non admite respostas."
     comment:
       hi: Ola
