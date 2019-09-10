@@ -122,6 +122,7 @@ Lint/UselessAssignment:
 
 Metrics/LineLength:
   Max: 110
+  Severity: refactor
 
 Rails/ActionFilter:
   Enabled: true
