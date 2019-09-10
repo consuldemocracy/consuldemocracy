@@ -20,8 +20,10 @@ gl:
       index:
         title: Comentarios
         comments_about: Comentarios sobre
+        comment_about: "Comentario sobre:"
         see_in_context: Amosar no contexto
         comments_count:
+          zero: Sen comentarios
           one: "%{count} comentario"
           other: "%{count} comentarios"
       show:
@@ -96,6 +98,10 @@ gl:
         form:
           leave_comment: Deixa a túa resposta
       question:
+        total:
+          zero: Sen debates
+          one: "%{count} debate"
+          other: "%{count} debates"
         comments:
           zero: Ningún comentario
           one: "%{count} comentario"
@@ -123,3 +129,22 @@ gl:
       form:
         tags_label: "Categorías"
       not_verified: "Para votares propostas, %{verify_account}."
+      process_title: Proceso de lexislación colaborativa
+      total:
+        zero: Sen propostas
+        one: "%{count} proposta"
+        other: "%{count} propostas"
+    summary:
+      title: Resumo
+      votes: votos
+      debates_phase: Fase de debates
+      proposal_phase: Fase da proposta
+      comments_phase: Fase de comentarios
+      comments:
+        zero: Sen comentarios
+        one: "%{count} comentario"
+        other: "%{count} comentarios"
+      most_voted_comments: "Comentarios máis votados: "
+      no_allegation: Non hai comentarios
+      version: version
+      process_empty: O proceso non ten fases.
