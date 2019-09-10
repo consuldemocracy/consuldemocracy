@@ -116,6 +116,9 @@ gl:
       proposal_notification:
         one: "Notificación de proposta"
         other: "Notificacións das propostas"
+      dashboard/action:
+        one: Acción do panel de control de propostas
+        other: Accións do panel de control de propostas
       dashboard/administrator_task:
         one: Tarefa
         other: Tarefas
@@ -353,6 +356,9 @@ gl:
         short_description: Descrición curta
         description: Descrición
         link: Ligazón externa
+        request_to_administrators: Incluír no recurso un botón para solicitar o recurso aos administradores
+        day_offset: En cantos días despois da creación da proposta queres que se active?
+        required_supports: Cantos apoios ten que conseguir a proposta para que se active?
         active: Activo
         action_type: Tipo
       dashboard/administrator_task:
