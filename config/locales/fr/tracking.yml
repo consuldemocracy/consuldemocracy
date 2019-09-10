@@ -1,1 +1,51 @@
 fr:
+  tracking:
+    header:
+      title: Suivi
+    menu:
+      title: Suivi
+      budgets: Budgets participatifs
+    budgets:
+      index:
+        title: Budgets participatifs
+        table_name: Nom
+        table_phase: Phase
+        table_assigned_investments_tracking_open: Propositions d'investissement assignées avec une évaluation ouverte
+        table_actions: Actions
+        tracking: Suivi
+        no_budgets: "Il n'y a pas de budgets."
+    budget_investments:
+      index:
+        assigned_to: "Attribué à %{tracker}"
+        title: Projets d'investissement
+        edit: Modifier les jalons
+        table_id: ID
+        table_title: Titre
+        table_heading_name: Nom de la section
+        table_actions: Actions
+        no_investments: "Il n’y a pas de projet d’investissement."
+      show:
+        title: Projet d'investissement
+        by: Envoyé par
+        sent: Envoyé à
+        heading: Section
+        undefined: "Indéfini"
+        responsibles: Responsables
+        assigned_admin: Administrateur assigné
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titre"
+        table_description: "Description"
+        table_publication_date: "Date de publication"
+        table_status: Statut
+        table_actions: "Actions"
+        delete: "Supprimer le jalon"
+        no_milestones: "Aucun jalon défini"
+        image: "Image"
+        show_image: "Afficher l'image"
+        documents: "Documents"
+        milestone: Jalon
+        new_milestone: Créer nouveau jalon
+      create:
+        notice: Nouveau jalon créé avec succès !
