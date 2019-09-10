@@ -57,6 +57,8 @@ gl:
         other: "%{count} respostas (ver)"
       responses_collapse:
         zero: Sen respostas
+        one: "1 resposta (contraer)"
+        other: "%{count} respostas (contraer)"
       user_deleted: Usuario eliminado
       votes:
         zero: Ningún voto
@@ -195,6 +197,7 @@ gl:
     document: Documento
     topic: Tema
     image: Imaxe
+    local_census_record: Rexistro do Censo Local
     local_census_records/import: Importar rexistros do censo local
   geozones:
     none: Toda a cidade
@@ -501,6 +504,20 @@ gl:
     index:
       title: Edición
       edit_proposal_link: Editar proposta
+      publish: Publicar proposta
+      retire: Retirar proposta
+    new_request:
+      links: Ligazóns
+    resources:
+      available_resources: Recursos dispoñibles
+    resource:
+      required_days: "%{days} días necesarios"
+      required_supports: "%{supports} apoios necesarios"
+      and: e
+      view_resource: Ver recurso
+      resource_requested: Recurso xa solicitado
+      request_resource: Solicitar recurso
+      resource_locked: Recurso bloqueado
     polls:
       poll:
         alert_notice: Esta acción eliminará a enquisa e todas as preguntas relacionadas.
@@ -569,6 +586,10 @@ gl:
         title: Axuda sobre as votacións
         description: As votacións da cidadanía son un proceso participativo polo cal os veciños con dereito a voto poden tomar decisións dun modo directo
       no_polls: "Non hai votacións abertas."
+      descriptions:
+        positive_negative_open: Permite votar, de xeito positivo ou non, un número máximo de veces ás respostas. É posible estabelecer un número máximo de respostas e engadir outras.
+        answer_couples_open: Permite votar un número máximo de veces a parellas de posibles respostas. É posible estabelecer un número máximo de parellas e engadir outras respostas.
+        answer_couples_closed: Permite votar un número máximo de veces a parellas de posibles respostas. É posible estabelecer un número máximo de parellas e non é posible engadir outras respostas.
     show:
       already_voted_in_booth: "Xa participaches nesta votación en urnas presenciais polo que non podes volver participar."
       already_voted_in_web: "Xa participaches nesta votación. Se volves votar, modificarás o teu voto anterior."
