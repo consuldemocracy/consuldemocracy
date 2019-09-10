@@ -359,6 +359,7 @@ gl:
         request_to_administrators: Incluír no recurso un botón para solicitar o recurso aos administradores
         day_offset: En cantos días despois da creación da proposta queres que se active?
         required_supports: Cantos apoios ten que conseguir a proposta para que se active?
+        order: Podes introducir a posición na que se lle amosará ao usuario esta acción na lista de accións
         active: Activo
         action_type: Tipo
       dashboard/administrator_task:
@@ -370,6 +371,13 @@ gl:
       valuator:
         description: Descrición
         valuator_group_id: Grupo de avaliadores
+        can_comment: Pode crear comentarios
+        can_edit_dossier: Pode editar informes
+      local_census_record:
+        document_type: Tipo de documento
+        document_number: Número de documento
+        date_of_birth: Data de nacemento
+        postal_code: Código postal
     errors:
       models:
         user:
@@ -447,7 +455,9 @@ gl:
             valuation:
               cannot_comment_valuation: "Non podes comentar unha avaliación"
       messages:
+        translations_too_short: É necesaria unha tradución como mínimo
         record_invalid: "Erro de validación: %{errors}"
+        another_poll_active: Hai outra enquisa activa para este periodo
         restrict_dependent_destroy:
           has_one: "Non podes eliminar o rexistro porque existe unha %{record} dependente"
           has_many: "Non podes eliminar o rexistro porque existe %{record} dependentes"
