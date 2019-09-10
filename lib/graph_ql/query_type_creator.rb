@@ -14,7 +14,7 @@ module GraphQL
               type created_type
               description model.graphql_field_description
               argument :id, !types.ID
-              resolve ->(object, arguments, context) { model.public_for_api.find_by(id: arguments["id"])}
+              resolve ->(object, arguments, context) { model.public_for_api.find_by(id: arguments["id"]) }
             end
           end
 

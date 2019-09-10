@@ -284,7 +284,7 @@ describe "Admin download settings" do
                                heading: heading,
                                price: 600,
                                ballot_lines_count: 600) }
-    let(:budget) {create :budget}
+    let(:budget) { create :budget }
 
     before do
       Budget::Result.new(budget_finished, heading).calculate_winners

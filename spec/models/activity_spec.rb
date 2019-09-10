@@ -23,7 +23,7 @@ describe Activity do
       user = create(:user)
       proposal = create(:proposal)
 
-      expect{ described_class.log(user, :hide, proposal) }.to change { described_class.count }.by(1)
+      expect { described_class.log(user, :hide, proposal) }.to change { described_class.count }.by(1)
 
       activity = described_class.last
       expect(activity.user_id).to eq(user.id)

@@ -1,9 +1,9 @@
 require "rails_helper"
 
 describe Poll::BoothAssignment do
-  let(:poll){create(:poll)}
-  let(:booth){create(:poll_booth)}
-  let(:booth1){create(:poll_booth)}
+  let(:poll) { create(:poll) }
+  let(:booth) { create(:poll_booth) }
+  let(:booth1) { create(:poll_booth) }
 
   it "checks if there are shifts" do
     assignment_with_shifts = create(:poll_booth_assignment, poll: poll, booth: booth)

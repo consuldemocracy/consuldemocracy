@@ -18,7 +18,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
   def show
     included_relations = [:recounts, :voters, officer_assignments: [officer: [:user]]]
     @booth_assignment = @poll.booth_assignments.includes(*included_relations).find(params[:id])
-    @voters_by_date = @booth_assignment.voters.group_by {|v| v.created_at.to_date}
+    @voters_by_date = @booth_assignment.voters.group_by { |v| v.created_at.to_date }
     @partial_results = @booth_assignment.partial_results
     @recounts = @booth_assignment.recounts
   end

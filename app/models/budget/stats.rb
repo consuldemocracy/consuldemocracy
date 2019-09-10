@@ -72,18 +72,18 @@ class Budget::Stats
     end
 
     groups[:total] = Hash.new(0)
-    groups[:total][:total_investments_count] = groups.collect {|_k, v| v[:total_investments_count]}.sum
-    groups[:total][:total_participants_support_phase] = groups.collect {|_k, v| v[:total_participants_support_phase]}.sum
-    groups[:total][:total_participants_vote_phase] = groups.collect {|_k, v| v[:total_participants_vote_phase]}.sum
-    groups[:total][:total_participants_every_phase] = groups.collect {|_k, v| v[:total_participants_every_phase]}.sum
+    groups[:total][:total_investments_count] = groups.collect { |_k, v| v[:total_investments_count] }.sum
+    groups[:total][:total_participants_support_phase] = groups.collect { |_k, v| v[:total_participants_support_phase] }.sum
+    groups[:total][:total_participants_vote_phase] = groups.collect { |_k, v| v[:total_participants_vote_phase] }.sum
+    groups[:total][:total_participants_every_phase] = groups.collect { |_k, v| v[:total_participants_every_phase] }.sum
 
     budget.headings.each do |heading|
       groups[heading.id].merge!(calculate_heading_stats_with_totals(groups[heading.id], groups[:total], heading.population))
     end
 
-    groups[:total][:percentage_participants_support_phase] = groups.collect {|_k, v| v[:percentage_participants_support_phase]}.sum
-    groups[:total][:percentage_participants_vote_phase] = groups.collect {|_k, v| v[:percentage_participants_vote_phase]}.sum
-    groups[:total][:percentage_participants_every_phase] = groups.collect {|_k, v| v[:percentage_participants_every_phase]}.sum
+    groups[:total][:percentage_participants_support_phase] = groups.collect { |_k, v| v[:percentage_participants_support_phase] }.sum
+    groups[:total][:percentage_participants_vote_phase] = groups.collect { |_k, v| v[:percentage_participants_vote_phase] }.sum
+    groups[:total][:percentage_participants_every_phase] = groups.collect { |_k, v| v[:percentage_participants_every_phase] }.sum
 
     groups
   end
@@ -125,7 +125,7 @@ class Budget::Stats
     def balloters_by_heading(heading_id)
       stats_cache("balloters_by_heading_#{heading_id}") do
         budget.ballots.joins(:lines)
-                      .where(budget_ballot_lines: { heading_id: heading_id} )
+                      .where(budget_ballot_lines: { heading_id: heading_id })
                       .distinct.pluck(:user_id)
       end
     end

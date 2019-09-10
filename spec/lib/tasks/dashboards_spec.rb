@@ -31,7 +31,7 @@ describe "Dashboards Rake" do
         action.update(published_proposal: true)
         resource.update(published_proposal: true)
 
-        expect {run_rake_task}.to change { ActionMailer::Base.deliveries.count }.by(0)
+        expect { run_rake_task }.to change { ActionMailer::Base.deliveries.count }.by(0)
       end
 
       it "when there are not news actions actived for draft proposals" do
@@ -39,7 +39,7 @@ describe "Dashboards Rake" do
         action.update(published_proposal: false)
         resource.update(published_proposal: false)
 
-        expect {run_rake_task}.to change { ActionMailer::Base.deliveries.count }.by(0)
+        expect { run_rake_task }.to change { ActionMailer::Base.deliveries.count }.by(0)
       end
 
       it "when there are news actions actived for archived proposals" do
@@ -47,7 +47,7 @@ describe "Dashboards Rake" do
         action.update(day_offset: 0, published_proposal: true)
         resource.update(day_offset: 0, published_proposal: true)
 
-        expect {run_rake_task}.to change { ActionMailer::Base.deliveries.count }.by(0)
+        expect { run_rake_task }.to change { ActionMailer::Base.deliveries.count }.by(0)
       end
 
     end

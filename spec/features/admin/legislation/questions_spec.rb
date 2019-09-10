@@ -21,7 +21,7 @@ describe "Admin legislation questions" do
     end
 
     scenario "Disabled with a feature flag" do
-      expect{ visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect { visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
   end

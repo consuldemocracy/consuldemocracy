@@ -35,8 +35,8 @@ describe "Admin feature flags" do
       expect(page).not_to have_link "Participatory budgets"
     end
 
-    expect{ visit budget_path(budget) }.to raise_exception(FeatureFlags::FeatureDisabled)
-    expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit budget_path(budget) }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Enable a disabled participatory process" do

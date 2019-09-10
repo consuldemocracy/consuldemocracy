@@ -5,8 +5,8 @@ module GlobalizeHelper
   end
 
   def available_locales(resource)
-    I18n.available_locales.select{ |locale| enabled_locale?(resource, locale) }.map do |locale|
-      [name_for_locale(locale), locale , { data: { locale: locale } }]
+    I18n.available_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
+      [name_for_locale(locale), locale, { data: { locale: locale }}]
     end
   end
 

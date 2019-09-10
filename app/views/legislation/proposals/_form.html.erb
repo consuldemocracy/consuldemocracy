@@ -16,7 +16,7 @@
       <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
                       placeholder: t("proposals.form.proposal_summary"),
-                      aria: {describedby: "summary-help-text"} %>
+                      aria: { describedby: "summary-help-text" } %>
     </div>
 
     <div class="ckeditor small-12 column">
@@ -28,7 +28,7 @@
       <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
       <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
       <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
-                                   aria: {describedby: "video-url-help-text"} %>
+                                   aria: { describedby: "video-url-help-text" } %>
     </div>
 
     <% if feature?(:allow_images) %>
@@ -43,7 +43,7 @@
 
     <div class="small-12 medium-6 column">
       <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+      <%= f.select :geozone_id, geozone_select_options, { include_blank: t("geozones.none"), label: false } %>
     </div>
 
     <div class="small-12 column">
@@ -61,7 +61,7 @@
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
                         class: "js-tag-list",
-                        aria: {describedby: "tag-list-help-text"} %>
+                        aria: { describedby: "tag-list-help-text" } %>
     </div>
 
     <div class="small-12 column">

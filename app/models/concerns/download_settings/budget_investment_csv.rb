@@ -19,7 +19,7 @@ module DownloadSettings
       CSV.generate(options) do |csv|
         csv << attributes
         budgets.each do |budget|
-          csv << attributes.map{ |attr| budget.send(attr)}
+          csv << attributes.map { |attr| budget.send(attr) }
         end
       end
     end

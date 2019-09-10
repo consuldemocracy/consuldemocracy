@@ -158,7 +158,7 @@ describe "Commenting proposals" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: proposal)}
+    (per_page + 2).times { create(:comment, commentable: proposal) }
 
     visit proposal_path(proposal)
 

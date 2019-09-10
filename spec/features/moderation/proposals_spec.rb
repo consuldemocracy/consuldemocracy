@@ -7,7 +7,7 @@ describe "Moderate proposals" do
     moderator = create(:moderator)
     login_as(moderator.user)
 
-    expect{ visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Hide", :js do

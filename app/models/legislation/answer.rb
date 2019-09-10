@@ -8,7 +8,7 @@ class Legislation::Answer < ApplicationRecord
                                inverse_of: :answers, counter_cache: true
   belongs_to :user, dependent: :destroy, inverse_of: :legislation_answers
 
-  validates :question, presence: true, uniqueness: { scope: :user_id}
+  validates :question, presence: true, uniqueness: { scope: :user_id }
   validates :question_option, presence: true
   validates :user, presence: true
 end

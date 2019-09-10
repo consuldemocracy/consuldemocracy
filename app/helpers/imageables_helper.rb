@@ -17,7 +17,7 @@ module ImageablesHelper
   end
 
   def imageable_accepted_content_types
-    Setting["uploads.images.content_types"]&.split(" ") || [ "image/jpeg" ]
+    Setting["uploads.images.content_types"]&.split(" ") || ["image/jpeg"]
   end
 
   def imageable_accepted_content_types_extensions

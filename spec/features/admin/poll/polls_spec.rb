@@ -220,7 +220,7 @@ describe "Admin polls" do
         booth = create(:poll_booth, polls: [poll])
 
         booth.booth_assignments.each do |booth_assignment|
-          3.times {create(:poll_officer_assignment, booth_assignment: booth_assignment) }
+          3.times { create(:poll_officer_assignment, booth_assignment: booth_assignment) }
         end
 
         visit admin_poll_path(poll)

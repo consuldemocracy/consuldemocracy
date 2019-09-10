@@ -6,7 +6,7 @@
     <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
       <span class="margin-right">
         <%= f.radio_button :action_type, action_type_value, label: false,
-                            data: {toggle: "request_to_administrators short_description"} %>
+                            data: { toggle: "request_to_administrators short_description" } %>
         <%= f.label "action_type_#{action_type_value}", t("admin.dashboard.actions.action_type.#{action_type_value}") %>
       </span>
     <% end %>

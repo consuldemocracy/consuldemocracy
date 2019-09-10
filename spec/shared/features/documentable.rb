@@ -1,6 +1,4 @@
-shared_examples "documentable" do |documentable_factory_name,
-                                   documentable_path,
-                                   documentable_path_arguments|
+shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
   include ActionView::Helpers
 
   let(:administrator) { create(:user) }

@@ -91,13 +91,13 @@ describe Legislation::AnnotationsController do
                         draft_version_id: draft_version.id,
                         legislation_annotation: {
                           "quote" => "ipsum",
-                          "ranges"=> [{
+                          "ranges" => [{
                                         "start"       => "/p[1]",
                                         "startOffset" => 6,
                                         "end"         => "/p[1]",
                                         "endOffset"   => 11
                                       }],
-                          "text"  => "una anotacion"
+                          "text" => "una anotacion"
                         }
                       }
       end.not_to change { draft_version.annotations.count }

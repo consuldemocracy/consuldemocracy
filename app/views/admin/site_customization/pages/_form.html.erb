@@ -1,6 +1,6 @@
 <%= render "shared/globalize_locales", resource: @page %>
 
-<%= translatable_form_for [:admin, @page], html: {class: "edit_page", data: {watch_changes: true}} do |f| %>
+<%= translatable_form_for [:admin, @page], html: { class: "edit_page", data: { watch_changes: true } } do |f| %>
   <% if @page.errors.any? %>
     <div id="error_explanation" data-alert class="callout alert" data-closable>
       <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>

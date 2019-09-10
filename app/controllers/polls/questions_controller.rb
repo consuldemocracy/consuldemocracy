@@ -11,7 +11,7 @@ class Polls::QuestionsController < ApplicationController
     load_for_answers
     if @question.enum_type&.include?("answer_couples")
       last_pair ||= generate_and_store_new_pair(@question)
-      @last_pair_question_answers = {@question.id => last_pair}
+      @last_pair_question_answers = { @question.id => last_pair }
     end
   end
 
@@ -39,10 +39,10 @@ class Polls::QuestionsController < ApplicationController
     def load_for_answers
       @page = params[:page].present? ? params[:page] : 1
       question_answers
-      @answers_by_question_id = {@question.id => @question.answers
+      @answers_by_question_id = { @question.id => @question.answers
                                                    .by_author(current_user)
                                                    .order(:order)
-                                                   .pluck(:answer)}
+                                                   .pluck(:answer) }
     end
 
     def vote_stored(answer, new_answer, token)

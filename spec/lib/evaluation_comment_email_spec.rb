@@ -3,7 +3,7 @@ require "rails_helper"
 describe EvaluationCommentEmail do
 
   let(:author)        { create(:user) }
-  let(:administrator) { create(:administrator)}
+  let(:administrator) { create(:administrator) }
   let(:investment)    { create(:budget_investment, author: author, administrator: administrator) }
   let(:commenter)     { create(:user, email: "email@commenter.org") }
   let(:comment)       { create(:comment, commentable: investment, user: commenter) }

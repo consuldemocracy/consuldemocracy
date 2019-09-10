@@ -252,7 +252,7 @@ describe User do
   end
 
   describe "organization_attributes" do
-    before { subject.organization_attributes = {name: "org", responsible_name: "julia"} }
+    before { subject.organization_attributes = { name: "org", responsible_name: "julia" } }
 
     it "triggers the creation of an associated organization" do
       expect(subject.organization).to be
@@ -461,18 +461,18 @@ describe User do
 
     it "expires cache with becoming a moderator" do
       expect { create(:moderator, user: user) }
-      .to change { user.updated_at}
+      .to change { user.updated_at }
     end
 
     it "expires cache with becoming an admin" do
       expect { create(:administrator, user: user) }
-      .to change { user.updated_at}
+      .to change { user.updated_at }
     end
 
     it "expires cache with becoming a veridied organization" do
       create(:organization, user: user)
       expect { user.organization.verify }
-      .to change { user.reload.updated_at}
+      .to change { user.reload.updated_at }
     end
   end
 

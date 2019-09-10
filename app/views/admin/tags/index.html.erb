@@ -25,7 +25,7 @@
         <%= form_for(tag,
             url: admin_tag_path(tag),
             as: :tag,
-            html: { id: "edit_tag_#{tag.id}"}) do |f| %>
+            html: { id: "edit_tag_#{tag.id}" }) do |f| %>
 
             <strong><%= tag.name %></strong>
         <% end %>

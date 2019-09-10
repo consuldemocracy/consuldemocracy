@@ -1,7 +1,4 @@
-shared_examples "nested imageable" do |imageable_factory_name, path,
-                                       imageable_path_arguments, fill_resource_method_name,
-                                       submit_button, imageable_success_notice,
-                                       has_many_images = false|
+shared_examples "nested imageable" do |imageable_factory_name, path, imageable_path_arguments, fill_resource_method_name, submit_button, imageable_success_notice, has_many_images = false|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper

@@ -6,8 +6,8 @@ module Abilities
       merge Abilities::Common.new(user)
 
       can :read, Organization
-      can(:verify, Organization){ |o| !o.verified? }
-      can(:reject, Organization){ |o| !o.rejected? }
+      can(:verify, Organization) { |o| !o.verified? }
+      can(:reject, Organization) { |o| !o.rejected? }
 
       can :read, Comment
 

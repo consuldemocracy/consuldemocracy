@@ -10,7 +10,7 @@ module Ahoy
     # chart
     def add(name, collection)
       collections.push data:  collection, name: name
-      collection.each_key{ |key| add_key key }
+      collection.each_key { |key| add_key key }
     end
 
     def build

@@ -160,7 +160,7 @@ describe "Commenting polls" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: poll)}
+    (per_page + 2).times { create(:comment, commentable: poll) }
 
     visit poll_path(poll)
 

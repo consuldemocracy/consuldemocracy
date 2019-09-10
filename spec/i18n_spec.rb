@@ -40,7 +40,7 @@ describe "I18n" do
                other: "%{count} comments" }
 
       I18n.backend.store_translations(I18n.default_locale, { test_plural: keys })
-      I18n.backend.store_translations(:zz, {} )
+      I18n.backend.store_translations(:zz, {})
 
       I18n.enforce_available_locales = false
       I18n.locale = :zz

@@ -159,7 +159,7 @@ describe "Commenting debates" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: debate)}
+    (per_page + 2).times { create(:comment, commentable: debate) }
 
     visit debate_path(debate)
 

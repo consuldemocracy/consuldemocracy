@@ -4,7 +4,7 @@ describe RemoteCensusApi do
   let(:api) { described_class.new }
 
   describe "#call" do
-    let(:invalid_body) { {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}}}} }
+    let(:invalid_body) { { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}}}} }
     let(:valid_body) do
       {
         get_habita_datos_response: {
@@ -86,33 +86,33 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, nil, nil)
 
-      expect(request).to eq ({:request=>
-                              {:codigo_institucion=>1,
-                               :codigo_portal=>1,
-                               :codigo_usuario=>1,
-                               :documento=>"0123456",
-                               :tipo_documento=>"1",
-                               :codigo_idioma=>"102",
-                               :nivel=>"3"}
+      expect(request).to eq ({ :request =>
+                              { :codigo_institucion => 1,
+                               :codigo_portal => 1,
+                               :codigo_usuario => 1,
+                               :documento => "0123456",
+                               :tipo_documento => "1",
+                               :codigo_idioma => "102",
+                               :nivel => "3" }
                               })
     end
 
     it "when send date_of_birth and postal_code but are not configured" do
       document_type = "1"
       document_number = "0123456"
-      date_of_birth =  Date.new(1980, 1, 1)
+      date_of_birth = Date.new(1980, 1, 1)
       postal_code = "28001"
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
 
-      expect(request).to eq ({:request=>
-                              {:codigo_institucion=>1,
-                               :codigo_portal=>1,
-                               :codigo_usuario=>1,
-                               :documento=>"0123456",
-                               :tipo_documento=>"1",
-                               :codigo_idioma=>"102",
-                               :nivel=>"3"}
+      expect(request).to eq ({ :request =>
+                              { :codigo_institucion => 1,
+                               :codigo_portal => 1,
+                               :codigo_usuario => 1,
+                               :documento => "0123456",
+                               :tipo_documento => "1",
+                               :codigo_idioma => "102",
+                               :nivel => "3" }
                               })
     end
 
@@ -132,21 +132,21 @@ describe RemoteCensusApi do
       Setting["remote_census.request.postal_code"] = "request.codigo_postal"
       document_type = "1"
       document_number = "0123456"
-      date_of_birth =  Date.new(1980, 1, 1)
+      date_of_birth = Date.new(1980, 1, 1)
       postal_code = "28001"
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
 
-      expect(request).to eq ({:request=>
-                              {:codigo_institucion=>1,
-                               :codigo_portal=>1,
-                               :codigo_usuario=>1,
-                               :documento=>"0123456",
-                               :tipo_documento=>"1",
-                               :fecha_nacimiento=>"1980-01-01",
-                               :codigo_postal=>"28001",
-                               :codigo_idioma=>"102",
-                               :nivel=>"3"}
+      expect(request).to eq ({ :request =>
+                              { :codigo_institucion => 1,
+                               :codigo_portal => 1,
+                               :codigo_usuario => 1,
+                               :documento => "0123456",
+                               :tipo_documento => "1",
+                               :fecha_nacimiento => "1980-01-01",
+                               :codigo_postal => "28001",
+                               :codigo_idioma => "102",
+                               :nivel => "3" }
                               })
     end
 

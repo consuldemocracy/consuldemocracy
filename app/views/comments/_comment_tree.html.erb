@@ -24,7 +24,7 @@
           <% elsif require_verified_resident_for_commentable?(commentable, current_user) %>
             <br>
             <div data-alert class="callout primary">
-              <%= t("comments.verified_only", verify_account: link_to(t("comments.verify_account"), verification_path )).html_safe %>
+              <%= t("comments.verified_only", verify_account: link_to(t("comments.verify_account"), verification_path)).html_safe %>
             </div>
           <% elsif allow_comments %>
             <%= render "comments/form", { commentable: commentable,

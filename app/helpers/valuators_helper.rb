@@ -5,7 +5,7 @@ module ValuatorsHelper
   end
 
   def valuator_abilities(valuator)
-    [ valuator.can_comment ? I18n.t("admin.valuators.index.can_comment") : nil ,
+    [valuator.can_comment ? I18n.t("admin.valuators.index.can_comment") : nil,
       valuator.can_edit_dossier ? I18n.t("admin.valuators.index.can_edit_dossier") : nil
     ].compact.join(", ")
   end

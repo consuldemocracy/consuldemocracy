@@ -15,7 +15,7 @@ describe "Moderate budget investments" do
     Setting["process.budgets"] = nil
     login_as(@mod.user)
 
-    expect{ visit moderation_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit moderation_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Hiding an investment", :js do

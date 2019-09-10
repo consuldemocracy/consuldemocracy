@@ -2,10 +2,10 @@ require "rails_helper"
 
 describe Budget::Ballot::Line do
 
-  let(:budget){ create(:budget) }
-  let(:group){ create(:budget_group, budget: budget) }
-  let(:heading){ create(:budget_heading, group: group, price: 10000000) }
-  let(:investment){ create(:budget_investment, :selected, price: 5000000, heading: heading) }
+  let(:budget) { create(:budget) }
+  let(:group) { create(:budget_group, budget: budget) }
+  let(:heading) { create(:budget_heading, group: group, price: 10000000) }
+  let(:investment) { create(:budget_investment, :selected, price: 5000000, heading: heading) }
   let(:ballot) { create(:budget_ballot, budget: budget) }
   let(:ballot_line) { build(:budget_ballot_line, ballot: ballot, investment: investment) }
 

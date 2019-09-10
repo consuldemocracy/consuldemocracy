@@ -12,7 +12,7 @@ describe RemoteTranslations::Microsoft::Client do
 
         expect_any_instance_of(TranslatorText::Client).to receive(:translate).and_return(response)
 
-        result = client.call([ "New title", "New description"], :es)
+        result = client.call(["New title", "New description"], :es)
 
         expect(result).to eq(["Nuevo título", "Nueva descripción"])
       end

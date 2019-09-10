@@ -18,9 +18,9 @@
           class: "button button-support small expanded",
           title: t("budgets.investments.investment.support_title"),
           method: "post",
-          remote: (display_support_alert?(investment) ? false: true ),
+          remote: (display_support_alert?(investment) ? false : true),
           data:   (display_support_alert?(investment) ? {
-                  confirm: t("budgets.investments.investment.confirm_group")} : nil),
+                  confirm: t("budgets.investments.investment.confirm_group") } : nil),
           "aria-hidden" => css_for_aria_hidden(reason) do %>
         <%= t("budgets.investments.investment.give_support") %>
       <% end %>

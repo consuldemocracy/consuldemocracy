@@ -20,7 +20,7 @@ class RemoteTranslationsController < ApplicationController
     def set_remote_translations
       remote_translations = remote_translations_params["remote_translations"]
       decoded_remote_translations = ActiveSupport::JSON.decode(remote_translations)
-      @remote_translations = decoded_remote_translations.map{ |remote_translation|
+      @remote_translations = decoded_remote_translations.map { |remote_translation|
                               remote_translation.slice("remote_translatable_id",
                                                        "remote_translatable_type",
                                                        "locale")

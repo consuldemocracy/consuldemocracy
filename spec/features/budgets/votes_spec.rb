@@ -54,7 +54,7 @@ describe "Votes" do
     end
 
     describe "Single investment" do
-      let(:investment) { create(:budget_investment, budget: budget, heading: heading)}
+      let(:investment) { create(:budget_investment, budget: budget, heading: heading) }
 
       scenario "Show no votes" do
         visit budget_investment_path(budget, investment)

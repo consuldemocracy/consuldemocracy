@@ -37,7 +37,7 @@
       <%= fields_for :votation_type do |votation_f| %>
         <div class="small-12 medium-6">
           <%= votation_f.select :enum_type,
-                                options_for_select(VotationType.enum_types.map {|k, v| [t(k, scope: :enum_type), v]},
+                                options_for_select(VotationType.enum_types.map { |k, v| [t(k, scope: :enum_type), v] },
                                 params.dig(:votation_type, :enum_type)), default: 0,
                                 disabled: @question.persisted?,  label: t("enum_type.title") %>
         </div>
@@ -53,8 +53,8 @@
           </div>
           <div class="small-12 medium-6 js-prioritization_type hidden">
             <%= votation_f.select :prioritization_type,
-                                  options_for_select(VotationType.prioritization_types.map {|k, v| [t(k, scope: :prioritization_type), v]},
-                                  params.dig(:votation_type, :prioritization_type) ), default: 0,
+                                  options_for_select(VotationType.prioritization_types.map { |k, v| [t(k, scope: :prioritization_type), v] },
+                                  params.dig(:votation_type, :prioritization_type)), default: 0,
                                   disabled: @question.persisted?, label: t("prioritization_type.title") %>
           </div>
           <div class="small-12 medium-6 js-max_group_votes hidden">

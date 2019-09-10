@@ -7,7 +7,7 @@
       <%= link_to t("shared.flag"), flag_budget_investment_path(investment.budget, investment.id),
                                     method: :put,
                                     remote: true,
-                                    id: "flag-investment-#{ investment.id }" %>
+                                    id: "flag-investment-#{investment.id}" %>
     </span>
   <% end %>
 
@@ -19,7 +19,7 @@
       <%= link_to t("shared.unflag"), unflag_budget_investment_path(investment.budget, investment.id),
                                       method: :put,
                                       remote: true,
-                                      id: "unflag-investment-#{ investment.id }" %>
+                                      id: "unflag-investment-#{investment.id}" %>
     </span>
   <% end %>
 </span>

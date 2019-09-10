@@ -32,6 +32,73 @@ Layout/EmptyLines:
 Layout/EndOfLine:
   EnforcedStyle: lf
 
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAfterMethodName:
+  Enabled: true
+
+Layout/SpaceAfterNot:
+  Enabled: true
+
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+
+Layout/SpaceAroundBlockParameters:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeComment:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+Layout/SpaceBeforeSemicolon:
+  Enabled: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  EnforcedStyle: compact
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: true
+
+Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+
+Layout/SpaceInsideReferenceBrackets:
+  Enabled: true
+
+Layout/SpaceInsideStringInterpolation:
+  Enabled: true
+
+Layout/Tab:
+  Enabled: true
+
 Layout/TrailingBlankLines:
   Enabled: true
 

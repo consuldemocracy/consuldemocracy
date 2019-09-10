@@ -47,8 +47,8 @@ class Debate < ApplicationRecord
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
-  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
-  scope :featured,                 -> { where("featured_at is not null")}
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
+  scope :featured,                 -> { where("featured_at is not null") }
   scope :public_for_api,           -> { all }
 
   # Ahoy setup
@@ -149,11 +149,11 @@ class Debate < ApplicationRecord
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for("Debate") }
+    tags.each { |t| t.decrement_custom_counter_for("Debate") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for("Debate") }
+    tags.each { |t| t.increment_custom_counter_for("Debate") }
   end
 
   def featured?

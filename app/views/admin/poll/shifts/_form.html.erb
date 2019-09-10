@@ -15,7 +15,7 @@
     <div class="small-12 medium-3 column">
       <label><%= t("admin.poll_shifts.new.task") %></label>
       <%= f.select :task,
-                    Poll::Shift.tasks.map {|k,v| [t("admin.poll_shifts.#{k}"), k]},
+                    Poll::Shift.tasks.map { |k, v| [t("admin.poll_shifts.#{k}"), k] },
                     { prompt: t("admin.poll_shifts.new.select_task"),
                     label: false },
                     class: "js-poll-shifts" %>

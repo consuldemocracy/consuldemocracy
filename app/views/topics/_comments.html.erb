@@ -11,7 +11,7 @@
       <%= paginate @comment_tree.root_comments %>
 
       <% if user_signed_in? %>
-        <%= render "comments/form", {commentable: @topic, parent_id: nil, toggeable: false} %>
+        <%= render "comments/form", { commentable: @topic, parent_id: nil, toggeable: false } %>
       <% else %>
 
       <div data-alert class="callout primary">

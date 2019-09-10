@@ -8,7 +8,7 @@
   <div class="participation-not-allowed" style="display:none" aria-hidden="false">
     <p>
       <%= t("legislation.questions.participation.verified_only",
-          verify_account: link_to(t("legislation.questions.participation.verify_account"), verification_path )).html_safe %>
+          verify_account: link_to(t("legislation.questions.participation.verify_account"), verification_path)).html_safe %>
     </p>
   </div>
 <% elsif !user_signed_in? %>
