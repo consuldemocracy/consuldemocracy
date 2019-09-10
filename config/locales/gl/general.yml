@@ -590,6 +590,8 @@ gl:
         positive_negative_open: Permite votar, de xeito positivo ou non, un número máximo de veces ás respostas. É posible estabelecer un número máximo de respostas e engadir outras.
         answer_couples_open: Permite votar un número máximo de veces a parellas de posibles respostas. É posible estabelecer un número máximo de parellas e engadir outras respostas.
         answer_couples_closed: Permite votar un número máximo de veces a parellas de posibles respostas. É posible estabelecer un número máximo de parellas e non é posible engadir outras respostas.
+        answer_set_open: Permite votar un número máximo de respostas a un grupo das mesmas. É posible estabelecer un número máximo de respostas, o tamaño do grupo e engadir outras respostas.
+        answer_set_closed: Permite votar un número máximo de respostas a un grupo das mesmas. É posible estabelecer un número máximo de respostas e o tamaño do grupo.
     show:
       already_voted_in_booth: "Xa participaches nesta votación en urnas presenciais polo que non podes volver participar."
       already_voted_in_web: "Xa participaches nesta votación. Se volves votar, modificarás o teu voto anterior."
@@ -631,7 +633,10 @@ gl:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Votaches %{answer}"
+      your_answer: "Podes engadir a túa propia resposta"
       add_answer: "Engadir resposta"
+    description:
+      multiple: "Podes seleccionar un máximo de %{maximum} respostas."
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
