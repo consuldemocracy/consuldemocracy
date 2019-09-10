@@ -51,6 +51,12 @@ gl:
         zero: Sen respostas
         one: 1 resposta
         other: "%{count} respostas"
+      responses_show:
+        zero: Sen respostas
+        one: "1 resposta (ver)"
+        other: "%{count} respostas (ver)"
+      responses_collapse:
+        zero: Sen respostas
       user_deleted: Usuario eliminado
       votes:
         zero: Ningún voto
