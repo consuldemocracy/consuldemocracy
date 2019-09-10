@@ -1,4 +1,4 @@
-<%= render 'shared/errors' %>
+<%= render "shared/errors" %>
 
 <div class="row expanded">
   <div class="small-12 medium-4 column">
@@ -70,13 +70,13 @@
 <% if feature?(:allow_attached_documents) %>
   <div class="documents small-12 column">
     <hr>
-    <%= render 'documents/nested_documents', documentable: dashboard_action, f: f %>
+    <%= render "documents/nested_documents", documentable: dashboard_action, f: f %>
     <hr>
   </div>
 <% end %>
 
 <div class="links small-12 column">
-  <%= render 'links/nested_links', linkable: dashboard_action, f: f %>
+  <%= render "links/nested_links", linkable: dashboard_action, f: f %>
   <hr>
 </div>
 

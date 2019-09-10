@@ -56,8 +56,8 @@ class ProposalNotification < ApplicationRecord
 
   private
 
-  def set_author
-    self.update(author_id: self.proposal.author_id) if self.proposal
-  end
+    def set_author
+      self.update(author_id: self.proposal.author_id) if self.proposal
+    end
 
 end

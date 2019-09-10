@@ -279,7 +279,6 @@ describe Dashboard::Action do
         let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
                                                      published_proposal: true) }
 
-
         it "when proposal has been created today and day_offset is valid only for today" do
           expect(described_class.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(resource.id)

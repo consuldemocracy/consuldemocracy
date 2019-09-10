@@ -39,10 +39,10 @@ class DirectUploadsController < ApplicationController
 
   private
 
-  def direct_upload_params
-    params.require(:direct_upload)
-          .permit(:resource, :resource_type, :resource_id, :resource_relation,
-                  :attachment, :cached_attachment, attachment_attributes: [])
-  end
+    def direct_upload_params
+      params.require(:direct_upload)
+            .permit(:resource, :resource_type, :resource_id, :resource_relation,
+                    :attachment, :cached_attachment, attachment_attributes: [])
+    end
 
 end

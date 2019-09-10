@@ -283,6 +283,6 @@ end
 
 def set_arguments(arguments, mappable, mappable_path_arguments)
   mappable_path_arguments&.each do |argument_name, path_to_value|
-      arguments.merge!("#{argument_name}": mappable.send(path_to_value))
+    arguments.merge!("#{argument_name}": mappable.send(path_to_value))
   end
 end

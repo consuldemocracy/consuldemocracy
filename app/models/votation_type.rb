@@ -110,7 +110,6 @@ class VotationType < ApplicationRecord
       end
     end
 
-
     result
   end
 

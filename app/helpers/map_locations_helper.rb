@@ -47,24 +47,24 @@ module MapLocationsHelper
 
   private
 
-  def prepare_map_settings(map_location, editable, parent_class, investments_coordinates=nil)
-    options = {
-      map: "",
-      map_center_latitude: map_location_latitude(map_location),
-      map_center_longitude: map_location_longitude(map_location),
-      map_zoom: map_location_zoom(map_location),
-      map_tiles_provider: Rails.application.secrets.map_tiles_provider,
-      map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
-      marker_editable: editable,
-      marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
-      latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
-      longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
-      zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
-      marker_investments_coordinates: investments_coordinates
-    }
-    options[:marker_latitude] = map_location.latitude if map_location.latitude.present?
-    options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
-    options
-  end
+    def prepare_map_settings(map_location, editable, parent_class, investments_coordinates=nil)
+      options = {
+        map: "",
+        map_center_latitude: map_location_latitude(map_location),
+        map_center_longitude: map_location_longitude(map_location),
+        map_zoom: map_location_zoom(map_location),
+        map_tiles_provider: Rails.application.secrets.map_tiles_provider,
+        map_tiles_provider_attribution: Rails.application.secrets.map_tiles_provider_attribution,
+        marker_editable: editable,
+        marker_remove_selector: "##{map_location_remove_marker_link_id(map_location)}",
+        latitude_input_selector: "##{map_location_input_id(parent_class, "latitude")}",
+        longitude_input_selector: "##{map_location_input_id(parent_class, "longitude")}",
+        zoom_input_selector: "##{map_location_input_id(parent_class, "zoom")}",
+        marker_investments_coordinates: investments_coordinates
+      }
+      options[:marker_latitude] = map_location.latitude if map_location.latitude.present?
+      options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
+      options
+    end
 
 end

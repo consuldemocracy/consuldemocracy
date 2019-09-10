@@ -16,7 +16,7 @@
       <div class="row">
         <div class="small-12 medium-7 column">
 
-          <h2><%= t("account.show.personal")%></h2>
+          <h2><%= t("account.show.personal") %></h2>
 
           <div class="small-12 medium-10">
             <% if @account.organization? %>
@@ -49,9 +49,8 @@
             <% end %>
           </div>
 
-
           <% if @account.email.present? %>
-            <h2><%= t("account.show.notifications")%></h2>
+            <h2><%= t("account.show.notifications") %></h2>
 
             <div>
               <%= f.label :email_on_comment do %>

@@ -1,5 +1,5 @@
 <%= link_to t("admin.dashboard.actions.index.create"),
-              new_admin_dashboard_action_path, class: 'button success float-right' %>
+              new_admin_dashboard_action_path, class: "button success float-right" %>
 
 <h2 class="inline-block">
   <%= t("admin.dashboard.actions.index.title") %>
@@ -28,8 +28,8 @@
         <td><%= t("admin.dashboard.actions.action_type.#{action.action_type}") %></td>
         <td class="text-center"><%= active_human_readable(action.active) %></td>
         <td class="text-center"><%= active_human_readable(action.published_proposal) %></td>
-        <td class="text-center"><%= number_with_delimiter(action.day_offset, delimiter: '.') %></td>
-        <td class="text-center"><%= number_with_delimiter(action.required_supports, delimiter: '.') %></td>
+        <td class="text-center"><%= number_with_delimiter(action.day_offset, delimiter: ".") %></td>
+        <td class="text-center"><%= number_with_delimiter(action.required_supports, delimiter: ".") %></td>
         <td class="text-center"><%= action.order %></td>
         <td class="text-right">
           <%= link_to t("admin.dashboard.actions.index.edit"),

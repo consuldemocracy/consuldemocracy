@@ -129,16 +129,16 @@ class Mailer < ApplicationMailer
 
   private
 
-  def with_user(user, &block)
-    I18n.with_locale(user.locale) do
-      yield
+    def with_user(user, &block)
+      I18n.with_locale(user.locale) do
+        yield
+      end
     end
-  end
 
-  def prevent_delivery_to_users_without_email
-    if @email_to.blank?
-      mail.perform_deliveries = false
+    def prevent_delivery_to_users_without_email
+      if @email_to.blank?
+        mail.perform_deliveries = false
+      end
     end
-  end
 
 end

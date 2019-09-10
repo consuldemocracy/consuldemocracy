@@ -31,4 +31,3 @@ describe "Admin users" do
     expect(page).not_to have_content @admin.email
   end
 end
-

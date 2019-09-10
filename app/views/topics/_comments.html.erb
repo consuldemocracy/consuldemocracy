@@ -5,7 +5,7 @@
       <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
 
       <% @comment_tree.root_comments.each do |comment| %>
-        <%= render "comments/comment", comment: comment  %>
+        <%= render "comments/comment", comment: comment %>
       <% end %>
 
       <%= paginate @comment_tree.root_comments %>

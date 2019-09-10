@@ -31,15 +31,15 @@ class SandboxController < ApplicationController
 
   private
 
-  def set_layout
-    if params[:template] && params[:template].split("_").first == "admin"
-      "admin"
-    else
-      "application"
+    def set_layout
+      if params[:template] && params[:template].split("_").first == "admin"
+        "admin"
+      else
+        "application"
+      end
     end
-  end
 
-  def namespace
-    "admin"
-  end
+    def namespace
+      "admin"
+    end
 end

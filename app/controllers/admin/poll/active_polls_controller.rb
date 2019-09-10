@@ -22,7 +22,6 @@ class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
     end
   end
 
-
   private
 
     def load_active_poll

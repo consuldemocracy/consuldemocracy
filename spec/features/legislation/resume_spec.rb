@@ -75,8 +75,6 @@ describe "Legislation" do
       @debate = create(:legislation_question, process: @process, title: "Question 2")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 3")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 4")
-
-
     end
 
     scenario "show debates list" do

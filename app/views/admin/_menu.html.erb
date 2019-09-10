@@ -58,7 +58,7 @@
         <strong><%= t("admin.menu.title_booths") %></strong>
       </a>
       <ul id="booths_menu" <%= "class=is-active" if menu_booths? || controller_name == "polls" && action_name == "booth_assignments" %>>
-        <li <%= "class=is-active" if %w(officers officer_assignments).include?(controller_name) %>>
+        <li <%= "class=is-active" if %w[officers officer_assignments].include?(controller_name) %>>
           <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
         </li>
 
@@ -74,8 +74,8 @@
           <%= link_to t("admin.menu.poll_booth_assignments"), booth_assignments_admin_polls_path %>
         </li>
 
-        <li <%= "class=is-active" if %w(shifts booths).include?(controller_name) &&
-                                  %w(available new).include?(action_name) %>>
+        <li <%= "class=is-active" if %w[shifts booths].include?(controller_name) &&
+                                  %w[available new].include?(action_name) %>>
           <%= link_to t("admin.menu.poll_shifts"), available_admin_booths_path %>
         </li>
       </ul>
@@ -90,7 +90,7 @@
       </li>
     <% end %>
 
-    <% messages_sections = %w(newsletters emails_download admin_notifications system_emails) %>
+    <% messages_sections = %w[newsletters emails_download admin_notifications system_emails] %>
     <% messages_menu_active = messages_sections.include?(controller_name) %>
     <li class="section-title" <%= "class=is-active" if messages_menu_active %>>
       <a href="#">
@@ -205,7 +205,7 @@
         </li>
 
         <li <%= "class=is-active" if controller_name == "moderators" %>>
-          <%= link_to t("admin.menu.moderators"), admin_moderators_path%>
+          <%= link_to t("admin.menu.moderators"), admin_moderators_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "valuators" %>>
@@ -281,7 +281,7 @@
         <span class="icon-settings"></span>
         <strong><%= t("admin.menu.title_settings") %></strong>
       </a>
-      <ul <%="class=is-active" if menu_settings? %>>
+      <ul <%= "class=is-active" if menu_settings? %>>
         <li <%= "class=is-active" if controller_name == "settings" %>>
           <%= link_to t("admin.menu.settings"), admin_settings_path %>
         </li>
@@ -300,7 +300,7 @@
         </li>
 
         <li <%= "class=is-active" if controller_name == "content_blocks" %>>
-          <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path%>
+          <%= link_to t("admin.menu.site_customization.content_blocks"), admin_site_customization_content_blocks_path %>
         </li>
 
         <li <%= "class=is-active" if submenu_local_census_records? %>>

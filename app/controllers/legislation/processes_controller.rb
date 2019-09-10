@@ -10,7 +10,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   before_action :set_random_seed, only: :proposals
   before_action :check_past, only: :resume
 
-
   def index
     @current_filter ||= "open"
     @processes = ::Legislation::Process.send(@current_filter).published

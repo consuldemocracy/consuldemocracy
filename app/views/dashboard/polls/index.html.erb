@@ -1,7 +1,7 @@
 <% content_for :action_title, t("dashboard.polls.index.title") %>
 <div class="row expanded">
   <div class="small-12 medium-9 column">
-    <%== Setting['proposals.poll_description'] %>
+    <%== Setting["proposals.poll_description"] %>
 
     <% if @polls.any? %>
       <div class="row expanded margin-top" data-equalizer="poll-cards" data-equalize-on="medium">
@@ -11,10 +11,10 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <% if Setting['proposals.poll_link'].present? %>
+    <% if Setting["proposals.poll_link"].present? %>
       <h4><%= t("dashboard.polls.index.links") %></h4>
       <%= link_to t("dashboard.polls.index.additiontal_information"),
-                  Setting['proposals.poll_link'], target: "_blank" %>
+                  Setting["proposals.poll_link"], target: "_blank" %>
     <% end %>
 
     <p><strong><%= t("dashboard.polls.index.count", count: @polls.count) %></strong></p>

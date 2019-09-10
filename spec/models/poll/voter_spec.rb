@@ -25,9 +25,9 @@ describe Poll::Voter do
     end
 
     it "is valid if has not voted" do
-       voter = build(:poll_voter, :valid_document)
+      voter = build(:poll_voter, :valid_document)
 
-       expect(voter).to be_valid
+      expect(voter).to be_valid
     end
 
     it "is not valid if the user has already voted in the same poll or booth_assignment" do

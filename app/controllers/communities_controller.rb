@@ -1,5 +1,5 @@
 class CommunitiesController < ApplicationController
-  TOPIC_ORDERS = %w{newest most_commented oldest}.freeze
+  TOPIC_ORDERS = %w[newest most_commented oldest].freeze
   before_action :set_order, :set_community, :load_topics, :load_participants
 
   has_orders TOPIC_ORDERS
@@ -13,27 +13,27 @@ class CommunitiesController < ApplicationController
 
   private
 
-  def set_order
-    @order = valid_order? ? params[:order] : "newest"
-  end
+    def set_order
+      @order = valid_order? ? params[:order] : "newest"
+    end
 
-  def set_community
-    @community = Community.find(params[:id])
-  end
+    def set_community
+      @community = Community.find(params[:id])
+    end
 
-  def load_topics
-    @topics = @community.topics.send("sort_by_#{@order}").page(params[:page])
-  end
+    def load_topics
+      @topics = @community.topics.send("sort_by_#{@order}").page(params[:page])
+    end
 
-  def load_participants
-    @participants = @community.participants
-  end
+    def load_participants
+      @participants = @community.participants
+    end
 
-  def valid_order?
-    params[:order].present? && TOPIC_ORDERS.include?(params[:order])
-  end
+    def valid_order?
+      params[:order].present? && TOPIC_ORDERS.include?(params[:order])
+    end
 
-  def communitable_exists?
-    @community.proposal.present? || @community.investment.present?
-  end
+    def communitable_exists?
+      @community.proposal.present? || @community.investment.present?
+    end
 end

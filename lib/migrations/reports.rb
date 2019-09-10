@@ -15,7 +15,7 @@ class Migrations::Reports
           stats:          poll.read_attribute(:stats_enabled),
           advanced_stats: poll.read_attribute(:stats_enabled),
         )
-    end
+      end
 
     end
 

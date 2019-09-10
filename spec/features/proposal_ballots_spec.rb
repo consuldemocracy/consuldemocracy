@@ -27,4 +27,3 @@ describe "Proposal ballots" do
   end
 
 end
-

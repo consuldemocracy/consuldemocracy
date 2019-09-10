@@ -1,7 +1,7 @@
 class Widget::Feed < ApplicationRecord
   self.table_name = "widget_feeds"
 
-  KINDS = %w(proposals debates processes)
+  KINDS = %w[proposals debates processes]
 
   def active?
     setting.value.present?

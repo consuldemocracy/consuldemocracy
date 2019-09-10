@@ -3,7 +3,7 @@ class Admin::HiddenDebatesController < Admin::BaseController
 
   feature_flag :debates
 
-  has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
+  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_debate, only: [:confirm_hide, :restore]
 

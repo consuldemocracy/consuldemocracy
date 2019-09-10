@@ -358,7 +358,6 @@ class User < ApplicationRecord
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
   end
 
-
   def self.current_user
     Thread.current[:user]
   end

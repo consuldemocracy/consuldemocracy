@@ -13,8 +13,8 @@ class Admin::DebatesController < Admin::BaseController
 
   private
 
-  def resource_model
-    Debate
-  end
+    def resource_model
+      Debate
+    end
 
 end

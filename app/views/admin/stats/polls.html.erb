@@ -1,6 +1,6 @@
 <%= back_link_to %>
 
-<h2 id="top"><%= t("admin.stats.polls.title")%></h2>
+<h2 id="top"><%= t("admin.stats.polls.title") %></h2>
 
 <div class="stats">
   <div class="row stats-numbers">
@@ -76,7 +76,7 @@
         <th></th>
         <th class="name text-right">
           <strong>
-            <%= t("admin.stats.polls.table.origin_total") %>: 
+            <%= t("admin.stats.polls.table.origin_total") %>:
             <%= ::Poll::Answer.where(question: poll.questions)
                               .select(:author_id).distinct.count %>
           </strong>

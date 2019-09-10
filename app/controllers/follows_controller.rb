@@ -17,12 +17,12 @@ class FollowsController < ApplicationController
 
   private
 
-  def find_followable
-    params[:followable_type].constantize.find(params[:followable_id])
-  end
+    def find_followable
+      params[:followable_type].constantize.find(params[:followable_id])
+    end
 
-  def followable_translation_key(followable)
-    followable.class.name.parameterize(separator: "_")
-  end
+    def followable_translation_key(followable)
+      followable.class.name.parameterize(separator: "_")
+    end
 
 end

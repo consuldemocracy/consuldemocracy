@@ -55,16 +55,16 @@ class Newsletter < ApplicationRecord
 
   private
 
-  def validate_segment_recipient
-    errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
-  end
+    def validate_segment_recipient
+      errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
+    end
 
-  def valid_email?(email)
-    email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
-  end
+    def valid_email?(email)
+      email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
+    end
 
-  def log_delivery(recipient_email)
-    user = User.where(email: recipient_email).first
-    Activity.log(user, :email, self)
-  end
+    def log_delivery(recipient_email)
+      user = User.where(email: recipient_email).first
+      Activity.log(user, :email, self)
+    end
 end

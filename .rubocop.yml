@@ -353,6 +353,3 @@ Security/MarshalLoad:
 
 Security/YAMLLoad:
   Enabled: true
-
-Style/PercentLiteralDelimiters:
-  Enabled: true

@@ -3,9 +3,6 @@ require: rubocop-rspec
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
-  Include:
-    - "**/Rakefile"
-    - "**/config.ru"
   Exclude:
     - "db/migrate/**/*"
     - "db/schema.rb"
@@ -27,6 +24,9 @@ Layout/IndentationConsistency:
   EnforcedStyle: rails
 
 Layout/IndentationWidth:
+  Enabled: true
+
+Layout/EmptyLines:
   Enabled: true
 
 Layout/EndOfLine:
@@ -69,6 +69,9 @@ Rails/TimeZone:
   Enabled: true
 
 RSpec/NotToNot:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
   Enabled: true
 
 Style/StringLiterals:

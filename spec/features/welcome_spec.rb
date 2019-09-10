@@ -121,5 +121,4 @@ describe "Welcome screen" do
     Setting["feature.user.skip_verification"] = nil
   end
 
-
 end

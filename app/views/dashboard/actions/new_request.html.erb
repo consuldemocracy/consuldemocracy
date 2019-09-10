@@ -3,11 +3,11 @@
 <div class="row expanded">
   <div class="small-12 medium-8 column">
     <%== dashboard_action.description %>
-    <%= render 'dashboard/form' %>
+    <%= render "dashboard/form" %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= render 'documents/documents', documents: dashboard_action.documents %>
+    <%= render "documents/documents", documents: dashboard_action.documents %>
 
     <% if dashboard_action.links.any? %>
       <div class="margin-top">

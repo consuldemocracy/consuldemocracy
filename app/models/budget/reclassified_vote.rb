@@ -1,6 +1,6 @@
 class Budget
   class ReclassifiedVote < ApplicationRecord
-    REASONS = %w(heading_changed unfeasible)
+    REASONS = %w[heading_changed unfeasible]
 
     belongs_to :user
     belongs_to :investment

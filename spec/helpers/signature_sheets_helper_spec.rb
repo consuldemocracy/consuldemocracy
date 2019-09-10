@@ -77,6 +77,4 @@ describe SignatureSheetsHelper do
 
   end
 
-
-
 end

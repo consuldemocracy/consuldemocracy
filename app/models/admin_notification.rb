@@ -35,14 +35,14 @@ class AdminNotification < ApplicationRecord
 
   private
 
-  def validate_segment_recipient
-    errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
-  end
-
-  def complete_link_url
-    return unless link.present?
-    unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
-      self.link = "http://#{self.link}"
+    def validate_segment_recipient
+      errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
     end
-  end
+
+    def complete_link_url
+      return unless link.present?
+      unless self.link[/\Ahttp:\/\//] || self.link[/\Ahttps:\/\//]
+        self.link = "http://#{self.link}"
+      end
+    end
 end

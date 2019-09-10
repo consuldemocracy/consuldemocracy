@@ -82,7 +82,7 @@ describe "Verified users" do
     visit verified_user_path
 
     within("#verified_user_#{verified_user.id}_email") do
-     click_button "Send code"
+      click_button "Send code"
     end
 
     expect(page).to have_content "We have sent a confirmation email to your account: rock@example.com"
