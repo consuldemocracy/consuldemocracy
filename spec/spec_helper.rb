@@ -65,6 +65,14 @@ RSpec.configure do |config|
     end
   end
 
+  config.before(:each, type: :feature) do
+    Capybara::Webmock.start
+  end
+
+  config.after(:suite) do
+    Capybara::Webmock.stop
+  end
+
   config.after(:each, :page_driver) do
     page.driver.reset!
   end
