@@ -25,7 +25,6 @@ App.Votations =
       $("#max_groups_answers").attr(disabled: true)
 
   setTraduction: (response) ->
-    console.log response
     $(".js-description_text").text(response["traduction"])
 
   updateChecks: () ->
@@ -41,5 +40,3 @@ App.Votations =
         url = "/admin/get_options_traductions.json"
         params = { enum_type: $("#votation_type_enum_type").val() }
         $.get(url, params, (response) -> App.Votations.setTraduction response, "json")
-
-false

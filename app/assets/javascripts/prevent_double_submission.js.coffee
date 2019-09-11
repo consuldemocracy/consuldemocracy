@@ -34,5 +34,3 @@ App.PreventDoubleSubmission =
         buttons = $(this).find(":button, :submit")
         App.PreventDoubleSubmission.reset_buttons(buttons)
     )
-
-    false

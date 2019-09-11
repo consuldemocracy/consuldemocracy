@@ -1,7 +1,7 @@
 App.Sortable =
   initialize: ->
     $(".sortable").sortable
-      update: (event, ui) ->
+      update: ->
         new_order = $(this).sortable("toArray", { attribute: "data-answer-id" })
         $.ajax
           url: $(".sortable").data("js-url"),
@@ -9,7 +9,7 @@ App.Sortable =
           type: "POST"
 
     $(".sortable-priotirized-votation").sortable
-      update: (event, ui) ->
+      update: ->
         new_order = $(this).sortable("toArray", { attribute: "data-answer-id" })
         $.ajax
           url: $(this).data("js-url"),

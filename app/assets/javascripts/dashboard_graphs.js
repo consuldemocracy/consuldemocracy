@@ -263,7 +263,7 @@
   };
 
   ProposalGraph.prototype.formatXColumnValues = function () {
-    var i, l, parts;
+    var i, l;
 
     this.xColumnValues = this.xColumnValues.sort();
 

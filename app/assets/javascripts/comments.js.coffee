@@ -10,7 +10,7 @@ App.Comments =
     $("##{parent_id} .comment-children:first").prepend($(response_html))
     this.update_comments_count()
 
-  update_comments_count: (parent_id) ->
+  update_comments_count: ->
     $(".js-comments-count").each ->
       new_val = $(this).text().trim().replace /\d+/, (match) -> parseInt(match, 10) + 1
       $(this).text(new_val)

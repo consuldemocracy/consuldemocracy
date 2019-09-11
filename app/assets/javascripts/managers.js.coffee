@@ -14,11 +14,11 @@ App.Managers =
     $("#user_password").prop "type", type
 
   initialize: ->
-    $(".generate-random-value").on "click", (event) ->
+    $(".generate-random-value").on "click", ->
       password = App.Managers.generatePassword()
       $("#user_password").val(password)
 
-    $(".show-password").on "click", (event) ->
+    $(".show-password").on "click", ->
       if $("#user_password").is("input[type='password']")
         App.Managers.togglePassword("text")
       else

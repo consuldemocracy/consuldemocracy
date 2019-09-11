@@ -29,4 +29,3 @@ App.ValuationBudgetInvestmentForm =
   initialize: ->
     App.ValuationBudgetInvestmentForm.showFeasibilityFields()
     App.ValuationBudgetInvestmentForm.showFeasibilityFieldsOnChange()
-    false

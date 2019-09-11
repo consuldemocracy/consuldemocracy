@@ -1,6 +1,6 @@
 App.ColumnsSelector =
 
-  initColums: (name) ->
+  initColums: () ->
     App.ColumnsSelector.hideAll()
     c_value = App.ColumnsSelector.currentValue()
 
@@ -15,8 +15,6 @@ App.ColumnsSelector =
         $("#column_selector_" + column).prop("checked", true)
 
   initChecks: () ->
-    fields = $(".column-selecteable th[data-field]")
-    columns = []
     $(".column-selecteable th[data-field]").each ->
       field = $(this).data("field")
       text = $.trim($(this).text())
@@ -70,7 +68,7 @@ App.ColumnsSelector =
 
   initialize: ->
     App.ColumnsSelector.initChecks()
-    columns = App.ColumnsSelector.initColums($("#js-columns-selector").data("cookie"))
+    App.ColumnsSelector.initColums()
 
     $("#js-columns-selector").on
       click: (event) ->

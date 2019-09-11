@@ -9,4 +9,3 @@ App.AllowParticipation =
         $(this).find(".js-participation-not-allowed").hide()
         $(this).find(".js-participation-allowed").show()
     }, ".js-participation"
-    false

@@ -346,12 +346,6 @@
   }
 
   .callout {
-    &.token-message {
-      background-color: #fff;
-      border-color: $info-border;
-      color: $color-info;
-    }
-
     &.proposal-retired {
       font-size: $base-font-size;
     }
