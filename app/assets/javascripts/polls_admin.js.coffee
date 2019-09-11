@@ -7,6 +7,7 @@ App.PollsAdmin =
           when "vote_collection"
             $("select[class='js-shift-vote-collection-dates']").show()
             $("select[class='js-shift-recount-scrutiny-dates']").hide()
+            break
           when "recount_scrutiny"
             $("select[class='js-shift-recount-scrutiny-dates']").show()
             $("select[class='js-shift-vote-collection-dates']").hide()

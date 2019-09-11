@@ -75,7 +75,7 @@
     this.progressColumnValues =  [ this.progressLabel ];
 
     for (key in data) {
-      if (data.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
         this.xColumnValues.push(key);
         this.progressColumnValues.push(data[key]);
 
@@ -105,7 +105,7 @@
     this.successfulColumnValues = [ this.successLabel ];
 
     for (key in data) {
-      if (data.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
         this.addXColumnValue(key);
         this.successfulColumnValues.push(data[key]);
       }
@@ -130,7 +130,7 @@
 
     this.achievements = [];
     for (group in data) {
-      if (data.hasOwnProperty(group)) {
+      if (Object.prototype.hasOwnProperty.call(data, group)) {
         this.addXColumnValue(group);
         this.achievements.push({
           value: this.formatGroup(group),
@@ -169,7 +169,7 @@
         color: function (color, d) {
           var achievement;
 
-          if (d.id === this.successfulColumnValues[0] || !d.hasOwnProperty('x')) {
+          if (d.id === this.successfulColumnValues[0] || !Object.prototype.hasOwnProperty.call(d, 'x')) {
             return color;
           }
 

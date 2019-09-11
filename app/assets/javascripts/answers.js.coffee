@@ -9,8 +9,8 @@ App.Answers =
     max_order = 0
     $(answers).find("[name$='[given_order]']").each (index, answer) ->
       value = parseFloat($(answer).val())
-      max_order = if value > max_given_order then value else max_given_order
-    return max_given_order
+      max_order = if value > max_order then value else max_order
+    return max_order
 
   nestedAnswers: ->
     $('.js-answers').each (index, answers) ->
