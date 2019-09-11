@@ -1,16 +1,16 @@
+"use strict"
+
 App.Imageable =
 
   initialize: ->
-    inputFiles = $(".js-image-attachment")
-    $.each inputFiles, (index, input) ->
-      App.Imageable.initializeDirectUploadInput(input)
+    $(".js-image-attachment").each ->
+      App.Imageable.initializeDirectUploadInput(this)
 
     $("#nested-image").on "cocoon:after-remove", ->
       $("#new_image_link").removeClass("hide")
 
     $("#nested-image").on "cocoon:before-insert", ->
-      if $(".js-image-attachment").length > 0
-        $(".js-image-attachment").closest(".image").remove()
+      $(".js-image-attachment").closest(".image").remove()
 
     $("#nested-image").on "cocoon:after-insert", (e, nested_image) ->
       $("#new_image_link").addClass("hide")
@@ -19,9 +19,9 @@ App.Imageable =
 
   initializeDirectUploadInput: (input) ->
 
-    inputData = @buildData([], input)
+    inputData = this.buildData([], input)
 
-    @initializeRemoveCachedImageLink(input, inputData)
+    this.initializeRemoveCachedImageLink(input, inputData)
 
     $(input).fileupload
 
@@ -30,13 +30,13 @@ App.Imageable =
       formData: null
 
       add: (e, data) ->
-        data = App.Imageable.buildFileUploadData(e, data)
-        App.Imageable.clearProgressBar(data)
-        App.Imageable.setProgressBar(data, "uploading")
-        data.submit()
+        upload_data = App.Imageable.buildData(data, e.target)
+        App.Imageable.clearProgressBar(upload_data)
+        App.Imageable.setProgressBar(upload_data, "uploading")
+        upload_data.submit()
 
       change: (e, data) ->
-        $.each data.files, (index, file) ->
+        data.files.forEach (file) ->
           App.Imageable.setFilename(inputData, file.name)
 
       fail: (e, data) ->
@@ -72,10 +72,6 @@ App.Imageable =
         progress = parseInt(data.loaded / data.total * 100, 10)
         $(data.progressBar).find(".loading-bar").css "width", "#{progress}%"
         return
-
-  buildFileUploadData: (e, data) ->
-    data = @buildData(data, e.target)
-    return data
 
   buildData: (data, input) ->
     wrapper = $(input).closest(".direct-upload")

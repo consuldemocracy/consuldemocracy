@@ -1,27 +1,24 @@
+"use strict"
+
 App.Polls =
   generateToken: ->
-    token = ""
-    rand = ""
-    for n in [0..5]
-      rand = Math.random().toString(36).substr(2) # remove `0.`
-      token = token + rand
+    strings = Array.apply(null, length: 6).map ->
+      Math.random().toString(36).substr(2) # remove `0.`
 
-    token = token.substring(0, 64)
-    return token
+    strings.join("").substring(0, 64)
 
-  replaceToken: ->
-    for link in $(".js-question-answer")
-      token_param = link.search.slice(-6)
+  replaceToken: (token) ->
+    $(".js-question-answer").each ->
+      token_param = this.search.slice(-6)
       if token_param == "token="
-        link.href = link.href + @token
+        this.href = this.href + token
 
   initialize: ->
-    @token = App.Polls.generateToken()
-    App.Polls.replaceToken()
+    token = App.Polls.generateToken()
+    App.Polls.replaceToken(token)
 
     $(".zoom-link").on "click", (event) ->
-      element = event.target
-      answer = $(element).closest("div.answer")
+      answer = $(event.target).closest("div.answer")
 
       if $(answer).hasClass("medium-6")
         $(answer).removeClass("medium-6")

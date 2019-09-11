@@ -1,11 +1,10 @@
+"use strict"
+
 App.Map =
 
   initialize: ->
-    maps = $("*[data-map]")
-
-    if maps.length > 0
-      $.each maps, (index, map) ->
-        App.Map.initializeMap map
+    $("*[data-map]").each ->
+      App.Map.initializeMap(this)
 
     $(".js-toggle-map").on
       click: ->
@@ -82,8 +81,7 @@ App.Map =
           e.target.bindPopup(getPopupContent(data)).openPopup()
 
     getPopupContent = (data) ->
-      content = "<a href='/budgets/#{data["budget_id"]}/investments/#{data["investment_id"]}'>#{data["investment_title"]}</a>"
-      return content
+      "<a href='/budgets/#{data["budget_id"]}/investments/#{data["investment_id"]}'>#{data["investment_title"]}</a>"
 
     mapCenterLatLng  = new (L.LatLng)(mapCenterLatitude, mapCenterLongitude)
     map              = L.map(element.id).setView(mapCenterLatLng, zoom)
@@ -98,10 +96,10 @@ App.Map =
       map.on    "click",   moveOrPlaceMarker
 
     if addMarkerInvestments
-      for i in addMarkerInvestments
-        if App.Map.validCoordinates(i)
-          marker = createMarker(i.lat, i.long)
-          marker.options["id"] = i.investment_id
+      addMarkerInvestments.forEach (coordinates) ->
+        if App.Map.validCoordinates(coordinates)
+          marker = createMarker(coordinates.lat, coordinates.long)
+          marker.options["id"] = coordinates.investment_id
 
           marker.on "click", openMarkerPopup
 

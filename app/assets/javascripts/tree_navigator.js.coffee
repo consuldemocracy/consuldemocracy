@@ -1,11 +1,8 @@
+"use strict"
+
 App.TreeNavigator =
   setNodes: (nodes) ->
-    children = nodes.children("ul")
-
-    if(children.length == 0)
-      return
-
-    children.each ->
+    nodes.children("ul").each ->
       link = $(this).prev("a")
       $('<span class="open"></span>').insertBefore(link)
       App.TreeNavigator.setNodes($(this).children())
@@ -21,16 +18,16 @@ App.TreeNavigator =
 
     $("[data-tree-navigator] span").on
       click: ->
-        elem = $(this)
-        if(elem.hasClass("open"))
-          elem.removeClass("open").addClass("closed")
-          elem.siblings("ul").hide()
-        else if(elem.hasClass("closed"))
-          elem.removeClass("closed").addClass("open")
-          elem.siblings("ul").show()
+        if($(this).hasClass("open"))
+          $(this).removeClass("open").addClass("closed")
+          $(this).siblings("ul").hide()
+        else if($(this).hasClass("closed"))
+          $(this).removeClass("closed").addClass("open")
+          $(this).siblings("ul").show()
 
-    if anchor = $(location).attr("hash")
-      if link = elem.find("a[href='#{anchor}']")
-        link.parents("ul").each ->
-          $(this).show()
-          $(this).siblings("span").removeClass("closed").addClass("open")
+    anchor = $(location).attr("hash")
+
+    if anchor
+      elem.find("a[href='#{anchor}']").parents("ul").each ->
+        $(this).show()
+        $(this).siblings("span").removeClass("closed").addClass("open")

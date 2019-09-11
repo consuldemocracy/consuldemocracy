@@ -1,3 +1,5 @@
+"use strict"
+
 App.FixedBar =
   initialize: ->
     $("[data-fixed-bar]").each ->

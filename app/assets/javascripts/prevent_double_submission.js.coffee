@@ -1,3 +1,5 @@
+"use strict"
+
 App.PreventDoubleSubmission =
   disable_buttons: (buttons) ->
     setTimeout ->

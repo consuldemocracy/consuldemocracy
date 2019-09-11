@@ -1,3 +1,5 @@
+"use strict"
+
 # Helper for generate C3.js graphs
 #----------------------------------------------------------------------
 
@@ -8,4 +10,4 @@ buildGraph = (el) ->
 
 App.Stats =
   initialize: ->
-    buildGraph(g) for g in $("[data-graph]")
+    $("[data-graph]").each -> buildGraph(this)

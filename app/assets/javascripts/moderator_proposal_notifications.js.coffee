@@ -1,3 +1,5 @@
+"use strict"
+
 App.ModeratorProposalNotifications =
 
   add_class_faded: (id) ->

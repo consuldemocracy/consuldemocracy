@@ -1,3 +1,5 @@
+"use strict"
+
 App.Comments =
 
   add_comment: (parent_id, response_html) ->
@@ -40,12 +42,9 @@ App.Comments =
 
   initialize: ->
     $("body .js-add-comment-link").each ->
-      $this = $(this)
-
-      unless $this.data("initialized") is "yes"
-        $this.on("click", ->
-          id = $(this).data().id
-          App.Comments.toggle_form(id)
+      unless $(this).data("initialized") is "yes"
+        $(this).on("click", ->
+          App.Comments.toggle_form($(this).data().id)
           false
         ).data "initialized", "yes"
 

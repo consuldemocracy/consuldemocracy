@@ -1,3 +1,5 @@
+"use strict"
+
 i18n = {
   es: {
     "Comments": "Comentarios",

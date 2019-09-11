@@ -1,3 +1,5 @@
+"use strict"
+
 App.Followable =
 
   update: (followable_id, button, notice) ->

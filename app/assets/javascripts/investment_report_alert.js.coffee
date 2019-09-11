@@ -1,3 +1,5 @@
+"use strict"
+
 App.InvestmentReportAlert =
   initialize: ->
     $("#js-investment-report-alert").on "click", ->

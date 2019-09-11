@@ -1,10 +1,10 @@
+"use strict"
+
 App.Documentable =
 
   initialize: ->
-
-    inputFiles = $(".js-document-attachment")
-    $.each inputFiles, (index, input) ->
-      App.Documentable.initializeDirectUploadInput(input)
+    $(".js-document-attachment").each ->
+      App.Documentable.initializeDirectUploadInput(this)
 
     $("#nested-documents").on "cocoon:after-remove", ->
       App.Documentable.unlockUploads()
@@ -17,9 +17,9 @@ App.Documentable =
 
   initializeDirectUploadInput: (input) ->
 
-    inputData = @buildData([], input)
+    inputData = this.buildData([], input)
 
-    @initializeRemoveCachedDocumentLink(input, inputData)
+    this.initializeRemoveCachedDocumentLink(input, inputData)
 
     $(input).fileupload
 
@@ -28,13 +28,13 @@ App.Documentable =
       formData: null
 
       add: (e, data) ->
-        data = App.Documentable.buildFileUploadData(e, data)
-        App.Documentable.clearProgressBar(data)
-        App.Documentable.setProgressBar(data, "uploading")
-        data.submit()
+        upload_data = App.Documentable.buildData(data, e.target)
+        App.Documentable.clearProgressBar(upload_data)
+        App.Documentable.setProgressBar(upload_data, "uploading")
+        upload_data.submit()
 
       change: (e, data) ->
-        $.each data.files, (index, file) ->
+        data.files.forEach (file) ->
           App.Documentable.setFilename(inputData, file.name)
 
       fail: (e, data) ->
@@ -71,10 +71,6 @@ App.Documentable =
         progress = parseInt(data.loaded / data.total * 100, 10)
         $(data.progressBar).find(".loading-bar").css "width", "#{progress}%"
         return
-
-  buildFileUploadData: (e, data) ->
-    data = @buildData(data, e.target)
-    return data
 
   buildData: (data, input) ->
     wrapper = $(input).closest(".direct-upload")

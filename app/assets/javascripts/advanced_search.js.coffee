@@ -1,3 +1,5 @@
+"use strict"
+
 App.AdvancedSearch =
 
   advanced_search_terms: ->

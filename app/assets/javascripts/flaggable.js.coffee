@@ -1,3 +1,5 @@
+"use strict"
+
 App.Flaggable =
 
   update: (resource_id, button) ->

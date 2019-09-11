@@ -1,3 +1,5 @@
+"use strict"
+
 App.ModeratorComments =
 
   add_class_faded: (id) ->

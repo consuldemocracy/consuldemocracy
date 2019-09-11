@@ -1,3 +1,5 @@
+"use strict"
+
 App.ModeratorBudgetInvestments =
 
   add_class_faded: (id) ->
