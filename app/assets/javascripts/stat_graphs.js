@@ -9,7 +9,7 @@ var initialize_stats_modules = function() {
   App.Stats.initialize();
 };
 
-$(function(){
+$(function() {
   "use strict";
 
   $(document).ready(initialize_stats_modules);
