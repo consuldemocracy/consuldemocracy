@@ -1,5 +1,6 @@
 da:
   mailers:
+    title: "Åben regering"
     no_reply: "Denne meddelelse blev sendt fra en e-mail-adresse, der ikke kan besvares."
     comment:
       hi: Hej
