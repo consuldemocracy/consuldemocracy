@@ -189,6 +189,9 @@ da:
         description: "Beskrivelse"
         selected: "Markeret som valgt"
         terms_of_service: "Servicevilkår"
+      proposal/translation:
+        summary: "Resume af forslag"
+        retired_explanation: "Forklaring"
       user:
         login: "E-mail eller brugernavn"
         email: "E-mail"
@@ -360,6 +363,11 @@ da:
         valuator_group_id: Evaluatorer
         can_comment: Kan oprette kommentarer
         can_edit_dossier: Kan redigere projektinformation
+      local_census_record:
+        document_type: Dokumenttype
+        document_number: Dokument nummer
+        date_of_birth: Fødselsdato
+        postal_code: Postnummer
     errors:
       models:
         user:
