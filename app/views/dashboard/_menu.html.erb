@@ -96,4 +96,11 @@
       <strong><%= t("dashboard.menu.messages") %></strong>
     <% end %>
   </li>
+
+  <li class="section-title <%= "is-active" if related_content_menu_active? %>">
+    <span class="icon-comments"></span>
+    <%= link_to related_content_proposal_dashboard_path(proposal) do %>
+      <strong><%= t("dashboard.menu.related_content") %></strong>
+    <% end %>
+  </li>
 </ul>

@@ -389,6 +389,31 @@ describe "Proposal's dashboard" do
                                                             anchor: "tab-notifications"))
   end
 
+  scenario "Dashboard has a related content section" do
+    related_debate = create(:debate)
+    related_proposal = create(:proposal)
+
+    create(:related_content, parent_relationable: proposal,
+                             child_relationable: related_debate, author: build(:user))
+
+    create(:related_content, parent_relationable: proposal,
+                             child_relationable: related_proposal, author: build(:user))
+
+    within("#side_menu") do
+      click_link "Related content"
+    end
+
+    expect(page).to have_button("Add related content")
+
+    within(".dashboard-related-content") do
+      expect(page).to have_content("Related content (2)")
+      expect(page).to have_selector(".related-content-title", text: "Proposal")
+      expect(page).to have_link related_proposal.title
+      expect(page).to have_selector(".related-content-title", text: "Debate")
+      expect(page).to have_link related_debate.title
+    end
+  end
+
   scenario "On recommended actions section display from the fourth proposed actions
             when click see_proposed_actions_link", js: true do
     create_list(:dashboard_action, 4, :proposed_action, :active)
