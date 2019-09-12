@@ -100,6 +100,15 @@ describe "Proposals" do
       end
     end
 
+    scenario "Index view mode is not shown with selected filter" do
+      visit proposals_path
+
+      click_link "View selected proposals"
+
+      expect(page).not_to have_selector(".view-mode")
+      expect(page).not_to have_button("View mode")
+    end
+
     scenario "Pagination" do
       per_page = Kaminari.config.default_per_page
       (per_page + 5).times { create(:proposal) }
@@ -193,6 +202,22 @@ describe "Proposals" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
+    end
+
+    scenario "Selected proposals does not show all information" do
+      proposal = create(:proposal, :selected)
+      login_as(create(:user))
+
+      visit proposal_path(proposal)
+      expect(page).not_to have_content proposal.code
+      expect(page).not_to have_content("Proposal code:")
+
+      expect(page).not_to have_content("Related content")
+      expect(page).not_to have_button("Add related content")
+
+      within(".proposal-info") do
+        expect(page).not_to have_link("No comments", href: "#comments")
+      end
     end
   end
 
