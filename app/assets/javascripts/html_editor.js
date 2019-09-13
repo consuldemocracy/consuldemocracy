@@ -17,6 +17,5 @@
     }
   };
 
-  $(document).on("page:before-unload", App.HTMLEditor.destroy);
-  $(document).on("page:restore", App.HTMLEditor.initialize);
+  $(document).on("turbolinks:before-cache", App.HTMLEditor.destroy);
 }).call(this);
