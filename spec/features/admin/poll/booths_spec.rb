@@ -123,4 +123,22 @@ describe "Admin booths" do
     click_link "Go back"
     expect(page).to have_current_path(available_admin_booths_path)
   end
+
+  scenario "Search" do
+    booth = create(:poll_booth)
+
+    visit admin_booths_path
+
+    fill_in "search", with: booth.name
+    click_button "Search"
+    expect(page).to have_css(".booth", count: 1)
+
+    fill_in "search", with: booth.location
+    click_button "Search"
+    expect(page).to have_css(".booth", count: 1)
+
+    fill_in "search", with: "Wrong search criteria"
+    click_button "Search"
+    expect(page).to have_content "There are no active booths for any upcoming poll."
+  end
 end

@@ -48,7 +48,7 @@ describe "Admin shifts" do
       click_link "Manage shifts"
     end
 
-    expect(page).to have_content "git This booth has no shifts"
+    expect(page).to have_content "This booth has no shifts"
 
     fill_in "search", with: officer.email
     click_button "Search"
