@@ -9,7 +9,7 @@
     <title><%= content_for?(:title) ? yield(:title) : setting["org_name"] %></title>
     <%= content_for :canonical %>
     <%= stylesheet_link_tag "application" %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => "reload" %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag "favicon.ico" %>
     <%= favicon_link_tag image_path_for("apple-touch-icon-200.png"),

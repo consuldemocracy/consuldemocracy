@@ -15,7 +15,6 @@
     initialize: function() {
       $(document).foundation();
       $(window).trigger("resize");
-      $(document).on("page:before-unload", this.clearSticky);
       window.addEventListener("popstate", this.clearSticky, false);
       $(function() {
         if ($(window).width() < 620) {

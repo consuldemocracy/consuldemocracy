@@ -23,7 +23,7 @@
       if (App.WatchFormChanges.forms().length === 0 || App.WatchFormChanges.msg() === undefined) {
         return;
       }
-      $(document).off("page:before-change").on("page:before-change", App.WatchFormChanges.checkChanges);
+      $(document).off("turbolinks:before-visit").on("turbolinks:before-visit", App.WatchFormChanges.checkChanges);
       App.WatchFormChanges.forms().each(function() {
         $(this).data("watchChanges", $(this).serialize());
       });
