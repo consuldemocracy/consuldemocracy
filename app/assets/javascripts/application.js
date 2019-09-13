@@ -42,6 +42,7 @@
 //= require jquery-fileupload/basic
 //= require foundation
 //= require turbolinks
+//= require turbolinks_anchors
 //= require ckeditor/loader
 //= require_directory ./ckeditor
 //= require social-share-button
