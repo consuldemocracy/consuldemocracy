@@ -9,6 +9,5 @@ var initialize_stats_modules = function() {
   App.Stats.initialize();
 };
 
-$(document).ready(initialize_stats_modules);
-$(document).on("page:load", initialize_stats_modules);
+$(document).on("turbolinks:load", initialize_stats_modules);
 $(document).on("ajax:complete", initialize_stats_modules);

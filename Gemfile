@@ -53,7 +53,7 @@ gem "sitemap_generator", "~> 6.0.2"
 gem "social-share-button", "~> 1.1"
 gem "sprockets", "~> 3.7.2"
 gem "translator-text", "~> 0.1.0"
-gem "turbolinks", "~> 2.5.3"
+gem "turbolinks", "~> 5.2.1"
 gem "turnout", "~> 2.4.0"
 gem "uglifier", "~> 4.1.2"
 gem "whenever", "~> 0.10.0", require: false

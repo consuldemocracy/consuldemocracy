@@ -233,6 +233,42 @@ describe "Proposals" do
         expect(page).not_to have_css(".is-anchored")
       end
     end
+
+    scenario "After using the browser's back button" do
+      proposal = create(:proposal)
+
+      visit proposal_path(proposal)
+      click_link "Go back"
+
+      expect(page).to have_link proposal.title
+
+      go_back
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
+
+    scenario "After using the browser's forward button" do
+      proposal = create(:proposal)
+
+      visit proposals_path
+      click_link proposal.title
+
+      expect(page).not_to have_link proposal.title
+
+      go_back
+
+      expect(page).to have_link proposal.title
+
+      go_forward
+
+      within("#proposal_sticky") do
+        expect(page).to have_css(".is-stuck")
+        expect(page).not_to have_css(".is-anchored")
+      end
+    end
   end
 
   context "Embedded video" do
