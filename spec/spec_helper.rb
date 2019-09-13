@@ -93,6 +93,14 @@ RSpec.configure do |config|
     Bullet.end_request
   end
 
+  config.before(:each, :delay_jobs) do
+    Delayed::Worker.delay_jobs = true
+  end
+
+  config.after(:each, :delay_jobs) do
+    Delayed::Worker.delay_jobs = false
+  end
+
   config.before(:each, :with_frozen_time) do
     travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
   end
