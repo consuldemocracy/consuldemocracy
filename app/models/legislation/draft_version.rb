@@ -1,5 +1,5 @@
 class Legislation::DraftVersion < ApplicationRecord
-  VALID_STATUSES = %w(draft published)
+  VALID_STATUSES = %w[draft published]
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases

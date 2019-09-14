@@ -1,6 +1,4 @@
-shared_examples "imageable destroy" do |imageable_factory_name,
-                                        imageable_path,
-                                        imageable_path_arguments|
+shared_examples "imageable destroy" do |imageable_factory_name, imageable_path, imageable_path_arguments|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper

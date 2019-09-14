@@ -54,7 +54,7 @@ describe "Votes" do
     end
 
     describe "Single investment" do
-      let(:investment) { create(:budget_investment, budget: budget, heading: heading)}
+      let(:investment) { create(:budget_investment, budget: budget, heading: heading) }
 
       scenario "Show no votes" do
         visit budget_investment_path(budget, investment)
@@ -189,6 +189,13 @@ describe "Votes" do
         expect(page).not_to have_content "1 support"
         expect(page).not_to have_content "You have already supported this investment project. "\
                                          "Share it!"
+      end
+
+      scenario "Confirm message shows the right text", :js do
+        visit budget_investments_path(budget, heading_id: new_york.id)
+        find(".in-favor a").click
+
+        expect(page.driver.send(:find_modal).text).to match "You can only support investments in 2 districts."
       end
 
     end

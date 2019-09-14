@@ -20,4 +20,3 @@ describe "Sessions" do
   end
 
 end
-

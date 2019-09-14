@@ -83,7 +83,8 @@ FactoryBot.define do
 
   factory :budget_investment, class: "Budget::Investment" do
     sequence(:title) { |n| "Budget Investment #{n} title" }
-    heading { association :budget_heading, budget: budget }
+    heading { budget&.headings&.reload&.sample || association(:budget_heading, budget: budget) }
+
     association :author, factory: :user
     description          { "Spend money on this" }
     price                { 10 }
@@ -158,14 +159,14 @@ FactoryBot.define do
     end
 
     trait :flagged do
-       after :create do |investment|
-         Flag.flag(create(:user), investment)
-       end
-     end
+      after :create do |investment|
+        Flag.flag(create(:user), investment)
+      end
+    end
 
-     trait :with_confirmed_hide do
-       confirmed_hide_at { Time.current }
-     end
+    trait :with_confirmed_hide do
+      confirmed_hide_at { Time.current }
+    end
 
     trait :with_milestone_tags do
       after(:create) { |investment| investment.milestone_tags << create(:tag, :milestone) }

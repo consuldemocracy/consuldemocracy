@@ -17,7 +17,7 @@
   <%= f.label :required_fields_to_verify %>
   <p class="help-text" id="required-fields-to-verify-help-text"><%= required_fields_to_verify_text_help %></p>
   <p class="help-text"> <%= example_text_help %></p>
-  <%= f.text_area :required_fields_to_verify, rows: "6", label: false, aria: {describedby: "required-fields-to-verify-help-text"} %>
+  <%= f.text_area :required_fields_to_verify, rows: "6", label: false, aria: { describedby: "required-fields-to-verify-help-text" } %>
 
   <%= f.submit(class: "button", value: t("admin.signature_sheets.new.submit")) %>
 <% end %>

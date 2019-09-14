@@ -8,7 +8,7 @@ describe Flag do
   describe ".flag" do
 
     it "creates a flag when there is none" do
-      expect { described_class.flag(user, comment) }.to change{ described_class.count }.by(1)
+      expect { described_class.flag(user, comment) }.to change { described_class.count }.by(1)
       expect(described_class.last.user).to eq(user)
       expect(described_class.last.flaggable).to eq(comment)
     end
@@ -20,7 +20,7 @@ describe Flag do
     end
 
     it "increases the flag count" do
-      expect { described_class.flag(user, comment) }.to change{ comment.reload.flags_count }.by(1)
+      expect { described_class.flag(user, comment) }.to change { comment.reload.flags_count }.by(1)
     end
   end
 
@@ -33,11 +33,11 @@ describe Flag do
       before { described_class.flag(user, comment) }
 
       it "removes an existing flag" do
-        expect { described_class.unflag(user, comment) }.to change{ described_class.count }.by(-1)
+        expect { described_class.unflag(user, comment) }.to change { described_class.count }.by(-1)
       end
 
       it "decreases the flag count" do
-        expect { described_class.unflag(user, comment) }.to change{ comment.reload.flags_count }.by(-1)
+        expect { described_class.unflag(user, comment) }.to change { comment.reload.flags_count }.by(-1)
       end
     end
   end

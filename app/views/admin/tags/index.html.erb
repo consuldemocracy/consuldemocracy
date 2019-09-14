@@ -4,7 +4,7 @@
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
   <div class="small-12 medium-6">
     <%= f.label :name, t("admin.tags.name.placeholder") %>
-    <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false  %>
+    <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: false %>
   </div>
 
   <%= f.submit(t("admin.tags.create"), class: "button success") %>
@@ -25,7 +25,7 @@
         <%= form_for(tag,
             url: admin_tag_path(tag),
             as: :tag,
-            html: { id: "edit_tag_#{tag.id}"}) do |f| %>
+            html: { id: "edit_tag_#{tag.id}" }) do |f| %>
 
             <strong><%= tag.name %></strong>
         <% end %>

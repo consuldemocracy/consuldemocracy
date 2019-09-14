@@ -18,7 +18,7 @@
       <div class="small-12 medium-9 column">
         <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading) %>
 
-        <%= render partial: "/budgets/investments/investment_detail", locals: {investment: investment} %>
+        <%= render "/budgets/investments/investment_detail", investment: investment %>
       </div>
 
       <aside class="small-12 medium-3 column">
@@ -41,11 +41,11 @@
             <h2><%= t("budgets.investments.show.supports") %></h2>
             <div class="text-center">
               <div id="<%= dom_id(investment) %>_votes">
-                <%= render partial: "/budgets/investments/votes", locals: {
+                <%= render "/budgets/investments/votes",
                   investment: investment,
                   investment_votes: investment_votes,
                   vote_url: vote_budget_investment_path(investment.budget, investment, value: "yes")
-                } %>
+                %>
               </div>
             </div>
           <% elsif investment.should_show_vote_count? %>
@@ -64,11 +64,10 @@
             <h2><%= t("budgets.investments.show.votes") %></h2>
             <div class="text-center">
               <div id="<%= dom_id(investment) %>_ballot">
-                <%= render partial: "ballot", locals: {
+                <%= render "ballot",
                   investment: investment,
                   investment_ids: investment_ids,
-                  ballot: ballot,
-                } %>
+                  ballot: ballot %>
               </div>
             </div>
           <% end %>

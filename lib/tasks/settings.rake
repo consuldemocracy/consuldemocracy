@@ -30,6 +30,7 @@ namespace :settings do
 
   desc "Rename existing settings"
   task rename_setting_keys: :environment do
+    ApplicationLogger.new.info "Renaming existing settings"
     Setting.rename_key from: "map_latitude",  to: "map.latitude"
     Setting.rename_key from: "map_longitude", to: "map.longitude"
     Setting.rename_key from: "map_zoom",      to: "map.zoom"
@@ -50,6 +51,7 @@ namespace :settings do
 
   desc "Add new settings"
   task add_new_settings: :environment do
+    ApplicationLogger.new.info "Adding new settings"
     Setting.add_new_settings
   end
 

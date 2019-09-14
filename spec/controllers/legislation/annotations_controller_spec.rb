@@ -16,7 +16,6 @@ describe Legislation::AnnotationsController do
                                                              title: "Final version") }
     let(:user) { create(:user, :level_two) }
 
-
     it "creates an ahoy event" do
       sign_in user
 
@@ -92,16 +91,16 @@ describe Legislation::AnnotationsController do
                         draft_version_id: draft_version.id,
                         legislation_annotation: {
                           "quote" => "ipsum",
-                          "ranges"=> [{
+                          "ranges" => [{
                                         "start"       => "/p[1]",
                                         "startOffset" => 6,
                                         "end"         => "/p[1]",
                                         "endOffset"   => 11
                                       }],
-                          "text"  => "una anotacion"
+                          "text" => "una anotacion"
                         }
                       }
-      end.to_not change { draft_version.annotations.count }
+      end.not_to change { draft_version.annotations.count }
     end
 
     it "creates an annotation by parsing parameters in JSON" do
@@ -157,7 +156,7 @@ describe Legislation::AnnotationsController do
                           "text"   => "una anotacion"
                         }
                       }
-      end.to_not change { draft_version.annotations.count }
+      end.not_to change { draft_version.annotations.count }
 
       expect(annotation.reload.comments_count).to eq(2)
       expect(annotation.comments.last.body).to eq("una anotacion")

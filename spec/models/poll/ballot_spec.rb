@@ -2,14 +2,14 @@ require "rails_helper"
 
 describe Poll::Ballot do
 
-  let(:budget){ create(:budget) }
-  let(:group){ create(:budget_group, budget: budget) }
-  let(:heading){ create(:budget_heading, group: group, price: 10000000) }
-  let(:investment){ create(:budget_investment, :selected, price: 5000000, heading: heading) }
+  let(:budget) { create(:budget) }
+  let(:group) { create(:budget_group, budget: budget) }
+  let(:heading) { create(:budget_heading, group: group, price: 10000000) }
+  let(:investment) { create(:budget_investment, :selected, price: 5000000, heading: heading) }
   let(:poll) { create(:poll, budget: budget) }
   let(:poll_ballot_sheet) { create(:poll_ballot_sheet, poll: poll) }
   let(:poll_ballot) { create(:poll_ballot, ballot_sheet: poll_ballot_sheet, external_id: 1, data: investment.id) }
-  let!(:ballot) { create(:budget_ballot, budget: budget, physical: true, poll_ballot: poll_ballot) }
+  before { create(:budget_ballot, budget: budget, physical: true, poll_ballot: poll_ballot) }
 
   describe "#verify" do
 

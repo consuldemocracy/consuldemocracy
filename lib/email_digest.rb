@@ -14,7 +14,6 @@ class EmailDigest
     notifications.any?
   end
 
-
   def deliver(run_at)
     if valid_email? && pending_notifications?
       Mailer.delay(run_at: run_at).proposal_notification_digest(user, notifications.to_a)

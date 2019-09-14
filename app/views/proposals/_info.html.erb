@@ -3,9 +3,12 @@
 
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= l @proposal.created_at.to_date %>
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
-  <span class="icon-comments"></span>&nbsp;
-  <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
+
+  <% unless @proposal.selected? %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <span class="icon-comments"></span>&nbsp;
+    <%= link_to t("proposals.show.comments", count: @proposal.comments_count), "#comments" %>
+  <% end %>
 
   <% if current_user %>
     <span class="bullet">&nbsp;&bull;&nbsp;</span>
@@ -19,17 +22,19 @@
 <%= render_image(@proposal.image, :large, true) if @proposal.image.present? %>
 
 <br>
-<p>
-  <%= t("proposals.show.code") %>
-  <strong><%= @proposal.code %></strong>
-</p>
+<% unless @proposal.selected? %>
+  <p>
+    <%= t("proposals.show.code") %>
+    <strong><%= @proposal.code %></strong>
+  </p>
+<% end %>
 
 <blockquote><%= @proposal.summary %></blockquote>
 
 <% if @proposal.video_url.present? %>
   <div class="small-12 medium-7 small-centered">
     <div class="flex-video">
-      <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+      <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@proposal) %>"></div>
     </div>
   </div>
 <% end %>

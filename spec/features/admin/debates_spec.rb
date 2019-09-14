@@ -7,7 +7,7 @@ describe "Admin debates" do
     admin = create(:administrator)
     login_as(admin.user)
 
-    expect{ visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
 
     Setting["process.debates"] = true
   end

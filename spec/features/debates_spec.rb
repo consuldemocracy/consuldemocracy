@@ -5,7 +5,7 @@ describe "Debates" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
-    expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   context "Concerns" do

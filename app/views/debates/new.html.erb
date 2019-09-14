@@ -6,7 +6,7 @@
     <h1><%= t("debates.new.start_new") %></h1>
     <div data-alert class="callout primary">
       <%= t("debates.new.info",
-      info_link: link_to(t("debates.new.info_link"), new_proposal_path )).html_safe %>
+      info_link: link_to(t("debates.new.info_link"), new_proposal_path)).html_safe %>
 
       <% if feature?(:help_page) %>
         <%= link_to help_path, title: t("shared.target_blank_html"), target: "_blank" do %>

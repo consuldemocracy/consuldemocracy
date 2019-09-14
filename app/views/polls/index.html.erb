@@ -13,10 +13,10 @@
 <div class="row">
   <div class="small-12 column">
     <% if show_polls_description? %>
-		  <div class="polls-description">
+      <div class="polls-description">
         <%= safe_html_with_links WYSIWYGSanitizer.new.sanitize(@active_poll.description) %>
       </div>
-		<% end %>
+    <% end %>
 
     <%= render "shared/filter_subnav", i18n_namespace: "polls.index" %>
 
@@ -27,14 +27,14 @@
         <h3 class="section-title-divider">
           <span><%= t("polls.index.no_geozone_restricted") %></span>
         </h3>
-        <%= render partial: "poll_group", locals: {poll_group: polls_by_geozone_restriction[false]} %>
+        <%= render "poll_group", poll_group: polls_by_geozone_restriction[false] %>
       <% end %>
 
       <% if polls_by_geozone_restriction[true].present? %>
         <h3 class="section-title-divider">
           <span><%= t("polls.index.geozone_restricted") %></span>
         </h3>
-        <%= render partial: "poll_group", locals: {poll_group: polls_by_geozone_restriction[true]} %>
+        <%= render "poll_group", poll_group: polls_by_geozone_restriction[true] %>
       <% end %>
 
       <%= paginate @polls %>

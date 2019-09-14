@@ -24,18 +24,15 @@ class VotationType < ApplicationRecord
                          variables: [:max_votes, :max_groups_answers] },
   }.freeze
 
-  enum enum_type: ENUM_TYPES_PROPS.map{ |k,v| [k, v[:enum_type]] }.to_h.freeze
+  enum enum_type: ENUM_TYPES_PROPS.map { |k, v| [k, v[:enum_type]] }.to_h.freeze
 
-  enum prioritization_type: {borda: 1, dowdall: 2}.freeze
+  enum prioritization_type: { borda: 1, dowdall: 2 }.freeze
 
   validates :questionable, presence: true
-  validates :questionable_type, inclusion: {in: QUESTIONABLE_TYPES}
-  validates_presence_of :max_votes, allow_blank: false,
-                        if: :max_votes_required?
-  validates_presence_of :max_groups_answers, allow_blank: false,
-                        if: :max_groups_answers_required?
-  validates_presence_of :prioritization_type, allow_blank: false,
-                        if: :prioritization_type_required?
+  validates :questionable_type, inclusion: { in: QUESTIONABLE_TYPES }
+  validates :max_votes, presence: { allow_blank: false, if: :max_votes_required? }
+  validates :max_groups_answers, presence: { allow_blank: false, if: :max_groups_answers_required? }
+  validates :prioritization_type, presence: { allow_blank: false, if: :prioritization_type_required? }
 
   after_create :add_skip_question_answer, if: :display_skip_question?
 
@@ -49,7 +46,7 @@ class VotationType < ApplicationRecord
     prioritized
   end
 
-  def answer (user, answer, options = {})
+  def answer(user, answer, options = {})
     result = nil
     votes = questionable.answers
 
@@ -110,7 +107,6 @@ class VotationType < ApplicationRecord
       end
     end
 
-
     result
   end
 
@@ -131,7 +127,7 @@ class VotationType < ApplicationRecord
   end
 
   def self.build_by_type(questionable, params)
-    attributes      = {questionable: questionable}
+    attributes      = { questionable: questionable }
     enum_type       = self.enum_types.key(params[:enum_type].to_i)
     enum_type_props = enum_properties(enum_type)
     attributes.merge!(enum_type_props.except(:variables))
@@ -156,7 +152,7 @@ class VotationType < ApplicationRecord
       end
     when "dowdall"
       questionable.answers.by_author(user).order(:order).each_with_index do |answer, i|
-        value = 60/(i + 1)
+        value = 60 / (i + 1)
         !answer.update(value: value)
       end
     end

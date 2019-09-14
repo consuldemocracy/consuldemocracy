@@ -21,7 +21,7 @@
     <%= render "/budgets/investments/header" %>
   <% end %>
 
-  <% if params[:search].present? || params[:advanced_search].present?  %>
+  <% if params[:search].present? || params[:advanced_search].present? %>
     <div class="highlight no-margin-top padding margin-bottom">
       <div class="row">
         <div class="small-12 column">
@@ -73,19 +73,17 @@
       <% if investments_default_view? %>
 
         <% @investments.each do |investment| %>
-          <%= render partial: "/budgets/investments/investment",
-                     locals: {
-                       investment: investment,
-                       investment_ids: @investment_ids,
-                       investment_votes: @investment_votes,
-                       ballot: @ballot
-                     } %>
+          <%= render "/budgets/investments/investment",
+                     investment: investment,
+                     investment_ids: @investment_ids,
+                     investment_votes: @investment_votes,
+                     ballot: @ballot %>
         <% end %>
       <% else %>
 
         <% @investments.each do |investment| %>
-          <%= render partial: "/budgets/investments/investment_minimal",
-                     locals: { investment: investment } %>
+          <%= render "/budgets/investments/investment_minimal",
+                     investment: investment %>
         <% end %>
       <% end %>
 

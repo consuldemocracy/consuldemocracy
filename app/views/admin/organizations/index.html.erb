@@ -57,7 +57,7 @@
         <% if can? :reject, organization %>
           <%= link_to t("admin.organizations.index.reject"),
                   reject_admin_organization_path(organization, request.query_parameters),
-                  method: :put, class: "button hollow alert small-5"%>
+                  method: :put, class: "button hollow alert small-5" %>
         <% end %>
       </td>
     </tr>

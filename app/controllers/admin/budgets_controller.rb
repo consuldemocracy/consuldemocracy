@@ -4,7 +4,7 @@ class Admin::BudgetsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w{open finished}, only: :index
+  has_filters %w[open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
   load_and_authorize_resource
@@ -81,7 +81,7 @@ class Admin::BudgetsController < Admin::BaseController
   private
 
     def budget_params
-      descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
+      descriptions = Budget::Phase::PHASE_KINDS.map { |p| "description_#{p}" }.map(&:to_sym)
       valid_attributes = [:phase,
                           :currency_symbol,
                           :help_link,

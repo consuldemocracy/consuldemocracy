@@ -20,7 +20,6 @@ RSpec.describe Legislation::Process::Phase, type: :model do
       expect(process.draft_phase.enabled?).to be false
     end
 
-
     it "checks allegations phase" do
       expect(process.allegations_phase.enabled?).to be true
 

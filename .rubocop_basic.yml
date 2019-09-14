@@ -3,9 +3,6 @@ require: rubocop-rspec
 AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
-  Include:
-    - "**/Rakefile"
-    - "**/config.ru"
   Exclude:
     - "db/migrate/**/*"
     - "db/schema.rb"
@@ -13,6 +10,15 @@ AllCops:
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
   DisabledByDefault: true
+
+Bundler/DuplicatedGem:
+  Enabled: true
+
+Bundler/OrderedGems:
+  Enabled: true
+
+Capybara/CurrentPathExpectation:
+  Enabled: true
 
 Capybara/FeatureMethods:
   Enabled: true
@@ -29,8 +35,78 @@ Layout/IndentationConsistency:
 Layout/IndentationWidth:
   Enabled: true
 
+Layout/EmptyLines:
+  Enabled: true
+
 Layout/EndOfLine:
   EnforcedStyle: lf
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAfterMethodName:
+  Enabled: true
+
+Layout/SpaceAfterNot:
+  Enabled: true
+
+Layout/SpaceAfterSemicolon:
+  Enabled: true
+
+Layout/SpaceAroundBlockParameters:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeComment:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+Layout/SpaceBeforeSemicolon:
+  Enabled: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: true
+
+Layout/SpaceInsideArrayPercentLiteral:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  EnforcedStyle: compact
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: true
+
+Layout/SpaceInsideRangeLiteral:
+  Enabled: true
+
+Layout/SpaceInsideReferenceBrackets:
+  Enabled: true
+
+Layout/SpaceInsideStringInterpolation:
+  Enabled: true
+
+Layout/Tab:
+  Enabled: true
 
 Layout/TrailingBlankLines:
   Enabled: true
@@ -46,6 +122,7 @@ Lint/UselessAssignment:
 
 Metrics/LineLength:
   Max: 110
+  Severity: refactor
 
 Rails/ActionFilter:
   Enabled: true
@@ -56,13 +133,93 @@ Rails/ApplicationJob:
 Rails/ApplicationRecord:
   Enabled: true
 
+Rails/Date:
+  Enabled: true
+
 Rails/HttpPositionalArguments:
+  Enabled: true
+
+Rails/PluralizationGrammar:
+  Enabled: true
+
+Rails/Presence:
   Enabled: true
 
 Rails/RelativeDateConstant:
   Enabled: true
 
+Rails/RequestReferer:
+  Enabled: true
+
+Rails/SafeNavigation:
+  Enabled: true
+  ConvertTry: true
+
+Rails/TimeZone:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Enabled: true
+  Environments:
+    - development
+    - test
+    - production
+    - preproduction
+    - staging
+
+Rails/Validation:
+  Enabled: true
+
+RSpec/AroundBlock:
+  Enabled: true
+
+RSpec/BeforeAfterAll:
+  Enabled: true
+
+RSpec/EmptyExampleGroup:
+  Enabled: true
+  Exclude:
+    - spec/factories/**/*
+
+RSpec/EmptyLineAfterExampleGroup:
+  Enabled: true
+  Exclude:
+    - spec/factories/**/*
+
+RSpec/ExampleWording:
+  Enabled: true
+
+RSpec/Focus:
+  Enabled: true
+
+RSpec/HookArgument:
+  Enabled: true
+
+RSpec/LetBeforeExamples:
+  Enabled: true
+
+RSpec/LetSetup:
+  Enabled: true
+
 RSpec/NotToNot:
+  Enabled: true
+
+RSpec/OverwritingSetup:
+  Enabled: true
+
+RSpec/RepeatedExample:
+  Enabled: true
+
+RSpec/ScatteredLet:
+  Enabled: true
+
+RSpec/ScatteredSetup:
+  Enabled: true
+
+RSpec/VoidExpect:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
   Enabled: true
 
 Style/StringLiterals:

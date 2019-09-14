@@ -10,7 +10,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   before_action :set_random_seed, only: :proposals
   before_action :check_past, only: :resume
 
-
   def index
     @current_filter ||= "open"
     @processes = ::Legislation::Process.send(@current_filter).published
@@ -112,7 +111,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :resume
     respond_to do |format|
       format.html
-      format.xlsx {render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.today.to_s + ".xlsx")}
+      format.xlsx { render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.current.to_s + ".xlsx") }
     end
   end
 

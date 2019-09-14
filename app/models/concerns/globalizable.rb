@@ -10,7 +10,7 @@ module Globalizable
     after_validation :copy_error_to_current_translation, on: :update
 
     def description
-      self.read_attribute(:description).try :html_safe
+      self.read_attribute(:description)&.html_safe
     end
 
     def locales_not_marked_for_destruction
@@ -22,18 +22,18 @@ module Globalizable
     end
 
     def locales_persisted_and_marked_for_destruction
-      translations.select{|t| t.persisted? && t.marked_for_destruction? }.map(&:locale)
+      translations.select { |t| t.persisted? && t.marked_for_destruction? }.map(&:locale)
     end
 
     def translations_required?
-      translated_attribute_names.any?{|attr| required_attribute?(attr)}
+      translated_attribute_names.any? { |attr| required_attribute?(attr) }
     end
 
     if self.paranoid? && translation_class.attribute_names.include?("hidden_at")
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
 
-    scope :with_translation, -> { joins("LEFT OUTER JOIN #{translations_table_name} ON #{table_name}.id = #{translations_table_name}.#{reflections["translations"].foreign_key} AND #{translations_table_name}.locale='#{I18n.locale }'") }
+    scope :with_translation, -> { joins("LEFT OUTER JOIN #{translations_table_name} ON #{table_name}.id = #{translations_table_name}.#{reflections["translations"].foreign_key} AND #{translations_table_name}.locale='#{I18n.locale}'") }
 
     private
 
@@ -41,7 +41,7 @@ module Globalizable
         presence_validators = [ActiveModel::Validations::PresenceValidator,
           ActiveRecord::Validations::PresenceValidator]
 
-        attribute_validators(attribute).any?{|validator| presence_validators.include? validator }
+        attribute_validators(attribute).any? { |validator| presence_validators.include? validator }
       end
 
       def attribute_validators(attribute)

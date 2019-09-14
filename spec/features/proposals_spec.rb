@@ -9,7 +9,7 @@ describe "Proposals" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.proposals"] = nil
-    expect{ visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   context "Concerns" do
@@ -98,6 +98,15 @@ describe "Proposals" do
           expect(page).to have_content proposal.summary
         end
       end
+    end
+
+    scenario "Index view mode is not shown with selected filter" do
+      visit proposals_path
+
+      click_link "View selected proposals"
+
+      expect(page).not_to have_selector(".view-mode")
+      expect(page).not_to have_button("View mode")
     end
 
     scenario "Pagination" do
@@ -193,6 +202,22 @@ describe "Proposals" do
       proposal = create(:proposal)
       visit proposal_path(proposal)
       expect(page).not_to have_content "Access the community"
+    end
+
+    scenario "Selected proposals does not show all information" do
+      proposal = create(:proposal, :selected)
+      login_as(create(:user))
+
+      visit proposal_path(proposal)
+      expect(page).not_to have_content proposal.code
+      expect(page).not_to have_content("Proposal code:")
+
+      expect(page).not_to have_content("Related content")
+      expect(page).not_to have_button("Add related content")
+
+      within(".proposal-info") do
+        expect(page).not_to have_link("No comments", href: "#comments")
+      end
     end
   end
 
@@ -890,7 +915,7 @@ describe "Proposals" do
         expect(page).not_to have_content archived_proposal.title
       end
 
-      orders = %w{hot_score confidence_score created_at relevance}
+      orders = %w[hot_score confidence_score created_at relevance]
       orders.each do |order|
         visit proposals_path(order: order)
 
@@ -1621,7 +1646,7 @@ describe "Proposals" do
   it_behaves_like "nested imageable",
                   "proposal",
                   "new_proposal_path",
-                  { },
+                  {},
                   "imageable_fill_new_valid_proposal",
                   "Create proposal",
                   "Proposal created successfully"
@@ -1640,7 +1665,7 @@ describe "Proposals" do
                   "user",
                   "proposal",
                   "new_proposal_path",
-                  { },
+                  {},
                   "documentable_fill_new_valid_proposal",
                   "Create proposal",
                   "Proposal created successfully"
@@ -1660,7 +1685,7 @@ describe "Proposals" do
                   "new_proposal_path",
                   "edit_proposal_path",
                   "proposal_path",
-                  { }
+                  {}
 
   scenario "Erased author" do
     user = create(:user)
@@ -1948,7 +1973,7 @@ describe "Successful proposals" do
         click_link "Create a proposal"
       end
 
-      expect(current_path).to eq(new_proposal_path)
+      expect(page).to have_current_path(new_proposal_path)
 
       fill_in "Proposal title", with: "Help refugees"
       fill_in "Proposal summary", with: "In summary what we want is..."

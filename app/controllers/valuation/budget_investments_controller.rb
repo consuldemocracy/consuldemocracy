@@ -9,8 +9,8 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :valuate]
 
-  has_orders %w{oldest}, only: [:show, :edit]
-  has_filters %w{valuating valuation_finished}, only: :index
+  has_orders %w[oldest], only: [:show, :edit]
+  has_filters %w[valuating valuation_finished], only: :index
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
 
@@ -73,8 +73,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_valuator(current_user.valuator.try(:id))
-                                       .visible_to_valuators.distinct
+      investments = @budget.investments.by_valuator(current_user.valuator&.id).visible_to_valuators.distinct
       investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id)).sort_by(&:name)
 
       all_headings_filter = [
@@ -89,7 +88,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
                   filters << {
                                name: heading.name,
                                id: heading.id,
-                               count: investments.select{|i| i.heading_id == heading.id}.size
+                               count: investments.select { |i| i.heading_id == heading.id }.size
                              }
                 end
     end

@@ -44,8 +44,8 @@ class Budget
     has_many :valuator_group_assignments, dependent: :destroy
     has_many :valuator_groups, through: :valuator_group_assignments
 
-    has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: "Comment"
-    has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: "Comment"
+    has_many :comments, -> { where(valuation: false) }, as: :commentable, class_name: "Comment"
+    has_many :valuations, -> { where(valuation: true) }, as: :commentable, class_name: "Comment"
 
     has_many :tracker_assignments, dependent: :destroy
     has_many :trackers, through: :tracker_assignments
@@ -74,7 +74,7 @@ class Budget
     scope :without_valuator,            -> { valuation_open.without_valuator_group.where(valuator_assignments_count: 0) }
     scope :under_valuation,             -> { valuation_open.valuating.where("administrator_id IS NOT ?", nil) }
     scope :managed,                     -> { valuation_open.where(valuator_assignments_count: 0).where("administrator_id IS NOT ?", nil) }
-    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0" ) }
+    scope :valuating,                   -> { valuation_open.where("valuator_assignments_count > 0 OR valuator_group_assignments_count > 0") }
     scope :visible_to_valuators,        -> { where(visible_to_valuators: true) }
     scope :valuation_finished,          -> { where(valuation_finished: true) }
     scope :valuation_finished_feasible, -> { where(valuation_finished: true, feasibility: "feasible") }
@@ -88,7 +88,7 @@ class Budget
     scope :incompatible,                -> { where(incompatible: true) }
     scope :winners,                     -> { selected.compatible.where(winner: true) }
     scope :unselected,                  -> { not_unfeasible.where(selected: false) }
-    scope :last_week,                   -> { where("created_at >= ?", 7.days.ago)}
+    scope :last_week,                   -> { where("created_at >= ?", 7.days.ago) }
     scope :sort_by_flags,               -> { order(flags_count: :desc, updated_at: :desc) }
     scope :sort_by_created_at,          -> { reorder(created_at: :desc) }
 
@@ -319,7 +319,7 @@ class Budget
     end
 
     def set_responsible_name
-      self.responsible_name = author.try(:document_number) if author.try(:document_number).present?
+      self.responsible_name = author&.document_number if author&.document_number.present?
     end
 
     def should_show_aside?
@@ -400,8 +400,8 @@ class Budget
     private
 
       def set_denormalized_ids
-        self.group_id = heading.try(:group_id) if heading_id_changed?
-        self.budget_id ||= heading.try(:group).try(:budget_id)
+        self.group_id = heading&.group_id if heading_id_changed?
+        self.budget_id ||= heading&.group&.budget_id
       end
 
       def change_log

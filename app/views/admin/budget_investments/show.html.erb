@@ -1,5 +1,5 @@
 <%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params).to_h),
-            class: "back", data: {no_turbolink: true} do %>
+            class: "back", data: { no_turbolink: true } do %>
   <span class="icon-angle-left"></span><%= t("shared.back") %>
 <% end %>
 
@@ -17,7 +17,7 @@
 </div>
 
 <hr>
-<%= render partial: "/budgets/investments/investment_detail", locals: {investment: @investment, preview: true} %>
+<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
 <hr>
 
 <h2 id="classification"><%= t("admin.budget_investments.show.classification") %></h2>
@@ -62,7 +62,7 @@
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  {anchor: "classification"}.merge(Budget::Investment.filter_params(params).to_h)) unless @budget.finished? %>
+                                                  { anchor: "classification" }.merge(Budget::Investment.filter_params(params).to_h)) unless @budget.finished? %>
 </p>
 
 <hr>

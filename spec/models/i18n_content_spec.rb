@@ -74,7 +74,7 @@ RSpec.describe I18nContent, type: :model do
         "w" => "string"
       })
 
-      expect(I18nContent.flat_hash({ w: { p: "string" } })).to eq({
+      expect(I18nContent.flat_hash({ w: { p: "string" }})).to eq({
         "w.p" => "string"
       })
     end
@@ -92,7 +92,7 @@ RSpec.describe I18nContent, type: :model do
         "f.w" => "string"
       })
 
-      expect(I18nContent.flat_hash({ w: { p: "string" } }, "f")).to eq({
+      expect(I18nContent.flat_hash({ w: { p: "string" }}, "f")).to eq({
         "f.w.p" => "string"
       })
     end
@@ -112,7 +112,7 @@ RSpec.describe I18nContent, type: :model do
         "w" => "string"
       })
 
-      expect(I18nContent.flat_hash({w: { p: "string" } }, nil, { q: "other string" })).to eq({
+      expect(I18nContent.flat_hash({ w: { p: "string" }}, nil, { q: "other string" })).to eq({
         q: "other string",
         "w.p" => "string"
       })
@@ -133,7 +133,7 @@ RSpec.describe I18nContent, type: :model do
         "f.w" => "string"
       })
 
-      expect(I18nContent.flat_hash({ w: { p: "string" } }, "f", { q: "other string" })).to eq({
+      expect(I18nContent.flat_hash({ w: { p: "string" }}, "f", { q: "other string" })).to eq({
         q: "other string",
         "f.w.p" => "string"
       })

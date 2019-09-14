@@ -13,5 +13,14 @@ describe Mailer do
 
       expect(email.subject).to include("comentado")
     end
+
+    it "reads the from address at runtime" do
+      Setting["mailer_from_name"] = "New organization"
+      Setting["mailer_from_address"] = "new@consul.dev"
+
+      email = Mailer.comment(create(:comment))
+
+      expect(email).to deliver_from "New organization <new@consul.dev>"
+    end
   end
 end

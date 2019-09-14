@@ -83,7 +83,7 @@ describe "Voter" do
     end
 
     context "The person has decided not to vote at this time" do
-      let!(:user) { create(:user, :in_census) }
+      before { create(:user, :in_census) }
 
       scenario "Show not to vote at this time button" do
         login_through_form_as_officer(officer.user)
@@ -176,8 +176,6 @@ describe "Voter" do
         expect(Poll::Voter.count).to eq(1)
 
         visit poll_path(poll)
-
-        expect(page).not_to have_selector(".js-token-message")
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do

@@ -1,7 +1,7 @@
 class Admin::BannersController < Admin::BaseController
   include Translatable
 
-  has_filters %w{all with_active with_inactive}, only: :index
+  has_filters %w[all with_active with_inactive], only: :index
 
   before_action :banner_sections, only: [:edit, :new, :create, :update]
 

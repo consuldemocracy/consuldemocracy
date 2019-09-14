@@ -1,6 +1,6 @@
 <%= render "shared/globalize_locales", resource: @process %>
 
-<%= translatable_form_for [:admin, @process], html: {data: {watch_changes: true}} do |f| %>
+<%= translatable_form_for [:admin, @process], html: { data: { watch_changes: true } } do |f| %>
 
   <% if @process.errors.any? %>
 

@@ -488,6 +488,7 @@ en:
       poster: Poster
       recommended_actions: Recommended actions
       messages: Message to users
+      related_content: Related content
     form:
       request: Request
     create_request:
@@ -701,6 +702,7 @@ en:
     show:
       vote_answer: "Vote %{answer}"
       voted: "You have voted %{answer}"
+      your_answer: "You can add your own answer"
       add_answer: "Add answer"
     description:
       multiple: "You can select a maximum of %{maximum} answers."

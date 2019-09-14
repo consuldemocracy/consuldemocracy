@@ -5,7 +5,7 @@
 <div id="valuators">
   <% if @users.any? %>
     <h3 class="margin"><%= page_entries_info @users %></h3>
-    <%= render partial: "valuators", locals: {valuators: @users} %>
+    <%= render "valuators", valuators: @users %>
   <% else %>
     <div class="callout alert margin">
       <%= t("admin.shared.no_search_results") %>

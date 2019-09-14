@@ -22,12 +22,11 @@
       <%= f.text_field :username,  autofocus: true, maxlength: User.username_max_length,
                                    placeholder: t("devise_views.users.registrations.new.username_label"),
                                    label: false,
-                                   aria: {describedby: "username-help-text"} %>
+                                   aria: { describedby: "username-help-text" } %>
 
       <%= f.invisible_captcha :address %>
 
       <%= f.email_field :email,     placeholder: t("devise_views.users.registrations.new.email_label") %>
-
 
       <%= f.password_field :password, autocomplete: "off",
                            placeholder: t("devise_views.users.registrations.new.password_label") %>

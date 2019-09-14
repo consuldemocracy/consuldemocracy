@@ -418,12 +418,12 @@ namespace :proposal_actions do
                                 summary: Faker::Lorem.sentence(3),
                                 responsible_name: Faker::Name.name,
                                 description: description,
-                                created_at: Time.now - expected_supports.length.days,
+                                created_at: Time.current - expected_supports.length.days,
                                 tag_list: "Example",
                                 geozone: Geozone.all.sample,
                                 skip_map: "1",
                                 terms_of_service: "1",
-                                published_at: Time.now - expected_supports.length.days)
+                                published_at: Time.current - expected_supports.length.days)
 
     expected_supports.each_with_index do |supports, day_offset|
       supports = (supports * goal_votes / votes_count).ceil

@@ -195,7 +195,7 @@ describe "Proposal's dashboard" do
   end
 
   scenario "Dashboard progress show available resources for published proposal" do
-    proposal.update(published_at: Date.today)
+    proposal.update(published_at: Date.current)
     available = create(:dashboard_action, :resource, :active)
 
     requested = create(:dashboard_action, :resource, :admin_request, :active)
@@ -389,6 +389,31 @@ describe "Proposal's dashboard" do
                                                             anchor: "tab-notifications"))
   end
 
+  scenario "Dashboard has a related content section" do
+    related_debate = create(:debate)
+    related_proposal = create(:proposal)
+
+    create(:related_content, parent_relationable: proposal,
+                             child_relationable: related_debate, author: build(:user))
+
+    create(:related_content, parent_relationable: proposal,
+                             child_relationable: related_proposal, author: build(:user))
+
+    within("#side_menu") do
+      click_link "Related content"
+    end
+
+    expect(page).to have_button("Add related content")
+
+    within(".dashboard-related-content") do
+      expect(page).to have_content("Related content (2)")
+      expect(page).to have_selector(".related-content-title", text: "Proposal")
+      expect(page).to have_link related_proposal.title
+      expect(page).to have_selector(".related-content-title", text: "Debate")
+      expect(page).to have_link related_debate.title
+    end
+  end
+
   scenario "On recommended actions section display from the fourth proposed actions
             when click see_proposed_actions_link", js: true do
     create_list(:dashboard_action, 4, :proposed_action, :active)
@@ -481,7 +506,7 @@ describe "Proposal's dashboard" do
     scenario "Not display tag 'new' on resouce when there is not new resources since last login" do
       resource = create(:dashboard_action, :resource, :active, day_offset: 0,
                                                                published_proposal: false)
-      proposal.author.update(last_sign_in_at: Date.today)
+      proposal.author.update(last_sign_in_at: Date.current)
 
       visit progress_proposal_dashboard_path(proposal)
 
@@ -504,7 +529,7 @@ describe "Proposal's dashboard" do
     scenario "Not display tag 'new' on proposed_action when there is not new since last login" do
       proposed_action = create(:dashboard_action, :proposed_action, :active, day_offset: 0,
                                                                      published_proposal: false)
-      proposal.author.update(last_sign_in_at: Date.today)
+      proposal.author.update(last_sign_in_at: Date.current)
 
       visit progress_proposal_dashboard_path(proposal)
 
@@ -525,7 +550,7 @@ describe "Proposal's dashboard" do
 
     scenario "Not display tag 'new' on sidebar when there is not a new resouce since last login" do
       create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
-      proposal.author.update(last_sign_in_at: Date.today)
+      proposal.author.update(last_sign_in_at: Date.current)
 
       visit progress_proposal_dashboard_path(proposal)
 

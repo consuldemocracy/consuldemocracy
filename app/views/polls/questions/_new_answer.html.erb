@@ -1,5 +1,6 @@
 <%= form_tag(create_answer_question_path(question, token: token), method: :post, remote: true) do %>
-  <label> You can add your own answer</label>
-  <input type="text" class="medium-10" name="answer">
-  <input class="button success" type="submit" value="<%= t("poll_questions.show.add_answer") %>">
+  <% id = "your_answer_#{SecureRandom.hex}" %>
+  <%= label_tag :answer, t("poll_questions.show.your_answer"), for: id %>
+  <%= text_field_tag :answer, nil, class: "medium-10", id: id %>
+  <%= submit_tag t("poll_questions.show.add_answer"), class: "button success" %>
 <% end %>

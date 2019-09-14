@@ -1,5 +1,5 @@
 <div class="verification account row">
-  <%track_event(category: "verification", action: "start_census" )%>
+  <% track_event(category: "verification", action: "start_census") %>
   <div class="small-12 column">
 
     <div class="text-center">
@@ -75,7 +75,7 @@
         <%= f.label t("verification.residence.new.postal_code") %>
         <p class="help-text" id="postal-code-help-text"><%= t("verification.residence.new.postal_code_note") %></p>
         <div class="medium-6">
-          <%= f.text_field :postal_code, label: false, aria: {describedby: "postal-code-help-text"} %>
+          <%= f.text_field :postal_code, label: false, aria: { describedby: "postal-code-help-text" } %>
         </div>
       </div>
 

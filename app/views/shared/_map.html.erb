@@ -29,11 +29,11 @@
 
     <h2><%= t("map.proposal_for_district") %></h2>
 
-    <%= form_for(@resource, url: new_url_path, method: :get ) do |f| %>
+    <%= form_for(@resource, url: new_url_path, method: :get) do |f| %>
       <div class="small-12 medium-4">
         <%= f.label :geozone_id,  t("map.select_district") %>
         <%= f.select :geozone_id, geozone_select_options,
-                     {include_blank: t("geozones.none"), label: false} %>
+                     { include_blank: t("geozones.none"), label: false } %>
       </div>
 
       <div class="actions small-12">

@@ -88,14 +88,14 @@ describe Proposal do
       proposal.responsible_name = "12345678Z"
     end
 
-     it "is the document_number if level three user" do
+    it "is the document_number if level three user" do
       author = create(:user, :level_three, document_number: "12345678Z")
       proposal.author = author
       proposal.responsible_name = nil
 
       expect(proposal).to be_valid
       proposal.responsible_name = "12345678Z"
-     end
+    end
 
     it "is not updated when the author is deleted" do
       author = create(:user, :level_three, document_number: "12345678Z")
@@ -177,8 +177,8 @@ describe Proposal do
   describe "#editable?" do
     let(:proposal) { create(:proposal) }
 
-    before {Setting["max_votes_for_proposal_edit"] = 5}
-    after {Setting["max_votes_for_proposal_edit"] = 1000}
+    before { Setting["max_votes_for_proposal_edit"] = 5 }
+    after { Setting["max_votes_for_proposal_edit"] = 1000 }
 
     it "is true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)
@@ -223,21 +223,21 @@ describe Proposal do
     describe "from level two verified users" do
       it "registers vote" do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
-        expect {proposal.register_vote(user, "yes")}.to change{proposal.reload.votes_for.size}.by(1)
+        expect { proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(1)
       end
     end
 
     describe "from level three verified users" do
       it "registers vote" do
         user = create(:user, verified_at: Time.current)
-        expect {proposal.register_vote(user, "yes")}.to change{proposal.reload.votes_for.size}.by(1)
+        expect { proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(1)
       end
     end
 
     describe "from anonymous users" do
       it "does not register vote" do
         user = create(:user)
-        expect {proposal.register_vote(user, "yes")}.to change{proposal.reload.votes_for.size}.by(0)
+        expect { proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(0)
       end
     end
 
@@ -245,7 +245,7 @@ describe Proposal do
       user = create(:user, verified_at: Time.current)
       archived_proposal = create(:proposal, :archived)
 
-      expect {archived_proposal.register_vote(user, "yes")}.to change{proposal.reload.votes_for.size}.by(0)
+      expect { archived_proposal.register_vote(user, "yes") }.to change { proposal.reload.votes_for.size }.by(0)
     end
   end
 
@@ -285,7 +285,7 @@ describe Proposal do
     it "remains the same for not voted proposals" do
       new = create(:proposal, created_at: now)
       old = create(:proposal, created_at: 1.day.ago)
-      older = create(:proposal, created_at: 2.month.ago)
+      older = create(:proposal, created_at: 2.months.ago)
       expect(new.hot_score).to be 0
       expect(old.hot_score).to be 0
       expect(older.hot_score).to be 0
@@ -1031,7 +1031,7 @@ describe Proposal do
     end
 
     it "does not return proposals when user is follower" do
-      proposal1 =  create(:proposal, tag_list: "Sport")
+      proposal1 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
       result = described_class.recommendations(user)
@@ -1144,7 +1144,7 @@ describe Proposal do
 
     context "without milestone_tags" do
 
-      let(:proposal) {create(:proposal)}
+      let(:proposal) { create(:proposal) }
 
       it "do not have milestone_tags" do
         expect(proposal.milestone_tag_list).to eq([])
@@ -1160,7 +1160,7 @@ describe Proposal do
 
     context "with milestone_tags" do
 
-      let(:proposal) {create(:proposal, :with_milestone_tags)}
+      let(:proposal) { create(:proposal, :with_milestone_tags) }
 
       it "has milestone_tags" do
         expect(proposal.milestone_tag_list.count).to eq(1)

@@ -71,7 +71,7 @@ shared_examples "acts as imageable" do |imageable_factory|
     image_url = image.attachment.url
     new_url = "/attachments/original/missing.png"
 
-    expect{ image.attachment.destroy }.to change{ image.attachment.url }.from(image_url).to(new_url)
+    expect { image.attachment.destroy }.to change { image.attachment.url }.from(image_url).to(new_url)
   end
 
 end

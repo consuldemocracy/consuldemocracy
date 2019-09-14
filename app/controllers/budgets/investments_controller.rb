@@ -30,7 +30,7 @@ module Budgets
 
     feature_flag :budgets
 
-    has_orders %w{most_voted newest oldest}, only: :show
+    has_orders %w[most_voted newest oldest], only: :show
     has_orders ->(c) { c.instance_variable_get(:@budget).investments_orders }, only: :index
 
     valid_filters = %w[not_unfeasible feasible unfeasible unselected selected winners]
@@ -98,7 +98,7 @@ module Budgets
     end
 
     def json_data
-      investment =  Budget::Investment.find(params[:id])
+      investment = Budget::Investment.find(params[:id])
       data = {
         investment_id: investment.id,
         investment_title: investment.title,
@@ -141,7 +141,7 @@ module Budgets
       def load_heading
         if params[:heading_id].present?
           @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
-          @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
+          @assigned_heading = @ballot&.heading_for_group(@heading&.group)
           load_map
         end
       end

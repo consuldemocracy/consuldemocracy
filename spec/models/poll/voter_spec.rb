@@ -25,9 +25,9 @@ describe Poll::Voter do
     end
 
     it "is valid if has not voted" do
-       voter = build(:poll_voter, :valid_document)
+      voter = build(:poll_voter, :valid_document)
 
-       expect(voter).to be_valid
+      expect(voter).to be_valid
     end
 
     it "is not valid if the user has already voted in the same poll or booth_assignment" do
@@ -109,19 +109,19 @@ describe Poll::Voter do
     end
 
     context "assignments" do
-      it "should not be valid without a booth_assignment_id when origin is booth" do
+      it "is not valid without a booth_assignment_id when origin is booth" do
         voter.origin = "booth"
         voter.booth_assignment_id = nil
         expect(voter).not_to be_valid
       end
 
-      it "should not be valid without an officer_assignment_id when origin is booth" do
+      it "is not valid without an officer_assignment_id when origin is booth" do
         voter.origin = "booth"
         voter.officer_assignment_id = nil
         expect(voter).not_to be_valid
       end
 
-      it "should be valid without assignments when origin is web" do
+      it "is valid without assignments when origin is web" do
         voter.origin = "web"
         voter.booth_assignment_id = nil
         voter.officer_assignment_id = nil

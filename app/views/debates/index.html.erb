@@ -71,7 +71,7 @@
           <%= render @debates %>
         <% else %>
           <% @debates.each do |debate| %>
-            <%= render partial: "debates/debate_minimal", locals: { debate: debate } %>
+            <%= render "debates/debate_minimal", debate: debate %>
           <% end %>
         <% end %>
       <% else %>
@@ -98,7 +98,7 @@
       <aside class="margin-bottom">
         <%= link_to t("debates.index.start_debate"), new_debate_path, class: "button expanded" %>
         <%= render "shared/tag_cloud", taggable: "debate" %>
-        <%= render "shared/download_links", downloadable: 'debate' %>
+        <%= render "shared/download_links", downloadable: "debate" %>
       </aside>
     </div>
 

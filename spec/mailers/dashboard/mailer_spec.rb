@@ -136,7 +136,7 @@ describe Dashboard::Mailer do
 
         months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i.months
         limit_to_archive_proposal = proposal.created_at.to_date + months_to_archive_proposals
-        days_count = (limit_to_archive_proposal - Date.today).to_i
+        days_count = (limit_to_archive_proposal - Date.current).to_i
 
         expect(email).to have_body_text("You are missing #{days_count} days before your proposal "\
                                         "gets the #{Setting["votes_for_proposal_success"]}  "\
@@ -221,13 +221,12 @@ describe Dashboard::Mailer do
 
     before do
       ActionMailer::Base.deliveries.clear
+
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
     end
 
     let!(:proposal) { build(:proposal, :draft) }
-    let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                 published_proposal: true) }
-    let!(:proposed_action) { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                        published_proposal: true) }
 
     it "Disables email delivery using setting" do
       Setting["dashboard.emails"] = nil

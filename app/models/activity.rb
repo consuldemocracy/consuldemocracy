@@ -2,9 +2,9 @@ class Activity < ApplicationRecord
   belongs_to :actionable, -> { with_hidden }, polymorphic: true
   belongs_to :user, -> { with_hidden }
 
-  VALID_ACTIONS = %w(hide block restore valuate email)
+  VALID_ACTIONS = %w[hide block restore valuate email]
 
-  validates :action, inclusion: {in: VALID_ACTIONS}
+  validates :action, inclusion: { in: VALID_ACTIONS }
 
   scope :on_proposals, -> { where(actionable_type: "Proposal") }
   scope :on_debates, -> { where(actionable_type: "Debate") }

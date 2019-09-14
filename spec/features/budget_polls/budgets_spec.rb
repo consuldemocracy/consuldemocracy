@@ -18,7 +18,7 @@ describe "Admin Budgets" do
 
       balloting_phase = budget.phases.where(kind: "balloting").first
 
-      expect(current_path).to match(/admin\/polls\/\d+/)
+      expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)
       expect(page).to have_content(balloting_phase.starts_at.to_date)
       expect(page).to have_content(balloting_phase.ends_at.to_date)
@@ -32,13 +32,12 @@ describe "Admin Budgets" do
                       name_en: "Budget for climate change",
                       name_fr: "Budget pour le changement climatique")
 
-
       visit admin_budgets_path
       select("Français", from: "locale-switcher")
 
       click_link "Bulletins de l’admin"
 
-      expect(current_path).to match(/admin\/polls\/\d+/)
+      expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content("Budget pour le changement climatique")
 
       expect(Poll.count).to eq(1)

@@ -18,11 +18,10 @@
   <%= simple_format @signature_sheet.required_fields_to_verify %>
 </div>
 
-
 <div id="verified_signatures" class="callout success">
   <strong>
     <%= t("admin.signature_sheets.show.verified",
-        count: @signature_sheet.signatures.verified.count ) %>
+        count: @signature_sheet.signatures.verified.count) %>
   </strong>
   <br />
   <strong>
@@ -36,7 +35,7 @@
   <p>
     <strong>
       <%= t("admin.signature_sheets.show.unverified",
-          count: @signature_sheet.signatures.unverified.count ) %>
+          count: @signature_sheet.signatures.unverified.count) %>
       <%= t("admin.signature_sheets.show.unverified_error") %>
     </strong>
   </p>

@@ -27,12 +27,6 @@ describe Abilities::Valuator do
     should_not be_able_to(:valuate, assigned_investment)
   end
 
-  it "cannot valuate an assigned investment with a finished valuation" do
-    assigned_investment.update(valuation_finished: true)
-
-    should_not be_able_to(:valuate, assigned_investment)
-  end
-
   it { should_not be_able_to(:update, non_assigned_investment) }
   it { should_not be_able_to(:valuate, non_assigned_investment) }
 

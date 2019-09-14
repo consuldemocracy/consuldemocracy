@@ -163,52 +163,52 @@ describe Debate do
     describe "from level two verified users" do
       it "registers vote" do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
-        expect {debate.register_vote(user, "yes")}.to change{debate.reload.votes_for.size}.by(1)
+        expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
 
       it "does not increase anonymous votes counter " do
         user = create(:user, residence_verified_at: Time.current, confirmed_phone: "666333111")
-        expect {debate.register_vote(user, "yes")}.not_to change{debate.reload.cached_anonymous_votes_total}
+        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.cached_anonymous_votes_total }
       end
     end
 
     describe "from level three verified users" do
       it "registers vote" do
         user = create(:user, verified_at: Time.current)
-        expect {debate.register_vote(user, "yes")}.to change{debate.reload.votes_for.size}.by(1)
+        expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
 
       it "does not increase anonymous votes counter " do
         user = create(:user, verified_at: Time.current)
-        expect {debate.register_vote(user, "yes")}.not_to change{debate.reload.cached_anonymous_votes_total}
+        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.cached_anonymous_votes_total }
       end
     end
 
     describe "from anonymous users when anonymous votes are allowed" do
-      before {debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100)}
+      before { debate.update(cached_anonymous_votes_total: 42, cached_votes_total: 100) }
 
       it "registers vote" do
         user = create(:user)
-        expect {debate.register_vote(user, "yes")}.to change {debate.reload.votes_for.size}.by(1)
+        expect { debate.register_vote(user, "yes") }.to change { debate.reload.votes_for.size }.by(1)
       end
 
       it "increases anonymous votes counter" do
         user = create(:user)
-        expect {debate.register_vote(user, "yes")}.to change {debate.reload.cached_anonymous_votes_total}.by(1)
+        expect { debate.register_vote(user, "yes") }.to change { debate.reload.cached_anonymous_votes_total }.by(1)
       end
     end
 
     describe "from anonymous users when there are too many anonymous votes" do
-      before {debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)}
+      before { debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000) }
 
       it "does not register vote " do
         user = create(:user)
-        expect {debate.register_vote(user, "yes")}.not_to change {debate.reload.votes_for.size}
+        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.votes_for.size }
       end
 
       it "does not increase anonymous votes counter " do
         user = create(:user)
-        expect {debate.register_vote(user, "yes")}.not_to change {debate.reload.cached_anonymous_votes_total}
+        expect { debate.register_vote(user, "yes") }.not_to change { debate.reload.cached_anonymous_votes_total }
       end
     end
   end
@@ -240,7 +240,7 @@ describe Debate do
     it "remains the same for not voted debates" do
       new = create(:debate, created_at: now)
       old = create(:debate, created_at: 1.day.ago)
-      older = create(:debate, created_at: 2.month.ago)
+      older = create(:debate, created_at: 2.months.ago)
       expect(new.hot_score).to be 0
       expect(old.hot_score).to be 0
       expect(older.hot_score).to be 0

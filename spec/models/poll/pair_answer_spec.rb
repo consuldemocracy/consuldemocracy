@@ -72,7 +72,6 @@ describe Poll::PairAnswer do
 
   end
 
-
   describe "#generate_pair" do
     let(:user) { create(:user) }
     let(:question) { create(:poll_question) }

@@ -6,10 +6,10 @@ describe "Users" do
 
     before do
       @user = create(:user)
-      1.times {create(:debate, author: @user)}
-      2.times {create(:proposal, author: @user)}
-      3.times {create(:budget_investment, author: @user)}
-      4.times {create(:comment, user: @user)}
+      1.times { create(:debate, author: @user) }
+      2.times { create(:proposal, author: @user) }
+      3.times { create(:budget_investment, author: @user) }
+      4.times { create(:comment, user: @user) }
 
       visit user_path(@user)
     end
@@ -401,9 +401,9 @@ describe "Users" do
 
     scenario "shows only comments from active features" do
       user = create(:user)
-      1.times {create(:comment, user: user, commentable: create(:debate))}
-      2.times {create(:comment, user: user, commentable: create(:budget_investment))}
-      4.times {create(:comment, user: user, commentable: create(:proposal))}
+      1.times { create(:comment, user: user, commentable: create(:debate)) }
+      2.times { create(:comment, user: user, commentable: create(:budget_investment)) }
+      4.times { create(:comment, user: user, commentable: create(:proposal)) }
 
       visit user_path(user)
       expect(page).to have_content("7 Comments")

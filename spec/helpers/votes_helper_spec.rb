@@ -5,14 +5,14 @@ describe VotesHelper do
   describe "#voted_for?" do
     it "returns true if voted for a proposal" do
       proposal = create(:proposal)
-      votes = {proposal.id => true}
+      votes = { proposal.id => true }
 
       expect(voted_for?(votes, proposal)).to eq(true)
     end
 
     it "returns false if not voted for a proposals" do
       proposal = create(:proposal)
-      votes = {proposal.id => nil}
+      votes = { proposal.id => nil }
 
       expect(voted_for?(votes, proposal)).to eq(nil)
     end

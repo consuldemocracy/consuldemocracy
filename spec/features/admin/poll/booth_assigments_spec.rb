@@ -25,10 +25,20 @@ describe "Admin booths assignments" do
         click_link "Manage assignments"
       end
 
-      expect(page).to have_content "Assignments for poll "#{second_poll.name}""
+      expect(page).to have_content "Assignments for poll '#{second_poll.name}'"
 
       expect(page).to have_content(booth.name)
       expect(page).to have_content(second_booth.name)
+    end
+
+    scenario "Index do not show polls created by users from proposals dashboard" do
+      create(:poll, name: "Poll created by admin")
+      create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
+
+      visit booth_assignments_admin_polls_path
+
+      expect(page).to have_content "Poll created by admin"
+      expect(page).not_to have_content "Poll from user's proposal"
     end
 
     scenario "Assign booth to poll", :js do
@@ -46,7 +56,7 @@ describe "Admin booths assignments" do
 
       visit manage_admin_poll_booth_assignments_path(poll)
 
-      expect(page).to have_content "Assignments for poll "#{poll.name}""
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
 
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)
@@ -85,7 +95,7 @@ describe "Admin booths assignments" do
 
       visit manage_admin_poll_booth_assignments_path(poll)
 
-      expect(page).to have_content "Assignments for poll "#{poll.name}""
+      expect(page).to have_content "Assignments for poll '#{poll.name}'"
 
       within("#poll_booth_#{booth.id}") do
         expect(page).to have_content(booth.name)

@@ -93,7 +93,7 @@ class Signature < ApplicationRecord
   end
 
   def document_types
-    %w(1 2 3 4)
+    %w[1 2 3 4]
   end
 
 end

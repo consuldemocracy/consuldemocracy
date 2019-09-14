@@ -1,6 +1,6 @@
 <%= render "shared/globalize_locales", resource: @question %>
 
-<%= translatable_form_for [:admin, @process, @question], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= translatable_form_for [:admin, @process, @question], url: url, html: { data: { watch_changes: true } } do |f| %>
 
   <% if @question.errors.any? %>
     <div class="small-12 medium-9 column">

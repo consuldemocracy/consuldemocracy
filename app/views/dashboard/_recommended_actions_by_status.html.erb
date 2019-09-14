@@ -2,7 +2,7 @@
 <% if actions.any? %>
   <div id="proposed_actions_<%= status %>">
     <% actions.first(4).each do |proposed_action| %>
-      <%= render 'proposed_action', proposed_action: proposed_action %>
+      <%= render "proposed_action", proposed_action: proposed_action %>
     <% end %>
     <% if actions.count > 4 %>
       <div class="margin small" id="proposed_actions_<%= status %>_link" data-toggler=".hide">
@@ -21,7 +21,7 @@
   <% if toggle == true %>
     <% if actions.count > 4 %>
       <div id="last_proposed_actions_<%= status %>" class="hide" data-toggler=".hide">
-        <%= render partial: 'proposed_action', collection: actions - actions.first(4) %>
+        <%= render partial: "proposed_action", collection: actions - actions.first(4) %>
         <div class="margin small">
           <a data-toggle="last_proposed_actions_<%= status %> proposed_actions_<%= status %>_link">
             <strong><%= t("dashboard.recommended_actions.hide_proposed_actions") %></strong>

@@ -19,7 +19,7 @@ module DownloadSettings
       CSV.generate(options) do |csv|
         csv << attributes
         proposals.each do |proposal|
-          csv << attributes.map {|attr| proposal.send(attr)}
+          csv << attributes.map { |attr| proposal.send(attr) }
         end
       end
     end

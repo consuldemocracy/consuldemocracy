@@ -6,11 +6,11 @@ describe Notification do
 
   context "validations" do
 
-    it "should be valid" do
+    it "is valid" do
       expect(notification).to be_valid
     end
 
-    it "should not be valid without a user" do
+    it "is not valid without a user" do
       notification.user = nil
       expect(notification).not_to be_valid
     end

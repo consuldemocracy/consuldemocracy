@@ -33,7 +33,7 @@ class Poll::Question < ApplicationRecord
 
   scope :by_poll_id,    ->(poll_id) { where(poll_id: poll_id) }
 
-  scope :sort_for_list, -> { order("poll_questions.proposal_id IS NULL", :created_at)}
+  scope :sort_for_list, -> { order("poll_questions.proposal_id IS NULL", :created_at) }
   scope :for_render,    -> { includes(:author, :proposal) }
 
   def self.search(params)
@@ -44,10 +44,10 @@ class Poll::Question < ApplicationRecord
   end
 
   def searchable_values
-    { title                 => "A",
-      proposal.try(:title)  => "A",
-      author.username       => "C",
-      author_visible_name   => "C" }
+    { title               => "A",
+      proposal&.title     => "A",
+      author.username     => "C",
+      author_visible_name => "C" }
   end
 
   def copy_attributes_from_proposal(proposal)

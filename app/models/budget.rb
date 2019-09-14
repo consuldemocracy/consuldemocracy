@@ -20,7 +20,7 @@ class Budget < ApplicationRecord
     end
   end
 
-  CURRENCY_SYMBOLS = %w(€ $ £ ¥).freeze
+  CURRENCY_SYMBOLS = %w[€ $ £ ¥].freeze
 
   validates_translation :name, presence: true
   validates :phase, inclusion: { in: Budget::Phase::PHASE_KINDS }
@@ -79,7 +79,7 @@ class Budget < ApplicationRecord
     if phases.exists? && phases.send(phase).description.present?
       phases.send(phase).description
     else
-      send("description_#{phase}").try(:html_safe)
+      send("description_#{phase}")&.html_safe
     end
   end
 
@@ -173,13 +173,13 @@ class Budget < ApplicationRecord
   def investments_orders
     case phase
     when "accepting", "reviewing"
-      %w{random}
+      %w[random]
     when "publishing_prices", "balloting", "reviewing_ballots"
-      %w{random price}
+      %w[random price]
     when "finished"
-      %w{random}
+      %w[random]
     else
-      %w{random confidence_score}
+      %w[random confidence_score]
     end
   end
 
@@ -205,28 +205,28 @@ class Budget < ApplicationRecord
 
   private
 
-  def sanitize_descriptions
-    s = WYSIWYGSanitizer.new
-    Budget::Phase::PHASE_KINDS.each do |phase|
-      sanitized = s.sanitize(send("description_#{phase}"))
-      send("description_#{phase}=", sanitized)
+    def sanitize_descriptions
+      s = WYSIWYGSanitizer.new
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        sanitized = s.sanitize(send("description_#{phase}"))
+        send("description_#{phase}=", sanitized)
+      end
     end
-  end
 
-  def generate_phases
-    Budget::Phase::PHASE_KINDS.each do |phase|
-      Budget::Phase.create(
-        budget: self,
-        kind: phase,
-        prev_phase: phases&.last,
-        starts_at: phases&.last&.ends_at || Date.current,
-        ends_at: (phases&.last&.ends_at || Date.current) + 1.month
-      )
+    def generate_phases
+      Budget::Phase::PHASE_KINDS.each do |phase|
+        Budget::Phase.create(
+          budget: self,
+          kind: phase,
+          prev_phase: phases&.last,
+          starts_at: phases&.last&.ends_at || Date.current,
+          ends_at: (phases&.last&.ends_at || Date.current) + 1.month
+        )
+      end
     end
-  end
 
-  def generate_slug?
-    slug.nil? || drafting?
-  end
+    def generate_slug?
+      slug.nil? || drafting?
+    end
 
 end

@@ -3,11 +3,9 @@ class Newsletter < ApplicationRecord
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true
-  validates :from, presence: true
+  validates :from, presence: true, format: { with: /@/ }
   validates :body, presence: true
   validate :validate_segment_recipient
-
-  validates_format_of :from, :with => /@/
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -55,16 +53,16 @@ class Newsletter < ApplicationRecord
 
   private
 
-  def validate_segment_recipient
-    errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
-  end
+    def validate_segment_recipient
+      errors.add(:segment_recipient, :invalid) unless valid_segment_recipient?
+    end
 
-  def valid_email?(email)
-    email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
-  end
+    def valid_email?(email)
+      email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
+    end
 
-  def log_delivery(recipient_email)
-    user = User.where(email: recipient_email).first
-    Activity.log(user, :email, self)
-  end
+    def log_delivery(recipient_email)
+      user = User.where(email: recipient_email).first
+      Activity.log(user, :email, self)
+    end
 end

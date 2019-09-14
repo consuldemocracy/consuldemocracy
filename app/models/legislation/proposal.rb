@@ -47,7 +47,7 @@ class Legislation::Proposal < ApplicationRecord
   scope :sort_by_id,               -> { reorder(id: :asc) }
   scope :sort_by_supports,         -> { reorder(cached_votes_score: :desc) }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
   scope :selected,                 -> { where(selected: true) }
   scope :winners,                  -> { selected.sort_by_confidence_score }
 
@@ -59,14 +59,14 @@ class Legislation::Proposal < ApplicationRecord
     { title              => "A",
       author.username    => "B",
       tag_list.join(" ") => "B",
-      geozone.try(:name) => "B",
+      geozone&.name      => "B",
       summary            => "C",
-      description        => "D"}
+      description        => "D" }
   end
 
   def self.search(terms)
     by_code = search_by_code(terms.strip)
-    by_code.present? ? by_code : pg_search(terms)
+    by_code.presence || pg_search(terms)
   end
 
   def self.search_by_code(terms)
@@ -132,11 +132,11 @@ class Legislation::Proposal < ApplicationRecord
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for("LegislationProposal") }
+    tags.each { |t| t.decrement_custom_counter_for("LegislationProposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for("LegislationProposal") }
+    tags.each { |t| t.increment_custom_counter_for("LegislationProposal") }
   end
 
   protected

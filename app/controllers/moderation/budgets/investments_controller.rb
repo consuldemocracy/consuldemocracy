@@ -2,8 +2,8 @@ class Moderation::Budgets::InvestmentsController < Moderation::BaseController
   include FeatureFlags
   include ModerateActions
 
-  has_filters %w{pending_flag_review all with_ignored_flag}, only: :index
-  has_orders  %w{flags created_at}, only: :index
+  has_filters %w[pending_flag_review all with_ignored_flag], only: :index
+  has_orders  %w[flags created_at], only: :index
 
   feature_flag :budgets
 

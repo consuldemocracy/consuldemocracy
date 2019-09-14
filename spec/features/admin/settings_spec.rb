@@ -37,7 +37,7 @@ describe "Admin settings" do
       visit admin_settings_path
       find("#map-tab").click
 
-      expect(page).to have_content 'To show the map to users you must enable ' \
+      expect(page).to have_content "To show the map to users you must enable " \
                                    '"Proposals and budget investments geolocation" ' \
                                    'on "Features" tab.'
       expect(page).not_to have_css("#admin-map")
@@ -51,7 +51,7 @@ describe "Admin settings" do
       find("#map-tab").click
 
       expect(page).to have_css("#admin-map")
-      expect(page).not_to have_content 'To show the map to users you must enable ' \
+      expect(page).not_to have_content "To show the map to users you must enable " \
                                        '"Proposals and budget investments geolocation" ' \
                                        'on "Features" tab.'
     end

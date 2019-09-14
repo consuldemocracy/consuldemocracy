@@ -53,7 +53,7 @@
 
         <div class="small-12 medium-6">
           <%= f.select(:administrator_id,
-                         @admins.collect{ |a| [a.description_or_name_and_email, a.id ] },
+                         @admins.collect { |a| [a.description_or_name_and_email, a.id] },
                          { include_blank: t("admin.budget_investments.edit.undefined") }) %>
         </div>
       </div>
@@ -126,7 +126,6 @@
                      value: @investment.milestone_tag_list.sort.join(", "),
                      label: t("admin.budget_investments.edit.milestone_tags") %>
     </div>
-
 
     <div class="small-12 column margin-top">
       <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>

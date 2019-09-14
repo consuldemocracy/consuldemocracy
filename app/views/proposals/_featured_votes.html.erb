@@ -19,11 +19,11 @@
         <%= t("votes.organizations") %>
       </p>
     </div>
-  <% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
+  <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <%= t("votes.verified_only",
-            verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+            verify_account: link_to(t("votes.verify_account"), verification_path)).html_safe %>
       </p>
     </div>
   <% elsif !user_signed_in? %>
@@ -37,12 +37,12 @@
   <% if voted_for?(@featured_proposals_votes, proposal) %>
     <% if setting["twitter_handle"] %>
       <div class="share-supported">
-        <%= render partial: "shared/social_share", locals: {
+        <%= render "shared/social_share",
           title: proposal.title,
           url: proposal_url(proposal),
           description: proposal.summary,
           mobile: proposal.title
-        } %>
+        %>
       </div>
     <% end %>
   <% end %>

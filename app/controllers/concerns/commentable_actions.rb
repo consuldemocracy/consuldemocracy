@@ -16,7 +16,7 @@ module CommentableActions
 
     @resources = @resources.page(params[:page]).send("sort_by_#{@current_order}")
 
-    index_customization if index_customization.present?
+    index_customization
 
     @tag_cloud = tag_cloud
     @banners = Banner.in_section(section(resource_model.name)).with_active
@@ -28,7 +28,7 @@ module CommentableActions
 
     respond_to do |format|
       format.html
-      format.csv {send_data to_csv(resources_csv, resource_model),
+      format.csv { send_data to_csv(resources_csv, resource_model),
                             type: "text/csv",
                             disposition: "attachment",
                             filename: "#{get_resource(resource_model)}.csv" }

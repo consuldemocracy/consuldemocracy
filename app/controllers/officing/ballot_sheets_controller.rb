@@ -32,39 +32,39 @@ class Officing::BallotSheetsController < Officing::BaseController
 
   private
 
-  def namespace
-    "officing"
-  end
+    def namespace
+      "officing"
+    end
 
-  def load_poll
-    @poll = Poll.find(params[:poll_id])
-  end
+    def load_poll
+      @poll = Poll.find(params[:poll_id])
+    end
 
-  def load_ballot_sheets
-    @ballot_sheets = Poll::BallotSheet.where(poll: @poll)
-  end
+    def load_ballot_sheets
+      @ballot_sheets = Poll::BallotSheet.where(poll: @poll)
+    end
 
-  def load_ballot_sheet
-    @ballot_sheet = Poll::BallotSheet.find(params[:id])
-  end
+    def load_ballot_sheet
+      @ballot_sheet = Poll::BallotSheet.find(params[:id])
+    end
 
-  def load_officer_assignments
-    @officer_assignments = ::Poll::OfficerAssignment.
-                includes(booth_assignment: [:booth]).
-                joins(:booth_assignment).
-                final.
-                where(id: current_user.poll_officer.officer_assignment_ids).
-                where("poll_booth_assignments.poll_id = ?", @poll.id).
-                where(date: Date.current)
-  end
+    def load_officer_assignments
+      @officer_assignments = ::Poll::OfficerAssignment.
+                  includes(booth_assignment: [:booth]).
+                  joins(:booth_assignment).
+                  final.
+                  where(id: current_user.poll_officer.officer_assignment_ids).
+                  where("poll_booth_assignments.poll_id = ?", @poll.id).
+                  where(date: Date.current)
+    end
 
-  def load_officer_assignment
-    @officer_assignment = current_user.poll_officer.officer_assignments.final
-                                      .find_by(id: ballot_sheet_params[:officer_assignment_id])
-  end
+    def load_officer_assignment
+      @officer_assignment = current_user.poll_officer.officer_assignments.final
+                                        .find_by(id: ballot_sheet_params[:officer_assignment_id])
+    end
 
-  def ballot_sheet_params
-    params.permit(:data, :poll_id, :officer_assignment_id)
-  end
+    def ballot_sheet_params
+      params.permit(:data, :poll_id, :officer_assignment_id)
+    end
 
 end

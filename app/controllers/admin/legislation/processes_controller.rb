@@ -12,7 +12,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
                  .page(params[:page])
     respond_to do |format|
       format.html
-      format.csv {send_data to_csv(process_for_download, Legislation::Process),
+      format.csv { send_data to_csv(process_for_download, Legislation::Process),
                             type: "text/csv",
                             disposition: "attachment",
                             filename: "legislation_processes.csv" }
@@ -35,7 +35,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
       set_tag_list
 
       link = legislation_process_path(@process).html_safe
-      redirect_back(fallback_location: (request.referrer || root_path),
+      redirect_back(fallback_location: (request.referer || root_path),
                     notice: t("admin.legislation.processes.update.notice", link: link))
     else
       flash.now[:error] = t("admin.legislation.processes.update.error")

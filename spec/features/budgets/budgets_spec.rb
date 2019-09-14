@@ -380,7 +380,7 @@ describe "Budgets" do
 
       visit budget_path(budget)
 
-      budget.groups.each {|group| expect(page).to have_link(group.name)}
+      budget.groups.each { |group| expect(page).to have_link(group.name) }
     end
 
     scenario "Links to unfeasible and selected if balloting or later" do

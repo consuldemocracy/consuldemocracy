@@ -41,7 +41,7 @@ describe "Social media meta tags" do
       expect(page).to have_meta "twitter:title", with: meta_title
       expect(page).to have_meta "twitter:description", with: meta_description
       expect(page).to have_meta "twitter:image",
-                                 with:"http://www.example.com/social_media_icon_twitter.png"
+                                 with: "http://www.example.com/social_media_icon_twitter.png"
 
       expect(page).to have_property "og:title", with: meta_title
       expect(page).to have_property "article:publisher", with: url

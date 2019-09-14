@@ -25,7 +25,7 @@ class ProposalNotification < ApplicationRecord
   after_create :set_author
 
   def minimum_interval
-    return true if proposal.try(:notifications).blank?
+    return true if proposal&.notifications.blank?
     interval = Setting[:proposal_notification_minimum_interval_in_days]
     minimum_interval = (Time.current - interval.to_i.days).to_datetime
     if proposal.notifications.last.created_at > minimum_interval
@@ -56,8 +56,8 @@ class ProposalNotification < ApplicationRecord
 
   private
 
-  def set_author
-    self.update(author_id: self.proposal.author_id) if self.proposal
-  end
+    def set_author
+      self.update(author_id: self.proposal.author_id) if self.proposal
+    end
 
 end

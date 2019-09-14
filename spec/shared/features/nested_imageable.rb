@@ -1,7 +1,4 @@
-shared_examples "nested imageable" do |imageable_factory_name, path,
-                                       imageable_path_arguments, fill_resource_method_name,
-                                       submit_button, imageable_success_notice,
-                                       has_many_images = false|
+shared_examples "nested imageable" do |imageable_factory_name, path, imageable_path_arguments, fill_resource_method_name, submit_button, imageable_success_notice, has_many_images = false|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper
@@ -16,7 +13,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
     Setting["feature.allow_images"] = true
 
     imageable_path_arguments&.each do |argument_name, path_to_value|
-        arguments.merge!("#{argument_name}": imageable.send(path_to_value))
+      arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
 
     imageable.update(author: user) if imageable.respond_to?(:author)
@@ -176,7 +173,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path,
 
     scenario "Should show successful notice when resource filled correctly without any nested images", :js do
       if has_many_images
-         skip "no need to test, there are no attributes for the parent resource"
+        skip "no need to test, there are no attributes for the parent resource"
       else
         login_as user
         visit send(path, arguments)

@@ -21,7 +21,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def create
-    @question.author = @question.proposal.try(:author) || current_user
+    @question.author = @question.proposal&.author || current_user
     @question.votation_type = VotationType.build_by_type(@question, params[:votation_type])
 
     if @question.save

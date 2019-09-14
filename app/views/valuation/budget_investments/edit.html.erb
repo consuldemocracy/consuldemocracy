@@ -5,16 +5,16 @@
 
 <h2><%= t("valuation.budget_investments.edit.dossier") %></h2>
 <% if can?(:valuate, @investment) && can?(:edit_dossier, @investment) %>
-  <%= render partial: "/valuation/budget_investments/dossier_form", locals: {investment: @investment} %>
+  <%= render "/valuation/budget_investments/dossier_form", investment: @investment %>
 <% else %>
-  <%= render partial: "/valuation/budget_investments/dossier_detail", locals: {investment: @investment} %>
+  <%= render "/valuation/budget_investments/dossier_detail", investment: @investment %>
 <% end %>
 
 <%= render "valuation/budget_investments/valuation_comments" %>
 
 <h2><%= t("valuation.budget_investments.show.preview") %></h2>
 <hr>
-<%= render partial: "/budgets/investments/investment_detail", locals: {investment: @investment, preview: true} %>
+<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
 <hr>
 
 <h2><%= t("valuation.budget_investments.show.responsibles") %></h2>

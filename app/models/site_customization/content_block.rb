@@ -6,6 +6,6 @@ class SiteCustomization::ContentBlock < ApplicationRecord
 
   def self.block_for(name, locale)
     locale ||= I18n.default_locale
-    find_by(name: name, locale: locale).try(:body)
+    find_by(name: name, locale: locale)&.body
   end
 end

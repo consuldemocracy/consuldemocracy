@@ -1,6 +1,5 @@
 <a class="small float-right clear" data-open="download-modal"><%= t("admin.budget_investments.index.download_current_selection") %></a>
 
-
 <% if params[:advanced_filters].include?("winners") %>
   <% if display_calculate_winners_button?(@budget) %>
     <%= link_to calculate_winner_button_text(@budget),
@@ -9,7 +8,7 @@
                 class: "button hollow float-right clear" %>
   <% else %>
     <span class="button hollow disabled float-right clear">
-      <%= t("admin.budgets.winners.calculate")%>
+      <%= t("admin.budgets.winners.calculate") %>
     </span>
     <div class="callout warning clear">
       <%= t("admin.budget_investments.index.cannot_calculate_winners") %>
@@ -19,8 +18,8 @@
 
 <% if @investments.any? %>
   <h3 class="inline-block"><%= page_entries_info @investments %></h3>
-  <%= render partial: "admin/shared/columns_selector",
-        locals: { cookie: "investments-columns", default: %w[id title supports admin valuator geozone feasibility price valuation_finished visible_to_valuators selected incompatible] } %>
+  <%= render "admin/shared/columns_selector",
+        cookie: "investments-columns", default: %w[id title supports admin valuator geozone feasibility price valuation_finished visible_to_valuators selected incompatible] %>
   <br>
 
   <%= render "filters_description", i18n_namespace: "admin.budget_investments.index" %>
@@ -28,7 +27,7 @@
   <table class="table-for-mobile column-selecteable">
     <thead>
       <tr>
-        <th><%= link_to_investments_sorted_by :id  %></th>
+        <th><%= link_to_investments_sorted_by :id %></th>
         <th data-field="title"><%= link_to_investments_sorted_by :title %></th>
         <th data-field="supports"><%= link_to_investments_sorted_by :supports %></th>
         <th data-field="admin"><%= t("admin.budget_investments.index.list.admin") %></th>

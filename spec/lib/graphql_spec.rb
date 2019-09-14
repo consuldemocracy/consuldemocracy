@@ -435,7 +435,7 @@ describe "Consul Schema" do
 
   describe "Geozones" do
     it "returns geozones" do
-      geozone_names = [ create(:geozone), create(:geozone) ].map { |geozone| geozone.name }
+      geozone_names = [create(:geozone), create(:geozone)].map { |geozone| geozone.name }
 
       response = execute("{ geozones { edges { node { name } } } }")
       received_names = extract_fields(response, "geozones", "name")
@@ -511,28 +511,29 @@ describe "Consul Schema" do
       expect(received_tags).to match_array ["Parks", "Health"]
     end
 
-    it "uppercase and lowercase tags work ok together for proposals" do
-      create(:tag, name: "Health")
-      create(:tag, name: "health")
-      create(:proposal, tag_list: "health")
-      create(:proposal, tag_list: "Health")
+    context "uppercase and lowercase tags" do
+      let(:uppercase_tag) { create(:tag, name: "Health") }
+      let(:lowercase_tag) { create(:tag, name: "health") }
 
-      response = execute("{ tags { edges { node { name } } } }")
-      received_tags = extract_fields(response, "tags", "name")
+      it "works OK when both tags are present for proposals" do
+        create(:proposal).tags = [uppercase_tag]
+        create(:proposal).tags = [lowercase_tag]
 
-      expect(received_tags).to match_array ["Health", "health"]
-    end
+        response = execute("{ tags { edges { node { name } } } }")
+        received_tags = extract_fields(response, "tags", "name")
 
-    it "uppercase and lowercase tags work ok together for debates" do
-      create(:tag, name: "Health")
-      create(:tag, name: "health")
-      create(:debate, tag_list: "Health")
-      create(:debate, tag_list: "health")
+        expect(received_tags).to match_array ["Health", "health"]
+      end
 
-      response = execute("{ tags { edges { node { name } } } }")
-      received_tags = extract_fields(response, "tags", "name")
+      it "works OK when both tags are present for proposals" do
+        create(:debate).tags = [uppercase_tag]
+        create(:debate).tags = [lowercase_tag]
 
-      expect(received_tags).to match_array ["Health", "health"]
+        response = execute("{ tags { edges { node { name } } } }")
+        received_tags = extract_fields(response, "tags", "name")
+
+        expect(received_tags).to match_array ["Health", "health"]
+      end
     end
 
     it "does not display tags for hidden proposals" do

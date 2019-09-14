@@ -2,7 +2,7 @@
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; font-size: 20px;">
     <%= t("mailers.direct_message_for_sender.title_html",
-        receiver: @direct_message.receiver.name ) %>
+        receiver: @direct_message.receiver.name) %>
   </p>
 
   <h2 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; font-size: 18px;">
@@ -10,6 +10,6 @@
   </h2>
 
   <div style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= simple_format text_with_links(@direct_message.body), {}, sanitize: false  %>
+    <%= simple_format text_with_links(@direct_message.body), {}, sanitize: false %>
   </div>
 </td>

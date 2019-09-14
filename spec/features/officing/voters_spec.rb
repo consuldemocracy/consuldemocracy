@@ -178,8 +178,8 @@ describe "Voters" do
 
     second_booth = create(:poll_booth)
 
-    ba1 = create(:poll_booth_assignment, poll: poll1, booth: second_booth )
-    ba2 = create(:poll_booth_assignment, poll: poll2, booth: second_booth )
+    ba1 = create(:poll_booth_assignment, poll: poll1, booth: second_booth)
+    ba2 = create(:poll_booth_assignment, poll: poll2, booth: second_booth)
     create(:poll_shift, officer: officer, booth: second_booth, date: Date.current, task: :vote_collection)
 
     validate_officer

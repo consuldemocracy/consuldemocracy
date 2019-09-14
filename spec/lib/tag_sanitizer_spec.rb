@@ -22,7 +22,7 @@ describe TagSanitizer do
 
   describe "#sanitize_tag_list" do
     it "returns a new tag list with sanitized tags" do
-      expect(subject.sanitize_tag_list(%w{x=1 y?z})).to eq(%w(x1 yz))
+      expect(subject.sanitize_tag_list(%w[x=1 y?z])).to eq(%w[x1 yz])
     end
   end
 

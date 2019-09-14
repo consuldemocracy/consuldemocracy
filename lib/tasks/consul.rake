@@ -8,6 +8,8 @@ namespace :consul do
     "stats_and_results:migrate_to_reports",
     "budgets:calculate_ballot_lines",
     "settings:remove_deprecated_settings",
+    "settings:rename_setting_keys",
+    "settings:add_new_settings",
     "stats:generate"
   ]
 end

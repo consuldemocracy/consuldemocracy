@@ -6,6 +6,42 @@ module Statisticable
     attr_reader :resource
   end
 
+  class_methods do
+    def stats_methods
+      base_stats_methods + gender_methods + age_methods + geozone_methods
+    end
+
+    def base_stats_methods
+      %i[total_participants participations] + participation_check_methods
+    end
+
+    def participation_check_methods
+      PARTICIPATIONS.map { |participation| :"#{participation}?" }
+    end
+
+    def gender_methods
+      %i[total_male_participants total_female_participants male_percentage female_percentage]
+    end
+
+    def age_methods
+      [:participants_by_age]
+    end
+
+    def geozone_methods
+      %i[participants_by_geozone total_no_demographic_data]
+    end
+
+    def stats_cache(*method_names)
+      method_names.each do |method_name|
+        alias_method :"raw_#{method_name}", method_name
+
+        define_method method_name do
+          stats_cache(method_name) { send(:"raw_#{method_name}") }
+        end
+      end
+    end
+  end
+
   def initialize(resource)
     @resource = resource
   end
@@ -150,40 +186,4 @@ module Statisticable
         I18n.t("stats.age_range", start: start, finish: finish)
       end
     end
-
-  class_methods do
-    def stats_methods
-      base_stats_methods + gender_methods + age_methods + geozone_methods
-    end
-
-    def base_stats_methods
-      %i[total_participants participations] + participation_check_methods
-    end
-
-    def participation_check_methods
-      PARTICIPATIONS.map { |participation| :"#{participation}?" }
-    end
-
-    def gender_methods
-      %i[total_male_participants total_female_participants male_percentage female_percentage]
-    end
-
-    def age_methods
-      [:participants_by_age]
-    end
-
-    def geozone_methods
-      %i[participants_by_geozone total_no_demographic_data]
-    end
-
-    def stats_cache(*method_names)
-      method_names.each do |method_name|
-        alias_method :"raw_#{method_name}", method_name
-
-        define_method method_name do
-          stats_cache(method_name) { send(:"raw_#{method_name}") }
-        end
-      end
-    end
-  end
 end

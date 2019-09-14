@@ -8,7 +8,7 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
   before_action :load_budget
   before_action :load_investment, only: [:show, :edit]
 
-  has_orders %w{oldest}, only: [:show, :edit]
+  has_orders %w[oldest], only: [:show, :edit]
 
   load_and_authorize_resource :investment, class: "Budget::Investment"
 
@@ -47,9 +47,8 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
     end
 
     def heading_filters
-      investments = @budget.investments.by_tracker(current_user.tracker.try(:id))
-                                       .distinct
-      investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id).uniq)
+      investments = @budget.investments.by_tracker(current_user.tracker&.id).distinct
+      investment_headings = Budget::Heading.where(id: investments.pluck(:heading_id))
                                            .order(name: :asc)
       all_headings_filter = [
                               {
@@ -63,7 +62,7 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
         filters << {
           name: heading.name,
           id: heading.id,
-          count: investments.select{|i| i.heading_id == heading.id}.size
+          count: investments.select { |i| i.heading_id == heading.id }.size
         }
       end
       filters.uniq

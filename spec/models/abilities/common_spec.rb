@@ -189,7 +189,7 @@ describe Abilities::Common do
   describe "when level 2 verified" do
     let(:own_direct_message) { create(:direct_message, sender: user) }
 
-    before{ user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
+    before { user.update(residence_verified_at: Time.current, confirmed_phone: "1") }
 
     describe "Proposal" do
       it { should be_able_to(:vote, Proposal) }
@@ -274,7 +274,7 @@ describe Abilities::Common do
   describe "when level 3 verified" do
     let(:own_direct_message) { create(:direct_message, sender: user) }
 
-    before{ user.update(verified_at: Time.current) }
+    before { user.update(verified_at: Time.current) }
 
     it { should be_able_to(:vote, Proposal)          }
     it { should be_able_to(:vote_featured, Proposal) }

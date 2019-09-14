@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "Retrieves number of supports for the successful proposal" do
-  let(:created_at) { Time.now.beginning_of_day - 9.days }
+  let(:created_at) { Date.current.beginning_of_day - 9.days }
   let(:proposal) { create(:proposal, created_at: created_at, published_at: created_at) }
 
   before do

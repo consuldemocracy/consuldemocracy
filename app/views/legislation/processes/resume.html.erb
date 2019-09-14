@@ -1,4 +1,4 @@
-<% provide(:title) {@process.title} %>
+<% provide(:title) { @process.title } %>
 
 <%= render "legislation/processes/header", process: @process, header: :full %>
 
@@ -10,7 +10,7 @@
   </div>
 <% else %>
   <button class="button hollow download-button">
-    <%= link_to 'Download', resume_legislation_process_path(format: :xlsx) %>
+    <%= link_to "Download", resume_legislation_process_path(format: :xlsx) %>
   </button>
 
   <% if @process.debate_phase.enabled? %>

@@ -181,7 +181,7 @@ shared_examples_for "verifiable" do
 
   describe "methods modified by Setting user.skip_verification" do
 
-    let(:user) {create(:user)}
+    let(:user) { create(:user) }
 
     before do
       Setting["feature.user.skip_verification"] = "true"

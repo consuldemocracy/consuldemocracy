@@ -37,7 +37,7 @@ describe "Valuation budget investments" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
-    expect{
+    expect {
       visit valuation_budget_budget_investments_path(create(:budget))
     }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
@@ -188,8 +188,8 @@ describe "Valuation budget investments" do
     end
 
     scenario "Current filter is properly highlighted" do
-      filters_links = {"valuating" => "Under valuation",
-                       "valuation_finished" => "Valuation finished"}
+      filters_links = { "valuating" => "Under valuation",
+                        "valuation_finished" => "Valuation finished" }
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -298,7 +298,7 @@ describe "Valuation budget investments" do
       logout
       login_as create(:valuator).user
 
-      expect{
+      expect {
         visit valuation_budget_budget_investment_path(budget, investment)
       }.to raise_error "Not Found"
     end
@@ -546,7 +546,6 @@ describe "Valuation budget investments" do
 
       investment = create(:budget_investment, budget: budget)
       investment.valuators << [valuator]
-
 
       login_as(admin.user)
       visit valuation_budget_budget_investment_path(budget, investment)

@@ -12,7 +12,7 @@ describe "Admin hidden proposals" do
     admin = create(:administrator)
     login_as(admin.user)
 
-    expect{ visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "List shows all relevant info" do

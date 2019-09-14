@@ -19,7 +19,7 @@ describe "Admin budgets" do
     end
 
     scenario "Disabled with a feature flag" do
-      expect{ visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
   end
@@ -93,7 +93,7 @@ describe "Admin budgets" do
     end
 
     scenario "Open filter is properly highlighted" do
-      filters_links = {"current" => "Open", "finished" => "Finished"}
+      filters_links = { "current" => "Open", "finished" => "Finished" }
 
       visit admin_budgets_path
 
@@ -285,7 +285,6 @@ describe "Admin budgets" do
       expect(page).to have_content winner.title
       expect(page).not_to have_content unselected.title
       expect(page).not_to have_content selected.title
-
 
       visit edit_admin_budget_path(budget)
       expect(page).to have_content "See results"

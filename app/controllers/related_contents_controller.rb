@@ -30,22 +30,22 @@ class RelatedContentsController < ApplicationController
 
   private
 
-  def score(action)
-    @related = RelatedContent.find params[:id]
-    @related.send("score_#{action}", current_user)
+    def score(action)
+      @related = RelatedContent.find params[:id]
+      @related.send("score_#{action}", current_user)
 
-    render template: "relationable/_refresh_score_actions"
-  end
+      render template: "relationable/_refresh_score_actions"
+    end
 
-  def valid_url?
-    params[:url].start_with?(Setting["url"])
-  end
+    def valid_url?
+      params[:url].start_with?(Setting["url"])
+    end
 
-  def relationable_object
-    @relationable = params[:relationable_klass].singularize.camelize.constantize.find_by(id: params[:relationable_id])
-  end
+    def relationable_object
+      @relationable = params[:relationable_klass].singularize.camelize.constantize.find_by(id: params[:relationable_id])
+    end
 
-  def related_object
+    def related_object
       if valid_url?
         url = params[:url]
 
@@ -55,7 +55,7 @@ class RelatedContentsController < ApplicationController
 
         @related = related_klass.singularize.camelize.constantize.find_by(id: related_id)
       end
-  rescue
+    rescue
       nil
-  end
+    end
 end

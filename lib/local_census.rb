@@ -28,9 +28,9 @@ class LocalCensus
     end
 
     def district_code
-        @body.district_code
+      @body.district_code
     rescue
-        nil
+      nil
     end
 
     def gender
@@ -45,9 +45,9 @@ class LocalCensus
     end
 
     def name
-        "#{@body.nombre} #{@body.apellido1}"
+      "#{@body.nombre} #{@body.apellido1}"
     rescue
-        nil
+      nil
     end
 
     private

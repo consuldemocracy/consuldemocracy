@@ -268,7 +268,7 @@ describe "System Emails" do
       expect(page).to have_content comment.body
 
       expect(page).to have_link "Cleaner city",
-        href: admin_budget_budget_investment_url( investment.budget, investment, anchor: "comments")
+        href: admin_budget_budget_investment_url(investment.budget, investment, anchor: "comments")
     end
 
   end

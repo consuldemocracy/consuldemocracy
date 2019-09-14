@@ -18,7 +18,7 @@ describe "Legislation" do
 
   context "process empty" do
     before do
-      @process = create(:legislation_process, :empty, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, :empty, end_date: Date.current - 1.day)
     end
 
     scenario "warning empty" do
@@ -29,7 +29,7 @@ describe "Legislation" do
 
   context "phases empty" do
     before do
-      @process = create(:legislation_process, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, end_date: Date.current - 1.day)
     end
 
     scenario "debates empty" do
@@ -56,7 +56,7 @@ describe "Legislation" do
 
   context "process empty" do
     before do
-      @process = create(:legislation_process, :empty, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, :empty, end_date: Date.current - 1.day)
     end
 
     scenario "warning empty" do
@@ -68,15 +68,13 @@ describe "Legislation" do
   context "only debates exist" do
     before do
       user = create(:user, :level_two)
-      @process = create(:legislation_process, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, end_date: Date.current - 1.day)
       @debate = create(:legislation_question, process: @process, title: "Question 1")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 1")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 2")
       @debate = create(:legislation_question, process: @process, title: "Question 2")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 3")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 4")
-
-
     end
 
     scenario "show debates list" do
@@ -125,7 +123,7 @@ describe "Legislation" do
 
   context "only proposals exist" do
     before do
-      @process = create(:legislation_process, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, end_date: Date.current - 1.day)
       create(:legislation_proposal, legislation_process_id: @process.id,
              title: "Legislation proposal 1", selected: true)
       create(:legislation_proposal, legislation_process_id: @process.id,
@@ -173,7 +171,7 @@ describe "Legislation" do
   context "only text comments exist" do
     before do
       user = create(:user, :level_two)
-      @process = create(:legislation_process, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, end_date: Date.current - 1.day)
       draft_version_1 = create(:legislation_draft_version, process: @process,
                                title: "Version 1", body: "Body of the first version",
                                status: "published")
@@ -182,13 +180,13 @@ describe "Legislation" do
                                status: "published")
       annotation0 = create(:legislation_annotation,
                            draft_version: draft_version_1, text: "my annotation123",
-                           ranges: [{"start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10}])
+                           ranges: [{ "start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10 }])
       annotation1 = create(:legislation_annotation,
                            draft_version: draft_version_2, text: "hola",
-                           ranges: [{"start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10}])
+                           ranges: [{ "start" => "/p[1]", "startOffset" => 5, "end" => "/p[1]", "endOffset" => 10 }])
       annotation2 = create(:legislation_annotation,
                            draft_version: draft_version_2,
-                           ranges: [{"start" => "/p[1]", "startOffset" => 12, "end" => "/p[1]", "endOffset" => 19}])
+                           ranges: [{ "start" => "/p[1]", "startOffset" => 12, "end" => "/p[1]", "endOffset" => 19 }])
       create(:text_comment, user: user, commentable_id: annotation0.id, body: "Comment 0")
       create(:text_comment, user: user, commentable_id: annotation1.id, body: "Comment 1")
       create(:text_comment, user: user, commentable_id: annotation2.id, body: "Comment 2")
@@ -233,14 +231,14 @@ describe "Legislation" do
   describe Legislation::ProcessesController, type: :controller do
     before do
       user = create(:user, :level_two)
-      @process = create(:legislation_process, end_date: Date.current - 1.days)
+      @process = create(:legislation_process, end_date: Date.current - 1.day)
       @debate = create(:legislation_question, process: @process, title: "Question 1")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 1")
       create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 2")
     end
 
     it "download execl file test" do
-      get :resume, params: {id: @process, format: :xlsx}
+      get :resume, params: { id: @process, format: :xlsx }
       expect(response).to be_success
     end
   end

@@ -26,7 +26,7 @@
                                  Setting["months_to_archive_proposals"].to_i.months %>
   <p>
     <%= t("mailers.new_actions_notification_rake_published.text_3",
-          days_count: (limit_to_archive_proposal - Date.today).to_i,
+          days_count: (limit_to_archive_proposal - Date.current).to_i,
           max_votes_count: Setting["votes_for_proposal_success"]) %>
   </p>
 

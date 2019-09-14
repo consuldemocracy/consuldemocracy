@@ -111,25 +111,25 @@ describe "Commenting polls" do
   end
 
   scenario "Creation date works differently in roots and in child comments, when sorting by confidence_score" do
-   old_root = create(:comment, commentable: poll, created_at: Time.current - 10)
-   new_root = create(:comment, commentable: poll, created_at: Time.current)
-   old_child = create(:comment, commentable: poll, parent_id: new_root.id, created_at: Time.current - 10)
-   new_child = create(:comment, commentable: poll, parent_id: new_root.id, created_at: Time.current)
+    old_root = create(:comment, commentable: poll, created_at: Time.current - 10)
+    new_root = create(:comment, commentable: poll, created_at: Time.current)
+    old_child = create(:comment, commentable: poll, parent_id: new_root.id, created_at: Time.current - 10)
+    new_child = create(:comment, commentable: poll, parent_id: new_root.id, created_at: Time.current)
 
-   visit poll_path(poll, order: :most_voted)
+    visit poll_path(poll, order: :most_voted)
 
-   expect(new_root.body).to appear_before(old_root.body)
-   expect(old_child.body).to appear_before(new_child.body)
+    expect(new_root.body).to appear_before(old_root.body)
+    expect(old_child.body).to appear_before(new_child.body)
 
-   visit poll_path(poll, order: :newest)
+    visit poll_path(poll, order: :newest)
 
-   expect(new_root.body).to appear_before(old_root.body)
-   expect(new_child.body).to appear_before(old_child.body)
+    expect(new_root.body).to appear_before(old_root.body)
+    expect(new_child.body).to appear_before(old_child.body)
 
-   visit poll_path(poll, order: :oldest)
+    visit poll_path(poll, order: :oldest)
 
-   expect(old_root.body).to appear_before(new_root.body)
-   expect(old_child.body).to appear_before(new_child.body)
+    expect(old_root.body).to appear_before(new_root.body)
+    expect(old_child.body).to appear_before(new_child.body)
   end
 
   scenario "Turns links into html links" do
@@ -160,7 +160,7 @@ describe "Commenting polls" do
 
   scenario "Paginated comments" do
     per_page = 10
-    (per_page + 2).times { create(:comment, commentable: poll)}
+    (per_page + 2).times { create(:comment, commentable: poll) }
 
     visit poll_path(poll)
 

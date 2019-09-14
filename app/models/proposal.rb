@@ -78,7 +78,7 @@ class Proposal < ApplicationRecord
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
@@ -96,7 +96,7 @@ class Proposal < ApplicationRecord
   end
 
   def publish
-    update(published_at: Time.now)
+    update(published_at: Time.current)
     send_new_actions_notification_on_published
   end
 
@@ -135,13 +135,13 @@ class Proposal < ApplicationRecord
     {
       author.username       => "B",
       tag_list.join(" ")    => "B",
-      geozone.try(:name)    => "B"
+      geozone&.name         => "B"
     }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
     by_code = search_by_code(terms.strip)
-    by_code.present? ? by_code : pg_search(terms)
+    by_code.presence || pg_search(terms)
   end
 
   def self.search_by_code(terms)
@@ -213,11 +213,11 @@ class Proposal < ApplicationRecord
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for("Proposal") }
+    tags.each { |t| t.decrement_custom_counter_for("Proposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for("Proposal") }
+    tags.each { |t| t.increment_custom_counter_for("Proposal") }
   end
 
   def self.votes_needed_for_success

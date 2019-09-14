@@ -14,7 +14,7 @@
 </div>
 
 <hr>
-<%= render partial: "/budgets/investments/investment_detail", locals: {investment: @investment, preview: true} %>
+<%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
 </hr>
 
 <% if @investment.external_url.present? %>

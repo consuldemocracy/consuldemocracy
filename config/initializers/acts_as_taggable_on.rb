@@ -47,7 +47,7 @@ module ActsAsTaggableOn
 
     pg_search_scope :pg_search, against: :name,
                                 using: {
-                                  tsearch: {prefix: true}
+                                  tsearch: { prefix: true }
                                 },
                                 ignoring: :accents
 

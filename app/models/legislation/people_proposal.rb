@@ -46,7 +46,7 @@ class Legislation::PeopleProposal < ApplicationRecord
   scope :sort_by_id,               -> { reorder(id: :asc) }
   scope :sort_by_supports,         -> { reorder(cached_votes_score: :desc) }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
-  scope :last_week,                -> { where("people_proposals.created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("people_proposals.created_at >= ?", 7.days.ago) }
   scope :validated,                -> { where(validated: true) }
   scope :selected,                 -> { where(selected: true) }
   scope :winners,                  -> { selected.sort_by_confidence_score }
@@ -60,12 +60,12 @@ class Legislation::PeopleProposal < ApplicationRecord
       author.username    => "B",
       tag_list.join(" ") => "B",
       summary            => "C",
-      description        => "D"}
+      description        => "D" }
   end
 
   def self.search(terms)
     by_code = search_by_code(terms.strip)
-    by_code.present? ? by_code : pg_search(terms)
+    by_code.presence || pg_search(terms)
   end
 
   def self.search_by_code(terms)
@@ -131,11 +131,11 @@ class Legislation::PeopleProposal < ApplicationRecord
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for("LegislationPeopleProposal") }
+    tags.each { |t| t.decrement_custom_counter_for("LegislationPeopleProposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for("LegislationPeopleProposal") }
+    tags.each { |t| t.increment_custom_counter_for("LegislationPeopleProposal") }
   end
 
   def contact_info

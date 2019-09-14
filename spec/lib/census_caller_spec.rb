@@ -6,7 +6,7 @@ describe CensusCaller do
   describe "#call" do
     it "returns data from local_census_records if census API is not available" do
       census_api_response = CensusApi::Response.new(get_habita_datos_response: {
-          get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {} }
+          get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}
         }
       )
 
@@ -26,7 +26,7 @@ describe CensusCaller do
     it "returns data from census API if it's available and valid" do
       census_api_response = CensusApi::Response.new(get_habita_datos_response: {
         get_habita_datos_return: {
-          datos_habitante: { item: { fecha_nacimiento_string: "1-1-1980" } }
+          datos_habitante: { item: { fecha_nacimiento_string: "1-1-1980" }}
         }
       })
 
@@ -58,7 +58,7 @@ describe CensusCaller do
 
         remote_census_api_response = RemoteCensusApi::Response.new(get_habita_datos_response: {
           get_habita_datos_return: {
-            datos_habitante: { item: { fecha_nacimiento_string: "1-1-1980" } }
+            datos_habitante: { item: { fecha_nacimiento_string: "1-1-1980" }}
           }
         })
 
@@ -82,7 +82,7 @@ describe CensusCaller do
 
         remote_census_api_response = RemoteCensusApi::Response.new(get_habita_datos_response: {
           get_habita_datos_return: {
-            datos_habitante: { item: { fecha_nacimiento_string: "1-1-1980" } }
+            datos_habitante: { item: { fecha_nacimiento_string: "1-1-1980" }}
           }
         })
 

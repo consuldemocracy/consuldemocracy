@@ -2,10 +2,10 @@
 <% unless @comment_tree.nil? %>
   <% can_comment = (!@budget.finished? && can?(:comment_valuation, @investment)) %>
 
-  <%= render partial: "/comments/comment_tree", locals: { comment_tree: @comment_tree,
+  <%= render "/comments/comment_tree", comment_tree: @comment_tree,
     comment_flags: @comment_flags,
     display_comments_count: false,
     valuation: true,
     allow_comments: can_comment,
-    admin_layout: true } %>
+    admin_layout: true %>
 <% end %>

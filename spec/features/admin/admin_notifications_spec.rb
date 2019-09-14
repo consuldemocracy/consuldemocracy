@@ -98,7 +98,6 @@ describe "Admin Notifications" do
         click_link "Edit"
       end
 
-
       fill_in_admin_notification_form(segment_recipient: "All users",
                                       title: "Other title",
                                       body: "Other body",
