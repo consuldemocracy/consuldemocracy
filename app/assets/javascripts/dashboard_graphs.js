@@ -23,6 +23,8 @@
     this.xColumnValues = null;
     this.progressColumnValues = null;
     this.resourcesUrl = null;
+    this.proposalSettingsUrl = null;
+    this.hideSuccessfulProposal = null;
   };
 
   ProposalGraph.prototype.refresh = function() {
@@ -30,6 +32,7 @@
       .then(this.refreshData.bind(this))
       .then(this.refreshSuccessfulData.bind(this))
       .then(this.refreshAchievements.bind(this))
+      .then(this.refreshSettings.bind(this))
       .done(this.draw.bind(this));
   };
 
@@ -141,6 +144,25 @@
     }
   };
 
+  ProposalGraph.prototype.refreshSettings = function(data) {
+    return $.ajax({
+      url: this.proposalSettingsUrl,
+      cache: false,
+      success: function(data) {
+        this.parseSettings(data)
+      }.bind(this),
+      data: {
+        group_by: this.groupBy
+      }
+    });
+  };
+
+  ProposalGraph.prototype.parseSettings = function(data) {
+    this.hideSuccessfulProposal = data.find(
+      s => s.key == 'proposals.deactivate_successful_proposal'
+    ).value;
+  };
+
   ProposalGraph.prototype.addXColumnValue = function (value) {
     if (this.xColumnValues.indexOf(value) === -1) {
       this.xColumnValues.push(value);
@@ -156,7 +178,7 @@
     colors[this.progressColumnValues[0]] = '#004a83';
     colors[this.successfulColumnValues[0]] = '#ff7f0e';
 
-    c3.generate({
+    var chart = c3.generate({
       bindto: '#' + this.targetId,
       data: {
         x: 'x',
@@ -228,6 +250,12 @@
         }
       }
     });
+
+    if(this.hideSuccessfulProposal != null &&
+      this.hideSuccessfulProposal != '' &&
+      this.hideSuccessfulProposal != false) {
+      chart.unload('Ideal progress');
+    }
   };
 
   ProposalGraph.prototype.tickYValues = function () {
@@ -301,8 +329,10 @@
       graph.successLabel = $(this).data('proposal-graph-success-label');
       graph.proposalSuccess = parseInt($(this).data('proposal-success'), 10);
       graph.resourcesUrl = $(this).data('proposal-resources-url');
+      graph.proposalSettingsUrl = $(this).data('proposal-settings-url');
 
       graph.refresh();
+
     });
   });
 })();

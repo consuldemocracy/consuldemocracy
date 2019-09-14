@@ -122,6 +122,7 @@ class Setting < ApplicationRecord
         "proposals.email_description": nil,
         "proposals.poster_short_title": nil,
         "proposals.poster_description": nil,
+        "proposals.deactivate_successful_proposal": nil,
         # Images and Documents
         "uploads.images.title.min_length": 4,
         "uploads.images.title.max_length": 80,

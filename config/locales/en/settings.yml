@@ -77,6 +77,8 @@ en:
       poster_short_title_description: 'Short description of the poster feature. Allows users to download a poster on PDF format to promote their proposal. You can find all the content of this poster in "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Poster description
       poster_description_description: Detailed description of the poster feature
+      deactivate_successful_proposal: Deactivate Successful Proposal Comparison
+      deactivate_successful_proposal_description: Hides the successful proposal support comparison on the support evolution graph
     analytics_url: "Analytics URL"
     proposal_notification_minimum_interval_in_days: "Minimum interval (in days) for authors of proposals to send new proposal notifications"
     proposal_notification_minimum_interval_in_days_description: "The number of days user can send a notification for all supporters of their proposal"
