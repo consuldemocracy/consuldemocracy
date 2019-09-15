@@ -131,6 +131,8 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+      budget/investment/translation:
+        title: "Titre"
       geozone:
         name: Nom
         external_code: "Code externe (optionnel)"
@@ -169,6 +171,8 @@ fr:
         question: "Question"
         description: "Description"
         terms_of_service: "Conditions d'utilisation"
+      proposal/translation:
+        title: "Titre de la proposition"
       user:
         login: "Email ou nom d’utilisateur"
         email: "Email"
