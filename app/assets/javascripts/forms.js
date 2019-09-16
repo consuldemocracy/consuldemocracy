@@ -56,9 +56,10 @@
       });
       $("[name='progress_bar[kind]']").change();
     },
-    toggleSelect = function() {
+    toggleSelect: function() {
       $('.js-toggle-select').on('change', function() {
-        var dropdown, ref, target;
+        var dropdown, ref, target, indexOf;
+        indexOf = [].indexOf;
         dropdown = $(this);
         target = $(dropdown.data('toggle-selector'));
         if (ref = dropdown.val(), indexOf.call(dropdown.data('hide-on').split(','), ref) >= 0) {
