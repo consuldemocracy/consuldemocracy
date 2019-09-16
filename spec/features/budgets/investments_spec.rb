@@ -1970,7 +1970,6 @@ describe "Budget Investments" do
 
           investment = create(:budget_investment, :selected, price: 1, heading: global_heading)
 
-
           login_as(user)
           visit budget_investments_path(budget, heading_id: global_heading.id)
 

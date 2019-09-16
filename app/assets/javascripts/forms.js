@@ -57,15 +57,15 @@
       $("[name='progress_bar[kind]']").change();
     },
     toggleSelect: function() {
-      $('.js-toggle-select').on('change', function() {
+      $(".js-toggle-select").on("change", function() {
         var dropdown, ref, target, indexOf;
         indexOf = [].indexOf;
         dropdown = $(this);
-        target = $(dropdown.data('toggle-selector'));
-        if (ref = dropdown.val(), indexOf.call(dropdown.data('hide-on').split(','), ref) >= 0) {
-          target.addClass('hide');
+        target = $(dropdown.data("toggle-selector"));
+        if (ref = dropdown.val(), indexOf.call(dropdown.data("hide-on").split(","), ref) >= 0) {
+          target.addClass("hide");
         } else {
-          target.removeClass('hide');
+          target.removeClass("hide");
         }
       });
     },

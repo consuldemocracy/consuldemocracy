@@ -23,7 +23,7 @@ module BudgetsHelper
   end
 
   def budget_voting_styles_select_options
-    Budget::VOTING_STYLES.map { |style| [ t("budgets.voting_style.#{style}"), style] }
+    Budget::VOTING_STYLES.map { |style| [t("budgets.voting_style.#{style}"), style] }
   end
 
   def budget_currency_symbol_select_options
