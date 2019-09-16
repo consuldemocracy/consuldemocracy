@@ -143,6 +143,8 @@ en:
         currency_symbol: "Currency"
       budget/translation:
         name: "Name"
+        voting_style: "Voting Style"
+        money_bounded: "Voter can't exceed budget"
       budget/investment:
         heading_id: "Heading"
         title: "Title"
@@ -209,6 +211,7 @@ en:
         enabled: "Phase enabled"
         ends_at: "End date"
         starts_at: "Start date"
+        max_votes: "Number of votes a user can cast under each heading"
       budget/phase/translation:
         description: "Description"
         summary: "Summary"

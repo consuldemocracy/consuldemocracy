@@ -134,6 +134,8 @@ es:
         create: "Crear nuevo grupo"
         edit: "Editar grupo"
         submit: "Guardar grupo"
+        voting_style: "Estilo de votación"
+        number_votes_per_heading: "Número de votos que se pueden realizar por partida"
       index:
         back: "Volver a presupuestos"
     budget_headings:

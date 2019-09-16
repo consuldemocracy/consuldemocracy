@@ -1,0 +1,7 @@
+<div class="panel clear">
+  <p>
+    <%= t("budgets.progress_bar.remaining_votes_html",
+          casted_votes: @ballot.investments.count,
+          votes_available: @heading.max_votes) %>
+  </p>
+</div>

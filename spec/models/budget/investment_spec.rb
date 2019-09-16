@@ -1086,6 +1086,34 @@ describe Budget::Investment do
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
+
+        it "does not reject proposals with price higher than current available money for "\
+           "approval voting, with voting_cant_exceed_heading_budget set to false" do
+          budget.update!(phase: "balloting", money_bounded: false)
+          districts = create(:budget_group, budget: budget)
+          carabanchel = create(:budget_heading, group: districts, price: 35)
+          inv1 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 10)
+
+          ballot = create(:budget_ballot, user: user, budget: budget)
+          ballot.investments << inv1
+
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to be_nil
+        end
+
+        it "rejects if not enough available votes" do
+          budget.update!(voting_style: "approval", phase: "balloting")
+          districts = create(:budget_group, budget: budget)
+          carabanchel = create(:budget_heading, group: districts, price: 35, max_votes: 1)
+          inv1 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 10)
+
+          ballot = create(:budget_ballot, user: user, budget: budget)
+          ballot.investments << inv1
+
+          reason = inv2.reason_for_not_being_ballotable_by(user, ballot)
+          expect(reason).to eq(:not_enough_available_votes_html)
+        end
       end
     end
   end

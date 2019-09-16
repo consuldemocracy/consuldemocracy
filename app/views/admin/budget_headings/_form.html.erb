@@ -32,6 +32,8 @@
         <%= t("admin.budget_headings.form.content_blocks_info") %>
       </p>
 
+      <%= f.number_field :max_votes if @heading.budget.approval_voting? %>
+
       <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
     </div>
   </div>
