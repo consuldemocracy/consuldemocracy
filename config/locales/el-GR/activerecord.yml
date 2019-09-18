@@ -371,7 +371,7 @@ el:
       valuator:
         description: Περιγραφή
         valuator_group_id: Ομάδα αξιολόγησης
-        can_comment: Μπορεί να σχολιάσει
+        can_comment: Μπορεί να εισάγει σχόλιο
         can_edit_dossier: Μπορεί να επεξεργαστεί φακέλους
       local_census_record:
         document_type: Τύπος εγγράφου
@@ -455,6 +455,7 @@ el:
             valuation:
               cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
       messages:
+        translations_too_short: Υποχρεούται να παρέχετε τουλάχιστον μία μετάφραση
         record_invalid: "Η επικύρωση απέτυχε: %{errors}"
         another_poll_active: Υπάρχει άλλη ενεργή δημοσκόπηση για την δεδομένη περίοδο
         restrict_dependent_destroy:
