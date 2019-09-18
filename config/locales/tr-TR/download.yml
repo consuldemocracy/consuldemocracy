@@ -33,7 +33,7 @@ tr:
         cached_votes_score: "Önbellek oyu puanı"
         confidence_score: "Güven puanı"
         geozone_id: "Coğrafi bölge kimliği"
-        author_name: "Yazar adı"
+        author_name: "Fikir sahibinin adı"
         author_email: "Yazar e-posta"
       proposals:
         id: "Kimlik Numarası"
