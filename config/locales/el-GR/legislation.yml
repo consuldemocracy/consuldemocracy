@@ -20,7 +20,7 @@ el:
       index:
         title: Σχόλια
         comments_about: Σχόλια σχετικά με
-        comment_about: "Σχολιάστε σχετικά με:"
+        comment_about: "Σχόλιο σχετικά με:"
         see_in_context: Δείτε στο περιεχόμενο
         comments_count:
           zero: Δεν υπάρχουν σχόλια
@@ -139,7 +139,7 @@ el:
       votes: Ψήφοι
       debates_phase: Φάση συζητήσεων
       proposal_phase: Φάση προτάσεων
-      comments_phase: Φάση γραπτών σχόλιων
+      comments_phase: Φάση σχόλιων
       comments:
         zero: Δεν υπάρχουν σχόλια
         one: "%{count} σχόλιο"
