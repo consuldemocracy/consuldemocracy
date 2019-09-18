@@ -125,6 +125,9 @@ el:
       link:
         one: Σύνδεσμος
         other: Σύνδεσμοι
+      local_census_record:
+        one: Τοπικά αρχεία
+        other: Τίτλος
     attributes:
       budget:
         name: "Όνομα"
@@ -150,6 +153,8 @@ el:
         organization_name: "Εάν υποβάλετε πρόταση εκ μέρους ομάδας, οργανισμού ή άλλων προσώπων, παρακαλείσθε όπως αναφέρετε την ονομάσία τους"
         image: "Περιγραφική εικόνα πρότασης"
         image_title: "Τίτλος εικόνας"
+      budget/investment/translation:
+        description: "Περιγραφή"
       geozone:
         name: Όνομα
         external_code: "Εξωτερικός κώδικας (προαιρετικό)"
@@ -182,6 +187,9 @@ el:
         description: "Γνώμη"
         terms_of_service: "Όροι υπηρεσίας"
         title: "Τίτλος"
+      debate/translation:
+        title: "Τίτλος συζήτησης"
+        description: "Αρχικό κείμενο συζήτησης"
       proposal:
         author: "Συντάκτης"
         title: "Τίτλος"
@@ -189,6 +197,11 @@ el:
         description: "Περιγραφή"
         selected: "Σημείωστε ως επιλεγμένο"
         terms_of_service: "Όροι υπηρεσίας"
+      proposal/translation:
+        title: "Τίτλος πρότασης"
+        description: "Κείμενο πρότασης"
+        summary: "Περίληψη πρότασης"
+        retired_explanation: "Επεξήγηση"
       user:
         login: "E-mail ή όνομα χρήστη"
         email: "E-Mail"
@@ -360,6 +373,11 @@ el:
         valuator_group_id: Ομάδα αξιολόγησης
         can_comment: Μπορεί να σχολιάσει
         can_edit_dossier: Μπορεί να επεξεργαστεί φακέλους
+      local_census_record:
+        document_type: Τύπος εγγράφου
+        document_number: Αριθμός εγγράφου
+        date_of_birth: Ημερομηνία γέννησης
+        postal_code: Ταχυδρομικός κώδικας
     errors:
       models:
         user:
