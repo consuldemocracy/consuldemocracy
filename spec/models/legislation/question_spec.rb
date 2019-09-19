@@ -7,6 +7,7 @@ describe Legislation::Question do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "globalizable", :legislation_question
   end
 
   it "is valid" do

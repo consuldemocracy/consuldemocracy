@@ -1,8 +1,9 @@
 require "rails_helper"
 
 describe Widget::Card do
-
   let(:card) { build(:widget_card) }
+
+  it_behaves_like "globalizable", :widget_card
 
   context "validations" do
 

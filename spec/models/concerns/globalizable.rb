@@ -1,13 +1,15 @@
 require "spec_helper"
 
 shared_examples_for "globalizable" do |factory_name|
-  let(:record) { create(:factory_name) }
-  let(:fields) { record.translated_attribute_names }
-  let(:required_fields) do
-    fields.reject do |field|
-      record.translations.first.dup.tap { |duplicate| duplicate.send(:"#{field}=", "") }.valid?
+  let(:record) do
+    if factory_name == :budget_phase
+      create(:budget).phases.last
+    else
+      create(factory_name)
     end
   end
+  let(:fields) { record.translated_attribute_names }
+  let(:required_fields) { fields.select { |field| record.send(:required_attribute?, field) } }
   let(:attribute) { required_fields.sample || fields.sample }
 
   before do
@@ -177,8 +179,6 @@ shared_examples_for "globalizable" do |factory_name|
     end
 
     it "Falls back to the first available locale after removing a locale" do
-      Globalize.set_fallbacks_to_all_available_locales
-
       expect(record.send(attribute)).to eq "In English"
 
       record.update(translations_attributes: [

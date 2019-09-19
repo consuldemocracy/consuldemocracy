@@ -73,6 +73,8 @@ FactoryBot.define do
     trait :with_milestone_tags do
       after(:create) { |proposal| proposal.milestone_tags << create(:tag, :milestone) }
     end
+
+    factory :retired_proposal, traits: [:retired]
   end
 
   factory :proposal_notification do

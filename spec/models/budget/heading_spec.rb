@@ -6,6 +6,7 @@ describe Budget::Heading do
   let(:group) { create(:budget_group, budget: budget) }
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
+  it_behaves_like "globalizable", :budget_heading
 
   describe "OSM_DISTRICT_LEVEL_ZOOM constant" do
     it "is defined" do
