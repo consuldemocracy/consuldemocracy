@@ -554,8 +554,7 @@ describe Budget::Investment do
         expect(described_class.sort_by_title.map(&:title)).to eq %w[CCCC DDDD]
       end
 
-      it "should take into consideration title fallbacks when there is no
-          translation for current locale" do
+      it "takes into consideration title fallbacks when there is no translation for current locale" do
         create(:budget_investment, title: "BBBB")
         Globalize.with_locale(:es) do
           I18n.with_locale(:es) do
