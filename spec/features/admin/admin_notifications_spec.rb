@@ -8,11 +8,6 @@ describe "Admin Notifications" do
     create(:budget)
   end
 
-  it_behaves_like "edit_translatable",
-                  "admin_notification",
-                  "edit_admin_admin_notification_path",
-                  %w[title body]
-
   context "Show" do
     scenario "Valid Admin Notification" do
       notification = create(:admin_notification, title: "Notification title",

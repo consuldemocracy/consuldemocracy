@@ -10,12 +10,6 @@ describe "Admin budget phases" do
       login_as(admin.user)
     end
 
-    it_behaves_like "edit_translatable",
-                  "budget_phase",
-                  "edit_admin_budget_budget_phase_path",
-                  [],
-                  { "description" => :ckeditor, "summary" => :ckeditor }
-
     scenario "Update phase", :js do
       visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
 

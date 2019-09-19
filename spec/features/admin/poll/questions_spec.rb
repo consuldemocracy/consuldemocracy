@@ -6,11 +6,6 @@ describe "Admin poll questions" do
     login_as(create(:administrator).user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "poll_question",
-                  "edit_admin_question_path",
-                  %w[title]
-
   scenario "Index" do
     poll1 = create(:poll)
     poll2 = create(:poll)

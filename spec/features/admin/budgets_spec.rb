@@ -7,11 +7,6 @@ describe "Admin budgets" do
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "budget",
-                  "edit_admin_budget_path",
-                  %w[name]
-
   context "Feature flag" do
 
     before do
