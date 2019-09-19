@@ -402,10 +402,10 @@ describe Poll do
         starts_at = Time.current + 1.day
         poll1 = create(:poll, starts_at: starts_at, name: "Charlie")
         poll2 = create(:poll, starts_at: starts_at, name: "Delta")
-        poll3 = Globalize.with_locale(:es) do
+        poll3 = I18n.with_locale(:es) do
           create(:poll, starts_at: starts_at, name: "Zzz...", name_fr: "Aaaah!")
         end
-        poll4 = Globalize.with_locale(:es) do
+        poll4 = I18n.with_locale(:es) do
           create(:poll, starts_at: starts_at, name: "Bravo")
         end
 

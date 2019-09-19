@@ -824,9 +824,7 @@ describe "Admin budget investments" do
 
     before do
       I18n.with_locale(:es) do
-        Globalize.with_locale(:es) do
-          create(:budget_investment, title: "Proyecto de inversión", budget: budget)
-        end
+        create(:budget_investment, title: "Proyecto de inversión", budget: budget)
       end
     end
 

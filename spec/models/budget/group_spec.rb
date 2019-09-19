@@ -58,10 +58,10 @@ describe Budget::Group do
         budget = create(:budget, name: "Teams")
         charlie = create(:budget_group, budget: budget, name: "Charlie")
         delta = create(:budget_group, budget: budget, name: "Delta")
-        zulu = Globalize.with_locale(:es) do
+        zulu = I18n.with_locale(:es) do
           create(:budget_group, budget: budget, name: "Zulu", name_fr: "Alpha")
         end
-        bravo = Globalize.with_locale(:es) do
+        bravo = I18n.with_locale(:es) do
           create(:budget_group, budget: budget, name: "Bravo")
         end
 
