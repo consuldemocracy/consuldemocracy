@@ -2,48 +2,39 @@ require "spec_helper"
 
 shared_examples_for "globalizable" do |factory_name|
   let(:record) { create(factory_name) }
-  let(:field) { record.translated_attribute_names.first }
+  let(:fields) { record.translated_attribute_names }
+  let(:attribute) { fields.sample }
 
   describe "Fallbacks" do
     before do
-      allow(I18n).to receive(:available_locales).and_return(%i[ar de en es fr])
-
-      record.update_attribute(field, "In English")
+      record.update_attribute(attribute, "In English")
 
       { es: "En español", de: "Deutsch" }.each do |locale, text|
         Globalize.with_locale(locale) do
-          record.translated_attribute_names.each do |attribute|
-            record.update_attribute(attribute, record.send(attribute))
+          fields.each do |field|
+            record.update_attribute(field, record.send(field))
           end
 
-          record.update_attribute(field, text)
+          record.update_attribute(attribute, text)
         end
       end
     end
 
-    context "With a defined fallback" do
-      before do
-        allow(I18n.fallbacks).to receive(:[]).and_return([:fr, :es])
-        Globalize.set_fallbacks_to_all_available_locales
-      end
+    it "Falls back to a defined fallback" do
+      allow(I18n.fallbacks).to receive(:[]).and_return([:fr, :es])
+      Globalize.set_fallbacks_to_all_available_locales
 
-      it "Falls back to the defined fallback" do
-        Globalize.with_locale(:fr) do
-          expect(record.send(field)).to eq "En español"
-        end
+      Globalize.with_locale(:fr) do
+        expect(record.send(attribute)).to eq "En español"
       end
     end
 
-    context "Without a defined fallback" do
-      before do
-        allow(I18n.fallbacks).to receive(:[]).and_return([:fr])
-        Globalize.set_fallbacks_to_all_available_locales
-      end
+    it "Falls back to the first available locale without a defined fallback" do
+      allow(I18n.fallbacks).to receive(:[]).and_return([:fr])
+      Globalize.set_fallbacks_to_all_available_locales
 
-      it "Falls back to the first available locale" do
-        Globalize.with_locale(:fr) do
-          expect(record.send(field)).to eq "Deutsch"
-        end
+      Globalize.with_locale(:fr) do
+        expect(record.send(attribute)).to eq "Deutsch"
       end
     end
   end
