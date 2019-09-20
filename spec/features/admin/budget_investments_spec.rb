@@ -35,10 +35,7 @@ describe "Admin budget investments" do
   end
 
   context "Load" do
-
-    let(:group)      { create(:budget_group, budget: budget) }
-    let(:heading)    { create(:budget_heading, group: group) }
-    let!(:investment) { create(:budget_investment, heading: heading) }
+    let!(:investment) { create(:budget_investment, budget: budget) }
 
     before { budget.update(slug: "budget_slug") }
 
@@ -1596,8 +1593,7 @@ describe "Admin budget investments" do
     let(:valuator) { create(:valuator) }
     let(:admin) { create(:administrator) }
 
-    let(:group) { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group) }
+    let(:heading) { create(:budget_heading, budget: budget) }
 
     let(:investment1) { create(:budget_investment, heading: heading) }
     let(:investment2) { create(:budget_investment, heading: heading) }

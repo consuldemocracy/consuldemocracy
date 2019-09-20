@@ -153,7 +153,7 @@ describe "Admin budgets" do
   context "Destroy" do
 
     let!(:budget) { create(:budget) }
-    let(:heading) { create(:budget_heading, group: create(:budget_group, budget: budget)) }
+    let(:heading) { create(:budget_heading, budget: budget) }
 
     scenario "Destroy a budget without investments" do
       visit admin_budgets_path
@@ -270,8 +270,7 @@ describe "Admin budgets" do
 
     scenario "For a Budget in reviewing balloting", :js do
       budget = create(:budget, phase: "reviewing_ballots")
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group, price: 4)
+      heading = create(:budget_heading, budget: budget, price: 4)
       unselected = create(:budget_investment, :unselected, heading: heading, price: 1,
                                                            ballot_lines_count: 3)
       winner = create(:budget_investment, :selected, heading: heading, price: 3,
@@ -302,9 +301,7 @@ describe "Admin budgets" do
 
     scenario "Recalculate for a finished Budget" do
       budget = create(:budget, :finished)
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-      create(:budget_investment, :winner, heading: heading)
+      create(:budget_investment, :winner, budget: budget)
 
       visit edit_admin_budget_path(budget)
 

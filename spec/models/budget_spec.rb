@@ -187,10 +187,8 @@ describe Budget do
   end
 
   describe "heading_price" do
-    let(:group) { create(:budget_group, budget: budget) }
-
     it "returns the heading price if the heading provided is part of the budget" do
-      heading = create(:budget_heading, price: 100, group: group)
+      heading = create(:budget_heading, price: 100, budget: budget)
       expect(budget.heading_price(heading)).to eq(100)
     end
 

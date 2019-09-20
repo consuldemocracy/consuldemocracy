@@ -115,8 +115,7 @@ describe "Budgets" do
 
     scenario "Show informing index without links" do
       budget.update_attributes(phase: "informing")
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
+      heading = create(:budget_heading, budget: budget)
 
       visit budgets_path
 
@@ -134,8 +133,7 @@ describe "Budgets" do
 
     scenario "Show finished index without heading links" do
       budget.update_attributes(phase: "finished")
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
+      heading = create(:budget_heading, budget: budget)
 
       visit budgets_path
 
@@ -157,10 +155,8 @@ describe "Budgets" do
     end
 
     scenario "Show investment links only on balloting or later" do
-
       budget = create(:budget)
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
+      create(:budget_heading, budget: budget)
 
       allowed_phase_list.each do |phase|
         budget.update(phase: phase)
@@ -174,10 +170,8 @@ describe "Budgets" do
     end
 
     scenario "Not show investment links earlier of balloting " do
-
       budget = create(:budget)
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
+      create(:budget_heading, budget: budget)
       phases_without_links = ["drafting", "informing"]
       not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
                                phases_without_links -
@@ -278,9 +272,7 @@ describe "Budgets" do
   end
 
   context "Index map" do
-
-    let(:group)   { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group) }
+    let(:heading) { create(:budget_heading, budget: budget) }
 
     before do
       Setting["feature.map"] = true

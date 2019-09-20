@@ -381,8 +381,7 @@ describe Budget::Investment do
   describe "scoped_filter" do
 
     let!(:budget)     { create(:budget, slug: "budget_slug") }
-    let!(:group)      { create(:budget_group, budget: budget) }
-    let!(:heading)    { create(:budget_heading, group: group) }
+    let!(:heading)    { create(:budget_heading, budget: budget) }
     let!(:investment) { create(:budget_investment, :feasible, heading: heading) }
 
     it "finds budget by id or slug" do
@@ -967,16 +966,14 @@ describe Budget::Investment do
 
   describe "total votes" do
     it "takes into account physical votes in addition to web votes" do
-      b = create(:budget, :selecting)
-      g = create(:budget_group, budget: b)
-      h = create(:budget_heading, group: g)
-      i = create(:budget_investment, budget: b, group: g, heading: h)
+      budget = create(:budget, :selecting)
+      investment = create(:budget_investment, budget: budget)
 
-      i.register_selection(create(:user, :level_two))
-      expect(i.total_votes).to eq(1)
+      investment.register_selection(create(:user, :level_two))
+      expect(investment.total_votes).to eq(1)
 
-      i.physical_votes = 10
-      expect(i.total_votes).to eq(11)
+      investment.physical_votes = 10
+      expect(investment.total_votes).to eq(11)
     end
   end
 
@@ -995,8 +992,7 @@ describe Budget::Investment do
 
     describe "Permissions" do
       let(:budget)      { create(:budget) }
-      let(:group)       { create(:budget_group, budget: budget) }
-      let(:heading)     { create(:budget_heading, group: group) }
+      let(:heading)     { create(:budget_heading, budget: budget) }
       let(:user)        { create(:user, :level_two) }
       let(:luser)       { create(:user) }
       let(:ballot)      { create(:budget_ballot, budget: budget) }

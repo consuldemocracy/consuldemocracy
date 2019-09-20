@@ -2,9 +2,7 @@ require "rails_helper"
 
 describe "BudgetPolls", :with_frozen_time do
   let(:budget) { create(:budget, :balloting) }
-  let(:group) { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group) }
-  let(:investment) { create(:budget_investment, :selected, heading: heading) }
+  let(:investment) { create(:budget_investment, :selected, budget: budget) }
   let(:poll) { create(:poll, :current, budget: budget) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
