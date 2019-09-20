@@ -1,153 +1,138 @@
-shared_examples "new_translatable" do |factory_name, path_name, input_fields, textarea_fields = {}|
-  let(:language_texts) do
-    {
-      es:      "en español",
-      en:      "in English",
-      fr:      "en Français",
-      "pt-BR": "Português"
-    }
-  end
+require "rails_helper"
 
-  let(:translatable_class) { build(factory_name).class }
-  let(:input_fields) { input_fields } # So it's accessible by methods
-  let(:textarea_fields) { textarea_fields } # So it's accessible by methods
-  let(:path_name) { path_name } # So it's accessible by methods
-  let(:fields) { input_fields + textarea_fields.keys }
-
-  let(:attributes) do
-    fields.product(%i[en es]).map do |field, locale|
-      [:"#{field}_#{locale}", text_for(field, locale)]
-    end.to_h
-  end
-
-  let(:optional_fields) do
-    fields.select do |field|
-      translatable.translations.last.dup.tap { |duplicate| duplicate.send(:"#{field}=", "") }.valid?
-    end
-  end
-
-  let(:required_fields) do
-    fields - optional_fields
-  end
-
+describe "Public area translatable records" do
   let(:user) { create(:user, :in_census) }
-
-  let(:translatable) do
-    if factory_name == "budget_phase"
-      budget = create(:budget)
-      budget.phases.last.update attributes
-      budget.phases.last
-    else
-      create(factory_name, attributes)
-    end
-  end
 
   before do
     Setting["feature.translation_interface"] = true
     login_as(user)
   end
 
-  context "Manage translations" do
+  context "New records", :js do
+    scenario "Add only single translation at once" do
+      visit new_debate_path
 
-    scenario "Add only single translation at once", :js do
-      visit new_translatable_path
+      fill_in "Debate title", with: "Who won the debate?"
+      fill_in_ckeditor "Initial debate text", with: "And who will win this debate?"
+      check "debate_terms_of_service"
+      click_button "Start a debate"
 
-      fill_in_new_translatable_form :en
-      click_button create_button_text
-
-      expect(page).to have_content(successul_operation_notice)
+      expect(page).to have_content "Debate created successfully"
     end
 
-    scenario "Add single translation should persist introduced field values", :js do
-      visit new_translatable_path
+    scenario "Add single translation maintains introduced field values" do
+      visit new_proposal_path
 
-      fill_in_new_translatable_form :en
-      click_button create_button_text
+      fill_in "Proposal title", with: "Olympic Games in Melbourne"
+      fill_in "Proposal summary", with: "Full proposal for our candidature"
+      fill_in_ckeditor "Proposal text", with: "2032 will make Australia famous again"
+      check "proposal_terms_of_service"
+      click_button "Create proposal"
 
-      check_introduced_values_at_translatable_edit_or_show_path(:en)
+      expect(page).to have_content "Proposal created successfully"
+      expect(page).to have_content "Olympic Games in Melbourne"
+      expect(page).to have_content "Full proposal for our candidature"
+      expect(page).to have_content "2032 will make Australia famous again"
     end
 
-    scenario "Add multiple translations at once", :js do
-      visit new_translatable_path
+    scenario "Add multiple translations at once" do
+      budget = create(:budget_heading, name: "Everywhere").group.budget
 
-      fill_in_new_translatable_form :en
+      visit new_budget_investment_path(budget)
+
+      fill_in "Title", with: "My awesome project"
+      fill_in_ckeditor "Description", with: "Everything is awesome!"
+
       select "Français", from: :add_language
-      fill_in_new_translatable_form :fr
-      click_button create_button_text
+      fill_in "Title", with: "Titre en Français"
+      fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      expect(page).to have_content(successul_operation_notice)
+      select "Everywhere", from: "budget_investment_heading_id"
+      check "budget_investment_terms_of_service"
+      click_button "Create Investment"
+
+      expect(page).to have_content "Budget Investment created successfully"
     end
 
-    scenario "Add only single translation at once not having the current locale", :js do
-      visit new_translatable_path
+    scenario "Add only single translation at once not having the current locale" do
+      visit new_proposal_path
       click_link "Remove language"
       select "Français", from: :add_language
 
-      fill_in_new_translatable_form :fr
-      click_button create_button_text
+      fill_in "Proposal title", with: "Titre en Français"
+      fill_in "Proposal summary", with: "Résumé en Français"
+      check "proposal_terms_of_service"
+      click_button "Create proposal"
 
-      expect(page).to have_content(successul_operation_notice)
+      expect(page).to have_content "Proposal created successfully"
     end
 
-    scenario "Add a translation for a locale with non-underscored name", :js do
-      visit new_translatable_path
+    scenario "Add a translation for a locale with non-underscored name" do
+      budget = create(:budget_heading, name: "Everywhere").group.budget
+
+      visit new_budget_investment_path(budget)
       click_link "Remove language"
       select "Português brasileiro", from: :add_language
+      fill_in "Title", with: "Titre en Français"
+      fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      fill_in_new_translatable_form :"pt-BR"
-      click_button create_button_text
+      select "Everywhere", from: "budget_investment_heading_id"
+      check "budget_investment_terms_of_service"
+      click_button "Create Investment"
 
-      expect(page).to have_content(successul_operation_notice)
+      expect(page).to have_content "Budget Investment created successfully"
     end
 
-    scenario "Add an invalid translation", :js do
-      skip("can't have invalid translations") if required_fields.empty?
+    scenario "Add an invalid translation" do
+      visit new_debate_path
 
-      field = required_fields.sample
-
-      visit new_translatable_path
-      click_button create_button_text
+      check "debate_terms_of_service"
+      click_button "Start a debate"
 
       expect(page).to have_css "#error_explanation"
-      expect_page_to_have_translatable_field field, :en, with: ""
+      expect(page).to have_field "Debate title", with: "", class: "error"
     end
 
-    scenario "Should show errors when submiting without any active translations", :js do
-      skip("can't have invalid translations") if required_fields.empty?
+    scenario "Shows errors when submiting without any active translations" do
+      budget = create(:budget_heading, name: "Everywhere").group.budget
 
-      visit new_translatable_path
+      visit new_budget_investment_path(budget)
       click_link "Remove language"
-      click_button create_button_text
+
+      select "Everywhere", from: "budget_investment_heading_id"
+      check "budget_investment_terms_of_service"
+      click_button "Create Investment"
 
       expect(page).to have_css "#error_explanation"
+      expect(page).to have_field "Title", with: ""
     end
   end
 
-  context "Globalize javascript interface" do
-    scenario "Highlight current locale", :js do
-      visit new_translatable_path
+  context "Globalize javascript interface", :js do
+    scenario "Highlight current locale" do
+      visit new_debate_path
 
       expect_to_have_language_selected "English"
     end
 
-    scenario "Highlight new locale added", :js do
-      visit new_translatable_path
+    scenario "Highlight new locale added" do
+      visit new_proposal_path
 
-      select("Español", from: "locale-switcher")
+      select "Español", from: "locale-switcher"
 
       expect_to_have_language_selected "Español"
     end
 
-    scenario "Select a locale and add it to the form", :js do
-      visit new_translatable_path
+    scenario "Select a locale and add it to the form" do
+      visit new_budget_investment_path(create(:budget_investment))
 
       select "Français", from: :add_language
 
-      expect_page_to_have_translatable_field fields.sample, :fr, with: ""
+      expect(page).to have_field "Title", with: ""
     end
 
-    scenario "Remove a translation", :js do
-      visit new_translatable_path
+    scenario "Remove a translation" do
+      visit new_budget_investment_path(create(:budget_investment))
 
       expect(find("#select_language").value).to eq "en"
       click_link "Remove language"
@@ -157,21 +142,21 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
 
     context "Languages in use" do
       scenario "Show default description" do
-        visit new_translatable_path
+        visit new_debate_path
 
         expect(page).to have_content "1 language in use"
       end
 
-      scenario "Increase description count after add new language", :js do
-        visit new_translatable_path
+      scenario "Increase description count after add new language" do
+        visit new_proposal_path
 
         select "Español", from: :add_language
 
         expect(page).to have_content "2 languages in use"
       end
 
-      scenario "Decrease description count after remove a language", :js do
-        visit new_translatable_path
+      scenario "Decrease description count after remove a language" do
+        visit new_proposal_path
 
         click_link "Remove language"
 
@@ -181,7 +166,7 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
 
     context "When translation interface feature setting" do
       scenario "Is enabled translation interface should be rendered" do
-        visit new_translatable_path
+        visit new_budget_investment_path(create(:budget))
 
         expect(page).to have_css ".globalize-languages"
       end
@@ -189,94 +174,86 @@ shared_examples "new_translatable" do |factory_name, path_name, input_fields, te
       scenario "Is disabled translation interface should not be rendered" do
         Setting["feature.translation_interface"] = nil
 
-        visit new_translatable_path
+        visit new_debate_path
 
         expect(page).not_to have_css ".globalize-languages"
       end
     end
   end
-end
 
-def new_translatable_path
-  case translatable_class.name
-  when "Budget::Investment"
-    budget = create(:budget_heading, name: "Everywhere").group.budget
-    send path_name, budget
-  else
-    send path_name
-  end
-end
+  context "Existing records", :js do
+    before { translatable.update(attributes.merge(author: user)) }
 
-def check_introduced_values_at_translatable_edit_or_show_path(locale)
-  case translatable_class.name
-  when "Debate" || "Proposal"
-    click_link "Edit"
-    check_translatable_fields(locale)
-  when "Budget::Investment"
-    check_translatable_texts(locale)
-  end
-end
+    let(:attributes) do
+      translatable.translated_attribute_names.product(%i[en es]).map do |field, locale|
+        [:"#{field}_#{locale}", text_for(field, locale)]
+      end.to_h
+    end
 
-def check_translatable_fields(locale)
-  fields.each do |field|
-    text = text_for(field, locale)
-    expect_page_to_have_translatable_field(field, locale, with: text)
-  end
-end
+    context "Update a translation" do
+      context "With valid data" do
+        let(:translatable) { create(:debate) }
+        let(:path) { edit_debate_path(translatable) }
 
-def check_translatable_texts(locale)
-  fields.each do |field|
-    text = text_for(field, locale)
-    expect(page).to have_content text
-  end
-end
+        scenario "Changes the existing translation" do
+          visit path
 
-def fill_in_new_translatable_form(locale)
-  fields.each { |field| fill_in_field field, locale, with: text_for(field, locale) }
-  case translatable_class.name
-  when "Budget::Investment"
-    complete_investment_form
-  when "Debate"
-    complete_new_debate_form
-  when "Proposal"
-    complete_new_proposal_form
-  end
-end
+          select "Español", from: :select_language
 
-def complete_investment_form
-  select "Everywhere", from: "budget_investment_heading_id"
-  fill_in "budget_investment_location", with: "City center"
-  fill_in "budget_investment_organization_name", with: "T.I.A."
-  fill_in "budget_investment_tag_list", with: "Towers"
-  check   "budget_investment_terms_of_service"
-end
+          fill_in "Debate title", with: "Título corregido"
+          fill_in_ckeditor "Initial debate text", with: "Texto corregido"
 
-def complete_new_debate_form
-  check "debate_terms_of_service"
-end
+          click_button "Save changes"
 
-def complete_new_proposal_form
-  check "proposal_terms_of_service"
-end
+          visit path
 
-def successul_operation_notice
-  case translatable_class.name
-  when "Budget::Investment"
-    "Budget Investment created successfully"
-  when "Proposal"
-    "Proposal created successfully"
-  when "Debate"
-    "Debate created successfully"
-  end
-end
+          expect(page).to have_field "Debate title", with: "Title in English"
 
-def create_button_text
-  case translatable_class.name
-  when "Debate"
-    "Start a debate"
-  when "Budget::Investment"
-    "Create Investment"
-  when "Proposal"
-    "Create proposal"
+          select "Español", from: "locale-switcher"
+
+          expect(page).to have_field "Título del debate", with: "Título corregido"
+          within_frame(0) { expect(page).to have_content "Texto corregido" }
+        end
+      end
+
+      context "Update a translation with invalid data" do
+        let(:translatable) { create(:proposal) }
+
+        scenario "Show validation errors" do
+          visit edit_proposal_path(translatable)
+          select "Español", from: :select_language
+
+          expect(page).to have_field "Proposal title", with: "Título en español"
+
+          fill_in "Proposal title", with: ""
+          click_button "Save changes"
+
+          expect(page).to have_css "#error_explanation"
+
+          select "Español", from: :select_language
+
+          expect(page).to have_field "Proposal title", with: "", class: "error"
+        end
+      end
+    end
+
+    context "Globalize javascript interface" do
+      let(:translatable) { create(:debate) }
+      let(:path) { edit_debate_path(translatable) }
+
+      scenario "Is rendered with translation interface feature enabled" do
+        visit path
+
+        expect(page).to have_css ".globalize-languages"
+      end
+
+      scenario "Is not rendered with translation interface feature disabled" do
+        Setting["feature.translation_interface"] = nil
+
+        visit path
+
+        expect(page).not_to have_css ".globalize-languages"
+      end
+    end
   end
 end

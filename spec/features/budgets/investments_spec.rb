@@ -16,11 +16,6 @@ describe "Budget Investments" do
   context "Concerns" do
     it_behaves_like "notifiable in-app", Budget::Investment
     it_behaves_like "relationable", Budget::Investment
-    it_behaves_like "new_translatable",
-                    "budget_investment",
-                    "new_budget_investment_path",
-                    %w[title],
-                    { "description" => :ckeditor }
     it_behaves_like "remotely_translatable",
                     :budget_investment,
                     "budget_investments_path",
