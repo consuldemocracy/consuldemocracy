@@ -94,6 +94,29 @@ describe "Budget Investments" do
 
       expect(page).to have_content "User is not verified"
     end
+
+    scenario "Shows suggestions to unverified managers", :js do
+      expect(manager.user.level_two_or_three_verified?).to be false
+
+      create(:budget_investment, budget: budget, title: "More parks")
+      create(:budget_investment, budget: budget, title: "No more parks")
+      create(:budget_investment, budget: budget, title: "Plant trees")
+      login_managed_user(create(:user, :level_two))
+
+      click_link "Create budget investment"
+      within "#budget_#{budget.id}" do
+        click_link "Create budget investment"
+      end
+
+      fill_in "Title", with: "Park"
+      fill_in_ckeditor "Description", with: "Wish I had one"
+
+      within(".js-suggest") do
+        expect(page).to have_content "More parks"
+        expect(page).to have_content "No more parks"
+        expect(page).not_to have_content "Plant trees"
+      end
+    end
   end
 
   context "Searching" do
