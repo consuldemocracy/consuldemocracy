@@ -1263,7 +1263,7 @@ describe "Budget Investments" do
 
     investment = create(:budget_investment,
                         :unfeasible,
-                        valuation_finished: false,
+                        :unfinished,
                         budget: budget,
                         group: group,
                         heading: heading,

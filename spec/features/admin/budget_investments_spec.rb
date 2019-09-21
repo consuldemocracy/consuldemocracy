@@ -346,7 +346,7 @@ describe "Admin budget investments" do
       valuator = create(:valuator, user: user)
       create(:budget_investment,
         :with_administrator,
-        valuation_finished: false,
+        :unfinished,
         title: "Investment without valuation",
         budget: budget,
         valuators: [valuator])

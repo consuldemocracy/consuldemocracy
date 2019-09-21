@@ -114,6 +114,10 @@ FactoryBot.define do
       valuation_finished { true }
     end
 
+    trait :unfinished do
+      valuation_finished { false }
+    end
+
     trait :selected do
       selected { true }
       feasibility { "feasible" }
