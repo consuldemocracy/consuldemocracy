@@ -198,8 +198,8 @@ describe "Legislation Draft Versions" do
     end
 
     scenario "Publish new comment for an annotation from comments box" do
-      annotation = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
-                                                   ranges: [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11 }])
+      create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
+                                      ranges: [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11 }])
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
@@ -221,10 +221,10 @@ describe "Legislation Draft Versions" do
     before { login_as user }
 
     scenario "View annotations and comments in an included range" do
-      annotation1 = create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
-                                                    ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5 }])
-      annotation2 = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
-                                                    ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
+      create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
+                                      ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 5 }])
+      create(:legislation_annotation, draft_version: draft_version, text: "my other annotation",
+                                      ranges: [{ "start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10 }])
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)
 
