@@ -1659,8 +1659,8 @@ describe "Admin budget investments" do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, :with_administrator, budget: budget, visible_to_valuators: true)
-      investment2 = create(:budget_investment, :with_administrator, budget: budget, visible_to_valuators: false)
+      investment1 = create(:budget_investment, :with_administrator, :visible_to_valuators, budget: budget)
+      investment2 = create(:budget_investment, :with_administrator, :invisible_to_valuators, budget: budget)
 
       investment1.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
@@ -1737,8 +1737,8 @@ describe "Admin budget investments" do
     let!(:investment) do
       create(:budget_investment,
               :winner,
+              :visible_to_valuators,
               budget: budget,
-              visible_to_valuators: true,
               author: create(:user, username: "Jon Doe")
             )
     end

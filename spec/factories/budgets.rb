@@ -129,6 +129,10 @@ FactoryBot.define do
       visible_to_valuators { true }
     end
 
+    trait :invisible_to_valuators do
+      visible_to_valuators { false }
+    end
+
     trait :incompatible do
       selected
       incompatible { true }
