@@ -1,21 +1,21 @@
 require "rails_helper"
 
 describe ManagerAuthenticator do
-  let(:authenticator) { described_class.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905") }
+  let(:authenticator) { ManagerAuthenticator.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "20151031135905") }
 
   describe "initialization params" do
     it "causes auth to return false if blank login" do
-      blank_login_authenticator = described_class.new(login: "", clave_usuario: "31415926", fecha_conexion: "20151031135905")
+      blank_login_authenticator = ManagerAuthenticator.new(login: "", clave_usuario: "31415926", fecha_conexion: "20151031135905")
       expect(blank_login_authenticator.auth).to be false
     end
 
     it "causes auth to return false if blank user_key" do
-      blank_user_key_authenticator = described_class.new(login: "JJB033", clave_usuario: "", fecha_conexion: "20151031135905")
+      blank_user_key_authenticator = ManagerAuthenticator.new(login: "JJB033", clave_usuario: "", fecha_conexion: "20151031135905")
       expect(blank_user_key_authenticator.auth).to be false
     end
 
     it "causes auth to return false if blank date" do
-      blank_date_authenticator = described_class.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "")
+      blank_date_authenticator = ManagerAuthenticator.new(login: "JJB033", clave_usuario: "31415926", fecha_conexion: "")
       expect(blank_date_authenticator.auth).to be false
     end
   end

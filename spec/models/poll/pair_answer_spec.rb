@@ -54,8 +54,8 @@ describe Poll::PairAnswer do
       it "returns pair_answers associated to an user" do
         author = pair_answer_1.author
 
-        expect(described_class.by_author(author)).to include(pair_answer_1)
-        expect(described_class.by_author(author)).not_to include(pair_answer_2)
+        expect(Poll::PairAnswer.by_author(author)).to include(pair_answer_1)
+        expect(Poll::PairAnswer.by_author(author)).not_to include(pair_answer_2)
       end
 
     end
@@ -65,8 +65,8 @@ describe Poll::PairAnswer do
       it "returns pair_answers associated to a question" do
         question = pair_answer_1.question
 
-        expect(described_class.by_question(question)).to include(pair_answer_1)
-        expect(described_class.by_question(question)).not_to include(pair_answer_2)
+        expect(Poll::PairAnswer.by_question(question)).to include(pair_answer_1)
+        expect(Poll::PairAnswer.by_question(question)).not_to include(pair_answer_2)
       end
     end
 
@@ -79,7 +79,7 @@ describe Poll::PairAnswer do
     context "without question_answers" do
 
       it "assigns nil value to pair_answers" do
-        pair_answer = described_class.generate_pair(question, user)
+        pair_answer = Poll::PairAnswer.generate_pair(question, user)
 
         expect(pair_answer).to be_a Poll::PairAnswer
         expect(pair_answer.question).to eq(question)
@@ -93,7 +93,7 @@ describe Poll::PairAnswer do
       let!(:answer1) { create(:poll_question_answer, question: question) }
 
       it "assigns only right question if only has one question_answer" do
-        pair_answer = described_class.generate_pair(question, user)
+        pair_answer = Poll::PairAnswer.generate_pair(question, user)
 
         expect(pair_answer).to be_a Poll::PairAnswer
         expect(pair_answer.question).to eq(question)
@@ -105,7 +105,7 @@ describe Poll::PairAnswer do
       it "assigns random values if question has some question_answer" do
         create(:poll_question_answer, question: question)
 
-        pair_answer = described_class.generate_pair(question, user)
+        pair_answer = Poll::PairAnswer.generate_pair(question, user)
 
         expect(pair_answer).to be_a Poll::PairAnswer
         expect(pair_answer.question).to eq(question)

@@ -81,14 +81,14 @@ describe DirectMessage do
         create(:direct_message, created_at: Time.current)
         create(:direct_message, created_at: Date.current.end_of_day)
 
-        expect(described_class.today.count).to eq 3
+        expect(DirectMessage.today.count).to eq 3
       end
 
       it "does not return direct messages created another day" do
         direct_message1 = create(:direct_message, created_at: 1.day.ago)
         direct_message2 = create(:direct_message, created_at: 1.day.from_now)
 
-        expect(described_class.today.count).to eq 0
+        expect(DirectMessage.today.count).to eq 0
       end
     end
 

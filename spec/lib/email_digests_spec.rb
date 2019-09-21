@@ -12,7 +12,7 @@ describe EmailDigest do
       notification1 = create(:notification, notifiable: proposal_notification, user: user1)
       notification2 = create(:notification, notifiable: proposal_notification, user: user2)
 
-      email_digest = described_class.new(user1)
+      email_digest = EmailDigest.new(user1)
 
       expect(email_digest.notifications).to include(notification1)
       expect(email_digest.notifications).not_to include(notification2)
@@ -27,7 +27,7 @@ describe EmailDigest do
       notification1 = create(:notification, notifiable: proposal_notification, user: user)
       notification2 = create(:notification, notifiable: comment,               user: user)
 
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
 
       expect(email_digest.notifications).to include(notification1)
       expect(email_digest.notifications).not_to include(notification2)
@@ -43,7 +43,7 @@ describe EmailDigest do
       proposal_notification = create(:proposal_notification)
       notification = create(:notification, notifiable: proposal_notification, user: user)
 
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).to be
     end
 
@@ -53,13 +53,13 @@ describe EmailDigest do
       proposal_notification = create(:proposal_notification)
       notification = create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.current)
 
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
 
     it "returns false when there are no notifications for a user" do
       user = create(:user)
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
 
@@ -74,7 +74,7 @@ describe EmailDigest do
       notification = create(:notification, notifiable: proposal_notification, user: user)
 
       reset_mailer
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)
 
       email = open_last_email
@@ -88,7 +88,7 @@ describe EmailDigest do
       create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.current)
 
       reset_mailer
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)
 
       expect(all_emails.count).to eq(0)
@@ -111,7 +111,7 @@ describe EmailDigest do
       expect(notification2.emailed_at).not_to be
       expect(notification3.emailed_at).not_to be
 
-      email_digest = described_class.new(user1)
+      email_digest = EmailDigest.new(user1)
       email_digest.mark_as_emailed
 
       notification1.reload
@@ -126,8 +126,8 @@ describe EmailDigest do
       user1 = create(:user, failed_email_digests_count: 0)
       user2 = create(:user, failed_email_digests_count: 3)
 
-      email_digest_1 = described_class.new(user1)
-      email_digest_2 = described_class.new(user2)
+      email_digest_1 = EmailDigest.new(user1)
+      email_digest_2 = EmailDigest.new(user2)
       email_digest_1.mark_as_emailed
       email_digest_2.mark_as_emailed
 
@@ -142,14 +142,14 @@ describe EmailDigest do
     it "returns a MatchData if email is valid" do
       user = create(:user, email: "valid_email@email.com")
 
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       expect(email_digest.valid_email?).to be_a(MatchData)
     end
 
     it "returns nil if email is invalid" do
       user = create(:user, email: "invalid_email@email..com")
 
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       expect(email_digest.valid_email?).to be(nil)
     end
 
@@ -157,7 +157,7 @@ describe EmailDigest do
       user = create(:user)
       user.update_attribute(:email, nil)
 
-      email_digest = described_class.new(user)
+      email_digest = EmailDigest.new(user)
       expect(email_digest.valid_email?).to be(false)
     end
   end

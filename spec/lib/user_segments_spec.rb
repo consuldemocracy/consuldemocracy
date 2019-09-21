@@ -10,8 +10,8 @@ describe UserSegments do
       active_user = create(:user)
       erased_user = create(:user, erased_at: Time.current)
 
-      expect(described_class.all_users).to include active_user
-      expect(described_class.all_users).not_to include erased_user
+      expect(UserSegments.all_users).to include active_user
+      expect(UserSegments.all_users).not_to include erased_user
     end
   end
 
@@ -21,9 +21,9 @@ describe UserSegments do
       active_admin = create(:administrator).user
       erased_user = create(:user, erased_at: Time.current)
 
-      expect(described_class.administrators).to include active_admin
-      expect(described_class.administrators).not_to include active_user
-      expect(described_class.administrators).not_to include erased_user
+      expect(UserSegments.administrators).to include active_admin
+      expect(UserSegments.administrators).not_to include active_user
+      expect(UserSegments.administrators).not_to include erased_user
     end
   end
 
@@ -33,7 +33,7 @@ describe UserSegments do
       create(:proposal, :archived, author: user2)
       create(:proposal, :retired, author: user3)
 
-      all_proposal_authors = described_class.all_proposal_authors
+      all_proposal_authors = UserSegments.all_proposal_authors
       expect(all_proposal_authors).to include user1
       expect(all_proposal_authors).to include user2
       expect(all_proposal_authors).to include user3
@@ -44,7 +44,7 @@ describe UserSegments do
       create(:proposal, :archived, author: user1)
       create(:proposal, :retired, author: user1)
 
-      all_proposal_authors = described_class.all_proposal_authors
+      all_proposal_authors = UserSegments.all_proposal_authors
       expect(all_proposal_authors).to contain_exactly(user1)
     end
   end
@@ -53,7 +53,7 @@ describe UserSegments do
     it "returns users that have created a proposal" do
       proposal = create(:proposal, author: user1)
 
-      proposal_authors = described_class.proposal_authors
+      proposal_authors = UserSegments.proposal_authors
       expect(proposal_authors).to include user1
       expect(proposal_authors).not_to include user2
     end
@@ -62,7 +62,7 @@ describe UserSegments do
       proposal1 = create(:proposal, author: user1)
       proposal2 = create(:proposal, author: user1)
 
-      proposal_authors = described_class.proposal_authors
+      proposal_authors = UserSegments.proposal_authors
       expect(proposal_authors).to contain_exactly(user1)
     end
   end
@@ -73,7 +73,7 @@ describe UserSegments do
       budget = create(:budget)
       investment.update(budget: budget)
 
-      investment_authors = described_class.investment_authors
+      investment_authors = UserSegments.investment_authors
       expect(investment_authors).to include user1
       expect(investment_authors).not_to include user2
     end
@@ -85,7 +85,7 @@ describe UserSegments do
       investment1.update(budget: budget)
       investment2.update(budget: budget)
 
-      investment_authors = described_class.investment_authors
+      investment_authors = UserSegments.investment_authors
       expect(investment_authors).to contain_exactly(user1)
     end
   end
@@ -111,7 +111,7 @@ describe UserSegments do
       unfeasible_investment_unfinished.update(budget: budget)
       unfeasible_investment_finished.update(budget: budget)
 
-      investment_authors = described_class.feasible_and_undecided_investment_authors
+      investment_authors = UserSegments.feasible_and_undecided_investment_authors
       expect(investment_authors).to include user1
       expect(investment_authors).to include user2
       expect(investment_authors).to include user3
@@ -127,7 +127,7 @@ describe UserSegments do
       feasible_investment.update(budget: budget)
       undecided_investment.update(budget: budget)
 
-      investment_authors = described_class.feasible_and_undecided_investment_authors
+      investment_authors = UserSegments.feasible_and_undecided_investment_authors
       expect(investment_authors).to contain_exactly(user1)
     end
   end
@@ -140,7 +140,7 @@ describe UserSegments do
       selected_investment.update(budget: budget)
       unselected_investment.update(budget: budget)
 
-      investment_authors = described_class.selected_investment_authors
+      investment_authors = UserSegments.selected_investment_authors
       expect(investment_authors).to include user1
       expect(investment_authors).not_to include user2
     end
@@ -152,7 +152,7 @@ describe UserSegments do
       selected_investment1.update(budget: budget)
       selected_investment2.update(budget: budget)
 
-      investment_authors = described_class.selected_investment_authors
+      investment_authors = UserSegments.selected_investment_authors
       expect(investment_authors).to contain_exactly(user1)
     end
   end
@@ -165,7 +165,7 @@ describe UserSegments do
       winner_investment.update(budget: budget)
       selected_investment.update(budget: budget)
 
-      investment_authors = described_class.winner_investment_authors
+      investment_authors = UserSegments.winner_investment_authors
       expect(investment_authors).to include user1
       expect(investment_authors).not_to include user2
     end
@@ -177,7 +177,7 @@ describe UserSegments do
       winner_investment1.update(budget: budget)
       winner_investment2.update(budget: budget)
 
-      investment_authors = described_class.winner_investment_authors
+      investment_authors = UserSegments.winner_investment_authors
       expect(investment_authors).to contain_exactly(user1)
     end
   end
@@ -189,7 +189,7 @@ describe UserSegments do
       budget = create(:budget)
       investment1.update(budget: budget)
 
-      current_budget_investments = described_class.current_budget_investments
+      current_budget_investments = UserSegments.current_budget_investments
       expect(current_budget_investments).to include investment1
       expect(current_budget_investments).not_to include investment2
     end
@@ -205,7 +205,7 @@ describe UserSegments do
       investment1.update(budget: budget)
       investment2.update(budget: budget)
 
-      not_supported_on_current_budget = described_class.not_supported_on_current_budget
+      not_supported_on_current_budget = UserSegments.not_supported_on_current_budget
       expect(not_supported_on_current_budget).to include user3
       expect(not_supported_on_current_budget).not_to include user1
       expect(not_supported_on_current_budget).not_to include user2
@@ -217,7 +217,7 @@ describe UserSegments do
       create(:user, email: "first@email.com", created_at: 1.day.ago)
       create(:user, email: "last@email.com")
 
-      emails = described_class.user_segment_emails(:all_users)
+      emails = UserSegments.user_segment_emails(:all_users)
       expect(emails.first).to eq "first@email.com"
       expect(emails.last).to eq "last@email.com"
     end

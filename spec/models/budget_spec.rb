@@ -155,13 +155,13 @@ describe Budget do
     it "returns nil if there is only one budget and it is still in drafting phase" do
       budget = create(:budget, phase: "drafting")
 
-      expect(described_class.current).to eq(nil)
+      expect(Budget.current).to eq(nil)
     end
 
     it "returns the budget if there is only one and not in drafting phase" do
       budget = create(:budget, phase: "accepting")
 
-      expect(described_class.current).to eq(budget)
+      expect(Budget.current).to eq(budget)
     end
 
     it "returns the last budget created that is not in drafting phase" do
@@ -170,7 +170,7 @@ describe Budget do
       current_budget  = create(:budget, phase: "accepting", created_at: 1.month.ago)
       next_budget     = create(:budget, phase: "drafting",  created_at: 1.week.ago)
 
-      expect(described_class.current).to eq(current_budget)
+      expect(Budget.current).to eq(current_budget)
     end
 
   end
@@ -180,7 +180,7 @@ describe Budget do
     it "returns all budgets that are not in the finished phase" do
       (Budget::Phase::PHASE_KINDS - ["finished"]).each do |phase|
         budget = create(:budget, phase: phase)
-        expect(described_class.open).to include(budget)
+        expect(Budget.open).to include(budget)
       end
     end
 

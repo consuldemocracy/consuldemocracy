@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe RemoteTranslations::Microsoft::Client do
 
-  let(:client) { described_class.new }
+  let(:client) { RemoteTranslations::Microsoft::Client.new }
 
   describe "#call" do
 

@@ -71,14 +71,14 @@ describe Verification::Management::Document do
 
       describe "dates" do
         it "is valid with a valid date of birth" do
-          verification_document = described_class.new("date_of_birth(3i)" => "1",
+          verification_document = Verification::Management::Document.new("date_of_birth(3i)" => "1",
                                                       "date_of_birth(2i)" => "1",
                                                       "date_of_birth(1i)" => "1980")
           expect(verification_document.errors[:date_of_birth].size).to eq(0)
         end
 
         it "is not valid without a date of birth" do
-          verification_document = described_class.new("date_of_birth(3i)" => "",
+          verification_document = Verification::Management::Document.new("date_of_birth(3i)" => "",
                                                       "date_of_birth(2i)" => "",
                                                       "date_of_birth(1i)" => "")
           expect(verification_document).not_to be_valid
@@ -97,34 +97,34 @@ describe Verification::Management::Document do
       describe "#valid_age?" do
         it "returns false when the user is younger than the user's minimum required age" do
           census_response = instance_double("CensusApi::Response", date_of_birth: under_minium_age_date_of_birth)
-          expect(described_class.new.valid_age?(census_response)).to be false
+          expect(Verification::Management::Document.new.valid_age?(census_response)).to be false
         end
 
         it "returns true when the user has the user's minimum required age" do
           census_response = instance_double("CensusApi::Response", date_of_birth: just_minium_age_date_of_birth)
-          expect(described_class.new.valid_age?(census_response)).to be true
+          expect(Verification::Management::Document.new.valid_age?(census_response)).to be true
         end
 
         it "returns true when the user is older than the user's minimum required age" do
           census_response = instance_double("CensusApi::Response", date_of_birth: over_minium_age_date_of_birth)
-          expect(described_class.new.valid_age?(census_response)).to be true
+          expect(Verification::Management::Document.new.valid_age?(census_response)).to be true
         end
       end
 
       describe "#under_age?" do
         it "returns true when the user is younger than the user's minimum required age" do
           census_response = instance_double("CensusApi::Response", date_of_birth: under_minium_age_date_of_birth)
-          expect(described_class.new.under_age?(census_response)).to be true
+          expect(Verification::Management::Document.new.under_age?(census_response)).to be true
         end
 
         it "returns false when the user is user's minimum required age" do
           census_response = instance_double("CensusApi::Response", date_of_birth: just_minium_age_date_of_birth)
-          expect(described_class.new.under_age?(census_response)).to be false
+          expect(Verification::Management::Document.new.under_age?(census_response)).to be false
         end
 
         it "returns false when the user is older than user's minimum required age" do
           census_response = instance_double("CensusApi::Response", date_of_birth: over_minium_age_date_of_birth)
-          expect(described_class.new.under_age?(census_response)).to be false
+          expect(Verification::Management::Document.new.under_age?(census_response)).to be false
         end
       end
     end

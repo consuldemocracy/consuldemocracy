@@ -25,9 +25,9 @@ describe Notification do
         read_notification2 = create(:notification, :read)
         unread_notification = create(:notification)
 
-        expect(described_class.read).to include read_notification1
-        expect(described_class.read).to include read_notification2
-        expect(described_class.read).not_to include unread_notification
+        expect(Notification.read).to include read_notification1
+        expect(Notification.read).to include read_notification2
+        expect(Notification.read).not_to include unread_notification
       end
     end
 
@@ -37,9 +37,9 @@ describe Notification do
         unread_notification1 = create(:notification)
         unread_notification2 = create(:notification)
 
-        expect(described_class.unread).to include unread_notification1
-        expect(described_class.unread).to include unread_notification2
-        expect(described_class.unread).not_to include read_notification
+        expect(Notification.unread).to include unread_notification1
+        expect(Notification.unread).to include unread_notification2
+        expect(Notification.unread).not_to include read_notification
       end
     end
 
@@ -48,7 +48,7 @@ describe Notification do
         old_notification = create :notification
         new_notification = create :notification
 
-        sorted_notifications = described_class.recent
+        sorted_notifications = Notification.recent
         expect(sorted_notifications.size).to be 2
         expect(sorted_notifications.first).to eq new_notification
         expect(sorted_notifications.last).to eq old_notification
@@ -57,8 +57,8 @@ describe Notification do
 
     describe "#for_render" do
       it "returns notifications including notifiable and user" do
-        allow(described_class).to receive(:includes).with(:notifiable).exactly(:once)
-        described_class.for_render
+        allow(Notification).to receive(:includes).with(:notifiable).exactly(:once)
+        Notification.for_render
       end
     end
 
@@ -67,24 +67,24 @@ describe Notification do
   describe "#mark_as_read" do
     it "destroys notification" do
       notification = create(:notification)
-      expect(described_class.read.size).to eq 0
-      expect(described_class.unread.size).to eq 1
+      expect(Notification.read.size).to eq 0
+      expect(Notification.unread.size).to eq 1
 
       notification.mark_as_read
-      expect(described_class.read.size).to eq 1
-      expect(described_class.unread.size).to eq 0
+      expect(Notification.read.size).to eq 1
+      expect(Notification.unread.size).to eq 0
     end
   end
 
   describe "#mark_as_unread" do
     it "destroys notification" do
       notification = create(:notification, :read)
-      expect(described_class.unread.size).to eq 0
-      expect(described_class.read.size).to eq 1
+      expect(Notification.unread.size).to eq 0
+      expect(Notification.read.size).to eq 1
 
       notification.mark_as_unread
-      expect(described_class.unread.size).to eq 1
-      expect(described_class.read.size).to eq 0
+      expect(Notification.unread.size).to eq 1
+      expect(Notification.read.size).to eq 0
     end
   end
 
@@ -103,7 +103,7 @@ describe Notification do
       comment = create(:comment)
       notification = create(:notification, user: user, notifiable: comment)
 
-      expect(described_class.existent(user, comment)).to eq(notification)
+      expect(Notification.existent(user, comment)).to eq(notification)
     end
 
     it "returns nil when there are no notifications of that notifiable for a user" do
@@ -112,7 +112,7 @@ describe Notification do
       comment2 = create(:comment)
       create(:notification, user: user, notifiable: comment1)
 
-      expect(described_class.existent(user, comment2)).to eq(nil)
+      expect(Notification.existent(user, comment2)).to eq(nil)
     end
 
     it "returns nil when there are notifications of a notifiable for another user" do
@@ -121,7 +121,7 @@ describe Notification do
       comment = create(:comment)
       notification = create(:notification, user: user1, notifiable: comment)
 
-      expect(described_class.existent(user2, comment)).to eq(nil)
+      expect(Notification.existent(user2, comment)).to eq(nil)
     end
   end
 
@@ -130,7 +130,7 @@ describe Notification do
       user = create(:user)
       comment = create(:comment)
 
-      described_class.add(user, comment)
+      Notification.add(user, comment)
       expect(user.notifications.count).to eq(1)
     end
 
@@ -138,8 +138,8 @@ describe Notification do
       user = create(:user)
       comment = create(:comment)
 
-      described_class.add(user, comment)
-      described_class.add(user, comment)
+      Notification.add(user, comment)
+      Notification.add(user, comment)
 
       expect(user.notifications.count).to eq(1)
       expect(user.notifications.first.counter).to eq(2)
@@ -149,10 +149,10 @@ describe Notification do
       user = create(:user)
       comment = create(:comment)
 
-      first_notification = described_class.add(user, comment)
+      first_notification = Notification.add(user, comment)
       first_notification.update(read_at: Time.current)
 
-      second_notification = described_class.add(user, comment)
+      second_notification = Notification.add(user, comment)
 
       expect(user.notifications.count).to eq(2)
       expect(first_notification.counter).to eq(1)
