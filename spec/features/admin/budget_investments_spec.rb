@@ -88,10 +88,9 @@ describe "Admin budget investments" do
       admin = create(:administrator, user: create(:user, username: "Gema"))
 
       budget_investment1 = create(:budget_investment, budget: budget, valuators: [valuator1])
-      budget_investment2 = create(:budget_investment, budget: budget, valuators: [valuator1, valuator2])
+      budget_investment2 = create(:budget_investment, budget: budget, valuators: [valuator1, valuator2],
+                                  valuator_groups: [valuator_group])
       budget_investment3 = create(:budget_investment, budget: budget)
-
-      budget_investment2.valuator_groups << valuator_group
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 
@@ -241,11 +240,8 @@ describe "Admin budget investments" do
       health_group = create(:valuator_group, name: "Health")
       culture_group = create(:valuator_group, name: "Culture")
 
-      budget_investment1 = create(:budget_investment, title: "Build a hospital", budget: budget)
-      budget_investment1.valuator_groups << health_group
-
-      budget_investment2 = create(:budget_investment, title: "Build a theatre", budget: budget)
-      budget_investment2.valuator_groups << culture_group
+      create(:budget_investment, title: "Build a hospital", budget: budget, valuator_groups: [health_group])
+      create(:budget_investment, title: "Build a theatre", budget: budget, valuator_groups: [culture_group])
 
       visit admin_budget_budget_investments_path(budget_id: budget)
       expect(page).to have_link("Build a hospital")

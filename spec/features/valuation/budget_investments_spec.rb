@@ -231,7 +231,7 @@ describe "Valuation budget investments" do
       create(:budget_investment, :unfeasible, budget: budget, price: 1234,
                                  unfeasibility_explanation: "It is impossible",
                                  administrator: administrator,
-                                 valuators: [valuator, second_valuator] )
+                                 valuators: [valuator, second_valuator])
     end
 
     scenario "visible for assigned valuators" do

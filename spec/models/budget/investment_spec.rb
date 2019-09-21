@@ -439,11 +439,8 @@ describe Budget::Investment do
 
       it "returns all investments with assigned valuator groups but valuation not finished" do
         investment1 = create(:budget_investment)
-        investment2 = create(:budget_investment)
-        investment3 = create(:budget_investment, :finished)
-
-        investment2.valuator_groups << create(:valuator_group)
-        investment3.valuator_groups << create(:valuator_group)
+        investment2 = create(:budget_investment, valuator_groups: [create(:valuator_group)])
+        investment3 = create(:budget_investment, :finished, valuator_groups: [create(:valuator_group)])
 
         valuating = Budget::Investment.valuating
 
