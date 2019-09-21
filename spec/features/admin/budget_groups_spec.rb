@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin budget groups" do
 
-  let(:budget) { create(:budget, phase: "drafting") }
+  let(:budget) { create(:budget, :drafting) }
 
   before do
     admin = create(:administrator)

@@ -15,10 +15,10 @@ describe Abilities::Common do
   let(:own_comment)  { create(:comment,  author: user) }
   let(:own_proposal) { create(:proposal, author: user) }
 
-  let(:accepting_budget) { create(:budget, phase: "accepting") }
-  let(:reviewing_budget) { create(:budget, phase: "reviewing") }
-  let(:selecting_budget) { create(:budget, phase: "selecting") }
-  let(:balloting_budget) { create(:budget, phase: "balloting") }
+  let(:accepting_budget) { create(:budget, :accepting) }
+  let(:reviewing_budget) { create(:budget, :reviewing) }
+  let(:selecting_budget) { create(:budget, :selecting) }
+  let(:balloting_budget) { create(:budget, :balloting) }
 
   let(:investment_in_accepting_budget) { create(:budget_investment, budget: accepting_budget) }
   let(:investment_in_reviewing_budget) { create(:budget_investment, budget: reviewing_budget) }

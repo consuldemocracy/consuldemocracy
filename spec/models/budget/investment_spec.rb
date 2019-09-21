@@ -130,7 +130,7 @@ describe Budget::Investment do
 
   describe "#should_show_votes?" do
     it "returns true in selecting phase" do
-      budget = create(:budget, phase: "selecting")
+      budget = create(:budget, :selecting)
       investment = create(:budget_investment, budget: budget)
 
       expect(investment.should_show_votes?).to eq(true)
@@ -148,7 +148,7 @@ describe Budget::Investment do
 
   describe "#should_show_vote_count?" do
     it "returns true in valuating phase" do
-      budget = create(:budget, phase: "valuating")
+      budget = create(:budget, :valuating)
       investment = create(:budget_investment, budget: budget)
 
       expect(investment.should_show_vote_count?).to eq(true)
@@ -166,14 +166,14 @@ describe Budget::Investment do
 
   describe "#should_show_ballots?" do
     it "returns true in balloting phase for selected investments" do
-      budget = create(:budget, phase: "balloting")
+      budget = create(:budget, :balloting)
       investment = create(:budget_investment, :selected, budget: budget)
 
       expect(investment.should_show_ballots?).to eq(true)
     end
 
     it "returns false for unselected investments" do
-      budget = create(:budget, phase: "balloting")
+      budget = create(:budget, :balloting)
       investment = create(:budget_investment, :unselected, budget: budget)
 
       expect(investment.should_show_ballots?).to eq(false)
@@ -1050,7 +1050,7 @@ describe Budget::Investment do
 
   describe "Reclassification" do
 
-    let(:budget)   { create(:budget, phase: "balloting")   }
+    let(:budget)   { create(:budget, :balloting)   }
     let(:group)    { create(:budget_group, budget: budget) }
     let(:heading1) { create(:budget_heading, group: group) }
     let(:heading2) { create(:budget_heading, group: group) }
@@ -1189,7 +1189,7 @@ describe Budget::Investment do
   end
 
   describe "scoped_filter" do
-    let(:budget)   { create(:budget, phase: "balloting")   }
+    let(:budget)   { create(:budget, :balloting)   }
     let(:investment) { create(:budget_investment, budget: budget) }
 
     describe "with without_admin filter" do

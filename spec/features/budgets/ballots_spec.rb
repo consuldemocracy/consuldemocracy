@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Ballots" do
 
   let!(:user)       { create(:user, :level_two) }
-  let!(:budget)     { create(:budget, phase: "balloting") }
+  let!(:budget)     { create(:budget, :balloting) }
   let!(:states)     { create(:budget_group, budget: budget, name: "States") }
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
   let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
