@@ -447,8 +447,7 @@ describe "Admin budget investments" do
 
     scenario "Filtering by assignment status" do
       create(:budget_investment, :with_administrator, title: "Assigned idea", budget: budget)
-      create(:budget_investment, title: "Evaluating...", budget: budget,
-             valuators: [create(:valuator)])
+      create(:budget_investment, :with_valuator, title: "Evaluating...", budget: budget)
       create(:budget_investment, title: "With group", budget: budget,
              valuator_groups: [create(:valuator_group)])
 
@@ -1652,10 +1651,10 @@ describe "Admin budget investments" do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, :with_administrator, :visible_to_valuators,
-                           budget: budget, valuators: [create(:valuator)])
-      investment2 = create(:budget_investment, :with_administrator, :invisible_to_valuators,
-                           budget: budget, valuators: [create(:valuator), create(:valuator)])
+      investment1 = create(:budget_investment, :with_administrator, :with_valuator, :visible_to_valuators,
+                           budget: budget)
+      investment2 = create(:budget_investment, :with_administrator, :with_valuator, :invisible_to_valuators,
+                           budget: budget)
 
       visit admin_budget_budget_investments_path(budget)
 

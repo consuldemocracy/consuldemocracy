@@ -416,7 +416,7 @@ describe Budget::Investment do
 
     describe "managed" do
       it "returns all open investments with assigned admin but without assigned valuators" do
-        investment1 = create(:budget_investment, :with_administrator, valuators: [create(:valuator)])
+        investment1 = create(:budget_investment, :with_administrator, :with_valuator)
         investment2 = create(:budget_investment, :with_administrator, :finished)
         investment3 = create(:budget_investment, :with_administrator)
 
@@ -429,8 +429,8 @@ describe Budget::Investment do
     describe "valuating" do
       it "returns all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
-        investment2 = create(:budget_investment, valuators: [create(:valuator)])
-        investment3 = create(:budget_investment, :finished, valuators: [create(:valuator)])
+        investment2 = create(:budget_investment, :with_valuator)
+        investment3 = create(:budget_investment, :with_valuator, :finished)
 
         valuating = Budget::Investment.valuating
 
@@ -454,8 +454,8 @@ describe Budget::Investment do
     describe "valuation_finished" do
       it "returns all investments with valuation finished" do
         investment1 = create(:budget_investment)
-        investment2 = create(:budget_investment, valuators: [create(:valuator)])
-        investment3 = create(:budget_investment, :finished, valuators: [create(:valuator)])
+        investment2 = create(:budget_investment, :with_valuator)
+        investment3 = create(:budget_investment, :with_valuator, :finished)
 
         valuation_finished = Budget::Investment.valuation_finished
 
@@ -1155,8 +1155,8 @@ describe Budget::Investment do
     describe "with under_valuation filter" do
       let(:params) { { advanced_filters: ["under_valuation"], budget_id: budget.id } }
       it "returns only investment under valuation" do
-        investment1 = create(:budget_investment, :with_administrator, :unfinished,
-                             budget: budget, valuators: [create(:valuator)])
+        investment1 = create(:budget_investment, :with_administrator, :unfinished, :with_valuator,
+                             budget: budget)
         create(:budget_investment, :with_administrator, budget: budget)
         create(:budget_investment, budget: budget)
 
