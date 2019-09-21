@@ -18,6 +18,16 @@ describe Budget::Result do
         expect(heading.investments.winners.pluck(:ballot_lines_count)).to match_array([900, 800, 600])
       end
 
+      it "selects cheaper investments when running out of budget" do
+        create(:budget_investment, :selected, heading: heading, price: 800, ballot_lines_count: 900)
+        create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800)
+        create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 600)
+
+        Budget::Result.new(budget, heading).calculate_winners
+
+        expect(heading.investments.winners.pluck(:ballot_lines_count)).to match_array([900, 600])
+      end
+
       it "excludes incompatible investments" do
         investment1 = create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900, winner: false)
         investment2 = create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800, winner: false)
