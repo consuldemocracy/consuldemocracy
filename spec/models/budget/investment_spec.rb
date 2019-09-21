@@ -262,9 +262,7 @@ describe Budget::Investment do
   describe "#should_show_unfeasibility_explanation?" do
     let(:budget) { create(:budget) }
     let(:investment) do
-      create(:budget_investment, :finished, budget: budget,
-             unfeasibility_explanation: "because of reasons",
-             feasibility: "unfeasible")
+      create(:budget_investment, :unfeasible, :finished, budget: budget)
     end
 
     it "returns true for unfeasible investments with unfeasibility explanation and valuation finished" do

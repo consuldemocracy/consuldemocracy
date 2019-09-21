@@ -241,7 +241,7 @@ describe "Valuation budget investments" do
       create(:valuator, user: create(:user, username: "Rick", email: "rick@valuators.org"))
     end
     let(:investment) do
-      create(:budget_investment, budget: budget, price: 1234, feasibility: "unfeasible",
+      create(:budget_investment, :unfeasible, budget: budget, price: 1234,
                                  unfeasibility_explanation: "It is impossible",
                                  administrator: administrator,)
     end

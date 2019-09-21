@@ -700,10 +700,8 @@ describe "Admin budget investments" do
     end
 
     scenario "Combination of select with text search", :js do
-      create(:budget_investment, :finished, budget: budget, title: "Educate the children",
-                                 feasibility: "feasible")
-      create(:budget_investment, :finished, budget: budget, title: "More schools",
-                                 feasibility: "feasible")
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children")
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools")
       create(:budget_investment, budget: budget, title: "More hospitals")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -740,11 +738,9 @@ describe "Admin budget investments" do
       user = create(:user, username: "Admin 1")
       administrator = create(:administrator, user: user)
 
-      create(:budget_investment, :finished, budget: budget, title: "Educate the children",
-                                 feasibility: "feasible",
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children",
                                  administrator: administrator)
-      create(:budget_investment, :finished, budget: budget, title: "More schools",
-                                 feasibility: "feasible",
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
                                  administrator: administrator)
@@ -984,10 +980,10 @@ describe "Admin budget investments" do
       user = create(:user, username: "Rachel", email: "rachel@valuators.org")
       valuator = create(:valuator, user: user)
       budget_investment = create(:budget_investment,
+                                  :unfeasible,
+                                  unfeasibility_explanation: "It is impossible",
                                   price: 1234,
                                   price_first_year: 1000,
-                                  feasibility: "unfeasible",
-                                  unfeasibility_explanation: "It is impossible",
                                   administrator: administrator)
       budget_investment.valuators << valuator
 
@@ -1015,10 +1011,10 @@ describe "Admin budget investments" do
 
     scenario "Show image and documents on investment details" do
       budget_investment = create(:budget_investment,
+                                  :unfeasible,
+                                  unfeasibility_explanation: "It is impossible",
                                   price: 1234,
                                   price_first_year: 1000,
-                                  feasibility: "unfeasible",
-                                  unfeasibility_explanation: "It is impossible",
                                   administrator: administrator)
       create(:image, imageable: budget_investment)
       document = create(:document, documentable: budget_investment)
@@ -1045,10 +1041,9 @@ describe "Admin budget investments" do
 
     scenario "Not show related content or hide links on preview" do
       budget_investment = create(:budget_investment,
+                                  :unfeasible,
                                   price: 1234,
                                   price_first_year: 1000,
-                                  feasibility: "unfeasible",
-                                  unfeasibility_explanation: "It is impossible",
                                   administrator: administrator)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)

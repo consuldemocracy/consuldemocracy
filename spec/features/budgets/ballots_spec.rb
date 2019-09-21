@@ -577,7 +577,7 @@ describe "Ballots" do
     end
 
     scenario "Investments with feasibility undecided are not shown" do
-      investment = create(:budget_investment, feasibility: "undecided", heading: new_york)
+      investment = create(:budget_investment, :undecided, heading: new_york)
 
       login_as(user)
       visit budget_path(budget)
