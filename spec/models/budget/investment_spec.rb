@@ -337,16 +337,12 @@ describe Budget::Investment do
 
   describe "by_valuator" do
     it "returns investments assigned to specific valuator" do
-      investment1 = create(:budget_investment)
-      investment2 = create(:budget_investment)
-      investment3 = create(:budget_investment)
-
       valuator1 = create(:valuator)
       valuator2 = create(:valuator)
 
-      investment1.valuators << valuator1
-      investment2.valuators << valuator2
-      investment3.valuators << [valuator1, valuator2]
+      investment1 = create(:budget_investment, valuators: [valuator1])
+      investment2 = create(:budget_investment, valuators: [valuator2])
+      investment3 = create(:budget_investment, valuators: [valuator1, valuator2])
 
       by_valuator = Budget::Investment.by_valuator(valuator1.id)
 
@@ -420,10 +416,9 @@ describe Budget::Investment do
 
     describe "managed" do
       it "returns all open investments with assigned admin but without assigned valuators" do
-        investment1 = create(:budget_investment, :with_administrator)
+        investment1 = create(:budget_investment, :with_administrator, valuators: [create(:valuator)])
         investment2 = create(:budget_investment, :with_administrator, :finished)
         investment3 = create(:budget_investment, :with_administrator)
-        investment1.valuators << create(:valuator)
 
         managed = Budget::Investment.managed
 
@@ -434,11 +429,8 @@ describe Budget::Investment do
     describe "valuating" do
       it "returns all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
-        investment2 = create(:budget_investment)
-        investment3 = create(:budget_investment, :finished)
-
-        investment2.valuators << create(:valuator)
-        investment3.valuators << create(:valuator)
+        investment2 = create(:budget_investment, valuators: [create(:valuator)])
+        investment3 = create(:budget_investment, :finished, valuators: [create(:valuator)])
 
         valuating = Budget::Investment.valuating
 
@@ -462,11 +454,8 @@ describe Budget::Investment do
     describe "valuation_finished" do
       it "returns all investments with valuation finished" do
         investment1 = create(:budget_investment)
-        investment2 = create(:budget_investment)
-        investment3 = create(:budget_investment, :finished)
-
-        investment2.valuators << create(:valuator)
-        investment3.valuators << create(:valuator)
+        investment2 = create(:budget_investment, valuators: [create(:valuator)])
+        investment3 = create(:budget_investment, :finished, valuators: [create(:valuator)])
 
         valuation_finished = Budget::Investment.valuation_finished
 
@@ -1166,9 +1155,8 @@ describe Budget::Investment do
     describe "with under_valuation filter" do
       let(:params) { { advanced_filters: ["under_valuation"], budget_id: budget.id } }
       it "returns only investment under valuation" do
-        valuator1 = create(:valuator)
-        investment1 = create(:budget_investment, :with_administrator, :unfinished, budget: budget)
-        investment1.valuators << valuator1
+        investment1 = create(:budget_investment, :with_administrator, :unfinished,
+                             budget: budget, valuators: [create(:valuator)])
         create(:budget_investment, :with_administrator, budget: budget)
         create(:budget_investment, budget: budget)
 

@@ -80,10 +80,6 @@ describe "Admin budget investments" do
     end
 
     scenario "Display admin and valuator assignments" do
-      budget_investment1 = create(:budget_investment, budget: budget)
-      budget_investment2 = create(:budget_investment, budget: budget)
-      budget_investment3 = create(:budget_investment, budget: budget)
-
       olga = create(:user, username: "Olga")
       miriam = create(:user, username: "Miriam")
       valuator1 = create(:valuator, user: olga, description: "Valuator Olga")
@@ -91,9 +87,10 @@ describe "Admin budget investments" do
       valuator_group = create(:valuator_group, name: "Health")
       admin = create(:administrator, user: create(:user, username: "Gema"))
 
-      budget_investment1.valuators << valuator1
-      budget_investment2.valuators << valuator1
-      budget_investment2.valuators << valuator2
+      budget_investment1 = create(:budget_investment, budget: budget, valuators: [valuator1])
+      budget_investment2 = create(:budget_investment, budget: budget, valuators: [valuator1, valuator2])
+      budget_investment3 = create(:budget_investment, budget: budget)
+
       budget_investment2.valuator_groups << valuator_group
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -212,9 +209,7 @@ describe "Admin budget investments" do
       user = create(:user)
       valuator = create(:valuator, user: user, description: "Valuator 1")
 
-      budget_investment = create(:budget_investment, title: "Realocate visitors", budget: budget)
-      budget_investment.valuators << valuator
-
+      create(:budget_investment, title: "Realocate visitors", budget: budget, valuators: [valuator])
       create(:budget_investment, title: "Destroy the city", budget: budget)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -981,8 +976,9 @@ describe "Admin budget investments" do
                                   unfeasibility_explanation: "It is impossible",
                                   price: 1234,
                                   price_first_year: 1000,
-                                  administrator: administrator)
-      budget_investment.valuators << valuator
+                                  administrator: administrator,
+                                  valuators: [valuator]
+                                )
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
 
@@ -1656,12 +1652,10 @@ describe "Admin budget investments" do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, :with_administrator, :visible_to_valuators, budget: budget)
-      investment2 = create(:budget_investment, :with_administrator, :invisible_to_valuators, budget: budget)
-
-      investment1.valuators << create(:valuator)
-      investment2.valuators << create(:valuator)
-      investment2.valuators << create(:valuator)
+      investment1 = create(:budget_investment, :with_administrator, :visible_to_valuators,
+                           budget: budget, valuators: [create(:valuator)])
+      investment2 = create(:budget_investment, :with_administrator, :invisible_to_valuators,
+                           budget: budget, valuators: [create(:valuator), create(:valuator)])
 
       visit admin_budget_budget_investments_path(budget)
 

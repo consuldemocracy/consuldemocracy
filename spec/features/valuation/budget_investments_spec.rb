@@ -49,10 +49,8 @@ describe "Valuation budget investments" do
 
   describe "Index" do
     scenario "Index shows budget investments assigned to current valuator" do
-      investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+      investment1 = create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])
       investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
-
-      investment1.valuators << valuator
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -61,10 +59,8 @@ describe "Valuation budget investments" do
     end
 
     scenario "Index shows no budget investment to admins no valuators" do
-      investment1 = create(:budget_investment, :visible_to_valuators, budget: budget)
+      investment1 = create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])
       investment2 = create(:budget_investment, :visible_to_valuators, budget: budget)
-
-      investment1.valuators << valuator
 
       logout
       login_as create(:administrator).user
@@ -76,15 +72,14 @@ describe "Valuation budget investments" do
 
     scenario "Index orders budget investments by votes" do
       investment10  = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                        valuators: [valuator],
                                                                         cached_votes_up: 10)
       investment100 = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                        valuators: [valuator],
                                                                         cached_votes_up: 100)
       investment1   = create(:budget_investment, :visible_to_valuators, budget: budget,
+                                                                        valuators: [valuator],
                                                                         cached_votes_up: 1)
-
-      investment1.valuators << valuator
-      investment10.valuators << valuator
-      investment100.valuators << valuator
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -95,8 +90,7 @@ describe "Valuation budget investments" do
     scenario "Index displays investments paginated" do
       per_page = Kaminari.config.default_per_page
       (per_page + 2).times do
-        investment = create(:budget_investment, :visible_to_valuators, budget: budget)
-        investment.valuators << valuator
+        create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])
       end
 
       visit valuation_budget_budget_investments_path(budget)
@@ -204,13 +198,10 @@ describe "Valuation budget investments" do
     end
 
     scenario "Index filtering by valuation status" do
-      valuating = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                    title: "Ongoing valuation")
-      valuated  = create(:budget_investment, :visible_to_valuators, :finished,
-                                                                    budget: budget,
-                                                                    title: "Old idea")
-      valuating.valuators << valuator
-      valuated.valuators << valuator
+      create(:budget_investment, :visible_to_valuators,
+             budget: budget, valuators: [valuator], title: "Ongoing valuation")
+      create(:budget_investment, :visible_to_valuators, :finished,
+             budget: budget, valuators: [valuator], title: "Old idea")
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -239,11 +230,8 @@ describe "Valuation budget investments" do
     let(:investment) do
       create(:budget_investment, :unfeasible, budget: budget, price: 1234,
                                  unfeasibility_explanation: "It is impossible",
-                                 administrator: administrator,)
-    end
-
-    before do
-      investment.valuators << [valuator, second_valuator]
+                                 administrator: administrator,
+                                 valuators: [valuator, second_valuator] )
     end
 
     scenario "visible for assigned valuators" do
@@ -320,11 +308,7 @@ describe "Valuation budget investments" do
   describe "Valuate" do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      create(:budget_investment, budget: budget, price: nil, administrator: admin)
-    end
-
-    before do
-      investment.valuators << valuator
+      create(:budget_investment, budget: budget, price: nil, administrator: admin, valuators: [valuator])
     end
 
     scenario "Dossier empty by default" do
@@ -521,8 +505,7 @@ describe "Valuation budget investments" do
     scenario "not visible to valuators when budget is not valuating" do
       budget.update(phase: "publishing_prices")
 
-      investment = create(:budget_investment, budget: budget)
-      investment.valuators << [valuator]
+      investment = create(:budget_investment, budget: budget, valuators: [valuator])
 
       login_as(valuator.user)
       visit edit_valuation_budget_budget_investment_path(budget, investment)
@@ -537,8 +520,7 @@ describe "Valuation budget investments" do
       admin = create(:administrator, user: user)
       valuator = create(:valuator, user: user)
 
-      investment = create(:budget_investment, budget: budget)
-      investment.valuators << [valuator]
+      investment = create(:budget_investment, budget: budget, valuators: [valuator])
 
       login_as(admin.user)
       visit valuation_budget_budget_investment_path(budget, investment)

@@ -8,17 +8,13 @@ describe Abilities::Valuator do
   let(:valuator) { create(:valuator) }
   let(:group) { create(:valuator_group) }
   let(:non_assigned_investment) { create(:budget_investment) }
-  let(:assigned_investment) { create(:budget_investment, budget: create(:budget, :valuating)) }
+  let(:assigned_investment) { create(:budget_investment, budget: create(:budget, :valuating), valuators: [valuator]) }
   let(:group_assigned_investment) { create(:budget_investment, budget: create(:budget, :valuating)) }
-  let(:finished_assigned_investment) { create(:budget_investment, budget: create(:budget, :finished)) }
+  let(:finished_assigned_investment) { create(:budget_investment, budget: create(:budget, :finished), valuators: [valuator]) }
 
   before do
-    assigned_investment.valuators << valuator
-
     group_assigned_investment.valuator_groups << group
     valuator.update(valuator_group: group)
-
-    finished_assigned_investment.valuators << valuator
   end
 
   it "cannot valuate an assigned investment with a finished valuation" do

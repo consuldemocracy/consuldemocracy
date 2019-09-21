@@ -20,12 +20,9 @@ describe Valuator do
 
     it "returns investments assigned to a valuator" do
       valuator = create(:valuator)
-      investment1 = create(:budget_investment)
-      investment2 = create(:budget_investment)
+      investment1 = create(:budget_investment, valuators: [valuator])
+      investment2 = create(:budget_investment, valuators: [valuator])
       investment3 = create(:budget_investment)
-
-      investment1.valuators << valuator
-      investment2.valuators << valuator
 
       assigned_investment_ids = valuator.assigned_investment_ids
 

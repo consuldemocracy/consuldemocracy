@@ -5,10 +5,9 @@ describe "Internal valuation comments on Budget::Investments" do
   let(:valuator_user) { create(:valuator).user }
   let(:admin_user) { create(:administrator).user }
   let(:budget) { create(:budget, :valuating) }
-  let(:investment) { create(:budget_investment, budget: budget) }
+  let(:investment) { create(:budget_investment, budget: budget, valuators: [valuator_user.valuator]) }
 
   before do
-    investment.valuators << valuator_user.valuator
     login_as(valuator_user)
   end
 
