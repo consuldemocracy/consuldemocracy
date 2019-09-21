@@ -262,9 +262,8 @@ describe Budget::Investment do
   describe "#should_show_unfeasibility_explanation?" do
     let(:budget) { create(:budget) }
     let(:investment) do
-      create(:budget_investment, budget: budget,
+      create(:budget_investment, :finished, budget: budget,
              unfeasibility_explanation: "because of reasons",
-             valuation_finished: true,
              feasibility: "unfeasible")
     end
 
@@ -401,7 +400,7 @@ describe Budget::Investment do
   describe "scopes" do
     describe "valuation_open" do
       it "returns all investments with false valuation_finished" do
-        investment1 = create(:budget_investment, valuation_finished: true)
+        investment1 = create(:budget_investment, :finished)
         investment2 = create(:budget_investment)
 
         valuation_open = Budget::Investment.valuation_open
@@ -412,7 +411,7 @@ describe Budget::Investment do
 
     describe "without_admin" do
       it "returns all open investments without assigned admin" do
-        investment1 = create(:budget_investment, valuation_finished: true)
+        investment1 = create(:budget_investment, :finished)
         investment2 = create(:budget_investment, :with_administrator)
         investment3 = create(:budget_investment)
 
@@ -425,7 +424,7 @@ describe Budget::Investment do
     describe "managed" do
       it "returns all open investments with assigned admin but without assigned valuators" do
         investment1 = create(:budget_investment, :with_administrator)
-        investment2 = create(:budget_investment, :with_administrator, valuation_finished: true)
+        investment2 = create(:budget_investment, :with_administrator, :finished)
         investment3 = create(:budget_investment, :with_administrator)
         investment1.valuators << create(:valuator)
 
@@ -439,7 +438,7 @@ describe Budget::Investment do
       it "returns all investments with assigned valuator but valuation not finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
-        investment3 = create(:budget_investment, valuation_finished: true)
+        investment3 = create(:budget_investment, :finished)
 
         investment2.valuators << create(:valuator)
         investment3.valuators << create(:valuator)
@@ -452,7 +451,7 @@ describe Budget::Investment do
       it "returns all investments with assigned valuator groups but valuation not finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
-        investment3 = create(:budget_investment, valuation_finished: true)
+        investment3 = create(:budget_investment, :finished)
 
         investment2.valuator_groups << create(:valuator_group)
         investment3.valuator_groups << create(:valuator_group)
@@ -467,7 +466,7 @@ describe Budget::Investment do
       it "returns all investments with valuation finished" do
         investment1 = create(:budget_investment)
         investment2 = create(:budget_investment)
-        investment3 = create(:budget_investment, valuation_finished: true)
+        investment3 = create(:budget_investment, :finished)
 
         investment2.valuators << create(:valuator)
         investment3.valuators << create(:valuator)
@@ -1262,13 +1261,8 @@ describe Budget::Investment do
     describe "with winners filter" do
       let(:params) { { advanced_filters: ["winners"], budget_id: budget.id } }
       it "returns only investment winners" do
-        investment1 = create(:budget_investment,
-          :winner,
-          valuation_finished: true,
-          budget: budget)
-        create(:budget_investment,
-          :with_administrator,
-          budget: budget)
+        investment1 = create(:budget_investment, :winner, :finished, budget: budget)
+        create(:budget_investment, :with_administrator, budget: budget)
         create(:budget_investment, budget: budget)
 
         expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])

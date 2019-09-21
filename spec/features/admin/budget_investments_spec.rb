@@ -407,7 +407,7 @@ describe "Admin budget investments" do
     scenario "Filtering by winners", :js do
       create(:budget_investment,
         :winner,
-        valuation_finished: true,
+        :finished,
         title: "Investment winner",
         budget: budget)
       create(:budget_investment,
@@ -483,8 +483,7 @@ describe "Admin budget investments" do
 
     scenario "Filtering by valuation status" do
       valuating = create(:budget_investment, :with_administrator, budget: budget, title: "Ongoing valuation")
-      valuated = create(:budget_investment, budget: budget, title: "Old idea",
-                                                             valuation_finished: true)
+      valuated = create(:budget_investment, :finished, budget: budget, title: "Old idea")
       valuating.valuators.push(create(:valuator))
       valuated.valuators.push(create(:valuator))
 
@@ -701,10 +700,10 @@ describe "Admin budget investments" do
     end
 
     scenario "Combination of select with text search", :js do
-      create(:budget_investment, budget: budget, title: "Educate the children",
-                                 feasibility: "feasible", valuation_finished: true)
-      create(:budget_investment, budget: budget, title: "More schools",
-                                 feasibility: "feasible", valuation_finished: true)
+      create(:budget_investment, :finished, budget: budget, title: "Educate the children",
+                                 feasibility: "feasible")
+      create(:budget_investment, :finished, budget: budget, title: "More schools",
+                                 feasibility: "feasible")
       create(:budget_investment, budget: budget, title: "More hospitals")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -741,11 +740,11 @@ describe "Admin budget investments" do
       user = create(:user, username: "Admin 1")
       administrator = create(:administrator, user: user)
 
-      create(:budget_investment, budget: budget, title: "Educate the children",
-                                 feasibility: "feasible", valuation_finished: true,
+      create(:budget_investment, :finished, budget: budget, title: "Educate the children",
+                                 feasibility: "feasible",
                                  administrator: administrator)
-      create(:budget_investment, budget: budget, title: "More schools",
-                                 feasibility: "feasible", valuation_finished: true,
+      create(:budget_investment, :finished, budget: budget, title: "More schools",
+                                 feasibility: "feasible",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
                                  administrator: administrator)

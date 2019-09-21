@@ -210,9 +210,9 @@ describe "Valuation budget investments" do
     scenario "Index filtering by valuation status" do
       valuating = create(:budget_investment, :visible_to_valuators, budget: budget,
                                                                     title: "Ongoing valuation")
-      valuated  = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                    title: "Old idea",
-                                                                    valuation_finished: true)
+      valuated  = create(:budget_investment, :visible_to_valuators, :finished,
+                                                                    budget: budget,
+                                                                    title: "Old idea")
       valuating.valuators << valuator
       valuated.valuators << valuator
 
