@@ -454,8 +454,7 @@ describe "Admin budget investments" do
     end
 
     scenario "Filtering by assignment status" do
-      create(:budget_investment, title: "Assigned idea", budget: budget,
-             administrator: create(:administrator))
+      create(:budget_investment, :with_administrator, title: "Assigned idea", budget: budget)
       create(:budget_investment, title: "Evaluating...", budget: budget,
              valuators: [create(:valuator)])
       create(:budget_investment, title: "With group", budget: budget,
@@ -483,8 +482,7 @@ describe "Admin budget investments" do
     end
 
     scenario "Filtering by valuation status" do
-      valuating = create(:budget_investment, budget: budget, title: "Ongoing valuation",
-                                                             administrator: create(:administrator))
+      valuating = create(:budget_investment, :with_administrator, budget: budget, title: "Ongoing valuation")
       valuated = create(:budget_investment, budget: budget, title: "Old idea",
                                                              valuation_finished: true)
       valuating.valuators.push(create(:valuator))
@@ -1667,14 +1665,12 @@ describe "Admin budget investments" do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, budget: budget, visible_to_valuators: true)
-      investment2 = create(:budget_investment, budget: budget, visible_to_valuators: false)
+      investment1 = create(:budget_investment, :with_administrator, budget: budget, visible_to_valuators: true)
+      investment2 = create(:budget_investment, :with_administrator, budget: budget, visible_to_valuators: false)
 
       investment1.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
-      investment1.update(administrator: create(:administrator))
-      investment2.update(administrator: create(:administrator))
 
       visit admin_budget_budget_investments_path(budget)
 

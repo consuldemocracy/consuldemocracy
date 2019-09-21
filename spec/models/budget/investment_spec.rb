@@ -413,7 +413,7 @@ describe Budget::Investment do
     describe "without_admin" do
       it "returns all open investments without assigned admin" do
         investment1 = create(:budget_investment, valuation_finished: true)
-        investment2 = create(:budget_investment, administrator: create(:administrator))
+        investment2 = create(:budget_investment, :with_administrator)
         investment3 = create(:budget_investment)
 
         without_admin = Budget::Investment.without_admin
@@ -424,9 +424,9 @@ describe Budget::Investment do
 
     describe "managed" do
       it "returns all open investments with assigned admin but without assigned valuators" do
-        investment1 = create(:budget_investment, administrator: create(:administrator))
-        investment2 = create(:budget_investment, administrator: create(:administrator), valuation_finished: true)
-        investment3 = create(:budget_investment, administrator: create(:administrator))
+        investment1 = create(:budget_investment, :with_administrator)
+        investment2 = create(:budget_investment, :with_administrator, valuation_finished: true)
+        investment3 = create(:budget_investment, :with_administrator)
         investment1.valuators << create(:valuator)
 
         managed = Budget::Investment.managed
