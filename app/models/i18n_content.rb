@@ -1,7 +1,4 @@
 class I18nContent < ApplicationRecord
-
-  scope :by_key,          ->(key) { where(key: key) }
-
   validates :key, uniqueness: true
 
   translates :value, touch: true
