@@ -41,17 +41,17 @@ module WelcomeHelper
   def calculate_centered(debates, proposals)
     if (debates.blank? && proposals.any?) ||
        (debates.any? && proposals.blank?)
-      centered = "medium-centered large-centered"
+      "medium-centered large-centered"
     end
   end
 
   def calculate_offset(debates, proposals, apply_offset)
     if debates.any? && proposals.any?
-      offset = if apply_offset
-                 "medium-offset-2 large-offset-2"
-               else
-                 "end"
-               end
+      if apply_offset
+        "medium-offset-2 large-offset-2"
+      else
+        "end"
+      end
     end
   end
 
