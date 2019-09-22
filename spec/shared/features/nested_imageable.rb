@@ -216,24 +216,24 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     if path.include? "edit"
 
       scenario "Should show persisted image" do
-        login_as user
         create(:image, imageable: imageable)
+        login_as user
         visit send(path, arguments)
 
         expect(page).to have_css ".image", count: 1
       end
 
       scenario "Should not show add image button when image already exists", :js do
-        login_as user
         create(:image, imageable: imageable)
+        login_as user
         visit send(path, arguments)
 
         expect(page).to have_css "a#new_image_link", visible: false
       end
 
       scenario "Should remove nested field after remove image", :js do
-        login_as user
         create(:image, imageable: imageable)
+        login_as user
         visit send(path, arguments)
         click_on "Remove image"
 
@@ -241,8 +241,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       end
 
       scenario "Should show add image button after remove image", :js do
-        login_as user
         create(:image, imageable: imageable)
+        login_as user
         visit send(path, arguments)
         click_on "Remove image"
 

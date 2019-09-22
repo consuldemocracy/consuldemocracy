@@ -86,12 +86,11 @@ describe "Votes" do
     end
 
     scenario "Disable voting on investments", :js do
-      manuela = create(:user, verified_at: Time.current)
-
-      login_as(manuela)
-
       budget.update(phase: "reviewing")
       investment = create(:budget_investment, budget: budget, heading: heading)
+
+      manuela = create(:user, verified_at: Time.current)
+      login_as(manuela)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 

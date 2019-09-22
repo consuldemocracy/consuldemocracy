@@ -83,12 +83,10 @@ describe "Tags" do
   end
 
   scenario "Category with category tags", :js do
-    user = create(:user)
-    login_as(user)
-
     education = create(:tag, :category, name: "Education")
     health    = create(:tag, :category, name: "Health")
 
+    login_as(create(:user))
     visit new_proposal_path
 
     fill_in "Proposal title", with: "Help refugees"

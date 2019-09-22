@@ -1481,7 +1481,6 @@ describe "Proposals" do
 
     scenario "Reorder by recommendations results maintaing search" do
       user = create(:user, recommended_proposals: true)
-      login_as(user)
 
       proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
       proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
@@ -1490,6 +1489,7 @@ describe "Proposals" do
       proposal5 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal5, user: user)
 
+      login_as(user)
       visit proposals_path
       fill_in "search", with: "Show you got"
       click_button "Search"
@@ -1726,9 +1726,6 @@ describe "Proposals" do
 
   context "Suggesting proposals" do
     scenario "Show up to 5 suggestions", :js do
-      author = create(:user)
-      login_as(author)
-
       create(:proposal, title: "First proposal, has search term")
       create(:proposal, title: "Second title")
       create(:proposal, title: "Third proposal, has search term")
@@ -1737,6 +1734,7 @@ describe "Proposals" do
       create(:proposal, title: "Sixth proposal, has search term")
       create(:proposal, title: "Seventh proposal, has search term")
 
+      login_as(create(:user))
       visit new_proposal_path
       fill_in "Proposal title", with: "search"
       check "proposal_terms_of_service"
@@ -1747,12 +1745,10 @@ describe "Proposals" do
     end
 
     scenario "No found suggestions", :js do
-      author = create(:user)
-      login_as(author)
-
       create(:proposal, title: "First proposal").update_column(:confidence_score, 10)
       create(:proposal, title: "Second proposal").update_column(:confidence_score, 8)
 
+      login_as(create(:user))
       visit new_proposal_path
       fill_in "Proposal title", with: "debate"
       check "proposal_terms_of_service"
