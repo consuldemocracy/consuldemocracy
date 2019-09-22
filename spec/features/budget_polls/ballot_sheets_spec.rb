@@ -2,13 +2,12 @@ require "rails_helper"
 
 describe "Poll budget ballot sheets" do
   let(:poll) { create(:poll, :for_budget, ends_at: 1.day.ago) }
-  let(:booth) { create(:poll_booth) }
+  let(:booth) { create(:poll_booth, polls: [poll]) }
   let(:poll_officer) { create(:poll_officer) }
 
   context "Officing recounts and results view" do
 
     before do
-      create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
       create(:poll_officer_assignment, officer: poll_officer)
@@ -44,7 +43,6 @@ describe "Poll budget ballot sheets" do
     end
 
     scenario "Access ballot sheets officing with one booth assignment" do
-      create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
       create(:poll_officer_assignment, officer: poll_officer)
@@ -58,9 +56,7 @@ describe "Poll budget ballot sheets" do
     end
 
     scenario "Access ballot sheets officing with multiple booth assignments", :with_frozen_time do
-      booth_2 = create(:poll_booth)
-      create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_booth_assignment, poll: poll, booth: booth_2)
+      booth_2 = create(:poll_booth, polls: [poll])
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth_2,
@@ -80,7 +76,6 @@ describe "Poll budget ballot sheets" do
   context "Index" do
 
     before do
-      create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
 
@@ -102,7 +97,6 @@ describe "Poll budget ballot sheets" do
   context "New" do
 
     before do
-      create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
       create(:poll_officer_assignment, officer: poll_officer)
@@ -150,7 +144,6 @@ describe "Poll budget ballot sheets" do
   context "Show" do
 
     before do
-      create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
 

@@ -137,8 +137,7 @@ describe "Admin booths assignments" do
     end
 
     scenario "Cannot unassing booth if poll is expired" do
-      poll_expired = create(:poll, :expired)
-      create(:poll_booth_assignment, poll: poll_expired, booth: booth)
+      poll_expired = create(:poll, :expired, booths: [booth])
 
       visit manage_admin_poll_booth_assignments_path(poll_expired)
 
