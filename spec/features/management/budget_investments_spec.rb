@@ -16,7 +16,7 @@ describe "Budget Investments" do
                   "",
                   "management_budget_investment_path",
                   { "budget_id": "budget_id" },
-                  management = true
+                  management: true
 
   context "Load" do
 
