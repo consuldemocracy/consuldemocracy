@@ -7,7 +7,7 @@
     </div>
 
      <div class="small-12 column">
-      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) }%>
+      <%= f.text_field :title, maxlength: Budget::Investment.title_max_length, data: { js_suggest_result: "js_suggest_result", js_suggest: "#js-suggest", js_url: suggest_budget_investments_path(@budget) } %>
     </div>
     <div id="js-suggest"></div>
 

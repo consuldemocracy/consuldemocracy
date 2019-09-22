@@ -78,18 +78,18 @@ module Budgets
     end
 
     def edit
-     if @investment.author == current_user
-       return true
-     else
-       redirect_to root_path,
-                   notice: 'You have to be the original author of the project to edit it'
-     end
+      if @investment.author == current_user
+        return true
+      else
+        redirect_to root_path,
+                   notice: "You have to be the original author of the project to edit it"
+      end
     end
 
     def update
       @investment.update(investment_params)
       redirect_to budget_investment_path(@budget, @investment),
-                  notice: 'It was updated successfully.'
+                  notice: "It was updated successfully."
     end
 
     def destroy
