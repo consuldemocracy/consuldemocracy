@@ -114,8 +114,7 @@ describe "Proposals" do
 
     scenario "Index should show proposal descriptive image only when is defined" do
       proposal = create(:proposal)
-      proposal_with_image = create(:proposal)
-      image = create(:image, imageable: proposal_with_image)
+      proposal_with_image = create(:proposal, :with_image)
 
       visit proposals_path
 

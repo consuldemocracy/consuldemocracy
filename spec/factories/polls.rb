@@ -38,6 +38,10 @@ FactoryBot.define do
     trait :for_budget do
       association :budget
     end
+
+    trait :with_image do
+      after(:create) { |poll| create(:image, imageable: poll) }
+    end
   end
 
   factory :poll_question, class: "Poll::Question" do

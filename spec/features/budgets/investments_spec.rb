@@ -127,8 +127,7 @@ describe "Budget Investments" do
 
   scenario "Index should show investment descriptive image only when is defined" do
     investment = create(:budget_investment, heading: heading)
-    investment_with_image = create(:budget_investment, heading: heading)
-    image = create(:image, imageable: investment_with_image)
+    investment_with_image = create(:budget_investment, :with_image, heading: heading)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 

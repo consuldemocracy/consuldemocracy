@@ -171,6 +171,10 @@ FactoryBot.define do
     trait :with_milestone_tags do
       after(:create) { |investment| investment.milestone_tags << create(:tag, :milestone) }
     end
+
+    trait :with_image do
+      after(:create) { |investment| create(:image, imageable: investment) }
+    end
   end
 
   factory :budget_phase, class: "Budget::Phase" do

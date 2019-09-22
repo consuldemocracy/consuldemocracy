@@ -1011,12 +1011,12 @@ describe "Admin budget investments" do
 
     scenario "Show image and documents on investment details" do
       budget_investment = create(:budget_investment,
+                                  :with_image,
                                   :unfeasible,
                                   unfeasibility_explanation: "It is impossible",
                                   price: 1234,
                                   price_first_year: 1000,
                                   administrator: administrator)
-      create(:image, imageable: budget_investment)
       document = create(:document, documentable: budget_investment)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
