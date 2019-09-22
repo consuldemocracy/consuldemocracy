@@ -2,6 +2,7 @@ class Admin::Poll::BoothsController < Admin::Poll::BaseController
   load_and_authorize_resource class: "Poll::Booth"
 
   def index
+    @booths = @booths.search params[:search] if params[:search]
     @booths = @booths.order(name: :asc).page(params[:page])
   end
 

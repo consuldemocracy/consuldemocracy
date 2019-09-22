@@ -48,6 +48,8 @@ describe "Admin shifts" do
       click_link "Manage shifts"
     end
 
+    expect(page).to have_content "This booth has no shifts"
+
     fill_in "search", with: officer.email
     click_button "Search"
     click_link "Edit shifts"
@@ -71,6 +73,8 @@ describe "Admin shifts" do
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
     end
+
+    expect(page).to have_css(".shift", count: 1)
 
     fill_in "search", with: officer.email
     click_button "Search"
@@ -115,6 +119,8 @@ describe "Admin shifts" do
       click_link "Manage shifts"
     end
 
+    expect(page).to have_css(".shift", count: 2)
+
     fill_in "search", with: officer.email
     click_button "Search"
     click_link "Edit shifts"
@@ -153,6 +159,8 @@ describe "Admin shifts" do
     within("#booth_#{booth.id}") do
       click_link "Manage shifts"
     end
+
+    expect(page).to have_content "This booth has no shifts"
 
     fill_in "search", with: officer.email
     click_button "Search"

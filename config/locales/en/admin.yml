@@ -1330,7 +1330,7 @@ en:
       false_value: "No"
       booths_search:
         button: Search
-        placeholder: Search booth by name
+        placeholder: Search booth by name or location
       poll_officers_search:
         button: Search
         placeholder: Search poll officers

@@ -10,6 +10,8 @@
   </div>
 <% end %>
 
+<%= render "/admin/shared/booth_search", url: admin_booths_path %>
+
 <% if @booths.any? %>
   <h3><%= page_entries_info @booths %></h3>
   <table>
