@@ -69,7 +69,8 @@ describe "Admin tags" do
 
   context "Manage only tags of kind category" do
     scenario "Index shows only categories" do
-      not_category_tag = create(:tag, name: "Not a category")
+      create(:tag, name: "Not a category")
+
       visit admin_tags_path
 
       expect(page).to have_content @tag1.name

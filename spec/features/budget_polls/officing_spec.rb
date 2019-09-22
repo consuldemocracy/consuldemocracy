@@ -17,10 +17,7 @@ describe "Budget Poll Officing" do
     expect(page).not_to have_content("Total recounts and results")
 
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :recount_scrutiny)
-
-    officer_assignment = create(:poll_officer_assignment,
-                                 booth_assignment: booth_assignment,
-                                 officer: officer)
+    create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer)
 
     visit officing_root_path
 

@@ -483,10 +483,9 @@ describe "Proposals" do
     end
 
     scenario "Specific geozone" do
-      geozone = create(:geozone, name: "California")
-      geozone = create(:geozone, name: "New York")
-      author = create(:user)
-      login_as(author)
+      create(:geozone, name: "California")
+      create(:geozone, name: "New York")
+      login_as(create(:user))
 
       visit new_proposal_path
 
@@ -1438,9 +1437,9 @@ describe "Proposals" do
     end
 
     scenario "Order by relevance by default", :js do
-      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10)
-      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1)
-      proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100)
+      create(:proposal, title: "Show you got",      cached_votes_up: 10)
+      create(:proposal, title: "Show what you got", cached_votes_up: 1)
+      create(:proposal, title: "Show you got",      cached_votes_up: 100)
 
       visit proposals_path
       fill_in "search", with: "Show what you got"
@@ -1456,10 +1455,10 @@ describe "Proposals" do
     end
 
     scenario "Reorder results maintaing search", :js do
-      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
-      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-      proposal3 = create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
-      proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+      create(:proposal, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+      create(:proposal, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+      create(:proposal, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
+      create(:proposal, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
       visit proposals_path
       fill_in "search", with: "Show what you got"

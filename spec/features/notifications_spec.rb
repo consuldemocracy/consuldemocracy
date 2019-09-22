@@ -69,8 +69,7 @@ describe "Notifications" do
   end
 
   scenario "Mark all as read" do
-    notification1 = create(:notification, user: user)
-    notification2 = create(:notification, user: user)
+    2.times { create(:notification, user: user) }
 
     click_notifications_icon
 

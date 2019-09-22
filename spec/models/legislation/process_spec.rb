@@ -186,12 +186,12 @@ describe Legislation::Process do
 
     it "invalid format colors" do
       expect {
-        process = create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
+        create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
       }.to raise_error(ActiveRecord::RecordInvalid,
                        "Validation failed: Background color is invalid")
 
       expect {
-        process = create(:legislation_process, background_color: "#fff", font_color: "ggg")
+        create(:legislation_process, background_color: "#fff", font_color: "ggg")
       }.to raise_error(ActiveRecord::RecordInvalid,
                        "Validation failed: Font color is invalid")
     end

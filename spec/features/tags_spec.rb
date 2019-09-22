@@ -124,8 +124,8 @@ describe "Tags" do
   context "Tag cloud" do
 
     scenario "Proposals" do
-      earth = create(:proposal, tag_list: "Medio Ambiente")
-      money = create(:proposal, tag_list: "Economía")
+      create(:proposal, tag_list: "Medio Ambiente")
+      create(:proposal, tag_list: "Economía")
 
       visit proposals_path
 
@@ -136,8 +136,8 @@ describe "Tags" do
     end
 
     scenario "Debates" do
-      earth = create(:debate, tag_list: "Medio Ambiente")
-      money = create(:debate, tag_list: "Economía")
+      create(:debate, tag_list: "Medio Ambiente")
+      create(:debate, tag_list: "Economía")
 
       visit debates_path
 
@@ -151,8 +151,8 @@ describe "Tags" do
       create(:tag, :category, name: "Medio Ambiente")
       create(:tag, :category, name: "Economía")
 
-      earth = create(:proposal, tag_list: "Medio Ambiente, Agua")
-      money = create(:proposal, tag_list: "Economía, Corrupción")
+      create(:proposal, tag_list: "Medio Ambiente, Agua")
+      create(:proposal, tag_list: "Economía, Corrupción")
 
       visit proposals_path(search: "Economía")
 
@@ -167,8 +167,8 @@ describe "Tags" do
       create(:geozone, name: "Madrid")
       create(:geozone, name: "Barcelona")
 
-      earth = create(:proposal, tag_list: "Madrid, Agua")
-      money = create(:proposal, tag_list: "Barcelona, Playa")
+      create(:proposal, tag_list: "Madrid, Agua")
+      create(:proposal, tag_list: "Barcelona, Playa")
 
       visit proposals_path(search: "Barcelona")
 

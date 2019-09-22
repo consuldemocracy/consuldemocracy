@@ -77,10 +77,10 @@ describe "Ballots" do
       end
 
       scenario "Headings" do
-        city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
-        city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
-        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
-        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
+        create(:budget_heading, group: city,      name: "Investments Type1")
+        create(:budget_heading, group: city,      name: "Investments Type2")
+        create(:budget_heading, group: districts, name: "District 1")
+        create(:budget_heading, group: districts, name: "District 2")
 
         visit budget_path(budget)
         click_link "City"

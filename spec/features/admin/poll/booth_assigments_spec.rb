@@ -79,7 +79,7 @@ describe "Admin booths assignments" do
     end
 
     scenario "Unassign booth from poll", :js do
-      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      create(:poll_booth_assignment, poll: poll, booth: booth)
 
       visit admin_poll_path(poll)
       within("#poll-resources") do

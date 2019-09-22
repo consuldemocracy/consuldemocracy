@@ -70,7 +70,7 @@ describe "Polls" do
     end
 
     scenario "Displays icon correctly", :js do
-      polls = create_list(:poll, 3)
+      create_list(:poll, 3)
 
       visit polls_path
 

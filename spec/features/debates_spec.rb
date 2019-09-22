@@ -922,9 +922,9 @@ describe "Debates" do
     end
 
     scenario "Order by relevance by default", :js do
-      debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
-      debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
-      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
+      create(:debate, title: "Show you got",      cached_votes_up: 10)
+      create(:debate, title: "Show what you got", cached_votes_up: 1)
+      create(:debate, title: "Show you got",      cached_votes_up: 100)
 
       visit debates_path
       fill_in "search", with: "Show you got"
@@ -940,10 +940,10 @@ describe "Debates" do
     end
 
     scenario "Reorder results maintaing search", :js do
-      debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
-      debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
-      debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+      create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+      create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+      create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
+      create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
       visit debates_path
       fill_in "search", with: "Show you got"
@@ -1088,13 +1088,13 @@ describe "Debates" do
 
   context "Suggesting debates" do
     scenario "Shows up to 5 suggestions", :js do
-      debate1 = create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
-      debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
-      debate3 = create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
-      debate4 = create(:debate, title: "This one has 4 votes", description: "This is the fourth debate", cached_votes_up: 4)
-      debate5 = create(:debate, title: "Fifth debate has 5 votes", cached_votes_up: 5)
-      debate6 = create(:debate, title: "Sixth debate has 6 votes", description: "This is the sixth debate",  cached_votes_up: 6)
-      debate7 = create(:debate, title: "This has seven votes, and is not suggest", description: "This is the seven", cached_votes_up: 7)
+      create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
+      create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
+      create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
+      create(:debate, title: "This one has 4 votes", description: "This is the fourth debate", cached_votes_up: 4)
+      create(:debate, title: "Fifth debate has 5 votes", cached_votes_up: 5)
+      create(:debate, title: "Sixth debate has 6 votes", description: "This is the sixth debate",  cached_votes_up: 6)
+      create(:debate, title: "This has seven votes, and is not suggest", description: "This is the seven", cached_votes_up: 7)
 
       login_as(create(:user))
       visit new_debate_path
@@ -1107,8 +1107,8 @@ describe "Debates" do
     end
 
     scenario "No found suggestions", :js do
-      debate1 = create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
-      debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
+      create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
+      create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 
       login_as(create(:user))
       visit new_debate_path
@@ -1153,8 +1153,8 @@ describe "Debates" do
   end
 
   scenario "Index include featured debates" do
-    debate1 = create(:debate, featured_at: Time.current)
-    debate2 = create(:debate)
+    create(:debate, featured_at: Time.current)
+    create(:debate)
 
     login_as(create(:administrator).user)
     visit debates_path
@@ -1164,8 +1164,8 @@ describe "Debates" do
   end
 
   scenario "Index do not show featured debates if none is marked as featured" do
-    debate1 = create(:debate)
-    debate2 = create(:debate)
+    create(:debate)
+    create(:debate)
 
     login_as(create(:administrator).user)
     visit debates_path

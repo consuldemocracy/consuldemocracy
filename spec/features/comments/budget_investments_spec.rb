@@ -7,7 +7,7 @@ describe "Commenting Budget::Investments" do
 
   scenario "Index" do
     3.times { create(:comment, commentable: investment) }
-    valuation_comment = create(:comment, :valuation, commentable: investment, subject: "Not viable")
+    create(:comment, :valuation, commentable: investment, subject: "Not viable")
 
     visit budget_investment_path(investment.budget, investment)
 

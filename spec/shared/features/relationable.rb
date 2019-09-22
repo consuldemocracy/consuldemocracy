@@ -6,7 +6,7 @@ shared_examples "relationable" do |relationable_model_name|
   let(:user) { create(:user) }
 
   scenario "related contents are listed" do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+    create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     visit relationable.url
     within("#related-content-list") do

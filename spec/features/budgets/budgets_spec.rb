@@ -367,8 +367,8 @@ describe "Budgets" do
   context "Show" do
 
     scenario "List all groups" do
-      group1 = create(:budget_group, budget: budget)
-      group2 = create(:budget_group, budget: budget)
+      create(:budget_group, budget: budget)
+      create(:budget_group, budget: budget)
 
       visit budget_path(budget)
 
