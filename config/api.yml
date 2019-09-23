@@ -5,7 +5,6 @@ User:
     public_debates:     [Debate]
     public_proposals:   [Proposal]
     public_comments:    [Comment]
-#    organization:       Organization
 Debate:
   fields:
     id:                 integer
@@ -81,8 +80,3 @@ Vote:
     votable_type:      string
     public_created_at: string
     vote_flag:         boolean
-# Organization:
-#   fields:
-#     id:               integer
-#     user_id:          integer
-#     name:             string

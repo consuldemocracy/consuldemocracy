@@ -49,12 +49,6 @@ describe "Consul Schema" do
     expect(dig(response, "data.proposal.title")).to eq(proposal.title)
   end
 
-  xit "returns has_one associations" do
-    organization = create(:organization)
-    response = execute("{ user(id: #{organization.user_id}) { organization { name } } }")
-    expect(dig(response, "data.user.organization.name")).to eq(organization.name)
-  end
-
   it "returns belongs_to associations" do
     response = execute("{ proposal(id: #{proposal.id}) { public_author { username } } }")
     expect(dig(response, "data.proposal.public_author.username")).to eq(proposal.public_author.username)
@@ -70,15 +64,6 @@ describe "Consul Schema" do
     comment_bodies = comments.collect { |comment| comment["body"] }
 
     expect(comment_bodies).to match_array([comment_1.body, comment_2.body])
-  end
-
-  xit "executes deeply nested queries" do
-    org_user = create(:user)
-    organization = create(:organization, user: org_user)
-    org_proposal = create(:proposal, author: org_user)
-    response = execute("{ proposal(id: #{org_proposal.id}) { public_author { organization { name } } } }")
-
-    expect(dig(response, "data.proposal.public_author.organization.name")).to eq(organization.name)
   end
 
   it "hides confidential fields of Int type" do
