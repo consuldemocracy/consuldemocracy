@@ -30,6 +30,10 @@ FactoryBot.define do
     trait :published do
       published { true }
     end
+
+    trait :hidden do
+      hidden_at { Time.current }
+    end
   end
 
   factory :poll_question, class: "Poll::Question" do

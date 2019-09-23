@@ -75,9 +75,9 @@ describe "Stats" do
     end
 
     scenario "Do not count hidden users" do
-      1.times { create(:user, :level_three, hidden_at: Time.current) }
-      2.times { create(:user, :level_two, hidden_at: Time.current) }
-      3.times { create(:user, hidden_at: Time.current) }
+      1.times { create(:user, :hidden, :level_three) }
+      2.times { create(:user, :hidden, :level_two) }
+      3.times { create(:user, :hidden) }
 
       visit admin_stats_path
 
