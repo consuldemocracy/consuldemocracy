@@ -381,10 +381,6 @@ describe "Proposal Notifications" do
         Setting[:proposal_notification_minimum_interval_in_days] = 0
       end
 
-      after do
-        Setting[:proposal_notification_minimum_interval_in_days] = 3
-      end
-
       scenario "for the same proposal", :js do
         author = create(:user)
         user = create(:user)

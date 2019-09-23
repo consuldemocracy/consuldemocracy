@@ -12,10 +12,6 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     Setting["feature.remote_translations"] = true
   end
 
-  after do
-    Setting["feature.remote_translations"] = false
-  end
-
   context "Button to request remote translation" do
 
     scenario "should not be present when current locale translation exists", :js do
@@ -52,10 +48,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       expect(page).not_to have_button("Translate page")
     end
 
-    describe "with delayed job active" do
-      before { Delayed::Worker.delay_jobs = true }
-      after  { Delayed::Worker.delay_jobs = false }
-
+    describe "with delayed job active", :delay_jobs do
       scenario "should not be present when an equal RemoteTranslation is enqueued", :js do
         create(:remote_translation, remote_translatable: resource, locale: :de)
         visit path
@@ -158,16 +151,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
   context "After click remote translations button" do
 
-    describe "with delayed jobs" do
-
-      before do
-        Delayed::Worker.delay_jobs = true
-      end
-
-      after do
-        Delayed::Worker.delay_jobs = false
-      end
-
+    describe "with delayed jobs", :delay_jobs do
       scenario "the remote translation button should not be present", :js do
         visit path
         select("Deutsch", from: "locale-switcher")

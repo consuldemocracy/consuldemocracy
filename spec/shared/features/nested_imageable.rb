@@ -9,18 +9,11 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
   let!(:imageable)           { create(imageable_factory_name) }
 
   before do
-
-    Setting["feature.allow_images"] = true
-
     imageable_path_arguments&.each do |argument_name, path_to_value|
       arguments.merge!("#{argument_name}": imageable.send(path_to_value))
     end
 
     imageable.update(author: user) if imageable.respond_to?(:author)
-  end
-
-  after do
-    Setting["feature.allow_images"] = nil
   end
 
   describe "at #{path}" do

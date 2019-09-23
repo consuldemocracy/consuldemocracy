@@ -45,9 +45,7 @@ RSpec.configure do |config|
     DatabaseCleaner.strategy = :transaction
     I18n.locale = :en
     Globalize.locale = I18n.locale
-    unless %i[controller feature request].include? example.metadata[:type]
-      Globalize.set_fallbacks_to_all_available_locales
-    end
+    Globalize.set_fallbacks_to_all_available_locales
     load Rails.root.join("db", "seeds.rb").to_s
     Setting["feature.user.skip_verification"] = nil
   end
@@ -93,6 +91,14 @@ RSpec.configure do |config|
   config.after(:each, type: :feature) do
     Bullet.perform_out_of_channel_notifications if Bullet.notification?
     Bullet.end_request
+  end
+
+  config.before(:each, :delay_jobs) do
+    Delayed::Worker.delay_jobs = true
+  end
+
+  config.after(:each, :delay_jobs) do
+    Delayed::Worker.delay_jobs = false
   end
 
   config.before(:each, :with_frozen_time) do

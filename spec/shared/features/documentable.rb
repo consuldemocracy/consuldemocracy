@@ -71,10 +71,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         Setting["feature.allow_attached_documents"] = true
       end
 
-      after do
-        Setting["feature.allow_attached_documents"] = false
-      end
-
       scenario "Documents list should be available" do
         login_as(user)
         visit send(documentable_path, arguments)
@@ -96,10 +92,6 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
     describe "When allow attached documents setting is disabled" do
       before do
         Setting["feature.allow_attached_documents"] = false
-      end
-
-      after do
-        Setting["feature.allow_attached_documents"] = true
       end
 
       scenario "Documents list should not be available" do

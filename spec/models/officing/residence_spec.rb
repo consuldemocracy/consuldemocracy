@@ -54,12 +54,6 @@ describe Officing::Residence do
         Setting["remote_census.response.valid"] = access_user_data
       end
 
-      after do
-        Setting["feature.remote_census"] = nil
-        Setting["remote_census.request.date_of_birth"] = nil
-        Setting["remote_census.request.postal_code"] = nil
-      end
-
       it "is valid" do
         expect(custom_residence).to be_valid
       end

@@ -17,10 +17,6 @@ describe SignatureSheetsHelper do
       Setting["feature.remote_census"] = true
     end
 
-    after do
-      Setting["feature.remote_census"] = nil
-    end
-
     it "returns text help when date_of_birth and postal_code are not required" do
       text_help_1 = "To verify a user, your application needs: Document number"
       text_help_2 = "Required fields for each user must be separated by commas and each user must be separated by semicolons."

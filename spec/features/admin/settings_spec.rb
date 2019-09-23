@@ -138,10 +138,6 @@ describe "Admin settings" do
       Setting["feature.remote_census"] = true
     end
 
-    after do
-      Setting["feature.remote_census"] = nil
-    end
-
     scenario "Should not be able when remote census feature deactivated" do
       Setting["feature.remote_census"] = nil
       admin = create(:administrator).user
@@ -176,10 +172,6 @@ describe "Admin settings" do
 
       before do
         Setting["feature.remote_census"] = true
-      end
-
-      after do
-        Setting["feature.remote_census"] = nil
       end
 
       scenario "On #tab-remote-census-configuration", :js do
@@ -219,10 +211,6 @@ describe "Admin settings" do
 
       before do
         Setting["feature.map"] = true
-      end
-
-      after do
-        Setting["feature.map"] = nil
       end
 
       scenario "On #tab-map-configuration", :js do

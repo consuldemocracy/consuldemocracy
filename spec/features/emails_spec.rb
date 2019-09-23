@@ -350,11 +350,6 @@ describe "Emails" do
   end
 
   context "Budgets" do
-
-    before do
-      Setting["process.budgets"] = true
-    end
-
     let(:author)   { create(:user, :level_two) }
     let(:budget)   { create(:budget) }
     let(:group)    { create(:budget_group, name: "Health", budget: budget) }

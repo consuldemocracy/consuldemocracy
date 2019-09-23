@@ -13,10 +13,6 @@ describe Dashboard::Mailer do
     Setting["dashboard.emails"] = true
   end
 
-  after do
-    Setting["dashboard.emails"] = nil
-  end
-
   describe "#forward" do
     let!(:proposal) { create(:proposal) }
 

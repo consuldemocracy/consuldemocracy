@@ -287,7 +287,6 @@ describe "Admin collaborative legislation" do
     let!(:process) { create(:legislation_process) }
 
     before { Setting["feature.translation_interface"] = true }
-    after { Setting["feature.translation_interface"] = nil }
 
     scenario "Cant manage translations on homepage form" do
       visit edit_admin_legislation_process_homepage_path(process)

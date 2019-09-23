@@ -21,10 +21,6 @@ describe "Admin budget headings" do
       Setting["process.budgets"] = nil
     end
 
-    after do
-      Setting["process.budgets"] = true
-    end
-
     scenario "Disabled with a feature flag" do
       expect do
         visit admin_budget_group_headings_path(budget, group)

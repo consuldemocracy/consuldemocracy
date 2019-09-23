@@ -8,8 +8,6 @@ describe "Admin debates" do
     login_as(admin.user)
 
     expect { visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["process.debates"] = true
   end
 
   before do

@@ -13,14 +13,6 @@ describe "Budget Investments" do
                   :budget_investment,
                   "budget_investment_path"
 
-  before do
-    Setting["feature.allow_images"] = true
-  end
-
-  after do
-    Setting["feature.allow_images"] = nil
-  end
-
   context "Concerns" do
     it_behaves_like "notifiable in-app", Budget::Investment
     it_behaves_like "relationable", Budget::Investment
@@ -1107,8 +1099,6 @@ describe "Budget Investments" do
     investment = create(:budget_investment, heading: heading)
     visit budget_investment_path(budget, id: investment.id)
     expect(page).to have_content "Access the community"
-
-    Setting["feature.community"] = false
   end
 
   scenario "Can not access the community" do

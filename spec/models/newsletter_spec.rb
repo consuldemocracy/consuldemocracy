@@ -64,7 +64,7 @@ describe Newsletter do
     end
   end
 
-  describe "#deliver" do
+  describe "#deliver", :delay_jobs do
     let!(:proposals) { Array.new(3) { create(:proposal) } }
 
     let!(:recipients) { proposals.map(&:author).map(&:email) }
@@ -73,11 +73,6 @@ describe Newsletter do
     before do
       create(:debate)
       reset_mailer
-      Delayed::Worker.delay_jobs = true
-    end
-
-    after do
-      Delayed::Worker.delay_jobs = false
     end
 
     it "sends an email with the newsletter to every recipient" do

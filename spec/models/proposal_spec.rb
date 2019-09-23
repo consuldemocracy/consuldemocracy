@@ -178,7 +178,6 @@ describe Proposal do
     let(:proposal) { create(:proposal) }
 
     before { Setting["max_votes_for_proposal_edit"] = 5 }
-    after { Setting["max_votes_for_proposal_edit"] = 1000 }
 
     it "is true if proposal has no votes yet" do
       expect(proposal.total_votes).to eq(0)
@@ -1083,10 +1082,6 @@ describe Proposal do
       ActionMailer::Base.deliveries.clear
     end
 
-    after do
-      Setting["dashboard.emails"] = nil
-    end
-
     it "send notification after create when there are new actived actions" do
       create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
       create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
@@ -1112,10 +1107,6 @@ describe Proposal do
     before do
       Setting["dashboard.emails"] = true
       ActionMailer::Base.deliveries.clear
-    end
-
-    after do
-      Setting["dashboard.emails"] = nil
     end
 
     it "send notification after published when there are new actived actions" do
