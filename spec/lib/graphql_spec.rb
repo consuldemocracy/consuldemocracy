@@ -156,11 +156,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_proposal = create(:proposal, author: visible_author)
-      hidden_proposal  = create(:proposal, author: hidden_author)
+      visible_author = create(:user, :with_proposal, public_activity: true)
+      hidden_author  = create(:user, :with_proposal, public_activity: false)
 
       response = execute("{ proposals { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "proposals", "public_author.username")
@@ -228,11 +225,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_debate = create(:debate, author: visible_author)
-      hidden_debate  = create(:debate, author: hidden_author)
+      visible_author = create(:user, :with_debate, public_activity: true)
+      hidden_author  = create(:user, :with_debate, public_activity: false)
 
       response = execute("{ debates { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "debates", "public_author.username")
@@ -291,11 +285,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_comment = create(:comment, author: visible_author)
-      hidden_comment  = create(:comment, author: hidden_author)
+      visible_author = create(:user, :with_comment, public_activity: true)
+      hidden_author  = create(:user, :with_comment, public_activity: false)
 
       response = execute("{ comments { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "comments", "public_author.username")
