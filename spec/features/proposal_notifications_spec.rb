@@ -29,8 +29,7 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Active voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
 
     voter = create(:user, :level_two)
     create(:vote, voter: voter, votable: proposal)
@@ -41,8 +40,7 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Follower)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
     user_follower = create(:user)
     create(:follow, :followed_proposal, user: user_follower, followable: proposal)
 
@@ -52,8 +50,7 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Follower and Voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
 
     user_voter_follower = create(:user)
     create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
@@ -68,8 +65,7 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Blocked voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
 
     voter = create(:user, :level_two)
     create(:vote, voter: voter, votable: proposal)
@@ -81,8 +77,7 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Erased voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
 
     voter = create(:user, :level_two)
     create(:vote, voter: voter, votable: proposal)
