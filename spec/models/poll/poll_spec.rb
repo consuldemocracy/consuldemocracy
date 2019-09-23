@@ -346,11 +346,9 @@ describe Poll do
     describe "#not_budget" do
 
       it "returns polls not associated to a budget" do
-        budget = create(:budget)
-
         poll1 = create(:poll)
         poll2 = create(:poll)
-        poll3 = create(:poll, budget: budget)
+        poll3 = create(:poll, :for_budget)
 
         expect(Poll.not_budget).to include(poll1)
         expect(Poll.not_budget).to include(poll2)

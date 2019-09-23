@@ -34,6 +34,10 @@ FactoryBot.define do
     trait :hidden do
       hidden_at { Time.current }
     end
+
+    trait :for_budget do
+      association :budget
+    end
   end
 
   factory :poll_question, class: "Poll::Question" do

@@ -6,7 +6,7 @@ describe "Polls" do
 
     scenario "Budget polls should not be listed" do
       poll = create(:poll)
-      budget_poll = create(:poll, budget: create(:budget))
+      budget_poll = create(:poll, :for_budget)
 
       visit polls_path
 
@@ -22,7 +22,7 @@ describe "Polls" do
       login_as(create(:administrator).user)
 
       poll = create(:poll)
-      budget_poll = create(:poll, budget: create(:budget))
+      budget_poll = create(:poll, :for_budget)
 
       visit admin_polls_path
 

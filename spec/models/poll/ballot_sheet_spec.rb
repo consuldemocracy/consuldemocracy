@@ -39,8 +39,7 @@ describe Poll::BallotSheet do
 
   describe "#verify_ballots" do
     it "creates ballots for each document number" do
-      budget = create(:budget)
-      poll = create(:poll, budget: budget)
+      poll = create(:poll, :for_budget)
       poll_ballot = create(:poll_ballot_sheet, poll: poll, data: "1,2,3;4,5,6")
       poll_ballot.verify_ballots
 

@@ -60,8 +60,7 @@ describe "Admin Budgets" do
   context "Show" do
 
     scenario "Do not show questions section if the budget have a poll associated" do
-      budget = create(:budget)
-      poll = create(:poll, budget: budget)
+      poll = create(:poll, :for_budget)
 
       visit admin_poll_path(poll)
 
