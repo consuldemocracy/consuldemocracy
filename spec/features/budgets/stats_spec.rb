@@ -3,8 +3,7 @@ require "rails_helper"
 describe "Stats" do
 
   let(:budget)  { create(:budget, :finished) }
-  let(:group)   { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group, price: 1000) }
+  let(:heading) { create(:budget_heading, budget: budget, price: 1000) }
 
   context "Load" do
 

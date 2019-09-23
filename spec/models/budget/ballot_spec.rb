@@ -13,8 +13,7 @@ describe Budget::Ballot do
 
     it "is not valid with the same investment twice" do
       budget = create(:budget)
-      group  = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
+      heading = create(:budget_heading, budget: budget)
       investment = create(:budget_investment, :selected, heading: heading)
 
       ballot = create(:budget_ballot, budget: budget)

@@ -76,8 +76,7 @@ describe "System Emails" do
 
     let(:user)    { create(:user, :level_two, username: "John Doe") }
     let(:budget)  { create(:budget, name: "Budget for 2019") }
-    let(:group)   { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group) }
+    let(:heading) { create(:budget_heading, budget: budget) }
 
     scenario "#proposal_notification_digest" do
       proposal_a = create(:proposal, title: "Proposal A")

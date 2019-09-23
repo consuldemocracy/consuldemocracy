@@ -324,10 +324,7 @@ describe "Valuation budget investments" do
   describe "Valuate" do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-      create(:budget_investment, heading: heading, group: group, budget: budget, price: nil,
-                                 administrator: admin)
+      create(:budget_investment, budget: budget, price: nil, administrator: admin)
     end
 
     before do

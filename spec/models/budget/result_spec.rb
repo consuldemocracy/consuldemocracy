@@ -4,8 +4,7 @@ describe Budget::Result do
 
   describe "calculate_winners" do
     let(:budget) { create(:budget) }
-    let(:group) { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group, price: 1000) }
+    let(:heading) { create(:budget_heading, budget: budget, price: 1000) }
 
     context "When there is no winners" do
       it "calculates the correct winner set" do
