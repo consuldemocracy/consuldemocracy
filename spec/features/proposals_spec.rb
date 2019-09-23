@@ -31,9 +31,9 @@ describe "Proposals" do
       Setting["feature.featured_proposals"] = true
       Setting["featured_proposals_number"] = 3
     end
+    let!(:featured_proposals) { create_featured_proposals }
 
     scenario "Lists featured and regular proposals" do
-      featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
       visit proposals_path
@@ -57,7 +57,6 @@ describe "Proposals" do
     end
 
     scenario "Index view mode" do
-      featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
       visit proposals_path
@@ -96,7 +95,7 @@ describe "Proposals" do
 
     scenario "Pagination" do
       per_page = Kaminari.config.default_per_page
-      (per_page + 5).times { create(:proposal) }
+      (per_page + 2).times { create(:proposal) }
 
       visit proposals_path
 
@@ -114,7 +113,6 @@ describe "Proposals" do
     end
 
     scenario "Index should show proposal descriptive image only when is defined" do
-      featured_proposals = create_featured_proposals
       proposal = create(:proposal)
       proposal_with_image = create(:proposal)
       image = create(:image, imageable: proposal_with_image)
