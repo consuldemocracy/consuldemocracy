@@ -2,10 +2,6 @@ require "rails_helper"
 
 describe "Communities" do
 
-  before do
-    Setting["feature.community"] = true
-  end
-
   context "Show" do
 
     scenario "Should display default content" do

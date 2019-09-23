@@ -38,7 +38,6 @@ describe "Proposals" do
   context "Index" do
 
     before do
-      Setting["feature.allow_images"] = true
       Setting["feature.featured_proposals"] = true
       Setting["featured_proposals_number"] = 3
     end
@@ -765,11 +764,6 @@ describe "Proposals" do
       let!(:best_proposal)   { create(:proposal, title: "Best",   cached_votes_up: 10, tag_list: "Sport") }
       let!(:medium_proposal) { create(:proposal, title: "Medium", cached_votes_up: 5,  tag_list: "Sport") }
       let!(:worst_proposal)  { create(:proposal, title: "Worst",  cached_votes_up: 1,  tag_list: "Sport") }
-
-      before do
-        Setting["feature.user.recommendations"] = true
-        Setting["feature.user.recommendations_on_proposals"] = true
-      end
 
       scenario "can't be sorted if there's no logged user" do
         visit proposals_path
@@ -1509,9 +1503,6 @@ describe "Proposals" do
     end
 
     scenario "Reorder by recommendations results maintaing search" do
-      Setting["feature.user.recommendations"] = true
-      Setting["feature.user.recommendations_for_proposals"] = true
-
       user = create(:user, recommended_proposals: true)
       login_as(user)
 

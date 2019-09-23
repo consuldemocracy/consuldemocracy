@@ -25,7 +25,6 @@ describe "Home" do
     describe "Recommended" do
 
       before do
-        Setting["feature.user.recommendations"] = true
         user = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
         create(:follow, followable: proposal, user: user)

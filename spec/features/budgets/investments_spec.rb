@@ -13,10 +13,6 @@ describe "Budget Investments" do
                   :budget_investment,
                   "budget_investment_path"
 
-  before do
-    Setting["feature.allow_images"] = true
-  end
-
   context "Concerns" do
     it_behaves_like "notifiable in-app", Budget::Investment
     it_behaves_like "relationable", Budget::Investment

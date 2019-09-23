@@ -455,11 +455,6 @@ describe "Debates" do
       let!(:medium_debate) { create(:debate, title: "Medium", cached_votes_total: 5,  tag_list: "Sport") }
       let!(:worst_debate)  { create(:debate, title: "Worst",  cached_votes_total: 1,  tag_list: "Sport") }
 
-      before do
-        Setting["feature.user.recommendations"] = true
-        Setting["feature.user.recommendations_on_debates"] = true
-      end
-
       scenario "can't be sorted if there's no logged user" do
         visit debates_path
         expect(page).not_to have_selector("a", text: "recommendations")
@@ -975,9 +970,6 @@ describe "Debates" do
     end
 
     scenario "Reorder by recommendations results maintaing search" do
-      Setting["feature.user.recommendations"] = true
-      Setting["feature.user.recommendations_on_debates"] = true
-
       user = create(:user, recommended_debates: true)
       login_as(user)
 

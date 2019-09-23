@@ -326,8 +326,6 @@ describe "Commenting topics from proposals" do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    Setting["feature.community"] = true
-
     community = proposal.community
     topic = create(:topic, community: community, title: "Should we change the world?")
     comment = create(:comment, commentable: topic)
@@ -877,8 +875,6 @@ describe "Commenting topics from budget investments" do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    Setting["feature.community"] = true
-
     community = investment.community
     topic = create(:topic, community: community, title: "Should we change the world?")
     comment = create(:comment, commentable: topic)

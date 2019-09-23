@@ -176,13 +176,6 @@ describe "Account" do
   end
 
   context "Recommendations" do
-
-    before do
-      Setting["feature.user.recommendations"] = true
-      Setting["feature.user.recommendations_on_debates"] = true
-      Setting["feature.user.recommendations_on_proposals"] = true
-    end
-
     scenario "are enabled by default" do
       visit account_path
 
