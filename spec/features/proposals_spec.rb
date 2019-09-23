@@ -572,7 +572,6 @@ describe "Proposals" do
     end
 
     scenario "Index has a link to retired proposals list" do
-      create_featured_proposals
       not_retired = create(:proposal)
       retired = create(:proposal, :retired)
 
@@ -689,8 +688,6 @@ describe "Proposals" do
   describe "Proposal index order filters" do
 
     scenario "Default order is hot_score", :js do
-      create_featured_proposals
-
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:hot_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -705,8 +702,6 @@ describe "Proposals" do
     end
 
     scenario "Proposals are ordered by confidence_score", :js do
-      create_featured_proposals
-
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -728,8 +723,6 @@ describe "Proposals" do
     end
 
     scenario "Proposals are ordered by newest", :js do
-      create_featured_proposals
-
       best_proposal = create(:proposal, title: "Best proposal", created_at: Time.current)
       medium_proposal = create(:proposal, title: "Medium proposal", created_at: Time.current - 1.hour)
       worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
@@ -864,7 +857,6 @@ describe "Proposals" do
   describe "Archived proposals" do
 
     scenario "show on proposals list" do
-      create_featured_proposals
       archived_proposals = create_archived_proposals
 
       visit proposals_path
@@ -878,7 +870,6 @@ describe "Proposals" do
     end
 
     scenario "do not show in other index tabs" do
-      create_featured_proposals
       archived_proposal = create(:proposal, :archived)
 
       visit proposals_path
@@ -898,7 +889,6 @@ describe "Proposals" do
     end
 
     scenario "do not show support buttons in index" do
-      create_featured_proposals
       archived_proposals = create_archived_proposals
 
       visit proposals_path(order: "archival_date")

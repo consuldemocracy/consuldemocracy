@@ -254,7 +254,6 @@ describe "Votes" do
       end
 
       scenario "Create in listed proposal in index", :js do
-        create_featured_proposals
         visit proposals_path
 
         within("#proposal_#{@proposal.id}") do
