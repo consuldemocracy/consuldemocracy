@@ -1506,6 +1506,7 @@ describe "Proposals" do
     end
 
     scenario "After a search do not show featured proposals" do
+      Setting["feature.featured_proposals"] = true
       featured_proposals = create_featured_proposals
       proposal = create(:proposal, title: "Abcdefghi")
 
@@ -1644,6 +1645,7 @@ describe "Proposals" do
                   {}
 
   scenario "Erased author" do
+    Setting["feature.featured_proposals"] = true
     user = create(:user)
     proposal = create(:proposal, author: user)
     user.erase
