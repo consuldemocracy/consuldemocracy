@@ -157,18 +157,6 @@ describe "Consul Schema" do
       expect(received_titles).to match_array [visible_proposal.title]
     end
 
-    xit "only returns proposals of the Human Rights proceeding" do
-      proposal = create(:proposal)
-      human_rights_proposal = create(:proposal, proceeding: "Derechos Humanos", sub_proceeding: "Right to have a job")
-      other_proceeding_proposal = create(:proposal)
-      other_proceeding_proposal.update_attribute(:proceeding, "Another proceeding")
-
-      response = execute("{ proposals { edges { node { title } } } }")
-      received_titles = extract_fields(response, "proposals", "title")
-
-      expect(received_titles).to match_array [proposal.title, human_rights_proposal.title]
-    end
-
     it "includes proposals of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
@@ -554,17 +542,6 @@ describe "Consul Schema" do
       received_tags = extract_fields(response, "tags", "name")
 
       expect(received_tags).to match_array ["Health", "Transportation"]
-    end
-
-    xit "does not display tags for proceeding's proposals" do
-      valid_proceeding_proposal = create(:proposal, proceeding: "Derechos Humanos", sub_proceeding: "Right to a Home", tag_list: "Health")
-      invalid_proceeding_proposal = create(:proposal, tag_list: "Animals")
-      invalid_proceeding_proposal.update_attribute("proceeding", "Random")
-
-      response = execute("{ tags { edges { node { name } } } }")
-      received_tags = extract_fields(response, "tags", "name")
-
-      expect(received_tags).to match_array ["Health"]
     end
 
     it "does not display tags for taggings that are not public" do
