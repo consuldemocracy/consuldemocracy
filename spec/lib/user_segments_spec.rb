@@ -51,7 +51,7 @@ describe UserSegments do
 
   describe "#proposal_authors" do
     it "returns users that have created a proposal" do
-      proposal = create(:proposal, author: user1)
+      create(:proposal, author: user1)
 
       proposal_authors = UserSegments.proposal_authors
       expect(proposal_authors).to include user1
@@ -59,8 +59,8 @@ describe UserSegments do
     end
 
     it "does not return duplicated users" do
-      proposal1 = create(:proposal, author: user1)
-      proposal2 = create(:proposal, author: user1)
+      create(:proposal, author: user1)
+      create(:proposal, author: user1)
 
       proposal_authors = UserSegments.proposal_authors
       expect(proposal_authors).to contain_exactly(user1)

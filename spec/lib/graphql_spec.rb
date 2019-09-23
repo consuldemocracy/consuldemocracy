@@ -260,10 +260,10 @@ describe "Consul Schema" do
 
   describe "Comments" do
     it "only returns comments from proposals, debates and polls" do
-      proposal_comment          = create(:comment, commentable: create(:proposal))
-      debate_comment            = create(:comment, commentable: create(:debate))
-      poll_comment              = create(:comment, commentable: create(:poll))
-      budget_investment_comment = build(:comment, commentable: create(:budget_investment)).save(skip_validation: true)
+      create(:comment, commentable: create(:proposal))
+      create(:comment, commentable: create(:debate))
+      create(:comment, commentable: create(:poll))
+      build(:comment, commentable: create(:budget_investment)).save(skip_validation: true)
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")
@@ -461,13 +461,13 @@ describe "Consul Schema" do
 
   describe "Tags" do
     it "only display tags with kind nil or category" do
-      tag           = create(:tag, name: "Parks")
-      category_tag  = create(:tag, :category, name: "Health")
-      admin_tag     = create(:tag, name: "Admin tag", kind: "admin")
+      create(:tag, name: "Parks")
+      create(:tag, :category, name: "Health")
+      create(:tag, name: "Admin tag", kind: "admin")
 
-      proposal = create(:proposal, tag_list: "Parks")
-      proposal = create(:proposal, tag_list: "Health")
-      proposal = create(:proposal, tag_list: "Admin tag")
+      create(:proposal, tag_list: "Parks")
+      create(:proposal, tag_list: "Health")
+      create(:proposal, tag_list: "Admin tag")
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -501,8 +501,8 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for hidden proposals" do
-      proposal = create(:proposal, tag_list: "Health")
-      hidden_proposal = create(:proposal, :hidden, tag_list: "SPAM")
+      create(:proposal, tag_list: "Health")
+      create(:proposal, :hidden, tag_list: "SPAM")
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -511,8 +511,8 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for hidden debates" do
-      debate = create(:debate, tag_list: "Health, Transportation")
-      hidden_debate = create(:debate, :hidden, tag_list: "SPAM")
+      create(:debate, tag_list: "Health, Transportation")
+      create(:debate, :hidden, tag_list: "SPAM")
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -521,7 +521,7 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for taggings that are not public" do
-      proposal = create(:proposal, tag_list: "Health")
+      create(:proposal, tag_list: "Health")
       allow(ActsAsTaggableOn::Tag).to receive(:public_for_api).and_return([])
 
       response = execute("{ tags { edges { node { name } } } }")

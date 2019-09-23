@@ -695,28 +695,28 @@ describe Debate do
     context "no results" do
 
       it "no words match" do
-        debate = create(:debate, title: "save world")
+        create(:debate, title: "save world")
 
         results = Debate.search("destroy planet")
         expect(results).to eq([])
       end
 
       it "too many typos" do
-        debate = create(:debate, title: "fantastic")
+        create(:debate, title: "fantastic")
 
         results = Debate.search("frantac")
         expect(results).to eq([])
       end
 
       it "too much stemming" do
-        debate = create(:debate, title: "reloj")
+        create(:debate, title: "reloj")
 
         results = Debate.search("superrelojimetro")
         expect(results).to eq([])
       end
 
       it "empty" do
-        debate = create(:debate, title: "great")
+        create(:debate, title: "great")
 
         results = Debate.search("")
         expect(results).to eq([])
