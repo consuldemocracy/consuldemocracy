@@ -127,17 +127,13 @@ describe Newsletter do
 
     it "skips invalid emails" do
       Proposal.destroy_all
-
-      valid_email = "john@gmail.com"
-      invalid_email = "john@gmail..com"
-
-      valid_email_user = create(:user, :with_proposal, email: valid_email)
-      invalid_email_user = create(:user, :with_proposal, email: invalid_email)
+      create(:user, :with_proposal, email: "valid@consul.dev")
+      create(:user, :with_proposal, email: "invalid@consul..dev")
 
       newsletter.deliver
 
       expect(Activity.count).to eq(1)
-      expect(Activity.first.user_id).to eq(valid_email_user.id)
+      expect(Activity.first.user.email).to eq("valid@consul.dev")
       expect(Activity.first.action).to eq("email")
       expect(Activity.first.actionable).to eq(newsletter)
     end
