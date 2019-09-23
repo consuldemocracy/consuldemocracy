@@ -471,39 +471,39 @@ describe Debate do
 
       it "searches by title" do
         debate = create(:debate, attributes)
-        results = described_class.search("save the world")
+        results = Debate.search("save the world")
         expect(results).to eq([debate])
       end
 
       it "searches by title across all languages translations" do
         debate = create(:debate, attributes)
-        results = described_class.search("salvar el mundo")
+        results = Debate.search("salvar el mundo")
         expect(results).to eq([debate])
       end
 
       it "searches by description" do
         debate = create(:debate, attributes)
-        results = described_class.search("one must think")
+        results = Debate.search("one must think")
         expect(results).to eq([debate])
       end
 
       it "searches by description across all languages translations" do
         debate = create(:debate, attributes)
-        results = described_class.search("uno debe pensar")
+        results = Debate.search("uno debe pensar")
         expect(results).to eq([debate])
       end
 
       it "searches by author name" do
         author = create(:user, username: "Danny Trejo")
         debate = create(:debate, author: author)
-        results = described_class.search("Danny")
+        results = Debate.search("Danny")
         expect(results).to eq([debate])
       end
 
       it "searches by geozone" do
         geozone = create(:geozone, name: "California")
         debate = create(:debate, geozone: geozone)
-        results = described_class.search("California")
+        results = Debate.search("California")
         expect(results).to eq([debate])
       end
 
@@ -514,13 +514,13 @@ describe Debate do
       it "searches word stems" do
         debate = create(:debate, title: "limpiar")
 
-        results = described_class.search("limpiará")
+        results = Debate.search("limpiará")
         expect(results).to eq([debate])
 
-        results = described_class.search("limpiémos")
+        results = Debate.search("limpiémos")
         expect(results).to eq([debate])
 
-        results = described_class.search("limpió")
+        results = Debate.search("limpió")
         expect(results).to eq([debate])
       end
 
@@ -531,15 +531,15 @@ describe Debate do
       it "searches with accents" do
         debate = create(:debate, title: "difusión")
 
-        results = described_class.search("difusion")
+        results = Debate.search("difusion")
         expect(results).to eq([debate])
 
         debate2 = create(:debate, title: "estadisticas")
-        results = described_class.search("estadísticas")
+        results = Debate.search("estadísticas")
         expect(results).to eq([debate2])
 
         debate3 = create(:debate, title: "público")
-        results = described_class.search("publico")
+        results = Debate.search("publico")
         expect(results).to eq([debate3])
       end
 
@@ -549,11 +549,11 @@ describe Debate do
       it "searches case insensite" do
         debate = create(:debate, title: "SHOUT")
 
-        results = described_class.search("shout")
+        results = Debate.search("shout")
         expect(results).to eq([debate])
 
         debate2 = create(:debate, title: "scream")
-        results = described_class.search("SCREAM")
+        results = Debate.search("SCREAM")
         expect(results).to eq([debate2])
       end
     end
@@ -562,10 +562,10 @@ describe Debate do
       it "searches by tags" do
         debate = create(:debate, tag_list: "Latina")
 
-        results = described_class.search("Latina")
+        results = Debate.search("Latina")
         expect(results.first).to eq(debate)
 
-        results = described_class.search("Latin")
+        results = Debate.search("Latin")
         expect(results.first).to eq(debate)
       end
     end
@@ -576,7 +576,7 @@ describe Debate do
         debate_description = create(:debate,  description: "stop corruption")
         debate_title       = create(:debate,  title:       "stop corruption")
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(debate_title)
         expect(results.second).to eq(debate_description)
@@ -588,7 +588,7 @@ describe Debate do
         title_most_voted    = create(:debate, title: "stop corruption", cached_votes_up: 10)
         description_most_voted = create(:debate, description: "stop corruption", cached_votes_up: 10)
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(title_most_voted)
         expect(results.second).to eq(title_some_votes)
@@ -600,7 +600,7 @@ describe Debate do
         exact_title_few_votes    = create(:debate, title: "stop corruption", cached_votes_up: 5)
         similar_title_many_votes = create(:debate, title: "stop some of the corruption", cached_votes_up: 500)
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(exact_title_few_votes)
         expect(results.second).to eq(similar_title_many_votes)
@@ -619,7 +619,7 @@ describe Debate do
         highest_score.update_column(:hot_score, 100)
         average_score.update_column(:hot_score, 10)
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(average_score)
         expect(results.second).to eq(highest_score)
@@ -641,7 +641,7 @@ describe Debate do
         highest_score.update_column(:confidence_score, 100)
         average_score.update_column(:confidence_score, 10)
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(average_score)
         expect(results.second).to eq(highest_score)
@@ -659,7 +659,7 @@ describe Debate do
         newest  = create(:debate,  title: "stop corruption", cached_votes_up: 2, created_at: Time.current)
         oldest  = create(:debate,  title: "stop corruption", cached_votes_up: 3, created_at: 1.month.ago)
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(oldest)
         expect(results.second).to eq(newest)
@@ -677,7 +677,7 @@ describe Debate do
         most_commented  = create(:debate,  title: "stop corruption",  cached_votes_up: 2, comments_count: 100)
         some_comments   = create(:debate,  title: "stop corruption",  cached_votes_up: 3, comments_count: 10)
 
-        results = described_class.search("stop corruption")
+        results = Debate.search("stop corruption")
 
         expect(results.first).to eq(some_comments)
         expect(results.second).to eq(most_commented)
@@ -697,28 +697,28 @@ describe Debate do
       it "no words match" do
         debate = create(:debate, title: "save world")
 
-        results = described_class.search("destroy planet")
+        results = Debate.search("destroy planet")
         expect(results).to eq([])
       end
 
       it "too many typos" do
         debate = create(:debate, title: "fantastic")
 
-        results = described_class.search("frantac")
+        results = Debate.search("frantac")
         expect(results).to eq([])
       end
 
       it "too much stemming" do
         debate = create(:debate, title: "reloj")
 
-        results = described_class.search("superrelojimetro")
+        results = Debate.search("superrelojimetro")
         expect(results).to eq([])
       end
 
       it "empty" do
         debate = create(:debate, title: "great")
 
-        results = described_class.search("")
+        results = Debate.search("")
         expect(results).to eq([])
       end
 
@@ -728,12 +728,12 @@ describe Debate do
   describe "#last_week" do
     it "returns debates created this week" do
       debate = create(:debate)
-      expect(described_class.last_week.all).to include debate
+      expect(Debate.last_week.all).to include debate
     end
 
     it "does not show debates created more than a week ago" do
       debate = create(:debate, created_at: 8.days.ago)
-      expect(described_class.last_week.all).not_to include debate
+      expect(Debate.last_week.all).not_to include debate
     end
   end
 
@@ -746,12 +746,12 @@ describe Debate do
   describe "public_for_api scope" do
     it "returns debates" do
       debate = create(:debate)
-      expect(described_class.public_for_api).to include(debate)
+      expect(Debate.public_for_api).to include(debate)
     end
 
     it "does not return hidden debates" do
       debate = create(:debate, :hidden)
-      expect(described_class.public_for_api).not_to include(debate)
+      expect(Debate.public_for_api).not_to include(debate)
     end
   end
 
@@ -762,7 +762,7 @@ describe Debate do
     it "does not return any debates when user has not interests" do
       create(:debate)
 
-      expect(described_class.recommendations(user).size).to eq 0
+      expect(Debate.recommendations(user).size).to eq 0
     end
 
     it "returns debates ordered by cached_votes_total" do
@@ -772,7 +772,7 @@ describe Debate do
       proposal = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal, user: user)
 
-      result = described_class.recommendations(user).sort_by_recommendations
+      result = Debate.recommendations(user).sort_by_recommendations
 
       expect(result.first).to eq debate3
       expect(result.second).to eq debate2
@@ -785,7 +785,7 @@ describe Debate do
       proposal1 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
-      result = described_class.recommendations(user)
+      result = Debate.recommendations(user)
 
       expect(result.size).to eq 1
       expect(result).to eq [debate1]
@@ -797,7 +797,7 @@ describe Debate do
       proposal = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal, user: user)
 
-      result = described_class.recommendations(user)
+      result = Debate.recommendations(user)
 
       expect(result.size).to eq 1
       expect(result).to eq [debate2]

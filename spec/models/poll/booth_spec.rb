@@ -18,9 +18,9 @@ describe Poll::Booth do
       booth1 = create(:poll_booth, name: "Booth number 1", location: "City center")
       booth2 = create(:poll_booth, name: "Central", location: "Town hall")
 
-      expect(described_class.search("number")).to eq([booth1])
-      expect(described_class.search("hall")).to eq([booth2])
-      expect(described_class.search("cen").size).to eq 2
+      expect(Poll::Booth.search("number")).to eq([booth1])
+      expect(Poll::Booth.search("hall")).to eq([booth2])
+      expect(Poll::Booth.search("cen").size).to eq 2
     end
   end
 
@@ -36,8 +36,8 @@ describe Poll::Booth do
       create(:poll_booth_assignment, poll: current_poll,  booth: booth_for_current_poll)
       create(:poll_booth_assignment, poll: expired_poll,  booth: booth_for_expired_poll)
 
-      expect(described_class.available).to include(booth_for_current_poll)
-      expect(described_class.available).not_to include(booth_for_expired_poll)
+      expect(Poll::Booth.available).to include(booth_for_current_poll)
+      expect(Poll::Booth.available).not_to include(booth_for_expired_poll)
     end
 
     it "returns polls with multiple translations only once" do

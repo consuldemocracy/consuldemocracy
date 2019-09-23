@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe CensusCaller do
-  let(:api) { described_class.new }
+  let(:api) { CensusCaller.new }
 
   describe "#call" do
     it "returns data from local_census_records if census API is not available" do

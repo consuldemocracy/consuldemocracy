@@ -176,6 +176,10 @@ RSpec/AroundBlock:
 RSpec/BeforeAfterAll:
   Enabled: true
 
+RSpec/DescribedClass:
+  Enabled: true
+  EnforcedStyle: explicit
+
 RSpec/EmptyExampleGroup:
   Enabled: true
   Exclude:

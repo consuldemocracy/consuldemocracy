@@ -73,7 +73,7 @@ describe Budget::Ballot::Line do
         ballot_line2 = create(:budget_ballot_line, ballot: ballot2, investment: investment1)
         ballot_line3 = create(:budget_ballot_line, ballot: ballot3, investment: investment2)
 
-        ballot_lines_by_investment = described_class.by_investment(investment1.id)
+        ballot_lines_by_investment = Budget::Ballot::Line.by_investment(investment1.id)
 
         expect(ballot_lines_by_investment).to include ballot_line1
         expect(ballot_lines_by_investment).to include ballot_line2

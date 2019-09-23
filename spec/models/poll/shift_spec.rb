@@ -81,7 +81,7 @@ describe Poll::Shift do
 
       create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment1, date: Date.tomorrow)
 
-      expect { described_class.last.destroy }.to change { Poll::OfficerAssignment.all.count }.by(-2)
+      expect { Poll::Shift.last.destroy }.to change { Poll::OfficerAssignment.all.count }.by(-2)
     end
 
     it "creates final officer_assignments" do

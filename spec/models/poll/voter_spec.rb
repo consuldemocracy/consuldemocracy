@@ -139,7 +139,7 @@ describe Poll::Voter do
         voter2 = create(:poll_voter, :from_web)
         voter3 = create(:poll_voter, :from_booth)
 
-        web_voters = described_class.web
+        web_voters = Poll::Voter.web
 
         expect(web_voters.count).to eq(2)
         expect(web_voters).to     include(voter1)
@@ -154,7 +154,7 @@ describe Poll::Voter do
         voter2 = create(:poll_voter, :from_booth)
         voter3 = create(:poll_voter, :from_web)
 
-        booth_voters = described_class.booth
+        booth_voters = Poll::Voter.booth
 
         expect(booth_voters.count).to eq(2)
         expect(booth_voters).to     include(voter1)

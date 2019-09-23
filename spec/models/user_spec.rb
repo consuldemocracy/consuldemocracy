@@ -322,7 +322,7 @@ describe User do
       create(:user, official_position: "Manager", official_level: 5)
       2.times { create(:user) }
 
-      officials = described_class.officials
+      officials = User.officials
       expect(officials.size).to eq(4)
       officials.each do |user|
         expect(user.official_level).to be > 0
@@ -397,9 +397,9 @@ describe User do
         user2 = create(:user, erased_at: nil)
         user3 = create(:user, erased_at: Time.current)
 
-        expect(described_class.active).to include(user1)
-        expect(described_class.active).to include(user2)
-        expect(described_class.active).not_to include(user3)
+        expect(User.active).to include(user1)
+        expect(User.active).to include(user2)
+        expect(User.active).not_to include(user3)
       end
 
       it "returns users that have not been blocked" do
@@ -408,9 +408,9 @@ describe User do
         user3 = create(:user)
         user3.block
 
-        expect(described_class.active).to include(user1)
-        expect(described_class.active).to include(user2)
-        expect(described_class.active).not_to include(user3)
+        expect(User.active).to include(user1)
+        expect(User.active).to include(user2)
+        expect(User.active).not_to include(user3)
       end
 
     end
@@ -422,9 +422,9 @@ describe User do
         user2 = create(:user, erased_at: Time.current)
         user3 = create(:user, erased_at: nil)
 
-        expect(described_class.erased).to include(user1)
-        expect(described_class.erased).to include(user2)
-        expect(described_class.erased).not_to include(user3)
+        expect(User.erased).to include(user1)
+        expect(User.erased).to include(user2)
+        expect(User.erased).not_to include(user3)
       end
 
     end
@@ -434,7 +434,7 @@ describe User do
     it "find users by email" do
       user1 = create(:user, email: "larry@consul.dev")
       create(:user, email: "bird@consul.dev")
-      search = described_class.search("larry@consul.dev")
+      search = User.search("larry@consul.dev")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)
     end
@@ -442,13 +442,13 @@ describe User do
     it "find users by name" do
       user1 = create(:user, username: "Larry Bird")
       create(:user, username: "Robert Parish")
-      search = described_class.search("larry")
+      search = User.search("larry")
       expect(search.size).to eq(1)
       expect(search.first).to eq(user1)
     end
 
     it "returns no results if no search term provided" do
-      expect(described_class.search("    ").size).to eq(0)
+      expect(User.search("    ").size).to eq(0)
     end
   end
 
@@ -478,13 +478,13 @@ describe User do
 
   describe "document_number" do
     it "upcases document number" do
-      user = described_class.new(document_number: "x1234567z")
+      user = User.new(document_number: "x1234567z")
       user.valid?
       expect(user.document_number).to eq("X1234567Z")
     end
 
     it "removes all characters except numbers and letters" do
-      user = described_class.new(document_number: " 12.345.678 - B")
+      user = User.new(document_number: " 12.345.678 - B")
       user.valid?
       expect(user.document_number).to eq("12345678B")
     end

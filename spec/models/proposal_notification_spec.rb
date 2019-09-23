@@ -27,20 +27,20 @@ describe ProposalNotification do
       proposal = create(:proposal)
       notification = create(:proposal_notification, proposal: proposal)
 
-      expect(described_class.public_for_api).to include(notification)
+      expect(ProposalNotification.public_for_api).to include(notification)
     end
 
     it "blocks proposal notifications whose proposal is hidden" do
       proposal = create(:proposal, :hidden)
       notification = create(:proposal_notification, proposal: proposal)
 
-      expect(described_class.public_for_api).not_to include(notification)
+      expect(ProposalNotification.public_for_api).not_to include(notification)
     end
 
     it "blocks proposal notifications without proposal" do
       proposal = build(:proposal_notification, proposal: nil).save!(validate: false)
 
-      expect(described_class.public_for_api).not_to include(notification)
+      expect(ProposalNotification.public_for_api).not_to include(notification)
     end
   end
 
@@ -80,7 +80,7 @@ describe ProposalNotification do
 
   describe "notifications in-app" do
 
-    let(:notifiable) { create(model_name(described_class)) }
+    let(:notifiable) { create(model_name(ProposalNotification)) }
     let(:proposal) { notifiable.proposal }
 
     describe "#notification_title" do
