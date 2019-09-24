@@ -29,11 +29,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
     @booth_assignment = ::Poll::BoothAssignment.new(poll: @poll,
                                                     booth: @booth)
 
-    if @booth_assignment.save
-      notice = t("admin.poll_booth_assignments.flash.create")
-    else
-      notice = t("admin.poll_booth_assignments.flash.error_create")
-    end
+    @booth_assignment.save
+
     respond_to do |format|
       format.js { render layout: false }
     end
@@ -44,11 +41,8 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
     @booth = Poll::Booth.find(booth_assignment_params[:booth_id])
     @booth_assignment = ::Poll::BoothAssignment.find(params[:id])
 
-    if @booth_assignment.destroy
-      notice = t("admin.poll_booth_assignments.flash.destroy")
-    else
-      notice = t("admin.poll_booth_assignments.flash.error_destroy")
-    end
+    @booth_assignment.destroy
+
     respond_to do |format|
       format.js { render layout: false }
     end

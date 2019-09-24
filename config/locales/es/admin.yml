@@ -1029,11 +1029,6 @@ es:
     poll_booth_assignments:
       alert:
         shifts: "Hay turnos asignados para esta urna. Si la desasignas, esos turnos se eliminarán. ¿Deseas continuar?"
-      flash:
-        destroy: "Urna desasignada"
-        create: "Urna asignada"
-        error_destroy: "Se ha producido un error al desasignar la urna"
-        error_create: "Se ha producido un error al intentar asignar la urna"
       show:
         location: "Ubicación"
         officers: "Presidentes de mesa"
