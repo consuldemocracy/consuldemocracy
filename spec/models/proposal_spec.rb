@@ -883,17 +883,11 @@ describe Proposal do
     end
 
     it "scope retired" do
-      retired = Proposal.retired
-
-      expect(retired.size).to eq(1)
-      expect(retired.first).to eq(proposal2)
+      expect(Proposal.retired).to eq [proposal2]
     end
 
     it "scope not_retired" do
-      not_retired = Proposal.not_retired
-
-      expect(not_retired.size).to eq(1)
-      expect(not_retired.first).to eq(proposal1)
+      expect(Proposal.not_retired).to eq [proposal1]
     end
   end
 
@@ -907,17 +901,11 @@ describe Proposal do
     end
 
     it "scope archived" do
-      archived = Proposal.archived
-
-      expect(archived.size).to eq(1)
-      expect(archived.first).to eq(archived_proposal)
+      expect(Proposal.archived).to eq [archived_proposal]
     end
 
     it "scope not archived" do
-      not_archived = Proposal.not_archived
-
-      expect(not_archived.size).to eq(1)
-      expect(not_archived.first).to eq(new_proposal)
+      expect(Proposal.not_archived).to eq [new_proposal]
     end
   end
 
@@ -931,17 +919,11 @@ describe Proposal do
     end
 
     it "scope selected" do
-      selected = Proposal.selected
-
-      expect(selected.size).to be 1
-      expect(selected.first).to eq selected_proposal
+      expect(Proposal.selected).to eq [selected_proposal]
     end
 
     it "scope not_selected" do
-      not_selected = Proposal.not_selected
-
-      expect(not_selected.size).to be 1
-      expect(not_selected.first).to eq not_selected_proposal
+      expect(Proposal.not_selected).to eq [not_selected_proposal]
     end
   end
 

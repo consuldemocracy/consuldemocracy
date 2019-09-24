@@ -141,10 +141,7 @@ describe Poll::Voter do
 
         web_voters = Poll::Voter.web
 
-        expect(web_voters.count).to eq(2)
-        expect(web_voters).to     include(voter1)
-        expect(web_voters).to     include(voter2)
-        expect(web_voters).not_to include(voter3)
+        expect(web_voters).to match_array [voter1, voter2]
       end
     end
 
@@ -156,10 +153,7 @@ describe Poll::Voter do
 
         booth_voters = Poll::Voter.booth
 
-        expect(booth_voters.count).to eq(2)
-        expect(booth_voters).to     include(voter1)
-        expect(booth_voters).to     include(voter2)
-        expect(booth_voters).not_to include(voter3)
+        expect(booth_voters).to match_array [voter1, voter2]
       end
     end
 

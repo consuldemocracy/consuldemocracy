@@ -335,8 +335,7 @@ describe Budget::Investment do
 
       by_admin = Budget::Investment.by_admin(33)
 
-      expect(by_admin.size).to eq(1)
-      expect(by_admin.first).to eq(investment1)
+      expect(by_admin).to eq [investment1]
     end
   end
 
@@ -383,13 +382,13 @@ describe Budget::Investment do
     let!(:investment) { create(:budget_investment, :feasible, heading: heading) }
 
     it "finds budget by id or slug" do
-      result = Budget::Investment.scoped_filter({ budget_id: budget.id }, nil)
-      expect(result.count).to be 1
-      expect(result.first.id).to be investment.id
+      results = Budget::Investment.scoped_filter({ budget_id: budget.id }, nil)
 
-      result = Budget::Investment.scoped_filter({ budget_id: "budget_slug" }, nil)
-      expect(result.count).to be 1
-      expect(result.first.id).to be investment.id
+      expect(results).to eq [investment]
+
+      results = Budget::Investment.scoped_filter({ budget_id: "budget_slug" }, nil)
+
+      expect(results).to eq [investment]
     end
 
     it "does not raise error if budget is not found" do
@@ -407,8 +406,7 @@ describe Budget::Investment do
 
         valuation_open = Budget::Investment.valuation_open
 
-        expect(valuation_open.size).to eq(1)
-        expect(valuation_open.first).to eq(investment2)
+        expect(valuation_open).to eq [investment2]
       end
     end
 
@@ -420,8 +418,7 @@ describe Budget::Investment do
 
         without_admin = Budget::Investment.without_admin
 
-        expect(without_admin.size).to eq(1)
-        expect(without_admin.first).to eq(investment3)
+        expect(without_admin).to eq [investment3]
       end
     end
 
@@ -434,8 +431,7 @@ describe Budget::Investment do
 
         managed = Budget::Investment.managed
 
-        expect(managed.size).to eq(1)
-        expect(managed.first).to eq(investment3)
+        expect(managed).to eq [investment3]
       end
     end
 
@@ -450,8 +446,7 @@ describe Budget::Investment do
 
         valuating = Budget::Investment.valuating
 
-        expect(valuating.size).to eq(1)
-        expect(valuating.first).to eq(investment2)
+        expect(valuating).to eq [investment2]
       end
 
       it "returns all investments with assigned valuator groups but valuation not finished" do
@@ -464,8 +459,7 @@ describe Budget::Investment do
 
         valuating = Budget::Investment.valuating
 
-        expect(valuating.size).to eq(1)
-        expect(valuating.first).to eq(investment2)
+        expect(valuating).to eq [investment2]
       end
     end
 
@@ -480,8 +474,7 @@ describe Budget::Investment do
 
         valuation_finished = Budget::Investment.valuation_finished
 
-        expect(valuation_finished.size).to eq(1)
-        expect(valuation_finished.first).to eq(investment3)
+        expect(valuation_finished).to eq [investment3]
       end
     end
 
@@ -933,10 +926,9 @@ describe Budget::Investment do
         most_voted2  = create(:budget_investment, cached_votes_up: 10)
         least_voted2 = create(:budget_investment, cached_votes_up: 1)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted2
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted2
-        expect(Budget::Investment.sort_by_confidence_score.fourth).to eq least_voted
+        expect(Budget::Investment.sort_by_confidence_score).to eq [
+          most_voted2, most_voted, least_voted2, least_voted
+        ]
       end
     end
   end

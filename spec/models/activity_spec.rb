@@ -43,10 +43,7 @@ describe Activity do
       create(:activity, action: "hide", actionable: create(:comment))
       create(:activity, action: "block", actionable: create(:user))
 
-      expect(Activity.on(proposal).size).to eq 3
-      [activity1, activity2, activity3].each do |a|
-        expect(Activity.on(proposal)).to include(a)
-      end
+      expect(Activity.on(proposal)).to match_array [activity1, activity2, activity3]
     end
   end
 
@@ -61,11 +58,9 @@ describe Activity do
       activity6 = create(:activity, user: user1, action: "valuate", actionable: create(:budget_investment))
       create_list(:activity, 3)
 
-      expect(Activity.by(user1).size).to eq 6
-
-      [activity1, activity2, activity3, activity4, activity5, activity6].each do |a|
-        expect(Activity.by(user1)).to include(a)
-      end
+      expect(Activity.by(user1)).to match_array(
+        [activity1, activity2, activity3, activity4, activity5, activity6]
+      )
     end
   end
 
@@ -77,17 +72,11 @@ describe Activity do
       on_user       = create(:activity, actionable: create(:user))
       on_investment = create(:activity, actionable: create(:budget_investment))
 
-      expect(Activity.on_proposals.size).to eq 1
-      expect(Activity.on_debates.size).to eq 1
-      expect(Activity.on_comments.size).to eq 1
-      expect(Activity.on_users.size).to eq 1
-      expect(Activity.on_budget_investments.size).to eq 1
-
-      expect(Activity.on_proposals.first).to eq on_proposal
-      expect(Activity.on_debates.first).to eq on_debate
-      expect(Activity.on_comments.first).to eq on_comment
-      expect(Activity.on_users.first).to eq on_user
-      expect(Activity.on_budget_investments.first).to eq on_investment
+      expect(Activity.on_proposals).to eq [on_proposal]
+      expect(Activity.on_debates).to eq [on_debate]
+      expect(Activity.on_comments).to eq [on_comment]
+      expect(Activity.on_users).to eq [on_user]
+      expect(Activity.on_budget_investments).to eq [on_investment]
     end
   end
 

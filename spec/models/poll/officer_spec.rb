@@ -47,10 +47,8 @@ describe Poll::Officer do
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer)
 
       assigned_polls = officer.voting_days_assigned_polls
-      expect(assigned_polls.size).to eq 2
-      expect(assigned_polls.include?(poll_1)).to eq(true)
-      expect(assigned_polls.include?(poll_2)).to eq(true)
-      expect(assigned_polls.include?(poll_3)).to eq(false)
+
+      expect(assigned_polls).to match_array [poll_1, poll_2]
     end
 
     it "does not return polls with this officer assigned for final recount/results" do
@@ -66,9 +64,8 @@ describe Poll::Officer do
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)
 
       assigned_polls = officer.voting_days_assigned_polls
-      expect(assigned_polls.size).to eq 1
-      expect(assigned_polls.include?(poll_1)).to eq(true)
-      expect(assigned_polls.include?(poll_2)).to eq(false)
+
+      expect(assigned_polls).to eq [poll_1]
     end
 
     it "returns polls ordered by end date (desc)" do
@@ -107,10 +104,8 @@ describe Poll::Officer do
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)
 
       assigned_polls = officer.final_days_assigned_polls
-      expect(assigned_polls.size).to eq 2
-      expect(assigned_polls.include?(poll_1)).to eq(true)
-      expect(assigned_polls.include?(poll_2)).to eq(true)
-      expect(assigned_polls.include?(poll_3)).to eq(false)
+
+      expect(assigned_polls).to match_array [poll_1, poll_2]
     end
 
     it "does not return polls with this officer assigned for voting days" do
@@ -126,9 +121,8 @@ describe Poll::Officer do
       create(:poll_officer_assignment, booth_assignment: booth_assignment_2, officer: officer, final: true)
 
       assigned_polls = officer.final_days_assigned_polls
-      expect(assigned_polls.size).to eq 1
-      expect(assigned_polls.include?(poll_1)).to eq(false)
-      expect(assigned_polls.include?(poll_2)).to eq(true)
+
+      expect(assigned_polls).to eq [poll_2]
     end
 
     it "returns polls ordered by end date (desc)" do

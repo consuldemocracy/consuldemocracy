@@ -435,16 +435,16 @@ describe User do
       user1 = create(:user, email: "larry@consul.dev")
       create(:user, email: "bird@consul.dev")
       search = User.search("larry@consul.dev")
-      expect(search.size).to eq(1)
-      expect(search.first).to eq(user1)
+
+      expect(search).to eq [user1]
     end
 
     it "find users by name" do
       user1 = create(:user, username: "Larry Bird")
       create(:user, username: "Robert Parish")
       search = User.search("larry")
-      expect(search.size).to eq(1)
-      expect(search.first).to eq(user1)
+
+      expect(search).to eq [user1]
     end
 
     it "returns no results if no search term provided" do

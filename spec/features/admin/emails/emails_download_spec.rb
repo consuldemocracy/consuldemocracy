@@ -37,13 +37,7 @@ describe "Admin download user emails" do
       expect(header).to match /filename="Administrators.csv"$/
 
       file_contents = page.body.split(",")
-      expect(file_contents.count).to eq(2)
-      expect(file_contents).to include("admin_news1@consul.dev")
-      expect(file_contents).to include("admin_news2@consul.dev")
-      expect(file_contents).not_to include("admin@consul.dev")
-      expect(file_contents).not_to include("user@consul.dev")
-      expect(file_contents).not_to include("no_news@consul.dev")
-      expect(file_contents).not_to include("no_email@consul.dev")
+      expect(file_contents).to match_array ["admin_news1@consul.dev", "admin_news2@consul.dev"]
     end
   end
 end

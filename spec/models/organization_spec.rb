@@ -53,21 +53,15 @@ describe Organization do
 
     it "finds fuzzily by name" do
       expect(Organization.search("Greenpeace")).to be_empty
-      search = Organization.search("Tershe")
-      expect(search.size).to eq 1
-      expect(search.first).to eq organization
+      expect(Organization.search("Tershe")).to eq [organization]
     end
 
     scenario "finds by users email" do
-      search = Organization.search(organization.user.email)
-      expect(search.size).to eq 1
-      expect(search.first).to eq organization
+      expect(Organization.search(organization.user.email)).to eq [organization]
     end
 
     scenario "finds by users phone number" do
-      search = Organization.search(organization.user.phone_number)
-      expect(search.size).to eq 1
-      expect(search.first).to eq organization
+      expect(Organization.search(organization.user.phone_number)).to eq [organization]
     end
   end
 end
