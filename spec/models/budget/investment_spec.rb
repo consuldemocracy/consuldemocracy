@@ -355,7 +355,7 @@ describe Budget::Investment do
 
       by_valuator = Budget::Investment.by_valuator(valuator1.id)
 
-      expect(by_valuator.sort).to eq([investment1, investment3].sort)
+      expect(by_valuator).to match_array [investment1, investment3]
     end
   end
 
@@ -509,7 +509,7 @@ describe Budget::Investment do
         undecided_investment = create(:budget_investment, :undecided)
         feasible_investment = create(:budget_investment, :feasible)
 
-        expect(Budget::Investment.not_unfeasible.sort).to eq [undecided_investment, feasible_investment].sort
+        expect(Budget::Investment.not_unfeasible).to match_array [undecided_investment, feasible_investment]
       end
     end
 
@@ -539,7 +539,7 @@ describe Budget::Investment do
         unselected_undecided_investment = create(:budget_investment, :unselected, :undecided)
         unselected_feasible_investment = create(:budget_investment, :unselected, :feasible)
 
-        expect(Budget::Investment.unselected.sort).to eq [unselected_undecided_investment, unselected_feasible_investment].sort
+        expect(Budget::Investment.unselected).to match_array [unselected_undecided_investment, unselected_feasible_investment]
       end
     end
 

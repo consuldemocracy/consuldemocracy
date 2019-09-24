@@ -580,7 +580,7 @@ describe User do
       user.take_votes_from other_user
 
       expect(other_user.votes.count).to eq(0)
-      expect(user.vote_ids.sort).to eq([v1.id, v2.id, v3.id].sort)
+      expect(user.vote_ids).to match_array [v1.id, v2.id, v3.id]
     end
 
     it "reassigns budget ballots from other user" do
@@ -598,7 +598,7 @@ describe User do
       user.take_votes_from other_user
 
       expect(Budget::Ballot.where(user: other_user).count).to eq(0)
-      expect(Budget::Ballot.where(user: user).sort).to eq([b1, b2].sort)
+      expect(Budget::Ballot.where(user: user)).to match_array [b1, b2]
     end
 
     it "reassigns poll voters from other user" do
@@ -616,7 +616,7 @@ describe User do
       user.take_votes_from other_user
 
       expect(Poll::Voter.where(user: other_user).count).to eq(0)
-      expect(Poll::Voter.where(user: user).sort).to eq([v1, v2].sort)
+      expect(Poll::Voter.where(user: user)).to match_array [v1, v2]
     end
   end
 
