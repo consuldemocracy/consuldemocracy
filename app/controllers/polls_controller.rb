@@ -25,7 +25,6 @@ class PollsController < ApplicationController
                                                     .where.not(description: "").order(:given_order)
 
     @answers_by_question_id = {}
-    poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user&.id)
 
     @last_pair_question_answers = {}
     @questions.each do |question|
