@@ -239,9 +239,7 @@ describe "Admin booths assignments" do
       booth_assignment = create(:poll_booth_assignment, poll: poll)
       other_booth_assignment = create(:poll_booth_assignment, poll: poll)
 
-      question_1 = create(:poll_question, poll: poll)
-      create(:poll_question_answer, title: "Yes", question: question_1)
-      create(:poll_question_answer, title: "No", question: question_1)
+      question_1 = create(:poll_question, :yes_no, poll: poll)
 
       question_2 = create(:poll_question, poll: poll)
       create(:poll_question_answer, title: "Today", question: question_2)
