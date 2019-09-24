@@ -483,23 +483,6 @@ describe "Polls" do
       expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
-    scenario "Don't show poll results and stats if is not expired" do
-      poll = create(:poll, :current, results_enabled: true, stats_enabled: true)
-      user = create(:user)
-
-      login_as user
-      visit poll_path(poll)
-
-      expect(page).not_to have_content("Poll results")
-      expect(page).not_to have_content("Participation statistics")
-
-      visit results_poll_path(poll)
-      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
-
-      visit stats_poll_path(poll)
-      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
-    end
-
     scenario "Do not show poll results or stats if are disabled" do
       poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
       question1 = create(:poll_question, poll: poll)
@@ -522,6 +505,23 @@ describe "Polls" do
 
       expect(page).not_to have_content("Poll results")
       expect(page).not_to have_content("Participation statistics")
+    end
+
+    scenario "Don't show poll results and stats if is not expired" do
+      poll = create(:poll, :current, results_enabled: true, stats_enabled: true)
+      user = create(:user)
+
+      login_as user
+      visit poll_path(poll)
+
+      expect(page).not_to have_content("Poll results")
+      expect(page).not_to have_content("Participation statistics")
+
+      visit results_poll_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'results' on poll.")
+
+      visit stats_poll_path(poll)
+      expect(page).to have_content("You do not have permission to carry out the action 'stats' on poll.")
     end
 
     scenario "Generates navigation links for polls without a slug" do
