@@ -485,12 +485,6 @@ describe "Polls" do
 
     scenario "Do not show poll results or stats to admins if disabled" do
       poll = create(:poll, :expired, results_enabled: false, stats_enabled: false)
-      question1 = create(:poll_question, poll: poll)
-      create(:poll_question_answer, question: question1, title: "Han Solo")
-      create(:poll_question_answer, question: question1, title: "Chewbacca")
-      question2 = create(:poll_question, poll: poll)
-      create(:poll_question_answer, question: question2, title: "Leia")
-      create(:poll_question_answer, question: question2, title: "Luke")
       admin = create(:administrator).user
 
       login_as admin
