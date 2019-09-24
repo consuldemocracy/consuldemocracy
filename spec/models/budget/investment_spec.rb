@@ -355,7 +355,6 @@ describe Budget::Investment do
 
       by_valuator = Budget::Investment.by_valuator(valuator1.id)
 
-      expect(by_valuator.size).to eq(2)
       expect(by_valuator.sort).to eq([investment1, investment3].sort)
     end
   end
@@ -373,7 +372,6 @@ describe Budget::Investment do
 
       by_valuator_group = Budget::Investment.by_valuator_group(valuator.valuator_group_id)
 
-      expect(by_valuator_group.size).to eq(2)
       expect(by_valuator_group).to contain_exactly(assigned_investment, another_assigned_investment)
     end
   end
@@ -1215,8 +1213,8 @@ describe Budget::Investment do
           :with_administrator,
           budget: budget)
         investment3 = create(:budget_investment, budget: budget)
+
         expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment3])
-        expect(Budget::Investment.scoped_filter(params, "all").count).to eq(1)
       end
     end
 
@@ -1231,10 +1229,9 @@ describe Budget::Investment do
           budget: budget)
         investment3 = create(:budget_investment,
           budget: budget)
+
         expect(Budget::Investment.scoped_filter(params, "all"))
           .to contain_exactly(investment2, investment3)
-        expect(Budget::Investment.scoped_filter(params, "all").count)
-        .to eq(2)
       end
     end
 
@@ -1251,7 +1248,6 @@ describe Budget::Investment do
         create(:budget_investment, budget: budget)
 
         expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
-        expect(Budget::Investment.scoped_filter(params, "all").count).to eq(1)
       end
     end
 
@@ -1266,8 +1262,8 @@ describe Budget::Investment do
           budget: budget)
         create(:budget_investment,
           budget: budget)
+
         expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
-        expect(Budget::Investment.scoped_filter(params, "all").count).to eq(1)
       end
     end
 
@@ -1282,8 +1278,8 @@ describe Budget::Investment do
           :with_administrator,
           budget: budget)
         create(:budget_investment, budget: budget)
+
         expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment1])
-        expect(Budget::Investment.scoped_filter(params, "all").count).to eq(1)
       end
     end
   end

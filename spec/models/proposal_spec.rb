@@ -1025,7 +1025,6 @@ describe Proposal do
 
       result = Proposal.recommendations(user)
 
-      expect(result.size).to eq 1
       expect(result).to eq [proposal2]
     end
 
@@ -1046,7 +1045,6 @@ describe Proposal do
 
       result = Proposal.recommendations(user)
 
-      expect(result.size).to eq 1
       expect(result).to eq [proposal2]
     end
 
@@ -1057,7 +1055,7 @@ describe Proposal do
       create(:follow, followable: proposal1, user: user)
 
       result = Proposal.recommendations(user)
-      expect(result.size).to eq(1)
+
       expect(result).to eq([proposal2])
     end
 
@@ -1069,7 +1067,7 @@ describe Proposal do
       create(:follow, followable: proposal2, user: user)
 
       result = Proposal.recommendations(user)
-      expect(result.size).to eq(1)
+
       expect(result).to eq([proposal3])
     end
 

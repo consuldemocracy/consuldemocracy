@@ -66,7 +66,6 @@ describe Budget::Group do
           create(:budget_group, budget: budget, name: "Bravo")
         end
 
-        expect(Budget::Group.sort_by_name.count).to eq 4
         expect(Budget::Group.sort_by_name).to eq [bravo, charlie, delta, zulu]
       end
     end

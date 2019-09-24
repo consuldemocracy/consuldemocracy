@@ -21,7 +21,6 @@ describe Poll::Ballot do
       poll_ballot.update(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.count).to eq(3)
       expect(poll_ballot.ballot.lines.pluck(:investment_id).sort).to eq([investment.id, investment2.id, investment3.id].sort)
     end
 
@@ -35,7 +34,6 @@ describe Poll::Ballot do
       poll_ballot.update(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.count).to eq(3)
       expect(poll_ballot.ballot.lines.pluck(:investment_id).sort).to eq([investment.id, investment2.id, investment3.id].sort)
     end
 
@@ -47,7 +45,6 @@ describe Poll::Ballot do
       poll_ballot.update(data: [investment.id, investment2.id, investment3.id, investment4.id].join(","))
       poll_ballot.verify
 
-      expect(poll_ballot.ballot.lines.count).to eq(3)
       expect(poll_ballot.ballot.lines.pluck(:investment_id).sort).to eq([investment.id, investment2.id, investment3.id].sort)
     end
 

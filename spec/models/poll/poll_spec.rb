@@ -410,7 +410,6 @@ describe Poll do
           create(:poll, starts_at: starts_at, name: "Bravo")
         end
 
-        expect(Poll.sort_for_list.count).to eq 4
         expect(Poll.sort_for_list).to eq [poll4, poll1, poll2, poll3]
       end
     end
