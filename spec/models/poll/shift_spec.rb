@@ -58,7 +58,6 @@ describe Poll::Shift do
 
     it "creates and destroy corresponding officer_assignments" do
       poll2 = create(:poll)
-      poll3 = create(:poll)
 
       booth_assignment1 = create(:poll_booth_assignment, poll: poll, booth: booth)
       booth_assignment2 = create(:poll_booth_assignment, poll: poll2, booth: booth)

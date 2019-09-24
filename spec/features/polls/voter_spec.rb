@@ -50,8 +50,6 @@ describe "Voter" do
     end
 
     scenario "Voting in booth", :js do
-      user = create(:user, :in_census)
-
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path

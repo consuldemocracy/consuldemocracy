@@ -8,7 +8,6 @@ describe "Admin shifts" do
   end
 
   scenario "Show" do
-    poll = create(:poll)
     officer = create(:poll_officer)
 
     booth1 = create(:poll_booth)
@@ -246,7 +245,6 @@ describe "Admin shifts" do
   end
 
   scenario "Destroy an officer" do
-    poll = create(:poll)
     booth = create(:poll_booth)
     officer = create(:poll_officer)
 
@@ -261,7 +259,6 @@ describe "Admin shifts" do
   end
 
   scenario "Empty" do
-    poll = create(:poll)
     booth = create(:poll_booth)
 
     visit new_admin_booth_shift_path(booth)

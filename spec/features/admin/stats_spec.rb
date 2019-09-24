@@ -388,8 +388,6 @@ describe "Stats" do
     end
 
     scenario "Participants by poll" do
-      oa = create(:poll_officer_assignment)
-
       poll1 = create(:poll)
       poll2 = create(:poll)
 
