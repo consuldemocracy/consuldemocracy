@@ -41,8 +41,8 @@ FactoryBot.define do
     association :author, factory: :user
     sequence(:title) { |n| "Question title #{n}" }
 
-    trait :with_answers do
-      after(:create) do |question, _evaluator|
+    trait :yes_no do
+      after(:create) do |question|
         create(:poll_question_answer, question: question, title: "Yes")
         create(:poll_question_answer, question: question, title: "No")
       end
@@ -197,13 +197,13 @@ FactoryBot.define do
   end
 
   factory :poll_answer, class: "Poll::Answer" do
-    association :question, factory: [:poll_question, :with_answers]
+    association :question, factory: [:poll_question, :yes_no]
     association :author, factory: [:user, :level_two]
     answer { question.question_answers.sample.title }
   end
 
   factory :poll_partial_result, class: "Poll::PartialResult" do
-    association :question, factory: [:poll_question, :with_answers]
+    association :question, factory: [:poll_question, :yes_no]
     association :author, factory: :user
     origin { "web" }
     answer { question.question_answers.sample.title }
