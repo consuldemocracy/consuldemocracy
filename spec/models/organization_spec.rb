@@ -48,11 +48,11 @@ describe Organization do
     let!(:organization) { create(:organization, name: "Watershed", user: create(:user, phone_number: "333")) }
 
     it "returns no results if search term is empty" do
-      expect(Organization.search(" ").size).to eq(0)
+      expect(Organization.search(" ")).to be_empty
     end
 
     it "finds fuzzily by name" do
-      expect(Organization.search("Greenpeace").size).to eq 0
+      expect(Organization.search("Greenpeace")).to be_empty
       search = Organization.search("Tershe")
       expect(search.size).to eq 1
       expect(search.first).to eq organization

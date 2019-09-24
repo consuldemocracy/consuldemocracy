@@ -91,7 +91,7 @@ describe EmailDigest do
       email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)
 
-      expect(all_emails.count).to eq(0)
+      expect(all_emails).to be_empty
     end
 
   end

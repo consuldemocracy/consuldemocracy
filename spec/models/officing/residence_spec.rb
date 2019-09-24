@@ -91,7 +91,8 @@ describe Officing::Residence do
           custom_residence = Officing::Residence.new("date_of_birth(3i)" => "1",
                                                  "date_of_birth(2i)" => "1",
                                                  "date_of_birth(1i)" => "1980")
-          expect(custom_residence.errors[:date_of_birth].size).to eq(0)
+
+          expect(custom_residence.errors[:date_of_birth]).to be_empty
         end
 
         it "is not valid without a date of birth" do

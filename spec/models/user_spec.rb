@@ -448,7 +448,7 @@ describe User do
     end
 
     it "returns no results if no search term provided" do
-      expect(User.search("    ").size).to eq(0)
+      expect(User.search("    ")).to be_empty
     end
   end
 

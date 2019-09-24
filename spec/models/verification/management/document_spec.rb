@@ -74,7 +74,8 @@ describe Verification::Management::Document do
           verification_document = Verification::Management::Document.new("date_of_birth(3i)" => "1",
                                                       "date_of_birth(2i)" => "1",
                                                       "date_of_birth(1i)" => "1980")
-          expect(verification_document.errors[:date_of_birth].size).to eq(0)
+
+          expect(verification_document.errors[:date_of_birth]).to be_empty
         end
 
         it "is not valid without a date of birth" do

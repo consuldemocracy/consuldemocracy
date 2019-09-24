@@ -1000,7 +1000,7 @@ describe Proposal do
     it "does not return any proposals when user has not interests" do
       create(:proposal)
 
-      expect(Proposal.recommendations(user).size).to eq 0
+      expect(Proposal.recommendations(user)).to be_empty
     end
 
     it "returns proposals ordered by cached_votes_up" do
@@ -1034,7 +1034,7 @@ describe Proposal do
 
       result = Proposal.recommendations(user)
 
-      expect(result.size).to eq 0
+      expect(result).to be_empty
     end
 
     it "does not return proposals when user is the author" do
