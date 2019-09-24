@@ -11,12 +11,6 @@ describe "Admin budget investments" do
                   :budget_investment,
                   "admin_budget_budget_investment_path"
 
-  it_behaves_like "edit_translatable",
-                  :budget_investment,
-                  "edit_admin_budget_budget_investment_path",
-                  %w[title],
-                  { "description" => :ckeditor }
-
   before do
     @admin = create(:administrator)
     login_as(@admin.user)
@@ -824,9 +818,7 @@ describe "Admin budget investments" do
 
     before do
       I18n.with_locale(:es) do
-        Globalize.with_locale(:es) do
-          create(:budget_investment, title: "Proyecto de inversión", budget: budget)
-        end
+        create(:budget_investment, title: "Proyecto de inversión", budget: budget)
       end
     end
 

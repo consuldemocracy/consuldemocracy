@@ -9,8 +9,8 @@ FactoryBot.define do
   end
 
   factory :admin_notification do
-    title             { |n| "Admin Notification title #{n}" }
-    body              { |n| "Admin Notification body #{n}" }
+    sequence(:title)  { |n| "Admin Notification title #{n}" }
+    sequence(:body)   { |n| "Admin Notification body #{n}" }
     link              { nil }
     segment_recipient { UserSegments::SEGMENTS.sample }
     recipients_count  { nil }

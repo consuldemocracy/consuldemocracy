@@ -9,11 +9,6 @@ describe "Admin legislation questions" do
 
   let!(:process) { create(:legislation_process, title: "An example legislation process") }
 
-  it_behaves_like "edit_translatable",
-                  "legislation_question",
-                  "edit_admin_legislation_process_question_path",
-                  %w[title]
-
   context "Feature flag" do
 
     before do

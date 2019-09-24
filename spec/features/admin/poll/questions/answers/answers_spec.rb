@@ -7,12 +7,6 @@ describe "Answers" do
     login_as admin.user
   end
 
-  it_behaves_like "edit_translatable",
-                  "poll_question_answer",
-                  "edit_admin_answer_path",
-                  %w[title],
-                  { "description" => :ckeditor }
-
   scenario "Create" do
     question = create(:poll_question)
     title = "Whatever the question may be, the answer is always 42"

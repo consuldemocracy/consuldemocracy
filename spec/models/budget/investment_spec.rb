@@ -555,10 +555,8 @@ describe Budget::Investment do
 
       it "takes into consideration title fallbacks when there is no translation for current locale" do
         create(:budget_investment, title: "BBBB")
-        Globalize.with_locale(:es) do
-          I18n.with_locale(:es) do
-            create(:budget_investment, title: "AAAA")
-          end
+        I18n.with_locale(:es) do
+          create(:budget_investment, title: "AAAA")
         end
 
         expect(Budget::Investment.sort_by_title.map(&:title)).to eq %w[AAAA BBBB]
@@ -570,11 +568,9 @@ describe Budget::Investment do
 
       let!(:investment) do
         I18n.with_locale(:es) do
-          Globalize.with_locale(:es) do
-            create(:budget_investment,
-              title_es: "Título del proyecto de inversión",
-              description_es: "Descripción del proyecto de inversión")
-          end
+          create(:budget_investment,
+            title_es: "Título del proyecto de inversión",
+            description_es: "Descripción del proyecto de inversión")
         end
       end
 

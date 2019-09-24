@@ -4,6 +4,7 @@ describe Legislation::Process do
   let(:process) { create(:legislation_process) }
 
   it_behaves_like "acts as paranoid", :legislation_process
+  it_behaves_like "globalizable", :legislation_process
 
   it "is valid" do
     expect(process).to be_valid

@@ -7,11 +7,6 @@ describe "Cards" do
     login_as(admin)
   end
 
-  it_behaves_like "edit_translatable",
-                  "widget_card",
-                  "edit_admin_widget_card_path",
-                  %w[title description link_text label]
-
   scenario "Create", :js do
     visit admin_homepage_path
     click_link "Create card"

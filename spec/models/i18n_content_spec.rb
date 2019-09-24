@@ -54,9 +54,7 @@ RSpec.describe I18nContent, type: :model do
     it "responds accordingly to the current locale" do
       expect(i18n_content.value).to eq("Text in english")
 
-      Globalize.locale = :es
-
-      expect(i18n_content.value).to eq("Texto en español")
+      I18n.with_locale(:es) { expect(i18n_content.value).to eq("Texto en español") }
     end
   end
 
