@@ -214,8 +214,6 @@ describe "System Emails" do
 
       expect(page).to have_content "Invitation to CONSUL"
       expect(page).to have_content "Thank you for applying to join CONSUL!"
-
-      registration_url = new_user_registration_url(track_id: 172943750183759812)
       expect(page).to have_link "Complete registration"
     end
 
