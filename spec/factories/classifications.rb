@@ -9,6 +9,14 @@ FactoryBot.define do
     trait :milestone do
       kind { "milestone" }
     end
+
+    transient { taggables { [] } }
+
+    after(:create) do |tag, evaluator|
+      evaluator.taggables.each do |taggable|
+        create(:tagging, tag: tag, taggable: taggable)
+      end
+    end
   end
 
   factory :tagging, class: "ActsAsTaggableOn::Tagging" do
