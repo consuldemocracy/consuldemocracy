@@ -34,9 +34,7 @@ describe "Admin shifts" do
   scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
     create(:poll)
     poll = create(:poll, :current)
-    booth = create(:poll_booth)
-    create(:poll_booth_assignment, poll: poll, booth: booth)
-    create(:poll_booth_assignment, poll: create(:poll, :expired), booth: booth)
+    booth = create(:poll_booth, polls: [poll, create(:poll, :expired)])
     officer = create(:poll_officer)
     vote_collection_dates = (Date.current..poll.ends_at.to_date).to_a.map { |date| I18n.l(date, format: :long) }
     recount_scrutiny_dates = (poll.ends_at.to_date..poll.ends_at.to_date + 1.week).to_a.map { |date| I18n.l(date, format: :long) }
@@ -98,8 +96,7 @@ describe "Admin shifts" do
 
   scenario "Vote Collection Shift and Recount & Scrutiny Shift don't include already assigned dates to officer", :js do
     poll = create(:poll, :current)
-    booth = create(:poll_booth)
-    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
     shift1 = create(:poll_shift, :vote_collection_task, officer: officer, booth: booth, date: Date.current)
@@ -149,8 +146,7 @@ describe "Admin shifts" do
 
   scenario "Error on create", :js do
     poll = create(:poll, :current)
-    booth = create(:poll_booth)
-    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
     visit available_admin_booths_path
@@ -171,8 +167,7 @@ describe "Admin shifts" do
 
   scenario "Destroy" do
     poll = create(:poll, :current)
-    booth = create(:poll_booth)
-    assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+    booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
     shift = create(:poll_shift, officer: officer, booth: booth)
