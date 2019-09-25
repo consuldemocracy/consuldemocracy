@@ -559,11 +559,6 @@ sl:
     poll_booth_assignments:
       alert:
         shifts: "Ni izmen, povezanih s tem voliščem. Če odstraniš nalogo volišča, bodo izbrisane tudi izmene. Želiš nadaljevati?"
-      flash:
-        destroy: "Volišče ni več dodeljeno"
-        create: "Volišče dodeljeno"
-        error_destroy: "Pri odstranjevanju dodeljenega volišča se je zgodila napaka."
-        error_create: "Pri dodeljevanju volišča glasovanju se je zgodila napaka."
       show:
         location: "Lokacija"
         officers: "Uradniki"
