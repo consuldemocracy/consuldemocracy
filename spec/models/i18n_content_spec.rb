@@ -14,21 +14,6 @@ RSpec.describe I18nContent, type: :model do
     expect(i18n_content.errors.size).to eq(1)
   end
 
-  context "Scopes" do
-    it "return one record when #by_key is used" do
-      content      = create(:i18n_content)
-      key          = "debates.form.debate_title"
-      debate_title = create(:i18n_content, key: key)
-
-      expect(I18nContent.all.size).to eq(2)
-
-      query = I18nContent.by_key(key)
-
-      expect(query.size).to eq(1)
-      expect(query).to eq([debate_title])
-    end
-  end
-
   context "Globalize" do
     it "translates key into multiple languages" do
       key = "devise_views.mailer.confirmation_instructions.welcome"

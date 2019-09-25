@@ -57,10 +57,8 @@ describe Poll::Shift do
   describe "officer_assignments" do
 
     it "creates and destroy corresponding officer_assignments" do
-      poll2 = create(:poll)
-
-      booth_assignment1 = create(:poll_booth_assignment, poll: poll, booth: booth)
-      booth_assignment2 = create(:poll_booth_assignment, poll: poll2, booth: booth)
+      booth_assignment1 = create(:poll_booth_assignment, booth: booth)
+      booth_assignment2 = create(:poll_booth_assignment, booth: booth)
 
       expect { create(:poll_shift, booth: booth, officer: officer, date: Date.current) }.to change { Poll::OfficerAssignment.all.count }.by(2)
 

@@ -434,8 +434,7 @@ describe "Ballots" do
 
     scenario "Display links to vote on groups with no investments voted yet" do
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, name: "District 1", group: group, price: 100)
-
+      heading = create(:budget_heading, group: group)
       ballot = create(:budget_ballot, user: user, budget: budget)
 
       login_as(user)
