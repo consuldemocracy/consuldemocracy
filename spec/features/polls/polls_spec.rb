@@ -25,10 +25,7 @@ describe "Polls" do
       visit polls_path
       expect(page).to have_content("There are no open votings")
 
-      polls = create_list(:poll, 3)
-      create(:image, imageable: polls[0])
-      create(:image, imageable: polls[1])
-      create(:image, imageable: polls[2])
+      polls = create_list(:poll, 3, :with_image)
 
       visit polls_path
 
@@ -98,9 +95,7 @@ describe "Polls" do
       expect(page).to have_content("This poll is not available on your geozone")
 
       poll_with_question = create(:poll)
-      question = create(:poll_question, poll: poll_with_question)
-      answer1 = create(:poll_question_answer, question: question, title: "Yes")
-      answer2 = create(:poll_question_answer, question: question, title: "No")
+      question = create(:poll_question, :yes_no, poll: poll_with_question)
       vote_for_poll_via_web(poll_with_question, question, "Yes")
 
       visit polls_path
@@ -188,15 +183,13 @@ describe "Polls" do
     end
 
     scenario "Non-logged in users" do
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
+      create(:poll_question, :yes_no, poll: poll)
 
       visit poll_path(poll)
 
       expect(page).to have_content("You must Sign in or Sign up to participate")
-      expect(page).to have_link("Han Solo", href: new_user_session_path)
-      expect(page).to have_link("Chewbacca", href: new_user_session_path)
+      expect(page).to have_link("Yes", href: new_user_session_path)
+      expect(page).to have_link("No", href: new_user_session_path)
     end
 
     scenario "Level 1 users" do
@@ -206,36 +199,32 @@ describe "Polls" do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
+      create(:poll_question, :yes_no, poll: poll)
 
       login_as(create(:user, geozone: geozone))
       visit poll_path(poll)
 
       expect(page).to have_content("You must verify your account in order to answer")
 
-      expect(page).to have_link("Han Solo", href: verification_path)
-      expect(page).to have_link("Chewbacca", href: verification_path)
+      expect(page).to have_link("Yes", href: verification_path)
+      expect(page).to have_link("No", href: verification_path)
     end
 
     scenario "Level 2 users in an expired poll" do
       expired_poll = create(:poll, :expired, geozone_restricted: true)
       expired_poll.geozones << geozone
 
-      question = create(:poll_question, poll: expired_poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Luke")
-      answer2 = create(:poll_question_answer, question: question, title: "Leia")
+      question = create(:poll_question, :yes_no, poll: expired_poll)
 
       login_as(create(:user, :level_two, geozone: geozone))
 
       visit poll_path(expired_poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_content("Luke")
-        expect(page).to have_content("Leia")
-        expect(page).not_to have_link("Luke")
-        expect(page).not_to have_link("Leia")
+        expect(page).to have_content("Yes")
+        expect(page).to have_content("No")
+        expect(page).not_to have_link("Yes")
+        expect(page).not_to have_link("No")
       end
       expect(page).to have_content("This poll has finished")
     end
@@ -244,19 +233,17 @@ describe "Polls" do
       poll.update(geozone_restricted: true)
       poll.geozones << create(:geozone)
 
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Vader")
-      answer2 = create(:poll_question_answer, question: question, title: "Palpatine")
+      question = create(:poll_question, :yes_no, poll: poll)
 
       login_as(create(:user, :level_two))
 
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_content("Vader")
-        expect(page).to have_content("Palpatine")
-        expect(page).not_to have_link("Vader")
-        expect(page).not_to have_link("Palpatine")
+        expect(page).to have_content("Yes")
+        expect(page).to have_content("No")
+        expect(page).not_to have_link("Yes")
+        expect(page).not_to have_link("No")
       end
     end
 
@@ -264,46 +251,40 @@ describe "Polls" do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
+      question = create(:poll_question, :yes_no, poll: poll)
 
       login_as(create(:user, :level_two, geozone: geozone))
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).to have_link("Yes")
+        expect(page).to have_link("No")
       end
     end
 
     scenario "Level 2 users reading a all-geozones poll" do
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
+      question = create(:poll_question, :yes_no, poll: poll)
 
       login_as(create(:user, :level_two))
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).to have_link("Yes")
+        expect(page).to have_link("No")
       end
     end
 
     scenario "Level 2 users who have already answered" do
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
+      question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two)
-      create(:poll_answer, question: question, author: user, answer: "Chewbacca")
+      create(:poll_answer, question: question, author: user, answer: "No")
 
       login_as user
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).to have_link("Yes")
+        expect(page).to have_link("No")
       end
     end
 
@@ -311,20 +292,17 @@ describe "Polls" do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
-
+      question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, geozone: geozone)
 
       login_as user
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link "Han Solo"
+        click_link "Yes"
 
-        expect(page).not_to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Yes")
+        expect(page).to have_link("No")
       end
     end
 
@@ -332,25 +310,22 @@ describe "Polls" do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
-
+      question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, geozone: geozone)
 
       login_as user
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link "Han Solo"
+        click_link "Yes"
 
-        expect(page).not_to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Yes")
+        expect(page).to have_link("No")
 
-        click_link "Chewbacca"
+        click_link "No"
 
-        expect(page).not_to have_link("Chewbacca")
-        expect(page).to have_link("Han Solo")
+        expect(page).not_to have_link("No")
+        expect(page).to have_link("Yes")
       end
     end
 
@@ -358,40 +333,37 @@ describe "Polls" do
       poll.update(geozone_restricted: true)
       poll.geozones << geozone
 
-      question = create(:poll_question, poll: poll)
-      answer1 = create(:poll_question_answer, question: question, title: "Han Solo")
-      answer2 = create(:poll_question_answer, question: question, title: "Chewbacca")
-
+      question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, geozone: geozone)
 
       login_as user
       visit poll_path(poll)
 
       within("#poll_question_#{question.id}_answers") do
-        click_link "Han Solo"
+        click_link "Yes"
 
-        expect(page).not_to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Yes")
+        expect(page).to have_link("No")
       end
 
       click_link "Sign out"
       login_as user
       visit poll_path(poll)
       within("#poll_question_#{question.id}_answers") do
-        click_link "Han Solo"
+        click_link "Yes"
 
-        expect(page).not_to have_link("Han Solo")
-        expect(page).to have_link("Chewbacca")
+        expect(page).not_to have_link("Yes")
+        expect(page).to have_link("No")
       end
 
       click_link "Sign out"
       login_as user
       visit poll_path(poll)
       within("#poll_question_#{question.id}_answers") do
-        click_link "Chewbacca"
+        click_link "No"
 
-        expect(page).not_to have_link("Chewbacca")
-        expect(page).to have_link("Han Solo")
+        expect(page).not_to have_link("No")
+        expect(page).to have_link("Yes")
       end
     end
   end
@@ -407,9 +379,7 @@ describe "Polls" do
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)
-      question = create(:poll_question, poll: poll)
-      create(:poll_question_answer, question: question, title: "Han Solo")
-      create(:poll_question_answer, question: question, title: "Chewbacca")
+      question = create(:poll_question, :yes_no, poll: poll)
       user = create(:user, :level_two, :in_census)
 
       login_as(officer.user)
@@ -427,11 +397,11 @@ describe "Polls" do
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
 
       within("#poll_question_#{question.id}_answers") do
-        expect(page).to have_content("Han Solo")
-        expect(page).to have_content("Chewbacca")
+        expect(page).to have_content("Yes")
+        expect(page).to have_content("No")
 
-        expect(page).not_to have_link("Han Solo")
-        expect(page).not_to have_link("Chewbacca")
+        expect(page).not_to have_link("Yes")
+        expect(page).not_to have_link("No")
       end
     end
 

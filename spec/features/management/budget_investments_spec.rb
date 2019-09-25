@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Budget Investments" do
 
   let(:manager) { create(:manager) }
-  let(:budget)  { create(:budget, phase: "selecting", name: "2033", slug: "budget_slug") }
+  let(:budget)  { create(:budget, :selecting, name: "2033", slug: "budget_slug") }
   let(:group)   { create(:budget_group, budget: budget, name: "Whole city") }
   let(:heading) { create(:budget_heading, group: group, name: "Health") }
 
@@ -208,13 +208,13 @@ describe "Budget Investments" do
   end
 
   scenario "Listing - managers can see budgets in accepting phase" do
-    accepting_budget = create(:budget, phase: "accepting")
-    reviewing_budget = create(:budget, phase: "reviewing")
-    selecting_budget = create(:budget, phase: "selecting")
-    valuating_budget = create(:budget, phase: "valuating")
-    balloting_budget = create(:budget, phase: "balloting")
-    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
-    finished = create(:budget, phase: "finished")
+    accepting_budget = create(:budget, :accepting)
+    reviewing_budget = create(:budget, :reviewing)
+    selecting_budget = create(:budget, :selecting)
+    valuating_budget = create(:budget, :valuating)
+    balloting_budget = create(:budget, :balloting)
+    reviewing_ballots_budget = create(:budget, :reviewing_ballots)
+    finished = create(:budget, :finished)
 
     user = create(:user, :level_two)
     login_managed_user(user)
@@ -232,13 +232,13 @@ describe "Budget Investments" do
   end
 
   scenario "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
-    accepting_budget = create(:budget, phase: "accepting")
-    reviewing_budget = create(:budget, phase: "reviewing")
-    selecting_budget = create(:budget, phase: "selecting")
-    valuating_budget = create(:budget, phase: "valuating")
-    balloting_budget = create(:budget, phase: "balloting")
-    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
-    finished = create(:budget, phase: "finished")
+    accepting_budget = create(:budget, :accepting)
+    reviewing_budget = create(:budget, :reviewing)
+    selecting_budget = create(:budget, :selecting)
+    valuating_budget = create(:budget, :valuating)
+    balloting_budget = create(:budget, :balloting)
+    reviewing_ballots_budget = create(:budget, :reviewing_ballots)
+    finished = create(:budget, :finished)
 
     visit root_path
     click_link "Sign out"

@@ -127,8 +127,7 @@ describe "Budget Investments" do
 
   scenario "Index should show investment descriptive image only when is defined" do
     investment = create(:budget_investment, heading: heading)
-    investment_with_image = create(:budget_investment, heading: heading)
-    image = create(:image, imageable: investment_with_image)
+    investment_with_image = create(:budget_investment, :with_image, heading: heading)
 
     visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -519,7 +518,7 @@ describe "Budget Investments" do
   context("Filters") do
 
     scenario "by unfeasibility" do
-      investment1 = create(:budget_investment, :unfeasible, heading: heading, valuation_finished: true)
+      investment1 = create(:budget_investment, :unfeasible, :finished, heading: heading)
       investment2 = create(:budget_investment, :feasible, heading: heading)
       investment3 = create(:budget_investment, heading: heading)
       investment4 = create(:budget_investment, :feasible, heading: heading)
@@ -596,8 +595,7 @@ describe "Budget Investments" do
       end
 
       scenario "unfeasible", :js do
-        investment1 = create(:budget_investment, :unfeasible, heading: heading,
-                             valuation_finished: true)
+        investment1 = create(:budget_investment, :unfeasible, :finished, heading: heading)
         investment2 = create(:budget_investment, :feasible, heading: heading)
 
         visit budget_results_path(budget)
@@ -1265,7 +1263,7 @@ describe "Budget Investments" do
 
     investment = create(:budget_investment,
                         :unfeasible,
-                        valuation_finished: false,
+                        :unfinished,
                         budget: budget,
                         group: group,
                         heading: heading,
@@ -1670,10 +1668,10 @@ describe "Budget Investments" do
     end
 
     scenario "Show unselected budget investments" do
-      investment1 = create(:budget_investment, :unselected, :feasible, heading: heading, valuation_finished: true)
-      investment2 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
-      investment3 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
-      investment4 = create(:budget_investment, :selected,   :feasible, heading: heading, valuation_finished: true)
+      investment1 = create(:budget_investment, :unselected, :feasible, :finished, heading: heading)
+      investment2 = create(:budget_investment, :selected,   :feasible, :finished, heading: heading)
+      investment3 = create(:budget_investment, :selected,   :feasible, :finished, heading: heading)
+      investment4 = create(:budget_investment, :selected,   :feasible, :finished, heading: heading)
 
       visit budget_investments_path(budget, heading_id: heading.id, filter: "unselected")
 

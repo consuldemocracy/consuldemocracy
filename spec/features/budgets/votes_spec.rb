@@ -4,7 +4,7 @@ describe "Votes" do
 
   describe "Investments" do
     let(:manuela) { create(:user, verified_at: Time.current) }
-    let(:budget)  { create(:budget, phase: "selecting") }
+    let(:budget)  { create(:budget, :selecting) }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 

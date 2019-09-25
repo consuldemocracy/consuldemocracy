@@ -346,7 +346,7 @@ describe "Admin budget investments" do
       valuator = create(:valuator, user: user)
       create(:budget_investment,
         :with_administrator,
-        valuation_finished: false,
+        :unfinished,
         title: "Investment without valuation",
         budget: budget,
         valuators: [valuator])
@@ -407,7 +407,7 @@ describe "Admin budget investments" do
     scenario "Filtering by winners", :js do
       create(:budget_investment,
         :winner,
-        valuation_finished: true,
+        :finished,
         title: "Investment winner",
         budget: budget)
       create(:budget_investment,
@@ -454,8 +454,7 @@ describe "Admin budget investments" do
     end
 
     scenario "Filtering by assignment status" do
-      create(:budget_investment, title: "Assigned idea", budget: budget,
-             administrator: create(:administrator))
+      create(:budget_investment, :with_administrator, title: "Assigned idea", budget: budget)
       create(:budget_investment, title: "Evaluating...", budget: budget,
              valuators: [create(:valuator)])
       create(:budget_investment, title: "With group", budget: budget,
@@ -483,10 +482,8 @@ describe "Admin budget investments" do
     end
 
     scenario "Filtering by valuation status" do
-      valuating = create(:budget_investment, budget: budget, title: "Ongoing valuation",
-                                                             administrator: create(:administrator))
-      valuated = create(:budget_investment, budget: budget, title: "Old idea",
-                                                             valuation_finished: true)
+      valuating = create(:budget_investment, :with_administrator, budget: budget, title: "Ongoing valuation")
+      valuated = create(:budget_investment, :finished, budget: budget, title: "Old idea")
       valuating.valuators.push(create(:valuator))
       valuated.valuators.push(create(:valuator))
 
@@ -703,10 +700,8 @@ describe "Admin budget investments" do
     end
 
     scenario "Combination of select with text search", :js do
-      create(:budget_investment, budget: budget, title: "Educate the children",
-                                 feasibility: "feasible", valuation_finished: true)
-      create(:budget_investment, budget: budget, title: "More schools",
-                                 feasibility: "feasible", valuation_finished: true)
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children")
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools")
       create(:budget_investment, budget: budget, title: "More hospitals")
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -743,11 +738,9 @@ describe "Admin budget investments" do
       user = create(:user, username: "Admin 1")
       administrator = create(:administrator, user: user)
 
-      create(:budget_investment, budget: budget, title: "Educate the children",
-                                 feasibility: "feasible", valuation_finished: true,
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "Educate the children",
                                  administrator: administrator)
-      create(:budget_investment, budget: budget, title: "More schools",
-                                 feasibility: "feasible", valuation_finished: true,
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "More schools",
                                  administrator: administrator)
       create(:budget_investment, budget: budget, title: "More hospitals",
                                  administrator: administrator)
@@ -987,10 +980,10 @@ describe "Admin budget investments" do
       user = create(:user, username: "Rachel", email: "rachel@valuators.org")
       valuator = create(:valuator, user: user)
       budget_investment = create(:budget_investment,
+                                  :unfeasible,
+                                  unfeasibility_explanation: "It is impossible",
                                   price: 1234,
                                   price_first_year: 1000,
-                                  feasibility: "unfeasible",
-                                  unfeasibility_explanation: "It is impossible",
                                   administrator: administrator)
       budget_investment.valuators << valuator
 
@@ -1018,12 +1011,12 @@ describe "Admin budget investments" do
 
     scenario "Show image and documents on investment details" do
       budget_investment = create(:budget_investment,
+                                  :with_image,
+                                  :unfeasible,
+                                  unfeasibility_explanation: "It is impossible",
                                   price: 1234,
                                   price_first_year: 1000,
-                                  feasibility: "unfeasible",
-                                  unfeasibility_explanation: "It is impossible",
                                   administrator: administrator)
-      create(:image, imageable: budget_investment)
       document = create(:document, documentable: budget_investment)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -1048,10 +1041,9 @@ describe "Admin budget investments" do
 
     scenario "Not show related content or hide links on preview" do
       budget_investment = create(:budget_investment,
+                                  :unfeasible,
                                   price: 1234,
                                   price_first_year: 1000,
-                                  feasibility: "unfeasible",
-                                  unfeasibility_explanation: "It is impossible",
                                   administrator: administrator)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -1667,14 +1659,12 @@ describe "Admin budget investments" do
     end
 
     scenario "Showing the valuating checkbox" do
-      investment1 = create(:budget_investment, budget: budget, visible_to_valuators: true)
-      investment2 = create(:budget_investment, budget: budget, visible_to_valuators: false)
+      investment1 = create(:budget_investment, :with_administrator, :visible_to_valuators, budget: budget)
+      investment2 = create(:budget_investment, :with_administrator, :invisible_to_valuators, budget: budget)
 
       investment1.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
       investment2.valuators << create(:valuator)
-      investment1.update(administrator: create(:administrator))
-      investment2.update(administrator: create(:administrator))
 
       visit admin_budget_budget_investments_path(budget)
 
@@ -1747,8 +1737,8 @@ describe "Admin budget investments" do
     let!(:investment) do
       create(:budget_investment,
               :winner,
+              :visible_to_valuators,
               budget: budget,
-              visible_to_valuators: true,
               author: create(:user, username: "Jon Doe")
             )
     end

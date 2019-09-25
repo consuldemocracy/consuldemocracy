@@ -7,8 +7,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
     context "Index" do
       scenario "Displaying milestones" do
-        milestone = create(:milestone, milestoneable: milestoneable)
-        create(:image, imageable: milestone)
+        milestone = create(:milestone, :with_image, milestoneable: milestoneable)
         document = create(:document, documentable: milestone)
 
         visit path
@@ -85,8 +84,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
     context "Edit" do
       scenario "Change title, description and document names" do
-        milestone = create(:milestone, milestoneable: milestoneable)
-        create(:image, imageable: milestone)
+        milestone = create(:milestone, :with_image, milestoneable: milestoneable)
         document = create(:document, documentable: milestone)
 
         visit path

@@ -156,11 +156,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_proposal = create(:proposal, author: visible_author)
-      hidden_proposal  = create(:proposal, author: hidden_author)
+      visible_author = create(:user, :with_proposal, public_activity: true)
+      hidden_author  = create(:user, :with_proposal, public_activity: false)
 
       response = execute("{ proposals { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "proposals", "public_author.username")
@@ -228,11 +225,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_debate = create(:debate, author: visible_author)
-      hidden_debate  = create(:debate, author: hidden_author)
+      visible_author = create(:user, :with_debate, public_activity: true)
+      hidden_author  = create(:user, :with_debate, public_activity: false)
 
       response = execute("{ debates { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "debates", "public_author.username")
@@ -291,11 +285,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_comment = create(:comment, author: visible_author)
-      hidden_comment  = create(:comment, author: hidden_author)
+      visible_author = create(:user, :with_comment, public_activity: true)
+      hidden_author  = create(:user, :with_comment, public_activity: false)
 
       response = execute("{ comments { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "comments", "public_author.username")
@@ -305,7 +296,7 @@ describe "Consul Schema" do
 
     it "does not include hidden comments" do
       visible_comment = create(:comment)
-      hidden_comment  = create(:comment, hidden_at: Time.current)
+      hidden_comment  = create(:comment, :hidden)
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -315,7 +306,7 @@ describe "Consul Schema" do
 
     it "does not include comments from hidden proposals" do
       visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, hidden_at: Time.current)
+      hidden_proposal  = create(:proposal, :hidden)
 
       visible_proposal_comment = create(:comment, commentable: visible_proposal)
       hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
@@ -328,7 +319,7 @@ describe "Consul Schema" do
 
     it "does not include comments from hidden debates" do
       visible_debate = create(:debate)
-      hidden_debate  = create(:debate, hidden_at: Time.current)
+      hidden_debate  = create(:debate, :hidden)
 
       visible_debate_comment = create(:comment, commentable: visible_debate)
       hidden_debate_comment  = create(:comment, commentable: hidden_debate)
@@ -341,7 +332,7 @@ describe "Consul Schema" do
 
     it "does not include comments from hidden polls" do
       visible_poll = create(:poll)
-      hidden_poll  = create(:poll, hidden_at: Time.current)
+      hidden_poll  = create(:poll, :hidden)
 
       visible_poll_comment = create(:comment, commentable: visible_poll)
       hidden_poll_comment  = create(:comment, commentable: hidden_poll)
@@ -575,7 +566,7 @@ describe "Consul Schema" do
 
     it "does not include votes of hidden proposals" do
       visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, hidden_at: Time.current)
+      hidden_proposal  = create(:proposal, :hidden)
 
       visible_proposal_vote = create(:vote, votable: visible_proposal)
       hidden_proposal_vote  = create(:vote, votable: hidden_proposal)
@@ -588,7 +579,7 @@ describe "Consul Schema" do
 
     it "does not include votes of hidden comments" do
       visible_comment = create(:comment)
-      hidden_comment  = create(:comment, hidden_at: Time.current)
+      hidden_comment  = create(:comment, :hidden)
 
       visible_comment_vote = create(:vote, votable: visible_comment)
       hidden_comment_vote  = create(:vote, votable: hidden_comment)

@@ -260,7 +260,7 @@ describe "Admin download settings" do
   end
 
   context "Download budgets" do
-    let(:budget_finished)  { create(:budget, phase: "finished") }
+    let(:budget_finished)  { create(:budget, :finished) }
     let(:heading) { create(:budget_heading, budget: budget_finished, price: 1000) }
 
     let(:investment1) { create(:budget_investment,

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin budget headings" do
 
-  let(:budget) { create(:budget, phase: "drafting") }
+  let(:budget) { create(:budget, :drafting) }
   let(:group) { create(:budget_group, budget: budget) }
 
   before do

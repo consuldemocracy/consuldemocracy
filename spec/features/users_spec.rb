@@ -116,7 +116,7 @@ describe "Users" do
 
     scenario "Show alert when user wants to delete a budget investment", :js do
       user = create(:user, :level_two)
-      budget = create(:budget, phase: "accepting")
+      budget = create(:budget, :accepting)
       budget_investment = create(:budget_investment, author_id: user.id, budget: budget)
 
       login_as(user)

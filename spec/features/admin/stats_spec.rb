@@ -75,9 +75,9 @@ describe "Stats" do
     end
 
     scenario "Do not count hidden users" do
-      1.times { create(:user, :level_three, hidden_at: Time.current) }
-      2.times { create(:user, :level_two, hidden_at: Time.current) }
-      3.times { create(:user, hidden_at: Time.current) }
+      1.times { create(:user, :hidden, :level_three) }
+      2.times { create(:user, :hidden, :level_two) }
+      3.times { create(:user, :hidden) }
 
       visit admin_stats_path
 
@@ -419,8 +419,8 @@ describe "Stats" do
 
       poll = create(:poll)
 
-      question1 = create(:poll_question, :with_answers, poll: poll)
-      question2 = create(:poll_question, :with_answers, poll: poll)
+      question1 = create(:poll_question, :yes_no, poll: poll)
+      question2 = create(:poll_question, :yes_no, poll: poll)
 
       create(:poll_answer, question: question1, author: user1)
       create(:poll_answer, question: question2, author: user1)

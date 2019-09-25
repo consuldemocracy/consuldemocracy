@@ -129,9 +129,7 @@ describe "Polls" do
 
   scenario "Edit poll should allow to remove answers", :js do
     poll = create(:poll, related: proposal, starts_at: 1.week.from_now)
-    question = create(:poll_question, poll: poll)
-    create(:poll_question_answer, question: question)
-    create(:poll_question_answer, question: question)
+    create(:poll_question, :yes_no, poll: poll)
     visit proposal_dashboard_polls_path(proposal)
     within "div#poll_#{poll.id}" do
       click_link "Edit survey"

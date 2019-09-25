@@ -264,7 +264,7 @@ describe "Admin budgets" do
   context "Calculate Budget's Winner Investments" do
 
     scenario "For a Budget in reviewing balloting", :js do
-      budget = create(:budget, phase: "reviewing_ballots")
+      budget = create(:budget, :reviewing_ballots)
       heading = create(:budget_heading, budget: budget, price: 4)
       unselected = create(:budget_investment, :unselected, heading: heading, price: 1,
                                                            ballot_lines_count: 3)

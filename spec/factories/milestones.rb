@@ -11,6 +11,10 @@ FactoryBot.define do
     description          { "Milestone description" }
     publication_date     { Date.current }
 
+    trait :with_image do
+      after(:create) { |milestone| create(:image, imageable: milestone) }
+    end
+
     factory :milestone_with_description do
       status { nil }
     end

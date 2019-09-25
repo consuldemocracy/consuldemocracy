@@ -7,7 +7,7 @@ describe Poll::Stats do
   describe "#participants" do
     it "includes hidden users" do
       create(:poll_voter, poll: poll)
-      create(:poll_voter, poll: poll, user: create(:user, :level_two, hidden_at: Time.current))
+      create(:poll_voter, poll: poll, user: create(:user, :level_two, :hidden))
 
       expect(stats.participants.count).to eq(2)
     end

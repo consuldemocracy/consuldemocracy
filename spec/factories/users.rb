@@ -51,6 +51,18 @@ FactoryBot.define do
       document_type { "1" }
       verified_at { Time.current }
     end
+
+    trait :with_proposal do
+      after(:create) { |user| create(:proposal, author: user) }
+    end
+
+    trait :with_debate do
+      after(:create) { |user| create(:debate, author: user) }
+    end
+
+    trait :with_comment do
+      after(:create) { |user| create(:comment, author: user) }
+    end
   end
 
   factory :identity do

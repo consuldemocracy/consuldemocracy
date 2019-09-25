@@ -154,22 +154,22 @@ describe Budget do
   describe "#current" do
 
     it "returns nil if there is only one budget and it is still in drafting phase" do
-      budget = create(:budget, phase: "drafting")
+      create(:budget, :drafting)
 
       expect(Budget.current).to eq(nil)
     end
 
     it "returns the budget if there is only one and not in drafting phase" do
-      budget = create(:budget, phase: "accepting")
+      budget = create(:budget, :accepting)
 
       expect(Budget.current).to eq(budget)
     end
 
     it "returns the last budget created that is not in drafting phase" do
-      old_budget      = create(:budget, phase: "finished",  created_at: 2.years.ago)
-      previous_budget = create(:budget, phase: "accepting", created_at: 1.year.ago)
-      current_budget  = create(:budget, phase: "accepting", created_at: 1.month.ago)
-      next_budget     = create(:budget, phase: "drafting",  created_at: 1.week.ago)
+      old_budget      = create(:budget, :finished,  created_at: 2.years.ago)
+      previous_budget = create(:budget, :accepting, created_at: 1.year.ago)
+      current_budget  = create(:budget, :accepting, created_at: 1.month.ago)
+      next_budget     = create(:budget, :drafting,  created_at: 1.week.ago)
 
       expect(Budget.current).to eq(current_budget)
     end

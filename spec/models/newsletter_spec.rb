@@ -131,11 +131,8 @@ describe Newsletter do
       valid_email = "john@gmail.com"
       invalid_email = "john@gmail..com"
 
-      valid_email_user = create(:user, email: valid_email)
-      proposal = create(:proposal, author: valid_email_user)
-
-      invalid_email_user = create(:user, email: invalid_email)
-      proposal = create(:proposal, author: invalid_email_user)
+      valid_email_user = create(:user, :with_proposal, email: valid_email)
+      invalid_email_user = create(:user, :with_proposal, email: invalid_email)
 
       newsletter.deliver
 

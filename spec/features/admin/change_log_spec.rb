@@ -15,10 +15,10 @@ describe "Admin change log" do
 
     scenario "No changes" do
       budget_investment = create(:budget_investment,
+                                 :unfeasible,
+                                 unfeasibility_explanation: "It is impossible",
                                  price: 1234,
                                  price_first_year: 1000,
-                                 feasibility: "unfeasible",
-                                 unfeasibility_explanation: "It is impossible",
                                  administrator: administrator)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
@@ -34,10 +34,10 @@ describe "Admin change log" do
 
     scenario "Changes" do
       budget_investment = create(:budget_investment,
+                                 :unfeasible,
+                                 unfeasibility_explanation: "It is impossible",
                                  price: 1234,
                                  price_first_year: 1000,
-                                 feasibility: "unfeasible",
-                                 unfeasibility_explanation: "It is impossible",
                                  administrator: administrator)
 
       visit admin_budget_budget_investments_path(budget_investment.budget)
