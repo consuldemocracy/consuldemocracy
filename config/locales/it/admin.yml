@@ -728,11 +728,6 @@ it:
     poll_booth_assignments:
       alert:
         shifts: "A questo seggio risultano associati dei turni. Se rimuovi l’assegnazione del seggio, anche i turni verranno eliminati. Continuare?"
-      flash:
-        destroy: "Seggio non più assegnato"
-        create: "Seggio assegnato"
-        error_destroy: "Si è verificato un errore nella rimozione dell’assegnazione del seggio"
-        error_create: "Si è verificato un errore nell’assegnazione del seggio alla votazione"
       show:
         location: "Luogo"
         officers: "Presidenti di seggio"
