@@ -36,9 +36,7 @@ describe DirectMessage do
 
       it "is not valid if above maximum" do
         sender = create(:user)
-        direct_message1 = create(:direct_message, sender: sender)
-        direct_message2 = create(:direct_message, sender: sender)
-        direct_message3 = create(:direct_message, sender: sender)
+        3.times { create(:direct_message, sender: sender) }
 
         direct_message4 = build(:direct_message, sender: sender)
         expect(direct_message4).not_to be_valid
@@ -46,8 +44,7 @@ describe DirectMessage do
 
       it "is valid if below maximum" do
         sender = create(:user)
-        direct_message1 = create(:direct_message, sender: sender)
-        direct_message2 = create(:direct_message, sender: sender)
+        2.times { create(:direct_message, sender: sender) }
 
         direct_message3 = build(:direct_message, sender: sender)
         expect(direct_message3).to be_valid
