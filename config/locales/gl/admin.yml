@@ -801,11 +801,6 @@ gl:
     poll_booth_assignments:
       alert:
         shifts: "Hai quendas asignadas para esta urna. Se a designas, estas quenda elimínanse. Desexas continuar?"
-      flash:
-        destroy: "Urna sen asingar"
-        create: "Urna asignada"
-        error_destroy: "Produciuse un erro ao desasignar a urna"
-        error_create: "Produciuse un erro ao intentar asignar a urna"
       show:
         location: "Localización"
         officers: "Presidentes de mesa"
