@@ -1005,11 +1005,6 @@ tr:
     poll_booth_assignments:
       alert:
         shifts: "Bu kabinle ilişkili vardiyalar var. Kabin atamayı kaldırırsanız, aynı zamanda vardiyalar silinecektir. Devam edilsin mi?"
-      flash:
-        destroy: "Kabin artık atanmış değil"
-        create: "Atanmış kabin"
-        error_destroy: "Kabin ataması kaldırılırken bir hata oluştu"
-        error_create: "Ankete kabin atanırken bir hata oluştu"
       show:
         location: "Konum"
         officers: "Memurlar"
