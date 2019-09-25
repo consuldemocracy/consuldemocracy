@@ -1,13 +1,11 @@
 require "rails_helper"
 
 describe Poll::Voter do
-
-  let(:poll) { create(:poll) }
-  let(:booth) { create(:poll_booth) }
-  let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
-  let(:voter) { create(:poll_voter) }
-
   describe "validations" do
+    let(:poll) { create(:poll) }
+    let(:booth) { create(:poll_booth) }
+    let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
+    let(:voter) { create(:poll_voter) }
     let(:user) { create(:user, :level_two) }
 
     it "is valid" do
