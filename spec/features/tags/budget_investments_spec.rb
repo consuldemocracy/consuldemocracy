@@ -101,11 +101,10 @@ describe "Tags" do
   end
 
   scenario "Turbolinks sanity check from budget's show", :js do
+    create(:tag, name: "Education", kind: "category")
+    create(:tag, name: "Health",    kind: "category")
+
     login_as(author)
-
-    education = create(:tag, name: "Education", kind: "category")
-    health    = create(:tag, name: "Health",    kind: "category")
-
     visit budget_path(budget)
     click_link "Create a budget investment"
 
@@ -126,11 +125,10 @@ describe "Tags" do
   end
 
   scenario "Turbolinks sanity check from budget heading's show", :js do
+    create(:tag, name: "Education", kind: "category")
+    create(:tag, name: "Health",    kind: "category")
+
     login_as(author)
-
-    education = create(:tag, name: "Education", kind: "category")
-    health    = create(:tag, name: "Health",    kind: "category")
-
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 

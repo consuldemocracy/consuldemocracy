@@ -29,7 +29,7 @@ describe "Tags" do
   end
 
   scenario "Index featured proposals does not show tags" do
-    proposal = create(:proposal, tag_list: "123")
+    create(:proposal, tag_list: "123")
 
     visit proposals_path(tag: "123")
 
@@ -83,12 +83,10 @@ describe "Tags" do
   end
 
   scenario "Category with category tags", :js do
-    user = create(:user)
-    login_as(user)
+    create(:tag, :category, name: "Education")
+    create(:tag, :category, name: "Health")
 
-    education = create(:tag, :category, name: "Education")
-    health    = create(:tag, :category, name: "Health")
-
+    login_as(create(:user))
     visit new_proposal_path
 
     fill_in "Proposal title", with: "Help refugees"
@@ -222,8 +220,8 @@ describe "Tags" do
   context "Tag cloud" do
 
     scenario "Display user tags" do
-      earth = create(:proposal, tag_list: "Medio Ambiente")
-      money = create(:proposal, tag_list: "Economía")
+      create(:proposal, tag_list: "Medio Ambiente")
+      create(:proposal, tag_list: "Economía")
 
       visit proposals_path
 
@@ -258,8 +256,8 @@ describe "Tags" do
       create(:tag, :category, name: "Medio Ambiente")
       create(:tag, :category, name: "Economía")
 
-      earth = create(:proposal, tag_list: "Medio Ambiente")
-      money = create(:proposal, tag_list: "Economía")
+      create(:proposal, tag_list: "Medio Ambiente")
+      create(:proposal, tag_list: "Economía")
 
       visit proposals_path
 

@@ -36,7 +36,7 @@ describe "Admin legislation draft versions" do
 
   context "Create" do
     scenario "Valid legislation draft version" do
-      process = create(:legislation_process, title: "An example legislation process")
+      create(:legislation_process, title: "An example legislation process")
 
       visit admin_root_path
 

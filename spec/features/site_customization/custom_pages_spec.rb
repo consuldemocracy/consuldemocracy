@@ -73,7 +73,7 @@ describe "Custom Pages" do
       end
 
       scenario "Listed in more information page" do
-        custom_page = create(:site_customization_page, :published,
+        create(:site_customization_page, :published,
           slug: "another-slug",
           title_en: "Another custom page",
           subtitle_en: "Subtitle for custom page",

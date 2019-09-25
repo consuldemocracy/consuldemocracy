@@ -357,7 +357,7 @@ describe "Stats" do
   context "Polls" do
 
     scenario "Total participants by origin" do
-      oa = create(:poll_officer_assignment)
+      create(:poll_officer_assignment)
       3.times { create(:poll_voter, origin: "web") }
 
       visit admin_stats_path

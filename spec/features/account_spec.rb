@@ -67,7 +67,7 @@ describe "Account" do
              " complete the confirmation of your new email address."
     expect(page).to have_content notice
 
-    email = open_last_email
+    open_last_email
     visit_in_email("Confirm my account")
 
     logout

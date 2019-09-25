@@ -22,9 +22,9 @@ describe "Incomplete verifications" do
   end
 
   scenario "Search" do
-    verified_user = create(:user, :level_two, username: "Juan Carlos")
-    unverified_user = create(:user, :incomplete_verification, username: "Juan_anonymous")
-    unverified_user = create(:user, :incomplete_verification, username: "Isabel_anonymous")
+    create(:user, :level_two, username: "Juan Carlos")
+    create(:user, :incomplete_verification, username: "Juan_anonymous")
+    create(:user, :incomplete_verification, username: "Isabel_anonymous")
 
     visit admin_verifications_path
 

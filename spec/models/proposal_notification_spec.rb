@@ -38,7 +38,7 @@ describe ProposalNotification do
     end
 
     it "blocks proposal notifications without proposal" do
-      proposal = build(:proposal_notification, proposal: nil).save!(validate: false)
+      build(:proposal_notification, proposal: nil).save!(validate: false)
 
       expect(ProposalNotification.public_for_api).not_to include(notification)
     end

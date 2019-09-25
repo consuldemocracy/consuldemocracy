@@ -123,19 +123,20 @@ describe "Officing Results", :with_frozen_time do
   end
 
   scenario "Index lists all questions and answers" do
-    partial_result = create(:poll_partial_result,
-                      officer_assignment: poll_officer.officer_assignments.first,
-                      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
-                      date: poll.ends_at,
-                      question: @question_1,
-                      amount: 33)
-    poll_recount = create(:poll_recount,
-                      officer_assignment: poll_officer.officer_assignments.first,
-                      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
-                      date: poll.ends_at,
-                      white_amount: 21,
-                      null_amount: 44,
-                      total_amount: 66)
+    create(:poll_partial_result,
+      officer_assignment: poll_officer.officer_assignments.first,
+      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      date: poll.ends_at,
+      question: @question_1,
+      amount: 33)
+
+    create(:poll_recount,
+      officer_assignment: poll_officer.officer_assignments.first,
+      booth_assignment: poll_officer.officer_assignments.first.booth_assignment,
+      date: poll.ends_at,
+      white_amount: 21,
+      null_amount: 44,
+      total_amount: 66)
 
     visit officing_poll_results_path(poll,
                                      date: I18n.l(poll.ends_at.to_date),

@@ -1,14 +1,14 @@
 require "rails_helper"
 
 RSpec.describe I18nContent, type: :model do
-  let(:i18n_content) { build(:i18n_content) }
+  let(:i18n_content) { build(:i18n_content, key: "awe.so.me") }
 
   it "is valid" do
     expect(i18n_content).to be_valid
   end
 
   it "is not valid if key is not unique" do
-    new_content = create(:i18n_content)
+    create(:i18n_content, key: "awe.so.me")
 
     expect(i18n_content).not_to be_valid
     expect(i18n_content.errors.size).to eq(1)
