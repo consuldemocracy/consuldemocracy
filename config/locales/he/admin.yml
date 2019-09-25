@@ -1019,11 +1019,6 @@ he:
     poll_booth_assignments:
       alert:
         shifts: "יש משמרות הקשורים דוכן זה. אם תסיר את הקצאת הדוכנים, המשמרות יימחקו גם הם. להמשיך?"
-      flash:
-        destroy: "הדוכן לא הוקצה עוד"
-        create: "הדוכן הוקצה"
-        error_destroy: "אירעה שגיאה בעת הסרת הקצאת דוכן"
-        error_create: "אירעה שגיאה בעת הקצאת דוכן לסקר"
       show:
         location: "מקום"
         officers: "נושאי משרה"
