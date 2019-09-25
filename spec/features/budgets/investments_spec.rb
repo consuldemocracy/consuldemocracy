@@ -454,9 +454,9 @@ describe "Budget Investments" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
-          bdgt_invest1 = create(:budget_investment, heading: heading, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          bdgt_invest2 = create(:budget_investment, heading: heading, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          bdgt_invest3 = create(:budget_investment, heading: heading, title: "Save the forest")
+          create(:budget_investment, heading: heading, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          create(:budget_investment, heading: heading, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
+          create(:budget_investment, heading: heading, title: "Save the forest")
 
           visit budget_investments_path(budget)
 
@@ -470,7 +470,7 @@ describe "Budget Investments" do
           expect(page).to have_content("There is 1 investment")
 
           within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
+            expect(page).to have_content "Get Schwifty"
           end
         end
 
@@ -1336,13 +1336,13 @@ describe "Budget Investments" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, :selected, heading: carabanchel)
-        salamanca_investment   = create(:budget_investment, :selected, heading: salamanca)
+        create(:budget_investment, :selected, title: "In Carabanchel", heading: carabanchel)
+        create(:budget_investment, :selected, title: "In Salamanca", heading: salamanca)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
-        within("#budget_investment_#{carabanchel_investment.id}") do
+        within(".budget-investment", text: "In Carabanchel") do
           expect(page).to have_css(".in-favor a[data-confirm]")
         end
       end
@@ -1351,13 +1351,13 @@ describe "Budget Investments" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [author])
-        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        create(:budget_investment, title: "In Carabanchel", heading: carabanchel, voters: [author])
+        create(:budget_investment, title: "In Salamanca", heading: salamanca)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
-        within("#budget_investment_#{carabanchel_investment.id}") do
+        within(".budget-investment", text: "In Carabanchel") do
           expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end

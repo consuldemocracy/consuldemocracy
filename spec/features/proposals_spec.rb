@@ -1370,9 +1370,9 @@ describe "Proposals" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
-          proposal1 = create(:proposal, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          proposal2 = create(:proposal, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          proposal3 = create(:proposal, title: "Save the forest")
+          create(:proposal, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          create(:proposal, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
+          create(:proposal, title: "Save the forest")
 
           visit proposals_path
 
@@ -1386,7 +1386,7 @@ describe "Proposals" do
           expect(page).to have_content("There is 1 citizen proposal")
 
           within("#proposals") do
-            expect(page).to have_content(proposal1.title)
+            expect(page).to have_content "Get Schwifty"
           end
         end
 
@@ -1498,12 +1498,12 @@ describe "Proposals" do
 
     scenario "After a search do not show featured proposals" do
       Setting["feature.featured_proposals"] = true
-      featured_proposals = create_featured_proposals
-      proposal = create(:proposal, title: "Abcdefghi")
+      create_featured_proposals
+      create(:proposal, title: "Abcdefghi")
 
       visit proposals_path
       within(".expanded #search_form") do
-        fill_in "search", with: proposal.title
+        fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end
 

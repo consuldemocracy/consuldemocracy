@@ -94,24 +94,24 @@ describe "Ballots" do
       end
 
       scenario "Investments" do
-        city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
-        city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
+        city_heading1     = create(:budget_heading, group: city,      name: "Above the city")
+        city_heading2     = create(:budget_heading, group: city,      name: "Under the city")
         district_heading1 = create(:budget_heading, group: districts, name: "District 1")
         district_heading2 = create(:budget_heading, group: districts, name: "District 2")
 
-        city_investment1      = create(:budget_investment, :selected, heading: city_heading1)
-        city_investment2      = create(:budget_investment, :selected, heading: city_heading1)
-        district1_investment1 = create(:budget_investment, :selected, heading: district_heading1)
-        district1_investment2 = create(:budget_investment, :selected, heading: district_heading1)
-        district2_investment1 = create(:budget_investment, :selected, heading: district_heading2)
+        create(:budget_investment, :selected, heading: city_heading1, title: "Solar panels")
+        create(:budget_investment, :selected, heading: city_heading1, title: "Observatory")
+        create(:budget_investment, :selected, heading: district_heading1, title: "New park")
+        create(:budget_investment, :selected, heading: district_heading1, title: "Zero-emission zone")
+        create(:budget_investment, :selected, heading: district_heading2, title: "Climbing wall")
 
         visit budget_path(budget)
         click_link "City"
-        click_link "Investments Type1"
+        click_link "Above the city"
 
         expect(page).to have_css(".budget-investment", count: 2)
-        expect(page).to have_content city_investment1.title
-        expect(page).to have_content city_investment2.title
+        expect(page).to have_content "Solar panels"
+        expect(page).to have_content "Observatory"
 
         visit budget_path(budget)
 
@@ -119,15 +119,15 @@ describe "Ballots" do
         click_link "District 1"
 
         expect(page).to have_css(".budget-investment", count: 2)
-        expect(page).to have_content district1_investment1.title
-        expect(page).to have_content district1_investment2.title
+        expect(page).to have_content "New park"
+        expect(page).to have_content "Zero-emission zone"
 
         visit budget_path(budget)
         click_link "Districts"
         click_link "District 2"
 
         expect(page).to have_css(".budget-investment", count: 1)
-        expect(page).to have_content district2_investment1.title
+        expect(page).to have_content "Climbing wall"
       end
 
       scenario "Redirect to first heading if there is only one" do
