@@ -854,11 +854,6 @@ sv:
     poll_booth_assignments:
       alert:
         shifts: "Röststationen har tilldelade arbetspass. Om du tar bort röststationen kommer arbetspassen också tas bort. Vill du fortsätta?"
-      flash:
-        destroy: "Röststation är inte längre tilldelad"
-        create: "Röststation tilldelad"
-        error_destroy: "Ett fel uppstod när du tog bort tilldelningen av röststationen"
-        error_create: "Ett fel uppstod när röststationen tilldelades omröstningen"
       show:
         location: "Plats"
         officers: "Funktionärer"
