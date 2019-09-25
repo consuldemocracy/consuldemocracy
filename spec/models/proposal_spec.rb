@@ -1033,7 +1033,7 @@ describe Proposal do
     it "does not return archived proposals" do
       proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
       proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
-      archived_proposal = create(:proposal, :archived)
+      archived_proposal = create(:proposal, :archived, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
       result = Proposal.recommendations(user)
