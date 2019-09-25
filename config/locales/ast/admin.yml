@@ -505,11 +505,6 @@ ast:
         actions:
           assign: Asignar urna
     poll_booth_assignments:
-      flash:
-        destroy: "Urna ensin asignar"
-        create: "Urna asignada"
-        error_destroy: "Producióse un erru al ensin asignar la urna"
-        error_create: "Producióse un erru al intentar asignar la urna"
       show:
         location: "Allugamientu"
         officers: "Presidentes de mesa"
