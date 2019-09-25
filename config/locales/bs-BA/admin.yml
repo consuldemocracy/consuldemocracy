@@ -919,11 +919,6 @@ bs:
     poll_booth_assignments:
       alert:
         shifts: "Za ovu kabinu je određen rad u smjenama. Ako obrišete raspored za kabinu, obrisaće se i smjene. Nastavite?"
-      flash:
-        destroy: "Kabina više nije dodjeljena"
-        create: "Kabina dodjeljena"
-        error_destroy: "Došlo je do greške u brisanju dodjele kabina"
-        error_create: "Došlo je do greške u određivanju kabine za glasačku anketu"
       show:
         location: "Lokacija"
         officers: "Anketari"
