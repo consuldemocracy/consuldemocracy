@@ -870,11 +870,6 @@ fr:
     poll_booth_assignments:
       alert:
         shifts: "Il y a des périodes de travail associées à ce bureau de vote. Si vous supprimez l'affectation du bureau, ces périodes seront également supprimées. Continuer ?"
-      flash:
-        destroy: "Ce bureau de vote n'est plus affecté"
-        create: "Ce bureau de vote a été affecté"
-        error_destroy: "Une erreur s'est produite lors de la suppression de l'affectation du bureau de vote"
-        error_create: "Une erreur s'est produite lors de l'affectation du bureau de vote au vote"
       show:
         location: "Lieu"
         officers: "Présidents"
