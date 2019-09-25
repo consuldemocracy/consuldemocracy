@@ -3,7 +3,6 @@ require "rails_helper"
 describe "Tags" do
 
   scenario "Index" do
-    create_featured_proposals
     earth = create(:proposal, tag_list: "Medio Ambiente")
     money = create(:proposal, tag_list: "Economía")
 
@@ -19,7 +18,6 @@ describe "Tags" do
   end
 
   scenario "Index shows up to 5 tags per proposal" do
-    create_featured_proposals
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :proposal, tag_list: tag_list
 
@@ -31,7 +29,6 @@ describe "Tags" do
   end
 
   scenario "Index featured proposals does not show tags" do
-    featured_proposals = create_featured_proposals
     proposal = create(:proposal, tag_list: "123")
 
     visit proposals_path(tag: "123")
@@ -41,7 +38,6 @@ describe "Tags" do
   end
 
   scenario "Index shows 3 tags with no plus link" do
-    create_featured_proposals
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
     create :proposal, tag_list: tag_list
 
@@ -192,7 +188,6 @@ describe "Tags" do
   context "Filter" do
 
     scenario "From index" do
-      create_featured_proposals
       proposal1 = create(:proposal, tag_list: "Education")
       proposal2 = create(:proposal, tag_list: "Health")
 

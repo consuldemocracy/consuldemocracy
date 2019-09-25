@@ -40,8 +40,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Index shows up to 5 tags per proposal" do
-    create_featured_proposals
+  scenario "Index shows up to 5 tags per investment" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :budget_investment, heading: heading, tag_list: tag_list
 

@@ -31,9 +31,9 @@ describe "Proposals" do
       Setting["feature.featured_proposals"] = true
       Setting["featured_proposals_number"] = 3
     end
+    let!(:featured_proposals) { create_featured_proposals }
 
     scenario "Lists featured and regular proposals" do
-      featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
       visit proposals_path
@@ -57,7 +57,6 @@ describe "Proposals" do
     end
 
     scenario "Index view mode" do
-      featured_proposals = create_featured_proposals
       proposals = [create(:proposal), create(:proposal), create(:proposal)]
 
       visit proposals_path
@@ -96,7 +95,7 @@ describe "Proposals" do
 
     scenario "Pagination" do
       per_page = Kaminari.config.default_per_page
-      (per_page + 5).times { create(:proposal) }
+      (per_page + 2).times { create(:proposal) }
 
       visit proposals_path
 
@@ -114,7 +113,6 @@ describe "Proposals" do
     end
 
     scenario "Index should show proposal descriptive image only when is defined" do
-      featured_proposals = create_featured_proposals
       proposal = create(:proposal)
       proposal_with_image = create(:proposal)
       image = create(:image, imageable: proposal_with_image)
@@ -574,7 +572,6 @@ describe "Proposals" do
     end
 
     scenario "Index has a link to retired proposals list" do
-      create_featured_proposals
       not_retired = create(:proposal)
       retired = create(:proposal, :retired)
 
@@ -691,8 +688,6 @@ describe "Proposals" do
   describe "Proposal index order filters" do
 
     scenario "Default order is hot_score", :js do
-      create_featured_proposals
-
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:hot_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -707,8 +702,6 @@ describe "Proposals" do
     end
 
     scenario "Proposals are ordered by confidence_score", :js do
-      create_featured_proposals
-
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:confidence_score, 10)
       worst_proposal = create(:proposal, title: "Worst proposal")
@@ -730,8 +723,6 @@ describe "Proposals" do
     end
 
     scenario "Proposals are ordered by newest", :js do
-      create_featured_proposals
-
       best_proposal = create(:proposal, title: "Best proposal", created_at: Time.current)
       medium_proposal = create(:proposal, title: "Medium proposal", created_at: Time.current - 1.hour)
       worst_proposal = create(:proposal, title: "Worst proposal", created_at: Time.current - 1.day)
@@ -866,7 +857,6 @@ describe "Proposals" do
   describe "Archived proposals" do
 
     scenario "show on proposals list" do
-      create_featured_proposals
       archived_proposals = create_archived_proposals
 
       visit proposals_path
@@ -880,7 +870,6 @@ describe "Proposals" do
     end
 
     scenario "do not show in other index tabs" do
-      create_featured_proposals
       archived_proposal = create(:proposal, :archived)
 
       visit proposals_path
@@ -900,7 +889,6 @@ describe "Proposals" do
     end
 
     scenario "do not show support buttons in index" do
-      create_featured_proposals
       archived_proposals = create_archived_proposals
 
       visit proposals_path(order: "archival_date")
@@ -1518,6 +1506,7 @@ describe "Proposals" do
     end
 
     scenario "After a search do not show featured proposals" do
+      Setting["feature.featured_proposals"] = true
       featured_proposals = create_featured_proposals
       proposal = create(:proposal, title: "Abcdefghi")
 
@@ -1656,6 +1645,7 @@ describe "Proposals" do
                   {}
 
   scenario "Erased author" do
+    Setting["feature.featured_proposals"] = true
     user = create(:user)
     proposal = create(:proposal, author: user)
     user.erase
