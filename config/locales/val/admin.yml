@@ -782,11 +782,6 @@ val:
     poll_booth_assignments:
       alert:
         shifts: "Hi ha torns asignats per a esta urna. Si la desasignes, eixos torns s'eliminaran. Desitges continuar?"
-      flash:
-        destroy: "Bústia desasignada"
-        create: "Bústia assignada"
-        error_destroy: "Se ha produit un error al desasignar la bústia"
-        error_create: "Se ha produit un error al intentar assignar la bústia"
       show:
         location: "Ubicació"
         officers: "Presidents de taula"
