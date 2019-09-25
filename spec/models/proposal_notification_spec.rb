@@ -50,21 +50,19 @@ describe ProposalNotification do
 
     it "is not valid if below minimum interval" do
       proposal = create(:proposal)
+      create(:proposal_notification, proposal: proposal)
 
-      notification1 = create(:proposal_notification, proposal: proposal)
-      notification2 = build(:proposal_notification, proposal: proposal)
+      notification2 = build(:proposal_notification, proposal: proposal.reload)
 
-      proposal.reload
       expect(notification2).not_to be_valid
     end
 
     it "is valid if notifications above minimum interval" do
       proposal = create(:proposal)
+      create(:proposal_notification, proposal: proposal, created_at: 4.days.ago)
 
-      notification1 = create(:proposal_notification, proposal: proposal, created_at: 4.days.ago)
-      notification2 = build(:proposal_notification, proposal: proposal)
+      notification2 = build(:proposal_notification, proposal: proposal.reload)
 
-      proposal.reload
       expect(notification2).to be_valid
     end
 
