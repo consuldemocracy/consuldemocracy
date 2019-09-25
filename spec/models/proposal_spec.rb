@@ -1031,8 +1031,8 @@ describe Proposal do
     end
 
     it "does not return archived proposals" do
-      proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
-      proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Sport")
+      proposal1 = create(:proposal, tag_list: "Sport")
+      proposal2 = create(:proposal, tag_list: "Sport")
       archived_proposal = create(:proposal, :archived, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
@@ -1042,9 +1042,9 @@ describe Proposal do
     end
 
     it "does not return already supported proposals" do
-      proposal1 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
-      proposal2 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
-      proposal3 = create(:proposal, cached_votes_up: 5, tag_list: "Health")
+      proposal1 = create(:proposal, tag_list: "Health")
+      proposal2 = create(:proposal, tag_list: "Health")
+      proposal3 = create(:proposal, tag_list: "Health")
       create(:vote, votable: proposal1, voter: user)
       create(:follow, followable: proposal2, user: user)
 
