@@ -796,11 +796,6 @@ pt-BR:
     poll_booth_assignments:
       alert:
         shifts: "Existem turnos associados a esta urna. Se você remover a atribuição da urna, os turnos também serão excluídos. Continuar?"
-      flash:
-        destroy: "Urna não mais atribuída"
-        create: "Urna atribuída"
-        error_destroy: "Ocorreu um erro ao remover a atribuição da urna"
-        error_create: "Ocorreu um erro ao atribuir a urna à votação"
       show:
         location: "Localização"
         officers: "Presidentes"
