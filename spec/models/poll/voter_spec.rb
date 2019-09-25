@@ -6,7 +6,6 @@ describe Poll::Voter do
   let(:booth) { create(:poll_booth) }
   let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
   let(:voter) { create(:poll_voter) }
-  let(:officer_assignment) { create(:poll_officer_assignment) }
 
   describe "validations" do
     let(:user) { create(:user, :level_two) }
@@ -87,7 +86,7 @@ describe Poll::Voter do
 
       it "is valid with a booth origin" do
         voter.origin = "booth"
-        voter.officer_assignment = officer_assignment
+        voter.officer_assignment = create(:poll_officer_assignment)
         expect(voter).to be_valid
       end
 
