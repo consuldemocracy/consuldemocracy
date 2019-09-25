@@ -734,11 +734,6 @@ sq:
     poll_booth_assignments:
       alert:
         shifts: "Ka ndërrime të lidhura me këtë kabinë. Nëse hiqni caktimin e kabinës, ndërrimet do të fshihen gjithashtu. Vazhdo?"
-      flash:
-        destroy: "Kabina nuk është caktuar më"
-        create: "Kabinë e caktuar"
-        error_destroy: "Ndodhi një gabim gjatë heqjes së caktimit të kabinës"
-        error_create: "Ndodhi një gabim kur caktohet kabina në sondazh"
       show:
         location: "Vendndodhja"
         officers: "Oficeret"
