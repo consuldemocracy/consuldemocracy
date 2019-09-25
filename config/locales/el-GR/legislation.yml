@@ -147,4 +147,4 @@ el:
       most_voted_comments: "Σχόλια με τις περισσότερες ψήφους"
       no_allegation: "Δεν υπάρχουν γραπτά σχόλια \n"
       version: εκδοχή
-      process_empty: Η διαδικασία δεν έχει φάσεις
+      process_empty: Η διαδικασία δεν έχει φάσεις.
