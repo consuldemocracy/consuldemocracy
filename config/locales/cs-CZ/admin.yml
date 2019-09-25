@@ -772,11 +772,6 @@ cs:
     poll_booth_assignments:
       alert:
         shifts: "K tomuto informačnímu stánku jsou přiřazené směny. Pokud odeberete přiřazení informačního stánku, směny budou také odstraněny. Chcete pokračovat?"
-      flash:
-        destroy: "Informační stánek již není přiřazen"
-        create: "Informační stánek přiřazen"
-        error_destroy: "Došlo k chybě při odstranění přiřazení informačního stánku"
-        error_create: "Při přiřazování informačního stánku k anketě nastala chyba"
       show:
         location: "Umístění"
         officers: "Úředníci"
