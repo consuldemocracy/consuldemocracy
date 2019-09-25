@@ -725,11 +725,6 @@ zh-TW:
     poll_booth_assignments:
       alert:
         shifts: "此投票亭有相關的輪班。如果您刪除投票亭分配, 這些輪班也將被刪除。您要繼續嗎？"
-      flash:
-        destroy: "投票亭不再被分配"
-        create: "投票亭已被分配"
-        error_destroy: "刪除投票亭分配時出錯"
-        error_create: "為投票項分配投票亭時出錯"
       show:
         location: "位置"
         officers: "職員"
