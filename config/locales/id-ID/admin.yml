@@ -636,11 +636,6 @@ id:
     poll_booth_assignments:
       alert:
         shifts: "Ada pergeseran yang terkait ke bilik ini. Jika anda menghapus bilik tugas, pergeseran juga akan dihapus. Terus?"
-      flash:
-        destroy: "Stan tidak ditugaskan lagi"
-        create: "Stan ditetapkan"
-        error_destroy: "Terjadi kesalahan saat melepas bilik tugas"
-        error_create: "Terjadi kesalahan saat menugaskan stan ke polling"
       show:
         location: "Lokasi"
         officers: "Petugas"
