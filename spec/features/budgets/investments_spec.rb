@@ -1760,7 +1760,6 @@ describe "Budget Investments" do
       scenario "Due to being unfeasible" do
         user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
-        heading2 = create(:budget_heading, group: group)
 
         ballot = create(:budget_ballot, user: user, budget: budget)
         ballot.investments << investment

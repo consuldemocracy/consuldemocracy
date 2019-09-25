@@ -119,7 +119,7 @@ describe "Proposals" do
       proposal_with_image = create(:proposal)
       image = create(:image, imageable: proposal_with_image)
 
-      visit proposals_path(id: proposal)
+      visit proposals_path
 
       within("#proposal_#{proposal.id}") do
         expect(page).not_to have_css("div.with-image")

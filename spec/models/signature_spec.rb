@@ -183,7 +183,6 @@ describe Signature do
       it "creates a user with that document number" do
         create(:geozone, census_code: "01")
         signature = create(:signature, document_number: "12345678Z")
-        proposal = signature.signable
 
         signature.verify
 

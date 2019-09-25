@@ -189,8 +189,6 @@ describe "Admin Notifications" do
     scenario "A draft Admin notification can be sent", :js do
       2.times { create(:user) }
       notification = create(:admin_notification, segment_recipient: :all_users)
-      total_users = notification.list_of_recipients.count
-      confirm_message = "Are you sure you want to send this notification to #{total_users} users?"
 
       visit admin_admin_notification_path(notification)
 

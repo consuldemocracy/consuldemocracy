@@ -130,7 +130,6 @@ describe "Admin newsletter emails" do
     scenario "Sends newsletter emails", :js do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
-      total_users = newsletter.list_of_recipient_emails.count
 
       accept_confirm { click_link "Send" }
 

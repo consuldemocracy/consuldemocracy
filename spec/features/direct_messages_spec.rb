@@ -60,7 +60,6 @@ describe "Direct messages" do
     end
 
     scenario "User not logged in" do
-      sender = create(:user)
       receiver = create(:user)
 
       visit new_user_direct_message_path(receiver)
