@@ -20,7 +20,7 @@ describe Poll::Booth do
 
       expect(Poll::Booth.search("number")).to eq([booth1])
       expect(Poll::Booth.search("hall")).to eq([booth2])
-      expect(Poll::Booth.search("cen").size).to eq 2
+      expect(Poll::Booth.search("cen")).to match_array [booth1, booth2]
     end
   end
 

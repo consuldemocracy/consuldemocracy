@@ -48,10 +48,7 @@ describe Notification do
         old_notification = create :notification
         new_notification = create :notification
 
-        sorted_notifications = Notification.recent
-        expect(sorted_notifications.size).to be 2
-        expect(sorted_notifications.first).to eq new_notification
-        expect(sorted_notifications.last).to eq old_notification
+        expect(Notification.recent).to eq [new_notification, old_notification]
       end
     end
 

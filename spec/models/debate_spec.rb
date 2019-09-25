@@ -762,7 +762,7 @@ describe Debate do
     it "does not return any debates when user has not interests" do
       create(:debate)
 
-      expect(Debate.recommendations(user).size).to eq 0
+      expect(Debate.recommendations(user)).to be_empty
     end
 
     it "returns debates ordered by cached_votes_total" do
@@ -787,7 +787,6 @@ describe Debate do
 
       result = Debate.recommendations(user)
 
-      expect(result.size).to eq 1
       expect(result).to eq [debate1]
     end
 
@@ -799,7 +798,6 @@ describe Debate do
 
       result = Debate.recommendations(user)
 
-      expect(result.size).to eq 1
       expect(result).to eq [debate2]
     end
 

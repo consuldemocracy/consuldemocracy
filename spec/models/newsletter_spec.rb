@@ -57,10 +57,7 @@ describe Newsletter do
     end
 
     it "returns list of recipients excluding users with disabled newsletter" do
-      expect(newsletter.list_of_recipient_emails.count).to eq(1)
-      expect(newsletter.list_of_recipient_emails).to include("newsletter_user@consul.dev")
-      expect(newsletter.list_of_recipient_emails).not_to include("no_news_user@consul.dev")
-      expect(newsletter.list_of_recipient_emails).not_to include("erased_user@consul.dev")
+      expect(newsletter.list_of_recipient_emails).to eq ["newsletter_user@consul.dev"]
     end
   end
 

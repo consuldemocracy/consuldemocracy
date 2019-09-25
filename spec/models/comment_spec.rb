@@ -131,8 +131,7 @@ describe Comment do
       create(:comment, administrator_id: create(:administrator).id)
       create(:comment, moderator_id: create(:moderator).id)
 
-      expect(Comment.not_as_admin_or_moderator.size).to eq(1)
-      expect(Comment.not_as_admin_or_moderator.first).to eq(comment1)
+      expect(Comment.not_as_admin_or_moderator).to eq [comment1]
     end
   end
 
