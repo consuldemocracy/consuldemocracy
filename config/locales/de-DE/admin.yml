@@ -790,11 +790,6 @@ de:
     poll_booth_assignments:
       alert:
         shifts: "Dieser Wahlkabine sind bereits Arbeitsschichten zugeordnet. Wenn Sie die Zuweisung entfernen, werden die Arbeitsschichten gelöscht. Wollen Sie dennoch fortfahren?"
-      flash:
-        destroy: "Wahlkabine nicht mehr zugewiesen"
-        create: "Wahlkabine zugewiesen"
-        error_destroy: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
-        error_create: "Beim Aufheben der Zuweisung der Wahlkabine ist ein Fehler aufgetreten"
       show:
         location: "Standort"
         officers: "Beamte/innen"
