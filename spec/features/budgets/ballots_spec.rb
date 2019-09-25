@@ -134,10 +134,7 @@ describe "Ballots" do
       end
 
       scenario "Redirect to first heading if there is only one" do
-        city_heading      = create(:budget_heading, group: city,      name: "City")
-        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
-        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
-
+        city_heading    = create(:budget_heading, group: city, name: "City")
         city_investment = create(:budget_investment, :selected, heading: city_heading)
 
         visit budget_path(budget)
@@ -434,8 +431,6 @@ describe "Ballots" do
 
     scenario "Display links to vote on groups with no investments voted yet" do
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-      ballot = create(:budget_ballot, user: user, budget: budget)
 
       login_as(user)
       visit budget_ballot_path(budget)

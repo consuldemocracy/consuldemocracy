@@ -171,7 +171,6 @@ describe "Proposal Notifications" do
   context "Permissions" do
 
     scenario "Link to send the message" do
-      _user = create(:user)
       author = create(:user)
       proposal = create(:proposal, author: author)
 
