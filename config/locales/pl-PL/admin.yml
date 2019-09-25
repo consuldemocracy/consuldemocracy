@@ -826,11 +826,6 @@ pl:
     poll_booth_assignments:
       alert:
         shifts: "Z tym stoiskiem wiążą się zmiany. Jeśli usuniesz przypisanie stoiska, przesunięcia zostaną również usunięte. Dalej?"
-      flash:
-        destroy: "Stanowisko nie jest już przydzielone"
-        create: "Stanowisko przydzielone"
-        error_destroy: "Wystąpił błąd podczas usuwania przydziału stanowiska"
-        error_create: "Wystąpił błąd podczas przydzielania stanowiska do głosowania"
       show:
         location: "Lokalizacja"
         officers: "Urzędnicy"
