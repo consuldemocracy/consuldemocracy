@@ -152,18 +152,18 @@ describe "Tags" do
   context "Filter" do
 
     scenario "From index" do
-      debate1 = create(:debate, tag_list: "Education")
-      debate2 = create(:debate, tag_list: "Health")
+      create(:debate, tag_list: "Health", title: "Public hospitals?")
+      create(:debate, tag_list: "Education", title: "Status of our schools")
 
-      visit debates_path
+      visit debates_path(order: :created_at)
 
-      within "#debate_#{debate1.id}" do
+      within ".debate", text: "Status of our schools" do
         click_link "Education"
       end
 
       within("#debates") do
         expect(page).to have_css(".debate", count: 1)
-        expect(page).to have_content(debate1.title)
+        expect(page).to have_content "Status of our schools"
       end
     end
 

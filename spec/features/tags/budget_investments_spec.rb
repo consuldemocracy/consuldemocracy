@@ -190,19 +190,18 @@ describe "Tags" do
   context "Filter" do
 
     scenario "From index" do
-
-      investment1 = create(:budget_investment, heading: heading, tag_list: tag_economia.name)
-      investment2 = create(:budget_investment, heading: heading, tag_list: "Health")
+      create(:budget_investment, heading: heading, tag_list: "Economy", title: "New bank")
+      create(:budget_investment, heading: heading, tag_list: "Health", title: "New hospital")
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within "#budget_investment_#{investment1.id}" do
-        click_link tag_economia.name
+      within ".budget-investment", text: "New bank" do
+        click_link "Economy"
       end
 
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 1)
-        expect(page).to have_content(investment1.title)
+        expect(page).to have_content "New bank"
       end
     end
 

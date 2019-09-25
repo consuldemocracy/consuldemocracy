@@ -1369,13 +1369,13 @@ describe "Budget Investments" do
         another_heading1 = create(:budget_heading, group: group2)
         another_heading2 = create(:budget_heading, group: group2)
 
-        heading_investment = create(:budget_investment, heading: heading, voters: [author])
-        another_group_investment = create(:budget_investment, heading: another_heading1)
+        create(:budget_investment, heading: heading, title: "Investment", voters: [author])
+        create(:budget_investment, heading: another_heading1, title: "Another investment")
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: another_heading1.id)
 
-        within("#budget_investment_#{another_group_investment.id}") do
+        within(".budget-investment", text: "Another investment") do
           expect(page).to have_css(".in-favor a[data-confirm]")
         end
       end

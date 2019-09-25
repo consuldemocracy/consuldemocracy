@@ -131,17 +131,17 @@ describe "Admin polls" do
     end
 
     scenario "Can destroy poll with questions and answers", :js do
-      poll = create(:poll)
-      question = create(:poll_question, :yes_no, poll: poll)
+      poll = create(:poll, name: "Do you support CONSUL?")
+      create(:poll_question, :yes_no, poll: poll)
 
       visit admin_polls_path
 
-      within("#poll_#{poll.id}") do
+      within(".poll", text: "Do you support CONSUL?") do
         accept_confirm { click_link "Delete" }
       end
 
       expect(page).to     have_content("Poll deleted successfully")
-      expect(page).not_to have_content(poll.name)
+      expect(page).not_to have_content("Do you support CONSUL?")
 
       expect(Poll::Question.count).to eq(0)
       expect(Poll::Question::Answer.count). to eq(0)
