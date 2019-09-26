@@ -139,7 +139,7 @@ describe Comment do
     it "returns comments" do
       comment = create(:comment)
 
-      expect(Comment.public_for_api).to include(comment)
+      expect(Comment.public_for_api).to eq [comment]
     end
 
     it "does not return hidden comments" do
@@ -149,10 +149,9 @@ describe Comment do
     end
 
     it "returns comments on debates" do
-      debate = create(:debate)
-      comment = create(:comment, commentable: debate)
+      comment = create(:comment, commentable: create(:debate))
 
-      expect(Comment.public_for_api).to include(comment)
+      expect(Comment.public_for_api).to eq [comment]
     end
 
     it "does not return comments on hidden debates" do
@@ -166,7 +165,7 @@ describe Comment do
       proposal = create(:proposal)
       comment = create(:comment, commentable: proposal)
 
-      expect(Comment.public_for_api).to include(comment)
+      expect(Comment.public_for_api).to eq [comment]
     end
 
     it "does not return comments on hidden proposals" do

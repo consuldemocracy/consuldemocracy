@@ -46,7 +46,7 @@ describe Vote do
       debate = create(:debate)
       vote = create(:vote, votable: debate)
 
-      expect(Vote.public_for_api).to include(vote)
+      expect(Vote.public_for_api).to eq [vote]
     end
 
     it "blocks votes on hidden debates" do
@@ -60,7 +60,7 @@ describe Vote do
       proposal = create(:proposal)
       vote = create(:vote, votable: proposal)
 
-      expect(Vote.public_for_api).to include(vote)
+      expect(Vote.public_for_api).to eq [vote]
     end
 
     it "blocks votes on hidden proposals" do
@@ -74,7 +74,7 @@ describe Vote do
       comment = create(:comment)
       vote = create(:vote, votable: comment)
 
-      expect(Vote.public_for_api).to include(vote)
+      expect(Vote.public_for_api).to eq [vote]
     end
 
     it "blocks votes on hidden comments" do

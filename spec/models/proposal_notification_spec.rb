@@ -24,10 +24,9 @@ describe ProposalNotification do
 
   describe "public_for_api scope" do
     it "returns proposal notifications" do
-      proposal = create(:proposal)
-      notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:proposal_notification, proposal: create(:proposal))
 
-      expect(ProposalNotification.public_for_api).to include(notification)
+      expect(ProposalNotification.public_for_api).to eq [notification]
     end
 
     it "blocks proposal notifications whose proposal is hidden" do

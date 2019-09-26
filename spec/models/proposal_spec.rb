@@ -449,8 +449,7 @@ describe Proposal do
       create(:vote, voter: voter1, votable: proposal)
       create(:vote, voter: voter2, votable: proposal)
 
-      expect(proposal.voters).to include(voter1)
-      expect(proposal.voters).to include(voter2)
+      expect(proposal.voters).to match_array [voter1, voter2]
       expect(proposal.voters).not_to include(voter3)
     end
 
@@ -463,8 +462,7 @@ describe Proposal do
       create(:vote, voter: voter2, votable: proposal)
       voter2.erase
 
-      expect(proposal.voters).to include(voter1)
-      expect(proposal.voters).not_to include(voter2)
+      expect(proposal.voters).to eq [voter1]
     end
 
     it "does not return users that have been blocked" do
@@ -476,8 +474,7 @@ describe Proposal do
       create(:vote, voter: voter2, votable: proposal)
       voter2.block
 
-      expect(proposal.voters).to include(voter1)
-      expect(proposal.voters).not_to include(voter2)
+      expect(proposal.voters).to eq [voter1]
     end
 
   end
@@ -743,7 +740,8 @@ describe Proposal do
   describe "#last_week" do
     it "returns proposals created this week" do
       proposal = create(:proposal)
-      expect(Proposal.last_week).to include(proposal)
+
+      expect(Proposal.last_week).to eq [proposal]
     end
 
     it "does not return proposals created more than a week ago" do
@@ -760,7 +758,7 @@ describe Proposal do
         create(:tag, :category, name: "culture")
         proposal = create(:proposal, tag_list: "culture")
 
-        expect(Proposal.for_summary.values.flatten).to include(proposal)
+        expect(Proposal.for_summary.values.flatten).to eq [proposal]
       end
 
       it "does not return proposals tagged without a category" do
@@ -777,7 +775,7 @@ describe Proposal do
         california = create(:geozone, name: "california")
         proposal   = create(:proposal, geozone: california)
 
-        expect(Proposal.for_summary.values.flatten).to include(proposal)
+        expect(Proposal.for_summary.values.flatten).to eq [proposal]
       end
 
       it "does not return proposals without a geozone" do
@@ -791,7 +789,8 @@ describe Proposal do
     it "returns proposals created this week" do
       create(:tag, :category, name: "culture")
       proposal = create(:proposal, tag_list: "culture")
-      expect(Proposal.for_summary.values.flatten).to include(proposal)
+
+      expect(Proposal.for_summary.values.flatten).to eq [proposal]
     end
 
     it "does not return proposals created more than a week ago" do
@@ -904,7 +903,8 @@ describe Proposal do
   describe "public_for_api scope" do
     it "returns proposals" do
       proposal = create(:proposal)
-      expect(Proposal.public_for_api).to include(proposal)
+
+      expect(Proposal.public_for_api).to eq [proposal]
     end
 
     it "does not return hidden proposals" do

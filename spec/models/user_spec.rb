@@ -390,8 +390,7 @@ describe User do
         user2 = create(:user, erased_at: nil)
         user3 = create(:user, erased_at: Time.current)
 
-        expect(User.active).to include(user1)
-        expect(User.active).to include(user2)
+        expect(User.active).to match_array [user1, user2]
         expect(User.active).not_to include(user3)
       end
 
@@ -401,8 +400,7 @@ describe User do
         user3 = create(:user)
         user3.block
 
-        expect(User.active).to include(user1)
-        expect(User.active).to include(user2)
+        expect(User.active).to match_array [user1, user2]
         expect(User.active).not_to include(user3)
       end
 
@@ -415,8 +413,7 @@ describe User do
         user2 = create(:user, erased_at: Time.current)
         user3 = create(:user, erased_at: nil)
 
-        expect(User.erased).to include(user1)
-        expect(User.erased).to include(user2)
+        expect(User.erased).to match_array [user1, user2]
         expect(User.erased).not_to include(user3)
       end
 

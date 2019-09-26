@@ -73,7 +73,7 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to include(tag)
+        expect(ActsAsTaggableOn::Tag.public_for_api).to eq [tag]
       end
 
       it "returns tags whose kind is 'category' and have at least one tagging whose taggable is not hidden" do
@@ -82,7 +82,7 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to include(tag)
+        expect(ActsAsTaggableOn::Tag.public_for_api).to eq [tag]
       end
 
       it "blocks other kinds of tags" do
@@ -126,7 +126,7 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to include(tag)
+        expect(ActsAsTaggableOn::Tag.public_for_api).to eq [tag]
 
         proposal.delete
 

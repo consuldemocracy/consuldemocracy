@@ -140,7 +140,7 @@ describe Poll::Officer do
                                                      date:    Date.current,
                                                      officer: officer)
 
-      expect(officer.todays_booths).to include(assignment_with_application_time_zone.booth)
+      expect(officer.todays_booths).to eq [assignment_with_application_time_zone.booth]
       expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
     end
   end

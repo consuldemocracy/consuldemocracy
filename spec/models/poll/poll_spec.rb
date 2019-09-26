@@ -212,9 +212,7 @@ describe Poll do
 
       create(:poll_voter, user: user, poll: poll1)
 
-      expect(Poll.votable_by(user)).to include(poll2)
-      expect(Poll.votable_by(user)).to include(poll3)
-      expect(Poll.votable_by(user)).not_to include(poll1)
+      expect(Poll.votable_by(user)).to match_array [poll2, poll3]
     end
 
     it "returns polls that are answerable by a user" do
@@ -224,7 +222,7 @@ describe Poll do
 
       allow(Poll).to receive(:answerable_by).and_return(Poll.where(id: poll1))
 
-      expect(Poll.votable_by(user)).to include(poll1)
+      expect(Poll.votable_by(user)).to eq [poll1]
       expect(Poll.votable_by(user)).not_to include(poll2)
     end
 
@@ -232,7 +230,7 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      expect(Poll.votable_by(user)).to include(poll)
+      expect(Poll.votable_by(user)).to eq [poll]
     end
 
   end
@@ -328,7 +326,7 @@ describe Poll do
     end
 
     it "returns overlaping polls for the same proposal" do
-      expect(Poll.overlaping_with(overlaping_poll)).to include(poll)
+      expect(Poll.overlaping_with(overlaping_poll)).to eq [poll]
     end
 
     it "do not returs non overlaping polls for the same proposal" do
@@ -349,8 +347,7 @@ describe Poll do
         poll2 = create(:poll)
         poll3 = create(:poll, :for_budget)
 
-        expect(Poll.not_budget).to include(poll1)
-        expect(Poll.not_budget).to include(poll2)
+        expect(Poll.not_budget).to match_array [poll1, poll2]
         expect(Poll.not_budget).not_to include(poll3)
       end
 

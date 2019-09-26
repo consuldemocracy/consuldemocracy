@@ -114,9 +114,7 @@ describe Legislation::Process do
       it "filters past" do
         past_processes = ::Legislation::Process.past
 
-        expect(past_processes).to include(process_3)
-        expect(past_processes).not_to include(process_2)
-        expect(past_processes).not_to include(process_1)
+        expect(past_processes).to eq [process_3]
       end
     end
 

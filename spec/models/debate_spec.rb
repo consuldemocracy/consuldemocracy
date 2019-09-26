@@ -707,7 +707,8 @@ describe Debate do
   describe "#last_week" do
     it "returns debates created this week" do
       debate = create(:debate)
-      expect(Debate.last_week.all).to include debate
+
+      expect(Debate.last_week.all).to eq [debate]
     end
 
     it "does not show debates created more than a week ago" do
@@ -725,7 +726,8 @@ describe Debate do
   describe "public_for_api scope" do
     it "returns debates" do
       debate = create(:debate)
-      expect(Debate.public_for_api).to include(debate)
+
+      expect(Debate.public_for_api).to eq [debate]
     end
 
     it "does not return hidden debates" do
