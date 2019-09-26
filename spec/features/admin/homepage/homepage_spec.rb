@@ -160,9 +160,8 @@ describe "Homepage" do
   end
 
   scenario "Recomendations" do
-    proposal1 = create(:proposal, tag_list: "Sport")
-    proposal2 = create(:proposal, tag_list: "Sport")
-    create(:follow, followable: proposal1, user: user)
+    create(:proposal, tag_list: "Sport", followers: [user])
+    create(:proposal, tag_list: "Sport")
 
     visit admin_homepage_path
     within("#setting_#{user_recommendations.id}") do

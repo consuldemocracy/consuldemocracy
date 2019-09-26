@@ -239,8 +239,7 @@ describe "Users" do
     end
 
     scenario "Display interests" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       login_as(@user)
       visit account_path
@@ -255,8 +254,7 @@ describe "Users" do
     end
 
     scenario "Not display interests when proposal has been destroyed" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      proposal = create(:proposal, tag_list: "Sport", followers: [@user])
       proposal.destroy
 
       login_as(@user)
@@ -279,8 +277,7 @@ describe "Users" do
     end
 
     scenario "User can display public page" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       login_as(@user)
       visit account_path
@@ -296,8 +293,7 @@ describe "Users" do
     end
 
     scenario "Is always visible for the owner" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       login_as(@user)
       visit account_path
@@ -310,8 +306,7 @@ describe "Users" do
     end
 
     scenario "Is always visible for admins" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       login_as(@user)
       visit account_path
@@ -327,8 +322,7 @@ describe "Users" do
     end
 
     scenario "Is always visible for moderators" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       login_as(@user)
       visit account_path
@@ -344,8 +338,7 @@ describe "Users" do
     end
 
     scenario "Should display generic interests title" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       @user.update(public_interests: true)
       visit user_path(@user, filter: "follows", page: "1")
@@ -354,8 +347,7 @@ describe "Users" do
     end
 
     scenario "Should display custom interests title when user is visiting own user page" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, :followed_proposal, followable: proposal, user: @user)
+      create(:proposal, tag_list: "Sport", followers: [@user])
 
       @user.update(public_interests: true)
       login_as(@user)
@@ -431,8 +423,7 @@ describe "Users" do
     end
 
     scenario "Active following tab by default when follows filters selected", :js do
-      proposal = create(:proposal, author: @user)
-      create(:follow, followable: proposal, user: @user)
+      create(:proposal, author: @user, followers: [@user])
 
       visit user_path(@user, filter: "follows")
 
@@ -440,13 +431,9 @@ describe "Users" do
     end
 
     scenario "Gracefully handle followables that have been hidden" do
-      active_proposal = create(:proposal)
-      hidden_proposal = create(:proposal)
+      create(:proposal, followers: [@user])
+      create(:proposal, followers: [@user]) { |proposal| proposal.hide }
 
-      create(:follow, followable: active_proposal, user: @user)
-      create(:follow, followable: hidden_proposal, user: @user)
-
-      hidden_proposal.hide
       visit user_path(@user)
 
       expect(page).to have_content("1 Following")
@@ -455,8 +442,7 @@ describe "Users" do
     describe "Proposals" do
 
       scenario "Display following tab when user is following one proposal at least" do
-        proposal = create(:proposal)
-        create(:follow, followable: proposal, user: @user)
+        create(:proposal, followers: [@user])
 
         visit user_path(@user)
 
@@ -464,8 +450,7 @@ describe "Users" do
       end
 
       scenario "Display proposal tab when user is following one proposal at least" do
-        proposal = create(:proposal)
-        create(:follow, followable: proposal, user: @user)
+        create(:proposal, followers: [@user])
 
         visit user_path(@user, filter: "follows")
 
@@ -479,8 +464,8 @@ describe "Users" do
       end
 
       scenario "Display proposals with link to proposal" do
-        proposal = create(:proposal, author: @user)
-        create(:follow, followable: proposal, user: @user)
+        proposal = create(:proposal, author: @user, followers: [@user])
+
         login_as @user
 
         visit user_path(@user, filter: "follows")
@@ -514,8 +499,7 @@ describe "Users" do
     describe "Budget Investments" do
 
       scenario "Display following tab when user is following one budget investment at least" do
-        budget_investment = create(:budget_investment)
-        create(:follow, followable: budget_investment, user: @user)
+        create(:budget_investment, followers: [@user])
 
         visit user_path(@user)
 
@@ -523,8 +507,7 @@ describe "Users" do
       end
 
       scenario "Display budget investment tab when user is following one budget investment at least" do
-        budget_investment = create(:budget_investment)
-        create(:follow, followable: budget_investment, user: @user)
+        create(:budget_investment, followers: [@user])
 
         visit user_path(@user, filter: "follows")
 
@@ -539,8 +522,7 @@ describe "Users" do
 
       scenario "Display budget investment with link to budget investment" do
         user = create(:user, :level_two)
-        budget_investment = create(:budget_investment, author: user)
-        create(:follow, followable: budget_investment, user: user)
+        budget_investment = create(:budget_investment, author: user, followers: [user])
 
         visit user_path(user, filter: "follows")
         click_link "Investments"

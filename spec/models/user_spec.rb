@@ -690,15 +690,13 @@ describe User do
     let(:user) { create(:user) }
 
     it "returns followed object tags" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
 
       expect(user.interests).to eq ["Sport"]
     end
 
     it "deals gracefully with hidden proposals" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal, user: user)
+      proposal = create(:proposal, tag_list: "Sport", followers: [user])
 
       proposal.hide
 
@@ -706,13 +704,9 @@ describe User do
     end
 
     it "discards followed objects duplicated tags" do
-      proposal1 = create(:proposal, tag_list: "Sport")
-      proposal2 = create(:proposal, tag_list: "Sport")
-      budget_investment = create(:budget_investment, tag_list: "Sport")
-
-      create(:follow, followable: proposal1, user: user)
-      create(:follow, followable: proposal2, user: user)
-      create(:follow, followable: budget_investment, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:budget_investment, tag_list: "Sport", followers: [user])
 
       expect(user.interests).to eq ["Sport"]
     end

@@ -64,10 +64,14 @@ FactoryBot.define do
       after(:create) { |user| create(:comment, author: user) }
     end
 
-    transient { votables { [] } }
+    transient do
+      votables { [] }
+      followables { [] }
+    end
 
     after(:create) do |user, evaluator|
       evaluator.votables.each { |votable| create(:vote, votable: votable, voter: user) }
+      evaluator.followables.each { |followable| create(:follow, followable: followable, user: user) }
     end
   end
 

@@ -322,9 +322,8 @@ describe "System Emails" do
       proposal_notification = create(:proposal_notification, proposal: proposal,
                                                               title: "Proposal A Title",
                                                               body: "Proposal A Notification Body")
-      voter = create(:user, :level_two)
+      voter = create(:user, :level_two, followables: [proposal])
       create(:notification, notifiable: proposal_notification, user: voter, emailed_at: nil)
-      create(:follow, user: voter, followable: proposal)
 
       visit admin_system_emails_path
 

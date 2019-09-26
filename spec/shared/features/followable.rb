@@ -67,8 +67,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
     end
 
     scenario "Display unfollow button when user already following" do
-      user = create(:user)
-      follow = create(:follow, user: user, followable: followable)
+      user = create(:user, followables: [followable])
       login_as(user)
 
       visit send(followable_path, arguments)
@@ -77,8 +76,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
     end
 
     scenario "Updates follow button & show destroy notice after unfollow button is clicked", :js do
-      user = create(:user)
-      follow = create(:follow, user: user, followable: followable)
+      user = create(:user, followables: [followable])
       login_as(user)
 
       visit send(followable_path, arguments)
@@ -91,8 +89,7 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
     end
 
     scenario "Should display destroy follower notice after user clicks on unfollow button", :js do
-      user = create(:user)
-      follow = create(:follow, user: user, followable: followable)
+      user = create(:user, followables: [followable])
       login_as(user)
       destroy_notice_message = t("shared.followable.#{followable_class_name}.destroy.notice_html")
 

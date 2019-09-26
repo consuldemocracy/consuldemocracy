@@ -38,22 +38,18 @@ describe "Proposal Notifications" do
 
   scenario "Send a notification (Follower)" do
     proposal = create(:proposal)
-    user_follower = create(:user)
-    create(:follow, :followed_proposal, user: user_follower, followable: proposal)
 
+    create(:user, :level_two, followables: [proposal])
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(1)
   end
 
   scenario "Send a notification (Follower and Voter)" do
-    user_voter_follower = create(:user)
-    proposal = create(:proposal, voters: [user_voter_follower])
+    proposal = create(:proposal)
 
-    create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
-
-    user_follower = create(:user)
-    create(:follow, :followed_proposal, user: user_follower, followable: proposal)
+    create(:user, followables: [proposal], votables: [proposal])
+    create(:user, followables: [proposal])
 
     create_proposal_notification(proposal)
 
@@ -146,10 +142,9 @@ describe "Proposal Notifications" do
 
   scenario "Message about receivers (Same Followers and Voters)" do
     author = create(:user)
-    user_voter_follower = create(:user)
-    proposal = create(:proposal, author: author, voters: [user_voter_follower])
+    voter_follower = create(:user)
 
-    create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
+    proposal = create(:proposal, author: author, voters: [voter_follower], followers: [voter_follower])
 
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -254,15 +249,11 @@ describe "Proposal Notifications" do
 
     scenario "Followers should receive a notification", :js do
       author = create(:user)
-
-      user1 = create(:user)
-      user2 = create(:user)
-      user3 = create(:user)
-
       proposal = create(:proposal, author: author)
 
-      create(:follow, :followed_proposal, user: user1, followable: proposal)
-      create(:follow, :followed_proposal, user: user2, followable: proposal)
+      user1 = create(:user, followables: [proposal])
+      user2 = create(:user, followables: [proposal])
+      user3 = create(:user)
 
       login_as author.reload
       visit root_path
@@ -358,11 +349,8 @@ describe "Proposal Notifications" do
 
       scenario "for the same proposal", :js do
         author = create(:user)
-        user = create(:user)
-
         proposal = create(:proposal, author: author)
-
-        create(:follow, :followed_proposal, user: user, followable: proposal)
+        user = create(:user, followables: [proposal])
 
         login_as author.reload
 

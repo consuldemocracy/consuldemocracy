@@ -450,9 +450,8 @@ describe "Debates" do
       end
 
       scenario "are shown on index header when account setting is enabled" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -465,9 +464,8 @@ describe "Debates" do
       end
 
       scenario "should display text when there are no results" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Distinct_to_sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -489,9 +487,8 @@ describe "Debates" do
       end
 
       scenario "can be sorted when there's a logged user" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -510,9 +507,8 @@ describe "Debates" do
       end
 
       scenario "are not shown if account setting is disabled" do
-        user     = create(:user, recommended_debates: false)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, recommended_debates: false, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -522,9 +518,8 @@ describe "Debates" do
       end
 
       scenario "are automatically disabled when dismissed from index", :js do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -959,14 +954,13 @@ describe "Debates" do
     end
 
     scenario "Reorder by recommendations results maintaing search" do
-      user = create(:user, recommended_debates: true)
+      proposal = create(:proposal, tag_list: "Sport")
+      user = create(:user, recommended_debates: true, followables: [proposal])
 
       debate1 = create(:debate, title: "Show you got",      cached_votes_total: 10,  tag_list: "Sport")
       debate2 = create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
       debate3 = create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
       debate4 = create(:debate, title: "Do not display",    cached_votes_total: 1)
-      proposal1 = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal1, user: user)
 
       login_as(user)
       visit debates_path
