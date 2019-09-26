@@ -712,8 +712,9 @@ describe Debate do
     end
 
     it "does not show debates created more than a week ago" do
-      debate = create(:debate, created_at: 8.days.ago)
-      expect(Debate.last_week.all).not_to include debate
+      create(:debate, created_at: 8.days.ago)
+
+      expect(Debate.last_week.all).to be_empty
     end
   end
 
@@ -731,8 +732,9 @@ describe Debate do
     end
 
     it "does not return hidden debates" do
-      debate = create(:debate, :hidden)
-      expect(Debate.public_for_api).not_to include(debate)
+      create(:debate, :hidden)
+
+      expect(Debate.public_for_api).to be_empty
     end
   end
 

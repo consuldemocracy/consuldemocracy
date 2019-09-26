@@ -745,8 +745,9 @@ describe Proposal do
     end
 
     it "does not return proposals created more than a week ago" do
-      proposal = create(:proposal, created_at: 8.days.ago)
-      expect(Proposal.last_week).not_to include(proposal)
+      create(:proposal, created_at: 8.days.ago)
+
+      expect(Proposal.last_week).to be_empty
     end
   end
 
@@ -763,9 +764,9 @@ describe Proposal do
 
       it "does not return proposals tagged without a category" do
         create(:tag, :category, name: "culture")
-        proposal = create(:proposal, tag_list: "parks")
+        create(:proposal, tag_list: "parks")
 
-        expect(Proposal.for_summary.values.flatten).not_to include(proposal)
+        expect(Proposal.for_summary.values.flatten).to be_empty
       end
     end
 
@@ -780,9 +781,9 @@ describe Proposal do
 
       it "does not return proposals without a geozone" do
         create(:geozone, name: "california")
-        proposal = create(:proposal)
+        create(:proposal)
 
-        expect(Proposal.for_summary.values.flatten).not_to include(proposal)
+        expect(Proposal.for_summary.values.flatten).to be_empty
       end
     end
 
@@ -795,8 +796,9 @@ describe Proposal do
 
     it "does not return proposals created more than a week ago" do
       create(:tag, :category, name: "culture")
-      proposal = create(:proposal, tag_list: "culture", created_at: 8.days.ago)
-      expect(Proposal.for_summary.values.flatten).not_to include(proposal)
+      create(:proposal, tag_list: "culture", created_at: 8.days.ago)
+
+      expect(Proposal.for_summary.values.flatten).to be_empty
     end
 
     it "orders proposals by votes" do
@@ -908,8 +910,9 @@ describe Proposal do
     end
 
     it "does not return hidden proposals" do
-      proposal = create(:proposal, :hidden)
-      expect(Proposal.public_for_api).not_to include(proposal)
+      create(:proposal, :hidden)
+
+      expect(Proposal.public_for_api).to be_empty
     end
   end
 
