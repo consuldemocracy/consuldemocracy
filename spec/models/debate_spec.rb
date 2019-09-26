@@ -578,8 +578,7 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(debate_title)
-        expect(results.second).to eq(debate_description)
+        expect(results).to eq [debate_title, debate_description]
       end
 
       it "orders by weight and then votes" do
@@ -590,10 +589,7 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(title_most_voted)
-        expect(results.second).to eq(title_some_votes)
-        expect(results.third).to eq(title_least_voted)
-        expect(results.fourth).to eq(description_most_voted)
+        expect(results).to eq [title_most_voted, title_some_votes, title_least_voted, description_most_voted]
       end
 
       it "gives much more weight to word matches than votes" do
@@ -602,8 +598,7 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(exact_title_few_votes)
-        expect(results.second).to eq(similar_title_many_votes)
+        expect(results).to eq [exact_title_few_votes, similar_title_many_votes]
       end
 
     end
@@ -621,15 +616,11 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(average_score)
-        expect(results.second).to eq(highest_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [average_score, highest_score, lowest_score]
 
         results = results.sort_by_hot_score
 
-        expect(results.first).to eq(highest_score)
-        expect(results.second).to eq(average_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [highest_score, average_score, lowest_score]
       end
 
       it "is able to reorder by confidence_score after searching" do
@@ -643,15 +634,11 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(average_score)
-        expect(results.second).to eq(highest_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [average_score, highest_score, lowest_score]
 
         results = results.sort_by_confidence_score
 
-        expect(results.first).to eq(highest_score)
-        expect(results.second).to eq(average_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [highest_score, average_score, lowest_score]
       end
 
       it "is able to reorder by created_at after searching" do
@@ -661,15 +648,11 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(oldest)
-        expect(results.second).to eq(newest)
-        expect(results.third).to eq(recent)
+        expect(results).to eq [oldest, newest, recent]
 
         results = results.sort_by_created_at
 
-        expect(results.first).to eq(newest)
-        expect(results.second).to eq(recent)
-        expect(results.third).to eq(oldest)
+        expect(results).to eq [newest, recent, oldest]
       end
 
       it "is able to reorder by most commented after searching" do
@@ -679,15 +662,11 @@ describe Debate do
 
         results = Debate.search("stop corruption")
 
-        expect(results.first).to eq(some_comments)
-        expect(results.second).to eq(most_commented)
-        expect(results.third).to eq(least_commented)
+        expect(results).to eq [some_comments, most_commented, least_commented]
 
         results = results.sort_by_most_commented
 
-        expect(results.first).to eq(most_commented)
-        expect(results.second).to eq(some_comments)
-        expect(results.third).to eq(least_commented)
+        expect(results).to eq [most_commented, some_comments, least_commented]
       end
 
     end
@@ -772,11 +751,9 @@ describe Debate do
       proposal = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal, user: user)
 
-      result = Debate.recommendations(user).sort_by_recommendations
+      results = Debate.recommendations(user).sort_by_recommendations
 
-      expect(result.first).to eq debate3
-      expect(result.second).to eq debate2
-      expect(result.third).to eq debate1
+      expect(results).to eq [debate3, debate2, debate1]
     end
 
     it "returns debates related with user interests" do

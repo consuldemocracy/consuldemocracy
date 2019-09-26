@@ -883,9 +883,7 @@ describe Budget::Investment do
         most_voted = create(:budget_investment, cached_votes_up: 10)
         some_votes = create(:budget_investment, cached_votes_up: 5)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq some_votes
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted
+        expect(Budget::Investment.sort_by_confidence_score).to eq [most_voted, some_votes, least_voted]
       end
 
       it "orders by confidence_score and then by id" do

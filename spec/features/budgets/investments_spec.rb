@@ -994,10 +994,10 @@ describe "Budget Investments" do
       visit new_budget_investment_path(budget)
 
       select_options = find("#budget_investment_heading_id").all("option").collect(&:text)
-      expect(select_options.first).to eq("")
-      expect(select_options.second).to eq("Toda la ciudad")
-      expect(select_options.third).to eq("Health: More health professionals")
-      expect(select_options.fourth).to eq("Health: More hospitals")
+      expect(select_options).to eq ["",
+                                    "Toda la ciudad",
+                                    "Health: More health professionals",
+                                    "Health: More hospitals"]
     end
   end
 

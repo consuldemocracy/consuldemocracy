@@ -218,8 +218,7 @@ describe UserSegments do
       create(:user, email: "last@email.com")
 
       emails = UserSegments.user_segment_emails(:all_users)
-      expect(emails.first).to eq "first@email.com"
-      expect(emails.last).to eq "last@email.com"
+      expect(emails).to eq ["first@email.com", "last@email.com"]
     end
   end
 

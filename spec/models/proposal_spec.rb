@@ -613,9 +613,7 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(proposal_title)
-        expect(results.second).to eq(proposal_summary)
-        expect(results.third).to eq(proposal_description)
+        expect(results).to eq [proposal_title, proposal_summary, proposal_description]
       end
 
       it "orders by weight and then by votes" do
@@ -627,10 +625,7 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(title_most_voted)
-        expect(results.second).to eq(title_some_votes)
-        expect(results.third).to eq(title_least_voted)
-        expect(results.fourth).to eq(summary_most_voted)
+        expect(results).to eq [title_most_voted, title_some_votes, title_least_voted, summary_most_voted]
       end
 
       it "gives much more weight to word matches than votes" do
@@ -639,8 +634,7 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(exact_title_few_votes)
-        expect(results.second).to eq(similar_title_many_votes)
+        expect(results).to eq [exact_title_few_votes, similar_title_many_votes]
       end
 
     end
@@ -658,15 +652,11 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(average_score)
-        expect(results.second).to eq(highest_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [average_score, highest_score, lowest_score]
 
         results = results.sort_by_hot_score
 
-        expect(results.first).to eq(highest_score)
-        expect(results.second).to eq(average_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [highest_score, average_score, lowest_score]
       end
 
       it "is able to reorder by confidence_score after searching" do
@@ -680,15 +670,11 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(average_score)
-        expect(results.second).to eq(highest_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [average_score, highest_score, lowest_score]
 
         results = results.sort_by_confidence_score
 
-        expect(results.first).to eq(highest_score)
-        expect(results.second).to eq(average_score)
-        expect(results.third).to eq(lowest_score)
+        expect(results).to eq [highest_score, average_score, lowest_score]
       end
 
       it "is able to reorder by created_at after searching" do
@@ -698,15 +684,11 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(oldest)
-        expect(results.second).to eq(newest)
-        expect(results.third).to eq(recent)
+        expect(results).to eq [oldest, newest, recent]
 
         results = results.sort_by_created_at
 
-        expect(results.first).to eq(newest)
-        expect(results.second).to eq(recent)
-        expect(results.third).to eq(oldest)
+        expect(results).to eq [newest, recent, oldest]
       end
 
       it "is able to reorder by most commented after searching" do
@@ -716,15 +698,11 @@ describe Proposal do
 
         results = Proposal.search("stop corruption")
 
-        expect(results.first).to eq(some_comments)
-        expect(results.second).to eq(most_commented)
-        expect(results.third).to eq(least_commented)
+        expect(results).to eq [some_comments, most_commented, least_commented]
 
         results = results.sort_by_most_commented
 
-        expect(results.first).to eq(most_commented)
-        expect(results.second).to eq(some_comments)
-        expect(results.third).to eq(least_commented)
+        expect(results).to eq [most_commented, some_comments, least_commented]
       end
 
     end
@@ -824,15 +802,13 @@ describe Proposal do
 
     it "orders proposals by votes" do
       create(:tag, :category, name: "culture")
-      create(:proposal,  tag_list: "culture").update_column(:confidence_score, 2)
+      create(:proposal, tag_list: "culture").update_column(:confidence_score, 2)
       create(:proposal, tag_list: "culture").update_column(:confidence_score, 10)
       create(:proposal, tag_list: "culture").update_column(:confidence_score, 5)
 
       results = Proposal.for_summary.values.flatten
 
-      expect(results.first.confidence_score).to  be(10)
-      expect(results.second.confidence_score).to be(5)
-      expect(results.third.confidence_score).to  be(2)
+      expect(results.map(&:confidence_score)).to eq [10, 5, 2]
     end
 
     it "orders groups alphabetically" do
@@ -846,9 +822,7 @@ describe Proposal do
 
       results = Proposal.for_summary.values.flatten
 
-      expect(results.first).to  eq(culture_proposal)
-      expect(results.second).to eq(health_proposal)
-      expect(results.third).to  eq(social_proposal)
+      expect(results).to eq [culture_proposal, health_proposal, social_proposal]
     end
 
     it "returns proposals grouped by tag" do
@@ -992,11 +966,9 @@ describe Proposal do
       proposal4 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal4, user: user)
 
-      result = Proposal.recommendations(user).sort_by_recommendations
+      results = Proposal.recommendations(user).sort_by_recommendations
 
-      expect(result.first).to eq proposal3
-      expect(result.second).to eq proposal2
-      expect(result.third).to eq proposal1
+      expect(results).to eq [proposal3, proposal2, proposal1]
     end
 
     it "returns proposals related with user interests" do

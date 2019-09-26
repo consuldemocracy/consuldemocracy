@@ -75,9 +75,7 @@ describe Poll::Officer do
 
       assigned_polls = officer.voting_days_assigned_polls
 
-      expect(assigned_polls.first).to eq(poll_2)
-      expect(assigned_polls.second).to eq(poll_1)
-      expect(assigned_polls.last).to eq(poll_3)
+      expect(assigned_polls).to eq [poll_2, poll_1, poll_3]
     end
   end
 
@@ -126,9 +124,7 @@ describe Poll::Officer do
 
       assigned_polls = officer.final_days_assigned_polls
 
-      expect(assigned_polls.first).to eq(poll_2)
-      expect(assigned_polls.second).to eq(poll_1)
-      expect(assigned_polls.last).to eq(poll_3)
+      expect(assigned_polls).to eq [poll_2, poll_1, poll_3]
     end
   end
 
