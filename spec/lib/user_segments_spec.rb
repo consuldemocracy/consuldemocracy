@@ -45,7 +45,8 @@ describe UserSegments do
       create(:proposal, :retired, author: user1)
 
       all_proposal_authors = UserSegments.all_proposal_authors
-      expect(all_proposal_authors).to contain_exactly(user1)
+
+      expect(all_proposal_authors).to eq [user1]
     end
   end
 
