@@ -962,7 +962,7 @@ describe Proposal do
       expect(Proposal.recommendations(user)).to be_empty
     end
 
-    it "returns proposals ordered by cached_votes_up" do
+    it "returns proposals related to the user's interests ordered by cached_votes_up" do
       proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport")
       proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport")
       proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport")
@@ -974,58 +974,54 @@ describe Proposal do
       expect(results).to eq [proposal3, proposal2, proposal1]
     end
 
-    it "returns proposals related with user interests" do
+    it "does not return proposals unrelated to user interests" do
       proposal1 =  create(:proposal, tag_list: "Sport")
-      proposal2 =  create(:proposal, tag_list: "Sport")
-      proposal3 =  create(:proposal, tag_list: "Politics")
+      proposal2 = create(:proposal, tag_list: "Politics")
       create(:follow, followable: proposal1, user: user)
 
-      result = Proposal.recommendations(user)
+      results = Proposal.recommendations(user)
 
-      expect(result).to eq [proposal2]
+      expect(results).to be_empty
     end
 
     it "does not return proposals when user is follower" do
       proposal1 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
-      result = Proposal.recommendations(user)
+      results = Proposal.recommendations(user)
 
-      expect(result).to be_empty
+      expect(results).to be_empty
     end
 
     it "does not return proposals when user is the author" do
-      proposal1 =  create(:proposal, author: user, tag_list: "Sport")
-      proposal2 =  create(:proposal, tag_list: "Sport")
-      proposal3 =  create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal3, user: user)
+      proposal1 = create(:proposal, tag_list: "Sport")
+      proposal2 = create(:proposal, author: user, tag_list: "Sport")
+      create(:follow, followable: proposal1, user: user)
 
-      result = Proposal.recommendations(user)
+      results = Proposal.recommendations(user)
 
-      expect(result).to eq [proposal2]
+      expect(results).to be_empty
     end
 
     it "does not return archived proposals" do
       proposal1 = create(:proposal, tag_list: "Sport")
-      proposal2 = create(:proposal, tag_list: "Sport")
       archived_proposal = create(:proposal, :archived, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
 
-      result = Proposal.recommendations(user)
+      results = Proposal.recommendations(user)
 
-      expect(result).to eq([proposal2])
+      expect(results).to be_empty
     end
 
     it "does not return already supported proposals" do
       proposal1 = create(:proposal, tag_list: "Health")
       proposal2 = create(:proposal, tag_list: "Health")
-      proposal3 = create(:proposal, tag_list: "Health")
       create(:vote, votable: proposal1, voter: user)
       create(:follow, followable: proposal2, user: user)
 
-      result = Proposal.recommendations(user)
+      results = Proposal.recommendations(user)
 
-      expect(result).to eq([proposal3])
+      expect(results).to be_empty
     end
 
   end

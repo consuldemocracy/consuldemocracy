@@ -748,7 +748,7 @@ describe Debate do
       expect(Debate.recommendations(user)).to be_empty
     end
 
-    it "returns debates ordered by cached_votes_total" do
+    it "returns debates related to the user's interests ordered by cached_votes_total" do
       debate1 =  create(:debate, cached_votes_total: 1, tag_list: "Sport")
       debate2 =  create(:debate, cached_votes_total: 5, tag_list: "Sport")
       debate3 =  create(:debate, cached_votes_total: 10, tag_list: "Sport")
@@ -760,26 +760,24 @@ describe Debate do
       expect(results).to eq [debate3, debate2, debate1]
     end
 
-    it "returns debates related with user interests" do
-      debate1 =  create(:debate, tag_list: "Sport")
-      debate2 =  create(:debate, tag_list: "Politics")
+    it "does not return debates unrelated to user interests" do
       proposal1 = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal1, user: user)
+      debate2 =  create(:debate, tag_list: "Politics")
 
-      result = Debate.recommendations(user)
+      results = Debate.recommendations(user)
 
-      expect(result).to eq [debate1]
+      expect(results).to be_empty
     end
 
     it "does not return debates when user is the author" do
-      debate1 =  create(:debate, author: user, tag_list: "Sport")
-      debate2 =  create(:debate, tag_list: "Sport")
       proposal = create(:proposal, tag_list: "Sport")
       create(:follow, followable: proposal, user: user)
+      debate1 =  create(:debate, author: user, tag_list: "Sport")
 
-      result = Debate.recommendations(user)
+      results = Debate.recommendations(user)
 
-      expect(result).to eq [debate2]
+      expect(results).to be_empty
     end
 
   end
