@@ -858,35 +858,6 @@ describe Budget::Investment do
     end
   end
 
-  describe "#headings_voted_by_user" do
-    it "returns the headings voted by a user" do
-      user1 = create(:user)
-      user2 = create(:user)
-
-      budget = create(:budget)
-      group = create(:budget_group, budget: budget)
-
-      new_york = create(:budget_heading, group: group)
-      san_franciso = create(:budget_heading, group: group)
-      another_heading = create(:budget_heading, group: group)
-
-      new_york_investment = create(:budget_investment, heading: new_york)
-      san_franciso_investment = create(:budget_investment, heading: san_franciso)
-      another_investment = create(:budget_investment, heading: san_franciso)
-
-      create(:vote, votable: new_york_investment, voter: user1)
-      create(:vote, votable: san_franciso_investment, voter: user1)
-
-      expect(another_investment.headings_voted_by_user(user1)).to include(new_york.id)
-      expect(another_investment.headings_voted_by_user(user1)).to include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user1)).not_to include(another_heading.id)
-
-      expect(another_investment.headings_voted_by_user(user2)).not_to include(new_york.id)
-      expect(another_investment.headings_voted_by_user(user2)).not_to include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user2)).not_to include(another_heading.id)
-    end
-  end
-
   describe "#voted_in?" do
 
     let(:user) { create(:user) }
