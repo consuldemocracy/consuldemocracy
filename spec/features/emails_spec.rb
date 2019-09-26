@@ -258,12 +258,9 @@ describe "Emails" do
     scenario "notifications for proposals that I have supported" do
       user = create(:user, email_digest: true)
 
-      proposal1 = create(:proposal)
-      proposal2 = create(:proposal)
+      proposal1 = create(:proposal, voters: [user])
+      proposal2 = create(:proposal, voters: [user])
       proposal3 = create(:proposal)
-
-      create(:vote, votable: proposal1, voter: user)
-      create(:vote, votable: proposal2, voter: user)
 
       reset_mailer
 

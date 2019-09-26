@@ -6,20 +6,16 @@ describe Budget::Stats do
   let(:investment) { create(:budget_investment, :selected, budget: budget) }
 
   describe "#participants" do
-    let(:author) { investment.author }
-    let(:author_and_voter) { create(:user, :hidden) }
-    let(:voter) { create(:user) }
-    let(:voter_and_balloter) { create(:user) }
-    let(:balloter) { create(:user, :hidden) }
-    let(:poll_balloter) { create(:user, :level_two) }
-    let(:non_participant) { create(:user, :level_two) }
+    let!(:author) { investment.author }
+    let!(:author_and_voter) { create(:user, :hidden, votables: [investment]) }
+    let!(:voter) { create(:user, votables: [investment]) }
+    let!(:voter_and_balloter) { create(:user, votables: [investment]) }
+    let!(:balloter) { create(:user, :hidden) }
+    let!(:poll_balloter) { create(:user, :level_two) }
+    let!(:non_participant) { create(:user, :level_two) }
 
     before do
       create(:budget_investment, :selected, budget: budget, author: author_and_voter)
-
-      create(:vote, votable: investment, voter: author_and_voter)
-      create(:vote, votable: investment, voter: voter)
-      create(:vote, votable: investment, voter: voter_and_balloter)
 
       create(:budget_ballot_line, investment: investment, user: balloter)
       create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
@@ -46,8 +42,7 @@ describe Budget::Stats do
     end
 
     it "counts a user who is voter and balloter" do
-      voter_and_balloter = create(:user)
-      create(:vote, votable: investment, voter: voter_and_balloter)
+      voter_and_balloter = create(:user, votables: [investment])
       create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
       expect(stats.total_participants_support_phase).to be 1
@@ -63,8 +58,7 @@ describe Budget::Stats do
     end
 
     it "counts a user who is voter and balloter" do
-      voter_and_balloter = create(:user)
-      create(:vote, votable: investment, voter: voter_and_balloter)
+      voter_and_balloter = create(:user, votables: [investment])
       create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
       expect(stats.total_participants_vote_phase).to be 1

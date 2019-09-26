@@ -442,12 +442,9 @@ describe Proposal do
 
     it "returns users that have voted for the proposal" do
       proposal = create(:proposal)
-      voter1 = create(:user, :level_two)
-      voter2 = create(:user, :level_two)
+      voter1 = create(:user, :level_two, votables: [proposal])
+      voter2 = create(:user, :level_two, votables: [proposal])
       voter3 = create(:user, :level_two)
-
-      create(:vote, voter: voter1, votable: proposal)
-      create(:vote, voter: voter2, votable: proposal)
 
       expect(proposal.voters).to match_array [voter1, voter2]
       expect(proposal.voters).not_to include(voter3)
@@ -455,11 +452,9 @@ describe Proposal do
 
     it "does not return users that have been erased" do
       proposal = create(:proposal)
-      voter1 = create(:user, :level_two)
-      voter2 = create(:user, :level_two)
+      voter1 = create(:user, :level_two, votables: [proposal])
+      voter2 = create(:user, :level_two, votables: [proposal])
 
-      create(:vote, voter: voter1, votable: proposal)
-      create(:vote, voter: voter2, votable: proposal)
       voter2.erase
 
       expect(proposal.voters).to eq [voter1]
@@ -467,11 +462,9 @@ describe Proposal do
 
     it "does not return users that have been blocked" do
       proposal = create(:proposal)
-      voter1 = create(:user, :level_two)
-      voter2 = create(:user, :level_two)
+      voter1 = create(:user, :level_two, votables: [proposal])
+      voter2 = create(:user, :level_two, votables: [proposal])
 
-      create(:vote, voter: voter1, votable: proposal)
-      create(:vote, voter: voter2, votable: proposal)
       voter2.block
 
       expect(proposal.voters).to eq [voter1]
@@ -920,32 +913,28 @@ describe Proposal do
 
     it "returns voters and followers" do
       proposal = create(:proposal)
-      voter = create(:user, :level_two)
+      voter = create(:user, :level_two, votables: [proposal])
       follower = create(:user, :level_two)
       follow = create(:follow, user: follower, followable: proposal)
-      create(:vote, voter: voter, votable: proposal)
 
       expect(proposal.users_to_notify).to eq([voter, follower])
     end
 
     it "returns voters and followers discarding duplicates" do
       proposal = create(:proposal)
-      voter_and_follower = create(:user, :level_two)
+      voter_and_follower = create(:user, :level_two, votables: [proposal])
       follow = create(:follow, user: voter_and_follower, followable: proposal)
-      create(:vote, voter: voter_and_follower, votable: proposal)
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end
 
     it "returns voters and followers except the proposal author" do
       author = create(:user, :level_two)
-      proposal = create(:proposal, author: author)
-      voter_and_follower = create(:user, :level_two)
+      proposal = create(:proposal, author: author, voters: [author])
+      voter_and_follower = create(:user, :level_two, votables: [proposal])
 
       create(:follow, user: author, followable: proposal)
       create(:follow, user: voter_and_follower, followable: proposal)
-      create(:vote, voter: author, votable: proposal)
-      create(:vote, voter: voter_and_follower, votable: proposal)
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end
@@ -1014,9 +1003,8 @@ describe Proposal do
     end
 
     it "does not return already supported proposals" do
-      proposal1 = create(:proposal, tag_list: "Health")
+      proposal1 = create(:proposal, tag_list: "Health", voters: [user])
       proposal2 = create(:proposal, tag_list: "Health")
-      create(:vote, votable: proposal1, voter: user)
       create(:follow, followable: proposal2, user: user)
 
       results = Proposal.recommendations(user)

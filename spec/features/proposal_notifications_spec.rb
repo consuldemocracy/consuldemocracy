@@ -30,9 +30,7 @@ describe "Proposal Notifications" do
   scenario "Send a notification (Active voter)" do
     proposal = create(:proposal)
 
-    voter = create(:user, :level_two)
-    create(:vote, voter: voter, votable: proposal)
-
+    create(:user, :level_two, votables: [proposal])
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(1)
@@ -49,11 +47,10 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Follower and Voter)" do
-    proposal = create(:proposal)
-
     user_voter_follower = create(:user)
+    proposal = create(:proposal, voters: [user_voter_follower])
+
     create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
-    create(:vote, voter: user_voter_follower, votable: proposal)
 
     user_follower = create(:user)
     create(:follow, :followed_proposal, user: user_follower, followable: proposal)
@@ -65,11 +62,9 @@ describe "Proposal Notifications" do
 
   scenario "Send a notification (Blocked voter)" do
     proposal = create(:proposal)
+    voter = create(:user, :level_two, votables: [proposal])
 
-    voter = create(:user, :level_two)
-    create(:vote, voter: voter, votable: proposal)
     voter.block
-
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(0)
@@ -77,11 +72,9 @@ describe "Proposal Notifications" do
 
   scenario "Send a notification (Erased voter)" do
     proposal = create(:proposal)
+    voter = create(:user, :level_two, votables: [proposal])
 
-    voter = create(:user, :level_two)
-    create(:vote, voter: voter, votable: proposal)
     voter.erase
-
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(0)
@@ -153,11 +146,10 @@ describe "Proposal Notifications" do
 
   scenario "Message about receivers (Same Followers and Voters)" do
     author = create(:user)
-    proposal = create(:proposal, author: author)
-
     user_voter_follower = create(:user)
+    proposal = create(:proposal, author: author, voters: [user_voter_follower])
+
     create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
-    create(:vote, voter: user_voter_follower, votable: proposal)
 
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -208,15 +200,11 @@ describe "Proposal Notifications" do
 
     scenario "Voters should receive a notification", :js do
       author = create(:user)
-
-      user1 = create(:user)
-      user2 = create(:user)
-      user3 = create(:user)
-
       proposal = create(:proposal, author: author)
 
-      create(:vote, voter: user1, votable: proposal, vote_flag: true)
-      create(:vote, voter: user2, votable: proposal, vote_flag: true)
+      user1 = create(:user, votables: [proposal])
+      user2 = create(:user, votables: [proposal])
+      user3 = create(:user)
 
       login_as(author)
       visit root_path
@@ -322,10 +310,7 @@ describe "Proposal Notifications" do
     scenario "Proposal hidden", :js do
       author = create(:user)
       user = create(:user)
-
-      proposal = create(:proposal, author: author)
-
-      create(:vote, voter: user, votable: proposal, vote_flag: true)
+      proposal = create(:proposal, author: author, voters: [user])
 
       login_as(author)
       visit root_path
@@ -357,10 +342,7 @@ describe "Proposal Notifications" do
     scenario "Proposal retired by author", :js do
       author = create(:user)
       user = create(:user)
-
-      proposal = create(:proposal, author: author)
-
-      create(:vote, voter: user, votable: proposal, vote_flag: true)
+      proposal = create(:proposal, author: author, voters: [user])
 
       login_as(author)
       visit root_path

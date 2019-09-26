@@ -189,8 +189,7 @@ describe "Consul Schema" do
     end
 
     it "returns nested votes for a proposal" do
-      proposal = create(:proposal)
-      2.times { create(:vote, votable: proposal) }
+      proposal = create(:proposal, voters: [create(:user), create(:user)])
 
       response = execute("{ proposal(id: #{proposal.id}) { votes_for { edges { node { public_created_at } } } } }")
 
@@ -535,15 +534,10 @@ describe "Consul Schema" do
   describe "Votes" do
 
     it "only returns votes from proposals, debates and comments" do
-      proposal = create(:proposal)
-      debate   = create(:debate)
-      comment  = create(:comment)
-      budget_investment = create(:budget_investment)
-
-      proposal_vote = create(:vote, votable: proposal)
-      debate_vote   = create(:vote, votable: debate)
-      comment_vote  = create(:vote, votable: comment)
-      budget_investment_vote = create(:vote, votable: budget_investment)
+      create(:proposal, voters: [create(:user)])
+      create(:debate, voters: [create(:user)])
+      create(:comment, voters: [create(:user)])
+      create(:budget_investment, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_type } } } }")
       received_votables = extract_fields(response, "votes", "votable_type")
@@ -552,11 +546,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes from hidden debates" do
-      visible_debate = create(:debate)
-      hidden_debate  = create(:debate, :hidden)
-
-      visible_debate_vote = create(:vote, votable: visible_debate)
-      hidden_debate_vote  = create(:vote, votable: hidden_debate)
+      visible_debate = create(:debate, voters: [create(:user)])
+      hidden_debate  = create(:debate, :hidden, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_debates = extract_fields(response, "votes", "votable_id")
@@ -565,11 +556,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of hidden proposals" do
-      visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, :hidden)
-
-      visible_proposal_vote = create(:vote, votable: visible_proposal)
-      hidden_proposal_vote  = create(:vote, votable: hidden_proposal)
+      visible_proposal = create(:proposal, voters: [create(:user)])
+      hidden_proposal  = create(:proposal, :hidden, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_proposals = extract_fields(response, "votes", "votable_id")
@@ -578,11 +566,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of hidden comments" do
-      visible_comment = create(:comment)
-      hidden_comment  = create(:comment, :hidden)
-
-      visible_comment_vote = create(:vote, votable: visible_comment)
-      hidden_comment_vote  = create(:vote, votable: hidden_comment)
+      visible_comment = create(:comment, voters: [create(:user)])
+      hidden_comment  = create(:comment, :hidden, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_comments = extract_fields(response, "votes", "votable_id")
@@ -594,11 +579,8 @@ describe "Consul Schema" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, :hidden)
 
-      visible_proposal_comment = create(:comment, commentable: visible_proposal)
-      hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
-
-      visible_proposal_comment_vote = create(:vote, votable: visible_proposal_comment)
-      hidden_proposal_comment_vote  = create(:vote, votable: hidden_proposal_comment)
+      visible_proposal_comment = create(:comment, commentable: visible_proposal, voters: [create(:user)])
+      hidden_proposal_comment  = create(:comment, commentable: hidden_proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
@@ -610,11 +592,8 @@ describe "Consul Schema" do
       visible_debate = create(:debate)
       hidden_debate  = create(:debate, :hidden)
 
-      visible_debate_comment = create(:comment, commentable: visible_debate)
-      hidden_debate_comment  = create(:comment, commentable: hidden_debate)
-
-      visible_debate_comment_vote = create(:vote, votable: visible_debate_comment)
-      hidden_debate_comment_vote  = create(:vote, votable: hidden_debate_comment)
+      visible_debate_comment = create(:comment, commentable: visible_debate, voters: [create(:user)])
+      hidden_debate_comment  = create(:comment, commentable: hidden_debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
@@ -623,10 +602,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of debates that are not public" do
-      not_public_debate = create(:debate)
       allow(Vote).to receive(:public_for_api).and_return([])
-
-      not_public_debate_vote = create(:vote, votable: not_public_debate)
+      not_public_debate = create(:debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
@@ -635,10 +612,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden proposals" do
-      not_public_proposal = create(:proposal)
       allow(Vote).to receive(:public_for_api).and_return([])
-
-      not_public_proposal_vote = create(:vote, votable: not_public_proposal)
+      not_public_proposal = create(:proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
@@ -647,10 +622,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden comments" do
-      not_public_comment = create(:comment)
       allow(Vote).to receive(:public_for_api).and_return([])
-
-      not_public_comment_vote = create(:vote, votable: not_public_comment)
+      not_public_comment = create(:comment, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")

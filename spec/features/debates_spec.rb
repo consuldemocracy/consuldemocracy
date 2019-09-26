@@ -305,9 +305,8 @@ describe "Debates" do
   end
 
   scenario "Update should not be posible if debate is not editable" do
-    debate = create(:debate)
     Setting["max_votes_for_debate_edit"] = 2
-    3.times { create(:vote, votable: debate) }
+    debate = create(:debate, voters: Array.new(3) { create(:user) })
 
     expect(debate).not_to be_editable
     login_as(debate.author)

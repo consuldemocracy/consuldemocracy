@@ -63,6 +63,12 @@ FactoryBot.define do
     trait :with_comment do
       after(:create) { |user| create(:comment, author: user) }
     end
+
+    transient { votables { [] } }
+
+    after(:create) do |user, evaluator|
+      evaluator.votables.each { |votable| create(:vote, votable: votable, voter: user) }
+    end
   end
 
   factory :identity do

@@ -25,14 +25,9 @@ describe "Stats" do
     end
 
     scenario "Votes" do
-      debate = create(:debate)
-      create(:vote, votable: debate)
-
-      proposal = create(:proposal)
-      2.times { create(:vote, votable: proposal) }
-
-      comment = create(:comment)
-      3.times { create(:vote, votable: comment) }
+      create(:debate,   voters: Array.new(1) { create(:user) })
+      create(:proposal, voters: Array.new(2) { create(:user) })
+      create(:comment,  voters: Array.new(3) { create(:user) })
 
       visit admin_stats_path
 
@@ -113,11 +108,9 @@ describe "Stats" do
 
       scenario "Number of supports in investment projects" do
         group_2 = create(:budget_group, budget: @budget)
-        investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: @heading_all_city)
 
-        1.times { create(:vote, votable: investment1) }
-        2.times { create(:vote, votable: investment2) }
+        create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
+        create(:budget_investment, heading: @heading_all_city, voters: [create(:user), create(:user)])
 
         visit admin_stats_path
         click_link "Participatory Budgets"
@@ -129,17 +122,13 @@ describe "Stats" do
       end
 
       scenario "Number of users that have supported an investment project" do
-        user1 = create(:user, :level_two)
-        user2 = create(:user, :level_two)
-        user3 = create(:user, :level_two)
-
         group_2 = create(:budget_group, budget: @budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
         investment2 = create(:budget_investment, heading: @heading_all_city)
 
-        create(:vote, votable: investment1, voter: user1)
-        create(:vote, votable: investment1, voter: user2)
-        create(:vote, votable: investment2, voter: user1)
+        create(:user, :level_two, votables: [investment1, investment2])
+        create(:user, :level_two, votables: [investment1])
+        create(:user, :level_two)
 
         visit admin_stats_path
         click_link "Participatory Budgets"
@@ -160,13 +149,9 @@ describe "Stats" do
         carabanchel = create(:budget_heading, group: group_districts)
         barajas     = create(:budget_heading, group: group_districts)
 
-        all_city_investment = create(:budget_investment, heading: all_city)
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-
-        Budget::Investment.all.each do |investment|
-          create(:vote, votable: investment)
-        end
+        create(:budget_investment, heading: all_city, voters: [create(:user)])
+        create(:budget_investment, heading: carabanchel, voters: [create(:user)])
+        create(:budget_investment, heading: carabanchel, voters: [create(:user)])
 
         visit admin_stats_path
         click_link "Participatory Budgets"

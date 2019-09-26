@@ -183,6 +183,12 @@ FactoryBot.define do
     trait :with_image do
       after(:create) { |investment| create(:image, imageable: investment) }
     end
+
+    transient { voters { [] } }
+
+    after(:create) do |investment, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: investment, voter: voter) }
+    end
   end
 
   factory :budget_phase, class: "Budget::Phase" do

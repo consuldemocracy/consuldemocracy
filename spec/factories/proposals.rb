@@ -78,6 +78,12 @@ FactoryBot.define do
       after(:create) { |proposal| create(:image, imageable: proposal) }
     end
 
+    transient { voters { [] } }
+
+    after(:create) do |proposal, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: proposal, voter: voter) }
+    end
+
     factory :retired_proposal, traits: [:retired]
   end
 

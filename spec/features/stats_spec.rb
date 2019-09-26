@@ -19,14 +19,9 @@ describe "Stats" do
     end
 
     scenario "Votes" do
-      debate = create(:debate)
-      create(:vote, votable: debate)
-
-      proposal = create(:proposal)
-      2.times { create(:vote, votable: proposal) }
-
-      comment = create(:comment)
-      3.times { create(:vote, votable: comment) }
+      create(:debate,   voters: Array.new(1) { create(:user) })
+      create(:proposal, voters: Array.new(2) { create(:user) })
+      create(:comment,  voters: Array.new(3) { create(:user) })
 
       visit stats_path
 

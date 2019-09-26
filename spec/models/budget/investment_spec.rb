@@ -748,10 +748,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
         salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
@@ -762,10 +760,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
         salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(true)
       end
@@ -776,11 +772,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-        salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
-        create(:vote, votable: salamanca_investment, voter: user)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
+        salamanca_investment   = create(:budget_investment, heading: salamanca, voters: [user])
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
         expect(salamanca_investment.valid_heading?(user)).to eq(true)
@@ -792,10 +785,8 @@ describe Budget::Investment do
       end
 
       it "allows votes in a group with a single heading after voting in that heading" do
-        all_city_investment1 = create(:budget_investment, heading: heading)
+        all_city_investment1 = create(:budget_investment, heading: heading, voters: [user])
         all_city_investment2 = create(:budget_investment, heading: heading)
-
-        create(:vote, votable: all_city_investment1, voter: user)
 
         expect(all_city_investment2.valid_heading?(user)).to eq(true)
       end
@@ -805,9 +796,7 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: districts)
 
         all_city_investment    = create(:budget_investment, heading: heading)
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
 
         expect(all_city_investment.valid_heading?(user)).to eq(true)
       end
@@ -817,10 +806,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: districts)
         salamanca   = create(:budget_heading, group: districts)
 
-        all_city_investment    = create(:budget_investment, heading: heading)
+        all_city_investment    = create(:budget_investment, heading: heading, voters: [user])
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
-
-        create(:vote, votable: all_city_investment, voter: user)
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
@@ -929,9 +916,8 @@ describe Budget::Investment do
 
   describe "#with_supports" do
     it "returns proposals with supports" do
-      inv1 = create(:budget_investment)
+      inv1 = create(:budget_investment, voters: [create(:user)])
       inv2 = create(:budget_investment)
-      create(:vote, votable: inv1)
 
       expect(Budget::Investment.with_supports).to eq [inv1]
       expect(Budget::Investment.with_supports).not_to include(inv2)

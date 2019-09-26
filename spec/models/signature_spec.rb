@@ -142,9 +142,8 @@ describe Signature do
       end
 
       it "does not assign vote to user if already voted" do
-        proposal = create(:proposal)
         user = create(:user, :level_two, document_number: "123A")
-        vote = create(:vote, votable: proposal, voter: user)
+        proposal = create(:proposal, voters: [user])
         signature_sheet = create(:signature_sheet, signable: proposal)
         signature = create(:signature, signature_sheet: signature_sheet, document_number: user.document_number)
 
@@ -154,9 +153,8 @@ describe Signature do
       end
 
       it "does not assign vote to user if already voted on budget investment" do
-        investment = create(:budget_investment)
         user = create(:user, :level_two, document_number: "123A")
-        vote = create(:vote, votable: investment, voter: user)
+        investment = create(:budget_investment, voters: [user])
 
         signature_sheet = create(:signature_sheet, signable: investment)
         signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)
