@@ -96,19 +96,28 @@ describe Legislation::Process do
   end
 
   describe "filter scopes" do
-    let!(:process_1) { create(:legislation_process, start_date: Date.current - 2.days,
-                                                   end_date: Date.current + 1.day) }
-    let!(:process_2) { create(:legislation_process, start_date: Date.current + 1.day,
-                                              end_date: Date.current + 3.days) }
-    let!(:process_3) { create(:legislation_process, start_date: Date.current - 4.days,
-                                              end_date: Date.current - 3.days) }
+    describe "open and past filters" do
+      let!(:process_1) { create(:legislation_process, start_date: Date.current - 2.days,
+                                                     end_date: Date.current + 1.day) }
+      let!(:process_2) { create(:legislation_process, start_date: Date.current + 1.day,
+                                                end_date: Date.current + 3.days) }
+      let!(:process_3) { create(:legislation_process, start_date: Date.current - 4.days,
+                                                end_date: Date.current - 3.days) }
 
-    it "filters open" do
-      open_processes = ::Legislation::Process.open
+      it "filters open" do
+        open_processes = ::Legislation::Process.open
 
-      expect(open_processes).to include(process_1)
-      expect(open_processes).not_to include(process_2)
-      expect(open_processes).not_to include(process_3)
+        expect(open_processes).to eq [process_1]
+        expect(open_processes).not_to include [process_2]
+      end
+
+      it "filters past" do
+        past_processes = ::Legislation::Process.past
+
+        expect(past_processes).to include(process_3)
+        expect(past_processes).not_to include(process_2)
+        expect(past_processes).not_to include(process_1)
+      end
     end
 
     it "filters draft phase" do
@@ -141,19 +150,11 @@ describe Legislation::Process do
 
       processes_not_in_draft = ::Legislation::Process.not_in_draft
 
-      expect(processes_not_in_draft).to include(process_before_draft)
-      expect(processes_not_in_draft).to include(process_with_draft_disabled)
+      expect(processes_not_in_draft).to match_array [process_before_draft, process_with_draft_disabled]
       expect(processes_not_in_draft).not_to include(process_with_draft_enabled)
       expect(processes_not_in_draft).not_to include(process_with_draft_only_today)
     end
 
-    it "filters past" do
-      past_processes = ::Legislation::Process.past
-
-      expect(past_processes).to include(process_3)
-      expect(past_processes).not_to include(process_2)
-      expect(past_processes).not_to include(process_1)
-    end
   end
 
   describe "#status" do
