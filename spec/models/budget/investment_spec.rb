@@ -638,9 +638,9 @@ describe Budget::Investment do
       heading1 = create(:budget_heading, group: group)
       heading2 = create(:budget_heading, group: group)
 
-      investment1 = create(:budget_investment, heading: heading1, budget: budget)
-      investment2 = create(:budget_investment, heading: heading1, budget: budget)
-      investment3 = create(:budget_investment, heading: heading2, budget: budget)
+      investment1 = create(:budget_investment, heading: heading1)
+      investment2 = create(:budget_investment, heading: heading1)
+      investment3 = create(:budget_investment, heading: heading2)
 
       results = Budget::Investment.apply_filters_and_search(budget, heading_id: heading1.id)
 
@@ -720,7 +720,7 @@ describe Budget::Investment do
     let(:heading)     { create(:budget_heading, group: group) }
     let(:user)        { create(:user, :level_two) }
     let(:luser)       { create(:user) }
-    let(:district_sp) { create(:budget_investment, budget: budget, group: group, heading: heading) }
+    let(:district_sp) { create(:budget_investment, budget: budget, heading: heading) }
 
     describe "#reason_for_not_being_selectable_by" do
       it "rejects not logged in users" do
@@ -992,8 +992,8 @@ describe Budget::Investment do
           california = create(:budget_heading, group: group)
           new_york = create(:budget_heading, group: group)
 
-          inv1 = create(:budget_investment, :selected, budget: budget, group: group, heading: california)
-          inv2 = create(:budget_investment, :selected, budget: budget, group: group, heading: new_york)
+          inv1 = create(:budget_investment, :selected, budget: budget, heading: california)
+          inv2 = create(:budget_investment, :selected, budget: budget, heading: new_york)
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1
 
@@ -1004,8 +1004,8 @@ describe Budget::Investment do
           budget.phase = "balloting"
           districts = create(:budget_group, budget: budget)
           carabanchel = create(:budget_heading, group: districts, price: 35)
-          inv1 = create(:budget_investment, :selected, budget: budget, group: districts, heading: carabanchel, price: 30)
-          inv2 = create(:budget_investment, :selected, budget: budget, group: districts, heading: carabanchel, price: 10)
+          inv1 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 10)
 
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1

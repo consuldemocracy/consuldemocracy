@@ -1120,7 +1120,6 @@ describe "Budget Investments" do
              :feasible,
              :finished,
              budget: budget,
-             group: group,
              heading: heading,
              price: 16,
              price_explanation: "Every wheel is 4 euros, so total is 16")
@@ -1146,7 +1145,6 @@ describe "Budget Investments" do
     investment = create(:budget_investment,
                         :unfeasible,
                         budget: budget,
-                        group: group,
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this")
 
@@ -1154,7 +1152,6 @@ describe "Budget Investments" do
                         :unfeasible,
                         :finished,
                         budget: budget,
-                        group: group,
                         heading: heading,
                         unfeasibility_explanation: "The unfeasible explanation")
 
@@ -1182,7 +1179,6 @@ describe "Budget Investments" do
                         :finished,
                         :selected,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1202,7 +1198,6 @@ describe "Budget Investments" do
                         :selected,
                         :winner,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1226,7 +1221,6 @@ describe "Budget Investments" do
                         :feasible,
                         :finished,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1242,7 +1236,6 @@ describe "Budget Investments" do
                         :feasible,
                         :finished,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1261,7 +1254,6 @@ describe "Budget Investments" do
                         :unfeasible,
                         :unfinished,
                         budget: budget,
-                        group: group,
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this matter")
 

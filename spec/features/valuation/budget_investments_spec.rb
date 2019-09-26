@@ -119,22 +119,18 @@ describe "Valuation budget investments" do
       finished_heading = create(:budget_heading, name: "Only Finished", group: group)
       create(:budget_investment, :visible_to_valuators, title: "Valuating Investment ONE",
                                                         heading: valuating_heading,
-                                                        group: group,
                                                         budget: budget,
                                                         valuators: [valuator])
       create(:budget_investment, :visible_to_valuators, title: "Valuating Investment TWO",
                                                         heading: valuating_finished_heading,
-                                                        group: group,
                                                         budget: budget,
                                                         valuators: [valuator])
       create(:budget_investment, :visible_to_valuators, :finished, title: "Finished ONE",
                                                                    heading: valuating_finished_heading,
-                                                                   group: group,
                                                                    budget: budget,
                                                                    valuators: [valuator])
       create(:budget_investment, :visible_to_valuators, :finished, title: "Finished TWO",
                                                                    heading: finished_heading,
-                                                                   group: group,
                                                                    budget: budget,
                                                                    valuators: [valuator])
 

@@ -265,7 +265,7 @@ describe "Budget Investments" do
   context "Supporting" do
 
     scenario "Supporting budget investments on behalf of someone in index view", :js do
-      budget_investment = create(:budget_investment, budget: budget, heading: heading)
+      budget_investment = create(:budget_investment, heading: heading)
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -322,7 +322,7 @@ describe "Budget Investments" do
   context "Printing" do
 
     scenario "Printing budget investments" do
-      16.times { create(:budget_investment, budget: budget, heading: heading) }
+      16.times { create(:budget_investment, heading: heading) }
 
       click_link "Print budget investments"
 
