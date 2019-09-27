@@ -109,7 +109,6 @@ class Setting < ApplicationRecord
         "process.polls": true,
         "process.budgets": true,
         "process.legislation": true,
-        "process.legislation_proposals": true,
         "proposals.successful_proposal_id": nil,
         "proposals.poll_short_title": nil,
         "proposals.poll_description": nil,

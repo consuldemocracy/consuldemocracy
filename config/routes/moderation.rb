@@ -18,9 +18,11 @@ namespace :moderation do
     put :moderate, on: :collection
   end
 
-  resources :legislation_proposals, only: :index, controller: "legislation/proposals" do
-    put :hide, on: :member
-    put :moderate, on: :collection
+  namespace :legislation do
+    resources :proposals, only: :index do
+      put :hide, on: :member
+      put :moderate, on: :collection
+    end
   end
   resources :comments, only: :index do
     put :hide, on: :member
