@@ -21,6 +21,12 @@ FactoryBot.define do
     sequence(:title) { |n| "Topic title #{n}" }
     sequence(:description) { |n| "Description as comment #{n}" }
     association :author, factory: :user
+
+    trait :with_community do
+      community { create(:proposal).community }
+    end
+
+    factory :topic_with_community, traits: [:with_community]
   end
 
   factory :related_content do

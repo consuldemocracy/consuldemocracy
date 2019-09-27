@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Topics" do
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Topic
+    it_behaves_like "notifiable in-app", :topic_with_community
   end
 
   context "New" do
