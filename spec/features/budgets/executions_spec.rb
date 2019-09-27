@@ -276,19 +276,11 @@ describe "Executions" do
   end
 
   context "Heading Order" do
-
-    def create_heading_with_investment_with_milestone(group:, name:)
-      heading    = create(:budget_heading, group: group, name: name)
-      investment = create(:budget_investment, :winner, heading: heading)
-      milestone  = create(:milestone, milestoneable: investment)
-      heading
-    end
-
     scenario "Non-city headings are displayed in alphabetical order" do
       heading.destroy!
-      z_heading = create_heading_with_investment_with_milestone(group: group, name: "Zzz")
-      a_heading = create_heading_with_investment_with_milestone(group: group, name: "Aaa")
-      m_heading = create_heading_with_investment_with_milestone(group: group, name: "Mmm")
+      z_heading = create(:budget_heading, :with_investment_with_milestone, group: group, name: "Zzz")
+      a_heading = create(:budget_heading, :with_investment_with_milestone, group: group, name: "Aaa")
+      m_heading = create(:budget_heading, :with_investment_with_milestone, group: group, name: "Mmm")
 
       visit budget_executions_path(budget)
 
