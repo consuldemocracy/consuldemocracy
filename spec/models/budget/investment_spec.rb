@@ -1060,10 +1060,7 @@ describe Budget::Investment do
       it "stores the votes for a reclassified investment" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 
@@ -1084,10 +1081,7 @@ describe Budget::Investment do
       it "removes votes from invesment" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 
@@ -1105,10 +1099,7 @@ describe Budget::Investment do
       it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 
@@ -1123,10 +1114,7 @@ describe Budget::Investment do
       it "does not store reclassified votes nor remove actual votes if the investment has not been reclassifed" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 

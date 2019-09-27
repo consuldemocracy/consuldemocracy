@@ -9,16 +9,13 @@ describe Budget::Stats do
     let!(:author) { investment.author }
     let!(:author_and_voter) { create(:user, :hidden, votables: [investment]) }
     let!(:voter) { create(:user, votables: [investment]) }
-    let!(:voter_and_balloter) { create(:user, votables: [investment]) }
-    let!(:balloter) { create(:user, :hidden) }
+    let!(:voter_and_balloter) { create(:user, votables: [investment], ballot_lines: [investment]) }
+    let!(:balloter) { create(:user, :hidden, ballot_lines: [investment]) }
     let!(:poll_balloter) { create(:user, :level_two) }
     let!(:non_participant) { create(:user, :level_two) }
 
     before do
       create(:budget_investment, :selected, budget: budget, author: author_and_voter)
-
-      create(:budget_ballot_line, investment: investment, user: balloter)
-      create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
 
       create(:poll_voter, :from_booth, user: poll_balloter, budget: budget)
 
@@ -42,8 +39,7 @@ describe Budget::Stats do
     end
 
     it "counts a user who is voter and balloter" do
-      voter_and_balloter = create(:user, votables: [investment])
-      create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
+      create(:user, votables: [investment], ballot_lines: [investment])
 
       expect(stats.total_participants_support_phase).to be 1
     end
@@ -58,8 +54,7 @@ describe Budget::Stats do
     end
 
     it "counts a user who is voter and balloter" do
-      voter_and_balloter = create(:user, votables: [investment])
-      create(:budget_ballot_line, investment: investment, user: voter_and_balloter)
+      create(:user, votables: [investment], ballot_lines: [investment])
 
       expect(stats.total_participants_vote_phase).to be 1
     end
@@ -72,8 +67,7 @@ describe Budget::Stats do
     end
 
     it "counts once a user who is balloter and poll balloter" do
-      poller_and_balloter = create(:user, :level_two)
-      create(:budget_ballot_line, investment: investment, user: poller_and_balloter)
+      poller_and_balloter = create(:user, :level_two, ballot_lines: [investment])
       create(:poll_voter, :from_booth, user: poller_and_balloter, budget: budget)
 
       expect(stats.total_participants_vote_phase).to be 1

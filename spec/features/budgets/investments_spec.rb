@@ -1715,12 +1715,9 @@ describe "Budget Investments" do
     describe "Reclassification" do
 
       scenario "Due to heading change" do
-        user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
+        user = create(:user, :level_two, ballot_lines: [investment])
         heading2 = create(:budget_heading, group: group)
-
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
 
         login_as(user)
         visit budget_ballot_path(budget)
@@ -1736,11 +1733,8 @@ describe "Budget Investments" do
       end
 
       scenario "Due to being unfeasible" do
-        user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
-
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
+        user = create(:user, :level_two, ballot_lines: [investment])
 
         login_as(user)
         visit budget_ballot_path(budget)
