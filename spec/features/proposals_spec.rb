@@ -13,7 +13,7 @@ describe "Proposals" do
   end
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Proposal
+    it_behaves_like "notifiable in-app", :proposal
     it_behaves_like "relationable", Proposal
     it_behaves_like "remotely_translatable",
                     :proposal,

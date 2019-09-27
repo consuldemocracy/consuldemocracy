@@ -9,7 +9,7 @@ describe "Debates" do
   end
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Debate
+    it_behaves_like "notifiable in-app", :debate
     it_behaves_like "relationable", Debate
     it_behaves_like "remotely_translatable",
                     :debate,
