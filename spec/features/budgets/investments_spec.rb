@@ -1547,12 +1547,12 @@ describe "Budget Investments" do
       new_york_heading    = create(:budget_heading, group: group, name: "New York",
                                    latitude: -43.223412, longitude: 12.009423)
 
-      investment1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
-      investment2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
-      investment3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
-      investment4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
-      investment5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
-      investment6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
+      create(:budget_investment, :selected, price: 1, heading: global_heading, title: "World T-Shirt")
+      create(:budget_investment, :selected, price: 10, heading: global_heading, title: "Eco pens")
+      create(:budget_investment, :selected, price: 100, heading: global_heading, title: "Free tablet")
+      create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading, title: "Fireworks")
+      create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading, title: "Bus pass")
+      create(:budget_investment, :selected, price: 100000, heading: new_york_heading, title: "NASA base")
 
       login_as(user)
       visit budget_path(budget)
@@ -1561,16 +1561,16 @@ describe "Budget Investments" do
       # No need to click_link "Global Heading" because the link of a group with a single heading
       # points to the list of investments directly
 
-      add_to_ballot(investment1)
-      add_to_ballot(investment2)
+      add_to_ballot("World T-Shirt")
+      add_to_ballot("Eco pens")
 
       visit budget_path(budget)
 
       click_link "Health"
       click_link "Carabanchel"
 
-      add_to_ballot(investment4)
-      add_to_ballot(investment5)
+      add_to_ballot("Fireworks")
+      add_to_ballot("Bus pass")
 
       visit budget_ballot_path(budget)
 
@@ -1578,24 +1578,24 @@ describe "Budget Investments" do
                                    "until this phase is closed."
 
       within("#budget_group_#{global_group.id}") do
-        expect(page).to have_content investment1.title
-        expect(page).to have_content "€#{investment1.price}"
+        expect(page).to have_content "World T-Shirt"
+        expect(page).to have_content "€1"
 
-        expect(page).to have_content investment2.title
-        expect(page).to have_content "€#{investment2.price}"
+        expect(page).to have_content "Eco pens"
+        expect(page).to have_content "€10"
 
-        expect(page).not_to have_content investment3.title
-        expect(page).not_to have_content "€#{investment3.price}"
+        expect(page).not_to have_content "Free tablet"
+        expect(page).not_to have_content "€100"
       end
 
       within("#budget_group_#{group.id}") do
-        expect(page).to have_content investment4.title
+        expect(page).to have_content "Fireworks"
         expect(page).to have_content "€1,000"
 
-        expect(page).to have_content investment5.title
+        expect(page).to have_content "Bus pass"
         expect(page).to have_content "€10,000"
 
-        expect(page).not_to have_content investment6.title
+        expect(page).not_to have_content "NASA base"
         expect(page).not_to have_content "€100,000"
       end
     end
@@ -1606,7 +1606,8 @@ describe "Budget Investments" do
 
       heading_1 = create(:budget_heading, group: group, name: "Heading 1")
       heading_2 = create(:budget_heading, group: group, name: "Heading 2")
-      investment = create(:budget_investment, :selected, heading: heading_1)
+
+      create(:budget_investment, :selected, heading: heading_1, title: "Zero-emission zone")
 
       login_as(user)
       visit budget_path(budget)
@@ -1614,7 +1615,7 @@ describe "Budget Investments" do
       click_link "Health"
       click_link "Heading 1"
 
-      add_to_ballot(investment)
+      add_to_ballot("Zero-emission zone")
 
       visit budget_group_path(budget, group)
 
