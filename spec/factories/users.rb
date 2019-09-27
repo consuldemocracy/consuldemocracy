@@ -111,7 +111,11 @@ FactoryBot.define do
   end
 
   factory :poll_officer, class: "Poll::Officer" do
-    user
+    user { association(:user, username: name) }
+
+    transient do
+      sequence(:name) { |n| "Officer #{n}" }
+    end
   end
 
   factory :follow do
