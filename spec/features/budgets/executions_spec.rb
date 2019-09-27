@@ -291,8 +291,7 @@ describe "Executions" do
 
     scenario "Milestone not yet published" do
       status = create(:milestone_status)
-      unpublished_milestone = create(:milestone, milestoneable: investment1,
-                                     status: status, publication_date: Date.tomorrow)
+      create(:milestone, milestoneable: investment1, status: status, publication_date: Date.tomorrow)
 
       visit budget_executions_path(budget, status: status.id)
 

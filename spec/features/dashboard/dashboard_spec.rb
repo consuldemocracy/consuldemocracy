@@ -133,7 +133,7 @@ describe "Proposal's dashboard" do
 
   scenario "Dashboard progress can unexecute proposed action" do
     action = create(:dashboard_action, :proposed_action, :active)
-    executed_action = create(:dashboard_executed_action, proposal: proposal, action: action)
+    create(:dashboard_executed_action, proposal: proposal, action: action)
 
     visit progress_proposal_dashboard_path(proposal)
     expect(page).to have_content(action.title)
