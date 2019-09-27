@@ -65,13 +65,9 @@ describe Poll::Officer do
     it "returns polls ordered by end date (desc)" do
       officer = create(:poll_officer)
 
-      poll_1 = create(:poll, ends_at: 1.day.ago)
-      poll_2 = create(:poll, ends_at: 10.days.from_now)
-      poll_3 = create(:poll, ends_at: 10.days.ago)
-
-      [poll_1, poll_2, poll_3].each do |poll|
-        create(:poll_officer_assignment, officer: officer, poll: poll)
-      end
+      poll_1 = create(:poll, ends_at: 1.day.ago, officers: [officer])
+      poll_2 = create(:poll, ends_at: 10.days.from_now, officers: [officer])
+      poll_3 = create(:poll, ends_at: 10.days.ago, officers: [officer])
 
       assigned_polls = officer.voting_days_assigned_polls
 

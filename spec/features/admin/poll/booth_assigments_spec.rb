@@ -157,9 +157,7 @@ describe "Admin booths assignments" do
       booth = create(:poll_booth)
       officer_assignment = create(:poll_officer_assignment, poll: poll, booth: booth)
       officer = officer_assignment.officer
-
-      officer_assignment_2 = create(:poll_officer_assignment, poll: poll)
-      officer_2 = officer_assignment_2.officer
+      officer_2 = create(:poll_officer, polls: [poll])
 
       visit admin_poll_path(poll)
       click_link "Booths (2)"

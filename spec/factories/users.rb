@@ -115,6 +115,13 @@ FactoryBot.define do
 
     transient do
       sequence(:name) { |n| "Officer #{n}" }
+      polls { [] }
+    end
+
+    after(:create) do |officer, evaluator|
+      evaluator.polls.each do |poll|
+        create(:poll_officer_assignment, poll: poll, officer: officer)
+      end
     end
   end
 

@@ -42,6 +42,14 @@ FactoryBot.define do
     trait :with_image do
       after(:create) { |poll| create(:image, imageable: poll) }
     end
+
+    transient { officers { [] } }
+
+    after(:create) do |poll, evaluator|
+      evaluator.officers.each do |officer|
+        create(:poll_officer_assignment, poll: poll, officer: officer)
+      end
+    end
   end
 
   factory :poll_question, class: "Poll::Question" do
