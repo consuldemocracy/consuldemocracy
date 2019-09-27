@@ -1377,8 +1377,8 @@ describe "Budget Investments" do
 
         group2 = create(:budget_group, budget: budget)
         another_heading1 = create(:budget_heading, group: group2)
-        another_heading2 = create(:budget_heading, group: group2)
 
+        create(:budget_heading, group: group2)
         create(:budget_investment, heading: heading, title: "Investment", voters: [author])
         create(:budget_investment, heading: another_heading1, title: "Another investment")
 

@@ -140,8 +140,8 @@ describe "Voters" do
       booth1 = create(:poll_booth)
       booth2 = create(:poll_booth)
 
-      officer_assignment1 = create(:poll_officer_assignment, officer: officer, poll: poll1, booth: booth1)
-      officer_assignment2 = create(:poll_officer_assignment, officer: officer, poll: poll2, booth: booth2)
+      create(:poll_officer_assignment, officer: officer, poll: poll1, booth: booth1)
+      create(:poll_officer_assignment, officer: officer, poll: poll2, booth: booth2)
 
       set_officing_booth(booth1)
       visit new_officing_residence_path

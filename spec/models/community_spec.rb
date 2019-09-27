@@ -19,7 +19,7 @@ RSpec.describe Community, type: :model do
       topic1 = create(:topic, community: community, author: user1)
       create(:comment, commentable: topic1, author: user1)
       create(:comment, commentable: topic1, author: user2)
-      topic2 = create(:topic, community: community, author: user2)
+      create(:topic, community: community, author: user2)
 
       expect(community.participants).to match_array [user1, user2, proposal.author]
     end

@@ -51,9 +51,10 @@ describe "Communities" do
       topic1 = create(:topic, community: community)
       topic2 = create(:topic, community: community)
       topic3 = create(:topic, community: community)
-      topic1_comment = create(:comment, commentable: topic1)
-      topic3_comment = create(:comment, commentable: topic3)
-      topic3_comment = create(:comment, commentable: topic3)
+
+      create(:comment, :with_confidence_score, commentable: topic1)
+      create(:comment, :with_confidence_score, commentable: topic3)
+      create(:comment, :with_confidence_score, commentable: topic3)
 
       visit community_path(community, order: :most_commented)
 

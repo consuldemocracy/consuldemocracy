@@ -957,10 +957,10 @@ describe "Debates" do
       proposal = create(:proposal, tag_list: "Sport")
       user = create(:user, recommended_debates: true, followables: [proposal])
 
-      debate1 = create(:debate, title: "Show you got",      cached_votes_total: 10,  tag_list: "Sport")
-      debate2 = create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
-      debate3 = create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
-      debate4 = create(:debate, title: "Do not display",    cached_votes_total: 1)
+      create(:debate, title: "Show you got",      cached_votes_total: 10,  tag_list: "Sport")
+      create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
+      create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
+      create(:debate, title: "Do not display",    cached_votes_total: 1)
 
       login_as(user)
       visit debates_path

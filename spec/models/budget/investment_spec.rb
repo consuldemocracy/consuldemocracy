@@ -822,20 +822,21 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
-        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        create(:budget_investment, heading: carabanchel, voters: [user])
+
+        salamanca_investment = create(:budget_investment, heading: salamanca)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
 
       it "accepts votes in multiple headings of the same group" do
         group.update(max_votable_headings: 2)
-
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
-        salamanca_investment   = create(:budget_investment, heading: salamanca)
+        create(:budget_investment, heading: carabanchel, voters: [user])
+
+        salamanca_investment = create(:budget_investment, heading: salamanca)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(true)
       end
@@ -855,35 +856,38 @@ describe Budget::Investment do
 
       it "allows votes in a group with a single heading" do
         all_city_investment = create(:budget_investment, heading: heading)
+
         expect(all_city_investment.valid_heading?(user)).to eq(true)
       end
 
       it "allows votes in a group with a single heading after voting in that heading" do
-        all_city_investment1 = create(:budget_investment, heading: heading, voters: [user])
-        all_city_investment2 = create(:budget_investment, heading: heading)
+        create(:budget_investment, heading: heading, voters: [user])
 
-        expect(all_city_investment2.valid_heading?(user)).to eq(true)
+        investment_for_same_heading = create(:budget_investment, heading: heading)
+
+        expect(investment_for_same_heading.valid_heading?(user)).to eq(true)
       end
 
       it "allows votes in a group with a single heading after voting in another group" do
         districts = create(:budget_group, budget: budget)
         carabanchel = create(:budget_heading, group: districts)
 
-        all_city_investment    = create(:budget_investment, heading: heading)
-        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
+        create(:budget_investment, heading: carabanchel, voters: [user])
 
-        expect(all_city_investment.valid_heading?(user)).to eq(true)
+        investment_from_different_group = create(:budget_investment, heading: heading)
+
+        expect(investment_from_different_group.valid_heading?(user)).to eq(true)
       end
 
       it "allows votes in a group with multiple headings after voting in group with a single heading" do
         districts = create(:budget_group, budget: budget)
-        carabanchel = create(:budget_heading, group: districts)
-        salamanca   = create(:budget_heading, group: districts)
+        2.times { create(:budget_heading, group: districts) }
 
-        all_city_investment    = create(:budget_investment, heading: heading, voters: [user])
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        create(:budget_investment, heading: heading, voters: [user])
 
-        expect(carabanchel_investment.valid_heading?(user)).to eq(true)
+        investment = create(:budget_investment, heading: districts.headings.sample)
+
+        expect(investment.valid_heading?(user)).to eq(true)
       end
 
       describe "#can_vote_in_another_heading?" do

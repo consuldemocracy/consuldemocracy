@@ -29,19 +29,21 @@ describe Poll::Voter do
     end
 
     it "is not valid if the user has already voted in the same poll or booth_assignment" do
-      voter1 = create(:poll_voter, user: user, poll: poll)
-      voter2 = build(:poll_voter, user: user, poll: poll)
+      create(:poll_voter, user: user, poll: poll)
 
-      expect(voter2).not_to be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
+      voter = build(:poll_voter, user: user, poll: poll)
+
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "is not valid if the user has already voted in the same poll/booth" do
-      voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
-      voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
+      create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
-      expect(voter2).not_to be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
+      voter = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
+
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "is not valid if the user has already voted in different booth in the same poll" do
