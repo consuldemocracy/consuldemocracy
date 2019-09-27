@@ -587,7 +587,6 @@ tr:
     poster:
       index:
         title: Görsel ön izlemesi
-        poster_title: "Bakmaya devam etmeyin,"
         poster_subtitle: "bana destek verin! ;)"
         intro_text_html: "Kendi vatandaş önerim ile <strong>ben %{org}</strong>'a katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
         proposal_code: "Öneri kodu: %{code}"
