@@ -129,16 +129,22 @@ FactoryBot.define do
   end
 
   factory :poll_question_answer, class: "Poll::Question::Answer" do
-    association :question, factory: :poll_question
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
     sequence(:given_order) { |n| n }
+
+    transient { poll { association(:poll) } }
+
+    question { association(:poll_question, poll: poll) }
   end
 
   factory :poll_answer_video, class: "Poll::Question::Answer::Video" do
-    association :answer, factory: :poll_question_answer
     title { "Sample video title" }
     url { "https://youtu.be/nhuNb0XtRhQ" }
+
+    transient { poll { association(:poll) } }
+
+    answer { association(:poll_question_answer, poll: poll) }
   end
 
   factory :poll_booth, class: "Poll::Booth" do
