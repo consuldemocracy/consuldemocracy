@@ -2,9 +2,7 @@ require "rails_helper"
 
 describe "BudgetPolls", :with_frozen_time do
   let(:budget) { create(:budget, :balloting) }
-  let(:group) { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group) }
-  let(:investment) { create(:budget_investment, :selected, heading: heading) }
+  let(:investment) { create(:budget_investment, :selected, budget: budget) }
   let(:poll) { create(:poll, :current, budget: budget) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
@@ -13,8 +11,7 @@ describe "BudgetPolls", :with_frozen_time do
 
   before do
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
-    booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment, date: Date.current)
+    create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth, date: Date.current)
   end
 
   context "Offline" do

@@ -210,9 +210,9 @@ describe "Valuation budget investments" do
     scenario "Index filtering by valuation status" do
       valuating = create(:budget_investment, :visible_to_valuators, budget: budget,
                                                                     title: "Ongoing valuation")
-      valuated  = create(:budget_investment, :visible_to_valuators, budget: budget,
-                                                                    title: "Old idea",
-                                                                    valuation_finished: true)
+      valuated  = create(:budget_investment, :visible_to_valuators, :finished,
+                                                                    budget: budget,
+                                                                    title: "Old idea")
       valuating.valuators << valuator
       valuated.valuators << valuator
 
@@ -241,7 +241,7 @@ describe "Valuation budget investments" do
       create(:valuator, user: create(:user, username: "Rick", email: "rick@valuators.org"))
     end
     let(:investment) do
-      create(:budget_investment, budget: budget, price: 1234, feasibility: "unfeasible",
+      create(:budget_investment, :unfeasible, budget: budget, price: 1234,
                                  unfeasibility_explanation: "It is impossible",
                                  administrator: administrator,)
     end
@@ -324,10 +324,7 @@ describe "Valuation budget investments" do
   describe "Valuate" do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, group: group)
-      create(:budget_investment, heading: heading, group: group, budget: budget, price: nil,
-                                 administrator: admin)
+      create(:budget_investment, budget: budget, price: nil, administrator: admin)
     end
 
     before do

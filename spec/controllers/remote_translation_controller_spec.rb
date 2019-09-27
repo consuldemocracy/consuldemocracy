@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe RemoteTranslationsController do
 
-  describe "POST create" do
+  describe "POST create", :delay_jobs do
     let(:debate)             { create(:debate) }
 
     before do
@@ -10,11 +10,6 @@ describe RemoteTranslationsController do
                                        remote_translatable_type: debate.class.to_s,
                                        locale: :es }].to_json
       request.env["HTTP_REFERER"] = "any_path"
-      Delayed::Worker.delay_jobs = true
-    end
-
-    after do
-      Delayed::Worker.delay_jobs = false
     end
 
     it "create correctly remote translation" do

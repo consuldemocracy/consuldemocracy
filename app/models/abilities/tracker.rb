@@ -3,8 +3,6 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      tracker = user.tracker
-
       can :index, Budget
       can [:index, :show, :edit], Budget::Investment
       can :manage, Milestone

@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe ReplyEmail do
-
-  let(:author)      { create(:user) }
-  let(:debate)      { create(:debate, author: author) }
+  let(:debate)      { create(:debate) }
   let(:commenter)   { create(:user, email: "email@commenter.org") }
   let(:comment)     { create(:comment, commentable: debate, user: commenter) }
   let(:replier)     { create(:user) }

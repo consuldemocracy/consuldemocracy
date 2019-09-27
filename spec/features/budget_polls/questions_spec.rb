@@ -8,10 +8,8 @@ describe "Poll Questions" do
   end
 
   scenario "Do not display polls associated to a budget" do
-    budget = create(:budget)
-
-    poll1 = create(:poll, name: "Citizen Proposal Poll")
-    poll2 = create(:poll, budget: budget, name: "Participatory Budget Poll")
+    create(:poll, name: "Citizen Proposal Poll")
+    create(:poll, :for_budget, name: "Participatory Budget Poll")
 
     visit admin_questions_path
 

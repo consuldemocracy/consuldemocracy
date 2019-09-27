@@ -15,11 +15,7 @@ describe Document do
         admin_document2 = create(:document, :admin)
         admin_document3 = create(:document, :admin)
 
-        expect(Document.admin.count).to eq(3)
-        expect(Document.admin).to include admin_document1
-        expect(Document.admin).to include admin_document2
-        expect(Document.admin).to include admin_document3
-        expect(Document.admin).not_to include user_document
+        expect(Document.admin).to match_array [admin_document1, admin_document2, admin_document3]
       end
 
     end

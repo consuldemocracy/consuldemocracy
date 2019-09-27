@@ -79,7 +79,7 @@ describe "Admin booths assignments" do
     end
 
     scenario "Unassign booth from poll", :js do
-      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
+      create(:poll_booth_assignment, poll: poll, booth: booth)
 
       visit admin_poll_path(poll)
       within("#poll-resources") do
@@ -118,9 +118,8 @@ describe "Admin booths assignments" do
     end
 
     scenario "Unassing booth whith associated shifts", :js do
-      assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
       officer = create(:poll_officer)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: assignment)
+      create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
       create(:poll_shift, booth: booth, officer: officer)
 
       visit manage_admin_poll_booth_assignments_path(poll)
@@ -138,8 +137,7 @@ describe "Admin booths assignments" do
     end
 
     scenario "Cannot unassing booth if poll is expired" do
-      poll_expired = create(:poll, :expired)
-      create(:poll_booth_assignment, poll: poll_expired, booth: booth)
+      poll_expired = create(:poll, :expired, booths: [booth])
 
       visit manage_admin_poll_booth_assignments_path(poll_expired)
 
@@ -157,12 +155,10 @@ describe "Admin booths assignments" do
     scenario "Lists all assigned poll officers" do
       poll = create(:poll)
       booth = create(:poll_booth)
-      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      officer_assignment = create(:poll_officer_assignment, booth_assignment: booth_assignment)
+      officer_assignment = create(:poll_officer_assignment, poll: poll, booth: booth)
       officer = officer_assignment.officer
 
-      booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
-      officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment_2)
+      officer_assignment_2 = create(:poll_officer_assignment, poll: poll)
       officer_2 = officer_assignment_2.officer
 
       visit admin_poll_path(poll)
@@ -239,9 +235,7 @@ describe "Admin booths assignments" do
       booth_assignment = create(:poll_booth_assignment, poll: poll)
       other_booth_assignment = create(:poll_booth_assignment, poll: poll)
 
-      question_1 = create(:poll_question, poll: poll)
-      create(:poll_question_answer, title: "Yes", question: question_1)
-      create(:poll_question_answer, title: "No", question: question_1)
+      question_1 = create(:poll_question, :yes_no, poll: poll)
 
       question_2 = create(:poll_question, poll: poll)
       create(:poll_question_answer, title: "Today", question: question_2)

@@ -7,11 +7,6 @@ describe "Admin collaborative legislation" do
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "legislation_process",
-                  "edit_admin_legislation_process_path",
-                  %w[title summary description additional_info]
-
   it_behaves_like "admin_milestoneable",
                   :legislation_process,
                   "admin_legislation_process_milestones_path"
@@ -287,7 +282,6 @@ describe "Admin collaborative legislation" do
     let!(:process) { create(:legislation_process) }
 
     before { Setting["feature.translation_interface"] = true }
-    after { Setting["feature.translation_interface"] = nil }
 
     scenario "Cant manage translations on homepage form" do
       visit edit_admin_legislation_process_homepage_path(process)

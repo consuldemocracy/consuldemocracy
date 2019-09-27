@@ -129,24 +129,22 @@ describe "Poll Officing" do
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
 
-    user1 = create(:user)
-    user2 = create(:user)
-    officer1 = create(:poll_officer, user: user1)
-    officer2 = create(:poll_officer, user: user2)
+    officer1 = create(:poll_officer)
+    officer2 = create(:poll_officer)
 
     create(:poll_shift, officer: officer1, booth: booth, date: Date.current, task: :vote_collection)
     create(:poll_shift, officer: officer2, booth: booth, date: Date.current, task: :vote_collection)
 
-    officer_assignment_1 = create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer1)
-    officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer2)
+    create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer1)
+    create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer2)
 
     in_browser(:one) do
-      login_as user1
+      login_as officer1.user
       visit officing_root_path
     end
 
     in_browser(:two) do
-      login_as user2
+      login_as officer2.user
       visit officing_root_path
     end
 

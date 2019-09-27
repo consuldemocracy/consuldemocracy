@@ -9,8 +9,7 @@ describe "Images" do
 
   context "Index" do
     scenario "Answer with no images" do
-      answer = create(:poll_question_answer,
-                      question: create(:poll_question))
+      answer = create(:poll_question_answer)
 
       visit admin_answer_images_path(answer)
 
@@ -18,8 +17,7 @@ describe "Images" do
     end
 
     scenario "Answer with images" do
-      answer = create(:poll_question_answer,
-                      question: create(:poll_question))
+      answer = create(:poll_question_answer)
       image = create(:image, imageable: answer)
 
       visit admin_answer_images_path(answer)
@@ -30,8 +28,7 @@ describe "Images" do
   end
 
   scenario "Add image to answer", :js do
-    answer = create(:poll_question_answer,
-                    question: create(:poll_question))
+    answer = create(:poll_question_answer)
     image = create(:image)
 
     visit admin_answer_images_path(answer)
@@ -47,8 +44,7 @@ describe "Images" do
   end
 
   scenario "Remove image from answer", :js do
-    answer = create(:poll_question_answer,
-                    question: create(:poll_question))
+    answer = create(:poll_question_answer)
     image = create(:image, imageable: answer)
 
     visit admin_answer_images_path(answer)

@@ -6,6 +6,7 @@ describe Budget do
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
   it_behaves_like "reportable"
+  it_behaves_like "globalizable", :budget
 
   describe "name" do
     before do
@@ -153,24 +154,24 @@ describe Budget do
   describe "#current" do
 
     it "returns nil if there is only one budget and it is still in drafting phase" do
-      budget = create(:budget, phase: "drafting")
+      create(:budget, :drafting)
 
-      expect(described_class.current).to eq(nil)
+      expect(Budget.current).to eq(nil)
     end
 
     it "returns the budget if there is only one and not in drafting phase" do
-      budget = create(:budget, phase: "accepting")
+      budget = create(:budget, :accepting)
 
-      expect(described_class.current).to eq(budget)
+      expect(Budget.current).to eq(budget)
     end
 
     it "returns the last budget created that is not in drafting phase" do
-      old_budget      = create(:budget, phase: "finished",  created_at: 2.years.ago)
-      previous_budget = create(:budget, phase: "accepting", created_at: 1.year.ago)
-      current_budget  = create(:budget, phase: "accepting", created_at: 1.month.ago)
-      next_budget     = create(:budget, phase: "drafting",  created_at: 1.week.ago)
+      old_budget      = create(:budget, :finished,  created_at: 2.years.ago)
+      previous_budget = create(:budget, :accepting, created_at: 1.year.ago)
+      current_budget  = create(:budget, :accepting, created_at: 1.month.ago)
+      next_budget     = create(:budget, :drafting,  created_at: 1.week.ago)
 
-      expect(described_class.current).to eq(current_budget)
+      expect(Budget.current).to eq(current_budget)
     end
 
   end
@@ -180,17 +181,15 @@ describe Budget do
     it "returns all budgets that are not in the finished phase" do
       (Budget::Phase::PHASE_KINDS - ["finished"]).each do |phase|
         budget = create(:budget, phase: phase)
-        expect(described_class.open).to include(budget)
+        expect(Budget.open).to include(budget)
       end
     end
 
   end
 
   describe "heading_price" do
-    let(:group) { create(:budget_group, budget: budget) }
-
     it "returns the heading price if the heading provided is part of the budget" do
-      heading = create(:budget_heading, price: 100, group: group)
+      heading = create(:budget_heading, price: 100, budget: budget)
       expect(budget.heading_price(heading)).to eq(100)
     end
 
@@ -274,10 +273,6 @@ describe Budget do
   end
 
   describe "#formatted_amount" do
-    after do
-      I18n.locale = :en
-    end
-
     it "correctly formats Euros with Spanish" do
       budget.update(currency_symbol: "€")
       I18n.locale = :es

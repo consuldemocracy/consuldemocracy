@@ -49,12 +49,6 @@ describe "Consul Schema" do
     expect(dig(response, "data.proposal.title")).to eq(proposal.title)
   end
 
-  xit "returns has_one associations" do
-    organization = create(:organization)
-    response = execute("{ user(id: #{organization.user_id}) { organization { name } } }")
-    expect(dig(response, "data.user.organization.name")).to eq(organization.name)
-  end
-
   it "returns belongs_to associations" do
     response = execute("{ proposal(id: #{proposal.id}) { public_author { username } } }")
     expect(dig(response, "data.proposal.public_author.username")).to eq(proposal.public_author.username)
@@ -70,15 +64,6 @@ describe "Consul Schema" do
     comment_bodies = comments.collect { |comment| comment["body"] }
 
     expect(comment_bodies).to match_array([comment_1.body, comment_2.body])
-  end
-
-  xit "executes deeply nested queries" do
-    org_user = create(:user)
-    organization = create(:organization, user: org_user)
-    org_proposal = create(:proposal, author: org_user)
-    response = execute("{ proposal(id: #{org_proposal.id}) { public_author { organization { name } } } }")
-
-    expect(dig(response, "data.proposal.public_author.organization.name")).to eq(organization.name)
   end
 
   it "hides confidential fields of Int type" do
@@ -157,18 +142,6 @@ describe "Consul Schema" do
       expect(received_titles).to match_array [visible_proposal.title]
     end
 
-    xit "only returns proposals of the Human Rights proceeding" do
-      proposal = create(:proposal)
-      human_rights_proposal = create(:proposal, proceeding: "Derechos Humanos", sub_proceeding: "Right to have a job")
-      other_proceeding_proposal = create(:proposal)
-      other_proceeding_proposal.update_attribute(:proceeding, "Another proceeding")
-
-      response = execute("{ proposals { edges { node { title } } } }")
-      received_titles = extract_fields(response, "proposals", "title")
-
-      expect(received_titles).to match_array [proposal.title, human_rights_proposal.title]
-    end
-
     it "includes proposals of authors even if public activity is set to false" do
       visible_author = create(:user, public_activity: true)
       hidden_author  = create(:user, public_activity: false)
@@ -183,11 +156,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_proposal = create(:proposal, author: visible_author)
-      hidden_proposal  = create(:proposal, author: hidden_author)
+      visible_author = create(:user, :with_proposal, public_activity: true)
+      hidden_author  = create(:user, :with_proposal, public_activity: false)
 
       response = execute("{ proposals { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "proposals", "public_author.username")
@@ -255,11 +225,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_debate = create(:debate, author: visible_author)
-      hidden_debate  = create(:debate, author: hidden_author)
+      visible_author = create(:user, :with_debate, public_activity: true)
+      hidden_author  = create(:user, :with_debate, public_activity: false)
 
       response = execute("{ debates { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "debates", "public_author.username")
@@ -293,10 +260,10 @@ describe "Consul Schema" do
 
   describe "Comments" do
     it "only returns comments from proposals, debates and polls" do
-      proposal_comment          = create(:comment, commentable: create(:proposal))
-      debate_comment            = create(:comment, commentable: create(:debate))
-      poll_comment              = create(:comment, commentable: create(:poll))
-      budget_investment_comment = build(:comment, commentable: create(:budget_investment)).save(skip_validation: true)
+      create(:comment, commentable: create(:proposal))
+      create(:comment, commentable: create(:debate))
+      create(:comment, commentable: create(:poll))
+      build(:comment, commentable: create(:budget_investment)).save(skip_validation: true)
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")
@@ -318,11 +285,8 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, public_activity: true)
-      hidden_author  = create(:user, public_activity: false)
-
-      visible_comment = create(:comment, author: visible_author)
-      hidden_comment  = create(:comment, author: hidden_author)
+      visible_author = create(:user, :with_comment, public_activity: true)
+      hidden_author  = create(:user, :with_comment, public_activity: false)
 
       response = execute("{ comments { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "comments", "public_author.username")
@@ -332,7 +296,7 @@ describe "Consul Schema" do
 
     it "does not include hidden comments" do
       visible_comment = create(:comment)
-      hidden_comment  = create(:comment, hidden_at: Time.current)
+      hidden_comment  = create(:comment, :hidden)
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
@@ -342,7 +306,7 @@ describe "Consul Schema" do
 
     it "does not include comments from hidden proposals" do
       visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, hidden_at: Time.current)
+      hidden_proposal  = create(:proposal, :hidden)
 
       visible_proposal_comment = create(:comment, commentable: visible_proposal)
       hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
@@ -355,7 +319,7 @@ describe "Consul Schema" do
 
     it "does not include comments from hidden debates" do
       visible_debate = create(:debate)
-      hidden_debate  = create(:debate, hidden_at: Time.current)
+      hidden_debate  = create(:debate, :hidden)
 
       visible_debate_comment = create(:comment, commentable: visible_debate)
       hidden_debate_comment  = create(:comment, commentable: hidden_debate)
@@ -368,7 +332,7 @@ describe "Consul Schema" do
 
     it "does not include comments from hidden polls" do
       visible_poll = create(:poll)
-      hidden_poll  = create(:poll, hidden_at: Time.current)
+      hidden_poll  = create(:poll, :hidden)
 
       visible_poll_comment = create(:comment, commentable: visible_poll)
       hidden_poll_comment  = create(:comment, commentable: hidden_poll)
@@ -497,13 +461,13 @@ describe "Consul Schema" do
 
   describe "Tags" do
     it "only display tags with kind nil or category" do
-      tag           = create(:tag, name: "Parks")
-      category_tag  = create(:tag, :category, name: "Health")
-      admin_tag     = create(:tag, name: "Admin tag", kind: "admin")
+      create(:tag, name: "Parks")
+      create(:tag, :category, name: "Health")
+      create(:tag, name: "Admin tag", kind: "admin")
 
-      proposal = create(:proposal, tag_list: "Parks")
-      proposal = create(:proposal, tag_list: "Health")
-      proposal = create(:proposal, tag_list: "Admin tag")
+      create(:proposal, tag_list: "Parks")
+      create(:proposal, tag_list: "Health")
+      create(:proposal, tag_list: "Admin tag")
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -537,8 +501,8 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for hidden proposals" do
-      proposal = create(:proposal, tag_list: "Health")
-      hidden_proposal = create(:proposal, :hidden, tag_list: "SPAM")
+      create(:proposal, tag_list: "Health")
+      create(:proposal, :hidden, tag_list: "SPAM")
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -547,8 +511,8 @@ describe "Consul Schema" do
     end
 
     it "does not display tags for hidden debates" do
-      debate = create(:debate, tag_list: "Health, Transportation")
-      hidden_debate = create(:debate, :hidden, tag_list: "SPAM")
+      create(:debate, tag_list: "Health, Transportation")
+      create(:debate, :hidden, tag_list: "SPAM")
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -556,19 +520,8 @@ describe "Consul Schema" do
       expect(received_tags).to match_array ["Health", "Transportation"]
     end
 
-    xit "does not display tags for proceeding's proposals" do
-      valid_proceeding_proposal = create(:proposal, proceeding: "Derechos Humanos", sub_proceeding: "Right to a Home", tag_list: "Health")
-      invalid_proceeding_proposal = create(:proposal, tag_list: "Animals")
-      invalid_proceeding_proposal.update_attribute("proceeding", "Random")
-
-      response = execute("{ tags { edges { node { name } } } }")
-      received_tags = extract_fields(response, "tags", "name")
-
-      expect(received_tags).to match_array ["Health"]
-    end
-
     it "does not display tags for taggings that are not public" do
-      proposal = create(:proposal, tag_list: "Health")
+      create(:proposal, tag_list: "Health")
       allow(ActsAsTaggableOn::Tag).to receive(:public_for_api).and_return([])
 
       response = execute("{ tags { edges { node { name } } } }")
@@ -613,7 +566,7 @@ describe "Consul Schema" do
 
     it "does not include votes of hidden proposals" do
       visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, hidden_at: Time.current)
+      hidden_proposal  = create(:proposal, :hidden)
 
       visible_proposal_vote = create(:vote, votable: visible_proposal)
       hidden_proposal_vote  = create(:vote, votable: hidden_proposal)
@@ -626,7 +579,7 @@ describe "Consul Schema" do
 
     it "does not include votes of hidden comments" do
       visible_comment = create(:comment)
-      hidden_comment  = create(:comment, hidden_at: Time.current)
+      hidden_comment  = create(:comment, :hidden)
 
       visible_comment_vote = create(:vote, votable: visible_comment)
       hidden_comment_vote  = create(:vote, votable: hidden_comment)

@@ -12,10 +12,6 @@ describe "Dashboards Rake" do
       ActionMailer::Base.deliveries.clear
     end
 
-    after do
-      Setting["dashboard.emails"] = nil
-    end
-
     let :run_rake_task do
       Rake::Task["dashboards:send_notifications"].reenable
       Rake.application.invoke_task "dashboards:send_notifications"

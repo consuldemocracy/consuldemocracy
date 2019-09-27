@@ -49,8 +49,6 @@ describe "Official positions" do
       before do
         @proposal1 = create(:proposal, author: @user1)
         @proposal2 = create(:proposal, author: @user2)
-
-        create_featured_proposals
       end
 
       scenario "Index" do

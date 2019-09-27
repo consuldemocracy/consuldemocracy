@@ -54,12 +54,6 @@ describe Officing::Residence do
         Setting["remote_census.response.valid"] = access_user_data
       end
 
-      after do
-        Setting["feature.remote_census"] = nil
-        Setting["remote_census.request.date_of_birth"] = nil
-        Setting["remote_census.request.postal_code"] = nil
-      end
-
       it "is valid" do
         expect(custom_residence).to be_valid
       end
@@ -94,14 +88,15 @@ describe Officing::Residence do
 
       describe "dates" do
         it "is valid with a valid date of birth" do
-          custom_residence = described_class.new("date_of_birth(3i)" => "1",
+          custom_residence = Officing::Residence.new("date_of_birth(3i)" => "1",
                                                  "date_of_birth(2i)" => "1",
                                                  "date_of_birth(1i)" => "1980")
-          expect(custom_residence.errors[:date_of_birth].size).to eq(0)
+
+          expect(custom_residence.errors[:date_of_birth]).to be_empty
         end
 
         it "is not valid without a date of birth" do
-          custom_residence = described_class.new("date_of_birth(3i)" => "",
+          custom_residence = Officing::Residence.new("date_of_birth(3i)" => "",
                                                  "date_of_birth(2i)" => "",
                                                  "date_of_birth(1i)" => "")
           expect(custom_residence).not_to be_valid
@@ -134,13 +129,13 @@ describe Officing::Residence do
 
     describe "allowed age" do
       it "is not valid if user is under allowed age" do
-        allow_any_instance_of(described_class).to receive(:response_date_of_birth).and_return(15.years.ago)
+        allow_any_instance_of(Officing::Residence).to receive(:response_date_of_birth).and_return(15.years.ago)
         expect(residence).not_to be_valid
         expect(residence.errors[:year_of_birth]).to include("You don't have the required age to participate")
       end
 
       it "is valid if user is above allowed age" do
-        allow_any_instance_of(described_class).to receive(:response_date_of_birth).and_return(16.years.ago)
+        allow_any_instance_of(Officing::Residence).to receive(:response_date_of_birth).and_return(16.years.ago)
         expect(residence).to be_valid
         expect(residence.errors[:year_of_birth]).to be_empty
       end
@@ -150,12 +145,12 @@ describe Officing::Residence do
 
   describe "new" do
     it "upcases document number" do
-      residence = described_class.new(document_number: "x1234567z")
+      residence = Officing::Residence.new(document_number: "x1234567z")
       expect(residence.document_number).to eq("X1234567Z")
     end
 
     it "removes all characters except numbers and letters" do
-      residence = described_class.new(document_number: " 12.345.678 - B")
+      residence = Officing::Residence.new(document_number: " 12.345.678 - B")
       expect(residence.document_number).to eq("12345678B")
     end
   end

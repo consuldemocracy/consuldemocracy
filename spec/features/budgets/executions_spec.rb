@@ -79,8 +79,7 @@ describe "Executions" do
   context "Images" do
 
     scenario "renders milestone image if available" do
-      milestone1 = create(:milestone, milestoneable: investment1)
-      create(:image, imageable: milestone1)
+      milestone1 = create(:milestone, :with_image, milestoneable: investment1)
 
       visit budget_path(budget)
 

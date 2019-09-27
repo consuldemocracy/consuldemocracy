@@ -43,8 +43,8 @@ describe "Tags" do
   end
 
   scenario "Index tag does not show featured debates" do
-    featured_debates = create_featured_debates
-    debates = create(:debate, tag_list: "123")
+    create_featured_debates
+    create(:debate, tag_list: "123")
 
     visit debates_path(tag: "123")
 
@@ -186,8 +186,8 @@ describe "Tags" do
   context "Tag cloud" do
 
     scenario "Display user tags" do
-      earth = create(:debate, tag_list: "Medio Ambiente")
-      money = create(:debate, tag_list: "Economía")
+      create(:debate, tag_list: "Medio Ambiente")
+      create(:debate, tag_list: "Economía")
 
       visit debates_path
 

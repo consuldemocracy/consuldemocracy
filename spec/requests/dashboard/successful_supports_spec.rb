@@ -22,10 +22,6 @@ describe "Retrieves number of supports for the successful proposal" do
     sign_in(proposal.author)
   end
 
-  after do
-    Setting["proposals.successful_proposal_id"] = @successful_proposal_id
-  end
-
   it "returns the number of supports grouped by day" do
     get proposal_dashboard_successful_supports_path(proposal, format: :json)
 

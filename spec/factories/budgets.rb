@@ -114,6 +114,10 @@ FactoryBot.define do
       valuation_finished { true }
     end
 
+    trait :unfinished do
+      valuation_finished { false }
+    end
+
     trait :selected do
       selected { true }
       feasibility { "feasible" }
@@ -127,6 +131,10 @@ FactoryBot.define do
 
     trait :visible_to_valuators do
       visible_to_valuators { true }
+    end
+
+    trait :invisible_to_valuators do
+      visible_to_valuators { false }
     end
 
     trait :incompatible do
@@ -170,6 +178,10 @@ FactoryBot.define do
 
     trait :with_milestone_tags do
       after(:create) { |investment| investment.milestone_tags << create(:tag, :milestone) }
+    end
+
+    trait :with_image do
+      after(:create) { |investment| create(:image, imageable: investment) }
     end
   end
 

@@ -4,18 +4,38 @@ describe Budget::Result do
 
   describe "calculate_winners" do
     let(:budget) { create(:budget) }
-    let(:group) { create(:budget_group, budget: budget) }
-    let(:heading) { create(:budget_heading, group: group, price: 1000) }
+    let(:heading) { create(:budget_heading, budget: budget, price: 1000) }
 
-    context "When there is no winners" do
-      it "calculates the correct winner set" do
+    context "When there are no winners" do
+      it "assigns investments ordered by ballot lines until budget is met" do
+        create(:budget_investment, :selected, heading: heading, price: 100, ballot_lines_count: 500)
+        create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800)
+        create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900)
+        create(:budget_investment, :selected, heading: heading, price: 500, ballot_lines_count: 600)
+
+        Budget::Result.new(budget, heading).calculate_winners
+
+        expect(heading.investments.winners.pluck(:ballot_lines_count)).to match_array([900, 800, 600])
+      end
+
+      it "selects cheaper investments when running out of budget" do
+        create(:budget_investment, :selected, heading: heading, price: 800, ballot_lines_count: 900)
+        create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800)
+        create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 600)
+
+        Budget::Result.new(budget, heading).calculate_winners
+
+        expect(heading.investments.winners.pluck(:ballot_lines_count)).to match_array([900, 600])
+      end
+
+      it "excludes incompatible investments" do
         investment1 = create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900, winner: false)
         investment2 = create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800, winner: false)
         investment3 = create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700, winner: false)
         investment4 = create(:budget_investment, :selected, heading: heading, price: 500, ballot_lines_count: 600, winner: false)
         investment5 = create(:budget_investment, :selected, heading: heading, price: 100, ballot_lines_count: 500, winner: false)
 
-        described_class.new(budget, heading).calculate_winners
+        Budget::Result.new(budget, heading).calculate_winners
 
         expect(heading.investments.winners.pluck(:id)).to match_array([investment1.id, investment2.id, investment4.id])
       end
@@ -29,7 +49,7 @@ describe Budget::Result do
         investment4 = create(:budget_investment, :winner, heading: heading, price: 500, ballot_lines_count: 600)
         investment5 = create(:budget_investment, :winner, heading: heading, price: 100, ballot_lines_count: 500)
 
-        described_class.new(budget, heading).calculate_winners
+        Budget::Result.new(budget, heading).calculate_winners
 
         expect(heading.investments.winners.pluck(:id)).to match_array([investment1.id, investment2.id, investment4.id])
       end

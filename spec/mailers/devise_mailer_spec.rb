@@ -7,7 +7,7 @@ describe DeviseMailer do
       user = create(:user, locale: "es")
 
       email = I18n.with_locale :en do
-        described_class.confirmation_instructions(user, "ABC")
+        DeviseMailer.confirmation_instructions(user, "ABC")
       end
 
       expect(email.subject).to include("confirmación")

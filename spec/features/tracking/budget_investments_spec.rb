@@ -171,9 +171,7 @@ describe "Valuation budget investments" do
   describe "Milestones" do
     let(:admin) { create(:administrator) }
     let(:investment) do
-      heading = create(:budget_heading)
-      create(:budget_investment, heading: heading, budget: budget,
-                                 administrator: admin)
+      create(:budget_investment, budget: budget, administrator: admin)
     end
 
     before do
@@ -254,9 +252,7 @@ describe "Valuation budget investments" do
 
     let(:admin) { create(:administrator) }
     let(:investment) do
-      heading = create(:budget_heading)
-      create(:budget_investment, heading: heading, budget: budget,
-             administrator: admin)
+      create(:budget_investment, budget: budget, administrator: admin)
     end
 
     before do

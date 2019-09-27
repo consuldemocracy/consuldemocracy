@@ -67,7 +67,7 @@ describe "Account" do
              " complete the confirmation of your new email address."
     expect(page).to have_content notice
 
-    email = open_last_email
+    open_last_email
     visit_in_email("Confirm my account")
 
     logout
@@ -176,19 +176,6 @@ describe "Account" do
   end
 
   context "Recommendations" do
-
-    before do
-      Setting["feature.user.recommendations"] = true
-      Setting["feature.user.recommendations_on_debates"] = true
-      Setting["feature.user.recommendations_on_proposals"] = true
-    end
-
-    after do
-      Setting["feature.user.recommendations"] = nil
-      Setting["feature.user.recommendations_on_debates"] = nil
-      Setting["feature.user.recommendations_on_proposals"] = nil
-    end
-
     scenario "are enabled by default" do
       visit account_path
 

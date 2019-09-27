@@ -97,8 +97,7 @@ describe "Residence", :with_frozen_time do
     booth = create(:poll_booth)
     poll = create(:poll)
 
-    ba = create(:poll_booth_assignment, poll: poll, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+    create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current)
 
     login_as(officer.user)
@@ -125,12 +124,6 @@ describe "Residence", :with_frozen_time do
       create(:poll_officer_assignment, officer: officer)
       login_through_form_as_officer(officer.user)
       visit officing_root_path
-    end
-
-    after do
-      Setting["feature.remote_census"] = nil
-      Setting["remote_census.request.date_of_birth"] = nil
-      Setting["remote_census.request.postal_code"] = nil
     end
 
     describe "Display form fields according to the remote census configuration" do

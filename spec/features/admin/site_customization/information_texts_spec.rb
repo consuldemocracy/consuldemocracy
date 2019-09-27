@@ -7,11 +7,6 @@ describe "Admin custom information texts" do
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "i18n_content",
-                  "admin_site_customization_information_texts_path",
-                  %w[value]
-
   scenario "page is correctly loaded" do
     visit admin_site_customization_information_texts_path
 

@@ -8,6 +8,7 @@ describe Poll do
     it_behaves_like "notifiable"
     it_behaves_like "acts as paranoid", :poll
     it_behaves_like "reportable"
+    it_behaves_like "globalizable", :poll
   end
 
   describe "validations" do
@@ -116,7 +117,7 @@ describe Poll do
       expired = create(:poll, :expired)
       recounting = create(:poll, :recounting)
 
-      recounting_polls = described_class.recounting
+      recounting_polls = Poll.recounting
 
       expect(recounting_polls).not_to include(current)
       expect(recounting_polls).not_to include(expired)
@@ -130,7 +131,7 @@ describe Poll do
       expired = create(:poll, :expired)
       recounting = create(:poll, :recounting)
 
-      current_or_recounting = described_class.current_or_recounting
+      current_or_recounting = Poll.current_or_recounting
 
       expect(current_or_recounting).to include(current)
       expect(current_or_recounting).to include(recounting)
@@ -186,16 +187,16 @@ describe Poll do
 
     describe "class method" do
       it "returns no polls for non-users and level 1 users" do
-        expect(described_class.answerable_by(nil)).to be_empty
-        expect(described_class.answerable_by(level1)).to be_empty
+        expect(Poll.answerable_by(nil)).to be_empty
+        expect(Poll.answerable_by(level1)).to be_empty
       end
 
       it "returns unrestricted polls for level 2 users" do
-        expect(described_class.answerable_by(level2).to_a).to eq([current_poll])
+        expect(Poll.answerable_by(level2).to_a).to eq([current_poll])
       end
 
       it "returns restricted & unrestricted polls for level 2 users of the correct geozone" do
-        list = described_class.answerable_by(level2_from_geozone)
+        list = Poll.answerable_by(level2_from_geozone)
                               .order(:geozone_restricted)
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end
@@ -345,11 +346,9 @@ describe Poll do
     describe "#not_budget" do
 
       it "returns polls not associated to a budget" do
-        budget = create(:budget)
-
         poll1 = create(:poll)
         poll2 = create(:poll)
-        poll3 = create(:poll, budget: budget)
+        poll3 = create(:poll, :for_budget)
 
         expect(Poll.not_budget).to include(poll1)
         expect(Poll.not_budget).to include(poll2)
@@ -402,14 +401,13 @@ describe Poll do
         starts_at = Time.current + 1.day
         poll1 = create(:poll, starts_at: starts_at, name: "Charlie")
         poll2 = create(:poll, starts_at: starts_at, name: "Delta")
-        poll3 = Globalize.with_locale(:es) do
+        poll3 = I18n.with_locale(:es) do
           create(:poll, starts_at: starts_at, name: "Zzz...", name_fr: "Aaaah!")
         end
-        poll4 = Globalize.with_locale(:es) do
+        poll4 = I18n.with_locale(:es) do
           create(:poll, starts_at: starts_at, name: "Bravo")
         end
 
-        expect(Poll.sort_for_list.count).to eq 4
         expect(Poll.sort_for_list).to eq [poll4, poll1, poll2, poll3]
       end
     end

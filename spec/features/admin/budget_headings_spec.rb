@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin budget headings" do
 
-  let(:budget) { create(:budget, phase: "drafting") }
+  let(:budget) { create(:budget, :drafting) }
   let(:group) { create(:budget_group, budget: budget) }
 
   before do
@@ -10,19 +10,10 @@ describe "Admin budget headings" do
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "budget_heading",
-                  "edit_admin_budget_group_heading_path",
-                  %w[name]
-
   context "Feature flag" do
 
     before do
       Setting["process.budgets"] = nil
-    end
-
-    after do
-      Setting["process.budgets"] = true
     end
 
     scenario "Disabled with a feature flag" do

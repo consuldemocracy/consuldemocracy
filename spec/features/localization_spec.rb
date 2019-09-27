@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Localization" do
 
   scenario "Wrong locale" do
-    Globalize.with_locale(:es) do
+    I18n.with_locale(:es) do
       create(:widget_card, title: "Bienvenido a CONSUL",
                            description: "Software libre para la participación ciudadana.",
                            link_text: "Más información",

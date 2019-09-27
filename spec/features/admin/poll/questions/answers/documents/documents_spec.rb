@@ -9,7 +9,7 @@ describe "Documents" do
 
   context "Index" do
     scenario "Answer with no documents" do
-      answer = create(:poll_question_answer, question: create(:poll_question))
+      answer = create(:poll_question_answer)
       document = create(:document)
 
       visit admin_answer_documents_path(answer)
@@ -18,7 +18,7 @@ describe "Documents" do
     end
 
     scenario "Answer with documents" do
-      answer = create(:poll_question_answer, question: create(:poll_question))
+      answer = create(:poll_question_answer)
       document = create(:document, documentable: answer)
 
       visit admin_answer_documents_path(answer)
@@ -28,7 +28,7 @@ describe "Documents" do
   end
 
   scenario "Remove document from answer", :js do
-    answer = create(:poll_question_answer, question: create(:poll_question))
+    answer = create(:poll_question_answer)
     document = create(:document, documentable: answer)
 
     visit admin_answer_documents_path(answer)

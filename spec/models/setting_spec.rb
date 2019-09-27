@@ -2,19 +2,19 @@ require "rails_helper"
 
 describe Setting do
   before do
-    described_class["official_level_1_name"] = "Stormtrooper"
+    Setting["official_level_1_name"] = "Stormtrooper"
   end
 
   it "returns the overriden setting" do
-    expect(described_class["official_level_1_name"]).to eq("Stormtrooper")
+    expect(Setting["official_level_1_name"]).to eq("Stormtrooper")
   end
 
   it "returns nil" do
-    expect(described_class["undefined_key"]).to eq(nil)
+    expect(Setting["undefined_key"]).to eq(nil)
   end
 
   it "persists a setting on the db" do
-    expect(described_class.where(key: "official_level_1_name", value: "Stormtrooper")).to exist
+    expect(Setting.where(key: "official_level_1_name", value: "Stormtrooper")).to exist
   end
 
   describe "#prefix" do
@@ -76,7 +76,7 @@ describe Setting do
 
   describe "#enabled?" do
     it "is true if value is present" do
-      setting = described_class.create(key: "feature.whatever", value: 1)
+      setting = Setting.create(key: "feature.whatever", value: 1)
       expect(setting.enabled?).to eq true
 
       setting.value = "true"
@@ -87,7 +87,7 @@ describe Setting do
     end
 
     it "is false if value is blank" do
-      setting = described_class.create(key: "feature.whatever")
+      setting = Setting.create(key: "feature.whatever")
       expect(setting.enabled?).to eq false
 
       setting.value = ""

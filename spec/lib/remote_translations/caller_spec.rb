@@ -19,7 +19,7 @@ describe RemoteTranslations::Caller do
       let(:debate)             { create(:debate) }
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: debate, locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida"]
@@ -67,7 +67,7 @@ describe RemoteTranslations::Caller do
       let!(:proposal)          { create(:proposal) }
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: proposal, locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida", "Pregunta traducida",
@@ -118,7 +118,7 @@ describe RemoteTranslations::Caller do
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: budget_investment,
                                         locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida"]
@@ -166,7 +166,7 @@ describe RemoteTranslations::Caller do
       let(:comment)            { create(:comment) }
       let(:remote_translation) { create(:remote_translation,
                                         remote_translatable: comment, locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Body traducido"]

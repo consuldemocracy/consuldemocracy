@@ -5,6 +5,7 @@ RSpec.describe Poll::Question, type: :model do
 
   describe "Concerns" do
     it_behaves_like "acts as paranoid", :poll_question
+    it_behaves_like "globalizable", :poll_question
   end
 
   describe "#poll_question_id" do
@@ -32,10 +33,7 @@ RSpec.describe Poll::Question, type: :model do
     end
 
     context "locale with non-underscored name" do
-      before do
-        I18n.locale = :"pt-BR"
-        Globalize.locale = I18n.locale
-      end
+      before { I18n.locale = :"pt-BR" }
 
       it "correctly creates a translation" do
         poll_question.copy_attributes_from_proposal(proposal)

@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Ballots" do
 
   let!(:user)       { create(:user, :level_two) }
-  let!(:budget)     { create(:budget, phase: "balloting") }
+  let!(:budget)     { create(:budget, :balloting) }
   let!(:states)     { create(:budget_group, budget: budget, name: "States") }
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
   let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
@@ -77,10 +77,10 @@ describe "Ballots" do
       end
 
       scenario "Headings" do
-        city_heading1     = create(:budget_heading, group: city,      name: "Investments Type1")
-        city_heading2     = create(:budget_heading, group: city,      name: "Investments Type2")
-        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
-        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
+        create(:budget_heading, group: city,      name: "Investments Type1")
+        create(:budget_heading, group: city,      name: "Investments Type2")
+        create(:budget_heading, group: districts, name: "District 1")
+        create(:budget_heading, group: districts, name: "District 2")
 
         visit budget_path(budget)
         click_link "City"
@@ -434,8 +434,7 @@ describe "Ballots" do
 
     scenario "Display links to vote on groups with no investments voted yet" do
       group = create(:budget_group, budget: budget)
-      heading = create(:budget_heading, name: "District 1", group: group, price: 100)
-
+      heading = create(:budget_heading, group: group)
       ballot = create(:budget_ballot, user: user, budget: budget)
 
       login_as(user)
@@ -578,7 +577,7 @@ describe "Ballots" do
     end
 
     scenario "Investments with feasibility undecided are not shown" do
-      investment = create(:budget_investment, feasibility: "undecided", heading: new_york)
+      investment = create(:budget_investment, :undecided, heading: new_york)
 
       login_as(user)
       visit budget_path(budget)

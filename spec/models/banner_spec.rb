@@ -6,6 +6,7 @@ describe Banner do
 
   describe "Concerns" do
     it_behaves_like "acts as paranoid", :banner
+    it_behaves_like "globalizable", :banner
   end
 
   it "is valid" do

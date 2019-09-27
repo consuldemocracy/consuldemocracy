@@ -23,16 +23,6 @@ describe "Social media meta tags" do
       Setting["org_name"] = org_name
     end
 
-    after do
-      Setting["meta_keywords"] = nil
-      Setting["meta_title"] = nil
-      Setting["meta_description"] = nil
-      Setting["twitter_handle"] = nil
-      Setting["url"] = "http://example.com"
-      Setting["facebook_handle"] = nil
-      Setting["org_name"] = "CONSUL"
-    end
-
     scenario "Social media meta tags partial render settings content" do
 
       visit root_path

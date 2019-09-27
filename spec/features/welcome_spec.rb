@@ -117,8 +117,6 @@ describe "Welcome screen" do
     4.times do |i|
       expect(page).to have_css "li:nth-child(#{i + 1})"
     end
-
-    Setting["feature.user.skip_verification"] = nil
   end
 
 end

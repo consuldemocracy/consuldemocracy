@@ -40,8 +40,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Index shows up to 5 tags per proposal" do
-    create_featured_proposals
+  scenario "Index shows up to 5 tags per investment" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :budget_investment, heading: heading, tag_list: tag_list
 
@@ -102,11 +101,10 @@ describe "Tags" do
   end
 
   scenario "Turbolinks sanity check from budget's show", :js do
+    create(:tag, name: "Education", kind: "category")
+    create(:tag, name: "Health",    kind: "category")
+
     login_as(author)
-
-    education = create(:tag, name: "Education", kind: "category")
-    health    = create(:tag, name: "Health",    kind: "category")
-
     visit budget_path(budget)
     click_link "Create a budget investment"
 
@@ -127,11 +125,10 @@ describe "Tags" do
   end
 
   scenario "Turbolinks sanity check from budget heading's show", :js do
+    create(:tag, name: "Education", kind: "category")
+    create(:tag, name: "Health",    kind: "category")
+
     login_as(author)
-
-    education = create(:tag, name: "Education", kind: "category")
-    health    = create(:tag, name: "Health",    kind: "category")
-
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 

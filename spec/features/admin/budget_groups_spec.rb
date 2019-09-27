@@ -2,26 +2,17 @@ require "rails_helper"
 
 describe "Admin budget groups" do
 
-  let(:budget) { create(:budget, phase: "drafting") }
+  let(:budget) { create(:budget, :drafting) }
 
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "budget_group",
-                  "edit_admin_budget_group_path",
-                  %w[name]
-
   context "Feature flag" do
 
     before do
       Setting["process.budgets"] = nil
-    end
-
-    after do
-      Setting["process.budgets"] = true
     end
 
     scenario "Disabled with a feature flag" do

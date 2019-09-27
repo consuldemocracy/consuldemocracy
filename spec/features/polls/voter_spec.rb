@@ -15,8 +15,7 @@ describe "Voter" do
     before do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
-      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
     end
 
     scenario "Voting via web - Standard", :js do
@@ -50,8 +49,6 @@ describe "Voter" do
     end
 
     scenario "Voting in booth", :js do
-      user = create(:user, :in_census)
-
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path

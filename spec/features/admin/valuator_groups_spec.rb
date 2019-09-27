@@ -57,7 +57,7 @@ describe "Valuator groups" do
   end
 
   scenario "Update" do
-    group = create(:valuator_group, name: "Health")
+    create(:valuator_group, name: "Health")
 
     visit admin_valuator_groups_path
     click_link "Edit"
@@ -70,7 +70,7 @@ describe "Valuator groups" do
   end
 
   scenario "Delete" do
-    group = create(:valuator_group)
+    create(:valuator_group)
 
     visit admin_valuator_groups_path
     click_link "Delete"

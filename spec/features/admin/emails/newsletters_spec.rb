@@ -3,9 +3,8 @@ require "rails_helper"
 describe "Admin newsletter emails" do
 
   before do
-    admin = create(:administrator)
-    login_as(admin.user)
     create(:budget)
+    login_as(create(:administrator).user)
   end
 
   context "Show" do
@@ -130,7 +129,6 @@ describe "Admin newsletter emails" do
     scenario "Sends newsletter emails", :js do
       newsletter = create(:newsletter)
       visit admin_newsletter_path(newsletter)
-      total_users = newsletter.list_of_recipient_emails.count
 
       accept_confirm { click_link "Send" }
 

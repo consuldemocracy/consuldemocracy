@@ -3,16 +3,13 @@ require "rails_helper"
 describe "Budget Poll Officing" do
 
   scenario "Show sidebar menus if officer has shifts assigned" do
-    poll = create(:poll)
     booth = create(:poll_booth)
-    booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-
-    user = create(:user)
-    officer = create(:poll_officer, user: user)
+    booth_assignment = create(:poll_booth_assignment, booth: booth)
+    officer = create(:poll_officer)
 
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
 
-    login_as user
+    login_as officer.user
     visit officing_root_path
 
     expect(page).not_to have_content("You don't have officing shifts today")
@@ -20,10 +17,7 @@ describe "Budget Poll Officing" do
     expect(page).not_to have_content("Total recounts and results")
 
     create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :recount_scrutiny)
-
-    officer_assignment = create(:poll_officer_assignment,
-                                 booth_assignment: booth_assignment,
-                                 officer: officer)
+    create(:poll_officer_assignment, booth_assignment: booth_assignment, officer: officer)
 
     visit officing_root_path
 
@@ -33,10 +27,8 @@ describe "Budget Poll Officing" do
   end
 
   scenario "Do not show sidebar menus if officer has no shifts assigned" do
-    user = create(:user)
-    officer = create(:poll_officer, user: user)
+    login_as(create(:poll_officer).user)
 
-    login_as user
     visit officing_root_path
 
     expect(page).to have_content("You don't have officing shifts today")

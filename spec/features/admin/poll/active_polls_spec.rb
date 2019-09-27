@@ -7,12 +7,6 @@ describe "Admin Active polls" do
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "active_poll",
-                  "edit_admin_active_polls_path",
-                  [],
-                  { "description" => :ckeditor }
-
   scenario "Add", :js do
     expect(ActivePoll.first).to be nil
 

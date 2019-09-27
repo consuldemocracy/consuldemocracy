@@ -69,8 +69,7 @@ describe "Notifications" do
   end
 
   scenario "Mark all as read" do
-    notification1 = create(:notification, user: user)
-    notification2 = create(:notification, user: user)
+    2.times { create(:notification, user: user) }
 
     click_notifications_icon
 
@@ -181,7 +180,7 @@ describe "Notifications" do
     end
   end
 
-  describe "#send_pending" do
+  describe "#send_pending", :delay_jobs do
     let!(:user1) { create(:user) }
     let!(:user2) { create(:user) }
     let!(:user3) { create(:user) }
@@ -192,11 +191,6 @@ describe "Notifications" do
       create(:notification, notifiable: proposal_notification, user: user2)
       create(:notification, notifiable: proposal_notification, user: user3)
       reset_mailer
-      Delayed::Worker.delay_jobs = true
-    end
-
-    after do
-      Delayed::Worker.delay_jobs = false
     end
 
     it "sends pending proposal notifications" do

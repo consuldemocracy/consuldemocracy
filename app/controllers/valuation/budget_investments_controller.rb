@@ -84,13 +84,13 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
                               }
                             ]
 
-      filters = investment_headings.inject(all_headings_filter) do |filters, heading|
-                  filters << {
-                               name: heading.name,
-                               id: heading.id,
-                               count: investments.select { |i| i.heading_id == heading.id }.size
-                             }
-                end
+      investment_headings.inject(all_headings_filter) do |filters, heading|
+        filters << {
+                     name: heading.name,
+                     id: heading.id,
+                     count: investments.select { |i| i.heading_id == heading.id }.size
+                   }
+      end
     end
 
     def params_for_current_valuator

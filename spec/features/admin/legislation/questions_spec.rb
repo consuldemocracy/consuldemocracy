@@ -9,11 +9,6 @@ describe "Admin legislation questions" do
 
   let!(:process) { create(:legislation_process, title: "An example legislation process") }
 
-  it_behaves_like "edit_translatable",
-                  "legislation_question",
-                  "edit_admin_legislation_process_question_path",
-                  %w[title]
-
   context "Feature flag" do
 
     before do
@@ -29,8 +24,8 @@ describe "Admin legislation questions" do
   context "Index" do
 
     scenario "Displaying legislation process questions" do
-      question = create(:legislation_question, process: process, title: "Question 1")
-      question = create(:legislation_question, process: process, title: "Question 2")
+      create(:legislation_question, process: process, title: "Question 1")
+      create(:legislation_question, process: process, title: "Question 2")
 
       visit admin_legislation_processes_path(filter: "all")
 
@@ -68,7 +63,7 @@ describe "Admin legislation questions" do
 
   context "Update" do
     scenario "Valid legislation question", :js do
-      question = create(:legislation_question, title: "Question 2", process: process)
+      create(:legislation_question, title: "Question 2", process: process)
 
       visit admin_root_path
 

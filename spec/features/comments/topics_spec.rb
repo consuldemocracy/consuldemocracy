@@ -205,9 +205,10 @@ describe "Commenting topics from proposals" do
   end
 
   scenario "Create", :js do
-    login_as(user)
     community = proposal.community
     topic = create(:topic, community: community)
+
+    login_as(user)
     visit community_topic_path(community, topic)
 
     fill_in "comment-body-topic_#{topic.id}", with: "Have you thought about...?"
@@ -223,9 +224,10 @@ describe "Commenting topics from proposals" do
   end
 
   scenario "Errors on create", :js do
-    login_as(user)
     community = proposal.community
     topic = create(:topic, community: community)
+
+    login_as(user)
     visit community_topic_path(community, topic)
 
     click_button "Publish comment"
@@ -326,8 +328,6 @@ describe "Commenting topics from proposals" do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    Setting["feature.community"] = true
-
     community = proposal.community
     topic = create(:topic, community: community, title: "Should we change the world?")
     comment = create(:comment, commentable: topic)
@@ -340,8 +340,6 @@ describe "Commenting topics from proposals" do
       page.find("#flag-expand-comment-#{comment.id}").click
       expect(page).to have_selector("#flag-comment-#{comment.id}")
     end
-
-    Setting["feature.community"] = nil
   end
 
   scenario "Erasing a comment's author" do
@@ -758,9 +756,10 @@ describe "Commenting topics from budget investments" do
   end
 
   scenario "Create", :js do
-    login_as(user)
     community = investment.community
     topic = create(:topic, community: community)
+
+    login_as(user)
     visit community_topic_path(community, topic)
 
     fill_in "comment-body-topic_#{topic.id}", with: "Have you thought about...?"
@@ -776,9 +775,10 @@ describe "Commenting topics from budget investments" do
   end
 
   scenario "Errors on create", :js do
-    login_as(user)
     community = investment.community
     topic = create(:topic, community: community)
+
+    login_as(user)
     visit community_topic_path(community, topic)
 
     click_button "Publish comment"
@@ -879,8 +879,6 @@ describe "Commenting topics from budget investments" do
   end
 
   scenario "Flagging turbolinks sanity check", :js do
-    Setting["feature.community"] = true
-
     community = investment.community
     topic = create(:topic, community: community, title: "Should we change the world?")
     comment = create(:comment, commentable: topic)
@@ -893,8 +891,6 @@ describe "Commenting topics from budget investments" do
       page.find("#flag-expand-comment-#{comment.id}").click
       expect(page).to have_selector("#flag-comment-#{comment.id}")
     end
-
-    Setting["feature.community"] = nil
   end
 
   scenario "Erasing a comment's author" do

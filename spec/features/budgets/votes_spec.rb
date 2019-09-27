@@ -4,7 +4,7 @@ describe "Votes" do
 
   describe "Investments" do
     let(:manuela) { create(:user, verified_at: Time.current) }
-    let(:budget)  { create(:budget, phase: "selecting") }
+    let(:budget)  { create(:budget, :selecting) }
     let(:group)   { create(:budget_group, budget: budget) }
     let(:heading) { create(:budget_heading, group: group) }
 
@@ -86,12 +86,11 @@ describe "Votes" do
     end
 
     scenario "Disable voting on investments", :js do
-      manuela = create(:user, verified_at: Time.current)
-
-      login_as(manuela)
-
       budget.update(phase: "reviewing")
       investment = create(:budget_investment, budget: budget, heading: heading)
+
+      manuela = create(:user, verified_at: Time.current)
+      login_as(manuela)
 
       visit budget_investments_path(budget, heading_id: heading.id)
 

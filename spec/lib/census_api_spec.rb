@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe CensusApi do
-  let(:api) { described_class.new }
+  let(:api) { CensusApi.new }
 
   describe "#call" do
     let(:invalid_body) { { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}}}} }

@@ -42,7 +42,7 @@ describe "Admin custom content blocks" do
     end
 
     scenario "Invalid custom block" do
-      block = create(:site_customization_content_block)
+      create(:site_customization_content_block)
 
       visit admin_root_path
 
@@ -68,7 +68,8 @@ describe "Admin custom content blocks" do
 
   context "Update" do
     scenario "Valid custom block" do
-      block = create(:site_customization_content_block)
+      create(:site_customization_content_block)
+
       visit admin_root_path
 
       within("#side_menu") do

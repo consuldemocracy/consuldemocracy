@@ -15,7 +15,7 @@ describe "Poll Votation Type" do
     end
 
     scenario "response question without votation type" do
-      question = create(:poll_question, :with_answers, poll: poll_current)
+      question = create(:poll_question, :yes_no, poll: poll_current)
       visit poll_path(poll_current)
 
       expect(page).to have_content(question.title)

@@ -47,8 +47,7 @@ describe "Admin" do
   end
 
   scenario "Access as poll officer is not authorized" do
-    create(:poll_officer, user: user)
-    login_as(user)
+    login_as(create(:poll_officer).user)
     visit admin_root_path
 
     expect(page).not_to have_current_path(admin_root_path)

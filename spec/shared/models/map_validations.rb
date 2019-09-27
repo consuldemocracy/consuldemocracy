@@ -8,10 +8,6 @@ shared_examples "map validations" do
       Setting["feature.map"] = true
     end
 
-    after do
-      Setting["feature.map"] = nil
-    end
-
     it "is valid with a map location" do
       mappable.map_location = build(:map_location)
       mappable.skip_map = nil

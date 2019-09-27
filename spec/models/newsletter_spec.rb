@@ -57,14 +57,11 @@ describe Newsletter do
     end
 
     it "returns list of recipients excluding users with disabled newsletter" do
-      expect(newsletter.list_of_recipient_emails.count).to eq(1)
-      expect(newsletter.list_of_recipient_emails).to include("newsletter_user@consul.dev")
-      expect(newsletter.list_of_recipient_emails).not_to include("no_news_user@consul.dev")
-      expect(newsletter.list_of_recipient_emails).not_to include("erased_user@consul.dev")
+      expect(newsletter.list_of_recipient_emails).to eq ["newsletter_user@consul.dev"]
     end
   end
 
-  describe "#deliver" do
+  describe "#deliver", :delay_jobs do
     let!(:proposals) { Array.new(3) { create(:proposal) } }
 
     let!(:recipients) { proposals.map(&:author).map(&:email) }
@@ -73,11 +70,6 @@ describe Newsletter do
     before do
       create(:debate)
       reset_mailer
-      Delayed::Worker.delay_jobs = true
-    end
-
-    after do
-      Delayed::Worker.delay_jobs = false
     end
 
     it "sends an email with the newsletter to every recipient" do
@@ -135,20 +127,13 @@ describe Newsletter do
 
     it "skips invalid emails" do
       Proposal.destroy_all
-
-      valid_email = "john@gmail.com"
-      invalid_email = "john@gmail..com"
-
-      valid_email_user = create(:user, email: valid_email)
-      proposal = create(:proposal, author: valid_email_user)
-
-      invalid_email_user = create(:user, email: invalid_email)
-      proposal = create(:proposal, author: invalid_email_user)
+      create(:user, :with_proposal, email: "valid@consul.dev")
+      create(:user, :with_proposal, email: "invalid@consul..dev")
 
       newsletter.deliver
 
       expect(Activity.count).to eq(1)
-      expect(Activity.first.user_id).to eq(valid_email_user.id)
+      expect(Activity.first.user.email).to eq("valid@consul.dev")
       expect(Activity.first.action).to eq("email")
       expect(Activity.first.actionable).to eq(newsletter)
     end

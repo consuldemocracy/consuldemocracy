@@ -71,7 +71,7 @@ describe Abilities::Everyone do
 
   context "when accessing budget results" do
     context "budget is not finished" do
-      let(:budget) { create(:budget, phase: "reviewing_ballots", results_enabled: true) }
+      let(:budget) { create(:budget, :reviewing_ballots, results_enabled: true) }
 
       it { should_not be_able_to(:read_results, budget) }
     end
@@ -91,19 +91,19 @@ describe Abilities::Everyone do
 
   context "when accessing budget stats" do
     context "supports phase is not finished" do
-      let(:budget) { create(:budget, phase: "selecting", stats_enabled: true) }
+      let(:budget) { create(:budget, :selecting, stats_enabled: true) }
 
       it { should_not be_able_to(:read_stats, budget) }
     end
 
     context "supports phase is finished" do
-      let(:budget) { create(:budget, phase: "valuating", stats_enabled: true) }
+      let(:budget) { create(:budget, :valuating, stats_enabled: true) }
 
       it { should be_able_to(:read_stats, budget) }
     end
 
     context "stats disabled" do
-      let(:budget) { create(:budget, phase: "valuating", stats_enabled: false) }
+      let(:budget) { create(:budget, :valuating, stats_enabled: false) }
 
       it { should_not be_able_to(:read_stats, budget) }
     end

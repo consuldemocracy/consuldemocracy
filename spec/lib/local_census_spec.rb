@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe LocalCensus do
-  let(:api) { described_class.new }
+  let(:api) { LocalCensus.new }
 
   describe "#call" do
     let(:invalid_body) { nil }

@@ -6,6 +6,7 @@ describe Budget::Heading do
   let(:group) { create(:budget_group, budget: budget) }
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
+  it_behaves_like "globalizable", :budget_heading
 
   describe "OSM_DISTRICT_LEVEL_ZOOM constant" do
     it "is defined" do
@@ -300,9 +301,7 @@ describe Budget::Heading do
       last_heading = create(:budget_heading, group: last_group, name: "Name")
       first_heading = create(:budget_heading, group: first_group, name: "Name")
 
-      expect(Budget::Heading.sort_by_name.size).to be 2
-      expect(Budget::Heading.sort_by_name.first).to eq first_heading
-      expect(Budget::Heading.sort_by_name.last).to eq last_heading
+      expect(Budget::Heading.sort_by_name).to eq [first_heading, last_heading]
     end
 
   end
@@ -313,9 +312,7 @@ describe Budget::Heading do
       last_heading     = create(:budget_heading, allow_custom_content: true, name: "Name C")
       first_heading    = create(:budget_heading, allow_custom_content: true, name: "Name B")
 
-      expect(Budget::Heading.allow_custom_content.count).to be 2
-      expect(Budget::Heading.allow_custom_content.first).to eq first_heading
-      expect(Budget::Heading.allow_custom_content.last).to eq last_heading
+      expect(Budget::Heading.allow_custom_content).to eq [first_heading, last_heading]
     end
 
     it "returns headings with multiple translations only once" do
