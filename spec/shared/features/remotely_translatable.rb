@@ -253,5 +253,5 @@ end
 
 def generate_response(resource)
   field_text = Faker::Lorem.characters(10)
-  resource.translated_attribute_names.map { |field| field_text }
+  resource.translated_attribute_names.map { field_text }
 end
