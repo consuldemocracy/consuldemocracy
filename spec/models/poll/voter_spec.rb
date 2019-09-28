@@ -121,25 +121,29 @@ describe Poll::Voter do
 
     describe "#web" do
       it "returns voters with a web origin" do
-        voter1 = create(:poll_voter, :from_web)
-        voter2 = create(:poll_voter, :from_web)
-        voter3 = create(:poll_voter, :from_booth)
+        voter = create(:poll_voter, :from_web)
 
-        web_voters = Poll::Voter.web
+        expect(Poll::Voter.web).to eq [voter]
+      end
 
-        expect(web_voters).to match_array [voter1, voter2]
+      it "does not return voters with a booth origin" do
+        create(:poll_voter, :from_booth)
+
+        expect(Poll::Voter.web).to be_empty
       end
     end
 
     describe "#booth" do
       it "returns voters with a booth origin" do
-        voter1 = create(:poll_voter, :from_booth)
-        voter2 = create(:poll_voter, :from_booth)
-        voter3 = create(:poll_voter, :from_web)
+        voter = create(:poll_voter, :from_booth)
 
-        booth_voters = Poll::Voter.booth
+        expect(Poll::Voter.booth).to eq [voter]
+      end
 
-        expect(booth_voters).to match_array [voter1, voter2]
+      it "does not return voters with a web origin" do
+        create(:poll_voter, :from_web)
+
+        expect(Poll::Voter.booth).to be_empty
       end
     end
 
