@@ -303,13 +303,11 @@ describe "Emails" do
 
     scenario "notifications moderated are not sent" do
       user = create(:user, email_digest: true)
-      proposal = create(:proposal)
-      proposal_notification = create(:proposal_notification, proposal: proposal)
-      notification = create(:notification, notifiable: proposal_notification)
+      notification = create(:notification, :for_proposal_notification)
 
       reset_mailer
 
-      proposal_notification.moderate_system_email(create(:administrator).user)
+      notification.notifiable.moderate_system_email(create(:administrator).user)
 
       email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)
