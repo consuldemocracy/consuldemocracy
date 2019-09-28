@@ -120,6 +120,9 @@ Layout/TrailingWhitespace:
 Lint/LiteralAsCondition:
   Enabled: true
 
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
 Lint/UselessAssignment:
   Enabled: true
 
