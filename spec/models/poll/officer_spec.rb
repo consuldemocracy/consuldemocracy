@@ -41,6 +41,7 @@ describe Poll::Officer do
       create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.starts_at)
       create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.ends_at)
       create(:poll_officer_assignment, poll: poll_2, officer: officer)
+      create(:poll_officer_assignment, poll: poll_3, officer: officer, final: true)
 
       assigned_polls = officer.voting_days_assigned_polls
 
@@ -91,6 +92,7 @@ describe Poll::Officer do
       create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.starts_at, final: true)
       create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.ends_at, final: true)
       create(:poll_officer_assignment, poll: poll_2, officer: officer, final: true)
+      create(:poll_officer_assignment, poll: poll_3, officer: officer)
 
       assigned_polls = officer.final_days_assigned_polls
 
