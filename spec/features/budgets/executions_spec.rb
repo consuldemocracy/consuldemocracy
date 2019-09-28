@@ -116,17 +116,10 @@ describe "Executions" do
     end
 
     scenario "renders last milestone's image if investment has multiple milestones with images associated" do
-      milestone1 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      milestone2 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      milestone3 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      milestone4 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
+      milestone1 = create(:milestone, milestoneable: investment1)
+      milestone2 = create(:milestone, milestoneable: investment1)
+      milestone3 = create(:milestone, milestoneable: investment1)
+      milestone4 = create(:milestone, milestoneable: investment1)
 
       create(:image, imageable: milestone2, title: "Image for first milestone with image")
       create(:image, imageable: milestone3, title: "Image for second milestone with image")
