@@ -202,8 +202,10 @@ FactoryBot.define do
     trait :from_booth do
       origin { "booth" }
 
+      transient { booth { association(:poll_booth) } }
+
       booth_assignment do
-        association :poll_booth_assignment, poll: poll
+        association :poll_booth_assignment, poll: poll, booth: booth
       end
 
       officer_assignment do
