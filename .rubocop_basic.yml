@@ -126,6 +126,9 @@ Lint/LiteralAsCondition:
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
+Lint/StringConversionInInterpolation:
+  Enabled: true
+
 Lint/UselessAssignment:
   Enabled: true
 
