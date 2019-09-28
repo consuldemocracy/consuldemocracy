@@ -129,7 +129,7 @@ class Mailer < ApplicationMailer
 
   private
 
-    def with_user(user, &block)
+    def with_user(user)
       I18n.with_locale(user.locale) do
         yield
       end

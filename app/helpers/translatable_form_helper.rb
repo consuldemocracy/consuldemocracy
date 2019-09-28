@@ -33,7 +33,7 @@ module TranslatableFormHelper
 
     private
 
-      def fields_for_locale(locale, &block)
+      def fields_for_locale(locale)
         fields_for_translation(@translations[locale]) do |translations_form|
           @template.content_tag :div, translations_options(translations_form.object, locale) do
             @template.concat translations_form.hidden_field(
@@ -49,7 +49,7 @@ module TranslatableFormHelper
         end
       end
 
-      def fields_for_translation(translation, &block)
+      def fields_for_translation(translation)
         fields_for(:translations, translation, builder: TranslationsFieldsBuilder) do |f|
           yield f
         end
