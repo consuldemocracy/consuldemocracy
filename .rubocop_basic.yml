@@ -126,6 +126,9 @@ Lint/DuplicateMethods:
 Lint/LiteralAsCondition:
   Enabled: true
 
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
