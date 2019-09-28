@@ -546,59 +546,59 @@ describe "Consul Schema" do
     end
 
     it "does not include votes from hidden debates" do
-      visible_debate = create(:debate, voters: [create(:user)])
-      hidden_debate  = create(:debate, :hidden, voters: [create(:user)])
+      create(:debate, id: 1, voters: [create(:user)])
+      create(:debate, :hidden, id: 2, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_debates = extract_fields(response, "votes", "votable_id")
 
-      expect(received_debates).to match_array [visible_debate.id]
+      expect(received_debates).to match_array [1]
     end
 
     it "does not include votes of hidden proposals" do
-      visible_proposal = create(:proposal, voters: [create(:user)])
-      hidden_proposal  = create(:proposal, :hidden, voters: [create(:user)])
+      create(:proposal, id: 1, voters: [create(:user)])
+      create(:proposal, :hidden, id: 2, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_proposals = extract_fields(response, "votes", "votable_id")
 
-      expect(received_proposals).to match_array [visible_proposal.id]
+      expect(received_proposals).to match_array [1]
     end
 
     it "does not include votes of hidden comments" do
-      visible_comment = create(:comment, voters: [create(:user)])
-      hidden_comment  = create(:comment, :hidden, voters: [create(:user)])
+      create(:comment, id: 1, voters: [create(:user)])
+      create(:comment, :hidden, id: 2, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_comments = extract_fields(response, "votes", "votable_id")
 
-      expect(received_comments).to match_array [visible_comment.id]
+      expect(received_comments).to match_array [1]
     end
 
     it "does not include votes of comments from a hidden proposal" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, :hidden)
 
-      visible_proposal_comment = create(:comment, commentable: visible_proposal, voters: [create(:user)])
-      hidden_proposal_comment  = create(:comment, commentable: hidden_proposal, voters: [create(:user)])
+      create(:comment, id: 1, commentable: visible_proposal, voters: [create(:user)])
+      create(:comment, id: 2, commentable: hidden_proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
 
-      expect(received_votables).to match_array [visible_proposal_comment.id]
+      expect(received_votables).to match_array [1]
     end
 
     it "does not include votes of comments from a hidden debate" do
       visible_debate = create(:debate)
       hidden_debate  = create(:debate, :hidden)
 
-      visible_debate_comment = create(:comment, commentable: visible_debate, voters: [create(:user)])
-      hidden_debate_comment  = create(:comment, commentable: hidden_debate, voters: [create(:user)])
+      create(:comment, id: 1, commentable: visible_debate, voters: [create(:user)])
+      create(:comment, id: 2, commentable: hidden_debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
 
-      expect(received_votables).to match_array [visible_debate_comment.id]
+      expect(received_votables).to match_array [1]
     end
 
     it "does not include votes of debates that are not public" do
