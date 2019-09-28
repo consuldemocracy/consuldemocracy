@@ -117,6 +117,9 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
+
 Lint/LiteralAsCondition:
   Enabled: true
 
