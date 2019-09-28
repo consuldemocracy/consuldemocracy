@@ -552,18 +552,28 @@ describe "Budget Investments" do
     scenario "by unfeasibilty link for group with many headings" do
       budget.update(phase: :balloting)
       group = create(:budget_group, name: "Districts", budget: budget)
-      heading1 = create(:budget_heading, name: "Carabanchel", group: group)
-      heading2 = create(:budget_heading, name: "Barajas",     group: group)
+
+      barajas = create(:budget_heading, name: "Barajas", group: group)
+      carabanchel = create(:budget_heading, name: "Carabanchel", group: group)
+
+      create(:budget_investment, :feasible, heading: barajas, title: "Terminal 5")
+      create(:budget_investment, :unfeasible, heading: barajas, title: "Seaport")
+      create(:budget_investment, :unfeasible, heading: carabanchel, title: "Airport")
 
       visit budget_path(budget)
 
       click_link "See unfeasible investments"
 
       click_link "Districts"
-      click_link "Carabanchel"
+      click_link "Barajas"
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unfeasible")
-      expect(page).to have_current_path(expected_path)
+      within("#budget-investments") do
+        expect(page).to have_css(".budget-investment", count: 1)
+
+        expect(page).to have_content "Seaport"
+        expect(page).not_to have_content "Terminal 5"
+        expect(page).not_to have_content "Airport"
+      end
     end
 
     context "Results Phase" do
@@ -1681,18 +1691,28 @@ describe "Budget Investments" do
 
     scenario "Shows unselected link for group with many headings" do
       group = create(:budget_group, name: "Districts", budget: budget)
-      heading1 = create(:budget_heading, name: "Carabanchel", group: group)
-      heading2 = create(:budget_heading, name: "Barajas",     group: group)
+
+      barajas = create(:budget_heading, name: "Barajas", group: group)
+      carabanchel = create(:budget_heading, name: "Carabanchel", group: group)
+
+      create(:budget_investment, :selected, heading: barajas, title: "Terminal 5")
+      create(:budget_investment, :unselected, heading: barajas, title: "Seaport")
+      create(:budget_investment, :unselected, heading: carabanchel, title: "Airport")
 
       visit budget_path(budget)
 
       click_link "See investments not selected for balloting phase"
 
       click_link "Districts"
-      click_link "Carabanchel"
+      click_link "Barajas"
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
-      expect(page).to have_current_path(expected_path)
+      within("#budget-investments") do
+        expect(page).to have_css(".budget-investment", count: 1)
+
+        expect(page).to have_content "Seaport"
+        expect(page).not_to have_content "Terminal 5"
+        expect(page).not_to have_content "Airport"
+      end
     end
 
     scenario "Do not display vote button for unselected investments in index" do
