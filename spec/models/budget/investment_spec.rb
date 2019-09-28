@@ -976,8 +976,7 @@ describe Budget::Investment do
 
           inv1 = create(:budget_investment, :selected, budget: budget, heading: california)
           inv2 = create(:budget_investment, :selected, budget: budget, heading: new_york)
-          ballot = create(:budget_ballot, user: user, budget: budget)
-          ballot.investments << inv1
+          ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned_html)
         end
@@ -989,8 +988,7 @@ describe Budget::Investment do
           inv1 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 30)
           inv2 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 10)
 
-          ballot = create(:budget_ballot, user: user, budget: budget)
-          ballot.investments << inv1
+          ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money_html)
         end
