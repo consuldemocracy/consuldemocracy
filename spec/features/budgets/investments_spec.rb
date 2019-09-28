@@ -1259,7 +1259,7 @@ describe "Budget Investments" do
   scenario "Show (unfeasible budget investment with valuation not finished)" do
     investment = create(:budget_investment,
                         :unfeasible,
-                        :unfinished,
+                        :open,
                         budget: budget,
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this matter")

@@ -1152,7 +1152,7 @@ describe Budget::Investment do
     describe "with under_valuation filter" do
       let(:params) { { advanced_filters: ["under_valuation"], budget_id: budget.id } }
       it "returns only investment under valuation" do
-        investment1 = create(:budget_investment, :with_administrator, :unfinished, :with_valuator,
+        investment1 = create(:budget_investment, :with_administrator, :open, :with_valuator,
                              budget: budget)
         create(:budget_investment, :with_administrator, budget: budget)
         create(:budget_investment, budget: budget)

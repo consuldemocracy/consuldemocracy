@@ -121,7 +121,7 @@ FactoryBot.define do
       valuation_finished { true }
     end
 
-    trait :unfinished do
+    trait :open do
       valuation_finished { false }
     end
 
