@@ -116,13 +116,10 @@ describe "Executions" do
     end
 
     scenario "renders last milestone's image if investment has multiple milestones with images associated" do
-      milestone1 = create(:milestone, milestoneable: investment1)
-      milestone2 = create(:milestone, milestoneable: investment1)
-      milestone3 = create(:milestone, milestoneable: investment1)
-      milestone4 = create(:milestone, milestoneable: investment1)
-
-      create(:image, imageable: milestone2, title: "Image for first milestone with image")
-      create(:image, imageable: milestone3, title: "Image for second milestone with image")
+      create(:milestone, milestoneable: investment1)
+      create(:milestone, :with_image, image_title: "First image", milestoneable: investment1)
+      create(:milestone, :with_image, image_title: "Second image", milestoneable: investment1)
+      create(:milestone, milestoneable: investment1)
 
       visit budget_path(budget)
 
@@ -130,7 +127,7 @@ describe "Executions" do
       click_link "Milestones"
 
       expect(page).to have_content(investment1.title)
-      expect(page).to have_css("img[alt='#{milestone3.image.title}']")
+      expect(page).to have_css("img[alt='Second image']")
     end
 
   end
