@@ -33,27 +33,23 @@ describe EmailDigest do
   end
 
   describe "pending_notifications?" do
+    let(:user) { create(:user) }
 
     it "returns true when notifications have not been emailed" do
-      user = create(:user)
-
-      notification = create(:notification, :for_proposal_notification, user: user)
+      create(:notification, :for_proposal_notification, user: user)
 
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).to be
     end
 
     it "returns false when notifications have been emailed" do
-      user = create(:user)
-
-      notification = create(:notification, :for_proposal_notification, user: user, emailed_at: Time.current)
+      create(:notification, :for_proposal_notification, user: user, emailed_at: Time.current)
 
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
 
     it "returns false when there are no notifications for a user" do
-      user = create(:user)
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
@@ -61,11 +57,10 @@ describe EmailDigest do
   end
 
   describe "deliver" do
+    let(:user) { create(:user) }
 
     it "delivers email if notifications pending" do
-      user = create(:user)
-
-      notification = create(:notification, :for_proposal_notification, user: user)
+      create(:notification, :for_proposal_notification, user: user)
 
       reset_mailer
       email_digest = EmailDigest.new(user)
@@ -76,8 +71,6 @@ describe EmailDigest do
     end
 
     it "does not deliver email if no notifications pending" do
-      user = create(:user)
-
       create(:notification, :for_proposal_notification, user: user, emailed_at: Time.current)
 
       reset_mailer
