@@ -64,9 +64,9 @@ describe Admin::Api::StatsController do
         time_1 = Time.zone.local(2017, 04, 01)
         time_2 = Time.zone.local(2017, 04, 02)
 
-        budget_investment1 = create(:budget_investment, budget: @budget, created_at: time_1)
-        budget_investment2 = create(:budget_investment, budget: @budget, created_at: time_2)
-        budget_investment3 = create(:budget_investment, budget: @budget, created_at: time_2)
+        budget_investment1 = create(:budget_investment, created_at: time_1)
+        budget_investment2 = create(:budget_investment, created_at: time_2)
+        budget_investment3 = create(:budget_investment, created_at: time_2)
 
         sign_in user
         get :show, params: { budget_investments: true }

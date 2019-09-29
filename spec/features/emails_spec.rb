@@ -269,7 +269,6 @@ describe "Emails" do
 
       notification1 = create_proposal_notification(proposal1)
       notification2 = create_proposal_notification(proposal2)
-      notification3 = create_proposal_notification(proposal3)
 
       email_digest = EmailDigest.new(user)
       email_digest.deliver(Time.current)

@@ -8,7 +8,7 @@ describe "Legislation Proposals" do
   let(:proposal) { create(:legislation_proposal) }
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Legislation::Proposal
+    it_behaves_like "notifiable in-app", :legislation_proposal
   end
 
   scenario "Only one menu element has 'active' CSS selector" do

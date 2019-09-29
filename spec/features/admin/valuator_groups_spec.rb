@@ -39,6 +39,7 @@ describe "Valuator groups" do
     within("#valuators") do
       expect(page).to have_link(valuator1.email, href: admin_valuator_path(valuator1))
       expect(page).to have_link(valuator2.email, href: admin_valuator_path(valuator2))
+      expect(page).not_to have_link(valuator3.email)
     end
   end
 

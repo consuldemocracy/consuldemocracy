@@ -13,7 +13,7 @@ describe "Proposals" do
   end
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Proposal
+    it_behaves_like "notifiable in-app", :proposal
     it_behaves_like "relationable", Proposal
     it_behaves_like "remotely_translatable",
                     :proposal,
@@ -997,7 +997,7 @@ describe "Proposals" do
     end
 
     scenario "do not show recommented proposal in selected proposals list" do
-      create(:proposal, title: "Recommended", cached_votes_up: 10, tag_list: "Economy")
+      create(:proposal, title: "Recommended", tag_list: "Economy")
 
       user = create(:user)
       create(:follow, followable: create(:proposal, tag_list: "Economy"), user: user)

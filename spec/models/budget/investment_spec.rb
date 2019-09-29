@@ -638,9 +638,9 @@ describe Budget::Investment do
       heading1 = create(:budget_heading, group: group)
       heading2 = create(:budget_heading, group: group)
 
-      investment1 = create(:budget_investment, heading: heading1, budget: budget)
-      investment2 = create(:budget_investment, heading: heading1, budget: budget)
-      investment3 = create(:budget_investment, heading: heading2, budget: budget)
+      investment1 = create(:budget_investment, heading: heading1)
+      investment2 = create(:budget_investment, heading: heading1)
+      investment3 = create(:budget_investment, heading: heading2)
 
       results = Budget::Investment.apply_filters_and_search(budget, heading_id: heading1.id)
 
@@ -720,7 +720,7 @@ describe Budget::Investment do
     let(:heading)     { create(:budget_heading, group: group) }
     let(:user)        { create(:user, :level_two) }
     let(:luser)       { create(:user) }
-    let(:district_sp) { create(:budget_investment, budget: budget, group: group, heading: heading) }
+    let(:district_sp) { create(:budget_investment, budget: budget, heading: heading) }
 
     describe "#reason_for_not_being_selectable_by" do
       it "rejects not logged in users" do
@@ -858,35 +858,6 @@ describe Budget::Investment do
     end
   end
 
-  describe "#headings_voted_by_user" do
-    it "returns the headings voted by a user" do
-      user1 = create(:user)
-      user2 = create(:user)
-
-      budget = create(:budget)
-      group = create(:budget_group, budget: budget)
-
-      new_york = create(:budget_heading, group: group)
-      san_franciso = create(:budget_heading, group: group)
-      another_heading = create(:budget_heading, group: group)
-
-      new_york_investment = create(:budget_investment, heading: new_york)
-      san_franciso_investment = create(:budget_investment, heading: san_franciso)
-      another_investment = create(:budget_investment, heading: san_franciso)
-
-      create(:vote, votable: new_york_investment, voter: user1)
-      create(:vote, votable: san_franciso_investment, voter: user1)
-
-      expect(another_investment.headings_voted_by_user(user1)).to include(new_york.id)
-      expect(another_investment.headings_voted_by_user(user1)).to include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user1)).not_to include(another_heading.id)
-
-      expect(another_investment.headings_voted_by_user(user2)).not_to include(new_york.id)
-      expect(another_investment.headings_voted_by_user(user2)).not_to include(san_franciso.id)
-      expect(another_investment.headings_voted_by_user(user2)).not_to include(another_heading.id)
-    end
-  end
-
   describe "#voted_in?" do
 
     let(:user) { create(:user) }
@@ -1021,8 +992,8 @@ describe Budget::Investment do
           california = create(:budget_heading, group: group)
           new_york = create(:budget_heading, group: group)
 
-          inv1 = create(:budget_investment, :selected, budget: budget, group: group, heading: california)
-          inv2 = create(:budget_investment, :selected, budget: budget, group: group, heading: new_york)
+          inv1 = create(:budget_investment, :selected, budget: budget, heading: california)
+          inv2 = create(:budget_investment, :selected, budget: budget, heading: new_york)
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1
 
@@ -1033,8 +1004,8 @@ describe Budget::Investment do
           budget.phase = "balloting"
           districts = create(:budget_group, budget: budget)
           carabanchel = create(:budget_heading, group: districts, price: 35)
-          inv1 = create(:budget_investment, :selected, budget: budget, group: districts, heading: carabanchel, price: 30)
-          inv2 = create(:budget_investment, :selected, budget: budget, group: districts, heading: carabanchel, price: 10)
+          inv1 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 30)
+          inv2 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 10)
 
           ballot = create(:budget_ballot, user: user, budget: budget)
           ballot.investments << inv1

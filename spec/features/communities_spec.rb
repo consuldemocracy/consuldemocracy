@@ -50,15 +50,15 @@ describe "Communities" do
       community = proposal.community
       topic1 = create(:topic, community: community)
       topic2 = create(:topic, community: community)
-      topic2_comment = create(:comment, :with_confidence_score, commentable: topic2)
       topic3 = create(:topic, community: community)
-      topic3_comment = create(:comment, :with_confidence_score, commentable: topic3)
-      topic3_comment = create(:comment, :with_confidence_score, commentable: topic3)
+      topic1_comment = create(:comment, commentable: topic1)
+      topic3_comment = create(:comment, commentable: topic3)
+      topic3_comment = create(:comment, commentable: topic3)
 
       visit community_path(community, order: :most_commented)
 
-      expect(topic3.title).to appear_before(topic2.title)
-      expect(topic2.title).to appear_before(topic1.title)
+      expect(topic3.title).to appear_before(topic1.title)
+      expect(topic1.title).to appear_before(topic2.title)
 
       visit community_path(community, order: :oldest)
 

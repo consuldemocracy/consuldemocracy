@@ -289,10 +289,6 @@ class Budget
       user.headings_voted_within_group(group).count < group.max_votable_headings
     end
 
-    def headings_voted_by_user(user)
-      user.votes.for_budget_investments(budget.investments.where(group: group)).votables.map(&:heading_id).uniq
-    end
-
     def voted_in?(heading, user)
       user.headings_voted_within_group(group).where(id: heading.id).exists?
     end

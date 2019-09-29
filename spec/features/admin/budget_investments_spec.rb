@@ -127,12 +127,9 @@ describe "Admin budget investments" do
       group1_heading2 = create(:budget_heading, group: group1, name: "Mercy Street")
       group2_heading1 = create(:budget_heading, group: group2, name: "Central Park")
 
-      create(:budget_investment, title: "Realocate visitors", budget: budget, group: group1,
-                                                              heading: group1_heading1)
-      create(:budget_investment, title: "Change name", budget: budget, group: group1,
-                                                                       heading: group1_heading2)
-      create(:budget_investment, title: "Plant trees", budget: budget, group: group2,
-                                                                       heading: group2_heading1)
+      create(:budget_investment, title: "Realocate visitors", heading: group1_heading1)
+      create(:budget_investment, title: "Change name", heading: group1_heading2)
+      create(:budget_investment, title: "Plant trees", heading: group2_heading1)
 
       visit admin_budget_budget_investments_path(budget_id: budget.id)
 

@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Polls" do
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Poll
+    it_behaves_like "notifiable in-app", :poll
   end
 
   context "#index" do

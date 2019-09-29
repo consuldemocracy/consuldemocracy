@@ -49,8 +49,8 @@ describe DirectMessage do
         direct_message1 = create(:direct_message, sender: sender)
         direct_message2 = create(:direct_message, sender: sender)
 
-        direct_message3 = build(:direct_message)
-        expect(direct_message).to be_valid
+        direct_message3 = build(:direct_message, sender: sender)
+        expect(direct_message3).to be_valid
       end
 
       it "is valid if no direct_messages sent" do
