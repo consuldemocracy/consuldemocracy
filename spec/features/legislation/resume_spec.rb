@@ -231,16 +231,17 @@ describe "Legislation" do
   end
 
   describe Legislation::ProcessesController, type: :controller do
+    let(:legislation_process) { create(:legislation_process, end_date: Date.current - 1.day) }
+
     before do
       user = create(:user, :level_two)
-      @process = create(:legislation_process, end_date: Date.current - 1.day)
-      debate = create(:legislation_question, process: @process, title: "Question 1")
+      debate = create(:legislation_question, process: legislation_process, title: "Question 1")
       create(:comment, user: user, commentable: debate, body: "Answer 1")
       create(:comment, user: user, commentable: debate, body: "Answer 2")
     end
 
     it "download execl file test" do
-      get :resume, params: { id: @process, format: :xlsx }
+      get :resume, params: { id: legislation_process, format: :xlsx }
       expect(response).to be_success
     end
   end
