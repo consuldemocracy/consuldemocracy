@@ -744,18 +744,20 @@ describe "Budget Investments" do
 
     scenario "Each user has a different and consistent random budget investment order" do
       (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
+      first_user_investments_order = nil
+      second_user_investments_order = nil
 
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading)
-        @first_user_investments_order = investments_order
+        first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
         visit budget_investments_path(budget, heading: heading)
-        @second_user_investments_order = investments_order
+        second_user_investments_order = investments_order
       end
 
-      expect(@first_user_investments_order).not_to eq(@second_user_investments_order)
+      expect(first_user_investments_order).not_to eq(second_user_investments_order)
 
       in_browser(:one) do
         click_link "Next"
@@ -764,7 +766,7 @@ describe "Budget Investments" do
         click_link "Previous"
         expect(page).to have_content "You're on page 1"
 
-        expect(investments_order).to eq(@first_user_investments_order)
+        expect(investments_order).to eq(first_user_investments_order)
       end
 
       in_browser(:two) do
@@ -774,24 +776,27 @@ describe "Budget Investments" do
         click_link "Previous"
         expect(page).to have_content "You're on page 1"
 
-        expect(investments_order).to eq(@second_user_investments_order)
+        expect(investments_order).to eq(second_user_investments_order)
       end
     end
 
     scenario "Each user has a equal and consistent budget investment order when the random_seed is equal" do
       (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
+      first_user_investments_order = nil
+      second_user_investments_order = nil
+
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
-        @first_user_investments_order = investments_order
+        first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
-        @second_user_investments_order = investments_order
+        second_user_investments_order = investments_order
       end
 
-      expect(@first_user_investments_order).to eq(@second_user_investments_order)
+      expect(first_user_investments_order).to eq(second_user_investments_order)
     end
 
     scenario "Set votes for investments randomized with a seed" do
