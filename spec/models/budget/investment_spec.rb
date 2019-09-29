@@ -319,8 +319,7 @@ describe Budget::Investment do
 
       investments_by_budget = Budget::Investment.by_budget(budget1)
 
-      expect(investments_by_budget).to include investment1
-      expect(investments_by_budget).to include investment2
+      expect(investments_by_budget).to match_array [investment1, investment2]
       expect(investments_by_budget).not_to include investment3
     end
   end
@@ -656,8 +655,7 @@ describe Budget::Investment do
 
       results = Budget::Investment.apply_filters_and_search(budget, search: "health")
 
-      expect(results).to     include investment1
-      expect(results).to     include investment2
+      expect(results).to match_array [investment1, investment2]
       expect(results).not_to include investment3
     end
   end
@@ -883,9 +881,7 @@ describe Budget::Investment do
         most_voted = create(:budget_investment, cached_votes_up: 10)
         some_votes = create(:budget_investment, cached_votes_up: 5)
 
-        expect(Budget::Investment.sort_by_confidence_score.first).to eq most_voted
-        expect(Budget::Investment.sort_by_confidence_score.second).to eq some_votes
-        expect(Budget::Investment.sort_by_confidence_score.third).to eq least_voted
+        expect(Budget::Investment.sort_by_confidence_score).to eq [most_voted, some_votes, least_voted]
       end
 
       it "orders by confidence_score and then by id" do
@@ -937,7 +933,7 @@ describe Budget::Investment do
       inv2 = create(:budget_investment)
       create(:vote, votable: inv1)
 
-      expect(Budget::Investment.with_supports).to include(inv1)
+      expect(Budget::Investment.with_supports).to eq [inv1]
       expect(Budget::Investment.with_supports).not_to include(inv2)
     end
   end

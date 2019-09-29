@@ -75,8 +75,7 @@ describe Budget::Ballot::Line do
 
         ballot_lines_by_investment = Budget::Ballot::Line.by_investment(investment1.id)
 
-        expect(ballot_lines_by_investment).to include ballot_line1
-        expect(ballot_lines_by_investment).to include ballot_line2
+        expect(ballot_lines_by_investment).to match_array [ballot_line1, ballot_line2]
         expect(ballot_lines_by_investment).not_to include ballot_line3
       end
 

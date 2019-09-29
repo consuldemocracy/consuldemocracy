@@ -75,9 +75,7 @@ describe Poll::Officer do
 
       assigned_polls = officer.voting_days_assigned_polls
 
-      expect(assigned_polls.first).to eq(poll_2)
-      expect(assigned_polls.second).to eq(poll_1)
-      expect(assigned_polls.last).to eq(poll_3)
+      expect(assigned_polls).to eq [poll_2, poll_1, poll_3]
     end
   end
 
@@ -126,9 +124,7 @@ describe Poll::Officer do
 
       assigned_polls = officer.final_days_assigned_polls
 
-      expect(assigned_polls.first).to eq(poll_2)
-      expect(assigned_polls.second).to eq(poll_1)
-      expect(assigned_polls.last).to eq(poll_3)
+      expect(assigned_polls).to eq [poll_2, poll_1, poll_3]
     end
   end
 
@@ -144,7 +140,7 @@ describe Poll::Officer do
                                                      date:    Date.current,
                                                      officer: officer)
 
-      expect(officer.todays_booths).to include(assignment_with_application_time_zone.booth)
+      expect(officer.todays_booths).to eq [assignment_with_application_time_zone.booth]
       expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
     end
   end

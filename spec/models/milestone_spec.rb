@@ -51,7 +51,7 @@ describe Milestone do
       published_in_application_time_zone = create(:milestone,
                                                   publication_date: Date.current)
 
-      expect(Milestone.published).to include(published_in_application_time_zone)
+      expect(Milestone.published).to eq [published_in_application_time_zone]
       expect(Milestone.published).not_to include(published_in_local_time_zone)
     end
   end

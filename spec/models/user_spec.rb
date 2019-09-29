@@ -11,29 +11,22 @@ describe User do
       group = create(:budget_group, budget: budget)
 
       new_york = create(:budget_heading, group: group, name: "New york")
-      san_franciso = create(:budget_heading, group: group, name: "San Franciso")
+      san_francisco = create(:budget_heading, group: group, name: "San Franciso")
       wyoming = create(:budget_heading, group: group, name: "Wyoming")
       another_heading = create(:budget_heading, group: group)
 
       new_york_investment = create(:budget_investment, heading: new_york)
-      san_franciso_investment = create(:budget_investment, heading: san_franciso)
+      san_franciso_investment = create(:budget_investment, heading: san_francisco)
       wyoming_investment = create(:budget_investment, heading: wyoming)
 
       create(:vote, votable: wyoming_investment, voter: user1)
       create(:vote, votable: san_franciso_investment, voter: user1)
       create(:vote, votable: new_york_investment, voter: user1)
 
-      headings_names = "#{new_york.name}, #{san_franciso.name}, and #{wyoming.name}"
-
-      expect(user1.headings_voted_within_group(group)).to include(new_york)
-      expect(user1.headings_voted_within_group(group)).to include(san_franciso)
-      expect(user1.headings_voted_within_group(group)).to include(wyoming)
+      expect(user1.headings_voted_within_group(group)).to match_array [new_york, san_francisco, wyoming]
       expect(user1.headings_voted_within_group(group)).not_to include(another_heading)
-      expect(user1.headings_voted_within_group(group).map(&:name).to_sentence).to eq(headings_names)
 
-      expect(user2.headings_voted_within_group(group)).not_to include(new_york)
-      expect(user2.headings_voted_within_group(group)).not_to include(san_franciso)
-      expect(user2.headings_voted_within_group(group)).not_to include(another_heading)
+      expect(user2.headings_voted_within_group(group)).to be_empty
     end
 
     it "returns headings with multiple translations only once" do
@@ -397,8 +390,7 @@ describe User do
         user2 = create(:user, erased_at: nil)
         user3 = create(:user, erased_at: Time.current)
 
-        expect(User.active).to include(user1)
-        expect(User.active).to include(user2)
+        expect(User.active).to match_array [user1, user2]
         expect(User.active).not_to include(user3)
       end
 
@@ -408,8 +400,7 @@ describe User do
         user3 = create(:user)
         user3.block
 
-        expect(User.active).to include(user1)
-        expect(User.active).to include(user2)
+        expect(User.active).to match_array [user1, user2]
         expect(User.active).not_to include(user3)
       end
 
@@ -422,8 +413,7 @@ describe User do
         user2 = create(:user, erased_at: Time.current)
         user3 = create(:user, erased_at: nil)
 
-        expect(User.erased).to include(user1)
-        expect(User.erased).to include(user2)
+        expect(User.erased).to match_array [user1, user2]
         expect(User.erased).not_to include(user3)
       end
 

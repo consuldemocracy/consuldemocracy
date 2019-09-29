@@ -30,7 +30,7 @@ describe Poll::Booth do
       booth_for_current_poll = create(:poll_booth, polls: [create(:poll, :current)])
       booth_for_expired_poll = create(:poll_booth, polls: [create(:poll, :expired)])
 
-      expect(Poll::Booth.available).to include(booth_for_current_poll)
+      expect(Poll::Booth.available).to eq [booth_for_current_poll]
       expect(Poll::Booth.available).not_to include(booth_for_expired_poll)
     end
 

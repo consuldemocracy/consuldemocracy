@@ -59,7 +59,7 @@ describe LocalCensusRecord do
 
     context "search" do
       it "filter document_numbers by given terms" do
-        expect(LocalCensusRecord.search("A")).to include a_local_census_record
+        expect(LocalCensusRecord.search("A")).to eq [a_local_census_record]
         expect(LocalCensusRecord.search("A")).not_to include b_local_census_record
       end
 
