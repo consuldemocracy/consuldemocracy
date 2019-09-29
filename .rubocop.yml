@@ -57,9 +57,6 @@ Rails/SaveBang:
 Rails/SkipsModelValidations:
   Enabled: true
 
-RSpec/InstanceVariable:
-  Enabled: true
-
 Security/Eval:
   Enabled: true
 

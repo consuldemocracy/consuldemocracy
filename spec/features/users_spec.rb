@@ -3,15 +3,15 @@ require "rails_helper"
 describe "Users" do
 
   describe "Show (public page)" do
+    let(:user) { create(:user) }
 
     before do
-      @user = create(:user)
-      1.times { create(:debate, author: @user) }
-      2.times { create(:proposal, author: @user) }
-      3.times { create(:budget_investment, author: @user) }
-      4.times { create(:comment, user: @user) }
+      1.times { create(:debate, author: user) }
+      2.times { create(:proposal, author: user) }
+      3.times { create(:budget_investment, author: user) }
+      4.times { create(:comment, user: user) }
 
-      visit user_path(@user)
+      visit user_path(user)
     end
 
     scenario "shows user public activity" do
@@ -22,7 +22,7 @@ describe "Users" do
     end
 
     scenario "shows only items where user has activity" do
-      @user.proposals.destroy_all
+      user.proposals.destroy_all
 
       expect(page).not_to have_content("0 Proposals")
       expect(page).to have_content("1 Debate")
@@ -31,41 +31,41 @@ describe "Users" do
     end
 
     scenario "default filter is proposals" do
-      @user.proposals.each do |proposal|
+      user.proposals.each do |proposal|
         expect(page).to have_content(proposal.title)
       end
 
-      @user.debates.each do |debate|
+      user.debates.each do |debate|
         expect(page).not_to have_content(debate.title)
       end
 
-      @user.comments.each do |comment|
+      user.comments.each do |comment|
         expect(page).not_to have_content(comment.body)
       end
     end
 
     scenario "shows debates by default if user has no proposals" do
-      @user.proposals.destroy_all
-      visit user_path(@user)
+      user.proposals.destroy_all
+      visit user_path(user)
 
-      expect(page).to have_content(@user.debates.first.title)
+      expect(page).to have_content(user.debates.first.title)
     end
 
     scenario "shows investments by default if user has no proposals nor debates" do
-      @user.proposals.destroy_all
-      @user.debates.destroy_all
-      visit user_path(@user)
+      user.proposals.destroy_all
+      user.debates.destroy_all
+      visit user_path(user)
 
-      expect(page).to have_content(@user.budget_investments.first.title)
+      expect(page).to have_content(user.budget_investments.first.title)
     end
 
     scenario "shows comments by default if user has no proposals nor debates nor investments" do
-      @user.proposals.destroy_all
-      @user.debates.destroy_all
-      @user.budget_investments.destroy_all
-      visit user_path(@user)
+      user.proposals.destroy_all
+      user.debates.destroy_all
+      user.budget_investments.destroy_all
+      visit user_path(user)
 
-      @user.comments.each do |comment|
+      user.comments.each do |comment|
         expect(page).to have_content(comment.body)
       end
     end
@@ -73,43 +73,43 @@ describe "Users" do
     scenario "filters" do
       click_link "1 Debate"
 
-      @user.debates.each do |debate|
+      user.debates.each do |debate|
         expect(page).to have_content(debate.title)
       end
 
-      @user.proposals.each do |proposal|
+      user.proposals.each do |proposal|
         expect(page).not_to have_content(proposal.title)
       end
 
-      @user.comments.each do |comment|
+      user.comments.each do |comment|
         expect(page).not_to have_content(comment.body)
       end
 
       click_link "4 Comments"
 
-      @user.comments.each do |comment|
+      user.comments.each do |comment|
         expect(page).to have_content(comment.body)
       end
 
-      @user.proposals.each do |proposal|
+      user.proposals.each do |proposal|
         expect(page).not_to have_content(proposal.title)
       end
 
-      @user.debates.each do |debate|
+      user.debates.each do |debate|
         expect(page).not_to have_content(debate.title)
       end
 
       click_link "2 Proposals"
 
-      @user.proposals.each do |proposal|
+      user.proposals.each do |proposal|
         expect(page).to have_content(proposal.title)
       end
 
-      @user.comments.each do |comment|
+      user.comments.each do |comment|
         expect(page).not_to have_content(comment.body)
       end
 
-      @user.debates.each do |debate|
+      user.debates.each do |debate|
         expect(page).not_to have_content(debate.title)
       end
     end
@@ -138,19 +138,17 @@ describe "Users" do
   end
 
   describe "Public activity" do
-    before do
-      @user = create(:user)
-    end
+    let(:user) { create(:user) }
 
     scenario "visible by default" do
-      visit user_path(@user)
+      visit user_path(user)
 
-      expect(page).to have_content(@user.username)
+      expect(page).to have_content(user.username)
       expect(page).not_to have_content("activity list private")
     end
 
     scenario "user can hide public page" do
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_activity"
@@ -158,23 +156,23 @@ describe "Users" do
 
       logout
 
-      visit user_path(@user)
+      visit user_path(user)
       expect(page).to have_content("activity list private")
     end
 
     scenario "is always visible for the owner" do
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_activity"
       click_button "Save changes"
 
-      visit user_path(@user)
+      visit user_path(user)
       expect(page).not_to have_content("activity list private")
     end
 
     scenario "is always visible for admins" do
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_activity"
@@ -183,12 +181,12 @@ describe "Users" do
       logout
 
       login_as(create(:administrator).user)
-      visit user_path(@user)
+      visit user_path(user)
       expect(page).not_to have_content("activity list private")
     end
 
     scenario "is always visible for moderators" do
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_activity"
@@ -197,51 +195,46 @@ describe "Users" do
       logout
 
       login_as(create(:moderator).user)
-      visit user_path(@user)
+      visit user_path(user)
       expect(page).not_to have_content("activity list private")
     end
 
     describe "User email" do
-
-      before do
-        @user = create(:user)
-      end
+      let(:user) { create(:user) }
 
       scenario "is not shown if no user logged in" do
-        visit user_path(@user)
-        expect(page).not_to have_content(@user.email)
+        visit user_path(user)
+        expect(page).not_to have_content(user.email)
       end
 
       scenario "is not shown if logged in user is a regular user" do
         login_as(create(:user))
-        visit user_path(@user)
-        expect(page).not_to have_content(@user.email)
+        visit user_path(user)
+        expect(page).not_to have_content(user.email)
       end
 
       scenario "is not shown if logged in user is moderator" do
         login_as(create(:moderator).user)
-        visit user_path(@user)
-        expect(page).not_to have_content(@user.email)
+        visit user_path(user)
+        expect(page).not_to have_content(user.email)
       end
 
       scenario "is shown if logged in user is admin" do
         login_as(create(:administrator).user)
-        visit user_path(@user)
-        expect(page).to have_content(@user.email)
+        visit user_path(user)
+        expect(page).to have_content(user.email)
       end
 
     end
   end
 
   describe "Public interests" do
-    before do
-      @user = create(:user)
-    end
+    let(:user) { create(:user) }
 
     scenario "Display interests" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       check "account_public_interests"
@@ -249,15 +242,15 @@ describe "Users" do
 
       logout
 
-      visit user_path(@user)
+      visit user_path(user)
       expect(page).to have_content("Sport")
     end
 
     scenario "Not display interests when proposal has been destroyed" do
-      proposal = create(:proposal, tag_list: "Sport", followers: [@user])
+      proposal = create(:proposal, tag_list: "Sport", followers: [user])
       proposal.destroy
 
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       check "account_public_interests"
@@ -265,21 +258,21 @@ describe "Users" do
 
       logout
 
-      visit user_path(@user)
+      visit user_path(user)
       expect(page).not_to have_content("Sport")
     end
 
     scenario "No visible by default" do
-      visit user_path(@user)
+      visit user_path(user)
 
-      expect(page).to have_content(@user.username)
+      expect(page).to have_content(user.username)
       expect(page).not_to have_css("#public_interests")
     end
 
     scenario "User can display public page" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       check "account_public_interests"
@@ -287,28 +280,28 @@ describe "Users" do
 
       logout
 
-      visit user_path(@user, filter: "follows", page: "1")
+      visit user_path(user, filter: "follows", page: "1")
 
       expect(page).to have_css("#public_interests")
     end
 
     scenario "Is always visible for the owner" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_interests"
       click_button "Save changes"
 
-      visit user_path(@user, filter: "follows", page: "1")
+      visit user_path(user, filter: "follows", page: "1")
       expect(page).to have_css("#public_interests")
     end
 
     scenario "Is always visible for admins" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_interests"
@@ -317,14 +310,14 @@ describe "Users" do
       logout
 
       login_as(create(:administrator).user)
-      visit user_path(@user, filter: "follows", page: "1")
+      visit user_path(user, filter: "follows", page: "1")
       expect(page).to have_css("#public_interests")
     end
 
     scenario "Is always visible for moderators" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      login_as(@user)
+      login_as(user)
       visit account_path
 
       uncheck "account_public_interests"
@@ -333,25 +326,25 @@ describe "Users" do
       logout
 
       login_as(create(:moderator).user)
-      visit user_path(@user, filter: "follows", page: "1")
+      visit user_path(user, filter: "follows", page: "1")
       expect(page).to have_css("#public_interests")
     end
 
     scenario "Should display generic interests title" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      @user.update(public_interests: true)
-      visit user_path(@user, filter: "follows", page: "1")
+      user.update(public_interests: true)
+      visit user_path(user, filter: "follows", page: "1")
 
       expect(page).to have_content("Tags of elements this user follows")
     end
 
     scenario "Should display custom interests title when user is visiting own user page" do
-      create(:proposal, tag_list: "Sport", followers: [@user])
+      create(:proposal, tag_list: "Sport", followers: [user])
 
-      @user.update(public_interests: true)
-      login_as(@user)
-      visit user_path(@user, filter: "follows", page: "1")
+      user.update(public_interests: true)
+      login_as(user)
+      visit user_path(user, filter: "follows", page: "1")
 
       expect(page).to have_content("Tags of elements you follow")
     end
@@ -411,30 +404,27 @@ describe "Users" do
   end
 
   describe "Following (public page)" do
-
-    before do
-      @user = create(:user)
-    end
+    let(:user) { create(:user) }
 
     scenario "Do not display follows' tab when user is not following any followables" do
-      visit user_path(@user)
+      visit user_path(user)
 
       expect(page).not_to have_content("0 Following")
     end
 
     scenario "Active following tab by default when follows filters selected", :js do
-      create(:proposal, author: @user, followers: [@user])
+      create(:proposal, author: user, followers: [user])
 
-      visit user_path(@user, filter: "follows")
+      visit user_path(user, filter: "follows")
 
       expect(page).to have_selector(".activity li.is-active", text: "1 Following")
     end
 
     scenario "Gracefully handle followables that have been hidden" do
-      create(:proposal, followers: [@user])
-      create(:proposal, followers: [@user]) { |proposal| proposal.hide }
+      create(:proposal, followers: [user])
+      create(:proposal, followers: [user]) { |proposal| proposal.hide }
 
-      visit user_path(@user)
+      visit user_path(user)
 
       expect(page).to have_content("1 Following")
     end
@@ -442,43 +432,43 @@ describe "Users" do
     describe "Proposals" do
 
       scenario "Display following tab when user is following one proposal at least" do
-        create(:proposal, followers: [@user])
+        create(:proposal, followers: [user])
 
-        visit user_path(@user)
+        visit user_path(user)
 
         expect(page).to have_content("1 Following")
       end
 
       scenario "Display proposal tab when user is following one proposal at least" do
-        create(:proposal, followers: [@user])
+        create(:proposal, followers: [user])
 
-        visit user_path(@user, filter: "follows")
+        visit user_path(user, filter: "follows")
 
         expect(page).to have_link("Citizen proposals", href: "#citizen_proposals")
       end
 
       scenario "Do not display proposals' tab when user is not following any proposal" do
-        visit user_path(@user, filter: "follows")
+        visit user_path(user, filter: "follows")
 
         expect(page).not_to have_link("Citizen proposals", href: "#citizen_proposals")
       end
 
       scenario "Display proposals with link to proposal" do
-        proposal = create(:proposal, author: @user, followers: [@user])
+        proposal = create(:proposal, author: user, followers: [user])
 
-        login_as @user
+        login_as user
 
-        visit user_path(@user, filter: "follows")
+        visit user_path(user, filter: "follows")
         click_link "Citizen proposals"
 
         expect(page).to have_content proposal.title
       end
 
       scenario "Retired proposals do not have a link to the dashboard", js: true do
-        proposal = create(:proposal, :retired, author: @user)
-        login_as @user
+        proposal = create(:proposal, :retired, author: user)
+        login_as user
 
-        visit user_path(@user)
+        visit user_path(user)
 
         expect(page).to have_content proposal.title
         expect(page).not_to have_link "Dashboard"
@@ -486,10 +476,10 @@ describe "Users" do
       end
 
       scenario "Published proposals have a link to the dashboard" do
-        proposal = create(:proposal, :published, author: @user)
-        login_as @user
+        proposal = create(:proposal, :published, author: user)
+        login_as user
 
-        visit user_path(@user)
+        visit user_path(user)
 
         expect(page).to have_content proposal.title
         expect(page).to have_link "Dashboard"
@@ -499,23 +489,23 @@ describe "Users" do
     describe "Budget Investments" do
 
       scenario "Display following tab when user is following one budget investment at least" do
-        create(:budget_investment, followers: [@user])
+        create(:budget_investment, followers: [user])
 
-        visit user_path(@user)
+        visit user_path(user)
 
         expect(page).to have_content("1 Following")
       end
 
       scenario "Display budget investment tab when user is following one budget investment at least" do
-        create(:budget_investment, followers: [@user])
+        create(:budget_investment, followers: [user])
 
-        visit user_path(@user, filter: "follows")
+        visit user_path(user, filter: "follows")
 
         expect(page).to have_link("Investments", href: "#investments")
       end
 
       scenario "Not display budget investment tab when user is not following any budget investment" do
-        visit user_path(@user, filter: "follows")
+        visit user_path(user, filter: "follows")
 
         expect(page).not_to have_link("Investments", href: "#investments")
       end

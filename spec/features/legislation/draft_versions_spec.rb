@@ -299,12 +299,13 @@ describe "Legislation Draft Versions" do
     before do
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation", quote: "ipsum",
                                       ranges: [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11 }])
-      @annotation = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", quote: "audiam",
-                                                    ranges: [{ "start" => "/p[3]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }])
     end
 
     scenario "See one annotation with replies for a draft version" do
-      visit legislation_process_draft_version_annotation_path(draft_version.process, draft_version, @annotation)
+      annotation = create(:legislation_annotation, draft_version: draft_version, text: "my other annotation", quote: "audiam",
+                          ranges: [{ "start" => "/p[3]", "startOffset" => 6, "end" => "/p[3]", "endOffset" => 11 }])
+
+      visit legislation_process_draft_version_annotation_path(draft_version.process, draft_version, annotation)
 
       expect(page).not_to have_content "ipsum"
       expect(page).not_to have_content "my annotation"

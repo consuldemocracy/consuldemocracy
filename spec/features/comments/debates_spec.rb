@@ -445,22 +445,22 @@ describe "Commenting debates" do
   end
 
   describe "Voting comments" do
-    before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @debate = create(:debate)
-      @comment = create(:comment, commentable: @debate)
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:debate)     { create(:debate) }
+    let!(:comment)   { create(:comment, commentable: debate) }
 
-      login_as(@manuela)
+    before do
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -474,9 +474,9 @@ describe "Commenting debates" do
     end
 
     scenario "Create", :js do
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -492,9 +492,9 @@ describe "Commenting debates" do
     end
 
     scenario "Update", :js do
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -516,9 +516,9 @@ describe "Commenting debates" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit debate_path(@debate)
+      visit debate_path(debate)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         within(".in_favor") do
           expect(page).to have_content "1"

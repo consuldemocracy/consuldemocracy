@@ -12,8 +12,7 @@ describe "Admin budget investments" do
                   "admin_budget_budget_investment_path"
 
   before do
-    @admin = create(:administrator)
-    login_as(@admin.user)
+    login_as(create(:administrator).user)
   end
 
   context "Feature flag" do

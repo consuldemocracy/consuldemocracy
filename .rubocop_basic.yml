@@ -199,6 +199,9 @@ RSpec/Focus:
 RSpec/HookArgument:
   Enabled: true
 
+RSpec/InstanceVariable:
+  Enabled: true
+
 RSpec/LetBeforeExamples:
   Enabled: true
 

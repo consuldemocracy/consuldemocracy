@@ -2,24 +2,21 @@ require "rails_helper"
 
 describe "Moderate budget investments" do
 
-  let(:budget)  { create(:budget) }
-  let(:heading) { create(:budget_heading, budget: budget, price: 666666) }
-
-  before do
-    @mod        = create(:moderator)
-    @investment = create(:budget_investment, heading: heading, author: create(:user))
-  end
+  let(:budget)      { create(:budget) }
+  let(:heading)     { create(:budget_heading, budget: budget, price: 666666) }
+  let(:mod)         { create(:moderator) }
+  let!(:investment) { create(:budget_investment, heading: heading, author: create(:user)) }
 
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
-    login_as(@mod.user)
+    login_as(mod.user)
 
     expect { visit moderation_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Hiding an investment", :js do
-    login_as(@mod.user)
-    visit budget_investment_path(budget, @investment)
+    login_as(mod.user)
+    visit budget_investment_path(budget, investment)
 
     accept_confirm { click_link "Hide" }
 
@@ -27,12 +24,12 @@ describe "Moderate budget investments" do
 
     visit budget_investments_path(budget.id, heading_id: heading.id)
 
-    expect(page).not_to have_content(@investment.title)
+    expect(page).not_to have_content(investment.title)
   end
 
   scenario "Hiding an investment's author", :js do
-    login_as(@mod.user)
-    visit budget_investment_path(budget, @investment)
+    login_as(mod.user)
+    visit budget_investment_path(budget, investment)
 
     accept_confirm { click_link "Hide author" }
 
@@ -40,16 +37,16 @@ describe "Moderate budget investments" do
 
     visit budget_investments_path(budget.id, heading_id: heading.id)
 
-    expect(page).not_to have_content(@investment.title)
+    expect(page).not_to have_content(investment.title)
   end
 
   scenario "Can not hide own investment" do
-    @investment.update(author: @mod.user)
-    login_as(@mod.user)
+    investment.update(author: mod.user)
+    login_as(mod.user)
 
-    visit budget_investment_path(budget, @investment)
+    visit budget_investment_path(budget, investment)
 
-    within "#budget_investment_#{@investment.id}" do
+    within "#budget_investment_#{investment.id}" do
       expect(page).not_to have_link("Hide")
       expect(page).not_to have_link("Hide author")
     end
@@ -58,7 +55,7 @@ describe "Moderate budget investments" do
   describe "/moderation/ screen" do
 
     before do
-      login_as(@mod.user)
+      login_as(mod.user)
     end
 
     describe "moderate in bulk" do
@@ -71,40 +68,40 @@ describe "Moderate budget investments" do
             click_link "All"
           end
 
-          within("#investment_#{@investment.id}") do
-            check "budget_investment_#{@investment.id}_check"
+          within("#investment_#{investment.id}") do
+            check "budget_investment_#{investment.id}_check"
           end
 
-          expect(page).not_to have_css("investment#{@investment.id}")
+          expect(page).not_to have_css("investment#{investment.id}")
         end
 
         scenario "Hide the investment" do
           click_button "Hide budget investments"
-          expect(page).not_to have_css("investment_#{@investment.id}")
+          expect(page).not_to have_css("investment_#{investment.id}")
 
-          @investment.reload
+          investment.reload
 
-          expect(@investment.author).not_to be_hidden
+          expect(investment.author).not_to be_hidden
         end
 
         scenario "Block the author" do
           click_button "Block authors"
-          expect(page).not_to have_css("investment_#{@investment.id}")
+          expect(page).not_to have_css("investment_#{investment.id}")
 
-          @investment.reload
+          investment.reload
 
-          expect(@investment.author).to be_hidden
+          expect(investment.author).to be_hidden
         end
 
         scenario "Ignore the investment" do
           click_button "Mark as viewed"
-          expect(page).not_to have_css("investment_#{@investment.id}")
+          expect(page).not_to have_css("investment_#{investment.id}")
 
-          @investment.reload
+          investment.reload
 
-          expect(@investment).to be_ignored_flag
-          expect(@investment).not_to be_hidden
-          expect(@investment.author).not_to be_hidden
+          expect(investment).to be_ignored_flag
+          expect(investment).not_to be_hidden
+          expect(investment.author).not_to be_hidden
         end
       end
 

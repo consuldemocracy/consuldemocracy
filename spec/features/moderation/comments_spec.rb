@@ -72,40 +72,41 @@ describe "Moderate comments" do
 
     describe "moderate in bulk" do
       describe "When a comment has been selected for moderation" do
+        let!(:comment) { create(:comment) }
+
         before do
-          @comment = create(:comment)
           visit moderation_comments_path
           within(".menu.simple") do
             click_link "All"
           end
 
-          within("#comment_#{@comment.id}") do
-            check "comment_#{@comment.id}_check"
+          within("#comment_#{comment.id}") do
+            check "comment_#{comment.id}_check"
           end
 
-          expect(page).not_to have_css("comment_#{@comment.id}")
+          expect(page).not_to have_css("comment_#{comment.id}")
         end
 
         scenario "Hide the comment" do
           click_on "Hide comments"
-          expect(page).not_to have_css("comment_#{@comment.id}")
-          expect(@comment.reload).to be_hidden
-          expect(@comment.user).not_to be_hidden
+          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(comment.reload).to be_hidden
+          expect(comment.user).not_to be_hidden
         end
 
         scenario "Block the user" do
           click_on "Block authors"
-          expect(page).not_to have_css("comment_#{@comment.id}")
-          expect(@comment.reload).to be_hidden
-          expect(@comment.user).to be_hidden
+          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(comment.reload).to be_hidden
+          expect(comment.user).to be_hidden
         end
 
         scenario "Ignore the comment" do
           click_on "Mark as viewed"
-          expect(page).not_to have_css("comment_#{@comment.id}")
-          expect(@comment.reload).to be_ignored_flag
-          expect(@comment.reload).not_to be_hidden
-          expect(@comment.user).not_to be_hidden
+          expect(page).not_to have_css("comment_#{comment.id}")
+          expect(comment.reload).to be_ignored_flag
+          expect(comment.reload).not_to be_hidden
+          expect(comment.user).not_to be_hidden
         end
       end
 

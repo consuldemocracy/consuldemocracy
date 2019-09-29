@@ -100,21 +100,19 @@ describe "Stats" do
   describe "Budget investments" do
 
     context "Supporting phase" do
-      before do
-        @budget = create(:budget)
-        @group_all_city   = create(:budget_group, budget: @budget)
-        @heading_all_city = create(:budget_heading, group: @group_all_city)
-      end
+      let(:budget) { create(:budget) }
+      let(:group_all_city) { create(:budget_group, budget: budget) }
+      let!(:heading_all_city) { create(:budget_heading, group: group_all_city) }
 
       scenario "Number of supports in investment projects" do
-        group_2 = create(:budget_group, budget: @budget)
+        group_2 = create(:budget_group, budget: budget)
 
         create(:budget_investment, heading: create(:budget_heading, group: group_2), voters: [create(:user)])
-        create(:budget_investment, heading: @heading_all_city, voters: [create(:user), create(:user)])
+        create(:budget_investment, heading: heading_all_city, voters: [create(:user), create(:user)])
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Supporting phase"
         end
 
@@ -122,9 +120,9 @@ describe "Stats" do
       end
 
       scenario "Number of users that have supported an investment project" do
-        group_2 = create(:budget_group, budget: @budget)
+        group_2 = create(:budget_group, budget: budget)
         investment1 = create(:budget_investment, heading: create(:budget_heading, group: group_2))
-        investment2 = create(:budget_investment, heading: @heading_all_city)
+        investment2 = create(:budget_investment, heading: heading_all_city)
 
         create(:user, :level_two, votables: [investment1, investment2])
         create(:user, :level_two, votables: [investment1])
@@ -132,7 +130,7 @@ describe "Stats" do
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Supporting phase"
         end
 
@@ -179,35 +177,33 @@ describe "Stats" do
         visit admin_stats_path
         click_link "Participatory Budgets"
 
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           expect(page).not_to have_link "Final voting"
         end
       end
 
       scenario "show message when accessing final voting stats" do
-        visit budget_balloting_admin_stats_path(budget_id: @budget.id)
+        visit budget_balloting_admin_stats_path(budget_id: budget.id)
 
         expect(page).to have_content "There isn't any data to show before the balloting phase."
       end
     end
 
     context "Balloting phase" do
-      before do
-        @budget = create(:budget, :balloting)
-        @group = create(:budget_group, budget: @budget)
-        @heading = create(:budget_heading, group: @group)
-        @investment = create(:budget_investment, :feasible, :selected, heading: @heading)
-      end
+      let(:budget) { create(:budget, :balloting) }
+      let(:group) { create(:budget_group, budget: budget) }
+      let(:heading) { create(:budget_heading, group: group) }
+      let!(:investment) { create(:budget_investment, :feasible, :selected, heading: heading) }
 
       scenario "Number of votes in investment projects" do
-        investment_2 = create(:budget_investment, :feasible, :selected, budget: @budget)
+        investment_2 = create(:budget_investment, :feasible, :selected, budget: budget)
 
-        create(:user, ballot_lines: [@investment, investment_2])
+        create(:user, ballot_lines: [investment, investment_2])
         create(:user, ballot_lines: [investment_2])
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Final voting"
         end
 
@@ -215,13 +211,13 @@ describe "Stats" do
       end
 
       scenario "Number of users that have voted a investment project" do
-        create(:user, ballot_lines: [@investment])
-        create(:user, ballot_lines: [@investment])
+        create(:user, ballot_lines: [investment])
+        create(:user, ballot_lines: [investment])
         create(:user)
 
         visit admin_stats_path
         click_link "Participatory Budgets"
-        within("#budget_#{@budget.id}") do
+        within("#budget_#{budget.id}") do
           click_link "Final voting"
         end
 

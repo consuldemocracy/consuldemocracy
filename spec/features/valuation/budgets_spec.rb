@@ -3,8 +3,8 @@ require "rails_helper"
 describe "Valuation budgets" do
 
   before do
-    @valuator = create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
-    login_as(@valuator.user)
+    valuator = create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
+    login_as(valuator.user)
   end
 
   scenario "Disabled with a feature flag" do

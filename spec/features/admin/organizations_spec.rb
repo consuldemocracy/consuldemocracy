@@ -27,10 +27,10 @@ describe "Admin::Organizations" do
   end
 
   context "Search" do
+    let(:user) { create(:user, email: "marley@humanrights.com", phone_number: "6764440002") }
 
     before do
-      @user = create(:user, email: "marley@humanrights.com", phone_number: "6764440002")
-      create(:organization, user: @user, name: "Get up, Stand up")
+      create(:organization, user: user, name: "Get up, Stand up")
     end
 
     scenario "returns no results if search term is empty" do
@@ -62,7 +62,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: @user.email
+      fill_in "term", with: user.email
       click_button "Search"
 
       within("#search-results") do
@@ -74,7 +74,7 @@ describe "Admin::Organizations" do
       visit search_admin_organizations_path
       expect(page).not_to have_content("Get up, Stand up")
 
-      fill_in "term", with: @user.phone_number
+      fill_in "term", with: user.phone_number
       click_button "Search"
 
       within("#search-results") do
