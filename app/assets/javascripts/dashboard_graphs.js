@@ -252,9 +252,9 @@
       }
     });
 
-    if(this.hideSuccessfulProposal != null &&
-      this.hideSuccessfulProposal != '' &&
-      this.hideSuccessfulProposal != false) {
+    if(this.hideSuccessfulProposal !== null &&
+      this.hideSuccessfulProposal !== '' &&
+      this.hideSuccessfulProposal !== false) {
       chart.unload('Ideal progress');
     }
   };
