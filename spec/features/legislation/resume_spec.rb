@@ -69,12 +69,13 @@ describe "Legislation" do
     before do
       user = create(:user, :level_two)
       @process = create(:legislation_process, end_date: Date.current - 1.day)
+
       @debate = create(:legislation_question, process: @process, title: "Question 1")
-      create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 1")
-      create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 2")
+      create(:comment, user: user, commentable: @debate, body: "Answer 1")
+      create(:comment, user: user, commentable: @debate, body: "Answer 2")
       @debate = create(:legislation_question, process: @process, title: "Question 2")
-      create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 3")
-      create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 4")
+      create(:comment, user: user, commentable: @debate, body: "Answer 3")
+      create(:comment, user: user, commentable: @debate, body: "Answer 4")
     end
 
     scenario "show debates list" do
@@ -187,10 +188,11 @@ describe "Legislation" do
       annotation2 = create(:legislation_annotation,
                            draft_version: draft_version_2,
                            ranges: [{ "start" => "/p[1]", "startOffset" => 12, "end" => "/p[1]", "endOffset" => 19 }])
-      create(:text_comment, user: user, commentable_id: annotation0.id, body: "Comment 0")
-      create(:text_comment, user: user, commentable_id: annotation1.id, body: "Comment 1")
-      create(:text_comment, user: user, commentable_id: annotation2.id, body: "Comment 2")
-      create(:text_comment, user: user, commentable_id: annotation2.id, body: "Comment 3")
+
+      create(:comment, user: user, commentable: annotation0, body: "Comment 0")
+      create(:comment, user: user, commentable: annotation1, body: "Comment 1")
+      create(:comment, user: user, commentable: annotation2, body: "Comment 2")
+      create(:comment, user: user, commentable: annotation2, body: "Comment 3")
     end
 
     scenario "debates empty" do
@@ -233,8 +235,8 @@ describe "Legislation" do
       user = create(:user, :level_two)
       @process = create(:legislation_process, end_date: Date.current - 1.day)
       @debate = create(:legislation_question, process: @process, title: "Question 1")
-      create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 1")
-      create(:debate_comment, user: user, commentable_id: @debate.id, body: "Answer 2")
+      create(:comment, user: user, commentable: @debate, body: "Answer 1")
+      create(:comment, user: user, commentable: @debate, body: "Answer 2")
     end
 
     it "download execl file test" do

@@ -184,29 +184,6 @@ LOREM_IPSUM
     author factory: :user
   end
 
-  factory :debate_comment, class: "Comment" do
-    commentable_id { "10" }
-    commentable_type { Legislation::Question }
-    body { "This is a comment" }
-    user_id { "1" }
-    cached_votes_down { "0" }
-    cached_votes_total { "0" }
-    cached_votes_up { "0" }
-    confidence_score { "0" }
-  end
-
-  factory :text_comment, class: "Comment" do
-    commentable_id { "10" }
-    commentable_type { Legislation::Annotation }
-    body { "This is a comment" }
-    user_id { "1" }
-    cached_votes_down { "0" }
-    cached_votes_total { "0" }
-    cached_votes_up { "0" }
-    confidence_score { "0" }
-    ancestry { nil }
-  end
-
   factory :legislation_people_proposal, class: "Legislation::PeopleProposal" do
     sequence(:title) { |n| "People and group #{n} for a legislation" }
     summary { "This law should be implemented by..." }
