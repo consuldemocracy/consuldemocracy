@@ -168,16 +168,16 @@ describe "Tags" do
     end
 
     scenario "From show" do
-      debate1 = create(:debate, tag_list: "Education")
-      debate2 = create(:debate, tag_list: "Health")
+      debate = create(:debate, tag_list: "Education")
+      create(:debate, tag_list: "Health")
 
-      visit debate_path(debate1)
+      visit debate_path(debate)
 
       click_link "Education"
 
       within("#debates") do
         expect(page).to have_css(".debate", count: 1)
-        expect(page).to have_content(debate1.title)
+        expect(page).to have_content(debate.title)
       end
     end
 
