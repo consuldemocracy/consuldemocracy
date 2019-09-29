@@ -119,9 +119,9 @@ describe Poll do
 
       recounting_polls = Poll.recounting
 
+      expect(recounting_polls).to eq [recounting]
       expect(recounting_polls).not_to include(current)
       expect(recounting_polls).not_to include(expired)
-      expect(recounting_polls).to include(recounting)
     end
   end
 
@@ -133,8 +133,7 @@ describe Poll do
 
       current_or_recounting = Poll.current_or_recounting
 
-      expect(current_or_recounting).to include(current)
-      expect(current_or_recounting).to include(recounting)
+      expect(current_or_recounting).to match_array [current, recounting]
       expect(current_or_recounting).not_to include(expired)
     end
   end

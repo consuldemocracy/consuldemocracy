@@ -28,8 +28,8 @@ describe Valuator do
       investment2.valuators << valuator
 
       assigned_investment_ids = valuator.assigned_investment_ids
-      expect(assigned_investment_ids).to include investment1.id
-      expect(assigned_investment_ids).to include investment2.id
+
+      expect(assigned_investment_ids).to match_array [investment1.id, investment2.id]
       expect(assigned_investment_ids).not_to include investment3.id
     end
 
@@ -45,8 +45,8 @@ describe Valuator do
       investment2.valuator_groups << group
 
       assigned_investment_ids = valuator.assigned_investment_ids
-      expect(assigned_investment_ids).to include investment1.id
-      expect(assigned_investment_ids).to include investment2.id
+
+      expect(assigned_investment_ids).to match_array [investment1.id, investment2.id]
       expect(assigned_investment_ids).not_to include investment3.id
     end
   end
