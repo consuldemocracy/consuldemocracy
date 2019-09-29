@@ -156,9 +156,9 @@
   };
 
   ProposalGraph.prototype.parseSettings = function(data) {
-    this.hideSuccessfulProposal = data.find(
-      s => s.key == 'proposals.deactivate_successful_proposal'
-    ).value;
+    this.hideSuccessfulProposal = data.find(function(s) {
+      return s.key === 'proposals.deactivate_successful_proposal';
+    }).value;
   };
 
 
