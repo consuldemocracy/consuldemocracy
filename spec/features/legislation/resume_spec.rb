@@ -64,12 +64,16 @@ describe "Legislation" do
 
     before do
       user = create(:user, :level_two)
-      @debate = create(:legislation_question, process: process, title: "Question 1")
-      create(:comment, user: user, commentable: @debate, body: "Answer 1")
-      create(:comment, user: user, commentable: @debate, body: "Answer 2")
-      @debate = create(:legislation_question, process: process, title: "Question 2")
-      create(:comment, user: user, commentable: @debate, body: "Answer 3")
-      create(:comment, user: user, commentable: @debate, body: "Answer 4")
+
+      create(:legislation_question, process: process, title: "Question 1") do |question|
+        create(:comment, user: user, commentable: question, body: "Answer 1")
+        create(:comment, user: user, commentable: question, body: "Answer 2")
+      end
+
+      create(:legislation_question, process: process, title: "Question 2") do |question|
+        create(:comment, user: user, commentable: question, body: "Answer 3")
+        create(:comment, user: user, commentable: question, body: "Answer 4")
+      end
     end
 
     scenario "show debates list" do
