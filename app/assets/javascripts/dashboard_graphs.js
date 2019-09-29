@@ -147,7 +147,7 @@
       url: this.proposalSettingsUrl,
       cache: false,
       success: function(data) {
-        this.parseSettings(data)
+        this.parseSettings(data);
       }.bind(this),
       data: {
         group_by: this.groupBy
@@ -160,8 +160,6 @@
       return s.key === 'proposals.deactivate_successful_proposal';
     }).value;
   };
-
-
 
   ProposalGraph.prototype.addXColumnValue = function(value) {
     if (this.xColumnValues.indexOf(value) === -1) {
