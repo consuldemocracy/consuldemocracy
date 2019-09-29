@@ -1654,16 +1654,14 @@ describe "Proposals" do
   end
 
   context "Filter" do
-
     context "By geozone" do
+      let(:california) { Geozone.create(name: "California") }
+      let(:new_york)   { Geozone.create(name: "New York") }
 
       before do
-        @california = Geozone.create(name: "California")
-        @new_york   = Geozone.create(name: "New York")
-
-        @proposal1 = create(:proposal, geozone: @california)
-        @proposal2 = create(:proposal, geozone: @california)
-        @proposal3 = create(:proposal, geozone: @new_york)
+        create(:proposal, geozone: california, title: "Bigger sequoias")
+        create(:proposal, geozone: california, title: "Green beach")
+        create(:proposal, geozone: new_york, title: "Sully monument")
       end
 
       scenario "From map" do
@@ -1677,9 +1675,9 @@ describe "Proposals" do
 
         within("#proposals") do
           expect(page).to have_css(".proposal", count: 2)
-          expect(page).to have_content(@proposal1.title)
-          expect(page).to have_content(@proposal2.title)
-          expect(page).not_to have_content(@proposal3.title)
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
@@ -1692,24 +1690,27 @@ describe "Proposals" do
         end
         within("#proposals") do
           expect(page).to have_css(".proposal", count: 2)
-          expect(page).to have_content(@proposal1.title)
-          expect(page).to have_content(@proposal2.title)
-          expect(page).not_to have_content(@proposal3.title)
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
       scenario "From proposal" do
-        visit proposal_path(@proposal1)
+        proposal = create(:proposal, geozone: california, title: "Surf college")
+
+        visit proposal_path(proposal)
 
         within("#geozone") do
           click_link "California"
         end
 
         within("#proposals") do
-          expect(page).to have_css(".proposal", count: 2)
-          expect(page).to have_content(@proposal1.title)
-          expect(page).to have_content(@proposal2.title)
-          expect(page).not_to have_content(@proposal3.title)
+          expect(page).to have_css(".proposal", count: 3)
+          expect(page).to have_content("Surf college")
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
