@@ -2,13 +2,13 @@ tr:
   budgets:
     ballots:
       show:
-        title: Oy
+        title: Oyunuz
         amount_spent: Harcanan miktar
-        remaining: "<span>%{amount}</span> yatırım yapmaya kalkmadı."
+        remaining: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{amount}</span>."
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
-        remove: Oy kaldırmak
+        remove: Oyu geri çek
         voted_html:
-          one: "<span>Bir</span> yatırıma oy verdiniz."
+          one: "<span>Bir</span> yatırımına oy verdiniz."
           other: "<span>%{count}</span> yatırımlara oy verdiniz."
         voted_info_html: "Oyunuzu, bu aşamanın sonuna kadar istediğiniz zaman değiştirebilirsiniz. <br>Mevcut tüm parayı harcamanıza gerek yok."
         voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
