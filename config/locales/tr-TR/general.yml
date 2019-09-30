@@ -540,15 +540,15 @@ tr:
       locked_resource: Kaynak bağlandı
       ideal_time: İdeal zaman
     community:
-      access_community: Topluluğa erişim
-      latest_activity: "Topluluğun son etkinliği: %{at}"
+      access_community: Topluma erişim
+      latest_activity: "Toplum tarafından yapılan son etkinlik: %{at}"
       participants: Katılımcılar
       debates: Tartışmalar
       comments: Yorumlar
-      latest_comments: Son mesajlar
+      latest_comments: En son gönderilen mesajlar
     messages:
-      send_notification: Öneri destekçilerine mesaj gönder
-      previous_notifications: Önceki bildirimlere bak
+      send_notification: Öneriyi destekleyenlere mesaj gönder
+      previous_notifications: Önceki bildirimleri görüntüle
     polls:
       index:
         title: Anketler
@@ -556,7 +556,7 @@ tr:
         succesfull: Yanıt başarıyla oluşturuldu
         count:
           one: '%{count} anket oluşturdunuz.'
-          other: '%{count} anketler oluşturdunuz.'
+          other: '%{count} anket oluşturdunuz.'
         links: Bağlantılar
         additiontal_information: Ek bilgi
       new:
@@ -567,7 +567,7 @@ tr:
       poll:
         responses:
           one: "%{count} yanıt"
-          other: "%{count} yanıtlar"
+          other: "%{count} yanıt"
         view_results: Sonuçları görüntüle
         edit_poll: Anketi düzenle
         show_results: Sonuçları görüntüle
@@ -586,39 +586,39 @@ tr:
         remove_answer: Cevabı kaldır
     poster:
       index:
-        title: Görsel ön izlemesi
+        title: Görsel önizlemesi
         poster_subtitle: "bana destek verin! ;)"
-        intro_text_html: "Kendi vatandaş önerim ile <strong>ben %{org}</strong>'a katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
+        intro_text_html: "<strong> Kendi vatandaş önerim ile %{org}</strong>'ya katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
         proposal_code: "Öneri kodu: %{code}"
-        support: Benim önerimi destekle
-        footer_html: "<strong>%{link}'i ziyaret edin ve bu öneriyi destekleyin.</strong> Çok olmamız gerekiyor. Karar senin de. Teşekkür ederim!"
+        support: Önerimi destekle
+        footer_html: "<strong> Bu bağlantıyı %{link} ziyaret edin ve önerimi destekleyin.</strong> Çok fazla desteğe ihtiyacım var. Senin de destekle. Teşekkür ederim!"
       new:
         title: Önerinizin görseli
       options:
-        preview: Ön izleme
+        preview: Önizleme
         download: İndir
     mailing:
       index:
-        title: E-posta ön izleme
+        title: E-posta önizleme
       new:
         title: Paylaşılacak e-posta örneği
       mailing_options:
-        send: '%{address}''e gönder'
-        preview: Ön izleme
+        send: '%{address} adresine gönder'
+        preview: Önizleme
       create:
         sent: E-posta gönderildi
     mailer:
       forward:
-        subtitle_html: "Eğer beni destekliyorsanız, <br> başaracağız."
+        subtitle_html: "Beni destekliyorsanız, <br> başaracağız."
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
-        introduction: Hangi şehri istediğimize karar verebileceğimiz platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi vatandaş önerimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin çünkü bu çok basit.
-        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz düğmeyi tıklamanız yeterlidir ve tanıtımını yapmadan önce kendinizi haberdar edebilirsiniz. Yalnızca, azami desteği sağlayan teklifler Belediye Meclisi tarafından yerine getirilecek ve sanırım bunu başarmama yardım edeceğinize eminim!"
+        introduction: Kıbrıs'taki günlük yaşamı önemli derecede iyileştirebilmeyi hedefleyen bir platform olan %{org} 'a katıldığımı size bildirmek için yazıyorum. Bunun için kendi teklifimi oluşturdum ve şimdi de desteğinize ihtiyacım olacak! Ama endişelenmeyin, çünkü çok basit.
+        support: "'Bu öneriyi destekle' seçeneğinin altında göreceğiniz butonu tıklamanız yeterlidir ve bunu yapmadan önce öneriyle ilgili bilgi edinebilirsiniz. Yalnızca, en fazla desteği alan öneri uygulanacak ve bunu başarmama yardım edeceğinizden eminim!"
         share: "Ve eğer bana iyilik yaparak teklifimi arkadaşlarınla, ailenle ve yakınlarınla paylaşırsan, mükemmel olacak!"
   polls:
     all: "Tüm"
-    no_dates: "tarih atanmamış"
+    no_dates: "tarih belirtilmemiş"
     dates: "%{open_at} 'ten %{closed_at} 'e"
     final_date: "Son yeniden sayımlar/Sonuçlar"
     index:
@@ -631,23 +631,23 @@ tr:
       no_geozone_restricted: "Tüm şehir"
       geozone_restricted: "İlçeler"
       geozone_info: "Census'taki kişiler katılabilir: "
-      already_answer: "Siz zaten bu ankete zaten katıldınız"
+      already_answer: "Siz zaten bu ankete daha önce katıldınız"
       not_logged_in: "Katılmak için giriş yapmalı veya kayıt olmalısınız"
-      unverified: "Katılmak için hesabınızı doğrulamanız gerekir"
-      cant_answer: "Bu anket sizin coğrafi bölgenizde(geozone) mevcut değil"
+      unverified: "Katılmak için hesabınızı doğrulamanız gerekiyor"
+      cant_answer: "Bu anket sizin bulunduğunuz bölgede uygulanabilir değil"
       section_header:
         icon_alt: Oylama simgesi
         title: Oylama
         help: Oylama ile ilgili yardım
       section_footer:
         title: Oylama ile ilgili yardım
-        description: Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
-      no_polls: "Hiç açık oy yok."
-      max_votes_reached: "Zaten maksimum oy sayısını verdiniz. Katıldığınız için çok teşekkür ederim"
+        description: Vatandaş anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
+      no_polls: "Hiç açık oylama bulunmamaktadır."
+      max_votes_reached: "Mümkün olan en fazla sayıda oy verdiniz. Katıldığınız için çok teşekkür ederim"
       descriptions:
         unique: Soruya sadece bir kez cevap vermek mümkün.
-        multiple: Birden fazla cevap seçmenize izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
-        prioritized: Birden fazla cevap seçmenize izin verir ve bunlara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
+        multiple: Birden fazla cevap seçilmesine izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
+        prioritized: Birden fazla cevap seçmenize izin verir ve bu cevaplara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
         positive_open: Sorulara en fazla sayıda olumlu oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
         positive_negative_open: Sorulara en fazla sayıda olumlu ve olumsuz oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
         answer_couples_open: Her olası cevap çiftinde gönderebileceğiniz maksimum oy sayısının bir sınırı vardır. Maksimum çift sayısını önceden tanımlayabilir ve diğer cevapları ekleyebilirsiniz.
@@ -655,18 +655,18 @@ tr:
         answer_set_open: Bir grup öneriye en fazla sayıda yanıt verilmesine izin verir. Maksimum cevap sayısını belirlemek, grubun büyüklüğünü ayarlamak ve başka cevaplar eklemek mümkündür.
         answer_set_closed: Bir grup öneriye en fazla sayıda yanıt verilmesine izin verir. Maksimum cevap sayısını ve grubun boyutunu ayarlamak mümkündür.
     show:
-      already_voted_in_booth: "Siz zaten fiziksel bir kabine katıldınız. Tekrar katılamazsınız."
-      already_voted_in_web: "Siz zaten bu ankete katıldınız. Yine oy verirseniz, üzerine yazılacaktır."
+      already_voted_in_booth: "Siz zaten kabin oylamasına katıldınız. Tekrar katılamazsınız."
+      already_voted_in_web: "Siz zaten bu ankete katıldınız. Tekrar oy vermeniz halinde, yalnızca son verilen oy geçerli sayılacaktır."
       back: Oylamaya geri dön
       cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
-      login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+      login_to_comment: Yorum paylaşmak için %{signin} veya %{signup} yapmalısınız.
       signin: Oturum aç
       signup: Kaydol
-      cant_answer_verify_html: "Cevaplamak için %{verify_link} yapmanız gerekir."
+      cant_answer_verify_html: "Cevaplamak için %{verify_link} yapmanız gerekiyor."
       verify_link: "hesabınızı doğrulayın"
-      cant_answer_expired: "Bu anket bitti."
-      cant_answer_wrong_geozone: "Bu soru sizin coğrafi bölgenizde(geozone) mevcut değil."
+      cant_answer_expired: "Bu anket tamamlandı."
+      cant_answer_wrong_geozone: "Bu soru sizin bulunduğunuz bölgede uygulanabilir değil."
       more_info_title: "Daha fazla bilgi"
       documents: Belgeler
       zoom_plus: Resmi genişlet
@@ -674,17 +674,17 @@ tr:
       read_less: "%{answer} ile ilgili daha azını oku"
       videos: "Harici video"
       info_menu: "Bilgi"
-      stats_menu: "Katılma istatistikleri"
+      stats_menu: "Katılımla ilgili istatistikler"
       results_menu: "Anket sonuçları"
       stats:
-        total_votes: "Verilen oyların toplam miktarı"
+        total_votes: "Toplam oy sayısı"
         votes: "OYLAR"
         web: "WEB"
         mail: "POSTA"
         booth: "KABİN"
         total: "TOPLAM"
         valid: "Geçerli"
-        white: "Beyaz oylar"
+        white: "Boş"
         null_votes: "Geçersiz"
       results:
         title: "Sorular"
@@ -712,19 +712,19 @@ tr:
       title_label: "Başlık"
       body_label: "Mesaj"
       submit_button: "Mesaj gönder"
-      info_about_receivers_html: "Bu mesaj <strong>%{count} kişiler</strong> 'e gönderilecek ve %{proposal_page} 'da görünecektir.<br> Mesajlar hemen gönderilmez, kullanıcılar düzenli olarak tüm öneri bildirimlerini içeren bir e-posta alır."
+      info_about_receivers_html: "Bu mesaj <strong>%{count} sayıda kişiye gönderilecek </strong> ve %{proposal_page} 'da görünecektir.<br> Mesajlar anında gönderilmez, kullanıcılar düzenli aralıklarla tüm bildirimleri içeren bir e-posta alır."
       proposal_page: "öneri'ler sayfası"
     show:
-      back: "Faaliyetime geri dön"
+      back: "Faaliyetlerime geri dön"
   shared:
-    edit: "Düzenleme"
+    edit: "Düzenle"
     save: "Kaydet"
     delete: "Sil"
     "yes": "Evet"
     "no": "Hayır"
     search_results: "Arama sonuçları"
     advanced_search:
-      author_type: "Yazar kategorisine göre"
+      author_type: "Fikir sahibi kategorisine göre"
       author_type_blank: "Bir kategori seç"
       date: "Tarihe göre"
       date_placeholder: "GG/AA/YYYY"
@@ -733,7 +733,7 @@ tr:
       date_2: "Geçen hafta"
       date_3: "Geçen ay"
       date_4: "Geçen yıl"
-      date_5: "Özelleştirilmiş"
+      date_5: "Uyarlanmış"
       from: "Kaynak"
       general: "Metin ile"
       general_placeholder: "Metni yaz"
@@ -747,7 +747,7 @@ tr:
     check: Seç
     check_all: Tüm
     check_none: Yok
-    collective: Topluluk
+    collective: Kolektif
     flag: Uygunsuz olarak işaretle
     follow: "Takip et"
     following: "Takip ediliyor"
