@@ -453,9 +453,9 @@ el:
         proposals:
           select_order: Ταξινόμηση κατά
           orders:
-            id: Id
+            id: Ταυτότητα
             title: Τίτλος
-            supports: Όλες οι υποστηρίξεις
+            supports: Συνολικές υποστηρίξεις
         process:
           title: Διαδικασία
           comments: Σχόλια
@@ -463,57 +463,57 @@ el:
           start_date: Ημερομηνία έναρξης
           end_date: Ημερομηνία λήξης
           status_open: Ανοιχτό
-          status_closed: Κλεισμένο
+          status_closed: Κλειστό
           status_planned: Σχεδιασμένο
         subnav:
           info: Πληροφορίες
           homepage: Αρχική σελίδα
-          draft_versions: Σχεδίαση
+          draft_versions: Σχεδιασμός
           questions: Συζήτηση
           proposals: Προτάσεις
           milestones: Ακολουθεί
       homepage:
         edit:
-          title: Να ρυθμίσετε την αρχική σελίδα της διαδικασίας
+          title: Ρύθμιση της αρχικής σελίδα της διαδικασίας
       proposals:
         index:
           title: Τίτλος
           back: Πίσω
-          id: Id
-          supports: Όλες οι υποστηρίξεις
+          id: Ταυτότητα
+          supports: Συνολικές υποστηρίξεις
         form:
           custom_categories: Κατηγορίες
-          custom_categories_description: Κατηγορίες που μπορούν να επιλέξουν οι χρήστες δημιουργώντας την πρόταση. Μαξ 160 χαρακτήρες.
+          custom_categories_description: 'Κατηγορίες που μπορούν να επιλέξουν οι χρήστες για τη δημιουργία της πρότασης τους. Μέγιστος αριθμός χαρακτήρων: 160.'
           custom_categories_placeholder: Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (,) και μεταξύ εισαγωγικών ("")
       draft_versions:
         create:
-          notice: 'Το προσχέδιο δημιουργήθηκε με επιτυχία. <a href="%{link}">Κάντε κλικ για να επισκεφθείτε</a>'
+          notice: 'Το προσχέδιο δημιουργήθηκε επιτυχώς. <a href="%{link}">Κάντε κλικ για να επισκεφθείτε</a>'
           error: Το προσχέδιο δεν μπόρεσε να δημιουργηθεί
         update:
-          notice: 'Το προσχέδιο ανανεώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
-          error: Το προσχέδιο δεν μπόρεσε να ανανεωθεί
+          notice: 'Το προσχέδιο ανανεώθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Το προσχέδιο δεν μπόρεσε να ενημερωθεί
         destroy:
           notice: Το προσχέδιο διαγράφηκε επιτυχώς
         edit:
           back: Πίσω
-          submit_button: Αποθηκεύστε τις αλλαγές
-          warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να κάνετε κλικ στο "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
+          submit_button: Αποθήκευση αλλαγών
+          warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να πατήσετε "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
         errors:
           form:
             error: Σφάλμα
         form:
           title_html: 'Επεξεργασία <span class="strong">%{draft_version_title}</span> από τη διαδικασία <span class="strong">%{process_title}</span>'
-          launch_text_editor: Ανοίξτε τον επεξεργαστή κειμένου
-          close_text_editor: Κλείστε τον επεξεργαστή κειμένου
-          use_markdown: Χρησιμοποιήστε το Markdown για να μορφοποιήσετε το κείμενο
+          launch_text_editor: Άνοιγμα επεξεργαστή κειμένου
+          close_text_editor: Κλείσιμο επεξεργαστή κειμένου
+          use_markdown: Χρησιμοποιήστε το Markdown για να διαμορφώσετε το κείμενο
           hints:
             final_version: Αυτή η έκδοση θα δημοσιευθεί ως τελικό αποτέλεσμα για αυτήν τη διαδικασία. Τα σχόλια δεν θα επιτρέπονται σε αυτή την έκδοση.
             status:
-              draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν μπορεί να το δει
-              published: Ορατές για όλους
+              draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν θα μπορεί να έχει πρόσβαση
+              published: Ορατό για όλους
           title_placeholder: Γράψτε τον τίτλο της έκδοσης του προσχεδίου
           changelog_placeholder: Προσθέστε τις κύριες αλλαγές από την προηγούμενη έκδοση
-          body_placeholder: Γράψτε το κείμενο του προσχεδίου
+          body_placeholder: Συγγραφή προσχεδίου
         index:
           title: Εκδόσεις προσχεδίου
           create: Δημιουργία έκδοσης
@@ -534,60 +534,60 @@ el:
           status: Κατάσταση
       questions:
         create:
-          notice: 'Ερώτημα που δημιουργήθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
-          error: Ερώτηση δεν μπόρεσε να δημιουργηθεί
+          notice: 'Η ερώτηση δημιουργήθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η ερώτηση δεν μπόρεσε να δημιουργηθεί
         update:
-          notice: 'Ερώτηση ενημερώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
-          error: Ερώτηση δεν μπόρεσε να ενημερωθεί
+          notice: 'Η ερώτηση ενημερώθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η ερώτηση δεν μπόρεσε να ενημερωθεί
         destroy:
-          notice: Ερώτηση διαγράφηκε επιτυχώς
+          notice: Η ερώτηση διαγράφηκε επιτυχώς
         edit:
           back: Πίσω
-          title: "Επεξεργαστείτε “%{question_title}”"
-          submit_button: Αποθηκεύστε τις αλλαγές
+          title: "Επεξεργασία “%{question_title}”"
+          submit_button: Αποθήευση αλλαγών
         errors:
           form:
             error: Σφάλμα
         form:
           add_option: Προσθήκη επιλογής
           title: Ερώτηση
-          title_placeholder: Προσθέστε ερώτηση
-          value_placeholder: Προσθέστε μια κλειστή απάντηση
-          question_options: "Πιθανές απαντήσεις (προαιρετικά, από προεπιλογή ανοικτές απαντήσεις)"
+          title_placeholder: Προσθήκη ερώτησης
+          value_placeholder: Προσθήκη κλειστής απάντησης
+          question_options: "Πιθανές απαντήσεις (προαιρετικό, ανοικτές απαντήσεις από προεπιλογή)"
         index:
           back: Πίσω
           title: Ερωτήσεις που σχετίζονται με αυτήν τη διαδικασία
-          create: Δημιουργήστε ερώτηση
+          create: Δημιουργία ερώτησης
           delete: Διαγραφή
         new:
           back: Πίσω
-          title: Δημιουργήστε νέας ερώτησης
-          submit_button: Δημιουργήστε ερώτηση
+          title: Δημιουργία νέας ερώτησης
+          submit_button: Δημιουργία ερώτησης
         table:
           title: Τίτλος
-          question_options: Επιλογές ερώτησης
+          question_options: Επιλογές ερωτήσεων
           answers_count: Καταμέτρηση απαντήσεων
           comments_count: Καταμέτρηση σχολίων
         question_option_fields:
-          remove_option: Κατάργηση επιλογής
+          remove_option: Αφαίρεση επιλογής
       milestones:
         index:
           title: Ακολουθεί
     managers:
       index:
-        title: Διευθυντές
+        title: Υπεύθυνοι
         name: Όνομα
         email: E-Mail
-        no_managers: Δεν υπάρχουν διευθυντές.
+        no_managers: Δεν υπάρχουν υπεύθυνοι
       manager:
-        add: Προσθέστε
+        add: Προσθήκη
         delete: Διαγραφή
       search:
-        title: "Διευθυντές: Αναζήτηση χρήστη"
+        title: "Συντονιστές: Αναζήτηση χρήστη"
     menu:
       activity: Δραστηριότητα συντονιστή
       admin: Μενού διαχειριστή
-      banner: Banners διευθυντών
+      banner: Διαχείριση πανό
       proposals: Προτάσεις
       proposals_topics: Θέματα προτάσεων
       budgets: Συμμετοχικοί προϋπολογισμοί
@@ -596,21 +596,21 @@ el:
       hidden_debates: Κρυφές συζητήσεις
       hidden_proposals: Κρυφές προτάσεις
       hidden_budget_investments: Κρυφές επενδύσεις προϋπολογισμού
-      hidden_proposal_notifications: Κρυφές ειδοποιήσεις πρότασης
+      hidden_proposal_notifications: Κρυφές ειδοποιήσεις προτάσεων
       hidden_users: Κρυφοί χρήστες
       administrators: Διαχειριστές
-      managers: Διευθυντές
+      managers: Υπεύθυνοι
       moderators: Συντονιστές
       messaging_users: Μηνύματα προς τους χρήστες
       newsletters: Ενημερωτικά δελτία
       admin_notifications: Ειδοποιήσεις
-      system_emails: Τα μηνύματα του συστήματος
+      system_emails: Email συστήματος
       emails_download: Λήψη email
       valuators: Αξιολογητές
-      poll_officers: Επίσημοι της ψηφοφορίας
-      polls: Δημοσκοπήσεις
-      poll_booths: Τοποθεσία θαλάμων
-      poll_booth_assignments: Αναθέσεις θαλάμων
+      poll_officers: Λειτουργοί ψηφοφορίας
+      polls: Ψηφοφορίες
+      poll_booths: Τοποθεσία περιπτέρων
+      poll_booth_assignments: Αναθέσεις περιπτέρων
       poll_shifts: Διαχείριση μετατοπίσεων
       officials: Επίσημοι
       organizations: Οργανισμοί
