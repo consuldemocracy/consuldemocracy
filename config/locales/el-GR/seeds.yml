@@ -7,21 +7,21 @@ el:
       official_level_4_name: Επίσημη θέση 4
       official_level_5_name: Επίσημη θέση 5
     geozones:
-      north_district: Βόρεια επαρχία
-      west_district: Δυτική περιοχή
+      north_district: Βόρεια Περιφέρεια
+      west_district: Δυτική Περιφέρια
       east_district: Ανατολική Περιφέρεια
       central_district: Κεντρική περιφέρεια
     organizations:
       human_rights: Ανθρώπινα δικαιώματα
-      neighborhood_association: Ένωση γειτονίας
+      neighborhood_association: Σύνδεσμος της γειτονίας
     categories:
-      associations: Ενώσεις
+      associations: Σύνδεσμος
       culture: Πολιτισμός
-      sports: Σπορ
+      sports: Αθλητικά
       social_rights: Κοινωνικά δικαιώματα
       economy: Οικονομία
-      employment: Απασχόληση
-      equity: Ίδια κεφάλαια
+      employment: Εργασιακή απασχόληση
+      equity: Μετοχικό κεφάλαιο
       sustainability: Βιωσιμότητα
       participation: Συμμετοχή
       mobility: Κινητικότητα
@@ -34,13 +34,13 @@ el:
       budget: Συμμετοχικοί προϋπολογισμοί
       currency: '€'
       groups:
-        all_city: Όλη την πόλη
-        districts: Συνοικίες
+        all_city: Όλες οι πόλεις
+        districts: Περιφέριες
       valuator_groups:
-        culture_and_sports: Αθλητισμός & Πολιτισμός
+        culture_and_sports: Πολιτισμός & Αθλητικά
         gender_and_diversity: Πολιτική για την Ισότητα των Φύλων και της Διαφορετικότητας
         urban_development: Βιώσιμη αστική ανάπτυξη
-        equity_and_employment: Μετοχικό κεφάλαιο & απασχόληση
+        equity_and_employment: Μετοχικό κεφάλαιο & Εργασιακή απασχόληση
       statuses:
         studying_project: Μελετώντας το έργο
         bidding: Υποβολή προσφορών
@@ -48,7 +48,7 @@ el:
         executed: Εκτελέστηκαν
     polls:
       current_poll: "Τρέχουσα δημοσκόπηση"
-      current_poll_geozone_restricted: "Η τρέχουσα έρευνα περιορίζεται στη γεωζώνη"
-      recounting_poll: "Επανάληψη έρευνας"
-      expired_poll_without_stats: "Έληξε έρευνα χωρίς στατιστικά στοιχεία και αποτελέσματα"
-      expired_poll_with_stats: "Έληξε έρευνα με στατιστικά στοιχεία και αποτελέσματα"
+      current_poll_geozone_restricted: "Η τρέχουσα δημοσκόπηση περιορίζεται από την παράμετρο Geozone"
+      recounting_poll: "Επανάληψη δημοσκόπησης"
+      expired_poll_without_stats: "Η δημοσκόπηση έληξε χωρίς στατιστικά στοιχεία και αποτελέσματα"
+      expired_poll_with_stats: "Η δημοσκόπηση έχει ολοκληρωθεί και εμπεριέχει στατιστικά στοιχεία και αποτελέσματα"
