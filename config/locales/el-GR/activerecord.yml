@@ -208,7 +208,7 @@ el:
         username: "Όνομα χρήστη"
         password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
         password: "Κωδικός πρόσβασης"
-        current_password: "Τρέχων κωδικός πρόσβασης"
+        current_password: "Υφιστάμενος κωδικός πρόσβασης"
         phone_number: "Αριθμός τηλεφώνου"
         official_position: "Επίσημη θέση"
         official_level: "Επίσημο επίπεδο"
@@ -236,17 +236,17 @@ el:
         title: "Ερώτηση"
       poll/ballot_sheet:
         data: Στοιχεία CSV
-        poll_id: Δημοσκόπηση
-        officer_assignment_id: Ανάθεση Εργασίας Λειτουργού
+        poll_id: Ψηφοφορία
+        officer_assignment_id: Εργασία Λειτουργού
       signature_sheet:
         signable_type: "Τύπος με δυνατότητα υπογραφής"
-        signable_id: "Με δυνατότητα υπογραφής ID"
+        signable_id: "ID με δυνατότητα υπογραφής "
         document_numbers: "Αριθμοί εγγράφων"
       site_customization/page:
         content: Περιεχόμενο
         created_at: Δημιουργήθηκε στις
         subtitle: Υπότιτλος
-        slug: Χτυπώ δυνατά
+        slug: Slug
         status: Κατάσταση
         title: Τίτλος
         updated_at: Ενημερώθηκε στις
@@ -273,16 +273,16 @@ el:
         description: Περιγραφή
         additional_info: Πρόσθετες πληροφορίες
         start_date: Έναρξη
-        end_date: Τέλος
+        end_date: Λήξη
         debate_start_date: Έναρξη
-        debate_end_date: Τέλος
+        debate_end_date: Λήξη
         draft_start_date: Έναρξη
-        draft_end_date: Τέλος
+        draft_end_date: Λήξη
         draft_publication_date: Ημερομηνία δημοσίευσης προσχέδιου
         allegations_start_date: Έναρξη
-        allegations_end_date: Τέλος
+        allegations_end_date: Λήξη
         proposals_phase_start_date: Έναρξη
-        proposals_phase_end_date: Τέλος
+        proposals_phase_end_date: Λήξη
         result_publication_date: Ημερομηνία δημοσίευσης τελικών αποτελέσματων
         background_color: Χρώμα φόντου
         font_color: Χρώμα γραμματοσειράς
@@ -356,10 +356,10 @@ el:
         short_description: Σύντομη περιγραφή
         description: Περιγραφή
         link: Εξωτερικός σύνδεσμος
-        request_to_administrators: Συμπεριλάβετε ένα κουμπί στην πηγή  για να ζητήσετε αυτή την πηγή από τους διαχειριστές
-        day_offset: Σε πόσες ημέρες θέλετε να ενεργοποιηθεί η πρόταση μετά τη δημιουργία της;
+        request_to_administrators: Συμπεριλάβετε ένα κουμπί για να ζητήθέι ο πόρος από τους διαχειριστές
+        day_offset: Πόσες ημέρες μετά τη δημιουργία της πρότασης επιθυμείτε να ενεργοποιηθεί;
         required_supports: Πόση στήριξη πρέπει να λάβει η πρόταση προκειμένου να ενεργοποιηθεί;
-        order: Μπορείτε να εισαγάγετε τη θέση στη λίστα δράσεων στην οποία θα εμφανιστεί στο χρήστη αυτή η δράση 
+        order: Μπορείτε να εισαγάγετε τη θέση στη λίστα δράσεων στην οποία επιθυμείτε να εμφανίζετε αυτή η δράση για τους χρήστες
         active: Ενεργό
         action_type: Τύπος
       dashboard/administrator_task:
@@ -383,7 +383,7 @@ el:
         user:
           attributes:
             email:
-              password_already_set: "Αυτός ο χρήστης έχει ήδη κωδικό πρόσβασης"
+              password_already_set: "Ο χρήστης έχει ήδη κωδικό πρόσβασης"
         debate:
           attributes:
             tag_list:
@@ -412,14 +412,14 @@ el:
         poll/voter:
           attributes:
             document_number:
-              not_in_census: "Έγγραφο το οποίο δεν βρίσκεται σε απογραφή"
+              not_in_census: "Έγγραφο το οποίο δεν υπάρχει στην απογραφή"
               has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
         legislation/process:
           attributes:
             end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης
             debate_end_date:
-              invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης της συζήτησης
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης
             draft_end_date:
               invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
             allegations_end_date:
@@ -439,7 +439,7 @@ el:
         signature:
           attributes:
             document_number:
-              not_in_census: "Μη εγκεκριμένο από το Census"
+              not_in_census: "Μη επαληθευμένο από το Census"
               already_voted: "Έχετε ήδη ψηφίσει αυτήν την πρόταση"
         site_customization/page:
           attributes:
