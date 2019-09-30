@@ -8,7 +8,7 @@ el:
       verification:
         residence:
           document_type: "Τύπος εγγράφου"
-          document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων των γραμμάτων)"
+          document_number: "Αριθμός εγγράφου (περιλαμβανομένων χαρακτήρων)"
           date_of_birth: "Ημερομηνία γέννησης"
           postal_code: "Ταχυδρομικός κώδικας"
         sms:
@@ -18,7 +18,7 @@ el:
           recipient: "E-Mail"
       officing/residence:
         document_type: "Τύπος εγγράφου"
-        document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων των γραμμάτων)"
+        document_number: "Αριθμός εγγράφου (περιλαμβανομένων χαρακτήρων)"
         year_of_birth: "Χρονολογία γέννησης"
       local_census_record/import:
         file: Αρχείο
