@@ -10,32 +10,32 @@ tr:
         title: Katılımcı bütçeler
         filters:
           current: Açık
-          finished: Bitmiş
+          finished: Tamamlanmış
         table_name: İsim
         table_phase: Aşama
-        table_assigned_investments_valuation_open: Açık değerlendirme ile atanan yatırım projeleri
-        table_actions: Aksiyon
-        evaluate: Değerlendirmek
-        no_budgets: "Bütçe yok"
+        table_assigned_investments_valuation_open: Açık değerlendirme ile belirlenen yatırım projeleri
+        table_actions: Yapılacaklar
+        evaluate: Değerlendir
+        no_budgets: "Bütçe bulunmamaktadır"
     budget_investments:
       index:
         headings_filter_all: Tüm başlıklar
         filters:
           valuation_open: Açık
-          valuating: Değerlendirme altında
-          valuation_finished: Değerlendirme bitti
-        assigned_to: "%{valuator}'a atandı"
+          valuating: Değerlendirme aşamasında
+          valuation_finished: Değerlendirme tamamlandı
+        assigned_to: "%{valuator} tarafından değerlendirilecek"
         title: Yatırım projeleri
         edit: Dosyayı düzenle
         valuators_assigned:
-          one: Atanan bilirkişi
+          one: Görevlendirilen bilirkişi
           other: "%{count} atanan bilirkişiler"
-        no_valuators_assigned: Hiç bilirkişi atanmadı
+        no_valuators_assigned: Hiç bilirkişi görevlendirilmedi
         table_id: KİMLİK
         table_title: Başlık
-        table_heading_name: Başlık adı
-        table_actions: Aksiyon
-        no_investments: "Hiç yatırım projesi yok."
+        table_heading_name: Başlık
+        table_actions: Yapılacaklar
+        no_investments: "Herhangi bir yatırım projesi bulunmamaktadır."
       show:
         back: Geri
         title: Yatırım projesi
@@ -45,32 +45,32 @@ tr:
         heading: Başlık
         dossier: Dosya
         edit_dossier: Dosya düzenleme
-        price: Fiyat
-        price_first_year: İlk yıl sırasındaki maliyet
+        price: Maliyet
+        price_first_year: İlk yıl maliyet bedeli
         currency: "€"
-        feasibility: Fizibilite
+        feasibility: Uygulanabilirlik
         feasible: Uygulanabilir
         unfeasible: Uygulanamaz
-        undefined: Tanımsız
-        valuation_finished: Değerlendirme bitti
+        undefined: Tanımlanmamış
+        valuation_finished: Değerlendirme tamamlandı
         duration: Zaman kapsamı
         responsibles: Sorumlular
-        assigned_admin: Atanmış yönetici
-        assigned_valuators: Atanmış bilirkişiler
+        assigned_admin: Görevlendirilmiş sorumlu
+        assigned_valuators: Görevlendirilmiş bilirkişiler
         preview: Yatırım ön izleme
       edit:
         dossier: Dosya
-        price_html: "Fiyat (%{currency})"
-        price_first_year_html: "İlk yıl sırasındaki maliyet (%{currency})<small>(isteğe bağlı, veriler herkese açık değil)</small>"
-        price_explanation_html: Fiyat açıklama
-        feasibility: Fizibilite
+        price_html: "Maliyet (%{currency})"
+        price_first_year_html: "İlk yıl maliyet bedeli (%{currency})<small>(isteğe bağlı, veriler herkese açık değil)</small>"
+        price_explanation_html: Maliyet açıklaması
+        feasibility: Uygulanabilirlik
         feasible: Uygulanabilir
         unfeasible: Uygulanamaz
         undefined_feasible: Beklemede
-        feasible_explanation_html: Fizibilite açıklaması
-        valuation_finished: Değerlendirme bitti
-        valuation_finished_alert: "Bu raporu tamamlandı olarak işaretlemek istediğinizden emin misiniz? Bunu yaparsanız, artık değiştirilemez."
-        not_feasible_alert: "Projenin yazarına hemen uygulanamaz raporuyla birlikte bir e-posta gönderilecektir."
+        feasible_explanation_html: Uygulanabilirlikle ilgili açıklama
+        valuation_finished: Değerlendirme tamamlandı
+        valuation_finished_alert: "Bu raporun tamamlandığından emin misiniz? Bunu belirtmeniz halinde, raporda daha fazla değişikli yapmanız mümkün olmayacak."
+        not_feasible_alert: "Uygunsuzluk raporunu içeren bir e-posta fikrin sahibine hemen gönderilecektir."
         duration_html: Zaman kapsamı
         save: Değişiklikleri kaydet
       notice:
