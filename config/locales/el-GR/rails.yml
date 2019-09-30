@@ -64,10 +64,10 @@ el:
         other: σχεδόν %{count} έτη
       half_a_minute: μισό λεπτό
       less_than_x_minutes:
-        one: λιγότερο από λεπτό
+        one: λιγότερο από 1 λεπτό
         other: λιγότερο από %{count} λεπτά
       less_than_x_seconds:
-        one: λιγότερο από δευτερόλεπτο
+        one: λιγότερο από 1 δευτερόλεπτο
         other: λιγότερο από %{count} δευτερόλεπτα
       over_x_years:
         one: πάνω από 1 έτος
