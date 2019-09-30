@@ -860,9 +860,9 @@ describe "Debates" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
-          debate1 = create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          debate2 = create(:debate, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          debate3 = create(:debate, title: "Save the forest")
+          create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          create(:debate, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
+          create(:debate, title: "Save the forest")
 
           visit debates_path
 
@@ -875,7 +875,7 @@ describe "Debates" do
 
           within("#debates") do
             expect(page).to have_css(".debate", count: 1)
-            expect(page).to have_content(debate1.title)
+            expect(page).to have_content "Get Schwifty"
           end
         end
 
@@ -978,12 +978,12 @@ describe "Debates" do
     end
 
     scenario "After a search do not show featured debates" do
-      featured_debates = create_featured_debates
-      debate = create(:debate, title: "Abcdefghi")
+      create_featured_debates
+      create(:debate, title: "Abcdefghi")
 
       visit debates_path
       within(".expanded #search_form") do
-        fill_in "search", with: debate.title
+        fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end
 
@@ -1017,16 +1017,14 @@ describe "Debates" do
   end
 
   context "Filter" do
-
     context "By geozone" do
+      let(:california) { Geozone.create(name: "California") }
+      let(:new_york)   { Geozone.create(name: "New York") }
 
       before do
-        @california = Geozone.create(name: "California")
-        @new_york   = Geozone.create(name: "New York")
-
-        @debate1 = create(:debate, geozone: @california)
-        @debate2 = create(:debate, geozone: @california)
-        @debate3 = create(:debate, geozone: @new_york)
+        create(:debate, geozone: california, title: "Bigger sequoias")
+        create(:debate, geozone: california, title: "Green beach")
+        create(:debate, geozone: new_york, title: "Sully monument")
       end
 
       pending "From map" do
@@ -1040,9 +1038,9 @@ describe "Debates" do
 
         within("#debates") do
           expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content(@debate1.title)
-          expect(page).to have_content(@debate2.title)
-          expect(page).not_to have_content(@debate3.title)
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
@@ -1055,24 +1053,27 @@ describe "Debates" do
         end
         within("#debates") do
           expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content(@debate1.title)
-          expect(page).to have_content(@debate2.title)
-          expect(page).not_to have_content(@debate3.title)
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
       pending "From debate" do
-        visit debate_path(@debate1)
+        debate = create(:debate, geozone: california, title: "Surf college")
+
+        visit debate_path(debate)
 
         within("#geozone") do
           click_link "California"
         end
 
         within("#debates") do
-          expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content(@debate1.title)
-          expect(page).to have_content(@debate2.title)
-          expect(page).not_to have_content(@debate3.title)
+          expect(page).to have_css(".debate", count: 3)
+          expect(page).to have_content("Surf college")
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 

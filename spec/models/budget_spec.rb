@@ -166,12 +166,12 @@ describe Budget do
     end
 
     it "returns the last budget created that is not in drafting phase" do
-      old_budget      = create(:budget, :finished,  created_at: 2.years.ago)
-      previous_budget = create(:budget, :accepting, created_at: 1.year.ago)
-      current_budget  = create(:budget, :accepting, created_at: 1.month.ago)
-      next_budget     = create(:budget, :drafting,  created_at: 1.week.ago)
+      create(:budget, :finished,  created_at: 2.years.ago, name: "Old")
+      create(:budget, :accepting, created_at: 1.year.ago,  name: "Previous")
+      create(:budget, :accepting, created_at: 1.month.ago, name: "Current")
+      create(:budget, :drafting,  created_at: 1.week.ago,  name: "Next")
 
-      expect(Budget.current).to eq(current_budget)
+      expect(Budget.current.name).to eq "Current"
     end
 
   end

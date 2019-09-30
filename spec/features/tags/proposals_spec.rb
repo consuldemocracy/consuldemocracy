@@ -186,18 +186,18 @@ describe "Tags" do
   context "Filter" do
 
     scenario "From index" do
-      proposal1 = create(:proposal, tag_list: "Education")
-      proposal2 = create(:proposal, tag_list: "Health")
+      create(:proposal, tag_list: "Health", title: "More green spaces")
+      create(:proposal, tag_list: "Education", title: "Online teachers")
 
       visit proposals_path
 
-      within "#proposal_#{proposal1.id}" do
+      within ".proposal", text: "Online teachers" do
         click_link "Education"
       end
 
       within("#proposals") do
         expect(page).to have_css(".proposal", count: 1)
-        expect(page).to have_content(proposal1.title)
+        expect(page).to have_content "Online teachers"
       end
     end
 
