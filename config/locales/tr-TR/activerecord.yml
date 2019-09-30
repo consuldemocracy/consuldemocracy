@@ -414,17 +414,17 @@ tr:
             debate_end_date:
               invalid_date_range: tartışma başlangıç tarihinde veya sonrasında olmalıdır
             draft_end_date:
-              invalid_date_range: taslak başlangıç tarihi sonrasında veya sırasında olmalıdır
+              invalid_date_range: taslak başlangıç tarihinde veya sonrasında olmalıdır
             allegations_end_date:
-              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalı
+              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalıdır
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+              less_than_or_equal_to: "etiketiler %{count} 'tan daha az veya eşit sayıda olmalıdır"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+              less_than_or_equal_to: "etiketiler %{count} 'tan daha az veya eşit sayıda olmalıdır"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -432,8 +432,8 @@ tr:
         signature:
           attributes:
             document_number:
-              not_in_census: "Census tarafından doğrulanmadı"
-              already_voted: "Bu öneri zaten oylandı"
+              not_in_census: "Pusula tarafından doğrulanmadı"
+              already_voted: "Bu öneriye daha önce oy verdiniz"
         site_customization/page:
           attributes:
             slug:
