@@ -11,7 +11,7 @@ tr:
         poll_question_answer_video: "Video başarıyla oluşturuldu"
         poll_question_answer_image: "Resim başarıyla yüklendi"
         proposal: "Öneri başarıyla oluşturuldu."
-        proposal_notification: "Mesajınız doğru şekilde gönderildi."
+        proposal_notification: "Mesajınız başarıyla gönderildi."
         budget_investment: "Bütçe Yatırımı başarıyla oluşturuldu."
         signature_sheet: "İmza sayfası başarıyla oluşturuldu"
         topic: "Konu başarıyla oluşturuldu."
