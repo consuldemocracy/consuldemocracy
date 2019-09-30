@@ -5,29 +5,26 @@ describe Vote do
   describe "#for_debates" do
     it "does not returns votes for other votables" do
       debate = create(:debate)
-      comment = create(:comment)
-      create(:vote, votable: comment)
+      create(:vote, votable: create(:comment))
 
       expect(Vote.for_debates(debate).count).to eq(0)
     end
 
     it "returns votes only for debates in parameters" do
-      debate1 = create(:debate)
+      debate1 = create(:debate, voters: [create(:user)])
       debate2 = create(:debate)
-      create(:vote, votable: debate1)
 
       expect(Vote.for_debates(debate1).count).to eq(1)
       expect(Vote.for_debates(debate2).count).to eq(0)
     end
 
     it "accepts more than 1 debate" do
-      debate1 = create(:debate)
+      debate1 = create(:debate, voters: [create(:user)])
       debate2 = create(:debate)
-      debate3 = create(:debate)
-      create(:vote, votable: debate1)
-      create(:vote, votable: debate3)
+      debate3 = create(:debate, voters: [create(:user)])
 
       expect(Vote.for_debates([debate1, debate2]).count).to eq(1)
+      expect(Vote.for_debates([debate1, debate3]).count).to eq(2)
     end
   end
 

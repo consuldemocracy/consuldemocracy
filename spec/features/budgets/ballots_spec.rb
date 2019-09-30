@@ -2,19 +2,19 @@ require "rails_helper"
 
 describe "Ballots" do
 
-  let!(:user)       { create(:user, :level_two) }
+  let(:user)        { create(:user, :level_two) }
   let!(:budget)     { create(:budget, :balloting) }
   let!(:states)     { create(:budget_group, budget: budget, name: "States") }
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
   let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
 
   context "Load" do
-
-    let(:ballot) { create(:budget_ballot, user: user, budget: budget) }
+    let(:user) do
+      create(:user, :level_two, ballot_lines: [create(:budget_investment, :selected, heading: california)])
+    end
 
     before do
       budget.update(slug: "budget_slug")
-      ballot.investments << create(:budget_investment, :selected, heading: california)
       login_as(user)
     end
 
@@ -43,7 +43,6 @@ describe "Ballots" do
     let!(:investment) { create(:budget_investment, :selected, heading: california) }
 
     before do
-      create(:budget_ballot, user: user, budget: budget)
       budget.update(slug: "budget_slug")
       login_as(user)
     end
@@ -179,9 +178,7 @@ describe "Ballots" do
       end
 
       scenario "Removing a investment", :js do
-        investment = create(:budget_investment, :selected, heading: new_york, price: 10000)
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
+        investment = create(:budget_investment, :selected, heading: new_york, price: 10000, balloters: [user])
 
         visit budget_path(budget)
         click_link "States"
@@ -343,11 +340,8 @@ describe "Ballots" do
     end
 
     scenario "Change my heading", :js do
-      investment1 = create(:budget_investment, :selected, heading: california)
+      investment1 = create(:budget_investment, :selected, heading: california, balloters: [user])
       investment2 = create(:budget_investment, :selected, heading: new_york)
-
-      ballot = create(:budget_ballot, user: user, budget: budget)
-      ballot.investments << investment1
 
       visit budget_investments_path(budget, heading_id: california.id)
 
@@ -367,10 +361,7 @@ describe "Ballots" do
     end
 
     scenario "View another heading" do
-      investment = create(:budget_investment, :selected, heading: california)
-
-      ballot = create(:budget_ballot, user: user, budget: budget)
-      ballot.investments << investment
+      create(:budget_investment, :selected, heading: california, balloters: [user])
 
       visit budget_investments_path(budget, heading_id: new_york.id)
 
@@ -407,9 +398,8 @@ describe "Ballots" do
       investment4 = create(:budget_investment, :selected, price: 5,  heading: heading2)
       investment5 = create(:budget_investment, :selected, price: 5,  heading: heading2)
 
-      ballot = create(:budget_ballot, user: user, budget: budget)
-
-      ballot.investments << investment1 << investment2 << investment3 << investment4 << investment5
+      user = create(:user, :level_two,
+                    ballot_lines: [investment1, investment2, investment3, investment4, investment5])
 
       login_as(user)
       visit budget_ballot_path(budget)
@@ -442,8 +432,7 @@ describe "Ballots" do
 
   scenario "Removing investments from ballot", :js do
     investment = create(:budget_investment, :selected, price: 10, heading: new_york)
-    ballot = create(:budget_ballot, user: user, budget: budget)
-    ballot.investments << investment
+    user = create(:user, :level_two, ballot_lines: [investment])
 
     login_as(user)
     visit budget_ballot_path(budget)
@@ -461,9 +450,7 @@ describe "Ballots" do
   scenario "Removing investments from ballot (sidebar)", :js do
     investment1 = create(:budget_investment, :selected, price: 10000, heading: new_york)
     investment2 = create(:budget_investment, :selected, price: 20000, heading: new_york)
-
-    ballot = create(:budget_ballot, budget: budget, user: user)
-    ballot.investments << investment1 << investment2
+    user = create(:user, :level_two, ballot_lines: [investment1, investment2])
 
     login_as(user)
     visit budget_investments_path(budget, heading_id: new_york.id)
@@ -588,9 +575,7 @@ describe "Ballots" do
     scenario "Different district", :js do
       bi1 = create(:budget_investment, :selected, heading: california)
       bi2 = create(:budget_investment, :selected, heading: new_york)
-
-      ballot = create(:budget_ballot, budget: budget, user: user)
-      ballot.investments << bi1
+      user = create(:user, :level_two, ballot_lines: [bi1])
 
       login_as(user)
       visit budget_investments_path(budget, heading: new_york)
@@ -605,9 +590,7 @@ describe "Ballots" do
     scenario "Insufficient funds (on page load)", :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
-
-      ballot = create(:budget_ballot, budget: budget, user: user)
-      ballot.investments << bi1
+      user = create(:user, :level_two, ballot_lines: [bi1])
 
       login_as(user)
       visit budget_investments_path(budget, heading_id: california.id)
@@ -645,9 +628,7 @@ describe "Ballots" do
     scenario "Insufficient funds (removed after destroy)", :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
-
-      ballot = create(:budget_ballot, budget: budget, user: user)
-      ballot.investments << bi1
+      user = create(:user, :level_two, ballot_lines: [bi1])
 
       login_as(user)
       visit budget_investments_path(budget, heading_id: california.id)
@@ -673,9 +654,7 @@ describe "Ballots" do
     scenario "Insufficient funds (removed after destroying from sidebar)", :js do
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
       bi2 = create(:budget_investment, :selected, heading: california, price: 500)
-
-      ballot = create(:budget_ballot, budget: budget, user: user)
-      ballot.investments << bi1
+      user = create(:user, :level_two, ballot_lines: [bi1])
 
       login_as(user)
       visit budget_investments_path(budget, heading_id: california.id)

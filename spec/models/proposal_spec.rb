@@ -442,12 +442,9 @@ describe Proposal do
 
     it "returns users that have voted for the proposal" do
       proposal = create(:proposal)
-      voter1 = create(:user, :level_two)
-      voter2 = create(:user, :level_two)
+      voter1 = create(:user, :level_two, votables: [proposal])
+      voter2 = create(:user, :level_two, votables: [proposal])
       voter3 = create(:user, :level_two)
-
-      create(:vote, voter: voter1, votable: proposal)
-      create(:vote, voter: voter2, votable: proposal)
 
       expect(proposal.voters).to match_array [voter1, voter2]
       expect(proposal.voters).not_to include(voter3)
@@ -455,11 +452,9 @@ describe Proposal do
 
     it "does not return users that have been erased" do
       proposal = create(:proposal)
-      voter1 = create(:user, :level_two)
-      voter2 = create(:user, :level_two)
+      voter1 = create(:user, :level_two, votables: [proposal])
+      voter2 = create(:user, :level_two, votables: [proposal])
 
-      create(:vote, voter: voter1, votable: proposal)
-      create(:vote, voter: voter2, votable: proposal)
       voter2.erase
 
       expect(proposal.voters).to eq [voter1]
@@ -467,11 +462,9 @@ describe Proposal do
 
     it "does not return users that have been blocked" do
       proposal = create(:proposal)
-      voter1 = create(:user, :level_two)
-      voter2 = create(:user, :level_two)
+      voter1 = create(:user, :level_two, votables: [proposal])
+      voter2 = create(:user, :level_two, votables: [proposal])
 
-      create(:vote, voter: voter1, votable: proposal)
-      create(:vote, voter: voter2, votable: proposal)
       voter2.block
 
       expect(proposal.voters).to eq [voter1]
@@ -920,32 +913,25 @@ describe Proposal do
 
     it "returns voters and followers" do
       proposal = create(:proposal)
-      voter = create(:user, :level_two)
-      follower = create(:user, :level_two)
-      follow = create(:follow, user: follower, followable: proposal)
-      create(:vote, voter: voter, votable: proposal)
+      voter = create(:user, :level_two, votables: [proposal])
+      follower = create(:user, :level_two, followables: [proposal])
 
       expect(proposal.users_to_notify).to eq([voter, follower])
     end
 
     it "returns voters and followers discarding duplicates" do
       proposal = create(:proposal)
-      voter_and_follower = create(:user, :level_two)
-      follow = create(:follow, user: voter_and_follower, followable: proposal)
-      create(:vote, voter: voter_and_follower, votable: proposal)
+      voter_and_follower = create(:user, :level_two, votables: [proposal], followables: [proposal])
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end
 
     it "returns voters and followers except the proposal author" do
       author = create(:user, :level_two)
-      proposal = create(:proposal, author: author)
       voter_and_follower = create(:user, :level_two)
-
-      create(:follow, user: author, followable: proposal)
-      create(:follow, user: voter_and_follower, followable: proposal)
-      create(:vote, voter: author, votable: proposal)
-      create(:vote, voter: voter_and_follower, votable: proposal)
+      proposal = create(:proposal, author: author,
+                        voters:    [author, voter_and_follower],
+                        followers: [author, voter_and_follower])
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end
@@ -963,11 +949,11 @@ describe Proposal do
     end
 
     it "returns proposals related to the user's interests ordered by cached_votes_up" do
+      create(:proposal, tag_list: "Sport", followers: [user])
+
       proposal1 = create(:proposal, cached_votes_up: 1,  tag_list: "Sport")
       proposal2 = create(:proposal, cached_votes_up: 5,  tag_list: "Sport")
       proposal3 = create(:proposal, cached_votes_up: 10, tag_list: "Sport")
-      proposal4 = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal4, user: user)
 
       results = Proposal.recommendations(user).sort_by_recommendations
 
@@ -975,9 +961,8 @@ describe Proposal do
     end
 
     it "does not return proposals unrelated to user interests" do
-      proposal1 =  create(:proposal, tag_list: "Sport")
-      proposal2 = create(:proposal, tag_list: "Politics")
-      create(:follow, followable: proposal1, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:proposal, tag_list: "Politics")
 
       results = Proposal.recommendations(user)
 
@@ -985,8 +970,7 @@ describe Proposal do
     end
 
     it "does not return proposals when user is follower" do
-      proposal1 = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal1, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
 
       results = Proposal.recommendations(user)
 
@@ -994,9 +978,8 @@ describe Proposal do
     end
 
     it "does not return proposals when user is the author" do
-      proposal1 = create(:proposal, tag_list: "Sport")
-      proposal2 = create(:proposal, author: user, tag_list: "Sport")
-      create(:follow, followable: proposal1, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:proposal, author: user, tag_list: "Sport")
 
       results = Proposal.recommendations(user)
 
@@ -1004,9 +987,8 @@ describe Proposal do
     end
 
     it "does not return archived proposals" do
-      proposal1 = create(:proposal, tag_list: "Sport")
-      archived_proposal = create(:proposal, :archived, tag_list: "Sport")
-      create(:follow, followable: proposal1, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:proposal, :archived, tag_list: "Sport")
 
       results = Proposal.recommendations(user)
 
@@ -1014,10 +996,8 @@ describe Proposal do
     end
 
     it "does not return already supported proposals" do
-      proposal1 = create(:proposal, tag_list: "Health")
-      proposal2 = create(:proposal, tag_list: "Health")
-      create(:vote, votable: proposal1, voter: user)
-      create(:follow, followable: proposal2, user: user)
+      create(:proposal, tag_list: "Health", followers: [user])
+      create(:proposal, tag_list: "Health", voters: [user])
 
       results = Proposal.recommendations(user)
 

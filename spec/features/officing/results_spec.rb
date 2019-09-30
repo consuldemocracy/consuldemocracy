@@ -19,13 +19,9 @@ describe "Officing Results", :with_frozen_time do
   end
 
   scenario "Only polls where user is officer for results are accessible" do
-    regular_officer_assignment_1 = create(:poll_officer_assignment, officer: poll_officer)
-    regular_officer_assignment_2 = create(:poll_officer_assignment, officer: poll_officer)
-
     not_allowed_poll_1 = create(:poll, :expired)
-    not_allowed_poll_2 = regular_officer_assignment_1.booth_assignment.poll
-    not_allowed_poll_2.update(ends_at: 1.day.ago)
-    not_allowed_poll_3 = regular_officer_assignment_2.booth_assignment.poll
+    not_allowed_poll_2 = create(:poll, officers: [poll_officer], ends_at: 1.day.ago)
+    not_allowed_poll_3 = create(:poll, officers: [poll_officer])
 
     visit root_path
     click_link "Polling officers"

@@ -637,9 +637,8 @@ describe "Proposals" do
   end
 
   scenario "Update should not be posible if proposal is not editable" do
-    proposal = create(:proposal)
-    Setting["max_votes_for_proposal_edit"] = 10
-    11.times { create(:vote, votable: proposal) }
+    Setting["max_votes_for_proposal_edit"] = 3
+    proposal = create(:proposal, voters: Array.new(4) { create(:user) })
 
     expect(proposal).not_to be_editable
 
@@ -750,9 +749,8 @@ describe "Proposals" do
       end
 
       scenario "are shown on index header when account setting is enabled" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit proposals_path
@@ -765,9 +763,8 @@ describe "Proposals" do
       end
 
       scenario "should display text when there are no results" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Distinct_to_sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit proposals_path
@@ -789,9 +786,8 @@ describe "Proposals" do
       end
 
       scenario "can be sorted when there's a logged user" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit proposals_path
@@ -810,9 +806,8 @@ describe "Proposals" do
       end
 
       scenario "are not shown if account setting is disabled" do
-        user     = create(:user, recommended_proposals: false)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, recommended_proposals: false, followables: [proposal])
 
         login_as(user)
         visit proposals_path
@@ -822,9 +817,8 @@ describe "Proposals" do
       end
 
       scenario "are automatically disabled when dismissed from index", :js do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit proposals_path
@@ -997,10 +991,10 @@ describe "Proposals" do
     end
 
     scenario "do not show recommented proposal in selected proposals list" do
-      create(:proposal, title: "Recommended", tag_list: "Economy")
-
       user = create(:user)
-      create(:follow, followable: create(:proposal, tag_list: "Economy"), user: user)
+
+      create(:proposal, tag_list: "Economy", followers: [user])
+      create(:proposal, title: "Recommended", tag_list: "Economy")
 
       login_as(user)
       visit proposals_path
@@ -1481,12 +1475,11 @@ describe "Proposals" do
     scenario "Reorder by recommendations results maintaing search" do
       user = create(:user, recommended_proposals: true)
 
-      proposal1 = create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
-      proposal2 = create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
-      proposal3 = create(:proposal, title: "Do not display with same tag", cached_votes_up: 100, tag_list: "Sport")
-      proposal4 = create(:proposal, title: "Do not display",    cached_votes_up: 1)
-      proposal5 = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal5, user: user)
+      create(:proposal, title: "Show you got",      cached_votes_up: 10,  tag_list: "Sport")
+      create(:proposal, title: "Show what you got", cached_votes_up: 1,   tag_list: "Sport")
+      create(:proposal, title: "Do not display with same tag", cached_votes_up: 100, tag_list: "Sport")
+      create(:proposal, title: "Do not display",    cached_votes_up: 1)
+      create(:proposal, tag_list: "Sport", followers: [user])
 
       login_as(user)
       visit proposals_path

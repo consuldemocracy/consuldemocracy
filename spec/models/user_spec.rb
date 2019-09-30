@@ -4,9 +4,6 @@ describe User do
 
   describe "#headings_voted_within_group" do
     it "returns the headings voted by a user" do
-      user1 = create(:user)
-      user2 = create(:user)
-
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
 
@@ -19,9 +16,8 @@ describe User do
       san_franciso_investment = create(:budget_investment, heading: san_francisco)
       wyoming_investment = create(:budget_investment, heading: wyoming)
 
-      create(:vote, votable: wyoming_investment, voter: user1)
-      create(:vote, votable: san_franciso_investment, voter: user1)
-      create(:vote, votable: new_york_investment, voter: user1)
+      user1 = create(:user, votables: [wyoming_investment, san_franciso_investment, new_york_investment])
+      user2 = create(:user)
 
       expect(user1.headings_voted_within_group(group)).to match_array [new_york, san_francisco, wyoming]
       expect(user1.headings_voted_within_group(group)).not_to include(another_heading)
@@ -30,10 +26,9 @@ describe User do
     end
 
     it "returns headings with multiple translations only once" do
-      user = create(:user)
       group = create(:budget_group)
       heading = create(:budget_heading, group: group, name_en: "English", name_es: "Spanish")
-      create(:vote, votable: create(:budget_investment, heading: heading), voter: user)
+      user = create(:user, votables: [create(:budget_investment, heading: heading)])
 
       expect(user.headings_voted_within_group(group).count).to eq 1
     end
@@ -695,15 +690,13 @@ describe User do
     let(:user) { create(:user) }
 
     it "returns followed object tags" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
 
       expect(user.interests).to eq ["Sport"]
     end
 
     it "deals gracefully with hidden proposals" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal, user: user)
+      proposal = create(:proposal, tag_list: "Sport", followers: [user])
 
       proposal.hide
 
@@ -711,13 +704,9 @@ describe User do
     end
 
     it "discards followed objects duplicated tags" do
-      proposal1 = create(:proposal, tag_list: "Sport")
-      proposal2 = create(:proposal, tag_list: "Sport")
-      budget_investment = create(:budget_investment, tag_list: "Sport")
-
-      create(:follow, followable: proposal1, user: user)
-      create(:follow, followable: proposal2, user: user)
-      create(:follow, followable: budget_investment, user: user)
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:budget_investment, tag_list: "Sport", followers: [user])
 
       expect(user.interests).to eq ["Sport"]
     end

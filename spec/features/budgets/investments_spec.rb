@@ -789,11 +789,8 @@ describe "Budget Investments" do
 
       per_page.times { create(:budget_investment, heading: heading) }
 
-      voted_investments = []
-      per_page.times do
-        investment = create(:budget_investment, heading: heading)
-        create(:vote, votable: investment, voter: voter)
-        voted_investments << investment
+      voted_investments = Array.new(per_page) do
+        create(:budget_investment, heading: heading, voters: [voter])
       end
 
       login_as(voter)
@@ -1354,10 +1351,8 @@ describe "Budget Investments" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [author])
         salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: author)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
@@ -1374,10 +1369,8 @@ describe "Budget Investments" do
         another_heading1 = create(:budget_heading, group: group2)
         another_heading2 = create(:budget_heading, group: group2)
 
-        heading_investment = create(:budget_investment, heading: heading)
+        heading_investment = create(:budget_investment, heading: heading, voters: [author])
         another_group_investment = create(:budget_investment, heading: another_heading1)
-
-        create(:vote, votable: heading_investment, voter: author)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: another_heading1.id)
@@ -1417,8 +1410,7 @@ describe "Budget Investments" do
     end
 
     scenario "Sidebar in show should display support text and count" do
-      investment = create(:budget_investment, :selected, budget: budget)
-      create(:vote, votable: investment)
+      investment = create(:budget_investment, :selected, budget: budget, voters: [create(:user)])
 
       visit budget_investment_path(budget, investment)
 
@@ -1429,8 +1421,7 @@ describe "Budget Investments" do
     end
 
     scenario "Index should display support count" do
-      investment = create(:budget_investment, budget: budget, heading: heading)
-      create(:vote, votable: investment)
+      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1440,8 +1431,7 @@ describe "Budget Investments" do
     end
 
     scenario "Show should display support text and count" do
-      investment = create(:budget_investment, budget: budget, heading: heading)
-      create(:vote, votable: investment)
+      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
 
       visit budget_investment_path(budget, investment)
 
@@ -1725,12 +1715,9 @@ describe "Budget Investments" do
     describe "Reclassification" do
 
       scenario "Due to heading change" do
-        user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
+        user = create(:user, :level_two, ballot_lines: [investment])
         heading2 = create(:budget_heading, group: group)
-
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
 
         login_as(user)
         visit budget_ballot_path(budget)
@@ -1746,11 +1733,8 @@ describe "Budget Investments" do
       end
 
       scenario "Due to being unfeasible" do
-        user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
-
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
+        user = create(:user, :level_two, ballot_lines: [investment])
 
         login_as(user)
         visit budget_ballot_path(budget)

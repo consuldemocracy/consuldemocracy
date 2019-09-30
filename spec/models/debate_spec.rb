@@ -749,11 +749,11 @@ describe Debate do
     end
 
     it "returns debates related to the user's interests ordered by cached_votes_total" do
+      create(:proposal, tag_list: "Sport", followers: [user])
+
       debate1 =  create(:debate, cached_votes_total: 1, tag_list: "Sport")
       debate2 =  create(:debate, cached_votes_total: 5, tag_list: "Sport")
       debate3 =  create(:debate, cached_votes_total: 10, tag_list: "Sport")
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal, user: user)
 
       results = Debate.recommendations(user).sort_by_recommendations
 
@@ -761,9 +761,8 @@ describe Debate do
     end
 
     it "does not return debates unrelated to user interests" do
-      proposal1 = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal1, user: user)
-      debate2 =  create(:debate, tag_list: "Politics")
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:debate, tag_list: "Politics")
 
       results = Debate.recommendations(user)
 
@@ -771,9 +770,8 @@ describe Debate do
     end
 
     it "does not return debates when user is the author" do
-      proposal = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal, user: user)
-      debate1 =  create(:debate, author: user, tag_list: "Sport")
+      create(:proposal, tag_list: "Sport", followers: [user])
+      create(:debate, author: user, tag_list: "Sport")
 
       results = Debate.recommendations(user)
 

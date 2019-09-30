@@ -42,6 +42,14 @@ FactoryBot.define do
     trait :with_image do
       after(:create) { |poll| create(:image, imageable: poll) }
     end
+
+    transient { officers { [] } }
+
+    after(:create) do |poll, evaluator|
+      evaluator.officers.each do |officer|
+        create(:poll_officer_assignment, poll: poll, officer: officer)
+      end
+    end
   end
 
   factory :poll_question, class: "Poll::Question" do
@@ -121,16 +129,22 @@ FactoryBot.define do
   end
 
   factory :poll_question_answer, class: "Poll::Question::Answer" do
-    association :question, factory: :poll_question
     sequence(:title) { |n| "Answer title #{n}" }
     sequence(:description) { |n| "Answer description #{n}" }
     sequence(:given_order) { |n| n }
+
+    transient { poll { association(:poll) } }
+
+    question { association(:poll_question, poll: poll) }
   end
 
   factory :poll_answer_video, class: "Poll::Question::Answer::Video" do
-    association :answer, factory: :poll_question_answer
     title { "Sample video title" }
     url { "https://youtu.be/nhuNb0XtRhQ" }
+
+    transient { poll { association(:poll) } }
+
+    answer { association(:poll_question_answer, poll: poll) }
   end
 
   factory :poll_booth, class: "Poll::Booth" do
@@ -188,8 +202,10 @@ FactoryBot.define do
     trait :from_booth do
       origin { "booth" }
 
+      transient { booth { association(:poll_booth) } }
+
       booth_assignment do
-        association :poll_booth_assignment, poll: poll
+        association :poll_booth_assignment, poll: poll, booth: booth
       end
 
       officer_assignment do

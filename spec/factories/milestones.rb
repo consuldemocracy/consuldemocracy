@@ -12,7 +12,11 @@ FactoryBot.define do
     publication_date     { Date.current }
 
     trait :with_image do
-      after(:create) { |milestone| create(:image, imageable: milestone) }
+      transient { image_title { "Current status of the project" } }
+
+      after(:create) do |milestone, evaluator|
+        create(:image, imageable: milestone, title: evaluator.image_title)
+      end
     end
 
     factory :milestone_with_description do

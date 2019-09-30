@@ -128,7 +128,7 @@ describe "Notifications" do
   end
 
   scenario "Notification's notifiable model no longer includes Notifiable module" do
-    create(:notification, notifiable: create(:poll_question), user: user)
+    create(:notification, :for_poll_question, user: user)
 
     click_notifications_icon
     expect(page).to have_content("This resource is not available anymore.", count: 1)

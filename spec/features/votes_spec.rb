@@ -188,10 +188,9 @@ describe "Votes" do
     before { login_as(@manuela) }
 
     scenario "Index shows user votes on proposals" do
-      proposal1 = create(:proposal)
+      proposal1 = create(:proposal, voters: [@manuela])
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
-      create(:vote, voter: @manuela, votable: proposal1, vote_flag: true)
 
       visit proposals_path
 

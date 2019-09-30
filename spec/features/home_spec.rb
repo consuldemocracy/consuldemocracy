@@ -25,9 +25,8 @@ describe "Home" do
     describe "Recommended" do
 
       before do
-        user = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user = create(:user, followables: [proposal])
         login_as(user)
       end
 

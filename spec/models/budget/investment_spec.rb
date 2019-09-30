@@ -748,10 +748,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
         salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(false)
       end
@@ -762,10 +760,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
         salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
 
         expect(salamanca_investment.valid_heading?(user)).to eq(true)
       end
@@ -776,11 +772,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-        salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
-        create(:vote, votable: salamanca_investment, voter: user)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
+        salamanca_investment   = create(:budget_investment, heading: salamanca, voters: [user])
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
         expect(salamanca_investment.valid_heading?(user)).to eq(true)
@@ -792,10 +785,8 @@ describe Budget::Investment do
       end
 
       it "allows votes in a group with a single heading after voting in that heading" do
-        all_city_investment1 = create(:budget_investment, heading: heading)
+        all_city_investment1 = create(:budget_investment, heading: heading, voters: [user])
         all_city_investment2 = create(:budget_investment, heading: heading)
-
-        create(:vote, votable: all_city_investment1, voter: user)
 
         expect(all_city_investment2.valid_heading?(user)).to eq(true)
       end
@@ -805,9 +796,7 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: districts)
 
         all_city_investment    = create(:budget_investment, heading: heading)
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-
-        create(:vote, votable: carabanchel_investment, voter: user)
+        carabanchel_investment = create(:budget_investment, heading: carabanchel, voters: [user])
 
         expect(all_city_investment.valid_heading?(user)).to eq(true)
       end
@@ -817,10 +806,8 @@ describe Budget::Investment do
         carabanchel = create(:budget_heading, group: districts)
         salamanca   = create(:budget_heading, group: districts)
 
-        all_city_investment    = create(:budget_investment, heading: heading)
+        all_city_investment    = create(:budget_investment, heading: heading, voters: [user])
         carabanchel_investment = create(:budget_investment, heading: carabanchel)
-
-        create(:vote, votable: all_city_investment, voter: user)
 
         expect(carabanchel_investment.valid_heading?(user)).to eq(true)
       end
@@ -929,9 +916,8 @@ describe Budget::Investment do
 
   describe "#with_supports" do
     it "returns proposals with supports" do
-      inv1 = create(:budget_investment)
+      inv1 = create(:budget_investment, voters: [create(:user)])
       inv2 = create(:budget_investment)
-      create(:vote, votable: inv1)
 
       expect(Budget::Investment.with_supports).to eq [inv1]
       expect(Budget::Investment.with_supports).not_to include(inv2)
@@ -990,8 +976,7 @@ describe Budget::Investment do
 
           inv1 = create(:budget_investment, :selected, budget: budget, heading: california)
           inv2 = create(:budget_investment, :selected, budget: budget, heading: new_york)
-          ballot = create(:budget_ballot, user: user, budget: budget)
-          ballot.investments << inv1
+          ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned_html)
         end
@@ -1003,8 +988,7 @@ describe Budget::Investment do
           inv1 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 30)
           inv2 = create(:budget_investment, :selected, budget: budget, heading: carabanchel, price: 10)
 
-          ballot = create(:budget_ballot, user: user, budget: budget)
-          ballot.investments << inv1
+          ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
 
           expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money_html)
         end
@@ -1074,10 +1058,7 @@ describe Budget::Investment do
       it "stores the votes for a reclassified investment" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 
@@ -1098,10 +1079,7 @@ describe Budget::Investment do
       it "removes votes from invesment" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 
@@ -1119,10 +1097,7 @@ describe Budget::Investment do
       it "stores reclassfied votes and removes actual votes if an investment has been reclassified" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 
@@ -1137,10 +1112,7 @@ describe Budget::Investment do
       it "does not store reclassified votes nor remove actual votes if the investment has not been reclassifed" do
         investment = create(:budget_investment, :selected, heading: heading1)
 
-        3.times do
-          ballot = create(:budget_ballot, budget: budget)
-          ballot.investments << investment
-        end
+        3.times { create(:user, ballot_lines: [investment]) }
 
         expect(investment.ballot_lines_count).to eq(3)
 

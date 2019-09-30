@@ -130,28 +130,25 @@ describe "Topics" do
   context "Destroy" do
 
     scenario "Can destroy a topic" do
-      proposal = create(:proposal)
-      community = proposal.community
       user = create(:user)
-      topic = create(:topic, community: community, author: user)
+      topic = create(:topic, :with_community, author: user)
+
       login_as(user)
-      visit community_topic_path(community, topic)
+      visit community_topic_path(topic.community, topic)
 
       click_link "Delete topic"
 
       expect(page).to have_content "Topic deleted successfully."
       expect(page).not_to have_content topic.title
-      expect(page).to have_current_path(community_path(community))
+      expect(page).to have_current_path(community_path(topic.community))
     end
 
     scenario "Can not destroy a topic when user logged is not an author" do
-      proposal = create(:proposal)
-      community = proposal.community
-      topic = create(:topic, community: community)
       user = create(:user)
-      login_as(user)
+      topic = create(:topic, :with_community)
 
-      visit community_path(community)
+      login_as(user)
+      visit community_path(topic.community)
 
       expect(page).not_to have_link "Delete"
     end

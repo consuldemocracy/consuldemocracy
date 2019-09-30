@@ -136,13 +136,11 @@ describe "Polls" do
     end
 
     scenario "Show answers with videos" do
-      question = create(:poll_question, poll: poll)
-      answer = create(:poll_question_answer, question: question, title: "Chewbacca")
-      video = create(:poll_answer_video, answer: answer, title: "Awesome project video", url: "https://www.youtube.com/watch?v=123")
+      create(:poll_answer_video, poll: poll, title: "Awesome video", url: "youtube.com/watch?v=123")
 
       visit poll_path(poll)
 
-      expect(page).to have_link("Awesome project video", href: "https://www.youtube.com/watch?v=123")
+      expect(page).to have_link("Awesome video", href: "youtube.com/watch?v=123")
     end
 
     scenario "Lists questions from proposals as well as regular ones" do
