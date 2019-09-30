@@ -1,13 +1,13 @@
 require "rails_helper"
 
 describe Dashboard::Mailer do
+  let!(:action) do
+    create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
+  end
 
-  let!(:action)   { create(:dashboard_action, :proposed_action, :active,
-                            day_offset: 0,
-                            published_proposal: true) }
-  let!(:resource) { create(:dashboard_action, :resource, :active,
-                            day_offset: 0,
-                            published_proposal: true) }
+  let!(:resource) do
+    create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+  end
 
   before do
     Setting["dashboard.emails"] = true

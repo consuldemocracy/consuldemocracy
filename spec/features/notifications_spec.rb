@@ -234,8 +234,9 @@ describe "Notifications" do
   end
 
   def users_without_notifications
-    User.all.select { |user| user.notifications.not_emailed
-                             .where(notifiable_type: "ProposalNotification").blank? }
+    User.all.select do |user|
+      user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").blank?
+    end
   end
 
 end

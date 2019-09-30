@@ -1,10 +1,11 @@
 require "rails_helper"
 
 describe Poll::BallotSheet do
-
-  let(:ballot_sheet) { build(:poll_ballot_sheet, poll: create(:poll),
-                             officer_assignment: create(:poll_officer_assignment),
-                             data: "1234;5678") }
+  let(:ballot_sheet) do
+    build(:poll_ballot_sheet, poll: create(:poll),
+          officer_assignment: create(:poll_officer_assignment),
+          data: "1234;5678")
+  end
 
   context "Validations" do
 

@@ -17,10 +17,12 @@ class Legislation::ProcessesController < Legislation::BaseController
 
     respond_to do |format|
       format.html
-      format.csv { send_data to_csv(process_for_download, Legislation::Process),
-                             type: "text/csv",
-                             disposition: "attachment",
-                             filename: "legislation_processes.csv" }
+      format.csv do
+        send_data to_csv(process_for_download, Legislation::Process),
+                  type: "text/csv",
+                  disposition: "attachment",
+                  filename: "legislation_processes.csv"
+      end
     end
   end
 

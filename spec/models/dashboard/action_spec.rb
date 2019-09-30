@@ -152,21 +152,31 @@ describe Dashboard::Action do
 
   context "#active_for" do
     let!(:active_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 0 }
-    let!(:not_enough_supports_action) { create :dashboard_action, :active, day_offset: 0,
-                                                                  required_supports: 10_000 }
     let!(:inactive_action) { create :dashboard_action, :inactive }
-    let!(:future_action) { create :dashboard_action, :active, day_offset: 300,
-                                                     required_supports: 0 }
-    let!(:action_published_proposal) { create :dashboard_action,
-                                                  :active,
-                                                  day_offset: 0,
-                                                  required_supports: 0,
-                                                  published_proposal: true }
-    let!(:action_for_draft_proposal) { create :dashboard_action,
-                                              :active,
-                                              day_offset: 0,
-                                              required_supports: 0,
-                                              published_proposal: false }
+    let!(:not_enough_supports_action) do
+      create :dashboard_action, :active, day_offset: 0, required_supports: 10_000
+    end
+
+    let!(:future_action) do
+      create :dashboard_action, :active, day_offset: 300, required_supports: 0
+    end
+
+    let!(:action_published_proposal) do
+      create :dashboard_action,
+             :active,
+             day_offset: 0,
+             required_supports: 0,
+             published_proposal: true
+    end
+
+    let!(:action_for_draft_proposal) do
+      create :dashboard_action,
+             :active,
+             day_offset: 0,
+             required_supports: 0,
+             published_proposal: false
+    end
+
     let(:proposal) { create :proposal }
     let(:draft_proposal) { create :proposal, :draft }
 
@@ -205,8 +215,9 @@ describe Dashboard::Action do
 
   context "#course_for" do
     let!(:proposed_action) { create :dashboard_action, :active, required_supports: 0 }
-    let!(:inactive_resource) { create :dashboard_action, :inactive, :resource,
-                                                         required_supports: 0 }
+    let!(:inactive_resource) do
+      create :dashboard_action, :inactive, :resource, required_supports: 0
+    end
     let!(:resource) { create :dashboard_action, :active, :resource, required_supports: 10_000 }
     let!(:achieved_resource) { create :dashboard_action, :active, :resource, required_supports: 0 }
     let(:proposal) { create :proposal }
@@ -272,12 +283,15 @@ describe Dashboard::Action do
     describe "Detect new actions when there are news actions actived" do
 
       context "for published proposals" do
-
         let!(:proposal) { create(:proposal) }
-        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                     published_proposal: true) }
-        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                     published_proposal: true) }
+
+        let!(:action) do
+          create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
+        end
+
+        let!(:resource) do
+          create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+        end
 
         it "when proposal has been created today and day_offset is valid only for today" do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
@@ -301,12 +315,15 @@ describe Dashboard::Action do
       end
 
       context "for draft proposals" do
-
         let!(:proposal) { create(:proposal, :draft) }
-        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                     published_proposal: false) }
-        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                     published_proposal: false) }
+
+        let!(:action) do
+          create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+        end
+
+        let!(:resource) do
+          create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+        end
 
         it "when day_offset field is valid for today and invalid for yesterday" do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,

@@ -81,9 +81,7 @@ RSpec.describe I18nContent, type: :model do
     end
 
     it "uses the first and last parameters" do
-      expect {
-        I18nContent.flat_hash("string", nil, "not hash")
-      }.to raise_error(NoMethodError)
+      expect { I18nContent.flat_hash("string", nil, "not hash") }.to raise_error(NoMethodError)
 
       expect(I18nContent.flat_hash(nil, nil, { q: "other string" })).to eq({
         q: "other string",
@@ -102,9 +100,7 @@ RSpec.describe I18nContent, type: :model do
     end
 
     it "uses all parameters" do
-      expect {
-        I18nContent.flat_hash("string", "f", "not hash")
-      }.to raise_error NoMethodError
+      expect { I18nContent.flat_hash("string", "f", "not hash") }.to raise_error NoMethodError
 
       expect(I18nContent.flat_hash(nil, "f", { q: "other string" })).to eq({
         q: "other string",

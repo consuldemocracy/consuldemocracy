@@ -75,8 +75,8 @@ class Poll::Question < ApplicationRecord
   end
 
   def answers_with_read_more?
-    question_answers.visibles.any? do |answer| answer.description.present? || answer.images.any? ||
-      answer.documents.present? || answer.videos.present?
+    question_answers.visibles.any? do |answer|
+      answer.description.present? || answer.images.any? || answer.documents.present? || answer.videos.present?
     end
   end
 

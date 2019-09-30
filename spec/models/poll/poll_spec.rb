@@ -145,8 +145,9 @@ describe Poll do
     let!(:expired_poll) { create(:poll, :expired) }
 
     let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-    let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted: true,
-                                                             geozones: [geozone]) }
+    let!(:expired_restricted_poll) do
+      create(:poll, :expired, geozone_restricted: true, geozones: [geozone])
+    end
 
     let!(:all_polls) { [current_poll, expired_poll, current_poll, expired_restricted_poll] }
     let(:non_current_polls) { [expired_poll, expired_restricted_poll] }
@@ -313,13 +314,17 @@ describe Poll do
     let(:proposal) { create :proposal }
     let(:other_proposal) { create :proposal }
     let(:poll) { create(:poll, related: proposal) }
-    let(:overlaping_poll) { build(:poll, related: proposal, starts_at: poll.starts_at + 1.day,
-                                                            ends_at: poll.ends_at - 1.day) }
-    let(:non_overlaping_poll) { create(:poll, related: proposal, starts_at: poll.ends_at + 1.day,
-                                                                 ends_at: poll.ends_at + 31.days) }
-    let(:overlaping_poll_2) { create(:poll, related: other_proposal,
-                                            starts_at: poll.starts_at + 1.day,
-                                            ends_at: poll.ends_at - 1.day) }
+    let(:overlaping_poll) do
+      build(:poll, related: proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)
+    end
+
+    let(:non_overlaping_poll) do
+      create(:poll, related: proposal, starts_at: poll.ends_at + 1.day, ends_at: poll.ends_at + 31.days)
+    end
+
+    let(:overlaping_poll_2) do
+      create(:poll, related: other_proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)
+    end
 
     it "a poll can not overlap itself" do
       expect(Poll.overlaping_with(poll)).not_to include(poll)
