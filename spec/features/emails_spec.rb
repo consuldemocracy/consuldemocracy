@@ -373,10 +373,8 @@ describe "Emails" do
 
     scenario "Unfeasible investment" do
       budget.update(phase: "valuating")
-      investment = create(:budget_investment, author: author, budget: budget)
-
       valuator = create(:valuator)
-      investment.valuators << valuator
+      investment = create(:budget_investment, author: author, budget: budget, valuators: [valuator])
 
       login_as(valuator.user)
       visit edit_valuation_budget_budget_investment_path(budget, investment)
