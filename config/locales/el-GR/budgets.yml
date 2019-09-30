@@ -125,7 +125,7 @@ el:
         milestones_tab: Ορόσημα
         author: Συγγραφέας
         project_unfeasible_html: "Αυτό το σχέδιο επενδύσεων <strong>έχει επισημανθεί ως μη εφικτό</strong> και δεν θα πάει σε φάση ψηφοφορίας."
-        project_selected_html: "Αυτό το σχέδιο επενδύσεων <strong>έχει επιλεγεί</strong> για φάση ψηφοφορίας."
+        project_selected_html: "Αυτό το σχέδιο επενδύσεων <strong>έχει επιλεγεί</strong> για τη φάση της ψηφοφορίας."
         project_winner: "Το επενδυτικό σχέδιο που κερδίζει"
         project_not_selected_html: "Αυτό το σχέδιο επενδύσεων <strong>δεν έχει επιλεγεί</strong> για φάση ψηφοφορίας."
         see_price_explanation: Δείτε την επεξήγηση της τιμής
