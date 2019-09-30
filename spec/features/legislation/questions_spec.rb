@@ -2,15 +2,20 @@ require "rails_helper"
 
 describe "Legislation" do
   context "process debate page" do
+    let(:process) do
+      create(:legislation_process,
+             debate_start_date: Date.current - 3.days,
+             debate_end_date: Date.current + 2.days)
+    end
+
     before do
-      @process = create(:legislation_process, debate_start_date: Date.current - 3.days, debate_end_date: Date.current + 2.days)
-      create(:legislation_question, process: @process, title: "Question 1")
-      create(:legislation_question, process: @process, title: "Question 2")
-      create(:legislation_question, process: @process, title: "Question 3")
+      create(:legislation_question, process: process, title: "Question 1")
+      create(:legislation_question, process: process, title: "Question 2")
+      create(:legislation_question, process: process, title: "Question 3")
     end
 
     scenario "shows question list" do
-      visit legislation_process_path(@process)
+      visit legislation_process_path(process)
 
       expect(page).to have_content("Participate in the debate")
 
@@ -35,14 +40,14 @@ describe "Legislation" do
     end
 
     scenario "shows question page" do
-      visit legislation_process_question_path(@process, @process.questions.first)
+      visit legislation_process_question_path(process, process.questions.first)
 
       expect(page).to have_content("Question 1")
       expect(page).to have_content("Open answers (0)")
     end
 
     scenario "shows next question link in question page" do
-      visit legislation_process_question_path(@process, @process.questions.first)
+      visit legislation_process_question_path(process, process.questions.first)
 
       expect(page).to have_content("Question 1")
       expect(page).to have_content("Next question")
@@ -59,7 +64,7 @@ describe "Legislation" do
     end
 
     scenario "answer question" do
-      question = @process.questions.first
+      question = process.questions.first
       create(:legislation_question_option, question: question, value: "Yes")
       create(:legislation_question_option, question: question, value: "No")
       option = create(:legislation_question_option, question: question, value: "I don't know")
@@ -67,7 +72,7 @@ describe "Legislation" do
 
       login_as(user)
 
-      visit legislation_process_question_path(@process, question)
+      visit legislation_process_question_path(process, question)
 
       expect(page).to have_selector(:radio_button, "Yes")
       expect(page).to have_selector(:radio_button, "No")
@@ -89,8 +94,8 @@ describe "Legislation" do
     end
 
     scenario "cannot answer question when phase not open" do
-      @process.update_attribute(:debate_end_date, Date.current - 1.day)
-      question = @process.questions.first
+      process.update_attribute(:debate_end_date, Date.current - 1.day)
+      question = process.questions.first
       create(:legislation_question_option, question: question, value: "Yes")
       create(:legislation_question_option, question: question, value: "No")
       create(:legislation_question_option, question: question, value: "I don't know")
@@ -98,7 +103,7 @@ describe "Legislation" do
 
       login_as(user)
 
-      visit legislation_process_question_path(@process, question)
+      visit legislation_process_question_path(process, question)
 
       expect(page).to have_selector(:radio_button, "Yes", disabled: true)
       expect(page).to have_selector(:radio_button, "No", disabled: true)

@@ -37,28 +37,31 @@ describe "Legislation Proposals" do
       let(:per_page) { 12 }
 
       scenario "Each user has a different and consistent random proposals order", :js do
+        first_user_proposals_order = nil
+        second_user_proposals_order = nil
+
         in_browser(:one) do
           login_as user
           visit legislation_process_proposals_path(process)
-          @first_user_proposals_order = legislation_proposals_order
+          first_user_proposals_order = legislation_proposals_order
         end
 
         in_browser(:two) do
           login_as user2
           visit legislation_process_proposals_path(process)
-          @second_user_proposals_order = legislation_proposals_order
+          second_user_proposals_order = legislation_proposals_order
         end
 
-        expect(@first_user_proposals_order).not_to eq(@second_user_proposals_order)
+        expect(first_user_proposals_order).not_to eq(second_user_proposals_order)
 
         in_browser(:one) do
           visit legislation_process_proposals_path(process)
-          expect(legislation_proposals_order).to eq(@first_user_proposals_order)
+          expect(legislation_proposals_order).to eq(first_user_proposals_order)
         end
 
         in_browser(:two) do
           visit legislation_process_proposals_path(process)
-          expect(legislation_proposals_order).to eq(@second_user_proposals_order)
+          expect(legislation_proposals_order).to eq(second_user_proposals_order)
         end
       end
     end

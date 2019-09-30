@@ -51,41 +51,42 @@ describe "Moderate proposals" do
     end
 
     describe "moderate in bulk" do
+      let!(:proposal) { create(:proposal) }
+
       describe "When a proposal has been selected for moderation" do
         before do
-          @proposal = create(:proposal)
           visit moderation_proposals_path
           within(".menu.simple") do
             click_link "All"
           end
 
-          within("#proposal_#{@proposal.id}") do
-            check "proposal_#{@proposal.id}_check"
+          within("#proposal_#{proposal.id}") do
+            check "proposal_#{proposal.id}_check"
           end
 
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
+          expect(page).not_to have_css("proposal_#{proposal.id}")
         end
 
         scenario "Hide the proposal" do
           click_on "Hide proposals"
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
-          expect(@proposal.reload).to be_hidden
-          expect(@proposal.author).not_to be_hidden
+          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(proposal.reload).to be_hidden
+          expect(proposal.author).not_to be_hidden
         end
 
         scenario "Block the author" do
           click_on "Block authors"
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
-          expect(@proposal.reload).to be_hidden
-          expect(@proposal.author).to be_hidden
+          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(proposal.reload).to be_hidden
+          expect(proposal.author).to be_hidden
         end
 
         scenario "Ignore the proposal" do
           click_button "Mark as viewed"
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
-          expect(@proposal.reload).to be_ignored_flag
-          expect(@proposal.reload).not_to be_hidden
-          expect(@proposal.author).not_to be_hidden
+          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(proposal.reload).to be_ignored_flag
+          expect(proposal.reload).not_to be_hidden
+          expect(proposal.author).not_to be_hidden
         end
       end
 

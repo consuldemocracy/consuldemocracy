@@ -453,23 +453,22 @@ describe "Commenting polls" do
   end
 
   describe "Voting comments" do
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:poll)       { create(:poll) }
+    let!(:comment)   { create(:comment, commentable: poll) }
 
     before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @poll = create(:poll)
-      @comment = create(:comment, commentable: @poll)
-
-      login_as(@manuela)
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit poll_path(@poll)
+      visit poll_path(poll)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -483,9 +482,9 @@ describe "Commenting polls" do
     end
 
     scenario "Create", :js do
-      visit poll_path(@poll)
+      visit poll_path(poll)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -501,9 +500,9 @@ describe "Commenting polls" do
     end
 
     scenario "Update", :js do
-      visit poll_path(@poll)
+      visit poll_path(poll)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -525,9 +524,9 @@ describe "Commenting polls" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit poll_path(@poll)
+      visit poll_path(poll)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         find(".in_favor a").click
 

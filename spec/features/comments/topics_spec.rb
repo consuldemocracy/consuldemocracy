@@ -481,23 +481,23 @@ describe "Commenting topics from proposals" do
   end
 
   describe "Voting comments" do
-    before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @proposal = create(:proposal)
-      @topic = create(:topic, community: @proposal.community)
-      @comment = create(:comment, commentable: @topic)
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:proposal)   { create(:proposal) }
+    let(:topic)      { create(:topic, community: proposal.community) }
+    let!(:comment)   { create(:comment, commentable: topic) }
 
-      login_as(@manuela)
+    before do
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit community_topic_path(@proposal.community, @topic)
+      visit community_topic_path(proposal.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -511,9 +511,9 @@ describe "Commenting topics from proposals" do
     end
 
     scenario "Create", :js do
-      visit community_topic_path(@proposal.community, @topic)
+      visit community_topic_path(proposal.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -529,9 +529,9 @@ describe "Commenting topics from proposals" do
     end
 
     scenario "Update", :js do
-      visit community_topic_path(@proposal.community, @topic)
+      visit community_topic_path(proposal.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -553,9 +553,9 @@ describe "Commenting topics from proposals" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit community_topic_path(@proposal.community, @topic)
+      visit community_topic_path(proposal.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         find(".in_favor a").click
 
@@ -1032,23 +1032,23 @@ describe "Commenting topics from budget investments" do
   end
 
   describe "Voting comments" do
-    before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @investment = create(:budget_investment)
-      @topic = create(:topic, community: @investment.community)
-      @comment = create(:comment, commentable: @topic)
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:investment) { create(:budget_investment) }
+    let(:topic)      { create(:topic, community: investment.community) }
+    let!(:comment)   { create(:comment, commentable: topic) }
 
-      login_as(@manuela)
+    before do
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit community_topic_path(@investment.community, @topic)
+      visit community_topic_path(investment.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -1062,9 +1062,9 @@ describe "Commenting topics from budget investments" do
     end
 
     scenario "Create", :js do
-      visit community_topic_path(@investment.community, @topic)
+      visit community_topic_path(investment.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -1080,9 +1080,9 @@ describe "Commenting topics from budget investments" do
     end
 
     scenario "Update", :js do
-      visit community_topic_path(@investment.community, @topic)
+      visit community_topic_path(investment.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -1104,9 +1104,9 @@ describe "Commenting topics from budget investments" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit community_topic_path(@investment.community, @topic)
+      visit community_topic_path(investment.community, topic)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         find(".in_favor a").click
 

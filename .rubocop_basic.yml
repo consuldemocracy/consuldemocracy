@@ -199,6 +199,12 @@ RSpec/Focus:
 RSpec/HookArgument:
   Enabled: true
 
+RSpec/InstanceVariable:
+  Enabled: true
+  Exclude:
+    - spec/controllers/concerns/has_filters_spec.rb
+    - spec/controllers/concerns/has_orders_spec.rb
+
 RSpec/LetBeforeExamples:
   Enabled: true
 

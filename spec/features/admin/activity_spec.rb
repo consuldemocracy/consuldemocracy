@@ -1,10 +1,10 @@
 require "rails_helper"
 
 describe "Admin activity" do
+  let(:admin) { create(:administrator) }
 
   before do
-    @admin = create(:administrator)
-    login_as(@admin.user)
+    login_as(admin.user)
   end
 
   context "Proposals" do
@@ -23,7 +23,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -65,7 +65,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal.title)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -86,7 +86,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(debate.title)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -128,7 +128,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(debate.title)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -150,7 +150,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(comment.body)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -192,7 +192,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(comment.body)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -215,7 +215,7 @@ describe "Admin activity" do
         expect(page).to have_content("Blocked")
         expect(page).to have_content(proposal.author.username)
         expect(page).to have_content(proposal.author.email)
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
         expect(page).not_to have_content(proposal.title)
       end
     end
@@ -234,7 +234,7 @@ describe "Admin activity" do
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
 
@@ -331,7 +331,7 @@ describe "Admin activity" do
         expect(page).to have_content(user.username)
         expect(page).to have_content(user.email)
         expect(page).to have_content("Restored")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end
@@ -342,14 +342,14 @@ describe "Admin activity" do
       proposal_notification = create(:proposal_notification, proposal: proposal,
                                                                title: "Proposal A Title",
                                                                body: "Proposal A Notification Body")
-      proposal_notification.moderate_system_email(@admin.user)
+      proposal_notification.moderate_system_email(admin.user)
 
       visit admin_activity_path
 
       within("#activity_#{Activity.last.id}") do
         expect(page).to have_content(proposal_notification.title)
         expect(page).to have_content("Hidden")
-        expect(page).to have_content(@admin.user.username)
+        expect(page).to have_content(admin.user.username)
       end
     end
   end

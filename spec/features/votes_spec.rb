@@ -1,22 +1,22 @@
 require "rails_helper"
 
 describe "Votes" do
+  let!(:verified)   { create(:user, verified_at: Time.current) }
+  let!(:unverified) { create(:user) }
 
   before do
-    @manuela = create(:user, verified_at: Time.current)
-    @pablo = create(:user)
   end
 
   describe "Debates" do
-    before { login_as(@manuela) }
+    before { login_as(verified) }
 
     scenario "Index shows user votes on debates" do
 
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
-      create(:vote, voter: @manuela, votable: debate1, vote_flag: true)
-      create(:vote, voter: @manuela, votable: debate3, vote_flag: false)
+      create(:vote, voter: verified, votable: debate1, vote_flag: true)
+      create(:vote, voter: verified, votable: debate3, vote_flag: false)
 
       visit debates_path
 
@@ -123,8 +123,8 @@ describe "Votes" do
 
       scenario "Show" do
         debate = create(:debate)
-        create(:vote, voter: @manuela, votable: debate, vote_flag: true)
-        create(:vote, voter: @pablo, votable: debate, vote_flag: false)
+        create(:vote, voter: verified, votable: debate, vote_flag: true)
+        create(:vote, voter: unverified, votable: debate, vote_flag: false)
 
         visit debate_path(debate)
 
@@ -185,10 +185,10 @@ describe "Votes" do
   end
 
   describe "Proposals" do
-    before { login_as(@manuela) }
+    before { login_as(verified) }
 
     scenario "Index shows user votes on proposals" do
-      proposal1 = create(:proposal, voters: [@manuela])
+      proposal1 = create(:proposal, voters: [verified])
       proposal2 = create(:proposal)
       proposal3 = create(:proposal)
 
@@ -210,17 +210,15 @@ describe "Votes" do
     end
 
     describe "Single proposal" do
-      before do
-        @proposal = create(:proposal)
-      end
+      let!(:proposal) { create(:proposal) }
 
       scenario "Show no votes" do
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
         expect(page).to have_content "No supports"
       end
 
       scenario "Trying to vote multiple times", :js do
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
 
         within(".supports") do
           find(".in-favor a").click
@@ -231,10 +229,10 @@ describe "Votes" do
       end
 
       scenario "Show" do
-        create(:vote, voter: @manuela, votable: @proposal, vote_flag: true)
-        create(:vote, voter: @pablo, votable: @proposal, vote_flag: true)
+        create(:vote, voter: verified, votable: proposal, vote_flag: true)
+        create(:vote, voter: unverified, votable: proposal, vote_flag: true)
 
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
 
         within(".supports") do
           expect(page).to have_content "2 supports"
@@ -242,7 +240,7 @@ describe "Votes" do
       end
 
       scenario "Create from proposal show", :js do
-        visit proposal_path(@proposal)
+        visit proposal_path(proposal)
 
         within(".supports") do
           find(".in-favor a").click
@@ -255,7 +253,7 @@ describe "Votes" do
       scenario "Create in listed proposal in index", :js do
         visit proposals_path
 
-        within("#proposal_#{@proposal.id}") do
+        within("#proposal_#{proposal.id}") do
           find(".in-favor a").click
 
           expect(page).to have_content "1 support"
@@ -267,7 +265,7 @@ describe "Votes" do
       scenario "Create in featured proposal in index", :js do
         visit proposals_path
 
-        within("#proposal_#{@proposal.id}") do
+        within("#proposal_#{proposal.id}") do
           find(".in-favor a").click
 
           expect(page).to have_content "You have already supported this proposal. Share it!"
