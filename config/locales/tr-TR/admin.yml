@@ -3,16 +3,16 @@ tr:
     header:
       title: Yönetim
     actions:
-      actions: Aksiyon
+      actions: Eylemler
       confirm: Emin misiniz?
-      confirm_hide: Denetlemeyi onayla
+      confirm_hide: Moderasyonu onayla
       hide: Gizle
       hide_author: Yazarı gizle
-      restore: Onarma
+      restore: Geri getir
       mark_featured: Öne Çıkan
-      unmark_featured: Öne çıkan işareti kaldır
-      edit: Düzenleme
-      configure: Yapılandırma
+      unmark_featured: Öne çıkan işaretini kaldır
+      edit: Düzenle
+      configure: Ayarla
       delete: Sil
     officing_booth:
       title: "Siz %{booth}'ta bulunan kabini görüyorsunuz. Eğer bu doğru değilse, devam etmeyin ve yardım telefon numarasını aramayın. Teşekkürler."
