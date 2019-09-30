@@ -87,4 +87,8 @@ class Poll::Question < ApplicationRecord
   def is_positive_negative?
     votation_type.present? && enum_type == "positive_negative_open"
   end
+
+  def possible_answers
+    question_answers.visibles.joins(:translations).pluck("poll_question_answer_translations.title")
+  end
 end
