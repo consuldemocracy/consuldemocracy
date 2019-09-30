@@ -97,12 +97,21 @@ class Budget
     scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
-    scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
-    scope :by_tracker,        ->(tracker_id) { where("budget_tracker_assignments.tracker_id = ?",
-                                                     tracker_id).joins(:tracker_assignments) }
-    scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
 
     scope :for_render, -> { includes(:heading) }
+
+    def self.by_valuator(valuator_id)
+      where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)
+    end
+
+    def self.by_tracker(tracker_id)
+      where("budget_tracker_assignments.tracker_id = ?", tracker_id).joins(:tracker_assignments)
+    end
+
+    def self.by_valuator_group(valuator_group_id)
+      joins(:valuator_group_assignments).
+        where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id)
+    end
 
     before_create :set_original_heading_id
     before_save :calculate_confidence_score
