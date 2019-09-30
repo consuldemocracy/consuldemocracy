@@ -14,12 +14,16 @@ describe Widget::Card do
   end
 
   describe "#header" do
-
-    it "returns the header card" do
+    it "returns header cards" do
       header = create(:widget_card, header: true)
-      card = create(:widget_card, header: false)
 
       expect(Widget::Card.header).to eq([header])
+    end
+
+    it "does not return regular cards" do
+      create(:widget_card, header: false)
+
+      expect(Widget::Card.header).to be_empty
     end
   end
 

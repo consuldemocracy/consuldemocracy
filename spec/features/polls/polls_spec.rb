@@ -84,18 +84,25 @@ describe "Polls" do
 
       expect(page).to have_css(".unverified", count: 3)
       expect(page).to have_content("You must verify your account to participate")
+    end
 
-      poll_district = create(:poll, geozone_restricted: true)
-      verified = create(:user, :level_two)
-      login_as(verified)
+    scenario "Geozone poll" do
+      create(:poll, geozone_restricted: true)
 
+      login_as(create(:user, :level_two))
       visit polls_path
 
       expect(page).to have_css(".cant-answer", count: 1)
       expect(page).to have_content("This poll is not available on your geozone")
+    end
 
+    scenario "Already participated in a poll", :js do
       poll_with_question = create(:poll)
       question = create(:poll_question, :yes_no, poll: poll_with_question)
+
+      login_as(create(:user, :level_two))
+      visit polls_path
+
       vote_for_poll_via_web(poll_with_question, question, "Yes")
 
       visit polls_path

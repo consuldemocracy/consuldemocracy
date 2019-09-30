@@ -39,7 +39,7 @@ describe "Notifications" do
 
   scenario "View single notification" do
     proposal = create(:proposal)
-    notification = create(:notification, user: user, notifiable: proposal)
+    create(:notification, user: user, notifiable: proposal)
 
     click_notifications_icon
 

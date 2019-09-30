@@ -57,20 +57,25 @@ describe Widget::Feed do
     end
 
     describe "#processes" do
+      let(:feed) {  build(:widget_feed, kind: "processes", limit: 3) }
 
-      it "returns open and published processes" do
-        open_process1 = create(:legislation_process, :open, :published, title: "Open process 1")
-        open_process2 = create(:legislation_process, :open, :published, title: "Open process 2")
-        open_process3 = create(:legislation_process, :open, :published, title: "Open process 3")
-        open_process4 = create(:legislation_process, :open, :published, title: "Open process 4")
-        open_process5 = create(:legislation_process, :open, :not_published, title: "Open process 5")
-        past_process = create(:legislation_process, :past, title: "Past process")
+      it "returns a maximum number of open published processes given by the limit" do
+        4.times { create(:legislation_process, :open, :published) }
 
-        feed = build(:widget_feed, kind: "processes")
-
-        expect(feed.processes).to eq([open_process4, open_process3, open_process2])
+        expect(feed.processes.count).to be 3
       end
 
+      it "does not return past processes" do
+        create(:legislation_process, :past)
+
+        expect(feed.processes).to be_empty
+      end
+
+      it "does not return unpublished processes" do
+        create(:legislation_process, :open, :not_published)
+
+        expect(feed.processes).to be_empty
+      end
     end
 
   end

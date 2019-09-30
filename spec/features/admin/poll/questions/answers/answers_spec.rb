@@ -24,7 +24,7 @@ describe "Answers" do
 
   scenario "Create second answer and place after the first one" do
     question = create(:poll_question)
-    answer = create(:poll_question_answer, title: "First", question: question, given_order: 1)
+    create(:poll_question_answer, title: "First", question: question, given_order: 1)
 
     visit admin_question_path(question)
     click_link "Add answer"
@@ -40,7 +40,7 @@ describe "Answers" do
   scenario "Update" do
     question = create(:poll_question)
     answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
-    answer2 = create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
+    create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
     visit admin_answer_path(answer)
 

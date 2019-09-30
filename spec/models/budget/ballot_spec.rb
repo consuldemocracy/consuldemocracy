@@ -115,11 +115,9 @@ describe Budget::Ballot do
     it "returns nil if there are no headings with balloted investments in a group" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
-
-      heading1 = create(:budget_heading, group: group)
-      heading2 = create(:budget_heading, group: group)
-
       ballot = create(:budget_ballot, budget: budget)
+
+      2.times { create(:budget_heading, group: group) }
 
       expect(ballot.heading_for_group(group)).to eq nil
     end

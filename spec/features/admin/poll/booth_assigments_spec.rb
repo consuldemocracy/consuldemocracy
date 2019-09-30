@@ -175,14 +175,15 @@ describe "Admin booths assignments" do
       poll = create(:poll, starts_at: 2.weeks.ago, ends_at: 1.week.ago)
       booth = create(:poll_booth)
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      officer_assignment_1 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.starts_at)
-      officer_assignment_2 = create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
-      final_officer_assignment = create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
+
+      create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.starts_at)
+      create(:poll_officer_assignment, booth_assignment: booth_assignment, date: poll.ends_at)
+      create(:poll_officer_assignment, :final, booth_assignment: booth_assignment, date: poll.ends_at)
 
       create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.starts_at.to_date)
       create(:poll_voter, poll: poll, booth_assignment: booth_assignment, created_at: poll.ends_at.to_date)
 
-      booth_assignment_2 = create(:poll_booth_assignment, poll: poll)
+      create(:poll_booth_assignment, poll: poll)
 
       visit admin_poll_path(poll)
       click_link "Booths (2)"

@@ -94,16 +94,21 @@ describe "Ballots" do
       end
 
       scenario "Investments" do
-        city_heading1     = create(:budget_heading, group: city,      name: "Above the city")
-        city_heading2     = create(:budget_heading, group: city,      name: "Under the city")
-        district_heading1 = create(:budget_heading, group: districts, name: "District 1")
-        district_heading2 = create(:budget_heading, group: districts, name: "District 2")
+        create(:budget_heading, group: city, name: "Under the city")
 
-        create(:budget_investment, :selected, heading: city_heading1, title: "Solar panels")
-        create(:budget_investment, :selected, heading: city_heading1, title: "Observatory")
-        create(:budget_investment, :selected, heading: district_heading1, title: "New park")
-        create(:budget_investment, :selected, heading: district_heading1, title: "Zero-emission zone")
-        create(:budget_investment, :selected, heading: district_heading2, title: "Climbing wall")
+        create(:budget_heading, group: city, name: "Above the city") do |heading|
+          create(:budget_investment, :selected, heading: heading, title: "Solar panels")
+          create(:budget_investment, :selected, heading: heading, title: "Observatory")
+        end
+
+        create(:budget_heading, group: districts, name: "District 1") do |heading|
+          create(:budget_investment, :selected, heading: heading, title: "New park")
+          create(:budget_investment, :selected, heading: heading, title: "Zero-emission zone")
+        end
+
+        create(:budget_heading, group: districts, name: "District 2") do |heading|
+          create(:budget_investment, :selected, heading: heading, title: "Climbing wall")
+        end
 
         visit budget_path(budget)
         click_link "City"
