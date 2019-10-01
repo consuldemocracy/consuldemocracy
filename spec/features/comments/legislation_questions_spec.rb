@@ -186,7 +186,7 @@ describe "Commenting legislation questions" do
       create(:comment, commentable: legislation_question)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
         expect(page).not_to have_content "Write a comment"
         expect(page).not_to have_content "Reply"

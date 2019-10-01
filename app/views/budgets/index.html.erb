@@ -45,10 +45,9 @@
             <% else %>
               <div class="callout primary margin-top">
                 <%= t("budgets.investments.index.sidebar.not_logged_in",
-                      sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"),
-                      new_user_session_path),
-                      sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"),
-                      new_user_registration_path)).html_safe %>
+                      sign_in: link_to(t("users.signin"), new_user_session_path),
+                      sign_up: link_to(t("users.signup"), new_user_registration_path)
+                     ).html_safe %>
               </div>
             <% end %>
           <% end %>

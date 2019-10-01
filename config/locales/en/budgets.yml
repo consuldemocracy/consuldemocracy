@@ -98,8 +98,6 @@ en:
           verify_account: "verify your account"
           create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
-          sign_in: "sign in"
-          sign_up: "sign up"
           by_feasibility: By feasibility
           feasible: Feasible projects
           unfeasible: Unfeasible projects

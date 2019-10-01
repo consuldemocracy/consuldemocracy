@@ -182,7 +182,7 @@ describe "Commenting Budget::Investments" do
       create(:comment, commentable: investment)
       visit budget_investment_path(investment.budget, investment)
 
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
         expect(page).not_to have_content "Write a comment"
         expect(page).not_to have_content "Reply"

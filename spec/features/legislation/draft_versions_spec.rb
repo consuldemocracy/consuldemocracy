@@ -168,7 +168,7 @@ describe "Legislation Draft Versions" do
       page.find(:css, ".legislation-annotatable").double_click
       page.find(:css, ".annotator-adder button").click
       expect(page).not_to have_css("#legislation_annotation_text")
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment."
+      expect(page).to have_content "You must sign in or sign up to leave a comment."
     end
 
     scenario "Create" do

@@ -665,8 +665,6 @@ en:
       back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       comments_tab: Comments
-      signin: Sign in
-      signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
       verify_link: "verify your account"
       cant_answer_expired: "This poll has finished."
@@ -859,8 +857,9 @@ en:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
     login_to_comment: "You must %{signin} or %{signup} to leave a comment."
-    signin: Sign in
-    signup: Sign up
+    login_to_continue: "You must %{signin} or %{signup} to continue."
+    signin: "sign in"
+    signup: "sign up"
     direct_messages:
       new:
         body_label: Message
@@ -870,9 +869,6 @@ en:
         title_label: Title
         verified_only: To send a private message %{verify_account}
         verify_account: verify your account
-        authenticate: You must %{signin} or %{signup} to continue.
-        signin: sign in
-        signup: sign up
       show:
         receiver: Message sent to %{receiver}
     show:
@@ -921,7 +917,6 @@ en:
     disagree: I disagree
     organizations: Organizations are not permitted to vote
     supports: Supports
-    unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
     verify_account: verify your account
     budget_investments:
@@ -1002,8 +997,6 @@ en:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
       title: How I can comment this document?
   links:
     form:

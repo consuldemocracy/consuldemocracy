@@ -663,8 +663,6 @@ es:
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios
-      signin: iniciar sesión
-      signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
       cant_answer_expired: "Esta votación ha terminado."
@@ -856,8 +854,9 @@ es:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
     login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
-    signin: iniciar sesión
-    signup: registrarte
+    login_to_continue: "Necesitas %{signin} o %{signup} para continuar."
+    signin: "iniciar sesión"
+    signup: "registrarte"
     direct_messages:
       new:
         body_label: Mensaje
@@ -867,9 +866,6 @@ es:
         title_label: Título
         verified_only: Para enviar un mensaje privado %{verify_account}
         verify_account: verifica tu cuenta
-        authenticate: Necesitas %{signin} o %{signup}.
-        signin: iniciar sesión
-        signup: registrarte
       show:
         receiver: Mensaje enviado a %{receiver}
     show:
@@ -918,7 +914,6 @@ es:
     disagree: No estoy de acuerdo
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
-    unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
     verify_account: verifica tu cuenta
     budget_investments:

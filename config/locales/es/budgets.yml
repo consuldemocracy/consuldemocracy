@@ -98,8 +98,6 @@ es:
           verify_account: "verifica tu cuenta"
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sesión"
-          sign_up: "registrarte"
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables

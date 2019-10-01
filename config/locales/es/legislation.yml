@@ -112,8 +112,6 @@ es:
       participation:
         phase_not_open: Esta fase no está abierta
         organizations: Las organizaciones no pueden participar en el debate
-        signin: iniciar sesión
-        signup: registrarte
         unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
         verify_account: verifica tu cuenta
