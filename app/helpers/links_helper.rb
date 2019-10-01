@@ -12,4 +12,8 @@ module LinksHelper
   def link_to_signup(options = {})
     link_to t("users.signup"), new_user_registration_path, options
   end
+
+  def link_to_verify_account
+    link_to t("users.verify_account"), verification_path
+  end
 end

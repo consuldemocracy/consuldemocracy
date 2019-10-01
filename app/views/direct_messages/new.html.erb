@@ -37,7 +37,7 @@
       <div class="callout warning">
         <p>
           <%= t("users.direct_messages.new.verified_only",
-                verify_account: link_to(t("users.verify_account"), verification_path)).html_safe %>
+                verify_account: link_to_verify_account).html_safe %>
         </p>
       </div>
     <% end %>

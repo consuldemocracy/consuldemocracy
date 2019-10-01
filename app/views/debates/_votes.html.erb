@@ -52,8 +52,7 @@
   <% elsif user_signed_in? && !debate.votable_by?(current_user) %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
-        <%= t("votes.anonymous",
-              verify_account: link_to(t("users.verify_account"), verification_path)).html_safe %>
+        <%= t("votes.anonymous", verify_account: link_to_verify_account).html_safe %>
       </p>
     </div>
   <% elsif !user_signed_in? %>
