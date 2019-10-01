@@ -164,7 +164,6 @@ es:
       comments_title: Comentarios
       edit_debate_link: Editar debate
       flag: Este debate ha sido marcado como inapropiado por varios usuarios.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
       author: Autor
     update:
@@ -462,7 +461,6 @@ es:
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
       flag: Esta propuesta ha sido marcada como inapropiada por varios usuarios.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
       milestones_tab: Seguimiento
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
@@ -665,7 +663,6 @@ es:
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       signin: iniciar sesión
       signup: registrarte
       cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
@@ -858,6 +855,9 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
+    login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+    signin: iniciar sesión
+    signup: registrarte
     direct_messages:
       new:
         body_label: Mensaje
@@ -917,8 +917,6 @@ es:
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: No estoy de acuerdo
     organizations: Las organizaciones no pueden votar.
-    signin: iniciar sesión
-    signup: registrarte
     supports: Apoyos
     unauthenticated: Necesitas %{signin} o %{signup} para continuar.
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.

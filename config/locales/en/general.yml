@@ -164,7 +164,6 @@ en:
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
       author: Author
     update:
@@ -462,7 +461,6 @@ en:
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
       milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
@@ -667,7 +665,6 @@ en:
       back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       comments_tab: Comments
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       signin: Sign in
       signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
@@ -861,6 +858,9 @@ en:
     manage:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
+    login_to_comment: "You must %{signin} or %{signup} to leave a comment."
+    signin: Sign in
+    signup: Sign up
     direct_messages:
       new:
         body_label: Message
@@ -920,8 +920,6 @@ en:
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
     organizations: Organizations are not permitted to vote
-    signin: Sign in
-    signup: Sign up
     supports: Supports
     unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.

@@ -14,9 +14,6 @@ es:
         publish_comment: Publicar Comentario
       form:
         phase_not_open: Esta fase del proceso no está abierta
-        login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-        signin: iniciar sesión
-        signup: registrarte
       index:
         title: Comentarios
         comments_about: Comentarios sobre

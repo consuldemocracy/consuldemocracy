@@ -55,6 +55,3 @@ en:
         recommendation_one: Do not write the topic title or whole sentences in capital letters. On the internet that is considered shouting. And no one likes to be yelled at.
         recommendation_two: Any topic or comment that implies an illegal action will be eliminated, also those that intend to sabotage the spaces of the subject, everything else is allowed.
         recommendation_three: Enjoy this space, the voices that fill it, it's yours too.
-  topics:
-    show:
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.

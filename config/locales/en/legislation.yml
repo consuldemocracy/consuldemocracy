@@ -14,9 +14,6 @@ en:
         publish_comment: Publish Comment
       form:
         phase_not_open: This phase is not open
-        login_to_comment: You must %{signin} or %{signup} to leave a comment.
-        signin: Sign in
-        signup: Sign up
       index:
         title: Comments
         comments_about: Comments about
