@@ -60,11 +60,7 @@
     </div>
   <% elsif !user_signed_in? %>
     <div tabindex="0">
-      <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-        <%= t("users.login_to_continue",
-          signin: link_to(t("users.signin"), new_user_session_path),
-          signup: link_to(t("users.signup"), new_user_registration_path)).html_safe %>
-      </div>
+      <%= render "shared/login_to_vote" %>
     </div>
   <% end %>
 
