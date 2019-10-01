@@ -30,7 +30,7 @@ FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
 Layout/IndentationConsistency:
-  EnforcedStyle: rails
+  EnforcedStyle: indented_internal_methods
 
 Layout/IndentationWidth:
   Enabled: true
