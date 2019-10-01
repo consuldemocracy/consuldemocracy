@@ -1,6 +1,6 @@
 resources :budgets, only: [:show, :index] do
   resources :groups, controller: "budgets/groups", only: [:show]
-  resources :investments, controller: "budgets/investments", only: [:index, :new, :create, :show, :destroy, :edit, :update] do
+  resources :investments, controller: "budgets/investments" do
     member do
       post :vote
       put :flag

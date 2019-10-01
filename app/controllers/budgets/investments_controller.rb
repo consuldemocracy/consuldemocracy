@@ -77,19 +77,10 @@ module Budgets
       end
     end
 
-    def edit
-      if @investment.author == current_user
-        return true
-      else
-        redirect_to root_path,
-                   notice: "You have to be the original author of the project to edit it"
-      end
-    end
-
     def update
       @investment.update(investment_params)
       redirect_to budget_investment_path(@budget, @investment),
-                  notice: "It was updated successfully."
+                  notice: t("flash.actions.update.budget_investment")
     end
 
     def destroy
@@ -140,7 +131,7 @@ module Budgets
       end
 
       def investment_params
-        attributes = [:title, :description, :heading_id, :tag_list,
+        attributes = [:heading_id, :tag_list,
                       :organization_name, :location, :terms_of_service, :skip_map,
                       image_attributes: image_attributes,
                       documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
