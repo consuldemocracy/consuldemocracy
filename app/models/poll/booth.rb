@@ -7,8 +7,15 @@ class Poll
     validates :name, presence: true, uniqueness: true
 
     def self.search(terms)
-      return Booth.none if terms.blank?
       Booth.where("name ILIKE ? OR location ILIKE ?", "%#{terms}%", "%#{terms}%")
+    end
+
+    def self.quick_search(terms)
+      if terms.blank?
+        Booth.none
+      else
+        search(terms)
+      end
     end
 
     def self.available

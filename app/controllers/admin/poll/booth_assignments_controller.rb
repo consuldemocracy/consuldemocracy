@@ -9,7 +9,7 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
 
   def search_booths
     load_search
-    @booths = ::Poll::Booth.search(@search)
+    @booths = ::Poll::Booth.quick_search(@search)
     respond_to do |format|
       format.js
     end
