@@ -41,7 +41,6 @@ es:
   comments:
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}
-    verify_account: verifica tu cuenta
     comment:
       admin: Administrador
       author: Autor
@@ -857,6 +856,7 @@ es:
     login_to_continue: "Necesitas %{signin} o %{signup} para continuar."
     signin: "iniciar sesión"
     signup: "registrarte"
+    verify_account: "verifica tu cuenta"
     direct_messages:
       new:
         body_label: Mensaje
@@ -865,7 +865,6 @@ es:
         title: Enviar mensaje privado a %{receiver}
         title_label: Título
         verified_only: Para enviar un mensaje privado %{verify_account}
-        verify_account: verifica tu cuenta
       show:
         receiver: Mensaje enviado a %{receiver}
     show:
@@ -915,7 +914,6 @@ es:
     organizations: Las organizaciones no pueden votar.
     supports: Apoyos
     verified_only: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
-    verify_account: verifica tu cuenta
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup} para continuar.
       not_verified: Los proyectos de gasto sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.

@@ -41,7 +41,6 @@ en:
   comments:
     comments_closed: Comments are closed
     verified_only: To participate %{verify_account}
-    verify_account: verify your account
     comment:
       admin: Administrator
       author: Author
@@ -860,6 +859,7 @@ en:
     login_to_continue: "You must %{signin} or %{signup} to continue."
     signin: "sign in"
     signup: "sign up"
+    verify_account: "verify your account"
     direct_messages:
       new:
         body_label: Message
@@ -868,7 +868,6 @@ en:
         title: Send private message to %{receiver}
         title_label: Title
         verified_only: To send a private message %{verify_account}
-        verify_account: verify your account
       show:
         receiver: Message sent to %{receiver}
     show:
@@ -918,7 +917,6 @@ en:
     organizations: Organizations are not permitted to vote
     supports: Supports
     verified_only: Only verified users can vote on proposals; %{verify_account}.
-    verify_account: verify your account
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on investment projects; %{verify_account}.

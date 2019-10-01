@@ -43,7 +43,7 @@
   <% if reason.present? && !ballot.has_investment?(investment) %>
 
     <div class="js-participation-not-allowed participation-not-allowed" style="display:none">
-      <% verify_account = link_to(t("votes.verify_account"), verification_path) %>
+      <% verify_account = link_to(t("users.verify_account"), verification_path) %>
       <% signin = link_to(t("users.signin"), new_user_session_path) %>
       <% signup = link_to(t("users.signup"), new_user_registration_path) %>
       <% my_heading = link_to(investment.heading.name,

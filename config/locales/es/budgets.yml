@@ -95,7 +95,6 @@ es:
           check_ballot_link: "revisar y confirmar mis votos"
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
-          verify_account: "verifica tu cuenta"
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
           by_feasibility: Por viabilidad

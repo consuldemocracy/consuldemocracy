@@ -114,7 +114,6 @@ es:
         organizations: Las organizaciones no pueden participar en el debate
         unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
-        verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
     shared:
       share: Compartir

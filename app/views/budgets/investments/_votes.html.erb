@@ -33,7 +33,7 @@
         <small>
           <%= t("votes.budget_investments.#{reason}",
                 count: investment.group.max_votable_headings,
-                verify_account: link_to(t("votes.verify_account"), verification_path),
+                verify_account: link_to(t("users.verify_account"), verification_path),
                 signin: link_to(t("users.signin"), new_user_session_path),
                 signup: link_to(t("users.signup"), new_user_registration_path),
                 supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).sort.to_sentence)
