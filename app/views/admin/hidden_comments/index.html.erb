@@ -15,7 +15,7 @@
     <% @comments.each do |comment| %>
       <tr id="<%= dom_id(comment) %>">
         <td>
-          <%= text_with_links comment.body %><br>
+          <%= sanitize_and_auto_link comment.body %><br>
           <% if comment.commentable.hidden? %>
             (<%= t("admin.hidden_comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
           <% else %>

@@ -1,12 +1,12 @@
 module TextWithLinksHelper
 
-  def text_with_links(text)
+  def sanitize_and_auto_link(text)
     return unless text
     sanitized = sanitize(text, tags: [], attributes: [])
     Rinku.auto_link(sanitized, :all, 'target="_blank" rel="nofollow"').html_safe
   end
 
-  def safe_html_with_links(html)
+  def auto_link_already_sanitized_html(html)
     return if html.nil?
     html = ActiveSupport::SafeBuffer.new(html) if html.is_a?(String)
     return html.html_safe unless html.html_safe?

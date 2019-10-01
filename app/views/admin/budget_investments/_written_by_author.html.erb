@@ -55,6 +55,6 @@
 
 <% if @investment.external_url.present? %>
   <p>
-    <%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span>
+    <%= sanitize_and_auto_link @investment.external_url %>&nbsp;<span class="icon-external small"></span>
   </p>
 <% end %>

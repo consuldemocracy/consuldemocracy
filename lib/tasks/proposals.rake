@@ -12,7 +12,7 @@ namespace :proposals do
       model.find_each do |resource|
         if resource.external_url.present?
           Globalize.with_locale(I18n.default_locale) do
-            new_description = "#{resource.description} <p>#{text_with_links(resource.external_url)}</p>"
+            new_description = "#{resource.description} <p>#{sanitize_and_auto_link(resource.external_url)}</p>"
             resource.description = new_description
             resource.external_url = ""
             resource.updated_at = Time.current

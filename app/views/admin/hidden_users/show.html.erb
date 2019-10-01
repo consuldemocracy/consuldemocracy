@@ -30,7 +30,7 @@
   <% @comments.each do |comment| %>
     <tr id="<%= dom_id(comment) %>">
       <td>
-        <%= text_with_links comment.body %>
+        <%= sanitize_and_auto_link comment.body %>
       </td>
     </tr>
   <% end %>

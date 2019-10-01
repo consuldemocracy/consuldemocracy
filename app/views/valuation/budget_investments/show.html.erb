@@ -18,7 +18,7 @@
 </hr>
 
 <% if @investment.external_url.present? %>
-  <p><%= text_with_links @investment.external_url %></p>
+  <p><%= sanitize_and_auto_link @investment.external_url %></p>
 <% end %>
 
 <hr>

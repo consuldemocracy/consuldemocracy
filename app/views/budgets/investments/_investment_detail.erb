@@ -22,7 +22,7 @@
   <%= t("budgets.investments.show.code_html", code: investment.id) %>
 </p>
 
-<%= safe_html_with_links investment.description %>
+<%= auto_link_already_sanitized_html investment.description %>
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>
   <div class="margin">
@@ -52,7 +52,7 @@
 
 <% if investment.external_url.present? %>
   <div class="document-link">
-    <%= text_with_links investment.external_url %>
+    <%= sanitize_and_auto_link investment.external_url %>
   </div>
 <% end %>
 

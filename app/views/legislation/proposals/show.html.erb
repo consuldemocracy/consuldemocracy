@@ -68,7 +68,7 @@
           </div>
         <% end %>
 
-        <%= safe_html_with_links @proposal.description %>
+        <%= auto_link_already_sanitized_html @proposal.description %>
 
         <% if @proposal.video_url.present? %>
           <div class="video-link">
@@ -76,7 +76,7 @@
               <span class="icon-video"></span>&nbsp;
               <strong><%= t("proposals.show.title_video_url") %></strong>
             </p>
-            <%= text_with_links @proposal.video_url %>
+            <%= sanitize_and_auto_link @proposal.video_url %>
           </div>
 
         <% end %>
