@@ -26,9 +26,9 @@ module TranslatableFormHelper
       visible_locales.map do |locale|
         @translations[locale] = translation_for(locale)
       end
-      visible_locales.map do |locale|
+      safe_join(visible_locales.map do |locale|
         Globalize.with_locale(locale) { fields_for_locale(locale, &block) }
-      end.join.html_safe
+      end)
     end
 
     private

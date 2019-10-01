@@ -12,4 +12,22 @@ describe "Cross-Site Scripting protection", :js do
 
     expect(page.text).not_to be_empty
   end
+
+  scenario "document title" do
+    process = create(:legislation_process)
+    create(:document, documentable: process, title: attack_code)
+
+    visit legislation_process_path(process)
+
+    expect(page.text).not_to be_empty
+  end
+
+  scenario "hacked translations" do
+    I18nContent.create(key: "admin.budget_investments.index.list.title", value: attack_code)
+
+    login_as(create(:administrator).user)
+    visit admin_budget_budget_investments_path(create(:budget_investment).budget)
+
+    expect(page.text).not_to be_empty
+  end
 end
