@@ -7,7 +7,6 @@
 <% else %>
   <div class="callout primary">
     <%= t("community.show.create_first_community_topic.sub_first_theme",
-          sign_in: link_to(t("users.signin"), new_user_session_path),
-          sign_up: link_to(t("users.signup"), new_user_registration_path)).html_safe %>
+          sign_in: link_to_signin, sign_up: link_to_signup).html_safe %>
   </div>
 <% end %>

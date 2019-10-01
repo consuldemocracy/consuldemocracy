@@ -10,8 +10,7 @@
       <div class="callout primary">
         <p>
           <%= t("users.login_to_continue",
-            signin: link_to(t("users.signin"), new_user_session_path),
-            signup: link_to(t("users.signup"), new_user_registration_path)).html_safe %>
+            signin: link_to_signin, signup: link_to_signup).html_safe %>
         </p>
       </div>
     <% elsif not @receiver.email_on_direct_message? %>

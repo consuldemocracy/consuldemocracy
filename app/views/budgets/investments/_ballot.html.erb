@@ -44,8 +44,6 @@
 
     <div class="js-participation-not-allowed participation-not-allowed" style="display:none">
       <% verify_account = link_to(t("users.verify_account"), verification_path) %>
-      <% signin = link_to(t("users.signin"), new_user_session_path) %>
-      <% signup = link_to(t("users.signup"), new_user_registration_path) %>
       <% my_heading = link_to(investment.heading.name,
                       budget_investments_path(budget_id: investment.budget_id,
                                               heading_id: investment.heading_id)) %>
@@ -55,8 +53,8 @@
       <p>
         <small>
           <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
-                verify_account: verify_account, signin: signin,
-                signup: signup, my_heading: my_heading,
+                verify_account: verify_account, signin: link_to_signin,
+                signup: link_to_signup, my_heading: my_heading,
                 change_ballot: change_ballot,
                 heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
         </small>

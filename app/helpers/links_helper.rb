@@ -4,4 +4,12 @@ module LinksHelper
                                                      t("links.form.delete_button"),
                                                      builder, class: "delete remove-element"
   end
+
+  def link_to_signin(options = {})
+    link_to t("users.signin"), new_user_session_path, options
+  end
+
+  def link_to_signup(options = {})
+    link_to t("users.signup"), new_user_registration_path, options
+  end
 end
