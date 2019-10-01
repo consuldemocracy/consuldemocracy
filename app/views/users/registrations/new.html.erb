@@ -7,8 +7,8 @@
   <%= render "shared/errors", resource: resource %>
 
   <p>
-    <%= t("devise_views.users.registrations.new.organization_signup",
-        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
+    <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
+        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
   </p>
 
   <div class="row">

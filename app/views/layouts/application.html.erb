@@ -30,12 +30,12 @@
           </button>
           <h2><%= t("layouts.application.ie_title") %></h2>
           <p>
-            <%= t("layouts.application.ie",
+            <%= sanitize(t("layouts.application.ie",
             chrome: link_to(
                     t("layouts.application.chrome"), "https://www.google.com/chrome/browser/desktop/", title: t("shared.target_blank"), target: "_blank"),
             firefox: link_to(
                      t("layouts.application.firefox"), "https://www.mozilla.org/firefox", title: t("shared.target_blank"), target: "_blank")
-            ).html_safe %>
+            )) %>
           </p>
         </div>
       <![endif]-->

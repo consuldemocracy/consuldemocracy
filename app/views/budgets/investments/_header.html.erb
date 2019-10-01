@@ -40,9 +40,9 @@
                         heading_link: heading_link(@assigned_heading, @budget)) %>
                   <br>
                   <small>
-                    <%= t("budgets.investments.header.change_ballot",
+                    <%= sanitize(t("budgets.investments.header.change_ballot",
                         check_ballot: link_to(t("budgets.investments.header.check_ballot_link"),
-                                      budget_ballot_path(@budget))).html_safe %>
+                                      budget_ballot_path(@budget)))) %>
                   </small>
                 </div>
               </div>

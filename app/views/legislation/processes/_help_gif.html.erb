@@ -11,8 +11,8 @@
           <%= t("annotator.help.alt") %>
         <% else %>
           <p>
-            <%= t("annotator.help.text",
-                sign_in: link_to_signin, sign_up: link_to_signup).html_safe %>
+            <%= sanitize(t("annotator.help.text",
+                sign_in: link_to_signin, sign_up: link_to_signup)) %>
           </p>
         <% end %>
 

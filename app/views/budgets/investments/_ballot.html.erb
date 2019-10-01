@@ -51,11 +51,11 @@
 
       <p>
         <small>
-          <%= t("budgets.ballots.reasons_for_not_balloting.#{reason}",
+          <%= sanitize(t("budgets.ballots.reasons_for_not_balloting.#{reason}",
                 verify_account: link_to_verify_account, signin: link_to_signin,
                 signup: link_to_signup, my_heading: my_heading,
                 change_ballot: change_ballot,
-                heading_link: heading_link(@assigned_heading, @budget)).html_safe %>
+                heading_link: heading_link(@assigned_heading, @budget))) %>
         </small>
       </p>
     </div>

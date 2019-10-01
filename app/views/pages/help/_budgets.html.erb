@@ -4,8 +4,8 @@
       <%= t("pages.help.budgets.title") %>
     </h3>
     <p>
-      <%= t("pages.help.budgets.description",
-           link: link_to(t("pages.help.budgets.link"), budgets_path)).html_safe %>
+      <%= sanitize(t("pages.help.budgets.description",
+           link: link_to(t("pages.help.budgets.link"), budgets_path))) %>
     </p>
 
     <figure>

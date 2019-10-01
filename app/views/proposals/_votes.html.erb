@@ -29,7 +29,7 @@
     <div tabindex="0">
       <div class="participation-not-allowed" style="display:none" aria-hidden="false">
         <p>
-          <%= t("votes.verified_only", verify_account: link_to_verify_account).html_safe %>
+          <%= sanitize(t("votes.verified_only", verify_account: link_to_verify_account)) %>
         </p>
       </div>
     </div>

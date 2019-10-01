@@ -9,8 +9,8 @@
     <% if not current_user %>
       <div class="callout primary">
         <p>
-          <%= t("users.login_to_continue",
-            signin: link_to_signin, signup: link_to_signup).html_safe %>
+          <%= sanitize(t("users.login_to_continue",
+            signin: link_to_signin, signup: link_to_signup)) %>
         </p>
       </div>
     <% elsif not @receiver.email_on_direct_message? %>
@@ -33,8 +33,8 @@
     <% else %>
       <div class="callout warning">
         <p>
-          <%= t("users.direct_messages.new.verified_only",
-                verify_account: link_to_verify_account).html_safe %>
+          <%= sanitize(t("users.direct_messages.new.verified_only",
+                verify_account: link_to_verify_account)) %>
         </p>
       </div>
     <% end %>

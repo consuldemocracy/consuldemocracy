@@ -40,6 +40,15 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "link to sign in" do
+    I18nContent.create(key: "budgets.investments.index.sidebar.not_logged_in", value: attack_code)
+    create(:budget, phase: "accepting")
+
+    visit budgets_path
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "proposal actions in dashboard" do
     proposal = create(:proposal)
 

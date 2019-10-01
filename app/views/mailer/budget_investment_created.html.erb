@@ -16,8 +16,8 @@
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_created.follow_html",
-           link: link_to(t("mailers.budget_investment_created.follow_link"), budgets_url)).html_safe %>
+    <%= sanitize(t("mailers.budget_investment_created.follow_html",
+           link: link_to(t("mailers.budget_investment_created.follow_link"), budgets_url))) %>
   </p>
 
   <table style="width: 100%;">
