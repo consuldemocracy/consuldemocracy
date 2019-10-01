@@ -41,7 +41,7 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   private
 
     def question_path
-      legislation_process_question_path(@process, @question).html_safe
+      legislation_process_question_path(@process, @question)
     end
 
     def question_params
