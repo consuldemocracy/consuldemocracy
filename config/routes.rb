@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => "/ckeditor"
-
-  if Rails.env.development? || Rails.env.staging?
-    get "/sandbox" => "sandbox#index"
-    get "/sandbox/*template" => "sandbox#show"
-  end
-
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   draw :account
