@@ -13,7 +13,7 @@ Te preguntarán por la URL de autenticación de tu instalación de CONSUL, y com
 user_omniauth_authorize GET|POST /users/auth/:provider(.:format)          users/omniauth_callbacks#passthru {:provider=>/twitter|facebook|google_oauth2/}
 ```
 
-Por ejemplo para facebook la URL sería `yourdomain.com/users/auth/facebook.json`
+Por ejemplo para facebook la URL sería `yourdomain.com/users/auth/facebook/callback`
 
 ## 3. Establece la clave y secreto
 
