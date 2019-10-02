@@ -50,4 +50,14 @@ describe "Cross-Site Scripting protection", :js do
 
     expect(page.text).not_to be_empty
   end
+
+  scenario "valuation explanations" do
+    investment = create(:budget_investment, price_explanation: attack_code)
+    valuator = create(:valuator, investments: [investment])
+
+    login_as(valuator.user)
+    visit valuation_budget_budget_investment_path(investment.budget, investment)
+
+    expect(page.text).not_to be_empty
+  end
 end
