@@ -97,7 +97,7 @@ module ProposalsDashboardHelper
   end
 
   def proposed_action_description(proposed_action)
-    raw proposed_action.description.truncate(200)
+    sanitize proposed_action.description.truncate(200)
   end
 
   def proposed_action_long_description?(proposed_action)

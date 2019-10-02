@@ -30,4 +30,15 @@ describe "Cross-Site Scripting protection", :js do
 
     expect(page.text).not_to be_empty
   end
+
+  scenario "proposal actions in dashboard" do
+    proposal = create(:proposal)
+
+    create(:dashboard_action, description: attack_code)
+
+    login_as(proposal.author)
+    visit recommended_actions_proposal_dashboard_path(proposal)
+
+    expect(page.text).not_to be_empty
+  end
 end
