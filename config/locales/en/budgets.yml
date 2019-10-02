@@ -10,7 +10,7 @@ en:
         voted_html:
           one: "You have voted <span>one</span> investment."
           other: "You have voted <span>%{count}</span> investments."
-        voted_info_html: "Your ballot is confirmed!"
+        voted_info: "Your ballot is confirmed!"
         voted_info_2: "But you can change your vote at any time until this phase is closed."
         zero: You have not voted any investment project.
       reasons_for_not_balloting:

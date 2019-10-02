@@ -54,6 +54,6 @@ module DocumentsHelper
              #{number_to_human_size(document.attachment_file_size)}</small>)".html_safe,
              document.attachment.url,
              target: "_blank",
-             title: t("shared.target_blank_html")
+             title: t("shared.target_blank")
   end
 end
