@@ -22,8 +22,8 @@
       <h3><%= t("admin.site_customization.pages.form.options") %></h3>
       <%= f.label :status %>
       <% ::SiteCustomization::Page::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status, label: false %>
-        <%= f.label "status_#{status}", t("admin.site_customization.pages.page.status_#{status}") %>
+        <%= f.radio_button :status, status,
+          label: t("admin.site_customization.pages.page.status_#{status}") %>
         <br>
       <% end %>
 

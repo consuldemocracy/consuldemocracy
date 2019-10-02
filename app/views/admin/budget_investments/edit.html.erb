@@ -29,10 +29,9 @@
       <% end %>
 
       <div class="small-12 column">
-        <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
         <%= f.text_field :tag_list,
                          value: @investment.tag_list.sort.join(","),
-                         label: false %>
+                         label: t("admin.budget_investments.edit.user_tags") %>
       </div>
 
       <div class="small-12 column">

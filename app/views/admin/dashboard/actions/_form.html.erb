@@ -5,9 +5,9 @@
     <%= f.label :action_type %>
     <% ::Dashboard::Action.action_types.keys.each do |action_type_value| %>
       <span class="margin-right">
-        <%= f.radio_button :action_type, action_type_value, label: false,
-                            data: { toggle: "request_to_administrators short_description" } %>
-        <%= f.label "action_type_#{action_type_value}", t("admin.dashboard.actions.action_type.#{action_type_value}") %>
+        <%= f.radio_button :action_type, action_type_value,
+          label: t("admin.dashboard.actions.action_type.#{action_type_value}"),
+          data: { toggle: "request_to_administrators short_description" } %>
       </span>
     <% end %>
   </div>
@@ -26,12 +26,10 @@
 
 <div class="row expanded">
   <div class="small-12 column">
-    <%= f.label :title %>
-    <%= f.text_field :title, label: false %>
+    <%= f.text_field :title %>
 
     <div id="short_description" class="hide">
-      <%= f.label :short_description %>
-      <%= f.text_field :short_description, label: false %>
+      <%= f.text_field :short_description %>
     </div>
 
     <div class="ckeditor">

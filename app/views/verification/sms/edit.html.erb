@@ -33,8 +33,7 @@
       <% end %>
 
       <div class="small-12 medium-6">
-        <%= f.label t("verification.sms.edit.confirmation_code") %>
-        <%= f.text_field :confirmation_code, label: false %>
+        <%= f.text_field :confirmation_code, label: t("verification.sms.edit.confirmation_code") %>
       </div>
 
       <%= f.submit t("verification.sms.edit.submit_button"), class: "button success" %>

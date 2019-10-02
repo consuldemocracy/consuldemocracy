@@ -3,8 +3,12 @@
   <% css_id = parent_or_commentable_dom_id(parent_id, commentable) %>
   <div id="js-comment-form-<%= css_id %>" <%= "style='display:none'".html_safe if toggeable %> class="comment-form">
     <%= form_for Comment.new, remote: true do |f| %>
-      <%= label_tag "comment-body-#{css_id}", leave_comment_text(commentable) %>
-      <%= f.text_area :body, id: "comment-body-#{css_id}", maxlength: Comment.body_max_length, label: false %>
+      <%= f.text_area :body,
+        id: "comment-body-#{css_id}",
+        maxlength: Comment.body_max_length,
+        label: leave_comment_text(commentable),
+        label_options: { for: "comment-body-#{css_id}" } %>
+
       <%= f.hidden_field :commentable_type, value: commentable.class.name %>
       <%= f.hidden_field :commentable_id, value: commentable.id %>
       <%= f.hidden_field :parent_id, value: parent_id %>

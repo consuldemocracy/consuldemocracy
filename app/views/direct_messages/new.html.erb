@@ -23,11 +23,8 @@
       <%= form_for [@receiver, @direct_message] do |f| %>
         <%= render "shared/errors", resource: @direct_message %>
 
-        <%= f.label :title, t("users.direct_messages.new.title_label") %>
-        <%= f.text_field :title, label: false %>
-
-        <%= f.label :body, t("users.direct_messages.new.body_label") %>
-        <%= f.text_area :body, label: false, rows: "3" %>
+        <%= f.text_field :title, label: t("users.direct_messages.new.title_label") %>
+        <%= f.text_area :body, label: t("users.direct_messages.new.body_label"), rows: "3" %>
 
         <div class="small-12 medium-4">
           <%= f.submit t("users.direct_messages.new.submit_button"), class: "button expanded" %>

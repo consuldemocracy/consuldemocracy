@@ -6,8 +6,10 @@
   <%= render "shared/errors", resource: resource %>
   <div class="row">
     <div class="small-12 column">
-      <%= f.label :email, t("devise_views.users.registrations.edit.email_label") %>
-      <%= f.email_field :email, label: false, autofocus: true, placeholder: t("devise_views.users.registrations.edit.email_label") %>
+      <%= f.email_field :email,
+        label: t("devise_views.users.registrations.edit.email_label"),
+        autofocus: true,
+        placeholder: t("devise_views.users.registrations.edit.email_label") %>
     </div>
 
     <div class="small-12 column">
@@ -25,8 +27,10 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :password_confirmation, t("devise_views.users.registrations.edit.password_confirmation_label") %>
-      <%= f.password_field :password_confirmation, label: false, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
+      <%= f.password_field :password_confirmation,
+        label: t("devise_views.users.registrations.edit.password_confirmation_label"),
+        autocomplete: "off",
+        placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
     </div>
 
     <div class="small-12 column">
