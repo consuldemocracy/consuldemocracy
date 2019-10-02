@@ -41,4 +41,13 @@ describe "Cross-Site Scripting protection", :js do
 
     expect(page.text).not_to be_empty
   end
+
+  scenario "annotation context" do
+    annotation = create(:legislation_annotation)
+    annotation.update_column(:context, attack_code)
+
+    visit polymorphic_hierarchy_path(annotation)
+
+    expect(page.text).not_to be_empty
+  end
 end
