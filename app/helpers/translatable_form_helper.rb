@@ -18,7 +18,7 @@ module TranslatableFormHelper
     "highlight" if translations_interface_enabled?
   end
 
-  class TranslatableFormBuilder < FoundationRailsHelper::FormBuilder
+  class TranslatableFormBuilder < ConsulFormBuilder
     attr_accessor :translations
 
     def translatable_fields(&block)
@@ -94,7 +94,7 @@ module TranslatableFormHelper
       end
   end
 
-  class TranslationsFieldsBuilder < FoundationRailsHelper::FormBuilder
+  class TranslationsFieldsBuilder < ConsulFormBuilder
     %i[text_field text_area cktext_area].each do |field|
       define_method field do |attribute, options = {}|
         custom_label(attribute, options[:label], options[:label_options]) +
