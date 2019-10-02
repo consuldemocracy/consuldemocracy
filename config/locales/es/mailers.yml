@@ -46,8 +46,8 @@ es:
     budget_investment_created:
       subject: "¡Gracias por crear un proyecto!"
       title: "¡Gracias por crear un proyecto!"
-      intro_html: "Hola <strong>%{author}</strong>,"
-      text_html: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
+      intro: "Hola <strong>%{author}</strong>,"
+      text: "Muchas gracias por crear tu proyecto <strong>%{investment}</strong> para los Presupuestos Participativos <strong>%{budget}</strong>."
       follow_html: "Te informaremos de cómo avanza el proceso, que también puedes seguir en la página de <strong>%{link}</strong>."
       follow_link: "Presupuestos participativos"
       sincerely: "Atentamente,"

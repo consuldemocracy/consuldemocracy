@@ -5,14 +5,14 @@
   </h1>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_created.intro_html",
-           author: @investment.author.name).html_safe %>
+    <%= sanitize(t("mailers.budget_investment_created.intro",
+           author: @investment.author.name)) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.budget_investment_created.text_html",
+    <%= sanitize(t("mailers.budget_investment_created.text",
            investment: @investment.title,
-           budget: @investment.budget.name).html_safe %>
+           budget: @investment.budget.name)) %>
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
