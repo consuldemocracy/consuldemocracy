@@ -4,6 +4,8 @@ class Management::SessionsController < ActionController::Base
   include GlobalizeFallbacks
   include AccessDeniedHandler
 
+  protect_from_forgery with: :exception
+
   def create
     destroy_session
     if admin? || manager? || authenticated_manager?

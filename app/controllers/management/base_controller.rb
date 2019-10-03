@@ -9,6 +9,8 @@ class Management::BaseController < ActionController::Base
   helper_method :current_user
   helper_method :manager_logged_in
 
+  protect_from_forgery with: :exception
+
   private
 
     def verify_manager
