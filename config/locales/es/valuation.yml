@@ -60,9 +60,6 @@ es:
         price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
         price_explanation_html: Informe de coste <small>(opcional, dato público)</small>
         feasibility: Viabilidad
-        feasible: Viable
-        unfeasible: Inviable
-        undefined_feasible: Sin decidir
         feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
         valuation_finished: Informe finalizado
         valuation_finished_alert: "¿Estás seguro/a de querer marcar este informe como completado? Una vez hecho, no se puede deshacer la acción."
