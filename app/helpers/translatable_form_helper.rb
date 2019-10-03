@@ -95,30 +95,8 @@ module TranslatableFormHelper
   end
 
   class TranslationsFieldsBuilder < ConsulFormBuilder
-    %i[text_field text_area cktext_area].each do |field|
-      define_method field do |attribute, options = {}|
-        custom_label(attribute, options[:label], options[:label_options]) +
-          help_text(options[:hint]) +
-          super(attribute, options.merge(label: false, hint: false))
-      end
-    end
-
     def locale
       @object.locale
     end
-
-    def label(attribute, text = nil, options = {})
-      label_options = options.dup
-      hint = label_options.delete(:hint)
-
-      super(attribute, text, label_options) + help_text(hint)
-    end
-
-    private
-      def help_text(text)
-        if text
-          content_tag :span, text, class: "help-text"
-        end
-      end
   end
 end

@@ -47,21 +47,18 @@
 
 <div class="row expanded margin-top">
   <div class="small-12 medium-4 column">
-    <%= f.label :day_offset %>
-    <p class="help-text"><%= t("admin.dashboard.actions.form.help_text") %></p>
-    <%= f.number_field :day_offset, label: false, step: 1, min: 0 %>
+    <%= f.number_field :day_offset, step: 1, min: 0,
+      hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= f.label :required_supports %>
-    <p class="help-text"><%= t("admin.dashboard.actions.form.help_text") %></p>
-    <%= f.number_field :required_supports, label: false, step: 1, min: 0 %>
+    <%= f.number_field :required_supports, step: 1, min: 0,
+      hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 
   <div class="small-12 medium-4 column">
-    <%= f.label :order %>
-    <p class="help-text"><%= t("admin.dashboard.actions.form.help_text") %></p>
-    <%= f.number_field :order, label: false, step: 1, min: 0 %>
+    <%= f.number_field :order, step: 1, min: 0,
+      hint: t("admin.dashboard.actions.form.help_text") %>
   </div>
 </div>
 

@@ -32,9 +32,8 @@
     </div>
 
     <div class="small-12 medium-6 column">
-      <%= f.label :slug %>
-      <p class="help-text"><%= t("admin.site_customization.pages.new.slug_help_html") %>
-      <%= f.text_field :slug, label: false, size: 80, maxlength: 80 %>
+      <%= f.text_field :slug, size: 80, maxlength: 80,
+        hint: t("admin.site_customization.pages.new.slug_help_html") %>
     </div>
   </div>
 
