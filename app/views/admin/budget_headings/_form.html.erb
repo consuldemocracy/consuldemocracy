@@ -22,16 +22,12 @@
                         maxlength: 8,
                         placeholder: t("admin.budget_headings.form.amount") %>
 
-      <%= f.label :population, t("admin.budget_headings.form.population") %>
-      <p class="help-text" id="budgets-population-help-text">
-        <%= t("admin.budget_headings.form.population_info") %>
-      </p>
       <%= f.text_field :population,
-                        label: false,
+                        label: t("admin.budget_headings.form.population"),
                         maxlength: 8,
                         placeholder: t("admin.budget_headings.form.population"),
                         data: { toggle_focus: "population-info" },
-                        aria: { describedby: "budgets-population-help-text" } %>
+                        hint: t("admin.budget_headings.form.population_info") %>
 
       <%= f.text_field :latitude,
                         label: t("admin.budget_headings.form.latitude"),

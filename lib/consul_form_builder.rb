@@ -10,7 +10,10 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   %i[text_field text_area cktext_area number_field password_field email_field].each do |field|
     define_method field do |attribute, options = {}|
       label_with_hint(attribute, options) +
-        super(attribute, options.merge(label: false, hint: false))
+        super(attribute, options.merge(
+          label: false, hint: false,
+          aria: { describedby: help_text_id(attribute, options) }
+        ))
     end
   end
 
@@ -18,12 +21,18 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
     def label_with_hint(attribute, options)
       custom_label(attribute, options[:label], options[:label_options]) +
-        help_text(options[:hint])
+        help_text(attribute, options)
     end
 
-    def help_text(text)
-      if text
-        content_tag :span, text, class: "help-text"
+    def help_text(attribute, options)
+      if options[:hint]
+        content_tag :span, options[:hint], class: "help-text", id: help_text_id(attribute, options)
+      end
+    end
+
+    def help_text_id(attribute, options)
+      if options[:hint]
+        "#{custom_label(attribute, nil, nil).match(/for=\"(.+)\"/)[1]}-help-text"
       end
     end
 end

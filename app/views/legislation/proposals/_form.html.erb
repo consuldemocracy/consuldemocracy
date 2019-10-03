@@ -14,11 +14,10 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.label :summary, t("proposals.form.proposal_summary") %>
-      <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
-      <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t("proposals.form.proposal_summary"),
-                      aria: { describedby: "summary-help-text" } %>
+      <%= f.text_area :summary, rows: 4, maxlength: 200,
+        label: t("proposals.form.proposal_summary"),
+        placeholder: t("proposals.form.proposal_summary"),
+        hint: t("proposals.form.proposal_summary_note") %>
     </div>
 
     <div class="ckeditor small-12 column">
@@ -29,10 +28,10 @@
     </div>
 
     <div class="small-12 column">
-      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-      <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"), label: false,
-                                   aria: { describedby: "video-url-help-text" } %>
+      <%= f.text_field :video_url,
+        placeholder: t("proposals.form.proposal_video_url"),
+        label: t("proposals.form.proposal_video_url"),
+        hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
     <% if feature?(:allow_images) %>
