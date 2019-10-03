@@ -6,8 +6,7 @@
       <%= f.text_area :body,
         id: "comment-body-#{css_id}",
         maxlength: Comment.body_max_length,
-        label: leave_comment_text(commentable),
-        label_options: { for: "comment-body-#{css_id}" } %>
+        label: leave_comment_text(commentable) %>
 
       <%= f.hidden_field :commentable_type, value: commentable.class.name %>
       <%= f.hidden_field :commentable_id, value: commentable.id %>
@@ -20,16 +19,14 @@
         <div class="float-right">
           <%= f.check_box :as_moderator,
             label: t("comments.form.comment_as_moderator"),
-            id: "comment-as-moderator-#{css_id}",
-            label_options: { for: "comment-as-moderator-#{css_id}" } %>
+            id: "comment-as-moderator-#{css_id}" %>
         </div>
       <% end %>
       <% if can? :comment_as_administrator, commentable %>
         <div class="float-right">
           <%= f.check_box :as_administrator,
             label: t("comments.form.comment_as_admin"),
-            id: "comment-as-administrator-#{css_id}",
-            label_options: { for: "comment-as-administrator-#{css_id}" } %>
+            id: "comment-as-administrator-#{css_id}" %>
         </div>
       <% end %>
 
