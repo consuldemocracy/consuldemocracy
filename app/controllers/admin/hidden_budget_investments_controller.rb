@@ -15,14 +15,14 @@ class Admin::HiddenBudgetInvestmentsController < Admin::BaseController
 
   def confirm_hide
     @investment.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.params.merge(action: :index, only_path: true)
   end
 
   def restore
     @investment.restore(recursive: true)
     @investment.ignore_flag
     Activity.log(current_user, :restore, @investment)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.param.merge(action: :index, only_path: true)
   end
 
   private

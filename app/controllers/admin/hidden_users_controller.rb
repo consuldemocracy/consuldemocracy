@@ -15,13 +15,13 @@ class Admin::HiddenUsersController < Admin::BaseController
 
   def confirm_hide
     @user.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.params.merge(action: :index, only_path: true)
   end
 
   def restore
     @user.restore
     Activity.log(current_user, :restore, @user)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.params.merge(action: :index, only_path: true)
   end
 
   private

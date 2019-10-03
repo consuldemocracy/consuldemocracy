@@ -37,12 +37,12 @@ class DebatesController < ApplicationController
 
   def unmark_featured
     @debate.update_attribute(:featured_at, nil)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.params.merge(action: :index, only_path: true)
   end
 
   def mark_featured
     @debate.update_attribute(:featured_at, Time.current)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.params.merge(action: :index, only_path: true)
   end
 
   def disable_recommendations

@@ -29,7 +29,7 @@ module ModerateActions
       User.where(id: author_ids).accessible_by(current_ability, :block).each { |user| block_user user }
     end
 
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_to request.params.merge(action: :index, only_path: true)
   end
 
   private
