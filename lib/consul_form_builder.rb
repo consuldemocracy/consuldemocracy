@@ -17,11 +17,29 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     end
   end
 
+  def check_box(attribute, options = {})
+    if options[:label] != false
+      label = content_tag(:span, label_text(object, attribute, options[:label]), class: "checkbox")
+
+      super(attribute, options.merge(label: label))
+    else
+      super
+    end
+  end
+
   private
 
     def label_with_hint(attribute, options)
       custom_label(attribute, options[:label], options[:label_options]) +
         help_text(attribute, options)
+    end
+
+    def label_text(object, attribute, text)
+      if text.nil? || text == true
+        default_label_text(object, attribute)
+      else
+        text
+      end
     end
 
     def help_text(attribute, options)

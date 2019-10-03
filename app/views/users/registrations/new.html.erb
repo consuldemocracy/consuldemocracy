@@ -36,15 +36,14 @@
         <%= f.text_field :redeemable_code, placeholder: t("devise_views.users.registrations.new.redeemable_code") %>
       <% end %>
 
-      <%= f.label :terms_of_service do %>
-        <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: false %>
-        <span class="checkbox">
-          <%= t("devise_views.users.registrations.new.terms",
-              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
-              title: t("shared.target_blank_html"),
-              target: "_blank")).html_safe %>
-        </span>
-      <% end %>
+      <%= f.check_box :terms_of_service,
+        title: t("devise_views.users.registrations.new.terms_title"),
+        label: t("devise_views.users.registrations.new.terms",
+                 terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
+                                title: t("shared.target_blank_html"),
+                                target: "_blank")
+                ).html_safe %>
+
       <div class="small-12 medium-6 small-centered">
         <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>
       </div>

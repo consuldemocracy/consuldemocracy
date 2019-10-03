@@ -105,18 +105,16 @@
       <% if @investment.incompatible? || @investment.winner? %>
       <div class="small-12 medium-3 column">
         <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
-        <%= f.label :incompatible do %>
-          <%= f.check_box :incompatible, title: t("admin.budget_investments.edit.compatibility"), label: false %>
-          <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
-        <% end %>
+        <%= f.check_box :incompatible,
+          title: t("admin.budget_investments.edit.compatibility"),
+          label: t("admin.budget_investments.edit.mark_as_incompatible") %>
       </div>
       <% end %>
       <div class="small-12 medium-3 column float-left">
         <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
-        <%= f.label :selected do %>
-          <%= f.check_box :selected, title: t("admin.budget_investments.edit.selection"), label: false %>
-          <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_selected") %></span>
-        <% end %>
+        <%= f.check_box :selected,
+          title: t("admin.budget_investments.edit.selection"),
+          label: t("admin.budget_investments.edit.mark_as_selected") %>
       </div>
     </div>
 
