@@ -15,11 +15,13 @@ describe "Moderate legislation proposals" do
       accept_confirm { click_link "Hide" }
     end
 
-    expect(page).to have_css("#legislation_proposal_#{legislation_proposal.id}")
+    expect(page).to have_css("#legislation_proposal_#{legislation_proposal.id}.faded")
 
+    logout
     login_as(citizen)
     visit legislation_process_proposals_path(legislation_process)
 
     expect(page).to have_css(".proposal-content", count: 0)
+    expect(page).not_to have_link("Hide")
   end
 end

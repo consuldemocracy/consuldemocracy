@@ -35,6 +35,7 @@
 //= require moderator_proposals
 //= require moderator_budget_investments
 //= require moderator_proposal_notifications
+//= require moderator_legislation_proposals
 //= require prevent_double_submission
 //= require gettext
 //= require annotator
