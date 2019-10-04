@@ -35,7 +35,7 @@
       </p>
       <% if !@question.votation_type.max_votes.nil? %>
         <p>
-          <strong><%= t("question.max_votes") %></strong>
+          <strong><%= VotationType.human_attribute_name(:max_votes) %></strong>
           <br>
           <%= @question.votation_type.max_votes %>
         </p>
@@ -49,7 +49,7 @@
       <% end %>
       <% if !@question.votation_type.max_groups_answers.nil? %>
         <p>
-          <strong><%= t("question.max_group_answers") %></strong>
+          <strong><%= VotationType.human_attribute_name(:max_groups_answers) %></strong>
           <br>
           <%= @question.votation_type.max_groups_answers %>
         </p>

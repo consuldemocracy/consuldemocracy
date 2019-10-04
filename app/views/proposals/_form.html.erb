@@ -9,7 +9,6 @@
       <div class="small-12 column">
         <%= translations_form.text_field :title,
               maxlength: Proposal.title_max_length,
-              placeholder: t("proposals.form.proposal_title"),
               data: { js_suggest_result: "js_suggest_result",
                       js_suggest: ".js-suggest",
                       js_url: suggest_proposals_path } %>
@@ -19,7 +18,6 @@
       <div class="small-12 column">
         <%= translations_form.text_area :summary,
                                         rows: 4, maxlength: 200,
-                                        placeholder: t("proposals.form.proposal_summary"),
                                         hint: t("proposals.form.proposal_summary_note") %>
       </div>
 
@@ -91,8 +89,6 @@
     <% if current_user.unverified? %>
       <div class="small-12 column">
         <%= f.text_field :responsible_name,
-          placeholder: t("proposals.form.proposal_responsible_name"),
-          label: t("proposals.form.proposal_responsible_name"),
           hint: t("proposals.form.proposal_responsible_name_note") %>
       </div>
     <% end %>

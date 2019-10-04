@@ -8,8 +8,6 @@
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
     <div class="small-12 medium-3 column">
       <%= f.text_field :post_started_at,
-                        label: t("admin.banners.banner.post_started_at"),
-                        placeholder: t("admin.banners.banner.post_started_at"),
                         value: date_started_at,
                         class: "js-calendar-full",
                         id: "post_started_at" %>
@@ -17,8 +15,6 @@
     <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : "" %>
     <div class="small-12 medium-3 column end">
       <%= f.text_field  :post_ended_at,
-                        label: t("admin.banners.banner.post_ended_at"),
-                        placeholder: t("admin.banners.banner.post_ended_at"),
                         value: date_ended_at,
                         class: "js-calendar-full",
                         id: "post_ended_at" %>
@@ -29,25 +25,19 @@
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column">
         <%= translations_form.text_field :title,
-          placeholder: t("admin.banners.banner.title"),
-          data: { js_banner_title: "js_banner_title" },
-          label: t("admin.banners.banner.title") %>
+          data: { js_banner_title: "js_banner_title" } %>
       </div>
 
       <div class="small-12 column">
         <%= translations_form.text_field :description,
-          placeholder: t("admin.banners.banner.description"),
-          data: { js_banner_description: "js_banner_description" },
-          label: t("admin.banners.banner.description") %>
+          data: { js_banner_description: "js_banner_description" } %>
       </div>
     <% end %>
   </div>
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.text_field :target_url,
-                        label: t("admin.banners.banner.target_url"),
-                        placeholder: t("admin.banners.banner.target_url") %>
+      <%= f.text_field :target_url %>
     </div>
   </div>
 

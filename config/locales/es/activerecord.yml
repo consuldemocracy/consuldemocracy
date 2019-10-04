@@ -1,5 +1,6 @@
 es:
   attributes:
+    geozone_id: "Ámbito de actuación"
     results_enabled: "Mostrar resultados"
     stats_enabled: "Mostrar estadísticas"
     advanced_stats_enabled: "Mostrar estadísticas avanzadas"
@@ -145,19 +146,30 @@ es:
         budget_milestone_tags: "Etiquetas de seguimiento"
         budget_valuation_tags: "Etiquetas de evaluación"
         help_link: "Enlace de ayuda"
+      budget/translation:
+        name: "Nombre"
       budget/investment:
         heading_id: "Partida presupuestaria"
         title: "Título"
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
-        location: "Ubicación (opcional)"
+        location: "Información adicional de la ubicación"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
+        duration: "Plazo de ejecución <small>(opcional, dato no público)</small>"
         feasibility_feasible: "Viable"
         feasibility_undecided: "Sin decidir"
         feasibility_unfeasible: "Inviable"
+        incompatible: "Marcar como incompatible"
+        milestone_tag_list: "Etiquetas de Seguimiento"
+        price_explanation: "Informe de coste <small>(opcional, dato público)</small>"
+        selected: "Marcar como seleccionado"
+        unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
+        valuation_finished: "Informe finalizado"
+        valuator_ids: "Grupos"
+        valuation_tag_list: "Etiquetas"
       budget/investment/translation:
         title: "Título"
         description: "Descripción"
@@ -171,6 +183,8 @@ es:
         title: "Título"
         description: "Descripción (opcional si hay un estado asignado)"
         publication_date: "Fecha"
+      milestone/translation:
+        description: "Descripción"
       milestone/status:
         name: "Nombre"
         description: "Descripción (opcional)"
@@ -181,16 +195,33 @@ es:
       progress_bar/kind:
         primary: "Principal"
         secondary: "Secundaria"
+      budget/group:
+        max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
+      budget/group/translation:
+        name: "Nombre del grupo"
       budget/heading:
+        allow_custom_content: "Permitir bloque de contenidos"
+        latitude: "Latitud (opcional)"
+        longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Coste"
-        population: "Población"
+        price: "Cantidad"
+        population: "Población (opcional)"
+      budget/heading/translation:
+        name: "Nombre de la partida"
+      budget/phase:
+        enabled: "Fase habilitada"
+        ends_at: "Fecha de fin"
+        starts_at: "Fecha de inicio"
+      budget/phase/translation:
+        description: "Descripción"
+        summary: "Resumen"
       comment:
         body: "Comentario"
         user: "Usuario"
       debate:
         author: "Autor"
         description: "Opinión"
+        tag_list: "Temas"
         terms_of_service: "Términos de servicio"
         title: "Título del debate"
       debate/translation:
@@ -201,6 +232,8 @@ es:
         title: "Título"
         question: "Pregunta"
         description: "Descripción"
+        responsible_name: "Nombre y apellidos de la persona que hace esta propuesta"
+        retired_reason: "Razón por la que se retira la propuesta"
         selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
         video_url: "Enlace a vídeo externo"
@@ -216,10 +249,23 @@ es:
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña"
         current_password: "Contraseña actual"
-        phone_number: "Teléfono"
+        email_digest: "Recibir resumen de notificaciones sobre propuestas"
+        email_on_comment: "Recibir un email cuando alguien comenta en mis propuestas o debates"
+        email_on_comment_reply: "Recibir un email cuando alguien contesta a mis comentarios"
+        email_on_direct_message: "Recibir emails con mensajes privados"
+        newsletter: "Recibir emails con información interesante sobre la web"
         official_position: "Cargo público"
+        official_position_badge: "Mostrar etiqueta de tipo de usuario"
         official_level: "Nivel del cargo"
+        phone_number: "Teléfono"
+        public_activity: "Mostrar públicamente mi lista de actividades"
+        public_interests: "Mostrar públicamente las etiquetas de los elementos que sigo"
+        recommended_debates: "Mostrar recomendaciones en el listado de debates"
+        recommended_proposals: "Mostrar recomendaciones en el listado de propuestas"
         redeemable_code: "Código de verificación por carta (opcional)"
+      direct_message:
+        title: "Título"
+        body: "Mensaje"
       organization:
         name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
@@ -230,11 +276,17 @@ es:
         geozone_restricted: "Restringida por zonas"
         summary: "Resumen"
         description: "Descripción"
+      active_poll/translation:
+        description: "Descripción"
+      poll/booth:
+        name: "Nombre"
+        location: "Ubicación"
       poll/translation:
         name: "Nombre"
         summary: "Resumen"
         description: "Descripción"
       poll/question:
+        poll_id: "Votación"
         title: "Pregunta"
         summary: "Resumen"
         description: "Descripción"
@@ -245,6 +297,11 @@ es:
         data: Datos de CSV
         poll_id: Votación
         officer_assignment_id: Turno
+      poll/shift:
+        task: "Tarea"
+      proposal_notification:
+        body: "Mensaje"
+        title: "Título"
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
@@ -255,6 +312,8 @@ es:
         subtitle: Subtítulo
         slug: Slug
         status: Estado
+        status_draft: "Borrador"
+        status_published: "Publicada"
         title: Título
         updated_at: Última actualización
         more_info_flag: Mostrar en la página de ayuda
@@ -271,9 +330,20 @@ es:
         name: Nombre
         locale: Idioma
         body: Contenido
+      tag:
+        name: "Escribe el nombre del tema"
+      topic:
+        title: "Título"
+        description: "Texto inicial"
       banner:
         background_color: Color del fondo
         font_color: Color del texto
+        post_ended_at: "Fin de publicación"
+        post_started_at: "Inicio de publicación"
+        target_url: "Enlace"
+      banner/translation:
+        title: "Título"
+        description: "Descripción"
       legislation/process:
         title: Título del proceso
         summary: Resumen
@@ -293,17 +363,26 @@ es:
         result_publication_date: Fecha de publicación del resultado final
         background_color: Color del fondo
         font_color: Color del texto
+        homepage_enabled: "Homepage activada"
       legislation/process/translation:
         title: Título del proceso
         summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
+        homepage: "Descripción"
         milestones_summary: Seguimiento del proceso
+      legislation/proposal:
+        description: "Texto desarrollado de la propuesta"
+        summary: "Resumen de la propuesta"
+        title: "Título de la propuesta"
+        video_url: "Enlace a vídeo externo"
       legislation/draft_version:
         title: Título de la versión
         body: Texto
         changelog: Cambios
         status: Estado
+        status_draft: "Borrador"
+        status_published: "Publicado"
         final_version: Versión final
       legislation/draft_version/translation:
         title: Título de la versión
@@ -312,16 +391,18 @@ es:
       legislation/question:
         title: Título
         question_options: Respuestas
+      legislation/question/translation:
+        title: "Pregunta"
       legislation/question_option:
         value: Valor
       legislation/annotation:
         text: Comentario
       document:
         title: Título
-        attachment: Archivo adjunto
+        attachment: "Selecciona un documento"
       image:
         title: Título
-        attachment: Archivo adjunto
+        attachment: "Selecciona una imagen"
       poll/question/answer:
         title: Respuesta
         description: Descripción
@@ -334,7 +415,7 @@ es:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: Enviado por
+        from: "Dirección de correo electrónico que aparecerá como remitente de la newsletter"
         body: Contenido del email
       admin_notification:
         segment_recipient: Destinatarios
@@ -369,6 +450,9 @@ es:
         order: Puedes introducir la posición en la que se mostrará al usuario esta acción en la lista de acciones
         active: Activa
         action_type: Tipo
+        action_type_proposed_action: "Acción propuesta"
+        action_type_resource: "Recurso"
+        published_proposal: "¿Para propuestas publicadas?"
       dashboard/administrator_task:
         source: Fuente
         user: Ejecutado por
@@ -380,6 +464,8 @@ es:
         valuator_group_id: Grupo de evaluación
         can_comment: Puede comentar
         can_edit_dossier: Puede editar informes
+      valuator_group:
+        name: "Nombre del grupo"
       local_census_record:
         document_type: Tipo de documento
         document_number: Número de documento

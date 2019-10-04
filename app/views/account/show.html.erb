@@ -32,40 +32,40 @@
           </div>
 
           <div>
-            <%= f.check_box :public_activity, label: t("account.show.public_activity_label") %>
+            <%= f.check_box :public_activity %>
           </div>
 
           <div>
-            <%= f.check_box :public_interests, label: t("account.show.public_interests_label") %>
+            <%= f.check_box :public_interests %>
           </div>
 
           <% if @account.email.present? %>
             <h2><%= t("account.show.notifications") %></h2>
 
             <div>
-              <%= f.check_box :email_on_comment, label: t("account.show.email_on_comment_label") %>
+              <%= f.check_box :email_on_comment %>
             </div>
 
             <div>
-              <%= f.check_box :email_on_comment_reply, label: t("account.show.email_on_comment_reply_label") %>
+              <%= f.check_box :email_on_comment_reply %>
             </div>
 
             <div>
-              <%= f.check_box :newsletter, label: t("account.show.subscription_to_website_newsletter_label") %>
+              <%= f.check_box :newsletter %>
             </div>
 
             <div>
-              <%= f.check_box :email_digest, label: t("account.show.email_digest_label") %>
+              <%= f.check_box :email_digest %>
             </div>
 
             <div>
-              <%= f.check_box :email_on_direct_message, label: t("account.show.email_on_direct_message_label") %>
+              <%= f.check_box :email_on_direct_message %>
             </div>
           <% end %>
 
           <% if @account.official_level == 1 %>
             <div>
-              <%= f.check_box :official_position_badge, label: t("account.show.official_position_badge_label") %>
+              <%= f.check_box :official_position_badge %>
             </div>
           <% end %>
 
@@ -74,13 +74,13 @@
 
             <% if feature?("user.recommendations_on_debates") %>
               <div>
-                <%= f.check_box :recommended_debates, label: t("account.show.show_debates_recommendations") %>
+                <%= f.check_box :recommended_debates %>
               </div>
             <% end %>
 
             <% if feature?("user.recommendations_on_proposals") %>
               <div>
-                <%= f.check_box :recommended_proposals, label: t("account.show.show_proposals_recommendations") %>
+                <%= f.check_box :recommended_proposals %>
               </div>
             <% end %>
           <% end %>

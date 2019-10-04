@@ -48,7 +48,6 @@ module ImagesHelper
   def render_image_attachment(builder, imageable, image)
     klass = image.persisted? || image.cached_attachment.present? ? " hide" : ""
     builder.file_field :attachment,
-                       label: t("images.form.attachment_label"),
                        label_options: { class: "button hollow #{klass}" },
                        accept: imageable_accepted_content_types_extensions,
                        class: "js-image-attachment",

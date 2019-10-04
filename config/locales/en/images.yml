@@ -4,7 +4,6 @@ en:
     form:
       title: Descriptive image
       title_placeholder: Add a descriptive title for the image
-      attachment_label: Choose image
       delete_button: Remove image
       note: "You can upload one image of following content types: %{accepted_content_types}, up to %{max_file_size} MB."
       add_new_image: Add image

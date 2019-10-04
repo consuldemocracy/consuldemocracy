@@ -2,8 +2,6 @@ es:
   account:
     show:
       change_credentials_link: Cambiar mis datos de acceso
-      email_on_comment_label: Recibir un email cuando alguien comenta en mis propuestas o debates
-      email_on_comment_reply_label: Recibir un email cuando alguien contesta a mis comentarios
       erase_account_link: Darme de baja
       finish_verification: Finalizar verificación
       notifications: Notificaciones
@@ -11,18 +9,10 @@ es:
       organization_responsible_name_placeholder: Representante de la asociación/colectivo
       personal: Datos personales
       phone_number_label: Teléfono
-      public_activity_label: Mostrar públicamente mi lista de actividades
-      public_interests_label: Mostrar públicamente las etiquetas de los elementos que sigo
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
-      subscription_to_website_newsletter_label: Recibir emails con información interesante sobre la web
-      email_on_direct_message_label: Recibir emails con mensajes privados
-      email_digest_label: Recibir resumen de notificaciones sobre propuestas
-      official_position_badge_label: Mostrar etiqueta de tipo de usuario
       recommendations: Recomendaciones
-      show_debates_recommendations: Mostrar recomendaciones en el listado de debates
-      show_proposals_recommendations: Mostrar recomendaciones en el listado de propuestas
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
@@ -102,7 +92,6 @@ es:
     form:
       debate_title: Título del debate
       tags_instructions: Etiqueta este debate.
-      tags_label: Temas
       tags_placeholder: "Escribe las etiquetas que desees separadas por coma (',')"
     index:
       featured_debates: Destacar
@@ -286,7 +275,6 @@ es:
   map:
     title: "Distritos"
     proposal_for_district: "Crea una propuesta para tu distrito"
-    select_district: Ámbito de actuación
     start_proposal: Crea una propuesta
   omniauth:
     facebook:
@@ -330,7 +318,6 @@ es:
     retire_form:
       title: Retirar propuesta
       warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
-      retired_reason_label: Razón por la que se retira la propuesta
       retired_reason_blank: Selecciona una opción
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
@@ -341,14 +328,8 @@ es:
       done: Realizada
       other: Otra
     form:
-      geozone: Ámbito de actuación
-      proposal_responsible_name: Nombre y apellidos de la persona que hace esta propuesta
       proposal_responsible_name_note: "(individualmente o como representante de un colectivo; no se mostrará públicamente)"
-      proposal_summary: Resumen de la propuesta
       proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: Texto desarrollado de la propuesta
-      proposal_title: Título de la propuesta
-      proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Puedes añadir un enlace a YouTube o Vimeo
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
@@ -571,7 +552,6 @@ es:
           other: "%{count} respuestas"
         view_results: Ver resultados
         edit_poll: Editar encuesta
-        show_results: Mostrar resultados
         show_results_help: Si marcas esta casilla los resultados serán públicos y todos los usuarios podrán verlos
         delete: Eliminar encuesta
         alert_notice: Esta acción eliminará la encuesta y todas sus preguntas asociadas.
@@ -709,8 +689,6 @@ es:
   proposal_notifications:
     new:
       title: "Enviar mensaje"
-      title_label: "Título"
-      body_label: "Mensaje"
       submit_button: "Enviar mensaje"
       info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
@@ -859,11 +837,9 @@ es:
     verify_account: "verifica tu cuenta"
     direct_messages:
       new:
-        body_label: Mensaje
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
         submit_button: Enviar mensaje
         title: Enviar mensaje privado a %{receiver}
-        title_label: Título
         verified_only: Para enviar un mensaje privado %{verify_account}
       show:
         receiver: Mensaje enviado a %{receiver}

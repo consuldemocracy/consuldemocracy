@@ -78,13 +78,13 @@ describe "Admin custom information texts" do
     end
 
     scenario "Update a translation", :js do
-      key = "proposals.form.proposal_title"
-      create(:i18n_content, key: key, value_fr: "Titre de la proposition")
+      key = "proposals.show.share"
+      create(:i18n_content, key: key, value_fr: "Partager la proposition")
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
       select "Français", from: :select_language
-      fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise de la proposition"
+      fill_in "contents_content_#{key}values_value_fr", with: "Partager personalise"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
@@ -92,8 +92,8 @@ describe "Admin custom information texts" do
       visit admin_site_customization_information_texts_path(tab: "proposals")
       select "Français", from: :select_language
 
-      expect(page).to have_content "Titre personalise de la proposition"
-      expect(page).not_to have_content "Titre de la proposition"
+      expect(page).to have_content "Partager personalise"
+      expect(page).not_to have_content "Partager la proposition"
     end
 
     scenario "Remove a translation", :js do

@@ -2,8 +2,6 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      email_on_comment_label: Notify me by email when someone comments on my proposals or debates
-      email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
@@ -11,18 +9,10 @@ en:
       organization_responsible_name_placeholder: Representative of the organization/collective
       personal: Personal details
       phone_number_label: Phone number
-      public_activity_label: Keep my list of activities public
-      public_interests_label: Keep the labels of the elements I follow public
       public_interests_my_title_list: Tags of elements you follow
       public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
-      subscription_to_website_newsletter_label: Receive by email website relevant information
-      email_on_direct_message_label: Receive emails about direct messages
-      email_digest_label: Receive a summary of proposal notifications
-      official_position_badge_label: Show official position badge
       recommendations: Recommendations
-      show_debates_recommendations: Show debates recommendations
-      show_proposals_recommendations: Show proposals recommendations
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
@@ -102,7 +92,6 @@ en:
     form:
       debate_title: Debate title
       tags_instructions: Tag this debate.
-      tags_label: Topics
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_debates: Featured
@@ -286,7 +275,6 @@ en:
   map:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
-    select_district: Scope of operation
     start_proposal: Create a proposal
   omniauth:
     facebook:
@@ -330,7 +318,6 @@ en:
     retire_form:
       title: Retire proposal
       warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
-      retired_reason_label: Reason to retire the proposal
       retired_reason_blank: Choose an option
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
       submit_button: Retire proposal
@@ -341,14 +328,8 @@ en:
       done: Done
       other: Other
     form:
-      geozone: Scope of operation
-      proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
-      proposal_summary: Proposal summary
       proposal_summary_note: "(maximum 200 characters)"
-      proposal_text: Proposal text
-      proposal_title: Proposal title
-      proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
@@ -571,7 +552,6 @@ en:
           other: "%{count} responses"
         view_results: View results
         edit_poll: Edit survey
-        show_results: Show results
         show_results_help: If you check this box the results will be public and all users will be able to see them
         delete: Delete survey
         alert_notice: This action will remove the survey and all its associated questions.
@@ -712,8 +692,6 @@ en:
   proposal_notifications:
     new:
       title: "Send message"
-      title_label: "Title"
-      body_label: "Message"
       submit_button: "Send message"
       info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
@@ -862,11 +840,9 @@ en:
     verify_account: "verify your account"
     direct_messages:
       new:
-        body_label: Message
         direct_messages_bloqued: "This user has decided not to receive direct messages"
         submit_button: Send message
         title: Send private message to %{receiver}
-        title_label: Title
         verified_only: To send a private message %{verify_account}
       show:
         receiver: Message sent to %{receiver}

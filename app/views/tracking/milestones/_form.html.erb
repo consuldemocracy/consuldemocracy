@@ -18,9 +18,7 @@
       <div class="column">
         <%= translations_form.hidden_field :title, value: l(Time.current, format: :datetime),
                                                    maxlength: Milestone.title_max_length %>
-        <%= translations_form.text_area :description,
-                                        rows: 5,
-                                        label: t("tracking.milestones.new.description") %>
+        <%= translations_form.text_area :description, rows: 5 %>
       </div>
     <% end %>
   </div>

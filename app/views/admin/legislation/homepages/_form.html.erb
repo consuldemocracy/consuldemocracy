@@ -8,7 +8,7 @@
   <%= render "shared/errors", resource: @process %>
   <div class="row">
     <div class="small-12 column margin-top">
-      <%= f.check_box :homepage_enabled, label: t("admin.legislation.processes.form.homepage_enabled") %>
+      <%= f.check_box :homepage_enabled %>
     </div>
   </div>
 
@@ -18,7 +18,6 @@
         <div class="ckeditor">
           <%= translations_form.cktext_area :homepage,
                                             language: I18n.locale,
-                                            label: t("admin.legislation.processes.form.homepage"),
                                             ckeditor: { height: 500, toolbar: "admin" },
                                             hint: t("admin.legislation.processes.form.homepage_description") %>
         </div>

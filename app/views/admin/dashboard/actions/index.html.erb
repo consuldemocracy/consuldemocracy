@@ -25,7 +25,7 @@
     <% @dashboard_actions.each do |action| %>
       <tr id="<%= dom_id(action) %>">
         <td><%= action.title %></td>
-        <td><%= t("admin.dashboard.actions.action_type.#{action.action_type}") %></td>
+        <td><%= Dashboard::Action.human_attribute_name("action_type_#{action.action_type}") %></td>
         <td class="text-center"><%= active_human_readable(action.active) %></td>
         <td class="text-center"><%= active_human_readable(action.published_proposal) %></td>
         <td class="text-center"><%= number_with_delimiter(action.day_offset, delimiter: ".") %></td>

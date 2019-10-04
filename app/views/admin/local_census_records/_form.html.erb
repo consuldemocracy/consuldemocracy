@@ -17,8 +17,7 @@
     <div class="date-of-birth small-12">
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: minimum_required_age.years.ago.year,
-                        label: t("admin.local_census_records.form.date_of_birth") %>
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
     </div>
   </div>
 
