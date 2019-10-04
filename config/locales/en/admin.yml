@@ -450,7 +450,6 @@ en:
     documents:
       new:
         title: "Upload a document"
-        label_attachment: "Choose document"
         submit_button: "Upload"
       index:
         new_link: "Add new document"

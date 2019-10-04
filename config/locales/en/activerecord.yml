@@ -168,7 +168,7 @@ en:
         status_id: "Current status (optional)"
         title: "Title"
         description: "Description (optional if there's an status assigned)"
-        publication_date: "Publication date"
+        publication_date: "Date"
       milestone/status:
         name: "Name"
         description: "Description (optional)"

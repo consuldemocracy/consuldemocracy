@@ -452,7 +452,6 @@ es:
     documents:
       new:
         title: "Subir un documento"
-        label_attachment: "Selecciona un documento"
         submit_button: "Subir documento"
       index:
         new_link: "Subir un documento"

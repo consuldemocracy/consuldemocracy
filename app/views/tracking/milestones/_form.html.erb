@@ -29,7 +29,6 @@
     <div class="column">
       <%= f.text_field :publication_date,
                        value: @milestone.publication_date.present? ? l(@milestone.publication_date.to_date) : nil,
-                       label: t("tracking.milestones.new.date"),
                        class: "js-calendar-full" %>
 
       <%= render "images/admin_image", imageable: @milestone, f: f %>
