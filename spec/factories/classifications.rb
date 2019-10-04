@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :tag, class: "ActsAsTaggableOn::Tag" do
+  factory :tag do
     sequence(:name) { |n| "Tag #{n} name" }
 
     trait :category do

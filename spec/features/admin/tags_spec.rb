@@ -86,7 +86,7 @@ describe "Admin tags" do
         click_button "Create topic"
       end
 
-      expect(ActsAsTaggableOn::Tag.category.where(name: "wow_category")).to exist
+      expect(Tag.category.where(name: "wow_category")).to exist
     end
   end
 

@@ -146,7 +146,7 @@ module Budgets
       end
 
       def load_categories
-        @categories = ActsAsTaggableOn::Tag.category.order(:name)
+        @categories = Tag.category.order(:name)
       end
 
       def load_content_blocks

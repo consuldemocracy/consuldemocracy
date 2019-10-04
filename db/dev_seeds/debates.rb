@@ -19,7 +19,7 @@ section "Creating Debates" do
     end
   end
 
-  tags = ActsAsTaggableOn::Tag.where(kind: "category")
+  tags = Tag.where(kind: "category")
   30.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"

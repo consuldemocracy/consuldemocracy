@@ -16,7 +16,7 @@ class TagCloud
   end
 
   def category_names
-    ActsAsTaggableOn::Tag.category_names.map(&:downcase)
+    Tag.category_names.map(&:downcase)
   end
 
   def geozone_names

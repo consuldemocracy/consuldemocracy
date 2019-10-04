@@ -134,7 +134,7 @@ The models are the following:
 | `Comment`               | Comments on debates, proposals and other comments |
 | `Geozone`               | Geozones (districts)          |
 | `ProposalNotification`  | Notifications related to proposals |
-| `ActsAsTaggableOn::Tag` | Tags on debates and proposals |
+| `Tag`                   | Tags on debates and proposals |
 | `Vote`                  | Information related to votes  |
 
 ## Examples of queries

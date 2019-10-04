@@ -8,7 +8,7 @@ describe ActsAsTaggableOn do
       let(:debate) { create(:debate) }
 
       it "increases and decreases the tag's custom counters" do
-        tag = ActsAsTaggableOn::Tag.create(name: "foo")
+        tag = Tag.create(name: "foo")
 
         expect(tag.debates_count).to eq(0)
         expect(tag.proposals_count).to eq(0)
@@ -47,7 +47,7 @@ describe ActsAsTaggableOn do
   describe "Tag" do
     describe "#recalculate_custom_counter_for" do
       it "updates the counters of proposals and debates, taking into account hidden ones" do
-        tag = ActsAsTaggableOn::Tag.create(name: "foo")
+        tag = Tag.create(name: "foo")
 
         create(:proposal, tag_list: "foo")
         create(:proposal, :hidden, tag_list: "foo")
@@ -73,7 +73,7 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to eq [tag]
+        expect(Tag.public_for_api).to eq [tag]
       end
 
       it "returns tags whose kind is 'category' and have at least one tagging whose taggable is not hidden" do
@@ -82,7 +82,7 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to eq [tag]
+        expect(Tag.public_for_api).to eq [tag]
       end
 
       it "blocks other kinds of tags" do
@@ -91,13 +91,13 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to be_empty
+        expect(Tag.public_for_api).to be_empty
       end
 
       it "blocks tags that don't have at least one tagged element" do
         create(:tag)
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to be_empty
+        expect(Tag.public_for_api).to be_empty
       end
 
       it "only permits tags on proposals or debates" do
@@ -117,7 +117,7 @@ describe ActsAsTaggableOn do
         budget_investment.save
         debate.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to match_array([tag_1, tag_3])
+        expect(Tag.public_for_api).to match_array([tag_1, tag_3])
       end
 
       it "blocks tags after its taggings became hidden" do
@@ -126,11 +126,11 @@ describe ActsAsTaggableOn do
         proposal.tag_list.add(tag)
         proposal.save
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to eq [tag]
+        expect(Tag.public_for_api).to eq [tag]
 
         proposal.delete
 
-        expect(ActsAsTaggableOn::Tag.public_for_api).to be_empty
+        expect(Tag.public_for_api).to be_empty
       end
     end
 
@@ -141,10 +141,10 @@ describe ActsAsTaggableOn do
         create(:tag, name: "Salud")
         create(:tag, name: "Famosos")
 
-        expect(ActsAsTaggableOn::Tag.pg_search("f").length).to eq(2)
-        expect(ActsAsTaggableOn::Tag.search("cultura").first.name).to eq("Cultura")
-        expect(ActsAsTaggableOn::Tag.search("sal").first.name).to eq("Salud")
-        expect(ActsAsTaggableOn::Tag.search("fami").first.name).to eq("Familia")
+        expect(Tag.pg_search("f").length).to eq(2)
+        expect(Tag.search("cultura").first.name).to eq("Cultura")
+        expect(Tag.search("sal").first.name).to eq("Salud")
+        expect(Tag.search("fami").first.name).to eq("Familia")
       end
     end
 
