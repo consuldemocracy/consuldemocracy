@@ -203,6 +203,7 @@ es:
         description: "Descripción"
         selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
+        video_url: "Enlace a vídeo externo"
       proposal/translation:
         title: "Título de la propuesta"
         description: "Texto desarrollado de la propuesta"

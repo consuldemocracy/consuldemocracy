@@ -201,6 +201,7 @@ en:
         description: "Description"
         selected: "Mark as selected"
         terms_of_service: "Terms of service"
+        video_url: "External video URL"
       proposal/translation:
         title: "Proposal title"
         description: "Proposal text"

@@ -33,9 +33,7 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"),
-                                   label: t("proposals.form.proposal_video_url"),
-                                   hint: t("proposals.form.proposal_video_url_note") %>
+      <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
     <% if feature?(:allow_images) %>
@@ -52,7 +50,7 @@
 
     <div class="small-12 medium-6 column">
       <%= f.select :geozone_id, geozone_select_options,
-        include_blank: t("geozones.none"), label: t("proposals.form.geozone") %>
+        include_blank: t("geozones.none") %>
     </div>
 
     <% if feature?(:map) %>
