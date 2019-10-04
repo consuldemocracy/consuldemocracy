@@ -19,6 +19,19 @@ en:
           confirmation_code: "Confirmation code"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Password"
+        verification_code: "Code you received in letter"
+      verification/management/document:
+        document_type: "Document type:"
+        document_number: "Document number"
+      verification/residence:
+        date_of_birth: "Date of birth"
+        document_type: "Document type"
+        postal_code: "Postcode"
+      verification/sms:
+        confirmation_code: "Enter the code you received on your mobile"
       officing/residence:
         document_type: "Document type"
         document_number: "Document number (including letters)"

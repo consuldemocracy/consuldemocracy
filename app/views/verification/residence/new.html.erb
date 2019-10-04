@@ -39,8 +39,7 @@
       <div class="row">
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
-          <%= f.select :document_type, document_types, prompt: "",
-            label: t("verification.residence.new.document_type_label") %>
+          <%= f.select :document_type, document_types, prompt: "" %>
           </div>
           <div class="small-12 medium-5 column end">
 
@@ -66,13 +65,11 @@
       <div class="date-of-birth small-12 medium-6 clear">
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: minimum_required_age.years.ago.year,
-                        label: t("verification.residence.new.date_of_birth") %>
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
       </div>
 
       <div class="small-12 medium-5 clear">
         <%= f.text_field :postal_code,
-          label: t("verification.residence.new.postal_code"),
           hint: t("verification.residence.new.postal_code_note") %>
       </div>
 
