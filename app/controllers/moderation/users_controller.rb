@@ -10,7 +10,8 @@ class Moderation::UsersController < Moderation::BaseController
   def hide_in_moderation_screen
     block_user
 
-    redirect_to request.params.merge(action: :index, only_path: true), notice: I18n.t("moderation.users.notice_hide")
+    redirect_to request.params.merge(action: :index, only_path: true),
+                notice: I18n.t("moderation.users.notice_hide")
   end
 
   def hide

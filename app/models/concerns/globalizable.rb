@@ -33,7 +33,9 @@ module Globalizable
       translation_class.send :acts_as_paranoid, column: :hidden_at
     end
 
-    scope :with_translation, -> { joins("LEFT OUTER JOIN #{translations_table_name} ON #{table_name}.id = #{translations_table_name}.#{reflections["translations"].foreign_key} AND #{translations_table_name}.locale='#{I18n.locale}'") }
+    scope :with_translation, -> { joins(sanitize_sql("LEFT OUTER JOIN #{translations_table_name}
+                                        ON #{table_name}.id = #{translations_table_name}.#{reflections["translations"].foreign_key}
+                                        AND #{translations_table_name}.locale='#{I18n.locale}'")) }
 
     private
 
