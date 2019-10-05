@@ -27,10 +27,6 @@ en:
         assigned_to: "Assigned to %{valuator}"
         title: Investment projects
         edit: Edit dossier
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
-        no_valuators_assigned: No valuators assigned
         table_id: ID
         table_title: Title
         table_heading_name: Heading name

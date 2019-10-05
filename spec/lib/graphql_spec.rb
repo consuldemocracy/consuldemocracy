@@ -521,7 +521,7 @@ describe "Consul Schema" do
 
     it "does not display tags for taggings that are not public" do
       create(:proposal, tag_list: "Health")
-      allow(ActsAsTaggableOn::Tag).to receive(:public_for_api).and_return([])
+      allow(Tag).to receive(:public_for_api).and_return([])
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")

@@ -1,10 +1,10 @@
 class TagsController < ApplicationController
 
-  load_and_authorize_resource class: ActsAsTaggableOn::Tag
+  load_and_authorize_resource
   respond_to :json
 
   def suggest
-    @tags = ActsAsTaggableOn::Tag.search(params[:search]).map(&:name)
+    @tags = Tag.search(params[:search]).map(&:name)
     respond_with @tags
   end
 

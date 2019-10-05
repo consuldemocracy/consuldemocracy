@@ -110,12 +110,12 @@ module CommentableActions
     end
 
     def load_categories
-      @categories = ActsAsTaggableOn::Tag.category.order(:name)
+      @categories = Tag.category.order(:name)
     end
 
     def parse_tag_filter
       if params[:tag].present?
-        @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.named(params[:tag]).exists?
+        @tag_filter = params[:tag] if Tag.named(params[:tag]).exists?
       end
     end
 

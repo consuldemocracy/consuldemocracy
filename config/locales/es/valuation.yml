@@ -27,10 +27,6 @@ es:
         assigned_to: "Asignadas a %{valuator}"
         title: Proyectos de gasto
         edit: Editar informe
-        valuators_assigned:
-          one: Evaluador asignado
-          other: "%{count} evaluadores asignados"
-        no_valuators_assigned: Sin evaluador
         table_id: ID
         table_title: Título
         table_heading_name: Nombre de la partida
