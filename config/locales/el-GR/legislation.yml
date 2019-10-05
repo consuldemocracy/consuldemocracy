@@ -14,9 +14,6 @@ el:
         publish_comment: Δημοσίευση σχολίου
       form:
         phase_not_open: Αυτή η φάση δεν είναι ανοιχτή
-        login_to_comment: Πρέπει να %{signin} ή %{signup} για να αφήσετε ένα σχόλιο.
-        signin: Σύνδεση
-        signup: Εγγραφή
       index:
         title: Σχόλια
         comments_about: Σχόλια σχετικά με
@@ -116,11 +113,8 @@ el:
       participation:
         phase_not_open: Αυτή η φάση δεν είναι ανοιχτή
         organizations: Δεν επιτρέπεται στους οργανισμούς να συμμετέχουν στη συζήτηση
-        signin: Συνδεθείτε
-        signup: Εγγραφή
         unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να συμμετάσχετε.
         verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να συμμετάσχουν, %{verify_account}.
-        verify_account: επαλήθευση του λογαριασμού σας
         debate_phase_not_open: Η φάση συζήτησης έχει τελειώσει και οι απαντήσεις δεν γίνονται πλέον αποδεκτές
     shared:
       share: Μοιραστείτε
