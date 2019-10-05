@@ -1079,7 +1079,7 @@ describe Budget::Investment do
           inv2 = create(:budget_investment, :selected, budget: budget, heading: new_york)
           ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
 
-          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned_html)
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:different_heading_assigned)
         end
 
         it "rejects proposals with price higher than current available money" do
@@ -1091,7 +1091,7 @@ describe Budget::Investment do
 
           ballot = create(:budget_ballot, user: user, budget: budget, investments: [inv1])
 
-          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money_html)
+          expect(inv2.reason_for_not_being_ballotable_by(user, ballot)).to eq(:not_enough_money)
         end
 
       end
