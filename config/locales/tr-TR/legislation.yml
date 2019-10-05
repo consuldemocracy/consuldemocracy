@@ -14,9 +14,6 @@ tr:
         publish_comment: Yorumu Yayınla
       form:
         phase_not_open: Bu aşama şu anda etkin değil
-        login_to_comment: Yorum paylaşmak için %{signin} veya %{signup} yapmalısınız.
-        signin: Oturum aç
-        signup: Kaydol
       index:
         title: Yorumlar
         comments_about: Hakkında yorumlar
@@ -116,11 +113,8 @@ tr:
       participation:
         phase_not_open: Bu aşama açık değil
         organizations: Kurumların tartışmaya katılmasına izin verilmemektedir
-        signin: Oturum aç
-        signup: Kaydol
         unauthenticated: Katılmak için %{signin} veya %{signup} yapmalısınız.
         verified_only: Yalnızca doğrulanan kullanıcılar katılabilir, %{verify_account}.
-        verify_account: hesabınızı doğrulayın
         debate_phase_not_open: Tartışma süreci tamamlandığı için daha fazla cevap kabul edilmiyor
     shared:
       share: Paylaş
