@@ -31,6 +31,15 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "accept terms label" do
+    I18nContent.create(key: "form.accept_terms", value: attack_code)
+
+    login_as(create(:user))
+    visit new_debate_path
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "proposal actions in dashboard" do
     proposal = create(:proposal)
 

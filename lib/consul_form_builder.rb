@@ -1,4 +1,6 @@
 class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
+  include ActionView::Helpers::SanitizeHelper
+
   def enum_select(attribute, options = {}, html_options = {})
     choices = object.class.send(attribute.to_s.pluralize).keys.map do |name|
       [object.class.human_attribute_name("#{attribute}.#{name}"), name]
@@ -34,6 +36,14 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
   end
 
   private
+
+    def custom_label(attribute, text, options)
+      if text == false
+        super
+      else
+        super(attribute, sanitize(label_text(object, attribute, text)), options)
+      end
+    end
 
     def label_with_hint(attribute, options)
       custom_label(attribute, options[:label], options[:label_options]) +
