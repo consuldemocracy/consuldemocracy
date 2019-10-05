@@ -335,6 +335,11 @@ es:
       topic:
         title: "Título"
         description: "Texto inicial"
+      votation_type:
+        enum_type: "Tipo de votación"
+        max_groups_answers: "Número máximo de respuestas en el conjunto"
+        max_votes: "Número máximo de votos"
+        prioritization_type: "Tipo de priorizacion"
       banner:
         background_color: Color del fondo
         font_color: Color del texto

@@ -992,11 +992,8 @@ en:
     poll:
       take_part: Take part from %{from} to %{to}
   question:
-    max_votes: Maximum number of votes
-    max_group_answers: Maximum number of answers in the set
     votation_type: Votation type
   enum_type:
-    title: Votation type
     unique: Unique answer, closed
     multiple: Multiple answers, closed
     prioritized: Multiple prioritized answer, closed
@@ -1007,7 +1004,6 @@ en:
     answer_set_open: Set of answers, open
     answer_set_closed: Set of answers, closed
   prioritization_type:
-    title: Prioritization type
     borda: Borda votation
     dowdall: Dowdall votation
   remote_translations:

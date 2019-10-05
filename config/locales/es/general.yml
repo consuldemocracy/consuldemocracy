@@ -991,11 +991,8 @@ es:
     poll:
       take_part: Participa del %{from} al %{to}
   question:
-    max_votes: Número máximo de votos
-    max_group_answers: Número máximo de respuestas en el conjunto
     votation_type: Tipo de votación
   enum_type:
-    title: Tipo de votación
     unique: Respuesta única, cerrada
     multiple: Respuesta múltiple, cerrada
     prioritized: Respuesta múltiple priorizada, cerrada
@@ -1006,7 +1003,6 @@ es:
     answer_set_open: Conjunto de respuestas, abiertas
     answer_set_closed: Conjunto de respuestas, cerradas
   prioritization_type:
-    title: Tipo de priorizacion
     borda: Votación con recuento Borda
     dowdall: Votación con recuento Dowdall
   remote_translations:
