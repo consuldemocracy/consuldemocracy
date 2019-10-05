@@ -23,7 +23,7 @@ shared_examples_for "sluggable" do |updatable_slug_trait:|
     context "slug updating condition is false" do
       it "slug isn't updated" do
         expect { sluggable.update_attributes(name: "New Name") }
-          .not_to (change { sluggable.slug })
+          .not_to change { sluggable.slug }
       end
     end
   end

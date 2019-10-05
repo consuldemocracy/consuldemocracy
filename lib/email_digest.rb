@@ -1,6 +1,6 @@
 class EmailDigest
 
-  attr_accessor :user, :notifications
+  attr_accessor :user
 
   def initialize(user)
     @user = user

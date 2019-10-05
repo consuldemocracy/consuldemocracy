@@ -690,7 +690,7 @@ describe "Budget Investments" do
     end
 
     scenario "Random order maintained when going back from show" do
-      per_page.times { |i| create(:budget_investment, heading: heading) }
+      per_page.times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
 

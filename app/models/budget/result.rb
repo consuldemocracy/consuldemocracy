@@ -1,7 +1,7 @@
 class Budget
   class Result
 
-    attr_accessor :budget, :heading, :money_spent, :current_investment
+    attr_accessor :budget, :heading, :current_investment
 
     def initialize(budget, heading)
       @budget = budget

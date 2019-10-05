@@ -51,13 +51,13 @@ describe "Admin collaborative legislation" do
 
       visit admin_legislation_processes_path(filter: "all")
 
-      expect(page).to have_content (process_1.start_date)
-      expect(page).to have_content (process_2.start_date)
-      expect(page).to have_content (process_3.start_date)
+      expect(page).to have_content process_1.start_date
+      expect(page).to have_content process_2.start_date
+      expect(page).to have_content process_3.start_date
 
-      expect(page).to have_content (process_1.end_date)
-      expect(page).to have_content (process_2.end_date)
-      expect(page).to have_content (process_3.end_date)
+      expect(page).to have_content process_1.end_date
+      expect(page).to have_content process_2.end_date
+      expect(page).to have_content process_3.end_date
 
       expect(process_3.title).to appear_before(process_2.title)
       expect(process_2.title).to appear_before(process_1.title)

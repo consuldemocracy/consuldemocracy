@@ -171,7 +171,7 @@ describe Budget::Phase do
           second_phase.update_attributes(enabled: false,
                                          starts_at: Date.current,
                                          ends_at:  Date.current + 2.days)
-        end.not_to (change { prev_enabled_phase.ends_at })
+        end.not_to change { prev_enabled_phase.ends_at }
       end
 
       it "adjusts next enabled phase start date to its own start date" do

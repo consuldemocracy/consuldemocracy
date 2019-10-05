@@ -86,15 +86,15 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, nil, nil)
 
-      expect(request).to eq ({ :request =>
-                              { :codigo_institucion => 1,
-                               :codigo_portal => 1,
-                               :codigo_usuario => 1,
-                               :documento => "0123456",
-                               :tipo_documento => "1",
-                               :codigo_idioma => "102",
-                               :nivel => "3" }
-                              })
+      expect(request).to eq({ :request =>
+                             { :codigo_institucion => 1,
+                              :codigo_portal => 1,
+                              :codigo_usuario => 1,
+                              :documento => "0123456",
+                              :tipo_documento => "1",
+                              :codigo_idioma => "102",
+                              :nivel => "3" }
+                             })
     end
 
     it "when send date_of_birth and postal_code but are not configured" do
@@ -105,15 +105,15 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
 
-      expect(request).to eq ({ :request =>
-                              { :codigo_institucion => 1,
-                               :codigo_portal => 1,
-                               :codigo_usuario => 1,
-                               :documento => "0123456",
-                               :tipo_documento => "1",
-                               :codigo_idioma => "102",
-                               :nivel => "3" }
-                              })
+      expect(request).to eq({ :request =>
+                             { :codigo_institucion => 1,
+                              :codigo_portal => 1,
+                              :codigo_usuario => 1,
+                              :documento => "0123456",
+                              :tipo_documento => "1",
+                              :codigo_idioma => "102",
+                              :nivel => "3" }
+                             })
     end
 
     it "when send date_of_birth and postal_code but are configured" do
@@ -137,17 +137,17 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
 
-      expect(request).to eq ({ :request =>
-                              { :codigo_institucion => 1,
-                               :codigo_portal => 1,
-                               :codigo_usuario => 1,
-                               :documento => "0123456",
-                               :tipo_documento => "1",
-                               :fecha_nacimiento => "1980-01-01",
-                               :codigo_postal => "28001",
-                               :codigo_idioma => "102",
-                               :nivel => "3" }
-                              })
+      expect(request).to eq({ :request =>
+                             { :codigo_institucion => 1,
+                              :codigo_portal => 1,
+                              :codigo_usuario => 1,
+                              :documento => "0123456",
+                              :tipo_documento => "1",
+                              :fecha_nacimiento => "1980-01-01",
+                              :codigo_postal => "28001",
+                              :codigo_idioma => "102",
+                              :nivel => "3" }
+                             })
     end
 
   end
@@ -164,26 +164,26 @@ describe RemoteCensusApi do
 
       response = RemoteCensusApi.new.send(:get_response_body, document_type, document_number, nil, nil)
 
-      expect(response).to eq ({ get_habita_datos_response: {
-                                  get_habita_datos_return: {
-                                    datos_habitante: {
-                                      item: {
-                                        fecha_nacimiento_string: "31-12-1980",
-                                        identificador_documento: "12345678Z",
-                                        descripcion_sexo: "Varón",
-                                        nombre: "José",
-                                        apellido1: "García"
-                                      }
-                                    },
-                                    datos_vivienda: {
-                                      item: {
-                                        codigo_postal: "28013",
-                                        codigo_distrito: "01"
-                                      }
-                                    }
-                                  }
-                                }
-                              })
+      expect(response).to eq({ get_habita_datos_response: {
+                                 get_habita_datos_return: {
+                                   datos_habitante: {
+                                     item: {
+                                       fecha_nacimiento_string: "31-12-1980",
+                                       identificador_documento: "12345678Z",
+                                       descripcion_sexo: "Varón",
+                                       nombre: "José",
+                                       apellido1: "García"
+                                     }
+                                   },
+                                   datos_vivienda: {
+                                     item: {
+                                       codigo_postal: "28013",
+                                       codigo_distrito: "01"
+                                     }
+                                   }
+                                 }
+                               }
+                             })
     end
 
   end
