@@ -89,7 +89,7 @@ if SiteCustomization::Page.find_by_slug("accessibility").nil?
   end
   content << "</ul>
               <h2>#{I18n.t("pages.accessibility.compatibility.title")}</h2>
-              <p>#{I18n.t("pages.accessibility.compatibility.description_html")}</p>"
+              <p>#{I18n.t("pages.accessibility.compatibility.description")}</p>"
 
   page.content = content
   page.save!
