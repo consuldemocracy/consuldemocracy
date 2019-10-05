@@ -27,10 +27,6 @@ tr:
         assigned_to: "%{valuator} tarafından değerlendirilecek"
         title: Yatırım projeleri
         edit: Dosyayı düzenle
-        valuators_assigned:
-          one: Görevlendirilen bilirkişi
-          other: "%{count} atanan bilirkişiler"
-        no_valuators_assigned: Hiç bilirkişi görevlendirilmedi
         table_id: KİMLİK
         table_title: Başlık
         table_heading_name: Başlık
