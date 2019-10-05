@@ -733,14 +733,14 @@ es:
     followable:
       budget_investment:
         create:
-          notice_html: "¡Ahora estás siguiendo este proyecto de gasto! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+          notice_html: "¡Ahora estás siguiendo este proyecto de gasto! <br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
         destroy:
-          notice_html: "¡Has dejado de seguir este proyecto de gasto! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
+          notice_html: "¡Has dejado de seguir este proyecto de gasto! <br> Ya no recibirás más notificaciones relacionadas con este proyecto."
       proposal:
         create:
-          notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+          notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! <br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
         destroy:
-          notice_html: "¡Has dejado de seguir esta propuesta ciudadana! </br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
+          notice_html: "¡Has dejado de seguir esta propuesta ciudadana! <br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
     hide: Ocultar
     print:
       print_button: Imprimir esta información
