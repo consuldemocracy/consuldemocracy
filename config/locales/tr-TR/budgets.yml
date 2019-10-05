@@ -95,11 +95,8 @@ tr:
           check_ballot_link: "oyumu kontrol et"
           zero: Bu kategoride herhangi bir yatırım projesine oy vermediniz.
           verified_only: "Yeni bir bütçe yatırımı oluşturmak için %{verify}."
-          verify_account: "hesabınızı doğrulayın"
           create: "Bütçe yatırımı oluşturun"
           not_logged_in: "Yeni bir bütçe yatırımı oluşturmak istiyorsanız %{sign_in} ya da %{sign_up}."
-          sign_in: "oturum aç"
-          sign_up: "kaydol"
           by_feasibility: Uygulanabilirlik kriterine göre
           feasible: Uygulanabilir projeler
           unfeasible: Uygulanabilir olmayan projeler
