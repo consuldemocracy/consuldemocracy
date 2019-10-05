@@ -27,10 +27,6 @@ el:
         assigned_to: "Έχει ανατεθεί σε %{valuator}"
         title: Επενδυτικά έργα
         edit: Επεξεργασία φακέλου
-        valuators_assigned:
-          one: Ανατεθημένος αξιολογητής
-          other: "%{count} αξιολογητές που έχει ανατεθεί"
-        no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
         table_id: Ταυτότητα
         table_title: Τίτλος
         table_heading_name: Όνομα επικεφαλίδας
