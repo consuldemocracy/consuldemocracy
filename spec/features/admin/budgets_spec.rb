@@ -128,7 +128,7 @@ describe "Admin budgets" do
       click_button "Create Budget"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
-      expect(page).to have_css("label.error", text: "Name")
+      expect(page).to have_css(".is-invalid-label", text: "Name")
     end
 
     scenario "Name should be unique" do
@@ -139,8 +139,8 @@ describe "Admin budgets" do
       click_button "Create Budget"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
-      expect(page).to have_css("label.error", text: "Name")
-      expect(page).to have_css("small.error", text: "has already been taken")
+      expect(page).to have_css(".is-invalid-label", text: "Name")
+      expect(page).to have_css("small.form-error", text: "has already been taken")
     end
 
   end

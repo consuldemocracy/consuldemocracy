@@ -166,7 +166,7 @@ describe "Admin budget headings" do
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css("label.error", text: "Heading name")
+      expect(page).to have_css(".is-invalid-label", text: "Heading name")
       expect(page).to have_content "can't be blank"
     end
 
@@ -175,7 +175,7 @@ describe "Admin budget headings" do
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css("label.error", text: "Amount")
+      expect(page).to have_css(".is-invalid-label", text: "Amount")
       expect(page).to have_content "can't be blank"
     end
 
@@ -272,8 +272,8 @@ describe "Admin budget headings" do
       click_button "Save heading"
 
       expect(page).not_to have_content "Heading updated successfully"
-      expect(page).to have_css("label.error", text: "Heading name")
-      expect(page).to have_css("small.error", text: "has already been taken")
+      expect(page).to have_css(".is-invalid-label", text: "Heading name")
+      expect(page).to have_css("small.form-error", text: "has already been taken")
     end
 
   end

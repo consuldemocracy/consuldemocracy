@@ -136,7 +136,7 @@ describe "Admin edit translatable records" do
 
         select "Français", from: :select_language
 
-        expect(page).to have_field "Name", with: "", class: "error"
+        expect(page).to have_field "Name", with: "", class: "is-invalid-input"
       end
     end
 
@@ -177,7 +177,7 @@ describe "Admin edit translatable records" do
         select "Français", from: :select_language
         click_link class: "fullscreen-toggle"
 
-        expect(page).to have_field "Text", with: "", class: "error"
+        expect(page).to have_field "Text", with: "", class: "is-invalid-input"
       end
     end
   end
@@ -277,7 +277,7 @@ describe "Admin edit translatable records" do
 
         select "Español", from: :select_language
 
-        expect(page).to have_field "Title", with: "", class: "error"
+        expect(page).to have_field "Title", with: "", class: "is-invalid-input"
       end
     end
 
@@ -382,7 +382,7 @@ describe "Admin edit translatable records" do
       click_button "Save"
 
       expect(page).to have_css "#error_explanation"
-      expect(page).to have_field "Question", with: "", class: "error"
+      expect(page).to have_field "Question", with: "", class: "is-invalid-input"
       expect_to_have_language_selected "English"
       expect_not_to_have_language "Español"
 

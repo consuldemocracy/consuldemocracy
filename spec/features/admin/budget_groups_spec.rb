@@ -154,7 +154,7 @@ describe "Admin budget groups" do
       click_button "Create new group"
 
       expect(page).not_to have_content "Group created successfully!"
-      expect(page).to have_css("label.error", text: "Group name")
+      expect(page).to have_css(".is-invalid-label", text: "Group name")
       expect(page).to have_content "can't be blank"
     end
 
@@ -229,8 +229,8 @@ describe "Admin budget groups" do
       click_button "Save group"
 
       expect(page).not_to have_content "Group updated successfully"
-      expect(page).to have_css("label.error", text: "Group name")
-      expect(page).to have_css("small.error", text: "has already been taken")
+      expect(page).to have_css(".is-invalid-label", text: "Group name")
+      expect(page).to have_css("small.form-error", text: "has already been taken")
     end
 
   end
