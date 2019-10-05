@@ -41,7 +41,6 @@ tr:
   comments:
     comments_closed: Yorumlar kapalı
     verified_only: Katılmak için %{verify_account}
-    verify_account: hesabınızı doğrulayın
     comment:
       admin: Yönetici
       author: Fikir sahibi
@@ -164,7 +163,6 @@ tr:
       comments_title: Yorumlar
       edit_debate_link: Düzenle
       flag: Bu tartışma birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
-      login_to_comment: Yorum paylaşmak için %{signin} veya %{signup} yapmalısınız.
       share: Paylaş
       author: Fikir yaratıcısı
     update:
@@ -459,7 +457,6 @@ tr:
       comments_tab: Yorumlar
       dashboard_proposal_link: Gösterge paneli
       flag: Bu öneri birkaç kullanıcı tarafından uygunsuz olarak işaretlendi.
-      login_to_comment: Yorum paylaşmak için %{signin} veya %{signup} yapmalısınız.
       notifications_tab: Bildirimler
       milestones_tab: Kilometre taşları
       retired_warning: "Fikir yaratıcısı bu önerinin daha fazla destek almaması gerektiğini düşünmektedir."
@@ -660,9 +657,6 @@ tr:
       back: Oylamaya geri dön
       cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
-      login_to_comment: Yorum paylaşmak için %{signin} veya %{signup} yapmalısınız.
-      signin: Oturum aç
-      signup: Kaydol
       cant_answer_verify_html: "Cevaplamak için %{verify_link} yapmanız gerekiyor."
       verify_link: "hesabınızı doğrulayın"
       cant_answer_expired: "Bu anket tamamlandı."
@@ -860,10 +854,6 @@ tr:
         title: '%{receiver} ''a özel mesaj gönder'
         title_label: Başlık
         verified_only: Bir özel mesaj göndermek için %{verify_account}
-        verify_account: hesabınızı doğrulayın
-        authenticate: Devam etmek için %{signin} veya %{signup} yapmalısınız.
-        signin: oturum aç
-        signup: kaydol
       show:
         receiver: Mesaj %{receiver} 'a gönderildi
     show:
@@ -911,12 +901,8 @@ tr:
     comment_unauthenticated: Oy kullanmak için %{signin} veya %{signup} yapmalısınız.
     disagree: Kabul etmiyorum
     organizations: Organizasyonların oy kullanmalarına izin verilmez
-    signin: Oturum aç
-    signup: Kaydol
     supports: Destekler
-    unauthenticated: Devam etmek için %{signin} veya %{signup} yapmalısınız.
     verified_only: Yalnızca doğrulanan kullanıcılar önerilere oy verebilir; %{verify_account}.
-    verify_account: hesabınızı doğrulayın
     budget_investments:
       not_logged_in: Devam etmek için %{signin} veya %{signup} yapmalısınız.
       not_verified: Yalnızca doğrulanan kullanıcılar yatırım projelerine oy verebilir; %{verify_account}.
@@ -995,8 +981,6 @@ tr:
     help:
       alt: Yorum yapmak istediğiniz metni seçin ve kalemle düğmeye basın.
       text: Bu belgeye yorum yapmak için %{sign_in} veya %{sign_up} yapmalısınız. Ardından yorumlamak istediğiniz metni seçin ve kalemle düğmeye basın.
-      text_sign_in: oturum aç
-      text_sign_up: kaydol
       title: Ben bu belgeye nasıl yorum yapabilirim?
   links:
     form:
