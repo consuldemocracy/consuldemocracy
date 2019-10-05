@@ -147,7 +147,7 @@ describe "Admin settings" do
       visit admin_settings_path
       find("#remote-census-tab").click
 
-      expect(page).to have_content 'To configure remote census (SOAP) you must enable ' \
+      expect(page).to have_content "To configure remote census (SOAP) you must enable " \
                                    '"Configure connection to remote census (SOAP)" ' \
                                    'on "Features" tab.'
     end
@@ -161,7 +161,7 @@ describe "Admin settings" do
       expect(page).to have_content("General Information")
       expect(page).to have_content("Request Data")
       expect(page).to have_content("Response Data")
-      expect(page).not_to have_content 'To configure remote census (SOAP) you must enable ' \
+      expect(page).not_to have_content "To configure remote census (SOAP) you must enable " \
                                        '"Configure connection to remote census (SOAP)" ' \
                                        'on "Features" tab.'
     end

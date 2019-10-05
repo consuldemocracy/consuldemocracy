@@ -29,11 +29,12 @@ describe Signature do
   end
 
   describe "custom validations" do
-
-    let(:signature) { build(:signature,
-                            document_number: "12345678Z",
-                            date_of_birth: "31/12/1980",
-                            postal_code: "28013") }
+    let(:signature) do
+      build(:signature,
+            document_number: "12345678Z",
+            date_of_birth: "31/12/1980",
+            postal_code: "28013")
+    end
 
     before do
       Setting["feature.remote_census"] = true

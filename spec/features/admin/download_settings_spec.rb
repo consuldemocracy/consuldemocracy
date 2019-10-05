@@ -263,26 +263,22 @@ describe "Admin download settings" do
     let(:budget_finished)  { create(:budget, :finished) }
     let(:heading) { create(:budget_heading, budget: budget_finished, price: 1000) }
 
-    let(:investment1) { create(:budget_investment,
-                               :selected,
-                               heading: heading,
-                               price: 200,
-                               ballot_lines_count: 900) }
-    let(:investment2) { create(:budget_investment,
-                               :selected,
-                               heading: heading,
-                               price: 300,
-                               ballot_lines_count: 800) }
-    let(:investment3) { create(:budget_investment,
-                               :incompatible,
-                               heading: heading,
-                               price: 500,
-                               ballot_lines_count: 700) }
-    let(:investment4) { create(:budget_investment,
-                               :selected,
-                               heading: heading,
-                               price: 600,
-                               ballot_lines_count: 600) }
+    let(:investment1) do
+      create(:budget_investment, :selected, heading: heading, price: 200, ballot_lines_count: 900)
+    end
+
+    let(:investment2) do
+      create(:budget_investment, :selected, heading: heading, price: 300, ballot_lines_count: 800)
+    end
+
+    let(:investment3) do
+      create(:budget_investment, :incompatible, heading: heading, price: 500, ballot_lines_count: 700)
+    end
+
+    let(:investment4) do
+      create(:budget_investment, :selected, heading: heading, price: 600, ballot_lines_count: 600)
+    end
+
     let(:budget) { create :budget }
 
     before do

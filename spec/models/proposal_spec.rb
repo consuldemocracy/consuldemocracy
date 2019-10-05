@@ -473,15 +473,15 @@ describe Proposal do
   end
 
   describe "search" do
-
     context "attributes" do
-
-      let(:attributes) { { title: "save the world",
-                           summary: "basically",
-                           description: "in order to save the world one must think about...",
-                           title_es: "para salvar el mundo uno debe pensar en...",
-                           summary_es: "basicamente",
-                           description_es: "uno debe pensar" } }
+      let(:attributes) do
+        { title: "save the world",
+          summary: "basically",
+          description: "in order to save the world one must think about...",
+          title_es: "para salvar el mundo uno debe pensar en...",
+          summary_es: "basicamente",
+          description_es: "uno debe pensar" }
+      end
 
       it "searches by title" do
         proposal = create(:proposal, attributes)

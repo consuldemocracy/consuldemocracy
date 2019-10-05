@@ -224,14 +224,16 @@ describe "Admin budget headings" do
   end
 
   context "Update" do
-    let(:heading) { create(:budget_heading,
-                            group: group,
-                            name: "All City",
-                            price: 1000,
-                            population: 10000,
-                            longitude: 20.50,
-                            latitude: -10.50,
-                            allow_custom_content: true) }
+    let(:heading) do
+      create(:budget_heading,
+             group: group,
+             name: "All City",
+             price: 1000,
+             population: 10000,
+             longitude: 20.50,
+             latitude: -10.50,
+             allow_custom_content: true)
+    end
 
     scenario "Updates group" do
       visit edit_admin_budget_group_heading_path(budget, group, heading)

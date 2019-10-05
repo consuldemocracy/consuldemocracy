@@ -15,12 +15,12 @@ module Budgets
 
       respond_to do |format|
         format.html
-        format.csv { send_data to_csv(downloadables,
-                                      Budget::Investment,
-                                      1),
-                               type: "text/csv",
-                               disposition: "attachment",
-                               filename: "budget_investment_milestones.csv" }
+        format.csv do
+          send_data to_csv(downloadables, Budget::Investment, 1),
+                    type: "text/csv",
+                    disposition: "attachment",
+                    filename: "budget_investment_milestones.csv"
+        end
       end
     end
 

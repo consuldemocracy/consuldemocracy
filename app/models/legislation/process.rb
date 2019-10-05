@@ -59,9 +59,12 @@ class Legislation::Process < ApplicationRecord
   scope :past, -> { where("end_date < ?", Date.current) }
 
   scope :published, -> { where(published: true) }
-  scope :not_in_draft, -> { where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and
-                                   draft_end_date IS NOT NULL and (draft_start_date > ? or
-                                   draft_end_date < ?))", Date.current, Date.current) }
+
+  def self.not_in_draft
+    where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and
+           draft_end_date IS NOT NULL and (draft_start_date > ? or
+           draft_end_date < ?))", Date.current, Date.current)
+  end
 
   def past?
     end_date < Date.current

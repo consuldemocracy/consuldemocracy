@@ -37,9 +37,9 @@ describe "Valuation budget investments" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
-    expect {
+    expect do
       visit valuation_budget_budget_investments_path(create(:budget))
-    }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Display link to valuation section" do
@@ -282,9 +282,9 @@ describe "Valuation budget investments" do
       logout
       login_as create(:valuator).user
 
-      expect {
+      expect do
         visit valuation_budget_budget_investment_path(budget, investment)
-      }.to raise_error "Not Found"
+      end.to raise_error "Not Found"
     end
 
     scenario "preview is visible" do

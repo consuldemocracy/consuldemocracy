@@ -1360,19 +1360,29 @@ describe "Admin budget investments" do
   end
 
   context "Selecting" do
+    let!(:unfeasible_bi) do
+      create(:budget_investment, :unfeasible, budget: budget, title: "Unfeasible project")
+    end
 
-    let!(:unfeasible_bi)  { create(:budget_investment, :unfeasible, budget: budget,
-                                                                    title: "Unfeasible project") }
-    let!(:feasible_bi)    { create(:budget_investment, :feasible, budget: budget,
-                                                                  title: "Feasible project") }
-    let!(:feasible_vf_bi) { create(:budget_investment, :feasible, :finished, budget: budget,
-                                                                  title: "Feasible, VF project") }
-    let!(:selected_bi)    { create(:budget_investment, :selected, budget: budget,
-                                                                  title: "Selected project") }
-    let!(:winner_bi)      { create(:budget_investment, :winner, budget: budget,
-                                                                title: "Winner project") }
-    let!(:undecided_bi)   { create(:budget_investment, :undecided, budget: budget,
-                                                                   title: "Undecided project") }
+    let!(:feasible_bi) do
+      create(:budget_investment, :feasible, budget: budget, title: "Feasible project")
+    end
+
+    let!(:feasible_vf_bi) do
+      create(:budget_investment, :feasible, :finished, budget: budget, title: "Feasible, VF project")
+    end
+
+    let!(:selected_bi) do
+      create(:budget_investment, :selected, budget: budget, title: "Selected project")
+    end
+
+    let!(:winner_bi) do
+      create(:budget_investment, :winner, budget: budget, title: "Winner project")
+    end
+
+    let!(:undecided_bi) do
+      create(:budget_investment, :undecided, budget: budget, title: "Undecided project")
+    end
 
     scenario "Filtering by valuation and selection", :js do
       visit admin_budget_budget_investments_path(budget)

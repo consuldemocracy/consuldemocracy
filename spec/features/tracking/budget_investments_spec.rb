@@ -13,9 +13,9 @@ describe "Valuation budget investments" do
 
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
-    expect {
+    expect do
       visit tracking_budget_budget_investments_path(create(:budget))
-    }.to raise_exception(FeatureFlags::FeatureDisabled)
+    end.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Display link to tracking section" do
@@ -161,9 +161,9 @@ describe "Valuation budget investments" do
       logout
       login_as create(:tracker).user
 
-      expect {
+      expect do
         visit tracking_budget_budget_investment_path(budget, investment)
-      }.to raise_error "Not Found"
+      end.to raise_error "Not Found"
     end
 
   end
@@ -269,9 +269,9 @@ describe "Valuation budget investments" do
       logout
       login_as create(:tracker, user: create(:user)).user
 
-      expect {
+      expect do
         visit tracking_budget_budget_investment_progress_bars_path(budget, investment)
-      }.to raise_error "Not Found"
+      end.to raise_error "Not Found"
     end
 
     scenario "create primary progress bar" do

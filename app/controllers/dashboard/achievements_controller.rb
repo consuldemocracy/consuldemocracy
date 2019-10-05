@@ -22,16 +22,16 @@ class Dashboard::AchievementsController < Dashboard::BaseController
 
     def groups
       if params[:group_by] == "week"
-        return executed_proposed_actions.group_by {
-          |v| "#{v.executed_at.to_date.cweek}/#{v.executed_at.to_date.year}" }
+        executed_proposed_actions.group_by do |v|
+          "#{v.executed_at.to_date.cweek}/#{v.executed_at.to_date.year}"
+        end
+      elsif params[:group_by] == "month"
+        executed_proposed_actions.group_by do |v|
+          "#{v.executed_at.to_date.year}-#{v.executed_at.to_date.month}"
+        end
+      else
+        executed_proposed_actions.group_by { |a| a.executed_at.to_date }
       end
-
-      if params[:group_by] == "month"
-        return executed_proposed_actions.group_by {
-          |v| "#{v.executed_at.to_date.year}-#{v.executed_at.to_date.month}" }
-      end
-
-      executed_proposed_actions.group_by { |a| a.executed_at.to_date }
     end
 
     def executed_proposed_actions

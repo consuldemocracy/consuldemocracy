@@ -28,10 +28,12 @@ module CommentableActions
 
     respond_to do |format|
       format.html
-      format.csv { send_data to_csv(resources_csv, resource_model),
-                            type: "text/csv",
-                            disposition: "attachment",
-                            filename: "#{get_resource(resource_model)}.csv" }
+      format.csv do
+        send_data to_csv(resources_csv, resource_model),
+                  type: "text/csv",
+                  disposition: "attachment",
+                  filename: "#{get_resource(resource_model)}.csv"
+      end
     end
   end
 

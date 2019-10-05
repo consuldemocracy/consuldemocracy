@@ -41,6 +41,9 @@ Layout/EmptyLines:
 Layout/EndOfLine:
   EnforcedStyle: lf
 
+Layout/MultilineBlockLayout:
+  Enabled: true
+
 Layout/SpaceAfterColon:
   Enabled: true
 
@@ -227,6 +230,9 @@ RSpec/ScatteredSetup:
   Enabled: true
 
 RSpec/VoidExpect:
+  Enabled: true
+
+Style/BlockDelimiters:
   Enabled: true
 
 Style/PercentLiteralDelimiters:
