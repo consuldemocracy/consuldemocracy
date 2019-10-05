@@ -1,11 +1,11 @@
 module Votes
   def expect_message_you_need_to_sign_in
-    expect(page).to have_content "You must Sign in or Sign up to continue"
+    expect(page).to have_content "You must sign in or sign up to continue"
     expect(page).to have_selector(".in-favor", visible: false)
   end
 
   def expect_message_you_need_to_sign_in_to_vote_comments
-    expect(page).to have_content "You must Sign in or Sign up to vote"
+    expect(page).to have_content "You must sign in or sign up to vote"
     expect(page).to have_selector(".participation-allowed", visible: false)
     expect(page).to have_selector(".participation-not-allowed", visible: true)
   end

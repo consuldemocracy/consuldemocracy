@@ -516,7 +516,7 @@ describe "Ballots" do
 
       within("#budget_investment_#{investment.id}") do
         find("div.ballot").hover
-        expect(page).to have_content "You must Sign in or Sign up to continue."
+        expect(page).to have_content "You must sign in or sign up to continue."
         expect(page).to have_selector(".in-favor a", visible: false)
       end
     end

@@ -9,9 +9,8 @@
     <% if not current_user %>
       <div class="callout primary">
         <p>
-          <%= t("users.direct_messages.new.authenticate",
-            signin: link_to(t("users.direct_messages.new.signin"), new_user_session_path),
-            signup: link_to(t("users.direct_messages.new.signup"), new_user_registration_path)).html_safe %>
+          <%= t("users.login_to_continue",
+            signin: link_to_signin, signup: link_to_signup).html_safe %>
         </p>
       </div>
     <% elsif not @receiver.email_on_direct_message? %>
@@ -38,8 +37,7 @@
       <div class="callout warning">
         <p>
           <%= t("users.direct_messages.new.verified_only",
-          verify_account: link_to(t("users.direct_messages.new.verify_account"),
-                                    verification_path)).html_safe %>
+                verify_account: link_to_verify_account).html_safe %>
         </p>
       </div>
     <% end %>

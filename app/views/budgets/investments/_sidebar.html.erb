@@ -7,8 +7,7 @@
   <% else %>
     <div class="callout warning">
       <%= t("budgets.investments.index.sidebar.verified_only",
-          verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
-                  verification_path)).html_safe %>
+          verify: link_to_verify_account).html_safe %>
     </div>
   <% end %>
 <% end %>

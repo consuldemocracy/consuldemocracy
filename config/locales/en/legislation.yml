@@ -14,9 +14,6 @@ en:
         publish_comment: Publish Comment
       form:
         phase_not_open: This phase is not open
-        login_to_comment: You must %{signin} or %{signup} to leave a comment.
-        signin: Sign in
-        signup: Sign up
       index:
         title: Comments
         comments_about: Comments about
@@ -116,11 +113,8 @@ en:
       participation:
         phase_not_open: This phase is not open
         organizations: Organisations are not permitted to participate in the debate
-        signin: Sign in
-        signup: Sign up
         unauthenticated: You must %{signin} or %{signup} to participate.
         verified_only: Only verified users can participate, %{verify_account}.
-        verify_account: verify your account
         debate_phase_not_open: Debate phase has finished and answers are not accepted anymore
     shared:
       share: Share

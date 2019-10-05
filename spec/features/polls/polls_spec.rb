@@ -192,7 +192,7 @@ describe "Polls" do
 
       visit poll_path(poll)
 
-      expect(page).to have_content("You must Sign in or Sign up to participate")
+      expect(page).to have_content("You must sign in or sign up to participate")
       expect(page).to have_link("Yes", href: new_user_session_path)
       expect(page).to have_link("No", href: new_user_session_path)
     end
