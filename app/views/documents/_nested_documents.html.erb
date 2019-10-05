@@ -18,6 +18,6 @@
                               } %>
 
   <div id="max-documents-notice" class="max-documents-notice callout primary text-center <%= "hide" unless max_documents_allowed?(documentable) %>">
-    <%= t "documents.max_documents_allowed_reached_html" %>
+    <%= sanitize(t("documents.max_documents_allowed_reached")) %>
   </div>
 </div>

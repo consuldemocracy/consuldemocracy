@@ -19,7 +19,7 @@ es:
         unconfirmed_code: Todavía no has introducido el código de confirmación
       create:
         flash:
-          success_html: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las Oficinas de Atención al Ciudadano.
+          success: Antes de las votaciones recibirás una carta con las instrucciones para verificar tu cuenta.<br> Recuerda que puedes ahorrar el envío verificándote presencialmente en cualquiera de las Oficinas de Atención al Ciudadano.
       edit:
         see_all: Ver propuestas
         title: Carta solicitada
@@ -49,7 +49,7 @@ es:
         accept_terms_text_title: Acepto los términos de acceso al Padrón
         document_number: Número de documento
         document_number_help_title: Ayuda
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P"
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarjeta de residencia</strong>: X1234567P"
         document_type:
           passport: Pasaporte
           residence_card: Tarjeta de residencia
@@ -73,7 +73,7 @@ es:
         title: SMS de confirmación
       new:
         phone: Introduce tu teléfono móvil para recibir el código
-        phone_format_html: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
+        phone_format: "<strong><em>(Ejemplo: 612345678 ó +34612345678)</em></strong>"
         phone_note: Sólo usaremos tu teléfono para enviarte un código, nunca te contactaremos.
         phone_placeholder: "Ejemplo: 612345678 ó +34612345678"
         submit_button: Enviar

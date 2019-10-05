@@ -28,9 +28,9 @@
           <h2><%= t("shared.search_results") %></h2>
           <p>
             <%= page_entries_info @investments %>
-            <%= t("budgets.investments.index.search_results_html",
+            <%= sanitize(t("budgets.investments.index.search_results",
                    count: @investments.size,
-                   search_term: params[:search]) %>
+                   search_term: params[:search])) %>
           </p>
         </div>
       </div>

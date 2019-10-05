@@ -7,7 +7,7 @@
     <h1><%= t("verification.letter.edit.title") %></h1>
 
     <div data-alert class="callout success">
-      <%= t("verification.letter.create.flash.success_html") %>
+      <%= sanitize(t("verification.letter.create.flash.success")) %>
     </div>
 
     <%= link_to t("verification.letter.edit.see_all"), proposals_path, class: "button warning" %>

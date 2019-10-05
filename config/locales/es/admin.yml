@@ -198,8 +198,8 @@ es:
           min_total_supports: Apoyos mínimos
           max_total_supports: Apoyos máximos
           winners: Ganadores
-          one_filter_html: "Filtros en uso: <b><em>%{filter}</em></b>"
-          two_filters_html: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
+          one_filter: "Filtros en uso: <b><em>%{filter}</em></b>"
+          two_filters: "Filtros en uso: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtrar
         download_current_selection: "Descargar selección actual"
@@ -554,7 +554,7 @@ es:
           form:
             error: Error
         form:
-          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
+          title: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Lanzar editor de texto
           close_text_editor: Cerrar editor de texto
           use_markdown: Usa Markdown para formatear el texto
@@ -766,7 +766,7 @@ es:
         empty_newsletters: No hay newsletters para mostrar
       new:
         title: Nueva newsletter
-        header_footer_help_text_html: "El encabezado y pie son los mismos en todos los emails, puedes modificarlos en <code>app/views/layouts/mailer_header</code> y <code>app/views/layouts/mailer_footer</code>.<br>Puedes reemplazar la imagen del encabezado en %{link}."
+        header_footer_help_text: "El encabezado y pie son los mismos en todos los emails, puedes modificarlos en <code>app/views/layouts/mailer_header</code> y <code>app/views/layouts/mailer_footer</code>.<br>Puedes reemplazar la imagen del encabezado en %{link}."
         image_link: "personalizar imágenes"
       edit:
         title: Editar newsletter
@@ -1186,7 +1186,7 @@ es:
           pending: Pendientes
           rejected: Rechazadas
           verified: Verificadas
-        hidden_count_html:
+        hidden_count:
           one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
           other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         name: Nombre
@@ -1541,7 +1541,7 @@ es:
           see_page: Ver página
         new:
           title: Página nueva
-          slug_help_html: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
+          slug_help: "Texto que identifica esta página en la URL, por ejemplo <code>https://consulproject.org/slug-de-pagina</code>"
         page:
           created_at: Creada
           status: Estado

@@ -1,7 +1,7 @@
 en:
   documents:
     title: Documents
-    max_documents_allowed_reached_html: You have reached the maximum number of documents allowed! <strong>You have to delete one before you can upload another.</strong>
+    max_documents_allowed_reached: You have reached the maximum number of documents allowed! <strong>You have to delete one before you can upload another.</strong>
     additional: Additional documentation
     form:
       title: Documents

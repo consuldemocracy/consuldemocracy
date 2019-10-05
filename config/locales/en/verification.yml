@@ -19,7 +19,7 @@ en:
         unconfirmed_code: You have not yet entered the confirmation code
       create:
         flash:
-          success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the Citizen Support Offices.
+          success: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the Citizen Support Offices.
       edit:
         see_all: See proposals
         title: Letter requested
@@ -49,7 +49,7 @@ en:
         accept_terms_text_title: I accept the terms and conditions of access of the Census
         document_number: Document number
         document_number_help_title: Help
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
+        document_number_help_text: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Passport
           residence_card: Residence card
@@ -73,7 +73,7 @@ en:
         title: Security code confirmation
       new:
         phone: Enter your mobile phone number to receive the code
-        phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
+        phone_format: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
         phone_note: We only use your phone to send you a code, never to contact you.
         phone_placeholder: "Example: 612345678 or +34612345678"
         submit_button: Send

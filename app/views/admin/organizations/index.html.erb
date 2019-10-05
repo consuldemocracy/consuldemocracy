@@ -67,7 +67,7 @@
 
   <% if hidden > 0 %>
     <div class="callout warning">
-      <%= t("admin.organizations.index.hidden_count_html", count: hidden) %>
+      <%= sanitize(t("admin.organizations.index.hidden_count", count: hidden)) %>
     </div>
   <% end %>
 

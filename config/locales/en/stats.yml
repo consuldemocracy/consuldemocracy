@@ -27,7 +27,7 @@ en:
       by_heading: "Participants by phase and heading"
       total: "Total"
       heading: "Heading"
-      investments_sent_html: "Investment proposals sent"
+      investments_sent: "Investment proposals sent"
       participants_support_phase: "Participants support phase"
       participants_vote_phase: "Participants voting phase"
       participants_every_phase: "Total participants"

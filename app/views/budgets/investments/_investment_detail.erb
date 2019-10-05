@@ -19,7 +19,7 @@
 <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
 <p id="investment_code">
-  <%= t("budgets.investments.show.code_html", code: investment.id) %>
+  <%= sanitize(t("budgets.investments.show.code", code: investment.id)) %>
 </p>
 
 <%= auto_link_already_sanitized_html investment.description %>
@@ -32,13 +32,13 @@
 
 <% if investment.location.present? %>
   <p>
-    <%= t("budgets.investments.show.location_html", location: investment.location) %>
+    <%= sanitize(t("budgets.investments.show.location", location: investment.location)) %>
   </p>
 <% end %>
 
 <% if investment.organization_name.present? %>
   <p>
-    <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
+    <%= sanitize(t("budgets.investments.show.organization_name", name: investment.organization_name)) %>
   </p>
 <% end %>
 
