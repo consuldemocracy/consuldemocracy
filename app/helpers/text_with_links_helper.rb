@@ -3,7 +3,7 @@ module TextWithLinksHelper
   def sanitize_and_auto_link(text)
     return unless text
     sanitized = sanitize(text, tags: [], attributes: [])
-    Rinku.auto_link(sanitized, :all, 'target="_blank" rel="nofollow"').html_safe
+    auto_link_already_sanitized_html(sanitized)
   end
 
   def auto_link_already_sanitized_html(html)
