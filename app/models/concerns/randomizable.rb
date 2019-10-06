@@ -9,8 +9,9 @@ module Randomizable
 
       ids_with_order = ids.map.with_index { |id, order| "(#{id}, #{order})" }.join(", ")
 
-      joins(sanitize_sql("LEFT JOIN (VALUES #{ids_with_order}) AS ids(id, ordering) ON #{table_name}.id = ids.id"))
-        .order("ids.ordering")
+      joins(sanitize_sql("LEFT JOIN (VALUES #{ids_with_order})
+                          AS ids(id, ordering) ON #{table_name}.id = ids.id")
+                        ).order("ids.ordering")
     end
   end
 end
