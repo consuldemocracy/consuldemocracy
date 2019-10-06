@@ -60,6 +60,16 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "new request for proposal action in dashboard" do
+    proposal = create(:proposal)
+    action = create(:dashboard_action, description: attack_code)
+
+    login_as(proposal.author)
+    visit new_request_proposal_dashboard_action_path(proposal, action)
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "poll description setting in dashboard" do
     Setting["proposals.poll_description"] = attack_code
     proposal = create(:proposal)
