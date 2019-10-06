@@ -26,26 +26,21 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.label :tag_list, t("debates.form.tags_label") %>
-      <p class="help-text" id="tag-list-help-text"><%= t("debates.form.tags_instructions") %></p>
-
       <%= f.text_field :tag_list, value: @debate.tag_list.to_s,
-                        label: false,
+                        label: t("debates.form.tags_label"),
+                        hint: t("debates.form.tags_instructions"),
                         placeholder: t("debates.form.tags_placeholder"),
-                        aria: { describedby: "tag-list-help-text" },
                         data: { js_url: suggest_tags_path },
                         class: "tag-autocomplete" %>
     </div>
     <div class="small-12 column">
       <% if @debate.new_record? %>
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
-          <span class="checkbox">
-            <%= t("form.accept_terms",
-                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
-          </span>
-        <% end %>
+        <%= f.check_box :terms_of_service,
+          title: t("form.accept_terms_title"),
+          label: t("form.accept_terms",
+                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                  ).html_safe %>
       <% end %>
     </div>
 

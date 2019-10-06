@@ -5,7 +5,7 @@
     <label><%= t("officing.poll_budgets.new.booth") %></label>
     <%= select_tag :officer_assignment_id,
                     booths_for_officer_select_options(@officer_assignments),
-                    { prompt: t("officing.poll_budgets.new.select_booth"), label: false } %>
+                    { prompt: t("officing.poll_budgets.new.select_booth") } %>
 
     <label><%= t("officing.poll_budgets.new.csv_data") %></label>
     <%= text_area_tag :data, nil, rows: 10 %>

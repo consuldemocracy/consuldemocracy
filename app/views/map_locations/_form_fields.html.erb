@@ -18,14 +18,8 @@
                               id: map_location_input_id(parent_class, "zoom") %>
 
   <div>
-    <%= form.label :skip_map do %>
-      <%= form.check_box :skip_map,
-                         title: t("#{i18n_namespace}.form.map_skip_checkbox"),
-                         label: false,
-                         class: "js-toggle-map" %>
-      <span class="checkbox">
-        <%= t("#{i18n_namespace}.form.map_skip_checkbox") %>
-      </span>
-    <% end %>
+    <%= form.check_box :skip_map,
+                       label: t("#{i18n_namespace}.form.map_skip_checkbox"),
+                       class: "js-toggle-map" %>
   </div>
 <% end %>

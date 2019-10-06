@@ -7,22 +7,19 @@
         <legend><%= t("valuation.budget_investments.edit.feasibility") %></legend>
         <div class="small-4 column">
             <span class="radio">
-              <%= f.radio_button :feasibility, "undecided", label: false %>
-              <%= f.label :feasibility_undecided, t("valuation.budget_investments.edit.undefined_feasible") %>
+              <%= f.radio_button :feasibility, "undecided" %>
             </span>
         </div>
 
         <div class="small-4 column">
             <span class="radio">
-              <%= f.radio_button :feasibility, "feasible", label: false %>
-              <%= f.label :feasibility_feasible, t("valuation.budget_investments.edit.feasible") %>
+              <%= f.radio_button :feasibility, "feasible" %>
             </span>
         </div>
 
         <div class="small-4 column">
             <span class="radio">
-              <%= f.radio_button :feasibility, "unfeasible", label: false %>
-              <%= f.label :feasibility_unfeasible, t("valuation.budget_investments.edit.unfeasible") %>
+              <%= f.radio_button :feasibility, "unfeasible" %>
             </span>
         </div>
       </fieldset>
@@ -33,8 +30,9 @@
 
     <div class="row">
       <div class="small-12 column">
-        <%= f.label :unfeasibility_explanation, t("valuation.budget_investments.edit.feasible_explanation_html") %>
-        <%= f.text_area :unfeasibility_explanation, label: false, rows: 3 %>
+        <%= f.text_area :unfeasibility_explanation,
+          label: t("valuation.budget_investments.edit.feasible_explanation_html"),
+          rows: 3 %>
       </div>
     </div>
 
@@ -44,27 +42,29 @@
 
     <div class="row">
       <div class="small-12 medium-6 column">
-        <%= f.label :price, "#{t("valuation.budget_investments.edit.price_html", currency: budget.currency_symbol)}" %>
-        <%= f.number_field :price, label: false, max: 1000000000000000 %>
+        <%= f.number_field :price,
+          label: t("valuation.budget_investments.edit.price_html", currency: budget.currency_symbol),
+          max: 1000000000000000 %>
       </div>
 
       <div class="small-12 medium-6 column end">
-        <%= f.label :price_first_year, "#{t("valuation.budget_investments.edit.price_first_year_html", currency:  budget.currency_symbol)}" %>
-        <%= f.number_field :price_first_year, label: false, max: 1000000000000000 %>
+        <%= f.number_field :price_first_year,
+          label: t("valuation.budget_investments.edit.price_first_year_html", currency:  budget.currency_symbol),
+          max: 1000000000000000 %>
       </div>
     </div>
 
     <div class="row">
       <div class="small-12 column">
-        <%= f.label :price_explanation, t("valuation.budget_investments.edit.price_explanation_html") %>
-        <%= f.text_area :price_explanation, label: false, rows: 3 %>
+        <%= f.text_area :price_explanation,
+          label: t("valuation.budget_investments.edit.price_explanation_html"),
+          rows: 3 %>
       </div>
     </div>
 
     <div class="row">
       <div class="small-12 medium-6 column">
-        <%= f.label :duration, t("valuation.budget_investments.edit.duration_html") %>
-        <%= f.text_field :duration, label: false %>
+        <%= f.text_field :duration, label: t("valuation.budget_investments.edit.duration_html") %>
       </div>
     </div>
 
@@ -72,14 +72,11 @@
 
   <div class="row">
     <div class="small-12 medium-8 column">
-      <%= f.label :valuation_finished do %>
-        <%= f.check_box :valuation_finished,
-            title: t("valuation.budget_investments.edit.valuation_finished"),
-            label: false, id: "js-investment-report-alert",
-            "data-alert": t("valuation.budget_investments.edit.valuation_finished_alert"),
-            "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
-        <span class="checkbox"><%= t("valuation.budget_investments.edit.valuation_finished") %></span>
-      <% end %>
+      <%= f.check_box :valuation_finished,
+          label: t("valuation.budget_investments.edit.valuation_finished"),
+          id: "js-investment-report-alert",
+          "data-alert": t("valuation.budget_investments.edit.valuation_finished_alert"),
+          "data-not-feasible-alert": t("valuation.budget_investments.edit.not_feasible_alert") %>
     </div>
   </div>
 

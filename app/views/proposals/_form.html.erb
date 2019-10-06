@@ -17,15 +17,10 @@
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
       <div class="small-12 column">
-        <%= translations_form.label :summary %>
-        <p class="help-text" id="<%= summary_help_text_id(translations_form) %>">
-          <%= t("proposals.form.proposal_summary_note") %>
-        </p>
         <%= translations_form.text_area :summary,
                                         rows: 4, maxlength: 200,
-                                        label: false,
                                         placeholder: t("proposals.form.proposal_summary"),
-                                        aria: { describedby: summary_help_text_id(translations_form) } %>
+                                        hint: t("proposals.form.proposal_summary_note") %>
       </div>
 
       <div class="ckeditor small-12 column">
@@ -38,11 +33,9 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.label :video_url, t("proposals.form.proposal_video_url") %>
-      <p class="help-text" id="video-url-help-text"><%= t("proposals.form.proposal_video_url_note") %></p>
       <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"),
-                                   label: false,
-                                   aria: { describedby: "video-url-help-text" } %>
+                                   label: t("proposals.form.proposal_video_url"),
+                                   hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
     <% if feature?(:allow_images) %>
@@ -58,8 +51,8 @@
     <% end %>
 
     <div class="small-12 medium-6 column">
-      <%= f.label :geozone_id,  t("proposals.form.geozone") %>
-      <%= f.select :geozone_id, geozone_select_options, { include_blank: t("geozones.none"), label: false } %>
+      <%= f.select :geozone_id, geozone_select_options,
+        include_blank: t("geozones.none"), label: t("proposals.form.geozone") %>
     </div>
 
     <% if feature?(:map) %>
@@ -99,23 +92,21 @@
 
     <% if current_user.unverified? %>
       <div class="small-12 column">
-        <%= f.label :responsible_name, t("proposals.form.proposal_responsible_name") %>
-        <p class="help-text" id="responsible-name-help-text"><%= t("proposals.form.proposal_responsible_name_note") %></p>
-        <%= f.text_field :responsible_name, placeholder: t("proposals.form.proposal_responsible_name"), label: false,
-                                            aria: { describedby: "responsible-name-help-text" } %>
+        <%= f.text_field :responsible_name,
+          placeholder: t("proposals.form.proposal_responsible_name"),
+          label: t("proposals.form.proposal_responsible_name"),
+          hint: t("proposals.form.proposal_responsible_name_note") %>
       </div>
     <% end %>
 
     <div class="small-12 column">
       <% if @proposal.new_record? %>
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
-          <span class="checkbox">
-            <%= t("form.accept_terms",
-                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
-                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
-          </span>
-        <% end %>
+        <%= f.check_box :terms_of_service,
+          title: t("form.accept_terms_title"),
+          label: t("form.accept_terms",
+                   policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                   conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
+                  ).html_safe %>
       <% end %>
     </div>
 

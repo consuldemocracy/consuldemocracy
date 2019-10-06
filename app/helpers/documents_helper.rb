@@ -33,18 +33,15 @@ module DocumentsHelper
 
   def render_attachment(builder, document)
     klass = document.persisted? || document.cached_attachment.present? ? " hide" : ""
-    html = builder.label :attachment,
-                         t("documents.form.attachment_label"),
-                         class: "button hollow #{klass}"
-    html += builder.file_field :attachment,
-                               label: false,
-                               accept: accepted_content_types_extensions(document.documentable_type.constantize),
-                               class: "js-document-attachment",
-                               data: {
-                                 url: document_direct_upload_url(document),
-                                 nested_document: true
-                               }
-    html
+    builder.file_field :attachment,
+                       label: t("documents.form.attachment_label"),
+                       label_options: { class: "button hollow #{klass}" },
+                       accept: accepted_content_types_extensions(document.documentable_type.constantize),
+                       class: "js-document-attachment",
+                       data: {
+                         url: document_direct_upload_url(document),
+                         nested_document: true
+                       }
   end
 
   def document_direct_upload_url(document)

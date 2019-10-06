@@ -47,19 +47,15 @@ module ImagesHelper
 
   def render_image_attachment(builder, imageable, image)
     klass = image.persisted? || image.cached_attachment.present? ? " hide" : ""
-    html = builder.label :attachment,
-                          t("images.form.attachment_label"),
-                          class: "button hollow #{klass}"
-    html += builder.file_field :attachment,
-                               label: false,
-                               accept: imageable_accepted_content_types_extensions,
-                               class: "js-image-attachment",
-                               data: {
-                                 url: image_direct_upload_url(imageable),
-                                 nested_image: true
-                               }
-
-    html
+    builder.file_field :attachment,
+                       label: t("images.form.attachment_label"),
+                       label_options: { class: "button hollow #{klass}" },
+                       accept: imageable_accepted_content_types_extensions,
+                       class: "js-image-attachment",
+                       data: {
+                         url: image_direct_upload_url(imageable),
+                         nested_image: true
+                       }
   end
 
   def render_image(image, version, show_caption = true)

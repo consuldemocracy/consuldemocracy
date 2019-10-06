@@ -20,12 +20,8 @@
     <%= form_for @notification do |f| %>
       <%= render "shared/errors", resource: @notification %>
 
-      <%= f.label :title, t("proposal_notifications.new.title_label") %>
-      <%= f.text_field :title, label: false %>
-
-      <%= f.label :body, t("proposal_notifications.new.body_label") %>
-      <%= f.text_area :body, label: false, rows: "3" %>
-
+      <%= f.text_field :title, label: t("proposal_notifications.new.title_label") %>
+      <%= f.text_area :body, label: t("proposal_notifications.new.body_label"), rows: "3" %>
       <%= f.hidden_field :proposal_id, value: @proposal.id %>
 
       <div class="small-12 medium-4">

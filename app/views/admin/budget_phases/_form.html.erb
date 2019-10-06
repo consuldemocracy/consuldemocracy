@@ -6,50 +6,38 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.label :starts_at, t("admin.budget_phases.edit.start_date") %>
       <%= f.text_field :starts_at,
                         value: format_date_for_calendar_form(@phase.starts_at),
                         class: "js-calendar-full",
                         id: "start_date",
-                        label: false %>
+                        label: t("admin.budget_phases.edit.start_date") %>
     </div>
     <div class="small-12 medium-6 column">
-      <%= f.label :ends_at, t("admin.budget_phases.edit.end_date") %>
       <%= f.text_field :ends_at,
                         value: format_date_for_calendar_form(@phase.ends_at),
                         class: "js-calendar-full",
                         id: "end_date",
-                        label: false %>
+                        label: t("admin.budget_phases.edit.end_date") %>
     </div>
   </div>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 column">
-        <%= f.label :description, t("admin.budget_phases.edit.description") %>
-
-        <span class="help-text" id="phase-description-help-text">
-          <%= t("admin.budget_phases.edit.description_help_text") %>
-        </span>
-
         <div class="ckeditor">
           <%= translations_form.cktext_area :description,
                                              maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                                             label: false %>
+                                             label: t("admin.budget_phases.edit.description"),
+                                             hint: t("admin.budget_phases.edit.description_help_text") %>
         </div>
       </div>
 
       <div class="small-12 column">
-        <%= f.label :summary, t("admin.budget_phases.edit.summary") %>
-
-        <span class="help-text" id="phase-summary-help-text">
-          <%= t("admin.budget_phases.edit.summary_help_text") %>
-        </span>
-
         <div class="ckeditor">
           <%= translations_form.cktext_area :summary,
                                              maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                                             label: false %>
+                                             label: t("admin.budget_phases.edit.summary"),
+                                             hint: t("admin.budget_phases.edit.summary_help_text") %>
         </div>
       </div>
     <% end %>

@@ -7,9 +7,8 @@
   <div class="row">
     <% date_started_at = @banner.post_started_at.present? ? I18n.localize(@banner.post_started_at) : "" %>
     <div class="small-12 medium-3 column">
-      <%= f.label :post_started_at, t("admin.banners.banner.post_started_at") %>
       <%= f.text_field :post_started_at,
-                        label: false,
+                        label: t("admin.banners.banner.post_started_at"),
                         placeholder: t("admin.banners.banner.post_started_at"),
                         value: date_started_at,
                         class: "js-calendar-full",
@@ -17,9 +16,8 @@
     </div>
     <% date_ended_at = @banner.post_ended_at.present? ? I18n.localize(@banner.post_ended_at) : "" %>
     <div class="small-12 medium-3 column end">
-      <%= f.label :post_ended_at, t("admin.banners.banner.post_ended_at") %>
       <%= f.text_field  :post_ended_at,
-                        label: false,
+                        label: t("admin.banners.banner.post_ended_at"),
                         placeholder: t("admin.banners.banner.post_ended_at"),
                         value: date_ended_at,
                         class: "js-calendar-full",
@@ -47,9 +45,8 @@
 
   <div class="row">
     <div class="small-12 medium-6 column">
-      <%= f.label :target_url, t("admin.banners.banner.target_url") %>
       <%= f.text_field :target_url,
-                        label: false,
+                        label: t("admin.banners.banner.target_url"),
                         placeholder: t("admin.banners.banner.target_url") %>
     </div>
   </div>

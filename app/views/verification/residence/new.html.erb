@@ -39,8 +39,8 @@
       <div class="row">
         <div class="small-12 medium-8">
           <div class="small-12 medium-3 column">
-          <%= f.label t("verification.residence.new.document_type_label") %>
-          <%= f.select :document_type, document_types, prompt: "", label: false %>
+          <%= f.select :document_type, document_types, prompt: "",
+            label: t("verification.residence.new.document_type_label") %>
           </div>
           <div class="small-12 medium-5 column end">
 
@@ -64,32 +64,26 @@
       </div>
 
       <div class="date-of-birth small-12 medium-6 clear">
-      <%= f.label t("verification.residence.new.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
                         start_year: 1900, end_year: minimum_required_age.years.ago.year,
-                        label: false %>
+                        label: t("verification.residence.new.date_of_birth") %>
       </div>
 
       <div class="small-12 medium-5 clear">
-        <%= f.label t("verification.residence.new.postal_code") %>
-        <p class="help-text" id="postal-code-help-text"><%= t("verification.residence.new.postal_code_note") %></p>
-        <div class="medium-6">
-          <%= f.text_field :postal_code, label: false, aria: { describedby: "postal-code-help-text" } %>
-        </div>
+        <%= f.text_field :postal_code,
+          label: t("verification.residence.new.postal_code"),
+          hint: t("verification.residence.new.postal_code_note") %>
       </div>
 
       <div class="small-12">
-        <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t("verification.residence.new.accept_terms_text_title"), label: false %>
-          <span class="checkbox">
-            <%= t("verification.residence.new.accept_terms_text",
-                terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
-                title: t("shared.target_blank_html"),
-                target: "_blank")).html_safe
-            %>
-          </span>
-        <% end %>
+        <%= f.check_box :terms_of_service,
+          title: t("verification.residence.new.accept_terms_text_title"),
+          label: t("verification.residence.new.accept_terms_text",
+                   terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
+                                      title: t("shared.target_blank_html"),
+                                      target: "_blank")
+                  ).html_safe %>
       </div>
 
       <div class="small-12 medium-3 clear">
