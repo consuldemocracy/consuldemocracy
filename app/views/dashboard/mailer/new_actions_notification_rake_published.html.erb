@@ -36,7 +36,7 @@
     <ul>
       <li><%= first_proposed_action.title %></li>
       <% if first_proposed_action.description.present? %>
-        <p><%= WYSIWYGSanitizer.new.sanitize(first_proposed_action.description) %></p>
+        <p><%= wysiwyg(first_proposed_action.description) %></p>
       <% end %>
     </ul>
     <br>

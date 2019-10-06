@@ -2,7 +2,7 @@
 
 <div class="row expanded">
   <div class="small-12 medium-8 column">
-    <%= WYSIWYGSanitizer.new.sanitize(dashboard_action.description) %>
+    <%= wysiwyg(dashboard_action.description) %>
     <%= render "dashboard/form" %>
   </div>
 
