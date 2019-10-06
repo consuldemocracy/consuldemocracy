@@ -4,8 +4,7 @@ describe Tag do
 
   it "decreases tag_count when a debate is hidden" do
     debate = create(:debate)
-    tag = create(:tag)
-    tagging = create(:tagging, tag: tag, taggable: debate)
+    tag = create(:tag, taggables: [debate])
 
     expect(tag.taggings_count).to eq(1)
 
@@ -17,8 +16,7 @@ describe Tag do
 
   it "decreases tag_count when a proposal is hidden" do
     proposal = create(:proposal)
-    tag = create(:tag)
-    tagging = create(:tagging, tag: tag, taggable: proposal)
+    tag = create(:tag, taggables: [proposal])
 
     expect(tag.taggings_count).to eq(1)
 

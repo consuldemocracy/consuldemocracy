@@ -6,8 +6,9 @@ describe "Social media meta tags" do
 
     let(:meta_keywords) { "citizen, participation, open government" }
     let(:meta_title) { "CONSUL" }
-    let(:meta_description) { "Citizen participation tool for an open, "\
-                             "transparent and democratic government." }
+    let(:meta_description) do
+      "Citizen participation tool for an open, transparent and democratic government."
+    end
     let(:twitter_handle) { "@consul_test" }
     let(:url) { "http://consul.dev" }
     let(:facebook_handle) { "consultest" }

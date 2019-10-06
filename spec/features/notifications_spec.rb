@@ -39,7 +39,7 @@ describe "Notifications" do
 
   scenario "View single notification" do
     proposal = create(:proposal)
-    notification = create(:notification, user: user, notifiable: proposal)
+    create(:notification, user: user, notifiable: proposal)
 
     click_notifications_icon
 
@@ -128,7 +128,7 @@ describe "Notifications" do
   end
 
   scenario "Notification's notifiable model no longer includes Notifiable module" do
-    create(:notification, notifiable: create(:poll_question), user: user)
+    create(:notification, :for_poll_question, user: user)
 
     click_notifications_icon
     expect(page).to have_content("This resource is not available anymore.", count: 1)
@@ -234,8 +234,9 @@ describe "Notifications" do
   end
 
   def users_without_notifications
-    User.all.select { |user| user.notifications.not_emailed
-                             .where(notifiable_type: "ProposalNotification").blank? }
+    User.all.select do |user|
+      user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").blank?
+    end
   end
 
 end

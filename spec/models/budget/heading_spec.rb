@@ -308,17 +308,25 @@ describe Budget::Heading do
 
   describe "scope allow_custom_content" do
     it "returns headings with allow_custom_content order by name" do
-      excluded_heading = create(:budget_heading, name: "Name A")
-      last_heading     = create(:budget_heading, allow_custom_content: true, name: "Name C")
-      first_heading    = create(:budget_heading, allow_custom_content: true, name: "Name B")
+      last_heading     = create(:budget_heading, allow_custom_content: true, name: "Name B")
+      first_heading    = create(:budget_heading, allow_custom_content: true, name: "Name A")
 
       expect(Budget::Heading.allow_custom_content).to eq [first_heading, last_heading]
     end
 
-    it "returns headings with multiple translations only once" do
-      create(:budget_heading, allow_custom_content: true, name_en: "English", name_es: "Spanish")
+    it "does not return headings which don't allow custom content" do
+      create(:budget_heading, name: "Name A")
 
-      expect(Budget::Heading.allow_custom_content.count).to eq 1
+      expect(Budget::Heading.allow_custom_content).to be_empty
+    end
+
+    it "returns headings with multiple translations only once" do
+      translated_heading = create(:budget_heading,
+                                  allow_custom_content: true,
+                                  name_en: "English",
+                                  name_es: "Spanish")
+
+      expect(Budget::Heading.allow_custom_content).to eq [translated_heading]
     end
   end
 

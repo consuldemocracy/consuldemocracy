@@ -1,27 +1,29 @@
 require "rails_helper"
 
 describe "Admin settings" do
-
   before do
-    @setting1 = create(:setting)
-    @setting2 = create(:setting)
-    @setting3 = create(:setting)
     login_as(create(:administrator).user)
   end
 
   scenario "Index" do
+    create(:setting, key: "super.users.first")
+    create(:setting, key: "super.users.second")
+    create(:setting, key: "super.users.third")
+
     visit admin_settings_path
 
-    expect(page).to have_content @setting1.key
-    expect(page).to have_content @setting2.key
-    expect(page).to have_content @setting3.key
+    expect(page).to have_content "First"
+    expect(page).to have_content "Second"
+    expect(page).to have_content "Third"
   end
 
   scenario "Update" do
+    setting = create(:setting, key: "super.users.first")
+
     visit admin_settings_path
 
-    within("#edit_setting_#{@setting2.id}") do
-      fill_in "setting_#{@setting2.id}", with: "Super Users of level 2"
+    within("#edit_setting_#{setting.id}") do
+      fill_in "setting_#{setting.id}", with: "Super Users of level 1"
       click_button "Update"
     end
 
@@ -145,7 +147,7 @@ describe "Admin settings" do
       visit admin_settings_path
       find("#remote-census-tab").click
 
-      expect(page).to have_content 'To configure remote census (SOAP) you must enable ' \
+      expect(page).to have_content "To configure remote census (SOAP) you must enable " \
                                    '"Configure connection to remote census (SOAP)" ' \
                                    'on "Features" tab.'
     end
@@ -159,7 +161,7 @@ describe "Admin settings" do
       expect(page).to have_content("General Information")
       expect(page).to have_content("Request Data")
       expect(page).to have_content("Response Data")
-      expect(page).not_to have_content 'To configure remote census (SOAP) you must enable ' \
+      expect(page).not_to have_content "To configure remote census (SOAP) you must enable " \
                                        '"Configure connection to remote census (SOAP)" ' \
                                        'on "Features" tab.'
     end

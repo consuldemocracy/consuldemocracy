@@ -54,8 +54,7 @@ describe Poll::PairAnswer do
       it "returns pair_answers associated to an user" do
         author = pair_answer_1.author
 
-        expect(Poll::PairAnswer.by_author(author)).to include(pair_answer_1)
-        expect(Poll::PairAnswer.by_author(author)).not_to include(pair_answer_2)
+        expect(Poll::PairAnswer.by_author(author)).to eq [pair_answer_1]
       end
 
     end
@@ -65,8 +64,7 @@ describe Poll::PairAnswer do
       it "returns pair_answers associated to a question" do
         question = pair_answer_1.question
 
-        expect(Poll::PairAnswer.by_question(question)).to include(pair_answer_1)
-        expect(Poll::PairAnswer.by_question(question)).not_to include(pair_answer_2)
+        expect(Poll::PairAnswer.by_question(question)).to eq [pair_answer_1]
       end
     end
 
@@ -120,10 +118,8 @@ describe Poll::PairAnswer do
   describe "#answers" do
     let(:pair_answer) { create(:poll_pair_answer) }
 
-    it "returns and array of answers" do
-      expect(pair_answer.answers).to be_a Array
-      expect(pair_answer.answers[0]).to eq(pair_answer.answer_left)
-      expect(pair_answer.answers[1]).to eq(pair_answer.answer_right)
+    it "returns an array of answers" do
+      expect(pair_answer.answers).to eq [pair_answer.answer_left, pair_answer.answer_right]
     end
   end
 

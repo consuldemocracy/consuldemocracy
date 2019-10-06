@@ -27,7 +27,6 @@ describe "Commenting Budget::Investments" do
     parent_comment = create(:comment, commentable: investment)
     first_child    = create(:comment, commentable: investment, parent: parent_comment)
     second_child   = create(:comment, commentable: investment, parent: parent_comment)
-    valuation_comment = create(:comment, :valuation, commentable: investment, subject: "Not viable")
 
     visit comment_path(parent_comment)
 
@@ -35,7 +34,6 @@ describe "Commenting Budget::Investments" do
     expect(page).to have_content parent_comment.body
     expect(page).to have_content first_child.body
     expect(page).to have_content second_child.body
-    expect(page).not_to have_content("Not viable")
 
     expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
 
@@ -184,7 +182,7 @@ describe "Commenting Budget::Investments" do
       create(:comment, commentable: investment)
       visit budget_investment_path(investment.budget, investment)
 
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
         expect(page).not_to have_content "Write a comment"
         expect(page).not_to have_content "Reply"
@@ -502,24 +500,24 @@ describe "Commenting Budget::Investments" do
   end
 
   describe "Voting comments" do
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:budget)     { create(:budget) }
+    let(:investment) { create(:budget_investment, budget: budget) }
+    let!(:comment)   { create(:comment, commentable: investment) }
 
     before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @investment = create(:budget_investment)
-      @comment = create(:comment, commentable: @investment)
-      @budget = @investment.budget
 
-      login_as(@manuela)
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit budget_investment_path(@budget, @budget, @investment)
+      visit budget_investment_path(budget, investment)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -533,9 +531,9 @@ describe "Commenting Budget::Investments" do
     end
 
     scenario "Create", :js do
-      visit budget_investment_path(@budget, @investment)
+      visit budget_investment_path(budget, investment)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -551,9 +549,9 @@ describe "Commenting Budget::Investments" do
     end
 
     scenario "Update", :js do
-      visit budget_investment_path(@budget, @investment)
+      visit budget_investment_path(budget, investment)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -575,9 +573,9 @@ describe "Commenting Budget::Investments" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit budget_investment_path(@budget, @investment)
+      visit budget_investment_path(budget, investment)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         find(".in_favor a").click
 

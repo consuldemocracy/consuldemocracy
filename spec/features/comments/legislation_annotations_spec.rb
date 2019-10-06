@@ -214,7 +214,7 @@ describe "Commenting legislation questions" do
                                                               legislation_annotation.draft_version,
                                                               legislation_annotation)
 
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
         expect(page).not_to have_content "Write a comment"
         expect(page).not_to have_content "Reply"
@@ -517,24 +517,24 @@ describe "Commenting legislation questions" do
   end
 
   describe "Voting comments" do
-    before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @legislation_annotation = create(:legislation_annotation)
-      @comment = create(:comment, commentable: @legislation_annotation)
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:annotation) { create(:legislation_annotation) }
+    let!(:comment)   { create(:comment, commentable: annotation) }
 
-      login_as(@manuela)
+    before do
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
-                                                              @legislation_annotation.draft_version,
-                                                              @legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -548,11 +548,11 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Create", :js do
-      visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
-                                                              @legislation_annotation.draft_version,
-                                                              @legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -568,11 +568,11 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Update", :js do
-      visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
-                                                              @legislation_annotation.draft_version,
-                                                              @legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -594,11 +594,11 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit legislation_process_draft_version_annotation_path(@legislation_annotation.draft_version.process,
-                                                              @legislation_annotation.draft_version,
-                                                              @legislation_annotation)
+      visit legislation_process_draft_version_annotation_path(annotation.draft_version.process,
+                                                              annotation.draft_version,
+                                                              annotation)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         within(".in_favor") do
           expect(page).to have_content "1"

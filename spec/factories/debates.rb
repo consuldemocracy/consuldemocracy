@@ -37,6 +37,12 @@ FactoryBot.define do
         4.times { create(:vote, votable: debate) }
       end
     end
+
+    transient { voters { [] } }
+
+    after(:create) do |debate, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: debate, voter: voter) }
+    end
   end
 
   factory :flag do

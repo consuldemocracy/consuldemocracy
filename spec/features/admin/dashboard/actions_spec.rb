@@ -73,7 +73,7 @@ describe "Admin dashboard actions" do
 
     before do
       visit admin_dashboard_actions_path
-      within ("#dashboard_action_#{action.id}") do
+      within "#dashboard_action_#{action.id}" do
         click_link "Edit"
       end
     end

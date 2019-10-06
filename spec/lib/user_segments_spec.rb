@@ -10,7 +10,7 @@ describe UserSegments do
       active_user = create(:user)
       erased_user = create(:user, erased_at: Time.current)
 
-      expect(UserSegments.all_users).to include active_user
+      expect(UserSegments.all_users).to eq [active_user]
       expect(UserSegments.all_users).not_to include erased_user
     end
   end
@@ -21,7 +21,7 @@ describe UserSegments do
       active_admin = create(:administrator).user
       erased_user = create(:user, erased_at: Time.current)
 
-      expect(UserSegments.administrators).to include active_admin
+      expect(UserSegments.administrators).to eq [active_admin]
       expect(UserSegments.administrators).not_to include active_user
       expect(UserSegments.administrators).not_to include erased_user
     end
@@ -34,9 +34,8 @@ describe UserSegments do
       create(:proposal, :retired, author: user3)
 
       all_proposal_authors = UserSegments.all_proposal_authors
-      expect(all_proposal_authors).to include user1
-      expect(all_proposal_authors).to include user2
-      expect(all_proposal_authors).to include user3
+
+      expect(all_proposal_authors).to match_array [user1, user2, user3]
     end
 
     it "does not return duplicated users" do
@@ -45,7 +44,8 @@ describe UserSegments do
       create(:proposal, :retired, author: user1)
 
       all_proposal_authors = UserSegments.all_proposal_authors
-      expect(all_proposal_authors).to contain_exactly(user1)
+
+      expect(all_proposal_authors).to eq [user1]
     end
   end
 
@@ -54,8 +54,8 @@ describe UserSegments do
       create(:proposal, author: user1)
 
       proposal_authors = UserSegments.proposal_authors
-      expect(proposal_authors).to include user1
-      expect(proposal_authors).not_to include user2
+
+      expect(proposal_authors).to eq [user1]
     end
 
     it "does not return duplicated users" do
@@ -74,8 +74,8 @@ describe UserSegments do
       investment.update(budget: budget)
 
       investment_authors = UserSegments.investment_authors
-      expect(investment_authors).to include user1
-      expect(investment_authors).not_to include user2
+
+      expect(investment_authors).to eq [user1]
     end
 
     it "does not return duplicated users" do
@@ -112,11 +112,7 @@ describe UserSegments do
       unfeasible_investment_finished.update(budget: budget)
 
       investment_authors = UserSegments.feasible_and_undecided_investment_authors
-      expect(investment_authors).to include user1
-      expect(investment_authors).to include user2
-      expect(investment_authors).to include user3
-      expect(investment_authors).to include user4
-      expect(investment_authors).to include user5
+      expect(investment_authors).to match_array [user1, user2, user3, user4, user5]
       expect(investment_authors).not_to include user6
     end
 
@@ -141,8 +137,8 @@ describe UserSegments do
       unselected_investment.update(budget: budget)
 
       investment_authors = UserSegments.selected_investment_authors
-      expect(investment_authors).to include user1
-      expect(investment_authors).not_to include user2
+
+      expect(investment_authors).to eq [user1]
     end
 
     it "does not return duplicated users" do
@@ -166,8 +162,8 @@ describe UserSegments do
       selected_investment.update(budget: budget)
 
       investment_authors = UserSegments.winner_investment_authors
-      expect(investment_authors).to include user1
-      expect(investment_authors).not_to include user2
+
+      expect(investment_authors).to eq [user1]
     end
 
     it "does not return duplicated users" do
@@ -190,7 +186,8 @@ describe UserSegments do
       investment1.update(budget: budget)
 
       current_budget_investments = UserSegments.current_budget_investments
-      expect(current_budget_investments).to include investment1
+
+      expect(current_budget_investments).to eq [investment1]
       expect(current_budget_investments).not_to include investment2
     end
   end
@@ -218,8 +215,7 @@ describe UserSegments do
       create(:user, email: "last@email.com")
 
       emails = UserSegments.user_segment_emails(:all_users)
-      expect(emails.first).to eq "first@email.com"
-      expect(emails.last).to eq "last@email.com"
+      expect(emails).to eq ["first@email.com", "last@email.com"]
     end
   end
 

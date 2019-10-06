@@ -7,10 +7,8 @@ describe "Admin change log" do
   end
 
   context "Investments Participatory Budgets" do
-
     before do
-      @admin = create(:administrator)
-      login_as(@admin.user)
+      login_as(create(:administrator).user)
     end
 
     scenario "No changes" do

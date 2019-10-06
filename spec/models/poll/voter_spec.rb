@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe Poll::Voter do
-
-  let(:poll) { create(:poll) }
-  let(:booth) { create(:poll_booth) }
-  let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
-  let(:voter) { create(:poll_voter) }
-  let(:officer_assignment) { create(:poll_officer_assignment) }
-
   describe "validations" do
+    let(:poll) { create(:poll) }
+    let(:booth) { create(:poll_booth) }
+    let(:booth_assignment) { create(:poll_booth_assignment, poll: poll, booth: booth) }
+    let(:voter) { create(:poll_voter) }
+    let(:user) { create(:user, :level_two) }
 
     it "is valid" do
       expect(voter).to be_valid
@@ -31,48 +29,38 @@ describe Poll::Voter do
     end
 
     it "is not valid if the user has already voted in the same poll or booth_assignment" do
-      user = create(:user, :level_two)
+      create(:poll_voter, user: user, poll: poll)
 
-      voter1 = create(:poll_voter, user: user, poll: poll)
-      voter2 = build(:poll_voter, user: user, poll: poll)
+      voter = build(:poll_voter, user: user, poll: poll)
 
-      expect(voter2).not_to be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "is not valid if the user has already voted in the same poll/booth" do
-      user = create(:user, :level_two)
+      create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
-      voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
-      voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
+      voter = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment)
 
-      expect(voter2).not_to be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "is not valid if the user has already voted in different booth in the same poll" do
-      booth_assignment1 = create(:poll_booth_assignment, poll: poll)
-      booth_assignment2 = create(:poll_booth_assignment, poll: poll)
+      create(:poll_voter, :from_booth, user: user, poll: poll, booth: create(:poll_booth))
 
-      user = create(:user, :level_two)
+      voter = build(:poll_voter, :from_booth, user: user, poll: poll, booth: booth)
 
-      voter1 = create(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment1)
-      voter2 = build(:poll_voter, user: user, poll: poll, booth_assignment: booth_assignment2)
-
-      expect(voter2).not_to be_valid
-      expect(voter2.errors.messages[:document_number]).to eq(["User has already voted"])
+      expect(voter).not_to be_valid
+      expect(voter.errors.messages[:document_number]).to eq(["User has already voted"])
     end
 
     it "is valid if the user has already voted in the same booth in different poll" do
-      booth_assignment1 = create(:poll_booth_assignment, booth: booth)
-      booth_assignment2 = create(:poll_booth_assignment, booth: booth, poll: poll)
+      create(:poll_voter, :from_booth, user: user, booth: booth, poll: create(:poll))
 
-      user = create(:user, :level_two)
+      voter = build(:poll_voter, :from_booth, user: user, booth: booth, poll: poll)
 
-      voter1 = create(:poll_voter, user: user, booth_assignment: booth_assignment1)
-      voter2 = build(:poll_voter, user: user, booth_assignment: booth_assignment2)
-
-      expect(voter2).to be_valid
+      expect(voter).to be_valid
     end
 
     it "is not valid if the user has voted via web" do
@@ -98,7 +86,7 @@ describe Poll::Voter do
 
       it "is valid with a booth origin" do
         voter.origin = "booth"
-        voter.officer_assignment = officer_assignment
+        voter.officer_assignment = create(:poll_officer_assignment)
         expect(voter).to be_valid
       end
 
@@ -135,25 +123,29 @@ describe Poll::Voter do
 
     describe "#web" do
       it "returns voters with a web origin" do
-        voter1 = create(:poll_voter, :from_web)
-        voter2 = create(:poll_voter, :from_web)
-        voter3 = create(:poll_voter, :from_booth)
+        voter = create(:poll_voter, :from_web)
 
-        web_voters = Poll::Voter.web
+        expect(Poll::Voter.web).to eq [voter]
+      end
 
-        expect(web_voters).to match_array [voter1, voter2]
+      it "does not return voters with a booth origin" do
+        create(:poll_voter, :from_booth)
+
+        expect(Poll::Voter.web).to be_empty
       end
     end
 
     describe "#booth" do
       it "returns voters with a booth origin" do
-        voter1 = create(:poll_voter, :from_booth)
-        voter2 = create(:poll_voter, :from_booth)
-        voter3 = create(:poll_voter, :from_web)
+        voter = create(:poll_voter, :from_booth)
 
-        booth_voters = Poll::Voter.booth
+        expect(Poll::Voter.booth).to eq [voter]
+      end
 
-        expect(booth_voters).to match_array [voter1, voter2]
+      it "does not return voters with a web origin" do
+        create(:poll_voter, :from_web)
+
+        expect(Poll::Voter.booth).to be_empty
       end
     end
 

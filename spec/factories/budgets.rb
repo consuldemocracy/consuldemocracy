@@ -79,6 +79,13 @@ FactoryBot.define do
     trait :drafting_budget do
       association :group, factory: [:budget_group, :drafting_budget]
     end
+
+    trait :with_investment_with_milestone do
+      after(:create) do |heading|
+        investment = create(:budget_investment, :winner, heading: heading)
+        create(:milestone, milestoneable: investment)
+      end
+    end
   end
 
   factory :budget_investment, class: "Budget::Investment" do
@@ -114,7 +121,7 @@ FactoryBot.define do
       valuation_finished { true }
     end
 
-    trait :unfinished do
+    trait :open do
       valuation_finished { false }
     end
 
@@ -166,6 +173,10 @@ FactoryBot.define do
       administrator
     end
 
+    trait :with_valuator do
+      valuators { [create(:valuator)] }
+    end
+
     trait :flagged do
       after :create do |investment|
         Flag.flag(create(:user), investment)
@@ -183,6 +194,26 @@ FactoryBot.define do
     trait :with_image do
       after(:create) { |investment| create(:image, imageable: investment) }
     end
+
+    transient do
+      voters { [] }
+      followers { [] }
+      ballots { [] }
+      balloters { [] }
+    end
+
+    after(:create) do |investment, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: investment, voter: voter) }
+      evaluator.followers.each { |follower| create(:follow, followable: investment, user: follower) }
+
+      evaluator.ballots.each do |ballot|
+        create(:budget_ballot_line, investment: investment, ballot: ballot)
+      end
+
+      evaluator.balloters.each do |balloter|
+        create(:budget_ballot_line, investment: investment, user: balloter)
+      end
+    end
   end
 
   factory :budget_phase, class: "Budget::Phase" do
@@ -198,6 +229,14 @@ FactoryBot.define do
   factory :budget_ballot, class: "Budget::Ballot" do
     association :user, factory: :user
     budget
+
+    transient { investments { [] } }
+
+    after(:create) do |ballot, evaluator|
+      evaluator.investments.each do |investment|
+        create(:budget_ballot_line, investment: investment, ballot: ballot)
+      end
+    end
   end
 
   factory :budget_ballot_line, class: "Budget::Ballot::Line" do

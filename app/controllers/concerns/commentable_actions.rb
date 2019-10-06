@@ -28,10 +28,12 @@ module CommentableActions
 
     respond_to do |format|
       format.html
-      format.csv { send_data to_csv(resources_csv, resource_model),
-                            type: "text/csv",
-                            disposition: "attachment",
-                            filename: "#{get_resource(resource_model)}.csv" }
+      format.csv do
+        send_data to_csv(resources_csv, resource_model),
+                  type: "text/csv",
+                  disposition: "attachment",
+                  filename: "#{get_resource(resource_model)}.csv"
+      end
     end
   end
 
@@ -110,12 +112,12 @@ module CommentableActions
     end
 
     def load_categories
-      @categories = ActsAsTaggableOn::Tag.category.order(:name)
+      @categories = Tag.category.order(:name)
     end
 
     def parse_tag_filter
       if params[:tag].present?
-        @tag_filter = params[:tag] if ActsAsTaggableOn::Tag.named(params[:tag]).exists?
+        @tag_filter = params[:tag] if Tag.named(params[:tag]).exists?
       end
     end
 

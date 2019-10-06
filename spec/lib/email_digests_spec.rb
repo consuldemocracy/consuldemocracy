@@ -14,51 +14,42 @@ describe EmailDigest do
 
       email_digest = EmailDigest.new(user1)
 
-      expect(email_digest.notifications).to include(notification1)
+      expect(email_digest.notifications).to eq [notification1]
       expect(email_digest.notifications).not_to include(notification2)
     end
 
     it "returns only proposal notifications" do
       user = create(:user)
 
-      proposal_notification = create(:proposal_notification)
-      comment = create(:comment)
-
-      notification1 = create(:notification, notifiable: proposal_notification, user: user)
-      notification2 = create(:notification, notifiable: comment,               user: user)
+      notification1 = create(:notification, :for_proposal_notification, user: user)
+      notification2 = create(:notification, :for_comment, user: user)
 
       email_digest = EmailDigest.new(user)
 
-      expect(email_digest.notifications).to include(notification1)
+      expect(email_digest.notifications).to eq [notification1]
       expect(email_digest.notifications).not_to include(notification2)
     end
 
   end
 
   describe "pending_notifications?" do
+    let(:user) { create(:user) }
 
     it "returns true when notifications have not been emailed" do
-      user = create(:user)
-
-      proposal_notification = create(:proposal_notification)
-      notification = create(:notification, notifiable: proposal_notification, user: user)
+      create(:notification, :for_proposal_notification, user: user)
 
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).to be
     end
 
     it "returns false when notifications have been emailed" do
-      user = create(:user)
-
-      proposal_notification = create(:proposal_notification)
-      notification = create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.current)
+      create(:notification, :for_proposal_notification, user: user, emailed_at: Time.current)
 
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
 
     it "returns false when there are no notifications for a user" do
-      user = create(:user)
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
@@ -66,12 +57,10 @@ describe EmailDigest do
   end
 
   describe "deliver" do
+    let(:user) { create(:user) }
 
     it "delivers email if notifications pending" do
-      user = create(:user)
-
-      proposal_notification = create(:proposal_notification)
-      notification = create(:notification, notifiable: proposal_notification, user: user)
+      create(:notification, :for_proposal_notification, user: user)
 
       reset_mailer
       email_digest = EmailDigest.new(user)
@@ -82,10 +71,7 @@ describe EmailDigest do
     end
 
     it "does not deliver email if no notifications pending" do
-      user = create(:user)
-
-      proposal_notification = create(:proposal_notification)
-      create(:notification, notifiable: proposal_notification, user: user, emailed_at: Time.current)
+      create(:notification, :for_proposal_notification, user: user, emailed_at: Time.current)
 
       reset_mailer
       email_digest = EmailDigest.new(user)

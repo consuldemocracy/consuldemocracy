@@ -1,6 +1,7 @@
 class Management::BaseController < ActionController::Base
   include GlobalizeFallbacks
   layout "management"
+  default_form_builder ConsulFormBuilder
 
   before_action :verify_manager
   before_action :set_locale

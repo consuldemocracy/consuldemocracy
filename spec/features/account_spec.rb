@@ -1,10 +1,10 @@
 require "rails_helper"
 
 describe "Account" do
+  let(:user) { create(:user, username: "Manuela Colau") }
 
   before do
-    @user = create(:user, username: "Manuela Colau")
-    login_as(@user)
+    login_as(user)
   end
 
   scenario "Show" do
@@ -19,7 +19,7 @@ describe "Account" do
   end
 
   scenario "Show organization" do
-    create(:organization, user: @user, name: "Manuela Corp")
+    create(:organization, user: user, name: "Manuela Corp")
 
     visit account_path
 
@@ -85,7 +85,7 @@ describe "Account" do
   end
 
   scenario "Edit Organization" do
-    create(:organization, user: @user, name: "Manuela Corp")
+    create(:organization, user: user, name: "Manuela Corp")
     visit account_path
 
     fill_in "account_organization_attributes_name", with: "Google"
@@ -170,7 +170,7 @@ describe "Account" do
 
     expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
 
-    login_through_form_as(@user)
+    login_through_form_as(user)
 
     expect(page).to have_content "Invalid Email or username or password"
   end
@@ -203,10 +203,10 @@ describe "Account" do
       expect(find("#account_recommended_debates")).not_to be_checked
       expect(find("#account_recommended_proposals")).not_to be_checked
 
-      @user.reload
+      user.reload
 
-      expect(@user.recommended_debates).to be(false)
-      expect(@user.recommended_proposals).to be(false)
+      expect(user.recommended_debates).to be(false)
+      expect(user.recommended_proposals).to be(false)
     end
 
   end

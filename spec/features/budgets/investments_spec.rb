@@ -14,7 +14,7 @@ describe "Budget Investments" do
                   "budget_investment_path"
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Budget::Investment
+    it_behaves_like "notifiable in-app", :budget_investment
     it_behaves_like "relationable", Budget::Investment
     it_behaves_like "remotely_translatable",
                     :budget_investment,
@@ -454,9 +454,9 @@ describe "Budget Investments" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
-          bdgt_invest1 = create(:budget_investment, heading: heading, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          bdgt_invest2 = create(:budget_investment, heading: heading, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          bdgt_invest3 = create(:budget_investment, heading: heading, title: "Save the forest")
+          create(:budget_investment, heading: heading, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          create(:budget_investment, heading: heading, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
+          create(:budget_investment, heading: heading, title: "Save the forest")
 
           visit budget_investments_path(budget)
 
@@ -470,7 +470,7 @@ describe "Budget Investments" do
           expect(page).to have_content("There is 1 investment")
 
           within("#budget-investments") do
-            expect(page).to have_content(bdgt_invest1.title)
+            expect(page).to have_content "Get Schwifty"
           end
         end
 
@@ -552,18 +552,28 @@ describe "Budget Investments" do
     scenario "by unfeasibilty link for group with many headings" do
       budget.update(phase: :balloting)
       group = create(:budget_group, name: "Districts", budget: budget)
-      heading1 = create(:budget_heading, name: "Carabanchel", group: group)
-      heading2 = create(:budget_heading, name: "Barajas",     group: group)
+
+      barajas = create(:budget_heading, name: "Barajas", group: group)
+      carabanchel = create(:budget_heading, name: "Carabanchel", group: group)
+
+      create(:budget_investment, :feasible, heading: barajas, title: "Terminal 5")
+      create(:budget_investment, :unfeasible, heading: barajas, title: "Seaport")
+      create(:budget_investment, :unfeasible, heading: carabanchel, title: "Airport")
 
       visit budget_path(budget)
 
       click_link "See unfeasible investments"
 
       click_link "Districts"
-      click_link "Carabanchel"
+      click_link "Barajas"
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unfeasible")
-      expect(page).to have_current_path(expected_path)
+      within("#budget-investments") do
+        expect(page).to have_css(".budget-investment", count: 1)
+
+        expect(page).to have_content "Seaport"
+        expect(page).not_to have_content "Terminal 5"
+        expect(page).not_to have_content "Airport"
+      end
     end
 
     context "Results Phase" do
@@ -680,7 +690,7 @@ describe "Budget Investments" do
     end
 
     scenario "Random order maintained when going back from show" do
-      per_page.times { |i| create(:budget_investment, heading: heading) }
+      per_page.times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -734,18 +744,20 @@ describe "Budget Investments" do
 
     scenario "Each user has a different and consistent random budget investment order" do
       (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
+      first_user_investments_order = nil
+      second_user_investments_order = nil
 
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading)
-        @first_user_investments_order = investments_order
+        first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
         visit budget_investments_path(budget, heading: heading)
-        @second_user_investments_order = investments_order
+        second_user_investments_order = investments_order
       end
 
-      expect(@first_user_investments_order).not_to eq(@second_user_investments_order)
+      expect(first_user_investments_order).not_to eq(second_user_investments_order)
 
       in_browser(:one) do
         click_link "Next"
@@ -754,7 +766,7 @@ describe "Budget Investments" do
         click_link "Previous"
         expect(page).to have_content "You're on page 1"
 
-        expect(investments_order).to eq(@first_user_investments_order)
+        expect(investments_order).to eq(first_user_investments_order)
       end
 
       in_browser(:two) do
@@ -764,24 +776,27 @@ describe "Budget Investments" do
         click_link "Previous"
         expect(page).to have_content "You're on page 1"
 
-        expect(investments_order).to eq(@second_user_investments_order)
+        expect(investments_order).to eq(second_user_investments_order)
       end
     end
 
     scenario "Each user has a equal and consistent budget investment order when the random_seed is equal" do
       (per_page * 1.3).to_i.times { create(:budget_investment, heading: heading) }
 
+      first_user_investments_order = nil
+      second_user_investments_order = nil
+
       in_browser(:one) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
-        @first_user_investments_order = investments_order
+        first_user_investments_order = investments_order
       end
 
       in_browser(:two) do
         visit budget_investments_path(budget, heading: heading, random_seed: "1")
-        @second_user_investments_order = investments_order
+        second_user_investments_order = investments_order
       end
 
-      expect(@first_user_investments_order).to eq(@second_user_investments_order)
+      expect(first_user_investments_order).to eq(second_user_investments_order)
     end
 
     scenario "Set votes for investments randomized with a seed" do
@@ -789,11 +804,8 @@ describe "Budget Investments" do
 
       per_page.times { create(:budget_investment, heading: heading) }
 
-      voted_investments = []
-      per_page.times do
-        investment = create(:budget_investment, heading: heading)
-        create(:vote, votable: investment, voter: voter)
-        voted_investments << investment
+      voted_investments = Array.new(per_page) do
+        create(:budget_investment, heading: heading, voters: [voter])
       end
 
       login_as(voter)
@@ -994,10 +1006,10 @@ describe "Budget Investments" do
       visit new_budget_investment_path(budget)
 
       select_options = find("#budget_investment_heading_id").all("option").collect(&:text)
-      expect(select_options.first).to eq("")
-      expect(select_options.second).to eq("Toda la ciudad")
-      expect(select_options.third).to eq("Health: More health professionals")
-      expect(select_options.fourth).to eq("Health: More hospitals")
+      expect(select_options).to eq ["",
+                                    "Toda la ciudad",
+                                    "Health: More health professionals",
+                                    "Health: More hospitals"]
     end
   end
 
@@ -1120,7 +1132,6 @@ describe "Budget Investments" do
              :feasible,
              :finished,
              budget: budget,
-             group: group,
              heading: heading,
              price: 16,
              price_explanation: "Every wheel is 4 euros, so total is 16")
@@ -1146,7 +1157,6 @@ describe "Budget Investments" do
     investment = create(:budget_investment,
                         :unfeasible,
                         budget: budget,
-                        group: group,
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this")
 
@@ -1154,7 +1164,6 @@ describe "Budget Investments" do
                         :unfeasible,
                         :finished,
                         budget: budget,
-                        group: group,
                         heading: heading,
                         unfeasibility_explanation: "The unfeasible explanation")
 
@@ -1182,7 +1191,6 @@ describe "Budget Investments" do
                         :finished,
                         :selected,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1202,7 +1210,6 @@ describe "Budget Investments" do
                         :selected,
                         :winner,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1226,7 +1233,6 @@ describe "Budget Investments" do
                         :feasible,
                         :finished,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1242,7 +1248,6 @@ describe "Budget Investments" do
                         :feasible,
                         :finished,
                         budget: budget,
-                        group: group,
                         heading: heading)
 
     user = create(:user)
@@ -1259,9 +1264,8 @@ describe "Budget Investments" do
   scenario "Show (unfeasible budget investment with valuation not finished)" do
     investment = create(:budget_investment,
                         :unfeasible,
-                        :unfinished,
+                        :open,
                         budget: budget,
-                        group: group,
                         heading: heading,
                         unfeasibility_explanation: "Local government is not competent in this matter")
 
@@ -1347,13 +1351,13 @@ describe "Budget Investments" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, :selected, heading: carabanchel)
-        salamanca_investment   = create(:budget_investment, :selected, heading: salamanca)
+        create(:budget_investment, :selected, title: "In Carabanchel", heading: carabanchel)
+        create(:budget_investment, :selected, title: "In Salamanca", heading: salamanca)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
-        within("#budget_investment_#{carabanchel_investment.id}") do
+        within(".budget-investment", text: "In Carabanchel") do
           expect(page).to have_css(".in-favor a[data-confirm]")
         end
       end
@@ -1362,15 +1366,13 @@ describe "Budget Investments" do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
 
-        carabanchel_investment = create(:budget_investment, heading: carabanchel)
-        salamanca_investment   = create(:budget_investment, heading: salamanca)
-
-        create(:vote, votable: carabanchel_investment, voter: author)
+        create(:budget_investment, title: "In Carabanchel", heading: carabanchel, voters: [author])
+        create(:budget_investment, title: "In Salamanca", heading: salamanca)
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: carabanchel.id)
 
-        within("#budget_investment_#{carabanchel_investment.id}") do
+        within(".budget-investment", text: "In Carabanchel") do
           expect(page).not_to have_css(".in-favor a[data-confirm]")
         end
       end
@@ -1380,17 +1382,15 @@ describe "Budget Investments" do
 
         group2 = create(:budget_group, budget: budget)
         another_heading1 = create(:budget_heading, group: group2)
-        another_heading2 = create(:budget_heading, group: group2)
 
-        heading_investment = create(:budget_investment, heading: heading)
-        another_group_investment = create(:budget_investment, heading: another_heading1)
-
-        create(:vote, votable: heading_investment, voter: author)
+        create(:budget_heading, group: group2)
+        create(:budget_investment, heading: heading, title: "Investment", voters: [author])
+        create(:budget_investment, heading: another_heading1, title: "Another investment")
 
         login_as(author)
         visit budget_investments_path(budget, heading_id: another_heading1.id)
 
-        within("#budget_investment_#{another_group_investment.id}") do
+        within(".budget-investment", text: "Another investment") do
           expect(page).to have_css(".in-favor a[data-confirm]")
         end
       end
@@ -1425,8 +1425,7 @@ describe "Budget Investments" do
     end
 
     scenario "Sidebar in show should display support text and count" do
-      investment = create(:budget_investment, :selected, budget: budget)
-      create(:vote, votable: investment)
+      investment = create(:budget_investment, :selected, budget: budget, voters: [create(:user)])
 
       visit budget_investment_path(budget, investment)
 
@@ -1437,8 +1436,7 @@ describe "Budget Investments" do
     end
 
     scenario "Index should display support count" do
-      investment = create(:budget_investment, budget: budget, heading: heading)
-      create(:vote, votable: investment)
+      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -1448,8 +1446,7 @@ describe "Budget Investments" do
     end
 
     scenario "Show should display support text and count" do
-      investment = create(:budget_investment, budget: budget, heading: heading)
-      create(:vote, votable: investment)
+      investment = create(:budget_investment, budget: budget, heading: heading, voters: [create(:user)])
 
       visit budget_investment_path(budget, investment)
 
@@ -1565,12 +1562,12 @@ describe "Budget Investments" do
       new_york_heading    = create(:budget_heading, group: group, name: "New York",
                                    latitude: -43.223412, longitude: 12.009423)
 
-      investment1 = create(:budget_investment, :selected, price: 1, heading: global_heading)
-      investment2 = create(:budget_investment, :selected, price: 10, heading: global_heading)
-      investment3 = create(:budget_investment, :selected, price: 100, heading: global_heading)
-      investment4 = create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading)
-      investment5 = create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading)
-      investment6 = create(:budget_investment, :selected, price: 100000, heading: new_york_heading)
+      create(:budget_investment, :selected, price: 1, heading: global_heading, title: "World T-Shirt")
+      create(:budget_investment, :selected, price: 10, heading: global_heading, title: "Eco pens")
+      create(:budget_investment, :selected, price: 100, heading: global_heading, title: "Free tablet")
+      create(:budget_investment, :selected, price: 1000, heading: carabanchel_heading, title: "Fireworks")
+      create(:budget_investment, :selected, price: 10000, heading: carabanchel_heading, title: "Bus pass")
+      create(:budget_investment, :selected, price: 100000, heading: new_york_heading, title: "NASA base")
 
       login_as(user)
       visit budget_path(budget)
@@ -1579,16 +1576,16 @@ describe "Budget Investments" do
       # No need to click_link "Global Heading" because the link of a group with a single heading
       # points to the list of investments directly
 
-      add_to_ballot(investment1)
-      add_to_ballot(investment2)
+      add_to_ballot("World T-Shirt")
+      add_to_ballot("Eco pens")
 
       visit budget_path(budget)
 
       click_link "Health"
       click_link "Carabanchel"
 
-      add_to_ballot(investment4)
-      add_to_ballot(investment5)
+      add_to_ballot("Fireworks")
+      add_to_ballot("Bus pass")
 
       visit budget_ballot_path(budget)
 
@@ -1596,24 +1593,24 @@ describe "Budget Investments" do
                                    "until this phase is closed."
 
       within("#budget_group_#{global_group.id}") do
-        expect(page).to have_content investment1.title
-        expect(page).to have_content "€#{investment1.price}"
+        expect(page).to have_content "World T-Shirt"
+        expect(page).to have_content "€1"
 
-        expect(page).to have_content investment2.title
-        expect(page).to have_content "€#{investment2.price}"
+        expect(page).to have_content "Eco pens"
+        expect(page).to have_content "€10"
 
-        expect(page).not_to have_content investment3.title
-        expect(page).not_to have_content "€#{investment3.price}"
+        expect(page).not_to have_content "Free tablet"
+        expect(page).not_to have_content "€100"
       end
 
       within("#budget_group_#{group.id}") do
-        expect(page).to have_content investment4.title
+        expect(page).to have_content "Fireworks"
         expect(page).to have_content "€1,000"
 
-        expect(page).to have_content investment5.title
+        expect(page).to have_content "Bus pass"
         expect(page).to have_content "€10,000"
 
-        expect(page).not_to have_content investment6.title
+        expect(page).not_to have_content "NASA base"
         expect(page).not_to have_content "€100,000"
       end
     end
@@ -1624,7 +1621,8 @@ describe "Budget Investments" do
 
       heading_1 = create(:budget_heading, group: group, name: "Heading 1")
       heading_2 = create(:budget_heading, group: group, name: "Heading 2")
-      investment = create(:budget_investment, :selected, heading: heading_1)
+
+      create(:budget_investment, :selected, heading: heading_1, title: "Zero-emission zone")
 
       login_as(user)
       visit budget_path(budget)
@@ -1632,7 +1630,7 @@ describe "Budget Investments" do
       click_link "Health"
       click_link "Heading 1"
 
-      add_to_ballot(investment)
+      add_to_ballot("Zero-emission zone")
 
       visit budget_group_path(budget, group)
 
@@ -1698,18 +1696,28 @@ describe "Budget Investments" do
 
     scenario "Shows unselected link for group with many headings" do
       group = create(:budget_group, name: "Districts", budget: budget)
-      heading1 = create(:budget_heading, name: "Carabanchel", group: group)
-      heading2 = create(:budget_heading, name: "Barajas",     group: group)
+
+      barajas = create(:budget_heading, name: "Barajas", group: group)
+      carabanchel = create(:budget_heading, name: "Carabanchel", group: group)
+
+      create(:budget_investment, :selected, heading: barajas, title: "Terminal 5")
+      create(:budget_investment, :unselected, heading: barajas, title: "Seaport")
+      create(:budget_investment, :unselected, heading: carabanchel, title: "Airport")
 
       visit budget_path(budget)
 
       click_link "See investments not selected for balloting phase"
 
       click_link "Districts"
-      click_link "Carabanchel"
+      click_link "Barajas"
 
-      expected_path = budget_investments_path(budget, heading_id: heading1.id, filter: "unselected")
-      expect(page).to have_current_path(expected_path)
+      within("#budget-investments") do
+        expect(page).to have_css(".budget-investment", count: 1)
+
+        expect(page).to have_content "Seaport"
+        expect(page).not_to have_content "Terminal 5"
+        expect(page).not_to have_content "Airport"
+      end
     end
 
     scenario "Do not display vote button for unselected investments in index" do
@@ -1733,12 +1741,9 @@ describe "Budget Investments" do
     describe "Reclassification" do
 
       scenario "Due to heading change" do
-        user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
+        user = create(:user, :level_two, ballot_lines: [investment])
         heading2 = create(:budget_heading, group: group)
-
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
 
         login_as(user)
         visit budget_ballot_path(budget)
@@ -1754,11 +1759,8 @@ describe "Budget Investments" do
       end
 
       scenario "Due to being unfeasible" do
-        user = create(:user, :level_two)
         investment = create(:budget_investment, :selected, heading: heading)
-
-        ballot = create(:budget_ballot, user: user, budget: budget)
-        ballot.investments << investment
+        user = create(:user, :level_two, ballot_lines: [investment])
 
         login_as(user)
         visit budget_ballot_path(budget)

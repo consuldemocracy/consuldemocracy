@@ -119,9 +119,9 @@ describe Poll do
 
       recounting_polls = Poll.recounting
 
+      expect(recounting_polls).to eq [recounting]
       expect(recounting_polls).not_to include(current)
       expect(recounting_polls).not_to include(expired)
-      expect(recounting_polls).to include(recounting)
     end
   end
 
@@ -133,8 +133,7 @@ describe Poll do
 
       current_or_recounting = Poll.current_or_recounting
 
-      expect(current_or_recounting).to include(current)
-      expect(current_or_recounting).to include(recounting)
+      expect(current_or_recounting).to match_array [current, recounting]
       expect(current_or_recounting).not_to include(expired)
     end
   end
@@ -146,8 +145,9 @@ describe Poll do
     let!(:expired_poll) { create(:poll, :expired) }
 
     let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-    let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted: true,
-                                                             geozones: [geozone]) }
+    let!(:expired_restricted_poll) do
+      create(:poll, :expired, geozone_restricted: true, geozones: [geozone])
+    end
 
     let!(:all_polls) { [current_poll, expired_poll, current_poll, expired_restricted_poll] }
     let(:non_current_polls) { [expired_poll, expired_restricted_poll] }
@@ -213,9 +213,7 @@ describe Poll do
 
       create(:poll_voter, user: user, poll: poll1)
 
-      expect(Poll.votable_by(user)).to include(poll2)
-      expect(Poll.votable_by(user)).to include(poll3)
-      expect(Poll.votable_by(user)).not_to include(poll1)
+      expect(Poll.votable_by(user)).to match_array [poll2, poll3]
     end
 
     it "returns polls that are answerable by a user" do
@@ -225,7 +223,7 @@ describe Poll do
 
       allow(Poll).to receive(:answerable_by).and_return(Poll.where(id: poll1))
 
-      expect(Poll.votable_by(user)).to include(poll1)
+      expect(Poll.votable_by(user)).to eq [poll1]
       expect(Poll.votable_by(user)).not_to include(poll2)
     end
 
@@ -233,7 +231,7 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      expect(Poll.votable_by(user)).to include(poll)
+      expect(Poll.votable_by(user)).to eq [poll]
     end
 
   end
@@ -316,20 +314,24 @@ describe Poll do
     let(:proposal) { create :proposal }
     let(:other_proposal) { create :proposal }
     let(:poll) { create(:poll, related: proposal) }
-    let(:overlaping_poll) { build(:poll, related: proposal, starts_at: poll.starts_at + 1.day,
-                                                            ends_at: poll.ends_at - 1.day) }
-    let(:non_overlaping_poll) { create(:poll, related: proposal, starts_at: poll.ends_at + 1.day,
-                                                                 ends_at: poll.ends_at + 31.days) }
-    let(:overlaping_poll_2) { create(:poll, related: other_proposal,
-                                            starts_at: poll.starts_at + 1.day,
-                                            ends_at: poll.ends_at - 1.day) }
+    let(:overlaping_poll) do
+      build(:poll, related: proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)
+    end
+
+    let(:non_overlaping_poll) do
+      create(:poll, related: proposal, starts_at: poll.ends_at + 1.day, ends_at: poll.ends_at + 31.days)
+    end
+
+    let(:overlaping_poll_2) do
+      create(:poll, related: other_proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)
+    end
 
     it "a poll can not overlap itself" do
       expect(Poll.overlaping_with(poll)).not_to include(poll)
     end
 
     it "returns overlaping polls for the same proposal" do
-      expect(Poll.overlaping_with(overlaping_poll)).to include(poll)
+      expect(Poll.overlaping_with(overlaping_poll)).to eq [poll]
     end
 
     it "do not returs non overlaping polls for the same proposal" do
@@ -350,8 +352,7 @@ describe Poll do
         poll2 = create(:poll)
         poll3 = create(:poll, :for_budget)
 
-        expect(Poll.not_budget).to include(poll1)
-        expect(Poll.not_budget).to include(poll2)
+        expect(Poll.not_budget).to match_array [poll1, poll2]
         expect(Poll.not_budget).not_to include(poll3)
       end
 

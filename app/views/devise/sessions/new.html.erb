@@ -21,10 +21,7 @@
 
     <% if devise_mapping.rememberable? -%>
       <div class="small-12 column">
-        <%= f.label :remember_me do %>
-          <%= f.check_box :remember_me, title: t("devise_views.sessions.new.remember_me"), label: false %>
-          <span class="checkbox"><%= t("devise_views.sessions.new.remember_me") %></span>
-        <% end %>
+        <%= f.check_box :remember_me, label: t("devise_views.sessions.new.remember_me") %>
       </div>
     <% end -%>
 

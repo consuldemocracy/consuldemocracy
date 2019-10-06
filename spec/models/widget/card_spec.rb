@@ -14,12 +14,16 @@ describe Widget::Card do
   end
 
   describe "#header" do
-
-    it "returns the header card" do
+    it "returns header cards" do
       header = create(:widget_card, header: true)
-      card = create(:widget_card, header: false)
 
       expect(Widget::Card.header).to eq([header])
+    end
+
+    it "does not return regular cards" do
+      create(:widget_card, header: false)
+
+      expect(Widget::Card.header).to be_empty
     end
   end
 
@@ -31,8 +35,7 @@ describe Widget::Card do
       card2 = create(:widget_card, header: false)
       page_card = create(:widget_card, header: false, page: create(:site_customization_page))
 
-      expect(Widget::Card.body).to include(card1)
-      expect(Widget::Card.body).to include(card2)
+      expect(Widget::Card.body).to match_array [card1, card2]
       expect(Widget::Card.body).not_to include(header)
       expect(Widget::Card.body).not_to include(page_card)
     end

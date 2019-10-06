@@ -18,7 +18,7 @@ class Valuator < ApplicationRecord
   end
 
   def assigned_investment_ids
-    investment_ids + [valuator_group&.investment_ids].flatten
+    investment_ids + valuator_group&.investment_ids.to_a
   end
 
 end

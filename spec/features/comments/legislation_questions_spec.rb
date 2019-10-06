@@ -8,7 +8,7 @@ describe "Commenting legislation questions" do
   let(:legislation_question) { create :legislation_question, process: process }
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Legislation::Question
+    it_behaves_like "notifiable in-app", :legislation_question
   end
 
   scenario "Index" do
@@ -186,7 +186,7 @@ describe "Commenting legislation questions" do
       create(:comment, commentable: legislation_question)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      expect(page).to have_content "You must Sign in or Sign up to leave a comment"
+      expect(page).to have_content "You must sign in or sign up to leave a comment"
       within("#comments") do
         expect(page).not_to have_content "Write a comment"
         expect(page).not_to have_content "Reply"
@@ -468,22 +468,23 @@ describe "Commenting legislation questions" do
   end
 
   describe "Voting comments" do
-    before do
-      @manuela = create(:user, verified_at: Time.current)
-      @pablo = create(:user)
-      @legislation_question = create(:legislation_question)
-      @comment = create(:comment, commentable: @legislation_question)
+    let(:verified)   { create(:user, verified_at: Time.current) }
+    let(:unverified) { create(:user) }
+    let(:question)   { create(:legislation_question) }
+    let!(:comment)   { create(:comment, commentable: question) }
 
-      login_as(@manuela)
+    before do
+
+      login_as(verified)
     end
 
     scenario "Show" do
-      create(:vote, voter: @manuela, votable: @comment, vote_flag: true)
-      create(:vote, voter: @pablo, votable: @comment, vote_flag: false)
+      create(:vote, voter: verified, votable: comment, vote_flag: true)
+      create(:vote, voter: unverified, votable: comment, vote_flag: false)
 
-      visit legislation_process_question_path(@legislation_question.process, @legislation_question)
+      visit legislation_process_question_path(question.process, question)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         within(".in_favor") do
           expect(page).to have_content "1"
         end
@@ -497,9 +498,9 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Create", :js do
-      visit legislation_process_question_path(@legislation_question.process, @legislation_question)
+      visit legislation_process_question_path(question.process, question)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -515,9 +516,9 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Update", :js do
-      visit legislation_process_question_path(@legislation_question.process, @legislation_question)
+      visit legislation_process_question_path(question.process, question)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
 
         within(".in_favor") do
@@ -539,9 +540,9 @@ describe "Commenting legislation questions" do
     end
 
     scenario "Trying to vote multiple times", :js do
-      visit legislation_process_question_path(@legislation_question.process, @legislation_question)
+      visit legislation_process_question_path(question.process, question)
 
-      within("#comment_#{@comment.id}_votes") do
+      within("#comment_#{comment.id}_votes") do
         find(".in_favor a").click
         within(".in_favor") do
           expect(page).to have_content "1"

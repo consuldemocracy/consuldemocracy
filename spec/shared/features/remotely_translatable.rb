@@ -10,6 +10,9 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
   before do
     Setting["feature.remote_translations"] = true
+    available_locales_response = %w[de en es fr pt zh-Hans]
+    expect(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).at_most(3).times.
+                                                            and_return(available_locales_response)
   end
 
   context "Button to request remote translation" do
@@ -250,5 +253,5 @@ end
 
 def generate_response(resource)
   field_text = Faker::Lorem.characters(10)
-  resource.translated_attribute_names.map { |field| field_text }
+  resource.translated_attribute_names.map { field_text }
 end

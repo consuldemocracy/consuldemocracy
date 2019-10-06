@@ -35,5 +35,11 @@ FactoryBot.define do
         valuation.commentable.valuators << valuator
       end
     end
+
+    transient { voters { [] } }
+
+    after(:create) do |comment, evaluator|
+      evaluator.voters.each { |voter| create(:vote, votable: comment, voter: voter) }
+    end
   end
 end

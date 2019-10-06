@@ -8,11 +8,10 @@
 
       <%= f.fields_for :organization do |fo| %>
         <%= fo.text_field :name, autofocus: true, maxlength: Organization.name_max_length, placeholder: t("devise_views.organizations.registrations.new.organization_name_label") %>
-        <%= fo.label :responsible_name %>
-        <p class="help-text" id="responsible-name-help-text"><%= t("devise_views.organizations.registrations.new.responsible_name_note") %></p>
-        <%= fo.text_field :responsible_name, placeholder: t("devise_views.organizations.registrations.new.responsible_name_label"),
-                                             maxlength: Organization.responsible_name_max_length, label: false,
-                                             aria: { describedby: "responsible-name-help-text" } %>
+        <%= fo.text_field :responsible_name,
+          placeholder: t("devise_views.organizations.registrations.new.responsible_name_label"),
+          maxlength: Organization.responsible_name_max_length,
+          hint: t("devise_views.organizations.registrations.new.responsible_name_note") %>
       <% end %>
 
       <%= f.email_field :email, placeholder: t("devise_views.organizations.registrations.new.email_label") %>
@@ -28,12 +27,14 @@
                            label: t("devise_views.organizations.registrations.new.password_confirmation_label"),
                            placeholder: t("devise_views.organizations.registrations.new.password_confirmation_label") %>
 
-      <%= f.label :terms_of_service do %>
-        <%= f.check_box :terms_of_service, title: t("devise_views.users.registrations.new.terms_title"), label: false %>
-        <span class="checkbox">
-          <%= t("devise_views.users.registrations.new.terms",
-              terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions", title: t("shared.target_blank_html"), target: "_blank")).html_safe %></span>
-      <% end %>
+      <%= f.check_box :terms_of_service,
+        title: t("devise_views.users.registrations.new.terms_title"),
+        label: t("devise_views.users.registrations.new.terms",
+                 terms: link_to(t("devise_views.users.registrations.new.terms_link"),
+                                "/conditions",
+                                title: t("shared.target_blank_html"),
+                                target: "_blank")
+                ).html_safe %>
 
       <div class="small-12 medium-6 small-centered">
         <%= f.submit t("devise_views.organizations.registrations.new.submit"), class: "button expanded" %>

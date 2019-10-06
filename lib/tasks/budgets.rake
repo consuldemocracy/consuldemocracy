@@ -23,4 +23,14 @@ namespace :budgets do
 
   end
 
+  desc "Update investments original_heading_id with current heading_id"
+  task set_original_heading_id: :environment do
+    puts "Starting"
+    Budget::Investment.find_each do |investment|
+      investment.update_column(:original_heading_id, investment.heading_id)
+      print "."
+    end
+    puts "Finished"
+  end
+
 end

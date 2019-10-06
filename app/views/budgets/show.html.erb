@@ -24,14 +24,13 @@
           <% else %>
             <div class="callout warning margin-top">
               <%= t("budgets.investments.index.sidebar.verified_only",
-                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+                  verify: link_to_verify_account).html_safe %>
             </div>
           <% end %>
         <% else %>
           <div class="callout primary margin-top">
             <%= t("budgets.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
-                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+                  sign_in: link_to_signin, sign_up: link_to_signup).html_safe %>
           </div>
         <% end %>
       <% end %>

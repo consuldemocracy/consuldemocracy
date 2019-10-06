@@ -41,6 +41,9 @@ Layout/EmptyLines:
 Layout/EndOfLine:
   EnforcedStyle: lf
 
+Layout/MultilineBlockLayout:
+  Enabled: true
+
 Layout/SpaceAfterColon:
   Enabled: true
 
@@ -114,7 +117,22 @@ Layout/TrailingBlankLines:
 Layout/TrailingWhitespace:
   Enabled: true
 
+Lint/AmbiguousRegexpLiteral:
+  Enabled: true
+
+Lint/DuplicateMethods:
+  Enabled: true
+
 Lint/LiteralAsCondition:
+  Enabled: true
+
+Lint/ParenthesesAsGroupedExpression:
+  Enabled: true
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: true
+
+Lint/StringConversionInInterpolation:
   Enabled: true
 
 Lint/UselessAssignment:
@@ -199,6 +217,12 @@ RSpec/Focus:
 RSpec/HookArgument:
   Enabled: true
 
+RSpec/InstanceVariable:
+  Enabled: true
+  Exclude:
+    - spec/controllers/concerns/has_filters_spec.rb
+    - spec/controllers/concerns/has_orders_spec.rb
+
 RSpec/LetBeforeExamples:
   Enabled: true
 
@@ -221,6 +245,9 @@ RSpec/ScatteredSetup:
   Enabled: true
 
 RSpec/VoidExpect:
+  Enabled: true
+
+Style/BlockDelimiters:
   Enabled: true
 
 Style/PercentLiteralDelimiters:

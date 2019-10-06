@@ -10,10 +10,7 @@ class Poll::PartialResult < ApplicationRecord
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
-  validates :answer, inclusion: { in: ->(a) { a.question.question_answers
-                                                        .visibles
-                                                        .joins(:translations)
-                                                        .pluck("poll_question_answer_translations.title") }},
+  validates :answer, inclusion: { in: -> (a) { a.question.possible_answers }},
                      unless: ->(a) { a.question.blank? }
   validates :origin, inclusion: { in: VALID_ORIGINS }
 
@@ -24,9 +21,9 @@ class Poll::PartialResult < ApplicationRecord
 
   def update_logs
     if amount_changed? && amount_was.present?
-      self.amount_log += ":#{amount_was.to_s}"
-      self.officer_assignment_id_log += ":#{officer_assignment_id_was.to_s}"
-      self.author_id_log += ":#{author_id_was.to_s}"
+      self.amount_log += ":#{amount_was}"
+      self.officer_assignment_id_log += ":#{officer_assignment_id_was}"
+      self.author_id_log += ":#{author_id_was}"
     end
   end
 end

@@ -156,7 +156,7 @@ class Proposal < ApplicationRecord
 
   def self.for_summary
     summary = {}
-    categories = ActsAsTaggableOn::Tag.category_names.sort
+    categories = Tag.category_names.sort
     geozones   = Geozone.names.sort
 
     groups = categories + geozones

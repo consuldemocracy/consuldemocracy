@@ -90,7 +90,7 @@ describe "Public area translatable records" do
       click_button "Start a debate"
 
       expect(page).to have_css "#error_explanation"
-      expect(page).to have_field "Debate title", with: "", class: "error"
+      expect(page).to have_field "Debate title", with: "", class: "is-invalid-input"
     end
 
     scenario "Shows errors when submiting without any active translations" do
@@ -232,7 +232,7 @@ describe "Public area translatable records" do
 
           select "Español", from: :select_language
 
-          expect(page).to have_field "Proposal title", with: "", class: "error"
+          expect(page).to have_field "Proposal title", with: "", class: "is-invalid-input"
         end
       end
     end

@@ -24,23 +24,21 @@ describe ProposalNotification do
 
   describe "public_for_api scope" do
     it "returns proposal notifications" do
-      proposal = create(:proposal)
-      notification = create(:proposal_notification, proposal: proposal)
+      notification = create(:proposal_notification, proposal: create(:proposal))
 
-      expect(ProposalNotification.public_for_api).to include(notification)
+      expect(ProposalNotification.public_for_api).to eq [notification]
     end
 
     it "blocks proposal notifications whose proposal is hidden" do
-      proposal = create(:proposal, :hidden)
-      notification = create(:proposal_notification, proposal: proposal)
+      create(:proposal_notification, proposal: create(:proposal, :hidden))
 
-      expect(ProposalNotification.public_for_api).not_to include(notification)
+      expect(ProposalNotification.public_for_api).to be_empty
     end
 
     it "blocks proposal notifications without proposal" do
       build(:proposal_notification, proposal: nil).save!(validate: false)
 
-      expect(ProposalNotification.public_for_api).not_to include(notification)
+      expect(ProposalNotification.public_for_api).to be_empty
     end
   end
 
@@ -52,21 +50,19 @@ describe ProposalNotification do
 
     it "is not valid if below minimum interval" do
       proposal = create(:proposal)
+      create(:proposal_notification, proposal: proposal)
 
-      notification1 = create(:proposal_notification, proposal: proposal)
-      notification2 = build(:proposal_notification, proposal: proposal)
+      notification2 = build(:proposal_notification, proposal: proposal.reload)
 
-      proposal.reload
       expect(notification2).not_to be_valid
     end
 
     it "is valid if notifications above minimum interval" do
       proposal = create(:proposal)
+      create(:proposal_notification, proposal: proposal, created_at: 4.days.ago)
 
-      notification1 = create(:proposal_notification, proposal: proposal, created_at: 4.days.ago)
-      notification2 = build(:proposal_notification, proposal: proposal)
+      notification2 = build(:proposal_notification, proposal: proposal.reload)
 
-      proposal.reload
       expect(notification2).to be_valid
     end
 

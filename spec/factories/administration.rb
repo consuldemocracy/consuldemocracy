@@ -81,7 +81,7 @@ FactoryBot.define do
       header { true }
       sequence(:button_text)   { |n| "Button text #{n}" }
       sequence(:button_url)    { |n| "Button url #{n}" }
-      sequence(:alignment)   { |n| "background" }
+      alignment { "background" }
     end
 
     after :create do |widget_card|

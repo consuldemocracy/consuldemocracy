@@ -133,13 +133,13 @@ describe "Consul Schema" do
 
   describe "Proposals" do
     it "does not include hidden proposals" do
-      visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, :hidden)
+      create(:proposal, title: "Visible")
+      create(:proposal, :hidden, title: "Hidden")
 
       response = execute("{ proposals { edges { node { title } } } }")
       received_titles = extract_fields(response, "proposals", "title")
 
-      expect(received_titles).to match_array [visible_proposal.title]
+      expect(received_titles).to match_array ["Visible"]
     end
 
     it "includes proposals of authors even if public activity is set to false" do
@@ -156,13 +156,13 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, :with_proposal, public_activity: true)
-      hidden_author  = create(:user, :with_proposal, public_activity: false)
+      create(:user, :with_proposal, username: "public",  public_activity: true)
+      create(:user, :with_proposal, username: "private", public_activity: false)
 
       response = execute("{ proposals { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "proposals", "public_author.username")
 
-      expect(received_authors).to match_array [visible_author.username]
+      expect(received_authors).to match_array ["public"]
     end
 
     it "only returns date and hour for created_at" do
@@ -176,9 +176,9 @@ describe "Consul Schema" do
     end
 
     it "only retruns tags with kind nil or category" do
-      tag          = create(:tag, name: "Parks")
-      category_tag = create(:tag, :category, name: "Health")
-      admin_tag    = create(:tag, name: "Admin tag", kind: "admin")
+      create(:tag, name: "Parks")
+      create(:tag, :category, name: "Health")
+      create(:tag, name: "Admin tag", kind: "admin")
 
       proposal = create(:proposal, tag_list: "Parks, Health, Admin tag")
 
@@ -189,8 +189,7 @@ describe "Consul Schema" do
     end
 
     it "returns nested votes for a proposal" do
-      proposal = create(:proposal)
-      2.times { create(:vote, votable: proposal) }
+      proposal = create(:proposal, voters: [create(:user), create(:user)])
 
       response = execute("{ proposal(id: #{proposal.id}) { votes_for { edges { node { public_created_at } } } } }")
 
@@ -202,13 +201,13 @@ describe "Consul Schema" do
 
   describe "Debates" do
     it "does not include hidden debates" do
-      visible_debate = create(:debate)
-      hidden_debate  = create(:debate, :hidden)
+      create(:debate, title: "Visible")
+      create(:debate, :hidden, title: "Hidden")
 
       response = execute("{ debates { edges { node { title } } } }")
       received_titles = extract_fields(response, "debates", "title")
 
-      expect(received_titles).to match_array [visible_debate.title]
+      expect(received_titles).to match_array ["Visible"]
     end
 
     it "includes debates of authors even if public activity is set to false" do
@@ -225,13 +224,13 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, :with_debate, public_activity: true)
-      hidden_author  = create(:user, :with_debate, public_activity: false)
+      create(:user, :with_debate, username: "public",  public_activity: true)
+      create(:user, :with_debate, username: "private", public_activity: false)
 
       response = execute("{ debates { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "debates", "public_author.username")
 
-      expect(received_authors).to match_array [visible_author.username]
+      expect(received_authors).to match_array ["public"]
     end
 
     it "only returns date and hour for created_at" do
@@ -245,9 +244,9 @@ describe "Consul Schema" do
     end
 
     it "only retruns tags with kind nil or category" do
-      tag          = create(:tag, name: "Parks")
-      category_tag = create(:tag, :category, name: "Health")
-      admin_tag    = create(:tag, name: "Admin tag", kind: "admin")
+      create(:tag, name: "Parks")
+      create(:tag, :category, name: "Health")
+      create(:tag, name: "Admin tag", kind: "admin")
 
       debate = create(:debate, tag_list: "Parks, Health, Admin tag")
 
@@ -285,62 +284,62 @@ describe "Consul Schema" do
     end
 
     it "does not link author if public activity is set to false" do
-      visible_author = create(:user, :with_comment, public_activity: true)
-      hidden_author  = create(:user, :with_comment, public_activity: false)
+      create(:user, :with_comment, username: "public",  public_activity: true)
+      create(:user, :with_comment, username: "private", public_activity: false)
 
       response = execute("{ comments { edges { node { public_author { username } } } } }")
       received_authors = extract_fields(response, "comments", "public_author.username")
 
-      expect(received_authors).to match_array [visible_author.username]
+      expect(received_authors).to match_array ["public"]
     end
 
     it "does not include hidden comments" do
-      visible_comment = create(:comment)
-      hidden_comment  = create(:comment, :hidden)
+      create(:comment, body: "Visible")
+      create(:comment, :hidden, body: "Hidden")
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
 
-      expect(received_comments).to match_array [visible_comment.body]
+      expect(received_comments).to match_array ["Visible"]
     end
 
     it "does not include comments from hidden proposals" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, :hidden)
 
-      visible_proposal_comment = create(:comment, commentable: visible_proposal)
-      hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
+      create(:comment, commentable: visible_proposal, body: "I can see the proposal")
+      create(:comment, commentable: hidden_proposal, body: "Someone hid the proposal!")
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
 
-      expect(received_comments).to match_array [visible_proposal_comment.body]
+      expect(received_comments).to match_array ["I can see the proposal"]
     end
 
     it "does not include comments from hidden debates" do
       visible_debate = create(:debate)
       hidden_debate  = create(:debate, :hidden)
 
-      visible_debate_comment = create(:comment, commentable: visible_debate)
-      hidden_debate_comment  = create(:comment, commentable: hidden_debate)
+      create(:comment, commentable: visible_debate, body: "I can see the debate")
+      create(:comment, commentable: hidden_debate, body: "Someone hid the debate!")
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
 
-      expect(received_comments).to match_array [visible_debate_comment.body]
+      expect(received_comments).to match_array ["I can see the debate"]
     end
 
     it "does not include comments from hidden polls" do
       visible_poll = create(:poll)
       hidden_poll  = create(:poll, :hidden)
 
-      visible_poll_comment = create(:comment, commentable: visible_poll)
-      hidden_poll_comment  = create(:comment, commentable: hidden_poll)
+      create(:comment, commentable: visible_poll, body: "I can see the poll")
+      create(:comment, commentable: hidden_poll, body: "This poll is hidden!")
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
 
-      expect(received_comments).to match_array [visible_poll_comment.body]
+      expect(received_comments).to match_array ["I can see the poll"]
     end
 
     it "does not include comments of debates that are not public" do
@@ -387,13 +386,13 @@ describe "Consul Schema" do
     end
 
     it "does not include valuation comments" do
-      visible_comment = create(:comment)
-      valuation_comment = create(:comment, :valuation)
+      create(:comment, body: "Regular comment")
+      create(:comment, :valuation, body: "Valuation comment")
 
       response = execute("{ comments { edges { node { body } } } }")
       received_comments = extract_fields(response, "comments", "body")
 
-      expect(received_comments).not_to include(valuation_comment.body)
+      expect(received_comments).not_to include "Valuation comment"
     end
   end
 
@@ -414,13 +413,13 @@ describe "Consul Schema" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, :hidden)
 
-      visible_proposal_notification = create(:proposal_notification, proposal: visible_proposal)
-      hidden_proposal_notification  = create(:proposal_notification, proposal: hidden_proposal)
+      create(:proposal_notification, proposal: visible_proposal, title: "I can see the proposal")
+      create(:proposal_notification, proposal: hidden_proposal, title: "Someone hid the proposal!")
 
       response = execute("{ proposal_notifications { edges { node { title } } } }")
       received_notifications = extract_fields(response, "proposal_notifications", "title")
 
-      expect(received_notifications).to match_array [visible_proposal_notification.title]
+      expect(received_notifications).to match_array ["I can see the proposal"]
     end
 
     it "does not include proposal notifications for proposals that are not public" do
@@ -445,16 +444,16 @@ describe "Consul Schema" do
     end
 
     it "only links proposal if public" do
-      visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, :hidden)
+      visible_proposal = create(:proposal, title: "Visible")
+      hidden_proposal  = create(:proposal, :hidden, title: "Hidden")
 
-      visible_proposal_notification = create(:proposal_notification, proposal: visible_proposal)
-      hidden_proposal_notification  = create(:proposal_notification, proposal: hidden_proposal)
+      create(:proposal_notification, proposal: visible_proposal)
+      create(:proposal_notification, proposal: hidden_proposal)
 
       response = execute("{ proposal_notifications { edges { node { proposal { title } } } } }")
       received_proposals = extract_fields(response, "proposal_notifications", "proposal.title")
 
-      expect(received_proposals).to match_array [visible_proposal.title]
+      expect(received_proposals).to match_array ["Visible"]
     end
 
   end
@@ -522,7 +521,7 @@ describe "Consul Schema" do
 
     it "does not display tags for taggings that are not public" do
       create(:proposal, tag_list: "Health")
-      allow(ActsAsTaggableOn::Tag).to receive(:public_for_api).and_return([])
+      allow(Tag).to receive(:public_for_api).and_return([])
 
       response = execute("{ tags { edges { node { name } } } }")
       received_tags = extract_fields(response, "tags", "name")
@@ -535,15 +534,10 @@ describe "Consul Schema" do
   describe "Votes" do
 
     it "only returns votes from proposals, debates and comments" do
-      proposal = create(:proposal)
-      debate   = create(:debate)
-      comment  = create(:comment)
-      budget_investment = create(:budget_investment)
-
-      proposal_vote = create(:vote, votable: proposal)
-      debate_vote   = create(:vote, votable: debate)
-      comment_vote  = create(:vote, votable: comment)
-      budget_investment_vote = create(:vote, votable: budget_investment)
+      create(:proposal, voters: [create(:user)])
+      create(:debate, voters: [create(:user)])
+      create(:comment, voters: [create(:user)])
+      create(:budget_investment, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_type } } } }")
       received_votables = extract_fields(response, "votes", "votable_type")
@@ -552,81 +546,64 @@ describe "Consul Schema" do
     end
 
     it "does not include votes from hidden debates" do
-      visible_debate = create(:debate)
-      hidden_debate  = create(:debate, :hidden)
-
-      visible_debate_vote = create(:vote, votable: visible_debate)
-      hidden_debate_vote  = create(:vote, votable: hidden_debate)
+      create(:debate, id: 1, voters: [create(:user)])
+      create(:debate, :hidden, id: 2, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_debates = extract_fields(response, "votes", "votable_id")
 
-      expect(received_debates).to match_array [visible_debate.id]
+      expect(received_debates).to match_array [1]
     end
 
     it "does not include votes of hidden proposals" do
-      visible_proposal = create(:proposal)
-      hidden_proposal  = create(:proposal, :hidden)
-
-      visible_proposal_vote = create(:vote, votable: visible_proposal)
-      hidden_proposal_vote  = create(:vote, votable: hidden_proposal)
+      create(:proposal, id: 1, voters: [create(:user)])
+      create(:proposal, :hidden, id: 2, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_proposals = extract_fields(response, "votes", "votable_id")
 
-      expect(received_proposals).to match_array [visible_proposal.id]
+      expect(received_proposals).to match_array [1]
     end
 
     it "does not include votes of hidden comments" do
-      visible_comment = create(:comment)
-      hidden_comment  = create(:comment, :hidden)
-
-      visible_comment_vote = create(:vote, votable: visible_comment)
-      hidden_comment_vote  = create(:vote, votable: hidden_comment)
+      create(:comment, id: 1, voters: [create(:user)])
+      create(:comment, :hidden, id: 2, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_comments = extract_fields(response, "votes", "votable_id")
 
-      expect(received_comments).to match_array [visible_comment.id]
+      expect(received_comments).to match_array [1]
     end
 
     it "does not include votes of comments from a hidden proposal" do
       visible_proposal = create(:proposal)
       hidden_proposal  = create(:proposal, :hidden)
 
-      visible_proposal_comment = create(:comment, commentable: visible_proposal)
-      hidden_proposal_comment  = create(:comment, commentable: hidden_proposal)
-
-      visible_proposal_comment_vote = create(:vote, votable: visible_proposal_comment)
-      hidden_proposal_comment_vote  = create(:vote, votable: hidden_proposal_comment)
+      create(:comment, id: 1, commentable: visible_proposal, voters: [create(:user)])
+      create(:comment, id: 2, commentable: hidden_proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
 
-      expect(received_votables).to match_array [visible_proposal_comment.id]
+      expect(received_votables).to match_array [1]
     end
 
     it "does not include votes of comments from a hidden debate" do
       visible_debate = create(:debate)
       hidden_debate  = create(:debate, :hidden)
 
-      visible_debate_comment = create(:comment, commentable: visible_debate)
-      hidden_debate_comment  = create(:comment, commentable: hidden_debate)
-
-      visible_debate_comment_vote = create(:vote, votable: visible_debate_comment)
-      hidden_debate_comment_vote  = create(:vote, votable: hidden_debate_comment)
+      create(:comment, id: 1, commentable: visible_debate, voters: [create(:user)])
+      create(:comment, id: 2, commentable: hidden_debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
 
-      expect(received_votables).to match_array [visible_debate_comment.id]
+      expect(received_votables).to match_array [1]
     end
 
     it "does not include votes of debates that are not public" do
-      not_public_debate = create(:debate)
       allow(Vote).to receive(:public_for_api).and_return([])
-
-      not_public_debate_vote = create(:vote, votable: not_public_debate)
+      not_public_debate = create(:debate, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
@@ -635,10 +612,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden proposals" do
-      not_public_proposal = create(:proposal)
       allow(Vote).to receive(:public_for_api).and_return([])
-
-      not_public_proposal_vote = create(:vote, votable: not_public_proposal)
+      not_public_proposal = create(:proposal, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")
@@ -647,10 +622,8 @@ describe "Consul Schema" do
     end
 
     it "does not include votes of a hidden comments" do
-      not_public_comment = create(:comment)
       allow(Vote).to receive(:public_for_api).and_return([])
-
-      not_public_comment_vote = create(:vote, votable: not_public_comment)
+      not_public_comment = create(:comment, voters: [create(:user)])
 
       response = execute("{ votes { edges { node { votable_id } } } }")
       received_votables = extract_fields(response, "votes", "votable_id")

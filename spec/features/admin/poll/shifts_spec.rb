@@ -13,8 +13,8 @@ describe "Admin shifts" do
     booth1 = create(:poll_booth)
     booth2 = create(:poll_booth)
 
-    shift1 = create(:poll_shift, officer: officer, booth: booth1, date: Date.current)
-    shift2 = create(:poll_shift, officer: officer, booth: booth2, date: Time.zone.tomorrow)
+    create(:poll_shift, officer: officer, booth: booth1, date: Date.current)
+    create(:poll_shift, officer: officer, booth: booth2, date: Time.zone.tomorrow)
 
     visit new_admin_booth_shift_path(booth1)
 
@@ -99,8 +99,8 @@ describe "Admin shifts" do
     booth = create(:poll_booth, polls: [poll])
     officer = create(:poll_officer)
 
-    shift1 = create(:poll_shift, :vote_collection_task, officer: officer, booth: booth, date: Date.current)
-    shift2 = create(:poll_shift, :recount_scrutiny_task, officer: officer, booth: booth, date: Time.zone.tomorrow)
+    create(:poll_shift, :vote_collection_task, officer: officer, booth: booth, date: Date.current)
+    create(:poll_shift, :recount_scrutiny_task, officer: officer, booth: booth, date: Time.zone.tomorrow)
 
     vote_collection_dates = (Date.current..poll.ends_at.to_date).to_a
                                                                 .reject { |date| date == Date.current }
@@ -243,7 +243,7 @@ describe "Admin shifts" do
     booth = create(:poll_booth)
     officer = create(:poll_officer)
 
-    shift = create(:poll_shift, officer: officer, booth: booth)
+    create(:poll_shift, officer: officer, booth: booth)
     officer.destroy
 
     visit new_admin_booth_shift_path(booth)

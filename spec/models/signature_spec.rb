@@ -29,11 +29,12 @@ describe Signature do
   end
 
   describe "custom validations" do
-
-    let(:signature) { build(:signature,
-                            document_number: "12345678Z",
-                            date_of_birth: "31/12/1980",
-                            postal_code: "28013") }
+    let(:signature) do
+      build(:signature,
+            document_number: "12345678Z",
+            date_of_birth: "31/12/1980",
+            postal_code: "28013")
+    end
 
     before do
       Setting["feature.remote_census"] = true
@@ -142,9 +143,8 @@ describe Signature do
       end
 
       it "does not assign vote to user if already voted" do
-        proposal = create(:proposal)
         user = create(:user, :level_two, document_number: "123A")
-        vote = create(:vote, votable: proposal, voter: user)
+        proposal = create(:proposal, voters: [user])
         signature_sheet = create(:signature_sheet, signable: proposal)
         signature = create(:signature, signature_sheet: signature_sheet, document_number: user.document_number)
 
@@ -154,9 +154,8 @@ describe Signature do
       end
 
       it "does not assign vote to user if already voted on budget investment" do
-        investment = create(:budget_investment)
         user = create(:user, :level_two, document_number: "123A")
-        vote = create(:vote, votable: investment, voter: user)
+        investment = create(:budget_investment, voters: [user])
 
         signature_sheet = create(:signature_sheet, signable: investment)
         signature = create(:signature, document_number: user.document_number, signature_sheet: signature_sheet)

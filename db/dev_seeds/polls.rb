@@ -222,10 +222,10 @@ section "Creating Poll Questions from Proposals" do
     poll = Poll.current.first
     question = Poll::Question.new(poll: poll)
     question.copy_attributes_from_proposal(proposal)
-    title = question.title
+    question_title = question.title
     I18n.available_locales.map do |locale|
       Globalize.with_locale(locale) do
-        question.title = "#{title} (#{locale})"
+        question.title = "#{question_title} (#{locale})"
       end
     end
     question.save!
@@ -252,10 +252,10 @@ section "Creating Successful Proposals" do
     poll = Poll.current.first
     question = Poll::Question.new(poll: poll)
     question.copy_attributes_from_proposal(proposal)
-    title = question.title
+    question_title = question.title
     I18n.available_locales.map do |locale|
       Globalize.with_locale(locale) do
-        question.title = "#{title} (#{locale})"
+        question.title = "#{question_title} (#{locale})"
       end
     end
     question.save!

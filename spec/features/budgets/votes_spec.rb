@@ -13,10 +13,9 @@ describe "Votes" do
     describe "Index" do
 
       scenario "Index shows user votes on proposals" do
-        investment1 = create(:budget_investment, heading: heading)
+        investment1 = create(:budget_investment, heading: heading, voters: [manuela])
         investment2 = create(:budget_investment, heading: heading)
         investment3 = create(:budget_investment, heading: heading)
-        create(:vote, voter: manuela, votable: investment1, vote_flag: true)
 
         visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -39,7 +38,7 @@ describe "Votes" do
       end
 
       scenario "Create from investments' index", :js do
-        create(:budget_investment, heading: heading, budget: budget)
+        create(:budget_investment, heading: heading)
 
         visit budget_investments_path(budget, heading_id: heading.id)
 
@@ -54,7 +53,7 @@ describe "Votes" do
     end
 
     describe "Single investment" do
-      let(:investment) { create(:budget_investment, budget: budget, heading: heading) }
+      let(:investment) { create(:budget_investment, heading: heading) }
 
       scenario "Show no votes" do
         visit budget_investment_path(budget, investment)
@@ -87,7 +86,7 @@ describe "Votes" do
 
     scenario "Disable voting on investments", :js do
       budget.update(phase: "reviewing")
-      investment = create(:budget_investment, budget: budget, heading: heading)
+      investment = create(:budget_investment, heading: heading)
 
       manuela = create(:user, verified_at: Time.current)
       login_as(manuela)

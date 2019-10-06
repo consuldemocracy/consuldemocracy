@@ -1,5 +1,5 @@
 <% if can? :hide, proposal %>
-  <%= link_to t("admin.actions.hide").capitalize, hide_moderation_proposal_path(proposal),
+  <%= link_to t("admin.actions.hide").capitalize, hide_moderation_legislation_proposal_path(proposal),
               method: :put, remote: true, data: { confirm: t("admin.actions.confirm") } %>
 <% end %>
 

@@ -97,8 +97,7 @@ describe TagCloud do
 
       tag_cloud = TagCloud.new(Proposal)
 
-      expect(tag_names(tag_cloud).first).to eq "participation"
-      expect(tag_names(tag_cloud).second).to eq "corruption"
+      expect(tag_names(tag_cloud)).to eq ["participation", "corruption"]
     end
 
     it "orders tags by count and then by name" do
@@ -108,9 +107,7 @@ describe TagCloud do
 
       tag_cloud = TagCloud.new(Proposal)
 
-      expect(tag_names(tag_cloud).first).to  eq "health"
-      expect(tag_names(tag_cloud).second).to eq "participation"
-      expect(tag_names(tag_cloud).third).to  eq "corruption"
+      expect(tag_names(tag_cloud)).to eq ["health", "participation", "corruption"]
     end
 
     it "returns a maximum of 10 tags" do

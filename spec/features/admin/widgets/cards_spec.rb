@@ -161,7 +161,7 @@ describe "Cards" do
         card_2 = create(:widget_card, page: custom_page, title: "Card medium", columns: 4)
         card_3 = create(:widget_card, page: custom_page, title: "Card small", columns: 2)
 
-        visit (custom_page).url
+        visit custom_page.url
 
         expect(page).to have_css(".card", count: 3)
 
@@ -174,7 +174,7 @@ describe "Cards" do
         card_1 = create(:widget_card, page: custom_page, title: "Card one", label: "My label")
         card_2 = create(:widget_card, page: custom_page, title: "Card two")
 
-        visit (custom_page).url
+        visit custom_page.url
 
         within("#widget_card_#{card_1.id}") do
           expect(page).to have_selector("span", text: "My label")

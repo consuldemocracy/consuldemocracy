@@ -13,11 +13,11 @@
 
   <div class="small-12 medium-6 column">
     <%= label_tag :name %>
-    <%= select_tag :name, options_for_select(valid_blocks, @selected_content_block), label: false %>
+    <%= select_tag :name, options_for_select(valid_blocks, @selected_content_block) %>
   </div>
   <div class="small-12 medium-6 column">
     <%= label_tag :locale %>
-    <%= select_tag :locale, options_for_select(I18n.available_locales, @content_block.locale.to_sym), label: false %>
+    <%= select_tag :locale, options_for_select(I18n.available_locales, @content_block.locale.to_sym) %>
   </div>
   <div class="small-12 column">
     <%= label_tag :body %>

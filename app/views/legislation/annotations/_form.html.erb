@@ -23,11 +23,7 @@
           <%= f.hidden_field :ranges %>
         <% end %>
       <% else %>
-        <div data-alert class="callout primary">
-          <%= t("legislation.annotations.form.login_to_comment",
-              signin: link_to(t("legislation.annotations.form.signin"), new_user_session_path),
-              signup: link_to(t("legislation.annotations.form.signup"), new_user_registration_path)).html_safe %>
-        </div>
+        <%= render "shared/login_to_comment" %>
       <% end %>
     </div>
   </div>

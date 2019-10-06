@@ -25,8 +25,11 @@ class Dashboard::PollsController < Dashboard::BaseController
   def update
     respond_to do |format|
       if poll.update(poll_params)
-        format.html { redirect_to proposal_dashboard_polls_path(proposal),
-                                  notice: t("flash.actions.update.poll") }
+        format.html do
+          redirect_to proposal_dashboard_polls_path(proposal),
+                      notice: t("flash.actions.update.poll")
+        end
+
         format.json { head :no_content }
       else
         format.html { render :edit }

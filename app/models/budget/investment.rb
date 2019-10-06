@@ -97,13 +97,23 @@ class Budget
     scope :by_heading,        ->(heading_id)  { where(heading_id: heading_id) }
     scope :by_admin,          ->(admin_id)    { where(administrator_id: admin_id) }
     scope :by_tag,            ->(tag_name)    { tagged_with(tag_name) }
-    scope :by_valuator,       ->(valuator_id) { where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments) }
-    scope :by_tracker,        ->(tracker_id) { where("budget_tracker_assignments.tracker_id = ?",
-                                                     tracker_id).joins(:tracker_assignments) }
-    scope :by_valuator_group, ->(valuator_group_id) { where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id).joins(:valuator_group_assignments) }
 
     scope :for_render, -> { includes(:heading) }
 
+    def self.by_valuator(valuator_id)
+      where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)
+    end
+
+    def self.by_tracker(tracker_id)
+      where("budget_tracker_assignments.tracker_id = ?", tracker_id).joins(:tracker_assignments)
+    end
+
+    def self.by_valuator_group(valuator_group_id)
+      joins(:valuator_group_assignments).
+        where("budget_valuator_group_assignments.valuator_group_id = ?", valuator_group_id)
+    end
+
+    before_create :set_original_heading_id
     before_save :calculate_confidence_score
     after_save :recalculate_heading_winners
     before_validation :set_responsible_name
@@ -289,10 +299,6 @@ class Budget
       user.headings_voted_within_group(group).count < group.max_votable_headings
     end
 
-    def headings_voted_by_user(user)
-      user.votes.for_budget_investments(budget.investments.where(group: group)).votables.map(&:heading_id).uniq
-    end
-
     def voted_in?(heading, user)
       user.headings_voted_within_group(group).where(id: heading.id).exists?
     end
@@ -402,6 +408,10 @@ class Budget
       def set_denormalized_ids
         self.group_id = heading&.group_id if heading_id_changed?
         self.budget_id ||= heading&.group&.budget_id
+      end
+
+      def set_original_heading_id
+        self.original_heading_id = heading_id
       end
 
       def change_log

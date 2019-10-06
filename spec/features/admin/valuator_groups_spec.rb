@@ -39,6 +39,7 @@ describe "Valuator groups" do
     within("#valuators") do
       expect(page).to have_link(valuator1.email, href: admin_valuator_path(valuator1))
       expect(page).to have_link(valuator2.email, href: admin_valuator_path(valuator2))
+      expect(page).not_to have_link(valuator3.email)
     end
   end
 
@@ -80,10 +81,10 @@ describe "Valuator groups" do
   end
 
   context "Assign valuators to groups" do
+    let(:valuator) { create(:valuator) }
 
     scenario "Add a valuator to a group" do
-      valuator = create(:valuator)
-      group = create(:valuator_group, name: "Health")
+      create(:valuator_group, name: "Health")
 
       visit edit_admin_valuator_path(valuator)
 
@@ -95,10 +96,8 @@ describe "Valuator groups" do
     end
 
     scenario "Update a valuator's group" do
-      valuator = create(:valuator)
-      group1 = create(:valuator_group, name: "Health")
-      group2 = create(:valuator_group, name: "Economy")
-      valuator.update(valuator_group: group1)
+      valuator.update(valuator_group: create(:valuator_group, name: "Economy"))
+      create(:valuator_group, name: "Health")
 
       visit edit_admin_valuator_path(valuator)
       select "Economy", from: "valuator_valuator_group_id"
@@ -109,9 +108,7 @@ describe "Valuator groups" do
     end
 
     scenario "Remove a valuator from a group" do
-      valuator = create(:valuator)
-      group1 = create(:valuator_group, name: "Health")
-      valuator.update(valuator_group: group1)
+      valuator.update(valuator_group: create(:valuator_group, name: "Health"))
 
       visit edit_admin_valuator_path(valuator)
       select "", from: "valuator_valuator_group_id"

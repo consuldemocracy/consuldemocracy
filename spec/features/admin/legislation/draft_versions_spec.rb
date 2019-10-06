@@ -69,7 +69,7 @@ describe "Admin legislation draft versions" do
   context "Update" do
     scenario "Valid legislation draft version", :js do
       process = create(:legislation_process, title: "An example legislation process")
-      draft_version = create(:legislation_draft_version, title: "Version 1", process: process)
+      create(:legislation_draft_version, title: "Version 1", process: process)
 
       visit admin_root_path
 

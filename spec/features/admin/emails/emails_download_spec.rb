@@ -33,8 +33,8 @@ describe "Admin download user emails" do
       end
 
       header = page.response_headers["Content-Disposition"]
-      expect(header).to match /^attachment/
-      expect(header).to match /filename="Administrators.csv"$/
+      expect(header).to match(/^attachment/)
+      expect(header).to match(/filename="Administrators.csv"$/)
 
       file_contents = page.body.split(",")
       expect(file_contents).to match_array ["admin_news1@consul.dev", "admin_news2@consul.dev"]

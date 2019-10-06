@@ -25,8 +25,7 @@ describe Notification do
         read_notification2 = create(:notification, :read)
         unread_notification = create(:notification)
 
-        expect(Notification.read).to include read_notification1
-        expect(Notification.read).to include read_notification2
+        expect(Notification.read).to match_array [read_notification1, read_notification2]
         expect(Notification.read).not_to include unread_notification
       end
     end
@@ -37,8 +36,7 @@ describe Notification do
         unread_notification1 = create(:notification)
         unread_notification2 = create(:notification)
 
-        expect(Notification.unread).to include unread_notification1
-        expect(Notification.unread).to include unread_notification2
+        expect(Notification.unread).to match_array [unread_notification1, unread_notification2]
         expect(Notification.unread).not_to include read_notification
       end
     end
@@ -107,6 +105,7 @@ describe Notification do
       user = create(:user)
       comment1 = create(:comment)
       comment2 = create(:comment)
+
       create(:notification, user: user, notifiable: comment1)
 
       expect(Notification.existent(user, comment2)).to eq(nil)
@@ -116,7 +115,8 @@ describe Notification do
       user1 = create(:user)
       user2 = create(:user)
       comment = create(:comment)
-      notification = create(:notification, user: user1, notifiable: comment)
+
+      create(:notification, user: user1, notifiable: comment)
 
       expect(Notification.existent(user2, comment)).to eq(nil)
     end

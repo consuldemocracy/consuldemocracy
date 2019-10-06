@@ -41,7 +41,6 @@ en:
   comments:
     comments_closed: Comments are closed
     verified_only: To participate %{verify_account}
-    verify_account: verify your account
     comment:
       admin: Administrator
       author: Author
@@ -164,7 +163,6 @@ en:
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
       author: Author
     update:
@@ -462,7 +460,6 @@ en:
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
       milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
@@ -667,9 +664,6 @@ en:
       back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       comments_tab: Comments
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
-      signin: Sign in
-      signup: Sign up
       cant_answer_verify_html: "You must %{verify_link} in order to answer."
       verify_link: "verify your account"
       cant_answer_expired: "This poll has finished."
@@ -861,6 +855,11 @@ en:
     manage:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
+    login_to_comment: "You must %{signin} or %{signup} to leave a comment."
+    login_to_continue: "You must %{signin} or %{signup} to continue."
+    signin: "sign in"
+    signup: "sign up"
+    verify_account: "verify your account"
     direct_messages:
       new:
         body_label: Message
@@ -869,10 +868,6 @@ en:
         title: Send private message to %{receiver}
         title_label: Title
         verified_only: To send a private message %{verify_account}
-        verify_account: verify your account
-        authenticate: You must %{signin} or %{signup} to continue.
-        signin: sign in
-        signup: sign up
       show:
         receiver: Message sent to %{receiver}
     show:
@@ -920,12 +915,8 @@ en:
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
     organizations: Organizations are not permitted to vote
-    signin: Sign in
-    signup: Sign up
     supports: Supports
-    unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
-    verify_account: verify your account
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on investment projects; %{verify_account}.
@@ -1004,8 +995,6 @@ en:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
       title: How I can comment this document?
   links:
     form:

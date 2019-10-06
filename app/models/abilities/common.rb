@@ -52,7 +52,7 @@ module Abilities
       can :suggest, Debate
       can :suggest, Proposal
       can :suggest, Legislation::Proposal
-      can :suggest, ActsAsTaggableOn::Tag
+      can :suggest, Tag
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id

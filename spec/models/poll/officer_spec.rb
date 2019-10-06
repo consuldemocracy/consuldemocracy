@@ -41,6 +41,7 @@ describe Poll::Officer do
       create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.starts_at)
       create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.ends_at)
       create(:poll_officer_assignment, poll: poll_2, officer: officer)
+      create(:poll_officer_assignment, poll: poll_3, officer: officer, final: true)
 
       assigned_polls = officer.voting_days_assigned_polls
 
@@ -64,19 +65,13 @@ describe Poll::Officer do
     it "returns polls ordered by end date (desc)" do
       officer = create(:poll_officer)
 
-      poll_1 = create(:poll, ends_at: 1.day.ago)
-      poll_2 = create(:poll, ends_at: 10.days.from_now)
-      poll_3 = create(:poll, ends_at: 10.days.ago)
-
-      [poll_1, poll_2, poll_3].each do |poll|
-        create(:poll_officer_assignment, officer: officer, poll: poll)
-      end
+      poll_1 = create(:poll, ends_at: 1.day.ago, officers: [officer])
+      poll_2 = create(:poll, ends_at: 10.days.from_now, officers: [officer])
+      poll_3 = create(:poll, ends_at: 10.days.ago, officers: [officer])
 
       assigned_polls = officer.voting_days_assigned_polls
 
-      expect(assigned_polls.first).to eq(poll_2)
-      expect(assigned_polls.second).to eq(poll_1)
-      expect(assigned_polls.last).to eq(poll_3)
+      expect(assigned_polls).to eq [poll_2, poll_1, poll_3]
     end
   end
 
@@ -88,9 +83,10 @@ describe Poll::Officer do
       poll_2 = create(:poll)
       poll_3 = create(:poll)
 
-      create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.starts_at, final: true)
-      create(:poll_officer_assignment, poll: poll_1, officer: officer, date: poll_1.ends_at, final: true)
-      create(:poll_officer_assignment, poll: poll_2, officer: officer, final: true)
+      create(:poll_officer_assignment, :final, poll: poll_1, officer: officer, date: poll_1.starts_at)
+      create(:poll_officer_assignment, :final, poll: poll_1, officer: officer, date: poll_1.ends_at)
+      create(:poll_officer_assignment, :final, poll: poll_2, officer: officer)
+      create(:poll_officer_assignment, poll: poll_3, officer: officer)
 
       assigned_polls = officer.final_days_assigned_polls
 
@@ -119,14 +115,12 @@ describe Poll::Officer do
       poll_3 = create(:poll, ends_at: 10.days.ago)
 
       [poll_1, poll_2, poll_3].each do |poll|
-        create(:poll_officer_assignment, officer: officer, poll: poll, final: true)
+        create(:poll_officer_assignment, :final, officer: officer, poll: poll)
       end
 
       assigned_polls = officer.final_days_assigned_polls
 
-      expect(assigned_polls.first).to eq(poll_2)
-      expect(assigned_polls.second).to eq(poll_1)
-      expect(assigned_polls.last).to eq(poll_3)
+      expect(assigned_polls).to eq [poll_2, poll_1, poll_3]
     end
   end
 
@@ -142,7 +136,7 @@ describe Poll::Officer do
                                                      date:    Date.current,
                                                      officer: officer)
 
-      expect(officer.todays_booths).to include(assignment_with_application_time_zone.booth)
+      expect(officer.todays_booths).to eq [assignment_with_application_time_zone.booth]
       expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
     end
   end
