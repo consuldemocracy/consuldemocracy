@@ -1,5 +1,7 @@
 ---
 linters:
+  ErbSafety:
+    enabled: true
   ExtraNewline:
     enabled: true
   FinalNewline:
