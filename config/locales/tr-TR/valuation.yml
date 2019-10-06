@@ -60,9 +60,6 @@ tr:
         price_first_year_html: "İlk yıl maliyet bedeli (%{currency})<small>(isteğe bağlı, veriler herkese açık değil)</small>"
         price_explanation_html: Maliyet açıklaması
         feasibility: Uygulanabilirlik
-        feasible: Uygulanabilir
-        unfeasible: Uygulanamaz
-        undefined_feasible: Beklemede
         feasible_explanation_html: Uygulanabilirlikle ilgili açıklama
         valuation_finished: Değerlendirme tamamlandı
         valuation_finished_alert: "Bu raporun tamamlandığından emin misiniz? Bunu belirtmeniz halinde, raporda daha fazla değişikli yapmanız mümkün olmayacak."
