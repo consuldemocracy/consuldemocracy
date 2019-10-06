@@ -30,7 +30,7 @@
           </span>
         </div>
 
-        <%= auto_link_already_sanitized_html @debate.description %>
+        <%= auto_link_already_sanitized_html wysiwyg(@debate.description) %>
 
         <%= render "shared/tags", taggable: @debate %>
 

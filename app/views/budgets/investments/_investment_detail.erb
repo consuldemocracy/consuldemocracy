@@ -22,7 +22,7 @@
   <%= sanitize(t("budgets.investments.show.code", code: investment.id)) %>
 </p>
 
-<%= auto_link_already_sanitized_html investment.description %>
+<%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>
   <div class="margin">

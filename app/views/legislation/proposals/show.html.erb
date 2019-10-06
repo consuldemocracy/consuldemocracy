@@ -68,7 +68,7 @@
           </div>
         <% end %>
 
-        <%= auto_link_already_sanitized_html @proposal.description %>
+        <%= auto_link_already_sanitized_html wysiwyg(@proposal.description) %>
 
         <% if @proposal.video_url.present? %>
           <div class="video-link">

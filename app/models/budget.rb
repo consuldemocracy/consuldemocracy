@@ -42,8 +42,6 @@ class Budget < ApplicationRecord
 
   has_one :poll
 
-  before_validation :sanitize_descriptions
-
   after_create :generate_phases
 
   scope :drafting, -> { where(phase: "drafting") }
@@ -79,7 +77,7 @@ class Budget < ApplicationRecord
     if phases.exists? && phases.send(phase).description.present?
       phases.send(phase).description
     else
-      send("description_#{phase}")&.html_safe
+      send("description_#{phase}")
     end
   end
 
@@ -204,14 +202,6 @@ class Budget < ApplicationRecord
   end
 
   private
-
-    def sanitize_descriptions
-      s = WYSIWYGSanitizer.new
-      Budget::Phase::PHASE_KINDS.each do |phase|
-        sanitized = s.sanitize(send("description_#{phase}"))
-        send("description_#{phase}=", sanitized)
-      end
-    end
 
     def generate_phases
       Budget::Phase::PHASE_KINDS.each do |phase|

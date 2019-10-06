@@ -67,7 +67,7 @@
                     <div id="answer_description_<%= answer.id %>"
                          class="answer-description short answer-left-divider" data-toggler="short">
                         <% if answer.description.present? %>
-                          <%= answer.description %>
+                          <%= wysiwyg(answer.description) %>
                         <% end %>
 
                         <% if answer.images.any? %>

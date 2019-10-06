@@ -39,7 +39,7 @@
   </div>
 <% end %>
 
-<%= auto_link_already_sanitized_html @proposal.description %>
+<%= auto_link_already_sanitized_html wysiwyg(@proposal.description) %>
 
 <% if feature?(:map) && map_location_available?(@proposal.map_location) %>
   <div class="margin">
