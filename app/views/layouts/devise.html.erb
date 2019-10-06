@@ -3,11 +3,11 @@
   <head>
     <%= render "layouts/common_head", default_title: "Gobierno abierto" %>
     <%= render "layouts/meta_tags" %>
-    <%= setting["html.per_page_code_head"].try(:html_safe) %>
+    <%= raw setting["html.per_page_code_head"] %>
   </head>
 
   <body class="auth-page">
-    <%= setting["html.per_page_code_body"].try(:html_safe) %>
+    <%= raw setting["html.per_page_code_body"] %>
     <div class="wrapper">
       <div class="auth-image small-12 medium-3 column">
         <h1 class="logo margin">

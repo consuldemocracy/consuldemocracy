@@ -11,10 +11,10 @@
                      type: "image/png" %>
     <%= content_for :social_media_meta_tags %>
 
-    <%= setting["html.per_page_code_head"].try(:html_safe) %>
+    <%= raw setting["html.per_page_code_head"] %>
   </head>
   <body class="<%= yield (:body_class) %>">
-    <%= setting["html.per_page_code_body"].try(:html_safe) %>
+    <%= raw setting["html.per_page_code_body"] %>
 
     <h1 class="show-for-sr"><%= setting["org_name"] %></h1>
 
