@@ -78,4 +78,12 @@ describe "Cross-Site Scripting protection", :js do
 
     expect(page.text).not_to be_empty
   end
+
+  scenario "markdown conversion" do
+    process = create(:legislation_process, description: attack_code)
+
+    visit legislation_process_path(process)
+
+    expect(page.text).not_to be_empty
+  end
 end

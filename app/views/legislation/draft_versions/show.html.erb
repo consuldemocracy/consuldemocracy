@@ -49,7 +49,7 @@
 
         <div data-sticky-container>
           <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
-            <%= @draft_version.toc_html.html_safe %>
+            <%= sanitize(@draft_version.toc_html) %>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
                    data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
                    data-legislation-open-phase="<%= @process.allegations_phase.open? %>">
           <% end %>
-            <%= @draft_version.body_html.html_safe %>
+            <%= sanitize(@draft_version.body_html) %>
           </section>
         </div>
       </div>

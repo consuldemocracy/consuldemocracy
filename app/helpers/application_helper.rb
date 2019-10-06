@@ -32,7 +32,8 @@ module ApplicationHelper
       strikethrough:      true,
       superscript:        true
     }
-    Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
+
+    sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
   end
 
   def author_of?(authorable, user)
