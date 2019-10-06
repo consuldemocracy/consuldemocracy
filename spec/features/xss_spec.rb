@@ -60,6 +60,16 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "poll description setting in dashboard" do
+    Setting["proposals.poll_description"] = attack_code
+    proposal = create(:proposal)
+
+    login_as(proposal.author)
+    visit proposal_dashboard_polls_path(proposal)
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "annotation context" do
     annotation = create(:legislation_annotation)
     annotation.update_column(:context, attack_code)

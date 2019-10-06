@@ -1,7 +1,7 @@
 <% content_for :action_title, t("dashboard.polls.index.title") %>
 <div class="row expanded">
   <div class="small-12 medium-9 column">
-    <%== Setting["proposals.poll_description"] %>
+    <%= Setting["proposals.poll_description"] %>
 
     <% if @polls.any? %>
       <div class="row expanded margin-top" data-equalizer="poll-cards" data-equalize-on="medium">
