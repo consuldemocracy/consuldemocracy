@@ -58,13 +58,9 @@ tr:
         dossier: Dosya
         price_html: "Maliyet (%{currency})"
         price_first_year_html: "İlk yıl maliyet bedeli (%{currency})<small>(isteğe bağlı, veriler herkese açık değil)</small>"
-        price_explanation_html: Maliyet açıklaması
         feasibility: Uygulanabilirlik
-        feasible_explanation_html: Uygulanabilirlikle ilgili açıklama
-        valuation_finished: Değerlendirme tamamlandı
         valuation_finished_alert: "Bu raporun tamamlandığından emin misiniz? Bunu belirtmeniz halinde, raporda daha fazla değişikli yapmanız mümkün olmayacak."
         not_feasible_alert: "Uygunsuzluk raporunu içeren bir e-posta fikrin sahibine hemen gönderilecektir."
-        duration_html: Zaman kapsamı
         save: Değişiklikleri kaydet
       notice:
         valuate: "Dosya güncellendi"
