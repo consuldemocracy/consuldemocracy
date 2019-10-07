@@ -6,7 +6,6 @@ tr:
     form:
       title: Belgeler
       title_placeholder: Belge için açıklayıcı bir başlık ekleyin
-      attachment_label: Belge seç
       delete_button: Belgeyi kaldır
       cancel_button: İptal
       note: "Aşağıdaki içerik türlerinden %{accepted_content_types}, her dosya en fazla %{max_file_size} MB olmak kaydıyla en fazla %{max_documents_allowed} sayıda belge yükleyebilirsiniz."
