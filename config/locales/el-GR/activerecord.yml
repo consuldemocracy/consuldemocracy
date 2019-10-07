@@ -209,9 +209,9 @@ el:
         password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
         password: "Κωδικός πρόσβασης"
         current_password: "Υφιστάμενος κωδικός πρόσβασης"
-        phone_number: "Αριθμός τηλεφώνου"
         official_position: "Επίσημη θέση"
         official_level: "Επίσημο επίπεδο"
+        phone_number: "Αριθμός τηλεφώνου"
         redeemable_code: "Κωδικός επαλήθευσης που λάβατε μέσω email"
       organization:
         name: "Επωνυμία οργανισμού"
@@ -311,10 +311,10 @@ el:
         text: Σχόλιο
       document:
         title: Τίτλος
-        attachment: Επισύναψη
+        attachment: "Επισύναψη"
       image:
         title: Τίτλος
-        attachment: Επισύναψη
+        attachment: "Επισύναψη"
       poll/question/answer:
         title: Απάντηση
         description: Περιγραφή
@@ -327,7 +327,7 @@ el:
       newsletter:
         segment_recipient: Παραλήπτες
         subject: Θέμα
-        from: Από
+        from: "Από"
         body: Περιεχόμενο email
       admin_notification:
         segment_recipient: Παραλήπτες
