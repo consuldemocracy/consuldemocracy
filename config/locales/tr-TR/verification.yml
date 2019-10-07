@@ -47,7 +47,6 @@ tr:
       new:
         accept_terms_text: Pusula'nın %{terms_url}'sini kabul ediyorum
         accept_terms_text_title: Pusula'nın erişim şartlarını ve koşullarını kabul ediyorum
-        date_of_birth: Doğum tarihi
         document_number: Belge numarası
         document_number_help_title: Yardım
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>İkamet belgesi</strong>: X1234567P"
@@ -55,12 +54,10 @@ tr:
           passport: Pasaport
           residence_card: İkamet belgesi
           spanish_id: DNI
-        document_type_label: Belge Türü
         error_not_allowed_age: Katılmak için gereken yaşta değilsiniz
         error_not_allowed_postal_code: Doğrulanmak için kaydolmalısınız.
         error_verifying_census: Pusula, bilgilerinizi doğrulayamadı. Lütfen, sayım bilgilerinizin doğru olduğunu Belediye Meclisini arayarak ya da bir Vatandaş Destek Ofisini ziyaret ederek onaylayın.
         form_errors: ikametinizin doğrulanmasını engelledi
-        postal_code: Posta kodu
         postal_code_note: Hesabınızı doğrulamak için kaydolmalısınız
         terms: erişim şartları ve koşulları
         title: İkametgahı doğrula
@@ -70,7 +67,6 @@ tr:
         flash:
           success: Kısa mesaj yoluyla size gönderilen onay kodunu girin
       edit:
-        confirmation_code: Cep telefonunuza gönderilen kodu girin
         resend_sms_link: Tekrar göndermek için buraya tıklayın
         resend_sms_text: Onay kodunuzu içeren bir mesaj almadınız mı?
         submit_button: Gönder
