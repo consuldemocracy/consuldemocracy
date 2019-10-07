@@ -207,9 +207,9 @@ tr:
         password_confirmation: "Şifre onayı"
         password: "Şifre"
         current_password: "Mevcut şifre"
-        phone_number: "Telefon numarası"
         official_position: "Resmi görev"
         official_level: "Resmi düzey"
+        phone_number: "Telefon numarası"
         redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
       organization:
         name: "Organizasyon adı"
@@ -309,10 +309,10 @@ tr:
         text: Yorum
       document:
         title: İsim
-        attachment: Ek dosya
+        attachment: "Ek dosya"
       image:
         title: İsim
-        attachment: Ek dosya
+        attachment: "Ek dosya"
       poll/question/answer:
         title: Cevap
         description: Tanımlama
@@ -325,7 +325,7 @@ tr:
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
-        from: Başlangıç tarihi
+        from: "Başlangıç tarihi"
         body: E-posta içeriği
       admin_notification:
         segment_recipient: Alıcılar
