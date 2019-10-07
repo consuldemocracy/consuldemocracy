@@ -143,10 +143,7 @@ en:
     titles:
       help: "What is %{org}? - Citizen participation"
     verify:
-      code: Code you received in letter
-      email: Email
       info: "To verify your account introduce your access data:"
       info_code: "Now introduce the code you received in letter:"
-      password: Password
       submit: Verify my account
       title: Verify your account

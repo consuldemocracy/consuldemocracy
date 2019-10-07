@@ -1,5 +1,6 @@
 en:
   attributes:
+    geozone_id: "Scope of operation"
     results_enabled: "Show results"
     stats_enabled: "Show stats"
     advanced_stats_enabled: "Show advanced stats"
@@ -143,19 +144,30 @@ en:
         budget_milestone_tags: "Milestone tags"
         budget_valuation_tags: "Valuation tags"
         help_link: "Help link"
+      budget/translation:
+        name: "Name"
       budget/investment:
         heading_id: "Heading"
         title: "Title"
         description: "Description"
         external_url: "Link to additional documentation"
         administrator_id: "Administrator"
-        location: "Location (optional)"
+        location: "Location additional info"
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal descriptive image"
         image_title: "Image title"
+        duration: "Time scope"
         feasibility_feasible: "Feasible"
         feasibility_undecided: "Undefined"
         feasibility_unfeasible: "Unfeasible"
+        incompatible: "Mark as incompatible"
+        milestone_tag_list: "Milestone tags"
+        price_explanation: "Price explanation"
+        selected: "Mark as selected"
+        unfeasibility_explanation: "Feasibility explanation"
+        valuation_finished: "Valuation finished"
+        valuator_ids: "Groups"
+        valuation_tag_list: "Tags"
       budget/investment/translation:
         title: "Title"
         description: "Description"
@@ -168,7 +180,9 @@ en:
         status_id: "Current status (optional)"
         title: "Title"
         description: "Description (optional if there's an status assigned)"
-        publication_date: "Publication date"
+        publication_date: "Date"
+      milestone/translation:
+        description: "Description"
       milestone/status:
         name: "Name"
         description: "Description (optional)"
@@ -179,16 +193,33 @@ en:
       progress_bar/kind:
         primary: "Primary"
         secondary: "Secondary"
+      budget/group:
+        max_votable_headings: "Maximum number of headings in which a user can vote"
+      budget/group/translation:
+        name: "Group name"
       budget/heading:
+        allow_custom_content: "Allow content block"
+        latitude: "Latitude (optional)"
+        longitude: "Longitude (optional)"
         name: "Heading name"
-        price: "Price"
-        population: "Population"
+        price: "Amount"
+        population: "Population (optional)"
+      budget/heading/translation:
+        name: "Heading name"
+      budget/phase:
+        enabled: "Phase enabled"
+        ends_at: "End date"
+        starts_at: "Start date"
+      budget/phase/translation:
+        description: "Description"
+        summary: "Summary"
       comment:
         body: "Comment"
         user: "User"
       debate:
         author: "Author"
         description: "Opinion"
+        tag_list: "Topics"
         terms_of_service: "Terms of service"
         title: "Title"
       debate/translation:
@@ -199,8 +230,11 @@ en:
         title: "Title"
         question: "Question"
         description: "Description"
+        responsible_name: "Full name of the person submitting the proposal"
+        retired_reason: "Reason to retire the proposal"
         selected: "Mark as selected"
         terms_of_service: "Terms of service"
+        video_url: "External video URL"
       proposal/translation:
         title: "Proposal title"
         description: "Proposal text"
@@ -213,10 +247,23 @@ en:
         password_confirmation: "Password confirmation"
         password: "Password"
         current_password: "Current password"
-        phone_number: "Phone number"
+        email_digest: "Receive a summary of proposal notifications"
+        email_on_comment: "Notify me by email when someone comments on my proposals or debates"
+        email_on_comment_reply: "Notify me by email when someone replies to my comments"
+        email_on_direct_message: "Receive emails about direct messages"
+        newsletter: "Receive by email website relevant information"
         official_position: "Official position"
+        official_position_badge: "Show official position badge"
         official_level: "Official level"
+        phone_number: "Phone number"
+        public_activity: "Keep my list of activities public"
+        public_interests: "Keep the labels of the elements I follow public"
+        recommended_debates: "Show debates recommendations"
+        recommended_proposals: "Show proposals recommendations"
         redeemable_code: "Verification code received via email"
+      direct_message:
+        title: "Title"
+        body: "Message"
       organization:
         name: "Name of organisation"
         responsible_name: "Person responsible for the group"
@@ -227,11 +274,17 @@ en:
         geozone_restricted: "Restricted by geozone"
         summary: "Summary"
         description: "Description"
+      active_poll/translation:
+        description: "Description"
+      poll/booth:
+        name: "Name"
+        location: "Location"
       poll/translation:
         name: "Name"
         summary: "Summary"
         description: "Description"
       poll/question:
+        poll_id: "Poll"
         title: "Question"
         summary: "Summary"
         description: "Description"
@@ -242,6 +295,11 @@ en:
         data: CSV data
         poll_id: Poll
         officer_assignment_id: Officer assignment
+      poll/shift:
+        task: "Task"
+      proposal_notification:
+        body: "Message"
+        title: "Title"
       signature_sheet:
         signable_type: "Signable type"
         signable_id: "Signable ID"
@@ -252,6 +310,8 @@ en:
         subtitle: Subtitle
         slug: Slug
         status: Status
+        status_draft: "Draft"
+        status_published: "Published"
         title: Title
         updated_at: Updated at
         more_info_flag: Show in help page
@@ -268,9 +328,25 @@ en:
         name: Name
         locale: locale
         body: Body
+      tag:
+        name: "Type the name of the topic"
+      topic:
+        title: "Title"
+        description: "Initial text"
+      votation_type:
+        enum_type: "Votation type"
+        max_groups_answers: "Maximum number of answers in the set"
+        max_votes: "Maximum number of votes"
+        prioritization_type: "Prioritization type"
       banner:
         background_color: Background color
         font_color: Font color
+        post_ended_at: "Post ended at"
+        post_started_at: "Post started at"
+        target_url: "Link"
+      banner/translation:
+        title: "Title"
+        description: "Description"
       legislation/process:
         title: Process Title
         summary: Summary
@@ -290,17 +366,26 @@ en:
         result_publication_date: Final result publication date
         background_color: Background color
         font_color: Font color
+        homepage_enabled: "Homepage enabled"
       legislation/process/translation:
         title: Process Title
         summary: Summary
         description: Description
         additional_info: Additional info
+        homepage: "Description"
         milestones_summary: Summary
+      legislation/proposal:
+        description: "Proposal text"
+        summary: "Proposal summary"
+        title: "Proposal title"
+        video_url: "Link to external video"
       legislation/draft_version:
         title: Version title
         body: Text
         changelog: Changes
         status: Status
+        status_draft: "Draft"
+        status_published: "Published"
         final_version: Final version
       legislation/draft_version/translation:
         title: Version title
@@ -309,16 +394,18 @@ en:
       legislation/question:
         title: Title
         question_options: Options
+      legislation/question/translation:
+        title: Question
       legislation/question_option:
         value: Value
       legislation/annotation:
         text: Comment
       document:
         title: Title
-        attachment: Attachment
+        attachment: "Choose document"
       image:
         title: Title
-        attachment: Attachment
+        attachment: "Choose image"
       poll/question/answer:
         title: Answer
         description: Description
@@ -331,7 +418,7 @@ en:
       newsletter:
         segment_recipient: Recipients
         subject: Subject
-        from: From
+        from: "E-mail address that will appear as sending the newsletter"
         body: Email content
       admin_notification:
         segment_recipient: Recipients
@@ -366,6 +453,9 @@ en:
         order: You can enter the position where this action will be shown to the user in the list of actions
         active: Active
         action_type: Type
+        action_type_proposed_action: "Proposed action"
+        action_type_resource: "Resource"
+        published_proposal: "For published proposals?"
       dashboard/administrator_task:
         source: Source
         user: Executed by
@@ -377,6 +467,8 @@ en:
         valuator_group_id: Valuator group
         can_comment: Can create comments
         can_edit_dossier: Can edit dossiers
+      valuator_group:
+        name: "Group name"
       local_census_record:
         document_type: Document type
         document_number: Document number

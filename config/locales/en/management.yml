@@ -32,8 +32,6 @@ en:
       index:
         title: Management
         info: Here you can manage users through all actions listed in the left menu.
-    document_number: Document number
-    document_type_label: Document type
     document_verifications:
       already_verified: This user account is already verified.
       has_no_account_html: In order to create an account, go to %{link} and click in <b>"Register"</b> in the upper-left part of the screen.

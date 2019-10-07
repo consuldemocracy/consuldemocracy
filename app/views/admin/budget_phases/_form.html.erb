@@ -9,15 +9,13 @@
       <%= f.text_field :starts_at,
                         value: format_date_for_calendar_form(@phase.starts_at),
                         class: "js-calendar-full",
-                        id: "start_date",
-                        label: t("admin.budget_phases.edit.start_date") %>
+                        id: "start_date" %>
     </div>
     <div class="small-12 medium-6 column">
       <%= f.text_field :ends_at,
                         value: format_date_for_calendar_form(@phase.ends_at),
                         class: "js-calendar-full",
-                        id: "end_date",
-                        label: t("admin.budget_phases.edit.end_date") %>
+                        id: "end_date" %>
     </div>
   </div>
 
@@ -27,7 +25,6 @@
         <div class="ckeditor">
           <%= translations_form.cktext_area :description,
                                              maxlength: Budget::Phase::DESCRIPTION_MAX_LENGTH,
-                                             label: t("admin.budget_phases.edit.description"),
                                              hint: t("admin.budget_phases.edit.description_help_text") %>
         </div>
       </div>
@@ -36,7 +33,6 @@
         <div class="ckeditor">
           <%= translations_form.cktext_area :summary,
                                              maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                                             label: t("admin.budget_phases.edit.summary"),
                                              hint: t("admin.budget_phases.edit.summary_help_text") %>
         </div>
       </div>
@@ -45,7 +41,7 @@
 
   <div class="row">
     <div class="small-12 column margin-top">
-      <%= f.check_box :enabled, label: t("admin.budget_phases.edit.enabled") %>
+      <%= f.check_box :enabled %>
 
       <span class="help-text" id="phase-summary-help-text">
         <%= t("admin.budget_phases.edit.enabled_help_text") %>

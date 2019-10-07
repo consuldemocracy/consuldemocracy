@@ -3,7 +3,7 @@
 
 <%= form_for(@tag, url: admin_tags_path, as: :tag) do |f| %>
   <div class="small-12 medium-6">
-    <%= f.text_field :name, placeholder: t("admin.tags.name.placeholder"), label: t("admin.tags.name.placeholder") %>
+    <%= f.text_field :name %>
   </div>
 
   <%= f.submit(t("admin.tags.create"), class: "button success") %>

@@ -11,8 +11,8 @@
   <table>
     <thead>
       <tr id="<%= dom_id(banner) %>">
-        <th scope="col"><%= t("admin.banners.banner.post_started_at") %></th>
-        <th scope="col"><%= t("admin.banners.banner.post_ended_at") %></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_started_at) %></th>
+        <th scope="col"><%= Banner.human_attribute_name(:post_ended_at) %></th>
         <th scope="col" class="small-4"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>

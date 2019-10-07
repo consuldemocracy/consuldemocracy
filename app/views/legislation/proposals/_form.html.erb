@@ -5,32 +5,24 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%= f.text_field :title,
-        maxlength: Legislation::Proposal.title_max_length,
-        placeholder: t("proposals.form.proposal_title"),
-        label: t("proposals.form.proposal_title") %>
+      <%= f.text_field :title, maxlength: Legislation::Proposal.title_max_length %>
     </div>
 
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
       <%= f.text_area :summary, rows: 4, maxlength: 200,
-        label: t("proposals.form.proposal_summary"),
-        placeholder: t("proposals.form.proposal_summary"),
         hint: t("proposals.form.proposal_summary_note") %>
     </div>
 
     <div class="ckeditor small-12 column">
       <%= f.cktext_area :description,
         maxlength: Legislation::Proposal.description_max_length,
-        ckeditor: { language: I18n.locale },
-        label: t("proposals.form.proposal_text") %>
+        ckeditor: { language: I18n.locale } %>
     </div>
 
     <div class="small-12 column">
       <%= f.text_field :video_url,
-        placeholder: t("proposals.form.proposal_video_url"),
-        label: t("proposals.form.proposal_video_url"),
         hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
@@ -45,8 +37,7 @@
     </div>
 
     <div class="small-12 medium-6 column">
-      <%= f.select :geozone_id, geozone_select_options,
-        include_blank: t("geozones.none"), label: t("proposals.form.geozone") %>
+      <%= f.select :geozone_id, geozone_select_options, include_blank: t("geozones.none") %>
     </div>
 
     <div class="small-12 column">

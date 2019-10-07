@@ -34,7 +34,6 @@ module DocumentsHelper
   def render_attachment(builder, document)
     klass = document.persisted? || document.cached_attachment.present? ? " hide" : ""
     builder.file_field :attachment,
-                       label: t("documents.form.attachment_label"),
                        label_options: { class: "button hollow #{klass}" },
                        accept: accepted_content_types_extensions(document.documentable_type.constantize),
                        class: "js-document-attachment",

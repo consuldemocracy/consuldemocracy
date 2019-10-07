@@ -28,11 +28,6 @@ es:
           with_inactive: Inactivos
         preview: Vista previa de presupuesto
       banner:
-        title: Título
-        description: Descripción
-        target_url: Enlace
-        post_started_at: Inicio de publicación
-        post_ended_at: Fin de publicación
         sections_label: Secciones en las que aparece
         sections:
           homepage: Homepage
@@ -138,7 +133,6 @@ es:
       headings_name: "Partidas"
       headings_edit: "Editar Partidas"
       headings_manage: "Gestionar partidas"
-      max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
       no_groups: "No hay grupos."
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
@@ -153,12 +147,10 @@ es:
       form:
         create: "Crear nuevo grupo"
         edit: "Editar grupo"
-        name: "Nombre del grupo"
         submit: "Guardar grupo"
       index:
         back: "Volver a presupuestos"
     budget_headings:
-      name: "Nombre"
       no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
@@ -171,14 +163,8 @@ es:
         success_notice: "Partida presupuestaria eliminada correctamente"
         unable_notice: "No se puede eliminar una partida presupuestaria con proyectos asociados"
       form:
-        name: "Nombre de la partida"
-        amount: "Cantidad"
-        population: "Población (opcional)"
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
-        latitude: "Latitud (opcional)"
-        longitude: "Longitud (opcional)"
         coordinates_info: "Si se añaden los campos latitud y longitud, en la página de proyectos de esta partida aparecerá un mapa, que estará centrado en esas coordenadas."
-        allow_content_block: "Permitir bloque de contenidos"
         content_blocks_info: "Si se permite el bloque de contenidos, se tendrá la oportunidad de crear bloques de contenido relativos a esta partida desde la sección Configuración > Personalizar bloques. Este contenido aparecerá en la página de proyectos de esta partida."
         create: "Crear nueva partida"
         edit: "Editar partida"
@@ -187,13 +173,8 @@ es:
         back: "Volver a grupos"
     budget_phases:
       edit:
-        start_date: Fecha de inicio
-        end_date: Fecha de fin
-        summary: Resumen
         summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
-        description: Descripción
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
-        enabled: Fase habilitada
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         save_changes: Guardar cambios
     budget_investments:
@@ -286,19 +267,14 @@ es:
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
-        mark_as_incompatible: Marcar como incompatible
         selection: Selección
-        mark_as_selected: Marcar como seleccionado
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
         user_tags: Etiquetas asignadas por el usuario
-        tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
-        user_groups: "Grupos"
         assigned_trackers: "Gestores de seguimiento"
-        milestone_tags: Etiquetas de Seguimiento
       search_unfeasible: Buscar inviables
     milestones:
       index:
@@ -375,9 +351,6 @@ es:
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
       actions:
-        action_type:
-          proposed_action: Acción propuesta
-          resource: Recurso
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
@@ -410,7 +383,6 @@ es:
         form:
           submit_button: Guardar
           help_text: Introduce 0 para que este valor no se tenga en cuenta
-          published_proposal: '¿Para propuestas publicadas?'
           published_proposal_help_text: Marca este checkbox para crear la acción solo para propuestas publicadas
       administrator_tasks:
         index:
@@ -452,7 +424,6 @@ es:
     documents:
       new:
         title: "Subir un documento"
-        label_attachment: "Selecciona un documento"
         submit_button: "Subir documento"
       index:
         new_link: "Subir un documento"
@@ -519,9 +490,7 @@ es:
           summary_placeholder: Resumen corto de la descripción
           description_placeholder: Añade una descripción del proceso
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
-          homepage: Descripción
           homepage_description: Aquí puedes explicar el contenido del proceso
-          homepage_enabled: Homepage activada
           banner_title: Colores del encabezado
         index:
           create: Nuevo proceso
@@ -608,9 +577,6 @@ es:
           back: Volver
           title: Crear nueva versión
           submit_button: Crear versión
-        statuses:
-          draft: Borrador
-          published: Publicado
         table:
           title: Título
           created_at: Creado
@@ -635,7 +601,6 @@ es:
             error: Error
         form:
           add_option: Añadir respuesta cerrada
-          title: Pregunta
           title_placeholder: Escribe un título a la pregunta
           value_placeholder: Escribe una respuesta cerrada
           question_options: "Posibles respuestas (opcional, por defecto respuestas abiertas)"
@@ -803,7 +768,6 @@ es:
         empty_newsletters: No hay newsletters para mostrar
       new:
         title: Nueva newsletter
-        from: Dirección de correo electrónico que aparecerá como remitente de la newsletter
         header_footer_help_text_html: "El encabezado y pie son los mismos en todos los emails, puedes modificarlos en <code>app/views/layouts/mailer_header</code> y <code>app/views/layouts/mailer_footer</code>.<br>Puedes reemplazar la imagen del encabezado en %{link}."
         image_link: "personalizar imágenes"
       edit:
@@ -959,7 +923,6 @@ es:
         title: "Grupo de evaluadores: %{group}"
         no_valuators: "No hay evaluadores asigandos a este grupo"
       form:
-        name: "Nombre del grupo"
         new: "Crear grupo de evaluadores"
         edit: "Guardar grupo de evaluadores"
     poll_officers:
@@ -993,7 +956,6 @@ es:
         shift: "Asignación"
         shifts: "Turnos en esta urna"
         date: "Fecha"
-        task: "Tarea"
         edit_shifts: Asignar turno
         new_shift: "Nuevo turno"
         no_shifts: "Esta urna no tiene turnos asignados"
@@ -1051,7 +1013,6 @@ es:
         title: "Descripción general de votaciones"
       form:
         description:
-          text: "Descripción"
           help_text: "Este texto aparecerá en la cabecera de la página de votaciones. Puedes usarlo para añadir un contexto a las votaciones abiertas"
     polls:
       index:
@@ -1106,7 +1067,6 @@ es:
       new:
         title: "Crear pregunta ciudadana para la votación %{poll}"
         title_proposal: "Crear pregunta ciudadana"
-        poll_label: "Votación"
       answers:
         images:
           add_image: "Añadir imagen"
@@ -1186,8 +1146,6 @@ es:
         no_location: "Sin Ubicación"
       new:
         title: "Nueva urna"
-        name: "Nombre"
-        location: "Ubicación"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -1496,8 +1454,6 @@ es:
         title: Temas de propuesta
         topic: Tema
         help: "Cuando un usuario crea una propuesta se le sugieren como etiquetas por defecto los siguientes temas."
-      name:
-        placeholder: Escribe el nombre del tema
     users:
       columns:
         name: Nombre
@@ -1589,8 +1545,6 @@ es:
           created_at: Creada
           status: Estado
           updated_at: Última actualización
-          status_draft: Borrador
-          status_published: Publicada
           title: Título
           slug: Slug
           cards_title: Tarjetas
@@ -1684,8 +1638,6 @@ es:
           placeholder: Búsqueda por número de documento
           search: Buscar
         import: Importar CSV
-      form:
-        date_of_birth: Fecha de nacimiento
       new:
         creating: Creando nuevo registro de censo local
       create:

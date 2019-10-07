@@ -53,8 +53,6 @@ en:
         no_statuses_defined: There are no defined statuses yet
       new:
         creating: Create milestone
-        date: Date
-        description: Description
       edit:
         title: Edit milestone
       create:

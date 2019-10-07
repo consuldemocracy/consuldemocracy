@@ -9,7 +9,6 @@
       <div class="small-12 column">
         <%= translations_form.text_field :title,
               maxlength: Proposal.title_max_length,
-              placeholder: t("proposals.form.proposal_title"),
               data: { js_suggest_result: "js_suggest_result",
                       js_suggest: ".js-suggest",
                       js_url: suggest_proposals_path } %>
@@ -19,7 +18,6 @@
       <div class="small-12 column">
         <%= translations_form.text_area :summary,
                                         rows: 4, maxlength: 200,
-                                        placeholder: t("proposals.form.proposal_summary"),
                                         hint: t("proposals.form.proposal_summary_note") %>
       </div>
 
@@ -33,9 +31,7 @@
     <%= f.invisible_captcha :subtitle %>
 
     <div class="small-12 column">
-      <%= f.text_field :video_url, placeholder: t("proposals.form.proposal_video_url"),
-                                   label: t("proposals.form.proposal_video_url"),
-                                   hint: t("proposals.form.proposal_video_url_note") %>
+      <%= f.text_field :video_url, hint: t("proposals.form.proposal_video_url_note") %>
     </div>
 
     <% if feature?(:allow_images) %>
@@ -52,7 +48,7 @@
 
     <div class="small-12 medium-6 column">
       <%= f.select :geozone_id, geozone_select_options,
-        include_blank: t("geozones.none"), label: t("proposals.form.geozone") %>
+        include_blank: t("geozones.none") %>
     </div>
 
     <% if feature?(:map) %>
@@ -93,8 +89,6 @@
     <% if current_user.unverified? %>
       <div class="small-12 column">
         <%= f.text_field :responsible_name,
-          placeholder: t("proposals.form.proposal_responsible_name"),
-          label: t("proposals.form.proposal_responsible_name"),
           hint: t("proposals.form.proposal_responsible_name_note") %>
       </div>
     <% end %>

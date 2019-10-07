@@ -11,10 +11,10 @@
   <table>
     <thead>
       <tr id="<%= dom_id(@group) %>">
-        <th><%= t("admin.budget_headings.name") %></th>
-        <th><%= t("admin.budget_headings.form.amount") %></th>
-        <th><%= t("admin.budget_headings.form.population") %></th>
-        <th><%= t("admin.budget_headings.form.allow_content_block") %></th>
+        <th><%= Budget::Heading.human_attribute_name(:name) %></th>
+        <th><%= Budget::Heading.human_attribute_name(:price) %></th>
+        <th><%= Budget::Heading.human_attribute_name(:population) %></th>
+        <th><%= Budget::Heading.human_attribute_name(:allow_custom_content) %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>

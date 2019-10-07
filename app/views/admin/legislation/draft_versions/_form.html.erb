@@ -71,7 +71,7 @@
     <div class="small-12 medium-9 column">
       <%= f.label :status %>
       <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status, label: t("admin.legislation.draft_versions.statuses.#{status}") %>
+        <%= f.radio_button :status, status %>
         <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
         <br>
       <% end %>

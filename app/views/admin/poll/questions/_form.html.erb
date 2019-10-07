@@ -17,8 +17,7 @@
           <% select_options = Poll.all.map { |p| [p.name, p.id] } %>
           <%= f.select :poll_id,
                         options_for_select(select_options),
-                        prompt: t("admin.questions.index.select_poll"),
-                        label: t("admin.questions.new.poll_label") %>
+                        prompt: t("admin.questions.index.select_poll") %>
         </div>
       <% end %>
     </div>
@@ -34,12 +33,12 @@
 
   <div class="row">
     <% if !@question.persisted? %>
-      <%= fields_for :votation_type do |votation_f| %>
+      <%= fields_for :votation_type, @question.votation_type || @question.build_votation_type do |votation_f| %>
         <div class="small-12 medium-6">
           <%= votation_f.select :enum_type,
                                 options_for_select(VotationType.enum_types.map { |k, v| [t(k, scope: :enum_type), v] },
                                 params.dig(:votation_type, :enum_type)), default: 0,
-                                disabled: @question.persisted?,  label: t("enum_type.title") %>
+                                disabled: @question.persisted? %>
         </div>
 
         <div class="info-type">
@@ -48,18 +47,17 @@
           </span>
           <div class="small-12 medium-6 margin-description js-max_votes hidden ">
             <%= votation_f.number_field :max_votes, min: 1, max: 999,
-                                        value: params.dig(:votation_type, :max_votes),
-                                        label: t("question.max_votes") %>
+                                        value: params.dig(:votation_type, :max_votes) %>
           </div>
           <div class="small-12 medium-6 js-prioritization_type hidden">
             <%= votation_f.select :prioritization_type,
                                   options_for_select(VotationType.prioritization_types.map { |k, v| [t(k, scope: :prioritization_type), v] },
                                   params.dig(:votation_type, :prioritization_type)), default: 0,
-                                  disabled: @question.persisted?, label: t("prioritization_type.title") %>
+                                  disabled: @question.persisted? %>
           </div>
           <div class="small-12 medium-6 js-max_group_votes hidden">
             <%= votation_f.number_field :max_groups_answers, min: 1, max: 999,
-                                        value: params.dig(:votation_type, :max_groups_answers), label: t("question.max_group_answers") %>
+                                        value: params.dig(:votation_type, :max_groups_answers) %>
           </div>
         </div>
       <% end %>

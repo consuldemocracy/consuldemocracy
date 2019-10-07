@@ -53,8 +53,6 @@ es:
         no_statuses_defined: No hay estados definidos
       new:
         creating: Crear hito
-        date: Fecha
-        description: Descripción
       edit:
         title: Editar hito
       create:

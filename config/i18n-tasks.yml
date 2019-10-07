@@ -194,7 +194,6 @@ ignore_unused:
   - "shared.download.*"
   - "shared.suggest.*"
   - "invisible_captcha.*"
-  - "admin.site_customization.pages.page.status_*"
   - "admin.legislation.processes.process.*"
   - "legislation.processes.index.*"
   - "stats.budgets.participants_*_phase"

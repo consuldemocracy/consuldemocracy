@@ -58,13 +58,9 @@ en:
         dossier: Dossier
         price_html: "Price (%{currency})"
         price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
-        price_explanation_html: Price explanation
         feasibility: Feasibility
-        feasible_explanation_html: Feasibility explanation
-        valuation_finished: Valuation finished
         valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
         not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
-        duration_html: Time scope
         save: Save changes
       notice:
         valuate: "Dossier updated"

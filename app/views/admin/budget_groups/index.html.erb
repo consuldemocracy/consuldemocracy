@@ -14,7 +14,7 @@
     <thead>
       <tr id="<%= dom_id(@budget) %>">
         <th><%= t("admin.budget_groups.name") %></th>
-        <th><%= t("admin.budget_groups.max_votable_headings") %></th>
+        <th><%= Budget::Group.human_attribute_name(:max_votable_headings) %></th>
         <th><%= t("admin.budget_groups.headings_name") %></th>
         <th><%= t("admin.budget_groups.headings_edit") %></th>
         <th><%= t("admin.actions.actions") %></th>

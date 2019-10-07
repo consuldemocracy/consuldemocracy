@@ -28,11 +28,6 @@ en:
           with_inactive: Inactive
         preview: Preview
       banner:
-        title: Title
-        description: Description
-        target_url: Link
-        post_started_at: Post started at
-        post_ended_at: Post ended at
         sections_label: Sections where it will appear
         sections:
           homepage: Homepage
@@ -138,7 +133,6 @@ en:
       headings_name: "Headings"
       headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
-      max_votable_headings: "Maximum number of headings in which a user can vote"
       no_groups: "There are no groups."
       amount:
         one: "There is 1 group"
@@ -153,12 +147,10 @@ en:
       form:
         create: "Create new group"
         edit: "Edit group"
-        name: "Group name"
         submit: "Save group"
       index:
         back: "Go back to budgets"
     budget_headings:
-      name: "Name"
       no_headings: "There are no headings."
       amount:
         one: "There is 1 heading"
@@ -171,14 +163,8 @@ en:
         success_notice: "Heading deleted successfully"
         unable_notice: "You cannot delete a Heading that has associated investments"
       form:
-        name: "Heading name"
-        amount: "Amount"
-        population: "Population (optional)"
         population_info: "Budget Heading population field is used for Statistic purposes at the end of the Budget to show for each Heading that represents an area with population what percentage voted. The field is optional so you can leave it empty if it doesn't apply."
-        latitude: "Latitude (optional)"
-        longitude: "Longitude (optional)"
         coordinates_info: "If latitude and longitude are provided, the investments page for this heading will include a map. This map will be centered using those coordinates."
-        allow_content_block: "Allow content block"
         content_blocks_info: "If allow content block is checked, you will be able to create custom content related to this heading from the section Settings > Custom content blocks. This content will appear on the investments page for this heading."
         create: "Create new heading"
         edit: "Edit heading"
@@ -187,13 +173,8 @@ en:
         back: "Go back to groups"
     budget_phases:
       edit:
-        start_date: Start date
-        end_date: End date
-        summary: Summary
         summary_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below
-        description: Description
         description_help_text: This text will appear in the header when the phase is active
-        enabled: Phase enabled
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
     budget_investments:
@@ -286,19 +267,14 @@ en:
       edit:
         classification: Classification
         compatibility: Compatibility
-        mark_as_incompatible: Mark as incompatible
         selection: Selection
-        mark_as_selected: Mark as selected
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
         user_tags: User assigned tags
-        tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
-        user_groups: "Groups"
         assigned_trackers: "Trackers"
-        milestone_tags: Milestone tags
       search_unfeasible: Search unfeasible
     milestones:
       index:
@@ -373,9 +349,6 @@ en:
         title: Administration
         description: Welcome to the %{org} admin panel.
       actions:
-        action_type:
-          proposed_action: Proposed action
-          resource: Resource
         index:
           description: "When users create proposals they can access a dashboard of their proposal, where you can propose resources and recommendations to get support for their idea."
           create: Create resource or action
@@ -408,7 +381,6 @@ en:
         form:
           submit_button: Save
           help_text: Enter 0 so that this value is not taken into account
-          published_proposal: For published proposals?
           published_proposal_help_text: Mark this checkbox to create the action only for published proposals
       administrator_tasks:
         index:
@@ -450,7 +422,6 @@ en:
     documents:
       new:
         title: "Upload a document"
-        label_attachment: "Choose document"
         submit_button: "Upload"
       index:
         new_link: "Add new document"
@@ -517,9 +488,7 @@ en:
           summary_placeholder: Short summary of the description
           description_placeholder: Add a description of the process
           additional_info_placeholder: Add an additional information you consider useful
-          homepage: Description
           homepage_description: Here you can explain the content of the process
-          homepage_enabled: Homepage enabled
           banner_title: Header colors
         index:
           create: New process
@@ -607,9 +576,6 @@ en:
           back: Back
           title: Create new version
           submit_button: Create version
-        statuses:
-          draft: Draft
-          published: Published
         table:
           title: Title
           created_at: Created at
@@ -634,7 +600,6 @@ en:
             error: Error
         form:
           add_option: Add option
-          title: Question
           title_placeholder: Add question
           value_placeholder: Add a closed answer
           question_options: "Possible answers (optional, by default open answers)"
@@ -802,7 +767,6 @@ en:
         empty_newsletters: There are no newsletters to show
       new:
         title: New newsletter
-        from: E-mail address that will appear as sending the newsletter
         header_footer_help_text_html: "The heading and footer are the same for all emails, you can modify them on <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br>You can replace header image on %{link}."
         image_link: "custom images"
       edit:
@@ -958,7 +922,6 @@ en:
         title: "Valuators group: %{group}"
         no_valuators: "There are no valuators assigned to this group"
       form:
-        name: "Group name"
         new: "Create valuators group"
         edit: "Save valuators group"
     poll_officers:
@@ -992,7 +955,6 @@ en:
         shift: "Assignment"
         shifts: "Shifts in this booth"
         date: "Date"
-        task: "Task"
         edit_shifts: Edit shifts
         new_shift: "New shift"
         no_shifts: "This booth has no shifts"
@@ -1050,7 +1012,6 @@ en:
         title: "Polls description"
       form:
         description:
-          text: "Description"
           help_text: "This text will appear in the header of the polls page. It can be used to add a context to the open polls."
     polls:
       index:
@@ -1105,7 +1066,6 @@ en:
       new:
         title: "Create question to poll %{poll}"
         title_proposal: "Create question"
-        poll_label: "Poll"
       answers:
         images:
           add_image: "Add image"
@@ -1185,8 +1145,6 @@ en:
         no_location: "No Location"
       new:
         title: "New booth"
-        name: "Name"
-        location: "Location"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
@@ -1498,8 +1456,6 @@ en:
         title: Proposal topics
         topic: Topic
         help: "When a user creates a proposal, the following topics are suggested as default tags."
-      name:
-        placeholder: Type the name of the topic
     users:
       columns:
         name: Name
@@ -1591,8 +1547,6 @@ en:
           created_at: Created at
           status: Status
           updated_at: Updated at
-          status_draft: Draft
-          status_published: Published
           title: Title
           slug: Slug
           cards_title: Cards
@@ -1686,8 +1640,6 @@ en:
           placeholder: Search by document number
           search: Search
         import: Import CSV
-      form:
-        date_of_birth: Date of birth
       new:
         creating: Creating new local census record
       create:
