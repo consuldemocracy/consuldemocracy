@@ -53,8 +53,6 @@ el:
         no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις
       new:
         creating: Δημιουργία ορόσημου
-        date: Ημερομηνία
-        description: Περιγραφή
       edit:
         title: Επεξεργασία ορόσημου
       create:
