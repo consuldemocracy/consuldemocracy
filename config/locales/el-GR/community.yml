@@ -35,8 +35,6 @@ el:
       create: Δημιουργία θέματος
       edit: Επεξεργασία θέματος
       form:
-        topic_title: Τίτλος
-        topic_text: Αρχικό κείμενο
         new:
           submit_button: Δημιουργία θέματος
         edit:
