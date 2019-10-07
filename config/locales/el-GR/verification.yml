@@ -47,7 +47,6 @@ el:
       new:
         accept_terms_text: Δέχομαι το %{terms_url} της απογραφής
         accept_terms_text_title: Αποδέχομαι τους όρους και τις προϋποθέσεις πρόσβασης της απογραφής
-        date_of_birth: Ημερομηνία γέννησης
         document_number: Αριθμός εγγράφου
         document_number_help_title: Βοήθεια
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Διαβατήριο</strong>: AAA000001<br> <strong>Κάρτα Διαμονής</strong>: X1234567P"
@@ -55,12 +54,10 @@ el:
           passport: Διαβατήριο
           residence_card: Κάρτα διαμονής
           spanish_id: DNI
-        document_type_label: Τύπος εγγράφου
         error_not_allowed_age: Δεν έχετε την απαιτούμενη ηλικία για να συμμετάσχετε
         error_not_allowed_postal_code: Πρέπει να είστε εγγεγραμμένοι για επαλήθευση.
         error_verifying_census: Η απογραφή δεν ήταν δυνατό να επαληθεύσετε τις πληροφορίες. Επιβεβαιώστε ότι τα στοιχεία της απογραφής σας είναι σωστά καλώντας στο Δημοτικό Συμβούλιο ή να επισκεφθείτε ένα γραφείο υποστήριξης του πολίτη.
         form_errors: εμπόδισαν την επαλήθευση της κατοικίας σας
-        postal_code: Ταχυδρομικός κώδικας
         postal_code_note: Για να επαληθεύσετε το λογαριασμό χρήστη σας, πρέπει να εγγραφείτε
         terms: όροι και προϋποθέσεις χρήσης
         title: Επαληθεύστε την κατοικία
@@ -70,7 +67,6 @@ el:
         flash:
           success: Εισαγάγετε τον κωδικό επαλήθευσης που λάβατε μέσω μήνυμα κειμένου
       edit:
-        confirmation_code: Εισάγετε τον κωδικό που λάβατε στο κινητό σας
         resend_sms_link: Κάντε κλικ εδώ, για να το στείλετε ξανά
         resend_sms_text: Δεν λάβατε μήνυμα με κωδικό επαλήθευσης;
         submit_button: Αποστολή
