@@ -35,8 +35,6 @@ tr:
       create: Bir konu oluştur
       edit: Konuyu Düzenle
       form:
-        topic_title: Başlık
-        topic_text: İlk metin
         new:
           submit_button: Konu oluştur
         edit:
