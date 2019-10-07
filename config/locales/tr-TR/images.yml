@@ -4,7 +4,6 @@ tr:
     form:
       title: Açıklayıcı görsel
       title_placeholder: Görsel için açıklama ekle
-      attachment_label: Görsel seç
       delete_button: Görseli kaldır
       note: "Burada belirtilen kriterlere uygun bir görsel yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size} MB'ye kadar."
       add_new_image: Görsel ekle
