@@ -13,7 +13,7 @@ describe Poll::Booth do
     expect(booth).not_to be_valid
   end
 
-  describe "#search" do
+  describe ".search" do
     it "finds booths searching by name or location" do
       booth1 = create(:poll_booth, name: "Booth number 1", location: "City center")
       booth2 = create(:poll_booth, name: "Central", location: "Town hall")
@@ -21,6 +21,26 @@ describe Poll::Booth do
       expect(Poll::Booth.search("number")).to eq([booth1])
       expect(Poll::Booth.search("hall")).to eq([booth2])
       expect(Poll::Booth.search("cen")).to match_array [booth1, booth2]
+    end
+
+    it "returns all booths if search term is blank" do
+      2.times { create(:poll_booth) }
+
+      expect(Poll::Booth.search("").count).to eq 2
+    end
+
+    it "returns all booths if search term is nil" do
+      2.times { create(:poll_booth) }
+
+      expect(Poll::Booth.search(nil).count).to eq 2
+    end
+  end
+
+  describe ".quick_search" do
+    it "returns no booths if search term is blank" do
+      create(:poll_booth)
+
+      expect(Poll::Booth.quick_search("")).to be_empty
     end
   end
 

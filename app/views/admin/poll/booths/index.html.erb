@@ -4,13 +4,13 @@
   <%= link_to t("admin.booths.index.add_booth"), new_admin_booth_path, class: "button float-right" %>
 <% end %>
 
+<%= render "/admin/shared/booth_search", url: admin_booths_path %>
+
 <% if @booths.empty? %>
   <div class="callout primary">
     <%= t("admin.booths.index.no_booths") %>
   </div>
 <% end %>
-
-<%= render "/admin/shared/booth_search", url: admin_booths_path %>
 
 <% if @booths.any? %>
   <h3><%= page_entries_info @booths %></h3>
