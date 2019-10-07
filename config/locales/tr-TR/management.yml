@@ -32,8 +32,6 @@ tr:
       index:
         title: Yönetim
         info: Burada, kullanıcıları sol menüde listelenen tüm eylemlere göre yönetebilirsiniz.
-    document_number: Belge numarası
-    document_type_label: Belge Türü
     document_verifications:
       already_verified: Bu kullanıcı hesabı zaten doğrulandı.
       has_no_account_html: Bir hesap oluşturmak için %{link}'e gidin ve ekranın sol üst kısmındaki <b>'Kayıt Ol</b>'a tıklayın.
