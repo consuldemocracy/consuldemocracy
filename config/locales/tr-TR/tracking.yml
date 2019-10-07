@@ -53,8 +53,6 @@ tr:
         no_statuses_defined: Henüz düzenlenmiş durum bulunmamaktadır
       new:
         creating: Kilometre taşı oluştur
-        date: Tarih
-        description: Tanımlama
       edit:
         title: Kilometre taşı düzenle
       create:
