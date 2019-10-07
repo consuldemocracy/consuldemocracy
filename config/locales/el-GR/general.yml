@@ -2,8 +2,6 @@ el:
   account:
     show:
       change_credentials_link: Αλλαγή διαπιστευτηρίων μου
-      email_on_comment_label: Ειδοποίηση μέσω email όταν κάποιος σχολιάζει προτάσεις ή συζητήσεις μου
-      email_on_comment_reply_label: Ειδοποίηση μέσω email όταν κάποιος απαντά σε σχόλια μου
       erase_account_link: Διαγράψτε το λογαριασμό μου
       finish_verification: Ολοκλήρωση επιβεβαίωσης
       notifications: Ειδοποιήσεις
@@ -11,18 +9,10 @@ el:
       organization_responsible_name_placeholder: Εκπρόσωπος της οργάνωσης/συλλόγου
       personal: Προσωπικά στοιχεία
       phone_number_label: Αριθμός τηλεφώνου
-      public_activity_label: Κρατήστε τη λίστα των δραστηριοτήτων μου δημόσια
-      public_interests_label: Κρατήστε τις ετικέτες από τα στοιχεία που θα ακολουθώ δημόσια
       public_interests_my_title_list: Ετικέτες στοιχείων που ακολουθείτε
       public_interests_user_title_list: Ετικέτες στοιχείων που ακολουθεί αυτός ο χρήστης
       save_changes_submit: Αποθηκεύστε τις αλλαγές
-      subscription_to_website_newsletter_label: Ενημέρωση μέσω E-mail σχετικά με πληροφορίες που αφορούν την ιστοσελίδα 
-      email_on_direct_message_label: Ενημέρωση μέσω E-mail σχετικά με άμεσα μηνύματα
-      email_digest_label: Αποστολή περίληψης των ειδοποιήσεων σχετικά με την πρόταση
-      official_position_badge_label: Εμφάνιση σήματος επίσημης θέσης
       recommendations: Συστάσεις
-      show_debates_recommendations: Εμφάνιση συστάσεων για συζητήσεις
-      show_proposals_recommendations: Προβολή συστάσεων για προτάσεις
       title: Ο λογαριασμός μου
       user_permission_debates: Συμμετοχή στις συζητήσεις
       user_permission_info: Με το λογαριασμό σας, μπορείτε να...
@@ -102,7 +92,6 @@ el:
     form:
       debate_title: Τίτλος συζήτησης
       tags_instructions: Προσθήκη ετικέτας σε αυτή τη συζήτηση.
-      tags_label: Θέματα
       tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
     index:
       featured_debates: Προτεινόμενα
@@ -284,7 +273,6 @@ el:
   map:
     title: "Περιοχές"
     proposal_for_district: "Ξεκινήστε μια πρόταση για την περιοχή σας"
-    select_district: Εμβέλεια λειτουργίας
     start_proposal: Δημιουργία πρότασης
   omniauth:
     facebook:
@@ -328,7 +316,6 @@ el:
     retire_form:
       title: Πρόταση απόσυρσης
       warning: "Εάν αποσύρετε την πρόταση θα δέχεται ακόμα υποστηρίξεις, αλλά θα αφαιρεθεί από την κύρια λίστα και ένα μήνυμα θα είναι ορατό σε όλους τους χρήστες, δηλώνοντας ότι ο συγγραφέας θεωρεί ότι η πρόταση δεν πρέπει να υποστηρίζεται πια"
-      retired_reason_label: Λόγος για να αποσυρθεί η πρόταση
       retired_reason_blank: Επιλέξτε μια επιλογή
       retired_explanation_placeholder: Εξηγήστε σύντομα γιατί νομίζετε ότι αυτή η πρόταση δεν πρέπει να λαμβάνει περισσότερη υποστήριξη
       submit_button: Απόσυρση πρότασης
@@ -339,14 +326,8 @@ el:
       done: Έγινε
       other: Άλλα
     form:
-      geozone: Εμβέλεια λειτουργίας
-      proposal_responsible_name: Πλήρες όνομα του ατόμου που υποβάλλει την πρόταση
       proposal_responsible_name_note: "(ατομικά ή ως εκπρόσωπος ενός συλλόγου, δεν θα εμφανίζεται δημοσίως)"
-      proposal_summary: Περίληψη πρότασης
       proposal_summary_note: "(έως 200 χαρακτήρες)"
-      proposal_text: Κείμενο πρότασης
-      proposal_title: Τίτλος πρότασης
-      proposal_video_url: Σύνδεσμος με εξωτερικό βίντεο
       proposal_video_url_note: Μπορείτε να προσθέσετε ένα σύνδεσμο στο YouTube ή στο Vimeo
       tag_category_label: "Κατηγορίες"
       tags_instructions: "Πρόσθεσε ετικέτα σε αυτήν την πρόταση. Μπορείς να επιλέξεις από τις προτεινόμενες κατηγορίες ή να προσθέσεις τη δική σου"
@@ -567,7 +548,6 @@ el:
           other: "%{count} απαντήσεις"
         view_results: Προβολή αποτελεσμάτων
         edit_poll: Επεξεργασία έρευνας
-        show_results: Προβολή αποτελεσμάτων
         show_results_help: Με την επιλογή αυτού του κουτιού, τα αποτελέσματα θα είναι διαθέσιμα δημοσίως σε όλους τους χρήστες 
         delete: Διαγραφή έρευνας
         alert_notice: Αυτή η ενέργεια θα διαγράψει την έρευνα και όλες τις σχετικές ερωτήσεις.
@@ -704,8 +684,6 @@ el:
   proposal_notifications:
     new:
       title: "Αποστολή μηνύματος"
-      title_label: "Τίτλος"
-      body_label: "Μήνυμα"
       submit_button: "Αποστολή μηνύματος"
       info_about_receivers_html: "Αυτό το μήνυμα θα σταλεί σε <strong>%{count} άτομα</strong> και θα είναι διαθέσιμο στο %{proposal_page}.<br> Τα μηνύματα δεν αποστέλλονται κατευθείαν, οι χρήστες θα λαμβάνουν περιοδικά E-mail με όλες τις ειδοποιήσεις προτάσεων."
       proposal_page: "Σελίδα πρότασης"
@@ -841,11 +819,9 @@ el:
   users:
     direct_messages:
       new:
-        body_label: Μήνυμα
         direct_messages_bloqued: "Αυτός ο χρήστης αποφάσισε να μην λάβει άμεσα μηνύματα"
         submit_button: Αποστολή μηνύματος
         title: Αποστολή ιδιωτικού μηνύματος στον %{receiver}
-        title_label: Τίτλος
         verified_only: Για να στείλετε ένα προσωπικό μήνυμα %{verify_account}
       show:
         receiver: Μήνυμα αποστέλλεται στο %{receiver}
@@ -995,11 +971,8 @@ el:
     poll:
       take_part: Λάβετε μέρος από %{from} έως %{to}
   question:
-    max_votes: Μέγιστος αριθμός ψήφων
-    max_group_answers: Μέγιστος αριθμός απαντήσεων αυτής της ομάδας
     votation_type: Τύπος ψηφοφορίας
   enum_type:
-    title: Τύπος ψηφοφορίας
     unique: Οι μοναδικές απαντήσεις είναι κλειστές
     multiple: Οι πολλαπλές απαντήσεις είναι κλειστές
     prioritized: Οι πολλαπλές απαντήσεις προτεραιότητας είναι κλειστές
@@ -1010,6 +983,5 @@ el:
     answer_set_open: ' Η ομάδα απαντήσεων είναι ανοικτή '
     answer_set_closed: ' Η ομάδα απαντήσεων είναι κλειστή'
   prioritization_type:
-    title: Τύπος προτεραιότητας
     borda: Βαθμολογία Borda
     dowdall: Βαθμολογία Dowdall
