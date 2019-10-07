@@ -28,11 +28,6 @@ tr:
           with_inactive: Pasif
         preview: Önizleme
       banner:
-        title: İsim
-        description: Tanımlama
-        target_url: Bağlantı
-        post_started_at: Yayın başladı
-        post_ended_at: Yayın bitti
         sections_label: Görüneceği bölümler
         sections:
           homepage: Ana sayfa
@@ -138,7 +133,6 @@ tr:
       headings_name: "Başlıklar"
       headings_edit: "Başlıkları Düzenle"
       headings_manage: "Başlıkları yönet"
-      max_votable_headings: "Bir kullanıcının oy verebileceği maksimum başlık sayısı"
       no_groups: "Hiç grup yok."
       amount:
         one: "1 grup var"
@@ -153,12 +147,10 @@ tr:
       form:
         create: "Yeni grup oluştur"
         edit: "Grup düzenle"
-        name: "Grup adı"
         submit: "Grubu kaydet"
       index:
         back: "Bütçelere geri dön"
     budget_headings:
-      name: "Ad"
       no_headings: "Hiç başlık yok."
       amount:
         one: "1 başlık var"
@@ -171,14 +163,8 @@ tr:
         success_notice: "Başlık başarıyla silindi"
         unable_notice: "Yatırımlarla ilişkili olan bir Başlığı yok edemezsiniz"
       form:
-        name: "Başlık adı"
-        amount: "Miktar"
-        population: "Nüfus (isteğe bağlı)"
         population_info: "Bütçe Başlığı nüfus alanı, Bütçe sonunda, nüfusun yüzde kaçının oy kullandığı bir alanı temsil eden her Başlık için gösterilmek üzere İstatistiksel amaçlar için kullanıldı. Alan isteğe bağlıdır, eğer kullanılmazsa boş bırakabilirsiniz."
-        latitude: "Enlem (isteğe bağlı)"
-        longitude: "Boylam (isteğe bağlı)"
         coordinates_info: "Eğer enlem ve boylam sağlanmışsa, bu başlık için yatırımlar sayfası bir harita içerecektir. Bu harita bu koordinatlar kullanılarak ortalanacaktır."
-        allow_content_block: "İçerik bloğuna izin ver"
         content_blocks_info: "Eğer içerik bloğuna izin ver seçeneği işaretliyse, bu başlıkla ilgili özel içeriği Ayarlar > Özel içerik blokları bölümünden oluşturabilirsiniz."
         create: "Yeni başlık oluştur"
         edit: "Başlığı düzenle"
@@ -187,13 +173,8 @@ tr:
         back: "Gruplara geri dön"
     budget_phases:
       edit:
-        start_date: Başlangıç tarihi
-        end_date: Bitiş tarihi
-        summary: Özet
         summary_help_text: Bu metin kullanıcıyı aşama hakkında bilgilendirecektir. Aşama etkin olmasa bile göstermek için aşağıdaki onay kutusunu seçin
-        description: Tanımlama
         description_help_text: Aşama etkinken bu metin başlıkta görünecektir
-        enabled: Aşama etkinleştirildi
         enabled_help_text: Bu aşama, bütçe'nin aşamaları zaman çizelgesinde herkese açık olacak, başka herhangi bir amaç için aktif olduğu kadar aktif olacak
         save_changes: Değişiklikleri kaydet
     budget_investments:
@@ -285,19 +266,14 @@ tr:
       edit:
         classification: Sınıflandırma
         compatibility: Uygunluk
-        mark_as_incompatible: Uyumsuz olarak işaretle
         selection: Seçim
-        mark_as_selected: Seçilmiş olarak işaretle
         assigned_valuators: Bilirkişiler
         select_heading: Başlık seç
         submit_button: Güncelleme
         user_tags: Kullanıcı etiketler atanmış
-        tags: Etiketler
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımsız
-        user_groups: "Gruplar"
         assigned_trackers: "İzleyiciler"
-        milestone_tags: Kilometre taşı etiketleri
       search_unfeasible: Arama uygulanamaz
     milestones:
       index:
@@ -352,9 +328,6 @@ tr:
         title: Yönetim
         description: '%{org} yönetici paneline hoş geldiniz.'
       actions:
-        action_type:
-          proposed_action: Önerilen eylem
-          resource: Kaynak
         index:
           description: "Kullanıcılar öneriler oluşturduklarında, fikirlerine destek almak için kaynakları ve tavsiyeleri önerebileceğiniz, tekliflerinin bir gösterge panosuna erişebilirler."
           create: Kaynak veya eylem oluştur
@@ -387,7 +360,6 @@ tr:
         form:
           submit_button: Kaydet
           help_text: Bu değerin dikkate alınmaması için 0 girin
-          published_proposal: Yayınlanan öneriler için mi?
           published_proposal_help_text: Yalnızca yayınlanmış öneriler için eylem oluşturmak üzere bu onay kutusunu işaretleyin
       administrator_tasks:
         index:
@@ -429,7 +401,6 @@ tr:
     documents:
       new:
         title: "Bir belge yükle"
-        label_attachment: "Belge seç"
         submit_button: "Yükle"
       index:
         new_link: "Yeni belge ekle"
@@ -496,9 +467,7 @@ tr:
           summary_placeholder: Tanımlamanın kısa özeti
           description_placeholder: İşlemin bir tanımlamasını ekleyin
           additional_info_placeholder: Yararlı olduğunu düşündüğünüz bir ek bilgi ekleyin
-          homepage: Tanımlama
           homepage_description: Burada işlemin içeriğini açıklayabilirsiniz
-          homepage_enabled: Ana sayfa etkinleştirildi
           banner_title: Başlık renkleri
         index:
           create: Yeni işlem
@@ -585,9 +554,6 @@ tr:
           back: Geri
           title: Yeni sürüm oluştur
           submit_button: Sürüm oluştur
-        statuses:
-          draft: Taslak
-          published: Yayınlandı
         table:
           title: Başlık
           created_at: Oluşturuldu
@@ -612,7 +578,6 @@ tr:
             error: Hata
         form:
           add_option: Seçenek ekle
-          title: Soru
           title_placeholder: Soru ekle
           value_placeholder: Bir kapalı cevap ekle
           question_options: "Olası yanıtlar (isteğe bağlı, varsayılan açık cevaplar tarafından)"
@@ -779,7 +744,6 @@ tr:
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
         title: Yeni bülten
-        from: Bülten gönderirken görünecek e-posta adresi
         header_footer_help_text_html: "Başlık ve altbilgi tüm e-postalar için aynıdır, bunları \n<code>uyg/görünümler/düzenler/postacı_üstbilgi'de</code> ve\n<code>uyg/görünümler/düzenler/postacı_altbilgi'de</code>değiştirebilirsiniz. <br>%{link} üzerindeki üstbilgi görüntüsünü değiştirebilirsiniz."
         image_link: "özel görüntüler"
       edit:
@@ -935,7 +899,6 @@ tr:
         title: "Bilirkişiler grubu: %{group}"
         no_valuators: "Bu gruba atanmış hiç bilirkişi yok"
       form:
-        name: "Grup adı"
         new: "Bilirkişiler grubu oluştur"
         edit: "Bilirkişiler grubunu kaydet"
     poll_officers:
@@ -969,7 +932,6 @@ tr:
         shift: "Atama"
         shifts: "Bu kabindeki vardiyalar"
         date: "Tarih"
-        task: "Görev"
         edit_shifts: Vardiyaları düzenle
         new_shift: "Yeni vardiya"
         no_shifts: "Bu kabinin vardiyası yok"
@@ -1027,7 +989,6 @@ tr:
         title: "Anketlerin tanımlaması"
       form:
         description:
-          text: "Tanımlama"
           help_text: "Bu metin anket sayfasının başlığında görünecektir. Açık anketlere bir içerik eklemek için kullanılabilir."
     polls:
       index:
@@ -1082,7 +1043,6 @@ tr:
       new:
         title: "Soru Oluştur"
         title_proposal: "Soru oluştur"
-        poll_label: "Anket"
       answers:
         images:
           add_image: "Görüntü ekle"
@@ -1162,8 +1122,6 @@ tr:
         no_location: "Konum Yok"
       new:
         title: "Yeni kabin"
-        name: "İsim"
-        location: "Konum"
         submit_button: "Kabin oluştur"
       edit:
         title: "Kabin düzenle"
@@ -1460,8 +1418,6 @@ tr:
         title: Öneri konuları
         topic: Konu
         help: "Bir kullanıcı bir öneri oluşturduğunda, aşağıdaki konular varsayılan etiketler olarak önerilir."
-      name:
-        placeholder: Konunun adını yazın
     users:
       columns:
         name: İsim
@@ -1553,8 +1509,6 @@ tr:
           created_at: Oluşturuldu
           status: Durum
           updated_at: Güncellendi
-          status_draft: Taslak
-          status_published: Yayınlandı
           title: Başlık
           slug: Parça
           cards_title: Kartlar
