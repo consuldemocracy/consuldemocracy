@@ -930,6 +930,36 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
+    scenario "Edit", :js do
+      daniel = create(:user, :level_two)
+
+      bdgt_invest1 = create(:budget_investment, heading: heading,title: "Get Schwifty",   author: daniel,  created_at: 1.day.ago)
+
+      login_as(daniel)
+
+      visit user_path(daniel, filter: "budget_investments")
+
+      click_link('Edit', match: :first)
+      find(:xpath, "//input[@id='budget_investment_translations_attributes_0_title']").set "Mejoras en el Parque Verde Limón"
+      check 'budget_investment_terms_of_service'
+
+      click_button "Update Investment"
+
+      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Mejoras en el Parque Verde Limón"
+    end
+
+    scenario "Another User can't edit budget investment" do
+      admin = create(:administrator)
+      daniel = create(:user, :level_two)
+      investment = create(:budget_investment, heading: heading, author: daniel)
+
+      login_as(admin.user)
+      visit edit_budget_investment_path(budget, investment)
+
+      expect(page).to have_content "You do not have permission to carry out the action 'edit' on budget/investment"
+    end
+
     scenario "Errors on create" do
       login_as(author)
 
