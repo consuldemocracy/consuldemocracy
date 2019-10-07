@@ -958,7 +958,7 @@ describe "Budget Investments" do
       login_as(admin.user)
       visit edit_budget_investment_path(budget, investment)
 
-      expect(page).to have_content
+      expect(page).to have_content message_error
     end
 
     scenario "Errors on create" do
