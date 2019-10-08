@@ -27,13 +27,11 @@ tr:
         description: "%{link} bölümünde, Pusula tarafından gerçekleştirilmesi için önerilerde bulunabilirsiniz. Öneriler destek gerektirir ve eğer yeterli desteğe ulaşırlarsa, halk oylamasına sunulur. Vatandaşlar tarafından en fazla oy alan öneri gerçekleştirilecektir."
         link: "vatandaş önerileri"
         image_alt: "Öneriyi destekleme butonu"
-        figcaption_html: 'Öneriyi "Destekleme" butonu.'
       budgets:
         title: "Katılımcı Bütçeleme"
         description: "%{link} bölümü, insanların belediye bütçesinin nereye harcandığı konusunda doğrudan karar vermelerine yardımcı olur."
         link: "katılımcı bütçeler"
         image_alt: "Katılımcı bütçelerin farklı aşamaları"
-        figcaption_html: 'Katılımcı bütçelerin "Destek" ve "Oylama" aşamaları.'
       polls:
         title: "Anketler"
         description: "%{link} bölümü, bir teklif 1% desteğe ulaştığında ve oylamaya gittiğinde veya Pusula'nın vatadaşlar tarafından karar verilmesi için bir konuda öneride bulunduğunda etkinleşir."
