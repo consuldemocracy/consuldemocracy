@@ -1,4 +1,7 @@
-require: rubocop-rspec
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
   DisplayCopNames: true
@@ -30,7 +33,7 @@ FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
 Layout/IndentationConsistency:
-  EnforcedStyle: rails
+  EnforcedStyle: indented_internal_methods
 
 Layout/IndentationWidth:
   Enabled: true

@@ -96,7 +96,9 @@ group :development do
   gem "capistrano3-delayed-job", "~> 1.7.3"
   gem "erb_lint", require: false
   gem "mdl", "~> 0.5.0", require: false
-  gem "rubocop", "~> 0.60.0", require: false
+  gem "rubocop", "~> 0.75.0", require: false
+  gem "rubocop-performance", "~> 1.4.1", require: false
+  gem "rubocop-rails", "~> 2.3.2", require: false
   gem "rubocop-rspec", "~> 1.35.0", require: false
   gem "rvm1-capistrano3", "~> 1.4.0", require: false
   gem "scss_lint", "~> 0.55.0", require: false
