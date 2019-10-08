@@ -331,8 +331,6 @@ es:
         link: "Descargar comentarios"
         title: Comentarios
         no_comments: No hay comentarios.
-        hidden_debate: Debate oculto
-        hidden_proposal: Propuesta oculta
         table_link: "Link"
     hidden_comments:
       index:
@@ -1294,6 +1292,9 @@ es:
       proposal_search:
         button: Buscar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
+      debate_search:
+        button: Buscar
+        placeholder: Buscar debates por título o descripción
       user_search:
         button: Buscar
         placeholder: Buscar usuario por nombre o email
