@@ -12,29 +12,6 @@ namespace :proposal_actions do
     end
   end
 
-  desc "Initialize proposal settings"
-  task initialize_settings: :environment do
-    %w[
-      proposals.successful_proposal_id
-      proposals.poll_short_title
-      proposals.poll_description
-      proposals.poll_link
-      proposals.email_short_title
-      proposals.email_description
-      proposals.poster_short_title
-      proposals.poster_description
-    ].each do |key|
-      Setting[key] = nil if Setting.find_by(key: key).nil?
-    end
-  end
-
-  desc "Publish all proposals"
-  task publish_all: :environment do
-    Proposal.draft.find_each do |proposal|
-      proposal.update_columns(published_at: proposal.created_at, updated_at: Time.current)
-    end
-  end
-
   desc "Simulate successful proposal"
   task create_successful_proposal: :environment do
     expected_supports = [
