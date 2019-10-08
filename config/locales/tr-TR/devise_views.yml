@@ -52,7 +52,6 @@ tr:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1_html: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
           instructions_2_html: Sizin <strong>e-postanız incelenirken</strong> size <strong>hesabınızı onaylamanız için bir bağlantı</strong> gönderdik.
-          instructions_3_html: Onaylandıktan sonra temsil ettiğiniz kurum veya topluluk adına katılabilirsiniz.
           thank_you_html: Topluluğunuzu Pusula'ya kaydettiğiniz için teşekkür ederiz. Şimdi <strong>doğrulama bekleniyor</strong>.
           title: Kurumun / topluluğun kaydı
     passwords:
@@ -124,6 +123,5 @@ tr:
         success:
           back_to_index: Anladım; ana sayfaya geri dön
           instructions_1_html: Lütfen <b>e-postanızı kontrol edin</b> - size <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
-          instructions_2_html: Onaylandıktan sonra katılmaya başlayabilirsiniz.
           thank_you_html: Pusula'ya kaydolduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
           title: E-posta adresini onayla
