@@ -10,7 +10,6 @@ tr:
         voted_html:
           one: "<span>Bir</span> yatırımına oy verdiniz."
           other: "<span>%{count}</span> yatırımlara oy verdiniz."
-        voted_info_html: "Oyunuz onaylandı!"
         voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
