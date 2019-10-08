@@ -17,7 +17,9 @@ namespace :budgets do
   task set_original_heading_id: :environment do
     puts "Starting"
     Budget::Investment.find_each do |investment|
-      investment.update_column(:original_heading_id, investment.heading_id)
+      unless investment.original_heading_id.present?
+        investment.update_column(:original_heading_id, investment.heading_id)
+      end
       print "."
     end
     puts "Finished"
