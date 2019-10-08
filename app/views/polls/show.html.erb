@@ -41,7 +41,7 @@
     <div class="row margin">
       <div class="small-12 medium-9 column">
         <h3><%= t("polls.show.more_info_title") %></h3>
-        <%= safe_html_with_links simple_format(@poll.description) %>
+        <%= auto_link_already_sanitized_html simple_format(@poll.description) %>
       </div>
 
       <% if false %>

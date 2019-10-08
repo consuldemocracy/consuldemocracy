@@ -7,8 +7,8 @@
   <%= render "shared/errors", resource: resource %>
 
   <p>
-    <%= t("devise_views.users.registrations.new.organization_signup",
-        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path)).html_safe %>
+    <%= sanitize(t("devise_views.users.registrations.new.organization_signup",
+        signup_link: link_to(t("devise_views.users.registrations.new.organization_signup_link"), new_organization_registration_path))) %>
   </p>
 
   <div class="row">
@@ -40,9 +40,9 @@
         title: t("devise_views.users.registrations.new.terms_title"),
         label: t("devise_views.users.registrations.new.terms",
                  terms: link_to(t("devise_views.users.registrations.new.terms_link"), "/conditions",
-                                title: t("shared.target_blank_html"),
+                                title: t("shared.target_blank"),
                                 target: "_blank")
-                ).html_safe %>
+                ) %>
 
       <div class="small-12 medium-6 small-centered">
         <%= f.submit t("devise_views.users.registrations.new.submit"), class: "button expanded" %>

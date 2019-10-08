@@ -182,8 +182,8 @@ describe Dashboard::Mailer do
                                       "successfully created.")
       expect(email).to have_body_text("Take advantage that your proposal is not public yet and "\
                                       "get ready to contact a lot of people.")
-      expect(email).to have_body_text(I18n.t("mailers.new_actions_notification_on_create.text_2",
-                                      link: proposal_dashboard_url(proposal)).html_safe)
+      expect(email).to have_body_text("When you are ready publish your citizen proposal from this")
+      expect(email).to have_link "link", href: proposal_dashboard_url(proposal)
       expect(email).to have_body_text("We know that creating a proposal with a hook and getting "\
                                       "the necessary support can seem complicated. But dont "\
                                       "worry because we are going to help you!")

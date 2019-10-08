@@ -4,7 +4,7 @@
   </h1>
 
   <div style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= simple_format text_with_links(@direct_message.body), {}, sanitize: false %>
+    <%= simple_format sanitize_and_auto_link(@direct_message.body), {}, sanitize: false %>
   </div>
 
   <table style="width: 100%; border-top: 1px solid #DEE0E3; margin-top: 60px;">
@@ -26,9 +26,9 @@
       <tr>
         <td style="padding-left: 10px;">
           <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin: 0; font-style: italic; padding-bottom: 20px;">
-            <%= t("mailers.direct_message_for_receiver.unsubscribe",
+            <%= sanitize(t("mailers.direct_message_for_receiver.unsubscribe",
                 account: link_to(t("mailers.direct_message_for_receiver.unsubscribe_account"),
-                                account_url, style: "color: #2895F1; text-decoration: none;")).html_safe %>
+                                account_url, style: "color: #2895F1; text-decoration: none;"))) %>
           </p>
         </td>
       </tr>

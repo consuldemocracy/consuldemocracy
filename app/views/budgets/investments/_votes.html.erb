@@ -31,13 +31,13 @@
     <div class="js-participation-not-allowed participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
         <small>
-          <%= t("votes.budget_investments.#{reason}",
+          <%= sanitize(t("votes.budget_investments.#{reason}",
                 count: investment.group.max_votable_headings,
                 verify_account: link_to_verify_account,
                 signin: link_to_signin,
                 signup: link_to_signup,
                 supported_headings: (current_user && current_user.headings_voted_within_group(investment.group).map(&:name).sort.to_sentence)
-               ).html_safe %>
+               )) %>
         </small>
       </p>
     </div>

@@ -31,7 +31,7 @@
 <td class="small" data-field="valuator">
   <% valuators = [investment.assigned_valuation_groups, investment.assigned_valuators].compact %>
   <% no_valuators_assigned = t("admin.budget_investments.index.no_valuators_assigned") %>
-  <%= raw valuators.present? ? valuators.join(", ") : no_valuators_assigned %>
+  <%= valuators.present? ? valuators.join(", ") : no_valuators_assigned %>
 </td>
 
 <td class="small" data-field="geozone">

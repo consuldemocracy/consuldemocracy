@@ -4,8 +4,8 @@
 <%= render "devise/omniauth_form" %>
 
 <p>
-  <%= t("devise_views.shared.links.signup",
-      signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path)).html_safe %>
+  <%= sanitize(t("devise_views.shared.links.signup",
+      signup_link: link_to(t("devise_views.shared.links.signup_link"), new_user_registration_path))) %>
 </p>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

@@ -65,7 +65,7 @@ module ProposalsDashboardHelper
                 supports: number_with_delimiter(resource.required_supports,
                 delimiter: ".")) if resource.required_supports > 0
 
-    label.join(" #{t("dashboard.resource.and")}<br>")
+    safe_join label, h(" #{t("dashboard.resource.and")})") + tag(:br)
   end
 
   def daily_selected_class
@@ -97,7 +97,7 @@ module ProposalsDashboardHelper
   end
 
   def proposed_action_description(proposed_action)
-    raw proposed_action.description.truncate(200)
+    sanitize proposed_action.description.truncate(200)
   end
 
   def proposed_action_long_description?(proposed_action)

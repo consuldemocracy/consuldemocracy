@@ -24,10 +24,10 @@ module SignatureSheetsHelper
       text_help += t("admin.signature_sheets.new.text_help.postal_code_note")
     end
 
-    text_help += "<br/>"
+    text_help += tag(:br)
     text_help += t("admin.signature_sheets.new.text_help.required_fields_structure_note")
 
-    return text_help.html_safe
+    return text_help
   end
 
   def example_text_help

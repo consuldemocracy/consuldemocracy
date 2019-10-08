@@ -3,10 +3,10 @@
 <h2><%= t("tracking.budget_investments.show.title") %> <%= @investment.id %> </h2>
 <h1><%= @investment.title %></h1>
 
-<%= safe_html_with_links @investment.description %>
+<%= auto_link_already_sanitized_html @investment.description %>
 
 <% if @investment.external_url.present? %>
-  <p><%= text_with_links @investment.external_url %></p>
+  <p><%= sanitize_and_auto_link @investment.external_url %></p>
 <% end %>
 
 <h2><%= t("tracking.budget_investments.show.info") %></h2>

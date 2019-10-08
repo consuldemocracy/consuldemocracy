@@ -54,8 +54,8 @@
   <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
       <p>
-        <%= t("legislation.proposals.not_verified",
-            verify_account: link_to_verify_account).html_safe %>
+        <%= sanitize(t("legislation.proposals.not_verified",
+            verify_account: link_to_verify_account)) %>
       </p>
     </div>
   <% elsif !user_signed_in? %>

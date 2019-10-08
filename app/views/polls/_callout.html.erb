@@ -1,9 +1,9 @@
 <% unless can?(:answer, @poll) %>
   <% if current_user.nil? %>
     <div class="callout primary">
-      <%= t("polls.show.cant_answer_not_logged_in",
+      <%= sanitize(t("polls.show.cant_answer_not_logged_in",
             signin: link_to_signin(class: "probe-message"),
-            signup: link_to_signup(class: "probe-message")).html_safe %>
+            signup: link_to_signup(class: "probe-message"))) %>
     </div>
   <% elsif current_user.unverified? %>
     <div class="callout warning">

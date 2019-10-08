@@ -27,13 +27,13 @@ en:
         description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
         link: "citizen proposals"
         image_alt: "Button to support a proposal"
-        figcaption_html: 'Button to "Support" a proposal.'
+        figcaption: 'Button to "Support" a proposal.'
       budgets:
         title: "Participatory Budgeting"
         description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
         link: "participative budgets"
         image_alt: "Different phases of a participatory budget"
-        figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
+        figcaption: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
         description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the City Council proposes an issue for people to decide on."

@@ -25,7 +25,7 @@
           </span>
   </div>
 
-  <%= safe_html_with_links @debate.description %>
+  <%= auto_link_already_sanitized_html @debate.description %>
 
   <h3><%= t("votes.supports") %></h3>
 

@@ -10,7 +10,7 @@ es:
         voted_html:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
-        voted_info_html: "¡Tus votos están confirmados!"
+        voted_info: "¡Tus votos están confirmados!"
         voted_info_2: "Pero puedes cambiarlos en cualquier momento hasta el cierre de esta fase."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:

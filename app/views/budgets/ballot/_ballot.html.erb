@@ -10,7 +10,7 @@
             count: @ballot.investments.count) %>
       </h2>
       <p class="confirmed">
-        <%= t("budgets.ballots.show.voted_info_html") %>
+        <%= t("budgets.ballots.show.voted_info") %>
       <p>
       <p><%= t("budgets.ballots.show.voted_info_2") %></p>
     </div>
@@ -26,8 +26,8 @@
           <h3>
             <%= group.name %> - <%= @ballot.heading_for_group(group).name %>
           </h3>
-          <%= link_to t("budgets.ballots.show.remaining",
-                      amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group))).html_safe,
+          <%= link_to sanitize(t("budgets.ballots.show.remaining",
+                      amount: @ballot.formatted_amount_available(@ballot.heading_for_group(group)))),
                       budget_group_path(@budget, group) %>
         </div>
         <% if @ballot.has_lines_in_group?(group) %>
