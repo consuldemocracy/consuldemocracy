@@ -764,7 +764,6 @@ tr:
       districts: "İlçeler"
       districts_list: "İlçeler listesi"
       categories: "Kategoriler"
-    target_blank_html: " (bağlantı yeni pencerede açılır)"
     you_are_in: "Şuradasınız"
     unflag: İşaretini Kaldır
     unfollow_entity: "Takibi bırak %{entity}"
