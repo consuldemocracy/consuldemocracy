@@ -131,8 +131,7 @@ GEM
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
-    ckeditor (4.2.4)
-      cocaine
+    ckeditor (5.0.0)
       orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
@@ -600,7 +599,7 @@ DEPENDENCIES
   capistrano3-delayed-job (~> 1.7.3)
   capybara (~> 2.17.0)
   capybara-webmock (~> 0.5.3)
-  ckeditor (~> 4.2.3)
+  ckeditor (~> 5.0.0)
   cocoon (~> 1.2.9)
   coveralls (~> 0.8.22)
   daemons (~> 1.2.4)
