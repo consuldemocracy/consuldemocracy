@@ -765,7 +765,6 @@ el:
       districts: "Συνοικίες"
       districts_list: "Λίστα περιοχών"
       categories: "Κατηγορίες"
-    target_blank_html: " (οι σύνδεσμοι ανοίγουν σε νέο παράθυρο)"
     you_are_in: "Είστε στο"
     unflag: Αφαίρεση σημαίας
     unfollow_entity: "Σταματήστε να ακολουθείτε %{entity}"
