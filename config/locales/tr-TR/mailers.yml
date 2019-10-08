@@ -45,8 +45,6 @@ tr:
     budget_investment_created:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
-      intro_html: "Merhaba <strong>%{author}</strong>,"
-      text_html: "Katılımcı Bütçeler ile ilgili <strong>%{budget}</strong> yatırımınızı oluşturduğunuz <strong>%{investment}</strong> için teşekkür ederiz."
       follow_html: "Sürecin nasıl ilerlediği hakkında sizi bilgilendireceğiz, gelişmeleri <strong>%{link}</strong> üzerinden de takip edebilirsiniz."
       follow_link: "Katılımcı Bütçeler"
       sincerely: "İçtenlikle,"
