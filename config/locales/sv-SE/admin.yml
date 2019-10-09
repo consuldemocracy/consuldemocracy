@@ -149,8 +149,6 @@ sv:
           min_total_supports: Minsta stöd som krävs
           max_total_supports: Max antal stöd
           winners: Vinnare
-          one_filter_html: "Aktiva filter: <b><em>%{filter}</em></b>"
-          two_filters_html: "Aktiva filter: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtrera
         download_current_selection: "Ladda ner nuvarande markering"
@@ -421,7 +419,6 @@ sv:
           form:
             error: Fel
         form:
-          title_html: 'Redigera <span class="strong">%{draft_version_title}</span> från processen <span class="strong">%{process_title}</span>'
           launch_text_editor: Öppna textredigerare
           close_text_editor: Stäng textredigerare
           use_markdown: Använd Markdown för att formatera texten
@@ -1006,9 +1003,6 @@ sv:
           pending: Väntande
           rejected: Avvisade
           verified: Verifierade
-        hidden_count_html:
-          one: Det finns också <strong>en organisation</strong> utan användare eller med dolda användare.
-          other: Det finns också <strong>%{count} organisationer</strong> utan användare eller med dolda användare.
         name: Namn
         email: E-post
         phone_number: Telefon
