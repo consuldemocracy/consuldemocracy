@@ -13,7 +13,6 @@ sl:
         title: "Razprave"
         description: "V sekciji %{link} lahko predstavljaš in deliš svoje mnenje o temah, ki se tičejo občine, z drugimi zainteresiranimi. Prav tako je to prostor za generiranje idej, ki skozi druge sekcije %{org} vodijo v konkretna dejanja občinskih svetov."
         link: "Državljanske razprave"
-        feature_html: "Lahko odpiraš razprave, jih komentiraš in ocenjuješ s <strong>Strinjam se</strong> ali <strong>Ne strinjam se</strong>. Za to se moraš %{link}."
         feature_link: "registrirati v %{org}"
         image_alt: "Gumbi za ocenjevanje razprav"
         figcaption: '"Strinjam se" in "Ne strinjam se" gumba za ocenjevanje razprav.'
