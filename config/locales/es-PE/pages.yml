@@ -18,7 +18,6 @@ es-PE:
         title: "Discusiones"
         description: "En la sección de %{link} puedes exponer y compartir tu opinión con otras personas sobre temas de tu interés relacionados con la ciudad. También es un lugar para generar ideas que a través de las otras secciones de %{org} conducen a acciones concretas por parte del Consejo Municipal."
         link: "discusiones ciudadanas"
-        feature_html: "Puedes abrir discusiones, comentarlas y valorarlas con los botones de <strong>Estoy de acuerdo</strong> o <strong>No estoy de acuerdo</strong>. Para ello tienes que %{link}."
         feature_link: "regístrate en %{org}"
         image_alt: "Botones para valorar los debates"
         figcaption: 'Botones "Estoy de acuerdo" y "No estoy de acuerdo" para valorar los debates.'
@@ -155,7 +154,6 @@ es-PE:
               description_column: Para reducir el tamaño del texto
       compatibility:
         title: Compatibilidad con estándares y diseño visual
-        description_html: 'Todas las páginas de este sitio web cumplen con las <strong>Pautas de Accesibilidad</strong> o Principios Generales de Diseño Accesible establecidas por el Grupo de Trabajo <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> perteneciente al W3C.'
     titles:
       help: "¿Qué es %{org}? - Participación ciudadana"
     verify:
