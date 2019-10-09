@@ -45,8 +45,6 @@ zh-TW:
     budget_investment_created:
       subject: "感謝您創建了一個投資！"
       title: "感謝您創建了一個投資！"
-      intro_html: "您好<strong>%{author}</strong>，"
-      text_html: "感謝您為參與性預算<strong>%{budget}</strong>創建了您的投資<strong>%{investment}</strong>。"
       follow_html: "我們會通知您流程的進展情況，您也可以在<strong>%{link}</strong>跟蹤查看。"
       follow_link: "參與性預算"
       sincerely: "真誠的，"
