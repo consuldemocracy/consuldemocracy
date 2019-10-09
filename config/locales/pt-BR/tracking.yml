@@ -47,8 +47,6 @@ pt-BR:
         new_milestone: Criar marco
       new:
         creating: Criar marco
-        date: Data
-        description: Descrição
       edit:
         title: Editar marco
       create:
