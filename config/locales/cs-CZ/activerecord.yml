@@ -133,9 +133,9 @@ cs:
         password_confirmation: "Potvrzení hesla"
         password: "Heslo"
         current_password: "Současné heslo"
-        phone_number: "Telefon"
         official_position: "Official position"
         official_level: "Official level"
+        phone_number: "Telefon"
         redeemable_code: "Verification code received via email"
       organization:
         name: "Název organizace"
@@ -226,10 +226,10 @@ cs:
         text: Komentář
       document:
         title: Předmět
-        attachment: Attachment
+        attachment: "Attachment"
       image:
         title: Předmět
-        attachment: Attachment
+        attachment: "Attachment"
       poll/question/answer:
         title: Odpověď
         description: Description
@@ -242,7 +242,7 @@ cs:
       newsletter:
         segment_recipient: Příjemci
         subject: Subject
-        from: Od
+        from: "Od"
         body: Email content
       admin_notification:
         segment_recipient: Recipients
