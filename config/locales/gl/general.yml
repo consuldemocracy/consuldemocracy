@@ -2,8 +2,6 @@ gl:
   account:
     show:
       change_credentials_link: Cambiar os meus datos de acceso
-      email_on_comment_label: Recibir un correo electrónico cando alguén comenta nas miñas propostas ou debates
-      email_on_comment_reply_label: Recibir un correo electrónico cando alguén contesta aos meus comentarios
       erase_account_link: Borrar a miña conta
       finish_verification: Finalizar verificación
       notifications: Notificacións
@@ -11,18 +9,10 @@ gl:
       organization_responsible_name_placeholder: Representante da asociación/colectivo
       personal: Datos persoais
       phone_number_label: Teléfono
-      public_activity_label: Mostrar publicamente a miña lista de actividades
-      public_interests_label: Mostrar publicamente as etiquetas dos elementos que sigo
       public_interests_my_title_list: Etiquetas dos elementos que seuges
       public_interests_user_title_list: Etiquetas dos elementos que segue este usuario
       save_changes_submit: Gardar cambios
-      subscription_to_website_newsletter_label: Recibir correos electrónicos con información interesante sobre a web
-      email_on_direct_message_label: Recibir correos con mensaxes privadas
-      email_digest_label: Recibir un resumo de notificacións sobre as propostas
-      official_position_badge_label: Amosar etiqueta do tipo de usuario
       recommendations: Recomendacións
-      show_debates_recommendations: Amosar recomendacións de debates
-      show_proposals_recommendations: Amosar recomendacións de propostas
       title: A miña conta
       user_permission_debates: Participar en debates
       user_permission_info: Coa túa conta xa podes...
@@ -41,7 +31,6 @@ gl:
   comments:
     comments_closed: Os comentarios están pechados
     verified_only: Para participares, %{verify_account}
-    verify_account: verificar a túa conta
     comment:
       admin: Administrador
       author: Autor
@@ -103,7 +92,6 @@ gl:
     form:
       debate_title: Título do debate
       tags_instructions: Etiqueta este debate.
-      tags_label: Temas
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
       featured_debates: Destacar
@@ -164,7 +152,6 @@ gl:
       comments_title: Comentarios
       edit_debate_link: Editar proposta
       flag: Este debate foi marcado como inapropiado por varias persoas usuarias.
-      login_to_comment: Necesitas %{signin} ou %{signup} para comentar.
       share: Compartir
       author: Autoría
     update:
@@ -288,7 +275,6 @@ gl:
   map:
     title: "Distritos"
     proposal_for_district: "Crea unha proposta para o teu distrito"
-    select_district: Ámbitos de actuación
     start_proposal: Crea unha proposta
   omniauth:
     facebook:
@@ -332,7 +318,6 @@ gl:
     retire_form:
       title: Retirar proposta
       warning: "Se segues adiante, a túa proposta poderá seguir recibindo apoios, pero deixará de ser listada na lista principal, e aparecerá unha mensaxe para todas as persoas usuarias avisándoas de que o autor considera que esta proposta non debe seguir recollendo apoios."
-      retired_reason_label: Razón pola que se retira a proposta
       retired_reason_blank: Selecciona unha opción
       retired_explanation_placeholder: Explica brevemente por que consideras que esta proposta non debe recoller máis apoios
       submit_button: Eliminar proposta
@@ -343,14 +328,8 @@ gl:
       done: Realizadas
       other: Outras
     form:
-      geozone: Ámbitos de actuación
-      proposal_responsible_name: Nome e apelidos da persoa que fai esta proposta
       proposal_responsible_name_note: "(individualmente ou como representante dun colectivo; non se mostrará publicamente)"
-      proposal_summary: Resumo da proposta
       proposal_summary_note: "(máximo 200 caracteres)"
-      proposal_text: Texto desenvolvido da proposta
-      proposal_title: Título da proposta
-      proposal_video_url: Enlace a vídeo externo
       proposal_video_url_note: Podes engadir un enlace a YouTube ou Vimeo
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta proposta. Podes elixir entre as categorías propostas ou introducir as que desexes"
@@ -461,7 +440,6 @@ gl:
       comments_tab: Comentarios
       dashboard_proposal_link: Panel de control
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
-      login_to_comment: Precisas %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
       milestones_tab: Seguimento
       retired_warning: "O autor desta proposta considera que xa non debe seguir recollendo apoios."
@@ -598,9 +576,6 @@ gl:
       back: Volver ás votacións
       cant_answer_not_logged_in: "Precisas %{signin} ou %{signup} para participares."
       comments_tab: Comentarios
-      login_to_comment: Precisas %{signin} ou %{signup} para comentares.
-      signin: Entrar
-      signup: Rexístrate
       cant_answer_verify_html: "Debes %{verify_link} para poder responder."
       verify_link: "verifica a túa conta"
       cant_answer_expired: "A votación rematou."
@@ -640,8 +615,6 @@ gl:
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
-      title_label: "Título"
-      body_label: "Mensaxe"
       submit_button: "Enviar mensaxe"
       info_about_receivers_html: "Esta mensaxe será enviada a <strong>%{count} persoas</strong> e será visíbel en %{proposal_page}.<br> As mensaxes non serán enviadas de xeito inmediato, os usuarios recibirán periodicamente unha mensaxe de correo con todas as notificacións das propostas."
       proposal_page: "a páxina da proposta"
@@ -722,7 +695,6 @@ gl:
       districts: "Zonas"
       districts_list: "Relación de zonas"
       categories: "Categorías"
-    target_blank_html: " (ábrese en ventá nova)"
     you_are_in: "Estás en"
     unflag: Desfacer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
@@ -768,16 +740,10 @@ gl:
   users:
     direct_messages:
       new:
-        body_label: Mensaxe
         direct_messages_bloqued: "Esta persoa usuaria decidiu non recibir mensaxes privadas"
         submit_button: Enviar mensaxe
         title: Enviarlle unha mensaxe privada a %{receiver}
-        title_label: Título
         verified_only: Para enviares unha mensaxe privada, %{verify_account}
-        verify_account: verificar a túa conta
-        authenticate: Necesitas %{signin} ou %{signup} para continuar.
-        signin: iniciar sesión
-        signup: rexístrate
       show:
         receiver: A mensaxe enviouse a %{receiver}
     show:
@@ -820,12 +786,8 @@ gl:
     comment_unauthenticated: Necesitas %{signin} ou %{signup} para poder votar.
     disagree: Non estou de acordo
     organizations: As organizacións non poden votar.
-    signin: Entrar
-    signup: Rexístrate
     supports: Apoios
-    unauthenticated: Debes %{signin} ou %{signup} para continuares.
     verified_only: As propostas de investimento só poden ser apoiadas por usuarios verificados, %{verify_account}.
-    verify_account: verificar a túa conta
     budget_investments:
       not_logged_in: Debes %{signin} ou %{signup} para continuares.
       not_verified: Os proxectos de investimento só poden ser votados por usuarios con contas verificadas, polo que %{verify_account}.
@@ -903,6 +865,4 @@ gl:
     help:
       alt: Escolle o texto que queres comentar e preme o botón que ten forma do lapis.
       text: Para comentar este documento, debes %{sign_in}%{sign_up}. Despois, escolle o texto que queres comentar e preme o botón que ten forma de lapis.
-      text_sign_in: iniciar sesión
-      text_sign_up: rexistrate
       title: Como podo comentar este documento?
