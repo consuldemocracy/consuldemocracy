@@ -47,7 +47,6 @@ sq:
       new:
         accept_terms_text: Unë pranoj %{terms_url} e regjistrimit
         accept_terms_text_title: Unë pranoj afatet dhe kushtet e qasjes së regjistrimit
-        date_of_birth: Data e lindjes
         document_number: Numri i dokumentit
         document_number_help_title: Ndihmë
         document_number_help_text_html: "<strong>Dni</strong>: 12345678A<br><strong>Pashaport</strong>: AAA000001<br><strong>Residence card</strong>: X1234567P"
@@ -55,12 +54,10 @@ sq:
           passport: Pashaport
           residence_card: Karta rezidences
           spanish_id: DNI
-        document_type_label: Tipi i dokumentit
         error_not_allowed_age: Ju nuk keni moshën e kërkuar për të marrë pjesë
         error_not_allowed_postal_code: Që të verifikoheni, duhet të jeni i regjistruar.
         error_verifying_census: Regjistrimi nuk ishte në gjendje të verifikojë informacionin tuaj. Ju lutemi konfirmoni që detajet e regjistrimit tuaj janë të sakta duke telefonuar në Këshillin e Qytetit ose vizitoni një %{offices}
         form_errors: pengoi verifikimin e vendbanimit tuaj
-        postal_code: Kodi Postar
         postal_code_note: Për të verifikuar llogarinë tuaj ju duhet të jeni të regjistruar
         terms: termat dhe kushtet e qasjes
         title: verifikoni vendbanimin
@@ -70,7 +67,6 @@ sq:
         flash:
           success: Futni kodin e konfirmimit të dërguar me anë të mesazhit.
       edit:
-        confirmation_code: Shkruani kodin që keni marrë në celularin tuaj
         resend_sms_link: Kliko këtu për ta dërguar sërish
         resend_sms_text: Nuk ke marrë një tekst me kodin e konfirmimit?
         submit_button: Dergo
