@@ -1,7 +1,6 @@
 de:
   documents:
     title: Dokumente
-    max_documents_allowed_reached_html: Sie haben die maximale Anzahl an erlaubten Dokumenten erreicht! <strong>Um weitere hochladen zu können, müssen sie zuerst ein vorhandenes Dokument löschen.</strong>
     form:
       title: Dokumente
       title_placeholder: Fügen Sie einen aussagekräftigen Titel zum Dokument hinzu
