@@ -108,9 +108,6 @@ sq:
         button: Kërko
         placeholder: Kërko debate...
         title: Kërko
-      search_results_html:
-        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
-        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
       start_debate: Filloni një debat
       title: Debate
@@ -161,7 +158,6 @@ sq:
     direct_message: mesazh privat
     error: gabim
     errors: gabime
-    not_saved_html: "e penguan këtë%{resource} nga të ruajturit.<br>Ju lutemi kontrolloni fushat e shënuara për të ditur se si t'i korrigjoni ato:"
     policy: Politika e privatësisë
     proposal: Propozime
     proposal_notification: "Njoftimet"
@@ -336,9 +332,6 @@ sq:
         button: Kërko
         placeholder: Kërko propozimet...
         title: Kërko
-      search_results_html:
-        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
-        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
       select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
@@ -443,7 +436,6 @@ sq:
       back: Kthehu tek votimi
       cant_answer_not_logged_in: "Ju duhet %{signin} ose %{signup} për të marë pjesë ."
       comments_tab: Komentet
-      cant_answer_verify_html: "Ju duhet të %{verify_link}për t'u përgjigjur."
       verify_link: "verifikoni llogarinë tuaj"
       cant_answer_expired: "Ky sondazh ka përfunduar."
       cant_answer_wrong_geozone: "Kjo pyetje nuk është e disponueshme në gjeozonën tuaj"
@@ -476,7 +468,6 @@ sq:
     new:
       title: "Dërgoni mesazh"
       submit_button: "Dërgoni mesazh"
-      info_about_receivers_html: "Ky mesazh do të dërgohet tek <strong>%{count} njerëz </ strong> dhe do të jetë i dukshëm në %{proposal_page}.<br> Mesazhi nuk dërgohet menjëherë, përdoruesit do të marrin periodikisht një email me të gjitha njoftimet e propozimeve."
       proposal_page: "faqja e propozimit"
     show:
       back: "Kthehu te aktiviteti im"
@@ -515,17 +506,6 @@ sq:
     follow: "Ndiq"
     following: "Duke ndjekur"
     follow_entity: "Ndiq %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Tani po e ndiqni këtë projekt investimi! </br> Ne do t'ju njoftojmë për ndryshimet që ndodhin në mënyrë që ju të jeni i azhornuar."
-        destroy:
-          notice_html: "Ti nuk e ndjek më projekt investimi! </br> Ju nuk do të merrni më njoftime lidhur me këtë projekt."
-      proposal:
-        create:
-          notice_html: "Tani ju po  ndiqni këtë projekt investimi! </br> Ne do t'ju njoftojmë për ndryshimet që ndodhin në mënyrë që ju të jeni i azhornuar."
-        destroy:
-          notice_html: "Ti nuk e ndjek më këtë propozim qytetar! </br> Ju nuk do të merrni më njoftime lidhur me këtë projekt."
     hide: Fsheh
     print:
       print_button: Printoni këtë informacion
