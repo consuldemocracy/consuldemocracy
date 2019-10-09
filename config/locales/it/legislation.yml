@@ -14,9 +14,6 @@ it:
         publish_comment: Pubblica commento
       form:
         phase_not_open: Questa fase non è ancora aperta
-        login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
-        signin: Accedere
-        signup: Registrati
       index:
         title: Commenti
         comments_about: Commenti su
@@ -109,11 +106,8 @@ it:
       participation:
         phase_not_open: Questa fase non è ancora aperta
         organizations: Le organizzazioni non sono ammesse a partecipare al dibattito
-        signin: Accedere
-        signup: Registrati
         unauthenticated: È necessario %{signin} o %{signup} per partecipare.
         verified_only: Possono partecipare solo gli utenti verificati, %{verify_account}.
-        verify_account: verifica il tuo account
         debate_phase_not_open: La fase di dibattito è conclusa e non è più possibile accettare risposte
     shared:
       share: Condividere
