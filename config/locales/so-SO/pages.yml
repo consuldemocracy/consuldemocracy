@@ -27,13 +27,11 @@ so:
         description: "Qaybta%{link} waxaad samayn kartaa talo soo jeedin ah Golaha Deegaanka si aad u bixiso. Soo jeedinta waxay u baahan tahay taageero, haddii ay gaaraan taageerid ku filan, waxaa lagu dhigaa codeyn dadweyne. Soo jeedimaha la ansixiyay ee codkooda muwaadiniinta waxaa aqbalay Golaha Magaalada waxaana la fuliyay."
         link: "soo jeedinta muwaadiniinta"
         image_alt: "Badhanka si aad u taageerto soo jeedinta"
-        figcaption_html: 'Badhanka si aad u taageerto soo jeedinta.'
       budgets:
         title: "Misaaniyada kaqayb qadashada"
         description: "Qaybta%{link} waxay ka caawisaa dadka inay sameeyaan go'aan toos ah oo ku saabsan qayb ka mid ah miisaaniyadda degmada."
         link: "miisaaniyada ka qaybqaadashada"
         image_alt: "Qaybaha kala duwan ee miisaaniyadda ka qaybqaadashada"
-        figcaption_html: '"Taageerada" iyo "Codbixinta" wejiyada miisaaniyada ka qaybqaadashada.'
       polls:
         title: "Doorashooyinka"
         description: "Qaybta %{link} waa la hawlgalaa mar kasta oo soo jeedinta la gaarsiiyo 1% taageerada oo tagta codka ama marka Golaha Degmadu soo jeediyo arrin dadka in ay go'aan ka gaaraan."
@@ -161,10 +159,7 @@ so:
     titles:
       help: "Wamaxy %{org}- kaqayb galka muwadinka"
     verify:
-      code: Waraq Kodh ah oo ad heshay
-      email: Email
       info: "Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:"
       info_code: "Hadda ku baro kodhka aad heshay warqad:"
-      password: Furaha sirta ah
       submit: Hubi xisaabtayda
       title: Hubi xisaabtaada
