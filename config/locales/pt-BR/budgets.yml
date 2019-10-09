@@ -10,7 +10,6 @@ pt-BR:
         voted_html:
           one: "Você votou em <span>um</span> investimento."
           other: "Você votou em <span>%{count}</span> investimentos."
-        voted_info_html: "Você pode alterar seu voto em qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
         zero: Você não votou em um projeto de investimento.
       reasons_for_not_balloting:
         not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
@@ -67,7 +66,6 @@ pt-BR:
         map_location: "Localização no mapa"
         map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
         map_remove_marker: "Remover o marcador do mapa"
-        location: "Informações adicionais de localização"
         map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
       index:
         title: Orçamento participativo
@@ -93,11 +91,8 @@ pt-BR:
           check_ballot_link: "verificar minha cédula"
           zero: Você não votou em um projeto de investimento neste grupo.
           verified_only: "Para criar um novo investimento orçamentário %{verify}."
-          verify_account: "verifique sua conta"
           create: "Criar um investimento orçamentário"
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
-          sign_in: "iniciar sessão"
-          sign_up: "inscrever-se"
           by_feasibility: Por viabilidade
           feasible: Projetos viáveis
           unfeasible: Projetos inviáveis
