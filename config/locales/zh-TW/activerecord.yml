@@ -127,9 +127,9 @@ zh-TW:
         password_confirmation: "密碼確認"
         password: "密碼"
         current_password: "當前密碼"
-        phone_number: "電話號碼"
         official_position: "正式職位"
         official_level: "正式級別"
+        phone_number: "電話號碼"
         redeemable_code: "通過電子郵件收到的驗證代碼"
       organization:
         name: "組織名稱"
@@ -216,10 +216,10 @@ zh-TW:
         text: 評論
       document:
         title: 標題
-        attachment: 附件
+        attachment: "附件"
       image:
         title: 標題
-        attachment: 附件
+        attachment: "附件"
       poll/question/answer:
         title: 回答
         description: 描述
@@ -232,7 +232,7 @@ zh-TW:
       newsletter:
         segment_recipient: 收件者
         subject: 主題
-        from: 從
+        from: "從"
         body: 電郵內容
       admin_notification:
         segment_recipient: 收件者
