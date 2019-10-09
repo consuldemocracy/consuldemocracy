@@ -113,10 +113,6 @@ bs:
         button: Traži
         placeholder: Pretraga po debatama...
         title: Traži
-      search_results_html:
-        one: " sadrži pojam <strong>'%{search_term}'</strong>"
-        few: " sadrži pojam <strong>'%{search_term}'</strong>"
-        other: " sadrži pojam <strong>'%{search_term}'</strong>"
       select_order: Poredaj po
       start_debate: Pokreni debatu
       title: Debate
@@ -168,7 +164,6 @@ bs:
     direct_message: privatna poruka
     error: greška
     errors: greške
-    not_saved_html: "je onemogućilo da se spasi ovaj %{resource}. <br> Štrihiraj označena polja da vidiš kako ispraviti greške:"
     policy: Politika privatnosti
     proposal: Prijedlog
     proposal_notification: "Obavijest"
@@ -303,7 +298,6 @@ bs:
     created:
       title: Čestitke! Napravili ste prvi korak.
       motivation: "Važno je pripremiti promotivnu kampanju kako bi vaš prijedlog bio uspješan. Prvih nekoliko dana je ključno."
-      motivation_2_html: "<strong> Ako želite preporuke da biste se pripremili za objavu, ostavite svoj prijedlog u formi nacrta i mi ćemo vam dati smjernice.</strong>"
       publish: Ne, želim da objavim prijedlog
       dashboard: Da, tražim pomoć, objaviću kasnije
       preview_title: Evo kako će izgledati vaš prijedlog kad ga objavite
@@ -374,10 +368,6 @@ bs:
         button: Traži
         placeholder: Pretraga po prijedlozima...
         title: Traži
-      search_results_html:
-        one: " sadrži pojam <strong>'%{search_term}'</strong>"
-        few: " sadrži pojam <strong>'%{search_term}'</strong>"
-        other: " sadrži pojam <strong>'%{search_term}'</strong>"
       select_order: Poredaj po
       select_order_long: "Gledate prijedloge poredane po:"
       start_proposal: Formuliši prijedlog
@@ -564,10 +554,8 @@ bs:
         title: Pregled postera
         poster_title: "Nemoj samo gledati,"
         poster_subtitle: "podrži me! ;)"
-        intro_text_html: "<strong>Učestvujem u %{org}</strong>sa vlastitim građanskim prijedlogom, i samo ako se i vi uključite mogu dobiti neophodnu podršku da dobijemo grad kakvog svi želimo."
         proposal_code: "Šifra prijedloga: %{code}"
         support: Podrži moj prijedlog
-        footer_html: "<strong>Posjeti %{link} i podrži ovaj prijedlog.</strong>Treba nas dosta. Odlučujte i vi. Hvala!"
       new:
         title: Poster za vaš prijedlog
       options:
@@ -585,7 +573,6 @@ bs:
         sent: Email je poslan
     mailer:
       forward:
-        subtitle_html: "Ako me podržite, <br>uradićemo to."
         support_button: Podrži ovaj prijedlog
         share_in: Uključi se
         hi: "Pozdrav!"
@@ -625,7 +612,6 @@ bs:
       back: Nazad na glasanje
       cant_answer_not_logged_in: "Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi učestvovali."
       comments_tab: Komentari
-      cant_answer_verify_html: "Moraš (potvrditi link) %{verify_link} kako bi odgovorio."
       verify_link: "potvrdite svoj nalog"
       cant_answer_expired: "Ova glasačka anketa je završena."
       cant_answer_wrong_geozone: "Ovo pitanje nije dostupno na vašem području."
@@ -661,7 +647,6 @@ bs:
     new:
       title: "Pošalji poruku"
       submit_button: "Pošalji poruku"
-      info_about_receivers_html: "Poruka će se poslati na adresu/adrese <strong>%{count} čovjeka/ljudi</strong> i vidjeće se na %{proposal_page}. <br> Poruke se ne šalju odmah, korisnici periodično dobijaju emailove sa obavijestima o prijedlozima."
       proposal_page: "stranica od projedloga"
     show:
       back: "Vrati se na moje aktivnosti"
@@ -700,17 +685,6 @@ bs:
     follow: "Prati"
     following: "Praćenje"
     follow_entity: "Prati %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Pratite ovaj investicioni projekat! </br> Odmah ćemo vas obavijestiti o promjenama kako bi bili u toku."
-        destroy:
-          notice_html: "Prestali ste pratiti ovaj investicioni projekat! </br> Više nećete dobijati obavijesti u vezi projekta."
-      proposal:
-        create:
-          notice_html: "Sada pratite ovaj prijedlog! </br> Odmah ćemo vas obavijestiti o promjenama kako bi bili u toku."
-        destroy:
-          notice_html: "Prestali ste pratiti ovaj prijedlog! </br> Više nećete dobijati obavijesti u vezi projekta."
     hide: Sakrij
     print:
       print_button: Printaj
