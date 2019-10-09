@@ -27,11 +27,6 @@ hr:
         assigned_to: "Pripisano %{valuator}"
         title: Investicijski projekti
         edit: Uredi dosje
-        valuators_assigned:
-          one: Pripisani procjenitelj
-          few: "%{count} pripisani procjenitelji"
-          other: "%{count} pripisani procjenitelji"
-        no_valuators_assigned: Nema pripisanih procjenitelja
         table_id: ID
         table_title: Naziv
         table_heading_name: Ime naslova
@@ -62,16 +57,9 @@ hr:
         dossier: Dosje
         price_html: "Cijena (%{currency})"
         price_first_year_html: "Troškovi tokom prve godine (%{currency}) <small> (neobavezno, podaci nisu javni)</small>"
-        price_explanation_html: Objašnjenje cijene
         feasibility: Izvodljivost
-        feasible: Izvodljivo
-        unfeasible: Nije izvedivo
-        undefined_feasible: U tijeku
-        feasible_explanation_html: Objašnjenje izvodljivosti
-        valuation_finished: Evaluacija dovršena
         valuation_finished_alert: "Jeste li sigurni da želite označiti ovaj izvještaj kao dovršen? Ako da, više se ne može urediti."
         not_feasible_alert: "Email će se odmah poslati autoru projekta s izvješćem o neizvedivosti."
-        duration_html: Vremenski opseg
         save: Spremi promjene
       notice:
         valuate: "Dosje ažuriran"
