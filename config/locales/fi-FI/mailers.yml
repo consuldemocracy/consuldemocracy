@@ -21,7 +21,6 @@ fi:
     user_invite:
       thanks: "Kiitoksia paljon."
     budget_investment_created:
-      intro_html: "Hei <strong>%{author}</strong>,"
       sincerely: "Kunnioittaen,"
       share: "Jaa projektisi"
     budget_investment_unfeasible:
