@@ -47,7 +47,6 @@ da:
       new:
         accept_terms_text: Jeg accepterer %{terms_url} for adresseregistret
         accept_terms_text_title: Jeg accepterer vilkår og betingelser for adgangen til adresseregistret
-        date_of_birth: Fødselsdato
         document_number: Dokumentnummer
         document_number_help_title: Hjælp
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
@@ -55,12 +54,10 @@ da:
           passport: Pas
           residence_card: Øvrig identitetsdokument
           spanish_id: DNI
-        document_type_label: Dokumenttype
         error_not_allowed_age: Du er ikke gammel nok til at deltage
         error_not_allowed_postal_code: For at blive verificeret, skal du være registreret.
         error_verifying_census: Din adresse stemmer ikke overens med adresseregistret. Vær venlig at kontrollere dine adresseoplysninger ved at ringe til Aarhus Kommune eller besøge et af vores borgerservicecentre.
         form_errors: forhindrede verificeringen af din adresse
-        postal_code: Postnummer
         postal_code_note: For at verificere din konto skal du være registreret
         terms: adgangsvilkår og betingelser
         title: Bekræft din adresse
@@ -70,7 +67,6 @@ da:
         flash:
           success: Angiv den bekræftelseskode, der er blevet sendt til dig som tekstbesked
       edit:
-        confirmation_code: Skriv den kode du modtog på SMS
         resend_sms_link: Klik her for at sende igen
         resend_sms_text: Modtog du ikke en besked med din bekræftelseskode?
         submit_button: Send
