@@ -17,9 +17,6 @@ fa:
     letter:
       alert:
         unconfirmed_code: شما هنوز کد تأیید را وارد نکرده اید.
-      create:
-        flash:
-          success_html: از شما به خاطر درخواستتان <b>حداکثر کد امنیت (فقط برای رای نهایی مورد نیاز است)</b> تشکر میکنیم. در چند روز آینده ما آن را به آدرس شما ارسال خواهیم کرد. همچنین شما می توانید کد خود را از هر یک از %{offices} دریافت کنید.
       edit:
         see_all: مشاهده طرح ها
         title: نامه درخواست شده
@@ -49,7 +46,6 @@ fa:
         accept_terms_text_title: من شرایط و ضوابط دسترسی به سرشماری را می پذیرم.
         document_number: شماره سند
         document_number_help_title: کمک
-        document_number_help_text_html: "DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P"
         document_type:
           passport: گذرنامه
           residence_card: کارت اقامت
@@ -73,7 +69,6 @@ fa:
         title: تأیید کد امنیتی
       new:
         phone: شماره تلفن همراه خود را برای دریافت کد را وارد کنید
-        phone_format_html: "<strong>-<em>(مثال: 612345678 یا +34612345678)</em></strong>"
         phone_note: از تلفن شما برای ارسال کد یه شما استفاده خواهد شد، هرگز با شما تماس گرفته نمی شود.
         phone_placeholder: "مثال: 612345678 یا +34612345678"
         submit_button: "ارسال\n"
