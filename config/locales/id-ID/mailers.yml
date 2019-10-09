@@ -43,8 +43,6 @@ id:
     budget_investment_created:
       subject: "Terima kasih telah menciptakan investasi!"
       title: "Terima kasih telah menciptakan investasi!"
-      intro_html: "Hai <strong>%{author}</strong>,"
-      text_html: "Terima kasih telah membuat investasi <strong>%{investment}</strong> untuk Anggaran Partisipatif <strong>%{budget}</strong>."
       follow_html: "Kami akan menginformasikan tentang bagaimana prosesnya berjalan, yang juga dapat anda ikuti <strong>%{link}</strong>."
       follow_link: "Anggaran Partisipatif"
       sincerely: "Hormat kami,"
