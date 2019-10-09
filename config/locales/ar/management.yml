@@ -32,8 +32,6 @@ ar:
       index:
         title: الإدارة
         info: هنا يمكنك إدارة المستخدمين من خلال جميع الإجراءات المدرجة في القائمة اليسرى.
-    document_number: رقم الوثيقة
-    document_type_label: نوع الوثيقة
     document_verifications:
       already_verified: تم تأكيد هذا الحساب مسبقاً.
       has_no_account_html: لإنشاء حساب، اذهب إلى %{link} وانقر على <b>"تسجيل"</b> في أعلى يسار الشاشة.
