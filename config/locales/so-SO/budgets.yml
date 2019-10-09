@@ -10,7 +10,6 @@ so:
         voted_html:
           one: "Waxaad adigu u codsatay <span> one </ span> maalgashiga."
           other: "Waxaad adigu u codsatay <span> %{count}</ span> maalgashiga."
-        voted_info_html: "Waad beddeli kartaa codkaaga wakhti kasta illaa inta laga gaarayo wejigan. • Looma baahna in la isticmaalo lacagta oo dhan."
         zero: Uma codeynin wax mashruuc maalgashi.
       reasons_for_not_balloting:
         not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
@@ -67,7 +66,6 @@ so:
         map_location: "Goobta Khariirada"
         map_location_instructions: "Ku dhaji khariidada meesha ay ku taallan tahay kuna calaamadee sumadeeyaha."
         map_remove_marker: "Ka saar sumadaha khariidada"
-        location: "Maclumaadka dheeriga ah ee goobta"
         map_skip_checkbox: "Malgashigana meel latabn karo anigu ama anigu waxba kama ogi."
       index:
         title: Misaaniyada kaqayb qadashada
@@ -93,11 +91,8 @@ so:
           check_ballot_link: "huubi codkayga"
           zero: Uma adan codayn wax msharuuc malgashi ah o koox ah.
           verified_only: "In la abuuro maalgalin cusub oo maaliyadeed%{verify}."
-          verify_account: "hubi xisaabtaada"
           create: "Saame misaaniyad malgashelin"
           not_logged_in: "Waa inaad samaysaa misaniyaad malgashi waana inaad%{sign_in} ama%{sign_up}."
-          sign_in: "gelid"
-          sign_up: "iska diwan gelin"
           by_feasibility: Iyada oo suurta gal ah
           feasible: Mashariicda macquulka ah
           unfeasible: Mashariicda an macquulka ahayn
