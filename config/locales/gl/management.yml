@@ -32,8 +32,6 @@ gl:
       index:
         title: Xestión
         info: Dende aquí podes xestionar usuarios a través das accións listadas no menú da esquerda.
-    document_number: Número de documento
-    document_type_label: Tipo documento
     document_verifications:
       already_verified: Esta conta de usuario xa está verificada.
       has_no_account_html: Para crear un usuario entre en %{link} e prema na opción <b>'Rexistrarse'</b> na parte superior dereita da pantalla.
