@@ -18,7 +18,6 @@ nl:
         title: "Debatten"
         description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je voorstellen kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
         link: "debatten"
-        feature_html: "Je kunt debatten openen en reageren en je waardering uitdrukken via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
         image_alt: "Knoppen om een debat te waarderen"
         figcaption: '"Eens" en "Oneens" knoppen om debatten te waarderen.'
@@ -155,7 +154,6 @@ nl:
               description_column: Vermindert de tekstgrootte
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
-        description_html: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
       help: "Wat is %{org}? - Burgerparticipatie"
     verify:
