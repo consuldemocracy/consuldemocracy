@@ -124,7 +124,7 @@ describe "Public area translatable records" do
     end
 
     scenario "Select a locale and add it to the form" do
-      visit new_budget_investment_path(create(:budget_investment))
+      visit new_budget_investment_path(create(:budget))
 
       select "Français", from: :add_language
 
@@ -132,7 +132,7 @@ describe "Public area translatable records" do
     end
 
     scenario "Remove a translation" do
-      visit new_budget_investment_path(create(:budget_investment))
+      visit new_budget_investment_path(create(:budget))
 
       expect(find("#select_language").value).to eq "en"
       click_link "Remove language"
