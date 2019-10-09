@@ -108,9 +108,6 @@ val:
         button: Cercar
         placeholder: Cercar debats...
         title: Cercar
-      search_results_html:
-        one: " que conté <strong>'%{search_term}'</strong>"
-        other: " que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       start_debate: Iniciar un debat
       title: Debats
@@ -161,7 +158,6 @@ val:
     direct_message: el missatge privat
     error: error
     errors: errors
-    not_saved_html: "1 error impedeix salvar este %{resource}.<br>Si us plau verifica els camps marcats per a corregirlos:"
     policy: Política de privacitat
     proposal: Proposta
     proposal_notification: "Notificació"
@@ -336,9 +332,6 @@ val:
         button: Cercar
         placeholder: Cercar propostes...
         title: Cercar
-      search_results_html:
-        one: " que conté <strong>'%{search_term}'</strong>"
-        other: " que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
@@ -443,7 +436,6 @@ val:
       back: Tornar a les votacions
       cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per a participar."
       comments_tab: Comentaris
-      cant_answer_verify_html: "Si us plau %{verify_link} per a poder respondre."
       verify_link: "verifica el teu compte"
       cant_answer_expired: "Esta votació ha acabat."
       cant_answer_wrong_geozone: "Esta votació no està disponible en la teua zona."
@@ -476,7 +468,6 @@ val:
     new:
       title: "Enviar missatge"
       submit_button: "Enviar missatge"
-      info_about_receivers_html: "Este missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.<br>Els missatges no s'envien inmediatament, els usuaris rebran periòdicament un correu electrònic amb totes les notificacions de propostes."
       proposal_page: "la pàgina de la proposta"
     show:
       back: "Tornar a la meua activitat"
@@ -515,17 +506,6 @@ val:
     follow: "Seguir"
     following: "Seguint"
     follow_entity: "Seguir %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Ara estas seguint aquest projecte d'inversió! </br> Te notificarem els canvis a mesura que es produïsquen per a que estigues al dia."
-        destroy:
-          notice_html: "Has deixat de seguir aquest projecte d'inversió </br> Ja no rebras més notificacions relacionades amb aquest projecte."
-      proposal:
-        create:
-          notice_html: "Ara estas seguint esta proposta ciutadana! </br>Te notificarem els canvis a mesura que es produïsquen per a que estigues al dia."
-        destroy:
-          notice_html: "Has deixat de seguir esta proposta ciutadana! </br> Ya no rebras més notificacions relacionades en esta proposta."
     hide: Ocultar
     print:
       print_button: Imprimir esta informació
