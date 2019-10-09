@@ -139,8 +139,6 @@ so:
           unfeasible: An surtgak ahayn
           min_total_supports: Tageerayasha ugu yar
           winners: Guleystayasha
-          one_filter_html: "Seferaha hadda la isticmaalo\n<b>%{filter}</b>"
-          two_filters_html: "Seferaha hadda la isticmaalo<b>%{filter}%{advanced_filters}</em>"
         buttons:
           filter: Sifeeyee
         download_current_selection: "Laso deg dorashada had"
@@ -343,7 +341,6 @@ so:
           form:
             error: Khalad
         form:
-          title_html: 'Tafa tirida<span class="strong">%{draft_version_title}</span>katimid geedi socodka<span class="strong">%{process_title}</span>'
           launch_text_editor: Biaabida Taratiridaa Qoraalka
           close_text_editor: Tafatirida Qoralka hoose
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
@@ -883,9 +880,6 @@ so:
           pending: Joojin
           rejected: Diiday
           verified: Hubin
-        hidden_count_html:
-          one: Waxa sido kale<strong>hal urur</strong> an lahayn istimalayal qarsoon.
-          other: Waxa sido kale<strong%{count}>hal ururo</strong> an lahayn istimalayal qarsoon.%.
         name: Magac
         email: Email
         phone_number: Telefoon
