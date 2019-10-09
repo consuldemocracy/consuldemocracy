@@ -26,9 +26,6 @@ zh-TW:
         assigned_to: "已分配給%{valuator}"
         title: 投資項目
         edit: 編輯檔案
-        valuators_assigned:
-          other: "已分配%{count} 位評估員"
-        no_valuators_assigned: 未分配評估員
         table_id: ID
         table_title: 標題
         table_heading_name: 標題名稱
@@ -59,16 +56,9 @@ zh-TW:
         dossier: 檔案
         price_html: "價格 (%{currency})"
         price_first_year_html: "第一年的成本(%{currency}) <small>(可選擇填寫，數據不公開)</small>"
-        price_explanation_html: 價格說明
         feasibility: 可行性
-        feasible: 可行
-        unfeasible: 不可行
-        undefined_feasible: 有待
-        feasible_explanation_html: 可行性的解釋
-        valuation_finished: 評估完成
         valuation_finished_alert: "您確定要將此報告標記為已完成嗎？ 如果您這樣做了，將無法再修改。"
         not_feasible_alert: "立即發送電郵給項目作者，並附有不可行的報告。"
-        duration_html: 時間範圍
         save: 儲存更改
       notice:
         valuate: "檔案已更新"
