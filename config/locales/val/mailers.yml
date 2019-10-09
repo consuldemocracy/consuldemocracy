@@ -45,8 +45,6 @@ val:
     budget_investment_created:
       subject: "Gràcies per crear un projecte!"
       title: "Gràcies per crear un projecte!"
-      intro_html: "Hola <strong>%{author}</strong>"
-      text_html: "Moltes gràcies per crear el teu projecte <strong>%{investment}</strong> per als Pressupostos Participatius <strong>%{budget}</strong>."
       follow_html: "T'informarem de com avança el procés, que també pots seguir en la pàgina de <strong>%{link}</strong>."
       follow_link: "Pressupostos participatius"
       sincerely: "Atentament,"
