@@ -141,8 +141,6 @@ it:
           unfeasible: Irrealizzabile
           min_total_supports: Sostegni minimi
           winners: Vincitori
-          one_filter_html: "Filtri attualmente applicati: <b><em>%{filter}</em></b>"
-          two_filters_html: "Filtri attualmente applicati: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtra
         download_current_selection: "Esegui il download della selezione attuale"
@@ -343,7 +341,6 @@ it:
           form:
             error: Errore
         form:
-          title_html: 'Stai modificando <span class="strong">%{draft_version_title}</span> dal procedimento <span class="strong">%{process_title}</span>'
           launch_text_editor: Avviare l'editor di testo
           close_text_editor: Chiudere l'editor di testo
           use_markdown: Usa il Markdown per formattare il testo
@@ -877,9 +874,6 @@ it:
           pending: In sospeso
           rejected: Respinto
           verified: Verificato
-        hidden_count_html:
-          one: C'è anche <strong>una organizzazione</strong> senza utenti o con un utente nascosto.
-          other: Ci sono <strong>%{count} organizzazioni</strong> senza utenti o con un utente nascosto.
         name: Nominativo
         email: Email
         phone_number: Telefono
