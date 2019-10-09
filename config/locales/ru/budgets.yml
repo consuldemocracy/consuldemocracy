@@ -14,9 +14,7 @@ ru:
         not_verified: Только верифицированные пользователи могут голосовать за инвестиции; %{verify_account}.
         organization: Организациям не разрешается голосовать
         not_selected: Невыбранные инвестиционные проекты не поддерживаются
-        not_enough_money_html: "Вы уже присвоили доступный бюджет.<br><small>Помните, что вы можете %{change_ballot} в любое время</small>"
         no_ballots_allowed: Фаза выбора закрыта
-        different_heading_assigned_html: "Вы уже проголосовали за другой заголовок: %{heading_link}"
         change_ballot: изменить ваши голоса
         casted_offline: Вы уже участвовали без Интернета
     groups:
@@ -75,21 +73,10 @@ ru:
           button: Поиск
           placeholder: Поиск инвестиционных проектов...
           title: Поиск
-        search_results_html:
-          one: " содержащие термин <strong>'%{search_term}'</strong>"
-          few: " содержащие термин <strong>'%{search_term}'</strong>"
-          many: " содержащие термин <strong>'%{search_term}'</strong>"
-          other: " содержащие термин <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Мой голос
-          voted_html:
-            one: "<strong>Вы проголосовали за одно предложение со стоимостью %{amount_spent}</strong>"
-            few: "<strong>Вы проголосовали за %{count} предложений со стоимостью %{amount_spent}</strong>"
-            many: "<strong>Вы проголосовали за %{count} предложений со стоимостью %{amount_spent}</strong>"
-            other: "<strong>Вы проголосовали за %{count} предложений со стоимостью %{amount_spent}</strong>"
           voted_info: Вы можете %{link} в любое время до конца этого этапа. Нет необходимости тратить все имеющиеся деньги.
           voted_info_link: изменить ваш голос
-          different_heading_assigned_html: "У вас есть активные голоса в другом заголовке: %{heading_link}"
           change_ballot: "Если вы передумаете, вы можете удалить свои голоса в %{check_ballot} и начать заново."
           check_ballot_link: "проверить мое голосование"
           zero: Вы не голосовали ни за один инвестиционный проект в этой группе.
@@ -109,9 +96,6 @@ ru:
         author_deleted: Пользователь удален
         price_explanation: Описание цены
         unfeasibility_explanation: Объяснение невозможности
-        code_html: "Код инвестиционного проекта: <strong>%{code}</strong>"
-        location_html: "Местоположение: <strong>%{location}</strong>"
-        organization_name_html: "Предлагается от имени: <strong>%{name}</strong>"
         share: Доля
         title: Инвестиционный проект
         supports: Поддержки
@@ -120,10 +104,7 @@ ru:
         comments_tab: Комментарии
         milestones_tab: Основные этапы
         author: Автор
-        project_unfeasible_html: "Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования."
-        project_selected_html: "Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования."
         project_winner: "Победный инвестиционный проект"
-        project_not_selected_html: "Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования."
         see_price_explanation: Смотреть описание цены
       wrong_price_format: Только целые числа
       investment:
@@ -140,7 +121,6 @@ ru:
         give_support: Поддержка
       header:
         check_ballot: Проверить мой бюллетень
-        different_heading_assigned_html: "У вас есть активные голоса в другом заголовке: %{heading_link}"
         change_ballot: "Если вы передумаете, вы можете удалить свои голоса в %{check_ballot} и начать заново."
         check_ballot_link: "проверить мое голосование"
         price: "Этот заголовок имеет бюджет"
