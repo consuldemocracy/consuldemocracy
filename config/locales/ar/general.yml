@@ -2,8 +2,6 @@ ar:
   account:
     show:
       change_credentials_link: تغيير بيانات الاعتماد الخاصة بي
-      email_on_comment_label: أبلغني عن طريق البريد الإلكتروني عندما شخص التعليقات على المقترحات أو المناقشات
-      email_on_comment_reply_label: أبلغني عن طريق البريد الإلكتروني عندما يرد شخص ما على تعليقاتي
       erase_account_link: مسح حسابي
       finish_verification: عملية التحقق مكتملة
       notifications: إشعارات
@@ -11,18 +9,10 @@ ar:
       organization_responsible_name_placeholder: ممثل المنظمة/الوحدة
       personal: البيانات الشخصية
       phone_number_label: رقم الهاتف
-      public_activity_label: أترك قائمة الأنشطة الخاصة بي عامة
-      public_interests_label: ابق على تسميات العناصر التي أتابعها عامة
       public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
-      subscription_to_website_newsletter_label: تلقي المعلومات المهمّة عن طريق البريد الإلكتروني
-      email_on_direct_message_label: تلقي رسائل البريد الإلكتروني عند الحصول على الرسائل المباشرة
-      email_digest_label: استلام ملخص عن إشعارات مقترح
-      official_position_badge_label: اظهر بطاقة الموقف الرسمي
       recommendations: التوصيات
-      show_debates_recommendations: إظهار توصيات المناقشات
-      show_proposals_recommendations: إظهار توصيات المقترحات
       title: حسابي
       user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
@@ -41,7 +31,6 @@ ar:
   comments:
     comments_closed: التعليقات مغلقة
     verified_only: للمشاركة %{verify_account}
-    verify_account: التحقق من حسابك
     comment:
       admin: مدير
       author: كاتب
@@ -127,7 +116,6 @@ ar:
     form:
       debate_title: عنوان المناقشة
       tags_instructions: ضع علامة على هذا النقاش.
-      tags_label: مواضبع
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
       featured_debates: مميز
@@ -200,7 +188,6 @@ ar:
       comments_title: تعليقات
       edit_debate_link: تعديل
       flag: تم التبليغ على أنّ هذا النقاش غير لائق من قبل العديد من المستخدمين.
-      login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       share: مشاركة
       author: كاتب
     update:
@@ -342,7 +329,6 @@ ar:
   map:
     title: "مقاطعات"
     proposal_for_district: "إبدأ مقترحا لمقاطعتك"
-    select_district: نطاق العملية
     start_proposal: إنشاء مقترح
   omniauth:
     facebook:
@@ -386,7 +372,6 @@ ar:
     retire_form:
       title: سحب المقترح
       warning: "سيتسمر الإقتراح في إستقبال الدعم حتى في حالة قمت بسحبه، ولكن ستتم إزالته من القائمة الرئيسية وستظهر رسالة لجميع المستخدمين تفيد بأن المؤلف يرى أنه لا ينبغي دعم الاقتراح بعد الآن"
-      retired_reason_label: سبب سحب المقترح
       retired_reason_blank: إختر خيار
       retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا القترح يجب ألا يحصل على المزيد من الدعم
       submit_button: سحب المقترح
@@ -397,14 +382,8 @@ ar:
       done: منتهي
       other: أخرى
     form:
-      geozone: نطاق العملية
-      proposal_responsible_name: الاسم الكامل للشخص الذي قدم الاقتراح
       proposal_responsible_name_note: "(بصفة فرديّة أو كممثل لجماعة؛ لن يتم عرضه للعامة)"
-      proposal_summary: ملخص المقترح
       proposal_summary_note: "(200 حرف كحد أقصى)"
-      proposal_text: نص المقترح
-      proposal_title: عنوان الاقتراح
-      proposal_video_url: رابط إلى فيديو خارجي
       proposal_video_url_note: يمكنك إضافة رابط إلى YouTube أو Vimeo
       tag_category_label: "فئات"
       tags_instructions: "علم على هذا الاقتراح. تستطيع الاختيار من بين الفئات المقترحة او اضافة الخاصة بك"
@@ -539,7 +518,6 @@ ar:
       comments_tab: تعليقات
       dashboard_proposal_link: لوحة القيادة
       flag: تم التبليغ على أنّ هذا المقترح غير لائق من قبل العديد من المستخدمين.
-      login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       notifications_tab: إشعارات
       milestones_tab: معالم
       retired_warning: "يرى المؤلف أن هذا المقترح يجب ألا يتلقى المزيد من الدعم."
@@ -666,7 +644,6 @@ ar:
           other: "%{count} ردود"
         view_results: رؤية النتائج
         edit_poll: تعديل الاستبيان
-        show_results: إظهار النتائج
         show_results_help: إذا حددت هذا المربع، فستكون النتائج عامة وسيتمكن جميع المستخدمين من رؤيتها
         delete: حذف الاستبيان
         alert_notice: سيؤدي هذا الإجراء إلى إزالة الاستبيان وجميع الأسئلة المرتبطة به.
@@ -757,9 +734,6 @@ ar:
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
-      login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
-      signin: تسجيل الدخول
-      signup: تسجيل
       cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
       verify_link: "تحقق من حسابك"
       cant_answer_expired: "انتهى هذا الاستطلاع."
@@ -806,8 +780,6 @@ ar:
   proposal_notifications:
     new:
       title: "إرسال رسالة"
-      title_label: "عنوان"
-      body_label: "رسالة"
       submit_button: "إرسال رسالة"
       info_about_receivers_html: "سيتم إرسال هذه الرسالة إلى <strong>%{count} شخص</strong> وستظهر في %{proposal_page}.<br> لن يتم إرسال الرسائل على الفور، سيتلقى المستخدمون بريدًا إلكترونيًا دوريًا يتضمن جميع إشعارات المقترحات."
       proposal_page: "صفحة المقترح"
@@ -901,7 +873,6 @@ ar:
       districts: "مقاطعات"
       districts_list: "قائمة المقاطعات"
       categories: "فئات"
-    target_blank_html: " (سيفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
     unflag: حذف بلاغ عن عدم الملاءمة
     unfollow_entity: "توقف عن متابعة %{entity}"
@@ -967,16 +938,10 @@ ar:
   users:
     direct_messages:
       new:
-        body_label: رسالة
         direct_messages_bloqued: "هذا المستخدم اختار عدم تلقي رسائل مباشرة"
         submit_button: إرسال رسالة
         title: إرسال رسالة خاصة إلى %{receiver}
-        title_label: عنوان
         verified_only: لإرسال رسالة خاصة %{verify_account}
-        verify_account: التحقق من حسابك
-        authenticate: تحتاج الى %{signin} او %{signup} للمتابعة.
-        signin: تسجيل الدخول
-        signup: التسجيل
       show:
         receiver: تم إرسال رسالة إلى %{receiver}
     show:
@@ -1044,12 +1009,8 @@ ar:
     comment_unauthenticated: تحتاج الى %{signin} او %{signup} كي تصبح قدرا على التصويت.
     disagree: أنا لا أوافق
     organizations: المنظمات لا يسمح لها بالتصويت
-    signin: تسجيل الدخول
-    signup: تسجيل
     supports: دعم
-    unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
     verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات؛ %{verify_account}.
-    verify_account: التحقق من حسابك
     budget_investments:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
       not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على مشاريع الاستثمارات; %{verify_account}.
@@ -1132,8 +1093,6 @@ ar:
     help:
       alt: حدد النص الذي ترغب في التعليق عليه واضغط على الزر بالقلم.
       text: للتعليق على هذه الوثيقة، يجب عليك %{sign_in} أو %{sign_up}. ثم حدد النص الذي تريد التعليق عليه واضغط على الزر بالقلم.
-      text_sign_in: تسجيل الدخول
-      text_sign_up: انشاء حساب
       title: كيف يمكنني التعليق على هذه الوثيقة؟
   links:
     form:
@@ -1155,11 +1114,8 @@ ar:
     poll:
       take_part: شارك من %{from} إلى %{to}
   question:
-    max_votes: العدد الأقصى للأصوات
-    max_group_answers: الحد الأقصى لعدد الإجابات في المجموعة
     votation_type: نوع التصويت
   enum_type:
-    title: نوع التصويت
     unique: إجابة واحدة، مغلقة
     multiple: إجابات متعددة، مغلقة
     prioritized: إجابة متعددة الأولويات ، مغلقة
@@ -1170,7 +1126,6 @@ ar:
     answer_set_open: وضع الإجابات، متاحة
     answer_set_closed: إجابات متعدّدة، مغلق
   prioritization_type:
-    title: نوع الأولوية
     borda: التصويت التفضيلي
     dowdall: التصويت التفضيلي على طريقة داودول
   remote_translations:
