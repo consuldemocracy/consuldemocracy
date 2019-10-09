@@ -32,8 +32,6 @@ nl:
       index:
         title: Beheer
         info: Hier kunt u gebruikers beheren via alle acties die in het linkermenu zijn vermeld.
-    document_number: Document nummer
-    document_type_label: Documentsoort
     document_verifications:
       already_verified: Dit gebruikersaccount is al geverifieerd.
       has_no_account_html: In order to create an account, go to %{link} and click in <b>'Register'</b> in the upper-left part of the screen.
