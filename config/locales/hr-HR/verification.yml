@@ -47,7 +47,6 @@ hr:
       new:
         accept_terms_text: Potvrđujem %{terms_url} Cenzusa
         accept_terms_text_title: Prihvaćam uvjete korištenja pristupanju Cenzusu
-        date_of_birth: Datum rođenja
         document_number: Broj dokumenta
         document_number_help_title: Pomoć
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
@@ -55,12 +54,10 @@ hr:
           passport: Putovnica
           residence_card: Dokument prebivališta
           spanish_id: DNI
-        document_type_label: Tip dokumenta
         error_not_allowed_age: Nemate dovoljno godina da bi sudjelovali
         error_not_allowed_postal_code: Kako bi vas potvrdili, morate se registrirati.
         error_verifying_census: Popis nije mogao potvrditi vaše podatke. Molimo potvrdite da su vaši popisni podaci točni pozivom Javoj vlasti ili posjetite jedan Ured za podršku građanima.
         form_errors: prječila se potvrda vašeg prebivališta
-        postal_code: Poštanski Broj
         postal_code_note: Ukoliko želite potvrditi svoj račun morate biti registrirani
         terms: uvjeti pristupa
         title: Potvrdi stanovanje
@@ -70,7 +67,6 @@ hr:
         flash:
           success: Unesi potvrdni kod koji smo vam poslali porukom
       edit:
-        confirmation_code: Unesi kod koji ste dobili na svoj mobilni uređaj
         resend_sms_link: Klinknite ovdje da pošaljete ponovno
         resend_sms_text: Niste dobili poruku s potvrdnim kodom?
         submit_button: Šalji
