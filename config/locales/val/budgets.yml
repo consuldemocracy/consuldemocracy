@@ -10,7 +10,6 @@ val:
         voted_html:
           one: "Has votat <span>una</span> proposta."
           other: "Has votat <span>%{count}</span> propostes."
-        voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
         not_logged_in: Necessites %{signin} o %{signup}.
@@ -67,7 +66,6 @@ val:
         map_location: "Ubicació en el mapa"
         map_location_instructions: "Navega per el mapa fins la ubicació i deixa el marcador."
         map_remove_marker: "Eliminar marcador"
-        location: "Informació adicional de localització"
         map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la conec."
       index:
         title: Pressupostos participatius
@@ -93,11 +91,8 @@ val:
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió en aquest àmbit del pressupost.
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
-          verify_account: "verifica el teu compte"
           create: "Crear nou projecte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sessió"
-          sign_up: "registrar-te"
           by_feasibility: Per viabilitat
           feasible: Veure les propostes d'inversió viables
           unfeasible: Veure les propostes d'inversió inviables
