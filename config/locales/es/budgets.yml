@@ -10,7 +10,6 @@ es:
         voted_html:
           one: "Has votado <span>un</span> proyecto."
           other: "Has votado <span>%{count}</span> proyectos."
-        voted_info_html: "¡Tus votos están confirmados!"
         voted_info_2: "Pero puedes cambiarlos en cualquier momento hasta el cierre de esta fase."
         zero: Todavía no has votado ningún proyecto de gasto.
       reasons_for_not_balloting:
@@ -69,7 +68,6 @@ es:
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
-        location: "Información adicional de la ubicación"
         map_skip_checkbox: "Este proyecto no tiene una ubicación concreta o no la conozco."
       index:
         title: Presupuestos participativos
@@ -95,11 +93,8 @@ es:
           check_ballot_link: "revisar y confirmar mis votos"
           zero: Todavía no has votado ningún proyecto de gasto en este ámbito del presupuesto.
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
-          verify_account: "verifica tu cuenta"
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sesión"
-          sign_up: "registrarte"
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
