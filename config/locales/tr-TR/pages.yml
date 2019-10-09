@@ -18,7 +18,6 @@ tr:
         title: "Tartışmalar"
         description: "%{link} bölümünde, şehirle alakalı sizi ilgilendiren konularla ilgili görüşlerinizi sunabilir ve başkalarıyla paylaşabilirsiniz. Aynı zamanda, %{org}'un diğer bölümleri aracılığıyla Belediye Meclisi tarafından somut eylemlere katkı koyacak fikirlerinizi paylaşabilirsiniz."
         link: "vatandaş tartışmaları"
-        feature_html: "Görüş alış verişi başlatabilirsiniz, paylaşılan görüşleri <strong>Katılıyorum</strong> veya <strong>Katılmıyorum</strong> butonları ile yorumlayabilir ve değerlendirebilirsiniz. İlerlemek için buraya tıklayın: %{link}."
         feature_link: "%{org}'ya kaydol"
         image_alt: "Tartışmaları değerlendirme butonları"
         figcaption: 'Tartışmaları değerlendirmek için "katılıyorum" ve "katılmıyorum" butonları.'
@@ -155,7 +154,6 @@ tr:
               description_column: Metin boyutunu küçültür
       compatibility:
         title: Standartlara ve görsel tasarıma uygunluk
-        description_html: 'Bu web sitesinin tüm sayfaları, W3C''nin <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> Çalışma Grubu tarafından kurulan <strong>Erişilebilirlik Yönergeleri</strong> veya Genel Erişilebilir Tasarım İlkeleri ile uyumludur.'
     titles:
       help: "%{org} nedir? - Vatandaş katılımı"
     verify:
