@@ -17,9 +17,6 @@ pl:
     letter:
       alert:
         unconfirmed_code: Nie podałeś jeszcze kodu potwierdzenia
-      create:
-        flash:
-          success_html: Dziękujemy za przesłanie prośby o podanie <b>kodu maksymalnego bezpieczeństwa (wymaganego tylko dla ostatecznych głosów) </b>. Za kilka dni wyślemy go na adres podany w danych, które mamy w aktach. Pamiętaj, że jeśli wolisz, możesz odebrać swój kod z dowolnego %{offices}.
       edit:
         see_all: Zobacz wnioski
         title: List wymagany
@@ -49,7 +46,6 @@ pl:
         accept_terms_text_title: Akceptuję zasady i warunki dostępu do spisu
         document_number: Numer dokumentu
         document_number_help_title: Pomoc
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>paszport</strong>: AAA000001<br> <strong>Karta pobytu</strong>: X1234567P"
         document_type:
           passport: Paszport
           residence_card: Karta pobytu
@@ -73,7 +69,6 @@ pl:
         title: Potwierdzenie kodu zabezpieczień
       new:
         phone: Wprowadź swój numer telefonu komórkowego, aby otrzymać kod
-        phone_format_html: "<strong><em>(przykład: 612345678 lub +34612345678)</em></strong>"
         phone_note: Używamy Twojego telefonu tylko do wysłania kodu, nigdy aby się z Tobą skontaktować.
         phone_placeholder: "Przykład: 612345678 lub +34612345678"
         submit_button: Wyślij
