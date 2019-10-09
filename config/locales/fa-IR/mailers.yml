@@ -43,8 +43,6 @@ fa:
     budget_investment_created:
       subject: "با تشکر از شما برای ایجاد یک سرمایه گذاری!"
       title: "با تشکر از شما برای ایجاد یک سرمایه گذاری!"
-      intro_html: "سلام <strong>%{author}</strong>"
-      text_html: "از شما برای ایجاد سرمایه گذاری <strong>%{investment}</strong> برای بودجه مشارکتی <strong>%{budget}</strong>متشکریم."
       follow_html: "ما شما را در مورد چگونگی پیشرفت روند، که شما همچنین می توانید آن را دنبال کنید، اطلاع خواهیم داد<strong>%{link}</strong>"
       follow_link: "بودجه مشارکتی"
       sincerely: "با تشکر."
