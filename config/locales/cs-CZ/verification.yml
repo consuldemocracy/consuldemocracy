@@ -17,9 +17,6 @@ cs:
     letter:
       alert:
         unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
-      create:
-        flash:
-          success_html: Děkujeme, že jste požádali o maximální bezpečnostní kód (vyžaduje se pouze pro konečné hlasování) </b>. Za pár dní ji zašleme na adresu uvedenou ve vašem profilu, který máme k dispozici. Nezapomeňte, že pokud chcete, můžete svůj kód získat z kteréhokoliv subjektu %{offices}.
       edit:
         see_all: Zobrazit návrhy
         title: Dopis požadován
@@ -49,7 +46,6 @@ cs:
         accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
-        document_number_help_text_html: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
         document_type:
           passport: Cestovní pas
           residence_card: Občanský průkaz
@@ -73,7 +69,6 @@ cs:
         title: Bezpečnostní kód potvrzení
       new:
         phone: Zadejte číslo svého mobilního telefonu pro získání kódu
-        phone_format_html: "<strong><em>(příklad: 712345678 nebo +42012345678)</em></strong>"
         phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
         phone_placeholder: "Příklad: 612345678 nebo +42012345678"
         submit_button: Odeslat
