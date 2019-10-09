@@ -180,9 +180,9 @@ pt-BR:
         password_confirmation: "Confirmação de senha"
         password: "Senha"
         current_password: "Senha atual"
-        phone_number: "Números de telefone"
         official_position: "Cargo público"
         official_level: "Nível do cargo"
+        phone_number: "Números de telefone"
         redeemable_code: "Código de verificação recebido via e-mail"
       organization:
         name: "Nome da organização"
@@ -280,10 +280,10 @@ pt-BR:
         text: Comentar
       document:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       image:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       poll/question/answer:
         title: Resposta
         description: Descrição
@@ -296,7 +296,7 @@ pt-BR:
       newsletter:
         segment_recipient: Destinatários
         subject: Assunto
-        from: De
+        from: "De"
         body: Conteúdo do e-mail
       admin_notification:
         segment_recipient: Destinatários
