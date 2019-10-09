@@ -25,11 +25,6 @@ sl:
           with_active: Aktivne
           with_inactive: Neaktvine
         preview: Predogled
-      banner:
-        title: Naslov
-        description: Opis
-        post_started_at: Objava se je začela pri
-        post_ended_at: Objava se je končala pri
       edit:
         editing: Uredi pasico
         form:
@@ -94,13 +89,8 @@ sl:
         recalculate: Ponovno izračunaj zmagovalne naložbe.
     budget_phases:
       edit:
-        start_date: Začetni datum
-        end_date: Končni datum
-        summary: Povzetek
         summary_help_text: To besedilo bo obvestilo uporabnika o fazi. Če ga želite prikazati tudi, če faza ni aktivna, izberite potrditveno polje spodaj.
-        description: Opis
         description_help_text: To besedilo bo prikazano v glavi, ko je faza aktivna.
-        enabled: Faza omogočena
         enabled_help_text: Ta faza bo javna v časovnem okviru faze proračuna, pa tudi aktivna za druge namene
         save_changes: Shrani spremembe
     budget_investments:
@@ -170,17 +160,13 @@ sl:
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
-        mark_as_incompatible: Označi kot nekompatibilen
         selection: Izbor
-        mark_as_selected: Označi kot izbran
         assigned_valuators: Cenilci
         select_heading: Izberi naslov
         submit_button: Posodobi
         user_tags: Uporabniško dodeljene oznake
-        tags: Oznake
         tags_placeholder: "Napiši oznake in jih loči z vejico (,)"
         undefined: Nedefiniran
-        user_groups: "Skupine"
       search_unfeasible: Iskanje neizvedljivo
     dashboard:
       index:
@@ -293,9 +279,6 @@ sl:
           back: Nazaj
           title: Ustvari novo verzijo
           submit_button: Ustvari verzijo
-        statuses:
-          draft: Osnutek
-          published: Objavljeno
         table:
           title: Naslov
           created_at: Ustvarjeno na
@@ -491,7 +474,6 @@ sl:
         title: "Cenilska skupina: %{group}"
         no_valuators: "Ni cenilcev, ki bi pripadali tej skupini"
       form:
-        name: "Ime skupine"
         new: "Ustvari cenilsko skupino"
         edit: "Shrani cenilsko skupino"
     poll_officers:
@@ -524,7 +506,6 @@ sl:
         shift: "Izmena"
         shifts: "Izmene v tem glasovanju"
         date: "Datum"
-        task: "Zadolžitev"
         edit_shifts: Uredi izmene
         new_shift: "Nova izmena"
         no_shifts: "To volišče nima izmen"
@@ -618,7 +599,6 @@ sl:
         title: "Uredi vprašanje"
       new:
         title: "Ustvari vprašanje"
-        poll_label: "Glasovanje"
       answers:
         images:
           add_image: "Dodaj sliko"
@@ -695,8 +675,6 @@ sl:
         no_location: "Ni lokacije"
       new:
         title: "Novo volišče"
-        name: "Ime"
-        location: "Lokacija"
         submit_button: "Ustvari volišče"
       edit:
         title: "Uredi volišče"
@@ -889,8 +867,6 @@ sl:
         add_tag: Dodaj novo temo predloga
         title: Teme predlogov
         topic: Tema
-      name:
-        placeholder: Vtipkaj naslov teme
     users:
       columns:
         name: Ime
@@ -971,8 +947,6 @@ sl:
         page:
           created_at: Ustvarjena na
           updated_at: Posodobljena
-          status_draft: Osnutek
-          status_published: Objavljena
           title: Naslov
     homepage:
       title: Domača stran
