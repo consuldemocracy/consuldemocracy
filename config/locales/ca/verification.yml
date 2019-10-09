@@ -47,17 +47,14 @@ ca:
       new:
         accept_terms_text: Accepte %{terms_url} al Padró
         accept_terms_text_title: Accepte els termes d'accés al Padró
-        date_of_birth: Data de naixement
         document_number: Número de document
         document_number_help_title: Ajuda
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passaport</strong>: AAA000001<br> <strong>Targeta de residència</strong>: X1234567P"
         document_type:
           passport: Passaport
           residence_card: Targeta de residència
-        document_type_label: Tipus de document
         error_not_allowed_age: No tens l'edat mínima per a participar
         form_errors: van evitar verificar la teua residència
-        postal_code: Codi postal
         postal_code_note: Per a verificar les teues dades has d'estar empadronat
         terms: els termes d'accés
         title: Verificar residència
@@ -67,7 +64,6 @@ ca:
         flash:
           success: Introdueix el codi de confirmació que t'hem enviat per missatge de text
       edit:
-        confirmation_code: Introdueix el codi que has rebut en el teu mòbil
         resend_sms_link: Sol·licitar un nou codi
         resend_sms_text: No has rebut un missatge de text amb el teu codi de confirmació?
         submit_button: Enviar
