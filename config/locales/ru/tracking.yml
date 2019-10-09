@@ -53,8 +53,6 @@ ru:
         no_statuses_defined: Пока что нет определенных статусов
       new:
         creating: Создать этап
-        date: Дата
-        description: Описание
       edit:
         title: Редактировать этап
       create:
