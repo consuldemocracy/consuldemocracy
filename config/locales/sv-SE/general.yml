@@ -112,9 +112,6 @@ sv:
         button: Sök
         placeholder: Sök debatter...
         title: Sök
-      search_results_html:
-        one: " som innehåller <strong>'%{search_term}'</strong>"
-        other: " som innehåller <strong>'%{search_term}'</strong>"
       select_order: Sortera efter
       start_debate: Starta en debatt
       title: Debatter
@@ -165,7 +162,6 @@ sv:
     direct_message: privat meddelande
     error: fel
     errors: fel
-    not_saved_html: "gjorde att %{resource} inte kunde sparas. <br>Kontrollera och rätta till de markerade fälten:"
     policy: Sekretesspolicy
     proposal: Förslag
     proposal_notification: "Avisering"
@@ -353,9 +349,6 @@ sv:
         button: Sök
         placeholder: Sök förslag...
         title: Sök
-      search_results_html:
-        one: " som innehåller <strong>'%{search_term}'</strong>"
-        other: " som innehåller <strong>'%{search_term}'</strong>"
       select_order: Sortera efter
       select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
@@ -536,7 +529,6 @@ sv:
       back: Tillbaka till omröstningar
       cant_answer_not_logged_in: "Du behöver %{signin} eller %{signup} för att kunna delta."
       comments_tab: Kommentarer
-      cant_answer_verify_html: "Du måste %{verify_link} för att svara."
       verify_link: "verifiera ditt konto"
       cant_answer_expired: "Omröstningen är avslutad."
       cant_answer_wrong_geozone: "Den här frågan är inte tillgänglig i ditt område."
@@ -572,7 +564,6 @@ sv:
     new:
       title: "Skicka meddelande"
       submit_button: "Skicka meddelande"
-      info_about_receivers_html: "Det här meddelandet kommer att skickas till <strong>%{count} personer</strong> och visas på %{proposal_page}.<br> Meddelanden skickas inte på en gång, utan som regelbundna e-postmeddelanden med aviseringar om förslagen."
       proposal_page: "förslagets sida"
     show:
       back: "Gå tillbaka till min aktivitet"
@@ -612,17 +603,6 @@ sv:
     follow: "Följ"
     following: "Följer"
     follow_entity: "Följ %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Du följer nu det här budgetförslaget! </br> Vi meddelar dig om alla ändringar så att du kan hålla dig uppdaterad."
-        destroy:
-          notice_html: "Du har slutat följa det här budgetförslaget! </br> Vi kommer inte längre skicka aviseringar om förslaget."
-      proposal:
-        create:
-          notice_html: "Du följer nu det här medborgarförslaget! </br> Vi meddelar dig om alla ändringar så att du kan hålla dig uppdaterad."
-        destroy:
-          notice_html: "Du har slutat följa det här medborgarförslaget! </br> Vi kommer inte längre skicka aviseringar om förslaget."
     hide: Dölj
     print:
       print_button: Skriv ut informationen
