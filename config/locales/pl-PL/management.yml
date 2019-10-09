@@ -32,8 +32,6 @@ pl:
       index:
         title: Zarząd
         info: Tutaj możesz zarządzać użytkownikami poprzez wszystkie czynności wymienione w lewym menu.
-    document_number: Numer dokumentu
-    document_type_label: Rodzaj dokumentu
     document_verifications:
       already_verified: To konto użytkownika jest już zweryfikowane.
       has_no_account_html: Aby założyć konto, przejdź do %{link} i kliknij <b>"Zarejestruj się"</b> w lewej górnej części ekranu.
