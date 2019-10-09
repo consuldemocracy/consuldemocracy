@@ -32,8 +32,6 @@ he:
       index:
         title: הנהלה
         info: כאן ניתן לנהל משתמשים לפי כל הפעולות המופיעות בתפריט משמאל.
-    document_number: מספר תעודה מזהה
-    document_type_label: סוג תעודה מזהה
     document_verifications:
       already_verified: חשבון משתמש/ת זה אושר בעבר
       has_no_account_html: ' כדי ליצור חשבון  %{link} נא ללחוץ על<b>''Register''</b> בחלק השמאלי העליון של המסך'
