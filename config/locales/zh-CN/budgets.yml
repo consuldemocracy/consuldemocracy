@@ -9,7 +9,6 @@ zh-CN:
         remove: 删除投票
         voted_html:
           other: "您已为<span>%{count}</span>个投资投票。"
-        voted_info_html: "在此阶段结束前您可以随时更改投票。<br>不需要花掉所有可用的钱。"
         zero: 您没有对任何投资项目投票。
       reasons_for_not_balloting:
         not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
@@ -66,7 +65,6 @@ zh-CN:
         map_location: "地图位置"
         map_location_instructions: "将地图导航到该位置并放置标记。"
         map_remove_marker: "删除地图标记"
-        location: "位置附加信息"
         map_skip_checkbox: "此投资没有具体的位置或者我并不知道。"
       index:
         title: 参与性预算
@@ -90,11 +88,8 @@ zh-CN:
           check_ballot_link: "查看我的选票"
           zero: 您没有对此组中的任何投资项目投票。
           verified_only: "创建新的预算投资%{verify}。"
-          verify_account: "验证您的账户"
           create: "创建预算投资"
           not_logged_in: "要创建新的预算投资，您必须%{sign_in} 或者%{sign_up}。"
-          sign_in: "登录"
-          sign_up: "注册"
           by_feasibility: 按可行性
           feasible: 可行的项目
           unfeasible: 不可行的项目
