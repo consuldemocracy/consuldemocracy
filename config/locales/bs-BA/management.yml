@@ -32,8 +32,6 @@ bs:
       index:
         title: Menadžment
         info: Ovdje možete pratiti korisnike putem svih radnji pobrojanih na meniju slijeva.
-    document_number: Broj dokumenta
-    document_type_label: Vrsta dokumenta
     document_verifications:
       already_verified: Korisnički nalog je već potvrđen.
       has_no_account_html: Za otvaranje naloga, idite na %{link} i kliknite na <b> "Registracija" </b> u gornjem lijevom dijelu ekrana.
