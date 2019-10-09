@@ -28,11 +28,6 @@ bs:
           with_inactive: Neaktivno
         preview: Pregled
       banner:
-        title: Naslov
-        description: Opis
-        target_url: Link
-        post_started_at: 'Objava započeta u:'
-        post_ended_at: 'Objava završena u:'
         sections_label: Dijelovi u kojim će se pojaviti
         sections:
           homepage: Početna stranica
@@ -120,7 +115,6 @@ bs:
       headings_name: "Poglavlja"
       headings_edit: "Edituj poglavlja"
       headings_manage: "Sredi poglavlja"
-      max_votable_headings: "Maksimalni broj poglavlja za koje korisnik može glasati"
       no_groups: "Nema grupa."
       amount:
         one: "1 grupa"
@@ -136,12 +130,10 @@ bs:
       form:
         create: "Kreiraj novu grupu"
         edit: "Edituj grupu"
-        name: "Naziv grupe"
         submit: "Spasi grupu"
       index:
         back: "Vrati se na budžete"
     budget_headings:
-      name: "Naziv"
       no_headings: "Nema poglavlja."
       amount:
         one: "1 poglavlje"
@@ -155,14 +147,8 @@ bs:
         success_notice: "Poglavlje uspješno obrisano"
         unable_notice: "Ne možete ukinuti poglavlje koje ima vezane investicije"
       form:
-        name: "Naziv poglavlja"
-        amount: "Iznos"
-        population: "Populacija (po izboru)"
         population_info: "Rubrika za populaciju u sklopu budžetskog poglavlja se koristi u statističke svrhe na kraju budžetskog perioda, kako bi se pokazalo u svakoj kategoriji koji je procenat stanovništva glasao i u kojem području. Rubrika se ispunjava po izboru, tako da može ostati prazna ako nije primjenjivo."
-        latitude: "Geografska širina (nije obavezno navesti)"
-        longitude: "Geografska dužina (nije obavezno navesti)"
         coordinates_info: "Ako su navedene geografska širina i dužina, stranice na kojim su navedene investicije za ovo poglavlje sadrže i mapu. Mapa će biti centrirana uz upotrebu tih koordinata."
-        allow_content_block: "Omogući blok sadržaja"
         content_blocks_info: "Ako omogućite blok sadržaja, moći ćete napraviti prilagođene sadržaje u vezi ovog poglavlja, u odjeljku \"blok sadržaja\" u Postavkama > Prilagodi. Ovaj sadržaj se pojavljuje na stranici koja pokazuje investicije za ovo poglavlje."
         create: "Kreiraj novo poglavlje"
         edit: "Edituj poglavlje"
@@ -171,13 +157,8 @@ bs:
         back: "Idi nazad na grupe"
     budget_phases:
       edit:
-        start_date: Početni datum
-        end_date: Krajnji datum
-        summary: Sažetak
         summary_help_text: Ovim tekstom se korisnik obavještava o statusu faze. Označite kockicu kako bi se tekst pokazao čak i ako faza nije aktivna
-        description: Opis
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
-        enabled: Faza pokrenuta
         enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna i u bilo koju drugu svrhu
         save_changes: Spasi izmjene
     budget_investments:
@@ -265,17 +246,13 @@ bs:
       edit:
         classification: Klasifikacija
         compatibility: Usklađenost
-        mark_as_incompatible: Označi kao neusklađeno
         selection: Odabir
-        mark_as_selected: Označi kao odabrano
         assigned_valuators: Procjenitelji
         select_heading: Odaberi poglavlje
         submit_button: Ažuriraj
         user_tags: Tagovi koje su definisali korisnici
-        tags: Tagovi
         tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
         undefined: Nije definisano
-        user_groups: "Grupe"
       search_unfeasible: Traži među neizvodivim
     statuses:
       index:
@@ -306,9 +283,6 @@ bs:
         title: Administracija
         description: Dobrodošli na admin panel od %{org}.
       actions:
-        action_type:
-          proposed_action: Predložena radnja
-          resource: Resurs
         index:
           description: "Kada korisnici prave prijedloge, imaju pristup kontrolnoj ploči za svoj prijedlog, gdje se mogu predlagati resursi i preporuke kako bi se dobila podrška za njihovu ideju."
           create: Definiši resurs ili radnju
@@ -341,7 +315,6 @@ bs:
         form:
           submit_button: Spasi
           help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
-          published_proposal: Za objavljene prijedloge?
           published_proposal_help_text: Označite kockicu kako bi definisali radnju samo za objavljene prijedloge
       administrator_tasks:
         index:
@@ -367,7 +340,6 @@ bs:
     documents:
       new:
         title: "Učitaj dokument"
-        label_attachment: "Odaberi dokument"
         submit_button: "Učitaj"
       index:
         new_link: "Dodaj novi dokument"
@@ -434,9 +406,7 @@ bs:
           summary_placeholder: Kratki sažetak opisa
           description_placeholder: Dodaj opis procesa
           additional_info_placeholder: Dodatne informacije koje smatrate korisnim
-          homepage: Opis
           homepage_description: Ovdje možete objasniti sadržaj procesa
-          homepage_enabled: Pokrenuta početna stranica
           banner_title: Boje za zaglavlje
         index:
           create: Novi proces
@@ -522,9 +492,6 @@ bs:
           back: Nazad
           title: Kreiraj novu verziju
           submit_button: Kreiraj verziju
-        statuses:
-          draft: Nacrt
-          published: Objavljeno
         table:
           title: Naziv
           created_at: 'Napravljeno:'
@@ -549,7 +516,6 @@ bs:
             error: Greška
         form:
           add_option: Dodaj opciju
-          title: Pitanje
           title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvoreni odgovor
           question_options: "Mogući odgovori (nije obavezno, odgovori su po pravilu otvoreni)"
@@ -701,7 +667,6 @@ bs:
         empty_newsletters: Nema biltena za pokazati
       new:
         title: Novi bilten
-        from: Email-adresa koja se pokazuje kao pošiljatelj biltena
         header_footer_help_text_html: "Zaglavlje i podnožje su isti za sve emailove. Možete ih promijeniti na <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br> Možete promijeniti sliku u zaglavlju na %{link}."
         image_link: "prilagođene slike"
       edit:
@@ -849,7 +814,6 @@ bs:
         title: "Grupa za procjenu: %{group}"
         no_valuators: "Nema procjenitelja dodijeljenih ovoj grupi"
       form:
-        name: "Naziv grupe"
         new: "Kreiraj grupu za procjenu"
         edit: "Spasi podatke za grupu za procjenu"
     poll_officers:
@@ -883,7 +847,6 @@ bs:
         shift: "Anketar u smjeni"
         shifts: "Rad u smjenama u ovoj kabini"
         date: "Datum"
-        task: "Zadatak"
         edit_shifts: Uredi rad u smjenama
         new_shift: "Nova smjena"
         no_shifts: "Nema rada u smjenama u ovoj kabini"
@@ -941,7 +904,6 @@ bs:
         title: "Opis glasačke ankete"
       form:
         description:
-          text: "Opis"
           help_text: "Ovaj tekst će se pojaviti u zaglavlju stranice za glasačku anketu. Može se iskoristiti za pružanje dodatnog konteksta za otvorenu glasačku anketu."
     polls:
       index:
@@ -996,7 +958,6 @@ bs:
       new:
         title: "Formuliši pitanje za glasačku anketu %{poll}"
         title_proposal: "Formuliši pitanje"
-        poll_label: "Glasačka anketa"
       answers:
         images:
           add_image: "Dodaj sliku"
@@ -1076,8 +1037,6 @@ bs:
         no_location: "Nema lokacije"
       new:
         title: "Nova kabina"
-        name: "Naziv"
-        location: "Lokacija"
         submit_button: "Napravi kabinu"
       edit:
         title: "Edituj podatke za kabinu"
@@ -1362,8 +1321,6 @@ bs:
         title: Teme za prijedlog
         topic: Tema
         help: "Kada korisnik formuliše prijedlog, sljedeće teme se automatski predlažu kao tagovi."
-      name:
-        placeholder: Upiši naziv teme
     users:
       columns:
         name: Ime
@@ -1455,8 +1412,6 @@ bs:
           created_at: Napravljeno
           status: Status
           updated_at: Ažurirano
-          status_draft: Nacrt
-          status_published: Objavljeno
           title: Naslov
           slug: Slug
           cards_title: Kartice
