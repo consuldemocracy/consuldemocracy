@@ -9,7 +9,6 @@ zh-TW:
         remove: 刪除投票
         voted_html:
           other: "您已為 <span>%{count}</span> 項投資投票。"
-        voted_info_html: "直到這個階段結束前，你可以隨時更改你的投票 。<br>不需要用盡所有可用的錢。"
         zero: 你沒有為任何投資項目投票。
       reasons_for_not_balloting:
         not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
@@ -66,7 +65,6 @@ zh-TW:
         map_location: "地圖位置"
         map_location_instructions: "將地圖導航到該位置，並放置標記。"
         map_remove_marker: "刪除地圖標記"
-        location: "位置附加資訊"
         map_skip_checkbox: "這項投資沒有具體的位置, 或我沒有注意到。"
       index:
         title: 參與式預算編制
@@ -90,11 +88,8 @@ zh-TW:
           check_ballot_link: "查看我的選票"
           zero: 您沒有在這個小組中投票給任何投資項目。
           verified_only: "創建新的預算投資 %{verify}。"
-          verify_account: "核實您的帳戶"
           create: "創建預算投資"
           not_logged_in: "要創建新的預算投資, 您必須 %{sign_in} 或 %{sign_up}。"
-          sign_in: "登錄"
-          sign_up: "登記"
           by_feasibility: 通過可行性
           feasible: 可行項目
           unfeasible: 不可行項目
