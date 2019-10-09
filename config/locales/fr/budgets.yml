@@ -10,7 +10,6 @@ fr:
         voted_html:
           one: "Vous avez voté pour <span>une</span> proposition."
           other: "Vous avez voté pour <span>%{count}</span> propositions."
-        voted_info_html: "Vous pouvez modifier votre vote à tout moment jusqu'à la fin de cette phase.<br> Vous n'avez pas besoin de dépenser tout le budget disponible."
         zero: Vous n'avez voté pour aucune des propositions d'investissement.
       reasons_for_not_balloting:
         not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
@@ -68,7 +67,6 @@ fr:
         map_location: "Emplacement sur la carte"
         map_location_instructions: "Positionnez le marqueur à l'emplacement correspondant sur la carte."
         map_remove_marker: "Supprimer le marqueur"
-        location: "Information supplémentaires sur l'emplacement"
         map_skip_checkbox: "Cet investissement n'a pas d'emplacement concret, à ma connaissance."
       index:
         title: Budget participatif
@@ -94,11 +92,8 @@ fr:
           check_ballot_link: "vérifier mon vote"
           zero: Vous n'avez voté pour aucune proposition d'investissement dans ce groupe.
           verified_only: "Pour créer une proposition d'investissement %{verify}."
-          verify_account: "vérifier votre compte"
           create: "Créer un nouveau projet"
           not_logged_in: "Pour créer une proposition d'investissement, vous devez vous %{sign_in} ou %{sign_up}."
-          sign_in: "se connecter"
-          sign_up: "s'inscrire"
           by_feasibility: Par faisabilité
           feasible: Projets faisables
           unfeasible: Projets infaisables
