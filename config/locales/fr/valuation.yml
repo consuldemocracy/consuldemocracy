@@ -54,8 +54,6 @@ fr:
         assigned_valuators: Évaluateurs assignés
       edit:
         dossier: Rapport
-        price_html: "Coût (%{currency}) <small>(données publiques)</small>"
-        price_first_year_html: "Coût durant la première année (%{currency}) <small>(optionnel, données non publiques)</small>"
         feasibility: Faisabilité
         valuation_finished_alert: "Êtes-vous sûr de vouloir marquer ce rapport comme étant achevé ? Si vous le faites, il nne pourra plus être modifié."
         not_feasible_alert: "Un courriel sera envoyé immédiatement à l’auteur du projet avec le rapport de non-faisabilité."
