@@ -47,7 +47,6 @@ cs:
       new:
         accept_terms_text: Přijímám %{terms_url} přístupu k základním registrům
         accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
-        date_of_birth: Datum narození
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
         document_number_help_text_html: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
@@ -55,12 +54,10 @@ cs:
           passport: Cestovní pas
           residence_card: Občanský průkaz
           spanish_id: Číslo OP
-        document_type_label: Typ dokumentu
         error_not_allowed_age: Nemáte požadovaný věk pro účast
         error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
         error_verifying_census: Nepodařilo se ověřit Vaše údaje. Potvrďte prosím, že vaše údaje jsou správné zavoláním na úřad nebo navštivte jeden ze subjektů %{offices}.
         form_errors: zabránil ověření vašeho bydliště
-        postal_code: PSČ
         postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
         terms: podmínky přístupu
         title: Ověření bydliště
@@ -70,7 +67,6 @@ cs:
         flash:
           success: Zadejte potvrzovací kód, který vám byl odeslán textovou zprávu
       edit:
-        confirmation_code: Zadejte kód, který jste obdrželi na váš mobil
         resend_sms_link: Klikněte zde pro opětovné odeslání
         resend_sms_text: Nedostali jste text s potvrzovací kód?
         submit_button: Odeslat
