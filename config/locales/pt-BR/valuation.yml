@@ -27,10 +27,6 @@ pt-BR:
         assigned_to: "Atribuído a %{valuator}"
         title: Projetos de investimento
         edit: Editar relatório
-        valuators_assigned:
-          one: Avaliador designado
-          other: "%{count} Avaliador designado"
-        no_valuators_assigned: Não há avaliadores designados
         table_id: ID
         table_title: Título
         table_heading_name: Nome do título
@@ -62,16 +58,9 @@ pt-BR:
         dossier: Relatório
         price_html: "Preço (%{currency})"
         price_first_year_html: "Custo durante o primeiro ano (%{currency})<small>(opcional, dados não públicos)</small>"
-        price_explanation_html: Explanação do preço
         feasibility: Viabilidade
-        feasible: Viável
-        unfeasible: Não viável
-        undefined_feasible: Pendente
-        feasible_explanation_html: Informe de viabilidade
-        valuation_finished: Avaliação terminada
         valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Se você fizer isso, o relatório não poderá mais ser modificado."
         not_feasible_alert: "Um e-mail será enviado imediatamente para o autor do projeto com o relatório de inviabilidade."
-        duration_html: Prazo
         save: Salvar alterações
       notice:
         valuate: "Dossiê atualizado"
