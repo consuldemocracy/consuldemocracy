@@ -17,8 +17,6 @@ bs:
         first_theme_not_logged_in: Nema tema, učestvuj tako što ćeš pokrenuti prvu temu.
         first_theme: Pokreni prvu temu za grupnu podršku
         sub_first_theme: "Kako bi pokrenuo/la temu, moraš se prijaviti %{sign_in} ili otvoriti nalog %{sign_up}."
-        sign_in: "prijavi se"
-        sign_up: "otvori nalog"
       tab:
         participants: Učesnici
       sidebar:
@@ -38,8 +36,6 @@ bs:
       create: Formuliši temu
       edit: Edituj temu
       form:
-        topic_title: Naziv
-        topic_text: Uvodni tekst
         new:
           submit_button: Formuliši temu
         edit:
@@ -56,6 +52,3 @@ bs:
         recommendation_one: Ne piši naziv teme ili cijele rečenice velikim slovima. Na internetu se to smatra za deranje. Niko ne voli da se neko dere na njega/nju.
         recommendation_two: Ukloniće se svaka tema ili komentar koji implicira kršenje zakona. Isto važi za sabotažu prostora za raspravu o temi. Sve ostalo je dozvoljeno.
         recommendation_three: Uživaj u ovom prostoru i različitim glasovima koji ga prožimaju, on pripada i tebi.
-  topics:
-    show:
-      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi napisao/la komentar.
