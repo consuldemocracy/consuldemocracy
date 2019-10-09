@@ -45,8 +45,6 @@ sq:
     budget_investment_created:
       subject: "Faleminderit për krijimin e investimit!"
       title: "Faleminderit për krijimin e investimit!"
-      intro_html: "Përshëndetje <strong>%{author}</strong>,"
-      text_html: "Faleminderit për krijimin e investimit tuaj <strong>%{investment}</strong>për buxhetet pjesëmarrëse <strong>%{budget}</strong>"
       follow_html: "Ne do t'ju informojmë se si ecën procesi, të cilin mund ta ndjekësh edhe me <strong>%{link}</strong>"
       follow_link: "Buxhetet  pjesëmarrës"
       sincerely: "Sinqerisht"
