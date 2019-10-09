@@ -118,11 +118,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj debat...
         title: Szukaj
-      search_results_html:
-        one: " zawierające termin <strong>%{search_term}</strong>"
-        few: " zawierające termin <strong>%{search_term}</strong>"
-        many: " zawierające termin <strong>%{search_term}</strong>"
-        other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
       start_debate: Rozpocznij debatę
       title: Debaty
@@ -175,7 +170,6 @@ pl:
     direct_message: prywatna wiadomość
     error: błąd
     errors: błędy
-    not_saved_html: "uniemożliwił zapisanie tego %{resource}. <br>Sprawdź zaznaczone pola, aby dowiedzieć się, jak je poprawić:"
     policy: Polityka prywatności
     proposal: Wniosek
     proposal_notification: "Powiadomienie"
@@ -361,11 +355,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj wniosków...
         title: Szukaj
-      search_results_html:
-        one: " zawierające termin <strong>%{search_term}</strong>"
-        few: " zawierające termin <strong>%{search_term}</strong>"
-        many: " zawierające termin <strong>%{search_term}</strong>"
-        other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
@@ -478,7 +467,6 @@ pl:
       back: Wróć do głosowania
       cant_answer_not_logged_in: "%{signin} lub %{signup} aby wziąć udział."
       comments_tab: Komentarze
-      cant_answer_verify_html: "Aby odpowiedzieć, musisz %{verify_link}."
       verify_link: "zweryfikuj swoje konto"
       cant_answer_expired: "Ta sonda została zakończona."
       cant_answer_wrong_geozone: "To pytanie nie jest dostępne w Twojej strefie geograficznej."
@@ -511,7 +499,6 @@ pl:
     new:
       title: "Wyślij wiadomość"
       submit_button: "Wyślij wiadomość"
-      info_about_receivers_html: "Ta wiadomość zostanie wysłana do <strong>%{count} osób</strong> i będzie widoczna w %{proposal_page}.<br> Wiadomość nie zostanie wysłana natychmiast, użytkownicy będą otrzymywać okresowo e-mail ze wszystkimi powiadomieniami dotyczącymi propozycji."
       proposal_page: "strona wniosku"
     show:
       back: "Wróć do mojej aktywności"
@@ -550,17 +537,6 @@ pl:
     follow: "Obserwuj"
     following: "Obserwowane"
     follow_entity: "Obserwuj %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Obserwujesz teraz ten projekt inwestycyjny! </br> Powiadomimy Cię o zaistniałych zmianach, abyś był na bieżąco."
-        destroy:
-          notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
-      proposal:
-        create:
-          notice_html: "Obserwujesz teraz ten pomysł! </br> Powiadomimy Cię o zmianach, abyś był/a na bieżąco."
-        destroy:
-          notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
     hide: Ukryj
     print:
       print_button: Wydrukuj tę informację
