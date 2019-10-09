@@ -18,7 +18,6 @@ sv:
         title: "Debatter"
         description: "I %{link}-delen kan du presentera dina åsikter och diskutera frågor som rör staden. Det är också en plats för att utveckla idéer som kan tas vidare till andra delar av %{org} och leda till konkreta åtgärder från kommunen."
         link: "debatter"
-        feature_html: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
         feature_link: "registrera dig på %{org}"
         image_alt: "Knappar för att betygsätta diskussioner"
         figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
@@ -154,7 +153,6 @@ sv:
               description_column: Minskar textstorlek
       compatibility:
         title: Förenlighet med standarder och visuell design
-        description_html: 'Alla sidor av denna webbplats följer <strong>Riktlinjer för Tillgänglighet</strong> eller generella principer för tillgänglig design som etablerats av Arbetsgruppen <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> som tillhör W3C.'
     titles:
       help: "Vad är %{org}? - Medborgardeltagande"
     verify:
