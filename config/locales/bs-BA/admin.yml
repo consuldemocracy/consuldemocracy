@@ -182,8 +182,6 @@ bs:
           min_total_supports: Minimalna podrška
           max_total_supports: Maksimalna podrška
           winners: Odabrane investicije
-          one_filter_html: "Trenutno primjenjeni filteri: <b><em>%{filter}</em></b>"
-          two_filters_html: "Trenutno primjenjeni filteri: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filter (suzi pretragu)
         download_current_selection: "Preuzmi odabranu selekciju"
@@ -471,7 +469,6 @@ bs:
           form:
             error: Greška
         form:
-          title_html: 'Editovanje <span class="strong">%{draft_version_title}</span> iz procesa <span class="strong">%{process_title}</span>'
           launch_text_editor: Pokreni editora teksta
           close_text_editor: Zatvori editora teksta
           use_markdown: Koristi obilježavanje za formatiranje teksta
@@ -667,7 +664,6 @@ bs:
         empty_newsletters: Nema biltena za pokazati
       new:
         title: Novi bilten
-        header_footer_help_text_html: "Zaglavlje i podnožje su isti za sve emailove. Možete ih promijeniti na <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br> Možete promijeniti sliku u zaglavlju na %{link}."
         image_link: "prilagođene slike"
       edit:
         title: Edituj bilten
@@ -1079,10 +1075,6 @@ bs:
           pending: U toku
           rejected: Odbijeno
           verified: Potvrđeno
-        hidden_count_html:
-          one: Ima takođe <strong> jedna organizacija </strong> bez korisnika ili sa sakrivenim korisnikom.
-          few: Ima takođe <strong> %{count} organizacija/e </strong> bez korisnika ili sa sakrivenim korisnikom.
-          other: Ima takođe <strong> %{count} organizacija/e </strong> bez korisnika ili sa sakrivenim korisnikom.
         name: Naziv
         email: Email
         phone_number: Telefon
@@ -1407,7 +1399,6 @@ bs:
           see_page: Vidi stranicu
         new:
           title: Napravi novu prilagođenu stranicu
-          slug_help_html: "Tekst za identifikaciju ove strane na URL, npr. <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Napravljeno
           status: Status
