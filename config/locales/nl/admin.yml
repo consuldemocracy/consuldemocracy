@@ -28,11 +28,6 @@ nl:
           with_inactive: Inactive
         preview: Toon
       banner:
-        title: Title
-        description: Beschrijving
-        target_url: Link
-        post_started_at: Post started at
-        post_ended_at: Post ended at
         sections_label: Secties waar het wordt weergegeven
         sections:
           homepage: Homepage
@@ -118,7 +113,6 @@ nl:
       headings_name: "Rubrieken"
       headings_edit: "Rubrieken bewerken"
       headings_manage: "Rubrieken beheren"
-      max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
       no_groups: "Er zijn geen groepen."
       amount:
         one: "Er is 1 groep"
@@ -133,12 +127,10 @@ nl:
       form:
         create: "Nieuwe groep"
         edit: "Bewerk groep"
-        name: "Groepsnaam"
         submit: "Sla op"
       index:
         back: "Ga terug naar budgetten"
     budget_headings:
-      name: "Name"
       no_headings: "Er zijn geen rubrieken."
       amount:
         one: "Er is 1 rubriek"
@@ -151,14 +143,8 @@ nl:
         success_notice: "Rubriek verwijderd"
         unable_notice: "Een rubriek met investeringen kan niet worden verwijderd"
       form:
-        name: "Kop naam"
-        amount: "Bedrag"
-        population: "Bevolking"
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
-        latitude: "Breedte"
-        longitude: "Lengte"
         coordinates_info: "Als lengte- en breedtegraad zijn ingevuld, zal voor deze rubriek een kaart worden getoond. Deze kaart wordt gecentreerd met behulp van de opgegeven coördinaten."
-        allow_content_block: "Inhoudsblok toestaan"
         content_blocks_info: "Als inhoudsblokken zijn toegestaan kan aangepaste inhoud gerelateerd aan deze rubriek worden geplaatst via de sectie Instellingen > aangepaste inhoud. De aangepaste inhoud wordt weergegeven op de pagina voor de rubriek."
         create: "Nieuwe rubriek aanmaken"
         edit: "Rubriek bewerken"
@@ -167,13 +153,8 @@ nl:
         back: "Terug naar groepen"
     budget_phases:
       edit:
-        start_date: Begindatum
-        end_date: Einddatum
-        summary: Samenvatting
         summary_help_text: Deze tekst informeert de deelnemer over de fase. Om het te laten zien zelfs als de fase niet actief is, vinkt u het vakje aan
-        description: Beschrijving
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
-        enabled: Fase actief
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
         save_changes: Bewaar wijzigingen
     budget_investments:
@@ -261,17 +242,13 @@ nl:
       edit:
         classification: Clasificatie
         compatibility: Compatibiliteit
-        mark_as_incompatible: Markeer als incompatibel
         selection: Selection
-        mark_as_selected: Markeer als geselecteerd
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
         user_tags: Door deelnemer toegewezen labels
-        tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Niet gedefinieerd
-        user_groups: "Groepen"
       search_unfeasible: Search unfeasible
     statuses:
       index:
@@ -354,9 +331,7 @@ nl:
           summary_placeholder: Korte samenvatting van de beschrijving
           description_placeholder: Voeg een beschrijving van het plan toe
           additional_info_placeholder: Voeg een aanvullende informatie toe
-          homepage: Beschrijving
           homepage_description: Hier kun je de stappen van het proces uitleggen
-          homepage_enabled: Homepage ingeschakeld
           banner_title: Rubriekkleuren
         index:
           create: Nieuw plan
@@ -442,9 +417,6 @@ nl:
           back: Terug
           title: Nieuwe versie
           submit_button: Nieuwe versie
-        statuses:
-          draft: Concept
-          published: Gepubliceerd
         table:
           title: Title
           created_at: Aanmaakdatum
@@ -469,7 +441,6 @@ nl:
             error: Fout
         form:
           add_option: Voeg keuze toe
-          title: Question
           title_placeholder: titel
           value_placeholder: antwoord
           question_options: "Mogelijke antwoorden (optioneel, standaard open antwoorden)"
@@ -615,7 +586,6 @@ nl:
         empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
       new:
         title: Nieuwe nieuwsbrief
-        from: Van
       edit:
         title: Bewerk nieuwsbrief
       show:
@@ -760,7 +730,6 @@ nl:
         title: "Beoordelingsgroep: %{group}"
         no_valuators: "Er zijn geen beoordelaars toegewezen aan deze groep"
       form:
-        name: "Groepsnaam"
         new: "Nieuwe Beoordelingsgroep"
         edit: "Bewerk Beoordelingsgroep"
     poll_officers:
@@ -793,7 +762,6 @@ nl:
         shift: "Assignment"
         shifts: "Diensten in dit stemhokje"
         date: "Datum"
-        task: "Taak"
         edit_shifts: Bewerk diensten
         new_shift: "New shift"
         no_shifts: "Dit stemhokje heeft geen diensten"
@@ -851,7 +819,6 @@ nl:
         title: "Omschrijving van de peiling"
       form:
         description:
-          text: "Omschrijving"
           help_text: "Deze tekst wordt weergegeven in de kop van de peilingen-pagina. Deze tekst kan worden gebruikt om context te plaatsen bij een open peiling."
     polls:
       index:
@@ -902,7 +869,6 @@ nl:
       new:
         title: "Create Question"
         title_proposal: "Stel een vraag"
-        poll_label: "Poll"
       answers:
         images:
           add_image: "Voeg afbeelding toe"
@@ -982,8 +948,6 @@ nl:
         no_location: "Geen Locatie"
       new:
         title: "New booth"
-        name: "Name"
-        location: "Location"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
@@ -1238,8 +1202,6 @@ nl:
         title: Proposal topics
         topic: Onderwerp
         help: "Wanneer een gebruiker een voorstel maakt, worden de volgende onderwerpen voorgesteld als standaard tags."
-      name:
-        placeholder: Type the name of the topic
     users:
       columns:
         name: Name
@@ -1330,8 +1292,6 @@ nl:
           created_at: Aanmaakdatum
           status: Status
           updated_at: Updated at
-          status_draft: Concept
-          status_published: Published
           title: Title
           slug: Bullet
           cards_title: Tegels
