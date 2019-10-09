@@ -2,8 +2,6 @@ bs:
   account:
     show:
       change_credentials_link: Promijeni moje reference
-      email_on_comment_label: Obavijesti me emailom kada neko da komentar na moje prijedloge ili debate
-      email_on_comment_reply_label: Obavijesti me emailom kada neko odgovori na moje komentare
       erase_account_link: Obriši moj profil
       finish_verification: Završi verifikaciju
       notifications: Obavijesti
@@ -11,18 +9,10 @@ bs:
       organization_responsible_name_placeholder: Predstavnik organizacije/zajednice
       personal: Lični podaci
       phone_number_label: Broj telefona
-      public_activity_label: Moja lista aktivnosti je javna
-      public_interests_label: Oznake da nešto pratim su javne
       public_interests_my_title_list: Tagovi za ono što pratim
       public_interests_user_title_list: Tagovi za ono što korisnik prati
       save_changes_submit: Spasi izmjene
-      subscription_to_website_newsletter_label: Primaću emailom relevantne informacije o web-stranici
-      email_on_direct_message_label: Dobijaću emailove u vezi direktnih poruka
-      email_digest_label: Dobijaću sažetak obavijesti o prijedlozima
-      official_position_badge_label: Pokaži bedž sa navedenom službenom funkcijom
       recommendations: Preporuke
-      show_debates_recommendations: Pokaži preporuke iz debata
-      show_proposals_recommendations: Pokaži preporuke iz prijedloga
       title: Moj nalog
       user_permission_debates: Učestvuj u debatama
       user_permission_info: Sa svojim nalogom, možeš...
@@ -41,7 +31,6 @@ bs:
   comments:
     comments_closed: Komentari su zatvoreni
     verified_only: Za učešće, (potvrdite nalog) %{verify_account}
-    verify_account: potvrdi nalog
     comment:
       admin: Administrator
       author: Autor
@@ -99,7 +88,6 @@ bs:
     form:
       debate_title: Naziv debate
       tags_instructions: Taguj debatu.
-      tags_label: Teme
       tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
     index:
       featured_debates: Glavne debate
@@ -163,7 +151,6 @@ bs:
       comments_title: Komentari
       edit_debate_link: Edituj
       flag: Nekoliko korisnika je označilo debatu neprikladnom.
-      login_to_comment: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi napisali komentar.
       share: Podijeli
       author: Autor
     update:
@@ -289,7 +276,6 @@ bs:
   map:
     title: "Okruzi"
     proposal_for_district: "Formulišite prijedlog za vaš okrug"
-    select_district: Odaberi okrug
     start_proposal: Formuliši prijedlog
   omniauth:
     facebook:
@@ -333,7 +319,6 @@ bs:
     retire_form:
       title: Povuci prijedlog
       warning: "Ako povučete prijedlog, i dalje će moći dobijati podršku, ali će biti uklonjen sa glavne liste, te će se pokazivati poruka svim korisnicima da autor smatra da prijedlog više ne treba podržavati"
-      retired_reason_label: Razlog što povlačite prijedlog
       retired_reason_blank: Odaberite opciju
       retired_explanation_placeholder: Objasnite ukratko zašto mislite da ovaj prijedlog više ne treba podržavati
       submit_button: Povucite prijedlog
@@ -344,14 +329,8 @@ bs:
       done: Gotovo
       other: Drugo
     form:
-      geozone: Područje
-      proposal_responsible_name: Puno ime i prezime osobe koja podnosi prijedlog
       proposal_responsible_name_note: "(pojedinačno ili kao predstavnik zajednice; ovaj podatak se ne vidi javno)"
-      proposal_summary: Sažetak prijedloga
       proposal_summary_note: "(maksimalno 200 karaktera)"
-      proposal_text: Tekst prijedloga
-      proposal_title: Naziv prijedloga
-      proposal_video_url: Link za eksterni video
       proposal_video_url_note: Možete dodati link za YouTube ili Vimeo
       tag_category_label: "Kategorije"
       tags_instructions: "Taguj prijedlog. Možeš birati iz predloženih kategorija ili dodati vlastiti tag"
@@ -463,7 +442,6 @@ bs:
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
       flag: Nekoliko korisnika je označilo prijedlog neprikladnim.
-      login_to_comment: Moraš se prijaviti %{signin} ili otvoriti profil %{signup} kako bi napisao/la komentar.
       notifications_tab: Obavijesti
       milestones_tab: Rokovi
       retired_warning: "Autor smatra da prijedlog više ne treba podržavati."
@@ -573,7 +551,6 @@ bs:
           other: "%{count} odgovora"
         view_results: Pokaži rezultate
         edit_poll: Edituj anketu
-        show_results: Pokaži rezultate
         show_results_help: Ako označite ovu kockicu, rezultati će biti javni i vidljivi svim korisnicima
       form:
         add_question: Dodaj pitanje
@@ -648,9 +625,6 @@ bs:
       back: Nazad na glasanje
       cant_answer_not_logged_in: "Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi učestvovali."
       comments_tab: Komentari
-      login_to_comment: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi napisali komentar.
-      signin: Prijavi se
-      signup: Otvori nalog
       cant_answer_verify_html: "Moraš (potvrditi link) %{verify_link} kako bi odgovorio."
       verify_link: "potvrdite svoj nalog"
       cant_answer_expired: "Ova glasačka anketa je završena."
@@ -686,8 +660,6 @@ bs:
   proposal_notifications:
     new:
       title: "Pošalji poruku"
-      title_label: "Naziv"
-      body_label: "Poruka"
       submit_button: "Pošalji poruku"
       info_about_receivers_html: "Poruka će se poslati na adresu/adrese <strong>%{count} čovjeka/ljudi</strong> i vidjeće se na %{proposal_page}. <br> Poruke se ne šalju odmah, korisnici periodično dobijaju emailove sa obavijestima o prijedlozima."
       proposal_page: "stranica od projedloga"
@@ -771,7 +743,6 @@ bs:
       districts: "Okruzi"
       districts_list: "Lista okruga"
       categories: "Kategorije"
-    target_blank_html: " (link se otvara u novom prozoru)"
     you_are_in: "Vi ste u"
     unflag: Ukloni oznaku
     unfollow_entity: "Ne prati više %{entity}"
@@ -817,16 +788,10 @@ bs:
   users:
     direct_messages:
       new:
-        body_label: Poruka
         direct_messages_bloqued: "Korisnik je odabrao da ne prima direktne poruke"
         submit_button: Pošalji poruku
         title: Pošalji privatnu poruku %{receiver}
-        title_label: Naziv
         verified_only: (Potvrdite nalog) %{verify_account} kako bi poslali privatnu poruku
-        verify_account: potvrdi nalog
-        authenticate: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
-        signin: prijava
-        signup: otvaranje naloga
       show:
         receiver: Poruka poslana %{receiver}
     show:
@@ -879,12 +844,8 @@ bs:
     comment_unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} da bi glasali.
     disagree: Ne slažem se
     organizations: Organizacije ne mogu glasati
-    signin: Prijavi se
-    signup: Otvori nalog
     supports: Glasovi podrške
-    unauthenticated: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
     verified_only: Samo korisnici sa potvrđenim nalogom mogu glasati za prijedloge; %{verify_account}.
-    verify_account: potvrdi nalog
     budget_investments:
       not_logged_in: Morate se prijaviti %{signin} ili otvoriti nalog %{signup} kako bi nastavili.
       not_verified: Samo korisnici sa potvrđenim nalogom mogu glasati za investicione projekte; %{verify_account}.
@@ -964,8 +925,6 @@ bs:
     help:
       alt: Odaberite tekst na koji želite dati komentar i pritisnite dugme olovkom.
       text: Kako bi dali komentar na ovaj dokument, morate se prijaviti %{sign_in} ili otvoriti profil %{sign_up}. Nakon toga, odaberite tekst na koji želite dati komentar i pritisnite dugme olovkom.
-      text_sign_in: logiranje
-      text_sign_up: registracija
       title: Kako mogu dati komentar na ovaj dokument?
   links:
     form:
