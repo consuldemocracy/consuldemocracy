@@ -27,13 +27,11 @@ de:
         description: "Im %{link}-Abschnitt können Sie Anträge an den Stadtrat stellen. Die Anträge brauchen dann Unterstützung. Wenn Ihr Antrag ausreichend Unterstützung bekommt, wird er zur öffentlichen Wahl freigegeben. Anträge, die durch Bürgerstimmen bestätigt wurden, werden vom Stadtrat angenommen und umgesetzt."
         link: "Bürgervorschläge"
         image_alt: "Klicken Sie hier um den Vorschlag zu unterstützen"
-        figcaption_html: 'Button zur "Unterstützung" eines Vorschlags.'
       budgets:
         title: "partizipative Haushaltsmittel"
         description: "Der %{link}-Abschnitt hilft Personen eine direkte Entscheidung zu treffen, für was das kommunale Budget ausgegeben werden soll."
         link: "Bürgerhaushalte"
         image_alt: "Verschiedene Phasen eines partizipativen Haushalts"
-        figcaption_html: '"Unterstützungs-" und "Abstimmungs-"Phasen des partizipativen Haushaltes.'
       polls:
         title: "Umfragen"
         description: "Der %{link}-Abschnitt wird aktiviert, wann immer ein Antrag 1% an Unterstützung erreicht und zur Abstimmung übergeht, oder wenn der Stadtrat ein Problem zur Abstimmung vorlegt."
@@ -149,10 +147,7 @@ de:
     titles:
       help: "Was ist %{org}? -Bürgerbeteiligung"
     verify:
-      code: Code, den Sie per Brief/SMS erhalten haben
-      email: E-Mail
       info: "Um Ihr Konto zu verifizieren, geben Sie bitte Ihre Zugangsdaten ein:"
       info_code: "Bitte geben Sie nun Ihren Code, den Sie per Post/SMS erhalten haben ein:"
-      password: Passwort
       submit: Mein Konto verifizieren
       title: Verifizieren Sie Ihr Benutzerkonto
