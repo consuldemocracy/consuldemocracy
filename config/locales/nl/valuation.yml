@@ -27,10 +27,6 @@ nl:
         assigned_to: "Assigned to %{valuator}"
         title: Budget bestemmingen
         edit: Bewerk dossier
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
-        no_valuators_assigned: Geen beoordelaars toegewezen
         table_id: ID
         table_title: Title
         table_heading_name: Kop naam
@@ -61,16 +57,9 @@ nl:
         dossier: Dossier
         price_html: "Price (%{currency})"
         price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
-        price_explanation_html: Price explanation
         feasibility: Feasibility
-        feasible: Haalbaar
-        unfeasible: Onhaalbaar
-        undefined_feasible: In afwachting
-        feasible_explanation_html: Feasibility explanation
-        valuation_finished: Beoordeling voltooid
         valuation_finished_alert: "Dit rapport als voltooid markeren? Daarna kan het niet meer worden gewijzigd."
         not_feasible_alert: "Een email met de beoordeling van de haalbaarheid wordt verstuurd aan de auteur van het project."
-        duration_html: Tijdsspanne
         save: Bewaar wijzigingen
       notice:
         valuate: "Dossier updated"
