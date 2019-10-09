@@ -112,8 +112,6 @@ sl:
           undecided: Neodločeno
           unfeasible: Neizvedljivo
           winners: Zmagovalci
-          one_filter_html: "Trenutno vklopljeni filtri: <b><em>%{filter}</em></b>"
-          two_filters_html: "Trenutno vklopljeni filtri: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtriraj
         download_current_selection: "Prenesi trenuten izbor"
@@ -258,7 +256,6 @@ sl:
           form:
             error: Napaka
         form:
-          title_html: 'Urejanje <span class="strong">%{draft_version_title}</span> iz procesa <span class="strong">%{process_title}</span>'
           launch_text_editor: Začeni urejevalnik besedila
           close_text_editor: Zapri urejevalnik besedila
           use_markdown: Uporabi markdown za formatiranje besedila
