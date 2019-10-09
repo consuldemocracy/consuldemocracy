@@ -52,7 +52,6 @@ hr:
           back_to_index: Razumijem; idi natrag na glavnu stranicu
           instructions_1_html: "<strong>Mi ćemo vas uskoro kontaktirati</strong> kako bismo provjerili da ste zastupnik ovog kolektiva."
           instructions_2_html: Za vrijeme dok se Vaš <strong>email provjerava</strong>, poslali smo Vam <strong>poveznicu da potvrdite svoj račun</strong>.
-          instructions_3_html: Jednom kada dobijete potvrdu možete započeti sudjelovati kao neprovjeren kolektiv.
           thank_you_html: Hvala vam na registraciji vašeg kolektiva na stranici. Sada se <strong>vrši verifikacija</strong>.
           title: Registracija organizacije / kolektiva
     passwords:
@@ -124,6 +123,5 @@ hr:
         success:
           back_to_index: Razumijem; idi nazad na glavnu stranicu
           instructions_1_html: Molimo <b>provjerite vaš emial</b> - mi smo vam poslali <b> link potvrde za vaš račun</b>.
-          instructions_2_html: Nakon potvrde, možete započeti sa sudjelovanjem.
           thank_you_html: Hvala na registraciji na stranicu. Vi morate sada <b>potvrditi vašu email adresu</b>.
           title: Potvrdite vašu email adresu
