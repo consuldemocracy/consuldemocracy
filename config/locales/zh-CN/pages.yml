@@ -18,7 +18,6 @@ zh-CN:
         title: "辩论"
         description: "在%{link} 部分您可以向他人展示和分享您对与城市相关的问题的意见。它也是一个产生想法的地方，通过%{org} 的其他部分，能让市政局采取具体行动。"
         link: "公民辩论"
-        feature_html: "您可以打开辩论，评论和评估，使用<strong>我同意</strong>或<strong>我不同意</strong>。为此您必须%{link}。"
         feature_link: "在%{org} 注册"
         image_alt: "为辩论评分的按钮"
         figcaption: '为辩论评分的“我同意”和“我不同意”按钮'
@@ -155,7 +154,6 @@ zh-CN:
               description_column: 减小字体大小
       compatibility:
         title: 与标准和视觉设计兼容
-        description_html: '本网站的所有页面均符合<strong>辅助功能指南</strong>或者属于W3C的<abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> 工作组建立的无障碍设计的一般原则。'
     titles:
       help: "什么是%{org}？－ 公民参与"
     verify:
