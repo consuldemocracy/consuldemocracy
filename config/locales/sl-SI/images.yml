@@ -4,7 +4,6 @@ sl:
     form:
       title: Opisna slika
       title_placeholder: Dodaj opisen naslov slike
-      attachment_label: Izberi sliko
       delete_button: Odstrani sliko
       note: "Naložiš lahko datoteke naslednjih vrst: %{accepted_content_types}, velike največ %{max_file_size} MB."
       add_new_image: Dodaj sliko
