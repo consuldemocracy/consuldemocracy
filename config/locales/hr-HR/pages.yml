@@ -18,7 +18,6 @@ hr:
         title: "Rasprave"
         description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
         link: "rasprave građana"
-        feature_html: "Možete otvoriti raspravu, komentirati i evaluirati ih sa <strong> ja se slažem</strong> ili <strong> ja se ne slažem</strong>. Za to trebate %{link}."
         feature_link: "registrirajte se u %{org}"
         image_alt: "Gumbi za rangiranje rasprava"
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
@@ -155,7 +154,6 @@ hr:
               description_column: Umanjuje veličinu teksta
       compatibility:
         title: Kompatibilno sa standardima i vizualnim dizajnom
-        description_html: 'Sve stranice webstranice su u skladu s <strong> Smjernicama za Pristupačnost</strong> ili Generalnim Prinicipima Pristupa Dizajnu uspostavljenog od strane Radne Skupine <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pripada W3C.'
     titles:
       help: "Što je %{org}? - Građansko sudjelovanje"
     verify:
