@@ -116,9 +116,6 @@ tr:
         button: Ara
         placeholder: Tartışmalarda ara...
         title: Ara
-      search_results_html:
-        one: " <strong>'%{search_term}'</strong> terimini içeren"
-        other: " şu terimi içeren<strong>'%{search_term}'</strong>"
       select_order: Şuna göre sırala
       start_debate: Bir tartışma başlat
       title: Tartışmalar
@@ -169,7 +166,6 @@ tr:
     direct_message: özel mesaj
     error: hata
     errors: hatalar
-    not_saved_html: "bu %{resource} 'un kaydedilmesini engelledi. <br>Lütfen nasıl düzeltileceğini öğrenmek için işaretli alanları kontrol edin:"
     policy: Gizlilik Politikası
     proposal: Öneri
     proposal_notification: "Bildirim"
@@ -300,7 +296,6 @@ tr:
     created:
       title: Tebrikler! İlk adımı attınız.
       motivation: "Önerinizin başarılı olması için iletişim stratejinizi hazırlamak önemlidir. İlk birkaç gün son derece belirleyicidir."
-      motivation_2_html: "<strong>İletişim stratejinizle ilgili yardım almak istiyorsanız, teklifinizi taslak olarak bırakın. Size yol göstereceğiz.</strong>"
       publish: Hayır, öneriyi yayınlamak istiyorum
       dashboard: Evet, yardım istiyorum ve önerimi daha sonra yayınlayacağım
       preview_title: Önerinizi yayınladığınız zaman bu şekilde görünecektir
@@ -374,9 +369,6 @@ tr:
         button: Ara
         placeholder: Önerileri ara...
         title: Ara
-      search_results_html:
-        one: " <strong>'%{search_term}'</strong> terimini içeren"
-        other: " şu terimi içeren <strong>'%{search_term}'</strong>"
       select_order: Şuna göre sırala
       select_order_long: "Şuna göre önerileri görüntülüyorsunuz:"
       start_proposal: Bir öneri oluştur
@@ -565,10 +557,8 @@ tr:
       index:
         title: Görsel önizlemesi
         poster_subtitle: "bana destek verin! ;)"
-        intro_text_html: "<strong> Kendi vatandaş önerim ile %{org}</strong>'ya katılıyorum ve yalnızca sizin sayenizde hepimizin istediği değişimi gerçekleştirmek için gerekli desteğe ulaşabilirim."
         proposal_code: "Öneri kodu: %{code}"
         support: Önerimi destekle
-        footer_html: "<strong> Bu bağlantıyı %{link} ziyaret edin ve önerimi destekleyin.</strong> Çok fazla desteğe ihtiyacım var. Senin de destekle. Teşekkür ederim!"
       new:
         title: Önerinizin görseli
       options:
@@ -586,7 +576,6 @@ tr:
         sent: E-posta gönderildi
     mailer:
       forward:
-        subtitle_html: "Beni destekliyorsanız, <br> başaracağız."
         support_button: Bu öneriyi destekle
         share_in: Paylaş
         hi: "Merhaba!"
@@ -637,7 +626,6 @@ tr:
       back: Oylamaya geri dön
       cant_answer_not_logged_in: "Katılmak için %{signin} veya %{signup} yapmalısınız."
       comments_tab: Yorumlar
-      cant_answer_verify_html: "Cevaplamak için %{verify_link} yapmanız gerekiyor."
       verify_link: "hesabınızı doğrulayın"
       cant_answer_expired: "Bu anket tamamlandı."
       cant_answer_wrong_geozone: "Bu soru sizin bulunduğunuz bölgede uygulanabilir değil."
@@ -684,7 +672,6 @@ tr:
     new:
       title: "Mesaj gönder"
       submit_button: "Mesaj gönder"
-      info_about_receivers_html: "Bu mesaj <strong>%{count} sayıda kişiye gönderilecek </strong> ve %{proposal_page} 'da görünecektir.<br> Mesajlar anında gönderilmez, kullanıcılar düzenli aralıklarla tüm bildirimleri içeren bir e-posta alır."
       proposal_page: "öneri'ler sayfası"
     show:
       back: "Faaliyetlerime geri dön"
@@ -724,17 +711,6 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Şimdi bu yatırım projesini takip ediyorsunuz! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
-        destroy:
-          notice_html: "Bu yatırım projesini takip etmeyi bıraktınız! </br> Artık bu projeyle ilgili bildirimleri almayacaksınız."
-      proposal:
-        create:
-          notice_html: "Şimdi bu vatandaş önerisini takip ediyorsunuz! </br> Gelişmelerden haberdar olmanız için değişiklikleri size bildireceğiz."
-        destroy:
-          notice_html: "Bu vatandaş önerisini takip etmeyi bıraktınız! </br> Artık bu öneriyle ilgili bildirimleri almayacaksınız."
     hide: Gizle
     print:
       print_button: Bu bilgiyi yazdır
@@ -795,10 +771,6 @@ tr:
       select_language_prompt: Dil seç
       remove_language: Dili kaldır
       add_language: Dil ekle
-      languages_in_use_html:
-        zero: "<span class='js-languages-count'>0</span> kullanılan diller"
-        one: "<span class='js-languages-count'>1</span> kullanılan dil"
-        other: "<span class='js-languages-count'>%{count}</span> kullanılan diller"
   social:
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
