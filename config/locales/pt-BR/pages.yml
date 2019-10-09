@@ -27,13 +27,11 @@ pt-BR:
         description: "Na seção %{link} você pode fazer propostas para a Prefeitura realizá-los. As propostas necessitam de apoio, e se alcançam o apoio suficiente, são colocadas em votação pública. As propostas aprovadas nestas votações pelos cidadãos são aceitas pela Prefeitura e realizadas."
         link: "propostas dos cidadãos"
         image_alt: "Botão para apoiar uma proposta"
-        figcaption_html: 'Botão para "apoiar" uma proposta.'
       budgets:
         title: "Orçamento participativo"
         description: "A seção %{link} auxilia às pessoas a decidirem diretamente qual o destino de uma parte do orçamento municipal."
         link: "orçamentos participativos"
         image_alt: "Diferentes fases de um orçamento participativo"
-        figcaption_html: 'Fases de "Apoio" e "Votação" dos orçamentos participativos.'
       polls:
         title: "Votações"
         description: "A seção %{link} é ativada toda vez que uma proposta atinge 1% de apoio e vai para votação, ou quando a Prefeitura propõe uma questão para as pessoas decidirem."
@@ -161,10 +159,7 @@ pt-BR:
     titles:
       help: "O que é %{org}? -Participação cidadã"
     verify:
-      code: Código que você recebeu na carta
-      email: Email
       info: "Para verificar sua conta introduza seus dados de acesso:"
       info_code: "Agora introduza o código recebido na carta:"
-      password: Senha
       submit: Verificar minha conta
       title: Verifique sua conta
