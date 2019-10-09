@@ -51,8 +51,6 @@ ca:
         assigned_valuators: Avaluadors asignats
       edit:
         dossier: Informe
-        price_html: "Cost (%{currency}) <small>(dada pública)</small>"
-        price_first_year_html: "Cost en el primer any (%{currency}) <small>(opcional, privat)</small>"
         feasibility: Viabilitat
         save: Guardar canvis
       notice:
