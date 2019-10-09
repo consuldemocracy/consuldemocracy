@@ -1,10 +1,11 @@
 namespace :deploy do
-  desc 'Commands for unicorn application'
-  %w(start stop force-stop restart upgrade reopen-logs).each do |command|
-    task command.to_sym do
-      on roles(:app), in: :sequence, wait: 5 do
-        execute "/etc/init.d/unicorn_#{fetch(:full_app_name)} #{command}"
-      end
+  desc "Restart Unicorn"
+  task :restart do
+    on roles(:app) do
+      execute "kill -QUIT `cat #{deploy_to}/pids/unicorn.pid`; true"
+      execute "kill -QUIT `cat #{shared_path}/pids/unicorn.pid`; true"
+      execute "kill -QUIT `cat #{shared_path}/tmp/pids/unicorn.pid`; true"
+      execute "cd #{release_path} && bundle exec unicorn -c config/unicorn.rb -E production -D"
     end
   end
 end
