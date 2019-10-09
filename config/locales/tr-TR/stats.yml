@@ -26,7 +26,6 @@ tr:
       by_heading: "Aşamalara ve başlıklara göre katılımcılar"
       total: "Toplam"
       heading: "Başlık"
-      investments_sent_html: "Gönderilen yatırım önerileri"
       participants_support_phase: "Katılımcıların destek aşaması"
       participants_vote_phase: "Katılımcıların oy verme aşaması"
       participants_every_phase: "Toplam katılımcılar"
