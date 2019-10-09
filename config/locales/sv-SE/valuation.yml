@@ -26,10 +26,6 @@ sv:
         assigned_to: "Tilldelad %{valuator}"
         title: Budgetförslag
         edit: Redigera rapport
-        valuators_assigned:
-          one: Ansvarig bedömare
-          other: "%{count} ansvariga bedömare"
-        no_valuators_assigned: Inga ansvariga bedömare
         table_id: ID
         table_title: Titel
         table_heading_name: Område
@@ -60,16 +56,9 @@ sv:
         dossier: Rapport
         price_html: "Kostnad (%{currency})"
         price_first_year_html: "Kostnad under första året (%{currency}) <small>(ej obligatoriskt, ej publikt)</small>"
-        price_explanation_html: Kostnadsförklaring
         feasibility: Genomförbarhet
-        feasible: Genomförbart
-        unfeasible: Ej genomförbart
-        undefined_feasible: Väntande
-        feasible_explanation_html: Förklaring av genomförbarhet
-        valuation_finished: Kostnadsberäkning avslutad
         valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
         not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."
-        duration_html: Tidsram
         save: Spara ändringar
       notice:
         valuate: "Uppdaterad rapport"
