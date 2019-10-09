@@ -24,11 +24,6 @@ ca:
           with_inactive: Inactius
         preview: Previsualitzar
       banner:
-        title: Títol
-        description: Descripció detallada
-        target_url: enllaç
-        post_started_at: Inici de publicació
-        post_ended_at: Fi de publicació
         sections:
           debates: Debats
           proposals: Propostes ciutadanes
@@ -87,20 +82,11 @@ ca:
         title: Nou pressupost ciutadà
     budget_groups:
       name: "Nome"
-      form:
-        name: "Nom del grup"
     budget_headings:
-      name: "Nome"
       form:
-        name: "Nom de la partida"
-        amount: "quantitat"
         submit: "Desar partida"
     budget_phases:
       edit:
-        start_date: Data d'inici del procés
-        end_date: Data de fi del procés
-        summary: Resumen
-        description: Descripció detallada
         save_changes: Guardar canvis
     budget_investments:
       index:
@@ -163,7 +149,6 @@ ca:
         assigned_valuators: Avaluadors
         select_heading: seleccionar partida
         submit_button: Actualitzar
-        tags: Etiquetes
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Cercar inviables
@@ -223,7 +208,6 @@ ca:
           summary_placeholder: Resum curt de la descripció
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que pugui ser d'interès
-          homepage: Descripció detallada
         index:
           create: nou procés
           delete: Borrar
@@ -293,9 +277,6 @@ ca:
           back: Tornar
           title: Crear nova versió
           submit_button: crear versió
-        statuses:
-          draft: Esborrany
-          published: Publicada
         table:
           title: Títol
           created_at: creat
@@ -320,7 +301,6 @@ ca:
             error: error
         form:
           add_option: + Afegir resposta tancada
-          title: pregunta
           value_placeholder: Escriu una resposta tancada
         index:
           back: Tornar
@@ -453,8 +433,6 @@ ca:
       index:
         title: "Grup d'avaluadors"
         name: "Nome"
-      form:
-        name: "Nom del grup"
     poll_officers:
       index:
         title: Presidents de taula
@@ -556,7 +534,6 @@ ca:
         title: "Editar pregunta ciutadana"
       new:
         title: "Crear pregunta ciutadana"
-        poll_label: "votació"
       answers:
         images:
           add_image: "Afegir imatge"
@@ -602,8 +579,6 @@ ca:
         location: "Ubicació"
       new:
         title: "Nova bústia"
-        name: "Nome"
-        location: "Ubicació"
         submit_button: "Crear bústia"
       edit:
         title: "Editar bústia"
@@ -809,8 +784,6 @@ ca:
       index:
         add_tag: Afegeix un nou tema de debat
         title: Temes de debat
-      name:
-        placeholder: Escriu el nom del tema
     users:
       columns:
         name: Nome
@@ -892,8 +865,6 @@ ca:
           created_at: creat
           status: Estat
           updated_at: Última actualització
-          status_draft: Esborrany
-          status_published: Publicada
           title: Títol
           slug: URL
         cards:
