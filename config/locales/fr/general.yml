@@ -2,8 +2,6 @@ fr:
   account:
     show:
       change_credentials_link: Changer mes autorisations
-      email_on_comment_label: Me notifier par email quand quelqu'un commente mes propositions ou mes débats
-      email_on_comment_reply_label: Me notifier par email quand quelqu'un répond à mes commentaires
       erase_account_link: Supprimer mon compte
       finish_verification: Finir la vérification
       notifications: Notifications
@@ -11,18 +9,10 @@ fr:
       organization_responsible_name_placeholder: Représentant de l'organisation ou du collectif
       personal: Détails personnels
       phone_number_label: Numéro de téléphone
-      public_activity_label: Garder publique ma liste d'activités
-      public_interests_label: Rendre public les étiquettes des éléments que je suis
       public_interests_my_title_list: Étiquettes des éléments que vous suivez
       public_interests_user_title_list: Étiquettes des éléments que l'utilisateur suit
       save_changes_submit: Sauvegarder des changements
-      subscription_to_website_newsletter_label: Recevoir par email la newsletter
-      email_on_direct_message_label: Recevoir un e-mail en cas de message personnel
-      email_digest_label: Recevoir un résumé des notifications sur les propositions
-      official_position_badge_label: Afficher le badge de position officielle
       recommendations: Recommandations
-      show_debates_recommendations: Voir les recommandations des discussions
-      show_proposals_recommendations: Voir les recommandations de discussions
       title: Mon compte
       user_permission_debates: Participez aux débats !
       user_permission_info: Avec votre compte, vous pouvez...
@@ -41,7 +31,6 @@ fr:
   comments:
     comments_closed: Les commentaires sont fermés
     verified_only: Pour participer, %{verify_account}
-    verify_account: vérifier votre compte
     comment:
       admin: Administrateur
       author: Auteur
@@ -95,7 +84,6 @@ fr:
     form:
       debate_title: Titre du débat
       tags_instructions: Étiquetter ce débat
-      tags_label: Sujets
       tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
     index:
       featured_debates: Mis en avant
@@ -156,7 +144,6 @@ fr:
       comments_title: Commentaires
       edit_debate_link: Éditer
       flag: Ce débat a été étiquetté comme inapproprié par plusieurs utilisateurs
-      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
       share: Partager
       author: Auteur
     update:
@@ -261,7 +248,6 @@ fr:
   map:
     title: "Secteurs"
     proposal_for_district: "Commencer une proposition pour votre secteur"
-    select_district: Portée de l'opération
     start_proposal: Créer une proposition
   omniauth:
     facebook:
@@ -294,7 +280,6 @@ fr:
     retire_form:
       title: Retirer la proposition
       warning: "Si vous retirez cette proposition, elle pourra toujours accepter les soutiens mais elle sera retirée de la liste principale et un message indiquera que l'auteur ne souhaite plus que cette proposition soit soutenue"
-      retired_reason_label: Raison pour retirer la proposition
       retired_reason_blank: Choisir une option
       retired_explanation_placeholder: Expliquez en bref pourquoi vous pensez que cette proposition ne devrait plus recevoir de soutiens
       submit_button: Retirer la proposition
@@ -305,14 +290,8 @@ fr:
       done: Réalisé
       other: Autre
     form:
-      geozone: Portée de l'opération
-      proposal_responsible_name: Nom complet de la personne qui soumet la proposition
       proposal_responsible_name_note: "(individuellement ou comme représentant d'un\ncollectif; ne sera pas public)"
-      proposal_summary: Résumé de la proposition
       proposal_summary_note: "(maximum 200 caractères)"
-      proposal_text: Texte de la proposition
-      proposal_title: Titre de la proposition
-      proposal_video_url: Lien vers une vidéo externe
       proposal_video_url_note: Vous pouvez ajouter un lien vers YouTube ou Vimeo
       tag_category_label: "Catégories"
       tags_instructions: "Étiquetter cette proposition. Vous pouvez choisir parmi\nles catégories proposées ou ajouter la vôtre"
@@ -416,7 +395,6 @@ fr:
         other: "%{count} commentaires"
       comments_tab: Commentaires
       flag: Cette proposition a été signalée comme inappropriée par plusieurs utilisateurs
-      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
       notifications_tab: Notifications
       milestones_tab: Jalons
       retired_warning: "L’auteur considère que cette proposition ne devrait pas recevoir plus de supports."
@@ -461,9 +439,6 @@ fr:
       back: Retour au vote
       cant_answer_not_logged_in: "Il est nécessaire de %{signin} ou de %{signup} pour participer."
       comments_tab: Commentaires
-      login_to_comment: Vous devez %{signin} ou %{signup} pour laisser un commentaire.
-      signin: Se connecter
-      signup: S'inscrire
       cant_answer_verify_html: "Vous devez %{verify_link} pour répondre."
       verify_link: "Vérifier votre compte"
       cant_answer_expired: "Ce vote est terminé."
@@ -496,8 +471,6 @@ fr:
   proposal_notifications:
     new:
       title: "Envoyer un message"
-      title_label: "Titre"
-      body_label: "Message"
       submit_button: "Envoyer un message"
       info_about_receivers_html: "Ce message sera envoyé à <strong>%{count} personnes</strong> et sera visible sur %{proposal_page}.<br> Les messages ne sont pas envoyés immédiatement, les utilisateurs reçoivent périodiquement un email avec les notifications issues de l'ensemble des propositions."
       proposal_page: "la page de la proposition"
@@ -578,7 +551,6 @@ fr:
       districts: "Secteurs"
       districts_list: "Liste des districts"
       categories: "Catégories"
-    target_blank_html: " (ce lien s’ouvre dans une nouvelle fenêtre)"
     you_are_in: "Vous êtes à"
     unflag: Désignaler
     unfollow_entity: "Ne plus suivre %{entity}"
@@ -624,16 +596,10 @@ fr:
   users:
     direct_messages:
       new:
-        body_label: Message
         direct_messages_bloqued: "Cet utilisateur a décidé de ne pas recevoir de messages privés"
         submit_button: Envoyer un message
         title: Envoyer un message privé à %{receiver}
-        title_label: Titre
         verified_only: Pour envoyer un message privé, vous devez %{verify_account}
-        verify_account: vérifier votre compte
-        authenticate: Merci de vous %{signin} ou %{signup} pour continuer.
-        signin: connecter
-        signup: enregistrer
       show:
         receiver: Message envoyé à %{receiver}
     show:
@@ -676,12 +642,8 @@ fr:
     comment_unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour voter.
     disagree: Je ne suis pas d'accord
     organizations: Les organisations ne sont pas autorisées à voter
-    signin: Se connecter
-    signup: S'inscrire
     supports: Soutiens
-    unauthenticated: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
     verified_only: Seuls les utilisateurs vérifiés peuvent voter sur les propositions; %{verify_account}.
-    verify_account: vérifier votre compte
     budget_investments:
       not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
       not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions d'investissement, %{verify_account}.
@@ -759,6 +721,4 @@ fr:
     help:
       alt: Sélectionnez le texte que vous souhaitez commenter et appuyez sur le bouton avec le crayon.
       text: Pour commenter ce document, il est nécessaire de %{sign_in} ou %{sign_up}. Puis, sélectionnez le texte que vous souhaitez commenter et pressez le bouton avec le crayon.
-      text_sign_in: se connecter
-      text_sign_up: s'inscrire
       title: Comment puis-je commenter ce document ?
