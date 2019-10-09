@@ -138,9 +138,9 @@ ca:
         password_confirmation: "Confirmació de contrasenya"
         password: "Clau"
         current_password: "contrasenya actual"
-        phone_number: "telèfon"
         official_position: "Càrrec públic"
         official_level: "Nivell del càrrec"
+        phone_number: "telèfon"
         redeemable_code: "Codi de verificació per carta (opcional)"
       organization:
         name: "Nom de l'organització"
@@ -237,7 +237,7 @@ ca:
       poll/question/answer/video:
         title: Títol
       newsletter:
-        from: Des de
+        from: "Des de"
       admin_notification:
         title: Títol
         link: enllaç
