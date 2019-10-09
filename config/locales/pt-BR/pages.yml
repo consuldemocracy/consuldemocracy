@@ -18,7 +18,6 @@ pt-BR:
         title: "Debates"
         description: "Na seção %{link} você pode apresentar e compartilhar sua opinião com outras pessoas sobre questões de seu interesse relacionadas à cidade. É também um lugar para gerar ideias que através de outras seções de %{org} levam a ações concretas pela Prefeitura."
         link: "debates de cidadãos"
-        feature_html: "Você pode abrir debates, comentar e avaliá-los com o <strong>concordo</strong> ou <strong>não concordo</strong>. Para isso você tem que %{link}."
         feature_link: "registre-se em %{org}"
         image_alt: "Botões para classificar os debates"
         figcaption: '"Eu concordo" e "Discordo" botões para classificar os debates.'
@@ -155,7 +154,6 @@ pt-BR:
               description_column: Diminui o tamanho do texto
       compatibility:
         title: Compatibilidade com padrões e design visual
-        description_html: 'Todas as páginas deste site estão de acordo com <strong> Diretrizes de Acessibilidade </strong> ou com os Princípios gerais de Design Acessível estabelecidos pelo grupo de trabalho <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > pertencentes a W3C.'
     titles:
       help: "O que é %{org}? -Participação cidadã"
     verify:
