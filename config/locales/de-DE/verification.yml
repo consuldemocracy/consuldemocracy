@@ -47,7 +47,6 @@ de:
       new:
         accept_terms_text: Ich stimme den %{terms_url} des Melderegisters zu
         accept_terms_text_title: Ich stimme den Allgemeinen Nutzungsbedingungen des Melderegisters zu
-        date_of_birth: Geburtsdatum
         document_number: Dokumentennummern
         document_number_help_title: Hilfe
         document_number_help_text_html: "<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P"
@@ -55,12 +54,10 @@ de:
           passport: Pass
           residence_card: Aufenthaltsbescheinigung
           spanish_id: Personalausweis
-        document_type_label: Dokumententyp
         error_not_allowed_age: Sie erfüllen nicht das erforderliche Alter um teilnehmenzu können
         error_not_allowed_postal_code: Für die Verifizierung müssen Sie registriert sein.
         error_verifying_census: Das Meldeamt konnte ihre Daten nicht verifizieren. Bitte bestätigen Sie, dass ihre Meldedaten korrekt sind, indem Sie das Amt persönlich oder telefonisch kontaktieren %{offices}.
         form_errors: haben die Überprüfung Ihres Wohnsitzes verhindert
-        postal_code: Postleitzahl
         postal_code_note: Um Ihr Benutzerkonto zu verifizieren, müssen Sie registriert sein
         terms: Allgemeine Nutzungsbedingungen
         title: Wohnsitz bestätigen
@@ -70,7 +67,6 @@ de:
         flash:
           success: Geben Sie den Bestätigungscode ein, den Sie per SMS erhalten haben
       edit:
-        confirmation_code: Geben Sie den Code ein, den Sie auf Ihrem Handy erhalten haben
         resend_sms_link: Hier klicken, um erneut zu senden
         resend_sms_text: Haben Sie keine Nachricht mit einem Bestätigungscode erhalten?
         submit_button: Senden
