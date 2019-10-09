@@ -5,8 +5,6 @@ eu:
         table_name: Izena
     budget_groups:
       name: "Izena"
-    budget_headings:
-      name: "Izena"
     statuses:
       index:
         table_name: Izena
@@ -17,9 +15,6 @@ eu:
       processes:
         subnav:
           questions: Eztabaida
-      questions:
-        form:
-          title: Galdera
     managers:
       index:
         name: Izena
@@ -80,8 +75,6 @@ eu:
         table_answer: Erantzuna
     booths:
       index:
-        name: "Izena"
-      new:
         name: "Izena"
     officials:
       index:
