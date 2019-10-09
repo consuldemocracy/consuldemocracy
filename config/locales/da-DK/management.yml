@@ -32,8 +32,6 @@ da:
       index:
         title: Management
         info: Her kan du administrere brugere gennem de handlinger, der er angivet i menuen til venstre.
-    document_number: Dokumentnummer
-    document_type_label: Dokumenttype
     document_verifications:
       already_verified: Brugerkontoen er allerede verificeret.
       has_no_account_html: For at oprette en konto følg %{link} og klik på <b>"Tilmeld dig"</b>.
