@@ -367,9 +367,9 @@ ar:
         password_confirmation: "تأكيد كلمة المرور"
         password: "كلمة المرور"
         current_password: "كلمة المرور الحالية"
-        phone_number: "رقم الهاتف"
         official_position: "الموقف الرسمي"
         official_level: "المستوى الرسمي"
+        phone_number: "رقم الهاتف"
         redeemable_code: "رمز التحقق الواردة عبر البريد الإلكتروني"
       organization:
         name: "اسم المنظمة"
@@ -469,10 +469,10 @@ ar:
         text: التعليق
       document:
         title: عنوان
-        attachment: مرفق
+        attachment: "مرفق"
       image:
         title: عنوان
-        attachment: مرفق
+        attachment: "مرفق"
       poll/question/answer:
         title: الإجابة
         description: الوصف
@@ -485,7 +485,7 @@ ar:
       newsletter:
         segment_recipient: المستلمين
         subject: الموضوع
-        from: من
+        from: "من"
         body: محتوى البريد الإلكتروني
       admin_notification:
         segment_recipient: المستفيدين
