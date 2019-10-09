@@ -10,7 +10,6 @@ da:
         voted_html:
           one: "Du har stemt på <span>%{count}</span> projektidé."
           other: "Du har stemt på <span>%{count}</span> projektidéer."
-        voted_info_html: "Du kan til enhver tid ændre din stemme indtil denne fase slutter.<br> Det er ikke nødvendigt at investere alle de penge, der har til rådighed."
         voted_info_2: "Men du kan ændre din stemme til enhver tid indtil denne fase er lukket."
         zero: Du har endnu ikke stemt.
       reasons_for_not_balloting:
@@ -69,7 +68,6 @@ da:
         map_location: "Lokation"
         map_location_instructions: "Naviger kortet til den rette lokation og placer markøren."
         map_remove_marker: "Fjern markøren"
-        location: "Yderligere information vedrørende lokation"
         map_skip_checkbox: "Denne investering har ikke en konkret lokation"
       index:
         title: Deltagerbudgetter
@@ -95,11 +93,8 @@ da:
           check_ballot_link: "kontroller og bekræft min afstemning"
           zero: Du har endnu ikke stemt på projektidéer i denne gruppe.
           verified_only: "For at oprette en projektidé til det aktuelle deltagerbudget %{verify}."
-          verify_account: "verificer din konto"
           create: "Opret din projektidé"
           not_logged_in: "For at oprette en projektidé skal du %{sign_in} eller %{sign_up}."
-          sign_in: "log ind"
-          sign_up: "tilmeld dig"
           by_feasibility: Efter gennemførlighed
           feasible: Mulige projekter
           unfeasible: Umulige projekter
