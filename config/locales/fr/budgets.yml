@@ -7,18 +7,13 @@ fr:
         remaining: "Il vous reste <span>%{amount}</span> à investir."
         no_balloted_group_yet: "Vous n'avez pas encore voté dans ce groupe, allez voter !"
         remove: Supprimer le vote
-        voted_html:
-          one: "Vous avez voté pour <span>une</span> proposition."
-          other: "Vous avez voté pour <span>%{count}</span> propositions."
         zero: Vous n'avez voté pour aucune des propositions d'investissement.
       reasons_for_not_balloting:
         not_logged_in: Il est nécessaire de %{signin} ou de %{signup} pour continuer.
         not_verified: Seuls les utilisateurs vérifiés peuvent voter pour les propositions, %{verify_account}.
         organization: Les organisations ne sont pas autorisées à voter
         not_selected: Les propositions d'investissement non-sélectionnées ne peuvent être soutenues.
-        not_enough_money_html: "Vous avez déjà utilisé l'ensemble du budget disponible. <br><small>N’oubliez pas, vous pouvez %{change_ballot} à tout moment</small>"
         no_ballots_allowed: La phase de sélection est terminée.
-        different_heading_assigned_html: "Vous avez déjà voté pour une autre section : %{heading_link}"
         change_ballot: modifier votre vote
         casted_offline: Vous avez déjà participé en mode hors connexion
     groups:
@@ -77,17 +72,10 @@ fr:
           button: Chercher
           placeholder: Rechercher des propositions d'investissement...
           title: Chercher
-        search_results_html:
-          one: " contenant le terme <strong>'%{search_term}'</strong>"
-          other: " contenant le terme <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mon vote
-          voted_html:
-            one: "<strong>Vous avez voté une proposition pour un coût de %{amount_spent}</strong>"
-            other: "<strong>Vous avez voté %{count} propositions pour un coût de %{amount_spent}</strong>"
           voted_info: Vous pouvez %{link} à tout moment jusqu'à la clôture de cette phase. Vous n'avez pas besoin de dépenser tout le budget disponible.
           voted_info_link: modifier votre vote
-          different_heading_assigned_html: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
           change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
           check_ballot_link: "vérifier mon vote"
           zero: Vous n'avez voté pour aucune proposition d'investissement dans ce groupe.
@@ -107,9 +95,6 @@ fr:
         author_deleted: Utilisateur effacé
         price_explanation: Informations sur le coût <small>(optionnel, données publiques)</small>
         unfeasibility_explanation: Explication de l'infaisabilité
-        code_html: "Code de la proposition de dépense: <strong>%{code}</strong>"
-        location_html: "Lieu: <strong>%{location}</strong>"
-        organization_name_html: "Proposé au nom de : <strong>%{name}</strong>"
         share: Partager
         title: Propositions d'investissement
         supports: Soutiens
@@ -118,10 +103,7 @@ fr:
         comments_tab: Commentaires
         milestones_tab: Jalons
         author: Auteur
-        project_unfeasible_html: "Ce projet d'investissement <strong>a été marqué comme irréalisable</strong> et n'ira pas en phase de vote."
-        project_selected_html: "Ce projet d'investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote."
         project_winner: "Projet d'investissement gagnant"
-        project_not_selected_html: "Ce projet d'investissement <strong>n’a pas été sélectionné</strong> pour la phase de vote."
         see_price_explanation: Voir les informations détaillés du prix
       wrong_price_format: Nombres entiers uniquement
       investment:
@@ -139,7 +121,6 @@ fr:
         give_support: Soutenir
       header:
         check_ballot: Vérifier mon vote
-        different_heading_assigned_html: "Vous avez des votes actifs dans d'autres sections : %{heading_link}"
         change_ballot: "Si vous changez d'avis, vous pouvez supprimer vos votes dans %{check_ballot} et recommencer."
         check_ballot_link: "vérifier mon vote"
         price: "Cette rubrique dispose d’un budget de"
