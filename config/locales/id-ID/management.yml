@@ -20,8 +20,6 @@ id:
       index:
         title: Manajemen
         info: Di sini anda dapat mengatur pengguna melalui semua tindakan yang tercantum di menu sebelah kiri.
-    document_number: Nomor dokumen
-    document_type_label: Tipe dokumen
     document_verifications:
       already_verified: Akun pengguna ini sudah diverifikasi.
       has_no_account_html: Untuk membuat akun, pergi ke %{link} dan klik di <b>'Daftar'</b>di bagian kiri atas layar.
