@@ -26,9 +26,6 @@ zh-CN:
         assigned_to: "已分配给%{valuator}"
         title: 投资项目
         edit: 编辑档案
-        valuators_assigned:
-          other: "已分配%{count}位评估员"
-        no_valuators_assigned: 没有指定评估员
         table_id: ID
         table_title: 标题
         table_heading_name: 标题名称
@@ -59,16 +56,9 @@ zh-CN:
         dossier: 档案
         price_html: "价格 (%{currency})"
         price_first_year_html: "第一年的成本 (%{currency}) <small>(可选, 数据不公开)</small>"
-        price_explanation_html: 价格说明
         feasibility: 可行性
-        feasible: 可行
-        unfeasible: 不可行
-        undefined_feasible: 有待
-        feasible_explanation_html: 可行性说明
-        valuation_finished: 评估已完成
         valuation_finished_alert: "您确定要把此报告标记为已完成吗？如果您这样做了，将无法再修改。"
         not_feasible_alert: "立即发送电子邮件给项目的作者，并附有不可行的报告。"
-        duration_html: 时间范围
         save: 保存更改
       notice:
         valuate: "档案已更新"
