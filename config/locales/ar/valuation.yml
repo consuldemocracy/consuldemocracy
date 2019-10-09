@@ -27,14 +27,6 @@ ar:
         assigned_to: "تم تعيين %{valuator}"
         title: مشاريع استثمارية
         edit: تعديل الملف
-        valuators_assigned:
-          zero: "%{count} مقيّمين معيّنين"
-          one: مقيّم معيّن
-          two: "%{count} مقيّمين معيّنين"
-          few: "%{count} مقيّمين معيّنين"
-          many: "%{count} مقيّمين معيّنين"
-          other: "%{count} مقيّمين معيّنين"
-        no_valuators_assigned: لم يتم تعيين مقيّمين
         table_id: ID
         table_title: عنوان
         table_heading_name: اسم العنوان
@@ -66,16 +58,9 @@ ar:
         dossier: الملف
         price_html: "السعر (%{currency})"
         price_first_year_html: "التكلفة خلال أول سنة (%{currency}) <small>(بيانات اختيارية، البيانات ليست للكل)</small>"
-        price_explanation_html: توضيح الاسعار
         feasibility: الجدوى
-        feasible: مجدي
-        unfeasible: غير مجدي
-        undefined_feasible: معلق
-        feasible_explanation_html: تفسير مجدي \ ممكن
-        valuation_finished: انتهى التقييم
         valuation_finished_alert: "هل أنت متأكد من أنك تريد وضع علامة نهائي لهذا التقرير؟ بعد ذلك لا يمكن تعديله."
         not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
-        duration_html: الوقت المتاح
         save: حفظ التغييرات
       notice:
         valuate: "تم تحديث الملف"
