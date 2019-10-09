@@ -111,7 +111,11 @@ describe "Officing Results", :with_frozen_time do
       click_link "See results"
     end
 
-    expect(page).not_to have_content("7777")
+    within("#question_#{question_1.id}_0_result") do
+      expect(page).to have_content("5555")
+      expect(page).not_to have_content("7777")
+    end
+
     within("#white_results") { expect(page).to have_content("6") }
     within("#null_results")  { expect(page).to have_content("7") }
     within("#total_results") { expect(page).to have_content("8") }
