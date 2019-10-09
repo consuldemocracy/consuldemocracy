@@ -2,8 +2,6 @@ sv:
   account:
     show:
       change_credentials_link: Ändra mina uppgifter
-      email_on_comment_label: Meddela mig via e-post när någon kommenterar mina förslag eller debatter
-      email_on_comment_reply_label: Meddela mig via e-post när någon svarar på mina kommentarer
       erase_account_link: Radera mitt konto
       finish_verification: Slutför verifiering
       notifications: Aviseringar
@@ -11,18 +9,10 @@ sv:
       organization_responsible_name_placeholder: Representant för organisationen/gruppen
       personal: Personlig information
       phone_number_label: Telefonnummer
-      public_activity_label: Visa min lista över aktiviteter offentligt
-      public_interests_label: Visa etiketterna för de ämnen jag följer offentligt
       public_interests_my_title_list: Taggar för ämnen du följer
       public_interests_user_title_list: Taggar för ämnen den här användaren följer
       save_changes_submit: Spara ändringar
-      subscription_to_website_newsletter_label: Få relevanta uppdateringar om webbplatsen med e-post
-      email_on_direct_message_label: Få e-post om direkta meddelanden
-      email_digest_label: Få en sammanfattning av aviseringar om förslag
-      official_position_badge_label: Visa etikett för representant för staden
       recommendations: Rekommendationer
-      show_debates_recommendations: Visa rekommenderade debatter
-      show_proposals_recommendations: Visa rekommenderade förslag
       title: Mitt konto
       user_permission_debates: Delta i debatter
       user_permission_info: Med ditt konto kan du...
@@ -41,7 +31,6 @@ sv:
   comments:
     comments_closed: Kommentarer är avstängda
     verified_only: För att delta %{verify_account}
-    verify_account: verifiera ditt konto
     comment:
       admin: Administratör
       author: Förslagslämnare
@@ -99,7 +88,6 @@ sv:
     form:
       debate_title: Debatt-titel
       tags_instructions: Tagga debatten.
-      tags_label: Ämnen
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
     index:
       featured_debates: Utvalda
@@ -160,7 +148,6 @@ sv:
       comments_title: Kommentarer
       edit_debate_link: Redigera
       flag: Denna debatt har flaggats som olämpligt av flera användare.
-      login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
       share: Dela
       author: Skribent
     update:
@@ -279,7 +266,6 @@ sv:
   map:
     title: "Stadsdelar"
     proposal_for_district: "Skriv ett förslag för din stadsdel"
-    select_district: Område
     start_proposal: Skapa förslag
   omniauth:
     facebook:
@@ -312,7 +298,6 @@ sv:
     retire_form:
       title: Ta tillbaka förslaget
       warning: "Om du tar tillbaka ditt förslag går det fortfarande att stödja det, men det tas bort från listan och det visas ett meddelande om att du inte anser att förslaget bör stödjas längre"
-      retired_reason_label: Anledning att ta tillbaka förslaget
       retired_reason_blank: Välj en anledning
       retired_explanation_placeholder: Förklara varför du inte längre vill att förslaget ska stödjas
       submit_button: Ta tillbaka förslaget
@@ -323,14 +308,8 @@ sv:
       done: Genomfört
       other: Annat
     form:
-      geozone: Område
-      proposal_responsible_name: Förslagslämnarens fullständiga namn
       proposal_responsible_name_note: "(individuellt eller som representant för en grupp; kommer inte att visas offentligt)"
-      proposal_summary: Sammanfattning av förslaget
       proposal_summary_note: "(högst 200 tecken)"
-      proposal_text: Förslagets text
-      proposal_title: Förslagets titel
-      proposal_video_url: Länk till extern video
       proposal_video_url_note: Lägg till en länk till YouTube eller Vimeo
       tag_category_label: "Kategorier"
       tags_instructions: "Tagga förslaget. Du kan välja från de föreslagna kategorier eller lägga till egna"
@@ -436,7 +415,6 @@ sv:
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Förslaget har markerats som olämpligt av flera användare.
-      login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
       notifications_tab: Aviseringar
       milestones_tab: Milstolpar
       retired_warning: "Förslagslämnaren vill inte längre att förslaget ska samla stöd."
@@ -504,7 +482,6 @@ sv:
           other: "%{count} svar"
         view_results: Se resultat
         edit_poll: Redigera omröstning
-        show_results: Visa resultat
         delete: Ta bort enkät
       form:
         name: Enkättitel
@@ -559,9 +536,6 @@ sv:
       back: Tillbaka till omröstningar
       cant_answer_not_logged_in: "Du behöver %{signin} eller %{signup} för att kunna delta."
       comments_tab: Kommentarer
-      login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
-      signin: Logga in
-      signup: Registrera dig
       cant_answer_verify_html: "Du måste %{verify_link} för att svara."
       verify_link: "verifiera ditt konto"
       cant_answer_expired: "Omröstningen är avslutad."
@@ -597,8 +571,6 @@ sv:
   proposal_notifications:
     new:
       title: "Skicka meddelande"
-      title_label: "Titel"
-      body_label: "Meddelande"
       submit_button: "Skicka meddelande"
       info_about_receivers_html: "Det här meddelandet kommer att skickas till <strong>%{count} personer</strong> och visas på %{proposal_page}.<br> Meddelanden skickas inte på en gång, utan som regelbundna e-postmeddelanden med aviseringar om förslagen."
       proposal_page: "förslagets sida"
@@ -680,7 +652,6 @@ sv:
       districts: "Stadsdelar"
       districts_list: "Lista över stadsdelar"
       categories: "Kategorier"
-    target_blank_html: " (länken öppnas i ett nytt fönster)"
     you_are_in: "Du är på"
     unflag: Ta bort flagga
     unfollow_entity: "Sluta följa %{entity}"
@@ -726,16 +697,10 @@ sv:
   users:
     direct_messages:
       new:
-        body_label: Meddelande
         direct_messages_bloqued: "Användaren tar inte emot direkta meddelanden"
         submit_button: Skicka meddelande
         title: Skicka ett privat meddelande till %{receiver}
-        title_label: Titel
         verified_only: För att skicka ett privat meddelande behöver du %{verify_account}
-        verify_account: verifiera ditt konto
-        authenticate: Du behöver %{signin} eller %{signup} för att fortsätta.
-        signin: logga in
-        signup: registrera dig
       show:
         receiver: Meddelandet har skickats till %{receiver}
     show:
@@ -782,12 +747,8 @@ sv:
     comment_unauthenticated: Du behöver %{signin} eller %{signup} för att rösta.
     disagree: Jag håller inte med
     organizations: Organisationer kan inte rösta
-    signin: Logga in
-    signup: Registrera dig
     supports: Stöder
-    unauthenticated: Du behöver %{signin} eller %{signup} för att fortsätta.
     verified_only: Endast verifierade användare kan rösta på förslag; %{verify_account}.
-    verify_account: verifiera ditt konto
     budget_investments:
       not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
       not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
@@ -866,8 +827,6 @@ sv:
     help:
       alt: Markera texten du vill kommentera och klicka på knappen med pennan.
       text: Du behöver %{sign_in} eller %{sign_up} för att kommentera dokumentet. Markera sedan texten du vill kommentera och klicka på knappen med pennan.
-      text_sign_in: logga in
-      text_sign_up: registrera dig
       title: Hur kommenterar jag det här dokumentet?
   links:
     form:
