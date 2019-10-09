@@ -133,9 +133,9 @@ ast:
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña que utilizarás para acceder a este sitio web"
         current_password: "Contraseña actual"
-        phone_number: "Númberu de teléfonu"
         official_position: "Cargu públicu"
         official_level: "Nivel del cargu"
+        phone_number: "Númberu de teléfonu"
         redeemable_code: "Códigu de verificación per email"
       organization:
         name: "Nome d'organización"
@@ -232,7 +232,7 @@ ast:
       poll/question/answer/video:
         title: Títulu
       newsletter:
-        from: Desde
+        from: "Desde"
       admin_notification:
         title: Títulu
         link: Enllaz
