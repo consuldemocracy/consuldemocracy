@@ -32,8 +32,6 @@ so:
       index:
         title: Maraynta
         info: Halkan waxaad maamuli kartaa dadka isticmaala dhammaan ficillada ku qoran liiska bidixda.
-    document_number: Lambarka dukumeentiga
-    document_type_label: Qaybaha dukumentiga
     document_verifications:
       already_verified: Koontada isticmaalaha ayaa horay loo xaqiijiyay.
       has_no_account_html: Si aad u abuurto koonto, u gudub%{link} oo guji bastaha 'Diiwaangel' <b> qaybta sare ee shaashadda.
