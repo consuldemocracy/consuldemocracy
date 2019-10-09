@@ -874,7 +874,7 @@ describe "Budget Investments" do
       fill_in "Title", with: "I am a bot"
       fill_in "budget_investment_subtitle", with: "This is the honeypot"
       fill_in "Description", with: "This is the description"
-      check   "budget_investment_terms_of_service"
+      check   "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 

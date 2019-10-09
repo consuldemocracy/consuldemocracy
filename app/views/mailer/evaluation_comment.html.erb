@@ -9,7 +9,11 @@
   </p>
 
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
-    <%= t("mailers.evaluation_comment.new_comment_by_html", commenter: @email.comment.author.name, investment: valuation_comments_link(@email.commentable)) %>
+    <%= sanitize(t(
+      "mailers.evaluation_comment.new_comment_by",
+      commenter: @email.comment.author.name,
+      investment: valuation_comments_link(@email.commentable)
+    )) %>
   </p>
 
   <%= t("mailers.evaluation_comment.commenter_info", commenter: @email.comment.author.name, time: l(@email.comment.created_at)) %>

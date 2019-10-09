@@ -13,7 +13,9 @@
   <%= investment.unfeasibility_explanation.presence || "-" %>
 </p>
 <p>
-  <strong><%= t("valuation.budget_investments.edit.price_html", currency: budget.currency_symbol) %>:</strong>
+  <strong>
+    <%= sanitize(t("valuation.budget_investments.edit.price", currency: budget.currency_symbol)) %>:
+  </strong>
   <%= investment.price.presence || "-" %>
 </p>
 <p>

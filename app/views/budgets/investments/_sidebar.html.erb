@@ -40,16 +40,16 @@
   <% if @ballot.investments.by_heading(@heading.id).count > 0 %>
     <p>
       <em>
-        <%= t("budgets.investments.index.sidebar.voted_html",
+        <%= sanitize(t("budgets.investments.index.sidebar.voted",
             count: @ballot.investments.by_heading(@heading.id).count,
-            amount_spent: @ballot.formatted_amount_spent(@heading)) %>
+            amount_spent: @ballot.formatted_amount_spent(@heading))) %>
       </em>
     </p>
   <% elsif @assigned_heading.present? %>
     <p>
-      <%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
+      <%= sanitize(t("budgets.investments.index.sidebar.different_heading_assigned",
               heading_link: heading_link(@assigned_heading, @budget)
-            ) %>
+            )) %>
       <br>
       <small>
         <%= sanitize(t("budgets.investments.index.sidebar.change_ballot",

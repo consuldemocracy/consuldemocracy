@@ -116,7 +116,7 @@ en:
         button: Search
         placeholder: Search debates...
         title: Search
-      search_results_html:
+      search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
@@ -169,7 +169,7 @@ en:
     direct_message: private message
     error: error
     errors: errors
-    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
+    not_saved: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
     proposal: Proposal
     proposal_notification: "Notification"
@@ -302,7 +302,7 @@ en:
     created:
       title: Congratulations! You have taken the first step.
       motivation: "It is important to prepare the launch campaign for your proposal to be successful. The first few days are decisive."
-      motivation_2_html: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
+      motivation_2: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
       publish: No, I want to publish the proposal
       dashboard: Yes, I want help and I'll publish later
       preview_title: This is how your proposal will look when you publish it
@@ -376,7 +376,7 @@ en:
         button: Search
         placeholder: Search proposals...
         title: Search
-      search_results_html:
+      search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
@@ -570,12 +570,12 @@ en:
         title: Poster preview
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
-        intro_text_html:
+        intro_text:
           "<strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
           necessary support to make the city we all want."
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal
-        footer_html: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
+        footer: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
       new:
         title: Poster of your proposal
       options:
@@ -593,7 +593,7 @@ en:
         sent: The email has been sent
     mailer:
       forward:
-        subtitle_html: "If you support me, <br>we will achieve it."
+        subtitle: "If you support me, <br>we will achieve it."
         support_button: Support this proposal
         share_in: Share in
         hi: "Hello!"
@@ -644,7 +644,7 @@ en:
       back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       comments_tab: Comments
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
+      cant_answer_verify: "You must %{verify_link} in order to answer."
       verify_link: "verify your account"
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
@@ -693,7 +693,7 @@ en:
     new:
       title: "Send message"
       submit_button: "Send message"
-      info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
+      info_about_receivers: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my content"
@@ -736,14 +736,14 @@ en:
     followable:
       budget_investment:
         create:
-          notice_html: "You are now following this investment project! <br> We will notify you of changes as they occur so that you are up-to-date."
+          notice: "You are now following this investment project! <br> We will notify you of changes as they occur so that you are up-to-date."
         destroy:
-          notice_html: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
+          notice: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
       proposal:
           create:
-            notice_html: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
+            notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
           destroy:
-            notice_html: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
+            notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
     hide: Hide
     print:
       print_button: Print this info
@@ -805,7 +805,7 @@ en:
       select_language_prompt: Choose language
       remove_language: Remove language
       add_language: Add language
-      languages_in_use_html:
+      languages_in_use:
         zero: "<span class='js-languages-count'>0</span> languages in use"
         one: "<span class='js-languages-count'>1</span> language in use"
         other: "<span class='js-languages-count'>%{count}</span> languages in use"

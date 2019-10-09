@@ -5,7 +5,7 @@
       <%= image_tag "quote_before_white.png" %>
       <h1 class="inline"><%= proposal.title %></h1>
       <%= image_tag "quote_after_white.png" %>
-      <h2><%= t("dashboard.mailer.forward.subtitle_html") %></h2>
+      <h2><%= sanitize(t("dashboard.mailer.forward.subtitle")) %></h2>
     </div>
 
     <div class="margin-bottom">

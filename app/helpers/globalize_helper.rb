@@ -64,7 +64,7 @@ module GlobalizeHelper
   end
 
   def selected_languages_description(resource)
-    t("shared.translations.languages_in_use_html", count: active_languages_count(resource))
+    sanitize(t("shared.translations.languages_in_use", count: active_languages_count(resource)))
   end
 
   def select_language_error(resource)

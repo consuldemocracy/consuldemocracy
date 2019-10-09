@@ -54,7 +54,7 @@
 
           <div class="dropdown-pane" id="info-document-number" data-dropdown
                data-hover="true" data-hover-pane="true">
-            <%= t("verification.residence.new.document_number_help_text_html") %>
+            <%= sanitize(t("verification.residence.new.document_number_help_text")) %>
           </div>
 
           <%= f.text_field :document_number, label: false %>
