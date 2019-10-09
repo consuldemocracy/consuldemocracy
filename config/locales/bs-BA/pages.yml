@@ -18,7 +18,6 @@ bs:
         title: "Debate"
         description: "U dijelu %{link} možete predočiti i podijeliti svoje stavove s drugima, u vezi pitanja koja se tiču vas i vašeg grada. To je i prostor za osmišljavanje ideja koje putem drugih dijelova %{org} dovode do konkretnog djelovanja od strane gradskog vijeća."
         link: "građanske debate"
-        feature_html: "Možete pokrenuti debate, davati komentare i ocijenjivati ih sa <strong>\"Slažem se\"</strong> ili <strong> \"Ne slažem se\" </strong>. Kako bi to uradili, morate ići na %{link}."
         feature_link: "registrujte se u %{org}"
         image_alt: "Dugmad za ocjenjivanje debata"
         figcaption: 'Tasteri "Slažem se" i "Ne slažem se" za ocjenjivanje debata.'
@@ -155,7 +154,6 @@ bs:
               description_column: Smanjuje slova
       compatibility:
         title: Usklađenost sa standardima i vizuelni dizajn
-        description_html: 'Sve strane na ovoj Web-stranici su u skladu sa <strong>Smjernicama za pristupačnost </strong> i Opštim principima pristupačnog dizajna, utvrđenim od strane Radne grupe <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
     titles:
       help: "Šta je %{org}? - Učešće građana"
     verify:
