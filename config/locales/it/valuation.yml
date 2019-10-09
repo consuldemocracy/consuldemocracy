@@ -26,10 +26,6 @@ it:
         assigned_to: "Assegnate a %{valuator}"
         title: Progetti di investimento
         edit: Modificare il dossier
-        valuators_assigned:
-          one: Valutatore assegnato
-          other: "%{count} valutatori assegnati"
-        no_valuators_assigned: Nessuno stimatore assegnato
         table_id: ID
         table_title: Titolo
         table_heading_name: Denominazione della voce di bilancio
@@ -60,14 +56,7 @@ it:
         dossier: Dossier
         price_html: "Prezzo (%{currency})"
         price_first_year_html: "Costo durante il primo anno (%{currency}) <small>(dati facoltativi, non pubblici)</small>"
-        price_explanation_html: Spiegazione dei costi
         feasibility: Fattibilità
-        feasible: Fattibile
-        unfeasible: Irrealizzabile
-        undefined_feasible: In sospeso
-        feasible_explanation_html: Informazioni sulla fattibilità
-        valuation_finished: Stima conclusa
-        duration_html: Tempo massimo di esecuzione
         save: Salva modifiche
       notice:
         valuate: "Dossier aggiornato"
