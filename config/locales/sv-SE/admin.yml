@@ -26,11 +26,6 @@ sv:
           with_inactive: Inaktiva
         preview: Förhandsvisning
       banner:
-        title: Titel
-        description: Beskrivning
-        target_url: Länk
-        post_started_at: Startdatum
-        post_ended_at: Slutdatum
         sections_label: Avsnitt där det kommer visas
         sections:
           homepage: Startsida
@@ -118,31 +113,19 @@ sv:
       name: "Namn"
       headings_name: "Områden"
       headings_manage: "Hantera områden"
-      max_votable_headings: "Högst antal områden som användare kan rösta inom"
       no_groups: "Det finns inga grupper."
       form:
         create: "Skapa ny grupp"
         edit: "Redigera delbudget"
-        name: "Delbudget"
         submit: "Spara delbudget"
     budget_headings:
-      name: "Namn"
       form:
-        name: "Område"
-        amount: "Antal"
-        population: "Befolkning (frivilligt fält)"
         population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
-        latitude: "Latitud (frivilligt fält)"
         submit: "Spara område"
     budget_phases:
       edit:
-        start_date: Startdatum
-        end_date: Slutdatum
-        summary: Sammanfattning
         summary_help_text: Den här texten är för att informera användaren om fasen. Markera rutan nedan för att visa den även om fasen inte är pågående
-        description: Beskrivning
         description_help_text: Den här texten visas i sidhuvudet när fasen är aktiv
-        enabled: Fasen är aktiverad
         enabled_help_text: Den här fasen kommer att visas offentligt i budgetens tidslinje och vara aktiv för andra ändamål
         save_changes: Spara ändringar
     budget_investments:
@@ -230,17 +213,13 @@ sv:
       edit:
         classification: Klassificering
         compatibility: Kompatibilitet
-        mark_as_incompatible: Markera som oförenligt
         selection: Urval
-        mark_as_selected: Markera som valda
         assigned_valuators: Bedömare
         select_heading: Välj område
         submit_button: Uppdatera
         user_tags: Användarens taggar
-        tags: Taggar
         tags_placeholder: "Fyll i taggar separerade med kommatecken (,)"
         undefined: Odefinierat
-        user_groups: "Grupper"
       search_unfeasible: Sökningen misslyckades
     statuses:
       index:
@@ -282,8 +261,6 @@ sv:
         title: Administration
         description: Välkommen till administrationspanelen för %{org}.
       actions:
-        action_type:
-          resource: Resurs
         index:
           edit: Redigera
           delete: Radera
@@ -326,7 +303,6 @@ sv:
     documents:
       new:
         title: "Ladda upp ett dokument"
-        label_attachment: "Välj dokument"
       index:
         new_link: "Lägg till ett nytt dokument"
         title: "Dokument"
@@ -385,8 +361,6 @@ sv:
           summary_placeholder: Kort sammanfattning
           description_placeholder: Lägg till en beskrivning av processen
           additional_info_placeholder: Lägga till ytterligare information som du anser vara användbar
-          homepage: Beskrivning
-          homepage_enabled: Hemsida aktiverad
           banner_title: Färger för sidhuvud
         index:
           create: Ny process
@@ -468,9 +442,6 @@ sv:
           back: Tillbaka
           title: Skapa ny version
           submit_button: Skapa version
-        statuses:
-          draft: Utkast
-          published: Publicerad
         table:
           title: Titel
           created_at: Skapad den
@@ -495,7 +466,6 @@ sv:
             error: Fel
         form:
           add_option: Lägg till alternativ
-          title: Fråga
           title_placeholder: Lägg till fråga
           value_placeholder: Lägg till ett stängt svar
           question_options: "Möjliga svar (frivilligt fält, öppna svar som standard)"
@@ -648,7 +618,6 @@ sv:
         empty_newsletters: Det finns inga nyhetsbrev att visa
       new:
         title: Nytt nyhetsbrev
-        from: E-postadress som visas som avsändare för nyhetsbrevet
       edit:
         title: Redigera nyhetsbrev
       show:
@@ -786,7 +755,6 @@ sv:
         title: "Bedömningsgrupp: %{group}"
         no_valuators: "Det finns inga bedömare i den här gruppen"
       form:
-        name: "Delbudget"
         new: "Skapa bedömningsgrupp"
         edit: "Spara bedömningsgrupp"
     poll_officers:
@@ -819,7 +787,6 @@ sv:
         shift: "Uppdrag"
         shifts: "Arbetspass för röststationen"
         date: "Datum"
-        task: "Uppgift"
         edit_shifts: Redigera arbetspass
         new_shift: "Nytt arbetspass"
         no_shifts: "Röststationen har inga arbetspass"
@@ -874,9 +841,6 @@ sv:
     active_polls:
       edit:
         title: "Omröstningsbeskrivning"
-      form:
-        description:
-          text: "Beskrivning"
     polls:
       index:
         title: "Lista över opinionsundersökningar"
@@ -925,7 +889,6 @@ sv:
       new:
         title: "Skapa fråga"
         title_proposal: "Skapa fråga"
-        poll_label: "Omröstning"
       answers:
         images:
           add_image: "Lägg till bild"
@@ -1002,8 +965,6 @@ sv:
         no_location: "Ingen plats"
       new:
         title: "Ny röststation"
-        name: "Namn"
-        location: "Plats"
         submit_button: "Skapa röststation"
       edit:
         title: "Redigera röststation"
@@ -1269,8 +1230,6 @@ sv:
         title: Ämnen för förslag
         topic: Ämne
         help: "När en användare skapar ett förslag föreslås följande ämnen som taggar."
-      name:
-        placeholder: Skriv namnet på ämnet
     users:
       columns:
         name: Namn
@@ -1357,8 +1316,6 @@ sv:
           created_at: Skapad den
           status: Status
           updated_at: Uppdaterad den
-          status_draft: Utkast
-          status_published: Publicerad
           title: Titel
           slug: URL
           cards_title: Kort
@@ -1419,5 +1376,3 @@ sv:
         date_of_birth: Födelsedatum
         postal_code: Postkod
         import: Importera CSV
-      form:
-        date_of_birth: Födelsedatum
