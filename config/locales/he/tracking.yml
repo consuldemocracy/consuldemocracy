@@ -53,8 +53,6 @@ he:
         no_statuses_defined: טרם הוגדר קצב התקדמות
       new:
         creating: יצירת אבן דרך
-        date: תאריך
-        description: תיאור
       edit:
         title: ערוך אבן דרך
       create:
