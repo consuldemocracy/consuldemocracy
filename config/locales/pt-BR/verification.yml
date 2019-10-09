@@ -47,7 +47,6 @@ pt-BR:
       new:
         accept_terms_text: Eu aceito %{terms_url} do Censo
         accept_terms_text_title: Eu aceito os termos e as condições de acesso ao Censo
-        date_of_birth: Data de nascimento
         document_number: Número do documento
         document_number_help_title: Ajuda
         document_number_help_text_html: "<strong>RG</strong>: 12345678A<br> <strong>Passaporte</strong>: AAA000001 <br> <strong> Cartão de residência</strong>: X1234567P"
@@ -55,12 +54,10 @@ pt-BR:
           passport: Passaporte
           residence_card: Cartão de residência
           spanish_id: RG
-        document_type_label: Tipo de documento
         error_not_allowed_age: Você não tem a idade mínima para participar
         error_not_allowed_postal_code: Para ser verificado, você deve estar registrado.
         error_verifying_census: O Censo não foi capaz de verificar suas informações. Por favor confirme que os seus detalhes do Censo estão corretos ligando para a Prefeitura ou visitando um %{offices}.
         form_errors: impediu a verificação da sua residência
-        postal_code: Código postal
         postal_code_note: Para verificar sua conta, você deve estar registrado
         terms: os termos e condições de acesso
         title: Verificar residência
@@ -70,7 +67,6 @@ pt-BR:
         flash:
           success: Digite o código de confirmação enviado por mensagem de texto
       edit:
-        confirmation_code: Digite o código que você recebeu no seu celular
         resend_sms_link: Clique aqui para enviá-lo novamente
         resend_sms_text: Não recebeu uma mensagem de texto com o código de confirmação?
         submit_button: Enviar
