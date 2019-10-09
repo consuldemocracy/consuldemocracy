@@ -26,11 +26,6 @@ gl:
           with_inactive: Inactivos
         preview: Vista previa
       banner:
-        title: Título
-        description: Descrición
-        target_url: Ligazón
-        post_started_at: Inicio de publicación
-        post_ended_at: Fin de publicación
         sections_label: Seccións nas que amosar
         sections:
           homepage: Páxina principal
@@ -114,7 +109,6 @@ gl:
       headings_name: "Partidas"
       headings_edit: "Editar Partidas"
       headings_manage: "Xestionar Partidas"
-      max_votable_headings: "Número máximo de partidas nas que un usuario pode votar"
       no_groups: "Non hai grupos creados aínda. Cada usuario poderá votar nunha soa partida de cada grupo."
       amount:
         one: "Hai 1 grupo"
@@ -129,12 +123,10 @@ gl:
       form:
         create: "Crear novo grupo"
         edit: "Editar grupo"
-        name: "Nome do grupo"
         submit: "Gardar grupo"
       index:
         back: "Volver aos orzamentos"
     budget_headings:
-      name: "Nome"
       no_headings: "Aínda non hai partidas creadas. Cada usuario poderá votar nunha soa partida de cada grupo."
       amount:
         one: "Hai 1 partida"
@@ -147,14 +139,8 @@ gl:
         success_notice: "Partida eliminada correctamente"
         unable_notice: "Non se pode eliminar unha partida con proxectos asociados"
       form:
-        name: "Nome da partida"
-        amount: "Cantidade"
-        population: "Poboación (opcional)"
         population_info: "O campo poboación das partidas do orzamento utilízase unicamente con fins estatísticos, co obxectivo de amosar a porcentaxe de votos de cada partida que represente unha área con poboación. É un campo opcional, así que podes deixalo en branco se non o aplicas."
-        latitude: "Latitude"
-        longitude: "Lonxitude"
         coordinates_info: "Se se indican a latitude e lonxitude, a páxina de investimentos para esta partida incluirá un mapa. Este mapa estará centrado segundo estas coordenadas."
-        allow_content_block: "Permite bloque de contido"
         content_blocks_info: "Se o permiso de bloque de contido está activado, poderás crear contido propio para esta partida desde a sección Configuración -> Contido de bloques personalizado. Este contido amosarase na páxina de investimentos desta partida."
         create: "Crear nova partida"
         edit: "Editar Partida"
@@ -163,13 +149,8 @@ gl:
         back: "Volver aos grupos"
     budget_phases:
       edit:
-        start_date: Data de apertura
-        end_date: Data de peche
-        summary: Resumo
         summary_help_text: Este texto informará ao usuario sobre a fase. Para amosalo aínda que a fase non estea activa, marca a opción inferior
-        description: Descrición
         description_help_text: Este texto aparecerá na cabeceira cando a fase estiver activa
-        enabled: Fase habilitada
         enabled_help_text: Esta fase será pública no calendario de fases do orzamento e estará activa para outros propósitos
         save_changes: Gardar so cambios
     budget_investments:
@@ -255,17 +236,13 @@ gl:
       edit:
         classification: Clasificación
         compatibility: Compatibilidade
-        mark_as_incompatible: Marcar como incompatible
         selection: Selección
-        mark_as_selected: Marcar como seleccionado
         assigned_valuators: Avaliadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
         user_tags: Etiquetas asignadas polo usuario
-        tags: Etiquetas
         tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
         undefined: Sen definir
-        user_groups: "Grupos"
       search_unfeasible: Buscar inviables
     statuses:
       index:
@@ -348,9 +325,7 @@ gl:
           summary_placeholder: Resumo corto da descrición
           description_placeholder: Engade unha descrición do proceso
           additional_info_placeholder: Engade unha información adicional que pode ser de interese
-          homepage: Descrición
           homepage_description: Aquí podes explicar o contido do proceso
-          homepage_enabled: Páxina principal habilitada
           banner_title: Cores da cabeceira
         index:
           create: Novo proceso
@@ -436,9 +411,6 @@ gl:
           back: Volver
           title: Crear unha nova versión
           submit_button: Crear versión
-        statuses:
-          draft: Bosquexo
-          published: Publicada
         table:
           title: Título
           created_at: Creada
@@ -463,7 +435,6 @@ gl:
             error: Erro
         form:
           add_option: Engadir unha opción
-          title: Pregunta
           title_placeholder: Engadir pregunta
           value_placeholder: Engadir unha resposta pechada
           question_options: "Posibles respostas (opcional, respostas abertas por defecto)"
@@ -609,7 +580,6 @@ gl:
         empty_newsletters: Non hai notificacións para amosar
       new:
         title: Novo boletín informativo
-        from: Enderezo de correo electrónico que aparecerá como remitente no boletín informativo
       edit:
         title: Editar boletín informativo
       show:
@@ -732,7 +702,6 @@ gl:
         title: "Grupo de avaliadores: %{group}"
         no_valuators: "Non hai avaliadores dentro deste grupo"
       form:
-        name: "Nome do grupo"
         new: "Crear grupo de avaliadores"
         edit: "Gardar grupo de avaliadores"
     poll_officers:
@@ -765,7 +734,6 @@ gl:
         shift: "Asignación"
         shifts: "Quendas nesta urna"
         date: "Data"
-        task: "Tarefa"
         edit_shifts: Asignar quenda
         new_shift: "Nova quenda"
         no_shifts: "Esta urna non ten quendas asignadas"
@@ -823,7 +791,6 @@ gl:
         title: "Descrición de votacións"
       form:
         description:
-          text: "Descrición"
           help_text: "Este texto amosarase na cabeceira da páxina das votacións. Pode usarse para engadir un contexto ás votacións abertas."
     polls:
       index:
@@ -871,7 +838,6 @@ gl:
         title: "Editar pregunta cidadá"
       new:
         title: "Crear pregunta"
-        poll_label: "Votación"
       answers:
         images:
           add_image: "Engadir unha imaxe"
@@ -948,8 +914,6 @@ gl:
         no_location: "Nova localización"
       new:
         title: "Nova urna"
-        name: "Nome"
-        location: "Localización"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -1196,8 +1160,6 @@ gl:
         title: Temas de debate
         topic: Tema
         help: "Cando un usuario crea unha proposta, amosanse os seguintes temas como etiquetas predeterminadas."
-      name:
-        placeholder: Escribe o nome do tema
     users:
       columns:
         name: Nome
@@ -1288,8 +1250,6 @@ gl:
           created_at: Creada
           status: Estado
           updated_at: Última actualización
-          status_draft: Borrador
-          status_published: Publicado
           title: Título
           slug: URL
           cards_title: Tarxetas
