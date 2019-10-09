@@ -26,10 +26,6 @@ fa:
         assigned_to: "اختصاص یافته به %{valuator}"
         title: پروژه سرمایه گذاری
         edit: ویرایش پرونده
-        valuators_assigned:
-          one: اختصاص ارزیاب 
-          other: "اختصاص ارزیاب ها%{count}"
-        no_valuators_assigned: بدون  تعیین ارزیاب
         table_id: شناسه
         table_title: عنوان
         table_heading_name: عنوان سرفصل
@@ -60,16 +56,9 @@ fa:
         dossier: پرونده
         price_html: "قیمت%{currency}"
         price_first_year_html: "هزینه در طول سال اول%{currency}<small>(اختیاری، داده ها عمومی نیستند)</small>"
-        price_explanation_html: توضیح قیمت
         feasibility: "امکان پذیری\n"
-        feasible: امکان پذیر
-        unfeasible: امکان پذیر نیست
-        undefined_feasible: انتظار
-        feasible_explanation_html: توضیح امکان سنجی 
-        valuation_finished: ' اتمام ارزیابی '
         valuation_finished_alert: "آیا مطمئن هستید که میخواهید این گزارش را به عنوان تکمیل علامتگذاری کنید؟ اگر شما آن را انجام دهید، دیگر نمی تواند تغییر کند."
         not_feasible_alert: "بلافاصله ایمیل به نویسنده این پروژه با گزارش غیرقابل پیش بینی ارسال خواهد شد."
-        duration_html: دامنه زمانی
         save: ذخیره تغییرات
       notice:
         valuate: "پرونده به روز شد"
