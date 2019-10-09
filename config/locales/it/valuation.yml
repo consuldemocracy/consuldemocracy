@@ -54,8 +54,6 @@ it:
         assigned_valuators: Stimatori assegnati
       edit:
         dossier: Dossier
-        price_html: "Prezzo (%{currency})"
-        price_first_year_html: "Costo durante il primo anno (%{currency}) <small>(dati facoltativi, non pubblici)</small>"
         feasibility: Fattibilità
         save: Salva modifiche
       notice:
