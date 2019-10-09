@@ -27,12 +27,6 @@ ru:
         assigned_to: "Назначено %{valuator}"
         title: Инновационные проекты
         edit: Редактировать пакет документов
-        valuators_assigned:
-          one: Назначенный оценщик
-          few: "%{count} оценщиков назначено"
-          many: "%{count} оценщиков назначено"
-          other: "%{count} оценщиков назначено"
-        no_valuators_assigned: Оценщики не назначены
         table_id: ID
         table_title: Название
         table_heading_name: Название раздела
@@ -63,16 +57,9 @@ ru:
         dossier: Пакет документов
         price_html: "Стоимость (%{currency})"
         price_first_year_html: "Стоимость во время первого года (%{currency}) <small>(не обязательно, данные не публичные)</small>"
-        price_explanation_html: Описание цены
         feasibility: Выполнимость
-        feasible: Выполнимо
-        unfeasible: Не выполнимо
-        undefined_feasible: На рассмотрении
-        feasible_explanation_html: Разъяснение выполнимости
-        valuation_finished: Оценка окончена
         valuation_finished_alert: "Вы уверены, что хотите отметить этот отчет как завершенный? Если вы так сделаете, его уже нельзя будет изменить."
         not_feasible_alert: "Автору проекта будет незамедлительно отправлен email с отчетом о невыполнимости."
-        duration_html: Объем времени
         save: Сохранить изменения
       notice:
         valuate: "Пакет документов обновлен"
