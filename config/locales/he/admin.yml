@@ -210,8 +210,6 @@ he:
           min_total_supports: תמיכה מינימלית
           max_total_supports: תמיכה מקסימלית
           winners: זוכים
-          one_filter_html: "הסינון אשר הופעל: <b><em>%{filter}</em></b>"
-          two_filters_html: "המסננים שהופעלו:<b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: מסנן
         download_current_selection: "הורדת הבחירה הנוכחית"
@@ -545,7 +543,6 @@ he:
           form:
             error: שגיאה
         form:
-          title_html: 'עריכת <span class = "strong">%{draft_version_title} </ span> מהתהליך <span class = "strong">%{process_title} </ span>'
           launch_text_editor: הפעל את עורך הטקס
           close_text_editor: סגור את עורך הטקסט
           use_markdown: השתמש בסימון כדי לעצב את הטקסט
@@ -756,7 +753,6 @@ he:
         empty_newsletters: אין ידיעונים להצגה
       new:
         title: ידיעון חדש
-        header_footer_help_text_html: "הכותרת והחלק התחתון זהים בכל האימיילים, ניתן לשנות אותם באמצעות \n<code>app/views/layouts/mailer_header</code> וכן ב- \n<code>app/views/layouts/mailer_footer</code>.<br>\nניתן לשנות את תמונת הכותרת ב- %{link}."
         image_link: "תמונות מותאמות אישית"
       edit:
         title: עריכת ידיעון
@@ -1178,11 +1174,6 @@ he:
           pending: ממתין לאישור
           rejected: נדחה
           verified: אומת ואושר
-        hidden_count_html:
-          one: יש גם <strong> ארגון אחד </strong> ללא משתמשים או עם משתמש מוסתר.
-          two: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
-          many: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
-          other: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
         name: שם
         email: דואר אלקטרוני
         phone_number: מספר טלפון
@@ -1528,7 +1519,6 @@ he:
           see_page: תצוגה מקדימה של הדף
         new:
           title: יצירת דף מותאם אישית חדש
-          slug_help_html: "טקסט כדי לזהות את הדף הזה בכתובת האתר, לדוגמה <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: נוצר ב
           status: סטטוס
