@@ -3,9 +3,6 @@ fi:
     sidebar:
       title: Yhteisö
     show:
-      create_first_community_topic:
-        sign_in: "kirjaudu"
-        sign_up: "rekisteröidy"
       sidebar:
         participate: Osallistu
         new_topic: Luo aihe
@@ -32,6 +29,3 @@ fi:
       show:
         tab:
           comments_tab: Kommentit
-  topics:
-    show:
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
