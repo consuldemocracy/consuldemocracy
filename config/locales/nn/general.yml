@@ -123,10 +123,6 @@ nn:
         button: Søk
         placeholder: Søk debatter...
         title: Søk
-      search_results_html:
-        zero: " som inneholder <strong>'%{search_term}'</strong>"
-        one: " som inneholder <strong>'%{search_term}'</strong>"
-        other: " som inneholder <strong>'%{search_term}'</strong>"
       select_order: Sortere etter
       start_debate: Start en debatt
       title: Debatter
@@ -178,7 +174,6 @@ nn:
     direct_message: private meldinger
     error: feil
     errors: feil
-    not_saved_html: "gjorde at %{resource} ikke kunne lagres. <br>Kontroller og endre de markerte feltene:"
     policy: Personvernpolicy
     proposal: Forslag
     proposal_notification: "Varsler"
@@ -313,7 +308,6 @@ nn:
     created:
       title: Gratulerer! Du har gjennomført først steg.
       motivation: "Det er viktig å forberede en introduksjonskampanje for at forslaget ditt skal bli en suksess. Det første dagene er avgjørende."
-      motivation_2_html: "<strong>Hvis du vil ha anbefalinger til forberedelsene før forslaget blir offentliggjort, kan du la forslaget stå som utkast, og vi vil veilede deg.</strong>"
       publish: Nei, jeg vil offentliggjøre forslaget
       dashboard: Ja, jeg ønsker hjelp, og offentligjør forslaget senere
       preview_title: Dette er hvordan forslaget ditt vil se ut når det er offentliggjort
@@ -388,10 +382,6 @@ nn:
         button: Søk
         placeholder: Søk forslag...
         title: Søk
-      search_results_html:
-        zero: " som inneholder <strong>'%{search_term}'</strong>"
-        one: " som inneholder <strong>'%{search_term}'</strong>"
-        other: " som inneholder <strong>'%{search_term}'</strong>"
       select_order: Sorter etter
       select_order_long: "Du viser forslag i henhold til:"
       start_proposal: Opprett et forslag
@@ -588,10 +578,8 @@ nn:
         title: Forhåndsvisning av plakat
         poster_title: "Du trenger ikke å lete mer,"
         poster_subtitle: "støtt meg! "
-        intro_text_html: "<strong>Jeg deltar i %{org}</strong> med mitt eget innbyggerforslag, og trenger at du også oppretter en bruker, om jeg skal kunne motta nok støtte til å bidra til å  forme den byen vi alle ønsker å bo i."
         proposal_code: "Forslagets kode: %{code}"
         support: Støtt mitt forslag
-        footer_html: "<strong>Gå til %{link} og støtt forslaget.</strong> Vi er nødt til å være mange. Din stemme teller. Takk!"
       new:
         title: Plakat for ditt forslag
       options:
@@ -609,7 +597,6 @@ nn:
         sent: Eposten har blitt sendt
     mailer:
       forward:
-        subtitle_html: "Om du støtte meg, <br> vil vi oppnå det."
         support_button: Støtt forslag
         share_in: Del i
         hi: "Hei!"
@@ -649,7 +636,6 @@ nn:
       back: Tilbake til avstemningen
       cant_answer_not_logged_in: "Du må %{signin} eller %{signup} for å delta."
       comments_tab: Kommentarer
-      cant_answer_verify_html: "Du må %{verify_link} for å svare."
       verify_link: "verifiser din konto"
       cant_answer_expired: "Denne avstemningen er avsluttet."
       cant_answer_wrong_geozone: "Dette spørsmålet er ikke tilgjengelig i ditt geografiske område."
@@ -685,7 +671,6 @@ nn:
     new:
       title: "Send melding"
       submit_button: "Send melding"
-      info_about_receivers_html: "Denne meldingen vil bli sendt til <strong>%{count} mennesker og vil bli synlig i %{proposal_page}.<br> Meldinger er ikke sendt med en gang, brukere vil motta periodiske eposter med forslagsoppdateringer."
       proposal_page: "forslagssiden"
     show:
       back: "Gå tilbake til mitt innhold"
@@ -725,17 +710,6 @@ nn:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Du følger nå dette investeringsprosjektet! </br> Vi vil gi deg beskjed om eventuelle endringer slik at du kan holde deg oppdatert."
-        destroy:
-          notice_html: "Du følger ikke lenger dette investeringsprosjektet. </br> Du vil ikke lenger få varsler relatert til dette prosjektet."
-      proposal:
-        create:
-          notice_html: "Du følger nå dette forslaget! </br> Vi vil gi deg beskjed om eventuelle endringer slik at du kan holde deg oppdatert."
-        destroy:
-          notice_html: "Du følger ikke lenger dette forslaget. </br> Du vil ikke lenger få varsler relatert til dette prosjektet."
     hide: Skjul
     print:
       print_button: Skriv ut denne informasjonen
