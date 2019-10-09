@@ -132,8 +132,6 @@ fa:
           undecided: بلاتکلیف
           unfeasible: غیر قابل پیش بینی
           winners: برندگان
-          one_filter_html: "فیلترهای فعلی موجود:<b><em>%{filter}</em></b>"
-          two_filters_html: "فیلترهای فعلی موجود:<b><em>%{filter}%{advanced_filters}</em></b>"
         buttons:
           filter: فیلتر
         download_current_selection: "انتخاب کنونی را دانلود کنید"
@@ -314,7 +312,6 @@ fa:
           form:
             error: خطا
         form:
-          title_html: 'در حال ویرایش<span class="strong">%{draft_version_title}</span>  از روند<span class="strong">%{process_title}</span>'
           launch_text_editor: راه اندازی ویرایشگر متن
           close_text_editor: ویرایشگر متن را ببند
           use_markdown: برای قالب کردن متن از Markdown استفاده کنید
@@ -799,9 +796,6 @@ fa:
           pending: انتظار
           rejected: رد شده
           verified: تایید
-        hidden_count_html:
-          one: همچنین <strong> یک سازمان </ strong>بدون کاربر یا با یک کاربر پنهان وجود دارد.
-          other: همچنین <strong>%{count} یک سازمان </ strong>بدون کاربر یا با یک کاربر پنهان وجود دارد.
         name: نام
         email: پست الکترونیکی
         phone_number: تلفن
