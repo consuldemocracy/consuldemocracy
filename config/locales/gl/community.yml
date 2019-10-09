@@ -17,8 +17,6 @@ gl:
         first_theme_not_logged_in: Non hai ningún tempa dispoñible. Participa creando o primeiro.
         first_theme: Crea o primeiro tema da comunidade
         sub_first_theme: "Para crear un tema debes %{sign_in} ou %{sign_up}."
-        sign_in: "iniciar sesión"
-        sign_up: "rexistrate"
       tab:
         participants: Participantes
       sidebar:
@@ -37,8 +35,6 @@ gl:
       create: Crear un tema
       edit: Editar tema
       form:
-        topic_title: Título
-        topic_text: Texto de inicio
         new:
           submit_button: Crea un tema
         edit:
@@ -55,6 +51,3 @@ gl:
         recommendation_one: Non escribas o título do tema ou frases enteiras en maiúsculas. Na rede iso interprétase como berrar, e a ninguén lle gusta que lle berren. 
         recommendation_two: Calquera tema ou comentario que implique unha acción ilegar borrarase, igual que os que tiveren a intención de sabotar os espazos do tema. Todo o demais está permitido.
         recommendation_three: Goza deste espazo e das voces que o enchen, pois tamén é teu.
-  topics:
-    show:
-      login_to_comment: Precisas %{signin} ou %{signup} para comentares.
