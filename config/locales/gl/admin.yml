@@ -173,8 +173,6 @@ gl:
           unfeasible: Non viables
           min_total_supports: Soportes mínimos
           winners: Gañadores
-          one_filter_html: "Filtros aplicados actualmente: <b><em>%{filter}</em></b>"
-          two_filters_html: "Filtros de uso aplicados actualmente: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtro
         download_current_selection: "Descargar a selección actual"
@@ -390,7 +388,6 @@ gl:
           form:
             error: Erro
         form:
-          title_html: 'Editar <span class="strong">%{draft_version_title}</span> do proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Abrir editor de texto
           close_text_editor: Pechar editor de texto
           use_markdown: Usar Markdown para darlle formato ao texto
@@ -955,9 +952,6 @@ gl:
           pending: Pendentes
           rejected: Rexeitada
           verified: Verificada
-        hidden_count_html:
-          one: Hai ademais <strong>unha organización</strong> sen usuario ou co usuario bloqueado.
-          other: Hai ademais <strong>%{count} organizacións</strong> sen usuario ou co usuario bloqueado.
         name: Nome
         email: O teu correo electrónico
         phone_number: Teléfono
