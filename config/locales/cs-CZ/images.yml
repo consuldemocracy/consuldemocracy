@@ -4,7 +4,6 @@ cs:
     form:
       title: Názorný obrázek
       title_placeholder: Přidat název názorného obrázku
-      attachment_label: Vybrat obrázek
       delete_button: Odebrat obrázek
       note: "Můžete nahrát jeden obrázek následujících typů obsahu: %{accepted_content_types}, až do velikosti %{max_file_size} MB."
       add_new_image: Přidat obrázek
