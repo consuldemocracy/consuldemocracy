@@ -18,9 +18,6 @@ pl:
         publish_comment: Opublikuj Komentarz
       form:
         phase_not_open: Ten etap nie jest otwarty
-        login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
-        signin: Zaloguj się
-        signup: Zarejestruj się
       index:
         title: Komentarze
         comments_about: Komentarze na temat
@@ -118,11 +115,8 @@ pl:
       participation:
         phase_not_open: Ta faza nie jest otwarta
         organizations: Organizacje nie mogą uczestniczyć w debacie
-        signin: Zaloguj się
-        signup: Zarejestruj się
         unauthenticated: '%{signin} lub %{signup} aby wziąć udział.'
         verified_only: Tylko zweryfikowani użytkownicy mogą uczestniczyć, %{verify_account}.
-        verify_account: zweryfikuj swoje konto
         debate_phase_not_open: Faza debaty została zakończona i odpowiedzi nie są już akceptowane
     shared:
       share: Udostępnij
