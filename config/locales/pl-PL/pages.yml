@@ -18,7 +18,6 @@ pl:
         title: "Debaty"
         description: "W sekcji %{link} możesz przedstawiać swoją opinię na temat istotnych dla Ciebie kwestii związanych z miastem oraz dzielić się nią z innymi ludźmi. Jest to również miejsce do generowania pomysłów, które poprzez inne sekcje %{org} prowadzą do konkretnych działań ze strony Rady Miejskiej."
         link: "debaty obywatelskie"
-        feature_html: "Możesz otwierać debaty, komentować i oceniać je przy pomocy <strong>Zgadzam się</strong> lub <strong>Nie zgadzam się</strong>. W tym celu musisz %{link}."
         feature_link: "zarejestruj się w %{org}"
         image_alt: "Przyciski do oceny debat"
         figcaption: 'Przyciski "Zgadzam się" i "Nie zgadzam się" do oceniania debat.'
@@ -153,7 +152,6 @@ pl:
               description_column: Zmniejsza rozmiar tekstu
       compatibility:
         title: Zgodność z normami i projektowaniem wizualnym
-        description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
     titles:
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
     verify:
