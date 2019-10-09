@@ -26,11 +26,6 @@ de:
           with_inactive: Inaktiv
         preview: Vorschau
       banner:
-        title: Titel
-        description: Beschreibung
-        target_url: Link
-        post_started_at: Beginn der Veröffentlichung
-        post_ended_at: Ende der Veröffentlichung
         sections_label: Abschnitte, in denen es angezeigt wird
         sections:
           homepage: Homepage
@@ -114,7 +109,6 @@ de:
       headings_name: "Rubriken"
       headings_edit: "Rubriken bearbeiten"
       headings_manage: "Rubriken verwalten"
-      max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
       no_groups: "Keine Gruppen vorhanden."
       amount:
         one: "Es gibt 1 Gruppe"
@@ -129,12 +123,10 @@ de:
       form:
         create: "Neue Gruppe erstellen"
         edit: "Gruppe bearbeiten"
-        name: "Name der Gruppe"
         submit: "Gruppe speichern"
       index:
         back: "Zurück zu Bürgerhaushalten"
     budget_headings:
-      name: "Name"
       no_headings: "Keine Rubriken vorhanden."
       amount:
         one: "Es gibt 1 Rubrik"
@@ -147,14 +139,8 @@ de:
         success_notice: "Rubrik erfolgreich gelöscht"
         unable_notice: "Eine Rubrik mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden"
       form:
-        name: "Name der Rubrik"
-        amount: "Summe"
-        population: "Bevölkerung (optional)"
         population_info: "Das Feld 'Bevölkerung' in den Rubriken wird nur für statistische Zwecke verwendet, mit dem Ziel, den Prozentsatz der Stimmen in jeder Rubrik anzuzeigen, die ein Bevölkerungsgebiet darstellt. Dieses Feld ist optional; Sie können es daher leer lassen, wenn es nicht zutrifft."
-        latitude: "Breitengrad (optional)"
-        longitude: "Längengrad (optional)"
         coordinates_info: "Wenn Längen- und Breitengrad angegeben sind, enthält die Seite des Ausgabenvorschlags für diese Rubrik eine Karte. Diese Karte wird mit diesen Koordinaten berechnet."
-        allow_content_block: "Inhaltsdatenblock zulassen"
         content_blocks_info: "Wenn Inhaltsblock zulassen aktiviert ist, können Sie benutzerdefinierte Inhalte, die sich auf diese Rubrik beziehen, im Abschnitt Einstellungen> Benutzerdefinierte Inhaltsblöcke erstellen. Dieser Inhalt wird auf der Ausgabenvorschlagsseite für diese Rubrik angezeigt."
         create: "Neue Rubrik erstellen"
         edit: "Rubrik bearbeiten"
@@ -163,13 +149,8 @@ de:
         back: "Zurück zu Gruppen"
     budget_phases:
       edit:
-        start_date: Anfangsdatum
-        end_date: Enddatum des Verfahrens
-        summary: Zusammenfassung
         summary_help_text: Dieser Text informiert die Benutzer*innen über die jeweilige Phase. Um den Text anzuzeigen, auch wenn die Phase nicht aktiv ist, klicken sie das untenstehende Kästchen an
-        description: Beschreibung
         description_help_text: Dieser Text erscheint in der Kopfzeile, wenn die Phase aktiv ist
-        enabled: Phase aktiviert
         enabled_help_text: Diese Phase wird öffentlich in der Zeitleiste der Phasen des Bürgerhaushalts angezeigt und ist auch für andere Zwecke aktiv
         save_changes: Änderungen speichern
     budget_investments:
@@ -255,17 +236,13 @@ de:
       edit:
         classification: Klassifizierung
         compatibility: Kompatibilität
-        mark_as_incompatible: Als inkompatibel markieren
         selection: Auswahl
-        mark_as_selected: Als ausgewählt markieren
         assigned_valuators: Begutachter*innen
         select_heading: Rubrik auswählen
         submit_button: Aktualisieren
         user_tags: Tags, die von Benutzer*innen zugewiesen wurden
-        tags: Tags
         tags_placeholder: "Geben Sie die gewünschten Tags durch Kommas (,) getrennt ein"
         undefined: Undefiniert
-        user_groups: "Gruppen"
       search_unfeasible: Suche undurchführbar
     statuses:
       index:
@@ -348,9 +325,7 @@ de:
           summary_placeholder: Kurze Zusammenfassung der Beschreibung
           description_placeholder: Fügen Sie eine Beschreibung des Beteiligungsverfahrens hinzu
           additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die Sie für nützlich halten
-          homepage: Beschreibung
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
-          homepage_enabled: Homepage aktiviert
         index:
           create: Neues Beteiligungsverfahren
           delete: Löschen
@@ -435,9 +410,6 @@ de:
           back: Zurück
           title: Neue Version erstellen
           submit_button: Version erstellen
-        statuses:
-          draft: Entwurf
-          published: Veröffentlicht
         table:
           title: Titel
           created_at: Erstellt am
@@ -462,7 +434,6 @@ de:
             error: Fehler
         form:
           add_option: Antwortmöglichkeit hinzufügen
-          title: Frage
           title_placeholder: Frage hinzufügen
           value_placeholder: Geschlossene Antwort hinzufügen
           question_options: "Mögliche Antworten (optional, standardmäßig offene Antworten)"
@@ -608,7 +579,6 @@ de:
         empty_newsletters: Keine Newsletter zum Anzeigen vorhanden
       new:
         title: Neuer Newsletter
-        from: E-Mail-Adresse, die als Absender des Newsletters angezeigt wird
       edit:
         title: Newsletter bearbeiten
       show:
@@ -721,7 +691,6 @@ de:
         title: "Begutachtungsgruppe: %{group}"
         no_valuators: "Es gibt keine Begutachter*innen, die dieser Gruppe zugeordnet sind"
       form:
-        name: "Name der Gruppe"
         new: "Begutachtungsgruppe erstellen"
         edit: "Begutachtungsgruppe speichern"
     poll_officers:
@@ -754,7 +723,6 @@ de:
         shift: "Zuweisung"
         shifts: "Arbeitsschichten in dieser Wahlkabine"
         date: "Datum"
-        task: "Aufgabe"
         edit_shifts: Arbeitsschicht zuordnen
         new_shift: "Neue Arbeitsschicht"
         no_shifts: "Dieser Wahlkabine wurden keine Arbeitsschichten zugeordnet"
@@ -810,9 +778,6 @@ de:
     active_polls:
       edit:
         title: "Umfragen Beschreibung"
-      form:
-        description:
-          text: "Beschreibung"
     polls:
       index:
         title: "Liste der Umfragen"
@@ -859,7 +824,6 @@ de:
         title: "Frage bearbeiten"
       new:
         title: "Frage erstellen"
-        poll_label: "Umfrage"
       answers:
         images:
           add_image: "Bild hinzufügen"
@@ -936,8 +900,6 @@ de:
         no_location: "Ohne Standort"
       new:
         title: "Neue Wahlkabine"
-        name: "Name"
-        location: "Lage"
         submit_button: "Wahlkabine erstellen"
       edit:
         title: "Wahlkabine bearbeiten"
@@ -1184,8 +1146,6 @@ de:
         title: Themen der Vorschläge
         topic: Thema
         help: "Wenn ein*e Benutzer*in einen Vorschlag erstellt, werden die folgenden Themen als Standard-Tags vorgeschlagen."
-      name:
-        placeholder: Geben Sie den Namen des Themas ein
     users:
       columns:
         name: Name
@@ -1274,8 +1234,6 @@ de:
           created_at: Erstellt am
           status: Status
           updated_at: Aktualisiert am
-          status_draft: Entwurf
-          status_published: Veröffentlicht
           title: Titel
           slug: URL
           cards_title: Karten
