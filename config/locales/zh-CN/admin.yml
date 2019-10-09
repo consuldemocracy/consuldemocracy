@@ -26,11 +26,6 @@ zh-CN:
           with_inactive: 非活跃
         preview: 预览
       banner:
-        title: 标题
-        description: 说明
-        target_url: 链接
-        post_started_at: 公告开始于
-        post_ended_at: 公告结束于
         sections_label: 它将出现的部分
         sections:
           homepage: 主页
@@ -110,29 +105,17 @@ zh-CN:
         recalculate: 重新计算胜出者投资
     budget_groups:
       name: "名字"
-      max_votable_headings: "用户可以投票的最大标题数"
       form:
         edit: "编辑组"
-        name: "组名"
         submit: "保存组"
     budget_headings:
-      name: "名字"
       form:
-        name: "标题名称"
-        amount: "数量"
-        population: "人口（可选）"
         population_info: "预算标题人口字段用于统计目的，在预算结束后显示每个标题，代表一个地区与人口百分比投票率。此字段为可选，因此如果不适用，您可以将其留空。"
-        allow_content_block: "允许内容模块"
         submit: "保存标题"
     budget_phases:
       edit:
-        start_date: 开始日期
-        end_date: 结束日期
-        summary: 总结
         summary_help_text: 此文本将通知用户阶段情况。如果就算阶段未活跃也要显示，请选中以下复选框。
-        description: 说明
         description_help_text: 当阶段处于活跃状态时，此文本将显示在页眉中
-        enabled: 阶段已启用
         enabled_help_text: 这一阶段将在预算的阶段时间内公开，并为其他目的保持活跃
         save_changes: 保存更改
     budget_investments:
@@ -218,17 +201,13 @@ zh-CN:
       edit:
         classification: 分类
         compatibility: 兼容性
-        mark_as_incompatible: 标记为不兼容
         selection: 选择
-        mark_as_selected: 标记为已选
         assigned_valuators: 评估员
         select_heading: 选择标题
         submit_button: 更新
         user_tags: 用户指定的标签
-        tags: 标签
         tags_placeholder: "编写想要的标签，用逗号 (,) 分割"
         undefined: 未定义
-        user_groups: "组"
       search_unfeasible: 搜索不可行
     statuses:
       index:
@@ -308,7 +287,6 @@ zh-CN:
           summary_placeholder: 描述的简短总结
           description_placeholder: 添加进程描述
           additional_info_placeholder: 添加您认为有用的其他信息
-          homepage: 说明
         index:
           create: 新进程
           delete: 删除
@@ -387,9 +365,6 @@ zh-CN:
           back: 返回
           title: 创建新版本
           submit_button: 创建版本
-        statuses:
-          draft: 起草
-          published: 已发表
         table:
           title: 标题
           created_at: 创建于
@@ -414,7 +389,6 @@ zh-CN:
             error: 错误
         form:
           add_option: 添加选项
-          title: 问题
           title_placeholder: 添加问题
           value_placeholder: 添加已关闭的答案
           question_options: "可能的答案（可选，默认情况下打开答案）"
@@ -560,7 +534,6 @@ zh-CN:
         empty_newsletters: 没有要显示的时事通讯
       new:
         title: 新时事通讯
-        from: 将显示为发送时事通讯的电子邮件地址
       edit:
         title: 编辑时事通讯
       show:
@@ -667,7 +640,6 @@ zh-CN:
         title: "评估员组：%{group}"
         no_valuators: "没有评估员被分配给此组"
       form:
-        name: "组名"
         new: "创建评估员组"
         edit: "保存评估员组"
     poll_officers:
@@ -700,7 +672,6 @@ zh-CN:
         shift: "分配"
         shifts: "此投票亭的轮班"
         date: "日期"
-        task: "任务"
         edit_shifts: 编辑轮班
         new_shift: "新轮班"
         no_shifts: "此投票亭没有轮班"
@@ -797,7 +768,6 @@ zh-CN:
         title: "编辑问题"
       new:
         title: "创建问题"
-        poll_label: "投票"
       answers:
         images:
           add_image: "添加图像"
@@ -874,8 +844,6 @@ zh-CN:
         no_location: "没有位置"
       new:
         title: "新投票亭"
-        name: "名字"
-        location: "位置"
         submit_button: "创建投票亭"
       edit:
         title: "编辑投票亭"
@@ -1117,8 +1085,6 @@ zh-CN:
         title: 提议主题
         topic: 主题
         help: "当用户创建提议，建议使用以下主题作为默认标签。"
-      name:
-        placeholder: 输入主题名字
     users:
       columns:
         name: 名字
@@ -1208,8 +1174,6 @@ zh-CN:
           created_at: 创建于
           status: 状态
           updated_at: 更新于
-          status_draft: 草稿
-          status_published: 已发表
           title: 标题
           slug: Slug
           cards_title: 卡片
