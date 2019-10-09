@@ -2,8 +2,6 @@ pt-BR:
   account:
     show:
       change_credentials_link: Alterar meus dados pessoais
-      email_on_comment_label: Notificar-me por email quando alguém comentar sobre minhas propostas ou debates
-      email_on_comment_reply_label: Notificar-me por email quando alguém responder sobre meus comentários
       erase_account_link: Apagar minha conta
       finish_verification: Completar verificação
       notifications: Notificações
@@ -11,18 +9,10 @@ pt-BR:
       organization_responsible_name_placeholder: Representante de organização/coletivo
       personal: Dados pessoais
       phone_number_label: Número de Telefone
-      public_activity_label: Manter pública minha lista de atividades
-      public_interests_label: Tornar públicos os rótulos dos elementos que sigo
       public_interests_my_title_list: Marcações dos elementos que você segue
       public_interests_user_title_list: Marcações dos elementos que esse usuário segue
       save_changes_submit: Salvar alterações
-      subscription_to_website_newsletter_label: Receber por email informações relevantes deste site
-      email_on_direct_message_label: Receber emails sobre mensagens diretas
-      email_digest_label: Receber resumo de notificações sobre propostas
-      official_position_badge_label: Mostrar etiqueta da posição oficial
       recommendations: Recomendações
-      show_debates_recommendations: Mostrar recomendações de debates
-      show_proposals_recommendations: Mostrar as recomendações propostas
       title: Minha conta
       user_permission_debates: Participar nos debates
       user_permission_info: Com a sua conta você pode...
@@ -41,7 +31,6 @@ pt-BR:
   comments:
     comments_closed: Comentários estão fechados
     verified_only: Para participar %{verify_account}
-    verify_account: verificar sua conta
     comment:
       admin: Administrador
       author: Autor
@@ -99,7 +88,6 @@ pt-BR:
     form:
       debate_title: Título do debate
       tags_instructions: Marcar este debate.
-      tags_label: Tópicos
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
     index:
       featured_debates: Destacado
@@ -160,7 +148,6 @@ pt-BR:
       comments_title: Comentários
       edit_debate_link: Editar
       flag: Este debate foi marcado como inapropriado por vários usuários.
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
       share: Compartilhar
       author: Autor
     update:
@@ -275,7 +262,6 @@ pt-BR:
   map:
     title: "Distritos"
     proposal_for_district: "Inicie uma proposta para seu distrito"
-    select_district: Escopo da operação
     start_proposal: Criar proposta
   omniauth:
     facebook:
@@ -311,7 +297,6 @@ pt-BR:
     retire_form:
       title: Retirar proposta
       warning: "Se você retirar a proposta ela ainda poderá receber apoio, mas será removida da lista principal, e uma mensagem ficará visível para todos os usuários informando que o autor considera que a proposta não deve mais receber suporte"
-      retired_reason_label: Motivo para retirar a proposta
       retired_reason_blank: Escolha uma opção
       retired_explanation_placeholder: Explique brevemente por que você acha que esta proposta não deve mais receber apoio
       submit_button: Retirar proposta
@@ -322,14 +307,8 @@ pt-BR:
       done: Feito
       other: Outro
     form:
-      geozone: Escopo da operação
-      proposal_responsible_name: Nome completo da pessoa que está submetendo a proposta
       proposal_responsible_name_note: "(indivudualmente ou como representante de um\ncoletivo; não será mostrado publicamente)"
-      proposal_summary: Sumário da proposta
       proposal_summary_note: "(máximo de 200 caracteres)"
-      proposal_text: Texto da proposta
-      proposal_title: Título da proposta
-      proposal_video_url: Link para vídeo externo
       proposal_video_url_note: Você pode adicionar um link para o Youtube ou Vimeo
       tag_category_label: "Categorias"
       tags_instructions: "Marque esta proposta. Você pode escolher entre as categorias propostas ou adicionar a sua própria"
@@ -434,7 +413,6 @@ pt-BR:
         other: "%{count} comentários"
       comments_tab: Comentários
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
       notifications_tab: Notificações
       milestones_tab: Marcos
       retired_warning: "O autor considera que esta proposta não deve mais receber apoio."
@@ -488,7 +466,6 @@ pt-BR:
         submit: Atualizar votação
       poll:
         view_results: Exibir resultados
-        show_results: Exibir resultados
       form:
         add_question: Adicionar pergunta
       question_fields:
@@ -529,9 +506,6 @@ pt-BR:
       back: Voltar à votação
       cant_answer_not_logged_in: "Você precisa %{signin} ou %{signup} para participar."
       comments_tab: Comentários
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
-      signin: Iniciar sessão
-      signup: Inscreva-se
       cant_answer_verify_html: "Você deve %{verify_link} para poder responder."
       verify_link: "verifique sua conta"
       cant_answer_expired: "Esta votação já foi encerrada."
@@ -565,8 +539,6 @@ pt-BR:
   proposal_notifications:
     new:
       title: "Enviar mensagem"
-      title_label: "Título"
-      body_label: "Mensagem"
       submit_button: "Enviar mensagem"
       info_about_receivers_html: "Esta mensagem será enviada para <strong>%{count} pessoas</strong> e ficará visível em %{proposal_page}.<br> As mensagens não são enviadas imediatamente, os usuários receberão periodicamente um email com todas as notificações da proposta."
       proposal_page: "a página da proposta"
@@ -647,7 +619,6 @@ pt-BR:
       districts: "Distritos"
       districts_list: "Lista de distritos"
       categories: "Categorias"
-    target_blank_html: " (link abre em nova janela)"
     you_are_in: "Você está em"
     unflag: Desmarcar
     unfollow_entity: "Deixar de seguir %{entity}"
@@ -693,16 +664,10 @@ pt-BR:
   users:
     direct_messages:
       new:
-        body_label: Mensagem
         direct_messages_bloqued: "Este usuário decidiu não receber mensagens diretas"
         submit_button: Enviar mensagem
         title: Enviar mensagem privada para %{receiver}
-        title_label: Título
         verified_only: Para enviar uma mensagem privada %{verify_account}
-        verify_account: verifique sua conta
-        authenticate: Você precisa %{signin} ou %{signup} para continuar
-        signin: iniciar sessão
-        signup: inscrever-se
       show:
         receiver: Mensagem enviada para %{receiver}
     show:
@@ -748,12 +713,8 @@ pt-BR:
     comment_unauthenticated: Você precisa %{signin} ou %{signup} para votar.
     disagree: Eu discordo
     organizations: Organizações não tem permissão de voto
-    signin: Iniciar sessão
-    signup: Inscreva-se
     supports: Apoios
-    unauthenticated: Você precisa %{signin} ou %{signup} para continuar.
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
-    verify_account: verifique sua conta
     budget_investments:
       not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
       not_verified: Somente usuários verificados podem votar em projetos de investimento; %{verify_account}.
@@ -831,8 +792,6 @@ pt-BR:
     help:
       alt: Selecione o texto que deseja comentar e pressione o botão com o lápis.
       text: Para comentar este documento, você deve %{sign_in} ou %{sign_up}. Em seguida, selecione o texto que deseja comentar e pressione o botão com o lápis.
-      text_sign_in: iniciar sessão
-      text_sign_up: inscrever-se
       title: Como eu posso comentar este documento?
   links:
     form:
