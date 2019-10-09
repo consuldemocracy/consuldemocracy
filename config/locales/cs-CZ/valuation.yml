@@ -55,8 +55,6 @@ cs:
         assigned_valuators: Přiřazeno hodnotiteli
       edit:
         dossier: Dokumentace
-        price_html: "Cena (%{currency})"
-        price_first_year_html: "Náklady během prvního roku (%{currency}) <small>(nepovinné, údaje nejsou veřejné)</small>"
         feasibility: Proveditelnost
         valuation_finished_alert: "Opravdu chcete tuto zprávu označit za dokončenou? Pokud to uděláte, nemůže již změnit."
         not_feasible_alert: "Autorovi projektu bude okamžitě zaslán email s informací o nerealizovatelnosti projektu."
