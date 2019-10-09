@@ -92,9 +92,6 @@ ca:
         button: Buscar
         placeholder: Cercar debats...
         title: Buscar
-      search_results_html:
-        one: "que conté <strong>'%{search_term}'</strong>"
-        other: "que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       start_debate: Comença un nou debat
       title: Debats
@@ -272,9 +269,6 @@ ca:
         button: Buscar
         placeholder: Cercar propostes...
         title: Buscar
-      search_results_html:
-        one: "que conté <strong>'%{search_term}'</strong>"
-        other: "que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       select_order_long: "Estàs veient les propostes"
       start_proposal: Crea una proposta
@@ -354,7 +348,6 @@ ca:
     show:
       cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per participar en el debat."
       comments_tab: Comentarios
-      cant_answer_verify_html: "Per favor %{verify_link} per a poder respondre."
       verify_link: "verifica el teu compte"
       cant_answer_expired: "Esta votació ha terminat."
       cant_answer_wrong_geozone: "Esta votació no està disponible al teu area."
