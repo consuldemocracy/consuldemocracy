@@ -17,9 +17,6 @@ de:
     letter:
       alert:
         unconfirmed_code: Sie haben den Bestätigungscode noch nicht eingegeben
-      create:
-        flash:
-          success_html: Danke, dass Sie Ihren <b>Hochsicherheitscode (nur für die finale Abstimmung erforderlich) </b> angefordert haben. Vor der Abstimmung erhalten Sie einen Brief mit der Anweisung, Ihr Konto zu bestätigen. Heben Sie den Brief gut auf, um sich persönlich in einem der %{offices} verifizieren zu können.
       edit:
         see_all: Vorschläge anzeigen
         title: Brief angefordert
@@ -49,7 +46,6 @@ de:
         accept_terms_text_title: Ich stimme den Allgemeinen Nutzungsbedingungen des Melderegisters zu
         document_number: Dokumentennummern
         document_number_help_title: Hilfe
-        document_number_help_text_html: "<strong>Personalausweis</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Aufenthaltsbescheinigung</strong>: X1234567P"
         document_type:
           passport: Pass
           residence_card: Aufenthaltsbescheinigung
@@ -73,7 +69,6 @@ de:
         title: Sicherheitscode bestätigen
       new:
         phone: Geben Sie Ihre Handynummer ein, um den Code zu erhalten
-        phone_format_html: "<strong>-<em>(Beispiel: 612345678 oder +34612345678)</em></strong>"
         phone_note: Wir verwenden Ihre Telefonnummer ausschließlich dafür Ihnen einen Code zu schicken, niemals um Sie zu kontaktieren.
         phone_placeholder: "Beispiel: 612345678 oder +34612345678"
         submit_button: Senden
