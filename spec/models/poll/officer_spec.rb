@@ -127,7 +127,7 @@ describe Poll::Officer do
   describe "todays_booths" do
     let(:officer) { create(:poll_officer) }
 
-    it "returns booths for the application's time zone date", :with_different_time_zone do
+    it "returns booths for the application's time zone date", :application_zone_west_of_system_zone do
       assignment_with_local_time_zone = create(:poll_officer_assignment,
                                                date:    Date.today,
                                                officer: officer)

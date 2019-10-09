@@ -44,7 +44,7 @@ describe Milestone do
   end
 
   describe ".published" do
-    it "uses the application's time zone date", :with_different_time_zone do
+    it "uses the application's time zone date", :application_zone_west_of_system_zone do
       published_in_local_time_zone = create(:milestone,
                                             publication_date: Date.today)
 
