@@ -32,8 +32,6 @@ zh-TW:
       index:
         title: 管理
         info: 您可以在此處通過左側菜單中列出的所有操作來管理用戶。
-    document_number: 文檔編號
-    document_type_label: 文檔類型
     document_verifications:
       already_verified: 此用戶帳戶已被核實。
       has_no_account_html: 要創建帳戶，請轉到%{link}，然後點擊屏幕左上角的<b>'註冊'</b>。
