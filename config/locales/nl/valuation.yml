@@ -55,8 +55,6 @@ nl:
         assigned_valuators: Toegewezen beoordelaars
       edit:
         dossier: Dossier
-        price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
         feasibility: Feasibility
         valuation_finished_alert: "Dit rapport als voltooid markeren? Daarna kan het niet meer worden gewijzigd."
         not_feasible_alert: "Een email met de beoordeling van de haalbaarheid wordt verstuurd aan de auteur van het project."
