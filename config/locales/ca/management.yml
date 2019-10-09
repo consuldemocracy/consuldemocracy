@@ -22,7 +22,6 @@ ca:
         info: Des d'aquí pots gestionar usuaris a través de les accions llistades al menú de l'esquerra.
     document_verifications:
       already_verified: Aquest compte d'usuari ja està verificada.
-      has_no_account_html: Per crear un usuari entri %{link} i feu clic a l'opció <b>'Crear'</b> a la part superior dreta de la pantalla.
       in_census_has_following_permissions: "Aquest usuari pot participar al Portal de Govern Obert amb les següents possibilitats:"
       not_in_census: Aquest document no està registrat.
       not_in_census_info: "Les persones no empadronades poden participar al Portal de Govern Obert amb les següents possibilitats:"
@@ -87,7 +86,6 @@ ca:
     users:
       create_user: Crea un compte d'usuari
       create_user_submit: crear usuari
-      create_user_success_html: Hem enviat un correu electrònic a <b>%{email}</b> per verificar que és seva. El correu enviat conté un link que l'usuari haurà de prémer. Llavors podrà seleccionar una clau d'accés, i entrar a la web de participació.
       erased_notice: Compte d'usuari esborrada.
       erased_by_manager: "S'ha eliminat pel manager: %{manager}"
       erase_account_link: esborrar compte
@@ -98,5 +96,3 @@ ca:
       new:
         label: emails
         info: "Introdueix els emails separats per ','"
-      create:
-        success_html: S'han enviat <strong>%{count} invitacions.</strong>
