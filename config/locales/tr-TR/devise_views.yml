@@ -6,7 +6,6 @@ tr:
         submit: Açıklamaları tekrar gönder
         title: Onay açıklamalarını tekrar gönder
       show:
-        instructions_html: Hesabı e-posta ile onaylama %{email}
         new_password_confirmation_label: Erişim şifresini tekrarla
         new_password_label: Yeni erişim şifresi
         please_set_password: Lütfen yeni şifrenizi seçin (yukarıdaki e-posta ile giriş yapmanızı sağlar)
@@ -50,9 +49,6 @@ tr:
           title: Bir kurum veya topluluk olarak kaydol
         success:
           back_to_index: Anladım; ana sayfaya geri dön
-          instructions_1_html: "Bu topluluğu temsil ettiğinizi doğrulamak için <strong>Yakında sizinle iletişime geçeceğiz</strong>."
-          instructions_2_html: Sizin <strong>e-postanız incelenirken</strong> size <strong>hesabınızı onaylamanız için bir bağlantı</strong> gönderdik.
-          thank_you_html: Topluluğunuzu Pusula'ya kaydettiğiniz için teşekkür ederiz. Şimdi <strong>doğrulama bekleniyor</strong>.
           title: Kurumun / topluluğun kaydı
     passwords:
       edit:
@@ -122,6 +118,4 @@ tr:
           username_note: Gönderilerinizin yanında görünen isim
         success:
           back_to_index: Anladım; ana sayfaya geri dön
-          instructions_1_html: Lütfen <b>e-postanızı kontrol edin</b> - size <b>hesabınızı doğrulamak için bir bağlantı</b> gönderdik.
-          thank_you_html: Pusula'ya kaydolduğunuz için teşekkür ederiz. Şimdi <b>e-posta adresinizi doğrulamalısınız</b>.
           title: E-posta adresini onayla
