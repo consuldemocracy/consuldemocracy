@@ -2,8 +2,6 @@ it:
   account:
     show:
       change_credentials_link: Modificare le mie credenziali
-      email_on_comment_label: Avvisami via email quando qualcuno commenta le mie proposte o dibattiti
-      email_on_comment_reply_label: Avvisami via email quando qualcuno risponde ai miei commenti
       erase_account_link: Cancella il mio account
       finish_verification: Completa la verifica
       notifications: Notifiche
@@ -11,18 +9,10 @@ it:
       organization_responsible_name_placeholder: Rappresentante dell'organizzazione o collettivo
       personal: Dettagli personali
       phone_number_label: Numero di telefono
-      public_activity_label: Mantenere pubbliche la mia lista delle attività
-      public_interests_label: Mantieni pubbliche le etichette degli elementi che seguo
       public_interests_my_title_list: Etichette di elementi che segui
       public_interests_user_title_list: Etichette degli elementi che segue questo utente
       save_changes_submit: Salvare le modifiche
-      subscription_to_website_newsletter_label: Ricevere per e-mail informazioni interessanti pubblicate sul sito
-      email_on_direct_message_label: Ricevere e-mail con i messaggi privati
-      email_digest_label: Ricevere un riepilogo delle notifiche di proposta
-      official_position_badge_label: Visualizza l'etichetta (badge) del tipo di utente
       recommendations: Raccomandazioni
-      show_debates_recommendations: Visualizza le raccomandazioni per i dibattiti
-      show_proposals_recommendations: Visualizza le raccomandazioni per le proposte
       title: Il mio account
       user_permission_debates: Partecipare ai dibattiti
       user_permission_info: Con il tuo account puoi...
@@ -41,7 +31,6 @@ it:
   comments:
     comments_closed: I commenti sono chiusi
     verified_only: Per partecipare %{verify_account}
-    verify_account: verifica il tuo account
     comment:
       admin: Amministratore
       author: Autore
@@ -95,7 +84,6 @@ it:
     form:
       debate_title: Titolo del dibattito
       tags_instructions: Etichetta questo dibatto.
-      tags_label: Argomenti
       tags_placeholder: "Inserisci i tag che desideri utilizzare, separati da virgole (',')"
     index:
       featured_debates: In primo piano
@@ -156,7 +144,6 @@ it:
       comments_title: Commenti
       edit_debate_link: Modificare
       flag: Questo dibattito è stato contrassegnato come inappropriato da diversi utenti.
-      login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
       share: Condividere
       author: Autore
     update:
@@ -261,7 +248,6 @@ it:
   map:
     title: "Distretti"
     proposal_for_district: "Avviare una proposta per il vostro distretto"
-    select_district: Ambito operativo
     start_proposal: Creare una proposta
   omniauth:
     facebook:
@@ -294,7 +280,6 @@ it:
     retire_form:
       title: Ritira proposta
       warning: "Anche se ritirata la proposta potrà ricevere comunque sostegni, ma sarà rimossa dall’elenco principale e tutti gli utenti visualizzeranno il messaggio che l’autore ritiene che la proposta non debba più essere sostenuta"
-      retired_reason_label: Motivo del ritiro della proposta
       retired_reason_blank: Scegli un'opzione
       retired_explanation_placeholder: Spiega brevemente perché ritieni che questa proposta non debba ricevere ulteriori sostegni
       submit_button: Ritira proposta
@@ -305,14 +290,8 @@ it:
       done: Fatto
       other: Altri
     form:
-      geozone: Ambito operativo
-      proposal_responsible_name: Nome e cognome della persona che presenta la proposta
       proposal_responsible_name_note: "(individualmente o come rappresentante di un’associazione; non sarà reso pubblico)"
-      proposal_summary: Riepilogo della proposta
       proposal_summary_note: "(massimo 200 caratteri)"
-      proposal_text: Testo della proposta
-      proposal_title: Titolo della proposta
-      proposal_video_url: Link a video esterno
       proposal_video_url_note: È possibile aggiungere un link a YouTube o Vimeo
       tag_category_label: "Categorie"
       tags_instructions: "Taggare questa proposta. Si può scegliere tra le categorie riportate oppure aggiungerne una"
@@ -416,7 +395,6 @@ it:
         other: "%{count} commenti"
       comments_tab: Commenti
       flag: Questa proposta è stata contrassegnata come inappropriata da diversi utenti.
-      login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
       notifications_tab: Notifiche
       milestones_tab: Traguardi
       retired_warning: "L'autore ritiene che questa proposta non debba ricevere ulteriori appoggi."
@@ -463,9 +441,6 @@ it:
       back: Ritorno al voto
       cant_answer_not_logged_in: "È necessario %{signin} o %{signup} per partecipare."
       comments_tab: Commenti
-      login_to_comment: È necessario %{signin} o %{signup} per lasciare un commento.
-      signin: Accedere
-      signup: Registrati
       cant_answer_verify_html: "È necessario %{verify_link} per rispondere."
       verify_link: "verifica la tua utenza"
       cant_answer_expired: "Questa votazione è conclusa."
@@ -498,8 +473,6 @@ it:
   proposal_notifications:
     new:
       title: "Invia messaggio"
-      title_label: "Titolo"
-      body_label: "Messaggio"
       submit_button: "Invia messaggio"
       info_about_receivers_html: "Questo messaggio sarà inviato a <strong>%{count} persone</strong> e sarà visibile sulla %{proposal_page}.<br> I messaggi non vengono inviati immediatamente, gli utenti riceveranno periodicamente una email con tutte le notifiche di proposta."
       proposal_page: "pagina della proposta"
@@ -580,7 +553,6 @@ it:
       districts: "Distretti"
       districts_list: "Lista dei distretti"
       categories: "Categorie"
-    target_blank_html: " (il link si apre in una nuova finestra)"
     you_are_in: "Sei entrato"
     unflag: Rimuovi il flag
     unfollow_entity: "Non seguire più %{entity}"
@@ -626,16 +598,10 @@ it:
   users:
     direct_messages:
       new:
-        body_label: Messaggio
         direct_messages_bloqued: "Questo utente ha deciso di non ricevere messaggi diretti"
         submit_button: Invia messaggio
         title: Invia un messaggio privato a %{receiver}
-        title_label: Titolo
         verified_only: Per inviare un messaggio privato %{verify_account}
-        verify_account: verifica il tuo account
-        authenticate: È necessario %{signin} o %{signup} per continuare.
-        signin: accedere
-        signup: accedere
       show:
         receiver: Messaggio inviato a %{receiver}
     show:
@@ -678,12 +644,8 @@ it:
     comment_unauthenticated: È necessario %{signin} o %{signup} per votare.
     disagree: Non sono d'accordo
     organizations: Le organizzazioni non sono ammesse a votare
-    signin: Accedere
-    signup: Registrati
     supports: Supporti
-    unauthenticated: È necessario %{signin} o %{signup} per continuare.
     verified_only: Solo gli utenti verificati possono votare le proposte; %{verify_account}.
-    verify_account: verifica il tuo account
     budget_investments:
       not_logged_in: È necessario %{signin} o %{signup} per continuare.
       not_verified: Solo gli utenti verificati possono votare i progetti di investimento; %{verify_account}.
@@ -761,6 +723,4 @@ it:
     help:
       alt: Selezionare il testo che si desidera commentare e premere il pulsante con la matita.
       text: Per commentare questo documento è necessario %{sign_in} o %{sign_up}. Quindi selezionare il testo che si desidera commentare e premere il pulsante con la matita.
-      text_sign_in: account di accesso
-      text_sign_up: registrarsi
       title: Come posso commentare questo documento?
