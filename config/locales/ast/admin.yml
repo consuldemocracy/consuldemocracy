@@ -25,11 +25,6 @@ ast:
           with_inactive: Inactivos
         preview: Previsualizar
       banner:
-        title: Títulu
-        description: Descripción detallada
-        target_url: Enllaz
-        post_started_at: Entamu de publicación
-        post_ended_at: Fin de publicación
         sections:
           debates: Alderique
           proposals: Propuestes
@@ -91,20 +86,11 @@ ast:
         calculated: Calculando ganadoras, puede tardar un minutu.
     budget_groups:
       name: "Nome"
-      form:
-        name: "Nome del grupu"
     budget_headings:
-      name: "Nome"
       form:
-        name: "Nome de la partida"
-        amount: "Cantidá"
         submit: "Guardar partida"
     budget_phases:
       edit:
-        start_date: Fecha d'entamu del procesu
-        end_date: Fecha de fin del procesu
-        summary: Resume
-        description: Descripción detallada
         save_changes: Guardar Cambeos
     budget_investments:
       index:
@@ -170,7 +156,6 @@ ast:
         assigned_valuators: Evaluaores
         select_heading: Escoyer partida
         submit_button: Actualizar
-        tags: Temes
         tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
         undefined: Ensin definir
       search_unfeasible: Buscar invidables
@@ -230,7 +215,6 @@ ast:
           summary_placeholder: Resume curtiu de la descripción
           description_placeholder: Añede una descripción del procesu
           additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
-          homepage: Descripción detallada
         index:
           create: Nuevu procesu
           delete: Borrar
@@ -302,9 +286,6 @@ ast:
           back: Volver
           title: Crear nueva versión
           submit_button: Crear versión
-        statuses:
-          draft: Borrador
-          published: Publicáu
         table:
           title: Títulu
           created_at: Creáu
@@ -329,7 +310,6 @@ ast:
             error: Erru
         form:
           add_option: +Añedir respuesta zarrada
-          title: Entruga
           value_placeholder: Escribe una respuesta zarrada
         index:
           back: Volver
@@ -461,8 +441,6 @@ ast:
     valuator_groups:
       index:
         name: "Nome"
-      form:
-        name: "Nome del grupu"
     poll_officers:
       index:
         title: Presidentes de mesa
@@ -564,7 +542,6 @@ ast:
         title: "Editar entruga ciudadana"
       new:
         title: "Crear entruga ciudadana"
-        poll_label: "Votación"
       show:
         proposal: Propuesta ciudadana orixinal
         author: Autor
@@ -608,8 +585,6 @@ ast:
         location: "Allugamientu"
       new:
         title: "Nueva urna"
-        name: "Nome"
-        location: "Allugamientu"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -818,8 +793,6 @@ ast:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
-      name:
-        placeholder: Escribe el nombre del tema
     users:
       columns:
         name: Nome
@@ -901,8 +874,6 @@ ast:
           created_at: Creáu
           status: Estáu
           updated_at: Actualizáu en
-          status_draft: Borrador
-          status_published: Publicáu
           title: Títulu
           slug: Slug
         cards:
