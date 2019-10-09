@@ -27,13 +27,11 @@ gl:
         description: "Na sección %{link} podes formular propostas para que o Concello as leve a cabo. As propostas obteñen apoios e se alcanzan abondos sométense a votación cidadá. As propostas aprobadas nestas votacións cidadás son asumidas polo Concello e lévanse a cabo."
         link: "propostas cidadás"
         image_alt: "Botón para apoiar unha proposta"
-        figcaption_html: 'Botón para apoiar unha proposta.'
       budgets:
         title: "Orzamentos participativos"
         description: "A sección de %{link} serve para que a xente decida de maneira directa a que se destina unha parte do orzamento municipal."
         link: "orzamentos participativos"
         image_alt: "Diferentes fases dun orzamento participativo"
-        figcaption_html: 'Fase de "apoios" e de "votación" dos orzamentos participativos.'
       polls:
         title: "Votacións"
         description: "A sección de %{link} actívase cada vez que unha proposta acada o 1% dos apoios e pasa á votación ou cando o Concello propón un tema para que a xente decida sobre el."
@@ -161,10 +159,7 @@ gl:
     titles:
       help: "Que é %{org}? - Participación cidadá"
     verify:
-      code: Código que recibiches na túa carta
-      email: O teu correo electrónico
       info: "Para verificares a túa conta, introduce os datos de acceso:"
       info_code: "Agora escribe o código que recibiches na carta:"
-      password: Contrasinal que empregarás para acceder a este sitio web
       submit: Verificar a miña conta
       title: Verifica a túa conta
