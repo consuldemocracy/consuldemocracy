@@ -6,7 +6,6 @@ bs:
     form:
       title: Dokumenti
       title_placeholder: Dodajte opisni naziv dokumenta
-      attachment_label: Odaberi dokument
       delete_button: Ukloni dokument
       cancel_button: Poništi
       note: "Možete učitati maksimalno %{max_documents_allowed} dokumenata ovih vrsta sadržaja: %{accepted_content_types}, do %{max_file_size} MB po fajlu."
