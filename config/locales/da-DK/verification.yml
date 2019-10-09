@@ -17,9 +17,6 @@ da:
     letter:
       alert:
         unconfirmed_code: Du har endnu ikke indtastet bekræftelseskoden
-      create:
-        flash:
-          success_html: Tak fordi du anmodede om din <b> sikkerhedskode (kun påkrævet ved endelige afstemninger)</b>. Om få dage vil koden blive sendt til den angivede adresse. Husk du også kan afhente adgangskoden hos ethvert borgerservicecenter, hvis du foretrækker det i stedet for.
       edit:
         see_all: Se forslag
         title: Brev anmodet
@@ -49,7 +46,6 @@ da:
         accept_terms_text_title: Jeg accepterer vilkår og betingelser for adgangen til adresseregistret
         document_number: Dokumentnummer
         document_number_help_title: Hjælp
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>pas</strong>: AAA000001<br> <strong>residence kort</strong>: X1234567P"
         document_type:
           passport: Pas
           residence_card: Øvrig identitetsdokument
@@ -73,7 +69,6 @@ da:
         title: Bekræftelse af sikkerhedskode
       new:
         phone: Skriv dit telefonnummer for at modtage koden
-        phone_format_html: "<strong><em>(Eksempel: 612345678 eller +34612345678)</em></strong>"
         phone_note: Vi bruger kun dit telefonnummer til at sende dig en kode. Vi vil aldrig kontakte dig.
         phone_placeholder: "Eksempel: 612345678 eller +45612345678"
         submit_button: Send
