@@ -199,9 +199,9 @@ da:
         password_confirmation: "Bekræftelse af adgangskode"
         password: "Adgangskode"
         current_password: "Nuværende adgangskode"
-        phone_number: "Telefonnummer"
         official_position: "Embedsposition"
         official_level: "Embedsniveau"
+        phone_number: "Telefonnummer"
         redeemable_code: "Verifikationskode modtaget via e-mail"
       organization:
         name: "Navn på organisation"
@@ -301,10 +301,10 @@ da:
         text: Kommentar
       document:
         title: Titel
-        attachment: Vedhæft fil
+        attachment: "Vedhæft fil"
       image:
         title: Titel
-        attachment: Vedhæft fil
+        attachment: "Vedhæft fil"
       poll/question/answer:
         title: Svar
         description: Beskrivelse
@@ -317,7 +317,7 @@ da:
       newsletter:
         segment_recipient: Modtagere
         subject: Emne
-        from: Fra
+        from: "Fra"
         body: Indhold af e-mail
       admin_notification:
         segment_recipient: Modtagere
