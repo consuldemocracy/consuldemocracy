@@ -189,9 +189,9 @@ sv:
         password_confirmation: "Bekräfta lösenord"
         password: "Lösenord"
         current_password: "Nuvarande lösenord"
-        phone_number: "Telefonnummer"
         official_position: "Titel"
         official_level: "Tjänstepersonnivå"
+        phone_number: "Telefonnummer"
         redeemable_code: "Mottagen bekräftelsekod"
       organization:
         name: "Organisationsnamn"
@@ -290,10 +290,10 @@ sv:
         text: Kommentar
       document:
         title: Titel
-        attachment: Bilaga
+        attachment: "Bilaga"
       image:
         title: Titel
-        attachment: Bilaga
+        attachment: "Bilaga"
       poll/question/answer:
         title: Svar
         description: Beskrivning
@@ -306,7 +306,7 @@ sv:
       newsletter:
         segment_recipient: Mottagare
         subject: Ämne
-        from: Från
+        from: "Från"
         body: E-postmeddelande
       admin_notification:
         segment_recipient: Mottagare
