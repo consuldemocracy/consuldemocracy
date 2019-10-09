@@ -32,8 +32,6 @@ hr:
       index:
         title: Menadžment
         info: Ovdje možete upravljati korisnicima putem svih akcija koje su navedene u lijevom meniju.
-    document_number: Broj dokumenta
-    document_type_label: Tip dokumenta
     document_verifications:
       already_verified: Ovaj korisnički račun je već potvrđen.
       has_no_account_html: Kako biste stvorili račun, idite na %{link} i kliknite <b>"Registriraj se"</b> u gornjem lijevom kutu ekrana.
