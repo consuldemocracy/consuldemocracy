@@ -13,9 +13,7 @@ sl:
         not_verified: Le verificirani uporabniki lahko glasujejo o naložbah; %{verify_account}.
         organization: Organizacijam ni dovoljeno glasovati
         not_selected: Neizbraneih investicij ni mogoče podpreti
-        not_enough_money_html: "Ves razpoložljiv proračun si že porabil.<br><small>Lahko pa kadarkoli %{change_ballot}</small>"
         no_ballots_allowed: Faza izbiranja je končana
-        different_heading_assigned_html: "Glasoval si že za drugačen naslov: %{heading_link}"
         change_ballot: spremeniš svoje glasove
     groups:
       show:
@@ -76,7 +74,6 @@ sl:
           my_ballot: Moja glasovanja
           voted_info: Lahko %{link} kadarkoli do konca te faze. Ni treba porabiti vsega denarja, ki je na voljo.
           voted_info_link: spremeniš svoj glas
-          different_heading_assigned_html: "V drugem naslovu imaš aktivna glasovanja: %{heading_link}"
           change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} in začneš znova."
           check_ballot_link: "preveri moja glasovanja"
           zero: Nisi glasoval za noben naložbeni projekt v tej skupini.
@@ -94,9 +91,6 @@ sl:
         author_deleted: Uporabnik izbrisan
         price_explanation: Razlaga cene
         unfeasibility_explanation: Razlaga neizvedljivosti
-        code_html: "Koda naložbenega projekta: <strong>%{code}</strong>"
-        location_html: "Lokacija: <strong>%{location}</strong>"
-        organization_name_html: "Predlagan v imenu: <strong>%{name}</strong>"
         share: Deli
         title: Investicijski projekt
         supports: Podpore
@@ -105,8 +99,6 @@ sl:
         comments_tab: Komentarji
         milestones_tab: Mejniki
         author: Avtor
-        project_unfeasible_html: "Ta naložbeni projekt <strong>je bil označen kot neizvedljiv</strong> in ni dosegel faze glasovanja."
-        project_not_selected_html: "Ta naložbeni projekt <strong>ni bil izbran</strong> za fazo glasovanja."
       wrong_price_format: Samo cela števila
       investment:
         add: Glasuj
@@ -118,7 +110,6 @@ sl:
         give_support: Glasuj za predlog!
       header:
         check_ballot: Preveri moja glasovanja
-        different_heading_assigned_html: "Imaš aktivna glasovanja v drugem naslovu: %{heading_link}"
         change_ballot: "Če si premisliš, lahko odstraniš svoje glasove v %{check_ballot} and start again."
         check_ballot_link: "preveri moja glasovanja"
         price: "Ta naslov ima proračun v višini"
