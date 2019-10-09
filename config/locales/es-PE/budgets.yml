@@ -10,7 +10,6 @@ es-PE:
         voted_html:
           one: "Has votado <span>una</span> propuesta."
           other: "Has votado <span>%{count}</span> propuestas."
-        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase.<br> No hace falta que gastes todo el dinero disponible."
         zero: Todavía no has votado ninguna propuesta de inversión.
       reasons_for_not_balloting:
         not_logged_in: Necesitas %{signin} o %{signup}.
@@ -59,7 +58,6 @@ es-PE:
         map_location: "Ubicación en el mapa"
         map_location_instructions: "Navega por el mapa hasta la ubicación y coloca el marcador."
         map_remove_marker: "Eliminar el marcador"
-        location: "Información adicional de la ubicación"
       index:
         title: Presupuestos participativos
         unfeasible: Propuestas de inversión no viables
@@ -83,11 +81,8 @@ es-PE:
           check_ballot_link: "revisar mis votos"
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Para crear una nueva propuesta de inversión %{verify}."
-          verify_account: "verifica tu cuenta"
           create: "Crear nuevo proyecto"
           not_logged_in: "Para crear una nueva propuesta de inversión debes %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sesión"
-          sign_up: "registrarte"
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
