@@ -2,8 +2,6 @@ so:
   account:
     show:
       change_credentials_link: Bedesho aqoonsigayga
-      email_on_comment_label: Iigu soo sheegaan email ahaan marka qof uu ku faahfaahiyo soo jeedimaha ama doodaha
-      email_on_comment_reply_label: Ii wargali email ahaan marka qof uu jawaabo ku yiraahdo
       erase_account_link: Ka tiri akoonka
       finish_verification: Xaqiijin dhamaystiran
       notifications: Ogaysiis
@@ -11,18 +9,10 @@ so:
       organization_responsible_name_placeholder: Wakiilka ururka / wadajirka
       personal: Warbixinada qofka
       phone_number_label: Talafoon lambar
-      public_activity_label: Wakiilka hay'adda / wadajirka Liiska ku saabsan waxqabadka dadweynaha
-      public_interests_label: Xaji sumadaha waxyaabaha aan raacayo dadweynaha
       public_interests_my_title_list: Tagyada oo ka mid ah qodobada aad raacdo
       public_interests_user_title_list: Da'da walxahan ee istimalka soo socota
       save_changes_submit: Badbaadi beddelka
-      subscription_to_website_newsletter_label: Helitaanka bogga internetka ee macluumaadka khuseeya
-      email_on_direct_message_label: Helaan emayl ku saabsan fariimaha tooska ah
-      email_digest_label: Soo hel warbixinta kooban ee soo jeedinta soo jeedinta
-      official_position_badge_label: Muuji calaamadda booska rasmiga ah
       recommendations: Talloyin
-      show_debates_recommendations: Muuji talooyinka dodaha
-      show_proposals_recommendations: Muuji talooyinka soo jeedinta
       title: Xisaabteyda
       user_permission_debates: Kaqayb qadashada dooda
       user_permission_info: Akoonkaga waad karta...
@@ -41,7 +31,6 @@ so:
   comments:
     comments_closed: Faallooyinka waa la xidhay
     verified_only: Si aad uga qayb gasho%{verify_account}
-    verify_account: hubi xisaabtaada
     comment:
       admin: Mamulaha
       author: Qoraa
@@ -95,7 +84,6 @@ so:
     form:
       debate_title: Ciwaanka dooda
       tags_instructions: Taaga dooda.
-      tags_label: Mawduucyada
       tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
     index:
       featured_debates: Soobandhigiid/ Muqaal
@@ -156,7 +144,6 @@ so:
       comments_title: Faalo
       edit_debate_link: Isbedel
       flag: Dooddani waxaa loo calaamadiyay iyada oo aan ku habboonayn dad badan oo isticmaala.
-      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
       share: Lawadag
       author: Qoraa
     update:
@@ -261,7 +248,6 @@ so:
   map:
     title: "Degmooyinka"
     proposal_for_district: "Billow qorshe degmadaada"
-    select_district: Baxada Hawlgalka
     start_proposal: Abuur soo jeedin
   omniauth:
     facebook:
@@ -296,7 +282,6 @@ so:
     retire_form:
       title: Soo jeedinta hawlgabka
       warning: "Haddii aad ka fariisato hindise-gelinta, weli waa ay aqbali doontaa taageerada, laakiin waa laga saari doonaa liiska ugu weyn oo farriin ayaa loo arki doonaa dhammaan dadka isticmaala oo sheegaya in qoruhu uu tixgelinayo hindisaha aan la taageereynin mar dambe"
-      retired_reason_label: Sababta loo joojiyo soo jeedinta
       retired_reason_blank: Dooro ikhtiyaar
       retired_explanation_placeholder: Si kooban u sharax sababta aad u maleyneyso in hindisahan aan la siin karin taageerooyin dheeraad ah
       submit_button: Soo jeedinta hawlgabka
@@ -307,14 +292,8 @@ so:
       done: La sameeyo
       other: Midkale
     form:
-      geozone: Baxada Hawlgalka
-      proposal_responsible_name: Magaca buuxa ee qofka soo gudbinaya soo jeedinta
       proposal_responsible_name_note: "(shakhsi ahaan ama matalaad wadajir ah; lama soo bandhigi doono si cad)"
-      proposal_summary: Sokoobida sojedinta
       proposal_summary_note: "(ugu badnaan 200 jibbaar)"
-      proposal_text: Qorlka sojedinta
-      proposal_title: Ciwaanka soo jedinta
-      proposal_video_url: Xiriirinta fiidiyowga dibadda
       proposal_video_url_note: Waxaad ku dari kartaa link to YouTube ama Vimeo
       tag_category_label: "Qaybaha"
       tags_instructions: "Tag soojeedintaan. Waxaad kala dooran kartaa qaybaha la soo jeediyey ama ku dar adiga keligaa"
@@ -418,7 +397,6 @@ so:
         other: "%{count} falooyinka"
       comments_tab: Faalo
       flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.
-      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
       notifications_tab: Ogaysiisyo
       milestones_tab: Dhib meel loga baxo oo an lahayn dhibato wayn
       retired_warning: "Qoruhu wuxuu tixgelinayaa hindisahaan in aysan helin taageero dheeraad ah."
@@ -465,9 +443,6 @@ so:
       back: Dib u laabasho
       cant_answer_not_logged_in: "Waa inaad%{signin}%{signup} inaad ka qayb qaadato."
       comments_tab: Faalo
-      login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
-      signin: Geliid
-      signup: Saxiixid
       cant_answer_verify_html: "Waa inaad%%%{verify_link} xaqiijiso xiriirka si aad uga jawaabtid."
       verify_link: "hubi xisaabtaada"
       cant_answer_expired: "Ra'yiururintan ayaa dhammaatay."
@@ -500,8 +475,6 @@ so:
   proposal_notifications:
     new:
       title: "Fariin dir"
-      title_label: "Ciwaan"
-      body_label: "Fariin"
       submit_button: "Farri dir"
       info_about_receivers_html: "Fariintan waxaa loo diri doonaa <strong>%{count} dadka </strong> waxaana lagu arki doonaa%{proposal_page}.<br> - Xawaaruhu si dhakhso ah uma dirin, dadka isticmaala waxay helayaan wakhti gaaban email ah oo leh dhammaan ogeysiinta soo jeedinta."
       proposal_page: "bogga soo jeedinta"
@@ -582,7 +555,6 @@ so:
       districts: "Degmooyinka"
       districts_list: "Liiska Degmoyinka"
       categories: "Qaybaha"
-    target_blank_html: " (iskuxir furan daaqad cusub)"
     you_are_in: "Waad joogtaa"
     unflag: Foolxumo
     unfollow_entity: "Lama socdaan\n%{entity}"
@@ -628,16 +600,10 @@ so:
   users:
     direct_messages:
       new:
-        body_label: Fariin
         direct_messages_bloqued: "Isticmaalahan ayaa go'aansaday inaanu helin farriimo toos ah"
         submit_button: Farri dir
         title: Fariin gara diir%{receiver}
-        title_label: Ciwaan
         verified_only: Diir fariin khasa%{verify_account}
-        verify_account: hubi xisaabtaada
-        authenticate: Waa inad igu %{signin} ama%{signup} si wada.
-        signin: saxiixid
-        signup: saxiixid ilaa
       show:
         receiver: Fariin diir%{receiver}
     show:
@@ -680,12 +646,8 @@ so:
     comment_unauthenticated: Waa inaad%{signin} ama%{signup} codka.
     disagree: Ma aqbalin
     organizations: Ururada loma fasixin iney codeyaan
-    signin: Geliid
-    signup: Saxiixid
     supports: Tageerayaal
-    unauthenticated: Waa inad igu %{signin} ama%{signup} si wada.
     verified_only: Kaliya dadka isticmaala xaqiijiyay ayaa ku codayn kara soo jeedimaha%{verify_account}.
-    verify_account: hubi xisaabtaada
     budget_investments:
       not_logged_in: Waa inad igu %{signin} ama%{signup} si wada.
       not_verified: Kaliya dadka isticmaala hubinta ayaa codayn kara Mashariicdamaalgashiga; %{verify_account}.
@@ -763,6 +725,4 @@ so:
     help:
       alt: Dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
       text: Si aad uga faalloodto dukumiinti waa inaad%{sign_in} ama%{sign_up}. Ka dibna dooro qoraalka aad rabto inaad faallo ka bixiso adigoo riixaya batoonka.
-      text_sign_in: galaan
-      text_sign_up: iska diwan gelin
       title: Sidee ayaan faallo uga bixin karaa qoraalkan?
