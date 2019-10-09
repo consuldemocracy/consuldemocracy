@@ -17,8 +17,6 @@ pt-BR:
         first_theme_not_logged_in: Nenhum tema disponível, participe criando o primeiro.
         first_theme: Crie o primeiro tópico da comunidade
         sub_first_theme: "Para criar um tema você precisa %{sign_in} ou %{sign_up}."
-        sign_in: "iniciar sessão"
-        sign_up: "inscrever-se"
       tab:
         participants: Participantes
       sidebar:
@@ -37,8 +35,6 @@ pt-BR:
       create: Criar um tópico
       edit: Editar tópico
       form:
-        topic_title: Título
-        topic_text: Texto inicial
         new:
           submit_button: Criar tópico
         edit:
@@ -55,6 +51,3 @@ pt-BR:
         recommendation_one: Não escreva o título do tópico ou frases inteiras em letras maiúsculas. Na internet isso é considerado como grito. E ninguém gosta de gritos.
         recommendation_two: Qualquer tópico ou comentário que implique uma ação ilegal será removido, assim como aqueles que pretenderem perturbar os espaços de discussão, todo o resto é permitido.
         recommendation_three: Aproveite este espaço, ele é seu também.
-  topics:
-    show:
-      login_to_comment: Você precisa %{signin} ou %{signup} para deixar um comentário
