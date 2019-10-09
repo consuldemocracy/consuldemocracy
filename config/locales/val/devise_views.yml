@@ -52,7 +52,6 @@ val:
           back_to_index: Entés, tornar a la pàgina principal
           instructions_1_html: "<strong>Contactarem amb tu en breu</strong> per comprovar que tens la capacitat de representar a aquest colectiu."
           instructions_2_html: Mentres que el teu <strong>email es revisat</strong>, t'hem enviat un <strong>enllaç per a confirmar el teu compte</strong>.
-          instructions_3_html: Una vegada confirmat, podràs començar a participar com a col·lectiu no verificat.
           thank_you_html: Gracies per registrar el teu col·lectiu en la web. Ara està <strong>pendent de verificació</strong>.
           title: Registre d'organització / col·lectiu
     passwords:
@@ -124,6 +123,5 @@ val:
         success:
           back_to_index: Entes, tornar a la pàgina principal
           instructions_1_html: Si us plau <strong>revisa el teu correu electrònic</strong> - t'hem envat un <strong>enllaç per a confirmar el teu compte</strong>.
-          instructions_2_html: Una vegada confirmat, podràs començar a participar.
           thank_you_html: Gràcies per registrar-te en la web. Ara has de <strong>confirmar el teu correu</strong>.
           title: Confirma la teua direcció d'email
