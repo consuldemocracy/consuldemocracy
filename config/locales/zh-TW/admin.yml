@@ -26,11 +26,6 @@ zh-TW:
           with_inactive: 非活躍
         preview: 預覽
       banner:
-        title: 標題
-        description: 描述
-        target_url: 鏈接
-        post_started_at: 通告開始於
-        post_ended_at: 通告結束於
         sections_label: 它將出現的部分
         sections:
           homepage: 主頁
@@ -110,28 +105,17 @@ zh-TW:
         recalculate: 重新計算勝出者投資
     budget_groups:
       name: "名字"
-      max_votable_headings: "用戶可投票的最大標題數"
       form:
         edit: "編輯組"
-        name: "組名字"
         submit: "儲存組"
     budget_headings:
-      name: "名字"
       form:
-        name: "標題名稱"
-        amount: "數量"
-        population: "人口 (可選擇填寫)"
         population_info: "預算標題 \"人口\" 欄位用於統計目的, 在預算結束時顯示每個標題, 代表一個地區與人口百分比投票率。該欄位是可選擇填寫的, 因此如果不適用, 您可以將其留空。"
         submit: "儲存標題"
     budget_phases:
       edit:
-        start_date: 開始日期
-        end_date: 結束日期
-        summary: 總結
         summary_help_text: 本文將告知用戶關於階段。就算階段未活躍也要顯示，請選中下面的複選框
-        description: 描述
         description_help_text: 當此文本將顯示在頁眉中，則表示階段處於活躍狀態
-        enabled: 啟用階段
         enabled_help_text: 這一階段將在預算的階段時間內公開, 也會為其他目的而活躍
         save_changes: 儲存更改
     budget_investments:
@@ -217,17 +201,13 @@ zh-TW:
       edit:
         classification: 分類
         compatibility: 相容性
-        mark_as_incompatible: 標記為不相容
         selection: 選擇
-        mark_as_selected: 標記為已選中
         assigned_valuators: 評估員
         select_heading: 選擇標題
         submit_button: 更新
         user_tags: 用戶分配的標籤
-        tags: 標籤
         tags_placeholder: "寫下你想要的標籤，用逗號 (,) 作分隔"
         undefined: 未定義
-        user_groups: "組"
       search_unfeasible: 搜尋不可行
     statuses:
       index:
@@ -305,7 +285,6 @@ zh-TW:
           summary_placeholder: 描述的簡短摘要
           description_placeholder: 添加進程的描述
           additional_info_placeholder: 添加您認為有用的額外資訊
-          homepage: 描述
         index:
           create: 新進程
           delete: 刪除
@@ -382,9 +361,6 @@ zh-TW:
           back: 返回
           title: 創建新版本
           submit_button: 創建版本
-        statuses:
-          draft: 草稿
-          published: 發表
         table:
           title: 標題
           created_at: 創建於
@@ -409,7 +385,6 @@ zh-TW:
             error: 錯誤
         form:
           add_option: 添加選項
-          title: 問題
           title_placeholder: 添加問題
           value_placeholder: 添加一個已關閉的答案
           question_options: "可能的答案 (可選擇填寫，預設情況下打開答案)"
@@ -552,7 +527,6 @@ zh-TW:
         empty_newsletters: 沒有可顯示的通訊
       new:
         title: 新通訊
-        from: 將顯示為發送通訊的電子郵件地址
       edit:
         title: 編輯通訊
       show:
@@ -657,7 +631,6 @@ zh-TW:
         title: "評估組: %{group}"
         no_valuators: "沒有評估員被分配到此組"
       form:
-        name: "組名字"
         new: "創建評估組"
         edit: "儲存評估組"
     poll_officers:
@@ -690,7 +663,6 @@ zh-TW:
         shift: "分配"
         shifts: "此投票亭的輪班"
         date: "日期"
-        task: "任務"
         edit_shifts: 編輯輪班
         new_shift: "新輪班"
         no_shifts: "此投票亭沒有輪班"
@@ -787,7 +759,6 @@ zh-TW:
         title: "編輯問題"
       new:
         title: "創建問題"
-        poll_label: "投票"
       answers:
         images:
           add_image: "添加圖像"
@@ -864,8 +835,6 @@ zh-TW:
         no_location: "無位置"
       new:
         title: "新投票亭"
-        name: "名字"
-        location: "位置"
         submit_button: "創建投票亭"
       edit:
         title: "編輯投票亭"
@@ -1106,8 +1075,6 @@ zh-TW:
         title: 建議主題
         topic: 主題
         help: "當用戶創建建議時，將以下列主題用作默認標籤。"
-      name:
-        placeholder: 鍵入主題的名稱
     users:
       columns:
         name: 名字
@@ -1197,8 +1164,6 @@ zh-TW:
           created_at: 創建於
           status: 狀態
           updated_at: 更新於
-          status_draft: 草稿
-          status_published: 發表
           title: 標題
           slug: Slug
           cards_title: 卡
