@@ -26,11 +26,6 @@ pt-BR:
           with_inactive: Inativo
         preview: Prévia
       banner:
-        title: Título
-        description: Descrição
-        target_url: Link
-        post_started_at: Post iniciado em
-        post_ended_at: Post finalizado em
         sections_label: Seções onde ele irá aparecer
         sections:
           homepage: Página inicial
@@ -112,30 +107,17 @@ pt-BR:
         recalculate: Recalcular os investimentos vencedores
     budget_groups:
       name: "Nome"
-      max_votable_headings: "Número máximo de títulos em que um usuário pode votar"
       form:
         edit: "Editar grupo"
-        name: "Nome do grupo"
         submit: "Salvar grupo"
     budget_headings:
-      name: "Nome"
       form:
-        name: "Nome do título"
-        amount: "Quantidade"
-        population: "População (opcional)"
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
-        latitude: "Latitude (opcional)"
-        longitude: "Longitude (opcional)"
         submit: "Salvar título"
     budget_phases:
       edit:
-        start_date: Data de início
-        end_date: Data final
-        summary: Resumo
         summary_help_text: Este texto irá informar o usuário sobre a fase. Para mostrá-lo mesmo se a fase não está ativa, selecione a caixa de seleção abaixo
-        description: Descrição
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
-        enabled: Fase habilitada
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
     budget_investments:
@@ -222,17 +204,13 @@ pt-BR:
       edit:
         classification: Classificação
         compatibility: Compatibilidade
-        mark_as_incompatible: Marcar como incompatível
         selection: Seleção
-        mark_as_selected: Marcar como selecionado
         assigned_valuators: Avaliadores
         select_heading: Selecionar título
         submit_button: Atualizar
         user_tags: Marcações atribuídas ao usuário
-        tags: Marcação
         tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas (,)"
         undefined: Não definido
-        user_groups: "Grupos"
       search_unfeasible: Pesquisar inviáveis
     statuses:
       index:
@@ -278,8 +256,6 @@ pt-BR:
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
       actions:
-        action_type:
-          resource: Recurso
         index:
           edit: Editar
           delete: Excluir
@@ -355,7 +331,6 @@ pt-BR:
           summary_placeholder: Breve resumo da descrição
           description_placeholder: Adicione uma descrição do processo
           additional_info_placeholder: Adicione informação adicional que você considera útil
-          homepage: Descrição
         index:
           create: Novo processo
           delete: Apagar
@@ -435,9 +410,6 @@ pt-BR:
           back: Voltar
           title: Criar nova versão
           submit_button: Criar versão
-        statuses:
-          draft: Rascunho
-          published: Publicado
         table:
           title: Título
           created_at: Criado em
@@ -462,7 +434,6 @@ pt-BR:
             error: Erro
         form:
           add_option: Adicionar opção
-          title: Questão
           title_placeholder: Adicionar pergunta
           value_placeholder: Adicionar resposta fechada
           question_options: "Respostas possíveis (opcionais, por respostas abertas padrão)"
@@ -617,7 +588,6 @@ pt-BR:
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
         title: Novo boletim informativo
-        from: Endereço de e-mail para envio de boletim informativo
         image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
@@ -728,7 +698,6 @@ pt-BR:
         title: "Grupos de avaliação %{group}"
         no_valuators: "Não há avaliadores atribuídos a esse grupo"
       form:
-        name: "Nome do grupo"
         new: "Criar grupos de avaliação"
         edit: "Salvar grupos de avaliação"
     poll_officers:
@@ -761,7 +730,6 @@ pt-BR:
         shift: "Atribuição"
         shifts: "Turnos nessa urna"
         date: "Data"
-        task: "Tarefa"
         edit_shifts: Editar turnos
         new_shift: "Novo turno"
         no_shifts: "Esta urna não tem turnos"
@@ -813,10 +781,6 @@ pt-BR:
         no_booths: "Não há urnas atribuídas a esta votação."
         table_name: "Nome"
         table_location: "Localização"
-    active_polls:
-      form:
-        description:
-          text: "Descrição"
     polls:
       index:
         title: "Lista de votações"
@@ -865,7 +829,6 @@ pt-BR:
       new:
         title: "Criar Questão"
         title_proposal: "Criar pergunta"
-        poll_label: "Votação"
       answers:
         images:
           add_image: "Adicionar imagem"
@@ -944,8 +907,6 @@ pt-BR:
         no_location: "Sem localização"
       new:
         title: "Nova urna"
-        name: "Nome"
-        location: "Localização"
         submit_button: "Criar urna"
       edit:
         title: "Editar urna"
@@ -1207,8 +1168,6 @@ pt-BR:
         title: Tópicos da proposta
         topic: Tema
         help: "Quando um usuário criar uma proposta, os tópicos a seguir são sugeridos como etiquetas padrão."
-      name:
-        placeholder: Digite o nome do tópico
     users:
       columns:
         name: Nome
@@ -1298,8 +1257,6 @@ pt-BR:
           created_at: Criado em
           status: Status
           updated_at: Atualizado em
-          status_draft: Rascunho
-          status_published: Publicado
           title: Título
           slug: área de informações
           cards_title: Cartões
