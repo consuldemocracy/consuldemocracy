@@ -26,11 +26,6 @@ cs:
           with_inactive: Neaktivní
         preview: Zobrazit
       banner:
-        title: Předmět
-        description: Description
-        target_url: Link
-        post_started_at: Příspěvek byl zahájen v
-        post_ended_at: Příspěvek byl ukončen v
         sections_label: Sekce, kde se objeví
         sections:
           homepage: Úvodní strana
@@ -109,7 +104,6 @@ cs:
       headings_name: "Kapitoly"
       headings_edit: "Upravit kapitoly"
       headings_manage: "Spravovat kapitoly"
-      max_votable_headings: "Maximální počet kapitol, ve kterých uživatel může hlasovat"
       no_groups: "Neexistují žádné skupiny."
       create:
         notice: "Skupina byla úspěšně vytvořena!"
@@ -121,12 +115,10 @@ cs:
       form:
         create: "Vytvořit novou skupinu"
         edit: "Upravit skupinu"
-        name: "Název skupiny"
         submit: "Uložit skupinu"
       index:
         back: "Přejít zpět do rozpočtu"
     budget_headings:
-      name: "Název"
       no_headings: "Neexistují žádné kapitoly."
       create:
         notice: "Kapitola byla úspěšně vytvořena!"
@@ -136,14 +128,8 @@ cs:
         success_notice: "Kapitola byla smazána"
         unable_notice: "Nemůžete odstranit nadpis, který spojený s investicí"
       form:
-        name: "Heading name"
-        amount: "Množství"
-        population: "Počet obyvatel (volitelné)"
         population_info: "Položka Populace se používá ke statistickým účelům na konci rozpočtu a ukáže pro každou kapitolu, která představuje oblast s populací, jaké procento hlasovalo. Pole je volitelně, takže jej můžete nechat prázdné, pak se nepoužije."
-        latitude: "Zeměpisná šířka (volitelné)"
-        longitude: "Zeměpisná šířka (volitelné)"
         coordinates_info: "Je-li k dispozici zeměpisná šířka a délka, stránka investic pro tuto kapitolu bude obsahovat mapu. Tato mapa bude vycentrována pomocí těchto souřadnic."
-        allow_content_block: "Povolit blok obsahu"
         content_blocks_info: "Pokud je blok obsahu povolen, budete schopni vytvářet vlastní obsah vztahující se k této kapitole ze sekce Nastavení > Vlastní bloky obsahu. Tento obsah se zobrazí na stránce investic pro tuto kapitolu."
         create: "Vytvořit novou kapitolu"
         edit: "Upravit kapitolu"
@@ -152,13 +138,8 @@ cs:
         back: "Jít zpět do skupin"
     budget_phases:
       edit:
-        start_date: Start date
-        end_date: End date
-        summary: Souhrn
         summary_help_text: Text bude informovat uživatele o této fázi. Chcete-li ho zobrazit i v případě, že fáze není aktivní, zaškrtněte políčko dole
-        description: Description
         description_help_text: Tento text bude zobrazen v záhlaví, když je fáze aktivní
-        enabled: Fáze je povolena
         enabled_help_text: Fáze bude zveřejněna v časovém rozvrhu participativního rozpočtu a bude aktivní pro jakýkoli jiný účel
         save_changes: Uložit změny
     budget_investments:
@@ -244,17 +225,13 @@ cs:
       edit:
         classification: Klasifikace
         compatibility: Kompatibilita
-        mark_as_incompatible: Označit jako nekompatibilní
         selection: Výběr
-        mark_as_selected: Označit jako vybrané
         assigned_valuators: Hodnotitel
         select_heading: Vyberte záhlaví
         submit_button: Aktualizovat
         user_tags: Uživatelské přiřazené štítky
-        tags: Štítky
         tags_placeholder: "Napište štítky které chcete a oddělte je čárkami (,)"
         undefined: Nedefinováno
-        user_groups: "Skupiny"
       search_unfeasible: Hledat neproveditelné
     statuses:
       index:
@@ -337,9 +314,7 @@ cs:
           summary_placeholder: Stručné shrnutí popisu
           description_placeholder: Přidat popis procesu
           additional_info_placeholder: Přidat doplňující ifnormace, které považujete za užitečné
-          homepage: Description
           homepage_description: Zde můžete vysvětlit obsah procesu
-          homepage_enabled: Úvodní stránka povolena
           banner_title: Barvy záhlaví
         index:
           create: Nový proces
@@ -425,9 +400,6 @@ cs:
           back: Zpět
           title: Vytvořit novou verzi
           submit_button: Vytvořit pracovní verzi
-        statuses:
-          draft: Pracovní verze
-          published: Publikováno
         table:
           title: Předmět
           created_at: Vytvořeno v
@@ -452,7 +424,6 @@ cs:
             error: Chyba
         form:
           add_option: Přidat možnost
-          title: Question
           title_placeholder: Přidat otázku
           value_placeholder: Přidat uzavřenou odpověď
           question_options: "Možné odpovědi (volitelné, standardně otevřené odpovědi)"
@@ -598,7 +569,6 @@ cs:
         empty_newsletters: Žádné informační bulletiny k zobrazení
       new:
         title: Nový informační bulletin
-        from: E-mailová adresa odesílatele informačního bulletinu
       edit:
         title: Upravit informační bulletin
       show:
@@ -703,7 +673,6 @@ cs:
         title: "Skupina hodnotitelů: %{group}"
         no_valuators: "Nemáte žádné hodnotitele přiřazené k této skupině"
       form:
-        name: "Název skupiny"
         new: "Vytvořit skupinu hodnotitelů"
         edit: "Uložit skupinu hodnotitelů"
     poll_officers:
@@ -736,7 +705,6 @@ cs:
         shift: "Přiřazení"
         shifts: "Směny na tomto informačním stánku"
         date: "Datum"
-        task: "Úkol"
         edit_shifts: Upravit směny
         new_shift: "Nová směna"
         no_shifts: "Informační stánek nemá přiřazenou směnu"
@@ -794,7 +762,6 @@ cs:
         title: "Popis hlasování"
       form:
         description:
-          text: "Popis"
           help_text: "Text bude zobrazen v záhlaví stránky s anketou. Může být použit k přidání kontextu probíhající ankety."
     polls:
       index:
@@ -842,7 +809,6 @@ cs:
         title: "Upravit dotaz"
       new:
         title: "Vytvořit otázku"
-        poll_label: "Průzkum"
       answers:
         images:
           add_image: "Přidat obrázek"
@@ -919,8 +885,6 @@ cs:
         no_location: "Bez umístění"
       new:
         title: "Nový informační stánek"
-        name: "Název"
-        location: "Umístění"
         submit_button: "Vytvořit informační stánek"
       edit:
         title: "Upravit informační stánek"
@@ -1160,8 +1124,6 @@ cs:
         title: Témata návrhů
         topic: Téma
         help: "Když uživatel vytvoří návrh, následující témata jsou navrženy jako výchozí štítky."
-      name:
-        placeholder: Zadejte název tématu
     users:
       columns:
         name: Název
@@ -1252,8 +1214,6 @@ cs:
           created_at: Vytvořeno v
           status: Status
           updated_at: Aktualizováno dne
-          status_draft: Pracovní verze
-          status_published: Publikováno
           title: Předmět
           slug: Slug
           cards_title: Karty
