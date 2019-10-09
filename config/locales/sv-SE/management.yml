@@ -32,8 +32,6 @@ sv:
       index:
         title: Användarhantering
         info: Här kan du hantera användare med åtgärderna som listas i menyn till vänster.
-    document_number: Identitetshandlingens nummer
-    document_type_label: Identitetshandling
     document_verifications:
       already_verified: Användarkontot är redan verifierat.
       has_no_account_html: För att skapa ett konto, gå till %{link} och klicka <b>'Registrera'</b> i övre vänstra hörnet.
