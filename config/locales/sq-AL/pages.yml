@@ -18,7 +18,6 @@ sq:
         title: "Debate"
         description: "Në seksionin %{link} ju mund të paraqisni dhe të ndani mendimin tuaj me njerëzit e tjerë për çështjet që kanë lidhje me ju në lidhje me qytetin. Është gjithashtu një vend për të krijuar ide që përmes seksioneve të tjera të %{org} të çojnë në veprime konkrete nga Këshilli i Qytetit."
         link: "debate qytetare"
-        feature_html: "Ju mund të hapni debate, komentoni dhe vlerësoni ato me<strong>Pranoj</strong>ose<strong>Nuk pranoj</strong>.Për këtë ju duhet të %{link}"
         feature_link: "regjistrohuni në %{org}"
         image_alt: "Butonat për të vlerësuar debatet"
         figcaption: 'Butonat "Unë pajtohem" dhe "Unë nuk pajtohem"  për të vlerësuar debatet.'
@@ -150,7 +149,6 @@ sq:
               description_column: Zvogëlo madhësinë e tekstit
       compatibility:
         title: Pajtueshmëria me standardet dhe dizajni vizual
-        description_html: 'Të gjitha faqet nê këtë website përputhen me <strong>Udhëzimet e aksesueshmërisë</strong>ose Parimet e Përgjithshme të Dizajnit të Aksesueshëm të krijuara nga Grupi i Punës <abbr title = "Iniciativa e Web Accessibility" lang = "en"> WAI </ abbr> W3C.'
     titles:
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
     verify:
