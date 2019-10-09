@@ -144,13 +144,6 @@ ar:
         button: بحث
         placeholder: البحث عن مناقشات...
         title: بحث
-      search_results_html:
-        zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        one: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        two: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        few: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
       start_debate: بدء مناقشة
       title: النقاشات
@@ -205,7 +198,6 @@ ar:
     direct_message: رسالة خاصة
     error: خطأ
     errors: أخطاء
-    not_saved_html: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
@@ -356,7 +348,6 @@ ar:
     created:
       title: تهانينا! لقد اتخذت الخطوة الأولى.
       motivation: "من المهم تحضير حملة الإطلاق لمقترحك حتى يكون ناجحًا. الأيام القليلة الأولى حاسمة."
-      motivation_2_html: "<strong>إذا كنت تريد توصيات للإستعداد للنشر ، فاترك مقترحك كمسودة وسنوجهك</strong>"
       publish: لا ، أريد أن أنشر الاقتراح
       dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
       preview_title: سيظهر مقترحك بهذا الشكل عند نشره
@@ -434,13 +425,6 @@ ar:
         button: بحث
         placeholder: البحث عن مقترحات...
         title: بحث
-      search_results_html:
-        zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        one: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        two: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        few: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
-        other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
       select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
       start_proposal: إنشاء مقترح
@@ -662,10 +646,8 @@ ar:
         title: معاينة الملصق
         poster_title: "توقّف عن البحث،"
         poster_subtitle: "ادعمني! ;)"
-        intro_text_html: "<strong>أنا أشارك في %{org}</strong> مع اقتراح المواطن الخاص بي وفقط إذا انضممت إليّ، يمكنني تحقيق الدعم اللازم لجعل المدينة كما نريدها جميعًا."
         proposal_code: "رمز المقترح: %{code}"
         support: دعم مقترحي
-        footer_html: "<strong> تفضل بزيارة %{link} ودعم هذا الاقتراح. </strong> نحن بحاجة إلى أن نكون كثيرين. اتخذ قرارك. شكرا لك!"
       new:
         title: ملصق المقترح الخاص بك
       options:
@@ -683,7 +665,6 @@ ar:
         sent: تم إرسال البريد الإلكتروني
     mailer:
       forward:
-        subtitle_html: "إذا قمت بدعمي، <br>فسوف نحقق ذلك."
         support_button: دعم هذا المقترح
         share_in: نشر في
         hi: "مرحبا!"
@@ -734,7 +715,6 @@ ar:
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
-      cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
       verify_link: "تحقق من حسابك"
       cant_answer_expired: "انتهى هذا الاستطلاع."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
@@ -781,7 +761,6 @@ ar:
     new:
       title: "إرسال رسالة"
       submit_button: "إرسال رسالة"
-      info_about_receivers_html: "سيتم إرسال هذه الرسالة إلى <strong>%{count} شخص</strong> وستظهر في %{proposal_page}.<br> لن يتم إرسال الرسائل على الفور، سيتلقى المستخدمون بريدًا إلكترونيًا دوريًا يتضمن جميع إشعارات المقترحات."
       proposal_page: "صفحة المقترح"
     show:
       back: "عودة"
@@ -821,17 +800,6 @@ ar:
     follow: "تابع"
     following: "التالية"
     follow_entity: "تابع %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "أنت الآن تتابع في هذا المشروع الإستثماري! </br> سنقوم بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
-        destroy:
-          notice_html: "لقد توقفت من متابعة هذا المشروع الإستثماري! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المشروع."
-      proposal:
-        create:
-          notice_html: "أنت الآن تتابع في إقتراح هذا المواطن! </br> سنقوم بإعلامك بإعلامك بكل التغييرات التي ستحدث لكي تبقى على إطلاع دائم."
-        destroy:
-          notice_html: "لقد توقفت الآن من متابعة مقترح هذا المواطن! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المقترح."
     hide: إخفاء
     print:
       print_button: طباعة هذه المعلومات
@@ -904,14 +872,6 @@ ar:
       select_language_prompt: اخيار لغة
       remove_language: إزالة اللغة
       add_language: إضافة لغة
-      languages_in_use_html:
-        zero: "<span class='js-languages-count'>0</span> لغات مستخدمة"
-        zero: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
-        one: "لغة <span class='js-languages-count'>1</span> مستخدمة"
-        two: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
-        few: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
-        many: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
-        other: "<span class='js-languages-count'>%{count}</span> لغات مستخدمة"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
