@@ -108,9 +108,6 @@ da:
         button: Søg
         placeholder: Søg debatindlæg...
         title: Søg
-      search_results_html:
-        one: " indeholder betegnelsen <strong>'%{search_term}'</strong>"
-        other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
       select_order: Sorter efter
       start_debate: Start en debat
       title: Debatforum
@@ -161,7 +158,6 @@ da:
     direct_message: privat besked
     error: fejl
     errors: fejl
-    not_saved_html: "forhindrede dette %{resource} i at blive gemt. <br>Se de markerede felter for at rette op på fejlen:"
     policy: Privatpolitik
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
@@ -291,7 +287,6 @@ da:
     created:
       title: Tillykke! Du har taget det første skridt.
       motivation: "Det er vigtigt at forberede introduktionskampagnen, så dit forslag kan opnå succes. De første dage er afgørende."
-      motivation_2_html: "<strong>Hvis du ønsker anbefalinger til forberedelserne, inden du offentliggør dit forslag, så lad dit forslag forblive en udkastversion, og vi vil guide dig.</strong>"
       publish: Nej, jeg ønsker at offentliggøre mit forslag
       dashboard: Ja, jeg ønsker hjælp og vil offentliggøre forslaget senere
       preview_title: Sådan vil dit forslag se ud, når du offentliggør det
@@ -361,9 +356,6 @@ da:
         button: Søg
         placeholder: Søg borgerforslag...
         title: Søg
-      search_results_html:
-        one: " som indeholder <strong>'%{search_term}'</strong>"
-        other: " som indeholder <strong>'%{search_term}'</strong>"
       select_order: Sorter efter
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
@@ -542,10 +534,8 @@ da:
         title: Forhåndsvisning af plakat
         poster_title: "Stop med at lede,"
         poster_subtitle: "støt mig! :-)"
-        intro_text_html: "<strong>Jeg deltager i %{org}</strong> med mit eget borgerforslag, og kun hvis du også til opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
         proposal_code: "Forslagets kode: %{code}"
         support: Støt mit forslag
-        footer_html: "<strong>Gå til %{link} og støt forslaget.</strong> We er nødt til at være mange. Din beslutning tæller. Tak!"
       new:
         title: Plakat med dit forslag
       options:
@@ -563,7 +553,6 @@ da:
         sent: E-mailen blev sendt
     mailer:
       forward:
-        subtitle_html: "Hvis du støtter mig, <br> vil vi opnå det."
         support_button: Støt forslaget
         share_in: Del i
         hi: "Hej!"
@@ -603,7 +592,6 @@ da:
       back: Tilbage til afstemningen
       cant_answer_not_logged_in: "Du skal %{signin} eller %{signup} for at deltage."
       comments_tab: Kommentarer
-      cant_answer_verify_html: "Du skal %{verify_link} for at kunne svare."
       verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
       cant_answer_wrong_geozone: "Spørgsmålet er ikke tilgængeligt i dit geografiske område."
@@ -639,7 +627,6 @@ da:
     new:
       title: "Send besked"
       submit_button: "Send besked"
-      info_about_receivers_html: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlige i %{proposal_page}. <br> Beskeder bliver ikke sendt med det samme. Brugere vil periodisk modtage en e-mail med alle forslagets notifikationer."
       proposal_page: "forslagets side"
     show:
       back: "Gå tilbage til min aktivitet"
@@ -679,17 +666,6 @@ da:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Du følger nu projektidéen! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
-        destroy:
-          notice_html: "Du er stoppet med at følge projektidéen! </br> Du vil ikke længere modtage notifikationer relateret til projektet."
-      proposal:
-        create:
-          notice_html: "Du følger nu borgerforslaget! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
-        destroy:
-          notice_html: "Du er stoppet med at følge borgerforslaget! </br> Du vil ikke længere modtage notifikationer relateret til forslaget."
     hide: Skjul
     print:
       print_button: Udskriv information
