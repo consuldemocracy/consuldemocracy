@@ -173,8 +173,6 @@ de:
           unfeasible: Undurchführbar
           min_total_supports: Minimum Unterstützer*innen
           winners: Bestbewertete Vorschläge
-          one_filter_html: "Verwendete Filter: <b><em>%{filter}</em></b>"
-          two_filters_html: "Verwendete Filter: <b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: Filter
         download_current_selection: "Aktuelle Auswahl herunterladen"
@@ -389,7 +387,6 @@ de:
           form:
             error: Fehler
         form:
-          title_html: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Beteiligungsverfahrens <span class="strong">%{process_title}</span>'
           launch_text_editor: Textbearbeitung öffnen
           close_text_editor: Textbearbeitung schließen
           use_markdown: Verwenden Sie Markdown, um den Text zu formatieren
@@ -941,9 +938,6 @@ de:
           pending: Ausstehend
           rejected: Abgelehnt
           verified: Verifiziert
-        hidden_count_html:
-          one: Es gibt auch <strong>%{count} eine Organisation </strong> ohne Benutzer*in oder mit verborgenem/r Benutzer*in.
-          other: Es gibt auch <strong>%{count} Organisationen</strong> ohne Benutzer oder verborgene Benutzer.
         name: Name
         email: E-Mail
         phone_number: Telefon
