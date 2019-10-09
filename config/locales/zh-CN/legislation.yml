@@ -12,9 +12,6 @@ zh-CN:
         publish_comment: 发表评论
       form:
         phase_not_open: 此阶段尚未开启
-        login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
-        signin: 登录
-        signup: 注册
       index:
         title: 评论
         comments_about: 评论关于
@@ -106,11 +103,8 @@ zh-CN:
       participation:
         phase_not_open: 此阶段未开放
         organizations: 组织不得参与辩论
-        signin: 登录
-        signup: 注册
         unauthenticated: 您必须%{signin} 或者%{signup} 才可以参与。
         verified_only: 只有已验证的用户可以参与，%{verify_account}。
-        verify_account: 验证您的账户
         debate_phase_not_open: 辩论阶段已结束，答案不再被接受
     shared:
       share: 共用
