@@ -45,8 +45,6 @@ hr:
     budget_investment_created:
       subject: "Hvala Vam što ste stvorili investiciju!"
       title: "Hvala Vam što ste stvorili investiciju!"
-      intro_html: "Pozdrav <strong>%{author}</strong>"
-      text_html: "Hvala vam što ste napravili investiciju <strong>%{investment}</strong> za Participativno Budžetiranje <strong>%{budget}</strong>."
       follow_html: "Mi ćemo Vas inormirati o progresu, koji također možete slijediti na <strong>%{link}</strong>."
       follow_link: "Participativni Budžet"
       sincerely: "Iskreno,"
