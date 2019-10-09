@@ -27,12 +27,6 @@ he:
         assigned_to: "שהוקצה ל- %{valuator}"
         title: פרויקטי השקעה
         edit: עריכת תיקים
-        valuators_assigned:
-          one: מעריך שהוקצה
-          two: "%{count} מעריכים שהוקצו"
-          many: "%{count} מעריכים שהוקצו"
-          other: "%{count} מעריכים שהוקצו"
-        no_valuators_assigned: לא הוקצו מעריכים
         table_id: מזהה
         table_title: שם
         table_heading_name: שם כותרת
@@ -64,16 +58,9 @@ he:
         dossier: תיק
         price_html: "מחיר (%{currency})"
         price_first_year_html: "עלות במהלך השנה הראשונה (%{currency}) <small>(אופציונלי, הנתונים אינם ציבורים)</small>"
-        price_explanation_html: פירוט למחיר
         feasibility: סבירות לביצוע
-        feasible: בר ביצוע
-        unfeasible: אינו בר ביצוע
-        undefined_feasible: ממתין לאישור
-        feasible_explanation_html: הסבר להיתכנות
-        valuation_finished: ההערכה הסתיימה
         valuation_finished_alert: "האם אתה בטוח שברצונך לסמן דו\"ח זה כמשימה שהושלמה? אם תעשה זאת, לא יהיה ניתן ניתן לשנותו."
         not_feasible_alert: "דוא\"ל יישלח מיד למחבר הפרויקט עם דו\"ח של חוסר היתכנות לביצוע."
-        duration_html: טווח זמן
         save: שמירת שינויים
       notice:
         valuate: "התיק עודכן"
