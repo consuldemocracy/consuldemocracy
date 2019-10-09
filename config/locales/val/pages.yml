@@ -27,13 +27,11 @@ val:
         description: "En la secció %{link} pots plantejar propostes per a que l'Ajuntament les duga a terme. Les propostes recaben avals, i si arriben als avals suficients es sotmeten a votació ciutadana. Les propostes aprovades en aquestes votacions ciutadanes son asumides per l'Ajuntament i es duen a terme."
         link: "propostes ciutadanes"
         image_alt: "Botó per a avalar una proposta"
-        figcaption_html: 'Botó per a "Avalar" una proposta.'
       budgets:
         title: "Pressupostos Participatius"
         description: "La secció de %{link} serveix per a que la gent decidisca de manera directa a qué es estina una part del pressupost municipal."
         link: "pressupostos participatius"
         image_alt: "Diferents fases d'un pressupost participatiu"
-        figcaption_html: 'Fase "d''Avals" i fase de "Votació" dels pressupostos participatius.'
       polls:
         title: "Votacions"
         description: "La secció de %{link} s'activa cada vegada que una proposta arriba a l'1% d'avals i passa a votació o quant l'Ajuntament proposa un tema per a que la gent decidisca sobre ell."
@@ -161,10 +159,7 @@ val:
     titles:
       help: "Qué es %{org}? - Participació ciutadana"
     verify:
-      code: Codi que has rebut en la teua carta
-      email: Correu electrònic
       info: "Per a verificar el teu compte introdueix les dades amb les que et vas registrar:"
       info_code: "Ara introdueix el codi que has rebut en la teua carta:"
-      password: Contrasenya
       submit: Verificar el meu compte
       title: Verifica el teu compte
