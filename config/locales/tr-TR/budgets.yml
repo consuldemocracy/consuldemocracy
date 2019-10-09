@@ -7,9 +7,6 @@ tr:
         remaining: "Şu an itibariyle yatırım yapabileceğiniz miktar <span>%{amount}</span>."
         no_balloted_group_yet: "Henüz bu gruba oy vermediniz, oy verin!"
         remove: Oyu geri çek
-        voted_html:
-          one: "<span>Bir</span> yatırımına oy verdiniz."
-          other: "<span>%{count}</span> yatırımlara oy verdiniz."
         voted_info_2: "Ancak bu aşama tamamlanana kadar oyunuzu istediğiniz zaman değiştirebilirsiniz."
         zero: Herhangi bir yatırım projesine oy vermediniz.
       reasons_for_not_balloting:
@@ -17,9 +14,7 @@ tr:
         not_verified: Yalnızca doğrulanan kullanıcılar yatırımlara oy verebilir; %{verify_account}.
         organization: Kuruluşların oylama aşamasına katılması mümkün değil
         not_selected: Seçilmeyen yatırım projeleri desteklenemez
-        not_enough_money_html: "Mevcut bütçeyi daha önce farklı kaynaklara aktardınız. <br><small>İstediğiniz zaman %{change_ballot} yapabileceğinizi unutmayın </small>"
         no_ballots_allowed: Seçim aşaması tamamlanmıştır
-        different_heading_assigned_html: "Daha önce farklı bir fikre oy verdiniz: %{heading_link}"
         change_ballot: oylarınızı değiştirin
         casted_offline: Daha önce çevrimdışı olarak katıldınız
     groups:
@@ -78,17 +73,10 @@ tr:
           button: Ara
           placeholder: Yatırım projelerini ara...
           title: Ara
-        search_results_html:
-          one: " <strong>'%{search_term}'</strong> terimini içeren"
-          other: " <strong>'%{search_term}'</strong> terimini içeren"
         sidebar:
           my_ballot: Oyum
-          voted_html:
-            one: "<strong>%{amount_spent} değerinde bir öneriye oy verdiniz</strong>"
-            other: "<strong>%{amount_spent} maliyetli %{count} teklifleri oyladınız</strong>"
           voted_info: Bu aşama tamamlanana kadar istediğiniz zaman %{link} yapabilirsiniz. Mevcut tüm parayı harcamanız gerekmiyor.
           voted_info_link: oyunuzu değiştirin
-          different_heading_assigned_html: "Başka bir öneri için aktif oylarınız bulunmaktadır: %{heading_link}"
           change_ballot: "Eğer fikrinizi değiştirirseniz, oyunuzu %{check_ballot}'dan geri çekebilirsiniz ve tekrar oy verebilirsiniz."
           check_ballot_link: "oyumu kontrol et"
           zero: Bu kategoride herhangi bir yatırım projesine oy vermediniz.
@@ -108,9 +96,6 @@ tr:
         author_deleted: Kullanıcı silindi
         price_explanation: Maliyet açıklaması
         unfeasibility_explanation: Uygulanabilirlik açıklaması
-        code_html: "Yatırım projesi kodu: <strong>%{code}</strong>"
-        location_html: "Konum: <strong>%{location}</strong>"
-        organization_name_html: "<strong>%{name}</strong> adına önerilen"
         share: Paylaş
         title: Yatırım projesi
         supports: Destekler
@@ -119,10 +104,7 @@ tr:
         comments_tab: Yorumlar
         milestones_tab: Kilometre taşları
         author: Fikir sahibi
-        project_unfeasible_html: "Bu yatırım projesinin <strong> uygulanabilir olmadığına karar verildi </strong> ve oy kullanma aşamasına geçmesi mümkün olmayacak."
-        project_selected_html: "Bu yatırım projesi <strong> oy aşaması için </strong> seçildi."
         project_winner: "Kazanan yatırım projesi"
-        project_not_selected_html: "Bu yatırım projesi <strong> oy aşaması için </strong> seçilmedi."
         see_price_explanation: Maliyet açıklamasını gör
       wrong_price_format: Sadece tam sayılar
       investment:
@@ -140,7 +122,6 @@ tr:
         give_support: Destek
       header:
         check_ballot: Oyumu kontrol et
-        different_heading_assigned_html: "Başka bir konuda aktif oyunuz var: %{heading_link}"
         change_ballot: "Eğer fikrinizi değiştirirseniz oyunuzu %{check_ballot} 'dan geri çekebilirsiniz ve başka bir fikre oy verebilirsiniz."
         check_ballot_link: "oyumu kontrol et"
         price: "Bu konunun bir bütçesi var"
