@@ -32,8 +32,6 @@ sl:
       index:
         title: Urejanje
         info: Tukaj lahko urejaš uporabnike preko ukazov v levem meniju.
-    document_number: Številka dokumenta
-    document_type_label: Vrsta dokumenta
     document_verifications:
       already_verified: Ta uporabniški račun je že verificiran.
       has_no_account_html: Če želiš ustvariti uporabniški račun, pojdi na %{link} in klikni <b>'Registriraj se'</b> v zgornjem levem delu ekrana.
