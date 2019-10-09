@@ -3,21 +3,17 @@ tr:
     no_reply: "Bu mesaj yanıtları kabul etmeyen bir e-posta adresinden gönderildi."
     comment:
       hi: Merhaba
-      new_comment_by_html: <b>%{commenter}</b>'den bir yorum var
       subject: Birisi sizin %{commentable} paylaşımınız hakkında yorum yaptı
       title: Yeni yorum
     config:
       manage_email_subscriptions: Bizden daha fazla e-posta almak istemiyorsanız, lütfen ayarlarınızı değiştirin
     email_verification:
       click_here_to_verify: bu bağlantı
-      instructions_2_html: Bu e-posta hesabınızı <b>%{document_type} %{document_number}</b> ile doğrulayacaktır. Bu bilgiler size ait değilse, lütfen önceki bağlantıya tıklamayın ve bu e-postayı dikkate almayın.
-      instructions_html: Kullanıcı hesabınızın doğrulamasını tamamlamak için %{verification_link}'e tıklamanız gerekir.
       subject: E-postanızı onaylayın
       thanks: Çok teşekkür ederiz.
       title: Aşağıdaki bağlantıyı kullanarak hesabınızı onaylayın
     reply:
       hi: Merhaba
-      new_reply_by_html: Sizin yorumunuza <b>%{commenter}</b>'dan yeni bir yanıt var
       subject: Birisi sizin yorumunuza cevap verdi
       title: Yorumunuza yeni bir cevap geldi
     proposal_notification_digest:
@@ -34,7 +30,6 @@ tr:
       unsubscribe_account: Hesabım
     direct_message_for_sender:
       subject: "Yeni bir özel mesaj gönderdiniz"
-      title_html: "Şu içerikle <strong>%{receiver}</strong>'a yeni bir özel mesaj gönderdiniz:"
     user_invite:
       ignore: "Eğer bu daveti talep etmemişseniz endişelenmeyin, bu e-postayı görmezden gelebilirsiniz."
       text: "%{org}'a katılım başvurunuz için teşekkür ederiz! Saniyeler içinde katılmaya başlayabilirsiniz, aşağıdaki formu doldurmanız yeterlidir:"
@@ -45,13 +40,11 @@ tr:
     budget_investment_created:
       subject: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
       title: "Bir yatırım oluşturduğunuz için teşekkür ederiz!"
-      follow_html: "Sürecin nasıl ilerlediği hakkında sizi bilgilendireceğiz, gelişmeleri <strong>%{link}</strong> üzerinden de takip edebilirsiniz."
       follow_link: "Katılımcı Bütçeler"
       sincerely: "İçtenlikle,"
       share: "Projenizi paylaşın"
     budget_investment_unfeasible:
       hi: "Değerli kullanıcı,"
-      new_html: "Tüm bunlar için, sizi bu sürecin koşullarına uygun olan <strong>yeni bir yatırım</strong> hazırlamaya davet ediyoruz. Bunun için bağlantıyı takip ediniz: %{url}."
       new_href: "yeni yatırım projesi"
       sincerely: "İçtenlikle"
       sorry: "Verdiğimiz rahatsızlıktan dolayı özür dileriz ve değerli katılımınız için tekrar teşekkür ederiz."
@@ -72,7 +65,6 @@ tr:
       subject: "Yeni değerlendirme yorumu"
       title: '%{investment} için yeni değerlendirme yorumu'
       hi: Merhaba
-      new_comment_by_html: <strong>%{commenter}</strong> bütçe yatırımı %{investment} ile ilgili yeni değerlendirme yorumu paylaştı
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Vatandaş öneriniz ile ilgili daha fazla haberler"
