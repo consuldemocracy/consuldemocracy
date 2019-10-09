@@ -27,13 +27,11 @@ sq:
         description: "Në seksionin %{link} ju mund të bëni propozime për Këshillin Bashkiak për t'i kryer ato. Propozimet kërkojnë mbështetje, dhe nëse arrijnë mbështetje të mjaftueshme, ato bëhen në një votim publik. Propozimet e miratuara në votat e këtyre qytetarëve pranohen nga Këshilli i Qytetit dhe kryhen."
         link: "propozimet e qytetarëve"
         image_alt: "Butoni për të mbështetur një propozim"
-        figcaption_html: 'Butoni për të mbështetur një propozim'
       budgets:
         title: "Buxheti  pjesëmarrës"
         description: "Seksioni %{link} ndihmon njerëzit të marrin një vendim të drejtpërdrejtë mbi atë pjesë të buxhetit komunal ku shpenzohen."
         link: "buxhetet pjesëmarrëse"
         image_alt: "Faza të ndryshme të një buxheti pjesëmarrjës"
-        figcaption_html: '"Mbështet" dhe "Voto" fazat e buxheteve pjesëmarrëse.'
       polls:
         title: "Sondazhet"
         description: "Seksioni %{link} aktivizohet çdo herë që një propozim arrin 1% mbështetje dhe shkon në votim ose kur Këshilli i Qytetit propozon një çështje për njerëzit që të vendosin."
@@ -156,10 +154,7 @@ sq:
     titles:
       help: "Çfarë është %{org} ? - Pjesëmarrja e qytetarëve"
     verify:
-      code: Kodi që keni marrë në letër
-      email: Email
       info: "Për të verifikuar llogarinë tënde, futni të dhënat e aksesit tuaj:"
       info_code: "Tani futni kodin që keni marrë në letër:"
-      password: Fjalëkalim
       submit: Verifikoni llogarinë time
       title: verifikoni llogarinë tuaj
