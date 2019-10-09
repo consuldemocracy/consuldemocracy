@@ -10,7 +10,6 @@ nl:
         voted_html:
           one: "U heeft op <span>één</span> voorstel gestemd."
           other: "U heeft op <span>%{count}</span> voorstellen gestemd."
-        voted_info_html: "U te allen tijde uw stem wijzigen, tot de sluiting van deze fase.<br> U hoeft niet het héle bedrag uit te geven."
         voted_info_2: "Je kunt je stem altijd aanpassen tot deze fase wordt gesloten."
         zero: U heeft op geen enkel voorstel gestemd.
       reasons_for_not_balloting:
@@ -69,7 +68,6 @@ nl:
         map_location: "Locatie"
         map_location_instructions: "Beweeg de kaart en wijs de locatie aan"
         map_remove_marker: "Locatie verwijderen"
-        location: "Aanvullende informatie over de locatie"
         map_skip_checkbox: "Deze investering heeft geen concrete locatie of ik ben er niet van op de hoogte."
       index:
         title: Burgerbegrotingen
@@ -95,11 +93,8 @@ nl:
           check_ballot_link: "check mijn stemming"
           zero: U hebt op geen enkel begrotingsvoorstel gestemd.
           verified_only: "%{verify} je account om een nieuw begrotingsvoorstel te doen."
-          verify_account: "je account verifieren"
           create: "Nieuw begrotingsvoorstel maken"
           not_logged_in: "Om een nieuw begrotingsvoorstel te doen moet je %{sign_in} of %{sign_up}."
-          sign_in: "aanmelden"
-          sign_up: "registreren"
           by_feasibility: Op haalbaarheid
           feasible: Haalbare voorstellen
           unfeasible: Onhaalbare voorstellen
