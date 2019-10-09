@@ -28,11 +28,6 @@ he:
           with_inactive: לא פעיל
         preview: תצוגה מקדימה
       banner:
-        title: כותרת
-        description: תיאור
-        target_url: קישור
-        post_started_at: מתאריך
-        post_ended_at: תאריך תפוגה
         sections_label: בחירת מיקום התצוגה
         sections:
           homepage: דף הבית
@@ -146,7 +141,6 @@ he:
       headings_name: "כותרות"
       headings_edit: "עריכת כותרות"
       headings_manage: "ניהול כותרות"
-      max_votable_headings: "מספר הכותרות המקסימלי שתושב יכול להצביע עבורן"
       no_groups: "לא נמצאו קבוצות."
       amount:
         one: "יש קבוצה 1"
@@ -163,12 +157,10 @@ he:
       form:
         create: "צור קבוצה חדשה"
         edit: "ערוך קבוצה"
-        name: "שם קבוצה"
         submit: "שמירת קבוצה"
       index:
         back: "לחזור לתקציבים"
     budget_headings:
-      name: "שם"
       no_headings: "אין כותרות."
       amount:
         one: "יש כותרת 1"
@@ -183,14 +175,8 @@ he:
         success_notice: "כותרת הוסרה בהצלחה"
         unable_notice: "אינך יכול להסיר כותרת המקושרת להשקעות קיימות"
       form:
-        name: "שם הכותרת"
-        amount: "סכום"
-        population: "אוכלוסיה (אופציונלי)"
         population_info: "תקציב כותרת האוכלוסייה תחום משמש למטרות סטטיסטית בסוף התקציב להראות עבור כל כותרת שמייצג אזור עם אוכלוסייה ומה אחוז המצביעים. השדה הוא אופציונלי, כך שתוכל להשאיר אותו ריק אם הוא אינו רלונטי."
-        latitude: "קו רוחב (אופציונלי)"
-        longitude: "קו רוחב (אופציונלי)"
         coordinates_info: "אם קווי אורך ורוחב מסופקים, דף ההשקעות עבור כותרת זו יכלול מפה. מפה זו תמורכז על פי קואורדינטות אלה."
-        allow_content_block: "אפשר חסימת תוכן"
         content_blocks_info: "אם תבחר את האפשרות לחסום תוכן, תוכל ליצור תוכן מותאם אישית הקשור לכותרת זו מתוך קטע ההגדרות > קובצי תוכן מותאמים אישית. תוכן זה יופיע בדף ההשקעות עבור כותרת זו."
         create: "צור כותרת חדשה"
         edit: "ערוך כותרת"
@@ -199,13 +185,8 @@ he:
         back: "חזור אל הקבוצות"
     budget_phases:
       edit:
-        start_date: תאריך פתיחה
-        end_date: תאריך סיום
-        summary: תקציר
         summary_help_text: טקסט זה יודיע למשתמש על השלב. כדי להציג אותו גם אם השלב אינו פעיל, בחר בתיבת הסימון שבהמשך
-        description: תיאור
         description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
-        enabled: השלב מופעל
         enabled_help_text: שלב זה יהיה ציבורי בציר הזמן של שלבי התקציב, וכן פעיל לכל מטרה אחרת
         save_changes: שמירת שינויים
     budget_investments:
@@ -297,19 +278,14 @@ he:
       edit:
         classification: סיווג
         compatibility: תאימות
-        mark_as_incompatible: סמן כלא תואם
         selection: בחירה
-        mark_as_selected: סמן כנבחר
         assigned_valuators: מעריכים
         select_heading: בחר כותרת
         submit_button: עדכן
         user_tags: המשתמש הקצה תגיות
-        tags: תגיות
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
         undefined: לא מוגדר
-        user_groups: "קבוצות"
         assigned_trackers: "עוקבים"
-        milestone_tags: תגיות אבני דרך
       search_unfeasible: חיפוש אינו ישים
     milestones:
       index:
@@ -364,9 +340,6 @@ he:
         title: ניהול
         description: ברוך הבא אל %{org} פאנל הניהול.
       actions:
-        action_type:
-          proposed_action: פעולה מוצעת
-          resource: משאב
         index:
           description: "כאשר משתמשים יוצרים הצעות הם יכולים לגשת למרכז השליטה של ​​ההצעה שלהם, היכן שניתן להציע משאבים והמלצות כדי לקבל תמיכה עבור הרעיון שלהם."
           create: צור משאב או פעולה
@@ -399,7 +372,6 @@ he:
         form:
           submit_button: שמור
           help_text: הכנס את הספרה 0 בכדי שערך זה לא יילקח בחשבון
-          published_proposal: עבור הצעות שפורסמו?
           published_proposal_help_text: סמן תיבה זו כדי ליצור את הפעולה רק להצעות שפורסמו
       administrator_tasks:
         index:
@@ -441,7 +413,6 @@ he:
     documents:
       new:
         title: "העלה מסמך"
-        label_attachment: "בחר מסמך"
         submit_button: "העלה"
       index:
         new_link: "הוסף מסמך חדש"
@@ -508,9 +479,7 @@ he:
           summary_placeholder: סיכום קצר של התיאור
           description_placeholder: הוסף תיאור של התהליך
           additional_info_placeholder: הוסף מידע נוסף שיכול להיות מועיל
-          homepage: תיאור
           homepage_description: כאן תוכל להסביר את תוכן התהליך
-          homepage_enabled: דף הבית מאופשר
           banner_title: צבעי כותרת
         index:
           create: תהליך חדש
@@ -597,9 +566,6 @@ he:
           back: חזרה
           title: יצירת גירסה חדשה
           submit_button: יצירת גירסה
-        statuses:
-          draft: טיוטה
-          published: פורסם
         table:
           title: כותרת
           created_at: נוצרה ב
@@ -624,7 +590,6 @@ he:
             error: שגיאה
         form:
           add_option: הוסף אפשרות
-          title: שאלה
           title_placeholder: הוספת שאלה
           value_placeholder: הוספת תשובה סגורה
           question_options: "תשובות אפשריות (אופציונלי, תשובות פתוחות כברירת מחדל)"
@@ -791,7 +756,6 @@ he:
         empty_newsletters: אין ידיעונים להצגה
       new:
         title: ידיעון חדש
-        from: כתובת האימייל אשר תוצג לנמעני הידיעון
         header_footer_help_text_html: "הכותרת והחלק התחתון זהים בכל האימיילים, ניתן לשנות אותם באמצעות \n<code>app/views/layouts/mailer_header</code> וכן ב- \n<code>app/views/layouts/mailer_footer</code>.<br>\nניתן לשנות את תמונת הכותרת ב- %{link}."
         image_link: "תמונות מותאמות אישית"
       edit:
@@ -949,7 +913,6 @@ he:
         title: "קבוצת מעריכים: %{group}"
         no_valuators: "אין מעריכים שהוקצו לקבוצה זו"
       form:
-        name: "שם קבוצה"
         new: "יצירת קבוצה מעריכים"
         edit: "שמירת קבוצה מעריכים"
     poll_officers:
@@ -983,7 +946,6 @@ he:
         shift: "משימה"
         shifts: "משימה בדוכן זה"
         date: "תאריך"
-        task: "משימה"
         edit_shifts: ערוך משמרת
         new_shift: "משמרת חדשה"
         no_shifts: "בדוכן זה לא נמצאה משמרת פעילה"
@@ -1041,7 +1003,6 @@ he:
         title: "תיאור הסקר"
       form:
         description:
-          text: "תיאור"
           help_text: "טקסט זה יופיע בכותרת של דף הסקרים. ניתן להשתמש בה כדי להוסיף הקשר לקלפיות הפתוחות."
     polls:
       index:
@@ -1096,7 +1057,6 @@ he:
       new:
         title: "צור שאלה לסקר%{poll}"
         title_proposal: "צור שאלה"
-        poll_label: "סקר"
       answers:
         images:
           add_image: "הוספת תמונה"
@@ -1176,8 +1136,6 @@ he:
         no_location: "אין מיקום"
       new:
         title: "דוכן חדש"
-        name: "שם"
-        location: "מקום"
         submit_button: "צור דוכן"
       edit:
         title: "ערוך דוכן"
@@ -1484,8 +1442,6 @@ he:
         title: נושאים לדיון
         topic: נושא
         help: "כאשר משתמש יוצר הצעה, הנושאים הבאים מוצעים כתוויות ברירת מחדל."
-      name:
-        placeholder: הקלד/י את שם הנושא
     users:
       columns:
         name: שם
@@ -1577,8 +1533,6 @@ he:
           created_at: נוצר ב
           status: סטטוס
           updated_at: עודכן ב
-          status_draft: טיוטה
-          status_published: פורסם
           title: כותרת
           slug: אסימון
           cards_title: כרטיס
