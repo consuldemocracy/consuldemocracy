@@ -161,9 +161,9 @@ it:
         password_confirmation: "Conferma password"
         password: "Password"
         current_password: "Password attuale"
-        phone_number: "Numero di telefono"
         official_position: "Incarico ufficiale"
         official_level: "Livello dell'incarico"
+        phone_number: "Numero di telefono"
         redeemable_code: "Il codice di verifica che hai ricevuto via email"
       organization:
         name: "Nome dell'organizzazione"
@@ -250,10 +250,10 @@ it:
         text: Commentare
       document:
         title: Titolo
-        attachment: Allegato
+        attachment: "Allegato"
       image:
         title: Titolo
-        attachment: Allegato
+        attachment: "Allegato"
       poll/question/answer:
         title: Risposta
         description: Descrizione
@@ -266,7 +266,7 @@ it:
       newsletter:
         segment_recipient: Destinatari
         subject: Oggetto
-        from: Da
+        from: "Da"
         body: Contenuto dell’email
       admin_notification:
         segment_recipient: Destinatari
