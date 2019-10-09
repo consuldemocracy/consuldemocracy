@@ -2,8 +2,6 @@ ru:
   account:
     show:
       change_credentials_link: Изменить мои учетные данные
-      email_on_comment_label: Уведомлять меня по email, когда кто-то комментирует мои предложения или дебаты
-      email_on_comment_reply_label: Уведомлять меня по email, когда кто-то отвечает на мои комментарии
       erase_account_link: Стереть мой аккаунт
       finish_verification: Завершить верификацию
       notifications: Уведомления
@@ -11,18 +9,10 @@ ru:
       organization_responsible_name_placeholder: Представитель организации/коллектива
       personal: Личные данные
       phone_number_label: Номер телефона
-      public_activity_label: Оставить мой список действий публичным
-      public_interests_label: Оставить ярлыки элементов, на которые я подписан, публичными
       public_interests_my_title_list: Метки элементов, на которые вы подписаны
       public_interests_user_title_list: Метки элементов, на которые подписан этот пользователь
       save_changes_submit: Сохранить изменения
-      subscription_to_website_newsletter_label: Получать по email информацию, относящуюся к вебсайту
-      email_on_direct_message_label: Получать email'ы о прямых сообщениях
-      email_digest_label: Получать сводку уведомлений по предложению
-      official_position_badge_label: Показывать бейдж позиции госслужащего
       recommendations: Рекомендации
-      show_debates_recommendations: Показывать некомендации дебатов
-      show_proposals_recommendations: Показывать рекомендации предложений
       title: Мой аккаунт
       user_permission_debates: Участвовать в дебатах
       user_permission_info: При помощи вашего аккаунта вы можете...
@@ -41,7 +31,6 @@ ru:
   comments:
     comments_closed: Комментарии закрыты
     verified_only: Чтобы участвовать, %{verify_account}
-    verify_account: подтвердите ваш аккаунт
     comment:
       admin: Администратор
       author: Автор
@@ -107,7 +96,6 @@ ru:
     form:
       debate_title: Название дебатов
       tags_instructions: Пометить эти дебаты.
-      tags_label: Темы
       tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
     index:
       featured_debates: Особенные
@@ -174,7 +162,6 @@ ru:
       comments_title: Комментарии
       edit_debate_link: Редактировать
       flag: Эти дебаты были отмечены несколькими пользователями как неуместная.
-      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
       share: Доля
       author: Автор
     update:
@@ -301,7 +288,6 @@ ru:
   map:
     title: "Районы"
     proposal_for_district: "Запустить предложение для вашего района"
-    select_district: Сфера деятельности
     start_proposal: Создать предложение
   omniauth:
     facebook:
@@ -342,7 +328,6 @@ ru:
     retire_form:
       title: Снять предложение
       warning: "Если вы снимете предложение, оно все еще будет принимать голоса поддержки, но будет убрано из основного списка, и всем пользователям будет видно сообщение, что по мнению автора предложение больше не должно получать поддержку"
-      retired_reason_label: Причина снятия предложения
       retired_reason_blank: Выберите вариант
       retired_explanation_placeholder: Кратно объясните, почему вы считаете, что это предложение не должно больше получать поддержку
       submit_button: Снять предложение
@@ -353,14 +338,8 @@ ru:
       done: Выполнено
       other: Другое
     form:
-      geozone: Сфера деятельности
-      proposal_responsible_name: Полное имя лица, отправляющего предложение
       proposal_responsible_name_note: "(индивидуально или в качестве представителя коллектива; не будет отображаться публично)"
-      proposal_summary: Краткое изложение предложения
       proposal_summary_note: "(максимум 200 символов)"
-      proposal_text: Текст предложения
-      proposal_title: Заголовок предложения
-      proposal_video_url: Ссылка на внешнее видео
       proposal_video_url_note: Вы можете добавить ссылку на YouTube или Vimeo
       tag_category_label: "Категории"
       tags_instructions: "Отметьте это предложение. Вы можете выбрать из предлагаемых категорий или добавить свои собственные"
@@ -483,7 +462,6 @@ ru:
       comments_tab: Комментарии
       dashboard_proposal_link: Рабочий стол
       flag: Это предложение было помечено несколькими пользователями как неуместное.
-      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
       notifications_tab: Уведомления
       milestones_tab: Основные этапы
       retired_warning: "Автор считает, что это предложение не должно больше получать поддержку."
@@ -602,7 +580,6 @@ ru:
           other: "%{count} ответов"
         view_results: Посмотреть результаты
         edit_poll: Изменить опрос
-        show_results: Показать результаты
         show_results_help: Если вы отметите эту галочку, то результаты будут публичными, и все пользователи смогут их видеть
         delete: Удалить опрос
         alert_notice: Это действие удалит опрос и все связанные с ним вопросы.
@@ -693,9 +670,6 @@ ru:
       back: Обратно к голосованию
       cant_answer_not_logged_in: "Вы должны %{signin} или %{signup}, чтобы принять участие."
       comments_tab: Комментарии
-      login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
-      signin: Войти
-      signup: Регистрация
       cant_answer_verify_html: "Вы должны %{verify_link}, чтобы ответить."
       verify_link: "подтвердите ваш аккаунт"
       cant_answer_expired: "Этот опрос закончился."
@@ -742,8 +716,6 @@ ru:
   proposal_notifications:
     new:
       title: "Отправить сообщение"
-      title_label: "Название"
-      body_label: "Сообщение"
       submit_button: "Отправить сообщение"
       info_about_receivers_html: "Это сообщение будет отправлено для <strong>%{count} человек</strong> и будет видимо на %{proposal_page}.<br> Сообщения не отправляются немедленно, пользователи периодически будут получать email со всеми уведомлениями по предложению."
       proposal_page: "странице предложения"
@@ -831,7 +803,6 @@ ru:
       districts: "Районы"
       districts_list: "Список районов"
       categories: "Категории"
-    target_blank_html: " (ссылка открывается в новом окне)"
     you_are_in: "Вы находитесь в"
     unflag: Снять флаг
     unfollow_entity: "Отписаться от %{entity}"
@@ -878,16 +849,10 @@ ru:
   users:
     direct_messages:
       new:
-        body_label: Сообщение
         direct_messages_bloqued: "Этот пользователь решил не получать прямых сообщений"
         submit_button: Отправить сообщение
         title: Отправить личное сообщение для %{receiver}
-        title_label: Название
         verified_only: Чтобы отправить личное сообщение, %{verify_account}
-        verify_account: подтвердите ваш аккаунт
-        authenticate: Чтобы продолжить, %{signin} или %{signup}.
-        signin: войти
-        signup: регистрация
       show:
         receiver: Сообщение отправлено для %{receiver}
     show:
@@ -945,12 +910,8 @@ ru:
     comment_unauthenticated: Вы должны %{signin} или %{signup}, чтобы голосовать.
     disagree: Я не согласен
     organizations: Организациям не разрешается голосовать
-    signin: Войти
-    signup: Зарегистрироваться
     supports: Поддержки
-    unauthenticated: Чтобы продолжить, %{signin} или %{signup}.
     verified_only: Только верифицированные пользователи могут голосовать по предложениям; %{verify_account}.
-    verify_account: подтвердите ваш аккаунт
     budget_investments:
       not_logged_in: Чтобы продолжить, %{signin} или %{signup}.
       not_verified: Только верифицированные пользователи могут голосовать по проектам инвестирования; %{verify_account}.
@@ -1026,8 +987,6 @@ ru:
     help:
       alt: Выделите текст, который вы хотите прокомментировать, и нажмите на кнопку с карандашом.
       text: Чтобы прокомментировать этот документ, вы должны %{sign_in} или %{sign_up}. После этого выделите текст, который вы хотите прокомментировать, и нажмите на кнопку с карандашом.
-      text_sign_in: войти
-      text_sign_up: регистрация
       title: Как я могу прокомментировать этот документ?
   links:
     form:
@@ -1049,11 +1008,8 @@ ru:
     poll:
       take_part: Принять участие от %{from} до %{to}
   question:
-    max_votes: Максимальное количество голосов
-    max_group_answers: Максимальное количество ответов в наборе
     votation_type: Тип голосования
   enum_type:
-    title: Тип голосования
     unique: Уникальный ответ, закрыт
     multiple: Множественные ответы, закрытые
     prioritized: Множественный приоритетный ответ, закрытый
@@ -1063,5 +1019,3 @@ ru:
     answer_couples_closed: Пары ответов, закрытые
     answer_set_open: Набор ответов, открытый
     answer_set_closed: Набор ответов, закрытый
-  prioritization_type:
-    title: Тип приоритетности
