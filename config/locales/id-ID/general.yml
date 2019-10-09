@@ -2,8 +2,6 @@ id:
   account:
     show:
       change_credentials_link: Ubah kredensial saya
-      email_on_comment_label: Beritahu saya melalui email saat seseorang berkomentar mengenai proposal atau debat saya
-      email_on_comment_reply_label: Beritahu saya melalui email saat seseorang membalas komentar saya
       erase_account_link: Hapus akun saya
       finish_verification: Verifikasi lengkap
       notifications: Pemberitahuan
@@ -11,15 +9,9 @@ id:
       organization_responsible_name_placeholder: Perwakilan organisasi/kolektif
       personal: Detail pribadi
       phone_number_label: Nomor telepon
-      public_activity_label: Menjaga daftar kegiatan Umum
-      public_interests_label: Menjaga label dari unsur-unsur yang saya ikuti Umum
       public_interests_my_title_list: Tag dari unsur-unsur yang Anda mengikuti
       public_interests_user_title_list: Tag dari unsur-unsur yang Anda mengikuti
       save_changes_submit: Simpan perubahan
-      subscription_to_website_newsletter_label: Menerima email situs informasi yang relevan
-      email_on_direct_message_label: Menerima email tentang pesan langsung
-      email_digest_label: Menerima ringkasan pemberitahuan proposal
-      official_position_badge_label: Menunjukkan posisi resmi lencana
       title: Akun saya
       user_permission_debates: Berpartisipasi pada perdebatan
       user_permission_info: Dengan account anda anda dapat...
@@ -38,7 +30,6 @@ id:
   comments:
     comments_closed: Komentar ditutup
     verified_only: Untuk berpartisipasi %{verify_account}
-    verify_account: verivikasi akun anda
     comment:
       admin: Administrasi
       author: Penulis
@@ -88,7 +79,6 @@ id:
     form:
       debate_title: Debat judul
       tags_instructions: Tag debat ini.
-      tags_label: Topik
       tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
     index:
       featured_debates: Fitur
@@ -142,7 +132,6 @@ id:
       comments_title: Komentar
       edit_debate_link: Sunting
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
-      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
       share: Berbagi
       author: Penulis
     update:
@@ -239,7 +228,6 @@ id:
   map:
     title: "Kabupaten"
     proposal_for_district: "Mulai proposal untuk distrik Anda"
-    select_district: Lingkup operasi
     start_proposal: Membuat sebuah proposal
   omniauth:
     facebook:
@@ -272,7 +260,6 @@ id:
     retire_form:
       title: Bagikan proposal
       warning: "Jika Anda pensiun proposal itu masih akan menerima mendukung, tetapi akan dihapus dari daftar utama dan pesan akan terlihat oleh semua pengguna yang menyatakan bahwa penulis menganggap proposal harus tidak didukung lagi"
-      retired_reason_label: Alasan untuk pensiun proposal
       retired_reason_blank: Pilih opsi
       retired_explanation_placeholder: Segera menjelaskan mengapa Anda berpikir proposal ini seharusnya tidak menerima lebih mendukung
       submit_button: Bagikan proposal
@@ -283,14 +270,8 @@ id:
       done: Dilakukan
       other: Lainnya
     form:
-      geozone: Lingkup operasi
-      proposal_responsible_name: Nama lengkap orang yang mengajukan proposal
       proposal_responsible_name_note: "(secara individu atau sebagai wakil dari kolektif; tidak akan ditampilkan dipublikasikan)"
-      proposal_summary: Proposal ringkasan
       proposal_summary_note: "(maksimum 200 karakter)"
-      proposal_text: Proposal teks
-      proposal_title: Proposal judul
-      proposal_video_url: Link ke video eksternal
       proposal_video_url_note: Anda dapat menambahkan link anda ke YouTube atau Vimeo
       tag_category_label: "Kategori"
       tags_instructions: "Tag proposal ini. Anda dapat memilih dari yang diusulkan kategori atau menambahkan anda sendiri"
@@ -382,7 +363,6 @@ id:
         other: "%{count} komentar"
       comments_tab: Komentar
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
-      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
       notifications_tab: Pemberitahuan
       milestones_tab: Tonggak
       retired_warning: "Penulis menganggap proposal ini seharusnya tidak menerima lebih mendukung."
@@ -424,9 +404,6 @@ id:
       back: Kembali ke pemegang
       cant_answer_not_logged_in: "Anda harus %{signin} atau %{signup} untuk berpartisipasi."
       comments_tab: Komentar
-      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
-      signin: Masuk
-      signup: Keluar
       cant_answer_verify_html: "Anda harus %{verify_link} dalam rangka untuk menjawab."
       verify_link: "memverifikasi akun anda"
       cant_answer_expired: "Jajak pendapat ini telah selesai."
@@ -460,8 +437,6 @@ id:
   proposal_notifications:
     new:
       title: "Kirim pesan"
-      title_label: "Judul"
-      body_label: "Pesan"
       submit_button: "Mengirim pesan"
       info_about_receivers_html: "Pesan ini akan dikirimkan ke <strong>%{count}</strong> dan itu akan terlihat dalam %{proposal_page}.<br> Pesan tidak dikirim segera, pengguna akan secara berkala menerima email dengan semua usulan pemberitahuan."
       proposal_page: "proposal halaman"
@@ -539,7 +514,6 @@ id:
       districts: "Kabupaten"
       districts_list: "Daftar kabupaten"
       categories: "Kategori"
-    target_blank_html: " (link terbuka didalam jendela baru)"
     you_are_in: "Anda berada di"
     unfollow_entity: "Berhenti ikuti %{entity}"
     outline:
@@ -576,16 +550,10 @@ id:
   users:
     direct_messages:
       new:
-        body_label: Pesan
         direct_messages_bloqued: "Pengguna ini telah memutuskan untuk tidak menerima pesan langsung"
         submit_button: Mengirim pesan
         title: Kirim pesan pribadi ke %{receiver}
-        title_label: Judul
         verified_only: Untuk mengirim sebuah pesan pribadi %{verify_account}
-        verify_account: verivikasi akun anda
-        authenticate: Anda harus %{signin} atau %{signup} untuk melanjutkan.
-        signin: masuk
-        signup: daftar
       show:
         receiver: Pesan yang dikirim ke %{receiver}
     show:
@@ -622,12 +590,8 @@ id:
     comment_unauthenticated: Anda harus %{signin} atau %{signup} untuk memilih.
     disagree: Saya tidak setuju
     organizations: Organisasi tidak diizinkan untuk memilih
-    signin: Masuk
-    signup: Keluar
     supports: Mendukung
-    unauthenticated: Anda harus %{signin} atau %{signup} untuk melanjutkan.
     verified_only: Hanya memverifikasi pengguna dapat memilih pada proposal; %{verify_account}.
-    verify_account: verivikasi akun anda
     budget_investments:
       not_logged_in: Anda harus %{signin} atau %{signup} untuk melanjutkan.
       not_verified: Hanya memverifikasi pengguna dapat memilih pada proyek-proyek investasi; %{verify_account}.
@@ -694,6 +658,4 @@ id:
     help:
       alt: Pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
       text: Untuk mengomentari dokumen ini anda harus %{sign_in} atau %{sign_up}. Kemudian pilih teks yang anda inginkan untuk komentar dan tekan tombol berbentuk pinsil.
-      text_sign_in: masuk
-      text_sign_up: daftar
       title: Bagaimana saya dapat mengomentari dokumen ini?
