@@ -10,7 +10,6 @@ sv:
         voted_html:
           one: "Du har röstat på <span>ett</span> budgetförslag."
           other: "Du har röstat på <span>%{count}</span> budgetförslag."
-        voted_info_html: "Du kan ändra din röst när som helst under den här fasen.<br> Du behöver inte spendera hela din budget."
         voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fasen stängt."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
@@ -69,7 +68,6 @@ sv:
         map_location: "Kartposition"
         map_location_instructions: "Navigera till platsen på kartan och placera markören."
         map_remove_marker: "Ta bort kartmarkör"
-        location: "Ytterligare platsinformation"
         map_skip_checkbox: "Det finns ingen specifik geografisk plats för budgetförslaget, eller jag känner inte till platsen."
       index:
         title: Medborgarbudgetar
@@ -95,11 +93,8 @@ sv:
           check_ballot_link: "kontrollera min omröstning"
           zero: Du har inte röstat på några budgetförslag i den här delen av budgeten.
           verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
-          verify_account: "verifiera ditt konto"
           create: "Skapa budgetförslag"
           not_logged_in: "Om du vill skapa ett nytt budgetförslag behöver du %{sign_in} eller %{sign_up}."
-          sign_in: "logga in"
-          sign_up: "registrera dig"
           by_feasibility: Efter genomförbarhet
           feasible: Genomförbara projekt
           unfeasible: Ej genomförbara projekt
