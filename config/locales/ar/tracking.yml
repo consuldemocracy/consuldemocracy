@@ -53,8 +53,6 @@ ar:
         no_statuses_defined: لا توجد حالات محددة حتى الآن
       new:
         creating: إنشاء مَعلم
-        date: تاريخ
-        description: الوصف
       edit:
         title: تعديل المعلم
       create:
