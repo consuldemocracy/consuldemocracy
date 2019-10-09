@@ -47,7 +47,6 @@ fr:
       new:
         accept_terms_text: J'accepte %{terms_url} du recensement.
         accept_terms_text_title: J'accepte les termes et conditions d'accès au recensement
-        date_of_birth: Date de naissance
         document_number: Numéro de document
         document_number_help_title: Aide
         document_number_help_text_html: "<strong>Carte d'identité</strong>: 12345678A<br> <strong>Passeport</strong>: AAA000001<br> <strong>Carte de résident</strong>: X1234567P"
@@ -55,12 +54,10 @@ fr:
           passport: Passeport
           residence_card: Carte de résident
           spanish_id: Carte d'identité
-        document_type_label: Type de document
         error_not_allowed_age: Vous n'avez pas l'âge requis pour participer
         error_not_allowed_postal_code: Vous devez être enregistré pour être vérifié.
         error_verifying_census: Le recensement n'a pas pu vérifier vos informations. Merci de confirmer que vos informations sont correctes en appelant la mairie ou en visitant n'importe quel %{offices}.
         form_errors: ont empêché la vérification de votre résidence
-        postal_code: Code postal
         postal_code_note: Pour vérifier votre compte, vous devez être enregistrés.
         terms: les termes et conditions d'accès
         title: Vérifier la résidence
@@ -70,7 +67,6 @@ fr:
         flash:
           success: Entrer le code de confirmation envoyé par texto
       edit:
-        confirmation_code: Entrer le code reçu sur votre mobile
         resend_sms_link: Cliquer ici pour le renvoyer
         resend_sms_text: Le code de confirmation n'a pas encore été reçu ?
         submit_button: Envoyer
