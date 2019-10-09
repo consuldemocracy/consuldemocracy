@@ -30,8 +30,6 @@ fa:
       index:
         title: مدیریت
         info: "در اینجا شما می توانید  کاربران را از طریق تمام اقدامات ذکر شده در منوی سمت چپ مدیریت کنید.\n"
-    document_number: شماره سند
-    document_type_label: نوع سند
     document_verifications:
       already_verified: حساب شما قبلا تایید شده است.
       has_no_account_html: برای ایجاد یک حساب، به%{link} بروید و در قسمت <b> «ثبت نام» </ b> در قسمت بالا سمت چپ صفحه کلیک کنید.
