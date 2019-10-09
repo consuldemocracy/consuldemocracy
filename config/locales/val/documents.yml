@@ -1,7 +1,6 @@
 val:
   documents:
     title: Documents
-    max_documents_allowed_reached_html: Has arribat al número màxim de documents permesos! <strong>Has d'eliminar un abans de poder pujar un altre.</strong>
     form:
       title: Documents
       title_placeholder: Afegeix un títol descriptiu al document
