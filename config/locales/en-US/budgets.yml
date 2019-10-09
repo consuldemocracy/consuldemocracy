@@ -1,1 +1,5 @@
-en:
+en-US:
+  budgets:
+    investments:
+      show:
+        comments_tab: Kommentare
