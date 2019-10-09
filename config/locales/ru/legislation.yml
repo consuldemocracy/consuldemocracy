@@ -18,9 +18,6 @@ ru:
         publish_comment: Опубликовать комментарий
       form:
         phase_not_open: Эта фаза не открыта
-        login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
-        signin: Войти
-        signup: Зарегистрироваться
       index:
         title: Комментарии
         comments_about: Комментарии о
@@ -118,11 +115,8 @@ ru:
       participation:
         phase_not_open: Эта фаза не открыта
         organizations: Организациям не разрешено участвовать в дебатах
-        signin: Войти
-        signup: Зарегистрироваться
         unauthenticated: Вы должны %{signin} или %{signup} чтобы принять участие.
         verified_only: Только верифицированные пользователи могут участвовать, %{verify_account}.
-        verify_account: подтвердите ваш аккаунт
         debate_phase_not_open: Фаза дебатов окончена, и ответы больше не принимаются
     shared:
       share: Доля
