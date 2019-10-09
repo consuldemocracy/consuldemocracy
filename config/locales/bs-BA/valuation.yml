@@ -27,11 +27,6 @@ bs:
         assigned_to: "Dodijeljeno %{valuator}"
         title: Investicioni projekti
         edit: Izmjeni spis
-        valuators_assigned:
-          one: Dodijeljeni procjenitelj
-          few: "Dodijeljenih procjenitelja: %{count}"
-          other: "Dodijeljenih procjenitelja: %{count}"
-        no_valuators_assigned: Nema dodijeljenih procjenitelja
         table_id: Identifikacioni broj
         table_title: Naziv
         table_heading_name: Naziv kategorije
@@ -62,16 +57,9 @@ bs:
         dossier: Spis
         price_html: "Cijena (moneta) %{currency}"
         price_first_year_html: "Troškovi tokom prve godine (moneta) %{currency} <small> (nije obavezno navesti, nije javni podatak) </small>"
-        price_explanation_html: Objašnjenje za cijenu
         feasibility: Izvodivost
-        feasible: Izvodivo
-        unfeasible: Nije izvodivo
-        undefined_feasible: U toku
-        feasible_explanation_html: Objašnjenje za izvodivost
-        valuation_finished: Procjena završena
         valuation_finished_alert: "Jeste sigurni da želite označiti izvještaj kao kompletiran? Više nećete moći unositi izmjene."
         not_feasible_alert: "Email sa izvještajem o izvodivosti će odmah biti upućen autoru projekta."
-        duration_html: Vremenski okvir
         save: Spasi izmjene
       notice:
         valuate: "Spis ažuriran"
