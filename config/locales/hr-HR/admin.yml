@@ -28,11 +28,6 @@ hr:
           with_inactive: Neaktivan
         preview: Pregled
       banner:
-        title: Naziv
-        description: Opis
-        target_url: Poveznica
-        post_started_at: Post je počeo s
-        post_ended_at: Post je završio s
         sections_label: Odjeljci gdje će se pojaviti
         sections:
           homepage: Glavna stranica
@@ -120,7 +115,6 @@ hr:
       headings_name: "Naslovi"
       headings_edit: "Uredi Naslove"
       headings_manage: "Upravljaj naslovima"
-      max_votable_headings: "Maksimalni broj naslova za koje korisnik može glasati"
       no_groups: "Nema grupa."
       amount:
         one: "Postoji 1 grupa"
@@ -136,12 +130,10 @@ hr:
       form:
         create: "Stvori novu grupu"
         edit: "Uredi grupu"
-        name: "Ime grupe"
         submit: "Spremi grupu"
       index:
         back: "Idi nazad na budžet"
     budget_headings:
-      name: "Ime"
       no_headings: "Ne postoje naslovi."
       amount:
         one: "Postoji 1 naslov"
@@ -155,14 +147,8 @@ hr:
         success_notice: "Naslov je uspješno obrisan"
         unable_notice: "Ne možete obrisati Naslov koji ima povezane investicije"
       form:
-        name: "Ime naslova"
-        amount: "Iznos"
-        population: "Populacija (neobavezno)"
         population_info: "Naslov Budžeta kod populacijskog polja koje se koristi za Statističke svrhe je na kraju budžeta kako bi se pokazao svaki Naslov koji predstavlja područje s postotkom populacije koja je glasala. Polje je neobavezno, pa ga možete ostaviti praznom ako se ne odnosi."
-        latitude: "Visina (neobaveno)"
-        longitude: "Širina (neobavezno)"
         coordinates_info: "Ako je visina i širina dostupna stranica investicija za ovaj naslov će uključiti mapu. Ova mapa će biti centrirana uz korištenje ovih koordinata."
-        allow_content_block: "Dopusti blokiranje sadržaja"
         content_blocks_info: "Ako je omogućeno blokiranje sadržaja, vi ćete moći stvoriti poseban sadržaj je povezan s ovim naslovom od sekcije Postave > Prilagodi blokove sadržaja. Ovaj sadržaj će se pojaviti na investicijskoj stranici ovog naslova."
         create: "Stvori novi naslov"
         edit: "Uredi naslov"
@@ -171,13 +157,8 @@ hr:
         back: "Idi nazad na grupu"
     budget_phases:
       edit:
-        start_date: Datum početka
-        end_date: Datum završetka
-        summary: Sašetak
         summary_help_text: Ovaj tekst će vas informirati korisnika o fazi. Kako biste to mogući tokom faze koja nije aktivirana odaberite kućicu dolje
-        description: Opis
         description_help_text: Ovaj tekst će se pojavljiti u naslovu kada je ova faza aktivna
-        enabled: Faza omogućena
         enabled_help_text: Ova faza će biti javna u fazama budžetiranja, a tako i aktivna za ostale svrhe
         save_changes: Spremi promjene
     budget_investments:
@@ -265,17 +246,13 @@ hr:
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
-        mark_as_incompatible: Označi kao nekopatibilno
         selection: Odabir
-        mark_as_selected: Označi kao odabrano
         assigned_valuators: Procjenitelji
         select_heading: Označi naslov
         submit_button: Ažuriranje
         user_tags: Korisnik je dopisao oznake
-        tags: Oznake
         tags_placeholder: "Dopiši oznake koje želiš odjeliti zarezom (,)"
         undefined: Nedefinirano
-        user_groups: "Grupe"
       search_unfeasible: Pretraga neizvediva
     statuses:
       index:
@@ -317,9 +294,6 @@ hr:
         title: Administracija
         description: Dobrodošli na %{org} ploču admina.
       actions:
-        action_type:
-          proposed_action: Predloženo djelovanje
-          resource: Resurs
         index:
           description: "Kada korisnik stvori prijedlog može mu pristupiti kroz glavni izbornik svojih prijedloga, tamo može predložiti resurse i preporuke kako bi dobili potporu za svoju ideju."
           create: Stvori resurs ili djelovanje
@@ -352,7 +326,6 @@ hr:
         form:
           submit_button: Spremi
           help_text: Unesi 0 kako ova vrijednost ne bi bila uračunata
-          published_proposal: Za objavljene prijedloge?
           published_proposal_help_text: Označi ovu kućicu kako bi stvorili akciju samo za objavljene prijedloge
       administrator_tasks:
         index:
@@ -387,7 +360,6 @@ hr:
     documents:
       new:
         title: "Učitaj dokument"
-        label_attachment: "Odaberi dokument"
         submit_button: "Učitaj"
       index:
         new_link: "Dodaj novi dokument"
@@ -454,9 +426,7 @@ hr:
           summary_placeholder: Kratki sažetak opisa
           description_placeholder: Dodaj opis procesa
           additional_info_placeholder: Dodaj dodatne informacije koje smatraš korisnima
-          homepage: Opis
           homepage_description: Ovdje možeš objasniti sadržaj procesa
-          homepage_enabled: Glavna stranica omogućena
           banner_title: Boje naslova
         index:
           create: Novi proces
@@ -542,9 +512,6 @@ hr:
           back: Nazad
           title: Stvori novu verziju
           submit_button: Stvori verziju
-        statuses:
-          draft: Draft
-          published: Objavljeno
         table:
           title: Naziv
           created_at: Stvoreno u
@@ -569,7 +536,6 @@ hr:
             error: Pogreška
         form:
           add_option: Dodaj opciju
-          title: Pitanje
           title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvreni odgovor
           question_options: "Mogući odgovori (opcije, zadani otvoreni odgovori)"
@@ -725,7 +691,6 @@ hr:
         empty_newsletters: Ne postoje newsletteri za prikaz
       new:
         title: Novi newsletter
-        from: Email adresa koja se pojavljuje kada se šalje newsletter
         header_footer_help_text_html: "Naslov i podnaslov su isti za sve emailove, možete ih modificirati na <code>app/views/layouts/mailer_header</code> i <code>app/views/layouts/mailer_footer</code>.<br>Možete nadomjestiti naslovnu sliku na %{link}."
         image_link: "prilagođene slike"
       edit:
@@ -873,7 +838,6 @@ hr:
         title: "Grupa procjenitelja: %{group}"
         no_valuators: "Ne postoje procjenitelji koji su dio ove grupe"
       form:
-        name: "Ime grupe"
         new: "Stvori grupu procjenitelja"
         edit: "Spremi grupu procjenitelja"
     poll_officers:
@@ -907,7 +871,6 @@ hr:
         shift: "Zadatak"
         shifts: "Smjene na ovom glasačkom mjestu"
         date: "Datum"
-        task: "Zadatak"
         edit_shifts: Uredi smjene
         new_shift: "Nova smjena"
         no_shifts: "Ova glasačka kabina nema smjena"
@@ -965,7 +928,6 @@ hr:
         title: "Opis glasanja"
       form:
         description:
-          text: "Opis"
           help_text: "Ovaj tekst će se pojaviti na naslovu ovog glasanja. Može se koristiti za dodavnaje konteksta kako bi otvorili glasanje."
     polls:
       index:
@@ -1020,7 +982,6 @@ hr:
       new:
         title: "Stvori pitanje za glasanje %{poll}"
         title_proposal: "Stvori pitanje"
-        poll_label: "Glasanje"
       answers:
         images:
           add_image: "Dodaj sliku"
@@ -1100,8 +1061,6 @@ hr:
         no_location: "Nema Lokacije"
       new:
         title: "Novo glasačko mjesto"
-        name: "Ime"
-        location: "Lokacija"
         submit_button: "Stvori glasačko mjesto"
       edit:
         title: "Uredi glasačko mjesto"
@@ -1398,8 +1357,6 @@ hr:
         title: Teme prijedloga
         topic: Tema
         help: "Kada korisnik stvori prijedlog, sljedeće teme biti će preporučene kao različite oznake."
-      name:
-        placeholder: Upiši ime teme
     users:
       columns:
         name: Ime
@@ -1491,8 +1448,6 @@ hr:
           created_at: Stvoreno kod
           status: Status
           updated_at: Ažurirano u
-          status_draft: Draft
-          status_published: Objavljeno
           title: Naziv
           slug: Žeton
           cards_title: Kartice
