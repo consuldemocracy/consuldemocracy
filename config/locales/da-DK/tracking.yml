@@ -40,9 +40,6 @@ da:
         new_milestone: Opret ny proces
       form:
         admin_statuses: Administrer status
-      new:
-        date: Dato
-        description: Beskrivelse
       edit:
         title: Rediger proces
       create:
