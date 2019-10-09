@@ -43,8 +43,6 @@ de:
     budget_investment_created:
       subject: "Danke, dass Sie einen Budgetvorschlag erstellt haben!"
       title: "Danke, dass Sie einen Budgetvorschlag erstellt haben!"
-      intro_html: "Hallo <strong>%{author}</strong>,"
-      text_html: "Vielen Dank, dass Sie einen Budgetvorschlag <strong>%{investment}</strong> für den Bürgerhaushalt erstellt haben <strong>%{budget}</strong>."
       follow_html: "Wir werden Sie über den Fortgang des Prozesses informieren, dem Sie auch über folgenden <strong>%{link}</strong> folgen können."
       follow_link: "Bürgerhaushalte"
       sincerely: "Mit freundlichen Grüßen,"
