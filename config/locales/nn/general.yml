@@ -2,8 +2,6 @@ nn:
   account:
     show:
       change_credentials_link: Endre mine opplysninger
-      email_on_comment_label: Gi meg varsel via e-post når noen kommenterer på mine forslag eller debatter
-      email_on_comment_reply_label: Gi meg varsel via e-post når noen kommenterer på mine kommentarer
       erase_account_link: Slett min konto
       finish_verification: Fullfør verifisering
       notifications: Varsler
@@ -11,18 +9,10 @@ nn:
       organization_responsible_name_placeholder: Representant for organisasjonen/gruppen
       personal: Personlige detaljer
       phone_number_label: Telefonnr
-      public_activity_label: Vis min liste over aktiviteter offentlig
-      public_interests_label: Vis etikettene for de elementene jeg følger offentlig
       public_interests_my_title_list: Tagger for emnene du følger
       public_interests_user_title_list: Tagger for emner denne brukeren følger
       save_changes_submit: Lagre endringer
-      subscription_to_website_newsletter_label: Motta relevante oppdateringer om nettsiden via e-post
-      email_on_direct_message_label: Motta e-post om direktemeldinger
-      email_digest_label: Motta oppsummering av forslag
-      official_position_badge_label: Vis etikett for representant fra kommunen
       recommendations: Anbefalinger
-      show_debates_recommendations: Vise anbefalte debatter
-      show_proposals_recommendations: Vis anbefalte forslag
       title: Min konto
       user_permission_debates: Delta i debatter
       user_permission_info: Med din konto kan du...
@@ -41,7 +31,6 @@ nn:
   comments:
     comments_closed: Kommentarer er avstengt
     verified_only: For å delta %{verify_account}
-    verify_account: verifiser din konto
     comment:
       admin: Administrator
       author: Forfatter
@@ -109,7 +98,6 @@ nn:
     form:
       debate_title: Tittel på debatt
       tags_instructions: Tag denne debatten.
-      tags_label: Emner
       tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
     index:
       featured_debates: Utvalgte
@@ -173,7 +161,6 @@ nn:
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debatten har blitt flagget som upassende av flere brukere.
-      login_to_comment: Du må %{signin} eller %{signup} for å kunne kommentere.
       share: Del
       author: Forfatter
     update:
@@ -299,7 +286,6 @@ nn:
   map:
     title: "Distrikter"
     proposal_for_district: "Opprett et forslag for distriktet ditt"
-    select_district: Område
     start_proposal: Lag nye forslag
   omniauth:
     facebook:
@@ -343,7 +329,6 @@ nn:
     retire_form:
       title: Trekk tilbake forslag
       warning: "Hvis du trekker tilbake forslaget ditt, kan andre brukere fortsatt støtte det. Forslaget fjernes likevel fra hovedlista, og andre brukere vil bli informert om at du ikke lenger mener forslaget bør støttes"
-      retired_reason_label: Grunn til å trekke forslaget
       retired_reason_blank: Velg et alternativ
       retired_explanation_placeholder: Forklar kort hvorfor du ikke mener dette forslaget burde få mer støtte
       submit_button: Ta tilbake forslaget
@@ -354,14 +339,8 @@ nn:
       done: Ferdig
       other: Annet
     form:
-      geozone: Område
-      proposal_responsible_name: Fullt navn på personen som eier forslaget
       proposal_responsible_name_note: "(individuelt eller som representant for en gruppe; vil ikke bli publisert offentlig)"
-      proposal_summary: Oppsummering av forslag
       proposal_summary_note: "(Maks 200 tegn)"
-      proposal_text: Forslagstekst
-      proposal_title: Tittel på forslag
-      proposal_video_url: Link til ekstern video
       proposal_video_url_note: Du kan legge til en link fra Youtube eller Vimeo
       tag_category_label: "Kategorier"
       tags_instructions: "Tagg forslaget. Du kan velge fra de foreslåtte kategoriene, eller legge til egne"
@@ -478,7 +457,6 @@ nn:
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Dette forslaget har blitt flagget som upassende av flere brukere.
-      login_to_comment: Du må %{signin} eller %{signup} for å legge inn en kommentar.
       notifications_tab: Notifikasjoner
       milestones_tab: Milepæler
       retired_warning: "Forslagstilleren ønsker ikke at dette forslaget skal få mer støtte."
@@ -592,7 +570,6 @@ nn:
           other: "%{count} svar"
         view_results: Se resultater
         edit_poll: Rediger undersøkelse
-        show_results: Se resultater
         show_results_help: Om du krysser av her, vil resultatene bli offentliggjort og alle brukere vil ha muligheten til å se dem
         delete: Slett undersøkelse
         alert_notice: Denne handlingen vil fjerne undersøkelsen og alle tilhørende spørsmål.
@@ -672,9 +649,6 @@ nn:
       back: Tilbake til avstemningen
       cant_answer_not_logged_in: "Du må %{signin} eller %{signup} for å delta."
       comments_tab: Kommentarer
-      login_to_comment: Du må %{signin} eller %{signup} for å legge igjen en kommentar.
-      signin: Logg inn
-      signup: Registrer deg
       cant_answer_verify_html: "Du må %{verify_link} for å svare."
       verify_link: "verifiser din konto"
       cant_answer_expired: "Denne avstemningen er avsluttet."
@@ -710,8 +684,6 @@ nn:
   proposal_notifications:
     new:
       title: "Send melding"
-      title_label: "Tittel"
-      body_label: "Melding"
       submit_button: "Send melding"
       info_about_receivers_html: "Denne meldingen vil bli sendt til <strong>%{count} mennesker og vil bli synlig i %{proposal_page}.<br> Meldinger er ikke sendt med en gang, brukere vil motta periodiske eposter med forslagsoppdateringer."
       proposal_page: "forslagssiden"
@@ -796,7 +768,6 @@ nn:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
-    target_blank_html: " (link åpnes i et nytt vindu)"
     you_are_in: "Du er inne"
     unflag: Ta bort flagg
     unfollow_entity: "Ikke lenger følg %{entity}"
@@ -842,16 +813,10 @@ nn:
   users:
     direct_messages:
       new:
-        body_label: Melding
         direct_messages_bloqued: "Denne brukeren har besluttet å ikke motta direktemeldinger"
         submit_button: Send melding
         title: Send privat melding til %{receiver}
-        title_label: Tittel
         verified_only: For å sende en privat melding %{verify_account}
-        verify_account: verifiser din konto
-        authenticate: Du må %{signin} eller %{signup} for å fortsette.
-        signin: logg inn
-        signup: registrer deg
       show:
         receiver: Melding sendt til %{receiver}
     show:
@@ -904,12 +869,8 @@ nn:
     comment_unauthenticated: Du må %{signin} eller %{signup} for å stemme.
     disagree: Jeg er uenig
     organizations: Organisasjoner er ikke berettiget til å stemme
-    signin: Logg inn
-    signup: Registrer deg
     supports: Støtte
-    unauthenticated: Du må %{signin} eller %{signup} for å fortsette.
     verified_only: Kun verifiserte brukere kan stemme på forslag; %{verify_account}.
-    verify_account: verifiser din konto
     budget_investments:
       not_logged_in: Du må %{signin} eller %{signup} for å fortsette.
       not_verified: Kun verifiserte brukere kan stemme på investeringsprosjekter; %{verify_account}.
@@ -989,8 +950,6 @@ nn:
     help:
       alt: Velg teksten du vil kommentere på og trykk på knappen med pennen.
       text: For at kunne kommentere i dette dokumentet må du %{sign_in} eller %{sign_up}. Deretter velger du den teksten du vil kommentere på og trykker på knappen med pennen.
-      text_sign_in: logg inn
-      text_sign_up: registrer deg
       title: Hvordan kan jeg kommentere på dette dokumentet?
   links:
     form:
