@@ -10,7 +10,6 @@ de:
         voted_html:
           one: "Sie haben über <span>einen</span> Vorschlag abgestimmt."
           other: "Sie haben über <span>%{count}</span> Vorschläge abgestimmt."
-        voted_info_html: "Sie können Ihre Stimme bis zur Schließung dieser Phase jederzeit ändern. <br> Sie müssen nicht sämtliches verfügbares Geld ausgeben."
         zero: Sie haben noch über keinen Ausgabenvorschlag abgestimmt.
       reasons_for_not_balloting:
         not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
@@ -67,7 +66,6 @@ de:
         map_location: "Kartenposition"
         map_location_instructions: "Navigieren Sie auf der Karte zum Standort und setzen Sie die Markierung."
         map_remove_marker: "Entfernen Sie die Kartenmarkierung"
-        location: "Weitere Ortsangaben"
         map_skip_checkbox: "Dieser Ausgabenvorschlag hat keinen konkreten Standort oder ich kenne ihn nicht."
       index:
         title: Bürgerhaushalte
@@ -93,11 +91,8 @@ de:
           check_ballot_link: "Überprüfung meiner Abstimmung"
           zero: Sie haben für keinen Ausgabenvorschlag in dieser Gruppe abgestimmt.
           verified_only: "Um ein neuen Ausgabenvorschlag zu erstellen %{verify}."
-          verify_account: "verifizieren Sie Ihr Konto"
           create: "Eine Budgetinvestitionen erstellen"
           not_logged_in: "Um einen neuen Ausgabenvorschlag erstellen zu können, müssen Sie %{sign_in} oder %{sign_up}."
-          sign_in: "anmelden"
-          sign_up: "registrieren"
           by_feasibility: Nach Durchführbarkeit
           feasible: Durchführbare Projekte
           unfeasible: Nicht durchführbare Projekte
