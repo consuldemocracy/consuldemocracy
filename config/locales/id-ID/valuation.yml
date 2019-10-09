@@ -26,9 +26,6 @@ id:
         assigned_to: "Ditugaskan untuk %{valuator}"
         title: Proyek investasi
         edit: Mengedit berkas
-        valuators_assigned:
-          other: "Ditetapkan penilai\n\n\n%{count} valuators ditugaskan"
-        no_valuators_assigned: Tidak ada penilai yang ditugaskan
         table_id: ID
         table_title: Judul
         table_heading_name: Nama judul
@@ -59,16 +56,9 @@ id:
         dossier: Berkas
         price_html: "Harga (%{currency})"
         price_first_year_html: "Biaya selama tahun pertama (%{currency}) <small>(opsional, data yang tidak umum)</small>"
-        price_explanation_html: Penjelasan harga
         feasibility: Kelayakan
-        feasible: Layak
-        unfeasible: Tidak layak
-        undefined_feasible: Tertunda
-        feasible_explanation_html: Kelayakan penjelasan
-        valuation_finished: Penilaian selesai
         valuation_finished_alert: "Apakah anda yakin anda ingin menandai laporan ini selesai? Jika anda melakukannya, itu tidak bisa lagi diubah."
         not_feasible_alert: "Are you sure you want to mark this report finished? If you do, it can no longer be changed."
-        duration_html: Waktu ruang lingkup
         save: Simpan perubahan
       notice:
         valuate: "Berkas diperbarui"
