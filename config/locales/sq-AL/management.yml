@@ -32,8 +32,6 @@ sq:
       index:
         title: Drejtuesit
         info: Këtu ju mund të menaxhoni përdoruesit përmes të gjitha veprimeve të renditura në menunë e majtë.
-    document_number: Numri i dokumentit
-    document_type_label: Tipi i dokumentit
     document_verifications:
       already_verified: Kjo llogari përdoruesi është verifikuar tashmë
       has_no_account_html: Për të krijuar një llogari, shkoni te %{link} dhe klikoni në <b> 'Regjistrohu' </ b> në pjesën e sipërme të majtë të ekranit.
