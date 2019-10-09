@@ -27,13 +27,11 @@ pl:
         description: "W sekcji %{link} możesz składać propozycje do Rady Miejskiej, celem ich wdrożenia przez ów organ. Takie wnioski wymagają poparcia, a jeśli osiągną wystarczający jego poziom, zostają poddane publicznemu głosowaniu. Propozycje zatwierdzone w głosowaniach są akceptowane i wykonywane przez Radę Miejską."
         link: "propozycje obywatelskie"
         image_alt: "Przycisk do popierania propozycji"
-        figcaption_html: 'Przycisk do "Popierania" propozycji.'
       budgets:
         title: "Budżetowanie Partycypacyjne"
         description: "Sekcja %{link} pomaga ludziom podjąć bezpośrednią decyzję odnośnie tego, na co zostanie wydana część budżetu gminnego."
         link: "budżety obywatelskie"
         image_alt: "Różne fazy budżetu partycypacyjnego"
-        figcaption_html: 'Fazy "Poparcie" i "Głosowanie" budżetów partycypacyjnych.'
       polls:
         title: "Sondy"
         description: "Sekcja %{link} jest aktywowana za każdym razem, gdy propozycja osiąga 1% poparcia i przechodzi do głosowania lub gdy Rada Miejska przedkłada kwestię, w której sprawie ludzie mają zadecydować."
@@ -159,10 +157,7 @@ pl:
     titles:
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
     verify:
-      code: Kod, który otrzymałeś w liście
-      email: E-mail
       info: "Aby zweryfikować konto, wprowadź swoje dane dostępu:"
       info_code: "Teraz wprowadź kod otrzymany w liście:"
-      password: Hasło
       submit: Zweryfikuj swoje konto
       title: Zweryfikuj swoje konto
