@@ -1,7 +1,6 @@
 he:
   documents:
     title: מסמכים
-    max_documents_allowed_reached_html: הגעת למספר המרבי המותר של מסמכים! <strong> עליך למחוק אחד לפני שתוכל להעלות קובץ אחר. </strong>
     additional: תיעוד נוסף
     form:
       title: מסמכים
