@@ -162,8 +162,6 @@ cs:
           unfeasible: Nerealizovatelné
           min_total_supports: Minimální podpora
           winners: Vítězové
-          one_filter_html: "Aktuální použité filtry: <b><em>%{filter}</em></b>"
-          two_filters_html: "Aktuální použité filtry: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtr
         download_current_selection: "Stáhnout aktuální výběr"
@@ -379,7 +377,6 @@ cs:
           form:
             error: Chyba
         form:
-          title_html: 'Editace <span class="strong">%{draft_version_title}</span> z procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Spustit textový editor
           close_text_editor: Zavřít textový editor
           use_markdown: Pro formátování textu použijte Markdown
