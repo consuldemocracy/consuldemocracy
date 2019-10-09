@@ -10,7 +10,6 @@ sq:
         voted_html:
           one: "Ju keni votuar <span>%{count}</span> investime."
           other: "Ju keni votuar <span>%{count}</span> investimet."
-        voted_info_html: "Ju mund ta ndryshoni votën tuaj në çdo kohë deri në fund të kësaj faze. <br> Nuk ka nevojë të shpenzoni të gjitha paratë në dispozicion."
         zero: Ju nuk keni votuar në asnjë projekt investimi.
       reasons_for_not_balloting:
         not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
@@ -67,7 +66,6 @@ sq:
         map_location: "Vendndodhja në hartë"
         map_location_instructions: "Lundroni në hartë në vendndodhje dhe vendosni shënuesin."
         map_remove_marker: "Hiq shënuesin e hartës"
-        location: "informacion shtesë i vendodhjes"
         map_skip_checkbox: "Ky investim nuk ka një vend konkret ose nuk jam i vetëdijshëm për të."
       index:
         title: Buxhetet  pjesëmarrës
@@ -93,11 +91,8 @@ sq:
           check_ballot_link: "Kontrolloni votimin tim"
           zero: Ju nuk keni votuar në asnjë projekt investimi në këtë grup
           verified_only: "Për të krijuar një investim të ri buxhetor %{verify}"
-          verify_account: "verifikoni llogarinë tuaj"
           create: "Krijo një investim buxhetor"
           not_logged_in: "Për të krijuar një investim të ri buxhetor ju duhet %{sign_in} ose %{sign_up}."
-          sign_in: "Kycu"
-          sign_up: "Rregjistrohu"
           by_feasibility: Fizibilitetit
           feasible: Projektet e realizueshme
           unfeasible: Projektet e parealizueshme
