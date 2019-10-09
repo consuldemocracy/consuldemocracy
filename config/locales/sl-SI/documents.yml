@@ -1,7 +1,6 @@
 sl:
   documents:
     title: Dokumenti
-    max_documents_allowed_reached_html: Dosegel si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>
     form:
       title: Dokumenti
       title_placeholder: Dodaj poveden naslov dokumenta
