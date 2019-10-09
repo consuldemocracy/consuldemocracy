@@ -233,9 +233,9 @@ pl:
         password_confirmation: "Potwierdzenie hasła"
         password: "Hasło"
         current_password: "Stare hasło"
-        phone_number: "Numer telefonu"
         official_position: "Oficjalne stanowisko"
         official_level: "Oficjalny poziom"
+        phone_number: "Numer telefonu"
         redeemable_code: "Kod weryfikacyjny otrzymany za pośrednictwem poczty e-mail"
       organization:
         name: "Nazwa organizacji"
@@ -331,10 +331,10 @@ pl:
         text: Komentarz
       document:
         title: Tytuł
-        attachment: Załącznik
+        attachment: "Załącznik"
       image:
         title: Tytuł
-        attachment: Załącznik
+        attachment: "Załącznik"
       poll/question/answer:
         title: Odpowiedź
         description: Opis
@@ -347,7 +347,7 @@ pl:
       newsletter:
         segment_recipient: Adresaci
         subject: Temat
-        from: Od
+        from: "Od"
         body: Treść wiadomości e-mail
       admin_notification:
         segment_recipient: Adresaci
