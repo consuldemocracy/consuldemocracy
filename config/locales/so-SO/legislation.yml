@@ -14,9 +14,6 @@ so:
         publish_comment: Dabaac falada
       form:
         phase_not_open: Wejigan ma furan yahay
-        login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
-        signin: Geliid
-        signup: Saxiixid
       index:
         title: Faalo
         comments_about: Faaloyin ku sabsan
@@ -110,11 +107,8 @@ so:
       participation:
         phase_not_open: Wejigan ma furan yahay
         organizations: Ururada looma oggola inay ka qaybqaataan doodda
-        signin: Geliid
-        signup: Saxiixid
         unauthenticated: Waa inaad%{signin}%{signup} inaad ka qayb qaadato.
         verified_only: Kaliya isticmaalayaasha ayaa xaqiijin kara,%{verify_account}.
-        verify_account: hubi xisaabtaada
         debate_phase_not_open: Marxaladda dooddu way dhammaatay, jawaabahana lama aqbalo
     shared:
       share: Lawadag
