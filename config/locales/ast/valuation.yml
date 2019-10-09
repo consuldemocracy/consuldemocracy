@@ -26,10 +26,6 @@ ast:
         assigned_to: "Asignadas a %{valuator}"
         title: Propuestes d'inversión
         edit: Editar informe
-        valuators_assigned:
-          one: Evaluador asignado
-          other: "%{count} evaluadores asignados"
-        no_valuators_assigned: Ensin evaluaor
         table_id: ID
         table_title: Títulu
         table_heading_name: Nome de la partida
@@ -59,14 +55,7 @@ ast:
         dossier: Informe
         price_html: "Coste (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Coste en el primer año (%{currency}) <small>(opcional, dato no público)</small>"
-        price_explanation_html: Informe de costu
         feasibility: Viabilidá
-        feasible: Viable
-        unfeasible: No viable
-        undefined_feasible: Pindios
-        feasible_explanation_html: Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>
-        valuation_finished: Evaluación rematada
-        duration_html: Plazo de ejecución <small>(opcional, dato no público)</small>
         save: Guardar Cambeos
       notice:
         valuate: "Informe actualizado"
