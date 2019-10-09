@@ -103,8 +103,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋辯論...
         title: 搜尋
-      search_results_html:
-        other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order: 排序依據
       start_debate: 開始一個辯論
       title: 辯論
@@ -154,7 +152,6 @@ zh-TW:
     direct_message: 私人信息
     error: 錯誤
     errors: 錯誤
-    not_saved_html: "阻止此%{resource} 的儲存。 <br>請檢查標記的字段以了解如何更正它們："
     policy: 隱私政策
     proposal: 建議
     proposal_notification: "通知"
@@ -322,8 +319,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋建議...
         title: 搜尋
-      search_results_html:
-        other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order: 排序依據
       select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
@@ -424,7 +419,6 @@ zh-TW:
       back: 返回投票
       cant_answer_not_logged_in: "您必須%{signin} 或%{signup} 才能參與。"
       comments_tab: 評論
-      cant_answer_verify_html: "您必須%{verify_link} 才能回答。"
       verify_link: "核實您的帳戶"
       cant_answer_expired: "此投票項已結束。"
       cant_answer_wrong_geozone: "此問題並不適用於您的地理區域。"
@@ -457,7 +451,6 @@ zh-TW:
     new:
       title: "發送消息"
       submit_button: "發送消息"
-      info_about_receivers_html: "此消息將發送給<strong>%{count} 個人</strong>，它將顯示在%{proposal_page} 中。<br>消息不會立即發送，用戶將定期收到包含所有建議通知的電子郵件。"
       proposal_page: "建議的頁面"
     show:
       back: "回到我的活動"
@@ -496,17 +489,6 @@ zh-TW:
     follow: "跟隨"
     following: "跟隨中"
     follow_entity: "跟隨%{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "您現在正在跟隨此投資項目！ </br>出現更改時，我們會通知您，以便您了解最新動態。"
-        destroy:
-          notice_html: "您已經停止了跟隨此投資項目！ </br>您將不會再收到與此項目相關的通知。"
-      proposal:
-        create:
-          notice_html: "現在您正在跟隨此公民建議！ </br>出現更改時，我們會通知您，以便您了解最新動態。"
-        destroy:
-          notice_html: "您已停止跟隨此公民建議！ </br>您將不會再收到與此建議相關的通知。"
     hide: 隱藏
     print:
       print_button: 打印此資訊
