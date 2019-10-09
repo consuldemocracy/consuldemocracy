@@ -98,8 +98,6 @@ id:
         button: Cari
         placeholder: Cari perdebatan...
         title: Cari
-      search_results_html:
-        other: " berisi istilah <strong>%{search_term}</strong>"
       select_order: Dipesan oleh
       start_debate: Memulai debat
       title: Perdebatan
@@ -149,7 +147,6 @@ id:
     direct_message: pesan pribadi
     error: kesalahan
     errors: kesalahan
-    not_saved_html: "menghalanginya %{resource} disimpan. <br>Silakan periksa ditandai bidang untuk mengetahui bagaimana untuk memperbaikinya:"
     policy: Kebijakan Privasi
     proposal: Usulan
     proposal_notification: "Pemberitahuan"
@@ -309,8 +306,6 @@ id:
         button: Cari
         placeholder: Cari proposal...
         title: Cari
-      search_results_html:
-        other: " berisi istilah <strong>%{search_term}</strong>"
       select_order: Dipesan oleh
       select_order_long: "Anda sedang melihat proposal sesuai untuk:"
       start_proposal: Buat proposal
@@ -404,7 +399,6 @@ id:
       back: Kembali ke pemegang
       cant_answer_not_logged_in: "Anda harus %{signin} atau %{signup} untuk berpartisipasi."
       comments_tab: Komentar
-      cant_answer_verify_html: "Anda harus %{verify_link} dalam rangka untuk menjawab."
       verify_link: "memverifikasi akun anda"
       cant_answer_expired: "Jajak pendapat ini telah selesai."
       cant_answer_wrong_geozone: "Pertanyaan ini tidak tersedia pada geozone."
@@ -438,7 +432,6 @@ id:
     new:
       title: "Kirim pesan"
       submit_button: "Mengirim pesan"
-      info_about_receivers_html: "Pesan ini akan dikirimkan ke <strong>%{count}</strong> dan itu akan terlihat dalam %{proposal_page}.<br> Pesan tidak dikirim segera, pengguna akan secara berkala menerima email dengan semua usulan pemberitahuan."
       proposal_page: "proposal halaman"
     show:
       back: "Kembali ke aktivitas saya"
@@ -477,17 +470,6 @@ id:
     follow: "Ikuti"
     following: "Berikut"
     follow_entity: "Ikuti %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Anda sekarang berikut ini proyek investasi! </br> Kami akan memberitahu anda tentang perubahan yang terjadi sehingga anda up-to-date."
-        destroy:
-          notice_html: "Anda telah berhenti mengikuti proyek investasi ini! </br> Anda tidak akan menerima lagi pemberitahuan yang terkait dengan proyek ini."
-      proposal:
-        create:
-          notice_html: "Sekarang anda berikut ini warga proposal! </br> Kami akan memberitahu anda tentang perubahan yang terjadi sehingga anda up-to-date."
-        destroy:
-          notice_html: "Anda telah berhenti berikut ini warga proposal! </br> Anda tidak akan lagi menerima pemberitahuan terkait dengan usulan ini."
     hide: Sembunyikan
     print:
       print_button: Cetak info ini
