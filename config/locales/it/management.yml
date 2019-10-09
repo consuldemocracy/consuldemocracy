@@ -32,8 +32,6 @@ it:
       index:
         title: Gestione
         info: Qui è possibile gestire gli utenti attraverso tutte le azioni elencate nel menu a sinistra.
-    document_number: Numero del documento
-    document_type_label: Tipo di documento
     document_verifications:
       already_verified: Questo account utente è già verificato.
       has_no_account_html: Per creare un account, vai a %{link} e fai click su <b>'Registrati'</b> nella parte superiore sinistra dello schermo.
