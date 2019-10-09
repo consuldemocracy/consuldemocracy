@@ -198,8 +198,6 @@ tr:
           min_total_supports: Minimum destek
           max_total_supports: Minimum destek
           winners: Kazananlar
-          one_filter_html: "Mevcut uygulanan filtreler: <b><em>%{filter}</em></b>"
-          two_filters_html: "Mevcut uygulanan filtreler: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtre
         download_current_selection: "Mevcut seçimi indir"
@@ -533,7 +531,6 @@ tr:
           form:
             error: Hata
         form:
-          title_html: 'Düzenleniyor <span class="strong">%{draft_version_title}</span> işlemden <span class="strong">%{process_title}</span>'
           launch_text_editor: Metin düzenleyicisini başlatın
           close_text_editor: Metin düzenleyiciyi kapatın
           use_markdown: Metni biçimlendirmek için Markdown'ı kullanın
@@ -744,7 +741,6 @@ tr:
         empty_newsletters: Hiç gösterilecek bülten yok
       new:
         title: Yeni bülten
-        header_footer_help_text_html: "Başlık ve altbilgi tüm e-postalar için aynıdır, bunları \n<code>uyg/görünümler/düzenler/postacı_üstbilgi'de</code> ve\n<code>uyg/görünümler/düzenler/postacı_altbilgi'de</code>değiştirebilirsiniz. <br>%{link} üzerindeki üstbilgi görüntüsünü değiştirebilirsiniz."
         image_link: "özel görüntüler"
       edit:
         title: Bülteni düzenle
@@ -1164,9 +1160,6 @@ tr:
           pending: Beklemede
           rejected: Reddedildi
           verified: Doğrulandı
-        hidden_count_html:
-          one: Ayrıca kullanıcısı olmayan veya gizli bir kullanıcısı olan <strong>bir kuruluş</strong> vardır.
-          other: Ayrıca kullanıcısı olmayan veya gizli bir kullanıcısı olan <strong>%{count} kuruluşlar</strong> vardır.
         name: İsim
         email: E-posta
         phone_number: Telefon
@@ -1504,7 +1497,6 @@ tr:
           see_page: Sayfayı göster
         new:
           title: Yeni kişisel sayfa oluştur
-          slug_help_html: "URL’de bu sayfayı tanımlayan metin, örneğin <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Oluşturuldu
           status: Durum
