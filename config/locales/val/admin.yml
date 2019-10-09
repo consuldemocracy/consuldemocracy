@@ -26,11 +26,6 @@ val:
           with_inactive: Inactius
         preview: Vista previa
       banner:
-        title: Títol
-        description: Descripció
-        target_url: Enllaç
-        post_started_at: Inici de publicació
-        post_ended_at: Fi de publicació
         sections_label: Seccions on apareixerà
         sections:
           homepage: Pàgina principal
@@ -114,7 +109,6 @@ val:
       headings_name: "Partides pressupostàries"
       headings_edit: "Editar Partides"
       headings_manage: "Gestionar partides"
-      max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
       no_groups: "No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup."
       amount:
         one: "Hi ha 1 grup"
@@ -129,12 +123,10 @@ val:
       form:
         create: "Crear un nou grup"
         edit: "Editar grup"
-        name: "Nom del grup"
         submit: "Guardar group"
       index:
         back: "Tornar a pressupostos"
     budget_headings:
-      name: "Nom"
       no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
       amount:
         one: "Hi ha 1 partida"
@@ -147,14 +139,8 @@ val:
         success_notice: "Partida eliminada correctament"
         unable_notice: "No es pot eliminar una Partida amb propostes asociades"
       form:
-        name: "Nom de la partida"
-        amount: "Quantitat"
-        population: "Població (opcional)"
         population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
-        latitude: "Latitud"
-        longitude: "Longitud"
         coordinates_info: "Si s'indiquen la latitud i longitud, la página de propostes per a aquesta partida inclourà un mapa. Aquest mapa estarà centrat utilitzant aquestes coordenades."
-        allow_content_block: "Permet contingut bloquejat"
         content_blocks_info: "Si el permís de bloc de contingut està activat, podras crear contingut propi per a esta partida desde la secció Configuració -> Contingut de blocs personalitzat. Este continut es mostrarà en la pàgina de propostes d'aquesta partida."
         create: "Crear nova partida"
         edit: "Editar Partida"
@@ -163,13 +149,8 @@ val:
         back: "Tornar a grups"
     budget_phases:
       edit:
-        start_date: Data d'inici del procés
-        end_date: Data de fi del procés
-        summary: Resumen
         summary_help_text: Este text informarà a l'usuari sobre la fase. Per a mostrar-lo inclús quant la fase no estiga activa, selecciona la casella següent
-        description: Descripció
         description_help_text: Este text apareixerà en la capçalera quant la fase estiga activa
-        enabled: Fase habilitada
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
     budget_investments:
@@ -255,17 +236,13 @@ val:
       edit:
         classification: Classificació
         compatibility: Compatibilitat
-        mark_as_incompatible: Marcar com incompatible
         selection: Selecció
-        mark_as_selected: Marcar com seleccionat
         assigned_valuators: Evaluadors
         select_heading: Seleccionar partida
         submit_button: Actualitzar
         user_tags: Etiquetes asignades per l'usuari
-        tags: Temes
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
-        user_groups: "Grups"
       search_unfeasible: Buscar inviables
     statuses:
       index:
@@ -348,9 +325,7 @@ val:
           summary_placeholder: Resum curt de la descripció
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
-          homepage: Descripció
           homepage_description: Ací pots explicar el contingut del procés
-          homepage_enabled: Pàgina principal habilitada
           banner_title: Colors de capçelera
         index:
           create: Nou procés
@@ -433,9 +408,6 @@ val:
           back: Tornar
           title: Crear nova versió
           submit_button: Crear versió
-        statuses:
-          draft: Esborrany
-          published: Publicada
         table:
           title: Títol
           created_at: Creada el
@@ -460,7 +432,6 @@ val:
             error: Error
         form:
           add_option: Afegir resposta
-          title: Pregunta
           title_placeholder: Escriu un títol a la pregunta
           value_placeholder: Escriu una resposta
           question_options: "Possibles respostes (opcional, per defecte respostes obertes)"
@@ -606,7 +577,6 @@ val:
         empty_newsletters: No hi ha butlletins informatius per a mostrar
       new:
         title: Nou butlletí informatiu
-        from: Direcció de email que apareixerà com a remitent del butlletí informatiu
       edit:
         title: Editar butlletí informatiu
       show:
@@ -714,7 +684,6 @@ val:
         title: "Grup d'avaluadors: %{group}"
         no_valuators: "No hi ha avaluadors asignats a este grup"
       form:
-        name: "Nom del grup"
         new: "Crear grups d'avaluadors"
         edit: "Guardar grups d'avaluadors"
     poll_officers:
@@ -747,7 +716,6 @@ val:
         shift: "Asignació"
         shifts: "Torns en aquesta urna"
         date: "Data"
-        task: "Tasca"
         edit_shifts: Asignar torn
         new_shift: "Nou torn"
         no_shifts: "Aquesta urna no te torns asignats"
@@ -845,7 +813,6 @@ val:
         title: "Editar pregunta ciutadana"
       new:
         title: "Crear pregunta ciutadana"
-        poll_label: "Votació"
       answers:
         images:
           add_image: "Afegir imatge"
@@ -922,8 +889,6 @@ val:
         no_location: "Sense ubicació"
       new:
         title: "Nova urna"
-        name: "Nom"
-        location: "Ubicació"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -1170,8 +1135,6 @@ val:
         title: Temes de debat
         topic: Tema
         help: "Quant un usuari crea una proposta se li suggerixen com a etiquetes per defecte els següents temes."
-      name:
-        placeholder: Escriu el nom del tema
     users:
       columns:
         name: Nom
@@ -1262,8 +1225,6 @@ val:
           created_at: Creada el
           status: Estat
           updated_at: Actualitzada el
-          status_draft: Esborrany
-          status_published: Publicat
           title: Títol
           slug: Slug
           cards_title: Targetes
