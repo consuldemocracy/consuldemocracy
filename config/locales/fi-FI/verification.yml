@@ -16,12 +16,9 @@ fi:
         user_permission_info: Tililläsi voit...
     residence:
       new:
-        date_of_birth: Syntymäaika
         document_number_help_title: Apua
         document_type:
           passport: Passi
-        document_type_label: Asiakirjatyyppi
-        postal_code: Postinumero
     sms:
       edit:
         submit_button: Lähetä
