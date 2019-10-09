@@ -2,8 +2,6 @@ hr:
   account:
     show:
       change_credentials_link: Izmjeni moje kreditacije
-      email_on_comment_label: Obavijesti me putem emaila kada netko komentira moj prijedlog ili raspravu
-      email_on_comment_reply_label: Obavijesti me putem emaila kada netko odgovori na moj komentar
       erase_account_link: Obriši moj račun
       finish_verification: Završena potvrda
       notifications: Obavijesti
@@ -11,18 +9,10 @@ hr:
       organization_responsible_name_placeholder: Predstavnik organizacije/kolektiva
       personal: Osobni detalji
       phone_number_label: Broj telefona
-      public_activity_label: Zadrži popis mojih aktivnosti javnim
-      public_interests_label: Zadrži oznake elemenata koje pratim javnim
       public_interests_my_title_list: Oznake elemenate koje pratite
       public_interests_user_title_list: Oznake elemenata koje ovaj korisnik prati
       save_changes_submit: Spremi promjene
-      subscription_to_website_newsletter_label: Primi email s poveznicom stranice s važnim informacijama
-      email_on_direct_message_label: Primi email o direktnim porukama
-      email_digest_label: Primi sažetak obavijesti o prijedlogu
-      official_position_badge_label: Prikaži službenu značku položaja
       recommendations: Preporuke
-      show_debates_recommendations: Prikaži preporuke za rasprave
-      show_proposals_recommendations: Prikaži preporuke za prijedloge
       title: Moj račun
       user_permission_debates: Sudjeluj u raspravi
       user_permission_info: S vašim računom možete...
@@ -41,7 +31,6 @@ hr:
   comments:
     comments_closed: Komentari su zatvoreni
     verified_only: Kako bi sudjelovali %{verify_account}
-    verify_account: potvrdi svoj račun
     comment:
       admin: Administrator
       author: Autor
@@ -109,7 +98,6 @@ hr:
     form:
       debate_title: Naslov rasprave
       tags_instructions: Označi ovu raspravu.
-      tags_label: Teme
       tags_placeholder: "Unesi oznake koje želite koristite, odvojene zarezima (',')"
     index:
       featured_debates: Istaknuto
@@ -173,7 +161,6 @@ hr:
       comments_title: Kometari
       edit_debate_link: Uredi
       flag: Rasprava je označena kao neprimjerena od strane više korisnika.
-      login_to_comment: Vi morate %{signin} ili %{signup} kako biste ostavili komentar.
       share: Dijeli
       author: Autor
     update:
@@ -299,7 +286,6 @@ hr:
   map:
     title: "Distrikti"
     proposal_for_district: "Započni prijedlog za svoj distrikt"
-    select_district: Opseg djelovanja
     start_proposal: Stvori prijedlog
   omniauth:
     facebook:
@@ -343,7 +329,6 @@ hr:
     retire_form:
       title: Povuci prijedlog
       warning: "Ako povučete prijedlog, on će i dalje prihvaćati podršku, ali će biti uklonjen s glavnog popisa i poruka će biti vidljiva svim korisnicima navodeći da autor smatra da prijedlog ne bi trebao više biti podržan"
-      retired_reason_label: Razlog za povlačenje prijedloga
       retired_reason_blank: Odaberi opciju
       retired_explanation_placeholder: Ukratko objasni zašto mislite da ovaj prijedlog više ne bi trebao primati potporu
       submit_button: Povuci prijedlog
@@ -354,14 +339,8 @@ hr:
       done: Gotovo
       other: Drugi
     form:
-      geozone: Opseg djelovanja
-      proposal_responsible_name: Puno ime osobe koja šalje prijedlog
       proposal_responsible_name_note: "(pojedinačno ili kao predstavnik kolektiva, neće se javno prikazivati)"
-      proposal_summary: Sažetak prijedloga
       proposal_summary_note: "(maksimalno 200 slova)"
-      proposal_text: Tekst prijedloga
-      proposal_title: Naslov prijedloga
-      proposal_video_url: Poveznica na video
       proposal_video_url_note: Možete dodati poveznicu za YouTube ili Vimeo
       tag_category_label: "Kategorije"
       tags_instructions: "Označi ovaj prijedlog. Možete odabrati od predloženih kategorija ili dodati svoju"
@@ -478,7 +457,6 @@ hr:
       comments_tab: Komentari
       dashboard_proposal_link: Kontrolna ploča
       flag: Prijedlog je označen kao neprimjerena od strane više korisnika.
-      login_to_comment: Vi morate %{signin} ili %{signup} kako biste ostavili komentar.
       notifications_tab: Obavijesti
       milestones_tab: Ključni ciljevi
       retired_warning: "Autor smatra da ovaj prijedlog ne bi trebao dobiti više podrške."
@@ -592,7 +570,6 @@ hr:
           other: "%{count} odgovore"
         view_results: Pregledaj rezultate
         edit_poll: Uredi pregled
-        show_results: Prikaži rezultate
         show_results_help: Ako označite taj okvir, rezultati će biti javni i svi će ih korisnici moći vidjeti
         delete: Obriši pregled
         alert_notice: Akcija će se ukloniti s pregleda i svih povezanih pitanja.
@@ -672,9 +649,6 @@ hr:
       back: Nazad na glasanje
       cant_answer_not_logged_in: "Vi morate %{signin} ili %{signup} kako biste sudjelovali."
       comments_tab: Komentari
-      login_to_comment: Vi morate %{signin} ili %{signup} kako biste ostavili komentar.
-      signin: Ulogirajte se
-      signup: Prijavite se
       cant_answer_verify_html: "Vi morate %{verify_link} kako biste odgovorili."
       verify_link: "potvrdi svoj račun"
       cant_answer_expired: "Ovo glasanje je završilo."
@@ -710,8 +684,6 @@ hr:
   proposal_notifications:
     new:
       title: "Pošalji poruku"
-      title_label: "Naziv"
-      body_label: "Poruka"
       submit_button: "Pošalji poruku"
       info_about_receivers_html: "Ova poruka će biti poslana <strong>%{count} ljudima </strong> i biti će vidljiva u %{proposal_page}. <br>Porue nisu poslane odma, korisnici će dobiti periodički email s obavijestima o prijedlozima."
       proposal_page: "na stranicu prijeldoga"
@@ -795,7 +767,6 @@ hr:
       districts: "Distrikti"
       districts_list: "Lista distrikata"
       categories: "Kategorije"
-    target_blank_html: " (poveznica se otvara u novom prozoru)"
     you_are_in: "Vi ste u"
     unflag: Odznači
     unfollow_entity: "Prestani pratiti %{entity}"
@@ -841,16 +812,10 @@ hr:
   users:
     direct_messages:
       new:
-        body_label: Poruka
         direct_messages_bloqued: "Ovaj korisnik je odlučio da neće dobivati privatne poruke"
         submit_button: Pošalji poruku
         title: Pošalji privatnu poruku %{receiver}
-        title_label: Naziv
         verified_only: Kako bi poslali privatnu poruku %{verify_account}
-        verify_account: potvrdi svoj račun
-        authenticate: Vi morate %{signin} ili %{signup} kako biste nastavili.
-        signin: ulogirajte se
-        signup: prijavite se
       show:
         receiver: Poruka poslana %{receiver}
     show:
@@ -903,12 +868,8 @@ hr:
     comment_unauthenticated: Vi morate %{signin} ili %{signup} kako bi glasali.
     disagree: Ne slažem se
     organizations: Organizacijama nije dopušteno glasanje
-    signin: Ulogirajte se
-    signup: Prijavite se
     supports: Potpore
-    unauthenticated: Vi morate %{signin} ili %{signup} kako biste nastavili.
     verified_only: Samo potvrđenim korisnicima je dozvoljeno glasanje za prijedloge; %{verify_account}.
-    verify_account: potvrdi svoj račun
     budget_investments:
       not_logged_in: Vi morate %{signin} ili %{signup} kako biste nastavili.
       not_verified: Samo potvrđeni korisnici mogu glasati za investicijske projekte, %{verify_account}.
@@ -988,8 +949,6 @@ hr:
     help:
       alt: Odaberi tekst koji želiš komentirati i pritisni gumb s olovkom.
       text: Da biste komentirali ovaj dokument morate %{sign_in} ili %{sign_up}. Kako bi odabrali tekst koji želite komentirati pritisnite gumb s olovkom.
-      text_sign_in: prijavite se
-      text_sign_up: registriraj se
       title: Kako mogu komentirati ovaj dokument?
   links:
     form:
