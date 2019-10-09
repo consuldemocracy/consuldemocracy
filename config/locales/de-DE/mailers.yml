@@ -3,20 +3,17 @@ de:
     no_reply: "Diese Nachricht wurde von einer E-Mail-Adresse gesendet, die keine Antworten akzeptiert."
     comment:
       hi: Hallo
-      new_comment_by_html: Es gibt einen neuen Kommentar von <b>%{commenter}</b>
       subject: Jemand hat Ihre %{commentable} kommentiert.
       title: Neuer Kommentar
     config:
       manage_email_subscriptions: Wenn Sie keine E-Mails mehr empfangen möchten, ändern Sie bitte Ihre Einstellungen in
     email_verification:
       click_here_to_verify: diesen Link
-      instructions_2_html: Diese E-Mail dient dazu Ihr Konto mit <b>%{document_type} %{document_number}</b>zu verifizieren. Wenn es sich hierbei nicht um Ihre Daten handelt, klicken Sie bitte nicht auf den vorherigen Link und ignorieren Sie diese E-Mail.
       subject: Bestätigen Sie Ihre E-Mail-Adresse
       thanks: Vielen Dank.
       title: Bestätigen Sie Ihr Konto über den folgenden Link
     reply:
       hi: Hallo
-      new_reply_by_html: Es gibt eine neue Antwort von <b>%{commenter}</b> auf Ihren Kommentar
       subject: Jemand hat auf Ihren Kommentar geantwortet
       title: Neue Antwort auf Ihren Kommentar
     proposal_notification_digest:
@@ -33,7 +30,6 @@ de:
       unsubscribe_account: Mein Konto
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
-      title_html: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
     user_invite:
       ignore: "Wenn Sie diese Einladung nicht angefordert haben, können Sie diese E-Mail einfach ignorieren."
       thanks: "Vielen Dank."
@@ -43,13 +39,11 @@ de:
     budget_investment_created:
       subject: "Danke, dass Sie einen Budgetvorschlag erstellt haben!"
       title: "Danke, dass Sie einen Budgetvorschlag erstellt haben!"
-      follow_html: "Wir werden Sie über den Fortgang des Prozesses informieren, dem Sie auch über folgenden <strong>%{link}</strong> folgen können."
       follow_link: "Bürgerhaushalte"
       sincerely: "Mit freundlichen Grüßen,"
       share: "Teilen Sie Ihr Projekt"
     budget_investment_unfeasible:
       hi: "Liebe*r Benutzer*in,"
-      new_html: "Hierfür laden wir Sie ein, eine <strong>neue Investition</strong> auszuarbeiten, die an die Konditionen dieses Prozesses angepasst sind. Sie können dies über folgenden Link tun: %{url}."
       new_href: "neuer Ausgabenvorschlag"
       sincerely: "Mit freundlichen Grüßen"
       sorry: "Entschuldigung für die Unannehmlichkeiten und vielen Dank für Ihre wertvolle Beteiligung."
