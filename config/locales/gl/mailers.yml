@@ -46,8 +46,6 @@ gl:
     budget_investment_created:
       subject: "Grazas por crear un proxecto!"
       title: "Grazas por crear un proxecto!"
-      intro_html: "Ola <strong>%{author}</strong>,"
-      text_html: "Moitas grazas por crear o teu proxecto <strong>%{investment}</strong> para os orzamentos participativos <strong>%{budget}</strong>."
       follow_html: "Informámoste de como avanza o proceso, que tamén podes seguir na páxina de <strong>%{link}</strong>."
       follow_link: "Orzamentos participativos"
       sincerely: "Un cordial saúdo"
