@@ -182,8 +182,6 @@ hr:
           min_total_supports: Minimalna potpora
           max_total_supports: Maksimalna potpora
           winners: Pobjednici
-          one_filter_html: "Trenutni primjenjeni filtri: <b><em>%{filter}</em></b>"
-          two_filters_html: "Trenutni primjenjeni filtri: <b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: Filter
         download_current_selection: "Preuzmi trenutnu selekciju"
@@ -491,7 +489,6 @@ hr:
           form:
             error: Pogreška
         form:
-          title_html: 'Uređivanjem <span class="strong">%{draft_version_title}</span> od procesa <span class="strong">%{process_title}</span>'
           launch_text_editor: Upali uređivač teksta
           close_text_editor: Zatvori uređivač teksta
           use_markdown: Koristi Smanjenje kako bi formatirali tekst
@@ -691,7 +688,6 @@ hr:
         empty_newsletters: Ne postoje newsletteri za prikaz
       new:
         title: Novi newsletter
-        header_footer_help_text_html: "Naslov i podnaslov su isti za sve emailove, možete ih modificirati na <code>app/views/layouts/mailer_header</code> i <code>app/views/layouts/mailer_footer</code>.<br>Možete nadomjestiti naslovnu sliku na %{link}."
         image_link: "prilagođene slike"
       edit:
         title: Uredi newsletter
@@ -1103,10 +1099,6 @@ hr:
           pending: U tijeku
           rejected: Odbijeno
           verified: Dopušteno
-        hidden_count_html:
-          one: Ne postoji <strong> organizacija </strong> bez korisnika ili skrivenih korisnika.
-          few: Ne postoje <strong>%{count} organizacije </strong> bez korisnika ili skrivenih korisnika.
-          other: Ne postoje <strong>%{count} organizacije </strong> bez korisnika ili skrivenih korisnika.
         name: Ime
         email: Email
         phone_number: Telefon
@@ -1443,7 +1435,6 @@ hr:
           see_page: Pogledaj stranicu
         new:
           title: Stvori novu prilagođenu stranicu
-          slug_help_html: "Tekst je identificiran na URL-u ove stranice, na primjer <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Stvoreno kod
           status: Status
