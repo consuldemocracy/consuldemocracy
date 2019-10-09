@@ -256,7 +256,6 @@ ca:
           form:
             error: error
         form:
-          title_html: 'S''està editant <span class="strong">%{draft_version_title}</span> del procés <span class="strong">%{process_title}</span>'
           launch_text_editor: Llançar editor de text
           close_text_editor: Tancar editor de text
           use_markdown: Fes servir Markdown per formatar el text
@@ -616,9 +615,6 @@ ca:
           pending: Sense decidir
           rejected: rebutjada
           verified: verificada
-        hidden_count_html:
-          one: Hi ha a més <strong>una organització</strong> sense usuari o amb l'usuari bloquejat.
-          other: Hi ha <strong>%{count} organitzacions</strong> sense usuari o amb l'usuari bloquejat.
         name: Nome
         email: El teu correu electrònic
         status: Estat
