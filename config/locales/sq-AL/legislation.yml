@@ -14,9 +14,6 @@ sq:
         publish_comment: Publiko komentin
       form:
         phase_not_open: Kjo fazë nuk është e hapur
-        login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
-        signin: Kycu
-        signup: Rregjistrohu
       index:
         title: Komentet
         comments_about: "\nKomentet rreth"
@@ -110,11 +107,8 @@ sq:
       participation:
         phase_not_open: Kjo fazë nuk është e hapur
         organizations: Organizatat nuk lejohen të marrin pjesë në debat
-        signin: Kycu
-        signup: Rregjistrohu
         unauthenticated: Ju duhet %{signin} ose %{signup} për të marë pjesë .
         verified_only: Vetëm përdoruesit e verifikuar mund të marin pjesë; %{verify_account}.
-        verify_account: verifikoni llogarinë tuaj
         debate_phase_not_open: "\nFaza e debatit ka përfunduar dhe përgjigjet nuk pranohen më"
     shared:
       share: Shpërndaj
