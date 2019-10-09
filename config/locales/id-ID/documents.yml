@@ -1,7 +1,6 @@
 id:
   documents:
     title: Dokumen
-    max_documents_allowed_reached_html: Anda telah mencapai jumlah maksimum dari dokumen-dokumen yang diperbolehkan! <strong>Anda harus menghapus satu sebelum anda dapat meng-upload yang lain.</strong>
     additional: Dokumentasi tambahan
     form:
       title: Dokumen
