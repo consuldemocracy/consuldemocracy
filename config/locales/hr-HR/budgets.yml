@@ -11,7 +11,6 @@ hr:
           one: "Vi ste glasali za <span>jednu</span>investiciju."
           few: "Vi se glasali za <span>%{count}</span> investicija."
           other: "Vi se glasali za <span>%{count}</span> investicija."
-        voted_info_html: "Vaše glasanje je potvrđeno!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Vi niste glasali niti za jedan projetk.
       reasons_for_not_balloting:
@@ -70,7 +69,6 @@ hr:
         map_location: "Lokacija na mapi"
         map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
         map_remove_marker: "Ukloni marker na mapi"
-        location: "Dodatne informacije o lokaciji"
         map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ja nisam toga svijestan."
       index:
         title: Participativno budžetiranje
@@ -98,11 +96,8 @@ hr:
           check_ballot_link: "provjeri i potvrdi moj glas"
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
-          verify_account: "potvrdi svoj račun"
           create: "Stvori investicijski budžet"
           not_logged_in: "Kako bi stvorili novi investicijski budžet morate %{sign_in} ili %{sign_up}."
-          sign_in: "prijavi se"
-          sign_up: "registriraj se"
           by_feasibility: Po izvedivosti
           feasible: Izvedivi projekti
           unfeasible: Neizvedivi projekti
