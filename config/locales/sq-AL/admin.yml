@@ -139,8 +139,6 @@ sq:
           unfeasible: Parealizueshme
           min_total_supports: Mbështetje minimale
           winners: Fituesit
-          one_filter_html: "Filtrat aktuale të aplikuara:<b><em>%{filter}</em></b>"
-          two_filters_html: "Filtrat e aplikuara aktuale:<b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: Filtër
         download_current_selection: "Filtër"
@@ -345,7 +343,6 @@ sq:
           form:
             error: Gabim
         form:
-          title_html: 'Ndrysho <span class="strong">%{draft_version_title}</span> nga procesi <span class="strong">%{process_title}</span>'
           launch_text_editor: Nis versionin e tekstit
           close_text_editor: Mbyll tekst editor
           use_markdown: Përdorni Markdown për të formatuar tekstin
@@ -885,9 +882,6 @@ sq:
           pending: Në pritje
           rejected: Refuzuar
           verified: Verifikuar
-        hidden_count_html:
-          one: Ka gjithashtu<strong>një organizatë</strong>me asnjë përdorues ose me një përdorues të fshehur.
-          other: Janë gjithashtu<strong> %{count} organizatat</strong>me asnjë përdorues ose me një përdorues të fshehur.
         name: Emri
         email: Email
         phone_number: Telefoni
