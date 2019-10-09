@@ -179,8 +179,6 @@ el:
           min_total_supports: Ελάχιστη στήριξη
           max_total_supports: Μέγιστη στήριξη
           winners: Νικητές
-          one_filter_html: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}</em></b>"
-          two_filters_html: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Φίλτρο
         download_current_selection: "Κατεβάστε την τρέχουσα επιλογή"
@@ -471,7 +469,6 @@ el:
           form:
             error: Σφάλμα
         form:
-          title_html: 'Επεξεργασία <span class="strong">%{draft_version_title}</span> από τη διαδικασία <span class="strong">%{process_title}</span>'
           launch_text_editor: Άνοιγμα επεξεργαστή κειμένου
           close_text_editor: Κλείσιμο επεξεργαστή κειμένου
           use_markdown: Χρησιμοποιήστε το Markdown για να διαμορφώσετε το κείμενο
@@ -1073,9 +1070,6 @@ el:
           pending: Σε εκκρεμότητα
           rejected: Απερρίφθη
           verified: Επιβεβαιωμένο
-        hidden_count_html:
-          one: Υπάρχει επίσης <strong>ένας οργανισμός</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
-          other: Υπάρχουν <strong>%{count} οργανισμοί</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
         name: Όνομα
         email: E-Mail
         phone_number: Τηλέφωνο
