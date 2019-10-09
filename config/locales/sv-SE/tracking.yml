@@ -25,9 +25,6 @@ sv:
         table_actions: "Åtgärder"
         image: "Bild"
         show_image: "Visa bild"
-      new:
-        date: Datum
-        description: Beskrivning
       edit:
         title: Redigera milstolpe
     progress_bars:
