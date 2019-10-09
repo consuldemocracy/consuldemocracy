@@ -47,7 +47,6 @@ fa:
       new:
         accept_terms_text: من %{terms_url} سرشماری را قبول می کنم
         accept_terms_text_title: من شرایط و ضوابط دسترسی به سرشماری را می پذیرم.
-        date_of_birth: تاریخ تولد
         document_number: شماره سند
         document_number_help_title: کمک
         document_number_help_text_html: "DNI <strong></strong>: 12345678A<br> <strong>گذرنامه</strong>: AAA000001<br> <strong>کارت اقامت</strong>: X1234567P"
@@ -55,12 +54,10 @@ fa:
           passport: گذرنامه
           residence_card: کارت اقامت
           spanish_id: DNI
-        document_type_label: نوع سند
         error_not_allowed_age: سن مورد نیاز برای شرکت را ندارید.
         error_not_allowed_postal_code: به منظور تایید، شما باید ثبت نام کنید.
         error_verifying_census: سرشماری قادر به تأیید اطلاعات شما نبود. لطفا با  تماس با شورای شهر، جزئیات مربوط به سرشماری خود را اصلاح کنید%{offices}.
         form_errors: مانع تایید محل اقامت شما شد.
-        postal_code: کد پستی
         postal_code_note: برای تایید حساب شما باید ثبت نام کنید.
         terms: شرایط و ضوابط دسترسی
         title: ' تایید اقامت'
@@ -70,7 +67,6 @@ fa:
         flash:
           success: کد تایید ارسال شده توسط پیام متنی را وارد کنید.
       edit:
-        confirmation_code: کد دریافت شده توسط تلفن همراه را وارد کنید.
         resend_sms_link: اینجا را کلیک کنید تا دوباره ارسال شود.
         resend_sms_text: متن با کد تایید خود را دریافت نکرده اید؟
         submit_button: "ارسال\n"
