@@ -108,9 +108,6 @@ nl:
         button: Search
         placeholder: Debatten zoeken...
         title: Search
-      search_results_html:
-        one: " bevat de term <strong>'%{search_term}'</strong>"
-        other: " bevat de term <strong>'%{search_term}'</strong>"
       select_order: Order by
       start_debate: Debat starten
       title: Debatten
@@ -161,7 +158,6 @@ nl:
     direct_message: privébericht
     error: fout
     errors: fouten
-    not_saved_html: "voorkwam dat %{resource} werd opgeslagen.<br>Controleer alsjeblieft de gemarkeerde velden om ze aan te passen:"
     policy: Privacy Verklaring
     proposal: Voorstel
     proposal_notification: "Melding"
@@ -337,9 +333,6 @@ nl:
         button: Search
         placeholder: Zoek voorstellen..
         title: Search
-      search_results_html:
-        one: " bevat de term <strong>'%{search_term}'</strong>"
-        other: " bevat de term <strong>'%{search_term}'</strong>"
       select_order: Order by
       select_order_long: "U ziet de voorstellen op:"
       start_proposal: Maak een nieuw voorstel
@@ -444,7 +437,6 @@ nl:
       back: Terug naar stemmen
       cant_answer_not_logged_in: "Je moet %{signin} of %{signup} om deel te nemen."
       comments_tab: Comments
-      cant_answer_verify_html: "Je moet %{verify_link} om te kunnen antwoorden."
       verify_link: "verifieer uw account"
       cant_answer_expired: "Deze stemronde is voorbij."
       cant_answer_wrong_geozone: "Deze vraag wordt niet behandeld in uw regio"
@@ -477,7 +469,6 @@ nl:
     new:
       title: "Stuur bericht"
       submit_button: "Stuur bericht"
-      info_about_receivers_html: "Dit bericht zal worden gestuurd aan <strong>%{count} mensen</strong> en zal zichtbaar zijn in de pagina van het voorstel.<br> Berichten worden niet onmiddelijk gestuurd; mensen ontvangen periodiek een email met berichten over voorstellen."
       proposal_page: "pagina van het voorstel"
     show:
       back: "Terug naar mijn bijdragen"
@@ -516,17 +507,6 @@ nl:
     follow: "Volg"
     following: "Volgend"
     follow_entity: "Volg %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Je volgt nu dit begrotingsvoorstel. </br> We brengen je op de hoogte als er updates zijn."
-        destroy:
-          notice_html: "Je volgt dit begrotingsvoorstel niet meer.</br> Je zult geen updates over dit voorstel meer ontvangen."
-      proposal:
-        create:
-          notice_html: "Je volgt dit voorstel nu.</br> We brengen je op de hoogte als er updates zijn."
-        destroy:
-          notice_html: "Je volgt dit voorstel niet meer.</br> Je zult geen updates over dit voorstel meer ontvangen."
     hide: Hide
     print:
       print_button: Print this info
