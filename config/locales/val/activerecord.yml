@@ -168,9 +168,9 @@ val:
         password_confirmation: "Confirmació de contrasenya"
         password: "Contrasenya"
         current_password: "Contrasenya actual"
-        phone_number: "Telèfon"
         official_position: "Càrrec públic"
         official_level: "Nivell del càrrec"
+        phone_number: "Telèfon"
         redeemable_code: "Codi de verificació per carta"
       organization:
         name: "Nom de l'organització"
@@ -261,10 +261,10 @@ val:
         text: Comentari
       document:
         title: Títol
-        attachment: Fitxer adjunt
+        attachment: "Fitxer adjunt"
       image:
         title: Títol
-        attachment: Archiu adjunt
+        attachment: "Archiu adjunt"
       poll/question/answer:
         title: Resposta
         description: Descripció
@@ -277,7 +277,7 @@ val:
       newsletter:
         segment_recipient: Destinataris
         subject: Asumpte
-        from: Desde
+        from: "Desde"
         body: Contingut del email
       admin_notification:
         segment_recipient: Destinataris
