@@ -108,9 +108,6 @@ it:
         button: Ricercare
         placeholder: Ricerca dibattiti...
         title: Ricercare
-      search_results_html:
-        one: " contenenti il termine <strong>'%{search_term}'</strong>"
-        other: " contenenti il termine <strong>'%{search_term}'</strong>"
       select_order: Ordinare per
       start_debate: Avvia un dibattito
       title: Dibattiti
@@ -161,7 +158,6 @@ it:
     direct_message: messaggio privato
     error: errore
     errors: errori
-    not_saved_html: "hanno impedito il salvataggio di quest* %{resource}. <br>Si prega di verificare i campi evidenziati per sapere come correggerli:"
     policy: Informativa sulla privacy
     proposal: Proposta
     proposal_notification: "Notifica"
@@ -334,9 +330,6 @@ it:
         button: Ricercare
         placeholder: Cerca proposte...
         title: Ricercare
-      search_results_html:
-        one: " contenenti il termine <strong>'%{search_term}'</strong>"
-        other: " contenenti il termine <strong>'%{search_term}'</strong>"
       select_order: Ordinare per
       select_order_long: "Stai visualizzando le proposte in base a:"
       start_proposal: Crea una proposta
@@ -441,7 +434,6 @@ it:
       back: Ritorno al voto
       cant_answer_not_logged_in: "È necessario %{signin} o %{signup} per partecipare."
       comments_tab: Commenti
-      cant_answer_verify_html: "È necessario %{verify_link} per rispondere."
       verify_link: "verifica la tua utenza"
       cant_answer_expired: "Questa votazione è conclusa."
       cant_answer_wrong_geozone: "Questo quesito non è disponibile nella tua zona."
@@ -474,7 +466,6 @@ it:
     new:
       title: "Invia messaggio"
       submit_button: "Invia messaggio"
-      info_about_receivers_html: "Questo messaggio sarà inviato a <strong>%{count} persone</strong> e sarà visibile sulla %{proposal_page}.<br> I messaggi non vengono inviati immediatamente, gli utenti riceveranno periodicamente una email con tutte le notifiche di proposta."
       proposal_page: "pagina della proposta"
     show:
       back: "Torna alle mie attività"
@@ -513,17 +504,6 @@ it:
     follow: "Segui"
     following: "Seguendo"
     follow_entity: "Segui %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Ora segui questo progetto di investimento! </br> Ti notificheremo i cambiamenti man mano che si realizzano così che tu possa rimanere aggiornato."
-        destroy:
-          notice_html: "Hai smesso di seguire questo progetto di investimento! </br> Non riceverai più notifiche relative a questo progetto."
-      proposal:
-        create:
-          notice_html: "Ora segui questa proposta cittadina! </br> Ti notificheremo i cambiamenti man mano che si realizzano così che tu possa rimanere aggiornato."
-        destroy:
-          notice_html: "Hai smesso di seguire questa proposta cittadina! </br> Non riceverai più notifiche relative a questa proposta."
     hide: Nascondi
     print:
       print_button: Stampare questa informazione
