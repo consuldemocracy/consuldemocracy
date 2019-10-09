@@ -32,8 +32,6 @@ cs:
       index:
         title: Správa
         info: Zde můžete spravovat uživatele prostřednictvím všech akcí uvedených v levém menu.
-    document_number: Číslo dokladu
-    document_type_label: Typ dokumentu
     document_verifications:
       already_verified: Tento uživatelský účet je již ověřen.
       has_no_account_html: Chcete-li vytvořit účet, přejděte na %{link} a klepněte na tlačítko <b>'Registrace'</b> v levé horní části obrazovky.
