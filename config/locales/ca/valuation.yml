@@ -26,10 +26,6 @@ ca:
         assigned_to: "Asignades a %{valuator}"
         title: Propostes d'inversió
         edit: Editar informe
-        valuators_assigned:
-          one: Avaluador asignat
-          other: "%{count} avaluadors asignats"
-        no_valuators_assigned: Sense avaluador
         table_title: Títol
         table_heading_name: Nom de la partida
         table_actions: Accions
@@ -57,14 +53,7 @@ ca:
         dossier: Informe
         price_html: "Cost (%{currency}) <small>(dada pública)</small>"
         price_first_year_html: "Cost en el primer any (%{currency}) <small>(opcional, privat)</small>"
-        price_explanation_html: Informe de cost <small>(opcional, dada pública)</small>
         feasibility: Viabilitat
-        feasible: Viable
-        unfeasible: No viable
-        undefined_feasible: Sense decidir
-        feasible_explanation_html: Informe de inviabilitat <small>(en cas que ho siga, dada pública)</small>
-        valuation_finished: avaluació finalitzada
-        duration_html: Plaç d'execució
         save: Guardar canvis
       notice:
         valuate: "Informe actualitzat"
