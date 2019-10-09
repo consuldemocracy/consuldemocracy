@@ -17,9 +17,6 @@ zh-TW:
     letter:
       alert:
         unconfirmed_code: 您尚未輸入確認代碼
-      create:
-        flash:
-          success_html: 感謝您申請<b>最高安全代碼(僅用於最終投票)</b>。 過幾天，我們會將它發送到我們數據存檔中的地址。 請記住，如果您願意，可以到任何%{offices} 領取您的代碼。
       edit:
         see_all: 查看建議
         title: 要求的信函
@@ -49,7 +46,6 @@ zh-TW:
         accept_terms_text_title: 我接受訪問人口普查的條款和條件
         document_number: 文檔編號
         document_number_help_title: 說明
-        document_number_help_text_html: "<strong>DNI</strong>：12345678A <br> <strong>護照</strong>：AAA000001 <br> <strong>居留證</strong>：X1234567P"
         document_type:
           passport: 護照
           residence_card: 居留證
@@ -73,7 +69,6 @@ zh-TW:
         title: 安全代碼確認
       new:
         phone: 輸入您的手機號碼以接收代碼
-        phone_format_html: "<strong><em>(例如：612345678 或 +34612345678)</em></strong>"
         phone_note: 我們只使用您的手機向您發送代碼，絕不與您聯繫。
         phone_placeholder: "例如：612345678 或 +34612345678"
         submit_button: 發送
