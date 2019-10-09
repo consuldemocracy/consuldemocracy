@@ -45,8 +45,6 @@ he:
     budget_investment_created:
       subject: "תודה על יצירת ההשקעה!"
       title: "תודה על יצירת ההשקעה!"
-      intro_html: "שלום <strong>%{author}</strong>,"
-      text_html: "תודה שיצרת את ההשקעה <strong>%{investment}</strong> בתקצוב השיתופי <strong>%{budget}</strong>."
       follow_html: "אנו נודיע לך על התקדמות התהליך, ותוכל/י גם לצפות בו בקישור <strong>%{link}</strong>."
       follow_link: "תקציבים שיתופיים"
       sincerely: "בברכה,"
