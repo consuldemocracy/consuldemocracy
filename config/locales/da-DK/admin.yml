@@ -28,11 +28,6 @@ da:
           with_inactive: Inaktive
         preview: Forhåndsvisning
       banner:
-        title: Titel
-        description: Beskrivelse
-        target_url: Link
-        post_started_at: Startdato
-        post_ended_at: Slutdato
         sections_label: Sektioner, hvor banneren vil være synlig
         sections:
           homepage: Startside
@@ -138,7 +133,6 @@ da:
       headings_name: "Områder"
       headings_edit: "Rediger post"
       headings_manage: "Administrer post"
-      max_votable_headings: "Maksimalt antal områder, hvor en bruger kan stemme"
       no_groups: "Der er ingen grupper."
       amount:
         one: "Der er 1 gruppe"
@@ -153,12 +147,10 @@ da:
       form:
         create: "Opret ny gruppe"
         edit: "Rediger gruppe"
-        name: "Gruppenavn"
         submit: "Gem gruppe"
       index:
         back: "Gå tilbage til budgetter"
     budget_headings:
-      name: "Navn"
       no_headings: "Der er ingen overskrifter."
       amount:
         one: "Der er 1 post"
@@ -171,14 +163,8 @@ da:
         success_notice: "Post slettet"
         unable_notice: "Du kan ikke slette en gruppe, der har modtaget projektidéer fra brugere"
       form:
-        name: "Navn på post"
-        amount: "Beløb"
-        population: "Befolkning (valgfri)"
         population_info: "Feltet over befolkningsantallet inden for et område anvendes til at holde statistikker over, hvor stor en andel af befolkningen, der deltog i afstemningen. Feltet er valgfrit."
-        latitude: "Breddegrad (valgfri)"
-        longitude: "Længdegrad (valgfri)"
         coordinates_info: "Hvis du angiver bredde- og længdegrader, så vil der på siden vises et kort centreret omkring de angivne koordinatorer."
-        allow_content_block: "Tillad indholdsblok"
         content_blocks_info: "Hvis indholdsblokke er tilladt, kan du oprette brugerdefineret indhold relateret til dette område. Det gøres via Indstillinger > Brugerdefinerede indholdsblokke. Indholdet vil være synligt på websiden for projektidéer til dette område."
         create: "Opret nyt område"
         edit: "Rediger område"
@@ -187,13 +173,8 @@ da:
         back: "Gå tilbage til grupper"
     budget_phases:
       edit:
-        start_date: Startdato
-        end_date: Slutdato
-        summary: Resumé
         summary_help_text: Denne tekst vil informere brugeren om fasen. For at vise informationen selvom fasen ikke er aktiv, skal du sætte kryds i feltet nedenfor
-        description: Beskrivelse
         description_help_text: Teksten vil være synlig i sidehovedet (øverst på siden), når fasen er aktiv
-        enabled: Fase aktiveret
         enabled_help_text: Fasen vil være synlig i budgettets tidslinje
         save_changes: Gem ændringer
     budget_investments:
@@ -284,18 +265,13 @@ da:
       edit:
         classification: Klassificering
         compatibility: Kompatibilitet
-        mark_as_incompatible: Marker som inkompatibel
         selection: Udvælgelse
-        mark_as_selected: Markeret som valgt
         assigned_valuators: Evaluatorer
         select_heading: Vælg område
         submit_button: Opdater
         user_tags: Brugertilføjede tags
-        tags: Tags
         tags_placeholder: "Tilføj tags adskilt med komma (,)"
         undefined: Udefineret
-        user_groups: "Grupper"
-        milestone_tags: Tags (proces)
       search_unfeasible: Søg uigennemførlige projekter
     milestones:
       index:
@@ -350,9 +326,6 @@ da:
         title: Administration
         description: Velkommen til %{org} administrations panelet.
       actions:
-        action_type:
-          proposed_action: Foreslået handling
-          resource: Funktion
         index:
           description: "Når brugere opretter borgerforslag, kan de tilgå dashboardet for deres forslag, hvor du kan foreslå funktioner og anbefale, hvordan de bedst muligt får opbakning til deres idéer."
           create: Opret funktion eller handling
@@ -385,7 +358,6 @@ da:
         form:
           submit_button: Gem
           help_text: Tast 0 så denne værdi ikke medregnes
-          published_proposal: For offentlige forslag?
           published_proposal_help_text: Marker afkrydsningsfeltet for at oprette handlingen, så den kun vedrører offentlige forslag
       administrator_tasks:
         index:
@@ -427,7 +399,6 @@ da:
     documents:
       new:
         title: "Upload et dokument"
-        label_attachment: "Vælg dokument"
         submit_button: "Upload"
       index:
         new_link: "Tilføj fil"
@@ -494,9 +465,7 @@ da:
           summary_placeholder: Kort resumé af beskrivelsen
           description_placeholder: Tilføj en beskrivelse af processen
           additional_info_placeholder: Tilføj supplerende brugbar information
-          homepage: Beskrivelse
           homepage_description: Her kan du forklare processens indhold
-          homepage_enabled: Startside aktiveret
           banner_title: Farve på overskrift
         index:
           create: Ny proces
@@ -583,9 +552,6 @@ da:
           back: Tilbage
           title: Opret ny version
           submit_button: Opret version
-        statuses:
-          draft: Udkast
-          published: Offentliggjort
         table:
           title: Titel
           created_at: Oprettet den
@@ -610,7 +576,6 @@ da:
             error: Fejl
         form:
           add_option: Tilføj valgmulighed
-          title: Spørgsmål
           title_placeholder: Tilføj et spørgsmål
           value_placeholder: Tilføj et lukket svar
           question_options: "Mulige svar (valgfrit, åben svar som standard)"
@@ -760,7 +725,6 @@ da:
         empty_newsletters: Der er ingen nyhedsbreve at vise
       new:
         title: Nyt nyhedsbrev
-        from: E-mail adresse, som vil stå som afsender af nyhedsbrevet
       edit:
         title: Rediger nyhedsbrev
       show:
@@ -905,7 +869,6 @@ da:
         title: "Vurderingsgruppe: %{group}"
         no_valuators: "Der er ingen evaluatorer tilføjet til denne gruppe"
       form:
-        name: "Gruppenavn"
         new: "Opret vurderingsgruppe"
         edit: "Gem vurderingsgruppe"
     poll_officers:
@@ -938,7 +901,6 @@ da:
         shift: "Opgave"
         shifts: "Arbejdsplan for dette afstemningssted"
         date: "Dato"
-        task: "Opgave"
         edit_shifts: Rediger arbejdsplan
         new_shift: "Ny arbejdsplan"
         no_shifts: "Dette afstemningssted har ingen tilknyttet arbejdsplan"
@@ -996,7 +958,6 @@ da:
         title: "Beskrivelse af afstemning"
       form:
         description:
-          text: "Beskrivelse"
           help_text: "Denne tekst vil være synlig i sidehovedet på afstemningens webside. Teksten kan anvendes til at sætte en kontekst for afstemningen."
     polls:
       index:
@@ -1047,7 +1008,6 @@ da:
       new:
         title: "Opret et spørgsmål, der skal stemmes om %{poll}"
         title_proposal: "Stil et spørgsmål"
-        poll_label: "Afstemning"
       answers:
         images:
           add_image: "Tilføj billede"
@@ -1127,8 +1087,6 @@ da:
         no_location: "Ingen lokation"
       new:
         title: "Ny stemmeboks"
-        name: "Navn"
-        location: "Lokation"
         submit_button: "Opret stemmeboks"
       edit:
         title: "Rediger stemmeboks"
@@ -1399,8 +1357,6 @@ da:
         title: Emner
         topic: Emne
         help: "Når en bruger opretter et forslag vil følgende standard tags blive foreslået."
-      name:
-        placeholder: Skriv emnets navn
     users:
       columns:
         name: Navn
@@ -1492,8 +1448,6 @@ da:
           created_at: Oprettet den
           status: Status
           updated_at: Opdateret den
-          status_draft: Udkast
-          status_published: Offentliggjort
           title: Titel
           slug: Signaturlinje
           cards_title: Informationsbokse
