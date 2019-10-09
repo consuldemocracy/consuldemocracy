@@ -145,7 +145,6 @@ cs:
     direct_message: soukromá zpráva
     error: chyba
     errors: chyby
-    not_saved_html: "zabránil uložení %{resource}. <br>Zkontrolujte označená pole a pokuste se je opravit:"
     policy: Zásady ochrany osobních údajů
     proposal: Návrhy
     proposal_notification: "upozornění"
@@ -401,7 +400,6 @@ cs:
       back: Zpět na průzkumy
       cant_answer_not_logged_in: "Chcete-li se zapojit, musíte se %{signin} nebo %{signup}."
       comments_tab: Komentáře
-      cant_answer_verify_html: "Odpovědět můžete zde %{verify_link}."
       verify_link: "ověřit váš účet"
       cant_answer_expired: "Tento průzkum byl ukončen."
       cant_answer_wrong_geozone: "Tato otázka není dostupná ve vaší čtvrti."
@@ -434,7 +432,6 @@ cs:
     new:
       title: "Odeslat zprávu"
       submit_button: "Odeslat zprávu"
-      info_about_receivers_html: "Zpráva bude odeslána <strong>%{count} uživatelům </strong> a bude viditelná na %{proposal_page}.<br> Zprávy se nepředávají okamžitě, uživatelé obdrží e-maily pravidelně s veškerými oznámeními o návrzích."
       proposal_page: "stránce návrhu"
     show:
       back: "Jít zpět na své aktivity"
@@ -473,17 +470,6 @@ cs:
     follow: "Sledování"
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Nyní sledujete tento investiční projekt! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
-        destroy:
-          notice_html: "Ukončili jste sledování tohoto projektu! </br> Nebude nadále dostávat oznámení související s tímto projektem."
-      proposal:
-        create:
-          notice_html: "Nyní sledujete tento občanský návrh! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
-        destroy:
-          notice_html: "Ukončili jste sledování tohoto návrhu!</br> Nebudeme Vám již zasílat upozornění k tomuto návrhu."
     hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
