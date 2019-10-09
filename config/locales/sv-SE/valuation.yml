@@ -54,8 +54,6 @@ sv:
         assigned_valuators: Ansvariga bedömare
       edit:
         dossier: Rapport
-        price_html: "Kostnad (%{currency})"
-        price_first_year_html: "Kostnad under första året (%{currency}) <small>(ej obligatoriskt, ej publikt)</small>"
         feasibility: Genomförbarhet
         valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
         not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."
