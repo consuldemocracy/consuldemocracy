@@ -17,9 +17,6 @@ val:
     letter:
       alert:
         unconfirmed_code: Encara no has introduït el codi de confirmació
-      create:
-        flash:
-          success_html: Abans de les votacions rebràs una carta amb les instruccions per a verificar el teu compte.<br> Recorda que pots estalviarte l'enviament verificante presencialment en quansevol de les %{offices}.
       edit:
         see_all: Vore propostes
         title: Carta sol·licitada
@@ -49,7 +46,6 @@ val:
         accept_terms_text_title: Accepte els termes i condicions d'access al Padró
         document_number: Número de document
         document_number_help_title: Ajuda
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Tarjeta de residència</strong>: X1234567P"
         document_type:
           passport: Passaport
           residence_card: Tarjeta de residència
@@ -73,7 +69,6 @@ val:
         title: SMS de confirmació
       new:
         phone: Introdueix el teu número de movil per a rebre el codi
-        phone_format_html: "<strong><em>(Ejemple: 612345678 o +34612345678)</em></strong>"
         phone_note: Només usarem el teu telèfon per a enviar-te un codi, mai et contactarem.
         phone_placeholder: "Exemple: 612345678 o +34612345678"
         submit_button: Enviar
