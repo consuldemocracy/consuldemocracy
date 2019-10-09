@@ -47,7 +47,6 @@ gl:
       new:
         accept_terms_text: Acepto %{terms_url} ao Padrón
         accept_terms_text_title: Acepto os termos de acceso ao Padrón
-        date_of_birth: Data de nacemento
         document_number: Número de documento
         document_number_help_title: Axuda
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarxeta de residencia</strong>: X1234567P"
@@ -55,12 +54,10 @@ gl:
           passport: Pasaporte
           residence_card: Tarxeta de residencia
           spanish_id: DNI
-        document_type_label: Tipo documento
         error_not_allowed_age: Hai que ter polo menos 16 anos
         error_not_allowed_postal_code: Para verificarte debes estar empadroado no municipio de Madrid.
         error_verifying_census: O Padrón de Madrid non puido verificar a túa información. Por favor, confirma que os teus datos de empadroamento sexan correctos chamando ao 010 (ou á súa versión gratuíta 915298210) ou visita calquera das %{offices}.
         form_errors: evitaron verificar a túa residencia
-        postal_code: Código postal
         postal_code_note: Para verificar os teus datos debes estar empadroado no municipio de Madrid
         terms: os termos de acceso
         title: Verificar residencia
@@ -70,7 +67,6 @@ gl:
         flash:
           success: Introduce o código de confirmación que che enviamos por mensaxe de texto
       edit:
-        confirmation_code: Introduce o código que recibiches no teu móbil
         resend_sms_link: Solicitar un novo código
         resend_sms_text: Non recibiches unha mensaxe de texto co teu código de confirmación?
         submit_button: Enviar
