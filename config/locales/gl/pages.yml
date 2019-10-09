@@ -18,7 +18,6 @@ gl:
         title: "Debates"
         description: "Na sección de %{link} podes expoñer e compartir a túa opinión con outras persoas sobre temas que che preocupan relacionados co municipio. Tamén é un espazo onde xerar ideas que a través das outras secciones de %{org} leven a actuacións concretas por parte do Concello."
         link: "debates cidadáns"
-        feature_html: "Podes abrir debates, comentalos e valoralos cos botóns de <strong>estou de acordo</strong> ou <strong>non estou de acordo</strong>. Para iso tes que %{link}."
         feature_link: "registrarte en %{org}"
         image_alt: "Botóns para avaliar os debates"
         figcaption: 'Botones "estou de acordo" e "non estou de acordo" para avaliar os debates.'
@@ -155,7 +154,6 @@ gl:
               description_column: Reduce o tamaño do texto
       compatibility:
         title: Compatibilidade cos estándares e o deseño visual
-        description_html: 'Todas as páxinas deste sitio web cumpren coa <strong>Guía de Accesibilidade</strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title="Web Accessibility Initiative" lang="en"> WAI </abbr> pertencente ao W3C.'
     titles:
       help: "Que é %{org}? - Participación cidadá"
     verify:
