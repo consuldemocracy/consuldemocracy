@@ -185,9 +185,9 @@ nl:
         password_confirmation: "Wachtwoord bevestiging"
         password: "Wachtwoord"
         current_password: "Huidig wachtwoord"
-        phone_number: "Telefoonnummer"
         official_position: "Positie"
         official_level: "Niveau"
+        phone_number: "Telefoonnummer"
         redeemable_code: "Verificatiecode ontvangen via email"
       organization:
         name: "Organisatienaam"
@@ -287,10 +287,10 @@ nl:
         text: Reactie
       document:
         title: Titel
-        attachment: Bijlage
+        attachment: "Bijlage"
       image:
         title: Titel
-        attachment: Bijlage
+        attachment: "Bijlage"
       poll/question/answer:
         title: Antwoord
         description: Omschrijving
@@ -303,7 +303,7 @@ nl:
       newsletter:
         segment_recipient: Ontvangers
         subject: Onderwerp
-        from: Van
+        from: "Van"
         body: Email inhoud
       admin_notification:
         segment_recipient: Ontvangers
