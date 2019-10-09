@@ -130,11 +130,6 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      search_results_html:
-        one: " המכיל את המונח <strong>\"%{search_term}' </strong>"
-        two: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
-        many: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
-        other: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
       select_order: הזמנה באמצעות
       start_debate: פתיחת דיון חדש
       title: דיונים
@@ -187,7 +182,6 @@ he:
     direct_message: פנייה פרטית
     error: שגיאה זו מונעת
     errors: שגיאות אלו מונעות
-    not_saved_html: "מנעו מ %{resource} להישמר. <br>בדוק את השדות המסומנים בכדי לתקן אותם:"
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
@@ -328,7 +322,6 @@ he:
     created:
       title: ברכות! עשית את הצעד הראשון.
       motivation: "חשוב להכין את קמפיין ההשקה עבור ההצעה שלך לצורך הצלחתה. הימים הראשונים הם המכריעים."
-      motivation_2_html: "<strong>אם את רוצה המלצות בהכנת הפרסום. השאר את הצעתך כטיוטה ואנו נדריך אותך כיצד לעשות זאת.</strong>"
       publish: . לא, אני רוצה לפרסם את ההצעה
       dashboard: . כן, אני רוצה עזרה, ואפרסם זאת מאוחר יותר
       preview_title: כך תיראה הצעתך כאשר תפרסם אותה
@@ -404,11 +397,6 @@ he:
         button: חיפוש
         placeholder: חיפוש הצעות ...
         title: חיפוש
-      search_results_html:
-        one: " המכיל את המונח <strong>'%{search_term}'</strong>"
-        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       select_order: מיין לפי
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
@@ -614,10 +602,8 @@ he:
         title: תצוגה מקדימה של הפוסטר
         poster_title: "אל תמשיך לחפש"
         poster_subtitle: "תמוך בי!;)"
-        intro_text_html: "<strong>אני משתתף ב %{org}</strong> עם הצעת התושב שלי, במידה ואתה מוסיף תוכל לסייע לי להשיג את התמיכה הדרושה בכדי להפוך את העיר למקום שכולנו רוצים."
         proposal_code: "הקוד של ההצעה: %{code}"
         support: תמוך בהצעה שלי
-        footer_html: "<strong>בקר %{link}, ותמוך בהצעה זו.</strong>. אנו צריכים להיות רבים. תחליט גם אתה. תודה!"
       new:
         title: פוסטר ההצעה שלך
       options:
@@ -635,7 +621,6 @@ he:
         sent: האימייל נשלח
     mailer:
       forward:
-        subtitle_html: "אם אתה תומך בי, <br>נגיע לזה."
         support_button: תמיכה בהצעה זו
         share_in: שתף ב
         hi: "שלום!"
@@ -686,7 +671,6 @@ he:
       back: חזרה להצבעה
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
       comments_tab: הערות
-      cant_answer_verify_html: "נדרש %{verify_link} על מנת לענות תשובה."
       verify_link: "לאמת את החשבון"
       cant_answer_expired: "הצבעה זו הסתיימה"
       cant_answer_wrong_geozone: "הצבעה זו אינה זמינה לאזור הגאוגרפי שלך"
@@ -733,7 +717,6 @@ he:
     new:
       title: "שלח הודעה"
       submit_button: "שלח הודעה"
-      info_about_receivers_html: "“הודעה זו תישלח אל <strong> %{count} אנשים</strong> ותוצג ב %{proposal_page} <br> ההודעות אינן מתקבלות מיד, אלא נשלחות למשתמשים בדואר אלקטרוני תקופתי ובו סיכום כל ההתרעות על ההצעות שהם עוקבים אחריהן\""
       proposal_page: "דף ההצעה"
     show:
       back: "חזרה לפעילות שלי"
@@ -773,17 +756,6 @@ he:
     follow: "עקוב"
     following: "עוקבים"
     follow_entity: "עקוב %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "כעת אתה עוקב אחרי פרויקט השקעה הזה! </br> אנו נודיע לך על השינויים כפי שהם מתרחשים כך שתישאר מעודכן."
-        destroy:
-          notice_html: "הפסקת לעקוב אחר פרויקט השקעה זה! </br> לא תקבל הודעות הקשורות לפרויקט זה."
-      proposal:
-        create:
-          notice_html: "כעת אתה עוקב אחרי הצעת תושב זה!</br> אנו נודיע לך על השינויים כפי שהם מתרחשים בכדי שתישאר מעודכן."
-        destroy:
-          notice_html: "הפסקת לעקוב אחר הצעת תושב זה! </br> לא תקבל הודעות הקשורות להצעה זו."
     hide: הסתר
     print:
       print_button: הדפסת מידע זה
