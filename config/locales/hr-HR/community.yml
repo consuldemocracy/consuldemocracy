@@ -17,8 +17,6 @@ hr:
         first_theme_not_logged_in: Nema dostupnog izdanja, sudjelujte u stvaranju prvog izdanja.
         first_theme: Stvorite prvu temu u vašoj zajednici
         sub_first_theme: "Kako biste stvorili temu morate %{sign_in} ili %{sign_up}."
-        sign_in: "ulogirajte se"
-        sign_up: "prijavite se"
       tab:
         participants: Sudionici
       sidebar:
@@ -38,8 +36,6 @@ hr:
       create: Stvori temu
       edit: Uredi temu
       form:
-        topic_title: Naziv
-        topic_text: Početni tekst
         new:
           submit_button: Stvori temu
         edit:
@@ -56,6 +52,3 @@ hr:
         recommendation_one: Izbjegavajte pisanje naslova teme ili cijele rečenice velikim slovima. Na internetu se to smatra vikanjem. Nitko ne voli kada se na njega viče.
         recommendation_two: Bilo koja tema ili komentar koji implicira ilegalno djelovanje bit će eliminiran, kao i oni koji namjeravaju sabotirati mjesto subjekta, sve ostalo je dopušteno.
         recommendation_three: Uživajte na ovom mjestu vaš glas će se također popuniti.
-  topics:
-    show:
-      login_to_comment: Morate biti %{signin} ili %{signup} kako biste ostavili komentar.
