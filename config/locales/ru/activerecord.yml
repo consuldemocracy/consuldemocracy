@@ -273,9 +273,9 @@ ru:
         password_confirmation: "Подтверждение пароля"
         password: "Пароль"
         current_password: "Текущий пароль"
-        phone_number: "Номер телефона"
         official_position: "Официальная позиция"
         official_level: "Официальный уровень"
+        phone_number: "Номер телефона"
         redeemable_code: "Код подтверждения получен по электронному адресу"
       organization:
         name: "Название организации"
@@ -375,10 +375,10 @@ ru:
         text: Отзыв
       document:
         title: Название
-        attachment: Прикрепление
+        attachment: "Прикрепление"
       image:
         title: Название
-        attachment: Прикрепление
+        attachment: "Прикрепление"
       poll/question/answer:
         title: Ответ
         description: Описание
@@ -391,7 +391,7 @@ ru:
       newsletter:
         segment_recipient: Получатели
         subject: Тема
-        from: От
+        from: "От"
         body: Содержание электронной почты
       admin_notification:
         segment_recipient: Получатели
