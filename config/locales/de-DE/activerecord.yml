@@ -168,9 +168,9 @@ de:
         password_confirmation: "Bestätigen Sie das Passwort "
         password: "Passwort"
         current_password: "Aktuelles Passwort"
-        phone_number: "Telefonnummer"
         official_position: "Beamte/in"
         official_level: "Amtsebene"
+        phone_number: "Telefonnummer"
         redeemable_code: "Bestätigungscode per Post (optional)"
       organization:
         name: "Name der Organisation"
@@ -263,10 +263,10 @@ de:
         text: Kommentar
       document:
         title: Titel
-        attachment: Anhang
+        attachment: "Anhang"
       image:
         title: Titel
-        attachment: Anhang
+        attachment: "Anhang"
       poll/question/answer:
         title: Antwort
         description: Beschreibung
@@ -279,7 +279,7 @@ de:
       newsletter:
         segment_recipient: Empfänger*innen
         subject: Betreff
-        from: Von
+        from: "Von"
         body: Inhalt der E-Mail
       admin_notification:
         segment_recipient: Empfänger*innen
