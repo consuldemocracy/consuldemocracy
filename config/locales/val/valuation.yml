@@ -27,10 +27,6 @@ val:
         assigned_to: "Asignades a %{valuator}"
         title: Propostes d'inversió
         edit: Editar informe
-        valuators_assigned:
-          one: Avaluador asignat
-          other: "%{count} avaluadors asignats"
-        no_valuators_assigned: Sense avaluador
         table_id: ID
         table_title: Títol
         table_heading_name: Nom de la partida
@@ -61,16 +57,9 @@ val:
         dossier: Informe
         price_html: "Cost (%{currency})"
         price_first_year_html: "Cost en el primer any (%{currency}) <small>(opcional, dada no pública)</small>"
-        price_explanation_html: Informe de cost
         feasibility: Viabilitat
-        feasible: Viable
-        unfeasible: Inviable
-        undefined_feasible: Pendents
-        feasible_explanation_html: Informe de viabilitat
-        valuation_finished: Avaluació finalitzada
         valuation_finished_alert: "Segur que vols marcar este informe com a finalitzat? Si ho fas, no podràs modificarlo més."
         not_feasible_alert: "Un correu electrònic s'ha enviat a l'autor del projecte amb l'informe d'inviabilitat."
-        duration_html: Plaç d'execució
         save: Guardar canvis
       notice:
         valuate: "Dossier actualitzat"
