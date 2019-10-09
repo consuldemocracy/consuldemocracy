@@ -210,9 +210,9 @@ gl:
         password_confirmation: "Confirmación de contrasinal"
         password: "Contrasinal que empregarás para acceder a este sitio web"
         current_password: "Contrasinal actual"
-        phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel do cargo"
+        phone_number: "Teléfono"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
         name: "Nome de organización"
@@ -311,10 +311,10 @@ gl:
         text: Comentar
       document:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       image:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       poll/question/answer:
         title: Resposta
         description: Descrición
@@ -327,7 +327,7 @@ gl:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: Dende
+        from: "Dende"
         body: Contido da mensaxe
       admin_notification:
         segment_recipient: Destinatarios
