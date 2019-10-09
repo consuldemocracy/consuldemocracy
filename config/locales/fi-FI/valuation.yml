@@ -25,6 +25,5 @@ fi:
         unfeasible: Toteuttamiskelvoton
         undefined: Määrittelemätön
       edit:
-        price_html: "Hinta (%{currency})"
         feasibility: Toteutettavuus
         save: Tallenna muutokset
