@@ -47,7 +47,6 @@ zh-CN:
       new:
         accept_terms_text: 我接受人口普查的%{terms_url}
         accept_terms_text_title: 我接受访问人口普查的条款和条件
-        date_of_birth: 出生日期
         document_number: 文档编号
         document_number_help_title: 帮助
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>护照</strong>: AAA000001<br> <strong>居留证</strong>: X1234567P"
@@ -55,12 +54,10 @@ zh-CN:
           passport: 护照
           residence_card: 居留证
           spanish_id: DNI
-        document_type_label: 文档类型
         error_not_allowed_age: 您未到参与所需的年龄
         error_not_allowed_postal_code: 为了被核实，您必须注册。
         error_verifying_census: 人口普查无法核实您的信息。请拨打市议会或访问%{offices}，确认您的人口普查详细资料是正确的。
         form_errors: 阻止了您的居住地核实
-        postal_code: 邮政编码
         postal_code_note: 要核实您的账户，您必须注册
         terms: 访问的条款和条件
         title: 核实居住地
@@ -70,7 +67,6 @@ zh-CN:
         flash:
           success: 输入通过短信发送给您的确认代码
       edit:
-        confirmation_code: 输入您在手机上收到的代码
         resend_sms_link: 点击这里再次发送
         resend_sms_text: 没有收到包含确认代码的短信吗？
         submit_button: 发送
