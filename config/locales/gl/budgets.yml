@@ -10,7 +10,6 @@ gl:
         voted_html:
           one: "Votaches <span>unha</span> proposta."
           other: "Votastes <span>%{count}</span> propostas."
-        voted_info_html: "Podes mudar os teus votos cando quixeres até o peche desta fase.<br> Non é necesario que gastes todo o diñeiro dispoñible."
         voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
         zero: Aínda non votaches ningunha proposta de investimento.
       reasons_for_not_balloting:
@@ -69,7 +68,6 @@ gl:
         map_location: "Localización no mapa"
         map_location_instructions: "Navega polo mapa até a localización e coloca o marcador."
         map_remove_marker: "Borrar o marcador do mapa"
-        location: "Información adicional de localización"
         map_skip_checkbox: "Este investimento non ten unha localización concreta ou non a coñezo."
       index:
         title: Orzamentos participativos
@@ -95,11 +93,8 @@ gl:
           check_ballot_link: "revisar os meus votos"
           zero: Añinda non votaches ningunha proposta de investimento neste ámbito do orzamento.
           verified_only: "Para creares unha nova proposta de investimento %{verify}."
-          verify_account: "verificar a túa conta"
           create: "Crear un proxecto novo"
           not_logged_in: "Para creares unha nova proposta de investimento debes %{sign_in} ou %{sign_up}."
-          sign_in: "iniciar sesión"
-          sign_up: "rexistrate"
           by_feasibility: Por viabilidade
           feasible: Ver os proxectos viables
           unfeasible: Ver os proxectos inviables
