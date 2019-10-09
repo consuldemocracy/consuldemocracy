@@ -17,8 +17,6 @@ nl:
         first_theme_not_logged_in: Er is nog niets geplaatst, wees de eerste die een onderwerp plaatst!
         first_theme: Creeer het eerste community onderwerp.
         sub_first_theme: "Om een thema of onderwerp te creeeren moet je %{sign_in} of %{sign_up}."
-        sign_in: "aanmelden"
-        sign_up: "registreren"
       tab:
         participants: deelnemers
       sidebar:
@@ -37,8 +35,6 @@ nl:
       create: Creeer onderwerp
       edit: Pas onderwerp aan
       form:
-        topic_title: Title
-        topic_text: Tekst
         new:
           submit_button: Creeer onderwerp
         edit:
@@ -55,6 +51,3 @@ nl:
         recommendation_one: Gebruik geen hoofdletters voor de titel, of voor hele zinnen. Dit is equivalent aan schreeuwen op het internet, en niemand houdt ervan toegeschreeuwd te worden.
         recommendation_two: Ieder onderwerp of reactie waarin een illegale activiteit wordt aangemoedigd zal worden verwijderd, alsmede opmerkingen die het debat saboteren. Verder is alles toegestaan.
         recommendation_three: Geniet van deze ruimte, en van de stemmen die 'm vullen.
-  topics:
-    show:
-      login_to_comment: Je moet %{signin} of %{signup} om een reactie te plaatsen.
