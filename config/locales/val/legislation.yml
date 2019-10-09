@@ -14,9 +14,6 @@ val:
         publish_comment: Publicar Comentari
       form:
         phase_not_open: Esta fase del procés no esta oberta
-        login_to_comment: Necessites %{signin} o %{signup} per a comentar.
-        signin: Iniciar sessió
-        signup: Registrar-te
       index:
         title: Comentaris
         comments_about: Comentaris sobre
@@ -110,11 +107,8 @@ val:
       participation:
         phase_not_open: Esta fase del procés no esta oberta
         organizations: Les organitzacions no poden participar en el debat
-        signin: Iniciar sessió
-        signup: Registrar-te
         unauthenticated: Necessites %{signin} o %{signup} per a participar.
         verified_only: Sols els usuaris verificats poden participar en el debat, %{verify_account}.
-        verify_account: verifica el teu compte
         debate_phase_not_open: La fase de debat previ ja ha finalitzat i en aquest moment no s'accepten respostes
     shared:
       share: Compartir
