@@ -32,8 +32,6 @@ de:
       index:
         title: Management
         info: Hier können Sie die Benutzer durch alle aufgelisteten Aktionen im linken Menü verwalten.
-    document_number: Dokumentennummer
-    document_type_label: Dokumententyp
     document_verifications:
       already_verified: Das Benutzerkonnte ist bereits verifiziert.
       has_no_account_html: Um ein Konto zu erstellen, gehen Sie zu %{link} und klicken Sie<b>'Register'</b> im oberen linken Teil des Bildschirms.
