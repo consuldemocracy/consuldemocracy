@@ -32,8 +32,6 @@ zh-CN:
       index:
         title: 管理
         info: 您可以在这里通过左边菜单里列出的所有操作来管理用户。
-    document_number: 文档编号
-    document_type_label: 文档类型
     document_verifications:
       already_verified: 此用户账户已验证。
       has_no_account_html: 为了创建账户，请转到%{link}，然后点击屏幕左上角的<b>‘注册’</b>。
