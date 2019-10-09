@@ -265,7 +265,6 @@ ast:
           form:
             error: Erru
         form:
-          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Llanzar editor de testu
           close_text_editor: Pesllar editor de testu
           use_markdown: Usa Markdown pa dar formatu al testu
@@ -622,9 +621,6 @@ ast:
           pending: Pindios
           rejected: Rechazada
           verified: Verificada
-        hidden_count_html:
-          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
-          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         name: Nome
         email: Corréu electrónicu
         status: Estáu
