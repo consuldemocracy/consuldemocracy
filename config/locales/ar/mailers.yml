@@ -45,8 +45,6 @@ ar:
     budget_investment_created:
       subject: "شكرا لك لانشاء استثمار!"
       title: "شكرا لك لانشاء استثمار!"
-      intro_html: "مرحبا <strong>%{author}</strong>،"
-      text_html: "شكرا لك لإنشاء استثمارك <strong>%{investment}</strong> من اجل الميزانيات المشتركة <strong>%{budget}</strong>."
       follow_html: "سوف نبلغك عن كيفية تقدم العملية، والتي يمكنك متابعتها على <strong>%{link}</strong>."
       follow_link: "الميزانية التشاركية"
       sincerely: "مع خالص التقدير،"
