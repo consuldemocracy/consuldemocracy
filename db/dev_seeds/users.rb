@@ -1,5 +1,5 @@
 section "Creating Users" do
-  def create_user(email, username = Faker::Name.name)
+  def create_user(email, username)
     password = "12345678"
     User.create!(
       username:               username,
@@ -79,12 +79,12 @@ section "Creating Users" do
   end
 
   5.times do |i|
-    official = create_user("official#{i}@consul.dev")
+    official = create_user("official#{i}@consul.dev", "Official #{i}")
     official.update(official_level: i, official_position: "Official position #{i}")
   end
 
   30.times do |i|
-    user = create_user("user#{i}@consul.dev")
+    user = create_user("user#{i}@consul.dev", "Regular user #{i}")
     level = [1, 2, 3].sample
     if level >= 2
       user.update(residence_verified_at: Time.current,
