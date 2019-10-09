@@ -180,9 +180,9 @@ fr:
         password_confirmation: "Confirmation du mot de passe"
         password: "Mot de passe"
         current_password: "Mot de passe actuel"
-        phone_number: "Numéro de téléphone"
         official_position: "Position officielle"
         official_level: "Niveau officiel"
+        phone_number: "Numéro de téléphone"
         redeemable_code: "Vérification du code reçu par courriel"
       organization:
         name: "Nom de l'organisation"
@@ -282,10 +282,10 @@ fr:
         text: Commentaire
       document:
         title: Titre
-        attachment: Pièce jointe
+        attachment: "Pièce jointe"
       image:
         title: Titre
-        attachment: Pièce jointe
+        attachment: "Pièce jointe"
       poll/question/answer:
         title: Réponse
         description: Description
@@ -298,7 +298,7 @@ fr:
       newsletter:
         segment_recipient: Destinataires
         subject: Objet
-        from: Du
+        from: "Du"
         body: Contenu du courriel
       admin_notification:
         segment_recipient: Destinataires
