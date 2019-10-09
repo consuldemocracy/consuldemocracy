@@ -26,10 +26,6 @@ de:
         assigned_to: "%{valuator} zugewiesen"
         title: Ausgabenvorschläge
         edit: Bericht bearbeiten
-        valuators_assigned:
-          one: '%{valuator} zugewiesen'
-          other: "%{count} zugewiesene Gutachter"
-        no_valuators_assigned: Kein*e Begutacher*in zugewiesen
         table_id: ID
         table_title: Titel
         table_heading_name: Name der Rubrik
@@ -60,16 +56,9 @@ de:
         dossier: Bericht
         price_html: "Preis (%{currency})"
         price_first_year_html: "Kosten im ersten Jahr (%{currency}) <small>(optional, nicht öffentliche Daten)</small>"
-        price_explanation_html: Erläuterung der Kosten
         feasibility: Durchführbarkeit
-        feasible: Durchführbar
-        unfeasible: Nicht durchführbar
-        undefined_feasible: Ausstehend
-        feasible_explanation_html: Erläuterung der Durchführbarkeit
-        valuation_finished: Begutachtung abgeschlossen
         valuation_finished_alert: "Sind Sie sicher, dass Sie diesen Bericht als erledigt markieren möchten? Hiernach können Sie keine Änderungen mehr vornehmen."
         not_feasible_alert: "Der Autor des Projekts erhält sofort eine E-Mail mit einem Bericht zur Undurchführbarkeit."
-        duration_html: Zeitrahmen
         save: Änderungen speichern
       notice:
         valuate: "Dossier aktualisiert"
