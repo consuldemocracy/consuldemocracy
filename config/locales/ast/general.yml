@@ -92,9 +92,6 @@ ast:
         button: Atopar
         placeholder: Buscar debates...
         title: Atopar
-      search_results_html:
-        one: " que contien <strong>'%{search_term}'</strong>"
-        other: " que contien <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       start_debate: Empezar un debate
       title: Alderique
@@ -282,9 +279,6 @@ ast:
         button: Atopar
         placeholder: Buscar propuestas...
         title: Atopar
-      search_results_html:
-        one: " que contien <strong>'%{search_term}'</strong>"
-        other: " que contien <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
@@ -367,7 +361,6 @@ ast:
     show:
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar en el debate."
       comments_tab: Comentarios
-      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica la to cuenta"
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
