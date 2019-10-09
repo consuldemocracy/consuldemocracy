@@ -112,9 +112,6 @@ pt-BR:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results_html:
-        one: " contendo o termo <strong>'%{search_term}'</strong>"
-        other: " contendo o termo <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
       start_debate: Iniciar um debate
       title: Debates
@@ -165,7 +162,6 @@ pt-BR:
     direct_message: mensagem privada
     error: erro
     errors: erros
-    not_saved_html: "impediu que esse %{resource} fosse salvo. <br>Por favor, verifique os campos marcados para saber como corrigi-los:"
     policy: Política de privacidade
     proposal: Proposta
     proposal_notification: "Notificação"
@@ -352,9 +348,6 @@ pt-BR:
         button: Buscar
         placeholder: Buscar propostas...
         title: Buscar
-      search_results_html:
-        one: " contendo o termo <strong>'%{search_term}'</strong>"
-        other: " contendo o termo <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Criar proposta
@@ -506,7 +499,6 @@ pt-BR:
       back: Voltar à votação
       cant_answer_not_logged_in: "Você precisa %{signin} ou %{signup} para participar."
       comments_tab: Comentários
-      cant_answer_verify_html: "Você deve %{verify_link} para poder responder."
       verify_link: "verifique sua conta"
       cant_answer_expired: "Esta votação já foi encerrada."
       cant_answer_wrong_geozone: "Esta questão não está disponível na sua geozona."
@@ -540,7 +532,6 @@ pt-BR:
     new:
       title: "Enviar mensagem"
       submit_button: "Enviar mensagem"
-      info_about_receivers_html: "Esta mensagem será enviada para <strong>%{count} pessoas</strong> e ficará visível em %{proposal_page}.<br> As mensagens não são enviadas imediatamente, os usuários receberão periodicamente um email com todas as notificações da proposta."
       proposal_page: "a página da proposta"
     show:
       back: "Voltar para minha atividade"
@@ -579,17 +570,6 @@ pt-BR:
     follow: "Seguir"
     following: "Seguindo"
     follow_entity: "Seguir %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Você está seguindo este projeto de investimento! </br> Nós o notificaremos das mudanças assim que elas ocorrerem, para que você esteja atualizado."
-        destroy:
-          notice_html: "Você parou de seguir este projeto de investimento! </br> Você não receberá mais notificações relacionadas a este projeto."
-      proposal:
-        create:
-          notice_html: "Agora você está seguindo esta proposta cidadã! </br> Nós o notificaremos das mudanças assim que elas ocorrerem, para que você esteja atualizado."
-        destroy:
-          notice_html: "Você parou de seguir esta proposta cidadã! </br> Você não receberá mais notificações relacionadas a esta proposta."
     hide: Esconder
     print:
       print_button: Imprimir esta informação
