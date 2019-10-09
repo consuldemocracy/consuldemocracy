@@ -16,10 +16,6 @@ fi:
         search_form:
           button: Etsi
           title: Etsi
-        sidebar:
-          verify_account: "vahvista tilisi"
-          sign_in: "kirjaudu"
-          sign_up: "rekisteröidy"
         orders:
           random: satunnainen
           confidence_score: korkeimmin arvioitu
