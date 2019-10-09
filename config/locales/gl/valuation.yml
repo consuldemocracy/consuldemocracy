@@ -27,10 +27,6 @@ gl:
         assigned_to: "Asignada a %{valuator}"
         title: Proxectos de investimento
         edit: Editar informe
-        valuators_assigned:
-          one: Avaliador asignado
-          other: "%{count} avaliadores asignados"
-        no_valuators_assigned: Sen avaliador asignado
         table_id: ID
         table_title: Título
         table_heading_name: Nome da partida
@@ -62,16 +58,9 @@ gl:
         dossier: Informe
         price_html: "Custo (%{currency}) <small>(dato público)</small>"
         price_first_year_html: "Investimento durante o primeiro ano (%{currency})<small>(opcional, dato non público)</small>"
-        price_explanation_html: Informe de custo
         feasibility: Viabilidade
-        feasible: Viable
-        unfeasible: Inviable
-        undefined_feasible: Pendentes
-        feasible_explanation_html: Informe de inviabilidade <small>(en caso de que o sexa, dato público)</small>
-        valuation_finished: Avaliación rematada
         valuation_finished_alert: "Tes a certeza de que queres marcar este informe como completo? Se o fas, non se pode desfacer esta opción."
         not_feasible_alert: "Enviaráselle un correo inmediatamente á autoría do proxecto co informe de inviabilidade."
-        duration_html: Prazo de execución <small>(opcional, dato non público)</small>
         save: Gardar so cambios
       notice:
         valuate: "Informe actualizado"
