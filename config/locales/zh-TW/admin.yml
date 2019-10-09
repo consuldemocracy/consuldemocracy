@@ -138,8 +138,6 @@ zh-TW:
           unfeasible: 不可行
           min_total_supports: 最小支援
           winners: 勝出者
-          one_filter_html: "當前應用的篩選器:<b><em>%{filter}</em></b>"
-          two_filters_html: "當前應用的篩選器:<b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: 篩選器
         download_current_selection: "下載當前所選內容"
@@ -340,7 +338,6 @@ zh-TW:
           form:
             error: 錯誤
         form:
-          title_html: '從進程 <span class="strong">%{process_title}</span> 編輯<span class="strong">%{draft_version_title}</span>'
           launch_text_editor: 啟動文字編輯器
           close_text_editor: 關閉文字編輯器
           use_markdown: 使用Markdown格式化文本
@@ -876,8 +873,6 @@ zh-TW:
           pending: 有待
           rejected: 已拒绝
           verified: 已核實
-        hidden_count_html:
-          other: 有 <strong>%{count} 個組織</strong>沒有用戶，或有一名隱藏用戶。
         name: 名字
         email: 電郵
         phone_number: 電話
