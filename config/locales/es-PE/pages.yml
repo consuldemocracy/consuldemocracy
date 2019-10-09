@@ -27,13 +27,11 @@ es-PE:
         description: "En la sección de %{link} puedes plantear propuestas para que el Consejo Municipal las lleve a cabo. Las propuestas necesitan apoyo, y si alcanzan el apoyo necesario, se someten a votación ciudadana. Las propuestas aprobadas en estas votaciones ciudadanas son asumidas por el Consejo Municipal y se llevan a cabo."
         link: "propuestas ciudadanas"
         image_alt: "Botón para apoyar una propuesta"
-        figcaption_html: 'Botón para "Apoyar" una propuesta.'
       budgets:
         title: "Presupuestos participativos"
         description: "La sección de %{link} sirve para que la gente decida de manera directa a qué se destina una parte del presupuesto municipal."
         link: "presupuestos participativos"
         image_alt: "Diferentes fases de un presupuesto participativo"
-        figcaption_html: 'Fase de "Apoyos" y fase de "Votación" de los presupuestos participativos.'
       polls:
         title: "Votaciones"
         description: "La sección de %{link} se activa cada vez que una propuesta alcanza el 1% de apoyo y pasa a votación o cuando el Consejo Municipal propone un tema para que la gente decida sobre él."
@@ -161,10 +159,7 @@ es-PE:
     titles:
       help: "¿Qué es %{org}? - Participación ciudadana"
     verify:
-      code: Código que has recibido en tu carta
-      email: Tu correo electrónico
       info: "Para verificar tu cuenta introduce los datos con los que te registraste:"
       info_code: "Ahora introduce el código que has recibido en tu carta:"
-      password: Contraseña que utilizarás para acceder a este sitio web
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
