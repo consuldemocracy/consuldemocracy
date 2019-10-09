@@ -3,21 +3,17 @@ sv:
     no_reply: "Det går inte att svara till den här e-postadressen."
     comment:
       hi: Hej
-      new_comment_by_html: Det finns en ny kommentar från <b>%{commenter}</b>
       subject: Någon har kommenterat på ditt %{commentable}
       title: Ny kommentar
     config:
       manage_email_subscriptions: För att sluta få e-postmeddelanden kan du ändra dina inställningar med
     email_verification:
       click_here_to_verify: den här länken
-      instructions_2_html: Det här e-postmeddelandet är för att verifiera ditt konto med <b>%{document_type} %{document_number}</b>. Klicka inte på länken ovan om de inte tillhör dig.
-      instructions_html: Du måste klicka på %{verification_link} för att slutföra verifieringen av ditt användarkonto.
       subject: Bekräfta din e-postadress
       thanks: Tack så mycket.
       title: Bekräfta kontot via länken nedan
     reply:
       hi: Hej
-      new_reply_by_html: Det finns ett nytt svar från <b>%{commenter}</b> till din kommentar på
       subject: Någon har svarat på din kommentar
       title: Nytt svar på din kommentar
     proposal_notification_digest:
@@ -34,7 +30,6 @@ sv:
       unsubscribe_account: Mitt konto
     direct_message_for_sender:
       subject: "Du har skickat ett meddelande"
-      title_html: "Du har skickat ett meddelande till <strong>%{receiver}</strong> med innehållet:"
     user_invite:
       ignore: "Om du inte har begärt denna inbjudan oroa inte dig, du kan ignorera detta mail."
       text: "Tack för att du registrerat dig på %{org}! Nu kan du snart vara med och delta, fyll bara i det här formuläret:"
@@ -45,13 +40,11 @@ sv:
     budget_investment_created:
       subject: "Tack för att du skapat ett budgetförslag!"
       title: "Tack för att du skapat ett budgetförslag!"
-      follow_html: "Du kommer att få löpande information om hur processen går, och du kan också följa den på <strong>%{link}</strong>."
       follow_link: "Medborgarbudgetar"
       sincerely: "Vänliga hälsningar,"
       share: "Dela ditt projekt"
     budget_investment_unfeasible:
       hi: "Kära användare,"
-      new_html: "Med anledning av det ber vi dig att skapa ett <strong>nytt budgetförslag</strong> som uppfyller kraven för den här processen. Du kan göra det med följande länk: %{url}."
       new_href: "nytt budgetförslag"
       sincerely: "Vänliga hälsningar"
       sorry: "Ledsen för besväret och tack för din ovärderliga medverkan."
@@ -72,7 +65,6 @@ sv:
       subject: "Ny kommentar kring utvärdering"
       title: Ny kommentar kring utvärdering för %{investment}
       hi: Hej
-      new_comment_by_html: Det finns en nya kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
     new_actions_notification_rake_created:
       hi: "Hej %{name},"
     new_actions_notification_rake_published:
