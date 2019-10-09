@@ -1,7 +1,6 @@
 sv:
   documents:
     title: Dokument
-    max_documents_allowed_reached_html: Du har nått gränsen för uppladdade dokument! <strong>Du måste radera ett dokument innan du kan ladda upp ett nytt.</strong>
     form:
       title: Dokument
       title_placeholder: Lägg till en titel för dokumentet
