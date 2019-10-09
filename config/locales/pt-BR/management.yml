@@ -32,8 +32,6 @@ pt-BR:
       index:
         title: Gerenciamento
         info: Aqui você pode gerenciar os usuários através de todas as ações listadas no menu à esquerda.
-    document_number: Número do documento
-    document_type_label: Tipo de documento
     document_verifications:
       already_verified: Esta conta de usuário já está verificada.
       has_no_account_html: A fim de criar uma conta, vá para %{link} e clique em <b>'Registar'</b> na parte superior esquerda da tela.
