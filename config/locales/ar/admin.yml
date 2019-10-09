@@ -28,11 +28,6 @@ ar:
           with_inactive: غير نشِط
         preview: معاينة
       banner:
-        title: عنوان
-        description: الوصف
-        target_url: رابط
-        post_started_at: المشاركة بدأت في
-        post_ended_at: المشاركة انتهت في
         sections_label: الأقسام التي ستظهر بها
         sections:
           homepage: الصفحة الرئيسية
@@ -154,7 +149,6 @@ ar:
       headings_name: "العناوين"
       headings_edit: "تعديل العناوين"
       headings_manage: "إدارة العناوين"
-      max_votable_headings: "العدد الأقصى للعناوين التي يمكن للمستخدم التصويت عليها"
       no_groups: "لا توجد مجموعات."
       amount:
         zero: "لا يوجد هناك مجموعات %{count}"
@@ -173,12 +167,10 @@ ar:
       form:
         create: "إنشاء مجموعة جديدة"
         edit: "تعديل مجموعة"
-        name: "اسم المجموعة"
         submit: "حفظ المجموعة"
       index:
         back: "العودة إلى الميزانيات"
     budget_headings:
-      name: "الإ سم"
       no_headings: "لا توجد هناك عناوين."
       amount:
         zero: "%{count} لا توجد هناك عناوين"
@@ -195,14 +187,8 @@ ar:
         success_notice: "تم حذف العنوان بنجاح"
         unable_notice: "لا يمكن حذف عنوان له استثمارات مرتبطة"
       form:
-        name: "اسم العنوان"
-        amount: "القيمة"
-        population: "التعداد (اختياري)"
         population_info: "يتم استخدام حقل \"عنوان الميزانية\" لأغراض إحصائية في نهاية الميزانية لإظهار نسبة التصويت لكل عنوان يمثل منطقة بها تعداد معين. الحقل اختياري بحيث يمكنك تركه فارغًا إذا لم يكن مطبقا."
-        latitude: "خط العرض (اختياري)"
-        longitude: "خط الطول (اختياري)"
         coordinates_info: "إذا تم توفير خطوط الطول والعرض، فإن صفحة الاستثمارات لهذا العنوان سيتم إدراجها في الخريطة. هذه الخريطة سيتم مركزتها بإستخدام تلك الإحداثيات."
-        allow_content_block: "السماح بكتل المحتوى"
         content_blocks_info: "إذا تم اختيار \"السماح بكتل المحتوى\"، سوف تتمكن من إنشاء محتوى مخصص ذي صلة بهذا العنوان غن طريق إعدادات > كتل المحتوى المخصصة. سوف يظهر هذا المحتوى في صفحة الاستثمارات الخاصة بهذا العنوان."
         create: "إنشاء عنوان جديد"
         edit: "تعديل العنوان"
@@ -211,13 +197,8 @@ ar:
         back: "العودة إلى المجموعات"
     budget_phases:
       edit:
-        start_date: تاريخ البدء
-        end_date: تاريخ الإنتهاء
-        summary: ملخص
         summary_help_text: هذا النص سوف يخبر المستخدم عن المرحلة. لإظهاره حتى إذا كانت المرحلة غير نشطة، حدد مربع الاختيار أدناه
-        description: الوصف
         description_help_text: سيظهر هذا النص في الرأس عندما تكون المرحلة نشطة
-        enabled: المرحلة مفعلة
         enabled_help_text: ستكون هذه المرحلة أحد المراحل المتاحة للعامة من بين مراحل الموازنة، إلى جانب كونها نشطة لأي غرض آخر
         save_changes: حفظ التغييرات
     budget_investments:
@@ -309,19 +290,14 @@ ar:
       edit:
         classification: تصنيف
         compatibility: التوافق
-        mark_as_incompatible: وضع علامة غير متوافق
         selection: التحديد
-        mark_as_selected: وضع علامة مختار
         assigned_valuators: المقيمون
         select_heading: حدد العنوان
         submit_button: تحديث
         user_tags: العلامات المحددة للمستخدم
-        tags: علامات
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
-        user_groups: "المجموعات"
         assigned_trackers: "متتبّعون"
-        milestone_tags: علامات المعلم
       search_unfeasible: بحث غير مجد
     milestones:
       index:
@@ -376,9 +352,6 @@ ar:
         title: الإدارة
         description: أهلا بك %{org} في لوحة الادارة.
       actions:
-        action_type:
-          proposed_action: الإجراء المقترح
-          resource: مورد
         index:
           description: "عندما ينشئ المستخدمون اقتراحات ، يمكنهم الوصول إلى اللوحة الخاصة باقتراحهم ، اين يمكنك اقتراح الموارد والتوصيات للحصول على الدعم لفكرتهم."
           create: إنشاء مورد أو إجراء
@@ -411,7 +384,6 @@ ar:
         form:
           submit_button: حفظ
           help_text: أدخل 0 حتّى لا تؤخذ هذه القيمة بعين الاعتبار
-          published_proposal: للمقترحات المنشورة؟
           published_proposal_help_text: حدد هذه الخانة لإنشاء الإجراء فقط للمقترحات المنشورة
       administrator_tasks:
         index:
@@ -453,7 +425,6 @@ ar:
     documents:
       new:
         title: "رفع الوثيقة"
-        label_attachment: "اختر وثيقة"
         submit_button: "رفع"
       index:
         new_link: "اضافة وثيقة جديدة"
@@ -520,9 +491,7 @@ ar:
           summary_placeholder: موجز قصير للوصف
           description_placeholder: إضافة وصف للعملية
           additional_info_placeholder: إضافة معلومات إضافية تعتبرها مفيدة
-          homepage: الوصف
           homepage_description: هنا يمكنك شرح محتوى العملية
-          homepage_enabled: تم تفعيل الصفحة الرئيسية
           banner_title: لون العنوان
         index:
           create: عملية جديدة
@@ -609,9 +578,6 @@ ar:
           back: عودة
           title: إنشاء إصدار جديد
           submit_button: إنشاء إصدار
-        statuses:
-          draft: مسودة
-          published: منشورة
         table:
           title: عنوان
           created_at: أنشئت في
@@ -636,7 +602,6 @@ ar:
             error: خطأ
         form:
           add_option: إضافة خيار
-          title: سؤال
           title_placeholder: إضافة سؤال
           value_placeholder: إضافة إجابة مغلقة
           question_options: "الإجابات المحتملة (اختياري، الإجابات مفتوحة مبدئيا)"
@@ -803,7 +768,6 @@ ar:
         empty_newsletters: لا توجد أية رسائل إخبارية للإظهار
       new:
         title: رسائلة إخبارية جديدة
-        from: عنوان البريد الإلكتروني الذي سيظهر عند إرسال إرسال الرسالة الإخبارية
         header_footer_help_text_html: "العنوان وذيل الصفحة متماثلان لجميع رسائل البريد الإلكتروني ، ويمكنك تعديلهما على\n<code>تطبيق/المشاهدات/تصاميم_الصفحة/عنوان البريد الالكتروني</code> و <code>تطبيق/المشاهدات/تصاميم_الصفحة/عنوان البريد الالكتروني</code>.<br>يمكنك تعويض صورة العنوان في %{link}."
         image_link: "صور مخصصة"
       edit:
@@ -963,7 +927,6 @@ ar:
         title: "مجموعة المقيمين: %{group}"
         no_valuators: "لا يوجد مقيّمون معينون لهذه المجموعة"
       form:
-        name: "اسم المجموعة"
         new: "إنشاء مجموعة مقيّمين"
         edit: "حفظ مجموعة المقيّمين"
     poll_officers:
@@ -997,7 +960,6 @@ ar:
         shift: "تعيين"
         shifts: "المناوبات في هذا المكتب"
         date: "تاريخ"
-        task: "المهمة"
         edit_shifts: تحرير المناوبات
         new_shift: "مناوبة جديدة"
         no_shifts: "لا توجد مناوبات لمكتب الإقتراع هذا"
@@ -1055,7 +1017,6 @@ ar:
         title: "وصف استطلاعات الرأي"
       form:
         description:
-          text: "الوصف"
           help_text: "يظهر هذا النص في عنوان صفحة استطلاعات الرأي. ويمكن استخدامه لإضافة موضوع إلى الاستطلاعات المفتوحة."
     polls:
       index:
@@ -1110,7 +1071,6 @@ ar:
       new:
         title: "إنشاء سؤال"
         title_proposal: "إنشاء سؤال"
-        poll_label: "استطلاع"
       answers:
         images:
           add_image: "إضافة صورة"
@@ -1190,8 +1150,6 @@ ar:
         no_location: "لا يوجد موقع"
       new:
         title: "مكتب إقتراع جديد"
-        name: "الإ سم"
-        location: "الموقع"
         submit_button: "إنشاء مكتب إقتراع"
       edit:
         title: "تعديل مكتب الإقتراع"
@@ -1508,8 +1466,6 @@ ar:
         title: مواضيع المقترح
         topic: موضوع
         help: "عندما ينشئ المستخدم مقترحا، تُقترح الموضوعات التالية كعلامات نموذجية."
-      name:
-        placeholder: اكتب اسم الموضوع
     users:
       columns:
         name: الإ سم
@@ -1601,8 +1557,6 @@ ar:
           created_at: أنشئت في
           status: حالة
           updated_at: تم التحديث في
-          status_draft: مسودة
-          status_published: منشورة
           title: عنوان
           slug: سبيكة
           cards_title: بطاقات
