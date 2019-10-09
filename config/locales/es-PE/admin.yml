@@ -24,11 +24,6 @@ es-PE:
           with_inactive: Inactivos
         preview: Previsualizar
       banner:
-        title: Título
-        description: Descripción detallada
-        target_url: Enlace
-        post_started_at: Inicio de publicación
-        post_ended_at: Fin de publicación
         sections:
           proposals: Propuestas
           budgets: Presupuestos participativos
@@ -97,22 +92,12 @@ es-PE:
         calculated: Calculando ganadoras, puede tardar un minuto.
     budget_groups:
       name: "Nombre"
-      form:
-        name: "Nombre del grupo"
     budget_headings:
-      name: "Nombre"
       form:
-        name: "Nombre de la partida"
-        amount: "Cantidad"
-        population: "Población (opcional)"
         population_info: "El campo población de las partidas presupuestarias se usa con fines estadísticos únicamente, con el objetivo de mostrar el porcentaje de votos habidos en cada partida que represente un área con población. Es un campo opcional, así que puedes dejarlo en blanco si no aplica."
         submit: "Guardar partida"
     budget_phases:
       edit:
-        start_date: Fecha de inicio del proceso
-        end_date: Fecha de fin del proceso
-        summary: Resumen
-        description: Descripción detallada
         save_changes: Guardar cambios
     budget_investments:
       index:
@@ -181,14 +166,11 @@ es-PE:
       edit:
         classification: Clasificación
         compatibility: Compatibilidad
-        mark_as_incompatible: Marcar como incompatible
         selection: Selección
-        mark_as_selected: Marcar como seleccionado
         assigned_valuators: Evaluadores
         select_heading: Seleccionar partida
         submit_button: Actualizar
         user_tags: Etiquetas asignadas por el usuario
-        tags: Etiquetas
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
@@ -248,7 +230,6 @@ es-PE:
           summary_placeholder: Resumen corto de la descripción
           description_placeholder: Añade una descripción del proceso
           additional_info_placeholder: Añade cualquier información adicional que pueda ser de interés
-          homepage: Descripción detallada
         index:
           create: Nuevo proceso
           delete: Borrar
@@ -319,9 +300,6 @@ es-PE:
           back: Volver
           title: Crear nueva versión
           submit_button: Crear versión
-        statuses:
-          draft: Borrador
-          published: Publicada
         table:
           title: Título
           created_at: Creado
@@ -343,7 +321,6 @@ es-PE:
           submit_button: Guardar cambios
         form:
           add_option: +Añadir respuesta cerrada
-          title: Pregunta
           value_placeholder: Escribe una respuesta cerrada
         index:
           back: Volver
@@ -492,8 +469,6 @@ es-PE:
     valuator_groups:
       index:
         name: "Nombre"
-      form:
-        name: "Nombre del grupo"
     poll_officers:
       index:
         title: Presidentes de mesa
@@ -524,7 +499,6 @@ es-PE:
         shift: "Asignación"
         shifts: "Turnos en esta urna"
         date: "Día"
-        task: "Tarea"
         edit_shifts: Asignar turno
         new_shift: "Nuevo turno"
         no_shifts: "Esta urna no tiene turnos asignados"
@@ -619,7 +593,6 @@ es-PE:
         title: "Editar pregunta ciudadana"
       new:
         title: "Crear pregunta ciudadana"
-        poll_label: "Votación"
       answers:
         images:
           add_image: "Añadir imagen"
@@ -694,8 +667,6 @@ es-PE:
         no_location: "Sin Ubicación"
       new:
         title: "Nueva urna"
-        name: "Nombre"
-        location: "Ubicación"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -928,8 +899,6 @@ es-PE:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
         topic: Tema
-      name:
-        placeholder: Escribe el nombre del tema
     users:
       columns:
         name: Nombre
@@ -1005,8 +974,6 @@ es-PE:
           created_at: Creado
           status: Estado
           updated_at: Última actualización
-          status_draft: Borrador
-          status_published: Publicada
           title: Título
         cards:
           title: Título
