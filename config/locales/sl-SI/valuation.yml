@@ -26,7 +26,6 @@ sl:
         assigned_to: "Dodeljeno cenilcu %{valuator}"
         title: Naložbeni projekt
         edit: Uredi
-        no_valuators_assigned: Ni dodeljenih cenilcev
         table_title: Naslov
         table_heading_name: Ime naslova
         table_actions: Dejanja
@@ -54,16 +53,9 @@ sl:
         dossier: Dosje
         price_html: "Cena (%{currency})"
         price_first_year_html: "Cena tekom prvega leta (%{currency}) <small>(neobvezno, podatki niso javni)</small>"
-        price_explanation_html: Razlaga cene
         feasibility: Izvedljivost
-        feasible: Izvedljv
-        unfeasible: Neizvedljiv
-        undefined_feasible: V teku
-        feasible_explanation_html: Razlaga izvedljivosti
-        valuation_finished: Cenitev končana
         valuation_finished_alert: "Ali si prepričan/-a, da želiš to poročilo označiti kot končano? Ko to storiš, ga ne moreš več spreminjati."
         not_feasible_alert: "Avtorju/-ici projekta bomo nemudoma poslali e-pošto s poročilom o izvedljivosti."
-        duration_html: Časovni obseg
         save: Shrani spremembe
       notice:
         valuate: "Dosje posodobljen"
