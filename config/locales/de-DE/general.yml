@@ -2,8 +2,6 @@ de:
   account:
     show:
       change_credentials_link: Meine Anmeldeinformationen ändern
-      email_on_comment_label: Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert
-      email_on_comment_reply_label: Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet
       erase_account_link: Mein Konto löschen
       finish_verification: Verifizierung abschließen
       notifications: Benachrichtigungen
@@ -11,18 +9,10 @@ de:
       organization_responsible_name_placeholder: Vertreter der Organisation/des Kollektivs
       personal: Persönliche Daten
       phone_number_label: Telefonnummer
-      public_activity_label: Meine Liste an Aktivitäten öffentlich zugänglich machen
-      public_interests_label: Die Bezeichnungen der Elemente denen ich folge öffentlich zugänglich halten
       public_interests_my_title_list: Tags der Themen, denen Sie folgen
       public_interests_user_title_list: Kennzeichnungen der Elemente denen dieser Benutzer folgt
       save_changes_submit: Änderungen speichern
-      subscription_to_website_newsletter_label: Per E-Mail Webseite relevante Informationen erhalten
-      email_on_direct_message_label: E-Mails über direkte Nachrichten empfangen
-      email_digest_label: Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten
-      official_position_badge_label: Kennzeichen des Benutzertyps anzeigen
       recommendations: Empfehlungen
-      show_debates_recommendations: Debatten-Empfehlungen anzeigen
-      show_proposals_recommendations: Antrags-Empfehlungen anzeigen
       title: Mein Benutzerkonto
       user_permission_debates: An Diskussion teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
@@ -41,7 +31,6 @@ de:
   comments:
     comments_closed: Kommentare sind geschlossen
     verified_only: Zur Teilnahme %{verify_account}
-    verify_account: verifizieren Sie Ihr Konto
     comment:
       admin: Administrator*in
       author: Verfasser*in
@@ -95,7 +84,6 @@ de:
     form:
       debate_title: Titel der Diskussion
       tags_instructions: Diskussion markieren.
-      tags_label: Themen
       tags_placeholder: "Trennen Sie die Tags mit einem Komma (',')"
     index:
       featured_debates: Hervorgehoben
@@ -156,7 +144,6 @@ de:
       comments_title: Kommentare
       edit_debate_link: Bearbeiten
       flag: Diese Diskussion wurde von verschiedenen Benutzern als unangebracht gemeldet.
-      login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
       share: Teilen
       author: Autor
     update:
@@ -261,7 +248,6 @@ de:
   map:
     title: "Bezirke"
     proposal_for_district: "Starten Sie einen Vorschlag für Ihren Bezirk"
-    select_district: Rahmenbedingungen
     start_proposal: Vorschlag erstellen
   omniauth:
     facebook:
@@ -294,7 +280,6 @@ de:
     retire_form:
       title: Vorschlag zurückziehen
       warning: "Wenn Sie den Antrag zurückziehen, würde er weiterhin Unterstützung akzeptieren, wird jedoch von der Hauptliste entfernt und eine Nachricht wird sichtbar für alle Nutzer, die besagt, dass der Autor des Vorschlages denkt, er sollte nicht mehr unterstützt werden"
-      retired_reason_label: Grund für das Zurückziehen des Antrags
       retired_reason_blank: Option auswählen
       retired_explanation_placeholder: Erläutern Sie kurz, warum der Vorschlag nicht weiter unterstützt werden sollte
       submit_button: Vorschlag zurückziehen
@@ -305,14 +290,8 @@ de:
       done: Fertig
       other: Andere
     form:
-      geozone: Rahmenbedingungen
-      proposal_responsible_name: Vollständiger Name der Person, die den Vorschlag einreicht
       proposal_responsible_name_note: "(Einzelperson oder Vertreter/in eines Kollektivs; wird nicht öffentlich angezeigt)"
-      proposal_summary: Zusammenfassung Vorschlag
       proposal_summary_note: "(maximal 200 Zeichen)"
-      proposal_text: Vorschlagstext
-      proposal_title: Titel des Vorschlages
-      proposal_video_url: Link zu externem Video
       proposal_video_url_note: Füge einen YouTube oder Vimeo Link hinzu
       tag_category_label: "Kategorien"
       tags_instructions: "Diesen Vorschlag markieren. Sie können aus vorgeschlagenen Kategorien wählen, oder Ihre eigenen hinzufügen"
@@ -415,7 +394,6 @@ de:
         other: "%{count} Kommentare"
       comments_tab: Kommentare
       flag: Dieser Vorschlag wurde von verschiedenen Benutzern als unangebracht gemeldet.
-      login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
       notifications_tab: Benachrichtigungen
       milestones_tab: Meilensteine
       retired_warning: "Der/Die Autor/in ist der Ansicht, dass dieser Vorschlag nicht mehr Unterstützung erhalten soll."
@@ -462,9 +440,6 @@ de:
       back: Zurück zur Abstimmung
       cant_answer_not_logged_in: "Sie müssen %{signin} oder %{signup}, um teilzunehmen."
       comments_tab: Kommentare
-      login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
-      signin: Anmelden
-      signup: Registrieren
       cant_answer_verify_html: "Sie müssen %{verify_link}, um zu antworten."
       verify_link: "Verifizieren Sie Ihr Benutzerkonto"
       cant_answer_expired: "Diese Umfrage wurde beendet."
@@ -497,8 +472,6 @@ de:
   proposal_notifications:
     new:
       title: "Nachricht senden"
-      title_label: "Titel"
-      body_label: "Nachricht"
       submit_button: "Nachricht senden"
       info_about_receivers_html: "Diese Nachricht wird an <strong>%{count} BenutzerInnen </strong> geschickt und wird auf der %{proposal_page}.<br> angezeigt. Die Nachricht wird nicht sofort verschickt, sondern BenutzerInnen bekommen regelmäßig eine E-Mail mit allen Benachrichtigen zu den Vorschlägen."
       proposal_page: "die Vorschlagsseite"
@@ -579,7 +552,6 @@ de:
       districts: "Bezirke"
       districts_list: "Liste der Bezirke"
       categories: "Kategorien"
-    target_blank_html: " (Link öffnet im neuen Fenster)"
     you_are_in: "Sie befinden sich in"
     unflag: Markierung aufheben
     unfollow_entity: "Nicht länger folgen %{entity}"
@@ -625,16 +597,10 @@ de:
   users:
     direct_messages:
       new:
-        body_label: Nachricht
         direct_messages_bloqued: "Der Benutzer hat entschieden, keine direkten Nachrichten zu erhalten"
         submit_button: Nachricht senden
         title: Private Nachricht senden an %{receiver}
-        title_label: Titel
         verified_only: Um eine private Nachricht zu senden %{verify_account}
-        verify_account: verifizieren Sie Ihr Konto
-        authenticate: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
-        signin: Anmelden
-        signup: registrieren
       show:
         receiver: Nachricht gesendet an %{receiver}
     show:
@@ -677,12 +643,8 @@ de:
     comment_unauthenticated: Sie müssen sich %{signin} oder %{signup}, um abzustimmen.
     disagree: Ich stimme nicht zu
     organizations: Organisationen ist es nicht erlaubt abzustimmen
-    signin: Anmelden
-    signup: Registrieren
     supports: Unterstützer*innen
-    unauthenticated: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
     verified_only: 'Nur verifizierte Benutzer können Vorschläge bewerten: %{verify_account}.'
-    verify_account: verifizieren Sie Ihr Konto
     budget_investments:
       not_logged_in: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
       not_verified: Nur verifizierte Benutzer können über ein Investitionsprojekt abstimmen; %{verify_account}.
@@ -760,6 +722,4 @@ de:
     help:
       alt: Wählen Sie den Text, den Sie kommentieren möchten und drücken Sie den Button mit dem Stift.
       text: Um dieses Dokument zu kommentieren, müssen Sie %{sign_in} oder %{sign_up}. Dann wählen Sie den Text aus, den Sie kommentieren möchten und klicken auf den Button mit dem Stift.
-      text_sign_in: login
-      text_sign_up: registrieren
       title: Wie kann ich dieses Dokument kommentieren?
