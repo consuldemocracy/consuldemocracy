@@ -1,7 +1,6 @@
 mk:
   account:
     show:
-      show_proposals_recommendations: Покажи препораки за предлози
       user_permission_proposal: Направи нови предлози
       user_permission_support_proposal: Поддржи предлози
   form:
@@ -21,14 +20,9 @@ mk:
       show_link: Види предлог
     retire_form:
       title: Затвори предлог
-      retired_reason_label: Причина за затварање на предлогот
       retired_explanation_placeholder: Опиши на кратко зошто мислиш дека овој предлог не треба повеќе да добива поддршка
       submit_button: Затвори предлог
     form:
-      proposal_responsible_name: Целосно име на личноста што го поднесува предлогот
-      proposal_summary: Краток опис на предлогот
-      proposal_text: Целосен опис на предлогот
-      proposal_title: Наслов на предлогот
       tags_instructions: "Категоризирај го овој предлог. Можеш да одбереш од предложените категории или да додатеш твои"
       map_skip_checkbox: "Овој предлог нема конкретна локација."
     index:
