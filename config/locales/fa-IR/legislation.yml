@@ -14,9 +14,6 @@ fa:
         publish_comment: نشر نظر
       form:
         phase_not_open: این مرحله هنوز باز نشده است
-        login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
-        signin: ورود به برنامه
-        signup: ثبت نام
       index:
         title: توضیحات
         comments_about: تعداد نظرات
@@ -108,11 +105,8 @@ fa:
       participation:
         phase_not_open: این فاز  باز نمی شود.
         organizations: سازمانها مجاز به شرکت در بحث نیستند
-        signin: ورود به برنامه
-        signup: ثبت نام
         unauthenticated: شما باید %{signin} یا %{signup} کنید برای نظر دادن.
         verified_only: فقط کاربران تأیید شده میتوانند شرکت کنند%{verify_account}
-        verify_account: "حساب کاربری خودراتایید کنید\n"
         debate_phase_not_open: مرحله مذاکره به پایان رسیده است و پاسخ هنوز پذیرفته نشده است
     shared:
       share: "اشتراک گذاری\n"
