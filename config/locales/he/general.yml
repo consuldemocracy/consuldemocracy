@@ -2,8 +2,6 @@ he:
   account:
     show:
       change_credentials_link: שינוי ההרשאות שלי
-      email_on_comment_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מעיר להצעות או לדיונים שלי
-      email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מגיב על ההערות שלי
       erase_account_link: מחק את החשבון שלי
       finish_verification: נא לאמת את החשבון
       notifications: התראות
@@ -11,18 +9,10 @@ he:
       organization_responsible_name_placeholder: נציג הארגון/ההתאגדות
       personal: פרטים אישיים
       phone_number_label: מספר טלפון
-      public_activity_label: השאר את פירוט הפעילויות שלי גלוי לציבור
-      public_interests_label: שמור את התוויות של האלמנטים שאחריהם אני עוקב ציבורית
       public_interests_my_title_list: תגיות של אלמנטים אחריהם אתה עוקב
       public_interests_user_title_list: תגיות של אלמנטים שמשתמש זה עוקב אחריהן
       save_changes_submit: שמירת שינויים
-      subscription_to_website_newsletter_label: ארצה לקבל בדואר אלקטרוני מידע מהאתר
-      email_on_direct_message_label: לקבל בדואר אלקטרוני על פניות אישיות
-      email_digest_label: לקבל סיכום של ההודעות על הצעות חדשות
-      official_position_badge_label: הצג את אות הדירוג הרשמי שלי
       recommendations: המלצות
-      show_debates_recommendations: הצג המלצות לדיונים
-      show_proposals_recommendations: הצג המלצות להצעות
       title: החשבון שלי
       user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
@@ -41,7 +31,6 @@ he:
   comments:
     comments_closed: לא ניתן להגיב
     verified_only: בכדי להשתתף %{verify_account}
-    verify_account: לאמת את החשבון
     comment:
       admin: מנהל/ת
       author: מחבר/ת
@@ -115,7 +104,6 @@ he:
     form:
       debate_title: כותרת הדיון
       tags_instructions: תגיות סימון נושאים בדיון זה
-      tags_label: נושאים
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
       featured_debates: מומלצים
@@ -182,7 +170,6 @@ he:
       comments_title: הערות
       edit_debate_link: ערוך
       flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       share: שיתוף
       author: מחבר/ת
     update:
@@ -314,7 +301,6 @@ he:
   map:
     title: "רובע"
     proposal_for_district: "העלאת הצעה בקשר לרובע שלך"
-    select_district: היקף הפעילות
     start_proposal: העל/י הצעה חדשה
   omniauth:
     facebook:
@@ -358,7 +344,6 @@ he:
     retire_form:
       title: הסרת הצעה
       warning: "“הסרת ההצעה שלך היא לא מחיקה. ההצעה עדיין תוכל לצבור תמיכה, אך היא תוסר מהרשימה הראשית ולכל המשתמשים שצופים בה תוצג ההודעה שלדעת מציע/ת ההצעה, לא כדאי לתמוך בהצעה הזו יותר.\""
-      retired_reason_label: הסיבה להסרת ההצעה
       retired_reason_blank: בחר/י אפשרות
       retired_explanation_placeholder: הסבר/י בקיצור מדוע לדעתך לא כדאי לתמוך בהצעה זו כבר
       submit_button: הסרת הצעה
@@ -369,14 +354,8 @@ he:
       done: גמור
       other: אחר
     form:
-      geozone: היקף הפעילות
-      proposal_responsible_name: שם ושם משפחה מלא של מציע/ת ההצעה
       proposal_responsible_name_note: "“(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם יישמר חסוי מפני שאר המשתמשים)\""
-      proposal_summary: תקציר ההצעה
       proposal_summary_note: "(200 תווים לכל היותר)"
-      proposal_text: מלל ההצעה
-      proposal_title: כותרת ההצעה
-      proposal_video_url: קישור לוידאו חיצוני
       proposal_video_url_note: ניתן להדביק קישור ל-YouTube או Vimeo
       tag_category_label: "תחומים"
       tags_instructions: "תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
@@ -499,7 +478,6 @@ he:
       comments_tab: הערות
       dashboard_proposal_link: לוח ניהול
       flag: הצעה זו סומנה כבלתי-ראויה בידי מספר משתמשים
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       notifications_tab: התראות
       milestones_tab: אבני דרך
       retired_warning: "מחבר/ת ההצעה הזו הסיר/ה את ההצעה ומבקש/ת שלא לתמוך בה יותר."
@@ -618,7 +596,6 @@ he:
           other: "%{count} תגובות"
         view_results: הצג תוצאות
         edit_poll: ערוך סקר
-        show_results: הצג תוצאות
         show_results_help: אם תבחר בתיבת סימון זו התוצאות יהיו ציבוריות, כל המשתמשים יוכלו לראות אותם
         delete: מחק סקר
         alert_notice: פעולה זו תסיר את הסקר ואת כל השאלות הקשורות אליו.
@@ -709,9 +686,6 @@ he:
       back: חזרה להצבעה
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
       comments_tab: הערות
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
-      signin: התחברות
-      signup: הרשמה
       cant_answer_verify_html: "נדרש %{verify_link} על מנת לענות תשובה."
       verify_link: "לאמת את החשבון"
       cant_answer_expired: "הצבעה זו הסתיימה"
@@ -758,8 +732,6 @@ he:
   proposal_notifications:
     new:
       title: "שלח הודעה"
-      title_label: "שם"
-      body_label: "הודעה"
       submit_button: "שלח הודעה"
       info_about_receivers_html: "“הודעה זו תישלח אל <strong> %{count} אנשים</strong> ותוצג ב %{proposal_page} <br> ההודעות אינן מתקבלות מיד, אלא נשלחות למשתמשים בדואר אלקטרוני תקופתי ובו סיכום כל ההתרעות על ההצעות שהם עוקבים אחריהן\""
       proposal_page: "דף ההצעה"
@@ -847,7 +819,6 @@ he:
       districts: "באזור הגאוגרפי שלי"
       districts_list: "רשימת אזורים גאוגרפים"
       categories: "תחומים"
-    target_blank_html: " (הקישור יפתח בחלון חדש)"
     you_are_in: "את/ה נמצא/ת ב-"
     unflag: הסרת דגל
     unfollow_entity: "הפסק לעקוב אחר %{entity}"
@@ -901,16 +872,10 @@ he:
   users:
     direct_messages:
       new:
-        body_label: הודעה
         direct_messages_bloqued: "משתמש/ת זה/ו בחר/ה שלא לקבל הודעות ופניות ישירות"
         submit_button: שליחה
         title: שליחת הודעה פרטית אל %{receiver}
-        title_label: כותרת
         verified_only: כדי שתוכל/י לשלוח הודעה פרטית %{verify_account}
-        verify_account: אמת את חשבונך
-        authenticate: נדרשת %{signin} או %{signup} בכדי להמשיך
-        signin: התחברות
-        signup: הרשמה
       show:
         receiver: ההודעה נשלחה אל %{receiver}
     show:
@@ -968,12 +933,8 @@ he:
     comment_unauthenticated: נדרשת %{signin} או %{signup} בכדי להצביע
     disagree: אני מסתייג
     organizations: ארגונים אינם רשאים להצביע
-    signin: התחברות
-    signup: הרשמה
     supports: לחיצה לתמיכה
-    unauthenticated: נדרשת %{signin} או %{signup} בכדי להמשיך
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
-    verify_account: אמת את החשבון
     budget_investments:
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
       not_verified: רק משתמשים שאומת חשבונם יכולים להצביע על ההצעות; %{verify_account}.
@@ -1054,8 +1015,6 @@ he:
     help:
       alt: בחר את הטקסט שברצונך להגיב עליו ולחץ על הלחצן עם העיפרון.
       text: כדי להגיב על מסמך זה עליך%{sign_in} או%{sign_up}. לאחר מכן בחר את הטקסט שברצונך להגיב ולחץ על הלחצן עם העיפרון.
-      text_sign_in: כניסה
-      text_sign_up: הרשמה
       title: איך אני יכול להגיב על מסמך זה?
   links:
     form:
@@ -1077,11 +1036,8 @@ he:
     poll:
       take_part: קח חלק מ- %{from} ל- %{to}
   question:
-    max_votes: מספר הצבעות מקסימלי
-    max_group_answers: מספר התשובות המקסימלי בקבוצה
     votation_type: סוג ההצבעה
   enum_type:
-    title: סוג ההצבעה
     unique: תשובה ייחודית, סגורה
     multiple: תשובות מרובות, סגורות
     prioritized: ריבוי תשובות מועדפות, סגורות
@@ -1092,6 +1048,5 @@ he:
     answer_set_open: קבוצת תשובות, פתוח
     answer_set_closed: קבוצת תשובות, סגור
   prioritization_type:
-    title: סוג תיעדוף
     borda: הצבעה מסוג בורדה (שיטת בחירות שבה נבחר המועמד שסך מספר המועמדים המדורגים תחתיו מכל אחד מהבוחרים - הוא הגבוה ביותר)
     dowdall: הצבעת Dowdall
