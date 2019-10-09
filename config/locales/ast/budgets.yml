@@ -10,7 +10,6 @@ ast:
         voted_html:
           one: "Votasti <span>una</span> propuesta."
           other: "Votasti <span>%{count}</span> propuestes."
-        voted_info_html: "Pues camudar los tos votos en cualesquier momentu hasta'l zarru d'esta fase.<br> Nun fai falta que gastes tol dineru disponible."
         zero: Entovía nun votasti nenguna propuesta d'inversión.
       reasons_for_not_balloting:
         not_logged_in: Precises %{signin} o %{signup} pa siguir.
@@ -69,10 +68,7 @@ ast:
           check_ballot_link: "revisar los mios votos"
           zero: Todavía no has votado ninguna propuesta de inversión en este ámbito del presupuesto.
           verified_only: "Pa crear una nueva propuesta d'inversión %{verify}."
-          verify_account: "verifica la to cuenta"
           not_logged_in: "Pa crear una nueva propuesta d'inversión debes %{sign_in} o %{sign_up}."
-          sign_in: "accesu"
-          sign_up: "rexistrate"
           by_feasibility: Por viabilidá
           feasible: Ver los proyeutos vidables
           unfeasible: Ver los proyeutos invidables
