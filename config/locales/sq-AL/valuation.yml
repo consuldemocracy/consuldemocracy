@@ -26,10 +26,6 @@ sq:
         assigned_to: "Caktuar për %{valuator}"
         title: Projekt investimi
         edit: Ndrysho dosjen
-        valuators_assigned:
-          one: Vlerësuesi i caktuar
-          other: "%{count}Vlerësues të caktuar"
-        no_valuators_assigned: Asnjë vlerësues nuk është caktuar
         table_id: ID
         table_title: Titull
         table_heading_name: Emri i titullit
@@ -60,16 +56,9 @@ sq:
         dossier: Dosje
         price_html: "Cmimi %{currency}"
         price_first_year_html: "Kostoja gjatë vitit të parë %{currency}<small> (opsionale, të dhënat jo publike) </ small>"
-        price_explanation_html: Shpjegimi i çmimit
         feasibility: Fizibiliteti
-        feasible: I mundshëm
-        unfeasible: Nuk është e realizueshme
-        undefined_feasible: Në pritje
-        feasible_explanation_html: Shpjegim i realizuar
-        valuation_finished: Vlerësimi përfundoi
         valuation_finished_alert: "Jeni i sigurt se doni ta shënoni këtë raport si të përfunduar? Nëse e bëni këtë, nuk mund të modifikohet më."
         not_feasible_alert: "Një email do të dërgohet menjëherë tek autori i projektit me raportin e parealizuar."
-        duration_html: Shtrirja e kohës
         save: Ruaj ndryshimet
       notice:
         valuate: "Dosja u përditësua"
