@@ -47,7 +47,6 @@ sl:
       new:
         accept_terms_text: Sprejmem %{terms_url} popisa
         accept_terms_text_title: Sprejmem pogoje uporabe dostopa do popisa
-        date_of_birth: Datum rojstva
         document_number: Številka dokumenta
         document_number_help_title: Pomoč
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Potni list</strong>: AAA000001<br> <strong>Potrdilo o prebivališču</strong>: X1234567P"
@@ -55,12 +54,10 @@ sl:
           passport: Potni list
           residence_card: Potrdilo o prebivališču
           spanish_id: EMŠO
-        document_type_label: Vrsta dokumenta
         error_not_allowed_age: Za sodelovanje nisi dovolj star/-a
         error_not_allowed_postal_code: Za verifikacijo se moraš najprej registirati.
         error_verifying_census: Popis ni mogel verificirati tvojih podatkov. Prosimo, pokliči ali obišči %{offices}.
         form_errors: je preprečilo verifikacijo tvojega prebivališča
-        postal_code: Poštna številka
         postal_code_note: Za verifikacijo tvojega računa se moraš najprej registrirati
         terms: pogoji uporabe in dostopa
         title: Verificiraj prebivališče
@@ -70,7 +67,6 @@ sl:
         flash:
           success: Vnesi potrditveno kodo, ki smo ti po poslali po SMS
       edit:
-        confirmation_code: Vnesi kodo, ki si jo dobil/-a po SMS
         resend_sms_link: Klikni tukaj za ponovno pošiljanje SMS
         resend_sms_text: Nisi dobil/-a SMS s potrditveno kodo?
         submit_button: Pošlji
