@@ -106,8 +106,6 @@ fi:
           selected: Valittu
           unfeasible: Toteuttamiskelvoton
           winners: Voittajat
-          one_filter_html: "Käytössä olevat suodattimet: <b><em>%{filter}</em></b>"
-          two_filters_html: "Käytössä olevat suodattimet: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Suodatin
         feasibility:
