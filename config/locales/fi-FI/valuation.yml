@@ -27,5 +27,4 @@ fi:
       edit:
         price_html: "Hinta (%{currency})"
         feasibility: Toteutettavuus
-        undefined_feasible: Vireillä
         save: Tallenna muutokset
