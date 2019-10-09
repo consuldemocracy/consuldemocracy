@@ -47,7 +47,6 @@ sv:
       new:
         accept_terms_text: Jag accepterar %{terms_url} för adressregistret
         accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
-        date_of_birth: Födelsedatum
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
         document_number_help_text_html: "<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P"
@@ -55,12 +54,10 @@ sv:
           passport: Pass
           residence_card: Övrig identitetshandling
           spanish_id: Legitimation
-        document_type_label: Identitetshandling
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
         error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett %{offices}.
         form_errors: gjorde att din adress inte kunde bekräftas
-        postal_code: Postnummer
         postal_code_note: För att verifiera ditt konto måste du vara registrerad
         terms: användarvillkoren
         title: Bekräfta din adress
@@ -70,7 +67,6 @@ sv:
         flash:
           success: Fyll i bekräftelsekoden som du fått med SMS
       edit:
-        confirmation_code: Fyll i koden som skickats till din mobiltelefon
         resend_sms_link: Klicka här för att skicka det igen
         resend_sms_text: Fick du inte en text med din bekräftelsekod?
         submit_button: Skicka
