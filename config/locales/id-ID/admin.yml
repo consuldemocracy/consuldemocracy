@@ -168,8 +168,6 @@ id:
           undecided: Bimbang
           unfeasible: Tidak layak
           winners: Pemenang
-          one_filter_html: "Filter yang diterapkan saat ini: <b><em>%{filter}</em></b>"
-          two_filters_html: "Filter yang diterapkan saat ini: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Penyaring
         download_current_selection: "Unduh pilihan saat ini"
@@ -347,7 +345,6 @@ id:
           form:
             error: Kesalahan
         form:
-          title_html: 'Menyunting <span class="strong">%{draft_version_title}</span> dari proses <span class="strong">%{process_title}</span>'
           launch_text_editor: Meluncurkan penyunting teks
           close_text_editor: Tutup penyunting teks
           use_markdown: Gunakan Menurun untuk memformat teks
@@ -776,8 +773,6 @@ id:
           pending: Tertunda
           rejected: Ditolak
           verified: Diverifikasi
-        hidden_count_html:
-          other: Ada juga <strong>%{count} organisasi</strong> dengan tidak ada pengguna atau user tersembunyi.
         name: Nama
         email: Email
         phone_number: Telepon
