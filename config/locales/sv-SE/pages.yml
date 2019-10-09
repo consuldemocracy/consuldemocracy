@@ -27,13 +27,11 @@ sv:
         description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
         link: "medborgarförslag"
         image_alt: "Knapp för att stödja förslag"
-        figcaption_html: 'Knapp för att "stödja" ett förslag.'
       budgets:
         title: "Medborgarbudget"
         description: "I %{link}-delen beslutar invånarna om hur en del av stadens budget ska användas."
         link: "medborgarbudgetar"
         image_alt: "Olika faser av en medborgarbudget"
-        figcaption_html: '"Stöd"- och "Omröstnings"-faser av en medborgarbudget.'
       polls:
         title: "Omröstningar"
         description: "%{link}-delen aktiveras varje gång ett förslag får 1% stöd och går vidare till omröstning, eller när kommunfullmäktige lämnar ett förslag till omröstning."
@@ -160,10 +158,7 @@ sv:
     titles:
       help: "Vad är %{org}? - Medborgardeltagande"
     verify:
-      code: Koden du fick i ett brev
-      email: E-post
       info: "För att verifiera ditt konto måste du fylla i dina uppgifter:"
       info_code: "Nu kan du skriva in koden du fick i ett brev:"
-      password: Lösenord
       submit: Verifiera mitt konto
       title: Verifiera ditt konto
