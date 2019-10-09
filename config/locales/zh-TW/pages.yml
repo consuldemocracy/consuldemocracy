@@ -27,13 +27,11 @@ zh-TW:
         description: "在%{link} 部分，您可以向市議會提出建議，以便將其付諸實行。 這些建議需要得到支持，如果得到足夠的支持，就會受到公眾投票。 這些公民投票中通過的建議將會被市議會接受並實行。"
         link: "公民建議"
         image_alt: "支持建議的按鈕"
-        figcaption_html: '用於"支持"建議的按鈕'
       budgets:
         title: "參與性預算編制"
         description: "%{link} 部分可幫助人們直接決定如何使用市政預算的部分開支。"
         link: "參與性預算"
         image_alt: "參與式預算的不同階段"
-        figcaption_html: '參與式預算的“支持”和“投票”階段。'
       polls:
         title: "投票"
         description: "每當提案達到1%支持並進入投票，或市議會提出問題供人們決定時，%{link} 部分就會啟動。"
@@ -161,10 +159,7 @@ zh-TW:
     titles:
       help: "什麼是%{org}？ - 公民參與"
     verify:
-      code: 您在信中收到的代碼
-      email: 電郵
       info: "為核實您的帳戶，請輸入您的訪問數據："
       info_code: "現在輸入您在信中收到的代碼："
-      password: 密碼
       submit: 核實我的帳戶
       title: 核實您的帳戶
