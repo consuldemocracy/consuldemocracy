@@ -156,9 +156,9 @@ fi:
       legislation/annotation:
         text: Kommentti
       document:
-        attachment: Liite
+        attachment: "Liite"
       image:
-        attachment: Liite
+        attachment: "Liite"
       poll/question/answer:
         title: Vastaus
         description: Kuvaus
