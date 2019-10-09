@@ -7,13 +7,6 @@ ar:
         remaining: "لا يزال لديك <span>%{amount}</span> للاستثمار."
         no_balloted_group_yet: "انت لم تقم بالتصويت على هذه المجموعة بعد، اذهب للتصويت!"
         remove: ازالة التصويت
-        voted_html:
-          zero: "لقد قمت بالتصويت على <span>%{count}</span> استثمار."
-          one: "لقد قمت بتصويت على <span>one</span> استثمار."
-          two: "لقد قمت بالتصويت على <span>%{count}</span> استثمار."
-          few: "لقد قمت بالتصويت على <span>%{count}</span> استثمار."
-          many: "لقد قمت بالتصويت على <span>%{count}</span> استثمار."
-          other: "لقد قمت بتصويت على <span>%{count}</span> استثمار."
         voted_info_2: "ولكن يمكنك تغيير تصويتك في أي وقت إلى أن يتم إغلاق هذه المرحلة."
         zero: أنت لم تصوت على أي مشروع استثماري.
       reasons_for_not_balloting:
@@ -21,9 +14,7 @@ ar:
         not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على الاستثمارات; %{verify_account}.
         organization: المنظمات لا يسمح لها بالتصويت
         not_selected: لا يمكن دعم المشاريع الإستثمارية الغير محددة
-        not_enough_money_html: "لقد قمت بالفعل بتعيين الميزانية المتاحة.<br><small>تذكر يمكنك%{change_ballot} في أي وقت</small>"
         no_ballots_allowed: مرحلة التحديد مغلقة
-        different_heading_assigned_html: "أنت بالفعل قمت بتصويت عنوان مختلف: %{heading_link}"
         change_ballot: تغيير الأصوات الخاصة بك
         casted_offline: لقد شاركت مسبقا في وضع عدم الاتصال
     groups:
@@ -82,25 +73,10 @@ ar:
           button: بحث
           placeholder: البحث عن المشاريع الاستثمارية...
           title: بحث
-        search_results_html:
-          zero: " تحتوي على المصطلح <strong>%{search_term}</strong>"
-          one: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
-          two: " تحتوي على المصطلح <strong>%{search_term}</strong>"
-          few: " تحتوي على المصطلح <strong>%{search_term}</strong>"
-          many: " تحتوي على المصطلح <strong>%{search_term}</strong>"
-          other: " تحتوي على المصطلح <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: قرعتي
-          voted_html:
-            zero: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            one: "<strong>لقد قمت بتصويت اقتراح واحد بتكلفة %{amount_spent}</strong>"
-            two: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            few: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            many: "<strong>لقد قمت بالتصويت على %{count} مقترحات بتكلفة %{amount_spent}</strong>"
-            other: "<strong>لقد قمت بتصويت %{count} اقتراحات بتكلفة %{amount_spent}</strong>"
           voted_info: يمكنك %{link} في اي وقت حتى اغلاف هذه المرحلة. لا داعي لانفاق جميع الاموال المتاحة.
           voted_info_link: غيير الصوت الخاص بك
-          different_heading_assigned_html: "لديك تصويت فعال في عنوان مختلف: %{heading_link}"
           change_ballot: "اذا تريد تغيير رايك تسطيع ازالة التصويت الخاص بك في %{check_ballot} و البدء مرة اخرى."
           check_ballot_link: "تحقق من قرعتي"
           zero: انت لم تصوت على اي مشروع استثماري في هذه المحموعة.
@@ -120,9 +96,6 @@ ar:
         author_deleted: تم حذف المستخدم
         price_explanation: توضيح الاسعار
         unfeasibility_explanation: تفسير غير مجدي
-        code_html: "رمز مشروع الاستثمار: <strong>%{code}</strong>"
-        location_html: "المكان: <strong>%{location}</strong>"
-        organization_name_html: "تم اقتراحه نيابة عن: <strong>%{name}</strong>"
         share: مشاركة
         title: مشروع استثماري
         supports: تشجيعات
@@ -131,10 +104,7 @@ ar:
         comments_tab: تعليقات
         milestones_tab: الأهداف المرحلية
         author: كاتب
-        project_unfeasible_html: "مشروع الاستثمار هذا <strong> تم تعليمه كغير مجدي</strong> ولن يذهب الى مرحلة الاقتراع."
-        project_selected_html: "مشروع الاستثمار هذا<strong>تم اختياره</strong>لمرحلة الاقتراع."
         project_winner: "مشروع الاستثمار الفائز"
-        project_not_selected_html: "مشروع الاستثمار هذا <strong> لم يتم اختياره</strong>لمرحلة الاقتراع."
         see_price_explanation: انظر شرح السعر
       wrong_price_format: الاعداد الصحيحة فقط
       investment:
@@ -160,7 +130,6 @@ ar:
         give_support: دعم
       header:
         check_ballot: تحقق من قرعتي
-        different_heading_assigned_html: "انت بالفعل قمت تصويت عنوان مختلف: %{heading_link}"
         change_ballot: "اذا تريد تغير رايك تستطيع ازالة تصويتك في %{check_ballot} والبدء مرة اخرى."
         check_ballot_link: "تحقق من قرعتي"
         price: "هذا البند لديه ميزانية بقدر"
