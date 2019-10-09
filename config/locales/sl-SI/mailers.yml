@@ -45,8 +45,6 @@ sl:
     budget_investment_created:
       subject: "Hvala, ker si ustvaril/-a investicijo!"
       title: "Hvala, ker si ustvaril/-a investicijo!"
-      intro_html: "Hej <strong>%{author}</strong>,"
-      text_html: "Zahvaljujemo se ti za ustvarjeno investicijo <strong>%{investment}</strong> za participatorni proračun <strong>%{budget}</strong>."
       follow_html: "O tem, kako proces napreduje, te bomo sproti obveščali, lahko pa se na obvestila tudi naročiš na povezavi <strong>%{link}</strong>."
       follow_link: "Participatorni proračuni"
       sincerely: "Z lepimi pozdravi,"
