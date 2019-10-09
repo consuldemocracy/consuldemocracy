@@ -108,9 +108,6 @@ de:
         button: Suche
         placeholder: Suche Diskussionen...
         title: Suche
-      search_results_html:
-        one: " enthält den Begriff <strong>'%{search_term}'</strong>"
-        other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       select_order: Sortieren nach
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
@@ -161,7 +158,6 @@ de:
     direct_message: Private Nachricht
     error: Fehler
     errors: Fehler
-    not_saved_html: "verhinderte das Speichern dieser %{resource}. <br>Bitte überprüfen Sie die gekennzeichneten Felder, um herauszufinden wie diese korrigiert werden können:"
     policy: Datenschutzbestimmungen
     proposal: Vorschlag
     proposal_notification: "Benachrichtigung"
@@ -334,9 +330,6 @@ de:
         button: Suche
         placeholder: Suche Vorschläge...
         title: Suche
-      search_results_html:
-        one: " enthält den Begriff <strong>'%{search_term}'</strong>"
-        other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       select_order: Sortieren nach
       select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
@@ -440,7 +433,6 @@ de:
       back: Zurück zur Abstimmung
       cant_answer_not_logged_in: "Sie müssen %{signin} oder %{signup}, um teilzunehmen."
       comments_tab: Kommentare
-      cant_answer_verify_html: "Sie müssen %{verify_link}, um zu antworten."
       verify_link: "Verifizieren Sie Ihr Benutzerkonto"
       cant_answer_expired: "Diese Umfrage wurde beendet."
       cant_answer_wrong_geozone: "Diese Frage ist nicht in ihrem Gebiet verfügbar."
@@ -473,7 +465,6 @@ de:
     new:
       title: "Nachricht senden"
       submit_button: "Nachricht senden"
-      info_about_receivers_html: "Diese Nachricht wird an <strong>%{count} BenutzerInnen </strong> geschickt und wird auf der %{proposal_page}.<br> angezeigt. Die Nachricht wird nicht sofort verschickt, sondern BenutzerInnen bekommen regelmäßig eine E-Mail mit allen Benachrichtigen zu den Vorschlägen."
       proposal_page: "die Vorschlagsseite"
     show:
       back: "Zurück zu meiner Aktivität"
@@ -512,17 +503,6 @@ de:
     follow: "Folgen"
     following: "Folgen"
     follow_entity: "Folgen %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Sie folgen nun diesem Investitionsprojekt! </br> Wir werden Sie bei Änderungen benachrichtigen, sodass Sie immer auf dem Laufenden sind."
-        destroy:
-          notice_html: "Sie haben aufgehört diesem Investitionsprojekt zu folgen! </br> Sie werden nicht länger Benachrichtigungen zu diesem Projekt erhalten."
-      proposal:
-        create:
-          notice_html: "Jetzt folgen Sie diesem Bürgerantrag! </br> Wir werden Sie über Änderungen benachrichtigen sobald diese erscheinen, sodass Sie auf dem neusten Stand sind."
-        destroy:
-          notice_html: "Sie haben aufgehört diesem Bürgerantrag zu folgen! </br> Sie werden nicht länger Benachrichtigungen zu diesem Antrag erhalten."
     hide: Verbergen
     print:
       print_button: Diese Info drucken
