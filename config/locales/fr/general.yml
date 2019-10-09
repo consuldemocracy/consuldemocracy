@@ -108,9 +108,6 @@ fr:
         button: Chercher
         placeholder: Rechercher des débats...
         title: Chercher
-      search_results_html:
-        one: " contenant le terme <strong>'%{search_term}'</strong>"
-        other: " contenant le terme <strong>'%{search_term}'</strong>"
       select_order: Trier par
       start_debate: Commencer un débat
       title: Débats
@@ -161,7 +158,6 @@ fr:
     direct_message: message privé
     error: erreur
     errors: erreurs
-    not_saved_html: "a empêché cette %{resource} d'être sauvegardée. <br>Vérifiez les champs marqués pour les corriger :"
     policy: Vie privée
     proposal: Proposition
     proposal_notification: "Notification"
@@ -334,9 +330,6 @@ fr:
         button: Chercher
         placeholder: Chercher des propositions
         title: Chercher
-      search_results_html:
-        one: " contenant le terme <strong>'%{search_term}'</strong>"
-        other: " contenant le terme <strong>'%{search_term}'</strong>"
       select_order: Trier par
       select_order_long: "Vous êtes en train de voir les propositions en fonction de"
       start_proposal: Créer une proposition
@@ -439,7 +432,6 @@ fr:
       back: Retour au vote
       cant_answer_not_logged_in: "Il est nécessaire de %{signin} ou de %{signup} pour participer."
       comments_tab: Commentaires
-      cant_answer_verify_html: "Vous devez %{verify_link} pour répondre."
       verify_link: "Vérifier votre compte"
       cant_answer_expired: "Ce vote est terminé."
       cant_answer_wrong_geozone: "Cette question n'est pas disponible pour votre zone géographique."
@@ -472,7 +464,6 @@ fr:
     new:
       title: "Envoyer un message"
       submit_button: "Envoyer un message"
-      info_about_receivers_html: "Ce message sera envoyé à <strong>%{count} personnes</strong> et sera visible sur %{proposal_page}.<br> Les messages ne sont pas envoyés immédiatement, les utilisateurs reçoivent périodiquement un email avec les notifications issues de l'ensemble des propositions."
       proposal_page: "la page de la proposition"
     show:
       back: "Retour à mon activité"
@@ -511,17 +502,6 @@ fr:
     follow: "Suivre"
     following: "Suivent"
     follow_entity: "Suivre %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Vous suivez à présent cette proposition d'investissement ! </br>Nous vous tiendrons informé des changements au fur et à mesure."
-        destroy:
-          notice_html: "Vous avez arrêté de suivre cette proposition d'investissement ! </br>Vous ne recevrez plus de notifications en lien avec cette proposition."
-      proposal:
-        create:
-          notice_html: "Vous suivez à présent cette proposition citoyenne ! </br>Nous vous tiendrons informé des changements au fur et à mesure."
-        destroy:
-          notice_html: "Vous avez arrêté de suivre cette proposition citoyenne ! </br>Vous ne recevrez plus de notifications en lien avec cette proposition."
     hide: Cacher
     print:
       print_button: Imprimer cette info
