@@ -26,11 +26,6 @@ fr:
           with_inactive: Inactif
         preview: Aperçu
       banner:
-        title: Titre
-        description: Description
-        target_url: Lien
-        post_started_at: Début de la publication
-        post_ended_at: Fin de la publication
         sections_label: Sections où il figurera
         sections:
           homepage: Page d’accueil
@@ -117,7 +112,6 @@ fr:
       headings_name: "Titres"
       headings_edit: "Modifier les rubriques"
       headings_manage: "Gérer les rubriques"
-      max_votable_headings: "Nombre maxium de rubriques dans lequel un utilisateur peut voter"
       no_groups: "Il n'y a pas de groupes."
       amount:
         one: "Il y a 1 groupe"
@@ -132,12 +126,10 @@ fr:
       form:
         create: "Créer un nouveau groupe"
         edit: "Modifier le groupe"
-        name: "Nom du groupe"
         submit: "Sauvegarder le groupe"
       index:
         back: "Revenir aux budgets"
     budget_headings:
-      name: "Nom"
       no_headings: "Il n'y a pas de titre."
       amount:
         one: "Il y a 1 titre"
@@ -150,14 +142,8 @@ fr:
         success_notice: "Rubrique supprimée avec succès"
         unable_notice: "Vous ne pouvez pas supprimer une rubrique qui est associé à des investissements"
       form:
-        name: "Nom du titre"
-        amount: "Montant"
-        population: "Population"
         population_info: "Le champ de population pour la tranche du budget est utilisé à des fins statistiques à la fin du budget pour montrer le pourcentage de votants pour chaque tranche qui représente une zone. Le champ est optionnel donc vous pouvez le laissez blanc."
-        latitude: "Latitude (option)"
-        longitude: "Longitude (option)"
         coordinates_info: "Si la latitude et la longitude sont fournies, la page d’investissements pour cette rubrique comprendra une carte. Cette carte sera centrée en utilisant ces coordonnées."
-        allow_content_block: "Autoriser un bloc de contenu"
         create: "Créer un nouveau titre"
         edit: "Editer le titre"
         submit: "Sauvegarder la rubrique"
@@ -165,13 +151,8 @@ fr:
         back: "Retourner aux groupes"
     budget_phases:
       edit:
-        start_date: Date de début
-        end_date: Date de fin
-        summary: Résumé
         summary_help_text: Ce texte informera l’utilisateur sur la phase. Pour le montrer même si la phase n’est pas active, cochez la case ci-dessous
-        description: Description
         description_help_text: Ce texte s’affiche dans l’en-tête lors de la phase est active
-        enabled: Phase active
         enabled_help_text: Cette phase sera publique dans la chronologie des phases du budget, mais aussi active pour tout autre usage
         save_changes: Sauvegarder des changements
     budget_investments:
@@ -259,17 +240,13 @@ fr:
       edit:
         classification: Classement
         compatibility: Compatibilité
-        mark_as_incompatible: Marquer comme incompatible
         selection: Sélection
-        mark_as_selected: Marquer comme sélectionnés
         assigned_valuators: Évaluateurs
         select_heading: Sélectionner la rubrique
         submit_button: Mettre-à-jour
         user_tags: Tags assignés par l'utilisateur
-        tags: Sujets
         tags_placeholder: "Saisir les étiquettes souhaitées séparées par des virgules (,)"
         undefined: Indéfini
-        user_groups: "Groupes"
       search_unfeasible: Recherche impossible
     statuses:
       index:
@@ -300,9 +277,6 @@ fr:
         title: Administration
         description: Bienvenue sur le page d’administration de %{org}.
       actions:
-        action_type:
-          proposed_action: Action proposée
-          resource: Ressource
         index:
           description: "Lorsque les utilisateurs créent des propositions il peuvent accéder au tableau de bord de leur proposition, où vous pouvez proposer des ressources et recommandations pour soutenir leur idée."
           create: Créer une ressource ou une action
@@ -335,7 +309,6 @@ fr:
         form:
           submit_button: Sauvegarder
           help_text: Ecrire 0 pour que cette valeur ne soit pas prise en compte
-          published_proposal: Pour les propositions publiées?
           published_proposal_help_text: Cochez la case pour créer l'action pour les propositions publiées uniquement
       administrator_tasks:
         index:
@@ -361,7 +334,6 @@ fr:
     documents:
       new:
         title: "Mettre en ligne un document"
-        label_attachment: "Choisir le document"
         submit_button: "Mettre en ligne"
       index:
         new_link: "Ajouter un nouveau document"
@@ -428,9 +400,7 @@ fr:
           summary_placeholder: Bref résumé de la description
           description_placeholder: Ajouter une description du processus
           additional_info_placeholder: Ajouter n'importe quelle information supplémentaire que vous estimez utile
-          homepage: Description
           homepage_description: Ici vous pouvez expliquer le contenu du processus
-          homepage_enabled: Page d'accueil activée
           banner_title: Couleurs de l'en-tête
         index:
           create: Nouveau processus
@@ -513,9 +483,6 @@ fr:
           back: Retour
           title: Créer une nouvelle version
           submit_button: Créer une version
-        statuses:
-          draft: Brouillon
-          published: Publié
         table:
           title: Titre
           created_at: Créé le
@@ -540,7 +507,6 @@ fr:
             error: Erreur
         form:
           add_option: Ajouter une option
-          title: Question
           title_placeholder: Ajouter une question
           value_placeholder: Ajouter une réponse
           question_options: "Réponses possibles (optionnel, réponses ouvertes par défaut)"
@@ -689,7 +655,6 @@ fr:
         empty_newsletters: Aucun bulletin d'information à afficher
       new:
         title: Nouveau bulletin d'information
-        from: Adresse électronique qui apparaîtra comme expéditeur de la newsletter
       edit:
         title: Modifier le bulletin d'information
       show:
@@ -802,7 +767,6 @@ fr:
         title: "Groupe d’évaluateurs : %{group}"
         no_valuators: "Il n’y a aucun évaluateurs assignés à ce groupe"
       form:
-        name: "Nom du groupe"
         new: "Créer un groupe d'évaluateurs"
         edit: "Sauvegarder le groupe d'évaluateurs"
     poll_officers:
@@ -835,7 +799,6 @@ fr:
         shift: "Affectation"
         shifts: "Périodes de travail dans ce bureau de vote"
         date: "Date"
-        task: "Tâche"
         edit_shifts: Modifier les périodes de travail
         new_shift: "Nouvelle affectation"
         no_shifts: "Ce bureau de vote n'a aucune période de travail"
@@ -932,7 +895,6 @@ fr:
         title: "Modifier la question"
       new:
         title: "Créer une question"
-        poll_label: "Vote"
       answers:
         images:
           add_image: "Ajouter une image"
@@ -1009,8 +971,6 @@ fr:
         no_location: "Aucun emplacement"
       new:
         title: "Nouveau bureau de vote"
-        name: "Nom"
-        location: "Lieu"
         submit_button: "Créer un bureau de vote"
       edit:
         title: "Modifier le bureau de vote"
@@ -1273,8 +1233,6 @@ fr:
         title: Sujets de propositions
         topic: Sujet
         help: "Quand un utilisateur créé une proposition, les thèmes suivants sont proposés comme tags par défaut."
-      name:
-        placeholder: Saisir le nom du sujet
     users:
       columns:
         name: Nom
@@ -1365,8 +1323,6 @@ fr:
           created_at: Créé le
           status: Statut
           updated_at: Mis-à-jour le
-          status_draft: Brouillon
-          status_published: Publié
           title: Titre
           slug: Slug
           cards_title: Mosaïque
