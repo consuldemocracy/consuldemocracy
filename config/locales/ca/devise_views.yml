@@ -50,7 +50,6 @@ ca:
           title: Registrar-se com organització / col·lectiu
         success:
           back_to_index: Entès, tornar a la pàgina principal
-          instructions_3_html: Un cop confirmat, podràs començar a participar com a col·lectiu no verificat.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
@@ -120,5 +119,4 @@ ca:
         success:
           back_to_index: Entès, tornar a la pàgina principal
           instructions_1_html: Si us plau <b>revisa el teu correu electrònic</b> - t'hem enviat un <b>enllaç per confirmar el teu compte.</b>
-          instructions_2_html: Un cop confirmat, podràs començar a participar-hi.
           thank_you_html: Gràcies per registrar-te al web. Ara has de <b>confirmar el teu correu.</b>
