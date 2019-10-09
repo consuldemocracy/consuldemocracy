@@ -19,7 +19,6 @@ fi:
     menu: Valikko
   comments:
     comments_closed: Kommentointi on suljettu
-    verify_account: vahvista tilisi
     comment:
       admin: Järjestelmänvalvoja
       author: Tekijä
@@ -64,8 +63,6 @@ fi:
     edit:
       form:
         submit_button: Tallenna muutokset
-    form:
-      tags_label: Aiheet
     index:
       orders:
         confidence_score: korkeimmin arvioitu
@@ -88,7 +85,6 @@ fi:
         other: "%{count} kommenttia"
       comments_title: Kommentit
       edit_debate_link: Muokkaa
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
       share: Jaa
       author: Tekijä
     update:
@@ -226,7 +222,6 @@ fi:
         one: 1 kommentti
         other: "%{count} kommenttia"
       comments_tab: Kommentit
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet
       share: Jaa
@@ -250,9 +245,6 @@ fi:
         title: Äänestys
     show:
       comments_tab: Kommentit
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
-      signin: Kirjaudu sisään
-      signup: Rekisteröidy
       verify_link: "vahvista tilisi"
       more_info_title: "Lisää tietoa"
       documents: Asiakirjat
@@ -268,7 +260,6 @@ fi:
   proposal_notifications:
     new:
       title: "Lähetä viesti"
-      body_label: "Viesti"
       submit_button: "Lähetä viesti"
   shared:
     edit: "Muokkaa"
@@ -303,7 +294,6 @@ fi:
         see_all: "Näytä kaikki"
     tags_cloud:
       categories: "Kategoriat"
-    target_blank_html: " (linkit avautuvat uudessa ikkunassa)"
     share: Jaa
     orbit:
       next_slide: Seuraava dia
@@ -318,12 +308,8 @@ fi:
   users:
     direct_messages:
       new:
-        body_label: Viesti
         submit_button: Lähetä viesti
         title: Lähetä yksityisviesti käyttäjälle %{receiver}
-        verify_account: vahvista tilisi
-        signin: kirjaudu
-        signup: rekisteröidy
     show:
       deleted: Poistettu
       deleted_proposal: Tämä ehdotus on poistettu
@@ -336,9 +322,6 @@ fi:
   votes:
     agree: Hyväksyn
     disagree: En hyväksy
-    signin: Kirjaudu sisään
-    signup: Rekisteröidy
-    verify_account: vahvista tilisi
   welcome:
     feed:
       see_all_proposals: Näytä kaikki ehdotukset
@@ -371,6 +354,4 @@ fi:
       title: Järjestelmänvalvonta
   annotator:
     help:
-      text_sign_in: kirjaudu
-      text_sign_up: rekisteröidy
       title: Kuinka voin kommentoida tätä asiakirjaa?
