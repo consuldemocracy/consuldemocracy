@@ -103,8 +103,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索辩论...
         title: 搜索
-      search_results_html:
-        other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order: 排序依据
       start_debate: 开始辩论
       title: 辩论
@@ -154,7 +152,6 @@ zh-CN:
     direct_message: 私人信息
     error: 错误
     errors: 错误
-    not_saved_html: "阻止%{resource} 被保存。<br>请检查标记的字段来了解如何更正它们："
     policy: 隐私政策
     proposal: 提议
     proposal_notification: "通知"
@@ -324,8 +321,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索提议...
         title: 搜索
-      search_results_html:
-        other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order: 排序依据
       select_order_long: "您正在查看的提议是依据："
       start_proposal: 创建提议
@@ -426,7 +421,6 @@ zh-CN:
       back: 返回投票
       cant_answer_not_logged_in: "您必须%{signin} 或者%{signup} 才可以参与。"
       comments_tab: 评论
-      cant_answer_verify_html: "您必须%{verify_link} 才能回答。"
       verify_link: "验证您的账户"
       cant_answer_expired: "此投票已经结束。"
       cant_answer_wrong_geozone: "此问题在您的地理区域里不可用。"
@@ -459,7 +453,6 @@ zh-CN:
     new:
       title: "发送信息"
       submit_button: "发送信息"
-      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong>，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
       proposal_page: "提议页面"
     show:
       back: "返回我的活动"
@@ -498,17 +491,6 @@ zh-CN:
     follow: "跟随"
     following: "跟随着"
     follow_entity: "跟随%{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "您现在正在跟随此投资项目！</br>我们会在变更发生时通知您，以便您了解最新动态。"
-        destroy:
-          notice_html: "您已经停止跟随此投资项目！</br>您将不再接收到有关此项目的通知。"
-      proposal:
-        create:
-          notice_html: "现在您正在跟随此公民提议！</br>我们会在变更发生时通知您，以便您了解最新动态。"
-        destroy:
-          notice_html: "您已经停止跟随此公民提议！</br>您将不再接收到有关此提议的通知。"
     hide: 隐藏
     print:
       print_button: 打印此信息
