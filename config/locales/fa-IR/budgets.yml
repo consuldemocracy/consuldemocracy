@@ -10,7 +10,6 @@ fa:
         voted_html:
           one: "\nشما به <span> یک </ span> سرمایه گذاریرای داده اید."
           other: "\nشما به <span> %{count} </ span> سرمایه گذاری هارای داده اید."
-        voted_info_html: "شما می توانید رای خود را در هر زمان تا پایان این مرحله تغییر دهید. <br> بدون نیاز به صرف تمام پول در دسترس."
         zero: شما به پروژه سرمایه گذاری رای نداده اید
       reasons_for_not_balloting:
         not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
@@ -64,7 +63,6 @@ fa:
         map_location: "نقشه محل"
         map_location_instructions: "نقشه محل حرکت و نشانگر محل."
         map_remove_marker: "حذف  نشانگر نقشه"
-        location: "اطلاعات اضافی مکان"
         map_skip_checkbox: "این سرمایه گذاری مکان خاصی ندارد و من از آن آگاه نیستم."
       index:
         title: بودجه مشارکتی
@@ -90,11 +88,8 @@ fa:
           check_ballot_link: "رای من را چک کن"
           zero: شما به هیچ پروژه سرمایه گذاری در این گروه رأی نداده اید.
           verified_only: "برای ایجاد یک سرمایه گذاری جدید بودجه%{verify}"
-          verify_account: "حساب کاربری خودراتایید کنید\n"
           create: "ایجاد بودجه سرمایه گذاری \n"
           not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
-          sign_in: "ورود به برنامه"
-          sign_up: "ثبت نام"
           by_feasibility: "امکان پذیری\n"
           feasible: پروژه های قابل اجرا
           unfeasible: پروژه های غیرقابل اجرا
