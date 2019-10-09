@@ -26,10 +26,6 @@ fr:
         assigned_to: "Assigné à %{valuator}"
         title: Propositions d'investissement
         edit: Éditer le rapport
-        valuators_assigned:
-          one: Évaluateur assigné
-          other: "%{count} évaluateurs assignés"
-        no_valuators_assigned: Aucun évaluateur affecté
         table_id: ID
         table_title: Titre
         table_heading_name: Nom du titre
@@ -60,16 +56,9 @@ fr:
         dossier: Rapport
         price_html: "Coût (%{currency}) <small>(données publiques)</small>"
         price_first_year_html: "Coût durant la première année (%{currency}) <small>(optionnel, données non publiques)</small>"
-        price_explanation_html: Informations sur le coût <small>(optionnel, données publiques)</small>
         feasibility: Faisabilité
-        feasible: Faisable
-        unfeasible: Infaisable
-        undefined_feasible: Indécis
-        feasible_explanation_html: Informations sur la non-viabilité <small>(le cas échéant, données publiques)</small>
-        valuation_finished: Évaluation terminée
         valuation_finished_alert: "Êtes-vous sûr de vouloir marquer ce rapport comme étant achevé ? Si vous le faites, il nne pourra plus être modifié."
         not_feasible_alert: "Un courriel sera envoyé immédiatement à l’auteur du projet avec le rapport de non-faisabilité."
-        duration_html: Durée d'exécution
         save: Sauvegarder des changements
       notice:
         valuate: "Informations actualisées"
