@@ -16,7 +16,6 @@ id:
         title: "Perdebatan"
         description: "Di bagian %{link} anda dapat hadir dan berbagi pendapat dengan orang lain mengenai masalah yang menjadi perhatiananda terkait dengan kota. Ini juga merupakan tempat untuk menghasilkan gagasan bahwa melalui bagian lain dari %{org} mengarah pada tindakan nyata oleh Dewan Kota."
         link: "perdebatan warga"
-        feature_html: "Anda bisa membuka perdebatan, berkomentar dan menilainya dengan <strong>saya setuju</strong> atau <strong> Saya tidak setuju </strong>. Untuk itu anda harus %{link}."
         feature_link: "mendaftar masuk %{org}"
         image_alt: "Tombol untuk menilai perdebatan"
         figcaption: '"Saya setuju" dan "Saya tidak setuju" untuk menilai debat.'
