@@ -12,7 +12,6 @@ he:
           two: "הצבעת ל- <span>%{count}</span>השקעות."
           many: "הצבעת ל- <span>%{count}</span>השקעות."
           other: "הצבעת ל- <span>%{count}</span>השקעות."
-        voted_info_html: "ההצבעה שלך מאושרת!"
         voted_info_2: "אבל אתה יכול לשנות את ההצבעה שלך בכל עת עד שלב זה יסגר."
         zero: טרם הצבעת לפרויקט כלשהו.
       reasons_for_not_balloting:
@@ -71,7 +70,6 @@ he:
         map_location: "מיקום מפה"
         map_location_instructions: "נווט במפה למיקום ומקם את הסמן."
         map_remove_marker: "הסר סמן מפה"
-        location: "פרטים נוספים על המיקום"
         map_skip_checkbox: "להשקעה זו אין מיקום מדויק או שאיני מודע למיקום."
       index:
         title: מימון השתתפותי
@@ -101,11 +99,8 @@ he:
           check_ballot_link: "בדוק ואשר את ההצבעה שלי"
           zero: לא נעשתה הצבעה עבור פרויקט השקעה.
           verified_only: "ליצירת פרויקט השקעה חדש %{verify}."
-          verify_account: "אמת את החשבון"
           create: "יצירת תקציב להשקעה"
           not_logged_in: "כדי ליצור תקציב השקעה חדש עליך ל- %{sign_in} או ל - %{sign_up}."
-          sign_in: "התחבר"
-          sign_up: "צור חשבון"
           by_feasibility: על פי ההיתכנות
           feasible: פרויקטים ברי ביצוע
           unfeasible: פרויקטים שאינם ברי ביצוע
