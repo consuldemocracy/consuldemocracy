@@ -4,7 +4,6 @@ fi:
     form:
       title: Kuvaava kuva
       title_placeholder: Lisää kuvaava otsikko kuvalle
-      attachment_label: Valitse kuva
       delete_button: Poista kuva
       note: "Voit lisätä yhden kuvan muodossa: %{accepted_content_types}, jonka koko on korkeintaan %{max_file_size} MB."
       add_new_image: Lisää kuva
