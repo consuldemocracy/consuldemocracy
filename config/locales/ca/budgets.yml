@@ -10,7 +10,6 @@ ca:
         voted_html:
           one: "Has votat <span>una</span> proposta."
           other: "Has votat <span>%{count}</span> propostes."
-        voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
         not_logged_in: Necessites %{signin} o %{signup}.
@@ -67,10 +66,7 @@ ca:
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió.
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
-          verify_account: "verifica el teu compte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sessió"
-          sign_up: "registrar-"
           by_feasibility: Per viabilitat
           feasible: Veure les propostes d'inversió viables
           unfeasible: Veure les propostes d'inversió inviables
