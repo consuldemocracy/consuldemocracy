@@ -17,9 +17,6 @@ id:
     letter:
       alert:
         unconfirmed_code: Anda belum memasukkan kode verifikasi
-      create:
-        flash:
-          success_html: Terima kasih untuk meminta <b>kode pengamanan maksimum (hanya diperlukan untuk suara akhir)</b> anda. Dalam beberapa hari kami akan mengirimkannya ke alamat yang ditampilkan dalam data yang kami miliki di berkas. Harap diingat itu, jika anda lebih suka, anda dapat mengumpulkan kode anda dari setiap %{offices}.
       edit:
         see_all: Melihat proposal
         title: Surat yang diminta
@@ -49,7 +46,6 @@ id:
         accept_terms_text_title: Saya menerima syarat dan ketentuan dari akses Sensus
         document_number: Nomor Dokumen
         document_number_help_title: Bantuan
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P"
         document_type:
           passport: Paspor
           residence_card: Kartu kediaman
@@ -73,7 +69,6 @@ id:
         title: Konfirmasi kode keamanan
       new:
         phone: Masukan nomor ponsel anda untuk menerima kode
-        phone_format_html: "<strong><em>(Contoh: 612345678 atau +34612345678)</em></strong>"
         phone_placeholder: "Contoh: 612345678 or +34612345678"
         submit_button: Kirim
         title: Kirim kode konfirmasi
