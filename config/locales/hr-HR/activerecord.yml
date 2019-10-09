@@ -233,9 +233,9 @@ hr:
         password_confirmation: "Potvrđena zaporka"
         password: "Zaporka"
         current_password: "Trenutna zaporka"
-        phone_number: "Broj telefona"
         official_position: "Službena pozicija"
         official_level: "Službena razina"
+        phone_number: "Broj telefona"
         redeemable_code: "Verifikacijski kod primljen preko emaila"
       organization:
         name: "Ime organizacije"
@@ -335,10 +335,10 @@ hr:
         text: Komentar
       document:
         title: Naziv
-        attachment: Prilog
+        attachment: "Prilog"
       image:
         title: Naziv
-        attachment: Prilog
+        attachment: "Prilog"
       poll/question/answer:
         title: Odgovor
         description: Opis
@@ -351,7 +351,7 @@ hr:
       newsletter:
         segment_recipient: Primatelji
         subject: Predmet
-        from: Formular
+        from: "Formular"
         body: Sadržaj emaila
       admin_notification:
         segment_recipient: Primatelji
