@@ -26,11 +26,6 @@ pl:
           with_inactive: Nieaktywny
         preview: Podgląd
       banner:
-        title: Tytuł
-        description: Opis
-        target_url: Link
-        post_started_at: Post zaczął się o
-        post_ended_at: Post zakończył się o
         sections_label: Sekcje, w których się pojawią
         sections:
           homepage: Strona główna
@@ -116,7 +111,6 @@ pl:
       headings_name: "Nagłówki"
       headings_edit: "Edytowanie nagłówków"
       headings_manage: "Zarządzanie nagłówkami"
-      max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
       no_groups: "Brak grup."
       amount:
         one: "Istnieje 1 grupa"
@@ -133,12 +127,10 @@ pl:
       form:
         create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
-        name: "Nazwa grupy"
         submit: "Zapisz grupę"
       index:
         back: "Wróć do budżetów"
     budget_headings:
-      name: "Nazwa"
       no_headings: "Nie ma nagłówków."
       amount:
         one: "Jest 1 nagłówek"
@@ -153,14 +145,8 @@ pl:
         success_notice: "Nagłówek pomyślnie usunięty"
         unable_notice: "Nie można zniszczyć nagłówek, który jest skojarzony z inwestycją"
       form:
-        name: "Nazwa nagłówka"
-        amount: "Ilość"
-        population: "Populacja (opcjonalnie)"
         population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
-        latitude: "Szerokość geograficzna (opcjonalnie)"
-        longitude: "Długość geograficzna (opcjonalnie)"
         coordinates_info: "Jeśli podane są szerokość i długość geograficzna, strony inwestycji dla tego nagłówka będzie zawierać mapę. Mapa będzie wyśrodkowany przy użyciu tych współrzędnych."
-        allow_content_block: "Pozwól na załączenie treści"
         content_blocks_info: "Jeśli załączanie treści jest zaznaczone, będzie mógł/a stworzyć treści związane z tym Nagłówkiem: Ustawienia > Niestandardowe bloki Zawartość pojawi się na stronie inwestycji dla tego nagłówka."
         create: "Utwórz nowy nagłówek"
         edit: "Edytuj nagłówek"
@@ -169,13 +155,8 @@ pl:
         back: "Powrót do grup"
     budget_phases:
       edit:
-        start_date: Data rozpoczęcia
-        end_date: Data zakończenia
-        summary: Podsumowanie
         summary_help_text: Ten tekst będzie informował użytkownika o fazie. Aby wyświetlić go, nawet jeśli faza nie jest aktywna, zaznacz pole wyboru poniżej
-        description: Opis
         description_help_text: Ten tekst pojawi się w nagłówku, gdy faza jest aktywna
-        enabled: Włączona faza
         enabled_help_text: Faza ta będzie publiczna na osi czasu fazy budżetowej, a także będzie aktywna do jakichkolwiek innych celów
         save_changes: Zapisz zmiany
     budget_investments:
@@ -261,17 +242,13 @@ pl:
       edit:
         classification: Klasyfikacja
         compatibility: Zgodność
-        mark_as_incompatible: Oznacz jako niezgodne
         selection: Wybór
-        mark_as_selected: Oznacz jako wybrane
         assigned_valuators: Wyceniający
         select_heading: Wybierz nagłówek
         submit_button: Zaktualizuj
         user_tags: Użytkownik przypisał tagi
-        tags: Tagi
         tags_placeholder: "Wypisz pożądane tagi, oddzielone przecinkami (,)"
         undefined: Niezdefiniowany
-        user_groups: "Grupy"
       search_unfeasible: Szukaj niewykonalne
     statuses:
       index:
@@ -354,9 +331,7 @@ pl:
           summary_placeholder: Krótkie podsumowanie opisu
           description_placeholder: Dodaj opis procesu
           additional_info_placeholder: Dodaj dodatkowe informacje, które uważasz za przydatne
-          homepage: Opis
           homepage_description: Tutaj można wyjaśnić kontekst procesu
-          homepage_enabled: Strona domowa włączona
           banner_title: Kolory nagłówków
         index:
           create: Nowy proces
@@ -442,9 +417,6 @@ pl:
           back: Wróć
           title: Utwórz nową wersję
           submit_button: Wróć
-        statuses:
-          draft: Projekt
-          published: Opublikowany
         table:
           title: Tytuł
           created_at: Utworzony w
@@ -469,7 +441,6 @@ pl:
             error: Błąd
         form:
           add_option: Dodaj opcję
-          title: Pytanie
           title_placeholder: Dodaj pytanie
           value_placeholder: Dodaj zamkniętą odpowiedź
           question_options: "Możliwe odpowiedzi (opcjonalne, domyślnie otwarte odpowiedzi)"
@@ -615,7 +586,6 @@ pl:
         empty_newsletters: Nie ma żadnych biuletynów do pokazania
       new:
         title: Nowy biuletyn
-        from: Adres e-mail, który pojawi się jako wysłanie biuletynu
       edit:
         title: Edytuj biuletyn
       show:
@@ -757,7 +727,6 @@ pl:
         title: "Grupa wyceniających: %{group}"
         no_valuators: "Ta grupa nie posiada przypisanych wyceniających"
       form:
-        name: "Nazwa grupy"
         new: "Utwórz grupę wyceniających"
         edit: "Zapisz grupę wyceniających"
     poll_officers:
@@ -790,7 +759,6 @@ pl:
         shift: "Przydział"
         shifts: "Zmiany w tej budce wyborczej"
         date: "Data"
-        task: "Zadanie"
         edit_shifts: Edytuj zmiany
         new_shift: "Nowa zmiana"
         no_shifts: "Ta kabina wyborcza nie ma zmian"
@@ -848,7 +816,6 @@ pl:
         title: "Opis sondy"
       form:
         description:
-          text: "Opis"
           help_text: "Ten tekst będzie wyświetlany w nagłówku strony sondy. Można go użyć do dodania kontekstu w stosunku do aktywnych sond."
     polls:
       index:
@@ -899,7 +866,6 @@ pl:
       new:
         title: "Utwórz Pytanie"
         title_proposal: "Stwórz pytanie"
-        poll_label: "Sondaż"
       answers:
         images:
           add_image: "Dodaj obraz"
@@ -979,8 +945,6 @@ pl:
         no_location: "Brak Lokalizacji"
       new:
         title: "Nowe stanowisko"
-        name: "Nazwa"
-        location: "Lokalizacja"
         submit_button: "Utwórz stanowisko"
       edit:
         title: "Edytuj stanowisko"
@@ -1228,8 +1192,6 @@ pl:
         title: Tematy wniosków
         topic: Temat
         help: "Gdy użytkownik tworzy wniosek, sugerowane są następujące tematy jako tagi domyślne."
-      name:
-        placeholder: Wpisz nazwę tematu
     users:
       columns:
         name: Nazwa
@@ -1320,8 +1282,6 @@ pl:
           created_at: Utworzony w
           status: Status
           updated_at: Aktualizacja w
-          status_draft: Projekt
-          status_published: Opublikowany
           title: Tytuł
           slug: Ścieżka
           cards_title: Karty
