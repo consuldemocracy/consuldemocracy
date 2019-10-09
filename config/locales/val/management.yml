@@ -32,8 +32,6 @@ val:
       index:
         title: Gestió
         info: Des d'ací pots gestionar usuaris a través de les accions llistades en el menú de l'esquerra.
-    document_number: Número de document
-    document_type_label: Tipus de document
     document_verifications:
       already_verified: Este compte d'usuari ja està verificat.
       has_no_account_html: Per a crear un usuari entra %{link} i fes clic en la opció <strong>'Registrar-se'</strong> en la part superior dreta de la pantalla.
