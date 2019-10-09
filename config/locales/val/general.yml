@@ -2,8 +2,6 @@ val:
   account:
     show:
       change_credentials_link: Canviar les meues dades d'acces
-      email_on_comment_label: Rebre un correu electrònic quan algú comenta en les meues propostes o debats
-      email_on_comment_reply_label: Rebre un correu electrònic quant algú contesta els meus comentaris
       erase_account_link: Eliminar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
@@ -11,18 +9,10 @@ val:
       organization_responsible_name_placeholder: Representant de l'asociació/colectiu
       personal: Dades personals
       phone_number_label: Telèfon
-      public_activity_label: Mostrar públicament la meua llista d'activitats
-      public_interests_label: Mostrar les etiquetes dels elements que segueixc públics
       public_interests_my_title_list: Etiquetes d'elements que segueixes
       public_interests_user_title_list: Etiquetes d'elements que segueix aquest usuari
       save_changes_submit: Guardar canvis
-      subscription_to_website_newsletter_label: Rebre correus electrònics amb informació interesant sobre la web
-      email_on_direct_message_label: Rebre correus electrònics amb missatges privats
-      email_digest_label: Rebre un resum de notificacions sobre propostes
-      official_position_badge_label: Mostrar etiqueta de tipus d'usuari
       recommendations: Recomanacions
-      show_debates_recommendations: Mostrar recomanacions de debats
-      show_proposals_recommendations: Mostrar recomanacions de propostes
       title: El meu compte
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
@@ -41,7 +31,6 @@ val:
   comments:
     comments_closed: Els comentaris estan tancats
     verified_only: Per a participar %{verify_account}
-    verify_account: verifica el teu compte
     comment:
       admin: Administrador
       author: Autor
@@ -95,7 +84,6 @@ val:
     form:
       debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
-      tags_label: Temes
       tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
     index:
       featured_debates: Destacades
@@ -156,7 +144,6 @@ val:
       comments_title: Comentaris
       edit_debate_link: Editar
       flag: Este debat ha sigut marcat com a inapropiat per alguns usuaris.
-      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       share: Compartir
       author: Autor
     update:
@@ -261,7 +248,6 @@ val:
   map:
     title: "Districtes"
     proposal_for_district: "Crea una proposta per al teu districte"
-    select_district: Ámbit d'actuació
     start_proposal: Crea una proposta
   omniauth:
     facebook:
@@ -296,7 +282,6 @@ val:
     retire_form:
       title: Retirar proposta
       warning: "Si segueixes avant la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la lista principal, i apareixerà un missatge per a tots els usuaris avisant-los de que l'autor considera que esta proposta no ha de seguir rebent avals"
-      retired_reason_label: Raó per la que es retira la proposta
       retired_reason_blank: Selecciona una opció
       retired_explanation_placeholder: Explica breument per qué consideres que esta proposta no ha de recollir més avals
       submit_button: Retirar proposta
@@ -307,14 +292,8 @@ val:
       done: Realitzades
       other: Altres
     form:
-      geozone: Ámbit d'actuació
-      proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
-      proposal_summary: Resum de la proposta
       proposal_summary_note: "(màxim 200 caracters)"
-      proposal_text: Texte desenvolupat de la proposta
-      proposal_title: Títol
-      proposal_video_url: Enllaç a video extern
       proposal_video_url_note: Pots afegir un enllaç a Youtube o Vimeo
       tag_category_label: "Categoríes"
       tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
@@ -418,7 +397,6 @@ val:
         other: "%{count} Comentaris"
       comments_tab: Comentaris
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
-      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       notifications_tab: Notificacions
       milestones_tab: Seguiments
       retired_warning: "L'autor d'esta proposta considera que ja no ha de seguir recollint avals."
@@ -465,9 +443,6 @@ val:
       back: Tornar a les votacions
       cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per a participar."
       comments_tab: Comentaris
-      login_to_comment: Necessites %{signin} o %{signup} per a comentar.
-      signin: Iniciar sessió
-      signup: Registrar-te
       cant_answer_verify_html: "Si us plau %{verify_link} per a poder respondre."
       verify_link: "verifica el teu compte"
       cant_answer_expired: "Esta votació ha acabat."
@@ -500,8 +475,6 @@ val:
   proposal_notifications:
     new:
       title: "Enviar missatge"
-      title_label: "Títol"
-      body_label: "Missatge"
       submit_button: "Enviar missatge"
       info_about_receivers_html: "Este missatge s'enviarà a <strong>%{count} usuaris</strong> i es publicarà en %{proposal_page}.<br>Els missatges no s'envien inmediatament, els usuaris rebran periòdicament un correu electrònic amb totes les notificacions de propostes."
       proposal_page: "la pàgina de la proposta"
@@ -582,7 +555,6 @@ val:
       districts: "Districtes"
       districts_list: "Llista de districtes"
       categories: "Categoríes"
-    target_blank_html: " (s'obri en una nova finestra)"
     you_are_in: "Estàs en"
     unflag: Desfer denuncia
     unfollow_entity: "Deixar de seguir %{entity}"
@@ -628,16 +600,10 @@ val:
   users:
     direct_messages:
       new:
-        body_label: Missatge
         direct_messages_bloqued: "Este usuari ha decidit no rebre missatges privats"
         submit_button: Enviar missatge
         title: Enviar missatge privat a %{receiver}
-        title_label: Títol
         verified_only: Per a enviar un missatge privat %{verify_account}
-        verify_account: verifica el teu compte
-        authenticate: Necessites %{signin} o %{signup} per a continuar.
-        signin: iniciar sessió
-        signup: registrar-te
       show:
         receiver: Missatge enviat a %{receiver}
     show:
@@ -680,12 +646,8 @@ val:
     comment_unauthenticated: Necessites %{signin} o %{signup} per a votar.
     disagree: No estic d'acord
     organizations: Les organitzacions no poden votar
-    signin: Iniciar sessió
-    signup: Registrar-te
     supports: Avals
-    unauthenticated: Necessites %{signin} o %{signup}.
     verified_only: Les propostes d'inversió només poden ser votades per usuaris verificats, %{verify_account}.
-    verify_account: verifica el teu compte
     budget_investments:
       not_logged_in: Necessites %{signin} o %{signup}.
       not_verified: El projectes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
@@ -763,6 +725,4 @@ val:
     help:
       alt: Selecciona el text que vols comentar i polsa el botó amb el llapis.
       text: Per a comentar este document has de %{sign_in} o %{sign_up}. Després selecciona el texte que vols comentar i polsa el botó amb el llapis.
-      text_sign_in: iniciar sessió
-      text_sign_up: registrar-te
       title: Com puc comentar aquest document?
