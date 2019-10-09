@@ -192,9 +192,9 @@ es:
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña"
         current_password: "Contraseña actual"
-        phone_number: "Teléfono"
         official_position: "Cargo público"
         official_level: "Nivel del cargo"
+        phone_number: "Teléfono"
         redeemable_code: "Código de verificación por carta (opcional)"
       organization:
         name: "Nombre de la organización"
@@ -294,10 +294,10 @@ es:
         text: Comentario
       document:
         title: Título
-        attachment: Archivo adjunto
+        attachment: "Archivo adjunto"
       image:
         title: Título
-        attachment: Archivo adjunto
+        attachment: "Archivo adjunto"
       poll/question/answer:
         title: Respuesta
         description: Descripción
@@ -310,7 +310,7 @@ es:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: Enviado por
+        from: "Enviado por"
         body: Contenido del email
       admin_notification:
         segment_recipient: Destinatarios
