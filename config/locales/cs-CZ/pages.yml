@@ -18,7 +18,6 @@ cs:
         title: "Debaty"
         description: "V sekci %{link} můžete prezentovat a sdílet svůj názor s ostatními lidmi k otázkám, které vás znepokojují ve vztahu k městu. Je také místem k vytváření nápadů, které prostřednictvím jiných částí %{org} vedou ke konkrétním opatřením vedení města."
         link: "Debaty"
-        feature_html: "Debaty můžete otevírat, komentovat je a hodnotit pomocí tlačítek <strong>Souhlasím</strong> nebo <strong>Nesouhlasím</strong>. Musíte být ale %{link}."
         feature_link: "registrováni na portále  %{org}"
         image_alt: "Tlačítka k vyhodnocení debat"
         figcaption: 'Tlačítka "souhlasím" a "nesouhlasím" k vyhodnocení debat.'
@@ -155,7 +154,6 @@ cs:
               description_column: Zmenšit velikost textu
       compatibility:
         title: Kompatibilita se standardy a vizuální design
-        description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
     titles:
       help: "Co je %{org}? - Zapojování občanů"
     verify:
