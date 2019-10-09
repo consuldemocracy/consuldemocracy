@@ -45,8 +45,6 @@ fr:
     budget_investment_created:
       subject: "Merci d'avoir créer une proposition !"
       title: "Merci d'avoir créer une proposition !"
-      intro_html: "Bonjour <strong>%{author}</strong>,"
-      text_html: "Merci d'avoir créer votre proposition <strong>%{investment}</strong> pour un budget participatif <strong>%{budget}</strong>."
       follow_html: "Nous vous tiendrons informés de l'avancement du processus, que vous pourrez également suivre sur <strong>%{link}</strong>."
       follow_link: "Budgets participatifs"
       sincerely: "Cordialement,"
