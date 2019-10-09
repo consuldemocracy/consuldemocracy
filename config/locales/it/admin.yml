@@ -26,11 +26,6 @@ it:
           with_inactive: Inattivo
         preview: Anteprima
       banner:
-        title: Titolo
-        description: Descrizione
-        target_url: Link
-        post_started_at: Post iniziato alle
-        post_ended_at: Post terminato alle
         sections_label: Sezioni in cui apparirà
         sections:
           homepage: Homepage
@@ -113,30 +108,17 @@ it:
       name: "Nominativo"
       headings_name: "Intestazione"
       headings_edit: "Modificare intestazioni"
-      max_votable_headings: "Numero massimo di voci che un utente può votare"
       form:
         edit: "Modifica gruppo"
-        name: "Nome del gruppo"
         submit: "Salva gruppo"
     budget_headings:
-      name: "Nominativo"
       form:
-        name: "Denominazione della voce di bilancio"
-        amount: "Importo"
-        population: "Popolazione (facoltativo)"
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
-        latitude: "Latitudine (opzionale)"
-        longitude: "Longitudine (Opzionale)"
         submit: "Salvare voce di bilancio"
     budget_phases:
       edit:
-        start_date: Data di inizio
-        end_date: Data di conclusione
-        summary: Sommario
         summary_help_text: Questo paragrafo darà agli utenti informazioni sulla fase. Per renderlo visibile anche se la fase non risulta attiva, selezionare la spunta sottostante
-        description: Descrizione
         description_help_text: Questo paragrafo apparirà nell’intestazione quando la fase risulterà attiva
-        enabled: Fase abilitata
         enabled_help_text: Questa fase sarà visibile a tutti nella sequenza temporale delle fasi del bilancio e risulterà attiva ad ogni altro fine
         save_changes: Salva modifiche
     budget_investments:
@@ -223,17 +205,13 @@ it:
       edit:
         classification: Classificazione
         compatibility: Compatibilità
-        mark_as_incompatible: Contrassegnare come incompatibile
         selection: Selezione
-        mark_as_selected: Contrassegnare come selezionato
         assigned_valuators: Valutatori
         select_heading: Selezionare intestazione
         submit_button: Aggiorna
         user_tags: Etichette assegnate dall’utente
-        tags: Etichette
         tags_placeholder: "Scrivere i tag separati da virgole (,)"
         undefined: Non definito
-        user_groups: "Gruppi"
       search_unfeasible: Ricerca irrealizzabile
     statuses:
       index:
@@ -310,7 +288,6 @@ it:
           summary_placeholder: Breve riassunto della descrizione
           description_placeholder: Aggiungi una descrizione del procedimento
           additional_info_placeholder: Aggiungi ulteriori informazioni che ritieni utili
-          homepage: Descrizione
         index:
           create: Nuovo procedimento
           delete: Eliminare
@@ -387,9 +364,6 @@ it:
           back: Indietro
           title: Creare una nuova versione
           submit_button: Crea versione
-        statuses:
-          draft: Bozza
-          published: Pubblicato
         table:
           title: Titolo
           created_at: Creato al
@@ -414,7 +388,6 @@ it:
             error: Errore
         form:
           add_option: Aggiungere l'opzione
-          title: Quesito
           title_placeholder: Aggiungi quesito
           value_placeholder: Aggiungi una risposta chiusa
           question_options: "Possibile risposta (facoltativa, risposta aperta di default)"
@@ -557,7 +530,6 @@ it:
         empty_newsletters: Non ci sono newsletter da visualizzare
       new:
         title: Nuova newsletter
-        from: Indirizzo e-mail che comparirà come mittente della newsletter
       edit:
         title: Modifica newsletter
       show:
@@ -660,7 +632,6 @@ it:
         title: "Gruppo di stimatori: %{group}"
         no_valuators: "Non risultano stimatori assegnati a questo gruppo"
       form:
-        name: "Nome del gruppo"
         new: "Crea gruppo di stimatori"
         edit: "Salvare il gruppo di stimatori"
     poll_officers:
@@ -693,7 +664,6 @@ it:
         shift: "Assegnazione"
         shifts: "Turni per questo seggio"
         date: "Data"
-        task: "Attività"
         edit_shifts: Modifica turni
         new_shift: "Nuovo turno"
         no_shifts: "Questo seggio non ha turni"
@@ -790,7 +760,6 @@ it:
         title: "Modifica la domanda"
       new:
         title: "Creare la domanda"
-        poll_label: "Sondaggio"
       answers:
         images:
           add_image: "Aggiungi immagine"
@@ -867,8 +836,6 @@ it:
         no_location: "Nessuna Posizione"
       new:
         title: "Nuovo seggio"
-        name: "Nominativo"
-        location: "Luogo"
         submit_button: "Creare seggio"
       edit:
         title: "Modificare il seggio"
@@ -1113,8 +1080,6 @@ it:
         title: Temi di proposta
         topic: Argomento
         help: "Quando un utente crea una proposta, gli argomenti seguenti sono suggerito come etichette predefinite."
-      name:
-        placeholder: Digitare il nome del tema
     users:
       columns:
         name: Nominativo
@@ -1199,8 +1164,6 @@ it:
           created_at: Creato al
           status: Stato
           updated_at: Aggiornato al
-          status_draft: Bozza
-          status_published: Pubblicato
           title: Titolo
           slug: Slug
           cards_title: Schede
