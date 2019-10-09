@@ -2,8 +2,6 @@ fa:
   account:
     show:
       change_credentials_link: اعتبار من را تغییر دهید
-      email_on_comment_label: وقتی کسی در مورد پیشنهادها یا بحث های من نظر می دهد، از طریق ایمیل به من اطلاع دهید
-      email_on_comment_reply_label: وقتی کسی به نظرات من پاسخ می دهد، از طریق ایمیل به من اطلاع دهید
       erase_account_link: پاک کردن حساب
       finish_verification: تایید کامل
       notifications: اطلاعیه ها
@@ -11,7 +9,6 @@ fa:
       organization_responsible_name_placeholder: نماینده سازمان/جمعی
       personal: اطلاعات شخصی
       phone_number_label: شماره تلفن
-      public_activity_label: نگه داشتن لیست فعالیت های عمومی  من
       save_changes_submit: ذخیره تغییرات
       recommendations: توصیه ها
       title: حساب من
@@ -32,7 +29,6 @@ fa:
   comments:
     comments_closed: نظرات بسته شده اند
     verified_only: شرکت %{verify_account}
-    verify_account: "حساب کاربری خودراتایید کنید\n"
     comment:
       admin: مدیران
       author: نویسنده
@@ -80,7 +76,6 @@ fa:
     form:
       debate_title: عنوان بحث
       tags_instructions: برچسب این بحث.
-      tags_label: موضوع ها
       tags_placeholder: "برچسبهایی را که میخواهید از آن استفاده کنید، با کاما ('،') جدا کنید"
     index:
       featured_debates: "ویژه\n"
@@ -120,7 +115,6 @@ fa:
         other: "%{count} نظرات"
       comments_title: توضیحات
       edit_debate_link: ویرایش
-      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
       share: "اشتراک گذاری\n"
       author: نویسنده
     update:
@@ -170,7 +164,6 @@ fa:
       title: اطلاعیه ها
   map:
     title: "نواحی"
-    select_district: حوزه عملیات
   omniauth:
     facebook:
       name: فیس بوک
@@ -186,8 +179,6 @@ fa:
     retire_options:
       unfeasible: غیر قابل پیش بینی
     form:
-      geozone: حوزه عملیات
-      proposal_title: عنوان پیشنهاد
       tag_category_label: "دسته بندی ها\n"
       tags_instructions: "برچسب این پیشنهاد. شما می توانید از دسته های پیشنهاد شده را انتخاب کنید یا خودتان را اضافه کنید"
       tags_label: برچسب ها
@@ -245,7 +236,6 @@ fa:
         one: 1 نظر
         other: "%{count} نظرات"
       comments_tab: توضیحات
-      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
       notifications_tab: اطلاعیه ها
       milestones_tab: نقطه عطف
       share: "اشتراک گذاری\n"
@@ -265,9 +255,6 @@ fa:
     show:
       cant_answer_not_logged_in: "شما باید %{signin} یا %{signup} کنید برای نظر دادن."
       comments_tab: توضیحات
-      login_to_comment: برای نظر دادن شما باید %{signin} یا %{signup} کنید .
-      signin: ورود به برنامه
-      signup: ثبت نام
       verify_link: "حساب کاربری خودراتایید کنید\n"
       more_info_title: "اطلاعات بیشتر"
       documents: اسناد
@@ -279,8 +266,6 @@ fa:
   proposal_notifications:
     new:
       title: "ارسال پیام"
-      title_label: "عنوان"
-      body_label: "پیام"
       submit_button: "ارسال پیام"
   shared:
     edit: "ویرایش"
@@ -336,14 +321,8 @@ fa:
   users:
     direct_messages:
       new:
-        body_label: پیام
         submit_button: ارسال پیام
         title: ارسال پیام خصوصی به %{receiver}
-        title_label: عنوان
-        verify_account: "حساب کاربری خودراتایید کنید\n"
-        authenticate: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
-        signin: ورود به برنامه
-        signup: ثبت نام
       show:
         receiver: ارسال پیام به %{receiver}
     show:
@@ -384,12 +363,8 @@ fa:
     agree: موافقم
     disagree: مخالفم
     organizations: سازمان ها مجاز به رای دادن نیستند
-    signin: ورود به برنامه
-    signup: ثبت نام
     supports: پشتیبانی ها
-    unauthenticated: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
     verified_only: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
-    verify_account: "حساب کاربری خودراتایید کنید\n"
     budget_investments:
       not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
       not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
@@ -463,6 +438,3 @@ fa:
   admin/widget:
     header:
       title: مدیر
-  annotator:
-    help:
-      text_sign_up: ثبت نام
