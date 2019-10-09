@@ -4,7 +4,6 @@ sv:
     form:
       title: Beskrivande bild
       title_placeholder: Lägg till en beskrivning för bilden
-      attachment_label: Välj bild
       delete_button: Ta bort bild
       note: "Du kan ladda upp bilder med följande filformat: %{accepted_content_types}. Bildens filstorlek får inte överstiga %{max_file_size} MB."
       add_new_image: Lägg till bild
