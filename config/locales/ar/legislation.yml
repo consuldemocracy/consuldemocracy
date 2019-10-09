@@ -22,9 +22,6 @@ ar:
         publish_comment: نشر التعليق
       form:
         phase_not_open: هذه المرحلة ليست مفتوحة
-        login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
-        signin: تسجيل الدخول
-        signup: تسجيل
       index:
         title: تعليقات
         comments_about: تعليقات حول
@@ -136,11 +133,8 @@ ar:
       participation:
         phase_not_open: هذه المرحلة ليست مفتوحة
         organizations: لا يُسمح للمنظمات بالمشاركة في النقاش
-        signin: تسجيل الدخول
-        signup: تسجيل
         unauthenticated: تحتاج الى %{signin} او %{signup} للمتابعة.
         verified_only: يمكن للمستخدمين الذين تم التحقق منهم فقط المشاركة %{verify_account}.
-        verify_account: التحقق من حسابك
         debate_phase_not_open: انتهت مرحلة النقاش ولم تعد الإجابات مقبولة
     shared:
       share: مشاركة
