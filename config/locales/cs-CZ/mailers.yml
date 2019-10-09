@@ -45,8 +45,6 @@ cs:
     budget_investment_created:
       subject: "Děkujeme za vytvoření investice!"
       title: "Děkujeme za vytvoření investice!"
-      intro_html: "Zdravíme uživatele <strong>%{author}</strong>,"
-      text_html: "Děkujeme za vytvoření <strong>%{investment} </strong> v rámci participativního rozpočtu <strong>%{budget}</strong>."
       follow_html: "Budeme vás informovat o tom jak postup probíhá a můžete ho také sledovat prostřednictvím tohoto odkazu <strong>%{link}</strong>."
       follow_link: "Prticipativní rozpočty"
       sincerely: "S pozdravem,"
