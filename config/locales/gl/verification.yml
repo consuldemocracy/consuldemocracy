@@ -17,9 +17,6 @@ gl:
     letter:
       alert:
         unconfirmed_code: Aínda non introduciches o código de confirmación
-      create:
-        flash:
-          success_html: Antes das votacións recibirás unha carta coas instrucións para verificar a túa conta.<br> Lembra que podes aforrar o envío verificándote presencialmente en calquera das %{offices}.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
@@ -49,7 +46,6 @@ gl:
         accept_terms_text_title: Acepto os termos de acceso ao Padrón
         document_number: Número de documento
         document_number_help_title: Axuda
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarxeta de residencia</strong>: X1234567P"
         document_type:
           passport: Pasaporte
           residence_card: Tarxeta de residencia
@@ -73,7 +69,6 @@ gl:
         title: SMS de confirmación
       new:
         phone: Introduce o teu teléfono móbil para recibir o código
-        phone_format_html: "<strong><em>(Exemplo: 612345678 ou +34612345678)</em></strong>"
         phone_note: Só usaremos o teu número de teléfono para o envío de códigos, nunca para chamarte.
         phone_placeholder: "Exemplo: 612345678 ou +34612345678"
         submit_button: Enviar
