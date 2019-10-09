@@ -25,11 +25,6 @@ fa:
           with_inactive: غیر فعال
         preview: پیش نمایش
       banner:
-        title: عنوان
-        description: توضیحات
-        target_url: لینک
-        post_started_at: پست شروع شد در
-        post_ended_at: پست پایان رسید در
         sections:
           homepage: صفحه اصلی
           debates: مباحثه
@@ -107,25 +102,15 @@ fa:
       name: "نام"
       form:
         edit: "ویرایش گروه"
-        name: "نام گروه"
         submit: "ذخیره گروه"
     budget_headings:
-      name: "نام"
       form:
-        name: "عنوان سرفصل"
-        amount: "مقدار"
-        population: "جمعیت (اختیاری)"
         population_info: "فیلد جمع آوری بودجه برای اهداف آماری در انتهای بودجه برای نشان دادن  هر بخش که نشان دهنده منطقه با جمعیتی است که رای داده است. فیلد اختیاری است، بنابراین اگر آن را خالی بگذارید اعمال نخواهد شد."
         submit: "ذخیره سرفصل"
     budget_phases:
       edit:
-        start_date: "تاریخ شروع\n"
-        end_date: تاریخ پایان
-        summary: خلاصه
         summary_help_text: این متن به کاربر در مورد فاز اطلاع می دهد. برای نشان دادن آن حتی اگر فاز فعال نیست، کادر انتخاب را در زیر انتخاب کنید
-        description: توضیحات
         description_help_text: هنگامی که فاز فعال است، این متن در هدر ظاهر می شود
-        enabled: فاز فعال
         enabled_help_text: این مرحله در زمانبندی فازهای بودجه عمومی و همچنین برای هر هدف دیگر فعال خواهد بود
         save_changes: ذخیره تغییرات
     budget_investments:
@@ -209,17 +194,13 @@ fa:
       edit:
         classification: طبقه بندی
         compatibility: سازگاری
-        mark_as_incompatible: علامت گذاری به عنوان ناسازگار
         selection: انتخاب
-        mark_as_selected: علامت گذاری به عنوان انتخاب شده
         assigned_valuators: ارزیاب ها
         select_heading: انتخاب عنوان
         submit_button: به روز رسانی
         user_tags: ' برچسب اختصاص داده شده به کاربر'
-        tags: برچسب ها
         tags_placeholder: "برچسبهایی را که میخواهید با کاما (،) جدا کنید"
         undefined: تعریف نشده
-        user_groups: "گروه ها"
       search_unfeasible: جستجو غیر قابل انجام است
     statuses:
       index:
@@ -281,7 +262,6 @@ fa:
           summary_placeholder: خلاصه توضیحات
           description_placeholder: اضافه کردن شرح فرآیند
           additional_info_placeholder: افزودن اطلاعات اضافی که در نظر شما مفید است
-          homepage: توضیحات
         index:
           create: فرآیند جدید
           delete: حذف
@@ -355,9 +335,6 @@ fa:
           back: برگشت
           title: ایجاد نسخه  جدید
           submit_button: ایجاد نسخه
-        statuses:
-          draft: ' پیش نویس'
-          published: منتشر شده
         table:
           title: عنوان
           created_at: "ایجاد شده در\n"
@@ -382,7 +359,6 @@ fa:
             error: خطا
         form:
           add_option: اضافه کردن گزینه
-          title: سوال
           value_placeholder: یک پاسخ بسته را اضافه کنید
         index:
           back: برگشت
@@ -582,7 +558,6 @@ fa:
         title: "گروه ارزیاب ها:%{group}"
         no_valuators: "هیچ ارزیاب اختصاصی برای این نظرسنجی وجود دارد."
       form:
-        name: "نام گروه"
         new: "ایجاد گروه  ارزيابها"
         edit: "ذخیره  گروه  ارزيابها"
     poll_officers:
@@ -615,7 +590,6 @@ fa:
         shift: "تخصیص"
         shifts: "تغییرات در این غرفه"
         date: "تاریخ"
-        task: "وظیفه\n"
         edit_shifts: تغییر شیفت ها
         new_shift: "تغییر جدید"
         no_shifts: "این غرفه هیچ تغییری ندارد"
@@ -710,7 +684,6 @@ fa:
         title: "ویرایش پرسش"
       new:
         title: "ایجاد سوال"
-        poll_label: "نظرسنجی"
       answers:
         images:
           add_image: "اضافه کردن تصویر"
@@ -785,8 +758,6 @@ fa:
         no_location: "بدون مکان"
       new:
         title: "غرفه های جدید"
-        name: "نام"
-        location: "محل"
         submit_button: "ایجاد غرفه"
       edit:
         title: "ویرایش غرفه"
@@ -1024,8 +995,6 @@ fa:
         add_tag: اضافه کردن یک  پیشنهاد جدید
         title: موضوعات پیشنهادی
         topic: موضوع
-      name:
-        placeholder: نام موضوع را تایپ کنید
     users:
       columns:
         name: نام
@@ -1108,8 +1077,6 @@ fa:
           created_at: "ایجاد شده در\n"
           status: وضعیت ها
           updated_at: "ایجاد شده در\n"
-          status_draft: ' پیش نویس'
-          status_published: منتشر شده
           title: عنوان
           slug: slug
           cards_title: کارتها
