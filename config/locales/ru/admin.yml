@@ -185,8 +185,6 @@ ru:
           min_total_supports: Минимум поддержек
           max_total_supports: Максимум поддержек
           winners: Победители
-          one_filter_html: "Текущие примененные фильтры: <b><em>%{filter}</em></b>"
-          two_filters_html: "Текущие примененные фильтры: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Отфильтровать
         download_current_selection: "Скачать текущий выбор"
@@ -494,7 +492,6 @@ ru:
           form:
             error: Ошибка
         form:
-          title_html: 'Редактирование <span class="strong">%{draft_version_title}</span> из процесса <span class="strong">%{process_title}</span>'
           launch_text_editor: Запустить редактор текста
           close_text_editor: Закрыть редактор текста
           use_markdown: Для форматирования текста используйте разметку Markdown
@@ -694,7 +691,6 @@ ru:
         empty_newsletters: Нет новостных писем для отображения
       new:
         title: Новое новостное письмо
-        header_footer_help_text_html: "Заголовок и подвал одинаковы для всех e-mail'ов. Вы можете их изменить по адресу <code>app/views/layouts/mailer_header</code> и <code>app/views/layouts/mailer_footer</code>.<br>Вы можете заменить изображение в заголовке по ссылке %{link}."
         image_link: "пользовательские изображения"
       edit:
         title: Редактировать новостное письмо
@@ -1447,7 +1443,6 @@ ru:
           see_page: Смотреть страницу
         new:
           title: Создать новую настраиваемую страницу
-          slug_help_html: "Текст для идентификации этой страницы в адресе URL, к примеру <code>https://consulproject.org/страница-заголовок</code>"
         page:
           created_at: Создано в
           status: Статус
