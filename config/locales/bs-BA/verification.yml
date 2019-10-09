@@ -47,7 +47,6 @@ bs:
       new:
         accept_terms_text: Prihvatam %{terms_url} popisa
         accept_terms_text_title: Prihvatam uvjete za pristup popisu
-        date_of_birth: Datum rođenja
         document_number: Broj isprave
         document_number_help_title: Pomoć
         document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
@@ -55,12 +54,10 @@ bs:
           passport: Pasoš
           residence_card: Lična karta
           spanish_id: JMBG
-        document_type_label: Vrsta dokumenta
         error_not_allowed_age: Nemate dovoljnu starosnu dob da učestvujete
         error_not_allowed_postal_code: Morate se registrovati kako bi dobili potvrdu.
         error_verifying_census: Popis nije potvrdio vaše priložene podatke. Potvrdite tačnost vaših podataka u popisu tako što ćete se obratiti gradskom vijeću ili otići u kancelariju za pružanje podrške građanima.
         form_errors: je razlog zašto je spriječena verifikacija vašeg prebivališta
-        postal_code: Poštanski broj
         postal_code_note: Morate se registrovati za verifikaciju vašeg naloga
         terms: uvjeti za pristup
         title: Potvrdi prebivalište
@@ -70,7 +67,6 @@ bs:
         flash:
           success: Unesite verifikacijski kod koji ste dobili u SMS-poruci
       edit:
-        confirmation_code: Unesite kod koji ste dobili na svom mobilnom telefonu
         resend_sms_link: Kliknite ovdje za ponovno slanje
         resend_sms_text: Niste dobili poruku sa verifikacijskim kodom?
         submit_button: Pošalji
