@@ -2,8 +2,6 @@ da:
   account:
     show:
       change_credentials_link: Rediger brugeroplysninger
-      email_on_comment_label: Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg
-      email_on_comment_reply_label: Send mig en e-mail når nogen svarer på mine kommentarer
       erase_account_link: Slet min konto
       finish_verification: Færdiggør verificering
       notifications: Notifikationer
@@ -11,18 +9,10 @@ da:
       organization_responsible_name_placeholder: Repræsentant for organisationen/gruppen
       personal: Personlige oplysninger
       phone_number_label: Telefonnummer
-      public_activity_label: Lad min aktivitetsliste være offentlig
-      public_interests_label: Andre brugere kan se de tags, jeg følger
       public_interests_my_title_list: Tags jeg følger
       public_interests_user_title_list: Tags denne bruger følger
       save_changes_submit: Gem ændringer
-      subscription_to_website_newsletter_label: Modtag relevant information via e-mail
-      email_on_direct_message_label: Modtag e-mails vedrørende direkte beskeder
-      email_digest_label: Modtag et resumé af forslagsnotifikationer
-      official_position_badge_label: Vis embedsmandens position
       recommendations: Anbefalinger
-      show_debates_recommendations: Se anbefalede debatindlæg
-      show_proposals_recommendations: Se anbefalede borgerforslag
       title: Min konto
       user_permission_debates: Deltag i debat
       user_permission_info: Med din konto kan du...
@@ -41,7 +31,6 @@ da:
   comments:
     comments_closed: Lukket for kommentarer
     verified_only: For at deltage %{verify_account}
-    verify_account: bekræft din konto
     comment:
       admin: Administrator
       author: Oprettet af
@@ -95,7 +84,6 @@ da:
     form:
       debate_title: Titel på debatindlæg
       tags_instructions: Tag denne debat.
-      tags_label: Emner
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
       featured_debates: Vist
@@ -156,7 +144,6 @@ da:
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debat er blevet markeret som upassende af flere brugere.
-      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       share: Del
       author: Oprettet af
     update:
@@ -277,7 +264,6 @@ da:
   map:
     title: "Distrikter"
     proposal_for_district: "Opret et forslag til dit distrikt"
-    select_district: Område
     start_proposal: Opret et borgerforslag
   omniauth:
     facebook:
@@ -321,7 +307,6 @@ da:
     retire_form:
       title: Træk forslaget tilbage
       warning: "Hvis du trækker dit forslag tilbage, kan andre brugere fortsat støtte op om det. Forslaget fjernes dog fra den primære liste, og andre brugere vil blive informeret om, at du ikke længere mener, at forslaget skal understøttes"
-      retired_reason_label: Begrundelse for at trække forslaget tilbage
       retired_reason_blank: Vælg en mulighed
       retired_explanation_placeholder: Forklar kort hvorfor du tænker, at dette forslag ikke bør modtage mere opbakning
       submit_button: Træk forslaget tilbage
@@ -332,14 +317,8 @@ da:
       done: Færdig
       other: Andre
     form:
-      geozone: Område
-      proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
       proposal_responsible_name_note: "(individuelt eller som repræsentant for en gruppe; vises ikke offentligt)"
-      proposal_summary: Resumé
       proposal_summary_note: "(max 200 anslag)"
-      proposal_text: Tekst
-      proposal_title: Forslagets titel
-      proposal_video_url: Link til video
       proposal_video_url_note: Du kan tilføje et link til YouTube eller Vimeo
       tag_category_label: "Kategorier"
       tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
@@ -445,7 +424,6 @@ da:
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Dette forslag er blevet markeret som upassende af flere brugere.
-      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       notifications_tab: Notifikationer
       milestones_tab: Proces
       retired_warning: "Brugeren, der har oprettet forslaget, mener ikke længere, at det bør understøttes."
@@ -551,7 +529,6 @@ da:
           other: "%{count} svar"
         view_results: Se resultater
         edit_poll: Rediger survey
-        show_results: Se resultater
         show_results_help: Hvis du markerer afkrydsningsfeltet vil resultaterne offentliggøres, og alle brugere vil kunne se dem
       form:
         add_question: Tilføj et spørgsmål
@@ -626,9 +603,6 @@ da:
       back: Tilbage til afstemningen
       cant_answer_not_logged_in: "Du skal %{signin} eller %{signup} for at deltage."
       comments_tab: Kommentarer
-      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
-      signin: Log ind
-      signup: Tilmeld dig
       cant_answer_verify_html: "Du skal %{verify_link} for at kunne svare."
       verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
@@ -664,8 +638,6 @@ da:
   proposal_notifications:
     new:
       title: "Send besked"
-      title_label: "Titel"
-      body_label: "Besked"
       submit_button: "Send besked"
       info_about_receivers_html: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlige i %{proposal_page}. <br> Beskeder bliver ikke sendt med det samme. Brugere vil periodisk modtage en e-mail med alle forslagets notifikationer."
       proposal_page: "forslagets side"
@@ -747,7 +719,6 @@ da:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
-    target_blank_html: " (linket åbner i et nyt vindue)"
     you_are_in: "Du er inde"
     unflag: Fjern flag
     unfollow_entity: "Følg ikke længere %{entity}"
@@ -801,16 +772,10 @@ da:
   users:
     direct_messages:
       new:
-        body_label: Besked
         direct_messages_bloqued: "Denne bruger har besluttet ikke at kunne modtage direkte beskeder"
         submit_button: Send besked
         title: Send privatbesked til %{receiver}
-        title_label: Titel
         verified_only: For at sende en privat besked %{verify_account}
-        verify_account: verificer din konto
-        authenticate: Du skal %{signin} eller %{signup} for at fortsætte.
-        signin: log ind
-        signup: tilmeld dig
       show:
         receiver: Beskeden blev sendt til %{receiver}
     show:
@@ -858,12 +823,8 @@ da:
     comment_unauthenticated: Du skal %{signin} eller %{signup} for at stemme.
     disagree: Jeg er uenig
     organizations: Det er ikke tilladt for organisationer at stemme
-    signin: Log ind
-    signup: Tilmeld dig
     supports: Støtte
-    unauthenticated: Du skal %{signin} eller %{signup} for at fortsætte.
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
-    verify_account: verificer din konto
     budget_investments:
       not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
       not_verified: Kun verificerede brugere kan stemme på projektidéer; %{verify_account}.
@@ -942,8 +903,6 @@ da:
     help:
       alt: Vælg den tekst, du ønsker at kommentere, og tryk derefter på knappen med skriveredskabet.
       text: For at kunne kommentere dokumentet, skal du være %{sign_in} eller %{sign_up}. Derefter vælger du den tekst, du ønsker at kommentere, og trykker på knappen med skriveredskabet.
-      text_sign_in: log ind
-      text_sign_up: tilmeld
       title: Hvordan kan jeg kommentere på dette?
   links:
     form:
@@ -964,5 +923,3 @@ da:
       surveys: Undersøgelser
     poll:
       take_part: Forløber fra %{from} til %{to}
-  question:
-    max_votes: Maksimalt antal stemmer
