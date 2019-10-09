@@ -23,8 +23,6 @@ fi:
           with_inactive: Passiivinen
         preview: Esikatselu
       banner:
-        description: Kuvaus
-        target_url: Linkki
         sections:
           homepage: Kotisivu
           proposals: Ehdotukset
@@ -88,23 +86,14 @@ fi:
       form:
         create: "Luo uusi ryhmä"
         edit: "Muokkaa ryhmää"
-        name: "Ryhmän nimi"
         submit: "Tallenna ryhmä"
       index:
         back: "Takaisin budjetteihin"
     budget_headings:
-      name: "Nimi"
-      form:
-        latitude: "Leveysaste (valinnainen)"
-        longitude: "Pituusaste (valinnainen)"
       index:
         back: "Takaisin ryhmiin"
     budget_phases:
       edit:
-        start_date: Aloituspäivä
-        end_date: Päättymispäivä
-        summary: Yhteenveto
-        description: Kuvaus
         save_changes: Tallenna muutokset
     budget_investments:
       index:
@@ -155,11 +144,8 @@ fi:
         classification: Luokitus
         compatibility: Yhteensopivuus
         selection: Valinta
-        mark_as_selected: Merkitse valituksi
         submit_button: Päivitä
-        tags: Tunnisteet
         undefined: Määrittelemätön
-        user_groups: "Ryhmät"
     statuses:
       index:
         title: Tavoitteen tilat
@@ -224,7 +210,6 @@ fi:
         form:
           enabled: Käytössä
           process: Prosessi
-          homepage: Kuvaus
         index:
           create: Uusi prosessi
           delete: Poista
@@ -281,8 +266,6 @@ fi:
         errors:
           form:
             error: Virhe
-        form:
-          title: Kysymys
         index:
           back: Takaisin
           create: Luo kysymys
@@ -376,8 +359,6 @@ fi:
     valuator_groups:
       index:
         name: "Nimi"
-      form:
-        name: "Ryhmän nimi"
     poll_officers:
       officer:
         add: Lisää
@@ -420,8 +401,6 @@ fi:
         table_proposal: "Ehdotus"
         table_question: "Kysymys"
         table_poll: "Kysely"
-      new:
-        poll_label: "Kysely"
       answers:
         images:
           add_image: "Lisää kuva"
@@ -458,8 +437,6 @@ fi:
         see_results: Näytä tulokset
     booths:
       index:
-        name: "Nimi"
-      new:
         name: "Nimi"
     officials:
       index:
