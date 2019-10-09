@@ -45,8 +45,6 @@ pl:
     budget_investment_created:
       subject: "Dziękujemy za stworzenie inwestycji!"
       title: "Dziękujemy za stworzenie inwestycji!"
-      intro_html: "Cześć <strong>%{author}</strong>,"
-      text_html: "Dziękujemy za stworzenie Twojej inwestycji <strong>%{investment}</strong> dla Budżetów Partycypacyjnych <strong>%{budget}</strong>."
       follow_html: "Będziemy Cię informowali o tym, jak postępuje proces, co możesz również śledzić na <strong>%{link}</strong>."
       follow_link: "Budżety partycypacyjne"
       sincerely: "Z poważaniem"
