@@ -152,9 +152,9 @@ fa:
         password_confirmation: "تایید رمز عبور"
         password: "رمز عبور"
         current_password: "رمز ورود فعلی"
-        phone_number: "شماره تلفن"
         official_position: "موضع رسمی"
         official_level: "سطح رسمی"
+        phone_number: "شماره تلفن"
         redeemable_code: "کد تایید  از طریق ایمیل دریافت شد."
       organization:
         name: "نام سازمان"
@@ -241,10 +241,10 @@ fa:
         text: توضیح
       document:
         title: عنوان
-        attachment: پیوست
+        attachment: "پیوست"
       image:
         title: عنوان
-        attachment: پیوست
+        attachment: "پیوست"
       poll/question/answer:
         title: پاسخ
         description: توضیحات
