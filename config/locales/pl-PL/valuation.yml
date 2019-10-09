@@ -27,12 +27,6 @@ pl:
         assigned_to: "Przypisane do %{valuator}"
         title: Projekty inwestycyjne
         edit: Edytuj dokumentację
-        valuators_assigned:
-          one: Przypisany wyceniający
-          few: "%{count} przypisani wyceniający"
-          many: "%{count} przypisani wyceniający"
-          other: "%{count} przypisani wyceniający"
-        no_valuators_assigned: Brak przypisanych wyceniających
         table_id: Numer ID
         table_title: Tytuł
         table_heading_name: Nazwa nagłówka
@@ -63,16 +57,9 @@ pl:
         dossier: Dokumentacja
         price_html: "Koszt (%{currency})"
         price_first_year_html: "Koszt w pierwszym roku (%{currency}) <small>(opcjonalnie, dane nie są publiczne)</small>"
-        price_explanation_html: Wyjaśnienie ceny
         feasibility: Wykonalność
-        feasible: Wykonalne
-        unfeasible: Niewykonalne
-        undefined_feasible: Oczekujące
-        feasible_explanation_html: Wyjaśnienie wykonalności
-        valuation_finished: Wycena zakończona
         valuation_finished_alert: "Czy na pewno chcesz oznaczyć ten raport jako ukończony? Jeśli to zrobisz, nie może on być dalej modyfikowany."
         not_feasible_alert: "E-mail zostanie wysłany niezwłocznie do autora projektu wraz z raportem niewykonalności."
-        duration_html: Zakres czasu
         save: Zapisz zmiany
       notice:
         valuate: "Dokumentacja zaktualizowana"
