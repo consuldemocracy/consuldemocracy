@@ -45,8 +45,6 @@ ru:
     budget_investment_created:
       subject: "Спасибо за создание инвестиции!"
       title: "Спасибо за создание инвестиции!"
-      intro_html: "Привет, <strong>%{author}</strong>,"
-      text_html: "Спасибо за создание вашей инвестиции <strong>%{investment}</strong> для совместных бюджетов <strong>%{budget}</strong>."
       follow_html: "Мы сообщим вам о том, как движется процесс, который вы также модете отслеживать по ссылке <strong>%{link}</strong>."
       follow_link: "Совместные бюджеты"
       sincerely: "С уважением,"
