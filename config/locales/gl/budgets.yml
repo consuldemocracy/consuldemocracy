@@ -7,9 +7,6 @@ gl:
         remaining: "Quédanche <span>%{amount}</span> para investir."
         no_balloted_group_yet: "Aínda non votaches proxectos deste grupo. Vota!"
         remove: Retirar voto
-        voted_html:
-          one: "Votaches <span>unha</span> proposta."
-          other: "Votastes <span>%{count}</span> propostas."
         voted_info_2: "Mais podes cambiar o teu voto en calquera momento ata o peche desta fase."
         zero: Aínda non votaches ningunha proposta de investimento.
       reasons_for_not_balloting:
@@ -17,9 +14,7 @@ gl:
         not_verified: As propostas de investimento só poden ser apoiadas por usuarios con contas verificadas; %{verify_account}.
         organization: As organizacións non poden votar.
         not_selected: Non se poden votar propostas inviables
-        not_enough_money_html: "Xa asignaches o orzamento dispoñible.<br><small>Lembra que podes %{change_ballot} cando quixeres</small>"
         no_ballots_allowed: O período de votacións está pechado
-        different_heading_assigned_html: "Xa votaches nunha sección distinta do orzamento: %{heading_link}"
         change_ballot: cambiar os teus votos
         casted_offline: Xa tes participado en modo «fóra de liña»
     groups:
@@ -78,17 +73,10 @@ gl:
           button: Procurar
           placeholder: Buscar propostas de investimento...
           title: Procurar
-        search_results_html:
-          one: " que conteñen <strong>%{search_term}</strong>"
-          other: " que conteñen <strong>%{search_term}</strong>"
         sidebar:
           my_ballot: Os meus votos
-          voted_html:
-            one: "<strong>Votaches unha proposta cun valor de %{amount_spent}</strong>"
-            other: "<strong>Votaches %{count} propostas cun valor de %{amount_spent}</strong>"
           voted_info: Podes %{link} en calquera momento ata o peche desta fase. Non é necesario gastares todo o diñeiro dispoñible.
           voted_info_link: cambiar o teu voto
-          different_heading_assigned_html: "Xa apoiaches propostas doutra sección do orzamento: %{heading_link}"
           change_ballot: "Se cambiares de opinión, podes borrar os teus votos en %{check_ballot} e comezar de novo."
           check_ballot_link: "revisar os meus votos"
           zero: Añinda non votaches ningunha proposta de investimento neste ámbito do orzamento.
@@ -108,9 +96,6 @@ gl:
         author_deleted: Usuario/a borrado/a
         price_explanation: Informe de custo <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidade
-        code_html: "Código de proposta de gasto:<strong>%{code}</strong>"
-        location_html: "Localización: <strong>%{location}</strong>"
-        organization_name_html: "Proposto no nome de:<strong>%{name}</strong>"
         share: Compartir
         title: Proposta de investimento
         supports: Apoios
@@ -119,10 +104,7 @@ gl:
         comments_tab: Comentarios
         milestones_tab: Fitos
         author: Autoría
-        project_unfeasible_html: "O proxecto de investimento <strong>foi marcado como inviable</strong> e non chegará á fase de votación."
-        project_selected_html: "Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación."
         project_winner: "Proxecto de investimento gañador"
-        project_not_selected_html: "O proxecto de inversión <strong>non foi seleccionado</strong> para a fase de votación."
         see_price_explanation: Ver xustificación do prezo
       wrong_price_format: Só pode incluír caracteres numéricos
       investment:
@@ -140,7 +122,6 @@ gl:
         give_support: Apoiar
       header:
         check_ballot: Revisar os meus votos
-        different_heading_assigned_html: "Xa apoiaches propostas doutra sección do orzamento: %{heading_link}"
         change_ballot: "Se cambiares de opinión, podes borrar os teus votos en %{check_ballot} e comezar de novo."
         check_ballot_link: "revisar os meus votos"
         price: "Esta partida ten un orzamento de"
