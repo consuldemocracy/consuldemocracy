@@ -10,7 +10,6 @@ it:
         voted_html:
           one: "Hai votato <span>un</span> progetto di investimento."
           other: "Hai votato <span>%{count}</span> progetti di investimento."
-        voted_info_html: "È possibile cambiare il proprio voto in qualsiasi momento fino alla fine di questa fase. <br> Non è necessario spendere tutti i fondi disponibili."
         zero: Non hai ancora votato nessun progetto di investimento.
       reasons_for_not_balloting:
         not_logged_in: È necessario %{signin} o %{signup} per continuare.
@@ -67,7 +66,6 @@ it:
         map_location: "Posizione sulla mappa"
         map_location_instructions: "Scorri la mappa sino a individuare il luogo giusto e posiziona il segnaposto."
         map_remove_marker: "Rimuovi segnaposto"
-        location: "Informazioni aggiuntive sul luogo"
         map_skip_checkbox: "Questo investimento non ha una precisa collocazione geografica ovvero io non ne sono a conoscenza."
       index:
         title: Bilancio partecipativo
@@ -93,11 +91,8 @@ it:
           check_ballot_link: "controllare il mio voto"
           zero: Non hai ancora votato nessun progetto di investimento in questo gruppo.
           verified_only: "Per creare un nuovo budget d'investimento %{verify}."
-          verify_account: "verifica il tuo account"
           create: "Crea un investimento di bilancio"
           not_logged_in: "Per creare un nuovo investimento di bilancio è necessario %{sign_in} o %{sign_up}."
-          sign_in: "accedere"
-          sign_up: "registrarsi"
           by_feasibility: Per fattibilità
           feasible: Progetti realizzabili
           unfeasible: Progetti non realizzabili
