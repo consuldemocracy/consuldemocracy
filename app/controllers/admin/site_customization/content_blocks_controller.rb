@@ -67,8 +67,7 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
   end
 
   def delete_heading_content_block
-    heading_content_block = Budget::ContentBlock.find(params[:id])
-    heading_content_block.destroy if heading_content_block
+    Budget::ContentBlock.find(params[:id]).destroy
     notice = t("admin.site_customization.content_blocks.destroy.notice")
     redirect_to admin_site_customization_content_blocks_path, notice: notice
   end
