@@ -261,5 +261,8 @@ Style/BlockDelimiters:
 Style/PercentLiteralDelimiters:
   Enabled: true
 
+Style/SafeNavigation:
+  Enabled: true
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes

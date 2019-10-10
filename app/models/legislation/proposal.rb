@@ -108,7 +108,7 @@ class Legislation::Proposal < ApplicationRecord
   end
 
   def votable_by?(user)
-    user && user.level_two_or_three_verified?
+    user&.level_two_or_three_verified?
   end
 
   def register_vote(user, vote_value)
@@ -142,7 +142,7 @@ class Legislation::Proposal < ApplicationRecord
   protected
 
     def set_responsible_name
-      if author && author.document_number?
+      if author&.document_number?
         self.responsible_name = author.document_number
       end
     end
