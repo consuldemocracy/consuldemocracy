@@ -320,6 +320,17 @@ describe "Poll Votation Type" do
         expect(page).to have_link "Added answer", class: "answered"
       end
     end
+
+    scenario "existing given order is bigger than the number of answers", :js do
+      answer1.update(given_order: question.question_answers.count + 1)
+
+      visit poll_path(poll_current)
+
+      fill_in "answer", with: "Added answer"
+      click_button "Add answer"
+
+      expect(page).to have_link "Added answer"
+    end
   end
 
   context "Answers set" do
