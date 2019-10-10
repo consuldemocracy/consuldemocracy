@@ -124,20 +124,19 @@ describe Poll::Officer do
     end
   end
 
-  describe "todays_booths" do
+  describe "todays_booths", :application_zone_west_of_system_zone do
     let(:officer) { create(:poll_officer) }
 
-    it "returns booths for the application's time zone date", :application_zone_west_of_system_zone do
-      assignment_with_local_time_zone = create(:poll_officer_assignment,
-                                               date:    Date.today,
-                                               officer: officer)
+    it "returns today's booths" do
+      todays_assignment = create(:poll_officer_assignment, date: Date.current, officer: officer)
+      expect(officer.todays_booths).to eq [todays_assignment.booth]
+    end
 
-      assignment_with_application_time_zone = create(:poll_officer_assignment,
-                                                     date:    Date.current,
-                                                     officer: officer)
+    it "does not return booths for different dates" do
+      create(:poll_officer_assignment, date: Date.yesterday, officer: officer)
+      create(:poll_officer_assignment, date: Date.tomorrow, officer: officer)
 
-      expect(officer.todays_booths).to eq [assignment_with_application_time_zone.booth]
-      expect(officer.todays_booths).not_to include(assignment_with_local_time_zone.booth)
+      expect(officer.todays_booths).to be_empty
     end
   end
 end
