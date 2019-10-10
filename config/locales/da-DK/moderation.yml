@@ -87,7 +87,7 @@ da:
         orders:
           created_at: Seneste
           flags: Mest markeret
-        title: Budgetinvesteringer
+        title: Forslag
     proposal_notifications:
       index:
         block_authors: Bloker forfattere
