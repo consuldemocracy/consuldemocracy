@@ -114,6 +114,9 @@ da:
         button: Søg
         placeholder: Søg debatindlæg...
         title: Søg
+      search_results:
+        one: " som indeholder <strong>'%{search_term}'</strong>"
+        other: " som indeholder <strong>'%{search_term}'</strong>"
       select_order: Sorter efter
       start_debate: Start en debat
       title: Debatforum
@@ -164,6 +167,7 @@ da:
     direct_message: privat besked
     error: fejl
     errors: fejl
+    not_saved: "forhindrede denne %{resource} i at blive gemt. <br>Se de markerede felter for at rette op på fejlen:"
     policy: Privatpolitik
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
@@ -240,6 +244,7 @@ da:
           other: Du har %{count} nye notifikationer
         notifications: Notifikationer
         no_notifications: "Du har ingen nye notifikationer"
+      tracking: "Sporing"
     admin:
       watch_form_message: "Du har ændringer, der ikke er gemt. Ønsker du stadig at forlade denne side?"
   notifications:
@@ -293,6 +298,7 @@ da:
     created:
       title: Tillykke! Du har taget det første skridt.
       motivation: "Det er vigtigt at forberede introduktionskampagnen, så dit forslag kan opnå succes. De første dage er afgørende."
+      motivation_2: "<strong>Hvis du ønsker anbefalinger, inden du offentliggør dit forslag, så lad dit forslag forblive en udkastversion, så kan vi hjælpe dig.</strong>"
       publish: Nej, jeg ønsker at offentliggøre mit forslag
       dashboard: Ja, jeg ønsker hjælp og vil offentliggøre forslaget senere
       preview_title: Sådan vil dit forslag se ud, når du offentliggør det
@@ -351,6 +357,9 @@ da:
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger af forslag"
       retired_proposals: Tilbagetrukket forslag
       retired_proposals_link: "Forslag trukket tilbage af brugere, der oprettede det"
+      selected_proposals: Valgte forslag
+      selected_proposals_link: Vis valgte forslag
+      archived_proposals: Arkiverede forslag
       retired_links:
         all: Alle
         duplicated: Kopieret
