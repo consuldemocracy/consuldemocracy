@@ -16,6 +16,8 @@ da:
           confirmation_code: "Bekræftelseskode"
         email:
           recipient: "Email"
+      verification/sms:
+        confirmation_code: "Skriv den kode du modtog på SMS"
       officing/residence:
         document_type: "Dokumenttype"
         document_number: "Dokumentnummer (bogstaver inkluderet)"
