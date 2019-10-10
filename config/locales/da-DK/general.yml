@@ -40,6 +40,12 @@ da:
         zero: Ingen svar
         one: 1 svar
         other: "%{count} svar"
+      responses_show:
+        zero: Ingen svar
+        one: "Et svar (vis)"
+        other: "%{count} svar (vis)"
+      responses_collapse:
+        zero: Ingen svar
       user_deleted: Bruger slettet
       votes:
         zero: Ingen stemmer
