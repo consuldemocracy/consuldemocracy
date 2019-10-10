@@ -120,7 +120,7 @@ class Comment < ApplicationRecord
   end
 
   def call_after_commented
-    commentable.try(:after_commented)
+    commentable.after_commented if commentable.respond_to?(:after_commented)
   end
 
   def self.body_max_length
