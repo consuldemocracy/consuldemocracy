@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w[config/database.yml config/secrets.yml config/unicorn.rb config/environments/production.rb]
+set :linked_files, %w[config/database.yml config/secrets.yml config/environments/production.rb]
 set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets]
 
 set :keep_releases, 5
@@ -35,7 +35,6 @@ set(:config_files, %w[
   log_rotation
   database.yml
   secrets.yml
-  unicorn.rb
 ])
 
 set :whenever_roles, -> { :app }

@@ -41,6 +41,7 @@ gem "paperclip", "~> 5.2.1"
 gem "paranoia", "~> 2.4.2"
 gem "pg", "~> 0.21.0"
 gem "pg_search", "~> 2.0.1"
+gem "puma", "~> 4.2.1"
 gem "recipient_interceptor", "~> 0.2.0"
 gem "redcarpet", "~> 3.4.0"
 gem "responders", "~> 2.4.0"
@@ -55,7 +56,6 @@ gem "translator-text", "~> 0.1.0"
 gem "turbolinks", "~> 2.5.3"
 gem "turnout", "~> 2.4.0"
 gem "uglifier", "~> 4.1.2"
-gem "unicorn", "~> 5.4.1"
 gem "whenever", "~> 0.10.0", require: false
 gem "wicked_pdf", "~> 1.1.0"
 gem "wkhtmltopdf-binary", "~> 0.12.4"
@@ -74,7 +74,6 @@ group :development, :test do
   gem "knapsack_pro", "~> 1.1.0"
   gem "launchy", "~> 2.4.3"
   gem "letter_opener_web", "~> 1.3.4"
-  gem "puma", "~> 4.1.1"
   gem "spring", "~> 2.0.1"
   gem "spring-commands-rspec", "~> 1.0.4"
 end
@@ -94,6 +93,7 @@ group :development do
   gem "capistrano-bundler", "~> 1.2", require: false
   gem "capistrano-rails", "~> 1.4.0", require: false
   gem "capistrano3-delayed-job", "~> 1.7.3"
+  gem "capistrano3-puma", "~> 4.0.0"
   gem "erb_lint", require: false
   gem "mdl", "~> 0.5.0", require: false
   gem "rubocop", "~> 0.75.0", require: false
