@@ -1,20 +1,27 @@
 da:
   tracking:
+    header:
+      title: Sporing
     menu:
+      title: Sporing
       budgets: Deltagerbudgetter
     budgets:
       index:
         title: Deltagerbudgetter
         table_name: Navn
         table_phase: Fase
+        table_assigned_investments_tracking_open: Projektidéerne er tildelt med sporing åben
         table_actions: Handlinger
+        tracking: Sporing
         no_budgets: "Der er ingen deltagerbudgetter"
     budget_investments:
       index:
+        assigned_to: "Tildelt til %{tracker}"
         title: Projekter
         edit: Rediger milepæl
         table_id: ID
         table_title: Titel
+        table_heading_name: Navn på post
         table_actions: Handlinger
         no_investments: "Der er ingen projektidéer"
       show:
