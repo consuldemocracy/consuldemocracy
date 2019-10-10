@@ -12,7 +12,7 @@ They'll ask you for your CONSUL's auth URL, and as you can see running `rake rou
 user_omniauth_authorize GET|POST /users/auth/:provider(.:format)          users/omniauth_callbacks#passthru {:provider=>/twitter|facebook|google_oauth2/}
 ```
 
-So for example the URL for facebook application would be `yourdomain.com/users/auth/facebook.json`
+So for example the URL for facebook application would be `yourdomain.com/users/auth/facebook/callback`
 
 ## 3. Set key & secret values
 
