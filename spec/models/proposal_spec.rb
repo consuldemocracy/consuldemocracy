@@ -607,11 +607,11 @@ describe Proposal do
       end
 
       it "orders by weight and then by votes" do
-        title_some_votes    = create(:proposal, title: "stop corruption", cached_votes_up: 5)
-        title_least_voted   = create(:proposal, title: "stop corruption", cached_votes_up: 2)
-        title_most_voted    = create(:proposal, title: "stop corruption", cached_votes_up: 10)
+        title_some_votes   = create(:proposal, title: "stop corruption", cached_votes_up: 5)
+        title_least_voted  = create(:proposal, title: "stop corruption", cached_votes_up: 2)
+        title_most_voted   = create(:proposal, title: "stop corruption", cached_votes_up: 10)
 
-        summary_most_voted  = create(:proposal, summary: "stop corruption", cached_votes_up: 10)
+        summary_most_voted = create(:proposal, summary: "stop corruption", cached_votes_up: 10)
 
         results = Proposal.search("stop corruption")
 
