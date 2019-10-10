@@ -102,7 +102,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each, :with_frozen_time) do
-    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
+    travel_to Time.current # TODO: use `freeze_time` after migrating to Rails 5.2.
   end
 
   config.after(:each, :with_frozen_time) do
