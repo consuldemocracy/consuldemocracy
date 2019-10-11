@@ -19,13 +19,15 @@ module DocumentsHelper
   def render_destroy_document_link(builder, document)
     if !document.persisted? && document.cached_attachment.present?
       link_to t("documents.form.delete_button"),
-                  direct_upload_destroy_url("direct_upload[resource_type]": document.documentable_type,
-                                            "direct_upload[resource_id]": document.documentable_id,
-                                            "direct_upload[resource_relation]": "documents",
-                                            "direct_upload[cached_attachment]": document.cached_attachment),
-                  method: :delete,
-                  remote: true,
-                  class: "delete remove-cached-attachment"
+              direct_upload_destroy_path(
+                "direct_upload[resource_type]": document.documentable_type,
+                "direct_upload[resource_id]": document.documentable_id,
+                "direct_upload[resource_relation]": "documents",
+                "direct_upload[cached_attachment]": document.cached_attachment
+              ),
+              method: :delete,
+              remote: true,
+              class: "delete remove-cached-attachment"
     else
       link_to_remove_association document.new_record? ? t("documents.form.cancel_button") : t("documents.form.delete_button"), builder, class: "delete remove-document"
     end
@@ -38,15 +40,15 @@ module DocumentsHelper
                        accept: accepted_content_types_extensions(document.documentable_type.constantize),
                        class: "js-document-attachment",
                        data: {
-                         url: document_direct_upload_url(document),
+                         url: document_direct_upload_path(document),
                          nested_document: true
                        }
   end
 
-  def document_direct_upload_url(document)
-    direct_uploads_url("direct_upload[resource_type]": document.documentable_type,
-                       "direct_upload[resource_id]": document.documentable_id,
-                       "direct_upload[resource_relation]": "documents")
+  def document_direct_upload_path(document)
+    direct_uploads_path("direct_upload[resource_type]": document.documentable_type,
+                        "direct_upload[resource_id]": document.documentable_id,
+                        "direct_upload[resource_relation]": "documents")
   end
 
   def document_item_link(document)
