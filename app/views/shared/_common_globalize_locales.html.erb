@@ -1,7 +1,7 @@
 <div class="row globalize-languages column padding-top <%= highlight_translation_html_class %>"
-     data-zero-languages-description="<%= sanitize(t("shared.translations.languages_in_use", count: 0)) %>"
-     data-one-languages-description="<%= sanitize(t("shared.translations.languages_in_use", count: 1)) %>"
-     data-other-languages-description="<%= sanitize(t("shared.translations.languages_in_use", count: 2)) %>">
+     data-zero-languages-description="<%= t("shared.translations.languages_in_use", count: 0) %>"
+     data-one-languages-description="<%= t("shared.translations.languages_in_use", count: 1) %>"
+     data-other-languages-description="<%= t("shared.translations.languages_in_use", count: 2) %>">
   <div class="small-6 large-3 column">
     <span class="small">
       <strong class="js-languages-description"><%= selected_languages_description(resource) %></strong>
