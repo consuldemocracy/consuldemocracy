@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  include CustomUrlsHelper
-
   before_action :authenticate_user!, only: :create
   before_action :load_commentable, only: :create
   before_action :verify_resident_for_commentable!, only: :create
@@ -104,7 +102,7 @@ class CommentsController < ApplicationController
       return if current_user.administrator? || current_user.moderator?
 
       if @commentable.respond_to?(:comments_closed?) && @commentable.comments_closed?
-        redirect_to @commentable, alert: t("comments.comments_closed")
+        redirect_to polymorphic_hierarchy_path(@commentable), alert: t("comments.comments_closed")
       end
     end
 

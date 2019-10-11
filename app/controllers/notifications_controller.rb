@@ -1,6 +1,4 @@
 class NotificationsController < ApplicationController
-  include CustomUrlsHelper
-
   before_action :authenticate_user!
   skip_authorization_check
 
