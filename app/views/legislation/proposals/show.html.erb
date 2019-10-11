@@ -45,7 +45,9 @@
 
           <% if current_user %>
             <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <%= render "proposals/flag_actions", proposal: @proposal %>
+            <span class="js-flag-actions">
+              <%= render "legislation/proposals/flag_actions", proposal: @proposal %>
+            </span>
           <% end %>
 
         </div>
