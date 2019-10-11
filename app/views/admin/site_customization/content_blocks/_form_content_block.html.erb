@@ -1,19 +1,6 @@
 <%= form_for [:admin, @content_block], html: { class: "edit_page", data: { watch_changes: true } } do |f| %>
 
-  <% if @content_block.errors.any? %>
-
-  <div id="error_explanation" data-alert class="callout alert" data-closable>
-    <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
-    </button>
-
-    <strong>
-      <%= @content_block.errors.count %>
-      <%= t("admin.site_customization.content_blocks.errors.form.error", count: @content_block.errors.count) %>
-    </strong>
-  </div>
-
-  <% end %>
+  <%= render "shared/errors", resource: @content_block %>
 
   <div class="small-12 medium-6 column">
     <%= f.select :name, options_for_select(valid_blocks, @selected_content_block) %>
