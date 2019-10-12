@@ -50,6 +50,8 @@ namespace :deploy do
   after :published, "delayed_job:restart"
   after :published, "refresh_sitemap"
 
+  before "deploy:restart", "setup_puma"
+
   after :finishing, "deploy:cleanup"
 
   desc "Deploys and runs the tasks needed to upgrade to a new release"
@@ -90,6 +92,25 @@ task :execute_release_tasks do
     within release_path do
       with rails_env: fetch(:rails_env) do
         execute :rake, "consul:execute_release_tasks"
+      end
+    end
+  end
+end
+
+desc "Create pid and socket folders needed by puma and convert unicorn sockets into symbolic links \
+      to the puma socket, so legacy nginx configurations pointing to the unicorn socket keep working"
+task :setup_puma do
+  on roles(:app) do
+    with rails_env: fetch(:rails_env) do
+      execute "mkdir -p #{shared_path}/tmp/sockets; true"
+      execute "mkdir -p #{shared_path}/tmp/pids; true"
+
+      if test("[ -e #{shared_path}/tmp/sockets/unicorn.sock ]")
+        execute "ln -sf #{shared_path}/tmp/sockets/puma.sock #{shared_path}/tmp/sockets/unicorn.sock; true"
+      end
+
+      if test("[ -e #{shared_path}/sockets/unicorn.sock ]")
+        execute "ln -sf #{shared_path}/tmp/sockets/puma.sock #{shared_path}/sockets/unicorn.sock; true"
       end
     end
   end
