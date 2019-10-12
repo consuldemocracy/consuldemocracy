@@ -48,6 +48,10 @@ class Officing::Residence
     end
   end
 
+  def save!
+    validate! && save
+  end
+
   def store_failed_census_call
     FailedCensusCall.create(
       user: user,

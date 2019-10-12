@@ -35,6 +35,10 @@ class Verification::Management::Email
     true
   end
 
+  def save!
+    validate! && save
+  end
+
   private
 
     def validate_user

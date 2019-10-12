@@ -37,6 +37,10 @@ class Verification::Residence
                 residence_verified_at: Time.current)
   end
 
+  def save!
+    validate! && save
+  end
+
   def allowed_age
     return if errors[:date_of_birth].any? || Age.in_years(date_of_birth) >= User.minimum_required_age
     errors.add(:date_of_birth, I18n.t("verification.residence.new.error_not_allowed_age"))

@@ -23,7 +23,7 @@ describe Verification::Letter do
 
     it "updates letter_requested" do
       letter = build(:verification_letter)
-      letter.save
+      letter.save!
       expect(letter.user.letter_requested_at).to be
     end
 

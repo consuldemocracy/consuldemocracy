@@ -16,6 +16,10 @@ class Verification::Letter
     letter_requested!
   end
 
+  def save!
+    validate! && save
+  end
+
   def letter_requested!
     user.update(letter_requested_at: Time.current, letter_verification_code: generate_verification_code)
   end

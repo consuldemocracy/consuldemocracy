@@ -33,6 +33,10 @@ class LocalCensusRecords::Import
     true
   end
 
+  def save!
+    validate! && save
+  end
+
   private
 
     def process_row(row)
