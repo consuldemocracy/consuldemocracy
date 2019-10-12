@@ -12,6 +12,9 @@ require "capistrano/delayed_job"
 require "whenever/capistrano"
 require "rvm1/capistrano3"
 
+require "capistrano/puma"
+install_plugin Capistrano::Puma
+
 #SCM: Git
 require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
