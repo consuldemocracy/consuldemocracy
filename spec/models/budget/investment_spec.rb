@@ -315,7 +315,7 @@ describe Budget::Investment do
     end
 
     it "returns false if unfeasibility explanation blank" do
-      investment.update(unfeasibility_explanation: "")
+      investment.unfeasibility_explanation = ""
       Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
         budget.update(phase: phase)
 

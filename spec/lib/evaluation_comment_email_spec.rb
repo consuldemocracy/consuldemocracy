@@ -43,7 +43,7 @@ describe EvaluationCommentEmail do
     end
 
     it "returns false if the comment doesn't exist" do
-      comment.update(commentable: nil)
+      comment.commentable = nil
 
       expect(comment_email.can_be_sent?).to be false
     end

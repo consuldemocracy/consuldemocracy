@@ -124,10 +124,10 @@ shared_examples_for "globalizable" do |factory_name|
     it "Does not remove all translations" do
       skip("cannot have invalid translations") if required_fields.empty?
 
-      record.update(translations_attributes: [
+      record.translations_attributes = [
         { id: record.translations.find_by(locale: :en).id, _destroy: true },
         { id: record.translations.find_by(locale: :es).id, _destroy: true }
-      ])
+      ]
 
       expect(record).not_to be_valid
 
@@ -139,10 +139,10 @@ shared_examples_for "globalizable" do |factory_name|
     it "Does not remove translations when there's invalid data" do
       skip("cannot have invalid translations") if required_fields.empty?
 
-      record.update(translations_attributes: [
+      record.translations_attributes = [
         { id: record.translations.find_by(locale: :es).id, attribute => "" },
         { id: record.translations.find_by(locale: :en).id, _destroy: true },
-      ])
+      ]
 
       expect(record).not_to be_valid
 

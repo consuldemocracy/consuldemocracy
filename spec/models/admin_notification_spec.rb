@@ -67,7 +67,7 @@ describe AdminNotification do
 
   describe "#valid_segment_recipient?" do
     it "is false when segment_recipient value is invalid" do
-      admin_notification.update(segment_recipient: "invalid_segment_name")
+      admin_notification.segment_recipient = "invalid_segment_name"
       error = "The user recipients segment is invalid"
 
       expect(admin_notification).not_to be_valid
