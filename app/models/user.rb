@@ -199,19 +199,11 @@ class User < ApplicationRecord
   end
 
   def block
-    debates_ids = Debate.where(author_id: id).pluck(:id)
-    comments_ids = Comment.where(user_id: id).pluck(:id)
-    proposal_ids = Proposal.where(author_id: id).pluck(:id)
-    investment_ids = Budget::Investment.where(author_id: id).pluck(:id)
-    proposal_notification_ids = ProposalNotification.where(author_id: id).pluck(:id)
-
-    hide
-
-    Debate.hide_all debates_ids
-    Comment.hide_all comments_ids
+    Debate.hide_all debate_ids
+    Comment.hide_all comment_ids
     Proposal.hide_all proposal_ids
     Budget::Investment.hide_all investment_ids
-    ProposalNotification.hide_all proposal_notification_ids
+    ProposalNotification.hide_all ProposalNotification.where(author_id: id).pluck(:id)
   end
 
   def erase(erase_reason = nil)
