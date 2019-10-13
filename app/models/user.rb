@@ -214,6 +214,14 @@ class User < ApplicationRecord
     ProposalNotification.hide_all proposal_notification_ids
   end
 
+  def after_restore
+    Debate.restore_all debate_ids
+    Comment.restore_all comment_ids
+    Proposal.restore_all proposal_ids
+    Budget::Investment.restore_all budget_investment_ids
+    ProposalNotification.restore_all ProposalNotification.where(author_id: id).pluck(:id)
+  end
+
   def erase(erase_reason = nil)
     update(
       erased_at: Time.current,
