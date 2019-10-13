@@ -952,7 +952,7 @@ describe "Budget Investments" do
     scenario "Trigger validation errors in edit view" do
       daniel = create(:user, :level_two)
       message_error = "is too short (minimum is 4 characters), can't be blank"
-      create(:budget_investment, heading: heading,title: "Get Schwifty", author: daniel, created_at: 1.day.ago)
+      create(:budget_investment, heading: heading,title: "Get SH", author: daniel, created_at: 1.day.ago)
 
       login_as(daniel)
 
