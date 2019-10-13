@@ -119,7 +119,7 @@ As recommended by Heroku, you can add the gem rails\_12factor and specify the ve
 ```
 gem 'rails_12factor'
 
-ruby '2.3.2'
+ruby '2.4.9'
 ```
 
 in the file _Gemfile\_custom_. Don't forget to run

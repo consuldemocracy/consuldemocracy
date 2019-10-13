@@ -23,10 +23,8 @@ Ruby versions packaged in official repositories are not suitable to work with CO
 First, we need to install Ruby's development dependencies:
 
 ```bash
-sudo apt install libssl1.0-dev autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
 ```
-
-Note we're installing `libssl1.0-dev` instead of `libssl-dev`. That's because Ruby 2.3.2 (which CONSUL uses in version 0.19) is not compatible with OpenSSL 1.1.
 
 The next step is installing a Ruby version manager, like rbenv:
 
@@ -37,10 +35,10 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Finally, install Ruby 2.3.2, which will take a few minutes:
+Finally, install Ruby 2.4.9, which will take a few minutes:
 
 ```bash
-rbenv install 2.3.2
+rbenv install 2.4.9
 ```
 
 ## Bundler
@@ -48,9 +46,9 @@ rbenv install 2.3.2
 Check we're using the Ruby version we've just installed:
 
 ```bash
-rbenv global 2.3.2
+rbenv global 2.4.9
 ruby -v
-=> ruby 2.3.2p217
+=> ruby 2.4.9p354
 ```
 
 And install Bundler with:

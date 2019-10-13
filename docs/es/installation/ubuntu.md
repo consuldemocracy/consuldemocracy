@@ -23,10 +23,8 @@ Las versiones de Ruby versions empaquetadas en repositorios oficiales no son apt
 En primer lugar, necesitamos los siguiente paquetes para poder instalar Ruby:
 
 ```bash
-sudo apt install libssl1.0-dev autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
+sudo apt install libssl-dev autoconf bison build-essential libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev
 ```
-
-Nótese que estamos instalando el paquete `libssl1.0-dev` en lugar de `libssl-dev`. Esto es debido a que Ruby 2.3.2 (versión que CONSUL 0.19 utiliza) no es compatible con OpenSSL 1.1.
 
 El siguiente paso es instalar un gestor de versiones de Ruby, como rbenv:
 
@@ -37,10 +35,10 @@ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Por último, para instalar Ruby 2.3.2 (proceso que llevará unos minutos):
+Por último, para instalar Ruby 2.4.9 (proceso que llevará unos minutos):
 
 ```bash
-rbenv install 2.3.2
+rbenv install 2.4.9
 ```
 
 ## Bundler
@@ -48,9 +46,9 @@ rbenv install 2.3.2
 Comprueba que estemos usando la versión de Ruby que acabamos de instalar:
 
 ```bash
-rbenv global 2.3.2
+rbenv global 2.4.9
 ruby -v
-=> ruby 2.3.2p217
+=> ruby 2.4.9p362
 ```
 
 E instala Bundle con:
