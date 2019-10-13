@@ -4,7 +4,7 @@
       <%= t("shared.author_info.author_deleted") %>
   </span>
 <% else %>
-  <% if resource.organization_name.present? %>
+  <% if resource.respond_to?(:organization_name) && resource.organization_name.present? %>
     <%= avatar_image(resource.organization_name, seed: resource.author_id, size: 32, class: "author-photo") %>
     <%= sanitize(resource.organization_name) %> &nbsp; (created by:
     <span class="author">
