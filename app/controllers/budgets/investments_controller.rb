@@ -78,9 +78,12 @@ module Budgets
     end
 
     def update
-      @investment.update(investment_params)
-      redirect_to budget_investment_path(@budget, @investment),
-                  notice: t("flash.actions.update.budget_investment")
+      if @investment.update(investment_params)
+        redirect_to budget_investment_path(@budget, @investment),
+                    notice: t("flash.actions.update.budget_investment")
+      else
+        render "edit"
+      end
     end
 
     def destroy

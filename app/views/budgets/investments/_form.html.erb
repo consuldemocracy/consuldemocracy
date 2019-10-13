@@ -1,4 +1,4 @@
-<%= translatable_form_for(@investment, url: action_name == "edit" ? budget_investment_path(@budget, @investment) : form_url, method: action_name == "new" ? :post : :put , html: { multipart: true }) do |f| %>
+<%= translatable_form_for(@investment, url: form_url, html: { multipart: true }) do |f| %>
 
   <%= render "shared/errors", resource: @investment %>
 

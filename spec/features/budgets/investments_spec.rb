@@ -940,13 +940,30 @@ describe "Budget Investments" do
       visit user_path(daniel, filter: "budget_investments")
 
       click_link("Edit", match: :first)
-      find(:xpath, "//input[@id='budget_investment_translations_attributes_0_title']").set "Mejoras Parque"
+      fill_in "Title", with: "Park improvements"
       check "budget_investment_terms_of_service"
 
       click_button "Update Investment"
 
       expect(page).to have_content "Investment project updated succesfully"
-      expect(page).to have_content "Mejoras Parque"
+      expect(page).to have_content "Park improvements"
+    end
+
+    scenario "Trigger validation errors in edit view" do
+      daniel = create(:user, :level_two)
+      message_error = "is too short (minimum is 4 characters), can't be blank"
+      create(:budget_investment, heading: heading,title: "Get Schwifty", author: daniel, created_at: 1.day.ago)
+
+      login_as(daniel)
+
+      visit user_path(daniel, filter: "budget_investments")
+      click_link("Edit", match: :first)
+      fill_in "Title", with: ""
+      check "budget_investment_terms_of_service"
+
+      click_button "Update Investment"
+
+      expect(page).to have_content message_error
     end
 
     scenario "Another User can't edit budget investment" do
