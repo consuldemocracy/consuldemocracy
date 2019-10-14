@@ -1,6 +1,0 @@
-val:
-  date:
-    order:
-      - :year
-      - :month
-      - :day

@@ -1,8 +1,0 @@
-sv:
-  stats:
-    age: "Ålder"
-    total: "Totalt"
-    geozone: "Stadsdel"
-    budgets:
-      link: "Statistik"
-      total: "Totalt"

@@ -1,6 +1,0 @@
-nl:
-  date:
-    order:
-      - :year
-      - :month
-      - :day

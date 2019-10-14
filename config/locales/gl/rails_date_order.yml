@@ -1,6 +1,0 @@
-gl:
-  date:
-    order:
-      - :day
-      - :month
-      - :year
