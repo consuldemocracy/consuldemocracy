@@ -1,0 +1,12 @@
+<div class="spending-proposal-form">
+
+  <div class="clear float-right">
+    <%= render '/shared/print' %>
+  </div>
+
+  <div class="small-12 medium-9 column end">
+    <h1 class=""><%= t("management.spending_proposals.create") %></h1>
+    <%= render "spending_proposals/form", form_url: management_spending_proposals_url %>
+  </div>
+
+</div>

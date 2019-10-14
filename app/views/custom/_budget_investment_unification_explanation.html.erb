@@ -1,0 +1,31 @@
+<% if investment.is_unified? %>
+  <div id="unification_explanation" class="callout margin">
+    <h4>
+      <% if investment.unification_reason %>
+        <%= safe_html_with_links investment.unification_reason.html_safe %>
+      <% end %>
+    </h4>
+    <% if investment.unification_explanation %>
+      <p class="small">
+        <%= safe_html_with_links investment.unification_explanation.html_safe %>
+      </p>
+    <% end %>
+    <p>Esta propuesta ha sido retirada en favor de "<%= link_to(investment.unified_with.title, budget_investment_path(investment.unified_with.budget, investment.unified_with)) %>".</p>
+  </div>
+<% else %>
+    <% if investment.has_unifications? %>
+        <div id="unification_explanation" class="callout margin">
+          <h4>
+            Lista de propuestas retiradas en favor de ésta (orden alfabético):
+          </h4>
+
+          <div class="small-12">
+            <ol style="margin-left: 30px;">
+              <% investment.investments_unified_to_me.order('title asc').each do |retired| %>
+                  <li><%= link_to retired.title, budget_investment_path(retired.budget, retired) %></li>
+              <% end %>
+            </ol>
+          </div>
+        </div>
+    <% end %>
+<% end %>

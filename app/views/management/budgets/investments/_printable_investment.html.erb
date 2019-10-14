@@ -1,0 +1,67 @@
+<div id="<%= dom_id(investment) %>" class="budget-investment clear" style="page-break-inside: avoid;">
+  <div class="panel">
+    <div class="row">
+
+      <div class="small-12 medium-12 column">
+        <div class="budget-investment-content">
+
+          <% cache [locale_and_user_status(investment), 'printable_index', investment, investment.author] do %>
+              <span class="label-budget-investment float-left"><%= investment.heading.name %></span>
+              <span class="icon-budget"></span>
+              <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+              <p class="investment-project-info">
+
+                <%= l investment.created_at.to_date %>
+
+                <% if investment.author.hidden? || investment.author.erased? %>
+                    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                    <span class="author">
+                  <%= t("budgets.investments.show.author_deleted") %>
+                </span>
+                <% else %>
+                    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                    <span class="author">
+                  <%= investment.author.name %>
+                </span>
+                    <% if investment.author.official? %>
+                        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                        <span class="label round level-<%= investment.author.official_level %>">
+                    <%= investment.author.official_position %>
+                  </span>
+                    <% end %>
+                <% end %>
+
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <strong><%= link_to(investment.group.name, budget_investments_path(investment.budget, group_id: investment.group_id )) %></strong>
+              </p>
+              <div class="">
+                <p>
+                  <% if investment.attachment_url %>
+                    <% if investment.image_attached? %>
+                        <%= image_tag investment.attachment_url, style: 'float: left; max-width: 200px; margin-right: 20px; margin-bottom: 20px; margin-top: 10px;' %>
+                      <% else %>
+                          Adjunto:
+                          <%= link_to investment.attachment_url, investment.attachment_url, target:  'blank' %>
+                    <% end %>
+                  <% end %>
+                  <%= investment.description %></p>
+              </div>
+              <%= render "shared/tags", taggable: investment, limit: 5 %>
+                <% if investment.comments.any? %>
+                  <h4><%= investment.comments.count %> Comentarios </h4>
+                  <% investment.comments.each do |comment| %>
+
+                  <div>
+                    <blockquote style="background-color: #e9e9e9;">
+                      <p><%= comment.body.html_safe %></p>
+                      <small> <%= comment.user.name %>  <span class="bullet">&nbsp;&bull;&nbsp;</span> <%= l comment.created_at %></small>
+                    </blockquote>
+                  </div>
+                  <% end %>
+                <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<br>
+<h5><%= link_to heading.name, budget_ballot_path(budget, heading_id: heading.id, group_id: group.id) %> QUE HAS ELEGIDO</h5>
+<% investments = @ballot.sorted_investments(heading.id) %>
+<% if investments.any? %>
+
+    <ul class="ballot-list">
+      <% if @group %>
+          <% investments.each do |investment| %>
+              <%= render 'budgets/ballot/investment_with_points_for_sidebar',
+                         investment: investment,
+                         investment_ids: @investment_ids %>
+          <% end %>
+      <% end %>
+    </ul>
+
+<% else %>
+    <div class="text-muted">
+      <small>
+        Aún no ha votado ninguna propuesta. Debe seleccionar <%= @ballot.number_remaining_lines_to_complete(heading) %> <%= heading.name %> para completar su papeleta.
+      </small>
+    </div>
+<% end %>

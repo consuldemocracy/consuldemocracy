@@ -1,0 +1,34 @@
+<div class="text-center">
+	<%- if controller_name != 'sessions' %>
+	  <%= link_to t("devise_views.shared.links.login"), new_session_path(resource_name) %><br>
+	<% end -%>
+
+  <%#- if devise_mapping.registerable? &&
+        controller_name != 'registrations' ||
+        controller_path != 'users/registrations' %>
+	  <%#= link_to t("devise_views.shared.links.signup"), new_user_registration_path %><!-- <br> -->
+	<%# end -%>
+
+  <%#- if devise_mapping.registerable? && controller_name == 'registrations' && controller_path != 'organizations/registrations' %>
+    <%#= link_to t("devise_views.shared.links.organization_signup"), new_organization_registration_path %>
+  <%# end -%>
+
+	<%#- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+	  <%#= link_to t("devise_views.shared.links.new_password"), new_password_path(resource_name) %><!-- <br> -->
+	<%# end -%>
+
+	<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+	  <%= link_to t("devise_views.shared.links.new_confirmation"), new_confirmation_path(resource_name) %><br>
+	<% end -%>
+
+	<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+	  <%= link_to t("devise_views.shared.links.new_unlock"), new_unlock_path(resource_name) %><br>
+	<% end -%>
+
+	<%- if devise_mapping.omniauthable? && devise_mapping.name == 'user' %>
+	  <%- resource_class.omniauth_providers.each do |provider| %>
+	    <%= link_to t("devise_views.shared.links.signin_with_provider", provider: provider.to_s.titleize), omniauth_authorize_path(resource_name, provider) %><br>
+	  <% end -%>
+	<% end -%>
+
+</div>

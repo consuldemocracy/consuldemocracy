@@ -1,0 +1,65 @@
+<div id="<%= dom_id(meeting) %>" class="legislation clear investment-project-show" style="padding: 0px;">
+  <div class="column row legislation-text" style="padding: 0px; margin: 0px;">
+    <div class="small-3 column" style="padding-left: 0px;">
+      <div class="" data-equalizer-watch="" style='<%= "background-image: url(#{meeting.attachments.first.file.cover}); background-position: center; background-position: center; background-size: cover;" if meeting.attachments.first %>'>
+        <div style="min-height: 229px;">
+
+        </div>
+      </div>
+    </div>
+    <div class="small-5 column" style="padding-top: 15px;">
+
+      <div class="legislation-text">
+        <h3><%= link_to meeting.title, meeting %></h3>
+      </div>
+      <div class="investment-project-info">
+        <span class="icon-comments"></span>&nbsp;
+        <%= link_to t("proposals.proposal.comments", count: meeting.comments_count), namespaced_meeting_path(meeting, anchor: "comments") %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= meeting.assembly.name %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= render 'consul_assemblies/meetings/status', meeting: meeting %>
+        <% if meeting.proposals.any? && meeting.proposals.to_approve.any?%>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= meeting.proposals.to_approve.count %> <%= t('.acts_pending') %>
+        <% end %>
+      </div>
+      <div class="">
+        <%= markdown(meeting.summary.present? ? meeting.summary : first_paragraph(meeting.description)) %>
+      </div>
+    </div>
+    <div class="small-4 column">
+      <% if can?(:create, Follow) ||  can?(:destroy, Follow) %>
+      <p class="text-center">
+        <span id="<%= meeting.id %>"><%= render 'follows/follow_button', follow: find_or_build_follow(current_user, meeting)%></span>
+      </p>
+      <% end %>
+      <p class="text-center">
+        <% unless meeting.attachment_url.nil? %>
+          <%= link_to t('.see_act'), meeting.attachment_url, class: "button hollow expanded",  target: :blank %>
+        <% end %>
+      </p>
+      <% if can?(:create, ConsulAssemblies::Proposal) %>
+        <% if meeting.accepting_proposals? %>
+          <p class="text-center">
+            <%= link_to t('.send_proposal'), new_proposal_path(meeting_id: meeting.id), class: "button success hollow expanded" %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="column row small-collapse medium-uncollapse legislation-calendar">
+    <div class="small-6 medium-4 column">
+      <h5><%= t('.when') %></h5>
+      <p><%=l meeting.scheduled_at, format: :short %></p>
+    </div>
+    <div class="small-6 medium-4 column">
+      <h5><%= t('.where') %></h5>
+      <p><%= meeting.about_venue %></p>
+    </div>
+    <div class="small-6 medium-4 column">
+      <h5><%= t('.close') %></h5>
+      <p><%= format_date(meeting.close_accepting_proposals_at) %></p>
+    </div>
+  </div>
+</div>

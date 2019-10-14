@@ -1,0 +1,16 @@
+<div class="small-12 medium-4 columns column end" >
+  <div class="panel  margin <%= 'panel-highlight highlight' if page.highlight_in_cover_flag %>">
+
+    <div style="min-height: 419px;">
+      <h3><%= page.title %></h3>
+      <% unless page.date_information.blank? %>
+          <p class="info-date"><span class="icon-calendar"></span>&nbsp;<strong><%= page.date_information %></strong></p>
+      <% end %>
+
+      <p class="info">
+        <%= page.subtitle %>
+      </p>
+    </div>
+    <%= link_to 'Más información', page_path(page.slug), class: "button see-more expanded" %>
+  </div>
+</div>

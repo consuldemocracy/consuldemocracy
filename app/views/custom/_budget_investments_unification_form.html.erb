@@ -1,0 +1,23 @@
+
+<h2 id="classification" class="margin"><%= t("admin.budget_investments.edit.unification") %></h2>
+
+<div class="row">
+
+  <div class="small-12 column">
+    <%= f.label :unified_with_id, t("admin.budget_investments.edit.unified_with") %>
+    <%= f.select(:unified_with_id,
+                 @investments.collect{ |a| [a.name_and_group, a.id ] },
+                 { label: false, include_blank: t("admin.budget_investments.edit.not_unified_option") }) %>
+  </div>
+
+
+  <div class="small-12 column">
+    <%= f.label :unification_reason, t("admin.budget_investments.edit.unification_reason") %>
+    <%= f.text_field :unification_reason, maxlength: Budget::Investment.title_max_length, label: false, placeholder: t("admin.budget_investments.edit.unification_reason") %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.label :unification_explanation, t("admin.budget_investments.edit.unification_explanation") %>
+    <%= f.cktext_area :unification_explanation, maxlength: Budget::Investment.description_max_length, ckeditor: { language: I18n.locale }, label: false, placeholder: t("admin.budget_investments.edit.unification_reason") %>
+  </div>
+</div>

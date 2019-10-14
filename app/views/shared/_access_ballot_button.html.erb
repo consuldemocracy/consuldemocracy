@@ -1,0 +1,30 @@
+<div class="notice">
+  <% if current_user %>
+      <% if current_user.level_two_or_three_verified? %>
+          <%= link_to '#', class: "button margin-top expanded", disabled: 'disabled' do %>
+              VOTAR
+          <% end %>
+      <% else %>
+          <div class="swap-on-hover">
+            <a class="button expanded margin-top hide-on-over">
+              VOTAR
+            </a>
+
+            <div class="callout warning margin-top show-on-over">
+              Para acceder a la votación <%= link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path) %>
+            </div>
+          </div>
+      <% end %>
+  <% else %>
+      <div class="swap-on-hover">
+        <a class="button expanded margin-top hide-on-over">
+          VOTAR
+        </a>
+        <div class="callout primary margin-top show-on-over">
+          <%= t("budgets.ballots.banner.not_logged_in",
+                sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
+                sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+        </div>
+      </div>
+  <% end %>
+</div>

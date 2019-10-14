@@ -1,0 +1,32 @@
+<div class="row verify">
+  <%track_event(category: "verification", action: "edit_letter" )%>
+  <div class="small-12 medium-9 large-6 small-centered column">
+    <div class="text-center">
+      <h1>
+        <span class="icon-check"></span>
+        <%= t("pages.verify.title") %>
+      </h1>
+
+      <p><%= t("pages.verify.info") %></p>
+    </div>
+
+    <div class="small-12 large-9 small-centered column">
+      <%= form_for @letter, url: letter_path, method: :patch do |f| %>
+        <%= f.text_field :email, label: t("pages.verify.email"), placeholder: t("pages.verify.email") %>
+        <%= f.password_field :password, label: t("pages.verify.password"), placeholder: t("pages.verify.password") %>
+
+        <p class="letter-divider text-center">
+          <span class="icon-letter"></span>
+        </p>
+
+        <p>
+          <%= t("pages.verify.info_code") %>
+        </p>
+
+        <%= f.text_field :verification_code, label: t("pages.verify.code"), placeholder: t("pages.verify.code") %>
+
+        <%= f.submit(class: "button success expanded", value: t("pages.verify.submit")) %>
+      <% end %>
+    </div>
+  </div>
+</div>

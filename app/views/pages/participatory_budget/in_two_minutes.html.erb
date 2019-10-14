@@ -1,0 +1,172 @@
+<% provide :title do %><%= t('participatory_budget.in_two_minutes.title_page') %><% end %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+<div class="expanded page-background-row spending-proposal-bg">
+  <div class="row no-margin-top">
+    <div class="small-12 column text-center">
+      <h1><%= t('participatory_budget.in_two_minutes.title_html') %></h1>
+    </div>
+
+    <div class="small-12 column spending-proposal-timeline text-center">
+      <ul class="no-bullet">
+
+        <li class="">
+          <%= link_to budgets_path do %>
+            <i class="icon-calendar"></i>
+            <p class="title"><%= t('participatory_budget.in_two_minutes.date_1_info') %></p>
+            <p><%= t('participatory_budget.in_two_minutes.date_1') %></p>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to page_path('proposal_revision_period') do %>
+            <i class="icon-calendar"></i>
+            <p class="title"><%= t('participatory_budget.in_two_minutes.date_2_info') %></p>
+            <p><%= t('participatory_budget.in_two_minutes.date_2') %></p>
+          <% end %>
+        </li>
+
+        <li>
+          <i class="icon-calendar"></i>
+          <p class="title"><%= t('participatory_budget.in_two_minutes.date_3_info') %></p>
+          <p><%= t('participatory_budget.in_two_minutes.date_3') %></p>
+        </li>
+
+        <li class="active">
+          <i class="icon-calendar"></i>
+          <p class="title"><%= t('participatory_budget.in_two_minutes.date_4_info') %></p>
+          <p><%= t('participatory_budget.in_two_minutes.date_4') %></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="expanded highlight">
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <p><%= t('participatory_budget.in_two_minutes.introduction_html', link_to_2016_results: link_to(t('participatory_budget.in_two_minutes.link_to_past_budgets'), participatory_budget_results_path) ).html_safe %></p>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column text-center">
+    <h2>Presupuestos Participativos en 2 minutos</h2>
+    <%= link_to "¿Qué puedo proponer?", page_path('more_information', anchor: "2") %>&nbsp;|&nbsp;
+    <%= link_to "Explicación detallada del proceso", page_path('more_information', anchor: "1") %>
+  </div>
+</div>
+
+<div class="spending-proposals-text">
+  <div class="row margin">
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_1.png", size: "500x290", alt: "" ) %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3>Recogida de Propuestas</h3>
+      <p><strong>Plazo ampliado desde el 28 de febrero al 12 de marzo</strong></p>
+      <p>Del <strong>23 de enero al 12 de marzo</strong>, toda persona  empadronada en Getafe podrá crear
+        propuestas para uno o varios barrios. Los 3.432.000 euros destinados a Inversiones y
+        Programas se repartirán proporcionalmente en los 11 barrios.</p>
+
+      <p>Las propuestas se pueden hacer en esta web o de forma asistida en dependencias municipales
+        de los barrios. A través de las Comisiones de Barrio se podrá debatir, pensar y trabajar juntos
+        sobre las propuestas.</p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>Evaluación</h3>
+      <p><strong>Del 13 de marzo al 12 de mayo</strong> de mayo el Ayuntamiento estudiará  cada una de las propuestas para
+        valorar si cumplen los requisitos necesarios, es decir, que sean propuestas de inversión o
+        programas, viables desde el punto de vista jurídico, técnico y económico. Desde el
+        Ayuntamiento se devolverán los resultados de esta evaluación.</p>
+    </div>
+
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_2.png", size: "500x290", alt: "" ) %>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_3.png", size: "500x290", alt: "" ) %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3>Votación</h3>
+      <p><strong>Del 19 al 25 de Junio</strong> será el momento de votar aquellas propuestas que se han presentado en
+        la Asamblea de Barrio. Tendrás que votar con 3, 2 y 1 punto a las tres propuestas que hayas
+        elegido en el barrio que prefieras.</p>
+      <p>
+        Esta votación será simultánea en los 11 barrios ya que votarás en la aplicación web desde
+        cualquier dispositivo. Durante este periodo habrá, en distintas dependencias, ordenadores
+        para poder votar, con asistencia municipal, si lo necesitas.
+      </p>
+      <%= link_to "Más información sobre presupuestos participativos", page_path('more_information') %>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>Inicio de trabajos y seguimiento</h3>
+      <p>Una vez seleccionadas las propuestas ganadoras se iniciará el proceso de licitación,
+        contratación y construcción o desarrollo. A través de esta web se podrá hacer un seguimiento
+        del estado de las propuestas. Hay que tener en cuenta que, por regla general, las inversiones o
+        programas se llevarán a cabo el año siguiente a su aprobación.</p>
+    </div>
+
+    <div class="small-12 medium-6 column show-for-medium text-center">
+
+    </div>
+  </div>
+  <hr>
+  <div class="row margin">
+    <div class="small-12 medium-7 column text-center small-centered">
+      <h2>
+      <%= link_to "Comisiones de barrio", page_path('about_neighborhood_commissions') %>
+      </h2>
+      <p>Los Presupuestos Participativos no serían posibles sin la colaboración de vecinos y vecinas que, desinteresadamente,  desarrollan el proceso. Hay que tener en cuenta que la Comisión de Barrio es la herramienta presencial de participación del proceso. Sigue el enlace anterior para conocer toda la información sobre las comisiones de barrio.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="small-12 column text-center">
+      <h2 id="spending-proposals-budget">Distribución del presupuesto participativo y propuestas de inversión</h2>
+      <p>Una inversión es básicamente todo aquello que el Ayuntamiento puede construir o adquirir y que su duración prevista es superior a un año.<br> <%= link_to "Sigue leyendo para entender la definición en detalle", page_path('more_information', anchor: "1") %></p>
+
+      <div class="row">
+        <div class="small-12 medium-6 column margin show-for-medium">
+          <%= image_tag("map.jpg", alt: "Mapa de barrios de Getafe") %>
+        </div>
+        <div class="small-12 medium-6 column margin">
+          <table>
+            <thead>
+              <tr>
+                <th>Barrio</th>
+                <th>D.E. Inversiones</th>
+                <th>D.E. Programas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% Geozone.all.each do |geozone| %>
+                <tr>
+                  <td><%= geozone.name %></td>
+                  <td>300.000&euro;</td>
+                  <td>12.000&euro;</td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <small>
+            (*)<i>"D.E."</i> es la abreviación de <i>"Dotación económica"</i>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

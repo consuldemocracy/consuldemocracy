@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th><%= t('admin.poll_officers.officer.name') %></th>
+      <th colspan="2"><%= t('admin.poll_officers.officer.email') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= officer.name %>
+      </td>
+      <td>
+        <%= officer.email %>
+      </td>
+      <td class="text-right">
+        <% if officer.persisted? %>
+          <%= link_to t('admin.poll_officers.officer.delete'),
+                      admin_poll_officer_path(officer),
+                      method: :delete,
+                      class: "button hollow alert" %>
+        <% else %>
+          <%= link_to t('admin.poll_officers.officer.add'),{ controller: "admin/poll/officers", action: :create, user_id: officer.user_id },
+                      method: :post,
+                      class: "button success" %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>

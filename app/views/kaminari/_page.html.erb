@@ -1,0 +1,10 @@
+<% if page.current? %>
+  <li class="current">
+    <span class="show-for-sr"><%= t("views.pagination.current") %></span>
+    <%= page %>
+  </li>
+<% else %>
+  <li>
+    <%= link_to page, url, {:remote => remote, :rel => page.next? ? "next" : page.prev? ? "prev" : nil} %>
+  </li>
+<% end %>

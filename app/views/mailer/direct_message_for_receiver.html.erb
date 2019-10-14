@@ -1,0 +1,37 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= @direct_message.title %>
+  </h1>
+
+  <div style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= simple_format text_with_links(@direct_message.body), {}, sanitize: false  %>
+  </div>
+
+  <table style="width: 100%; border-top: 1px solid #DEE0E3; margin-top: 60px;">
+    <tbody>
+      <tr>
+        <td style="padding-bottom: 12px; padding-top: 24px; text-align: center;">
+          <%= link_to user_url(@direct_message.sender), style: "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; background: #f7f5f2; border-radius: 6px; color: #3d3d66!important; font-weight: bold; margin: 0px; padding: 10px 15px; text-align: center; text-decoration: none; min-width: 200px; display: inline-block;", target: "_blank" do %>
+            <%= image_tag('icon_mailer_reply.png', style: "border: 0; display: inline-block; width: 100%; max-width: 12px; vertical-align: sub;", alt: "") %>
+            <%= t('mailers.direct_message_for_receiver.reply',
+                sender: @direct_message.sender.name) %>
+          <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table style="width: 100%;">
+    <tbody>
+      <tr>
+        <td style="padding-left: 10px;">
+          <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px; margin: 0; font-style: italic; padding-bottom: 20px;">
+            <%= t('mailers.direct_message_for_receiver.unsubscribe',
+                account: link_to(t('mailers.direct_message_for_receiver.unsubscribe_account'),
+                                account_url, style: "color: #2895F1; text-decoration: none;")).html_safe %>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>

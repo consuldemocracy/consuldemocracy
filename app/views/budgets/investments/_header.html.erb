@@ -1,0 +1,75 @@
+<% if @group.present? %>
+    <section class="no-margin-top margin-bottom">
+      <div class="expanded jumbo-budget budget-header-bg budget-heading padding">
+
+        <div class="row">
+          <div class="small-12 column">
+            <%= back_link_to budget_path(@budget) %>
+
+            <% if can? :show, @ballot %>
+                <%= link_to t("budgets.investments.header.check_ballot"),
+                            budget_ballot_path(@budget),
+                            class: "button float-right" %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row progress-votes">
+          <div class="small-12 column">
+            <div class="progress-bar-nav" data-fixed-bar>
+              <h1 class="margin-top"><%= @group.name %></h1>
+              <h2 class=""><%= @budget.name %></h2>
+
+              <ul class="no-bullet headings-list hide">
+                <%  @group.headings.each do |heading| %>
+                    <li class="inline-block">
+                      <%= link_to current_path_with_query_params(page: 1, heading_id: heading.id ), class: heading.id == @heading.try(:id) ? 'active' : '' do %>
+                          <h4>
+                            <%= heading.name %>
+                          </h4>
+                      <% end %>
+                    </li>
+                <% end %>
+              </ul>
+
+              <% if can? :show, @ballot %>
+                  <div id="check-ballot" style="display: none;">
+                    <%= link_to t("budgets.investments.header.check_ballot"),
+                                budget_ballot_path(@budget) %>
+                  </div>
+                  <% if @ballot.valid_heading?(@heading) %>
+                      <div id="progress_bar" class="no-margin-top">
+                        <%= render 'budgets/ballot/progress_bar' %>
+                      </div>
+                  <% else %>
+                      <br>
+                      <p class="callout warning inline-block">
+                        <%= t("budgets.investments.header.different_heading_assigned_html",
+                              heading_link: link_to(
+                                  @assigned_heading.name,
+                                  budget_investments_path(@budget, heading: @assigned_heading))
+                            ) %>
+                      </p>
+                  <% end %>
+              <% else %>
+                  <% if @heading %>
+                      <h2 class="hide"><%= @budget.formatted_heading_price(@heading) %></h2>
+                  <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<% else %>
+    <div class="expanded jumbo-budget budget-header-bg padding no-margin-top margin-bottom">
+      <div class="row">
+        <div class="small-12 column">
+          <%= back_link_to budget_path(@budget) %>
+          <br>
+          <h1 class="margin"><%= @budget.name %></h1>
+          <h2><%= t('budgets.investments.index.any_group') %></h2>
+        </div>
+      </div>
+    </div>
+<% end %>

@@ -1,0 +1,22 @@
+es:
+  more_information:
+    participa_getafe:
+      title_html: Información detallada sobre Participa Getafe
+      title_page: Información detallada sobre Participa Getafe
+  about_neighborhood_comissions:
+    title_html: Información sobre comisiones de barrio en Getafe
+    title_page: Comisiones de Barrio y participación ciudadana en Getafe
+  participatory_budget:
+    in_two_minutes:
+      date_1: 23 enero - 12 marzo
+      date_1_info: Recogida de propuestas
+      date_2: 13 marzo - 12 mayo
+      date_2_info: Evaluación
+      date_3: abril y mayo
+      date_3_info: Defiende tus propuestas
+      date_4: 19 junio - 25 junio
+      date_4_info: Votación final
+      title_html: Tú decides cómo invertir 3.432.000€<br> en tu ciudad en 2017
+      title_page: Presupuestos participativos
+      link_to_past_budgets: Ya puedes consultar los resultados del 2016
+      introduction_html: El <strong>Ayuntamiento de Getafe ha reservado 3.432.000€</strong> en inversiones del <strong>próximo presupuesto de 2017</strong> para que los vecinos puedan decidir qué proyectos se llevarán a cabo. El 30 de junio de 2016 finalizó el plazo para votar propuestas de inversión y de programas de los Presupuestos participativos 2016 de los que  %{link_to_2016_results}.

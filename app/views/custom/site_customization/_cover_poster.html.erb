@@ -1,0 +1,20 @@
+<div class="small-12 column" style="margin-bottom: 45px;">
+  <div class="open-process">
+    <div class="small-4 column" >
+      <%= link_to page_path(page.slug), title: page.title do %>
+        <div class="<%= 'panel-image' if page.featured_image? %>" data-equalizer-watch="" style='<%= "background-image: url(#{page.featured_image.file.cover}); background-position: center;" if page.featured_image? %>'>
+          <div style="min-height: 229px;">
+
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="small-8 column end" >
+      <h3><%= page.title %></h3>
+      <p>
+        <%= page.subtitle %>
+        <%= link_to 'leer más...', page_path(page.slug) %>
+      </p>
+    </div>
+  </div>
+</div>

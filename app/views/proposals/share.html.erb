@@ -1,0 +1,47 @@
+<% provide :title do %><%= @proposal.title %><% end %>
+<% provide :social_media_meta_tags do %>
+<%= render "shared/social_media_meta_tags",
+            social_url: proposal_url(@proposal),
+            social_title: @proposal.title,
+            social_description: @proposal.summary %>
+<% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: proposal_url(@proposal) %>
+<% end %>
+
+<% cache [locale_and_user_status(@proposal), @proposal, @proposal.author, Flag.flagged?(current_user, @proposal), @proposal_votes] do %>
+  <div class="proposal-show">
+    <div id="<%= dom_id(@proposal) %>" class="row">
+      <div class="small-12 medium-9 column">
+
+        <h1><%= t("proposals.proposal.created") %></h1>
+
+        <h2><%= @proposal.title %></h2>
+        <p>
+          <%= t("proposals.show.code") %>
+          <strong><%= @proposal.code %></strong>
+        </p>
+
+        <p><%= t("proposals.proposal.share.guide").html_safe %></p>
+
+        <%= render partial: 'shared/social_share', locals: {
+          title: @proposal.title,
+          url: proposal_url(@proposal)
+        } %>
+
+        <br/>
+
+        <% if @proposal_improvement_url.present? %>
+        <p><%= t('proposals.proposal.improve_info', improve_info_link: link_to(t('proposals.proposal.improve_info_link'), @proposal_improvement_url)).html_safe %></p>
+        <% end %>
+
+        <p>
+        <%= link_to proposal_path(@proposal), class: 'proposal' do %>
+          <%= t("proposals.proposal.share.view_proposal") %>
+        <% end %>
+        </p>
+
+      </div>
+    </div>
+  </div>
+<% end %>

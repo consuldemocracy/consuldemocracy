@@ -1,0 +1,35 @@
+<div class="expanded no-margin-top padding page-background-row budgets-ballot-bg">
+  <div class="row">
+    <% unless @ballot.partially_completed? %>
+      <%= link_to budget_ballot_path(@budget, group_id: nil, heading_id: nil), class: 'back' do %>
+          <span class="icon-angle-left"></span>
+          <%= t("shared.back") %>
+      <% end %>
+    <% end %>
+
+
+    <h1 class="text-center"><%= t("budgets.ballots.show.title") %></h1>
+        <div class="small-12 medium-8 column small-centered text-center">
+          <h2>
+              <% if @group %>
+                Barrio <%= @group.name %>
+              <% else %>
+                Selecciona en qué barrio quieres votar
+              <% end %>
+          </h2>
+        </div>
+  </div>
+</div>
+
+<div class="row ballot">
+  <div class="margin-top">
+
+    <% if @group.nil? %>
+
+        <%= render 'budgets/ballot/ballot_map' %>
+
+    <% else %>
+        <%= render 'budgets/ballot/ballot_paper_by_group' %>
+    <% end %>
+  </div>
+</div>

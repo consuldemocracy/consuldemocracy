@@ -1,0 +1,22 @@
+<div class="small-12 column">
+    <%= f.label :email, t("devise_views.users.registrations.edit.email_label") %>
+    <%= f.email_field :email, label: false, autofocus: true, placeholder: t("devise_views.users.registrations.edit.email_label") %>
+</div>
+
+<div class="small-12 column">
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div><%= t("devise_views.users.registrations.edit.waiting_for") %> <%= resource.unconfirmed_email %></div>
+    <% end %>
+</div>
+
+<div class="small-12 column">
+    <%= f.label :password, t("devise_views.users.registrations.edit.password_label") %>
+    <p class="note"><%= t("devise_views.users.registrations.edit.leave_blank") %></p>
+    <%= f.password_field :password, autocomplete: "off", label: false, placeholder: t("devise_views.users.registrations.edit.password_label") %>
+</div>
+
+<div class="small-12 column">
+    <%= f.label :password_confirmation, t("devise_views.users.registrations.edit.password_confirmation_label") %>
+    <%= f.password_field :password_confirmation, label: false, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.password_confirmation_label") %>
+</div>
+

@@ -1,0 +1,18 @@
+# Overrides and adds customized gems in this file
+# Read more on documentation:
+# * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
+# * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
+#
+
+gem 'rest-client', '2.0.0'
+gem 'puma', '3.6.2'
+gem 'carrierwave', '~> 1.0'
+gem 'file_validators'
+gem 'phony_rails'
+gem 'mini_magick'
+gem "validate_url"
+gem 'acts_as_list'
+
+group :development do
+  gem 'guard-livereload', '~> 2.5', require: false
+end

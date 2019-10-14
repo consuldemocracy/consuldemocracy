@@ -1,0 +1,64 @@
+<div class="small-12 medium-12 column" id="results-container">
+
+  <% group.headings.each do |heading| %>
+      <h4 class="inline-block">
+        <%= heading.name %>
+      </h4>
+
+
+      <table id="budget-investments-results" class="table-for-mobile">
+        <thead>
+        <tr>
+          <th>
+            ID
+          </th>
+          <th scope="col">
+            <%= t("admin.budgets.results.spending_proposal") %>
+          </th>
+          <th scope="col" class="text-right">
+            <%= t("admin.budgets.results.ballot_lines_sum") %>
+          </th>
+          <th scope="col" class="text-right">
+            <%= t("admin.budgets.results.ballot_lines_count") %>
+          </th>
+          <th scope="col" class="text-right">
+            <%= t("admin.budgets.results.ballot_lines_ratio") %>
+          </th>
+          <th scope="col" class="text-right">
+            <%= t("admin.budgets.results.price") %>
+          </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% heading.investments.selected.sort_by_confirmed_ballots.each do |investment| %>
+            <tr id="<%= dom_id(investment) %>"
+                class="spending_proposal success">
+            <td>
+              <%= investment.id %>
+            </td>
+            <td>
+              <%= link_to investment.title,
+                          budget_investment_path(@budget, investment) %>
+            </td>
+            <td class="text-right ballot-points">
+              <%= investment.confirmed_budget_ballot_lines_sum %>
+            </td>
+            <td class="text-right">
+              <%= investment.confirmed_budget_ballot_lines.count %>
+            </td>
+            <td class="text-right">
+              <%= number_with_precision investment.ballot_lines_ratio %>
+            </td>
+            <td class="text-right">
+              <%= format_price investment.price %>
+            </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <small>(*) Los resultados se ordenan atendiendo al <strong>número de puntos</strong> conseguido por la propuesta. <strong>Ante un empate en número de puntos se ordenan a través del número de papeletas que contiene la propuesta</strong>.</small>
+      <br>
+      <br>
+  <% end %>
+</div>

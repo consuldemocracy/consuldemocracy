@@ -1,0 +1,53 @@
+<%= link_to account_path, class: "back" do %>
+    <span class="icon-angle-left"></span>
+    <%= t("shared.back") %>
+<% end %>
+
+<h2><%= t("devise_views.users.registrations.edit.edit") %></h2>
+
+<ul class="no-bullet submenu">
+  <li class="inline-block">
+    <%= link_to edit_registration_path(resource_name), class: ("active" unless params[:tab] ) do %>
+      <h2>
+        <%= t("devise_views.users.registrations.edit.account_data") %>
+      </h2>
+    <% end %>
+  </li>
+
+  <% if resource.level_three_verified? %>
+  <li class="inline-block">
+    <%= link_to edit_registration_path(resource_name, tab: 'extra'), class: ("active" if params[:tab]) do %>
+            <h2>
+              <%= t("devise_views.users.registrations.edit.extra_data") %>
+            </h2>
+        <% end %>
+  </li>
+  <% end %>
+
+</ul>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name, tab: params[:tab]), html: {method: :put}) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="row">
+        <% if resource.level_three_verified? &&  params[:tab]%>
+          <%= render 'form_extra_fields', resource: resource, f:f %>
+        <% else %>
+          <%= render 'form_access_data_fields', resource: resource, f:f %>
+        <% end %>
+
+    </div>
+    <div class="row padding">
+
+      <div class="small-12 column">
+        <%= f.label :current_password, t("devise_views.users.registrations.edit.current_password_label") %>
+        <p class="note"><%= t("devise_views.users.registrations.edit.need_current") %></p>
+        <%= f.password_field :current_password, label: false, autocomplete: "off", placeholder: t("devise_views.users.registrations.edit.current_password_label") %>
+      </div>
+
+      <div class="small-12 column">
+        <%= f.submit t("devise_views.users.registrations.edit.update_submit"), class: "button" %>
+      </div>
+
+    </div>
+<% end %>

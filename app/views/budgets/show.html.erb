@@ -1,0 +1,89 @@
+<div class="expanded budget-header-bg no-margin-top">
+  <div class="row" data-equalizer>
+    <div class="small-12 medium-9 column padding" data-equalizer-watch>
+      <%= back_link_to budgets_path %>
+
+      <h1><%= @budget.name %></h1>
+      <%= safe_html_with_links @budget.description %>
+    </div>
+    <div class="small-12 medium-3 column inner-info info padding" data-equalizer-watch>
+      <p>
+        <strong><%= t('budgets.show.phase') %></strong>
+      </p>
+      <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
+
+      <% if @budget.accepting? %>
+        <% if @heading && current_user %>
+          <% if current_user.level_two_or_three_verified? %>
+            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
+          <% else %>
+            <div class="callout warning margin-top">
+              <%= t("budgets.investments.index.sidebar.verified_only",
+                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="callout primary margin-top">
+            <%= t("budgets.investments.index.sidebar.not_logged_in",
+                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
+                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% if @budget.finished? %>
+        <%= link_to t("budgets.show.see_results"),
+                    budget_results_path(@budget, heading_id: @budget.headings.first),
+                    class: "button margin-top expanded" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column margin">
+
+  </div>
+
+  <div class="small-12 medium-9 column margin-top">
+    <h2><%= t("budgets.investments.index.map_title") %></h2>
+    <h5><%= t('budgets.investments.index.map_see_all_proposals',
+              link: link_to(t("budgets.investments.index.map_see_all_proposals_link"), budget_investments_path(@budget) )
+            ).html_safe %>
+    </h5>
+    <div class="text-center">
+      <%= image_tag('map.jpg', id: 'map', usemap: '#html_map', class: 'margin-top', alt: 'Barrios de Getafe') %>
+      <map name="html_map" id="html_map">
+        <% @budget.groups.each do |geozone| %>
+            <area shape="poly"
+                  coords="<%= geozone.geozone.try(:html_map_coordinates) %>"
+                  href="<%= budget_investments_path(@budget, group_id: geozone.id) %>"
+                  title="<%= geozone.name %>"
+                  alt="<%= geozone.name %>">
+        <% end %>
+      </map>
+    </div>
+  </div>
+
+  <div class="small-12 medium-3 column margin">
+    <% if false %>
+    <div class="sidebar-divider"></div>
+    <h2 class="sidebar-title"><%= t("budgets.investments.index.sidebar.information") %></h2>
+    <br>
+    <ul id="geozones" class="no-bullet">
+      <li><%= link_to 'Información detallada', page_path('normativa-presupuestos-participativos-2018', anchor: '4') %></li>
+    </ul>
+    <% end %>
+    <div class="sidebar-divider"></div>
+    <h2 class="sidebar-title">Barrios</h2>
+    <br>
+    <ul id="geozones" class="no-bullet">
+      <li><%= link_to 'Todos los barrios', budget_investments_path(@budget) %></li>
+      <% @budget.groups.each do |group| %>
+          <li><%= link_to group.name, budget_investments_path(@budget, group_id: group.id), class: ("active" if group.id == params[:group]) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+</div>

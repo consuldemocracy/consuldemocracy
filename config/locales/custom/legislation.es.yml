@@ -1,0 +1,7 @@
+es:
+  legislation:
+    processes:
+      results_menu: 'Resultados de la consulta ciudadana'
+      results:
+        votes: 'Votos por respuesta'
+        empty: 'Esta consulta no tiene respuestas cerradas, por lo que no hay tabla de resultados. Revise los comentarios para ver el proceso.'

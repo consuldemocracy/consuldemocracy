@@ -1,0 +1,7 @@
+
+
+<div class="row">
+  <%- @pages_in_cover.each_with_index do |page, index| %>
+    <%= render 'custom/site_customization/cover_poster', page: page %>
+  <% end %>
+</div>

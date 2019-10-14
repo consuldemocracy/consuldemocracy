@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="small-12 medium-6 large-4 column">
+    <div class="callout success text-center">
+      <strong><%= t("officing.voters.show.can_vote") %></strong>
+    </div>
+  </div>
+  <div class="small-12 medium-6 large-4 column end">
+    <%= form_for @user, as: :voter, url: officing_voters_path, method: :post, remote: true do |f| %>
+      <%= f.hidden_field :poll_id, value: poll.id %>
+      <%= f.hidden_field :user_id, value: @user.id %>
+      <%= f.submit t("officing.voters.show.submit"), class: "button success expanded" %>
+    <% end %>
+  </div>
+</div>

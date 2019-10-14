@@ -1,0 +1,22 @@
+<% unless @budget  %>
+  <div class="banner">
+    <div class="row banner-inner">
+
+      <div class="medium-6 small-12 column banner-left">
+
+          <span class="message">
+            <span class=""><span class="lead">Presupuestos Participativos 2019 </span><br/>En fase de votación de propuestas hasta el 30 de junio</span>
+          </span>
+      </div>
+      <div class="medium-6 small-12 column banner-right text-center">
+
+        
+          <%= link_to 'VOTAR PROPUESTAS',
+                      budget_ballot_path(Budget.last),
+                      class: 'button expanded primary' %>
+    
+
+      </div>
+    </div>
+  </div>
+<% end %> 

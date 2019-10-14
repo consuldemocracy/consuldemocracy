@@ -1,0 +1,20 @@
+<div class="small-12 medium-10 column" id="results-container">
+  <h2 class="inline-block"><%= @geozone.nil? ? t('geozones.none') : @geozone.name %></h2>
+
+  <span class="float-right"><%= link_to t("spending_proposals.results.show_all_link"), "#", class: "js-toggle-link button hollow margin-bottom", data: {'toggle-selector' => '.js-discarded', 'toggle-text' => t("spending_proposals.results.hide_discarded_link")} %></span>
+
+  <h4><%= t("spending_proposals.results.spending_type.investment") %></h4>
+  <%= render 'spending_proposals/table', proposals: @spending_proposals.investments %>
+  <h4><%= t("spending_proposals.results.spending_type.program") %></h4>
+  <%= render 'spending_proposals/table', proposals: @spending_proposals.programs %>
+
+  <div><p><a href="http://getafe.es/areas-de-gobierno/area-social/participacion-ciudadana/actuaciones/presupuestos-participativos/proceso-de-votaciones-de-presupuestos-participativos-mayo-junio-2016/" target="_blank">Consultar documentación sobre Presupuestos Participativos 2016</a></p></div>
+  <br>
+
+  <div id="about-being_processed" class="small"><strong>(*) Sobre propuestas en estado "Tramitándose":</strong> pendiente de modificación presupuestaria por NO aprobación de Presupuestos municipales 2017 (Pleno 01/12/16)
+    <a href="https://sede.getafe.es/portalGetafe/sede/RecursosWeb/DOCUMENTOS/1/0_11478_1.pdf" target="blank">https://sede.getafe.es/portalGetafe/sede/RecursosWeb/DOCUMENTOS/1/0_11478_1.pdf</a>
+  </div>
+  <br>
+
+  <div class="small"><strong>(*)Nota:</strong> Las propuestas se muestran ordenadas por orden de votación (para cada barrio). Aquellas propuestas marcadas con el símbolo <span class="icon-x"></span> no se ejecutan porque su presupuesto se pasa una vez ejecutado en orden de prelación, puesto que exceden presupuesto</div>
+</div>

@@ -1,0 +1,7 @@
+es:
+  welcome:
+    welcome:
+        go_to_index: 'Ahora no, ir a la portada'
+        user_permission_debates: "Opinar respecto a las audiencias públicas dejando comentarios"
+        user_permission_like: Dar a "me gusta" en las propuestas de los ciudadanos*
+        user_permission_votes: Participar en las votaciones finales*

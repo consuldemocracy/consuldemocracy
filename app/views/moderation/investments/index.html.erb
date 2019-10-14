@@ -1,0 +1,105 @@
+<h2><%= t("moderation.investments.index.title") %></h2>
+
+
+<div class="row">
+  <h3 class="small-8 large-8 columns"><%= page_entries_info @investments %></h3>
+  <div class="small-4 large-4 columns">
+    <div class="float-right">
+      <%= t("moderation.investments.index.order") %>
+      <%= render 'shared/order_selector', i18n_namespace: "moderation.investments.index" %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "moderation.investments.index" %>
+
+<%= form_tag moderate_moderation_investments_path(request.query_parameters), method: :put do %>
+  <p class="js-check">
+    <%= t('shared.check') %>:
+    <%= link_to t('shared.check_all'), '#', data: {check_all: "investment_ids[]"} %>
+    |
+    <%= link_to t('shared.check_none'), '#', data: {check_none: "investment_ids[]"} %>
+  </p>
+
+  <table class="clear">
+    <tr>
+      <th>
+        <%= t("moderation.investments.index.headers.proposal") %>
+      </th>
+      <th>
+       <%= t("moderation.investments.index.headers.moderate") %>
+      </th>
+    </tr>
+    <% @investments.each do |investment| %>
+      <tr id="investment_<%= investment.id %>">
+        <td>
+          <h4><%= link_to investment.title, budget_investment_path(investment.budget, investment), target: "_blank" %></h4>
+
+          <span class="date"><%= l investment.updated_at.to_date %></span>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= link_to(investment.budget.name, investment.budget) %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= link_to(investment.group.name, budget_group_path(investment.budget, investment.group)) %>
+          <span class="bullet">&nbsp;&bull;&nbsp;</span>
+          <%= investment.author.username %>
+          <% if investment.has_attachment? %>
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <i class="icon-document"></i> <strong><%= link_to(t("moderation.investments.index.attachment"), investment.attachment.url, target: '_blank') %></strong>
+          <% end %>
+          <br>
+          <br>
+
+          <% if investment.has_attachment? %>
+                  <% if investment.attachment_verified? %>
+                    <span class="label success"><%= t("moderation.investments.index.attachment_verified", by: investment.attachment_verified_by ) %></span>
+                  <% elsif investment.attachment_rejected? %>
+                    <span class="label primary"><%= t("moderation.investments.index.attachment_moderation_rejected", by: investment.attachment_verified_by  ) %></span>
+                  <% else %>
+                    <span class="label warning"><%= t("moderation.investments.index.attachment_moderation_peding") %></span>
+                  <% end %>
+          <% end %>
+          <br>
+          <br>
+
+          <div class="moderation-description">
+            <%= investment.description %>
+          </div>
+        </td>
+        <td class="text-center">
+          <%= check_box_tag "investment_ids[]", investment.id, nil, id: "#{dom_id(investment)}_check" %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+  <%= submit_tag t('moderation.investments.index.verify_attachments'),
+                 name: "verify_attachments",
+                 class: "button success",
+                 data: {confirm: t('moderation.investments.index.confirm')}
+  %>
+
+  <%= submit_tag t('moderation.investments.index.ignore_flags'),
+                 name: "ignore_flags",
+                 class: "button success hollow",
+                 data: {confirm: t('moderation.investments.index.confirm')}
+  %>
+
+    <%= submit_tag t('moderation.investments.index.reject_attachment'),
+                   name: "reject_attachments",
+                   class: "button alert hollow",
+                   data: {confirm: t('moderation.investments.index.reject_attachment')}
+    %>
+
+  <div class="float-right">
+    <%= submit_tag t('moderation.investments.index.hide_proposals'),
+      name: "hide_investments",
+      class: "button hollow alert",
+      data: {confirm: t('moderation.investments.index.confirm')}
+    %>
+
+  </div>
+
+  <%= paginate @investments %>
+
+<% end %>
+

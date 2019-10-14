@@ -1,0 +1,13 @@
+<table class="clear activity-comments">
+  <% @comments.each do |comment| %>
+    <tr id="comment_<%= comment.id %>">
+      <td>
+        <%= comment_commentable_title(comment) %>
+        <br>
+        <%= comment.body %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @comments %>

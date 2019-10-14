@@ -1,0 +1,46 @@
+<%= render "shared/back_link" %>
+
+<%= link_to t('shared.edit'), edit_admin_question_path(@question),
+            class: "button hollow float-right" %>
+
+<div class="clear"></div>
+
+<div class="row">
+  <div class="small-12 medium-9 column">
+    <strong><%= t("admin.questions.show.title") %></strong>
+    <h1><%= @question.title %></h1>
+
+    <% if @question.proposal.present? %>
+      <p>
+        <strong><%= t("admin.questions.show.proposal") %></strong>
+        <br>
+        <%= link_to @question.proposal.title, proposal_path(@question.proposal) %>
+      </p>
+    <% end %>
+
+    <p>
+      <strong><%= t("admin.questions.show.author") %></strong>
+      <br>
+      <%= link_to @question.author.name, user_path(@question.author) %>
+    </p>
+
+    <p>
+      <strong><%= t("admin.questions.show.valid_answers") %></strong>
+    </p>
+
+    <% @question.valid_answers.each do |answer| %>
+      <span class="button">
+        <%= answer %>
+      </span>
+    <% end %>
+
+    <p>
+      <strong><%= t("admin.questions.show.description") %></strong>
+      <br>
+      <%= @question.description %>
+    </p>
+
+
+    <%= link_to t("admin.questions.show.preview"), question_path(@question) %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<li id="<%= dom_id(investment) %>_sidebar" class="ballot-selection-paper">
+  <%= investment.title %>
+  <span><%= @ballot.investment_points(investment) %> Puntos</span>
+
+  <% if @budget.balloting? && @ballot.unconfirmed? %>
+    <%= link_to management_budget_ballot_line_url(@budget, @ballot, id: investment.id,
+                                       investments_ids: investment_ids),
+                title: t('budgets.ballots.show.remove'),
+                class: "remove-investment-project",
+                method: :delete do %>
+      <span class="sr-only"><%= t('budgets.ballots.show.remove') %></span>
+      <span class="icon-x delete"></span>
+    <% end %>
+  <% end %>
+</li>

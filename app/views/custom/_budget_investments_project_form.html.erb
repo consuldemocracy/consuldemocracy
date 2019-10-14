@@ -1,0 +1,34 @@
+<br>
+<h2 id="classification" class="margin"><%= t("admin.budget_investments.edit.project") %></h2>
+
+<div class="row">
+
+  <div class="small-12 column">
+    <%= f.label :project_phase, t("admin.budget_investments.edit.project_phase") %>
+    <%= f.text_field :project_phase, maxlength: Budget::Investment.title_max_length, label: false, placeholder: t("admin.budget_investments.edit.project_phase_placeholder") %>
+  </div>
+
+
+  <div class="small-12 column">
+    <%= f.label :project_content, t("admin.budget_investments.edit.project_content") %>
+    <%= f.cktext_area :project_content, ckeditor: { language: I18n.locale,  toolbar: 'mini' }, label: false, placeholder: t("admin.budget_investments.edit.project_content_placeholder") %>
+  </div>
+</div>
+<br>
+
+<h2 id="classification" class="margin"><%= t("admin.budget_investments.edit.project_attachments") %></h2>
+<div class="row">
+  <div class="small-12 column">
+
+    <%= f.fields_for :attachments do |attachment| %>
+      <%= render 'admin/shared/attachment_fields', f: attachment %>
+    <% end %>
+    <br>
+
+    <div class="text-right">
+      <%= link_to_add_association f, :attachments, class: 'button success small'  do %>
+          <%= t("admin.budget_investments.edit.project_attachments_add") %>
+      <% end %>
+    </div>
+  </div>
+</div>

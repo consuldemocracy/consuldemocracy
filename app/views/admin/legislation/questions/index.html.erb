@@ -1,0 +1,59 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %> - <%= t("admin.legislation.questions.index.title") %>
+<% end %>
+
+<div class="legislation-admin legislation-draft-versions-index row">
+  <div class="small-12 column">
+    <%= link_to admin_legislation_processes_path, class: "back" do %>
+      <span class="icon-angle-left"></span>
+      <%= t("admin.legislation.questions.index.back") %>
+    <% end %>
+
+    <h2><%= @process.title %></h2>
+
+    <%= render 'admin/legislation/processes/subnav', process: @process, active: 'questions' %>
+
+    <div class="row">
+      <div class="small-12 medium-9 column">
+        <h4><%= t("admin.legislation.questions.index.title") %></h4>
+      </div>
+
+      <div class="small-12 medium-3 column legislation-process-question">
+        <%= link_to t("admin.legislation.questions.index.create"), new_admin_legislation_process_question_path, class: "button" %>
+      </div>
+    </div>
+
+    <% if @process.questions.any? %>
+      <table class="stack">
+       <thead>
+          <tr>
+            <th><%= t("admin.legislation.questions.table.title") %></th>
+            <th><%= t("admin.legislation.questions.table.question_options") %></th>
+            <th><%= t("admin.legislation.questions.table.answers_count") %></th>
+            <th><%= t("admin.legislation.questions.table.comments_count") %></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @process.questions.each do |question| %>
+          <tr id="<%= dom_id(question) %>">
+            <td>
+              <%= link_to question.title, edit_admin_legislation_process_question_path(@process, question) %>
+            </td>
+            <td>
+              <%= content_tag :ul do %>
+                <% question.question_options.each do |question_option| %>
+                  <%= content_tag :li do %>
+                    <%= question_option.value %> (<%= question_option.answers_count %>)
+                  <% end %>
+                <% end %>
+              <% end %>
+            </td>
+            <td><%= question.answers_count %></td>
+            <td><%= link_to question.comments.count, legislation_process_question_path(@process, question, anchor: 'comments') %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>

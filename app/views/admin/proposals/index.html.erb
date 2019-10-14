@@ -1,0 +1,42 @@
+<h2><%= t("admin.proposals.index.title") %></h2>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.proposals.index" %>
+
+<h3><%= page_entries_info @proposals %></h3>
+
+<table>
+  <% @proposals.each do |proposal| %>
+    <tr id="<%= dom_id(proposal) %>">
+      <td>
+        <strong><%= proposal.title %></strong>
+        <br>
+        <div class="moderation-description">
+          <p><%= proposal.summary %></p>
+          <%= proposal.description %>
+          <% if proposal.external_url.present? %>
+            <p><%= text_with_links proposal.external_url %></p>
+          <% end %>
+          <% if proposal.video_url.present? %>
+            <p><%= text_with_links proposal.video_url %></p>
+          <% end %>
+          <p><%= proposal.question %></p>
+        </div>
+      </td>
+      <td class="text-right">
+        <%= link_to t("admin.actions.restore"),
+              restore_admin_proposal_path(proposal, request.query_parameters),
+              method: :put,
+              data: { confirm: t("admin.actions.confirm") },
+              class: "button hollow on-hover-block" %>
+        <% unless proposal.confirmed_hide? %>
+          <%= link_to t("admin.actions.confirm_hide"),
+                confirm_hide_admin_proposal_path(proposal, request.query_parameters),
+                method: :put,
+                class: "button hollow warning on-hover-block" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @proposals %>

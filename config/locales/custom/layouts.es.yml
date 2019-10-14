@@ -1,0 +1,101 @@
+es:
+  already_verified_but_not_phone_number: 'Es necesario que confirmes tu teléfono para poder cambiar tu votación'
+  errors:
+    messages:
+      extension_whitelist_error: 'El tipo de fichero subido no está permitido. Sólo se permiten imágenes y PDF.'
+  verification:
+    residence:
+      new:
+        error_verifying_census: "El Padrón no pudo verificar tu información. Por favor, confirma que tus datos de empadronamiento sean correctos a través de los servicios del Ayuntamiento de Getafe para ese efecto."
+  votes:
+    anonymous: 'Es necesario %{verify_account} para poder opinar en las consultas ciudadanas'
+  debates:
+    show:
+      validate_to_comment: 'Es necesario %{verify} para poder opinar en las consultas ciudadanas'
+      verify: 'verificar tu cuenta con el padrón'
+  budgets:
+    banner:
+      message: '<span class=""><span class="lead">Iniciada fase de evaluación de propuestas</span><br/>de presupuestos participativos 2017 hasta el 12 Mayo.</span>'
+      callout: 'Participa aquí, tu opinión cuenta'
+  investments:
+    show:
+      validate_to_comment: 'Es necesario %{verify} para poder opinar en las propuestas del proceso  '
+  account:
+    show:
+      user_permission_neigh_commission: Inscribirse en la comisión de tu barrio**
+      change_neigh_comission: Inscribirme en la comisión de mi barrio**
+      change_neigh_comission_hint: Puedes formar parte de la comisión de presupuestos participativos de tu barrio
+      user_permission_debates: Opinar sobre consultas y propuestas**
+      user_permission_info: Con tu cuenta ya puedes...
+      user_permission_proposal: Crear nuevas propuestas de Presupuestos Participativos**
+      user_permission_support_proposal: Dar a "me gusta" en las propuesta de Presupuestos Participativos*
+      user_permission_title: Participación
+      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
+      user_permission_verify_info: "* Sólo usuarios empadronados. / ** Usuarios empadronados y organizaciones validadas"
+      user_permission_votes: Votar propuestas de Presupuestos Participativos*
+      user_permission_proposal: Crear propuestas ciudadanas**
+
+  geozones:
+    none: Toda la ciudad
+    all: Todos los ámbitos
+  management:
+    random_generated_hint: 'Marque esta casilla cuando el ciudadano no tenga una dirección de correo disponible. Serán generadas credenciales aleatorias para este ciudadano.'
+  map:
+    title: "Barrios"
+    proposal_for_district: "Crea una propuesta para tu barrio"
+    select_district: "Ámbito de actuación"
+    start_proposal: Crea una propuesta
+  layouts:
+      footer:
+        getafe_home_url: 'http://getafe.es'
+        getafe_home_title: 'Ayuntamiento de Getafe'
+        accessibility: Accesibilidad
+        conditions: Condiciones de uso
+        consul: Consul
+        consul_url: https://github.com/consul/consul
+        contact_us: Puedes consultar las preguntas más frecuentes sobre el uso de este portal aquí
+        copyright: Ayuntamiento de Getafe, %{year}
+        description: es una adaptación de la plataforma %{open_source} %{consul} desarrollada por el Ayuntamiento de Madrid y adaptada por el Ayuntamiento de Getafe.
+        faq: Asistencia técnica
+        more_info: Más información
+        open_data_text: Todos los datos del Ayuntamiento son tuyos.
+        open_data_title: Datos Abiertos
+        open_source: software libre
+        open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+        participation_text: Decide cómo debe ser la ciudad que quieres.
+        participation_title: Participación
+        privacy: Política de privacidad
+        transparency_text: Obtén cualquier información sobre la ciudad.
+        transparency_title: Transparencia
+        transparency_url: https://transparencia.getafe.es
+        participatory_page_url: http://getafe.es/areas-de-gobierno/area-social/participacion-ciudadana/
+      header:
+        open_goberment: Gobierno Abierto
+        more_information: Más información
+        about_participatory_budget: 'Presupuestos Participativos 2017'
+        participatory_budget_results_2016_callout: 'Presupuestos Participativos 2016'
+        public_consultation_callout: 'I Borrador de Plan de Convivencia'
+        participatory_budget_callout: 'Presentar una propuesta'
+        external_link_transparency_url: https://transparencia.getafe.es
+        logo: Participa Getafe
+        open_city_slogan_html: Decide qué ciudad quieres
+        open_city_introduction_html: Es una herramienta de participación on-line que se pone a disposición de los vecinos y vecinas de Getafe, que complementa el trabajo presencial de los barrios. Con ella se quiere fomentar un espacio de construcción colectiva de nuestra ciudad.
+        open_city_title: Participa Getafe
+        proposals: Propuestas ciudadanas
+        collaborative_legislation: Consultas ciudadanas
+        participatory_budgets: Presupuestos Participativos
+        participatory_budgets_2017: Presupuestos Participativos 2017
+        participatory_budgets_2016: Presupuestos Participativos 2016
+        public_consultation: Consultas ciudadanas
+        previous_hearing: Audiencias previas
+        previous_hearing_url: 'https://transparencia.getafe.es/portalGetafe/transparencia/se_contenedor2.jsp?seccion=s_fdes_d4_v2.jsp&codbusqueda=207&language=es&codResi=1&codMenuPN=107&codMenuSN=117&codMenuTN=297&codMenu=318'
+        external_link_participatory_url: 'http://getafe.es/areas-de-gobierno/area-social/participacion-ciudadana/'
+        external_link_participatory: Participación Ciudadana
+  shared:
+        outline:
+          budget: Presupuestos participativos
+        tags_cloud:
+              tags: Tendencias
+              districts: "Barrios"
+              districts_list: "Listado de barrios"
+              categories: "Categorías"

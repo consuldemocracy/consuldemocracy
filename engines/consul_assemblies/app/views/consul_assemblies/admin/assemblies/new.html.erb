@@ -1,0 +1,12 @@
+<% provide :title do %>
+  Admin - <%= t(".assemblies") %> - <%= t(".new_assembly") %>
+<% end %>
+
+<%= back_link_to admin_assemblies_path %>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2><%= t(".title_h2") %></h2>
+    <%= render 'form' %>
+  </div>
+</div>

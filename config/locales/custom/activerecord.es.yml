@@ -1,0 +1,150 @@
+es:
+  activerecord:
+    models:
+      activity:
+        one: "actividad"
+        other: "actividades"
+      budget:
+        one: "Presupuesto participativo"
+        other: "Presupuestos participativos"
+      budget/investment:
+        one: "Propuesta"
+        other: "Propuestas"
+      comment:
+        one: "Comentario"
+        other: "Comentarios"
+      debate:
+        one: "Debate"
+        other: "Debates"
+      tag:
+        one: "Tema"
+        other: "Temas"
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+      moderator:
+        one: "Moderador"
+        other: "Moderadores"
+      administrator:
+        one: "Administrador"
+        other: "Administradores"
+      vote:
+        one: "Voto"
+        other: "Votos"
+      organization:
+        one: "Organización"
+        other: "Organizaciones"
+      proposal:
+        one: "Propuesta ciudadana"
+        other: "Propuestas ciudadanas"
+      spending_proposal:
+        one: "Propuesta"
+        other: "Propuestas"
+    attributes:
+      attachment:
+        featured_image_flag: Imagen destacada
+      site_customization/page:
+        show_in_cover_flag: Mostrar como bloque en la portada
+        highlight_in_cover_flag: Descatacar como bloque portada (amarillo)
+        cover_position: Posición en la portada
+        date_information:  Información  de fechas (calendario)
+        process_url: Enlace al proceso anunciado (URL)
+        show_as_poster_flag: Mostrar adjunto como cartel en la portada
+      budget:
+        name: "Nombre"
+        description_accepting: "Descripción durante la fase de aceptación"
+        description_reviewing: "Descripción durante la fase de revisión"
+        description_selecting: "Descripción durante la fase de selección"
+        description_valuating: "Descripción durante la fase de evaluación"
+        description_balloting: "Descripción durante la fase de votación"
+        description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
+        description_finished: "Descripción cuando el presupuesto ha finalizado"
+        phase: "Fase"
+        currency_symbol: "Divisa"
+      budget/investment:
+        administrator_id: "Administrador"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        heading_id: "Tipo de propuesta"
+        group_id: "Barrio"
+        attachment: "Ficheros adjuntos"
+        title: "Título"
+        location: "Ubicación"
+        organization_name: "Si estás proponiendo en nombre de una organización o colectivo, escribe su nombre"
+        author_phone: 'Teléfono'
+        author_name: 'Usuario'
+        author_full_name: 'Nombre'
+        author_email: 'Email'
+        group_name: 'Barrio'
+        created_at: 'Alta de propuesta'
+      comment:
+        body: "Comentario"
+        user: "Usuario"
+      debate:
+        author: "Autor"
+        description: "Opinión"
+        terms_of_service: "Términos de servicio"
+        title: "Título"
+      proposal:
+        author: "Autor"
+        title: "Título"
+        question: "Pregunta"
+        description: "Descripción"
+        terms_of_service: "Términos de servicio"
+      user:
+        email: "Correo electrónico"
+        username: "Nombre de usuario"
+        password_confirmation: "Confirmación de contraseña"
+        password: "Contraseña"
+        current_password: "Contraseña actual"
+        phone_number: "Teléfono"
+        official_position: "Cargo público"
+        official_level: "Nivel del cargo"
+        redeemable_code: "Código de verificación por carta (opcional)"
+        randomly_generated_credentials: "Generar credenciales automáticamente"
+      organization:
+        name: "Nombre de organización"
+        responsible_name: "Persona responsable del colectivo"
+      spending_proposal:
+        administrator_id: "Administrador"
+        association_name: "Nombre de la asociación"
+        description: "Descripción"
+        external_url: "Enlace a documentación adicional"
+        geozone_id: "Ámbito de actuación"
+        title: "Título"
+        phase: 'Fase'
+      signature_sheet:
+        signable_type: "Tipo de hoja de firmas"
+        signable_id: "ID Propuesta ciudadana/Propuesta inversión"
+        document_numbers: "Números de documentos"
+    errors:
+      models:
+        budget/investment:
+          attributes:
+            attachment:
+              file_size_is_less_than: 'El tamaño supera los 5 megabytes, reduzca el tamaño para ser adjuntado a la propuesta'
+        user:
+          attributes:
+            email:
+              password_already_set: "Este usuario ya tiene una clave asociada"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Has llegado al número máximo de mensajes privados por día"
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "los temas deben ser menor o igual que %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Debes esperar un mínimo de %{interval} días entre notificaciones"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: 'No verificado por Padrón'
+              already_voted: 'Ya ha votado esta propuesta'

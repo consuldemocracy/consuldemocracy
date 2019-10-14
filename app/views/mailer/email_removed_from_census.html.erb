@@ -1,0 +1,24 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t("mailers.email_removed_from_census.title", org_name: Setting['org_name']) %>
+  </h1>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <%= t("mailers.email_removed_from_census.instructions_html",
+        document_type: humanize_document_type(@document_type),
+        username: @user.username,
+        site_link: link_to(Setting['org_name'], root_url),
+        place_name: Setting['place_name'] ) %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <%= t("mailers.email_removed_from_census.instructions_2_html",
+        document_type: humanize_document_type(@document_type),
+        username: @user.username,
+        site_link: link_to(Setting['org_name'], root_url),
+        place_name: Setting['place_name']) %>
+  </p>
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.email_removed_from_census.thanks", site_link: link_to(Setting['org_name'], root_url)).html_safe %>
+  </p>
+</td>

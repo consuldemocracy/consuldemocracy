@@ -1,0 +1,12 @@
+<ol>
+  <% @meeting.proposals.to_approve.each do |proposal, index| %>
+    <li value="#{index}">
+      <%= proposal.title %>
+    </li>
+  <% end %>
+  <% @meeting.proposals.accepted.each do |proposal, index| %>
+    <li value="#{index}">
+      <%= proposal.title %>
+    </li>
+  <% end %>
+</ol>

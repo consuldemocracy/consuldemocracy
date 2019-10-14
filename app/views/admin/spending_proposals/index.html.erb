@@ -1,0 +1,84 @@
+<%= link_to t("admin.spending_proposals.index.summary_link"),
+            summary_admin_spending_proposals_path,
+            class: "button float-right" %>
+
+<%= link_to t("admin.spending_proposals.index.valuator_summary_link"),
+            summary_admin_valuators_path,
+            class: "button float-right margin-right" %>
+
+<h2 class="inline-block"><%= t("admin.spending_proposals.index.title") %></h2>
+
+<div class="row margin">
+  <%= form_tag admin_spending_proposals_path, method: :get, enforce_utf8: false do %>
+    <div class="small-12 medium-3 column">
+      <%= select_tag :administrator_id,
+                      options_for_select(admin_select_options, params[:administrator_id]),
+                      { prompt: t("admin.spending_proposals.index.administrator_filter_all"),
+                        label: false,
+                        class: "js-submit-on-change" } %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :valuator_id,
+                      options_for_select(valuator_select_options, params[:valuator_id]),
+                      { prompt: t("admin.spending_proposals.index.valuator_filter_all"),
+                        label: false,
+                        class: "js-submit-on-change" } %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :geozone_id,
+                     options_for_select(geozone_select_options.unshift([t("geozones.none"), "all"]), params[:geozone_id]),
+                     { prompt: t("admin.spending_proposals.index.geozone_filter_all"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+
+    <div class="small-12 medium-3 column">
+      <%= select_tag :tag_name,
+                     options_for_select(spending_proposal_tags_select_options, params[:tag_name]),
+                     { prompt: t("admin.spending_proposals.index.tags_filter_all"),
+                       label: false,
+                       class: "js-submit-on-change" } %>
+    </div>
+  <% end %>
+</div>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.spending_proposals.index" %>
+
+<h3><%= page_entries_info @spending_proposals %></h3>
+
+<table>
+  <% @spending_proposals.each do |spending_proposal| %>
+    <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal">
+      <td>
+        <strong><%= spending_proposal.id %></strong>
+      </td>
+      <td>
+        <%= link_to spending_proposal.title, admin_spending_proposal_path(spending_proposal, SpendingProposal.filter_params(params)) %>
+      </td>
+      <td class="small">
+        <% if spending_proposal.administrator.present? %>
+          <span title="<%= t('admin.spending_proposals.index.assigned_admin') %>"><%= spending_proposal.administrator.name %></span>
+        <% else %>
+          <%= t("admin.spending_proposals.index.no_admin_assigned") %>
+        <% end %>
+      </td>
+      <td class="small">
+        <% if spending_proposal.valuators.size == 0 %>
+          <%= t("admin.spending_proposals.index.no_valuators_assigned") %>
+        <% else %>
+          <%= spending_proposal.valuators.collect(&:description_or_name).join(', ') %>
+        <% end %>
+      </td>
+      <td class="small">
+        <%= geozone_name(spending_proposal) %>
+      </td>
+      <td class="small">
+        <%= t("admin.spending_proposals.index.feasibility.#{spending_proposal.feasibility}", price: spending_proposal.price) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @spending_proposals %>

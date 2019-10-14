@@ -1,0 +1,15 @@
+<% provide :title do %><%= @process.title %><% end %>
+
+<%= render 'legislation/processes/header', process: @process, header: :full %>
+
+<%= render 'legislation/processes/key_dates', process: @process, phase: @phase %>
+
+<div class="debate-chooser">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="callout primary">
+        <p><%= t(".empty") %></p>
+      </div>
+    </div>
+  </div>
+</div>

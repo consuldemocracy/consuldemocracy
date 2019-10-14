@@ -1,0 +1,37 @@
+es:
+  spending_proposals:
+    results:
+      # Custom field just for first release (with 2016 archive while new budget model is released)
+      spending_type:
+        investment: 'Inversiones'
+        program: 'Programas'
+
+      # Custom field to show phase just for first release (with 2016 archive while new budget model is released)
+      spending_proposal_phases:
+        no_bidding: '-'
+        pre_bidding: 'Fase previa a licitación'
+        bidding: 'Fase de licitación'
+        in_progress: 'Fase de realización'
+        being_processed: 'Tramintándose (*)'
+        almost_finished: 'Realizado parcialmente'
+        finished: 'Realizado'
+      current_phase: Fase actual
+      page_title: "Presupuestos participativos | Resultados"
+      heading: "RESULTADO PRESUPUESTOS PARTICIPATIVOS 2016"
+      introduction_html: 'El año 2016 se realizó un proceso de Presupuestos Participativos con los vecinos de Getafe.  Aquí puedes consultar los resultados por barrio y ver en qué fase se encuentran los proyectos e inversiones.'
+      results_link: Resultados
+      stats_link: "Estadísticas de participación"
+      geozone_selection_title: "Ámbito de actuación"
+      spending_proposal: Título de la propuesta
+      spending_proposal_type: Tipo
+      hide_discarded_link: Ocultar descartadas
+      show_all_link: Mostrar todas
+      price: Coste aproximado
+      project: Estado
+      gallery: Galería
+      see_gallery: Ver adjuntos
+      gallery_empty: Sin adjuntos
+      amount_available: Presupuesto disponible
+      incompatible: Incompatibles
+      accepted: "Propuesta de inversión aceptada: "
+      discarded: "Propuesta de inversión descartada: "

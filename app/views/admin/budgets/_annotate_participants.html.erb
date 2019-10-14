@@ -1,0 +1,5 @@
+<% if can?(:annotate_participants, @budget) %>
+    <%= link_to annotate_participants_admin_budget_path(@budget), method: :post, class: "button success" do %>
+        Calcular resultados
+    <% end %>
+<% end %>

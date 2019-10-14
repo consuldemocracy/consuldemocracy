@@ -1,0 +1,12 @@
+<ul class="menu simple clear" id="filter-subnav">
+  <li class="sr-only"><%= t("#{i18n_namespace}.filter") %>: </li>
+
+  <% @valid_filters.each do |filter| %>
+    <% if @current_filter == filter %>
+      <li class="active"><%= t("#{i18n_namespace}.filters.#{filter}") %></li>
+    <% else %>
+      <li><%= link_to t("#{i18n_namespace}.filters.#{filter}"),
+        current_path_with_query_params(filter: filter, page: 1) %></li>
+    <% end %>
+  <% end %>
+</ul>

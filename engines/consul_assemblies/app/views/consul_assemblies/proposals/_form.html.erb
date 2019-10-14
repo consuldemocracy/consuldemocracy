@@ -1,0 +1,20 @@
+<%= form_for(@proposal, url: form_url) do |f| %>
+  <%= render 'shared/errors', resource: @proposal %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, ConsulAssemblies::Proposal.human_attribute_name(:title) %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("consul_assemblies.admin.proposals.form.title"), label: false %>
+    </div>
+
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, ConsulAssemblies::Proposal.human_attribute_name(:description) %>
+      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
+    <%= f.hidden_field :meeting_id %>
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: "Enviar propuesta") %>
+    </div>
+  </div>
+<% end %>

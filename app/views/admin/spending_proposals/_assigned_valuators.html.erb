@@ -1,0 +1,9 @@
+<ul>
+  <% @spending_proposal.valuators.each do |valuator| %>
+    <li><%= valuator.name %> (<%= valuator.email %>)</li>
+  <% end %>
+
+  <% if @spending_proposal.valuators.empty? %>
+    <li><%= t("admin.spending_proposals.show.undefined") %></li>
+  <% end %>
+</ul>

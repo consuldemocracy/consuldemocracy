@@ -1,0 +1,34 @@
+<div class="small-12 medium-12 column">
+
+
+      <table id="budget-investments-results-big-numbers" class="table-for-mobile">
+        <thead>
+        <tr>
+          <th>
+            Número de votaciones confirmadas
+          </th>
+          <th class="text-right">
+            Votaciones online
+          </th>
+          <th scope="col" class="text-right">
+            Votaciones presencial
+          </th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+            <td scope="col"  class="text-center ballot-points">
+              <strong><%= @confirmations.count %></strong>
+            </td>
+            <td scope="col"  class="text-center ballot-points">
+              <strong><%= @confirmations.online.count %></strong>
+            </td>
+            <td scope="col"  class="text-center ballot-points">
+              <strong><%= @confirmations.by_manager.count %></strong>
+            </td>
+            </tr>
+        </tbody>
+      </table>
+</div>

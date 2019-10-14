@@ -1,0 +1,92 @@
+<%= form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
+
+  <% if @draft_version.errors.any? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <strong>
+        <%= @draft_version.errors.count %>
+        <%= t("admin.legislation.draft_versions.errors.form.error", count: @draft_version.errors.count) %>
+      </strong>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :title %>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.text_field :title, label: false, placeholder: t('admin.legislation.draft_versions.form.title_placeholder') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :changelog %>
+      <small><%= t('admin.legislation.draft_versions.form.use_markdown') %></small>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.text_area :changelog, label: false, rows: 5, placeholder: t('admin.legislation.draft_versions.form.changelog_placeholder') %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :status %>
+    </div>
+    <div class="small-12 medium-8 column">
+      <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
+        <%= f.radio_button :status, status, label: false %>
+        <%= f.label "status_#{status}", t("admin.legislation.draft_versions.statuses.#{status}") %>
+        <small><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></small>
+        <br/>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :final_version %>
+    </div>
+    <div class="small-12 medium-8 column">
+      <%= f.check_box :final_version, label: false %>
+      <small><%= t("admin.legislation.draft_versions.form.hints.final_version") %></small>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-4 column">
+      <%= f.label :body %>
+      <small><%= t('admin.legislation.draft_versions.form.use_markdown') %></small>
+    </div>
+    <div class="markdown-editor">
+      <div class="small-12 medium-8 column fullscreen-container">
+        <div class="markdown-editor-header truncate"><%= t('admin.legislation.draft_versions.form.title_html', draft_version_title: @draft_version.title, process_title: @process.title ) %></div>
+
+        <div class="markdown-editor-buttons">
+          <%= f.submit(class: "button", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+        </div>
+
+        <%= link_to "#", class: 'fullscreen-toggle' do %>
+          <span data-closed-text="<%= t("admin.legislation.draft_versions.form.launch_text_editor")%>"
+                data-open-text="<%= t("admin.legislation.draft_versions.form.close_text_editor")%>">
+            <strong><%= t("admin.legislation.draft_versions.form.launch_text_editor")%></strong>
+          </span>
+        <% end %>
+      </div>
+      <div class="small-12 medium-6 column markdown-area">
+        <%= f.text_area :body, label: false, placeholder: t('admin.legislation.draft_versions.form.body_placeholder') %>
+      </div>
+      <div id="markdown-preview" class="small-12 medium-6 column">
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top primary-buttons">
+    <div class="actions small-12 medium-3 column legislation-process-save">
+      <%= f.submit(class: "button expanded", value: t("admin.legislation.draft_versions.#{admin_submit_action(@draft_version)}.submit_button")) %>
+    </div>
+  </div>
+<% end %>

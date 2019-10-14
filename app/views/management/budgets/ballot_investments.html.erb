@@ -1,0 +1,16 @@
+<table>
+<% @budgets.each do |budget| %>
+  <tr id="<%= dom_id(budget) %>">
+    <td><%= budget.name %></td>
+    <td><%= budget.translated_phase %></td>
+    <td align="right">
+      <% if budget.balloting? %>
+        <%= link_to t("management.budgets.manage_ballot"),
+                  new_management_budget_ballot_path(budget) %>
+      <% else %>
+          <small> <i>Votación asistida deshabilitada fuera de fase de votaciones</i> </small>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>

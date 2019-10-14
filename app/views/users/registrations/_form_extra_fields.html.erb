@@ -1,0 +1,4 @@
+<div class="small-12 column">
+    <%= f.label :commission, t("devise_views.users.registrations.edit.commission_label") %>
+    <%= f.select :commission_id, commissions_as_options(resource.commission_id), {include_blank: t("devise_views.users.registrations.edit.no_commission_selected") , label: false, autofocus: true, placeholder: t("devise_views.users.registrations.edit.commission_label"), hint: t("devise_views.users.registrations.edit.commission_hint")}, disabled: resource.commission_id %>
+</div>

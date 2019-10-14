@@ -1,0 +1,32 @@
+<div class="marging-top">
+  <div class="small-12 column">
+    <br>
+    <h3>
+      <%= t('.attachments_gallery') %>
+    </h3>
+  </div>
+</div>
+<div class="row">
+  <%- meeting.attachments.each do |attachment| %>
+
+    <div class="columns small-12 medium-6 large-4">
+      <div class="card column">
+
+        <%= link_to attachment.file_url, target: 'blank', title: attachment.title do %>
+          <div class="card-section gallery-item" style="background-image: url(<%= attachment.file.url(:cover) %>); height: 200px;">
+          </div>
+        <% end %>
+        <div class="card-section">
+          <p class="text-muted">
+            <small>
+              <%= attachment.title %>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class="columns small-12"></div>
+</div>
+<br>
+<br>

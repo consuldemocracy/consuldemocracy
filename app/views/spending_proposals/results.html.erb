@@ -1,0 +1,47 @@
+<% provide :title, t("spending_proposals.results.page_title") %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+
+  <div class="expanded page-background-row spending-proposal-bg results no-margin-top">
+    <div class="row">
+      <div class="small-12 column padding text-center">
+        <h1 class="title"><%= t("spending_proposals.results.heading") %></h1>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="expanded highlight">
+    <div class="row">
+      <div class="small-12 medium-9 column small-centered">
+        <p><%= t('spending_proposals.results.introduction_html' ).html_safe %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <ul class="tabs">
+        <li class="tabs-title is-active">
+          <%= link_to t("spending_proposals.results.results_link"), participatory_budget_results_path, class: "is-active" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-2 column">
+      <ul class="menu vertical no-padding">
+        <li><strong><%= t("spending_proposals.results.geozone_selection_title") %></strong></li>
+
+        <li><%= link_to content_tag(:strong, t("geozones.none")), participatory_budget_results_path %></li>
+        <% geozone_select_options.each do |geozone| %>
+          <li class="<%=('active' if @geozone && @geozone.id == geozone[1] )%>"><%= link_to content_tag(:strong, geozone[0]), participatory_budget_results_path(geozone_id: geozone[1]) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= render 'results_table' %>
+
+  </div>

@@ -1,0 +1,92 @@
+<div class="small-12 medium-12 column" id="budget-ballot-paper-container">
+
+  <div class="not-print">
+    <a id="print_link" href="javascript:window.print();" class="button warning">
+      Imprimir papeleta votación barrio <%= group.name %>
+    </a>
+  </div>
+
+  <%= image_tag('ballot-paper-header.png', style: 'width: 100%;')%>
+
+  <h2><%= t("admin.budgets.ballot_paper.title_with_geozone", geozone: @group.name) %></h2>
+
+  <% group.headings.each do |heading| %>
+      <h3 class="inline-block">
+        <%= t("admin.budgets.ballot_paper.title_with_heading", heading: heading.name) %>
+      </h3>
+
+      <table id="budget-ballot-paper" cellspacing="0" cellpadding="0">
+        <thead>
+        <tr>
+          <th scope="col" style="width: 10px; color: #999;">
+
+          </th>
+          <th scope="col" style="width: 20px;">
+            <%= t("admin.budgets.ballot_paper.investment_id") %>
+          </th>
+          <th scope="col" style="text-align: left;">
+            <%= t("admin.budgets.ballot_paper.description", heading_name: heading.name ) %>
+          </th>
+          <th scope="col" style="text-align: right;">
+            <%= t("admin.budgets.ballot_paper.estimated_cost") %>
+          </th>
+          <th scope="col" colspan="3" class="text-right">
+            <%= t("admin.budgets.ballot_paper.points") %>
+          </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% heading.investments.selected.sort_by_title.each_with_index do |investment, index| %>
+            <tr id="<%= dom_id(investment) %>"
+                class="spending_proposal success">
+              <td style="color: #999; text-align: center;">
+                <%= index + 1 %>
+              </td>
+              <td style="text-align: center;">
+                <%= investment.id %>
+              </td>
+              <td class="title">
+                <%= investment.title %> <br>
+                <% if investment.investments_unified_to_me.any? %>
+                  <small>
+                  Unifica propuestas:
+                  <%= investment.investments_unified_to_me.collect { |i| i.id }.join(', ') %>
+
+                  </small>
+                <% end %>
+              </td>
+              <td class="cost">
+                <%= format_price investment.price %>
+              </td>
+              <td class="points">
+                3
+              </td>
+              <td class="points">
+                2
+              </td>
+              <td class="points">
+                1
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+
+  <% end %>
+
+  <br>
+  <div>
+    NOMBRE Y APELLIDOS_____________________________________DNI_________________
+  </div>
+  <br>
+  <div>
+    EMAIL__________________________________________________FIRMA_________________
+  </div>
+  <br>
+  <div class="small">
+    *Por la presente autorizo al personal adscrito al Programa Presupuestos Participativos a introducir los datos de esta papeleta en la herramienta  “Participa Getafe”.
+  </div>
+
+  <%= image_tag('ballot-paper-footer.png', style: 'width: 100%;')%>
+</div>

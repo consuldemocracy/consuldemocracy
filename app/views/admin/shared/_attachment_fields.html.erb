@@ -1,0 +1,32 @@
+<div class="nested-fields">
+    <div class="panel radius">
+
+      <div class="row">
+        <div class="small-8 column">
+          <h5><%=  t("admin.budget_investments.edit.project_attachment_title") %></h5>
+        </div>
+        <div class="small-4 column text-right">
+          <%= link_to_remove_association f do %>
+              &times;
+          <% end %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="small-8 column">
+          <%= f.label :title, t("admin.budget_investments.edit.project_attachment_title") %>
+          <%= f.text_field :title, label: false %>
+          <%= f.check_box :featured_image_flag %>
+        </div>
+        <div class="small-4 column">
+          <% if f.object.file? %>
+            <%= image_tag(f.object.file.url(:cover))  %>
+            <%= f.hidden_field :file_cache %>
+          <% else %>
+            <%= f.label :file, t("admin.budget_investments.edit.project_attachment_file") %>
+            <%= f.file_field :file, accept: ".pdf,.jpg,.gif,.png", label: false  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</div>

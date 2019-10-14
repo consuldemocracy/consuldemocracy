@@ -1,0 +1,22 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t("mailers.reply.title") %>
+  </h1>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.reply.hi") %> <strong><%= @recipient.name %></strong>,
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.reply.new_reply_by_html", commenter: @reply.author.name) %> <%= link_to @commentable.title, comment_url(@reply.id), style: "color: #2895F1; text-decoration:none;" %>
+  </p>
+
+  <p style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
+    <%= text_with_links @reply.body %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 12px;font-weight: normal;line-height: 20px;">
+    <%= t("mailers.config.manage_email_subscriptions") %> <%= link_to t("account.show.title"), account_url, style: "color: #2895F1; text-decoration:none;" %>
+  </p>
+</td>

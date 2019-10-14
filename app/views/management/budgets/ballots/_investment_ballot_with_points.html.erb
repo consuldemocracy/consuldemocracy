@@ -1,0 +1,66 @@
+<tr id="<%= dom_id(investment) %>_ballot_with_points" class="<%= 'ballot-selected' if @ballot.investments.include?(investment) %>">
+  <td>
+
+    <%= link_to investment.title, budget_investment_path(@budget, investment), target: 'blank' %> <br>
+    <small><strong><%= investment.id %></strong></small>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <small class="text-muted">
+      <% if investment.author %>
+          <%= investment.author.try(:username) %>
+      <% else %>
+          <small>-</small>
+      <% end %>
+    </small>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+    <small class="text-muted"><%= investment.heading.name %></small>
+    <% unless investment.location.blank? %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <small class="text-muted"><%= investment.location %></small>
+    <% end %>
+
+    <% if investment.has_unifications? %>
+        <br>
+        <p class="small">Esta propuesta unifica las siguientes propuestas:
+          <%  investment.investments_unified_to_me.each do |inv| %>
+            <%= link_to inv.id, budget_investment_path(inv.budget, inv), target: 'blank', title: inv.title %>
+          <% end %>
+        </p>
+    <% end %>
+
+  </td>
+  <td class="text-right ballot-investment-cost">
+    <%= number_to_currency investment.price %>
+  </td>
+  <td class="text-right" style="width: 170px;">
+    <div class="button-group">
+      <% not_available_points = @ballot.lines.where(heading: @heading).pluck(:points) %>
+      <% Budget::Ballot::Line::POINTS.each do |points| %>
+
+          <% if @ballot.investments.include?(investment) %>
+              <% line = @ballot.lines.where(investment_id: investment.id).first %>
+              <% if (line.points == points ) %>
+                  <a class="button success"><%= points %></a>
+              <% else %>
+                  <a class="button secondary" disabled><%= points %></a>
+              <% end %>
+
+          <% else %>
+              <% if not_available_points.include?(points) || (!@budget.balloting?) %>
+                  <a href="#" class="button secondary" disabled><%= points %></a>
+              <% else %>
+                  <%= link_to "#{points}",
+                              management_budget_ballot_lines_url(investment_id: investment.id,
+                                                      budget_id: investment.budget_id, ballot_id: @ballot.id,
+                                                      points: points,
+                                                      investments_ids: []),
+                              class: "button button-support small",
+                              id: "ballot-budget-line-#{@budget.id}-#{@ballot.id}",
+                              title: t('budgets.investments.investment.support_title'),
+                              method: :post,
+                              remote: false %>
+              <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  </td>
+</tr>

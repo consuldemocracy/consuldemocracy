@@ -1,0 +1,15 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.geozones") %></h2>
+<br>
+<div class="geozone">
+  <%= link_to t('geozones.all'), spending_proposals_path(geozone: nil) %>
+  <%= link_to t('geozones.none'), spending_proposals_path(geozone: 'all') %>
+  <% Geozone.all.each do |geozone| %>
+    <%= link_to geozone.name, spending_proposals_path(geozone: geozone.id) %>
+  <% end %>
+</div>
+
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("spending_proposals.index.sidebar.feasibility") %></h2>
+<br>
+<%= link_to t('spending_proposals.index.sidebar.unfeasible'), spending_proposals_path(unfeasible: '1') %>

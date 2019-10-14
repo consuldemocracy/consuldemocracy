@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title><%= content_for?(:title) ? yield(:title) : "Management" %></title>
+    <%= stylesheet_link_tag  "application", media: "all" %>
+    <%= stylesheet_link_tag  "print", media: "print" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= content_for :head %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag "favicon.ico" %>
+  </head>
+
+  <body class="admin">
+    <header>
+      <section class="top-links">
+        <div class="expanded row">
+          <%= render 'shared/locale_switcher' %>
+        </div>
+      </section>
+
+      <div class="expanded row">
+        <div class="top-bar">
+
+          <%= link_to setting['org_name'], management_root_path, class: "logo show-for-small-only" %>
+
+          <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
+            <span class="menu-icon dark" data-toggle></span>
+            <%= t("application.menu")%>
+          </span>
+
+          <div id="responsive-menu">
+            <div class="top-bar-title">
+              <%= link_to management_root_path, class: "hide-for-small-only" do %>
+                <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '80x80', alt: t("layouts.header.logo")) %>
+                <%= setting['org_name'] %>
+                &nbsp;|&nbsp;<%= t("management.dashboard.index.title") %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="no-margin-top row no-max-width collapse">
+      <div class="small-12 medium-3 column">
+        <%= render "/management/menu" %>
+      </div>
+
+      <%= render "management/account_info" %>
+
+      <div class="admin-content small-12 medium-9 column">
+        <%= render 'layouts/flash' %>
+        <%= yield %>
+      </div>
+    </main>
+
+  </body>
+</html>

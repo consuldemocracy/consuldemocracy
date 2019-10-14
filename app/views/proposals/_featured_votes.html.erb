@@ -1,0 +1,44 @@
+<div class="supports text-center">
+  <div class="in-favor">
+    <% if voted_for?(@featured_proposals_votes, proposal) %>
+      <div class="supported">
+        <%= t("proposals.proposal.already_supported") %>
+      </div>
+    <% else %>
+      <%= link_to vote_featured_proposal_path(proposal, value: 'yes'),
+          class: "button button-support small expanded",
+          title: t('proposals.proposal.support_title'), method: "post", remote: true do %>
+        <%= t("proposals.proposal.support") %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if user_signed_in? && current_user.organization? %>
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <p>
+        <%= t("votes.organizations") %>
+      </p>
+    </div>
+  <% elsif user_signed_in? && !proposal.votable_by?(current_user)%>
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <p>
+        <%= t("votes.verified_only",
+            verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+      </p>
+    </div>
+  <% elsif !user_signed_in? %>
+    <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+      <%= t("votes.unauthenticated",
+        signin: link_to(t("votes.signin"), new_user_session_path),
+        signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+    </div>
+  <% end %>
+
+  <% if voted_for?(@featured_proposals_votes, proposal) %>
+    <% if setting['twitter_handle'] %>
+      <div class="share-supported">
+        <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

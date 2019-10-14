@@ -1,0 +1,23 @@
+<div id="ballot">
+  <div class="expanded no-margin-top padding page-background-row text-center">
+    <div class="row">
+      <%= render 'shared/back_link' %>
+      <h3 class="text-center"><%= t("budgets.ballots.show.title") %></h3>
+      <% unless @group.nil? %>
+        <h4>BARRIO SELECCIONADO: <%= @group.name %></h4>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row ballot">
+    <div class="margin-top">
+
+      <% if @group.nil? %>
+          <%= render 'management/budgets/ballots/ballot_map' %>
+      <% else %>
+          <%= render 'management/budgets/ballots/ballot_paper_by_group' %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+<%= form_for [:admin, @proposal], html: {class: "edit_proposal", data: {watch_changes: true}} do |f| %>
+
+  <% if @proposal.errors.any? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <strong>
+        <%= @proposal.errors.count %>
+        <%= t("admin.site_customization.meetings.errors.form.error", count: @proposal.errors.count) %>
+      </strong>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+      <%= f.hidden_field :meeting_id%>
+      <%= f.label :title, t('.title') %>
+      <%= f.text_field :title, label: false, size: 80, maxlength: 80 %>
+
+      <%= f.select :proposal_origin,  proposal_origin_options %>
+      <%= f.select :acceptance_status,  proposal_acceptance_status_options %>
+
+      <div class="ckeditor margin-top">
+        <%= f.label :description, t('.description') %>
+        <%= f.cktext_area :description, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+      <div class="ckeditor margin-top">
+        <%= f.label :conclusion, t('.conclusion') %>
+        <%= f.cktext_area :conclusion, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+
+      <div class="small-12 medium-6 large-4">
+        <%= f.submit  t('.save'), class: "button success expanded"%>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+      <h4><%= t(".attachments") %></h4>
+      <%= f.fields_for :attachments do |attachment| %>
+        <%= render '/admin/shared/attachment_fields', f: attachment %>
+      <% end %>
+      <br>
+
+      <div class="text-right">
+        <%= link_to_add_association f, :attachments, class: 'button primary small'  do %>
+          <%= t(".new_attachment") %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+<% end %>

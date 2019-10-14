@@ -1,0 +1,69 @@
+<% provide :title do %><%= @spending_proposal.title %><% end %>
+
+<section class="investment-project-show">
+  <div id="<%= dom_id(@spending_proposal) %>" class="row">
+    <div class="small-12 medium-9 column">
+
+      <h1><%= @spending_proposal.title %></h1>
+
+      <div class="investment-project-info">
+        <%= render '/shared/author_info', resource: @spending_proposal %>
+
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @spending_proposal.created_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= geozone_name(@spending_proposal) %>
+      </div>
+
+      <br>
+      <p id="spending_proposal_code">
+        <%= t("spending_proposals.show.code") %>
+        <strong><%= @spending_proposal.id %></strong>
+      </p>
+
+      <% if @spending_proposal.joined_to %>
+          <div data-alert="" class="callout alert">
+
+            Esta propuesta ha sido unificada en su ejecución con <%= link_to @spending_proposal.joined_to.title, @spending_proposal.joined_to %>
+          </div>
+      <% end %>
+
+      <%= safe_html_with_links @spending_proposal.description.html_safe %>
+
+      <% if @spending_proposal.external_url.present? %>
+        <div class="document-link">
+          <%= text_with_links @spending_proposal.external_url %>
+        </div>
+      <% end %>
+
+      <% if @spending_proposal.attachments.any? %>
+          <br>
+          <div class="">
+            <%= link_to t("spending_proposals.show.see_gallery"), project_spending_proposal_path(@spending_proposal) %>
+          </div>
+      <% end %>
+
+      <% if @spending_proposal.project_content.present? %>
+          <br>
+          <h3> <%= t("admin.budget_investments.show.project_subtitle") %></h3>
+          <br>
+          <strong><%= @spending_proposal.project_phase%></strong>
+          <br>
+          <%= raw @spending_proposal.project_content %>
+      <% end %>
+    </div>
+
+    <aside class="small-12 medium-3 column">
+      <h3><%= t("spending_proposals.show.share") %></h3>
+      <div class="social-share-full">
+        <%= social_share_button_tag("#{@spending_proposal.title} #{setting['twitter_hashtag']}") %>
+        <% if browser.device.mobile? %>
+          <a href="whatsapp://send?text=<%= @spending_proposal.title %> <%= spending_proposal_url(@spending_proposal) %>" data-action="share/whatsapp/share">
+            <span class="icon-whatsapp whatsapp"></span>
+          </a>
+        <% end %>
+      </div>
+    </aside>
+
+  </div>
+</section>

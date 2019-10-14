@@ -1,0 +1,2 @@
+$("#csv-button").html("<%= j link_to t('.download_csv'), admin_users_path(format: :csv, params_csv: @params), class: 'button' %>")
+$("#users").html("<%= j render 'users' %>");

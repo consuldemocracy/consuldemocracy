@@ -1,0 +1,71 @@
+<% provide :title do %><%= @process.title %><% end %>
+
+<%= render 'legislation/processes/header', process: @process, header: :full %>
+
+<% if @process.attachments.any? %>
+  <%= render 'custom/attachments/attachments', attachments: @process.attachments %>
+<% end %>
+
+<%= render 'key_dates', process: @process, phase: :final_version_publication %>
+
+<% if @process.questions.any? && @process.question_options.any? %>
+
+    <div class="row margin-top">
+      <div class="small-12 column">
+        <ul class="menu simple clear">
+              <li class="active">
+                <h2><%= t("legislation.processes.results_menu") %></h2>
+              </li>
+        </ul>
+      </div>
+    </div>
+
+
+  <div class="polls-results-stats">
+
+    <div class="row margin" data-equalizer data-equalize-on="medium">
+
+      <div class="small-12 medium-12 column" data-equalizer-watch>
+        <%- @process.questions.each do |question| %>
+          <table id="question_<%= question.id %>_results_table">
+            <h3 id="<%= question.title.parameterize %>"><%= question.title %></h3>
+            <thead>
+            <tr>
+              <th></th>
+              <%- question.question_options.each do |answer| %>
+                <th scope="col">
+                  <%= answer.value %>
+                </th>
+              <% end %>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="text-center">
+                <strong><%= t("legislation.processes.results.votes") %></strong>
+              </td>
+              <%- question.question_options.each do |answer| %>
+                <td id="answer_<%= answer.id %>_result" class="text-center">
+                  <%= answer.answers_count %>
+                </td>
+              <% end %>
+            </tr>
+            </tbody>
+          </table>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+<% else %>
+
+  <div class="debate-chooser">
+    <div class="row">
+      <div class="small-12 column">
+        <div class="callout primary">
+          <p><%= t(".empty") %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

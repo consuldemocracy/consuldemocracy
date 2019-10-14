@@ -1,0 +1,28 @@
+<div class="spending-proposal-form row margin-top">
+
+  <div class="small-12 medium-9 column">
+    <%= link_to @meeting, class: 'black' do %>
+      <span class='icon-angle-left'></span>
+      <%= t("shared.back") %>
+    <% end %>
+
+    <h1>Crear propuesta de orden del día para <%= @meeting.title %></h1>
+    <div data-alert class="callout primary">
+      Una propuesta de orden del día es una sugerencia para incluir como tema a tratar en la asamblea. Una propuesta de orden del día puede ser aceptada o rechazada dependiendo de la temática de la asamblea.
+    </div>
+
+    <div>
+      <h4>Resumen asamblea</h4>
+      <p class="text-muted">
+      <i><%= @meeting.summary %></i>
+      </p>
+
+    </div>
+    <%= render "consul_assemblies/proposals/form", form_url: proposals_url %>
+  </div>
+
+  <div class="small-12 medium-3 column">
+
+  </div>
+
+</div>

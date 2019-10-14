@@ -1,0 +1,53 @@
+<table id="spending-proposals-results">
+  <thead>
+  <th></th>
+  <th></th>
+  <th><%= t("spending_proposals.results.spending_proposal") %></th>
+  <th><%= t("spending_proposals.results.current_phase") %></th>
+  <th class="text-right"><%= t("spending_proposals.results.price") %></th>
+  <th class="text-center"><%= t("spending_proposals.results.gallery") %></th>
+  </thead>
+  <tbody>
+
+  <% proposals.each_with_index do |spending_proposal, index| %>
+      <tr id="<%= dom_id(spending_proposal) %>" class="spending_proposal success">
+        <td class="index">
+          <% if @geozone %>
+              <%= index + 1 %>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <% if spending_proposal.feasible? %>
+              <span class="icon-check"></span>
+              <span class="sr-only"><%= t("spending_proposals.results.accepted") %></span>
+          <% else %>
+              <span class="icon-x"></span>
+              <span class="sr-only"><%= t("spending_proposals.results.discarded") %></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to spending_proposal.title, spending_proposal_path(spending_proposal) %>
+        </td>
+        <td style="width: 200px;" class="phase <%= spending_proposal.project_phase || spending_proposal.phase %>">
+          <% if spending_proposal.project_phase.present? %>
+              <%= spending_proposal.project_phase %>
+          <% else %>
+              <%= t("spending_proposals.results.spending_proposal_phases.#{spending_proposal.phase}") %>
+          <% end %>
+        </td>
+        <td class="text-right" style="width:100px">
+          <%= format_price spending_proposal.price %>
+        </td>
+        <td class="text-center">
+          <small>
+            <% if spending_proposal.attachments.any? %>
+            <%= link_to t("spending_proposals.results.see_gallery"), project_spending_proposal_path(spending_proposal) %>
+            <% else %>
+                <span class="text-muted"><%= t("spending_proposals.results.gallery_empty") %></span>
+            <% end %>
+          </small>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+<h2><%= t("officing.residence.new.title") %></h2>
+
+<% if @officer_assignments.present? %>
+  <div class="row verification account">
+    <div class="small-12 medium-8 column">
+      <%= form_for @residence, as: "residence", url: officing_residence_path do |f| %>
+        <%= render "errors" %>
+
+        <div class="small-12 medium-6">
+          <%= f.select :document_type, document_types, prompt: "" %>
+
+
+          <%= f.text_field :document_number,
+                         placeholder: t("officing.residence.new.document_number"),
+                         autocomplete: "off" %>
+        </div>
+
+        <div class="date-of-birth small-12 medium-6">
+          <%= f.text_field :year_of_birth, type: "number", autocomplete: "off" %>
+        </div>
+
+        <div class="small-12 medium-6">
+          <input type="submit" value="<%= t("officing.residence.new.submit") %>" class="button expanded">
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% else %>
+  <div class="callout primary">
+    <%= t("officing.residence.new.no_assignments") %>
+  </div>
+<% end %>

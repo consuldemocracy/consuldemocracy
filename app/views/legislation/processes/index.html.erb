@@ -1,0 +1,22 @@
+<% provide :title do %>
+  <%= t("layouts.header.collaborative_legislation") %> - <%= t("legislation.processes.index.filters.#{@current_filter}") %>
+<% end %>
+
+<div class="row">
+  <div class="legislation-categories small-12 medium-3 column">
+    <%= render 'shared/filter_subnav', i18n_namespace: "legislation.processes.index" %>
+  </div>
+
+  <div id="legislation" class="legislation-list small-12 medium-9 column">
+    <div id="legislation-list">
+      <% if @processes.any? %>
+        <%= render @processes %>
+        <%= paginate @processes %>
+      <% else %>
+        <div class="callout primary margin-top">
+          <%= t(".no_#{@current_filter}_processes") %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

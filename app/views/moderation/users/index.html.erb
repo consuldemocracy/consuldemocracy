@@ -1,0 +1,38 @@
+<h2><%= t("moderation.users.index.title") %></h2>
+
+<%= form_for(User.new, url: moderation_users_path, as: :user, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :name_or_email, "", placeholder: t("moderation.users.index.search_placeholder") %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= f.submit t("moderation.users.index.search"), class: "button success" %>
+    </div>
+  </div>
+<% end %>
+
+<% if @users.present? %>
+  <h3><%= page_entries_info @users %></h3>
+<% end %>
+
+<table id="moderation_users">
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.name %>
+        </td>
+        <td class="text-right">
+          <% if user.hidden? %>
+            <%= t("moderation.users.index.hidden") %>
+          <% else %>
+          <%= link_to t("moderation.users.index.hide"), hide_in_moderation_screen_moderation_user_path(user, request.query_parameters),
+                      method: :put, class: "button hollow alert" %>
+        </td>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>

@@ -1,0 +1,20 @@
+<%= render 'shared/back_link' %>
+
+<div class="clear"></div>
+
+<div class="official float-right"><strong><%= @user.name %></strong> (<%= @user.email %>)</div>
+
+<h2 class="inline-block"><%= t("admin.officials.edit.title") %></h2>
+
+<div class="row">
+  <div class="small-12 medium-6 column end">
+  <%= form_for @user, url: admin_official_path(@user)  do |f| %>
+    <%= f.text_field :official_position %>
+    <%= f.select :official_level, official_level_options %>
+    <% if @user.official? %>
+      <%= link_to t("admin.officials.edit.destroy"), admin_official_path(@user), method: :delete, class: 'button hollow alert' %>
+    <% end %>
+    <%= f.submit class: "button hollow" %>
+  <% end %>
+  </div>
+</div>

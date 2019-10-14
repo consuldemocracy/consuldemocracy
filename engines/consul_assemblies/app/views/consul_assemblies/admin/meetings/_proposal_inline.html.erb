@@ -1,0 +1,12 @@
+<li value="#{index}">
+  <h3>
+    <%= safe_html_with_links(proposal.title) %>
+    <br>
+    <small class="text-muted"><%= t('.proposed_by',  proposal_origin: proposal_origin_name(proposal.proposal_origin)) %></small>
+  </h3>
+  <% unless proposal.conclusion.blank? %>
+    <p><%= safe_html_with_links(proposal.conclusion) %></p>
+  <% else %>
+    <small class="text-muted"><%= t('.no_conclusion') %></small>
+  <% end %>
+</li>

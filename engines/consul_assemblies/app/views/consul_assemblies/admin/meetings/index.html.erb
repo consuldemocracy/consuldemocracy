@@ -1,0 +1,64 @@
+<% provide :title do %>
+  Admin - <%= t(".meetings") %>
+<% end %>
+
+<%= back_link_to admin_assemblies_path %>
+<br>
+
+<%= link_to t(".create"), new_admin_meeting_path(assembly_id: params[:assembly_id], user_id: current_user.id), class: "button float-right" %>
+<h2 class="inline-block"><%= t(".title_h2") %></h2>
+
+<table class="cms_meeting_list">
+  <thead>
+    <tr>
+      <th><%= t('.assambly') %></th>
+      <th><%= t('.title') %></th>
+      <th><%= t('.date') %></th>
+      <th><%= t('.end_of_proposals') %></th>
+      <th><%= t('.proposals') %></th>
+      <th><%= t('.accepts_proposals') %></th>
+      <th><%= t('.will_generate_acts') %></th>
+      <th></th>
+      <th colspan="" class="text-center"><%= t(".actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @meetings.order_by_scheduled_at.each do |meeting| %>
+    <tr id="<%= dom_id(meeting) %>">
+      <td>
+        <%= meeting.assembly.name %>
+      </td>
+      <td>
+        <%= link_to meeting.title, edit_admin_meeting_path(meeting) %>
+      </td>
+      <td><%= I18n.l meeting.scheduled_at, format: :short %></td>
+      <td><%= I18n.l meeting.close_accepting_proposals_at, format: :short %></td>
+      <td><%= link_to t('.see_proposals'), admin_proposals_path(meeting_id: meeting.id)%></td>
+      <td class="text-center">
+        <%= boolean_check(meeting.accepts_proposals?) %>
+      </td>
+      <td class="text-center">
+
+        <%= boolean_check(meeting.will_generate_acts?) %>
+        <% if meeting.will_generate_acts? &&  meeting.attachment? %>
+          <br>
+          <%= link_to t('.see_act'), meeting.attachment_url, target: :blank %>
+        <% end %>
+      </td>
+      <td>
+        <% if meeting.will_generate_acts? %>
+          <%= link_to t(".generate_act"), act_admin_meeting_path(meeting), class: "button primary expanded hollow", target: :blank%>
+        <% end %>
+        <%= link_to t(".generate_draft"), draft_admin_meeting_path(meeting), class: "button primary expanded hollow", target: :blank%>
+      </td>
+      <td>
+
+        <%= link_to ( meeting.unpublished?? t(".preview") : t(".public_view")), meeting_path(meeting), target: 'blank', class: "button success  expanded" %>
+        <%= link_to t(".delete"), admin_meeting_path(meeting), method: :delete, class: "button hollow alert expanded", data: { confirm: t('.confirm') } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @meetings %>

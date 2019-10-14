@@ -1,0 +1,17 @@
+<% if investment.is_unified? %>
+<div data-alert="" class="callout alert margin-top margin">
+  <p>
+    Esta propuesta ha sido retirada en favor de la propuesta "<%= link_to(investment.unified_with.title, budget_investment_path(investment.unified_with.budget, investment.unified_with)) %>"<br>
+    <a href="#unification_explanation">Revisa los motivos de la retirada</a>
+  </p>
+</div>
+<% else %>
+    <% if investment.has_unifications? %>
+        <div data-alert="" class="callout primary margin-top">
+          <strong>
+            Esta propuesta ha asimilado otras propuestas durante la evaluación<br>
+            <a href="#unification_explanation">Revisa las propuestas asimiladas a ésta.</a>
+          </strong>
+        </div>
+    <% end %>
+<% end %>

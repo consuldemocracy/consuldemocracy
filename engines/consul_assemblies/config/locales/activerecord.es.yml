@@ -1,0 +1,42 @@
+es:
+  proposal_origin:
+    user: 'Ciudadanía'
+    commission: 'Comisión'
+    presidency: 'Presidencia'
+    previous_meeting: 'Asamblea anterior'
+  proposal_acceptance_status:
+    undecided: 'Sin decidir'
+    accepted: 'Aceptada'
+    rejected: 'Rechazada'
+  activerecord:
+    models:
+      consul_assemblies/assembly: 'Asamblea'
+      consul_assemblies/meeting: 'Reunión'
+      consul_assemblies/proposal: 'Propuesta'
+    attributes:
+      consul_assemblies/assembly:
+        general_description: 'Descripción general'
+        scope_description: 'Alcance de descripción'
+        about_venue: 'Lugar de encuentro'
+      consul_assemblies/meeting:
+        title: 'Título'
+        description: 'Descripción'
+        summary: 'Sumario'
+        status: 'Estado'
+        about_venue: 'Lugar de encuentro'
+        followers_count: 'Número de seguidores'
+        comments_count: 'Número de comentarios'
+        close_accepting_proposals_at: 'Periodo de aceptacion de propuestas terminado'
+        schedule_at: 'Programado para fecha:'
+        remove_attachment: 'Borrar el acta actual'
+        accepts_proposals: 'Acepta propuestas de orden del día'
+        will_generate_acts: 'Esta reunión generará acta'
+      consul_assemblies/proposal:
+        title: 'Título descriptivo'
+        description: 'Descripción detallada'
+        user_id: 'Usuario'
+        accepted: 'Aceptado'
+        terms_of_service: 'Términos del servicio'
+        accepted: 'Esta propuesta está aceptada en el orden del día'
+        proposal_origin: 'Propuesta enviada por'
+        acceptance_status: 'Aceptada como punto válido de orden del día'

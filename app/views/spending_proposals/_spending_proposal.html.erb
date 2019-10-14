@@ -1,0 +1,59 @@
+<div id="<%= dom_id(spending_proposal) %>" class="investment-project clear">
+  <div class="panel">
+    <div class="row">
+
+      <div class="small-12 medium-9 column">
+        <div class="investment-project-content">
+
+          <% cache [locale_and_user_status(spending_proposal), 'index', spending_proposal, spending_proposal.author] do %>
+            <span class="label-investment-project float-left"><%= t("spending_proposals.spending_proposal.spending_proposal") %></span>
+            <span class="icon-budget"></span>
+            <h3><%= link_to spending_proposal.title, namespaced_spending_proposal_path(spending_proposal) %></h3>
+            <p class="investment-project-info">
+
+              <%= l spending_proposal.created_at.to_date %>
+
+              <% if spending_proposal.author.hidden? || spending_proposal.author.erased? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= t("spending_proposals.show.author_deleted") %>
+                </span>
+              <% else %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="author">
+                  <%= spending_proposal.author.name %>
+                </span>
+                <% if spending_proposal.author.display_official_position_badge? %>
+                  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                  <span class="label round level-<%= spending_proposal.author.official_level %>">
+                    <%= spending_proposal.author.official_position %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <% if spending_proposal.author.verified_organization? %>
+                <span class="bullet">&nbsp;&bull;&nbsp;</span>
+                <span class="label round is-association">
+                  <%= t("shared.collective") %>
+                </span>
+              <% end %>
+
+              <span class="bullet">&nbsp;&bull;&nbsp;</span>
+              <%= geozone_name(spending_proposal) %>
+            </p>
+            <div class="investment-project-description">
+              <p><%= link_to spending_proposal.description, namespaced_spending_proposal_path(spending_proposal) %></p>
+              <div class="truncate"></div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div id="<%= dom_id(spending_proposal) %>_votes" class="small-12 medium-3 column supports-container">
+          <%= render 'votes',
+                    { spending_proposal: spending_proposal, vote_url: vote_spending_proposal_path(spending_proposal, value: 'yes') } %>
+      </div>
+
+    </div>
+  </div>
+</div>

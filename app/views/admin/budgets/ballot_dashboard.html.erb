@@ -1,0 +1,80 @@
+<span class="not-print"><%= back_link_to admin_budgets_path %></span>
+
+<h2  class="not-print"><%= t("admin.budgets.ballot_dashboard.title", budget_name: @budget.name ) %></h2>
+<br  class="not-print">
+
+<div class="row stats-numbers">
+  <div class="column large-4 text-center">
+    <p class="featured">Total Papeletas <br> (incompletas usuarios activoss, por verificar y verificadas)</p>
+    <h4><%= @ballots.count %></h4>
+  </div>
+  <div class="column large-4 text-center">
+    <p class="featured">Papeletas sin verificar u. activos<br /> (No han dado al botón "VOTAR")</p>
+    <h4><%= @ballots_uncompleted.count %></h4>
+  </div>
+  <div class="column large-4 text-center">
+
+    <p class="featured">Papeletas sin verificar <br /> (No han validado SMS)</p>
+    <h4><%= @confirmations_sms_pending.count %></h4>
+
+  </div>
+</div>
+  <div class="row stats-numbers margin">
+  <div class="column large-4 text-center">
+    <p class="featured">Papeletas <u>ONLINE</u> verificadas<br /> (SMS validado)</p>
+    <h4><%= @confirmations_verified_by_sms.count %></h4>
+  </div>
+  <div class="column large-4 text-center">
+    <p class="featured">Papeletas <u>GESTOR</u> verificadas<br />(Gestor valida)</p>
+    <h4><%= @confirmations_verified_by_manager.count %></h4>
+  </div>
+  <div class="column large-4 text-center">
+    <div class="success-box">
+      <p class="featured ">Total Papeletas verificadas<br /> (SMS validado + Gestor validado)</p>
+      <h4 class=""><strong><%= @confirmations_verified.count %></strong></h4>
+    </div>
+  </div>
+
+</div>
+
+<%	sms_confirmations_sent = 0  %>
+<%	confirmations_verified = 0  %>
+<main class="margin row">
+
+  <div class="small-12 medium-12 column ">
+
+      <table>
+        <thead>
+          <th></th>
+          <th>Usuario</th>
+          <th>Email</th>
+          <th>Prop. sel.</th>
+          <th>Barrio</th>
+          <th>SMS</th>
+          <th>Confirmada</th>
+          <th>Hora confirmación.</th>
+          <th>Código usuario audit.</th>
+        </thead>
+        <tbody>
+        <% @ballots.each_with_index do |ballot, index| %>
+            <% if ballot.try(:confirmation) && (!ballot.try(:confirmation).try(:discarted_at)) %>
+              <% sms_confirmations_sent += ballot.try(:confirmation).try(:sms_code_sent_at) ? 1 : 0%>
+              <% confirmations_verified += ballot.try(:confirmation).try(:confirmed_at) ? 1 : 0%>
+            <% end %>
+            <tr class="small">
+              <td class="ballot-<%= ballot.id %>"><%= index + 1 %></td>
+              <td><%= ballot.user.erased_at ? 'Usuario dado de baja' : ballot.user.username %></td>
+              <td><%= ballot.user.erased_at ? "Borrado a las: #{l(ballot.user.erased_at, format: :short)}, <br> Razón: #{ballot.user.erase_reason}".html_safe : ballot.user.email %></td>
+              <td><%= ballot.lines.count %></td>
+              <td><%= ballot.group.try :name %></td>
+              <td><% if ballot.confirmation.try(:sms_confirmation_code) %> <span class="icon-check"> <% end %></td>
+              <td class="text-center"><% if ballot.confirmation.try(:confirmed_at) %><span class="icon-check ballot-verified"> <% end %></td>
+              <td><small><% if ballot.confirmation.try(:confirmed_at) %><%= l ballot.confirmation.try(:confirmed_at), format: :short %><% end %></small></td>
+              <td><small><%= ballot.confirmation.try(:confirmed_by_username) %></small></td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,9 @@
+<%= render 'management/budgets/ballots/confirmations/show_confirmation' %>
+
+<% group.headings.each do |heading| %>
+    <%= render 'management/budgets/ballots/ballot_group_heading', budget: budget, group: group,  heading: heading %>
+<% end %>
+
+<br>
+<br>
+<%= render 'management/budgets/ballots/sidebar_tips.html.erb', ballot: ballot, group: group %>

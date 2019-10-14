@@ -1,0 +1,95 @@
+
+<div class="row margin-top">
+  <div class="small-12 medium-2 column not-print">
+    <br>
+    <ul class="menu vertical no-margin-top no-padding-top">
+      <li class="<%= 'active' unless @group %> ">
+          <%= link_to 'Todos los barrios',
+                      results_budget_path(@budget) %>
+      </li>
+      <% @budget.groups.each do |group| %>
+          <li class="<%= 'active' if group.eql?(@group) %> ">
+            <%= link_to group.name,
+                        results_budget_path(@budget, group_id: group.id) %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-10 column " id="budget-ballot-paper-container">
+        <h2>Resultados <%= @budget.name %></h2>
+
+        <h3>Estadísticas GETAFE</h3>
+        <table id="budget-investments-results" class="table-for-mobile">
+          <thead>
+          <tr>
+            <th scope="col" class="text-center">Total participantes</th>
+            <th scope="col" class="text-center">
+              Papeletas no verificadas
+            </th>
+            <th scope="col" class="text-center">
+              Papeletas no confirmadas
+            </th>
+            <th scope="col" colspan="2" class="text-center">
+              Papeletas válidas
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td scope="col" class="text-center ballot-participants" rowspan="3">
+              <%= @budget.not_sent_participant_count %>
+            </td>
+            <td scope="col" class="text-center" rowspan="3">
+              <%= @not_sms_sent_ballots_on_budget %>
+            </td>
+            <td scope="col" class="text-center" rowspan="3">
+              <%= @not_valid_confirmations_on_budget.count %>
+            </td>
+            <th scope="col" class="text-center">
+              Online
+            </th>
+            <th scope="col" class="text-center">
+              Presencial
+            </th>
+          </tr>
+          <tr>
+
+            <td scope="col" class="text-center">
+              <%= @all_confirmations_on_budget.online.count %>
+            </td>
+            <td scope="col" class="text-center">
+              <%= @all_confirmations_on_budget.by_manager.count %>
+            </td>
+          </tr>
+          <tr>
+            <td scope="col" colspan="2" class="text-center ballot-points">
+              Total: <%= @valid_confirmations_on_budget.count %>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+        <br>
+        <small>(*) <i><u>Papeletas no verificadas:</u> Papeletas iniciadas que no han hecho click en el botón "votar".</i></small><br>
+        <small>(**) <i><u>Papeletas  no confirmadas:</u> Papeletas que no han confirmado el SMS.</i></small><br>
+
+          <br>
+        <% if @group %>
+          <h3>Estadísticas <%= @group.name %></h3>
+          <%= render 'results_table', group: @group %>
+        <% else %>
+
+          <h2 class="inline-block">
+            Propuestas ganadoras todos los barrios
+          </h2>
+          <%- @headings_by_name.each_pair do |heading_group, headings_ids| %>
+            <br>
+            <h4><%= heading_group %></h4>
+            <%= render 'budgets/results/results_proposals_table', budget: @budget, investments: @budget.investments.winners.where(heading_id:  headings_ids) %>
+          <% end %>
+        <% end %>
+    <br>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,1032 @@
+// Overrides and adds customized styles in this file
+// Read more on documentation:
+// * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
+// * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
+//
+
+
+$brand:             #B80830;
+$brand-original:    #004A83;
+$dark:              darken($brand-original, 10%);
+$box-bg:            #e9e9e9;
+$banner-bg:         #f3da3f;
+
+body, html {
+
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  font-smooth: always;
+
+  font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.text-muted {
+
+  color: #a9a9a9;
+}
+
+.panel {
+  background: white;
+  border: 1px solid darken($box-bg,10%);
+  padding: 1.5rem;
+
+  .info-date {
+
+    color: $brand;
+
+  }
+
+  .button {
+    margin-bottom: 0px;
+  }
+}
+
+.panel-image {
+
+  padding: 0px;
+  box-shadow: 1px 4px 5px #777;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.panel-highlight.panel {
+
+  background-color: $box-bg;
+}
+
+.panel-highlight.panel.highlight {
+
+  background-color: $banner-bg;
+}
+
+
+.box {
+
+    background-color: #e9e9e9;
+    padding: 15px;
+    padding-bottom: 0px;
+
+    .button {
+
+      color: white;
+    }
+}
+
+h1, h2, h3, h4, h5 {
+
+  font-weight: lighter !important;
+}
+
+h1.project-title {
+
+  font-weight: lighter !important;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+
+}
+
+h2.project-slogan {
+
+  text-transform: lowercase !important;
+  font-style: italic;
+  color: #a9a9a9;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 80%;
+}
+
+h2.project-slogan:first-letter {
+  text-transform: capitalize !important;
+}
+
+.project-introduction {
+  background-color: rgba(0,0,0,0.4);
+  padding: 25px;
+  color: white;
+  min-height: 410px;
+  font-size: 1.35rem;
+  font-weight: lighter;
+  text-align: center;
+  margin: 40px 0px;
+}
+
+/* In two minutes pages */
+.highlight.custom-getafe {
+
+  background-image: asset-url('participa-getafe-bg-4.jpg');
+  background-size: cover;
+  background-position: left center;
+  padding: 0px !important;
+
+  .row {
+
+    max-width: 100%;
+    background: rgba(0,0,0, 0.3);
+  }
+}
+
+ #home-with-icon-background {
+   background-color: transparent !important;
+   /*background-image: image-url('icon_home.gif');*/
+   background-size: auto 100%;
+   background-repeat: no-repeat;
+   background-position: center bottom;
+ }
+
+
+tr.small > td {
+
+  vertical-align: top;
+  p {
+
+    font-size: 85% !important;
+  }
+}
+
+.expanded.highlight {
+
+  padding-top: 20px;
+}
+
+/* Welcome */
+
+.open-processes {
+
+
+}
+
+/* Footer */
+
+h1.logo {
+  text-transform: uppercase;
+  float: left;
+  margin-right: 35px;
+  img {
+    margin: 0;
+  }
+}
+
+/* emphatized header */
+.emphatized-header-row {
+
+  background-color: $brand;
+  color: $highlight;
+  .with-border {
+    padding-left: 1.5rem;
+    border-left: 2px solid $highlight;
+  }
+}
+
+.no-bullet.download {
+
+  background-color: lighten($brand, 50%);
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  h5 {
+    margin: 0px;
+    font-weight: bolder;
+  }
+  .icon {
+    font-size: 300%;
+  }
+}
+
+/* custom background */
+.spending-proposal-bg {
+  background: $budget image-url('spending_proposals_bg.jpg');
+}
+
+.public-consultations-bg {
+  background: $budget image-url('public_consultations_bg.jpg');
+}
+
+.budgets-ballot-bg {
+
+  background: $budget image-url('ballot-bg.jpg');
+  background-size: auto 100% !important;
+  background-position: 90% 30px !important;
+  background-color: white;
+  border-bottom: 1px solid #a9a9a9;
+
+
+  h1 { color: $brand !important; }
+}
+
+li.ballot-selection-paper {
+
+  background-color: #FFFFE0 !important;
+  font-size: 12px;
+  padding-right: 40px !important;
+}
+
+li.ballot-selection-paper:hover,
+li.ballot-selection-paper:hover * {
+  background-color: darken(#FFFFE0, 10%) !important;
+  color: #333 !important;
+}
+
+
+table.ballot-paper td,
+table.ballot-paper th {
+
+  background-color: #FFFFE0;
+}
+
+
+.ballot-points {
+  background-color: #FFFFE0 !important;
+  font-weight: bold;
+}
+
+.ballot-participants {
+  background-color: #DFF0D8 !important;
+  font-weight: bold;
+}
+
+table.ballot-paper tr.ballot-selected {
+
+};
+
+.ballot-alert {
+
+  border-radius: 10px;
+  padding: 7px 10px;
+  margin-bottom: 25px;
+  color: white;
+
+  .icon {
+    font-size: 15px;
+    margin-right: 20px;
+    padding-top: 10px;
+  }
+}
+
+.ballot-alert-status {
+
+  background-color: lighten(#B80830, 55%);
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+
+.swap-on-hover {
+  height: 60px !important;
+  .hide-on-over { display: block;  }
+  .show-on-over { display: none; }
+}
+
+.swap-on-hover:hover {
+
+  .hide-on-over { display: none; }
+  .show-on-over { display: block; }
+}
+
+.ballot-investment-cost {
+
+  white-space: nowrap;
+}
+
+.ballot-alert.no-margin-bottom {
+  margin-bottom: 0px;
+}
+
+.ballot-alert.ballot-secondary {
+
+  background-color: #e7e7e7;
+  color: #333;
+}
+
+.ballot-alert.ballot-warning {
+
+  background-color: #ffae00;
+}
+
+.ballot-alert.ballot-success {
+
+  background-color: #43AC6A;
+}
+
+.ballot-step {
+
+  &.pending.active {
+
+    background-color: #ffae00 !important;
+    color: #333;
+  }
+
+  &.complete {
+    background-color: #43AC6A;
+    color: white;
+  }
+
+  a {
+    color: rgb(34, 34, 34);
+  }
+
+  .icon-check-circle {
+
+    position: relative;
+    color: #43AC6A;
+    font-size: 200%;
+    top: -18px;
+  }
+
+  .icon-help {
+
+    position: relative;
+    color: #ffae00;
+    font-size: 200%;
+    top: -18px;
+  }
+
+  &.active {
+
+    background-color: #e9e9e9 !important;
+
+    a {
+      color: #333;
+    }
+  }
+}
+
+
+.success-box {
+  border: 2px solid #43AC6A !important;
+}
+
+td.danger-bg, span.danger-bg {
+
+  color: red !important;
+}
+
+/* Spending proposals */
+
+table#spending-proposals-results {
+
+  td.index {
+    color: #777;
+    font-weight: bolder;
+    text-align: center;
+  }
+}
+
+.page-background-row {
+
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1 {
+    color: white;
+    font-weight: normal !important;
+
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+
+  &.results {
+
+    .back {
+      color: white;
+    }
+  }
+}
+
+.spending-proposal-timeline {
+
+  ul {
+    display: inline-block;
+
+    @include breakpoint(medium) {
+      border-top: 2px solid $border;
+    }
+
+    p {
+      color: white;
+
+      &.title {
+        font-size: rem-calc(24);
+        font-weight: bold;
+      }
+    }
+
+
+    li {
+      padding-top: $line-height*1.5;
+      position: relative;
+
+      /* GET-57 Mark active phase */
+      a:hover {
+
+        text-decoration: none;
+      }
+
+      @include breakpoint(medium) {
+        display: inline-block;
+        margin-right: $line-height*2.5;
+      }
+
+      .icon-calendar {
+        background: white;
+        border: 1px solid $border;
+        border-radius: rem-calc(30);
+        color: $budget;
+        height: rem-calc(40);
+        left: 50%;
+        margin-left: rem-calc(-20);
+        padding: rem-calc(10);
+        position: absolute;
+        top: -20px;
+        width: rem-calc(40);
+      }
+
+      &.active {
+        @include breakpoint(medium) {
+          border-top: 1px solid $featured;
+          margin-top: rem-calc(-1);
+        }
+
+        .icon-calendar, h3, p {
+          color: $featured;
+        }
+
+        .icon-calendar {
+          background: $featured;
+          border: none;
+          box-shadow: 0 0 rem-calc(10) $featured;
+          color: black;
+        }
+      }
+    }
+  }
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.spending-proposals-text {
+
+  table {
+
+    thead tr th {
+      background: $highlight;
+      text-transform: uppercase;
+    }
+
+    tr td {
+      font-size: $base-font-size;
+    }
+  }
+
+  .margin {
+    margin-bottom: $line-height*2;
+    margin-top: $line-height*2;
+  }
+
+  @include breakpoint(medium down) {
+    .text-right {
+      text-align: left !important;
+    }
+  }
+}
+
+.investment-project-sidebar-votes {
+
+  .sticky {
+    background: rgba(255,255,255,.85);
+
+    @include breakpoint(medium down) {
+      margin-top: $line-height;
+      position: initial;
+    }
+  }
+
+  .counters {
+
+    .callout {
+      float: left;
+      margin-right: $line-height/4;
+      min-height: rem-calc(130);
+      padding: $line-height/2 0;
+      width: rem-calc(125);
+    }
+
+    .callout.warning.unverified {
+      padding: $line-height/2;
+      width: 100%;
+    }
+
+    span {
+      text-transform: uppercase;
+    }
+  }
+
+  .votes-number {
+    font-size: rem-calc(80);
+    font-weight: bold;
+    line-height: rem-calc(80);
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+
+  .icon-deleted {
+    font-size: rem-calc(40);
+    line-height: rem-calc(40);
+  }
+}
+
+.investment-projects-scope {
+
+  .callout {
+    background: white;
+    border-color: $border;
+    border-radius: 0;
+    color: $text;
+
+    @include breakpoint(medium) {
+      height: $line-height*17;
+    }
+
+    a {
+      font-size: $base-font-size;
+    }
+  }
+
+  .callout.primary {
+    border-top: 4px solid $info-border;
+
+    @include breakpoint(medium) {
+      background: image-url('investment_project_city.jpg') no-repeat bottom;
+    }
+  }
+
+  .callout.success {
+    border-top: 4px solid $success-border;
+
+    @include breakpoint(medium) {
+      background: image-url('investment_project_districts.jpg') no-repeat bottom;
+    }
+
+    .button {
+      margin-bottom: 0;
+    }
+
+    .accordion {
+      background: white;
+      border: 0;
+    }
+
+    .accordion-title {
+      border: 0;
+      color: $text;
+      padding: 0;
+
+      &:before {
+        content: none;
+      }
+
+      &:hover, &:focus, &:hover h2, &:focus h2 {
+        background: none;
+        color: $text;
+        text-decoration: none;
+      }
+    }
+
+    .accordion-content {
+      background: none;
+      border: 0;
+
+      @include breakpoint(medium) {
+        padding-bottom: rem-calc(39);
+      }
+    }
+  }
+}
+
+.no-underline a,
+.no-underline a:hover,
+.no-underline a:hover h2 {
+  color: $text !important;
+  text-decoration: none !important;
+}
+
+.is-forum {
+  background: $budget;
+}
+
+.forum.active {
+  color: $check;
+  font-weight: bold;
+
+  a {
+    background: $success-bg;
+    border: 1px solid $success-border;
+    border-radius: 35px;
+    color: $success-color;
+    padding: rem-calc(6) rem-calc(12);
+  }
+
+  &:after {
+    color: $check;
+    content: "\6c";
+    font-family: 'icons';
+    margin-left: rem-calc(6);
+  }
+}
+
+.jumbo-investment-project-votes {
+  background: #F6F5F8;
+
+  .content {
+    background: #F6F5F8;
+
+    @include breakpoint(large) {
+      padding-bottom: $line-height;
+      padding-top: $line-height;
+    }
+  }
+
+  h1 {
+    color: $budget;
+  }
+
+  .button.budget {
+    background: $budget;
+
+    &:hover {
+      background: $budget-hover;
+    }
+  }
+}
+
+.jumbo-investment-image {
+  height: rem-calc(360);
+  position: absolute;
+}
+
+.investment-projects-scope {
+
+  a {
+    line-height: $line-height*2;
+  }
+}
+
+.jumbo-delegation {
+  background: $budget image-url('investment_project_delegation.jpg');
+  margin-bottom: rem-calc(-96);
+
+  @include breakpoint(medium) {
+    min-height: $line-height*15;
+  }
+
+  h2, h3, p {
+    color: white;
+  }
+
+  h3 a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .button {
+    background: white;
+    color: $budget;
+  }
+}
+
+.investment-project .supports .total-supports.no-button,
+.investment-project-show .supports .total-supports.no-button {
+  display: block;
+  margin-top: $line-height*1.5;
+}
+
+table.age-groups-investment-projects {
+
+  .progress {
+    background: #dad9e3;
+    height: $line-height/2;
+  }
+
+  .progress-meter {
+    background: $budget;
+  }
+}
+
+
+/* custom footer */
+footer h2 a {
+
+  border-bottom: none;
+}
+
+/* Auth page */
+.auth p, .auth a, .auth .checkbox {
+  font-size: 0.875rem;
+}
+
+.auth-page {
+  background: $brand image-url("auth_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .button {
+    margin-bottom: 20px;
+  }
+
+  form {
+    margin-bottom: 10px;
+  }
+
+  h1:not(.logo) {
+    @include logo;
+
+    a {
+      color: white;
+      display: block;
+      line-height: rem-calc(80); // Same as logo image height
+      text-align: center;
+
+      @include breakpoint(medium) {
+        display: inline-block;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/* Budgets */
+
+.budget-header-bg {
+
+  background: $budget image-url('spending_proposals_bg.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+
+  .inner-info {
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  a.back {
+    span {
+      color: white;
+    }
+    color: white;
+  }
+
+  .callout {
+    display: none;
+  }
+}
+
+.budget.expanded {
+
+  background-color: darken($brand, 5%);
+  .info {
+
+
+    .callout {
+      display: none;
+    }
+  }
+}
+
+.jumbo-budget {
+
+  background-color: darken($brand, 5%);
+
+  .progress-bar-nav {
+
+    background-color: transparent;
+  }
+
+
+  .no-bullet.headings-list {
+    li {
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: white !important;
+        text-decoration: underline;
+      }
+
+      a.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+span.hint {
+
+  font-size: 80%;
+  color: $dark;
+  font-style: italic;
+  padding-left: 5px;
+}
+
+.heading-options {
+
+  a.active {
+
+    text-decoration: underline;
+  }
+}
+
+.investments-list-empty {
+
+  font-size: 140%;
+  color: #777;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.budget-investment, .budget-investment-show {
+
+  .votes {
+    @include votes;
+
+    .against {
+      margin-left: $line-height/4;
+    }
+
+    @include breakpoint(medium) {
+      text-align: center;
+    }
+  }
+}
+
+.votes-custom {
+
+  .percentage {
+
+    position: relative !important;
+  }
+}
+
+.debate-show .votes {
+  border: 0;
+  padding: $line-height/2 0;
+}
+.open-process {
+
+}
+
+.banner {
+
+  .clickhere-button img {
+
+    max-height:80px;
+  }
+
+  background-color: #e9e9e9;
+
+  text-align: left;
+  font-size: 100%;
+  margin-top: 0px;
+
+  background-image: image-url('icon_home_proposal.png');
+  background-position: 10% center;
+  background-size: auto 90%;
+  background-repeat: no-repeat;
+
+  .banner-inner {
+    .banner-icon {
+
+      background-image: image-url('icon_home_proposal.png');
+      height: 64px;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .banner-left {
+      background-color: #e9e9e9;
+
+      margin-top: 10px;
+
+      font-size: 120%;
+      text-transform: uppercase;
+      font-weight: lighter;
+
+
+      span.lead {
+        color: $brand;
+        font-weight: bolder !important;
+      }
+
+    }
+
+    .banner-right {
+      background-color: #e9e9e9;
+      text-align: center;
+      padding-top: 20px;
+      .button {
+        top-bottom: 20px;
+      }
+    }
+  }
+}
+
+.phase.finished, .phase.almost_finished, .phase.REALIZADO {
+
+  font-weight: bolder;
+}
+
+.card-section.gallery-item {
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px;
+  margin-bottom: 10px;
+  box-shadow: 1px 4px 5px #777;
+}
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.subnavigation-menu {
+
+  font-size: 80%;
+}
+
+
+
+.help-header {
+  background: #fafafa;
+  border-bottom: 1px solid #eee;
+  padding-bottom: $line-height / 2;
+  padding-top: $line-height;
+
+  h1 {
+    font-size: rem-calc(24);
+    text-transform: uppercase;
+  }
+}
+
+
+ul.vertical {
+
+  li {
+
+    &.active {
+      background-color: rgb(250, 146, 170);
+      a {
+        font-weight: bolder;
+      }
+    }
+    padding: 10px 7px;
+    margin-bottom: 10px !important;
+  }
+}
+
+select.datetime-select {
+
+  width: auto !important;
+}
+
+.subnavigation {
+
+  ul.menu li a {
+
+    padding: 0.7em 0;
+    font-size: 90%;
+  }
+
+  a.subnavigation-submenu-link {
+
+    padding-right: 1.1rem !important;
+  }
+
+  ul.menu.subnavigation-submenu-item {
+
+    padding: 0px !important;
+    margin: 0 !important;
+
+    li {
+
+      margin: 0px !important;
+      padding: 0px !important;
+
+      a {
+
+        padding-left: 10px !important;
+      }
+    }
+  }
+}

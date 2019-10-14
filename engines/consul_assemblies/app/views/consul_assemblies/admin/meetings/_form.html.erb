@@ -1,0 +1,124 @@
+<%= form_for [:admin, @meeting], html: {class: "edit_meeting", data: {watch_changes: true}} do |f| %>
+
+  <% if @meeting.errors.any? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <strong>
+        <%= @meeting.errors.count %>
+        <%= t("admin.site_customization.meetings.errors.form.error", count: @meeting.errors.count) %>
+        <!-- <%= @meeting.errors.inspect %> -->
+      </strong>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+    <div class="small-12 column">
+
+
+      <%= f.select :assembly_id, assemblies_select_options(@assemblies) %>
+      <%= f.hidden_field :user_id%>
+      <%= f.label :published_at, t(".published_at") %>
+      <div>
+        <%= datetime_select :meeting, :published_at, {}, {:class => "datetime-select"} %>
+      </div>
+      <%= f.label :scheduled_at, t(".scheduled_at") %>
+      <div>
+        <%= datetime_select :meeting, :scheduled_at, {}, {:class => "datetime-select"} %>
+      </div>
+
+
+      <%= f.label :close_accepting_proposals_at, t(".close_accepting_proposals_at") %>
+      <%= datetime_select :meeting, :close_accepting_proposals_at, {}, {:class => "datetime-select"}  %>
+
+
+      <%= f.label :title, t(".title") %>
+      <%= f.text_field :title, label: false, size: 80, maxlength: 80 %>
+      <%= f.label :about_venue, t(".about_venue") %>
+      <%= f.text_field :about_venue, label: false, size: 80, maxlength: 80 %>
+      <%= f.label :summary, t(".summary") %>
+      <%= f.text_area :summary, label: false, maxlength: 250 %>
+
+      <div class="ckeditor margin-top">
+        <%= f.label :description, t(".description") %>
+        <%= f.cktext_area :description, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+
+      <div class="ckeditor margin-top">
+        <%= f.label :attendants_text, t(".attendants_text") %>
+        <%= f.cktext_area :attendants_text, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+
+      <div class="margin-top">
+        <%= f.check_box :accepts_proposals %>
+        <%= f.check_box :will_generate_acts %>
+      </div>
+
+      <div class="margin-top">
+      <%= f.label :attachment, t(".attachment") %>
+        <% unless @meeting.attachment? %>
+          <%= f.file_field :attachment,label: false, hint: t('.about_attachment') %>
+        <% else %>
+          <br>
+          <%= link_to @meeting.attachment_url, class: 'button button-primary' do %>
+            <%= t('.see_current_attachment') %>
+          <% end %>
+          <%= f.check_box :remove_attachment %>
+        <% end %>
+
+      </div>
+
+      <div class="small-12 medium-12 large-12 text-right">
+        <%= f.submit t('.save'), class: "button success" %>
+      </div>
+
+      <div class="row">
+
+        <div class="small-12 column">
+          <hr>
+        </div>
+
+        <div class="small-12 column">
+          <h5><%= t(".attachments") %></h5>
+          <%= f.fields_for :attachments do |attachment| %>
+            <%= render '/admin/shared/attachment_fields', f: attachment %>
+          <% end %>
+          <br>
+
+          <div class="text-left">
+            <br>
+            <%= link_to_add_association f, :attachments, class: 'button default small'  do %>
+              <%= t(".new_attachment") %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="small-12 column">
+          <hr>
+        </div>
+
+        <div class="small-12 column well-large">
+          <h5><%= t(".acceptance_proposal") %></h5>
+          <%= f.fields_for :previous_meeting_acceptance_proposals do |acceptance_proposal| %>
+            <%= render 'consul_assemblies/admin/meetings/previous_meeting_acceptance_proposal_fields', f: acceptance_proposal %>
+          <% end %>
+
+          <div class="text-left">
+            <br>
+            <%= link_to_add_association f, :previous_meeting_acceptance_proposals, class: 'button default small'  do %>
+              <%= t(".new_acceptance_proposal") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+<% end %>

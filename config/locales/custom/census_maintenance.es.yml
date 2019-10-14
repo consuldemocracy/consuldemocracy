@@ -1,0 +1,19 @@
+---
+es:
+  mailers:
+    no_reply: "Este mensaje se ha enviado desde una dirección de correo electrónico que no admite respuestas."
+    email_reactivated_account_from_census:
+      subject: "%{site_name} - Actualización estado de su cuenta de usuario: Cuenta reactivada"
+      title: "Tu cuenta de usuario de %{org_name} vuelve a estar verificada"
+      instructions_html: Este es un correo autogenerado por %{site_link} para informarte de que tu cuenta de usuario en %{site_link} <i>"%{username}"</i> (vinculada a este correo electrónico) vuelve a ser <strong><u>activa y verificada</u></strong>.
+      instructions_2_html: Tu cuenta <u>puede participar en los en los Procesos Participativos</u>. <br><br> La desactivación de la cuenta ha venido motivada por un error técnico en la base de datos, sentimos las molestias que te haya ocasionado.
+      thanks: "Recuerda que siempre podrás contactar con nosotros si necesitas ayuda. Gracias por utilizar %{site_link}."
+
+    email_removed_from_census:
+      subject: "%{site_name} - Información Actualización estado de su cuenta de usuario"
+      title: "Notificación de cambio de estado en tu cuenta de usuario de %{org_name}"
+      instructions_html: Este es un correo autogenerado por %{site_link} para informarte de que tu cuenta de usuario en %{site_link} <i>"%{username}"</i> (vinculada a este correo electrónico) ha pasado de <b>verificado</b> a <b>no verificado</b> debido a que el %{document_type} vinculado a la tu cuenta ya no figura en el censo de %{place_name}.
+      instructions_2_html: Debido  a esto tu cuenta de usuario no podrá participar a los procesos reservados únicamente a los vecinos presentes en el censo. Para volver a participar en %{site_link} será necesario revalidar tu cuenta el portal tras comprobar que estás de nuevo en el censo de %{place_name}.
+      thanks: "Recuerda que siempre podrás contactar con nosotros si necesitas ayuda. Gracias por utilizar %{site_link}."
+    email_newsletter:
+      subject: "%{site_name} - %{subject}"

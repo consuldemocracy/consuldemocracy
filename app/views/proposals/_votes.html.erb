@@ -1,0 +1,81 @@
+<div class="debate supports text-center">
+
+  <div class="votes votes-custom" style="border-left: 0px;">
+    <div class="in-favor inline-block">
+      <% if user_signed_in? %>
+          <%= link_to vote_proposal_url(proposal, value: 'yes'),
+                      class: "like",
+                      title: t('votes.disagree'), method: "post", remote: true do %>
+
+              <span class="icon-like">
+                <span class="sr-only"><%= t('votes.agree') %></span>
+              </span>
+              <span class="percentage"><%= proposal_votes_percentage('likes', proposal) %></span>
+          <% end %>
+      <% else %>
+          <div class="like">
+            <span class="icon-like">
+              <span class="sr-only"><%= t('votes.agree') %></span>
+            </span>
+            <span class="percentage"><%= proposal_votes_percentage('likes', proposal) %></span>
+          </div>
+      <% end %>
+    </div>
+
+    <span class="divider"></span>
+
+    <div class="against inline-block">
+      <% if user_signed_in? %>
+
+          <%= link_to vote_proposal_url(proposal, value: 'no'),
+                      class: "unlike",
+                      title: t('votes.disagree'), method: "post", remote: true do %>
+
+        <span class="icon-unlike">
+          <span class="sr-only"><%= t('votes.disagree') %></span>
+        </span>
+              <span class="percentage"><%= proposal_votes_percentage('dislikes', proposal) %></span>
+          <% end %>
+      <% else %>
+          <div class="unlike">
+        <span class="icon-unlike">
+          <span class="sr-only"><%= t('votes.disagree') %></span>
+        </span>
+            <span class="percentage"><%= proposal_votes_percentage('dislikes', proposal) %></span>
+          </div>
+      <% end %>
+    </div>
+
+  </div>
+
+  <% if user_signed_in? && current_user.organization? %>
+      <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+        <p>
+          <%= t("votes.organizations") %>
+        </p>
+      </div>
+  <% elsif user_signed_in? && !proposal.votable_by?(current_user) %>
+      <div tabindex="0">
+        <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+          <p>
+            <%= t("votes.verified_only",
+                  verify_account: link_to(t("votes.verify_account"), verification_path )).html_safe %>
+          </p>
+        </div>
+      </div>
+  <% elsif !user_signed_in? %>
+      <div tabindex="0">
+        <div class="participation-not-allowed" style='display:none' aria-hidden="false">
+          <%= t("votes.unauthenticated",
+                signin: link_to(t("votes.signin"), new_user_session_path),
+                signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+        </div>
+      </div>
+  <% end %>
+
+  <% if voted_for?(@proposal_votes, proposal) && setting['twitter_handle'] %>
+      <div class="share-supported">
+        <%= social_share_button_tag("#{proposal.title} #{setting['twitter_hashtag']}", url: proposal_url(proposal), via: setting['twitter_handle']) %>
+      </div>
+  <% end %>
+</div>

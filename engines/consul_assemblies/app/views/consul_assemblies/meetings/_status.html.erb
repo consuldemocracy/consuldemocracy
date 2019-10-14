@@ -1,0 +1,16 @@
+
+<% if meeting.held? %>
+       <span class="secondary round radius label">
+         Celebrada
+       </span>
+<% else %>
+  <% if meeting.accepting_proposals? %>
+    <span class="success round radius label">
+      Orden del día abierto
+    </span>
+  <% else %>
+    <span class="warning round radius label">
+      Orden del día cerrado
+    </span>
+  <% end %>
+<% end %>

@@ -1,0 +1,130 @@
+<div class="small-12 medium-12 column" >
+
+
+
+  <% group.headings.each do |heading| %>
+      <% heading_investments = heading.investments.selected.sort_by_confirmed_ballots %>
+      <h4 class="inline-block">
+        <%= heading.name %>
+      </h4>
+
+      <% points_by_investment = {} %>
+      <% confirmations_by_investment = {}  %>
+      <table id="budget-investments-results" class="table-for-mobile">
+        <thead>
+        <tr>
+          <th>
+
+          </th>
+          <th scope="col">
+            Usuario
+          </th>
+          <th>
+            DNI
+          </th>
+          <% heading_investments.each do |investment| %>
+              <% points_by_investment[investment.id] = 0%>
+              <% confirmations_by_investment[investment.id] = 0%>
+
+              <th scope="col" class="text-right">
+                <%= investment.id %>
+              </th>
+          <% end %>
+
+          <th scope="col" class="text-center">
+            Puntos
+          </th>
+          <th>
+            Tipo
+          </th>
+          <th>
+            Verificado
+          </th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        <% @confirmations.each_with_index do |confirmation, index| %>
+            <% confirmation_points_count  = 0%>
+            <tr class="spending_proposal success">
+              <td id="confirmation-<%= confirmation.id %>">
+                <%= index + 1 %>
+              </td>
+              <td>
+                <%= confirmation.user.try(:email) %>
+              </td>
+              <td>
+                <%= confirmation.user.try(:document_number) %>
+              </td>
+              <% heading_investments.each do |investment| %>
+                  <% points = confirmation.ballot.points_for_investment(investment) %>
+                  <% unified_investment = confirmation.ballot.is_present_as_unified_in_ballot?(investment) %>
+                  <% confirmation_points_count  += points if points %>
+                  <% points_by_investment[investment.id] += points if points %>
+                  <% confirmations_by_investment[investment.id] += 1 if points %>
+                <td scope="col" class="text-center <%= unified_investment ? 'danger-bg' : '' %>">
+                  <span><%= points %>
+                    <% if unified_investment %>
+                        <small><i>(*<%= unified_investment.investment.id %>)</i></small>
+                    <% end %>
+                  </span>
+                </td>
+              <% end %>
+              <td class="text-center">
+                <%= confirmation_points_count  %>
+              </td>
+              <td>
+                <% if confirmation.sms_code_sent_at %>
+                  ONLINE
+                <% else %>
+                  PRESENCIAL
+                <% end %>
+              </td>
+              <td>
+                <%= l(confirmation.confirmed_at, format: :short) %>
+              </td>
+            </tr>
+        <% end %>
+        <tfoot>
+          <tr>
+            <td>
+              Total puntos
+            </td>
+            <td></td>
+            <td></td>
+            <% heading_investments.each do |investment| %>
+                <td class="text-center">
+                  <%= points_by_investment[investment.id] %>
+                </td>
+            <% end %>
+            <td class="text-center" colspan="3">
+
+            </td>
+          </tr>
+        <tr>
+          <td>
+            Presente en papeletas
+          </td>
+          <td></td>
+          <td></td>
+          <% heading_investments.each do |investment| %>
+              <td class="text-center">
+                <%= confirmations_by_investment[investment.id] %>
+              </td>
+          <% end %>
+          <td class="text-center" colspan="3">
+
+          </td>
+        </tr>
+        </tfoot>
+        </tbody>
+      </table>
+      <span class="danger-bg">
+        <small><i>(* Las propuestas marcadas en rojo con asterisco y un número, significa que han sido sumadas desde un voto a una propuesta unificada y sacada de la papeleta)</i></small>
+      </span>
+      <br>
+      <br>
+      <br>
+  <% end %>
+</div>

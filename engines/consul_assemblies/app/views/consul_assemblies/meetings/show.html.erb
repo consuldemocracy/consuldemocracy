@@ -1,0 +1,212 @@
+<% provide :title do %><%= @meeting.title %><% end %>
+
+<section class="investment-project-show">
+  <% if @meeting.unpublished? %>
+    <div class="row">
+      <div class="small-12 ">
+      <div class="callout secondary column">
+        <strong>VISTA PREVIA DE ADMINISTRADOR</strong>
+        <br>
+        Esta reunión <u>no es pública</u>, será publicada en <u><%= distance_of_time_in_words_to_now(@meeting.published_at) %></u>
+      </div>
+      </div>
+    </div>
+  <% end %>
+  <div id="<%= dom_id(@meeting) %>" class="row">
+    <div class="small-12 medium-9 column">
+
+      <h1><%= @meeting.title %></h1>
+
+      <div class="investment-project-info">
+
+        <%= link_to @meeting.assembly.name, @meeting.assembly %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= l @meeting.scheduled_at.to_date %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= @meeting.about_venue %>
+        <span class="bullet">&nbsp;&bull;&nbsp;</span>
+        <%= render 'status', meeting: @meeting %>
+      </div>
+
+      <%= safe_html_with_links @meeting.description.html_safe %>
+
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="small-12 column">
+          <h3><%= t('.order_of_the_day') %></h3>
+          <h4>
+            <%= t('.acts_to_approve') %>
+          </h4>
+        </div>
+
+
+
+        <div class="medium-12 column">
+          <div class="medium-12 column">
+
+          <% if @meeting.proposals.to_approve.any? %>
+            <ol>
+              <% @meeting.proposals.to_approve.each do |proposal| %>
+                <li>
+                  <% if proposal.attachment? %>
+                    </small><%= link_to proposal.title, proposal.attachment_url, target: :blank %></small>
+                  <% else %>
+                    </small><%= proposal.title %></small>
+                  <% end %>
+                </li>
+              <% end %>
+            </ol>
+          <% else %>
+            <small class="text-muted"><%= t('.nothing_to_approve') %></small>
+          <% end %>
+          <br>
+          </div>
+        </div>
+
+
+        <div class="small-12 column">
+          <h4>
+            <%= t('.proposals') %>
+          </h4>
+        </div>
+
+        <div class="small-12 column">
+          <% if @meeting.accepts_proposals? %>
+            <ul class="tabs" data-tab role="tablist">
+              <li class="tabs-title">
+                <%= link_to meeting_path(@meeting, proposals_type: 'accepted'), "aria-selected" => "#{params[:proposals_type] == 'accepted'}" do %>
+                  <%= t('.proposals_accepted') %>
+                <% end %>
+              </li>
+
+              <li class="tabs-title">
+                <%= link_to meeting_path(@meeting, proposals_type: 'declined'), "aria-selected" => "#{params[:proposals_type] == 'declined'}" do %>
+                  <%= t('.proposals_refused') %>
+                <% end %>
+              </li>
+              <li class="tabs-title">
+                <%= link_to meeting_path(@meeting, proposals_type: 'pending'), "aria-selected" => "#{params[:proposals_type] == 'pending'}" do %>
+                  <%= t('.proposals_pending') %>
+                <% end %>
+              </li>
+
+          </ul>
+          <% end %>
+
+
+        <% if @meeting.proposals.any? %>
+          <div style="padding-left: 20px; border-left: 2px solid #e9e9e9;" class="row">
+            <% if @meeting.accepts_proposals? %>
+              <% if params[:proposals_type] == 'accepted' %>
+              <div class="medium-12 column">
+                <ol>
+                  <% if @meeting.proposals.not_previous.accepted.any? %>
+                    <% @meeting.proposals.not_previous.accepted.each do  |proposal| %>
+                      <li>
+                        <%= proposal.title %> • <%= link_to proposal.user.name, proposal.user %>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <small class="text-muted"><%= t('.not_accepted') %></small>
+                  <% end %>
+                </ol>
+              </div>
+              <% elsif params[:proposals_type] == 'pending' %>
+              <div class="medium-12 column">
+                <ol>
+                  <% if @meeting.proposals.not_previous.pending.any? %>
+                    <% @meeting.proposals.not_previous.pending.each do  |proposal| %>
+                      <li>
+                        <%= proposal.title %> • <%= link_to proposal.user.name, proposal.user %>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <small class="text-muted"><%= t('.not_pending') %></small>
+                  <% end %>
+                </ol>
+              </div>
+              <% elsif params[:proposals_type] == 'declined'%>
+              <div class="medium-12 column">
+                <ol>
+                  <% if @meeting.proposals.not_previous.declined.any? %>
+                    <% @meeting.proposals.not_previous.declined.each do  |proposal| %>
+                      <li>
+                        <%= proposal.title %> • <%= link_to proposal.user.name, proposal.user %>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <small class="text-muted"><%= t('.not_refused') %></small>
+                  <% end %>
+                </ol>
+              </div>
+              <% end %>
+            <% else %>
+              <div class="medium-12 column">
+                <ol>
+                  <% if @meeting.proposals.not_previous.accepted.any? %>
+                    <% @meeting.proposals.not_previous.accepted.each do  |proposal| %>
+                      <li>
+                        </small><%= proposal.title %></small>
+                      </li>
+                    <% end %>
+                  <% else %>
+                    <small class="text-muted"><%= t('.not_accepted') %></small>
+                  <% end %>
+                </ol>
+              </div>
+            <% end %>
+          </div>
+
+        <% else %>
+        <p class="text-muted">
+          <%= t('.not_orders') %>
+          <% if @meeting.accepting_proposals?  %>
+            <% if can?(:create, ConsulAssemblies::Proposal) %>
+              <%= link_to ' puedes proponer un punto para el orden del día', new_proposal_path(meeting_id:@meeting), class: '' %>
+            <% else %>
+              <small>Debes validar tu usuario con el padrón para poder proponer</small>
+            <% end %>
+          <% end %>
+        </p>
+        <% end %>
+
+      </div>
+      </div>
+
+
+      <div class="row">
+
+        <%= render "attachments", meeting: @meeting %>
+      </div>
+
+      <%= render "comments" %>
+
+
+    </div>
+
+    <aside class="small-12 medium-3 column">
+
+
+      <span id="<%= @meeting.id %>"><%= render 'follows/follow_button', follow: find_or_build_follow(current_user, @meeting)%></span>
+
+      <% if @meeting.accepting_proposals?  %>
+        <% if can?(:create, ConsulAssemblies::Proposal) %>
+          <%= link_to 'Proponer punto orden del día', new_proposal_path(meeting_id: @meeting), class: 'button  expanded' %>
+        <% else %>
+        <%= link_to 'Proponer punto orden del día', '#', class: 'button  expanded', disabled: true %>
+          <div class="alert warning"><small class="text-muted">Debes <%= link_to 'verificar tu cuenta con el padrón', verification_path %> para poder enviar propuestas de Punto de orden del día.</small></div>
+        <% end %>
+      <% end %>
+
+
+      <%= render partial: 'shared/social_share', locals: {
+        share_title: t("meetings.show.share"),
+        title: @meeting.title,
+        url: meeting_url(@meeting)
+      } %>
+    </aside>
+
+  </div>
+</section>

@@ -1,0 +1,22 @@
+<% provide :title do %><%= t('pages.titles.privacy') %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: page_url("privacy") %>
+<% end %>
+
+<div class="row margin-top">
+
+  <div class="small-12 medium-9 column">
+    <h1><%= t("pages.privacy") %></h1>
+
+    <h2>AVISO DE PROTECCIÓN DE DATOS</h2>
+    <ol>
+      <li>La navegación por la informacion disponible en el Portal de Gobierno Abierto es anónima.</li>
+      <li>Para utilizar los servicios contenidos en el Portal de Gobierno Abierto el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal segun la informacion especifica que consta en cada tipo de alta.</li>
+      <li>El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+      <li>Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+    </ol>
+  </div>
+
+
+</div>
+

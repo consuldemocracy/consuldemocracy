@@ -1,0 +1,44 @@
+<div class="row margin-top">
+  <div class="small-12 column margin">
+
+  </div>
+
+  <div class="small-12 medium-9 column margin-top">
+    <h2>ELIGE DÓNDE REALIZAR TU VOTACIÓN</h2>
+    </h5>
+    <div class="text-center">
+      <%= image_tag('map.jpg', id: 'map', usemap: '#html_map', class: 'margin-top', alt: 'Barrios de Getafe') %>
+      <map name="html_map" id="html_map">
+        <% @budget.groups.each do |geozone| %>
+  	 <% if geozone.geozone %>
+            <area shape="poly"
+                  coords="<%= geozone.geozone.try(:html_map_coordinates) %>"
+                  href="<%= budget_ballot_path(@budget, group_id: geozone.id) %>"
+                  title="<%= geozone.name %>"
+                  alt="<%= geozone.name %>">
+	 <% end %>
+        <% end %>
+      </map>
+    </div>
+  </div>
+
+  <div class="small-12 medium-3 column margin">
+    <div class="sidebar-divider"></div>
+    <h2 class="sidebar-title"><%= t("budgets.investments.index.sidebar.information") %></h2>
+    <br>
+    <ul id="geozones" class="no-bullet">
+      <li><%= link_to 'Información detallada', page_path('normativa-presupuestos-participativos-2018', anchor: '4') %></li>
+    </ul>
+
+    <div class="sidebar-divider"></div>
+    <h2 class="sidebar-title">Barrios</h2>
+    <br>
+    <ul id="geozones" class="no-bullet">
+      <% @budget.groups.each do |group| %>
+          <li><%= link_to group.name, budget_ballot_path(@budget, group_id: group.id), class: ("active" if group.id == params[:group]) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+</div>

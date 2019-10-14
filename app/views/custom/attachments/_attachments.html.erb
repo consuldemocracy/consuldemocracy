@@ -1,0 +1,36 @@
+<div class="row marging-top">
+  <div class="small-12 medium-9 column">
+    <br>
+    <br>
+    <h3>
+      <%= t("admin.budget_investments.show.project_gallery") %>
+    </h3>
+    <div class="row small-up-2 medium-up-4">
+      <%- attachments.each do |attachment| %>
+
+          <div class="card column">
+            <%= link_to attachment.file_url, target: 'blank', title: attachment.title do %>
+                <% if attachment.document? %>
+                    <div class="card-section gallery-item text-center" style="height: 200px; padding-top: 80px; background-color: #e9e9e9;">
+                      <i class="icon-document icon" style="font-size: 200%;"></i><br>PDF
+                      <br>
+                      <small><%= attachment.title %></small>
+                    </div>
+                <% else %>
+                    <div class="card-section gallery-item" style="background-image: url(<%= attachment.file.url(:thumb) %>); height: 200px;">
+
+                    </div>
+                    <div class="card-section">
+                      <p class="text-muted">
+                        <small>
+                          <%= attachment.title %>
+                        </small>
+                      </p>
+                    </div>
+                <% end %>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

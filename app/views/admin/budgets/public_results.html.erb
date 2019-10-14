@@ -1,0 +1,30 @@
+
+<div class="row margin-top">
+  <div class="small-12 medium-2 column not-print">
+    <ul class="menu vertical no-margin-top no-padding-top">
+      <li>
+        <strong>
+
+        </strong>
+      </li>
+
+      <% @budget.groups.each do |group| %>
+          <li class="<%= 'active' if group.eql?(@group) %> ">
+            <%= link_to group.name,
+                        public_results_admin_budget_path(@budget, group_id: group.id) %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-10 column " id="budget-ballot-paper-container">
+    <h2>Página de resultados pública</h2>
+    <p>
+      <strong>AVISO:</strong><br />
+      <u>Esta página no es visible públicamente</u>. Se trata de una previsualización de la lista de resultados pública del proceso de <%= @budget.name %>
+      para ser validada por los administradores. La página de resultados pública sólo será accesible una vez se cambie el estado del proceso a "Terminado".
+    </p>
+    <br>
+        <%= render 'public_results_table', group: @group %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t('mailers.user_invite.title',
+        org: Setting['org_name']) %>
+  </h1>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t('mailers.user_invite.text',
+        org: Setting['org_name']) %>
+  </p>
+
+  <p style="text-align: center;">
+    <%= link_to t('mailers.user_invite.button'), new_user_registration_url, style: "font-family: 'Open Sans','Helvetica Neue',arial,sans-serif; background: #004A83; border-radius: 6px; color: #fff !important; font-weight: bold; margin: 0px; padding: 10px 15px; text-align: center; text-decoration: none; min-width: 160px; display: inline-block; margin-left: 12px;" %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t('mailers.user_invite.ignore') %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t('mailers.user_invite.thanks') %>
+  </p>
+</td>

@@ -1,0 +1,13 @@
+<div class="row">
+  <%= search_form_for @q, html: {class: "edit_assembly", data: {watch_changes: true}} do |f| %>
+    <div class="small-6 column">
+      <%= f.search_field :title_or_description_cont, placeholder: t('.search_by_name_or_description') %>
+    </div>
+    <div class="small-4 column">
+      <%= f.select :assembly_id_eq, assemblies_select_options(@assemblies), include_blank: false, prompt: 'Todos los espacios de participación' %>
+    </div>
+    <div class="small-2 column text-right">
+      <%= f.submit class: 'button button-primary expanded' %>
+    </div>
+  <% end %>
+</div>

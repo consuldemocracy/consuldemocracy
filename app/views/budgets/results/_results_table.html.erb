@@ -1,0 +1,72 @@
+<div class="small-12 medium-9 column" id="results-container">
+  <h3 class="inline-block">
+    <%= heading.name %>
+  </h3>
+
+  <%= link_to t("budgets.results.show_all_link"), "#",
+              class: "js-toggle-link button hollow margin-bottom float-right",
+              data: {'toggle-selector' => '.js-discarded',
+                     'toggle-text' => t("budgets.results.hide_discarded_link")} %>
+
+  <table id="budget-investments-results" class="table-for-mobile">
+    <thead>
+      <tr>
+        <th scope="col">
+          <%= t("budgets.results.spending_proposal") %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t("budgets.results.ballot_lines_count") %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t("budgets.results.price") %>
+        </th>
+        <th scope="col" class="text-right">
+          <%= format_price(heading.price) %><br>
+          <small><%= t("budgets.results.amount_available") %></small>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% amount_available = heading.price %>
+      <% @result.investments.each do |investment| %>
+        <% if investment.winner? %>
+          <tr id="<%= dom_id(investment) %>"
+              class="spending_proposal success">
+        <% else %>
+          <tr id="<%= dom_id(investment) %>"
+              class="spending_proposal js-discarded" style="display:none">
+        <% end %>
+            <td>
+              <% if investment.winner? %>
+                <span class="icon-check">
+                  <span class="sr-only">
+                    <%= t("budgets.results.accepted") %>
+                  </span>
+                </span>
+              <% else %>
+                <span class="icon-x delete">
+                  <span class="sr-only">
+                    <%= t("budgets.results.discarded") %>
+                  </span>
+                </span>
+              <% end %>
+              <%= link_to investment.title,
+                          budget_investment_path(@budget, investment) %>
+            </td>
+            <td class="text-center">
+              <%= investment.ballot_lines_count %>
+            </td>
+            <td class="text-center">
+              <%= format_price investment.price %>
+            </td>
+            <td class="small text-right"
+                title="<%= format_price(amount_available) %> - <%= format_price(investment.price) %>">
+                <%= format_price amount_available - investment.price %>
+                <% amount_available -= investment.price if investment.winner? %>
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

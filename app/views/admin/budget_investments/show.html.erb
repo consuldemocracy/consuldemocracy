@@ -1,0 +1,77 @@
+<%= link_to admin_budget_budget_investments_path(Budget::Investment.filter_params(params)), data: {no_turbolink: true} do %>
+  <span class="icon-angle-left"></span> <%= t("shared.back") %>
+<% end %>
+
+<%= render 'written_by_author' %>
+
+<%= link_to t("admin.budget_investments.show.edit"),
+            edit_admin_budget_budget_investment_path(@budget, @investment,
+                                                Budget::Investment.filter_params(params)) %>
+
+<hr>
+
+<h2 id="classification"><%= t("admin.budget_investments.show.classification") %></h2>
+
+<p><strong><%= t("admin.budget_investments.show.assigned_admin") %>:</strong>
+  <%= @investment.administrator.try(:name_and_email) || t("admin.budget_investments.show.undefined") %>
+</p>
+
+<p id="tags">
+  <strong><%= t("admin.budget_investments.show.tags") %>:</strong>
+
+  <%= @investment.tags_on(:valuation).pluck(:name).join(', ') %>
+</p>
+
+<p id="assigned_valuators">
+  <strong><%= t("admin.budget_investments.show.assigned_valuators") %>:</strong>
+  <% if @investment.valuators.any? %>
+      <table>
+      <% @investment.valuator_assignments_ordered_by_completion_date.each do |assigment| %>
+
+                 <tr>
+                   <td><%= assigment.valuator.name %></td>
+                   <td>
+                     <% if assigment.finished_by_user_at %>
+                         <span class="label success"><%= t("admin.budget_investments.show.assigment_complete", finished_at: l(assigment.finished_by_user_at, format: :short)) %></span>
+                     <% else %>
+                         <span class="label warning"><%= t("admin.budget_investments.show.assigment_peding") %></span>
+                     <% end %>
+                   </td>
+                   <td>
+                     <%= assigment.valuator.email %>
+                   </td>
+                 </tr>
+      <% end %>
+      </table>
+  <% else %>
+    <%= t("admin.budget_investments.show.undefined") %>
+  <% end %>
+</p>
+
+<p>
+  <%= link_to t("admin.budget_investments.show.edit_classification"),
+                edit_admin_budget_budget_investment_path(@budget, @investment,
+                                                  {anchor: 'classification'}.merge(Budget::Investment.filter_params(params))) %>
+</p>
+
+<hr>
+
+<h2><%= t("admin.budget_investments.show.dossier") %></h2>
+
+<%= render 'valuation/budget_investments/written_by_valuators' %>
+
+<p>
+  <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
+</p>
+
+<hr>
+
+<h2><%= t("admin.budget_investments.show.project") %></h2>
+
+<%= render 'custom/written_about_project', investment: @investment %>
+
+<p>
+  <%= link_to t("admin.budget_investments.show.edit_project"),
+              edit_admin_budget_budget_investment_path(@budget, @investment,
+                                                       {anchor: 'project'}.merge(Budget::Investment.filter_params(params))) %>
+</p>

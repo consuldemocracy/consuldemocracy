@@ -1,0 +1,36 @@
+<div class="row margin-top">
+  <div class="small-12 medium-2 column not-print">
+    <ul class="menu vertical no-margin-top no-padding-top">
+      <li>
+        <strong>
+
+        </strong>
+      </li>
+
+      <% @budget.groups.each do |group| %>
+          <li class="<%= 'active' if group.eql?(@group) %> ">
+            <%= link_to group.name,
+                        results_admin_budget_path(@budget, group_id: group.id) %>
+          </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="small-12 medium-10 column " id="budget-ballot-paper-container">
+    <% if @group %>
+        <div class="not-print">
+          <a id="print_link" href="javascript:window.print();" class="button warning">
+            Imprimir detalles  y escrutinio de resultados para <%= @group.name %>
+          </a>
+        </div>
+
+        <h2> <%= @group.name %></h2>
+
+        <%= render 'big_numbers_table', group: @group %>
+        <h3>Resultados</h3>
+        <%= render 'results_table', group: @group %>
+        <h3>Escrutinio de votación</h3>
+        <%= render 'results_table_with_confirmed_ballots', group: @group %>
+    <% end %>
+  </div>
+</div>

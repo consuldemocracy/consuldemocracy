@@ -1,0 +1,20 @@
+<!-- Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@participagetafe" />
+<meta name="twitter:title" content="Participación Ciudadana Getafe" />
+<meta name="twitter:description" content="Tú decides cómo invertir para Getafe" />
+<meta name="twitter:image" content="<%= image_url '/social-media-participatory-budget.png' %>" />
+<!-- Facebook OG -->
+<meta id="ogtitle" property="og:title" content="Participación Ciudadana Getafe"/>
+<% if setting['url'] %>
+  <meta property="article:publisher" content=<%= setting['url'] %>/>
+<% end %>
+<% if setting['facebook_handle'] %>
+  <meta property="article:author" content="https://www.facebook.com/<%= setting['facebook_handle'] %>"/>
+<% end %>
+<meta property="og:type" content="article"/>
+<meta id="ogurl" property="og:url" content="<%= participatory_budget_url %>"/>
+<meta id="ogimage" property="og:image" content="<%= image_url '/social-media-participatory-budget.png' %>"/>
+<meta property="og:site_name" content="Participa Getafe"/>
+<meta id="ogdescription" property="og:description" content="Tú decides cómo invertir en tu ciudad"/>
+<meta property="fb:app_id" content="1662598980652932"/>

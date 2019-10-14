@@ -1,0 +1,103 @@
+---
+es:
+  officing:
+    header:
+      title: Votaciones
+    dashboard:
+      index:
+        title: Presidir mesa de votaciones
+        info: Aquí puedes validar documentos de ciudadanos y guardar los resultados de las urnas
+    menu:
+      voters: "Validar documento y votar"
+      recounts: "Recuento diario"
+      final_recounts: "Recuento final y escrutinio"
+    polls:
+      index:
+        title: "Listado de votaciones"
+        no_polls: "No eres presidente de mesa en ninguna votación activa"
+        select_poll: "Selecciona votación"
+        add_recount: "Añadir recuento"
+      final:
+        title: "Listado de votaciones finalizadas"
+        no_polls: "No tienes permiso para recuento final en ninguna votación reciente"
+        select_poll: "Selecciona votación"
+        add_recount: "Añadir recuentos finales"
+        add_results: "Añadir resultados"
+    recounts:
+      flash:
+        create: "Datos añadidos"
+        error_create: "Recuento NO añadido. Error en los datos"
+      new:
+        title: "%{poll} - Añadir recuento diario"
+        not_allowed: "No eres presidente de mesa en esta votación"
+        booth_date: "Fecha y urna"
+        select_booth_date: "Elige fecha y urna"
+        count: "Número de votos"
+        count_placeholder: "Número de votos"
+        submit: "Guardar"
+        recount_list: "Tus recuentos"
+        booth: "Urna"
+        date: "Fecha"
+    final_recounts:
+      flash:
+        create: "Datos añadidos"
+        error_create: "Recuento final NO añadido. Error en los datos"
+      new:
+        title: "%{poll} - Añadir recuento final"
+        not_allowed: "No tienes permiso para introducir recountos finales"
+        booth: "Urna"
+        date: "Día"
+        select_booth: "Elige urna"
+        select_date: "Elige día"
+        count: "Recuento final"
+        count_placeholder: "Número final de votos"
+        submit: "Guardar"
+        final_recount_list: "Tus recuentos finales"
+        system_count: "Recuento del sistema"
+        add_results: "Añadir resultados"
+    results:
+      flash:
+        create: "Datos guardados"
+        error_create: "Resultados NO añadidos. Error en los datos"
+        error_wrong_booth: "Urna incorrecta. Resultados NO guardados."
+        error_wrong_date: "Fecha incorrecta. Resultados NO guardados."
+      new:
+        title: "%{poll} - Añadir resultados"
+        not_allowed: "No tienes permiso para introducir resultados"
+        booth: "Urna"
+        date: "Día"
+        select_booth: "Elige urna"
+        select_date: "Elige día"
+        ballots_white: "Papeletas en blanco"
+        ballots_null: "Papeletas nulas"
+        submit: "Guardar"
+        results_list: "Tus resultados"
+        see_results: "Ver resultados"
+      index:
+        no_results: "No hay resultados"
+        results: "Resultados"
+        table_answer: Respuesta
+        table_votes: Votos
+        table_whites: Papeletas en blanco
+        table_nulls: Papeletas nulas
+    residence:
+      flash:
+        create: "Documento verificado con el Padrón"
+        not_allowed: "Hoy no tienes turno de presidente de mesa"
+      new:
+        title: Validar documento
+        document_number: "Número de documento (incluida letra)"
+        submit: Validar documento
+        error_verifying_census: El Padrón no pudo verificar este documento.
+        form_errors: evitaron verificar este documento
+        no_assignments: "Hoy no tienes turno de presidente de mesa"
+    voters:
+      new:
+        title: Votaciones
+        table_poll: Votación
+        table_actions: Estado de las votaciones
+      show:
+        can_vote: Puede votar
+        error_already_voted: "Ya ha participado en esta votación."
+        submit: Confirmar voto
+        success: "¡Voto introducido!"

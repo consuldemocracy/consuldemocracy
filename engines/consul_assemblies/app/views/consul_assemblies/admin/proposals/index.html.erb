@@ -1,0 +1,66 @@
+<% provide :title do %>
+  Admin - <%= t(".proposals") %>
+<% end %>
+<% if @proposals.any?%>
+  <%= back_link_to admin_meetings_path(assembly_id: @proposals.first.meeting.assembly.id) %>
+<% else %>
+  <%= back_link_to nil %>
+<% end %>
+<br>
+
+<%= link_to t(".create"), new_admin_proposal_path(meeting_id: params[:meeting_id]), class: "button float-right" %>
+<h2 class="inline-block"><%= @meeting.title%></h2>
+
+<table class="cms_proposal_list">
+  <thead>
+    <tr>
+      <th><%= t('.position') %></th>
+      <th></th>
+      <th><%= t('.proposal') %></th>
+      <th><%= t('.origin') %></th>
+      <th class="text-center"><%= t('.attachments') %></th>
+      <th><%= t('.date') %></th>
+      <th class="text-center"><%= t('.is_previous_acceptance') %></th>
+      <th class="text-center"><%= t('.accepted') %></th>
+      <th colspan="2" class="text-center"><%= t(".actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @proposals.each do |proposal| %>
+    <tr id="<%= dom_id(proposal) %>">
+      <td><%= proposal.position %></td>
+      <td>
+        <% unless proposal.position == 1 %>
+          <%= link_to up_admin_proposal_path(proposal) do %>
+            <strong class="up-down up">&#9650; </strong>
+          <% end %>
+        <% end %>
+        <% unless proposal.position == @proposals.last.position %>
+          <%= link_to down_admin_proposal_path(proposal) do %>
+            <strong class="up-down">&#9660;</strong>
+          <%end%>
+        <%end%>
+      </td>
+      <td>
+        <%= link_to proposal.title, edit_admin_proposal_path(proposal) %>
+      </td>
+      <td>
+        <%=  proposal_origin_name(proposal.proposal_origin) %>
+      </td>
+      <td class="text-center"><%= proposal.attachments.count %></td>
+      <td><%= l proposal.created_at, format: :short %></td>
+      <td class="text-center">
+        <%= boolean_check(proposal.is_previous_meeting_acceptance) %>
+      </td>
+      <td class="text-center">
+        <%= proposal_acceptance_status_name(proposal.acceptance_status) %>
+      </td>
+      <td class="small delete">
+        <%= link_to t(".delete"), admin_proposal_path(proposal), method: :delete, class: "button hollow alert expanded", data: { confirm: t('.confirm') } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @proposals %>

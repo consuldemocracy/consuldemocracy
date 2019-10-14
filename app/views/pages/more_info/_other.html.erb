@@ -1,0 +1,8 @@
+<h3 id="other" data-magellan-target="other">Otra información de interés</h3>
+
+<ul class="features">
+
+  <% SiteCustomization::Page.published.each do |custom_page| %>
+    <li><%= link_to custom_page.title, page_path(custom_page.slug) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,21 @@
+<h2><%= t("admin.users.index.title") %></h2>
+
+<%= form_tag admin_users_path, method: :get, remote: true  do %>
+  <div class="small-12 medium-4 column">
+    <%= text_field_tag :search, '', placeholder: 'Nombre o correo o documento de identidad' %>
+  </div>
+  <div class="small-12 medium-3 column account">
+    <%= select_tag :newsletter, options_for_select(build_newsletter_options), include_blank: false, prompt: "Usuarios con cualquier preferencia sobre notificaciones" %>
+  </div>
+  <div class="small-5 medium-2 column">
+    <%= submit_tag 'buscar', class: 'button' %>
+  </div>
+  <div class="small-7 medium-3 column" id="csv-button">
+    <%= link_to t('.download_csv'), admin_users_path(format: :csv, params_csv: @params), class: 'button' %>
+  </div>
+<% end %>
+
+
+<div id="users">
+  <%= render "users" %>
+</div>

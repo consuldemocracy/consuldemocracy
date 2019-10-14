@@ -1,0 +1,40 @@
+<div class="not-print">
+  <a id="print_act_link" href="javascript:window.print();" class="button warning not-p">
+     <%= t('.print_act') %>
+  </a>
+</div>
+<%= image_tag "banners/bannerpdf.jpg" %>
+<h1><%= t('.meeting_act') %><strong><%= @meeting.title %></strong></h1>
+<h4><%= t('.act_celebrated') %>  <%= I18n.l @meeting.scheduled_at, format: :short %> <%= t('.at', about_venue: @meeting.about_venue)  %></h4>
+<br>
+<h2><%= t('.description') %></h2>
+<p><%= safe_html_with_links(@meeting.description) %></p>
+<hr>
+<h2><%= t('.order_day_index') %></h2>
+<blockquote>
+  <%= render 'printable_index' %>
+</blockquote>
+<hr>
+
+<h2><%= t('.order_day') %></h2>
+<ol>
+  <% @meeting.proposals.to_approve.each do |proposal, index| %>
+    <%= render 'proposal_inline', proposal: proposal %>
+  <% end %>
+  <% @meeting.proposals.accepted.each do |proposal, index| %>
+    <%= render 'proposal_inline', proposal: proposal %>
+  <% end %>
+</ol>
+
+<% unless @meeting.attendants_text.blank? %>
+  <hr>
+  <h2><%= t('.attendants') %></h2>
+  <p>
+    <%= safe_html_with_links(@meeting.attendants_text.html_safe) %>
+  </p>
+<% end %>
+
+<div class="text-right">
+  <small class="discreet-color"><%= t('.act_draft') %></small>
+</div>
+

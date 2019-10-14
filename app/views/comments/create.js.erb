@@ -1,0 +1,11 @@
+var comment_html = "<%= j(render @comment) %>"
+
+<% if @comment.root? -%>
+  var commentable_id = '<%= dom_id(@commentable) %>';
+  App.Comments.reset_form(commentable_id);
+  App.Comments.add_comment(commentable_id, comment_html);
+<% else -%>
+  var parent_id = '<%= "comment_#{@comment.parent_id}" %>';
+  App.Comments.reset_and_hide_form(parent_id);
+  App.Comments.add_reply(parent_id, comment_html);
+<% end -%>

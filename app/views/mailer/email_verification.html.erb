@@ -1,0 +1,21 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t("mailers.email_verification.title") %>
+  </h1>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <%= t("mailers.email_verification.instructions_html",
+        verification_link: link_to(
+          t('mailers.email_verification.click_here_to_verify'),
+          email_url(email_verification_token: @token))) %>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+  <%= t("mailers.email_verification.instructions_2_html",
+        document_type: humanize_document_type(@document_type),
+        document_number: @document_number) %>
+  </p>
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.email_verification.thanks") %>
+  </p>
+</td>

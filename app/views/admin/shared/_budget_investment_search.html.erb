@@ -1,0 +1,26 @@
+<%= form_for(Budget::Investment.new, url: url, as: :budget_investment, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :search, "" %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= select_tag :heading_id,
+                      options_for_select(budget_heading_select_options(@budget),
+                                         params[:heading_id]),
+                      include_blank: true
+      %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= check_box_tag :unfeasible, "1", params[:unfeasible].present? %>
+      <%= t("admin.budget_investments.search_unfeasible") %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-inline small-12 medium-3 column end">
+      <%= f.submit t("shared.search"), class: "button" %>
+    </div>
+  </div>
+<% end %>

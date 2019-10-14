@@ -1,0 +1,49 @@
+<table width="100%" style="margin-bottom: 10px;   page-break-inside: avoid;" cellspacing="0" cellpadding="4">
+  <tr>
+
+    <td style="border: 1px solid black; font-size: 130%;"  colspan="3">
+      <%= proposal.position %> - <%= safe_html_with_links(proposal.title) %>
+    </td>
+    <td style="border: 1px solid black; font-size: 100%; padding-right: 10px; text-align: right;" >
+      Fecha de envío: <%= l proposal.created_at,  format: :short %>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black">
+      <strong>Propuesto por:</strong>
+    </td>
+    <td style="border: 1px solid black">
+      <%= proposal_origin_name(proposal.proposal_origin) %>
+    </td>
+    <td style="border: 1px solid black">
+      <strong>Estado:</strong>
+    </td>
+    <td style="border: 1px solid black">
+      <%= proposal_acceptance_status_name(proposal.acceptance_status) %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="1"" style="border: 1px solid black">
+      <strong>Descripción de propuesta</strong>
+    </td>
+    <td colspan="3" style="border: 1px solid black">
+      <% unless proposal.description.blank? %>
+        <p><%= safe_html_with_links(proposal.description) %></p>
+      <% else %>
+        <small class="text-muted">No se ha proveído de una descripción</small>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="1" style="border: 1px solid black">
+      <strong>Conclusión tras reunión</strong>
+    </td>
+    <td colspan="3" style="border: 1px solid black">
+      <% unless proposal.conclusion.blank? %>
+        <p><%= safe_html_with_links(proposal.conclusion) %></p>
+      <% else %>
+        <small class="text-muted">No se ha especificado conclusión sobre este punto</small>
+      <% end %>
+    </td>
+  </tr>
+</table>

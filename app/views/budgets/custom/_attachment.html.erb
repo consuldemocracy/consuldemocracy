@@ -1,0 +1,12 @@
+<% if investment.has_attachment? %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+
+
+    <% if investment.attachment_verified? %>
+        <i class="icon-document"></i> <span><%= link_to(t("budgets.investments.show.attachment_moderated"), investment.attachment.url, target: '_blank') %></span>
+    <% elsif investment.attachment_rejected? %>
+        <i class="icon-document"></i> <span><%= t("budgets.investments.show.attachment_rejected") %></span>
+    <% else %>
+        <span class="text-info"><i class="icon-document"></i> <i><%= t("budgets.investments.show.attachment_pending_moderation") %></i></span>
+    <% end %>
+<% end %>

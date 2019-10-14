@@ -1,0 +1,57 @@
+<div class="clear"></div>
+
+<% if @group && @budget.accepting? %>
+    <div class="register-investment" style="min-height: 80px;">
+
+      <% if current_user %>
+          <% if !can?(:create, Budget::Investment.new(budget: @budget)) %>
+              <div class="register-not-allowed" style='display:none' aria-hidden="false">
+                <div class="callout warning">
+                  <%= t("budgets.investments.index.sidebar.verified_only",
+                        verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
+                                        verification_path)).html_safe %>
+                </div>
+              </div>
+          <% end %>
+      <% else %>
+          <div class="register-not-allowed" style='display:none' aria-hidden="false">
+            <div class="callout warning">
+              <%= t("budgets.investments.index.sidebar.verified_only",
+                    verify: link_to(t("budgets.investments.index.sidebar.have_and_verify_account"),
+                                    verification_path)).html_safe %>
+            </div>
+          </div>
+      <% end %>
+
+      <div class="<%= current_user && can?(:create, Budget::Investment.new(budget: @budget)) ? ''  : 'register-allowed'%>">
+        <%= link_to t("budgets.investments.index.sidebar.create"),
+                    new_budget_investment_path(budget_id: @budget.id, group_id: @group.try(:id), heading_id: @heading.try(:id)), class: "button budget expanded" %>
+      </div>
+    </div>
+<% end %>
+<% if @group %>
+    <div class="sidebar-divider"></div>
+    <h2 class="sidebar-title"><%= t("budgets.investments.index.sidebar.by_type", group_name: @group.name) %></h2>
+    <br>
+
+    <ul id="by_type" class="no-bullet heading-options">
+      <li class="inline-block">
+        <%= link_to t("budgets.investments.index.sidebar.by_any_type"), budget_investments_path(@budget, group_id: @group.id), class: ('active' unless @heading) %></li>
+      <% @group.headings.each do |heading| %>
+          <li class="inline-block">
+            <%= link_to heading.name,
+                        budget_investments_path(@budget, group_id: @group.id, heading_id: heading.id), class: ('active' if (@heading.try(:id) == heading.id)) %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+
+<% if @tag_cloud.tags.any? %>
+    <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
+    <%= render 'budgets/investments/categories' %>
+<% else %>
+    <%= render 'budgets/investments/categories' %>
+    <%= render "shared/tag_cloud", taggable: 'budget/investment' %>
+<% end %>
+<%= render 'budgets/investments/feasibility_link' %>
+

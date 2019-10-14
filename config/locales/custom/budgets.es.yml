@@ -1,0 +1,158 @@
+es:
+  budgets:
+    ballot_confirmation_sms_body: 'Votación Presupuestos Participativos Getafe. Su código de seguridad para votación es: %{code}'
+    ballots:
+      balloting:
+        step_1: 'Propuestas Inversión'
+        step_2: 'Programas Socio-Culturales.'
+        step_3: 'Confirmar votación con SMS'
+      banner:
+        not_logged_in: "Para poder votar debes %{sign_in} o %{sign_up}."
+      show:
+        title: Papeleta de votación
+        amount_spent: Coste total
+        remaining: "Te quedan <span>%{amount}</span> para invertir"
+        remove: Quitar voto
+        ballot_confirmed: 'Su votación ha sido confirmada el %{confirmed_at}'
+        note_sms_verification: 'Introduce el código de cuatro dígitos que hemos enviado al teléfono asociado a tu cuenta  (acabado en <i>%{phone_number}</i>) para hacer efectiva tu votación.'
+        validate_you_code: 'Verifica código de seguridad'
+        provided_sms_confirmation_code: 'Código verificación de cuatro dígitos'
+        resend_sms_code: 'Enviar otro código'
+        alert_resend_sms: 'Se generará un nuevo código y le será enviado por SMS. ¿Desea continuar?'
+        submit_button:  'COMPROBAR CÓDIGO'
+        complete_ballot_to_vote: 'Complete su papeleta para votar'
+        ballot_completed_message: 'Ha seleccionado el número de propuestas necesario para poder votar. Haga click en  "VOTAR" y valide el código de seguridad para presentar su votación.'
+        ballot_notified_message: 'Valide su código para terminar la votación: Debe validar el código de 4 dígitos que se ha enviado al teléfono con el que confirmó su cuenta. Escríbalo en el cuadro de la derecha y haga click en "CONFIRMAR CÓDIGO".'
+        ballot_not_completed_message: "Le quedan por marcar %{links} para poder enviar su votación"
+        discard_ballot: 'Cambiar mi votación'
+        discard_ballot_user: 'Cambiar votación de este vecino'
+        confirm_ballot: 'VOTAR'
+        confirm_discard_ballot: 'Con esta acción retirará su voto y podrá cambiar las propuestas que apoya. Será necesario que vuelva a confirmar su papeleta. ¿Confirma que quiere retirar su votación y comenzar de nuevo?'
+        voted_html:
+          one: "Has votado <span>una</span> propuesta."
+          other: "Has votado <span>%{count}</span> propuestas."
+        voted_info_html: "Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. Recuerda: <br><u>Sólo puedes votar en un barrio</u> | <u>puedes votar un máximo de 3 propuestas</u> | <u>cada voto tiene un peso diferente en puntos (1, 2 ó 3 puntos)</u>"
+        zero: "Todavía no has votado ninguna propuesta."
+      reasons_for_not_balloting:
+        not_logged_in: Necesitas %{signin} o %{signup} para continuar.
+        not_verified: Las propuestas sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
+        organization: Las organizaciones no pueden votar.
+        not_selected: No se pueden votar propuestas inviables.
+        not_enough_money: No hay fondos suficientes.
+        no_ballots_allowed: El periodo de votación está cerrado.
+        different_heading_assigned: Ya votaste en una sección distinta del presupuesto.
+    groups:
+      show:
+        title: Selecciona una opción
+    phase:
+      accepting: Aceptando propuestas
+      reviewing: Revisando propuestas
+      selecting: Selección de propuestas
+      valuating: Evaluación de propuestas
+      balloting: Votación de propuestas
+      reviewing_ballots: Contando resultados
+      finished: Presupuesto terminado
+    index:
+      title: Presupuestos participativos
+    investments:
+      new:
+        title: 'Alta de propuesta'
+        should_select_a_geozone: 'Para crear una propuesta seleccione antes un barrio de la página inicial de Presupuestos Participativos'
+        what_is_investment_proposal: 'Propuestas de INVERSIÓN'
+        what_is_investment_proposal_body: 'Con formato de obra, obra menor o adquisición de equipamiento puedes proponer mejoras para las infraestructuras del barrio.'
+        what_is_investment_program: 'Propuestas de PROGRAMAS SOCIO COMUNITARIOS'
+        what_is_investment_program_body: 'Con formato de ejecución de servicios puedes proponer actividades culturales, educativas, de ocio juvenil e infantil o para nuestros mayores.'
+        about_investment_types: '¿Qué tipos de propuestas hay?'
+        more_information: '¿Tienes alguna duda sobre lo que es una propuesta de Presupuesto Participativo?'
+        about_attachment_restrictitions: '(*) Si adjunta un fichero <strong>éste no se publicará directamente junto con su propuesta</strong>, quedará <strong>pendiente de una revisión manual</strong>.<br> Tamaño máximo permitido: <strong>menos de 5Mb</strong>. Tipos de fichero permitidos: <strong>png, gif, jpg</strong> y <strong>pdf</strong>. <br>Este fichero una vez aprobado <strong>será público y visible por cualquier visitante de Participa Getafe</strong>'
+        attachment_already_uploaded: 'Su fichero adjunto fue subido'
+
+      form:
+        tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
+        tags_label: Temas
+        tag_category_label: "Categorías"
+        tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
+      index:
+        title: Presupuestos participativos
+        unfeasible: Propuestas de inversión no viables
+        unfeasible_text: Las propuestas presentadas deben cumplir una serie de criterios (legalidad, concreción, ser competencia del Ayuntamiento, no superar el tope del presupuesto; %{definitions}) para ser declaradas viables y llegar hasta la fase de votación final. Todas las propuestas que no cumplen estos criterios son marcadas como inviables y publicadas en la siguiente lista, junto con su informe de inviabilidad.
+        unfeasible_text_definitions: ver definiciones aquí
+        by_heading: "Propuestas presentadas"
+        search_form:
+          button: Buscar
+          placeholder: Buscar propuestas...
+          title: Buscar
+        empty: 'No se han encontrado propuestas presentadas por los vecinos %{extra_information}'
+        empty_investments_current_search: 'con sus criterios de búsqueda actual.'
+        empty_investments_current_group: 'en el barrio seleccionado.'
+        empty_see_all: 'Puede %{link_see_all} o puede %{link_add_new} tras seleccionar un barrio.'
+        empty_see_all_link: 'ver las propuestas de todos los barrios'
+        empty_select_and_add: 'crear una propuesta'
+        remove_filters: 'ver todas '
+        register_invesment_link: 'haciendo click en este enlace'
+        map_title: 'SELECCIONA UN BARRIO PARA HACER TU PROPUESTA'
+        map_see_all_proposals: 'también puedes consultar las %{link}'
+        map_see_all_proposals_link: 'propuestas de todos los barrios'
+        search_results:
+          one: " que contiene '%{search_term}'"
+          other: " que contienen '%{search_term}'"
+        sidebar:
+          information: Más Información sobre el proceso
+          my_ballot: Mis votos
+          voted_html:
+            one: "<strong>Has votado una propuesta por un valor de %{amount_spent}</strong>"
+            other: "<strong>Has votado %{count} propuestas por un valor de %{amount_spent}</strong>"
+          voted_info: Puedes cambiar tus votos en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
+          zero: "Todavía no has votado ninguna propuesta."
+          verified_only: "Para crear una nueva propuesta %{verify}."
+          verify_account: "verifica tu cuenta"
+          have_and_verify_account: " entrar con su cuenta y verificar su identidad"
+          by_type: 'Tipos de propuesta en %{group_name}'
+          by_any_type: 'Cualquier tipo de propuesta'
+          create: "Crear propuesta"
+          not_logged_in: "Para crear una nueva propuesta debes %{sign_in} o %{sign_up}."
+          sign_in: "iniciar sesión"
+          sign_up: "registrarte"
+          by_feasibility: Por viabilidad
+          feasible: Ver los proyectos viables
+          unfeasible: Ver los proyectos inviables
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
+          price: Por coste
+      show:
+        author_deleted: Usuario eliminado
+        price_explanation: Informe de coste
+        unfeasibility_explanation: Informe de inviabilidad
+        code_html: 'Código propuesta de gasto: <strong>%{code}</strong>'
+        location_html: 'Ubicación: <strong>%{location}</strong>'
+        attachment_pending_moderation: 'Fichero adjunto no descargable (pendiente de moderación)'
+        attachment_moderated: 'Fichero adjunto disponible'
+        attachment_rejected: 'Fichero adjunto no descargable (marcado como inapropiado)'
+        organization_name_html: 'Organización: <strong>%{name}</strong>'
+        share: Compartir
+        likes: Opinión
+        title: Propuesta
+        supports: Apoyos
+        votes: Votos
+      wrong_price_format: Solo puede incluir caracteres numéricos
+      investment:
+        title: Propuesta
+        add: Añadir
+        already_added: "Ya has añadido esta propuesta"
+        already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
+        support_title: Apoyar esta propuesta
+        confirm_group: "Sólo puedes apoyar propuestas en un distrito. Si sigues adelante no podrás cambiar esta decisión. ¿Estás seguro?"
+        supports:
+          one: 1 apoyo
+          other: "%{count} apoyos"
+          zero: Sin apoyos
+        give_support: Apoyar
+      header:
+        check_ballot: Revisar mi votación
+        different_heading_assigned_html: "Ya apoyaste propuestas de otra sección del presupuesto: %{heading_link}"
+    progress_bar:
+      available: "Disponible: "
+    show:
+      group: Grupo
+      phase: Fase actual

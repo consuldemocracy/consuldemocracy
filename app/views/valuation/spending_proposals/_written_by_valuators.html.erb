@@ -1,0 +1,53 @@
+<p id="price">
+  <strong>
+    <%= t("valuation.spending_proposals.show.price") %>
+   (<%= t("valuation.spending_proposals.show.currency") %>):
+  </strong>
+  <% if @spending_proposal.price.present? %>
+    <%= @spending_proposal.price %>
+  <% else %>
+   <%= t("valuation.spending_proposals.show.undefined") %>
+  <% end %>
+</p>
+
+<p id="price_first_year">
+  <strong>
+    <%= t("valuation.spending_proposals.show.price_first_year") %>
+    (<%= t("valuation.spending_proposals.show.currency") %>):
+  </strong>
+
+  <% if @spending_proposal.price_first_year.present? %>
+    <%= @spending_proposal.price_first_year %>
+  <% else %>
+   <%= t("valuation.spending_proposals.show.undefined") %>
+  <% end %>
+</p>
+
+<%= explanation_field @spending_proposal.price_explanation %>
+
+<p id="time_scope">
+  <strong><%= t("valuation.spending_proposals.show.time_scope") %>:</strong>
+  <% if @spending_proposal.time_scope.present? %>
+    <%= @spending_proposal.time_scope %>
+  <% else %>
+    <%= t("valuation.spending_proposals.show.undefined") %>
+  <% end %>
+</p>
+
+<p id="feasibility">
+  <strong><%= t("valuation.spending_proposals.show.feasibility") %>:</strong>
+  <%= t("valuation.spending_proposals.show.#{@spending_proposal.feasibility}") %>
+</p>
+
+<%= explanation_field @spending_proposal.feasible_explanation %>
+
+<% if @spending_proposal.valuation_finished %>
+  <p id="valuation">
+    <strong><%= t("valuation.spending_proposals.show.valuation_finished") %></strong>
+  </p>
+<% end %>
+
+<% if @spending_proposal.internal_comments.present? %>
+  <h2><%= t("valuation.spending_proposals.show.internal_comments") %></h2>
+  <%= explanation_field @spending_proposal.internal_comments %>
+<% end %>

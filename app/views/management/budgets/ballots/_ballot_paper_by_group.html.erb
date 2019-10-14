@@ -1,0 +1,37 @@
+<div class="row margin-top">
+
+
+  <%= render 'management/budgets/ballots/ballot_paper_status', ballot: @ballot %>
+
+
+    <div class="small-12 medium-9 column margin-top">
+
+
+
+      <h3><strong><%= @heading.name %></strong></h3>
+      <h5><%= @budget.name %> en <strong><%= @group.name %></strong></h5>
+    <table class="ballot-paper">
+      <theading>
+        <th class="text-left">
+          Título de propuesta
+        </th>
+        <th class="text-right">
+          Coste estimado
+        </th>
+        <th class="text-right">
+          Puntos por voto
+        </th>
+      </theading>
+      <tbody>
+      <% @investments.each do |investment| %>
+        <%= render 'management/budgets/ballots/investment_ballot_with_points', investment: investment %>
+      <% end %>
+      </tbody>
+    </table>
+    </div>
+    <div class="small-12 medium-3 column margin" id="sidebar">
+      <%= render 'management/budgets/ballots/sidebar', budget: @budget, ballot: @ballot, group: @group %>
+
+    </div>
+
+</div>

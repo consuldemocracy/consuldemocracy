@@ -1,0 +1,12 @@
+<% provide :title do %>
+  Admin - <%= t(".proposals") %> - <%= t(".edit_proposal") %>
+<% end %>
+
+<%= back_link_to admin_proposals_path(meeting_id: @proposal.meeting_id) %>
+
+<div class="row">
+  <div class="small-12 column">
+    <h2><%= t(".title_h2") %></h2>
+    <%= render 'form' %>
+  </div>
+</div>

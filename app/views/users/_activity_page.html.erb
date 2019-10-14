@@ -1,0 +1,4 @@
+<%= render "proposals" if @proposals.present? %>
+<%= render "debates" if @debates.present? && feature?(:debates) %>
+<%= render "budget_investments" if @budget_investments.present? && feature?(:budgets) %>
+<%= render "comments" if @comments.present? %>

@@ -1,0 +1,37 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    Estimado vecino/a, <br>
+    Desde el Ayuntamiento  de Getafe queremos agradecer tu participación en los Presupuestos Participativos.
+    Lamentamos informarte de que tu proyecto <i>"<%= @investment.title %>"</i> quedará excluido de este proceso participativo por el siguiente motivo:
+  </p>
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <i><%= @investment.unfeasibility_explanation.html_safe %></i>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    Si precisas más información sobre el particular puedes comunicarlo al correo <a href="mailto:presupuestos.participativos@ayto-getafe.org">presupuestos.participativos@ayto-getafe.org</a>,
+    indicando necesariamente para su tramitación el código de propuesta de gasto 2017 como asunto del correo, correspondiente a tu proyecto.
+    En todo caso os adjuntamos el enlace sobre Normativa consensuada del proceso <a href="https://participa.getafe.es/more_information#1">https://participa.getafe.es/more_information#1</a>
+
+  </p>
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación. <br>
+    Atentamente, <br><br>
+    CONCEJALÍA DE PARTICIPACIÓN CIUDADANA
+    <strong>
+      <%= @investment.unfeasibility_explanation %>
+    </strong>
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    Si precisas más información sobre el particular puedes comunicarlo al correo <a href="mailto:presupuestos.participativos@ayto-getafe.org">presupuestos.participativos@ayto-getafe.org</a> , indicando necesariamente para su tramitación el código de propuesta de gasto 2017 como asunto del correo, correspondiente a tu proyecto.<br />
+    En todo caso os adjuntamos el enlace sobre Normativa consensuada del proceso <a href="https://participa.getafe.es/more_information#1" target="_blank">https://participa.getafe.es/more_information#1</a>
+    Sentimos las molestias ocasionadas y volvemos a darte las gracias por tu inestimable participación.
+    <br>
+    <br>
+
+    Atentamente,<br>
+    <strong>CONCEJALÍA DE PARTICIPACIÓN CIUDADANA</strong>
+  </p>
+</td>

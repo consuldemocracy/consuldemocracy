@@ -1,0 +1,31 @@
+<div class="small-12 medium-4 large-3">
+  <%= render 'filter' %>
+</div>
+
+<% if @questions.count == 0 %>
+  <div class="callout primary margin-top">
+    <%= t('admin.questions.index.no_questions') %>
+  </div>
+<% else %>
+  <table class="fixed">
+    <thead>
+      <tr>
+        <th><%= t('admin.questions.index.table_question') %></th>
+        <th class="text-right"><%= t("admin.actions.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @questions.each do |question| %>
+        <tr id="<%= dom_id(question) %>">
+          <td><%= link_to question.title, admin_question_path(question) %></td>
+          <td class="text-right">
+            <%= link_to t('shared.edit'), edit_admin_question_path(question), class: "button hollow" %>
+            <%= link_to t('shared.delete'), admin_question_path(question), class: "button hollow alert", method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @questions %>
+<% end %>

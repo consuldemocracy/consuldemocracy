@@ -1,0 +1,56 @@
+<h2><%= t("admin.organizations.search.title") %></h2>
+
+<!-- Search organizations -->
+<%= form_for(Organization.new, url: search_admin_organizations_path, method: :get) do |f| %>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :term, "", placeholder: t("admin.organizations.index.search_placeholder") %>
+    </div>
+    <div class="form-inline small-12 medium-6 column">
+      <%= f.submit t("admin.organizations.index.search"), class: "button success" %>
+    </div>
+  </div>
+<% end %>
+<!-- /. Search organizations -->
+
+<h3><%= page_entries_info @organizations %></h3>
+
+<table id="search-results">
+  <% @organizations.each do |organization| %>
+  <tr>
+    <td><p><%= organization.name %></p></td>
+    <td><p><%= organization.email %></p></td>
+    <td><p><%= organization.phone_number %></p></td>
+    <td><p><%= organization.responsible_name %></p></td>
+    <% if organization.verified? %>
+      <td class="verified text-center">
+        <span class="icon-check"></span>
+        <%= t("admin.organizations.index.verified") %>
+      </td>
+    <% end %>
+    <% if can? :verify, organization %>
+      <td>
+        <%= link_to t("admin.organizations.index.verify"),
+                verify_admin_organization_path(organization, request.query_parameters),
+                method: :put, class: "button success expanded"
+        %>
+      </td>
+    <% end %>
+    <% if organization.rejected? %>
+      <td class="rejected text-center">
+        <span class="icon-x"></span>
+        <%= t("admin.organizations.index.rejected") %>
+      </td>
+    <% end %>
+    <% if can? :reject, organization %>
+      <td><%= link_to t("admin.organizations.index.reject"),
+                reject_admin_organization_path(organization, request.query_parameters),
+                method: :put, class: "button hollow alert expanded"
+          %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<%= paginate @organizations %>

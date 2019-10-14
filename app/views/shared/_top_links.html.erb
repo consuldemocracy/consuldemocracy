@@ -1,0 +1,15 @@
+<div class="top-links hide-for-small-only">
+  <div class="row">
+    <%= render "shared/locale_switcher" %>
+    <ul class="no-bullet external-links">
+
+      <li class="inline-block">
+        <%= link_to t("layouts.header.more_information"), page_path('more_information')  %>
+      </li>
+      <li class="inline-block">
+        <%= link_to t("layouts.header.open_goberment"), setting['open_goberment_url'] %>
+      </li>      
+      <%= raw content_block("top_links", I18n.locale) %>
+    </ul>
+  </div>
+</div>

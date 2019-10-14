@@ -1,0 +1,33 @@
+<%= form_for [:admin, @assembly_type], html: {class: "edit_assembly_type", data: {watch_changes: true}} do |f| %>
+
+  <% if @assembly_type.errors.any? %>
+    <div id="error_explanation" data-alert class="callout alert" data-closable>
+      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
+        <span aria-hidden="true">&times;</span>
+      </button>
+
+      <strong>
+        <%= @assembly_type.errors.count %>
+        <%= t("admin.site_customization.assemblies.errors.form.error", count: @assembly_type.errors.count) %>
+        <!-- <%= @assembly.errors.inspect %> -->
+      </strong>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <hr>
+      <%= f.label :name, t('.name') %>
+      <%= f.text_field :name, label: false, size: 80, maxlength: 80 %>
+      <div class="ckeditor margin-top">
+        <%= f.label :description, t('.description') %>
+        <%= f.cktext_area :description, label: false, cols: 80, rows: 10, ckeditor: { language: I18n.locale } %>
+      </div>
+      <div class="small-12 medium-6 large-4">
+        <%= f.submit  t('.save'), class: "button success expanded"%>
+      </div>
+    </div>
+  </div>
+
+
+<% end %>

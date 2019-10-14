@@ -1,0 +1,29 @@
+<span class="not-print"><%= back_link_to admin_budgets_path %></span>
+
+<h2  class="not-print"><%= t("admin.budgets.ballot_paper.title", budget_name: @budget.name ) %></h2>
+<br  class="not-print">
+<main>
+  <div class="row">
+    <div class="small-12 medium-2 column not-print">
+      <ul class="menu vertical no-margin-top no-padding-top">
+        <li>
+          <strong>
+
+          </strong>
+        </li>
+
+        <% @budget.groups.each do |group| %>
+            <li class="<%= 'active' if group.eql?(@group) %> ">
+              <%= link_to group.name,
+                          ballot_paper_admin_budget_path(@budget, group_id: group.id) %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="small-12 medium-10 column ">
+      <% if @group %>
+        <%= render 'ballot_paper_table', group: @group %>
+      <% end %>
+    </div>
+  </div>
+</main>

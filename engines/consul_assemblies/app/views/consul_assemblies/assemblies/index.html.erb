@@ -1,0 +1,102 @@
+<% provide :title do %><%= t('.title') %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: assemblies_url %>
+<% end %>
+
+<main>
+
+    <div class="help-header no-margin-top margin-bottom">
+      <div class="row">
+        <div class="small-12 column" data-magellan>
+
+          <h1 class="inline-block"><%= @assembly_type ?  @assembly_type.name : t("assemblies.index.section_header..title") %></h1>
+          <br>
+          <%= link_to meetings_path() do %>
+            Histórico de Espacios de Participación
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+  <div class="row">
+    <div class="small-12 column">
+      <div id="assemblies-list">
+
+        <ul class="tabs text-right" data-tab role="tablist">
+
+          <li class="tabs-title">
+            <%= link_to assemblies_path(), "aria-selected" => "#{controller_name == 'assemblies'}" do %>
+              <%= t('.upcoming_assemblies') %>
+            <% end %>
+          </li>
+
+        </ul>
+      </div>
+  </div>
+
+  <div class="row">
+    <% if @assemblies.any? %>
+      <div class="small-12 medium-3 column">
+        <aside class="margin-bottom">
+          <ul class="menu vertical no-margin-top no-padding-top">
+            <% if @assemblies.any? %>
+              <% @assemblies.each do |assembly| %>
+                <li class="small <%= 'active' if @assembly == assembly %>">
+                  <%= link_to assembly.name, assemblies_path(assembly_id: assembly, assembly_type_id: assembly.assembly_type_id)  %>
+                </li>
+              <% end %>
+              <% else %>
+                <p class="text-muted"><%= t(".no_assemblies") %></p>
+              <% end %>
+          </ul>
+        </aside>
+      </div>
+
+      <div id="assemblies" class="assemblies-list small-12 medium-9 column">
+
+        <% if has_banners? %>
+          <%= render "shared/banner" %>
+        <% end %>
+
+
+          <% if @meetings %>
+            <% if @meetings.any? %>
+              <%= render partial: 'meeting', collection: @meetings %>
+            <% else %>
+              <% if @assembly %>
+                <div class="callout primary margin-top">
+                  No hay asambleas de <u><%= @assembly.name %></u>  programadas
+                </div>
+                <% else %>
+                <div class="callout primary margin-top">
+                  No hay asambleas programadas
+                </div>
+              <% end %>
+            <% end %>
+          <% else %>
+            <div class="small-12 column">
+              <div class="callout primary margin-top">
+                <p class=""><%= t(".no_assemblies") %></p>
+              </div>
+            </div>
+          <% end %>
+
+          <%= render 'about_assemblies' %>
+        </div>
+      </div>
+    <% else %>
+      <div class="small-12 column">
+        <div class="callout primary margin-top">
+          <p class=""><%= t(".no_assemblies") %></p>
+        </div>
+      </div>
+
+      <div class="smal-12 column">
+        <%= render 'about_assemblies' %>
+      </div>
+
+    <% end %>
+  </div>
+
+</main>

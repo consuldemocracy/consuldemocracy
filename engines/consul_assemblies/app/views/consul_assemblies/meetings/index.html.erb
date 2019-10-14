@@ -1,0 +1,104 @@
+
+<main>
+
+  <div class="help-header no-margin-top margin-bottom">
+    <div class="row">
+      <div class="small-12 column" data-magellan>
+        <h1 class="inline-block">Histórico</h1>
+        <h5>Espacios de participación</h5>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+      <div class="small-12 column">
+
+
+
+        <ul class="tabs text-right" data-tab role="tablist">
+
+          <li class="tabs-title">
+            <%= link_to assemblies_path(), "aria-selected" => "#{controller_name == 'assemblies'}" do %>
+              <%= t('.upcoming_assemblies') %>
+            <% end %>
+          </li>
+          <li class="tabs-title">
+            <%= link_to meetings_path(), "aria-selected" => "#{controller_name == 'meetings'}" do %>
+              <%= t('.historic_assemblies') %>
+            <% end %>
+          </li>
+        </ul>
+
+        <%= render 'search_form' %>
+
+        <% if @meetings.any? %>
+          <table id="budget-investments-results" class="table-for-mobile">
+            <thead>
+            <tr>
+              <th scope="col" class="">
+                <%= sort_link(@q, :assembly_id) do %>
+                  Asamblea
+                <% end %>
+              </th>
+              <th scope="col" class="">
+                Título reunión
+              </th>
+              <th class="text-left">
+                Acta
+              </th>
+              <th class="text-right">
+                Estado
+              </th>
+              <th scope="col" class="text-right">
+                <%= sort_link(@q, :published_at) do %>
+                  Publicación
+                <% end %>
+              </th>
+              <th scope="col" class="text-right">
+                <%= sort_link(@q, :schedule_at) do %>
+                  Celebración
+                <% end %>
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @meetings.each_with_index do |meeting, index| %>
+              <tr>
+                <td scope="col" class="">
+                  <%= meeting.assembly.try(:name) %>
+                </td>
+                <td scope="col" class="">
+                  <%= link_to meeting.title, meeting_path(meeting) %>
+                </td>
+                <td class="text-left">
+                  <% unless meeting.attachment_url.nil? %>
+                    <%= link_to t('.see_act'), meeting.attachment_url, class: "",  target: :blank %>
+                  <% end %>
+                </td>
+                <td class="text-right">
+                  <%= render 'status', meeting: meeting %>
+                </td>
+                <td scope="col" class="text-right">
+                  <% if meeting.published_at %>
+                    <%= l meeting.published_at.to_date, format: :short %>
+                  <% end %>
+                </td>
+                <td scope="col" class="text-right">
+                  <%= l meeting.scheduled_at.to_date, format: :short %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        <% else %>
+        <div class="text-muted text-center">
+          <br>
+          No se encontraron reuniones con sus criterios de búsqueda. <%= link_to 'Resetear la búsqueda', meetings_path() %>
+        </div>
+        <% end %>
+
+        <%= paginate @meetings %>
+      </div>
+  </div>
+</main>

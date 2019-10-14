@@ -1,0 +1,17 @@
+language: ruby
+addons:
+  postgresql: "9.4"
+rvm:
+ - "2.3.2"
+cache: bundler
+before_script:
+  - "for i in config/*.example; do cp \"$i\" \"${i/.example}\"; done"
+  - bundle exec rake db:setup
+script:
+  - "bundle exec rake knapsack:rspec"
+env:
+  global:
+    - CI_NODE_TOTAL=2
+  matrix:
+    - CI_NODE_INDEX=0
+    - CI_NODE_INDEX=1

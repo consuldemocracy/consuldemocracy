@@ -1,0 +1,49 @@
+<%= form_for(@spending_proposal, url: form_url) do |f| %>
+  <%= render 'shared/errors', resource: @spending_proposal %>
+
+  <div class="row">
+    <div class="small-12 column">
+      <%= f.label :title, t("spending_proposals.form.title") %>
+      <%= f.text_field :title, maxlength: SpendingProposal.title_max_length, placeholder: t("spending_proposals.form.title"), label: false %>
+    </div>
+
+    <%= f.invisible_captcha :subtitle %>
+
+    <div class="ckeditor small-12 column">
+      <%= f.label :description, t("spending_proposals.form.description") %>
+      <%= f.cktext_area :description, maxlength: SpendingProposal.description_max_length, ckeditor: { language: I18n.locale }, label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :external_url, t("spending_proposals.form.external_url") %>
+      <%= f.text_field :external_url, placeholder: t("spending_proposals.form.external_url"), label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :geozone_id,  t("spending_proposals.form.geozone") %>
+      <%= f.select :geozone_id, geozone_select_options, {include_blank: t("geozones.none"), label: false} %>
+    </div>
+
+    <div class="small-12 column">
+      <%= f.label :association_name, t("spending_proposals.form.association_name_label") %>
+      <%= f.text_field :association_name, placeholder: t("spending_proposals.form.association_name"), label: false %>
+    </div>
+
+    <div class="small-12 column">
+      <% if @spending_proposal.new_record? %>
+        <%= f.label :terms_of_service do %>
+          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <span class="checkbox">
+            <%= t("form.accept_terms",
+                policy: link_to(t("form.policy"), "/privacy", target: "blank"),
+                conditions: link_to(t("form.conditions"), "/conditions", target: "blank")).html_safe %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="actions small-12 column">
+      <%= f.submit(class: "button", value: t("spending_proposals.form.submit_buttons.#{action_name}")) %>
+    </div>
+  </div>
+<% end %>

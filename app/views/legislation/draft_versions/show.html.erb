@@ -1,0 +1,79 @@
+<% provide :title do %><%= "#{@draft_version.title} - #{@process.title}" %><% end %>
+
+<%= render 'legislation/processes/header', process: @process, header: :small %>
+
+<%= render 'legislation/processes/key_dates', process: @process, phase: :allegations %>
+
+<div class="column row">
+  <div class="draft-panels small-12 column row">
+    <div class="row draft-chooser">
+      <div class="small-12 medium-9 column">
+        <h3><%= t('.seeing_version') %></h3>
+        <div class="select-box">
+          <%= form_tag go_to_version_legislation_process_draft_versions_path(@process), method: :get, id: "draft_version_go_to_version" do %>
+            <%= select_tag "draft_version_id", options_from_collection_for_select(@draft_versions_list, 'id', 'display_title', @draft_version.id), "aria-label": t('.select_draft_version') %>
+            <%= submit_tag t('.select_version_submit'), class: "button" %>
+          <% end %>
+          <% if @draft_version.changelog.present? %>
+            <span><%= link_to t('.see_changes'), legislation_process_draft_version_changes_path(@process, @draft_version) %></span>
+          <% end %>
+        </div>
+        <span><%= t('.updated_at', date: format_date(@draft_version.updated_at)) %></span>
+      </div>
+
+      <% unless @draft_version.final_version? %>
+        <div class="small-12 medium-3 column">
+          <%= link_to legislation_process_draft_version_annotations_path(@process, @draft_version), title: t('.see_comments'), class: "button" do %>
+            <strong><%= t('.see_comments') %></strong>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <div class="row draft-allegation medium-collapse">
+      <div class="small-12 calc-index column <%= "js-toggle-allegations" unless @draft_version.final_version? %>">
+        <div class="draft-panel">
+          <div>
+            <span class="icon-banner" aria-hidden="true"></span> <span class="panel-title"><%= t('.text_toc') %></span>
+          </div>
+        </div>
+
+        <div class="draft-index-rotated text-center">
+          <span class="panel-title"><%= t('.text_toc') %></span>
+        </div>
+
+        <div data-sticky-container>
+          <div data-sticky data-anchor="sticky-panel" class="draft-index sticky" data-tree-navigator>
+            <%= @draft_version.toc_html.html_safe %>
+          </div>
+        </div>
+      </div>
+      <div class="small-12 calc-text column border-right border-left">
+        <div class="draft-panel">
+          <div><span class="panel-title"><%= t('.text_body') %></span></div>
+        </div>
+        <div id="sticky-panel" class="draft-text">
+          <% if @draft_version.final_version? %>
+          <section>
+          <% else %>
+          <section class="legislation-annotatable"
+                   data-legislation-draft-version-id="<%= @draft_version.id %>"
+                   data-legislation-annotatable-base-url="<%= legislation_process_draft_version_path(@process, @draft_version) %>"
+                   data-legislation-open-phase="<%= @process.open_phase?(:allegations) %>"
+                   >
+          <% end %>
+            <%= @draft_version.body_html.html_safe %>
+          </section>
+        </div>
+      </div>
+
+      <% if @draft_version.final_version? %>
+        <div class="small-12 calc-comments end column"></div>
+      <% else %>
+        <%= render 'comments_panel', draft_version: @draft_version %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

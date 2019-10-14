@@ -1,0 +1,54 @@
+<div class="column-12 verification">
+
+  <div class="text-center">
+    <% headings_with_status(@ballot, @group, @heading).each_with_index do |heading_link_status, index| %>
+      <div class="small-4 column ballot-step verification-step  <%= 'active' if heading_link_status[:current] %>">
+        <span class="number">
+          <%= index + 1 %>
+        </span> <%= heading_link_status[:link]%>
+
+        <% unless heading_link_status[:pending] %>
+          <span class="icon-check-circle" title="Porpuestas seleccionadas"></span>
+        <% else %>
+          <span class="icon-help" title="Pendiente de seleccionar <%= heading_link_status[:rem2aining_count] %> propuestas"></span>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="small-4 column ballot-step verification-step">
+      <span class="number">3</span> <%= t("budgets.ballots.balloting.step_3") %>
+        <% if @ballot.confirmed? %>
+        <span class="icon-check-circle" title="Paso completado"></span>
+        <% else %>
+        <span class="icon-help" title="Paso pendiente"></span>
+        <% end %>
+    </div>
+
+
+  </div>
+
+  <div class="progress small-12 success">
+    <span class="meter" style="width: 33%"></span>
+  </div>
+
+</div>
+
+<div style="display: none;">
+<% unless @ballot.confirmed? %>
+  <% if @ballot.completed? %>
+        <% if @ballot.not_notified? %>
+        <div data-alert class="ballot-alert ballot-info">
+          <%= t('budgets.ballots.show.ballot_completed_message') %>
+        </div>
+        <% elsif @ballot.notified? %>
+        <div data-alert class="ballot-alert ballot-info">
+          <%= t('budgets.ballots.show.ballot_notified_message') %>
+        </div>
+        <% end %>
+    <% else %>
+      <div data-alert class="ballot-alert ballot-info">
+        <%= t('budgets.ballots.show.ballot_not_completed_message', links: inline_pending_groups(@ballot, @group).html_safe).html_safe %>
+      </div>
+  <% end %>
+<% end %>
+</div>

@@ -1,0 +1,89 @@
+<% provide :title do %><%= t('public_consultation.about.title_page') %><% end %>
+<div class="expanded public-consultations-bg page-background-row">
+  <div class="row no-margin-top">
+    <div class="small-12 padding column text-center">
+      <h1><%= t('public_consultation.about.title_html') %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column">
+    <h2>Consultas Ciudadanas en Getafe</h2>
+  </div>
+</div>
+
+
+<div class="spending-proposals-text">
+  <div class="row margin">
+    <div class="small-12 medium-6 column">
+      <h3>¿Qué son las consultas ciudadanas?</h3>
+      <p>
+        Las consultas ciudadanas son una de las herramientas de participación directa al servicio de los vecinos y vecinas de Getafe. Estas consultas tratan temas específicos e involucran a la ciudadanía en un proceso consultivo haciéndolos participes del mismo. Gracias a recabar todas las opiniones posibles, las decisiones que se tomen desde la administración estarán acompañadas del sentir de los vecinos y vecinas de Getafe.
+      </p>
+      <p>
+        En <u><%= setting['org_name'] %></u> se expondrán las distintas consultas ciudadanas y durante un plazo limitado de tiempo, que estará definido en la consulta, podrás exponer tu opinión.
+      </p>
+      <br>
+      <h3>¿Cómo hago llegar mi opinión?</h3>
+      <p>
+        Puedes dar tu opinión en las Consultas Ciudadanas directamente desde <u><%= setting['org_name'] %></u>, el procedimiento:
+        <ol>
+          <li>
+            Date de <%= link_to new_user_registration_path do %>
+                alta en <%= setting['org_name'] %>
+            <% end %>
+          </li>
+          <li>
+            Valida tu cuenta con los datos de padrón
+          </li>
+          <li>
+            Haz click en “Ir a consulta”
+          </li>
+        </ol>
+        <p>Tu opinión es muy importante y gracias a ella podremos hacer de Getafe la ciudad que los vecinos y vecinas queremos.</p>
+      </p>
+
+    </div>
+    <div class="small-12 medium-4 column">
+      <div class="panel panel-highlight">
+
+        <h3>PREGÓN 2017</h3>
+        <h5>GETAFE CONTIGO</h5>
+        <p>
+          <small>Elije a la persona que dará el pregón 2017</small>
+        </p>
+        <p>
+          <%= link_to 'Ver proceso', page_path('pregon_2017'), class: "button see-more expanded" %>
+        </p>
+      </div>
+
+      <div class="panel margin">
+
+        <h3>PLAN NORMATIVO 2017</h3>
+        <h5>GETAFE CONTIGO</h5>
+        <p>
+          <small>Nueva consulta ciudadana sobre publicación del Plan Normativo 2017.</small>
+        </p>
+        <p>
+          <%= link_to 'Ver proceso', page_path('normative_plan_2017'), class: "button see-more expanded" %>
+        </p>
+      </div>
+
+      <div class="panel margin">
+        <h3>I BORRADOR DEL PLAN DE CONVIVENCIA DE GETAFE</h3>
+        <h5>GETAFE CONTIGO</h5>
+        <p>
+          <small>Os presentamos el I Borrador del PLAN DE CONVIVENCIA DE GETAFE una apuesta y un compromiso del Ayuntamiento para impulsar políticas públicas para la mejora de la convivencia y el desarrollo social en la ciudad, basándose en 5 principios básicos: la cohesión social.</small>
+        </p>
+        <p>
+          <%= link_to 'Ver proceso', page_path('coexistence_plan_public_consultation'), class: "button see-more expanded" %>
+        </p>
+        <br>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

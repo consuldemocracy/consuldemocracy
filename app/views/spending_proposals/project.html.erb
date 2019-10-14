@@ -1,0 +1,49 @@
+<% provide :title do %><%= @spending_proposal.title %><% end %>
+<div class="row margin-top">
+
+  <div class="small-12 medium-9 column">
+
+    <%= back_link_to participatory_budget_results_path %>
+    <h1><%= @spending_proposal.title %></h1>
+    <h2> <%= t("admin.budget_investments.show.project_gallery") %></h2>
+    <%= link_to t("spending_proposals.show.see_proposal"), spending_proposal_path(@spending_proposal) %>
+  </div>
+</div>
+
+<div class="row marging-top">
+  <div class="small-12 medium-9 column">
+    <br>
+    <% if @spending_proposal.attachments.any? %>
+    <div class="row">
+        <%- @spending_proposal.attachments.each do |attachment| %>
+
+          <div class="columns small-12 medium-6 large-4">
+            <div class="card ">
+              <%= link_to attachment.file_url, target: 'blank', title: attachment.title do %>
+                  <% if attachment.document? %>
+                      <div class="card-section gallery-item text-center" style="height: 200px; padding-top: 80px; background-color: #e9e9e9;">
+                        <i class="icon-document icon" style="font-size: 200%;"></i><br>PDF
+                      </div>
+                  <% else %>
+                      <div class="card-section gallery-item" style="background-image: url(<%= attachment.file.url(:thumb) %>); height: 200px;">
+
+                      </div>
+                  <% end %>
+              <% end %>
+              <div class="card-section">
+                <p class="text-muted">
+                  <small>
+                    <%= attachment.title %>
+                  </small>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <div class="small-12 column"></div>
+    </div>
+    <% else %>
+        <p class="text-muted"><%= t("spending_proposals.show.not_attachments_yet") %></p>
+    <% end %>
+  </div>
+</div>

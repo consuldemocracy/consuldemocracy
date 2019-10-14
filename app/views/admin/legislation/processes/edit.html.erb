@@ -1,0 +1,19 @@
+<% provide :title do %>
+  Admin - <%= t("admin.menu.legislation") %> - <%= @process.title %>
+<% end %>
+
+<div class="legislation-admin legislation-process-edit row">
+
+  <div class="small-12 column">
+    <%= link_to admin_legislation_processes_path, class: "back" do %>
+      <span class="icon-angle-left"></span>
+      <%= t("admin.legislation.processes.edit.back") %>
+    <% end %>
+
+    <h2><%= @process.title %></h2>
+
+    <%= render 'subnav', process: @process, active: 'info' %>
+
+    <%= render "form" %>
+  </div>
+</div>

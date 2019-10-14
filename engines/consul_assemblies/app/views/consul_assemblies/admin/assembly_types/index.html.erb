@@ -1,0 +1,29 @@
+<% provide :title do %>
+  Admin - <%= t(".assembly_types") %>
+<% end %>
+
+<%= link_to t(".create"), new_admin_assembly_type_path, class: "button float-right" %>
+<h2 class="inline-block"><%= t(".title_h2") %></h2>
+
+<table class="cms_proposal_list">
+  <thead>
+    <tr>
+      <th><%= t('.assembly_type') %></th>
+      <th><%= t('.date') %></th>
+      <th colspan="2" class="text-center"><%= t(".actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @assembly_types.each do |assembly_type| %>
+    <tr id="<%= dom_id(assembly_type) %>">
+      <td><%= link_to assembly_type.try(:name), edit_admin_assembly_type_path(assembly_type) %></td>
+      <td><%= I18n.l assembly_type.created_at, format: :short %></td>
+      <td class="small delete">
+        <%= link_to t(".delete"), admin_assembly_type_path(assembly_type), method: :delete, class: "button hollow alert expanded", data: { confirm: t('.confirm') } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @assembly_types %>

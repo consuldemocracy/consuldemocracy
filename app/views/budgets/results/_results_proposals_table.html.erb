@@ -1,0 +1,67 @@
+<table id="budget-investments-results" class="table-for-mobile">
+  <thead>
+  <tr>
+    <th>
+      ID
+    </th>
+    <th></th>
+    <th scope="col">
+      <%= t("admin.budgets.results.spending_proposal") %>
+    </th>
+    <th scope="col" class="text-left">
+      <%= t("admin.budgets.results.phase") %>
+    </th>
+    <th scope="col" class="text-right">
+      <%= t("admin.budgets.results.ballot_lines_sum") %>
+    </th>
+    <th scope="col" class="text-right">
+      <%= t("admin.budgets.results.price") %>
+    </th>
+    <th scope="col" class="text-center">
+      <%= t("admin.budgets.results.project") %>
+    </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% investments.sort_by_confirmed_ballots.selected.each do |investment| %>
+    <tr id="<%= dom_id(investment) %>"
+        class="spending_proposal success">
+      <td>
+        <%= investment.id %>
+      </td>
+      <td>
+        <% if investment.winner? %>
+              <span class="icon-check">
+                <span class="sr-only">
+                  <%= t("budgets.results.accepted") %>
+                </span>
+              </span>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to investment.title,
+                    budget_investment_path(budget, investment) %>
+      </td>
+      <td class="text-left">
+        <small><%= investment.project_phase %></small>
+      </td>
+      <td class="text-right ballot-points">
+        <%= investment.confirmed_budget_ballot_lines_sum %>
+      </td>
+      <td class="text-right">
+        <%= format_price investment.price %>
+      </td>
+      <td class="text-center">
+
+        <small>
+
+          <% if investment.attachments.any? %>
+            <%= link_to t("spending_proposals.results.see_gallery"), project_budget_investment_path(budget, investment) %>
+          <% end %>
+        </small>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

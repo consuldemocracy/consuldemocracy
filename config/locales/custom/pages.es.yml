@@ -1,0 +1,26 @@
+es:
+  pages:
+    more_info:
+      questions:
+        title: 'Consultas ciudadanas'
+        description: 'Las Consultas Ciudadanas permiten al Ayuntamiento consultar a los vecinos para la toma de decisiones a través de respuestas abiertas o cerradas (opciones).'
+        feature_1: "Para responder a una Consulta Ciudadana tienes que %{link} y verificar tu cuenta con el padrón."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Las Consultas Ciudadanas te permitirán responder a una pregunta para tomar una decisión a modo de formluario abierto o cerrado."
+        feature_3_html: "Tras cerrar el periodo de consulta, se toma una decisión."
+        
+      assemblies:
+        title: 'Espacios de Participación'
+        description: 'Los Espacios de Participación permiten al ciudadano conocer las próximas Asambleas y Consejos, proponer puntos del día y revisar los puntos tratados y las decisiones tomadas.'
+        feature_1: "Para enviar puntos del día a una asamblea tienes que %{link} y verificar tu cuenta con el padrón."
+        feature_1_link: "registrarte en %{org_name}"
+        feature_2_html: "Podrás conocer la agenda de Espacios de Participación  en Getafe proponer puntos del día para debatir en  la asamblea."
+        feature_3_html: "Podrás descargarte el acta de la asamblea y conocer los puntos del día."
+      faq:
+        title: "¿Más información?"
+        description: 'Consulta toda la información sobre Participación Ciudadana en Getafe'
+        button: 'Ver más'
+      menu:
+        questions: 'Consultas ciudadanas'
+        proposals: 'Propuestas ciudadanas'
+        assemblies: 'Espacios de Participación'

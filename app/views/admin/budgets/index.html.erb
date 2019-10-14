@@ -1,0 +1,60 @@
+<h2 class="inline-block"><%= t("admin.budgets.index.title") %></h2>
+
+<%= link_to t("admin.budgets.index.new_link"),
+            new_admin_budget_path,
+            class: "button float-right margin-right" %>
+
+<%= render 'shared/filter_subnav', i18n_namespace: "admin.budgets.index" %>
+
+<h3><%= page_entries_info @budgets %></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t("admin.budgets.index.table_name") %></th>
+      <th><%= t("admin.budgets.index.table_phase") %></th>
+      <th><%= t("admin.budgets.index.table_results") %></th>
+      <th><%= t("admin.budgets.index.table_print_ballot_paper") %></th>
+      <th><%= t("admin.budgets.index.table_investments") %></th>
+      <th><%= t("admin.budgets.index.table_edit_groups") %></th>
+      <th><%= t("admin.budgets.index.table_edit_budget") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @budgets.each do |budget| %>
+      <tr id="<%= dom_id(budget) %>" class="budget">
+        <td>
+          <%= budget.name %>
+        </td>
+        <td class="small">
+          <%= t("budgets.phase.#{budget.phase}") %>
+        </td>
+        <td class="small">
+          <%  if budget.reviewing_ballots? %>
+              <%= link_to t("admin.budgets.index.budget_results"), results_admin_budget_path(budget) %>
+              <br>
+              <%= link_to t("admin.budgets.index.budget_results_public"), public_results_admin_budget_path(budget) %>
+          <% else %>
+              <%= t("admin.budgets.index.budget_results_disabled") %>
+          <% end %>
+        </td>
+        <td class="small">
+          <%= link_to t("admin.budgets.index.budget_print_ballot_paper"), ballot_paper_admin_budget_path(budget) %>
+          <br>
+          <%= link_to t("admin.budgets.index.budget_dashboard_ballot_paper"), ballot_dashboard_admin_budget_path(budget) %>
+        </td>
+        <td class="small">
+          <%= link_to t("admin.budgets.index.budget_investments"), admin_budget_budget_investments_path(budget_id: budget.id) %>
+        </td>
+        <td class="small">
+          <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_path(budget) %>
+        </td>
+        <td class="small">
+          <%= link_to t("admin.budgets.index.edit_budget"), edit_admin_budget_path(budget) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @budgets %>

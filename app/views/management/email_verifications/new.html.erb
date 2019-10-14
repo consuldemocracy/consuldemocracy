@@ -1,0 +1,29 @@
+<div data-alert class="callout success">
+  <%= t("management.email_verifications.document_found_in_census") %> <%= t("management.email_verifications.choose_options") %>
+</div>
+
+<ul>
+  <li>
+    <strong><%= t("management.email_verifications.if_existing_account") %></strong>
+
+    <p><%= t("management.email_verifications.introduce_email") %></p>
+
+    <%= form_for @email_verification,
+        as: :email_verification,
+        url: management_email_verifications_path do |f| %>
+      <%= f.hidden_field :document_type %>
+      <%= f.hidden_field :document_number %>
+      <%= f.text_field :email, label: false, placeholder: t('management.email_verifications.email_placeholder') %>
+
+      <%= f.submit t("management.email_verifications.send_email"), class: "button hollow" %>
+    <% end %>
+  </li>
+
+  <li>
+    <strong><%= t("management.email_verifications.if_no_existing_account") %></strong>
+
+    <p class="margin-top">
+      <%= link_to t('management.users.create_user'), new_management_user_path(user: params[:email_verification]), class: "button success" %>
+    </p>
+  </li>
+</ul>

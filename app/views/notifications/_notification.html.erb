@@ -1,0 +1,13 @@
+<li id="<%= dom_id(notification) %>" class="notification">
+
+    <p>
+      <em>
+        <%= t("notifications.index.#{notification.notifiable_action}",
+              count: notification.counter) %>
+      </em>
+      <strong><%= notification.notifiable_title %></strong>
+    </p>
+
+    <p class="time"><%= l notification.timestamp, format: :datetime %></p>
+
+</li>

@@ -1,0 +1,28 @@
+<% unless @assembly_type.nil?%>
+  <% unless @assembly_type.description.blank?%>
+    <div class="row">
+      <div class="small-12 column">
+        <div id="section_help" class="margin" data-magellan-target="section_help">
+          <p class="lead">
+            <strong><%= @assembly_type.name %></strong>
+          </p>
+          <p><%= @assembly_type.description.html_safe %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+<% unless @assembly.nil? %>
+  <% unless @assembly.general_description.blank? %>
+    <div class="row">
+      <div class="small-12 column">
+        <div id="section_help" class="margin" data-magellan-target="section_help">
+          <p class="lead">
+            <strong><%= @assembly.name %></strong>
+          </p>
+          <p><%= @assembly.general_description.html_safe %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

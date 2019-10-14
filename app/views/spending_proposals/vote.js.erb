@@ -1,0 +1,1 @@
+$("#<%= dom_id(@spending_proposal) %>_votes").html('<%= j render("spending_proposals/votes", spending_proposal: @spending_proposal, vote_url: vote_spending_proposal_path(@spending_proposal, value: "yes")) %>');

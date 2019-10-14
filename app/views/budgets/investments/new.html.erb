@@ -1,0 +1,21 @@
+<div class="budget-investment-new row">
+  <div class="small-12 medium-9 column">
+    <h1><%= @budget.name %></h1>
+    <h2><%= t("budgets.investments.new.title") %></h2>
+    <br>
+
+    <%= render '/budgets/investments/form', form_url: budget_investments_path(@budget) %>
+  </div>
+  <div class="small-12 medium-3 column spending-proposal-form">
+    <span class="icon-proposals float-right"></span>
+    <h2><%= t("budgets.investments.new.about_investment_types") %></h2>
+    <br>
+    <h3><%= t("budgets.investments.new.what_is_investment_proposal") %></h3>
+    <p><%= t("budgets.investments.new.what_is_investment_proposal_body") %></p>
+
+    <br>
+
+    <h3><%= t("budgets.investments.new.what_is_investment_program") %></h3>
+    <p><%= t("budgets.investments.new.what_is_investment_program_body") %></p>
+  </div>
+</div>

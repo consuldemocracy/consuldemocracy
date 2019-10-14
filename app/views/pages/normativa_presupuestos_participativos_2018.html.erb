@@ -1,0 +1,362 @@
+<% provide :title do %><%= t('participatory_budget.in_two_minutes.title_page') %><% end %>
+<% provide :social_media_meta_tags do %>
+  <%= render "shared/social_media_meta_tags_participatory_budget" %>
+<% end %>
+<div class="expanded page-background-row spending-proposal-bg">
+  <div class="row no-margin-top">
+    <div class="small-12 column text-center">
+      <h1>
+        Presupuestos participativos 2018
+      </h1>
+    </div>
+
+    <div class="small-12 column spending-proposal-timeline text-center">
+      <ul class="no-bullet">
+
+        <li class="active">
+          <%= link_to budgets_path do %>
+            <i class="icon-calendar icon-edit"></i>
+            <p class="title"><%= t('participatory_budget.in_two_minutes.date_1_info') %></p>
+            <p>15 enero 2018 – 30 marzo</p>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to page_path('proposal_revision_period') do %>
+            <i class="icon-calendar icon-eye"></i>
+            <p class="title"><%= t('participatory_budget.in_two_minutes.date_2_info') %></p>
+            <p>Marzo – Mayo</p>
+          <% end %>
+        </li>
+
+        <li>
+          <i class="icon-calendar icon-organizations"></i>
+          <p class="title"><%= t('participatory_budget.in_two_minutes.date_3_info') %></p>
+          <p>Abril – Mayo</p>
+        </li>
+
+        <li>
+          <i class="icon-calendar"></i>
+          <p class="title"><%= t('participatory_budget.in_two_minutes.date_4_info') %></p>
+          <p>21 mayo – 11 Junio 2018</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="expanded highlight">
+  <div class="row">
+    <div class="small-12 medium-9 column small-centered">
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top">
+  <div class="small-12 column text-center">
+    <h2>Normativa de funcionamiento de Presupuestos Participativos 2018</h2>
+    <%= link_to "¿Qué puedo proponer?", page_path('more_information', anchor: "2") %>&nbsp;|&nbsp;
+    <%= link_to "Explicación detallada del proceso", page_path('more_information', anchor: "1") %>
+  </div>
+</div>
+
+<div class="spending-proposals-text">
+  <div class="row margin">
+    <div class="small-12 column">
+      <h3>Introducción</h3>
+      <p>Los Presupuestos Participativos, contemplados en el Título V del Reglamento Orgánico de Participación Ciudadana, son una forma de participación de la ciudadanía en la gestión de nuestra ciudad, mediante la cual entre todos los vecinos y vecinas podemos participar en la planificación de los recursos públicos. Tienen como objetivo principal generar un espacio ciudadano de debate y decisión, donde el órgano base es la Asamblea de Barrio. Se trata de un proceso vinculante, en virtud del cual se garantiza la corresponsabilidad ciudadana, técnica y política en la creación de un proceso transparente sometido a evaluación continua.</p>
+      <p>La existencia de esta normativa de funcionamiento viene recogida en los artículos 12.b y  27 del Reglamento Orgánico de Participación Ciudadana. Su contenido ha sido fruto de la deliberación de las Comisiones de Barrio celebradas en los meses de septiembre, octubre y noviembre de 2017 así como del análisis específico realizado en la “Jornada de Evaluación” celebrada el 18 de noviembre de 2017.</p>
+      <p>Se establecen 11 territorios para dinamizar la participación vertebrada desde los Centros Cívicos de Barrio o en su defecto los Centros Sociales: La Alhóndiga, El Bercial, Centro, San Isidro, Getafe Norte, Juan de la Cierva, Las Margaritas, Perales del Río, Sector III, Los Molinos y Cerro Buenavista.</p>
+      <p>En cada uno de estos territorios se desarrollará el proceso de elaboración, priorización, ejecución y seguimiento de propuestas, contando cada territorio con un presupuesto autónomo que se determinará cada año.</p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 column">
+
+      <h3>Comisiones de barrio de presupuestos participativos</h3>
+
+      <small>(*) Nota: Ver toda la información en la <%= link_to 'about_neighborhood_commissions' do %> página de información sobre comisiones de barrio<% end %></small>
+      <br>
+
+      <p>Con atribuciones durante todas las fases del proceso, se formalizará en cada uno de los 11 barrios citados. La Comisión será debidamente convocada a sus sesiones a través del panel informativo del Centro, además se habilitarán otros medios subsidiarios de convocatoria como correo electrónico y publicación web. Sus sesiones son públicas y abiertas. Dado el carácter abierto de estas comisiones los vecinos y vecinas que quieran formar parte de las mismas deben enviar sus datos de contacto al mail <a href="mailto:presupuestos.participativos@ayto-getafe.org">presupuestos.participativos@ayto-getafe.org</a> para poder ser convocados.</p>
+
+      <p>Son FUNCIONES de dicha Comisión:
+
+        <ol>
+  <li> Preparar las Asambleas de Barrio en lo concerniente a Presupuestos Participativos.</li>
+  <li> Transmitir a las Asambleas de Barrio los criterios anuales fijados para el proceso de Presupuestos Participativos.</li>
+          <li> Recibir las propuestas ciudadanas, solicitar informes de su viabilidad jurídica, económica y técnica y presentar las propuestas definitivas a las Asambleas de barrio para su aprobación.</li>
+          <li> Solicitar, si lo estima oportuno, las aclaraciones pertinentes sobre las propuestas presentadas tanto por entidades y colectivos cómo por personas físicas. Ello en aras, entre otros, de conciliar aquellas propuestas que tengan una naturaleza análoga con acuerdo de los proponentes.</li>
+          <li> Incentivar la participación de la ciudadanía, entidades y colectivos del barrio en el proceso.</li>
+          <li> Participar en procesos de formación vecinal y dinamización social.</li>
+          <li> Realizar el seguimiento de las propuestas seleccionadas en su fase de ejecución.</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h2>Fases de la ejecución del proyecto</h2>
+    </div>
+  </div>
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>1. Primera Fase: Información sobre el proceso e inscripciones.</h3>
+      <p>
+        El Ayuntamiento de Getafe, a través de su Servicio de Comunicación, será el órgano encargado de dar difusión al proceso, centralizando esencialmente la información a través de la web municipal, empleando también los paneles de información en Centros Cívicos, Sociales y Municipales, así cómo las redes sociales.
+      </p>
+      <p>
+        El Programa de Presupuestos Participativos se vertebra a través de la Asamblea de Barrio y con carácter más continuo y permanente a través de la Comisión de Barrio de Presupuestos Participativos.
+      </p>
+    </div>
+
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_1.png", size: "500x290", alt: "" ) %>
+    </div>
+  </div>
+
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>2. Segunda Fase: Registro y Tramitación de Propuestas. </h3>
+      <p>Durante esta fase los Presupuestos Participativos se dirigen a propiciar que los ciudadanos propongan las cuestiones que son consideradas prioritarias con relación a las inversiones y programas de intervención o dinamización social para su barrio. Para ello, los vecinos, vecinas y entidades podrán rellenar una “Ficha de Presentación de Propuestas al Programa de Presupuestos Participativos” con especificación de: datos personales de la entidad o vecino o vecina que realiza la proposición, teléfono, mail, breve descripción de la actuación, barrio de actuación así cómo posibilidad de adjuntar documentación al respecto.</p>
+      <p>La presentación de propuestas cuenta con un plazo limitado en el tiempo, que se especificará ampliamente en los tablones de información y en la web municipal. Dichas propuestas deberán ser consignadas en la herramienta web o en aquellas dependencias municipales que dispongan de este servicio. Una vez concluido el plazo, la Comisión deberá reunirse para conocer todas las propuestas.</p>
+      <p>En el caso de que seas entidad o colectivo y desees presentar propuestas al proceso debes consignar la identidad de un representante de la entidad o colectivo.</p>
+      <p>Las propuestas no podrán coincidir con inversiones, gastos de mantenimiento o programas previstos por las distintas áreas municipales, salvo que puedan significar un complemento o mejora cualitativa para los mismos.</p>
+      <p>La Comisión podrá recabar información adicional o aclaración de las propuestas realizadas por personas físicas o entidades. La Comisión igualmente podrá unificar aquellas propuestas que por su naturaleza sean análogas, pudiendo citar a aquellos proponentes para que de manera solidaria unifiquen las propuestas en aquellos puntos que pudieran parecer discordantes.</p>
+      <p>El proponente asume la obligatoriedad de asistir a la Comisión cuando esta le requiera que proporcione información adicional o aclaraciones. El no cumplimento de esta obligación podría, a juicio de la Comisión, suponer la exclusión de la propuesta.</p>
+      <p>La Comisión elevará a la Asamblea de Barrio todas las propuestas que hayan sido admitidas. Igualmente dará cuenta de las no admitidas. Para ello tendrá conocimiento de los informes técnicos que sustentan tal decisión.</p>
+      <p>Las propuestas que vayan a someterse a debate y votación se publicarán anteriormente a la celebración de la Asamblea en el tablón de anuncios de cada Centro y en la herramienta web. A la propuesta se adjuntará breve descripción de lo que se pretende realizar.</p>
+    </div>
+
+    <div class="small-12 medium-6 column show-for-medium text-center">
+
+    </div>
+  </div>
+
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column show-for-medium text-center">
+
+    </div>
+    <div class="small-12 medium-6 column ">
+      <h3>3. Tercera Fase: La Asamblea de Barrio. </h3>
+      <p>Tras esta segunda fase se elevarán las propuestas aprobadas a la Asamblea de Barrio. Vecinos, vecinas, entidades y colectivos tendrán la obligación de exponer la propuesta realizada, con implementación de material digital si lo desea, a no ser que esta función haya sido delegada en otra persona o en la propia Comisión, promocionando y defendiendo la misma.</p>
+      <p>En esta ocasión, la Mesa de la Asamblea regulará:</p>
+      <p>
+        La Exposición:
+        <ul>
+          <li>Deberá contar con el apoyo de un miembro de la Comisión de Presupuestos Participativos.</li>
+          <li>La “Mesa de la Asamblea” establecerá la duración de la exposición y los tiempos asignados a los diferentes turnos de palabras.</li>
+          <li>Se habilitará un máximo de un turno de intervención para la defensa de una propuesta.</li>
+        </ul>
+      </p>
+      <p>
+        Igualmente la Mesa de la Asamblea dará información sobre el calendario de votación.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_2.png", size: "500x290", alt: "" ) %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3>4. Cuarta Fase: Votación </h3>
+      <p>La votación será simultánea en todos los barrios y podrá realizarse de dos formas distintas:</p>
+      <ul>
+      <li>Votación telemática</li>
+      <li>Votación telemática asistida. En centros municipales, en horario de mañana y tarde, los vecinos y vecinas podrán emitir su voto en un terminal destinado al efecto con asistencia, si así lo desea, de personal municipal.</li>
+      </ul>
+
+      <h4>
+      ¿Quién puede votar?
+      </h4>
+      <p>Todas las personas con domicilio en el barrio y que hayan cumplido 16 años.</p>
+      <h4>¿Qué propuestas puedo votar?</h4>
+      <p>Exclusivamente se podrá votar las propuestas de 1 de los 11 barrios, independientemente de la ubicación de su domicilio de empadronamiento.</p>
+      <p>El sistema de votación atenderá a los criterios de solidaridad, votando tres propuestas con 3, 2 y 1 punto; dotando proporcionalmente de más puntos a aquellas propuestas que entienda más adecuadas.</p>
+      <p>Hay dos categorías susceptibles a ser votadas: programas e inversiones.
+        Una vez concluido el plazo de votación se expondrá públicamente los resultados en la web municipal y en los centros municipales territoriales</p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>5. Quinta Fase: Inicio de los trabajos </h3>
+      <p>Los Servicios Técnicos comenzarán en este momento los anteproyectos de las propuestas elegidas, que serán precursores de la contratación. Dichos trabajos previos se darán a conocer en las Asambleas de Barrio en la que los vecinos y vecinas podrán realizar aportaciones específicas. </p>
+      <p>Las actuaciones que queden fuera de ejecución por falta de dinero serán eliminadas pasándose a ejecutar la siguiente con crédito suficiente si lo hubiera. Los vecinos, vecinas y entidades que deseen volver a concurrir con una propuesta, no ejecutada por falta de crédito, deberán volver a presentarla en el ejercicio siguiente. </p>
+    </div>
+  </div>
+
+  <div class="row margin">
+    <div class="small-12 medium-6 column text-right">
+      <h3>6. Sexta Fase: Seguimiento de la actuación. </h3>
+      <p>Durante este periodo la Comisión se encargará de conocer el estado de tramitación de la licitación, la contratación y la ejecución de las obras o servicios. La información genérica de este particular se hará igualmente pública en los Tablones Informativos de los centros y en la web municipal.</p>
+      <h4>¿Cuándo se ejecutarán las propuestas ganadoras?</h4>
+      <p>Debido a la concatenación de las seis fases, anteriormente descritas, las propuestas acordadas tendrán la mayor parte de su ejecución en el ejercicio siguiente a su aprobación.</p>
+    </div>
+    <div class="small-12 medium-6 column show-for-medium text-center">
+      <%= image_tag("spending_proposals_3.png", size: "500x290", alt: "" ) %>
+    </div>
+  </div>
+
+
+  <hr>
+  <div class="row margin">
+    <div class="small-12 medium-6 column">
+      <h2>
+        Las propuestas
+      </h2>
+      <p>
+        Para poder presentar una propuesta, los vecinos, vecinas y asociaciones podrán rellenar una “Ficha de Presentación de Propuestas al Programa de Presupuestos Participativos” con especificación de: datos personales de la entidad o vecino o vecina que realiza la proposición, teléfono, mail, breve descripción de la actuación, así cómo posibilidad de adjuntar documentación al respecto. La descripción debe ser suficiente para que sean susceptibles de ser evaluables económicamente. La propuesta se puede presentar vía telemática o telemática asistida.
+      </p>
+      <p>
+        El proponente ha de saber que en calidad de proponente no “puede” concurrir en la licitación de la misma.
+      </p>
+      <p>
+        Las propuestas de Inversiones tienen el formato de ejecución de obra u obra menor. Quedan excluidas las tareas de “pequeño” mantenimiento, limpieza y la conservación de edificios que puedan ser resueltas en intervenciones parciales a través del sistema de incidencias alojado en la web municipal getafe.es (http://gecor.cloudapp.net/ciudadano/?user=ogfliHZnYp8%3d) o el que se encuentre activo en el momento.
+      </p>
+      <p>
+        Las propuestas de Programas tienen el formato de servicios. Consideramos programas socio comunitario aquellos que centran su objeto en la ocupación del ocio y tiempo libre correspondientes a los ámbitos de la cultura, el deporte o la educación.
+      </p>
+      <p>
+        Se observará, en todo, caso que la propuesta pueda ser ejecutada coherentemente en la demarcación territorial de barrio. Toda aquella propuesta que precise coherentemente su continuidad geográfica en un barrio próximo requiere ser tratada como propuesta de ámbito ciudad y ser remitida al Consejo Sectorial competente.
+      </p>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h3>Ejemplos de propuestas validas:</h3>
+      <p>Nuevas infraestructuras: Urbanización, viales, alumbrado, parques, zonas ajardinadas, árboles y jardineras, fuentes e hidrantes, alcantarillado, implementación de superficies de esparcimiento, superficies deportivas de uso libre o regulado,.</p>
+      <p>Reposición de infraestructuras: Adecuación de solares, remodelación de viales, reforma de alumbrado, remodelación de parques, zonas verdes, reforma de fuentes y estanques, etc.</p>
+      <p>Obras de reforma, rehabilitación o mejora de edificios municipales: Reforma de centros Cívicos, mejora de centros polideportivos, locales sociales, locales de entidades, escuela de música, etc</p>
+
+      <h3>Ejemplos de propuestas no validas:</h3>
+      <ul>
+        <li>
+      Construcción de institutos y colegios públicos (la competencia sobre su construcción es de la Comunidad de Madrid)
+        </li>
+        <li>
+      Construcción de centros de salud (sólo es posible en el caso de centros de salud municipales)
+        </li>
+      Infraestructuras de carreteras de acceso a Getafe y de ferrocarril
+        </li>
+        <li>
+      Propuestas de inversión sobre terrenos o solares no municipales
+        </li>
+        <li>
+      Gastos de contratación de personal
+        </li>
+        <li>
+      Alquileres de edificios, vehículos, mobiliario, maquinaria
+        </li>
+        <li>
+      Suministros: vestuario, combustibles, energía eléctrica, gas, alimentos
+        </li>
+        <li>
+      Subvenciones y ayudas a familias, instituciones sin ánimo de lucro, fundaciones, empresas privadas
+        </li>
+        <li>
+      Concesión de becas, premios, asistencia benéfica o asistencial
+        </li>
+        <li>
+      Comisarías
+        </li>
+        <li>
+      Marquesinas
+        </li>
+        <li>
+      El servicio de limpieza
+        </li>
+        <li>
+      Contratación de personal para limpieza
+        </li>
+        <li>
+      La ampliación del horario del servicio de autobuses o la modificación de rutas
+        </li>
+        <li>
+      Nuevas edificaciones
+        </li>
+        <li>
+      Regulación de tráfico o señalización: peatonalización de calles, establecimiento de nuevas señalizaciones, etc…
+        </li>
+        <li>
+      Programas de ocupación del ocio que no sean del ámbito del deporte, la cultura o la educación.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row margin">
+    <div class="small-12 medium-6 column">
+      <h2>
+        ¿Quién puede proponer?
+      </h2>
+      <p>Podrán realizar propuestas los vecinos y vecinas empadronados en el barrio a partir de los 16 años de edad, igualmente las entidades y colectivos cuyo domicilio social o ámbito de actuación esté igualmente ubicado en esa referencia territorial. (art.35 Reglamento Participación Orgánico Ciudadana)</p>
+      <p>La participación en el programa de Presupuestos Participativos de los menores se llevará a cabo a través de la Comisión de Participación de la Infancia y Adolescencia.</p>
+    </div>
+    <div class="small-12 medium-6 column">
+      <h2>
+        Criterios de viabilidad
+      </h2>
+      <p>Las propuestas para ser admitidas y pasar a la fase de votación deben ser expuestas y cumplir los tres criterios de viabilidad.</p>
+      <ul>
+        <li>
+          Viabilidad Jurídica: Las propuestas deben de enmarcarse dentro de las competencias municipales. No se incluirán aquellas que entren en el ámbito de las competencias de otras administraciones. También se estudiará si las propuestas contravienen alguna normativa. Por último, las propuestas, deben respetar el principio de libre concurrencia de contratación pública. El proponente, en ningún caso, puede ser objeto de contratación.
+        </li>
+        <li>
+      Viabilidad Económica: Las propuestas no pueden exceder el presupuesto acordado para cada proceso en cada barrio. No podrán coincidir con inversiones, gastos de mantenimiento o programas previstos por las distintas áreas municipales, salvo que puedan significar un complemento o mejora cualitativa de las mismas con sustantividad propia.
+        </li>
+        <li>
+      Viabilidad Técnica. Las propuestas deben ser posibles técnicamente.
+        </li>
+      </ul>
+    </div>
+
+
+
+    <div class="row margin">
+      <div class="small-12 medium-6 column">
+        <h2>
+          Herramienta web
+        </h2>
+
+        La herramienta web permite:
+        <ul>
+          <li>
+          Inscripción en los Presupuestos Participativos
+          </li>
+          <li>
+        Presentación de propuestas y adjuntar documentos y fotografías explicativas de las mismas.
+          </li>
+          <li>
+        Votar y valorar las propuestas.
+          </li>
+          <li>
+        Opinar sobre las propuestas presentadas.
+          </li>
+          <li>
+        Informarse sobre las propuestas presentadas.
+          </li>
+          <li>
+        Dar toda la información necesaria del proceso.
+          </li>
+        </ul>
+
+      </div>
+      <div class="small-12 medium-6 column">
+        <h2>
+          Disposición final
+        </h2>
+        <p>
+
+          Esta normativa de funcionamiento tendrá vigencia en el proceso de Presupuestos Participativos de 2018. Al finalizar cada proceso, en la sesión de evaluación, el documento podrá verse modificado, enmendado o completado.
+        </p>
+      </div>
+    </div>
+</div>
+</div>

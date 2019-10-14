@@ -1,0 +1,41 @@
+
+  <table id="budget-investments-results" class="table-for-mobile">
+    <thead>
+    <tr>
+      <th scope="col" class="text-center">
+        Papeletas Online
+      </th>
+      <th scope="col" class="text-center">
+        Papeletas Presenciales
+      </th>
+      <th scope="col" class="text-center">
+        Total
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td scope="col" class="text-center">
+        <%= @all_confirmations.online.count %>
+      </td>
+      <td scope="col" class="text-center">
+        <%= @all_confirmations.by_manager.count %>
+      </td>
+      <td scope="col" class="text-center ballot-points">
+        <%= @valid_confirmations.count %>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <br>
+  <br>
+
+    <% @group.headings.each do |heading| %>
+      <h4 class="inline-block">
+        <%= heading.name %>
+      </h4>
+      <%= render 'budgets/results/results_proposals_table', budget: @budget, investments: heading.investments %>
+      <br>
+      <br>
+  <% end %>
