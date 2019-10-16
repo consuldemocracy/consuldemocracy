@@ -46,6 +46,9 @@ namespace :deploy do
   before "deploy:migrate", "remove_local_census_records_duplicates"
 
   after "deploy:migrate", "add_new_settings"
+
+  before :publishing, "smtp_secrets"
+
   after :publishing, "deploy:restart"
   after :published, "delayed_job:restart"
   after :published, "refresh_sitemap"
@@ -123,6 +126,16 @@ task :setup_puma do
 
       if test("[ -e #{shared_path}/sockets/unicorn.sock ]")
         execute "ln -sf #{shared_path}/tmp/sockets/puma.sock #{shared_path}/sockets/unicorn.sock; true"
+      end
+    end
+  end
+end
+
+task :smtp_secrets do
+  on roles(:app) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "secrets:smtp"
       end
     end
   end
