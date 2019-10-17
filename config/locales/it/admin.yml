@@ -14,6 +14,8 @@ it:
       edit: Modificare
       configure: Configurare
       delete: Eliminare
+    officing_booth:
+      title: "State officiando lo stand posizionato a %{booth}. Se non è corretto, non continuare e chiama il numero telefonico d'aiuto. Grazie."
     banners:
       index:
         title: Banner
@@ -78,8 +80,10 @@ it:
         table_investments: Investimenti
         table_edit_groups: Gruppi di intestazioni
         table_edit_budget: Modificare
+        table_admin_ballots: Scrutini
         edit_groups: Modificare i gruppi di intestazioni
         edit_budget: Modifica il budget
+        admin_ballots: Scrutini amministratore
         no_budgets: "Non ci sono bilanci."
       create:
         notice: Nuovo bilancio partecipativo creato con successo!
@@ -95,9 +99,29 @@ it:
         edit_phase: Modifica fase
         active: Attivo
         blank_dates: Le date risultano vuote
+        administrators:
+          zero: "Seleziona amministratori"
+          one: "1 amministratore selezionato"
+          other: "%{count} amministratori selezionati"
+        valuators:
+          zero: "Seleziona stimatori"
+          one: "1 stimatore selezionato"
+          other: "%{count} stimatori selezionati"
+        trackers:
+          zero: "Seleziona tracciatori"
+          one: "1 tracciatore selezionato"
+          other: "%{count} selezionatori selezionati"
+        empty_administrators: "Non ci sono amministratori"
+        empty_valuators: "Non ci sono stimatori"
+        empty_trackers: "Non ci sono tracciatori"
+        name: "Nome"
+        selected: "Selezionato"
+        cancel: "Annulla"
+        save: "Salva"
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
+        unable_notice_polls: Non puoi eliminare un budget che non ha un sondaggio associato
       new:
         title: Nuovo bilancio partecipativo
       winners:
@@ -108,13 +132,44 @@ it:
       name: "Nominativo"
       headings_name: "Intestazione"
       headings_edit: "Modificare intestazioni"
+      headings_manage: "Gestisci voci"
+      no_groups: "Non ci sono gruppi."
+      amount:
+        one: "C'è 1 gruppo"
+        other: "Ci sono %{count} gruppi"
+      create:
+        notice: "Gruppo creato con successo!"
+      update:
+        notice: "Gruppo aggiornato con successo"
+      destroy:
+        success_notice: "Gruppo eliminato con successo"
+        unable_notice: "Non puoi eliminare un Gruppo che ha voci associate"
       form:
+        create: "Crea nuovo gruppo"
         edit: "Modifica gruppo"
         submit: "Salva gruppo"
+      index:
+        back: "Torna ai budget"
     budget_headings:
+      no_headings: "Non ci sono voci."
+      amount:
+        one: "C'è 1 voce"
+        other: "Ci sono %{count} voci"
+      create:
+        notice: "Voce creata con successo!"
+      update:
+        notice: "Voce aggiornata con successo"
+      destroy:
+        success_notice: "Voce eliminata con successo"
+        unable_notice: "Non puoi eliminare una Voce che ha investimenti associati"
       form:
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
+        coordinates_info: "Se latitudine e longitudine sono fornite, la pagina di investimenti per questa voce includerà una mappa. Questa mappa sarà centrata usando quelle coordinate."
+        create: "Crea nuova voce"
+        edit: "Modifica voce"
         submit: "Salvare voce di bilancio"
+      index:
+        back: "Torna ai gruppi"
     budget_phases:
       edit:
         summary_help_text: Questo paragrafo darà agli utenti informazioni sulla fase. Per renderlo visibile anche se la fase non risulta attiva, selezionare la spunta sottostante
@@ -140,12 +195,16 @@ it:
           undecided: Nessuna decisione
           unfeasible: Irrealizzabile
           min_total_supports: Sostegni minimi
+          max_total_supports: Supporti massimi
           winners: Vincitori
+          one_filter: "Filtri attualmente applicati: <b><em>%{filter}</em></b>"
+          two_filters: "Filtri attualmente applicati: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtra
         download_current_selection: "Esegui il download della selezione attuale"
         no_budget_investments: "Non esistono progetti d'investimento."
         title: Progetti di investimento
+        columns: Colonne
         assigned_admin: Amministratore assegnato
         no_admin_assigned: Nessun amministratore assegnato
         no_valuators_assigned: Nessun valutatore assegnato
@@ -170,8 +229,10 @@ it:
           author_username: Username dell’autore
           incompatible: Incompatibile
           price: Costo
+          author: Autore
         cannot_calculate_winners: Il bilancio deve rimanere nella fase “Progetti in votazione”, “Revisione Schede” o “Bilancio concluso” percalcolare i progetti vincitori
         see_results: "Vedi risultati"
+        milestone_tags_filter_all: "Tutti i tag pietra miliare"
       show:
         assigned_admin: Amministratore assegnato
         assigned_valuators: Valutatori assegnati
@@ -200,6 +261,8 @@ it:
           "true": "Sì"
           "false": "No"
         valuator_groups: "Gruppi di stimatori"
+        preview: Anteprima investimento
+        assigned_trackers: "Tracciatori assegnati"
       edit:
         classification: Classificazione
         compatibility: Compatibilità
@@ -210,7 +273,11 @@ it:
         user_tags: Etichette assegnate dall’utente
         tags_placeholder: "Scrivere i tag separati da virgole (,)"
         undefined: Non definito
+        assigned_trackers: "Tracciatori"
       search_unfeasible: Ricerca irrealizzabile
+    milestones:
+      index:
+        milestone_tags: Tag pietra miliare
     statuses:
       index:
         title: Status di investimento
@@ -231,11 +298,57 @@ it:
         notice: Status di investimento creato con successo
       delete:
         notice: Status di investimento eliminato con successo
+    progress_bars:
+      index:
+        title: "Barre progresso"
+    comments:
+      index:
+        id: "ID"
+        content: "Contenuto"
     dashboard:
       index:
         back: Torna a %{org}
         title: Amministrazione
         description: Benvenuto nel pannello di amministrazione di %{org}.
+      administrator_tasks:
+        edit:
+          back: Torna all'elenco mansioni in attesa
+          solving: Risolvi mansioni in attesa
+        form:
+          solve: Marca come risolto
+          proposal: Proposta
+          request: Risorse richieste
+        update:
+          success: La mansione è stata marcata come risolta.
+    debates:
+      index:
+        id: ID
+        author: Autore
+        title: Dibattiti
+        no_debates: Non ci sono dibattiti.
+        link: "Scarica dibattiti"
+    hidden_debates:
+      index:
+        filter: Filtro
+        filters:
+          all: Tutto
+          with_confirmed_hide: Confermato
+          without_confirmed_hide: In sospeso
+        title: Dibattiti nascosti
+        no_hidden_debates: Non ci sono dibattiti nascosti.
+    documents:
+      new:
+        title: "Carica un documento"
+        submit_button: "Carica"
+      index:
+        new_link: "Aggiungi nuovo documento"
+        no_documents: "Non ci sono documenti."
+        title: "Documenti"
+        format: "Formato"
+        size: "Dimensioni"
+        url: "URL"
+      create:
+        success_notice: "Documento caricato con successo"
     hidden_users:
       index:
         filter: Filtra
