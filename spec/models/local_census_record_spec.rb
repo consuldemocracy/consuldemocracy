@@ -20,6 +20,12 @@ describe LocalCensusRecord do
       expect(local_census_record).not_to be_valid
     end
 
+    it "is not valid when value is not included in allowed document types" do
+      local_census_record.document_type = "NIE"
+
+      expect(local_census_record).not_to be_valid
+    end
+
     it "is not valid without date_of_birth" do
       local_census_record.date_of_birth = nil
 
@@ -33,9 +39,9 @@ describe LocalCensusRecord do
     end
 
     it "is not valid when a record already exists with same document_number and document_type" do
-      create(:local_census_record, document_number: "#DOC_NUMBER", document_type: "#DOC_TYPE")
+      create(:local_census_record, document_number: "#DOC_NUMBER", document_type: "1")
       local_census_record = build(:local_census_record, document_number: "#DOC_NUMBER",
-        document_type: "#DOC_TYPE")
+        document_type: "1")
 
       expect(local_census_record).not_to be_valid
     end

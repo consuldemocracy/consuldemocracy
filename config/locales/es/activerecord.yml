@@ -516,6 +516,10 @@ es:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de los comentarios
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: no está incluido en la lista, los valores permitidos son 1 para DNI, 2 para pasaporte y 3 para tarjeta de residencia.
         proposal:
           attributes:
             tag_list:

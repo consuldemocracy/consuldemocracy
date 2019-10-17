@@ -1,6 +1,6 @@
 <tr id="<%= dom_id(local_census_record) %>" class="local_census_record">
   <td>
-    <%= local_census_record.document_type %>
+    <%= humanize_document_type(local_census_record.document_type) %>
   </td>
   <td>
     <%= local_census_record.document_number %>

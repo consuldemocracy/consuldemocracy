@@ -514,6 +514,10 @@ en:
               invalid_date_range: must be on or after the draft start date
             allegations_end_date:
               invalid_date_range: must be on or after the comments start date
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: is not included in the list, allowed values are 1 for DNI, 2 for passport and 3 for residence card.
         proposal:
           attributes:
             tag_list:
