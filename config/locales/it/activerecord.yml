@@ -1,4 +1,9 @@
 it:
+  attributes:
+    geozone_id: "Scopo dell'operazione"
+    results_enabled: "Mostra risultati"
+    stats_enabled: "Mostra statistiche"
+    advanced_stats_enabled: "Mostra statistiche avanzate"
   activerecord:
     models:
       activity:
@@ -16,6 +21,9 @@ it:
       milestone/status:
         one: "Status dell’investimento"
         other: "Status dell’investimento"
+      progress_bar:
+        one: "Barra dei progressi"
+        other: "Barre dei progressi"
       comment:
         one: "Commentare"
         other: "Commenti"
@@ -58,6 +66,9 @@ it:
       poll/officer:
         one: "responsabile"
         other: "responsabili"
+      poll/ballot_sheet:
+        one: Scheda elettorale
+        other: Schede elettorali
       proposal:
         one: "Proposta cittadina"
         other: "Proposte cittadine"
@@ -70,6 +81,9 @@ it:
       site_customization/content_block:
         one: Blocco di contenuto personalizzato
         other: Blocchi di contenuto personalizzato
+      document:
+        one: Documento
+        other: Documenti
       legislation/process:
         one: "Processo"
         other: "Processi"
@@ -103,6 +117,18 @@ it:
       proposal_notification:
         one: "Notifica di proposta"
         other: "Notifiche di proposta"
+      dashboard/action:
+        one: Azione dashboard di proposta
+        other: Azioni dashboard di proposta
+      dashboard/administrator_task:
+        one: Mansione
+        other: Mansioni
+      link:
+        one: Link
+        other: Link
+      local_census_record:
+        one: Registro censo locale
+        other: Registri censo locale
     attributes:
       budget:
         name: "Nominativo"
@@ -115,6 +141,11 @@ it:
         description_finished: "Descrizione durante la fase della Approvazione del Bilancio / Risultati"
         phase: "Fase"
         currency_symbol: "Valuta"
+        budget_milestone_tags: "Tag pietra miliare"
+        budget_valuation_tags: "Tag valutazione"
+        help_link: "Link aiuto"
+      budget/translation:
+        name: "Nome"
       budget/investment:
         heading_id: "Intestazione"
         title: "Titolo"
@@ -125,29 +156,74 @@ it:
         organization_name: "Se presenti una proposta a nome di un collettivo o di un’organizzazione, ovvero per conto di più persone, indicane il nome"
         image: "Immagine descrittiva della proposta"
         image_title: "Titolo dell’immagine"
+        duration: "Tempo scopo"
+        feasibility_feasible: "Fattibile"
+        feasibility_undecided: "Indefinito"
+        feasibility_unfeasible: "Non fattibile"
+        incompatible: "Marca come incompatibile"
+        milestone_tag_list: "Tag pietra miliare"
+        price_explanation: "Spiegazione costo"
+        selected: "Marca come selezionato"
+        unfeasibility_explanation: "Spiegazione di fattibilità"
+        valuation_finished: "Valutazione conclusa"
+        valuator_ids: "Gruppi"
+        valuation_tag_list: "Tag"
+      budget/investment/translation:
+        title: "Titolo"
+        description: "Descrizione"
+      geozone:
+        name: Nome
+        external_code: "Codice esterno (opzionale)"
+        census_code: "Codice censo (opzionale)"
+        html_map_coordinates: "HTML <map> Coordinate (opzionale)"
       milestone:
         status_id: "Stato attuale dell’investimento (facoltativo)"
         title: "Titolo"
         description: "Descrizione (facoltativa se c’è gia uno stato assegnato)"
         publication_date: "Data di pubblicazione"
+      milestone/translation:
+        description: "Descrizione"
       milestone/status:
         name: "Nominativo"
         description: "Descrizione (facoltativa)"
       progress_bar:
         kind: "Tipo"
         title: "Titolo"
+        percentage: "Progresso corrente"
+      progress_bar/kind:
+        primary: "Principale"
+        secondary: "Secondario"
+      budget/group:
+        max_votable_headings: "Numero massimo di voci in cui l'utente può votare"
+      budget/group/translation:
+        name: "Nome gruppo"
       budget/heading:
+        allow_custom_content: "Consenti blocco contenuto"
+        latitude: "Latitudine (opzionale)"
+        longitude: "Longitudine (opzionale)"
         name: "Denominazione della voce di bilancio"
         price: "Costi"
         population: "Popolazione"
+      budget/heading/translation:
+        name: "Nome voce"
+      budget/phase:
+        enabled: "Fase abilitata"
+        ends_at: "Data fine"
+        starts_at: "Data inizio"
+      budget/phase/translation:
+        description: "Descrizione"
+        summary: "Sommario"
       comment:
         body: "Commentare"
         user: "Utente"
       debate:
         author: "Autore"
         description: "Opinione"
+        tag_list: "Argomenti"
         terms_of_service: "Termini del servizio"
         title: "Titolo"
+      debate/translation:
+        title: "Titolo dibattito"
       proposal:
         author: "Autore"
         title: "Titolo"
@@ -222,20 +298,32 @@ it:
         debate_start_date: Data di inizio del dibattito
         debate_end_date: Data di fine del dibattito
         draft_publication_date: Data di pubblicazione della bozza
+        allegations_end_date: Fine
         proposals_phase_start_date: Inizio
         proposals_phase_end_date: Fine
         result_publication_date: Data di pubblicazione del risultato finale
+        background_color: Colore sfondo
+        font_color: Colore font
+        homepage_enabled: "Homepage abilitata"
       legislation/process/translation:
         title: Titolo del Procedimento
         summary: Sommario
         description: Descrizione
         additional_info: Ulteriori info
+        homepage: "Descrizione"
         milestones_summary: Sommario
+      legislation/proposal:
+        description: "Testo proposta"
+        summary: "Sommario proposta"
+        title: "Titolo proposta"
+        video_url: "Link a video esterno"
       legislation/draft_version:
         title: Titolo della versione
         body: Testo
         changelog: Modifiche
         status: Status
+        status_draft: "Bozza"
+        status_published: "Pubblicato"
         final_version: Versione finale
       legislation/draft_version/translation:
         title: Titolo della versione
@@ -244,6 +332,8 @@ it:
       legislation/question:
         title: Titolo
         question_options: Opzioni
+      legislation/question/translation:
+        title: Quesito
       legislation/question_option:
         value: Valore
       legislation/annotation:
