@@ -349,6 +349,9 @@ it:
         url: "URL"
       create:
         success_notice: "Documento caricato con successo"
+        unable_notice: "Documento non valido"
+      destroy:
+        success_notice: "Documento eliminato con successo"
     hidden_users:
       index:
         filter: Filtra
@@ -393,18 +396,25 @@ it:
           enabled: Abilitato
           process: Procedimento
           debate_phase: Fase di dibattito
+          draft_phase: Fase bozza
+          draft_phase_description: Se questa fase è attiva, il processo non sarà elencato nell'indice processi. Consenti di vedere in anteprima il processo e creare il contenuto prima dell'inizio.
+          allegations_phase: Fase commenti
           proposals_phase: Fase delle proposte
           use_markdown: Usa Markdown per formattare il testo
           title_placeholder: Il titolo del procedimento
           summary_placeholder: Breve riassunto della descrizione
           description_placeholder: Aggiungi una descrizione del procedimento
           additional_info_placeholder: Aggiungi ulteriori informazioni che ritieni utili
+          homepage_description: Qui puoi spiegare il contenuto del processo
+          banner_title: Colori voce
         index:
           create: Nuovo procedimento
           delete: Eliminare
           title: Processi di legislazione
           filters:
+            active: Attivo
             all: Tutti
+          link: "Scarica processo legislazione"
         new:
           back: Indietro
           title: Crea nuovo procedimento collaborativo di legislazione
@@ -412,12 +422,15 @@ it:
         proposals:
           select_order: Ordina per
           orders:
+            id: Id
             title: Titolo
             supports: Sostegni
         process:
           title: Procedimento
           comments: Commenti
           status: Status
+          start_date: Data di inizio
+          end_date: Data di fine
           status_open: Aperti
           status_closed: Chiuso
           status_planned: Programmato
@@ -428,10 +441,14 @@ it:
           questions: Dibattito
           proposals: Proposte
           milestones: Seguendo
+      homepage:
+        edit:
+          title: Configura la tua homepage dei processi
       proposals:
         index:
           title: Titolo
           back: Indietro
+          id: Id
           supports: Sostegni
         form:
           custom_categories: Categorie
