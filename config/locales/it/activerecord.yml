@@ -335,6 +335,18 @@ it:
         description: "Testo iniziale"
       votation_type:
         enum_type: "Tipo votazione"
+        max_groups_answers: "Massimo numero di risposte nel set"
+        max_votes: "Massimo numero di voti"
+        prioritization_type: "Tipo di prioritizzazione"
+      banner:
+        background_color: Colore sfondo
+        font_color: Colore font
+        post_ended_at: "Post terminato alle"
+        post_started_at: "Post avviato alle"
+        target_url: "Link"
+      banner/translation:
+        title: "Titolo"
+        description: "Descrizione"
       legislation/process:
         title: Titolo del processo
         summary: Sommario
@@ -344,7 +356,10 @@ it:
         end_date: Data di fine
         debate_start_date: Data di inizio del dibattito
         debate_end_date: Data di fine del dibattito
+        draft_start_date: Inizio
+        draft_end_date: Fine
         draft_publication_date: Data di pubblicazione della bozza
+        allegations_start_date: Inizio
         allegations_end_date: Fine
         proposals_phase_start_date: Inizio
         proposals_phase_end_date: Fine
