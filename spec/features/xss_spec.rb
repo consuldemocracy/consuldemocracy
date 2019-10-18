@@ -13,6 +13,18 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "edit banner" do
+    banner = create(:banner, title: attack_code)
+
+    login_as(create(:administrator).user)
+    visit edit_admin_banner_path(banner)
+
+    title_id = find_field("Title")[:id]
+    execute_script "document.getElementById('#{title_id}').dispatchEvent(new Event('change'))"
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "document title" do
     process = create(:legislation_process)
     create(:document, documentable: process, title: attack_code)

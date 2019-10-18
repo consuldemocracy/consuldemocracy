@@ -33,10 +33,10 @@
           editor.toggleClass("fullscreen");
           $(".fullscreen-container").toggleClass("medium-8", "medium-12");
           span = $(this).find("span");
-          if (span.html() === span.data("open-text")) {
-            span.html(span.data("closed-text"));
+          if (span.text() === span.data("open-text")) {
+            span.text(span.data("closed-text"));
           } else {
-            span.html(span.data("open-text"));
+            span.text(span.data("open-text"));
           }
           if (editor.hasClass("fullscreen")) {
             App.MarkdownEditor.find_textarea(editor).height($(window).height() - 100);
