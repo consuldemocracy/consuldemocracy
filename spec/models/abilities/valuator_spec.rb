@@ -18,16 +18,12 @@ describe Abilities::Valuator do
     should_not be_able_to(:valuate, assigned_investment)
   end
 
-  it { should_not be_able_to(:update, non_assigned_investment) }
-  it { should_not be_able_to(:valuate, non_assigned_investment) }
+  it { should_not be_able_to(:update, assigned_investment) }
 
-  it { should be_able_to(:update, assigned_investment) }
   it { should be_able_to(:valuate, assigned_investment) }
-
-  it { should be_able_to(:update, group_assigned_investment) }
   it { should be_able_to(:valuate, group_assigned_investment) }
 
-  it { should_not be_able_to(:update, finished_assigned_investment) }
+  it { should_not be_able_to(:valuate, non_assigned_investment) }
   it { should_not be_able_to(:valuate, finished_assigned_investment) }
 
   it "can update dossier information if not set can_edit_dossier attribute" do

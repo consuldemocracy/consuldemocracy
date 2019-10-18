@@ -7,9 +7,9 @@ module Abilities
       assigned_investment_ids = valuator.assigned_investment_ids
       finished = { phase: "finished" }
 
-      can [:read, :update], Budget::Investment, id: assigned_investment_ids
+      can [:read], Budget::Investment, id: assigned_investment_ids
       can [:valuate], Budget::Investment, { id: assigned_investment_ids, valuation_finished: false }
-      cannot [:update, :valuate, :comment_valuation], Budget::Investment, budget: finished
+      cannot [:valuate, :comment_valuation], Budget::Investment, budget: finished
 
       if valuator.can_edit_dossier?
         can [:edit_dossier], Budget::Investment, id: assigned_investment_ids
