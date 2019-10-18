@@ -96,6 +96,7 @@ en:
       alert:
         unverified_user: User is not verified
       create: Create a budget investment
+      edit: Edit budget investment
       filters:
         heading: Concept
         unfeasible: Unfeasible investment

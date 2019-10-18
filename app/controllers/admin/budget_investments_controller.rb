@@ -44,6 +44,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def update
+    authorize! :admin_update, @investment
     if @investment.update(budget_investment_params)
       redirect_to admin_budget_budget_investment_path(@budget,
                                                       @investment,

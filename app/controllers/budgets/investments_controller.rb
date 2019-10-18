@@ -20,7 +20,7 @@ module Budgets
     before_action :load_ballot, only: [:index, :show]
     before_action :load_heading, only: [:index, :show]
     before_action :set_random_seed, only: :index
-    before_action :load_categories, only: [:index, :new, :create]
+    before_action :load_categories, only: [:index, :new, :create, :edit, :update]
     before_action :set_default_budget_filter, only: :index
     before_action :set_view, only: :index
     before_action :load_content_blocks, only: :index
@@ -73,6 +73,15 @@ module Budgets
                     notice: t("flash.actions.create.budget_investment")
       else
         render :new
+      end
+    end
+
+    def update
+      if @investment.update(investment_params)
+        redirect_to budget_investment_path(@budget, @investment),
+                    notice: t("flash.actions.update.budget_investment")
+      else
+        render "edit"
       end
     end
 

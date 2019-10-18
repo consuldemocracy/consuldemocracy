@@ -927,6 +927,54 @@ describe "Budget Investments" do
       expect(page).to have_content "Build a skyscraper"
     end
 
+    scenario "Edit", :js do
+      daniel = create(:user, :level_two)
+
+      create(:budget_investment, heading: heading,title: "Get Schwifty", author: daniel, created_at: 1.day.ago)
+
+      login_as(daniel)
+
+      visit user_path(daniel, filter: "budget_investments")
+
+      click_link("Edit", match: :first)
+      fill_in "Title", with: "Park improvements"
+      check "budget_investment_terms_of_service"
+
+      click_button "Update Investment"
+
+      expect(page).to have_content "Investment project updated succesfully"
+      expect(page).to have_content "Park improvements"
+    end
+
+    scenario "Trigger validation errors in edit view" do
+      daniel = create(:user, :level_two)
+      message_error = "is too short (minimum is 4 characters), can't be blank"
+      create(:budget_investment, heading: heading,title: "Get SH", author: daniel, created_at: 1.day.ago)
+
+      login_as(daniel)
+
+      visit user_path(daniel, filter: "budget_investments")
+      click_link("Edit", match: :first)
+      fill_in "Title", with: ""
+      check "budget_investment_terms_of_service"
+
+      click_button "Update Investment"
+
+      expect(page).to have_content message_error
+    end
+
+    scenario "Another User can't edit budget investment" do
+      message_error = "You do not have permission to carry out the action 'edit' on budget/investment"
+      admin = create(:administrator)
+      daniel = create(:user, :level_two)
+      investment = create(:budget_investment, heading: heading, author: daniel)
+
+      login_as(admin.user)
+      visit edit_budget_investment_path(budget, investment)
+
+      expect(page).to have_content message_error
+    end
+
     scenario "Errors on create" do
       login_as(author)
 

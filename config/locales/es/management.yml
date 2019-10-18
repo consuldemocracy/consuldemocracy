@@ -96,6 +96,7 @@ es:
       alert:
         unverified_user: Usuario no verificado
       create: Crear nuevo proyecto
+      edit: Editar proyecto de gasto
       filters:
         heading: Concepto
         unfeasible: Proyectos no factibles
