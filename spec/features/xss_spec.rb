@@ -61,6 +61,16 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "languages in use" do
+    I18nContent.create(key: "shared.translations.languages_in_use", value: attack_code)
+
+    login_as(create(:administrator).user)
+    visit edit_admin_budget_path(create(:budget))
+    click_link "Remove language"
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "proposal actions in dashboard" do
     proposal = create(:proposal)
 

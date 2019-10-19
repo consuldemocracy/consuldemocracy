@@ -77,9 +77,10 @@
     update_description: function() {
       var count, description;
       count = App.Globalize.enabled_locales().length;
-      description = App.Globalize.language_description(count);
-      $(".js-languages-description").html(description);
-      $(".js-languages-count").text(count);
+      description = $(App.Globalize.language_description(count)).filter(".description").text();
+
+      $(".js-languages-description .description").text(description);
+      $(".js-languages-description .count").text(count);
     },
     language_description: function(count) {
       switch (count) {
