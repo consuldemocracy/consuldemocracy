@@ -1,8 +1,9 @@
 // Table of Contents
 //
 // 01. Logo
-// 02. Orbit bullets
-// 03. Direct uploads
+// 02. Side menu and content
+// 03. Orbit bullets
+// 04. Direct uploads
 // ------------------
 
 // 01. Logo
@@ -21,7 +22,29 @@
   }
 }
 
-// 02. Orbit bullet
+// 02. Side menu and content
+// -------------------------
+
+@mixin side-menu-and-content {
+  display: flex;
+
+  > :first-child {
+    flex: 25%;
+    min-width: 250px;
+
+    > :first-child {
+      height: 100%;
+    }
+  }
+
+  > :last-child {
+    flex: 75%;
+    overflow-x: auto;
+    padding: $line-height !important;
+  }
+}
+
+// 03. Orbit bullet
 // ----------------
 
 @mixin orbit-bullets {
@@ -49,7 +72,7 @@
   }
 }
 
-// 03. Direct uploads
+// 04. Direct uploads
 // ------------------
 
 @mixin direct-uploads {

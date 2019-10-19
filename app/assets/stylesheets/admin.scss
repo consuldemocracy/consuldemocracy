@@ -292,21 +292,10 @@ $sidebar-active: #f4fcd0;
   }
 
   .side-menu-and-admin-content {
-    display: flex;
-  }
-
-  .side-menu {
-    flex: 25%;
-    min-width: 250px;
-
-    .admin-sidebar {
-      height: 100%;
-    }
+    @include side-menu-and-content;
   }
 
   .admin-content {
-    flex: 75%;
-
     .proposal-form {
       padding-top: 0;
     }
@@ -323,11 +312,6 @@ $sidebar-active: #f4fcd0;
 
 .for-print-only {
   display: none;
-}
-
-.admin-content {
-  overflow: scroll;
-  padding: $line-height !important;
 }
 
 @include breakpoint(medium) {

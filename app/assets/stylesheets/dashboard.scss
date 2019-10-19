@@ -16,6 +16,10 @@
 // 01. Dashboard global
 // --------------------
 
+.dashboard-menu-and-content {
+  @include side-menu-and-content;
+}
+
 .proposal-title {
   display: inline-block;
 
@@ -287,10 +291,6 @@
 .dashboard-sidebar {
   background: #fbfbfb;
   border-right: 1px solid $border;
-
-  @include breakpoint(medium) {
-    min-height: $line-height * 45;
-  }
 
   [class^="icon-"] {
     color: $text;
