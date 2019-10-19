@@ -1,1 +1,62 @@
 it:
+  tracking:
+    budget_investments:
+      show:
+        undefined: "Indefinito"
+        responsibles: Responsabili
+        assigned_admin: Admin assegnato
+    milestones:
+      index:
+        table_id: "ID"
+        table_title: "Titolo"
+        table_description: "Descrizione"
+        table_publication_date: "Data di pubblicazione"
+        table_status: Stato
+        table_actions: "Azioni"
+        delete: "Elimina pietra miliare"
+        no_milestones: "Non ci sono pietre miliari definite"
+        image: "Immagini"
+        show_image: "Mostra immagine"
+        documents: "Documenti"
+        milestone: Pietra miliare
+        new_milestone: Crea nuova pietra miliare
+      form:
+        admin_statuses: Gestisci stati
+        no_statuses_defined: Non ci sono ancora status definiti
+      new:
+        creating: Crea pietra miliare
+      edit:
+        title: Modifica pietra miliare
+      create:
+        notice: Nuova pietra miliare creata con successo!
+      update:
+        notice: Pietra miliare aggiornata con successo
+      delete:
+        notice: Pietra miliare eliminata con successo
+    progress_bars:
+      manage: "Gestisci barre progresso"
+      index:
+        title: "Barre dei progressi"
+        no_progress_bars: "Non ci sono barre dei progressi"
+        new_progress_bar: "Crea nuova barra di progresso"
+        primary: "Barra di progresso principale"
+        table_id: "ID"
+        table_kind: "Tipo"
+        table_title: "Titolo"
+        table_percentage: "Progresso attuale"
+      new:
+        creating: "Crea barra di progresso"
+      edit:
+        title:
+          primary: "Modifica barra di progresso principale"
+          secondary: "Modifica barra di progresso %{title}"
+      create:
+        notice: "Barra di progresso creata con successo!"
+      update:
+        notice: "Barra di progresso aggiornata con successo"
+      delete:
+        notice: "Barra di progresso eliminata con successo"
+  trackers:
+    budget_investments:
+      show:
+        assigned_trackers: "Tracciatori assegnati"
