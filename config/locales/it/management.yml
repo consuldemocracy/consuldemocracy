@@ -95,6 +95,7 @@ it:
       alert:
         unverified_user: L'utente non è verificato
       create: Crea un investimento di bilancio
+      edit: Modifica budget investimento
       filters:
         heading: Concetto
         unfeasible: Il progetto non è realizzabile
