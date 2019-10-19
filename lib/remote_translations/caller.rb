@@ -24,10 +24,10 @@ class RemoteTranslations::Caller
     def destroy_remote_translation
       if resource.valid?
         remote_translation.destroy
+        resource.save!
       else
         remote_translation.update(error_message: resource.errors.messages)
       end
-      resource.save
     end
 
     def resource
