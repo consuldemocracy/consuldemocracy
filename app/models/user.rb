@@ -67,7 +67,7 @@ class User < ApplicationRecord
     where(document_type: document_type, document_number: document_number)
   end
   scope :email_digest,   -> { where(email_digest: true) }
-  scope :active,         -> { where(erased_at: nil) }
+  scope :active,         -> { where(erased_at: nil).where.not(confirmed_at: nil) }
   scope :erased,         -> { where.not(erased_at: nil) }
   scope :public_for_api, -> { all }
   scope :by_comments,    ->(query, topics_ids) { joins(:comments).where(query, topics_ids).distinct }
