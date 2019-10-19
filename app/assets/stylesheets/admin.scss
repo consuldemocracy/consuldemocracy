@@ -293,22 +293,14 @@ $sidebar-active: #f4fcd0;
 
   .side-menu-and-admin-content {
     display: flex;
-
-    @include breakpoint(small only) {
-      flex-direction: column;
-    }
   }
 
   .side-menu {
     flex: 25%;
     min-width: 250px;
 
-    > :last-child {
+    .admin-sidebar {
       height: 100%;
-
-      .admin-sidebar {
-        height: 100%;
-      }
     }
   }
 
