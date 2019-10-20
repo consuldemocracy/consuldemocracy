@@ -81,7 +81,7 @@ describe Legislation::AnnotationsController do
 
     it "does not create an annotation if the process allegations phase is not open" do
       sign_in user
-      legal_process.update_attribute(:allegations_end_date, Date.current - 1.day)
+      legal_process.update!(allegations_end_date: Date.current - 1.day)
 
       expect do
         post :create, xhr: true,

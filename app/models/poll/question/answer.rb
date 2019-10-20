@@ -21,7 +21,7 @@ class Poll::Question::Answer < ApplicationRecord
 
   def self.order_answers(ordered_array)
     ordered_array.each_with_index do |answer_id, order|
-      find(answer_id).update_attribute(:given_order, (order + 1))
+      find(answer_id).update_column(:given_order, (order + 1))
     end
   end
 

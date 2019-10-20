@@ -248,6 +248,12 @@ Rails/SaveBang:
   Enabled: true
   Severity: refactor
 
+Rails/SkipsModelValidations:
+  Enabled: true
+  Blacklist:
+    - update_attribute
+  Exclude: lib/acts_as_paranoid_aliases.rb
+
 Rails/TimeZone:
   Enabled: true
 

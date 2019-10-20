@@ -13,11 +13,11 @@ shared_examples_for "globalizable" do |factory_name|
   let(:attribute) { required_fields.sample || fields.sample }
 
   before do
-    record.update_attribute(attribute, "In English")
+    record.update!(attribute => "In English")
 
     I18n.with_locale(:es) do
       record.update!(required_fields.map { |field| [field, "En español"] }.to_h)
-      record.update_attribute(attribute, "En español")
+      record.update!(attribute => "En español")
     end
 
     record.reload
@@ -156,7 +156,7 @@ shared_examples_for "globalizable" do |factory_name|
     before do
       I18n.with_locale(:de) do
         record.update!(required_fields.map { |field| [field, "Deutsch"] }.to_h)
-        record.update_attribute(attribute, "Deutsch")
+        record.update!(attribute => "Deutsch")
       end
     end
 

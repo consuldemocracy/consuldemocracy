@@ -133,7 +133,7 @@ describe EmailDigest do
 
     it "returns false if email does not exist" do
       user = create(:user)
-      user.update_attribute(:email, nil)
+      user.email = nil
 
       email_digest = EmailDigest.new(user)
       expect(email_digest.valid_email?).to be(false)

@@ -18,9 +18,6 @@ Performance/StartWith:
 Rails/HasManyOrHasOneDependent:
   Enabled: true
 
-Rails/SkipsModelValidations:
-  Enabled: true
-
 Security/JSONLoad:
   Enabled: true
 

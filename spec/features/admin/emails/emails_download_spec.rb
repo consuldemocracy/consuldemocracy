@@ -19,7 +19,7 @@ describe "Admin download user emails" do
 
       admin_without_email = create(:user, newsletter: true, email: "no_email@consul.dev")
       create(:administrator, user: admin_without_email)
-      admin_without_email.update_attribute(:email, nil)
+      admin_without_email.update_column(:email, nil)
     end
 
     scenario "returns the selected users segment csv file" do
