@@ -648,26 +648,22 @@ describe Budget::Investment do
     end
 
     describe "search_by_title_or_id" do
-      before { create(:budget_investment) }
+      it "does not return investments by description" do
+        create(:budget_investment, title: "Something", description: "Awesome")
 
-      let!(:investment) do
-        I18n.with_locale(:es) do
-          create(:budget_investment,
-            title_es: "Título del proyecto de inversión",
-            description_es: "Descripción del proyecto de inversión")
-        end
+        expect(Budget::Investment.search_by_title_or_id("Awesome")).to be_empty
       end
 
-      let(:all_investments) { Budget::Investment.all }
+      it "returns investment by given id" do
+        investment = create(:budget_investment)
 
-      it "return investment by given id" do
-        expect(Budget::Investment.search_by_title_or_id(investment.id.to_s, all_investments)).
-          to eq([investment])
+        expect(Budget::Investment.search_by_title_or_id(investment.id.to_s)).to eq([investment])
       end
 
-      it "return investments by given title" do
-        expect(Budget::Investment.search_by_title_or_id("Título del proyecto de inversión", all_investments)).
-          to eq([investment])
+      it "returns investments by given title" do
+        investment = create(:budget_investment, title: "Investment title")
+
+        expect(Budget::Investment.search_by_title_or_id("Investment title")).to eq([investment])
       end
     end
   end

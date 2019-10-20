@@ -151,8 +151,8 @@ class Budget
       results = results.by_valuator(params[:valuator_id])                  if params[:valuator_id].present?
       results = results.by_valuator_group(params[:valuator_group_id])      if params[:valuator_group_id].present?
       results = results.by_admin(params[:administrator_id])                if params[:administrator_id].present?
+      results = results.search_by_title_or_id(params[:title_or_id].strip)  if params[:title_or_id]
       results = advanced_filters(params, results)                          if params[:advanced_filters].present?
-      results = search_by_title_or_id(params[:title_or_id].strip, results) if params[:title_or_id]
 
       results = results.send(current_filter)                        if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
@@ -200,10 +200,10 @@ class Budget
       results.where("budget_investments.id IN (?)", ids)
     end
 
-    def self.search_by_title_or_id(title_or_id, results)
-      return results.where(id: title_or_id) if title_or_id =~ /^[0-9]+$/
+    def self.search_by_title_or_id(title_or_id)
+      return where(id: title_or_id) if title_or_id =~ /^[0-9]+$/
 
-      results.with_translations(Globalize.fallbacks(I18n.locale)).
+      with_translations(Globalize.fallbacks(I18n.locale)).
         where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%")
     end
 
