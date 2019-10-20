@@ -23,7 +23,7 @@ class EmailDigest
 
   def mark_as_emailed
     notifications.update_all(emailed_at: Time.current)
-    user.update(failed_email_digests_count: 0)
+    user.update!(failed_email_digests_count: 0)
   end
 
   def valid_email?

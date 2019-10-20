@@ -35,7 +35,7 @@ class Tracking::MilestonesController < Tracking::BaseController
   end
 
   def destroy
-    @milestone.destroy
+    @milestone.destroy!
     redirect_to milestoneable_path, notice: t("tracking.milestones.delete.notice")
   end
 

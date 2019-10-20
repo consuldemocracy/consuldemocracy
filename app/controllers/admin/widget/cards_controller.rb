@@ -34,7 +34,7 @@ class Admin::Widget::CardsController < Admin::BaseController
 
   def destroy
     @card = ::Widget::Card.find(params[:id])
-    @card.destroy
+    @card.destroy!
 
     redirect_to_customization_page_cards_or_homepage
   end

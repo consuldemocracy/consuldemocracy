@@ -42,7 +42,7 @@ class Budget
 
     def set_winner
       @money_spent += @current_investment.price
-      @current_investment.update(winner: true)
+      @current_investment.update!(winner: true)
     end
 
     def winners

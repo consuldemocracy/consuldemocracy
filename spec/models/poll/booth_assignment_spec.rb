@@ -22,7 +22,7 @@ describe Poll::BoothAssignment do
     create(:poll_officer_assignment, officer: officer, booth_assignment: assignment)
     create(:poll_shift, booth: booth, officer: officer)
 
-    assignment.destroy
+    assignment.destroy!
 
     expect(Poll::Shift.all.count).to eq(0)
   end

@@ -262,7 +262,7 @@ describe "Consul Schema" do
       create(:comment, commentable: create(:proposal))
       create(:comment, commentable: create(:debate))
       create(:comment, commentable: create(:poll))
-      build(:comment, commentable: create(:budget_investment)).save(skip_validation: true)
+      build(:comment, commentable: create(:budget_investment)).save!(skip_validation: true)
 
       response = execute("{ comments { edges { node { commentable_type } } } }")
       received_commentables = extract_fields(response, "comments", "commentable_type")

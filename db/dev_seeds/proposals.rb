@@ -18,7 +18,7 @@ def add_image_to(imageable)
     attachment: IMAGE_FILES.sample,
     user: imageable.author
   })
-  imageable.save
+  imageable.save!
 end
 
 section "Creating Proposals" do

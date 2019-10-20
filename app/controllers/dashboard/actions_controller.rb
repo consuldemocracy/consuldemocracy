@@ -17,7 +17,7 @@ class Dashboard::ActionsController < Dashboard::BaseController
 
     @dashboard_executed_action = Dashboard::ExecutedAction.new(source_params)
     if @dashboard_executed_action.save
-      Dashboard::AdministratorTask.create(source: @dashboard_executed_action)
+      Dashboard::AdministratorTask.create!(source: @dashboard_executed_action)
 
       redirect_to progress_proposal_dashboard_path(proposal.to_param),
                   { flash: { info: t("dashboard.create_request.success") }}
@@ -38,7 +38,7 @@ class Dashboard::ActionsController < Dashboard::BaseController
   def unexecute
     authorize! :dashboard, proposal
 
-    Dashboard::ExecutedAction.where(proposal: proposal, action: dashboard_action).first.destroy
+    Dashboard::ExecutedAction.where(proposal: proposal, action: dashboard_action).first.destroy!
 
     redirect_to request.referer
   end

@@ -244,7 +244,7 @@ describe "Admin shifts" do
     officer = create(:poll_officer)
 
     create(:poll_shift, officer: officer, booth: booth)
-    officer.destroy
+    officer.destroy!
 
     visit new_admin_booth_shift_path(booth)
 

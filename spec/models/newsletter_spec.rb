@@ -53,7 +53,7 @@ describe Newsletter do
       create(:user, newsletter: true, email: "newsletter_user@consul.dev")
       create(:user, newsletter: false, email: "no_news_user@consul.dev")
       create(:user, email: "erased_user@consul.dev").erase
-      newsletter.update(segment_recipient: "all_users")
+      newsletter.update!(segment_recipient: "all_users")
     end
 
     it "returns list of recipients excluding users with disabled newsletter" do

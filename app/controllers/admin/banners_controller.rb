@@ -31,7 +31,7 @@ class Admin::BannersController < Admin::BaseController
   end
 
   def destroy
-    @banner.destroy
+    @banner.destroy!
     redirect_to admin_banners_path
   end
 

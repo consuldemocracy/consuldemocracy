@@ -160,7 +160,7 @@ describe "Notifications" do
     end
 
     scenario "With internal link" do
-      admin_notification.update_attributes(link: "/stats")
+      admin_notification.update_attributes!(link: "/stats")
 
       visit notifications_path
       expect(page).to have_content("Notification title")
@@ -171,7 +171,7 @@ describe "Notifications" do
     end
 
     scenario "Without a link" do
-      admin_notification.update_attributes(link: "/stats")
+      admin_notification.update_attributes!(link: "/stats")
 
       visit notifications_path
       expect(page).to have_content("Notification title")

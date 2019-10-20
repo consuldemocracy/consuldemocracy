@@ -15,7 +15,7 @@ class Admin::Dashboard::AdministratorTasksController < Admin::Dashboard::BaseCon
   def update
     authorize! :update, administrator_task
 
-    administrator_task.update(user: current_user, executed_at: Time.current)
+    administrator_task.update!(user: current_user, executed_at: Time.current)
     redirect_to admin_dashboard_administrator_tasks_path,
                 { flash: { notice: t("admin.dashboard.administrator_tasks.update.success") }}
   end

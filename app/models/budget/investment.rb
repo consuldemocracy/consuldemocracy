@@ -256,7 +256,7 @@ class Budget
 
     def send_unfeasible_email
       Mailer.budget_investment_unfeasible(self).deliver_later
-      update(unfeasible_email_sent_at: Time.current)
+      update!(unfeasible_email_sent_at: Time.current)
     end
 
     def reason_for_not_being_selectable_by(user)

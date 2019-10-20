@@ -148,7 +148,7 @@ describe User do
     end
 
     it "is true when the user is an admin" do
-      subject.save
+      subject.save!
       create(:administrator, user: subject)
       expect(subject.administrator?).to be true
     end
@@ -160,7 +160,7 @@ describe User do
     end
 
     it "is true when the user is a moderator" do
-      subject.save
+      subject.save!
       create(:moderator, user: subject)
       expect(subject.moderator?).to be true
     end
@@ -172,7 +172,7 @@ describe User do
     end
 
     it "is true when the user is a valuator" do
-      subject.save
+      subject.save!
       create(:valuator, user: subject)
       expect(subject.valuator?).to be true
     end
@@ -184,7 +184,7 @@ describe User do
     end
 
     it "is true when the user is a manager" do
-      subject.save
+      subject.save!
       create(:manager, user: subject)
       expect(subject.manager?).to be true
     end
@@ -196,7 +196,7 @@ describe User do
     end
 
     it "is true when the user is a poll officer" do
-      subject.save
+      subject.save!
       create(:poll_officer, user: subject)
       expect(subject.poll_officer?).to be true
     end
@@ -265,14 +265,14 @@ describe User do
 
     it "is true when the user is an official" do
       subject.official_level = 3
-      subject.save
+      subject.save!
       expect(subject.official?).to be true
     end
   end
 
   describe "add_official_position!" do
-    it "is false when level not valid" do
-      expect(subject.add_official_position!("Boss", 89)).to be false
+    it "raises an exception when level not valid" do
+      expect { subject.add_official_position!("Boss", 89) }.to raise_error ActiveRecord::RecordInvalid
     end
 
     it "updates official position fields" do
@@ -336,7 +336,7 @@ describe User do
       expect(user4.has_official_email?).to eq(false)
 
       # We reset the officials' domain setting
-      Setting.find_by(key: "email_domain_for_officials").update(value: "")
+      Setting.find_by(key: "email_domain_for_officials").update!(value: "")
     end
   end
 

@@ -14,7 +14,7 @@ class Admin::OfficialsController < Admin::BaseController
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
+    @user.update!(user_params)
     redirect_to admin_officials_path, notice: t("admin.officials.flash.official_updated")
   end
 

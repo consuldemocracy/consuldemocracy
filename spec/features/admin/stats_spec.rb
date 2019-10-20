@@ -285,7 +285,7 @@ describe "Stats" do
 
     scenario "Deleted proposals" do
       proposal_notification = create(:proposal_notification)
-      proposal_notification.proposal.destroy
+      proposal_notification.proposal.destroy!
 
       visit admin_stats_path
       click_link "Proposal notifications"

@@ -14,7 +14,7 @@ describe "Ballots" do
     end
 
     before do
-      budget.update(slug: "budget_slug")
+      budget.update!(slug: "budget_slug")
       login_as(user)
     end
 
@@ -41,7 +41,7 @@ describe "Ballots" do
   context "Lines Load" do
     before do
       create(:budget_investment, :selected, heading: california, title: "More rain")
-      budget.update(slug: "budget_slug")
+      budget.update!(slug: "budget_slug")
       login_as(user)
     end
 
@@ -687,7 +687,7 @@ describe "Ballots" do
       click_link "States"
       click_link "New York"
 
-      new_york.update(price: 10)
+      new_york.update!(price: 10)
 
       within("#budget_investment_#{investment1.id}") do
         expect(page).to have_selector(".in-favor a", visible: true)
@@ -701,7 +701,7 @@ describe "Ballots" do
     end
 
     scenario "Balloting is disabled when budget isn't in the balotting phase", :js do
-      budget.update(phase: "accepting")
+      budget.update!(phase: "accepting")
 
       bi1 = create(:budget_investment, :selected, heading: california, price: 600)
 

@@ -147,7 +147,7 @@ describe Notification do
       comment = create(:comment)
 
       first_notification = Notification.add(user, comment)
-      first_notification.update(read_at: Time.current)
+      first_notification.update!(read_at: Time.current)
 
       second_notification = Notification.add(user, comment)
 

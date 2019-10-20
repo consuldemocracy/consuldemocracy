@@ -20,24 +20,24 @@ describe Budget::Ballot::Line do
 
     describe "Money" do
       it "is not valid if insufficient funds" do
-        investment.update(price: heading.price + 1)
+        investment.update!(price: heading.price + 1)
         expect(ballot_line).not_to be_valid
       end
 
       it "is valid if sufficient funds" do
-        investment.update(price: heading.price - 1)
+        investment.update!(price: heading.price - 1)
         expect(ballot_line).to be_valid
       end
     end
 
     describe "Selectibility" do
       it "is not valid if investment is unselected" do
-        investment.update(selected: false)
+        investment.update!(selected: false)
         expect(ballot_line).not_to be_valid
       end
 
       it "is valid if investment is selected" do
-        investment.update(selected: true, price: 20000)
+        investment.update!(selected: true, price: 20000)
         expect(ballot_line).to be_valid
       end
     end

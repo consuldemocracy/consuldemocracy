@@ -32,7 +32,7 @@ class Admin::Legislation::DraftVersionsController < Admin::Legislation::BaseCont
   end
 
   def destroy
-    @draft_version.destroy
+    @draft_version.destroy!
     notice = t("admin.legislation.draft_versions.destroy.notice")
     redirect_to admin_legislation_process_draft_versions_path, notice: notice
   end

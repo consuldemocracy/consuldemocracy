@@ -13,7 +13,7 @@ describe Abilities::Valuator do
   let(:finished_assigned_investment) { create(:budget_investment, budget: create(:budget, :finished), valuators: [valuator]) }
 
   it "cannot valuate an assigned investment with a finished valuation" do
-    assigned_investment.update(valuation_finished: true)
+    assigned_investment.update!(valuation_finished: true)
 
     should_not be_able_to(:valuate, assigned_investment)
   end

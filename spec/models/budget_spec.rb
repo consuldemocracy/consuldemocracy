@@ -22,7 +22,7 @@ describe Budget do
     end
 
     it "may be repeated for the same budget and a different locale" do
-      budget.update(name_fr: "object name")
+      budget.update!(name_fr: "object name")
       expect(budget.translations.last).to be_valid
     end
   end
@@ -45,7 +45,7 @@ describe Budget do
       before do
         budget.phases.each do |phase|
           phase.description = phase.kind.humanize
-          phase.save
+          phase.save!
         end
       end
 
@@ -273,28 +273,28 @@ describe Budget do
 
   describe "#formatted_amount" do
     it "correctly formats Euros with Spanish" do
-      budget.update(currency_symbol: "€")
+      budget.update!(currency_symbol: "€")
       I18n.locale = :es
 
       expect(budget.formatted_amount(1000.00)).to eq "1.000 €"
     end
 
     it "correctly formats Dollars with Spanish" do
-      budget.update(currency_symbol: "$")
+      budget.update!(currency_symbol: "$")
       I18n.locale = :es
 
       expect(budget.formatted_amount(1000.00)).to eq "1.000 $"
     end
 
     it "correctly formats Dollars with English" do
-      budget.update(currency_symbol: "$")
+      budget.update!(currency_symbol: "$")
       I18n.locale = :en
 
       expect(budget.formatted_amount(1000.00)).to eq "$1,000"
     end
 
     it "correctly formats Euros with English" do
-      budget.update(currency_symbol: "€")
+      budget.update!(currency_symbol: "€")
       I18n.locale = :en
 
       expect(budget.formatted_amount(1000.00)).to eq "€1,000"
@@ -314,7 +314,7 @@ describe Budget do
 
     it "returns array of investments milestone_tags" do
       investment1.milestone_tag_list = "tag1"
-      investment1.save
+      investment1.save!
       budget.investments << investment1
 
       expect(budget.milestone_tags).to eq(["tag1"])
@@ -322,9 +322,9 @@ describe Budget do
 
     it "returns uniq list of investments milestone_tags" do
       investment1.milestone_tag_list = "tag1"
-      investment1.save
+      investment1.save!
       investment2.milestone_tag_list = "tag1"
-      investment2.save
+      investment2.save!
       budget.investments << investment1
       budget.investments << investment2
 
@@ -333,9 +333,9 @@ describe Budget do
 
     it "returns tags only for winner investments" do
       investment1.milestone_tag_list = "tag1"
-      investment1.save
+      investment1.save!
       investment3.milestone_tag_list = "tag2"
-      investment3.save
+      investment3.save!
       budget.investments << investment1
       budget.investments << investment3
 

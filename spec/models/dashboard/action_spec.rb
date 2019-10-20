@@ -248,32 +248,32 @@ describe Dashboard::Action do
 
       it "when there are not news actions actived for published proposals" do
         proposal = create(:proposal)
-        action.update(published_proposal: true)
-        resource.update(published_proposal: true)
+        action.update!(published_proposal: true)
+        resource.update!(published_proposal: true)
 
         expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are news actions actived for draft_proposal but proposal is published" do
         proposal = create(:proposal)
-        action.update(published_proposal: false, day_offset: 0)
-        resource.update(published_proposal: false, day_offset: 0)
+        action.update!(published_proposal: false, day_offset: 0)
+        resource.update!(published_proposal: false, day_offset: 0)
 
         expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are not news actions actived for draft proposals" do
         proposal = create(:proposal, :draft)
-        action.update(published_proposal: false)
-        resource.update(published_proposal: false)
+        action.update!(published_proposal: false)
+        resource.update!(published_proposal: false)
 
         expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are news actions actived for published_proposal but proposal is draft" do
         proposal = create(:proposal, :draft)
-        action.update(published_proposal: true, day_offset: 0)
-        resource.update(published_proposal: true, day_offset: 0)
+        action.update!(published_proposal: true, day_offset: 0)
+        resource.update!(published_proposal: true, day_offset: 0)
 
         expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
@@ -301,9 +301,9 @@ describe Dashboard::Action do
         end
 
         it "when proposal has received a new vote today" do
-          proposal.update(created_at: Date.yesterday, published_at: Date.yesterday)
-          action.update(required_supports: 1)
-          resource.update(required_supports: 0)
+          proposal.update!(created_at: Date.yesterday, published_at: Date.yesterday)
+          action.update!(required_supports: 1)
+          resource.update!(required_supports: 0)
           create(:vote, voter: proposal.author, votable: proposal)
 
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
@@ -333,9 +333,9 @@ describe Dashboard::Action do
         end
 
         it "when proposal has received a new vote today" do
-          proposal.update(created_at: Date.yesterday)
-          action.update(required_supports: 1)
-          resource.update(required_supports: 2)
+          proposal.update!(created_at: Date.yesterday)
+          action.update!(required_supports: 1)
+          resource.update!(required_supports: 2)
           create(:vote, voter: proposal.author, votable: proposal)
 
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,

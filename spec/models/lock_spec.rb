@@ -19,15 +19,15 @@ describe Lock do
   describe "#lock_time" do
     it "increases exponentially with number of tries" do
       lock.tries = 5
-      lock.save
+      lock.save!
       expect(lock.reload.lock_time).to be_between(30.minutes.from_now, 35.minutes.from_now)
 
       lock.tries = 10
-      lock.save
+      lock.save!
       expect(lock.reload.lock_time).to be_between(16.hours.from_now, 18.hours.from_now)
 
       lock.tries = 15
-      lock.save
+      lock.save!
       expect(lock.reload.lock_time).to be_between(21.days.from_now, 23.days.from_now)
     end
   end

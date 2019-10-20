@@ -12,7 +12,7 @@ describe "Admin milestone statuses" do
       status1 = create(:milestone_status)
       status2 = create(:milestone_status)
 
-      status1.destroy
+      status1.destroy!
 
       visit admin_milestone_statuses_path
 

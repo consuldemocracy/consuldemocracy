@@ -233,7 +233,7 @@ describe "Tags" do
 
     scenario "Display user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -247,7 +247,7 @@ describe "Tags" do
 
     scenario "Filter by user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         [investment1, investment2, investment3].each do |investment|
           investment.update(selected: true, feasibility: "feasible")
@@ -284,7 +284,7 @@ describe "Tags" do
 
     scenario "Display category tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -298,7 +298,7 @@ describe "Tags" do
 
     scenario "Filter by category tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         [investment1, investment2, investment3].each do |investment|
           investment.update(selected: true, feasibility: "feasible")
@@ -331,7 +331,7 @@ describe "Tags" do
     scenario "Users do not see valuator tags" do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
       investment.set_tag_list_on(:valuation, "Education")
-      investment.save
+      investment.save!
 
       visit budget_investment_path(budget, investment)
 
@@ -342,7 +342,7 @@ describe "Tags" do
     scenario "Valuators do not see user tags" do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
       investment.set_tag_list_on(:valuation, "Education")
-      investment.save
+      investment.save!
 
       login_as(admin)
 

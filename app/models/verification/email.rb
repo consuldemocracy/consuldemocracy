@@ -15,7 +15,7 @@ class Verification::Email
     return false unless valid?
 
     generate_token
-    user.update(email_verification_token: @plain_token)
+    user.update!(email_verification_token: @plain_token)
   end
 
   def user

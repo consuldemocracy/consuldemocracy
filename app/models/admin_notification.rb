@@ -30,7 +30,7 @@ class AdminNotification < ApplicationRecord
 
   def deliver
     list_of_recipients.each { |user| Notification.add(user, self) }
-    self.update(sent_at: Time.current, recipients_count: list_of_recipients.count)
+    update!(sent_at: Time.current, recipients_count: list_of_recipients.count)
   end
 
   private

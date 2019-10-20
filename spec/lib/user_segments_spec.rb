@@ -71,7 +71,7 @@ describe UserSegments do
     it "returns users that have created a budget investment" do
       investment = create(:budget_investment, author: user1)
       budget = create(:budget)
-      investment.update(budget: budget)
+      investment.update!(budget: budget)
 
       investment_authors = UserSegments.investment_authors
 
@@ -82,8 +82,8 @@ describe UserSegments do
       investment1 = create(:budget_investment, author: user1)
       investment2 = create(:budget_investment, author: user1)
       budget = create(:budget)
-      investment1.update(budget: budget)
-      investment2.update(budget: budget)
+      investment1.update!(budget: budget)
+      investment2.update!(budget: budget)
 
       investment_authors = UserSegments.investment_authors
       expect(investment_authors).to contain_exactly(user1)
@@ -104,12 +104,12 @@ describe UserSegments do
       unfeasible_investment_finished = create(:budget_investment, :unfeasible, :finished, author: user6)
 
       budget = create(:budget)
-      feasible_investment_finished.update(budget: budget)
-      undecided_investment_finished.update(budget: budget)
-      feasible_investment_unfinished.update(budget: budget)
-      undecided_investment_unfinished.update(budget: budget)
-      unfeasible_investment_unfinished.update(budget: budget)
-      unfeasible_investment_finished.update(budget: budget)
+      feasible_investment_finished.update!(budget: budget)
+      undecided_investment_finished.update!(budget: budget)
+      feasible_investment_unfinished.update!(budget: budget)
+      undecided_investment_unfinished.update!(budget: budget)
+      unfeasible_investment_unfinished.update!(budget: budget)
+      unfeasible_investment_finished.update!(budget: budget)
 
       investment_authors = UserSegments.feasible_and_undecided_investment_authors
       expect(investment_authors).to match_array [user1, user2, user3, user4, user5]
@@ -120,8 +120,8 @@ describe UserSegments do
       feasible_investment = create(:budget_investment, :feasible, author: user1)
       undecided_investment = create(:budget_investment, :undecided, author: user1)
       budget = create(:budget)
-      feasible_investment.update(budget: budget)
-      undecided_investment.update(budget: budget)
+      feasible_investment.update!(budget: budget)
+      undecided_investment.update!(budget: budget)
 
       investment_authors = UserSegments.feasible_and_undecided_investment_authors
       expect(investment_authors).to contain_exactly(user1)
@@ -133,8 +133,8 @@ describe UserSegments do
       selected_investment = create(:budget_investment, :selected, author: user1)
       unselected_investment = create(:budget_investment, :unselected, author: user2)
       budget = create(:budget)
-      selected_investment.update(budget: budget)
-      unselected_investment.update(budget: budget)
+      selected_investment.update!(budget: budget)
+      unselected_investment.update!(budget: budget)
 
       investment_authors = UserSegments.selected_investment_authors
 
@@ -145,8 +145,8 @@ describe UserSegments do
       selected_investment1 = create(:budget_investment, :selected, author: user1)
       selected_investment2 = create(:budget_investment, :selected, author: user1)
       budget = create(:budget)
-      selected_investment1.update(budget: budget)
-      selected_investment2.update(budget: budget)
+      selected_investment1.update!(budget: budget)
+      selected_investment2.update!(budget: budget)
 
       investment_authors = UserSegments.selected_investment_authors
       expect(investment_authors).to contain_exactly(user1)
@@ -158,8 +158,8 @@ describe UserSegments do
       winner_investment = create(:budget_investment, :winner, author: user1)
       selected_investment = create(:budget_investment, :selected, author: user2)
       budget = create(:budget)
-      winner_investment.update(budget: budget)
-      selected_investment.update(budget: budget)
+      winner_investment.update!(budget: budget)
+      selected_investment.update!(budget: budget)
 
       investment_authors = UserSegments.winner_investment_authors
 
@@ -170,8 +170,8 @@ describe UserSegments do
       winner_investment1 = create(:budget_investment, :winner, author: user1)
       winner_investment2 = create(:budget_investment, :winner, author: user1)
       budget = create(:budget)
-      winner_investment1.update(budget: budget)
-      winner_investment2.update(budget: budget)
+      winner_investment1.update!(budget: budget)
+      winner_investment2.update!(budget: budget)
 
       investment_authors = UserSegments.winner_investment_authors
       expect(investment_authors).to contain_exactly(user1)
@@ -183,7 +183,7 @@ describe UserSegments do
       investment1 = create(:budget_investment, author: create(:user))
       investment2 = create(:budget_investment, author: create(:user))
       budget = create(:budget)
-      investment1.update(budget: budget)
+      investment1.update!(budget: budget)
 
       current_budget_investments = UserSegments.current_budget_investments
 
@@ -199,8 +199,8 @@ describe UserSegments do
       budget = create(:budget)
       investment1.vote_by(voter: user1, vote: "yes")
       investment2.vote_by(voter: user2, vote: "yes")
-      investment1.update(budget: budget)
-      investment2.update(budget: budget)
+      investment1.update!(budget: budget)
+      investment2.update!(budget: budget)
 
       not_supported_on_current_budget = UserSegments.not_supported_on_current_budget
       expect(not_supported_on_current_budget).to include user3

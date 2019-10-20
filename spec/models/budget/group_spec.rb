@@ -19,13 +19,13 @@ describe Budget::Group do
       end
 
       it "may be repeated for the same group and a different locale" do
-        group.update(name_fr: "object name")
+        group.update!(name_fr: "object name")
 
         expect(group.translations.last).to be_valid
       end
 
       it "must not be repeated for a different group in any locale" do
-        group.update(name_en: "English", name_es: "Español")
+        group.update!(name_en: "English", name_es: "Español")
 
         expect(build(:budget_group, budget: budget, name_en: "English")).not_to be_valid
         expect(build(:budget_group, budget: budget, name_en: "Español")).not_to be_valid

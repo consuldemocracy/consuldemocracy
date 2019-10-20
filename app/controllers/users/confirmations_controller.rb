@@ -9,7 +9,7 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
       resource.assign_attributes(resource_params)
 
       if resource.valid? # password is set correctly
-        resource.save
+        resource.save!
         set_official_position if resource.has_official_email?
         resource.confirm
         set_flash_message(:notice, :confirmed) if is_flashing_format?

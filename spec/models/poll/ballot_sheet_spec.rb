@@ -52,7 +52,7 @@ describe Poll::BallotSheet do
   describe "#parsed_ballots" do
     it "splits ballots by ';' or '\n'" do
       data = "1,2,3;4,5,6\n7,8,9"
-      ballot_sheet.update(data: data)
+      ballot_sheet.update!(data: data)
 
       expect(ballot_sheet.parsed_ballots).to eq(["1,2,3", "4,5,6", "7,8,9"])
     end

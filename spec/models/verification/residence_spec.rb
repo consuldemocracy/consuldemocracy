@@ -36,7 +36,7 @@ describe Verification::Residence do
     it "validates uniquness of document_number" do
       user = create(:user)
       residence.user = user
-      residence.save
+      residence.save!
 
       build(:verification_residence)
 
@@ -68,7 +68,7 @@ describe Verification::Residence do
     it "stores document number, document type, geozone, date of birth and gender" do
       user = create(:user)
       residence.user = user
-      residence.save
+      residence.save!
 
       user.reload
       expect(user.document_number).to eq("12345678Z")

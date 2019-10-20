@@ -51,7 +51,7 @@ shared_examples "map validations" do
     it "expires cache when the map is updated" do
       map_location = create(:map_location)
       mappable.map_location = map_location
-      mappable.save
+      mappable.save!
 
       expect { map_location.update(latitude: 12.34) }
         .to change { mappable.reload.updated_at }

@@ -103,7 +103,7 @@ describe "Admin settings" do
   describe "Update content types" do
 
     scenario "stores the correct mime types" do
-      setting = Setting.create(key: "upload.images.content_types", value: "image/png")
+      setting = Setting.create!(key: "upload.images.content_types", value: "image/png")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -194,7 +194,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-configuration", :js do
-      configuration_setting = Setting.create(key: "whatever")
+      configuration_setting = Setting.create!(key: "whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -216,7 +216,7 @@ describe "Admin settings" do
       end
 
       scenario "On #tab-map-configuration", :js do
-        map_setting = Setting.create(key: "map.whatever")
+        map_setting = Setting.create!(key: "map.whatever")
         admin = create(:administrator).user
         login_as(admin)
         visit admin_settings_path
@@ -233,7 +233,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-proposals", :js do
-      proposal_dashboard_setting = Setting.create(key: "proposals.whatever")
+      proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -249,7 +249,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-participation-processes", :js do
-      process_setting = Setting.create(key: "process.whatever")
+      process_setting = Setting.create!(key: "process.whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -264,7 +264,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-feature-flags", :js do
-      feature_setting = Setting.create(key: "feature.whatever")
+      feature_setting = Setting.create!(key: "feature.whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path

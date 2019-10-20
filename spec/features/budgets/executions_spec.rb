@@ -12,7 +12,7 @@ describe "Executions" do
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading) }
 
   scenario "finds budget by id or slug" do
-    budget.update(slug: "budget_slug")
+    budget.update!(slug: "budget_slug")
 
     visit budget_executions_path("budget_slug")
     within(".budgets-stats") { expect(page).to have_content budget.name }
@@ -230,11 +230,11 @@ describe "Executions" do
       create(:milestone, milestoneable: investment2, status: status2)
       create(:milestone, milestoneable: investment3, status: status2)
       investment1.milestone_tag_list.add("tag1", "tag2")
-      investment1.save
+      investment1.save!
       investment2.milestone_tag_list.add("tag2")
-      investment2.save
+      investment2.save!
       investment3.milestone_tag_list.add("tag2")
-      investment3.save
+      investment3.save!
 
       visit budget_path(budget)
 

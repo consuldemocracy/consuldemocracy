@@ -197,10 +197,10 @@ shared_examples_for "verifiable" do
       it "is true if skipped" do
         expect(user.level_two_verified?).to eq(true)
 
-        user.update(residence_verified_at: Time.current)
+        user.update!(residence_verified_at: Time.current)
         expect(user.level_two_verified?).to eq(true)
 
-        user.update(confirmed_phone: "123456789", residence_verified_at: false)
+        user.update!(confirmed_phone: "123456789", residence_verified_at: false)
         expect(user.level_two_verified?).to eq(true)
       end
     end
@@ -219,26 +219,26 @@ shared_examples_for "verifiable" do
 
     describe "#verification_sms_sent?" do
       it "is true  if skipped" do
-        user.update(unconfirmed_phone: nil, sms_confirmation_code: "666")
+        user.update!(unconfirmed_phone: nil, sms_confirmation_code: "666")
         expect(user.verification_sms_sent?).to eq(true)
 
-        user.update(unconfirmed_phone: "666666666", sms_confirmation_code: nil)
+        user.update!(unconfirmed_phone: "666666666", sms_confirmation_code: nil)
         expect(user.verification_sms_sent?).to eq(true)
 
-        user.update(unconfirmed_phone: nil, sms_confirmation_code: nil)
+        user.update!(unconfirmed_phone: nil, sms_confirmation_code: nil)
         expect(user.verification_sms_sent?).to eq(true)
       end
     end
 
     describe "#verification_letter_sent?" do
       it "is true if skipped" do
-        user.update(letter_requested_at: nil, letter_verification_code: "666")
+        user.update!(letter_requested_at: nil, letter_verification_code: "666")
         expect(user.verification_letter_sent?).to eq(true)
 
-        user.update(letter_requested_at: Time.current, letter_verification_code: nil)
+        user.update!(letter_requested_at: Time.current, letter_verification_code: nil)
         expect(user.verification_letter_sent?).to eq(true)
 
-        user.update(letter_requested_at: nil, letter_verification_code: nil)
+        user.update!(letter_requested_at: nil, letter_verification_code: nil)
         expect(user.verification_letter_sent?).to eq(true)
       end
     end

@@ -70,7 +70,7 @@ describe ProgressBar do
   end
 
   it "cannot have another primary progress bar for the same progressable" do
-    progress_bar.save
+    progress_bar.save!
     duplicate = build(:progress_bar, progressable: progress_bar.progressable)
 
     expect(duplicate).not_to be_valid
@@ -90,7 +90,7 @@ describe ProgressBar do
     end
 
     it "can have another secondary progress bar for the same progressable" do
-      progress_bar.save
+      progress_bar.save!
       duplicate = build(:progress_bar, progressable: progress_bar.progressable)
 
       expect(duplicate).to be_valid

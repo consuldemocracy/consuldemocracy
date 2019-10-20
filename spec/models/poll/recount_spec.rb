@@ -13,11 +13,11 @@ describe Poll::Recount do
       expect(poll_recount.white_amount_log).to eq("")
 
       poll_recount.white_amount = 33
-      poll_recount.save
+      poll_recount.save!
       poll_recount.white_amount = 32
-      poll_recount.save
+      poll_recount.save!
       poll_recount.white_amount = 34
-      poll_recount.save
+      poll_recount.save!
 
       expect(poll_recount.white_amount_log).to eq(":0:33:32")
     end
@@ -28,11 +28,11 @@ describe Poll::Recount do
       expect(poll_recount.null_amount_log).to eq("")
 
       poll_recount.null_amount = 33
-      poll_recount.save
+      poll_recount.save!
       poll_recount.null_amount = 32
-      poll_recount.save
+      poll_recount.save!
       poll_recount.null_amount = 34
-      poll_recount.save
+      poll_recount.save!
 
       expect(poll_recount.null_amount_log).to eq(":0:33:32")
     end
@@ -43,11 +43,11 @@ describe Poll::Recount do
       expect(poll_recount.total_amount_log).to eq("")
 
       poll_recount.total_amount = 33
-      poll_recount.save
+      poll_recount.save!
       poll_recount.total_amount = 32
-      poll_recount.save
+      poll_recount.save!
       poll_recount.total_amount = 34
-      poll_recount.save
+      poll_recount.save!
 
       expect(poll_recount.total_amount_log).to eq(":0:33:32")
     end
@@ -60,15 +60,15 @@ describe Poll::Recount do
 
       poll_recount.white_amount = 33
       poll_recount.officer_assignment = create(:poll_officer_assignment, id: 101)
-      poll_recount.save
+      poll_recount.save!
 
       poll_recount.white_amount = 32
       poll_recount.officer_assignment = create(:poll_officer_assignment, id: 102)
-      poll_recount.save
+      poll_recount.save!
 
       poll_recount.white_amount = 34
       poll_recount.officer_assignment = create(:poll_officer_assignment, id: 103)
-      poll_recount.save
+      poll_recount.save!
 
       expect(poll_recount.white_amount_log).to eq(":0:33:32")
       expect(poll_recount.officer_assignment_id_log).to eq(":#{officer_assignment.id}:101:102")

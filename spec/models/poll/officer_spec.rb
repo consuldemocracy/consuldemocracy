@@ -10,7 +10,7 @@ describe Poll::Officer do
     end
 
     it "returns 'User deleted' if user is deleted" do
-      officer.user.destroy
+      officer.user.destroy!
 
       expect(officer.reload.name).to eq "User deleted"
     end
@@ -24,7 +24,7 @@ describe Poll::Officer do
     end
 
     it "returns 'Email deleted' if user is deleted" do
-      officer.user.destroy
+      officer.user.destroy!
 
       expect(officer.reload.email).to eq "Email deleted"
     end

@@ -322,7 +322,7 @@ describe "Poll Votation Type" do
     end
 
     scenario "existing given order is bigger than the number of answers", :js do
-      answer1.update(given_order: question.question_answers.count + 1)
+      answer1.update!(given_order: question.question_answers.count + 1)
 
       visit poll_path(poll_current)
 

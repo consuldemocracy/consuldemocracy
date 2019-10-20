@@ -37,7 +37,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   def destroy
     if @heading.can_be_deleted?
-      @heading.destroy
+      @heading.destroy!
       redirect_to headings_index, notice: t("admin.budget_headings.destroy.success_notice")
     else
       redirect_to headings_index, alert: t("admin.budget_headings.destroy.unable_notice")

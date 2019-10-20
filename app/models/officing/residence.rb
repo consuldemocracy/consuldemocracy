@@ -29,7 +29,7 @@ class Officing::Residence
 
     if user_exists?
       self.user = find_user_by_document
-      user.update(verified_at: Time.current)
+      user.update!(verified_at: Time.current)
     else
       user_params = {
         document_number:       document_number,

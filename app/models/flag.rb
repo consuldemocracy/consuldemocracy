@@ -12,7 +12,7 @@ class Flag < ApplicationRecord
 
   def self.flag(user, flaggable)
     return false if flagged?(user, flaggable)
-    create(user: user, flaggable: flaggable)
+    create!(user: user, flaggable: flaggable)
   end
 
   def self.unflag(user, flaggable)

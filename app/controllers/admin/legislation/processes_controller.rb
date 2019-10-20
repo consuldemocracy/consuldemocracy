@@ -46,7 +46,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   end
 
   def destroy
-    @process.destroy
+    @process.destroy!
     notice = t("admin.legislation.processes.destroy.notice")
     redirect_to admin_legislation_processes_path, notice: notice
   end
@@ -93,7 +93,7 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
     def set_tag_list
       @process.set_tag_list_on(:customs, process_params[:custom_list])
-      @process.save
+      @process.save!
     end
 
     def resource

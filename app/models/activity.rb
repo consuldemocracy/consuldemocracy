@@ -15,7 +15,7 @@ class Activity < ApplicationRecord
   scope :for_render, -> { includes(user: [:moderator, :administrator]).includes(:actionable) }
 
   def self.log(user, action, actionable)
-    create(user: user, action: action.to_s, actionable: actionable)
+    create!(user: user, action: action.to_s, actionable: actionable)
   end
 
   def self.on(actionable)

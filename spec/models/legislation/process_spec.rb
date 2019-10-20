@@ -162,12 +162,12 @@ describe Legislation::Process do
 
   describe "#status" do
     it "detects planned phase" do
-      process.update_attributes(start_date: Date.current + 2.days)
+      process.update_attributes!(start_date: Date.current + 2.days)
       expect(process.status).to eq(:planned)
     end
 
     it "detects closed phase" do
-      process.update_attributes(end_date: Date.current - 2.days)
+      process.update_attributes!(end_date: Date.current - 2.days)
       expect(process.status).to eq(:closed)
     end
 

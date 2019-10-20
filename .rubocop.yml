@@ -51,9 +51,6 @@ Rails/OutputSafety:
 Rails/ReversibleMigration:
   Enabled: true
 
-Rails/SaveBang:
-  Enabled: true
-
 Rails/SkipsModelValidations:
   Enabled: true
 

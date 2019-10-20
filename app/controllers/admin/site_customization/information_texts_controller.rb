@@ -17,9 +17,9 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
           if value == t(content[:id], locale: locale) || value.match(/translation missing/)
             next
           else
-            text = I18nContent.find_or_create_by(key: content[:id])
+            text = I18nContent.find_or_create_by!(key: content[:id])
             Globalize.locale = locale
-            text.update(value: value)
+            text.update!(value: value)
           end
         end
       end

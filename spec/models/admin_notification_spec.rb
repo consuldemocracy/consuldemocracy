@@ -81,7 +81,7 @@ describe AdminNotification do
     before do
       2.times { create(:user) }
       erased_user.erase
-      admin_notification.update(segment_recipient: "all_users")
+      admin_notification.update!(segment_recipient: "all_users")
     end
 
     it "returns list of all active users" do

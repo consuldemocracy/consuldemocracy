@@ -45,7 +45,7 @@ class LocalCensusRecords::Import
       if local_census_record.invalid?
         invalid_records << local_census_record
       else
-        local_census_record.save
+        local_census_record.save!
         created_records << local_census_record
       end
     end

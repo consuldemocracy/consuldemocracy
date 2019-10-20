@@ -55,7 +55,7 @@ describe "Signature sheets" do
     scenario "Budget Investment" do
       investment = create(:budget_investment)
       budget = investment.budget
-      budget.update(phase: "selecting")
+      budget.update!(phase: "selecting")
 
       visit new_admin_signature_sheet_path
 
@@ -108,7 +108,7 @@ describe "Signature sheets" do
     scenario "Budget Investment" do
       investment = create(:budget_investment)
       budget = investment.budget
-      budget.update(phase: "selecting")
+      budget.update!(phase: "selecting")
 
       visit new_admin_signature_sheet_path
 
