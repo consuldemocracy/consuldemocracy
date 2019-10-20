@@ -32,7 +32,7 @@ class Management::UsersController < Management::BaseController
 
   def logout
     destroy_session
-    redirect_to management_root_url, notice: t("management.sessions.signed_out_managed_user")
+    redirect_to management_root_path, notice: t("management.sessions.signed_out_managed_user")
   end
 
   private

@@ -103,7 +103,7 @@ describe "Proposals" do
 
       within("ul.pagination") do
         expect(page).to have_content("1")
-        expect(page).to have_link("2", href: "http://www.example.com/proposals?page=2")
+        expect(page).to have_link("2", href: "/proposals?page=2")
         expect(page).not_to have_content("3")
         click_link "Next", exact: false
       end

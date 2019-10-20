@@ -55,10 +55,6 @@ module ApplicationHelper
     SiteCustomization::ContentBlock.block_for(name, locale)
   end
 
-  def kaminari_path(url)
-    "#{root_url.chomp("\/")}#{url}"
-  end
-
   def self.asset_data_base64(path)
     asset = (Rails.application.assets || ::Sprockets::Railtie.build_environment(Rails.application))
                                                              .find_asset(path)

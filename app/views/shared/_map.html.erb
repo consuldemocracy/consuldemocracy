@@ -20,7 +20,7 @@
         <% @geozones.each do |geozone| %>
           <area shape="poly"
                 coords="<%= geozone.html_map_coordinates %>"
-                href="<%= polymorphic_url(@resource, search: geozone.name) %>"
+                href="<%= polymorphic_path(@resource, search: geozone.name) %>"
                 title="<%= geozone.name %>"
                 alt="<%= geozone.name %>">
         <% end %>

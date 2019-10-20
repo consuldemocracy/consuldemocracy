@@ -24,7 +24,7 @@
                 limit: @limit) %>
           </strong>
           <%= link_to t("shared.suggest.#{resource_name}.see_all"),
-                      polymorphic_url(resource_model, search: @search_terms) %>
+                      polymorphic_path(resource_model, search: @search_terms) %>
         </p>
       <% end %>
 

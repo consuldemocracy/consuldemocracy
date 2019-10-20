@@ -9,8 +9,8 @@ describe "Email campaigns" do
   end
 
   scenario "Track email templates" do
-    3.times { visit root_url(track_id: campaign1.track_id) }
-    5.times { visit root_url(track_id: campaign2.track_id) }
+    3.times { visit root_path(track_id: campaign1.track_id) }
+    5.times { visit root_path(track_id: campaign2.track_id) }
 
     visit admin_stats_path
     click_link campaign1.name
@@ -24,8 +24,8 @@ describe "Email campaigns" do
   end
 
   scenario "Do not track erroneous track_ids" do
-    visit root_url(track_id: campaign1.track_id)
-    visit root_url(track_id: "999")
+    visit root_path(track_id: campaign1.track_id)
+    visit root_path(track_id: "999")
 
     visit admin_stats_path
     click_link campaign1.name
