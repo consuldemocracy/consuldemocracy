@@ -201,10 +201,10 @@ class Budget
     end
 
     def self.search_by_title_or_id(title_or_id)
-      return where(id: title_or_id) if title_or_id =~ /^[0-9]+$/
+      with_joins = with_translations(Globalize.fallbacks(I18n.locale))
 
-      with_translations(Globalize.fallbacks(I18n.locale)).
-        where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%")
+      with_joins.where(id: title_or_id).
+        or(with_joins.where("budget_investment_translations.title ILIKE ?", "%#{title_or_id}%"))
     end
 
     def searchable_values
