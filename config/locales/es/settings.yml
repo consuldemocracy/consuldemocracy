@@ -124,6 +124,7 @@ es:
       remote_census_description: "Permite configurar la conexión al censo remoto de cada institución"
       valuation_comment_notification: "Notificar comentarios de evaluación"
       valuation_comment_notification_description: "Envía un email a todos los usuarios menos al que haya comentado asociados a un presupuesto participativo cuando se cree un nuevo comentario de evaluación"
+      graphql_api: "API GraphQL"
     remote_census:
       general:
         endpoint: "Endpoint"

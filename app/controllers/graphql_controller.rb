@@ -1,4 +1,7 @@
 class GraphqlController < ApplicationController
+  include FeatureFlags
+
+  feature_flag :graphql_api
 
   skip_before_action :verify_authenticity_token
   skip_authorization_check
