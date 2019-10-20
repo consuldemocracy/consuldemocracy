@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190607160900) do
+ActiveRecord::Schema.define(version: 20191020153455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -170,10 +170,12 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "budget_groups", force: :cascade do |t|
-    t.integer "budget_id"
-    t.string  "name",                 limit: 50
-    t.string  "slug"
-    t.integer "max_votable_headings",            default: 1
+    t.integer  "budget_id"
+    t.string   "name",                 limit: 50
+    t.string   "slug"
+    t.integer  "max_votable_headings",            default: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["budget_id"], name: "index_budget_groups_on_budget_id", using: :btree
   end
 
@@ -188,14 +190,16 @@ ActiveRecord::Schema.define(version: 20190607160900) do
   end
 
   create_table "budget_headings", force: :cascade do |t|
-    t.integer "group_id"
-    t.string  "name",                 limit: 50
-    t.bigint  "price"
-    t.integer "population"
-    t.string  "slug"
-    t.boolean "allow_custom_content",            default: false
-    t.text    "latitude"
-    t.text    "longitude"
+    t.integer  "group_id"
+    t.string   "name",                 limit: 50
+    t.bigint   "price"
+    t.integer  "population"
+    t.string   "slug"
+    t.boolean  "allow_custom_content",            default: false
+    t.text     "latitude"
+    t.text     "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
   end
 
