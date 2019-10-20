@@ -62,7 +62,7 @@ class Newsletter < ApplicationRecord
     end
 
     def log_delivery(recipient_email)
-      user = User.where(email: recipient_email).first
+      user = User.find_by(email: recipient_email)
       Activity.log(user, :email, self)
     end
 end

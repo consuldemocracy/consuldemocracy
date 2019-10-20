@@ -19,7 +19,7 @@ class Verification::Email
   end
 
   def user
-    User.where(document_number: verified_user.document_number).first
+    User.find_by(document_number: verified_user.document_number)
   end
 
   def generate_token

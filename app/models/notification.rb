@@ -45,7 +45,7 @@ class Notification < ApplicationRecord
   end
 
   def self.existent(user, notifiable)
-    unread.where(user: user, notifiable: notifiable).first
+    unread.find_by(user: user, notifiable: notifiable)
   end
 
   def notifiable_action

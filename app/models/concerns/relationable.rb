@@ -6,7 +6,7 @@ module Relationable
   end
 
   def find_related_content(relationable)
-    RelatedContent.where(parent_relationable: self, child_relationable: relationable).first
+    RelatedContent.find_by(parent_relationable: self, child_relationable: relationable)
   end
 
   def relationed_contents

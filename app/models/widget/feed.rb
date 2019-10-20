@@ -8,7 +8,7 @@ class Widget::Feed < ApplicationRecord
   end
 
   def setting
-    Setting.where(key: "homepage.widgets.feeds.#{kind}").first
+    Setting.find_by(key: "homepage.widgets.feeds.#{kind}")
   end
 
   def self.active

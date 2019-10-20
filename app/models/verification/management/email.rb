@@ -13,7 +13,7 @@ class Verification::Management::Email
   delegate :username, to: :user, allow_nil: true
 
   def user
-    @user ||= User.where(email: email).first
+    @user ||= User.find_by(email: email)
   end
 
   def user?

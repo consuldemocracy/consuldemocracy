@@ -23,7 +23,7 @@ class Poll
     end
 
     def assignment_on_poll(poll)
-      booth_assignments.where(poll: poll).first
+      booth_assignments.find_by(poll: poll)
     end
   end
 end

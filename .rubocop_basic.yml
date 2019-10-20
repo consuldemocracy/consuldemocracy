@@ -156,6 +156,9 @@ Rails/ApplicationRecord:
 Rails/Date:
   Enabled: true
 
+Rails/FindBy:
+  Enabled: true
+
 Rails/HttpPositionalArguments:
   Enabled: true
 

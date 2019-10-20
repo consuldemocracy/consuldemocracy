@@ -56,7 +56,7 @@ class Poll
       def fill_stats_fields
         if in_census?
           self.gender = census_api_response.gender
-          self.geozone_id = Geozone.select(:id).where(census_code: census_api_response.district_code).first&.id
+          self.geozone_id = Geozone.select(:id).find_by(census_code: census_api_response.district_code)&.id
           self.age = voter_age(census_api_response.date_of_birth)
         end
       end
