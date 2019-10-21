@@ -4,12 +4,12 @@
     initialize: function() {
       $("[data-js-banner-title]").on({
         change: function() {
-          $("#js-banner-title").html($(this).val());
+          $("#js-banner-title").text($(this).val());
         }
       });
       $("[data-js-banner-description]").on({
         change: function() {
-          $("#js-banner-description").html($(this).val());
+          $("#js-banner-description").text($(this).val());
         }
       });
       $("[name='banner[background_color]']").on({

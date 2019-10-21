@@ -806,9 +806,9 @@ en:
       remove_language: Remove language
       add_language: Add language
       languages_in_use:
-        zero: "<span class='js-languages-count'>0</span> languages in use"
-        one: "<span class='js-languages-count'>1</span> language in use"
-        other: "<span class='js-languages-count'>%{count}</span> languages in use"
+        zero: "<span class='count'>0</span> <span class='description'>languages in use</span>"
+        one: "<span class='count'>1</span> <span class='description'>language in use</span>"
+        other: "<span class='count'>%{count}</span> <span class='description'>languages in use</span>"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
