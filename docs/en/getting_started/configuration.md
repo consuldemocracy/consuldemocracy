@@ -10,8 +10,8 @@
 
 3. If you are asked to Authorize Travis CI to access your Github account, check the organization or user where you have your consul fork at the bottom and click the "**Authorize travis-ci**" button.
 
-4. Visita [tu perfil en Travis](https://travis-ci.org/profile/) y habilita Travis para tu fork de Consul en el listado de repositorios.
+4. Visit your [Travis profile](https://travis-ci.org/profile/) and enable Travis for your Consul fork in the list of repositories.
 
-5. Haz click en el icon de un piñón a la derecha del respositorio para ver las builds.
+5. Click on the sprocket icon to the right of the repository to see the builds.
 
-6. Comprueba que todo está bien configurado creando un Pull Request de prueba (editar un simple fichero .md podría servir).
+6. Check that everything is well configured by creating a test Pull Request (editing a simple .md file could help).
