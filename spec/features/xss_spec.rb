@@ -153,4 +153,13 @@ describe "Cross-Site Scripting protection", :js do
 
     expect(page.text).not_to be_empty
   end
+
+  scenario "legislation version body filters script tags but not header IDs" do
+    version = create(:legislation_draft_version, :published, body: "# Title 1\n#{attack_code}")
+
+    visit legislation_process_draft_version_path(version.process, version)
+
+    expect(page.text).not_to be_empty
+    expect(page).to have_css "h1#title-1", text: "Title 1"
+  end
 end
