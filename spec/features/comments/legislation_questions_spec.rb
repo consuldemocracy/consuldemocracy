@@ -226,7 +226,7 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Can't create comments if debate phase is not open", :js do
-    process.update_attributes!(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.day)
+    process.update!(debate_start_date: Date.current - 2.days, debate_end_date: Date.current - 1.day)
     login_as(user)
 
     visit legislation_process_question_path(legislation_question.process, legislation_question)

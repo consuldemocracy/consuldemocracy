@@ -38,7 +38,7 @@ describe "Budgets" do
       heading1 = create(:budget_heading, group: group1)
       heading2 = create(:budget_heading, group: group2)
 
-      budget.update_attributes!(phase: "informing")
+      budget.update!(phase: "informing")
 
       visit budgets_path
 
@@ -51,7 +51,7 @@ describe "Budgets" do
         expect(page).to have_link("See all phases")
       end
 
-      budget.update_attributes!(phase: "publishing_prices")
+      budget.update!(phase: "publishing_prices")
       visit budgets_path
 
       within("#budget_heading") do
@@ -114,7 +114,7 @@ describe "Budgets" do
     end
 
     scenario "Show informing index without links" do
-      budget.update_attributes!(phase: "informing")
+      budget.update!(phase: "informing")
       heading = create(:budget_heading, budget: budget)
 
       visit budgets_path
@@ -132,7 +132,7 @@ describe "Budgets" do
     end
 
     scenario "Show finished index without heading links" do
-      budget.update_attributes!(phase: "finished")
+      budget.update!(phase: "finished")
       heading = create(:budget_heading, budget: budget)
 
       visit budgets_path
