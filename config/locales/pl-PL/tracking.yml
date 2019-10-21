@@ -16,7 +16,7 @@ pl:
       index:
         assigned_to: "Przypisany do %{tracker}"
         title: Projekty inwestycyjne
-        edit: Edytuj kluczowe etapy
+        edit: Edytuj wydarzenia
         table_id: Numer ID
         table_title: Tytuł
         table_heading_name: Nazwa nagłówka
@@ -31,3 +31,31 @@ pl:
         undefined: "Niezdefiniowany"
         responsibles: Odpowiedzialni
         assigned_admin: Przypisany administrator
+    milestones:
+      index:
+        table_id: "Numer ID"
+        table_title: "Tytuł"
+        table_description: "Opis"
+        table_publication_date: "Data publikacji"
+        table_status: Status
+        table_actions: "Czynności"
+        delete: "Usuń wydarzenie"
+        no_milestones: "Brak zdefiniowanych wydarzeń"
+        image: "Obraz"
+        show_image: "Wyświetl obraz"
+        documents: "Dokumenty"
+        milestone: Wydarzenie
+        new_milestone: Utwórz wydarzenie
+      form:
+        admin_statuses: Statusy zarządzania
+        no_statuses_defined: Brak zdefiniowanych statusów
+      new:
+        creating: Utwórz wydarzenie
+      edit:
+        title: Edytuj wydarzenie
+      create:
+        notice: Pomyślnie utworzono wydarzenie!
+      update:
+        notice: Pomyślnie zaaktualizowano wydarzenie
+      delete:
+        notice: Pomyślnie usunięto wydarzenie
