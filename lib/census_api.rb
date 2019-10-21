@@ -79,8 +79,12 @@ class CensusApi
           nivel: 3 }}
     end
 
+    def end_point_defined?
+      Rails.application.secrets.census_api_end_point.present?
+    end
+
     def end_point_available?
-      Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
+      (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
     end
 
     def stubbed_response(document_type, document_number)
