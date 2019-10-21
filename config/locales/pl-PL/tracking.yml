@@ -1,1 +1,33 @@
 pl:
+  tracking:
+    menu:
+      title: Śledzenie
+      budgets: Budżety partycypacyjne
+    budgets:
+      index:
+        title: Budżety partycypacyjne
+        table_name: Nazwa
+        table_phase: Etap
+        table_assigned_investments_tracking_open: Projekty inwestycyjne powiązane ze śledzeniem otwarte
+        table_actions: Czynności
+        tracking: Śledzenie
+        no_budgets: "Brak budżetów"
+    budget_investments:
+      index:
+        assigned_to: "Przypisany do %{tracker}"
+        title: Projekty inwestycyjne
+        edit: Edytuj kluczowe etapy
+        table_id: Numer ID
+        table_title: Tytuł
+        table_heading_name: Nazwa nagłówka
+        table_actions: Czynności
+        no_investments: "Brak projektów inwestycyjnych."
+      show:
+        title: Projekt inwestycyjny
+        info: Informacje o autorze
+        by: Wysłane przez
+        sent: Wysłane na
+        heading: Nagłówek
+        undefined: "Niezdefiniowany"
+        responsibles: Odpowiedzialni
+        assigned_admin: Przypisany administrator
