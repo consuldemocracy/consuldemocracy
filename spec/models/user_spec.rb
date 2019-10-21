@@ -399,6 +399,15 @@ describe User do
         expect(User.active).not_to include(user3)
       end
 
+      it "returns users who have confirmed their account" do
+        user1 = create(:user, erased_at: nil, confirmed_at: Time.current)
+        user2 = create(:user, erased_at: nil, confirmed_at: Time.current)
+        user3 = create(:user, erased_at: nil, confirmed_at: nil)
+
+        expect(User.active).to match_array [user1, user2]
+        expect(User.active).not_to include(user3)
+      end
+
     end
 
     describe "erased" do
