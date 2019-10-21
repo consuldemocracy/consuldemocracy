@@ -59,3 +59,9 @@ pl:
         notice: Pomyślnie zaaktualizowano wydarzenie
       delete:
         notice: Pomyślnie usunięto wydarzenie
+    progress_bars:
+      manage: "Zarządzaj paskami postępu"
+      index:
+        title: "Pasek postępu"
+        no_progress_bars: "Brak pasków postępu"
+        new_progress_bar: "Utwórz pasek postępu"
