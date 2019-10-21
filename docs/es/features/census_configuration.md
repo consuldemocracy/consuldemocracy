@@ -1,4 +1,4 @@
-##Configurar conexión con el Censo:
+## Configurar conexión con el Censo:
 
 Este servicio tiene como objetivo poder configurar la conexión con el Censo de Ayuntamiento a través del panel de Administración sin necesidad de modificar el código de la aplicación.
 
@@ -57,7 +57,7 @@ La información a rellenar esta dividida en tres apartados:
     Ejemplo:
     ![Request Data - Method name](../../img/remote_census/request-data-method-name-es.png)
 
-  - **Estructura de la petición**: Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberán informarse. Los valores "dinámicos" relacionados con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse en blanco.
+  - **Estructura de la petición**: Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberán informarse. Los valores "dinámicos" relacionados con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null.
 
     Ejemplo:
     ![Request Data - Structure](../../img/remote_census/request-data-structure-es.png)
