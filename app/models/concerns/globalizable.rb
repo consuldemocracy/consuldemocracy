@@ -9,10 +9,6 @@ module Globalizable
     validate :check_translations_number, on: :update, if: :translations_required?
     after_validation :copy_error_to_current_translation, on: :update
 
-    def description
-      self.read_attribute(:description)&.html_safe
-    end
-
     def locales_not_marked_for_destruction
       translations.reject(&:marked_for_destruction?).map(&:locale)
     end

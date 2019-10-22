@@ -21,7 +21,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
   def check_box(attribute, options = {})
     if options[:label] != false
-      label = content_tag(:span, sanitize(label_text(object, attribute, options[:label]), class: "checkbox"))
+      label = content_tag(:span, sanitize(label_text(object, attribute, options[:label])), class: "checkbox")
 
       super(attribute, options.merge(label: label, label_options: label_options_for(options)))
     else
@@ -76,7 +76,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
 
     def help_text_id(attribute, options)
       if options[:hint]
-        "#{custom_label(attribute, nil, nil).match(/for=\"(.+)\"/)[1]}-help-text"
+        "#{custom_label(attribute, nil, nil).match(/for="([^"]+)"/)[1]}-help-text"
       end
     end
 end

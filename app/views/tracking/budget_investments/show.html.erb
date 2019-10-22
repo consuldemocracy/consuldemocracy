@@ -3,7 +3,7 @@
 <h2><%= t("tracking.budget_investments.show.title") %> <%= @investment.id %> </h2>
 <h1><%= @investment.title %></h1>
 
-<%= auto_link_already_sanitized_html @investment.description %>
+<%= auto_link_already_sanitized_html wysiwyg(@investment.description) %>
 
 <% if @investment.external_url.present? %>
   <p><%= sanitize_and_auto_link @investment.external_url %></p>

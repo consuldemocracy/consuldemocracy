@@ -16,7 +16,7 @@
                   <%= link_to recommended_path(recommended) do %>
                     <h4 class="truncate-horizontal-text"><%= recommended.title %></h4>
                   <% end %>
-                  <%= recommended.description %>
+                  <%= wysiwyg(recommended.description) %>
                 </div>
               </div>
             </li>

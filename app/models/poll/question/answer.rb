@@ -19,10 +19,6 @@ class Poll::Question::Answer < ApplicationRecord
 
   scope :visibles, -> { where(hidden: false) }
 
-  def description
-    self[:description]&.html_safe
-  end
-
   def self.order_answers(ordered_array)
     ordered_array.each_with_index do |answer_id, order|
       find(answer_id).update_attribute(:given_order, (order + 1))

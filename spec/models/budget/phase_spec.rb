@@ -205,12 +205,4 @@ describe Budget::Phase do
       end
     end
   end
-
-  describe "#sanitize_description" do
-    it "removes not allowed html entities from the description" do
-      expect do
-        first_phase.update_attributes(description: '<p><a href="/"><b>a</b></a></p> <script>javascript</script>')
-      end.to change { first_phase.description }.to('<p><a href="/">a</a></p> javascript')
-    end
-  end
 end

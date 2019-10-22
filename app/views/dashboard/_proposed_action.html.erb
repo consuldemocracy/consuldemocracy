@@ -38,10 +38,10 @@
             <small><%= t("dashboard.recommended_actions.show_description") %></small>
           </a>
           <div id="proposed_action_description_<%= dom_id(proposed_action) %>" class="hide" data-toggler=".hide">
-            <%= WYSIWYGSanitizer.new.sanitize(proposed_action.description) %>
+            <%= wysiwyg(proposed_action.description) %>
           </div>
         <% else %>
-          <%= WYSIWYGSanitizer.new.sanitize(proposed_action.description) %>
+          <%= wysiwyg(proposed_action.description) %>
         <% end %>
       <% end %>
 

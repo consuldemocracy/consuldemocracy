@@ -7,6 +7,6 @@
 
 <h1><%= @investment.title %></h1>
 
-<%= auto_link_already_sanitized_html @investment.description %>
+<%= auto_link_already_sanitized_html wysiwyg(@investment.description) %>
 
 <%= render "tracking/milestones/milestones", milestoneable: @investment %>

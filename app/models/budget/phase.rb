@@ -9,17 +9,6 @@ class Budget
     translates :summary, touch: true
     translates :description, touch: true
     include Globalizable
-
-    class Translation
-      before_validation :sanitize_description
-
-      private
-
-        def sanitize_description
-          self.description = WYSIWYGSanitizer.new.sanitize(description)
-        end
-    end
-
     include Sanitizable
 
     belongs_to :budget

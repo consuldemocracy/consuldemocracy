@@ -20,12 +20,14 @@ class AddCollaborativeLegislationTranslations < ActiveRecord::Migration[4.2]
       {
         title:     :string,
         changelog: :text,
-        body:      :text,
-        body_html: :text,
-        toc_html:  :text
+        body:      :text
       },
       { migrate_data: true }
     )
+
+    add_column :legislation_draft_version_translations, :body_html, :text
+    add_column :legislation_draft_version_translations, :toc_html, :text
+
     Legislation::QuestionOption.create_translation_table!(
       { value: :string },
       { migrate_data: true }

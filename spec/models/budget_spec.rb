@@ -37,7 +37,6 @@ describe Budget do
         Budget::Phase::PHASE_KINDS.each do |phase_kind|
           budget.phase = phase_kind
           expect(budget.description).to eq(budget.send("description_#{phase_kind}"))
-          expect(budget.description).to be_html_safe
         end
       end
     end

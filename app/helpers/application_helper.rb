@@ -36,6 +36,10 @@ module ApplicationHelper
     sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
   end
 
+  def wysiwyg(text)
+    WYSIWYGSanitizer.new.sanitize(text)
+  end
+
   def author_of?(authorable, user)
     return false if authorable.blank? || user.blank?
     authorable.author_id == user.id
