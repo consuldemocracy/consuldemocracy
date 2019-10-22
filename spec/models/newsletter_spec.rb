@@ -51,6 +51,7 @@ describe Newsletter do
 
     before do
       create(:user, newsletter: true, email: "newsletter_user@consul.dev")
+      create(:user, newsletter: true, email: "newsletter_unconfirmed_user@consul.dev", confirmed_at: nil)
       create(:user, newsletter: false, email: "no_news_user@consul.dev")
       create(:user, email: "erased_user@consul.dev").erase
       newsletter.update(segment_recipient: "all_users")

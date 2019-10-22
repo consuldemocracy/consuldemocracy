@@ -10,7 +10,7 @@ class UserSegments
                 not_supported_on_current_budget]
 
   def self.all_users
-    User.active
+    User.where(erased_at: nil).where.not(confirmed_at: nil)
   end
 
   def self.administrators
