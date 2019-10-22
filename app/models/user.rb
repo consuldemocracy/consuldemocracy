@@ -172,7 +172,7 @@ class User < ApplicationRecord
   end
 
   def verified_organization?
-    organization && organization.verified?
+    organization&.verified?
   end
 
   def official?

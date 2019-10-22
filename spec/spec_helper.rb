@@ -102,7 +102,7 @@ RSpec.configure do |config|
   end
 
   config.before(:each, :with_frozen_time) do
-    travel_to Time.now # TODO: use `freeze_time` after migrating to Rails 5.
+    travel_to Time.current # TODO: use `freeze_time` after migrating to Rails 5.2.
   end
 
   config.after(:each, :with_frozen_time) do
@@ -114,8 +114,11 @@ RSpec.configure do |config|
     system_zone = ActiveSupport::TimeZone.new("Madrid")
 
     allow(Time).to receive(:zone).and_return(application_zone)
-    allow(Time).to receive(:now).and_return(Date.current.end_of_day.in_time_zone(system_zone))
-    allow(Date).to receive(:today).and_return(Time.now.to_date)
+
+    system_time_at_application_end_of_day = Date.current.end_of_day.in_time_zone(system_zone)
+
+    allow(Time).to receive(:now).and_return(system_time_at_application_end_of_day)
+    allow(Date).to receive(:today).and_return(system_time_at_application_end_of_day.to_date)
   end
 
   config.before(:each, :with_non_utc_time_zone) do

@@ -217,6 +217,7 @@ describe "Notifications" do
       Notification.send_pending
 
       now = Notification.first_batch_run_at
+
       first_batch_run_at  = now.change(usec: 0)
       second_batch_run_at = (now + 1.second).change(usec: 0)
       third_batch_run_at  = (now + 2.seconds).change(usec: 0)

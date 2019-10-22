@@ -51,7 +51,7 @@ class Verification::LetterController < ApplicationController
 
     def login_via_form
       user = User.find_by email: letter_params[:email]
-      if user && user.valid_password?(letter_params[:password])
+      if user&.valid_password?(letter_params[:password])
         sign_in(user)
       end
     end
