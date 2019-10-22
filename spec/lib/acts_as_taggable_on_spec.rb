@@ -45,26 +45,6 @@ describe ActsAsTaggableOn do
   end
 
   describe "Tag" do
-    describe "#recalculate_custom_counter_for" do
-      it "updates the counters of proposals and debates, taking into account hidden ones" do
-        tag = Tag.create(name: "foo")
-
-        create(:proposal, tag_list: "foo")
-        create(:proposal, :hidden, tag_list: "foo")
-
-        create(:debate, tag_list: "foo")
-        create(:debate, :hidden, tag_list: "foo")
-
-        tag.update(debates_count: 0, proposals_count: 0)
-
-        tag.recalculate_custom_counter_for("Debate")
-        expect(tag.debates_count).to eq(1)
-
-        tag.recalculate_custom_counter_for("Proposal")
-        expect(tag.proposals_count).to eq(1)
-      end
-    end
-
     describe "public_for_api scope" do
 
       it "returns tags whose kind is NULL and have at least one tagging whose taggable is not hidden" do
