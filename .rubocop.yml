@@ -57,9 +57,6 @@ Rails/SaveBang:
 Rails/SkipsModelValidations:
   Enabled: true
 
-Security/Eval:
-  Enabled: true
-
 Security/JSONLoad:
   Enabled: true
 

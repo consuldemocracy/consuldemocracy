@@ -255,6 +255,9 @@ RSpec/ScatteredSetup:
 RSpec/VoidExpect:
   Enabled: true
 
+Security/Eval:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
