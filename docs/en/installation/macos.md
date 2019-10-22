@@ -16,7 +16,7 @@ You can download git from: [git-scm.com/download/mac](https://git-scm.com/downlo
 
 ## Ruby and rbenv
 
-OS X already comes with a preinstalled Ruby version, but it's quite old and we need a newer one (2.3.2). One of the multiple ways of installing Ruby in OS X is through *rbenv*. The installation instructions are in its GitHub repository and are pretty straight-forward:
+OS X already comes with a preinstalled Ruby version, but it's quite old and we need a newer one (2.4.9). One of the multiple ways of installing Ruby in OS X is through *rbenv*. The installation instructions are in its GitHub repository and are pretty straight-forward:
 
 [github.com/rbenv/rbenv](https://github.com/rbenv/rbenv)
 

@@ -20,7 +20,7 @@ OS X ya viene con una versión preinstalada de ruby, pero es bastante vieja y en
 
 [github.com/rbenv/rbenv](https://github.com/rbenv/rbenv)
 
-Después instala la versión de Ruby 2.3.2
+Después instala la versión de Ruby 2.4.9
 
 ## Bundler
 
