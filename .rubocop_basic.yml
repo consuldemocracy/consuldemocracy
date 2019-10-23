@@ -220,6 +220,9 @@ Rails/RelativeDateConstant:
 Rails/RequestReferer:
   Enabled: true
 
+Rails/ReversibleMigration:
+  Enabled: true
+
 Rails/SafeNavigation:
   Enabled: true
   ConvertTry: true
