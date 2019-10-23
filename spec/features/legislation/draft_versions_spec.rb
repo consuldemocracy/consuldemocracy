@@ -226,6 +226,17 @@ describe "Legislation Draft Versions" do
       click_button "Publish comment"
       expect(page).to have_content "My interesting comment"
     end
+
+    scenario "Publish new comment with errors for an existing annotation" do
+      create(:legislation_annotation, draft_version: draft_version)
+
+      visit legislation_process_draft_version_path(draft_version.process, draft_version)
+      find(:css, ".annotator-hl").double_click
+      find(:css, ".annotator-adder button").click
+      click_button "Publish Comment"
+
+      expect(page).to have_content "Comment can't be blank"
+    end
   end
 
   context "Merged annotations", :js do

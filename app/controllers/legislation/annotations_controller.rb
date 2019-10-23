@@ -39,8 +39,8 @@ class Legislation::AnnotationsController < Legislation::BaseController
 
     @annotation = existing_annotation
     if @annotation.present?
-      comment = @annotation.comments.create(body: annotation_params[:text], user: current_user)
-      if comment.present?
+      comment = @annotation.comments.build(body: annotation_params[:text], user: current_user)
+      if comment.save
         render json: @annotation.to_json
       else
         render json: comment.errors.full_messages, status: :unprocessable_entity
