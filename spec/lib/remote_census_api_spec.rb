@@ -65,15 +65,15 @@ describe RemoteCensusApi do
 
     before do
       Setting["feature.remote_census"] = true
-      Setting["remote_census.request.structure"] = "{ request:
-                                                      { codigo_institucion: 1,
-                                                        codigo_portal: 1,
-                                                        codigo_usuario: 1,
-                                                        documento: 'xxx',
-                                                        tipo_documento: 'xxx',
-                                                        codigo_idioma: '102',
-                                                        nivel: '3' }
-                                                    }"
+      Setting["remote_census.request.structure"] = '{ "request":
+                                                      { "codigo_institucion": 1,
+                                                        "codigo_portal": 1,
+                                                        "codigo_usuario": 1,
+                                                        "documento": null,
+                                                        "tipo_documento": null,
+                                                        "codigo_idioma": 102,
+                                                        "nivel": 3 }
+                                                    }'
       Setting["remote_census.request.document_type"] = "request.tipo_documento"
       Setting["remote_census.request.document_number"] = "request.documento"
       Setting["remote_census.request.date_of_birth"] = nil
@@ -86,14 +86,14 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, nil, nil)
 
-      expect(request).to eq({ :request =>
-                             { :codigo_institucion => 1,
-                              :codigo_portal => 1,
-                              :codigo_usuario => 1,
-                              :documento => "0123456",
-                              :tipo_documento => "1",
-                              :codigo_idioma => "102",
-                              :nivel => "3" }
+      expect(request).to eq({ "request" =>
+                             { "codigo_institucion" => 1,
+                               "codigo_portal" => 1,
+                               "codigo_usuario" => 1,
+                               "documento" => "0123456",
+                               "tipo_documento" => "1",
+                               "codigo_idioma" => 102,
+                               "nivel" => 3 }
                              })
     end
 
@@ -105,29 +105,29 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
 
-      expect(request).to eq({ :request =>
-                             { :codigo_institucion => 1,
-                              :codigo_portal => 1,
-                              :codigo_usuario => 1,
-                              :documento => "0123456",
-                              :tipo_documento => "1",
-                              :codigo_idioma => "102",
-                              :nivel => "3" }
-                             })
+      expect(request).to eq({ "request" =>
+                            { "codigo_institucion" => 1,
+                              "codigo_portal" => 1,
+                              "codigo_usuario" => 1,
+                              "documento" => "0123456",
+                              "tipo_documento" => "1",
+                              "codigo_idioma" => 102,
+                              "nivel" => 3 }
+                            })
     end
 
     it "when send date_of_birth and postal_code but are configured" do
-      Setting["remote_census.request.structure"] = "{ request:
-                                                      { codigo_institucion: 1,
-                                                        codigo_portal: 1,
-                                                        codigo_usuario: 1,
-                                                        documento: nil,
-                                                        tipo_documento: nil,
-                                                        fecha_nacimiento: nil,
-                                                        codigo_postal: nil,
-                                                        codigo_idioma: '102',
-                                                        nivel: '3' }
-                                                    }"
+      Setting["remote_census.request.structure"] = '{ "request":
+                                                      { "codigo_institucion": 1,
+                                                        "codigo_portal": 1,
+                                                        "codigo_usuario": 1,
+                                                        "documento": "nil",
+                                                        "tipo_documento": "null",
+                                                        "fecha_nacimiento": "null",
+                                                        "codigo_postal": "nil",
+                                                        "codigo_idioma": 102,
+                                                        "nivel": 3 }
+                                                    }'
       Setting["remote_census.request.date_of_birth"] = "request.fecha_nacimiento"
       Setting["remote_census.request.postal_code"] = "request.codigo_postal"
       document_type = "1"
@@ -137,17 +137,17 @@ describe RemoteCensusApi do
 
       request = RemoteCensusApi.new.send(:request, document_type, document_number, date_of_birth, postal_code)
 
-      expect(request).to eq({ :request =>
-                             { :codigo_institucion => 1,
-                              :codigo_portal => 1,
-                              :codigo_usuario => 1,
-                              :documento => "0123456",
-                              :tipo_documento => "1",
-                              :fecha_nacimiento => "1980-01-01",
-                              :codigo_postal => "28001",
-                              :codigo_idioma => "102",
-                              :nivel => "3" }
-                             })
+      expect(request).to eq({ "request" =>
+                            { "codigo_institucion" => 1,
+                              "codigo_portal" => 1,
+                              "codigo_usuario" => 1,
+                              "documento" => "0123456",
+                              "tipo_documento" => "1",
+                              "fecha_nacimiento" => "1980-01-01",
+                              "codigo_postal" => "28001",
+                              "codigo_idioma" => 102,
+                              "nivel" => 3 }
+                            })
     end
 
   end

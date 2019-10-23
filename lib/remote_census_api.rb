@@ -16,7 +16,7 @@ class RemoteCensusApi
     end
 
     def extract_value(path_value)
-      path = parse_path(path_value)
+      path = parse_response_path(path_value)
       return nil unless path.present?
       @body.dig(*path)
     end
@@ -63,7 +63,7 @@ class RemoteCensusApi
       "#{extract_value(path_value_name)} #{extract_value(path_value_surname)}"
     end
 
-    def parse_path(path_value)
+    def parse_response_path(path_value)
       path_value.split(".").map { |section| section.to_sym } if path_value.present?
     end
   end
@@ -84,7 +84,7 @@ class RemoteCensusApi
     end
 
     def request(document_type, document_number, date_of_birth, postal_code)
-      structure = eval(Setting["remote_census.request.structure"])
+      structure = JSON.parse(Setting["remote_census.request.structure"])
 
       fill_in(structure, Setting["remote_census.request.document_type"], document_type)
       fill_in(structure, Setting["remote_census.request.document_number"], document_number)
@@ -99,13 +99,12 @@ class RemoteCensusApi
     end
 
     def fill_in(structure, path_value, value)
-      path = parse_path(path_value)
-
+      path = parse_request_path(path_value)
       update_value(structure, path, value) if path.present?
     end
 
-    def parse_path(path_value)
-      path_value.split(".").map { |section| section.to_sym } if path_value.present?
+    def parse_request_path(path_value)
+      path_value.split(".") if path_value.present?
     end
 
     def update_value(structure, path, value)
