@@ -34,9 +34,7 @@ describe "Documents" do
     visit admin_answer_documents_path(answer)
     expect(page).to have_content(document.title)
 
-    accept_confirm "Are you sure?" do
-      click_link "Delete"
-    end
+    accept_confirm { click_link "Delete" }
 
     expect(page).not_to have_content(document.title)
   end
