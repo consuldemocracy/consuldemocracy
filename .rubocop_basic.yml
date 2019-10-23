@@ -156,6 +156,10 @@ Rails/ApplicationRecord:
 Rails/Date:
   Enabled: true
 
+Rails/DynamicFindBy:
+  Enabled: true
+  Severity: refactor
+
 Rails/FindBy:
   Enabled: true
 

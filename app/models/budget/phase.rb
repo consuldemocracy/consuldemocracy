@@ -30,7 +30,7 @@ class Budget
     scope :published,         -> { enabled.where.not(kind: "drafting") }
 
     PHASE_KINDS.each do |phase|
-      define_singleton_method(phase) { find_by_kind(phase) }
+      define_singleton_method(phase) { find_by(kind: phase) }
     end
 
     def next_enabled_phase

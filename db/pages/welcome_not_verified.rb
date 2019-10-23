@@ -1,4 +1,4 @@
-if SiteCustomization::Page.find_by_slug("welcome_not_verified").nil?
+if SiteCustomization::Page.find_by(slug: "welcome_not_verified").nil?
   page = SiteCustomization::Page.new(slug: "welcome_not_verified", status: "published")
   page.title = I18n.t("welcome.welcome.title")
 
