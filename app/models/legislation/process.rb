@@ -54,6 +54,7 @@ class Legislation::Process < ApplicationRecord
   validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
 
+  class << self; undef :open; end
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current) }
   scope :active, -> { where("end_date >= ?", Date.current) }
   scope :past, -> { where("end_date < ?", Date.current) }
