@@ -1,5 +1,4 @@
 class AddPollTranslations < ActiveRecord::Migration[4.2]
-
   def self.up
     Poll.create_translation_table!(
       {
@@ -14,5 +13,4 @@ class AddPollTranslations < ActiveRecord::Migration[4.2]
   def self.down
     Poll.drop_translation_table!
   end
-
 end

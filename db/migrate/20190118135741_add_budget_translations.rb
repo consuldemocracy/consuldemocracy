@@ -1,5 +1,4 @@
 class AddBudgetTranslations < ActiveRecord::Migration[4.2]
-
   def self.up
     Budget.create_translation_table!(
       {
@@ -12,5 +11,4 @@ class AddBudgetTranslations < ActiveRecord::Migration[4.2]
   def self.down
     Budget.drop_translation_table!
   end
-
 end

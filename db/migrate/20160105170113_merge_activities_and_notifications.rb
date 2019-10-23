@@ -6,5 +6,4 @@ class MergeActivitiesAndNotifications < ActiveRecord::Migration[4.2]
       t.references :notifiable, polymorphic: true
     end
   end
-
 end

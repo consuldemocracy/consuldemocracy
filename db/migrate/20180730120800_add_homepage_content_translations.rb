@@ -1,5 +1,4 @@
 class AddHomepageContentTranslations < ActiveRecord::Migration[4.2]
-
   def self.up
     Widget::Card.create_translation_table!(
       {
@@ -16,4 +15,3 @@ class AddHomepageContentTranslations < ActiveRecord::Migration[4.2]
     Widget::Card.drop_translation_table!
   end
 end
-
