@@ -51,7 +51,7 @@ describe "Admin Budgets" do
       visit admin_budgets_path
 
       within "#budget_#{budget.id}" do
-        expect(page).to have_link("Admin ballots", admin_poll_path(poll))
+        expect(page).to have_link "Admin ballots", href: admin_poll_booth_assignments_path(poll)
       end
     end
 
