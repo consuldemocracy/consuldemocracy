@@ -55,6 +55,7 @@ class Budget < ApplicationRecord
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
   scope :finished, -> { where(phase: "finished") }
 
+  class << self; undef :open; end
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
