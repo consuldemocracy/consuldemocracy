@@ -45,9 +45,6 @@ Rails/InverseOf:
 Rails/NotNullColumn:
   Enabled: true
 
-Rails/OutputSafety:
-  Enabled: true
-
 Rails/ReversibleMigration:
   Enabled: true
 
