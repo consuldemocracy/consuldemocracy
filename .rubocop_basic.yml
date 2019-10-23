@@ -191,7 +191,16 @@ Rails/DynamicFindBy:
   Enabled: true
   Severity: refactor
 
+Rails/EnumUniqueness:
+  Enabled: true
+
+Rails/EnvironmentComparison:
+  Enabled: true
+
 Rails/FindBy:
+  Enabled: true
+
+Rails/FindEach:
   Enabled: true
 
 Rails/HttpPositionalArguments:

@@ -15,16 +15,7 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Rails/EnumUniqueness:
-  Enabled: true
-
-Rails/EnvironmentComparison:
-  Enabled: true
-
 Rails/Exit:
-  Enabled: true
-
-Rails/FindEach:
   Enabled: true
 
 Rails/HasAndBelongsToMany:
