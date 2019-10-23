@@ -115,6 +115,18 @@ describe Budget::Phase do
     end
   end
 
+  describe "#save" do
+    it "touches the budget when it's updated" do
+      budget = create(:budget)
+
+      travel(10.seconds) do
+        budget.current_phase.update!(enabled: false)
+
+        expect(budget.updated_at).to eq Time.current
+      end
+    end
+  end
+
   describe "#adjust_date_ranges" do
     let(:prev_enabled_phase) { second_phase.prev_enabled_phase }
     let(:next_enabled_phase) { second_phase.next_enabled_phase }
