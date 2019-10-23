@@ -10,8 +10,7 @@ class CreateBanners < ActiveRecord::Migration[4.2]
       t.date     :post_ended_at
       t.datetime :hidden_at
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
 
     add_index :banners, :hidden_at

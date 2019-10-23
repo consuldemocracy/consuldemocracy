@@ -28,8 +28,7 @@ class CreateBudgetInvestments < ActiveRecord::Migration[4.2]
 
       t.tsvector "tsv"
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
 
     add_index :budget_investments, :tsv, using: "gin"

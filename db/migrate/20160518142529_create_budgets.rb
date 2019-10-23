@@ -8,8 +8,7 @@ class CreateBudgets < ActiveRecord::Migration[4.2]
       t.string "phase", default: "on_hold", limit: 15
       t.boolean "valuating", default: false
 
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
     end
   end
 end
