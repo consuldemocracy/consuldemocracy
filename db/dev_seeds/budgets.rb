@@ -21,18 +21,18 @@ def add_image_to(imageable)
     attachment: INVESTMENT_IMAGE_FILES.sample,
     user: imageable.author
   })
-  imageable.save
+  imageable.save!
 end
 
 section "Creating Budgets" do
-  Budget.create(
+  Budget.create!(
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year - 1}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year - 1}",
     currency_symbol: I18n.t("seeds.budgets.currency"),
     phase: "finished"
   )
 
-  Budget.create(
+  Budget.create!(
     name_en: "#{I18n.t("seeds.budgets.budget", locale: :en)} #{Date.current.year}",
     name_es: "#{I18n.t("seeds.budgets.budget", locale: :es)} #{Date.current.year}",
     currency_symbol: I18n.t("seeds.budgets.currency"),

@@ -43,7 +43,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
 
     scenario "should not be present when there are no resources to translate", :js do
       skip("only index_path") if show_path?(path_name)
-      resource.destroy
+      resource.destroy!
       visit path
 
       select("Deutsch", from: "locale-switcher")
@@ -230,7 +230,7 @@ end
 
 def add_translations(resource)
   new_translation = resource.translations.first.dup
-  new_translation.update(locale: :de)
+  new_translation.update!(locale: :de)
   resource
 end
 

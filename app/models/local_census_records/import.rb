@@ -33,6 +33,10 @@ class LocalCensusRecords::Import
     true
   end
 
+  def save!
+    validate! && save
+  end
+
   private
 
     def process_row(row)
@@ -41,7 +45,7 @@ class LocalCensusRecords::Import
       if local_census_record.invalid?
         invalid_records << local_census_record
       else
-        local_census_record.save
+        local_census_record.save!
         created_records << local_census_record
       end
     end

@@ -46,7 +46,7 @@ describe LocalCensusRecords::Import do
 
   context "#save" do
     it "Create valid local census records with provided values" do
-      import.save
+      import.save!
       local_census_record = LocalCensusRecord.find_by(document_number: "X11556678")
 
       expect(local_census_record).not_to be_nil
@@ -57,7 +57,7 @@ describe LocalCensusRecords::Import do
     end
 
     it "Add successfully created local census records to created_records array" do
-      import.save
+      import.save!
 
       valid_document_numbers = ["44556678T", "33556678T", "22556678T", "X11556678"]
       expect(import.created_records.collect(&:document_number)).to eq(valid_document_numbers)
@@ -68,7 +68,7 @@ describe LocalCensusRecords::Import do
       file = Rack::Test::UploadedFile.new(Rails.root.join(*path))
       import.file = file
 
-      import.save
+      import.save!
 
       invalid_records_document_types = [nil, "DNI", "Passport", "NIE"]
       invalid_records_document_numbers = ["44556678T", nil, "22556678T", "X11556678"]

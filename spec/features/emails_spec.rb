@@ -63,7 +63,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about proposal comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(proposal)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -90,7 +90,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about debate comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(debate)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -117,7 +117,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about budget investment comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(investment)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -145,7 +145,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about topic comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(topic)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -172,7 +172,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about poll question comment unless set in preferences" do
-      user.update(email_on_comment: false)
+      user.update!(email_on_comment: false)
       comment_on(poll)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -199,7 +199,7 @@ describe "Emails" do
     end
 
     scenario "Do not send email about comment reply unless set in preferences", :js do
-      user.update(email_on_comment_reply: false)
+      user.update!(email_on_comment_reply: false)
       reply_to(user)
       expect { open_last_email }.to raise_error("No email has been sent!")
     end
@@ -372,7 +372,7 @@ describe "Emails" do
     end
 
     scenario "Unfeasible investment" do
-      budget.update(phase: "valuating")
+      budget.update!(phase: "valuating")
       valuator = create(:valuator)
       investment = create(:budget_investment, author: author, budget: budget, valuators: [valuator])
 
@@ -511,7 +511,7 @@ describe "Emails" do
 
       user_commenting = create(:user)
       comment = create(:comment, commentable: proposal, user: user_commenting)
-      user.update(email: nil)
+      user.update!(email: nil)
 
       Mailer.comment(comment).deliver_now
 

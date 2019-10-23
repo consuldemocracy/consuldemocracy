@@ -100,11 +100,11 @@ describe Proposal do
     it "is not updated when the author is deleted" do
       author = create(:user, :level_three, document_number: "12345678Z")
       proposal.author = author
-      proposal.save
+      proposal.save!
 
       proposal.author.erase
 
-      proposal.save
+      proposal.save!
       expect(proposal.responsible_name).to eq "12345678Z"
     end
   end

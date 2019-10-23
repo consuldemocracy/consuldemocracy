@@ -185,7 +185,7 @@ describe "Admin budgets" do
     let!(:budget) { create(:budget) }
 
     scenario "Show phases table" do
-      budget.update(phase: "selecting")
+      budget.update!(phase: "selecting")
 
       visit admin_budgets_path
       click_link "Edit budget"
@@ -217,7 +217,7 @@ describe "Admin budgets" do
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
-      budget.update(phase: "drafting")
+      budget.update!(phase: "drafting")
       old_slug = budget.slug
 
       visit edit_admin_budget_path(budget)

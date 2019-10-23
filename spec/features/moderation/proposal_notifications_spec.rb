@@ -70,7 +70,7 @@ describe "Moderate proposal notifications" do
 
         scenario "Block the author" do
           author = create(:user)
-          proposal_notification.update(author: author)
+          proposal_notification.update!(author: author)
           click_on "Block authors"
           expect(page).not_to have_css("#proposal_notification_#{proposal_notification.id}")
           expect(proposal_notification.reload).to be_hidden

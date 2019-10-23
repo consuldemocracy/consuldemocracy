@@ -34,7 +34,7 @@ describe "Poll Results" do
     expect(Poll::Voter.count).to eq(3)
     logout
 
-    poll.update(ends_at: 1.day.ago)
+    poll.update!(ends_at: 1.day.ago)
 
     visit results_poll_path(poll)
 

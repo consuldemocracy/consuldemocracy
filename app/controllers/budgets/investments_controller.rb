@@ -86,7 +86,7 @@ module Budgets
     end
 
     def destroy
-      @investment.destroy
+      @investment.destroy!
       redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
@@ -143,7 +143,7 @@ module Budgets
 
       def load_ballot
         query = Budget::Ballot.where(user: current_user, budget: @budget)
-        @ballot = @budget.balloting? ? query.first_or_create : query.first_or_initialize
+        @ballot = @budget.balloting? ? query.first_or_create! : query.first_or_initialize
       end
 
       def load_heading

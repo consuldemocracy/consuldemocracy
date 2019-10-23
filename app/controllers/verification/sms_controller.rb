@@ -27,7 +27,7 @@ class Verification::SmsController < ApplicationController
   def update
     @sms = Verification::Sms.new(sms_params.merge(user: current_user))
     if @sms.verified?
-      current_user.update(confirmed_phone: current_user.unconfirmed_phone)
+      current_user.update!(confirmed_phone: current_user.unconfirmed_phone)
       ahoy.track(:level_2_user, user_id: current_user.id) rescue nil
 
       if VerifiedUser.phone?(current_user)

@@ -57,7 +57,7 @@ describe "Verify email" do
 
     visit verified_user_path
 
-    verified_user.destroy
+    verified_user.destroy!
     click_button "Send code"
 
     expect(page).to have_content "There was a problem with sending an email to your account"

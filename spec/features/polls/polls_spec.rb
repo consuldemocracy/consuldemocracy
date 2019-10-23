@@ -201,7 +201,7 @@ describe "Polls" do
       visit polls_path
       expect(page).not_to have_selector(".already-answer")
 
-      poll.update(geozone_restricted: true)
+      poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
       create(:poll_question, :yes_no, poll: poll)
@@ -235,7 +235,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 users in a poll with questions for a geozone which is not theirs" do
-      poll.update(geozone_restricted: true)
+      poll.update!(geozone_restricted: true)
       poll.geozones << create(:geozone)
 
       question = create(:poll_question, :yes_no, poll: poll)
@@ -253,7 +253,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 users reading a same-geozone poll" do
-      poll.update(geozone_restricted: true)
+      poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
       question = create(:poll_question, :yes_no, poll: poll)
@@ -294,7 +294,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 users answering", :js do
-      poll.update(geozone_restricted: true)
+      poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
       question = create(:poll_question, :yes_no, poll: poll)
@@ -312,7 +312,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 users changing answer", :js do
-      poll.update(geozone_restricted: true)
+      poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
       question = create(:poll_question, :yes_no, poll: poll)
@@ -335,7 +335,7 @@ describe "Polls" do
     end
 
     scenario "Level 2 votes, signs out, signs in, votes again", :js do
-      poll.update(geozone_restricted: true)
+      poll.update!(geozone_restricted: true)
       poll.geozones << geozone
 
       question = create(:poll_question, :yes_no, poll: poll)

@@ -133,19 +133,19 @@ describe Debate do
     end
 
     it "is true for anonymous users if allowed anonymous votes" do
-      debate.update(cached_anonymous_votes_total: 420, cached_votes_total: 1000)
+      debate.update!(cached_anonymous_votes_total: 420, cached_votes_total: 1000)
       user = create(:user)
       expect(debate.votable_by?(user)).to be true
     end
 
     it "is true for anonymous users if less than 100 votes" do
-      debate.update(cached_anonymous_votes_total: 90, cached_votes_total: 92)
+      debate.update!(cached_anonymous_votes_total: 90, cached_votes_total: 92)
       user = create(:user)
       expect(debate.votable_by?(user)).to be true
     end
 
     it "is false for anonymous users if too many anonymous votes" do
-      debate.update(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
+      debate.update!(cached_anonymous_votes_total: 520, cached_votes_total: 1000)
       user = create(:user)
       expect(debate.votable_by?(user)).to be false
     end
@@ -417,44 +417,44 @@ describe Debate do
   describe "conflictive debates" do
 
     it "returns true when it has more than 1 flag for 5 positive votes" do
-      debate.update(cached_votes_up: 4)
-      debate.update(flags_count: 1)
+      debate.update!(cached_votes_up: 4)
+      debate.update!(flags_count: 1)
       expect(debate).to be_conflictive
 
-      debate.update(cached_votes_up: 9)
-      debate.update(flags_count: 2)
+      debate.update!(cached_votes_up: 9)
+      debate.update!(flags_count: 2)
       expect(debate).to be_conflictive
 
-      debate.update(cached_votes_up: 14)
-      debate.update(flags_count: 3)
+      debate.update!(cached_votes_up: 14)
+      debate.update!(flags_count: 3)
       expect(debate).to be_conflictive
 
-      debate.update(cached_votes_up: 2)
-      debate.update(flags_count: 20)
+      debate.update!(cached_votes_up: 2)
+      debate.update!(flags_count: 20)
       expect(debate).to be_conflictive
     end
 
     it "returns false when it has less than or equal to 1 flag for 5 positive votes" do
-      debate.update(cached_votes_up: 5)
-      debate.update(flags_count: 1)
+      debate.update!(cached_votes_up: 5)
+      debate.update!(flags_count: 1)
       expect(debate).not_to be_conflictive
 
-      debate.update(cached_votes_up: 10)
-      debate.update(flags_count: 2)
+      debate.update!(cached_votes_up: 10)
+      debate.update!(flags_count: 2)
       expect(debate).not_to be_conflictive
 
-      debate.update(cached_votes_up: 100)
-      debate.update(flags_count: 2)
+      debate.update!(cached_votes_up: 100)
+      debate.update!(flags_count: 2)
       expect(debate).not_to be_conflictive
     end
 
     it "returns false when it has no flags" do
-      debate.update(flags_count: 0)
+      debate.update!(flags_count: 0)
       expect(debate).not_to be_conflictive
     end
 
     it "returns false when it has not votes up" do
-      debate.update(cached_votes_up: 0)
+      debate.update!(cached_votes_up: 0)
       expect(debate).not_to be_conflictive
     end
 

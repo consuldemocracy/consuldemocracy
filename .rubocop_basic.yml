@@ -181,6 +181,10 @@ Rails/SafeNavigation:
   Enabled: true
   ConvertTry: true
 
+Rails/SaveBang:
+  Enabled: true
+  Severity: refactor
+
 Rails/TimeZone:
   Enabled: true
 

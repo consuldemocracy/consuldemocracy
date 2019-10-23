@@ -248,7 +248,7 @@ describe "Users" do
 
     scenario "Not display interests when proposal has been destroyed" do
       proposal = create(:proposal, tag_list: "Sport", followers: [user])
-      proposal.destroy
+      proposal.destroy!
 
       login_as(user)
       visit account_path
@@ -333,7 +333,7 @@ describe "Users" do
     scenario "Should display generic interests title" do
       create(:proposal, tag_list: "Sport", followers: [user])
 
-      user.update(public_interests: true)
+      user.update!(public_interests: true)
       visit user_path(user, filter: "follows", page: "1")
 
       expect(page).to have_content("Tags of elements this user follows")
@@ -342,7 +342,7 @@ describe "Users" do
     scenario "Should display custom interests title when user is visiting own user page" do
       create(:proposal, tag_list: "Sport", followers: [user])
 
-      user.update(public_interests: true)
+      user.update!(public_interests: true)
       login_as(user)
       visit user_path(user, filter: "follows", page: "1")
 

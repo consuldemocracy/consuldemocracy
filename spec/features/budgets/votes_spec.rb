@@ -85,7 +85,7 @@ describe "Votes" do
     end
 
     scenario "Disable voting on investments", :js do
-      budget.update(phase: "reviewing")
+      budget.update!(phase: "reviewing")
       investment = create(:budget_investment, heading: heading)
 
       manuela = create(:user, verified_at: Time.current)

@@ -40,7 +40,7 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic.destroy
+    @topic.destroy!
     redirect_to community_path(@community), notice: I18n.t("flash.actions.destroy.topic")
   end
 

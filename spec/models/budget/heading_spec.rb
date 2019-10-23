@@ -40,13 +40,13 @@ describe Budget::Heading do
     end
 
     it "can be repeated for the same heading and a different locale" do
-      heading.update(name_fr: "object name")
+      heading.update!(name_fr: "object name")
 
       expect(heading.translations.last).to be_valid
     end
 
     it "must not be repeated for a different heading in any locale" do
-      heading.update(name_en: "English", name_es: "Español")
+      heading.update!(name_en: "English", name_es: "Español")
 
       expect(build(:budget_heading, group: group, name_en: "English")).not_to be_valid
       expect(build(:budget_heading, group: group, name_en: "Español")).not_to be_valid

@@ -22,7 +22,7 @@ class Admin::SettingsController < Admin::BaseController
 
   def update
     @setting = Setting.find(params[:id])
-    @setting.update(settings_params)
+    @setting.update!(settings_params)
     redirect_to request_referer, notice: t("admin.settings.flash.updated")
   end
 
@@ -39,7 +39,7 @@ class Admin::SettingsController < Admin::BaseController
     mime_type_values = content_type_params.keys.map do |content_type|
       Setting.mime_types[group][content_type]
     end
-    setting.update value: mime_type_values.join(" ")
+    setting.update! value: mime_type_values.join(" ")
     redirect_to admin_settings_path, notice: t("admin.settings.flash.updated")
   end
 

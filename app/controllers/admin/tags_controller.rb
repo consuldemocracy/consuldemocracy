@@ -9,12 +9,12 @@ class Admin::TagsController < Admin::BaseController
   end
 
   def create
-    Tag.category.create(tag_params)
+    Tag.category.create!(tag_params)
     redirect_to admin_tags_path
   end
 
   def destroy
-    @tag.destroy
+    @tag.destroy!
     redirect_to admin_tags_path
   end
 

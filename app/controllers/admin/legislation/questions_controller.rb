@@ -33,7 +33,7 @@ class Admin::Legislation::QuestionsController < Admin::Legislation::BaseControll
   end
 
   def destroy
-    @question.destroy
+    @question.destroy!
     notice = t("admin.legislation.questions.destroy.notice")
     redirect_to admin_legislation_process_questions_path, notice: notice
   end

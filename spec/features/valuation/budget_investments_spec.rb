@@ -235,7 +235,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "visible for assigned valuators" do
-      investment.update(visible_to_valuators: true)
+      investment.update!(visible_to_valuators: true)
       visit valuation_budget_budget_investments_path(budget)
 
       click_link investment.title
@@ -312,7 +312,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "Dossier empty by default" do
-      investment.update(visible_to_valuators: true)
+      investment.update!(visible_to_valuators: true)
 
       visit valuation_budget_budget_investments_path(budget)
       click_link investment.title
@@ -325,7 +325,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "Edit dossier" do
-      investment.update(visible_to_valuators: true)
+      investment.update!(visible_to_valuators: true)
       visit valuation_budget_budget_investments_path(budget)
       within("#budget_investment_#{investment.id}") do
         click_link "Edit dossier"
@@ -427,7 +427,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "Finish valuation" do
-      investment.update(visible_to_valuators: true)
+      investment.update!(visible_to_valuators: true)
 
       visit valuation_budget_budget_investment_path(budget, investment)
       click_link "Edit dossier"
@@ -486,7 +486,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "Validates price formats" do
-      investment.update(visible_to_valuators: true)
+      investment.update!(visible_to_valuators: true)
 
       visit valuation_budget_budget_investments_path(budget)
 
@@ -503,7 +503,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "not visible to valuators when budget is not valuating" do
-      budget.update(phase: "publishing_prices")
+      budget.update!(phase: "publishing_prices")
 
       investment = create(:budget_investment, budget: budget, valuators: [valuator])
 
@@ -514,7 +514,7 @@ describe "Valuation budget investments" do
     end
 
     scenario "visible to admins regardless of not being in valuating phase" do
-      budget.update(phase: "publishing_prices")
+      budget.update!(phase: "publishing_prices")
 
       user = create(:user)
       admin = create(:administrator, user: user)

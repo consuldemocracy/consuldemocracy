@@ -16,7 +16,7 @@ shared_examples_for "globalizable" do |factory_name|
     record.update_attribute(attribute, "In English")
 
     I18n.with_locale(:es) do
-      record.update(required_fields.map { |field| [field, "En español"] }.to_h)
+      record.update!(required_fields.map { |field| [field, "En español"] }.to_h)
       record.update_attribute(attribute, "En español")
     end
 
@@ -25,7 +25,7 @@ shared_examples_for "globalizable" do |factory_name|
 
   describe "Add a translation" do
     it "Maintains existing translations" do
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { locale: :fr }.merge(fields.map { |field| [field, "En Français"] }.to_h)
       ])
       record.reload
@@ -36,7 +36,7 @@ shared_examples_for "globalizable" do |factory_name|
     end
 
     it "Works with non-underscored locale name" do
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { locale: :"pt-BR" }.merge(fields.map { |field| [field, "Português"] }.to_h)
       ])
       record.reload
@@ -62,7 +62,7 @@ shared_examples_for "globalizable" do |factory_name|
       record.translations.destroy_all
       record.reload
 
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { locale: :de }.merge(fields.map { |field| [field, "Deutsch"] }.to_h)
       ])
 
@@ -74,7 +74,7 @@ shared_examples_for "globalizable" do |factory_name|
 
   describe "Update a translation" do
     it "Changes the existing translation" do
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { id: record.translations.find_by(locale: :es).id, attribute => "Actualizado" }
       ])
       record.reload
@@ -98,10 +98,10 @@ shared_examples_for "globalizable" do |factory_name|
     end
 
     it "Does not automatically add a translation for the current locale" do
-      record.translations.find_by(locale: :en).destroy
+      record.translations.find_by(locale: :en).destroy!
       record.reload
 
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { id: record.translations.first.id }.merge(fields.map { |field| [field, "Cambiado"] }.to_h)
       ])
 
@@ -113,7 +113,7 @@ shared_examples_for "globalizable" do |factory_name|
 
   describe "Remove a translation" do
     it "Keeps the other languages" do
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { id: record.translations.find_by(locale: :en).id, _destroy: true }
       ])
       record.reload
@@ -124,10 +124,10 @@ shared_examples_for "globalizable" do |factory_name|
     it "Does not remove all translations" do
       skip("cannot have invalid translations") if required_fields.empty?
 
-      record.update(translations_attributes: [
+      record.translations_attributes = [
         { id: record.translations.find_by(locale: :en).id, _destroy: true },
         { id: record.translations.find_by(locale: :es).id, _destroy: true }
-      ])
+      ]
 
       expect(record).not_to be_valid
 
@@ -139,10 +139,10 @@ shared_examples_for "globalizable" do |factory_name|
     it "Does not remove translations when there's invalid data" do
       skip("cannot have invalid translations") if required_fields.empty?
 
-      record.update(translations_attributes: [
+      record.translations_attributes = [
         { id: record.translations.find_by(locale: :es).id, attribute => "" },
         { id: record.translations.find_by(locale: :en).id, _destroy: true },
-      ])
+      ]
 
       expect(record).not_to be_valid
 
@@ -155,7 +155,7 @@ shared_examples_for "globalizable" do |factory_name|
   describe "Fallbacks" do
     before do
       I18n.with_locale(:de) do
-        record.update(required_fields.map { |field| [field, "Deutsch"] }.to_h)
+        record.update!(required_fields.map { |field| [field, "Deutsch"] }.to_h)
         record.update_attribute(attribute, "Deutsch")
       end
     end
@@ -181,7 +181,7 @@ shared_examples_for "globalizable" do |factory_name|
     it "Falls back to the first available locale after removing a locale" do
       expect(record.send(attribute)).to eq "In English"
 
-      record.update(translations_attributes: [
+      record.update!(translations_attributes: [
         { id: record.translations.find_by(locale: :en).id, _destroy: true }
       ])
 

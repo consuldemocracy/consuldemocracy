@@ -35,19 +35,19 @@ describe Poll::Shift do
     end
 
     it "is not valid with same booth, officer, date and task" do
-      recount_shift.save
+      recount_shift.save!
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :recount_scrutiny)).not_to be_valid
     end
 
     it "is valid with same booth, officer and date but different task" do
-      recount_shift.save
+      recount_shift.save!
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.current, task: :vote_collection)).to be_valid
     end
 
     it "is valid with same booth, officer and task but different date" do
-      recount_shift.save
+      recount_shift.save!
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.tomorrow, task: :recount_scrutiny)).to be_valid
     end
@@ -83,7 +83,7 @@ describe Poll::Shift do
 
     it "creates final officer_assignments" do
       booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      recount_shift.save
+      recount_shift.save!
 
       officer_assignments = Poll::OfficerAssignment.all
       expect(officer_assignments.count).to eq(1)
@@ -102,14 +102,14 @@ describe Poll::Shift do
     let(:shift) { create(:poll_shift, officer: officer, booth: booth) }
 
     it "maintains officer data after destroying associated user" do
-      shift.officer.user.destroy
+      shift.officer.user.destroy!
 
       expect(shift.officer_name).to eq "Ana"
       expect(shift.officer_email).to eq "ana@example.com"
     end
 
     it "maintains officer data after destroying officer role" do
-      shift.officer.destroy
+      shift.officer.destroy!
 
       expect(shift.officer_name).to eq "Ana"
       expect(shift.officer_email).to eq "ana@example.com"

@@ -25,14 +25,18 @@ class Verification::Management::Email
 
     plain_token, encrypted_token = Devise.token_generator.generate(User, :email_verification_token)
 
-    user.update(document_type: document_type,
-                document_number: document_number,
-                residence_verified_at: Time.current,
-                level_two_verified_at: Time.current,
-                email_verification_token: plain_token)
+    user.update!(document_type: document_type,
+                 document_number: document_number,
+                 residence_verified_at: Time.current,
+                 level_two_verified_at: Time.current,
+                 email_verification_token: plain_token)
 
     Mailer.email_verification(user, email, encrypted_token, document_type, document_number).deliver_later
     true
+  end
+
+  def save!
+    validate! && save
   end
 
   private

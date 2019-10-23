@@ -21,7 +21,7 @@ class Lock < ApplicationRecord
   end
 
   def self.increase_tries(user)
-    Lock.find_or_create_by(user: user).increment!(:tries).save
+    find_or_create_by!(user: user).increment!(:tries).save!
   end
 
   def self.max_tries

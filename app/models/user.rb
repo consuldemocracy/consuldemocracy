@@ -181,11 +181,11 @@ class User < ApplicationRecord
 
   def add_official_position!(position, level)
     return if position.blank? || level.blank?
-    update official_position: position, official_level: level.to_i
+    update! official_position: position, official_level: level.to_i
   end
 
   def remove_official_position!
-    update official_position: nil, official_level: 0
+    update! official_position: nil, official_level: 0
   end
 
   def has_official_email?
@@ -215,7 +215,7 @@ class User < ApplicationRecord
   end
 
   def erase(erase_reason = nil)
-    update(
+    update!(
       erased_at: Time.current,
       erase_reason: erase_reason,
       username: nil,
@@ -241,7 +241,7 @@ class User < ApplicationRecord
                              .where(document_type: document_type).first
     if erased_user.present?
       take_votes_from(erased_user)
-      erased_user.update(document_number: nil, document_type: nil)
+      erased_user.update!(document_number: nil, document_type: nil)
     end
   end
 
@@ -251,11 +251,11 @@ class User < ApplicationRecord
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
     data_log = "id: #{other_user.id} - #{Time.current.strftime("%Y-%m-%d %H:%M:%S")}"
-    update(former_users_data_log: "#{former_users_data_log} | #{data_log}")
+    update!(former_users_data_log: "#{former_users_data_log} | #{data_log}")
   end
 
   def locked?
-    Lock.find_or_create_by(user: self).locked?
+    Lock.find_or_create_by!(user: self).locked?
   end
 
   def self.search(term)
@@ -315,11 +315,11 @@ class User < ApplicationRecord
   def save_requiring_finish_signup
     begin
       self.registering_with_oauth = true
-      save(validate: false)
+      save!(validate: false)
     # Devise puts unique constraints for the email the db, so we must detect & handle that
     rescue ActiveRecord::RecordNotUnique
       self.email = nil
-      save(validate: false)
+      save!(validate: false)
     end
     true
   end

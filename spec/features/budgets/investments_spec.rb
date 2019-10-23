@@ -32,8 +32,8 @@ describe "Budget Investments" do
     let(:investment) { create(:budget_investment, heading: heading) }
 
     before do
-      budget.update(slug: "budget_slug")
-      heading.update(slug: "heading_slug")
+      budget.update!(slug: "budget_slug")
+      heading.update!(slug: "heading_slug")
     end
 
     scenario "finds investment using budget slug" do
@@ -536,7 +536,7 @@ describe "Budget Investments" do
     end
 
     scenario "by unfeasibilty link for group with one heading" do
-      budget.update(phase: :balloting)
+      budget.update!(phase: :balloting)
       group   = create(:budget_group,   name: "All City", budget: budget)
       heading = create(:budget_heading, name: "Madrid",   group: group)
 
@@ -550,7 +550,7 @@ describe "Budget Investments" do
     end
 
     scenario "by unfeasibilty link for group with many headings" do
-      budget.update(phase: :balloting)
+      budget.update!(phase: :balloting)
       group = create(:budget_group, name: "Districts", budget: budget)
 
       barajas = create(:budget_heading, name: "Barajas", group: group)
@@ -823,7 +823,7 @@ describe "Budget Investments" do
     scenario "Order is random if budget is finished" do
       per_page.times { create(:budget_investment, :winner, heading: heading) }
 
-      budget.update(phase: "finished")
+      budget.update!(phase: "finished")
 
       visit budget_investments_path(budget, heading_id: heading.id)
       order = all(".budget-investment h3").collect { |i| i.text }
@@ -837,7 +837,7 @@ describe "Budget Investments" do
 
     scenario "Order always is random for unfeasible and unselected investments" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         visit budget_investments_path(budget, heading_id: heading.id, filter: "unfeasible")
 
@@ -1086,7 +1086,7 @@ describe "Budget Investments" do
 
       scenario "Price & explanation is shown when Budget is on published prices phase" do
         Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
-          budget.update(phase: phase)
+          budget.update!(phase: phase)
           visit budget_investment_path(budget, id: investment.id)
 
           expect(page).to have_content(investment.formatted_price)
@@ -1105,7 +1105,7 @@ describe "Budget Investments" do
 
       scenario "Price & explanation isn't shown when Budget is not on published prices phase" do
         (Budget::Phase::PHASE_KINDS - Budget::Phase::PUBLISHED_PRICES_PHASES).each do |phase|
-          budget.update(phase: phase)
+          budget.update!(phase: phase)
           visit budget_investment_path(budget, id: investment.id)
 
           expect(page).not_to have_content(investment.formatted_price)
@@ -1127,7 +1127,7 @@ describe "Budget Investments" do
 
       scenario "Price & explanation isn't shown for any Budget's phase" do
         Budget::Phase::PHASE_KINDS.each do |phase|
-          budget.update(phase: phase)
+          budget.update!(phase: phase)
           visit budget_investment_path(budget, id: investment.id)
 
           expect(page).not_to have_content(investment.formatted_price)
@@ -1191,7 +1191,7 @@ describe "Budget Investments" do
     end
 
     scenario "Budget in selecting phase" do
-      budget.update(phase: "selecting")
+      budget.update!(phase: "selecting")
       visit budget_investment_path(budget, id: investment.id)
 
       expect(page).not_to have_content("Unfeasibility explanation")
@@ -1250,7 +1250,7 @@ describe "Budget Investments" do
   end
 
   scenario "Show (winner budget investment) only if budget is finished" do
-    budget.update(phase: "balloting")
+    budget.update!(phase: "balloting")
 
     investment = create(:budget_investment,
                         :feasible,
@@ -1267,7 +1267,7 @@ describe "Budget Investments" do
 
     expect(page).not_to have_content("Winning investment project")
 
-    budget.update(phase: "finished")
+    budget.update!(phase: "finished")
 
     visit budget_investment_path(budget, id: investment.id)
 
@@ -1275,7 +1275,7 @@ describe "Budget Investments" do
   end
 
   scenario "Show (not selected budget investment)" do
-    budget.update(phase: "balloting")
+    budget.update!(phase: "balloting")
 
     investment = create(:budget_investment,
                         :feasible,
@@ -1599,7 +1599,7 @@ describe "Budget Investments" do
     end
 
     scenario "Confirm", :js do
-      budget.update(phase: "balloting")
+      budget.update!(phase: "balloting")
       user = create(:user, :level_two)
 
       global_group   = create(:budget_group, budget: budget, name: "Global Group")
@@ -1664,7 +1664,7 @@ describe "Budget Investments" do
     end
 
     scenario "Highlight voted heading except with unfeasible filter", :js do
-      budget.update(phase: "balloting")
+      budget.update!(phase: "balloting")
       user = create(:user, :level_two)
 
       heading_1 = create(:budget_heading, group: group, name: "Heading 1")
@@ -1799,7 +1799,7 @@ describe "Budget Investments" do
         expect(page).to have_content("You have voted one investment")
 
         investment.heading = heading2
-        investment.save
+        investment.save!
 
         visit budget_ballot_path(budget)
 
@@ -1817,7 +1817,7 @@ describe "Budget Investments" do
 
         investment.feasibility = "unfeasible"
         investment.unfeasibility_explanation = "too expensive"
-        investment.save
+        investment.save!
 
         visit budget_ballot_path(budget)
 

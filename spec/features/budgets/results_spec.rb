@@ -16,7 +16,7 @@ describe "Results" do
   end
 
   scenario "No links to budget results with results disabled" do
-    budget.update(results_enabled: false)
+    budget.update!(results_enabled: false)
 
     visit budgets_path
 
@@ -105,7 +105,7 @@ describe "Results" do
   end
 
   scenario "If budget is in a phase different from finished results can't be accessed" do
-    budget.update(phase: (Budget::Phase::PHASE_KINDS - ["drafting", "finished"]).sample)
+    budget.update!(phase: (Budget::Phase::PHASE_KINDS - ["drafting", "finished"]).sample)
     visit budget_path(budget)
     expect(page).not_to have_link "See results"
 
@@ -115,7 +115,7 @@ describe "Results" do
 
   scenario "No incompatible investments", :js do
     investment3.incompatible = false
-    investment3.save
+    investment3.save!
 
     visit budget_path(budget)
     click_link "See results"

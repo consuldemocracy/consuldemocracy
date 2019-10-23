@@ -7,7 +7,7 @@ class Polls::AnswersController < ApplicationController
   def create
     @question = Poll::Question.find_by(id: params[:id])
     if @question.votation_type.open? && !check_question_answer_exist
-      @question.question_answers.create(
+      @question.question_answers.create!(
         title: params[:answer],
         given_order: @question.question_answers.maximum(:given_order).to_i + 1,
         hidden: false

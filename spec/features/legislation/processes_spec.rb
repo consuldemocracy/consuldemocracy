@@ -196,7 +196,7 @@ describe "Legislation" do
 
       scenario "Shows another translation when the default locale isn't available" do
         process = create(:legislation_process, title_fr: "Français")
-        process.translations.where(locale: :en).first.destroy
+        process.translations.where(locale: :en).first.destroy!
 
         visit legislation_process_path(process)
         expect(page).to have_content("Français")

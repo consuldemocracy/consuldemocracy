@@ -41,7 +41,7 @@ describe "Moderate budget investments" do
   end
 
   scenario "Can not hide own investment" do
-    investment.update(author: mod.user)
+    investment.update!(author: mod.user)
     login_as(mod.user)
 
     visit budget_investment_path(budget, investment)

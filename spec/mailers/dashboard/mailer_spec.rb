@@ -62,16 +62,16 @@ describe Dashboard::Mailer do
       it "Disables email delivery using setting" do
         Setting["dashboard.emails"] = nil
 
-        action.update(published_proposal: false)
-        resource.update(published_proposal: false)
+        action.update!(published_proposal: false)
+        resource.update!(published_proposal: false)
         run_rake_task
 
         expect(ActionMailer::Base.deliveries.count).to eq(0)
       end
 
       it "sends emails when detect new actions for draft proposal" do
-        action.update(published_proposal: false)
-        resource.update(published_proposal: false)
+        action.update!(published_proposal: false)
+        resource.update!(published_proposal: false)
         run_rake_task
 
         email = open_last_email
@@ -160,17 +160,17 @@ describe Dashboard::Mailer do
     it "Disables email delivery using setting" do
       Setting["dashboard.emails"] = nil
 
-      action.update(published_proposal: false)
-      resource.update(published_proposal: false)
-      proposal.save
+      action.update!(published_proposal: false)
+      resource.update!(published_proposal: false)
+      proposal.save!
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
     it "sends emails if new actions detected when creating a proposal" do
-      action.update(published_proposal: false)
-      resource.update(published_proposal: false)
-      proposal.save
+      action.update!(published_proposal: false)
+      resource.update!(published_proposal: false)
+      proposal.save!
 
       email = open_last_email
 
@@ -227,14 +227,14 @@ describe Dashboard::Mailer do
     it "Disables email delivery using setting" do
       Setting["dashboard.emails"] = nil
 
-      proposal.save
+      proposal.save!
       proposal.publish
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
     it "sends emails when detect new actions when publish a proposal" do
-      proposal.save
+      proposal.save!
       proposal.publish
 
       email = open_last_email

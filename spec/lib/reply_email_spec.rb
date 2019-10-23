@@ -39,7 +39,7 @@ describe ReplyEmail do
     end
 
     it "returns false if the comment doesn't exist" do
-      reply.update(commentable: nil)
+      reply.commentable = nil
 
       expect(reply_email.can_be_sent?).to be false
     end

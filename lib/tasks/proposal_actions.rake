@@ -431,6 +431,6 @@ namespace :proposal_actions do
     end
 
     Setting["proposals.successful_proposal_id"] = proposal.id
-    proposal.update(cached_votes_up: cached_votes_up)
+    proposal.update!(cached_votes_up: cached_votes_up)
   end
 end

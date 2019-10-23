@@ -81,9 +81,9 @@ class VotationType < ApplicationRecord
         result = votes.by_author(user.id).find_by(answer: answer)
         if result.nil?
           if check_max_votes(user, votes)
-            result = votes.create(author: user,
-                                  answer: answer,
-                                  positive: options[:positive])
+            result = votes.create!(author: user,
+                                   answer: answer,
+                                   positive: options[:positive])
           end
         else
           !result.update(positive: options[:positive])
@@ -91,7 +91,7 @@ class VotationType < ApplicationRecord
 
       when "answer_couples_closed", "answer_couples_open"
         if check_max_votes(user, votes)
-          result = votes.create(
+          result = votes.create!(
             answer: answer,
             author: user,
             positive: true,
@@ -114,7 +114,7 @@ class VotationType < ApplicationRecord
     return if questionable.question_answers.where(title: answer).any?
 
     questionable.question_answers
-      .create(
+      .create!(
         title: answer,
         given_order: questionable.question_answers.maximum(:given_order).to_i + 1,
         hidden: hidden
@@ -140,7 +140,7 @@ class VotationType < ApplicationRecord
 
   def self.create_by_type(questionable, params)
     votation_type = build_by_type(questionable, params)
-    votation_type.save
+    votation_type.save!
   end
 
   def update_priorized_values(user)

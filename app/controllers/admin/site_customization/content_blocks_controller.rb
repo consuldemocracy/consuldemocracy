@@ -44,7 +44,7 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
     if is_heading_content_block?(params[:site_customization_content_block][:name])
       heading_content_block = new_heading_content_block
       if heading_content_block.save
-        @content_block.destroy
+        @content_block.destroy!
         notice = t("admin.site_customization.content_blocks.create.notice")
         redirect_to admin_site_customization_content_blocks_path, notice: notice
       else
@@ -61,13 +61,13 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
   end
 
   def destroy
-    @content_block.destroy
+    @content_block.destroy!
     notice = t("admin.site_customization.content_blocks.destroy.notice")
     redirect_to admin_site_customization_content_blocks_path, notice: notice
   end
 
   def delete_heading_content_block
-    Budget::ContentBlock.find(params[:id]).destroy
+    Budget::ContentBlock.find(params[:id]).destroy!
     notice = t("admin.site_customization.content_blocks.destroy.notice")
     redirect_to admin_site_customization_content_blocks_path, notice: notice
   end
@@ -101,7 +101,7 @@ class Admin::SiteCustomization::ContentBlocksController < Admin::SiteCustomizati
       @content_block.locale = params[:locale]
       @content_block.body = params[:body]
       if @content_block.save
-        heading_content_block.destroy
+        heading_content_block.destroy!
         notice = t("admin.site_customization.content_blocks.update.notice")
         redirect_to admin_site_customization_content_blocks_path, notice: notice
       else

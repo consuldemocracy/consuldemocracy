@@ -6,7 +6,7 @@ class RemoteTranslationsController < ApplicationController
 
   def create
     @remote_translations.each do |remote_translation|
-      RemoteTranslation.create(remote_translation) unless translations_enqueued?(remote_translation)
+      RemoteTranslation.create!(remote_translation) unless translations_enqueued?(remote_translation)
     end
     redirect_to request.referer, notice: t("remote_translations.create.enqueue_remote_translation")
   end

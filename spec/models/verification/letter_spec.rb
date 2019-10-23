@@ -23,7 +23,7 @@ describe Verification::Letter do
 
     it "updates letter_requested" do
       letter = build(:verification_letter)
-      letter.save
+      letter.save!
       expect(letter.user.letter_requested_at).to be
     end
 
@@ -34,7 +34,7 @@ describe Verification::Letter do
     let(:letter) { build(:verification_letter, verify: true) }
 
     it "incorrect code" do
-      letter.user.update(letter_verification_code: "123456")
+      letter.user.update!(letter_verification_code: "123456")
       letter.verification_code = "5555"
 
       expect(letter.valid?).to eq(false)
@@ -42,7 +42,7 @@ describe Verification::Letter do
     end
 
     it "correct code" do
-      letter.user.update(letter_verification_code: "123456")
+      letter.user.update!(letter_verification_code: "123456")
       letter.verification_code = "123456"
 
       expect(letter.valid?).to eq(true)
@@ -50,7 +50,7 @@ describe Verification::Letter do
     end
 
     it "ignores trailing zeros" do
-      letter.user.update(letter_verification_code: "003456")
+      letter.user.update!(letter_verification_code: "003456")
       letter.verification_code = "3456"
 
       expect(letter.valid?).to eq(true)

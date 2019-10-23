@@ -33,7 +33,7 @@ class Tracking::ProgressBarsController < Tracking::BaseController
   end
 
   def destroy
-    @progress_bar.destroy
+    @progress_bar.destroy!
     redirect_to progress_bars_index, notice: t("tracking.progress_bars.delete.notice")
   end
 

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin edit translatable records" do
   before do
-    translatable.update(attributes)
+    translatable.update!(attributes)
     login_as(create(:administrator).user)
   end
 
@@ -311,7 +311,7 @@ describe "Admin edit translatable records" do
 
     before do
       translatable.translations.destroy_all
-      translatable.translations.create(locale: :fr, title: "Titre en Français")
+      translatable.translations.create!(locale: :fr, title: "Titre en Français")
     end
 
     scenario "Does not add a translation for the current locale" do
@@ -398,7 +398,7 @@ describe "Admin edit translatable records" do
       let(:translatable) { create(:admin_notification, segment_recipient: "all_users") }
 
       scenario "Shows first available fallback" do
-        translatable.update({ title_fr: "Titre en Français", body_fr: "Texte en Français" })
+        translatable.update!({ title_fr: "Titre en Français", body_fr: "Texte en Français" })
 
         visit edit_admin_admin_notification_path(translatable)
 
@@ -417,7 +417,7 @@ describe "Admin edit translatable records" do
       let(:translatable) { create(:budget).phases.last }
 
       scenario "Shows first available fallback" do
-        translatable.update({ description_fr: "Phase en Français", summary_fr: "Phase résumé" })
+        translatable.update!({ description_fr: "Phase en Français", summary_fr: "Phase résumé" })
 
         visit edit_admin_budget_budget_phase_path(translatable.budget, translatable)
 
@@ -438,7 +438,7 @@ describe "Admin edit translatable records" do
       let(:translatable) { create(:active_poll) }
 
       scenario "Shows first available fallback" do
-        translatable.update({ description_fr: "Sondage en Français" })
+        translatable.update!({ description_fr: "Sondage en Français" })
 
         visit edit_admin_active_polls_path(translatable)
 

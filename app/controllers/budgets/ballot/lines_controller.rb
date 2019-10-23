@@ -26,7 +26,7 @@ module Budgets
         load_heading
         load_map
 
-        @line.destroy
+        @line.destroy!
         load_investments
       end
 
@@ -41,7 +41,7 @@ module Budgets
         end
 
         def load_ballot
-          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
+          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create!
         end
 
         def load_investment

@@ -32,7 +32,7 @@ describe "Stats" do
   describe "Show" do
     describe "advanced stats" do
       scenario "advanced stats enabled" do
-        budget.update(advanced_stats_enabled: true)
+        budget.update!(advanced_stats_enabled: true)
 
         visit budget_stats_path(budget)
 

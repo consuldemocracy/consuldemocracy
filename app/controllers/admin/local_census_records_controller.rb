@@ -26,7 +26,7 @@ class Admin::LocalCensusRecordsController < Admin::BaseController
   end
 
   def destroy
-    @local_census_record.destroy
+    @local_census_record.destroy!
     redirect_to admin_local_census_records_path,
       notice: t("admin.local_census_records.destroy.notice")
   end

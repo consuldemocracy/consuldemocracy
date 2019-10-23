@@ -158,7 +158,7 @@ describe "Admin legislation questions" do
 
     context "Special translation behaviour" do
       before do
-        question.update_attributes(title_en: "Title in English", title_es: "Título en Español")
+        question.update!(title_en: "Title in English", title_es: "Título en Español")
       end
 
       scenario "Add translation for question option", :js do

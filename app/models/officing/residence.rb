@@ -29,7 +29,7 @@ class Officing::Residence
 
     if user_exists?
       self.user = find_user_by_document
-      user.update(verified_at: Time.current)
+      user.update!(verified_at: Time.current)
     else
       user_params = {
         document_number:       document_number,
@@ -46,6 +46,10 @@ class Officing::Residence
       }
       self.user = User.create!(user_params)
     end
+  end
+
+  def save!
+    validate! && save
   end
 
   def store_failed_census_call

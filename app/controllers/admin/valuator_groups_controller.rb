@@ -38,7 +38,7 @@ class Admin::ValuatorGroupsController < Admin::BaseController
 
   def destroy
     @group = ValuatorGroup.find(params[:id])
-    @group.destroy
+    @group.destroy!
     notice = t("flash.actions.destroy.valuator_group")
     redirect_to [:admin, :valuator_groups], notice: notice
   end

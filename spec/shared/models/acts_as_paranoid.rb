@@ -2,7 +2,7 @@ shared_examples "acts as paranoid" do |factory_name|
   let!(:resource) { create(factory_name) }
 
   it "#{described_class} can be recovered after soft deletion" do
-    resource.destroy
+    resource.destroy!
     resource.reload
 
     expect(resource.hidden_at).not_to be_blank
@@ -15,7 +15,7 @@ shared_examples "acts as paranoid" do |factory_name|
   describe "#{described_class} translations" do
 
     it "is hidden after parent resource destroy" do
-      resource.destroy
+      resource.destroy!
       resource.reload
 
       expect(resource.translations.with_deleted.first.hidden_at).not_to be_blank
@@ -26,16 +26,16 @@ shared_examples "acts as paranoid" do |factory_name|
     end
 
     it "cannot be recovered through non recursive restore" do
-      resource.destroy
+      resource.destroy!
       resource.reload
 
       expect { resource.restore }.not_to change { resource.translations.with_deleted.first.hidden_at }
     end
 
     it "can be recovered through recursive restore after non-recursive restore" do
-      resource.destroy
+      resource.destroy!
       resource.restore
-      resource.destroy
+      resource.destroy!
       resource.reload
 
       expect { resource.restore(recursive: true) }.to change { resource.translations.with_deleted.first.hidden_at }
@@ -48,10 +48,10 @@ shared_examples "acts as paranoid" do |factory_name|
         new_translation.send("#{translated_attribute_name}=", original_translation.send(translated_attribute_name))
       end
       new_translation.locale = :fr
-      new_translation.save
+      new_translation.save!
 
       expect(resource.translations.with_deleted.count).to eq(2)
-      resource.destroy
+      resource.destroy!
       resource.reload
       expect(resource.translations.with_deleted.count).to eq(2)
       expect(resource.translations.with_deleted.first.hidden_at).not_to be_blank

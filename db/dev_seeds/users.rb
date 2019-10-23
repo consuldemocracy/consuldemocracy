@@ -22,49 +22,49 @@ section "Creating Users" do
 
   admin = create_user("admin@consul.dev", "admin")
   admin.create_administrator
-  admin.update(residence_verified_at: Time.current,
+  admin.update!(residence_verified_at: Time.current,
                confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                verified_at: Time.current, document_number: unique_document_number)
 
   moderator = create_user("mod@consul.dev", "moderator")
   moderator.create_moderator
-  moderator.update(residence_verified_at: Time.current,
+  moderator.update!(residence_verified_at: Time.current,
                    confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                    verified_at: Time.current, document_number: unique_document_number)
 
   manager = create_user("manager@consul.dev", "manager")
   manager.create_manager
-  manager.update(residence_verified_at: Time.current,
+  manager.update!(residence_verified_at: Time.current,
                  confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                  verified_at: Time.current, document_number: unique_document_number)
 
   valuator = create_user("valuator@consul.dev", "valuator")
   valuator.create_valuator
-  valuator.update(residence_verified_at: Time.current,
+  valuator.update!(residence_verified_at: Time.current,
                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer = create_user("poll_officer@consul.dev", "Paul O. Fisher")
   poll_officer.create_poll_officer
-  poll_officer.update(residence_verified_at: Time.current,
+  poll_officer.update!(residence_verified_at: Time.current,
                       confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                       verified_at: Time.current, document_number: unique_document_number)
 
   poll_officer2 = create_user("poll_officer2@consul.dev", "Pauline M. Espinosa")
   poll_officer2.create_poll_officer
-  poll_officer2.update(residence_verified_at: Time.current,
+  poll_officer2.update!(residence_verified_at: Time.current,
                        confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                        verified_at: Time.current, document_number: unique_document_number)
 
   create_user("unverified@consul.dev", "unverified")
 
   level_2 = create_user("leveltwo@consul.dev", "level 2")
-  level_2.update(residence_verified_at: Time.current,
+  level_2.update!(residence_verified_at: Time.current,
                  confirmed_phone: Faker::PhoneNumber.phone_number,
                  document_number: unique_document_number, document_type: "1")
 
   verified = create_user("verified@consul.dev", "verified")
-  verified.update(residence_verified_at: Time.current,
+  verified.update!(residence_verified_at: Time.current,
                   confirmed_phone: Faker::PhoneNumber.phone_number, document_type: "1",
                   verified_at: Time.current, document_number: unique_document_number)
 
@@ -80,7 +80,7 @@ section "Creating Users" do
 
   5.times do |i|
     official = create_user("official#{i}@consul.dev", "Official #{i}")
-    official.update(official_level: i, official_position: "Official position #{i}")
+    official.update!(official_level: i, official_position: "Official position #{i}")
   end
 
   30.times do |i|

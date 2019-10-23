@@ -336,7 +336,7 @@ describe "Budget Investments" do
     end
 
     scenario "Printing voted budget investments in balloting phase" do
-      budget.update(phase: "balloting")
+      budget.update!(phase: "balloting")
 
       voted_investment = create(:budget_investment, :selected, heading: heading, balloters: [create(:user)])
 

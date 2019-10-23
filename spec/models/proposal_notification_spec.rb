@@ -110,7 +110,7 @@ describe ProposalNotification do
       it "returns false when the proposal is not available" do
         notification = create(:notification, notifiable: notifiable)
 
-        notifiable.proposal.destroy
+        notifiable.proposal.destroy!
 
         expect(notification.notifiable_available?).to be(false)
       end
@@ -142,7 +142,7 @@ describe ProposalNotification do
       it "returns false if the resource is retired" do
         notification = create(:notification, notifiable: notifiable)
 
-        notifiable.proposal.update(retired_at: Time.current,
+        notifiable.proposal.update!(retired_at: Time.current,
           retired_explanation: "Unfeasible reason explanation",
           retired_reason: "unfeasible")
         expect(notification.check_availability(proposal)).to be(false)
