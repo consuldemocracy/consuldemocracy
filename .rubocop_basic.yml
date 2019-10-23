@@ -179,6 +179,11 @@ Rails/ApplicationJob:
 Rails/ApplicationRecord:
   Enabled: true
 
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+  Exclude:
+    - "db/migrate/201[5-8]*"
+
 Rails/Date:
   Enabled: true
 
@@ -191,6 +196,11 @@ Rails/FindBy:
 
 Rails/HttpPositionalArguments:
   Enabled: true
+
+Rails/NotNullColumn:
+  Enabled: true
+  Exclude:
+    - "db/migrate/201[5-7]*"
 
 Rails/OutputSafety:
   Enabled: true
