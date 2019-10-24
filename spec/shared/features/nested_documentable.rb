@@ -250,7 +250,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
     end
 
     if path.include? "edit"
-
       scenario "Should show persisted documents and remove nested_field" do
         create(:document, documentable: documentable)
         login_as user_to_login
@@ -288,7 +287,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
 
         expect(page).not_to have_css ".document"
       end
-
     end
 
     describe "When allow attached documents setting is disabled" do

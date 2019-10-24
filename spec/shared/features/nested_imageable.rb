@@ -213,7 +213,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     if path.include? "edit"
-
       scenario "Should show persisted image" do
         create(:image, imageable: imageable)
         login_as user
@@ -247,7 +246,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
         expect(page).to have_css "a#new_image_link", visible: true
       end
-
     end
   end
 end
