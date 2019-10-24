@@ -4,6 +4,9 @@ de:
       verification:
         residence: "Wohnsitz"
         sms: "SMS"
+      local_census_record/import:
+        one: Import von Datensatz aus dem Melderegister
+        other: Import von Datensätzen aus dem Melderegister
     attributes:
       verification:
         residence:
