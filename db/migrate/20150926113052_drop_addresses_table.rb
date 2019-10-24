@@ -20,8 +20,7 @@ class DropAddressesTable < ActiveRecord::Migration[4.2]
       t.string   "district"
       t.string   "postal_code"
       t.string   "toponymy"
-      t.datetime "created_at",    null: false
-      t.datetime "updated_at",    null: false
+      t.timestamps null: false
     end
   end
 end

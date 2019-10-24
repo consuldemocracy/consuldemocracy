@@ -7,7 +7,6 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   Exclude:
-    - "db/migrate/**/*"
     - "db/schema.rb"
   # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
   # to ignore them, so only the ones explicitly set in this file are enabled.
@@ -180,6 +179,11 @@ Rails/ApplicationJob:
 Rails/ApplicationRecord:
   Enabled: true
 
+Rails/CreateTableWithTimestamps:
+  Enabled: true
+  Exclude:
+    - "db/migrate/201[5-8]*"
+
 Rails/Date:
   Enabled: true
 
@@ -187,11 +191,25 @@ Rails/DynamicFindBy:
   Enabled: true
   Severity: refactor
 
+Rails/EnumUniqueness:
+  Enabled: true
+
+Rails/EnvironmentComparison:
+  Enabled: true
+
 Rails/FindBy:
+  Enabled: true
+
+Rails/FindEach:
   Enabled: true
 
 Rails/HttpPositionalArguments:
   Enabled: true
+
+Rails/NotNullColumn:
+  Enabled: true
+  Exclude:
+    - "db/migrate/201[5-7]*"
 
 Rails/OutputSafety:
   Enabled: true
@@ -209,6 +227,9 @@ Rails/RelativeDateConstant:
   Enabled: true
 
 Rails/RequestReferer:
+  Enabled: true
+
+Rails/ReversibleMigration:
   Enabled: true
 
 Rails/SafeNavigation:

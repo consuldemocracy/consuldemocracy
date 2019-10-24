@@ -4,4 +4,3 @@ class AddMoreIndexesForAhoy < ActiveRecord::Migration[4.2]
     add_index :visits, [:started_at]
   end
 end
-
