@@ -1466,3 +1466,5 @@ de:
         update: Update Tracker
         updated: "Tracker Update erfolgreich."
         edit_title: "Tracker: Bearbeiten Tracker"
+      show:
+        email: E-Mail
