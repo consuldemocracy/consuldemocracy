@@ -16,6 +16,17 @@ de:
           confirmation_code: "Bestätigungscode"
         email:
           recipient: "E-Mail"
+      verification/letter:
+        email: "E-Mail"
+        password: "Passwort"
+        verification_code: "Code, den Sie per Brief/SMS erhalten haben"
+      verification/management/document:
+        document_type: "Dokumententyp:"
+        document_number: "Dokumentennummer"
+      verification/residence:
+        date_of_birth: "Geburtsdatum"
+        document_type: "Dokumententyp"
+        postal_code: "Postleitzahl"
       officing/residence:
         document_type: "Dokumententyp"
         document_number: "Dokumentennummer (einschließlich Buchstaben)"
