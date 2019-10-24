@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe "Legislation" do
-
   let!(:administrator) { create(:administrator).user }
 
   shared_examples "not published permissions" do |path|
-
     let(:not_published_process) { create(:legislation_process, :not_published, title: "Process not published") }
     let!(:not_permission_message) { "You do not have permission to carry out the action" }
 
@@ -25,7 +23,6 @@ describe "Legislation" do
   end
 
   context "processes home page" do
-
     scenario "No processes to be listed" do
       visit legislation_processes_path
       expect(page).to have_text "There aren't open processes"

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Budget Investments" do
-
   let(:manager) { create(:manager) }
   let(:budget)  { create(:budget, :selecting, name: "2033", slug: "budget_slug") }
   let(:group)   { create(:budget_group, budget: budget, name: "Whole city") }
@@ -19,7 +18,6 @@ describe "Budget Investments" do
                   management: true
 
   context "Load" do
-
     let(:investment) { create(:budget_investment, budget: budget) }
     let(:user)       { create(:user, :level_two) }
 
@@ -42,7 +40,6 @@ describe "Budget Investments" do
         visit management_budget_investment_path(0, investment)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   context "Create" do
@@ -120,7 +117,6 @@ describe "Budget Investments" do
   end
 
   context "Searching" do
-
     scenario "by title" do
       budget_investment1 = create(:budget_investment, budget: budget, title: "Show me what you got")
       budget_investment2 = create(:budget_investment, budget: budget, title: "Get Schwifty")
@@ -263,7 +259,6 @@ describe "Budget Investments" do
   end
 
   context "Supporting" do
-
     scenario "Supporting budget investments on behalf of someone in index view", :js do
       budget_investment = create(:budget_investment, heading: heading)
 
@@ -320,7 +315,6 @@ describe "Budget Investments" do
   end
 
   context "Printing" do
-
     scenario "Printing budget investments" do
       16.times { create(:budget_investment, heading: heading) }
 
@@ -399,7 +393,5 @@ describe "Budget Investments" do
         expect(mid_investment.title).to appear_before(low_investment.title)
       end
     end
-
   end
-
 end

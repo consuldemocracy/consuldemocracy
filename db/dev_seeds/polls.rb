@@ -2,7 +2,6 @@ require_dependency "poll/answer"
 require_dependency "poll/question/answer"
 
 section "Creating polls" do
-
   Poll.create!(name: I18n.t("seeds.polls.current_poll"),
                slug: I18n.t("seeds.polls.current_poll").parameterize,
                starts_at: 7.days.ago,
@@ -44,7 +43,6 @@ section "Creating polls" do
     end
     poll.save!
   end
-
 end
 
 section "Creating Poll Questions & Answers" do
@@ -121,7 +119,6 @@ section "Commenting Polls" do
 end
 
 section "Creating Poll Voters" do
-
   def vote_poll_on_booth(user, poll)
     officer = Poll::Officer.all.sample
 
@@ -148,6 +145,7 @@ section "Creating Poll Voters" do
   def randomly_answer_questions(poll, user)
     poll.questions.each do |question|
       next unless [true, false].sample
+
       Poll::Answer.create!(question_id: question.id,
                            author: user,
                            answer: question.question_answers.sample.title)

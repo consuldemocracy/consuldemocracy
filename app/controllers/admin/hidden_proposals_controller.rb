@@ -29,5 +29,4 @@ class Admin::HiddenProposalsController < Admin::BaseController
     def load_proposal
       @proposal = Proposal.with_hidden.find(params[:id])
     end
-
 end

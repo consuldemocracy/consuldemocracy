@@ -32,5 +32,4 @@ class Poll::Ballot < ApplicationRecord
   def not_already_added?(investment)
     ballot.lines.where(investment: investment).blank?
   end
-
 end

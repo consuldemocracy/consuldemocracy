@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin tags" do
-
   before do
     create(:tag, :category, name: "Existence")
     login_as(create(:administrator).user)
@@ -89,5 +88,4 @@ describe "Admin tags" do
       expect(Tag.category.where(name: "wow_category")).to exist
     end
   end
-
 end

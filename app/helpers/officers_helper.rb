@@ -1,5 +1,4 @@
 module OfficersHelper
-
   def officer_label(officer)
     truncate([officer.name, officer.email].compact.join(" - "), length: 100)
   end
@@ -15,5 +14,4 @@ module OfficersHelper
   def no_shifts?
     current_user.poll_officer.officer_assignments.where(date: Time.current.to_date).blank?
   end
-
 end

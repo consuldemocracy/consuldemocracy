@@ -1,18 +1,14 @@
 require "rails_helper"
 
 describe SignatureSheetsHelper do
-
   describe "#required_fields_to_verify_text_help by default" do
-
     it "returns text help by default" do
       text = "Write the numbers separated by semicolons (;)"
       expect(required_fields_to_verify_text_help).to eq(text)
     end
-
   end
 
   describe "#required_fields_to_verify_text_help with remote_census active" do
-
     before do
       Setting["feature.remote_census"] = true
     end
@@ -70,7 +66,5 @@ describe SignatureSheetsHelper do
       Setting["remote_census.request.postal_code"] = nil
       Setting["remote_census.request.postal_code"] = nil
     end
-
   end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Community, type: :model do
-
   it "is valid when create proposal" do
     proposal = create(:proposal)
 
@@ -9,7 +8,6 @@ RSpec.describe Community, type: :model do
   end
 
   describe "#participants" do
-
     it "returns participants without duplicates" do
       proposal = create(:proposal)
       community = proposal.community

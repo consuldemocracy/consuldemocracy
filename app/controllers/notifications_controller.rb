@@ -42,5 +42,4 @@ class NotificationsController < ApplicationController
         polymorphic_hierarchy_path(notification.linkable_resource)
       end
     end
-
 end

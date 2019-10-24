@@ -38,5 +38,4 @@ class Poll::BallotSheet < ApplicationRecord
                          poll_ballot: poll_ballot,
                          budget: poll.budget).first_or_create!
     end
-
 end

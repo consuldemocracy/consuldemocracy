@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Documents" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -85,5 +84,4 @@ describe "Documents" do
     expect(page).to have_content "Document deleted succesfully"
     expect(page).not_to have_content document.title
   end
-
 end

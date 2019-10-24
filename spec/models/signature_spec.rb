@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe Signature do
-
   let(:signature) { build(:signature) }
 
   describe "validations" do
-
     it "is valid" do
       expect(signature).to be_valid
     end
@@ -25,7 +23,6 @@ describe Signature do
       signature.signature_sheet = nil
       expect(signature).not_to be_valid
     end
-
   end
 
   describe "custom validations" do
@@ -62,7 +59,6 @@ describe Signature do
 
       expect(signature).not_to be_valid
     end
-
   end
 
   describe "#clean_document_number" do
@@ -84,9 +80,7 @@ describe Signature do
   end
 
   describe "#verify" do
-
     describe "existing user" do
-
       it "assigns vote to user on proposal" do
         user = create(:user, :level_two, document_number: "123A")
         signature = create(:signature, document_number: user.document_number)
@@ -174,11 +168,9 @@ describe Signature do
 
         expect(Vote.last.signature).to eq(signature)
       end
-
     end
 
     describe "inexistent user" do
-
       it "creates a user with that document number" do
         create(:geozone, census_code: "01")
         signature = create(:signature, document_number: "12345678Z")
@@ -215,7 +207,6 @@ describe Signature do
     end
 
     describe "document in census" do
-
       it "calls assign_vote_to_user" do
         signature = create(:signature, document_number: "12345678Z")
 
@@ -231,11 +222,9 @@ describe Signature do
 
         expect(signature).to be_verified
       end
-
     end
 
     describe "document in census throught CustomCensusApi" do
-
       before do
         Setting["feature.remote_census"] = true
         Setting["remote_census.request.date_of_birth"] = "some.value"
@@ -256,11 +245,9 @@ describe Signature do
 
         signature.verify
       end
-
     end
 
     describe "document not in census" do
-
       it "does not call assign_vote_to_user" do
         signature = create(:signature, document_number: "123A")
 
@@ -275,7 +262,5 @@ describe Signature do
         expect(signature).not_to be_verified
       end
     end
-
   end
-
 end

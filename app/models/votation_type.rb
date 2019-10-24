@@ -54,12 +54,10 @@ class VotationType < ApplicationRecord
       case enum_type
       when "unique"
         result = votes.find_or_initialize_by(author: user)
-
       when "multiple", "positive_open"
         if check_max_votes(user, votes)
           result = votes.find_or_initialize_by(author: user, answer: answer)
         end
-
       when "prioritized"
         result = votes.find_by(author: user, answer: answer)
         if result.nil?
@@ -76,7 +74,6 @@ class VotationType < ApplicationRecord
         else
           !result.update(order: options[:order])
         end
-
       when "positive_negative_open"
         result = votes.by_author(user.id).find_by(answer: answer)
         if result.nil?
@@ -88,7 +85,6 @@ class VotationType < ApplicationRecord
         else
           !result.update(positive: options[:positive])
         end
-
       when "answer_couples_closed", "answer_couples_open"
         if check_max_votes(user, votes)
           result = votes.create!(
@@ -99,7 +95,6 @@ class VotationType < ApplicationRecord
           )
         end
         Poll::PairAnswer.generate_pair(questionable, user)
-
       when "answer_set_open", "answer_set_closed"
         if check_max_votes(user, votes) && answer_in_set?(answer, user)
           result = votes&.find_or_initialize_by(author: user, answer: answer)
@@ -110,7 +105,7 @@ class VotationType < ApplicationRecord
     result
   end
 
-  def create_question_answer(answer, hidden=false)
+  def create_question_answer(answer, hidden = false)
     return if questionable.question_answers.where(title: answer).any?
 
     questionable.question_answers

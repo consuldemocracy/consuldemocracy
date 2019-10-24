@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Notifications" do
-
   let(:user) { create :user }
 
   before do
@@ -227,7 +226,6 @@ describe "Notifications" do
       expect(Delayed::Job.second.run_at.change(usec: 0)).to eq(second_batch_run_at)
       expect(Delayed::Job.third.run_at.change(usec: 0)).to eq(third_batch_run_at)
     end
-
   end
 
   def remove_users_without_pending_notifications
@@ -239,5 +237,4 @@ describe "Notifications" do
       user.notifications.not_emailed.where(notifiable_type: "ProposalNotification").blank?
     end
   end
-
 end

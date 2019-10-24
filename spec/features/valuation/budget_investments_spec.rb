@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Valuation budget investments" do
-
   let(:budget) { create(:budget, :valuating) }
   let(:valuator) do
     create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
@@ -12,7 +11,6 @@ describe "Valuation budget investments" do
   end
 
   context "Load" do
-
     before { budget.update(slug: "budget_slug") }
 
     scenario "finds investment using budget slug" do
@@ -32,7 +30,6 @@ describe "Valuation budget investments" do
         visit valuation_budget_budget_investments_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   scenario "Disabled with a feature flag" do

@@ -84,5 +84,4 @@ describe "Admin" do
     expect(page).not_to have_css("#moderation_menu")
     expect(page).not_to have_css("#valuation_menu")
   end
-
 end

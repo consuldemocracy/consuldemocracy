@@ -160,5 +160,4 @@ describe "Officing Results", :with_frozen_time do
     within("#null_results") { expect(page).to have_content("44") }
     within("#total_results") { expect(page).to have_content("66") }
   end
-
 end

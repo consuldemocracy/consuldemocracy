@@ -12,6 +12,7 @@ class GraphqlController < ApplicationController
   def query
     begin
       if query_string.nil? then raise GraphqlController::QueryStringError end
+
       response = consul_schema.execute query_string, variables: query_variables
       render json: response, status: :ok
     rescue GraphqlController::QueryStringError

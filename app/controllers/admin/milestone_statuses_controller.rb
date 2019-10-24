@@ -1,5 +1,4 @@
 class Admin::MilestoneStatusesController < Admin::BaseController
-
   before_action :load_status, only: [:edit, :update, :destroy]
 
   def index

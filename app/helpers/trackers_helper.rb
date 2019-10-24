@@ -1,5 +1,4 @@
 module TrackersHelper
-
   def tracker_label(tracker)
     truncate([tracker.name, tracker.email, tracker.description].compact.join(" - "), length: 100)
   end
@@ -17,5 +16,4 @@ module TrackersHelper
     def tracker_namespace
       current_user.administrator? ? :admin : :tracking
     end
-
 end

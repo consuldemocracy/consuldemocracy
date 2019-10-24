@@ -31,6 +31,7 @@ class Officing::BaseController < ApplicationController
 
     def verify_booth
       return unless current_booth.blank?
+
       booths = current_user.poll_officer.todays_booths
       case booths.count
       when 0

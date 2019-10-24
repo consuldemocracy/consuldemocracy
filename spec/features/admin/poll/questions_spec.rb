@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin poll questions" do
-
   before do
     login_as(create(:administrator).user)
   end
@@ -357,9 +356,7 @@ describe "Admin poll questions" do
   pending "Mark all city by default when creating a poll question from a successful proposal"
 
   context "Poll select box" do
-
     scenario "translates the poll name in options", :js do
-
       poll = create(:poll, name_en: "Name in English", name_es: "Nombre en Español")
       proposal = create(:proposal)
 

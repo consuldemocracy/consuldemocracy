@@ -1,5 +1,4 @@
 class TagCloud
-
   attr_accessor :resource_model, :scope
 
   def initialize(resource_model, scope = nil)
@@ -34,5 +33,4 @@ class TagCloud
   def table_name
     resource_model.to_s.downcase.pluralize.gsub("::", "/")
   end
-
 end

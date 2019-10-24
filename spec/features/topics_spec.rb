@@ -1,13 +1,11 @@
 require "rails_helper"
 
 describe "Topics" do
-
   context "Concerns" do
     it_behaves_like "notifiable in-app", :topic_with_community
   end
 
   context "New" do
-
     scenario "Create new topic link should redirect to sign up for anonymous users", :js do
       proposal = create(:proposal)
       community = proposal.community
@@ -49,11 +47,9 @@ describe "Topics" do
       expect(page).to have_content "Enjoy this space, the voices that fill it, it's yours too."
       expect(page).to have_button("Create topic")
     end
-
   end
 
   context "Create" do
-
     scenario "Can create a new topic", :js do
       proposal = create(:proposal)
       community = proposal.community
@@ -77,11 +73,9 @@ describe "Topics" do
 
       expect(page).to have_content "You do not have permission to carry out the action 'new' on topic."
     end
-
   end
 
   context "Edit" do
-
     scenario "Can edit a topic" do
       proposal = create(:proposal)
       community = proposal.community
@@ -109,11 +103,9 @@ describe "Topics" do
 
       expect(page).to have_content "You do not have permission to carry out the action 'edit' on topic."
     end
-
   end
 
   context "Show" do
-
     scenario "Can show topic" do
       proposal = create(:proposal)
       community = proposal.community
@@ -124,11 +116,9 @@ describe "Topics" do
       expect(page).to have_content community.proposal.title
       expect(page).to have_content topic.title
     end
-
   end
 
   context "Destroy" do
-
     scenario "Can destroy a topic" do
       user = create(:user)
       topic = create(:topic, :with_community, author: user)
@@ -152,7 +142,5 @@ describe "Topics" do
 
       expect(page).not_to have_link "Delete"
     end
-
   end
-
 end

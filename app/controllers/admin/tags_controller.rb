@@ -27,5 +27,4 @@ class Admin::TagsController < Admin::BaseController
     def find_tag
       @tag = Tag.category.find(params[:id])
     end
-
 end

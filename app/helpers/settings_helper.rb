@@ -1,5 +1,4 @@
 module SettingsHelper
-
   def feature?(name)
     setting["feature.#{name}"].presence || setting["process.#{name}"].presence
   end
@@ -15,5 +14,4 @@ module SettingsHelper
       t("admin.settings.#{setting_name}")
     end
   end
-
 end

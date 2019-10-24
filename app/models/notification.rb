@@ -1,5 +1,4 @@
 class Notification < ApplicationRecord
-
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
@@ -93,5 +92,4 @@ class Notification < ApplicationRecord
     def self.first_batch_run_at
       Time.current
     end
-
 end

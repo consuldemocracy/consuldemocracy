@@ -23,7 +23,6 @@ class Admin::SiteCustomization::InformationTextsController < Admin::SiteCustomiz
           end
         end
       end
-
     end
 
     redirect_to admin_site_customization_information_texts_path,

@@ -18,5 +18,4 @@ describe Verification::Sms do
     expect(build(:verification_sms, phone: "hello there")).not_to be_valid
     expect(build(:verification_sms, phone: "555; DROP TABLE USERS")).not_to be_valid
   end
-
 end

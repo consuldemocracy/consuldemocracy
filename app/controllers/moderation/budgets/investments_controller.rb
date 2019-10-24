@@ -20,5 +20,4 @@ class Moderation::Budgets::InvestmentsController < Moderation::BaseController
     def resource_model
       Budget::Investment
     end
-
 end

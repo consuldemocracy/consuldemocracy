@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe LocalCensusRecords::Import do
-
   let(:base_files_path) { %w[spec fixtures files local_census_records import] }
   let(:import) { build(:local_census_records_import) }
 

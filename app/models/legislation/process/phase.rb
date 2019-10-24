@@ -1,5 +1,4 @@
 class Legislation::Process::Phase
-
   def initialize(start_date, end_date, enabled)
     @start_date = start_date
     @end_date = end_date
@@ -17,5 +16,4 @@ class Legislation::Process::Phase
   def open?
     started? && Date.current <= @end_date
   end
-
 end

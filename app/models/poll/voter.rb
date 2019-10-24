@@ -1,6 +1,5 @@
 class Poll
   class Voter < ApplicationRecord
-
     VALID_ORIGINS = %w[web booth letter].freeze
 
     belongs_to :poll
@@ -69,6 +68,5 @@ class Poll
           now.year - dob.year - (now.month > dob.month || (now.month == dob.month && now.day >= dob.day) ? 0 : 1)
         end
       end
-
   end
 end

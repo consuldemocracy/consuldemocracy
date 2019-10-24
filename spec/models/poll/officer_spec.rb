@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Poll::Officer do
-
   describe "#name" do
     let(:officer) { create(:poll_officer) }
 

@@ -1,5 +1,4 @@
 shared_examples "notifiable in-app" do |factory_name|
-
   let(:author) { create(:user, :verified) }
   let!(:notifiable) { create(factory_name, author: author) }
 
@@ -134,7 +133,5 @@ shared_examples "notifiable in-app" do |factory_name|
       find(".icon-no-notification").click
       expect(page).to have_css ".notification", count: 0
     end
-
   end
-
 end

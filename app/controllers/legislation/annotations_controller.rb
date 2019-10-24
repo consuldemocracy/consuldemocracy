@@ -108,5 +108,4 @@ class Legislation::AnnotationsController < Legislation::BaseController
       end
     rescue JSON::ParserError
     end
-
 end

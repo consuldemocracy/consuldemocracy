@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Banner do
-
   let(:banner) { build(:banner) }
 
   describe "Concerns" do
@@ -12,5 +11,4 @@ describe Banner do
   it "is valid" do
     expect(banner).to be_valid
   end
-
 end

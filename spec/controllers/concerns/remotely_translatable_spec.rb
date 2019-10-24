@@ -2,15 +2,12 @@ require "rails_helper"
 include RemotelyTranslatable
 
 describe RemotelyTranslatable do
-
   before do
     Setting["feature.remote_translations"] = true
   end
 
   describe "#detect_remote_translations" do
-
     describe "Should detect remote_translations" do
-
       it "When collections and featured_proposals are not defined in current locale" do
         proposals = create_list(:proposal, 3)
         featured_proposals = create_featured_proposals
@@ -49,7 +46,6 @@ describe RemotelyTranslatable do
           expect(detect_remote_translations(widget_feeds).count).to eq 9
         end
       end
-
     end
 
     it "When defined in current locale should not detect remote_translations" do

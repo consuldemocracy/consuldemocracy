@@ -13,7 +13,6 @@ shared_examples "acts as paranoid" do |factory_name|
   end
 
   describe "#{described_class} translations" do
-
     it "is hidden after parent resource destroy" do
       resource.destroy!
       resource.reload

@@ -1,5 +1,4 @@
 class Poll::Recount < ApplicationRecord
-
   VALID_ORIGINS = %w[web booth letter].freeze
 
   belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
@@ -22,6 +21,7 @@ class Poll::Recount < ApplicationRecord
 
     [:white, :null, :total].each do |amount|
       next unless send("#{amount}_amount_changed?") && send("#{amount}_amount_was").present?
+
       self["#{amount}_amount_log"] += ":#{send("#{amount}_amount_was")}"
       amounts_changed = true
     end

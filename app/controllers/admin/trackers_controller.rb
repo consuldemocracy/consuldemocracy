@@ -45,6 +45,7 @@ class Admin::TrackersController < Admin::BaseController
   end
 
   private
+
     def set_tracker
       @tracker = Tracker.find(params[:id])
     end

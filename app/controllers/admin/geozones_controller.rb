@@ -1,5 +1,4 @@
 class Admin::GeozonesController < Admin::BaseController
-
   respond_to :html
 
   load_and_authorize_resource

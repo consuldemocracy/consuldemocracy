@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Poll::Recount do
-
   describe "logging changes" do
     let(:author) { create(:user) }
     let(:officer_assignment) { create(:poll_officer_assignment) }
@@ -100,5 +99,4 @@ describe Poll::Recount do
       expect(poll_recount.author_id_log).to eq(":#{author.id}:#{first_author.id}:#{second_author.id}")
     end
   end
-
 end

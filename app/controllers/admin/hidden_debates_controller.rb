@@ -28,5 +28,4 @@ class Admin::HiddenDebatesController < Admin::BaseController
     def load_debate
       @debate = Debate.with_hidden.find(params[:id])
     end
-
 end

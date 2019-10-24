@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe TagSanitizer do
-
   subject { TagSanitizer.new }
 
   describe "#sanitize_tag" do
@@ -25,5 +24,4 @@ describe TagSanitizer do
       expect(subject.sanitize_tag_list(%w[x=1 y?z])).to eq(%w[x1 yz])
     end
   end
-
 end

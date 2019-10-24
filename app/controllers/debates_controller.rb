@@ -73,5 +73,4 @@ class DebatesController < ApplicationController
         @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
       end
     end
-
 end

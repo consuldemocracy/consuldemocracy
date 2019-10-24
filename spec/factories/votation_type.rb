@@ -72,6 +72,5 @@ FactoryBot.define do
     trait :prioritized do
       prioritized { true }
     end
-
   end
 end

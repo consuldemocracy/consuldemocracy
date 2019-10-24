@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Voters" do
-
   let(:poll) { create(:poll, :current) }
   let(:booth) { create(:poll_booth) }
   let(:officer) { create(:poll_officer) }
@@ -84,7 +83,6 @@ describe "Voters" do
   end
 
   context "Polls displayed to officers" do
-
     scenario "Display current polls assigned to a booth" do
       poll = create(:poll, :current)
       create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)

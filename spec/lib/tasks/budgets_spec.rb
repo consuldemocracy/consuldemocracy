@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Budget do
-
   let(:run_rake_task) do
     Rake::Task["budgets:set_original_heading_id"].reenable
     Rake.application.invoke_task("budgets:set_original_heading_id")

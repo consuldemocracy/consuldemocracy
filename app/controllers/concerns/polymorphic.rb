@@ -1,5 +1,4 @@
 module Polymorphic
-
   private
 
     def resource
@@ -31,5 +30,4 @@ module Polymorphic
     def strong_params
       send("#{resource_name}_params")
     end
-
 end

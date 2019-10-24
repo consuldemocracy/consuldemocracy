@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Incomplete verifications" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -71,5 +70,4 @@ describe "Incomplete verifications" do
       expect(page).to have_content "Has not confirmed the sms code"
     end
   end
-
 end

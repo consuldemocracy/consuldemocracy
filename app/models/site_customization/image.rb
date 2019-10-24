@@ -46,5 +46,4 @@ class SiteCustomization::Image < ApplicationRecord
       errors.add(:image, :image_width, required_width: required_width) unless dimensions.width == required_width
       errors.add(:image, :image_height, required_height: required_height) unless dimensions.height == required_height
     end
-
 end

@@ -29,9 +29,7 @@ module GraphQL
     end
 
     def self.create_type(model, fields, created_types)
-
       created_types[model] = GraphQL::ObjectType.define do
-
         name        model.graphql_type_name
         description model.graphql_type_description
 
@@ -54,7 +52,6 @@ module GraphQL
             end
           end
         end
-
       end
     end
 

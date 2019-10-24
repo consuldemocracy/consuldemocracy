@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Valuator groups" do
-
   let(:admin) { create(:administrator).user }
 
   before do
@@ -117,7 +116,5 @@ describe "Valuator groups" do
       expect(page).to have_content "Valuator updated successfully"
       expect(page).not_to have_content "Health"
     end
-
   end
-
 end

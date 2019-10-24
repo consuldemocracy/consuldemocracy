@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Answers" do
-
   before do
     admin = create(:administrator)
     login_as admin.user
@@ -59,5 +58,4 @@ describe "Answers" do
 
     expect("Another title").to appear_before("New title")
   end
-
 end

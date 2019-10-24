@@ -78,5 +78,4 @@ class PollsController < ApplicationController
     def generate_and_store_new_pair(question)
       Poll::PairAnswer.generate_pair(question, current_user)
     end
-
 end

@@ -6,11 +6,9 @@ describe Widget::Card do
   it_behaves_like "globalizable", :widget_card
 
   context "validations" do
-
     it "is valid" do
       expect(card).to be_valid
     end
-
   end
 
   describe "#header" do
@@ -28,7 +26,6 @@ describe Widget::Card do
   end
 
   describe "#body" do
-
     it "returns cards for the homepage body" do
       header = create(:widget_card, header: true)
       card1 = create(:widget_card, header: false)

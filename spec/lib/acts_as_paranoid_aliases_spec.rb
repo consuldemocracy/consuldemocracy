@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Paranoid methods" do
-
   describe ".hide_all" do
     it "hides all instances in the id list" do
       debate1 = create(:debate)
@@ -43,5 +42,4 @@ describe "Paranoid methods" do
       expect(debate.reload.confirmed_hide?).not_to be
     end
   end
-
 end

@@ -78,7 +78,6 @@ module Budgets
           end
           @map_location = MapLocation.load_from_heading(@heading)
         end
-
     end
   end
 end

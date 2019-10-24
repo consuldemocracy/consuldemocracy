@@ -1,13 +1,11 @@
 require "rails_helper"
 
 describe "Budgets" do
-
   let(:budget)             { create(:budget) }
   let(:level_two_user)     { create(:user, :level_two) }
   let(:allowed_phase_list) { ["balloting", "reviewing_ballots", "finished"] }
 
   context "Load" do
-
     before { budget.update(slug: "budget_slug") }
 
     scenario "finds budget by slug" do
@@ -27,11 +25,9 @@ describe "Budgets" do
         visit budget_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   context "Index" do
-
     scenario "Show normal index with links" do
       group1 = create(:budget_group, budget: budget)
       group2 = create(:budget_group, budget: budget)
@@ -207,7 +203,6 @@ describe "Budgets" do
   end
 
   scenario "Index shows only published phases" do
-
     budget.update!(phase: :finished)
     phases = budget.phases
     phases.drafting.update!(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
@@ -365,7 +360,6 @@ describe "Budgets" do
   end
 
   context "Show" do
-
     scenario "List all groups" do
       create(:budget_group, budget: budget)
       create(:budget_group, budget: budget)
@@ -477,11 +471,9 @@ describe "Budgets" do
       visit budget_path(budget)
       expect(page).not_to have_link "See results"
     end
-
   end
 
   context "In Drafting phase" do
-
     let(:admin) { create(:administrator).user }
 
     before do
@@ -516,23 +508,19 @@ describe "Budgets" do
         expect(page.status_code).to eq(200)
       end
     end
-
   end
 
   context "Accepting" do
-
     before do
       budget.update(phase: "accepting")
     end
 
     context "Permissions" do
-
       scenario "Verified user" do
         login_as(level_two_user)
 
         visit budget_path(budget)
         expect(page).to have_link "Create a budget investment"
-
       end
 
       scenario "Unverified user" do
@@ -549,7 +537,6 @@ describe "Budgets" do
 
         expect(page).to have_content "To create a new budget investment you must sign in or sign up"
       end
-
     end
   end
 end

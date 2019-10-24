@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Booth", :with_frozen_time do
-
   scenario "Officer with no booth assignments today" do
     officer = create(:poll_officer)
 
@@ -75,5 +74,4 @@ describe "Booth", :with_frozen_time do
 
     expect(page).to have_select("booth_id", options: [booth1.location, booth2.location])
   end
-
 end

@@ -29,5 +29,4 @@ class Admin::Poll::OfficersController < Admin::Poll::BaseController
     @officer.destroy!
     redirect_to admin_officers_path
   end
-
 end

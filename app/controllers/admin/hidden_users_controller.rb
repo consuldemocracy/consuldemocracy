@@ -29,5 +29,4 @@ class Admin::HiddenUsersController < Admin::BaseController
     def load_user
       @user = User.with_hidden.find(params[:id])
     end
-
 end

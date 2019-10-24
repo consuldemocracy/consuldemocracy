@@ -2,7 +2,6 @@ require "rails_helper"
 
 describe "Legislation" do
   context "process resume page" do
-
     scenario "resume tab not show" do
       process = create(:legislation_process, :open)
       visit legislation_process_path(process)
@@ -102,7 +101,6 @@ describe "Legislation" do
       expect(page).not_to have_content("Answer 2")
       expect(page).to have_content("Answer 3")
       expect(page).to have_content("Answer 4")
-
     end
 
     scenario "proposals empty" do
@@ -157,7 +155,6 @@ describe "Legislation" do
       visit resume_legislation_process_path(process)
       click_link "Legislation proposal 3"
       expect(page).to have_content("Legislation proposal 3")
-
     end
 
     scenario "text comments empty" do
@@ -227,7 +224,6 @@ describe "Legislation" do
     #   click_link "Download"
     #   page.response_headers['Content-Type'].should eq "application/xlsx"
     # end
-
   end
 
   describe Legislation::ProcessesController, type: :controller do
@@ -245,5 +241,4 @@ describe "Legislation" do
       expect(response).to be_success
     end
   end
-
 end

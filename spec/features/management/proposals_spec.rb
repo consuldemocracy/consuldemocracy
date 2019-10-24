@@ -1,13 +1,11 @@
 require "rails_helper"
 
 describe "Proposals" do
-
   before do
     login_as_manager
   end
 
   context "Create" do
-
     scenario "Creating proposals on behalf of someone" do
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -130,7 +128,6 @@ describe "Proposals" do
   end
 
   context "Voting" do
-
     let!(:proposal) { create(:proposal) }
 
     scenario "Voting proposals on behalf of someone in index view", :js do
@@ -174,7 +171,6 @@ describe "Proposals" do
   end
 
   context "Printing" do
-
     scenario "Printing proposals" do
       6.times { create(:proposal) }
 
@@ -216,6 +212,5 @@ describe "Proposals" do
         expect(best_proposal.title).to appear_before(worst_proposal.title)
       end
     end
-
   end
 end

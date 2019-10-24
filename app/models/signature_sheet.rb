@@ -46,6 +46,7 @@ class SignatureSheet < ApplicationRecord
 
     def parse_date_of_birth(required_fields_to_verify)
       return required_fields_to_verify[1] if Setting.force_presence_date_of_birth?
+
       nil
     end
 

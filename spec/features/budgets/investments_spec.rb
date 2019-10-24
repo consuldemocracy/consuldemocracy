@@ -2,7 +2,6 @@ require "rails_helper"
 require "sessions_helper"
 
 describe "Budget Investments" do
-
   let(:author)  { create(:user, :level_two, username: "Isabel") }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:other_budget) { create(:budget, name: "What a Budget!") }
@@ -28,7 +27,6 @@ describe "Budget Investments" do
   end
 
   context "Load" do
-
     let(:investment) { create(:budget_investment, heading: heading) }
 
     before do
@@ -71,7 +69,6 @@ describe "Budget Investments" do
         visit budget_investment_path(budget, investment, heading_id: 0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   scenario "Index" do
@@ -156,7 +153,6 @@ describe "Budget Investments" do
   end
 
   context("Search") do
-
     scenario "Search by text" do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
       investment2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
@@ -179,7 +175,6 @@ describe "Budget Investments" do
     end
 
     context "Advanced search" do
-
       scenario "Search by text", :js do
         bdgt_invest1 = create(:budget_investment, heading: heading, title: "Get Schwifty")
         bdgt_invest2 = create(:budget_investment, heading: heading, title: "Schwifty Hello")
@@ -194,7 +189,6 @@ describe "Budget Investments" do
         expect(page).to have_content("There are 2 investments")
 
         within("#budget-investments") do
-
           expect(page).to have_content(bdgt_invest1.title)
           expect(page).to have_content(bdgt_invest2.title)
           expect(page).not_to have_content(bdgt_invest3.title)
@@ -202,7 +196,6 @@ describe "Budget Investments" do
       end
 
       context "Search by author type" do
-
         scenario "Public employee", :js do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
@@ -317,13 +310,10 @@ describe "Budget Investments" do
             expect(page).not_to have_content(bdgt_invest3.title)
           end
         end
-
       end
 
       context "Search by date" do
-
         context "Predefined date ranges" do
-
           scenario "Last day", :js do
             bdgt_invest1 = create(:budget_investment, heading: heading, created_at: 1.minute.ago)
             bdgt_invest2 = create(:budget_investment, heading: heading, created_at: 1.hour.ago)
@@ -403,7 +393,6 @@ describe "Budget Investments" do
               expect(page).not_to have_content(bdgt_invest3.title)
             end
           end
-
         end
 
         scenario "Search by custom date range", :js do
@@ -510,13 +499,11 @@ describe "Budget Investments" do
             expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
           end
         end
-
       end
     end
   end
 
   context("Filters") do
-
     scenario "by unfeasibility" do
       investment1 = create(:budget_investment, :unfeasible, :finished, heading: heading)
       investment2 = create(:budget_investment, :feasible, heading: heading)
@@ -577,7 +564,6 @@ describe "Budget Investments" do
     end
 
     context "Results Phase" do
-
       before { budget.update(phase: "finished", results_enabled: true) }
 
       scenario "show winners by default" do
@@ -860,7 +846,6 @@ describe "Budget Investments" do
     def investments_order
       all(".budget-investment h3").collect { |i| i.text }
     end
-
   end
 
   context "Phase I - Accepting" do
@@ -1079,11 +1064,9 @@ describe "Budget Investments" do
   end
 
   context "Show Investment's price & cost explanation" do
-
     let(:investment) { create(:budget_investment, :selected_with_price, heading: heading) }
 
     context "When investment with price is selected" do
-
       scenario "Price & explanation is shown when Budget is on published prices phase" do
         Budget::Phase::PUBLISHED_PRICES_PHASES.each do |phase|
           budget.update!(phase: phase)
@@ -1120,7 +1103,6 @@ describe "Budget Investments" do
     end
 
     context "When investment with price is unselected" do
-
       before do
         investment.update(selected: false)
       end
@@ -1140,7 +1122,6 @@ describe "Budget Investments" do
         end
       end
     end
-
   end
 
   scenario "Can access the community" do
@@ -1198,7 +1179,6 @@ describe "Budget Investments" do
       expect(page).not_to have_content("Price explanation")
       expect(page).not_to have_content(investment.price_explanation)
     end
-
   end
 
   scenario "Show (unfeasible budget investment) only when valuation finished" do
@@ -1358,7 +1338,6 @@ describe "Budget Investments" do
                   { "budget_id": "budget_id" }
 
   context "Destroy" do
-
     scenario "Admin cannot destroy budget investments" do
       user = create(:user, :level_two)
       investment = create(:budget_investment, heading: heading, author: user)
@@ -1388,13 +1367,11 @@ describe "Budget Investments" do
   end
 
   context "Selecting Phase" do
-
     before do
       budget.update(phase: "selecting")
     end
 
     context "Popup alert to vote only in one heading per group" do
-
       scenario "When supporting in the first heading group", :js do
         carabanchel = create(:budget_heading, group: group)
         salamanca   = create(:budget_heading, group: group)
@@ -1463,11 +1440,9 @@ describe "Budget Investments" do
         expect(page).to have_content "Supports"
       end
     end
-
   end
 
   context "Evaluating Phase" do
-
     before do
       budget.update(phase: "valuating")
     end
@@ -1503,11 +1478,9 @@ describe "Budget Investments" do
         expect(page).to have_content "1 support"
       end
     end
-
   end
 
   context "Publishing prices phase" do
-
     before do
       budget.update(phase: "publishing_prices")
     end
@@ -1528,7 +1501,6 @@ describe "Budget Investments" do
   end
 
   context "Balloting Phase" do
-
     before do
       budget.update(phase: "balloting")
     end
@@ -1787,7 +1759,6 @@ describe "Budget Investments" do
     end
 
     describe "Reclassification" do
-
       scenario "Due to heading change" do
         investment = create(:budget_investment, :selected, heading: heading)
         user = create(:user, :level_two, ballot_lines: [investment])
@@ -1823,7 +1794,6 @@ describe "Budget Investments" do
 
         expect(page).to have_content("You have voted 0 investment")
       end
-
     end
   end
 
@@ -1929,7 +1899,7 @@ describe "Budget Investments" do
     end
 
     scenario "Display only investment's related to the current heading", :js do
-      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+      heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
@@ -1953,7 +1923,7 @@ describe "Budget Investments" do
     end
 
     scenario "Do not display investment's, since they're all related to other heading", :js do
-      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+      heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
       investment1 = create(:budget_investment, heading: heading_2)
       investment2 = create(:budget_investment, heading: heading_2)
@@ -1988,5 +1958,4 @@ describe "Budget Investments" do
       end
     end
   end
-
 end

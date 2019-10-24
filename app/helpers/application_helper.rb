@@ -1,7 +1,7 @@
 module ApplicationHelper
-
   def home_page?
     return false if user_signed_in?
+
     # Using path because fullpath yields false negatives since it contains
     # parameters too
     request.path == "/"
@@ -42,6 +42,7 @@ module ApplicationHelper
 
   def author_of?(authorable, user)
     return false if authorable.blank? || user.blank?
+
     authorable.author_id == user.id
   end
 
@@ -76,5 +77,4 @@ module ApplicationHelper
   def management_controller?
     controller.class.to_s.include?("Management")
   end
-
 end

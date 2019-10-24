@@ -1,5 +1,4 @@
 module FeedsHelper
-
   def feed_debates?(feed)
     feed.kind == "debates"
   end
@@ -27,5 +26,4 @@ module FeedsHelper
   def feed_debates_and_proposals_enabled?
     feed_debates_enabled? && feed_proposals_enabled?
   end
-
 end

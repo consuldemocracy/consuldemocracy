@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe RemoteTranslation do
-
   let(:remote_translation) { build(:remote_translation, locale: :es) }
 
   it "is valid" do
@@ -32,7 +31,5 @@ describe RemoteTranslation do
     it "after create enqueue Delayed Job" do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
     end
-
   end
-
 end

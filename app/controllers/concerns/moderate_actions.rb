@@ -20,10 +20,8 @@ module ModerateActions
 
     if params[:hide_resources].present?
       @resources.accessible_by(current_ability, :hide).each { |resource| hide_resource resource }
-
     elsif params[:ignore_flags].present?
       @resources.accessible_by(current_ability, :ignore_flag).each(&:ignore_flag)
-
     elsif params[:block_authors].present?
       author_ids = @resources.pluck(author_id)
       User.where(id: author_ids).accessible_by(current_ability, :block).each { |user| block_user user }
@@ -56,5 +54,4 @@ module ModerateActions
     def author_id
       :author_id
     end
-
 end

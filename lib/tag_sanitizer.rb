@@ -16,5 +16,4 @@ class TagSanitizer
   def self.tag_max_length
     160
   end
-
 end

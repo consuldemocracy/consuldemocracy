@@ -77,5 +77,4 @@ class RemoteTranslations::Microsoft::Client
     def notranslate?(text)
       text.downcase == PREVENTING_TRANSLATION_KEY
     end
-
 end

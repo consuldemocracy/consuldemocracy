@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe SignatureSheet do
-
   let(:signature_sheet) { build(:signature_sheet) }
 
   describe "validations" do
-
     it "is valid" do
       expect(signature_sheet).to be_valid
     end
@@ -77,7 +75,6 @@ describe SignatureSheet do
     end
 
     context "with remote census active" do
-
       before do
         Setting["feature.remote_census"] = true
       end
@@ -151,9 +148,7 @@ describe SignatureSheet do
         Setting["remote_census.request.date_of_birth"] = nil
         Setting["remote_census.request.postal_code"] = nil
       end
-
     end
-
   end
 
   describe "#parsed_required_fields_to_verify" do
@@ -177,5 +172,4 @@ describe SignatureSheet do
       expect(signature_sheet.parsed_required_fields_to_verify_groups).to eq([["123A", "01/01/1980", "28001"], ["456B", "01/02/1980", "28002"], ["789C", "01/03/1980", "28003"]])
     end
   end
-
 end

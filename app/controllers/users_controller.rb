@@ -101,5 +101,4 @@ class UsersController < ApplicationController
         all_user_comments
       end
     end
-
 end

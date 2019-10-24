@@ -6,5 +6,4 @@ class Admin::Poll::BaseController < Admin::BaseController
     def namespace
       "admin"
     end
-
 end

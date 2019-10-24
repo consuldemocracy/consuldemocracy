@@ -30,5 +30,4 @@ module SearchCache
     def strip_html(value)
       ActionController::Base.helpers.sanitize(value, tags: [])
     end
-
 end

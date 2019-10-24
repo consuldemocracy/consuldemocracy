@@ -1,5 +1,4 @@
 module ValuationHelper
-
   def valuator_or_group_select_options
     valuator_group_select_options + valuator_select_options
   end
@@ -16,5 +15,4 @@ module ValuationHelper
   def explanation_field(field)
     simple_format_no_tags_no_sanitize(sanitize_and_auto_link(field)) if field.present?
   end
-
 end

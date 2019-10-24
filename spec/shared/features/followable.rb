@@ -12,7 +12,6 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
   end
 
   context "Show" do
-
     scenario "Should not display follow button when there is no logged user" do
       visit send(followable_path, arguments)
 
@@ -100,7 +99,5 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
 
       expect(page).to have_content strip_tags(destroy_notice_message)
     end
-
   end
-
 end

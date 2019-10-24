@@ -262,7 +262,6 @@ describe "Legislation Draft Versions" do
         expect(page).to have_content "my other annotation"
       end
     end
-
   end
 
   context "Annotations page" do
@@ -338,5 +337,4 @@ describe "Legislation Draft Versions" do
       expect(page).to have_content "my other annotation"
     end
   end
-
 end

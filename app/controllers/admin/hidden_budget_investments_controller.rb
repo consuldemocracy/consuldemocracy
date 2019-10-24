@@ -30,5 +30,4 @@ class Admin::HiddenBudgetInvestmentsController < Admin::BaseController
     def load_investment
       @investment = Budget::Investment.with_hidden.find(params[:id])
     end
-
 end

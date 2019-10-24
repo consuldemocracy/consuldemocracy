@@ -247,7 +247,6 @@ describe "Commenting polls" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -328,7 +327,6 @@ describe "Commenting polls" do
   end
 
   describe "Moderators" do
-
     scenario "can create comment as a moderator", :js do
       skip "Feature not implemented yet, review soon"
 
@@ -542,5 +540,4 @@ describe "Commenting polls" do
       end
     end
   end
-
 end

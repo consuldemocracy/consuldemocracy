@@ -245,7 +245,6 @@ describe "Commenting proposals" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -521,5 +520,4 @@ describe "Commenting proposals" do
       end
     end
   end
-
 end

@@ -38,6 +38,7 @@ class I18nContent < ApplicationRecord
 
   def self.flat_hash(input, path = nil, output = {})
     return output.update({ path => input }) unless input.is_a? Hash
+
     input.map { |key, value| flat_hash(value, [path, key].compact.join("."), output) }
     return output
   end

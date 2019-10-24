@@ -1,9 +1,7 @@
 shared_examples "map validations" do
-
   let(:mappable) { build(model_name(described_class)) }
 
   describe "validations" do
-
     before do
       Setting["feature.map"] = true
     end
@@ -43,11 +41,9 @@ shared_examples "map validations" do
 
       expect(mappable).not_to be_valid
     end
-
   end
 
   describe "cache" do
-
     it "expires cache when the map is updated" do
       map_location = create(:map_location)
       mappable.map_location = map_location
@@ -56,7 +52,5 @@ shared_examples "map validations" do
       expect { map_location.update(latitude: 12.34) }
         .to change { mappable.reload.updated_at }
     end
-
   end
-
 end

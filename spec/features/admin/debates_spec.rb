@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin debates" do
-
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
     admin = create(:administrator)
@@ -98,5 +97,4 @@ describe "Admin debates" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

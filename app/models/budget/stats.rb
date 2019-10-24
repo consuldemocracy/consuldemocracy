@@ -166,6 +166,7 @@ class Budget::Stats
 
     def population_percent(population, participants)
       return "N/A" unless population.to_f.positive?
+
       calculate_percentage(participants, population)
     end
 

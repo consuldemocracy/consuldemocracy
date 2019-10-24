@@ -69,5 +69,4 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     def load_categories
       @categories = Tag.category.order(:name)
     end
-
 end

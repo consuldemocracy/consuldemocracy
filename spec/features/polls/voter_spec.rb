@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Voter" do
-
   context "Origin", :with_frozen_time do
-
     let(:poll) { create(:poll, :current) }
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
@@ -113,7 +111,6 @@ describe "Voter" do
         expect(page).to have_content "Has already participated in this poll"
         expect(page).not_to have_content "The person has decided not to vote at this time"
       end
-
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -273,7 +270,6 @@ describe "Voter" do
           expect(page).to have_content("Validate document")
         end
       end
-
     end
   end
 end

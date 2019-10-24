@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe Verification::Management::Document do
-
   let(:verification_document) { build(:verification_document, document_number: "12345678Z") }
 
   describe "validations" do
-
     it "is valid" do
       expect(verification_document).to be_valid
     end
@@ -31,7 +29,6 @@ describe Verification::Management::Document do
     end
 
     describe "custom validations with RemoteCensus enabled" do
-
       before do
         Setting["feature.remote_census"] = true
         Setting["remote_census.request.date_of_birth"] = "some.value"
@@ -86,7 +83,6 @@ describe Verification::Management::Document do
           expect(verification_document.errors[:date_of_birth]).to include("can't be blank")
         end
       end
-
     end
 
     describe "Allowed Age" do
@@ -130,5 +126,4 @@ describe Verification::Management::Document do
       end
     end
   end
-
 end

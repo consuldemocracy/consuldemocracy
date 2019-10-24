@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe Legislation::AnnotationsController do
-
   describe "POST create" do
-
     let(:legal_process) do
       create(:legislation_process, allegations_start_date: Date.current - 3.days,
              allegations_end_date: Date.current + 2.days)
@@ -162,6 +160,5 @@ describe Legislation::AnnotationsController do
       expect(annotation.reload.comments_count).to eq(2)
       expect(annotation.comments.last.body).to eq("una anotacion")
     end
-
   end
 end

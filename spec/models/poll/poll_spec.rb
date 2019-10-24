@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Poll do
-
   let(:poll) { build(:poll) }
 
   describe "Concerns" do
@@ -233,7 +232,6 @@ describe Poll do
 
       expect(Poll.votable_by(user)).to eq [poll]
     end
-
   end
 
   describe "#votable_by" do
@@ -344,9 +342,7 @@ describe Poll do
   end
 
   context "scopes" do
-
     describe "#not_budget" do
-
       it "returns polls not associated to a budget" do
         poll1 = create(:poll)
         poll2 = create(:poll)
@@ -355,9 +351,7 @@ describe Poll do
         expect(Poll.not_budget).to match_array [poll1, poll2]
         expect(Poll.not_budget).not_to include(poll3)
       end
-
     end
-
   end
 
   describe "#sort_for_list" do

@@ -13,7 +13,6 @@ module DownloadSettings
     end
 
     def to_csv(debates, admin_attr, options = {})
-
       attributes = admin_attr.nil? ? [] : admin_attr
 
       CSV.generate(options) do |csv|
@@ -23,6 +22,5 @@ module DownloadSettings
         end
       end
     end
-
   end
 end

@@ -1,5 +1,4 @@
 class Users::ConfirmationsController < Devise::ConfirmationsController
-
   # new action, PATCH does not exist in the default Devise::ConfirmationsController
   # PATCH /resource/confirmation
   def update
@@ -55,5 +54,4 @@ class Users::ConfirmationsController < Devise::ConfirmationsController
     def set_official_position
       resource.add_official_position! (Setting["official_level_1_name"]), 1
     end
-
 end

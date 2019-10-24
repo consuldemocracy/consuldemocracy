@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin custom content blocks" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)

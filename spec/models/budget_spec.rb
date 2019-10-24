@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Budget do
-
   let(:budget) { create(:budget) }
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting
@@ -151,7 +150,6 @@ describe Budget do
   end
 
   describe "#current" do
-
     it "returns nil if there is only one budget and it is still in drafting phase" do
       create(:budget, :drafting)
 
@@ -172,18 +170,15 @@ describe Budget do
 
       expect(Budget.current.name).to eq "Current"
     end
-
   end
 
   describe "#open" do
-
     it "returns all budgets that are not in the finished phase" do
       (Budget::Phase::PHASE_KINDS - ["finished"]).each do |phase|
         budget = create(:budget, phase: phase)
         expect(Budget.open).to include(budget)
       end
     end
-
   end
 
   describe "heading_price" do

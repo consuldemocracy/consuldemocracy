@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Valuation budget investments" do
-
   let(:budget) { create(:budget) }
   let(:tracker) do
     create(:tracker, user: create(:user, username: "Rachel", email: "rachel@trackers.org"))
@@ -165,7 +164,6 @@ describe "Valuation budget investments" do
         visit tracking_budget_budget_investment_path(budget, investment)
       end.to raise_error "Not Found"
     end
-
   end
 
   describe "Milestones" do
@@ -179,7 +177,6 @@ describe "Valuation budget investments" do
     end
 
     scenario "visit investment manage milestones" do
-
       visit tracking_budget_budget_investments_path(budget)
 
       click_link "Edit milestones"
@@ -221,7 +218,6 @@ describe "Valuation budget investments" do
       visit edit_tracking_budget_budget_investment_path(budget, investment)
 
       expect(page).not_to have_content("Test delete milestone")
-
     end
 
     scenario "edit investment milestones" do
@@ -243,13 +239,10 @@ describe "Valuation budget investments" do
 
       expect(page).not_to have_content("Test edit milestone")
       expect(page).to have_content("Test edited milestone")
-
     end
-
   end
 
   describe "Progress Bars" do
-
     let(:admin) { create(:administrator) }
     let(:investment) do
       create(:budget_investment, budget: budget, administrator: admin)
@@ -275,7 +268,6 @@ describe "Valuation budget investments" do
     end
 
     scenario "create primary progress bar" do
-
       visit tracking_budget_budget_investment_progress_bars_path(budget, investment)
 
       expect(page).to have_content("Progress bars")
@@ -295,7 +287,6 @@ describe "Valuation budget investments" do
     end
 
     scenario "create secondary progress bar" do
-
       visit tracking_budget_budget_investment_progress_bars_path(budget, investment)
 
       expect(page).to have_content("Progress bars")
@@ -356,6 +347,5 @@ describe "Valuation budget investments" do
 
       expect(page).to have_content("edited")
     end
-
   end
 end

@@ -1,6 +1,5 @@
 namespace :budgets do
   namespace :email do
-
     desc "Sends emails to authors of selected investments"
     task selected: :environment do
       Budget.last.email_selected
@@ -10,7 +9,6 @@ namespace :budgets do
     task unselected: :environment do
       Budget.last.email_unselected
     end
-
   end
 
   desc "Update investments original_heading_id with current heading_id"
@@ -23,5 +21,4 @@ namespace :budgets do
       print "."
     end
   end
-
 end

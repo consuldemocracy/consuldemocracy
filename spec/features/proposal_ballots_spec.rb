@@ -1,8 +1,6 @@
-# coding: utf-8
 require "rails_helper"
 
 describe "Proposal ballots" do
-
   scenario "Successful proposals do not show support buttons in index" do
     successful_proposals = create_successful_proposals
 
@@ -25,5 +23,4 @@ describe "Proposal ballots" do
       end
     end
   end
-
 end

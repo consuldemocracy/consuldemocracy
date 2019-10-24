@@ -487,7 +487,6 @@ describe "Proposal's dashboard" do
   end
 
   describe "detect_new_actions_after_last_login" do
-
     before do
       proposal.author.update(last_sign_in_at: Date.yesterday)
     end
@@ -558,6 +557,5 @@ describe "Proposal's dashboard" do
         expect(page).not_to have_content("New")
       end
     end
-
   end
 end

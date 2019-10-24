@@ -5,7 +5,6 @@ describe Budget::Group do
   it_behaves_like "globalizable", :budget_group
 
   describe "Validations" do
-
     let(:budget) { create(:budget) }
     let(:group) { create(:budget_group, budget: budget) }
 
@@ -31,7 +30,6 @@ describe Budget::Group do
         expect(build(:budget_group, budget: budget, name_en: "Español")).not_to be_valid
       end
     end
-
   end
 
   describe "#sort_by_name" do

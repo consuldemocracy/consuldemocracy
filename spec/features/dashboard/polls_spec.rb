@@ -164,7 +164,7 @@ describe "Polls" do
     expect(page).not_to have_content(poll.name)
   end
 
-  scenario "Can't destroy poll with responses", :js  do
+  scenario "Can't destroy poll with responses", :js do
     poll = create(:poll, related: proposal)
     create(:poll_question, poll: poll)
     create(:poll_voter, poll: poll)

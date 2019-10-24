@@ -74,7 +74,7 @@ describe Abilities::Administrator do
   it { should be_able_to(:create, Budget::ValuatorAssignment) }
 
   it { should be_able_to(:admin_update, Budget::Investment) }
-  it { should be_able_to(:hide,   Budget::Investment) }
+  it { should be_able_to(:hide, Budget::Investment) }
 
   it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, :valuating))) }
   it { should be_able_to(:valuate, create(:budget_investment, budget: create(:budget, :finished))) }

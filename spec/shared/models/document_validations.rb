@@ -59,5 +59,4 @@ shared_examples "document validations" do |documentable_factory|
 
     expect(document).not_to be_valid
   end
-
 end

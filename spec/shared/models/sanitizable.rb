@@ -1,5 +1,5 @@
 shared_examples "sanitizable" do
-  let(:sanitizable)        { build(model_name(described_class)) }
+  let(:sanitizable) { build(model_name(described_class)) }
 
   describe "#tag_list" do
     before do

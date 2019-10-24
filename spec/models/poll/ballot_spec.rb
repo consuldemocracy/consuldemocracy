@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Poll::Ballot do
-
   let(:budget) { create(:budget) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group, price: 10000000) }
@@ -12,7 +11,6 @@ describe Poll::Ballot do
   before { create(:budget_ballot, budget: budget, physical: true, poll_ballot: poll_ballot) }
 
   describe "#verify" do
-
     it "adds ballot lines until there are sufficiente funds" do
       investment2 = create(:budget_investment, :selected, price: 2000000, heading: heading)
       investment3 = create(:budget_investment, :selected, price: 2000000, heading: heading)
@@ -47,11 +45,9 @@ describe Poll::Ballot do
 
       expect(poll_ballot.ballot.lines.pluck(:investment_id)).to match_array [investment.id, investment2.id, investment3.id]
     end
-
   end
 
   describe "#add_investment" do
-
     describe "Money" do
       it "is not valid if insufficient funds" do
         investment.update!(price: heading.price + 1)
@@ -129,5 +125,4 @@ describe Poll::Ballot do
       expect(poll_ballot.find_investment("00#{investment.id}")).to eq(investment)
     end
   end
-
 end

@@ -27,5 +27,4 @@ describe LocalCensus do
       expect(response).not_to be_valid
     end
   end
-
 end

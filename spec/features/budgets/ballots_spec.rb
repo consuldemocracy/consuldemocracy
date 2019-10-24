@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Ballots" do
-
   let(:user)        { create(:user, :level_two) }
   let!(:budget)     { create(:budget, :balloting) }
   let!(:states)     { create(:budget_group, budget: budget, name: "States") }
@@ -35,7 +34,6 @@ describe "Ballots" do
         visit budget_ballot_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   context "Lines Load" do
@@ -51,11 +49,9 @@ describe "Ballots" do
 
       within("#sidebar") { expect(page).to have_content "More rain" }
     end
-
   end
 
   context "Voting" do
-
     before do
       login_as(user)
       visit budget_path(budget)
@@ -65,7 +61,6 @@ describe "Ballots" do
     let!(:districts) { create(:budget_group, budget: budget, name: "Districts") }
 
     context "Group and Heading Navigation" do
-
       scenario "Groups" do
         visit budget_path(budget)
 
@@ -90,7 +85,6 @@ describe "Ballots" do
 
         expect(page).to have_link "District 1"
         expect(page).to have_link "District 2"
-
       end
 
       scenario "Investments" do
@@ -144,11 +138,9 @@ describe "Ballots" do
 
         expect(page).to have_content city_investment.title
       end
-
     end
 
     context "Adding and Removing Investments" do
-
       scenario "Add a investment", :js do
         create(:budget_investment, :selected, heading: new_york, price: 10000, title: "Bring back King Kong")
         create(:budget_investment, :selected, heading: new_york, price: 20000, title: "Paint cabs black")
@@ -238,12 +230,10 @@ describe "Ballots" do
           expect(page).to have_content "OpenStreetMap"
         end
       end
-
     end
 
     #Break up or simplify with helpers
     context "Balloting in multiple headings" do
-
       scenario "Independent progress bar for headings", :js do
         city_heading      = create(:budget_heading, group: city,      name: "All city",   price: 10000000)
         district_heading1 = create(:budget_heading, group: districts, name: "District 1", price: 1000000)
@@ -370,7 +360,6 @@ describe "Ballots" do
       expect(page).to have_content "You have active votes in another heading: California"
       expect(page).to have_link california.name, href: budget_investments_path(budget, heading_id: california.id)
     end
-
   end
 
   context "Showing the ballot" do
@@ -428,7 +417,6 @@ describe "Ballots" do
 
       expect(page).to have_link "You have not voted on this group yet, go vote!", href: budget_group_path(budget, group)
     end
-
   end
 
   scenario "Removing investments from ballot", :js do
@@ -508,7 +496,6 @@ describe "Ballots" do
   end
 
   context "Permissions" do
-
     scenario "User not logged in", :js do
       investment = create(:budget_investment, :selected, heading: new_york)
 
@@ -623,7 +610,6 @@ describe "Ballots" do
         expect(page).to have_content("You have already assigned the available budget")
         expect(page).to have_selector(".in-favor a", visible: false)
       end
-
     end
 
     scenario "Insufficient funds (removed after destroy)", :js do

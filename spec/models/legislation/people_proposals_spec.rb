@@ -84,7 +84,6 @@ describe Legislation::PeopleProposal do
     end
 
     describe "actions which affect it" do
-
       let(:people_proposal) { create(:legislation_people_proposal) }
 
       before do

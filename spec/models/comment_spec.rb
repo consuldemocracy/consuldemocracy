@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Comment do
-
   let(:comment) { build(:comment) }
 
   it_behaves_like "has_public_author"
@@ -44,7 +43,6 @@ describe Comment do
   end
 
   describe "#confidence_score" do
-
     it "takes into account percentage of total votes and total_positive and total negative votes" do
       comment = create(:comment, :with_confidence_score, cached_votes_up: 100, cached_votes_total: 100)
       expect(comment.confidence_score).to eq(10000)
@@ -81,7 +79,6 @@ describe Comment do
         expect(previous).to be > comment.confidence_score
       end
     end
-
   end
 
   describe "cache" do

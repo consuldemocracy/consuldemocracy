@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Poll::PartialResult do
-
   describe "validations" do
     it "validates that the answers are included in the Poll::Question's list" do
       question = create(:poll_question)
@@ -81,5 +80,4 @@ describe Poll::PartialResult do
       expect(partial_result.author_id_log).to eq(":#{author1.id}:#{author2.id}")
     end
   end
-
 end

@@ -1,5 +1,4 @@
 module StatsHelper
-
   def chart_tag(opt = {})
     opt[:data] ||= {}
     opt[:data][:graph] = admin_api_stats_path(chart_data(opt))

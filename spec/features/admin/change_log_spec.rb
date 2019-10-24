@@ -64,6 +64,5 @@ describe "Admin change log" do
       expect(page).to have_content("Edited at")
       expect(page).to have_content("Edited by")
     end
-
   end
 end

@@ -1,5 +1,4 @@
 class Admin::CommentsController < Admin::BaseController
-
   include DownloadSettingsHelper
 
   def index
@@ -16,5 +15,4 @@ class Admin::CommentsController < Admin::BaseController
       end
     end
   end
-
 end

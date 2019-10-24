@@ -11,5 +11,4 @@ class Valuation::BaseController < ApplicationController
     def verify_valuator
       raise CanCan::AccessDenied unless current_user&.valuator? || current_user&.administrator?
     end
-
 end

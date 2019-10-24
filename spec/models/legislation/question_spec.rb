@@ -70,5 +70,4 @@ describe Legislation::Question do
   describe "notifications" do
     it_behaves_like "notifiable"
   end
-
 end

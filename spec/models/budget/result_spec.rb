@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Budget::Result do
-
   describe "calculate_winners" do
     let(:budget) { create(:budget) }
     let(:heading) { create(:budget_heading, budget: budget, price: 1000) }

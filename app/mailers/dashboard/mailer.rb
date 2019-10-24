@@ -43,5 +43,4 @@ class Dashboard::Mailer < ApplicationMailer
     def check_deliverability
       mail.perform_deliveries = false unless Setting["dashboard.emails"]
     end
-
 end

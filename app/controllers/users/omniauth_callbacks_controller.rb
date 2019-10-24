@@ -1,5 +1,4 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
   def twitter
     sign_in_with :twitter_login, :twitter
   end
@@ -43,5 +42,4 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def save_user
       @user.save || @user.save_requiring_finish_signup
     end
-
 end

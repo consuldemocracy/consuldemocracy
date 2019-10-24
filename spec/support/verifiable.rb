@@ -174,7 +174,6 @@ shared_examples_for "verifiable" do
   end
 
   describe "methods modified by Setting user.skip_verification" do
-
     let(:user) { create(:user) }
 
     before do
@@ -243,5 +242,4 @@ shared_examples_for "verifiable" do
       end
     end
   end
-
 end

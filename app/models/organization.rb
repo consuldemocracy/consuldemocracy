@@ -1,5 +1,4 @@
 class Organization < ApplicationRecord
-
   include Graphqlable
 
   belongs_to :user, touch: true
@@ -65,5 +64,4 @@ class Organization < ApplicationRecord
         maximum: Organization.responsible_name_max_length)
       validator.validate(self)
     end
-
 end

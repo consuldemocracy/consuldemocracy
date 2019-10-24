@@ -1,4 +1,3 @@
-# coding: utf-8
 require "rails_helper"
 
 describe Proposal do
@@ -249,9 +248,7 @@ describe Proposal do
   end
 
   describe "#cached_votes_up" do
-
     describe "with deprecated long tag list" do
-
       it "increases number of cached_total_votes" do
         proposal = create(:proposal)
 
@@ -260,7 +257,6 @@ describe Proposal do
 
         expect(proposal.update_cached_votes).to eq(true)
       end
-
     end
   end
 
@@ -321,7 +317,6 @@ describe Proposal do
     end
 
     describe "actions which affect it" do
-
       let(:proposal) { create(:proposal) }
 
       before do
@@ -358,7 +353,6 @@ describe Proposal do
   end
 
   describe "#confidence_score" do
-
     it "takes into account votes" do
       proposal = create(:proposal, :with_confidence_score, cached_votes_up: 100)
       expect(proposal.confidence_score).to eq(10000)
@@ -385,7 +379,6 @@ describe Proposal do
         expect(previous).to be < proposal.confidence_score
       end
     end
-
   end
 
   describe "cache" do
@@ -439,7 +432,6 @@ describe Proposal do
   end
 
   describe "voters" do
-
     it "returns users that have voted for the proposal" do
       proposal = create(:proposal)
       voter1 = create(:user, :level_two, votables: [proposal])
@@ -469,7 +461,6 @@ describe Proposal do
 
       expect(proposal.voters).to eq [voter1]
     end
-
   end
 
   describe "search" do
@@ -532,11 +523,9 @@ describe Proposal do
         results = Proposal.search("California")
         expect(results).to eq([proposal])
       end
-
     end
 
     context "stemming" do
-
       it "searches word stems" do
         proposal = create(:proposal, summary: "Economía")
 
@@ -549,7 +538,6 @@ describe Proposal do
         results = Proposal.search("eco")
         expect(results).to eq([proposal])
       end
-
     end
 
     context "accents" do
@@ -595,7 +583,6 @@ describe Proposal do
     end
 
     context "order" do
-
       it "orders by weight" do
         proposal_title       = create(:proposal,  title:       "stop corruption")
         proposal_description = create(:proposal,  description: "stop corruption")
@@ -626,11 +613,9 @@ describe Proposal do
 
         expect(results).to eq [exact_title_few_votes, similar_title_many_votes]
       end
-
     end
 
     context "reorder" do
-
       it "is able to reorder by hot_score after searching" do
         lowest_score  = create(:proposal,  title: "stop corruption", cached_votes_up: 1)
         highest_score = create(:proposal,  title: "stop corruption", cached_votes_up: 2)
@@ -694,11 +679,9 @@ describe Proposal do
 
         expect(results).to eq [most_commented, some_comments, least_commented]
       end
-
     end
 
     context "no results" do
-
       it "no words match" do
         create(:proposal, title: "save world")
 
@@ -726,7 +709,6 @@ describe Proposal do
         results = Proposal.search("")
         expect(results).to eq([])
       end
-
     end
   end
 
@@ -745,9 +727,7 @@ describe Proposal do
   end
 
   describe "for_summary" do
-
     context "categories" do
-
       it "returns proposals tagged with a category" do
         create(:tag, :category, name: "culture")
         proposal = create(:proposal, tag_list: "culture")
@@ -764,7 +744,6 @@ describe Proposal do
     end
 
     context "districts" do
-
       it "returns proposals with a geozone" do
         california = create(:geozone, name: "california")
         proposal   = create(:proposal, geozone: california)
@@ -879,7 +858,7 @@ describe Proposal do
 
   describe "selected" do
     let!(:not_selected_proposal) { create(:proposal) }
-    let!(:selected_proposal)   { create(:proposal, :selected) }
+    let!(:selected_proposal)     { create(:proposal, :selected) }
 
     it "selected? is true" do
       expect(not_selected_proposal.selected?).to be false
@@ -910,7 +889,6 @@ describe Proposal do
   end
 
   describe "#user_to_notify" do
-
     it "returns voters and followers" do
       proposal = create(:proposal)
       voter = create(:user, :level_two, votables: [proposal])
@@ -935,12 +913,10 @@ describe Proposal do
 
       expect(proposal.users_to_notify).to eq([voter_and_follower])
     end
-
   end
 
   describe "#recommendations" do
-
-    let(:user)     { create(:user) }
+    let(:user) { create(:user) }
 
     it "does not return any proposals when user has not interests" do
       create(:proposal)
@@ -1003,11 +979,9 @@ describe Proposal do
 
       expect(results).to be_empty
     end
-
   end
 
   describe "#send_new_actions_notification_on_create" do
-
     before do
       Setting["dashboard.emails"] = true
       ActionMailer::Base.deliveries.clear
@@ -1030,11 +1004,9 @@ describe Proposal do
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
-
   end
 
   describe "#send_new_actions_notification_on_published" do
-
     before do
       Setting["dashboard.emails"] = true
       ActionMailer::Base.deliveries.clear
@@ -1059,13 +1031,10 @@ describe Proposal do
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
-
   end
 
   describe "milestone_tags" do
-
     context "without milestone_tags" do
-
       let(:proposal) { create(:proposal) }
 
       it "do not have milestone_tags" do
@@ -1081,7 +1050,6 @@ describe Proposal do
     end
 
     context "with milestone_tags" do
-
       let(:proposal) { create(:proposal, :with_milestone_tags) }
 
       it "has milestone_tags" do
@@ -1089,5 +1057,4 @@ describe Proposal do
       end
     end
   end
-
 end

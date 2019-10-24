@@ -125,6 +125,7 @@ class Officing::Residence
 
     def valid_year_of_birth?
       return true if Setting.force_presence_date_of_birth?
+
       @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
     end
 
@@ -135,5 +136,4 @@ class Officing::Residence
     def random_password
       (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
-
 end

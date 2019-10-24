@@ -5,6 +5,5 @@ class Budget::Investment::ChangeLog < ApplicationRecord
   validates :new_value, presence: true
   validates :field, presence: true
 
-  scope :by_investment,     ->(investment_id) { where(investment_id: investment_id) }
-
+  scope :by_investment, ->(investment_id) { where(investment_id: investment_id) }
 end

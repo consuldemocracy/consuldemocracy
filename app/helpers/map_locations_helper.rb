@@ -1,5 +1,4 @@
 module MapLocationsHelper
-
   def map_location_available?(map_location)
     map_location.present? && map_location.available?
   end
@@ -24,7 +23,7 @@ module MapLocationsHelper
     "remove-marker-link-#{dom_id(map_location)}"
   end
 
-  def render_map(map_location, parent_class, editable, remove_marker_label, investments_coordinates=nil)
+  def render_map(map_location, parent_class, editable, remove_marker_label, investments_coordinates = nil)
     map_location = MapLocation.new if map_location.nil?
     map = content_tag :div, "",
                       id: dom_id(map_location),
@@ -47,7 +46,7 @@ module MapLocationsHelper
 
   private
 
-    def prepare_map_settings(map_location, editable, parent_class, investments_coordinates=nil)
+    def prepare_map_settings(map_location, editable, parent_class, investments_coordinates = nil)
       options = {
         map: "",
         map_center_latitude: map_location_latitude(map_location),
@@ -66,5 +65,4 @@ module MapLocationsHelper
       options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
       options
     end
-
 end

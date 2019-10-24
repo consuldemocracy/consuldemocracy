@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Valuator do
-
   describe "#description_or_email" do
     it "returns description if present" do
       valuator = create(:valuator, description: "Urbanism manager")
@@ -17,7 +16,6 @@ describe Valuator do
   end
 
   describe "#assigned_investment_ids" do
-
     it "returns investments assigned to a valuator" do
       valuator = create(:valuator)
       investment1 = create(:budget_investment, valuators: [valuator])
@@ -52,5 +50,4 @@ describe Valuator do
       it { expect(valuator.can_edit_dossier).to be_truthy }
     end
   end
-
 end

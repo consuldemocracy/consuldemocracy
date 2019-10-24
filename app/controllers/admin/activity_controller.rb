@@ -5,5 +5,4 @@ class Admin::ActivityController < Admin::BaseController
     @activity = Activity.for_render.send(@current_filter)
                         .order(created_at: :desc).page(params[:page])
   end
-
 end

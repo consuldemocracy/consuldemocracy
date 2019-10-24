@@ -16,5 +16,4 @@ class Admin::DebatesController < Admin::BaseController
     def resource_model
       Debate
     end
-
 end

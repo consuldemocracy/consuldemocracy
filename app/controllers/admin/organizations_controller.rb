@@ -26,5 +26,4 @@ class Admin::OrganizationsController < Admin::BaseController
     @organization.reject
     redirect_to request.query_parameters.merge(action: :index)
   end
-
 end

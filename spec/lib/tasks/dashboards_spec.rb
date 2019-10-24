@@ -2,9 +2,7 @@ require "rails_helper"
 require "rake"
 
 describe "Dashboards Rake" do
-
   describe "#send_notifications" do
-
     before do
       Rake.application.rake_require "tasks/dashboards"
       Rake::Task.define_task(:environment)
@@ -18,7 +16,6 @@ describe "Dashboards Rake" do
     end
 
     describe "Not send notifications to proposal author" do
-
       let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 1) }
       let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 1) }
 
@@ -45,7 +42,6 @@ describe "Dashboards Rake" do
 
         expect { run_rake_task }.to change { ActionMailer::Base.deliveries.count }.by(0)
       end
-
     end
 
     describe "Send notifications to proposal author" do
@@ -78,7 +74,5 @@ describe "Dashboards Rake" do
         expect(email).to have_subject("More news about your citizen proposal")
       end
     end
-
   end
-
 end

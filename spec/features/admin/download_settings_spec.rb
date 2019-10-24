@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin download settings" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -30,7 +29,6 @@ describe "Admin download settings" do
   end
 
   context "Download debates" do
-
     before do
       create(:debate)
     end
@@ -83,13 +81,11 @@ describe "Admin download settings" do
   end
 
   context "Download proposals" do
-
     before do
       create(:proposal)
     end
 
     scenario "admin csv" do
-
       visit admin_proposals_path
 
       click_button "Download"
@@ -121,7 +117,6 @@ describe "Admin download settings" do
   end
 
   scenario "Update download settings comments" do
-
     visit admin_edit_download_settings_path(resource: "comments")
 
     find(:css, "#downloadable_[value='id']").set(true)
@@ -155,11 +150,9 @@ describe "Admin download settings" do
     visit admin_edit_download_settings_path(resource: "legislation_processes")
 
     expect(page).to have_content("Legislation process")
-
   end
 
   scenario "Update download settings legislation process" do
-
     visit admin_edit_download_settings_path(resource: "legislation_processes")
 
     find(:css, "#downloadable_[value='id']").set(true)
@@ -176,14 +169,12 @@ describe "Admin download settings" do
   end
 
   context "Download legislation process" do
-
     before do
       create(:legislation_process, :open)
       create(:legislation_process, :published)
     end
 
     scenario "admin csv" do
-
       visit admin_legislation_processes_path
 
       click_button "Download"
@@ -212,11 +203,9 @@ describe "Admin download settings" do
     visit admin_edit_download_settings_path(resource: "budget_investments")
 
     expect(page).to have_content("Participatory budgeting")
-
   end
 
   scenario "Update download settings budget investment results" do
-
     visit admin_edit_download_settings_path(resource: "budget_investments")
 
     find(:css, "#downloadable_[value='id']").set(true)
@@ -236,11 +225,9 @@ describe "Admin download settings" do
     visit admin_edit_download_settings_path(resource: "budget_investments", config: 1)
 
     expect(page).to have_content("Participatory budgeting - Milestones")
-
   end
 
   scenario "Update download settings budget investment milestones" do
-
     visit admin_edit_download_settings_path(resource: "budget_investments", config: 1)
 
     find(:css, "#downloadable_[value='id']").set(true)
@@ -260,7 +247,7 @@ describe "Admin download settings" do
   end
 
   context "Download budgets" do
-    let(:budget_finished)  { create(:budget, :finished) }
+    let(:budget_finished) { create(:budget, :finished) }
     let(:heading) { create(:budget_heading, budget: budget_finished, price: 1000) }
 
     let(:investment1) do
@@ -319,5 +306,4 @@ describe "Admin download settings" do
       expect(content_type).to match("text/csv")
     end
   end
-
 end

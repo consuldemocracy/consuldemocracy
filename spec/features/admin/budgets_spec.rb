@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe "Admin budgets" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context "Feature flag" do
-
     before do
       Setting["process.budgets"] = nil
     end
@@ -16,11 +14,9 @@ describe "Admin budgets" do
     scenario "Disabled with a feature flag" do
       expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Load" do
-
     let!(:budget) { create(:budget, slug: "budget_slug") }
 
     scenario "finds budget by slug" do
@@ -39,11 +35,9 @@ describe "Admin budgets" do
         visit admin_budget_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   context "Index" do
-
     scenario "Displaying no open budgets text" do
       visit admin_budgets_path
 
@@ -105,11 +99,9 @@ describe "Admin budgets" do
         end
       end
     end
-
   end
 
   context "New" do
-
     scenario "Create budget" do
       visit admin_budgets_path
       click_link "Create new budget"
@@ -142,11 +134,9 @@ describe "Admin budgets" do
       expect(page).to have_css(".is-invalid-label", text: "Name")
       expect(page).to have_css("small.form-error", text: "has already been taken")
     end
-
   end
 
   context "Destroy" do
-
     let!(:budget) { create(:budget) }
     let(:heading) { create(:budget_heading, budget: budget) }
 
@@ -193,10 +183,10 @@ describe "Admin budgets" do
       expect(page).to have_select("budget_phase", selected: "Selecting projects")
 
       within "#budget-phases-table" do
-
         Budget::Phase::PHASE_KINDS.each do |phase_kind|
-          phase_index = Budget::Phase::PHASE_KINDS.index(phase_kind)
           break if phase_kind == Budget::Phase::PHASE_KINDS.last
+
+          phase_index = Budget::Phase::PHASE_KINDS.index(phase_kind)
           next_phase_kind = Budget::Phase::PHASE_KINDS[phase_index + 1]
           next_phase_name = translated_phase_name(phase_kind: next_phase_kind)
           expect(translated_phase_name(phase_kind: phase_kind)).to appear_before(next_phase_name)
@@ -239,11 +229,9 @@ describe "Admin budgets" do
       expect(budget.reload.slug).not_to eq old_slug
       expect(budget.slug).to eq "new-english-name"
     end
-
   end
 
   context "Update" do
-
     before do
       create(:budget)
     end
@@ -258,11 +246,9 @@ describe "Admin budgets" do
       expect(page).to have_content("More trees on the streets")
       expect(page).to have_current_path(admin_budgets_path)
     end
-
   end
 
   context "Calculate Budget's Winner Investments" do
-
     scenario "For a Budget in reviewing balloting", :js do
       budget = create(:budget, :reviewing_ballots)
       heading = create(:budget_heading, budget: budget, price: 4)
@@ -312,7 +298,6 @@ describe "Admin budgets" do
       expect(page).to have_content "Recalculate Winner Investments"
       expect(page).not_to have_content "Calculate Winner Investments"
     end
-
   end
 end
 

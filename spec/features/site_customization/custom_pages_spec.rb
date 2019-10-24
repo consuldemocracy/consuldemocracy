@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Custom Pages" do
-
   context "New custom page" do
     context "Draft" do
       scenario "See page" do

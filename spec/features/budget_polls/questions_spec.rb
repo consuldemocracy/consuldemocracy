@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Poll Questions" do
-
   before do
     admin = create(:administrator).user
     login_as(admin)
@@ -16,5 +15,4 @@ describe "Poll Questions" do
     expect(page).to have_select("poll_id", text: "Citizen Proposal Poll")
     expect(page).not_to have_select("poll_id", text: "Participatory Budget Poll")
   end
-
 end

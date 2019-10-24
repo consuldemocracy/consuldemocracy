@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Official positions" do
-
   context "Badge" do
     let(:user1) { create(:user, official_level: 1, official_position: "Employee", official_position_badge: true) }
     let(:user2) { create(:user, official_level: 0, official_position: "") }
@@ -35,7 +34,6 @@ describe "Official positions" do
         visit debate_path(debate2)
         expect_no_badge_for("debate", debate2)
       end
-
     end
 
     context "Proposals" do
@@ -56,7 +54,6 @@ describe "Official positions" do
         visit proposal_path(proposal2)
         expect_no_badge_for("proposal", proposal2)
       end
-
     end
   end
 end

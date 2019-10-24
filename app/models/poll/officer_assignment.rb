@@ -32,6 +32,5 @@ class Poll
     def booth
       booth_assignment.booth
     end
-
   end
 end

@@ -138,6 +138,5 @@ describe "BudgetPolls", :with_frozen_time do
         expect(page).to have_content("Has already participated in this poll")
       end
     end
-
   end
 end

@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe WYSIWYGSanitizer do
-
   subject { WYSIWYGSanitizer.new }
 
   describe "#sanitize" do
-
     it "returns an html_safe string" do
       expect(subject.sanitize("hello")).to be_html_safe
     end
@@ -35,5 +33,4 @@ describe WYSIWYGSanitizer do
       expect(subject.sanitize(html)).to eq("Dangerous image")
     end
   end
-
 end

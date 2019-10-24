@@ -1,5 +1,4 @@
 class Officing::ResidenceController < Officing::BaseController
-
   before_action :load_officer_assignment
   before_action :verify_officer_assignment
   before_action :verify_booth
@@ -23,5 +22,4 @@ class Officing::ResidenceController < Officing::BaseController
       params.require(:residence).permit(:document_number, :document_type, :year_of_birth,
                                         :date_of_birth, :postal_code)
     end
-
 end

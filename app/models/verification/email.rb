@@ -33,5 +33,4 @@ class Verification::Email
   def self.valid_token?(user, token)
     Devise.token_generator.digest(User, :email_verification_token, user.email_verification_token) == token
   end
-
 end

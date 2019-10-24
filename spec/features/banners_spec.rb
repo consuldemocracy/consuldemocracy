@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Banner" do
-
   scenario "The banner is shown correctly" do
     create(:web_section, name: "homepage")
     banner = create(:banner, title: "Hello",

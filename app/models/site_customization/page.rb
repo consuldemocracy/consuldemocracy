@@ -18,7 +18,7 @@ class SiteCustomization::Page < ApplicationRecord
   scope :sort_desc, -> { order("id DESC") }
   scope :with_more_info_flag, -> { where(status: "published", more_info_flag: true).sort_asc }
   scope :with_same_locale, -> { joins(:translations).locale }
-  scope :locale, ->  { where("site_customization_page_translations.locale": I18n.locale) }
+  scope :locale, -> { where("site_customization_page_translations.locale": I18n.locale) }
 
   def url
     "/#{slug}"

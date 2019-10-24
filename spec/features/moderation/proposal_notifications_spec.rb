@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Moderate proposal notifications" do
-
   scenario "Hide", :js do
     citizen   = create(:user)
     proposal  = create(:proposal)
@@ -40,7 +39,6 @@ describe "Moderate proposal notifications" do
   end
 
   describe "/moderation/ screen" do
-
     before do
       moderator = create(:moderator)
       login_as(moderator.user)

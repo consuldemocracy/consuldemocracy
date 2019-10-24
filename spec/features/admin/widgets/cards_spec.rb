@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Cards" do
-
   before do
     admin = create(:administrator).user
     login_as(admin)
@@ -109,7 +108,6 @@ describe "Cards" do
   end
 
   context "Header Card" do
-
     scenario "Create" do
       visit admin_homepage_path
       click_link "Create header"
@@ -219,9 +217,7 @@ describe "Cards" do
         expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
         expect(page).not_to have_content "Card title"
       end
-
     end
-
   end
 
   pending "add image expectactions"

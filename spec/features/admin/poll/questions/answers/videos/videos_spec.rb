@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Videos" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -29,5 +28,4 @@ describe "Videos" do
     expect(page).to have_content(video_title)
     expect(page).to have_content(video_url)
   end
-
 end

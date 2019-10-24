@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin local census records" do
-
   before do
     login_as(create(:administrator).user)
   end

@@ -17,7 +17,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
   end
 
   describe "at #{path}" do
-
     scenario "Should show new image link when imageable has not an associated image defined" do
       login_as user
       visit send(path, arguments)
@@ -214,7 +213,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
     end
 
     if path.include? "edit"
-
       scenario "Should show persisted image" do
         create(:image, imageable: imageable)
         login_as user
@@ -248,11 +246,8 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 
         expect(page).to have_css "a#new_image_link", visible: true
       end
-
     end
-
   end
-
 end
 
 def imageable_redirected_to_resource_show_or_navigate_to

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Remote Translations" do
-
   before do
     Setting["feature.remote_translations"] = true
     create(:proposal)
@@ -11,9 +10,7 @@ describe "Remote Translations" do
   end
 
   describe "Display remote translation button when locale is included in microsoft translate client" do
-
     context "with locale that has :en fallback" do
-
       before do
         allow(I18n.fallbacks).to receive(:[]).and_return([:en])
         Globalize.set_fallbacks_to_all_available_locales
@@ -35,7 +32,6 @@ describe "Remote Translations" do
     end
 
     context "with locale that has :en fallback" do
-
       before do
         allow(I18n.fallbacks).to receive(:[]).and_return([:es])
         Globalize.set_fallbacks_to_all_available_locales
@@ -55,7 +51,6 @@ describe "Remote Translations" do
         expect(page).to have_content "El contenido de esta página no está disponible en tu idioma"
       end
     end
-
   end
 
   scenario "Not display remote translation button when locale is not included in microsoft translate client" do
@@ -63,5 +58,4 @@ describe "Remote Translations" do
 
     expect(page).not_to have_css ".remote-translations-button"
   end
-
 end

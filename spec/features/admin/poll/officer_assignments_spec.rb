@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Officer Assignments" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -45,5 +44,4 @@ describe "Officer Assignments" do
       expect(page).not_to have_content "John Edwards"
     end
   end
-
 end

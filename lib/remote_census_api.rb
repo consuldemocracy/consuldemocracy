@@ -1,6 +1,5 @@
 include DocumentParser
 class RemoteCensusApi
-
   def call(document_type, document_number, date_of_birth, postal_code)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
@@ -18,6 +17,7 @@ class RemoteCensusApi
     def extract_value(path_value)
       path = parse_response_path(path_value)
       return nil unless path.present?
+
       @body.dig(*path)
     end
 
@@ -30,8 +30,10 @@ class RemoteCensusApi
       path_value = Setting["remote_census.response.date_of_birth"]
       str = extract_value(path_value)
       return nil unless str.present?
+
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
+
       Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end
 
@@ -112,6 +114,7 @@ class RemoteCensusApi
       to_set = path.empty? ? structure : structure.dig(*path)
 
       return unless to_set
+
       to_set[final_key] = value
     end
 
@@ -154,5 +157,4 @@ class RemoteCensusApi
     def stubbed_invalid_response
       { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}}}
     end
-
 end

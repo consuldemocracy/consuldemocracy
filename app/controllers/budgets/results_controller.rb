@@ -34,6 +34,5 @@ module Budgets
           @heading = headings.find_by_slug_or_id(params[:heading_id]) || headings.first
         end
       end
-
   end
 end

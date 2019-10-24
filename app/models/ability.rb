@@ -23,5 +23,4 @@ class Ability
       merge Abilities::Everyone.new(user)
     end
   end
-
 end

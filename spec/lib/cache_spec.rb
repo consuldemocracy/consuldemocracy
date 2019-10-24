@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Cache flow" do
-
   describe "Tag destroy" do
     it "invalidates Debate cache keys" do
       debate = create(:debate, tag_list: "Good, Bad")
@@ -10,5 +9,4 @@ describe "Cache flow" do
       expect { tag.destroy }.to change { debate.reload.cache_key }
     end
   end
-
 end

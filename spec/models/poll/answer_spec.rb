@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe Poll::Answer do
-
   describe "validations" do
-
     let(:answer) { build(:poll_answer) }
 
     it "is valid" do
@@ -40,7 +38,6 @@ describe Poll::Answer do
   end
 
   describe "#record_voter_participation" do
-
     let(:author) { create(:user, :level_two) }
     let(:poll) { create(:poll) }
     let(:question) { create(:poll_question, :yes_no, poll: poll) }
@@ -74,5 +71,4 @@ describe Poll::Answer do
       expect(voter.poll_id).to eq(answer.poll.id)
     end
   end
-
 end

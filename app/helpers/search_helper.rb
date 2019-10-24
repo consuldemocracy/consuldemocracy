@@ -1,5 +1,4 @@
 module SearchHelper
-
   def official_level_search_options
     options_for_select((1..5).map { |i| [setting["official_level_#{i}_name"], i] },
                        params[:advanced_search].try(:[], :official_level))
@@ -22,5 +21,4 @@ module SearchHelper
   def custom_date_range?
     params[:advanced_search].try(:[], :date_max).present?
   end
-
 end

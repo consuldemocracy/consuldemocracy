@@ -4,7 +4,6 @@ require "cgi"
 require "json"
 
 class RemoteTranslations::Microsoft::AvailableLocales
-
   def self.available_locales
     daily_cache("locales") do
       remote_available_locales.map { |locale| locale.first }
@@ -51,5 +50,4 @@ class RemoteTranslations::Microsoft::AvailableLocales
     def self.daily_cache(key, &block)
       Rails.cache.fetch("remote_available_locales/#{Time.current.strftime("%Y-%m-%d")}/#{key}", &block)
     end
-
 end

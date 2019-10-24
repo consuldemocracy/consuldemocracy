@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin polls" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -116,7 +115,6 @@ describe "Admin polls" do
   end
 
   context "Destroy" do
-
     scenario "Can destroy poll without questions", :js do
       poll = create(:poll)
 
@@ -147,7 +145,7 @@ describe "Admin polls" do
       expect(Poll::Question::Answer.count). to eq(0)
     end
 
-    scenario "Can't destroy poll with votes", :js  do
+    scenario "Can't destroy poll with votes", :js do
       poll = create(:poll)
       create(:poll_question, poll: poll)
       create(:poll_voter, :from_booth, :valid_document, poll: poll)
@@ -164,9 +162,7 @@ describe "Admin polls" do
   end
 
   context "Booths" do
-
     context "Poll show" do
-
       scenario "No booths" do
         poll = create(:poll)
         visit admin_poll_path(poll)
@@ -196,9 +192,7 @@ describe "Admin polls" do
   end
 
   context "Officers" do
-
     context "Poll show" do
-
       scenario "No officers", :js do
         poll = create(:poll)
         visit admin_poll_path(poll)
@@ -234,9 +228,7 @@ describe "Admin polls" do
   end
 
   context "Questions" do
-
     context "Poll show" do
-
       scenario "Question list", :js do
         poll = create(:poll)
         question = create(:poll_question, poll: poll)
@@ -250,9 +242,7 @@ describe "Admin polls" do
         expect(page).to have_content votation_type_question.title
         expect(page).not_to have_content other_question.title
         expect(page).not_to have_content "There are no questions assigned to this poll"
-
       end
-
     end
   end
 
@@ -520,5 +510,4 @@ describe "Admin polls" do
       end
     end
   end
-
 end

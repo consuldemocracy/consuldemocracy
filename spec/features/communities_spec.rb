@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Communities" do
-
   context "Show" do
-
     scenario "Should display default content" do
       proposal = create(:proposal)
       community = proposal.community
@@ -147,5 +145,4 @@ describe "Communities" do
       expect { visit community_path(community) }.to raise_error(ActionController::RoutingError)
     end
   end
-
 end

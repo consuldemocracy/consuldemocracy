@@ -159,6 +159,7 @@ class Legislation::ProcessesController < Legislation::BaseController
 
     def set_process
       return if member_method?
+
       @process = ::Legislation::Process.find(params[:process_id])
     end
 end

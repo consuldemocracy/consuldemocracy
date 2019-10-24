@@ -1,5 +1,4 @@
 module WelcomeHelper
-
   def is_active_class(index)
     "is-active is-in" if index.zero?
   end
@@ -54,5 +53,4 @@ module WelcomeHelper
       end
     end
   end
-
 end

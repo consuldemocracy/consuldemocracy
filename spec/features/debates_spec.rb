@@ -1,8 +1,6 @@
-# coding: utf-8
 require "rails_helper"
 
 describe "Debates" do
-
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
     expect { visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
@@ -382,7 +380,6 @@ describe "Debates" do
   end
 
   describe "Debate index order filters" do
-
     scenario "Default order is hot_score", :js do
       best_debate = create(:debate, title: "Best")
       best_debate.update_column(:hot_score, 10)
@@ -439,7 +436,6 @@ describe "Debates" do
     end
 
     context "Recommendations" do
-
       let!(:best_debate)   { create(:debate, title: "Best",   cached_votes_total: 10, tag_list: "Sport") }
       let!(:medium_debate) { create(:debate, title: "Medium", cached_votes_total: 5,  tag_list: "Sport") }
       let!(:worst_debate)  { create(:debate, title: "Worst",  cached_votes_total: 1,  tag_list: "Sport") }
@@ -548,9 +544,7 @@ describe "Debates" do
   end
 
   context "Search" do
-
     context "Basic search" do
-
       scenario "Search by text" do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
@@ -582,11 +576,9 @@ describe "Debates" do
 
         expect(page).to have_selector("input[name='search'][value='Schwifty']")
       end
-
     end
 
     context "Advanced search" do
-
       scenario "Search by text", :js do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
@@ -608,7 +600,6 @@ describe "Debates" do
       end
 
       context "Search by author type" do
-
         scenario "Public employee", :js do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
@@ -723,13 +714,10 @@ describe "Debates" do
             expect(page).not_to have_content(debate3.title)
           end
         end
-
       end
 
       context "Search by date" do
-
         context "Predefined date ranges" do
-
           scenario "Last day", :js do
             debate1 = create(:debate, created_at: 1.minute.ago)
             debate2 = create(:debate, created_at: 1.hour.ago)
@@ -809,7 +797,6 @@ describe "Debates" do
               expect(page).not_to have_content(debate3.title)
             end
           end
-
         end
 
         scenario "Search by custom date range", :js do
@@ -911,7 +898,6 @@ describe "Debates" do
             expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
           end
         end
-
       end
     end
 
@@ -990,7 +976,6 @@ describe "Debates" do
       expect(page).not_to have_selector("#debates .debate-featured")
       expect(page).not_to have_selector("#featured-debates")
     end
-
   end
 
   scenario "Conflictive" do
@@ -1076,7 +1061,6 @@ describe "Debates" do
           expect(page).not_to have_content("Sully monument")
         end
       end
-
     end
   end
 
@@ -1167,5 +1151,4 @@ describe "Debates" do
       expect(page).not_to have_content("Featured")
     end
   end
-
 end

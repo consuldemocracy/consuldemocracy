@@ -4,7 +4,6 @@ describe "Admin budget phases" do
   let(:budget) { create(:budget) }
 
   context "Edit" do
-
     before do
       admin = create(:administrator)
       login_as(admin.user)

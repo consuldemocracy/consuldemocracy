@@ -62,7 +62,6 @@ describe RemoteCensusApi do
   end
 
   describe "request structure correctly filled" do
-
     before do
       Setting["feature.remote_census"] = true
       Setting["remote_census.request.structure"] = '{ "request":
@@ -149,11 +148,9 @@ describe RemoteCensusApi do
                               "nivel" => 3 }
                             })
     end
-
   end
 
   describe "get_response_body" do
-
     before do
       Setting["feature.remote_census"] = true
     end
@@ -185,11 +182,9 @@ describe RemoteCensusApi do
                                }
                              })
     end
-
   end
 
   describe "RemoteCensusApi::Response" do
-
     before do
       Setting["feature.remote_census"] = true
       access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
@@ -217,7 +212,5 @@ describe RemoteCensusApi do
       expect(response.gender).to eq "male"
       expect(response.name).to eq "José García"
     end
-
   end
-
 end

@@ -43,6 +43,7 @@ class Verification::Management::Email
 
     def validate_user
       return if errors.count > 0
+
       if !user?
         errors.add(:email, I18n.t("errors.messages.user_not_found"))
       elsif user.level_three_verified?
@@ -52,6 +53,7 @@ class Verification::Management::Email
 
     def validate_document_number
       return if errors.count > 0
+
       if document_number_mismatch?
         errors.add(:email,
                    I18n.t("management.email_verifications.document_mismatch",

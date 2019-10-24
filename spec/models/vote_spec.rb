@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Vote do
-
   describe "#for_debates" do
     it "does not returns votes for other votables" do
       debate = create(:debate)

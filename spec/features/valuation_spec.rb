@@ -110,5 +110,4 @@ describe "Valuation" do
     expect(page).not_to have_css("#admin_menu")
     expect(page).not_to have_css("#moderation_menu")
   end
-
 end

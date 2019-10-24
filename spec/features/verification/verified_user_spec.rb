@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Verified users" do
-
   scenario "Verified emails" do
     user = create(:user,
                   residence_verified_at: Time.current,
@@ -133,5 +132,4 @@ describe "Verified users" do
 
     expect(page).to have_current_path(new_sms_path)
   end
-
 end

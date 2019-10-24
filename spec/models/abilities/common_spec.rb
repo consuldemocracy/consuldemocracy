@@ -32,7 +32,7 @@ describe Abilities::Common do
   let(:ballot_in_selecting_budget) { create(:budget_ballot, budget: selecting_budget) }
   let(:ballot_in_balloting_budget) { create(:budget_ballot, budget: balloting_budget) }
 
-  let(:current_poll)  { create(:poll) }
+  let(:current_poll) { create(:poll) }
   let(:expired_poll) { create(:poll, :expired) }
   let(:expired_poll_from_own_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [geozone]) }
   let(:expired_poll_from_other_geozone) { create(:poll, :expired, geozone_restricted: true, geozones: [create(:geozone)]) }
@@ -316,5 +316,4 @@ describe Abilities::Common do
     it { should be_able_to(:disable_recommendations, Debate) }
     it { should be_able_to(:disable_recommendations, Proposal) }
   end
-
 end

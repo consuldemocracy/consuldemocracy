@@ -249,7 +249,6 @@ describe "Commenting Budget::Investments" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -486,7 +485,6 @@ describe "Commenting Budget::Investments" do
           expect(page).to have_css "div.is-admin"
         end
       end
-
     end
 
     scenario "can not comment as a moderator" do
@@ -507,7 +505,6 @@ describe "Commenting Budget::Investments" do
     let!(:comment)   { create(:comment, commentable: investment) }
 
     before do
-
       login_as(verified)
     end
 
@@ -591,5 +588,4 @@ describe "Commenting Budget::Investments" do
       end
     end
   end
-
 end

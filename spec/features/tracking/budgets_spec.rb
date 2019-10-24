@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Tracking budgets" do
-
   before do
     tracker = create(:tracker, user: create(:user, username: "Rachel",
                                              email: "rachel@trackers.org"))
@@ -14,7 +13,6 @@ describe "Tracking budgets" do
   end
 
   context "Index" do
-
     scenario "Displaying budgets" do
       budget = create(:budget)
       visit tracking_budgets_path
@@ -28,5 +26,4 @@ describe "Tracking budgets" do
       expect(page).to have_content "There are no budgets"
     end
   end
-
 end

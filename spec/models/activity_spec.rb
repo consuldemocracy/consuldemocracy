@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Activity do
-
   it "is valid for different actionables" do
     expect(build(:activity, actionable: create(:proposal))).to be_valid
     expect(build(:activity, actionable: create(:debate))).to be_valid
@@ -79,5 +78,4 @@ describe Activity do
       expect(Activity.on_budget_investments).to eq [on_investment]
     end
   end
-
 end

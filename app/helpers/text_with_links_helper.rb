@@ -1,7 +1,7 @@
 module TextWithLinksHelper
-
   def sanitize_and_auto_link(text)
     return unless text
+
     sanitized = sanitize(text, tags: [], attributes: [])
     auto_link_already_sanitized_html(sanitized)
   end
@@ -16,5 +16,4 @@ module TextWithLinksHelper
   def simple_format_no_tags_no_sanitize(html)
     simple_format(html, {}, sanitize: false)
   end
-
 end

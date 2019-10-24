@@ -31,5 +31,4 @@ describe "Admin poll officers" do
 
     expect(page).not_to have_css "#officers"
   end
-
 end

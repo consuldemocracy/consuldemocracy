@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Budget::Phase do
-
   let(:budget)       { create(:budget) }
   let(:first_phase)  { budget.phases.drafting }
   let(:second_phase)  { budget.phases.informing }

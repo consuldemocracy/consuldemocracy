@@ -240,9 +240,7 @@ describe Dashboard::Action do
   end
 
   context "#detect_new_actions_since" do
-
     describe "No detect new actions" do
-
       let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 1) }
       let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 1) }
 
@@ -277,11 +275,9 @@ describe Dashboard::Action do
 
         expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
-
     end
 
     describe "Detect new actions when there are news actions actived" do
-
       context "for published proposals" do
         let!(:proposal) { create(:proposal) }
 
@@ -311,7 +307,6 @@ describe Dashboard::Action do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).not_to include(resource.id)
         end
-
       end
 
       context "for draft proposals" do
@@ -343,7 +338,6 @@ describe Dashboard::Action do
           expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).not_to include(resource.id)
         end
-
       end
     end
   end

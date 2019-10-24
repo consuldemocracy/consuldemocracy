@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Widget::Feed do
-
   let(:feed) { build(:widget_feed) }
 
   context "validations" do
@@ -11,9 +10,7 @@ describe Widget::Feed do
   end
 
   context "kinds" do
-
     describe "#proposals" do
-
       it "returns the most active proposals" do
         best_proposal = create(:proposal, title: "Best proposal")
         best_proposal.update_column(:hot_score, 10)
@@ -31,11 +28,9 @@ describe Widget::Feed do
 
         expect(feed.proposals).to eq([best_proposal, medium_proposal, worst_proposal])
       end
-
     end
 
     describe "#debates" do
-
       it "returns the most active debates" do
         best_debate = create(:debate, title: "Best debate")
         best_debate.update_column(:hot_score, 10)
@@ -53,7 +48,6 @@ describe Widget::Feed do
 
         expect(feed.debates).to eq([best_debate, medium_debate, worst_debate])
       end
-
     end
 
     describe "#processes" do
@@ -77,7 +71,5 @@ describe Widget::Feed do
         expect(feed.processes).to be_empty
       end
     end
-
   end
-
 end

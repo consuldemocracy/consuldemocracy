@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe CommentsController do
-
   describe "POST create" do
     let(:legal_process) do
       create(:legislation_process, debate_start_date: Date.current - 3.days,

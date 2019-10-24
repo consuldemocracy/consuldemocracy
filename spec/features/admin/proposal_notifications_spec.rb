@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin proposal notifications" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -91,5 +90,4 @@ describe "Admin proposal notifications" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

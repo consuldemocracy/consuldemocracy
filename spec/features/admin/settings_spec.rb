@@ -31,7 +31,6 @@ describe "Admin settings" do
   end
 
   describe "Update map" do
-
     scenario "Should not be able when map feature deactivated" do
       Setting["feature.map"] = false
       admin = create(:administrator).user
@@ -97,11 +96,9 @@ describe "Admin settings" do
       expect(find("#latitude", visible: false).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated succesfully"
     end
-
   end
 
   describe "Update content types" do
-
     scenario "stores the correct mime types" do
       setting = Setting.create!(key: "upload.images.content_types", value: "image/png")
       admin = create(:administrator).user
@@ -131,11 +128,9 @@ describe "Admin settings" do
         expect(find("#jpg")).not_to be_checked
       end
     end
-
   end
 
   describe "Update Remote Census Configuration" do
-
     before do
       Setting["feature.remote_census"] = true
     end
@@ -165,13 +160,10 @@ describe "Admin settings" do
                                        '"Configure connection to remote census (SOAP)" ' \
                                        'on "Features" tab.'
     end
-
   end
 
   describe "Should redirect to same tab after update setting" do
-
     context "remote census" do
-
       before do
         Setting["feature.remote_census"] = true
       end
@@ -210,7 +202,6 @@ describe "Admin settings" do
     end
 
     context "map configuration" do
-
       before do
         Setting["feature.map"] = true
       end
@@ -280,7 +271,6 @@ describe "Admin settings" do
   end
 
   describe "Skip verification" do
-
     scenario "deactivate skip verification", :js do
       Setting["feature.user.skip_verification"] = "true"
       setting = Setting.where(key: "feature.user.skip_verification").first
@@ -310,7 +300,5 @@ describe "Admin settings" do
 
       Setting["feature.user.skip_verification"] = nil
     end
-
   end
-
 end

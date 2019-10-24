@@ -38,5 +38,4 @@ class Officing::VotersController < Officing::BaseController
                              .where(final: false)
                              .first
     end
-
 end

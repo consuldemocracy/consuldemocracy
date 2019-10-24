@@ -1,5 +1,4 @@
 class Admin::SiteCustomization::DocumentsController < Admin::SiteCustomization::BaseController
-
   def index
     @documents = Document.admin.page(params[:page])
   end

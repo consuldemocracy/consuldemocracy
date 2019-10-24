@@ -104,7 +104,6 @@ describe "Account" do
   end
 
   context "Option to display badge for official position" do
-
     scenario "Users with official position of level 1" do
       official_user = create(:user, official_level: 1)
 
@@ -133,7 +132,6 @@ describe "Account" do
 
       expect(page).not_to have_css "#account_official_position_badge"
     end
-
   end
 
   scenario "Errors on edit" do
@@ -208,6 +206,5 @@ describe "Account" do
       expect(user.recommended_debates).to be(false)
       expect(user.recommended_proposals).to be(false)
     end
-
   end
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Admin::Api::StatsController do
-
   describe "GET index" do
     let(:user) { create(:administrator).user }
 

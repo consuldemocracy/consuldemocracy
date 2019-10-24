@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin budget investments" do
-
   let(:budget) { create(:budget) }
   let(:administrator) do
     create(:administrator, user: create(:user, username: "Ana", email: "ana@admins.org"))
@@ -16,7 +15,6 @@ describe "Admin budget investments" do
   end
 
   context "Feature flag" do
-
     before do
       Setting["process.budgets"] = nil
     end
@@ -24,7 +22,6 @@ describe "Admin budget investments" do
     scenario "Disabled with a feature flag" do
       expect { visit admin_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Load" do
@@ -49,11 +46,9 @@ describe "Admin budget investments" do
         visit admin_budget_budget_investments_path(0, investment)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   context "Index" do
-
     scenario "Displaying investments" do
       budget_investment = create(:budget_investment, budget: budget, cached_votes_up: 77)
       visit admin_budget_budget_investments_path(budget_id: budget.id)
@@ -682,7 +677,6 @@ describe "Admin budget investments" do
       expect(page).not_to have_content("More hospitals")
 
       expect(page).to have_content("Selected")
-
     end
 
     scenario "Combination of select with text search", :js do
@@ -717,7 +711,6 @@ describe "Admin budget investments" do
       expect(page).not_to have_content("More hospitals")
 
       expect(page).to have_content("Selected")
-
     end
 
     scenario "Combination of checkbox with text search and checkbox", :js do
@@ -787,7 +780,6 @@ describe "Admin budget investments" do
       visit admin_budget_budget_investments_path(budget_id: not_finished_budget.id)
       expect(page).not_to have_content "See results"
     end
-
   end
 
   context "Search" do
@@ -961,7 +953,6 @@ describe "Admin budget investments" do
   end
 
   context "Show" do
-
     scenario "Show the investment details" do
       user = create(:user, username: "Rachel", email: "rachel@valuators.org")
       valuator = create(:valuator, user: user)
@@ -1062,7 +1053,6 @@ describe "Admin budget investments" do
   end
 
   context "Edit" do
-
     scenario "Change title, incompatible, description or heading" do
       budget_investment = create(:budget_investment, :incompatible)
       create(:budget_heading, group: budget_investment.group, name: "Barbate")
@@ -1356,7 +1346,6 @@ describe "Admin budget investments" do
       expect(page).to have_content "Investment project updated succesfully."
       expect(page).to have_content("Milestone Tags: tag1, tag2")
     end
-
   end
 
   context "Selecting" do
@@ -1698,7 +1687,6 @@ describe "Admin budget investments" do
   end
 
   context "Selecting csv" do
-
     scenario "Downloading CSV file" do
       create(:budget_investment, budget: budget)
 
@@ -1841,7 +1829,6 @@ describe "Admin budget investments" do
 
       expect(cookie_value).to eq("id,supports,admin,geozone,feasibility,valuation_finished," +
         "visible_to_valuators,selected,incompatible,author")
-
     end
 
     scenario "Select an investment when some columns are not displayed", :js do
@@ -1859,5 +1846,4 @@ describe "Admin budget investments" do
       end
     end
   end
-
 end

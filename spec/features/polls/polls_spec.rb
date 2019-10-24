@@ -1,13 +1,11 @@
 require "rails_helper"
 
 describe "Polls" do
-
   context "Concerns" do
     it_behaves_like "notifiable in-app", :poll
   end
 
   context "#index" do
-
     scenario "Shows description for open polls" do
       visit polls_path
       expect(page).not_to have_content "Description for open polls"
@@ -374,7 +372,6 @@ describe "Polls" do
   end
 
   context "Booth & Website", :with_frozen_time do
-
     let(:poll) { create(:poll, summary: "Summary", description: "Description") }
     let(:booth) { create(:poll_booth) }
     let(:officer) { create(:poll_officer) }
@@ -407,7 +404,6 @@ describe "Polls" do
         expect(page).not_to have_link("No")
       end
     end
-
   end
 
   context "Results and stats" do
@@ -497,6 +493,5 @@ describe "Polls" do
 
       expect(page).to have_link "Information"
     end
-
   end
 end

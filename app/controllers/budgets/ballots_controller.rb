@@ -26,6 +26,5 @@ module Budgets
       def store_referer
         session[:ballot_referer] = request.referer
       end
-
   end
 end

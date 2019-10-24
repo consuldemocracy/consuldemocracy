@@ -1,12 +1,10 @@
 require "rails_helper"
 
 describe Verification::Residence do
-
   let!(:geozone) { create(:geozone, census_code: "01") }
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
   describe "validations" do
-
     it "is valid" do
       expect(residence).to be_valid
     end
@@ -48,7 +46,6 @@ describe Verification::Residence do
       residence.terms_of_service = nil
       expect(residence).not_to be_valid
     end
-
   end
 
   describe "new" do
@@ -64,7 +61,6 @@ describe Verification::Residence do
   end
 
   describe "save" do
-
     it "stores document number, document type, geozone, date of birth and gender" do
       user = create(:user)
       residence.user = user
@@ -79,7 +75,6 @@ describe Verification::Residence do
       expect(user.gender).to eq("male")
       expect(user.geozone).to eq(geozone)
     end
-
   end
 
   describe "tries" do
@@ -111,5 +106,4 @@ describe Verification::Residence do
       )
     end
   end
-
 end
