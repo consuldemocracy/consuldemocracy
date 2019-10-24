@@ -15,7 +15,7 @@ class Poll::Question < ApplicationRecord
   has_many :answers, class_name: "Poll::Answer"
   has_many :question_answers, -> { order "given_order asc" }, class_name: "Poll::Question::Answer", dependent: :destroy
   has_many :partial_results
-  has_many :pair_answers, class_name: "Poll::PairAnswer"
+  has_many :pair_answers
   has_one :votation_type, as: :questionable
   belongs_to :proposal
 

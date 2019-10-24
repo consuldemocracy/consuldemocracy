@@ -9,8 +9,8 @@ class Legislation::DraftVersion < ApplicationRecord
   translates :body,      touch: true
   include Globalizable
 
-  belongs_to :process, class_name: "Legislation::Process", foreign_key: "legislation_process_id"
-  has_many :annotations, class_name: "Legislation::Annotation", foreign_key: "legislation_draft_version_id", dependent: :destroy
+  belongs_to :process, foreign_key: "legislation_process_id"
+  has_many :annotations, foreign_key: "legislation_draft_version_id", dependent: :destroy
 
   validates_translation :title, presence: true
   validates_translation :body, presence: true

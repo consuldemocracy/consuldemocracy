@@ -19,7 +19,7 @@ class Legislation::PeopleProposal < ApplicationRecord
   acts_as_votable
   acts_as_paranoid column: :hidden_at
 
-  belongs_to :process, class_name: "Legislation::Process", foreign_key: "legislation_process_id"
+  belongs_to :process, foreign_key: "legislation_process_id"
   belongs_to :author, -> { with_hidden }, class_name: "User"
   has_many :comments, as: :commentable
 
