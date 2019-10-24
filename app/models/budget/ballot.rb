@@ -68,7 +68,7 @@ class Budget
 
     def heading_for_group(group)
       return nil unless has_lines_in_group?(group)
-      investments.where(group: group).first.heading
+      investments.find_by(group: group).heading
     end
 
     def casted_offline?

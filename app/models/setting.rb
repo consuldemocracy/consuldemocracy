@@ -35,7 +35,7 @@ class Setting < ApplicationRecord
     end
 
     def []=(key, value)
-      setting = where(key: key).first || new(key: key)
+      setting = find_by(key: key) || new(key: key)
       setting.value = value.presence
       setting.save!
       value
@@ -50,7 +50,7 @@ class Setting < ApplicationRecord
     end
 
     def remove(key)
-      setting = where(key: key).first
+      setting = find_by(key: key)
       setting.destroy if setting.present?
     end
 

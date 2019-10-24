@@ -25,7 +25,7 @@ describe "Admin custom pages" do
 
       expect(SiteCustomization::Page.count).to be 7
       slugs.each do |slug|
-        expect(SiteCustomization::Page.find_by_slug(slug).status).to eq "published"
+        expect(SiteCustomization::Page.find_by(slug: slug).status).to eq "published"
       end
 
       expect(all("[id^='site_customization_page_']").count).to be 7

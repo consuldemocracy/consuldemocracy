@@ -27,9 +27,6 @@ Rails/EnvironmentComparison:
 Rails/Exit:
   Enabled: true
 
-Rails/FindBy:
-  Enabled: true
-
 Rails/FindEach:
   Enabled: true
 

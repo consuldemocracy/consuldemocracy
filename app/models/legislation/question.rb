@@ -30,7 +30,7 @@ class Legislation::Question < ApplicationRecord
   end
 
   def answer_for_user(user)
-    answers.where(user: user).first
+    answers.find_by(user: user)
   end
 
   def comments_for_verified_residents_only?

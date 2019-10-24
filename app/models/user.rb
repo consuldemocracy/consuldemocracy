@@ -237,8 +237,8 @@ class User < ApplicationRecord
   end
 
   def take_votes_if_erased_document(document_number, document_type)
-    erased_user = User.erased.where(document_number: document_number)
-                             .where(document_type: document_type).first
+    erased_user = User.erased.find_by(document_number: document_number,
+                                      document_type: document_type)
     if erased_user.present?
       take_votes_from(erased_user)
       erased_user.update!(document_number: nil, document_type: nil)
@@ -345,8 +345,8 @@ class User < ApplicationRecord
   def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
     login = conditions.delete(:login)
-    where(conditions.to_hash).where(["lower(email) = ?", login.downcase]).first ||
-    where(conditions.to_hash).where(["username = ?", login]).first
+    where(conditions.to_hash).find_by(["lower(email) = ?", login.downcase]) ||
+    where(conditions.to_hash).find_by(["username = ?", login])
   end
 
   def self.find_by_manager_login(manager_login)

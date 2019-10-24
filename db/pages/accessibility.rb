@@ -1,4 +1,4 @@
-if SiteCustomization::Page.find_by_slug("accessibility").nil?
+if SiteCustomization::Page.find_by(slug: "accessibility").nil?
   page = SiteCustomization::Page.new(slug: "accessibility", status: "published")
   page.title = I18n.t("pages.accessibility.title")
 

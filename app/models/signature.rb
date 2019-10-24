@@ -36,7 +36,7 @@ class Signature < ApplicationRecord
   end
 
   def assign_signature_to_vote
-    vote = Vote.where(votable: signable, voter: user).first
+    vote = Vote.find_by(votable: signable, voter: user)
     vote&.update!(signature: self)
   end
 
@@ -55,7 +55,7 @@ class Signature < ApplicationRecord
       email: nil,
       date_of_birth: @census_api_response.date_of_birth,
       gender: @census_api_response.gender,
-      geozone: Geozone.where(census_code: @census_api_response.district_code).first
+      geozone: Geozone.find_by(census_code: @census_api_response.district_code)
     }
     User.create!(user_params)
   end
@@ -84,7 +84,7 @@ class Signature < ApplicationRecord
   end
 
   def set_user
-    user = User.where(document_number: document_number).first
+    user = User.find_by(document_number: document_number)
     update(user: user)
   end
 
