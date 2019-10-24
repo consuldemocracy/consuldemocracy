@@ -32,7 +32,7 @@ class Budget
     translates :description, touch: true
     include Globalizable
 
-    belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+    belongs_to :author, -> { with_hidden }, class_name: "User"
     belongs_to :heading
     belongs_to :group
     belongs_to :budget

@@ -6,7 +6,7 @@ class Legislation::Question < ApplicationRecord
   translates :title, touch: true
   include Globalizable
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User"
   belongs_to :process, class_name: "Legislation::Process", foreign_key: "legislation_process_id"
 
   has_many :question_options, -> { order(:id) }, class_name: "Legislation::QuestionOption", foreign_key: "legislation_question_id",

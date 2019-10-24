@@ -35,7 +35,7 @@ class Proposal < ApplicationRecord
   include Globalizable
   translation_class_delegate :retired_at
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User"
   belongs_to :geozone
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy

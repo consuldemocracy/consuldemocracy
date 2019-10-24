@@ -1,6 +1,6 @@
 class SignatureSheet < ApplicationRecord
   belongs_to :signable, polymorphic: true
-  belongs_to :author, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, class_name: "User"
 
   VALID_SIGNABLES = %w[Proposal Budget::Investment]
 

@@ -9,7 +9,7 @@ class Poll::Question < ApplicationRecord
   include Globalizable
 
   belongs_to :poll
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User"
 
   has_many :comments, as: :commentable
   has_many :answers, class_name: "Poll::Answer"

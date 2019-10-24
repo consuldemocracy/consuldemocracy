@@ -20,7 +20,7 @@ class Legislation::Proposal < ApplicationRecord
   acts_as_paranoid column: :hidden_at
 
   belongs_to :process, class_name: "Legislation::Process", foreign_key: "legislation_process_id"
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User"
   belongs_to :geozone
   has_many :comments, as: :commentable
 

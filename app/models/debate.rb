@@ -24,7 +24,7 @@ class Debate < ApplicationRecord
   translates :description, touch: true
   include Globalizable
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User"
   belongs_to :geozone
   has_many :comments, as: :commentable
 

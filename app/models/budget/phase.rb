@@ -12,7 +12,7 @@ class Budget
     include Sanitizable
 
     belongs_to :budget
-    belongs_to :next_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
+    belongs_to :next_phase, class_name: "Budget::Phase"
     has_one :prev_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
 
     validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
