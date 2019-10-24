@@ -769,6 +769,12 @@ de:
       direct_message_for_sender:
         title: "Privater Nachrichten Sender"
         description: "Wird an privaten Nachrichten Sender gesendet."
+      email_verification:
+        title: "E-Mail Überprüfung"
+        description: "Wird an einen neuen Benutzer gesendet zur Verifizierung seines Accounts."
+      user_invite:
+        title: "Benutzter Einladung"
+        description: "Wird an die eingeladene Person gesendet."
       message_title: "Titel der Nachricht"
     emails_download:
       index:
@@ -1200,9 +1206,16 @@ de:
         title: Neue Unterschriftenbögen
         document_numbers_note: "Geben Sie die Nummern durch Kommas (,) getrennt ein"
         submit: Unterschriftenbogen erstellen
+        text_help:
+          date_of_birth_note: ", Geburtstag (tt/mm/yyyy)"
+          postal_code_note: " und Postleitzahl"
+          required_fields_structure_note: "Die Pflichtfelder für jeden Benutzer müssen durch Kommas und jeder Benutzer durch Strichpunkt getrennt sein."
+          example_text: "Beispiel: "
       show:
         created_at: Erstellt
         author: Autor
+        users: Benutzer
+        signature_count: "Zahl der Unterschriften:"
         verified:
           one: "Es gibt %{count} gültige Unterschrift"
           other: "Es gibt %{count} gültige Unterschriften"
@@ -1210,6 +1223,8 @@ de:
           one: "Es gibt %{count} ungültige Unterschrift"
           other: "Es gibt %{count} ungültige Unterschriften"
         unverified_error: (Nicht durch das Melderegister überprüft)
+        voted:
+          zero: "Es gibt keine Wahlstimmen aus den verifizierten Unterschriften."
         loading: "Es gibt immer noch Unterschriften, die vom Melderegister überprüft werden. Bitte aktualisieren Sie die Seite in Kürze"
     stats:
       show:
