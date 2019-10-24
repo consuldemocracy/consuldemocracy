@@ -8,7 +8,7 @@ class RelatedContent < ApplicationRecord
   belongs_to :author, class_name: "User"
   belongs_to :parent_relationable, polymorphic: true, touch: true
   belongs_to :child_relationable, polymorphic: true, touch: true
-  has_one :opposite_related_content, class_name: "RelatedContent", foreign_key: :related_content_id
+  has_one :opposite_related_content, class_name: self.name, foreign_key: :related_content_id
   has_many :related_content_scores
 
   validates :parent_relationable_id, presence: true
