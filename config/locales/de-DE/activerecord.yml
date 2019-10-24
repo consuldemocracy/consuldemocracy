@@ -384,6 +384,33 @@ de:
         short_description: Kurze Beschreibung
         description: Beschreibung
         link: Externer Link
+        request_to_administrators: Aufnahme einer Schaltfläche um die Entscheidung von Administratoren anzufordern
+        day_offset: Wie viele Tage nach der Erstellung des Vorschlags möchten Sie, dass er aktiviert wird?
+        required_supports: Wie viel Unterstützung muss der Antrag erhalten, um aktiviert zu werden?
+        order: Sie können die Position eingeben, an der diese Aktion dem Benutzer in der Liste der Aktionen angezeigt wird
+        active: Aktiv
+        action_type: Typ
+        action_type_proposed_action: "Vorgeschlagene Aktion"
+        action_type_resource: "Ressource"
+        published_proposal: "Für veröffentlichte Vorschläge?"
+      dashboard/administrator_task:
+        source: Quelle
+        user: Ausgeführt von
+      link:
+        label: Titel
+        url: Link
+      valuator:
+        description: Beschreibung
+        valuator_group_id: Begutachtungsgruppe
+        can_comment: Kann Kommentare abgeben
+        can_edit_dossier: Kann Dossiers bearbeiten
+      valuator_group:
+        name: "Name der Gruppe"
+      local_census_record:
+        document_type: Dokumententyp
+        document_number: Dokumentennummer
+        date_of_birth: Geburtsdatum
+        postal_code: Postleitzahl
     errors:
       models:
         user:
@@ -461,7 +488,9 @@ de:
             valuation:
               cannot_comment_valuation: "Eine Überprüfung kann nicht kommentiert werden"
       messages:
+        translations_too_short: Ist verpflichtet, mindestens eine Übersetzung zur Verfügung zu stellen
         record_invalid: "Validierung fehlgeschlagen: %{errors}"
+        another_poll_active: Es gibt eine andere Abstimmung, die für den angegebenen Zeitraum aktiv ist
         restrict_dependent_destroy:
           has_one: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
           has_many: "Der Eintrag kann nicht gelöscht werden, da dieser mit %{record} verbunden ist"
