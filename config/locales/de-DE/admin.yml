@@ -634,6 +634,9 @@ de:
         restricted_removal: "Entschuldigung, Sie können sich nicht von der Liste entfernen"
       search:
         title: "Administrator*innen: Benutzer*innensuche"
+      form:
+        edit_title: "Administrator bearbeiten"
+        updated: "Administrator Update erfolgreich"
     moderators:
       index:
         title: Moderator*innen
@@ -648,6 +651,7 @@ de:
     segment_recipient:
       all_users: Alle Benutzer*innen
       administrators: Administrator*innen
+      all_proposal_authors: Vorschlag Autoren (inklusive archiviert und zurückgezogen)
       proposal_authors: Antragsteller*innen
       investment_authors: Antragsteller*innen im aktuellen Budget
       feasible_and_undecided_investment_authors: "Antragsteller*innen im aktuellen Budget, welches nicht [valuation finished unfesasble] erfüllt"
@@ -674,6 +678,8 @@ de:
         empty_newsletters: Keine Newsletter zum Anzeigen vorhanden
       new:
         title: Neuer Newsletter
+        header_footer_help_text: "Die Kopf- und Fußzeile ist für alle E-Mails gleich, Sie können sie ändern unter <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br>\nSie können das Bilder der Kopfzeile ersetzen unter %{link}."
+        image_link: "benutzerdefinierte Bilder"
       edit:
         title: Newsletter bearbeiten
       show:
