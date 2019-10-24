@@ -383,6 +383,7 @@ de:
         title: Titel
         short_description: Kurze Beschreibung
         description: Beschreibung
+        link: Externer Link
     errors:
       models:
         user:
