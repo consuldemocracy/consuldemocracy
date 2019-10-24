@@ -198,11 +198,14 @@ de:
           min_total_supports: Minimum Unterstützer*innen
           max_total_supports: Maximum Unterstützer*innen
           winners: Bestbewertete Vorschläge
+          one_filter: "Verwendete Filter: <b><em>%{filter}</em></b>"
+          two_filters: "Verwendete Filter: <b><em>%{filter},%{advanced_filters}</em></b>"
         buttons:
           filter: Filter
         download_current_selection: "Aktuelle Auswahl herunterladen"
         no_budget_investments: "Keine Investitionsprojekte vorhanden."
         title: Ausgabenvorschläge
+        columns: Spalten
         assigned_admin: Zugewiesene*r Administrator*in
         no_admin_assigned: Kein*e Administrator*in zugewiesen
         no_valuators_assigned: Kein*e Begutacher*in zugewiesen
@@ -226,6 +229,8 @@ de:
           visible_to_valuators: Den Begutachtern/Begutachterinnen zeigen
           author_username: Benutzer*innenname des/der Verfasser*in
           incompatible: Inkompatibel
+          price: Preis
+          author: Autor
         cannot_calculate_winners: Das Budget muss in einer der Phasen "Finale Abstimmung", "Abstimmung beendet" oder "Ergebnisse" stehen, um Gewinnervorschläge berechnen zu können
         see_results: "Ergebnisse anzeigen"
       show:
