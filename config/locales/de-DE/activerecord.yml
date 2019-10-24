@@ -1,4 +1,7 @@
 de:
+  attributes:
+    geozone_id: "Wirkungsbereich"
+    results_enabled: "Ergebnisse anzeigen"
   activerecord:
     models:
       activity:
