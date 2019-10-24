@@ -1,7 +1,9 @@
 de:
   attributes:
-    geozone_id: "Wirkungsbereich"
+    geozone_id: "Rahmen der Operation"
     results_enabled: "Ergebnisse anzeigen"
+    stats_enabled: "Statistiken anzeigen"
+    advanced_stats_enabled: "Erweiterte Statistiken anzeigen"
   activerecord:
     models:
       activity:
@@ -64,6 +66,9 @@ de:
       poll/officer:
         one: "Beamter/in"
         other: "Beamte/innen"
+      poll/ballot_sheet:
+        one: Stimmzettel
+        other: Stimmzettel
       proposal:
         one: "Bürgervorschlag"
         other: "Bürgervorschläge"
@@ -76,6 +81,9 @@ de:
       site_customization/content_block:
         one: Benutzerspezifischer Inhaltsdatenblock
         other: Benutzer*definierte Inhaltsdatenblöcke
+      document:
+        one: Dokument
+        other: Dokumente
       legislation/process:
         one: "Beteiligungsverfahren"
         other: "Beteiligungsverfahren"
@@ -109,6 +117,18 @@ de:
       proposal_notification:
         one: "Antrags-Benachrichtigung"
         other: "Benachrichtigungen zu einem Vorschlag"
+      dashboard/action:
+        one: Aktion im Vorschlags-Dashboard
+        other: Aktionen im Vorschlags-Dashboard
+      dashboard/administrator_task:
+        one: Aufgabe
+        other: Aufgaben
+      link:
+        one: Link
+        other: Links
+      local_census_record:
+        one: Import von Datensatz aus dem Melderegister
+        other: Import von Datensätzen aus dem Melderegister
     attributes:
       budget:
         name: "Name"
@@ -121,6 +141,11 @@ de:
         description_finished: "Beschreibung, wenn der Bürgerhaushalt beschlossen ist"
         phase: "Phase"
         currency_symbol: "Währung"
+        budget_milestone_tags: "Status des Ausgabenvorschlags"
+        budget_valuation_tags: "Bewertung des Status"
+        help_link: "Link Hilfe"
+      budget/translation:
+        name: "Name"
       budget/investment:
         heading_id: "Rubrik"
         title: "Titel"
@@ -131,11 +156,33 @@ de:
         organization_name: "Wenn Sie einen Vorschlag im Namen einer Gruppe, Organisation oder mehreren Personen einreichen, nennen Sie bitte dessen/deren Name/n"
         image: "Beschreibendes Bild zum Ausgabenvorschlag"
         image_title: "Bildtitel"
+        duration: "Zeitrahmen"
+        feasibility_feasible: "Durchführbar"
+        feasibility_undecided: "Undefiniert"
+        feasibility_unfeasible: "Undurchführbar"
+        incompatible: "Als inkompatibel markieren"
+        milestone_tag_list: "Status des Ausgabenvorschlags"
+        price_explanation: "Erläuterung der Kosten"
+        selected: "Als ausgewählt markieren"
+        unfeasibility_explanation: "Erläuterung der Durchführbarkeit"
+        valuation_finished: "Begutachtung abgeschlossen"
+        valuator_ids: "Gruppen"
+        valuation_tag_list: "Tags"
+      budget/investment/translation:
+        title: "Titel"
+        description: "Beschreibung"
+      geozone:
+        name: Name
+        external_code: "Externer Code (optional)"
+        census_code: "Register Code (optional)"
+        html_map_coordinates: "HTML <map> Koordinaten (optional)"
       milestone:
         status_id: "Aktueller Status (optional)"
         title: "Titel"
         description: "Beschreibung (optional, wenn kein Status zugewiesen ist)"
         publication_date: "Datum der Veröffentlichung"
+      milestone/translation:
+        description: "Beschreibung"
       milestone/status:
         name: "Name"
         description: "Beschreibung (optional)"
@@ -146,23 +193,46 @@ de:
       progress_bar/kind:
         primary: "Primär"
         secondary: "Sekundär"
+      budget/group:
+        max_votable_headings: "Maximale Anzahl von Rubriken, in der ein*e Benutzer*in abstimmen kann"
+      budget/group/translation:
+        name: "Name der Gruppe"
       budget/heading:
+        allow_custom_content: "Inhaltsdatenblock zulassen"
+        latitude: "Breitengrad (optional)"
+        longitude: "Längengrad (optional)"
         name: "Name der Rubrik"
         price: "Preis"
         population: "Bevölkerung"
+      budget/heading/translation:
+        name: "Name der Rubrik"
+      budget/phase:
+        enabled: "Phase aktiviert"
+        ends_at: "Enddatum des Verfahrens"
+        starts_at: "Anfangsdatum"
+      budget/phase/translation:
+        description: "Beschreibung"
+        summary: "Zusammenfassung"
       comment:
         body: "Kommentar"
         user: "Benutzer*in"
       debate:
         author: "Autor"
         description: "Beitrag"
+        tag_list: "Inhalte"
         terms_of_service: "Nutzungsbedingungen"
         title: "Titel"
+      debate/translation:
+        title: "Titel der Debatte"
+        description: "Initialer Debattenbeitrag"
       proposal:
         author: "Autor"
         title: "Titel"
         question: "Frage"
         description: "Beschreibung"
+        responsible_name: "Vollständiger Name der Person, die den Vorschlag einreicht"
+        retired_reason: "Grund für das Zurückziehen des Antrags"
+        selected: "Als ausgewählt markieren"
         terms_of_service: "Nutzungsbedingungen"
       user:
         login: "E-Mail oder Benutzer*innenname"
@@ -252,6 +322,7 @@ de:
         body: Text
         changelog: Änderungen
         status: Status
+        status_published: "Veröffentlicht"
         final_version: Endgültige Version
       legislation/draft_version/translation:
         title: Titel der Fassung
@@ -260,6 +331,8 @@ de:
       legislation/question:
         title: Titel
         question_options: Antwortmöglichkeiten
+      legislation/question/translation:
+        title: Frage
       legislation/question_option:
         value: Wert
       legislation/annotation:
@@ -306,6 +379,10 @@ de:
         link_text: Linktext
       widget/feed:
         limit: Anzahl der Elemente
+      dashboard/action:
+        title: Titel
+        short_description: Kurze Beschreibung
+        description: Beschreibung
     errors:
       models:
         user:
