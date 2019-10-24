@@ -578,12 +578,14 @@ de:
       stats: Statistiken
       signature_sheets: Unterschriftenbögen
       site_customization:
+        documents: Benutzerdefinierte Dokumente
         homepage: Homepage
         pages: Meine Seiten
         images: Bilder
         content_blocks: Benutzerspezifische Inhaltsdatenblöcke
         information_texts: Benutzer*definierte Informationstexte
         information_texts_menu:
+          basic: "Grundlegende Anpassung"
           debates: "Diskussionen"
           community: "Community"
           proposals: "Vorschläge"
@@ -603,11 +605,27 @@ de:
       title_booths: Wahlkabinen
       legislation: Kollaborative Gesetzgebung
       users: Benutzer*innen
+      trackers: "Tracker"
+      dashboard: Vorschläge Dashboard
+      administrator_tasks: Beantragte Ressourcen
+      dashboard_actions: Ressourcen und Aktionen
+      download_settings:
+        title: "Download-Einstellungen"
+        debates: "Debatten"
+        proposals: "Vorschläge"
+        legislation_processes: "Gesetzgebungsverfahren"
+        budget_investments: "Bürgerhaushalt"
+        comments: "Kommentare"
+        budget_investments_milestones: "Bürgerhaushalt (Meilensteine)"
+      debates: "Debatten"
+      comments: "Kommentare"
+      local_census_records: Verwaltung des lokalen Registers
     administrators:
       index:
         title: Administrator*innen
         name: Name
         email: E-Mail
+        description: Beschreibung
         id: Administrator ID
         no_administrators: Keine Administrator*innen vorhanden.
       administrator:
