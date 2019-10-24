@@ -36,7 +36,7 @@ module CommonActions
     check "proposal_terms_of_service"
   end
 
-  def set_officing_booth(booth=nil)
+  def set_officing_booth(booth = nil)
     booth = create(:poll_booth) if booth.blank?
 
     allow_any_instance_of(Officing::BaseController).

@@ -105,7 +105,7 @@ class VotationType < ApplicationRecord
     result
   end
 
-  def create_question_answer(answer, hidden=false)
+  def create_question_answer(answer, hidden = false)
     return if questionable.question_answers.where(title: answer).any?
 
     questionable.question_answers

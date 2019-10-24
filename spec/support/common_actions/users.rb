@@ -13,7 +13,7 @@ module Users
     click_button "Register"
   end
 
-  def login_through_form_with_email_and_password(email="manuela@consul.dev", password="judgementday")
+  def login_through_form_with_email_and_password(email = "manuela@consul.dev", password = "judgementday")
     visit root_path
     click_link "Sign in"
 
