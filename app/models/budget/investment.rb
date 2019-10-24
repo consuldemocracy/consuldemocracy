@@ -32,7 +32,7 @@ class Budget
     translates :description, touch: true
     include Globalizable
 
-    belongs_to :author, -> { with_hidden }, class_name: "User"
+    belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :budget_investments
     belongs_to :heading
     belongs_to :group
     belongs_to :budget
@@ -44,8 +44,11 @@ class Budget
     has_many :valuator_group_assignments, dependent: :destroy
     has_many :valuator_groups, through: :valuator_group_assignments
 
-    has_many :comments, -> { where(valuation: false) }, as: :commentable
-    has_many :valuations, -> { where(valuation: true) }, as: :commentable, class_name: "Comment"
+    has_many :comments, -> { where(valuation: false) }, as: :commentable, inverse_of: :commentable
+    has_many :valuations, -> { where(valuation: true) },
+      as:         :commentable,
+      inverse_of: :commentable,
+      class_name: "Comment"
 
     has_many :tracker_assignments, dependent: :destroy
     has_many :trackers, through: :tracker_assignments

@@ -24,7 +24,7 @@ class Poll < ApplicationRecord
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
   has_many :questions, inverse_of: :poll, dependent: :destroy
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :ballot_sheets
 
   has_and_belongs_to_many :geozones

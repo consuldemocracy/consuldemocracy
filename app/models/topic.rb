@@ -6,7 +6,7 @@ class Topic < ApplicationRecord
   belongs_to :community
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :topics
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
 
   validates :title, presence: true
   validates :description, presence: true

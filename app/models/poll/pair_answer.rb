@@ -1,5 +1,5 @@
 class Poll::PairAnswer < ApplicationRecord
-  belongs_to :question, -> { with_hidden }
+  belongs_to :question, -> { with_hidden }, inverse_of: :pair_answers
   belongs_to :author, ->   { with_hidden }, class_name: "User", inverse_of: :poll_pair_answers
   belongs_to :answer_right, class_name: "Poll::Question::Answer"
   belongs_to :answer_left, class_name: "Poll::Question::Answer"

@@ -1,5 +1,5 @@
 class Poll::Answer < ApplicationRecord
-  belongs_to :question, -> { with_hidden }
+  belongs_to :question, -> { with_hidden }, inverse_of: :answers
   belongs_to :author, ->   { with_hidden }, class_name: "User", inverse_of: :poll_answers
 
   delegate :poll, :poll_id, to: :question

@@ -30,7 +30,7 @@ class Comment < ApplicationRecord
   validate :comment_valuation, if: -> { valuation }
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true, touch: true
-  belongs_to :user, -> { with_hidden }
+  belongs_to :user, -> { with_hidden }, inverse_of: :comments
 
   before_save :calculate_confidence_score
 

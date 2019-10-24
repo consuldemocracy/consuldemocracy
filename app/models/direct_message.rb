@@ -1,6 +1,6 @@
 class DirectMessage < ApplicationRecord
-  belongs_to :sender,   class_name: "User"
-  belongs_to :receiver, class_name: "User"
+  belongs_to :sender,   class_name: "User", inverse_of: :direct_messages_sent
+  belongs_to :receiver, class_name: "User", inverse_of: :direct_messages_received
 
   validates :title,    presence: true
   validates :body,     presence: true

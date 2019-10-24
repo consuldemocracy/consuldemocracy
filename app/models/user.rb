@@ -21,20 +21,29 @@ class User < ApplicationRecord
   has_one :lock
   has_many :flags
   has_many :identities, dependent: :destroy
-  has_many :debates, -> { with_hidden }, foreign_key: :author_id
-  has_many :proposals, -> { with_hidden }, foreign_key: :author_id
-  has_many :people_proposals, -> { with_hidden }, foreign_key: :author_id
+  has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
+  has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
+  has_many :people_proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :activities
-  has_many :budget_investments, -> { with_hidden }, foreign_key: :author_id, class_name: "Budget::Investment"
+  has_many :budget_investments, -> { with_hidden },
+    class_name:  "Budget::Investment",
+    foreign_key: :author_id,
+    inverse_of:  :author
   has_many :budget_investment_change_logs,
     foreign_key: :author_id,
     inverse_of:  :author,
     class_name:  "Budget::Investment::ChangeLog"
-  has_many :comments, -> { with_hidden }
+  has_many :comments, -> { with_hidden }, inverse_of: :user
   has_many :failed_census_calls
   has_many :notifications
-  has_many :direct_messages_sent,     class_name: "DirectMessage", foreign_key: :sender_id
-  has_many :direct_messages_received, class_name: "DirectMessage", foreign_key: :receiver_id
+  has_many :direct_messages_sent,
+    class_name:  "DirectMessage",
+    foreign_key: :sender_id,
+    inverse_of:  :sender
+  has_many :direct_messages_received,
+    class_name:  "DirectMessage",
+    foreign_key: :receiver_id,
+    inverse_of:  :receiver
   has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
   has_many :follows
   has_many :budget_rol_assignments

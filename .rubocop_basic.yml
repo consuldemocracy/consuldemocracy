@@ -206,6 +206,11 @@ Rails/FindEach:
 Rails/HttpPositionalArguments:
   Enabled: true
 
+Rails/InverseOf:
+  Enabled: true
+  Exclude:
+    - "app/models/related_content.rb"
+
 Rails/NotNullColumn:
   Enabled: true
   Exclude:

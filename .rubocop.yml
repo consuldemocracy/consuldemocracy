@@ -21,9 +21,6 @@ Rails/HasAndBelongsToMany:
 Rails/HasManyOrHasOneDependent:
   Enabled: true
 
-Rails/InverseOf:
-  Enabled: true
-
 Rails/SkipsModelValidations:
   Enabled: true
 
