@@ -2,3 +2,11 @@
 //
 // You can also create SCSS files in the app/assets/stylesheets/custom/
 // folder and they will be loaded automatically.
+
+.demo-info {
+  @include full-width-background;
+  background: #000;
+  color: $white;
+  padding: 3px 0;
+  text-align: center;
+}
