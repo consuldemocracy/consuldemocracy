@@ -30,6 +30,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def calculate_winners
     return unless @budget.balloting_process?
+
     @budget.headings.each { |heading| Budget::Result.new(@budget, heading).delay.calculate_winners }
     redirect_to admin_budget_budget_investments_path(
                   budget_id: @budget.id,

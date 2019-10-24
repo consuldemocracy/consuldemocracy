@@ -123,6 +123,7 @@ class Debate < ApplicationRecord
 
   def votable_by?(user)
     return false unless user
+
     total_votes <= 100 ||
       !user.unverified? ||
       Setting["max_ratio_anon_votes_on_debates"].to_i == 100 ||
@@ -132,6 +133,7 @@ class Debate < ApplicationRecord
 
   def anonymous_votes_ratio
     return 0 if cached_votes_total == 0
+
     (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 

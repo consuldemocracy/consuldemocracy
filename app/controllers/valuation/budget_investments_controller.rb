@@ -114,6 +114,7 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
       return if current_user.administrator? ||
                 Budget::ValuatorAssignment.exists?(investment_id: params[:id],
                                                    valuator_id: current_user.valuator.id)
+
       raise ActionController::RoutingError.new("Not Found")
     end
 

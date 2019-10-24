@@ -57,6 +57,7 @@ class Verification::SmsController < ApplicationController
 
     def verified_user
       return false unless params[:verified_user]
+
       @verified_user = VerifiedUser.by_user(current_user).where(id: params[:verified_user][:id]).first
     end
 

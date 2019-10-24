@@ -12,6 +12,7 @@ class DirectMessage < ApplicationRecord
 
   def max_per_day
     return if errors.any?
+
     max = Setting[:direct_message_max_per_day]
     return unless max
 

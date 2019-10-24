@@ -5,6 +5,7 @@ module ActiveModel::Dates
                        attrs["#{field}(3i)"]
 
     return nil unless day.present? && month.present? && year.present?
+
     Date.new(year.to_i, month.to_i, day.to_i)
   end
 

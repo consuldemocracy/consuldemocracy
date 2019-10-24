@@ -184,8 +184,9 @@ describe "Admin budgets" do
 
       within "#budget-phases-table" do
         Budget::Phase::PHASE_KINDS.each do |phase_kind|
-          phase_index = Budget::Phase::PHASE_KINDS.index(phase_kind)
           break if phase_kind == Budget::Phase::PHASE_KINDS.last
+
+          phase_index = Budget::Phase::PHASE_KINDS.index(phase_kind)
           next_phase_kind = Budget::Phase::PHASE_KINDS[phase_index + 1]
           next_phase_name = translated_phase_name(phase_kind: next_phase_kind)
           expect(translated_phase_name(phase_kind: phase_kind)).to appear_before(next_phase_name)

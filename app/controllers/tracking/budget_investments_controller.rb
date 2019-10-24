@@ -71,6 +71,7 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
       return if current_user.administrator? ||
                 Budget::TrackerAssignment.exists?(investment_id: params[:id],
                                                    tracker_id: current_user.tracker.id)
+
       raise ActionController::RoutingError.new("Not Found")
     end
 

@@ -19,6 +19,7 @@ module Filterable
 
     def allowed_filter?(filter, value)
       return if value.blank?
+
       ["official_level", "date_range"].include?(filter)
     end
   end

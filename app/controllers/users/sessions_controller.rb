@@ -15,6 +15,7 @@ class Users::SessionsController < Devise::SessionsController
 
     def verifying_via_email?
       return false if resource.blank?
+
       stored_path = session[stored_location_key_for(resource)] || ""
       stored_path[0..5] == "/email"
     end

@@ -279,6 +279,7 @@ class Budget
       return :not_logged_in unless user
       return :organization  if user.organization?
       return :not_verified  unless user.can?(:vote, Budget::Investment)
+
       nil
     end
 

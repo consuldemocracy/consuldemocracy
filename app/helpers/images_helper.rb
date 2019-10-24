@@ -1,6 +1,7 @@
 module ImagesHelper
   def image_absolute_url(image, version)
     return "" unless image
+
     if Paperclip::Attachment.default_options[:storage] == :filesystem
       URI(request.url) + image.attachment.url(version)
     else

@@ -10,6 +10,7 @@ module I18n
 
         key = pluralization_key(entry, count)
         return "#{count}" unless entry.has_key?(key)
+
         entry[key]
       end
     end

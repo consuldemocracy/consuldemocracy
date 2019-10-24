@@ -44,6 +44,7 @@ class Polls::AnswersController < ApplicationController
       exist = false
       @question.question_answers.each do |question_answer|
         break if exist
+
         exist = true if question_answer.title == params[:answer]
       end
       exist

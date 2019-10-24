@@ -45,6 +45,7 @@ module BudgetsHelper
 
   def css_for_ballot_heading(heading)
     return "" if current_ballot.blank? || @current_filter == "unfeasible"
+
     current_ballot.has_lines_in_heading?(heading) ? "is-active" : ""
   end
 
@@ -74,6 +75,7 @@ module BudgetsHelper
 
   def current_budget_map_locations
     return unless current_budget.present?
+
     if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
       investments = current_budget.investments.selected
     else

@@ -62,6 +62,7 @@ class Signature < ApplicationRecord
 
   def clean_document_number
     return if document_number.blank?
+
     self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
   end
 

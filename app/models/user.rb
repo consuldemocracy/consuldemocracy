@@ -180,6 +180,7 @@ class User < ApplicationRecord
 
   def add_official_position!(position, level)
     return if position.blank? || level.blank?
+
     update! official_position: position, official_level: level.to_i
   end
 
@@ -194,6 +195,7 @@ class User < ApplicationRecord
 
   def display_official_position_badge?
     return true if official_level > 1
+
     official_position_badge? && official_level == 1
   end
 
@@ -246,6 +248,7 @@ class User < ApplicationRecord
 
   def take_votes_from(other_user)
     return if other_user.blank?
+
     Poll::Voter.where(user_id: other_user.id).update_all(user_id: id)
     Budget::Ballot.where(user_id: other_user.id).update_all(user_id: id)
     Vote.where("voter_id = ? AND voter_type = ?", other_user.id, "User").update_all(voter_id: id)
@@ -276,6 +279,7 @@ class User < ApplicationRecord
 
   def password_required?
     return false if skip_password_validation
+
     super
   end
 
@@ -373,6 +377,7 @@ class User < ApplicationRecord
 
     def clean_document_number
       return unless document_number.present?
+
       self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase
     end
 

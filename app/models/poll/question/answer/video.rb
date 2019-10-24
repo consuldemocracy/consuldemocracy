@@ -11,6 +11,7 @@ class Poll::Question::Answer::Video < ApplicationRecord
     return if url.blank?
     return if url.match(VIMEO_REGEX)
     return if url.match(YOUTUBE_REGEX)
+
     errors.add(:url, :invalid)
   end
 end

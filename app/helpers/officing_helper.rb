@@ -12,6 +12,7 @@ module OfficingHelper
     return nil if params.blank?
     return nil if params[:questions].blank?
     return nil if params[:questions][question_id.to_s].blank?
+
     params[:questions][question_id.to_s][answer_index.to_s]
   end
 end

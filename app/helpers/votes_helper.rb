@@ -5,6 +5,7 @@ module VotesHelper
 
   def votes_percentage(vote, debate)
     return "0%" if debate.total_votes == 0
+
     if vote == "likes"
       debate_percentage_of_likes(debate).to_s + "%"
     elsif vote == "dislikes"

@@ -63,6 +63,7 @@ class Poll::Question < ApplicationRecord
 
   def self.answerable_by(user)
     return none if user.nil? || user.unverified?
+
     where(poll_id: Poll.answerable_by(user).pluck(:id))
   end
 

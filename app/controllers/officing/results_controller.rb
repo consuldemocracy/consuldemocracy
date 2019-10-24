@@ -42,6 +42,7 @@ class Officing::ResultsController < Officing::BaseController
 
         results.each_pair do |answer_index, count|
           next if count.blank?
+
           answer = question.question_answers.where(given_order: answer_index.to_i + 1).first.title
           go_back_to_new if question.blank?
 

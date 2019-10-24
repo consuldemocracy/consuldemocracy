@@ -31,6 +31,9 @@ Capybara/FeatureMethods:
 FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
 Layout/EmptyLineBetweenDefs:
   Enabled: true
 

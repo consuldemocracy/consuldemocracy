@@ -18,6 +18,7 @@ module Search
 
   def parse_search_date
     return unless search_by_date?
+
     params[:advanced_search][:date_range] = search_date_range
   end
 
