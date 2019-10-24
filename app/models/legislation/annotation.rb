@@ -6,7 +6,7 @@ class Legislation::Annotation < ApplicationRecord
   serialize :ranges, Array
 
   belongs_to :draft_version, foreign_key: "legislation_draft_version_id"
-  belongs_to :author, -> { with_hidden }, class_name: "User"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :legislation_annotations
   has_many :comments, as: :commentable, dependent: :destroy
 
   validates :text, presence: true

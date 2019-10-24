@@ -4,7 +4,7 @@ class Topic < ApplicationRecord
   include Notifiable
 
   belongs_to :community
-  belongs_to :author, -> { with_hidden }, class_name: "User"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :topics
 
   has_many :comments, as: :commentable
 

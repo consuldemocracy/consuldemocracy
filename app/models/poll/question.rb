@@ -9,7 +9,7 @@ class Poll::Question < ApplicationRecord
   include Globalizable
 
   belongs_to :poll
-  belongs_to :author, -> { with_hidden }, class_name: "User"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :poll_questions
 
   has_many :comments, as: :commentable
   has_many :answers, class_name: "Poll::Answer"
