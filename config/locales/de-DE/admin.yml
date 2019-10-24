@@ -1225,6 +1225,8 @@ de:
         unverified_error: (Nicht durch das Melderegister überprüft)
         voted:
           zero: "Es gibt keine Wahlstimmen aus den verifizierten Unterschriften."
+          one: "Es gibt %{count} Wahlstimmen aus den verifizierten Unterschriften."
+          other: "Es gibt %{count} Wahlstimmen aus den verifizierten Unterschriften."
         loading: "Es gibt immer noch Unterschriften, die vom Melderegister überprüft werden. Bitte aktualisieren Sie die Seite in Kürze"
     stats:
       show:
@@ -1247,10 +1249,33 @@ de:
           visits: Besuche
           votes: Gesamtbewertung
         budgets_title: Partizipative Haushaltsplanung
+        participatory_budgets: Bürgerhaushalte
         direct_messages: Direktnachrichten
         proposal_notifications: Benachrichtigungen zu einem Vorschlag
         incomplete_verifications: Unvollständige Verifizierungen
         polls: Umfragen
+      graph:
+        debate_created: Debatten
+        visit: Besuche
+        level_2_user: Benutzer*innen auf Stufe 2
+        proposal_created: Bürgervorschläge
+      budgets:
+        no_data_before_balloting_phase: "Es gibt keine Daten, die vor der Abstimmungsphase angezeigt werden können."
+        title: "Bürgerhaushale - Beteiligung Statistik"
+        supporting_phase: Unterstützungsphase
+        balloting_phase: Finale Abstimmung
+      budget_balloting:
+        title: "Finale Abstimmung Statistiken"
+        vote_count: Stimmen
+        participant_count: Teilnehmer*innen
+        votes_per_heading: Stimmen pro Vorschlag
+        participants_per_district: Teilnehmer*innen pro Bezirk
+      budget_supporting:
+        title: "Unterstützungsphase Statistiken"
+        headings: Rubriken
+        users: Benutzer
+        vote_count: Stimmen
+        participant_count: Teilnehmer*innen
       direct_messages:
         title: Direktnachrichten
         total: Gesamt
@@ -1328,6 +1353,8 @@ de:
           names:
             top_links: Top Links
             footer: Fußzeile
+            subnavigation_left: Haupt Navigation Links
+            subnavigation_right: Haupt Navigation Rechts
       images:
         index:
           title: Bilder
@@ -1363,6 +1390,7 @@ de:
           see_page: Seite anzeigen
         new:
           title: Neue benutzer*definierte Seite erstellen
+          slug_help: "Text zur Identifizierung dieser Seite auf der URL, z.B. <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Erstellt am
           status: Status
@@ -1414,3 +1442,27 @@ de:
         submit_header: Kopfzeile speichern
         card_title: Karte bearbeiten
         submit_card: Karte speichern
+    change_log:
+      title: "Änderung Log"
+      id: "ID"
+      field: "Feld"
+      new_value: "Neuer Wert"
+      old_value: "Alter Wert"
+      edited_at: "Bearbeitet am"
+      edited_by: "Bearbeitet von"
+      actions: "Aktionen"
+      empty: "Es wurden keine Änderungen protokolliert"
+    trackers:
+      index:
+        title: Tracker
+        name: Name
+        email: E-Mail
+        description: Beschreibung
+        no_description: Ohne Beschreibung
+        no_trackers: Keine Tracker vorhanden.
+      tracker:
+        add: "Zu den Trackern hinzufügen"
+      form:
+        update: Update Tracker
+        updated: "Tracker Update erfolgreich."
+        edit_title: "Tracker: Bearbeiten Tracker"
