@@ -145,7 +145,7 @@ describe "Admin polls" do
       expect(Poll::Question::Answer.count). to eq(0)
     end
 
-    scenario "Can't destroy poll with votes", :js  do
+    scenario "Can't destroy poll with votes", :js do
       poll = create(:poll)
       create(:poll_question, poll: poll)
       create(:poll_voter, :from_booth, :valid_document, poll: poll)

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Budget Groups" do
   let(:budget) { create(:budget, slug: "budget_slug") }
-  let!(:group)  { create(:budget_group, slug: "group_slug", budget: budget) }
+  let!(:group) { create(:budget_group, slug: "group_slug", budget: budget) }
 
   context "Load" do
     scenario "finds group using budget slug and group slug" do

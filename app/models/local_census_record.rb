@@ -7,7 +7,7 @@ class LocalCensusRecord < ApplicationRecord
   validates :postal_code, presence: true
   validates :document_number, uniqueness: { scope: :document_type }
 
-  scope :search,  -> (terms) { where("document_number ILIKE ?", "%#{terms}%") }
+  scope :search, -> (terms) { where("document_number ILIKE ?", "%#{terms}%") }
 
   private
 

@@ -858,7 +858,7 @@ describe Proposal do
 
   describe "selected" do
     let!(:not_selected_proposal) { create(:proposal) }
-    let!(:selected_proposal)   { create(:proposal, :selected) }
+    let!(:selected_proposal)     { create(:proposal, :selected) }
 
     it "selected? is true" do
       expect(not_selected_proposal.selected?).to be false
@@ -916,7 +916,7 @@ describe Proposal do
   end
 
   describe "#recommendations" do
-    let(:user)     { create(:user) }
+    let(:user) { create(:user) }
 
     it "does not return any proposals when user has not interests" do
       create(:proposal)

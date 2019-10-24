@@ -11,7 +11,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
   else
     let!(:documentable)           { create(documentable_factory_name, author: user) }
   end
-  let!(:user_to_login)          { send(login_as_name) }
+  let!(:user_to_login) { send(login_as_name) }
 
   before do
     create(:administrator, user: administrator)

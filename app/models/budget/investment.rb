@@ -154,7 +154,7 @@ class Budget
       results = results.search_by_title_or_id(params[:title_or_id].strip)  if params[:title_or_id]
       results = advanced_filters(params, results)                          if params[:advanced_filters].present?
 
-      results = results.send(current_filter)                        if current_filter.present?
+      results = results.send(current_filter) if current_filter.present?
       results.includes(:heading, :group, :budget, administrator: :user, valuators: :user)
     end
 

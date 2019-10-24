@@ -1206,7 +1206,7 @@ describe Budget::Investment do
   end
 
   describe "scoped_filter" do
-    let(:budget)   { create(:budget, :balloting)   }
+    let(:budget)     { create(:budget, :balloting) }
     let(:investment) { create(:budget_investment, budget: budget) }
 
     describe "with without_admin filter" do

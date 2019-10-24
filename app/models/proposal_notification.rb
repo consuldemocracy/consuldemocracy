@@ -10,9 +10,9 @@ class ProposalNotification < ApplicationRecord
   validates :proposal, presence: true
   validate :minimum_interval
 
-  scope :public_for_api,           -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
-  scope :sort_by_created_at,       -> { reorder(created_at: :desc) }
-  scope :sort_by_moderated,       -> { reorder(moderated: :desc) }
+  scope :public_for_api,     -> { where(proposal_id: Proposal.public_for_api.pluck(:id)) }
+  scope :sort_by_created_at, -> { reorder(created_at: :desc) }
+  scope :sort_by_moderated,  -> { reorder(moderated: :desc) }
 
   scope :moderated, -> { where(moderated: true) }
   scope :not_moderated, -> { where(moderated: false) }

@@ -1899,7 +1899,7 @@ describe "Budget Investments" do
     end
 
     scenario "Display only investment's related to the current heading", :js do
-      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+      heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
       investment1 = create(:budget_investment, heading: heading)
       investment2 = create(:budget_investment, heading: heading)
@@ -1923,7 +1923,7 @@ describe "Budget Investments" do
     end
 
     scenario "Do not display investment's, since they're all related to other heading", :js do
-      heading_2 = create(:budget_heading, name: "Madrid",   group: group)
+      heading_2 = create(:budget_heading, name: "Madrid", group: group)
 
       investment1 = create(:budget_investment, heading: heading_2)
       investment2 = create(:budget_investment, heading: heading_2)

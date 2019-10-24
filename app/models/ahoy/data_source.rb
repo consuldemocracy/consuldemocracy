@@ -8,7 +8,7 @@ module Ahoy
     # Name is the name of the collection and will be showed in the
     # chart
     def add(name, collection)
-      collections.push data:  collection, name: name
+      collections.push data: collection, name: name
       collection.each_key { |key| add_key key }
     end
 

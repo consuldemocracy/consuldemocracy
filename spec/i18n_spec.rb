@@ -60,7 +60,7 @@ describe "I18n" do
     end
 
     it "returns a String to avoid exception 'undefined method for Fixnum'" do
-      keys = { zero:  "No comments" }
+      keys = { zero: "No comments" }
       I18n.backend.store_translations(:en, { test_plural: keys })
 
       result = I18n.t("test_plural", count: 1)
@@ -69,7 +69,7 @@ describe "I18n" do
     end
 
     it "returns the number not pluralized for missing translations" do
-      keys = { zero:  "No comments" }
+      keys = { zero: "No comments" }
       I18n.backend.store_translations(:en, { test_plural: keys })
 
       expect(I18n.t("test_plural", count: 1).pluralize).to eq "1"
