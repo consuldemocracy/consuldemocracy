@@ -344,6 +344,9 @@ de:
         url: "URL"
       create:
         success_notice: "Dokument erfolgreich hochgeladen"
+        unable_notice: "Ungültiges Dokument"
+      destroy:
+        success_notice: "Dokument erfolgreich gelöscht"
     hidden_users:
       index:
         filter: Filter
@@ -398,6 +401,7 @@ de:
           description_placeholder: Fügen Sie eine Beschreibung des Beteiligungsverfahrens hinzu
           additional_info_placeholder: Fügen Sie zusätzliche Informationen hinzu, die Sie für nützlich halten
           homepage_description: Hier können Sie den Inhalt des Beteiligungsverfahrens erläutern
+          banner_title: Farben Header
         index:
           create: Neues Beteiligungsverfahren
           delete: Löschen
@@ -405,6 +409,7 @@ de:
           filters:
             active: Aktiv
             all: Alle
+          link: "Download Gesetzgebungsprozess"
         new:
           back: Zurück
           title: Neues kollaboratives Gesetzgebungsverfahren erstellen
@@ -461,6 +466,7 @@ de:
           form:
             error: Fehler
         form:
+          title: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Beteiligungsverfahrens <span class="strong">%{process_title}</span>'
           launch_text_editor: Textbearbeitung öffnen
           close_text_editor: Textbearbeitung schließen
           use_markdown: Verwenden Sie Markdown, um den Text zu formatieren
