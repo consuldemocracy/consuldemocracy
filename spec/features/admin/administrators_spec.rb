@@ -40,7 +40,6 @@ describe "Admin administrators" do
   end
 
   scenario "Delete Administrator when its the current user" do
-
     within "#administrator_#{admin.id}" do
       click_on "Delete"
     end
@@ -115,5 +114,4 @@ describe "Admin administrators" do
       expect(page).to have_content("Admin Alias")
     end
   end
-
 end

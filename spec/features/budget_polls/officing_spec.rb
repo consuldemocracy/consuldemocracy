@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Budget Poll Officing" do
-
   scenario "Show sidebar menus if officer has shifts assigned" do
     booth = create(:poll_booth)
     booth_assignment = create(:poll_booth_assignment, booth: booth)
@@ -35,5 +34,4 @@ describe "Budget Poll Officing" do
     expect(page).not_to have_content("Validate document")
     expect(page).not_to have_content("Total recounts and results")
   end
-
 end

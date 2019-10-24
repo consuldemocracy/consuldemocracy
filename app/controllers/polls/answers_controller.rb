@@ -1,5 +1,4 @@
 class Polls::AnswersController < ApplicationController
-
   load_and_authorize_resource :poll
   load_and_authorize_resource :question, class: "Poll::Question"
   authorize_resource :answer, class: "Poll::Answer"
@@ -66,5 +65,4 @@ class Polls::AnswersController < ApplicationController
         @answers = @question.question_answers.visibles
       end
     end
-
 end

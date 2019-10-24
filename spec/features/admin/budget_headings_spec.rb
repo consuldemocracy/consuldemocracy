@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin budget headings" do
-
   let(:budget) { create(:budget, :drafting) }
   let(:group) { create(:budget_group, budget: budget) }
 
@@ -11,7 +10,6 @@ describe "Admin budget headings" do
   end
 
   context "Feature flag" do
-
     before do
       Setting["process.budgets"] = nil
     end
@@ -21,11 +19,9 @@ describe "Admin budget headings" do
         visit admin_budget_group_headings_path(budget, group)
       end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Load" do
-
     let!(:budget)  { create(:budget, slug: "budget_slug") }
     let!(:group)   { create(:budget_group, slug: "group_slug", budget: budget) }
     let!(:heading) { create(:budget_heading, slug: "heading_slug", group: group) }
@@ -75,7 +71,6 @@ describe "Admin budget headings" do
   end
 
   context "Index" do
-
     scenario "Displaying no headings for group" do
       visit admin_budget_group_headings_path(budget, group)
 
@@ -138,11 +133,9 @@ describe "Admin budget headings" do
       expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_content "Atlantis"
     end
-
   end
 
   context "New" do
-
     scenario "Create heading" do
       visit admin_budget_group_headings_path(budget, group)
       click_link "Create new heading"
@@ -178,11 +171,9 @@ describe "Admin budget headings" do
       expect(page).to have_css(".is-invalid-label", text: "Amount")
       expect(page).to have_content "can't be blank"
     end
-
   end
 
   context "Edit" do
-
     scenario "Show heading information" do
       heading = create(:budget_heading, group: group)
 
@@ -220,7 +211,6 @@ describe "Admin budget headings" do
       expect(heading.reload.slug).not_to eq old_slug
       expect(heading.slug).to eq "new-english-name"
     end
-
   end
 
   context "Update" do
@@ -277,6 +267,5 @@ describe "Admin budget headings" do
       expect(page).to have_css(".is-invalid-label", text: "Heading name")
       expect(page).to have_css("small.form-error", text: "has already been taken")
     end
-
   end
 end

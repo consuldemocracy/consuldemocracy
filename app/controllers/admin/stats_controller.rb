@@ -1,5 +1,4 @@
 class Admin::StatsController < Admin::BaseController
-
   def show
     @event_types = Ahoy::Event.pluck(:name).uniq.sort
 

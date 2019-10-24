@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe "Admin Budgets" do
-
   before do
     admin = create(:administrator).user
     login_as(admin)
   end
 
   context "Index" do
-
     scenario "Create poll if the budget does not have a poll associated" do
       budget = create(:budget)
 
@@ -54,11 +52,9 @@ describe "Admin Budgets" do
         expect(page).to have_link "Admin ballots", href: admin_poll_booth_assignments_path(poll)
       end
     end
-
   end
 
   context "Show" do
-
     scenario "Do not show questions section if the budget have a poll associated" do
       poll = create(:poll, :for_budget)
 
@@ -72,7 +68,5 @@ describe "Admin Budgets" do
         expect(page).to have_content("Results")
       end
     end
-
   end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Moderate proposals" do
-
   scenario "Disabled with a feature flag" do
     Setting["process.proposals"] = nil
     moderator = create(:moderator)
@@ -44,7 +43,6 @@ describe "Moderate proposals" do
   end
 
   describe "/moderation/ screen" do
-
     before do
       moderator = create(:moderator)
       login_as(moderator.user)

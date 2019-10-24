@@ -109,5 +109,4 @@ class Admin::BudgetsController < Admin::BaseController
     def load_valuators
       @valuators = Valuator.includes(:user).all.order(description: :asc).order("users.email ASC")
     end
-
 end

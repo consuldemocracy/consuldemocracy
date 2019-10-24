@@ -77,5 +77,4 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
     def heading_params
       params.permit(:heading_id)
     end
-
 end

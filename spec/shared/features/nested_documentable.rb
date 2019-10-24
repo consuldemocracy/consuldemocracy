@@ -22,7 +22,6 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
   end
 
   describe "at #{path}" do
-
     scenario "Should show new document link when max documents allowed limit is not reached" do
       login_as user_to_login
       visit send(path, arguments)
@@ -304,9 +303,7 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
         expect(page).not_to have_content("Add new document")
       end
     end
-
   end
-
 end
 
 def documentable_redirected_to_resource_show_or_navigate_to

@@ -15,5 +15,4 @@ class Officing::PollsController < Officing::BaseController
                []
              end
   end
-
 end

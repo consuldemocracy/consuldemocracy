@@ -32,6 +32,5 @@ class Poll
     def todays_booths
       officer_assignments.by_date(Date.current).map(&:booth).uniq
     end
-
   end
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Tags" do
-
   scenario "Index" do
     earth = create(:debate, tag_list: "Medio Ambiente")
     money = create(:debate, tag_list: "Economía")
@@ -122,7 +121,6 @@ describe "Tags" do
   end
 
   context "Tag cloud" do
-
     scenario "Proposals" do
       create(:proposal, tag_list: "Medio Ambiente")
       create(:proposal, tag_list: "Economía")
@@ -195,7 +193,5 @@ describe "Tags" do
       expect(page).to have_content proposal2.title
       expect(page).not_to have_content proposal3.title
     end
-
   end
-
 end

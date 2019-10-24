@@ -25,6 +25,7 @@ module Budgets
     end
 
     private
+
       def investments_by_heading
         base = @budget.investments.winners
         base = base.joins(milestones: :translations).includes(:milestones)

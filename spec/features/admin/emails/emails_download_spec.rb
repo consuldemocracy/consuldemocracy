@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin download user emails" do
-
   let(:admin_user) { create(:user, newsletter: false, email: "admin@consul.dev") }
 
   before do
@@ -10,7 +9,6 @@ describe "Admin download user emails" do
   end
 
   context "Download only emails from segment users with newsletter flag & present email " do
-
     before do
       create(:user, email: "user@consul.dev")
 

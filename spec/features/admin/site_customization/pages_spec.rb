@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe "Admin custom pages" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context "Index" do
-
     scenario "lists all created custom pages" do
       custom_page = create(:site_customization_page)
       visit admin_site_customization_pages_path
@@ -33,7 +31,6 @@ describe "Admin custom pages" do
         expect(page).to have_content slug
       end
     end
-
   end
 
   context "Create" do

@@ -1,6 +1,5 @@
 module Budgets
   class InvestmentsController < ApplicationController
-
     include FeatureFlags
     include CommentableActions
     include FlagActions
@@ -187,7 +186,5 @@ module Budgets
       def load_map
         @map_location = MapLocation.load_from_heading(@heading)
       end
-
   end
-
 end

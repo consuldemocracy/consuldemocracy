@@ -93,6 +93,7 @@ class Dashboard::Action < ApplicationRecord
   end
 
   private
+
     def self.get_actions_for_today(proposal)
       proposal_votes = proposal.cached_votes_up
       day_offset = calculate_day_offset(proposal, Date.current)

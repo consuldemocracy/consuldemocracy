@@ -50,5 +50,4 @@ class Admin::ValuatorsController < Admin::BaseController
       params.require(:valuator).permit(:user_id, :description, :valuator_group_id,
                                        :can_comment, :can_edit_dossier)
     end
-
 end

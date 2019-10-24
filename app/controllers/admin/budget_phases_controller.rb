@@ -25,5 +25,4 @@ class Admin::BudgetPhasesController < Admin::BaseController
       valid_attributes = [:starts_at, :ends_at, :enabled]
       params.require(:budget_phase).permit(*valid_attributes, translation_params(Budget::Phase))
     end
-
 end

@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Social media meta tags" do
-
   context "Setting social media meta tags" do
-
     let(:meta_keywords) { "citizen, participation, open government" }
     let(:meta_title) { "CONSUL" }
     let(:meta_description) do
@@ -25,7 +23,6 @@ describe "Social media meta tags" do
     end
 
     scenario "Social media meta tags partial render settings content" do
-
       visit root_path
       expect(page).to have_meta "keywords", with: meta_keywords
       expect(page).to have_meta "twitter:site", with: twitter_handle
@@ -44,5 +41,4 @@ describe "Social media meta tags" do
       expect(page).to have_property "og:description", with: meta_description
     end
   end
-
 end

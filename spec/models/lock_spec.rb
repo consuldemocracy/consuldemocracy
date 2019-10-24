@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Lock do
-
   let(:lock) { create(:lock) }
 
   describe "#locked?" do
@@ -55,5 +54,4 @@ describe Lock do
       expect(lock.too_many_tries?).to be false
     end
   end
-
 end

@@ -316,5 +316,4 @@ describe Abilities::Common do
     it { should be_able_to(:disable_recommendations, Debate) }
     it { should be_able_to(:disable_recommendations, Proposal) }
   end
-
 end

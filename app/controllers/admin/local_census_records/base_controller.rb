@@ -6,5 +6,4 @@ class Admin::LocalCensusRecords::BaseController < Admin::BaseController
     def namespace
       "admin"
     end
-
 end

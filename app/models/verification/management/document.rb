@@ -49,5 +49,4 @@ class Verification::Management::Document
   def verify
     user.update(verified_at: Time.current) if user?
   end
-
 end

@@ -31,5 +31,4 @@ class CommentNotifier
       parent_author = @comment.parent.author
       parent_author != @author && parent_author.email_on_comment_reply?
     end
-
 end

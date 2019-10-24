@@ -1,5 +1,4 @@
 class MapLocation < ApplicationRecord
-
   belongs_to :proposal, touch: true
   belongs_to :investment, class_name: "Budget::Investment", touch: true
 
@@ -25,5 +24,4 @@ class MapLocation < ApplicationRecord
     map.longitude = heading.longitude.to_f if heading.longitude.present?
     map
   end
-
 end

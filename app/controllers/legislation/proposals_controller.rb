@@ -70,5 +70,4 @@ class Legislation::ProposalsController < Legislation::BaseController
     def load_successful_proposals
       @proposal_successful_exists = Legislation::Proposal.successful.exists?
     end
-
 end

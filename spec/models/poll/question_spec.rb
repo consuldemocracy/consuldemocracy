@@ -47,7 +47,6 @@ RSpec.describe Poll::Question, type: :model do
   end
 
   describe "#enum_type" do
-
     it "returns nil if not has votation_type association" do
       expect(poll_question.votation_type).to be_nil
       expect(poll_question.enum_type).to be_nil
@@ -59,11 +58,9 @@ RSpec.describe Poll::Question, type: :model do
       expect(question.votation_type).not_to be_nil
       expect(question.enum_type).to eq("answer_couples_open")
     end
-
   end
 
   describe "#max_votes" do
-
     it "returns nil if not has votation_type association" do
       expect(poll_question.votation_type).to be_nil
       expect(poll_question.max_votes).to be_nil
@@ -75,6 +72,5 @@ RSpec.describe Poll::Question, type: :model do
       expect(question.votation_type).not_to be_nil
       expect(question.max_votes).to eq(5)
     end
-
   end
 end

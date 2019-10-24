@@ -1,5 +1,4 @@
 module ProposalsHelper
-
   def progress_bar_percentage(proposal)
     case proposal.cached_votes_up
     when 0 then 0

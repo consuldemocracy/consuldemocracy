@@ -114,5 +114,4 @@ class Document < ApplicationRecord
       document.set_attachment_from_cached_attachment
       document.attachment.destroy
     end
-
 end

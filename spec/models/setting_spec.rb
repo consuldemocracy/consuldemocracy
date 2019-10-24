@@ -238,7 +238,6 @@ describe Setting do
   end
 
   describe ".force_presence_date_of_birth?" do
-
     it "return false when feature remote_census is not active" do
       Setting["feature.remote_census"] = false
 
@@ -261,7 +260,6 @@ describe Setting do
   end
 
   describe ".force_presence_postal_code?" do
-
     it "return false when feature remote_census is not active" do
       Setting["feature.remote_census"] = false
 

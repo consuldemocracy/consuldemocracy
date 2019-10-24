@@ -1,5 +1,4 @@
 module GlobalizeHelper
-
   def options_for_select_language(resource)
     options_for_select(available_locales(resource), selected_locale(resource))
   end

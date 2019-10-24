@@ -6,5 +6,4 @@ class Admin::Widget::BaseController < Admin::BaseController
     def namespace
       "admin"
     end
-
 end

@@ -19,5 +19,4 @@ module Documentable
       Setting["uploads.documents.content_types"]&.split(" ") || ["application/pdf"]
     end
   end
-
 end

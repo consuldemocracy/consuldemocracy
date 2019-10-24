@@ -4,7 +4,6 @@
 
 module Ahoy
   class DataSource
-
     # Adds a collection with the datasource
     # Name is the name of the collection and will be showed in the
     # chart
@@ -43,7 +42,5 @@ module Ahoy
       def add_key(key)
         shared_keys.push(key) unless shared_keys.include? key
       end
-
   end
-
 end

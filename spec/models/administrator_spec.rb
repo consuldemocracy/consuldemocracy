@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Administrator do
-
   describe "#description_or_name" do
     let!(:user) { create(:user, username: "Billy Wilder") }
 
@@ -41,5 +40,4 @@ describe Administrator do
       expect(administrator.description_or_name_and_email).to eq("Billy Wilder (test@test.com)")
     end
   end
-
 end

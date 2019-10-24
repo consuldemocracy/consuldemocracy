@@ -1,5 +1,4 @@
 class Poll::PairAnswer < ApplicationRecord
-
   belongs_to :question, -> { with_hidden }
   belongs_to :author, ->   { with_hidden }, class_name: "User", foreign_key: "author_id"
   belongs_to :answer_right, class_name: "Poll::Question::Answer", foreign_key: "answer_rigth_id"

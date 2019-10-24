@@ -36,5 +36,4 @@ describe "Email campaigns" do
 
     expect(page).not_to have_content campaign2.name.to_s
   end
-
 end

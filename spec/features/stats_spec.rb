@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Stats" do
-
   context "Summary" do
-
     scenario "General" do
       create(:debate)
       2.times { create(:proposal) }
@@ -41,7 +39,5 @@ describe "Stats" do
       expect(page).to have_content "Verified users 3"
       expect(page).to have_content "Unverified users 2"
     end
-
   end
-
 end

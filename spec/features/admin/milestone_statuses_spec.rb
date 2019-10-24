@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin milestone statuses" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -91,5 +90,4 @@ describe "Admin milestone statuses" do
       expect(page).not_to have_content status.description
     end
   end
-
 end

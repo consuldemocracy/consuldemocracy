@@ -1,5 +1,4 @@
 shared_examples "mappable" do |mappable_factory_name, mappable_association_name, mappable_new_path, mappable_edit_path, mappable_show_path, mappable_path_arguments, management: false|
-
   include ActionView::Helpers
 
   let!(:user)         { create(:user, :level_two) }
@@ -13,7 +12,6 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
   end
 
   describe "At #{mappable_new_path}" do
-
     before { set_arguments(arguments, mappable, mappable_path_arguments) }
 
     scenario "Should not show marker by default on create #{mappable_factory_name}", :js do
@@ -108,11 +106,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
       expect(page).to have_css(".map")
       expect(page).to have_content("Remove map marker")
     end
-
   end
 
   describe "At #{mappable_edit_path}" do
-
     before { skip } if mappable_edit_path.blank?
 
     scenario "Should edit map on #{mappable_factory_name} and contain default values", :js do
@@ -192,11 +188,9 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       expect(page).not_to have_content "Map location can't be blank"
     end
-
   end
 
   describe "At #{mappable_show_path}" do
-
     before do
       set_arguments(arguments, mappable, mappable_path_arguments)
       do_login_for(user) if management
@@ -228,9 +222,7 @@ shared_examples "mappable" do |mappable_factory_name, mappable_association_name,
 
       expect(page).not_to have_css(".map_location")
     end
-
   end
-
 end
 
 def do_login_for(user)

@@ -1,5 +1,4 @@
 class Tracking::ProposalMilestonesController < Tracking::MilestonesController
-
   private
 
     def milestoneable

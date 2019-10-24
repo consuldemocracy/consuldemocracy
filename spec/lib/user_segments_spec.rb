@@ -218,5 +218,4 @@ describe UserSegments do
       expect(emails).to eq ["first@email.com", "last@email.com"]
     end
   end
-
 end

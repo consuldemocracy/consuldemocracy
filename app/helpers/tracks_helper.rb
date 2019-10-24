@@ -1,5 +1,4 @@
 module TracksHelper
-
   def track_event(data = {})
     track_data = ""
     prefix = " data-track-event-"
@@ -10,5 +9,4 @@ module TracksHelper
       track_data
     end
   end
-
 end

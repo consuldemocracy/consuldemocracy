@@ -1,12 +1,10 @@
 require "rails_helper"
 
 describe Flag do
-
   let(:user) { create(:user) }
   let(:comment) { create(:comment) }
 
   describe ".flag" do
-
     it "creates a flag when there is none" do
       expect { Flag.flag(user, comment) }.to change { Flag.count }.by(1)
       expect(Flag.last.user).to eq(user)
@@ -52,5 +50,4 @@ describe Flag do
       expect(Flag.flagged?(user, comment)).to be
     end
   end
-
 end

@@ -17,7 +17,6 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
   end
 
   describe "at #{path}" do
-
     scenario "Should show new image link when imageable has not an associated image defined" do
       login_as user
       visit send(path, arguments)
@@ -250,9 +249,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
       end
 
     end
-
   end
-
 end
 
 def imageable_redirected_to_resource_show_or_navigate_to

@@ -47,5 +47,4 @@ module LegislationHelper
       "background: #{@process.background_color};color: #{@process.font_color};"
     end
   end
-
 end

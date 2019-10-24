@@ -353,5 +353,4 @@ describe "Admin activity" do
       end
     end
   end
-
 end

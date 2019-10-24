@@ -2,7 +2,6 @@
 require "rails_helper"
 
 describe "Proposals" do
-
   it_behaves_like "milestoneable",
                   :proposal,
                   "proposal_path"
@@ -26,7 +25,6 @@ describe "Proposals" do
   end
 
   context "Index" do
-
     before do
       Setting["feature.featured_proposals"] = true
       Setting["featured_proposals_number"] = 3
@@ -226,7 +224,6 @@ describe "Proposals" do
   end
 
   context "Embedded video" do
-
     scenario "Show YouTube video" do
       proposal = create(:proposal, video_url: "http://www.youtube.com/watch?v=a7UFm6ErMPU")
       visit proposal_path(proposal)
@@ -463,7 +460,6 @@ describe "Proposals" do
   end
 
   context "Geozones" do
-
     scenario "Default whole city" do
       author = create(:user)
       login_as(author)
@@ -507,7 +503,6 @@ describe "Proposals" do
         expect(page).to have_content "California"
       end
     end
-
   end
 
   context "Retired proposals" do
@@ -683,7 +678,6 @@ describe "Proposals" do
   end
 
   describe "Proposal index order filters" do
-
     scenario "Default order is hot_score", :js do
       best_proposal = create(:proposal, title: "Best proposal")
       best_proposal.update_column(:hot_score, 10)
@@ -738,7 +732,6 @@ describe "Proposals" do
     end
 
     context "Recommendations" do
-
       let!(:best_proposal)   { create(:proposal, title: "Best",   cached_votes_up: 10, tag_list: "Sport") }
       let!(:medium_proposal) { create(:proposal, title: "Medium", cached_votes_up: 5,  tag_list: "Sport") }
       let!(:worst_proposal)  { create(:proposal, title: "Worst",  cached_votes_up: 1,  tag_list: "Sport") }
@@ -847,7 +840,6 @@ describe "Proposals" do
   end
 
   describe "Archived proposals" do
-
     scenario "show on proposals list" do
       archived_proposals = create_archived_proposals
 
@@ -944,7 +936,6 @@ describe "Proposals" do
         expect(all(".proposal")[2].text).to match "Least voted"
       end
     end
-
   end
 
   context "Selected Proposals" do
@@ -1038,9 +1029,7 @@ describe "Proposals" do
   end
 
   context "Search" do
-
     context "Basic search" do
-
       scenario "Search by text" do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
@@ -1091,11 +1080,9 @@ describe "Proposals" do
 
         expect(page).to have_selector("input[name='search'][value='Schwifty']")
       end
-
     end
 
     context "Advanced search" do
-
       scenario "Search by text", :js do
         proposal1 = create(:proposal, title: "Get Schwifty")
         proposal2 = create(:proposal, title: "Schwifty Hello")
@@ -1110,7 +1097,6 @@ describe "Proposals" do
         expect(page).to have_content("There are 2 citizen proposals")
 
         within("#proposals") do
-
           expect(page).to have_content(proposal1.title)
           expect(page).to have_content(proposal2.title)
           expect(page).not_to have_content(proposal3.title)
@@ -1118,7 +1104,6 @@ describe "Proposals" do
       end
 
       context "Search by author type" do
-
         scenario "Public employee", :js do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
@@ -1233,13 +1218,10 @@ describe "Proposals" do
             expect(page).not_to have_content(proposal3.title)
           end
         end
-
       end
 
       context "Search by date" do
-
         context "Predefined date ranges" do
-
           scenario "Last day", :js do
             proposal1 = create(:proposal, created_at: 1.minute.ago)
             proposal2 = create(:proposal, created_at: 1.hour.ago)
@@ -1319,7 +1301,6 @@ describe "Proposals" do
               expect(page).not_to have_content(proposal3.title)
             end
           end
-
         end
 
         scenario "Search by custom date range", :js do
@@ -1426,7 +1407,6 @@ describe "Proposals" do
             expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
           end
         end
-
       end
     end
 
@@ -1510,7 +1490,6 @@ describe "Proposals" do
       expect(page).not_to have_selector("#proposals .proposal-featured")
       expect(page).not_to have_selector("#featured-proposals")
     end
-
   end
 
   scenario "Conflictive" do
@@ -1713,7 +1692,6 @@ describe "Proposals" do
           expect(page).not_to have_content("Sully monument")
         end
       end
-
     end
   end
 
@@ -1753,7 +1731,6 @@ describe "Proposals" do
   end
 
   context "Summary" do
-
     scenario "Displays proposals grouped by category" do
       create(:tag, :category, name: "Culture")
       create(:tag, :category, name: "Social Services")
@@ -1838,13 +1815,10 @@ describe "Proposals" do
         expect(page).not_to have_content(proposal3.title)
       end
     end
-
   end
-
 end
 
 describe "Successful proposals" do
-
   scenario "Successful proposals do not show support buttons in index" do
     successful_proposals = create_successful_proposals
 
@@ -1900,7 +1874,6 @@ describe "Successful proposals" do
   end
 
   context "Skip user verification" do
-
     before do
       Setting["feature.user.skip_verification"] = "true"
     end

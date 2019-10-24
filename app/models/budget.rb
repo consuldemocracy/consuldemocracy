@@ -1,5 +1,4 @@
 class Budget < ApplicationRecord
-
   include Measurable
   include Sluggable
   include StatsVersionable
@@ -219,5 +218,4 @@ class Budget < ApplicationRecord
     def generate_slug?
       slug.nil? || drafting?
     end
-
 end

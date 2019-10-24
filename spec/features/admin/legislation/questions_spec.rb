@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin legislation questions" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -10,7 +9,6 @@ describe "Admin legislation questions" do
   let!(:process) { create(:legislation_process, title: "An example legislation process") }
 
   context "Feature flag" do
-
     before do
       Setting["process.legislation"] = nil
     end
@@ -18,11 +16,9 @@ describe "Admin legislation questions" do
     scenario "Disabled with a feature flag" do
       expect { visit admin_legislation_process_questions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Index" do
-
     scenario "Displaying legislation process questions" do
       create(:legislation_question, process: process, title: "Question 1")
       create(:legislation_question, process: process, title: "Question 2")

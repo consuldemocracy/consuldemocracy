@@ -1,5 +1,4 @@
 class Admin::ValuatorGroupsController < Admin::BaseController
-
   def index
     @groups = ValuatorGroup.all.page(params[:page])
   end
@@ -48,5 +47,4 @@ class Admin::ValuatorGroupsController < Admin::BaseController
     def group_params
       params.require(:valuator_group).permit(:name)
     end
-
 end

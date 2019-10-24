@@ -142,7 +142,6 @@ RSpec.describe Legislation::Process::Phase, type: :model do
     end
 
     it "checks allegations phase" do
-
       # future
       process.update!(allegations_start_date: Date.current + 2.days,
                       allegations_end_date: Date.current + 3.days)
@@ -164,5 +163,4 @@ RSpec.describe Legislation::Process::Phase, type: :model do
       expect(process.allegations_phase.open?).to be false
     end
   end
-
 end

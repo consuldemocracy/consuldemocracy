@@ -1,5 +1,4 @@
 module DocumentsHelper
-
   def document_attachment_file_name(document)
     document.attachment_file_name
   end

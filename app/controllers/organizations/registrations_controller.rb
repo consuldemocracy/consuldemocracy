@@ -1,5 +1,4 @@
 class Organizations::RegistrationsController < Devise::RegistrationsController
-
   invisible_captcha only: [:create], honeypot: :address, scope: :user
 
   def new
@@ -35,5 +34,4 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
       params.require(:user).permit(:email, :password, :phone_number, :password_confirmation, :terms_of_service,
                                    organization_attributes: [:name, :responsible_name])
     end
-
 end

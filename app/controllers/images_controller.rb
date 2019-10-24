@@ -22,5 +22,4 @@ class ImagesController < ApplicationController
       end
     end
   end
-
 end

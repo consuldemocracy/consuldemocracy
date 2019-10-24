@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin Notifications" do
-
   before do
     create(:budget)
     login_as(create(:administrator).user)

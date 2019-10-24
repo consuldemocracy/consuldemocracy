@@ -66,7 +66,6 @@ namespace :admin do
     end
 
     resources :budget_phases, only: [:edit, :update]
-
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]

@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe EmailDigest do
-
   describe "notifications" do
-
     it "returns notifications for a user" do
       user1 = create(:user)
       user2 = create(:user)
@@ -29,7 +27,6 @@ describe EmailDigest do
       expect(email_digest.notifications).to eq [notification1]
       expect(email_digest.notifications).not_to include(notification2)
     end
-
   end
 
   describe "pending_notifications?" do
@@ -53,7 +50,6 @@ describe EmailDigest do
       email_digest = EmailDigest.new(user)
       expect(email_digest.pending_notifications?).not_to be
     end
-
   end
 
   describe "deliver" do
@@ -79,11 +75,9 @@ describe EmailDigest do
 
       expect(all_emails).to be_empty
     end
-
   end
 
   describe "mark_as_emailed" do
-
     it "marks notifications as emailed" do
       user1 = create(:user)
       user2 = create(:user)
@@ -120,11 +114,9 @@ describe EmailDigest do
       expect(user1.failed_email_digests_count).to eq(0)
       expect(user2.failed_email_digests_count).to eq(0)
     end
-
   end
 
   describe "#valid_email?" do
-
     it "returns a MatchData if email is valid" do
       user = create(:user, email: "valid_email@email.com")
 
@@ -147,5 +139,4 @@ describe EmailDigest do
       expect(email_digest.valid_email?).to be(false)
     end
   end
-
 end

@@ -273,7 +273,6 @@ describe "Commenting topics from proposals" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -571,7 +570,6 @@ describe "Commenting topics from proposals" do
       end
     end
   end
-
 end
 
 describe "Commenting topics from budget investments" do
@@ -824,7 +822,6 @@ describe "Commenting topics from budget investments" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -1122,5 +1119,4 @@ describe "Commenting topics from budget investments" do
       end
     end
   end
-
 end

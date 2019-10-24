@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Poll::Booth do
-
   let(:booth) { build(:poll_booth) }
 
   it "is valid" do
@@ -45,7 +44,6 @@ describe Poll::Booth do
   end
 
   describe ".available" do
-
     it "returns booths associated to current polls" do
       booth_for_current_poll = create(:poll_booth, polls: [create(:poll, :current)])
       booth_for_expired_poll = create(:poll_booth, polls: [create(:poll, :expired)])

@@ -28,5 +28,4 @@ class RemoteTranslationsController < ApplicationController
     def translations_enqueued?(remote_translation)
       RemoteTranslation.remote_translation_enqueued?(remote_translation)
     end
-
 end

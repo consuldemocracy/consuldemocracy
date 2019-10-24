@@ -287,7 +287,6 @@ describe Debate do
     end
 
     describe "actions which affect it" do
-
       let(:debate) { create(:debate) }
 
       before do
@@ -310,7 +309,6 @@ describe Debate do
   end
 
   describe "#confidence_score" do
-
     it "takes into account percentage of total votes and total_positive and total negative votes" do
       debate = create(:debate, :with_confidence_score, cached_votes_up: 100, cached_votes_score: 100, cached_votes_total: 100)
       expect(debate.confidence_score).to eq(10000)
@@ -347,7 +345,6 @@ describe Debate do
         expect(previous).to be > debate.confidence_score
       end
     end
-
   end
 
   describe "cache" do
@@ -415,7 +412,6 @@ describe Debate do
   end
 
   describe "conflictive debates" do
-
     it "returns true when it has more than 1 flag for 5 positive votes" do
       debate.update!(cached_votes_up: 4)
       debate.update!(flags_count: 1)
@@ -457,7 +453,6 @@ describe Debate do
       debate.update!(cached_votes_up: 0)
       expect(debate).not_to be_conflictive
     end
-
   end
 
   describe "search" do
@@ -506,11 +501,9 @@ describe Debate do
         results = Debate.search("California")
         expect(results).to eq([debate])
       end
-
     end
 
     context "stemming" do
-
       it "searches word stems" do
         debate = create(:debate, title: "limpiar")
 
@@ -523,11 +516,9 @@ describe Debate do
         results = Debate.search("limpió")
         expect(results).to eq([debate])
       end
-
     end
 
     context "accents" do
-
       it "searches with accents" do
         debate = create(:debate, title: "difusión")
 
@@ -542,7 +533,6 @@ describe Debate do
         results = Debate.search("publico")
         expect(results).to eq([debate3])
       end
-
     end
 
     context "case" do
@@ -571,7 +561,6 @@ describe Debate do
     end
 
     context "order" do
-
       it "orders by weight" do
         debate_description = create(:debate,  description: "stop corruption")
         debate_title       = create(:debate,  title:       "stop corruption")
@@ -600,11 +589,9 @@ describe Debate do
 
         expect(results).to eq [exact_title_few_votes, similar_title_many_votes]
       end
-
     end
 
     context "reorder" do
-
       it "is able to reorder by hot_score after searching" do
         lowest_score  = create(:debate,  title: "stop corruption", cached_votes_up: 1)
         highest_score = create(:debate,  title: "stop corruption", cached_votes_up: 2)
@@ -668,11 +655,9 @@ describe Debate do
 
         expect(results).to eq [most_commented, some_comments, least_commented]
       end
-
     end
 
     context "no results" do
-
       it "no words match" do
         create(:debate, title: "save world")
 
@@ -700,7 +685,6 @@ describe Debate do
         results = Debate.search("")
         expect(results).to eq([])
       end
-
     end
   end
 
@@ -739,7 +723,6 @@ describe Debate do
   end
 
   describe "#recommendations" do
-
     let(:user) { create(:user) }
 
     it "does not return any debates when user has not interests" do
@@ -777,7 +760,5 @@ describe Debate do
 
       expect(results).to be_empty
     end
-
   end
-
 end

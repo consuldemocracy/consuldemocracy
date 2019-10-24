@@ -40,11 +40,9 @@ describe Dashboard::Mailer do
       expect(email).to have_body_text("Share in")
       expect(email).to have_body_text(proposal_path(proposal))
     end
-
   end
 
   describe "#new_actions_notification rake task" do
-
     before do
       Rake.application.rake_require "tasks/dashboards"
       Rake::Task.define_task(:environment)
@@ -150,7 +148,6 @@ describe Dashboard::Mailer do
   end
 
   describe "#new_actions_notification_on_create" do
-
     before do
       ActionMailer::Base.deliveries.clear
     end
@@ -214,7 +211,6 @@ describe Dashboard::Mailer do
   end
 
   describe "#new_actions_notification_on_published" do
-
     before do
       ActionMailer::Base.deliveries.clear
 
@@ -273,5 +269,4 @@ describe Dashboard::Mailer do
       expect(email).to have_body_text("Go ahead, discover them!")
     end
   end
-
 end

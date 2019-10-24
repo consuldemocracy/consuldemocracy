@@ -62,5 +62,4 @@ class DirectUpload
         user: @user
       }
     end
-
 end

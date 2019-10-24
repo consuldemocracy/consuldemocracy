@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Organization do
-
   subject { create(:organization) }
 
   describe "verified?" do

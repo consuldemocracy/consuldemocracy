@@ -55,5 +55,4 @@ class Verification::LetterController < ApplicationController
         sign_in(user)
       end
     end
-
 end

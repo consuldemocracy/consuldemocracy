@@ -13,5 +13,4 @@ module Followable
   def followed_by?(user)
     followers.include?(user)
   end
-
 end

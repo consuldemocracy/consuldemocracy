@@ -140,5 +140,4 @@ class Mailer < ApplicationMailer
         mail.perform_deliveries = false
       end
     end
-
 end

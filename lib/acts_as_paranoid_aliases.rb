@@ -1,9 +1,7 @@
 module ActsAsParanoidAliases
-
   def self.included(base)
     base.extend(ClassMethods)
     class_eval do
-
       def hide
         return false if hidden?
         update_attribute(:hidden_at, Time.current)

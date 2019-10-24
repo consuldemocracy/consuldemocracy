@@ -33,5 +33,4 @@ wb.add_worksheet(name: "Resume") do |sheet|
       sheet.add_hyperlink :location => comment_url(comment), :ref => sheet.rows.last.cells.first
     end
   end
-
 end

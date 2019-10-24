@@ -1,6 +1,5 @@
 class Budget
   class Result
-
     attr_accessor :budget, :heading, :current_investment
 
     def initialize(budget, heading)
@@ -48,6 +47,5 @@ class Budget
     def winners
       investments.where(winner: true)
     end
-
   end
 end

@@ -97,5 +97,4 @@ class Poll::Question::Answer < ApplicationRecord
       is_most_voted = answers.none? { |a| a > total_votes }
       update!(most_voted: is_most_voted)
     end
-
 end

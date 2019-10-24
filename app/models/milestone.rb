@@ -20,5 +20,4 @@ class Milestone < ApplicationRecord
   def self.title_max_length
     80
   end
-
 end

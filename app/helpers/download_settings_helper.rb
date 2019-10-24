@@ -1,5 +1,4 @@
 module DownloadSettingsHelper
-
   def get_model(resource_name)
     case resource_name
     when "legislation_processes"
@@ -36,12 +35,10 @@ module DownloadSettingsHelper
   end
 
   def get_resource(resource)
-
     resource.to_s.pluralize.downcase
   end
 
   def get_config
     params[:config].present? && !params[:config].nil? ? params[:config] : 0
   end
-
 end

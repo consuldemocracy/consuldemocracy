@@ -135,5 +135,4 @@ class Officing::Residence
     def random_password
       (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
-
 end

@@ -1,5 +1,4 @@
 class Geozone < ApplicationRecord
-
   include Graphqlable
 
   has_many :proposals

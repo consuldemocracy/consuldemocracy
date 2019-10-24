@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Poll Votation Type" do
-
   context "Unique" do
-
     let(:user) { create(:user, :verified) }
     let(:poll_current) { create(:poll, :current) }
     let(:unique) { create(:poll_question_unique, poll: poll_current) }
@@ -58,7 +56,6 @@ describe "Poll Votation Type" do
   end
 
   context "Multiple" do
-
     let(:user) { create(:user, :verified) }
     let(:poll_current) { create(:poll, :current) }
     let(:question) { create(:poll_question_multiple, poll: poll_current) }
@@ -149,7 +146,6 @@ describe "Poll Votation Type" do
   end
 
   context "Prioritized" do
-
     let(:user) { create(:user, :verified) }
     let(:poll_current) { create(:poll, :current) }
     let(:question) { create(:poll_question_prioritized, poll: poll_current) }
@@ -188,7 +184,6 @@ describe "Poll Votation Type" do
           expect(page).to have_link answer.title
         end
       end
-
     end
 
     scenario "response question no more vote than allowed", :js do
@@ -215,7 +210,6 @@ describe "Poll Votation Type" do
   end
 
   context "Positive open" do
-
     let(:user) { create(:user, :verified) }
     let(:poll_current) { create(:poll, :current) }
     let(:question) { create(:poll_question_positive_open, poll: poll_current) }
@@ -334,7 +328,6 @@ describe "Poll Votation Type" do
   end
 
   context "Answers set" do
-
     let(:user) { create(:user, :verified) }
     let(:poll_current) { create(:poll, :current) }
     let(:question) { create(:poll_question_answer_set_open, poll: poll_current) }
@@ -367,7 +360,6 @@ describe "Poll Votation Type" do
       within("#poll_question_#{question.id}_answers") do
         expect(page).to have_css(".answered", count: question.max_votes)
       end
-
     end
 
     scenario "add answer", :js do
@@ -381,5 +373,4 @@ describe "Poll Votation Type" do
       end
     end
   end
-
 end

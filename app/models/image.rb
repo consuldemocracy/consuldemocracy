@@ -129,5 +129,4 @@ class Image < ApplicationRecord
       image.set_attachment_from_cached_attachment
       image.attachment.destroy
     end
-
 end

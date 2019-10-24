@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe Verification::Residence do
-
   let(:residence) { build(:verification_residence, document_number: "12345678Z") }
 
   describe "verification" do
-
     describe "postal code" do
       it "is valid with postal codes starting with 280" do
         residence.postal_code = "28012"
@@ -27,7 +25,5 @@ describe Verification::Residence do
         expect(residence.errors[:postal_code]).to eq ["In order to be verified, you must be registered."]
       end
     end
-
   end
-
 end

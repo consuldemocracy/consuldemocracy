@@ -1,5 +1,4 @@
 class CommentTree
-
   ROOT_COMMENTS_PER_PAGE = 10
 
   attr_reader :commentable, :page, :order

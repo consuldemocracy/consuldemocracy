@@ -1,5 +1,4 @@
 module RemotelyTranslatable
-
   private
 
     def detect_remote_translations(*args)
@@ -25,5 +24,4 @@ module RemotelyTranslatable
 
       args.compact - [feeds] + feeds.map(&:items)
     end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin custom information texts" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -57,7 +56,6 @@ describe "Admin custom information texts" do
   end
 
   context "Globalization" do
-
     scenario "Add a translation", :js do
       key = "debates.index.section_footer.title"
 
@@ -130,5 +128,4 @@ describe "Admin custom information texts" do
       expect(debate_title.value_en).to eq("Custom debate title")
     end
   end
-
 end

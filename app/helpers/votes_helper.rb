@@ -1,5 +1,4 @@
 module VotesHelper
-
   def debate_percentage_of_likes(debate)
     debate.likes.percent_of(debate.total_votes)
   end
@@ -27,5 +26,4 @@ module VotesHelper
   def voted_for?(votes, votable)
     votes[votable.id]
   end
-
 end

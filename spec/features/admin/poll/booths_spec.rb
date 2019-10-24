@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin booths" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)

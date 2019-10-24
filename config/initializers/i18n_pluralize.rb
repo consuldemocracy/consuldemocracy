@@ -5,7 +5,6 @@
 module I18n
   module Backend
     module Base
-
       def pluralize(locale, entry, count)
         return entry unless entry.is_a?(Hash) && count
 
@@ -13,7 +12,6 @@ module I18n
         return "#{count}" unless entry.has_key?(key)
         entry[key]
       end
-
     end
   end
 end

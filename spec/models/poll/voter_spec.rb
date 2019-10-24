@@ -73,7 +73,6 @@ describe Poll::Voter do
     end
 
     context "origin" do
-
       it "is not valid without an origin" do
         voter.origin = nil
         expect(voter).not_to be_valid
@@ -116,11 +115,9 @@ describe Poll::Voter do
         expect(voter).to be_valid
       end
     end
-
   end
 
   describe "scopes" do
-
     describe "#web" do
       it "returns voters with a web origin" do
         voter = create(:poll_voter, :from_web)
@@ -148,11 +145,9 @@ describe Poll::Voter do
         expect(Poll::Voter.booth).to be_empty
       end
     end
-
   end
 
   describe "save" do
-
     it "sets demographic info" do
       geozone = create(:geozone)
       user = create(:user, :level_two,

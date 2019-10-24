@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin hidden budget investments" do
-
   let(:budget)  { create(:budget) }
   let(:heading) { create(:budget_heading, budget: budget, price: 666666) }
 
@@ -101,5 +100,4 @@ describe "Admin hidden budget investments" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

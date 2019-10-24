@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Images" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -58,5 +57,4 @@ describe "Images" do
     expect(page).not_to have_css("img[title='#{image.title}']")
     expect(page).not_to have_content(image.title)
   end
-
 end

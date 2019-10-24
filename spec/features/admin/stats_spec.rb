@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Stats" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -9,7 +8,6 @@ describe "Stats" do
   end
 
   context "Summary" do
-
     scenario "General" do
       create(:debate)
       2.times { create(:proposal) }
@@ -36,11 +34,9 @@ describe "Stats" do
       expect(page).to have_content "Comment votes 3"
       expect(page).to have_content "Total votes 6"
     end
-
   end
 
   context "Users" do
-
     scenario "Summary" do
       1.times { create(:user, :level_three) }
       2.times { create(:user, :level_two) }
@@ -94,11 +90,9 @@ describe "Stats" do
 
       expect(page).to have_content "Level two users 1"
     end
-
   end
 
   describe "Budget investments" do
-
     context "Supporting phase" do
       let(:budget) { create(:budget) }
       let(:group_all_city) { create(:budget_group, budget: budget) }
@@ -224,11 +218,9 @@ describe "Stats" do
         expect(page).to have_content "Participants 2"
       end
     end
-
   end
 
   context "graphs" do
-
     scenario "event graphs", :js do
       campaign = create(:campaign)
 
@@ -245,11 +237,9 @@ describe "Stats" do
         expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
       end
     end
-
   end
 
   context "Proposal notifications" do
-
     scenario "Summary stats" do
       proposal = create(:proposal)
 
@@ -296,11 +286,9 @@ describe "Stats" do
       expect(page).to have_content proposal_notification.body
       expect(page).to have_content "Proposal not available"
     end
-
   end
 
   context "Direct messages" do
-
     scenario "Summary stats" do
       sender = create(:user, :level_two)
 
@@ -319,11 +307,9 @@ describe "Stats" do
         expect(page).to have_content "2"
       end
     end
-
   end
 
   context "Polls" do
-
     scenario "Total participants by origin" do
       create(:poll_officer_assignment)
       3.times { create(:poll_voter, origin: "web") }
@@ -369,7 +355,6 @@ describe "Stats" do
       end
 
       within("#polls") do
-
         within("#poll_#{poll1.id}") do
           expect(page).to have_content "1"
         end
@@ -377,7 +362,6 @@ describe "Stats" do
         within("#poll_#{poll2.id}") do
           expect(page).to have_content "2"
         end
-
       end
     end
 
@@ -412,7 +396,5 @@ describe "Stats" do
         expect(page).to have_content "2"
       end
     end
-
   end
-
 end

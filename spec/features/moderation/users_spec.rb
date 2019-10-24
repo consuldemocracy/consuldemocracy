@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Moderate users" do
-
   scenario "Hide" do
     citizen = create(:user)
     moderator = create(:moderator)
@@ -73,5 +72,4 @@ describe "Moderate users" do
       expect(page).to have_content "Blocked"
     end
   end
-
 end

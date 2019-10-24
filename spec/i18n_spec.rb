@@ -17,7 +17,6 @@ describe "I18n" do
   end
 
   context "Plurals" do
-
     after do
       I18n.backend.reload!
     end

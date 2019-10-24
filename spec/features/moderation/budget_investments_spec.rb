@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Moderate budget investments" do
-
   let(:budget)      { create(:budget) }
   let(:heading)     { create(:budget_heading, budget: budget, price: 666666) }
   let(:mod)         { create(:moderator) }
@@ -53,14 +52,12 @@ describe "Moderate budget investments" do
   end
 
   describe "/moderation/ screen" do
-
     before do
       login_as(mod.user)
     end
 
     describe "moderate in bulk" do
       describe "When an investment has been selected for moderation" do
-
         before do
           visit moderation_budget_investments_path
 
@@ -236,5 +233,4 @@ describe "Moderate budget investments" do
       expect(flagged_new_investment.title).to appear_before(latest_investment.title)
     end
   end
-
 end

@@ -10,5 +10,4 @@ module Budgets
       expect(page).to have_content "Remove"
     end
   end
-
 end

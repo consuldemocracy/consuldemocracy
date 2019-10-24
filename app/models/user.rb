@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   include Verification
 
   devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable,
@@ -383,5 +382,4 @@ class User < ApplicationRecord
         maximum: User.username_max_length)
       validator.validate(self)
     end
-
 end

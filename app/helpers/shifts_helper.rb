@@ -1,5 +1,4 @@
 module ShiftsHelper
-
   def shift_vote_collection_dates(booth, polls)
     return [] if polls.blank?
     date_options((start_date(polls)..end_date(polls)), Poll::Shift.tasks[:vote_collection], booth)

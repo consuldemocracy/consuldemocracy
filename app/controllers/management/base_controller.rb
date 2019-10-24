@@ -61,5 +61,4 @@ class Management::BaseController < ActionController::Base
         @manager_logged_in = User.find_by_manager_login(session[:manager]["login"])
       end
     end
-
 end

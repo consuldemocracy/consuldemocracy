@@ -1,5 +1,4 @@
 module AdminHelper
-
   def side_menu
     if namespace == "moderation/budgets"
       render "/moderation/menu"
@@ -114,5 +113,4 @@ module AdminHelper
     def namespace
       controller.class.name.downcase.split("::").first
     end
-
 end

@@ -36,5 +36,4 @@ class Legislation::DraftVersionsController < Legislation::BaseController
         @process.draft_versions.published
       end
     end
-
 end

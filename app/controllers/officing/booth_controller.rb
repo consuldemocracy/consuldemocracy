@@ -20,5 +20,4 @@ class Officing::BoothController < Officing::BaseController
     def set_booth(booth)
       session[:booth_id] = booth.id
     end
-
 end

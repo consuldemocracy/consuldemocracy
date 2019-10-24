@@ -1,5 +1,4 @@
 module ImageablesHelper
-
   def can_destroy_image?(imageable)
     imageable.image.present? && can?(:destroy, imageable.image)
   end
@@ -38,5 +37,4 @@ module ImageablesHelper
     t "images.form.note", accepted_content_types: imageable_humanized_accepted_content_types,
                           max_file_size: imageable_max_file_size
   end
-
 end

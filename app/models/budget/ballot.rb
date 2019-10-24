@@ -74,6 +74,5 @@ class Budget
     def casted_offline?
       budget.poll&.voted_by?(user)
     end
-
   end
 end

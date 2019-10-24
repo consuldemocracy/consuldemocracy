@@ -2,7 +2,6 @@
 require_dependency Rails.root.join("app", "models", "verification", "residence").to_s
 
 class Verification::Residence
-
   validate :postal_code_in_madrid
   validate :residence_in_madrid
 
@@ -25,5 +24,4 @@ class Verification::Residence
     def valid_postal_code?
       postal_code =~ /^280/
     end
-
 end

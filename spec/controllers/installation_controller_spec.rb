@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe InstallationController, type: :request do
-
   describe "consul.json" do
     let(:test_feature_settings) do
       {

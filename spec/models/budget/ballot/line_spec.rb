@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Budget::Ballot::Line do
-
   let(:budget) { create(:budget) }
   let(:group) { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group, price: 10000000) }
@@ -10,7 +9,6 @@ describe Budget::Ballot::Line do
   let(:ballot_line) { build(:budget_ballot_line, ballot: ballot, investment: investment) }
 
   describe "Validations" do
-
     it "is valid and automatically denormallyze budget, group and heading when validated" do
       expect(ballot_line).to be_valid
       expect(ballot_line.budget).to eq(budget)
@@ -41,11 +39,9 @@ describe Budget::Ballot::Line do
         expect(ballot_line).to be_valid
       end
     end
-
   end
 
   describe "#store_user_heading" do
-
     it "stores the heading where the user has voted" do
       user = create(:user, :level_two)
       investment = create(:budget_investment, :selected)
@@ -58,9 +54,7 @@ describe Budget::Ballot::Line do
   end
 
   describe "scopes" do
-
     describe "by_investment" do
-
       it "returns ballot lines for an investment" do
         investment1 = create(:budget_investment, :selected, heading: heading)
         investment2 = create(:budget_investment, :selected, heading: heading)
@@ -78,7 +72,6 @@ describe Budget::Ballot::Line do
         expect(ballot_lines_by_investment).to match_array [ballot_line1, ballot_line2]
         expect(ballot_lines_by_investment).not_to include ballot_line3
       end
-
     end
   end
 end

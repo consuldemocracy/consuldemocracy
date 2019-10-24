@@ -95,5 +95,4 @@ class Signature < ApplicationRecord
   def document_types
     %w[1 2 3 4]
   end
-
 end

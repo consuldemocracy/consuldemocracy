@@ -53,5 +53,4 @@ module Search
       params[:order] = "relevance"
     end
   end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Tag do
-
   it "decreases tag_count when a debate is hidden" do
     debate = create(:debate)
     tag = create(:tag, taggables: [debate])

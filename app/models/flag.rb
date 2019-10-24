@@ -25,5 +25,4 @@ class Flag < ApplicationRecord
     return false unless user
     !!by_user_and_flaggable(user, flaggable)&.first
   end
-
 end

@@ -1,10 +1,8 @@
 require "rails_helper"
 
 describe "Users" do
-
   context "Regular authentication" do
     context "Sign up" do
-
       scenario "Success" do
         message = "You have been sent a message containing a verification link. Please click on this link to activate your account."
         visit "/"
@@ -32,11 +30,9 @@ describe "Users" do
 
         expect(page).to have_content error_message
       end
-
     end
 
     context "Sign in" do
-
       scenario "sign in with email" do
         create(:user, email: "manuela@consul.dev", password: "judgementday")
 
@@ -105,7 +101,6 @@ describe "Users" do
 
   context "OAuth authentication" do
     context "Twitter" do
-
       let(:twitter_hash) { { provider: "twitter", uid: "12345", info: { name: "manuela" }} }
       let(:twitter_hash_with_email) { { provider: "twitter", uid: "12345", info: { name: "manuela", email: "manuelacarmena@example.com" }} }
       let(:twitter_hash_with_verified_email) do
@@ -221,7 +216,6 @@ describe "Users" do
 
         visit edit_user_registration_path
         expect(page).to have_field("user_email", with: user.email)
-
       end
 
       scenario "Try to register with the username of an already existing user" do
@@ -364,7 +358,6 @@ describe "Users" do
 
     expect(page).to have_content "If your email address is in our database, in a few minutes "\
                                  "you will receive a link to use to reset your password."
-
   end
 
   scenario "Re-send confirmation instructions" do
@@ -448,5 +441,4 @@ describe "Users" do
 
     expect(page).to have_content "must be different than the current password."
   end
-
 end

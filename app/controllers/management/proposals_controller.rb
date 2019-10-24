@@ -74,5 +74,4 @@ class Management::ProposalsController < Management::BaseController
     def set_comment_flags(comments)
       @comment_flags = managed_user ? managed_user.comment_flags(comments) : {}
     end
-
 end

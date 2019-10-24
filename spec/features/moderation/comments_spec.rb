@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Moderate comments" do
-
   scenario "Hide", :js do
     citizen = create(:user)
     moderator = create(:moderator)
@@ -64,7 +63,6 @@ describe "Moderate comments" do
   end
 
   describe "/moderation/ screen" do
-
     before do
       moderator = create(:moderator)
       login_as(moderator.user)

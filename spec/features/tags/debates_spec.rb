@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Tags" do
-
   scenario "Index" do
     earth = create(:debate, tag_list: "Medio Ambiente")
     money = create(:debate, tag_list: "Economía")
@@ -150,7 +149,6 @@ describe "Tags" do
   end
 
   context "Filter" do
-
     scenario "From index" do
       create(:debate, tag_list: "Health", title: "Public hospitals?")
       create(:debate, tag_list: "Education", title: "Status of our schools")
@@ -180,11 +178,9 @@ describe "Tags" do
         expect(page).to have_content(debate.title)
       end
     end
-
   end
 
   context "Tag cloud" do
-
     scenario "Display user tags" do
       create(:debate, tag_list: "Medio Ambiente")
       create(:debate, tag_list: "Economía")
@@ -213,6 +209,5 @@ describe "Tags" do
       expect(page).to have_content debate2.title
       expect(page).not_to have_content debate3.title
     end
-
   end
 end

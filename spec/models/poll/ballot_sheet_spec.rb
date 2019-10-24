@@ -8,7 +8,6 @@ describe Poll::BallotSheet do
   end
 
   context "Validations" do
-
     it "is valid" do
       expect(ballot_sheet).to be_valid
     end
@@ -27,15 +26,12 @@ describe Poll::BallotSheet do
       ballot_sheet.data = nil
       expect(ballot_sheet).not_to be_valid
     end
-
   end
 
   context "#author" do
-
     it "returns the officer's name" do
       expect(ballot_sheet.author).to be(ballot_sheet.officer_assignment.officer.user.name)
     end
-
   end
 
   describe "#verify_ballots" do

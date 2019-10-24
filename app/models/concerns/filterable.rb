@@ -7,7 +7,6 @@ module Filterable
   end
 
   class_methods do
-
     def filter(params)
       resources = all
       params.each do |filter, value|
@@ -22,7 +21,5 @@ module Filterable
       return if value.blank?
       ["official_level", "date_range"].include?(filter)
     end
-
   end
-
 end

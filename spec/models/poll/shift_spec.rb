@@ -51,11 +51,9 @@ describe Poll::Shift do
 
       expect(build(:poll_shift, booth: booth, officer: officer, date: Date.tomorrow, task: :recount_scrutiny)).to be_valid
     end
-
   end
 
   describe "officer_assignments" do
-
     it "creates and destroy corresponding officer_assignments" do
       booth_assignment1 = create(:poll_booth_assignment, booth: booth)
       booth_assignment2 = create(:poll_booth_assignment, booth: booth)
@@ -95,7 +93,6 @@ describe Poll::Shift do
       expect(officer_assignment.booth_assignment).to eq(booth_assignment)
       expect(officer_assignment.final).to be_truthy
     end
-
   end
 
   describe "#persist_data" do
@@ -114,7 +111,5 @@ describe Poll::Shift do
       expect(shift.officer_name).to eq "Ana"
       expect(shift.officer_email).to eq "ana@example.com"
     end
-
   end
-
 end

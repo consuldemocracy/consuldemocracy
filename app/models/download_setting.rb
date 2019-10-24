@@ -14,5 +14,4 @@ class DownloadSetting < ApplicationRecord
     end
     download_setting
   end
-
 end

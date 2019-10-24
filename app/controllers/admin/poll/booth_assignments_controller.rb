@@ -1,5 +1,4 @@
 class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
-
   before_action :load_poll, except: [:create, :destroy]
 
   def index
@@ -74,5 +73,4 @@ class Admin::Poll::BoothAssignmentsController < Admin::Poll::BaseController
     def load_search
       @search = search_params[:search]
     end
-
 end

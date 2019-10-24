@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin valuators" do
-
   let(:admin) { create(:administrator) }
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
   let!(:valuator) { create(:valuator) }
@@ -110,5 +109,4 @@ describe "Admin valuators" do
       expect(page).not_to have_content(valuator1.email)
     end
   end
-
 end

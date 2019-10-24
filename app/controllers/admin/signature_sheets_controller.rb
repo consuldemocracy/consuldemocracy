@@ -1,5 +1,4 @@
 class Admin::SignatureSheetsController < Admin::BaseController
-
   def index
     @signature_sheets = SignatureSheet.all.order(created_at: :desc)
   end
@@ -29,5 +28,4 @@ class Admin::SignatureSheetsController < Admin::BaseController
     def signature_sheet_params
       params.require(:signature_sheet).permit(:signable_type, :signable_id, :required_fields_to_verify)
     end
-
 end

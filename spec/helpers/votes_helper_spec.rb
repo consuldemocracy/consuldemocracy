@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe VotesHelper do
-
   describe "#voted_for?" do
     it "returns true if voted for a proposal" do
       proposal = create(:proposal)
@@ -28,5 +27,4 @@ describe VotesHelper do
       expect(votes_percentage("dislikes", debate)).to eq("28%")
     end
   end
-
 end

@@ -68,5 +68,4 @@ class Verification::SmsController < ApplicationController
         redirect_to new_letter_path, notice: t("verification.sms.update.flash.level_two.success")
       end
     end
-
 end

@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe RemoteTranslations::Microsoft::Client do
-
   let(:client) { RemoteTranslations::Microsoft::Client.new }
 
   describe "#call" do
-
     context "when characters from request are less than the characters limit" do
       it "response has the expected result" do
         response = create_response("Nuevo título", "Nueva descripción")
@@ -26,7 +24,6 @@ describe RemoteTranslations::Microsoft::Client do
 
         expect(result).to eq([nil, "Nueva descripción"])
       end
-
     end
 
     context "when characters from request are greater than characters limit" do
@@ -96,13 +93,10 @@ describe RemoteTranslations::Microsoft::Client do
 
         expect(result).to eq([translated_text_es, another_translated_text_es])
       end
-
     end
-
   end
 
   describe "#detect_split_position" do
-
     context "text has less characters than characters limit" do
       it "does not split the text" do
         stub_const("RemoteTranslations::Microsoft::Client::CHARACTERS_LIMIT_PER_REQUEST", 20)
@@ -149,7 +143,6 @@ describe RemoteTranslations::Microsoft::Client do
 
         expect(result).to eq([sub_part_text_1 + sub_part_text_2, sub_part_text_3 + sub_part_text_4])
       end
-
     end
   end
 end

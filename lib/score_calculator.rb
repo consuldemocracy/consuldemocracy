@@ -1,5 +1,4 @@
 module ScoreCalculator
-
   def self.hot_score(resource)
     return 0 unless resource.created_at
 
@@ -31,5 +30,4 @@ module ScoreCalculator
   def self.resource_age(resource)
     ((Time.current - resource.created_at) / 1.day).ceil
   end
-
 end

@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Tracking" do
-
   context "Custom variable" do
-
     scenario "Usertype anonymous" do
       visit proposals_path
 

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe RemoteTranslationsController do
-
   describe "POST create", :delay_jobs do
     let(:debate) { create(:debate) }
 
@@ -42,6 +41,5 @@ describe RemoteTranslationsController do
 
       expect(subject).to redirect_to("any_path")
     end
-
   end
 end

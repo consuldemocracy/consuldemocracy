@@ -56,5 +56,4 @@ module ModerateActions
     def author_id
       :author_id
     end
-
 end

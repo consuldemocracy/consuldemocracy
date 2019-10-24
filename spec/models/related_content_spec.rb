@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe RelatedContent do
-
   let(:parent_relationable) { create([:proposal, :debate].sample) }
   let(:child_relationable) { create([:proposal, :debate].sample) }
 
@@ -59,5 +58,4 @@ describe RelatedContent do
       expect(parent_relationable.relationed_contents).to eq [child_relationable]
     end
   end
-
 end

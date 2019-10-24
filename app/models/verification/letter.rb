@@ -51,5 +51,4 @@ class Verification::Letter
     def generate_verification_code
       rand(100000..999999).to_s
     end
-
 end

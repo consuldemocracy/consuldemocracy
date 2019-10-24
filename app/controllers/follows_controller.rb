@@ -24,5 +24,4 @@ class FollowsController < ApplicationController
     def followable_translation_key(followable)
       followable.class.name.parameterize(separator: "_")
     end
-
 end

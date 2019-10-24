@@ -43,5 +43,4 @@ class Management::SessionsController < ActionController::Base
       manager = ManagerAuthenticator.new(params).auth
       session[:manager] = manager if manager.present?
     end
-
 end

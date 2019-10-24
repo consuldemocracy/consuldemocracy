@@ -67,5 +67,4 @@ shared_examples "image validations" do |imageable_factory|
 
     expect(image).not_to be_valid
   end
-
 end

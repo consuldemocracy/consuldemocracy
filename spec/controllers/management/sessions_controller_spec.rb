@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe Management::SessionsController do
-
   describe "Sign in" do
-
     it "denies access if wrong manager credentials" do
       allow_any_instance_of(ManagerAuthenticator).to receive(:auth).and_return(false)
       get :create, params: { login: "nonexistent", clave_usuario: "wrong" }
@@ -66,5 +64,4 @@ describe Management::SessionsController do
       expect(response).to be_redirect
     end
   end
-
 end

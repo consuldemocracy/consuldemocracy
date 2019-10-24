@@ -22,6 +22,7 @@ class EvaluationCommentEmail
   end
 
   private
+
     def related_users
       return [] if comment.commentable.nil?
       comment.commentable

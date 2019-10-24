@@ -1,5 +1,4 @@
 class InstallationController < ApplicationController
-
   skip_authorization_check
 
   def details
@@ -19,5 +18,4 @@ class InstallationController < ApplicationController
     def settings_feature_flags
       Setting.where("key LIKE 'feature.%'").each_with_object({}) { |x, n| n[x.key.remove("feature.")] = x.value }
     end
-
 end

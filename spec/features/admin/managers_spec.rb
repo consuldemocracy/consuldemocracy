@@ -81,5 +81,4 @@ describe "Admin managers" do
       expect(page).not_to have_content(manager1.email)
     end
   end
-
 end

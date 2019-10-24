@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def home_page?
     return false if user_signed_in?
     # Using path because fullpath yields false negatives since it contains
@@ -76,5 +75,4 @@ module ApplicationHelper
   def management_controller?
     controller.class.to_s.include?("Management")
   end
-
 end

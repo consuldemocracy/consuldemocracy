@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Budget::Heading do
-
   let(:budget) { create(:budget) }
   let(:group) { create(:budget_group, budget: budget) }
 
@@ -15,7 +14,6 @@ describe Budget::Heading do
   end
 
   describe "name" do
-
     let(:heading) { create(:budget_heading, group: group) }
 
     before do
@@ -73,7 +71,6 @@ describe Budget::Heading do
   end
 
   describe "save latitude" do
-
     it "Doesn't allow latitude < -90" do
       heading = create(:budget_heading, group: group, name: "Latitude is < -90")
 
@@ -170,7 +167,6 @@ describe Budget::Heading do
   end
 
   describe "save longitude" do
-
     it "Doesn't allow longitude < -180" do
       heading = create(:budget_heading, group: group, name: "Longitude is < -180")
 
@@ -280,7 +276,6 @@ describe Budget::Heading do
   end
 
   describe ".sort_by_name" do
-
     it "returns headings sorted by DESC group name first and then ASC heading name" do
       last_group  = create(:budget_group, name: "Group A")
       first_group = create(:budget_group, name: "Group B")
@@ -303,7 +298,6 @@ describe Budget::Heading do
 
       expect(Budget::Heading.sort_by_name).to eq [first_heading, last_heading]
     end
-
   end
 
   describe "scope allow_custom_content" do
@@ -329,5 +323,4 @@ describe Budget::Heading do
       expect(Budget::Heading.allow_custom_content).to eq [translated_heading]
     end
   end
-
 end

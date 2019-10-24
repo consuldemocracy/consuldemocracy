@@ -1,6 +1,5 @@
 include DocumentParser
 class CensusApi
-
   def call(document_type, document_number)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
@@ -122,5 +121,4 @@ class CensusApi
     def stubbed_invalid_response
       { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}}}
     end
-
 end

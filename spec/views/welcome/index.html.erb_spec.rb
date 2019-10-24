@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "welcome#index" do
-
   it "Display images on orbit carrousel when we have defined image_default" do
     debate = create(:debate)
 
@@ -18,7 +17,6 @@ RSpec.describe "welcome#index" do
     within 'li[data-slide="0"] .card' do
       expect(page).to have_selector("img")
     end
-
   end
 
   it "Not display images on orbit carrousel when we have not defined image_default" do
@@ -37,7 +35,5 @@ RSpec.describe "welcome#index" do
     within 'li[data-slide="0"] .card' do
       expect(page).not_to have_selector("img")
     end
-
   end
-
 end

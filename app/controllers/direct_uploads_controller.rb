@@ -44,5 +44,4 @@ class DirectUploadsController < ApplicationController
             .permit(:resource, :resource_type, :resource_id, :resource_relation,
                     :attachment, :cached_attachment, attachment_attributes: [])
     end
-
 end

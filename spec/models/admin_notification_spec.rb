@@ -89,5 +89,4 @@ describe AdminNotification do
       expect(admin_notification.list_of_recipients).not_to include(erased_user)
     end
   end
-
 end

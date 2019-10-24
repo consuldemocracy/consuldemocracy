@@ -11,5 +11,4 @@ class Moderation::BaseController < ApplicationController
     def verify_moderator
       raise CanCan::AccessDenied unless current_user&.moderator? || current_user&.administrator?
     end
-
 end

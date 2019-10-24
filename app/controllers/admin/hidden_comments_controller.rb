@@ -25,5 +25,4 @@ class Admin::HiddenCommentsController < Admin::BaseController
     def load_comment
       @comment = Comment.not_valuations.with_hidden.find(params[:id])
     end
-
 end

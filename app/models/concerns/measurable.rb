@@ -2,7 +2,6 @@ module Measurable
   extend ActiveSupport::Concern
 
   class_methods do
-
     def title_max_length
       @@title_max_length ||= (columns.find { |c| c.name == "title" }.limit rescue nil) || 80
     end
@@ -18,7 +17,5 @@ module Measurable
     def description_max_length
       6000
     end
-
   end
-
 end

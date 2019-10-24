@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe DirectMessage do
-
   let(:direct_message) { build(:direct_message) }
 
   it "is valid" do
@@ -71,7 +70,6 @@ describe DirectMessage do
   end
 
   describe "scopes" do
-
     describe "today", :with_non_utc_time_zone do
       it "returns direct messages created today" do
         create(:direct_message, created_at: Date.current.beginning_of_day)
@@ -88,7 +86,5 @@ describe DirectMessage do
         expect(DirectMessage.today.count).to eq 0
       end
     end
-
   end
-
 end

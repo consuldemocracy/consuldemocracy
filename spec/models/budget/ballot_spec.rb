@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe Budget::Ballot do
-
   describe "validations" do
-
     it "is valid" do
       budget = create(:budget)
       ballot = create(:budget_ballot, budget: budget)
@@ -18,7 +16,6 @@ describe Budget::Ballot do
 
       expect { ballot.investments << investment }.to raise_error(ActiveRecord::RecordNotUnique)
     end
-
   end
 
   describe "#amount_spent" do
@@ -97,7 +94,6 @@ describe Budget::Ballot do
   end
 
   describe "#heading_for_group" do
-
     it "returns the heading with balloted investments for a group" do
       budget = create(:budget)
       ballot = create(:budget_ballot, budget: budget)
@@ -121,7 +117,5 @@ describe Budget::Ballot do
 
       expect(ballot.heading_for_group(group)).to eq nil
     end
-
   end
-
 end

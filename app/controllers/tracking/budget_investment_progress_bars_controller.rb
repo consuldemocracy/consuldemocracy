@@ -1,5 +1,4 @@
 class Tracking::BudgetInvestmentProgressBarsController < Tracking::ProgressBarsController
-
   before_action :restrict_access_to_assigned_items
 
   private

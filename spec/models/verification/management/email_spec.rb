@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe Verification::Management::Email do
-
   describe "#user" do
     subject { Verification::Management::Email.new(document_type: "1", document_number: "1234", email: "inexisting@gmail.com") }
 

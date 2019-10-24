@@ -1,5 +1,4 @@
 module MapLocationsHelper
-
   def map_location_available?(map_location)
     map_location.present? && map_location.available?
   end
@@ -66,5 +65,4 @@ module MapLocationsHelper
       options[:marker_longitude] = map_location.longitude if map_location.longitude.present?
       options
     end
-
 end

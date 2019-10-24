@@ -32,5 +32,4 @@ ActsAsVotable::Vote.class_eval do
   def value
     vote_flag
   end
-
 end

@@ -1,7 +1,5 @@
 module ActsAsTaggableOn
-
   Tagging.class_eval do
-
     after_create :increment_tag_custom_counter
     after_destroy :touch_taggable, :decrement_tag_custom_counter
 
@@ -28,7 +26,6 @@ module ActsAsTaggableOn
   end
 
   Tag.class_eval do
-
     scope :category, -> { where(kind: "category") }
 
     def category?
@@ -84,6 +81,5 @@ module ActsAsTaggableOn
       def custom_counter_field_name_for(taggable_type)
         "#{taggable_type.underscore.pluralize}_count"
       end
-
   end
 end

@@ -6,7 +6,6 @@ describe "Poll budget ballot sheets" do
   let(:poll_officer) { create(:poll_officer) }
 
   context "Officing recounts and results view" do
-
     before do
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -30,11 +29,9 @@ describe "Poll budget ballot sheets" do
         expect(page).to have_content("Add results")
       end
     end
-
   end
 
   context "Booth assignment" do
-
     scenario "Try to access ballot sheets officing without booth assignment" do
       login_as(poll_officer.user)
       visit officing_poll_ballot_sheets_path(poll)
@@ -70,11 +67,9 @@ describe "Poll budget ballot sheets" do
 
       expect(page).to have_content "Choose your booth"
     end
-
   end
 
   context "Index" do
-
     before do
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -91,11 +86,9 @@ describe "Poll budget ballot sheets" do
 
       expect(page).to have_content "Ballot sheet #{ballot_sheet.id}"
     end
-
   end
 
   context "New" do
-
     before do
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -138,11 +131,9 @@ describe "Poll budget ballot sheets" do
 
       expect(page).to have_content "Officer assignment can't be blank"
     end
-
   end
 
   context "Show" do
-
     before do
       create(:poll_shift, :recount_scrutiny_task, officer: poll_officer, booth: booth,
                                                   date: Date.current)
@@ -161,6 +152,5 @@ describe "Poll budget ballot sheets" do
       expect(page).to have_content(ballot_sheet.author)
       expect(page).to have_content(ballot_sheet.data)
     end
-
   end
 end

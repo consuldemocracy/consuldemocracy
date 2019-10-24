@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe TagCloud do
-
   describe "#tags" do
-
     it "returns proposal tags" do
       create(:proposal, tag_list: "participation")
       create(:debate,   tag_list: "world hunger")
@@ -118,5 +116,4 @@ describe TagCloud do
       expect(tag_names(tag_cloud).count).to eq(10)
     end
   end
-
 end

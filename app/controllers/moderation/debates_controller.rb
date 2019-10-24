@@ -16,5 +16,4 @@ class Moderation::DebatesController < Moderation::BaseController
     def resource_model
       Debate
     end
-
 end

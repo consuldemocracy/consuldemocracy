@@ -128,5 +128,4 @@ class Valuation::BudgetInvestmentsController < Valuation::BaseController
 
       @investment.errors.empty?
     end
-
 end

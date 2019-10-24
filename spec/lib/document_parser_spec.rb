@@ -2,7 +2,6 @@ require "rails_helper"
 include DocumentParser
 
 describe DocumentParser do
-
   describe "#get_document_number_variants" do
     it "trims and cleans up entry" do
       expect(DocumentParser.get_document_number_variants(2, "  1 2@ 34")).to eq(["1234"])
@@ -26,5 +25,4 @@ describe DocumentParser do
       expect(DocumentParser.get_document_number_variants(1, "1234567A")).to eq(%w[1234567 01234567 1234567a 1234567A 01234567a 01234567A])
     end
   end
-
 end

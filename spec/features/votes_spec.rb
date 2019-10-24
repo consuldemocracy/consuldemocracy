@@ -11,7 +11,6 @@ describe "Votes" do
     before { login_as(verified) }
 
     scenario "Index shows user votes on debates" do
-
       debate1 = create(:debate)
       debate2 = create(:debate)
       debate3 = create(:debate)
@@ -60,7 +59,6 @@ describe "Votes" do
     end
 
     describe "Single debate" do
-
       scenario "Show no votes" do
         visit debate_path(create(:debate))
 
@@ -164,7 +162,6 @@ describe "Votes" do
         visit debates_path
 
         within("#debates") do
-
           find(".in-favor a").click
 
           within(".in-favor") do
@@ -363,5 +360,4 @@ describe "Votes" do
       expect_message_only_verified_can_vote_proposals
     end
   end
-
 end

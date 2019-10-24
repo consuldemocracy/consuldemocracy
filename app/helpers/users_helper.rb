@@ -1,5 +1,4 @@
 module UsersHelper
-
   def humanize_document_type(document_type)
     case document_type
     when "1"
@@ -72,5 +71,4 @@ module UsersHelper
       t("account.show.public_interests_user_title_list")
     end
   end
-
 end

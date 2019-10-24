@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin shifts" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -260,5 +259,4 @@ describe "Admin shifts" do
 
     expect(page).to have_content "This booth has no shifts"
   end
-
 end

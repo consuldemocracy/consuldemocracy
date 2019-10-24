@@ -1,5 +1,4 @@
 class Tracking::BudgetInvestmentMilestonesController < Tracking::MilestonesController
-
   private
 
     def milestoneable

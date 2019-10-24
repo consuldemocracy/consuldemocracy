@@ -87,5 +87,4 @@ class Verification::Residence
     def clean_document_number
       self.document_number = document_number.gsub(/[^a-z0-9]+/i, "").upcase if document_number.present?
     end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin feature flags" do
-
   before do
     Setting["process.budgets"] = true
     login_as(create(:administrator).user)
@@ -102,5 +101,4 @@ describe "Admin feature flags" do
       expect(page).not_to have_button "Enable"
     end
   end
-
 end

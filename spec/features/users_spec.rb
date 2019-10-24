@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Users" do
-
   describe "Show (public page)" do
     let(:user) { create(:user) }
 
@@ -134,7 +133,6 @@ describe "Users" do
       end
       expect(page).not_to have_link budget_investment.title
     end
-
   end
 
   describe "Public activity" do
@@ -224,7 +222,6 @@ describe "Users" do
         visit user_path(user)
         expect(page).to have_content(user.email)
       end
-
     end
   end
 
@@ -351,7 +348,6 @@ describe "Users" do
   end
 
   describe "Special comments" do
-
     scenario "comments posted as moderator are not visible in user activity" do
       moderator = create(:administrator).user
       comment = create(:comment, user: moderator)
@@ -430,7 +426,6 @@ describe "Users" do
     end
 
     describe "Proposals" do
-
       scenario "Display following tab when user is following one proposal at least" do
         create(:proposal, followers: [user])
 
@@ -487,7 +482,6 @@ describe "Users" do
     end
 
     describe "Budget Investments" do
-
       scenario "Display following tab when user is following one budget investment at least" do
         create(:budget_investment, followers: [user])
 
@@ -520,6 +514,5 @@ describe "Users" do
         expect(page).to have_link budget_investment.title
       end
     end
-
   end
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe ActsAsTaggableOn do
-
   describe "Tagging" do
     describe "when tagging debates or proposals" do
       let(:proposal) { create(:proposal) }
@@ -46,7 +45,6 @@ describe ActsAsTaggableOn do
 
   describe "Tag" do
     describe "public_for_api scope" do
-
       it "returns tags whose kind is NULL and have at least one tagging whose taggable is not hidden" do
         tag = create(:tag, kind: nil)
         proposal = create(:proposal)
@@ -127,7 +125,5 @@ describe ActsAsTaggableOn do
         expect(Tag.search("fami").first.name).to eq("Familia")
       end
     end
-
   end
-
 end

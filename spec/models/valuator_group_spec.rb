@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe ValuatorGroup do
-
   describe "Validations" do
     it "is valid" do
       expect(build(:valuator_group)).to be_valid

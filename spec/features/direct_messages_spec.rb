@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Direct messages" do
-
   before do
     Setting[:direct_message_max_per_day] = 3
   end
@@ -27,7 +26,6 @@ describe "Direct messages" do
   end
 
   context "Permissions" do
-
     scenario "Do not display link to send message to myself" do
       sender = create(:user, :level_two)
 
@@ -78,7 +76,6 @@ describe "Direct messages" do
       expect(page).to have_content("This user has decided not to receive direct messages")
       expect(page).not_to have_css("#direct_message_title")
     end
-
   end
 
   scenario "Error messages" do
@@ -94,7 +91,6 @@ describe "Direct messages" do
   end
 
   context "Limits" do
-
     scenario "Can only send a maximum number of direct messages per day" do
       sender   = create(:user, :level_two)
       receiver = create(:user, :level_two)
@@ -115,7 +111,5 @@ describe "Direct messages" do
       expect(page).to have_content "You have reached the maximum number of private messages per day"
       expect(page).not_to have_content "You message has been sent successfully."
     end
-
   end
-
 end

@@ -31,5 +31,4 @@ class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
     def active_poll_params
       params.require(:active_poll).permit(translation_params(ActivePoll))
     end
-
 end

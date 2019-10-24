@@ -48,7 +48,6 @@ describe Newsletter do
   end
 
   describe "#list_of_recipient_emails" do
-
     before do
       create(:user, newsletter: true, email: "newsletter_user@consul.dev")
       create(:user, newsletter: false, email: "no_news_user@consul.dev")
@@ -138,6 +137,5 @@ describe Newsletter do
       expect(Activity.first.action).to eq("email")
       expect(Activity.first.actionable).to eq(newsletter)
     end
-
   end
 end

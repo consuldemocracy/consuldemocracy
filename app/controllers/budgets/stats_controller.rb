@@ -1,6 +1,5 @@
 module Budgets
   class StatsController < ApplicationController
-
     before_action :load_budget
     load_and_authorize_resource :budget
 
@@ -15,6 +14,5 @@ module Budgets
       def load_budget
         @budget = Budget.find_by_slug_or_id! params[:budget_id]
       end
-
   end
 end

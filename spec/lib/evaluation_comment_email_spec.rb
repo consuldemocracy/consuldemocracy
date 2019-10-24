@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe EvaluationCommentEmail do
-
   let(:author)        { create(:user) }
   let(:administrator) { create(:administrator) }
   let(:investment)    { create(:budget_investment, author: author, administrator: administrator) }
@@ -53,5 +52,4 @@ describe EvaluationCommentEmail do
       expect(comment_email.can_be_sent?).to be false
     end
   end
-
 end

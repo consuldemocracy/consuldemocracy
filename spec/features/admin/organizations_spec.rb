@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin::Organizations" do
-
   before do
     administrator = create(:user)
     create(:administrator, user: administrator)
@@ -214,5 +213,4 @@ describe "Admin::Organizations" do
     expect(current_url).to include("filter=pending")
     expect(current_url).to include("page=2")
   end
-
 end

@@ -2,7 +2,6 @@ require "graphql"
 
 module GraphQL
   class QueryTypeCreator
-
     def self.create(api_types)
       GraphQL::ObjectType.define do
         name "QueryType"
@@ -22,10 +21,8 @@ module GraphQL
             description model.graphql_pluralized_field_description
             resolve ->(object, arguments, context) { model.public_for_api }
           end
-
         end
       end
     end
-
   end
 end

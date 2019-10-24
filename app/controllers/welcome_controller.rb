@@ -37,5 +37,4 @@ class WelcomeController < ApplicationController
       @recommended_debates = Debate.recommendations(current_user).sort_by_recommendations.limit(3)
       @recommended_proposals = Proposal.recommendations(current_user).sort_by_recommendations.limit(3)
     end
-
 end

@@ -10,5 +10,4 @@ module Communitable
     community = Community.create!
     self.community_id = community.id
   end
-
 end

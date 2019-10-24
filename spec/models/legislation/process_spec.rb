@@ -157,7 +157,6 @@ describe Legislation::Process do
       expect(processes_not_in_draft).not_to include(process_with_draft_enabled)
       expect(processes_not_in_draft).not_to include(process_with_draft_only_today)
     end
-
   end
 
   describe "#status" do
@@ -216,14 +215,11 @@ describe Legislation::Process do
     end
 
     context "with milestone_tags" do
-
       let(:process) { create(:legislation_process, :with_milestone_tags) }
 
       it "has milestone_tags" do
         expect(process.milestone_tag_list.count).to eq(1)
       end
     end
-
   end
-
 end

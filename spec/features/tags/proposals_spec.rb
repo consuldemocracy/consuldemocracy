@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Tags" do
-
   scenario "Index" do
     earth = create(:proposal, tag_list: "Medio Ambiente")
     money = create(:proposal, tag_list: "Economía")
@@ -184,7 +183,6 @@ describe "Tags" do
   end
 
   context "Filter" do
-
     scenario "From index" do
       create(:proposal, tag_list: "Health", title: "More green spaces")
       create(:proposal, tag_list: "Education", title: "Online teachers")
@@ -214,11 +212,9 @@ describe "Tags" do
         expect(page).to have_content(proposal.title)
       end
     end
-
   end
 
   context "Tag cloud" do
-
     scenario "Display user tags" do
       create(:proposal, tag_list: "Medio Ambiente")
       create(:proposal, tag_list: "Economía")
@@ -247,11 +243,9 @@ describe "Tags" do
       expect(page).to have_content proposal2.title
       expect(page).not_to have_content proposal3.title
     end
-
   end
 
   context "Categories" do
-
     scenario "Display category tags" do
       create(:tag, :category, name: "Medio Ambiente")
       create(:tag, :category, name: "Economía")

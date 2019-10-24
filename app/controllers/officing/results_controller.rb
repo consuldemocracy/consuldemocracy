@@ -116,5 +116,4 @@ class Officing::ResultsController < Officing::BaseController
     def index_params
       params.permit(:booth_assignment_id, :date)
     end
-
 end

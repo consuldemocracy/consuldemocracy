@@ -31,6 +31,24 @@ Capybara/FeatureMethods:
 FactoryBot/AttributeDefinedStatically:
   Enabled: true
 
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 

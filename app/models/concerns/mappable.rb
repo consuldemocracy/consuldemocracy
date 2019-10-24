@@ -25,7 +25,5 @@ module Mappable
     def skip_map?
       skip_map == "1"
     end
-
   end
-
 end

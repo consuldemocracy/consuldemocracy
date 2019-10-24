@@ -1,5 +1,4 @@
 module BannersHelper
-
   def has_banners?
     @banners.present? && @banners.count > 0
   end
@@ -19,5 +18,4 @@ module BannersHelper
   def banner_font_color_or_default
     @banner.font_color.presence || banner_default_font_color
   end
-
 end

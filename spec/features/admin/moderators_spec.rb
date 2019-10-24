@@ -81,5 +81,4 @@ describe "Admin moderators" do
       expect(page).not_to have_content(moderator1.email)
     end
   end
-
 end

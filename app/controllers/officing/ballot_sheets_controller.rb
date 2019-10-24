@@ -1,5 +1,4 @@
 class Officing::BallotSheetsController < Officing::BaseController
-
   before_action :verify_booth
   before_action :load_poll
   before_action :load_officer_assignments, only: [:new, :create]
@@ -66,5 +65,4 @@ class Officing::BallotSheetsController < Officing::BaseController
     def ballot_sheet_params
       params.permit(:data, :poll_id, :officer_assignment_id)
     end
-
 end

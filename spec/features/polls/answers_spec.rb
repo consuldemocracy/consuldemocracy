@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Answers" do
-
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
 
@@ -64,7 +63,6 @@ describe "Answers" do
   pending "Destroy"
 
   context "Gallery" do
-
     it_behaves_like "nested imageable",
                     "poll_question_answer",
                     "new_admin_answer_image_path",
@@ -74,5 +72,4 @@ describe "Answers" do
                     "Image uploaded successfully",
                     true
   end
-
 end

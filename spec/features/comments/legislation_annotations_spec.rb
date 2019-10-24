@@ -287,7 +287,6 @@ describe "Commenting legislation questions" do
       click_button "Publish reply"
       expect(page).to have_content "Can't be blank"
     end
-
   end
 
   scenario "N replies", :js do
@@ -723,7 +722,5 @@ describe "Commenting legislation questions" do
       expect(page).to have_content("my other annotation")
       expect(page).to have_content("replying in multiple annotation thread")
     end
-
   end
-
 end

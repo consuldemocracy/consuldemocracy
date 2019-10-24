@@ -15,5 +15,4 @@ module Flaggable
   def ignore_flag
     update(ignored_flag_at: Time.current)
   end
-
 end

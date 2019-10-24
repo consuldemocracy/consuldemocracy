@@ -1,5 +1,4 @@
 class Poll::PartialResult < ApplicationRecord
-
   VALID_ORIGINS = %w[web booth]
 
   belongs_to :question, -> { with_hidden }
