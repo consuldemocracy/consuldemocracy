@@ -23,11 +23,24 @@
     color: white;
   }
 
+  p {
+    color: white;
+    line-height: 1.5;
+    margin: auto;
+    max-width: 50rem;
+    padding: 0 2rem;
+    text-align: left;
+  }
+
   div.error {
     margin-top: -144px;
     position: absolute;
     top: 50%;
     width: 100%;
+  }
+
+  a {
+    color: #fc6;
   }
   </style>
 </head>
@@ -35,7 +48,8 @@
 <body>
   <div class="error">
     <h1>403</h1>
-    <h2>Access to this page has been disabled by the administrators.</h2>
+    <h2>Disabled feature</h2>
+    <p>Looks like someone has disabled this feature. Since this is a public demo offering access to anyone, you can enable it again by signing in as an administrator and going to the <a href="/admin/settings#tab-participation-processes">settings configuration</a>.</p>
   </div>
 </body>
 </html>
