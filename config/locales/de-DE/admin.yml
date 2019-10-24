@@ -747,10 +747,28 @@ de:
         preview_detail: "Benutzer*innen erhalten nur Benachrichtigungen zu Vorschlägen, denen sie folgen"
       budget_investment_created:
         title: "Bürgerhaushalt angelegt"
+        description: "Wird gesendet, wenn ein Benutzer einen Vorschlag für den Bürgerhaushalt anlegt."
+      budget_investment_selected:
+        title: "Bürgerhaushalt ausgewählt"
+        description: "Wird an den Autor gesendet, wenn sein Vorschlag zum Bürgerhaushalt ausgewählt wurde."
+      budget_investment_unfeasible:
+        title: "Vorschlag Bürgerhaushalt nicht durchführbar"
+        description: "Wird dem Autor gesendet, wenn sein Vorschlag zum Bürgerhaushalt nicht durchführbar ist."
+      budget_investment_unselected:
+        title: "Bürgerhaushalt nicht ausgewählt"
+        description: "Wird an den Autor gesendet, wenn sein Vorschlag zum Bürgerhaushalt nicht ausgewählt wurde."
       comment:
         title: "Kommentieren"
+        description: "Wird an den Autor gesendet, wenn ein Kommentar eingegangen ist."
       reply:
         title: "Antworten"
+        description: "Wird an den Autor des Kommentars gesendet, wenn er eine Antwort erhält."
+      direct_message_for_receiver:
+        title: "Privater Nachrichten Empfänger"
+        description: "Wird an privaten Nachrichten Empfänger gesendet."
+      direct_message_for_sender:
+        title: "Privater Nachrichten Sender"
+        description: "Wird an privaten Nachrichten Sender gesendet."
       message_title: "Titel der Nachricht"
     emails_download:
       index:
