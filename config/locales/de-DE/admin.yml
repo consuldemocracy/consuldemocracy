@@ -14,6 +14,8 @@ de:
       edit: Bearbeiten
       configure: Konfigurieren
       delete: Löschen
+    officing_booth:
+      title: "Sie verlassen den Raum, der sich in %{booth} befindet. Wenn dies nicht korrekt ist, fahren Sie nicht fort und rufen Sie die Hilfe-Rufnummer an. Vielen Dank."
     banners:
       index:
         title: Banner
@@ -78,8 +80,10 @@ de:
         table_investments: Ausgabenvorschläge
         table_edit_groups: Gruppierungen von Rubriken
         table_edit_budget: Bearbeiten
+        table_admin_ballots: Stimmzettel
         edit_groups: Gruppierungen von Rubriken bearbeiten
         edit_budget: Bürgerhaushalt bearbeiten
+        admin_ballots: Admin Stimmzettel
         no_budgets: "Kein Bürgerhaushalte vorhanden."
       create:
         notice: Neuer Bürgerhaushalt erfolgreich erstellt!
@@ -95,9 +99,29 @@ de:
         edit_phase: Phase bearbeiten
         active: Aktiv
         blank_dates: Das Datumfeld ist leer
+        administrators:
+          zero: "Wähle Adminstratoren"
+          one: "1 Administrator ausgewählt"
+          other: "%{count} Administrator ausgewählt"
+        valuators:
+          zero: "Den Begutachtern/Begutachterinnen wählen"
+          one: "1 Begutacher ausgewählt"
+          other: "%{count} Begutachter ausgewählt"
+        trackers:
+          zero: "Tracker wählen"
+          one: "1 Tracker ausgewählt"
+          other: "%{count} Tracker ausgewählt"
+        empty_administrators: "Keine Administrator*innen vorhanden"
+        empty_valuators: "Keine Begutachter*innen vorhanden"
+        empty_trackers: "Keine Tracker vorhanden"
+        name: "Name"
+        selected: "Ausgewählt"
+        cancel: "Abbrechen"
+        save: "Speichern"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
+        unable_notice_polls: Sie können kein Budget löschen, das eine zugehörige Abstimmung hat
       new:
         title: Neuer Bürgerhaushalt
       winners:
@@ -172,6 +196,7 @@ de:
           undecided: Offen
           unfeasible: Undurchführbar
           min_total_supports: Minimum Unterstützer*innen
+          max_total_supports: Maximum Unterstützer*innen
           winners: Bestbewertete Vorschläge
         buttons:
           filter: Filter
