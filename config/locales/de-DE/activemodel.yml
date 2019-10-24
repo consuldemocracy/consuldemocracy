@@ -35,3 +35,10 @@ de:
         year_of_birth: "Geburtsjahr"
       local_census_record/import:
         file: Datei
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Das eingegebene Datei-Format ist falsch. Das erlaubte Datei-Format ist: %{valid_extensions}."
+              headers: "Die eingegebenen Datei Header sind falsch. Die Datei Header müssen folgende Bezeichnungen haben: %{required_headers}."
