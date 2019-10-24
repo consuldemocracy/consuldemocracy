@@ -233,6 +233,7 @@ de:
           author: Autor
         cannot_calculate_winners: Das Budget muss in einer der Phasen "Finale Abstimmung", "Abstimmung beendet" oder "Ergebnisse" stehen, um Gewinnervorschläge berechnen zu können
         see_results: "Ergebnisse anzeigen"
+        milestone_tags_filter_all: "Status aller Ausgabenvorschläge"
       show:
         assigned_admin: Zugewiesene*r Administrator*in
         assigned_valuators: Zugewiesene Begutachter*innen
@@ -261,6 +262,8 @@ de:
           "true": "Ja"
           "false": "Nein"
         valuator_groups: "Begutachtungsgruppen"
+        preview: Investitionsvorschau
+        assigned_trackers: "Zugewiesene Tracker"
       edit:
         classification: Klassifizierung
         compatibility: Kompatibilität
@@ -271,7 +274,11 @@ de:
         user_tags: Tags, die von Benutzer*innen zugewiesen wurden
         tags_placeholder: "Geben Sie die gewünschten Tags durch Kommas (,) getrennt ein"
         undefined: Undefiniert
+        assigned_trackers: "Tracker"
       search_unfeasible: Suche undurchführbar
+    milestones:
+      index:
+        milestone_tags: Status des Ausgabenvorschlags
     statuses:
       index:
         title: Status der Ausgabenvorschläge
@@ -295,11 +302,48 @@ de:
     progress_bars:
       index:
         title: "Fortschrittsbalken"
+    comments:
+      index:
+        id: "ID"
+        content: "Inhalt"
+        author: "Autor"
+        commentable_type: "Typ"
+        link: "Download Kommentare"
+        title: Kommentare
+        no_comments: Keine Kommentare vorhanden.
+        table_link: "Link"
+    hidden_comments:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bestätigt
+          without_confirmed_hide: Ausstehend
+        hidden_debate: Verborgene Diskussion
+        hidden_proposal: Verborgener Vorschlag
+        title: Verborgene Kommentare
+        no_hidden_comments: Keine verborgenen Kommentare vorhanden.
     dashboard:
       index:
         back: Zurück zu %{org}
         title: Verwaltung
         description: Willkommen auf dem Admin-Panel für %{org}.
+      actions:
+        index:
+          description: "Wenn Benutzer Vorschläge erstellen, können sie auf ein Dashboard ihres Vorschlags zugreifen, in dem Sie Ressourcen und Empfehlungen vorschlagen können, um Unterstützung für ihre Idee zu erhalten."
+          create: Ressource oder Aktion erstellen
+          edit: Bearbeiten
+          delete: Löschen
+          active: 'Ja'
+          inactive: 'Nein'
+    documents:
+      index:
+        title: "Dokumente"
+        format: "Format"
+        size: "Größe"
+        url: "URL"
+      create:
+        success_notice: "Dokument erfolgreich hochgeladen"
     hidden_users:
       index:
         filter: Filter
