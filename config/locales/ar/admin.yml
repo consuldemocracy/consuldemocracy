@@ -39,15 +39,6 @@ ar:
         editing: تعديل لافتة
         form:
           submit_button: حفظ التغييرات
-      errors:
-        form:
-          error:
-            zero: "خطأ منع هاته اللافتة من الحفظ"
-            one: "خطأ منع هاته اللافتة من الحفظ"
-            two: "خطآن منعا هاته اللافتة من الحفظ"
-            few: "أخطاء منعت هاته اللافتة من الحفظ"
-            many: "أخطاء منعت هاته اللافتة من الحفظ"
-            other: "أخطاء منعت هاته اللافتة من الحفظ"
       new:
         creating: إنشاء لافتة
     activity:
@@ -473,9 +464,6 @@ ar:
         edit:
           back: عودة
           submit_button: حفظ التغييرات
-        errors:
-          form:
-            error: خطأ
         form:
           enabled: تفعيل
           process: عملية
@@ -551,9 +539,6 @@ ar:
           back: عودة
           submit_button: حفظ التغييرات
           warning: لقد قمت بتحرير النص، لا تنسى أن تنقر على "حفظ" لحفظ التغييرات بشكل دائم.
-        errors:
-          form:
-            error: خطأ
         form:
           launch_text_editor: تشغيل محرر النص
           close_text_editor: إغلاق محرر النص
@@ -594,9 +579,6 @@ ar:
           back: عودة
           title: "تعديل \"%{question_title}\""
           submit_button: حفظ التغييرات
-        errors:
-          form:
-            error: خطأ
         form:
           add_option: إضافة خيار
           title_placeholder: إضافة سؤال
@@ -1320,15 +1302,6 @@ ar:
         code_help: رمز الاستجابة لهذه المنطقة الجغرافية على واجهة برمجة تطبيقات تعداد السكان
         coordinates: إحداثيات
         coordinates_help: الإحداثيات التي ستنشئ مساحة قابلة للنقر على خريطة صورة لغة تمييز النص التشعبي
-      errors:
-        form:
-          error:
-            zero: "أخطاء منعت هاته المنطقة من الحفظ"
-            one: "خطأ منع هاته المنطقة من الحفظ"
-            two: "أخطاء منعت هاته المنطقة من الحفظ"
-            few: "أخطاء منعت هاته المنطقة من الحفظ"
-            many: "أخطاء منعت هاته المنطقة من الحفظ"
-            other: "هناك خطأ في حفظ هذه المناطق"
       edit:
         form:
           submit_button: حفظ التغييرات
@@ -1489,9 +1462,6 @@ ar:
           notice: تم حذف كتلة المحتوى بنجاح
         edit:
           title: تحرير كتلة المحتوى
-        errors:
-          form:
-            error: خطأ
         index:
           create: إنشاء كتلة محتوى جديدة
           delete: حذف الكتلة
@@ -1529,9 +1499,6 @@ ar:
           notice: تم حذف الصفحة بنجاح
         edit:
           title: تحرير %{page_title}
-        errors:
-          form:
-            error: خطأ
         form:
           options: خيارات
         index:
