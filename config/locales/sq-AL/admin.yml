@@ -37,11 +37,6 @@ sq:
         editing: Redakto banderol
         form:
           submit_button: Ruaj ndryshimet
-      errors:
-        form:
-          error:
-            one: "gabimi nuk lejonte që ky banderol të ruhej"
-            other: "gabimet nuk lejonin që ky banderol të ruhej"
       new:
         creating: Krijo banderol
     activity:
@@ -270,9 +265,6 @@ sq:
         edit:
           back: Pas
           submit_button: Ruaj ndryshimet
-        errors:
-          form:
-            error: Gabim
         form:
           enabled: Aktivizuar
           process: Proçes
@@ -339,9 +331,6 @@ sq:
           back: Pas
           submit_button: Ruaj ndryshimet
           warning: Ju keni redaktuar tekstin, mos harroni të klikoni mbi Ruaj për të ruajtur përgjithmonë ndryshimet.
-        errors:
-          form:
-            error: Gabim
         form:
           launch_text_editor: Nis versionin e tekstit
           close_text_editor: Mbyll tekst editor
@@ -382,9 +371,6 @@ sq:
           back: Pas
           title: "Ndrysho \"%{question_title}\""
           submit_button: Ruaj ndryshimet
-        errors:
-          form:
-            error: Gabim
         form:
           add_option: Shtoni opsionin
           title_placeholder: Shto pyetjet
@@ -991,11 +977,6 @@ sq:
         external_code: Kodi i jashtëm
         census_code: Kodi i regjistrimit
         coordinates: Koordinatat
-      errors:
-        form:
-          error:
-            one: "gabimi e pengoi këtë gjeozonë të ruhej"
-            other: "gabimet e penguan këtë gjeozonë të ruhej"
       edit:
         form:
           submit_button: Ruaj ndryshimet
@@ -1115,9 +1096,6 @@ sq:
           notice: Blloku i përmbajtjes është fshirë me sukses
         edit:
           title: Ndrysho bllokun e përmbajtjes
-        errors:
-          form:
-            error: Gabim
         index:
           create: Krijo bllok të ri të përmbajtjes
           delete: Fshi bllokun
@@ -1155,9 +1133,6 @@ sq:
           notice: Faqja u fshi me sukses
         edit:
           title: Ndrysho %{page_title}
-        errors:
-          form:
-            error: Gabim
         form:
           options: Opsionet
         index:
