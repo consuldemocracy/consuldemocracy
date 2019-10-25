@@ -39,11 +39,6 @@ da:
         editing: Rediger banner
         form:
           submit_button: Gem ændringer
-      errors:
-        form:
-          error:
-            one: "noget forhindrede at denne banner blev gemt"
-            other: "noget forhindrede at denne banner blev gemt"
       new:
         creating: Opret banner
     activity:
@@ -447,9 +442,6 @@ da:
         edit:
           back: Tilbage
           submit_button: Gem ændringer
-        errors:
-          form:
-            error: Fejl
         form:
           enabled: Aktiveret
           process: Proces
@@ -525,9 +517,6 @@ da:
           back: Tilbage
           submit_button: Gem ændringer
           warning: Du har redigeret teksten, husk at klikke på Gem for at gemme dine ændringer.
-        errors:
-          form:
-            error: Fejl
         form:
           launch_text_editor: Start tekstredigering
           close_text_editor: Luk tekstredigeringsenhed
@@ -568,9 +557,6 @@ da:
           back: Tilbage
           title: "Rediger \"%{question_title}\""
           submit_button: Gem ændringer
-        errors:
-          form:
-            error: Fejl
         form:
           add_option: Tilføj valgmulighed
           title_placeholder: Tilføj et spørgsmål
@@ -1245,11 +1231,6 @@ da:
         code_help: Svarkode for dette geografiske område på API (Application Programming Interface)
         coordinates: Koordinater
         coordinates_help: Koordinater, som vil generere et klikbart område på et HTML imagemap
-      errors:
-        form:
-          error:
-            one: "en fejl forhindrede det geografiske område i at blive gemt"
-            other: "flere fejl forhindrede det geografiske område i at blive gemt"
       edit:
         form:
           submit_button: Gem ændringer
@@ -1385,9 +1366,6 @@ da:
           notice: Indholdsblokken blev slettet
         edit:
           title: Rediger indholdsblok
-        errors:
-          form:
-            error: Fejl
         index:
           create: Opret ny indholdsblok
           delete: Slet blok
@@ -1425,9 +1403,6 @@ da:
           notice: Siden blev slettet
         edit:
           title: Rediger %{page_title}
-        errors:
-          form:
-            error: Fejl
         form:
           options: Indstillinger
         index:
