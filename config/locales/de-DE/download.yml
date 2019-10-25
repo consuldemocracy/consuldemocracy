@@ -33,3 +33,6 @@ de:
         cached_anonymous_votes_total: "Insgesamt im Cache gespeicherte anonyme Stimmen"
         cached_votes_score: "Im Cache gespeicherte Stimmen Anzahl"
         hot_score: "Hot Score"
+        confidence_score: "Konfidenz-Score"
+        geozone_id: "Bezirke ID"
+        tsv: "Tsv"
