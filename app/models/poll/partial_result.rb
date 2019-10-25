@@ -9,7 +9,7 @@ class Poll::PartialResult < ApplicationRecord
   validates :question, presence: true
   validates :author, presence: true
   validates :answer, presence: true
-  validates :answer, inclusion: { in: -> (a) { a.question.possible_answers }},
+  validates :answer, inclusion: { in: ->(a) { a.question.possible_answers }},
                      unless: ->(a) { a.question.blank? }
   validates :origin, inclusion: { in: VALID_ORIGINS }
 
