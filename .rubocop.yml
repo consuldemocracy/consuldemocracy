@@ -388,6 +388,9 @@ Style/HashSyntax:
 Style/IdenticalConditionalBranches:
   Enabled: true
 
+Style/MethodDefParentheses:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 
