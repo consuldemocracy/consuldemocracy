@@ -170,6 +170,21 @@ Metrics/LineLength:
   Max: 110
   Severity: refactor
 
+Performance/CompareWithBlock:
+  Enabled: true
+
+Performance/Detect:
+  Enabled: true
+
+Performance/DoubleStartEndWith:
+  Enabled: true
+
+Performance/EndWith:
+  Enabled: true
+
+Performance/StartWith:
+  Enabled: true
+
 Rails/ActionFilter:
   Enabled: true
 
@@ -329,6 +344,12 @@ RSpec/VoidExpect:
   Enabled: true
 
 Security/Eval:
+  Enabled: true
+
+Security/JSONLoad:
+  Enabled: true
+
+Security/YAMLLoad:
   Enabled: true
 
 Style/BlockDelimiters:

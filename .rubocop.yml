@@ -1,25 +1,3 @@
 inherit_from: .rubocop_basic.yml
-
-Performance/CompareWithBlock:
-  Enabled: true
-
-Performance/Detect:
-  Enabled: true
-
-Performance/DoubleStartEndWith:
-  Enabled: true
-
-Performance/EndWith:
-  Enabled: true
-
-Performance/StartWith:
-  Enabled: true
-
 Rails/HasManyOrHasOneDependent:
-  Enabled: true
-
-Security/JSONLoad:
-  Enabled: true
-
-Security/YAMLLoad:
   Enabled: true
