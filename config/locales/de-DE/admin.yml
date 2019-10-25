@@ -362,6 +362,18 @@ de:
           submit_button: Speichern
           help_text: Geben Sie 0 ein, damit dieser Wert nicht berücksichtigt wird
           published_proposal_help_text: Markieren, um die Aktion nur für veröffentlichte Vorschläge anzulegen
+      administrator_tasks:
+        index:
+          description: "Veröffentlichungen im Dashboard der Vorschläge können eine Schaltfläche beinhalten, um die Administratoren zu benachrichten. Benutzeranfragen werden im Folgenden dargestellt."
+          title: Beantragte Ressourcen
+          solve: Beheben
+          no_records: Es gibt keine Anfragen
+          source: Quelle
+          resource: Angefragte Ressourcen
+          filter: Filter
+          filters:
+            pending: Ausstehend
+            done: Behoben
     documents:
       index:
         title: "Dokumente"
