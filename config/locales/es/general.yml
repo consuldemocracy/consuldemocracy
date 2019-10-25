@@ -682,6 +682,8 @@ es:
       multiple: "Puedes seleccionar un máximo de %{maximum} respuestas"
       answer_couples_open: "Elige una opción entre el siguiente par. Puedes elegir un máximo de %{maximum} respuestas"
       answer_couples_closed: "Elige una opción entre el siguiente par. Puedes elegir un máximo de %{maximum} respuestas"
+      answer_set_open: "Puede elegir un máximo de %{maximum} respuestas."
+      answer_set_closed: "Puede elegir un máximo de %{maximum} respuestas."
       prioritized: "Puedes seleccionar un máximo de %{maximum} respuestas. Esta pregunta utilizara el método %{system} para el recuento."
       positive_open: "Puedes seleccionar un máximo de %{maximum} respuestas y añadir tus propias respuestas."
       unique: ""
