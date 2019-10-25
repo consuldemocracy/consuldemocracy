@@ -22,3 +22,6 @@ de:
         created_at: "Erstellt am"
         updated_at: "Aktualisiert am"
         visit_id: "Besuch ID"
+        hidden_at: "Verborgen am"
+        flags_count: "Anzahl der Markierungen"
+        ignored_flag_at: "Ignorierte Markierungen bei"
