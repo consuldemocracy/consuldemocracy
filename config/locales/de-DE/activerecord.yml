@@ -234,6 +234,12 @@ de:
         retired_reason: "Grund für das Zurückziehen des Antrags"
         selected: "Als ausgewählt markieren"
         terms_of_service: "Nutzungsbedingungen"
+        video_url: "Externes Video URL"
+      proposal/translation:
+        title: "Titel des Vorschlages"
+        description: "Vorschlagstext"
+        summary: "Zusammenfassung Vorschlag"
+        retired_explanation: "Erläuterung"
       user:
         login: "E-Mail oder Benutzer*innenname"
         email: "E-Mail"
@@ -241,10 +247,23 @@ de:
         password_confirmation: "Bestätigen Sie das Passwort "
         password: "Passwort"
         current_password: "Aktuelles Passwort"
+        email_digest: "Benachrichtigungen mit Zusammenfassung über Vorschlag erhalten"
+        email_on_comment: "Benachrichtigen Sie mich per E-Mail, wenn jemand meine Vorschläge oder Diskussionen kommentiert"
+        email_on_comment_reply: "Benachrichtigen Sie mich per E-Mail, wenn jemand auf meine Kommentare antwortet"
+        email_on_direct_message: "E-Mails über direkte Nachrichten empfangen"
+        newsletter: "Per E-Mail Webseite relevante Informationen erhalten"
         official_position: "Beamte/in"
+        official_position_badge: "Kennzeichen des Benutzertyps anzeigen"
         official_level: "Amtsebene"
         phone_number: "Telefonnummer"
+        public_activity: "Meine Liste an Aktivitäten öffentlich zugänglich machen"
+        public_interests: "Die Bezeichnungen der Elemente denen ich folge öffentlich zugänglich halten"
+        recommended_debates: "Debatten-Empfehlungen anzeigen"
+        recommended_proposals: "Antrags-Empfehlungen anzeigen"
         redeemable_code: "Bestätigungscode per Post (optional)"
+      direct_message:
+        title: "Titel"
+        body: "Nachricht"
       organization:
         name: "Name der Organisation"
         responsible_name: "Der/die* Gruppenverantwortliche"
@@ -255,17 +274,31 @@ de:
         geozone_restricted: "Beschränkt auf Gebiete"
         summary: "Zusammenfassung"
         description: "Beschreibung"
+      active_poll/translation:
+        description: "Beschreibung"
+      poll/booth:
+        name: "Name"
+        location: "Lage"
       poll/translation:
         name: "Name"
         summary: "Zusammenfassung"
         description: "Beschreibung"
       poll/question:
+        poll_id: "Abstimmung"
         title: "Frage"
         summary: "Zusammenfassung"
         description: "Beschreibung"
         external_url: "Link zu zusätzlicher Dokumentation"
       poll/question/translation:
         title: "Frage"
+      poll/ballot_sheet:
+        data: CSV Daten
+        poll_id: Abstimmung
+      poll/shift:
+        task: "Aufgabe"
+      proposal_notification:
+        body: "Nachricht"
+        title: "Titel"
       signature_sheet:
         signable_type: "Unterschriftentyp"
         signable_id: "ID des Bürgervorschlags/Ausgabenvorschlags"
@@ -276,6 +309,8 @@ de:
         subtitle: Untertitel
         slug: URL
         status: Status
+        status_draft: "Entwurf"
+        status_published: "Veröffentlicht"
         title: Titel
         updated_at: Letzte Aktualisierung
         more_info_flag: Auf der Hilfeseite anzeigen
@@ -292,6 +327,25 @@ de:
         name: Name
         locale: Sprache
         body: Inhalt
+      tag:
+        name: "Geben Sie den Namen des Themas ein"
+      topic:
+        title: "Titel"
+        description: "Anfangstext"
+      votation_type:
+        enum_type: "Abstimmungstyp"
+        max_groups_answers: "Maximale Nummer der Antworten in den Sets"
+        max_votes: "Maximale Nummer von Antworten"
+        prioritization_type: "Typ der Priorisierung"
+      banner:
+        background_color: Hintergrundfarbe
+        font_color: Schriftfarbe
+        post_ended_at: "Ende der Veröffentlichung"
+        post_started_at: "Beginn der Veröffentlichung"
+        target_url: "Link"
+      banner/translation:
+        title: "Titel"
+        description: "Beschreibung"
       legislation/process:
         title: Titel des Beteiligungsverfahrens
         summary: Zusammenfassung
@@ -311,17 +365,25 @@ de:
         result_publication_date: Veröffentlichungsdatum Endergebnis
         background_color: Hintergrundfarbe
         font_color: Schriftfarbe
+        homepage_enabled: "Homepage aktiviert"
       legislation/process/translation:
         title: Titel des Beteiligungsverfahrens
         summary: Zusammenfassung
         description: Beschreibung
         additional_info: Zusätzliche Information
+        homepage: "Beschreibung"
         milestones_summary: Zusammenfassung
+      legislation/proposal:
+        description: "Vorschlagstext"
+        summary: "Zusammenfassung Vorschlag"
+        title: "Titel des Vorschlages"
+        video_url: "Link zu externem Video"
       legislation/draft_version:
         title: Titel der Fassung
         body: Text
         changelog: Änderungen
         status: Status
+        status_draft: "Entwurf"
         status_published: "Veröffentlicht"
         final_version: Endgültige Version
       legislation/draft_version/translation:
