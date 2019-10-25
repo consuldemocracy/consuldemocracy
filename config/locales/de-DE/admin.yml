@@ -374,8 +374,38 @@ de:
           filters:
             pending: Ausstehend
             done: Behoben
-    documents:
+        edit:
+          back: Zurück zur Liste der offenen Aufgaben
+          solving: Ausstehende Aufgabe beheben
+        form:
+          solve: Als behoben markieren
+          proposal: Vorschlag
+          request: Angefragte Ressourcen
+        update:
+          success: Die Aufgabe wurde als behoben markiert.
+    debates:
       index:
+        id: ID
+        author: Autor
+        title: Debatten
+        no_debates: Keine Debatte vorhanden.
+        link: "Download Debatten"
+    hidden_debates:
+      index:
+        filter: Filter
+        filters:
+          all: Alle
+          with_confirmed_hide: Bestätigt
+          without_confirmed_hide: Ausstehend
+        title: Verborgene Debatten
+        no_hidden_debates: Keine verborgenen Debatten vorhanden.
+    documents:
+      new:
+        title: "Upload Dokument"
+        submit_button: "Upload"
+      index:
+        new_link: "Neues Dokument hinzufügen"
+        no_documents: "Keine Dokumente vorhanden."
         title: "Dokumente"
         format: "Format"
         size: "Größe"
@@ -1506,3 +1536,44 @@ de:
         edit_title: "Tracker: Bearbeiten Tracker"
       show:
         email: E-Mail
+        description: Beschreibung
+        no_description: Ohne Beschreibung.
+      search:
+        title: Tracker
+    local_census_records:
+      index:
+        title: Verwaltung des lokalen Registers
+        create: Erstellen eines neuen lokalen Registers
+        no_local_census_records: Kein lokales Register vorhanden.
+        document_type: Dokumententyp
+        document_number: Dokumentennummer
+        date_of_birth: Geburtsdatum
+        postal_code: Postleitzahl
+        search:
+          placeholder: Suche per Dokumentennummer
+          search: Suche
+        import: Import CSV
+      new:
+        creating: Neues lokales Register anlegen
+      create:
+        notice: Neues lokales Register erfolgreich angelegt!
+      edit:
+        editing: Lokales Register bearbeiten
+      update:
+        notice: Update lokales Register erfolgreich!
+      destroy:
+        notice: Lokales Register erfolgreich entfernt!
+      imports:
+        new:
+          title: Datensätze aus dem lokalen Register
+          subtitle: Import CSV Daten
+        create:
+          notice: Der Importprozess des lokalen Registers wurde erfolgreich durchgeführt!
+        show:
+          title: Verwaltung des lokalen Registers
+          subtitle: Importprozess Ergebnisse
+          import: Erneut importieren
+          errored: Fehlerhafte Datensätze
+          created: Erstellte Datensätze
+        local_census_records:
+          no_records_found: Keine Datensätze gefunden.
