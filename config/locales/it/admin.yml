@@ -39,11 +39,6 @@ it:
         editing: Modifica banner
         form:
           submit_button: Salva modifiche
-      errors:
-        form:
-          error:
-            one: "errore ha impedito il salvataggio di questo banner"
-            other: "errori hanno impedito il salvataggio di questo banner"
       new:
         creating: Crea banner
     activity:
@@ -389,9 +384,6 @@ it:
         edit:
           back: Indietro
           submit_button: Salva modifiche
-        errors:
-          form:
-            error: Errore
         form:
           enabled: Abilitato
           process: Procedimento
@@ -467,9 +459,6 @@ it:
           back: Indietro
           submit_button: Salva modifiche
           warning: Hai modificato il testo, non dimenticare di cliccare su Salva per salvare le modifiche in modo permanente.
-        errors:
-          form:
-            error: Errore
         form:
           launch_text_editor: Avviare l'editor di testo
           close_text_editor: Chiudere l'editor di testo
@@ -510,9 +499,6 @@ it:
           back: Indietro
           title: "Modificare \"%{question_title}\""
           submit_button: Salva modifiche
-        errors:
-          form:
-            error: Errore
         form:
           add_option: Aggiungere l'opzione
           title_placeholder: Aggiungi quesito
@@ -1113,11 +1099,6 @@ it:
         external_code: Codice esterno
         census_code: Codice anagrafico
         coordinates: Coordinate
-      errors:
-        form:
-          error:
-            one: "errore ha impedito il salvataggio di questo distretto"
-            other: "errori hanno impedito il salvataggio di questo distretto"
       edit:
         form:
           submit_button: Salva modifiche
@@ -1237,9 +1218,6 @@ it:
           notice: Blocco di contenuto eliminato con successo
         edit:
           title: Modificare il blocco di contenuto
-        errors:
-          form:
-            error: Errore
         index:
           create: Creare un nuovo blocco di contenuto
           delete: Elimina blocco
@@ -1272,9 +1250,6 @@ it:
           notice: Pagina cancellata con successo
         edit:
           title: Modifica %{page_title}
-        errors:
-          form:
-            error: Errore
         form:
           options: Opzioni
         index:
