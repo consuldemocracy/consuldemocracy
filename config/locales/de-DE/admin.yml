@@ -843,7 +843,17 @@ de:
       user_invite:
         title: "Benutzter Einladung"
         description: "Wird an die eingeladene Person gesendet."
+      evaluation_comment:
+        title: "Neuer Bewertungs-Kommentar"
+        description: "Versand an Administratoren und Gutachter im Zusammenhang mit kommentierten Investitions-Vorschlägen"
+      edit_info: "Sie können diese E-Mail bearbeiten"
       message_title: "Titel der Nachricht"
+      message_body: "Dies ist ein Muster für den Inhalt der Nachricht."
+      alert:
+        no_investments: "Es sind keine Bürgerhaushalts-Vorschläge angelegt. Einige Beispieldaten werden benötigt, um eine Vorschau der E-Mail zu erhalten."
+        no_comments: "Es wurden keine Kommentare erstellt. Einige Beispieldaten werden benötigt, um eine Vorschau der E-Mail zu erhalten."
+        no_replies: "Es wurden keine Antworten erstellt. Einige Beispieldaten werden benötigt, um eine Vorschau der E-Mail zu erhalten."
+        no_evaluation_comments: "Es wurden keine Bewertungs-Kommentare erstellt. Einige Beispieldaten werden benötigt, um eine Vorschau der E-Mail zu erhalten."
     emails_download:
       index:
         title: E-Mails herunterladen
@@ -861,6 +871,9 @@ de:
         valuator_groups: "Begutachtungsgruppen"
         group: "Gruppe"
         no_group: "Ohne Gruppe"
+        abilities: "Möglichkeiten"
+        can_comment: "Kann kommentieren"
+        can_edit_dossier: "Kann Dossier bearbeiten"
       valuator:
         add: Als Begutachter*in hinzufügen
         delete: Löschen
@@ -873,8 +886,10 @@ de:
         description: "Beschreibung"
         email: "E-Mail"
         group: "Gruppe"
+        abilities: "Möglichkeiten"
         no_description: "Ohne Beschreibung"
         no_group: "Ohne Gruppe"
+        no_abilities: "Ohne Möglichkeiten"
     valuator_groups:
       index:
         title: "Begutachtungsgruppen"
@@ -901,6 +916,7 @@ de:
         email_placeholder: Benutzer*in via E-Mail suchen
         search: Suche
         user_not_found: Benutzer wurde nicht gefunden
+        help: "Um Umfragebeauftragte hinzuzufügen oder zu entfernen, verwenden Sie das untenstehende Suchformular."
     poll_officer_assignments:
       index:
         officers_title: "Liste der zugewiesenen Beamt*innen"
@@ -973,6 +989,9 @@ de:
     active_polls:
       edit:
         title: "Umfragen Beschreibung"
+      form:
+        description:
+          help_text: "Dieser Text wird in der Kopfzeile der Umfrage-Seite angezeigt. Es kann verwendet werden, um einen Kontext zu den offenen Umfragen hinzuzufügen."
     polls:
       index:
         title: "Liste der Umfragen"
@@ -998,9 +1017,15 @@ de:
         no_questions: "Dieser Abstimmung sind keine Fragen zugeordnet."
         questions_title: "Liste der Fragen"
         table_title: "Titel"
+        edit_answers: Antworten bearbeiten
+        see_proposal: "(Vorschlag anzeigen)"
       flash:
         question_added: "Die Frage wurde zu dieser Abstimmung hinzugefügt"
         error_on_question_added: "Die Frage konnte dieser Abstimmung nicht zugeordnet werden"
+      destroy:
+        alert: "Diese Aktion entfernt die Umfrage und alle damit verbundenen Fragen."
+        success_notice: "Umfrage erfolgreich gelöscht"
+        unable_notice: "Sie können keine Umfrage löschen, für die schon abgestimmt wurde"
     questions:
       index:
         title: "Fragen"
@@ -1019,6 +1044,7 @@ de:
         title: "Frage bearbeiten"
       new:
         title: "Frage erstellen"
+        title_proposal: "Frage erstellen"
       answers:
         images:
           add_image: "Bild hinzufügen"
@@ -1067,6 +1093,9 @@ de:
       index:
         title: "Nachzählungen"
         no_recounts: "Es gibt nichts nachzuzählen"
+        all_booths_total: "Kumulative Summe aus allen Wahl-Kabinen:"
+        total_final: "Finale Berichte"
+        total_system: "Stimmen (automatisch)"
         table_booth_name: "Wahlkabine"
         table_total_recount: "Gesamte Nachzählung (durch Beamten/in)"
         table_system_count: "Stimmen (automatisch)"
