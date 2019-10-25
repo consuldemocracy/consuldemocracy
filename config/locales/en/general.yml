@@ -171,11 +171,16 @@ en:
     errors: errors
     not_saved: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
+    banner: banner
     proposal: Proposal
     proposal_notification: "Notification"
     budget/investment: Investment
     budget/group: Budget Group
     budget/heading: Budget Heading
+    geozone: geozone
+    legislation/draft_version: draft
+    legislation/process: process
+    legislation/question: question
     poll/shift: Shift
     poll/question/answer: Answer
     user: Account
@@ -186,6 +191,8 @@ en:
     image: Image
     local_census_record: Local Census Record
     local_census_records/import: Local Census Records Import
+    site_customization/content_block: content block
+    site_customization/page: page
   geozones:
     none: All city
   layouts:

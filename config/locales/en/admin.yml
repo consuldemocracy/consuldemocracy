@@ -39,11 +39,6 @@ en:
         editing: Edit banner
         form:
           submit_button: Save changes
-      errors:
-        form:
-          error:
-            one: "error prevented this banner from being saved"
-            other: "errors prevented this banner from being saved"
       new:
         creating: Create banner
     activity:
@@ -472,9 +467,6 @@ en:
         edit:
           back: Back
           submit_button: Save changes
-        errors:
-          form:
-            error: Error
         form:
           enabled: Enabled
           process: Process
@@ -551,9 +543,6 @@ en:
           back: Back
           submit_button: Save changes
           warning: You've edited the text, don't forget to click on Save to permanently save the changes.
-        errors:
-          form:
-            error: Error
         form:
           title: 'Editing <span class="strong">%{draft_version_title}</span> from the process <span class="strong">%{process_title}</span>'
           launch_text_editor: Launch text editor
@@ -595,9 +584,6 @@ en:
           back: Back
           title: "Edit “%{question_title}”"
           submit_button: Save changes
-        errors:
-          form:
-            error: Error
         form:
           add_option: Add option
           title_placeholder: Add question
@@ -1329,11 +1315,6 @@ en:
         code_help: Response code for this geozone on the census API
         coordinates: Coordinates
         coordinates_help: Coordinates that will generate a clickable area on an HTML image map
-      errors:
-        form:
-          error:
-            one: "error prevented this geozone from being saved"
-            other: "errors prevented this geozone from being saved"
       edit:
         form:
           submit_button: Save changes
@@ -1490,9 +1471,6 @@ en:
           notice: Content block deleted successfully
         edit:
           title: Editing content block
-        errors:
-          form:
-            error: Error
         index:
           create: Create new content block
           delete: Delete block
@@ -1530,9 +1508,6 @@ en:
           notice: Page deleted successfully
         edit:
           title: Editing %{page_title}
-        errors:
-          form:
-            error: Error
         form:
           options: Options
         index:

@@ -2,20 +2,7 @@
 
 <%= translatable_form_for [:admin, @process, @question], url: url, html: { data: { watch_changes: true } } do |f| %>
 
-  <% if @question.errors.any? %>
-    <div class="small-12 medium-9 column">
-      <div id="error_explanation" data-alert class="callout alert" data-closable>
-        <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-          <span aria-hidden="true">&times;</span>
-        </button>
-
-        <strong>
-          <%= @question.errors.count %>
-          <%= t("admin.legislation.questions.errors.form.error", count: @question.errors.count) %>
-        </strong>
-      </div>
-    </div>
-  <% end %>
+  <%= render "shared/errors", resource: @question %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>

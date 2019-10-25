@@ -171,11 +171,16 @@ es:
     errors: errores
     not_saved: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
     policy: Política de privacidad
+    banner: el banner
     proposal: la propuesta
     proposal_notification: "la notificación"
     budget/investment: el proyecto de gasto
     budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
+    geozone: la zona
+    legislation/draft_version: el borrador
+    legislation/process: el proceso
+    legislation/question: la pregunta
     poll/shift: el turno
     poll/question/answer: la respuesta
     user: la cuenta
@@ -186,6 +191,8 @@ es:
     image: Imagen
     local_census_record: el registro del censo local
     local_census_records/import: la importación de registros del censo local
+    site_customization/content_block: el bloque
+    site_customization/page: la página
   geozones:
     none: Toda la ciudad
   layouts:

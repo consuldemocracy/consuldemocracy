@@ -39,11 +39,6 @@ es:
         editing: Editar el banner
         form:
           submit_button: Guardar cambios
-      errors:
-        form:
-          error:
-            one: "error impidió guardar el banner"
-            other: "errores impidieron guardar el banner."
       new:
         creating: Crear banner
     activity:
@@ -472,9 +467,6 @@ es:
         edit:
           back: Volver
           submit_button: Guardar cambios
-        errors:
-          form:
-            error: Error
         form:
           enabled: Habilitado
           process: Proceso
@@ -550,9 +542,6 @@ es:
           back: Volver
           submit_button: Guardar cambios
           warning: Ojo, has editado el texto. Para conservar de forma permanente los cambios, no te olvides de hacer click en Guardar.
-        errors:
-          form:
-            error: Error
         form:
           title: 'Editando <span class="strong">%{draft_version_title}</span> del proceso <span class="strong">%{process_title}</span>'
           launch_text_editor: Lanzar editor de texto
@@ -594,9 +583,6 @@ es:
           back: Volver
           title: "Editar “%{question_title}”"
           submit_button: Guardar cambios
-        errors:
-          form:
-            error: Error
         form:
           add_option: Añadir respuesta cerrada
           title_placeholder: Escribe un título a la pregunta
@@ -1328,11 +1314,6 @@ es:
         code_help: Código de respuesta para esta zona en la API del censo
         coordinates: Coordenadas
         coordinates_help: Coordenadas que generarán una zona clicable en un mapa de imagen HTML
-      errors:
-        form:
-          error:
-            one: "error impidió guardar la zona."
-            other: "errores impidieron guardar la zona."
       edit:
         form:
           submit_button: Guardar cambios
@@ -1489,9 +1470,6 @@ es:
           notice: Bloque borrado correctamente
         edit:
           title: Editar bloque
-        errors:
-          form:
-            error: Error
         index:
           create: Crear nuevo bloque
           delete: Borrar bloque
@@ -1529,9 +1507,6 @@ es:
           notice: Página eliminada correctamente
         edit:
           title: Editar %{page_title}
-        errors:
-          form:
-            error: Error
         form:
           options: Opciones
         index:
