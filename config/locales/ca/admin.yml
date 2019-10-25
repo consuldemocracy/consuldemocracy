@@ -196,9 +196,6 @@ ca:
         edit:
           back: Tornar
           submit_button: Guardar canvis
-        errors:
-          form:
-            error: error
         form:
           enabled: activa
           process: procés
@@ -252,9 +249,6 @@ ca:
           back: Tornar
           submit_button: Guardar canvis
           warning: Ull, has editat el text. Per conservar de manera permanent els canvis, no t'oblidis de fer clic a Desa.
-        errors:
-          form:
-            error: error
         form:
           launch_text_editor: Llançar editor de text
           close_text_editor: Tancar editor de text
@@ -295,9 +289,6 @@ ca:
           back: Tornar
           title: "Edita \"%{question_title}\""
           submit_button: Guardar canvis
-        errors:
-          form:
-            error: error
         form:
           add_option: + Afegir resposta tancada
           value_placeholder: Escriu una resposta tancada
@@ -810,9 +801,6 @@ ca:
           notice: Bloc esborrat correctament
         edit:
           title: Edita bloc
-        errors:
-          form:
-            error: error
         index:
           create: Crear nou bloc
           delete: Esborrar
@@ -845,9 +833,6 @@ ca:
           notice: Pàgina eliminada correctament
         edit:
           title: Edita %{page_title}
-        errors:
-          form:
-            error: error
         form:
           options: Opcions
         index:
