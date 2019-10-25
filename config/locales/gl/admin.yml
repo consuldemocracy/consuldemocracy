@@ -37,11 +37,6 @@ gl:
         editing: Editar anuncio
         form:
           submit_button: Gardar so cambios
-      errors:
-        form:
-          error:
-            one: "un erro impediu gardar este anuncio"
-            other: "un erro impediu gardar este anuncio"
       new:
         creating: Crear anuncio
     activity:
@@ -307,9 +302,6 @@ gl:
         edit:
           back: Volver
           submit_button: Gardar so cambios
-        errors:
-          form:
-            error: Erro
         form:
           enabled: Habilitada
           process: Proceso
@@ -384,9 +376,6 @@ gl:
           back: Volver
           submit_button: Gardar so cambios
           warning: Xa editaches o texto, mais lembra premeres o botón Gardar para conservar permanentemente os cambios.
-        errors:
-          form:
-            error: Erro
         form:
           launch_text_editor: Abrir editor de texto
           close_text_editor: Pechar editor de texto
@@ -427,9 +416,6 @@ gl:
           back: Volver
           title: "Editar \"%{question_title}\""
           submit_button: Gardar so cambios
-        errors:
-          form:
-            error: Erro
         form:
           add_option: Engadir unha opción
           title_placeholder: Engadir pregunta
@@ -1062,11 +1048,6 @@ gl:
         external_code: Código externo
         census_code: Código do censo
         coordinates: Coordenadas
-      errors:
-        form:
-          error:
-            one: "un erro impediu gardar a zona"
-            other: "varios erros impediron gardar a zona"
       edit:
         form:
           submit_button: Gardar so cambios
@@ -1188,9 +1169,6 @@ gl:
           notice: O bloque borrouse correctamente
         edit:
           title: Editar bloque
-        errors:
-          form:
-            error: Erro
         index:
           create: Crear un novo bloque de contido
           delete: Borrar bloque
@@ -1228,9 +1206,6 @@ gl:
           notice: A páxina borrouse correctamente
         edit:
           title: Editar %{page_title}
-        errors:
-          form:
-            error: Erro
         form:
           options: Opcións
         index:
