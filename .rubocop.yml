@@ -21,8 +21,5 @@ Rails/HasManyOrHasOneDependent:
 Security/JSONLoad:
   Enabled: true
 
-Security/MarshalLoad:
-  Enabled: true
-
 Security/YAMLLoad:
   Enabled: true
