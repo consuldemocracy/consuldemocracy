@@ -39,13 +39,6 @@ he:
         editing: ערוך באנר
         form:
           submit_button: שמירת שינויים
-      errors:
-        form:
-          error:
-            one: "שגיאה מנעה מהבאנר להישמר"
-            two: "שגיאות מנעו את שמירת הבאנר"
-            many: "שגיאות מנעו את שמירת הבאנר"
-            other: "שגיאות מנעו את שמירת הבאנר"
       new:
         creating: צור באנר
     activity:
@@ -461,9 +454,6 @@ he:
         edit:
           back: חזרה
           submit_button: שמירת שינויים
-        errors:
-          form:
-            error: שגיאה
         form:
           enabled: מאופשר
           process: תהליך
@@ -539,9 +529,6 @@ he:
           back: חזרה
           submit_button: שמירת שינויים
           warning: ערכת את הטקסט, אל תשכח ללחוץ על שמור כדי לשמור את השינויים לצמיתות.
-        errors:
-          form:
-            error: שגיאה
         form:
           launch_text_editor: הפעל את עורך הטקס
           close_text_editor: סגור את עורך הטקסט
@@ -582,9 +569,6 @@ he:
           back: חזרה
           title: "עריכת \"%{question_title}\""
           submit_button: שמירת שינויים
-        errors:
-          form:
-            error: שגיאה
         form:
           add_option: הוסף אפשרות
           title_placeholder: הוספת שאלה
@@ -1306,13 +1290,6 @@ he:
         code_help: קוד תגובה עבור האיזור הגיאוגרפי זה ב- API של המיפקד
         coordinates: נקודות ציון
         coordinates_help: קואורדינטות שתפיק אזור ללחיצה על מפת תמונה HTML
-      errors:
-        form:
-          error:
-            one: "השגיאה הזו מנעה שמירה של איזור גיאוגרפי זה"
-            two: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
-            many: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
-            other: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
       edit:
         form:
           submit_button: שמירת שינויים
@@ -1467,9 +1444,6 @@ he:
           notice: בלוק התוכן נמחק בהצלחה
         edit:
           title: עריכת תוכן הבלוק
-        errors:
-          form:
-            error: שגיאה
         index:
           create: יצירת בלוק תוכן חדש
           delete: מחיקת הבלוק
@@ -1507,9 +1481,6 @@ he:
           notice: הדף נמחק בהצלחה
         edit:
           title: עריכת %{page_title}
-        errors:
-          form:
-            error: שגיאה
         form:
           options: אפשרויות
         index:
