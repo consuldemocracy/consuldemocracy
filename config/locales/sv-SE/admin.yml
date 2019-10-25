@@ -37,11 +37,6 @@ sv:
         editing: Redigera banner
         form:
           submit_button: Spara ändringar
-      errors:
-        form:
-          error:
-            one: "det gick inte att spara bannern"
-            other: "det gick inte att spara bannern"
       new:
         creating: Skapa banner
     activity:
@@ -345,9 +340,6 @@ sv:
         edit:
           back: Tillbaka
           submit_button: Spara ändringar
-        errors:
-          form:
-            error: Fel
         form:
           enabled: Aktiverad
           process: Process
@@ -415,9 +407,6 @@ sv:
           back: Tillbaka
           submit_button: Spara ändringar
           warning: Du har redigerat texten, glöm inte att klicka på Spara för att spara dina ändringar.
-        errors:
-          form:
-            error: Fel
         form:
           launch_text_editor: Öppna textredigerare
           close_text_editor: Stäng textredigerare
@@ -458,9 +447,6 @@ sv:
           back: Tillbaka
           title: "Redigera ”%{question_title}”"
           submit_button: Spara ändringar
-        errors:
-          form:
-            error: Fel
         form:
           add_option: Lägg till alternativ
           title_placeholder: Lägg till fråga
@@ -1120,11 +1106,6 @@ sv:
         external_code: Extern kod
         census_code: Områdeskod
         coordinates: Koordinater
-      errors:
-        form:
-          error:
-            one: "fel förhindrade området från att sparas"
-            other: "fel förhindrade området från att sparas"
       edit:
         form:
           submit_button: Spara ändringar
@@ -1257,9 +1238,6 @@ sv:
           notice: Innehållsblocket har raderats
         edit:
           title: Redigera innehållsblock
-        errors:
-          form:
-            error: Fel
         index:
           create: Skapa nya innehållsblock
           delete: Radera innehållsblock
@@ -1294,9 +1272,6 @@ sv:
           notice: Sidan raderades
         edit:
           title: Redigerar %{page_title}
-        errors:
-          form:
-            error: Fel
         form:
           options: Alternativ
         index:
