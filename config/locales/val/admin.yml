@@ -37,11 +37,6 @@ val:
         editing: Editar banner
         form:
           submit_button: Guardar canvis
-      errors:
-        form:
-          error:
-            one: "error va impedir guardar el banner"
-            other: "errors van impedir guardar el banner"
       new:
         creating: Crear un banner
     activity:
@@ -307,9 +302,6 @@ val:
         edit:
           back: Tornar
           submit_button: Guardar canvis
-        errors:
-          form:
-            error: Error
         form:
           enabled: Actiu
           process: Proces
@@ -381,9 +373,6 @@ val:
           back: Tornar
           submit_button: Guardar canvis
           warning: Alerta, has editat el text. Per conservar de manera permanent els canvis, no t'oblidis de fer clic a Guardar.
-        errors:
-          form:
-            error: Error
         form:
           launch_text_editor: Llançar editor de text
           close_text_editor: Tancar editor de text
@@ -424,9 +413,6 @@ val:
           back: Tornar
           title: "Edita \"%{question_title}\""
           submit_button: Guardar canvis
-        errors:
-          form:
-            error: Error
         form:
           add_option: Afegir resposta
           title_placeholder: Escriu un títol a la pregunta
@@ -1037,11 +1023,6 @@ val:
         external_code: Codi extern
         census_code: Codi del cens
         coordinates: Coordenades
-      errors:
-        form:
-          error:
-            one: "error va impedir guardar el districte"
-            other: "errors van impedir guardar el districte"
       edit:
         form:
           submit_button: Guardar canvis
@@ -1163,9 +1144,6 @@ val:
           notice: Bloc eliminat correctament
         edit:
           title: Edita bloc
-        errors:
-          form:
-            error: Error
         index:
           create: Crear nou bloc
           delete: Eliminar bloc
@@ -1203,9 +1181,6 @@ val:
           notice: Pàgina eliminada correctament
         edit:
           title: Edita %{page_title}
-        errors:
-          form:
-            error: Error
         form:
           options: Respostes
         index:
