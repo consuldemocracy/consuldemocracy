@@ -39,11 +39,6 @@ nl:
         editing: Bewerk banier
         form:
           submit_button: Bewaar wijzigingen
-      errors:
-        form:
-          error:
-            one: "verhinderde dat dit banier werd bewaard"
-            other: "verhinderde dat dit banier werd bewaard"
       new:
         creating: Maak banier
     activity:
@@ -313,9 +308,6 @@ nl:
         edit:
           back: Terug
           submit_button: Bewaar wijzigingen
-        errors:
-          form:
-            error: Fout
         form:
           enabled: Ingeschakeld
           process: Proces
@@ -390,9 +382,6 @@ nl:
           back: Terug
           submit_button: Bewaar wijzigingen
           warning: U hebt de tekst bewerkt, vergeet niet op 'Opslaan' te klikken om de wijzigingen permanent op te slaan.
-        errors:
-          form:
-            error: Fout
         form:
           launch_text_editor: Open tekst editor
           close_text_editor: Sluit tekst editor
@@ -433,9 +422,6 @@ nl:
           back: Terug
           title: "Bewerk “%{question_title}”"
           submit_button: Bewaar wijzigingen
-        errors:
-          form:
-            error: Fout
         form:
           add_option: Voeg keuze toe
           title_placeholder: titel
@@ -1104,11 +1090,6 @@ nl:
         code_help: Responscode voor het gebied van de census API
         coordinates: Coordinates
         coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeelding met hyperlinks genereert
-      errors:
-        form:
-          error:
-            one: "verhinderde dat deze geozone werd opgeslagen"
-            other: "verhinderde dat deze geozone werd opgeslagen"
       edit:
         form:
           submit_button: Bewaar wijzigingen
@@ -1230,9 +1211,6 @@ nl:
           notice: Content block deleted successfully
         edit:
           title: Editing content block
-        errors:
-          form:
-            error: Error
         index:
           create: Create new content block
           delete: Delete block
@@ -1270,9 +1248,6 @@ nl:
           notice: Page deleted successfully
         edit:
           title: Editing %{page_title}
-        errors:
-          form:
-            error: Fout
         form:
           options: Opties
         index:
