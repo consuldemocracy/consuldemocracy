@@ -39,12 +39,6 @@ bs:
         editing: Edituj baner
         form:
           submit_button: Spasi izmjene
-      errors:
-        form:
-          error:
-            one: "baner se nije mogao spasiti zbog greške"
-            few: "baner se nije mogao spasiti zbog grešaka"
-            other: "baner se nije mogao spasiti zbog grešaka"
       new:
         creating: Napravi baner
     activity:
@@ -388,9 +382,6 @@ bs:
         edit:
           back: Nazad
           submit_button: Spasi izmjene
-        errors:
-          form:
-            error: Greška
         form:
           enabled: Pokrenuto
           process: Proces
@@ -465,9 +456,6 @@ bs:
           back: Nazad
           submit_button: Spasi izmjene
           warning: Editovali ste tekst, ne zaboravite da pritisnete "Spasi" kako bi trajno spasili izmjene.
-        errors:
-          form:
-            error: Greška
         form:
           launch_text_editor: Pokreni editora teksta
           close_text_editor: Zatvori editora teksta
@@ -508,9 +496,6 @@ bs:
           back: Nazad
           title: "Edituj “%{question_title}”"
           submit_button: Spasi izmjene
-        errors:
-          form:
-            error: Greška
         form:
           add_option: Dodaj opciju
           title_placeholder: Dodaj pitanje
@@ -1196,12 +1181,6 @@ bs:
         code_help: Šifra za ovu geozonu na API od popisa
         coordinates: Koordinate
         coordinates_help: Koordinate koje će na HTML slikovnoj mapi napraviti područje na koje će se moći klikati
-      errors:
-        form:
-          error:
-            one: "područje se nije moglo spasiti zbog greške"
-            few: "područje se nije moglo spasiti zbog grešaka"
-            other: "područje se nije moglo spasiti zbog grešaka"
       edit:
         form:
           submit_button: Spasi izmjene
@@ -1347,9 +1326,6 @@ bs:
           notice: Blok sadržaja uspješno obrisan
         edit:
           title: Editovanje bloka sadržaja u toku
-        errors:
-          form:
-            error: Greška
         index:
           create: Napravi novi blok sadržaja
           delete: Obriši blok
@@ -1387,9 +1363,6 @@ bs:
           notice: Stranica uspješno obrisana
         edit:
           title: Editovanje naziva stranice %{page_title}
-        errors:
-          form:
-            error: Greška
         form:
           options: Opcije
         index:
