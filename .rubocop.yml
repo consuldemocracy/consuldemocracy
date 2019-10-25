@@ -385,6 +385,9 @@ Style/CollectionMethods:
 Style/HashSyntax:
   Enabled: true
 
+Style/IdenticalConditionalBranches:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 

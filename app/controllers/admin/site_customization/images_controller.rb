@@ -29,11 +29,11 @@ class Admin::SiteCustomization::ImagesController < Admin::SiteCustomization::Bas
     @image.image = nil
     if @image.save
       notice = t("admin.site_customization.images.destroy.notice")
-      redirect_to admin_site_customization_images_path, notice: notice
     else
       notice = t("admin.site_customization.images.destroy.error")
-      redirect_to admin_site_customization_images_path, notice: notice
     end
+
+    redirect_to admin_site_customization_images_path, notice: notice
   end
 
   private
