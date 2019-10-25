@@ -37,11 +37,6 @@ so:
         editing: Bedel baneer
         form:
           submit_button: Badbaadi beddelka
-      errors:
-        form:
-          error:
-            one: "qalad ayaa ka hortagay banner tan ka badbaaday"
-            other: "qalad ayaa ka hortagay banner tan ka badbaaday"
       new:
         creating: Same banner
     activity:
@@ -270,9 +265,6 @@ so:
         edit:
           back: Labasho
           submit_button: Badbaadi beddelka
-        errors:
-          form:
-            error: Khalad
         form:
           enabled: Karti leh
           process: Geedisocoodka
@@ -337,9 +329,6 @@ so:
           back: Labasho
           submit_button: Badbaadi beddelka
           warning: Waad Tafatirtay qoraalka, ha ilaawin inaad gujiso badbadinta si joogto ah u keydiso isbeddelada.
-        errors:
-          form:
-            error: Khalad
         form:
           launch_text_editor: Biaabida Taratiridaa Qoraalka
           close_text_editor: Tafatirida Qoralka hoose
@@ -380,9 +369,6 @@ so:
           back: Labasho
           title: "Tafatiir\"%{question_title}"
           submit_button: Badbaadi beddelka
-        errors:
-          form:
-            error: Khalad
         form:
           add_option: Ku dar ikhyaari
           title_placeholder: Ku dar sual
@@ -989,11 +975,6 @@ so:
         external_code: Koodhaka dibada
         census_code: Koodka tirakoobka
         coordinates: Iskuduwaha
-      errors:
-        form:
-          error:
-            one: "khaladka ayaa hortaagan in galkaan ka badbaado"
-            other: "khaladka ayaa hortaagan in galkaan ka badbaado"
       edit:
         form:
           submit_button: Badbaadi beddelka
@@ -1113,9 +1094,6 @@ so:
           notice: Mowduuca sakaada ayaa si gula loo tir tiraay
         edit:
           title: Tafatirid mowduuca sakaad
-        errors:
-          form:
-            error: Khalad
         index:
           create: Saamynta mowduca cusub ee xayiraada
           delete: Masax sakada
@@ -1153,9 +1131,6 @@ so:
           notice: Boga siguula ayaa loo tir tiray
         edit:
           title: Tafatiir%{page_title}
-        errors:
-          form:
-            error: Khalad
         form:
           options: Fursadaha
         index:
