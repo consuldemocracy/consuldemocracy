@@ -203,9 +203,6 @@ ast:
         edit:
           back: Volver
           submit_button: Guardar Cambeos
-        errors:
-          form:
-            error: Erru
         form:
           enabled: Habilitáu
           process: Procesu
@@ -261,9 +258,6 @@ ast:
           back: Volver
           submit_button: Guardar Cambeos
           warning: Editasti'l testu. Pa caltener de forma permanente los cambeos, nun escaezas de faer click en Guardar.
-        errors:
-          form:
-            error: Erru
         form:
           launch_text_editor: Llanzar editor de testu
           close_text_editor: Pesllar editor de testu
@@ -304,9 +298,6 @@ ast:
           back: Volver
           title: "Editar “%{question_title}”"
           submit_button: Guardar Cambeos
-        errors:
-          form:
-            error: Erru
         form:
           add_option: +Añedir respuesta zarrada
           value_placeholder: Escribe una respuesta zarrada
@@ -819,9 +810,6 @@ ast:
           notice: Bloque borrado correctamente
         edit:
           title: Editar bloque
-        errors:
-          form:
-            error: Erru
         index:
           create: Crear nuevo bloque
           delete: Borrar bloque
@@ -854,9 +842,6 @@ ast:
           notice: Página eliminada correctamente
         edit:
           title: Editar %{page_title}
-        errors:
-          form:
-            error: Erru
         form:
           options: Respuestes
         index:
