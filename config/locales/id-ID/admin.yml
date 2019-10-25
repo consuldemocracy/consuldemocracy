@@ -39,10 +39,6 @@ id:
         editing: Mengedit spanduk
         form:
           submit_button: Simpan perubahan
-      errors:
-        form:
-          error:
-            other: "kesalahan dicegah banner ini untuk diselamatkan"
       new:
         creating: Membuat spanduk
     activity:
@@ -280,9 +276,6 @@ id:
         edit:
           back: Kembali
           submit_button: Simpan perubahan
-        errors:
-          form:
-            error: Kesalahan
         form:
           enabled: Diaktifkan
           process: Proses
@@ -341,9 +334,6 @@ id:
           back: Kembali
           submit_button: Simpan perubahan
           warning: Anda sudah mengedit teksnya, jangan lupa klik Simpan untuk menyimpan perubahan secara permanen.
-        errors:
-          form:
-            error: Kesalahan
         form:
           launch_text_editor: Meluncurkan penyunting teks
           close_text_editor: Tutup penyunting teks
@@ -384,9 +374,6 @@ id:
           back: Kembali
           title: "Sunting \"%{question_title}\""
           submit_button: Simpan perubahan
-        errors:
-          form:
-            error: Kesalahan
         form:
           add_option: Menambahkan pilihan
           value_placeholder: Menambahkan sebuah pertanyaan tertutup
@@ -876,10 +863,6 @@ id:
         external_code: Eksternal kode
         census_code: Sensus kode
         coordinates: Koordinat
-      errors:
-        form:
-          error:
-            other: "kesalahan dicegah ini geozone diselamatkan"
       edit:
         form:
           submit_button: Simpan perubahan
@@ -989,9 +972,6 @@ id:
           notice: Blok konten dihapus berhasil
         edit:
           title: Mengedit konten blok
-        errors:
-          form:
-            error: Kesalahan
         index:
           create: Membuat konten baru blok
         new:
@@ -1020,9 +1000,6 @@ id:
           error: Halaman tidak dapat diperbarui
         destroy:
           notice: Halaman berhasil dihapus
-        errors:
-          form:
-            error: Kesalahan
         form:
           options: Pilihan
         index:
