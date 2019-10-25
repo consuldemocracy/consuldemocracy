@@ -1072,8 +1072,8 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .ckeditor {
-    min-height: $line-height * 13;
+  .cke {
+    margin-bottom: $line-height;
   }
 
   .checkbox,

@@ -15,10 +15,10 @@
         hint: t("proposals.form.proposal_summary_note") %>
     </div>
 
-    <div class="ckeditor small-12 column">
-      <%= f.cktext_area :description,
+    <div class="small-12 column">
+      <%= f.text_area :description,
         maxlength: Legislation::Proposal.description_max_length,
-        ckeditor: { language: I18n.locale } %>
+        class: "html-area" %>
     </div>
 
     <div class="small-12 column">

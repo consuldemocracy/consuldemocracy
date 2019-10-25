@@ -55,15 +55,15 @@ describe "Admin edit translatable records" do
 
         visit path
 
-        within_frame(0) { expect(page).to have_content "Content in English" }
+        expect(page).to have_ckeditor "Content", with: "Content in English"
 
         select "Español", from: :select_language
 
-        within_frame(0) { expect(page).to have_content "Contenido en español" }
+        expect(page).to have_ckeditor "Content", with: "Contenido en español"
 
         select "Français", from: :select_language
 
-        within_frame(0) { expect(page).to have_content "Contenu en Français" }
+        expect(page).to have_ckeditor "Content", with: "Contenu en Français"
       end
     end
 
@@ -155,7 +155,7 @@ describe "Admin edit translatable records" do
 
         select "Français", from: :select_language
 
-        within_frame(0) { expect(page.text).to be_empty }
+        expect(page). to have_ckeditor "Description", with: ""
       end
     end
 
@@ -237,7 +237,7 @@ describe "Admin edit translatable records" do
         select("Español", from: "locale-switcher")
 
         expect(page).to have_field "Respuesta", with: "Respuesta corregida"
-        within_frame(0) { expect(page).to have_content "Descripción corregida" }
+        expect(page).to have_ckeditor "Descripción", with: "Descripción corregida"
       end
     end
 

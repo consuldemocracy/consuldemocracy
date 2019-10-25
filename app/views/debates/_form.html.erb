@@ -16,10 +16,10 @@
       </div>
       <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
 
-      <div class="ckeditor small-12 column">
-        <%= translations_form.cktext_area :description,
+      <div class="small-12 column">
+        <%= translations_form.text_area :description,
               maxlength: Debate.description_max_length,
-              ckeditor: { language: I18n.locale } %>
+              class: "html-area" %>
       </div>
     <% end %>
 

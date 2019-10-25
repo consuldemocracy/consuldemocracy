@@ -9,7 +9,7 @@ class ConsulFormBuilder < FoundationRailsHelper::FormBuilder
     select attribute, choices, options, html_options
   end
 
-  %i[text_field text_area cktext_area number_field password_field email_field].each do |field|
+  %i[text_field text_area number_field password_field email_field].each do |field|
     define_method field do |attribute, options = {}|
       label_with_hint(attribute, options.merge(label_options: label_options_for(options))) +
         super(attribute, options.merge(

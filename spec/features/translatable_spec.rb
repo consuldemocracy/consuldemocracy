@@ -212,7 +212,7 @@ describe "Public area translatable records" do
           select "Español", from: "locale-switcher"
 
           expect(page).to have_field "Título del debate", with: "Título corregido"
-          within_frame(0) { expect(page).to have_content "Texto corregido" }
+          expect(page).to have_ckeditor "Texto inicial del debate", with: "Texto corregido"
         end
       end
 

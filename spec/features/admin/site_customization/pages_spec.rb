@@ -86,10 +86,9 @@ describe "Admin custom pages" do
 
     scenario "Allows images in CKEditor", :js do
       visit edit_admin_site_customization_page_path(custom_page)
+      fill_in_ckeditor "Content", with: "Will add an image"
 
-      within(".ckeditor") do
-        expect(page).to have_css(".cke_toolbar .cke_button__image_icon")
-      end
+      expect(page).to have_css(".cke_toolbar .cke_button__image_icon")
     end
   end
 
