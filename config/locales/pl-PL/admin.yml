@@ -37,13 +37,6 @@ pl:
         editing: Edytuj baner
         form:
           submit_button: Zapisz zmiany
-      errors:
-        form:
-          error:
-            one: "błąd uniemożliwił zapisanie się temu banerowi"
-            few: "błędy uniemożliwiły zapisanie się temu banerowi"
-            many: "błędów uniemożliwiło zapisanie się temu banerowi"
-            other: "błędów uniemożliwiło zapisanie się temu banerowi"
       new:
         creating: Utwórz baner
     activity:
@@ -313,9 +306,6 @@ pl:
         edit:
           back: Wróć
           submit_button: Zapisz zmiany
-        errors:
-          form:
-            error: Błąd
         form:
           enabled: Włączone
           process: Proces
@@ -390,9 +380,6 @@ pl:
           back: Wróć
           submit_button: Zapisz zmiany
           warning: Edytowałeś tekst, nie zapomnij kliknąć Zapisz, aby trwale zapisać zmiany.
-        errors:
-          form:
-            error: Błąd
         form:
           launch_text_editor: Uruchom edytor tekstu
           close_text_editor: Zamknij edytor tekstu
@@ -433,9 +420,6 @@ pl:
           back: Wróć
           title: "Edytuj \"%{question_title}\""
           submit_button: Zapisz zmiany
-        errors:
-          form:
-            error: Błąd
         form:
           add_option: Dodaj opcję
           title_placeholder: Dodaj pytanie
@@ -1101,13 +1085,6 @@ pl:
         code_help: Kod odpowiedzi dla tej strefy zgodnie ze spisem API
         coordinates: Współrzędne
         coordinates_help: Współrzędne, które będą generować klikalny obszar na mapie obrazu HTML
-      errors:
-        form:
-          error:
-            one: "błąd uniemożliwił zapisanie tej geostrefy"
-            few: "błędy uniemożliwiły zapisanie tej geostrefy"
-            many: "błędy uniemożliwiły zapisanie tej geostrefy"
-            other: "błędy uniemożliwiły zapisanie tej geostrefy"
       edit:
         form:
           submit_button: Zapisz zmiany
@@ -1223,9 +1200,6 @@ pl:
           notice: Blok zawartości został pomyślnie usunięty
         edit:
           title: Edytowanie bloku zawartości
-        errors:
-          form:
-            error: Błąd
         index:
           create: Utwórz nowy blok zawartości
           delete: Usuń blok
@@ -1263,9 +1237,6 @@ pl:
           notice: Strona została pomyślnie usunięta
         edit:
           title: Edytowanie %{page_title}
-        errors:
-          form:
-            error: Błąd
         form:
           options: Opcje
         index:
