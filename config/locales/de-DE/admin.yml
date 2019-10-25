@@ -336,6 +336,32 @@ de:
           delete: Löschen
           active: 'Ja'
           inactive: 'Nein'
+          title: Ressourcen und Aktionen
+          action_title: Titel
+          action_type: Typ
+          required_supports: Benötigte Unterstützung
+          day_offset: Benötigte Tage
+          action_active: Aktiv
+          order: Bestellung
+          published_proposal: Veröffentlichte Vorschläge
+          default:
+            email: E-Mail
+            polls: Umfragen
+            poster: Poster
+        new:
+          creating: Neue Aktion für das Vorschlags-Dashboard
+          back: Zurück zur Liste
+        create:
+          notice: Aktion erfolgreich erstellt
+        edit:
+          editing: Aktion bearbeiten für Vorschlags-Dashboard
+          back: Zurück zur Liste
+        delete:
+          success: Aktion erfolgreich gelöscht
+        form:
+          submit_button: Speichern
+          help_text: Geben Sie 0 ein, damit dieser Wert nicht berücksichtigt wird
+          published_proposal_help_text: Markieren, um die Aktion nur für veröffentlichte Vorschläge anzulegen
     documents:
       index:
         title: "Dokumente"
