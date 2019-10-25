@@ -4,7 +4,7 @@ en:
       verification:
         residence: "Residence"
         sms: "SMS"
-      local_census_record/import:
+      local_census_records/import:
         one: Local census record import
         other: Local census records imports
     attributes:
@@ -36,7 +36,7 @@ en:
         document_type: "Document type"
         document_number: "Document number (including letters)"
         year_of_birth: "Year born"
-      local_census_record/import:
+      local_census_records/import:
         file: File
     errors:
       models:
