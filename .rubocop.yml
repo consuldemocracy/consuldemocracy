@@ -382,6 +382,9 @@ Style/ClassVars:
 Style/CollectionMethods:
   Enabled: true
 
+Style/HashSyntax:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 
