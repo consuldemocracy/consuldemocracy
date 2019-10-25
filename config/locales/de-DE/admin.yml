@@ -39,11 +39,6 @@ de:
         editing: Banner bearbeiten
         form:
           submit_button: Änderungen speichern
-      errors:
-        form:
-          error:
-            one: "Aufgrund eines Fehlers konnte dieser Banner nicht gespeichert werden"
-            other: "Aufgrund von Fehlern konnte dieser Banner nicht gespeichert werden"
       new:
         creating: Banner erstellen
     activity:
@@ -452,9 +447,6 @@ de:
         edit:
           back: Zurück
           submit_button: Änderungen speichern
-        errors:
-          form:
-            error: Fehler
         form:
           enabled: Aktiviert
           process: Beteiligungsverfahren
@@ -530,9 +522,6 @@ de:
           back: Zurück
           submit_button: Änderungen speichern
           warning: Sie haben den Text bearbeitet. Bitte klicken Sie nun auf speichern, um die Änderungen dauerhaft zu sichern.
-        errors:
-          form:
-            error: Fehler
         form:
           title: 'Bearbeiten des <span class="strong">-%{draft_version_title}-</span> Beteiligungsverfahrens <span class="strong">%{process_title}</span>'
           launch_text_editor: Textbearbeitung öffnen
@@ -574,9 +563,6 @@ de:
           back: Zurück
           title: "\"%{question_title}\" bearbeiten"
           submit_button: Änderungen speichern
-        errors:
-          form:
-            error: Fehler
         form:
           add_option: Antwortmöglichkeit hinzufügen
           title_placeholder: Frage hinzufügen
@@ -1308,11 +1294,6 @@ de:
         code_help: Antwortcode für die Geozone des Registers API
         coordinates: Koordinaten
         coordinates_help: Koordinaten, die einen anklickbaren Bereich auf einer HTML-Bildkarte erzeugen
-      errors:
-        form:
-          error:
-            one: "Aufgrund eines Fehlers konnte dieser Bezirk nicht gespeichert werden"
-            other: "Aufgrund von Fehlern konnte dieser Bezirk nicht gespeichert werden"
       edit:
         form:
           submit_button: Änderungen speichern
@@ -1469,9 +1450,6 @@ de:
           notice: Inhalsblock erfolgreich gelöscht
         edit:
           title: Inhaltsblock bearbeiten
-        errors:
-          form:
-            error: Fehler
         index:
           create: Neuen Inhaltsblock erstellen
           delete: Block löschen
@@ -1509,9 +1487,6 @@ de:
           notice: Seite erfolgreich gelöscht
         edit:
           title: Bearbeitung %{page_title}
-        errors:
-          form:
-            error: Fehler
         form:
           options: Antworten
         index:
