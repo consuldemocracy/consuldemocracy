@@ -37,10 +37,6 @@ zh-CN:
         editing: 编辑横幅
         form:
           submit_button: 保存更改
-      errors:
-        form:
-          error:
-            other: "阻止此横幅被保存的错误"
       new:
         creating: 创建横幅
     activity:
@@ -269,9 +265,6 @@ zh-CN:
         edit:
           back: 返回
           submit_button: 保存更改
-        errors:
-          form:
-            error: 错误
         form:
           enabled: 已启用
           process: 进程
@@ -338,9 +331,6 @@ zh-CN:
           back: 返回
           submit_button: 保存更改
           warning: 您已经编辑文本，请不要忘了点击保存来永久保存所做的更改。
-        errors:
-          form:
-            error: 错误
         form:
           launch_text_editor: 启动文本编辑器
           close_text_editor: 关闭文本编辑器
@@ -381,9 +371,6 @@ zh-CN:
           back: 返回
           title: "编辑“%{question_title}”"
           submit_button: 保存更改
-        errors:
-          form:
-            error: 错误
         form:
           add_option: 添加选项
           title_placeholder: 添加问题
@@ -992,10 +979,6 @@ zh-CN:
         external_code: 外部代码
         census_code: 人口普查代码
         coordinates: 坐标
-      errors:
-        form:
-          error:
-            other: "阻止这个地理区域被保存的错误"
       edit:
         form:
           submit_button: 保存更改
@@ -1113,9 +1096,6 @@ zh-CN:
           notice: 内容块已成功删除
         edit:
           title: 正在编辑内容块
-        errors:
-          form:
-            error: 错误
         index:
           create: 创建新的内容块
           delete: 删除块
@@ -1153,9 +1133,6 @@ zh-CN:
           notice: 页面成功删除
         edit:
           title: 正在编辑%{page_title}
-        errors:
-          form:
-            error: 错误
         form:
           options: 选项
         index:
