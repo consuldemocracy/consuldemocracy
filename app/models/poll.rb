@@ -27,7 +27,8 @@ class Poll < ApplicationRecord
   has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :ballot_sheets
 
-  has_and_belongs_to_many :geozones
+  has_many :geozones_polls
+  has_many :geozones, through: :geozones_polls
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :polls
   belongs_to :related, polymorphic: true
   belongs_to :budget

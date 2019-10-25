@@ -15,9 +15,6 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Rails/HasAndBelongsToMany:
-  Enabled: true
-
 Rails/HasManyOrHasOneDependent:
   Enabled: true
 

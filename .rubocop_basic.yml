@@ -206,6 +206,9 @@ Rails/FindEach:
 Rails/HttpPositionalArguments:
   Enabled: true
 
+Rails/HasAndBelongsToMany:
+  Enabled: true
+
 Rails/InverseOf:
   Enabled: true
   Exclude:
