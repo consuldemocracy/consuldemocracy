@@ -37,10 +37,6 @@ zh-TW:
         editing: 編輯橫幅
         form:
           submit_button: 儲存更改
-      errors:
-        form:
-          error:
-            other: "有錯誤阻止此橫幅被儲存"
       new:
         creating: 創建橫幅
     activity:
@@ -269,9 +265,6 @@ zh-TW:
         edit:
           back: 返回
           submit_button: 儲存更改
-        errors:
-          form:
-            error: 錯誤
         form:
           enabled: 啟用
           process: 進程
@@ -334,9 +327,6 @@ zh-TW:
           back: 返回
           submit_button: 儲存更改
           warning: 您已經編輯了文本, 別忘記按一下 "儲存" 以永久儲存更改。
-        errors:
-          form:
-            error: 錯誤
         form:
           launch_text_editor: 啟動文字編輯器
           close_text_editor: 關閉文字編輯器
@@ -377,9 +367,6 @@ zh-TW:
           back: 返回
           title: "編輯 \"%{question_title}\""
           submit_button: 儲存更改
-        errors:
-          form:
-            error: 錯誤
         form:
           add_option: 添加選項
           title_placeholder: 添加問題
@@ -982,10 +969,6 @@ zh-TW:
         external_code: 外部代碼
         census_code: 人口普查代碼
         coordinates: 座標
-      errors:
-        form:
-          error:
-            other: "有錯誤阻止此地理區域被儲存"
       edit:
         form:
           submit_button: 儲存更改
@@ -1103,9 +1086,6 @@ zh-TW:
           notice: 內容塊已成功刪除
         edit:
           title: 編輯內容塊
-        errors:
-          form:
-            error: 錯誤
         index:
           create: 創建新內容塊
           delete: 刪除塊
@@ -1143,9 +1123,6 @@ zh-TW:
           notice: 頁面已成功刪除
         edit:
           title: 正在編輯 %{page_title}
-        errors:
-          form:
-            error: 錯誤
         form:
           options: 選項
         index:
