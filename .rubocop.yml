@@ -58,6 +58,9 @@ Layout/EndOfLine:
 Layout/ExtraSpacing:
   Enabled: true
 
+Layout/IndentAssignment:
+  Enabled: true
+
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 
