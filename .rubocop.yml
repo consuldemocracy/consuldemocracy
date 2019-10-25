@@ -61,6 +61,9 @@ Layout/ExtraSpacing:
 Layout/IndentAssignment:
   Enabled: true
 
+Layout/IndentHeredoc:
+  Enabled: true
+
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 
