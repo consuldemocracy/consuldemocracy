@@ -198,9 +198,6 @@ sl:
         edit:
           back: Nazaj
           submit_button: Shrani spremembe
-        errors:
-          form:
-            error: Napaka
         form:
           enabled: Omogočen
           process: Proces
@@ -252,9 +249,6 @@ sl:
           back: Nazaj
           submit_button: Shrani spremembe
           warning: Uredil si besedilo, ne pozabi klikniti Shrani, da ohraniš spremembe.
-        errors:
-          form:
-            error: Napaka
         form:
           launch_text_editor: Začeni urejevalnik besedila
           close_text_editor: Zapri urejevalnik besedila
@@ -294,9 +288,6 @@ sl:
           back: Nazaj
           title: "Uredi “%{question_title}”"
           submit_button: Shrani spremembe
-        errors:
-          form:
-            error: Napaka
         form:
           add_option: Dodaj možnost
           title_placeholder: Dodaj naslov
@@ -894,9 +885,6 @@ sl:
           notice: Blok vsebine uspešno izbrisan
         edit:
           title: Urejanje bloka vsebine
-        errors:
-          form:
-            error: Napaka
         index:
           create: Ustvari nov blok vsebine
           delete: Izbriši blok
@@ -929,9 +917,6 @@ sl:
           notice: Stran uspešno izbrisana
         edit:
           title: Urejanje %{page_title}
-        errors:
-          form:
-            error: Napaka
         form:
           options: Možnosti
         index:
