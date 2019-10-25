@@ -989,7 +989,7 @@ describe Budget::Investment do
       user.erase
       user.update!(document_number: nil)
       expect(user.document_number).to be_blank
-      investment.touch
+      investment.valid?
       expect(investment.responsible_name).to eq("123456")
     end
   end

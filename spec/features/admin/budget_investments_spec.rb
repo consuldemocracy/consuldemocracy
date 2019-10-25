@@ -1832,7 +1832,7 @@ describe "Admin budget investments" do
     end
 
     scenario "Select an investment when some columns are not displayed", :js do
-      investment.update_attribute(:title, "Don't display me, please!")
+      investment.update!(title: "Don't display me, please!")
 
       visit admin_budget_budget_investments_path(budget)
       within("#js-columns-selector") { find("strong", text: "Columns").click }

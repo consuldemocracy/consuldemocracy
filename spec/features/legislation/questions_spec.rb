@@ -94,7 +94,7 @@ describe "Legislation" do
     end
 
     scenario "cannot answer question when phase not open" do
-      process.update_attribute(:debate_end_date, Date.current - 1.day)
+      process.update!(debate_end_date: Date.current - 1.day)
       question = process.questions.first
       create(:legislation_question_option, question: question, value: "Yes")
       create(:legislation_question_option, question: question, value: "No")

@@ -41,7 +41,7 @@ describe Legislation::AnswersController do
 
     it "does not create an answer if the process debate phase is not open" do
       sign_in user
-      legal_process.update_attribute(:debate_end_date, Date.current - 1.day)
+      legal_process.update!(debate_end_date: Date.current - 1.day)
 
       expect do
         post :create, xhr: true,

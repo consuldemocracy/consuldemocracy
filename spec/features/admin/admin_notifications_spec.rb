@@ -23,7 +23,7 @@ describe "Admin Notifications" do
 
     scenario "Notification with invalid segment recipient" do
       invalid_notification = create(:admin_notification)
-      invalid_notification.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_notification.update_column(:segment_recipient, "invalid_segment")
 
       visit admin_admin_notification_path(invalid_notification)
 
@@ -56,7 +56,7 @@ describe "Admin Notifications" do
 
     scenario "Notifications with invalid segment recipient" do
       invalid_notification = create(:admin_notification)
-      invalid_notification.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_notification.update_column(:segment_recipient, "invalid_segment")
 
       visit admin_admin_notifications_path
 
@@ -209,7 +209,7 @@ describe "Admin Notifications" do
 
     scenario "Admin notification with invalid segment recipient cannot be sent", :js do
       invalid_notification = create(:admin_notification)
-      invalid_notification.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_notification.update_column(:segment_recipient, "invalid_segment")
       visit admin_admin_notification_path(invalid_notification)
 
       expect(page).not_to have_link("Send")

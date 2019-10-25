@@ -11,7 +11,7 @@ class Budget
     include Globalizable
     include Sanitizable
 
-    belongs_to :budget
+    belongs_to :budget, touch: true
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
     has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
@@ -24,7 +24,6 @@ class Budget
     validate :next_phase_dates_valid?
 
     after_save :adjust_date_ranges
-    after_save :touch_budget
 
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: "drafting") }
@@ -68,10 +67,6 @@ class Budget
         elsif enabled_changed?
           next_enabled_phase&.update_column(:starts_at, starts_at)
         end
-      end
-
-      def touch_budget
-        budget.touch
       end
 
       def prev_phase_dates_valid?

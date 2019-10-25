@@ -27,7 +27,7 @@ describe CommentsController do
 
     it "does not create a comment if the comments are closed" do
       sign_in user
-      legal_process.update_attribute(:debate_end_date, Date.current - 1.day)
+      legal_process.update!(debate_end_date: Date.current - 1.day)
 
       expect do
         post :create, xhr: true,

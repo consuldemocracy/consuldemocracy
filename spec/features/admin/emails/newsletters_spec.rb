@@ -23,7 +23,7 @@ describe "Admin newsletter emails" do
 
     scenario "Invalid newsletter" do
       invalid_newsletter = create(:newsletter)
-      invalid_newsletter.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_newsletter.update_column(:segment_recipient, "invalid_segment")
 
       visit admin_newsletter_path(invalid_newsletter)
 
@@ -50,7 +50,7 @@ describe "Admin newsletter emails" do
 
     scenario "Invalid newsletter" do
       invalid_newsletter = create(:newsletter)
-      invalid_newsletter.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_newsletter.update_column(:segment_recipient, "invalid_segment")
 
       visit admin_newsletters_path
 
@@ -136,7 +136,7 @@ describe "Admin newsletter emails" do
 
     scenario "Invalid newsletter cannot be sent", :js do
       invalid_newsletter = create(:newsletter)
-      invalid_newsletter.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_newsletter.update_column(:segment_recipient, "invalid_segment")
       visit admin_newsletter_path(invalid_newsletter)
 
       expect(page).not_to have_link("Send")
