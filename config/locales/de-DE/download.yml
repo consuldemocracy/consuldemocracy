@@ -1,1 +1,24 @@
 de:
+  download:
+    edit:
+      fields: "Felder"
+      description: "Beschreibung"
+      downloadable: "Downloadbar"
+      debates: "Debatten"
+      proposals: "Vorschläge"
+      legislation_processes: "Gesetzgebungsverfahren"
+      budget_investments: "Bürgerhaushalt"
+      comments: "Kommentare"
+      submit: "Änderungen speichern"
+      config:
+        "0": ""
+        "1": "- Meilensteine"
+    fielddescription:
+      debates:
+        id: "Identifikationsnummer"
+        title: "Titel"
+        description: "Beschreibung"
+        author_id: "Autor Identifikationsnummer"
+        created_at: "Erstellt am"
+        updated_at: "Aktualisiert am"
+        visit_id: "Besuch ID"
