@@ -31,11 +31,6 @@ es-PE:
         editing: Editar el banner
         form:
           submit_button: Guardar cambios
-      errors:
-        form:
-          error:
-            one: "error impidió guardar el banner"
-            other: "errores impidieron guardar el banner."
       new:
         creating: Crear banner
     activity:
@@ -808,11 +803,6 @@ es-PE:
         external_code: Código externo
         census_code: Código del censo
         coordinates: Coordenadas
-      errors:
-        form:
-          error:
-            one: "error impidió guardar el distrito"
-            other: "errores impidieron guardar el distrito."
       edit:
         form:
           submit_button: Guardar cambios
