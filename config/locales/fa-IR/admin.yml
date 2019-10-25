@@ -34,11 +34,6 @@ fa:
         editing: ویرایش  أگهی
         form:
           submit_button: ذخیره تغییرات
-      errors:
-        form:
-          error:
-            one: "خطا باعث شد که این بنر ذخیره نشود."
-            other: "خطاها باعث شدند که این بنر ذخیره نشود."
       new:
         creating: ایجاد أگهی
     activity:
@@ -247,9 +242,6 @@ fa:
         edit:
           back: برگشت
           submit_button: ذخیره تغییرات
-        errors:
-          form:
-            error: خطا
         form:
           enabled: فعال
           process: "روند\n"
@@ -308,9 +300,6 @@ fa:
           back: برگشت
           submit_button: ذخیره تغییرات
           warning: شما متن را ویرایش کرده اید، فراموش نکنید که برای ذخیره دائمی تغییرات، روی ذخیره کلیک کنید.
-        errors:
-          form:
-            error: خطا
         form:
           launch_text_editor: راه اندازی ویرایشگر متن
           close_text_editor: ویرایشگر متن را ببند
@@ -351,9 +340,6 @@ fa:
           back: برگشت
           title: "ویرایش%{question_title}"
           submit_button: ذخیره تغییرات
-        errors:
-          form:
-            error: خطا
         form:
           add_option: اضافه کردن گزینه
           value_placeholder: یک پاسخ بسته را اضافه کنید
@@ -899,11 +885,6 @@ fa:
         external_code: ویدیوهای خارجی
         census_code: کد سرشماری
         coordinates: مختصات
-      errors:
-        form:
-          error:
-            one: "خطا باعث می شود که این geozone نجات یابد"
-            other: "خطاها باعث می شود که این geozone نجات یابد"
       edit:
         form:
           submit_button: ذخیره تغییرات
@@ -1020,9 +1001,6 @@ fa:
           notice: بلوک محتوا با موفقیت حذف شد.
         edit:
           title: ویرایش بلوک محتوا
-        errors:
-          form:
-            error: خطا
         index:
           create: ایجاد محتوای جدید بلوک
           delete: حذف بلوک
@@ -1055,9 +1033,6 @@ fa:
           notice: صفحه با موفقیت حذف شد.
         edit:
           title: ویرایش %{page_title}
-        errors:
-          form:
-            error: خطا
         form:
           options: "گزینه ها\n"
         index:
