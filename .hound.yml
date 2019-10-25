@@ -1,5 +1,5 @@
 rubocop:
-  config_file: .rubocop_basic.yml
+  config_file: .rubocop.yml
   version: 0.72.0
 scss:
   config_file: .scss-lint.yml
