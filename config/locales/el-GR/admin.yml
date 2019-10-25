@@ -39,11 +39,6 @@ el:
         editing: Επεξεργασία πανό
         form:
           submit_button: Αποθήκευση αλλαγών
-      errors:
-        form:
-          error:
-            one: "Κάποιο σφάλμα απέτρεψε την αποθήκευση του πανό"
-            other: "σφάλματα απέτρεψαν αυτό το banner από το να αποθηκευτεί"
       new:
         creating: Δημιουργία πανό
     activity:
@@ -388,9 +383,6 @@ el:
         edit:
           back: Πίσω
           submit_button: Αποθηκεύστε τις αλλαγές
-        errors:
-          form:
-            error: Σφάλμα
         form:
           enabled: Ενεργοποιημένη
           process: Διαδικασία
@@ -465,9 +457,6 @@ el:
           back: Πίσω
           submit_button: Αποθήκευση αλλαγών
           warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να πατήσετε "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
-        errors:
-          form:
-            error: Σφάλμα
         form:
           launch_text_editor: Άνοιγμα επεξεργαστή κειμένου
           close_text_editor: Κλείσιμο επεξεργαστή κειμένου
@@ -508,9 +497,6 @@ el:
           back: Πίσω
           title: "Επεξεργασία “%{question_title}”"
           submit_button: Αποθήευση αλλαγών
-        errors:
-          form:
-            error: Σφάλμα
         form:
           add_option: Προσθήκη επιλογής
           title_placeholder: Προσθήκη ερώτησης
@@ -1189,11 +1175,6 @@ el:
         code_help: Κωδικός απόκρισης για αυτήν τη γεωζώνη στο API της απογραφής
         coordinates: Συντεταγμένες
         coordinates_help: Συντεταγμένες που θα δημιουργούν μια περιοχή με δυνατότητα κλικ σε έναν χάρτη εικόνων HTML
-      errors:
-        form:
-          error:
-            one: "σφάλμα απέτρεψε αυτήν τη γεωζώνη από το να αποθηκευτεί"
-            other: "σφάλματα απέτρεψαν αυτήν τη γεωζώνη από το να αποθηκευτεί"
       edit:
         form:
           submit_button: Αποθηκεύστε τις αλλαγές
@@ -1337,9 +1318,6 @@ el:
           notice: Το μπλοκ περιεχομένου διαγράφηκε με επιτυχία
         edit:
           title: Επεξεργασία μπλοκ περιεχομένου
-        errors:
-          form:
-            error: Σφάλμα
         index:
           create: Δημιουργήστε νέο μπλοκ περιεχομένου
           delete: Διαγραφή του μπλοκ
@@ -1377,9 +1355,6 @@ el:
           notice: Η σελίδα διαγράφηκε επιτυχώς
         edit:
           title: Επεξεργασία %{page_title}
-        errors:
-          form:
-            error: Σφάλμα
         form:
           options: Επιλογές
         index:
