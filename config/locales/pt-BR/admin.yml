@@ -37,11 +37,6 @@ pt-BR:
         editing: Editar banner
         form:
           submit_button: Salvar alterações
-      errors:
-        form:
-          error:
-            one: "erro impediu este banner de ser salvo"
-            other: "erros impediram este banner de ser salvo"
       new:
         creating: Criar banner
     activity:
@@ -315,9 +310,6 @@ pt-BR:
         edit:
           back: Voltar
           submit_button: Salvar alterações
-        errors:
-          form:
-            error: Erro
         form:
           enabled: Habilitado
           process: Processo
@@ -383,9 +375,6 @@ pt-BR:
           back: Voltar
           submit_button: Salvar alterações
           warning: Você editou o texto. Não esqueça de clicar em Salvar para salvar permanentemente as mudanças.
-        errors:
-          form:
-            error: Erro
         form:
           launch_text_editor: Iniciar o editor de texto
           close_text_editor: Fechar o editor de texto
@@ -426,9 +415,6 @@ pt-BR:
           back: Voltar
           title: "Editar \"%{question_title}\""
           submit_button: Salvar alterações
-        errors:
-          form:
-            error: Erro
         form:
           add_option: Adicionar opção
           title_placeholder: Adicionar pergunta
@@ -1065,11 +1051,6 @@ pt-BR:
         external_code: Código externo
         census_code: Código do censo
         coordinates: Coordenadas
-      errors:
-        form:
-          error:
-            one: "erro impediu esta geozona de ser salva"
-            other: "erros impediram esta geozona de ser salva"
       edit:
         form:
           submit_button: Salvar alterações
@@ -1195,9 +1176,6 @@ pt-BR:
           notice: Bloco de conteúdo deletado com sucesso
         edit:
           title: Editando bloco de conteúdo
-        errors:
-          form:
-            error: Erro
         index:
           create: Criar novo bloco de conteúdo
           delete: Excluir bloco
@@ -1235,9 +1213,6 @@ pt-BR:
           notice: Página excluída com sucesso
         edit:
           title: Editando %{page_title}
-        errors:
-          form:
-            error: Erro
         form:
           options: Opções
         index:
