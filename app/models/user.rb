@@ -313,7 +313,7 @@ class User < ApplicationRecord
   end
 
   def self.username_max_length
-    @@username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
+    @username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
   end
 
   def self.minimum_required_age

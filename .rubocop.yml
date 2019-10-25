@@ -376,6 +376,9 @@ Style/BlockDelimiters:
 Style/ClassCheck:
   Enabled: true
 
+Style/ClassVars:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 
