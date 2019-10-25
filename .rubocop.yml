@@ -367,7 +367,13 @@ Security/JSONLoad:
 Security/YAMLLoad:
   Enabled: true
 
+Style/AndOr:
+  Enabled: true
+
 Style/BlockDelimiters:
+  Enabled: true
+
+Style/Not:
   Enabled: true
 
 Style/PercentLiteralDelimiters:
