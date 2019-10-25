@@ -1142,6 +1142,7 @@ de:
         official_updated: Details des/r Beamten* gespeichert
       index:
         title: Öffentliche Ämter
+        help: Interventionen von Benutzerkonten, die als Offizielle gekennzeichnet sind, werden hervorgehoben. Sie können die Bezeichnung definieren, die neben den Benutzernamen dieser Konten erscheint, von der wichtigsten (Ebene 1) bis zur niedrigsten (Ebene 5).
         no_officials: Keine Beamten/innen vorhanden.
         name: Name
         official_position: Öffentliches Amt
@@ -1165,6 +1166,9 @@ de:
           pending: Ausstehend
           rejected: Abgelehnt
           verified: Verifiziert
+        hidden_count:
+          one: Es gibt auch <strong>eine Organisation</strong> ohne Benutzer oder mit einem versteckten Benutzer.
+          other: Es gibt auch <strong>%{count} eine Organisation</strong> ohne Benutzer oder mit einem versteckten Benutzer.
         name: Name
         email: E-Mail
         phone_number: Telefon
@@ -1187,8 +1191,17 @@ de:
         title: Vorschläge
         id: ID
         author: Autor
+        select: Auswählen
+        selected: Ausgewählt
         milestones: Meilensteine
         no_proposals: Keine Vorschläge vorhanden.
+        link: "Download Vorschläge"
+      show:
+        create_question: Fügen Sie diesen Vorschlag zu einer Umfrage hinzu, über die abgestimmt werden soll
+      form:
+        update: Update Vorschlag
+      update:
+        notice: Vorschlag erfolgreich aktualisiert
     hidden_proposals:
       index:
         filter: Filter
@@ -1212,7 +1225,10 @@ de:
         updated: Wert aktualisiert
       index:
         title: Konfigurationseinstellungen
+        general: Konfigurationseinstellungen
         update_setting: Aktualisieren
+        participation_processes: "Teilnahmeprozess"
+        images_and_documents: "Bilder und Dokumente"
         feature_flags: Funktionen
         features:
           enabled: "Funktion aktiviert"
@@ -1226,6 +1242,15 @@ de:
             update: Kartenkonfiguration erfolgreich aktualisiert.
           form:
             submit: Aktualisieren
+          how_to_enable: 'Um die Karte den Benutzern anzuzeigen, müssen Sie "Vorschläge und Bürgerhaushalt Geolokalisierung" auf der Registerkarte "Funktionen" aktivieren.'
+        dashboard:
+          title: Vorschläge Dashboard
+        remote_census:
+          title: Register Konfiguration entfernen
+          how_to_enable: 'Um die Fernzählung (SOAP) zu konfigurieren, müssen Sie "Verbindung zur Fernzählung (SOAP) konfigurieren" auf der Registerkarte "Funktionen" aktivieren.'
+      remote_census_general_name: Allgemeine Informationen
+      remote_census_request_name: Anfrage Daten
+      remote_census_response_name: Antwort Daten
       setting: Funktion
       setting_actions: Aktionen
       setting_name: Einstellung
@@ -1247,6 +1272,9 @@ de:
       proposal_search:
         button: Suche
         placeholder: Suche Vorschläge nach Titel, Code, Beschreibung oder Frage
+      debate_search:
+        button: Suche
+        placeholder: Suche Debatten per Titel oder Beschreibung
       user_search:
         button: Suche
         placeholder: Suche Benutzer*in nach Name oder E-Mail
@@ -1264,6 +1292,9 @@ de:
       content: Inhalt
       created_at: Erstellt am
       delete: Löschen
+      color_help: Hexadezimales Format
+      show_results_and_stats: "Ergebnisse und Statistiken anzeigen"
+      results_and_stats_reminder: "Durch das Markieren dieses Kontrollkästchens werden die Resultate und/oder Statistiken dieser Abstimmung öffentlich abrufbar und für alle Benutzer*innen sichtbar."
     geozones:
       index:
         title: Bezirke
@@ -1274,7 +1305,9 @@ de:
         name: Name
         external_code: Externer Code
         census_code: Melderegister-Code
+        code_help: Antwortcode für die Geozone des Registers API
         coordinates: Koordinaten
+        coordinates_help: Koordinaten, die einen anklickbaren Bereich auf einer HTML-Bildkarte erzeugen
       errors:
         form:
           error:
@@ -1304,6 +1337,7 @@ de:
         document_numbers_note: "Geben Sie die Nummern durch Kommas (,) getrennt ein"
         submit: Unterschriftenbogen erstellen
         text_help:
+          required_fields_note: "Um einen Benutzer zu verifizieren, benötigt Ihre Anwendung: Dokumentnummer"
           date_of_birth_note: ", Geburtstag (tt/mm/yyyy)"
           postal_code_note: " und Postleitzahl"
           required_fields_structure_note: "Die Pflichtfelder für jeden Benutzer müssen durch Kommas und jeder Benutzer durch Strichpunkt getrennt sein."
