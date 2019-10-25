@@ -391,10 +391,16 @@ Style/IdenticalConditionalBranches:
 Style/MethodDefParentheses:
   Enabled: true
 
+Style/MutableConstant:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 
 Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Style/RedundantFreeze:
   Enabled: true
 
 Style/SafeNavigation:

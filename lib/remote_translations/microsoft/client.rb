@@ -3,7 +3,7 @@ include RemoteTranslations::Microsoft::SentencesParser
 
 class RemoteTranslations::Microsoft::Client
   CHARACTERS_LIMIT_PER_REQUEST = 5000
-  PREVENTING_TRANSLATION_KEY = "notranslate"
+  PREVENTING_TRANSLATION_KEY = "notranslate".freeze
 
   def initialize
     api_key = Rails.application.secrets.microsoft_api_key

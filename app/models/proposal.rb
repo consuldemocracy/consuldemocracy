@@ -26,7 +26,7 @@ class Proposal < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  RETIRE_OPTIONS = %w[duplicated started unfeasible done other]
+  RETIRE_OPTIONS = %w[duplicated started unfeasible done other].freeze
 
   translates :title, touch: true
   translates :description, touch: true

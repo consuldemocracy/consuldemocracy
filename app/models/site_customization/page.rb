@@ -1,5 +1,5 @@
 class SiteCustomization::Page < ApplicationRecord
-  VALID_STATUSES = %w[draft published]
+  VALID_STATUSES = %w[draft published].freeze
   has_many :cards,
     class_name:  "Widget::Card",
     foreign_key: "site_customization_page_id",

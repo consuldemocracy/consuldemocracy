@@ -2,7 +2,7 @@ class SignatureSheet < ApplicationRecord
   belongs_to :signable, polymorphic: true
   belongs_to :author, class_name: "User"
 
-  VALID_SIGNABLES = %w[Proposal Budget::Investment]
+  VALID_SIGNABLES = %w[Proposal Budget::Investment].freeze
 
   has_many :signatures
 

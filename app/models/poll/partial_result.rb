@@ -1,5 +1,5 @@
 class Poll::PartialResult < ApplicationRecord
-  VALID_ORIGINS = %w[web booth]
+  VALID_ORIGINS = %w[web booth].freeze
 
   belongs_to :question, -> { with_hidden }, inverse_of: :partial_results
   belongs_to :author, ->   { with_hidden }, class_name: "User", inverse_of: :poll_partial_results

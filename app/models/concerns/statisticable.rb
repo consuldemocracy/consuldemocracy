@@ -1,6 +1,6 @@
 module Statisticable
   extend ActiveSupport::Concern
-  PARTICIPATIONS = %w[gender age geozone]
+  PARTICIPATIONS = %w[gender age geozone].freeze
 
   included do
     attr_reader :resource

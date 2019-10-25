@@ -8,7 +8,7 @@ module GraphQL
       float: GraphQL::FLOAT_TYPE,
       double: GraphQL::FLOAT_TYPE,
       string: GraphQL::STRING_TYPE
-    }
+    }.freeze
 
     def self.create(api_types_definitions)
       created_types = {}
