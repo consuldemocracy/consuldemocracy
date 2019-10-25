@@ -12,8 +12,8 @@ class Budget
     include Sanitizable
 
     belongs_to :budget
-    belongs_to :next_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
-    has_one :prev_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
+    belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
+    has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
     validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191020153455) do
+ActiveRecord::Schema.define(version: 20191024025634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1141,12 +1141,12 @@ ActiveRecord::Schema.define(version: 20191020153455) do
   create_table "poll_pair_answers", force: :cascade do |t|
     t.integer  "question_id"
     t.integer  "author_id"
-    t.integer  "answer_rigth_id"
+    t.integer  "answer_right_id"
     t.integer  "answer_left_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.index ["answer_left_id"], name: "index_poll_pair_answers_on_answer_left_id", using: :btree
-    t.index ["answer_rigth_id"], name: "index_poll_pair_answers_on_answer_rigth_id", using: :btree
+    t.index ["answer_right_id"], name: "index_poll_pair_answers_on_answer_right_id", using: :btree
     t.index ["author_id"], name: "index_poll_pair_answers_on_author_id", using: :btree
     t.index ["question_id"], name: "index_poll_pair_answers_on_question_id", using: :btree
   end

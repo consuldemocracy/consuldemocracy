@@ -24,11 +24,12 @@ class Poll < ApplicationRecord
   has_many :officer_assignments, through: :booth_assignments
   has_many :officers, through: :officer_assignments
   has_many :questions, inverse_of: :poll, dependent: :destroy
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :ballot_sheets
 
-  has_and_belongs_to_many :geozones
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  has_many :geozones_polls
+  has_many :geozones, through: :geozones_polls
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :polls
   belongs_to :related, polymorphic: true
   belongs_to :budget
 

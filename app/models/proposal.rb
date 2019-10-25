@@ -35,13 +35,13 @@ class Proposal < ApplicationRecord
   include Globalizable
   translation_class_delegate :retired_at
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals
   belongs_to :geozone
-  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
   has_many :dashboard_executed_actions, dependent: :destroy, class_name: "Dashboard::ExecutedAction"
   has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
-  has_many :polls, as: :related
+  has_many :polls, as: :related, inverse_of: :related
 
   extend DownloadSettings::ProposalCsv
   delegate :name, :email, to: :author, prefix: true

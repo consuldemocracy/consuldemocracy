@@ -2,7 +2,7 @@ class ProposalNotification < ApplicationRecord
   include Graphqlable
   include Notifiable
 
-  belongs_to :author, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, class_name: "User"
   belongs_to :proposal
 
   validates :title, presence: true

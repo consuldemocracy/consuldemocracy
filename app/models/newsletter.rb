@@ -1,5 +1,5 @@
 class Newsletter < ApplicationRecord
-  has_many :activities, as: :actionable
+  has_many :activities, as: :actionable, inverse_of: :actionable
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true

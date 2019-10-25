@@ -2,11 +2,11 @@ module Milestoneable
   extend ActiveSupport::Concern
 
   included do
-    has_many :milestones, as: :milestoneable, dependent: :destroy
+    has_many :milestones, as: :milestoneable, inverse_of: :milestoneable, dependent: :destroy
 
     scope :with_milestones, -> { joins(:milestones).distinct }
 
-    has_many :progress_bars, as: :progressable
+    has_many :progress_bars, as: :progressable, inverse_of: :progressable
 
     acts_as_taggable_on :milestone_tags
 

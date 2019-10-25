@@ -15,13 +15,7 @@ Performance/EndWith:
 Performance/StartWith:
   Enabled: true
 
-Rails/HasAndBelongsToMany:
-  Enabled: true
-
 Rails/HasManyOrHasOneDependent:
-  Enabled: true
-
-Rails/InverseOf:
   Enabled: true
 
 Rails/SkipsModelValidations:

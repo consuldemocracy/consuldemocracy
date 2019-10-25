@@ -2,7 +2,7 @@ module Followable
   extend ActiveSupport::Concern
 
   included do
-    has_many :follows, as: :followable, dependent: :destroy
+    has_many :follows, as: :followable, inverse_of: :followable, dependent: :destroy
     has_many :followers, through: :follows, source: :user
 
     scope :followed_by_user, ->(user) {

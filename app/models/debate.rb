@@ -24,9 +24,9 @@ class Debate < ApplicationRecord
   translates :description, touch: true
   include Globalizable
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
 
   extend DownloadSettings::DebateCsv
   delegate :name, :email, to: :author, prefix: true

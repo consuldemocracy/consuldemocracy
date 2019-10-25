@@ -9,14 +9,17 @@ class Poll::Question < ApplicationRecord
   include Globalizable
 
   belongs_to :poll
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :poll_questions
 
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
   has_many :answers, class_name: "Poll::Answer"
-  has_many :question_answers, -> { order "given_order asc" }, class_name: "Poll::Question::Answer", dependent: :destroy
+  has_many :question_answers, -> { order "given_order asc" },
+    class_name: "Poll::Question::Answer",
+    inverse_of: :question,
+    dependent:  :destroy
   has_many :partial_results
-  has_many :pair_answers, class_name: "Poll::PairAnswer"
-  has_one :votation_type, as: :questionable
+  has_many :pair_answers
+  has_one :votation_type, as: :questionable, inverse_of: :questionable
   belongs_to :proposal
 
   attr_accessor :enum_type, :max_votes, :prioritization_type
