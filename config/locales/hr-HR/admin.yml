@@ -39,12 +39,6 @@ hr:
         editing: Uredi zastavu
         form:
           submit_button: Spremi promjene
-      errors:
-        form:
-          error:
-            one: "greška ne dozvoljava ovoj zastavi da se spremi"
-            few: "greške ne dozvoljavaju ovoj zastavi da se spremi"
-            other: "greške ne dozvoljavaju ovoj zastavi da se spremi"
       new:
         creating: Stvori zastavu
     activity:
@@ -408,9 +402,6 @@ hr:
         edit:
           back: Nazad
           submit_button: Spremi promjene
-        errors:
-          form:
-            error: Pogreška
         form:
           enabled: Omogućeno
           process: Proces
@@ -485,9 +476,6 @@ hr:
           back: Nazad
           submit_button: Spremi promjene
           warning: Možete urediti tekst, nemojte zaboraviti klinuti Spremi kako bi trajno spremili promjene.
-        errors:
-          form:
-            error: Pogreška
         form:
           launch_text_editor: Upali uređivač teksta
           close_text_editor: Zatvori uređivač teksta
@@ -528,9 +516,6 @@ hr:
           back: Nazad
           title: "Uredi \"%{question_title}\""
           submit_button: Spremi promjene
-        errors:
-          form:
-            error: Pogreška
         form:
           add_option: Dodaj opciju
           title_placeholder: Dodaj pitanje
@@ -1227,12 +1212,6 @@ hr:
         code_help: Kod odgovora za ovu geozonu na cenzus API
         coordinates: Coordinate
         coordinates_help: Koordinate koje će stvoriti područja koja mogu biti označena na HTML mapi slika
-      errors:
-        form:
-          error:
-            one: "greška je spriječena u ovoj geozoni od spremanja"
-            few: "greške su spriječene u ovoj geozoni od spremanja"
-            other: "greške su spriječene u ovoj geozoni od spremanja"
       edit:
         form:
           submit_button: Spremi promjene
@@ -1383,9 +1362,6 @@ hr:
           notice: Blokovi sadržaja su uspješno obrisani
         edit:
           title: Uređivanje sadržaja blokova
-        errors:
-          form:
-            error: Pogreška
         index:
           create: Stvori novi sadržaj blokova
           delete: Obriši blok
@@ -1423,9 +1399,6 @@ hr:
           notice: Slika je uspješno obrisana
         edit:
           title: Uređivanje %{page_title}
-        errors:
-          form:
-            error: Pogreška
         form:
           options: Opcije
         index:
