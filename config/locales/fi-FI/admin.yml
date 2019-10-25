@@ -31,11 +31,6 @@ fi:
         editing: Muokkaa banneria
         form:
           submit_button: Tallenna muutokset
-      errors:
-        form:
-          error:
-            one: "virhe esti bannerin tallennuksen"
-            other: "virheet esti bannerin tallennuksen"
       new:
         creating: Luo banneri
     activity:
@@ -202,9 +197,6 @@ fi:
         edit:
           back: Takaisin
           submit_button: Tallenna muutokset
-        errors:
-          form:
-            error: Virhe
         form:
           enabled: Käytössä
           process: Prosessi
@@ -241,9 +233,6 @@ fi:
         edit:
           back: Takaisin
           submit_button: Tallenna muutokset
-        errors:
-          form:
-            error: Virhe
         form:
           close_text_editor: Sulje tekstieditori
         index:
@@ -261,9 +250,6 @@ fi:
         edit:
           back: Takaisin
           submit_button: Tallenna muutokset
-        errors:
-          form:
-            error: Virhe
         index:
           back: Takaisin
           create: Luo kysymys
@@ -551,9 +537,6 @@ fi:
         search: Etsi
     site_customization:
       content_blocks:
-        errors:
-          form:
-            error: Virhe
         content_block:
           name: Nimi
       images:
@@ -567,9 +550,6 @@ fi:
       pages:
         destroy:
           notice: Sivu poistettu onnistuneesti
-        errors:
-          form:
-            error: Virhe
         index:
           delete: Poista sivu
         page:
