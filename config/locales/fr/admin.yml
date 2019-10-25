@@ -37,11 +37,6 @@ fr:
         editing: Modifier la bannière
         form:
           submit_button: Sauvegarder des changements
-      errors:
-        form:
-          error:
-            one: "a empêché cette bannière d'être sauvegardée"
-            other: "ont empêchés cette bannière d'être sauvegardée"
       new:
         creating: Créer la bannière
     activity:
@@ -382,9 +377,6 @@ fr:
         edit:
           back: Retour
           submit_button: Sauvegarder des changements
-        errors:
-          form:
-            error: Erreur
         form:
           enabled: Activé
           process: Processus
@@ -456,9 +448,6 @@ fr:
           back: Retour
           submit_button: Sauvegarder des changements
           warning: Vous avez modifié le texte, n’oubliez pas de cliquer sur Enregistrer pour enregistrer vos modifications.
-        errors:
-          form:
-            error: Erreur
         form:
           launch_text_editor: Lancer l’éditeur de texte
           close_text_editor: Fermer l'éditeur de text
@@ -499,9 +488,6 @@ fr:
           back: Retour
           title: "Editer “%{question_title}”"
           submit_button: Sauvegarder des changements
-        errors:
-          form:
-            error: Erreur
         form:
           add_option: Ajouter une option
           title_placeholder: Ajouter une question
@@ -1118,11 +1104,6 @@ fr:
         external_code: Code externe
         census_code: Code du bureau de recensement
         coordinates: Coordonnées
-      errors:
-        form:
-          error:
-            one: "a empêché ce district d'être sauvegardé"
-            other: "a empêché ce district d'être sauvegardé"
       edit:
         form:
           submit_button: Sauvegarder des changements
@@ -1261,9 +1242,6 @@ fr:
           notice: Bloc de contenu supprimé avec succès
         edit:
           title: Mettre-à-jour le bloc de contenu
-        errors:
-          form:
-            error: Erreur
         index:
           create: Créer un nouveau bloc de contenu
           delete: Supprimer le bloc
@@ -1301,9 +1279,6 @@ fr:
           notice: Page supprimée avec succès
         edit:
           title: Édition de %{page_title}
-        errors:
-          form:
-            error: Erreur
         form:
           options: Options
         index:
