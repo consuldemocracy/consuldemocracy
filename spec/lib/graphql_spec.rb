@@ -23,7 +23,7 @@ end
 
 def extract_fields(response, collection_name, field_chain)
   fields = field_chain.split(".")
-  dig(response, "data.#{collection_name}.edges").collect do |node|
+  dig(response, "data.#{collection_name}.edges").map do |node|
     begin
       if fields.size > 1
         node["node"][fields.first][fields.second]
@@ -60,8 +60,8 @@ describe "Consul Schema" do
     comment_2 = create(:comment, author: comments_author, commentable: proposal)
 
     response = execute("{ proposal(id: #{proposal.id}) { comments { edges { node { body } } } } }")
-    comments = dig(response, "data.proposal.comments.edges").collect { |edge| edge["node"] }
-    comment_bodies = comments.collect { |comment| comment["body"] }
+    comments = dig(response, "data.proposal.comments.edges").map { |edge| edge["node"] }
+    comment_bodies = comments.map { |comment| comment["body"] }
 
     expect(comment_bodies).to match_array([comment_1.body, comment_2.body])
   end

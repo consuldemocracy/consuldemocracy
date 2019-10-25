@@ -58,7 +58,7 @@ class Tracking::BudgetInvestmentsController < Tracking::BaseController
                               }
                             ]
 
-      investment_headings.inject(all_headings_filter) do |filters, heading|
+      investment_headings.reduce(all_headings_filter) do |filters, heading|
         filters << {
           name: heading.name,
           id: heading.id,

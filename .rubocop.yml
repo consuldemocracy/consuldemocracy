@@ -379,6 +379,9 @@ Style/ClassCheck:
 Style/ClassVars:
   Enabled: true
 
+Style/CollectionMethods:
+  Enabled: true
+
 Style/Not:
   Enabled: true
 

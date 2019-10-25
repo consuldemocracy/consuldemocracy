@@ -60,7 +60,7 @@ module TranslatableFormHelper
       end
 
       def existing_translation_for(locale)
-        @object.translations.detect { |translation| translation.locale == locale }
+        @object.translations.find { |translation| translation.locale == locale }
       end
 
       def new_translation_for(locale)

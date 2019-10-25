@@ -80,9 +80,9 @@ class Admin::StatsController < Admin::BaseController
 
     @vote_count = @budget.lines.count
 
-    @vote_count_by_heading = @budget.lines.group(:heading_id).count.collect { |k, v| [Budget::Heading.find(k).name, v] }.sort
+    @vote_count_by_heading = @budget.lines.group(:heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
 
-    @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.collect { |k, v| [Budget::Heading.find(k).name, v] }.sort
+    @user_count_by_district = User.where.not(balloted_heading_id: nil).group(:balloted_heading_id).count.map { |k, v| [Budget::Heading.find(k).name, v] }.sort
   end
 
   def polls

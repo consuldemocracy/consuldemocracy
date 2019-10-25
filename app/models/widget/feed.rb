@@ -12,7 +12,7 @@ class Widget::Feed < ApplicationRecord
   end
 
   def self.active
-    KINDS.collect do |kind|
+    KINDS.map do |kind|
       feed = find_or_create_by!(kind: kind)
       feed if feed.active?
     end.compact

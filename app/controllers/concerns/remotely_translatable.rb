@@ -20,7 +20,7 @@ module RemotelyTranslatable
     end
 
     def resources_groups(*args)
-      feeds = args.detect { |arg| arg&.first.class == Widget::Feed } || []
+      feeds = args.find { |arg| arg&.first.class == Widget::Feed } || []
 
       args.compact - [feeds] + feeds.map(&:items)
     end

@@ -71,7 +71,7 @@ class Poll::Question < ApplicationRecord
   end
 
   def answers_total_votes
-    question_answers.visibles.inject(0) { |total, question_answer| total + question_answer.total_votes }
+    question_answers.visibles.reduce(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
   def most_voted_answer_id
