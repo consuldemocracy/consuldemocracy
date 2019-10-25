@@ -39,11 +39,6 @@ tr:
         editing: Banner düzenleme
         form:
           submit_button: Değişiklikleri kaydet
-      errors:
-        form:
-          error:
-            one: "hata bu bannerın kaydedilmesini engelledi"
-            other: "hatalar bu bannerın kaydedilmesini engelledi"
       new:
         creating: Banner oluştur
     activity:
@@ -449,9 +444,6 @@ tr:
         edit:
           back: Geri
           submit_button: Değişiklikleri kaydet
-        errors:
-          form:
-            error: Hata
         form:
           enabled: Etkinleştirildi
           process: İşlem
@@ -527,9 +519,6 @@ tr:
           back: Geri
           submit_button: Değişiklikleri kaydet
           warning: Metni düzenlediniz, değişiklikleri kalıcı olarak kaydetmek için Kaydet'e tıklamayı unutmayın.
-        errors:
-          form:
-            error: Hata
         form:
           launch_text_editor: Metin düzenleyicisini başlatın
           close_text_editor: Metin düzenleyiciyi kapatın
@@ -570,9 +559,6 @@ tr:
           back: Geri
           title: "Düzenle \"%{question_title}\""
           submit_button: Değişiklikleri kaydet
-        errors:
-          form:
-            error: Hata
         form:
           add_option: Seçenek ekle
           title_placeholder: Soru ekle
@@ -1292,11 +1278,6 @@ tr:
         code_help: Census API'sındaki bu coğrafi bölge için yanıt kodu
         coordinates: Koordinatlar
         coordinates_help: Bir HTML resim haritasında tıklanabilir bir alan oluşturacak koordinatlar
-      errors:
-        form:
-          error:
-            one: "hata bu coğrafi bölgenin (geozone) kaydedilmesini engelledi"
-            other: "hatalar bu coğrafi bölgenin (geozone) kaydedilmesini engelledi"
       edit:
         form:
           submit_button: Değişiklikleri kaydet
@@ -1445,9 +1426,6 @@ tr:
           notice: İçerik bloğu başarıyla silindi
         edit:
           title: İçerik bloğu düzenleniyor
-        errors:
-          form:
-            error: Hata
         index:
           create: Yeni içerik bloğu oluştur
           delete: Blok silme
@@ -1485,9 +1463,6 @@ tr:
           notice: Sayfa başarıyla silindi
         edit:
           title: Düzenleniyor %{page_title}
-        errors:
-          form:
-            error: Hata
         form:
           options: Seçenekler
         index:
