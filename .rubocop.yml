@@ -1,3 +1,1 @@
 inherit_from: .rubocop_basic.yml
-Rails/HasManyOrHasOneDependent:
-  Enabled: true

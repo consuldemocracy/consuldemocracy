@@ -218,6 +218,10 @@ Rails/FindBy:
 Rails/FindEach:
   Enabled: true
 
+Rails/HasManyOrHasOneDependent:
+  Enabled: true
+  Severity: refactor
+
 Rails/HttpPositionalArguments:
   Enabled: true
 
