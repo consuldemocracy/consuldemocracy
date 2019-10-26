@@ -26,7 +26,7 @@ module SignatureSheetsHelper
     text_help += tag(:br)
     text_help += t("admin.signature_sheets.new.text_help.required_fields_structure_note")
 
-    return text_help
+    text_help
   end
 
   def example_text_help
@@ -45,6 +45,6 @@ module SignatureSheetsHelper
     end
 
     text_example += "#{example_1}; #{example_2}"
-    return text_example
+    text_example
   end
 end

@@ -409,6 +409,9 @@ Style/Proc:
 Style/RedundantFreeze:
   Enabled: true
 
+Style/RedundantReturn:
+  Enabled: true
+
 Style/SafeNavigation:
   Enabled: true
 

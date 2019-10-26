@@ -52,11 +52,11 @@ class SignatureSheet < ApplicationRecord
 
     def parse_postal_code(required_fields_to_verify)
       if Setting.force_presence_date_of_birth? && Setting.force_presence_postal_code?
-        return required_fields_to_verify[2]
+        required_fields_to_verify[2]
       elsif Setting.force_presence_postal_code?
-        return required_fields_to_verify[1]
+        required_fields_to_verify[1]
       else
-        return nil
+        nil
       end
     end
 end

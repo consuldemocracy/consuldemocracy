@@ -165,6 +165,6 @@ class Debate < ApplicationRecord
   def self.debates_orders(user)
     orders = %w[hot_score confidence_score created_at relevance]
     orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
-    return orders
+    orders
   end
 end

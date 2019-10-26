@@ -243,7 +243,7 @@ class Proposal < ApplicationRecord
   def self.proposals_orders(user)
     orders = %w[hot_score confidence_score created_at relevance archival_date]
     orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
-    return orders
+    orders
   end
 
   def skip_user_verification?
