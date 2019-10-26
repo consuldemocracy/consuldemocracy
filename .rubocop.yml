@@ -397,6 +397,9 @@ Style/MutableConstant:
 Style/Not:
   Enabled: true
 
+Style/OrAssignment:
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
   Enabled: true
 

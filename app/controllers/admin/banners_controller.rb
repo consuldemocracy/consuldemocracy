@@ -62,7 +62,6 @@ class Admin::BannersController < Admin::BaseController
     end
 
     def resource
-      @banner = Banner.find(params[:id]) unless @banner
-      @banner
+      @banner ||= Banner.find(params[:id])
     end
 end
