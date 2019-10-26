@@ -194,13 +194,13 @@ describe "Admin booths assignments" do
       end
 
       within("#recounts_list") do
-        within("#recounting_#{poll.starts_at.to_date.strftime('%Y%m%d')}") do
+        within("#recounting_#{poll.starts_at.to_date.strftime("%Y%m%d")}") do
           expect(page).to have_content 1
         end
-        within("#recounting_#{(poll.ends_at.to_date - 5.days).strftime('%Y%m%d')}") do
+        within("#recounting_#{(poll.ends_at.to_date - 5.days).strftime("%Y%m%d")}") do
           expect(page).to have_content "-"
         end
-        within("#recounting_#{poll.ends_at.to_date.strftime('%Y%m%d')}") do
+        within("#recounting_#{poll.ends_at.to_date.strftime("%Y%m%d")}") do
           expect(page).to have_content 1
         end
       end
