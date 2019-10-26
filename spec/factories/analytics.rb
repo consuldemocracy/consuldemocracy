@@ -12,6 +12,6 @@ FactoryBot.define do
 
   factory :campaign do
     sequence(:name) { |n| "Campaign #{n}" }
-    sequence(:track_id) { |n| n.to_s }
+    sequence(:track_id, &:to_s)
   end
 end

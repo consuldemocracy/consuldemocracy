@@ -13,7 +13,7 @@ class Officing::ResultsController < Officing::BaseController
   end
 
   def create
-    @results.each { |result| result.save! }
+    @results.each(&:save!)
 
     notice = t("officing.results.flash.create")
     redirect_to new_officing_poll_result_path(@poll), notice: notice

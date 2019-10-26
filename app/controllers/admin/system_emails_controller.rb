@@ -91,7 +91,7 @@ class Admin::SystemEmailsController < Admin::BaseController
     end
 
     def load_sample_reply
-      reply = Comment.select { |comment| comment.reply? }.last
+      reply = Comment.select(&:reply?).last
       if reply
         @email = ReplyEmail.new(reply)
       else

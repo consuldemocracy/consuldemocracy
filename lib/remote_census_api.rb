@@ -66,7 +66,7 @@ class RemoteCensusApi
     end
 
     def parse_response_path(path_value)
-      path_value.split(".").map { |section| section.to_sym } if path_value.present?
+      path_value.split(".").map(&:to_sym) if path_value.present?
     end
   end
 

@@ -82,7 +82,7 @@ module BudgetsHelper
       investments = current_budget.investments
     end
 
-    MapLocation.where(investment_id: investments).map { |l| l.json_data }
+    MapLocation.where(investment_id: investments).map(&:json_data)
   end
 
   def display_calculate_winners_button?(budget)

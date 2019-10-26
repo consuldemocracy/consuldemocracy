@@ -632,11 +632,11 @@ describe "Budget Investments" do
       visit budget_investments_path(budget, heading_id: heading.id)
 
       within(".submenu .is-active") { expect(page).to have_content "random" }
-      order = all(".budget-investment h3").map { |i| i.text }
+      order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      new_order = all(".budget-investment h3").map { |i| i.text }
+      new_order = all(".budget-investment h3").map(&:text)
 
       expect(order).to eq(new_order)
     end
@@ -645,14 +645,14 @@ describe "Budget Investments" do
       (per_page + 2).times { create(:budget_investment, heading: heading) }
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      order = all(".budget-investment h3").map { |i| i.text }
+      order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
       click_link "highest rated"
       click_link "random"
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      new_order = all(".budget-investment h3").map { |i| i.text }
+      new_order = all(".budget-investment h3").map(&:text)
 
       expect(order).to eq(new_order)
     end
@@ -662,7 +662,7 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      order = all(".budget-investment h3").map { |i| i.text }
+      order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
       click_link "Next"
@@ -671,7 +671,7 @@ describe "Budget Investments" do
       click_link "Previous"
       expect(page).to have_content "You're on page 1"
 
-      new_order = all(".budget-investment h3").map { |i| i.text }
+      new_order = all(".budget-investment h3").map(&:text)
       expect(order).to eq(new_order)
     end
 
@@ -680,13 +680,13 @@ describe "Budget Investments" do
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      order = all(".budget-investment h3").map { |i| i.text }
+      order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
       click_link Budget::Investment.first.title
       click_link "Go back"
 
-      new_order = all(".budget-investment h3").map { |i| i.text }
+      new_order = all(".budget-investment h3").map(&:text)
       expect(order).to eq(new_order)
     end
 
@@ -812,11 +812,11 @@ describe "Budget Investments" do
       budget.update!(phase: "finished")
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      order = all(".budget-investment h3").map { |i| i.text }
+      order = all(".budget-investment h3").map(&:text)
       expect(order).not_to be_empty
 
       visit budget_investments_path(budget, heading_id: heading.id)
-      new_order = all(".budget-investment h3").map { |i| i.text }
+      new_order = all(".budget-investment h3").map(&:text)
 
       expect(order).to eq(new_order)
     end
@@ -844,7 +844,7 @@ describe "Budget Investments" do
     end
 
     def investments_order
-      all(".budget-investment h3").map { |i| i.text }
+      all(".budget-investment h3").map(&:text)
     end
   end
 

@@ -101,7 +101,7 @@ FactoryBot.define do
     incompatible         { false }
 
     trait :with_confidence_score do
-      before(:save) { |i| i.calculate_confidence_score }
+      before(:save, &:calculate_confidence_score)
     end
 
     trait :feasible do

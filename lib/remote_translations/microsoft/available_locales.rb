@@ -6,7 +6,7 @@ require "json"
 class RemoteTranslations::Microsoft::AvailableLocales
   def self.available_locales
     daily_cache("locales") do
-      remote_available_locales.map { |locale| locale.first }
+      remote_available_locales.map(&:first)
     end
   end
 

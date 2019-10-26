@@ -6,8 +6,8 @@ FactoryBot.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    sequence(:external_code) { |n| n.to_s }
-    sequence(:census_code) { |n| n.to_s }
+    sequence(:external_code, &:to_s)
+    sequence(:census_code, &:to_s)
 
     trait :in_census do
       census_code { "01" }

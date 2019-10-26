@@ -2,9 +2,7 @@ class Organizations::RegistrationsController < Devise::RegistrationsController
   invisible_captcha only: [:create], honeypot: :address, scope: :user
 
   def new
-    super do |user|
-      user.build_organization
-    end
+    super(&:build_organization)
   end
 
   def success

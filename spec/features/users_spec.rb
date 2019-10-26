@@ -418,7 +418,7 @@ describe "Users" do
 
     scenario "Gracefully handle followables that have been hidden" do
       create(:proposal, followers: [user])
-      create(:proposal, followers: [user]) { |proposal| proposal.hide }
+      create(:proposal, followers: [user], &:hide)
 
       visit user_path(user)
 

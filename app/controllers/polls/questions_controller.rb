@@ -49,9 +49,7 @@ class Polls::QuestionsController < ApplicationController
       answer.touch if answer.persisted?
       answer.save!
       answer.record_voter_participation(token)
-      @question.question_answers.visibles.where(question_id: @question).each do |question_answer|
-        question_answer.set_most_voted
-      end
+      @question.question_answers.visibles.where(question_id: @question).each(&:set_most_voted)
     end
 
     def store_answer

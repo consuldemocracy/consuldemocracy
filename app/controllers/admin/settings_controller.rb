@@ -8,7 +8,7 @@ class Admin::SettingsController < Admin::BaseController
                 :poster_feature_short_title_setting, :poster_feature_description_setting
 
   def index
-    all_settings = Setting.all.group_by { |setting| setting.type }
+    all_settings = Setting.all.group_by(&:type)
     @configuration_settings = all_settings["configuration"]
     @feature_settings = all_settings["feature"]
     @participation_processes_settings = all_settings["process"]

@@ -64,9 +64,7 @@ module TranslatableFormHelper
       end
 
       def new_translation_for(locale)
-        @object.translations.new(locale: locale).tap do |translation|
-          translation.mark_for_destruction
-        end
+        @object.translations.new(locale: locale).tap(&:mark_for_destruction)
       end
 
       def highlight_translation_html_class

@@ -420,3 +420,6 @@ Style/StringLiterals:
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
+
+Style/SymbolProc:
+  Enabled: true
