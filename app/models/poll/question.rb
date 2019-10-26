@@ -26,7 +26,7 @@ class Poll::Question < ApplicationRecord
 
   validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
-  validates :poll_id, presence: true, if: Proc.new { |question| question.poll.nil? }
+  validates :poll_id, presence: true, if: proc { |question| question.poll.nil? }
 
   validates_associated :votation_type
   accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true

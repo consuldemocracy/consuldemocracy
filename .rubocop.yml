@@ -403,6 +403,9 @@ Style/OrAssignment:
 Style/PercentLiteralDelimiters:
   Enabled: true
 
+Style/Proc:
+  Enabled: true
+
 Style/RedundantFreeze:
   Enabled: true
 
