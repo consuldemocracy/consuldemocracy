@@ -128,7 +128,7 @@ describe Proposal do
   it "has a code" do
     Setting["proposal_code_prefix"] = "TEST"
     proposal = create(:proposal)
-    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime('%Y-%m')}-#{proposal.id}"
+    expect(proposal.code).to eq "TEST-#{proposal.created_at.strftime("%Y-%m")}-#{proposal.id}"
 
     Setting["proposal_code_prefix"] = "MAD"
   end

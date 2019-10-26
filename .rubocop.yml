@@ -58,10 +58,19 @@ Layout/EndOfLine:
 Layout/ExtraSpacing:
   Enabled: true
 
+Layout/IndentAssignment:
+  Enabled: true
+
+Layout/IndentHeredoc:
+  Enabled: true
+
 Layout/IndentationConsistency:
   EnforcedStyle: indented_internal_methods
 
 Layout/IndentationWidth:
+  Enabled: true
+
+Layout/LeadingBlankLines:
   Enabled: true
 
 Layout/MultilineBlockLayout:
@@ -104,6 +113,9 @@ Layout/SpaceBeforeFirstArg:
   Enabled: true
 
 Layout/SpaceBeforeSemicolon:
+  Enabled: true
+
+Layout/SpaceInLambdaLiteral:
   Enabled: true
 
 Layout/SpaceInsideArrayLiteralBrackets:
@@ -355,10 +367,49 @@ Security/JSONLoad:
 Security/YAMLLoad:
   Enabled: true
 
+Style/AndOr:
+  Enabled: true
+
 Style/BlockDelimiters:
   Enabled: true
 
+Style/ClassCheck:
+  Enabled: true
+
+Style/ClassVars:
+  Enabled: true
+
+Style/CollectionMethods:
+  Enabled: true
+
+Style/HashSyntax:
+  Enabled: true
+
+Style/IdenticalConditionalBranches:
+  Enabled: true
+
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/MutableConstant:
+  Enabled: true
+
+Style/Not:
+  Enabled: true
+
+Style/OrAssignment:
+  Enabled: true
+
 Style/PercentLiteralDelimiters:
+  Enabled: true
+
+Style/Proc:
+  Enabled: true
+
+Style/RedundantFreeze:
+  Enabled: true
+
+Style/RedundantReturn:
   Enabled: true
 
 Style/SafeNavigation:
@@ -366,3 +417,15 @@ Style/SafeNavigation:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/SymbolProc:
+  Enabled: true
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true

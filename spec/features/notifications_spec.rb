@@ -229,7 +229,7 @@ describe "Notifications" do
   end
 
   def remove_users_without_pending_notifications
-    users_without_notifications.each { |user| user.destroy }
+    users_without_notifications.each(&:destroy)
   end
 
   def users_without_notifications

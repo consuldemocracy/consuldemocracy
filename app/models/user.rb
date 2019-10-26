@@ -123,7 +123,7 @@ class User < ApplicationRecord
     string = "%#{search_string}%"
     where("username ILIKE ? OR email ILIKE ? OR document_number ILIKE ?", string, string, string)
   end
-  scope :between_ages, -> (from, to) do
+  scope :between_ages, ->(from, to) do
     where(
       "date_of_birth > ? AND date_of_birth < ?",
       to.years.ago.beginning_of_year,
@@ -313,7 +313,7 @@ class User < ApplicationRecord
   end
 
   def self.username_max_length
-    @@username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
+    @username_max_length ||= columns.find { |c| c.name == "username" }.limit || 60
   end
 
   def self.minimum_required_age

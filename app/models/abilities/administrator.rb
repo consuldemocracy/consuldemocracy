@@ -67,7 +67,7 @@ module Abilities
       can :create, Budget::ValuatorAssignment
       can [:edit_dossier], Budget::Investment
 
-      can(:read_admin_stats, Budget) { |budget| budget.balloting_or_later? }
+      can :read_admin_stats, Budget, &:balloting_or_later?
 
       can [:search, :edit, :update, :create, :index, :destroy], Banner
 

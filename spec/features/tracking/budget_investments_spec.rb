@@ -276,8 +276,8 @@ describe "Valuation budget investments" do
 
       expect(page).to have_content("Create progress bar")
 
-      select("Primary", :from => "Type")
-      fill_in("Current progress", :with => 50)
+      select("Primary", from: "Type")
+      fill_in("Current progress", with: 50)
 
       click_button "Create Progress bar"
 
@@ -295,9 +295,9 @@ describe "Valuation budget investments" do
 
       expect(page).to have_content("Create progress bar")
 
-      select("Secondary", :from => "Type")
-      fill_in("Title", :with => "secondary_progress_bar")
-      fill_in("Current progress", :with => 50)
+      select("Secondary", from: "Type")
+      fill_in("Title", with: "secondary_progress_bar")
+      fill_in("Current progress", with: 50)
 
       click_button "Create Progress bar"
 
@@ -340,7 +340,7 @@ describe "Valuation budget investments" do
 
       page.find("#progress_bar_#{secondary_progress_bar.id}").click_link("Edit")
 
-      fill_in("Title", :with => "edited")
+      fill_in("Title", with: "edited")
       click_button "Update Progress bar"
 
       expect(page).to have_content("Progress bars")

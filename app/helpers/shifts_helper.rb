@@ -8,7 +8,7 @@ module ShiftsHelper
   def shift_recount_scrutiny_dates(booth, polls)
     return [] if polls.blank?
 
-    dates = polls.map(&:ends_at).map(&:to_date).sort.inject([]) do |total, date|
+    dates = polls.map(&:ends_at).map(&:to_date).sort.reduce([]) do |total, date|
       initial_date = date < Date.current ? Date.current : date
       total << (initial_date..date + Poll::RECOUNT_DURATION).to_a
     end
@@ -33,7 +33,7 @@ module ShiftsHelper
   end
 
   def officer_select_options(officers)
-    officers.collect { |officer| [officer.name, officer.id] }
+    officers.map { |officer| [officer.name, officer.id] }
   end
 
   private

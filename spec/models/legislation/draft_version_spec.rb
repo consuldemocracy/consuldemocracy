@@ -20,64 +20,64 @@ describe Legislation::DraftVersion do
   end
 
   def body_markdown
-    <<-BODY_MARKDOWN
-# Title 1
+    <<~BODY_MARKDOWN
+      # Title 1
 
-Some paragraph.
+      Some paragraph.
 
-A list:
+      A list:
 
-- item 1
-- item 2
+      - item 1
+      - item 2
 
-## Subtitle
+      ## Subtitle
 
-Another paragraph.
+      Another paragraph.
 
-# Title 2
+      # Title 2
 
-Something about this.
-BODY_MARKDOWN
+      Something about this.
+    BODY_MARKDOWN
   end
 
   def body_html
-    <<-BODY_HTML
-<h1 id="title-1">Title 1</h1>
+    <<~BODY_HTML
+      <h1 id="title-1">Title 1</h1>
 
-<p>Some paragraph.</p>
+      <p>Some paragraph.</p>
 
-<p>A list:</p>
+      <p>A list:</p>
 
-<ul>
-<li>item 1</li>
-<li>item 2</li>
-</ul>
+      <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      </ul>
 
-<h2 id="subtitle">Subtitle</h2>
+      <h2 id="subtitle">Subtitle</h2>
 
-<p>Another paragraph.</p>
+      <p>Another paragraph.</p>
 
-<h1 id="title-2">Title 2</h1>
+      <h1 id="title-2">Title 2</h1>
 
-<p>Something about this.</p>
-BODY_HTML
+      <p>Something about this.</p>
+    BODY_HTML
   end
 
   def toc_html
-    <<-TOC_HTML
-<ul>
-<li>
-<a href="#title-1">Title 1</a>
-<ul>
-<li>
-<a href="#subtitle">Subtitle</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#title-2">Title 2</a>
-</li>
-</ul>
-TOC_HTML
+    <<~TOC_HTML
+      <ul>
+      <li>
+      <a href="#title-1">Title 1</a>
+      <ul>
+      <li>
+      <a href="#subtitle">Subtitle</a>
+      </li>
+      </ul>
+      </li>
+      <li>
+      <a href="#title-2">Title 2</a>
+      </li>
+      </ul>
+    TOC_HTML
   end
 end

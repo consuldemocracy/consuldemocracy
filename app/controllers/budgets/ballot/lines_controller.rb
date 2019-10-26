@@ -73,9 +73,7 @@ module Budgets
 
         def load_map
           @investments ||= []
-          @investments_map_coordinates = MapLocation.where(investment: @investments).map do |loc|
-            loc.json_data
-          end
+          @investments_map_coordinates = MapLocation.where(investment: @investments).map(&:json_data)
           @map_location = MapLocation.load_from_heading(@heading)
         end
     end

@@ -26,7 +26,7 @@ class Poll::Question < ApplicationRecord
 
   validates_translation :title, presence: true, length: { minimum: 4 }
   validates :author, presence: true
-  validates :poll_id, presence: true, if: Proc.new { |question| question.poll.nil? }
+  validates :poll_id, presence: true, if: proc { |question| question.poll.nil? }
 
   validates_associated :votation_type
   accepts_nested_attributes_for :question_answers, reject_if: :all_blank, allow_destroy: true
@@ -71,11 +71,11 @@ class Poll::Question < ApplicationRecord
   end
 
   def answers_total_votes
-    question_answers.visibles.inject(0) { |total, question_answer| total + question_answer.total_votes }
+    question_answers.visibles.reduce(0) { |total, question_answer| total + question_answer.total_votes }
   end
 
   def most_voted_answer_id
-    question_answers.max_by { |answer| answer.total_votes }.id
+    question_answers.max_by(&:total_votes).id
   end
 
   def answers_with_read_more?

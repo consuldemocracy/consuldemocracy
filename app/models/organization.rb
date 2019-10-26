@@ -42,11 +42,11 @@ class Organization < ApplicationRecord
   end
 
   def self.name_max_length
-    @@name_max_length ||= columns.find { |c| c.name == "name" }.limit || 60
+    @name_max_length ||= columns.find { |c| c.name == "name" }.limit || 60
   end
 
   def self.responsible_name_max_length
-    @@responsible_name_max_length ||= columns.find { |c| c.name == "responsible_name" }.limit || 60
+    @responsible_name_max_length ||= columns.find { |c| c.name == "responsible_name" }.limit || 60
   end
 
   private

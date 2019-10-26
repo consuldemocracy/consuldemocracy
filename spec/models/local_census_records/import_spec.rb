@@ -59,7 +59,7 @@ describe LocalCensusRecords::Import do
       import.save!
 
       valid_document_numbers = ["44556678T", "33556678T", "22556678T", "X11556678"]
-      expect(import.created_records.collect(&:document_number)).to eq(valid_document_numbers)
+      expect(import.created_records.map(&:document_number)).to eq(valid_document_numbers)
     end
 
     it "Add invalid local census records to invalid_records array" do
@@ -74,13 +74,13 @@ describe LocalCensusRecords::Import do
       invalid_records_date_of_births = [Date.parse("07/08/1984"), Date.parse("07/08/1985"), nil,
         Date.parse("07/08/1987")]
       invalid_records_postal_codes = ["7008", "7009", "7010", nil]
-      expect(import.invalid_records.collect(&:document_type))
+      expect(import.invalid_records.map(&:document_type))
         .to eq(invalid_records_document_types)
-      expect(import.invalid_records.collect(&:document_number))
+      expect(import.invalid_records.map(&:document_number))
         .to eq(invalid_records_document_numbers)
-      expect(import.invalid_records.collect(&:date_of_birth))
+      expect(import.invalid_records.map(&:date_of_birth))
         .to eq(invalid_records_date_of_births)
-      expect(import.invalid_records.collect(&:postal_code))
+      expect(import.invalid_records.map(&:postal_code))
       .to eq(invalid_records_postal_codes)
     end
   end

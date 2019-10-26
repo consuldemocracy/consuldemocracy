@@ -15,7 +15,7 @@ class Poll::Question::Answer < ApplicationRecord
   validates_translation :title, presence: true
   validates :given_order, presence: true, uniqueness: { scope: :question_id }
 
-  scope :by_author, -> (author) { where(author: author) }
+  scope :by_author, ->(author) { where(author: author) }
 
   scope :visibles, -> { where(hidden: false) }
 

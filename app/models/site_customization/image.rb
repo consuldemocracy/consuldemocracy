@@ -7,7 +7,7 @@ class SiteCustomization::Image < ApplicationRecord
     "budget_execution_no_image" => [800, 600],
     "map" => [420, 500],
     "logo_email" => [400, 80]
-  }
+  }.freeze
 
   has_attached_file :image
 

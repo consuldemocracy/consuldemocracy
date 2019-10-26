@@ -197,9 +197,9 @@ describe Dashboard::Mailer do
                                       "among other features and rewards that you will discover. "\
                                       "Dont stop adding support and we will not stop rewarding "\
                                       "and helping you!")
-      expect(email).to have_body_text("You have #{Setting['months_to_archive_proposals']} months "\
+      expect(email).to have_body_text("You have #{Setting["months_to_archive_proposals"]} months "\
                                       "since you publish the proposal to get "\
-                                      "#{Setting['votes_for_proposal_success']} support and your "\
+                                      "#{Setting["votes_for_proposal_success"]} support and your "\
                                       "proposal can become a reality. But the first days are the "\
                                       "most important. It is a challenge. Get ready!")
       expect(email).to have_body_text("And for you to start with all the motivation,")

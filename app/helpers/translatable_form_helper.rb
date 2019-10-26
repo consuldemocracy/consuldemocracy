@@ -60,13 +60,11 @@ module TranslatableFormHelper
       end
 
       def existing_translation_for(locale)
-        @object.translations.detect { |translation| translation.locale == locale }
+        @object.translations.find { |translation| translation.locale == locale }
       end
 
       def new_translation_for(locale)
-        @object.translations.new(locale: locale).tap do |translation|
-          translation.mark_for_destruction
-        end
+        @object.translations.new(locale: locale).tap(&:mark_for_destruction)
       end
 
       def highlight_translation_html_class

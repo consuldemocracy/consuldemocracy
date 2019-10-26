@@ -2,7 +2,7 @@ class SignatureSheet < ApplicationRecord
   belongs_to :signable, polymorphic: true
   belongs_to :author, class_name: "User"
 
-  VALID_SIGNABLES = %w[Proposal Budget::Investment]
+  VALID_SIGNABLES = %w[Proposal Budget::Investment].freeze
 
   has_many :signatures
 
@@ -35,7 +35,7 @@ class SignatureSheet < ApplicationRecord
   end
 
   def parsed_required_fields_to_verify_groups
-    required_fields_to_verify.split(/[;]/).collect { |d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/) }
+    required_fields_to_verify.split(/[;]/).map { |d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/) }
   end
 
   def signable_found
@@ -52,11 +52,11 @@ class SignatureSheet < ApplicationRecord
 
     def parse_postal_code(required_fields_to_verify)
       if Setting.force_presence_date_of_birth? && Setting.force_presence_postal_code?
-        return required_fields_to_verify[2]
+        required_fields_to_verify[2]
       elsif Setting.force_presence_postal_code?
-        return required_fields_to_verify[1]
+        required_fields_to_verify[1]
       else
-        return nil
+        nil
       end
     end
 end

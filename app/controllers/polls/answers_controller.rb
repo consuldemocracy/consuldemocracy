@@ -26,9 +26,7 @@ class Polls::AnswersController < ApplicationController
   def delete
     @question = Poll::Question.find_by(id: params[:id])
     !@question.answers.find_by(author: current_user, answer: params[:answer]).destroy
-    @question.question_answers.each do |question_answer|
-      question_answer.set_most_voted
-    end
+    @question.question_answers.each(&:set_most_voted)
     question_answers
     load_for_answers
     if @question.enum_type&.include?("answer_couples")

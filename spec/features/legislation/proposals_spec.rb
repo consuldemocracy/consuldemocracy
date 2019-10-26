@@ -133,7 +133,7 @@ describe "Legislation Proposals" do
   end
 
   def legislation_proposals_order
-    all("[id^='legislation_proposal_']").collect { |e| e[:id] }
+    all("[id^='legislation_proposal_']").map { |e| e[:id] }
   end
 
   scenario "Create a legislation proposal with an image", :js do

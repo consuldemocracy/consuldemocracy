@@ -4,7 +4,7 @@ class ManagerAuthenticator
   end
 
   def auth
-    return false unless [@manager[:login], @manager[:user_key], @manager[:date]].all? { |manager| manager.present? }
+    return false unless [@manager[:login], @manager[:user_key], @manager[:date]].all?(&:present?)
     return @manager if manager_exists? && application_authorized?
 
     false

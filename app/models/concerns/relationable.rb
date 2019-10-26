@@ -13,6 +13,6 @@ module Relationable
   end
 
   def relationed_contents
-    related_contents.not_hidden.map { |related_content| related_content.child_relationable }
+    related_contents.not_hidden.map(&:child_relationable)
   end
 end

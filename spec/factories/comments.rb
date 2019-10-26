@@ -23,7 +23,7 @@ FactoryBot.define do
     end
 
     trait :with_confidence_score do
-      before(:save) { |d| d.calculate_confidence_score }
+      before(:save, &:calculate_confidence_score)
     end
 
     trait :valuation do

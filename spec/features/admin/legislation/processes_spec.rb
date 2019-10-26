@@ -157,7 +157,7 @@ describe "Admin collaborative legislation" do
     end
 
     scenario "Create a legislation process with an image", :js do
-      visit new_admin_legislation_process_path()
+      visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
 
