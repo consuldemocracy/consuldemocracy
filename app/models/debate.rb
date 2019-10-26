@@ -74,7 +74,7 @@ class Debate < ApplicationRecord
     {
       author.username    => "B",
       tag_list.join(" ") => "B",
-      geozone&.name      => "B",
+      geozone&.name      => "B"
     }.merge!(searchable_globalized_values)
   end
 

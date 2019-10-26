@@ -423,3 +423,9 @@ Style/StringLiteralsInInterpolation:
 
 Style/SymbolProc:
   Enabled: true
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: true

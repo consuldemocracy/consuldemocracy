@@ -141,7 +141,7 @@ shared_examples_for "globalizable" do |factory_name|
 
       record.translations_attributes = [
         { id: record.translations.find_by(locale: :es).id, attribute => "" },
-        { id: record.translations.find_by(locale: :en).id, _destroy: true },
+        { id: record.translations.find_by(locale: :en).id, _destroy: true }
       ]
 
       expect(record).not_to be_valid

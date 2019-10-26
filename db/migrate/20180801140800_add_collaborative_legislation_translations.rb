@@ -5,7 +5,7 @@ class AddCollaborativeLegislationTranslations < ActiveRecord::Migration[4.2]
         title:           :string,
         summary:         :text,
         description:     :text,
-        additional_info: :text,
+        additional_info: :text
       },
       { migrate_data: true }
     )

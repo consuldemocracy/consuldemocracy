@@ -21,7 +21,7 @@ class VotationType < ApplicationRecord
     answer_set_open: { enum_type: 7, open_answer: true, prioritized: false,
                        variables: [:max_votes, :max_groups_answers] },
     answer_set_closed: { enum_type: 8, open_answer: false, prioritized: false,
-                         variables: [:max_votes, :max_groups_answers] },
+                         variables: [:max_votes, :max_groups_answers] }
   }.freeze
 
   enum enum_type: ENUM_TYPES_PROPS.map { |k, v| [k, v[:enum_type]] }.to_h.freeze
