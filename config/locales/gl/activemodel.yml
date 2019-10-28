@@ -4,9 +4,6 @@ gl:
       verification:
         residence: "Residencia"
         sms: "SMS"
-      local_census_record/import:
-        one: Rexistro importado do censo local
-        other: Rexistros importados do censo local
     attributes:
       verification:
         residence:
@@ -23,8 +20,6 @@ gl:
         document_type: "Tipo documento"
         document_number: "Número de documento (incluída letra)"
         year_of_birth: "Ano de nacemento"
-      local_census_record/import:
-        file: Ficheiros
     errors:
       models:
         local_census_records/import:
