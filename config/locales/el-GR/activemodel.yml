@@ -20,8 +20,6 @@ el:
         document_type: "Τύπος εγγράφου"
         document_number: "Αριθμός εγγράφου (περιλαμβανομένων χαρακτήρων)"
         year_of_birth: "Χρονολογία γέννησης"
-      local_census_record/import:
-        file: Αρχείο
     errors:
       models:
         local_census_records/import:
