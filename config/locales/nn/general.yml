@@ -39,23 +39,23 @@ nn:
       responses:
         zero: Ingen svar
         zero: "%{count} svar"
-        one: '%{count} svar'
+        one: 1 svar
         other: "%{count} svar"
       responses_show:
         zero: Ingen svar
         zero: "%{count} svar (vis)"
-        one: "%{count} svar (vis)"
+        one: "1 svar (vis)"
         other: "%{count} svar (vis)"
       responses_collapse:
         zero: Ingen svar
         zero: "%{count} svar (skjul)"
-        one: "%{count} svar (skjul)"
+        one: "1 svar (skjul)"
         other: "%{count} svar (skjul)"
       user_deleted: Brukeren er slettet
       votes:
         zero: Ingen stemmer
         zero: "%{count} stemmer"
-        one: '%{count} stemme'
+        one: 1 stemme
         other: "%{count} stemmer"
     form:
       comment_as_admin: Kommenter som administrator
@@ -83,12 +83,12 @@ nn:
       comments:
         zero: Ingen kommentarer
         zero: "%{count} kommentarer"
-        one: '%{count} kommentar'
+        one: 1 kommentar
         other: "%{count} kommentarer"
       votes:
         zero: Ingen stemmer
         zero: "%{count} stemmer"
-        one: '%{count} stemme'
+        one: 1 stemme
         other: "%{count} stemmer"
     edit:
       editing: Rediger debatt
@@ -152,7 +152,7 @@ nn:
       comments:
         zero: Ingen kommentarer
         zero: "%{count} kommentarer"
-        one: '%{count} kommentar'
+        one: 1 kommentar
         other: "%{count} kommentarer"
       comments_title: Kommentarer
       edit_debate_link: Rediger
@@ -577,7 +577,7 @@ nn:
       index:
         title: Forhåndsvisning av plakat
         poster_title: "Du trenger ikke å lete mer,"
-        poster_subtitle: "støtt meg! "
+        poster_subtitle: "støtt meg!"
         proposal_code: "Forslagets kode: %{code}"
         support: Støtt mitt forslag
       new:
@@ -807,23 +807,23 @@ nn:
       filters:
         comments:
           zero: "%{count} kommentarer"
-          one: '%{count} kommentar'
+          one: 1 kommentar
           other: "%{count} kommentarer"
         debates:
           zero: "%{count} debatter"
-          one: '%{count} debatt'
+          one: 1 debatt
           other: "%{count} debatter"
         proposals:
           zero: "%{count} Forslag"
-          one: '%{count} Forslag'
+          one: 1 Forslag
           other: "%{count} Forslag"
         budget_investments:
           zero: "%{count} investeringer"
-          one: '%{count} investering'
+          one: 1 investering
           other: "%{count} investeringer"
         follows:
           zero: "%{count} Følgere"
-          one: '%{count} Følger'
+          one: 1Følger
           other: "%{count} Følgere"
       no_activity: Brukeren har ingen offentlig aktivitet
       no_private_messages: "Denne brukeren aksepterer ikke private meldinger."
