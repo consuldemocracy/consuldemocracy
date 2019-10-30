@@ -111,8 +111,6 @@ en:
         empty_trackers: "There are no trackers"
         name: "Name"
         selected: "Selected"
-        cancel: "Cancel"
-        save: "Save"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments

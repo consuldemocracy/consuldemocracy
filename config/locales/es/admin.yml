@@ -111,8 +111,6 @@ es:
         empty_trackers: "No hay gestores de seguimiento"
         name: "Nombre"
         selected: "Seleccionado"
-        cancel: "Cancelar"
-        save: "Guardar"
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
