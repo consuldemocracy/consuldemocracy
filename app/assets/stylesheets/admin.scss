@@ -786,10 +786,6 @@ code {
   font-weight: bold;
 }
 
-.hidden {
-  display: none;
-}
-
 table {
 
   .callout {
@@ -798,15 +794,6 @@ table {
     margin: 0;
     padding: 0 $line-height / 2;
   }
-}
-
-.info-type {
-  background-color: #ccf5ff;
-  padding: 15px;
-}
-
-.margin-description {
-  margin-top: rem-calc(20);
 }
 
 // 07. Legislation

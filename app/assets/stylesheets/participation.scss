@@ -1740,12 +1740,8 @@
   background: #fafafa;
   border-bottom: 1px solid #eee;
 
-  .margin-bottom {
-    margin-bottom: 0;
-  }
-
-  .orbit-bullets {
-    margin-bottom: 0;
+  .column:nth-child(odd) {
+    border-right: 2px solid $text;
   }
 
   .answer-divider {
@@ -1755,35 +1751,14 @@
     padding-bottom: $line-height;
   }
 
-  .answer-left-divider {
-    border-left: solid 1px $text;
-    padding-left: rem-calc(10);
-  }
-
-  .margin-top {
-    margin-top: rem-calc(10);
-  }
-
-  .margin-bottom {
-    margin-bottom: rem-calc(20);
-  }
-
   .answer-description {
-    max-height: rem-calc(1000);
+    height: 100%;
 
     &.short {
-      max-height: rem-calc(70);
+      height: rem-calc(300);
       overflow: hidden;
-      max-width: rem-calc(700);
     }
   }
-
-  .question-divider {
-    border-bottom: rgba(219, 219, 219, 0.62) solid 1px;
-    margin-bottom: 1rem;
-    padding: rem-calc(24);
-  }
-
 }
 
 .orbit-bullets button {
@@ -2009,69 +1984,6 @@
       }
     }
   }
-}
-
-.icon-like,
-.icon-unlike {
-  background: #fff;
-  border: 2px solid $text-light;
-  border-radius: rem-calc(3);
-  color: $text-light;
-  display: inline-block;
-  font-size: rem-calc(30);
-  line-height: rem-calc(30);
-  padding: rem-calc(3) rem-calc(6);
-  position: relative;
-
-  &:hover,
-  &:active {
-    color: #fff;
-    cursor: pointer;
-    opacity: 1 !important;
-  }
-}
-
-.active-like {
-  color: #fff;
-  cursor: pointer;
-  opacity: 1 !important;
-  background: $like;
-  border: 2px solid $like;
-}
-
-.active-unlike {
-  color: #fff;
-  cursor: pointer;
-  opacity: 1 !important;
-  background: $unlike;
-  border: 2px solid $unlike;
-}
-
-.icon-like {
-
-  &:hover,
-  &:active,
-  .picked {
-    background: $like;
-    border: 2px solid $like;
-  }
-}
-
-.icon-unlike {
-
-  &:hover,
-  &:active {
-    background: $unlike;
-    border: 2px solid $unlike;
-  }
-}
-
-.vote-align {
-  float: right;
-}
-
-.vote-divider {
-  border-bottom: 1px solid $text-light;
 }
 
 // 09. Polls results and stats

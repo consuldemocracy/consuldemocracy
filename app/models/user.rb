@@ -81,7 +81,6 @@ class User < ApplicationRecord
     inverse_of:  :author
   has_many :topics, foreign_key: :author_id, inverse_of: :author
   has_many :budgets, through: :budget_rol_assignments
-  has_many :votation_set_answers
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?

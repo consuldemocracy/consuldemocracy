@@ -333,11 +333,6 @@ en:
       topic:
         title: "Title"
         description: "Initial text"
-      votation_type:
-        enum_type: "Votation type"
-        max_groups_answers: "Maximum number of answers in the set"
-        max_votes: "Maximum number of votes"
-        prioritization_type: "Prioritization type"
       banner:
         background_color: Background color
         font_color: Font color

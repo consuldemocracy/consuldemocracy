@@ -162,7 +162,6 @@ namespace :admin do
     end
 
     resource :active_polls, only: [:create, :edit, :update]
-    get :get_options_traductions, controller: "questions"
   end
 
   resources :verifications, controller: :verifications, only: :index do
