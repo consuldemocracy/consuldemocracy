@@ -10,7 +10,7 @@ class UserSegments
                 not_supported_on_current_budget].freeze
 
   def self.all_users
-    User.active
+    User.active.where.not(confirmed_at: nil)
   end
 
   def self.administrators
