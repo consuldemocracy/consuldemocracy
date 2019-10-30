@@ -104,16 +104,16 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_admins
-      @admins = @budget.administrators.includes(:user).all
+      @admins = @budget.administrators.includes(:user)
     end
 
     def load_trackers
-      @trackers = @budget.trackers.includes(:user).all.order(description: :asc)
+      @trackers = @budget.trackers.includes(:user).order(description: :asc)
                     .order("users.email ASC")
     end
 
     def load_valuators
-      @valuators = @budget.valuators.includes(:user).all.order(description: :asc)
+      @valuators = @budget.valuators.includes(:user).order(description: :asc)
                      .order("users.email ASC")
     end
 
