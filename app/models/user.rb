@@ -23,7 +23,6 @@ class User < ApplicationRecord
   has_many :identities, dependent: :destroy
   has_many :debates, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
-  has_many :people_proposals, -> { with_hidden }, foreign_key: :author_id, inverse_of: :author
   has_many :activities
   has_many :budget_investments, -> { with_hidden },
     class_name:  "Budget::Investment",
