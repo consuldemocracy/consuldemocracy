@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191024025634) do
+ActiveRecord::Schema.define(version: 20191030011956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -780,44 +780,6 @@ ActiveRecord::Schema.define(version: 20191024025634) do
     t.index ["status"], name: "index_legislation_draft_versions_on_status", using: :btree
   end
 
-  create_table "legislation_people_proposals", force: :cascade do |t|
-    t.integer  "legislation_process_id"
-    t.string   "title",                  limit: 80
-    t.text     "description"
-    t.integer  "author_id"
-    t.datetime "hidden_at"
-    t.integer  "flags_count",                       default: 0
-    t.datetime "ignored_flag_at"
-    t.integer  "cached_votes_up",                   default: 0
-    t.integer  "comments_count",                    default: 0
-    t.datetime "confirmed_hide_at"
-    t.bigint   "hot_score",                         default: 0
-    t.integer  "confidence_score",                  default: 0
-    t.string   "responsible_name",       limit: 60
-    t.text     "summary"
-    t.string   "video_url"
-    t.tsvector "tsv"
-    t.datetime "retired_at"
-    t.string   "retired_reason"
-    t.text     "retired_explanation"
-    t.integer  "community_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.integer  "cached_votes_total",                default: 0
-    t.integer  "cached_votes_down",                 default: 0
-    t.boolean  "selected"
-    t.boolean  "validated"
-    t.integer  "cached_votes_score",                default: 0
-    t.string   "email"
-    t.string   "phone"
-    t.string   "twitter"
-    t.string   "facebook"
-    t.string   "instagram"
-    t.string   "youtube"
-    t.string   "website"
-    t.index ["cached_votes_score"], name: "index_legislation_people_proposals_on_cached_votes_score", using: :btree
-  end
-
   create_table "legislation_process_translations", force: :cascade do |t|
     t.integer  "legislation_process_id", null: false
     t.string   "locale",                 null: false
@@ -848,27 +810,24 @@ ActiveRecord::Schema.define(version: 20191024025634) do
     t.date     "allegations_end_date"
     t.date     "result_publication_date"
     t.datetime "hidden_at"
-    t.datetime "created_at",                                        null: false
-    t.datetime "updated_at",                                        null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.text     "summary"
-    t.boolean  "debate_phase_enabled",              default: false
-    t.boolean  "allegations_phase_enabled",         default: false
-    t.boolean  "draft_publication_enabled",         default: false
-    t.boolean  "result_publication_enabled",        default: false
-    t.boolean  "published",                         default: true
+    t.boolean  "debate_phase_enabled",       default: false
+    t.boolean  "allegations_phase_enabled",  default: false
+    t.boolean  "draft_publication_enabled",  default: false
+    t.boolean  "result_publication_enabled", default: false
+    t.boolean  "published",                  default: true
     t.date     "proposals_phase_start_date"
     t.date     "proposals_phase_end_date"
     t.boolean  "proposals_phase_enabled"
     t.text     "proposals_description"
     t.date     "draft_start_date"
     t.date     "draft_end_date"
-    t.boolean  "draft_phase_enabled",               default: false
-    t.boolean  "homepage_enabled",                  default: false
+    t.boolean  "draft_phase_enabled",        default: false
+    t.boolean  "homepage_enabled",           default: false
     t.text     "background_color"
     t.text     "font_color"
-    t.date     "people_proposals_phase_start_date"
-    t.date     "people_proposals_phase_end_date"
-    t.boolean  "people_proposals_phase_enabled"
     t.index ["allegations_end_date"], name: "index_legislation_processes_on_allegations_end_date", using: :btree
     t.index ["allegations_start_date"], name: "index_legislation_processes_on_allegations_start_date", using: :btree
     t.index ["debate_end_date"], name: "index_legislation_processes_on_debate_end_date", using: :btree

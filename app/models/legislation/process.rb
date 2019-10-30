@@ -20,8 +20,7 @@ class Legislation::Process < ApplicationRecord
   extend DownloadSettings::LegislationProcessCsv
 
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
-                               proposals_phase people_proposals_phase draft_publication
-                               result_publication].freeze
+                               proposals_phase draft_publication result_publication].freeze
 
   CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i.freeze
 
@@ -41,10 +40,6 @@ class Legislation::Process < ApplicationRecord
     foreign_key: "legislation_process_id",
     inverse_of:  :process,
     dependent:   :destroy
-  has_many :people_proposals, -> { order(:id) },
-    foreign_key: "legislation_process_id",
-    inverse_of:  :process,
-    dependent:   :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -56,8 +51,6 @@ class Legislation::Process < ApplicationRecord
   validates :allegations_start_date, presence: true, if: :allegations_end_date?
   validates :allegations_end_date, presence: true, if: :allegations_start_date?
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
-  validates :people_proposals_phase_end_date, presence: true,
-              if: :people_proposals_phase_start_date?
   validate :valid_date_ranges
   validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
@@ -99,11 +92,6 @@ class Legislation::Process < ApplicationRecord
   def proposals_phase
     Legislation::Process::Phase.new(proposals_phase_start_date,
                                     proposals_phase_end_date, proposals_phase_enabled)
-  end
-
-  def people_proposals_phase
-    Legislation::Process::Phase.new(people_proposals_phase_start_date,
-                                    people_proposals_phase_end_date, people_proposals_phase_enabled)
   end
 
   def draft_publication
