@@ -294,6 +294,7 @@ de:
       poll/ballot_sheet:
         data: CSV Daten
         poll_id: Abstimmung
+        officer_assignment_id: Zuordnung Verwaltung
       poll/shift:
         task: "Aufgabe"
       proposal_notification:
