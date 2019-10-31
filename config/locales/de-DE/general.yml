@@ -423,6 +423,27 @@ de:
       related_content: Verwandte Inhalte
     form:
       request: Anfrage
+    create_request:
+      success: Die Anfrage wurde erfolgreich versendet. Wir werden Sie so bald wie möglich dazu kontaktieren.
+      archived: Dieser Vorschlag ist archiviert, daher sind keine Anfragen möglich.
+    progress:
+      title: Grafik
+      group_by_month: Monatlich
+      group_by_week: Wöchentlich
+      group_by_date: Täglich
+      progress: Gesammelter Fortschritt
+      supports: Unterstützung
+      success: Idealer Fortschritt
+      new_action: Neu
+    index:
+      title: Edition
+      edit_proposal_link: Vorschlag bearbeiten
+      publish: Vorschlag veröffentlichen
+      retire: Vorschlag zurückziehen
+    new_request:
+      links: Links
+    resources:
+      available_resources: Verfügbare Ressourcen
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
