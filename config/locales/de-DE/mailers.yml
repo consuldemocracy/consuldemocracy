@@ -105,3 +105,5 @@ de:
       subject: "Ihr Entwurf eines Bürger-Vorschlags ist erstellt"
       hi: "Hallo %{name}!"
       introduction: "Ihr %{title} Vorschlag wurde erfolgreich angelegt."
+      text_1: "Nutzen Sie den Vorteil, dass Ihr Vorschlag noch nicht öffentlich ist und kontaktieren Sie viele Leute."
+      text_2: "Wenn Sie bereit sind, veröffentlichen Sie Ihren Bürger-Vorschlag hier <a href='%{link}'>link</a>."
