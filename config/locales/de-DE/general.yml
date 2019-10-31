@@ -405,9 +405,24 @@ de:
       embed_video_title: "Video über %{proposal}"
       title_video_url: "Externes Video"
       author: Autor
+      draft: Vorschlag im Entwurf-Modus. Kann noch keine Unterstützung erhalten und erscheint auch nicht in der Liste der Vorschläge.
     update:
       form:
         submit_button: Änderungen speichern
+  dashboard:
+    menu:
+      my_proposal: Mein Vorschlag bearbeiten
+      progress: Fortschritte
+      resources: Ressourcen
+      community: Community
+      polls: Abstimmungen
+      mailing: E-Mail
+      poster: Poster
+      recommended_actions: Empfohlene Aktionen
+      messages: Nachricht an Benutzer*innen
+      related_content: Verwandte Inhalte
+    form:
+      request: Anfrage
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
