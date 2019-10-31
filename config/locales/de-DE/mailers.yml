@@ -95,3 +95,4 @@ de:
       new_resource: "NEUE FREIGESCHALTETE RESSOURCE"
       introduction: "Nicht vergessen: Sie haben am %{published_at_day} Tag des %{published_at_month} den Vorschlag %{title} veröffentlicht."
       text_1: "Sie haben bisher %{votes_count} Unterstützung erhalten: Herzlichen Glückwunsch!"
+      text_2: "Sie haben eine neue Ressource zur Verfügung, die Ihnen hilft, weiter voranzukommen."
