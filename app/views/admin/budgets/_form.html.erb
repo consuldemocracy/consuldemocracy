@@ -2,8 +2,6 @@
 
 <%= translatable_form_for [:admin, @budget] do |f| %>
 
-  <div class="js-budget-id" id="<%= @budget.id %>"></div>
-
   <%= render "shared/errors", resource: @budget %>
 
   <div class="row">
@@ -29,7 +27,7 @@
         <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
           "#",
           class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
-          data: { toggle: "#{staff}_list" } %>
+          data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
       </div>
     <% end %>
   </div>
