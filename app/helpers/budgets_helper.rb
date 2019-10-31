@@ -53,15 +53,9 @@ module BudgetsHelper
     Budget::Ballot.where(user: current_user, budget: @budget).first
   end
 
-  def investment_tags_select_options(budget)
-    tags = budget.investments.tags_on(:valuation_tags).order(:name).pluck(:name)
-    tags = tags.concat budget.valuation_tag_list
-    tags.uniq
-  end
-
-  def investment_milestone_tags_select_options(budget)
-    tags = budget.investments.tags_on(:milestone_tags).order(:name).pluck(:name)
-    tags = tags.concat budget.milestone_tag_list
+  def investment_tags_select_options(budget, context)
+    tags = budget.investments.tags_on(context).order(:name).pluck(:name)
+    tags = tags.concat budget.tag_list_on(context)
     tags.uniq
   end
 
