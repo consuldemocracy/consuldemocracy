@@ -141,9 +141,6 @@ en:
         description_finished: "Description when the budget is finished"
         phase: "Phase"
         currency_symbol: "Currency"
-        milestone_tag_list: "Milestone tags"
-        valuation_tag_list: "Valuation tags"
-        help_link: "Help link"
       budget/translation:
         name: "Name"
       budget/investment:

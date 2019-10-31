@@ -70,9 +70,6 @@ class Admin::BudgetsController < Admin::BaseController
       descriptions = Budget::Phase::PHASE_KINDS.map { |p| "description_#{p}" }.map(&:to_sym)
       valid_attributes = [:phase,
                           :currency_symbol,
-                          :help_link,
-                          :milestone_tag_list,
-                          :valuation_tag_list,
                           administrator_ids: [],
                           valuator_ids: [],
                           tracker_ids: []

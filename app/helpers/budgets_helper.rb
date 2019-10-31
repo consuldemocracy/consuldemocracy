@@ -54,10 +54,7 @@ module BudgetsHelper
   end
 
   def investment_tags_select_options(budget, context)
-    taggables = [budget] + budget.investments
-    Tag.joins(:taggings)
-       .merge(Tagging.where(taggable: taggables, context: context))
-       .distinct.order(:name).pluck(:name)
+    budget.investments.tags_on(context).order(:name).pluck(:name)
   end
 
   def unfeasible_or_unselected_filter

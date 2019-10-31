@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191031173943) do
+ActiveRecord::Schema.define(version: 20191031210734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -407,7 +407,6 @@ ActiveRecord::Schema.define(version: 20191031173943) do
     t.text     "description_drafting"
     t.text     "description_publishing_prices"
     t.text     "description_informing"
-    t.string   "help_link"
   end
 
   create_table "campaigns", force: :cascade do |t|
@@ -1485,8 +1484,6 @@ ActiveRecord::Schema.define(version: 20191031173943) do
     t.integer "budget/investments_count",                default: 0
     t.integer "legislation/proposals_count",             default: 0
     t.integer "legislation/processes_count",             default: 0
-    t.integer "budgets_count",                           default: 0
-    t.index ["budgets_count"], name: "index_tags_on_budgets_count", using: :btree
     t.index ["debates_count"], name: "index_tags_on_debates_count", using: :btree
     t.index ["legislation/processes_count"], name: "index_tags_on_legislation/processes_count", using: :btree
     t.index ["legislation/proposals_count"], name: "index_tags_on_legislation/proposals_count", using: :btree
