@@ -71,8 +71,8 @@ class Admin::BudgetsController < Admin::BaseController
       valid_attributes = [:phase,
                           :currency_symbol,
                           :help_link,
-                          :budget_milestone_tags,
-                          :budget_valuation_tags,
+                          :milestone_tag_list,
+                          :valuation_tag_list,
                           administrator_ids: [],
                           valuator_ids: [],
                           tracker_ids: []

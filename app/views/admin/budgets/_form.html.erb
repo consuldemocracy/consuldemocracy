@@ -40,10 +40,14 @@
 
   <div class="margin-top">
     <div class="small-12 medium-9 column end">
-      <%= f.text_field :budget_milestone_tags, placeholder: t("admin.budget_investments.edit.tags_placeholder") %>
+      <%= f.text_field :milestone_tag_list,
+        value: @budget.milestone_tag_list.sort.join(","),
+        placeholder: t("admin.budget_investments.edit.tags_placeholder") %>
     </div>
     <div class="small-12 medium-9 column end">
-      <%= f.text_field :budget_valuation_tags, placeholder: t("admin.budget_investments.edit.tags_placeholder") %>
+      <%= f.text_field :valuation_tag_list,
+        value: @budget.valuation_tag_list.sort.join(","),
+        placeholder: t("admin.budget_investments.edit.tags_placeholder") %>
     </div>
     <div class="small-12 medium-9 column end">
       <%= f.text_field :help_link %>

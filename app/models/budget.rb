@@ -4,6 +4,9 @@ class Budget < ApplicationRecord
   include StatsVersionable
   include Reportable
 
+  acts_as_taggable_on :valuation_tags
+  acts_as_taggable_on :milestone_tags
+
   translates :name, touch: true
   include Globalizable
 

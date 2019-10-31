@@ -143,8 +143,8 @@ es:
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
         phase: "Fase"
         currency_symbol: "Divisa"
-        budget_milestone_tags: "Etiquetas de seguimiento"
-        budget_valuation_tags: "Etiquetas de evaluación"
+        milestone_tag_list: "Etiquetas de seguimiento"
+        valuation_tag_list: "Etiquetas de evaluación"
         help_link: "Enlace de ayuda"
       budget/translation:
         name: "Nombre"
