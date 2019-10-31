@@ -60,7 +60,7 @@ module BudgetsHelper
   end
 
   def investment_milestone_tags_select_options(budget)
-    tags = budget.investments.tags_on(:milestone).order(:name).pluck(:name)
+    tags = budget.investments.tags_on(:milestone_tags).order(:name).pluck(:name)
     tags = tags.concat budget.budget_milestone_tags.split(",") if budget.budget_milestone_tags.present?
     tags.uniq
   end
