@@ -18,6 +18,7 @@ de:
       title: Bestätigen Sie Ihr Konto über den folgenden Link
     reply:
       hi: Hallo
+      new_reply_by: Es gibt eine neue Antwort von <strong>%{commenter}</strong> auf Ihren Kommentar
       subject: Jemand hat auf Ihren Kommentar geantwortet
       title: Neue Antwort auf Ihren Kommentar
     proposal_notification_digest:
@@ -34,8 +35,10 @@ de:
       unsubscribe_account: Mein Konto
     direct_message_for_sender:
       subject: "Sie haben eine neue persönliche Nachricht gesendet"
+      title: "Sie haben eine neue persönliche Nachricht versendet an <strong>%{receiver}</strong> mit dem Inhalt:"
     user_invite:
       ignore: "Wenn Sie diese Einladung nicht angefordert haben, können Sie diese E-Mail einfach ignorieren."
+      text: "Danke für Ihre Anmeldung bei %{org}! In wenigen Sekunden können Sie beginnen Ihre Stadt mitzugestalten. Füllen Sie einfach vorher das untenstehende Formular aus:"
       thanks: "Vielen Dank."
       title: "Willkommen zu %{org}"
       button: Registrierung abschließen
@@ -43,11 +46,15 @@ de:
     budget_investment_created:
       subject: "Danke, dass Sie einen Budgetvorschlag erstellt haben!"
       title: "Danke, dass Sie einen Budgetvorschlag erstellt haben!"
+      intro: "Hallo <strong>%{author}</strong>,"
+      text: "Vielen Dank, dass Sie einen Budgetvorschlag <strong>%{investment}</strong> für den Bürgerhaushalt erstellt haben <strong>%{budget}</strong>."
+      follow: "Wir werden Sie über den Fortgang des Prozesses informieren, dem Sie auch über folgenden <strong>%{link}</strong> folgen können."
       follow_link: "Bürgerhaushalte"
       sincerely: "Mit freundlichen Grüßen,"
       share: "Teilen Sie Ihr Projekt"
     budget_investment_unfeasible:
       hi: "Liebe*r Benutzer*in,"
+      new: "Hierfür laden wir Sie ein, eine <strong>neue Investition</strong> auszuarbeiten, die an die Konditionen dieses Prozesses angepasst sind. Sie können dies über folgenden Link tun: %{url}."
       new_href: "neuer Ausgabenvorschlag"
       sincerely: "Mit freundlichen Grüßen"
       sorry: "Entschuldigung für die Unannehmlichkeiten und vielen Dank für Ihre wertvolle Beteiligung."
@@ -64,3 +71,7 @@ de:
       hi: "Liebe*r Benutzer*in,"
       thanks: "Vielen Dank für Ihre Teilnahme."
       sincerely: "Mit freundlichen Grüßen"
+    evaluation_comment:
+      subject: "Neuer Bewertungs-Kommentar"
+      title: Neuer Bewertungs-Kommentar für %{investment}
+      hi: Hallo
