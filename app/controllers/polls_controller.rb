@@ -20,26 +20,13 @@ class PollsController < ApplicationController
   def show
     @questions = @poll.questions.for_render.sort_for_list
     @token = poll_voter_token(@poll, current_user)
-    @poll_questions_answers = Poll::Question::Answer.visibles
-                                                    .where(question: @poll.questions)
+    @poll_questions_answers = Poll::Question::Answer.where(question: @poll.questions)
                                                     .where.not(description: "").order(:given_order)
 
     @answers_by_question_id = {}
-
-    @last_pair_question_answers = {}
-    @questions.each do |question|
-      @answers_by_question_id[question.id] = question.answers.by_author(current_user).pluck(:answer)
-
-      if question.enum_type&.include?("answer_couples")
-        last_pair = question.pair_answers.by_author(current_user).first
-        last_pair ||= generate_and_store_new_pair(question)
-        @last_pair_question_answers[question.id] = last_pair
-      end
-
-      if question.enum_type&.include?("answer_set_closed") ||
-        question.enum_type&.include?("answer_set_open")
-        votation_answer_sets(question)
-      end
+    poll_answers = ::Poll::Answer.by_question(@poll.question_ids).by_author(current_user&.id)
+    poll_answers.each do |answer|
+      @answers_by_question_id[answer.question_id] = answer.answer
     end
 
     @commentable = @poll
@@ -55,27 +42,11 @@ class PollsController < ApplicationController
 
   private
 
-    def votation_answer_sets(question)
-      if question.votation_type.votation_set_answers.by_author(current_user).empty?
-        question.question_answers&.sample(question.max_groups_answers).each do |question_answer|
-          answer = VotationSetAnswer.new(answer: question_answer.title,
-                                           votation_type: question.votation_type,
-                                           author: current_user)
-          question.votation_type.votation_set_answers << answer
-        end
-        !question.save
-      end
-    end
-
     def load_poll
       @poll = Poll.where(slug: params[:id]).first || Poll.where(id: params[:id]).first
     end
 
     def load_active_poll
       @active_poll = ActivePoll.first
-    end
-
-    def generate_and_store_new_pair(question)
-      Poll::PairAnswer.generate_pair(question, current_user)
     end
 end

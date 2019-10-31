@@ -542,7 +542,6 @@ es:
       index:
         title: Encuestas
         create: Crear encuesta
-        succesfull: Respuesta añadida correctamente.
         count:
           one: Has creado %{count} encuesta.
           other: Has creado %{count} encuestas.
@@ -632,17 +631,6 @@ es:
         title: Ayuda sobre las votaciones
         description: Las votaciones ciudadanas son un mecanismo de participación por el que la ciudadanía con derecho a voto puede tomar decisiones de forma directa.
       no_polls: "No hay votaciones abiertas."
-      max_votes_reached: "Ya has realizado el número máximo de votos. Muchas gracias por participar"
-      descriptions:
-        unique: Solo se puede responder a la pregunta con una única respuesta.
-        multiple: Permite elegir más de una respuesta. Se puede elegir el número máximo de respuestas.
-        prioritized: Permite elegir mas de una respuesta, que a su vez se podran ordenar por prioridad. Se puede elegir el número máximo de respuestas y que tipo de recuento se utilizará en la priorización.
-        positive_open: Permite votar positivamente a un número máximo de respuestas. Se puede elegir el número máximo y los usuarios podran añadir resuestas.
-        positive_negative_open: Permite votar positiva y negativamente a un máximo de respuestas. Se puede elegir el número máximo y los usuarios podran añadir resuestas.
-        answer_couples_open: Permite votar a un número maximo de pares de respuestas. Se puede elegir el número maximo de pares y los usuarios podran añadir respuestas.
-        answer_couples_closed: Permite votar a un número maximo de pares de respuestas. Se puede elegir el número maximo de pares y los usuarios NO podran añadir respuestas.
-        answer_set_open: Permite votar un número máximo de respuestas en un conjunto de ellas. Se puede elegir el numero máximo de respuestas y el número de respuestas que hay en el conjunto. Los usuarios podran añadir respuestas.
-        answer_set_closed: Permite votar un número máximo de respuestas en un conjunto de ellas. Se puede elegir el numero máximo de respuestas y el número de respuestas que hay en el conjunto.
     show:
       already_voted_in_booth: "Ya has participado en esta votación en urnas presenciales, no puedes volver a participar."
       already_voted_in_web: "Ya has participado en esta votación. Si vuelves a votar se sobreescribirá tu resultado anterior."
@@ -681,20 +669,6 @@ es:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votado %{answer}"
-      your_answer: "Puedes añadir tu propia respuesta"
-      add_answer: "Añadir respuesta"
-    description:
-      multiple: "Puedes seleccionar un máximo de %{maximum} respuestas."
-      positive_negative_open: "Puedes votar, positiva o negativamente, un máximo de %{maximum} respuestas. Puedes añadir tus propias respuestas."
-      multiple: "Puedes seleccionar un máximo de %{maximum} respuestas"
-      answer_couples_open: "Elige una opción entre el siguiente par. Puedes elegir un máximo de %{maximum} respuestas"
-      answer_couples_closed: "Elige una opción entre el siguiente par. Puedes elegir un máximo de %{maximum} respuestas"
-      answer_set_open: "Puede elegir un máximo de %{maximum} respuestas."
-      answer_set_closed: "Puede elegir un máximo de %{maximum} respuestas."
-      prioritized: "Puedes seleccionar un máximo de %{maximum} respuestas. Esta pregunta utilizara el método %{system} para el recuento."
-      positive_open: "Puedes seleccionar un máximo de %{maximum} respuestas y añadir tus propias respuestas."
-      unique: ""
-    read_more_about: "Leer más:"
   proposal_notifications:
     new:
       title: "Enviar mensaje"
@@ -997,21 +971,6 @@ es:
       surveys: Encuestas
     poll:
       take_part: Participa del %{from} al %{to}
-  question:
-    votation_type: Tipo de votación
-  enum_type:
-    unique: Respuesta única, cerrada
-    multiple: Respuesta múltiple, cerrada
-    prioritized: Respuesta múltiple priorizada, cerrada
-    positive_open: Respuestas votables positivamente, abiertas
-    positive_negative_open: Respuestas votables positiva y negativamente, abiertas
-    answer_couples_open: Respuestas a pares, abiertas
-    answer_couples_closed: Respuestas a pares, cerradas
-    answer_set_open: Conjunto de respuestas, abiertas
-    answer_set_closed: Conjunto de respuestas, cerradas
-  prioritization_type:
-    borda: Votación con recuento Borda
-    dowdall: Votación con recuento Dowdall
   remote_translations:
     text: El contenido de esta página no está disponible en tu idioma
     all_remote_translations_enqueued_text: "En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma"

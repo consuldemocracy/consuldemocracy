@@ -63,69 +63,6 @@ FactoryBot.define do
         create(:poll_question_answer, question: question, title: "No")
       end
     end
-
-    factory :poll_question_unique do
-      after(:create) do |question|
-        create(:votation_type_unique, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_multiple do
-      after(:create) do |question|
-        create(:votation_type_multiple, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_prioritized do
-      after(:create) do |question|
-        create(:votation_type_prioritized, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_positive_open do
-      after(:create) do |question|
-        create(:votation_type_positive_open, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_positive_negative_open do
-      after(:create) do |question|
-        create(:votation_type_positive_negative_open, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_answer_couples_open do
-      after(:create) do |question|
-        create(:votation_type_answer_couples_open, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_answer_couples_closed do
-      after(:create) do |question|
-        create(:votation_type_answer_couples_closed, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_answer_set_open do
-      after(:create) do |question|
-        create(:votation_type_answer_set_open, questionable: question)
-        question.reload
-      end
-    end
-
-    factory :poll_question_answer_set_closed do
-      after(:create) do |question|
-        create(:votation_type_answer_set_closed, questionable: question)
-        question.reload
-      end
-    end
   end
 
   factory :poll_question_answer, class: "Poll::Question::Answer" do
@@ -278,12 +215,5 @@ FactoryBot.define do
   end
 
   factory :active_poll do
-  end
-
-  factory :poll_pair_answer, class: "Poll::PairAnswer" do
-    question { create :poll_question }
-    author { create :user }
-    answer_left { create(:poll_question_answer, question: question) }
-    answer_right { create(:poll_question_answer, question: question) }
   end
 end
