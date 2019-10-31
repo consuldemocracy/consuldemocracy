@@ -637,7 +637,6 @@ da:
     show:
       vote_answer: "Stem %{answer}"
       voted: "Du har stemt %{answer}"
-    read_more_about: "Læs mere om:"
   proposal_notifications:
     new:
       title: "Send besked"
