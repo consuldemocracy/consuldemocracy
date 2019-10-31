@@ -51,6 +51,7 @@ es:
         give_support: Avalar
         alert_limit_votes: Te quedan %{votes} avales. ¿Seguro que quieres continuar?
         seleccionada_por_junta: Esta propuesta ha sido avalada en la reunión de Distrito. Se está estudiando su viabilidad técnica y económica.
+        vote_title: Votar esta propuesta
       all_proposals: Todas las propuestas
       header:
         presencial_ballot: Consulta aquí los puntos de votación.

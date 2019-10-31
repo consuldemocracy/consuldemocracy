@@ -368,6 +368,221 @@ class User < ActiveRecord::Base
     budget_headings != user_headings
   end
 
+  def self.old_version(document_number)
+    with_hidden.where(document_number: document_number, email: nil).first
+  end
+
+  def move(document_number)
+    return false unless document_number.present?
+
+    old_user = User.with_hidden.where(document_number: document_number).first
+    Activity.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Administrator.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Ahoy::Event.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Annotation.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Budget::Ballot.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Budget::Investment.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Budget::Investment.where(administrator_id: old_user.id).each do |resource|
+      resource.administrator_id = id
+      resource.save
+    end
+    Budget::ReclassifiedVote.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Budget::ValuatorAssignment.where(valuator_id: old_user.id).each do |resource|
+      resource.valuator_id = id
+      resource.save
+    end
+    Comment.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Comment.where(moderator_id: old_user.id).each do |resource|
+      resource.moderator_id = id
+      resource.save
+    end
+    Comment.where(administrator_id: old_user.id).each do |resource|
+      resource.administator_id = id
+      resource.save
+    end
+    Debate.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    DirectMessage.where(sender_id: old_user.id).each do |resource|
+      resource.sender_id = id
+      resource.save
+    end
+    DirectMessage.where(receiver_id: old_user.id).each do |resource|
+      resource.receiver_id = id
+      resource.save
+    end
+    Document.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    FailedCensusCall.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Flag.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Follow.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Identity.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Image.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Legislation::Annotation.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Legislation::Answer.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Legislation::Proposal.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Legislation::Question.where(author_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Lock.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Manager.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Moderator.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Notification.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Organization.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Poll::Answer.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Poll::OfficerAssignment.where(officer_id: old_user.id).each do |resource|
+      resource.officer_id = id
+      resource.save
+    end
+    Poll::Officer.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Poll::PartialResult.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Poll::Question.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Poll::Recount.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Poll::Shift.where(officer_id: old_user.id).each do |resource|
+      resource.officer_id = id
+      resource.save
+    end
+    Poll::Voter.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.origin ||= 'web'
+      resource.save
+    end
+    Poll.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    ProposalNotification.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    Proposal.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    RelatedContentScore.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    RelatedContent.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    SignatureSheet.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    SpendingProposal.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    SpendingProposal.where(administrator_id: old_user.id).each do |resource|
+      resource.administrator_id = id
+      resource.save
+    end
+    Topic.where(author_id: old_user.id).each do |resource|
+      resource.author_id = id
+      resource.save
+    end
+    ValuationAssignment.where(valuator_id: old_user.id).each do |resource|
+      resource.valuator_id = id
+      resource.save
+    end
+    Valuator.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Visit.where(user_id: old_user.id).each do |resource|
+      resource.user_id = id
+      resource.save
+    end
+    Vote.where(voter_id: old_user.id).each do |resource|
+      resource.voter_id = id
+      resource.save
+    end
+  end
+
   private
 
     def clean_document_number

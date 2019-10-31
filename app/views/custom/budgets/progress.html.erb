@@ -31,7 +31,12 @@
 <% if @budget.finished? %>
   <div class="row">
     <div class="col-md-12">
-      <%= image_tag "estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
+      <% file = "estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
+      <% if File.file?(file) %>
+        <%= image_tag "estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
+      <% else %>
+        <p><%= t("progress.progress_message") %></p>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -19,6 +19,11 @@ class Verification::Residence
   def save
     return false unless valid?
 
+    old_user = User.old_version(document_number)
+    if old_user
+      user.move(document_number)
+      old_user.really_destroy!
+    end
     user.update(document_number:       document_number,
                 document_type:         document_type,
                 geozone:               self.geozone,
@@ -33,6 +38,7 @@ class Verification::Residence
       errors.add(:document_number, I18n.t('users.errors.document_in_use'))
       return false
     end
+    true
   end
 
   private

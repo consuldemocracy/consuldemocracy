@@ -7,7 +7,7 @@ class Verification::VerifiedUserController < ApplicationController
     @verified_users = VerifiedUser.by_user(current_user)
     # redirect_to new_sms_path unless user_data_present?
 
-    redirect_to account_path unless user_data_present?
+    redirect_to account_path # unless user_data_present?
   end
 
   private

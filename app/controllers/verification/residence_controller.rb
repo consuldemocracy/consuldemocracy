@@ -6,12 +6,13 @@ class Verification::ResidenceController < ApplicationController
 
   def new
     @residence = Verification::Residence.new
+    session[:return_to] ||= request.referer
   end
 
   def create
     @residence = Verification::Residence.new(residence_params.merge(user: current_user))
     if @residence.save
-      redirect_to verified_user_path, notice: t('verification.residence.create.flash.success')
+      redirect_to session.delete(:return_to), notice: t('verification.residence.create.flash.success')
     else
       render :new
     end

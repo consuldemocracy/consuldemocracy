@@ -19,7 +19,11 @@
         <div class="budget-investment-content">
 
           <% cache [locale_and_user_status(investment), 'index', investment, investment.author] do %>
-            <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
+            <% options = {} %>
+            <% options[:area_id] = params[:area_id] if params[:area_id].present? %>
+            <% options[:sub_area_id] = params[:sub_area_id] if params[:sub_area_id].present? %>
+            <% options[:page] = params[:page] if params[:page].present? %>
+            <h3><%= link_to investment.title, namespaced_budget_investment_path(investment, options) %></h3>
 
 
             <p class="investment-project-info">

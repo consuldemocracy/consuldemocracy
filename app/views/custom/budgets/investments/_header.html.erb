@@ -97,13 +97,11 @@
           <% if @heading %>
             <% if @ballot.valid_heading?(@heading) %>
               <div class="progress-bar-nav" data-fixed-bar>
-                <h2><%= @heading.name %></h2>
-                <div id="progress_bar" class="no-margin-top">
+                <div id="progress_bar" class="no-margin-top padding">
                   <%= render 'budgets/ballot/progress_bar' %>
                 </div>
               </div>
             <% else %>
-              <h2><%= @heading.name %></h2>
               <div class="small-12 medium-9">
                 <div class="callout warning">
                   <%= t("budgets.investments.header.different_heading_assigned_html",

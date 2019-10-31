@@ -17,8 +17,7 @@ class Budget
     end
 
     def investments
-      #heading.investments.selected.sort_by_ballots
-      heading.investments.selected.order(cached_ballots_up: :desc)
+      heading.investments.selected.sort_by_ballots
     end
 
     def inside_budget?

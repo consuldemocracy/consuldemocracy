@@ -39,4 +39,5 @@ es:
     title_html: "Seguimiento: "
 
   progress:
+    progress_message: 'Todavía no hay informes de ejecución.'
     progress_link: 'Informe de ejecución'

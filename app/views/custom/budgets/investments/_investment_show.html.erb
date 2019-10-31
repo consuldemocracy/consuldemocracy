@@ -22,7 +22,16 @@
       <%   filter = 'unselected_by_assembly' %>
       <% end                                 %>
 
-      <%= back_link_to budget_investments_path(investment.budget, heading_id: investment.heading, area_id: investment&.sub_area&.area&.id, sub_area_id: investment&.sub_area_id) %>
+      <% args = {} %>
+      <% if params[:area_id].present? %>
+        <% args[:area_id] = investment&.sub_area&.area&.id %>
+      <% end %>
+      <% if params[:sub_area_id].present? %>
+        <% args[:sub_area_id] = investment&.sub_area_id %>
+        <% args[:heading_id] = investment.heading %>
+      <% end %>
+      <% args[:page] = params[:page] if params[:page].present? %>
+      <%= back_link_to budget_investments_path(investment.budget, args) %>
       <h1><%= investment.title %></h1>
       <% if @budget.areas %>
         <h2>
