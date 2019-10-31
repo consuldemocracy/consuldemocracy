@@ -54,13 +54,13 @@ module BudgetsHelper
   end
 
   def investment_tags_select_options(budget)
-    tags = Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).pluck(:name)
+    tags = budget.investments.tags_on(:valuation).order(:name).pluck(:name)
     tags = tags.concat budget.budget_valuation_tags.split(",") if budget.budget_valuation_tags.present?
     tags.uniq
   end
 
   def investment_milestone_tags_select_options(budget)
-    tags = Budget::Investment.by_budget(budget).tags_on(:milestone).order(:name).pluck(:name)
+    tags = budget.investments.tags_on(:milestone).order(:name).pluck(:name)
     tags = tags.concat budget.budget_milestone_tags.split(",") if budget.budget_milestone_tags.present?
     tags.uniq
   end
