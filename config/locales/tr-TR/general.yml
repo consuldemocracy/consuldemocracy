@@ -523,7 +523,6 @@ tr:
       index:
         title: Anketler
         create: Anket oluştur
-        succesfull: Yanıt başarıyla oluşturuldu
         count:
           one: '%{count} anket oluşturdunuz.'
           other: '%{count} anket oluşturdunuz.'
@@ -609,17 +608,6 @@ tr:
         title: Oylama ile ilgili yardım
         description: Vatandaş anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır
       no_polls: "Hiç açık oylama bulunmamaktadır."
-      max_votes_reached: "Mümkün olan en fazla sayıda oy verdiniz. Katıldığınız için çok teşekkür ederim"
-      descriptions:
-        unique: Soruya sadece bir kez cevap vermek mümkün.
-        multiple: Birden fazla cevap seçilmesine izin verir. Maksimum cevap sayısını ayarlamak mümkündür.
-        prioritized: Birden fazla cevap seçmenize izin verir ve bu cevaplara öncelik verilir. Seçilen maksimum cevap sayısını ve cevap sayısı türünü ayarlamak mümkündür.
-        positive_open: Sorulara en fazla sayıda olumlu oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
-        positive_negative_open: Sorulara en fazla sayıda olumlu ve olumsuz oy verilmesine izin verir. Maksimum cevap sayısını ayarlamak ve diğer cevapları eklemek mümkündür.
-        answer_couples_open: Her olası cevap çiftinde gönderebileceğiniz maksimum oy sayısının bir sınırı vardır. Maksimum çift sayısını önceden tanımlayabilir ve diğer cevapları ekleyebilirsiniz.
-        answer_couples_closed: Her olası cevap çiftinde gönderebileceğiniz maksimum oy sayısının bir sınırı vardır. Maksimum çift sayısını önceden tanımlayabilir ve başka cevaplar ekleyemezsiniz.
-        answer_set_open: Bir grup öneriye en fazla sayıda yanıt verilmesine izin verir. Maksimum cevap sayısını belirlemek, grubun büyüklüğünü ayarlamak ve başka cevaplar eklemek mümkündür.
-        answer_set_closed: Bir grup öneriye en fazla sayıda yanıt verilmesine izin verir. Maksimum cevap sayısını ve grubun boyutunu ayarlamak mümkündür.
     show:
       already_voted_in_booth: "Siz zaten kabin oylamasına katıldınız. Tekrar katılamazsınız."
       already_voted_in_web: "Siz zaten bu ankete katıldınız. Tekrar oy vermeniz halinde, yalnızca son verilen oy geçerli sayılacaktır."
@@ -657,17 +645,6 @@ tr:
     show:
       vote_answer: "Oy %{answer}"
       voted: "%{answer} 'a oy verdiniz"
-      add_answer: "Cevap ekle"
-    description:
-      multiple: "En fazla %{maximum} cevap seçebilirsiniz."
-      positive_negative_open: "En fazla %{maximum} cevapla olumlu veya olumsuz oy verebilirsiniz. Ve kendi cevaplarınızı da ekleyebilirsiniz."
-      answer_couples_open: "Aşağıdaki çiftlerden birini seçin. En fazla %{maximum} cevap seçebilirsiniz."
-      answer_couples_closed: "Aşağıdaki çiftlerden birini seçin. En fazla %{maximum} cevap seçebilirsiniz."
-      answer_set_open: "En fazla %{maximum} cevap seçebilirsiniz."
-      answer_set_closed: "En fazla %{maximum} cevap seçebilirsiniz."
-      prioritized: "En fazla %{maximum} cevap seçebilirsiniz. Bu soru, sayım için %{system} sistemini kullanacaktır."
-      positive_open: "En fazla %{maximum} cevap seçebilir ve kendi cevaplarınızı ekleyebilirsiniz."
-    read_more_about: "Daha fazla bilgi için:"
   proposal_notifications:
     new:
       title: "Mesaj gönder"
@@ -948,18 +925,6 @@ tr:
       surveys: Anketler
     poll:
       take_part: '%{from}''dan %{to}''ya kadar yer alın'
-  question:
-    votation_type: Oylama türü
-  enum_type:
-    unique: Benzersiz cevap, kapalı
-    multiple: Birden fazla cevap, kapalı
-    prioritized: Birden çok öncelikli cevap, kapalı
-    positive_open: Oylanabilir olumlu, aç
-    positive_negative_open: Oylanabilir olumlu ve olumsuz, aç
-    answer_couples_open: Cevap çiftleri, açık
-    answer_couples_closed: Cevap çiftleri, kapalı
-    answer_set_open: Cevap seti, açık
-    answer_set_closed: Cevap seti, kapalı
   remote_translations:
     text: Bu sayfanın içeriği sizin dilinizde mevcut değil
     all_remote_translations_enqueued_text: Sayfayı yeniledikten kısa bir süre sonra dilinizde tüm içeriği görebileceksiniz.
