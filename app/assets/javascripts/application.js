@@ -80,6 +80,7 @@
 //= require investment_report_alert
 //= require send_newsletter_alert
 //= require managers
+//= require i18n
 //= require globalize
 //= require send_admin_notification_alert
 //= require modal_download
