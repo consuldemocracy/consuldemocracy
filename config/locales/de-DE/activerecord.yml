@@ -332,11 +332,6 @@ de:
       topic:
         title: "Titel"
         description: "Anfangstext"
-      votation_type:
-        enum_type: "Abstimmungstyp"
-        max_groups_answers: "Maximale Nummer der Antworten in den Sets"
-        max_votes: "Maximale Nummer von Antworten"
-        prioritization_type: "Typ der Priorisierung"
       banner:
         background_color: Hintergrundfarbe
         font_color: Schriftfarbe
