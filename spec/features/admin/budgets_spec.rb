@@ -232,19 +232,45 @@ describe "Admin budgets" do
   end
 
   context "Update" do
-    before do
-      create(:budget)
-    end
-
     scenario "Update budget" do
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(create(:budget))
 
       fill_in "Name", with: "More trees on the streets"
       click_button "Update Budget"
 
       expect(page).to have_content("More trees on the streets")
       expect(page).to have_current_path(admin_budgets_path)
+    end
+
+    scenario "Deselect all selected staff", :js do
+      admin = Administrator.first
+      valuator = create(:valuator)
+      tracker = create(:tracker)
+
+      budget = create(:budget, administrators: [admin], valuators: [valuator], trackers: [tracker])
+
+      visit edit_admin_budget_path(budget)
+      click_link "1 administrator selected"
+      uncheck admin.name
+
+      expect(page).to have_link "Select administrators"
+
+      click_link "1 valuator selected"
+      uncheck valuator.name
+
+      expect(page).to have_link "Select valuators"
+
+      click_link "1 tracker selected"
+      uncheck tracker.name
+
+      expect(page).to have_link "Select trackers"
+
+      click_button "Update Budget"
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_link "Select administrators"
+      expect(page).to have_link "Select valuators"
+      expect(page).to have_link "Select trackers"
     end
   end
 

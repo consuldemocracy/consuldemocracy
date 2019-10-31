@@ -33,9 +33,9 @@
   </div>
 
   <div class="margin-top">
-      <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, budget: @budget %>
-      <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, budget: @budget %>
-      <%= render "/admin/budgets/association", assignable_type: "trackers", assignables: @trackers, budget: @budget %>
+    <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
+    <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
+    <%= render "/admin/budgets/association", assignable_type: "trackers", assignables: @trackers, form: f %>
   </div>
 
   <div class="margin-top">

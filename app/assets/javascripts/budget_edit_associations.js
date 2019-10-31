@@ -2,13 +2,13 @@
   "use strict";
   App.BudgetEditAssociations = {
     initialize: function() {
-      $(".js-budget-list-checkbox-user").on({
-        click: function() {
+      $(".js-budget-users-list [type='checkbox']").on({
+        change: function() {
           var admin_count, tracker_count, valuator_count;
 
-          admin_count = $(".js-budget-list-checkbox-administrators:checkbox:checked").length;
-          valuator_count = $(".js-budget-list-checkbox-valuators:checkbox:checked").length;
-          tracker_count = $(".js-budget-list-checkbox-trackers:checkbox:checked").length;
+          admin_count = $("#administrators_list :checked").length;
+          valuator_count = $("#valuators_list :checked").length;
+          tracker_count = $("#trackers_list :checked").length;
 
           App.I18n.set_pluralize($(".js-budget-show-administrators-list"), admin_count);
           App.I18n.set_pluralize($(".js-budget-show-valuators-list"), valuator_count);

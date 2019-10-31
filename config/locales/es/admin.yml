@@ -109,8 +109,6 @@ es:
         empty_administrators: "No hay administradores"
         empty_valuators: "No hay evaluadores"
         empty_trackers: "No hay gestores de seguimiento"
-        name: "Nombre"
-        selected: "Seleccionado"
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados

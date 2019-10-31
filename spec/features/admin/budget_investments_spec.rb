@@ -1086,14 +1086,15 @@ describe "Admin budget investments" do
       expect(page).not_to have_content "Mark as incompatible"
     end
 
-    scenario "Add administrator" do
+    scenario "Add administrator", :js do
       budget_investment = create(:budget_investment)
       user = create(:user, username: "Marta", email: "marta@admins.org")
       create(:administrator, user: user, description: "Marta desc")
 
       visit edit_admin_budget_path(budget_investment.budget)
 
-      check "administrator_#{user.id}"
+      click_link "Select administrators"
+      check "Marta"
       click_button "Update Budget"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -1119,8 +1120,8 @@ describe "Admin budget investments" do
 
       visit edit_admin_budget_path(budget_investment.budget)
 
-      check "valuator_#{user1.id}"
-      check "valuator_#{user3.id}"
+      check "Valentina"
+      check "Val"
       click_button "Update Budget"
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
