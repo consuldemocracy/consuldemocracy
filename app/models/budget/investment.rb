@@ -16,6 +16,7 @@ class Budget
     include Mappable
     include Documentable
 
+    acts_as_taggable_on :valuation_tags
     acts_as_votable
     acts_as_paranoid column: :hidden_at
     include ActsAsParanoidAliases
@@ -381,14 +382,6 @@ class Budget
 
     def assigned_valuation_groups
       self.valuator_groups.map(&:name).compact.join(", ").presence
-    end
-
-    def valuation_tag_list
-      tag_list_on(:valuation)
-    end
-
-    def valuation_tag_list=(tags)
-      set_tag_list_on(:valuation, tags)
     end
 
     def self.with_milestone_status_id(status_id)

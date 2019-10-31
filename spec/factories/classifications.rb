@@ -19,7 +19,7 @@ FactoryBot.define do
     end
   end
 
-  factory :tagging, class: "ActsAsTaggableOn::Tagging" do
+  factory :tagging do
     context { "tags" }
     association :taggable, factory: :proposal
     tag

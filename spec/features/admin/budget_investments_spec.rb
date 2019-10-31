@@ -510,8 +510,8 @@ describe "Admin budget investments" do
       investment1 = create(:budget_investment, budget: budget, tag_list: "Education")
       investment2 = create(:budget_investment, budget: budget, tag_list: "Health")
 
-      investment1.set_tag_list_on(:valuation, "Teachers")
-      investment2.set_tag_list_on(:valuation, "Hospitals")
+      investment1.set_tag_list_on(:valuation_tags, "Teachers")
+      investment2.set_tag_list_on(:valuation_tags, "Hospitals")
 
       investment1.save!
       investment2.save!
@@ -526,8 +526,8 @@ describe "Admin budget investments" do
       investment1 = create(:budget_investment, budget: budget, tag_list: "Roads")
       investment2 = create(:budget_investment, budget: new_budget, tag_list: "Accessibility")
 
-      investment1.set_tag_list_on(:valuation, "Roads")
-      investment2.set_tag_list_on(:valuation, "Accessibility")
+      investment1.set_tag_list_on(:valuation_tags, "Roads")
+      investment2.set_tag_list_on(:valuation_tags, "Accessibility")
 
       investment1.save!
       investment2.save!
@@ -1192,7 +1192,7 @@ describe "Admin budget investments" do
 
     scenario "Adds existing valuation tags", :js do
       budget_investment1 = create(:budget_investment)
-      budget_investment1.set_tag_list_on(:valuation, "Education, Health")
+      budget_investment1.set_tag_list_on(:valuation_tags, "Education, Health")
       budget_investment1.save!
 
       budget_investment2 = create(:budget_investment)
@@ -1230,7 +1230,7 @@ describe "Admin budget investments" do
 
     scenario "Changes valuation and user generated tags" do
       budget_investment = create(:budget_investment, tag_list: "Park")
-      budget_investment.set_tag_list_on(:valuation, "Education")
+      budget_investment.set_tag_list_on(:valuation_tags, "Education")
       budget_investment.save!
 
       visit admin_budget_budget_investment_path(budget_investment.budget, budget_investment)
@@ -1671,7 +1671,7 @@ describe "Admin budget investments" do
     end
 
     scenario "Keeps the valuation tags", :js do
-      investment1.set_tag_list_on(:valuation, %w[Possimpible Truthiness])
+      investment1.set_tag_list_on(:valuation_tags, %w[Possimpible Truthiness])
       investment1.save!
 
       visit admin_budget_budget_investments_path(budget)

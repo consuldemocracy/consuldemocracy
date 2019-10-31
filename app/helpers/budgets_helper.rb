@@ -54,7 +54,7 @@ module BudgetsHelper
   end
 
   def investment_tags_select_options(budget)
-    tags = budget.investments.tags_on(:valuation).order(:name).pluck(:name)
+    tags = budget.investments.tags_on(:valuation_tags).order(:name).pluck(:name)
     tags = tags.concat budget.budget_valuation_tags.split(",") if budget.budget_valuation_tags.present?
     tags.uniq
   end

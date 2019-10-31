@@ -334,7 +334,7 @@ describe "Tags" do
 
     scenario "Valuators do not see user tags" do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
-      investment.set_tag_list_on(:valuation, "Education")
+      investment.set_tag_list_on(:valuation_tags, "Education")
       investment.save!
 
       login_as(admin)
