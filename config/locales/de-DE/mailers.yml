@@ -75,3 +75,21 @@ de:
       subject: "Neuer Bewertungs-Kommentar"
       title: Neuer Bewertungs-Kommentar für %{investment}
       hi: Hallo
+      new_comment_by: Es gibt einen neuen Bewertungs-Kommentar <strong>%{commenter}</strong> für den Bürgerhaushalt %{investment}
+      commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      subject: "Mehr Neuigkeiten zu Ihrem Bürger-Vorschlag"
+      hi: "Hallo %{name},"
+      new_resource: "NEUE FREIGESCHALTETE RESSOURCE"
+      introduction: "Nicht vergessen: Sie haben am Tag %{created_at_day} des %{created_at_month} den Vorschlag im Entwurfsmodus %{title} erstellt."
+      text_1: "Wann immer Sie möchten, können Sie es über folgenden Link veröffentlichen: %{link_to_published}. Wenn Sie noch unsicher sind..."
+      text_2: "Nutzen Sie diesen Moment! Fügen Sie andere Personen mit den gleichen Interessen hinzu und bereiten Sie die Verbreitung vor, die Sie benötigen, wenn Sie Ihren Vorschlag endgültig veröffentlichen."
+      text_3: "Und um Sie bei dieser Herausforderung zu begleiten, hier sind die Neuigkeiten..."
+      text_4: "Werfen Sie einen Blick auf diese NEUE empfohlene AKTION:"
+      text_5: "Die nächste Aktion, die wir empfehlen:"
+      footer_text: "Wie immer, kommen Sie auf das Vorschlagspanel und wir werden Ihnen im Detail erklären, wie Sie diese Ressourcen nutzen und wie Sie das Beste daraus machen können."
+      dashboard_button: "Nur zu, es gibt viel zu entdecken!"
+    new_actions_notification_rake_published:
+      subject: "Mehr Neuigkeiten zu Ihrem Bürger-Vorschlag"
+      hi: "Hallo %{name},"
+      new_resource: "NEUE FREIGESCHALTETE RESSOURCE"
