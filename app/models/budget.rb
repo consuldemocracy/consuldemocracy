@@ -197,7 +197,7 @@ class Budget < ApplicationRecord
     investments.winners.any?
   end
 
-  def milestone_tags
+  def investments_milestone_tags
     investments.winners.map(&:milestone_tag_list).flatten.uniq.sort
   end
 

@@ -4,7 +4,7 @@ module BudgetExecutionsHelper
   end
 
   def options_for_milestone_tags
-    @budget.milestone_tags.map do |tag|
+    @budget.investments_milestone_tags.map do |tag|
       ["#{tag} (#{@budget.investments.winners.tagged_with(tag).count})", tag]
     end
   end
