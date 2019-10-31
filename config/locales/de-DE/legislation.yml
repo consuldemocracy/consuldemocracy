@@ -17,8 +17,10 @@ de:
       index:
         title: Kommentare
         comments_about: Kommentare über
+        comment_about: "Kommentar über:"
         see_in_context: Im Kontext zeigen
         comments_count:
+          zero: Keine Kommentare
           one: "%{count} Kommentar"
           other: "%{count} Kommentare"
       show:
@@ -93,6 +95,10 @@ de:
         form:
           leave_comment: Antwort hinterlassen
       question:
+        total:
+          zero: Keine Debatten
+          one: "%{count} Debatte"
+          other: "%{count} Debatten"
         comments:
           zero: Keine Kommentare
           one: "%{count} Kommentar"
@@ -117,3 +123,8 @@ de:
       form:
         tags_label: "Kategorien"
       not_verified: "Für Wahlvorschläge %{verify_account}."
+      process_title: Kollaboratives Gesetzgebungsverfahren
+      total:
+        zero: Keine Vorschläge
+        one: "%{count} Vorschlag"
+        other: "%{count} Vorschläge"
