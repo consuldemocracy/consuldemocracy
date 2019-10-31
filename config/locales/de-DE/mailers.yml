@@ -1,14 +1,18 @@
 de:
   mailers:
+    title: "Open Government"
     no_reply: "Diese Nachricht wurde von einer E-Mail-Adresse gesendet, die keine Antworten akzeptiert."
     comment:
       hi: Hallo
+      new_comment_by: Es gibt einen neuen Kommentar von <strong>%{commenter}</strong>
       subject: Jemand hat Ihre %{commentable} kommentiert.
       title: Neuer Kommentar
     config:
       manage_email_subscriptions: Wenn Sie keine E-Mails mehr empfangen möchten, ändern Sie bitte Ihre Einstellungen in
     email_verification:
       click_here_to_verify: diesen Link
+      instructions_2: Diese E-Mail dient dazu Ihr Konto mit <b>%{document_type} %{document_number}</b>zu verifizieren. Wenn es sich hierbei nicht um Ihre Daten handelt, klicken Sie bitte nicht auf den vorherigen Link und ignorieren Sie diese E-Mail.
+      instructions: Um die Überprüfung Ihres Benutzerkontos abzuschließen, müssen Sie auf %{verification_link} klicken.
       subject: Bestätigen Sie Ihre E-Mail-Adresse
       thanks: Vielen Dank.
       title: Bestätigen Sie Ihr Konto über den folgenden Link
