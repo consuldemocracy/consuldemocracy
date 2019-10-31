@@ -141,6 +141,7 @@ ignore_unused:
   - "admin.hidden_proposals.index.filter*"
   - "admin.proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
+  - "admin.budgets.edit.(administrators|trackers|valuators).*"
   - "admin.budget_investments.index.filter*"
   - "admin.organizations.index.filter*"
   - "admin.hidden_users.index.filter*"

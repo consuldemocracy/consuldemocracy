@@ -26,8 +26,10 @@
         }
       });
       $(".js-budget-show-users-list").on({
-        click: function() {
+        click: function(e) {
           var div_id;
+
+          e.preventDefault();
           div_id = $(this).data().toggle;
           $(".js-budget-users-list").each(function() {
             if (this.id !== div_id && !$(this).hasClass("is-hidden")) {
