@@ -45,7 +45,6 @@ class User < ApplicationRecord
     inverse_of:  :receiver
   has_many :legislation_answers, class_name: "Legislation::Answer", dependent: :destroy, inverse_of: :user
   has_many :follows
-  has_many :budget_rol_assignments
   has_many :legislation_annotations,
     class_name:  "Legislation::Annotation",
     foreign_key: :author_id,
@@ -80,7 +79,6 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     inverse_of:  :author
   has_many :topics, foreign_key: :author_id, inverse_of: :author
-  has_many :budgets, through: :budget_rol_assignments
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
