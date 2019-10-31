@@ -4,6 +4,9 @@ de:
       verification:
         residence: "Wohnsitz"
         sms: "SMS"
+      local_census_records/import:
+        one: Lokaler Register Datensatz import
+        other: Lokale Register Datensätze import
     attributes:
       verification:
         residence:
@@ -33,6 +36,8 @@ de:
         document_type: "Dokumententyp"
         document_number: "Dokumentennummer (einschließlich Buchstaben)"
         year_of_birth: "Geburtsjahr"
+      local_census_records/import:
+        file: Datei
     errors:
       models:
         local_census_records/import:
