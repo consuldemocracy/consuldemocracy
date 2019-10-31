@@ -22,6 +22,9 @@ class ApplicationController < ActionController::Base
       format.json { render json: {error: exception.message}, status: :forbidden }
     end
   end
+  rescue_from FeatureFlags::FeatureDisabled do
+    raise ActiveRecord::RecordNotFound, "This feature is disabled"
+  end
 
   layout :set_layout
   respond_to :html
