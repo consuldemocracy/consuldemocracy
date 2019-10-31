@@ -31,7 +31,7 @@
 <% if @budget.finished? %>
   <div class="row">
     <div class="col-md-12">
-      <% file = "estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
+      <% file = "#{Rails.root}/app/assets/images/custom/estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
       <% if File.file?(file) %>
         <%= image_tag "estat_pressupostos_#{@budget.id}_#{I18n.locale}.png" %>
       <% else %>
