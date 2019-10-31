@@ -319,6 +319,7 @@ de:
           error: "Ein Fehler ist aufgetreten. Bitte gehen Sie zur 'Ihr Benutzerkonto'-Seite um Antrags-Empfehlungen manuell abzuschalten"
       retired_proposals: Vorschläge im Ruhezustand
       retired_proposals_link: "Vorschläge vom Autor zurückgezogen"
+      proposals_lists: Vorschläge-Liste
       retired_links:
         all: Alle
         duplicated: Dupliziert
@@ -330,6 +331,9 @@ de:
         button: Suche
         placeholder: Suche Vorschläge...
         title: Suche
+      search_results:
+        one: " enthält den Begriff <strong>'%{search_term}'</strong>"
+        other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       select_order: Sortieren nach
       select_order_long: "Sie sehen Vorschläge nach:"
       start_proposal: Vorschlag erstellen
@@ -342,6 +346,7 @@ de:
         help: Hilfe zu Vorschlägen
       section_footer:
         title: Hilfe zu Vorschlägen
+        description: Die Vorschläge der Bürger sind eine Möglichkeit für Nachbarn und Kollektive direkt zu entscheiden, wie sie ihre Stadt gestalten wollen, nachdem sie ausreichende Unterstützung erhalten und sich einer Bürgerabstimmung unterzogen haben.
     new:
       form:
         submit_button: Vorschlag erstellen
@@ -353,6 +358,7 @@ de:
       start_new: Neuen Vorschlag erstellen
     notice:
       retired: Vorschlag im Ruhezustand
+      published: Der Vorschlag wurde veröffentlicht
     proposal:
       created: "Sie haben einen Vorschlag erstellt!"
       share:
@@ -378,6 +384,7 @@ de:
       total_percent: 100 %
       archived: "Dieser Vorschlag wurde archiviert und nicht mehr unterstützt werden."
       successful: "Dieser Vorschlag hat die erforderliche Unterstützung erreicht."
+      selected: "Ausgewählter Vorschlag"
     show:
       author_deleted: Benutzer*in gelöscht
       code: "Antrags-Code:"
@@ -386,6 +393,7 @@ de:
         one: 1 Kommentar
         other: "%{count} Kommentare"
       comments_tab: Kommentare
+      dashboard_proposal_link: Dashboard
       flag: Dieser Vorschlag wurde von verschiedenen Benutzern als unangebracht gemeldet.
       notifications_tab: Benachrichtigungen
       milestones_tab: Meilensteine
