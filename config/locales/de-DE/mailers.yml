@@ -96,3 +96,4 @@ de:
       introduction: "Nicht vergessen: Sie haben am %{published_at_day} Tag des %{published_at_month} den Vorschlag %{title} veröffentlicht."
       text_1: "Sie haben bisher %{votes_count} Unterstützung erhalten: Herzlichen Glückwunsch!"
       text_2: "Sie haben eine neue Ressource zur Verfügung, die Ihnen hilft, weiter voranzukommen."
+      text_3: "Es sind noch %{days_count} Tage, bis dein Vorschlag die %{max_votes_count} Unterstützung erhalten muss und es zur Abstimmung kommt. Kopf hoch und weitermachen. Fehlen Ihnen die Ideen?"
