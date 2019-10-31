@@ -157,6 +157,7 @@ de:
               description_column: Verringern sie die Textgröße
       compatibility:
         title: Kompatibilität mit Standards und visueller Gestaltung
+        description: 'Alle Seiten dieser Website entsprechen den <strong>Accessibility Guidelines</strong> oder den General Principles of Accessible Design der Arbeitsgruppe <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> des W3C.'
     titles:
       help: "Was ist %{org}? -Bürgerbeteiligung"
     verify:
