@@ -333,11 +333,6 @@ it:
       topic:
         title: "Titolo"
         description: "Testo iniziale"
-      votation_type:
-        enum_type: "Tipo votazione"
-        max_groups_answers: "Massimo numero di risposte nel set"
-        max_votes: "Massimo numero di voti"
-        prioritization_type: "Tipo di prioritizzazione"
       banner:
         background_color: Colore sfondo
         font_color: Colore font
