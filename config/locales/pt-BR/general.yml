@@ -527,7 +527,6 @@ pt-BR:
     show:
       vote_answer: "Votar %{answer}"
       voted: "Você votou %{answer}"
-      add_answer: "Adicionar resposta"
   proposal_notifications:
     new:
       title: "Enviar mensagem"
