@@ -75,11 +75,9 @@
       App.Globalize.display_translations(locale);
     },
     update_description: function() {
-      var count, description;
+      var count;
       count = App.Globalize.enabled_locales().length;
-      description = App.I18n.pluralize($(".globalize-languages").data("languages-description"), count);
-
-      $(".js-languages-description").text(description);
+      App.I18n.set_pluralize($(".js-languages-description"), count);
     },
     initialize: function() {
       $(".js-add-language").on("change", function() {

@@ -1,6 +1,9 @@
 (function() {
   "use strict";
   App.I18n = {
+    set_pluralize: function(element, count) {
+      element.text(this.pluralize(element.data("texts"), count));
+    },
     pluralize: function(texts, count) {
       return this.raw_text(texts, count).replace("%{count}", count);
     },
