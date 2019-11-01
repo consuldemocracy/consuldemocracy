@@ -90,7 +90,6 @@ pt-BR:
         edit_phase: Editar estágio
         active: Ativo
         blank_dates: Datas estão em branco
-        name: "Nome"
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
