@@ -121,10 +121,6 @@ ar:
         empty_administrators: "لا يوجد مدراء"
         empty_valuators: "لا يوجد مقيمون"
         empty_trackers: "لا يوجد متتبّعون"
-        name: "الإسم"
-        selected: "محدّد"
-        cancel: "إلغاء"
-        save: "حفظ"
       destroy:
         success_notice: تم حذف الميزانية بنجاح
         unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
