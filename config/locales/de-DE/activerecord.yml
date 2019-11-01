@@ -141,9 +141,6 @@ de:
         description_finished: "Beschreibung, wenn der Bürgerhaushalt beschlossen ist"
         phase: "Phase"
         currency_symbol: "Währung"
-        budget_milestone_tags: "Status des Ausgabenvorschlags"
-        budget_valuation_tags: "Bewertung des Status"
-        help_link: "Link Hilfe"
       budget/translation:
         name: "Name"
       budget/investment:
