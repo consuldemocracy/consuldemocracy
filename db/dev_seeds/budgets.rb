@@ -121,13 +121,16 @@ section "Creating Investments" do
   100.times do
     heading = Budget::Heading.all.sample
 
-    investment = Budget::Investment.create!(
+    translation_attributes = random_locales.each_with_object({}) do |locale, attributes|
+      attributes["title_#{locale.to_s.underscore}"] = "Title for locale #{locale}"
+      attributes["description_#{locale.to_s.underscore}"] = "<p>Description for locale #{locale}</p>"
+    end
+
+    investment = Budget::Investment.create!({
       author: User.all.sample,
       heading: heading,
       group: heading.group,
       budget: heading.group.budget,
-      title: Faker::Lorem.sentence(3).truncate(60),
-      description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
@@ -136,15 +139,7 @@ section "Creating Investments" do
       price: rand(1..100) * 100000,
       skip_map: "1",
       terms_of_service: "1"
-    )
-
-    random_locales.map do |locale|
-      Globalize.with_locale(locale) do
-        investment.title = "Title for locale #{locale}"
-        investment.description = "<p>Description for locale #{locale}</p>"
-        investment.save!
-      end
-    end
+    }.merge(translation_attributes))
 
     add_image_to(investment) if Random.rand > 0.5
   end
