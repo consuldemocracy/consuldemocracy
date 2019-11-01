@@ -282,7 +282,6 @@ ar:
           other: لديك %{count} إشعارات الجديدة
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
-      tracking: "تتبّع"
     admin:
       watch_form_message: "لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟"
   notifications:
