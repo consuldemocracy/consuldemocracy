@@ -1265,8 +1265,3 @@ pt-BR:
     change_log:
       id: "ID"
       actions: "Ações"
-    trackers:
-      index:
-        name: Nome
-        email: Email
-        description: Descrição
