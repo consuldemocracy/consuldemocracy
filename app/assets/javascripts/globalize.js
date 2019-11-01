@@ -75,22 +75,9 @@
       App.Globalize.display_translations(locale);
     },
     update_description: function() {
-      var count, description;
+      var count;
       count = App.Globalize.enabled_locales().length;
-      description = $(App.Globalize.language_description(count)).filter(".description").text();
-
-      $(".js-languages-description .description").text(description);
-      $(".js-languages-description .count").text(count);
-    },
-    language_description: function(count) {
-      switch (count) {
-      case 0:
-        return $(".globalize-languages").data("zero-languages-description");
-      case 1:
-        return $(".globalize-languages").data("one-languages-description");
-      default:
-        return $(".globalize-languages").data("other-languages-description");
-      }
+      App.I18n.set_pluralize($(".js-languages-description"), count);
     },
     initialize: function() {
       $(".js-add-language").on("change", function() {

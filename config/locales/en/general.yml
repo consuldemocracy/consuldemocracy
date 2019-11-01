@@ -788,9 +788,9 @@ en:
       remove_language: Remove language
       add_language: Add language
       languages_in_use:
-        zero: "<span class='count'>0</span> <span class='description'>languages in use</span>"
-        one: "<span class='count'>1</span> <span class='description'>language in use</span>"
-        other: "<span class='count'>%{count}</span> <span class='description'>languages in use</span>"
+        zero: "0 languages in use"
+        one: "1 language in use"
+        other: "%{count} languages in use"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"

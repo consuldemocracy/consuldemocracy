@@ -54,7 +54,6 @@ namespace :admin do
   resources :budgets do
     member do
       put :calculate_winners
-      get :assigned_users_translation
     end
 
     resources :groups, except: [:show], controller: "budget_groups" do

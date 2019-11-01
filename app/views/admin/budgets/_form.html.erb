@@ -2,8 +2,6 @@
 
 <%= translatable_form_for [:admin, @budget] do |f| %>
 
-  <div class="js-budget-id" id="<%= @budget.id %>"></div>
-
   <%= render "shared/errors", resource: @budget %>
 
   <div class="row">
@@ -24,18 +22,14 @@
   </div>
 
   <div class="margin-top">
-    <div class="small-12 medium-4 column end">
-      <a id="administrators_button" class="button expanded hollow js-budget-show-users-list js-budget-show-administrators-list" data-toggle="administrators_list"><%= t("admin.budgets.edit.administrators", count: @budget.administrators.count) %>
-      </a>
-    </div>
-    <div class="small-12 medium-4 column end">
-      <a id="valuators_button" class="button expanded hollow js-budget-show-users-list js-budget-show-valuators-list" data-toggle="valuators_list"><%= t("admin.budgets.edit.valuators", count: @budget.valuators.count) %>
-      </a>
-    </div>
-    <div class="small-12 medium-4 column end">
-      <a id="trackers_button" class="button expanded hollow js-budget-show-users-list js-budget-show-trackers-list" data-toggle="trackers_list"><%= t("admin.budgets.edit.trackers", count: @budget.trackers.count) %>
-      </a>
-    </div>
+    <% %w[administrators valuators trackers].each do |staff| %>
+      <div class="small-12 medium-4 column end">
+        <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
+          "#",
+          class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
+          data: { toggle: "#{staff}_list", texts: t("admin.budgets.edit.#{staff}") } %>
+      </div>
+    <% end %>
   </div>
 
   <div class="margin-top">

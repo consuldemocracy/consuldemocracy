@@ -72,13 +72,6 @@ class Admin::BudgetsController < Admin::BaseController
     end
   end
 
-  def assigned_users_translation
-    render json: { administrators: t("admin.budgets.edit.administrators", count: params[:administrators].to_i),
-                   valuators: t("admin.budgets.edit.valuators", count: params[:valuators].to_i),
-                   trackers: t("admin.budgets.edit.trackers", count: params[:trackers].to_i)
-    }
-  end
-
   private
 
     def budget_params
