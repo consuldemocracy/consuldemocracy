@@ -50,15 +50,6 @@
   <% end %>
 </p>
 
-<p id="assigned_trackers">
-  <strong><%= t("admin.budget_investments.show.assigned_trackers") %>:</strong>
-  <% if @investment.trackers.any? %>
-    <%= @investment.trackers.collect(&:name_and_email).join(", ") %>
-  <% else %>
-    <%= t("admin.budget_investments.show.undefined") %>
-  <% end %>
-</p>
-
 <p>
   <%= link_to t("admin.budget_investments.show.edit_classification"),
                 edit_admin_budget_budget_investment_path(@budget, @investment,
@@ -77,4 +68,4 @@
 
 <%= render "admin/change_logs/change_log", logs: @logs %>
 
-<%= render "tracking/milestones/milestones", milestoneable: @investment %>
+<%= render "admin/milestones/milestones", milestoneable: @investment %>

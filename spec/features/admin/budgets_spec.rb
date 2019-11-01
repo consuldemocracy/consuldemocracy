@@ -245,9 +245,8 @@ describe "Admin budgets" do
     scenario "Deselect all selected staff", :js do
       admin = Administrator.first
       valuator = create(:valuator)
-      tracker = create(:tracker)
 
-      budget = create(:budget, administrators: [admin], valuators: [valuator], trackers: [tracker])
+      budget = create(:budget, administrators: [admin], valuators: [valuator])
 
       visit edit_admin_budget_path(budget)
       click_link "1 administrator selected"
@@ -260,17 +259,11 @@ describe "Admin budgets" do
 
       expect(page).to have_link "Select valuators"
 
-      click_link "1 tracker selected"
-      uncheck tracker.name
-
-      expect(page).to have_link "Select trackers"
-
       click_button "Update Budget"
       visit edit_admin_budget_path(budget)
 
       expect(page).to have_link "Select administrators"
       expect(page).to have_link "Select valuators"
-      expect(page).to have_link "Select trackers"
     end
   end
 

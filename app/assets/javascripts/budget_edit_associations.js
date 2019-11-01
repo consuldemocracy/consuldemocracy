@@ -4,15 +4,13 @@
     initialize: function() {
       $(".js-budget-users-list [type='checkbox']").on({
         change: function() {
-          var admin_count, tracker_count, valuator_count;
+          var admin_count, valuator_count;
 
           admin_count = $("#administrators_list :checked").length;
           valuator_count = $("#valuators_list :checked").length;
-          tracker_count = $("#trackers_list :checked").length;
 
           App.I18n.set_pluralize($(".js-budget-show-administrators-list"), admin_count);
           App.I18n.set_pluralize($(".js-budget-show-valuators-list"), valuator_count);
-          App.I18n.set_pluralize($(".js-budget-show-trackers-list"), tracker_count);
         }
       });
       $(".js-budget-show-users-list").on({

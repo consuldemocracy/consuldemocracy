@@ -51,9 +51,6 @@ class Budget
       inverse_of: :commentable,
       class_name: "Comment"
 
-    has_many :tracker_assignments, dependent: :destroy
-    has_many :trackers, through: :tracker_assignments
-
     delegate :name, :email, to: :author, prefix: true
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
@@ -106,10 +103,6 @@ class Budget
 
     def self.by_valuator(valuator_id)
       where("budget_valuator_assignments.valuator_id = ?", valuator_id).joins(:valuator_assignments)
-    end
-
-    def self.by_tracker(tracker_id)
-      where("budget_tracker_assignments.tracker_id = ?", tracker_id).joins(:tracker_assignments)
     end
 
     def self.by_valuator_group(valuator_group_id)

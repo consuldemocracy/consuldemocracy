@@ -356,7 +356,7 @@ describe "Admin edit translatable records" do
     let(:translatable) { create(:milestone) }
 
     scenario "Shows an error message" do
-      visit edit_tracking_budget_budget_investment_milestone_path(*resource_hierarchy_for(translatable))
+      visit edit_admin_budget_budget_investment_milestone_path(*resource_hierarchy_for(translatable))
 
       click_link "Remove language"
       click_link "Remove language"

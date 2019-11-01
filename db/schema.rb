@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191031210734) do
+ActiveRecord::Schema.define(version: 20191101183155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -297,7 +297,6 @@ ActiveRecord::Schema.define(version: 20191031210734) do
     t.datetime "confirmed_hide_at"
     t.datetime "ignored_flag_at"
     t.integer  "flags_count",                                 default: 0
-    t.integer  "tracker_assignments_count"
     t.integer  "original_heading_id"
     t.index ["administrator_id"], name: "index_budget_investments_on_administrator_id", using: :btree
     t.index ["author_id"], name: "index_budget_investments_on_author_id", using: :btree
@@ -338,24 +337,6 @@ ActiveRecord::Schema.define(version: 20191031210734) do
     t.string   "reason"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "budget_tracker_assignments", force: :cascade do |t|
-    t.integer  "tracker_id"
-    t.integer  "investment_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["investment_id"], name: "index_budget_tracker_assignments_on_investment_id", using: :btree
-    t.index ["tracker_id"], name: "index_budget_tracker_assignments_on_tracker_id", using: :btree
-  end
-
-  create_table "budget_trackers", force: :cascade do |t|
-    t.integer  "budget_id"
-    t.integer  "tracker_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["budget_id"], name: "index_budget_trackers_on_budget_id", using: :btree
-    t.index ["tracker_id"], name: "index_budget_trackers_on_tracker_id", using: :btree
   end
 
   create_table "budget_translations", force: :cascade do |t|
@@ -1504,15 +1485,6 @@ ActiveRecord::Schema.define(version: 20191031210734) do
     t.index ["hidden_at"], name: "index_topics_on_hidden_at", using: :btree
   end
 
-  create_table "trackers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "description"
-    t.integer  "budget_investment_count", default: 0
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["user_id"], name: "index_trackers_on_user_id", using: :btree
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                                     default: ""
     t.string   "encrypted_password",                        default: "",                    null: false
@@ -1700,9 +1672,6 @@ ActiveRecord::Schema.define(version: 20191031210734) do
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
   add_foreign_key "budget_investments", "communities"
-  add_foreign_key "budget_tracker_assignments", "trackers"
-  add_foreign_key "budget_trackers", "budgets"
-  add_foreign_key "budget_trackers", "trackers"
   add_foreign_key "budget_valuators", "budgets"
   add_foreign_key "budget_valuators", "valuators"
   add_foreign_key "dashboard_administrator_tasks", "users"
@@ -1743,7 +1712,6 @@ ActiveRecord::Schema.define(version: 20191031210734) do
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
-  add_foreign_key "trackers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

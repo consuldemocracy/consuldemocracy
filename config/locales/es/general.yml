@@ -255,7 +255,6 @@ es:
           other: Tienes %{count} notificaciones nuevas
         notifications: Notificaciones
         no_notifications: "No tienes notificaciones nuevas"
-      tracking: "Seguimiento"
     admin:
       watch_form_message: "Has realizado cambios que no han sido guardados. ¿Seguro que quieres abandonar la página?"
   notifications:
