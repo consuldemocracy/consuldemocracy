@@ -106,15 +106,8 @@ he:
           two: "%{count} מעריכים נבחרו"
           many: "%{count} מעריכים נבחרו"
           other: "%{count} מעריכים נבחרו"
-        trackers:
-          zero: "בחירת עוקבים"
-          one: "עוקב אחד נבחר"
-          two: "%{count} עוקבים נבחרו"
-          many: "%{count} עוקבים נבחרו"
-          other: "%{count} עוקבים נבחרו"
         empty_administrators: "אין מנהלי מערכת"
         empty_valuators: "לא נמצאו מעריכים"
-        empty_trackers: "לא נמצאו עוקבים"
       destroy:
         success_notice: התקציב נמחק בהצלחה
         unable_notice: אינך יכול להסיר תקציב הקשור להשקעות קיימות
@@ -261,7 +254,6 @@ he:
           "false": "לא"
         valuator_groups: "קבוצת המעריכים"
         preview: תצוגה מקדימה לפרויקט ההשקעה
-        assigned_trackers: "עוקבים מוקצים"
       edit:
         classification: סיווג
         compatibility: תאימות
@@ -272,7 +264,6 @@ he:
         user_tags: המשתמש הקצה תגיות
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
         undefined: לא מוגדר
-        assigned_trackers: "עוקבים"
       search_unfeasible: חיפוש אינו ישים
     milestones:
       index:
@@ -661,7 +652,6 @@ he:
       title_booths: דוכן הצבעות
       legislation: חקיקה שיתופית
       users: משתמשים
-      trackers: "עוקבים"
       dashboard: לוח מחוונים להצעות
       administrator_tasks: בקשת משאבים
       dashboard_actions: משאבים ופעולות
@@ -1547,23 +1537,3 @@ he:
       edited_by: "נערך על ידי"
       actions: "פעולות"
       empty: "לא נרשמו שינויים"
-    trackers:
-      index:
-        title: עוקבים
-        name: שם
-        email: דואר אלקטרוני
-        description: תיאור
-        no_description: אין תיאור
-        no_trackers: לא נמצאו עוקבים.
-      tracker:
-        add: "נוספו לעוקבים"
-      form:
-        update: עדכן עוקבים
-        updated: "העוקבים עודכנו בהצלחה."
-        edit_title: "עוקבים: ערוך עוקב"
-      show:
-        email: דואר אלקטרוני
-        description: תיאור
-        no_description: אין תיאור.
-      search:
-        title: עוקבים
