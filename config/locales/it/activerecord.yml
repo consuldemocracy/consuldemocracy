@@ -141,9 +141,6 @@ it:
         description_finished: "Descrizione durante la fase della Approvazione del Bilancio / Risultati"
         phase: "Fase"
         currency_symbol: "Valuta"
-        budget_milestone_tags: "Tag pietra miliare"
-        budget_valuation_tags: "Tag valutazione"
-        help_link: "Link aiuto"
       budget/translation:
         name: "Nome"
       budget/investment:
