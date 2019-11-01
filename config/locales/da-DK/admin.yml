@@ -102,13 +102,8 @@ da:
           zero: "Vælg evaluator"
           one: "1 evaluator er valgt"
           other: "%{count} evaluatorer er valgt"
-        trackers:
-          zero: "Vælg tracker"
-          one: "1 tracker er valgt"
-          other: "%{count} trackere er valgt"
         empty_administrators: "Der findes ingen administratorer"
         empty_valuators: "Der findes ingen evaluatorer"
-        empty_trackers: "Der findes ingen trackere"
       destroy:
         success_notice: Budgettet blev slettet
         unable_notice: Du kan ikke slette et budget, der har modtaget projektidéer fra brugere
@@ -1466,13 +1461,3 @@ da:
       edited_at: "Redigeret den"
       edited_by: "Redigeret af"
       actions: "Handlinger"
-    trackers:
-      index:
-        name: Navn
-        email: E-mail
-        description: Beskrivelse
-        no_description: Ingen beskrivelse
-      show:
-        email: E-mail
-        description: Beskrivelse
-        no_description: Ingen beskrivelse.
