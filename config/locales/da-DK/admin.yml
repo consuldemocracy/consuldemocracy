@@ -75,7 +75,7 @@ da:
         table_investments: Projektidéer
         table_edit_groups: Område grupper
         table_edit_budget: Rediger
-        table_admin_ballots: Stemmesedler
+        table_admin_ballots: Valgsteder
         edit_groups: Rediger område grupper
         edit_budget: Rediger budget
         admin_ballots: Administrer stemmesedler
@@ -109,10 +109,6 @@ da:
         empty_administrators: "Der findes ingen administratorer"
         empty_valuators: "Der findes ingen evaluatorer"
         empty_trackers: "Der findes ingen trackere"
-        name: "Navn"
-        selected: "Valgt"
-        cancel: "Annuller"
-        save: "Gem"
       destroy:
         success_notice: Budgettet blev slettet
         unable_notice: Du kan ikke slette et budget, der har modtaget projektidéer fra brugere
