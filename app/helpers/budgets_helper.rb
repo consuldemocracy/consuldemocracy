@@ -53,16 +53,8 @@ module BudgetsHelper
     Budget::Ballot.where(user: current_user, budget: @budget).first
   end
 
-  def investment_tags_select_options(budget)
-    tags = Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).pluck(:name)
-    tags = tags.concat budget.budget_valuation_tags.split(",") if budget.budget_valuation_tags.present?
-    tags.uniq
-  end
-
-  def investment_milestone_tags_select_options(budget)
-    tags = Budget::Investment.by_budget(budget).tags_on(:milestone).order(:name).pluck(:name)
-    tags = tags.concat budget.budget_milestone_tags.split(",") if budget.budget_milestone_tags.present?
-    tags.uniq
+  def investment_tags_select_options(budget, context)
+    budget.investments.tags_on(context).order(:name).pluck(:name)
   end
 
   def unfeasible_or_unselected_filter

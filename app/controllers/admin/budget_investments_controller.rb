@@ -36,10 +36,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def edit
-    load_admins
-    load_valuators
+    load_staff
     load_valuator_groups
-    load_trackers
     load_tags
   end
 
@@ -51,10 +49,8 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
                                                       Budget::Investment.filter_params(params).to_h),
                   notice: t("flash.actions.update.budget_investment")
     else
-      load_admins
-      load_valuators
+      load_staff
       load_valuator_groups
-      load_trackers
       load_tags
       render :edit
     end
@@ -103,18 +99,10 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       @investment = @budget.investments.find(params[:id])
     end
 
-    def load_admins
-      @admins = @budget.administrators.includes(:user).all
-    end
-
-    def load_trackers
-      @trackers = @budget.trackers.includes(:user).all.order(description: :asc)
-                    .order("users.email ASC")
-    end
-
-    def load_valuators
-      @valuators = @budget.valuators.includes(:user).all.order(description: :asc)
-                     .order("users.email ASC")
+    def load_staff
+      @admins = @budget.administrators.includes(:user)
+      @trackers = @budget.trackers.includes(:user).order(description: :asc).order("users.email ASC")
+      @valuators = @budget.valuators.includes(:user).order(description: :asc).order("users.email ASC")
     end
 
     def load_valuator_groups
@@ -122,7 +110,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     end
 
     def load_tags
-      @tags = Budget::Investment.tags_on(:valuation).order(:name).distinct
+      @tags = Budget::Investment.tags_on(:valuation_tags).order(:name).distinct
     end
 
     def load_ballot

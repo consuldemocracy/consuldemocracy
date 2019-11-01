@@ -1,7 +1,6 @@
 module TranslatableFormHelper
   def translatable_form_for(record, options = {})
-    options_full = options.merge(builder: TranslatableFormBuilder)
-    form_for(record, options_full) do |f|
+    form_for(record, options.merge(builder: TranslatableFormBuilder)) do |f|
       yield(f)
     end
   end

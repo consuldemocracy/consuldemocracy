@@ -296,7 +296,7 @@ describe Budget do
     end
   end
 
-  describe "#milestone_tags" do
+  describe "#investments_milestone_tags" do
     let(:investment1) { build(:budget_investment, :winner) }
     let(:investment2) { build(:budget_investment, :winner) }
     let(:investment3) { build(:budget_investment) }
@@ -304,7 +304,7 @@ describe Budget do
     it "returns an empty array if not investments milestone_tags" do
       budget.investments << investment1
 
-      expect(budget.milestone_tags).to eq([])
+      expect(budget.investments_milestone_tags).to eq([])
     end
 
     it "returns array of investments milestone_tags" do
@@ -312,7 +312,7 @@ describe Budget do
       investment1.save!
       budget.investments << investment1
 
-      expect(budget.milestone_tags).to eq(["tag1"])
+      expect(budget.investments_milestone_tags).to eq(["tag1"])
     end
 
     it "returns uniq list of investments milestone_tags" do
@@ -323,7 +323,7 @@ describe Budget do
       budget.investments << investment1
       budget.investments << investment2
 
-      expect(budget.milestone_tags).to eq(["tag1"])
+      expect(budget.investments_milestone_tags).to eq(["tag1"])
     end
 
     it "returns tags only for winner investments" do
@@ -334,7 +334,7 @@ describe Budget do
       budget.investments << investment1
       budget.investments << investment3
 
-      expect(budget.milestone_tags).to eq(["tag1"])
+      expect(budget.investments_milestone_tags).to eq(["tag1"])
     end
   end
 end
