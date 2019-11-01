@@ -109,10 +109,6 @@ de:
         empty_administrators: "Keine Administrator*innen vorhanden"
         empty_valuators: "Keine Begutachter*innen vorhanden"
         empty_trackers: "Keine Tracker vorhanden"
-        name: "Name"
-        selected: "Ausgewählt"
-        cancel: "Abbrechen"
-        save: "Speichern"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
