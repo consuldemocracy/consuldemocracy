@@ -413,7 +413,7 @@ class Budget
             log.investment_id = self.id
             log.new_value = self.send field
             log.old_value = self.send "#{field}_was"
-            !log.save
+            log.save!
           end
         end
       end

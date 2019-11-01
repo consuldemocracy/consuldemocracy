@@ -5,8 +5,6 @@ class Budget::Investment::ChangeLog < ApplicationRecord
     inverse_of:  :budget_investment_change_logs,
     required:    false
 
-  validates :old_value, presence: true
-  validates :new_value, presence: true
   validates :field, presence: true
 
   scope :by_investment, ->(investment_id) { where(investment_id: investment_id) }
