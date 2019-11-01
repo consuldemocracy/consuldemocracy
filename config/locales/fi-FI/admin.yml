@@ -570,6 +570,3 @@ fi:
         processes: Prosessit
     change_log:
       id: "ID"
-    trackers:
-      index:
-        name: Nimi
