@@ -102,13 +102,8 @@ tr:
           zero: "Bilirkişileri seç"
           one: "1 bilirkişi seçildi"
           other: "%{count} bilirkişiler seçildi"
-        trackers:
-          zero: "İzleyicileri seç"
-          one: "1 izleyici seçildi"
-          other: "%{count} izleyiciler seçildi"
         empty_administrators: "Hiç yönetici yok"
         empty_valuators: "Hiç bilirkişi yok"
-        empty_trackers: "Hiç izleyici yok"
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
@@ -251,7 +246,6 @@ tr:
           "false": "Hayır"
         valuator_groups: "Bilirkişi Grupları"
         preview: Yatırım ön izleme
-        assigned_trackers: "Atanan izleyiciler"
       edit:
         classification: Sınıflandırma
         compatibility: Uygunluk
@@ -262,7 +256,6 @@ tr:
         user_tags: Kullanıcı etiketler atanmış
         tags_placeholder: "Virgülle ayırmak istediğiniz etiketleri yazın (,)"
         undefined: Tanımsız
-        assigned_trackers: "İzleyiciler"
       search_unfeasible: Arama uygulanamaz
     milestones:
       index:
@@ -651,7 +644,6 @@ tr:
       title_booths: Oylama kabinleri
       legislation: Katılımcı Mevzuat
       users: Kullanıcılar
-      trackers: "İzleyiciler"
       dashboard: Öneriler gösterge tablosu
       administrator_tasks: İstenilen kaynaklar
       dashboard_actions: Kaynaklar ve eylemler
@@ -1528,23 +1520,3 @@ tr:
       edited_by: "Tarafından düzenlendi"
       actions: "Eylemler"
       empty: "Günlüğe kaydedilen değişiklik yok"
-    trackers:
-      index:
-        title: İzleyiciler
-        name: İsim
-        email: E-posta
-        description: Tanımlama
-        no_description: Tanımlama yok
-        no_trackers: Hiç izleyici yok.
-      tracker:
-        add: "İzleyicilere ekle"
-      form:
-        update: İzleyiciyi Güncelle
-        updated: "İzleyici başarıyla güncellendi."
-        edit_title: "İzleyiciler: İzleyiciyi düzenle"
-      show:
-        email: E-posta
-        description: Tanımlama
-        no_description: Tanımlama yok.
-      search:
-        title: İzleyiciler
