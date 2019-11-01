@@ -115,10 +115,6 @@ he:
         empty_administrators: "אין מנהלי מערכת"
         empty_valuators: "לא נמצאו מעריכים"
         empty_trackers: "לא נמצאו עוקבים"
-        name: "שם"
-        selected: "נבחר"
-        cancel: "ביטול"
-        save: "שמירה"
       destroy:
         success_notice: התקציב נמחק בהצלחה
         unable_notice: אינך יכול להסיר תקציב הקשור להשקעות קיימות
