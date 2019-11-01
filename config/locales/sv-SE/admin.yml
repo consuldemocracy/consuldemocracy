@@ -92,9 +92,6 @@ sv:
         edit_phase: Redigera fas
         active: Aktiva
         blank_dates: Datumfälten är tomma
-        name: "Namn"
-        selected: "Vald"
-        save: "Spara"
       destroy:
         success_notice: Budgeten raderades
         unable_notice: Du kan inte ta bort en budget som har budgetförslag
