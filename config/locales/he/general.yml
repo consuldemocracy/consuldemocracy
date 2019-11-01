@@ -262,7 +262,6 @@ he:
           other: יש לך %{count} התרעות חדשות
         notifications: התראות
         no_notifications: "אין לך התראות חדשות"
-      tracking: "מעקב"
     admin:
       watch_form_message: "יש שינויים שלא נשמרו. האם אתה מאשר לעזוב את הדף?"
   notifications:
