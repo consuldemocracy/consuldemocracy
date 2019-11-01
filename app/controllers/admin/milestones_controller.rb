@@ -1,4 +1,4 @@
-class Tracking::MilestonesController < Tracking::BaseController
+class Admin::MilestonesController < Admin::BaseController
   include Translatable
   include ImageAttributes
 
@@ -17,7 +17,7 @@ class Tracking::MilestonesController < Tracking::BaseController
   def create
     @milestone = @milestoneable.milestones.new(milestone_params)
     if @milestone.save
-      redirect_to milestoneable_path, notice: t("tracking.milestones.create.notice")
+      redirect_to milestoneable_path, notice: t("admin.milestones.create.notice")
     else
       render :new
     end
@@ -28,7 +28,7 @@ class Tracking::MilestonesController < Tracking::BaseController
 
   def update
     if @milestone.update(milestone_params)
-      redirect_to milestoneable_path, notice: t("tracking.milestones.update.notice")
+      redirect_to milestoneable_path, notice: t("admin.milestones.update.notice")
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class Tracking::MilestonesController < Tracking::BaseController
 
   def destroy
     @milestone.destroy!
-    redirect_to milestoneable_path, notice: t("tracking.milestones.delete.notice")
+    redirect_to milestoneable_path, notice: t("admin.milestones.delete.notice")
   end
 
   private
@@ -67,7 +67,6 @@ class Tracking::MilestonesController < Tracking::BaseController
     end
 
     def milestoneable_path
-      polymorphic_path([current_user.administrator? ? :admin : :tracking,
-                        *resource_hierarchy_for(@milestone.milestoneable)])
+      polymorphic_path([:admin, *resource_hierarchy_for(@milestone.milestoneable)])
     end
 end

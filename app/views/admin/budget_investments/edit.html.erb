@@ -89,16 +89,6 @@
           <% end %>
         </ul>
       </div>
-
-      <div class="small-12 column">
-        <hr>
-        <%= f.label :tracker_ids, t("admin.budget_investments.edit.assigned_trackers") %>
-        <ul>
-          <%= f.collection_check_boxes :tracker_ids, @trackers, :id, :email do |b| %>
-            <li><%= b.label(title: tracker_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
-          <% end %>
-        </ul>
-      </div>
     </div>
 
     <div class="row expanded margin-top">

@@ -47,7 +47,6 @@ data:
     - config/locales/%{locale}/milestones.yml
     - config/locales/%{locale}/stats.yml
     - config/locales/%{locale}/download.yml
-    - config/locales/%{locale}/tracking.yml
 
   # Locale files to write new keys to, based on a list of key pattern => file rules. Matched from top to bottom:
   # `i18n-tasks normalize -p` will force move the keys according to these rules
@@ -141,7 +140,7 @@ ignore_unused:
   - "admin.hidden_proposals.index.filter*"
   - "admin.proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
-  - "admin.budgets.edit.(administrators|trackers|valuators).*"
+  - "admin.budgets.edit.(administrators|valuators).*"
   - "admin.budget_investments.index.filter*"
   - "admin.organizations.index.filter*"
   - "admin.hidden_users.index.filter*"

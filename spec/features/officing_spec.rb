@@ -108,7 +108,7 @@ describe "Poll Officing" do
     expect(page).not_to have_link("Moderation")
   end
 
-  xscenario "Officing dashboard" do
+  scenario "Officing dashboard" do
     create(:poll_officer, user: user)
     create(:poll)
     login_as(user)

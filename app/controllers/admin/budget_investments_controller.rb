@@ -87,7 +87,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     def budget_investment_params
       attributes = [:external_url, :heading_id, :administrator_id, :tag_list,
                     :valuation_tag_list, :incompatible, :visible_to_valuators, :selected,
-                    :milestone_tag_list, tracker_ids: [], valuator_ids: [], valuator_group_ids: []]
+                    :milestone_tag_list, valuator_ids: [], valuator_group_ids: []]
       params.require(:budget_investment).permit(attributes, translation_params(Budget::Investment))
     end
 
@@ -101,7 +101,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
 
     def load_staff
       @admins = @budget.administrators.includes(:user)
-      @trackers = @budget.trackers.includes(:user).order(description: :asc).order("users.email ASC")
       @valuators = @budget.valuators.includes(:user).order(description: :asc).order("users.email ASC")
     end
 

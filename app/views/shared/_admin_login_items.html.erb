@@ -21,13 +21,6 @@
         </li>
       <% end %>
 
-      <% if (feature?(:budgets)) &&
-        (current_user.administrator? || current_user.tracker?) %>
-        <li>
-          <%= link_to t("layouts.header.tracking"), tracking_root_path %>
-        </li>
-      <% end %>
-
       <% if current_user.administrator? || current_user.manager? %>
         <li>
           <%= link_to t("layouts.header.management"), management_sign_in_path %>

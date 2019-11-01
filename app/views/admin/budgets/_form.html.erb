@@ -22,7 +22,7 @@
   </div>
 
   <div class="margin-top">
-    <% %w[administrators valuators trackers].each do |staff| %>
+    <% %w[administrators valuators].each do |staff| %>
       <div class="small-12 medium-4 column end">
         <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
           "#",
@@ -35,7 +35,6 @@
   <div class="margin-top">
     <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
     <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
-    <%= render "/admin/budgets/association", assignable_type: "trackers", assignables: @trackers, form: f %>
   </div>
 
   <% if @budget.phases.present? %>

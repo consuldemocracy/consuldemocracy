@@ -71,8 +71,7 @@ class Admin::BudgetsController < Admin::BaseController
       valid_attributes = [:phase,
                           :currency_symbol,
                           administrator_ids: [],
-                          valuator_ids: [],
-                          tracker_ids: []
+                          valuator_ids: []
       ] + descriptions
       params.require(:budget).permit(*valid_attributes, *report_attributes, translation_params(Budget))
     end
@@ -83,7 +82,6 @@ class Admin::BudgetsController < Admin::BaseController
 
     def load_staff
       @admins = Administrator.includes(:user)
-      @trackers = Tracker.includes(:user).order(description: :asc).order("users.email ASC")
       @valuators = Valuator.includes(:user).order(description: :asc).order("users.email ASC")
     end
 end

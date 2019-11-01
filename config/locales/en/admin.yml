@@ -102,13 +102,8 @@ en:
           zero: "Select valuators"
           one: "1 valuator selected"
           other: "%{count} valuators selected"
-        trackers:
-          zero: "Select trackers"
-          one: "1 tracker selected"
-          other: "%{count} trackers selected"
         empty_administrators: "There are no administrators"
         empty_valuators: "There are no valuators"
-        empty_trackers: "There are no trackers"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments
@@ -254,7 +249,6 @@ en:
           "false": "No"
         valuator_groups: "Valuator Groups"
         preview: Investment preview
-        assigned_trackers: "Assigned trackers"
       edit:
         classification: Classification
         compatibility: Compatibility
@@ -265,11 +259,36 @@ en:
         user_tags: User assigned tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
-        assigned_trackers: "Trackers"
       search_unfeasible: Search unfeasible
     milestones:
       index:
+        table_id: "ID"
+        table_title: "Title"
+        table_description: "Description"
+        table_publication_date: "Publication date"
+        table_status: Status
+        table_actions: "Actions"
+        delete: "Delete milestone"
+        no_milestones: "Don't have defined milestones"
+        image: "Image"
+        show_image: "Show image"
+        documents: "Documents"
+        milestone: Milestone
+        new_milestone: Create new milestone
         milestone_tags: Milestone Tags
+      form:
+        admin_statuses: Manage statuses
+        no_statuses_defined: There are no defined statuses yet
+      new:
+        creating: Create milestone
+      edit:
+        title: Edit milestone
+      create:
+        notice: New milestone created successfully!
+      update:
+        notice: Milestone updated successfully
+      delete:
+        notice: Milestone successfully deleted
     statuses:
       index:
         title: Milestone statuses
@@ -676,7 +695,6 @@ en:
       title_booths: Voting booths
       legislation: Collaborative Legislation
       users: Users
-      trackers: "Trackers"
       dashboard: Proposals dashboard
       administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
@@ -1575,29 +1593,6 @@ en:
       edited_by: "Edited by"
       actions: "Actions"
       empty: "There are not changes logged"
-    trackers:
-      index:
-        title: Trackers
-        name: Name
-        email: Email
-        description: Description
-        no_description: No description
-        no_trackers: There are no trackers.
-      tracker:
-        add: "Add to trackers"
-      form:
-        update: Update Tracker
-        updated: "Tracker updated succesfully."
-        edit_title: "Trackers: Edit tracker"
-      show:
-        email: Email
-        description: Description
-        no_description: No description.
-      search:
-        title: Trackers
-    progress_bars:
-      index:
-        title: "Progress bars"
     local_census_records:
       index:
         title: Manage local census

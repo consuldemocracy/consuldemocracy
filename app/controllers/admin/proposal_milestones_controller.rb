@@ -1,4 +1,4 @@
-class Tracking::ProposalMilestonesController < Tracking::MilestonesController
+class Admin::ProposalMilestonesController < Admin::MilestonesController
   private
 
     def milestoneable
