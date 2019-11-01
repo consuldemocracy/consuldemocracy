@@ -231,7 +231,6 @@ pt-BR:
           other: Você tem %{count} novas notificações
         notifications: Notificações
         no_notifications: "Vocie nnao possui novas notificações"
-      tracking: "Rastreamento"
     admin:
       watch_form_message: "Você possui alterações não salvas. Tem certeza que deseja sair da página?"
   notifications:
