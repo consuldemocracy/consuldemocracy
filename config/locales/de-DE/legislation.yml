@@ -128,3 +128,13 @@ de:
         zero: Keine Vorschläge
         one: "%{count} Vorschlag"
         other: "%{count} Vorschläge"
+    summary:
+      title: Zusammenfassung
+      votes: Stimmen
+      debates_phase: Debattenphase
+      proposal_phase: Vorschlagsphase
+      comments_phase: Text Kommentar Phase
+      comments:
+        zero: Keine Kommentare
+        one: "%{count} Kommentar"
+        other: "%{count} Kommentar"
