@@ -102,13 +102,8 @@ de:
           zero: "Den Begutachtern/Begutachterinnen wählen"
           one: "1 Begutacher ausgewählt"
           other: "%{count} Begutachter ausgewählt"
-        trackers:
-          zero: "Tracker wählen"
-          one: "1 Tracker ausgewählt"
-          other: "%{count} Tracker ausgewählt"
         empty_administrators: "Keine Administrator*innen vorhanden"
         empty_valuators: "Keine Begutachter*innen vorhanden"
-        empty_trackers: "Keine Tracker vorhanden"
       destroy:
         success_notice: Bürgerhaushalt erfolgreich gelöscht
         unable_notice: Ein Bürgerhaushalt mit zugehörigen Ausgabenvorschlägen kann nicht gelöscht werden
@@ -254,7 +249,6 @@ de:
           "false": "Nein"
         valuator_groups: "Begutachtungsgruppen"
         preview: Investitionsvorschau
-        assigned_trackers: "Zugewiesene Tracker"
       edit:
         classification: Klassifizierung
         compatibility: Kompatibilität
@@ -265,7 +259,6 @@ de:
         user_tags: Tags, die von Benutzer*innen zugewiesen wurden
         tags_placeholder: "Geben Sie die gewünschten Tags durch Kommas (,) getrennt ein"
         undefined: Undefiniert
-        assigned_trackers: "Tracker"
       search_unfeasible: Suche undurchführbar
     milestones:
       index:
@@ -655,7 +648,6 @@ de:
       title_booths: Wahlkabinen
       legislation: Kollaborative Gesetzgebung
       users: Benutzer*innen
-      trackers: "Tracker"
       dashboard: Vorschläge Dashboard
       administrator_tasks: Beantragte Ressourcen
       dashboard_actions: Ressourcen und Aktionen
@@ -1554,26 +1546,6 @@ de:
       edited_by: "Bearbeitet von"
       actions: "Aktionen"
       empty: "Es wurden keine Änderungen protokolliert"
-    trackers:
-      index:
-        title: Tracker
-        name: Name
-        email: E-Mail
-        description: Beschreibung
-        no_description: Ohne Beschreibung
-        no_trackers: Keine Tracker vorhanden.
-      tracker:
-        add: "Zu den Trackern hinzufügen"
-      form:
-        update: Update Tracker
-        updated: "Tracker Update erfolgreich."
-        edit_title: "Tracker: Bearbeiten Tracker"
-      show:
-        email: E-Mail
-        description: Beschreibung
-        no_description: Ohne Beschreibung.
-      search:
-        title: Tracker
     local_census_records:
       index:
         title: Verwaltung des lokalen Registers
