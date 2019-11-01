@@ -19,9 +19,9 @@ da:
         organization: Det er ikke tilladt for organisationer at stemme
         not_selected: Du kan ikke støtte op om projektidéer, der ikke kan gennemføres
         not_enough_money: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
-        no_ballots_allowed: Udvælgelsesfasen er slut
+        no_ballots_allowed: Støttefasen er slut
         different_heading_assigned: "Du har allerede stemt i en anden post: %{heading_link}"
-        change_ballot: Ønsker du at ændre din stemme?
+        change_ballot: ændre din stemme
         casted_offline: Du har allerede deltaget, da du var offline
     groups:
       show:
@@ -34,13 +34,13 @@ da:
       drafting: Udkast (Ikke offentligt)
       informing: Information
       accepting: Modtagelse af projektidéer
-      reviewing: Gennemgang af projekter
-      selecting: Projektudvælgelse
-      valuating: Vurdering af projekter
+      reviewing: Gennemgangsfasen
+      selecting: Støttefasen
+      valuating: Evalueringsfasen
       publishing_prices: Publicering af prisvurderinger
-      balloting: Afstemning
+      balloting: Afstemningsfasen
       reviewing_ballots: Gennemgang af afstemningsresultatet
-      finished: Budgettet er færdiggjort
+      finished: Budgettet er afsluttet
     index:
       title: Deltagerbudgetter
       empty_budgets: Der er ingen budgetter.
@@ -54,7 +54,7 @@ da:
       investment_proyects: Alle projekter
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
       not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
-      finished_budgets: Afsluttede deltagerbudetter
+      finished_budgets: Afsluttede deltagerbudgetter
       see_results: Se resultat
       section_footer:
         title: Hvad er et deltagerbudget?
@@ -88,7 +88,7 @@ da:
             one: "<strong>Du har stemt på et forslag med en værdi af %{amount_spent}</strong>"
             other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
           voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
-          voted_info_link: lav din stemme om
+          voted_info_link: ændre din stemme
           different_heading_assigned: "Du har aktive stemmer i en anden post: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
@@ -100,7 +100,7 @@ da:
           feasible: Mulige projekter
           unfeasible: Umulige projekter
         orders:
-          random: random
+          random: Alle idéer
           confidence_score: højest rangeret
           price: pris
       share:
