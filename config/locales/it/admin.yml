@@ -102,13 +102,8 @@ it:
           zero: "Seleziona stimatori"
           one: "1 stimatore selezionato"
           other: "%{count} stimatori selezionati"
-        trackers:
-          zero: "Seleziona tracciatori"
-          one: "1 tracciatore selezionato"
-          other: "%{count} selezionatori selezionati"
         empty_administrators: "Non ci sono amministratori"
         empty_valuators: "Non ci sono stimatori"
-        empty_trackers: "Non ci sono tracciatori"
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
@@ -253,7 +248,6 @@ it:
           "false": "No"
         valuator_groups: "Gruppi di stimatori"
         preview: Anteprima investimento
-        assigned_trackers: "Tracciatori assegnati"
       edit:
         classification: Classificazione
         compatibility: Compatibilità
@@ -264,7 +258,6 @@ it:
         user_tags: Etichette assegnate dall’utente
         tags_placeholder: "Scrivere i tag separati da virgole (,)"
         undefined: Non definito
-        assigned_trackers: "Tracciatori"
       search_unfeasible: Ricerca irrealizzabile
     milestones:
       index:
