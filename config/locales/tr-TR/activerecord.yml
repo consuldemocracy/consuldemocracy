@@ -137,9 +137,6 @@ tr:
         description_finished: "Bütçe tamamlandığı zaman belirtilen tanım"
         phase: "Aşama"
         currency_symbol: "Para Birimi"
-        budget_milestone_tags: "Kilometre taşı etiketleri"
-        budget_valuation_tags: "Değerlendirme etiketleri"
-        help_link: "Yardım bağlantısı"
       budget/investment:
         heading_id: "Başlık"
         title: "İsim"
