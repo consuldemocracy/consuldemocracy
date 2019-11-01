@@ -1326,16 +1326,6 @@ sv:
       id: "ID"
       field: "Fält"
       actions: "Åtgärder"
-    trackers:
-      index:
-        name: Namn
-        email: E-post
-        description: Beskrivning
-        no_description: Ingen beskrivning
-      show:
-        email: E-post
-        description: Beskrivning
-        no_description: Ingen beskrivning.
     local_census_records:
       index:
         document_type: Dokumenttyp
