@@ -109,10 +109,6 @@ tr:
         empty_administrators: "Hiç yönetici yok"
         empty_valuators: "Hiç bilirkişi yok"
         empty_trackers: "Hiç izleyici yok"
-        name: "İsim"
-        selected: "Seçildi"
-        cancel: "İptal"
-        save: "Kaydet"
       destroy:
         success_notice: Bütçe başarıyla silindi
         unable_notice: Yatırımlarla ilişkili olan bir Bütçeyi yok edemezsiniz
