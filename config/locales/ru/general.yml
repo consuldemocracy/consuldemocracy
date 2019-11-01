@@ -249,7 +249,6 @@ ru:
           other: У вас есть %{count} новых уведомлений
         notifications: Уведомления
         no_notifications: "У вас нет новых уведомлений"
-      tracking: "Отслеживание"
     admin:
       watch_form_message: "У вас есть не сохраненные изменения. Вы подтверждаете, что хотите покинуть страницу?"
   notifications:
