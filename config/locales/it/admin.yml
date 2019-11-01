@@ -109,10 +109,6 @@ it:
         empty_administrators: "Non ci sono amministratori"
         empty_valuators: "Non ci sono stimatori"
         empty_trackers: "Non ci sono tracciatori"
-        name: "Nome"
-        selected: "Selezionato"
-        cancel: "Annulla"
-        save: "Salva"
       destroy:
         success_notice: Bilancio cancellato con successo
         unable_notice: Non è consentito eliminare un Bilancio cui risultano associati degli investimenti
