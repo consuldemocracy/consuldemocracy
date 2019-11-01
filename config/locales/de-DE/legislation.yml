@@ -138,3 +138,6 @@ de:
         zero: Keine Kommentare
         one: "%{count} Kommentar"
         other: "%{count} Kommentar"
+      most_voted_comments: "Best bewertete Kommentare: "
+      no_allegation: Keine Text Kommentare vorhanden
+      version: Version
