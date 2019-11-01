@@ -140,9 +140,6 @@ gl:
         description_finished: "Descrición cando o orzamento está rematado"
         phase: "Fase"
         currency_symbol: "Moeda"
-        budget_milestone_tags: "Etiquetas do investimento"
-        budget_valuation_tags: "Etiquetas de valoración"
-        help_link: "Ligazón de axuda"
       budget/investment:
         heading_id: "Partida"
         title: "Título"
