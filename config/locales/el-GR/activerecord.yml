@@ -140,9 +140,6 @@ el:
         description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
-        budget_milestone_tags: "Ετικέτες οροσήμου"
-        budget_valuation_tags: "Ετικέτες αποτίμησης"
-        help_link: "Σύνδεσμος βοήθειας"
       budget/investment:
         heading_id: "Επικεφαλίδα"
         title: "Τίτλος"
