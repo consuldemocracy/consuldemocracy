@@ -2,7 +2,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
   include DownloadSettingsHelper
-  include ChangeLogHelper
   include Translatable
 
   feature_flag :budgets
@@ -60,6 +59,11 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     @investment.toggle :selected
     @investment.save!
     load_investments
+  end
+
+  def show_investment_log
+    @log = Budget::Investment::ChangeLog.find_by(id: params[:id])
+    render "admin/change_logs/show"
   end
 
   private
