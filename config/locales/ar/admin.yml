@@ -110,17 +110,8 @@ ar:
           few: "%{count} مقيّمين محدّدين"
           many: "%{count} مقيّمين محدّدين"
           other: "%{count} مقيّمين محدّدين"
-        trackers:
-          zero: "تعيين متتبّعين"
-          zero: "%{count} متتبّعين محدّدين"
-          one: "متتبّع واحد محدّد"
-          two: "%{count} متتبّعين محدّدين"
-          few: "%{count} متتبّعين محدّدين"
-          many: "%{count} متتبّعين محدّدين"
-          other: "%{count} متتبّعين محدّدين"
         empty_administrators: "لا يوجد مدراء"
         empty_valuators: "لا يوجد مقيمون"
-        empty_trackers: "لا يوجد متتبّعون"
       destroy:
         success_notice: تم حذف الميزانية بنجاح
         unable_notice: لا يمكن حذف ميزانية لها استثمارات مرتبطة
@@ -271,7 +262,6 @@ ar:
           "false": "لا"
         valuator_groups: "مجموعات المقيمين"
         preview: معاينة الاستثمار
-        assigned_trackers: "متتبّعون معيّنون"
       edit:
         classification: تصنيف
         compatibility: التوافق
@@ -282,7 +272,6 @@ ar:
         user_tags: العلامات المحددة للمستخدم
         tags_placeholder: "اكتب العلامات التي تريدها مفصولة بفواصل (،)"
         undefined: غير معرف
-        assigned_trackers: "متتبّعون"
       search_unfeasible: بحث غير مجد
     milestones:
       index:
@@ -671,7 +660,6 @@ ar:
       title_booths: صناديق الاقتراع
       legislation: التشريعات التشاركية
       users: المستخدمين
-      trackers: "متتبّعون"
       dashboard: لوحة القيادة الخاصة بالمقترحات
       administrator_tasks: الموارد المطلوبة
       dashboard_actions: الموارد و الإجراءات
@@ -1565,23 +1553,3 @@ ar:
       edited_by: "تم التحرير من قبل"
       actions: "الإجراءات"
       empty: "لا توجد تغييرات مسجلة"
-    trackers:
-      index:
-        title: متتبّعون
-        name: الإسم
-        email: البريد الإلكتروني
-        description: الوصف
-        no_description: بدون وصف
-        no_trackers: لا يوجد متتبّعون.
-      tracker:
-        add: "اظافة متتبّعين"
-      form:
-        update: تحديث متتبّع
-        updated: "تم تحديث المتتبّع بنجاح."
-        edit_title: "المتتبّعون: تحرير المتتبّع"
-      show:
-        email: البريد الإلكتروني
-        description: الوصف
-        no_description: بدون وصف.
-      search:
-        title: متتبّعون
