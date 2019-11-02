@@ -133,9 +133,19 @@ end
 
 task :smtp_and_ssl_secrets do
   on roles(:app) do
-    within release_path do
+    within current_path do
       with rails_env: fetch(:rails_env) do
-        execute :rake, "secrets:smtp_and_ssl"
+        tasks_file_path = "lib/tasks/secrets.rake"
+
+        unless test("[ -e #{current_path}/#{tasks_file_path} ]")
+          begin
+            execute "cp #{release_path}/#{tasks_file_path} #{current_path}/#{tasks_file_path}"
+
+            execute :rake, "secrets:smtp_and_ssl"
+          ensure
+            execute "rm #{current_path}/#{tasks_file_path}"
+          end
+        end
       end
     end
   end
