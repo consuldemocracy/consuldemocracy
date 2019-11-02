@@ -47,7 +47,7 @@ namespace :deploy do
 
   after "deploy:migrate", "add_new_settings"
 
-  before :publishing, "smtp_and_ssl_secrets"
+  before :publishing, "smtp_ssl_and_delay_jobs_secrets"
 
   after :publishing, "deploy:restart"
   after :published, "delayed_job:restart"
@@ -131,7 +131,7 @@ task :setup_puma do
   end
 end
 
-task :smtp_and_ssl_secrets do
+task :smtp_ssl_and_delay_jobs_secrets do
   on roles(:app) do
     within current_path do
       with rails_env: fetch(:rails_env) do
@@ -141,7 +141,7 @@ task :smtp_and_ssl_secrets do
           begin
             execute "cp #{release_path}/#{tasks_file_path} #{current_path}/#{tasks_file_path}"
 
-            execute :rake, "secrets:smtp_and_ssl"
+            execute :rake, "secrets:smtp_ssl_and_delay_jobs"
           ensure
             execute "rm #{current_path}/#{tasks_file_path}"
           end
