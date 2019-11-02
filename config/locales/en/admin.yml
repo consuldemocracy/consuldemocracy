@@ -1583,7 +1583,7 @@ en:
         submit_header: Save header
         card_title: Edit card
         submit_card: Save card
-    change_log:
+    audits:
       title: "Change Log"
       id: "ID"
       field: "Field"

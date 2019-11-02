@@ -208,6 +208,7 @@ Rails/CreateTableWithTimestamps:
   Enabled: true
   Exclude:
     - "db/migrate/201[5-8]*"
+    - "db/migrate/*install_audited.rb"
 
 Rails/Date:
   Enabled: true

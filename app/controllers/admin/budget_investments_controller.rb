@@ -9,12 +9,11 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   has_orders %w[oldest], only: [:show, :edit]
   has_filters %w[all], only: [:index, :toggle_selection]
 
-  before_action :load_budget, except: :show_investment_log
+  before_action :load_budget, except: :audit
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
   before_action :load_investments, only: [:index, :toggle_selection]
-  before_action :load_change_log, only: [:show]
 
   def index
     load_tags
@@ -61,9 +60,9 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     load_investments
   end
 
-  def show_investment_log
-    @log = Budget::Investment::ChangeLog.find_by(id: params[:id])
-    render "admin/change_logs/show"
+  def audit
+    @audit = Audited::Audit.find(params[:id])
+    render "admin/audits/show"
   end
 
   private
@@ -131,9 +130,5 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
           params[:valuator_id] = id
         end
       end
-    end
-
-    def load_change_log
-      @logs = Budget::Investment::ChangeLog.by_investment(@investment.id)
     end
 end

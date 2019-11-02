@@ -250,7 +250,7 @@ namespace :admin do
   get "download_settings/:resource", to: "download_settings#edit", as: "edit_download_settings"
   put "download_settings/:resource", to: "download_settings#update", as: "update_download_settings"
 
-  get "/change_log/:id", to: "budget_investments#show_investment_log", as: "change_log"
+  get "/admin/audits/:id", to: "budget_investments#audit", as: "audit"
 
   resources :local_census_records
   namespace :local_census_records do

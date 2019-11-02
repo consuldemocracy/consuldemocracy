@@ -1,0 +1,19 @@
+<h2 class="inline-block"><%= t("admin.audits.title") %></h2>
+
+<label><strong><%= t("admin.audits.id") %></strong></label>
+<p><%= @audit.id %></p>
+
+<% @audit.audited_changes.each do |field, (old_value, new_value)| %>
+  <label><strong><%= t("admin.audits.field") %></strong></label>
+  <p><%= field %></p>
+  <label><strong><%= t("admin.audits.old_value") %></strong></label>
+  <p><%= old_value %></p>
+  <label><strong><%= t("admin.audits.new_value") %></strong></label>
+  <p><%= new_value %></p>
+<% end %>
+
+<label><strong><%= t("admin.audits.edited_at") %></strong></label>
+<p><%= @audit.created_at.to_date %></p>
+<strong><%= t("admin.audits.edited_by") %></strong>
+<label><strong><%= t("admin.audits.edited_by") %></strong></label>
+<p><%= @audit.user&.name %></p>

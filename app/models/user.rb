@@ -27,10 +27,6 @@ class User < ApplicationRecord
     class_name:  "Budget::Investment",
     foreign_key: :author_id,
     inverse_of:  :author
-  has_many :budget_investment_change_logs,
-    foreign_key: :author_id,
-    inverse_of:  :author,
-    class_name:  "Budget::Investment::ChangeLog"
   has_many :comments, -> { with_hidden }, inverse_of: :user
   has_many :failed_census_calls
   has_many :notifications
@@ -398,14 +394,6 @@ class User < ApplicationRecord
   def interests
     followables = follows.map(&:followable)
     followables.compact.map { |followable| followable.tags.map(&:name) }.flatten.compact.uniq
-  end
-
-  def self.current_user
-    Thread.current[:user]
-  end
-
-  def self.current_user=(user)
-    Thread.current[:user] = user
   end
 
   def send_devise_notification(notification, *args)
