@@ -35,7 +35,7 @@
             </td>
             <td>
               <%= link_to t("shared.show"),
-                admin_audit_path(audit),
+                polymorphic_path([:admin, *resource_hierarchy_for(audit)]),
                 class: "button hollow primary" %>
             </td>
           </tr>

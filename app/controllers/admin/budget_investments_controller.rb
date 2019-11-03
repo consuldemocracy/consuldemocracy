@@ -9,7 +9,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   has_orders %w[oldest], only: [:show, :edit]
   has_filters %w[all], only: [:index, :toggle_selection]
 
-  before_action :load_budget, except: :audit
+  before_action :load_budget
   before_action :load_investment, only: [:show, :edit, :update, :toggle_selection]
   before_action :load_ballot, only: [:show, :index]
   before_action :parse_valuation_filters
@@ -58,11 +58,6 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     @investment.toggle :selected
     @investment.save!
     load_investments
-  end
-
-  def audit
-    @audit = Audited::Audit.find(params[:id])
-    render "admin/audits/show"
   end
 
   private
