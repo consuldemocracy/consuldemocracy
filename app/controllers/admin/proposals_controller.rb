@@ -3,11 +3,25 @@ class Admin::ProposalsController < Admin::BaseController
   include CommentableActions
   include FeatureFlags
   feature_flag :proposals
-  helper DownloadSettingsHelper
+  include DownloadSettingsHelper
 
   has_orders %w[created_at]
 
   before_action :load_proposal, except: :index
+
+  def index
+    super
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data to_csv(@resources, resource_model),
+                  type: "text/csv",
+                  disposition: "attachment",
+                  filename: "proposals.csv"
+      end
+    end
+  end
 
   def show
   end

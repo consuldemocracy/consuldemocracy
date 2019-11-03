@@ -44,18 +44,6 @@ describe "Admin download settings" do
       expect(header).to match(/filename="debates.csv"$/)
       expect(content_type).to match("text/csv")
     end
-
-    scenario "public csv" do
-      visit debates_path
-
-      click_link "Download debates"
-
-      header = page.response_headers["Content-Disposition"]
-      content_type = page.response_headers["Content-Type"]
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="debates.csv"$/)
-      expect(content_type).to match("text/csv")
-    end
   end
 
   scenario "Edit download settings proposals" do
@@ -89,18 +77,6 @@ describe "Admin download settings" do
       visit admin_proposals_path
 
       click_button "Download"
-
-      header = page.response_headers["Content-Disposition"]
-      content_type = page.response_headers["Content-Type"]
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="proposals.csv"$/)
-      expect(content_type).to match("text/csv")
-    end
-
-    scenario "public csv" do
-      visit proposals_path
-
-      click_link "Download proposals"
 
       header = page.response_headers["Content-Disposition"]
       content_type = page.response_headers["Content-Type"]
@@ -185,18 +161,6 @@ describe "Admin download settings" do
       expect(header).to match(/filename="legislation_processes.csv"$/)
       expect(content_type).to match("text/csv")
     end
-
-    scenario "public csv" do
-      visit legislation_processes_path
-
-      click_link "Download legislation processes"
-
-      header = page.response_headers["Content-Disposition"]
-      content_type = page.response_headers["Content-Type"]
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="legislation_processes.csv"$/)
-      expect(content_type).to match("text/csv")
-    end
   end
 
   scenario "Edit download settings budget investment results" do
@@ -219,31 +183,6 @@ describe "Admin download settings" do
                                    name_field: "title").downloadable).to eq true
     expect(DownloadSetting.find_by(name_model: "Budget::Investment",
                                    name_field: "description").downloadable).to eq false
-  end
-
-  scenario "Edit download settings budget investment milestones" do
-    visit admin_edit_download_settings_path(resource: "budget_investments", config: 1)
-
-    expect(page).to have_content("Participatory budgeting - Milestones")
-  end
-
-  scenario "Update download settings budget investment milestones" do
-    visit admin_edit_download_settings_path(resource: "budget_investments", config: 1)
-
-    find(:css, "#downloadable_[value='id']").set(true)
-    find(:css, "#downloadable_[value='title']").set(true)
-
-    click_button "Save changes"
-
-    expect(DownloadSetting.find_by(name_model: "Budget::Investment",
-                                   name_field: "id",
-                                   config: 1).downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Budget::Investment",
-                                   name_field: "title",
-                                   config: 1).downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Budget::Investment",
-                                   name_field: "description",
-                                   config: 1).downloadable).to eq false
   end
 
   context "Download budgets" do
@@ -281,28 +220,6 @@ describe "Admin download settings" do
       content_type = page.response_headers["Content-Type"]
       expect(header).to match(/^attachment/)
       expect(header).to match(/filename="budget_investments.csv"$/)
-      expect(content_type).to match("text/csv")
-    end
-
-    xscenario "public csv results" do
-      visit budget_results_path(budget_id: budget_finished.id)
-      save_page
-      click_link "Download projects"
-      header = page.response_headers["Content-Disposition"]
-      content_type = page.response_headers["Content-Type"]
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investment_results.csv"$/)
-      expect(content_type).to match("text/csv")
-    end
-
-    scenario "public csv milestones" do
-      visit budget_executions_path(budget_id: budget_finished.id)
-      save_page
-      click_link "Download projects"
-      header = page.response_headers["Content-Disposition"]
-      content_type = page.response_headers["Content-Type"]
-      expect(header).to match(/^attachment/)
-      expect(header).to match(/filename="budget_investment_milestones.csv"$/)
       expect(content_type).to match("text/csv")
     end
   end

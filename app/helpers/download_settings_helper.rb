@@ -34,10 +34,6 @@ module DownloadSettingsHelper
     params[:downloadable].present? && !params[:downloadable].empty?
   end
 
-  def get_resource(resource)
-    resource.to_s.pluralize.downcase
-  end
-
   def get_config
     params[:config].present? && !params[:config].nil? ? params[:config] : 0
   end

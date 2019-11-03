@@ -191,7 +191,6 @@ ignore_unused:
   - "legislation.processes.proposals.filters.*"
   - "helpers.page_entries_info.*" # kaminari
   - "views.pagination.*" # kaminari
-  - "shared.download.*"
   - "shared.suggest.*"
   - "invisible_captcha.*"
   - "admin.legislation.processes.process.*"

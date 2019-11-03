@@ -1,6 +1,5 @@
 class Legislation::ProcessesController < Legislation::BaseController
   include RandomSeed
-  include DownloadSettingsHelper
 
   has_filters %w[open past], only: :index
   has_filters %w[random winners], only: :proposals
@@ -14,16 +13,6 @@ class Legislation::ProcessesController < Legislation::BaseController
     @current_filter ||= "open"
     @processes = ::Legislation::Process.send(@current_filter).published
                  .not_in_draft.order(start_date: :desc).page(params[:page])
-
-    respond_to do |format|
-      format.html
-      format.csv do
-        send_data to_csv(process_for_download, Legislation::Process),
-                  type: "text/csv",
-                  disposition: "attachment",
-                  filename: "legislation_processes.csv"
-      end
-    end
   end
 
   def show
@@ -148,10 +137,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   end
 
   private
-
-    def process_for_download
-      Legislation::Process.send(@current_filter).order(start_date: :desc)
-    end
 
     def member_method?
       params[:id].present?

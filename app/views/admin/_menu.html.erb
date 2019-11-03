@@ -259,12 +259,6 @@
           </li>
         <% end %>
 
-        <% if feature?(:budgets) %>
-          <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "budget_investments" %>>
-            <%= link_to t("admin.menu.download_settings.budget_investments_milestones"), admin_edit_download_settings_path(resource: "budget_investments", config: 1) %>
-          </li>
-        <% end %>
-
         <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "comments" %>>
           <%= link_to t("admin.menu.download_settings.comments"), admin_edit_download_settings_path(resource: "comments") %>
         </li>

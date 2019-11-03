@@ -774,14 +774,6 @@ en:
         title: Recommendations
         see_more: See more recommendations
         hide: Hide recommendations
-    download:
-      title: "Downloads"
-      link:
-        proposal: "Download proposals"
-        debate: "Download debates"
-        legislation_process: "Download legislation processes"
-        budget: "Download budgets"
-        investments: "Download projects"
     translations:
       select_language_prompt: Choose language
       remove_language: Remove language
