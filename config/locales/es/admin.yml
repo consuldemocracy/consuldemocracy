@@ -1582,6 +1582,7 @@ es:
         submit_card: Guardar tarjeta
     audits:
       title: "Historial"
+      changes: "Lista de cambios"
       id: "ID"
       field: "Campo"
       new_value: "Valor nuevo"

@@ -1583,6 +1583,7 @@ en:
         submit_card: Save card
     audits:
       title: "Change Log"
+      changes: "List of changes"
       id: "ID"
       field: "Field"
       new_value: "New Value"
