@@ -27,7 +27,7 @@ describe "Admin change log" do
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("There are not changes logged")
+      expect(page).to have_content("There are no changes logged")
     end
 
     scenario "Changes" do
@@ -46,13 +46,13 @@ describe "Admin change log" do
       expect(page).to have_content(budget_investment.description)
       expect(page).to have_content(budget_investment.author.name)
       expect(page).to have_content(budget_investment.heading.name)
-      expect(page).to have_content("There are not changes logged")
+      expect(page).to have_content("There are no changes logged")
 
       click_link "Edit"
       fill_in "Title", with: "test"
       click_button "Update"
 
-      expect(page).not_to have_content("There are not changes logged")
+      expect(page).not_to have_content("There are no changes logged")
       expect(page).to have_content("Change Log")
       expect(page).to have_content("Title")
       expect(page).to have_content("test")

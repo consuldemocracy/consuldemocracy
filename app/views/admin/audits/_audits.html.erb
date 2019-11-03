@@ -20,15 +20,15 @@
         <% audit.audited_changes.each do |field, (old_value, new_value)| %>
           <tr>
             <td class="text-center"><%= audit.id %></td>
-            <td class="small"><%= field.capitalize %></td>
+            <td class="small"><%= sanitize(resource.class.human_attribute_name(field)) %></td>
             <td class="small">
-              <div class="audit-value"><%= old_value %></div>
+              <div class="audit-value"><%= truncate_audit_value(resource, field, old_value) %></div>
             </td>
             <td class="small">
-              <div class="audit-value"><%= new_value %></div>
+              <div class="audit-value"><%= truncate_audit_value(resource, field, new_value) %></div>
             </td>
             <td class="small">
-              <%= audit.created_at.to_date %>
+              <%= l audit.created_at.to_date %>
             </td>
             <td class="small">
               <%= audit.user&.name %>

@@ -241,8 +241,6 @@ es:
           "false": Compatible
         selection:
           title: Selección
-          "true": Seleccionado
-          "false": No seleccionado
         winner:
           title: Ganador
           "true": "Si"

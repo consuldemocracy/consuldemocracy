@@ -241,8 +241,6 @@ en:
           "false": Compatible
         selection:
           title: Selection
-          "true": Selected
-          "false": Not selected
         winner:
           title: Winner
           "true": "Yes"
@@ -1592,7 +1590,7 @@ en:
       edited_at: "Edited at"
       edited_by: "Edited by"
       actions: "Actions"
-      empty: "There are not changes logged"
+      empty: "There are no changes logged"
     local_census_records:
       index:
         title: Manage local census
