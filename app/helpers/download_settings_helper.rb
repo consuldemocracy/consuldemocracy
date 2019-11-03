@@ -10,10 +10,10 @@ module DownloadSettingsHelper
     end
   end
 
-  def get_attrs(model, config = 0)
+  def get_attrs(model)
     download_settings = []
     get_attr_names(model).each do |attr_name|
-      download_settings << DownloadSetting.initialize(model, attr_name, config)
+      download_settings << DownloadSetting.initialize(model, attr_name)
     end
     download_settings
   end
@@ -22,8 +22,8 @@ module DownloadSettingsHelper
     model.attribute_names + model.get_association_attribute_names
   end
 
-  def to_csv(resources_csv, resource_model, config = 0)
-    attribute_csv = resource_model.get_downloadables_names(config)
+  def to_csv(resources_csv, resource_model)
+    attribute_csv = resource_model.get_downloadables_names
     if admin_downloables?
       attribute_csv = params[:downloadable]
     end
@@ -32,9 +32,5 @@ module DownloadSettingsHelper
 
   def admin_downloables?
     params[:downloadable].present? && !params[:downloadable].empty?
-  end
-
-  def get_config
-    params[:config].present? && !params[:config].nil? ? params[:config] : 0
   end
 end

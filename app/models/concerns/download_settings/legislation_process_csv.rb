@@ -6,10 +6,8 @@ module DownloadSettings
       []
     end
 
-    def get_downloadables_names(config)
-      DownloadSetting.where(name_model: "Legislation::Process",
-                            downloadable: true,
-                            config: config).pluck(:name_field)
+    def get_downloadables_names
+      DownloadSetting.where(name_model: "Legislation::Process", downloadable: true).pluck(:name_field)
     end
 
     def to_csv(processes, admin_attr, options = {})

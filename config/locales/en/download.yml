@@ -10,9 +10,6 @@ en:
       budget_investments: "Participatory budgeting"
       comments: "Comments"
       submit: "Save changes"
-      config:
-        "0": ""
-        "1":  "- Milestones"
     fielddescription:
       debates:
         id: "Identification Number"

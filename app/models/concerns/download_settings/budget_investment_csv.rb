@@ -6,10 +6,8 @@ module DownloadSettings
       ["author_name", "author_email"]
     end
 
-    def get_downloadables_names(config)
-      DownloadSetting.where(name_model: "Budget::Investment",
-                            downloadable: true,
-                            config: config).pluck(:name_field)
+    def get_downloadables_names
+      DownloadSetting.where(name_model: "Budget::Investment", downloadable: true).pluck(:name_field)
     end
 
     def to_csv(budgets, admin_attr, options = {})

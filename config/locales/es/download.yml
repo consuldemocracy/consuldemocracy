@@ -10,9 +10,6 @@ es:
       budget_investments: "Pressupuestos participativos"
       comments: "Comentarios"
       submit: "Guardar cambios"
-      config:
-        "0": ""
-        "1": "- Seguimiento"
     fielddescription:
       debates:
         id: "Número de Identificación"

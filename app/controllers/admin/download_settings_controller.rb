@@ -14,21 +14,20 @@ class Admin::DownloadSettingsController < Admin::BaseController
   def update
     permitted = downloadable_params
     if permitted[:downloadable]
-      DownloadSetting.where(name_model: get_model(permitted[:resource]).to_s,
-                            config: permitted[:config].to_i).each do |download_setting|
+      DownloadSetting.where(name_model: get_model(permitted[:resource]).to_s).each do |download_setting|
         download_setting.update(downloadable: permitted[:downloadable]
                                                 .include?(download_setting.name_field))
       end
     end
     set_edit(permitted[:resource])
-    render :edit, resource: permitted[:resource], config: permitted[:config]
+    render :edit, resource: permitted[:resource]
   end
 
   private
 
     def set_edit(resource)
-      @download_resource = { name: resource, config: get_config }
-      @download_settings = get_attrs(get_model(resource), get_config)
+      @download_resource = { name: resource }
+      @download_settings = get_attrs(get_model(resource))
     end
 
     def permitted_models
@@ -36,8 +35,6 @@ class Admin::DownloadSettingsController < Admin::BaseController
     end
 
     def downloadable_params
-      params.permit(:resource,
-                    :config,
-                    downloadable: [])
+      params.permit(:resource, downloadable: [])
     end
 end
