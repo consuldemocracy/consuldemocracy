@@ -33,6 +33,11 @@ class Budget
     include Globalizable
 
     audited on: [:update, :destroy]
+    has_associated_audits
+    translation_class.class_eval do
+      audited associated_with: :globalized_model,
+              only: Budget::Investment.translated_attribute_names
+    end
 
     belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :budget_investments
     belongs_to :heading

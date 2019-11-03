@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <% resource.audits.order(:created_at).each do |audit| %>
+      <% resource.own_and_associated_audits.order(:created_at).each do |audit| %>
         <% audit.audited_changes.each do |field, (old_value, new_value)| %>
           <tr>
             <td class="text-center"><%= audit.id %></td>

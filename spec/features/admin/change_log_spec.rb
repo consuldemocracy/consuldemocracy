@@ -48,11 +48,9 @@ describe "Admin change log" do
       expect(page).to have_content(budget_investment.heading.name)
       expect(page).to have_content("There are not changes logged")
 
-      budget_investment.update!(title: "test")
-
-      visit admin_budget_budget_investments_path(budget_investment.budget)
-
-      click_link budget_investment.title
+      click_link "Edit"
+      fill_in "Title", with: "test"
+      click_button "Update"
 
       expect(page).not_to have_content("There are not changes logged")
       expect(page).to have_content("Change Log")
