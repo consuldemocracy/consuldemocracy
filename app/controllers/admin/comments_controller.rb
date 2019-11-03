@@ -8,7 +8,7 @@ class Admin::CommentsController < Admin::BaseController
       format.html
 
       format.csv do
-        send_data to_csv(Comment.sort_by_newest, Comment),
+        send_data to_csv(Comment.sort_by_newest),
                   type: "text/csv",
                   disposition: "attachment",
                   filename: "comments.csv"

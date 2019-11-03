@@ -10,12 +10,10 @@ module DownloadSettings
       DownloadSetting.where(name_model: "Budget::Investment", downloadable: true).pluck(:name_field)
     end
 
-    def to_csv(budgets, admin_attr, options = {})
-      attributes = admin_attr.nil? ? [] : admin_attr
-
-      CSV.generate(options) do |csv|
+    def to_csv(attributes)
+      CSV.generate do |csv|
         csv << attributes
-        budgets.each do |budget|
+        all.each do |budget|
           csv << attributes.map { |attr| budget.send(attr) }
         end
       end

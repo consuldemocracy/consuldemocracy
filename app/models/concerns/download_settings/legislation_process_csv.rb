@@ -10,12 +10,10 @@ module DownloadSettings
       DownloadSetting.where(name_model: "Legislation::Process", downloadable: true).pluck(:name_field)
     end
 
-    def to_csv(processes, admin_attr, options = {})
-      attributes = admin_attr.nil? ? [] : admin_attr
-
-      CSV.generate(options) do |csv|
+    def to_csv(attributes)
+      CSV.generate do |csv|
         csv << attributes
-        processes.each do |process|
+        all.each do |process|
           csv << attributes.map { |attr| process.send(attr) }
         end
       end

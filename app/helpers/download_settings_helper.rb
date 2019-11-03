@@ -22,15 +22,8 @@ module DownloadSettingsHelper
     model.attribute_names + model.get_association_attribute_names
   end
 
-  def to_csv(resources_csv, resource_model)
-    attribute_csv = resource_model.get_downloadables_names
-    if admin_downloables?
-      attribute_csv = params[:downloadable]
-    end
-    resource_model.to_csv(resources_csv, attribute_csv)
-  end
-
-  def admin_downloables?
-    params[:downloadable].present? && !params[:downloadable].empty?
+  def to_csv(resources)
+    attributes = params[:downloadable].presence || resources.get_downloadables_names
+    resources.to_csv(attributes)
   end
 end

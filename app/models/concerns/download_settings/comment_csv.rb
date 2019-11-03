@@ -10,12 +10,10 @@ module DownloadSettings
       DownloadSetting.where(name_model: "Comment", downloadable: true).pluck(:name_field)
     end
 
-    def to_csv(comments, admin_attr, options = {})
-      attributes = admin_attr.nil? ? [] : admin_attr
-
-      CSV.generate(options) do |csv|
+    def to_csv(attributes)
+      CSV.generate do |csv|
         csv << attributes
-        comments.each do |comment|
+        all.each do |comment|
           csv << attributes.map { |attr| comment.send(attr) }
         end
       end

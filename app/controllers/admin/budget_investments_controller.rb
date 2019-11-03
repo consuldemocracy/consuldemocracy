@@ -21,7 +21,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.html
       format.js
       format.csv do
-        send_data to_csv(@investments, Budget::Investment),
+        send_data to_csv(@investments),
                   type: "text/csv",
                   disposition: "attachment",
                   filename: "budget_investments.csv"

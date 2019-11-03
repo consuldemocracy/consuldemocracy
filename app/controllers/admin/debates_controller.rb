@@ -14,7 +14,7 @@ class Admin::DebatesController < Admin::BaseController
     respond_to do |format|
       format.html
       format.csv do
-        send_data to_csv(@resources, resource_model),
+        send_data to_csv(@resources),
                   type: "text/csv",
                   disposition: "attachment",
                   filename: "debates.csv"
