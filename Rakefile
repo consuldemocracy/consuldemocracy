@@ -4,4 +4,4 @@
 require File.expand_path("../config/application", __FILE__)
 
 Rails.application.load_tasks if Rake::Task.tasks.empty?
-KnapsackPro.load_tasks if defined?(KnapsackPro)
+Knapsack.load_tasks if defined?(Knapsack)
