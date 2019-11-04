@@ -234,32 +234,18 @@
         <strong><%= t("admin.menu.download_settings.title") %></strong>
       </a>
       <ul <%= "class=is-active" if controller_name == "download_settings" %>>
-
-        <% if feature?(:debates) %>
-          <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "debates" %>>
-            <%= link_to t("admin.menu.download_settings.debates"), admin_edit_download_settings_path(resource: "debates") %>
-          </li>
+        <% { debates: "debates",
+             proposals: "proposals",
+             legislation: "legislation_processes",
+             budgets: "budget_investments" }.each do |section, resource| %>
+          <% if feature?(section) %>
+            <li <%= "class=is-active" if @download_resource == resource %>>
+              <%= link_to t("admin.menu.download_settings.#{resource}"), admin_edit_download_settings_path(resource: resource) %>
+            </li>
+          <% end %>
         <% end %>
 
-        <% if feature?(:proposals) %>
-          <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "proposals" %>>
-            <%= link_to t("admin.menu.download_settings.proposals"), admin_edit_download_settings_path(resource: "proposals") %>
-          </li>
-        <% end %>
-
-        <% if feature?(:legislation) %>
-          <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "legislation_processes" %>>
-            <%= link_to t("admin.menu.download_settings.legislation_processes"), admin_edit_download_settings_path(resource: "legislation_processes") %>
-          </li>
-        <% end %>
-
-        <% if feature?(:budgets) %>
-          <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "budget_investments" %>>
-            <%= link_to t("admin.menu.download_settings.budget_investments"), admin_edit_download_settings_path(resource: "budget_investments") %>
-          </li>
-        <% end %>
-
-        <li <%= "class=is-active" if !@download_resource.nil? && @download_resource == "comments" %>>
+        <li <%= "class=is-active" if @download_resource == "comments" %>>
           <%= link_to t("admin.menu.download_settings.comments"), admin_edit_download_settings_path(resource: "comments") %>
         </li>
 

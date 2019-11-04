@@ -26,7 +26,7 @@ class Admin::DownloadSettingsController < Admin::BaseController
   private
 
     def set_edit(resource)
-      @download_resource = { name: resource }
+      @download_resource = resource
       @download_settings = get_attrs(get_model(resource))
     end
 
