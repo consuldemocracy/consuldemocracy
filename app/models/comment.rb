@@ -5,7 +5,7 @@ class Comment < ApplicationRecord
   include HasPublicAuthor
   include Graphqlable
   include Notifiable
-  extend DownloadSettings::CommentCsv
+  include Csv
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
                         Legislation::Question Legislation::Annotation

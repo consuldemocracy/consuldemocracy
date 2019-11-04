@@ -21,6 +21,7 @@ class Proposal < ApplicationRecord
   include Relationable
   include Milestoneable
   include Randomizable
+  include Csv
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -43,7 +44,6 @@ class Proposal < ApplicationRecord
   has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
   has_many :polls, as: :related, inverse_of: :related
 
-  extend DownloadSettings::ProposalCsv
   delegate :name, :email, to: :author, prefix: true
 
   validates_translation :title, presence: true, length: { in: 4..Proposal.title_max_length }

@@ -25,8 +25,7 @@ class Budget
     include Flaggable
     include Milestoneable
     include Randomizable
-
-    extend DownloadSettings::BudgetInvestmentCsv
+    include Csv
 
     translates :title, touch: true
     translates :description, touch: true

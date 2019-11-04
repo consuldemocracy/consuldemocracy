@@ -6,6 +6,7 @@ class Legislation::Process < ApplicationRecord
   include Milestoneable
   include Imageable
   include Documentable
+  include Csv
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
@@ -17,7 +18,6 @@ class Legislation::Process < ApplicationRecord
   translates :milestones_summary, touch: true
   translates :homepage,           touch: true
   include Globalizable
-  extend DownloadSettings::LegislationProcessCsv
 
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
                                proposals_phase draft_publication result_publication].freeze

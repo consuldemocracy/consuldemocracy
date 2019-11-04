@@ -15,6 +15,7 @@ class Debate < ApplicationRecord
   include Relationable
   include Notifiable
   include Randomizable
+  include Csv
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at
@@ -28,7 +29,6 @@ class Debate < ApplicationRecord
   belongs_to :geozone
   has_many :comments, as: :commentable, inverse_of: :commentable
 
-  extend DownloadSettings::DebateCsv
   delegate :name, :email, to: :author, prefix: true
 
   validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
