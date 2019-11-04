@@ -1,5 +1,3 @@
-require "csv"
-
 class Proposal < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -21,7 +19,6 @@ class Proposal < ApplicationRecord
   include Relationable
   include Milestoneable
   include Randomizable
-  include Csv
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

@@ -1,5 +1,4 @@
 class Budget
-  require "csv"
   class Investment < ApplicationRecord
     SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
@@ -25,7 +24,6 @@ class Budget
     include Flaggable
     include Milestoneable
     include Randomizable
-    include Csv
 
     translates :title, touch: true
     translates :description, touch: true

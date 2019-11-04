@@ -1,5 +1,4 @@
 require "numeric"
-require "csv"
 
 class Debate < ApplicationRecord
   include Rails.application.routes.url_helpers
@@ -15,7 +14,6 @@ class Debate < ApplicationRecord
   include Relationable
   include Notifiable
   include Randomizable
-  include Csv
 
   acts_as_votable
   acts_as_paranoid column: :hidden_at

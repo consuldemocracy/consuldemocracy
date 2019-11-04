@@ -1,12 +1,9 @@
-require "csv"
-
 class Legislation::Process < ApplicationRecord
   include ActsAsParanoidAliases
   include Taggable
   include Milestoneable
   include Imageable
   include Documentable
-  include Csv
 
   acts_as_paranoid column: :hidden_at
   acts_as_taggable_on :customs
