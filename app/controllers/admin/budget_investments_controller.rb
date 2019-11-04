@@ -20,12 +20,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
     respond_to do |format|
       format.html
       format.js
-      format.csv do
-        send_data to_csv(@investments),
-                  type: "text/csv",
-                  disposition: "attachment",
-                  filename: "budget_investments.csv"
-      end
+      format.csv { send_csv_data @investments }
     end
   end
 

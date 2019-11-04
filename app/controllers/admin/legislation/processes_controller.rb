@@ -8,16 +8,11 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   load_and_authorize_resource :process, class: "Legislation::Process"
 
   def index
-    @processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc)
-                 .page(params[:page])
+    processes = ::Legislation::Process.send(@current_filter).order(start_date: :desc)
+
     respond_to do |format|
-      format.html
-      format.csv do
-        send_data to_csv(process_for_download),
-                  type: "text/csv",
-                  disposition: "attachment",
-                  filename: "legislation_processes.csv"
-      end
+      format.html { @processes = processes.page(params[:page]) }
+      format.csv { send_csv_data processes }
     end
   end
 
@@ -52,10 +47,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
   end
 
   private
-
-    def process_for_download
-      ::Legislation::Process.send(@current_filter).order(start_date: :desc)
-    end
 
     def process_params
       params.require(:legislation_process).permit(allowed_params)

@@ -22,8 +22,12 @@ module DownloadSettingsHelper
     model.attribute_names + model.get_association_attribute_names
   end
 
-  def to_csv(resources)
+  def send_csv_data(resources)
     attributes = params[:downloadable].presence || resources.get_downloadables_names
-    resources.to_csv(attributes)
+
+    send_data resources.to_csv(attributes),
+              type: "text/csv",
+              disposition: "attachment",
+              filename: "#{resources.model_name.plural}.csv"
   end
 end

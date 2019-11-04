@@ -13,12 +13,7 @@ class Admin::DebatesController < Admin::BaseController
 
     respond_to do |format|
       format.html
-      format.csv do
-        send_data to_csv(@resources),
-                  type: "text/csv",
-                  disposition: "attachment",
-                  filename: "debates.csv"
-      end
+      format.csv { send_csv_data @resources }
     end
   end
 

@@ -2,17 +2,9 @@ class Admin::CommentsController < Admin::BaseController
   include DownloadSettingsHelper
 
   def index
-    @comments = Comment.sort_by_newest.page(params[:page])
-
     respond_to do |format|
-      format.html
-
-      format.csv do
-        send_data to_csv(Comment.sort_by_newest),
-                  type: "text/csv",
-                  disposition: "attachment",
-                  filename: "comments.csv"
-      end
+      format.html { @comments = Comment.sort_by_newest.page(params[:page]) }
+      format.csv { send_csv_data Comment.sort_by_newest }
     end
   end
 end
