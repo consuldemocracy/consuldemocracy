@@ -1,38 +1,25 @@
 class Admin::DownloadSettingsController < Admin::BaseController
-  load_and_authorize_resource
+  before_action :load_resource
+  before_action :load_download_settings
 
   def edit
-    permitted = downloadable_params
-    @download_settings = []
-    if permitted_models.include? permitted[:resource]
-      set_edit(permitted[:resource])
-    end
   end
 
   def update
-    permitted = downloadable_params
-    if permitted[:downloadable]
-      @download_settings.each do |download_setting|
-        download_setting.update(downloadable: permitted[:downloadable]
-                                                .include?(download_setting.field))
-      end
+    @download_settings.each do |download_setting|
+      download_setting.update(downloadable: params[:downloadable].include?(download_setting.field))
     end
-    set_edit(permitted[:resource])
-    render :edit, resource: permitted[:resource]
+
+    redirect_to edit_admin_download_setting_path(@download_resource)
   end
 
   private
 
-    def set_edit(resource)
-      @download_resource = resource
-      @download_settings = DownloadSetting.for(resource)
+    def load_resource
+      @download_resource = params[:id]
     end
 
-    def permitted_models
-      ["legislation_processes", "debates", "proposals", "budget_investments", "comments"]
-    end
-
-    def downloadable_params
-      params.permit(:resource, downloadable: [])
+    def load_download_settings
+      @download_settings = DownloadSetting.for(@download_resource)
     end
 end

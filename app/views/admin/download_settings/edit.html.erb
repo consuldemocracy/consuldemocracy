@@ -1,16 +1,13 @@
-<% unless @download_settings.empty? %>
-  <% provide(:title) do %>
-    <%= t("admin.header.title") %> - <%= t("download.edit.#{@download_resource}") %>
-  <% end %>
+<% provide(:title) do %>
+  <%= t("admin.header.title") %> - <%= t("download.edit.#{@download_resource}") %>
+<% end %>
 
-  <h2><%= t("download.edit.#{@download_resource}") %></h2>
+<h2><%= t("download.edit.#{@download_resource}") %></h2>
 
-  <%= form_tag admin_update_download_settings_path(resource: @download_resource), method: :put do %>
-    <%= render "form", resource: @download_resource, download_settings: @download_settings %>
+<%= form_tag admin_download_setting_path(@download_resource), method: :put do %>
+  <%= render "form", resource: @download_resource, download_settings: @download_settings %>
 
-    <div class="small-12 medium-3 column clear end">
-      <%= submit_tag t("download.edit.submit"), class: "button success expanded" %>
-    </div>
-  <% end %>
-
+  <div class="small-12 medium-3 column clear end">
+    <%= submit_tag t("download.edit.submit"), class: "button success expanded" %>
+  </div>
 <% end %>

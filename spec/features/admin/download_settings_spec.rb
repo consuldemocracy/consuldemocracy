@@ -7,13 +7,13 @@ describe "Admin download settings" do
   end
 
   scenario "Edit download settings debates" do
-    visit admin_edit_download_settings_path(resource: "debates")
+    visit edit_admin_download_setting_path("debates")
 
     expect(page).to have_content("Debates")
   end
 
   scenario "Update download settings debates" do
-    visit admin_edit_download_settings_path(resource: "debates")
+    visit edit_admin_download_setting_path("debates")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
@@ -47,13 +47,13 @@ describe "Admin download settings" do
   end
 
   scenario "Edit download settings proposals" do
-    visit admin_edit_download_settings_path(resource: "proposals")
+    visit edit_admin_download_setting_path("proposals")
 
     expect(page).to have_content("Proposals")
   end
 
   scenario "Update download settings proposals" do
-    visit admin_edit_download_settings_path(resource: "proposals")
+    visit edit_admin_download_setting_path("proposals")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
@@ -87,13 +87,13 @@ describe "Admin download settings" do
   end
 
   scenario "Edit download settings comments" do
-    visit admin_edit_download_settings_path(resource: "comments")
+    visit edit_admin_download_setting_path("comments")
 
     expect(page).to have_content("Comments")
   end
 
   scenario "Update download settings comments" do
-    visit admin_edit_download_settings_path(resource: "comments")
+    visit edit_admin_download_setting_path("comments")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='body']").set(true)
@@ -123,13 +123,13 @@ describe "Admin download settings" do
   end
 
   scenario "Edit download settings legislation process" do
-    visit admin_edit_download_settings_path(resource: "legislation_processes")
+    visit edit_admin_download_setting_path("legislation_processes")
 
     expect(page).to have_content("Legislation process")
   end
 
   scenario "Update download settings legislation process" do
-    visit admin_edit_download_settings_path(resource: "legislation_processes")
+    visit edit_admin_download_setting_path("legislation_processes")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
@@ -164,13 +164,13 @@ describe "Admin download settings" do
   end
 
   scenario "Edit download settings budget investment results" do
-    visit admin_edit_download_settings_path(resource: "budget_investments")
+    visit edit_admin_download_setting_path("budget_investments")
 
     expect(page).to have_content("Participatory budgeting")
   end
 
   scenario "Update download settings budget investment results" do
-    visit admin_edit_download_settings_path(resource: "budget_investments")
+    visit edit_admin_download_setting_path("budget_investments")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)

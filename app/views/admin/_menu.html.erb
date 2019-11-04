@@ -240,13 +240,13 @@
              budgets: "budget_investments" }.each do |section, resource| %>
           <% if feature?(section) %>
             <li <%= "class=is-active" if @download_resource == resource %>>
-              <%= link_to t("admin.menu.download_settings.#{resource}"), admin_edit_download_settings_path(resource: resource) %>
+              <%= link_to t("admin.menu.download_settings.#{resource}"), edit_admin_download_setting_path(resource) %>
             </li>
           <% end %>
         <% end %>
 
         <li <%= "class=is-active" if @download_resource == "comments" %>>
-          <%= link_to t("admin.menu.download_settings.comments"), admin_edit_download_settings_path(resource: "comments") %>
+          <%= link_to t("admin.menu.download_settings.comments"), edit_admin_download_setting_path("comments") %>
         </li>
 
       </ul>
