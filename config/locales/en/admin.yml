@@ -698,11 +698,6 @@ en:
       dashboard_actions: Resources and actions
       download_settings:
         title: "Download settings"
-        debates: "Debates"
-        proposals: "Proposals"
-        legislation_processes: "Legislation process"
-        budget_investments: "Participatory budgeting"
-        comments: "Comments"
       debates: "Debates"
       comments: "Comments"
       local_census_records: Manage local census

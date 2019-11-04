@@ -697,11 +697,6 @@ es:
       dashboard_actions: Recursos y acciones
       download_settings:
         title: "Configuración de descarga"
-        debates: "Debates"
-        proposals: "Propuestas"
-        legislation_processes: "Procesos legislativos"
-        budget_investments: "Pressupuestos participativos"
-        comments: "Comentarios"
       debates: "Debates"
       comments: "Comentarios"
       local_census_records: Gestionar censo local

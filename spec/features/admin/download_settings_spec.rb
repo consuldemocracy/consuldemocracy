@@ -125,7 +125,7 @@ describe "Admin download settings" do
   scenario "Edit download settings legislation process" do
     visit edit_admin_download_setting_path("legislation_processes")
 
-    expect(page).to have_content("Legislation process")
+    expect(page).to have_content("Processes")
   end
 
   scenario "Update download settings legislation process" do
@@ -166,7 +166,7 @@ describe "Admin download settings" do
   scenario "Edit download settings budget investment results" do
     visit edit_admin_download_setting_path("budget_investments")
 
-    expect(page).to have_content("Participatory budgeting")
+    expect(page).to have_content("Investments")
   end
 
   scenario "Update download settings budget investment results" do

@@ -8,12 +8,15 @@
   </thead>
 
   <tbody>
-  <% download_settings.each do |attr| %>
-    <tr>
-      <td><%= attr.field %></td>
-      <td><%= t("download.fielddescription.#{resource}.#{attr.field}", default: "") %></td>
-      <td class="text-center small"><%= check_box_tag "downloadable[]", attr.field, attr.downloadable, class: "js-download-settings-check" %></td>
-    </tr>
-  <% end %>
+    <% download_settings.each do |download_setting| %>
+      <tr>
+        <td><%= download_setting.field %></td>
+        <td><%= sanitize(download_setting.field_name) %></td>
+        <td class="text-center small">
+          <%= check_box_tag "downloadable[]", download_setting.field, download_setting.downloadable,
+            class: "js-download-settings-check" %>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>

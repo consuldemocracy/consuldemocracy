@@ -2,7 +2,7 @@
   <h1><%= t("download.modal.title") %></h1>
   <%= form_tag current_path_with_query_params(format: :csv), method: :get do |f| %>
     <%= render "admin/download_settings/form_hidden_params" %>
-    <%= render "admin/download_settings/form", resource: resource, download_settings: DownloadSetting.for(resource) %>
+    <%= render "admin/download_settings/form", download_settings: DownloadSetting.for(resource) %>
     <div class="medium-5 column clear end">
       <button type="submit" data-close id="js-download-modal-submit" class="button success expanded"><%= t("download.modal.submit") %></button>
     </div>

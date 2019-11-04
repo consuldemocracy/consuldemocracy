@@ -41,4 +41,12 @@ class DownloadSetting < ApplicationRecord
   def self.downloadable_fields(resources)
     where(model: resources.name, downloadable: true).pluck(:field)
   end
+
+  def model_human_name
+    model.constantize.model_name.human(count: 2)
+  end
+
+  def field_name
+    model.constantize.human_attribute_name(field)
+  end
 end

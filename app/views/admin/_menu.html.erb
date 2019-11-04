@@ -237,18 +237,14 @@
         <% { debates: "debates",
              proposals: "proposals",
              legislation: "legislation_processes",
-             budgets: "budget_investments" }.each do |section, resource| %>
-          <% if feature?(section) %>
+             budgets: "budget_investments",
+             comments: "comments" }.each do |section, resource| %>
+          <% if section == "comments" || feature?(section) %>
             <li <%= "class=is-active" if @download_resource == resource %>>
-              <%= link_to t("admin.menu.download_settings.#{resource}"), edit_admin_download_setting_path(resource) %>
+              <%= link_to DownloadSetting.model_for(resource).model_name.human(count: 2), edit_admin_download_setting_path(resource) %>
             </li>
           <% end %>
         <% end %>
-
-        <li <%= "class=is-active" if @download_resource == "comments" %>>
-          <%= link_to t("admin.menu.download_settings.comments"), edit_admin_download_setting_path("comments") %>
-        </li>
-
       </ul>
     </li>
 
