@@ -1,7 +1,7 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
-  include DownloadSettingsHelper
+  include SendCsvData
   include Translatable
 
   feature_flag :budgets

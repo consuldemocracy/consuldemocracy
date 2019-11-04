@@ -3,7 +3,7 @@ class Admin::ProposalsController < Admin::BaseController
   include CommentableActions
   include FeatureFlags
   feature_flag :proposals
-  include DownloadSettingsHelper
+  include SendCsvData
 
   has_orders %w[created_at]
 

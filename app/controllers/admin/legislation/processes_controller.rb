@@ -1,7 +1,7 @@
 class Admin::Legislation::ProcessesController < Admin::Legislation::BaseController
   include Translatable
   include ImageAttributes
-  include DownloadSettingsHelper
+  include SendCsvData
 
   has_filters %w[active all], only: :index
 

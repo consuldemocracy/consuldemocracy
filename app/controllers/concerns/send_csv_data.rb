@@ -1,4 +1,6 @@
-module DownloadSettingsHelper
+module SendCsvData
+  extend ActiveSupport::Concern
+
   def send_csv_data(resources)
     attributes = params[:downloadable].presence || resources.get_downloadables_names
 

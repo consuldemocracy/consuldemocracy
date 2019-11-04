@@ -1,5 +1,5 @@
 class Admin::CommentsController < Admin::BaseController
-  include DownloadSettingsHelper
+  include SendCsvData
 
   def index
     respond_to do |format|

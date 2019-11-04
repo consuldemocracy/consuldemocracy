@@ -2,7 +2,7 @@ class Admin::DebatesController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
   include HasOrders
-  include DownloadSettingsHelper
+  include SendCsvData
 
   feature_flag :debates
 
