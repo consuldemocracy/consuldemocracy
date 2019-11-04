@@ -6,14 +6,10 @@ describe "Admin download settings" do
     login_as(admin.user)
   end
 
-  scenario "Edit download settings debates" do
-    visit edit_admin_download_setting_path("debates")
-
-    expect(page).to have_content("Debates")
-  end
-
   scenario "Update download settings debates" do
     visit edit_admin_download_setting_path("debates")
+
+    expect(page).to have_css("h2", text: "Debates")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
@@ -46,14 +42,10 @@ describe "Admin download settings" do
     end
   end
 
-  scenario "Edit download settings proposals" do
-    visit edit_admin_download_setting_path("proposals")
-
-    expect(page).to have_content("Proposals")
-  end
-
   scenario "Update download settings proposals" do
     visit edit_admin_download_setting_path("proposals")
+
+    expect(page).to have_css("h2", text: "Citizen proposals")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
@@ -86,14 +78,10 @@ describe "Admin download settings" do
     end
   end
 
-  scenario "Edit download settings comments" do
-    visit edit_admin_download_setting_path("comments")
-
-    expect(page).to have_content("Comments")
-  end
-
   scenario "Update download settings comments" do
     visit edit_admin_download_setting_path("comments")
+
+    expect(page).to have_css("h2", text: "Comments")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='body']").set(true)
@@ -122,14 +110,10 @@ describe "Admin download settings" do
     expect(content_type).to match("text/csv")
   end
 
-  scenario "Edit download settings legislation process" do
-    visit edit_admin_download_setting_path("legislation_processes")
-
-    expect(page).to have_content("Processes")
-  end
-
   scenario "Update download settings legislation process" do
     visit edit_admin_download_setting_path("legislation_processes")
+
+    expect(page).to have_css("h2", text: "Processes")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
@@ -163,14 +147,10 @@ describe "Admin download settings" do
     end
   end
 
-  scenario "Edit download settings budget investment results" do
-    visit edit_admin_download_setting_path("budget_investments")
-
-    expect(page).to have_content("Investments")
-  end
-
   scenario "Update download settings budget investment results" do
     visit edit_admin_download_setting_path("budget_investments")
+
+    expect(page).to have_css("h2", text: "Investments")
 
     find(:css, "#downloadable_[value='id']").set(true)
     find(:css, "#downloadable_[value='title']").set(true)
