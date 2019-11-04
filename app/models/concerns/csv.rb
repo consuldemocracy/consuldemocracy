@@ -3,7 +3,7 @@ module Csv
 
   class_methods do
     def get_downloadables_names
-      DownloadSetting.where(name_model: name, downloadable: true).pluck(:name_field)
+      DownloadSetting.where(model: name, downloadable: true).pluck(:field)
     end
 
     def get_association_attribute_names

@@ -20,12 +20,12 @@ describe "Admin download settings" do
 
     click_button "Save changes"
 
-    expect(DownloadSetting.find_by(name_model: "Debate",
-                                   name_field: "id").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Debate",
-                                   name_field: "title").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Debate",
-                                   name_field: "description").downloadable).to eq false
+    expect(DownloadSetting.find_by(model: "Debate",
+                                   field: "id").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Debate",
+                                   field: "title").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Debate",
+                                   field: "description").downloadable).to eq false
   end
 
   context "Download debates" do
@@ -60,12 +60,12 @@ describe "Admin download settings" do
 
     click_button "Save changes"
 
-    expect(DownloadSetting.find_by(name_model: "Proposal",
-                                   name_field: "id").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Proposal",
-                                   name_field: "title").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Proposal",
-                                   name_field: "description").downloadable).to eq false
+    expect(DownloadSetting.find_by(model: "Proposal",
+                                   field: "id").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Proposal",
+                                   field: "title").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Proposal",
+                                   field: "description").downloadable).to eq false
   end
 
   context "Download proposals" do
@@ -100,12 +100,12 @@ describe "Admin download settings" do
 
     click_button "Save changes"
 
-    expect(DownloadSetting.find_by(name_model: "Comment",
-                                   name_field: "id").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Comment",
-                                   name_field: "body").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Comment",
-                                   name_field: "subject").downloadable).to eq false
+    expect(DownloadSetting.find_by(model: "Comment",
+                                   field: "id").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Comment",
+                                   field: "body").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Comment",
+                                   field: "subject").downloadable).to eq false
   end
 
   scenario "Download comments" do
@@ -136,12 +136,12 @@ describe "Admin download settings" do
 
     click_button "Save changes"
 
-    expect(DownloadSetting.find_by(name_model: "Legislation::Process",
-                                   name_field: "id").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Legislation::Process",
-                                   name_field: "title").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Legislation::Process",
-                                   name_field: "description").downloadable).to eq false
+    expect(DownloadSetting.find_by(model: "Legislation::Process",
+                                   field: "id").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Legislation::Process",
+                                   field: "title").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Legislation::Process",
+                                   field: "description").downloadable).to eq false
   end
 
   context "Download legislation process" do
@@ -177,12 +177,12 @@ describe "Admin download settings" do
 
     click_button "Save changes"
 
-    expect(DownloadSetting.find_by(name_model: "Budget::Investment",
-                                   name_field: "id").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Budget::Investment",
-                                   name_field: "title").downloadable).to eq true
-    expect(DownloadSetting.find_by(name_model: "Budget::Investment",
-                                   name_field: "description").downloadable).to eq false
+    expect(DownloadSetting.find_by(model: "Budget::Investment",
+                                   field: "id").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Budget::Investment",
+                                   field: "title").downloadable).to eq true
+    expect(DownloadSetting.find_by(model: "Budget::Investment",
+                                   field: "description").downloadable).to eq false
   end
 
   context "Download budgets" do

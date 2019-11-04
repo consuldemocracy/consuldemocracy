@@ -14,9 +14,9 @@ class Admin::DownloadSettingsController < Admin::BaseController
   def update
     permitted = downloadable_params
     if permitted[:downloadable]
-      DownloadSetting.where(name_model: get_model(permitted[:resource]).to_s).each do |download_setting|
+      DownloadSetting.where(model: get_model(permitted[:resource]).to_s).each do |download_setting|
         download_setting.update(downloadable: permitted[:downloadable]
-                                                .include?(download_setting.name_field))
+                                                .include?(download_setting.field))
       end
     end
     set_edit(permitted[:resource])
