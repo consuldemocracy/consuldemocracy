@@ -442,6 +442,17 @@ it:
         title: Anteprima poster
         poster_title: "Non continuare a guardare,"
         poster_subtitle: "avvisami! ;)"
+        intro_text: "<strong>Sto partecipando alla %{org}</strong> mia proposta cittadino e solo se anche tu aggiungi puoi avere il supporto necessario per rendere la città quella che noi tutti vogliamo."
+        proposal_code: "Codice della proposta: %{code}"
+        support: Supporta la mia proposta
+      new:
+        title: Poster della tua proposta
+      options:
+        preview: Anteprima
+        download: Scarica
+    mailing:
+      index:
+        title: Anteprima E-mail
   polls:
     all: "Tutti"
     no_dates: "nessuna data assegnata"
