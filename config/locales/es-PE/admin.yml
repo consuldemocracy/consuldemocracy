@@ -153,8 +153,6 @@ es-PE:
           title: Compatibilidad
         selection:
           title: Selección
-          "true": Seleccionada
-          "false": No seleccionado
         winner:
           title: Ganadora
           "true": "Si"
