@@ -146,7 +146,6 @@ ast:
         undefined: Ensin definir
         selection:
           title: Selección
-          "true": Escoyía
         winner:
           title: Ganadora
           "true": "Sí"
