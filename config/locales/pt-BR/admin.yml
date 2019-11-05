@@ -186,8 +186,6 @@ pt-BR:
           "false": Compatível
         selection:
           title: Seleção
-          "true": Selecionado
-          "false": Não selecionado
         winner:
           title: Vencedor
           "true": "Sim"
@@ -1262,6 +1260,3 @@ pt-BR:
         submit_header: Salvar cabeçalho
         card_title: Editar cartão
         submit_card: Salvar cartão
-    change_log:
-      id: "ID"
-      actions: "Ações"
