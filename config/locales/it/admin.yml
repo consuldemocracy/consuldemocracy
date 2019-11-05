@@ -1287,3 +1287,8 @@ it:
         submit_header: Salva intestazione
         card_title: Modifica scheda
         submit_card: Salva scheda
+    audits:
+      title: "Modifica Registro"
+      changes: "Elenco delle modifiche"
+      id: "ID"
+      field: "Campo"
