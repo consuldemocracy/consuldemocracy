@@ -303,7 +303,6 @@ ar:
         content: "المحتوى"
         author: "الكاتب"
         commentable_type: "النوع"
-        link: "تنزيل التعليقات"
         title: التعليقات
         no_comments: لا توجد أي تعليقات.
         table_link: "رابط"
@@ -384,7 +383,6 @@ ar:
         author: كاتب
         title: المناقشات
         no_debates: لا توجد أي مناقشات.
-        link: "تنزيل المناقشات"
     hidden_debates:
       index:
         filter: ترشيح
@@ -469,7 +467,6 @@ ar:
           filters:
             active: نشِط
             all: الكل
-          link: "تنزيل العملية التشريعية"
         new:
           back: عودة
           title: قم بإنشاء عملية تشريع تشاركية جديدة
@@ -661,14 +658,6 @@ ar:
       dashboard: لوحة القيادة الخاصة بالمقترحات
       administrator_tasks: الموارد المطلوبة
       dashboard_actions: الموارد و الإجراءات
-      download_settings:
-        title: "تنزيل الإعدادات"
-        debates: "المناقشات"
-        proposals: "المقترحات"
-        legislation_processes: "العملية التشريعية"
-        budget_investments: "الميزانية التشاركية"
-        comments: "التعليقات"
-        budget_investments_milestones: "الميزانية التشاركية (المعالم)"
       debates: "المناقشات"
       comments: "التعليقات"
     administrators:
@@ -1178,7 +1167,6 @@ ar:
         selected: محدّد
         milestones: معالم
         no_proposals: لا توجد مقترحات.
-        link: "تنزيل المقترحات"
       show:
         create_question: أضف هذا المقترح إلى استطلاع للتصويت
       form:
