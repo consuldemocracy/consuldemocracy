@@ -735,14 +735,6 @@ tr:
       title: Tavsiyeler
       see_more: Daha fazla tavsiyeye bakın
       hide: Tavsiyeleri gizle
-    download:
-      title: "İndirilenler"
-      link:
-        proposal: "Önerileri indir"
-        debate: "Tartışmaları indir"
-        legislation_process: "Mevzuat sürecini indir"
-        budget: "Bütçeleri indir"
-        investments: "Projeleri indir"
     translations:
       select_language_prompt: Dil seç
       remove_language: Dili kaldır
