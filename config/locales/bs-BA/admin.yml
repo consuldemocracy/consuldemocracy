@@ -228,8 +228,6 @@ bs:
           "false": Usklađeno
         selection:
           title: Odabir
-          "true": Odabrano
-          "false": Nije odabrano
         winner:
           title: Odabrana investicija
           "true": "Da"
