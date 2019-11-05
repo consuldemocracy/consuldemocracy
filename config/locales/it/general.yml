@@ -401,6 +401,47 @@ it:
     update:
       form:
         submit_button: Salva modifiche
+  dashboard:
+    messages:
+      previous_notifications: Vedi notifiche precedenti
+    polls:
+      index:
+        title: Sondaggi
+        create: Crea sondaggio
+        count:
+          one: Hai creato %{count} sondaggio.
+          other: Avete creato %{count} sondaggi.
+        links: Link
+        additiontal_information: Informazioni Aggiuntive
+      new:
+        title: Nuovo sondaggio
+        submit: Crea sondaggio
+      edit:
+        submit: Aggiorna sondaggio
+      poll:
+        responses:
+          one: "%{count} risposta"
+          other: "%{count} risposte"
+        view_results: Vedi risultati
+        edit_poll: Modifica sondaggio
+        show_results_help: Se spunti questa casella i risultati saranno pubblici e tutti gli utenti potranno vederli
+        delete: Elimina sondaggio
+        alert_notice: Quest'azione rimuoverà il sondaggio e tutte le domande associate.
+        success_notice: Sondaggio eliminato con successo
+        unable_notice: Non puoi distruggere un sondaggio avente risposte
+      form:
+        name: Titolo sondaggio
+        add_question: Aggiungi domanda
+      question_fields:
+        remove_question: Rimuovi domanda
+        add_answer: Aggiungi risposta
+      question_answer_fields:
+        remove_answer: Rimuovi risposta
+    poster:
+      index:
+        title: Anteprima poster
+        poster_title: "Non continuare a guardare,"
+        poster_subtitle: "avvisami! ;)"
   polls:
     all: "Tutti"
     no_dates: "nessuna data assegnata"
