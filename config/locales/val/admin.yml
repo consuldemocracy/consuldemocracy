@@ -219,8 +219,6 @@ val:
           "false": Compatible
         selection:
           title: Selecció
-          "true": Seleccionades
-          "false": No seleccionat
         winner:
           title: Guanyadores
           "true": "Si"
