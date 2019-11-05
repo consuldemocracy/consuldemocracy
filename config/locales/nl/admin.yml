@@ -225,8 +225,6 @@ nl:
           "false": Compatibel
         selection:
           title: Selection
-          "true": Geselecteerd
-          "false": Niet geselecteerd
         winner:
           title: Winnaar
           "true": "Ja"
