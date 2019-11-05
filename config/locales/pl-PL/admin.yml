@@ -223,8 +223,6 @@ pl:
           "false": Zgodne
         selection:
           title: Wybór
-          "true": Wybrany
-          "false": Nie zaznaczone
         winner:
           title: Zwycięzca
           "true": "Tak"
