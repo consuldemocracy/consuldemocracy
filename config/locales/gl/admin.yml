@@ -219,8 +219,6 @@ gl:
           "false": Compatible
         selection:
           title: Selección
-          "true": Seleccionadas
-          "false": Non seleccionado
         winner:
           title: Gañadora
           "true": "Si"
