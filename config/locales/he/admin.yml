@@ -295,7 +295,6 @@ he:
         content: "תוכן"
         author: "מחבר/ת"
         commentable_type: "סוג"
-        link: "הורדת מסמך"
         title: הערות
         no_comments: לא נמצאו תגובות.
         table_link: "קישור"
@@ -376,7 +375,6 @@ he:
         author: מחבר/ת
         title: דיונים
         no_debates: לא נמצאו דיונים.
-        link: "הורדת דיונים"
     hidden_debates:
       index:
         filter: סינון
@@ -461,7 +459,6 @@ he:
           filters:
             active: פעיל
             all: כולם
-          link: "הורדת תהליכי חקיקה"
         new:
           back: חזרה
           title: צור תהליך חקיקה שיתופית חדשה
@@ -653,14 +650,6 @@ he:
       dashboard: לוח מחוונים להצעות
       administrator_tasks: בקשת משאבים
       dashboard_actions: משאבים ופעולות
-      download_settings:
-        title: "הורדת הגדרות"
-        debates: "דיונים"
-        proposals: "הצעות"
-        legislation_processes: "תהליכי חקיקה"
-        budget_investments: "תקציב השתתפותי"
-        comments: "הערות"
-        budget_investments_milestones: "תקציב השתתפותי (אבני דרך)"
       debates: "דיונים"
       comments: "הערות"
     administrators:
@@ -1168,7 +1157,6 @@ he:
         selected: נבחר
         milestones: אבני דרך
         no_proposals: לא נמצאו הצעות.
-        link: "הורדת הצעות"
       show:
         create_question: להוסיף הצעה זו לסקר בכדי לאפשר הצבעות
       form:
