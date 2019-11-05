@@ -241,8 +241,6 @@ de:
           "false": Kompatibel
         selection:
           title: Auswahl
-          "true": Ausgewählt
-          "false": Nicht ausgewählt
         winner:
           title: Bestbewerteter Vorschlag
           "true": "Ja"
@@ -1536,16 +1534,6 @@ de:
         submit_header: Kopfzeile speichern
         card_title: Karte bearbeiten
         submit_card: Karte speichern
-    change_log:
-      title: "Änderung Log"
-      id: "ID"
-      field: "Feld"
-      new_value: "Neuer Wert"
-      old_value: "Alter Wert"
-      edited_at: "Bearbeitet am"
-      edited_by: "Bearbeitet von"
-      actions: "Aktionen"
-      empty: "Es wurden keine Änderungen protokolliert"
     local_census_records:
       index:
         title: Verwaltung des lokalen Registers
