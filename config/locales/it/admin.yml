@@ -308,7 +308,6 @@ it:
         author: Autore
         title: Dibattiti
         no_debates: Non ci sono dibattiti.
-        link: "Scarica dibattiti"
     hidden_debates:
       index:
         filter: Filtro
@@ -393,7 +392,6 @@ it:
           filters:
             active: Attivo
             all: Tutti
-          link: "Scarica processo legislazione"
         new:
           back: Indietro
           title: Crea nuovo procedimento collaborativo di legislazione
