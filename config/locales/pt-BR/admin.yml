@@ -504,13 +504,6 @@ pt-BR:
       title_booths: Cabines de votação
       legislation: Legislação colaborativa
       users: Usuários
-      download_settings:
-        debates: "Debates"
-        proposals: "Propostas"
-        legislation_processes: "Processo legislativo"
-        budget_investments: "Orçamento participativo"
-        comments: "Comentários"
-        budget_investments_milestones: "Orçamento participativo (Marcos)"
       debates: "Debates"
       comments: "Comentários"
     administrators:
