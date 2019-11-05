@@ -238,8 +238,6 @@ da:
           "false": Forenelig
         selection:
           title: Udvælgelse
-          "true": Valgt
-          "false": Ikke valgt
         winner:
           title: Vinderen
           "true": "Ja"
@@ -1454,10 +1452,3 @@ da:
         submit_header: Gem topmargintekst
         card_title: Rediger informationsboks
         submit_card: Gem informationsboks
-    change_log:
-      id: "ID"
-      new_value: "Ny værdi"
-      old_value: "Tidligere værdi"
-      edited_at: "Redigeret den"
-      edited_by: "Redigeret af"
-      actions: "Handlinger"
