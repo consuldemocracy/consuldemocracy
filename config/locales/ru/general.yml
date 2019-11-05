@@ -770,14 +770,6 @@ ru:
       title: Рекомендации
       see_more: Смотреть больше рекомендация
       hide: Скрыть рекомендации
-    download:
-      title: "Загрузки"
-      link:
-        proposal: "Скачать предложения"
-        debate: "Скачать дебаты"
-        legislation_process: "Скачать процессы законотворчества"
-        budget: "Скачать бюджеты"
-        investments: "Скачать проекты"
   stats:
     index:
       visits: посещения
