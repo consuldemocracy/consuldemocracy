@@ -83,7 +83,6 @@
 //= require i18n
 //= require globalize
 //= require send_admin_notification_alert
-//= require modal_download
 //= require settings
 //= require cookies
 //= require columns_selector
@@ -137,7 +136,6 @@ var initialize_modules = function() {
   App.Managers.initialize();
   App.Globalize.initialize();
   App.SendAdminNotificationAlert.initialize();
-  App.ModalDownload.initialize();
   App.Settings.initialize();
   if ($("#js-columns-selector").length) {
     App.ColumnsSelector.initialize();

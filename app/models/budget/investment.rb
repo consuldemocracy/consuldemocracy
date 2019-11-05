@@ -1,5 +1,4 @@
 class Budget
-  require "csv"
   class Investment < ApplicationRecord
     SORTING_OPTIONS = { id: "id", supports: "cached_votes_up" }.freeze
 
@@ -25,8 +24,6 @@ class Budget
     include Flaggable
     include Milestoneable
     include Randomizable
-
-    extend DownloadSettings::BudgetInvestmentCsv
 
     translates :title, touch: true
     translates :description, touch: true
@@ -56,8 +53,6 @@ class Budget
       as:         :commentable,
       inverse_of: :commentable,
       class_name: "Comment"
-
-    delegate :name, :email, to: :author, prefix: true
 
     validates_translation :title, presence: true, length: { in: 4..Budget::Investment.title_max_length }
     validates_translation :description, presence: true, length: { maximum: Budget::Investment.description_max_length }

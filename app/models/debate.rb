@@ -1,5 +1,4 @@
 require "numeric"
-require "csv"
 
 class Debate < ApplicationRecord
   include Rails.application.routes.url_helpers
@@ -27,9 +26,6 @@ class Debate < ApplicationRecord
   belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone
   has_many :comments, as: :commentable, inverse_of: :commentable
-
-  extend DownloadSettings::DebateCsv
-  delegate :name, :email, to: :author, prefix: true
 
   validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
   validates_translation :description, presence: true, length: { in: 10..Debate.description_max_length }

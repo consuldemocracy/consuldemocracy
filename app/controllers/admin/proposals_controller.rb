@@ -3,7 +3,6 @@ class Admin::ProposalsController < Admin::BaseController
   include CommentableActions
   include FeatureFlags
   feature_flag :proposals
-  helper DownloadSettingsHelper
 
   has_orders %w[created_at]
 

@@ -1,7 +1,6 @@
 class Admin::BudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
   include CommentableActions
-  include DownloadSettingsHelper
   include Translatable
 
   feature_flag :budgets
@@ -21,9 +20,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
       format.html
       format.js
       format.csv do
-        send_data to_csv(@investments, Budget::Investment),
-                  type: "text/csv",
-                  disposition: "attachment",
+        send_data Budget::Investment::Exporter.new(@investments).to_csv,
                   filename: "budget_investments.csv"
       end
     end
