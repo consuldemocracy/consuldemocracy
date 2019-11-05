@@ -149,8 +149,6 @@ sl:
           "false": Kompatibilen
         selection:
           title: Izbor
-          "true": Izbran
-          "false": Neizbran
         winner:
           title: Zmagovalec
           "true": "Da"
