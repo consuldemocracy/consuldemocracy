@@ -535,9 +535,6 @@ sv:
       title_booths: Röststationer
       legislation: Medborgardialoger
       users: Användare
-      download_settings:
-        debates: "Debatter"
-        comments: "Kommentarer"
       debates: "Debatter"
       comments: "Kommentarer"
     administrators:
