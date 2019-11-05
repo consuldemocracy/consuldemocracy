@@ -185,8 +185,6 @@ so:
           "false": Waafaqsan
         selection:
           title: Xulasho
-          "true": Ladoortay
-          "false": An la dooran
         winner:
           title: Guleyste
           "true": "Haa"
