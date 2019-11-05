@@ -127,8 +127,6 @@ fi:
           "false": Yhteensopiva
         selection:
           title: Valinta
-          "true": Valittu
-          "false": Ei valittu
         winner:
           title: Voittaja
           "true": "Kyllä"
@@ -568,5 +566,3 @@ fi:
       feeds:
         proposals: Ehdotukset
         processes: Prosessit
-    change_log:
-      id: "ID"
