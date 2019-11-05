@@ -240,8 +240,6 @@ it:
           "false": Compatibile
         selection:
           title: Selezione
-          "true": Selezionato
-          "false": Non selezionato
         winner:
           title: Vincitore
           "true": "Sì"
