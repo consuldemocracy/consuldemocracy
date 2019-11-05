@@ -727,14 +727,6 @@ da:
       title: Anbefalinger
       see_more: Se flere anbefalinger
       hide: Skjul anbefalinger
-    download:
-      title: "Downloads"
-      link:
-        proposal: "Download forslag"
-        debate: "Download debatindlæg"
-        legislation_process: "Download høringsprocesser"
-        budget: "Download budgetter"
-        investments: "Download projektidéer"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
