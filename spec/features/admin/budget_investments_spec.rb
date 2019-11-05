@@ -1738,7 +1738,7 @@ describe "Admin budget investments" do
     scenario "Display default columns", :js do
       visit admin_budget_budget_investments_path(budget)
 
-      within("table.column-selecteable") do
+      within("table.column-selectable") do
         default_columns.each do |default_column|
           columns_header = I18n.t("admin.budget_investments.index.list.#{default_column}")
           expect(page).to have_content(columns_header)
@@ -1751,7 +1751,7 @@ describe "Admin budget investments" do
     scenario "Display incompatible column as default if selected filter was set", :js do
       visit admin_budget_budget_investments_path(budget, advanced_filters: ["selected"])
 
-      within("table.column-selecteable") do
+      within("table.column-selectable") do
         expect(page).to have_content("Incompatible")
       end
 
@@ -1790,7 +1790,7 @@ describe "Admin budget investments" do
         check "Author"
       end
 
-      within("table.column-selecteable") do
+      within("table.column-selectable") do
         expect(page).not_to have_content("Title")
         expect(page).not_to have_content("Price")
         expect(page).to have_content("Author")
