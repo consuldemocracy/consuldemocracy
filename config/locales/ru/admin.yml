@@ -230,8 +230,6 @@ ru:
           "false": Совместимо
         selection:
           title: Выбор
-          "true": Выбрано
-          "false": Не выбрано
         winner:
           title: Победитель
           "true": "Да"
