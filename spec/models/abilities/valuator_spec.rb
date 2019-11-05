@@ -6,7 +6,7 @@ describe Abilities::Valuator do
 
   let(:user) { valuator.user }
   let(:group) { create(:valuator_group) }
-  let(:valuator) { create(:valuator, valuator_group: group) }
+  let(:valuator) { create(:valuator, valuator_group: group, can_edit_dossier: true, can_comment: true) }
   let(:non_assigned_investment) { create(:budget_investment) }
   let(:assigned_investment) { create(:budget_investment, budget: create(:budget, :valuating), valuators: [valuator]) }
   let(:group_assigned_investment) { create(:budget_investment, budget: create(:budget, :valuating), valuator_groups: [group]) }
@@ -22,21 +22,21 @@ describe Abilities::Valuator do
 
   it { should be_able_to(:valuate, assigned_investment) }
   it { should be_able_to(:valuate, group_assigned_investment) }
+  it { should be_able_to(:comment_valuation, assigned_investment) }
 
   it { should_not be_able_to(:valuate, non_assigned_investment) }
   it { should_not be_able_to(:valuate, finished_assigned_investment) }
+  it { should_not be_able_to(:comment_valuation, finished_assigned_investment) }
 
-  it "can update dossier information if not set can_edit_dossier attribute" do
-    should be_able_to(:edit_dossier, assigned_investment)
-    allow(valuator).to receive(:can_edit_dossier?).and_return(false)
-    ability = Ability.new(user)
-    expect(ability.can?(:edit_dossier, assigned_investment)).to be_falsey
+  context "cannot edit dossier" do
+    before { valuator.can_edit_dossier = false }
+
+    it { should_not be_able_to(:valuate, assigned_investment) }
   end
 
-  it "cannot create valuation comments if not set not can_comment attribute" do
-    should be_able_to(:comment_valuation, assigned_investment)
-    allow(valuator).to receive(:can_comment?).and_return(false)
-    ability = Ability.new(user)
-    expect(ability.can?(:comment_valuation, assigned_investment)).to be_falsey
+  context "cannot comment" do
+    before { valuator.can_comment = false }
+
+    it { should_not be_able_to(:comment_valuation, assigned_investment) }
   end
 end

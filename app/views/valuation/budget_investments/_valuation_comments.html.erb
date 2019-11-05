@@ -1,11 +1,9 @@
 <h2><%= t("valuation.budget_investments.valuation_comments") %></h2>
 <% unless @comment_tree.nil? %>
-  <% can_comment = (!@budget.finished? && can?(:comment_valuation, @investment)) %>
-
   <%= render "/comments/comment_tree", comment_tree: @comment_tree,
     comment_flags: @comment_flags,
     display_comments_count: false,
     valuation: true,
-    allow_comments: can_comment,
+    allow_comments: can?(:comment_valuation, @investment),
     admin_layout: true %>
 <% end %>

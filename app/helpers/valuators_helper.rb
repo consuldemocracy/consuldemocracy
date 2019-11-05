@@ -4,8 +4,9 @@ module ValuatorsHelper
   end
 
   def valuator_abilities(valuator)
-    [valuator.can_comment ? I18n.t("admin.valuators.index.can_comment") : nil,
-      valuator.can_edit_dossier ? I18n.t("admin.valuators.index.can_edit_dossier") : nil
-    ].compact.join(", ")
+    %w[can_comment can_edit_dossier]
+      .select { |permission| valuator.send("#{permission}?") }
+      .map    { |permission| I18n.t("admin.valuators.index.#{permission}") }
+      .join(", ")
   end
 end
