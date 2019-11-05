@@ -141,7 +141,6 @@ ca:
         undefined: Sense definir
         selection:
           title: selecció
-          "true": seleccionada
         winner:
           "true": "Sí"
       edit:
