@@ -287,7 +287,6 @@ da:
         content: "Indhold"
         author: "Oprettet af"
         commentable_type: "Type"
-        link: "Download kommentarer"
         title: Kommentarer
         no_comments: Der er ingen kommentarer.
         table_link: "Link"
@@ -368,7 +367,6 @@ da:
         author: Oprettet af
         title: Debatindlæg
         no_debates: Der er ingen debatindlæg.
-        link: "Download debatindlæg"
     hidden_debates:
       index:
         filter: Filter
@@ -453,7 +451,6 @@ da:
           filters:
             active: Aktive
             all: Alle
-          link: "Download høringsprocessen"
         new:
           back: Tilbage
           title: Opret ny medborgerdialog
