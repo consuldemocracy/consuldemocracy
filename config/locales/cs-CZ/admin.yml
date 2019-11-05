@@ -213,8 +213,6 @@ cs:
           "false": Kompatibilní
         selection:
           title: Výběr
-          "true": Vybrané
-          "false": Není vybráno
         winner:
           title: Vítěz
           "true": "Ano"
