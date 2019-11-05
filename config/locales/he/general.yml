@@ -786,14 +786,6 @@ he:
       title: המלצות
       see_more: ראה עוד המלצות
       hide: הסתר המלצות
-    download:
-      title: "הורדות"
-      link:
-        proposal: "הורדת הצעות"
-        debate: "הורדת דיונים"
-        legislation_process: "הורדת תהליכי חקיקה"
-        budget: "הורדת תקציבים"
-        investments: "הורדת פרויקטים"
   social:
     facebook: "פייסבוק"
     twitter: "טוויטר"
