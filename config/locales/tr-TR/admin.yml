@@ -238,8 +238,6 @@ tr:
           "false": Uyumlu
         selection:
           title: Seçim
-          "true": Seçilmiş
-          "false": Seçilmemiş
         winner:
           title: Kazanan
           "true": "Evet"
@@ -1511,12 +1509,3 @@ tr:
         submit_header: Üstbilgiyi kaydet
         card_title: Kart düzenle
         submit_card: Kart kaydet
-    change_log:
-      id: "Kimlik"
-      field: "Alan"
-      new_value: "Yeni Değer"
-      old_value: "Eski Değer"
-      edited_at: "Düzenlendi"
-      edited_by: "Tarafından düzenlendi"
-      actions: "Eylemler"
-      empty: "Günlüğe kaydedilen değişiklik yok"
