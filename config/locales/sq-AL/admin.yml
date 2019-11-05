@@ -185,8 +185,6 @@ sq:
           "false": Pajtueshëm
         selection:
           title: Përzgjedhje
-          "true": I zgjedhur
-          "false": Jo të zgjedhur
         winner:
           title: Fitues
           "true": "Po"
