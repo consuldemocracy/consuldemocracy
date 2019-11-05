@@ -163,6 +163,8 @@ es:
         milestone_tag_list: "Etiquetas de Seguimiento"
         price_explanation: "Informe de coste <small>(opcional, dato público)</small>"
         selected: "Marcar como seleccionado"
+        selected_true: "Seleccionado"
+        selected_false: "No seleccionado"
         unfeasibility_explanation: "Informe de inviabilidad <small>(en caso de que lo sea, dato público)</small>"
         valuation_finished: "Informe finalizado"
         valuator_ids: "Grupos"

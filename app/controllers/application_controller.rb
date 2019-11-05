@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
-  before_action :set_current_user
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -120,9 +119,5 @@ class ApplicationController < ActionController::Base
 
     def current_budget
       Budget.current
-    end
-
-    def set_current_user
-      User.current_user = current_user
     end
 end

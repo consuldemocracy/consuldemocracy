@@ -161,6 +161,8 @@ en:
         milestone_tag_list: "Milestone tags"
         price_explanation: "Price explanation"
         selected: "Mark as selected"
+        selected_true: "Selected"
+        selected_false: "Not selected"
         unfeasibility_explanation: "Feasibility explanation"
         valuation_finished: "Valuation finished"
         valuator_ids: "Groups"

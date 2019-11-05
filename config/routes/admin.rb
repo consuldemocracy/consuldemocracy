@@ -63,6 +63,7 @@ namespace :admin do
     resources :budget_investments, only: [:index, :show, :edit, :update] do
       member { patch :toggle_selection }
 
+      resources :audits, only: :show, controller: "budget_investment_audits"
       resources :milestones, controller: "budget_investment_milestones"
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
     end
@@ -249,8 +250,6 @@ namespace :admin do
 
   get "download_settings/:resource", to: "download_settings#edit", as: "edit_download_settings"
   put "download_settings/:resource", to: "download_settings#update", as: "update_download_settings"
-
-  get "/change_log/:id", to: "budget_investments#show_investment_log", as: "change_log"
 
   resources :local_census_records
   namespace :local_census_records do

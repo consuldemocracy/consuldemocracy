@@ -72,6 +72,8 @@ GEM
       activerecord (>= 3.2.0)
     arel (7.1.4)
     ast (2.4.0)
+    audited (4.9.0)
+      activerecord (>= 4.2, < 6.1)
     autoprefixer-rails (8.2.0)
       execjs
     axlsx (3.0.0.pre)
@@ -588,6 +590,7 @@ DEPENDENCIES
   acts_as_votable (~> 0.11.1)
   ahoy_matey (~> 1.6.0)
   ancestry (~> 3.0.7)
+  audited (~> 4.9.0)
   autoprefixer-rails (~> 8.2.0)
   axlsx (~> 3.0.0.pre)
   axlsx_rails (~> 0.5.2)

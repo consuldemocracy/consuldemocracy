@@ -241,8 +241,6 @@ es:
           "false": Compatible
         selection:
           title: Selección
-          "true": Seleccionado
-          "false": No seleccionado
         winner:
           title: Ganador
           "true": "Si"
@@ -1582,8 +1580,9 @@ es:
         submit_header: Guardar encabezado
         card_title: Editar tarjeta
         submit_card: Guardar tarjeta
-    change_log:
+    audits:
       title: "Historial"
+      changes: "Lista de cambios"
       id: "ID"
       field: "Campo"
       new_value: "Valor nuevo"
