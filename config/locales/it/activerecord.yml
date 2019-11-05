@@ -161,6 +161,8 @@ it:
         milestone_tag_list: "Tag pietra miliare"
         price_explanation: "Spiegazione costo"
         selected: "Marca come selezionato"
+        selected_true: "Selezionato"
+        selected_false: "Non selezionato"
         unfeasibility_explanation: "Spiegazione di fattibilità"
         valuation_finished: "Valutazione conclusa"
         valuator_ids: "Gruppi"
