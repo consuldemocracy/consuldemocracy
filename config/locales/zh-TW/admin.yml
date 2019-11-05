@@ -185,8 +185,6 @@ zh-TW:
           "false": 相容
         selection:
           title: 選擇
-          "true": 已選擇
-          "false": 未被選擇
         winner:
           title: 勝出者
           "true": "是"
