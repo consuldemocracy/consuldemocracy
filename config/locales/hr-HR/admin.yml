@@ -228,8 +228,6 @@ hr:
           "false": Kompatibilno
         selection:
           title: Odabir
-          "true": Odabrano
-          "false": Nije odabrano
         winner:
           title: Pobjednik
           "true": "Da"
