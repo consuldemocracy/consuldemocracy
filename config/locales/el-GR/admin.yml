@@ -226,8 +226,6 @@ el:
           "false": Συμβατό
         selection:
           title: Επιλογή
-          "true": Επιλεγμένο
-          "false": Δεν είναι επιλεγμένο
         winner:
           title: Νικητής
           "true": "Ναι"
