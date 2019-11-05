@@ -246,8 +246,6 @@ he:
           "false": תואם
         selection:
           title: בחירה
-          "true": נבחר
-          "false": לא נבחר
         winner:
           title: זוכה
           "true": "כן"
@@ -1527,13 +1525,3 @@ he:
         submit_header: שמירה כותרת דף עליונה
         card_title: עריכת כרטיס
         submit_card: שמור כרטיס
-    change_log:
-      title: "יומן שינויים"
-      id: "מזהה"
-      field: "שדה"
-      new_value: "ערך חדש"
-      old_value: "ערך ישן"
-      edited_at: "נערך ב"
-      edited_by: "נערך על ידי"
-      actions: "פעולות"
-      empty: "לא נרשמו שינויים"
