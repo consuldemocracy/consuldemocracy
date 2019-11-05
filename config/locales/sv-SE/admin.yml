@@ -193,8 +193,6 @@ sv:
           "false": Förenlig
         selection:
           title: Urval
-          "true": Vald
-          "false": Ej vald
         winner:
           title: Vinnare
           "true": "Ja"
@@ -1322,10 +1320,6 @@ sv:
         submit_header: Spara sidhuvud
         card_title: Redigera kort
         submit_card: Spara kort
-    change_log:
-      id: "ID"
-      field: "Fält"
-      actions: "Åtgärder"
     local_census_records:
       index:
         document_type: Dokumenttyp
