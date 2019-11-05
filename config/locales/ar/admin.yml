@@ -254,8 +254,6 @@ ar:
           "false": متوافق
         selection:
           title: التحديد
-          "true": محدّد
-          "false": غير محدد
         winner:
           title: الفائز
           "true": "نعم"
@@ -1543,13 +1541,3 @@ ar:
         submit_header: حفظ العنوان
         card_title: تحرير البطاقة
         submit_card: حفظ البطاقة
-    change_log:
-      title: "تغيير السجل"
-      id: "معرف"
-      field: "حقل"
-      new_value: "القيمة الجديدة"
-      old_value: "القيمة القديمة"
-      edited_at: "تم التحرير في"
-      edited_by: "تم التحرير من قبل"
-      actions: "الإجراءات"
-      empty: "لا توجد تغييرات مسجلة"
