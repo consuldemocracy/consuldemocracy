@@ -212,8 +212,6 @@ id:
           "false": Dapat dicocokkan
         selection:
           title: Pilihan
-          "true": Dipilih
-          "false": Tidak dipilih
         winner:
           title: Pemenang
           "true": "Ya"
