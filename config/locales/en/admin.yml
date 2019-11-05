@@ -336,7 +336,6 @@ en:
         content: "Content"
         author: "Author"
         commentable_type: "Type"
-        link: "Download comments"
         title: Comments
         no_comments: There are no comments.
         table_link: "Link"
@@ -417,7 +416,6 @@ en:
         author: Author
         title: Debates
         no_debates: There are no debates.
-        link: "Download debates"
     hidden_debates:
       index:
         filter: Filter
@@ -502,7 +500,6 @@ en:
           filters:
             active: Active
             all: All
-          link: "Download legislation process"
         new:
           back: Back
           title: Create new collaborative legislation process
@@ -696,14 +693,6 @@ en:
       dashboard: Proposals dashboard
       administrator_tasks: Resources requested
       dashboard_actions: Resources and actions
-      download_settings:
-        title: "Download settings"
-        debates: "Debates"
-        proposals: "Proposals"
-        legislation_processes: "Legislation process"
-        budget_investments: "Participatory budgeting"
-        comments: "Comments"
-        budget_investments_milestones: "Participatory budgeting (Milestones)"
       debates: "Debates"
       comments: "Comments"
       local_census_records: Manage local census
@@ -1214,7 +1203,6 @@ en:
         selected: Selected
         milestones: Milestones
         no_proposals: There are no proposals.
-        link: "Download proposals"
       show:
         create_question: Add this proposal to a poll to be voted
       form:

@@ -9,22 +9,20 @@
 
   <h3 class="inline-block"><%= page_entries_info @debates %></h3>
 
-  <a class="small float-right clear" data-open="download-modal"><%= t("admin.debates.index.link") %></a>
-
   <table>
     <thead>
-    <th class="text-center"><%= t("admin.debates.index.id") %></th>
-    <th><%= t("admin.debates.index.title") %></th>
-    <th><%= t("admin.debates.index.author") %></th>
+      <th class="text-center"><%= t("admin.debates.index.id") %></th>
+      <th><%= t("admin.debates.index.title") %></th>
+      <th><%= t("admin.debates.index.author") %></th>
     </thead>
     <tbody>
-    <% @debates.each do |debate| %>
-      <tr id="<%= dom_id(debate) %>" class="debates">
-        <td class="text-center"><%= debate.id %></td>
-        <td><%= link_to debate.title, admin_debate_path(debate) %></td>
-        <td><%= debate.author.username %></td>
-      </tr>
-    <% end %>
+      <% @debates.each do |debate| %>
+        <tr id="<%= dom_id(debate) %>" class="debates">
+          <td class="text-center"><%= debate.id %></td>
+          <td><%= link_to debate.title, admin_debate_path(debate) %></td>
+          <td><%= debate.author.username %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 
@@ -34,5 +32,3 @@
     <%= t("admin.debates.index.no_debates") %>
   </div>
 <% end %>
-
-<%= render "admin/download_settings/modal", resource: { name: "debates" } %>

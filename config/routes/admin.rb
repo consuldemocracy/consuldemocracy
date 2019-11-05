@@ -248,9 +248,6 @@ namespace :admin do
     resources :administrator_tasks, only: [:index, :edit, :update]
   end
 
-  get "download_settings/:resource", to: "download_settings#edit", as: "edit_download_settings"
-  put "download_settings/:resource", to: "download_settings#update", as: "update_download_settings"
-
   resources :local_census_records
   namespace :local_census_records do
     resources :imports, only: [:new, :create, :show]

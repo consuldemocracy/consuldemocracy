@@ -772,14 +772,6 @@ es:
       title: Recomendaciones
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
-    download:
-      title: "Descargas"
-      link:
-        proposal: "Descargar propuestas"
-        debate: "Descargar debates"
-        legislation_process: "Descargar procesos legislativos"
-        budget: "Descargar presupuestos"
-        investments: "Descargar proyectos"
     translations:
       select_language_prompt: Seleccionar idioma
       remove_language: Eliminar idioma

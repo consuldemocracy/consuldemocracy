@@ -48,9 +48,6 @@
                 data: { "toggle-selector" => ".js-discarded",
                         "toggle-text" => t("budgets.results.hide_discarded_link") } %>
 
-    <%= link_to t("shared.download.link.investments"), current_path_with_query_params(format: :csv),
-                class: "button hollow margin-bottom margin-right float-right-medium" %>
-
     <%= render "results_table", results_type: :compatible,
                                 title: @heading.name,
                                 heading_price: @heading.price,
