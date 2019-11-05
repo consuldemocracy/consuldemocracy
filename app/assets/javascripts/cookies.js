@@ -3,7 +3,6 @@
   App.Cookies = {
     saveCookie: function(name, value, days) {
       var date, expires;
-      expires = undefined;
       if (days) {
         date = new Date;
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
