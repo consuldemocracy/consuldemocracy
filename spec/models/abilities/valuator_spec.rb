@@ -22,20 +22,16 @@ describe Abilities::Valuator do
 
   it { should be_able_to(:valuate, assigned_investment) }
   it { should be_able_to(:valuate, group_assigned_investment) }
+  it { should be_able_to(:comment_valuation, assigned_investment) }
 
   it { should_not be_able_to(:valuate, non_assigned_investment) }
   it { should_not be_able_to(:valuate, finished_assigned_investment) }
-
-  it { should be_able_to(:edit_dossier, assigned_investment) }
-  it { should be_able_to(:comment_valuation, assigned_investment) }
-
-  it { should_not be_able_to(:edit_dossier, finished_assigned_investment) }
   it { should_not be_able_to(:comment_valuation, finished_assigned_investment) }
 
   context "cannot edit dossier" do
     before { valuator.can_edit_dossier = false }
 
-    it { should_not be_able_to(:edit_dossier, assigned_investment) }
+    it { should_not be_able_to(:valuate, assigned_investment) }
   end
 
   context "cannot comment" do

@@ -66,7 +66,6 @@ module Abilities
       can [:valuate, :comment_valuation], Budget::Investment
       cannot [:comment_valuation], Budget::Investment, budget: { phase: "finished" }
       can :create, Budget::ValuatorAssignment
-      can [:edit_dossier], Budget::Investment
 
       can :read_admin_stats, Budget, &:balloting_or_later?
 
