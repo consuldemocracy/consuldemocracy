@@ -290,7 +290,6 @@ de:
         content: "Inhalt"
         author: "Autor"
         commentable_type: "Typ"
-        link: "Download Kommentare"
         title: Kommentare
         no_comments: Keine Kommentare vorhanden.
         table_link: "Link"
@@ -371,7 +370,6 @@ de:
         author: Autor
         title: Debatten
         no_debates: Keine Debatte vorhanden.
-        link: "Download Debatten"
     hidden_debates:
       index:
         filter: Filter
@@ -456,7 +454,6 @@ de:
           filters:
             active: Aktiv
             all: Alle
-          link: "Download Gesetzgebungsprozess"
         new:
           back: Zurück
           title: Neues kollaboratives Gesetzgebungsverfahren erstellen
@@ -649,14 +646,6 @@ de:
       dashboard: Vorschläge Dashboard
       administrator_tasks: Beantragte Ressourcen
       dashboard_actions: Ressourcen und Aktionen
-      download_settings:
-        title: "Download-Einstellungen"
-        debates: "Debatten"
-        proposals: "Vorschläge"
-        legislation_processes: "Gesetzgebungsverfahren"
-        budget_investments: "Bürgerhaushalt"
-        comments: "Kommentare"
-        budget_investments_milestones: "Bürgerhaushalt (Meilensteine)"
       debates: "Debatten"
       comments: "Kommentare"
       local_census_records: Verwaltung des lokalen Registers
@@ -1167,7 +1156,6 @@ de:
         selected: Ausgewählt
         milestones: Meilensteine
         no_proposals: Keine Vorschläge vorhanden.
-        link: "Download Vorschläge"
       show:
         create_question: Fügen Sie diesen Vorschlag zu einer Umfrage hinzu, über die abgestimmt werden soll
       form:
