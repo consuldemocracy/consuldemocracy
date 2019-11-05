@@ -836,14 +836,6 @@ ar:
       title: التوصيات
       see_more: رؤية المزيد من التوصيات
       hide: إخفاء التوصيات
-    download:
-      title: "التنزيلات"
-      link:
-        proposal: "تنزيل المقترحات"
-        debate: "تنزيل المناقشات"
-        legislation_process: "تنزيل العمليات التّشريعية"
-        budget: "تنزيل الميزانيات"
-        investments: "تنزيل المشاريع"
     translations:
       select_language_prompt: اخيار لغة
       remove_language: إزالة اللغة
