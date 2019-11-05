@@ -223,8 +223,6 @@ fr:
           "false": Compatible
         selection:
           title: Sélection
-          "true": Sélectionné
-          "false": Non sélectionné
         winner:
           title: Gagnants
           "true": "Oui"
