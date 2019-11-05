@@ -5,11 +5,9 @@ module Abilities
     def initialize(user)
       valuator = user.valuator
       assigned_investment_ids = valuator.assigned_investment_ids
-      finished = { phase: "finished" }
 
       can [:read], Budget::Investment, id: assigned_investment_ids
       can [:valuate], Budget::Investment, { id: assigned_investment_ids, valuation_finished: false }
-      cannot [:valuate, :comment_valuation], Budget::Investment, budget: finished
 
       if valuator.can_edit_dossier?
         can [:edit_dossier], Budget::Investment, id: assigned_investment_ids
@@ -18,6 +16,8 @@ module Abilities
       if valuator.can_comment?
         can [:comment_valuation], Budget::Investment, id: assigned_investment_ids
       end
+
+      cannot [:valuate, :edit_dossier, :comment_valuation], Budget::Investment, budget: { phase: "finished" }
     end
   end
 end
