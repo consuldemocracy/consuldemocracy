@@ -185,8 +185,6 @@ zh-CN:
           "false": 兼容
         selection:
           title: 选择
-          "true": 已选
-          "false": 未被选择
         winner:
           title: 胜出者
           "true": "是"
