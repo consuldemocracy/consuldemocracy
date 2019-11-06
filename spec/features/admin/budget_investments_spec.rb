@@ -1017,7 +1017,7 @@ describe "Admin budget investments" do
       expect(page).to have_content("Ana (ana@admins.org)")
     end
 
-    scenario "Not show related content or hide links on preview" do
+    scenario "Does not show related content or hide links on preview" do
       budget_investment = create(:budget_investment,
                                   :unfeasible,
                                   price: 1234,
