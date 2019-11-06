@@ -2,13 +2,13 @@
 
 ## Code of conduct
 
-The core team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
+The core team members and the project's community adopt an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
 
-## Report an issue
+## Reporting an issue
 
 The prefered way to report any bug is [opening an issue in the project's repo](https://github.com/consul/consul/issues/new).
 
-## Resolve an issue
+## Solving an issue
 
 [Issues labeled with help wanted](https://github.com/consul/consul/labels/help%20wanted) are well defined features ready to be implemented by whoever wants to do it.
 
@@ -32,7 +32,7 @@ If you want to contribute code to solve an issue:
 ## How to report an issue
 
 * Try to use a descriptive and to-the-point title
-* Is a good idea to include some of there sections:
+* It's a good idea to include some of these sections:
   * Steps to reproduce the bug
   * Expected behaviour/response
   * Actual response
