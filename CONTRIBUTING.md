@@ -15,14 +15,20 @@ The prefered way to report any bug is [opening an issue in the project's repo](h
 If you want to contribute code to solve an issue:
 
 * Add a comment to tell everyone you are working on the issue.
-* Fork the project.
-* Create a topic branch based on master.
-* Commit there your code to solve the issue.
-* Make sure all test are passing (and add specs to test any new feature you've added).
-* Follow these [best practices](https://github.com/styleguide/ruby)
-* Open a *pull request* to the main repository describing what issue you are addressing. 
+* Open a *pull request* to the main repository describing what issue you are addressing and following our [coding conventions](#coding-conventions)
 
 **Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+
+## Coding conventions
+
+If you'd like us to review your pull request in good spirits, please follow our coding conventions:
+
+* Include specs to test any changes you've made
+* Travis CI will check whether the rest of the application is still working properly; check its build and make sure all tests are passing
+* Your pull request will be automatically reviewed by Hound CI; fix any issues it reports
+* Follow [the seven rules of a great commit message](https://chris.beams.io/posts/git-commit/)
+
+When we review your pull request and ask for changes, if you're proficient using `git rebase` edit existing commits instead of adding new ones. If you aren't proficient with `git rebase`, ignore this point.
 
 ## Other ways of contributing without coding
 

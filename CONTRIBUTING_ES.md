@@ -15,14 +15,20 @@ Las [incidencias marcadas como help wanted](https://github.com/consul/consul/lab
 Cuando quieras resolver una incidencia mediante código:
 
 * Avisa de que vas a trabajar en esta incidencia añadiendo un comentario.
-* Haz un fork del proyecto
-* Crea una rama para resolver la incidencia desde la rama `master`
-* Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
-* Asegúrate de que los tests pasan (y escribe más tests para probar la nueva funcionalidad si fuera preciso)
-* Sigue estas [buenas prácticas](https://github.com/styleguide/ruby)
-* Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando.
+* Envía una *pull request* al repositorio principal indicando qué incidencia estás resolviendo y siguiendo nuestras [convenciones de código](#convenciones-de-código)
 
 **¿Es tu primer Pull Request?** Puedes aprender en este curso gratuito (en inglés) sobre [cómo contribuir a un proyecto OpenSource en GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+
+## Convenciones de código
+
+Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras convenciones:
+
+* Incluye tests para los cambios que hayas hecho
+* Travis CI comprobará automáticamente que el resto de la aplicación sigue funcionando; asegúrate de que los tests pasan
+* Tus cambios serán revisados automáticamente por Hound CI; arregla los problemas de los que informa (si es que hay alguno)
+* Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
+
+Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes experiencia con `git rebase` edita los commits existentes en vez de añadir más. Si no tienes experiencia con `git rebase`, puedes saltarte este punto.
 
 ## Otras formas de contribuir sin código
 
