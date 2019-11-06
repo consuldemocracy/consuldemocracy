@@ -1,20 +1,5 @@
 # How to Contribute to this Project
 
-## Core team members
-
-* [Alberto García](https://github.com/decabeza)
-* [Javi Martín](https://github.com/javierm)
-* [Julián Herrero](https://github.com/microweb10)
-* [Raimond García](https://github.com/voodoorai2000)
-
-## All other contributors
-
-In addition to the formal team, there are [over a hundred contributors](https://github.com/consul/consul/graphs/contributors). Thank you so much for your code! Big thanks too to the people that contribute in many other ways including documentation, translations, evangelism, dev ops, communication, organizing and more!
-
-Finally a special thanks to the former core team members. Lovingly known as The Alumni:
-
-[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)
-
 ## Code of conduct
 
 The core team members and the project's community adopts an inclusive Code of Conduct that you can read in the [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) file.
@@ -61,3 +46,20 @@ If you want to contribute code to solve an issue:
 * Sometimes it is also helpful if you mention your operating system, browser version and installed plugins.
 
 Thanks! :heart: :heart: :heart:
+
+## Contributors
+
+### Core team members
+
+* [Alberto García](https://github.com/decabeza)
+* [Javi Martín](https://github.com/javierm)
+* [Julián Herrero](https://github.com/microweb10)
+* [Raimond García](https://github.com/voodoorai2000)
+
+### All other contributors
+
+In addition to the formal team, there are [over a hundred contributors](https://github.com/consul/consul/graphs/contributors). Thank you so much for your code! Big thanks too to the people that contribute in many other ways including documentation, translations, evangelism, dev ops, communication, organizing and more!
+
+Finally a special thanks to the former core team members. Lovingly known as The Alumni:
+
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)

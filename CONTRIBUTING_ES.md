@@ -1,20 +1,5 @@
 # Cómo Contribuir a este Proyecto
 
-## Miembros del equipo core
-
-* [Alberto García](https://github.com/decabeza)
-* [Javi Martín](https://github.com/javierm)
-* [Julián Herrero](https://github.com/microweb10)
-* [Raimond García](https://github.com/voodoorai2000)
-
-## Todos los demás contribuidores
-
-Además del equipo formal, hay [más de cien contribuidores](https://github.com/consul/consul/graphs/contributors). ¡Muchas gracias por vuestro código! También estamos muy agradecidos a las personas que contribuyen de otras formas, incluida la documentación, traducciones, evangelismo, administración de sistemas, comunicación, organización y más.
-
-Finalmente, un agradecimiento especial a los antiguos miembros del equipo core. Conocidos con cariño como El Alumni:
-
-[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)
-
 ## Código de conducta
 
 Los miembros del proyecto y la comunidad de personas que contribuyen a él se adhieren a un código de conducta que se puede consultar en el archivo [CODE_OF_CONDUCT_ES.md](CODE_OF_CONDUCT_ES.md).
@@ -72,3 +57,20 @@ En la urgencia del momento, las cosas a veces se ensucian, puedes ayudarnos a li
 * También es buena idea que incluyas tu sistema operativo, navegador, versión de navegador y plugins instalados.
 
 ¡Gracias! :heart: :heart: :heart:
+
+## Contribuidores
+
+## Miembros del equipo principal
+
+* [Alberto García](https://github.com/decabeza)
+* [Javi Martín](https://github.com/javierm)
+* [Julián Herrero](https://github.com/microweb10)
+* [Raimond García](https://github.com/voodoorai2000)
+
+## Todos los demás contribuidores
+
+Además del equipo principal, hay [más de cien contribuidores](https://github.com/consul/consul/graphs/contributors). ¡Muchas gracias por vuestro código! También estamos muy agradecidos a las personas que contribuyen de otras formas, incluida la documentación, traducciones, evangelismo, administración de sistemas, comunicación, organización y más.
+
+Finalmente, un agradecimiento especial a los antiguos miembros del equipo principal. Conocidos con cariño como El Alumni:
+
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)
