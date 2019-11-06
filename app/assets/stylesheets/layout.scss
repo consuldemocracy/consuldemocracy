@@ -1076,6 +1076,15 @@ form {
     margin-bottom: $line-height;
   }
 
+  .html-area {
+    height: 272px;
+    margin-bottom: $line-height;
+
+    &.admin {
+      height: 572px;
+    }
+  }
+
   .checkbox,
   .radio {
     display: inline-block;
