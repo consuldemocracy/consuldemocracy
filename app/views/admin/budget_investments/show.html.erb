@@ -6,15 +6,17 @@
 <%= render "written_by_author" %>
 
 <h2 class="inline-block"><%= t("admin.budget_investments.show.preview") %></h2>
-<div class="float-right">
-  <%= link_to t("admin.budget_investments.show.edit"),
-              edit_admin_budget_budget_investment_path(
-                @budget,
-                @investment,
-                Budget::Investment.filter_params(params).to_h
-              ),
-              class: "button hollow" unless @budget.finished? %>
-</div>
+<% if can?(:admin_update, @investment) %>
+  <div class="float-right">
+    <%= link_to t("admin.budget_investments.show.edit"),
+                edit_admin_budget_budget_investment_path(
+                  @budget,
+                  @investment,
+                  Budget::Investment.filter_params(params).to_h
+                ),
+                class: "button hollow" %>
+  </div>
+<% end %>
 
 <hr>
 <%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
@@ -50,19 +52,26 @@
   <% end %>
 </p>
 
-<p>
-  <%= link_to t("admin.budget_investments.show.edit_classification"),
-                edit_admin_budget_budget_investment_path(@budget, @investment,
-                                                  { anchor: "classification" }.merge(Budget::Investment.filter_params(params).to_h)) unless @budget.finished? %>
-</p>
+<% if can?(:admin_update, @investment) %>
+  <p>
+    <%= link_to t("admin.budget_investments.show.edit_classification"),
+                edit_admin_budget_budget_investment_path(
+                  @budget,
+                  @investment,
+                  { anchor: "classification" }.merge(Budget::Investment.filter_params(params).to_h)
+                ) %>
+  </p>
+<% end %>
 
 <hr>
 
 <h2><%= t("admin.budget_investments.show.dossier") %></h2>
 <%= render "valuation/budget_investments/dossier" %>
-<p>
-  <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) unless @budget.finished? %>
-</p>
+<% if can?(:valuate, @investment) %>
+  <p>
+    <%= link_to t("admin.budget_investments.show.edit_dossier"), edit_valuation_budget_budget_investment_path(@budget, @investment) %>
+  </p>
+<% end %>
 
 <%= render "valuation/budget_investments/valuation_comments" %>
 

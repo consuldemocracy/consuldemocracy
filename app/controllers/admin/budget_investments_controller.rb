@@ -31,6 +31,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def edit
+    authorize! :admin_update, @investment
     load_staff
     load_valuator_groups
     load_tags
@@ -52,6 +53,7 @@ class Admin::BudgetInvestmentsController < Admin::BaseController
   end
 
   def toggle_selection
+    authorize! :toggle_selection, @investment
     @investment.toggle :selected
     @investment.save!
     load_investments
