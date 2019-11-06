@@ -283,23 +283,6 @@ describe "Valuation budget investments" do
         visit valuation_budget_budget_investment_path(budget, investment)
       end.to raise_error "Not Found"
     end
-
-    scenario "preview is visible" do
-      logout
-      login_as create(:administrator).user
-
-      visit valuation_budget_budget_investment_path(budget, investment)
-
-      expect(page).to have_content("Investment preview")
-      expect(page).to have_content(investment.title)
-      expect(page).to have_content(investment.description)
-      expect(page).to have_content(investment.author.name)
-      expect(page).to have_content(investment.heading.name)
-      expect(page).to have_content("1234")
-      expect(page).to have_content("Unfeasible")
-      expect(page).to have_content("It is impossible")
-      expect(page).to have_content("Ana (ana@admins.org)")
-    end
   end
 
   describe "Valuate" do
