@@ -6,22 +6,15 @@ Los miembros del proyecto y la comunidad de personas que contribuyen a él se ad
 
 ## Comunicación general y de incidencias
 
-El método preferido para informar sobre una incidencia en el proyecto es [creando una incidencia en la cuenta de Github del proyecto](https://github.com/consul/consul/issues/new).
-
-Para comunicación más puntual e informal, contacta con los miembros del equipo por twitter.
+El método preferido para informar sobre una incidencia en el proyecto es [creando una incidencia en el repositorio del proyecto](https://github.com/consul/consul/issues/new).
 
 ## Resolver una incidencia
 
-Los administradores utilizan dos etiquetas relacionadas con la disponibilidad para aceptar colaboraciones con las que marcar incidencias:
-
-* `help wanted`: las [incidencias marcadas como help wanted](https://github.com/consul/consul/labels/help%20wanted) son funcionalidades bien definidas y que están listas para que quien quiera pueda implementarlas.
-
-* `Not-ready`: con esta etiqueta se señalan funcionalidades o cambios que han de realizarse pero que todavía no están del todo definidos o falta alguna decisión a nivel interno que tomar. Por tanto se desaconseja que se inicie su implementación de momento.
+Las [incidencias marcadas como help wanted](https://github.com/consul/consul/labels/help%20wanted) son funcionalidades bien definidas y que están listas para que quien quiera pueda implementarlas.
 
 Cuando quieras resolver una incidencia mediante código:
 
 * Avisa de que vas a trabajar en esta incidencia añadiendo un comentario.
-* Cuando las incidencias tienen a alguien asignado significa que esa persona ya está trabajando en esa issue.
 * Haz un fork del proyecto
 * Crea una rama para resolver la incidencia desde la rama `master`
 * Añade el código necesario para resolver la incidencia en tantos commits como sea preciso
@@ -30,16 +23,6 @@ Cuando quieras resolver una incidencia mediante código:
 * Envía una *pull request* al repositorio principal indicando la incidencia que se está arreglando.
 
 **¿Es tu primer Pull Request?** Puedes aprender en este curso gratuito (en inglés) sobre [cómo contribuir a un proyecto OpenSource en GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
-
-
-## Limpiar
-
-En la urgencia del momento, las cosas a veces se ensucian, puedes ayudarnos a limpiar la casa:
-
-* implementando [tests pendientes](https://travis-ci.org/consul/consul)
-* incrementando la [cobertura de tests](https://coveralls.io/github/consul/consul?branch=master)
-* mejorando la [calidad del código](https://codeclimate.com/github/consul/consul)
-* haciendo el [código consistente](https://github.com/bbatsov/rubocop)
 
 ## Otras formas de contribuir sin código
 
