@@ -17,10 +17,8 @@ tr:
       index:
         title: Yorumlar
         comments_about: Hakkında yorumlar
-        comment_about: "Hakkında yorum:"
         see_in_context: Mevcut bağlam içinde gör
         comments_count:
-          zero: Yorum yok
           one: "%{count} yorum"
           other: "%{count} yorumlar"
       show:
@@ -95,10 +93,6 @@ tr:
         form:
           leave_comment: Cevabınızı paylaşın
       question:
-        total:
-          zero: Herhangi bir tartışma bulunmamaktadır
-          one: "%{count} tartışma"
-          other: "%{count} tartışmalar"
         comments:
           zero: Yorum yok
           one: "%{count} yorum"
@@ -124,21 +118,3 @@ tr:
         tags_label: "Kategoriler"
       not_verified: "Önerileri oylamak için %{verify_account}."
       process_title: Katılımcı mevzuat süreci
-      total:
-        zero: Herhangi bir öneri bulunmamaktadır
-        one: "%{count} öneri"
-        other: "%{count} öneriler"
-    summary:
-      title: Yeniden başlat
-      votes: oylar
-      debates_phase: Tartışma aşaması
-      proposal_phase: Öneri aşaması
-      comments_phase: Yorum aşaması
-      comments:
-        zero: Yorum yok
-        one: "%{count} yorum"
-        other: "%{count} yorumlar"
-      most_voted_comments: "En fazla oy alan yorumlar: "
-      no_allegation: Herhangi bir yorum bulunmamaktadır
-      version: versiyon
-      process_empty: Bu sürecin herhangi bir aşaması bulunmamaktadır.
