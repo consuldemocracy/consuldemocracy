@@ -7,7 +7,6 @@ class Legislation::ProcessesController < Legislation::BaseController
   load_and_authorize_resource
 
   before_action :set_random_seed, only: :proposals
-  before_action :check_past, only: :resume
 
   def index
     @current_filter ||= "open"
@@ -96,21 +95,6 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   def milestones
     @phase = :milestones
-  end
-
-  def resume
-    @phase = :resume
-    respond_to do |format|
-      format.html
-      format.xlsx { render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.current.to_s + ".xlsx") }
-    end
-  end
-
-  def check_past
-    set_process
-    if !@process.past?
-      redirect_to legislation_process_path
-    end
   end
 
   def proposals
