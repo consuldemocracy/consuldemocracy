@@ -8,6 +8,15 @@ The core team members and the project's community adopt an inclusive Code of Con
 
 The prefered way to report any bug is [opening an issue in the project's repo](https://github.com/consul/consul/issues/new).
 
+* Try to use a descriptive and to-the-point title
+* It's a good idea to include some of these sections:
+  * Steps to reproduce the bug
+  * Expected behaviour/response
+  * Actual response
+* Sometimes it is also helpful if you mention your operating system, browser version and installed plugins.
+
+Thanks! :heart: :heart: :heart:
+
 ## Solving an issue
 
 [Issues labeled with help wanted](https://github.com/consul/consul/labels/help%20wanted) are well defined features ready to be implemented by whoever wants to do it.
@@ -29,22 +38,6 @@ If you'd like us to review your pull request in good spirits, please follow our 
 * Follow [the seven rules of a great commit message](https://chris.beams.io/posts/git-commit/)
 
 When we review your pull request and ask for changes, if you're proficient using `git rebase` edit existing commits instead of adding new ones. If you aren't proficient with `git rebase`, ignore this point.
-
-## Other ways of contributing without coding
-
-* If you think there's a feature missing, or find a bug, create an issue (make sure it has not already been reported).
-* You can also help promoting the project talking about it in your social networks.
-
-## How to report an issue
-
-* Try to use a descriptive and to-the-point title
-* It's a good idea to include some of these sections:
-  * Steps to reproduce the bug
-  * Expected behaviour/response
-  * Actual response
-* Sometimes it is also helpful if you mention your operating system, browser version and installed plugins.
-
-Thanks! :heart: :heart: :heart:
 
 ## Contributors
 

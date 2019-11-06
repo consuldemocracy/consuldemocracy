@@ -8,6 +8,15 @@ Los miembros del proyecto y la comunidad de personas que contribuyen a él se ad
 
 El método preferido para informar sobre una incidencia en el proyecto es [creando una incidencia en el repositorio del proyecto](https://github.com/consul/consul/issues/new).
 
+* Trata de darle un título descriptivo (algo más que "xxx no funciona").
+* Es buena idea incluir las siguientes secciones:
+  * Pasos que se han realizado para producir la incidencia
+  * Lo que se esperaba que pasara
+  * Lo que ha pasado
+* También es buena idea que incluyas tu sistema operativo, navegador, versión de navegador y plugins instalados.
+
+¡Gracias! :heart: :heart: :heart:
+
 ## Resolver una incidencia
 
 Las [incidencias marcadas como help wanted](https://github.com/consul/consul/labels/help%20wanted) son funcionalidades bien definidas y que están listas para que quien quiera pueda implementarlas.
@@ -29,23 +38,6 @@ Si quieres que revisemos tu código con una sonrisa, por favor sigue nuestras co
 * Sigue [las siete reglas para un gran mensaje de commit](https://chris.beams.io/posts/git-commit/)
 
 Cuando revisemos tu código y te pidamos que cambies alguna cosa, si tienes experiencia con `git rebase` edita los commits existentes en vez de añadir más. Si no tienes experiencia con `git rebase`, puedes saltarte este punto.
-
-## Otras formas de contribuir sin código
-
-* Si crees que hay una funcionalidad que hace falta, o descubres un problema, abre una incidencia (asegúrate de que
-  no haya una incidencia para lo mismo ya abierta antes)
-* También puedes ayudar dando este proyecto a conocer
-
-## Cómo escribir una incidencia
-
-* Trata de darle un título descriptivo (algo más que "xxx no funciona").
-* Es buena idea incluir las siguientes secciones:
-  * Pasos que se han realizado para producir la incidencia
-  * Lo que se esperaba que pasara
-  * Lo que ha pasado
-* También es buena idea que incluyas tu sistema operativo, navegador, versión de navegador y plugins instalados.
-
-¡Gracias! :heart: :heart: :heart:
 
 ## Contribuidores
 
