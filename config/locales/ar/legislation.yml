@@ -25,10 +25,8 @@ ar:
       index:
         title: تعليقات
         comments_about: تعليقات حول
-        comment_about: "تعليق حول:"
         see_in_context: رؤيتها في السياق
         comments_count:
-          zero: لا توجد تعليقات
           zero: "%{count} تعليقات"
           one: "%{count} تعليقات"
           two: "%{count} تعليقات"
@@ -107,14 +105,6 @@ ar:
         form:
           leave_comment: اترك إجابتك
       question:
-        total:
-          zero: لا توجد مناقشات
-          zero: "%{count} مناقشات"
-          one: "مناقشة %{count}"
-          two: "مناقشتان %{count}"
-          few: "%{count} مناقشات"
-          many: "%{count} مناقشات"
-          other: "%{count} مناقشات"
         comments:
           zero: لا توجد تعليقات
           zero: "%{count} تعليق"
@@ -144,29 +134,3 @@ ar:
         tags_label: "فئات"
       not_verified: "لمقترحات التصويت %{verify_account}."
       process_title: عملية تشريع تشاركية
-      total:
-        zero: لا توجد مقترحات
-        zero: "%{count} مقترحات"
-        one: "مقترح %{count}"
-        two: "مقترحان %{count}"
-        few: "%{count} مقترحات"
-        many: "%{count} مقترحات"
-        other: "%{count} مقترحات"
-    summary:
-      title: استئنف
-      votes: اصوات
-      debates_phase: مرحلة المناقشات
-      proposal_phase: مرحلة الاقتراح
-      comments_phase: مرحلة التعليق على النص
-      comments:
-        zero: لا توجد تعليقات
-        zero: "%{count} تعليقات"
-        one: "تعليق %{count}"
-        two: "تعليقان %{count}"
-        few: "%{count} تعليقات"
-        many: "%{count} تعليقات"
-        other: "%{count} تعليقات"
-      most_voted_comments: "التعليقات الأكثر تصويتا: "
-      no_allegation: لا توجد تعليقات مكتوبة
-      version: النسخة
-      process_empty: ليس للعملية مراحل.
