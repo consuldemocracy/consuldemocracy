@@ -21,10 +21,8 @@ he:
       index:
         title: הערות
         comments_about: תגובות לגבי
-        comment_about: "תגובה לגבי:"
         see_in_context: ראה בהקשר של
         comments_count:
-          zero: אין תגובות
           one: "%{count} תגובה"
           two: "%{count} תגובות"
           many: "%{count} תגובות"
@@ -101,12 +99,6 @@ he:
         form:
           leave_comment: השאר את תשובתך
       question:
-        total:
-          zero: אין דיונים
-          one: "%{count} דיון"
-          two: "%{count} דיונים"
-          many: "%{count} דיונים"
-          other: "%{count} דיונים"
         comments:
           zero: אין תגובות
           one: "%{count} תגובה"
@@ -134,25 +126,3 @@ he:
         tags_label: "קטגוריות"
       not_verified: "עבור הצבעה להצעות %{verify_account}."
       process_title: תהליך חקיקה שיתופית
-      total:
-        zero: אין הצעות
-        one: "%{count} הצעה"
-        two: "%{count} הצעות"
-        many: "%{count} הצעות"
-        other: "%{count} הצעות"
-    summary:
-      title: תקציר
-      votes: הצבעות
-      debates_phase: שלב הדיונים
-      proposal_phase: שלב ההצעה
-      comments_phase: שלב הערות הטקסט
-      comments:
-        zero: אין תגובות
-        one: "%{count} תגובה"
-        two: "%{count} תגובות"
-        many: "%{count} תגובות"
-        other: "%{count} תגובות"
-      most_voted_comments: "ההערות עם הכי הרבה הצבעות: "
-      no_allegation: אין תגובות לטקסט
-      version: גירסה
-      process_empty: לתהליך אין שלבים.
