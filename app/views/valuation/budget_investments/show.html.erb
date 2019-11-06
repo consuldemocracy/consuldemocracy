@@ -3,15 +3,17 @@
 <br>
 
 <h2 class="inline-block"><%= t("admin.budget_investments.show.preview") %></h2>
-<div class="float-right">
-  <%= link_to t("admin.budget_investments.show.edit"),
-              edit_valuation_budget_budget_investment_path(
-                @budget,
-                @investment,
-                Budget::Investment.filter_params(params)
-              ),
-              class: "button hollow" unless @budget.finished? %>
-</div>
+<% if can?(:valuate, @investment) %>
+  <div class="float-right">
+    <%= link_to t("admin.budget_investments.show.edit"),
+                edit_valuation_budget_budget_investment_path(
+                  @budget,
+                  @investment,
+                  Budget::Investment.filter_params(params)
+                ),
+                class: "button hollow" %>
+  </div>
+<% end %>
 
 <hr>
 <%= render "/budgets/investments/investment_detail", investment: @investment, preview: true %>
