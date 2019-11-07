@@ -319,11 +319,6 @@ def documentable_attach_new_file(path, success = true)
   page.execute_script("$('##{document_input[:id]}').css('display','block')")
   attach_file(document_input[:id], path, visible: true)
   page.execute_script("$('##{document_input[:id]}').css('display','none')")
-  # Poltergeist is not removing this attribute after file upload at
-  # https://github.com/teampoltergeist/poltergeist/blob/master/lib/capybara/poltergeist/client/browser.coffee#L187
-  # making https://github.com/teampoltergeist/poltergeist/blob/master/lib/capybara/poltergeist/client/browser.coffee#L186
-  # always choose the previous used input.
-  page.execute_script("$('##{document_input[:id]}').removeAttr('_poltergeist_selected')")
 
   within document do
     if success
