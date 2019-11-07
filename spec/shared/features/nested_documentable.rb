@@ -316,9 +316,7 @@ def documentable_attach_new_file(path, success = true)
 
   document = all("#new_document").last
   document_input = document.find("input[type=file]", visible: false)
-  page.execute_script("$('##{document_input[:id]}').css('display','block')")
-  attach_file(document_input[:id], path, visible: true)
-  page.execute_script("$('##{document_input[:id]}').css('display','none')")
+  attach_file(document_input[:id], path, make_visible: true)
 
   within document do
     if success
