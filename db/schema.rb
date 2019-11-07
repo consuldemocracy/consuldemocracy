@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191105184023) do
+ActiveRecord::Schema.define(version: 20191107193003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1222,8 +1222,6 @@ ActiveRecord::Schema.define(version: 20191105184023) do
     t.integer  "author_id"
     t.datetime "hidden_at"
     t.string   "slug"
-    t.boolean  "results_enabled",    default: false
-    t.boolean  "stats_enabled",      default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "budget_id"
