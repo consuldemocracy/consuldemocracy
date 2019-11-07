@@ -23,7 +23,7 @@
       }
     },
     showFeasibilityFieldsOnChange: function() {
-      $("#valuation_budget_investment_edit_form input[type=radio][name='budget_investment[feasibility]']").change(function() {
+      $("#valuation_budget_investment_edit_form input[type=radio][name='budget_investment[feasibility]']").on("change", function() {
         App.ValuationBudgetInvestmentForm.showAllFields();
         App.ValuationBudgetInvestmentForm.showFeasibilityFields();
       });
