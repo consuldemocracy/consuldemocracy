@@ -9,13 +9,13 @@
       });
     },
     submitOnChange: function() {
-      $(".js-submit-on-change").unbind("change").on("change", function() {
+      $(".js-submit-on-change").off("change").on("change", function() {
         $(this).closest("form").submit();
         return false;
       });
     },
     toggleLink: function() {
-      $(".js-toggle-link").unbind("click").on("click", function() {
+      $(".js-toggle-link").off("click").on("click", function() {
         var toggle_txt;
         $($(this).data("toggle-selector")).toggle("down");
         if ($(this).data("toggle-text") !== undefined) {
@@ -54,7 +54,7 @@
           }
         }
       });
-      $("[name='progress_bar[kind]']").change();
+      $("[name='progress_bar[kind]']").trigger("change");
     },
     initialize: function() {
       App.Forms.disableEnter();
