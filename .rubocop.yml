@@ -167,6 +167,9 @@ Lint/LiteralAsCondition:
 Lint/ParenthesesAsGroupedExpression:
   Enabled: true
 
+Lint/SafeNavigationChain:
+  Enabled: true
+
 Lint/ShadowingOuterLocalVariable:
   Enabled: true
 
