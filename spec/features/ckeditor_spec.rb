@@ -7,22 +7,27 @@ describe "CKEditor" do
 
     visit new_debate_path
 
-    expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
+    within(".translatable-fields[data-locale='en']") do
+      expect(page).to have_css ".cke_textarea_inline[aria-label*='debate'][aria-label*='description']"
+    end
 
     click_link "Debates"
     click_link "Start a debate"
 
-    expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
+    within(".translatable-fields[data-locale='en']") do
+      expect(page).to have_css ".cke_textarea_inline[aria-label*='debate'][aria-label*='description']"
+    end
   end
 
   scenario "uploading an image through the upload tab", :js do
     login_as(create(:administrator).user)
 
     visit new_admin_site_customization_page_path
-    find(".cke_button__image").click
+    fill_in_ckeditor "Content", with: "Focus to make toolbar appear"
+    click_link "Image"
     click_link "Upload"
 
-    within_frame(1) do
+    within_frame(0) do
       attach_file "Send it to the Server", Rails.root.join("spec/fixtures/files/clippy.jpg")
     end
 

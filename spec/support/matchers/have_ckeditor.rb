@@ -3,25 +3,21 @@ RSpec::Matchers.define :have_ckeditor do |label, with:|
     find("label", text: label)[:for]
   end
 
-  define_method :ckeditor_id do
-    "#cke_#{textarea_id}"
+  define_method :ckeditor_selector do
+    "[aria-label~='#{textarea_id}']"
   end
 
   define_method :has_ckeditor? do
-    has_css?("label", text: label) && has_css?(ckeditor_id)
+    has_css?("label", text: label) && has_css?(ckeditor_selector)
   end
 
   match do
-    return false unless has_ckeditor?
-
-    page.within(ckeditor_id) do
-      within_frame(0) { has_content?(with) }
-    end
+    has_ckeditor? && has_css?(ckeditor_selector, exact_text: with)
   end
 
   failure_message do
     if has_ckeditor?
-      text = page.within(ckeditor_id) { within_frame(0) { page.text } }
+      text = page.find(ckeditor_selector).text
 
       "expected to find visible CKEditor '#{label}' with '#{with}', but had '#{text}'"
     else

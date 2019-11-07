@@ -1085,16 +1085,20 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .cke {
-    margin-bottom: $line-height;
+  .cke_textarea_inline {
+    @include form-element;
+    overflow-y: auto;
   }
 
   .html-area:not(.form-error) {
-    height: 272px;
-    margin-bottom: $line-height;
+    &,
+    & + .cke_textarea_inline {
+      min-height: $line-height * 10;
+    }
 
-    &.admin {
-      height: 572px;
+    &.admin,
+    &.admin + .cke_textarea_inline {
+      min-height: $line-height * 20;
     }
   }
 
