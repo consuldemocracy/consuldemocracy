@@ -49,17 +49,13 @@ module PollsHelper
   end
 
   def link_to_poll(text, poll)
-    if poll.results_enabled?
+    if can?(:results, poll)
       link_to text, results_poll_path(id: poll.slug || poll.id)
-    elsif poll.stats_enabled?
+    elsif can?(:stats, poll)
       link_to text, stats_poll_path(id: poll.slug || poll.id)
     else
       link_to text, poll_path(id: poll.slug || poll.id)
     end
-  end
-
-  def show_stats_or_results?
-    @poll.expired? && (@poll.results_enabled? || @poll.stats_enabled?)
   end
 
   def results_menu?
