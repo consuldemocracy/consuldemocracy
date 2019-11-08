@@ -43,6 +43,7 @@ namespace :deploy do
   before :starting, "rvm1:install:rvm"
   before :starting, "rvm1:install:ruby"
   before :starting, "install_bundler_gem"
+  before "deploy:migrate", "remove_local_census_records_duplicates"
 
   after "deploy:migrate", "add_new_settings"
   after :publishing, "deploy:restart"
@@ -64,6 +65,16 @@ task :install_bundler_gem do
   on roles(:app) do
     within release_path do
       execute :rvm, fetch(:rvm1_ruby_version), "do", "gem install bundler"
+    end
+  end
+end
+
+task :remove_local_census_records_duplicates do
+  on roles(:db) do
+    within release_path do
+      with rails_env: fetch(:rails_env) do
+        execute :rake, "local_census_records:remove_duplicates"
+      end
     end
   end
 end
