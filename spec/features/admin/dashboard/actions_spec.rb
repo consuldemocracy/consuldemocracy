@@ -11,7 +11,7 @@ describe "Admin dashboard actions" do
                   "administrator",
                   "dashboard_action",
                   "new_admin_dashboard_action_path",
-                  { },
+                  {},
                   "documentable_fill_new_valid_dashboard_action",
                   "Save",
                   "Action created successfully"
@@ -73,7 +73,7 @@ describe "Admin dashboard actions" do
 
     before do
       visit admin_dashboard_actions_path
-      within ("#dashboard_action_#{action.id}") do
+      within "#dashboard_action_#{action.id}" do
         click_link "Edit"
       end
     end

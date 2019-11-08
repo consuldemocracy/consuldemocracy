@@ -1,27 +1,29 @@
 require "rails_helper"
 
 describe "Admin settings" do
-
   before do
-    @setting1 = create(:setting)
-    @setting2 = create(:setting)
-    @setting3 = create(:setting)
     login_as(create(:administrator).user)
   end
 
   scenario "Index" do
+    create(:setting, key: "super.users.first")
+    create(:setting, key: "super.users.second")
+    create(:setting, key: "super.users.third")
+
     visit admin_settings_path
 
-    expect(page).to have_content @setting1.key
-    expect(page).to have_content @setting2.key
-    expect(page).to have_content @setting3.key
+    expect(page).to have_content "First"
+    expect(page).to have_content "Second"
+    expect(page).to have_content "Third"
   end
 
   scenario "Update" do
+    setting = create(:setting, key: "super.users.first")
+
     visit admin_settings_path
 
-    within("#edit_setting_#{@setting2.id}") do
-      fill_in "setting_#{@setting2.id}", with: "Super Users of level 2"
+    within("#edit_setting_#{setting.id}") do
+      fill_in "setting_#{setting.id}", with: "Super Users of level 1"
       click_button "Update"
     end
 
@@ -29,7 +31,6 @@ describe "Admin settings" do
   end
 
   describe "Update map" do
-
     scenario "Should not be able when map feature deactivated" do
       Setting["feature.map"] = false
       admin = create(:administrator).user
@@ -37,7 +38,7 @@ describe "Admin settings" do
       visit admin_settings_path
       find("#map-tab").click
 
-      expect(page).to have_content 'To show the map to users you must enable ' \
+      expect(page).to have_content "To show the map to users you must enable " \
                                    '"Proposals and budget investments geolocation" ' \
                                    'on "Features" tab.'
       expect(page).not_to have_css("#admin-map")
@@ -51,7 +52,7 @@ describe "Admin settings" do
       find("#map-tab").click
 
       expect(page).to have_css("#admin-map")
-      expect(page).not_to have_content 'To show the map to users you must enable ' \
+      expect(page).not_to have_content "To show the map to users you must enable " \
                                        '"Proposals and budget investments geolocation" ' \
                                        'on "Features" tab.'
     end
@@ -95,13 +96,11 @@ describe "Admin settings" do
       expect(find("#latitude", visible: false).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated succesfully"
     end
-
   end
 
   describe "Update content types" do
-
     scenario "stores the correct mime types" do
-      setting = Setting.create(key: "upload.images.content_types", value: "image/png")
+      setting = Setting.create!(key: "upload.images.content_types", value: "image/png")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -129,17 +128,11 @@ describe "Admin settings" do
         expect(find("#jpg")).not_to be_checked
       end
     end
-
   end
 
   describe "Update Remote Census Configuration" do
-
     before do
       Setting["feature.remote_census"] = true
-    end
-
-    after do
-      Setting["feature.remote_census"] = nil
     end
 
     scenario "Should not be able when remote census feature deactivated" do
@@ -149,7 +142,7 @@ describe "Admin settings" do
       visit admin_settings_path
       find("#remote-census-tab").click
 
-      expect(page).to have_content 'To configure remote census (SOAP) you must enable ' \
+      expect(page).to have_content "To configure remote census (SOAP) you must enable " \
                                    '"Configure connection to remote census (SOAP)" ' \
                                    'on "Features" tab.'
     end
@@ -163,23 +156,16 @@ describe "Admin settings" do
       expect(page).to have_content("General Information")
       expect(page).to have_content("Request Data")
       expect(page).to have_content("Response Data")
-      expect(page).not_to have_content 'To configure remote census (SOAP) you must enable ' \
+      expect(page).not_to have_content "To configure remote census (SOAP) you must enable " \
                                        '"Configure connection to remote census (SOAP)" ' \
                                        'on "Features" tab.'
     end
-
   end
 
   describe "Should redirect to same tab after update setting" do
-
     context "remote census" do
-
       before do
         Setting["feature.remote_census"] = true
-      end
-
-      after do
-        Setting["feature.remote_census"] = nil
       end
 
       scenario "On #tab-remote-census-configuration", :js do
@@ -200,7 +186,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-configuration", :js do
-      configuration_setting = Setting.create(key: "whatever")
+      configuration_setting = Setting.create!(key: "whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -216,17 +202,12 @@ describe "Admin settings" do
     end
 
     context "map configuration" do
-
       before do
         Setting["feature.map"] = true
       end
 
-      after do
-        Setting["feature.map"] = nil
-      end
-
       scenario "On #tab-map-configuration", :js do
-        map_setting = Setting.create(key: "map.whatever")
+        map_setting = Setting.create!(key: "map.whatever")
         admin = create(:administrator).user
         login_as(admin)
         visit admin_settings_path
@@ -243,7 +224,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-proposals", :js do
-      proposal_dashboard_setting = Setting.create(key: "proposals.whatever")
+      proposal_dashboard_setting = Setting.create!(key: "proposals.whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -259,7 +240,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-participation-processes", :js do
-      process_setting = Setting.create(key: "process.whatever")
+      process_setting = Setting.create!(key: "process.whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -274,7 +255,7 @@ describe "Admin settings" do
     end
 
     scenario "On #tab-feature-flags", :js do
-      feature_setting = Setting.create(key: "feature.whatever")
+      feature_setting = Setting.create!(key: "feature.whatever")
       admin = create(:administrator).user
       login_as(admin)
       visit admin_settings_path
@@ -290,7 +271,6 @@ describe "Admin settings" do
   end
 
   describe "Skip verification" do
-
     scenario "deactivate skip verification", :js do
       Setting["feature.user.skip_verification"] = "true"
       setting = Setting.where(key: "feature.user.skip_verification").first
@@ -320,7 +300,5 @@ describe "Admin settings" do
 
       Setting["feature.user.skip_verification"] = nil
     end
-
   end
-
 end

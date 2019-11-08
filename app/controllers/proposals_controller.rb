@@ -98,7 +98,7 @@ class ProposalsController < ApplicationController
   private
 
     def proposal_params
-      attributes = [:video_url,:responsible_name, :tag_list,
+      attributes = [:video_url, :responsible_name, :tag_list,
                     :terms_of_service, :geozone_id, :skip_map,
                     image_attributes: image_attributes,
                     documents_attributes: [:id, :title, :attachment, :cached_attachment,
@@ -151,6 +151,7 @@ class ProposalsController < ApplicationController
 
     def load_featured
       return unless !@advanced_search_terms && @search_terms.blank? && @tag_filter.blank? && params[:retired].blank? && @current_order != "recommendations"
+
       if Setting["feature.featured_proposals"]
         @featured_proposals = Proposal.not_archived.unsuccessful
                               .sort_by_confidence_score.limit(Setting["featured_proposals_number"])

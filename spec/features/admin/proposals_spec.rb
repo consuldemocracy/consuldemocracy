@@ -10,13 +10,12 @@ describe "Admin proposals" do
                   "admin_proposal_path"
 
   context "Index" do
-
     scenario "Search" do
       create(:proposal, title: "Make Pluto a planet again")
       create(:proposal, title: "Build a monument to honour CONSUL developers")
 
       visit admin_root_path
-      within("#side_menu") { first(:link, "Proposals").click }
+      within("#side_menu") { click_link "Proposals" }
 
       expect(page).to have_content "Make Pluto a planet again"
       expect(page).to have_content "Build a monument"
@@ -49,11 +48,9 @@ describe "Admin proposals" do
       within("#proposal_#{proposal.id}") { expect(page).to have_link "Select" }
       expect(proposal.reload.selected?).to be false
     end
-
   end
 
   context "Show" do
-
     scenario "View proposal" do
       create(:proposal, title: "Create a chaotic future", summary: "Chaos isn't controlled")
 
@@ -105,6 +102,5 @@ describe "Admin proposals" do
       expect(find_field("Mark as selected")).not_to be_checked
       expect(proposal.reload.selected?).to be false
     end
-
   end
 end

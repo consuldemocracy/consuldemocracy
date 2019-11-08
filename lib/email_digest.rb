@@ -1,6 +1,5 @@
 class EmailDigest
-
-  attr_accessor :user, :notifications
+  attr_accessor :user
 
   def initialize(user)
     @user = user
@@ -14,7 +13,6 @@ class EmailDigest
     notifications.any?
   end
 
-
   def deliver(run_at)
     if valid_email? && pending_notifications?
       Mailer.delay(run_at: run_at).proposal_notification_digest(user, notifications.to_a)
@@ -24,11 +22,10 @@ class EmailDigest
 
   def mark_as_emailed
     notifications.update_all(emailed_at: Time.current)
-    user.update(failed_email_digests_count: 0)
+    user.update!(failed_email_digests_count: 0)
   end
 
   def valid_email?
     user.email.present? && user.email.match(/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i)
   end
-
 end

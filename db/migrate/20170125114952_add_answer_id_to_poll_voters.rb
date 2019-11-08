@@ -4,6 +4,6 @@ class AddAnswerIdToPollVoters < ActiveRecord::Migration[4.2]
 
     add_index :poll_voters, :document_number
     add_index :poll_voters, :poll_id
-    add_index :poll_voters, [:poll_id, :document_number, :document_type], name: 'doc_by_poll'
+    add_index :poll_voters, [:poll_id, :document_number, :document_type], name: "doc_by_poll"
   end
 end

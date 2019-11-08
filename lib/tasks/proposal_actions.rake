@@ -12,29 +12,6 @@ namespace :proposal_actions do
     end
   end
 
-  desc "Initialize proposal settings"
-  task initialize_settings: :environment do
-    %w[
-      proposals.successful_proposal_id
-      proposals.poll_short_title
-      proposals.poll_description
-      proposals.poll_link
-      proposals.email_short_title
-      proposals.email_description
-      proposals.poster_short_title
-      proposals.poster_description
-    ].each do |key|
-      Setting[key] = nil if Setting.find_by(key: key).nil?
-    end
-  end
-
-  desc "Publish all proposals"
-  task publish_all: :environment do
-    Proposal.draft.find_each do |proposal|
-      proposal.update_columns(published_at: proposal.created_at, updated_at: Time.current)
-    end
-  end
-
   desc "Simulate successful proposal"
   task create_successful_proposal: :environment do
     expected_supports = [
@@ -407,7 +384,7 @@ namespace :proposal_actions do
       5
     ]
 
-    votes_count = expected_supports.inject(0.0) { |sum, x| sum + x }
+    votes_count = expected_supports.reduce(0.0) { |sum, x| sum + x }
     goal_votes = Setting["votes_for_proposal_success"].to_f
     cached_votes_up = 0
 
@@ -454,6 +431,6 @@ namespace :proposal_actions do
     end
 
     Setting["proposals.successful_proposal_id"] = proposal.id
-    proposal.update(cached_votes_up: cached_votes_up)
+    proposal.update!(cached_votes_up: cached_votes_up)
   end
 end

@@ -18,7 +18,7 @@ def add_image_to(imageable)
     attachment: IMAGE_FILES.sample,
     user: imageable.author
   })
-  imageable.save
+  imageable.save!
 end
 
 section "Creating Proposals" do
@@ -109,7 +109,7 @@ section "Creating Successful Proposals" do
     add_image_to proposal
   end
 
-  tags = ActsAsTaggableOn::Tag.where(kind: "category")
+  tags = Tag.where(kind: "category")
   30.times do
     author = User.all.sample
     description = "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>"

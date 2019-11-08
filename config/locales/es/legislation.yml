@@ -14,13 +14,9 @@ es:
         publish_comment: Publicar Comentario
       form:
         phase_not_open: Esta fase del proceso no está abierta
-        login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-        signin: iniciar sesión
-        signup: registrarte
       index:
         title: Comentarios
         comments_about: Comentarios sobre
-        comment_about: "Comentario sobre:"
         see_in_context: Ver en contexto
         comments_count:
           one: "%{count} comentario"
@@ -97,10 +93,6 @@ es:
         form:
           leave_comment: Deja tu respuesta
       question:
-        total:
-          zero: No hay debates
-          one: "%{count} debate"
-          other: "%{count} debates"
         comments:
           zero: Sin comentarios
           one: "%{count} comentario"
@@ -115,11 +107,8 @@ es:
       participation:
         phase_not_open: Esta fase no está abierta
         organizations: Las organizaciones no pueden participar en el debate
-        signin: iniciar sesión
-        signup: registrarte
         unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
-        verify_account: verifica tu cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
     shared:
       share: Compartir
@@ -129,21 +118,3 @@ es:
         tags_label: "Categorías"
       not_verified: "Para votar propuestas %{verify_account}."
       process_title: Proceso de legislación colaborativa
-      total:
-        zero: No hay propuestas
-        one: "%{count} propuesta"
-        other: "%{count} propuestas"
-    summary:
-      title: Resumen
-      votes: votos
-      debates_phase: Fase de debates
-      proposal_phase: Fase de propuestas
-      comments_phase: Fase de comentarios de texto
-      comments:
-        zero: No hay comentarios
-        one: "%{count} comentario"
-        other: "%{count} comentarios"
-      most_voted_comments: "Comentarios más votados:"
-      no_allegation: No hay comentarios de texto.
-      version: versión
-      process_empty: The proces have no phases.

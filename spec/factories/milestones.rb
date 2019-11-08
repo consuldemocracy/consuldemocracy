@@ -10,6 +10,18 @@ FactoryBot.define do
     sequence(:title)     { |n| "Milestone #{n} title" }
     description          { "Milestone description" }
     publication_date     { Date.current }
+
+    trait :with_image do
+      transient { image_title { "Current status of the project" } }
+
+      after(:create) do |milestone, evaluator|
+        create(:image, imageable: milestone, title: evaluator.image_title)
+      end
+    end
+
+    factory :milestone_with_description do
+      status { nil }
+    end
   end
 
   factory :progress_bar do
@@ -21,5 +33,7 @@ FactoryBot.define do
       kind { :secondary }
       sequence(:title) { |n| "Progress bar #{n} title" }
     end
+
+    factory :secondary_progress_bar, traits: [:secondary]
   end
 end

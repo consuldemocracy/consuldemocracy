@@ -56,14 +56,14 @@ class Admin::Poll::PollsController < Admin::Poll::BaseController
   end
 
   def booth_assignments
-    @polls = Poll.current
+    @polls = Poll.current.created_by_admin
   end
 
   def destroy
     if ::Poll::Voter.where(poll: @poll).any?
       redirect_to admin_poll_path(@poll), alert: t("admin.polls.destroy.unable_notice")
     else
-      @poll.destroy
+      @poll.destroy!
 
       redirect_to admin_polls_path, notice: t("admin.polls.destroy.success_notice")
     end

@@ -1,5 +1,4 @@
 module ImageablesHelper
-
   def can_destroy_image?(imageable)
     imageable.image.present? && can?(:destroy, imageable.image)
   end
@@ -17,7 +16,7 @@ module ImageablesHelper
   end
 
   def imageable_accepted_content_types
-    Setting["uploads.images.content_types"]&.split(" ") || [ "image/jpeg" ]
+    Setting["uploads.images.content_types"]&.split(" ") || ["image/jpeg"]
   end
 
   def imageable_accepted_content_types_extensions
@@ -38,5 +37,4 @@ module ImageablesHelper
     t "images.form.note", accepted_content_types: imageable_humanized_accepted_content_types,
                           max_file_size: imageable_max_file_size
   end
-
 end

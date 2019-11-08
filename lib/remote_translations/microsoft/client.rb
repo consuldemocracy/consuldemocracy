@@ -3,7 +3,7 @@ include RemoteTranslations::Microsoft::SentencesParser
 
 class RemoteTranslations::Microsoft::Client
   CHARACTERS_LIMIT_PER_REQUEST = 5000
-  PREVENTING_TRANSLATION_KEY = "notranslate"
+  PREVENTING_TRANSLATION_KEY = "notranslate".freeze
 
   def initialize
     api_key = Rails.application.secrets.microsoft_api_key
@@ -21,7 +21,7 @@ class RemoteTranslations::Microsoft::Client
 
     split_position = detect_split_position(text)
     start_text = text[0..split_position]
-    end_text = text[split_position + 1 .. text.size]
+    end_text = text[split_position + 1..text.size]
 
     fragments_for(start_text) + [end_text]
   end
@@ -77,5 +77,4 @@ class RemoteTranslations::Microsoft::Client
     def notranslate?(text)
       text.downcase == PREVENTING_TRANSLATION_KEY
     end
-
 end

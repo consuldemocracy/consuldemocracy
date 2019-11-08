@@ -5,7 +5,7 @@
 
 <div id="nested-links">
   <%= f.fields_for :links do |links_builder| %>
-    <%= render 'links/link_fields', f: links_builder %>
+    <%= render "links/link_fields", f: links_builder %>
   <% end %>
 </div>
 

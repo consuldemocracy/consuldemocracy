@@ -1,30 +1,20 @@
 require "rails_helper"
 
 describe "Admin legislation draft versions" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
-  it_behaves_like "edit_translatable",
-                  "legislation_draft_version",
-                  "edit_admin_legislation_process_draft_version_path",
-                  %w[title changelog],
-                  { "body" => :markdownit }
-
   context "Feature flag" do
-
     scenario "Disabled with a feature flag" do
       Setting["process.legislation"] = nil
       process = create(:legislation_process)
-      expect{ visit admin_legislation_process_draft_versions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
+      expect { visit admin_legislation_process_draft_versions_path(process) }.to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Index" do
-
     scenario "Displaying legislation process draft versions" do
       process = create(:legislation_process, title: "An example legislation process")
       draft_version = create(:legislation_draft_version, process: process, title: "Version 1")
@@ -42,7 +32,7 @@ describe "Admin legislation draft versions" do
 
   context "Create" do
     scenario "Valid legislation draft version" do
-      process = create(:legislation_process, title: "An example legislation process")
+      create(:legislation_process, title: "An example legislation process")
 
       visit admin_root_path
 
@@ -75,7 +65,7 @@ describe "Admin legislation draft versions" do
   context "Update" do
     scenario "Valid legislation draft version", :js do
       process = create(:legislation_process, title: "An example legislation process")
-      draft_version = create(:legislation_draft_version, title: "Version 1", process: process)
+      create(:legislation_draft_version, title: "Version 1", process: process)
 
       visit admin_root_path
 

@@ -13,13 +13,10 @@ FactoryBot.define do
     allegations_end_date { Date.current + 3.days }
     proposals_phase_start_date { Date.current }
     proposals_phase_end_date { Date.current + 2.days }
-    people_proposals_phase_start_date { Date.current }
-    people_proposals_phase_end_date { Date.current + 2.days }
     result_publication_date { Date.current + 5.days }
     debate_phase_enabled { true }
     allegations_phase_enabled { true }
     proposals_phase_enabled { true }
-    people_proposals_phase_enabled { true }
     draft_publication_enabled { true }
     result_publication_enabled { true }
     published { true }
@@ -66,18 +63,6 @@ FactoryBot.define do
       proposals_phase_enabled { true }
     end
 
-    trait :in_people_proposals_phase do
-      people_proposals_phase_start_date { Date.current - 1.day }
-      people_proposals_phase_end_date { Date.current + 2.days }
-      people_proposals_phase_enabled { true }
-    end
-
-    trait :upcoming_people_proposals_phase do
-      people_proposals_phase_start_date { Date.current + 1.day }
-      people_proposals_phase_end_date { Date.current + 2.days }
-      people_proposals_phase_enabled { true }
-    end
-
     trait :published do
       published { true }
     end
@@ -101,13 +86,10 @@ FactoryBot.define do
       allegations_end_date { nil }
       proposals_phase_start_date { nil }
       proposals_phase_end_date { nil }
-      people_proposals_phase_start_date { nil }
-      people_proposals_phase_end_date { nil }
       result_publication_date { nil }
       debate_phase_enabled { false }
       allegations_phase_enabled { false }
       proposals_phase_enabled { false }
-      people_proposals_phase_enabled { false }
       draft_publication_enabled { false }
       result_publication_enabled { false }
       published { true }
@@ -124,19 +106,19 @@ FactoryBot.define do
     changelog { "What changed in this version" }
     status { "draft" }
     final_version { false }
-    body { <<-LOREM_IPSUM }
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+    body { <<~LOREM_IPSUM }
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
 
-Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.
+      Expetenda tincidunt in sed, ex partem placerat sea, porro commodo ex eam. His putant aeterno interesset at. Usu ea mundi tincidunt, omnium virtute aliquando ius ex. Ea aperiri sententiae duo. Usu nullam dolorum quaestio ei, sit vidit facilisis ea. Per ne impedit iracundia neglegentur. Consetetur neglegentur eum ut, vis animal legimus inimicus id.
 
-His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo, insolens complectitur te eos, ea pri dico munere propriae. Vel ferri facilis ut, qui paulo ridens praesent ad. Possim alterum qui cu. Accusamus consulatu ius te, cu decore soleat appareat usu.
+      His audiam deserunt in, eum ubique voluptatibus te. In reque dicta usu. Ne rebum dissentiet eam, vim omnis deseruisse id. Ullum deleniti vituperata at quo, insolens complectitur te eos, ea pri dico munere propriae. Vel ferri facilis ut, qui paulo ridens praesent ad. Possim alterum qui cu. Accusamus consulatu ius te, cu decore soleat appareat usu.
 
-Est ei erat mucius quaeque. Ei his quas phaedrum, efficiantur mediocritatem ne sed, hinc oratio blandit ei sed. Blandit gloriatur eam et. Brute noluisse per et, verear disputando neglegentur at quo. Sea quem legere ei, unum soluta ne duo. Ludus complectitur quo te, ut vide autem homero pro.
+      Est ei erat mucius quaeque. Ei his quas phaedrum, efficiantur mediocritatem ne sed, hinc oratio blandit ei sed. Blandit gloriatur eam et. Brute noluisse per et, verear disputando neglegentur at quo. Sea quem legere ei, unum soluta ne duo. Ludus complectitur quo te, ut vide autem homero pro.
 
-Vis id minim dicant sensibus. Pri aliquip conclusionemque ad, ad malis evertitur torquatos his. Has ei solum harum reprimique, id illum saperet tractatos his. Ei omnis soleat antiopam quo. Ad augue inani postulant mel, mel ea qualisque forensibus.
+      Vis id minim dicant sensibus. Pri aliquip conclusionemque ad, ad malis evertitur torquatos his. Has ei solum harum reprimique, id illum saperet tractatos his. Ei omnis soleat antiopam quo. Ad augue inani postulant mel, mel ea qualisque forensibus.
 
-Lorem salutandi eu mea, eam in soleat iriure assentior. Tamquam lobortis id qui. Ea sanctus democritum mei, per eu alterum electram adversarium. Ea vix probo dicta iuvaret, posse epicurei suavitate eam an, nam et vidit menandri. Ut his accusata petentium.
-LOREM_IPSUM
+      Lorem salutandi eu mea, eam in soleat iriure assentior. Tamquam lobortis id qui. Ea sanctus democritum mei, per eu alterum electram adversarium. Ea vix probo dicta iuvaret, posse epicurei suavitate eam an, nam et vidit menandri. Ut his accusata petentium.
+    LOREM_IPSUM
 
     trait :published do
       status { "published" }
@@ -152,7 +134,7 @@ LOREM_IPSUM
     author factory: :user
     quote { "ipsum" }
     text { "a comment" }
-    ranges { [{"start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11}] }
+    ranges { [{ "start" => "/p[1]", "startOffset" => 6, "end" => "/p[1]", "endOffset" => 11 }] }
     range_start { "/p[1]" }
     range_start_offset { 6 }
     range_end { "/p[1]" }
@@ -182,51 +164,5 @@ LOREM_IPSUM
     terms_of_service { "1" }
     process factory: :legislation_process
     author factory: :user
-  end
-
-  factory :debate_comment, class: "Comment" do
-    commentable_id { "10" }
-    commentable_type { Legislation::Question }
-    body { "This is a comment" }
-    user_id { "1" }
-    cached_votes_down { "0" }
-    cached_votes_total { "0" }
-    cached_votes_up { "0" }
-    confidence_score { "0" }
-  end
-
-  factory :text_comment, class: "Comment" do
-    commentable_id { "10" }
-    commentable_type { Legislation::Annotation }
-    body { "This is a comment" }
-    user_id { "1" }
-    cached_votes_down { "0" }
-    cached_votes_total { "0" }
-    cached_votes_up { "0" }
-    confidence_score { "0" }
-    ancestry { nil }
-  end
-
-  factory :legislation_people_proposal, class: "Legislation::PeopleProposal" do
-    sequence(:title) { |n| "People and group #{n} for a legislation" }
-    summary { "This law should be implemented by..." }
-    terms_of_service { "1" }
-    process factory: :legislation_process
-    author factory: :user
-    validated { false }
-
-    trait :with_contact_info do
-      email { "proposal@test.com" }
-      website { "https://proposal.io" }
-      phone { "666666666" }
-      facebook { "facebook.id" }
-      twitter { "TwitterId" }
-      youtube { "youtubechannelid" }
-      instagram { "instagramid" }
-    end
-
-    trait :validated do
-      validated { true }
-    end
   end
 end

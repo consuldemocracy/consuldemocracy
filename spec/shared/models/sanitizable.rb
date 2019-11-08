@@ -1,37 +1,5 @@
 shared_examples "sanitizable" do
-  let(:sanitizable)        { build(model_name(described_class)) }
-
-  it "is sanitized" do
-    sanitizable.description = "<script>alert('danger');</script>"
-
-    sanitizable.valid?
-
-    expect(sanitizable.description).to eq("alert('danger');")
-  end
-
-  it "is html_safe" do
-    sanitizable.description = "<script>alert('danger');</script>"
-
-    sanitizable.valid?
-
-    expect(sanitizable.description).to be_html_safe
-  end
-
-  it "is sanitized using globalize accessors" do
-    sanitizable.description_en = "<script>alert('danger');</script>"
-
-    sanitizable.valid?
-
-    expect(sanitizable.description_en).to eq("alert('danger');")
-  end
-
-  it "is html_safe using globalize accessors" do
-    sanitizable.description_en = "<script>alert('danger');</script>"
-
-    sanitizable.valid?
-
-    expect(sanitizable.description_en).to be_html_safe
-  end
+  let(:sanitizable) { build(model_name(described_class)) }
 
   describe "#tag_list" do
     before do

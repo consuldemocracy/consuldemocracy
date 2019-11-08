@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Registration form" do
-
   scenario "username is not available", :js do
     user = create(:user)
 
@@ -77,5 +76,4 @@ describe "Registration form" do
 
     expect(page).to have_current_path(new_user_registration_path)
   end
-
 end

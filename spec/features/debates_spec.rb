@@ -1,26 +1,14 @@
-# coding: utf-8
 require "rails_helper"
 
 describe "Debates" do
-
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
-    expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   context "Concerns" do
-    it_behaves_like "notifiable in-app", Debate
+    it_behaves_like "notifiable in-app", :debate
     it_behaves_like "relationable", Debate
-    it_behaves_like "new_translatable",
-                    "debate",
-                    "new_debate_path",
-                    %w[title],
-                    { "description" => :ckeditor }
-    it_behaves_like "edit_translatable",
-                    "debate",
-                    "edit_debate_path",
-                    %w[title],
-                    { "description" => :ckeditor }
     it_behaves_like "remotely_translatable",
                     :debate,
                     "debates_path",
@@ -315,9 +303,8 @@ describe "Debates" do
   end
 
   scenario "Update should not be posible if debate is not editable" do
-    debate = create(:debate)
     Setting["max_votes_for_debate_edit"] = 2
-    3.times { create(:vote, votable: debate) }
+    debate = create(:debate, voters: Array.new(3) { create(:user) })
 
     expect(debate).not_to be_editable
     login_as(debate.author)
@@ -393,7 +380,6 @@ describe "Debates" do
   end
 
   describe "Debate index order filters" do
-
     scenario "Default order is hot_score", :js do
       best_debate = create(:debate, title: "Best")
       best_debate.update_column(:hot_score, 10)
@@ -450,20 +436,9 @@ describe "Debates" do
     end
 
     context "Recommendations" do
-
       let!(:best_debate)   { create(:debate, title: "Best",   cached_votes_total: 10, tag_list: "Sport") }
       let!(:medium_debate) { create(:debate, title: "Medium", cached_votes_total: 5,  tag_list: "Sport") }
       let!(:worst_debate)  { create(:debate, title: "Worst",  cached_votes_total: 1,  tag_list: "Sport") }
-
-      before do
-        Setting["feature.user.recommendations"] = true
-        Setting["feature.user.recommendations_on_debates"] = true
-      end
-
-      after do
-        Setting["feature.user.recommendations"] = nil
-        Setting["feature.user.recommendations_on_debates"] = nil
-      end
 
       scenario "can't be sorted if there's no logged user" do
         visit debates_path
@@ -471,9 +446,8 @@ describe "Debates" do
       end
 
       scenario "are shown on index header when account setting is enabled" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -486,9 +460,8 @@ describe "Debates" do
       end
 
       scenario "should display text when there are no results" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Distinct_to_sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -510,9 +483,8 @@ describe "Debates" do
       end
 
       scenario "can be sorted when there's a logged user" do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -531,9 +503,8 @@ describe "Debates" do
       end
 
       scenario "are not shown if account setting is disabled" do
-        user     = create(:user, recommended_debates: false)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, recommended_debates: false, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -543,9 +514,8 @@ describe "Debates" do
       end
 
       scenario "are automatically disabled when dismissed from index", :js do
-        user     = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user     = create(:user, followables: [proposal])
 
         login_as(user)
         visit debates_path
@@ -574,9 +544,7 @@ describe "Debates" do
   end
 
   context "Search" do
-
     context "Basic search" do
-
       scenario "Search by text" do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
@@ -608,11 +576,9 @@ describe "Debates" do
 
         expect(page).to have_selector("input[name='search'][value='Schwifty']")
       end
-
     end
 
     context "Advanced search" do
-
       scenario "Search by text", :js do
         debate1 = create(:debate, title: "Get Schwifty")
         debate2 = create(:debate, title: "Schwifty Hello")
@@ -634,7 +600,6 @@ describe "Debates" do
       end
 
       context "Search by author type" do
-
         scenario "Public employee", :js do
           ana = create :user, official_level: 1
           john = create :user, official_level: 2
@@ -749,13 +714,10 @@ describe "Debates" do
             expect(page).not_to have_content(debate3.title)
           end
         end
-
       end
 
       context "Search by date" do
-
         context "Predefined date ranges" do
-
           scenario "Last day", :js do
             debate1 = create(:debate, created_at: 1.minute.ago)
             debate2 = create(:debate, created_at: 1.hour.ago)
@@ -835,7 +797,6 @@ describe "Debates" do
               expect(page).not_to have_content(debate3.title)
             end
           end
-
         end
 
         scenario "Search by custom date range", :js do
@@ -886,9 +847,9 @@ describe "Debates" do
           ana  = create :user, official_level: 1
           john = create :user, official_level: 1
 
-          debate1 = create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
-          debate2 = create(:debate, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
-          debate3 = create(:debate, title: "Save the forest")
+          create(:debate, title: "Get Schwifty",   author: ana,  created_at: 1.minute.ago)
+          create(:debate, title: "Hello Schwifty", author: john, created_at: 2.days.ago)
+          create(:debate, title: "Save the forest")
 
           visit debates_path
 
@@ -901,7 +862,7 @@ describe "Debates" do
 
           within("#debates") do
             expect(page).to have_css(".debate", count: 1)
-            expect(page).to have_content(debate1.title)
+            expect(page).to have_content "Get Schwifty"
           end
         end
 
@@ -937,14 +898,13 @@ describe "Debates" do
             expect(page).to have_selector("input[name='advanced_search[date_max]'][value*='#{1.day.ago.strftime("%d/%m/%Y")}']")
           end
         end
-
       end
     end
 
     scenario "Order by relevance by default", :js do
-      debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10)
-      debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1)
-      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100)
+      create(:debate, title: "Show you got",      cached_votes_up: 10)
+      create(:debate, title: "Show what you got", cached_votes_up: 1)
+      create(:debate, title: "Show you got",      cached_votes_up: 100)
 
       visit debates_path
       fill_in "search", with: "Show you got"
@@ -960,10 +920,10 @@ describe "Debates" do
     end
 
     scenario "Reorder results maintaing search", :js do
-      debate1 = create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
-      debate2 = create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
-      debate3 = create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
-      debate4 = create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
+      create(:debate, title: "Show you got",      cached_votes_up: 10,  created_at: 1.week.ago)
+      create(:debate, title: "Show what you got", cached_votes_up: 1,   created_at: 1.month.ago)
+      create(:debate, title: "Show you got",      cached_votes_up: 100, created_at: Time.current)
+      create(:debate, title: "Do not display",    cached_votes_up: 1,   created_at: 1.week.ago)
 
       visit debates_path
       fill_in "search", with: "Show you got"
@@ -980,19 +940,15 @@ describe "Debates" do
     end
 
     scenario "Reorder by recommendations results maintaing search" do
-      Setting["feature.user.recommendations"] = true
-      Setting["feature.user.recommendations_on_debates"] = true
+      proposal = create(:proposal, tag_list: "Sport")
+      user = create(:user, recommended_debates: true, followables: [proposal])
 
-      user = create(:user, recommended_debates: true)
+      create(:debate, title: "Show you got",      cached_votes_total: 10,  tag_list: "Sport")
+      create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
+      create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
+      create(:debate, title: "Do not display",    cached_votes_total: 1)
+
       login_as(user)
-
-      debate1 = create(:debate, title: "Show you got",      cached_votes_total: 10,  tag_list: "Sport")
-      debate2 = create(:debate, title: "Show what you got", cached_votes_total: 1,   tag_list: "Sport")
-      debate3 = create(:debate, title: "Do not display with same tag", cached_votes_total: 100, tag_list: "Sport")
-      debate4 = create(:debate, title: "Do not display",    cached_votes_total: 1)
-      proposal1 = create(:proposal, tag_list: "Sport")
-      create(:follow, followable: proposal1, user: user)
-
       visit debates_path
       fill_in "search", with: "Show you got"
       click_button "Search"
@@ -1005,25 +961,21 @@ describe "Debates" do
         expect(page).not_to have_content "Do not display with same tag"
         expect(page).not_to have_content "Do not display"
       end
-
-      Setting["feature.user.recommendations"] = nil
-      Setting["feature.user.recommendations_on_debates"] = nil
     end
 
     scenario "After a search do not show featured debates" do
-      featured_debates = create_featured_debates
-      debate = create(:debate, title: "Abcdefghi")
+      create_featured_debates
+      create(:debate, title: "Abcdefghi")
 
       visit debates_path
       within(".expanded #search_form") do
-        fill_in "search", with: debate.title
+        fill_in "search", with: "Abcdefghi"
         click_button "Search"
       end
 
       expect(page).not_to have_selector("#debates .debate-featured")
       expect(page).not_to have_selector("#featured-debates")
     end
-
   end
 
   scenario "Conflictive" do
@@ -1050,16 +1002,14 @@ describe "Debates" do
   end
 
   context "Filter" do
-
     context "By geozone" do
+      let(:california) { Geozone.create(name: "California") }
+      let(:new_york)   { Geozone.create(name: "New York") }
 
       before do
-        @california = Geozone.create(name: "California")
-        @new_york   = Geozone.create(name: "New York")
-
-        @debate1 = create(:debate, geozone: @california)
-        @debate2 = create(:debate, geozone: @california)
-        @debate3 = create(:debate, geozone: @new_york)
+        create(:debate, geozone: california, title: "Bigger sequoias")
+        create(:debate, geozone: california, title: "Green beach")
+        create(:debate, geozone: new_york, title: "Sully monument")
       end
 
       pending "From map" do
@@ -1073,9 +1023,9 @@ describe "Debates" do
 
         within("#debates") do
           expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content(@debate1.title)
-          expect(page).to have_content(@debate2.title)
-          expect(page).not_to have_content(@debate3.title)
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
@@ -1088,43 +1038,43 @@ describe "Debates" do
         end
         within("#debates") do
           expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content(@debate1.title)
-          expect(page).to have_content(@debate2.title)
-          expect(page).not_to have_content(@debate3.title)
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
 
       pending "From debate" do
-        visit debate_path(@debate1)
+        debate = create(:debate, geozone: california, title: "Surf college")
+
+        visit debate_path(debate)
 
         within("#geozone") do
           click_link "California"
         end
 
         within("#debates") do
-          expect(page).to have_css(".debate", count: 2)
-          expect(page).to have_content(@debate1.title)
-          expect(page).to have_content(@debate2.title)
-          expect(page).not_to have_content(@debate3.title)
+          expect(page).to have_css(".debate", count: 3)
+          expect(page).to have_content("Surf college")
+          expect(page).to have_content("Bigger sequoias")
+          expect(page).to have_content("Green beach")
+          expect(page).not_to have_content("Sully monument")
         end
       end
-
     end
   end
 
   context "Suggesting debates" do
     scenario "Shows up to 5 suggestions", :js do
-      author = create(:user)
-      login_as(author)
+      create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
+      create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
+      create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
+      create(:debate, title: "This one has 4 votes", description: "This is the fourth debate", cached_votes_up: 4)
+      create(:debate, title: "Fifth debate has 5 votes", cached_votes_up: 5)
+      create(:debate, title: "Sixth debate has 6 votes", description: "This is the sixth debate",  cached_votes_up: 6)
+      create(:debate, title: "This has seven votes, and is not suggest", description: "This is the seven", cached_votes_up: 7)
 
-      debate1 = create(:debate, title: "First debate has 1 vote", cached_votes_up: 1)
-      debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
-      debate3 = create(:debate, title: "Third debate has 3 votes", cached_votes_up: 3)
-      debate4 = create(:debate, title: "This one has 4 votes", description: "This is the fourth debate", cached_votes_up: 4)
-      debate5 = create(:debate, title: "Fifth debate has 5 votes", cached_votes_up: 5)
-      debate6 = create(:debate, title: "Sixth debate has 6 votes", description: "This is the sixth debate",  cached_votes_up: 6)
-      debate7 = create(:debate, title: "This has seven votes, and is not suggest", description: "This is the seven", cached_votes_up: 7)
-
+      login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "debate"
       check "debate_terms_of_service"
@@ -1135,12 +1085,10 @@ describe "Debates" do
     end
 
     scenario "No found suggestions", :js do
-      author = create(:user)
-      login_as(author)
+      create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
+      create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
 
-      debate1 = create(:debate, title: "First debate has 10 vote", cached_votes_up: 10)
-      debate2 = create(:debate, title: "Second debate has 2 votes", cached_votes_up: 2)
-
+      login_as(create(:user))
       visit new_debate_path
       fill_in "Debate title", with: "proposal"
       check "debate_terms_of_service"
@@ -1152,11 +1100,9 @@ describe "Debates" do
   end
 
   scenario "Mark/Unmark a debate as featured" do
-    admin = create(:administrator)
-    login_as(admin.user)
-
     debate = create(:debate)
 
+    login_as(create(:administrator).user)
     visit debates_path
     within("#debates") do
       expect(page).not_to have_content "Featured"
@@ -1185,12 +1131,10 @@ describe "Debates" do
   end
 
   scenario "Index include featured debates" do
-    admin = create(:administrator)
-    login_as(admin.user)
+    create(:debate, featured_at: Time.current)
+    create(:debate)
 
-    debate1 = create(:debate, featured_at: Time.current)
-    debate2 = create(:debate)
-
+    login_as(create(:administrator).user)
     visit debates_path
     within("#debates") do
       expect(page).to have_content("Featured")
@@ -1198,16 +1142,13 @@ describe "Debates" do
   end
 
   scenario "Index do not show featured debates if none is marked as featured" do
-    admin = create(:administrator)
-    login_as(admin.user)
+    create(:debate)
+    create(:debate)
 
-    debate1 = create(:debate)
-    debate2 = create(:debate)
-
+    login_as(create(:administrator).user)
     visit debates_path
     within("#debates") do
       expect(page).not_to have_content("Featured")
     end
   end
-
 end

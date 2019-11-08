@@ -18,7 +18,7 @@ class Admin::ValuatorsController < Admin::BaseController
 
   def create
     @valuator = Valuator.new(valuator_params)
-    @valuator.save
+    @valuator.save!
 
     redirect_to admin_valuators_path
   end
@@ -39,7 +39,7 @@ class Admin::ValuatorsController < Admin::BaseController
   end
 
   def destroy
-    @valuator.destroy
+    @valuator.destroy!
     redirect_to admin_valuators_path
   end
 
@@ -50,5 +50,4 @@ class Admin::ValuatorsController < Admin::BaseController
       params.require(:valuator).permit(:user_id, :description, :valuator_group_id,
                                        :can_comment, :can_edit_dossier)
     end
-
 end

@@ -29,7 +29,7 @@ class Officing::Residence
 
     if user_exists?
       self.user = find_user_by_document
-      user.update(verified_at: Time.current)
+      user.update!(verified_at: Time.current)
     else
       user_params = {
         document_number:       document_number,
@@ -46,6 +46,10 @@ class Officing::Residence
       }
       self.user = User.create!(user_params)
     end
+  end
+
+  def save!
+    validate! && save
   end
 
   def store_failed_census_call
@@ -65,8 +69,7 @@ class Officing::Residence
   end
 
   def find_user_by_document
-    User.where(document_number: document_number,
-               document_type:   document_type).first
+    User.find_by(document_number: document_number, document_type: document_type)
   end
 
   def residence_in_madrid
@@ -92,7 +95,7 @@ class Officing::Residence
   end
 
   def geozone
-    Geozone.where(census_code: district_code).first
+    Geozone.find_by(census_code: district_code)
   end
 
   def district_code
@@ -122,6 +125,7 @@ class Officing::Residence
 
     def valid_year_of_birth?
       return true if Setting.force_presence_date_of_birth?
+
       @census_api_response.date_of_birth.year.to_s == year_of_birth.to_s
     end
 
@@ -132,5 +136,4 @@ class Officing::Residence
     def random_password
       (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
-
 end

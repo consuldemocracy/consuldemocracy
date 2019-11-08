@@ -14,13 +14,13 @@ class Admin::ManagersController < Admin::BaseController
 
   def create
     @manager.user_id = params[:user_id]
-    @manager.save
+    @manager.save!
 
     redirect_to admin_managers_path
   end
 
   def destroy
-    @manager.destroy
+    @manager.destroy!
     redirect_to admin_managers_path
   end
 end

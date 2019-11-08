@@ -4,21 +4,21 @@ en:
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
-      new_comment_by_html: There is a new comment from <strong>%{commenter}</strong>
+      new_comment_by: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
       manage_email_subscriptions: To stop receiving these emails change your settings in
     email_verification:
       click_here_to_verify: this link
-      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
-      instructions_html: To complete the verification of your user account you must click %{verification_link}.
+      instructions_2: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
+      instructions: To complete the verification of your user account you must click %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
       title: Confirm your account using the following link
     reply:
       hi: Hi
-      new_reply_by_html: There is a new response from <strong>%{commenter}</strong> to your comment on
+      new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
     proposal_notification_digest:
@@ -35,7 +35,7 @@ en:
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "You have sent a new private message"
-      title_html: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
+      title: "You have sent a new private message to <strong>%{receiver}</strong> with the content:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Thank you for applying to join %{org}! In seconds you can start to participate, just fill the form below:"
@@ -46,15 +46,15 @@ en:
     budget_investment_created:
       subject: "Thank you for creating an investment!"
       title: "Thank you for creating an investment!"
-      intro_html: "Hi <strong>%{author}</strong>,"
-      text_html: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
-      follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
+      intro: "Hi <strong>%{author}</strong>,"
+      text: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
+      follow: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
       share: "Share your project"
     budget_investment_unfeasible:
       hi: "Dear user,"
-      new_html: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
+      new: "For all these, we invite you to elaborate a <strong>new investment</strong> that adjusts to the conditions of this process. You can do it following this link: %{url}."
       new_href: "new investment project"
       sincerely: "Sincerely"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
@@ -75,7 +75,7 @@ en:
       subject: "New evaluation comment"
       title: New evaluation comment for %{investment}
       hi: Hi
-      new_comment_by_html: There is a new evaluation comment from <strong>%{commenter}</strong> to the budget investment %{investment}
+      new_comment_by: There is a new evaluation comment from <strong>%{commenter}</strong> to the budget investment %{investment}
       commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "More news about your citizen proposal"

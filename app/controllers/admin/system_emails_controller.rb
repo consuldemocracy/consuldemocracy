@@ -1,5 +1,4 @@
 class Admin::SystemEmailsController < Admin::BaseController
-
   before_action :load_system_email, only: [:view, :preview_pending, :moderate_pending]
 
   def index
@@ -92,7 +91,7 @@ class Admin::SystemEmailsController < Admin::BaseController
     end
 
     def load_sample_reply
-      reply = Comment.select { |comment| comment.reply? }.last
+      reply = Comment.select(&:reply?).last
       if reply
         @email = ReplyEmail.new(reply)
       else

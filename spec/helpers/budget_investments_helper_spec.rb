@@ -1,9 +1,7 @@
 require "rails_helper"
 
 RSpec.describe BudgetInvestmentsHelper, type: :helper do
-
   describe "#set_direction" do
-
     it "returns ASC if current_direction is DESC" do
       expect(set_direction("desc")).to eq "asc"
     end
@@ -43,5 +41,4 @@ RSpec.describe BudgetInvestmentsHelper, type: :helper do
       expect(set_sorting_icon("asc", sort_by)).to eq ""
     end
   end
-
 end

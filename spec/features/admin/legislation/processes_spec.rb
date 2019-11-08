@@ -1,33 +1,24 @@
 require "rails_helper"
 
 describe "Admin collaborative legislation" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
-
-  it_behaves_like "edit_translatable",
-                  "legislation_process",
-                  "edit_admin_legislation_process_path",
-                  %w[title summary description additional_info]
 
   it_behaves_like "admin_milestoneable",
                   :legislation_process,
                   "admin_legislation_process_milestones_path"
 
   context "Feature flag" do
-
     scenario "Disabled with a feature flag" do
       Setting["process.legislation"] = nil
-      expect{ visit admin_legislation_processes_path }
+      expect { visit admin_legislation_processes_path }
       .to raise_exception(FeatureFlags::FeatureDisabled)
     end
-
   end
 
   context "Index" do
-
     scenario "Displaying collaborative legislation" do
       process_1 = create(:legislation_process, title: "Process open")
       process_2 = create(:legislation_process, title: "Process for the future",
@@ -56,18 +47,17 @@ describe "Admin collaborative legislation" do
 
       visit admin_legislation_processes_path(filter: "all")
 
-      expect(page).to have_content (process_1.start_date)
-      expect(page).to have_content (process_2.start_date)
-      expect(page).to have_content (process_3.start_date)
+      expect(page).to have_content process_1.start_date
+      expect(page).to have_content process_2.start_date
+      expect(page).to have_content process_3.start_date
 
-      expect(page).to have_content (process_1.end_date)
-      expect(page).to have_content (process_2.end_date)
-      expect(page).to have_content (process_3.end_date)
+      expect(page).to have_content process_1.end_date
+      expect(page).to have_content process_2.end_date
+      expect(page).to have_content process_3.end_date
 
       expect(process_3.title).to appear_before(process_2.title)
       expect(process_2.title).to appear_before(process_1.title)
     end
-
   end
 
   context "Create" do
@@ -97,7 +87,7 @@ describe "Admin collaborative legislation" do
       fill_in "legislation_process[draft_start_date]",
                with: (base_date - 3.days).strftime("%d/%m/%Y")
       fill_in "legislation_process[draft_end_date]",
-               with: (base_date - 1.days).strftime("%d/%m/%Y")
+               with: (base_date - 1.day).strftime("%d/%m/%Y")
       fill_in "legislation_process[draft_publication_date]",
                with: (base_date + 3.days).strftime("%d/%m/%Y")
       fill_in "legislation_process[allegations_start_date]",
@@ -167,7 +157,7 @@ describe "Admin collaborative legislation" do
     end
 
     scenario "Create a legislation process with an image", :js do
-      visit new_admin_legislation_process_path()
+      visit new_admin_legislation_process_path
       fill_in "Process Title", with: "An example legislation process"
       fill_in "Summary", with: "Summary of the process"
 
@@ -194,7 +184,6 @@ describe "Admin collaborative legislation" do
       expect(find("#legislation_process_background_color").value).to eq "#e7f2fc"
       expect(find("#legislation_process_font_color").value).to eq "#222222"
     end
-
   end
 
   context "Update" do
@@ -287,7 +276,6 @@ describe "Admin collaborative legislation" do
     let!(:process) { create(:legislation_process) }
 
     before { Setting["feature.translation_interface"] = true }
-    after { Setting["feature.translation_interface"] = nil }
 
     scenario "Cant manage translations on homepage form" do
       visit edit_admin_legislation_process_homepage_path(process)

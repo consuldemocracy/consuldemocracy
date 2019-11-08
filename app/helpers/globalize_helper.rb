@@ -1,12 +1,11 @@
 module GlobalizeHelper
-
   def options_for_select_language(resource)
     options_for_select(available_locales(resource), selected_locale(resource))
   end
 
   def available_locales(resource)
-    I18n.available_locales.select{ |locale| enabled_locale?(resource, locale) }.map do |locale|
-      [name_for_locale(locale), locale , { data: { locale: locale } }]
+    I18n.available_locales.select { |locale| enabled_locale?(resource, locale) }.map do |locale|
+      [name_for_locale(locale), locale, { data: { locale: locale }}]
     end
   end
 
@@ -64,7 +63,7 @@ module GlobalizeHelper
   end
 
   def selected_languages_description(resource)
-    t("shared.translations.languages_in_use_html", count: active_languages_count(resource))
+    sanitize(t("shared.translations.languages_in_use", count: active_languages_count(resource)))
   end
 
   def select_language_error(resource)
@@ -131,7 +130,7 @@ module GlobalizeHelper
     hidden_field_tag("enabled_translations[#{locale}]", (enabled ? 1 : 0))
   end
 
-  def globalize(locale, &block)
+  def globalize(locale)
     Globalize.with_locale(locale) do
       yield
     end

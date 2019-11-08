@@ -1,13 +1,13 @@
 class SignatureSheet < ApplicationRecord
   belongs_to :signable, polymorphic: true
-  belongs_to :author, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, class_name: "User"
 
-  VALID_SIGNABLES = %w(Proposal Budget::Investment)
+  VALID_SIGNABLES = %w[Proposal Budget::Investment].freeze
 
   has_many :signatures
 
   validates :author, presence: true
-  validates :signable_type, inclusion: {in: VALID_SIGNABLES}
+  validates :signable_type, inclusion: { in: VALID_SIGNABLES }
   validates :required_fields_to_verify, presence: true
   validates :signable, presence: true
   validate  :signable_found
@@ -28,14 +28,14 @@ class SignatureSheet < ApplicationRecord
 
       signature = signatures.where(document_number: document_number,
                                    date_of_birth: date_of_birth,
-                                   postal_code: postal_code).first_or_create
+                                   postal_code: postal_code).first_or_create!
       signature.verify
     end
-    update(processed: true)
+    update!(processed: true)
   end
 
   def parsed_required_fields_to_verify_groups
-    required_fields_to_verify.split(/[;]/).collect {|d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/)}
+    required_fields_to_verify.split(/[;]/).map { |d| d.gsub(/\s+/, "") }.map { |group| group.split(/[,]/) }
   end
 
   def signable_found
@@ -46,16 +46,17 @@ class SignatureSheet < ApplicationRecord
 
     def parse_date_of_birth(required_fields_to_verify)
       return required_fields_to_verify[1] if Setting.force_presence_date_of_birth?
+
       nil
     end
 
     def parse_postal_code(required_fields_to_verify)
       if Setting.force_presence_date_of_birth? && Setting.force_presence_postal_code?
-        return required_fields_to_verify[2]
+        required_fields_to_verify[2]
       elsif Setting.force_presence_postal_code?
-        return required_fields_to_verify[1]
+        required_fields_to_verify[1]
       else
-        return nil
+        nil
       end
     end
 end

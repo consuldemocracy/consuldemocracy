@@ -1,10 +1,8 @@
 require "rails_helper"
 
 describe "Proposal Notifications" do
-
   scenario "Send a notification" do
-    author = create(:user)
-    create(:proposal, author: author)
+    author = create(:user, :with_proposal)
 
     login_as(author)
     visit root_path
@@ -29,38 +27,28 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Active voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
 
-    voter = create(:user, :level_two)
-    create(:vote, voter: voter, votable: proposal)
-
+    create(:user, :level_two, votables: [proposal])
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(1)
   end
 
   scenario "Send a notification (Follower)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
-    user_follower = create(:user)
-    create(:follow, :followed_proposal, user: user_follower, followable: proposal)
+    proposal = create(:proposal)
 
+    create(:user, :level_two, followables: [proposal])
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(1)
   end
 
   scenario "Send a notification (Follower and Voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
 
-    user_voter_follower = create(:user)
-    create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
-    create(:vote, voter: user_voter_follower, votable: proposal)
-
-    user_follower = create(:user)
-    create(:follow, :followed_proposal, user: user_follower, followable: proposal)
+    create(:user, followables: [proposal], votables: [proposal])
+    create(:user, followables: [proposal])
 
     create_proposal_notification(proposal)
 
@@ -68,26 +56,20 @@ describe "Proposal Notifications" do
   end
 
   scenario "Send a notification (Blocked voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
+    voter = create(:user, :level_two, votables: [proposal])
 
-    voter = create(:user, :level_two)
-    create(:vote, voter: voter, votable: proposal)
     voter.block
-
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(0)
   end
 
   scenario "Send a notification (Erased voter)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
+    proposal = create(:proposal)
+    voter = create(:user, :level_two, votables: [proposal])
 
-    voter = create(:user, :level_two)
-    create(:vote, voter: voter, votable: proposal)
     voter.erase
-
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(0)
@@ -159,11 +141,9 @@ describe "Proposal Notifications" do
 
   scenario "Message about receivers (Same Followers and Voters)" do
     author = create(:user)
-    proposal = create(:proposal, author: author)
+    voter_follower = create(:user)
 
-    user_voter_follower = create(:user)
-    create(:follow, :followed_proposal, user: user_voter_follower, followable: proposal)
-    create(:vote, voter: user_voter_follower, votable: proposal)
+    proposal = create(:proposal, author: author, voters: [voter_follower], followers: [voter_follower])
 
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -175,9 +155,7 @@ describe "Proposal Notifications" do
   end
 
   context "Permissions" do
-
     scenario "Link to send the message" do
-      _user = create(:user)
       author = create(:user)
       proposal = create(:proposal, author: author)
 
@@ -208,22 +186,16 @@ describe "Proposal Notifications" do
       expect(page).to have_current_path(root_path)
       expect(page).to have_content("You do not have permission to carry out the action")
     end
-
   end
 
   context "In-app notifications from the proposal's author" do
-
     scenario "Voters should receive a notification", :js do
       author = create(:user)
-
-      user1 = create(:user)
-      user2 = create(:user)
-      user3 = create(:user)
-
       proposal = create(:proposal, author: author)
 
-      create(:vote, voter: user1, votable: proposal, vote_flag: true)
-      create(:vote, voter: user2, votable: proposal, vote_flag: true)
+      user1 = create(:user, votables: [proposal])
+      user2 = create(:user, votables: [proposal])
+      user3 = create(:user)
 
       login_as(author)
       visit root_path
@@ -273,15 +245,11 @@ describe "Proposal Notifications" do
 
     scenario "Followers should receive a notification", :js do
       author = create(:user)
-
-      user1 = create(:user)
-      user2 = create(:user)
-      user3 = create(:user)
-
       proposal = create(:proposal, author: author)
 
-      create(:follow, :followed_proposal, user: user1, followable: proposal)
-      create(:follow, :followed_proposal, user: user2, followable: proposal)
+      user1 = create(:user, followables: [proposal])
+      user2 = create(:user, followables: [proposal])
+      user3 = create(:user)
 
       login_as author.reload
       visit root_path
@@ -329,10 +297,7 @@ describe "Proposal Notifications" do
     scenario "Proposal hidden", :js do
       author = create(:user)
       user = create(:user)
-
-      proposal = create(:proposal, author: author)
-
-      create(:vote, voter: user, votable: proposal, vote_flag: true)
+      proposal = create(:proposal, author: author, voters: [user])
 
       login_as(author)
       visit root_path
@@ -364,10 +329,7 @@ describe "Proposal Notifications" do
     scenario "Proposal retired by author", :js do
       author = create(:user)
       user = create(:user)
-
-      proposal = create(:proposal, author: author)
-
-      create(:vote, voter: user, votable: proposal, vote_flag: true)
+      proposal = create(:proposal, author: author, voters: [user])
 
       login_as(author)
       visit root_path
@@ -376,22 +338,14 @@ describe "Proposal Notifications" do
     end
 
     context "Group notifications" do
-
       before do
         Setting[:proposal_notification_minimum_interval_in_days] = 0
       end
 
-      after do
-        Setting[:proposal_notification_minimum_interval_in_days] = 3
-      end
-
       scenario "for the same proposal", :js do
         author = create(:user)
-        user = create(:user)
-
         proposal = create(:proposal, author: author)
-
-        create(:follow, :followed_proposal, user: user, followable: proposal)
+        user = create(:user, followables: [proposal])
 
         login_as author.reload
 
@@ -409,16 +363,13 @@ describe "Proposal Notifications" do
         login_as user.reload
         visit root_path
 
-        within("#notifications") {
-          expect(page).to have_content :all, "You have 3 new notifications"
-        }
+        within("#notifications") { expect(page).to have_content :all, "You have 3 new notifications" }
         find(".icon-notification").click
 
         expect(page).to have_css ".notification", count: 3
         expect(page).to have_content "There is one new notification on #{proposal.title}", count: 3
       end
     end
-
   end
 
   scenario "Error messages" do
@@ -434,7 +385,6 @@ describe "Proposal Notifications" do
   end
 
   context "Limits" do
-
     scenario "Cannot send more than one notification within established interval" do
       author = create(:user)
       proposal = create(:proposal, author: author)
@@ -470,19 +420,15 @@ describe "Proposal Notifications" do
 
       expect(page).to have_content "Your message has been sent correctly."
 
-      travel 3.days + 1.second
+      travel(3.days + 1.second) do
+        visit new_proposal_notification_path(proposal_id: proposal.id)
+        fill_in "Title", with: "Thank you again for supporting my proposal"
+        fill_in "Message", with: "Please share it again with others so we can make it happen!"
+        click_button "Send message"
 
-      visit new_proposal_notification_path(proposal_id: proposal.id)
-      fill_in "Title", with: "Thank you again for supporting my proposal"
-      fill_in "Message", with: "Please share it again with others so we can make it happen!"
-      click_button "Send message"
-
-      expect(page).to have_content "Your message has been sent correctly."
-      expect(page).not_to have_content "You have to wait a minimum of 3 days between notifications"
-
-      travel_back
+        expect(page).to have_content "Your message has been sent correctly."
+        expect(page).not_to have_content "You have to wait a minimum of 3 days between notifications"
+      end
     end
-
   end
-
 end

@@ -4,7 +4,6 @@ describe "Residence", :with_frozen_time do
   let(:officer) { create(:poll_officer) }
 
   describe "Officers without assignments" do
-
     scenario "Can not access residence verification" do
       login_as(officer.user)
       visit officing_root_path
@@ -18,11 +17,9 @@ describe "Residence", :with_frozen_time do
 
       expect(page).to have_content("You don't have officing shifts today")
     end
-
   end
 
   describe "Assigned officers" do
-
     before do
       create(:poll_officer_assignment, officer: officer)
       login_through_form_as_officer(officer.user)
@@ -90,15 +87,13 @@ describe "Residence", :with_frozen_time do
 
       expect(page).to have_content "The Census was unable to verify this document"
     end
-
   end
 
   scenario "Verify booth", :js do
     booth = create(:poll_booth)
     poll = create(:poll)
 
-    ba = create(:poll_booth_assignment, poll: poll, booth: booth)
-    create(:poll_officer_assignment, officer: officer, booth_assignment: ba)
+    create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
     create(:poll_shift, officer: officer, booth: booth, date: Date.current)
 
     login_as(officer.user)
@@ -117,7 +112,6 @@ describe "Residence", :with_frozen_time do
   end
 
   context "With remote census configuration" do
-
     before do
       Setting["feature.remote_census"] = true
       Setting["remote_census.request.date_of_birth"] = "some.value"
@@ -127,14 +121,7 @@ describe "Residence", :with_frozen_time do
       visit officing_root_path
     end
 
-    after do
-      Setting["feature.remote_census"] = nil
-      Setting["remote_census.request.date_of_birth"] = nil
-      Setting["remote_census.request.postal_code"] = nil
-    end
-
     describe "Display form fields according to the remote census configuration" do
-
       scenario "by default (without custom census) not display date_of_birth and postal_code" do
         Setting["feature.remote_census"] = false
 
@@ -163,7 +150,6 @@ describe "Residence", :with_frozen_time do
         expect(page).to have_css("#residence_postal_code")
         expect(page).not_to have_css("#residence_year_of_birth")
       end
-
     end
 
     scenario "can verify voter with date_of_birth and postal_code fields" do
@@ -185,7 +171,5 @@ describe "Residence", :with_frozen_time do
 
       expect(page).to have_content "Document verified with Census"
     end
-
   end
-
 end

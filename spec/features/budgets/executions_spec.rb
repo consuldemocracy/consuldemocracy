@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Executions" do
-
   let(:budget)  { create(:budget, :finished) }
   let(:group)   { create(:budget_group, budget: budget) }
   let(:heading) { create(:budget_heading, group: group) }
@@ -12,7 +11,7 @@ describe "Executions" do
   let!(:investment3) { create(:budget_investment, :incompatible, heading: heading) }
 
   scenario "finds budget by id or slug" do
-    budget.update(slug: "budget_slug")
+    budget.update!(slug: "budget_slug")
 
     visit budget_executions_path("budget_slug")
     within(".budgets-stats") { expect(page).to have_content budget.name }
@@ -77,10 +76,8 @@ describe "Executions" do
   end
 
   context "Images" do
-
     scenario "renders milestone image if available" do
-      milestone1 = create(:milestone, milestoneable: investment1)
-      create(:image, imageable: milestone1)
+      milestone1 = create(:milestone, :with_image, milestoneable: investment1)
 
       visit budget_path(budget)
 
@@ -117,20 +114,10 @@ describe "Executions" do
     end
 
     scenario "renders last milestone's image if investment has multiple milestones with images associated" do
-      milestone1 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      milestone2 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      milestone3 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      milestone4 = create(:milestone, milestoneable: investment1,
-                                      publication_date: Date.yesterday)
-
-      create(:image, imageable: milestone2, title: "Image for first milestone with image")
-      create(:image, imageable: milestone3, title: "Image for second milestone with image")
+      create(:milestone, milestoneable: investment1)
+      create(:milestone, :with_image, image_title: "First image", milestoneable: investment1)
+      create(:milestone, :with_image, image_title: "Second image", milestoneable: investment1)
+      create(:milestone, milestoneable: investment1)
 
       visit budget_path(budget)
 
@@ -138,13 +125,11 @@ describe "Executions" do
       click_link "Milestones"
 
       expect(page).to have_content(investment1.title)
-      expect(page).to have_css("img[alt='#{milestone3.image.title}']")
+      expect(page).to have_css("img[alt='Second image']")
     end
-
   end
 
   context "Filters" do
-
     let!(:status1) { create(:milestone_status, name: "Studying the project") }
     let!(:status2) { create(:milestone_status, name: "Bidding") }
 
@@ -241,11 +226,11 @@ describe "Executions" do
       create(:milestone, milestoneable: investment2, status: status2)
       create(:milestone, milestoneable: investment3, status: status2)
       investment1.milestone_tag_list.add("tag1", "tag2")
-      investment1.save
+      investment1.save!
       investment2.milestone_tag_list.add("tag2")
-      investment2.save
+      investment2.save!
       investment3.milestone_tag_list.add("tag2")
-      investment3.save
+      investment3.save!
 
       visit budget_path(budget)
 
@@ -280,23 +265,14 @@ describe "Executions" do
       expect(page).not_to have_content(investment1.title)
       expect(page).to have_content(investment2.title)
     end
-
   end
 
   context "Heading Order" do
-
-    def create_heading_with_investment_with_milestone(group:, name:)
-      heading    = create(:budget_heading, group: group, name: name)
-      investment = create(:budget_investment, :winner, heading: heading)
-      milestone  = create(:milestone, milestoneable: investment)
-      heading
-    end
-
     scenario "Non-city headings are displayed in alphabetical order" do
       heading.destroy!
-      z_heading = create_heading_with_investment_with_milestone(group: group, name: "Zzz")
-      a_heading = create_heading_with_investment_with_milestone(group: group, name: "Aaa")
-      m_heading = create_heading_with_investment_with_milestone(group: group, name: "Mmm")
+      z_heading = create(:budget_heading, :with_investment_with_milestone, group: group, name: "Zzz")
+      a_heading = create(:budget_heading, :with_investment_with_milestone, group: group, name: "Aaa")
+      m_heading = create(:budget_heading, :with_investment_with_milestone, group: group, name: "Mmm")
 
       visit budget_executions_path(budget)
 
@@ -307,16 +283,13 @@ describe "Executions" do
   end
 
   context "No milestones" do
-
     scenario "Milestone not yet published" do
       status = create(:milestone_status)
-      unpublished_milestone = create(:milestone, milestoneable: investment1,
-                                     status: status, publication_date: Date.tomorrow)
+      create(:milestone, milestoneable: investment1, status: status, publication_date: Date.tomorrow)
 
       visit budget_executions_path(budget, status: status.id)
 
       expect(page).to have_content("No winner investments in this state")
     end
-
   end
 end

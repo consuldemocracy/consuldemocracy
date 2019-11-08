@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   include HasOrders
   include AccessDeniedHandler
 
+  default_form_builder ConsulFormBuilder
   protect_from_forgery with: :exception
 
   before_action :authenticate_http_basic, if: :http_basic_auth_site?
@@ -14,7 +15,6 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :track_email_campaign
   before_action :set_return_url
-  before_action :set_current_user
 
   check_authorization unless: :devise_controller?
   self.responder = ApplicationResponder
@@ -110,18 +110,14 @@ class ApplicationController < ActionController::Base
     end
 
     def set_default_budget_filter
-      if @budget.try(:balloting?) || @budget.try(:publishing_prices?)
+      if @budget&.balloting? || @budget&.publishing_prices?
         params[:filter] ||= "selected"
-      elsif @budget.try(:finished?)
+      elsif @budget&.finished?
         params[:filter] ||= "winners"
       end
     end
 
     def current_budget
       Budget.current
-    end
-
-    def set_current_user
-      User.current_user = current_user
     end
 end

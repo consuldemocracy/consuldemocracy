@@ -5,7 +5,7 @@ class Poll
 
     before_destroy :destroy_poll_shifts, only: :destroy
 
-    has_many :officer_assignments, class_name: "Poll::OfficerAssignment", dependent: :destroy
+    has_many :officer_assignments, dependent: :destroy
     has_many :officers, through: :officer_assignments
     has_many :voters
     has_many :partial_results

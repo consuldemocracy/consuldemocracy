@@ -1,5 +1,4 @@
 module ProposalsHelper
-
   def progress_bar_percentage(proposal)
     case proposal.cached_votes_up
     when 0 then 0
@@ -29,7 +28,7 @@ module ProposalsHelper
   end
 
   def retire_proposals_options
-    Proposal::RETIRE_OPTIONS.collect { |option| [ t("proposals.retire_options.#{option}"), option ] }
+    Proposal::RETIRE_OPTIONS.map { |option| [t("proposals.retire_options.#{option}"), option] }
   end
 
   def empty_recommended_proposals_message_text(user)
@@ -62,10 +61,6 @@ module ProposalsHelper
 
   def proposals_secondary_view
     proposals_current_view == "default" ? "minimal" : "default"
-  end
-
-  def summary_help_text_id(translations_form)
-    "summary-help-text-#{translations_form.locale}"
   end
 
   def link_to_toggle_proposal_selection(proposal)

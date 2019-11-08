@@ -38,5 +38,4 @@ SitemapGenerator::Sitemap.create do
   Legislation::Process.find_each do |process|
     add legislation_process_path(process), lastmod: process.start_date
   end
-
 end

@@ -595,17 +595,6 @@ code {
   }
 }
 
-.log-value {
-  max-height: rem-calc(65);
-  overflow: hidden;
-  max-width: rem-calc(200);
-
-  &:hover {
-    max-height: rem-calc(1000);
-    transition: max-height 0.9s;
-  }
-}
-
 // 04. Stats
 // ---------
 
@@ -786,10 +775,6 @@ code {
   font-weight: bold;
 }
 
-.hidden {
-  display: none;
-}
-
 table {
 
   .callout {
@@ -798,15 +783,6 @@ table {
     margin: 0;
     padding: 0 $line-height / 2;
   }
-}
-
-.info-type {
-  background-color: #ccf5ff;
-  padding: 15px;
-}
-
-.margin-description {
-  margin-top: rem-calc(20);
 }
 
 // 07. Legislation
@@ -1313,7 +1289,7 @@ table {
   }
 }
 
-.column-selecteable {
+.column-selectable {
 
   .hidden {
     display: none;

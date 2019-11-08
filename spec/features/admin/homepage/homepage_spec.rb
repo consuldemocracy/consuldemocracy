@@ -1,15 +1,14 @@
 require "rails_helper"
 
 describe "Homepage" do
-
   before do
-    admin = create(:administrator).user
-    login_as(admin)
-
     Setting["homepage.widgets.feeds.proposals"] = false
     Setting["homepage.widgets.feeds.debates"] = false
     Setting["homepage.widgets.feeds.processes"] = false
     Setting["feature.user.recommendations"] = false
+
+    admin = create(:administrator).user
+    login_as(admin)
   end
 
   let!(:proposals_feed)    { create(:widget_feed, kind: "proposals") }
@@ -20,9 +19,7 @@ describe "Homepage" do
   let(:user)                 { create(:user) }
 
   context "Header" do
-
     scenario "Admin menu links to homepage path" do
-
       visit new_admin_widget_card_path(header_card: true)
 
       click_link Setting["org_name"] + " Administration"
@@ -32,7 +29,6 @@ describe "Homepage" do
   end
 
   context "Feeds" do
-
     scenario "Proposals", :js do
       5.times { create(:proposal) }
 
@@ -120,7 +116,6 @@ describe "Homepage" do
     end
 
     xscenario "Deactivate"
-
   end
 
   scenario "Cards" do
@@ -160,9 +155,8 @@ describe "Homepage" do
   end
 
   scenario "Recomendations" do
-    proposal1 = create(:proposal, tag_list: "Sport")
-    proposal2 = create(:proposal, tag_list: "Sport")
-    create(:follow, followable: proposal1, user: user)
+    create(:proposal, tag_list: "Sport", followers: [user])
+    create(:proposal, tag_list: "Sport")
 
     visit admin_homepage_path
     within("#setting_#{user_recommendations.id}") do
@@ -176,5 +170,4 @@ describe "Homepage" do
 
     expect(page).to have_content("Recommendations that may interest you")
   end
-
 end

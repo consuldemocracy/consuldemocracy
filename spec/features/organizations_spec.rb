@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Organizations" do
-
   scenario "Organizations can be created" do
     user = User.organizations.where(email: "green@peace.com").first
     expect(user).not_to be

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin hidden proposals" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -12,7 +11,7 @@ describe "Admin hidden proposals" do
     admin = create(:administrator)
     login_as(admin.user)
 
-    expect{ visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "List shows all relevant info" do
@@ -100,5 +99,4 @@ describe "Admin hidden proposals" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

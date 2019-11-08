@@ -18,7 +18,7 @@ en:
         title: "Debates"
         description: "In the %{link} section you can present and share your opinion with other people on issues of concern to you related to the city. It is also a place to generate ideas that through the other sections of %{org} lead to concrete actions by the City Council."
         link: "citizen debates"
-        feature_html: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
+        feature: "You can open debates, comment and evaluate them with the <strong>I agree</strong> or <strong>I don't agree</strong>. For that you have to %{link}."
         feature_link: "register in %{org}"
         image_alt: "Buttons to rate the debates"
         figcaption: '"I agree" and "I disagree" buttons to rate the debates.'
@@ -27,13 +27,13 @@ en:
         description: "In the %{link} section you can make proposals for the City Council to carry them out. The proposals require support, and if they reach sufficient support, they are put to a public vote. The proposals approved in these citizens' votes are accepted by the City Council and carried out."
         link: "citizen proposals"
         image_alt: "Button to support a proposal"
-        figcaption_html: 'Button to "Support" a proposal.'
+        figcaption: 'Button to "Support" a proposal.'
       budgets:
         title: "Participatory Budgeting"
         description: "The %{link} section helps people make a direct decision on what part of the municipal budget is spent on."
         link: "participative budgets"
         image_alt: "Different phases of a participatory budget"
-        figcaption_html: '"Support" and "Voting" phases of participatory budgets.'
+        figcaption: '"Support" and "Voting" phases of participatory budgets.'
       polls:
         title: "Polls"
         description: "The %{link} section is activated each time a proposal reaches 1% support and goes to the vote or when the City Council proposes an issue for people to decide on."
@@ -139,14 +139,11 @@ en:
               description_column: Decreases text size
       compatibility:
         title: Compatibility with standards and visual design
-        description_html: 'All pages of this website comply with the <strong>Accessibility Guidelines</strong> or General Principles of Accessible Design established by the Working Group <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> belonging to W3C.'
+        description: 'All pages of this website comply with the <strong>Accessibility Guidelines</strong> or General Principles of Accessible Design established by the Working Group <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> belonging to W3C.'
     titles:
       help: "What is %{org}? - Citizen participation"
     verify:
-      code: Code you received in letter
-      email: Email
       info: "To verify your account introduce your access data:"
       info_code: "Now introduce the code you received in letter:"
-      password: Password
       submit: Verify my account
       title: Verify your account

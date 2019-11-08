@@ -2,8 +2,6 @@ language: ruby
 addons:
   postgresql: "9.4"
   chrome: stable
-rvm:
-- 2.3.2
 cache: bundler
 bundler_args: --without development
 before_script:

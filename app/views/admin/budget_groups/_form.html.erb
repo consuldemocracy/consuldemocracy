@@ -7,10 +7,7 @@
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column end">
-        <%= translations_form.text_field :name,
-                                         label: t("admin.budget_groups.form.name"),
-                                         maxlength: 50,
-                                         placeholder: t("admin.budget_groups.form.name") %>
+        <%= translations_form.text_field :name, maxlength: 50 %>
       </div>
     <% end %>
   </div>
@@ -18,10 +15,7 @@
   <% if @group.persisted? %>
     <div class="row">
       <div class="small-12 medium-6 column">
-        <%= f.select :max_votable_headings,
-                     (1..@group.headings.count),
-                     label: t("admin.budget_groups.max_votable_headings"),
-                     placeholder: t("admin.budget_groups.max_votable_headings") %>
+        <%= f.select :max_votable_headings, (1..@group.headings.count) %>
       </div>
     </div>
   <% end %>

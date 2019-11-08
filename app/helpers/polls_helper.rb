@@ -1,7 +1,6 @@
 module PollsHelper
-
   def poll_select_options(include_all = nil)
-    options = @polls.collect do |poll|
+    options = @polls.map do |poll|
       [poll.name, current_path_with_query_params(poll_id: poll.id)]
     end
     options << all_polls if include_all
@@ -77,9 +76,5 @@ module PollsHelper
 
   def show_polls_description?
     @active_poll.present? && @current_filter == "current"
-  end
-
-  def stored_positive_negative_value(question, answer)
-    question.answers.find_by(author_id: current_user.id, answer: answer.title).positive
   end
 end

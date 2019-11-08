@@ -6,8 +6,8 @@ FactoryBot.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    sequence(:external_code) { |n| n.to_s }
-    sequence(:census_code) { |n| n.to_s }
+    sequence(:external_code, &:to_s)
+    sequence(:census_code, &:to_s)
 
     trait :in_census do
       census_code { "01" }
@@ -17,7 +17,7 @@ FactoryBot.define do
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
     sequence(:description) { |n| "This is the text of Banner #{n}" }
-    target_url {["/proposals", "/debates" ].sample}
+    target_url { ["/proposals", "/debates"].sample }
     post_started_at { Time.current - 7.days }
     post_ended_at { Time.current + 7.days }
     background_color { "#FF0000" }
@@ -81,7 +81,7 @@ FactoryBot.define do
       header { true }
       sequence(:button_text)   { |n| "Button text #{n}" }
       sequence(:button_url)    { |n| "Button url #{n}" }
-      sequence(:alignment)   { |n| "background" }
+      alignment { "background" }
     end
 
     after :create do |widget_card|

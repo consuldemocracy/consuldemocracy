@@ -1,5 +1,4 @@
 class Notification < ApplicationRecord
-
   belongs_to :user, counter_cache: true
   belongs_to :notifiable, polymorphic: true
 
@@ -45,7 +44,7 @@ class Notification < ApplicationRecord
   end
 
   def self.existent(user, notifiable)
-    unread.where(user: user, notifiable: notifiable).first
+    unread.find_by(user: user, notifiable: notifiable)
   end
 
   def notifiable_action
@@ -82,16 +81,15 @@ class Notification < ApplicationRecord
 
   private
 
-  def self.batch_size
-    10000
-  end
+    def self.batch_size
+      10000
+    end
 
-  def self.batch_interval
-    20.minutes
-  end
+    def self.batch_interval
+      20.minutes
+    end
 
-  def self.first_batch_run_at
-    Time.current
-  end
-
+    def self.first_batch_run_at
+      Time.current
+    end
 end

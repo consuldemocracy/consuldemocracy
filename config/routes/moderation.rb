@@ -18,6 +18,12 @@ namespace :moderation do
     put :moderate, on: :collection
   end
 
+  namespace :legislation do
+    resources :proposals, only: :index do
+      put :hide, on: :member
+      put :moderate, on: :collection
+    end
+  end
   resources :comments, only: :index do
     put :hide, on: :member
     put :moderate, on: :collection

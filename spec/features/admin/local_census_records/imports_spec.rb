@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Imports" do
-
   let(:base_files_path) { %w[spec fixtures files local_census_records import] }
 
   before do
@@ -70,8 +69,8 @@ describe "Imports" do
         click_button "Save"
       end
 
-      expect(page).to have_content "Errored rows (4)"
-      expect(page).to have_selector("#invalid-local-census-records tbody tr", count: 4)
+      expect(page).to have_content "Errored rows (5)"
+      expect(page).to have_selector("#invalid-local-census-records tbody tr", count: 5)
     end
 
     scenario "Should show error messages inside cells at errored group" do

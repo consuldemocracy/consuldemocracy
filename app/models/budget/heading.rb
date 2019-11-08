@@ -1,6 +1,6 @@
 class Budget
   class Heading < ApplicationRecord
-    OSM_DISTRICT_LEVEL_ZOOM = 12.freeze
+    OSM_DISTRICT_LEVEL_ZOOM = 12
 
     include Sluggable
 
@@ -56,8 +56,8 @@ class Budget
 
     private
 
-    def generate_slug?
-      slug.nil? || budget.drafting?
-    end
+      def generate_slug?
+        slug.nil? || budget.drafting?
+      end
   end
 end

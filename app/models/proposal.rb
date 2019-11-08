@@ -1,5 +1,3 @@
-require "csv"
-
 class Proposal < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -26,7 +24,7 @@ class Proposal < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  RETIRE_OPTIONS = %w[duplicated started unfeasible done other]
+  RETIRE_OPTIONS = %w[duplicated started unfeasible done other].freeze
 
   translates :title, touch: true
   translates :description, touch: true
@@ -35,16 +33,13 @@ class Proposal < ApplicationRecord
   include Globalizable
   translation_class_delegate :retired_at
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :proposals
   belongs_to :geozone
-  has_many :comments, as: :commentable, dependent: :destroy
+  has_many :comments, as: :commentable, inverse_of: :commentable, dependent: :destroy
   has_many :proposal_notifications, dependent: :destroy
   has_many :dashboard_executed_actions, dependent: :destroy, class_name: "Dashboard::ExecutedAction"
   has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
-  has_many :polls, as: :related
-
-  extend DownloadSettings::ProposalCsv
-  delegate :name, :email, to: :author, prefix: true
+  has_many :polls, as: :related, inverse_of: :related
 
   validates_translation :title, presence: true, length: { in: 4..Proposal.title_max_length }
   validates_translation :description, length: { maximum: Proposal.description_max_length }
@@ -78,7 +73,7 @@ class Proposal < ApplicationRecord
   scope :sort_by_recommendations,  -> { order(cached_votes_up: :desc) }
   scope :archived,                 -> { where("proposals.created_at <= ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
   scope :not_archived,             -> { where("proposals.created_at > ?", Setting["months_to_archive_proposals"].to_i.months.ago) }
-  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago)}
+  scope :last_week,                -> { where("proposals.created_at >= ?", 7.days.ago) }
   scope :retired,                  -> { where.not(retired_at: nil) }
   scope :not_retired,              -> { where(retired_at: nil) }
   scope :successful,               -> { where("cached_votes_up >= ?", Proposal.votes_needed_for_success) }
@@ -96,7 +91,7 @@ class Proposal < ApplicationRecord
   end
 
   def publish
-    update(published_at: Time.current)
+    update!(published_at: Time.current)
     send_new_actions_notification_on_published
   end
 
@@ -135,13 +130,13 @@ class Proposal < ApplicationRecord
     {
       author.username       => "B",
       tag_list.join(" ")    => "B",
-      geozone.try(:name)    => "B"
+      geozone&.name         => "B"
     }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
     by_code = search_by_code(terms.strip)
-    by_code.present? ? by_code : pg_search(terms)
+    by_code.presence || pg_search(terms)
   end
 
   def self.search_by_code(terms)
@@ -156,7 +151,7 @@ class Proposal < ApplicationRecord
 
   def self.for_summary
     summary = {}
-    categories = ActsAsTaggableOn::Tag.category_names.sort
+    categories = Tag.category_names.sort
     geozones   = Geozone.names.sort
 
     groups = categories + geozones
@@ -183,7 +178,7 @@ class Proposal < ApplicationRecord
   end
 
   def votable_by?(user)
-    user && user.level_two_or_three_verified?
+    user&.level_two_or_three_verified?
   end
 
   def retired?
@@ -213,11 +208,11 @@ class Proposal < ApplicationRecord
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for("Proposal") }
+    tags.each { |t| t.decrement_custom_counter_for("Proposal") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for("Proposal") }
+    tags.each { |t| t.increment_custom_counter_for("Proposal") }
   end
 
   def self.votes_needed_for_success
@@ -243,7 +238,7 @@ class Proposal < ApplicationRecord
   def self.proposals_orders(user)
     orders = %w[hot_score confidence_score created_at relevance archival_date]
     orders << "recommendations" if Setting["feature.user.recommendations_on_proposals"] && user&.recommended_proposals
-    return orders
+    orders
   end
 
   def skip_user_verification?
@@ -269,7 +264,7 @@ class Proposal < ApplicationRecord
   protected
 
     def set_responsible_name
-      if author && author.document_number?
+      if author&.document_number?
         self.responsible_name = author.document_number
       end
     end

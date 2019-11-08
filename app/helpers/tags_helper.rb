@@ -1,5 +1,4 @@
 module TagsHelper
-
   def taggables_path(taggable_type, tag_name)
     case taggable_type
     when "debate"
@@ -30,5 +29,4 @@ module TagsHelper
       "#"
     end
   end
-
 end

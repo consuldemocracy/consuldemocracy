@@ -13,7 +13,7 @@ class Verification::Management::Email
   delegate :username, to: :user, allow_nil: true
 
   def user
-    @user ||= User.where(email: email).first
+    @user ||= User.find_by(email: email)
   end
 
   def user?
@@ -25,20 +25,25 @@ class Verification::Management::Email
 
     plain_token, encrypted_token = Devise.token_generator.generate(User, :email_verification_token)
 
-    user.update(document_type: document_type,
-                document_number: document_number,
-                residence_verified_at: Time.current,
-                level_two_verified_at: Time.current,
-                email_verification_token: plain_token)
+    user.update!(document_type: document_type,
+                 document_number: document_number,
+                 residence_verified_at: Time.current,
+                 level_two_verified_at: Time.current,
+                 email_verification_token: plain_token)
 
     Mailer.email_verification(user, email, encrypted_token, document_type, document_number).deliver_later
     true
+  end
+
+  def save!
+    validate! && save
   end
 
   private
 
     def validate_user
       return if errors.count > 0
+
       if !user?
         errors.add(:email, I18n.t("errors.messages.user_not_found"))
       elsif user.level_three_verified?
@@ -48,6 +53,7 @@ class Verification::Management::Email
 
     def validate_document_number
       return if errors.count > 0
+
       if document_number_mismatch?
         errors.add(:email,
                    I18n.t("management.email_verifications.document_mismatch",

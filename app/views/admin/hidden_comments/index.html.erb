@@ -1,7 +1,6 @@
 <h2><%= t("admin.hidden_comments.index.title") %></h2>
 <p><%= t("admin.shared.moderated_content") %></p>
 
-
 <%= render "shared/filter_subnav", i18n_namespace: "admin.hidden_comments.index" %>
 
 <% if @comments.any? %>
@@ -9,14 +8,14 @@
 
   <table>
     <thead>
-    <th scope="col" class="small-8"><%= t("admin.shared.description") %></th>
-    <th scope="col"><%= t("admin.shared.actions") %></th>
+      <th scope="col" class="small-8"><%= t("admin.shared.description") %></th>
+      <th scope="col"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
     <% @comments.each do |comment| %>
       <tr id="<%= dom_id(comment) %>">
         <td>
-          <%= text_with_links comment.body %><br>
+          <%= sanitize_and_auto_link comment.body %><br>
           <% if comment.commentable.hidden? %>
             (<%= t("admin.hidden_comments.index.hidden_#{comment.commentable_type.downcase}") %>: <%= comment.commentable.title %>)
           <% else %>

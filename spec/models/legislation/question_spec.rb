@@ -7,6 +7,7 @@ describe Legislation::Question do
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "globalizable", :legislation_question
   end
 
   it "is valid" do
@@ -19,7 +20,7 @@ describe Legislation::Question do
 
       expect do
         question.destroy
-      end.to change { described_class.count }.by(-1)
+      end.to change { Legislation::Question.count }.by(-1)
     end
 
     example "when it has options but no answers" do
@@ -28,7 +29,7 @@ describe Legislation::Question do
 
       expect do
         question.destroy
-      end.to change { described_class.count }.by(-1)
+      end.to change { Legislation::Question.count }.by(-1)
     end
 
     example "when it has options and answers" do
@@ -39,7 +40,7 @@ describe Legislation::Question do
 
       expect do
         question.destroy
-      end.to change { described_class.count }.by(-1)
+      end.to change { Legislation::Question.count }.by(-1)
     end
   end
 
@@ -69,5 +70,4 @@ describe Legislation::Question do
   describe "notifications" do
     it_behaves_like "notifiable"
   end
-
 end

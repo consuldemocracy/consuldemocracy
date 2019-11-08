@@ -11,9 +11,7 @@ require "rails_helper"
 #   end
 # end
 RSpec.describe CommentsHelper, type: :helper do
-
   describe "#user_level_class" do
-
     def comment_double(as_administrator: false, as_moderator: false, official: false)
       user = instance_double("User", official?: official, official_level: "Y")
       instance_double("Comment", as_administrator?: as_administrator, as_moderator?: as_moderator, user: user)

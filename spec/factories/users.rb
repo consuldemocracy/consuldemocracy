@@ -51,6 +51,37 @@ FactoryBot.define do
       document_type { "1" }
       verified_at { Time.current }
     end
+
+    trait :with_proposal do
+      after(:create) { |user| create(:proposal, author: user) }
+    end
+
+    trait :with_debate do
+      after(:create) { |user| create(:debate, author: user) }
+    end
+
+    trait :with_comment do
+      after(:create) { |user| create(:comment, author: user) }
+    end
+
+    transient do
+      votables { [] }
+      followables { [] }
+      ballot_lines { [] }
+    end
+
+    after(:create) do |user, evaluator|
+      evaluator.votables.each { |votable| create(:vote, votable: votable, voter: user) }
+      evaluator.followables.each { |followable| create(:follow, followable: followable, user: user) }
+
+      if evaluator.ballot_lines.any?
+        ballot = create(:budget_ballot, budget: evaluator.ballot_lines.first.budget.reload, user: user)
+
+        evaluator.ballot_lines.each do |investment|
+          create(:budget_ballot_line, investment: investment, ballot: ballot)
+        end
+      end
+    end
   end
 
   factory :identity do
@@ -67,10 +98,6 @@ FactoryBot.define do
     user
   end
 
-  factory :tracker do
-    user
-  end
-
   factory :valuator do
     user
   end
@@ -80,7 +107,18 @@ FactoryBot.define do
   end
 
   factory :poll_officer, class: "Poll::Officer" do
-    user
+    user { association(:user, username: name) }
+
+    transient do
+      sequence(:name) { |n| "Officer #{n}" }
+      polls { [] }
+    end
+
+    after(:create) do |officer, evaluator|
+      evaluator.polls.each do |poll|
+        create(:poll_officer_assignment, poll: poll, officer: officer)
+      end
+    end
   end
 
   factory :follow do

@@ -54,7 +54,6 @@ namespace :admin do
   resources :budgets do
     member do
       put :calculate_winners
-      get :assigned_users_translation
     end
 
     resources :groups, except: [:show], controller: "budget_groups" do
@@ -63,10 +62,13 @@ namespace :admin do
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
       member { patch :toggle_selection }
+
+      resources :audits, only: :show, controller: "budget_investment_audits"
+      resources :milestones, controller: "budget_investment_milestones"
+      resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
     end
 
     resources :budget_phases, only: [:edit, :update]
-
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]
@@ -101,11 +103,6 @@ namespace :admin do
   end
 
   resources :valuators, only: [:show, :index, :edit, :update, :create, :destroy] do
-    get :search, on: :collection
-    get :summary, on: :collection
-  end
-
-  resources :trackers, only: [:show, :index, :edit, :update, :create, :destroy] do
     get :search, on: :collection
     get :summary, on: :collection
   end
@@ -163,7 +160,6 @@ namespace :admin do
     end
 
     resource :active_polls, only: [:create, :edit, :update]
-    get :get_options_traductions, controller: "questions"
   end
 
   resources :verifications, controller: :verifications, only: :index do
@@ -213,7 +209,8 @@ namespace :admin do
         member { patch :toggle_selection }
       end
       resources :draft_versions
-      resources :milestones, only: :index
+      resources :milestones
+      resources :progress_bars, except: :show
       resource :homepage, only: [:edit, :update]
     end
   end
@@ -250,11 +247,6 @@ namespace :admin do
     resources :actions, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :administrator_tasks, only: [:index, :edit, :update]
   end
-
-  get 'download_settings/:resource', to: 'download_settings#edit', as: 'edit_download_settings'
-  put 'download_settings/:resource', to: 'download_settings#update', as: 'update_download_settings'
-
-  get "/change_log/:id", to: "budget_investments#show_investment_log", as: "change_log"
 
   resources :local_census_records
   namespace :local_census_records do

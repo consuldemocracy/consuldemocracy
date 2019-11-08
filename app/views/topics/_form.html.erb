@@ -4,11 +4,8 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%= f.label :title, t("community.topic.form.topic_title") %>
-      <%= f.text_field :title, label: false %>
-
-      <%= f.label :description, t("community.topic.form.topic_text") %>
-      <%= f.text_area :description, label: false, rows: "5" %>
+      <%= f.text_field :title %>
+      <%= f.text_area :description, rows: "5" %>
 
       <%= f.submit(class: "button", value: t("community.topic.form.#{action_name}.submit_button")) %>
     </div>

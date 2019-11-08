@@ -55,17 +55,16 @@ shared_examples "image validations" do |imageable_factory|
   end
 
   it "is not valid without a imageable_id" do
-    image.save
+    image.save!
     image.imageable_id = nil
 
     expect(image).not_to be_valid
   end
 
   it "is not valid without a imageable_type" do
-    image.save
+    image.save!
     image.imageable_type = nil
 
     expect(image).not_to be_valid
   end
-
 end

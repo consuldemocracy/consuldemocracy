@@ -1,17 +1,10 @@
 require "rails_helper"
 
 describe "Admin Active polls" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
-
-  it_behaves_like "edit_translatable",
-                  "active_poll",
-                  "edit_admin_active_polls_path",
-                  [],
-                  { "description" => :ckeditor }
 
   scenario "Add", :js do
     expect(ActivePoll.first).to be nil
@@ -46,5 +39,4 @@ describe "Admin Active polls" do
       expect(page).to have_content "New description"
     end
   end
-
 end

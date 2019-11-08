@@ -1,16 +1,10 @@
 require "rails_helper"
 
 describe "Admin custom information texts" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
-
-  it_behaves_like "edit_translatable",
-                  "i18n_content",
-                  "admin_site_customization_information_texts_path",
-                  %w[value]
 
   scenario "page is correctly loaded" do
     visit admin_site_customization_information_texts_path
@@ -62,7 +56,6 @@ describe "Admin custom information texts" do
   end
 
   context "Globalization" do
-
     scenario "Add a translation", :js do
       key = "debates.index.section_footer.title"
 
@@ -83,13 +76,13 @@ describe "Admin custom information texts" do
     end
 
     scenario "Update a translation", :js do
-      key = "proposals.form.proposal_title"
-      create(:i18n_content, key: key, value_fr: "Titre de la proposition")
+      key = "proposals.show.share"
+      create(:i18n_content, key: key, value_fr: "Partager la proposition")
 
       visit admin_site_customization_information_texts_path(tab: "proposals")
 
       select "Français", from: :select_language
-      fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise de la proposition"
+      fill_in "contents_content_#{key}values_value_fr", with: "Partager personalise"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
@@ -97,8 +90,8 @@ describe "Admin custom information texts" do
       visit admin_site_customization_information_texts_path(tab: "proposals")
       select "Français", from: :select_language
 
-      expect(page).to have_content "Titre personalise de la proposition"
-      expect(page).not_to have_content "Titre de la proposition"
+      expect(page).to have_content "Partager personalise"
+      expect(page).not_to have_content "Partager la proposition"
     end
 
     scenario "Remove a translation", :js do
@@ -135,5 +128,4 @@ describe "Admin custom information texts" do
       expect(debate_title.value_en).to eq("Custom debate title")
     end
   end
-
 end

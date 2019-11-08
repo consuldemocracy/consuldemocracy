@@ -29,5 +29,4 @@ class VerificationController < ApplicationController
         { path: new_residence_path }
       end
     end
-
 end

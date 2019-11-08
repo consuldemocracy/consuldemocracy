@@ -1,77 +1,61 @@
 require "rails_helper"
 
 describe "Answers" do
-
   before do
     admin = create(:administrator)
     login_as admin.user
   end
 
-  it_behaves_like "edit_translatable",
-                  "poll_question_answer",
-                  "edit_admin_answer_path",
-                  %w[title],
-                  { "description" => :ckeditor }
-
   scenario "Create" do
     question = create(:poll_question)
-    title = "Whatever the question may be, the answer is always 42"
-    description = "The Hitchhiker's Guide To The Universe"
 
     visit admin_question_path(question)
     click_link "Add answer"
 
-    fill_in "Answer", with: title
-    fill_in "Description", with: description
+    fill_in "Answer", with: "The answer is always 42"
+    fill_in "Description", with: "The Hitchhiker's Guide To The Universe"
 
     click_button "Save"
 
-    expect(page).to have_content(title)
-    expect(page).to have_content(description)
+    expect(page).to have_content "The answer is always 42"
+    expect(page).to have_content "The Hitchhiker's Guide To The Universe"
   end
 
   scenario "Create second answer and place after the first one" do
     question = create(:poll_question)
-    answer = create(:poll_question_answer, title: "First", question: question, given_order: 1)
-    title = "Second"
-    description = "Description"
+    create(:poll_question_answer, title: "First", question: question, given_order: 1)
 
     visit admin_question_path(question)
     click_link "Add answer"
 
-    fill_in "Answer", with: title
-    fill_in "Description", with: description
+    fill_in "Answer", with: "Second"
+    fill_in "Description", with: "Description"
 
     click_button "Save"
 
-    expect(page.body.index("First")).to be < page.body.index("Second")
+    expect("First").to appear_before("Second")
   end
 
   scenario "Update" do
     question = create(:poll_question)
     answer = create(:poll_question_answer, question: question, title: "Answer title", given_order: 2)
-    answer2 = create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
+    create(:poll_question_answer, question: question, title: "Another title", given_order: 1)
 
     visit admin_answer_path(answer)
 
     click_link "Edit answer"
 
-    old_title = answer.title
-    new_title = "Ex Machina"
-
-    fill_in "Answer", with: new_title
+    fill_in "Answer", with: "New title"
 
     click_button "Save"
 
-    expect(page).to have_content("Changes saved")
-    expect(page).to have_content(new_title)
+    expect(page).to have_content "Changes saved"
+    expect(page).to have_content "New title"
 
     visit admin_question_path(question)
 
-    expect(page).to have_content(new_title)
-    expect(page).not_to have_content(old_title)
+    expect(page).not_to have_content "Answer title"
 
-    expect(answer2.title).to appear_before(new_title)
+    expect("Another title").to appear_before("New title")
   end
-
 end

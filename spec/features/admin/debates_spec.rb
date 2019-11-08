@@ -1,15 +1,12 @@
 require "rails_helper"
 
 describe "Admin debates" do
-
   scenario "Disabled with a feature flag" do
     Setting["process.debates"] = nil
     admin = create(:administrator)
     login_as(admin.user)
 
-    expect{ visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["process.debates"] = true
+    expect { visit admin_hidden_debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   before do
@@ -100,5 +97,4 @@ describe "Admin debates" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

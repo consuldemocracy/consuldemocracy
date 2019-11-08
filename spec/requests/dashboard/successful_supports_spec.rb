@@ -5,7 +5,6 @@ describe "Retrieves number of supports for the successful proposal" do
   let(:proposal) { create(:proposal, created_at: created_at, published_at: created_at) }
 
   before do
-    @successful_proposal_id = Setting["proposals.successful_proposal_id"]
     Setting["proposals.successful_proposal_id"] = proposal.id
 
     8.times do |i|
@@ -20,10 +19,6 @@ describe "Retrieves number of supports for the successful proposal" do
     end
 
     sign_in(proposal.author)
-  end
-
-  after do
-    Setting["proposals.successful_proposal_id"] = @successful_proposal_id
   end
 
   it "returns the number of supports grouped by day" do

@@ -1,16 +1,10 @@
 require "rails_helper"
 
 describe "Cards" do
-
   before do
     admin = create(:administrator).user
     login_as(admin)
   end
-
-  it_behaves_like "edit_translatable",
-                  "widget_card",
-                  "edit_admin_widget_card_path",
-                  %w[title description link_text label]
 
   scenario "Create", :js do
     visit admin_homepage_path
@@ -114,7 +108,6 @@ describe "Cards" do
   end
 
   context "Header Card" do
-
     scenario "Create" do
       visit admin_homepage_path
       click_link "Create header"
@@ -166,7 +159,7 @@ describe "Cards" do
         card_2 = create(:widget_card, page: custom_page, title: "Card medium", columns: 4)
         card_3 = create(:widget_card, page: custom_page, title: "Card small", columns: 2)
 
-        visit (custom_page).url
+        visit custom_page.url
 
         expect(page).to have_css(".card", count: 3)
 
@@ -179,7 +172,7 @@ describe "Cards" do
         card_1 = create(:widget_card, page: custom_page, title: "Card one", label: "My label")
         card_2 = create(:widget_card, page: custom_page, title: "Card two")
 
-        visit (custom_page).url
+        visit custom_page.url
 
         within("#widget_card_#{card_1.id}") do
           expect(page).to have_selector("span", text: "My label")
@@ -224,9 +217,7 @@ describe "Cards" do
         expect(page).to have_current_path admin_site_customization_page_cards_path(custom_page)
         expect(page).not_to have_content "Card title"
       end
-
     end
-
   end
 
   pending "add image expectactions"

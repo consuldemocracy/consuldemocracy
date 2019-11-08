@@ -1,9 +1,8 @@
 require "rails_helper"
 
 describe "Budget Investments" do
-
   let(:manager) { create(:manager) }
-  let(:budget)  { create(:budget, phase: "selecting", name: "2033", slug: "budget_slug") }
+  let(:budget)  { create(:budget, :selecting, name: "2033", slug: "budget_slug") }
   let(:group)   { create(:budget_group, budget: budget, name: "Whole city") }
   let(:heading) { create(:budget_heading, group: group, name: "Health") }
 
@@ -16,10 +15,9 @@ describe "Budget Investments" do
                   "",
                   "management_budget_investment_path",
                   { "budget_id": "budget_id" },
-                  management = true
+                  management: true
 
   context "Load" do
-
     let(:investment) { create(:budget_investment, budget: budget) }
     let(:user)       { create(:user, :level_two) }
 
@@ -42,7 +40,6 @@ describe "Budget Investments" do
         visit management_budget_investment_path(0, investment)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   context "Create" do
@@ -94,10 +91,32 @@ describe "Budget Investments" do
 
       expect(page).to have_content "User is not verified"
     end
+
+    scenario "Shows suggestions to unverified managers", :js do
+      expect(manager.user.level_two_or_three_verified?).to be false
+
+      create(:budget_investment, budget: budget, title: "More parks")
+      create(:budget_investment, budget: budget, title: "No more parks")
+      create(:budget_investment, budget: budget, title: "Plant trees")
+      login_managed_user(create(:user, :level_two))
+
+      click_link "Create budget investment"
+      within "#budget_#{budget.id}" do
+        click_link "Create budget investment"
+      end
+
+      fill_in "Title", with: "Park"
+      fill_in_ckeditor "Description", with: "Wish I had one"
+
+      within(".js-suggest") do
+        expect(page).to have_content "More parks"
+        expect(page).to have_content "No more parks"
+        expect(page).not_to have_content "Plant trees"
+      end
+    end
   end
 
   context "Searching" do
-
     scenario "by title" do
       budget_investment1 = create(:budget_investment, budget: budget, title: "Show me what you got")
       budget_investment2 = create(:budget_investment, budget: budget, title: "Get Schwifty")
@@ -185,13 +204,13 @@ describe "Budget Investments" do
   end
 
   scenario "Listing - managers can see budgets in accepting phase" do
-    accepting_budget = create(:budget, phase: "accepting")
-    reviewing_budget = create(:budget, phase: "reviewing")
-    selecting_budget = create(:budget, phase: "selecting")
-    valuating_budget = create(:budget, phase: "valuating")
-    balloting_budget = create(:budget, phase: "balloting")
-    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
-    finished = create(:budget, phase: "finished")
+    accepting_budget = create(:budget, :accepting)
+    reviewing_budget = create(:budget, :reviewing)
+    selecting_budget = create(:budget, :selecting)
+    valuating_budget = create(:budget, :valuating)
+    balloting_budget = create(:budget, :balloting)
+    reviewing_ballots_budget = create(:budget, :reviewing_ballots)
+    finished = create(:budget, :finished)
 
     user = create(:user, :level_two)
     login_managed_user(user)
@@ -209,13 +228,13 @@ describe "Budget Investments" do
   end
 
   scenario "Listing - admins can see budgets in accepting, reviewing and selecting phases" do
-    accepting_budget = create(:budget, phase: "accepting")
-    reviewing_budget = create(:budget, phase: "reviewing")
-    selecting_budget = create(:budget, phase: "selecting")
-    valuating_budget = create(:budget, phase: "valuating")
-    balloting_budget = create(:budget, phase: "balloting")
-    reviewing_ballots_budget = create(:budget, phase: "reviewing_ballots")
-    finished = create(:budget, phase: "finished")
+    accepting_budget = create(:budget, :accepting)
+    reviewing_budget = create(:budget, :reviewing)
+    selecting_budget = create(:budget, :selecting)
+    valuating_budget = create(:budget, :valuating)
+    balloting_budget = create(:budget, :balloting)
+    reviewing_ballots_budget = create(:budget, :reviewing_ballots)
+    finished = create(:budget, :finished)
 
     visit root_path
     click_link "Sign out"
@@ -240,9 +259,8 @@ describe "Budget Investments" do
   end
 
   context "Supporting" do
-
     scenario "Supporting budget investments on behalf of someone in index view", :js do
-      budget_investment = create(:budget_investment, budget: budget, heading: heading)
+      budget_investment = create(:budget_investment, heading: heading)
 
       user = create(:user, :level_two)
       login_managed_user(user)
@@ -297,9 +315,8 @@ describe "Budget Investments" do
   end
 
   context "Printing" do
-
     scenario "Printing budget investments" do
-      16.times { create(:budget_investment, budget: budget, heading: heading) }
+      16.times { create(:budget_investment, heading: heading) }
 
       click_link "Print budget investments"
 
@@ -313,11 +330,9 @@ describe "Budget Investments" do
     end
 
     scenario "Printing voted budget investments in balloting phase" do
-      budget.update(phase: "balloting")
+      budget.update!(phase: "balloting")
 
-      voted_investment = create(:budget_investment, :selected, heading: heading)
-      ballot = create(:budget_ballot, user: create(:user, :level_two), budget: budget)
-      ballot.investments << voted_investment
+      voted_investment = create(:budget_investment, :selected, heading: heading, balloters: [create(:user)])
 
       click_link "Print budget investments"
 
@@ -378,7 +393,5 @@ describe "Budget Investments" do
         expect(mid_investment.title).to appear_before(low_investment.title)
       end
     end
-
   end
-
 end

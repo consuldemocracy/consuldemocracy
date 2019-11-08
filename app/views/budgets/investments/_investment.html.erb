@@ -46,7 +46,7 @@
               <%= investment.heading.name %>
             </p>
             <div class="investment-project-description">
-              <%= investment.description %>
+              <%= wysiwyg(investment.description) %>
               <div class="truncate"></div>
             </div>
             <%= render "shared/tags", taggable: investment, limit: 5 %>

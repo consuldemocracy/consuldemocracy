@@ -4,7 +4,7 @@
 <% end %>
 
 <h2><%= t("valuation.budget_investments.edit.dossier") %></h2>
-<% if can?(:valuate, @investment) && can?(:edit_dossier, @investment) %>
+<% if can?(:valuate, @investment) %>
   <%= render "/valuation/budget_investments/dossier_form", investment: @investment %>
 <% else %>
   <%= render "/valuation/budget_investments/dossier_detail", investment: @investment %>

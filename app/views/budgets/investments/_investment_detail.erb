@@ -19,10 +19,10 @@
 <%= render_image(investment.image, :large, true) if investment.image.present? %>
 
 <p id="investment_code">
-  <%= t("budgets.investments.show.code_html", code: investment.id) %>
+  <%= sanitize(t("budgets.investments.show.code", code: investment.id)) %>
 </p>
 
-<%= safe_html_with_links investment.description.html_safe %>
+<%= auto_link_already_sanitized_html wysiwyg(investment.description) %>
 
 <% if feature?(:map) && map_location_available?(@investment.map_location) %>
   <div class="margin">
@@ -32,13 +32,13 @@
 
 <% if investment.location.present? %>
   <p>
-    <%= t("budgets.investments.show.location_html", location: investment.location) %>
+    <%= sanitize(t("budgets.investments.show.location", location: investment.location)) %>
   </p>
 <% end %>
 
 <% if investment.organization_name.present? %>
   <p>
-    <%= t("budgets.investments.show.organization_name_html", name: investment.organization_name) %>
+    <%= sanitize(t("budgets.investments.show.organization_name", name: investment.organization_name)) %>
   </p>
 <% end %>
 
@@ -52,7 +52,7 @@
 
 <% if investment.external_url.present? %>
   <div class="document-link">
-    <%= text_with_links investment.external_url %>
+    <%= sanitize_and_auto_link investment.external_url %>
   </div>
 <% end %>
 

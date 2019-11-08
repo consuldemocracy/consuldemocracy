@@ -6,10 +6,10 @@ FactoryBot.define do
     postal_code { "28002" }
   end
   factory :local_census_records_import, class: "LocalCensusRecords::Import" do
-    file {
+    file do
       path = %w[spec fixtures files local_census_records import valid.csv]
       Rack::Test::UploadedFile.new(Rails.root.join(*path))
-    }
+    end
   end
 
   sequence(:document_number) { |n| "#{n.to_s.rjust(8, "0")}X" }

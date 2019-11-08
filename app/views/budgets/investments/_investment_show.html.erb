@@ -75,7 +75,7 @@
 
         <% if investment.unfeasible? && investment.valuation_finished? %>
           <div class="callout warning">
-            <%= t("budgets.investments.show.project_unfeasible_html") %>
+            <%= sanitize(t("budgets.investments.show.project_unfeasible")) %>
           </div>
         <% elsif investment.winner? && @budget.finished? %>
           <div class="callout success">
@@ -83,11 +83,11 @@
           </div>
         <% elsif investment.selected? %>
           <div class="callout success">
-            <%= t("budgets.investments.show.project_selected_html") %>
+            <%= sanitize(t("budgets.investments.show.project_selected")) %>
           </div>
         <% elsif @budget.balloting_or_later? %>
           <div class="callout warning">
-            <%= t("budgets.investments.show.project_not_selected_html") %>
+            <%= sanitize(t("budgets.investments.show.project_not_selected")) %>
           </div>
         <% else %>
           <br>

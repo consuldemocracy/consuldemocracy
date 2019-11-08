@@ -1,5 +1,4 @@
 class AddBannerTranslations < ActiveRecord::Migration[4.2]
-
   def self.up
     Banner.create_translation_table!(
       {
@@ -14,4 +13,3 @@ class AddBannerTranslations < ActiveRecord::Migration[4.2]
     Banner.drop_translation_table!
   end
 end
-

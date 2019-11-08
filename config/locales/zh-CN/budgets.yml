@@ -103,7 +103,7 @@ zh-CN:
           confidence_score: 最高评分
           price: 按价格
       share:
-        message: "我在%{org} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
+        message: "我在%{handle} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
       show:
         author_deleted: 已删除的用户
         price_explanation: 价格说明

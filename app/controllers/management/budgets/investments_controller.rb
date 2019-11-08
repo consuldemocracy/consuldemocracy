@@ -67,7 +67,6 @@ class Management::Budgets::InvestmentsController < Management::BaseController
     end
 
     def load_categories
-      @categories = ActsAsTaggableOn::Tag.category.order(:name)
+      @categories = Tag.category.order(:name)
     end
-
 end

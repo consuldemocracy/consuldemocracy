@@ -1,19 +1,8 @@
 <%= render "shared/globalize_locales", resource: @draft_version %>
 
-<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: {data: {watch_changes: true}} do |f| %>
+<%= translatable_form_for [:admin, @process, @draft_version], url: url, html: { data: { watch_changes: true }} do |f| %>
 
-  <% if @draft_version.errors.any? %>
-    <div id="error_explanation" data-alert class="callout alert" data-closable>
-      <button class="close-button" aria-label="<%= t("application.close") %>" type="button" data-close>
-        <span aria-hidden="true">&times;</span>
-      </button>
-
-      <strong>
-        <%= @draft_version.errors.count %>
-        <%= t("admin.legislation.draft_versions.errors.form.error", count: @draft_version.errors.count) %>
-      </strong>
-    </div>
-  <% end %>
+  <%= render "shared/errors", resource: @draft_version %>
 
   <div class="row">
     <%= f.translatable_fields do |translations_form| %>
@@ -36,9 +25,9 @@
       <div class="markdown-editor clear">
         <div class="small-12 medium-8 column fullscreen-container">
           <div class="markdown-editor-header truncate">
-            <%= t("admin.legislation.draft_versions.form.title_html",
+            <%= sanitize(t("admin.legislation.draft_versions.form.title",
                    draft_version_title: @draft_version.title,
-                   process_title: @process.title ) %>
+                   process_title: @process.title)) %>
           </div>
 
           <div class="markdown-editor-buttons">
@@ -71,16 +60,14 @@
     <div class="small-12 medium-9 column">
       <%= f.label :status %>
       <% ::Legislation::DraftVersion::VALID_STATUSES.each do |status| %>
-        <%= f.radio_button :status, status, label: false %>
-        <%= f.label "status_#{status}", t("admin.legislation.draft_versions.statuses.#{status}") %>
+        <%= f.radio_button :status, status %>
         <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.status.#{status}") %></span>
         <br>
       <% end %>
     </div>
 
     <div class="small-12 medium-9 column">
-      <%= f.label :final_version %>
-      <%= f.check_box :final_version, label: false %>
+      <%= f.check_box :final_version %>
       <span class="help-text"><%= t("admin.legislation.draft_versions.form.hints.final_version") %></span>
     </div>
 

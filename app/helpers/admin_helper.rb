@@ -1,5 +1,4 @@
 module AdminHelper
-
   def side_menu
     if namespace == "moderation/budgets"
       render "/moderation/menu"
@@ -84,9 +83,7 @@ module AdminHelper
   end
 
   def admin_select_options
-    Administrator.with_user
-                 .collect { |v| [ v.description_or_name, v.id ] }
-                 .sort_by { |a| a[0] }
+    Administrator.with_user.map { |v| [v.description_or_name, v.id] }.sort_by { |a| a[0] }
   end
 
   def admin_submit_action(resource)
@@ -114,5 +111,4 @@ module AdminHelper
     def namespace
       controller.class.name.downcase.split("::").first
     end
-
 end

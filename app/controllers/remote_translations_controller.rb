@@ -6,7 +6,7 @@ class RemoteTranslationsController < ApplicationController
 
   def create
     @remote_translations.each do |remote_translation|
-      RemoteTranslation.create(remote_translation) unless translations_enqueued?(remote_translation)
+      RemoteTranslation.create!(remote_translation) unless translations_enqueued?(remote_translation)
     end
     redirect_to request.referer, notice: t("remote_translations.create.enqueue_remote_translation")
   end
@@ -20,15 +20,12 @@ class RemoteTranslationsController < ApplicationController
     def set_remote_translations
       remote_translations = remote_translations_params["remote_translations"]
       decoded_remote_translations = ActiveSupport::JSON.decode(remote_translations)
-      @remote_translations = decoded_remote_translations.map{ |remote_translation|
-                              remote_translation.slice("remote_translatable_id",
-                                                       "remote_translatable_type",
-                                                       "locale")
-                            }
+      @remote_translations = decoded_remote_translations.map do |remote_translation|
+        remote_translation.slice("remote_translatable_id", "remote_translatable_type", "locale")
+      end
     end
 
     def translations_enqueued?(remote_translation)
       RemoteTranslation.remote_translation_enqueued?(remote_translation)
     end
-
 end

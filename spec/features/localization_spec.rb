@@ -1,9 +1,8 @@
 require "rails_helper"
 
 describe "Localization" do
-
   scenario "Wrong locale" do
-    Globalize.with_locale(:es) do
+    I18n.with_locale(:es) do
       create(:widget_card, title: "Bienvenido a CONSUL",
                            description: "Software libre para la participación ciudadana.",
                            link_text: "Más información",
@@ -57,7 +56,6 @@ describe "Localization" do
   end
 
   context "Missing language names" do
-
     let!(:default_enforce) { I18n.enforce_available_locales }
     let!(:default_locales) { I18n.available_locales.dup }
 
@@ -80,6 +78,5 @@ describe "Localization" do
         expect(page).to have_content "wl"
       end
     end
-
   end
 end

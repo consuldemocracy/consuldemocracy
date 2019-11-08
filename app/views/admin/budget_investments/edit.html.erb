@@ -21,18 +21,17 @@
                 maxlength: Budget::Investment.title_max_length %>
         </div>
 
-        <div class="ckeditor small-12 column">
-          <%= translations_form.cktext_area :description,
+        <div class="small-12 column">
+          <%= translations_form.text_area :description,
                 maxlength: Budget::Investment.description_max_length,
-                ckeditor: { language: I18n.locale } %>
+                class: "html-area" %>
         </div>
       <% end %>
 
       <div class="small-12 column">
-        <%= f.label :tag_list, t("admin.budget_investments.edit.user_tags") %>
         <%= f.text_field :tag_list,
                          value: @investment.tag_list.sort.join(","),
-                         label: false %>
+                         label: t("admin.budget_investments.edit.user_tags") %>
       </div>
 
       <div class="small-12 column">
@@ -53,13 +52,13 @@
 
         <div class="small-12 medium-6">
           <%= f.select(:administrator_id,
-                         @admins.collect{ |a| [a.description_or_name_and_email, a.id ] },
+                         @admins.collect { |a| [a.description_or_name_and_email, a.id] },
                          { include_blank: t("admin.budget_investments.edit.undefined") }) %>
         </div>
       </div>
 
       <div class="small-12 column">
-        <%= f.label :valuation_tag_list, t("admin.budget_investments.edit.tags") %>
+        <%= f.label :valuation_tag_list %>
         <div class="tags">
           <% @tags.each do |tag| %>
             <a class="js-add-tag-link"><%= tag.name %></a>
@@ -73,7 +72,7 @@
       </div>
 
       <div class="small-12 column margin-top">
-        <%= f.label :valuator_ids, t("admin.budget_investments.edit.user_groups") %>
+        <%= f.label :valuator_ids %>
         <ul>
         <%= f.collection_check_boxes :valuator_group_ids, @valuator_groups, :id, :name do |group| %>
           <li><%= group.label(title: group.object.name) { group.check_box + truncate(group.object.name, length: 60) } %></li>
@@ -90,43 +89,27 @@
           <% end %>
         </ul>
       </div>
-
-      <div class="small-12 column">
-        <hr>
-        <%= f.label :tracker_ids, t("admin.budget_investments.edit.assigned_trackers") %>
-        <ul>
-          <%= f.collection_check_boxes :tracker_ids, @trackers, :id, :email do |b| %>
-            <li><%= b.label(title: tracker_label(b.object)) { b.check_box + truncate(b.object.description_or_email, length: 60) } %></li>
-          <% end %>
-        </ul>
-      </div>
     </div>
 
     <div class="row expanded margin-top">
       <% if @investment.incompatible? || @investment.winner? %>
       <div class="small-12 medium-3 column">
         <h2 id="incompatible"><%= t("admin.budget_investments.edit.compatibility") %></h2>
-        <%= f.label :incompatible do %>
-          <%= f.check_box :incompatible, title: t("admin.budget_investments.edit.compatibility"), label: false %>
-          <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_incompatible") %></span>
-        <% end %>
+        <%= f.check_box :incompatible,
+          title: t("admin.budget_investments.edit.compatibility") %>
       </div>
       <% end %>
       <div class="small-12 medium-3 column float-left">
         <h2 id="selected"><%= t("admin.budget_investments.edit.selection") %></h2>
-        <%= f.label :selected do %>
-          <%= f.check_box :selected, title: t("admin.budget_investments.edit.selection"), label: false %>
-          <span class="checkbox"><%= t("admin.budget_investments.edit.mark_as_selected") %></span>
-        <% end %>
+        <%= f.check_box :selected,
+          title: t("admin.budget_investments.edit.selection") %>
       </div>
     </div>
 
     <div class="small-12 column">
       <%= f.text_field :milestone_tag_list,
-                     value: @investment.milestone_tag_list.sort.join(", "),
-                     label: t("admin.budget_investments.edit.milestone_tags") %>
+        value: @investment.milestone_tag_list.sort.join(", ") %>
     </div>
-
 
     <div class="small-12 column margin-top">
       <%= f.submit(class: "button", value: t("admin.budget_investments.edit.submit_button")) %>

@@ -41,7 +41,7 @@
     <div class="small-12 medium-4 column">
       <p>
         <strong><%= t("admin.budget_investments.show.selection.title") %></strong>:
-        <%= t("admin.budget_investments.show.selection.#{@investment.selected?}") %>
+        <%= @investment.class.human_attribute_name("selected_#{@investment.selected?}") %>
       </p>
     </div>
     <div class="small-12 medium-4 column">
@@ -55,6 +55,6 @@
 
 <% if @investment.external_url.present? %>
   <p>
-    <%= text_with_links @investment.external_url %>&nbsp;<span class="icon-external small"></span>
+    <%= sanitize_and_auto_link @investment.external_url %>&nbsp;<span class="icon-external small"></span>
   </p>
 <% end %>

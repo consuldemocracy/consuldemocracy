@@ -60,11 +60,11 @@ class Document < ApplicationRecord
 
   def custom_hash_data(attachment)
     original_filename = if !attachment.instance.persisted? && attachment.instance.remove
-      attachment.instance.original_filename
+                          attachment.instance.original_filename
                         elsif !attachment.instance.persisted?
-      attachment.instance.attachment_file_name
+                          attachment.instance.attachment_file_name
                         else
-      attachment.instance.title
+                          attachment.instance.title
                         end
     "#{attachment.instance.user_id}/#{original_filename}"
   end
@@ -114,5 +114,4 @@ class Document < ApplicationRecord
       document.set_attachment_from_cached_attachment
       document.attachment.destroy
     end
-
 end

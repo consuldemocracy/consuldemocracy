@@ -1,5 +1,4 @@
 class RemoteTranslation < ApplicationRecord
-
   belongs_to :remote_translatable, polymorphic: true
 
   validates :remote_translatable_id, presence: true

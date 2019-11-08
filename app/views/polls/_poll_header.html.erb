@@ -9,7 +9,7 @@
 
       <h1><%= @poll.name %></h1>
 
-      <%= safe_html_with_links simple_format(@poll.summary) %>
+      <%= auto_link_already_sanitized_html simple_format(@poll.summary) %>
 
       <% if @poll.geozones.any? %>
         <ul class="no-bullet margin-top tags">

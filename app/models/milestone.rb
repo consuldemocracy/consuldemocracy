@@ -14,11 +14,10 @@ class Milestone < ApplicationRecord
   validates_translation :description, presence: true, unless: -> { status_id.present? }
 
   scope :order_by_publication_date, -> { order(publication_date: :asc, created_at: :asc) }
-  scope :published,                 -> { where("publication_date <= ?", Date.current) }
+  scope :published,                 -> { where("publication_date <= ?", Date.current.end_of_day) }
   scope :with_status,               -> { where("status_id IS NOT NULL") }
 
   def self.title_max_length
     80
   end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe RemoteTranslations::Caller do
-
   before do
     RemoteTranslation.skip_callback(:create, :after, :enqueue_remote_translation)
   end
@@ -11,15 +10,14 @@ describe RemoteTranslations::Caller do
   end
 
   describe "#call" do
-
     let(:client) { RemoteTranslations::Microsoft::Client }
 
     context "Debates" do
-
       let(:debate)             { create(:debate) }
-      let(:remote_translation) { create(:remote_translation,
-                                        remote_translatable: debate, locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:remote_translation) do
+        create(:remote_translation, remote_translatable: debate, locale: :es)
+      end
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida"]
@@ -63,11 +61,11 @@ describe RemoteTranslations::Caller do
     end
 
     context "Proposals" do
-
       let!(:proposal)          { create(:proposal) }
-      let(:remote_translation) { create(:remote_translation,
-                                        remote_translatable: proposal, locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:remote_translation) do
+        create(:remote_translation, remote_translatable: proposal, locale: :es)
+      end
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida", "Pregunta traducida",
@@ -113,12 +111,11 @@ describe RemoteTranslations::Caller do
     end
 
     context "Budget Investments" do
-
       let(:budget_investment)  { create(:budget_investment) }
-      let(:remote_translation) { create(:remote_translation,
-                                        remote_translatable: budget_investment,
-                                        locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:remote_translation) do
+        create(:remote_translation, remote_translatable: budget_investment, locale: :es)
+      end
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Título traducido", "Descripción traducida"]
@@ -162,11 +159,11 @@ describe RemoteTranslations::Caller do
     end
 
     context "Comments" do
-
       let(:comment)            { create(:comment) }
-      let(:remote_translation) { create(:remote_translation,
-                                        remote_translatable: comment, locale: :es) }
-      let(:caller) { described_class.new(remote_translation) }
+      let(:remote_translation) do
+        create(:remote_translation, remote_translatable: comment, locale: :es)
+      end
+      let(:caller) { RemoteTranslations::Caller.new(remote_translation) }
 
       it "returns the resource with new translation persisted" do
         response = ["Body traducido"]
@@ -208,7 +205,5 @@ describe RemoteTranslations::Caller do
         expect(RemoteTranslation.count).to eq(0)
       end
     end
-
   end
-
 end

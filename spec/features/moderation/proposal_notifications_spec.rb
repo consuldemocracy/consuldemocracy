@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Moderate proposal notifications" do
-
   scenario "Hide", :js do
     citizen   = create(:user)
     proposal  = create(:proposal)
@@ -40,7 +39,6 @@ describe "Moderate proposal notifications" do
   end
 
   describe "/moderation/ screen" do
-
     before do
       moderator = create(:moderator)
       login_as(moderator.user)
@@ -48,41 +46,41 @@ describe "Moderate proposal notifications" do
 
     describe "moderate in bulk" do
       describe "When a proposal has been selected for moderation" do
+        let!(:proposal_notification) { create(:proposal_notification, created_at: Date.current - 4.days) }
+
         before do
-          proposal = create(:proposal)
-          @proposal_notification = create(:proposal_notification, proposal: proposal, created_at: Date.current - 4.days)
           visit moderation_proposal_notifications_path
           within(".menu.simple") do
             click_link "All"
           end
 
-          within("#proposal_notification_#{@proposal_notification.id}") do
-            check "proposal_notification_#{@proposal_notification.id}_check"
+          within("#proposal_notification_#{proposal_notification.id}") do
+            check "proposal_notification_#{proposal_notification.id}_check"
           end
         end
 
         scenario "Hide the proposal" do
           click_on "Hide proposals"
-          expect(page).not_to have_css("#proposal_notification_#{@proposal_notification.id}")
-          expect(@proposal_notification.reload).to be_hidden
-          expect(@proposal_notification.author).not_to be_hidden
+          expect(page).not_to have_css("#proposal_notification_#{proposal_notification.id}")
+          expect(proposal_notification.reload).to be_hidden
+          expect(proposal_notification.author).not_to be_hidden
         end
 
         scenario "Block the author" do
           author = create(:user)
-          @proposal_notification.update(author: author)
+          proposal_notification.update!(author: author)
           click_on "Block authors"
-          expect(page).not_to have_css("#proposal_notification_#{@proposal_notification.id}")
-          expect(@proposal_notification.reload).to be_hidden
+          expect(page).not_to have_css("#proposal_notification_#{proposal_notification.id}")
+          expect(proposal_notification.reload).to be_hidden
           expect(author.reload).to be_hidden
         end
 
         scenario "Ignore the proposal" do
           click_button "Mark as viewed"
 
-          expect(@proposal_notification.reload).to be_ignored
-          expect(@proposal_notification.reload).not_to be_hidden
-          expect(@proposal_notification.author).not_to be_hidden
+          expect(proposal_notification.reload).to be_ignored
+          expect(proposal_notification.reload).not_to be_hidden
+          expect(proposal_notification.author).not_to be_hidden
         end
       end
 

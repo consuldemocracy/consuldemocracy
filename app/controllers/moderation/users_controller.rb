@@ -1,5 +1,4 @@
 class Moderation::UsersController < Moderation::BaseController
-
   before_action :load_users, only: :index
 
   load_and_authorize_resource
@@ -29,5 +28,4 @@ class Moderation::UsersController < Moderation::BaseController
       @user.block
       Activity.log(current_user, :block, @user)
     end
-
 end

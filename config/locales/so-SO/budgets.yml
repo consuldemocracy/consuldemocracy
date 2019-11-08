@@ -106,7 +106,7 @@ so:
           confidence_score: ugu sareeya
           price: qiime ahaan
       share:
-        message: "Waxaan abuuray mashruuca maalgashiga%{title} ee%{org} Samee mashruuc maal-gashi aad adigu leedahay!"
+        message: "Waxaan abuuray mashruuca maalgashiga%{title} ee%{handle} Samee mashruuc maal-gashi aad adigu leedahay!"
       show:
         author_deleted: Isticmalaha la tirtiray
         price_explanation: Faahfaahinta qiimaha

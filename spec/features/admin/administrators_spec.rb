@@ -40,7 +40,6 @@ describe "Admin administrators" do
   end
 
   scenario "Delete Administrator when its the current user" do
-
     within "#administrator_#{admin.id}" do
       click_on "Delete"
     end
@@ -51,13 +50,13 @@ describe "Admin administrators" do
   end
 
   context "Search" do
+    let!(:administrator1) do
+      create(:administrator, user: create(:user, username: "Bernard Sumner", email: "bernard@sumner.com"))
+    end
 
-    let!(:administrator1) { create(:administrator, user: create(:user,
-                                                                 username: "Bernard Sumner",
-                                                                 email: "bernard@sumner.com")) }
-    let!(:administrator2) { create(:administrator, user: create(:user,
-                                                                 username: "Tony Soprano",
-                                                                 email: "tony@soprano.com")) }
+    let!(:administrator2) do
+      create(:administrator, user: create(:user, username: "Tony Soprano", email: "tony@soprano.com"))
+    end
 
     before do
       visit admin_administrators_path
@@ -102,9 +101,9 @@ describe "Admin administrators" do
   end
 
   context "Edit" do
-    let!(:administrator1) { create(:administrator, user: create(:user,
-                                                                 username: "Bernard Sumner",
-                                                                 email: "bernard@sumner.com")) }
+    let!(:administrator1) do
+      create(:administrator, user: create(:user, username: "Bernard Sumner", email: "bernard@sumner.com"))
+    end
 
     scenario "admin can edit administrator1" do
       visit(edit_admin_administrator_path(administrator1))
@@ -115,5 +114,4 @@ describe "Admin administrators" do
       expect(page).to have_content("Admin Alias")
     end
   end
-
 end

@@ -15,13 +15,13 @@ shared_examples "reportable" do
     end
 
     it "can save the value to the database" do
-      reportable.update(results_enabled: true)
+      reportable.update!(results_enabled: true)
       saved_reportable = described_class.last
 
       expect(saved_reportable.results_enabled?).to be true
       expect(saved_reportable.results_enabled).to be true
 
-      reportable.update(results_enabled: false)
+      reportable.update!(results_enabled: false)
       saved_reportable = described_class.last
 
       expect(saved_reportable.results_enabled?).to be false
@@ -31,7 +31,7 @@ shared_examples "reportable" do
     it "uses the `has_one` relation instead of the original column" do
       skip "there's no original column" unless reportable.has_attribute?(:results_enabled)
 
-      reportable.update(results_enabled: true)
+      reportable.update!(results_enabled: true)
 
       expect(reportable.read_attribute(:results_enabled)).to be false
     end
@@ -51,13 +51,13 @@ shared_examples "reportable" do
     end
 
     it "can save the attribute to the database" do
-      reportable.update(stats_enabled: true)
+      reportable.update!(stats_enabled: true)
       saved_reportable = described_class.last
 
       expect(saved_reportable.stats_enabled?).to be true
       expect(saved_reportable.stats_enabled).to be true
 
-      reportable.update(stats_enabled: false)
+      reportable.update!(stats_enabled: false)
       saved_reportable = described_class.last
 
       expect(saved_reportable.stats_enabled?).to be false
@@ -67,7 +67,7 @@ shared_examples "reportable" do
     it "uses the `has_one` relation instead of the original column" do
       skip "there's no original column" unless reportable.has_attribute?(:stats_enabled)
 
-      reportable.update(stats_enabled: true)
+      reportable.update!(stats_enabled: true)
 
       expect(reportable.read_attribute(:stats_enabled)).to be false
     end

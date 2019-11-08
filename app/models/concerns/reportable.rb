@@ -2,7 +2,7 @@ module Reportable
   extend ActiveSupport::Concern
 
   included do
-    has_one :report, as: :process, dependent: :destroy
+    has_one :report, as: :process, inverse_of: :process, dependent: :destroy
     accepts_nested_attributes_for :report
   end
 

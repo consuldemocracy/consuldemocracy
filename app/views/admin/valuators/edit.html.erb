@@ -12,7 +12,7 @@
     <%= f.text_field :description %>
     <div class="small-12 medium-6">
       <%= f.select :valuator_group_id,
-                   @valuator_groups.map {|group| [group.name, group.id] },
+                   @valuator_groups.map { |group| [group.name, group.id] },
                    { include_blank: true } %>
     </div>
     <div>

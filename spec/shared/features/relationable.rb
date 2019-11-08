@@ -1,12 +1,11 @@
 shared_examples "relationable" do |relationable_model_name|
-
   let(:relationable) { create(relationable_model_name.name.parameterize(separator: "_").to_sym) }
   let(:related1) { create([:proposal, :debate, :budget_investment].sample) }
   let(:related2) { create([:proposal, :debate, :budget_investment].sample) }
   let(:user) { create(:user) }
 
   scenario "related contents are listed" do
-    related_content = create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
+    create(:related_content, parent_relationable: relationable, child_relationable: related1, author: build(:user))
 
     visit relationable.url
     within("#related-content-list") do
@@ -99,7 +98,6 @@ shared_examples "relationable" do |relationable_model_name|
 
     expect(related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.id).value).to eq(1)
     expect(related_content.opposite_related_content.related_content_scores.find_by(user_id: user.id, related_content_id: related_content.opposite_related_content.id).value).to eq(1)
-
   end
 
   scenario "related content can be scored negatively", :js do

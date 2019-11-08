@@ -27,10 +27,6 @@ en:
         assigned_to: "Assigned to %{valuator}"
         title: Investment projects
         edit: Edit dossier
-        valuators_assigned:
-          one: Assigned valuator
-          other: "%{count} valuators assigned"
-        no_valuators_assigned: No valuators assigned
         table_id: ID
         table_title: Title
         table_heading_name: Heading name
@@ -60,18 +56,11 @@ en:
         preview: Investment preview
       edit:
         dossier: Dossier
-        price_html: "Price (%{currency})"
-        price_first_year_html: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
-        price_explanation_html: Price explanation
+        price: "Price (%{currency})"
+        price_first_year: "Cost during the first year (%{currency}) <small>(optional, data not public)</small>"
         feasibility: Feasibility
-        feasible: Feasible
-        unfeasible: Not feasible
-        undefined_feasible: Pending
-        feasible_explanation_html: Feasibility explanation
-        valuation_finished: Valuation finished
         valuation_finished_alert: "Are you sure you want to mark this report as completed? If you do it, it can no longer be modified."
         not_feasible_alert: "An email will be sent immediately to the author of the project with the report of unfeasibility."
-        duration_html: Time scope
         save: Save changes
       notice:
         valuate: "Dossier updated"

@@ -1,5 +1,4 @@
 class Management::DocumentVerificationsController < Management::BaseController
-
   before_action :clean_document_number, only: :check
   before_action :set_document, only: :check
 
@@ -46,7 +45,7 @@ class Management::DocumentVerificationsController < Management::BaseController
 
     def clean_document_number
       return if params[:document_verification][:document_number].blank?
+
       params[:document_verification][:document_number] = params[:document_verification][:document_number].gsub(/[^a-z0-9]+/i, "").upcase
     end
-
 end

@@ -35,7 +35,7 @@ class Setting < ApplicationRecord
     end
 
     def []=(key, value)
-      setting = where(key: key).first || new(key: key)
+      setting = find_by(key: key) || new(key: key)
       setting.value = value.presence
       setting.save!
       value
@@ -50,7 +50,7 @@ class Setting < ApplicationRecord
     end
 
     def remove(key)
-      setting = where(key: key).first
+      setting = find_by(key: key)
       setting.destroy if setting.present?
     end
 
@@ -99,6 +99,7 @@ class Setting < ApplicationRecord
         "feature.translation_interface": nil,
         "feature.remote_census": nil,
         "feature.valuation_comment_notification": true,
+        "feature.graphql_api": true,
         "homepage.widgets.feeds.debates": true,
         "homepage.widgets.feeds.processes": true,
         "homepage.widgets.feeds.proposals": true,
@@ -142,7 +143,6 @@ class Setting < ApplicationRecord
         "max_ratio_anon_votes_on_debates": 50,
         "max_votes_for_debate_edit": 1000,
         "max_votes_for_proposal_edit": 1000,
-        "max_votes_for_people_proposal_edit": 1000,
         "comments_body_max_length": 1000,
         "proposal_code_prefix": "CONSUL",
         "votes_for_proposal_success": 10000,

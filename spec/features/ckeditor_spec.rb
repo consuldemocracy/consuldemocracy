@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "CKEditor" do
-
   scenario "is present before & after turbolinks update page", :js do
     author = create(:user)
     login_as(author)
@@ -15,5 +14,4 @@ describe "CKEditor" do
 
     expect(page).to have_css ".translatable-fields[data-locale='en'] .cke_wysiwyg_frame"
   end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Documents" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -47,7 +46,7 @@ describe "Documents" do
 
     within("ul.pagination") do
       expect(page).to have_content("1")
-      expect(page).to have_link("2", href: admin_site_customization_documents_url(page: 2))
+      expect(page).to have_link("2", href: admin_site_customization_documents_path(page: 2))
       expect(page).not_to have_content("3")
       click_link "Next", exact: false
     end
@@ -85,5 +84,4 @@ describe "Documents" do
     expect(page).to have_content "Document deleted succesfully"
     expect(page).not_to have_content document.title
   end
-
 end

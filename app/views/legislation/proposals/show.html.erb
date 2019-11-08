@@ -63,12 +63,12 @@
         <% if @proposal.video_url.present? %>
           <div class="small-12 medium-7 small-centered">
             <div class="flex-video">
-              <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+              <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@proposal) %>"></div>
             </div>
           </div>
         <% end %>
 
-        <%= safe_html_with_links @proposal.description %>
+        <%= auto_link_already_sanitized_html wysiwyg(@proposal.description) %>
 
         <% if @proposal.video_url.present? %>
           <div class="video-link">
@@ -76,7 +76,7 @@
               <span class="icon-video"></span>&nbsp;
               <strong><%= t("proposals.show.title_video_url") %></strong>
             </p>
-            <%= text_with_links @proposal.video_url %>
+            <%= sanitize_and_auto_link @proposal.video_url %>
           </div>
 
         <% end %>
@@ -92,7 +92,7 @@
         <%= render "shared/geozone", geozonable: @proposal %>
 
         <div class="js-moderator-proposal-actions margin">
-          <%= render "proposals/actions", proposal: @proposal %>
+          <%= render "legislation/proposals/actions", proposal: @proposal %>
         </div>
       </div>
 

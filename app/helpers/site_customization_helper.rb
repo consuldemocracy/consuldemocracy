@@ -12,7 +12,7 @@ module SiteCustomizationHelper
       I18nContentTranslation.where(
         i18n_content_id: content.id,
         locale: locale
-      ).first.try(:value)
+      ).first&.value
     else
       false
     end

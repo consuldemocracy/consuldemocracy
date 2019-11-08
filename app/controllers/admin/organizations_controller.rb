@@ -1,5 +1,5 @@
 class Admin::OrganizationsController < Admin::BaseController
-  has_filters %w{pending all verified rejected}, only: :index
+  has_filters %w[pending all verified rejected], only: :index
 
   load_and_authorize_resource except: :search
 
@@ -26,5 +26,4 @@ class Admin::OrganizationsController < Admin::BaseController
     @organization.reject
     redirect_to request.query_parameters.merge(action: :index)
   end
-
 end

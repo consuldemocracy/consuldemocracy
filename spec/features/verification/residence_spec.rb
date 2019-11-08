@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Residence" do
-
   before { create(:geozone) }
 
   scenario "Verify resident" do

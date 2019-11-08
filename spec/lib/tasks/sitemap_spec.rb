@@ -1,29 +1,26 @@
 require "rails_helper"
 
 describe "rake sitemap:create", type: :feature do
-  before do
-    @file ||= Rails.root.join("public", "sitemap.xml")
+  let(:file) { Rails.root.join("public", "sitemap.xml") }
 
-    # To avoid spec failures if file does not exist
-    # Useful on CI environments or if file was created
-    # previous to the specs (to ensure a clean state)
-    File.delete(@file) if File.exist?(@file)
+  before do
+    File.delete(file) if File.exist?(file)
 
     Rake::Task["sitemap:create"].reenable
     Rake.application.invoke_task("sitemap:create")
   end
 
   it "generates a sitemap" do
-    expect(@file).to exist
+    expect(file).to exist
   end
 
   it "generates a valid sitemap" do
-    sitemap = Nokogiri::XML(File.open(@file))
+    sitemap = Nokogiri::XML(File.open(file))
     expect(sitemap.errors).to be_empty
   end
 
   it "generates a sitemap with expected and valid URLs" do
-    sitemap = File.read(@file)
+    sitemap = File.read(file)
 
     # Static pages
     expect(sitemap).to include(faq_path)

@@ -14,7 +14,7 @@ class Admin::AdministratorsController < Admin::BaseController
 
   def create
     @administrator.user_id = params[:user_id]
-    @administrator.save
+    @administrator.save!
 
     redirect_to admin_administrators_path
   end

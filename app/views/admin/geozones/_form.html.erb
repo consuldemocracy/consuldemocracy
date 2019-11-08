@@ -1,6 +1,6 @@
 <%= form_for [:admin, @geozone] do |f| %>
 
-  <%= render "errors" %>
+  <%= render "shared/errors", resource: @geozone %>
 
   <div class="small-12 large-8 column">
     <%= f.text_field :name %>
@@ -8,22 +8,16 @@
 
   <div class="clear">
     <div class="small-12 medium-6 large-4 column">
-      <%= f.label :census_code %>
-      <p class="help-text"><%= t("admin.geozones.geozone.code_help") %></p>
-      <%= f.text_field :census_code, label: false %>
+      <%= f.text_field :census_code, hint: t("admin.geozones.geozone.code_help") %>
     </div>
 
     <div class="small-12 medium-6 large-4 column end">
-      <%= f.label :external_code %>
-      <p class="help-text"><%= t("admin.geozones.geozone.code_help") %></p>
-      <%= f.text_field :external_code, label: false %>
+      <%= f.text_field :external_code, hint: t("admin.geozones.geozone.code_help") %>
     </div>
   </div>
 
   <div class="small-12 large-8 column">
-    <%= f.label :html_map_coordinates %>
-    <p class="help-text"><%= t("admin.geozones.geozone.coordinates_help") %></p>
-    <%= f.text_field :html_map_coordinates, label: false %>
+    <%= f.text_field :html_map_coordinates, hint: t("admin.geozones.geozone.coordinates_help") %>
   </div>
 
   <div class="small-12 column">

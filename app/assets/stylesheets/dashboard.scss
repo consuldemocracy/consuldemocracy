@@ -86,6 +86,17 @@
   margin: $line-height 0;
 }
 
+.dashboard-related-content {
+
+  .related-content {
+    border-top: 0;
+
+    .margin-bottom {
+      margin-bottom: 0;
+    }
+  }
+}
+
 // 02. Actions
 // -----------
 

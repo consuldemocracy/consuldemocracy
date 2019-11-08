@@ -1,7 +1,7 @@
 class Admin::HiddenBudgetInvestmentsController < Admin::BaseController
   include FeatureFlags
 
-  has_filters %w{all with_confirmed_hide without_confirmed_hide}, only: :index
+  has_filters %w[all with_confirmed_hide without_confirmed_hide], only: :index
 
   feature_flag :budgets
 
@@ -30,5 +30,4 @@ class Admin::HiddenBudgetInvestmentsController < Admin::BaseController
     def load_investment
       @investment = Budget::Investment.with_hidden.find(params[:id])
     end
-
 end

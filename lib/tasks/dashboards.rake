@@ -1,5 +1,4 @@
 namespace :dashboards do
-
   desc "Send to user notifications from new actions availability on dashboard"
   task send_notifications: :environment do
     Proposal.not_archived.each do |proposal|

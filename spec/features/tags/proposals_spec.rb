@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Tags" do
-
   scenario "Index" do
-    create_featured_proposals
     earth = create(:proposal, tag_list: "Medio Ambiente")
     money = create(:proposal, tag_list: "Economía")
 
@@ -19,7 +17,6 @@ describe "Tags" do
   end
 
   scenario "Index shows up to 5 tags per proposal" do
-    create_featured_proposals
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :proposal, tag_list: tag_list
 
@@ -31,8 +28,7 @@ describe "Tags" do
   end
 
   scenario "Index featured proposals does not show tags" do
-    featured_proposals = create_featured_proposals
-    proposal = create(:proposal, tag_list: "123")
+    create(:proposal, tag_list: "123")
 
     visit proposals_path(tag: "123")
 
@@ -41,7 +37,6 @@ describe "Tags" do
   end
 
   scenario "Index shows 3 tags with no plus link" do
-    create_featured_proposals
     tag_list = ["Medio Ambiente", "Corrupción", "Fiestas populares"]
     create :proposal, tag_list: tag_list
 
@@ -87,12 +82,10 @@ describe "Tags" do
   end
 
   scenario "Category with category tags", :js do
-    user = create(:user)
-    login_as(user)
+    create(:tag, :category, name: "Education")
+    create(:tag, :category, name: "Health")
 
-    education = create(:tag, :category, name: "Education")
-    health    = create(:tag, :category, name: "Health")
-
+    login_as(create(:user))
     visit new_proposal_path
 
     fill_in "Proposal title", with: "Help refugees"
@@ -190,45 +183,41 @@ describe "Tags" do
   end
 
   context "Filter" do
-
     scenario "From index" do
-      create_featured_proposals
-      proposal1 = create(:proposal, tag_list: "Education")
-      proposal2 = create(:proposal, tag_list: "Health")
+      create(:proposal, tag_list: "Health", title: "More green spaces")
+      create(:proposal, tag_list: "Education", title: "Online teachers")
 
       visit proposals_path
 
-      within "#proposal_#{proposal1.id}" do
+      within ".proposal", text: "Online teachers" do
         click_link "Education"
       end
 
       within("#proposals") do
         expect(page).to have_css(".proposal", count: 1)
-        expect(page).to have_content(proposal1.title)
+        expect(page).to have_content "Online teachers"
       end
     end
 
     scenario "From show" do
-      proposal1 = create(:proposal, tag_list: "Education")
-      proposal2 = create(:proposal, tag_list: "Health")
+      proposal = create(:proposal, tag_list: "Education")
+      create(:proposal, tag_list: "Health")
 
-      visit proposal_path(proposal1)
+      visit proposal_path(proposal)
 
       click_link "Education"
 
       within("#proposals") do
         expect(page).to have_css(".proposal", count: 1)
-        expect(page).to have_content(proposal1.title)
+        expect(page).to have_content(proposal.title)
       end
     end
-
   end
 
   context "Tag cloud" do
-
     scenario "Display user tags" do
-      earth = create(:proposal, tag_list: "Medio Ambiente")
-      money = create(:proposal, tag_list: "Economía")
+      create(:proposal, tag_list: "Medio Ambiente")
+      create(:proposal, tag_list: "Economía")
 
       visit proposals_path
 
@@ -254,17 +243,15 @@ describe "Tags" do
       expect(page).to have_content proposal2.title
       expect(page).not_to have_content proposal3.title
     end
-
   end
 
   context "Categories" do
-
     scenario "Display category tags" do
       create(:tag, :category, name: "Medio Ambiente")
       create(:tag, :category, name: "Economía")
 
-      earth = create(:proposal, tag_list: "Medio Ambiente")
-      money = create(:proposal, tag_list: "Economía")
+      create(:proposal, tag_list: "Medio Ambiente")
+      create(:proposal, tag_list: "Economía")
 
       visit proposals_path
 

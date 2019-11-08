@@ -1,6 +1,5 @@
 class Legislation::ProcessesController < Legislation::BaseController
   include RandomSeed
-  include DownloadSettingsHelper
 
   has_filters %w[open past], only: :index
   has_filters %w[random winners], only: :proposals
@@ -8,21 +7,11 @@ class Legislation::ProcessesController < Legislation::BaseController
   load_and_authorize_resource
 
   before_action :set_random_seed, only: :proposals
-  before_action :check_past, only: :resume
-
 
   def index
     @current_filter ||= "open"
     @processes = ::Legislation::Process.send(@current_filter).published
                  .not_in_draft.order(start_date: :desc).page(params[:page])
-
-    respond_to do |format|
-      format.html
-      format.csv { send_data to_csv(process_for_download, Legislation::Process),
-                             type: "text/csv",
-                             disposition: "attachment",
-                             filename: "legislation_processes.csv" }
-    end
   end
 
   def show
@@ -46,7 +35,7 @@ class Legislation::ProcessesController < Legislation::BaseController
     set_process
     @phase = :debate_phase
 
-    if @process.debate_phase.started? || (current_user && current_user.administrator?)
+    if @process.debate_phase.started? || (current_user&.administrator?)
       render :debate
     else
       render :phase_not_open
@@ -108,21 +97,6 @@ class Legislation::ProcessesController < Legislation::BaseController
     @phase = :milestones
   end
 
-  def resume
-    @phase = :resume
-    respond_to do |format|
-      format.html
-      format.xlsx {render xlsx: "resume_to_xlsx", filename: ("resume-" + Date.current.to_s + ".xlsx")}
-    end
-  end
-
-  def check_past
-    set_process
-    if !@process.past?
-      redirect_to legislation_process_path
-    end
-  end
-
   def proposals
     set_process
     @phase = :proposals_phase
@@ -138,7 +112,7 @@ class Legislation::ProcessesController < Legislation::BaseController
       @proposals = @proposals.send(@current_filter).page(params[:page])
     end
 
-    if @process.proposals_phase.started? || (current_user && current_user.administrator?)
+    if @process.proposals_phase.started? || (current_user&.administrator?)
       legislation_proposal_votes(@proposals)
       render :proposals
     else
@@ -148,16 +122,13 @@ class Legislation::ProcessesController < Legislation::BaseController
 
   private
 
-    def process_for_download
-      Legislation::Process.send(@current_filter).order(start_date: :desc)
-    end
-
     def member_method?
       params[:id].present?
     end
 
     def set_process
       return if member_method?
+
       @process = ::Legislation::Process.find(params[:process_id])
     end
 end

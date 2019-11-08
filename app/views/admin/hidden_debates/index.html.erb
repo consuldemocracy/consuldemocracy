@@ -1,7 +1,6 @@
 <h2><%= t("admin.hidden_debates.index.title") %></h2>
 <p><%= t("admin.shared.moderated_content") %></p>
 
-
 <%= render "shared/filter_subnav", i18n_namespace: "admin.hidden_debates.index" %>
 
 <% if @debates.any? %>
@@ -9,9 +8,9 @@
 
   <table>
     <thead>
-    <th scope="col"><%= t("admin.shared.title") %></th>
-    <th scope="col" class="small-6"><%= t("admin.shared.description") %></th>
-    <th scope="col" class="small-4"><%= t("admin.shared.actions") %></th>
+      <th scope="col"><%= t("admin.shared.title") %></th>
+      <th scope="col" class="small-6"><%= t("admin.shared.description") %></th>
+      <th scope="col" class="small-4"><%= t("admin.shared.actions") %></th>
     </thead>
     <tbody>
     <% @debates.each do |debate| %>
@@ -21,7 +20,7 @@
         </td>
         <td>
           <div class="moderation-description">
-            <%= debate.description %>
+            <%= wysiwyg(debate.description) %>
           </div>
         </td>
         <td class="align-top">

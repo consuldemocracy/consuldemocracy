@@ -6,7 +6,6 @@ class AddTranslateMilestones < ActiveRecord::Migration[4.2]
       t.timestamps                                  null: false
       t.string     :title
       t.text       :description
-
     end
 
     add_index :budget_investment_milestone_translations,

@@ -1,7 +1,7 @@
 class Poll::BallotSheet < ApplicationRecord
   belongs_to :poll
   belongs_to :officer_assignment
-  has_many :ballots, class_name: "Poll::Ballot"
+  has_many :ballots
 
   validates :data, presence: true
   validates :poll_id, presence: true
@@ -27,7 +27,7 @@ class Poll::BallotSheet < ApplicationRecord
     def create_ballots(investment_ids, index)
       poll_ballot = Poll::Ballot.where(ballot_sheet: self,
                                        data: investment_ids,
-                                       external_id: index).first_or_create
+                                       external_id: index).first_or_create!
       create_ballot(poll_ballot)
       poll_ballot
     end
@@ -36,7 +36,6 @@ class Poll::BallotSheet < ApplicationRecord
       Budget::Ballot.where(physical: true,
                          user: nil,
                          poll_ballot: poll_ballot,
-                         budget: poll.budget).first_or_create
+                         budget: poll.budget).first_or_create!
     end
-
 end
