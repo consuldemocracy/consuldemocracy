@@ -6,7 +6,6 @@ describe Abilities::Administrator do
 
   let(:user) { administrator.user }
   let(:administrator) { create(:administrator) }
-  let(:poll) { create(:poll, :current, stats_enabled: false, results_enabled: false) }
 
   let(:other_user) { create(:user) }
   let(:hidden_user) { create(:user, :hidden) }
@@ -88,9 +87,6 @@ describe Abilities::Administrator do
   it { should_not be_able_to(:destroy, budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_document) }
   it { should be_able_to(:manage, Dashboard::Action) }
-
-  it { should be_able_to(:stats, poll) }
-  it { should be_able_to(:results, poll) }
 
   it { should be_able_to(:read, Poll::Question) }
   it { should be_able_to(:create, Poll::Question) }
