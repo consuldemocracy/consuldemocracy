@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Organizations" do
   scenario "Organizations can be created" do
-    user = User.organizations.where(email: "green@peace.com").first
+    user = User.organizations.find_by(email: "green@peace.com")
     expect(user).not_to be
 
     visit new_organization_registration_path
@@ -16,7 +16,7 @@ describe "Organizations" do
 
     click_button "Register"
 
-    user = User.organizations.where(email: "green@peace.com").first
+    user = User.organizations.find_by(email: "green@peace.com")
     expect(user).to be
     expect(user).to be_organization
     expect(user.organization).not_to be_verified

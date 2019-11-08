@@ -273,7 +273,7 @@ describe "Admin settings" do
   describe "Skip verification" do
     scenario "deactivate skip verification", :js do
       Setting["feature.user.skip_verification"] = "true"
-      setting = Setting.where(key: "feature.user.skip_verification").first
+      setting = Setting.find_by(key: "feature.user.skip_verification")
 
       visit admin_settings_path
       find("#features-tab").click
@@ -287,7 +287,7 @@ describe "Admin settings" do
 
     scenario "activate skip verification", :js do
       Setting["feature.user.skip_verification"] = nil
-      setting = Setting.where(key: "feature.user.skip_verification").first
+      setting = Setting.find_by(key: "feature.user.skip_verification")
 
       visit admin_settings_path
       find("#features-tab").click

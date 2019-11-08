@@ -15,7 +15,7 @@ describe "Homepage" do
   let!(:debates_feed)      { create(:widget_feed, kind: "debates") }
   let!(:processes_feed)    { create(:widget_feed, kind: "processes") }
 
-  let(:user_recommendations) { Setting.where(key: "feature.user.recommendations").first }
+  let(:user_recommendations) { Setting.find_by(key: "feature.user.recommendations") }
   let(:user)                 { create(:user) }
 
   context "Header" do

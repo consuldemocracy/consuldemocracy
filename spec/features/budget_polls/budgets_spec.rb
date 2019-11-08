@@ -14,7 +14,7 @@ describe "Admin Budgets" do
 
       click_link "Admin ballots"
 
-      balloting_phase = budget.phases.where(kind: "balloting").first
+      balloting_phase = budget.phases.find_by(kind: "balloting")
 
       expect(page).to have_current_path(/admin\/polls\/\d+/)
       expect(page).to have_content(budget.name)

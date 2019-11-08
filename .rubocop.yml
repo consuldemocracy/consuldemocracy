@@ -228,6 +228,8 @@ Rails/EnvironmentComparison:
 
 Rails/FindBy:
   Enabled: true
+  Include:
+    - "**/*.rb"
 
 Rails/FindEach:
   Enabled: true

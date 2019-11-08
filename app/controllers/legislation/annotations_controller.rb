@@ -33,9 +33,12 @@ class Legislation::AnnotationsController < Legislation::BaseController
       render(json: {}, status: :not_found) && return
     end
 
-    existing_annotation = @draft_version.annotations.where(
-      range_start: annotation_params[:ranges].first[:start], range_start_offset: annotation_params[:ranges].first[:startOffset].to_i,
-      range_end: annotation_params[:ranges].first[:end], range_end_offset: annotation_params[:ranges].first[:endOffset].to_i).first
+    existing_annotation = @draft_version.annotations.find_by(
+      range_start: annotation_params[:ranges].first[:start],
+      range_start_offset: annotation_params[:ranges].first[:startOffset].to_i,
+      range_end: annotation_params[:ranges].first[:end],
+      range_end_offset: annotation_params[:ranges].first[:endOffset].to_i
+    )
 
     @annotation = existing_annotation
     if @annotation.present?

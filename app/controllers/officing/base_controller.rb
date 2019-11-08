@@ -44,6 +44,6 @@ class Officing::BaseController < ApplicationController
     end
 
     def current_booth
-      Poll::Booth.where(id: session[:booth_id]).first
+      Poll::Booth.find_by(id: session[:booth_id])
     end
 end

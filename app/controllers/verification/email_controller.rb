@@ -31,7 +31,7 @@ class Verification::EmailController < ApplicationController
   private
 
     def set_verified_user
-      @verified_user = VerifiedUser.by_user(current_user).where(id: verified_user_params[:id]).first
+      @verified_user = VerifiedUser.by_user(current_user).find_by(id: verified_user_params[:id])
     end
 
     def verified_user_params
