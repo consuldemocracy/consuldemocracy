@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191107193003) do
+ActiveRecord::Schema.define(version: 20191108173350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -217,37 +217,6 @@ ActiveRecord::Schema.define(version: 20191107193003) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
-  end
-
-  create_table "budget_investment_milestone_translations", force: :cascade do |t|
-    t.integer  "budget_investment_milestone_id", null: false
-    t.string   "locale",                         null: false
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "title"
-    t.text     "description"
-    t.index ["budget_investment_milestone_id"], name: "index_6770e7675fe296cf87aa0fd90492c141b5269e0b", using: :btree
-    t.index ["locale"], name: "index_budget_investment_milestone_translations_on_locale", using: :btree
-  end
-
-  create_table "budget_investment_milestones", force: :cascade do |t|
-    t.integer  "investment_id"
-    t.string   "title",            limit: 80
-    t.text     "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.datetime "publication_date"
-    t.integer  "status_id"
-    t.index ["status_id"], name: "index_budget_investment_milestones_on_status_id", using: :btree
-  end
-
-  create_table "budget_investment_statuses", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "hidden_at"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["hidden_at"], name: "index_budget_investment_statuses_on_hidden_at", using: :btree
   end
 
   create_table "budget_investment_translations", force: :cascade do |t|
