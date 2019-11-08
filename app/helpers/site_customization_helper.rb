@@ -9,10 +9,10 @@ module SiteCustomizationHelper
 
   def translation_for_locale(content, locale)
     if content.present?
-      I18nContentTranslation.where(
+      I18nContentTranslation.find_by(
         i18n_content_id: content.id,
         locale: locale
-      ).first&.value
+      )&.value
     else
       false
     end

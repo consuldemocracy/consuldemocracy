@@ -341,7 +341,7 @@ describe Proposal do
   describe "custom tag counters when hiding/restoring" do
     it "decreases the tag counter when hiden, and increases it when restored" do
       proposal = create(:proposal, tag_list: "foo")
-      tag = Tag.where(name: "foo").first
+      tag = Tag.find_by(name: "foo")
       expect(tag.proposals_count).to eq(1)
 
       proposal.hide

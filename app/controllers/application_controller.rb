@@ -98,7 +98,7 @@ class ApplicationController < ActionController::Base
 
     def track_email_campaign
       if params[:track_id]
-        campaign = Campaign.where(track_id: params[:track_id]).first
+        campaign = Campaign.find_by(track_id: params[:track_id])
         ahoy.track campaign.name if campaign.present?
       end
     end

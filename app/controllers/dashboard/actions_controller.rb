@@ -38,7 +38,7 @@ class Dashboard::ActionsController < Dashboard::BaseController
   def unexecute
     authorize! :dashboard, proposal
 
-    Dashboard::ExecutedAction.where(proposal: proposal, action: dashboard_action).first.destroy!
+    Dashboard::ExecutedAction.find_by(proposal: proposal, action: dashboard_action).destroy!
 
     redirect_to request.referer
   end

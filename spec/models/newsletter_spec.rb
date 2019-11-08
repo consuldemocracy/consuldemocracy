@@ -117,8 +117,8 @@ describe Newsletter do
       expect(Activity.count).to eq(3)
 
       recipients.each do |email|
-        user = User.where(email: email).first
-        activity = Activity.where(user: user).first
+        user = User.find_by(email: email)
+        activity = Activity.find_by(user: user)
 
         expect(activity.user_id).to eq(user.id)
         expect(activity.action).to eq("email")

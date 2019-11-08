@@ -216,7 +216,7 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user1 = Notification.where(user: user1).first
+      notification_for_user1 = Notification.find_by(user: user1)
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "There is one new notification on #{proposal.title}"
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
@@ -228,7 +228,7 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user2 = Notification.where(user: user2).first
+      notification_for_user2 = Notification.find_by(user: user2)
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "There is one new notification on #{proposal.title}"
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
@@ -269,7 +269,7 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user1 = Notification.where(user: user1).first
+      notification_for_user1 = Notification.find_by(user: user1)
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "There is one new notification on #{proposal.title}"
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user1)}']"
@@ -280,7 +280,7 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user2 = Notification.where(user: user2).first
+      notification_for_user2 = Notification.find_by(user: user2)
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "There is one new notification on #{proposal.title}"
       expect(page).to have_xpath "//a[@href='#{notification_path(notification_for_user2)}']"
@@ -320,7 +320,7 @@ describe "Proposal Notifications" do
 
       find(".icon-notification").click
 
-      notification_for_user = Notification.where(user: user).first
+      notification_for_user = Notification.find_by(user: user)
       expect(page).to have_css ".notification", count: 1
       expect(page).to have_content "This resource is not available anymore"
       expect(page).not_to have_xpath "//a[@href='#{notification_path(notification_for_user)}']"

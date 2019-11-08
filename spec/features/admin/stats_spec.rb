@@ -233,7 +233,7 @@ describe "Stats" do
 
       expect(page).to have_content "#{campaign.name} (1)"
       within("#graph") do
-        event_created_at = Ahoy::Event.where(name: campaign.name).first.time
+        event_created_at = Ahoy::Event.find_by(name: campaign.name).time
         expect(page).to have_content event_created_at.strftime("%Y-%m-%d")
       end
     end

@@ -41,7 +41,7 @@ describe "BudgetPolls", :with_frozen_time do
         expect(page).to have_content "1"
       end
 
-      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
         expect(page).to have_content "1"
       end
     end

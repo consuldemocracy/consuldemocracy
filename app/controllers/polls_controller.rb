@@ -43,7 +43,7 @@ class PollsController < ApplicationController
   private
 
     def load_poll
-      @poll = Poll.where(slug: params[:id]).first || Poll.where(id: params[:id]).first
+      @poll = Poll.find_by_slug_or_id!(params[:id])
     end
 
     def load_active_poll

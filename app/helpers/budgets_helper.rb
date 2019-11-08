@@ -50,7 +50,7 @@ module BudgetsHelper
   end
 
   def current_ballot
-    Budget::Ballot.where(user: current_user, budget: @budget).first
+    Budget::Ballot.find_by(user: current_user, budget: @budget)
   end
 
   def investment_tags_select_options(budget, context)
@@ -96,7 +96,7 @@ module BudgetsHelper
   end
 
   def link_to_create_budget_poll(budget)
-    balloting_phase = budget.phases.where(kind: "balloting").first
+    balloting_phase = budget.phases.find_by(kind: "balloting")
 
     link_to t("admin.budgets.index.admin_ballots"),
             admin_polls_path(poll: {
