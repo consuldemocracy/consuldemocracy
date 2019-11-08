@@ -32,6 +32,10 @@ class Budget
       define_singleton_method(phase) { find_by(kind: phase) }
     end
 
+    def self.kind_or_later(phase)
+      PHASE_KINDS[PHASE_KINDS.index(phase)..-1]
+    end
+
     def next_enabled_phase
       next_phase&.enabled? ? next_phase : next_phase&.next_enabled_phase
     end
@@ -92,7 +96,7 @@ class Budget
       end
 
       def in_phase_or_later?(phase)
-        PHASE_KINDS.index(kind) >= PHASE_KINDS.index(phase)
+        self.class.kind_or_later(phase).include?(kind)
       end
   end
 end

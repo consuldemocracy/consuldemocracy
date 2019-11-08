@@ -7,6 +7,33 @@ describe Budget do
   it_behaves_like "reportable"
   it_behaves_like "globalizable", :budget
 
+  describe "scopes" do
+    describe ".open" do
+      it "returns all budgets that are not in the finished phase" do
+        (Budget::Phase::PHASE_KINDS - ["finished"]).each do |phase|
+          budget = create(:budget, phase: phase)
+          expect(Budget.open).to include(budget)
+        end
+      end
+    end
+
+    describe ".valuating_or_later" do
+      it "returns budgets valuating or later" do
+        valuating = create(:budget, :valuating)
+        finished = create(:budget, :finished)
+
+        expect(Budget.valuating_or_later).to match_array([valuating, finished])
+      end
+
+      it "does not return budgets which haven't reached valuation" do
+        create(:budget, :drafting)
+        create(:budget, :selecting)
+
+        expect(Budget.valuating_or_later).to be_empty
+      end
+    end
+  end
+
   describe "name" do
     before do
       budget.update(name_en: "object name")
@@ -169,15 +196,6 @@ describe Budget do
       create(:budget, :drafting,  created_at: 1.week.ago,  name: "Next")
 
       expect(Budget.current.name).to eq "Current"
-    end
-  end
-
-  describe "#open" do
-    it "returns all budgets that are not in the finished phase" do
-      (Budget::Phase::PHASE_KINDS - ["finished"]).each do |phase|
-        budget = create(:budget, phase: phase)
-        expect(Budget.open).to include(budget)
-      end
     end
   end
 
