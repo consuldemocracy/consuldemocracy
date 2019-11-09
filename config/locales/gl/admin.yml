@@ -235,6 +235,33 @@ gl:
         tags_placeholder: "Escribe as etiquetas que desexes separadas por comas (,)"
         undefined: Sen definir
       search_unfeasible: Buscar inviables
+    milestones:
+      index:
+        table_title: "Título"
+        table_description: "Descrición"
+        table_publication_date: "Data de publicación"
+        table_status: Estado
+        table_actions: "Accións"
+        delete: "Eliminar fito"
+        no_milestones: "Non hai datos definidos"
+        image: "Imaxe"
+        show_image: "Amosar imaxe"
+        documents: "Documentos"
+        milestone: Seguimento
+        new_milestone: Crear novo seguimento
+      form:
+        admin_statuses: Administrar estados de investimento
+        no_statuses_defined: Aínda non se definirion os estados dos investimentos
+      new:
+        creating: Crear fito
+      edit:
+        title: Editar fito
+      create:
+        notice: Novo fito creado con éxito!
+      update:
+        notice: Fito actualizado correctamente
+      delete:
+        notice: Fito borrado correctamente
     statuses:
       index:
         title: Estados dos investimentos
@@ -256,13 +283,38 @@ gl:
       delete:
         notice: O estado do investimento foi eliminado correctamente
     progress_bars:
+      manage: "Xestionar barras de progreso"
       index:
         title: "Barras de progreso"
+        no_progress_bars: "Non hai barras de progreso"
+        new_progress_bar: "Crear nova barra de progreso"
+        primary: "Barra de progreso principal"
+        table_kind: "Tipo"
+        table_title: "Título"
+        table_percentage: "Progreso"
+      new:
+        creating: "Crear barra de progreso"
+      edit:
+        title:
+          primary: "Editar barra de progreso principal"
+          secondary: "Editar barra de progreso %{title}"
+      create:
+        notice: "A barra de progreso creouse correctamente!"
+      update:
+        notice: "A barra de progreso actualizouse correctamente"
+      delete:
+        notice: "A barra de progreso foi eliminada correctamente"
+    comments:
+      index:
+        title: Comentarios ocultos
     dashboard:
       index:
         back: Volver a %{org}
         title: Administración
         description: Benvido ao panel de administración de %{org}.
+    debates:
+      index:
+        title: Debates ocultos
     hidden_users:
       index:
         filter: Filtro
