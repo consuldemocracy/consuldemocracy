@@ -39,17 +39,6 @@ module Dashboard::GroupSupports
 
       complete_grouped_votes
     end
-
-    def previous_key_for(date)
-      grouping_key_for(date - interval)
-    end
-
-    def interval
-      return 1.week if params[:group_by] == "week"
-      return 1.month if params[:group_by] == "month"
-
-      1.day
-    end
   end
 
   private

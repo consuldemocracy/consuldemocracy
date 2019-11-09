@@ -11,10 +11,6 @@ module DocumentsHelper
     bytes / Numeric::MEGABYTE
   end
 
-  def document_nested_field_wrapper_id(index)
-    "document_#{index}"
-  end
-
   def render_destroy_document_link(builder, document)
     if !document.persisted? && document.cached_attachment.present?
       link_to t("documents.form.delete_button"),
