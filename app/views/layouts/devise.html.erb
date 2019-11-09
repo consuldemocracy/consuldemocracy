@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
   <head>
-    <%= render "layouts/common_head", default_title: "Gobierno abierto" %>
+    <%= render "layouts/common_head", default_title: setting["org_name"] %>
     <%= render "layouts/meta_tags" %>
     <%= raw setting["html.per_page_code_head"] %>
   </head>
