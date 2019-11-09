@@ -40,6 +40,12 @@ de:
         zero: Keine Rückmeldungen
         one: 1 Antwort
         other: "%{count} Antworten"
+      responses_show:
+        zero: Keine Rückmeldungen
+        one: "1 Rückmeldung (Anzeigen)"
+        other: "%{count} Rückmeldungen (Anzeigen)"
+      responses_collapse:
+        zero: Keine Rückmeldungen
       user_deleted: Benutzer gelöscht
       votes:
         zero: Keine Bewertungen
