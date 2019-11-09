@@ -507,6 +507,24 @@ de:
     poster:
       index:
         footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
+      new:
+        title: Poster von deinem Vorschlag
+      options:
+        preview: Vorschau
+        download: Download
+    mailing:
+      index:
+        title: Vorschau E-Mail
+      new:
+        title: E-Mail-Modell zum Teilen
+      mailing_options:
+        send: Senden an %{address}
+        preview: Vorschau
+      create:
+        sent: Die E-Mail wurde gesendet
+    mailer:
+      forward:
+        subtitle: "Wenn Sie mich unterstützen, <br>werden wir es erreichen."
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
