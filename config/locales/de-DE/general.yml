@@ -874,3 +874,14 @@ de:
   links:
     form:
       delete_button: Löschen
+      cancel_button: Abbrechen
+    nested_links:
+      title: Links
+      note: Fügen Sie Links hinzu, die von Interesse sind
+      add_new_link: Neuen Link hinzufügen
+    link_fields:
+      label_placeholder: Titel Link
+      url_placeholder: Link Adresse
+  communities:
+    show:
+      surveys: Umfragen
