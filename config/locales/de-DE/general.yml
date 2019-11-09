@@ -212,6 +212,8 @@ de:
         current_goal: Aktuelles Ziel
         supports:
           zero: Keine Unterstützung
+          one: Eine Unterstützung
+          other: "Unterstützungen"
     footer:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
@@ -301,6 +303,11 @@ de:
     create:
       form:
         submit_button: Vorschlag erstellen
+    created:
+      title: Herzlichen Glückwunsch! Sie haben den ersten Schritt gemacht.
+      motivation: "Es ist wichtig, den Start der Kampagne vorzubereiten, damit Ihr Vorschlag erfolgreich ist. Die ersten Tage sind entscheidend."
+      motivation_2: "<strong>Wenn Sie Empfehlungen zur Vorbereitung der Veröffentlichung wünschen, belassen Sie Ihren Vorschlag als Entwurf und wir werden Sie begleiten.</strong>"
+      publish: Nein, ich möchte den Vorschlag veröffentlichen
     edit:
       editing: Vorschlag bearbeiten
       form:
