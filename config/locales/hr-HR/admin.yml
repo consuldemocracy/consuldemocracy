@@ -244,6 +244,32 @@ hr:
         tags_placeholder: "Dopiši oznake koje želiš odjeliti zarezom (,)"
         undefined: Nedefinirano
       search_unfeasible: Pretraga neizvediva
+    milestones:
+      index:
+        table_title: "Naziv"
+        table_description: "Opis"
+        table_publication_date: "Datum objave"
+        table_actions: "Akcije"
+        delete: "Obriši ključni cilj"
+        no_milestones: "Nemate definirane ključne ciljeve"
+        image: "Slika"
+        show_image: "Pogledaj sliku"
+        documents: "Dokumenti"
+        milestone: Ključni ciljevi
+        new_milestone: Stvori novi ključni cilj
+      form:
+        admin_statuses: Upravljaj statusima
+        no_statuses_defined: Još ne postoji definirani status
+      new:
+        creating: Stvori ključni cilj
+      edit:
+        title: Uredi ključne ciljeve
+      create:
+        notice: Novi ključni ciljevi stvoreni su uspješno!
+      update:
+        notice: Ključni ciljevi uspješno ažurirani
+      delete:
+        notice: Ključni ciljevi uspješno obrisani
     statuses:
       index:
         title: Status ključnih ciljeva
@@ -265,8 +291,30 @@ hr:
       delete:
         notice: Ključni ciljevi uspješno obrisani
     progress_bars:
+      manage: "Upravljaj trakom progresa"
       index:
         title: "Trake napretka"
+        no_progress_bars: "Ne postoji traka napretka"
+        new_progress_bar: "Stvori novu prazninu napretka"
+        primary: "Primarna praznina napretka"
+        table_kind: "Tip"
+        table_title: "Naziv"
+        table_percentage: "Trenutni progres"
+      new:
+        creating: "Stvori novu traku napretka"
+      edit:
+        title:
+          primary: "Uredi primarniu traku napretka"
+          secondary: "Uredi traku napretka %{title}"
+      create:
+        notice: "Traka napretka je stvorena uspješno!"
+      update:
+        notice: "Traka napretka je uspješno ažurirana"
+      delete:
+        notice: "Traka napretka je uspješno obrisana"
+    comments:
+      index:
+        title: Sakriveni komentari
     hidden_comments:
       index:
         filter: Filter
@@ -338,6 +386,9 @@ hr:
           request: Zatraženi resurs
         update:
           success: Zadatak je označen kao riješen.
+    debates:
+      index:
+        title: Sakrivene rasprave
     hidden_debates:
       index:
         filter: Filter
@@ -832,7 +883,7 @@ hr:
         email_placeholder: Pretraži korisnika po emailu
         search: Pretraga
         user_not_found: Korisnik nije pronađen
-        help: "Dodaj ili ukloni činovnike za pregled glasova iz pretrage od ispod."
+        help: "Dodaj ili ukloni činovnike ankete iz pretrage od ispod."
     poll_officer_assignments:
       index:
         officers_title: "Popis činovnika"
