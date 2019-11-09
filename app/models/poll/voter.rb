@@ -43,30 +43,5 @@ class Poll
       def set_denormalized_booth_assignment_id
         self.booth_assignment_id ||= officer_assignment&.booth_assignment_id
       end
-
-      def in_census?
-        census_api_response.valid?
-      end
-
-      def census_api_response
-        @census_api_response ||= CensusCaller.new.call(document_type, document_number)
-      end
-
-      def fill_stats_fields
-        if in_census?
-          self.gender = census_api_response.gender
-          self.geozone_id = Geozone.select(:id).find_by(census_code: census_api_response.district_code)&.id
-          self.age = voter_age(census_api_response.date_of_birth)
-        end
-      end
-
-      def voter_age(dob)
-        if dob.blank?
-          nil
-        else
-          now = Date.current
-          now.year - dob.year - (now.month > dob.month || (now.month == dob.month && now.day >= dob.day) ? 0 : 1)
-        end
-      end
   end
 end
