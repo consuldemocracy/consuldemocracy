@@ -158,6 +158,28 @@ ast:
         tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
         undefined: Ensin definir
       search_unfeasible: Buscar invidables
+    milestones:
+      index:
+        table_title: "Títulu"
+        table_description: "Descripción detallada"
+        table_status: Estáu
+        table_actions: "Acciones"
+        delete: "Esaniciar finxu"
+        no_milestones: "Nun hai finxos definíos"
+        image: "Imaxe"
+        documents: "Documentos"
+        milestone: Siguimientu
+        new_milestone: Crear nuevu finxu
+      new:
+        creating: Crear finxu
+      edit:
+        title: Editar finxu
+      create:
+        notice: '¡Nuevu finxu creáu con ésitu!'
+      update:
+        notice: Finxu actualizáu
+      delete:
+        notice: Finxu borráu correchamente
     statuses:
       index:
         table_name: Nome
@@ -165,9 +187,19 @@ ast:
         table_actions: Acciones
         delete: Borrar
         edit: Editar propuesta
+    progress_bars:
+      index:
+        table_kind: "Tipu"
+        table_title: "Títulu"
+    comments:
+      index:
+        title: Comentarios ocultos
     dashboard:
       index:
         title: Alministración
+    debates:
+      index:
+        title: Alderiques ocultos
     hidden_users:
       index:
         filter: Filtru
