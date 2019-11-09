@@ -35,6 +35,7 @@ describe "Registration form" do
 
     click_button "Register"
 
+    expect(page).to have_title "Confirm your email address"
     expect(page).to have_content "Thank you for registering"
 
     new_user = User.last
