@@ -201,6 +201,33 @@ sq:
         tags_placeholder: "Shkruani etiketat që dëshironi të ndahen me presje (,)"
         undefined: E padefinuar
       search_unfeasible: Kërkoni të papërshtatshëm
+    milestones:
+      index:
+        table_title: "Titull"
+        table_description: "Përshkrimi"
+        table_publication_date: "Data e publikimit"
+        table_status: Statusi
+        table_actions: "Veprimet"
+        delete: "Fshi momentet historik"
+        no_milestones: "Nuk  keni pikëarritje të përcaktuara"
+        image: "Imazh"
+        show_image: "Trego imazhin"
+        documents: "Dokumentet"
+        milestone: Moment historik
+        new_milestone: Krijo momentet historik të ri
+      form:
+        admin_statuses: Statusi i investimeve të administratorit
+        no_statuses_defined: Ende nuk ka statuse të përcaktuara për investime
+      new:
+        creating: Krijo momentet historik
+      edit:
+        title: Modifiko momentet historike
+      create:
+        notice: Momentet historike te reja u krijuan me sukses!
+      update:
+        notice: Momentet historike te reja u përditësuan me sukses
+      delete:
+        notice: Momentet historike te reja u fshinë me sukses
     statuses:
       index:
         title: Statusi investimeve
@@ -221,11 +248,21 @@ sq:
         notice: Statusi i investimeve krijua me sukses
       delete:
         notice: Statusi i investimeve u fshi me sukses
+    progress_bars:
+      index:
+        table_kind: "Tipi"
+        table_title: "Titull"
+    comments:
+      index:
+        title: Komentet e fshehura
     dashboard:
       index:
         back: Shko pas tek %{org}
         title: Administrim
         description: Mirë se erdhët në panelin %{org} të admin.
+    debates:
+      index:
+        title: Debate të fshehta
     hidden_users:
       index:
         filter: Filtër
