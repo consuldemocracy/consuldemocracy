@@ -525,6 +525,10 @@ de:
     mailer:
       forward:
         subtitle: "Wenn Sie mich unterstützen, <br>werden wir es erreichen."
+        support_button: Unterstützen Sie diesen Vorschlag
+        share_in: Teilen in
+        hi: "Hallo!"
+        introduction: Ich schreibe Ihnen, da ich an %{org} teilnehme, der Plattform, auf der wir entscheiden können, welche Stadt wir wollen. Dafür habe ich meinen eigenen Bürgervorschlag erstellt und jetzt werde ich Ihre Unterstützung brauchen! Keine Sorge, es ist sehr einfach.
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
