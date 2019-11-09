@@ -110,17 +110,17 @@ describe "Polls" do
     end
 
     scenario "Poll title link to stats if enabled" do
-      poll = create(:poll, name: "Poll with stats", stats_enabled: true)
+      poll = create(:poll, :expired, name: "Poll with stats", stats_enabled: true)
 
-      visit polls_path
+      visit polls_path(filter: "expired")
 
       expect(page).to have_link("Poll with stats", href: stats_poll_path(poll.slug))
     end
 
     scenario "Poll title link to results if enabled" do
-      poll = create(:poll, name: "Poll with results", stats_enabled: true, results_enabled: true)
+      poll = create(:poll, :expired, name: "Poll with results", stats_enabled: true, results_enabled: true)
 
-      visit polls_path
+      visit polls_path(filter: "expired")
 
       expect(page).to have_link("Poll with results", href: results_poll_path(poll.slug))
     end

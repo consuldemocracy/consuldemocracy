@@ -47,6 +47,7 @@ class Budget < ApplicationRecord
   scope :reviewing, -> { where(phase: "reviewing") }
   scope :selecting, -> { where(phase: "selecting") }
   scope :valuating, -> { where(phase: "valuating") }
+  scope :valuating_or_later, -> { where(phase: Budget::Phase.kind_or_later("valuating")) }
   scope :publishing_prices, -> { where(phase: "publishing_prices") }
   scope :balloting, -> { where(phase: "balloting") }
   scope :reviewing_ballots, -> { where(phase: "reviewing_ballots") }
