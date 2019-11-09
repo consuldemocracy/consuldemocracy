@@ -529,6 +529,8 @@ de:
         share_in: Teilen in
         hi: "Hallo!"
         introduction: Ich schreibe Ihnen, da ich an %{org} teilnehme, der Plattform, auf der wir entscheiden können, welche Stadt wir wollen. Dafür habe ich meinen eigenen Bürgervorschlag erstellt und jetzt werde ich Ihre Unterstützung brauchen! Keine Sorge, es ist sehr einfach.
+        support: "Sie müssen nur auf die Schaltfläche klicken, die unter \"Diesen Vorschlag unterstützen\" angezeigt wird. Sie können sich dort informieren, bevor Sie ihn bewerben. Nur die Vorschläge, die die notwendige Unterstützung erreichen, werden vom Stadtrat ausgeführt. Sie können mir helfen, dies zu erreichen!"
+        share: "Sie würden mir einen großen Gefallen tun, wenn Sie meinen Vorschlag mit Ihren Freunden, Familie und Kontakten teilen - das wäre perfekt!"
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
@@ -562,6 +564,7 @@ de:
       back: Zurück zur Abstimmung
       cant_answer_not_logged_in: "Sie müssen %{signin} oder %{signup}, um teilzunehmen."
       comments_tab: Kommentare
+      cant_answer_verify: "Sie müssen %{verify_link}, um zu antworten."
       verify_link: "Verifizieren Sie Ihr Benutzerkonto"
       cant_answer_expired: "Diese Umfrage wurde beendet."
       cant_answer_wrong_geozone: "Diese Frage ist nicht in ihrem Gebiet verfügbar."
@@ -578,6 +581,7 @@ de:
         total_votes: "Gesamtanzahl der Bewertungen"
         votes: "STIMMEN"
         web: "WEB"
+        mail: "VERSENDEN"
         booth: "WAHLKABINE"
         total: "GESAMT"
         valid: "Gültig"
@@ -586,6 +590,8 @@ de:
       results:
         title: "Fragen"
         most_voted_answer: "Am meisten bewerteten Antwort: "
+    poll_header:
+      back_to_proposal: Zurück zum Vorschlag
   poll_questions:
     show:
       vote_answer: "Für %{answer} abstimmen"
@@ -594,6 +600,7 @@ de:
     new:
       title: "Nachricht senden"
       submit_button: "Nachricht senden"
+      info_about_receivers: "Diese Nachricht wird an <strong>%{count} BenutzerInnen </strong> geschickt und wird auf der %{proposal_page}.<br> angezeigt. Die Nachricht wird nicht sofort verschickt, sondern BenutzerInnen bekommen regelmäßig eine E-Mail mit allen Benachrichtigen zu den Vorschlägen."
       proposal_page: "die Vorschlagsseite"
     show:
       back: "Zurück zu meiner Aktivität"
@@ -623,6 +630,7 @@ de:
       to: "An"
     author_info:
       author_deleted: Benutzer*in gelöscht
+      email_deleted: E-Mail gelöscht
     back: Zurück
     check: Auswählen
     check_all: Alle
@@ -632,6 +640,10 @@ de:
     follow: "Folgen"
     following: "Folgen"
     follow_entity: "Folgen %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "Sie folgen nun diesem Investitionsprojekt! <br> Wir werden Sie bei Änderungen benachrichtigen, sodass Sie immer auf dem Laufenden sind."
     hide: Verbergen
     print:
       print_button: Diese Info drucken
