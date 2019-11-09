@@ -308,6 +308,12 @@ de:
       motivation: "Es ist wichtig, den Start der Kampagne vorzubereiten, damit Ihr Vorschlag erfolgreich ist. Die ersten Tage sind entscheidend."
       motivation_2: "<strong>Wenn Sie Empfehlungen zur Vorbereitung der Veröffentlichung wünschen, belassen Sie Ihren Vorschlag als Entwurf und wir werden Sie begleiten.</strong>"
       publish: Nein, ich möchte den Vorschlag veröffentlichen
+      dashboard: Ja, ich möchte Hilfe und werde später veröffentlichen
+      preview_title: So wird Ihr Vorschlag aussehen, wenn Sie ihn veröffentlichen
+    share:
+      improve_it: Verbessern Sie ihre Kampagne und erhalten Sie stärkere Unterstützung.
+      dashboard: Weitere Informationen anzeigen
+      message: "Ich habe den Vorschlag unterstützt %{title} in %{handle}. Wenn Sie interessiert sind, unterstützen Sie es auch!"
     edit:
       editing: Vorschlag bearbeiten
       form:
@@ -359,6 +365,9 @@ de:
           error: "Ein Fehler ist aufgetreten. Bitte gehen Sie zur 'Ihr Benutzerkonto'-Seite um Antrags-Empfehlungen manuell abzuschalten"
       retired_proposals: Vorschläge im Ruhezustand
       retired_proposals_link: "Vorschläge vom Autor zurückgezogen"
+      selected_proposals: Ausgewählte Vorschläge
+      selected_proposals_link: Ausgewählte Vorschläge anzeigen
+      archived_proposals: Archivierte Vorschläge
       proposals_lists: Vorschläge-Liste
       retired_links:
         all: Alle
@@ -484,6 +493,17 @@ de:
       links: Links
     resources:
       available_resources: Verfügbare Ressourcen
+    resource:
+      required_days: "%{days} benötigte Tage"
+      required_supports: "%{supports} benötigte Unterstützung"
+      and: und
+      view_resource: Ressourcen ansehen
+      resource_requested: Bereits angeforderte Ressource
+      request_resource: Angefragte Ressource
+      resource_locked: Ressource gesperrt
+    recommended_actions:
+      title: Empfohlene Aktionen
+      goto_proposed_actions: Gehe zu empfohlenen Aktionen
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
