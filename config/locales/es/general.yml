@@ -40,6 +40,14 @@ es:
         zero: Sin respuestas
         one: 1 Respuesta
         other: "%{count} Respuestas"
+      responses_show:
+        zero: Sin respuestas
+        one: "1 respuesta (mostrar)"
+        other: "%{count} respuestas (mostrar)"
+      responses_collapse:
+        zero: Sin respuestas
+        one: "1 respuesta (colapsar)"
+        other: "%{count} respuestas (colapsar)"
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
@@ -108,6 +116,9 @@ es:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
+      search_results:
+        one: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       start_debate: Empieza un debate
       title: Debates
@@ -158,12 +169,18 @@ es:
     direct_message: el mensaje privado
     error: error
     errors: errores
+    not_saved: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
     policy: Política de privacidad
+    banner: el banner
     proposal: la propuesta
     proposal_notification: "la notificación"
     budget/investment: el proyecto de gasto
     budget/group: el grupo de partidas presupuestarias
     budget/heading: la partida presupuestaria
+    geozone: la zona
+    legislation/draft_version: el borrador
+    legislation/process: el proceso
+    legislation/question: la pregunta
     poll/shift: el turno
     poll/question/answer: la respuesta
     user: la cuenta
@@ -172,6 +189,10 @@ es:
     document: el documento
     topic: Tema
     image: Imagen
+    local_census_record: el registro del censo local
+    local_census_records/import: la importación de registros del censo local
+    site_customization/content_block: el bloque
+    site_customization/page: la página
   geozones:
     none: Toda la ciudad
   layouts:
@@ -287,6 +308,7 @@ es:
     created:
       title: '¡Enhorabuena! Has dado el primer paso.'
       motivation: "Es importante preparar la campaña de lanzamiento de tu propuesta para que tenga éxito. Los primeros días son decisivos."
+      motivation_2: "<strong>Si quieres recomendaciones para preparar la publicación deja tu propuesta como borrador y te guiaremos.</strong>"
       publish: No, quiero publicar la propuesta ya
       dashboard: Si, quiero ayuda y publicaré mas tarde
       preview_title: Así es como quedará tu propuesta cuando la publiques
@@ -345,6 +367,10 @@ es:
           error: "Ha ocurrido un error. Por favor dirígete al apartado 'Mi cuenta' para desactivar las recomendaciones manualmente"
       retired_proposals: Propuestas retiradas
       retired_proposals_link: "Propuestas retiradas por sus autores"
+      selected_proposals: Propuestas seleccionadas
+      selected_proposals_link: Ver propuestas seleccionadas
+      archived_proposals: Propuestas archivadas
+      proposals_lists: Listas de propuestas
       retired_links:
         all: Todas
         duplicated: Duplicadas
@@ -356,6 +382,9 @@ es:
         button: Buscar
         placeholder: Buscar propuestas...
         title: Buscar
+      search_results:
+        one: " que contiene <strong>'%{search_term}'</strong>"
+        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
       select_order_long: "Estas viendo las propuestas"
       start_proposal: Crea una propuesta
@@ -406,6 +435,7 @@ es:
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
+      selected: "Propuesta seleccionada"
     show:
       author_deleted: Usuario eliminado
       code: "Código de la propuesta:"
@@ -440,6 +470,8 @@ es:
       mailing: Correo electrónico
       poster: Póster
       recommended_actions: Acciones recomendadas
+      messages: Mensajes a usuarios
+      related_content: Contenido relacionado
     form:
       request: Solicitar
     create_request:
@@ -501,6 +533,9 @@ es:
       debates: Debates
       comments: Comentarios
       latest_comments: Últimos mensajes
+    messages:
+      send_notification: Enviar mensaje a los que han apoyado la propuesta
+      previous_notifications: Ver notificaciones anteriores
     polls:
       index:
         title: Encuestas
@@ -522,7 +557,12 @@ es:
         view_results: Ver resultados
         edit_poll: Editar encuesta
         show_results_help: Si marcas esta casilla los resultados serán públicos y todos los usuarios podrán verlos
+        delete: Eliminar encuesta
+        alert_notice: Esta acción eliminará la encuesta y todas sus preguntas asociadas.
+        success_notice: Encuesta eliminada correctamente
+        unable_notice: No se pueden eliminar encuestas con respuestas
       form:
+        name: Título de la encuesta
         add_question: Añadir pregunta
       question_fields:
         remove_question: Borrar pregunta
@@ -534,8 +574,10 @@ es:
         title: Previsualización del poster
         poster_title: "No te quedes mirando,"
         poster_subtitle: "¡apóyame! ;)"
+        intro_text: "<strong>Estoy participando en %{org}</strong> con mi propia propuesta ciudadana y sólo si tú también te sumas podré lograr el apoyo necesario para hacer la ciudad que todos queremos."
         proposal_code: "Código de la propuesta: %{code}"
         support: Apoya mi propuesta
+        footer: "<strong>Entra en %{link} y apoya esta propuesta.</strong> Necesitamos ser muchos. Decide tu también. ¡Gracias!"
       new:
         title: Póster de tu propuesta
       options:
@@ -553,6 +595,7 @@ es:
         sent: El e-mail ha sido enviado
     mailer:
       forward:
+        subtitle: "Si me apoyas, <br>lo conseguiremos."
         support_button: Apoyar esta propuesta
         share_in: Compartir en
         hi: "¡Hola!"
@@ -592,6 +635,7 @@ es:
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar."
       comments_tab: Comentarios
+      cant_answer_verify: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
@@ -627,6 +671,7 @@ es:
     new:
       title: "Enviar mensaje"
       submit_button: "Enviar mensaje"
+      info_about_receivers: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi contenido"
@@ -656,6 +701,7 @@ es:
       to: "Hasta"
     author_info:
       author_deleted: Usuario eliminado
+      email_deleted: Email eliminado
     back: Volver
     check: Seleccionar
     check_all: Todos
@@ -665,6 +711,17 @@ es:
     follow: "Seguir"
     following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice: "¡Ahora estás siguiendo este proyecto de gasto! <br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+        destroy:
+          notice: "¡Has dejado de seguir este proyecto de gasto! <br> Ya no recibirás más notificaciones relacionadas con este proyecto."
+      proposal:
+        create:
+          notice: "¡Ahora estás siguiendo esta propuesta ciudadana! <br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
+        destroy:
+          notice: "¡Has dejado de seguir esta propuesta ciudadana! <br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
     hide: Ocultar
     print:
       print_button: Imprimir esta información
@@ -694,6 +751,7 @@ es:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
+    target_blank: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Deshacer denuncia
     unfollow_entity: "Dejar de seguir %{entity}"
@@ -713,6 +771,14 @@ es:
       title: Recomendaciones
       see_more: Ver más recomendaciones
       hide: Ocultar recomendaciones
+    translations:
+      select_language_prompt: Seleccionar idioma
+      remove_language: Eliminar idioma
+      add_language: Añadir idioma
+      languages_in_use:
+        zero: "0 idiomas en uso"
+        one: "1 idioma en uso"
+        other: "%{count} idiomas en uso"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
@@ -737,6 +803,11 @@ es:
     manage:
       all: "No tienes permiso para realizar la acción '%{action}' sobre %{subject}."
   users:
+    login_to_comment: "Necesitas %{signin} o %{signup} para comentar."
+    login_to_continue: "Necesitas %{signin} o %{signup} para continuar."
+    signin: "iniciar sesión"
+    signup: "registrarte"
+    verify_account: "verifica tu cuenta"
     direct_messages:
       new:
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
@@ -890,3 +961,9 @@ es:
       surveys: Encuestas
     poll:
       take_part: Participa del %{from} al %{to}
+  remote_translations:
+    text: El contenido de esta página no está disponible en tu idioma
+    all_remote_translations_enqueued_text: En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma
+    create:
+      enqueue_remote_translation: Se han solicitado correctamente las traducciones.
+    button: Traducir página
