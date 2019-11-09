@@ -114,6 +114,9 @@ de:
         button: Suche
         placeholder: Suche Diskussionen...
         title: Suche
+      search_results:
+        one: " enthält den Begriff <strong>'%{search_term}'</strong>"
+        other: " enthält den Begriff <strong>'%{search_term}'</strong>"
       select_order: Sortieren nach
       start_debate: Starten Sie eine Diskussion
       title: Diskussionen
@@ -164,11 +167,18 @@ de:
     direct_message: Private Nachricht
     error: Fehler
     errors: Fehler
+    not_saved: "verhinderte das Speichern dieser %{resource}. <br>Bitte überprüfen Sie die gekennzeichneten Felder, um herauszufinden wie diese korrigiert werden können:"
     policy: Datenschutzbestimmungen
+    banner: Banner
     proposal: Vorschlag
     proposal_notification: "Benachrichtigung"
     budget/investment: Ausgabenvorschlag
+    budget/group: Budget Gruppe
     budget/heading: Haushaltsbereich
+    geozone: Bezirke
+    legislation/draft_version: Entwurf
+    legislation/process: Beteiligungsverfahren
+    legislation/question: Frage
     poll/shift: Arbeitsschicht
     poll/question/answer: Antwort
     user: Konto
@@ -177,6 +187,10 @@ de:
     document: Dokument
     topic: Thema
     image: Bild
+    local_census_record: Datensätze aus dem lokalen Register
+    local_census_records/import: Import von Datensätzen aus dem lokalen Register
+    site_customization/content_block: Inhaltsblöcke
+    site_customization/page: Seite
   geozones:
     none: Ganze Stadt
   layouts:
@@ -185,6 +199,19 @@ de:
       firefox: Firefox
       ie: Wir haben festgestellt, dass Sie Internet Explorer verwenden. Für eine verbesserte Anwendung empfehlen wir %{firefox} oder %{chrome}.
       ie_title: Diese Website ist für Ihren Browser nicht optimiert
+    dashboard:
+      proposal_header:
+        published: Veröffentlicht
+        draft: Entwurf
+        retired: Zurückgezogen
+      proposal_totals:
+        active_resources: Aktive Ressourcen
+        community: Teilnehmer in Ihrer Gemeinde
+        show_proposal: Vorschlag anzeigen
+        preview_proposal: Vorschau Vorschlag
+        current_goal: Aktuelles Ziel
+        supports:
+          zero: Keine Unterstützung
     footer:
       accessibility: Barrierefreiheit
       conditions: Allgemeine Nutzungsbedingungen
