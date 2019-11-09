@@ -155,6 +155,10 @@ so:
       heading: "Miisaaniyadda ka qaybqaadashada"
       heading_selection_title: "Degmo ahaan"
       no_winner_investments: "Mana jiraan maalgalin ku guuleysta gobolkan"
+      filters:
+        status:
+          label: "Mashruca hada gobolka kasocda"
+          all: "Dhaman%{count}"
     phases:
       errors:
         dates_range_invalid: "Taariikhda bilowga ma noqon karto mid siman ama ka dambeysa taariikhda dhammaadka"
