@@ -504,6 +504,9 @@ de:
     recommended_actions:
       title: Empfohlene Aktionen
       goto_proposed_actions: Gehe zu empfohlenen Aktionen
+    poster:
+      index:
+        footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
   polls:
     all: "Alle"
     no_dates: "kein Datum zugewiesen"
