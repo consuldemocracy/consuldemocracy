@@ -257,7 +257,31 @@ da:
       search_unfeasible: Søg uigennemførlige projekter
     milestones:
       index:
+        table_title: "Titel"
+        table_description: "Beskrivelse"
+        table_publication_date: "Dato for offentliggørelse"
+        table_actions: "Handlinger"
+        delete: "Slet proces"
+        no_milestones: "Har ingen definerede processer"
+        image: "Billede"
+        show_image: "Vis billede"
+        documents: "Dokumenter"
+        milestone: Processer
+        new_milestone: Opret ny proces
         milestone_tags: Tags (proces)
+      form:
+        admin_statuses: Administrer statusser
+        no_statuses_defined: Der er endnu ingen definerede statusser
+      new:
+        creating: Opret proces
+      edit:
+        title: Rediger proces
+      create:
+        notice: Processen blev oprettet!
+      update:
+        notice: Processen blev opdateret
+      delete:
+        notice: Processen blev slettet
     statuses:
       index:
         title: Processtatus
@@ -279,15 +303,33 @@ da:
       delete:
         notice: Processtatussen blev slettet
     progress_bars:
+      manage: "Administrer statuslinje"
       index:
         title: "Statuslinjer"
+        no_progress_bars: "Der er ingen statuslinjer"
+        new_progress_bar: "Opret ny statuslinje"
+        primary: "Primære statuslinje"
+        table_title: "Titel"
+        table_percentage: "Aktuelle forløb"
+      new:
+        creating: "Opret statuslinje"
+      edit:
+        title:
+          primary: "Rediger primær statuslinje"
+          secondary: "Rediger statuslinje %{title}"
+      create:
+        notice: "Statuslinjen blev oprettet!"
+      update:
+        notice: "Statuslinjen blev opdateret"
+      delete:
+        notice: "Statuslinjen blev slettet"
     comments:
       index:
         id: "ID"
         content: "Indhold"
         author: "Oprettet af"
         commentable_type: "Type"
-        title: Kommentarer
+        title: Skjulte kommentarer
         no_comments: Der er ingen kommentarer.
         table_link: "Link"
     hidden_comments:
@@ -365,7 +407,7 @@ da:
       index:
         id: ID
         author: Oprettet af
-        title: Debatindlæg
+        title: Skjulte debatindlæg
         no_debates: Der er ingen debatindlæg.
     hidden_debates:
       index:
