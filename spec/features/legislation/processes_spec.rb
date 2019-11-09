@@ -205,11 +205,13 @@ feature "Legislation" do
       scenario "Shows Create a Proposal button when process is in draft phase" do
         process = create(:legislation_process,
                          :in_draft_phase,
-                         start_date: Date.current + 5.days,
-                         end_date: Date.current + 10.days)
+                         proposals_phase_start_date: Date.tomorrow)
 
+        login_as(administrator)
         visit legislation_process_proposals_path(process)
-        expect(page).to have_content("Create a proposal")
+        click_link "Create a proposal"
+
+        expect(page).to have_current_path new_legislation_process_proposal_path(process)
       end
     end
 
