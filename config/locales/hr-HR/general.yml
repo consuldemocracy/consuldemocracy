@@ -552,7 +552,7 @@ hr:
         title: Novo glasanje
         submit: Stvori glasanje
       edit:
-        submit: Ažuriraj glasanje
+        submit: Ažuriraj anketu
       poll:
         responses:
           one: "%{count} odgovor"
@@ -613,7 +613,7 @@ hr:
         current: "Otvoreno"
         expired: "Isteklo"
       title: "Glasovanje"
-      participate_button: "Sudjelujte u ovom glasanju"
+      participate_button: "Sudjelujte u ovoj anketi"
       participate_button_expired: "Glasanje završilo"
       no_geozone_restricted: "Svi gradovi"
       geozone_restricted: "Distrikti"
@@ -621,7 +621,7 @@ hr:
       already_answer: "Vi ste već sudjelovali u ovom glasanju"
       not_logged_in: "Morate biti ulogirani ili prijavljeni kako bi sudjelovali"
       unverified: "Morate potvrditi svoj račun da sudjelujete"
-      cant_answer: "Ovo glasanje nije dostupno za vašu geozonu"
+      cant_answer: "Ova anketa nije dostupna za vašu geozonu"
       section_header:
         icon_alt: Ikona glasanja
         title: Glasanje
@@ -632,7 +632,7 @@ hr:
       no_polls: "Ne postoji otvoreno izglasavanje."
     show:
       already_voted_in_booth: "Već ste fizički sudjelovali u glasanju. Više ne možete glasati."
-      already_voted_in_web: "Već ste sudjelovali u ovom glasanju. Ako glasate ponovno, vaš glas će biti prepisan preko."
+      already_voted_in_web: "Već ste sudjelovali u ovoj anketi. Ako glasate ponovno, vaš glas će biti prepisan preko."
       back: Nazad na glasanje
       cant_answer_not_logged_in: "Vi morate %{signin} ili %{signup} kako biste sudjelovali."
       comments_tab: Komentari
