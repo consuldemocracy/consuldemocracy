@@ -239,6 +239,29 @@ fr:
         tags_placeholder: "Saisir les étiquettes souhaitées séparées par des virgules (,)"
         undefined: Indéfini
       search_unfeasible: Recherche impossible
+    milestones:
+      index:
+        table_title: "Titre"
+        table_publication_date: "Date de publication"
+        table_status: Statut
+        delete: "Supprimer le jalon"
+        no_milestones: "Aucun jalon défini"
+        show_image: "Afficher l'image"
+        milestone: Jalon
+        new_milestone: Créer nouveau jalon
+      form:
+        admin_statuses: Administrer les statuts d'investissement
+        no_statuses_defined: Il n'y a pas encore de statuts d'investissement définis
+      new:
+        creating: Créer un nouveau jalon
+      edit:
+        title: Modifier le jalon
+      create:
+        notice: Nouveau jalon créé avec succès !
+      update:
+        notice: Mise à jour du jalon réussie
+      delete:
+        notice: Jalon supprimé avec succès
     statuses:
       index:
         title: Statuts d’investissement
@@ -260,8 +283,29 @@ fr:
       delete:
         notice: Le statut d'investissement a été supprimé avec succès
     progress_bars:
+      manage: "Gérer la barre de progrès"
       index:
         title: "Barres de progrès"
+        no_progress_bars: "Il n'y a pas de barres de progrès"
+        new_progress_bar: "Créer une nouvelle barre de progrès"
+        primary: "Barre de progrès primaire"
+        table_title: "Titre"
+        table_percentage: "Progrès actuel"
+      new:
+        creating: "Créer une nouvelle barre de progrès"
+      edit:
+        title:
+          primary: "Editer la barre de progrès primaire"
+          secondary: "Editer la barre de progrès %{title}"
+      create:
+        notice: "Barre de progrès créée avec succès!"
+      update:
+        notice: "Barre de progrès mise à jour avec succès"
+      delete:
+        notice: "Barre de progrès supprimée avec succès"
+    comments:
+      index:
+        title: Commentaires masqués
     dashboard:
       index:
         back: Revenir
@@ -322,6 +366,9 @@ fr:
           request: Ressource demandées
         update:
           success: La tâche a été marquée comme résolue.
+    debates:
+      index:
+        title: Débats masqués
     documents:
       new:
         title: "Mettre en ligne un document"
