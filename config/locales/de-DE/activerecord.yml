@@ -161,6 +161,8 @@ de:
         milestone_tag_list: "Status des Ausgabenvorschlags"
         price_explanation: "Erläuterung der Kosten"
         selected: "Als ausgewählt markieren"
+        selected_true: "Ausgewählt"
+        selected_false: "Nicht ausgewählt"
         unfeasibility_explanation: "Erläuterung der Durchführbarkeit"
         valuation_finished: "Begutachtung abgeschlossen"
         valuator_ids: "Gruppen"
@@ -512,6 +514,10 @@ de:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Entwurfsphase sein
             allegations_end_date:
               invalid_date_range: muss an oder nach dem Anfangsdatum der Überprüfung sein
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: ist nicht in der Liste enthalten, zulässig sind die Werte 1 für Personalausweis, 2 für Reisepass und 3 für Aufenthaltsberechtigung.
         proposal:
           attributes:
             tag_list:
