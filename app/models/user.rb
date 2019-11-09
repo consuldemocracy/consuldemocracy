@@ -78,6 +78,8 @@ class User < ApplicationRecord
 
   validates :username, presence: true, if: :username_required?
   validates :username, uniqueness: { scope: :registering_with_oauth }, if: :username_required?
+  validates :email, presence: true, 'valid_email_2/email': true, allow_blank: true
+  validates :email, 'valid_email_2/email': { mx: true }
   validates :document_number, uniqueness: { scope: :document_type }, allow_nil: true
 
   validate :validate_username_length
