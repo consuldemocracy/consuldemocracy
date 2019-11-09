@@ -201,6 +201,33 @@ zh-TW:
         tags_placeholder: "寫下你想要的標籤，用逗號 (,) 作分隔"
         undefined: 未定義
       search_unfeasible: 搜尋不可行
+    milestones:
+      index:
+        table_title: "標題"
+        table_description: "描述"
+        table_publication_date: "出版日期"
+        table_status: 狀態
+        table_actions: "行動"
+        delete: "刪除里程碑"
+        no_milestones: "沒有已定義的里程碑"
+        image: "圖像"
+        show_image: "顯示圖像"
+        documents: "文檔"
+        milestone: 里程碑
+        new_milestone: 創建新的里程碑
+      form:
+        admin_statuses: 管理投資狀態
+        no_statuses_defined: 尚未有定義投資狀態
+      new:
+        creating: 創建里程碑
+      edit:
+        title: 編輯里程碑
+      create:
+        notice: 新的里程碑已創建成功!
+      update:
+        notice: 里程碑已成功更新
+      delete:
+        notice: 里程碑已成功刪除
     statuses:
       index:
         title: 投資狀態
@@ -221,11 +248,21 @@ zh-TW:
         notice: 投資狀態已創建成功
       delete:
         notice: 投資狀態已成功刪除
+    progress_bars:
+      index:
+        table_kind: "類型"
+        table_title: "標題"
+    comments:
+      index:
+        title: 隱藏的評論
     dashboard:
       index:
         back: 返回 %{org}
         title: 管理
         description: 歡迎使用 %{org} 管理面板。
+    debates:
+      index:
+        title: 隱藏的辯論
     hidden_users:
       index:
         filter: 篩選器
