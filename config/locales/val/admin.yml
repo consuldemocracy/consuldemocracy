@@ -235,6 +235,32 @@ val:
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Buscar inviables
+    milestones:
+      index:
+        table_title: "Títol"
+        table_description: "Descripció"
+        table_publication_date: "Data de publicació"
+        table_status: Estat
+        table_actions: "Accions"
+        delete: "Eliminar fita"
+        no_milestones: "No hi ha fites definides"
+        image: "Imatge"
+        show_image: "Mostrar imatge"
+        milestone: Seguiment
+        new_milestone: Crear nova fita
+      form:
+        admin_statuses: Estat administratiu de les propostes
+        no_statuses_defined: No hi ha estats de projectes definits
+      new:
+        creating: Crear fita
+      edit:
+        title: Editar fita
+      create:
+        notice: Nova fita creada amb èxit!
+      update:
+        notice: Fita actualitzada
+      delete:
+        notice: Fita eliminada correctament
     statuses:
       index:
         title: Estat de les propostes
@@ -258,11 +284,20 @@ val:
     progress_bars:
       index:
         title: "Barres de progrés"
+        table_kind: "Tipus"
+        table_title: "Títol"
+        table_percentage: "Progrés actual"
+    comments:
+      index:
+        title: Comentaris ocults
     dashboard:
       index:
         back: Tornar a %{org}
         title: Administració
         description: Benvingut al panell d'administració de %{org}.
+    debates:
+      index:
+        title: Debats ocults
     hidden_users:
       index:
         filter: Filtre
