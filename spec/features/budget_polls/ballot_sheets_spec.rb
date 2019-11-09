@@ -150,7 +150,7 @@ describe "Poll budget ballot sheets" do
 
       expect(page).to have_content("Ballot sheet #{ballot_sheet.id}")
       expect(page).to have_content(ballot_sheet.author)
-      expect(page).to have_content(ballot_sheet.data)
+      expect(page).to have_content(ballot_sheet.data.squish)
     end
   end
 end
