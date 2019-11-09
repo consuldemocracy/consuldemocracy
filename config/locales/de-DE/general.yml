@@ -644,6 +644,13 @@ de:
       budget_investment:
         create:
           notice: "Sie folgen nun diesem Investitionsprojekt! <br> Wir werden Sie bei Änderungen benachrichtigen, sodass Sie immer auf dem Laufenden sind."
+        destroy:
+          notice: "Sie haben aufgehört diesem Investitionsprojekt zu folgen! <br> Sie werden nicht länger Benachrichtigungen zu diesem Projekt erhalten."
+      proposal:
+        create:
+          notice: "Jetzt folgen Sie diesem Bürgervorschlag! <br> Wir werden Sie über Änderungen benachrichtigen sobald diese erscheinen, sodass Sie auf dem neusten Stand sind."
+        destroy:
+          notice: "Sie haben aufgehört diesem Bürgervorschlag zu folgen! <br> Sie werden nicht länger Benachrichtigungen zu diesem Vorschlag erhalten."
     hide: Verbergen
     print:
       print_button: Diese Info drucken
@@ -673,6 +680,7 @@ de:
       districts: "Bezirke"
       districts_list: "Liste der Bezirke"
       categories: "Kategorien"
+    target_blank: " (Link öffnet im neuen Fenster)"
     you_are_in: "Sie befinden sich in"
     unflag: Markierung aufheben
     unfollow_entity: "Nicht länger folgen %{entity}"
@@ -692,6 +700,14 @@ de:
       title: Empfehlungen
       see_more: Weitere Empfehlungen anzeigen
       hide: Empfehlungen ausblenden
+    translations:
+      select_language_prompt: Sprache wählen
+      remove_language: Sprache entfernen
+      add_language: Sprache hinzufügen
+      languages_in_use:
+        zero: "O verwendete Sprachen "
+        one: "1 verwendete Sprachen"
+        other: "%{count} verwendete Sprachen"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -716,6 +732,11 @@ de:
     manage:
       all: "Sie sind nicht berechtigt die Aktion '%{action}' %{subject} auszuführen."
   users:
+    login_to_comment: "Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen."
+    login_to_continue: "Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können."
+    signin: "anmelden"
+    signup: "registrieren"
+    verify_account: "verifizieren Sie Ihr Konto"
     direct_messages:
       new:
         direct_messages_bloqued: "Der Benutzer hat entschieden, keine direkten Nachrichten zu erhalten"
@@ -730,6 +751,7 @@ de:
       deleted_proposal: Dieser Vorschlag wurde gelöscht
       deleted_budget_investment: Dieses Investitionsprojekt wurde gelöscht
       proposals: Vorschläge
+      proposals_status: Status
       debates: Diskussionen
       budget_investments: Budgetinvestitionen
       comments: Kommentare
@@ -757,7 +779,11 @@ de:
       delete_alert: "Sind Sie sicher, dass Sie Ihr Investitionsprojekt löschen wollen? Diese Aktion kann nicht widerrufen werden!"
     proposals:
       retired: "Vorschlag im Ruhezustand"
+      draft: Entwurf
+      published: Veröffentlicht
       see: "Vorschlag anzeigen"
+      actions: Aktionen
+      retired_help_text: Dashboard nicht verfügbar für zurückgezogene Vorschläge
   votes:
     agree: Ich stimme zu
     anonymous: Zu viele anonyme Stimmen, um die Wahl anzuerkennen %{verify_account}.
@@ -807,6 +833,7 @@ de:
       title: Konto Verifizierung
     welcome:
       go_to_index: Vorschläge und Diskussionen anzeigen
+      start_using_consul: Gehe zum Index
       title: Teilnehmen
       user_permission_debates: An Diskussionen teilnehmen
       user_permission_info: Mit Ihrem Konto können Sie...
@@ -844,3 +871,6 @@ de:
       alt: Wählen Sie den Text, den Sie kommentieren möchten und drücken Sie den Button mit dem Stift.
       text: Um dieses Dokument zu kommentieren, müssen Sie %{sign_in} oder %{sign_up}. Dann wählen Sie den Text aus, den Sie kommentieren möchten und klicken auf den Button mit dem Stift.
       title: Wie kann ich dieses Dokument kommentieren?
+  links:
+    form:
+      delete_button: Löschen
