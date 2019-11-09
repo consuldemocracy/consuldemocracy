@@ -167,6 +167,30 @@ es-PE:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    milestones:
+      index:
+        table_title: "Título"
+        table_description: "Descripción detallada"
+        table_publication_date: "Fecha de publicación"
+        table_status: Estado
+        table_actions: "Acciones"
+        delete: "Eliminar hito"
+        no_milestones: "No hay hitos definidos"
+        image: "Imagen"
+        show_image: "Mostrar imagen"
+        documents: "Documentos"
+        milestone: Seguimiento
+        new_milestone: Crear nuevo hito
+      new:
+        creating: Crear hito
+      edit:
+        title: Editar hito
+      create:
+        notice: Nuevo hito creado con éxito!
+      update:
+        notice: Hito actualizado
+      delete:
+        notice: Hito borrado correctamente
     statuses:
       index:
         table_name: Nombre
@@ -174,11 +198,21 @@ es-PE:
         table_actions: Acciones
         delete: Borrar
         edit: Editar propuesta
+    progress_bars:
+      index:
+        table_kind: "Tipo"
+        table_title: "Título"
+    comments:
+      index:
+        title: Comentarios ocultos
     dashboard:
       index:
         back: Volver a %{org}
         title: Administración
         description: Bienvenido al panel de administración de %{org}.
+    debates:
+      index:
+        title: Debates ocultos
     hidden_users:
       index:
         filter: Filtrar
