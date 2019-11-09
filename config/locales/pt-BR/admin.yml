@@ -202,6 +202,32 @@ pt-BR:
         tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas (,)"
         undefined: Não definido
       search_unfeasible: Pesquisar inviáveis
+    milestones:
+      index:
+        table_title: "Título"
+        table_description: "Descrição"
+        table_publication_date: "Data de publicação"
+        table_actions: "Ações"
+        delete: "Deletar marco"
+        no_milestones: "Não possui marcos definidos"
+        image: "Imagem"
+        show_image: "Mostrar imagem"
+        documents: "Documentos"
+        milestone: Marco
+        new_milestone: Criar marco
+      form:
+        admin_statuses: Status dos investimentos para administrador
+        no_statuses_defined: Ainda não há status de investimento definidos
+      new:
+        creating: Criar marco
+      edit:
+        title: Editar marco
+      create:
+        notice: Novo marco criado com sucesso!
+      update:
+        notice: Marco atualizado com sucesso
+      delete:
+        notice: Marco excluído com sucesso
     statuses:
       index:
         title: Status de investimento
@@ -222,6 +248,10 @@ pt-BR:
         notice: Status de investimento criado com sucesso
       delete:
         notice: Status de investimento excluído com sucesso
+    progress_bars:
+      index:
+        table_kind: "Tipo"
+        table_title: "Título"
     comments:
       index:
         author: "Autor"
@@ -267,6 +297,9 @@ pt-BR:
       administrator_tasks:
         index:
           source: Fonte
+    debates:
+      index:
+        title: Debates ocultos
     documents:
       destroy:
         success_notice: "Documento excluído com sucesso"
