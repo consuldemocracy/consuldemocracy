@@ -151,6 +151,13 @@ ca:
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
       search_unfeasible: Cercar inviables
+    milestones:
+      index:
+        table_title: "Títol"
+        table_description: "Descripció detallada"
+        table_status: Estat
+        table_actions: "Accions"
+        image: "imatge"
     statuses:
       index:
         table_name: Nome
@@ -158,9 +165,19 @@ ca:
         table_actions: Accions
         delete: Borrar
         edit: Editar proposta
+    progress_bars:
+      index:
+        table_kind: "tipus"
+        table_title: "Títol"
+    comments:
+      index:
+        title: Comentaris ocults
     dashboard:
       index:
         title: Administrar
+    debates:
+      index:
+        title: Debats ocults
     hidden_users:
       index:
         filter: Filtrar
