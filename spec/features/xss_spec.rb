@@ -25,6 +25,16 @@ describe "Cross-Site Scripting protection", :js do
     expect(page.text).not_to be_empty
   end
 
+  scenario "banner URL" do
+    banner = create(:banner, title: "Banned!", target_url: "javascript:document.body.remove()")
+
+    login_as(create(:administrator).user)
+    visit edit_admin_banner_path(banner)
+    find(:css, "a", text: "Banned!").click
+
+    expect(page.text).not_to be_empty
+  end
+
   scenario "document title" do
     process = create(:legislation_process)
     create(:document, documentable: process, title: attack_code)
