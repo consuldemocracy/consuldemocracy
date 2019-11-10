@@ -50,4 +50,15 @@ describe DebatesController do
       end.not_to change { debate.reload.votes_for.size }
     end
   end
+
+  describe "PUT mark_featured" do
+    it "ignores query parameters" do
+      debate = create(:debate)
+      sign_in create(:administrator).user
+
+      get :mark_featured, params: { id: debate, controller: "proposals" }
+
+      expect(response).to redirect_to debates_path
+    end
+  end
 end
