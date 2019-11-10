@@ -120,4 +120,8 @@ class ApplicationController < ActionController::Base
     def current_budget
       Budget.current
     end
+
+    def redirect_with_query_params_to(options, response_status = {})
+      redirect_to request.query_parameters.merge(options), response_status
+    end
 end

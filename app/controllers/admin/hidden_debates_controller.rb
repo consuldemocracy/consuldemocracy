@@ -13,14 +13,14 @@ class Admin::HiddenDebatesController < Admin::BaseController
 
   def confirm_hide
     @debate.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def restore
     @debate.restore!(recursive: true)
     @debate.ignore_flag
     Activity.log(current_user, :restore, @debate)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   private
