@@ -3,7 +3,7 @@ module ApplicationHelper
   # notice: if query_params have a param which also exist in current path,
   # it "overrides" (query_params is merged last)
   def current_path_with_query_params(query_parameters)
-    url_for(request.query_parameters.merge(query_parameters))
+    url_for(request.query_parameters.merge(query_parameters).merge(only_path: true))
   end
 
   def markdown(text)
