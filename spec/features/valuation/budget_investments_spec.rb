@@ -85,7 +85,8 @@ describe "Valuation budget investments" do
     end
 
     scenario "Index displays investments paginated" do
-      per_page = Kaminari.config.default_per_page
+      per_page = 3
+      allow(Budget::Investment).to receive(:default_per_page).and_return(per_page)
       (per_page + 2).times do
         create(:budget_investment, :visible_to_valuators, budget: budget, valuators: [valuator])
       end

@@ -119,7 +119,8 @@ describe "Moderate budget investments" do
       end
 
       scenario "remembering page, filter and order" do
-        create_list(:budget_investment, 52, heading: heading, author: create(:user))
+        stub_const("#{ModerateActions}::PER_PAGE", 2)
+        create_list(:budget_investment, 4, heading: heading, author: create(:user))
 
         visit moderation_budget_investments_path(filter: "all", page: "2", order: "created_at")
 

@@ -90,8 +90,8 @@ describe "Admin hidden budget investments" do
   end
 
   scenario "Action links remember the pagination setting and the filter" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 2).times { create(:budget_investment, :hidden, :with_confirmed_hide, heading: heading) }
+    allow(Budget::Investment).to receive(:default_per_page).and_return(2)
+    4.times { create(:budget_investment, :hidden, :with_confirmed_hide, heading: heading) }
 
     visit admin_hidden_budget_investments_path(filter: "with_confirmed_hide", page: 2)
 

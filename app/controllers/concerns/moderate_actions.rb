@@ -1,12 +1,13 @@
 module ModerateActions
   extend ActiveSupport::Concern
   include Polymorphic
+  PER_PAGE = 50
 
   def index
     @resources = @resources.send(@current_filter)
                            .send("sort_by_#{@current_order}")
                            .page(params[:page])
-                           .per(50)
+                           .per(PER_PAGE)
     set_resources_instance
   end
 

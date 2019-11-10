@@ -91,7 +91,8 @@ describe "Proposals" do
     end
 
     scenario "Pagination" do
-      per_page = Kaminari.config.default_per_page
+      per_page = 3
+      allow(Proposal).to receive(:default_per_page).and_return(per_page)
       (per_page + 2).times { create(:proposal) }
 
       visit proposals_path

@@ -202,9 +202,9 @@ describe "Admin::Organizations" do
     expect(page).not_to have_content("Verified Organization")
   end
 
-  scenario "Verifying organization links remember the pagination setting and the filter" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 2).times { create(:organization) }
+  scenario "Verifying organization links remembers parameters " do
+    allow(Organization).to receive(:default_per_page).and_return(2)
+    4.times { create(:organization) }
 
     visit admin_organizations_path(filter: "pending", page: 2)
 
