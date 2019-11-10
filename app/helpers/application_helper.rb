@@ -1,12 +1,4 @@
 module ApplicationHelper
-  def home_page?
-    return false if user_signed_in?
-
-    # Using path because fullpath yields false negatives since it contains
-    # parameters too
-    request.path == "/"
-  end
-
   # if current path is /debates current_path_with_query_params(foo: "bar") returns /debates?foo=bar
   # notice: if query_params have a param which also exist in current path,
   # it "overrides" (query_params is merged last)

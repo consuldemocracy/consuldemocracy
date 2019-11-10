@@ -19,22 +19,6 @@ module PollsHelper
     end
   end
 
-  def poll_dates_select_options(poll)
-    options = []
-    (poll.starts_at.to_date..poll.ends_at.to_date).each do |date|
-      options << [l(date, format: :long), l(date)]
-    end
-    options_for_select(options, params[:d])
-  end
-
-  def poll_booths_select_options(poll)
-    options = []
-    poll.booths.each do |booth|
-      options << [booth_name_with_location(booth), booth.id]
-    end
-    options_for_select(options)
-  end
-
   def booth_name_with_location(booth)
     location = booth.location.blank? ? "" : " (#{booth.location})"
     booth.name + location

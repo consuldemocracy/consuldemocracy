@@ -1,12 +1,4 @@
 class Admin::SettingsController < Admin::BaseController
-  include Admin::ManagesProposalSettings
-
-  helper_method :successful_proposal_setting, :successful_proposals,
-                :poll_feature_short_title_setting, :poll_feature_description_setting,
-                :poll_feature_link_setting, :email_feature_short_title_setting,
-                :email_feature_description_setting,
-                :poster_feature_short_title_setting, :poster_feature_description_setting
-
   def index
     all_settings = Setting.all.group_by(&:type)
     @configuration_settings = all_settings["configuration"]
