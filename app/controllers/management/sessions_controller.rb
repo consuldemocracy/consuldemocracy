@@ -4,6 +4,7 @@ class Management::SessionsController < ActionController::Base
   include GlobalizeFallbacks
   include AccessDeniedHandler
   default_form_builder ConsulFormBuilder
+  protect_from_forgery with: :exception
 
   def create
     destroy_session
