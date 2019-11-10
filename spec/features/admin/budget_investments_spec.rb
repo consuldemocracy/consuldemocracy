@@ -1543,7 +1543,7 @@ describe "Admin budget investments" do
       before { selected_bi.update(cached_votes_up: 50) }
 
       scenario "After unselecting an investment", :js do
-        create_list(:budget_investment, 30, budget: budget)
+        allow(Budget::Investment).to receive(:default_per_page).and_return(3)
 
         visit admin_budget_budget_investments_path(budget)
 

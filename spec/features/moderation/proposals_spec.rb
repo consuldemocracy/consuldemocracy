@@ -105,7 +105,8 @@ describe "Moderate proposals" do
       end
 
       scenario "remembering page, filter and order" do
-        create_list(:proposal, 52)
+        stub_const("#{ModerateActions}::PER_PAGE", 2)
+        create_list(:proposal, 4)
 
         visit moderation_proposals_path(filter: "all", page: "2", order: "created_at")
 

@@ -40,7 +40,8 @@ describe "Admin local census records" do
     end
 
     scenario "Should show paginator" do
-      create_list(:local_census_record, 25)
+      allow(LocalCensusRecord).to receive(:default_per_page).and_return(3)
+      create_list(:local_census_record, 3)
       visit admin_local_census_records_path
 
       within ".pagination" do

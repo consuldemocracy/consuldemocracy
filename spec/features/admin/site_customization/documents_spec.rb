@@ -37,8 +37,9 @@ describe "Documents" do
   end
 
   scenario "Index (pagination)" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 5).times { create(:document, :admin) }
+    per_page = 3
+    allow(Document).to receive(:default_per_page).and_return(per_page)
+    (per_page + 2).times { create(:document, :admin) }
 
     visit admin_site_customization_documents_path
 
@@ -51,7 +52,7 @@ describe "Documents" do
       click_link "Next", exact: false
     end
 
-    expect(page).to have_selector("#documents .document", count: 5)
+    expect(page).to have_selector("#documents .document", count: 2)
   end
 
   scenario "Create" do
