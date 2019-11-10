@@ -84,15 +84,9 @@
     <div class="actions small-12 medium-3 column">
       <%= f.submit(class: "button expanded", value: t("admin.banners.edit.form.submit_button")) %>
     </div>
+  </div>
 
-    <div id="js-banner-background" class="banner clear"
-                                   style="background-color:<%= @banner.background_color %>">
-      <%= link_to @banner.target_url do %>
-        <h2 id="js-banner-title" style="color:<%= @banner.font_color %>"><%= @banner.title %></h2>
-        <h3 id="js-banner-description" style="color:<%= @banner.font_color %>">
-          <%= @banner.description %>
-        </h3>
-      <% end %>
-    </div>
+  <div class="row">
+    <%= render "shared/banner", banner: @banner %>
   </div>
 <% end %>
