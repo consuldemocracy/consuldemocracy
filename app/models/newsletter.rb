@@ -3,7 +3,7 @@ class Newsletter < ApplicationRecord
 
   validates :subject, presence: true
   validates :segment_recipient, presence: true
-  validates :from, presence: true, format: { with: /@/ }
+  validates :from, presence: true, format: { with: /\A.+@.+\Z/ }
   validates :body, presence: true
   validate :validate_segment_recipient
 
