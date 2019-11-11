@@ -4,6 +4,7 @@ gl:
     no_reply: "Esta mensaxe enviouse desde un enderezo de correo electrónico que non admite respostas."
     comment:
       hi: Ola
+      new_comment_by: Hai un novo comentario de <strong>%{commenter}</strong> en
       subject: Alguén comentou no teu %{commentable}
       title: Novo comentario
     config:
@@ -15,6 +16,7 @@ gl:
       title: Verifica a túa conta co seguinte enlace
     reply:
       hi: Ola
+      new_reply_by: Hai unha nova resposta de <strong>%{commenter}</strong> ao tu comentario en
       subject: Alguén respondeu ao teu comentario
       title: Nova resposta ao teu comentario
     proposal_notification_digest:
