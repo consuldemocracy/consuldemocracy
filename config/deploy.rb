@@ -28,6 +28,8 @@ set :keep_releases, 5
 
 set :local_user, ENV["USER"]
 
+set :puma_restart_command, "bundle exec --keep-file-descriptors puma"
+
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
 
