@@ -3,6 +3,7 @@ ca:
     no_reply: "Aquest missatge s'ha enviat des d'una adreça de correu electrònic que no admet respostes."
     comment:
       hi: Hola
+      new_comment_by: Hi ha un nou comentari de <strong>%{commenter}</strong> en
       subject: Algú ha comentat en el teu %{commentable}
       title: Nou comentari
     config:
@@ -14,6 +15,7 @@ ca:
       title: Verifica el teu compte amb el següent enllaç
     reply:
       hi: Hola
+      new_reply_by: Hi ha una nova resposta de <strong>%{commenter}</strong> al teu comentari en
       subject: Algú ha respost al teu comentari
       title: Nova resposta al teu comentari
     proposal_notification_digest:
