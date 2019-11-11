@@ -3,6 +3,7 @@ ar:
     no_reply: "تم إرسال هذه الرسالة من عنوان بريد إلكتروني لا يقبل الردود."
     comment:
       hi: مرحبا
+      new_comment_by: هناك تعليق جديد من <strong>%{commenter}</strong>
       subject: تم التعليق على %{commentable}
       title: تعليق جديد
     config:
@@ -14,6 +15,7 @@ ar:
       title: أكد حسابك باستخدام الرابط التالي
     reply:
       hi: مرحبا
+      new_reply_by: وهناك رد جديد من <strong>%{commenter}</strong> على التعليق الخاص بك
       subject: يوجد رد على تعليقك
       title: اجابة جديدة على تعليقك
     proposal_notification_digest:
