@@ -3,6 +3,7 @@ he:
     no_reply: "נא לא לענות לכתובת דואר זו."
     comment:
       hi: שלום
+      new_comment_by: ישנה הערה חדשה מ <strong>%{commenter}</strong>
       subject: ישנה הערה חדשה %{commentable}
       title: הערה חדשה
     config:
@@ -14,6 +15,7 @@ he:
       title: אשר את חשבונך באמצעות הקישור הבא
     reply:
       hi: שלום
+      new_reply_by: ישנה התייחסות חדשה מ <strong>%{commenter}</strong> לתגוב
       subject: מישהו הגיב להערה שלך
       title: התקבלה תגובה חדשה להערה שלך
     proposal_notification_digest:
