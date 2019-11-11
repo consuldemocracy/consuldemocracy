@@ -15,6 +15,7 @@ zh-TW:
       title: 使用以下鏈接確認您的帳戶
     reply:
       hi: 您好
+      new_reply_by: <strong>%{commenter}</strong>對您的評論有新的回覆
       subject: 有人回覆了您的評論
       title: 對您的評論的新回覆
     proposal_notification_digest:
