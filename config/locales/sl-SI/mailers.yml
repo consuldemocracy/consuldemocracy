@@ -3,6 +3,7 @@ sl:
     no_reply: "To sporočilo je bilo poslano z e-naslova, ki ne sprejema odgovorov."
     comment:
       hi: Hej
+      new_comment_by: Imaš nov komentar uporabnika/-ce <strong>%{commenter}</strong>
       subject: Nekdo je komentiral na tvoj %{commentable}
       title: Nov komentar
     config:
@@ -14,6 +15,7 @@ sl:
       title: Potrdi svoj račun z uporabo naslednje povezave
     reply:
       hi: Hej
+      new_reply_by: Imaš nov odgovor uporabnika/-ce <strong>%{commenter}</strong> na tvoj komentar o
       subject: Nekdo se je odzval na tvoj komentar
       title: Nov odgovor na tvoj komentar
     proposal_notification_digest:
