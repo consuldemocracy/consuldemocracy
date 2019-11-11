@@ -3,6 +3,7 @@ sq:
     no_reply: "Ky mesazh u dërgua nga një adresë e-mail që nuk pranon përgjigje."
     comment:
       hi: Përshëndetje!
+      new_comment_by: Ka një koment të ri nga<strong>%{commenter}</strong>
       subject: Dikush ka komentuar mbi %{commentable} tuaj
       title: Komenti i ri
     config:
@@ -14,6 +15,7 @@ sq:
       title: Konfirmo llogarinë tënd duke përdorur lidhjen e mëposhtme
     reply:
       hi: Hi
+      new_reply_by: Ka një përgjigje të re nga <strong>%{commenter}</strong> në komentin tuaj
       subject: Dikush i është përgjigjur komentit tuaj
       title: Përgjigje e re tek komentit tuaj
     proposal_notification_digest:
