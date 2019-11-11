@@ -3,6 +3,7 @@ pl:
     no_reply: "Ta wiadomość została wysłana z adresu e-mail, który nie akceptuje odpowiedzi."
     comment:
       hi: Cześć
+      new_comment_by: Nowy komentarz od <strong>%{commenter}</strong>
       subject: Ktoś skomentował Twój %{commentable}
       title: Nowy komentarz
     config:
@@ -14,6 +15,7 @@ pl:
       title: Potwierdź swoje konto za pomocą następującego linku
     reply:
       hi: Cześć
+      new_reply_by: Nowa odpowiedź od <strong>%{commenter}</strong> na Twój komentarz odnośnie
       subject: Ktoś odpowiedział na Twój komentarz
       title: Nowa odpowiedź na Twój komentarz
     proposal_notification_digest:
