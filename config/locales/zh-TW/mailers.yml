@@ -3,6 +3,7 @@ zh-TW:
     no_reply: "此郵件是從一個不接受回覆的電郵地址發送的。"
     comment:
       hi: 您好
+      new_comment_by: <strong>%{commenter}</strong>發表了新評論
       subject: 有人評論了您的%{commentable}
       title: 新評論
     config:
