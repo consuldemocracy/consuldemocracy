@@ -3,6 +3,7 @@ so:
     no_reply: "Farriintan waxaa loo direy cinwaanka emailka ah ee aan aqbalin jawaab-celinta."
     comment:
       hi: Haye
+      new_comment_by: Waxa jira faalo cusub<strong>%{commenter}</strong>
       subject: Qof ayaa ka falooday%{commentable}
       title: Faalo cusub
     config:
@@ -14,6 +15,7 @@ so:
       title: Xaqiiji xisaabtaada adigoo isticmaalaya xiriirka soo socda
     reply:
       hi: Haye
+      new_reply_by: Waxaa jira jawaab cusub oo ka socota <strong>%{commenter}</strong> si aad faallo uga bixiso
       subject: Qof ayaa kajawaabay faladadii
       title: Jawaabta cusub ee faalladaada
     proposal_notification_digest:
