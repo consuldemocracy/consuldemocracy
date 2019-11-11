@@ -412,7 +412,7 @@ es:
       newsletter:
         segment_recipient: Destinatarios
         subject: Asunto
-        from: "Enviado por"
+        from: "Dirección de correo electrónico que aparecerá como remitente de la newsletter"
         body: Contenido del email
       admin_notification:
         segment_recipient: Destinatarios
