@@ -20,6 +20,7 @@ es:
         email:
           recipient: "Email"
       verification/letter:
+        email: "Email"
         password: "Contraseña"
         verification_code: "Código que has recibido en tu carta"
       verification/management/document:
