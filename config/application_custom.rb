@@ -35,7 +35,12 @@ module Consul
     require Rails.root.join("lib/custom/census_caller")
 
     config.i18n.default_locale = :es
-    config.i18n.available_locales = [:es]
+
+    if Rails.env.development?
+      config.i18n.available_locales = [:es, :en] # Otherwise db:dev_seed breaks
+    else
+      config.i18n.available_locales = [:es]
+    end
   end
 end
 
