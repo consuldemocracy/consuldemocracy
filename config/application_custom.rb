@@ -25,7 +25,7 @@ end
 
 CENSUS_DICTIONARY = census_dictionary.freeze
 
-puts JSON.pretty_generate(CENSUS_DICTIONARY) if Rails.env.development?
+# puts JSON.pretty_generate(CENSUS_DICTIONARY) if Rails.env.development?
 
 I18n.enforce_available_locales = false
 
