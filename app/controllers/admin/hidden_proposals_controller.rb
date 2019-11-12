@@ -14,14 +14,14 @@ class Admin::HiddenProposalsController < Admin::BaseController
 
   def confirm_hide
     @proposal.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def restore
     @proposal.restore(recursive: true)
     @proposal.ignore_flag
     Activity.log(current_user, :restore, @proposal)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   private

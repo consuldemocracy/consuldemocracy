@@ -40,6 +40,15 @@ describe "Localization" do
     expect(page).to have_select("locale-switcher", selected: "Español")
   end
 
+  scenario "Keeps query parameters while using protected redirects", :js do
+    visit "/debates?order=created_at&host=evil.dev"
+
+    select("Español", from: "locale-switcher")
+
+    expect(current_host).to eq "http://127.0.0.1"
+    expect(page).to have_current_path "/debates?locale=es&order=created_at"
+  end
+
   context "Only one locale" do
     before do
       allow(I18n).to receive(:available_locales).and_return([:en])

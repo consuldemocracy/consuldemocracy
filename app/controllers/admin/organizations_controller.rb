@@ -19,11 +19,11 @@ class Admin::OrganizationsController < Admin::BaseController
 
   def verify
     @organization.verify
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def reject
     @organization.reject
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 end
