@@ -21,7 +21,7 @@ set :log_level, :info
 set :pty, true
 set :use_sudo, false
 
-set :linked_files, %w[config/database.yml config/secrets.yml config/environments/production.rb]
+set :linked_files, %w[config/database.yml config/secrets.yml]
 set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets]
 
 set :keep_releases, 5
@@ -46,6 +46,9 @@ namespace :deploy do
   before "deploy:migrate", "remove_local_census_records_duplicates"
 
   after "deploy:migrate", "add_new_settings"
+
+  before :publishing, "smtp_ssl_and_delay_jobs_secrets"
+
   after :publishing, "deploy:restart"
   after :published, "delayed_job:restart"
   after :published, "refresh_sitemap"
@@ -123,6 +126,32 @@ task :setup_puma do
 
       if test("[ -e #{shared_path}/sockets/unicorn.sock ]")
         execute "ln -sf #{shared_path}/tmp/sockets/puma.sock #{shared_path}/sockets/unicorn.sock; true"
+      end
+    end
+  end
+end
+
+task :smtp_ssl_and_delay_jobs_secrets do
+  on roles(:app) do
+    within current_path do
+      with rails_env: fetch(:rails_env) do
+        tasks_file_path = "lib/tasks/secrets.rake"
+        shared_secrets_path = "#{shared_path}/config/secrets.yml"
+
+        unless test("[ -e #{current_path}/#{tasks_file_path} ]")
+          begin
+            unless test("[ -w #{shared_secrets_path} ]")
+              execute "sudo chown `whoami` #{shared_secrets_path}"
+              execute "chmod u+w #{shared_secrets_path}"
+            end
+
+            execute "cp #{release_path}/#{tasks_file_path} #{current_path}/#{tasks_file_path}"
+
+            execute :rake, "secrets:smtp_ssl_and_delay_jobs"
+          ensure
+            execute "rm #{current_path}/#{tasks_file_path}"
+          end
+        end
       end
     end
   end
