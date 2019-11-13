@@ -16,7 +16,7 @@
       </div>
 
       <div class="small-12 medium-3 column">
-        <% if process.proposals_phase.open? %>
+        <% if process.proposals_phase.open? || process.draft_phase.open? %>
           <p><%= link_to new_legislation_proposal_link_text(process),
                          new_legislation_process_proposal_path(process),
                          class: "button expanded",
