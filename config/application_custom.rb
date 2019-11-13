@@ -25,7 +25,7 @@ end
 
 CENSUS_DICTIONARY = census_dictionary.freeze
 
-puts JSON.pretty_generate(CENSUS_DICTIONARY) if Rails.env.development?
+# puts JSON.pretty_generate(CENSUS_DICTIONARY) if Rails.env.development?
 
 I18n.enforce_available_locales = false
 
@@ -35,7 +35,12 @@ module Consul
     require Rails.root.join("lib/custom/census_caller")
 
     config.i18n.default_locale = :es
-    config.i18n.available_locales = [:es]
+
+    if Rails.env.development?
+      config.i18n.available_locales = [:es, :en] # Otherwise db:dev_seed breaks
+    else
+      config.i18n.available_locales = [:es]
+    end
   end
 end
 
