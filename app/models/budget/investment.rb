@@ -126,7 +126,7 @@ class Budget
     end
 
     def self.sort_by_title
-      with_translation.sort_by(&:title)
+      all.sort_by(&:title)
     end
 
     def self.filter_params(params)

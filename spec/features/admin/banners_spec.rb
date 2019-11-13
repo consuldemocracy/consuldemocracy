@@ -164,7 +164,7 @@ describe "Admin banners magement" do
 
     page.find("body").click
 
-    within("div#js-banner-background") do
+    within(".banner") do
       expect(page).to have_selector("h2", text: "Modified title")
       expect(page).to have_selector("h3", text: "Edited text")
     end
