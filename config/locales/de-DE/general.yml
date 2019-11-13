@@ -504,6 +504,16 @@ de:
     recommended_actions:
       title: Empfohlene Aktionen
       goto_proposed_actions: Gehe zu empfohlenen Aktionen
+      see_proposed_actions: Siehe empfohlene Aktionen
+      hide_proposed_actions: Empfohlene Aktionen ausblenden
+      pending_title: Ausstehend
+      show_description: Zeige Beschreibung
+      without_pending_actions: Keine empfohlene Aktionen ausstehend
+      done_title: Fertig
+      without_done_actions: Keine empfohlenen Aktionen abgeschlossen
+    next_goal:
+      title: Ziel
+      see_complete_course: Siehe den kompletten Kurs
     poster:
       index:
         footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
