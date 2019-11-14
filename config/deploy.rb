@@ -140,23 +140,25 @@ end
 
 task :smtp_ssl_and_delay_jobs_secrets do
   on roles(:app) do
-    within current_path do
-      with rails_env: fetch(:rails_env) do
-        tasks_file_path = "lib/tasks/secrets.rake"
-        shared_secrets_path = "#{shared_path}/config/secrets.yml"
+    if test("[ -d #{current_path} ]")
+      within current_path do
+        with rails_env: fetch(:rails_env) do
+          tasks_file_path = "lib/tasks/secrets.rake"
+          shared_secrets_path = "#{shared_path}/config/secrets.yml"
 
-        unless test("[ -e #{current_path}/#{tasks_file_path} ]")
-          begin
-            unless test("[ -w #{shared_secrets_path} ]")
-              execute "sudo chown `whoami` #{shared_secrets_path}"
-              execute "chmod u+w #{shared_secrets_path}"
+          unless test("[ -e #{current_path}/#{tasks_file_path} ]")
+            begin
+              unless test("[ -w #{shared_secrets_path} ]")
+                execute "sudo chown `whoami` #{shared_secrets_path}"
+                execute "chmod u+w #{shared_secrets_path}"
+              end
+
+              execute "cp #{release_path}/#{tasks_file_path} #{current_path}/#{tasks_file_path}"
+
+              execute :rake, "secrets:smtp_ssl_and_delay_jobs"
+            ensure
+              execute "rm #{current_path}/#{tasks_file_path}"
             end
-
-            execute "cp #{release_path}/#{tasks_file_path} #{current_path}/#{tasks_file_path}"
-
-            execute :rake, "secrets:smtp_ssl_and_delay_jobs"
-          ensure
-            execute "rm #{current_path}/#{tasks_file_path}"
           end
         end
       end
