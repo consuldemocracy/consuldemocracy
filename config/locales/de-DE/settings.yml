@@ -20,6 +20,8 @@ de:
     max_votes_for_debate_edit_description: "Ab dieser Anzahl von Unterstützungen kann der Autor einer Debatte diese nicht länger ändern"
     proposal_code_prefix: "Präfix für Vorschlag-Codes"
     proposal_code_prefix_description: "Dieses Präfix wird in den Vorschlägen vor dem Erstellungsdatum und der ID angezeigt"
+    featured_proposals_number: "Zahl der veröffentlichten Vorschläge"
+    featured_proposals_number_description: "Anzahl der veröffentlichten Vorschläge, die angezeigt werden, wenn die Funktion Veröffentlichte Vorschläge aktiv ist"
     votes_for_proposal_success: "Anzahl der notwendigen Stimmen zur Genehmigung eines Vorschlags"
     votes_for_proposal_success_description: "Wenn ein Antrag diese Anzahl von Unterstützungen erreicht, kann er nicht mehr mehr unterstützt werden und gilt als erfolgreich"
     months_to_archive_proposals: "Anzahl der Monate, um Vorschläge zu archivieren"
@@ -44,6 +46,8 @@ de:
     org_name_description: "Name Ihrer Organisation"
     related_content_score_threshold: "Punktzahl-Grenze für verwandte Inhalte"
     related_content_score_threshold_description: "Inhalte, die Benutzer als zusammenhangslos markiert haben"
+    hot_score_period_in_days: "Zeitrahmen (Tage), der für den Filter \"am Aktivsten\" verwendet wird"
+    hot_score_period_in_days_description: "Der in mehreren Sektionen verwendete Filter \"Am Aktivsten\" basiert auf den Stimmen der letzten X Tage"
     mailer_from_name: "Absender E-Mail-Name"
     mailer_from_name_description: "Dieser Name wird in E-Mails angezeigt, die von dieser Anwendung versendet werden"
     mailer_from_address: "Absender E-Mail-Adresse"
@@ -56,6 +60,8 @@ de:
     meta_keywords_description: 'Stichwörter <meta name="keywords">, zur Verbesserung der SEO'
     min_age_to_participate: erforderliches Mindestalter zur Teilnahme
     min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
+    proposals:
+      successful_proposal_id: Erfolgreicher Vorschlag
     analytics_url: "Analytik-URL"
     feature:
       twitter_login: "Twitter login"
