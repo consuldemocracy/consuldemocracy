@@ -572,6 +572,9 @@ de:
         title: Poster Vorschau
         poster_title: "Schaue nicht weiter,"
         poster_subtitle: "unterstütze mich! ;)"
+        intro_text: "<strong> Ich beteilige mich mit meinem eigenen Bürgervorschlag an %{org}</strong>, und nur wenn Sie dem beitreten, kann ich die notwendige Unterstützung erreichen, damit wir die Stadt so gestalten, wie wir sie alle wollen."
+        proposal_code: "Code des Vorschlags: %{code}"
+        support: Unterstütze meinen Vorschlag
         footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
       new:
         title: Poster von deinem Vorschlag
@@ -951,3 +954,8 @@ de:
   communities:
     show:
       surveys: Umfragen
+      complete_survey: Vervollständige die Umfrage
+    subnav:
+      surveys: Umfragen
+    poll:
+      take_part: Nimm Teil von %{from} bis %{to}
