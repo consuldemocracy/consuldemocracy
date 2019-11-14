@@ -959,3 +959,9 @@ de:
       surveys: Umfragen
     poll:
       take_part: Nimm Teil von %{from} bis %{to}
+  remote_translations:
+    text: Der Inhalt dieser Seite ist in Ihrer Sprache nicht verfügbar
+    all_remote_translations_enqueued_text: Nach einer zeitnahen Aktualisierung der Seite können Sie den gesamten Inhalt in Ihrer Sprache sehen.
+    create:
+      enqueue_remote_translation: Übersetzungen wurden korrekt angefordert.
+    button: Seite übersetzen
