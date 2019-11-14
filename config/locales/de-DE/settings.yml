@@ -142,3 +142,7 @@ de:
         date_of_birth_description: "Pfad in der Anforderungsstruktur, die das Geburtsdatum sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht das Geburtsdatum benötigt."
         postal_code: "Pfad für Postleitzahl"
         postal_code_description: "Pfad in der Anforderungsstruktur, der die Postleitzahl sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht den Postleitzahl benötigt."
+    uploads:
+      documents:
+        content_types: "Akzeptierte Inhaltstypen für Dokumente"
+        content_types_description: "Wählen Sie alle Inhaltsarten, die zum Upload für Dokumente erlaubt sind"
