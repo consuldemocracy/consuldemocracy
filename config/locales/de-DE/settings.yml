@@ -116,3 +116,7 @@ de:
       public_stats_description: "Öffentliche Statistiken im Administrationsbereich anzeigen"
       help_page: "Hilfeseite"
       help_page_description: 'Zeigt ein "Hilfe"-Menü an, das eine Seite mit Informationen über die einzelnen aktivierten Funktionen enthält'
+      remote_translations: "Übersetzung ablegen"
+      remote_translations_description: "Zeigt eine Schaltfläche an, mit der Benutzer eine Übersetzung anfordern können, wenn keine Inhalte in ihrer Sprache existieren."
+      translation_interface: "Übersetzung Interface"
+      translation_interface_description: "Zeigt die manuelle Übersetzungsoberfläche an, mit der Benutzer*innen ihren Inhalt in allen verfügbaren Sprachen der Anwendung eingeben können. Diese Option wirkt sich nur auf Benutzeranwendungsformulare aus und ist unabhängig davon immer im Administrationsbereich aktiv."
