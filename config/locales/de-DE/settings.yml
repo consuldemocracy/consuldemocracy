@@ -68,6 +68,14 @@ de:
       poll_description: Beschreibung Abstimmung
       poll_description_description: Detaillierte Beschreibung der veröffentlichten Umfrage
       poll_link: Weitere Informationen Link
+      poll_link_description: Füge einen zusätzlichen Informationslink zur Funktionaliät der Abstimmung in der Kontrollanzeige hinzu
+      email_short_title: E-Mail
+      email_short_title_description: 'Kurze Beschreibung der E-Mail-Funktion. Ermöglicht Benutzern das Senden einer E-Mail zur Bewerbung ihres Vorschlags. Sie finden den gesamten Inhalt dieser E-Mail unter "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: E-Mail Beschreibung
+      email_description_description: Detaillierte Beschreibung der veröffentlichten E-Mail
+      poster_short_title: Poster
+      poster_short_title_description: 'Kurze Beschreibung der Poster-Funktion. Ermöglicht Benutzern den Download eines Posters im PDF-Formats zur Bewerbung ihres Vorschlags. Sie finden den gesamten Inhalt dieses Posters unter "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Beschreibung Poster
     analytics_url: "Analytik-URL"
     feature:
       twitter_login: "Twitter login"
