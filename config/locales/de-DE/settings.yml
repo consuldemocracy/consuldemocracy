@@ -123,3 +123,12 @@ de:
       remote_census: "Konfigurieren Sie die Verbindung zum abgelegten Zensus (SOAP)"
       remote_census_description: "Ermöglicht die Konfiguration der Verbindung zum abgewählten Zensus jeder Institution"
       valuation_comment_notification: "Bewertung Kommentar Benachrichtigung"
+      valuation_comment_notification_description: "Senden Sie eine E-Mail an alle verbundenen Benutzer*innen, wenn ein neuer Bewertungskommentar erstellt wird - mit Ausnahme des Bewertungskommentars für Budgetinvestitionen"
+      graphql_api: "GraphQL API"
+    remote_census:
+      general:
+        endpoint: "Endpunkt"
+        endpoint_description: "Host Name, auf dem der Zensus Dienst verfügbar ist (wsdl)"
+      request:
+        method_name: "Angefragte Methode Name"
+        method_name_description: "Name der Anforderungsmethode, die vom Zensus WebService der Stadt akzeptiert wird."
