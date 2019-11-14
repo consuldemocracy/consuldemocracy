@@ -11,8 +11,11 @@ set :rvm1_map_bins, -> { fetch(:rvm_map_bins).to_a.concat(%w[rake gem bundle rub
 
 set :application, "consul"
 set :full_app_name, deploysecret(:full_app_name)
-
+set :deploy_to, deploysecret(:deploy_to)
 set :server_name, deploysecret(:server_name)
+set :db_server, deploysecret(:db_server)
+set :ssh_options, port: deploysecret(:ssh_port)
+
 set :repo_url, "https://github.com/consul/consul.git"
 
 set :revision, `git rev-parse --short #{fetch(:branch)}`.strip
@@ -28,10 +31,7 @@ set :keep_releases, 5
 
 set :local_user, ENV["USER"]
 
-set :puma_restart_command, "bundle exec --keep-file-descriptors puma"
-set :puma_workers, 2
-set :puma_preload_app, true
-set :puma_init_active_record, true
+set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background
@@ -45,6 +45,8 @@ set(:config_files, %w[
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
+  Rake::Task["puma:check"].clear_actions
+
   before :starting, "rvm1:install:rvm"
   before :starting, "rvm1:install:ruby"
   before :starting, "install_bundler_gem"
