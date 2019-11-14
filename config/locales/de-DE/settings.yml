@@ -80,6 +80,8 @@ de:
     analytics_url: "Analytik-URL"
     proposal_notification_minimum_interval_in_days: "Mindestintervall (in Tagen), in dem Autoren von Vorschlägen neue Vorschlagsbenachrichtigungen senden können"
     proposal_notification_minimum_interval_in_days_description: "Die Anzahl der Tage, nach denen Benutzer Benachrichtungen an alle Unterstützer ihres Vorschlags senden können"
+    direct_message_max_per_day: "Maximale Anzahl direkter Nachrichten per Tag"
+    direct_message_max_per_day_description: "Maximale Anzahl direkter Nachrichten, die Benutzer*innen am Tag senden können"
     feature:
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"
@@ -87,7 +89,10 @@ de:
       facebook_login_description: "Anmeldung mit Facebook-Account erlauben"
       google_login: "Google login"
       google_login_description: "Anmeldung mit Google-Account erlauben"
+      featured_proposals: "Veröffentlichte Vorschläge"
+      featured_proposals_description: "Zeigt veröffentlichte Vorschläge auf der Index Vorschlags-Seite"
       signature_sheets: "Unterschriftenbögen"
+      signature_sheets_description: "Es ermöglicht das Hinzufügen von vor Ort gesammelten Unterschriften aus dem Administrationspanel zu Vorschlägen und Investitionsprojekten des Bürgerhaushalts"
       user:
         recommendations: "Empfehlungen"
         recommendations_description: "Zeigt Nutzerempfehlungen auf der Startseite auf Grundlage der Tags aus den folgenden Objekten"
