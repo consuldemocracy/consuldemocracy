@@ -542,6 +542,18 @@ de:
           other: Sie haben %{count} Abstimmungen erstellt.
         links: Links
         additiontal_information: Weitere Informationen
+      new:
+        title: Neue Abstimmung
+        submit: Abstimmung erstellen
+      edit:
+        submit: Abstimmung aktualisieren
+      poll:
+        responses:
+          one: "%{count} Antwort"
+          other: "%{count} Antworten"
+        view_results: Ergebnisse anzeigen
+        edit_poll: Umfrage bearbeiten
+        show_results_help: Wenn Sie dieses Kontrollkästchen aktivieren, sind die Ergebnisse öffentlich und können von allen Benutzern gesehen werden
     poster:
       index:
         footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
