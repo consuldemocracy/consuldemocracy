@@ -514,6 +514,34 @@ de:
     next_goal:
       title: Ziel
       see_complete_course: Siehe den kompletten Kurs
+    goal:
+      target_supports:
+        one: Bekommen Sie %{count} Unterstützung für Ihren Vorschlag
+        other: Bekommen Sie %{count} Unterstützung für Ihren Vorschlag
+      days:
+        one: "%{count} Tag"
+        other: "%{count} Tage"
+      locked_resource: Ressource gesperrt
+      ideal_time: Ideale Zeit
+    community:
+      access_community: Treten Sie der Community bei
+      latest_activity: "Letzte Aktivitäten in der Gemeinschaft: %{at}"
+      participants: Teilnehmer*innen
+      debates: Debatten
+      comments: Kommentare
+      latest_comments: Letzte Nachrichten
+    messages:
+      send_notification: Sende Nachricht zu den Unterstützer*innen des Vorschlags
+      previous_notifications: Siehe vorherige Benachrichtigungen
+    polls:
+      index:
+        title: Abstimmungen
+        create: Abstimmung erstellen
+        count:
+          one: Sie haben %{count} Abstimmung erstellt.
+          other: Sie haben %{count} Abstimmungen erstellt.
+        links: Links
+        additiontal_information: Weitere Informationen
     poster:
       index:
         footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
