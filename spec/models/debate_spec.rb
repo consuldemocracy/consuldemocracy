@@ -455,7 +455,7 @@ describe Debate do
   end
 
   describe "search" do
-    context "attributes" do
+    context "attributes", :spanish_search do
       let(:attributes) do
         { title: "save the world",
           description: "in order to save the world one must think about...",
@@ -503,7 +503,7 @@ describe Debate do
     end
 
     context "stemming" do
-      it "searches word stems" do
+      it "searches word stems", :spanish_search do
         debate = create(:debate, title: "limpiar")
 
         results = Debate.search("limpiará")
@@ -518,7 +518,7 @@ describe Debate do
     end
 
     context "accents" do
-      it "searches with accents" do
+      it "searches with accents", :spanish_search do
         debate = create(:debate, title: "difusión")
 
         results = Debate.search("difusion")
@@ -548,7 +548,7 @@ describe Debate do
     end
 
     context "tags" do
-      it "searches by tags" do
+      it "searches by tags", :spanish_search do
         debate = create(:debate, tag_list: "Latina")
 
         results = Debate.search("Latina")

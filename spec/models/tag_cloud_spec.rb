@@ -74,7 +74,7 @@ describe TagCloud do
       expect(tag_names(tag_cloud)).to contain_exactly("parks")
     end
 
-    it "returns tags scoped by geozone" do
+    it "returns tags scoped by geozone", :spanish_search do
       create(:geozone, name: "California")
       create(:geozone, name: "New York")
 

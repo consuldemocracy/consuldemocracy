@@ -128,6 +128,16 @@ RSpec.configure do |config|
     allow(Time).to receive(:zone).and_return(application_zone)
   end
 
+  config.around(:each, :spanish_search) do |example|
+    begin
+      old_i18n = I18n.default_locale
+      I18n.default_locale = :es
+      example.run
+    ensure
+      I18n.default_locale = old_i18n
+    end
+  end
+
   # Allows RSpec to persist some state between runs in order to support
   # the `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"
