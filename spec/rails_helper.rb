@@ -32,7 +32,7 @@ end
 
 Capybara.register_driver :headless_chrome do |app|
   capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
-    chromeOptions: {
+    "goog:chromeOptions" => {
       args: %W[headless no-sandbox window-size=1200,600 proxy-server=127.0.0.1:#{Capybara::Webmock.port_number}]
     }
   )
