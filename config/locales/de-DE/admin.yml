@@ -260,9 +260,11 @@ de:
       search_unfeasible: Suche undurchführbar
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titel"
         table_description: "Beschreibung"
         table_publication_date: "Datum der Veröffentlichung"
+        table_status: Status
         table_actions: "Aktionen"
         delete: "Meilenstein löschen"
         no_milestones: "Keine Meilensteine definiert"
@@ -312,6 +314,7 @@ de:
         no_progress_bars: "Keine Fortschrittsbalken vorhanden"
         new_progress_bar: "Neuen Fortschrittsbalken erstellen"
         primary: "Primärer Fortschrittsbalken"
+        table_id: "ID"
         table_kind: "Typ"
         table_title: "Titel"
         table_percentage: "Aktueller Fortschritt"
@@ -1565,6 +1568,8 @@ de:
         submit_header: Kopfzeile speichern
         card_title: Karte bearbeiten
         submit_card: Karte speichern
+    audits:
+      title: "Änderung Log"
     local_census_records:
       index:
         title: Verwaltung des lokalen Registers
