@@ -64,19 +64,22 @@ de:
       successful_proposal_id: Erfolgreicher Vorschlag
       successful_proposal_id_description: Dieser Vorschlag wird als Referenz für einen erfolgreichen Vorschlag in der Unterstützungs-Anzahl verwendet und im Dashboard-Diagramm angezeigt.
       poll_short_title: Abstimmungen
-      poll_short_title_description: Kurze Beschreibung der veröffentlichten Umfrage. Erlaubt Benutzer*innen Umfragen zu einem Vorschlag zu erstellen
+      poll_short_title_description: Kurze Beschreibung der Umfrage-Funktion. Erlaubt Benutzer*innen Umfragen zu einem Vorschlag zu erstellen
       poll_description: Beschreibung Abstimmung
-      poll_description_description: Detaillierte Beschreibung der veröffentlichten Umfrage
+      poll_description_description: Detaillierte Beschreibung der Umfrage-Funktion
       poll_link: Weitere Informationen Link
       poll_link_description: Füge einen zusätzlichen Informationslink zur Funktionaliät der Abstimmung in der Kontrollanzeige hinzu
       email_short_title: E-Mail
       email_short_title_description: 'Kurze Beschreibung der E-Mail-Funktion. Ermöglicht Benutzern das Senden einer E-Mail zur Bewerbung ihres Vorschlags. Sie finden den gesamten Inhalt dieser E-Mail unter "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: E-Mail Beschreibung
-      email_description_description: Detaillierte Beschreibung der veröffentlichten E-Mail
+      email_description_description: Detaillierte Beschreibung der E-Mail-Funktion
       poster_short_title: Poster
       poster_short_title_description: 'Kurze Beschreibung der Poster-Funktion. Ermöglicht Benutzern den Download eines Posters im PDF-Formats zur Bewerbung ihres Vorschlags. Sie finden den gesamten Inhalt dieses Posters unter "/app/views/dashboard/poster/index.pdf.erb"'
       poster_description: Beschreibung Poster
+      poster_description_description: Detaillierte Beschreibung der Poster-Funktion
     analytics_url: "Analytik-URL"
+    proposal_notification_minimum_interval_in_days: "Mindestintervall (in Tagen), in dem Autoren von Vorschlägen neue Vorschlagsbenachrichtigungen senden können"
+    proposal_notification_minimum_interval_in_days_description: "Die Anzahl der Tage, nach denen Benutzer Benachrichtungen an alle Unterstützer ihres Vorschlags senden können"
     feature:
       twitter_login: "Twitter login"
       twitter_login_description: "Anmeldung mit Twitter-Account erlauben"
