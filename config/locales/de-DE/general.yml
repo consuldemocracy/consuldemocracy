@@ -514,6 +514,7 @@ de:
     next_goal:
       title: Ziel
       see_complete_course: Siehe den kompletten Kurs
+      hide_course: Verlauf verbergen
     goal:
       target_supports:
         one: Bekommen Sie %{count} Unterstützung für Ihren Vorschlag
@@ -554,8 +555,23 @@ de:
         view_results: Ergebnisse anzeigen
         edit_poll: Umfrage bearbeiten
         show_results_help: Wenn Sie dieses Kontrollkästchen aktivieren, sind die Ergebnisse öffentlich und können von allen Benutzern gesehen werden
+        delete: Umfrage löschen
+        alert_notice: Diese Aktion entfernt die Umfrage und alle damit verbundenen Fragen.
+        success_notice: Umfrage erfolgreich gelöscht
+        unable_notice: Sie können keine Umfrage löschen, die Antworten erhalten hat
+      form:
+        name: Titel Umfrage
+        add_question: Frage hinzufügen
+      question_fields:
+        remove_question: Frage entfernen
+        add_answer: Antwort hinzufügen
+      question_answer_fields:
+        remove_answer: Antwort entfernen
     poster:
       index:
+        title: Poster Vorschau
+        poster_title: "Schaue nicht weiter,"
+        poster_subtitle: "unterstütze mich! ;)"
         footer: "<strong>Besuche %{link} und unterstütze diesen Vorschlag.</strong> Wir müssen viele sein. Entscheiden Sie sich auch dafür. Ich danke Ihnen!"
       new:
         title: Poster von deinem Vorschlag
