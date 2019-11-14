@@ -120,3 +120,6 @@ de:
       remote_translations_description: "Zeigt eine Schaltfläche an, mit der Benutzer eine Übersetzung anfordern können, wenn keine Inhalte in ihrer Sprache existieren."
       translation_interface: "Übersetzung Interface"
       translation_interface_description: "Zeigt die manuelle Übersetzungsoberfläche an, mit der Benutzer*innen ihren Inhalt in allen verfügbaren Sprachen der Anwendung eingeben können. Diese Option wirkt sich nur auf Benutzeranwendungsformulare aus und ist unabhängig davon immer im Administrationsbereich aktiv."
+      remote_census: "Konfigurieren Sie die Verbindung zum abgelegten Zensus (SOAP)"
+      remote_census_description: "Ermöglicht die Konfiguration der Verbindung zum abgewählten Zensus jeder Institution"
+      valuation_comment_notification: "Bewertung Kommentar Benachrichtigung"
