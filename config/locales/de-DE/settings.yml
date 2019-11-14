@@ -132,3 +132,13 @@ de:
       request:
         method_name: "Angefragte Methode Name"
         method_name_description: "Name der Anforderungsmethode, die vom Zensus WebService der Stadt akzeptiert wird."
+        structure: "Anforderung Struktur"
+        structure_description: 'Anforderungsstruktur, die den Zensus-WebService der Stadtverwaltung erhält. Die "statischen" Werte dieser Anfrage sollten ausgefüllt werden. Die Werte für Dokumenttyp, Dokumentennummer, Geburtsdatum und Postleitzahl sollten null sein. Beispiel für ein gültiges Format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Pfad für Dokumenten Typ"
+        document_type_description: "Pfad in der Anforderungsstruktur, die den Dokumenttyp sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht den Dokumenttyp benötigt."
+        document_number: "Pfad für Dokumenten Nummer"
+        document_number_description: "Pfad in der Anforderungsstruktur, die die Dokumentennummer sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht die Dokumentennummer benötigt."
+        date_of_birth: "Pfad für Geburtsdatum"
+        date_of_birth_description: "Pfad in der Anforderungsstruktur, die das Geburtsdatum sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht das Geburtsdatum benötigt."
+        postal_code: "Pfad für Postleitzahl"
+        postal_code_description: "Pfad in der Anforderungsstruktur, der die Postleitzahl sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht den Postleitzahl benötigt."
