@@ -62,6 +62,12 @@ de:
     min_age_to_participate_description: "Nutzer ab diesem Alter können an allen Prozessen teilnehmen"
     proposals:
       successful_proposal_id: Erfolgreicher Vorschlag
+      successful_proposal_id_description: Dieser Vorschlag wird als Referenz für einen erfolgreichen Vorschlag in der Unterstützungs-Anzahl verwendet und im Dashboard-Diagramm angezeigt.
+      poll_short_title: Abstimmungen
+      poll_short_title_description: Kurze Beschreibung der veröffentlichten Umfrage. Erlaubt Benutzer*innen Umfragen zu einem Vorschlag zu erstellen
+      poll_description: Beschreibung Abstimmung
+      poll_description_description: Detaillierte Beschreibung der veröffentlichten Umfrage
+      poll_link: Weitere Informationen Link
     analytics_url: "Analytik-URL"
     feature:
       twitter_login: "Twitter login"
