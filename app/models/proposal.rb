@@ -54,7 +54,7 @@ class Proposal < ApplicationRecord
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
-  validate :valid_video_url?
+  #validate :valid_video_url?
 
   before_validation :set_responsible_name
 
