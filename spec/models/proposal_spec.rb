@@ -464,7 +464,7 @@ describe Proposal do
   end
 
   describe "search" do
-    context "attributes", :spanish_search do
+    context "attributes" do
       let(:attributes) do
         { title: "save the world",
           summary: "basically",
@@ -526,7 +526,7 @@ describe Proposal do
     end
 
     context "stemming" do
-      it "searches word stems", :spanish_search do
+      it "searches word stems" do
         proposal = create(:proposal, summary: "Economía")
 
         results = Proposal.search("economía")
@@ -541,7 +541,7 @@ describe Proposal do
     end
 
     context "accents" do
-      it "searches with accents", :spanish_search do
+      it "searches with accents" do
         proposal = create(:proposal, summary: "difusión")
 
         results = Proposal.search("difusion")
@@ -568,10 +568,23 @@ describe Proposal do
         results = Proposal.search("SCREAM")
         expect(results).to eq([proposal2])
       end
+
+      it "searches case insensitive in english" do
+        allow(SearchDictionarySelector).to receive(:call).and_return("english")
+
+        proposal = create(:proposal, title: "SHOUT")
+
+        results = Proposal.search("shout")
+        expect(results).to eq([proposal])
+
+        proposal2 = create(:proposal, title: "scream")
+        results = Proposal.search("SCREAM")
+        expect(results).to eq([proposal2])
+      end
     end
 
     context "tags" do
-      it "searches by tags", :spanish_search do
+      it "searches by tags" do
         proposal = create(:proposal, tag_list: "Latina")
 
         results = Proposal.search("Latina")
@@ -744,7 +757,7 @@ describe Proposal do
     end
 
     context "districts" do
-      it "returns proposals with a geozone", :spanish_search do
+      it "returns proposals with a geozone" do
         california = create(:geozone, name: "california")
         proposal   = create(:proposal, geozone: california)
 
