@@ -47,9 +47,9 @@ set :whenever_roles, -> { :app }
 namespace :deploy do
   Rake::Task["puma:check"].clear_actions
 
-  before :starting, "rvm1:install:rvm"
-  before :starting, "rvm1:install:ruby"
-  before :starting, "install_bundler_gem"
+  after :updating, "rvm1:install:rvm"
+  after :updating, "rvm1:install:ruby"
+  after :updating, "install_bundler_gem"
   before "deploy:migrate", "remove_local_census_records_duplicates"
 
   after "deploy:migrate", "add_new_settings"
