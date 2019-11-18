@@ -156,7 +156,32 @@ de:
         surname: "Pfad für Nachnamen"
         surname_description: "In welchem Antwortpfad befindet sich der Nachnamen des Benutzers?"
         valid: "Bedingung zum Erkennen einer gültigen Antwort"
+    map:
+      latitude: "Breitengrad"
+      latitude_description: "Breitengrad zur Anzeige der Kartenposition"
+      longitude: "Längengrad"
+      longitude_description: "Längengrad, um die Position der Karte zu zeigen"
+      zoom: "Zoom"
+      zoom_description: "Zoomen, um die Kartenposition anzuzeigen"
+    process:
+      debates: "Debatten"
+      debates_description: "Der Debattenraum der Bürger richtet sich an alle, die Themen präsentieren können, die sie betreffen und zu denen sie ihre Ansichten mit anderen teilen wollen"
+      proposals: "Vorschläge"
+      proposals_description: "Die Vorschläge der Bürger sind eine Möglichkeit für Nachbarn und Kollektive direkt zu entscheiden, wie sie ihre Stadt gestalten wollen, nachdem sie ausreichende Unterstützung erhalten und sich einer Bürgerabstimmung unterzogen haben"
+      polls: "Abstimmungen"
+      polls_description: "Bürgerabstimmungen sind ein partizipatorischer Mechanismus, mit dem Bürger mit Wahlrecht direkte Entscheidungen treffen können"
+      budgets: "Bürgerhaushalt"
+      budgets_description: "Bei Bürgerhaushalten entscheiden die Bürger, welche von ihren Nachbarn vorgestellten Projekte einen Teil des Budgets erhalten"
+      legislation: "Kollaborative Gesetzgebung"
+      legislation_description: "In partizipativen Prozessen wird den Bürgern die Möglichkeit geboten, sich an der Ausarbeitung und Änderung von Vorschriften, die die Gesellschaft betreffen, zu beteiligen und ihre Meinung zu bestimmten geplanten Aktionen abzugeben"
+    html:
+      per_page_code_head: "Code, der auf jeder Seite eingefügt wird (<head>)"
+      per_page_code_head_description: "Dieser Code wird innerhalb des Labels <head> angezeigt. Nützlich für die Eingabe von benutzerdefinierten Skripten, Analysen..."
+      per_page_code_body: "Code, der auf jeder Seite eingefügt wird (<body>)"
+      per_page_code_body_description: "Dieser Code wird innerhalb des Labels <body> angezeigt. Nützlich für die Eingabe von benutzerdefinierten Skripten, Analysen..."
     uploads:
+      images:
+        min_width: "Mindestbreite des Bildes"
       documents:
         content_types: "Akzeptierte Inhaltstypen für Dokumente"
         content_types_description: "Wählen Sie alle Inhaltsarten, die zum Upload für Dokumente erlaubt sind"
