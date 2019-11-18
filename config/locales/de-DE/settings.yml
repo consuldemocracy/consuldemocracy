@@ -142,6 +142,14 @@ de:
         date_of_birth_description: "Pfad in der Anforderungsstruktur, die das Geburtsdatum sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht das Geburtsdatum benötigt."
         postal_code: "Pfad für Postleitzahl"
         postal_code_description: "Pfad in der Anforderungsstruktur, der die Postleitzahl sendet. NICHT AUSFÜLLEN, wenn der WebService zur Überprüfung eines Benutzers nicht den Postleitzahl benötigt."
+      response:
+        date_of_birth: "Pfad für Geburtsdatum"
+        date_of_birth_description: "In welchem Antwortpfad befindet sich das Geburtsdatum des Benutzers?"
+        postal_code: "Pfad für Postleitzahl"
+        postal_code_description: "In welchem Antwortpfad befindet sich die Postleitzahl des Benutzers?"
+        district: "Pfad für Bezirk"
+        district_description: "In welchem Antwortpfad befindet sich der Bezirk des Benutzers?"
+        gender: "Pfad für Geschlecht"
     uploads:
       documents:
         content_types: "Akzeptierte Inhaltstypen für Dokumente"
