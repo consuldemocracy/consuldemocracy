@@ -150,6 +150,12 @@ de:
         district: "Pfad für Bezirk"
         district_description: "In welchem Antwortpfad befindet sich der Bezirk des Benutzers?"
         gender: "Pfad für Geschlecht"
+        gender_description: "In welchem Antwortpfad befindet sich das Geschlecht des Benutzers?"
+        name: "Pfad für Vornamen"
+        name_description: "In welchem Antwortpfad befindet sich der Vornamen des Benutzers?"
+        surname: "Pfad für Nachnamen"
+        surname_description: "In welchem Antwortpfad befindet sich der Nachnamen des Benutzers?"
+        valid: "Bedingung zum Erkennen einer gültigen Antwort"
     uploads:
       documents:
         content_types: "Akzeptierte Inhaltstypen für Dokumente"
