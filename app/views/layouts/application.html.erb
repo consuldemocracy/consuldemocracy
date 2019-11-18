@@ -21,7 +21,7 @@
     <div class="wrapper <%= yield (:wrapper_class) %>">
       <%= render "layouts/header", with_subnavigation: true %>
 
-      <% if browser.ie? && cookies["ie_alert_closed"] != "true" %>
+      <% if request.headers["User-Agent"] =~ /MSIE/ && cookies["ie_alert_closed"] != "true" %>
       <!--[if lt IE 9]>
         <div data-alert class="callout primary ie-callout" data-closable>
           <button class="close-button ie-callout-close-js"
