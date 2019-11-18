@@ -182,6 +182,19 @@ de:
     uploads:
       images:
         min_width: "Mindestbreite des Bildes"
+        min_width_description: "Erforderliche Mindestbreite für upload eine Bildes (in Pixel)"
+        min_height: "Mindesthöhe des Bildes"
+        min_height_description: "Erforderliche Mindesthöhe für upload eine Bildes (in Pixel)"
+        max_size: "Maximale Größe des Bildes"
+        max_size_description: "Zulässige maximale Größe für upload eines Bildes (in Megabytes/MB)"
+        content_types: "Akzeptierte Formate für Bilder"
+        content_types_description: "Wählen Sie alle Formate, die zum Upload für Bilder zulässig sind"
+        title:
+          min_length: "Titel des Bildes minimale Länge"
+          min_length_description: "Titel, den der Benutzer beim Hochladen eines Bildes angegeben hat (Verwendung als alt-HTML)"
+          max_length: "Titel des Bildes maximale Länge"
+          max_length_description: "Titel, den der Benutzer beim Hochladen eines Bildes angegeben hat (Verwendung als alt-HTML)"
       documents:
+        max_amount: "Maximale Zahl von Dokumenten"
         content_types: "Akzeptierte Inhaltstypen für Dokumente"
         content_types_description: "Wählen Sie alle Inhaltsarten, die zum Upload für Dokumente erlaubt sind"
