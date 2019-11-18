@@ -55,14 +55,13 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
     scenario "Should display new follower notice after user clicks on follow button", :js do
       user = create(:user)
       login_as(user)
-      create_notice_message = t("shared.followable.#{followable_class_name}.create.notice")
 
       visit send(followable_path, arguments)
       within "##{dom_id(followable)}" do
         click_link("Follow #{followable.model_name.human.downcase}")
       end
 
-      expect(page).to have_content strip_tags(create_notice_message)
+      expect(page).to have_content "We will notify you of changes as they occur"
     end
 
     scenario "Display unfollow button when user already following" do
@@ -90,14 +89,13 @@ shared_examples "followable" do |followable_class_name, followable_path, followa
     scenario "Should display destroy follower notice after user clicks on unfollow button", :js do
       user = create(:user, followables: [followable])
       login_as(user)
-      destroy_notice_message = t("shared.followable.#{followable_class_name}.destroy.notice")
 
       visit send(followable_path, arguments)
       within "##{dom_id(followable)}" do
         click_link("Unfollow #{followable.model_name.human.downcase}")
       end
 
-      expect(page).to have_content strip_tags(destroy_notice_message)
+      expect(page).to have_content "You will no longer receive notifications"
     end
   end
 end
