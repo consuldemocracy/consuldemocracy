@@ -15,6 +15,7 @@ describe "Admin newsletter emails" do
 
       visit admin_newsletter_path(newsletter)
 
+      expect(page).to have_link "Go back", href: admin_newsletters_path
       expect(page).to have_content "This is a subject"
       expect(page).to have_content I18n.t("admin.segment_recipient.#{newsletter.segment_recipient}")
       expect(page).to have_content "no-reply@consul.dev"
@@ -62,6 +63,8 @@ describe "Admin newsletter emails" do
     visit admin_newsletters_path
     click_link "New newsletter"
 
+    expect(page).to have_link "Go back", href: admin_newsletters_path
+
     fill_in_newsletter_form(subject: "This is a subject",
                             segment_recipient: "Proposal authors",
                             body: "This is a body")
@@ -81,6 +84,8 @@ describe "Admin newsletter emails" do
     within("#newsletter_#{newsletter.id}") do
       click_link "Edit"
     end
+
+    expect(page).to have_link "Go back", href: admin_newsletters_path
 
     fill_in_newsletter_form(subject: "This is a subject",
                             segment_recipient: "Investment authors in the current budget",
