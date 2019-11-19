@@ -3,7 +3,7 @@ require "rails_helper"
 describe Dashboard::Action do
   subject do
     build :dashboard_action,
-          title: title,
+          title: "Take action!",
           description: description,
           day_offset: day_offset,
           required_supports: required_supports,
@@ -11,7 +11,6 @@ describe Dashboard::Action do
           action_type: action_type
   end
 
-  let(:title) { Faker::Lorem.sentence }
   let(:description) { Faker::Lorem.sentence }
   let(:day_offset) { 0 }
   let(:required_supports) { 0 }
