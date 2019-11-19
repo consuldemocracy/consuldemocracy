@@ -13,7 +13,7 @@ require "whenever/capistrano"
 require "rvm1/capistrano3"
 
 require "capistrano/puma"
-install_plugin Capistrano::Puma
+install_plugin Capistrano::Puma, load_hooks: false
 
 #SCM: Git
 require "capistrano/scm/git"

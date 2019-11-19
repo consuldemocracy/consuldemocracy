@@ -1,10 +1,9 @@
 #!/usr/bin/env puma
 
-rails_root = File.expand_path("../..", __FILE__)
+rails_root = File.expand_path("../../..", __FILE__)
 
 directory rails_root
 rackup "#{rails_root}/config.ru"
-environment "production"
 
 tag ""
 
@@ -13,12 +12,14 @@ state_path "#{rails_root}/tmp/pids/puma.state"
 stdout_redirect "#{rails_root}/log/puma_access.log", "#{rails_root}/log/puma_error.log", true
 
 bind "unix://#{rails_root}/tmp/sockets/puma.sock"
+daemonize
 
 threads 0, 16
 workers 2
 preload_app!
 
 restart_command "bundle exec --keep-file-descriptors puma"
+plugin :tmp_restart
 
 on_restart do
   puts "Refreshing Gemfile"

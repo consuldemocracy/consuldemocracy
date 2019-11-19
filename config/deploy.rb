@@ -45,8 +45,6 @@ set(:config_files, %w[
 set :whenever_roles, -> { :app }
 
 namespace :deploy do
-  Rake::Task["puma:check"].clear_actions
-
   after :updating, "rvm1:install:rvm"
   after :updating, "rvm1:install:ruby"
   after :updating, "install_bundler_gem"
@@ -55,14 +53,13 @@ namespace :deploy do
   after "deploy:migrate", "add_new_settings"
 
   before :publishing, "smtp_ssl_and_delay_jobs_secrets"
+  after  :publishing, "setup_puma"
 
-  after :publishing, "deploy:restart"
-  after :published, "delayed_job:restart"
-  after :published, "refresh_sitemap"
+  after :published, "deploy:restart"
+  before "deploy:restart", "puma:smart_restart"
+  before "deploy:restart", "delayed_job:restart"
 
-  before "deploy:restart", "setup_puma"
-
-  after :finishing, "deploy:cleanup"
+  after :finished, "refresh_sitemap"
 
   desc "Deploys and runs the tasks needed to upgrade to a new release"
   task :upgrade do
