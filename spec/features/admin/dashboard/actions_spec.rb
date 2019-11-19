@@ -69,7 +69,6 @@ describe "Admin dashboard actions" do
 
   context "when editing an action" do
     let!(:action) { create :dashboard_action }
-    let(:title) { Faker::Lorem.sentence }
 
     before do
       visit admin_dashboard_actions_path
@@ -79,10 +78,10 @@ describe "Admin dashboard actions" do
     end
 
     scenario "Updates the action" do
-      fill_in "dashboard_action_title", with: title
+      fill_in "dashboard_action_title", with: "Great action!"
       click_button "Save"
 
-      expect(page).to have_content(title)
+      expect(page).to have_content "Great action!"
     end
 
     scenario "Renders edit form in case data is invalid" do
