@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191108173350) do
+ActiveRecord::Schema.define(version: 20191119112818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1282,6 +1282,16 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["parent_relationable_id", "parent_relationable_type", "child_relationable_id", "child_relationable_type"], name: "unique_parent_child_related_content", unique: true, using: :btree
     t.index ["parent_relationable_type", "parent_relationable_id"], name: "index_related_contents_on_parent_relationable", using: :btree
     t.index ["related_content_id"], name: "opposite_related_content", using: :btree
+  end
+
+  create_table "related_users", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "related_user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["related_user_id"], name: "index_related_users_on_related_user_id", using: :btree
+    t.index ["user_id", "related_user_id"], name: "index_related_users_on_user_id_and_related_user_id", unique: true, using: :btree
+    t.index ["user_id"], name: "index_related_users_on_user_id", using: :btree
   end
 
   create_table "remote_translations", force: :cascade do |t|

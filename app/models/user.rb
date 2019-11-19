@@ -74,6 +74,7 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     inverse_of:  :author
   has_many :topics, foreign_key: :author_id, inverse_of: :author
+  has_many :related_users
   belongs_to :geozone
 
   validates :username, presence: true, if: :username_required?
