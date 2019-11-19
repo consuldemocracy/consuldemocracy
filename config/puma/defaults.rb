@@ -1,10 +1,9 @@
 #!/usr/bin/env puma
 
-rails_root = File.expand_path("../..", __FILE__)
+rails_root = File.expand_path("../../..", __FILE__)
 
 directory rails_root
 rackup "#{rails_root}/config.ru"
-environment "production"
 
 tag ""
 
