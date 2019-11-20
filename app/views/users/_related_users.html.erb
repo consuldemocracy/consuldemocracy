@@ -1,0 +1,18 @@
+<table class="margin-top">
+  <thead>
+    <tr>
+      <th scope="col"><%= t("users.show.related_users") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @related_users.each do |related_user| %>
+      <tr>
+        <td>
+          <%= avatar_image(related_user.related_user,
+                           seed: related_user.related_user.id, size: 32, class: "author-photo") %>&nbsp;
+          <%= link_to related_user.related_user.name, user_path(related_user.related_user) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -829,6 +829,7 @@ es:
       budget_investments: Proyectos de presupuestos participativos
       comments: Comentarios
       actions: Acciones
+      related_users: Usuarios relacionados
       filters:
         comments:
           one: 1 Comentario
@@ -845,6 +846,9 @@ es:
         follows:
           one: 1 Siguiendo
           other: "%{count} Siguiendo"
+        related_users:
+          one: 1 Usuario relacionado
+          other: "%{count} Usuarios relacionados"
       no_activity: Usuario sin actividad pública
       no_private_messages: "Este usuario no acepta mensajes privados."
       private_activity: Este usuario ha decidido mantener en privado su lista de actividades.

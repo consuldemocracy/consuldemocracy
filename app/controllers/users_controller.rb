@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  has_filters %w[proposals debates budget_investments comments follows], only: :show
+  has_filters %w[proposals debates budget_investments comments follows related_users], only: :show
 
   load_and_authorize_resource
   helper_method :author?
@@ -17,7 +17,8 @@ class UsersController < ApplicationController
                           debates: (Setting["process.debates"] ? Debate.where(author_id: @user.id).count : 0),
                           budget_investments: (Setting["process.budgets"] ? Budget::Investment.where(author_id: @user.id).count : 0),
                           comments: only_active_commentables.count,
-                          follows: @user.follows.map(&:followable).compact.count)
+                          follows: @user.follows.map(&:followable).compact.count,
+                          related_users: RelatedUser.where(user_id: @user.id).count)
     end
 
     def load_filtered_activity
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
       when "budget_investments" then load_budget_investments
       when "comments" then load_comments
       when "follows" then load_follows
+      when "related_users" then load_related_users
       else load_available_activity
       end
     end
@@ -48,6 +50,9 @@ class UsersController < ApplicationController
       elsif  @activity_counts[:follows] > 0
         load_follows
         @current_filter = "follows"
+      elsif @activity_counts[:related_users] > 0
+        load_related_users
+        @current_filter = "related_users"
       end
     end
 
@@ -69,6 +74,10 @@ class UsersController < ApplicationController
 
     def load_follows
       @follows = @user.follows.group_by(&:followable_type)
+    end
+
+    def load_related_users
+      @related_users = RelatedUser.where(user_id: @user.id)
     end
 
     def valid_access?

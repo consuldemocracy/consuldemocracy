@@ -831,6 +831,7 @@ en:
       budget_investments: Budget investments
       comments: Comments
       actions: Actions
+      related_users: Related users
       filters:
         comments:
           one: 1 Comment
@@ -847,6 +848,9 @@ en:
         follows:
           one: 1 Following
           other: "%{count} Following"
+        related_users:
+          one: 1 Related user
+          other: "%{count} Related users"
       no_activity: User has no public activity
       no_private_messages: "This user doesn't accept private messages."
       private_activity: This user decided to keep the activity list private.
