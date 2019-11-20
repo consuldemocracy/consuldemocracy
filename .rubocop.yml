@@ -186,6 +186,9 @@ Lint/ShadowingOuterLocalVariable:
 Lint/UselessAssignment:
   Enabled: true
 
+Lint/Void:
+  Enabled: true
+
 Performance/CompareWithBlock:
   Enabled: true
 
