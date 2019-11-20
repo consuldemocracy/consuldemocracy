@@ -458,6 +458,7 @@ en:
       title_video_url: "External video"
       author: Author
       draft: Proposal in draft. Cannot yet get supports, nor does it appear in the list of proposals.
+      summary_comments: Summary of comments
     update:
       form:
         submit_button: Save changes

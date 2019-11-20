@@ -41,6 +41,8 @@ class Proposal < ApplicationRecord
   has_many :dashboard_actions, through: :dashboard_executed_actions, class_name: "Dashboard::Action"
   has_many :polls, as: :related, inverse_of: :related
 
+  has_one :summary_comment, class_name: "SummaryComment"
+
   validates_translation :title, presence: true, length: { in: 4..Proposal.title_max_length }
   validates_translation :description, length: { maximum: Proposal.description_max_length }
   validates_translation :summary, presence: true

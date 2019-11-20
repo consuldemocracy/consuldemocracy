@@ -34,6 +34,8 @@ class ProposalsController < ApplicationController
     if request.path != proposal_path(@proposal)
       redirect_to proposal_path(@proposal), status: :moved_permanently
     end
+
+    @summary_comments = SummaryComment.where(commentable_id: @proposal)
   end
 
   def create

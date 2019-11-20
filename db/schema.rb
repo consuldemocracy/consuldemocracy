@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191119112818) do
+ActiveRecord::Schema.define(version: 20191119203203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -1391,6 +1391,16 @@ ActiveRecord::Schema.define(version: 20191119112818) do
     t.index ["process_type", "process_id"], name: "index_stats_versions_on_process_type_and_process_id", using: :btree
   end
 
+  create_table "summary_comments", force: :cascade do |t|
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.text     "body"
+    t.integer  "proposal_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["proposal_id"], name: "index_summary_comments_on_proposal_id", using: :btree
+  end
+
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"
     t.string   "taggable_type"
@@ -1655,6 +1665,7 @@ ActiveRecord::Schema.define(version: 20191119112818) do
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
+  add_foreign_key "summary_comments", "proposals"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end

@@ -3,6 +3,15 @@
     <div id="comments" class="small-12 column">
       <%= render "shared/wide_order_selector", i18n_namespace: "comments" %>
 
+      <% if @summary_comments.present? %>
+        <div class="clear">
+          <p><strong><%= t("proposals.show.summary_comments") %></strong></p>
+          <% @summary_comments.each do |summary_comment| %>
+            <%= simple_format sanitize_and_auto_link(summary_comment.body), {}, sanitize: false %>
+          <% end %>
+        </div>
+      <% end %>
+
       <% if user_signed_in? %>
         <%= render "comments/form", { commentable: @proposal, parent_id: nil, toggeable: false } %>
       <% else %>
