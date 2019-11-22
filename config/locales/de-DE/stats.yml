@@ -1,1 +1,15 @@
 de:
+  stats:
+    title: "Teilnahmedaten"
+    advanced: "Erweiterte Statistiken"
+    total_participants: "Teilnehmer*innen"
+    by_gender: "Teilnehmer*innen nach Geschlecht"
+    by_age: "Teilnehmer*innen nach Alter"
+    by_geozone: "Teilnehmer*innen nach Bezirk"
+    men_percentage: "%{percentage} Männer"
+    women_percentage: "%{percentage} Frauen"
+    age: "Alter"
+    age_more_than: "%{start} Jahre alt und älter"
+    age_range: "%{start} - %{finish} Jahre alt"
+    total: "Gesamt"
+    geozone: "Bezirk"
