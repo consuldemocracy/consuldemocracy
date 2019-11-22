@@ -46,6 +46,8 @@ de:
         other: "%{count} Rückmeldungen (Anzeigen)"
       responses_collapse:
         zero: Keine Rückmeldungen
+        one: "1 Antwort (Kollaps)"
+        other: "%{count} Antworten (Kollaps)"
       user_deleted: Benutzer gelöscht
       votes:
         zero: Keine Bewertungen
