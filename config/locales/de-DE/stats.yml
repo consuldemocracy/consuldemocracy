@@ -13,3 +13,9 @@ de:
     age_range: "%{start} - %{finish} Jahre alt"
     total: "Gesamt"
     geozone: "Bezirk"
+    no_demographic_data:
+      one: "* Keine demographischen Daten vorhanden für 1 Teilnehmer*in."
+      other: "* Kein demographischen Daten vorhanden für %{count} Teilnehmer*innen."
+    budgets:
+      link: "Statistiken"
+      page_title: "%{budget} - Partizipation Statistiken"
