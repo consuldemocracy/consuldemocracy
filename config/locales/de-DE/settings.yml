@@ -156,6 +156,7 @@ de:
         surname: "Pfad für Nachnamen"
         surname_description: "In welchem Antwortpfad befindet sich der Nachnamen des Benutzers?"
         valid: "Bedingung zum Erkennen einer gültigen Antwort"
+        valid_description: "Welcher Antwortweg ist notwendig, um als gültige Antwort angesehen und vom Benutzer verifiziert zu werden"
     map:
       latitude: "Breitengrad"
       latitude_description: "Breitengrad zur Anzeige der Kartenposition"
@@ -196,5 +197,8 @@ de:
           max_length_description: "Titel, den der Benutzer beim Hochladen eines Bildes angegeben hat (Verwendung als alt-HTML)"
       documents:
         max_amount: "Maximale Zahl von Dokumenten"
+        max_amount_description: "Maximale Anzahl von Dokumenten, die hinzugefügt werden können zu einem Angebot, einer Investition..."
+        max_size: "Maximale Größe Dokument"
+        max_size_description: "Zulässige maximale Größe für upload eines Dokuments (in Megabytes/MB)"
         content_types: "Akzeptierte Inhaltstypen für Dokumente"
         content_types_description: "Wählen Sie alle Inhaltsarten, die zum Upload für Dokumente erlaubt sind"
