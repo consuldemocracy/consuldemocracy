@@ -93,6 +93,7 @@ group :development do
   gem "capistrano3-delayed-job", "~> 1.7.3"
   gem "capistrano3-puma", "~> 4.0.0"
   gem "erb_lint", require: false
+  gem "github_changelog_generator", "~> 1.15.0"
   gem "mdl", "~> 0.5.0", require: false
   gem "rubocop", "~> 0.75.0", require: false
   gem "rubocop-performance", "~> 1.4.1", require: false
