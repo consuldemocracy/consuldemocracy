@@ -16,5 +16,6 @@ if Rails.env.development?
     config.future_release = "1.1.0"
     config.base = "#{Rails.root}/CHANGELOG.md"
     config.token = Rails.application.secrets.github_changelog_token
+    config.issues = false
   end
 end
