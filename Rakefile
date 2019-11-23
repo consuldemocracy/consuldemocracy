@@ -17,5 +17,6 @@ if Rails.env.development?
     config.base = "#{Rails.root}/CHANGELOG.md"
     config.token = Rails.application.secrets.github_changelog_token
     config.issues = false
+    config.author = false
   end
 end
