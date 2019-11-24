@@ -45,7 +45,7 @@ This tutorial assumes that you have already managed to clone CONSUL on your mach
 6. Now, generate a secret key and save it to an ENV variable named SECRET\_KEY\_BASE using
 
     ```
-    heroku config:set SECRET_KEY_BASE=`ruby -rsecurerandom -e "puts SecureRandom.hex(64)"
+    heroku config:set SECRET_KEY_BASE=`ruby -rsecurerandom -e "puts SecureRandom.hex(64)"`
     ```
 
     You need to let the app know where the secret key is stored by adding a link to the ENV variable in _config/secrets.yml_
