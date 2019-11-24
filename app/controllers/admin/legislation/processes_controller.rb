@@ -24,8 +24,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
 
   def update
     if @process.update(process_params)
-      set_tag_list
-
       link = legislation_process_path(@process)
       redirect_back(fallback_location: (request.referer || root_path),
                     notice: t("admin.legislation.processes.update.notice", link: link))
@@ -75,11 +73,6 @@ class Admin::Legislation::ProcessesController < Admin::Legislation::BaseControll
         documents_attributes: [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy],
         image_attributes: image_attributes
       ]
-    end
-
-    def set_tag_list
-      @process.set_tag_list_on(:customs, process_params[:custom_list])
-      @process.save!
     end
 
     def resource
