@@ -1,7 +1,11 @@
 sv:
   stats:
     title: "Deltagardata"
+    advanced: "Avancerade statistik"
     total_participants: "Deltagare"
+    by_gender: "Deltagare efter kön"
+    by_age: "Deltagare efter ålder"
+    by_geozone: "Deltagare efter område"
     age: "Ålder"
     total: "Totalt"
     geozone: "Stadsdel"
