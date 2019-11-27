@@ -10,7 +10,7 @@ El repositorio git de Consul está hospedado en Github.com, recomendamos lo uses
 
 4. [Clona el repositorio de tu fork](https://help.github.com/articles/cloning-a-repository/) en tu ordenador
 
-****ADVERTENCIA IMPORTANTE**: No hagas un fork de `https://github.com/AyuntamientoMadrid/consul`, es una equivocación infrecuente que conlleva múltiples y graves problemas.
+****ADVERTENCIA IMPORTANTE**: No hagas un fork de `https://github.com/AyuntamientoMadrid/consul`, es una equivocación frecuente que conlleva múltiples y graves problemas.
 
 ## ¿Porqué hacer el código público?
 
