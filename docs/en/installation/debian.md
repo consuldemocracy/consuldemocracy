@@ -44,13 +44,15 @@ Ruby versions packaged in official repositories are not suitable to work with co
 
 The preferred method is via rvm:
 
+### As a local user
+
 ```
 command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
 command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
 ```
 
-then add rvm script source to user's bash (/root/.bashrc)
+then add rvm script source to user's bash (~/.bashrc) (this step is only necessary if you can't execute the rvm command)
 
 ```
 [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
@@ -59,7 +61,7 @@ then add rvm script source to user's bash (/root/.bashrc)
 and finally, reload .bashrc to be able to run RVM
 
 ```
-source /root/.bashrc
+source ~/.bashrc
 ```
 
 with all this, you are suppose to be able to install a ruby version from rvm, as for example version 2.4.9:
@@ -165,4 +167,12 @@ chromedriver --version
 
 You should receive an output with the latest version of ChromeDriver. If that's the case, you're good to go!
 
-> Now you're ready to go get Consul [installed](local_installation.md)!!
+If you are using an Arch-based distro, installing `chromium` from the `extra` repository should be sufficient.
+
+You also have the option of just installing ChromeDriver from AUR. If you use `pacaur`, run the following command:
+
+```bash
+pacaur -S chromedriver
+```
+
+Now you're ready to go get Consul [installed](local_installation.md)!!
