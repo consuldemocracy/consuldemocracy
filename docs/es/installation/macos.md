@@ -108,31 +108,4 @@ brew install chromedriver
 brew install imagemagick
 ```
 
-## Clonar el repositorio
-
-Ahora que ya tenemos todas las dependencias instalado podemos bajarnos el proyecto:
-
-```
-git clone https://github.com/consul/consul.git
-cd consul
-bundle install
-cp config/database.yml.example config/database.yml
-cp config/secrets.yml.example config/secrets.yml
-```
-
-Ahora copia en `database.yml` el usuario y la contraseña que pusiste para *consul*. Cuando ya lo hayas hecho:
-
-```
-rake db:create
-rake db:setup
-rake db:dev_seed
-RAILS_ENV=test bin/rake db:setup
-```
-
-Para ejecutar los tests:
-
-```
-bundle exec rspec
-```
-
-> Ya estás listo para [instalar Consul](../local_installation.html)!!
+Ahora que ya tenemos todas las dependencias instalado podemos bajarnos el proyecto: [instalar Consul](local_installation.md)
