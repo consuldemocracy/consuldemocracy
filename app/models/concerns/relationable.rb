@@ -13,6 +13,6 @@ module Relationable
   end
 
   def relationed_contents
-    related_contents.not_hidden.map(&:child_relationable)
+    related_contents.not_hidden.order(created_at: :asc).map(&:child_relationable)
   end
 end
