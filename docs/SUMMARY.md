@@ -41,7 +41,7 @@
   * [OAuth](en/features/oauth.md)
   * [GraphQL](en/features/graphql.md)
   * [Recommendations](en/features/recommendations.md)
-  * [Configure Census Conexion](en/features/census_configuration.md)
+  * [Configure Census Connection](en/features/census_configuration.md)
   * [Local Census](en/features/local_census.md)
 
 * [Open Source project](en/open_source/open_source.md)
