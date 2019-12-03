@@ -1,12 +1,6 @@
 en-US:
   activerecord:
     models:
-      comment:
-        one: "Kommentar"
-        other: "Kommentare"
-      debate:
-        one: "Debatte"
-        other: "Debatten"
       user:
         one: "Benutzer"
         other: "Benutzer"
