@@ -1,24 +1,7 @@
 en-US:
   activerecord:
-    models:
-      user:
-        one: "Benutzer"
-        other: "Benutzer"
-      moderator:
-        one: "Moderator,Gesprächsleiter"
-        other: "Moderatoren,Gesprächsleiter"
-      administrator:
-        one: "Administrator(in),Verwaltungsleiter(in)"
-        other: "Administrator(in),Verwaltungsleiter(in)"
     attributes:
-      budget/investment:
-        administrator_id: "Administrator(in),Verwaltungsleiter(in)"
-      comment:
-        body: "Kommentar"
-        user: "Benutzer"
       user:
         email: "Email"
-      legislation/annotation:
-        text: Kommentar
       link:
         url: Link
