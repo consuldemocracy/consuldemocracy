@@ -24,19 +24,19 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     scenario "should be present when current locale translation does not exists", :js do
       visit path
 
-      select("Deutsch", from: "locale-switcher")
+      select("Español", from: "locale-switcher")
 
-      expect(page).to have_button("Translate page")
+      expect(page).to have_button("Traducir página")
     end
 
     scenario "should not be present when new current locale translation exists", :js do
-      add_translations(resource)
+      add_translations(resource, :es)
       visit path
       expect(page).not_to have_button("Translate page")
 
-      select("Deutsch", from: "locale-switcher")
+      select("Español", from: "locale-switcher")
 
-      expect(page).not_to have_button("Translate page")
+      expect(page).not_to have_button("Traducir página")
     end
 
     scenario "should not be present when there are no resources to translate", :js do
@@ -44,20 +44,20 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       resource.destroy!
       visit path
 
-      select("Deutsch", from: "locale-switcher")
+      select("Español", from: "locale-switcher")
 
-      expect(page).not_to have_button("Translate page")
+      expect(page).not_to have_button("Traducir página")
     end
 
     describe "with delayed job active", :delay_jobs do
       scenario "should not be present when an equal RemoteTranslation is enqueued", :js do
-        create(:remote_translation, remote_translatable: resource, locale: :de)
+        create(:remote_translation, remote_translatable: resource, locale: :es)
         visit path
 
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).not_to have_button("Translate page")
-        expect(page).to have_content("In a short period of time refreshing the page you will be able to see all the content in your language.")
+        expect(page).not_to have_button("Traducir página")
+        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
       end
     end
 
@@ -69,14 +69,14 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
 
       scenario "is not present when a resource translation exists but its comment has not tanslations", :js do
-        add_translations(resource)
+        add_translations(resource, :es)
         create(:comment, commentable: resource)
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).not_to have_button("Translate page")
+        expect(page).not_to have_button("Traducir página")
       end
     end
 
@@ -88,25 +88,25 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       end
 
       scenario "display when exists resource translations but the comment does not have a translation", :js do
-        add_translations(resource)
+        add_translations(resource, :es)
         create(:comment, commentable: resource)
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).to have_button("Translate page")
+        expect(page).to have_button("Traducir página")
       end
 
       scenario "not display when exists resource translations but his comment has tanslations", :js do
-        add_translations(resource)
-        create_comment_with_translations(resource)
+        add_translations(resource, :es)
+        create_comment_with_translations(resource, :es)
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).not_to have_button("Translate page")
+        expect(page).not_to have_button("Traducir página")
       end
     end
 
@@ -114,14 +114,14 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       before { skip("only debates index path") if path_name != "debates_path" }
 
       scenario "display when exists featured_debates without tanslations", :js do
-        add_translations(resource)
+        add_translations(resource, :es)
         create_featured_debates
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).to have_button("Translate page")
+        expect(page).to have_button("Traducir página")
       end
     end
 
@@ -129,14 +129,14 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
       before { skip("only proposals index path") if path_name != "proposals_path" }
 
       scenario "display when exists featured_proposals without tanslations", :js do
-        add_translations(resource)
+        add_translations(resource, :es)
         create_featured_proposals
         visit path
         expect(page).not_to have_button("Translate page")
 
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).to have_button("Translate page")
+        expect(page).to have_button("Traducir página")
       end
     end
   end
@@ -145,42 +145,42 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     describe "with delayed jobs", :delay_jobs do
       scenario "the remote translation button should not be present", :js do
         visit path
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        click_button "Translate page"
+        click_button "Traducir página"
 
-        expect(page).not_to have_button("Translate page")
+        expect(page).not_to have_button("Traducir página")
       end
 
       scenario "the remote translation is pending to translate", :js do
         visit path
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect { click_button "Translate page" }.to change { RemoteTranslation.count }.from(0).to(1)
+        expect { click_button "Traducir página" }.to change { RemoteTranslation.count }.from(0).to(1)
       end
 
       scenario "should be present enqueued notice and informative text", :js do
         visit path
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        click_button "Translate page"
+        click_button "Traducir página"
 
-        expect(page).to have_content("Translations have been correctly requested.")
-        expect(page).to have_content("In a short period of time refreshing the page you will be able to see all the content in your language.")
+        expect(page).to have_content("Se han solicitado correctamente las traducciones.")
+        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
       end
 
       scenario "should be present only informative text when user visit page with all content enqueued", :js do
         visit path
-        select("Deutsch", from: "locale-switcher")
-        click_button "Translate page"
-        expect(page).to have_content("Translations have been correctly requested.")
+        select("Español", from: "locale-switcher")
+        click_button "Traducir página"
+        expect(page).to have_content("Se han solicitado correctamente las traducciones.")
 
         visit path
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        expect(page).not_to have_button "Translate text"
-        expect(page).not_to have_content("Translations have been correctly requested.")
-        expect(page).to have_content("In a short period of time refreshing the page you will be able to see all the content in your language.")
+        expect(page).not_to have_button "Traducir página"
+        expect(page).not_to have_content("Se han solicitado correctamente las traducciones.")
+        expect(page).to have_content("En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma")
       end
     end
 
@@ -189,20 +189,20 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
         microsoft_translate_client_response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
         visit path
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        click_button "Translate page"
+        click_button "Traducir página"
 
-        expect(page).not_to have_button("Translate page")
+        expect(page).not_to have_button("Traducir página")
       end
 
       scenario "the remote translation has been translated and destoyed", :js do
         microsoft_translate_client_response = generate_response(resource)
         expect_any_instance_of(RemoteTranslations::Microsoft::Client).to receive(:call).and_return(microsoft_translate_client_response)
         visit path
-        select("Deutsch", from: "locale-switcher")
+        select("Español", from: "locale-switcher")
 
-        click_button "Translate page"
+        click_button "Traducir página"
 
         expect(RemoteTranslation.count).to eq(0)
         expect(resource.translations.count).to eq(2)
@@ -211,15 +211,15 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
   end
 end
 
-def add_translations(resource)
+def add_translations(resource, locale)
   new_translation = resource.translations.first.dup
-  new_translation.update!(locale: :de)
+  new_translation.update!(locale: locale)
   resource
 end
 
-def create_comment_with_translations(resource)
+def create_comment_with_translations(resource, locale)
   comment = create(:comment, commentable: resource)
-  add_translations(comment)
+  add_translations(comment, locale)
 end
 
 def index_path?(path)
