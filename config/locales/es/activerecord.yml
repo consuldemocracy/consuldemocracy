@@ -201,7 +201,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Coste"
+        price: "Cantidad"
         population: "Población (opcional)"
       budget/heading/translation:
         name: "Nombre de la partida"
@@ -220,7 +220,7 @@ es:
         description: "Opinión"
         tag_list: "Temas"
         terms_of_service: "Términos de servicio"
-        title: "Título"
+        title: "Título del debate"
       debate/translation:
         title: "Título del debate"
         description: "Texto inicial del debate"
@@ -396,10 +396,10 @@ es:
         text: Comentario
       document:
         title: Título
-        attachment: "Archivo adjunto"
+        attachment: "Selecciona un documento"
       image:
         title: Título
-        attachment: "Archivo adjunto"
+        attachment: "Selecciona una imagen"
       poll/question/answer:
         title: Respuesta
         description: Descripción
