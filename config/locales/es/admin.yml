@@ -260,6 +260,7 @@ es:
       search_unfeasible: Buscar inviables
     milestones:
       index:
+        table_id: "ID"
         table_title: "Título"
         table_description: "Descripción"
         table_publication_date: "Fecha de publicación"
@@ -313,6 +314,7 @@ es:
         no_progress_bars: "No hay barras de progreso"
         new_progress_bar: "Crear nueva barra de progreso"
         primary: "Barra de progreso principal"
+        table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
         table_percentage: "Progreso"
@@ -330,6 +332,7 @@ es:
         notice: "Barra de progreso eliminada correctamente"
     comments:
       index:
+        id: "ID"
         content: "Contenido"
         author: "Autor"
         commentable_type: "Tipo"
@@ -408,6 +411,7 @@ es:
           success: La tarea ha sido marcada como resuelta
     debates:
       index:
+        id: ID
         author: Autor
         no_debates: No hay debates.
     hidden_debates:
@@ -1564,6 +1568,7 @@ es:
     audits:
       title: "Historial"
       changes: "Lista de cambios"
+      id: "ID"
       field: "Campo"
       new_value: "Valor nuevo"
       old_value: "Valor anterior"
