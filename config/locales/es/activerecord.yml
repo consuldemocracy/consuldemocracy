@@ -179,7 +179,7 @@ es:
         status_id: "Estado actual (opcional)"
         title: "Título"
         description: "Descripción (opcional si hay un estado asignado)"
-        publication_date: "Fecha de publicación"
+        publication_date: "Fecha"
       milestone/translation:
         description: "Descripción"
       milestone/status:
@@ -202,7 +202,7 @@ es:
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
         price: "Coste"
-        population: "Población"
+        population: "Población (opcional)"
       budget/heading/translation:
         name: "Nombre de la partida"
       budget/phase:
