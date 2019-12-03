@@ -38,8 +38,8 @@ es:
       moderator: Moderador
       responses:
         zero: Sin respuestas
-        one: 1 Respuesta
-        other: "%{count} Respuestas"
+        one: 1 respuesta
+        other: "%{count} respuestas"
       responses_show:
         zero: Sin respuestas
         one: "1 respuesta (mostrar)"
