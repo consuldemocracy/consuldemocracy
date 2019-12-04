@@ -1,4 +1,4 @@
-##Configure connection to the Census:
+## Configure connection to the Census:
 
 The objective of this service is to be able to configure the connection with the Town Hall Census through the Administration panel without having to modify the application code.
 
@@ -56,7 +56,7 @@ The information to be filled in is divided into three sections:
     Example:
     ![Request Data - Method name](../../img/remote_census/request-data-method-name-en.png)
 
-  - **Request Structure**: Structure of the request received by the WebService of the Census of the City Council. The "static" values of this request should be reported. The "dynamic" values related to Document Type, Document Number, Date of Birth and Postal Code should be filled with blank value.
+  - **Request Structure**: Structure of the request received by the WebService of the Census of the City Council. The "static" values of this request should be reported. The "dynamic" values related to Document Type, Document Number, Date of Birth and Postal Code should be filled with null value.
 
     Example:
     ![Request Data - Structure](../../img/remote_census/request-data-structure-en.png)
