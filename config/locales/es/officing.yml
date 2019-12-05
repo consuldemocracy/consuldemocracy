@@ -51,7 +51,7 @@ es:
         select_booth: "Elige urna"
         ballots_white: "Papeletas totalmente en blanco"
         ballots_null: "Papeletas nulas"
-        ballots_total: "Papeletas totales"
+        ballots_total: "Papeletas válidas"
         submit: "Guardar"
         results_list: "Tus resultados"
         see_results: "Ver resultados"
@@ -62,7 +62,7 @@ es:
         table_votes: Votos
         table_whites: "Papeletas totalmente en blanco"
         table_nulls: "Papeletas nulas"
-        table_total: "Papeletas totales"
+        table_total: "Papeletas válidas"
     residence:
       flash:
         create: "Documento verificado con el Padrón"
