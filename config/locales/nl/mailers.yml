@@ -3,30 +3,21 @@ nl:
     no_reply: "This message was sent from an email address that does not accept replies."
     comment:
       hi: Hi
-      new_comment_by_html: There is a new comment from <strong>%{commenter}</strong>
+      new_comment_by: There is a new comment from <strong>%{commenter}</strong>
       subject: Someone has commented on your %{commentable}
       title: New comment
     config:
       manage_email_subscriptions: To stop receiving these emails change your settings in
     email_verification:
       click_here_to_verify: this link
-      instructions_2_html: This email will verify your account with <b>%{document_type} %{document_number}</b>. If these don't belong to you, please don't click on the previous link and ignore this email.
-      instructions_html: Om de verificatie van uw account te voltooien klikt u %{verification_link}.
       subject: Confirm your email
       thanks: Thank you very much.
       title: Confirm your account using the following link
     reply:
       hi: Hoi
-      new_reply_by_html: There is a new response from <strong>%{commenter}</strong> to your comment on
+      new_reply_by: There is a new response from <strong>%{commenter}</strong> to your comment on
       subject: Someone has responded to your comment
       title: New response to your comment
-    unfeasible_spending_proposal:
-      hi: "Beste deelnemer,"
-      new_html: "Voor al deze vragen nodigen we je uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. Je kunt dit doen door deze link te volgen: %{url}."
-      new_href: "new investment project"
-      sincerely: "Sincerely"
-      sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
-      subject: "Your investment project '%{code}' has been marked as unfeasible"
     proposal_notification_digest:
       info: "Dit zijn nieuwe notificaties gerelateerd aan voorstellen die je hebt gesteund in %{org_name}."
       title: "Notifications in %{org_name}"
@@ -41,7 +32,6 @@ nl:
       unsubscribe_account: My account
     direct_message_for_sender:
       subject: "U heeft een nieuw prive bericht verstuurd"
-      title_html: "Je hebt een nieuw privébericht gestuurd naar <strong>%{receiver}</strong> met de inhoud:"
     user_invite:
       ignore: "If you have not requested this invitation don't worry, you can ignore this email."
       text: "Dank u voor uw interesse om toe te treden tot %{org}! In een paar seconden kunt u deelnemen, vul het onderstaande formulier in:"
@@ -52,15 +42,11 @@ nl:
     budget_investment_created:
       subject: "Thank you for creating an investment!"
       title: "Dank u voor het maken van een investering!"
-      intro_html: "Hi <strong>%{author}</strong>,"
-      text_html: "Thank you for creating your investment <strong>%{investment}</strong> for Participatory Budgets <strong>%{budget}</strong>."
-      follow_html: "We will inform you about how the process progresses, which you can also follow on <strong>%{link}</strong>."
       follow_link: "Participatory Budgets"
       sincerely: "Sincerely,"
       share: "Comparte tu proyecto"
     budget_investment_unfeasible:
       hi: "Beste deelnemer,"
-      new_html: "Voor al deze vragen nodigen we u uit een <strong>nieuw voorstel</ strong> uit te werken dat zich aanpast aan de voorwaarden van dit proces. U kunt dit doen door deze link te volgen: %{url}."
       new_href: "nieuw investeringsproject"
       sincerely: "Oprecht"
       sorry: "Sorry for the inconvenience and we again thank you for your invaluable participation."
