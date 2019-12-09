@@ -1,7 +1,9 @@
 sv:
   pages:
     conditions:
-      title: användarvillkoren
+      title: Användarvillkoren
+      subtitle: Rättsligt meddelande om användarvillkor, säkerhet och skydd av personlig data för Open Government portalen
+      description: Informationssida om användarvillkor, säkerhet och skydd av personlig data.
     help:
       title: "%{org} är en plattform för medborgardeltagande"
       guide: "Den här guiden förklarar de olika delarna av %{org} och hur de fungerar."
@@ -16,7 +18,6 @@ sv:
         title: "Debatter"
         description: "I %{link}-delen kan du presentera dina åsikter och diskutera frågor som rör staden. Det är också en plats för att utveckla idéer som kan tas vidare till andra delar av %{org} och leda till konkreta åtgärder från kommunen."
         link: "debatter"
-        feature_html: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
         feature_link: "registrera dig på %{org}"
         image_alt: "Knappar för att betygsätta diskussioner"
         figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
@@ -25,13 +26,11 @@ sv:
         description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
         link: "medborgarförslag"
         image_alt: "Knapp för att stödja förslag"
-        figcaption_html: 'Knapp för att "stödja" ett förslag.'
       budgets:
         title: "Medborgarbudget"
         description: "I %{link}-delen beslutar invånarna om hur en del av stadens budget ska användas."
         link: "medborgarbudgetar"
         image_alt: "Olika faser av en medborgarbudget"
-        figcaption_html: '"Stöd"- och "Omröstnings"-faser av en medborgarbudget.'
       polls:
         title: "Omröstningar"
         description: "%{link}-delen aktiveras varje gång ett förslag får 1% stöd och går vidare till omröstning, eller när kommunfullmäktige lämnar ett förslag till omröstning."
@@ -62,11 +61,25 @@ sv:
       titles:
         how_to_use: Använd det i din kommun
     privacy:
-      title: sekretesspolicyn
+      title: Sekretesspolicyn
+      subtitle: "Informationssida om säkerhet"
     accessibility:
       title: Tillgänglighet
+      description: |-
+        Tillgänglighet på webben hänvisar till allas möjlighet att tillträda webben och dess innehåll oavsett de funktionshinder (fysiska, intellektuella eller tekniska) som kan uppstå eller från det som beror på användarsammanhang (teknisk eller miljömässig). 
+
+        När webbplatser designas med tillgänglighet i åtanke, kan alla användare få tillgång till innehållet på jämlika villkor, exempelvis:
+      examples:
+        - Erbjuda syntolkning till bilder som användare med synnedsättningar med hjälp av textläsare kan använda för att få tillgång till information.
+        - När videos har undertext kan användare med hörselskador fullt förstå dem.
+        - Om innehållet är skrivet på ett lätt och illustrerat språk kan användare med inlärningssvårigheter bättre förstå det.
+        - Om användaren har problem med rörlighet och det är svårt att använda musen kan tangentbordets alternativ hjälpa att navigera.
       keyboard_shortcuts:
+        title: Genvägar för tangentbord
         navigation_table:
+          description: För att kunna navigera denna webbsida på ett tillgängligt sätt har ett gäng snabbkommandon programmerats för att samla de huvudsakliga delar av sidan som är av allmänt intresse.
+          caption: Genvägar för tangentbordet som når navigeringsmenyn
+          key_header: Tangent
           page_header: Sida
           rows:
             - 
@@ -87,20 +100,32 @@ sv:
             - 
               key_column: 5
         browser_table:
+          description: "Beroende på det operativsystem och webbläsare som används är tangentkombinationen följande:"
+          caption: Tangentkombinationen beror på operativsystemet och webbläsare
+          browser_header: Webbläsare
+          key_header: Tangentkombination
           rows:
             - 
               browser_column: IE
+              key_column: ALT + genväg sen ENTER
             - 
               browser_column: Firefox
+              key_column: ALT + CAPS + genväg
             - 
               browser_column: Chrome
+              key_column: ALT + genväg (CTRL + ALT + genvägar för MAC)
             - 
               browser_column: Safari
+              key_column: ALT + genväg (CMD + genvägar för MAC)
             - 
               browser_column: Opera
+              key_column: CAPS + ESC + genväg
       textsize:
         title: Textstorlek
         browser_settings_table:
+          description: Webbplatsens tillgängliga design tillåter användaren att välja den storlek på texten som passar hen. Detta kan göras på olika sätt beroende på vilken webbläsare som används.
+          browser_header: Webbläsare
+          action_header: Åtgärd att ta
           rows:
             - 
               browser_column: IE
@@ -110,16 +135,28 @@ sv:
               action_column: Visa > Storlek
             - 
               browser_column: Chrome
+              action_column: Inställningar (ikon) > Alternativ > Avancerat > Webbinnehåll > Textstorlek
             - 
+              browser_column: Safari
+              action_column: Visa > Zooma in/Zooma ut
             - 
               browser_column: Opera
+              action_column: Visa > skala
+        browser_shortcuts_table:
+          description: "Ett annat sätt att justera textstorlek är att använda tangentbordets genvägar som definieras i webbläsare, särskilt tangentkombinationen:"
+          rows:
+            - 
+              shortcut_column: CTRL och + (CMD och + på MAC)
+              description_column: Ökar textstorlek
+            - 
+              shortcut_column: CTRL och - (CMD och - på MAC)
+              description_column: Minskar textstorlek
+      compatibility:
+        title: Förenlighet med standarder och visuell design
     titles:
       help: "Vad är %{org}? - Medborgardeltagande"
     verify:
-      code: Koden du fick i ett brev
-      email: E-post
       info: "För att verifiera ditt konto måste du fylla i dina uppgifter:"
       info_code: "Nu kan du skriva in koden du fick i ett brev:"
-      password: Lösenord
       submit: Verifiera mitt konto
       title: Verifiera ditt konto
