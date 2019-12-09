@@ -72,11 +72,6 @@ val:
       featured_proposals_description: "Mostrar les propostes destacades en la pàgina principal de les propostes"
       signature_sheets: "Fulles de signatures"
       signature_sheets_description: "Permet afegir desde el panell d'Administració les signatures arreplegades in situ per a Propostes i Projectes d'inversió dels Pressupostos participatius"
-      spending_proposals: "Propostes d'inversió"
-      spending_proposals_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
-      spending_proposal_features:
-        voting_allowed: Votacions de propostes d'inversió - Fase de preselecció
-        voting_allowed_description: "⚠️ NOTA: Esta funcionalitat ha sigut substituida per Pressupostos Participatius i desapareixerà en noves versions"
       user:
         recommendations: "Recomanacions"
         recommendations_description: "Mostra als usuaris recomanacions en la pàgina principal basat en les etiquetes dels elements que segueix"
