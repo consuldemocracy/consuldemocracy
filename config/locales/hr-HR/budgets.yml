@@ -7,7 +7,6 @@ hr:
         remaining: "Vi još morate<span>%{amount}</span> investirati."
         no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
         remove: Ukloni glas
-        voted_info_html: "Vaše glasanje je potvrđeno!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Vi niste glasali niti za jedan projetk.
       reasons_for_not_balloting:
@@ -15,9 +14,7 @@ hr:
         not_verified: Samo potvrđeni korisnici mogu glasati za investicije, %{verify_account}.
         organization: Organizacijama nije dozvoljeno glasanje
         not_selected: Projekti koji nisu odabrani ne mogu dobiti podršku
-        not_enough_money_html: "Vi ste već odabrali dostupan budžet. <br><small> Možete %{change_ballot} u bilo koje vrijeme</small>"
         no_ballots_allowed: Faza odabira je zatvorena
-        different_heading_assigned_html: "Vi ste već glasali za drugu temu: %{heading_link}"
         change_ballot: promjeni svoj glas
         casted_offline: Vi ste sudjelovali offline
     groups:
@@ -66,7 +63,6 @@ hr:
         map_location: "Lokacija na mapi"
         map_location_instructions: "Pronađi lokaciju na mapi i stavi marker."
         map_remove_marker: "Ukloni marker na mapi"
-        location: "Dodatne informacije o lokaciji"
         map_skip_checkbox: "Ova investicija nema konkretnu lokaciju ili ja nisam toga svijestan."
       index:
         title: Participativno budžetiranje
@@ -81,16 +77,12 @@ hr:
           my_ballot: Moj glas
           voted_info: Vi možete %{link} u bilo koje vrijeme dok se ne završi ova faza. Nema potrebe da se potroši sav dostupan novac.
           voted_info_link: izmjeni svoj glas
-          different_heading_assigned_html: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
           check_ballot_link: "provjeri i potvrdi moj glas"
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
           verified_only: "Kako bi se stvorio nova investcijski budžet %{verify}."
-          verify_account: "potvrdi svoj račun"
           create: "Stvori investicijski budžet"
           not_logged_in: "Kako bi stvorili novi investicijski budžet morate %{sign_in} ili %{sign_up}."
-          sign_in: "prijavi se"
-          sign_up: "registriraj se"
           by_feasibility: Po izvedivosti
           feasible: Izvedivi projekti
           unfeasible: Neizvedivi projekti
@@ -104,9 +96,6 @@ hr:
         author_deleted: Korisnik obrisan
         price_explanation: Objašnjenje cijene
         unfeasibility_explanation: Objašnjenje neizvedivosti
-        code_html: "Šifra investicijskog koda:<strong>%{code}</strong>"
-        location_html: "Lokacija: <strong>%{location}</strong>"
-        organization_name_html: "Predloženo od strane: <strong>%{name}</strong>"
         share: Podijeli
         title: Investicijski projekt
         supports: Potpora
@@ -115,10 +104,7 @@ hr:
         comments_tab: Komentari
         milestones_tab: Ključni ciljevi
         author: Autor
-        project_unfeasible_html: "Ovaj investicijski projekt <strong> je obilježen kao neizvediv</strong> i neće moći ići u fazu izglasavanja."
-        project_selected_html: "Ovaj investicijski projekt <strong>je odabran</strong> za fazu izglasavanja."
         project_winner: "Pobjednički investicijski projekti"
-        project_not_selected_html: "Ovaj investicijski projekt <strong>nijw bio odabran</strong> za fazu izglsavanja."
         see_price_explanation: Vidi objašnjenje cijene
       wrong_price_format: Samo cijeli brojevi
       investment:
@@ -132,10 +118,12 @@ hr:
           other: "Možete samo poduprijeti investicije u %{count} distriktu. Ako nastavite ne možete glasati za vaš distrikt. Jeste li sigurni?"
         supports:
           zero: Nema potpore
+          one: 1 potpora
+          few: "%{count} potpore"
+          other: "%{count} potpora"
         give_support: Potpora
       header:
         check_ballot: Provjeri i potvrdi moj glas
-        different_heading_assigned_html: "Imate aktivne glasove u drugoj temi: %{heading_link}"
         change_ballot: "Ako izmijenite mišljenje možete ukloniti svoj glas u %{check_ballot} i započeti ponovno."
         check_ballot_link: "provjeri i potvrdi moj glas"
         price: "Ova tema ima budžet od"
@@ -155,7 +143,6 @@ hr:
       page_title: "%{budget} - Rezultati"
       heading: "Rezultati participativnog budžetiranja"
       heading_selection_title: "Po distriktu"
-      spending_proposal: Naslov prijedloga
       ballot_lines_count: Glasovi
       hide_discarded_link: Sakrij odbačene
       show_all_link: Pokaži sve
@@ -164,6 +151,7 @@ hr:
       accepted: "Prihvati prijedlog potrošnje: "
       discarded: "Odbaci prijedlog potrošnje: "
       incompatibles: Nekompatabilni
+      investment_title: Naslov projekta
       investment_proyects: Lista svih investicijskih projekata
       unfeasible_investment_proyects: Lista svih neizvedivih investicijskih projekata
       not_selected_investment_proyects: Lista svih investicijskih projekata koji nisu odabrani za izglasavanje
@@ -173,9 +161,6 @@ hr:
       heading: "Ključni ciljevi participativnog budžetiranja"
       heading_selection_title: "Po distriktu"
       no_winner_investments: "Nema pobjedničkih investicija u ovom stadiju"
-      filters:
-        label: "Trenutno stanje projekta"
-        all: "Svi (%{count})"
     phases:
       errors:
         dates_range_invalid: "Datum početka ne može biti jedank ili kasnije od Datuma završetka"
