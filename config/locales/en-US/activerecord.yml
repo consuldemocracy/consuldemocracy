@@ -30,8 +30,6 @@ en-US:
         user: "Benutzer"
       user:
         email: "Email"
-      spending_proposal:
-        administrator_id: "Administrator(in),Verwaltungsleiter(in)"
       legislation/annotation:
         text: Kommentar
       link:
