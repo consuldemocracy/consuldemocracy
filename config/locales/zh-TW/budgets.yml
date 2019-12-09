@@ -7,18 +7,13 @@ zh-TW:
         remaining: "您仍然有 <span>%{amount}</span> 可以投資。"
         no_balloted_group_yet: "你還沒有投票給這個組, 去投票吧!"
         remove: 刪除投票
-        voted_html:
-          other: "您已為 <span>%{count}</span> 項投資投票。"
-        voted_info_html: "直到這個階段結束前，你可以隨時更改你的投票 。<br>不需要用盡所有可用的錢。"
         zero: 你沒有為任何投資項目投票。
       reasons_for_not_balloting:
         not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
         not_verified: 只有已通過核實的用戶才能對投資進行投票； %{verify_account}。
         organization: 組織不允許投票
         not_selected: 無法支援未選定的投資項目
-        not_enough_money_html: "您已經分配了可用的預算。<br><small>記住，您可以隨時 %{change_ballot} </small>"
         no_ballots_allowed: 選擇階段已結束
-        different_heading_assigned_html: "您已投票給另一個標題： %{heading_link}"
         change_ballot: 更改您的投票
     groups:
       show:
@@ -66,7 +61,6 @@ zh-TW:
         map_location: "地圖位置"
         map_location_instructions: "將地圖導航到該位置，並放置標記。"
         map_remove_marker: "刪除地圖標記"
-        location: "位置附加資訊"
         map_skip_checkbox: "這項投資沒有具體的位置, 或我沒有注意到。"
       index:
         title: 參與式預算編制
@@ -77,24 +71,16 @@ zh-TW:
           button: 搜尋
           placeholder: 搜尋投資項目...
           title: 搜尋
-        search_results_html:
-          other: " 包含術語 <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: 我的選票
-          voted_html:
-            other: "<strong>您已為 %{count} 項建議投票，成本為 %{amount_spent}</strong>"
           voted_info: 直到這個階段結束前，你可以隨時%{link} 。不需要用盡所有可用的錢。
           voted_info_link: 更改您的投票
-          different_heading_assigned_html: "您在另一個標題中有活躍的投票： %{heading_link}"
           change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
           check_ballot_link: "查看我的選票"
           zero: 您沒有在這個小組中投票給任何投資項目。
           verified_only: "創建新的預算投資 %{verify}。"
-          verify_account: "核實您的帳戶"
           create: "創建預算投資"
           not_logged_in: "要創建新的預算投資, 您必須 %{sign_in} 或 %{sign_up}。"
-          sign_in: "登錄"
-          sign_up: "登記"
           by_feasibility: 通過可行性
           feasible: 可行項目
           unfeasible: 不可行項目
@@ -106,9 +92,6 @@ zh-TW:
         author_deleted: 用戶已刪除
         price_explanation: 價格說明
         unfeasibility_explanation: 不可行的解釋
-        code_html: "投資項目代碼： <strong>%{code}</strong>"
-        location_html: "位置： <strong>%{location}</strong>"
-        organization_name_html: "代表 <strong>%{name}</strong>提出建議"
         share: 共用
         title: 投資項目
         supports: 支持
@@ -117,10 +100,7 @@ zh-TW:
         comments_tab: 評論
         milestones_tab: 里程碑
         author: 作者
-        project_unfeasible_html: "此投資項目 <strong>已被標記為不可行</strong>，不會進入投票階段。"
-        project_selected_html: "此投資項目 <strong>已被選入</strong>投票階段。"
         project_winner: "勝出的投資項目"
-        project_not_selected_html: "此投資項目 <strong>未被選入</strong>投票階段。"
       wrong_price_format: 只供整數
       investment:
         add: 票
@@ -135,7 +115,6 @@ zh-TW:
         give_support: 支持
       header:
         check_ballot: 查看我的選票
-        different_heading_assigned_html: "您在另一個標題中有活躍的投票： %{heading_link}"
         change_ballot: "如果您改變了主意, 您可以在 %{check_ballot} 中刪除您的投票，然後重新開始。"
         check_ballot_link: "查看我的選票"
         price: "此標題有一個預算"
@@ -155,7 +134,6 @@ zh-TW:
       page_title: "%{budget} - 結果"
       heading: "參與性預算結果"
       heading_selection_title: "按地區"
-      spending_proposal: 建議標題
       ballot_lines_count: 票
       hide_discarded_link: 隱藏廢棄的
       show_all_link: 顯示所有
