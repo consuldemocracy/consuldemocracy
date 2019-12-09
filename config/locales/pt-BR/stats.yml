@@ -1,1 +1,12 @@
 pt-BR:
+  stats:
+    title: "Dados sobre a participação"
+    total_participants: "Participantes"
+    total: "Total"
+    budgets:
+      link: "Estatísticas"
+      total_unfeasible_investments: "Projetos inviáveis"
+      total: "Total"
+      heading: "Título"
+      participants_every_phase: "Total de participantes"
+      percent_total_participants: "% Total de participantes"
