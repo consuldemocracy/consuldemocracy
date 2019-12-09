@@ -6,7 +6,6 @@ hr:
         submit: Ponovno pošalji upute
         title: Ponovno pošalji upute za potvrđivanje
       show:
-        instructions_html: Potvrdi račun putem emaila %{email}
         new_password_confirmation_label: Ponovi zaporku za pristup
         new_password_label: Nova zaporka za pristup
         please_set_password: Molimo vas stvorite novu zaporku (ovo će Vam omogućiti prijavu putem gornjeg emaila)
@@ -50,10 +49,6 @@ hr:
           title: Registriraj organizaciju ili kolektiv
         success:
           back_to_index: Razumijem; idi natrag na glavnu stranicu
-          instructions_1_html: "<strong>Mi ćemo vas uskoro kontaktirati</strong> kako bismo provjerili da ste zastupnik ovog kolektiva."
-          instructions_2_html: Za vrijeme dok se Vaš <strong>email provjerava</strong>, poslali smo Vam <strong>poveznicu da potvrdite svoj račun</strong>.
-          instructions_3_html: Jednom kada dobijete potvrdu možete započeti sudjelovati kao neprovjeren kolektiv.
-          thank_you_html: Hvala vam na registraciji vašeg kolektiva na stranici. Sada se <strong>vrši verifikacija</strong>.
           title: Registracija organizacije / kolektiva
     passwords:
       edit:
@@ -123,7 +118,4 @@ hr:
           username_note: Ime koje se pojavljuje pored Vaše objave
         success:
           back_to_index: Razumijem; idi nazad na glavnu stranicu
-          instructions_1_html: Molimo <b>provjerite vaš emial</b> - mi smo vam poslali <b> link potvrde za vaš račun</b>.
-          instructions_2_html: Nakon potvrde, možete započeti sa sudjelovanjem.
-          thank_you_html: Hvala na registraciji na stranicu. Vi morate sada <b>potvrditi vašu email adresu</b>.
           title: Potvrdite vašu email adresu
