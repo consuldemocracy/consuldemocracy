@@ -159,13 +159,6 @@ ar:
         few: "مقترحات المواطنين"
         many: "مقترحات المواطنين"
         other: "مقترحات المواطنين"
-      spending_proposal:
-        zero: "مشاريع استثمارية"
-        one: "مشروع استثماري"
-        two: "مشاريع استثمارية"
-        few: "مشاريع استثمارية"
-        many: "مشاريع استثمارية"
-        other: "مشاريع استثمارية"
       site_customization/page:
         zero: صفحات مخصصة
         one: صفحة مخصصة
@@ -271,6 +264,13 @@ ar:
         few: "إشعارات المقترح"
         many: "إشعارات المقترح"
         other: "إشعارات المقترح"
+      dashboard/action:
+        zero: عمليات في لوحة قيادة المقترح
+        one: عملية في لوحة قيادة المقترح
+        two: عمليات في لوحة قيادة المقترح
+        few: عمليات في لوحة قيادة المقترح
+        many: عمليات في لوحة قيادة المقترح
+        other: عمليات في لوحة قيادة المقترح
       dashboard/administrator_task:
         zero: مهمات
         one: مهمة
@@ -307,10 +307,14 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+      budget/investment/translation:
+        title: "العنوان"
+        description: "الوصف"
       geozone:
         name: الإسم
         external_code: "الرّمز الخارجي (اختياري)"
         census_code: "رمز مكتب التعداد (اختياري)"
+        html_map_coordinates: "HTML <map> الإحداثيات (اختياري)"
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "عنوان"
@@ -338,12 +342,21 @@ ar:
         description: "رأي"
         terms_of_service: "شروط الخدمة"
         title: "عنوان"
+      debate/translation:
+        title: "عنوان المناقشة"
+        description: "نص المناقشة الأوّلي"
       proposal:
         author: "كاتب"
         title: "عنوان"
         question: "سؤال"
         description: "الوصف"
+        selected: "وضع علامة مختار"
         terms_of_service: "شروط الخدمة"
+      proposal/translation:
+        title: "عنوان المقترح"
+        description: "نص المقترح"
+        summary: "ملخص المقترح"
+        retired_explanation: "تفسير"
       user:
         login: "البريد الإلكتروني أو اسم المستخدم"
         email: "البريد الإلكتروني"
@@ -351,20 +364,13 @@ ar:
         password_confirmation: "تأكيد كلمة المرور"
         password: "كلمة المرور"
         current_password: "كلمة المرور الحالية"
-        phone_number: "رقم الهاتف"
         official_position: "الموقف الرسمي"
         official_level: "المستوى الرسمي"
+        phone_number: "رقم الهاتف"
         redeemable_code: "رمز التحقق الواردة عبر البريد الإلكتروني"
       organization:
         name: "اسم المنظمة"
         responsible_name: "الشخص المسؤول عن المجموعة"
-      spending_proposal:
-        administrator_id: "مدير"
-        association_name: "اسم الرابطة"
-        description: "الوصف"
-        external_url: "رابط لوثائق إضافية"
-        geozone_id: "نطاق العملية"
-        title: "عنوان"
       poll:
         name: "الإ سم"
         starts_at: "تاريخ البدء"
@@ -384,6 +390,7 @@ ar:
       poll/question/translation:
         title: "سؤال"
       poll/ballot_sheet:
+        data: بيانات CSV
         poll_id: استطلاع
         officer_assignment_id: مهمة الضابط
       signature_sheet:
@@ -459,10 +466,10 @@ ar:
         text: التعليق
       document:
         title: عنوان
-        attachment: مرفق
+        attachment: "مرفق"
       image:
         title: عنوان
-        attachment: مرفق
+        attachment: "مرفق"
       poll/question/answer:
         title: الإجابة
         description: الوصف
@@ -475,7 +482,7 @@ ar:
       newsletter:
         segment_recipient: المستلمين
         subject: الموضوع
-        from: من
+        from: "من"
         body: محتوى البريد الإلكتروني
       admin_notification:
         segment_recipient: المستفيدين
@@ -504,8 +511,10 @@ ar:
         short_description: وصف قصير
         description: الوصف
         link: رابط خارجي
+        request_to_administrators: تزويد المورد بزر لطلب المورد من المسؤولين
         day_offset: كم من يوم تريد أن يبقى الاقتراح مفعلا بعد انشائه ؟
         required_supports: ما مقدار الدعم الذي يجب أن يحصل عليه الاقتراح حتى يتم تفعيله؟
+        order: يمكنك تحديد مكان عرض هذا الإجراء للمستخدم في قائمة الإجراءات
         active: نشِط
         action_type: النوع
       dashboard/administrator_task:
@@ -514,6 +523,11 @@ ar:
       link:
         label: عنوان
         url: رابط
+      valuator:
+        description: الوصف
+        valuator_group_id: مجموعة تقييم
+        can_comment: يمكنك إنشاء تعليقات
+        can_edit_dossier: يمكنك تعديل الملفات
     errors:
       models:
         user:
@@ -591,7 +605,9 @@ ar:
             valuation:
               cannot_comment_valuation: "لا يمكنك التعليق على التقييم"
       messages:
+        translations_too_short: يجب توفير ترجمة واحدة على الأقل
         record_invalid: "فشل التحقق: %{errors}"
+        another_poll_active: هناك استطلاع آخر نشط للفترة المحددة
         restrict_dependent_destroy:
           has_one: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
           has_many: "لا يمكن حذف السجل لأن هناك تابع %{record} موجود"
