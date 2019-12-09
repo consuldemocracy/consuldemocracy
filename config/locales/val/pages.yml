@@ -18,7 +18,6 @@ val:
         title: "Debats"
         description: "En la secció de %{link} pots exposar i compartir la teua opinió amb altres persones sobre temes que et preocupen relacionats en la teua ciutat. També es un espai on generar idees que a través de les altres seccions de %{org} duguen a actuacions concretes per part de l'Ajuntament."
         link: "debats ciutadans"
-        feature_html: "Pots obrir debats, comentaris i avaluar-los amb els botons de <strong>Estic d'acord</strong> o <strong>No estic d'acord</strong>. Per a això has de %{link}."
         feature_link: "registrarte en %{org}"
         image_alt: "Botons per a valorar els debats"
         figcaption: 'Botons "Estic d''acord" i "No estic d''acord" per a valorar els debats.'
@@ -27,13 +26,11 @@ val:
         description: "En la secció %{link} pots plantejar propostes per a que l'Ajuntament les duga a terme. Les propostes recaben avals, i si arriben als avals suficients es sotmeten a votació ciutadana. Les propostes aprovades en aquestes votacions ciutadanes son asumides per l'Ajuntament i es duen a terme."
         link: "propostes ciutadanes"
         image_alt: "Botó per a avalar una proposta"
-        figcaption_html: 'Botó per a "Avalar" una proposta.'
       budgets:
         title: "Pressupostos Participatius"
         description: "La secció de %{link} serveix per a que la gent decidisca de manera directa a qué es estina una part del pressupost municipal."
         link: "pressupostos participatius"
         image_alt: "Diferents fases d'un pressupost participatiu"
-        figcaption_html: 'Fase "d''Avals" i fase de "Votació" dels pressupostos participatius.'
       polls:
         title: "Votacions"
         description: "La secció de %{link} s'activa cada vegada que una proposta arriba a l'1% d'avals i passa a votació o quant l'Ajuntament proposa un tema per a que la gent decidisca sobre ell."
@@ -157,14 +154,10 @@ val:
               description_column: Reduïx el tamany del text
       compatibility:
         title: Compatibilitat amb estàndards i disseny visual
-        description_html: 'Totes les pàgines d''aquest lloc web compleixen amb <strong>Guia d''Accessibilitat</strong> o els Principis Generals del Disseny Accessible establers per el Grup de Treball <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> pertanyent al W3C.'
     titles:
       help: "Qué es %{org}? - Participació ciutadana"
     verify:
-      code: Codi que has rebut en la teua carta
-      email: Correu electrònic
       info: "Per a verificar el teu compte introdueix les dades amb les que et vas registrar:"
       info_code: "Ara introdueix el codi que has rebut en la teua carta:"
-      password: Contrasenya
       submit: Verificar el meu compte
       title: Verifica el teu compte
