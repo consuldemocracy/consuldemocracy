@@ -3,30 +3,19 @@ hr:
     no_reply: "Ova poruka se šalje s email adrese koja ne prima odgovore."
     comment:
       hi: Pozdrav
-      new_comment_by_html: Došao je novi komentar od <b>%{commenter}</b>
       subject: Netko je komentirao vašu%{commentable}
       title: Novi komentar
     config:
       manage_email_subscriptions: Ako ne želite više primati ove email-ove promijenite svoje postavke
     email_verification:
       click_here_to_verify: ova poveznica
-      instructions_2_html: Ovaj email će potvrditi vaš račun s <b>%{document_type} </b>%{document_number}. Ako ovo ne pripada vama molimo vas da ne kliknete na prethodnu poveznicu i ignorirate ovaj email.
-      instructions_html: Kako biste dovršili potvrdu svojeg korisničkog računa morate kliknuti %{verification_link}.
       subject: Potvrditie svoj email
       thanks: Hvala vam puno.
       title: Potvrdite Vaš račun koristeći sljedeću poveznicu
     reply:
       hi: Pozdrav
-      new_reply_by_html: Postoji novi odgovor od <b>%{commenter}</b> na vaš komentar na temu
       subject: Netko je odgovorio na Vaš komentar
       title: Novi odgovor na vaš komentar
-    unfeasible_spending_proposal:
-      hi: "Dragi korisniče,"
-      new_html: "Za sve ove, pozivamo Vas da razradite <strong>novi prijedlog</strong> koji se pridržava uvjeta ovog procesa. Možete to učiniti na sljedećem linku: %{url}."
-      new_href: "novi investicijski projekt"
-      sincerely: "Iskreno"
-      sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na vašem sudjelovanju."
-      subject: "Vaš investicijski projekt '%{code}' je označen kao neizvediv"
     proposal_notification_digest:
       info: "Evo novih obavijesti koje su objavili autori prijedloga koje ste podržali u %{org_name}."
       title: "Obavijesti prijedloga u %{org_name}"
@@ -41,7 +30,6 @@ hr:
       unsubscribe_account: Moj račun
     direct_message_for_sender:
       subject: "Vi ste poslali novu privatnu poruku"
-      title_html: "Vi ste poslali novu privatnu poruku <strong>%{receiver}</strong> sa sadržajem:"
     user_invite:
       ignore: "Ukoliko niste zatražili ovu pozivnicu ne brinite, možete ignorirati ovaj email."
       text: "Hvala vam na prijavi %{org}! U nekoliko sekundi možete započeti sudjelovanje, samo popunite obrazac dolje:"
@@ -52,15 +40,11 @@ hr:
     budget_investment_created:
       subject: "Hvala Vam što ste stvorili investiciju!"
       title: "Hvala Vam što ste stvorili investiciju!"
-      intro_html: "Pozdrav <strong>%{author}</strong>"
-      text_html: "Hvala vam što ste napravili investiciju <strong>%{investment}</strong> za Participativno Budžetiranje <strong>%{budget}</strong>."
-      follow_html: "Mi ćemo Vas inormirati o progresu, koji također možete slijediti na <strong>%{link}</strong>."
       follow_link: "Participativni Budžet"
       sincerely: "Iskreno,"
       share: "Podjelite svoj projekt"
     budget_investment_unfeasible:
       hi: "Dragi korisniče,"
-      new_html: "Za sve ovo, pozivamo vas da razradite <strong>novu investiciju</strong> koja se prilagođava uvjetima ovog procesa. Ovaj proces možete pronaći na sljedećem linku: %{url}."
       new_href: "novi investicijski projekt"
       sincerely: "Iskreno"
       sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na sudjelovanju."
