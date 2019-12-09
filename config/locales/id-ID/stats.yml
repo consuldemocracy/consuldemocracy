@@ -25,7 +25,7 @@ id:
       by_heading: "Peserta berdasarkan masa dan kepala keluarga"
       total: "Total"
       heading: "Judul"
-      investments_sent_html: "Proposal proyek dikirim"
+      investments_sent: "Proposal investasi telah dikirim"
       participants_support_phase: "Tahap peserta pendukung"
       participants_vote_phase: "Tahap peserta pemilih"
       participants_every_phase: "Total peserta"
