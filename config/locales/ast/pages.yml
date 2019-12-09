@@ -73,9 +73,6 @@ ast:
             - 
             - 
     verify:
-      code: Código que has recibido en tu carta
-      email: Corréu electrónicu
       info_code: "Ahora introduce el código que has recibido en tu carta:"
-      password: Contraseña que utilizarás para acceder a este sitio web
       submit: Verificar mi cuenta
       title: Verifica tu cuenta
