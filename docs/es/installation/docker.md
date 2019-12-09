@@ -46,7 +46,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
-## Instalación
+<!-- ## Instalación -->
+<h2 id="instalacion">Instalación</h2>
 
 Clona el repositorio en tu ordenador y entra en el directorio:
 ```bash
@@ -113,7 +114,7 @@ Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
 
 ## ¿Tienes problemas?
-Ejecute los comandos en el **directorio de CONSUL**, para borrar todas las imágenes y contenedores anteriores del Docker de CONSUL. Luego, reinicie el [proceso de instalación](#instalación) de Docker:
+Ejecute los comandos en el **directorio de CONSUL**, para borrar todas las imágenes y contenedores anteriores del Docker de CONSUL. Luego, reinicie el [proceso de instalación](#instalacion) de Docker:
 
 1. Quitar todas las imágenes de CONSUL:
 ```bash
