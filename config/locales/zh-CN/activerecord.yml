@@ -41,8 +41,6 @@ zh-CN:
         other: "官员"
       proposal:
         other: "公民提议"
-      spending_proposal:
-        other: "投资项目"
       site_customization/page:
         other: 定制页面
       site_customization/image:
@@ -129,20 +127,13 @@ zh-CN:
         password_confirmation: "密码确认"
         password: "密码"
         current_password: "当前密码"
-        phone_number: "电话号码"
         official_position: "正式职位"
         official_level: "正式级别"
+        phone_number: "电话号码"
         redeemable_code: "通过电子邮件接收到的验证码"
       organization:
         name: "组织名称"
         responsible_name: "组织的负责人"
-      spending_proposal:
-        administrator_id: "管理员"
-        association_name: "协会名称"
-        description: "说明"
-        external_url: "链接到其他文档"
-        geozone_id: "经营范围"
-        title: "标题"
       poll:
         name: "名字"
         starts_at: "开始日期"
@@ -227,10 +218,10 @@ zh-CN:
         text: 评论
       document:
         title: 标题
-        attachment: 附件
+        attachment: "附件"
       image:
         title: 标题
-        attachment: 附件
+        attachment: "附件"
       poll/question/answer:
         title: 回答
         description: 说明
@@ -243,7 +234,7 @@ zh-CN:
       newsletter:
         segment_recipient: 收件人
         subject: 主题
-        from: 从
+        from: "从"
         body: 电子邮件内容
       admin_notification:
         segment_recipient: 收件人
