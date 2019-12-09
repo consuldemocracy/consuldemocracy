@@ -10,7 +10,7 @@ sv:
           pending_flag_review: Väntande
           with_ignored_flag: Markerad som läst
         headers:
-          comment: Kommentera
+          comment: Kommentar
           moderate: Moderera
         hide_comments: Dölj kommentarer
         ignore_flags: Markera som läst
