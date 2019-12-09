@@ -6,7 +6,6 @@ da:
         submit: Send instruktioner igen
         title: Send bekræftelsesinstruktioner igen
       show:
-        instructions_html: Bekræft kontoen med e-mail %{email}
         new_password_confirmation_label: Gentag adgangskode
         new_password_label: Ny adgangskode
         please_set_password: Vælg din nye adgangskode (den vil gøre det muligt for dig at logge ind med ovenstående e-mail)
@@ -50,10 +49,6 @@ da:
           title: Tilmeld som organisation eller gruppe
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min forside
-          instructions_1_html: "<strong>Vi vil kontakte dig snart</strong> for at verificere, at du reelt repræsenterer denne gruppe."
-          instructions_2_html: Vi har imens din <strong>e-mail kontrolleres</strong>, sendt dig et <strong>link, hvor du kan bekræfte din konto</strong>.
-          instructions_3_html: Når den er bekræftet, kan du begynde at deltage som en ikke-verificeret gruppe.
-          thank_you_html: Tak fordi du registrerede dig som en gruppe på websitet. Registreringen er nu <strong>under behandling</strong>.
           title: Registrering af organisation/gruppe
     passwords:
       edit:
@@ -123,7 +118,4 @@ da:
           username_note: Det navn, der vises i forbindelse med dine indlæg
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min startside
-          instructions_1_html: Vær venlig <b>at tjekke din e-mail</b> - vi har sendt dig et <b>link, så du kan bekræfte din konto</b>.
-          instructions_2_html: Når du har bekræftet din konto, kan du begynde at deltage.
-          thank_you_html: Tak din tilmelding. Du skal nu <b>bekræfte din e-mail adresse</b>.
           title: Bekræft din e-mail adresse
