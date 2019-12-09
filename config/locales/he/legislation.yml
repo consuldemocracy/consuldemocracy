@@ -18,9 +18,6 @@ he:
         publish_comment: פרסם תגובה
       form:
         phase_not_open: שלב זה אינו פתוח
-        login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
-        signin: התחברות
-        signup: הרשמה
       index:
         title: הערות
         comments_about: תגובות לגבי
@@ -118,11 +115,8 @@ he:
       participation:
         phase_not_open: שלב זה אינו פתוח
         organizations: ארגונים אינם מורשים להשתתף בדיון
-        signin: התחברות
-        signup: הרשמה
         unauthenticated: נדרשת %{signin} או %{signup} בכדי להשתתף
         verified_only: רק משתמשים מאומתים יכולים להשתתף %{verify_account}.
-        verify_account: לאמת את החשבון
         debate_phase_not_open: שלב הדיון הסתיים, תשובות לא יתקבלו יותר
     shared:
       share: שתף
@@ -131,3 +125,4 @@ he:
       form:
         tags_label: "קטגוריות"
       not_verified: "עבור הצבעה להצעות %{verify_account}."
+      process_title: תהליך חקיקה שיתופית
