@@ -20,3 +20,10 @@ gl:
         document_type: "Tipo documento"
         document_number: "Número de documento (incluída letra)"
         year_of_birth: "Ano de nacemento"
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "O formato non é válido. Formato válido: %{valid_extensions}."
+              headers: "As cabeceiras do ficheiro non son válidas. As cabeceiras deben ter os seguintes nomes: %{required_headers}."
