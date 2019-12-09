@@ -20,3 +20,10 @@ sv:
         document_type: "Identitetshandling"
         document_number: "Identitetshandlingens nummer (inklusive bokstäver)"
         year_of_birth: "Födelseår"
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Det givna filformatet är fel. Det tillåtna filformatet är: %{valid_extensions}."
+              headers: "Den givna filnamnet är fel. Filnamn måste ha följande titlar: %{required_headers}."
