@@ -4,7 +4,6 @@ id:
     form:
       title: Gambar deskriptif
       title_placeholder: Tambahkan judul deskriptif untuk gambar
-      attachment_label: Pilih gambar
       delete_button: Hapus gambar
       note: "Anda dapat mengunggah satu gambar dari jenis konten berikut: %{accepted_content_types}, hingga %{max_file_size} MB."
       add_new_image: Tambahkan Gambar
