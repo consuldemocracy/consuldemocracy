@@ -40,7 +40,7 @@ class RemoteTranslations::Caller
 
     def fields_values
       resource.translated_attribute_names.map do |field|
-        resource.send(field)
+        WYSIWYGSanitizer.new.sanitize(resource.send(field))
       end
     end
 
