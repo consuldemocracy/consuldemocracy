@@ -114,7 +114,7 @@ ast:
         no_admin_assigned: Ensin almin asignáu
         no_valuators_assigned: Ensin evaluaor
         feasibility:
-          feasible: "Vidable (%{price})"
+          feasible: "Vidable"
           unfeasible: "Invidable"
           undecided: "Ensin decidir"
         selected: "Escoyía"
@@ -562,7 +562,7 @@ ast:
       edit:
         title: "Editar entruga ciudadana"
       new:
-        title: "Crear entruga ciudadana"
+        title: "Crear entruga ciudadana para la encuesta %{poll}"
       show:
         proposal: Propuesta ciudadana orixinal
         author: Autor
