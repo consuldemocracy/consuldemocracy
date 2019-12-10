@@ -177,7 +177,7 @@ gl:
         no_admin_assigned: Sen administrador asignado
         no_valuators_assigned: Sen avaliador
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Non viables"
           undecided: "Sen decidir"
         selected: "Seleccionadas"
@@ -870,7 +870,7 @@ gl:
       edit:
         title: "Editar pregunta cidadá"
       new:
-        title: "Crear pregunta"
+        title: "Crear pregunta para a enquisa %{poll}"
       answers:
         images:
           add_image: "Engadir unha imaxe"
