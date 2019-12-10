@@ -269,7 +269,7 @@ so:
       form:
         submit_button: Abuur soo jeedin
     share:
-      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
+      message: "Waxaan taageeray hindisaha%{title} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
     edit:
       editing: Tafatiir soojedinta
       form:
