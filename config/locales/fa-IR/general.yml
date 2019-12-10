@@ -365,9 +365,6 @@ fa:
       organization: سازمان ها مجاز به رای دادن نیستند
       unfeasible: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
       not_voting_allowed: فازانتخاب  بسته است
-      different_heading_assigned:
-        one: "شما فقط می توانید از پروژه های سرمایه گذاری در%{count} منطقه حمایت کنید"
-        other: "شما فقط می توانید از پروژه های سرمایه گذاری در%{count} منطقه حمایت کنید"
   welcome:
     feed:
       most_active:
