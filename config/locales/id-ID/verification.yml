@@ -25,7 +25,6 @@ id:
       new:
         explanation: "Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:"
         go_to_index: Melihat proposal
-        office: Verifikasi dalam setiap %{office}
         send_letter: Kirimkan saya sebuah surat dengan kode
         title: Selamat!
         user_permission_info: Dengan akun Anda, Anda dapat...
