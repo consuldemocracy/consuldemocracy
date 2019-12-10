@@ -634,9 +634,6 @@ so:
       organization: Ururada loma fasixin iney codeyaan
       unfeasible: Mashaariicda maal-gashiga aan macquul ahayn lama taageeri karo
       not_voting_allowed: Heerka codbixinta waa la xiray
-      different_heading_assigned:
-        one: "Waxaad taageeri kartaa oo kaliya mashaariicda maalgashiga%{count} kala duwan"
-        other: "Waxaad taageeri kartaa oo kaliya mashaariicda maalgashiga%{count} kala duwanada"
   welcome:
     feed:
       most_active:
