@@ -143,7 +143,7 @@ zh-TW:
         no_admin_assigned: 未分配管理員
         no_valuators_assigned: 未分配評估員
         feasibility:
-          feasible: "可行 (%{price})"
+          feasible: "可行"
           unfeasible: "不可行"
           undecided: "未定"
         selected: "已選擇"
@@ -776,8 +776,6 @@ zh-TW:
         table_poll: "投票"
       edit:
         title: "編輯問題"
-      new:
-        title: "創建問題"
       answers:
         images:
           add_image: "添加圖像"
