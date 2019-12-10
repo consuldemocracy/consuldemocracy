@@ -121,7 +121,7 @@ sl:
         no_admin_assigned: Brez določenega administratorja
         no_valuators_assigned: Brez določenih cenilcev
         feasibility:
-          feasible: "Izvedljivo (%{price})"
+          feasible: "Izvedljivo"
           unfeasible: "Neizvedljivo"
           undecided: "Neodločeno"
         selected: "Izbrano"
@@ -611,7 +611,7 @@ sl:
       edit:
         title: "Uredi vprašanje"
       new:
-        title: "Ustvari vprašanje"
+        title: "Ustvari vprašanje za anketo %{poll}"
       answers:
         images:
           add_image: "Dodaj sliko"
