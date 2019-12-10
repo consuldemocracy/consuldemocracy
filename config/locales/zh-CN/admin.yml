@@ -143,7 +143,7 @@ zh-CN:
         no_admin_assigned: 没有指定管理员
         no_valuators_assigned: 没有指定评估员
         feasibility:
-          feasible: "可行 (%{price})"
+          feasible: "可行"
           unfeasible: "不可行"
           undecided: "未定"
         selected: "已选"
@@ -785,8 +785,6 @@ zh-CN:
         table_poll: "投票"
       edit:
         title: "编辑问题"
-      new:
-        title: "创建问题"
       answers:
         images:
           add_image: "添加图像"
