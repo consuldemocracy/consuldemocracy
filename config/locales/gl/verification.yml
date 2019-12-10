@@ -25,7 +25,7 @@ gl:
       new:
         explanation: "Para participar nas votacións finais podes:"
         go_to_index: Ver propostas
-        office: Verificarte presencialmente en calquera %{office}
+        office: Verifique en calquera oficina de apoio ao cidadán
         send_letter: Solicitar unha carta por correo postal
         title: Parabéns!
         user_permission_info: Coa túa conta xa podes...
@@ -52,7 +52,7 @@ gl:
           spanish_id: DNI
         error_not_allowed_age: Hai que ter polo menos 16 anos
         error_not_allowed_postal_code: Para verificarte debes estar empadroado no municipio de Madrid.
-        error_verifying_census: O Padrón de Madrid non puido verificar a túa información. Por favor, confirma que os teus datos de empadroamento sexan correctos chamando ao 010 (ou á súa versión gratuíta 915298210) ou visita calquera das %{offices}.
+        error_verifying_census: O Censo non puido verificar a súa información. Confirme que os datos do seu censo son correctos chamando ao Concello ou visite unha oficina de atención ao cidadán.
         form_errors: evitaron verificar a túa residencia
         postal_code_note: Para verificar os teus datos debes estar empadroado no municipio de Madrid
         terms: os termos de acceso
