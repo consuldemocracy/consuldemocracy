@@ -18,7 +18,7 @@ es-PE:
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas
       user_permission_title: Participação
-      user_permission_verify: Para executar todas as ações %{verify}
+      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar na votação final
       username_label: Nombre de usuario
