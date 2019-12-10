@@ -173,7 +173,7 @@ id:
         no_admin_assigned: Tidak ada admin yang ditugaskan
         no_valuators_assigned: Tidak ada penilai yang ditugaskan
         feasibility:
-          feasible: "Layak (%{price})"
+          feasible: "Layak"
           unfeasible: "Tidak layak"
           undecided: "Bimbang"
         selected: "Dipilih"
@@ -676,8 +676,6 @@ id:
         table_poll: "Jajak pendapat"
       edit:
         title: "Edit Pertanyaan"
-      new:
-        title: "Membuat Pertanyaan"
       answers:
         images:
           add_image: "Tambahkan gambar"
