@@ -1050,7 +1050,6 @@ de:
       edit:
         title: "Frage bearbeiten"
       new:
-        title: "Frage erstellen"
         title_proposal: "Frage erstellen"
       answers:
         images:
