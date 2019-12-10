@@ -842,8 +842,6 @@ cs:
         poll_not_assigned: "Anketa není přiřazena"
       edit:
         title: "Upravit dotaz"
-      new:
-        title: "Vytvořit otázku"
       answers:
         images:
           add_image: "Přidat obrázek"
