@@ -25,7 +25,7 @@ fr:
       new:
         explanation: "Pour participer au vote final, vous pouvez :"
         go_to_index: Voir les propositions
-        office: Vérifier dans n'importe quel %{office}
+        office: Vérifier dans n'importe quel bureau de soutien aux citoyens
         send_letter: Envoyer une lettre avec le code
         title: Félicitations !
         user_permission_info: Avec votre compte, vous pouvez...
