@@ -66,7 +66,6 @@ fr:
       index:
         title: Budget participatif
         unfeasible: Propositions d'investissement irréalisables
-        unfeasible_text: "Les projets d'investissement doivent satisfaire un certain nombre de critères (être légaux et concrets, relever des compétences de la commune, ne pas dépasser le plafond des budgets, %{definitions}) pour être déclarés viables et atteindre le stade final des votes. Tous les projets qui ne respectent pas ces critères sont identifiés comme irréalisables et publiés dans la liste suivante, accompagnés de leur rapport d'irréalisabilité."
         by_heading: "Portée des propositions d'investissement: %{heading}"
         search_form:
           button: Chercher
