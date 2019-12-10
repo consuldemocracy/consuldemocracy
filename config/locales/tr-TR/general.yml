@@ -254,13 +254,13 @@ tr:
     notification:
       action:
         comments_on:
-          one: Bununla ilgili %{count} yorum paylaşıldı
+          one: Biri şuna yorum yaptı
           other: '%{count} hakkında yeni yorumlar paylaşıldı'
         proposal_notification:
-          one: Bununla ilgili %{count} yeni bildirim var
+          one: Şunda bir yeni bildirim var
           other: Şunda %{count} bildirimler var
         replies_to:
-          one: Sizin yorumunuza %{count} yeni cevap verildi
+          one: Biri şundaki yorumunuza cevap verdi
           other: Şundaki yorumunuza %{count} cevaplar bulunuyor
       mark_as_read: Okundu olarak işaretle
       mark_as_unread: Okunmadı olarak işaretle
