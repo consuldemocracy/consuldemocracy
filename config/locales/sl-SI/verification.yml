@@ -25,7 +25,7 @@ sl:
       new:
         explanation: "Za sodelovanje v končnem glasovanju lahko:"
         go_to_index: Pogledaš predloge
-        office: Verificiraš račun v katerikoli %{office}
+        office: Preverite v vseh uradih za podporo državljanom
         send_letter: Pošljite mi pismo s kodo
         title: Čestitke!
         user_permission_info: S svojim računom lahko ...
@@ -52,7 +52,7 @@ sl:
           spanish_id: EMŠO
         error_not_allowed_age: Za sodelovanje nisi dovolj star/-a
         error_not_allowed_postal_code: Za verifikacijo se moraš najprej registirati.
-        error_verifying_census: Popis ni mogel verificirati tvojih podatkov. Prosimo, pokliči ali obišči %{offices}.
+        error_verifying_census: Popis ni mogel preveriti vaših podatkov. Potrdite, da so podatki o popisu pravilni, tako da pokličete mestni svet ali obiščete eno službo za podporo državljanom.
         form_errors: je preprečilo verifikacijo tvojega prebivališča
         postal_code_note: Za verifikacijo tvojega računa se moraš najprej registrirati
         terms: pogoji uporabe in dostopa
