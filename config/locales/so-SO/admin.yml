@@ -143,7 +143,7 @@ so:
         no_admin_assigned: Mamule lama magcabin
         no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
         feasibility:
-          feasible: "Suurto gal %{price}"
+          feasible: "Surtagal"
           unfeasible: "An surtgak ahayn"
           undecided: "An go aasan"
         selected: "Ladoortay"
@@ -783,8 +783,6 @@ so:
         table_poll: "Dorasho"
       edit:
         title: "Tafatiir Suasha"
-      new:
-        title: "Same Sual"
       answers:
         images:
           add_image: "Sawiir kudar"
