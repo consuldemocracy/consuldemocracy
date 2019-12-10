@@ -6,7 +6,6 @@ cs:
       description: Informační stránka o podmínkách používání, soukromí a ochraně osobních údajů.
     help:
       title: "%{org} je platforma pro zapojování občanů do spolurozhodování"
-      guide: "Tento návod vysvětluje, jaká sekce na tomto portále existují a jak fungují."
       menu:
         debates: "Debaty"
         proposals: "Návrhy"
