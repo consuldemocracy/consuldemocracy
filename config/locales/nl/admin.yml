@@ -182,7 +182,7 @@ nl:
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
         feasibility:
-          feasible: "Feasible (%{price})"
+          feasible: "Haalbaar"
           unfeasible: "Unfeasible"
           undecided: "Undecided"
         selected: "Geselecteerd"
@@ -896,7 +896,7 @@ nl:
       edit:
         title: "Edit Question"
       new:
-        title: "Create Question"
+        title: "Stel een vraag voor de peiling op %{poll}"
         title_proposal: "Stel een vraag"
       answers:
         images:
