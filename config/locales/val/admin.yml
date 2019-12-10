@@ -177,7 +177,7 @@ val:
         no_admin_assigned: Sense admin assignat
         no_valuators_assigned: Sense avaluador asignat
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sense decidir"
         selected: "Seleccionades"
