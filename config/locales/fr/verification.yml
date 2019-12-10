@@ -52,7 +52,7 @@ fr:
           spanish_id: Carte d'identité
         error_not_allowed_age: Vous n'avez pas l'âge requis pour participer
         error_not_allowed_postal_code: Vous devez être enregistré pour être vérifié.
-        error_verifying_census: Le recensement n'a pas pu vérifier vos informations. Merci de confirmer que vos informations sont correctes en appelant la mairie ou en visitant n'importe quel %{offices}.
+        error_verifying_census: Le recensement n'a pas pu vérifier vos informations. Merci de confirmer que vos informations sont correctes en appelant la mairie ou en visitant n'importe quel bureau de soutien aux citoyens.
         form_errors: ont empêché la vérification de votre résidence
         postal_code_note: Pour vérifier votre compte, vous devez être enregistrés.
         terms: les termes et conditions d'accès
