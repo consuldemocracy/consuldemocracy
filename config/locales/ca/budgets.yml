@@ -49,7 +49,7 @@ ca:
           title: Buscar
         sidebar:
           my_ballot: Els meus vots
-          voted_info: Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
+          voted_info: Pots %{link} en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
           voted_info_link: canviar els teus vots
           change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
