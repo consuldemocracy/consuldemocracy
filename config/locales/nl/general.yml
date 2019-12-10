@@ -635,9 +635,6 @@ nl:
       organization: Organisaties mogen niet stemmen
       unfeasible: Onhaalbare voorstellen kunnen niet gesteund worden.
       not_voting_allowed: Stemronde is gesloten.
-      different_heading_assigned:
-        one: "Je kunt alleen in %{count} regio investeringsprojecten steunen"
-        other: "Je kunt alleen in %{count} regio's investeringsprojecten steunen"
   welcome:
     feed:
       most_active:
