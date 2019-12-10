@@ -65,7 +65,7 @@ val:
       index:
         title: Pressupostos participatius
         unfeasible: Propostes d'inversió no viables
-        unfeasible_text: "Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, ser competència de l'Ajuntament, no superar el límit del pressupost; %{definitions}) per a ser declarades viables i arribar fins la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat."
+        unfeasible_text: "Les propostes presentades han de complir una sèrie de criteris (legalitat, concreció, no superar el límit del pressupost) per a ser declarades viables i arribar fins la fase de votació final. Totes les propostes que no compleixen aquests criteris són marcades com a inviables i publicades en la següent llista, juntament amb el seu informe d'inviabilitat."
         by_heading: "Propostes d'inversió amb àmbit: %{heading}"
         search_form:
           button: Cercar
