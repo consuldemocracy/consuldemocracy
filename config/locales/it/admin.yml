@@ -195,7 +195,7 @@ it:
         no_admin_assigned: Nessun amministratore assegnato
         no_valuators_assigned: Nessun valutatore assegnato
         feasibility:
-          feasible: "Fattibile (%{price})"
+          feasible: "Fattibile"
           unfeasible: "Irrealizzabile"
           undecided: "Nessuna decisione"
         selected: "Selezionato"
@@ -883,7 +883,7 @@ it:
       edit:
         title: "Modifica la domanda"
       new:
-        title: "Creare la domanda"
+        title: "Creare una domanda per il sondaggio %{poll}"
       answers:
         images:
           add_image: "Aggiungi immagine"
