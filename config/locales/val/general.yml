@@ -208,7 +208,7 @@ val:
       my_account_link: El meu compte
       my_activity_link: La meua activitat
       open: obert
-      open_gov: Govern %{open}
+      open_gov: Govern obert
       proposals: Propostes
       poll_questions: Votacions
       budgets: Pressupostos participatius
@@ -269,7 +269,7 @@ val:
       form:
         submit_button: Crear proposta
     share:
-      message: "He avalat la proposta %{summary} en %{handle}. Si t'interessa, avala tu també!"
+      message: "He avalat la proposta %{title} en %{handle}. Si t'interessa, avala tu també!"
     edit:
       editing: Editar proposta
       form:
@@ -634,9 +634,6 @@ val:
       organization: Les organitzacions no poden votar
       unfeasible: No es poden votar propostes inviables
       not_voting_allowed: El període de votació està tancat
-      different_heading_assigned:
-        one: "Sols pots avalar projectes de %{count} districte"
-        other: "Sols pots avalar projectes de %{count} districtes"
   welcome:
     feed:
       most_active:
