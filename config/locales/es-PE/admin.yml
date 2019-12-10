@@ -119,7 +119,7 @@ es-PE:
         no_admin_assigned: Sin admin asignado
         no_valuators_assigned: Sin evaluador
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sin decidir"
         selected: "Seleccionada"
