@@ -304,7 +304,7 @@ da:
     share:
       improve_it: Gør din kampagne bedre og få større opbakning.
       dashboard: Flere oplysninger
-      message: "Jeg støttede op om dette forslag %{summary} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
+      message: "Jeg støttede op om dette forslag %{title} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
     edit:
       editing: Rediger forslag
       form:
