@@ -25,7 +25,6 @@ ar:
       new:
         explanation: "للمشاركة في التصويت النهائي يمكن لك أن:"
         go_to_index: انظر جميع المقترحات
-        office: التحقق من أي %{office}
         send_letter: أرسل لي رسالة مع الرمز
         title: تهانينا!
         user_permission_info: من خلال حسابك يمكنك...
