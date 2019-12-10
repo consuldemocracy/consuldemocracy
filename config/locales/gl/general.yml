@@ -303,7 +303,7 @@ gl:
     share:
       improve_it: Mellora a túa campaña e consegue máis apoios.
       dashboard: Ver máis información
-      message: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
+      message: "Veño de apoiar a proposta %{title} en %{handle}. Se che interesa, apoia ti tamén!"
     edit:
       editing: Editar proposta
       form:
@@ -761,9 +761,6 @@ gl:
       organization: As organizacións non poden votar.
       unfeasible: Non se poden votar proxectos de investimento inviables
       not_voting_allowed: A fase de votación está pechada
-      different_heading_assigned:
-        one: "Só pode apoiar proxectos de investimento en %{count} distrito"
-        other: "Só pode apoiar proxectos de investimento en %{count} zonas"
   welcome:
     feed:
       most_active:
