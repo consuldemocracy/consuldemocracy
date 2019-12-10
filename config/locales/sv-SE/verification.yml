@@ -25,7 +25,6 @@ sv:
       new:
         explanation: "För att delta i slutomröstningen kan du:"
         go_to_index: Visa förslag
-        office: Verifiera dig personligen på något %{office}
         send_letter: Skicka ett brev till mig med koden
         title: Grattis!
         user_permission_info: Med ditt konto kan du...
@@ -52,7 +51,6 @@ sv:
           spanish_id: Legitimation
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
-        error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett %{offices}.
         form_errors: gjorde att din adress inte kunde bekräftas
         postal_code_note: För att verifiera ditt konto måste du vara registrerad
         terms: användarvillkoren
