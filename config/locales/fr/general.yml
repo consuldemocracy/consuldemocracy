@@ -630,9 +630,6 @@ fr:
       organization: Les organisations ne sont pas autorisées à voter
       unfeasible: Les propositions d'investissement jugées irréalisables ne peuvent être soutenues
       not_voting_allowed: La phase de vote est terminée
-      different_heading_assigned:
-        one: "Vous ne pouvez soutenir des projets d'investissement que dans %{count} district"
-        other: "Vous ne pouvez soutenir des projets d'investissement que dans %{count} districts"
   welcome:
     feed:
       most_active:
@@ -670,7 +667,7 @@ fr:
       user_permission_info: Avec votre compte, vous pouvez...
       user_permission_proposal: Créer des propositions
       user_permission_support_proposal: Soutenir des propositions
-      user_permission_verify: "Réaliser toutes ces actions %{verify}."
+      user_permission_verify: "Pour effectuer toutes les actions, vérifiez votre compte."
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_verify_my_account: Vérifier mon compte
       user_permission_votes: Participer au vote final
