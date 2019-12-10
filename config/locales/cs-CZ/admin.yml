@@ -171,7 +171,7 @@ cs:
         no_admin_assigned: Administrátor není přiřazen
         no_valuators_assigned: Žádný hodnotitel není přiřazen
         feasibility:
-          feasible: "Proveditelné (%{price})"
+          feasible: "Proveditelné"
           unfeasible: "Nerealizovatelné"
           undecided: "Nerozhodnuté"
         selected: "Vybrané"
