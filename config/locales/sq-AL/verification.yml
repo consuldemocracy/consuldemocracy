@@ -25,7 +25,6 @@ sq:
       new:
         explanation: "Për të marrë pjesë në votimin përfundimtar ju mund të:"
         go_to_index: Shiko propozimet
-        office: Verifiko në çdo %{office}
         send_letter: Më dërgoni një letër me kodin
         title: Urime!
         user_permission_info: Me llogarinë tuaj ju mund të...
@@ -52,7 +51,6 @@ sq:
           spanish_id: DNI
         error_not_allowed_age: Ju nuk keni moshën e kërkuar për të marrë pjesë
         error_not_allowed_postal_code: Që të verifikoheni, duhet të jeni i regjistruar.
-        error_verifying_census: Regjistrimi nuk ishte në gjendje të verifikojë informacionin tuaj. Ju lutemi konfirmoni që detajet e regjistrimit tuaj janë të sakta duke telefonuar në Këshillin e Qytetit ose vizitoni një %{offices}
         form_errors: pengoi verifikimin e vendbanimit tuaj
         postal_code_note: Për të verifikuar llogarinë tuaj ju duhet të jeni të regjistruar
         terms: termat dhe kushtet e qasjes
