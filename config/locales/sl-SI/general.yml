@@ -321,7 +321,7 @@ sl:
       supports_necessary: "%{number} potrebnih podpornikov"
       total_percent: 100 %
       archived: "Ta predlog je bil arhiviran in ne more zbirati podpornikov."
-      successful: "Ta predlog je dosegel zahtevano število podpornikov in bo na voljo v %{voting}."
+      successful: "Ta predlog je dosegel zahtevano podporo."
     show:
       author_deleted: Uporabnik izbrisan
       code: "Koda predloga:"
