@@ -110,7 +110,7 @@ ca:
         no_admin_assigned: Sense admin assignat
         no_valuators_assigned: Sense avaluador
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "No viables"
           undecided: "sense decidir"
         selected: "seleccionada"
@@ -539,7 +539,7 @@ ca:
       edit:
         title: "Editar pregunta ciutadana"
       new:
-        title: "Crear pregunta ciutadana"
+        title: "Crear pregunta per l'enquesta %{poll}"
       answers:
         images:
           add_image: "Afegir imatge"
