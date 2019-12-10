@@ -169,7 +169,7 @@ ca:
       my_account_link: El meu compte
       my_activity_link: La meua activitat
       open: obert
-      open_gov: Govern %{open}
+      open_gov: Govern obert
       proposals: Propostes ciutadanes
       poll_questions: Votacions
       budgets: Pressupostos ciutadans
