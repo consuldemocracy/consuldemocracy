@@ -209,7 +209,7 @@ ar:
         no_admin_assigned: لم يتم تعيين أي مدير
         no_valuators_assigned: لم يتم تعيين مقيّمين
         feasibility:
-          feasible: "مجدي (%{price})"
+          feasible: "مجدي"
           unfeasible: "غير مجدي"
           undecided: "متردد"
         selected: "محدّد"
