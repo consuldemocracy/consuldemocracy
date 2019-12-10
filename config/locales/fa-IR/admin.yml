@@ -136,7 +136,7 @@ fa:
         no_admin_assigned: بدون  تعیین مدیر
         no_valuators_assigned: بدون  تعیین ارزیاب
         feasibility:
-          feasible: "امکان پذیر %{price}\n"
+          feasible: "امکان پذیر"
           unfeasible: "غیر قابل پیش بینی"
           undecided: "بلاتکلیف"
         selected: "انتخاب شده"
@@ -699,8 +699,6 @@ fa:
         table_poll: "نظرسنجی"
       edit:
         title: "ویرایش پرسش"
-      new:
-        title: "ایجاد سوال"
       answers:
         images:
           add_image: "اضافه کردن تصویر"
