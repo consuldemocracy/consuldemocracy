@@ -618,7 +618,7 @@ es-PE:
       edit:
         title: "Editar pregunta ciudadana"
       new:
-        title: "Crear pregunta ciudadana"
+        title: "Crear pregunta ciudadana para la encuesta %{poll}"
       answers:
         images:
           add_image: "Añadir imagen"
