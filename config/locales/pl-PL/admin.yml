@@ -181,7 +181,7 @@ pl:
         no_admin_assigned: Nie przypisano administratora
         no_valuators_assigned: Brak przypisanych wyceniających
         feasibility:
-          feasible: "Wykonalne (%{price})"
+          feasible: "Wykonalne"
           unfeasible: "Niewykonalne"
           undecided: "Niezdecydowany"
         selected: "Wybrany"
@@ -896,7 +896,6 @@ pl:
       edit:
         title: "Edytuj Pytanie"
       new:
-        title: "Utwórz Pytanie"
         title_proposal: "Stwórz pytanie"
       answers:
         images:
