@@ -52,7 +52,6 @@ fa:
           spanish_id: DNI
         error_not_allowed_age: سن مورد نیاز برای شرکت را ندارید.
         error_not_allowed_postal_code: به منظور تایید، شما باید ثبت نام کنید.
-        error_verifying_census: سرشماری قادر به تأیید اطلاعات شما نبود. لطفا با  تماس با شورای شهر، جزئیات مربوط به سرشماری خود را اصلاح کنید%{offices}.
         form_errors: مانع تایید محل اقامت شما شد.
         postal_code_note: برای تایید حساب شما باید ثبت نام کنید.
         terms: شرایط و ضوابط دسترسی
