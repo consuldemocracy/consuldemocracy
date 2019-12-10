@@ -8,7 +8,7 @@ da:
         no_balloted_group_yet: "Du har ikke stemt på denne gruppe endnu, så stem stem stem!"
         remove: Fjern din stemme
         voted:
-          one: "Du har stemt på <span>%{count}</span> projektidé."
+          one: "Du har stemt på <span>et</span> projektidé."
           other: "Du har stemt på <span>%{count}</span> projektidéer."
         voted_info: "Din afstemning er bekræftet!"
         voted_info_2: "Men du kan ændre din stemme til enhver tid indtil denne fase er lukket."
