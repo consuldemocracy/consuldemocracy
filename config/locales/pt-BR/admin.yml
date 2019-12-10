@@ -143,7 +143,7 @@ pt-BR:
         no_admin_assigned: Não há administrador designado
         no_valuators_assigned: Não há avaliadores designados
         feasibility:
-          feasible: "Factível (%{price})"
+          feasible: "Factível"
           unfeasible: "Inviável"
           undecided: "Não decidido"
         selected: "Selecionado"
@@ -833,7 +833,7 @@ pt-BR:
       edit:
         title: "Editar pergunta"
       new:
-        title: "Criar Questão"
+        title: "Criar questão para pesquisa %{poll}"
         title_proposal: "Criar pergunta"
       answers:
         images:
