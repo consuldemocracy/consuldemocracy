@@ -196,7 +196,7 @@ de:
         no_admin_assigned: Kein*e Administrator*in zugewiesen
         no_valuators_assigned: Kein*e Begutacher*in zugewiesen
         feasibility:
-          feasible: "Durchführbar (%{price})"
+          feasible: "Durchführbar"
           unfeasible: "Undurchführbar"
           undecided: "Offen"
         selected: "Ausgewählt"
