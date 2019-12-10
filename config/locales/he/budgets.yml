@@ -75,7 +75,7 @@ he:
           title: חיפוש
         sidebar:
           my_ballot: ההצבעה שלי
-          voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב
+          voted_info: ניתן לשנות את ההצבעה בכל זמן עד סגירת השלב %{link}.
           voted_info_link: שנה את הצבעתך
           change_ballot: "אם שיניתם את דעתכם, באפשרותכם להסיר את ההצבעותכם ב- %{check_ballot} ולהתחיל שוב."
           check_ballot_link: "בדוק ואשר את ההצבעה שלי"
