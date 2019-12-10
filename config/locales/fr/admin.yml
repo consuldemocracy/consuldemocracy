@@ -180,7 +180,7 @@ fr:
         no_admin_assigned: Aucun administrateur affecté
         no_valuators_assigned: Aucun évaluateur affecté
         feasibility:
-          feasible: "Réalisable (%{price})"
+          feasible: "Réalisable"
           unfeasible: "Infaisable"
           undecided: "Incertain"
         selected: "Sélectionné"
@@ -308,7 +308,7 @@ fr:
         title: Commentaires masqués
     dashboard:
       index:
-        back: Revenir
+        back: Retourner au %{org}
         title: Administration
         description: Bienvenue sur le page d’administration de %{org}.
       actions:
@@ -922,7 +922,7 @@ fr:
       edit:
         title: "Modifier la question"
       new:
-        title: "Créer une question"
+        title: "Créer une question pour le sondage %{poll}"
       answers:
         images:
           add_image: "Ajouter une image"
