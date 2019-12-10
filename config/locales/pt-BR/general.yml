@@ -700,8 +700,8 @@ pt-BR:
       unfeasible: Projetos de investimento inviáveis não podem ser apoiados
       not_voting_allowed: A fase de votação está fechada
       different_heading_assigned:
-        one: "Você só pode apoiar projetos de investimento em %{count} distrito"
-        other: "Você só pode apoiar projetos de investimento em %{count} distritos"
+        one: "Você só pode apoiar projetos de investimento em %{count} distrito. Você já apoiou investimentos em %{supported_headings}."
+        other: "Você só pode apoiar projetos de investimento em %{count} distritos. Você já apoiou investimentos em %{supported_headings}."
   welcome:
     feed:
       most_active:
