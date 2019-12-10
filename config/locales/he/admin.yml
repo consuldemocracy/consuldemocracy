@@ -201,7 +201,7 @@ he:
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
         feasibility:
-          feasible: "בר ביצוע (%{price})"
+          feasible: "בר ביצוע"
           unfeasible: "אינו בר ביצוע"
           undecided: "טרם הוחלט"
         selected: "נבחר"
