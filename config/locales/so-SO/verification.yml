@@ -25,7 +25,6 @@ so:
       new:
         explanation: "Ka qeyb qaadashada cod bixinta ugu dambeeya waxaad:"
         go_to_index: Fiiri soo jeedimaha
-        office: Xaqiiji wixii%{office}
         send_letter: Warqad kood wadata iso diir
         title: Hanbalayoyin!
         user_permission_info: Akoonkaga waad karta...
@@ -52,7 +51,6 @@ so:
           spanish_id: DNI
         error_not_allowed_age: Ma haysatid da'da loo baahan yahay si aad uga qayb qaadato
         error_not_allowed_postal_code: Si loo xaqiijiyo, waa inaad diiwaan gashaa.
-        error_verifying_census: Tirakoobku ma awoodin inuu xaqiijiyo macluumaadkaaga. Fadlan hubi in faahfaahintaada tirakoobku ay sax tahay adigoo wacaya Golaha Magaalada ama booqo hal xafiis%{offices}.
         form_errors: hortagaan xaqiijinta degaankaaga
         postal_code_note: Si aad u xaqiijiso koontadaada waa inaad diiwaan gashaa
         terms: shuruudaha iyo xaaladaha helitaanka
