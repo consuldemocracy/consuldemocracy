@@ -51,7 +51,6 @@ id:
           spanish_id: DNI
         error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi
         error_not_allowed_postal_code: Supaya bisa diverifikasi, anda harus terdaftar.
-        error_verifying_census: Sensus tidak mampu untuk memverifikasi informasi anda. Silahkan konfirmasikan bahwa rincian sensus anda adalah benar dengan cara menghubungi ke Dewan Kota atau kunjungi salah satu %{offices}.
         form_errors: mencegah verifikasi tempat tinggal anda
         postal_code_note: Untuk memverifikasi akun anda harus terdaftar
         terms: syarat dan ketentuan akses
