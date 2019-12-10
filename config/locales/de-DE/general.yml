@@ -869,9 +869,6 @@ de:
       organization: Organisationen ist es nicht erlaubt abzustimmen
       unfeasible: Undurchführbare Investitionsprojekte können nicht unterstützt werden
       not_voting_allowed: Die Abstimmungsphase ist beendet
-      different_heading_assigned:
-        one: "Sie können nur Investitionsprojekte in %{count} Bezirk unterstützen"
-        other: "Sie können nur Investitionsprojekte in %{count} Bezirken unterstützen"
   welcome:
     feed:
       most_active:
