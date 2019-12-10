@@ -609,8 +609,6 @@ zh-TW:
       organization: 組織不允許投票
       unfeasible: 不可行的投資項目不能獲得支持
       not_voting_allowed: 投票階段已結束
-      different_heading_assigned:
-        other: "您只能支持%{count} 個地區的投資項目"
   welcome:
     feed:
       most_active:
