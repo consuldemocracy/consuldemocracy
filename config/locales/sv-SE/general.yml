@@ -231,9 +231,6 @@ sv:
       poll_questions: Omröstning
       budgets: Medborgarbudget
       notification_item:
-        new_notifications:
-          one: Du har %{count} ny avisering
-          other: Du har %{count} nya aviseringar
         notifications: Aviseringar
         no_notifications: "Du har inga nya aviseringar"
     admin:
@@ -735,9 +732,6 @@ sv:
       organization: Organisationer kan inte rösta
       unfeasible: Det går inte att stödja budgetförslag som inte godkänts
       not_voting_allowed: Omröstningsfasen är avslutad
-      different_heading_assigned:
-        one: "Du kan bara stödja budgetförslag i %{count} stadsdel"
-        other: "Du kan bara stödja budgetförslag i %{count} stadsdelar"
   welcome:
     feed:
       most_active:
