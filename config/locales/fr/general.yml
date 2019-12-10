@@ -19,7 +19,7 @@ fr:
       user_permission_proposal: Créer des propositions
       user_permission_support_proposal: Soutenir des propositions
       user_permission_title: Participation
-      user_permission_verify: Réaliser toutes ces actions %{verify}.
+      user_permission_verify: Pour effectuer toutes les actions, vérifiez votre compte.
       user_permission_verify_info: "* Uniquement pour les utilisateurs inscrits sur\nle recensement de Madrid"
       user_permission_votes: Participer au vote final
       username_label: Nom d'utilisateur
@@ -551,11 +551,11 @@ fr:
       see_more: Voir plus de recommandations
       hide: Masquer les recommandations
   social:
-    facebook: "Facebook"
-    twitter: "Twitter"
-    youtube: "YouTube"
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
     whatsapp: WhatsApp
-    telegram: "Telegram"
+    telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
   stats:
     index:
