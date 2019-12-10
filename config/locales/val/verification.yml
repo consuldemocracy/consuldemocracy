@@ -25,7 +25,6 @@ val:
       new:
         explanation: "Per a participar en les votacions finals pots:"
         go_to_index: Vore propostes
-        office: Verificarte presencialment en quansevol %{office}
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
@@ -52,7 +51,6 @@ val:
           spanish_id: DNI
         error_not_allowed_age: No tens l'edat mínima per a participar
         error_not_allowed_postal_code: Per a verificarte has d'estar empadronat.
-        error_verifying_census: El Padró no ha pogut verificar la teua informació. Si us plaur, confirma que les teues dades d'empadronament siguen correctes cridant a l'Ajuntament o visitant una %{offices}.
         form_errors: evitaren verificar la teua residència
         postal_code_note: Per a verificar el teu compte has d'estar empadronat
         terms: els termes d'acces
