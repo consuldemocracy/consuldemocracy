@@ -187,7 +187,7 @@ ru:
         no_admin_assigned: Ни один администратор не назначен
         no_valuators_assigned: Ни один оценщик не назначен
         feasibility:
-          feasible: "Приемлемая (%{price})"
+          feasible: "Приемлемая"
           unfeasible: "Неприемлемая"
           undecided: "Нерешенная"
         selected: "Выбранная"
@@ -1018,7 +1018,7 @@ ru:
       edit:
         title: "Редактировать вопрос"
       new:
-        title: "Создать вопрос"
+        title: "Создать вопрос для опроса %{poll}"
         title_proposal: "Создать вопрос"
       answers:
         images:
