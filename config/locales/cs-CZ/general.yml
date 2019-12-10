@@ -244,7 +244,7 @@ cs:
       form:
         submit_button: Vytvořit návrh
     share:
-      message: "Podpořil jsem návrh %{summary} v %{handle}. Pokud máte zájem, podporují jej také!"
+      message: "Podpořil jsem návrh %{title} v %{handle}. Pokud máte zájem, podporují jej také!"
     edit:
       editing: Upravit návrh
       form:
