@@ -787,7 +787,7 @@ he:
       see_more: ראה עוד המלצות
       hide: הסתר המלצות
   social:
-    facebook: "פייסבוק"
+    facebook: "%{org} פייסבוק"
     twitter: "טוויטר"
     youtube: "יוטיוב YouTube"
     whatsapp: ווטסאפ
