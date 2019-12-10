@@ -193,7 +193,7 @@ tr:
         no_admin_assigned: Hiç yönetici atanmamış
         no_valuators_assigned: Hiç bilirkişi atanmamış
         feasibility:
-          feasible: "Uygulanabilir (%{price})"
+          feasible: "Uygulanabilir"
           unfeasible: "Uygulanamaz"
           undecided: "Kararsız"
         selected: "Seçilmiş"
@@ -1044,7 +1044,6 @@ tr:
       edit:
         title: "Soru Düzenle"
       new:
-        title: "Soru Oluştur"
         title_proposal: "Soru oluştur"
       answers:
         images:
