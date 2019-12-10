@@ -25,7 +25,7 @@ ca:
       new:
         explanation: "Per a participar en les votacions finals pots:"
         go_to_index: Veure propostes
-        office: Verificar-te presencialment en qualsevol %{office}
+        office: Verificar-te presencialment en qualsevol oficina d'atenció al ciutadá
         send_letter: Sol·licitar una carta per correu postal
         title: Felicitats!
         user_permission_info: Amb el teu compte ja pots...
