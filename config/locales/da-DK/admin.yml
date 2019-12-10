@@ -193,7 +193,7 @@ da:
         no_admin_assigned: Der er ikke tilknyttet en administrator
         no_valuators_assigned: Der er ikke tilknyttet nogle evaluatorer
         feasibility:
-          feasible: "Kan gennemføres (%{price})"
+          feasible: "Kan gennemføres"
           unfeasible: "Kan ikke gennemføres"
           undecided: "Ikke besluttet"
         selected: "Valgt"
