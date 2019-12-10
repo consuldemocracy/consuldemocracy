@@ -827,8 +827,6 @@ val:
         poll_not_assigned: "Votació sense asignar"
       edit:
         title: "Editar pregunta ciutadana"
-      new:
-        title: "Crear pregunta ciutadana"
       answers:
         images:
           add_image: "Afegir imatge"
