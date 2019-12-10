@@ -269,7 +269,7 @@ sq:
       form:
         submit_button: Krijo propozim
     share:
-      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
+      message: "Kam përkrahur propozimin %{title} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
     edit:
       editing: Ndrysho propozimin
       form:
@@ -634,9 +634,6 @@ sq:
       organization: Organizatat nuk lejohen të votojnë
       unfeasible: Projektet e papërshtatshme të investimeve nuk mund të mbështeten
       not_voting_allowed: Faza e zgjedhjes është e mbyllur
-      different_heading_assigned:
-        one: "Ju mund të mbështesni vetëm projektet e investimeve në %{count} zona"
-        other: "Ju mund të mbështesni vetëm projektet e investimeve në %{count} zona"
   welcome:
     feed:
       most_active:
