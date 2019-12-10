@@ -25,7 +25,7 @@ ast:
       new:
         explanation: "Para participar en las votaciones finales puedes:"
         go_to_index: Ver propuestas
-        office: Verificarte presencialmente en cualquier %{office}
+        office: Verificate presencialmente en cualquier oficina d'atención al ciudadanu
         send_letter: Solicitar una carta por correo postal
         title: '¡Felicidades!'
         user_permission_info: Cola to cuenta yá pues...
