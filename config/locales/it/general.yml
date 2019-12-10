@@ -88,8 +88,8 @@ it:
     index:
       featured_debates: In primo piano
       filter_topic:
-        one: " con argomento '%{topic}'\ncon argomento '%{topîc}'"
-        other: " con argomento '%{topic}'\ncon argomento '%{topîc}'"
+        one: " con argomento '%{topic}'"
+        other: " con argomento '%{topic}'"
       orders:
         confidence_score: più apprezzati
         created_at: più recenti
@@ -214,8 +214,8 @@ it:
       budgets: Bilancio partecipativo
       notification_item:
         new_notifications:
-          one: "Hai una nuova notifica\nHai %{count} nuove notifiche"
-          other: "Hai una nuova notifica\nHai %{count} nuove notifiche"
+          one: Hai una nuova notifica
+          other: Hai %{count} nuove notifiche
         notifications: Notifiche
         no_notifications: "Non hai nuove notifiche"
     admin:
@@ -236,8 +236,8 @@ it:
           one: "C'è una nuova notifica su\nCi sono% {count} nuove notifiche su"
           other: "C'è una nuova notifica su\nCi sono %{count} nuove notifiche su"
         replies_to:
-          one: "Qualcuno ha risposto al tuo commento\nCi sono %{count} nuove risposte al tuo commento"
-          other: "Qualcuno ha risposto al tuo commento\nCi sono %{count} nuove risposte al tuo commento"
+          one: Qualcuno ha risposto al tuo commento
+          other: Ci sono %{count} nuove risposte al tuo commento
       mark_as_read: Contrassegna come leggo
       mark_as_unread: Contrassegna come da leggere
       notifiable_hidden: Questa risorsa non è più disponibile.
@@ -684,9 +684,6 @@ it:
       organization: Alle organizzazioni non è permesso votare
       unfeasible: I progetti di investimento irrealizzabili non possono essere sostenuti
       not_voting_allowed: La fase di votazione è chiusa
-      different_heading_assigned:
-        one: "Puoi sostenere progetti di investimento solo in %{count} distretto"
-        other: "Puoi sostenere progetti di investimento solo in %{count} distretti"
   welcome:
     feed:
       most_active:
