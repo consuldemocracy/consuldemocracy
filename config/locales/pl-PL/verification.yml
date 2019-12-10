@@ -25,7 +25,6 @@ pl:
       new:
         explanation: "Aby wziąć udział w ostatnim głosowaniu, możesz:"
         go_to_index: Zobacz wnioski
-        office: Sprawdź w dowolnym %{office}
         send_letter: Wyślij do mnie list z kodem
         title: Gratulacje!
         user_permission_info: Z Twoim kontem możesz...
@@ -52,7 +51,6 @@ pl:
           spanish_id: DNI
         error_not_allowed_age: Nie masz wymaganego wieku, aby wziąć udział
         error_not_allowed_postal_code: Aby zostać zweryfikowanym, użytkownik musi być zarejestrowany.
-        error_verifying_census: Spis statystyczny nie był w stanie zweryfikować podanych przez Ciebie informacji. Upewnij się, że Twoje dane w spisie są poprawne, dzwoniąc do Urzędu Miejskiego lub odwiedzając go %{offices}.
         form_errors: uniemożliwił weryfikację twojego miejsca zamieszkania
         postal_code_note: Aby zweryfikować swoje konto, musisz być zarejestrowany
         terms: regulamin dostępu
