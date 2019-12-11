@@ -787,12 +787,12 @@ he:
       see_more: ראה עוד המלצות
       hide: הסתר המלצות
   social:
-    facebook: "פייסבוק"
-    twitter: "טוויטר"
-    youtube: "יוטיוב YouTube"
+    facebook: "%{org} פייסבוק"
+    twitter: "%{org} טוויטר"
+    youtube: "%{org} יוטיוב YouTube"
     whatsapp: ווטסאפ
-    telegram: "טלגרם Telegram"
-    instagram: "אינסטגרם Instagram"
+    telegram: "%{org} טלגרם Telegram"
+    instagram: "%{org} אינסטגרם Instagram"
   stats:
     index:
       visits: ביקורים
