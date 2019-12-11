@@ -338,6 +338,7 @@ es:
         commentable_type: "Tipo"
         title: Comentarios
         no_comments: No hay comentarios.
+        table_link: "Enlace"
     hidden_comments:
       index:
         filter: Filtro
@@ -413,6 +414,7 @@ es:
       index:
         id: ID
         author: Autor
+        title: Debates
         no_debates: No hay debates.
     hidden_debates:
       index:
@@ -690,6 +692,7 @@ es:
       dashboard: Panel de progreso de propuestas
       administrator_tasks: Recursos solicitados
       dashboard_actions: Recursos y acciones
+      debates: "Debates"
       comments: "Comentarios"
       local_census_records: Gestionar censo local
     administrators:
