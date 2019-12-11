@@ -611,8 +611,6 @@ zh-CN:
       organization: 组织不得投票
       unfeasible: 不可行的投资项目无法得到支持
       not_voting_allowed: 投票阶段已结束
-      different_heading_assigned:
-        other: "您只能支持在%{count} 个地区的投资项目"
   welcome:
     feed:
       most_active:
