@@ -761,6 +761,9 @@ gl:
       organization: As organizacións non poden votar.
       unfeasible: Non se poden votar proxectos de investimento inviables
       not_voting_allowed: A fase de votación está pechada
+      different_heading_assigned:
+        one: "Só podes apoiar proxectos de investimento en %{count} zona. Xa tes un apoio nun investimento de %{supported_headings}."
+        other: "Só podes apoiar proxectos de investimento en %{count} zonas. Xa tes apoios en %{supported_headings}."
   welcome:
     feed:
       most_active:
