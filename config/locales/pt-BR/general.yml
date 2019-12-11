@@ -619,7 +619,7 @@ pt-BR:
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
-    youtube: "YouTube"
+    youtube: "%{org} YouTube"
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
