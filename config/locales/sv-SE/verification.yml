@@ -25,6 +25,7 @@ sv:
       new:
         explanation: "För att delta i slutomröstningen kan du:"
         go_to_index: Visa förslag
+        office: Verifiera dig personligen på något medborgarkontor
         send_letter: Skicka ett brev till mig med koden
         title: Grattis!
         user_permission_info: Med ditt konto kan du...
