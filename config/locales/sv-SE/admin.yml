@@ -894,6 +894,7 @@ sv:
       edit:
         title: "Redigera fråga"
       new:
+        title: "Skapa fråga för %{poll}"
         title_proposal: "Skapa fråga"
       answers:
         images:
