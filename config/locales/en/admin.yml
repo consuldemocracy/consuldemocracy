@@ -1386,6 +1386,7 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
+        gender_stats: Gender stats
         polls: Polls
       graph:
         debate_created: Debates
@@ -1429,6 +1430,11 @@ en:
           question_name: Question
           origin_web: Web participants
           origin_total: Total participants
+      genders:
+        title: Gender stats
+        male: Male
+        female: Female
+        other: Other
     tags:
       create: Create topic
       destroy: Delete topic
