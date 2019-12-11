@@ -732,6 +732,9 @@ sv:
       organization: Organisationer kan inte rösta
       unfeasible: Det går inte att stödja budgetförslag som inte godkänts
       not_voting_allowed: Omröstningsfasen är avslutad
+      different_heading_assigned:
+        one: "Du kan bara stödja budgetförslag i %{count} stadsdel. Du stödjer redan budgetförslag i %{supported_headings}."
+        other: "Du kan bara stödja budgetförslag i %{count} stadsdelar. Du stödjer redan budgetförslag i %{supported_headings}."
   welcome:
     feed:
       most_active:
