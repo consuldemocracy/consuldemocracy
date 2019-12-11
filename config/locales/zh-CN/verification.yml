@@ -51,7 +51,6 @@ zh-CN:
           spanish_id: DNI
         error_not_allowed_age: 您未到参与所需的年龄
         error_not_allowed_postal_code: 为了被核实，您必须注册。
-        error_verifying_census: 人口普查无法核实您的信息。请拨打市议会或访问%{offices}，确认您的人口普查详细资料是正确的。
         form_errors: 阻止了您的居住地核实
         postal_code_note: 要核实您的账户，您必须注册
         terms: 访问的条款和条件
