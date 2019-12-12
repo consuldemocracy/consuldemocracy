@@ -19,4 +19,4 @@ ar:
       officing/residence:
         document_type: "نوع الوثيقة"
         document_number: "رقم المستند (بما في ذلك الاحرف)"
-        year_of_birth: "ولد في العام"
+        year_of_birth: "عام الولادة"
