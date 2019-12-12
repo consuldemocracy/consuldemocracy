@@ -32,5 +32,4 @@ class AccountController < ApplicationController
                    end
       params.require(:account).permit(*attributes)
     end
-
 end

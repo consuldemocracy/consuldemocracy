@@ -7,10 +7,6 @@ eu:
       name: "Izena"
     budget_headings:
       name: "Izena"
-    budget_investments:
-      show:
-        image: "Irudia"
-        documents: "Dokumentuak"
     milestones:
       index:
         image: "Irudia"

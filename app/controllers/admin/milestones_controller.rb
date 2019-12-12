@@ -35,38 +35,38 @@ class Admin::MilestonesController < Admin::BaseController
   end
 
   def destroy
-    @milestone.destroy
+    @milestone.destroy!
     redirect_to milestoneable_path, notice: t("admin.milestones.delete.notice")
   end
 
   private
 
-  def milestone_params
-    documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
-    attributes = [:publication_date, :status_id,
-                  translation_params(Milestone),
-                  image_attributes: image_attributes, documents_attributes: documents_attributes]
+    def milestone_params
+      documents_attributes = [:id, :title, :attachment, :cached_attachment, :user_id, :_destroy]
+      attributes = [:publication_date, :status_id,
+                    translation_params(Milestone),
+                    image_attributes: image_attributes, documents_attributes: documents_attributes]
 
-    params.require(:milestone).permit(*attributes)
-  end
+      params.require(:milestone).permit(*attributes)
+    end
 
-  def load_milestoneable
-    @milestoneable = milestoneable
-  end
+    def load_milestoneable
+      @milestoneable = milestoneable
+    end
 
-  def milestoneable
-    raise "Implement in subclass"
-  end
+    def milestoneable
+      raise "Implement in subclass"
+    end
 
-  def load_milestone
-    @milestone = @milestoneable.milestones.find(params[:id])
-  end
+    def load_milestone
+      @milestone = @milestoneable.milestones.find(params[:id])
+    end
 
-  def load_statuses
-    @statuses = Milestone::Status.all
-  end
+    def load_statuses
+      @statuses = Milestone::Status.all
+    end
 
-  def milestoneable_path
-    polymorphic_path([:admin, *resource_hierarchy_for(@milestone.milestoneable)])
-  end
+    def milestoneable_path
+      polymorphic_path([:admin, *resource_hierarchy_for(@milestone.milestoneable)])
+    end
 end

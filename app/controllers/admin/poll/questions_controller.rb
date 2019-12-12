@@ -21,7 +21,7 @@ class Admin::Poll::QuestionsController < Admin::Poll::BaseController
   end
 
   def create
-    @question.author = @question.proposal.try(:author) || current_user
+    @question.author = @question.proposal&.author || current_user
 
     if @question.save
       redirect_to admin_question_path(@question)

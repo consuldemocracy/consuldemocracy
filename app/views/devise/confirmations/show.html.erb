@@ -1,7 +1,7 @@
 <% provide :title do %><%= t("devise_views.confirmations.show.title") %><% end %>
 <h1 class="text-center"><%= t("devise_views.confirmations.show.title") %></h1>
 
-<p><%= t("devise_views.confirmations.show.instructions_html", email: resource.email) %></p>
+<p><%= sanitize(t("devise_views.confirmations.show.instructions", email: resource.email)) %></p>
 
 <%= form_for(resource,
              as: resource_name,

@@ -6,18 +6,17 @@
                new_budget_investment_path(budget_id: @budget.id), class: "button budget expanded" %>
   <% else %>
     <div class="callout warning">
-      <%= t("budgets.investments.index.sidebar.verified_only",
-          verify: link_to(t("budgets.investments.index.sidebar.verify_account"),
-                  verification_path)).html_safe %>
+      <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
+          verify: link_to_verify_account)) %>
     </div>
   <% end %>
 <% end %>
 
 <% if @heading && can?(:show, @ballot) %>
   <p class="callout">
-    <%= t("budgets.investments.index.sidebar.voted_info",
+    <%= sanitize(t("budgets.investments.index.sidebar.voted_info",
         link: link_to(t("budgets.investments.index.sidebar.voted_info_link"),
-            budget_ballot_path(@budget))).html_safe %>
+            budget_ballot_path(@budget)))) %>
   </p>
 <% end %>
 
@@ -41,21 +40,21 @@
   <% if @ballot.investments.by_heading(@heading.id).count > 0 %>
     <p>
       <em>
-        <%= t("budgets.investments.index.sidebar.voted_html",
+        <%= sanitize(t("budgets.investments.index.sidebar.voted",
             count: @ballot.investments.by_heading(@heading.id).count,
-            amount_spent: @ballot.formatted_amount_spent(@heading)) %>
+            amount_spent: @ballot.formatted_amount_spent(@heading))) %>
       </em>
     </p>
   <% elsif @assigned_heading.present? %>
     <p>
-      <%= t("budgets.investments.index.sidebar.different_heading_assigned_html",
+      <%= sanitize(t("budgets.investments.index.sidebar.different_heading_assigned",
               heading_link: heading_link(@assigned_heading, @budget)
-            ) %>
+            )) %>
       <br>
       <small>
-        <%= t("budgets.investments.index.sidebar.change_ballot",
+        <%= sanitize(t("budgets.investments.index.sidebar.change_ballot",
             check_ballot: link_to(t("budgets.investments.index.sidebar.check_ballot_link"),
-                          budget_ballot_path(@budget))).html_safe %>
+                          budget_ballot_path(@budget)))) %>
       </small>
     </p>
   <% else %>

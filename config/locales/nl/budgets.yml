@@ -184,8 +184,9 @@ nl:
       heading_selection_title: "Per wijk"
       no_winner_investments: "Geen geaccepteerde investeringen in deze status"
       filters:
-        label: "Status van het project"
-        all: "Alle (%{count})"
+        status:
+          label: "Status van het project"
+          all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "De begindatum dient kleiner te zijn dan de einddatum"

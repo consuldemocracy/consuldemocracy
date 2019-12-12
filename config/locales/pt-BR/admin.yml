@@ -165,7 +165,6 @@ pt-BR:
         assigned_admin: Administrador designado
         no_admin_assigned: Não há administrador designado
         no_valuators_assigned: Não há avaliadores designados
-        no_valuation_groups: Não há grupos de avaliação atribuídos
         feasibility:
           feasible: "Factível (%{price})"
           unfeasible: "Inviável"
@@ -202,7 +201,6 @@ pt-BR:
         dossier: Dossiê
         edit_dossier: Editar dossiê
         tags: Marcação
-        user_tags: Marcações do usuário
         undefined: Não definido
         compatibility:
           title: Compatibilidade
@@ -216,12 +214,6 @@ pt-BR:
           title: Vencedor
           "true": "Sim"
           "false": "Não"
-        image: "Imagem"
-        see_image: "Exibir imagem"
-        no_image: "Sem imagem"
-        documents: "Documentos"
-        see_documents: "Exibir documentos (%{count})"
-        no_documents: "Sem documentos"
         valuator_groups: "Grupos de avaliação"
       edit:
         classification: Classificação
@@ -716,7 +708,6 @@ pt-BR:
         cost: Custo
       form:
         edit_title: "Avaliadores: editar avaliador"
-        update: "Atualizar avaliador"
         updated: "Avalaiador atualizado com sucesso"
       show:
         description: "Descrição"
@@ -1194,8 +1185,6 @@ pt-BR:
       show:
         created_at: Criado em
         author: Autor
-        documents: Documentos
-        document_count: "Número de documentos:"
         verified:
           one: "Há %{count} assinatura válida"
           other: "Há %{count} assinaturas válidas"

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe Community, type: :model do
-
   it "is valid when create proposal" do
     proposal = create(:proposal)
 
@@ -9,7 +8,6 @@ RSpec.describe Community, type: :model do
   end
 
   describe "#participants" do
-
     it "returns participants without duplicates" do
       proposal = create(:proposal)
       community = proposal.community
@@ -19,11 +17,9 @@ RSpec.describe Community, type: :model do
       topic1 = create(:topic, community: community, author: user1)
       create(:comment, commentable: topic1, author: user1)
       create(:comment, commentable: topic1, author: user2)
-      topic2 = create(:topic, community: community, author: user2)
+      create(:topic, community: community, author: user2)
 
-      expect(community.participants).to include(user1)
-      expect(community.participants).to include(user2)
-      expect(community.participants).to include(proposal.author)
+      expect(community.participants).to match_array [user1, user2, proposal.author]
     end
   end
 end

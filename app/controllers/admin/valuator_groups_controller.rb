@@ -1,5 +1,4 @@
 class Admin::ValuatorGroupsController < Admin::BaseController
-
   def index
     @groups = ValuatorGroup.all.page(params[:page])
   end
@@ -38,7 +37,7 @@ class Admin::ValuatorGroupsController < Admin::BaseController
 
   def destroy
     @group = ValuatorGroup.find(params[:id])
-    @group.destroy
+    @group.destroy!
     notice = t("flash.actions.destroy.valuator_group")
     redirect_to [:admin, :valuator_groups], notice: notice
   end
@@ -48,5 +47,4 @@ class Admin::ValuatorGroupsController < Admin::BaseController
     def group_params
       params.require(:valuator_group).permit(:name)
     end
-
 end

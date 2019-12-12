@@ -9,7 +9,7 @@
 
       <h1><%= @budget.name %></h1>
 
-      <%= safe_html_with_links(@budget.description) %>
+      <%= auto_link_already_sanitized_html wysiwyg(@budget.description) %>
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
@@ -23,15 +23,14 @@
             <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
           <% else %>
             <div class="callout warning margin-top">
-              <%= t("budgets.investments.index.sidebar.verified_only",
-                  verify: link_to(t("budgets.investments.index.sidebar.verify_account"), verification_path)).html_safe %>
+              <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
+                  verify: link_to_verify_account)) %>
             </div>
           <% end %>
         <% else %>
           <div class="callout primary margin-top">
-            <%= t("budgets.investments.index.sidebar.not_logged_in",
-                  sign_in: link_to(t("budgets.investments.index.sidebar.sign_in"), new_user_session_path),
-                  sign_up: link_to(t("budgets.investments.index.sidebar.sign_up"), new_user_registration_path)).html_safe %>
+            <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+                  sign_in: link_to_signin, sign_up: link_to_signup)) %>
           </div>
         <% end %>
       <% end %>

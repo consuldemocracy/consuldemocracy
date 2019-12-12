@@ -4,6 +4,14 @@
             polymorphic_path([:admin, *resource_hierarchy_for(milestoneable.progress_bars.new)]),
             class: "button hollow float-right" %>
 
+<% if milestoneable.milestone_tag_list.any? %>
+  <div>
+    <strong>
+      <%= t("admin.milestones.index.milestone_tags") %>:
+    </strong> <%= milestoneable.milestone_tag_list.sort.join(", ") %>
+  </div>
+<% end %>
+
 <% if milestoneable.milestones.any? %>
   <table>
     <thead>

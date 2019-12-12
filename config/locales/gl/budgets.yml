@@ -106,7 +106,7 @@ gl:
           confidence_score: Máis apoiados
           price: por custo
       share:
-        message: "Acabo de crear o proxecto de investimento %{title} en %{org}. Anímote a crear o teu proxecto de investimento!"
+        message: "Acabo de crear o proxecto de investimento %{title} en %{handle}. Anímote a crear o teu proxecto de investimento!"
       show:
         author_deleted: Usuario/a borrado/a
         price_explanation: Informe de custo <small>(opcional, dato público)</small>
@@ -182,8 +182,9 @@ gl:
       heading_selection_title: "Por ámbito de actuación"
       no_winner_investments: "Non hai investimentos gañadores neste estado"
       filters:
-        label: "Estado actual do proxecto"
-        all: "Todo (%{count})"
+        status:
+          label: "Estado actual do proxecto"
+          all: "Todo (%{count})"
     phases:
       errors:
         dates_range_invalid: "A data de comezo non pode ser igual ou superior á de remate"

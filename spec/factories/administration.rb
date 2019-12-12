@@ -6,26 +6,26 @@ FactoryBot.define do
 
   factory :geozone do
     sequence(:name) { |n| "District #{n}" }
-    sequence(:external_code) { |n| n.to_s }
-    sequence(:census_code) { |n| n.to_s }
+    sequence(:external_code, &:to_s)
+    sequence(:census_code, &:to_s)
 
     trait :in_census do
-      census_code "01"
+      census_code { "01" }
     end
   end
 
   factory :banner do
     sequence(:title) { |n| "Banner title #{n}" }
     sequence(:description) { |n| "This is the text of Banner #{n}" }
-    target_url {["/proposals", "/debates" ].sample}
+    target_url { ["/proposals", "/debates"].sample }
     post_started_at { Time.current - 7.days }
     post_ended_at { Time.current + 7.days }
-    background_color "#FF0000"
-    font_color "#FFFFFF"
+    background_color { "#FF0000" }
+    font_color { "#FFFFFF" }
   end
 
   factory :web_section do
-    name "homepage"
+    name { "homepage" }
   end
 
   factory :banner_section, class: "Banner::Section" do
@@ -34,33 +34,33 @@ FactoryBot.define do
   end
 
   factory :site_customization_page, class: "SiteCustomization::Page" do
-    slug "example-page"
-    title "Example page"
-    subtitle "About an example"
-    content "This page is about..."
-    more_info_flag false
-    print_content_flag false
-    status "draft"
+    slug { "example-page" }
+    title { "Example page" }
+    subtitle { "About an example" }
+    content { "This page is about..." }
+    more_info_flag { false }
+    print_content_flag { false }
+    status { "draft" }
 
     trait :published do
-      status "published"
+      status { "published" }
     end
 
     trait :display_in_more_info do
-      more_info_flag true
+      more_info_flag { true }
     end
   end
 
   factory :site_customization_content_block, class: "SiteCustomization::ContentBlock" do
-    name "top_links"
-    locale "en"
-    body "Some top links content"
+    name { "top_links" }
+    locale { "en" }
+    body { "Some top links content" }
   end
 
   factory :map_location do
-    latitude 51.48
-    longitude 0.0
-    zoom 10
+    latitude { 51.48 }
+    longitude { 0.0 }
+    zoom { 10 }
 
     trait :proposal_map_location do
       proposal
@@ -78,10 +78,10 @@ FactoryBot.define do
     sequence(:link_url)    { |n| "Link url #{n}" }
 
     trait :header do
-      header true
+      header { true }
       sequence(:button_text)   { |n| "Button text #{n}" }
       sequence(:button_url)    { |n| "Button url #{n}" }
-      sequence(:alignment)   { |n| "background" }
+      alignment { "background" }
     end
 
     after :create do |widget_card|
@@ -93,8 +93,8 @@ FactoryBot.define do
   end
 
   factory :i18n_content, class: "I18nContent" do
-    key "debates.index.section_footer.description"
-    value_es "Texto en español"
-    value_en "Text in english"
+    key { "debates.index.section_footer.description" }
+    value_es { "Texto en español" }
+    value_en { "Text in english" }
   end
 end

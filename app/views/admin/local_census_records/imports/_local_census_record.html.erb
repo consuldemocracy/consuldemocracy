@@ -1,0 +1,18 @@
+<tr id="<%= dom_id(local_census_record) %>" class="local-census-record">
+  <td>
+    <%= local_census_record.document_type %>
+    <%= errors_for local_census_record, :document_type %>
+  </td>
+  <td>
+    <%= local_census_record.document_number %>
+    <%= errors_for local_census_record, :document_number %>
+  </td>
+  <td>
+    <%= l local_census_record.date_of_birth if local_census_record.date_of_birth.present? %>
+    <%= errors_for local_census_record, :date_of_birth %>
+  </td>
+  <td>
+    <%= local_census_record.postal_code %>
+    <%= errors_for local_census_record, :postal_code %>
+  </td>
+</tr>

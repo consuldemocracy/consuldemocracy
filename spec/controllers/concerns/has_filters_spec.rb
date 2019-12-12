@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe HasFilters do
-
   class FakeController < ActionController::Base; end
 
   controller(FakeController) do

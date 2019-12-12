@@ -50,4 +50,5 @@ fi:
       link: "Tavoitteet"
       page_title: "%{budget} - Tavoitteet"
       filters:
-        all: "Kaikki (%{count})"
+        status:
+          all: "Kaikki (%{count})"

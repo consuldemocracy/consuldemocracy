@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th><%= t("admin.settings.setting_name") %></th>
+      <th><%= display_setting_name(setting_name) %></th>
       <th><%= t("admin.settings.setting_value") %></th>
     </tr>
   </thead>
@@ -19,7 +19,11 @@
           <% if setting.content_type? %>
             <%= render "admin/settings/content_types_settings_form", setting: setting %>
           <% else %>
-            <%= render "admin/settings/settings_form", setting: setting %>
+            <% if defined?(tab) %>
+              <%= render "admin/settings/settings_form", setting: setting, tab: tab %>
+            <% else %>
+              <%= render "admin/settings/settings_form", setting: setting %>
+            <% end %>
           <% end %>
         </td>
       </tr>

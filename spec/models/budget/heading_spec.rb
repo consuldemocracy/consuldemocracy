@@ -1,11 +1,11 @@
 require "rails_helper"
 
 describe Budget::Heading do
-
   let(:budget) { create(:budget) }
   let(:group) { create(:budget_group, budget: budget) }
 
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
+  it_behaves_like "globalizable", :budget_heading
 
   describe "OSM_DISTRICT_LEVEL_ZOOM constant" do
     it "is defined" do
@@ -14,7 +14,6 @@ describe Budget::Heading do
   end
 
   describe "name" do
-
     let(:heading) { create(:budget_heading, group: group) }
 
     before do
@@ -39,13 +38,13 @@ describe Budget::Heading do
     end
 
     it "can be repeated for the same heading and a different locale" do
-      heading.update(name_fr: "object name")
+      heading.update!(name_fr: "object name")
 
       expect(heading.translations.last).to be_valid
     end
 
     it "must not be repeated for a different heading in any locale" do
-      heading.update(name_en: "English", name_es: "Español")
+      heading.update!(name_en: "English", name_es: "Español")
 
       expect(build(:budget_heading, group: group, name_en: "English")).not_to be_valid
       expect(build(:budget_heading, group: group, name_en: "Español")).not_to be_valid
@@ -72,7 +71,6 @@ describe Budget::Heading do
   end
 
   describe "save latitude" do
-
     it "Doesn't allow latitude < -90" do
       heading = create(:budget_heading, group: group, name: "Latitude is < -90")
 
@@ -168,9 +166,7 @@ describe Budget::Heading do
     end
   end
 
-
   describe "save longitude" do
-
     it "Doesn't allow longitude < -180" do
       heading = create(:budget_heading, group: group, name: "Longitude is < -180")
 
@@ -267,7 +263,6 @@ describe Budget::Heading do
     end
   end
 
-
   describe "heading" do
     it "can be deleted if no budget's investments associated" do
       heading1 = create(:budget_heading, group: group, name: "name")
@@ -281,7 +276,6 @@ describe Budget::Heading do
   end
 
   describe ".sort_by_name" do
-
     it "returns headings sorted by DESC group name first and then ASC heading name" do
       last_group  = create(:budget_group, name: "Group A")
       first_group = create(:budget_group, name: "Group B")
@@ -302,29 +296,31 @@ describe Budget::Heading do
       last_heading = create(:budget_heading, group: last_group, name: "Name")
       first_heading = create(:budget_heading, group: first_group, name: "Name")
 
-      expect(Budget::Heading.sort_by_name.size).to be 2
-      expect(Budget::Heading.sort_by_name.first).to eq first_heading
-      expect(Budget::Heading.sort_by_name.last).to eq last_heading
+      expect(Budget::Heading.sort_by_name).to eq [first_heading, last_heading]
     end
-
   end
 
   describe "scope allow_custom_content" do
     it "returns headings with allow_custom_content order by name" do
-      excluded_heading = create(:budget_heading, name: "Name A")
-      last_heading     = create(:budget_heading, allow_custom_content: true, name: "Name C")
-      first_heading    = create(:budget_heading, allow_custom_content: true, name: "Name B")
+      last_heading     = create(:budget_heading, allow_custom_content: true, name: "Name B")
+      first_heading    = create(:budget_heading, allow_custom_content: true, name: "Name A")
 
-      expect(Budget::Heading.allow_custom_content.count).to be 2
-      expect(Budget::Heading.allow_custom_content.first).to eq first_heading
-      expect(Budget::Heading.allow_custom_content.last).to eq last_heading
+      expect(Budget::Heading.allow_custom_content).to eq [first_heading, last_heading]
+    end
+
+    it "does not return headings which don't allow custom content" do
+      create(:budget_heading, name: "Name A")
+
+      expect(Budget::Heading.allow_custom_content).to be_empty
     end
 
     it "returns headings with multiple translations only once" do
-      create(:budget_heading, allow_custom_content: true, name_en: "English", name_es: "Spanish")
+      translated_heading = create(:budget_heading,
+                                  allow_custom_content: true,
+                                  name_en: "English",
+                                  name_es: "Spanish")
 
-      expect(Budget::Heading.allow_custom_content.count).to eq 1
+      expect(Budget::Heading.allow_custom_content).to eq [translated_heading]
     end
   end
-
 end

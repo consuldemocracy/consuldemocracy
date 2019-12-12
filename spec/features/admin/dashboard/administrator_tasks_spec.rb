@@ -33,7 +33,6 @@ describe "Admin administrator tasks" do
       scenario "has a link that allows solving the request" do
         expect(page).to have_link("Solve")
       end
-
     end
   end
 

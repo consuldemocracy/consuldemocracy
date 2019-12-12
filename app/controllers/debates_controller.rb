@@ -2,6 +2,7 @@ class DebatesController < ApplicationController
   include FeatureFlags
   include CommentableActions
   include FlagActions
+  include Translatable
 
   before_action :parse_tag_filter, only: :index
   before_action :authenticate_user!, except: [:index, :show, :map]
@@ -13,7 +14,7 @@ class DebatesController < ApplicationController
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
   has_orders ->(c) { Debate.debates_orders(c.current_user) }, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[most_voted newest oldest], only: :show
 
   load_and_authorize_resource
   helper_method :resource_model, :resource_name
@@ -35,13 +36,13 @@ class DebatesController < ApplicationController
   end
 
   def unmark_featured
-    @debate.update_attribute(:featured_at, nil)
-    redirect_to request.query_parameters.merge(action: :index)
+    @debate.update!(featured_at: nil)
+    redirect_to debates_path
   end
 
   def mark_featured
-    @debate.update_attribute(:featured_at, Time.current)
-    redirect_to request.query_parameters.merge(action: :index)
+    @debate.update!(featured_at: Time.current)
+    redirect_to debates_path
   end
 
   def disable_recommendations
@@ -55,7 +56,8 @@ class DebatesController < ApplicationController
   private
 
     def debate_params
-      params.require(:debate).permit(:title, :description, :tag_list, :terms_of_service)
+      attributes = [:tag_list, :terms_of_service]
+      params.require(:debate).permit(attributes, translation_params(Debate))
     end
 
     def resource_model
@@ -71,5 +73,4 @@ class DebatesController < ApplicationController
         @recommended_debates = Debate.recommendations(current_user).sort_by_random.limit(3)
       end
     end
-
 end

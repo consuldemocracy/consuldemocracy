@@ -106,7 +106,7 @@ val:
           confidence_score: millor valorats
           price: per cost
       share:
-        message: "Acabe de crear una proposta %{title} en %{org}. Crea una tu també!"
+        message: "Acabe de crear una proposta %{title} en %{handle}. Crea una tu també!"
       show:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
@@ -182,8 +182,9 @@ val:
       heading_selection_title: "Àmbit d'actuació"
       no_winner_investments: "No hi ha propostes en aquest estat"
       filters:
-        label: "Estat actual del projecte"
-        all: "Tots (%{count})"
+        status:
+          label: "Estat actual del projecte"
+          all: "Tots (%{count})"
     phases:
       errors:
         dates_range_invalid: "La data d'inici no ha de ser igual o posterior a la data de fi"

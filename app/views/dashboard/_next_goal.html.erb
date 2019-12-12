@@ -3,7 +3,7 @@
     <h3 class="title"><%= t("dashboard.next_goal.title") %></h3>
 
     <div id="next_goal" data-toggler=".hide">
-      <%= render 'goal', goal: next_goal %>
+      <%= render "goal", goal: next_goal %>
 
       <% if course.count > 1 %>
         <div class="margin small">
@@ -16,7 +16,7 @@
 
     <% if course.count > 1 %>
       <div id="complete_course" class="hide" data-toggler=".hide">
-        <%= render partial: 'goal', collection: course %>
+        <%= render partial: "goal", collection: course %>
 
         <div class="margin small">
           <a data-toggle="complete_course next_goal">

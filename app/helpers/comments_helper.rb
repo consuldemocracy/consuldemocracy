@@ -1,5 +1,4 @@
 module CommentsHelper
-
   def comment_tree_title_text(commentable)
     if commentable.class == Legislation::Question
       t("legislation.questions.comments.comments_title")
@@ -83,5 +82,4 @@ module CommentsHelper
       t("comments.comments_closed")
     end
   end
-
 end

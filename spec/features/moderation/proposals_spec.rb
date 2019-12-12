@@ -1,13 +1,12 @@
 require "rails_helper"
 
 describe "Moderate proposals" do
-
   scenario "Disabled with a feature flag" do
     Setting["process.proposals"] = nil
     moderator = create(:moderator)
     login_as(moderator.user)
 
-    expect{ visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "Hide", :js do
@@ -44,48 +43,48 @@ describe "Moderate proposals" do
   end
 
   describe "/moderation/ screen" do
-
     before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
     describe "moderate in bulk" do
+      let!(:proposal) { create(:proposal) }
+
       describe "When a proposal has been selected for moderation" do
         before do
-          @proposal = create(:proposal)
           visit moderation_proposals_path
           within(".menu.simple") do
             click_link "All"
           end
 
-          within("#proposal_#{@proposal.id}") do
-            check "proposal_#{@proposal.id}_check"
+          within("#proposal_#{proposal.id}") do
+            check "proposal_#{proposal.id}_check"
           end
 
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
+          expect(page).not_to have_css("proposal_#{proposal.id}")
         end
 
         scenario "Hide the proposal" do
           click_on "Hide proposals"
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
-          expect(@proposal.reload).to be_hidden
-          expect(@proposal.author).not_to be_hidden
+          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(proposal.reload).to be_hidden
+          expect(proposal.author).not_to be_hidden
         end
 
         scenario "Block the author" do
           click_on "Block authors"
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
-          expect(@proposal.reload).to be_hidden
-          expect(@proposal.author).to be_hidden
+          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(proposal.reload).to be_hidden
+          expect(proposal.author).to be_hidden
         end
 
         scenario "Ignore the proposal" do
           click_button "Mark as viewed"
-          expect(page).not_to have_css("proposal_#{@proposal.id}")
-          expect(@proposal.reload).to be_ignored_flag
-          expect(@proposal.reload).not_to be_hidden
-          expect(@proposal.author).not_to be_hidden
+          expect(page).not_to have_css("proposal_#{proposal.id}")
+          expect(proposal.reload).to be_ignored_flag
+          expect(proposal.reload).not_to be_hidden
+          expect(proposal.author).not_to be_hidden
         end
       end
 
@@ -106,7 +105,8 @@ describe "Moderate proposals" do
       end
 
       scenario "remembering page, filter and order" do
-        create_list(:proposal, 52)
+        stub_const("#{ModerateActions}::PER_PAGE", 2)
+        create_list(:proposal, 4)
 
         visit moderation_proposals_path(filter: "all", page: "2", order: "created_at")
 

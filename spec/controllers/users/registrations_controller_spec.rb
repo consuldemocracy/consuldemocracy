@@ -1,11 +1,9 @@
 require "rails_helper"
 
 describe Users::RegistrationsController do
-
   describe "POST check_username" do
-
     before do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
+      request.env["devise.mapping"] = Devise.mappings[:user]
     end
 
     context "when username is available" do
@@ -28,7 +26,5 @@ describe Users::RegistrationsController do
         expect(data[:message]).to eq I18n.t("devise_views.users.registrations.new.username_is_not_available")
       end
     end
-
   end
-
 end

@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Answers" do
-
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
 
@@ -39,12 +38,11 @@ describe "Answers" do
   end
 
   scenario "Add video to answer" do
-    answer1 = create(:poll_question_answer, question: question)
-    answer2 = create(:poll_question_answer, question: question)
+    answer = create(:poll_question_answer, question: question)
 
     visit admin_question_path(question)
 
-    within("#poll_question_answer_#{answer1.id}") do
+    within("#poll_question_answer_#{answer.id}") do
       click_link "Video list"
     end
 
@@ -55,7 +53,7 @@ describe "Answers" do
 
     click_button "Save"
 
-    within("#poll_question_answer_video_#{answer1.videos.last.id}") do
+    within("#poll_question_answer_video_#{answer.videos.last.id}") do
       expect(page).to have_content "Awesome project video"
       expect(page).to have_content "https://www.youtube.com/watch?v=123"
     end
@@ -65,7 +63,6 @@ describe "Answers" do
   pending "Destroy"
 
   context "Gallery" do
-
     it_behaves_like "nested imageable",
                     "poll_question_answer",
                     "new_admin_answer_image_path",
@@ -75,5 +72,4 @@ describe "Answers" do
                     "Image uploaded successfully",
                     true
   end
-
 end

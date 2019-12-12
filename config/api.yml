@@ -5,7 +5,6 @@ User:
     public_debates:     [Debate]
     public_proposals:   [Proposal]
     public_comments:    [Comment]
-#    organization:       Organization
 Debate:
   fields:
     id:                 integer
@@ -21,7 +20,7 @@ Debate:
     comments:           [Comment]
     public_author:      User
     votes_for:          [Vote]
-    tags:               ["ActsAsTaggableOn::Tag"]
+    tags:               [Tag]
 Proposal:
   fields:
     id:                   integer
@@ -43,7 +42,7 @@ Proposal:
     proposal_notifications: [ProposalNotification]
     public_author:        User
     votes_for:            [Vote]
-    tags:                 ["ActsAsTaggableOn::Tag"]
+    tags:                 [Tag]
 Comment:
   fields:
     id:                 integer
@@ -69,7 +68,7 @@ ProposalNotification:
     proposal_id:       integer
     public_created_at: string
     proposal:          Proposal
-ActsAsTaggableOn::Tag:
+Tag:
   fields:
     id:               integer
     name:             string
@@ -81,8 +80,3 @@ Vote:
     votable_type:      string
     public_created_at: string
     vote_flag:         boolean
-# Organization:
-#   fields:
-#     id:               integer
-#     user_id:          integer
-#     name:             string

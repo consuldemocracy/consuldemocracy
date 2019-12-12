@@ -1,5 +1,5 @@
 class Poll::Ballot < ApplicationRecord
-  belongs_to :ballot_sheet, class_name: "Poll::BallotSheet"
+  belongs_to :ballot_sheet
 
   validates :ballot_sheet_id, presence: true
 
@@ -22,15 +22,14 @@ class Poll::Ballot < ApplicationRecord
   end
 
   def ballot
-    Budget::Ballot.where(poll_ballot: self).first
+    Budget::Ballot.find_by(poll_ballot: self)
   end
 
   def find_investment(investment_id)
-    ballot.budget.investments.where(id: investment_id).first
+    ballot.budget.investments.find_by(id: investment_id)
   end
 
   def not_already_added?(investment)
     ballot.lines.where(investment: investment).blank?
   end
-
 end

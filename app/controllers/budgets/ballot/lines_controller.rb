@@ -26,7 +26,7 @@ module Budgets
         load_heading
         load_map
 
-        @line.destroy
+        @line.destroy!
         load_investments
       end
 
@@ -41,7 +41,7 @@ module Budgets
         end
 
         def load_ballot
-          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create
+          @ballot = Budget::Ballot.where(user: current_user, budget: @budget).first_or_create!
         end
 
         def load_investment
@@ -64,7 +64,7 @@ module Budgets
         end
 
         def load_categories
-          @categories = ActsAsTaggableOn::Tag.category.order(:name)
+          @categories = Tag.category.order(:name)
         end
 
         def load_ballot_referer
@@ -73,12 +73,9 @@ module Budgets
 
         def load_map
           @investments ||= []
-          @investments_map_coordinates = MapLocation.where(investment: @investments).map do |loc|
-            loc.json_data
-          end
+          @investments_map_coordinates = MapLocation.where(investment: @investments).map(&:json_data)
           @map_location = MapLocation.load_from_heading(@heading)
         end
-
     end
   end
 end

@@ -1,13 +1,13 @@
 require "rails_helper"
 
 describe Poll::BallotSheet do
-
-  let(:ballot_sheet) { build(:poll_ballot_sheet, poll: create(:poll),
-                             officer_assignment: create(:poll_officer_assignment),
-                             data: "1234;5678") }
+  let(:ballot_sheet) do
+    build(:poll_ballot_sheet, poll: create(:poll),
+          officer_assignment: create(:poll_officer_assignment),
+          data: "1234;5678")
+  end
 
   context "Validations" do
-
     it "is valid" do
       expect(ballot_sheet).to be_valid
     end
@@ -26,21 +26,17 @@ describe Poll::BallotSheet do
       ballot_sheet.data = nil
       expect(ballot_sheet).not_to be_valid
     end
-
   end
 
   context "#author" do
-
     it "returns the officer's name" do
       expect(ballot_sheet.author).to be(ballot_sheet.officer_assignment.officer.user.name)
     end
-
   end
 
   describe "#verify_ballots" do
     it "creates ballots for each document number" do
-      budget = create(:budget)
-      poll = create(:poll, budget: budget)
+      poll = create(:poll, :for_budget)
       poll_ballot = create(:poll_ballot_sheet, poll: poll, data: "1,2,3;4,5,6")
       poll_ballot.verify_ballots
 
@@ -52,7 +48,7 @@ describe Poll::BallotSheet do
   describe "#parsed_ballots" do
     it "splits ballots by ';' or '\n'" do
       data = "1,2,3;4,5,6\n7,8,9"
-      ballot_sheet.update(data: data)
+      ballot_sheet.update!(data: data)
 
       expect(ballot_sheet.parsed_ballots).to eq(["1,2,3", "4,5,6", "7,8,9"])
     end

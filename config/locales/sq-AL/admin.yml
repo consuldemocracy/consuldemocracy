@@ -165,7 +165,6 @@ sq:
         assigned_admin: Administrator i caktuar
         no_admin_assigned: Asnjë admin i caktuar
         no_valuators_assigned: Asnjë vlerësues nuk është caktuar
-        no_valuation_groups: Asnjë grup vlerësimi nuk është caktuar
         feasibility:
           feasible: "I mundshëm%{price}"
           unfeasible: "Parealizueshme"
@@ -202,7 +201,6 @@ sq:
         dossier: Dosje
         edit_dossier: Ndrysho dosjen
         tags: Etiketë
-        user_tags: Përdorues të etiketuar
         undefined: E padefinuar
         compatibility:
           title: Pajtueshmëri
@@ -216,12 +214,6 @@ sq:
           title: Fitues
           "true": "Po"
           "false": "Jo"
-        image: "Imazh"
-        see_image: "Shiko imazhin"
-        no_image: "Pa imazh"
-        documents: "Dokumentet"
-        see_documents: "Shiko dokumentet (%{count})"
-        no_documents: "Pa dokumentet"
         valuator_groups: "Grup vlerësuesish"
       edit:
         classification: Klasifikim
@@ -724,7 +716,6 @@ sq:
         cost: Kosto
       form:
         edit_title: "Vlerësuesit: Ndrysho vlerësuesin"
-        update: "Përditëso vlerësuesin"
         updated: "Vlerësuesi u përditësua me sukses"
       show:
         description: "Përshkrimi"
@@ -1195,13 +1186,11 @@ sq:
         new: Fletë të reja nënshkrimi
       new:
         title: Fletë të reja nënshkrimi
-        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me presje (,)"
+        document_numbers_note: "Shkruani numrat që dëshironi të ndahen me pikëpresje (;)"
         submit: Krijo Fletë nënshkrimi
       show:
         created_at: Krijuar
         author: Autor
-        documents: Dokumentet
-        document_count: "Numri i dokumenteve:"
         verified:
           one: "Ky është %{count} nënshkrim i vlefshëm"
           other: "Këto janë %{count} nënshkrime të vlefshme"

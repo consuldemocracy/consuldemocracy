@@ -4,7 +4,7 @@
       <h2><%= t("proposals.created.title") %></h2>
 
       <p><%= t("proposals.created.motivation") %></p>
-      <p><%= t("proposals.created.motivation_2_html") %></p>
+      <p><%= sanitize(t("proposals.created.motivation_2")) %></p>
 
       <% if can?(:dashboard, @proposal) %>
         <%= link_to t("proposals.created.dashboard"),

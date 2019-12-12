@@ -8,10 +8,19 @@ describe Mailer do
       comment = create(:comment, commentable: proposal)
 
       email = I18n.with_locale :en do
-        described_class.comment(comment)
+        Mailer.comment(comment)
       end
 
       expect(email.subject).to include("comentado")
+    end
+
+    it "reads the from address at runtime" do
+      Setting["mailer_from_name"] = "New organization"
+      Setting["mailer_from_address"] = "new@consul.dev"
+
+      email = Mailer.comment(create(:comment))
+
+      expect(email).to deliver_from "New organization <new@consul.dev>"
     end
   end
 end

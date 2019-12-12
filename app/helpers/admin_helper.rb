@@ -1,5 +1,4 @@
 module AdminHelper
-
   def side_menu
     if namespace == "moderation/budgets"
       render "/moderation/menu"
@@ -47,8 +46,10 @@ module AdminHelper
   end
 
   def menu_settings?
-    ["settings", "tags", "geozones", "images", "content_blocks"].include?(controller_name) &&
-    controller.class.parent != Admin::Poll::Questions::Answers
+    controllers_names = ["settings", "tags", "geozones", "images", "content_blocks",
+      "local_census_records", "imports"]
+    controllers_names.include?(controller_name) &&
+      controller.class.parent != Admin::Poll::Questions::Answers
   end
 
   def menu_customization?
@@ -68,6 +69,11 @@ module AdminHelper
     ["actions", "administrator_tasks"].include?(controller_name)
   end
 
+  def submenu_local_census_records?
+    controller_name == "local_census_records" ||
+    (controller_name == "imports" && controller.class.parent == Admin::LocalCensusRecords)
+  end
+
   def official_level_options
     options = [["", 0]]
     (1..5).each do |i|
@@ -77,9 +83,7 @@ module AdminHelper
   end
 
   def admin_select_options
-    Administrator.with_user
-                 .collect { |v| [ v.description_or_name, v.id ] }
-                 .sort_by { |a| a[0] }
+    Administrator.with_user.map { |v| [v.description_or_name, v.id] }.sort_by { |a| a[0] }
   end
 
   def admin_submit_action(resource)
@@ -107,5 +111,4 @@ module AdminHelper
     def namespace
       controller.class.name.downcase.split("::").first
     end
-
 end

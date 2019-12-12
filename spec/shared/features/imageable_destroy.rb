@@ -1,6 +1,4 @@
-shared_examples "imageable destroy" do |imageable_factory_name,
-                                        imageable_path,
-                                        imageable_path_arguments|
+shared_examples "imageable destroy" do |imageable_factory_name, imageable_path, imageable_path_arguments|
   include ActionView::Helpers
   include ImagesHelper
   include ImageablesHelper
@@ -21,7 +19,6 @@ shared_examples "imageable destroy" do |imageable_factory_name,
   end
 
   context "Destroy" do
-
     before do
       create(:image, imageable: imageable, user: imageable.author)
     end
@@ -68,7 +65,5 @@ shared_examples "imageable destroy" do |imageable_factory_name,
         expect(page).to have_selector "h1", text: imageable.title
       end
     end
-
   end
-
 end

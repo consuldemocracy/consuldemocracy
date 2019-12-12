@@ -1,6 +1,6 @@
 class ApplicationLogger
   def info(message)
-    logger.info(message)
+    logger.info(message) unless Rails.env.test?
   end
 
   def logger

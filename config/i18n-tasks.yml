@@ -139,6 +139,7 @@ ignore_unused:
   - "admin.hidden_proposals.index.filter*"
   - "admin.proposal_notifications.index.filter*"
   - "admin.budgets.index.filter*"
+  - "admin.budgets.edit.(administrators|valuators).*"
   - "admin.budget_investments.index.filter*"
   - "admin.organizations.index.filter*"
   - "admin.hidden_users.index.filter*"
@@ -191,7 +192,6 @@ ignore_unused:
   - "views.pagination.*" # kaminari
   - "shared.suggest.*"
   - "invisible_captcha.*"
-  - "admin.site_customization.pages.page.status_*"
   - "admin.legislation.processes.process.*"
   - "legislation.processes.index.*"
   - "stats.budgets.participants_*_phase"

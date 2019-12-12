@@ -22,8 +22,10 @@ class EvaluationCommentEmail
   end
 
   private
+
     def related_users
       return [] if comment.commentable.nil?
+
       comment.commentable
              .admin_and_valuator_users_associated
              .reject { |associated_user| associated_user.user == comment.author }

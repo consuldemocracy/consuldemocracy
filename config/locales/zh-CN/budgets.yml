@@ -103,7 +103,7 @@ zh-CN:
           confidence_score: 最高评分
           price: 按价格
       share:
-        message: "我在%{org} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
+        message: "我在%{handle} 里创建了投资项目%{title}。请您也创建一个投资项目吧！"
       show:
         author_deleted: 已删除的用户
         price_explanation: 价格说明
@@ -176,8 +176,9 @@ zh-CN:
       heading_selection_title: "按区域"
       no_winner_investments: "这个州里没有胜出的投资"
       filters:
-        label: "项目的当前状态"
-        all: "所有(%{count})"
+        status:
+          label: "项目的当前状态"
+          all: "所有(%{count})"
     phases:
       errors:
         dates_range_invalid: "开始日期不能等于或晚于结束日期"

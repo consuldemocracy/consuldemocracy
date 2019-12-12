@@ -106,7 +106,7 @@ so:
           confidence_score: ugu sareeya
           price: qiime ahaan
       share:
-        message: "Waxaan abuuray mashruuca maalgashiga%{title} ee%{org} Samee mashruuc maal-gashi aad adigu leedahay!"
+        message: "Waxaan abuuray mashruuca maalgashiga%{title} ee%{handle} Samee mashruuc maal-gashi aad adigu leedahay!"
       show:
         author_deleted: Isticmalaha la tirtiray
         price_explanation: Faahfaahinta qiimaha
@@ -181,8 +181,9 @@ so:
       heading_selection_title: "Degmo ahaan"
       no_winner_investments: "Mana jiraan maalgalin ku guuleysta gobolkan"
       filters:
-        label: "Mashruca hada gobolka kasocda"
-        all: "Dhaman%{count}"
+        status:
+          label: "Mashruca hada gobolka kasocda"
+          all: "Dhaman%{count}"
     phases:
       errors:
         dates_range_invalid: "Taariikhda bilowga ma noqon karto mid siman ama ka dambeysa taariikhda dhammaadka"

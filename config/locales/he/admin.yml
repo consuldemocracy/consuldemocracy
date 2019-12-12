@@ -266,13 +266,6 @@ he:
           title: זוכה
           "true": "כן"
           "false": "לא"
-        image: "תמונה"
-        see_image: "ראה תמונה"
-        no_image: "ללא תמונה"
-        documents: "מסמכים"
-        see_documents: "ראה את המסמכים (%{count})"
-        no_documents: "ללא מסמכים"
-        valuator_groups: "קבוצת המעריכים"
       edit:
         classification: סיווג
         compatibility: תאימות
@@ -1434,7 +1427,7 @@ he:
         new: דף חדש לחתימות
       new:
         title: דף חדש לחתימות
-        document_numbers_note: "נא לכתוב את המספרים מופרדים באמצעות פסיקים (,)"
+        document_numbers_note: "רשום את המספרים המופרדים בנקודות פסיק (;)"
         submit: יצירת דף לחתימות
       show:
         created_at: נוצר ב

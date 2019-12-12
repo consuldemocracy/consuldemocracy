@@ -1,5 +1,5 @@
-# Use Ruby 2.3.6 as base image
-FROM ruby:2.3.6
+# Use Ruby 2.3.8 as base image
+FROM ruby:2.3.8
 
 ENV DEBIAN_FRONTEND noninteractive
 

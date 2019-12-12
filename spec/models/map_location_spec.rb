@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe MapLocation do
-
   let(:map_location) { build(:map_location, :proposal_map_location) }
 
   it "is valid" do
@@ -27,7 +26,6 @@ describe MapLocation do
   end
 
   context "#available?" do
-
     it "returns true when latitude, longitude and zoom defined" do
       expect(map_location.available?).to be(true)
     end
@@ -50,5 +48,4 @@ describe MapLocation do
       expect(map_location.available?).to be(false)
     end
   end
-
 end

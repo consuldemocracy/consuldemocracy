@@ -4,7 +4,7 @@ class Admin::BudgetsController < Admin::BaseController
   include FeatureFlags
   feature_flag :budgets
 
-  has_filters %w{open finished}, only: :index
+  has_filters %w[open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
   load_and_authorize_resource
@@ -17,13 +17,16 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def new
+    load_staff
   end
 
   def edit
+    load_staff
   end
 
   def calculate_winners
     return unless @budget.balloting_process?
+
     @budget.headings.each { |heading| Budget::Result.new(@budget, heading).delay.calculate_winners }
     redirect_to admin_budget_budget_investments_path(
                   budget_id: @budget.id,
@@ -35,6 +38,7 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.update(budget_params)
       redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
     else
+      load_staff
       render :edit
     end
   end
@@ -44,6 +48,7 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.save
       redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
     else
+      load_staff
       render :new
     end
   end
@@ -54,7 +59,7 @@ class Admin::BudgetsController < Admin::BaseController
     elsif @budget.poll.present?
       redirect_to admin_budgets_path, alert: t("admin.budgets.destroy.unable_notice_polls")
     else
-      @budget.destroy
+      @budget.destroy!
       redirect_to admin_budgets_path, notice: t("admin.budgets.destroy.success_notice")
     end
   end
@@ -62,8 +67,12 @@ class Admin::BudgetsController < Admin::BaseController
   private
 
     def budget_params
-      descriptions = Budget::Phase::PHASE_KINDS.map{|p| "description_#{p}"}.map(&:to_sym)
-      valid_attributes = [:phase, :currency_symbol] + descriptions
+      descriptions = Budget::Phase::PHASE_KINDS.map { |p| "description_#{p}" }.map(&:to_sym)
+      valid_attributes = [:phase,
+                          :currency_symbol,
+                          administrator_ids: [],
+                          valuator_ids: []
+      ] + descriptions
       params.require(:budget).permit(*valid_attributes, *report_attributes, translation_params(Budget))
     end
 
@@ -71,4 +80,8 @@ class Admin::BudgetsController < Admin::BaseController
       @budget = Budget.find_by_slug_or_id! params[:id]
     end
 
+    def load_staff
+      @admins = Administrator.includes(:user)
+      @valuators = Valuator.includes(:user).order(description: :asc).order("users.email ASC")
+    end
 end

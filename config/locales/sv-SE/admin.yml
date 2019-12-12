@@ -170,7 +170,6 @@ sv:
         assigned_admin: Ansvarig administratör
         no_admin_assigned: Saknar ansvarig administratör
         no_valuators_assigned: Inga ansvariga bedömare
-        no_valuation_groups: Inga ansvariga bedömningsgrupper
         feasibility:
           feasible: "Genomförbart (%{price})"
           unfeasible: "Ej genomförbart"
@@ -208,7 +207,6 @@ sv:
         dossier: Rapport
         edit_dossier: Redigera rapport
         tags: Taggar
-        user_tags: Användartaggar
         undefined: Odefinierad
         compatibility:
           title: Kompatibilitet
@@ -222,12 +220,6 @@ sv:
           title: Vinnare
           "true": "Ja"
           "false": "Nej"
-        image: "Bild"
-        see_image: "Visa bild"
-        no_image: "Utan bild"
-        documents: "Dokument"
-        see_documents: "Visa dokument (%{count})"
-        no_documents: "Utan dokument"
         valuator_groups: "Bedömningsgrupper"
       edit:
         classification: Klassificering
@@ -1238,13 +1230,11 @@ sv:
         new: Ny namninsamling
       new:
         title: Ny namninsamling
-        document_numbers_note: "Fyll i siffrorna separerade med kommatecken (,)"
+        document_numbers_note: "Fyll i siffrorna separerade av semikolon (;)"
         submit: Skapa namninsamling
       show:
         created_at: Skapad
         author: Skribent
-        documents: Dokument
-        document_count: "Antal dokument:"
         verified:
           one: "Det finns %{count} giltig underskrift"
           other: "Det finns %{count} giltiga underskrifter"

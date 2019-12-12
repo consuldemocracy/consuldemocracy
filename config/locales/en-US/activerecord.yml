@@ -1,38 +1,7 @@
 en-US:
   activerecord:
-    models:
-      milestone:
-        one: "Meilenstein"
-        other: "Meilensteine"
-      milestone/status:
-        one: "Investitionsstatus, Anlagenstatus"
-        other: "Investitionsstatus, Anlagenstatus"
-      comment:
-        one: "Kommentar"
-        other: "Kommentare"
-      debate:
-        one: "Debatte"
-        other: "Debatten"
-      user:
-        one: "Benutzer"
-        other: "Benutzer"
-      moderator:
-        one: "Moderator,Gesprächsleiter"
-        other: "Moderatoren,Gesprächsleiter"
-      administrator:
-        one: "Administrator(in),Verwaltungsleiter(in)"
-        other: "Administrator(in),Verwaltungsleiter(in)"
     attributes:
-      budget/investment:
-        administrator_id: "Administrator(in),Verwaltungsleiter(in)"
-      comment:
-        body: "Kommentar"
-        user: "Benutzer"
       user:
         email: "Email"
-      spending_proposal:
-        administrator_id: "Administrator(in),Verwaltungsleiter(in)"
-      legislation/annotation:
-        text: Kommentar
       link:
         url: Link

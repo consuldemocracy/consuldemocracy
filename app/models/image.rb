@@ -89,7 +89,6 @@ class Image < ApplicationRecord
 
     def validate_title_length
       if title.present?
-
         title_min_length = Setting["uploads.images.title.min_length"].to_i
         title_max_length = Setting["uploads.images.title.max_length"].to_i
 
@@ -129,5 +128,4 @@ class Image < ApplicationRecord
       image.set_attachment_from_cached_attachment
       image.attachment.destroy
     end
-
 end

@@ -229,7 +229,6 @@ id:
         dossier: Berkas
         edit_dossier: Sunting berkas
         tags: Tag
-        user_tags: Tag Pengguna
         undefined: Tidak terdefinisi
         compatibility:
           title: Kecocokan
@@ -243,10 +242,6 @@ id:
           title: Pemenang
           "true": "Ya"
           "false": "Tidak"
-        image: "Gambar"
-        see_image: "Lihat gambar"
-        no_image: "Tanpa gambar"
-        documents: "Dokumen"
       edit:
         classification: Klasifikasi
         compatibility: Kecocokan
@@ -1071,13 +1066,11 @@ id:
         new: Baru tanda tangan lembar
       new:
         title: Baru tanda tangan lembar
-        document_numbers_note: "Menulis angka-angka yang dipisahkan oleh tanda koma (,)"
+        document_numbers_note: "Menulis angka-angka yang dipisahkan oleh titik koma (;)"
         submit: Membuat tanda tangan lembar
       show:
         created_at: Dibuat
         author: Penulis
-        documents: Dokumen
-        document_count: "Jumlah dokumen:"
         verified:
           other: "Ada %{count} berlaku tanda tangan"
         unverified:

@@ -209,7 +209,6 @@ ru:
         assigned_admin: Назначенный администратор
         no_admin_assigned: Ни один администратор не назначен
         no_valuators_assigned: Ни один оценщик не назначен
-        no_valuation_groups: Не назначено ни одной группы оценки
         feasibility:
           feasible: "Приемлемая (%{price})"
           unfeasible: "Неприемлемая"
@@ -247,7 +246,6 @@ ru:
         dossier: Пакет документов
         edit_dossier: Редактировать пакет документов
         tags: Метки
-        user_tags: Метки пользователя
         undefined: Неопределено
         compatibility:
           title: Совместимость
@@ -261,12 +259,6 @@ ru:
           title: Победитель
           "true": "Да"
           "false": "Нет"
-        image: "Изображение"
-        see_image: "Смотреть изображение"
-        no_image: "Без изображения"
-        documents: "Документы"
-        see_documents: "Смотреть документы (%{count})"
-        no_documents: "Без документов"
         valuator_groups: "Группы оценки"
       edit:
         classification: Классификация
@@ -833,7 +825,6 @@ ru:
         cost: Стоимость
       form:
         edit_title: "Оценщики: Редактировать оценщика"
-        update: "Обновить оценщика"
         updated: "Оценщик обновлен успешно"
       show:
         description: "Описание"
@@ -1324,7 +1315,7 @@ ru:
         new: Новые подписные листы
       new:
         title: Новые подписные листы
-        document_numbers_note: "Впишите номера, разделенные запятыми (,)"
+        document_numbers_note: "Впишите номера, разделенные точкой с запятой (;)"
         submit: Создать подписной лист
       show:
         created_at: Создано

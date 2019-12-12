@@ -26,7 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def delete
     current_user.erase(erase_params[:erase_reason])
     sign_out
-    redirect_to root_url, notice: t("devise.registrations.destroyed")
+    redirect_to root_path, notice: t("devise.registrations.destroyed")
   end
 
   def success
@@ -50,9 +50,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def check_username
     if User.find_by username: params[:username]
-      render json: {available: false, message: t("devise_views.users.registrations.new.username_is_not_available")}
+      render json: { available: false, message: t("devise_views.users.registrations.new.username_is_not_available") }
     else
-      render json: {available: true, message: t("devise_views.users.registrations.new.username_is_available")}
+      render json: { available: true, message: t("devise_views.users.registrations.new.username_is_available") }
     end
   end
 
@@ -76,5 +76,4 @@ class Users::RegistrationsController < Devise::RegistrationsController
     def after_inactive_sign_up_path_for(resource_or_scope)
       users_sign_up_success_path
     end
-
 end

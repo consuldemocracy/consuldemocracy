@@ -1,5 +1,4 @@
 class Management::UsersController < Management::BaseController
-
   def new
     @user = User.new(user_params)
   end
@@ -32,7 +31,7 @@ class Management::UsersController < Management::BaseController
 
   def logout
     destroy_session
-    redirect_to management_root_url, notice: t("management.sessions.signed_out_managed_user")
+    redirect_to management_root_path, notice: t("management.sessions.signed_out_managed_user")
   end
 
   private
@@ -66,5 +65,4 @@ class Management::UsersController < Management::BaseController
     def user_with_email
       @user.skip_password_validation = true
     end
-
 end

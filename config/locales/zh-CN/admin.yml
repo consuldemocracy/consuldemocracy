@@ -165,7 +165,6 @@ zh-CN:
         assigned_admin: 指定的管理员
         no_admin_assigned: 没有指定管理员
         no_valuators_assigned: 没有指定评估员
-        no_valuation_groups: 没有指定评估组
         feasibility:
           feasible: "可行 (%{price})"
           unfeasible: "不可行"
@@ -202,7 +201,6 @@ zh-CN:
         dossier: 档案
         edit_dossier: 编辑档案
         tags: 标签
-        user_tags: 用户标签
         undefined: 未定义
         compatibility:
           title: 兼容性
@@ -216,12 +214,6 @@ zh-CN:
           title: 胜出者
           "true": "是"
           "false": "不是"
-        image: "图像"
-        see_image: "参阅图像"
-        no_image: "没有图像"
-        documents: "文档"
-        see_documents: "参阅文档 (%{count})"
-        no_documents: "没有文档"
         valuator_groups: "评估员组"
       edit:
         classification: 分类
@@ -725,7 +717,6 @@ zh-CN:
         cost: 成本
       form:
         edit_title: "评估员：编辑评估员"
-        update: "更新评估员"
         updated: "评估员已成功更新"
       show:
         description: "说明"
@@ -1200,8 +1191,6 @@ zh-CN:
       show:
         created_at: 已创建
         author: 作者
-        documents: 文档
-        document_count: "文档编号："
         verified:
           other: "有%{count} 个有效签名"
         unverified:

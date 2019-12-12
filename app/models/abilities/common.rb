@@ -52,7 +52,7 @@ module Abilities
       can :suggest, Debate
       can :suggest, Proposal
       can :suggest, Legislation::Proposal
-      can :suggest, ActsAsTaggableOn::Tag
+      can :suggest, Tag
 
       can [:flag, :unflag], Comment
       cannot [:flag, :unflag], Comment, user_id: user.id
@@ -72,7 +72,7 @@ module Abilities
       can [:create, :destroy], Follow
 
       can [:destroy], Document do |document|
-        document.documentable.try(:author_id) == user.id
+        document.documentable&.author_id == user.id
       end
 
       can [:destroy], Image, imageable: { author_id: user.id }
@@ -85,9 +85,7 @@ module Abilities
       end
 
       if user.level_two_or_three_verified?
-        can :vote, Proposal do |proposal|
-          proposal.published?
-        end
+        can :vote, Proposal, &:published?
         can :vote_featured, Proposal
 
         can :vote, Legislation::Proposal
@@ -95,6 +93,8 @@ module Abilities
         can :create, Legislation::Answer
 
         can :create, Budget::Investment,               budget: { phase: "accepting" }
+        can :edit, Budget::Investment,                 budget: { phase: "accepting" }, author_id: user.id
+        can :update, Budget::Investment,               budget: { phase: "accepting" }, author_id: user.id
         can :suggest, Budget::Investment,              budget: { phase: "accepting" }
         can :destroy, Budget::Investment,              budget: { phase: ["accepting", "reviewing"] }, author_id: user.id
         can :vote, Budget::Investment,                 budget: { phase: "selecting" }
@@ -104,6 +104,7 @@ module Abilities
 
         can :create, DirectMessage
         can :show, DirectMessage, sender_id: user.id
+
         can :answer, Poll do |poll|
           poll.answerable_by?(user)
         end

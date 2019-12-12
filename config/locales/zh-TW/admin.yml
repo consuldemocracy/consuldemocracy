@@ -164,7 +164,6 @@ zh-TW:
         assigned_admin: 指定的管理員
         no_admin_assigned: 未分配管理員
         no_valuators_assigned: 未分配評估員
-        no_valuation_groups: 未分配評估組
         feasibility:
           feasible: "可行 (%{price})"
           unfeasible: "不可行"
@@ -201,7 +200,6 @@ zh-TW:
         dossier: 檔案
         edit_dossier: 編輯檔案
         tags: 標籤
-        user_tags: 用戶標籤
         undefined: 未定義
         compatibility:
           title: 相容性
@@ -215,12 +213,6 @@ zh-TW:
           title: 勝出者
           "true": "是"
           "false": "否"
-        image: "圖像"
-        see_image: "請參閱圖像"
-        no_image: "沒有圖像"
-        documents: "文檔"
-        see_documents: "請參閱文檔 (%{count})"
-        no_documents: "沒有文檔"
         valuator_groups: "評估組"
       edit:
         classification: 分類
@@ -715,7 +707,6 @@ zh-TW:
         cost: 成本
       form:
         edit_title: "評估員：編輯評估員"
-        update: "更新評估員"
         updated: "評估員已成功更新"
       show:
         description: "描述"
@@ -1189,8 +1180,6 @@ zh-TW:
       show:
         created_at: 已創建
         author: 作者
-        documents: 文檔
-        document_count: "文檔數目："
         verified:
           other: "有 %{count} 個有效簽名"
         unverified:

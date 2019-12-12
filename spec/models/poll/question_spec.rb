@@ -3,6 +3,11 @@ require "rails_helper"
 RSpec.describe Poll::Question, type: :model do
   let(:poll_question) { build(:poll_question) }
 
+  describe "Concerns" do
+    it_behaves_like "acts as paranoid", :poll_question
+    it_behaves_like "globalizable", :poll_question
+  end
+
   describe "#poll_question_id" do
     it "is invalid if a poll is not selected" do
       poll_question.poll_id = nil
@@ -28,10 +33,7 @@ RSpec.describe Poll::Question, type: :model do
     end
 
     context "locale with non-underscored name" do
-      before do
-        I18n.locale = :"pt-BR"
-        Globalize.locale = I18n.locale
-      end
+      before { I18n.locale = :"pt-BR" }
 
       it "correctly creates a translation" do
         poll_question.copy_attributes_from_proposal(proposal)
@@ -43,5 +45,4 @@ RSpec.describe Poll::Question, type: :model do
       end
     end
   end
-
 end

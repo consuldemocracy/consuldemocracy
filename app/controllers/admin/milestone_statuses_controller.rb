@@ -1,5 +1,4 @@
 class Admin::MilestoneStatusesController < Admin::BaseController
-
   before_action :load_status, only: [:edit, :update, :destroy]
 
   def index
@@ -34,18 +33,18 @@ class Admin::MilestoneStatusesController < Admin::BaseController
   end
 
   def destroy
-    @status.destroy
+    @status.destroy!
     redirect_to admin_milestone_statuses_path,
                 notice: t("admin.statuses.delete.notice")
   end
 
   private
 
-  def load_status
-    @status = Milestone::Status.find(params[:id])
-  end
+    def load_status
+      @status = Milestone::Status.find(params[:id])
+    end
 
-  def status_params
-    params.require(:milestone_status).permit([:name, :description])
-  end
+    def status_params
+      params.require(:milestone_status).permit([:name, :description])
+    end
 end

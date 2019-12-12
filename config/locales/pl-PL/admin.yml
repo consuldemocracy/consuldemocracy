@@ -208,7 +208,6 @@ pl:
         assigned_admin: Przypisany administrator
         no_admin_assigned: Nie przypisano administratora
         no_valuators_assigned: Brak przypisanych wyceniających
-        no_valuation_groups: Nie przypisano żadnych grup wyceny
         feasibility:
           feasible: "Wykonalne (%{price})"
           unfeasible: "Niewykonalne"
@@ -245,7 +244,6 @@ pl:
         dossier: Dokumentacja
         edit_dossier: Edytuj dokumentację
         tags: Tagi
-        user_tags: Tagi użytkownika
         undefined: Niezdefiniowany
         compatibility:
           title: Zgodność
@@ -259,12 +257,6 @@ pl:
           title: Zwycięzca
           "true": "Tak"
           "false": "Nie"
-        image: "Obraz"
-        see_image: "Zobacz obraz"
-        no_image: "Bez obrazu"
-        documents: "Dokumenty"
-        see_documents: "Zobacz dokumenty (%{count})"
-        no_documents: "Bez dokumentów"
         valuator_groups: "Grupy Wyceniające"
       edit:
         classification: Klasyfikacja
@@ -830,7 +822,6 @@ pl:
         cost: Koszt
       form:
         edit_title: "Wyceniający: Edytuj wyceniającego"
-        update: "Aktualizuj wyceniającego"
         updated: "Wyceniający zaktualizowany pomyślnie"
       show:
         description: "Opis"
@@ -1324,13 +1315,11 @@ pl:
         new: Nowe arkusze podpisów
       new:
         title: Nowe arkusze podpisów
-        document_numbers_note: "Napisz liczby oddzielone przecinkami (,)"
+        document_numbers_note: "Napisz liczby oddzielone średnikami (;)"
         submit: Utwórz arkusz podpisu
       show:
         created_at: Stworzony
         author: Autor
-        documents: Dokumenty
-        document_count: "Liczba dokumentów:"
         unverified_error: (Nie zweryfikowany przez Census)
         loading: "Nadal istnieją podpisy, które są weryfikowane przez Census, proszę odświeżyć stronę za kilka chwil"
     stats:

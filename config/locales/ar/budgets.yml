@@ -97,7 +97,7 @@ ar:
           confidence_score: اعلى تقييم
           price: حسب السعر
       share:
-        message: "لقد أنشأت مشروع استثماري %{title} في %{org}. أنشىء مشروع الاستثماري أنت أيضاً!"
+        message: "لقد أنشأت مشروع استثماري %{title} في %{handle}. أنشىء مشروع الاستثماري أنت أيضاً!"
       show:
         author_deleted: تم حذف المستخدم
         price_explanation: توضيح الاسعار
@@ -168,8 +168,9 @@ ar:
       heading_selection_title: "جسب المنطقة"
       no_winner_investments: "لا يوجد استثمارات فائزة"
       filters:
-        label: "حالة المشروع الحالية"
-        all: "الكل (%{count})"
+        status:
+          label: "حالة المشروع الحالية"
+          all: "الكل (%{count})"
     phases:
       errors:
         dates_range_invalid: "تاريخ البدأ لا يمكن ان يكون مساو او يتجاوز تاريخ الانتهاء"

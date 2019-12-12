@@ -169,7 +169,6 @@ it:
         assigned_admin: Amministratore assegnato
         no_admin_assigned: Nessun amministratore assegnato
         no_valuators_assigned: Nessun valutatore assegnato
-        no_valuation_groups: Nessun gruppo di stima assegnato
         feasibility:
           feasible: "Fattibile (%{price})"
           unfeasible: "Irrealizzabile"
@@ -207,7 +206,6 @@ it:
         dossier: Dossier
         edit_dossier: Modificare il dossier
         tags: Etichette
-        user_tags: Etichette utente
         undefined: Non definito
         compatibility:
           title: Compatibilità
@@ -221,12 +219,6 @@ it:
           title: Vincitore
           "true": "Sì"
           "false": "No"
-        image: "Immagine"
-        see_image: "Vedi immagine"
-        no_image: "Senza immagine"
-        documents: "Documenti"
-        see_documents: "Vedi documenti (%{count})"
-        no_documents: "Senza documenti"
         valuator_groups: "Gruppi di stimatori"
       edit:
         classification: Classificazione
@@ -717,7 +709,6 @@ it:
         cost: Costi
       form:
         edit_title: "Stimatori: Modificare stimatore"
-        update: "Aggiorna stimatore"
         updated: "Stimatore aggiornato con successo"
       show:
         description: "Descrizione"
@@ -1188,13 +1179,11 @@ it:
         new: Nuovo foglio di firma
       new:
         title: Nuovi fogli firma
-        document_numbers_note: "Con i numeri separati da virgole (,)"
+        document_numbers_note: "Con i numeri separati da punto e virgola (;)"
         submit: Creare foglio di firma
       show:
         created_at: Creato
         author: Autore
-        documents: Documenti
-        document_count: "Numero di documenti:"
         verified:
           one: "C'è %{count} firme valide"
           other: "Ci sono %{count} firme valide"

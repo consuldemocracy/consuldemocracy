@@ -217,7 +217,6 @@ ar:
         assigned_admin: المدير الذي تم تعيينه
         no_admin_assigned: لم يتم تعيين أي مدير
         no_valuators_assigned: لم يتم تعيين مقيّمين
-        no_valuation_groups: لم يتم تعيين مجموعات المقيّمين
         feasibility:
           feasible: "مجدي (%{price})"
           unfeasible: "غير مجدي"
@@ -255,7 +254,6 @@ ar:
         dossier: إضبارة
         edit_dossier: تحرير إضبارة
         tags: علامات
-        user_tags: علامات المستخدم
         undefined: غير معرف
         compatibility:
           title: التوافق
@@ -269,12 +267,6 @@ ar:
           title: الفائز
           "true": "نعم"
           "false": "لا"
-        image: "صورة"
-        see_image: "رؤية الصورة"
-        no_image: "بدون صورة"
-        documents: "الوثائق"
-        see_documents: "رؤية الوثائق (%{count})"
-        no_documents: "بدون وثائق"
         valuator_groups: "مجموعات المقيمين"
       edit:
         classification: تصنيف
@@ -919,7 +911,6 @@ ar:
         cost: التكلفة
       form:
         edit_title: "المقيّمون: تعديل المقيّمين"
-        update: "تحديث المقيّم"
         updated: "تم تحديث المقيّمين بنجاح"
       show:
         description: "الوصف"

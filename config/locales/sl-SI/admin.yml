@@ -154,7 +154,6 @@ sl:
         dossier: Dosje
         edit_dossier: Uredi dosje
         tags: Oznake
-        user_tags: Uporabniške oznake
         undefined: Nedefinirano
         compatibility:
           title: Kompatibilnost
@@ -168,12 +167,6 @@ sl:
           title: Zmagovalec
           "true": "Da"
           "false": "Ne"
-        image: "Slika"
-        see_image: "Poglej sliko"
-        no_image: "Brez slike"
-        documents: "Dokumenti"
-        see_documents: "Poglej dokumente (%{count})"
-        no_documents: "Brez dokumentov"
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
@@ -532,7 +525,6 @@ sl:
         cost: Cena
       form:
         edit_title: "Cenilci: Uredi cenilce"
-        update: "Posodobi cenilca"
         updated: "Cenilec uspešno posodobljen"
       show:
         description: "Opis"
@@ -955,13 +947,11 @@ sl:
         new: Novi podpisni listi
       new:
         title: Novi podpisni listi
-        document_numbers_note: "Napiši številke in jih loči z vejico (,)"
+        document_numbers_note: "Napiši številke in jih loči s podpičjem (;)"
         submit: Ustvair podpisni list
       show:
         created_at: Ustvarjen
         author: Avtor
-        documents: Dokumenti
-        document_count: "Število dokumentov:"
         unverified_error: (Ni verificirano s strani popisa)
         loading: "Obstajajo še podpisi, ki so v postopku verifikacije s strani popisa, prosimo osveži stran čez nekaj trenutkov"
     stats:

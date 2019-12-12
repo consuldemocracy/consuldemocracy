@@ -9,5 +9,4 @@ class MergedCommentTree < CommentTree
   def base_comments
     Comment.where(commentable: commentables.flatten)
   end
-
 end

@@ -1,6 +1,5 @@
 include DocumentParser
 class CensusApi
-
   def call(document_type, document_number)
     response = nil
     get_document_number_variants(document_type, document_number).each do |variant|
@@ -23,6 +22,7 @@ class CensusApi
       str = data[:datos_habitante][:item][:fecha_nacimiento_string]
       day, month, year = str.match(/(\d\d?)\D(\d\d?)\D(\d\d\d?\d?)/)[1..3]
       return nil unless day.present? && month.present? && year.present?
+
       Time.zone.local(year.to_i, month.to_i, day.to_i).to_date
     end
 
@@ -79,8 +79,12 @@ class CensusApi
           nivel: 3 }}
     end
 
+    def end_point_defined?
+      Rails.application.secrets.census_api_end_point.present?
+    end
+
     def end_point_available?
-      Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?
+      (Rails.env.staging? || Rails.env.preproduction? || Rails.env.production?) && end_point_defined?
     end
 
     def stubbed_response(document_type, document_number)
@@ -116,11 +120,6 @@ class CensusApi
     end
 
     def stubbed_invalid_response
-      {get_habita_datos_response: {get_habita_datos_return: {datos_habitante: {}, datos_vivienda: {}}}}
+      { get_habita_datos_response: { get_habita_datos_return: { datos_habitante: {}, datos_vivienda: {}}}}
     end
-
-    def dni?(document_type)
-      document_type.to_s == "1"
-    end
-
 end

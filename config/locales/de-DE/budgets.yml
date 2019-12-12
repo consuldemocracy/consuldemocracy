@@ -106,7 +106,7 @@ de:
           confidence_score: am besten bewertet
           price: nach Preis
       share:
-        message: "Ich habe einen Ausgabenvorschlag %{title} in %{org} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
+        message: "Ich habe einen Ausgabenvorschlag %{title} in %{handle} erstellt. Erstellen Sie auch einen Ausgabenvorschlag!"
       show:
         author_deleted: Benutzer gelöscht
         price_explanation: Preiserklärung
@@ -182,8 +182,9 @@ de:
       heading_selection_title: "Nach Bezirk"
       no_winner_investments: "Keine erfolgreichen Ausgabenvorschläge in diesem Status"
       filters:
-        label: "Aktueller Stand des Projekts"
-        all: "Alle (%{count})"
+        status:
+          label: "Aktueller Stand des Projekts"
+          all: "Alle (%{count})"
     phases:
       errors:
         dates_range_invalid: "Das Anfangsdatum kann nicht gleich oder später als das Enddatum sein"

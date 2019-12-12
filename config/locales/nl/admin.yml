@@ -245,7 +245,6 @@ nl:
         dossier: Dossier
         edit_dossier: Edit dossier
         tags: Tags
-        user_tags: Deelnemerslabels
         undefined: Undefined
         compatibility:
           title: Compatibiliteit
@@ -259,12 +258,6 @@ nl:
           title: Winnaar
           "true": "Ja"
           "false": "Nee"
-        image: "Afbeelding"
-        see_image: "Zie afbeelding"
-        no_image: "Zonder afbeelding"
-        documents: "Documenten"
-        see_documents: "zie documenten (%{count})"
-        no_documents: "Zonder documenten"
         valuator_groups: "Beoordelingsgroepen"
       edit:
         classification: Clasificatie
@@ -833,7 +826,6 @@ nl:
         cost: Kosten
       form:
         edit_title: "Beoordelaars: Bewerk Beoordelaar"
-        update: "Sla op"
         updated: "Beoordelaar aangepast"
       show:
         description: "Beschrijving"
@@ -1328,13 +1320,11 @@ nl:
         new: New signature sheets
       new:
         title: Niewe handtekeninglijst
-        document_numbers_note: "Write the numbers separated by commas (,)"
+        document_numbers_note: "Write the numbers separated by semicolons (;)"
         submit: Create signature sheet
       show:
         created_at: Aangemaakt
         author: Author
-        documents: Documents
-        document_count: "Number of documents:"
         verified:
           one: "There is %{count} valid signature"
           other: "There are %{count} valid signatures"

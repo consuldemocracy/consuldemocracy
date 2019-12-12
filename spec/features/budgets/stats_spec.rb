@@ -1,13 +1,10 @@
 require "rails_helper"
 
 describe "Stats" do
-
   let(:budget)  { create(:budget, :finished) }
-  let(:group)   { create(:budget_group, budget: budget) }
-  let(:heading) { create(:budget_heading, group: group, price: 1000) }
+  let(:heading) { create(:budget_heading, budget: budget, price: 1000) }
 
   context "Load" do
-
     before { budget.update(slug: "budget_slug") }
 
     scenario "finds budget by slug" do
@@ -27,13 +24,12 @@ describe "Stats" do
         visit budget_stats_path(0)
       end.to raise_error ActiveRecord::RecordNotFound
     end
-
   end
 
   describe "Show" do
     describe "advanced stats" do
       scenario "advanced stats enabled" do
-        budget.update(advanced_stats_enabled: true)
+        budget.update!(advanced_stats_enabled: true)
 
         visit budget_stats_path(budget)
 

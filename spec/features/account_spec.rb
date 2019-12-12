@@ -1,10 +1,10 @@
 require "rails_helper"
 
 describe "Account" do
+  let(:user) { create(:user, username: "Manuela Colau") }
 
   before do
-    @user = create(:user, username: "Manuela Colau")
-    login_as(@user)
+    login_as(user)
   end
 
   scenario "Show" do
@@ -19,7 +19,7 @@ describe "Account" do
   end
 
   scenario "Show organization" do
-    create(:organization, user: @user, name: "Manuela Corp")
+    create(:organization, user: user, name: "Manuela Corp")
 
     visit account_path
 
@@ -67,7 +67,7 @@ describe "Account" do
              " complete the confirmation of your new email address."
     expect(page).to have_content notice
 
-    email = open_last_email
+    open_last_email
     visit_in_email("Confirm my account")
 
     logout
@@ -85,7 +85,7 @@ describe "Account" do
   end
 
   scenario "Edit Organization" do
-    create(:organization, user: @user, name: "Manuela Corp")
+    create(:organization, user: user, name: "Manuela Corp")
     visit account_path
 
     fill_in "account_organization_attributes_name", with: "Google"
@@ -104,7 +104,6 @@ describe "Account" do
   end
 
   context "Option to display badge for official position" do
-
     scenario "Users with official position of level 1" do
       official_user = create(:user, official_level: 1)
 
@@ -133,7 +132,6 @@ describe "Account" do
 
       expect(page).not_to have_css "#account_official_position_badge"
     end
-
   end
 
   scenario "Errors on edit" do
@@ -170,25 +168,12 @@ describe "Account" do
 
     expect(page).to have_content "Goodbye! Your account has been cancelled. We hope to see you again soon."
 
-    login_through_form_as(@user)
+    login_through_form_as(user)
 
     expect(page).to have_content "Invalid Email or username or password"
   end
 
   context "Recommendations" do
-
-    before do
-      Setting["feature.user.recommendations"] = true
-      Setting["feature.user.recommendations_on_debates"] = true
-      Setting["feature.user.recommendations_on_proposals"] = true
-    end
-
-    after do
-      Setting["feature.user.recommendations"] = nil
-      Setting["feature.user.recommendations_on_debates"] = nil
-      Setting["feature.user.recommendations_on_proposals"] = nil
-    end
-
     scenario "are enabled by default" do
       visit account_path
 
@@ -216,11 +201,10 @@ describe "Account" do
       expect(find("#account_recommended_debates")).not_to be_checked
       expect(find("#account_recommended_proposals")).not_to be_checked
 
-      @user.reload
+      user.reload
 
-      expect(@user.recommended_debates).to be(false)
-      expect(@user.recommended_proposals).to be(false)
+      expect(user.recommended_debates).to be(false)
+      expect(user.recommended_proposals).to be(false)
     end
-
   end
 end

@@ -165,7 +165,6 @@ so:
         assigned_admin: Mamulaha lamagcaabay
         no_admin_assigned: Mamule lama magcabin
         no_valuators_assigned: Majiraan Qimeeyayaal loo qondeyey
-        no_valuation_groups: Majiraan koox qimeyayala o loo qondeyey
         feasibility:
           feasible: "Suurto gal %{price}"
           unfeasible: "An surtgak ahayn"
@@ -202,7 +201,6 @@ so:
         dossier: Koob
         edit_dossier: Tafatiraha Warqadaha
         tags: Tagyada
-        user_tags: Isamalaha taaga
         undefined: Aan la garanayn
         compatibility:
           title: U Hogaansanan
@@ -216,12 +214,6 @@ so:
           title: Guleyste
           "true": "Haa"
           "false": "Maya"
-        image: "Sawiir"
-        see_image: "Muuji sawir"
-        no_image: "Sawir la an"
-        documents: "Dukumentiyo"
-        see_documents: "Arag dukumeentiyada%{count}"
-        no_documents: "Dukumenti La an"
         valuator_groups: "Kooxdaha Qimeeynta"
       edit:
         classification: Qeybinta
@@ -722,7 +714,6 @@ so:
         cost: Kharashaad
       form:
         edit_title: "Qiimeeyayaasha: Tafatiraha qiimeeyaha"
-        update: "Cusboneysi Qimeeyaha"
         updated: "Siguula ayaa loo cusboneysiyey"
       show:
         description: "Sharaxaad"
@@ -1193,13 +1184,11 @@ so:
         new: Warqadaha Cusub ee Saxixyada
       new:
         title: Warqadaha Cusub ee Saxixyada
-        document_numbers_note: "Qoor Lamaradaa oo ay ka socanyihiin qooyska(,)"
+        document_numbers_note: "Qoor Lamaradaa oo ay ka socanyihiin qooyska(;)"
         submit: Saame Warqada saxiixa
       show:
         created_at: Abuuray
         author: Qoraa
-        documents: Dukumentiyo
-        document_count: "Lamabarka Dukumeentiyada:"
         verified:
           one: "Waxa jira %{count} saxiixya ah oo saxa"
           other: "Waxa jira %{count} tiro saxiixya ah oo saxa"

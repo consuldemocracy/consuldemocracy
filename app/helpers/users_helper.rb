@@ -1,5 +1,4 @@
 module UsersHelper
-
   def humanize_document_type(document_type)
     case document_type
     when "1"
@@ -37,29 +36,29 @@ module UsersHelper
   end
 
   def current_administrator?
-    current_user && current_user.administrator?
+    current_user&.administrator?
   end
 
   def current_moderator?
-    current_user && current_user.moderator?
+    current_user&.moderator?
   end
 
   def current_valuator?
-    current_user && current_user.valuator?
+    current_user&.valuator?
   end
 
   def current_manager?
-    current_user && current_user.manager?
+    current_user&.manager?
   end
 
   def current_poll_officer?
-    current_user && current_user.poll_officer?
+    current_user&.poll_officer?
   end
 
   def show_admin_menu?(user = nil)
     unless namespace == "officing"
       current_administrator? || current_moderator? || current_valuator? || current_manager? ||
-      (user && user.administrator?) || current_poll_officer?
+        (user&.administrator?) || current_poll_officer?
     end
   end
 
@@ -70,5 +69,4 @@ module UsersHelper
       t("account.show.public_interests_user_title_list")
     end
   end
-
 end

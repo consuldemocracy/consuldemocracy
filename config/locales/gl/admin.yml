@@ -202,7 +202,6 @@ gl:
         assigned_admin: Administrador asignado
         no_admin_assigned: Sen administrador asignado
         no_valuators_assigned: Sen avaliador
-        no_valuation_groups: Grupos asignados sen valoración
         feasibility:
           feasible: "Viable (%{price})"
           unfeasible: "Non viables"
@@ -239,7 +238,6 @@ gl:
         dossier: Informe
         edit_dossier: Editar informe
         tags: Etiquetas
-        user_tags: Etiquetas do usuario
         undefined: Sen definir
         compatibility:
           title: Compatibilidade
@@ -253,12 +251,6 @@ gl:
           title: Gañadora
           "true": "Si"
           "false": "Non"
-        image: "Imaxe"
-        see_image: "Ver imaxe"
-        no_image: "Sen imaxe"
-        documents: "Documentos"
-        see_documents: "Ver documentos (%{count})"
-        no_documents: "Sen documentos"
         valuator_groups: "Grupos de avaliadores"
       edit:
         classification: Clasificación
@@ -805,7 +797,6 @@ gl:
         cost: Custo total
       form:
         edit_title: "Avaliadores: Editar avaliador"
-        update: "Actualizar avaliador"
         updated: "Avaliador actualizado correctamente"
       show:
         description: "Descrición"
@@ -1286,13 +1277,11 @@ gl:
         new: Nova folla de sinaturas
       new:
         title: Nova folla de sinaturas
-        document_numbers_note: "Escribe os números separados por comas (,)"
+        document_numbers_note: "Escribe os números separados por puntos y comas (;)"
         submit: Crear folla de sinaturas
       show:
         created_at: Creado
         author: Autoría
-        documents: Docuemntos
-        document_count: "Número de documentos:"
         verified:
           one: "Hai %{count} sinatura válida"
           other: "Hai %{count} sinaturas válidas"

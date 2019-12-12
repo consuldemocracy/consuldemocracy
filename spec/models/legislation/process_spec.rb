@@ -3,6 +3,9 @@ require "rails_helper"
 describe Legislation::Process do
   let(:process) { create(:legislation_process) }
 
+  it_behaves_like "acts as paranoid", :legislation_process
+  it_behaves_like "globalizable", :legislation_process
+
   it "is valid" do
     expect(process).to be_valid
   end
@@ -93,19 +96,31 @@ describe Legislation::Process do
   end
 
   describe "filter scopes" do
-    let!(:process_1) { create(:legislation_process, start_date: Date.current - 2.days,
-                                                   end_date: Date.current + 1.day) }
-    let!(:process_2) { create(:legislation_process, start_date: Date.current + 1.day,
-                                              end_date: Date.current + 3.days) }
-    let!(:process_3) { create(:legislation_process, start_date: Date.current - 4.days,
-                                              end_date: Date.current - 3.days) }
+    describe "open and past filters" do
+      let!(:process_1) do
+        create(:legislation_process, start_date: Date.current - 2.days, end_date: Date.current + 1.day)
+      end
 
-    it "filters open" do
-      open_processes = ::Legislation::Process.open
+      let!(:process_2) do
+        create(:legislation_process, start_date: Date.current + 1.day, end_date: Date.current + 3.days)
+      end
 
-      expect(open_processes).to include(process_1)
-      expect(open_processes).not_to include(process_2)
-      expect(open_processes).not_to include(process_3)
+      let!(:process_3) do
+        create(:legislation_process, start_date: Date.current - 4.days, end_date: Date.current - 3.days)
+      end
+
+      it "filters open" do
+        open_processes = ::Legislation::Process.open
+
+        expect(open_processes).to eq [process_1]
+        expect(open_processes).not_to include [process_2]
+      end
+
+      it "filters past" do
+        past_processes = ::Legislation::Process.past
+
+        expect(past_processes).to eq [process_3]
+      end
     end
 
     it "filters draft phase" do
@@ -138,29 +153,20 @@ describe Legislation::Process do
 
       processes_not_in_draft = ::Legislation::Process.not_in_draft
 
-      expect(processes_not_in_draft).to include(process_before_draft)
-      expect(processes_not_in_draft).to include(process_with_draft_disabled)
+      expect(processes_not_in_draft).to match_array [process_before_draft, process_with_draft_disabled]
       expect(processes_not_in_draft).not_to include(process_with_draft_enabled)
       expect(processes_not_in_draft).not_to include(process_with_draft_only_today)
-    end
-
-    it "filters past" do
-      past_processes = ::Legislation::Process.past
-
-      expect(past_processes).to include(process_3)
-      expect(past_processes).not_to include(process_2)
-      expect(past_processes).not_to include(process_1)
     end
   end
 
   describe "#status" do
     it "detects planned phase" do
-      process.update_attributes(start_date: Date.current + 2.days)
+      process.update!(start_date: Date.current + 2.days)
       expect(process.status).to eq(:planned)
     end
 
     it "detects closed phase" do
-      process.update_attributes(end_date: Date.current - 2.days)
+      process.update!(end_date: Date.current - 2.days)
       expect(process.status).to eq(:closed)
     end
 
@@ -182,16 +188,38 @@ describe Legislation::Process do
     end
 
     it "invalid format colors" do
-      expect {
-        process = create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
-      }.to raise_error(ActiveRecord::RecordInvalid,
-                       "Validation failed: Background color is invalid")
+      expect do
+        create(:legislation_process, background_color: "#123ghi", font_color: "#fff")
+      end.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Background color is invalid")
 
-      expect {
-        process = create(:legislation_process, background_color: "#fff", font_color: "ggg")
-      }.to raise_error(ActiveRecord::RecordInvalid,
-                       "Validation failed: Font color is invalid")
+      expect do
+        create(:legislation_process, background_color: "#fff", font_color: "ggg")
+      end.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Font color is invalid")
     end
   end
 
+  describe "milestone_tags" do
+    context "without milestone_tags" do
+      let(:process) { create(:legislation_process) }
+
+      it "do not have milestone_tags" do
+        expect(process.milestone_tag_list).to eq([])
+        expect(process.milestone_tags).to eq([])
+      end
+
+      it "add a new milestone_tag" do
+        process.milestone_tag_list = "tag1,tag2"
+
+        expect(process.milestone_tag_list).to eq(["tag1", "tag2"])
+      end
+    end
+
+    context "with milestone_tags" do
+      let(:process) { create(:legislation_process, :with_milestone_tags) }
+
+      it "has milestone_tags" do
+        expect(process.milestone_tag_list.count).to eq(1)
+      end
+    end
+  end
 end

@@ -151,12 +151,6 @@ fi:
           title: Voittaja
           "true": "Kyllä"
           "false": "Ei"
-        image: "Kuva"
-        see_image: "Näytä kuva"
-        no_image: "Ilman kuvaa"
-        documents: "Asiakirjat"
-        see_documents: "Näytä asiakirjat (%{count})"
-        no_documents: "Ilman asiakirjoja"
       edit:
         classification: Luokitus
         compatibility: Yhteensopivuus

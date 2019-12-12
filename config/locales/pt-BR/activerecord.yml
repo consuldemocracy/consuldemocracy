@@ -254,6 +254,8 @@ pt-BR:
       legislation/question:
         title: Título
         question_options: Opções
+      legislation/question/translation:
+        title: "Questão"
       legislation/question_option:
         value: Valor
       legislation/annotation:

@@ -242,13 +242,6 @@ cs:
           title: Vítěz
           "true": "Ano"
           "false": "Ne"
-        image: "Image"
-        see_image: "Zobrazit obrázek"
-        no_image: "Bez obrázku"
-        documents: "Dokumenty"
-        see_documents: "Viz dokumenty (%{count})"
-        no_documents: "Bez dokumentů"
-        valuator_groups: "Skupiny hodnotitelů"
       edit:
         classification: Klasifikace
         compatibility: Kompatibilita

@@ -24,6 +24,7 @@
 // 22. Images
 // 23. Maps
 // 24. Homepage
+// 25. LocalCensusRecords
 //
 
 // 01. Global styles
@@ -194,6 +195,10 @@ a {
 
 .padding {
   padding-bottom: $line-height;
+  padding-top: $line-height;
+}
+
+.padding-top {
   padding-top: $line-height;
 }
 
@@ -471,6 +476,26 @@ header {
       position: absolute;
       right: 2px;
       top: 9px;
+    }
+  }
+
+  .remote-translations-button {
+
+    &.callout {
+      margin: 0;
+      padding: rem-calc(6);
+
+      [type="submit"] {
+        background: none;
+        border: 0;
+        cursor: pointer;
+        font-weight: bold;
+        color: $brand;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 
@@ -1047,8 +1072,17 @@ form {
     margin: $line-height / 2 0 $line-height / 2 $line-height / 4;
   }
 
-  .ckeditor {
-    min-height: $line-height * 13;
+  .cke {
+    margin-bottom: $line-height;
+  }
+
+  .html-area {
+    height: 272px;
+    margin-bottom: $line-height;
+
+    &.admin {
+      height: 572px;
+    }
   }
 
   .checkbox,
@@ -1058,6 +1092,19 @@ form {
     line-height: $line-height;
     vertical-align: middle;
   }
+}
+
+.translatable-fields {
+
+  &.highlight {
+    display: inline-block;
+    padding-top: $line-height;
+    width: 100%;
+  }
+}
+
+.translation-locale {
+  padding-top: $line-height;
 }
 
 // 07. Callout
@@ -2889,6 +2936,21 @@ table {
       font-weight: bold;
       margin-bottom: $line-height / 4;
       padding: rem-calc(4) rem-calc(8);
+    }
+  }
+}
+
+// 25. Local Census Records
+// ------------------------
+
+.local-census-record-new,
+.local-census-record-edit {
+
+  .date-of-birth {
+    select {
+      float: left;
+      width: 30%;
+      margin-right: $line-height / 4;
     }
   }
 }

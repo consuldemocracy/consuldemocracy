@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Tags" do
-
   scenario "Index" do
     earth = create(:debate, tag_list: "Medio Ambiente")
     money = create(:debate, tag_list: "Economía")
@@ -43,8 +42,8 @@ describe "Tags" do
   end
 
   scenario "Index tag does not show featured debates" do
-    featured_debates = create_featured_debates
-    debates = create(:debate, tag_list: "123")
+    create_featured_debates
+    create(:debate, tag_list: "123")
 
     visit debates_path(tag: "123")
 
@@ -66,8 +65,8 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "debate_title", with: "Title"
-    fill_in "debate_description", with: "Description"
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda"
@@ -85,8 +84,8 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "debate_title", with: "Title"
-    fill_in "debate_description", with: "Description"
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -103,8 +102,8 @@ describe "Tags" do
 
     visit new_debate_path
 
-    fill_in "debate_title", with: "A test of dangerous strings"
-    fill_in "debate_description", with: "A description suitable for this test"
+    fill_in "Debate title", with: "A test of dangerous strings"
+    fill_in "Initial debate text", with: "A description suitable for this test"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
@@ -150,44 +149,41 @@ describe "Tags" do
   end
 
   context "Filter" do
-
     scenario "From index" do
-      debate1 = create(:debate, tag_list: "Education")
-      debate2 = create(:debate, tag_list: "Health")
+      create(:debate, tag_list: "Health", title: "Public hospitals?")
+      create(:debate, tag_list: "Education", title: "Status of our schools")
 
-      visit debates_path
+      visit debates_path(order: :created_at)
 
-      within "#debate_#{debate1.id}" do
+      within ".debate", text: "Status of our schools" do
         click_link "Education"
       end
 
       within("#debates") do
         expect(page).to have_css(".debate", count: 1)
-        expect(page).to have_content(debate1.title)
+        expect(page).to have_content "Status of our schools"
       end
     end
 
     scenario "From show" do
-      debate1 = create(:debate, tag_list: "Education")
-      debate2 = create(:debate, tag_list: "Health")
+      debate = create(:debate, tag_list: "Education")
+      create(:debate, tag_list: "Health")
 
-      visit debate_path(debate1)
+      visit debate_path(debate)
 
       click_link "Education"
 
       within("#debates") do
         expect(page).to have_css(".debate", count: 1)
-        expect(page).to have_content(debate1.title)
+        expect(page).to have_content(debate.title)
       end
     end
-
   end
 
   context "Tag cloud" do
-
     scenario "Display user tags" do
-      earth = create(:debate, tag_list: "Medio Ambiente")
-      money = create(:debate, tag_list: "Economía")
+      create(:debate, tag_list: "Medio Ambiente")
+      create(:debate, tag_list: "Economía")
 
       visit debates_path
 
@@ -213,6 +209,5 @@ describe "Tags" do
       expect(page).to have_content debate2.title
       expect(page).not_to have_content debate3.title
     end
-
   end
 end

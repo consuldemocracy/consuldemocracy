@@ -202,7 +202,6 @@ de:
         assigned_admin: Zugewiesene*r Administrator*in
         no_admin_assigned: Kein*e Administrator*in zugewiesen
         no_valuators_assigned: Kein*e Begutacher*in zugewiesen
-        no_valuation_groups: Keine Begutachtungsgruppe zugewiesen
         feasibility:
           feasible: "Durchführbar (%{price})"
           unfeasible: "Undurchführbar"
@@ -239,7 +238,6 @@ de:
         dossier: Bericht
         edit_dossier: Bericht bearbeiten
         tags: Tags
-        user_tags: Benutzer*innentags
         undefined: Undefiniert
         compatibility:
           title: Kompatibilität
@@ -253,12 +251,6 @@ de:
           title: Bestbewerteter Vorschlag
           "true": "Ja"
           "false": "Nein"
-        image: "Bild"
-        see_image: "Bild anzeigen"
-        no_image: "Ohne Bild"
-        documents: "Dokumente"
-        see_documents: "Dokumente anzeigen (%{count})"
-        no_documents: "Ohne Dokumente"
         valuator_groups: "Begutachtungsgruppen"
       edit:
         classification: Klassifizierung
@@ -794,7 +786,6 @@ de:
         cost: Gesamtkosten
       form:
         edit_title: "Begutachter*innen: Begutachter*in bearbeiten"
-        update: "Begutachter*in aktualisieren"
         updated: "Begutachter*in erfolgreich aktualisiert"
       show:
         description: "Beschreibung"
@@ -1279,8 +1270,6 @@ de:
       show:
         created_at: Erstellt
         author: Autor
-        documents: Unterlagen
-        document_count: "Anzahl der Dokumente:"
         verified:
           one: "Es gibt %{count} gültige Unterschrift"
           other: "Es gibt %{count} gültige Unterschriften"

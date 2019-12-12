@@ -1,5 +1,4 @@
 module DebatesHelper
-
   def has_featured?
     Debate.all.featured.count > 0
   end
@@ -27,5 +26,4 @@ module DebatesHelper
   def debates_secondary_view
     debates_current_view == "default" ? "minimal" : "default"
   end
-
 end

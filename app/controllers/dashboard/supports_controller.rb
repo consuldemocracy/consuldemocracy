@@ -15,7 +15,6 @@ class Dashboard::SupportsController < Dashboard::BaseController
       accumulate_supports(grouped_votes)
     end
 
-
     def supports
       @supports ||= Vote
                     .where(votable: proposal,

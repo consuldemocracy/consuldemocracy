@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe LocalesHelper do
-
   context "Language names" do
-
     let!(:default_enforce) { I18n.enforce_available_locales }
 
     before do
@@ -28,6 +26,5 @@ describe LocalesHelper do
     it "retuns the locale key if i18n.language.name translation is not found" do
       expect(name_for_locale(:wl)).to eq("wl")
     end
-
   end
 end

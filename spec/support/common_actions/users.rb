@@ -13,7 +13,7 @@ module Users
     click_button "Register"
   end
 
-  def login_through_form_with_email_and_password(email="manuela@consul.dev", password="judgementday")
+  def login_through_form_with_email_and_password(email = "manuela@consul.dev", password = "judgementday")
     visit root_path
     click_link "Sign in"
 
@@ -54,7 +54,7 @@ module Users
   end
 
   def confirm_email
-    body = ActionMailer::Base.deliveries.last.try(:body)
+    body = ActionMailer::Base.deliveries.last&.body
     expect(body).to be_present
 
     sent_token = /.*confirmation_token=(.*)".*/.match(body.to_s)[1]
