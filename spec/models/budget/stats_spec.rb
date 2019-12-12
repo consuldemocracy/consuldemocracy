@@ -164,7 +164,7 @@ describe Budget::Stats do
       it "returns the percentage of other participants" do
         expect(stats.other_percentage).to be 10.0
       end
-  end
+    end
   end
 
   describe "#participants_by_age" do

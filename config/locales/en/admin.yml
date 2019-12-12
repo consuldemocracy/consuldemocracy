@@ -1386,7 +1386,6 @@ en:
         direct_messages: Direct messages
         proposal_notifications: Proposal notifications
         incomplete_verifications: Incomplete verifications
-        gender_stats: Gender stats
         polls: Polls
       graph:
         debate_created: Debates
