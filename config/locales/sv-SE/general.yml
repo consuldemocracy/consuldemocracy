@@ -232,7 +232,7 @@ sv:
       budgets: Medborgarbudget
       notification_item:
         new_notifications:
-          one: Du har %{count} ny avisering
+          one: Du har en ny avisering
           other: Du har %{count} nya aviseringar
         notifications: Aviseringar
         no_notifications: "Du har inga nya aviseringar"
