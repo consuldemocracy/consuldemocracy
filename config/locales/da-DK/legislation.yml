@@ -50,11 +50,11 @@ da:
       proposals:
         empty_proposals: Der er ingen forslag
         filters:
-          random: Tilfældige
+          random: Alle idéer
           winners: Valgt
       debate:
         empty_questions: Der er ingen spørgsmål
-        participate: Deltag i debatten
+        participate: Deltage i debatten
       index:
         filter: Filtrere
         filters:
