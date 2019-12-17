@@ -648,7 +648,7 @@ tr:
     new:
       title: "Mesaj gönder"
       submit_button: "Mesaj gönder"
-      proposal_page: "öneri'ler sayfası"
+      proposal_page: "öneriler sayfası"
     show:
       back: "Faaliyetlerime geri dön"
   shared:
