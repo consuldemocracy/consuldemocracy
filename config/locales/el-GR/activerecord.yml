@@ -132,12 +132,12 @@ el:
       budget:
         name: "Όνομα"
         description_accepting: "Περιγραφή κατά τη φάση Αποδοχής"
-        description_reviewing: "Περιγραφή κατά τη φάση Αναθεώρησης"
+        description_reviewing: "Περιγραφή κατά τη φάση Επιθεώρησης"
         description_selecting: "Περιγραφή κατά τη φάση Επιλογής"
         description_valuating: "Περιγραφή κατά τη φάση Αξιολόγησης"
         description_balloting: "Περιγραφή κατά τη φάση Ψηφοφορίας"
-        description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης Αναθεώρησης Ψηφοδελτίων"
-        description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
+        description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης Επιθεώρησης Ψηφοδελτίων"
+        description_finished: "Περιγραφή με την ολοκληρωση του προϋπολογισμού"
         phase: "Φάση"
         currency_symbol: "Συνάλλαγμα"
       budget/investment:
@@ -148,7 +148,7 @@ el:
         administrator_id: "Διαχειριστής"
         location: "Τοποθεσία (προαιρετικό)"
         organization_name: "Εάν υποβάλετε πρόταση εκ μέρους ομάδας, οργανισμού ή άλλων προσώπων, παρακαλείσθε όπως αναφέρετε την ονομάσία τους"
-        image: "Περιγραφική εικόνα πρότασης"
+        image: "Εικόνα πρότασης"
         image_title: "Τίτλος εικόνας"
       budget/investment/translation:
         description: "Περιγραφή"
@@ -180,7 +180,7 @@ el:
         body: "Σχόλιο"
         user: "Χρήστης"
       debate:
-        author: "Συντάκτης"
+        author: "Δημιουργός"
         description: "Γνώμη"
         terms_of_service: "Όροι υπηρεσίας"
         title: "Τίτλος"
@@ -188,7 +188,7 @@ el:
         title: "Τίτλος συζήτησης"
         description: "Αρχικό κείμενο συζήτησης"
       proposal:
-        author: "Συντάκτης"
+        author: "Δημιουργός"
         title: "Τίτλος"
         question: "Ερώτηση"
         description: "Περιγραφή"
