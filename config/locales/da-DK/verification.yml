@@ -83,11 +83,11 @@ da:
     step_1: Adresse
     step_2: Bekræftelseskode
     step_3: Endelig verifikation
-    user_permission_debates: Deltag i debat
+    user_permission_debates: Deltage i debat
     user_permission_info: Verificer dine oplysninger og du vil have mulighed for at...
     user_permission_proposal: Opret nye forslag
     user_permission_support_proposal: Støt forslag*
-    user_permission_votes: Deltag i den endelige afstemning*
+    user_permission_votes: Deltage i den endelige afstemning*
     verified_user:
       form:
         submit_button: Send kode
