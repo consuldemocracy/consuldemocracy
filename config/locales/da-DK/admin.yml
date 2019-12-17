@@ -65,9 +65,9 @@ da:
       index:
         title: Deltagerbudgetter
         new_link: Opret nyt budget
-        filter: Filtrere
+        filter: Søg
         filters:
-          open: Åben
+          open: Aktive budgetter
           finished: Færdig
         budget_investments: Administrer projekter
         table_name: Navn
