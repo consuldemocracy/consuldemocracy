@@ -178,14 +178,14 @@ da:
           under_valuation: Under vurdering
           valuation_finished: Er vurderet
           feasible: Kan gennemføres
-          selected: Vælg
+          selected: Udvalgt
           undecided: Under behandling
           unfeasible: Kan ikke gennemføres
           min_total_supports: Minimum støtte
           max_total_supports: Maksimal støtte
           winners: Vindere
         buttons:
-          filter: Filtrere
+          filter: Søg
         download_current_selection: "Download aktuel markering"
         no_budget_investments: "Der er ingen projekter."
         title: Projekter
@@ -877,20 +877,20 @@ da:
         members: "Medlemmer"
         no_groups: "Der er ingen evalueringsgrupper"
       show:
-        title: "Vurderingsgruppe: %{group}"
+        title: "Evalueringsgruppe: %{group}"
         no_valuators: "Der er ingen evaluatorer tilføjet til denne gruppe"
       form:
-        new: "Opret vurderingsgruppe"
-        edit: "Gem vurderingsgruppe"
+        new: "Opret evalueringsgruppe"
+        edit: "Gem evalueringsgruppe"
     poll_officers:
       index:
-        title: Ansvarlige medarbejdere for afstemning
+        title: Valgtilforordnede
       officer:
         add: Tilføj
         delete: Slet position
         name: Navn
         email: E-mail
-        entry_name: ansvarlig medarbejder
+        entry_name: valgtilforordnede
       search:
         email_placeholder: Søg bruger via e-mail
         search: Søg
@@ -898,7 +898,7 @@ da:
     poll_officer_assignments:
       index:
         officers_title: "Liste over ansvarlige medarbejdere"
-        no_officers: "Der er ingen ansvarlig medarbejder tilknyttet denne afstemning."
+        no_officers: "Der er valgtilforordnede tilknyttet denne afstemning."
         table_name: "Navn"
         table_email: "E-mail"
       by_officer:
@@ -1090,7 +1090,7 @@ da:
         title: "Resultater for valgsted"
     booths:
       index:
-        title: "Liste over aktive stemmebokse"
+        title: "Liste over aktive valgsteder"
         no_booths: "Der er ingen aktive stemmebokse til kommende afstemninger."
         add_booth: "Tilføj stemmeboks"
         name: "Navn"
