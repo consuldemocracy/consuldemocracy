@@ -73,12 +73,12 @@ da:
         table_name: Navn
         table_phase: Fase
         table_investments: Projektidéer
-        table_edit_groups: Område grupper
+        table_edit_groups: Budgetområder
         table_edit_budget: Rediger
         table_admin_ballots: Valgsteder
-        edit_groups: Rediger område grupper
+        edit_groups: Rediger områder
         edit_budget: Rediger budget
-        admin_ballots: Administrer stemmesedler
+        admin_ballots: Administrer valgsteder
         no_budgets: "Der er ingen budgetter."
       create:
         notice: Det nye deltagerbudget blev oprettet!
@@ -169,18 +169,18 @@ da:
         administrator_filter_all: Alle administratorer
         valuator_filter_all: Alle evaluatorer
         tags_filter_all: Alle tags
-        advanced_filters: Avancerede filtre
+        advanced_filters: Flere filtre
         placeholder: Søg efter projekter
         filters:
           all: Alle
           without_admin: Uden tildelte administrator
           without_valuator: Uden tilknyttet evaluator
-          under_valuation: Under værdiansættelse
-          valuation_finished: Værdiansættelse færdig
+          under_valuation: Under vurdering
+          valuation_finished: Er vurderet
           feasible: Kan gennemføres
           selected: Vælg
-          undecided: Ikke besluttet
-          unfeasible: Uigennemførlig
+          undecided: Under behandling
+          unfeasible: Kan ikke gennemføres
           min_total_supports: Minimum støtte
           max_total_supports: Maksimal støtte
           winners: Vindere
@@ -195,7 +195,7 @@ da:
         feasibility:
           feasible: "Kan gennemføres"
           unfeasible: "Kan ikke gennemføres"
-          undecided: "Ikke besluttet"
+          undecided: "Under behandling"
         selected: "Valgt"
         select: "Vælg"
         list:
@@ -204,12 +204,12 @@ da:
           supports: Støtte
           admin: Administrator
           valuator: Evaluator
-          valuation_group: Evaluator gruppe
+          valuation_group: Evalueringsgruppe
           geozone: Område
           feasibility: Gennemførlighed
-          valuation_finished: Færdig vurdering.
+          valuation_finished: Vurdering færdiggjort
           selected: Valgt
-          visible_to_valuators: Vis til evaluatorer
+          visible_to_valuators: Vis til evaluator
           author_username: Brugernavn
           incompatible: Uforenelig
           price: Pris
@@ -242,7 +242,7 @@ da:
           title: Vinderen
           "true": "Ja"
           "false": "Nej"
-        valuator_groups: "Vurderingsgrupper"
+        valuator_groups: "Evalueringsgrupper"
         preview: Forhåndsvisning af projekt
       edit:
         classification: Klassificering
@@ -645,7 +645,7 @@ da:
       valuators: Evaluatorer
       poll_officers: Embedsmænd
       polls: Afstemninger
-      poll_booths: Her findes valgstederne
+      poll_booths: Opret valgsted
       poll_booth_assignments: Tildel valgsted
       poll_shifts: Administrer arbejdsfordeling
       officials: Embedsmænd
@@ -840,7 +840,7 @@ da:
         no_replies: "Der er ikke oprette nogle tilbagesvar. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
     emails_download:
       index:
-        title: E-mails blev downloadet
+        title: Download e-mails
         download_segment: Download e-mails
         download_segment_help_text: Download som CSV-format
         download_emails_button: Download liste over e-mails
@@ -852,7 +852,7 @@ da:
         description: Beskrivelse
         no_description: Ingen beskrivelse
         no_valuators: Der er ingen evaluatorer.
-        valuator_groups: "Vurderingsgrupper"
+        valuator_groups: "Evalueringsgrupper"
         group: "Gruppe"
         no_group: "Ingen gruppe"
       valuator:
@@ -871,11 +871,11 @@ da:
         no_group: "Ingen gruppe"
     valuator_groups:
       index:
-        title: "Vurderingsgrupper"
-        new: "Opret vurderingsgruppe"
+        title: "Evalueringsgrupper"
+        new: "Opret evalueringsgruppe"
         name: "Navn"
         members: "Medlemmer"
-        no_groups: "Der er ingen vurderingsgrupper"
+        no_groups: "Der er ingen evalueringsgrupper"
       show:
         title: "Vurderingsgruppe: %{group}"
         no_valuators: "Der er ingen evaluatorer tilføjet til denne gruppe"
