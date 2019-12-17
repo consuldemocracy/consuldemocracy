@@ -10,7 +10,7 @@ da:
         title: Deltagerbudgetter
         filters:
           current: Åben
-          finished: Færdig
+          finished: Afsluttede budgetter
         table_name: Navn
         table_phase: Fase
         table_assigned_investments_valuation_open: Projektidéerne er klar til vurdering
