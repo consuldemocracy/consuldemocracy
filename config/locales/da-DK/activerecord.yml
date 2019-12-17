@@ -45,7 +45,7 @@ da:
         one: "Evaluator"
         other: "Evaluator"
       valuator_group:
-        one: "Evaluator gruppe"
+        one: "Evalueringsgruppe"
         other: "Evaluatorgruppe"
       manager:
         one: "Manager"
