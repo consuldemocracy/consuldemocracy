@@ -19,12 +19,12 @@ da:
     poll_budgets:
       see_ballot_sheets: Se lister over stemmesedler
       index:
-        title: "%{poll_budget} - Liste over stemmesedler"
-        ballot_sheet: "Stemmesedler %{id}"
+        title: "%{poll_budget} - Liste over valgsteder"
+        ballot_sheet: "Valgsteder %{id}"
         ballot_sheet_name: Navn
         ballot_sheet_author: Oprettet af
         ballot_sheet_creation_date: Oprettelsesdato
-        empty_results: Der er ingen stemmesedler til denne afstemning endnu
+        empty_results: Der er ingen valgsteder tilknyttet denne afstemning
       new:
         title: "%{poll_budget} - Ny stemmeseddel"
         booth: Valgsted
