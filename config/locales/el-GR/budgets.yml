@@ -133,9 +133,9 @@ el:
       phase: Πραγματική φάση
       unfeasible_title: Ανέφικτες επενδύσεις
       unfeasible: Προβολή των ανέφικτων επενδύσεων
-      unselected_title: Επενδύσεις που δεν είχαν επιλεγεί για την φάση ψηφοφορίας
-      unselected: Δείτε τις επενδύσεις που δεν είχαν επιλεγεί για την φάση ψηφοφορίας
-      see_results: Δείτε τα αποτελέσματα
+      unselected_title: Επενδύσεις που δεν έχουν επιλεγεί για τη φάση ψηφοφορίας
+      unselected: Προβολή των επενδύσεων που δεν έχουνν επιλεγεί για τη φάση ψηφοφορίας
+      see_results: Προβολή αποτελεσμάτων
     results:
       link: Αποτελέσματα
       page_title: "%{budget} - αποτελέσματα"
@@ -147,12 +147,12 @@ el:
       price: Τιμή
       amount_available: Διαθέσιμος προϋπολογισμός
       accepted: "Αποδεκτή πρόταση δαπανών: "
-      discarded: "Απορριφθείσα πρόταση δαπανών: "
-      incompatibles: Ασυμβίβαστα
+      discarded: "Απορριφθείσα επένδυση: "
+      incompatibles: Μη συμβατά
       investment_title: Τίτλος έργου
       investment_proyects: Λίστα με όλα τα επενδυτικά έργα
       unfeasible_investment_proyects: Λίστα με όλα τα ανέφικτα επενδυτικά έργα
-      not_selected_investment_proyects: Λίστα με όλα τα επενδυτικά έργα που δεν είχαν επιλεγεί για ψηφοφορία
+      not_selected_investment_proyects: Λίστα με όλα τα επενδυτικά έργα που δεν έχουν επιλεγεί για ψηφοφορία
     executions:
       link: "Ορόσημα"
       page_title: "%{budget} - Oρόσημα"
