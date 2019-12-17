@@ -1,7 +1,7 @@
 da:
   account:
     show:
-      change_credentials_link: Rediger brugeroplysninger
+      change_credentials_link: Vil du ændre din adgangskode?
       erase_account_link: Slet min konto
       finish_verification: Færdiggør verificering
       notifications: Notifikationer
@@ -14,14 +14,14 @@ da:
       save_changes_submit: Gem ændringer
       recommendations: Anbefalinger
       title: Min konto
-      user_permission_debates: Deltag i debat
+      user_permission_debates: Deltage i debat
       user_permission_info: Med din konto kan du...
       user_permission_proposal: Oprette nye forslag
       user_permission_support_proposal: Støtte op om forslag
       user_permission_title: Deltage
-      user_permission_verify: Du skal verificere din konto for at kunne foretage disse handlinger.
+      user_permission_verify: For at kunne foretage handlingerne, skal din konto være verificeret.
       user_permission_verify_info: "* Kun for brugere af Census."
-      user_permission_votes: Deltag i den endelige afstemning
+      user_permission_votes: Deltage i den endelige afstemning
       username_label: Brugernavn
       verified_account: Konto verificeret
       verify_my_account: Verificer min konto
@@ -229,7 +229,7 @@ da:
       management: Management
       moderation: Moderation
       valuation: Vurdering
-      officing: Ansvarlige medarbejdere for afstemning
+      officing: Valgtilforordnede
       help: Hjælp
       my_account_link: Min konto
       my_activity_link: Min aktivitet
@@ -849,14 +849,14 @@ da:
       go_to_index: Se borgerforslag og debatindlæg
       start_using_consul: Gå til indekssiden
       title: Deltag
-      user_permission_debates: Deltag i debatten
+      user_permission_debates: Deltage i debatten
       user_permission_info: Med din konto kan du...
       user_permission_proposal: Oprette nye borgerforslag
       user_permission_support_proposal: Støtte op om borgerforslag*
-      user_permission_verify: "Du skal verificere din konto for at kunne foretage handlingerne."
+      user_permission_verify: "For at kunne foretage handlingerne, skal din konto være verificeret."
       user_permission_verify_info: "* Kun for byens beboere."
       user_permission_verify_my_account: Verificer min konto
-      user_permission_votes: Deltag i den endelige afstemning
+      user_permission_votes: Deltage i den endelige afstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
     timestamp_error_message: "Åh, det gik lidt for hurtigt! Prøv igen."
