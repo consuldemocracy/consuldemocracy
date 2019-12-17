@@ -540,7 +540,7 @@ hr:
       previous_notifications: Vidi prošle obavijesti
     polls:
       index:
-        title: Ankete
+        title: Glasovi
         create: Stvori glasanje
         count:
           one: Stvorili ste %{count} glasanje.
