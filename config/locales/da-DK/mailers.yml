@@ -7,7 +7,7 @@ da:
       subject: Nogen har kommenteret på din %{commentable}
       title: Ny kommentar
     config:
-      manage_email_subscriptions: For at stoppe med at modtage disse e-mails skal du ændre dine indstillinger i
+      manage_email_subscriptions: Afmeld e-mails ved at gå til dine indstillinger
     email_verification:
       click_here_to_verify: dette link
       subject: Bekræft din e-mail
@@ -22,7 +22,7 @@ da:
       title: "Notifikationer vedrørende forslag i %{org_name}"
       share: Del forslag
       comment: Skriv en kommentar til forslaget
-      unsubscribe: "Hvis du ikke ønsker at modtage notifikationer om forslag, følg %{account} og fjern markeringen ved 'Modtag notifikationer vedrørende forslag'."
+      unsubscribe: "Hvis du ikke ønsker at modtage notifikationer om forslag, gå til %{account} og fjern markeringen ved 'Modtag notifikationer'."
       unsubscribe_account: Min konto
     direct_message_for_receiver:
       subject: "Du har modtaget en ny privat besked"
