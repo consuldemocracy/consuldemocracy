@@ -3,9 +3,9 @@ sv:
     account:
       menu:
         reset_password_email: Återställ lösenordet med e-post
-        reset_password_manually: Återställa lösenordet manuellt
+        reset_password_manually: Återställ lösenordet manuellt
       alert:
-        unverified_user: Inga verifierad användare har loggat
+        unverified_user: Ingen verifierad användare har loggat in än
       show:
         title: Användarkonto
       edit:
