@@ -127,11 +127,11 @@ sv:
     new:
       form:
         submit_button: Starta en debatt
-      info: Om du vill lägga ett förslag är det här fel avdelning, gå till %{info_link}.
+      info: Om du vill lägga ett förslag är detta fel plats, gå till %{info_link}.
       info_link: skapa ett nytt förslag
       more_info: Mer information
       recommendation_four: Det här är din plats, du ska kunna trivas och göra din röst hörd här.
-      recommendation_one: Använd inte versaler i debattinläggets titel eller i hela meningar i beskrivningen. På internet betyder det att skrika, och ingen gillar när folk skriker på dem.
+      recommendation_one: Använd inte versaler i debattinläggets titel eller i hela meningar i beskrivningen. På internet tolkas det som att du skriker, och ingen gillar när folk skriker på dem.
       recommendation_three: Hänsynslös kritik välkomnas. Det här utrymmet är till för diskussion och reflektion. Men vi rekommenderar att du ändå håller diskussionen sjysst och intelligent. Världen blir en bättre plats om vi alla tänker på det.
       recommendation_two: Debattinlägg eller kommentarer som förespråkar olagliga handlingar eller försöker sabotera diskussionen kommer att raderas. Allt annat är tillåtet.
       recommendations_title: Rekommendationer för debattinlägg
@@ -293,7 +293,7 @@ sv:
       show_link: Visa förslag
     retire_form:
       title: Ta tillbaka förslaget
-      warning: "Om du tar tillbaka ditt förslag går det fortfarande att stödja det, men det tas bort från listan och det visas ett meddelande om att du inte anser att förslaget bör stödjas längre"
+      warning: "Om du tar tillbaka ditt förslag går det fortfarande att stödja det även om det tas bort från listan. Det visas ett meddelande om att du inte anser att förslaget bör stödjas längre"
       retired_reason_blank: Välj en anledning
       retired_explanation_placeholder: Förklara varför du inte längre vill att förslaget ska stödjas
       submit_button: Ta tillbaka förslaget
@@ -366,7 +366,7 @@ sv:
       form:
         submit_button: Skapa förslag
       more_info: Hur fungerar medborgarförslag?
-      recommendation_one: Använd inte versaler i förslagets titel eller i hela meningar i beskrivningen. På internet betyder det att skrika, och ingen gillar när folk skriker på dem.
+      recommendation_one: Använd inte versaler i förslagets titel eller i hela meningar i beskrivningen. På internet tolkas det som att du skriker, och ingen gillar när folk skriker på dem.
       recommendation_three: Det här är din plats, du ska kunna trivas och göra din röst hörd här.
       recommendation_two: Förslag eller kommentarer som förespråkar olagliga handlingar eller försöker sabotera diskussionen kommer att raderas. Allt annat är tillåtet.
       recommendations_title: Rekommendationer för att skriva förslag
@@ -524,7 +524,7 @@ sv:
         description: Medborgaromröstningar är en deltagandeprocess där röstberättigade medborgare fattar beslut genom omröstning
       no_polls: "Det finns inga pågående omröstningar."
     show:
-      already_voted_in_booth: "Du har redan röstat i en fysisk valstation. Du kan inte rösta igen."
+      already_voted_in_booth: "Du har redan röstat i en fysisk röststation. Du kan inte rösta igen."
       already_voted_in_web: "Du har redan deltagit i den här omröstningen. Om du röstar igen kommer din föregående röst att skrivas över."
       back: Tillbaka till omröstningar
       cant_answer_not_logged_in: "Du behöver %{signin} eller %{signup} för att kunna delta."
