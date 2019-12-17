@@ -1,6 +1,6 @@
 da:
   settings:
-    comments_body_max_length: "Maksimal længde af kommentarfeltet"
+    comments_body_max_length: "Kommentarfeltets maksimale længde"
     comments_body_max_length_description: "Angivet i antal tegn"
     official_level_1_name: "Myndighedsperson/embedsmand, niveau 1"
     official_level_1_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 1"
