@@ -19,7 +19,7 @@ sv:
       subject: Någon har svarat på din kommentar
       title: Nytt svar på din kommentar
     proposal_notification_digest:
-      info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag som du stöder på %{org_name}."
+      info: "Här är de senaste aviseringarna från förslagslämnarna till de förslag du stödjer %{org_name}."
       title: "Aviseringar om förslag på %{org_name}"
       share: Dela förslaget
       comment: Kommentera förslaget
