@@ -965,7 +965,7 @@ sv:
     booths:
       index:
         title: "Lista över aktiva röststationer"
-        no_booths: "Det finns inga aktiva valstationer för den kommande omröstningen."
+        no_booths: "Det finns inga aktiva röststationer för den kommande omröstningen."
         add_booth: "Lägg till röststation"
         name: "Namn"
         location: "Plats"
