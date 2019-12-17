@@ -411,19 +411,19 @@ el:
         one: 1 υποστήριξη
         other: "%{count} υποστηρίξεις"
       votes:
-        zero: Δεν υπάρχουν ψήφοι
+        zero: Χωρίς ψήφους
         one: 1 ψήφος
         other: "%{count} ψήφοι"
-      supports_necessary: "%{number} υποστηρίξεις απαιτούνται"
+      supports_necessary: "απαιτούνται %{number} υποστηρίξεις "
       total_percent: 100%
-      archived: "Η πρόταση αυτή έχει αρχειοθετηθεί και δεν μπορεί να συλλέξει υποστηρίξεις."
+      archived: "Η πρόταση αυτή έχει αρχειοθετηθεί και δεν μπορεί να λάβει υποστηρίξεις."
       successful: "Η πρόταση αυτή έχει φτάσει τις απαιτούμενες υποστηρίξεις."
       selected: "Επιλεγμένη προτάση"
     show:
-      author_deleted: Χρήστης διεγραμμένος
+      author_deleted: Ο χρήστης έχει διαγραφεί
       code: "Κωδικός πρότασης:"
       comments:
-        zero: Δεν υπάρχουν σχόλια
+        zero: Χωρίς σχόλια
         one: 1 σχόλιο
         other: "%{count} σχόλια"
       comments_tab: Σχόλια
@@ -442,7 +442,7 @@ el:
       draft: Προσχέδιο πρότασης. Δεν είναι ακόμα δυνατή η υποστήριξη, ούτε εμφανίζεται στη λίστα των προτάσεων.
     update:
       form:
-        submit_button: Αποθηκεύστε τις αλλαγές
+        submit_button: Αποθήκευση αλλαγών
   dashboard:
     menu:
       my_proposal: Επεξεργασία πρότασης
@@ -458,7 +458,7 @@ el:
       request: Αίτημα
     create_request:
       success: Το αίτημα απεστάλη με επιτυχία. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό για να σας ενημερώσουμε.
-      archived: Αυτή η πρόταση αρχειοθετείται και δεν μπορεί να ζητήσει πόρους.
+      archived: Αυτή η πρόταση έχει αρχειοθετηθείκαι δεν μπορεί να ζητήσει πόρους.
     progress:
       title: Γραφικό
       group_by_month: Μηνιαίως
@@ -478,23 +478,23 @@ el:
     resources:
       available_resources: Διαθέσιμοι πόροι
     resource:
-      required_days: "%{days} ημέρες που απαιτούνται"
-      required_supports: "%{supports} υποστηρίξεις απαιτούνται"
+      required_days: "απαιτούνται %{days}  ημέρες"
+      required_supports: "απαιτούνται %{supports} υποστηρίξεις "
       and: και
-      view_resource: Δείτε τον πόρο
-      resource_requested: Πόρow που έχει ήδη ζητηθεί
+      view_resource: Προβολή πόρου
+      resource_requested: Πόροι που έχουν ήδη ζητηθεί
       request_resource: Αίτηση πόρων
       resource_locked: Πόρος κλειδωμένος
     recommended_actions:
       title: Συνιστώμενες ενέργειες
-      goto_proposed_actions: Πηγαίνετε στις συνιστώμενες ενέργειες
+      goto_proposed_actions: Μεταφορά στις συνιστώμενες ενέργειες
       see_proposed_actions: Ελέγξτε τις συνιστώμενες ενέργειες
-      hide_proposed_actions: Κρύψτε τις συνιστώμενες ενέργειες
+      hide_proposed_actions: Απόκριψη συνιστώμενων ενεργειών
       pending_title: Σε εκκρεμότητα
       show_description: Εμφάνιση περιγραφής
       without_pending_actions: Δεν υπάρχουν συνιστώμενες ενέργειες σε εκκρεμότητα
-      done_title: Έγινε
-      without_done_actions: Δεν υπάρχουν συνιστώμενες ενέργειες που να έχουν γίνει
+      done_title: Ολοκληρώθηκε
+      without_done_actions: Δεν υπάρχουν συνιστώμενες ενέργειες που να έχουν ολοκληρωθεί
     next_goal:
       title: Στόχος
       see_complete_course: Ελέγξτε την πλήρη πορεία
@@ -677,53 +677,53 @@ el:
       title: "Προχωρημένη Αναζήτηση"
       to: "Σε"
     author_info:
-      author_deleted: Χρήστης διεγραμμένος
+      author_deleted: Ο χρήστης έχει διαγραφεί
       email_deleted: Το E-mail έχει διαγραφεί
-    back: Πήγαινε πίσω
-    check: Επιλέξτε
+    back: Επιστροφή 
+    check: Επιλογή
     check_all: Όλα
     check_none: Κανένα
-    collective: Συλλογικός
-    flag: Επισήμανση ως ακατάλληλου
+    collective: Σύλλογος
+    flag: Επισήμανση ως ακατάλληλο
     follow: "Ακολούθησε"
-    following: "Ακολουθεί"
+    following: "Ακολουθείτε"
     follow_entity: "Ακολούθησε %{entity}"
     hide: Απόκρυψη
     print:
-      print_button: Εκτυπώστε αυτές τις πληροφορίες
+      print_button: Εκτύπωση αυτών των πληροφοριών
     search: Αναζήτηση
     show: Εμφάνιση
     suggest:
       debate:
         found:
-          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
-          other: "Υπάρχουν συζητήσεις με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετάσχετε σε αυτή αντί να ανοίξετε μία νέα."
+          other: "Υπάρχουν συζητήσεις με τον όρο '%{query}', μπορείτε να συμμετάσχετε σε αυτές αντί να ανοίξετε μία νέα."
         message: "Βλέπετε %{limit} από %{count} συζητήσεις που περιέχουν τον όρο '%{query} '"
         see_all: "Εμφάνιση όλων"
       budget_investment:
         found:
-          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
-          other: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+          one: "Υπάρχει μια επένδυση με τον όρο '%{query}', μπορείτε να συμμετάσχετε σε αυτή αντί να ανοίξετε μία νέα."
+          other: "Υπάρχουν επενδύσεις με τον όρο '%{query}', μπορείτε να συμμετάσχετε σε αυτή αντί να ανοίξετε μία νέα."
         message: "Βλέπετε %{limit} από %{count} επενδύσεις που περιέχουν τον όρο '%{query} '"
         see_all: "Εμφάνιση όλων"
       proposal:
         found:
-          one: "Υπάρχει μια πρόταση με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτές αντί να δημιουργήσετε νέα"
+          one: "Υπάρχει μια πρόταση με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτή αντί να δημιουργήσετε νέα"
           other: "Υπάρχουν προτάσεις με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτές αντί να δημιουργήσετε νέα"
         message: "Βλέπετε %{limit} από %{count} προτάσεις που περιέχουν τον όρο '%{query} '"
         see_all: "Εμφάνιση όλων"
     tags_cloud:
-      tags: Δημοφιλή θέματα
-      districts: "Συνοικίες"
+      tags: Δημοφιλή 
+      districts: "Περιοχές"
       districts_list: "Λίστα περιοχών"
       categories: "Κατηγορίες"
-    you_are_in: "Είστε στο"
+    you_are_in: "Βρίσκεστε στο"
     unflag: Αφαίρεση σημαίας
     unfollow_entity: "Σταματήστε να ακολουθείτε %{entity}"
     outline:
       searcher: Ερευνητής
     go_to_page: "Πηγαίνετε στη σελίδα του "
-    share: Μοιραστείτε
+    share: Μοιραστείτε το
     orbit:
       previous_slide: Προηγούμενη διαφάνεια
       next_slide: Επόμενη διαφάνεια
@@ -734,8 +734,8 @@ el:
       list: Λίστα
     recommended_index:
       title: Συστάσεις
-      see_more: Δείτε περισσότερες προτάσεις
-      hide: Κρύψτε τις συστάσεις
+      see_more: Δείτε περισσότερες συστάσεις
+      hide: Απόκρυψη των συστάσεων
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -749,9 +749,9 @@ el:
       debates: Συζητήσεις
       proposals: Προτάσεις
       comments: Σχόλια
-      proposal_votes: Ψήφισε προτάσεις
-      debate_votes: Ψήφισε συζητήσεις
-      comment_votes: Ψήφισε σχόλια
+      proposal_votes: Ψήφοι προτάσεων
+      debate_votes: Ψήφοι συζητήσεων
+      comment_votes: Ψήφοι σχολίων
       votes: Συνολικοί ψήφοι
       verified_users: Επαληθευμένοι χρήστες
       unverified_users: Μη επαληθευμένοι χρήστες
@@ -762,17 +762,17 @@ el:
   users:
     direct_messages:
       new:
-        direct_messages_bloqued: "Αυτός ο χρήστης αποφάσισε να μην λάβει άμεσα μηνύματα"
+        direct_messages_bloqued: "Αυτός ο χρήστης αποφάσισε να μην λάμβάνει άμεσα μηνύματα"
         submit_button: Αποστολή μηνύματος
         title: Αποστολή ιδιωτικού μηνύματος στον %{receiver}
         verified_only: Για να στείλετε ένα προσωπικό μήνυμα %{verify_account}
       show:
-        receiver: Μήνυμα αποστέλλεται στο %{receiver}
+        receiver: Μήνυμα αποστάληκε στο %{receiver}
     show:
-      deleted: Διαγραφή
+      deleted: Διαγράφηκε
       deleted_debate: Αυτή η συζήτηση έχει διαγραφεί
       deleted_proposal: Αυτή η πρόταση έχει διαγραφεί
-      deleted_budget_investment: Το επενδυτικό σχέδιο έχει διαγραφεί
+      deleted_budget_investment: Αυτό το επενδυτικό σχέδιο έχει διαγραφεί
       proposals: Προτάσεις
       proposals_status: Κατάσταση
       debates: Συζητήσεις
@@ -795,16 +795,16 @@ el:
         follows:
           one: 1 ακόλουθος
           other: "%{count} ακόλουθοι"
-      no_activity: Χρήστης δεν έχει καμία δημόσια δραστηριότητα
+      no_activity: Ο χρήστης δεν έχει καμία δημόσια δραστηριότητα
       no_private_messages: "Αυτός ο χρήστης δεν δέχεται ιδιωτικά μηνύματα."
       private_activity: Αυτός ο χρήστης αποφάσισε να κρατήσει τη λίστα δραστηριοτήτων ιδιωτική.
-      send_private_message: "Στείλτε προσωπικό μήνυμα"
+      send_private_message: "Αποστολή προσωπικού μηνύματος "
       delete_alert: "Είστε βέβαιοι ότι θέλετε να διαγράψετε το επενδυτικό σας έργο; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί"
     proposals:
-      retired: "Πρόταση που έχει αποσυρθεί"
+      retired: "Η πρόταση έχει αποσυρθεί"
       draft: Προσχέδιο
-      published: Δημοσιεύθηκε
-      see: "Δείτε την πρόταση"
+      published: Δημοσιευμένες
+      see: "Προβολή πρότασης"
       actions: Ενέργειες
       retired_help_text: Ταμπλό δεν είναι διαθέσιμο για προτάσεις που έχουν αποσυρθεί
   votes:
