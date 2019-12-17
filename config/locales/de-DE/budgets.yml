@@ -2,7 +2,7 @@ de:
   budgets:
     ballots:
       show:
-        title: Mein Stimme
+        title: Ihre Abstimmung
         amount_spent: Gesamtausgaben
         remaining: "Sie können noch <span>%{amount}</span> ausgeben."
         no_balloted_group_yet: "Sie haben in dieser Gruppe noch nicht abgestimmt. Stimmen Sie jetzt ab!"
