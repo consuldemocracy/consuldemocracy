@@ -111,14 +111,14 @@ el:
         one: "Θέμα"
         other: "Θέματα"
       poll:
-        one: "Δημοσκόπηση"
+        one: "Ψηφοφορία"
         other: "Δημοσκοπήσεις"
       proposal_notification:
         one: "Ειδοποίηση πρότασης"
         other: "Κοινοποιήσεις της πρότασης"
       dashboard/action:
-        one: Πίνακας εργαλείων προτάσεων
-        other: Πίνακας εργαλείων προτάσεων
+        one: Δράση πίνακα εργαλείων προτάσεων
+        other: Δράσεις πίνακα εργαλείων προτάσεων
       dashboard/administrator_task:
         one: Εργασία
         other: Εργασίες
@@ -131,7 +131,7 @@ el:
     attributes:
       budget:
         name: "Όνομα"
-        description_accepting: "Περιγραφή κατά τη φάση αποδοχής"
+        description_accepting: "Περιγραφή κατά τη φάση Αποδοχής"
         description_reviewing: "Περιγραφή κατά τη φάση Αναθεώρησης"
         description_selecting: "Περιγραφή κατά τη φάση Επιλογής"
         description_valuating: "Περιγραφή κατά τη φάση Αξιολόγησης"
