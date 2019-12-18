@@ -9,7 +9,6 @@ ca:
         poll_booth: "Urna creada correctament."
         proposal: "Proposta creada correctament."
         proposal_notification: "El teu message ha estat enviat correctament."
-        spending_proposal: "Proposta d'inversió creat correctament. Pots accedir-hi des %{activity}"
         budget_investment: "Proposta d'inversió creat correctament."
         signature_sheet: "Full de signatures creada correctament"
       save_changes:
@@ -20,9 +19,7 @@ ca:
         poll: "Votació actualitzada correctament."
         poll_booth: "Urna actualitzada correctament."
         proposal: "Proposta actualitzada correctament."
-        spending_proposal: "Proposta d'inversió actualitzada correctament."
         budget_investment: "Proposta d'inversió actualitzada correctament."
       destroy:
-        spending_proposal: "Proposta d'inversió eliminada."
         budget_investment: "Proposta d'inversió eliminada."
         error: "No s'ha pogut esborrar"

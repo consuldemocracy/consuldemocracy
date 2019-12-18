@@ -127,8 +127,8 @@ he:
       confirmation: אינו תואם %{attribute}
       empty: לא יכול להיות ריק
       equal_to: חייב להיות שווה ל- %{count}
-      even: חייב להיות זוגי
-      exclusion: לא זמין
+      even: חייב להיות שווה
+      exclusion: שמור
       greater_than: חייב להיות גדול מ- %{count}
       greater_than_or_equal_to: חייב להיות גדול או שווה ל- %{count}
       inclusion: לא נכלל ברשימה
@@ -136,7 +136,7 @@ he:
       less_than: חייב להיות קטן מ- %{count}
       less_than_or_equal_to: חייב להיות קטן או שווה ל- %{count}
       model_invalid: "אימות נכשל: %{errors}"
-      not_a_number: חייב להיות מספר
+      not_a_number: הוא לא מספר
       not_an_integer: חייב להיות מספר שלם
       odd: חייב להיות אי זוגי
       required: חייב להתקיים

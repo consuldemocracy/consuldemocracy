@@ -26,11 +26,6 @@ pt-BR:
           with_inactive: Inativo
         preview: Prévia
       banner:
-        title: Título
-        description: Descrição
-        target_url: Link
-        post_started_at: Post iniciado em
-        post_ended_at: Post finalizado em
         sections_label: Seções onde ele irá aparecer
         sections:
           homepage: Página inicial
@@ -42,11 +37,6 @@ pt-BR:
         editing: Editar banner
         form:
           submit_button: Salvar alterações
-      errors:
-        form:
-          error:
-            one: "erro impediu este banner de ser salvo"
-            other: "erros impediram este banner de ser salvo"
       new:
         creating: Criar banner
     activity:
@@ -111,28 +101,17 @@ pt-BR:
         recalculate: Recalcular os investimentos vencedores
     budget_groups:
       name: "Nome"
-      max_votable_headings: "Número máximo de títulos em que um usuário pode votar"
       form:
         edit: "Editar grupo"
-        name: "Nome do grupo"
         submit: "Salvar grupo"
     budget_headings:
-      name: "Nome"
       form:
-        name: "Nome do título"
-        amount: "Quantidade"
-        population: "População (opcional)"
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         submit: "Salvar título"
     budget_phases:
       edit:
-        start_date: Data de início
-        end_date: Data final
-        summary: Resumo
         summary_help_text: Este texto irá informar o usuário sobre a fase. Para mostrá-lo mesmo se a fase não está ativa, selecione a caixa de seleção abaixo
-        description: Descrição
         description_help_text: Esse texto será exibido no cabeçalho quando a fase estiver ativa
-        enabled: Fase habilitada
         enabled_help_text: Esta fase será pública no cronograma de fases do orçamento, bem como ativa para qualquer outra finalidade
         save_changes: Salvar alterações
     budget_investments:
@@ -155,8 +134,6 @@ pt-BR:
           unfeasible: Inviável
           min_total_supports: Adesão mínima
           winners: Vencedores
-          one_filter_html: "Filtros aplicados no momento: <b><em>%{filter}</em></b>"
-          two_filters_html: "Filtros aplicados no momento: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtro
         download_current_selection: "Baixar seleção atual"
@@ -166,7 +143,7 @@ pt-BR:
         no_admin_assigned: Não há administrador designado
         no_valuators_assigned: Não há avaliadores designados
         feasibility:
-          feasible: "Factível (%{price})"
+          feasible: "Factível"
           unfeasible: "Inviável"
           undecided: "Não decidido"
         selected: "Selecionado"
@@ -185,6 +162,7 @@ pt-BR:
           visible_to_valuators: Apresentar aos avaliadores
           author_username: Username do autor
           incompatible: Incompatível
+          price: Preço
         cannot_calculate_winners: O orçamento tem que ficar na fase "Projetos de votação", "Revendo votos" ou "Orçamento concluído" em ordem para calcular os projetos vencedores
         see_results: "Exibir resultados"
       show:
@@ -208,8 +186,6 @@ pt-BR:
           "false": Compatível
         selection:
           title: Seleção
-          "true": Selecionado
-          "false": Não selecionado
         winner:
           title: Vencedor
           "true": "Sim"
@@ -218,25 +194,19 @@ pt-BR:
       edit:
         classification: Classificação
         compatibility: Compatibilidade
-        mark_as_incompatible: Marcar como incompatível
         selection: Seleção
-        mark_as_selected: Marcar como selecionado
         assigned_valuators: Avaliadores
         select_heading: Selecionar título
         submit_button: Atualizar
         user_tags: Marcações atribuídas ao usuário
-        tags: Marcação
         tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas (,)"
         undefined: Não definido
-        user_groups: "Grupos"
       search_unfeasible: Pesquisar inviáveis
     milestones:
       index:
-        table_id: "ID"
         table_title: "Título"
         table_description: "Descrição"
         table_publication_date: "Data de publicação"
-        table_status: Status
         table_actions: "Ações"
         delete: "Deletar marco"
         no_milestones: "Não possui marcos definidos"
@@ -250,8 +220,6 @@ pt-BR:
         no_statuses_defined: Ainda não há status de investimento definidos
       new:
         creating: Criar marco
-        date: Data
-        description: Descrição
       edit:
         title: Editar marco
       create:
@@ -282,14 +250,20 @@ pt-BR:
         notice: Status de investimento excluído com sucesso
     progress_bars:
       index:
-        table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
     comments:
       index:
+        author: "Autor"
+        commentable_type: "Tipo"
+        title: Comentários
+        no_comments: Não há comentários.
+        table_link: "Link"
+    hidden_comments:
+      index:
         filter: Filtro
         filters:
-          all: Tudo
+          all: Todos
           with_confirmed_hide: Confirmado
           without_confirmed_hide: Pendente
         hidden_debate: Debate oculto
@@ -301,15 +275,34 @@ pt-BR:
         back: Voltar para %{org}
         title: Administração
         description: Bem-vindo ao painel de administração %{org}.
+      actions:
+        index:
+          edit: Editar
+          delete: Excluir
+          active: 'Sim'
+          inactive: 'Não'
+          action_title: Título
+          action_type: Tipo
+          action_active: Ativo
+          order: Ordem
+          default:
+            email: Email
+            polls: Votações
+        create:
+          notice: Ação criada com sucesso
+        delete:
+          success: Ação excluída com sucesso
+        form:
+          submit_button: Salvar
+      administrator_tasks:
+        index:
+          source: Fonte
     debates:
       index:
-        filter: Filtro
-        filters:
-          all: Tudo
-          with_confirmed_hide: Confirmado
-          without_confirmed_hide: Pendente
         title: Debates ocultos
-        no_hidden_debates: Não há debates ocultos.
+    documents:
+      destroy:
+        success_notice: "Documento excluído com sucesso"
     hidden_users:
       index:
         filter: Filtro
@@ -347,9 +340,6 @@ pt-BR:
         edit:
           back: Voltar
           submit_button: Salvar alterações
-        errors:
-          form:
-            error: Erro
         form:
           enabled: Habilitado
           process: Processo
@@ -361,12 +351,12 @@ pt-BR:
           summary_placeholder: Breve resumo da descrição
           description_placeholder: Adicione uma descrição do processo
           additional_info_placeholder: Adicione informação adicional que você considera útil
-          homepage: Descrição
         index:
           create: Novo processo
           delete: Apagar
           title: Processos legislativos
           filters:
+            active: Ativo
             all: Tudo
         new:
           back: Voltar
@@ -381,6 +371,8 @@ pt-BR:
           title: Processo
           comments: Comentários
           status: Status
+          start_date: Data de início
+          end_date: Data de término
           status_open: Aberto
           status_closed: Fechados
           status_planned: Planejados
@@ -396,8 +388,6 @@ pt-BR:
           title: Título
           back: Voltar
           supports: Apoios
-          select: Selecionar
-          selected: Selecionado
         form:
           custom_categories: Categorias
           custom_categories_description: Categorias que os usuários podem selecionar criando a proposta.
@@ -415,11 +405,7 @@ pt-BR:
           back: Voltar
           submit_button: Salvar alterações
           warning: Você editou o texto. Não esqueça de clicar em Salvar para salvar permanentemente as mudanças.
-        errors:
-          form:
-            error: Erro
         form:
-          title_html: 'Editando <span class="strong">%{draft_version_title}</span> do processo <span class="strong">%{process_title}</span>'
           launch_text_editor: Iniciar o editor de texto
           close_text_editor: Fechar o editor de texto
           use_markdown: Usar Remarcação para formatar o texto
@@ -440,9 +426,6 @@ pt-BR:
           back: Voltar
           title: Criar nova versão
           submit_button: Criar versão
-        statuses:
-          draft: Rascunho
-          published: Publicado
         table:
           title: Título
           created_at: Criado em
@@ -462,12 +445,8 @@ pt-BR:
           back: Voltar
           title: "Editar \"%{question_title}\""
           submit_button: Salvar alterações
-        errors:
-          form:
-            error: Erro
         form:
           add_option: Adicionar opção
-          title: Questão
           title_placeholder: Adicionar pergunta
           value_placeholder: Adicionar resposta fechada
           question_options: "Respostas possíveis (opcionais, por respostas abertas padrão)"
@@ -532,7 +511,6 @@ pt-BR:
       officials: Cargos públicos
       organizations: Organizações
       settings: Configurações globais
-      spending_proposals: Propostas de gastos
       stats: Estatísticas
       signature_sheets: Folhas de assinatura
       site_customization:
@@ -553,18 +531,20 @@ pt-BR:
         buttons:
           save: "Salvar"
       title_moderated_content: Conteúdo moderado
-      title_budgets: Orçamentos
       title_profiles: Perfis
       title_settings: Configurações
       title_site_customization: Conteúdo do site
       title_booths: Cabines de votação
       legislation: Legislação colaborativa
       users: Usuários
+      debates: "Debates"
+      comments: "Comentários"
     administrators:
       index:
         title: Administradores
         name: Nome
         email: Email
+        description: Descrição
         no_administrators: Não há administradores.
       administrator:
         add: Adicionar
@@ -572,6 +552,8 @@ pt-BR:
         restricted_removal: "Desculpe, você não pode se remover dos administradores"
       search:
         title: "Administradores: busca de usuário"
+      form:
+        updated: "Administrador atualizado com sucesso"
     moderators:
       index:
         title: Moderadores
@@ -612,7 +594,7 @@ pt-BR:
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
         title: Novo boletim informativo
-        from: Endereço de e-mail para envio de boletim informativo
+        image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
       show:
@@ -675,6 +657,8 @@ pt-BR:
         title: "Resumo danotificação da proposta"
         description: "Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails."
         preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
+      comment:
+        title: "Comentário"
     emails_download:
       index:
         title: Download de emails
@@ -692,20 +676,12 @@ pt-BR:
         valuator_groups: "Grupos de avaliação"
         group: "Grupo"
         no_group: "Sem grupo"
+        abilities: "Habilidades"
       valuator:
         add: Adicionar aos avaliadores
         delete: Apagar
       search:
         title: "Avaliadores: Pesquisa de usuário"
-      summary:
-        title: Resumo do avaliador para projetos de investimento
-        valuator_name: Avaliador
-        finished_and_feasible_count: Finalizado e factível
-        finished_and_unfeasible_count: Finalizado e infactível
-        finished_count: Terminados
-        in_evaluation_count: Em avaliação
-        total_count: Total
-        cost: Custo
       form:
         edit_title: "Avaliadores: editar avaliador"
         updated: "Avalaiador atualizado com sucesso"
@@ -713,8 +689,10 @@ pt-BR:
         description: "Descrição"
         email: "Email"
         group: "Grupo"
+        abilities: "Habilidades"
         no_description: "Sem descrição"
         no_group: "Sem grupo"
+        no_abilities: "Sem habilidades"
     valuator_groups:
       index:
         title: "Grupos de avaliação"
@@ -726,7 +704,6 @@ pt-BR:
         title: "Grupos de avaliação %{group}"
         no_valuators: "Não há avaliadores atribuídos a esse grupo"
       form:
-        name: "Nome do grupo"
         new: "Criar grupos de avaliação"
         edit: "Salvar grupos de avaliação"
     poll_officers:
@@ -759,7 +736,6 @@ pt-BR:
         shift: "Atribuição"
         shifts: "Turnos nessa urna"
         date: "Data"
-        task: "Tarefa"
         edit_shifts: Editar turnos
         new_shift: "Novo turno"
         no_shifts: "Esta urna não tem turnos"
@@ -794,11 +770,6 @@ pt-BR:
     poll_booth_assignments:
       alert:
         shifts: "Existem turnos associados a esta urna. Se você remover a atribuição da urna, os turnos também serão excluídos. Continuar?"
-      flash:
-        destroy: "Urna não mais atribuída"
-        create: "Urna atribuída"
-        error_destroy: "Ocorreu um erro ao remover a atribuição da urna"
-        error_create: "Ocorreu um erro ao atribuir a urna à votação"
       show:
         location: "Localização"
         officers: "Presidentes"
@@ -841,6 +812,8 @@ pt-BR:
         no_questions: "Não há perguntas atribuídas a esta votação."
         questions_title: "Lista de perguntas"
         table_title: "Título"
+        edit_answers: Editar respostas
+        see_proposal: "(Ver proposta)"
       flash:
         question_added: "Perguntas adicionadas a essa votação"
         error_on_question_added: "Pergunta não pode ser atribuída a essa votação"
@@ -860,8 +833,8 @@ pt-BR:
       edit:
         title: "Editar pergunta"
       new:
-        title: "Criar Questão"
-        poll_label: "Votação"
+        title: "Criar questão para pesquisa %{poll}"
+        title_proposal: "Criar pergunta"
       answers:
         images:
           add_image: "Adicionar imagem"
@@ -940,8 +913,6 @@ pt-BR:
         no_location: "Sem localização"
       new:
         title: "Nova urna"
-        name: "Nome"
-        location: "Localização"
         submit_button: "Criar urna"
       edit:
         title: "Editar urna"
@@ -983,9 +954,6 @@ pt-BR:
           pending: Pendente
           rejected: Rejeitado
           verified: Verificado
-        hidden_count_html:
-          one: Há também <strong>uma organização</strong> sem usuários ou com um usuário oculto.
-          other: Há <strong>%{count} organizações</strong> sem usuários ou com um usuário oculto.
         name: Nome
         email: Email
         phone_number: Telefone
@@ -1008,7 +976,14 @@ pt-BR:
         title: Propostas
         id: ID
         author: Autor
+        select: Selecionar
+        selected: Selecionado
         milestones: Marcos
+        no_proposals: Não existem propostas.
+      form:
+        update: Atualizar proposta
+      update:
+        notice: Proposta atualizada com sucesso
     hidden_proposals:
       index:
         filter: Filtro
@@ -1067,9 +1042,8 @@ pt-BR:
       proposal_search:
         button: Buscar
         placeholder: Buscar propostas por título, código, descrição ou pergunta
-      spending_proposal_search:
-        button: Buscar
-        placeholder: Pesquisar propostas de gastos por título ou descrição
+      debate_search:
+        button: Pesquisar
       user_search:
         button: Buscar
         placeholder: Pesquisar usuário por nome ou pelo email
@@ -1087,62 +1061,8 @@ pt-BR:
       content: Conteúdo
       created_at: Criado em
       delete: Apagar
-    spending_proposals:
-      index:
-        geozone_filter_all: Todas as zonas
-        administrator_filter_all: Todos administradores
-        valuator_filter_all: Todos avaliadores
-        tags_filter_all: Todas as marcações
-        filters:
-          valuation_open: Aberto
-          without_admin: Sem administrador designado
-          managed: Gerenciado
-          valuating: Em avaliação
-          valuation_finished: Avaliação terminada
-          all: Tudo
-        title: Projetos de investimento para orçamento participativo
-        assigned_admin: Administrador designado
-        no_admin_assigned: Não há administrador designado
-        no_valuators_assigned: Não há avaliadores designados
-        summary_link: "Resumo do projeto de investimento"
-        valuator_summary_link: "Resumo do avaliador"
-        feasibility:
-          feasible: "Factível (%{price})"
-          not_feasible: "Não viável"
-          undefined: "Não definido"
-      show:
-        assigned_admin: Administrador designado
-        assigned_valuators: Avaliadores designados
-        back: Voltar
-        classification: Classificação
-        heading: "Projeto de investimento %{id}"
-        edit: Editar
-        edit_classification: Editar classificação
-        association_name: Associação
-        by: Por
-        sent: Enviados
-        geozone: Escopo
-        dossier: Relatório
-        edit_dossier: Editar relatório
-        tags: Marcação
-        undefined: Não definido
-      edit:
-        classification: Classificação
-        assigned_valuators: Avaliadores
-        submit_button: Atualizar
-        tags: Marcação
-        tags_placeholder: "Escreva as marcações que deseja separadas por vírgulas ()"
-        undefined: Não definido
-      summary:
-        title: Resumo para projetos de investimento
-        title_proposals_with_supports: Resumo para projetos de investimento com suportes
-        geozone_name: Âmbito
-        finished_and_feasible_count: Finalizado e factível
-        finished_and_unfeasible_count: Finalizado e infactível
-        finished_count: Terminados
-        in_evaluation_count: Em avaliação
-        total_count: Total
-        cost_for_geozone: Custo
+      show_results_and_stats: "Exibir resultados e estatísticas"
+      results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
     geozones:
       index:
         title: Geozona
@@ -1154,11 +1074,6 @@ pt-BR:
         external_code: Código externo
         census_code: Código do censo
         coordinates: Coordenadas
-      errors:
-        form:
-          error:
-            one: "erro impediu esta geozona de ser salva"
-            other: "erros impediram esta geozona de ser salva"
       edit:
         form:
           submit_button: Salvar alterações
@@ -1205,7 +1120,6 @@ pt-BR:
           proposals: Propostas
           budgets: Orçamentos abertos
           budget_investments: Projetos de investimento
-          spending_proposals: Propostas de despesas
           unverified_users: Usuários não verificados
           user_level_three: Usuários de nível três
           user_level_two: Usuários de nível dois
@@ -1215,10 +1129,16 @@ pt-BR:
           visits: Visitas
           votes: Total de votos
         budgets_title: Orçamento participativo
+        participatory_budgets: Orçamentos Participativos
         direct_messages: Mensagens diretas
         proposal_notifications: Notificações de proposta
         incomplete_verifications: Verificações incompletas
         polls: Votações
+      graph:
+        debate_created: Debates
+        visit: Visitas
+        level_2_user: Usuários de nível 2
+        proposal_created: Propostas dos cidadãos
       direct_messages:
         title: Mensagens diretas
         total: Total
@@ -1246,8 +1166,6 @@ pt-BR:
         title: Tópicos da proposta
         topic: Tema
         help: "Quando um usuário criar uma proposta, os tópicos a seguir são sugeridos como etiquetas padrão."
-      name:
-        placeholder: Digite o nome do tópico
     users:
       columns:
         name: Nome
@@ -1281,9 +1199,6 @@ pt-BR:
           notice: Bloco de conteúdo deletado com sucesso
         edit:
           title: Editando bloco de conteúdo
-        errors:
-          form:
-            error: Erro
         index:
           create: Criar novo bloco de conteúdo
           delete: Excluir bloco
@@ -1321,9 +1236,6 @@ pt-BR:
           notice: Página excluída com sucesso
         edit:
           title: Editando %{page_title}
-        errors:
-          form:
-            error: Erro
         form:
           options: Opções
         index:
@@ -1337,8 +1249,6 @@ pt-BR:
           created_at: Criado em
           status: Status
           updated_at: Atualizado em
-          status_draft: Rascunho
-          status_published: Publicado
           title: Título
           slug: área de informações
           cards_title: Cartões
@@ -1376,6 +1286,3 @@ pt-BR:
         submit_header: Salvar cabeçalho
         card_title: Editar cartão
         submit_card: Salvar cartão
-    translations:
-      remove_language: Remover idioma
-      add_language: Adicionar idioma

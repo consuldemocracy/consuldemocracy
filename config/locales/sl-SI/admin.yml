@@ -25,11 +25,6 @@ sl:
           with_active: Aktivne
           with_inactive: Neaktvine
         preview: Predogled
-      banner:
-        title: Naslov
-        description: Opis
-        post_started_at: Objava se je začela pri
-        post_ended_at: Objava se je končala pri
       edit:
         editing: Uredi pasico
         form:
@@ -94,13 +89,8 @@ sl:
         recalculate: Ponovno izračunaj zmagovalne naložbe.
     budget_phases:
       edit:
-        start_date: Začetni datum
-        end_date: Končni datum
-        summary: Povzetek
         summary_help_text: To besedilo bo obvestilo uporabnika o fazi. Če ga želite prikazati tudi, če faza ni aktivna, izberite potrditveno polje spodaj.
-        description: Opis
         description_help_text: To besedilo bo prikazano v glavi, ko je faza aktivna.
-        enabled: Faza omogočena
         enabled_help_text: Ta faza bo javna v časovnem okviru faze proračuna, pa tudi aktivna za druge namene
         save_changes: Shrani spremembe
     budget_investments:
@@ -122,8 +112,6 @@ sl:
           undecided: Neodločeno
           unfeasible: Neizvedljivo
           winners: Zmagovalci
-          one_filter_html: "Trenutno vklopljeni filtri: <b><em>%{filter}</em></b>"
-          two_filters_html: "Trenutno vklopljeni filtri: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtriraj
         download_current_selection: "Prenesi trenuten izbor"
@@ -133,7 +121,7 @@ sl:
         no_admin_assigned: Brez določenega administratorja
         no_valuators_assigned: Brez določenih cenilcev
         feasibility:
-          feasible: "Izvedljivo (%{price})"
+          feasible: "Izvedljivo"
           unfeasible: "Neizvedljivo"
           undecided: "Neodločeno"
         selected: "Izbrano"
@@ -161,8 +149,6 @@ sl:
           "false": Kompatibilen
         selection:
           title: Izbor
-          "true": Izbran
-          "false": Neizbran
         winner:
           title: Zmagovalec
           "true": "Da"
@@ -170,17 +156,13 @@ sl:
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
-        mark_as_incompatible: Označi kot nekompatibilen
         selection: Izbor
-        mark_as_selected: Označi kot izbran
         assigned_valuators: Cenilci
         select_heading: Izberi naslov
         submit_button: Posodobi
         user_tags: Uporabniško dodeljene oznake
-        tags: Oznake
         tags_placeholder: "Napiši oznake in jih loči z vejico (,)"
         undefined: Nedefiniran
-        user_groups: "Skupine"
       search_unfeasible: Iskanje neizvedljivo
     milestones:
       index:
@@ -195,8 +177,6 @@ sl:
         documents: "Dokumenti"
       new:
         creating: Ustvari mejnik
-        date: Datum
-        description: Opis
       edit:
         title: Uredi mejnik
       create:
@@ -207,14 +187,7 @@ sl:
         notice: Mejnik uspešno izbrisan
     comments:
       index:
-        filters:
-          all: Vse
-          with_confirmed_hide: Potrjen
-          without_confirmed_hide: V teku
-        hidden_debate: Skrita debata
-        hidden_proposal: Skrit predlog
         title: Skriti komentarji
-        no_hidden_comments: Ni skritih komentarjev.
     dashboard:
       index:
         back: Pojdi nazaj na %{org}
@@ -222,12 +195,7 @@ sl:
         description: Dobrodošel na %{org} administratorski vmesnik.
     debates:
       index:
-        filters:
-          all: Vse
-          with_confirmed_hide: Potrjen
-          without_confirmed_hide: V teku
         title: Skrite debate
-        no_hidden_debates: Ni skritih debat.
     hidden_users:
       index:
         filters:
@@ -255,9 +223,6 @@ sl:
         edit:
           back: Nazaj
           submit_button: Shrani spremembe
-        errors:
-          form:
-            error: Napaka
         form:
           enabled: Omogočen
           process: Proces
@@ -309,11 +274,7 @@ sl:
           back: Nazaj
           submit_button: Shrani spremembe
           warning: Uredil si besedilo, ne pozabi klikniti Shrani, da ohraniš spremembe.
-        errors:
-          form:
-            error: Napaka
         form:
-          title_html: 'Urejanje <span class="strong">%{draft_version_title}</span> iz procesa <span class="strong">%{process_title}</span>'
           launch_text_editor: Začeni urejevalnik besedila
           close_text_editor: Zapri urejevalnik besedila
           use_markdown: Uporabi markdown za formatiranje besedila
@@ -334,9 +295,6 @@ sl:
           back: Nazaj
           title: Ustvari novo verzijo
           submit_button: Ustvari verzijo
-        statuses:
-          draft: Osnutek
-          published: Objavljeno
         table:
           title: Naslov
           created_at: Ustvarjeno na
@@ -355,9 +313,6 @@ sl:
           back: Nazaj
           title: "Uredi “%{question_title}”"
           submit_button: Shrani spremembe
-        errors:
-          form:
-            error: Napaka
         form:
           add_option: Dodaj možnost
           title_placeholder: Dodaj naslov
@@ -414,7 +369,6 @@ sl:
       officials: Uradniki
       organizations: Organizacije
       settings: Konfiguracijske nastavitve
-      spending_proposals: Predlogi porabe
       stats: Statistika
       signature_sheets: Podpisni listi
       site_customization:
@@ -423,7 +377,6 @@ sl:
         images: Slike po meri
         content_blocks: Bloki vsebine po meri
       title_moderated_content: Moderirana vsebina
-      title_budgets: Proračuni
       title_profiles: Profili
       title_site_customization: Prilagajanje spletnega mesta
       legislation: Kolaborativna zakonodaja
@@ -514,15 +467,6 @@ sl:
         delete: Izbriši
       search:
         title: "Cenilci: Išči uporabnika/-co"
-      summary:
-        title: Povzetek vrednotenja naložbenih projektov
-        valuator_name: Cenilec
-        finished_and_feasible_count: Končani in izvedljivi
-        finished_and_unfeasible_count: Končani in neizvedljivi
-        finished_count: Končani
-        in_evaluation_count: V vrednotenju
-        total_count: Skupaj
-        cost: Cena
       form:
         edit_title: "Cenilci: Uredi cenilce"
         updated: "Cenilec uspešno posodobljen"
@@ -543,7 +487,6 @@ sl:
         title: "Cenilska skupina: %{group}"
         no_valuators: "Ni cenilcev, ki bi pripadali tej skupini"
       form:
-        name: "Ime skupine"
         new: "Ustvari cenilsko skupino"
         edit: "Shrani cenilsko skupino"
     poll_officers:
@@ -576,7 +519,6 @@ sl:
         shift: "Izmena"
         shifts: "Izmene v tem glasovanju"
         date: "Datum"
-        task: "Zadolžitev"
         edit_shifts: Uredi izmene
         new_shift: "Nova izmena"
         no_shifts: "To volišče nima izmen"
@@ -611,11 +553,6 @@ sl:
     poll_booth_assignments:
       alert:
         shifts: "Ni izmen, povezanih s tem voliščem. Če odstraniš nalogo volišča, bodo izbrisane tudi izmene. Želiš nadaljevati?"
-      flash:
-        destroy: "Volišče ni več dodeljeno"
-        create: "Volišče dodeljeno"
-        error_destroy: "Pri odstranjevanju dodeljenega volišča se je zgodila napaka."
-        error_create: "Pri dodeljevanju volišča glasovanju se je zgodila napaka."
       show:
         location: "Lokacija"
         officers: "Uradniki"
@@ -674,8 +611,7 @@ sl:
       edit:
         title: "Uredi vprašanje"
       new:
-        title: "Ustvari vprašanje"
-        poll_label: "Glasovanje"
+        title: "Ustvari vprašanje za anketo %{poll}"
       answers:
         images:
           add_image: "Dodaj sliko"
@@ -752,8 +688,6 @@ sl:
         no_location: "Ni lokacije"
       new:
         title: "Novo volišče"
-        name: "Ime"
-        location: "Lokacija"
         submit_button: "Ustvari volišče"
       edit:
         title: "Uredi volišče"
@@ -846,9 +780,6 @@ sl:
       proposal_search:
         button: Išči
         placeholder: Išči predloge po naslovu, kodi, opisu ali vprašanju
-      spending_proposal_search:
-        button: Išči
-        placeholder: Išči predloge porabe po naslovu ali opisu
       user_search:
         button: Išči
         placeholder: Išči uporabnika/-co po imenu ali e-naslovu
@@ -859,62 +790,6 @@ sl:
       description: Opis
       image: Slika
       show_image: Pokaži sliko
-    spending_proposals:
-      index:
-        geozone_filter_all: Vse cone
-        administrator_filter_all: Vsi administratorji
-        valuator_filter_all: Vsi cenilci
-        tags_filter_all: Vse oznake
-        filters:
-          valuation_open: Odprto
-          without_admin: Brez dodeljenega admina
-          managed: Upravljan
-          valuating: Se vrednoti
-          valuation_finished: Vrednotenje končano
-          all: Vsi
-        title: Naložbeni projekti za participatorni proračun
-        assigned_admin: Dodeljen administrator
-        no_admin_assigned: Ni dodeljenega administratorja
-        no_valuators_assigned: Ni dodeljenih cenilcev
-        summary_link: "Povzetek naložbenega projekta"
-        valuator_summary_link: "Povzetek cenilca"
-        feasibility:
-          feasible: "Izvedljivo (%{price})"
-          not_feasible: "Neizvedljivo"
-          undefined: "Nedefinirano"
-      show:
-        assigned_admin: Dodeljen administrator
-        assigned_valuators: Dodeljeni cenilci
-        back: Nazaj
-        classification: Klasifikacija
-        heading: "Naložbeni projekt %{id}"
-        edit: Uredi
-        edit_classification: Uredi klasifikacijo
-        association_name: Organizacija
-        by: Od
-        sent: Poslano
-        geozone: Obseg
-        dossier: Dosje
-        edit_dossier: Uredi dosje
-        tags: Oznake
-        undefined: Nedefinirano
-      edit:
-        classification: Klasifikacija
-        assigned_valuators: Cenilci
-        submit_button: Posodobi
-        tags: Oznake
-        tags_placeholder: "Napiši oznake in jih loči z vejico (,)"
-        undefined: Nedefinirano
-      summary:
-        title: Povzetek za naložbene projekte
-        title_proposals_with_supports: Povzetek za naložbene projekte s podporniki
-        geozone_name: Obseg
-        finished_and_feasible_count: Končani in izvedljivi
-        finished_and_unfeasible_count: Končani in neizvedljivi
-        finished_count: Končani
-        in_evaluation_count: V postopku vrednotenja
-        total_count: Skupaj
-        cost_for_geozone: Cena
     geozones:
       index:
         title: Geocona
@@ -966,7 +841,6 @@ sl:
           proposals: Predlogi
           budgets: Odprti proračuni
           budget_investments: Naložbeni projekti
-          spending_proposals: Predlogi porabe
           unverified_users: Nepreverjeni uporabniki
           user_level_three: Uporabniki tretjega nivoja
           user_level_two: Uporabniki drugega nivoja
@@ -1006,8 +880,6 @@ sl:
         add_tag: Dodaj novo temo predloga
         title: Teme predlogov
         topic: Tema
-      name:
-        placeholder: Vtipkaj naslov teme
     users:
       columns:
         name: Ime
@@ -1038,9 +910,6 @@ sl:
           notice: Blok vsebine uspešno izbrisan
         edit:
           title: Urejanje bloka vsebine
-        errors:
-          form:
-            error: Napaka
         index:
           create: Ustvari nov blok vsebine
           delete: Izbriši blok
@@ -1073,9 +942,6 @@ sl:
           notice: Stran uspešno izbrisana
         edit:
           title: Urejanje %{page_title}
-        errors:
-          form:
-            error: Napaka
         form:
           options: Možnosti
         index:
@@ -1088,8 +954,6 @@ sl:
         page:
           created_at: Ustvarjena na
           updated_at: Posodobljena
-          status_draft: Osnutek
-          status_published: Objavljena
           title: Naslov
     homepage:
       title: Domača stran

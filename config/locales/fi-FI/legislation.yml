@@ -11,10 +11,6 @@ fi:
           other: "%{count} vastausta"
         cancel: Peruuta
         publish_comment: Julkaise kommentti
-      form:
-        login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
-        signin: Kirjaudu sisään
-        signup: Rekisteröidy
       index:
         title: Kommentit
         comments_count:
@@ -60,10 +56,6 @@ fi:
         next_question: Seuraava kysymys
         first_question: Ensimmäinen kysymys
         share: Jaa
-      participation:
-        signin: Kirjaudu sisään
-        signup: Rekisteröidy
-        verify_account: vahvista tilisi
     shared:
       share: Jaa
     proposals:

@@ -5,7 +5,7 @@ he:
     actions:
       actions: פעולות
       confirm: האם את/ה בטוח/ה?
-      confirm_hide: אשר
+      confirm_hide: אשר מנחה
       hide: הסתר
       hide_author: הסתר את יוצר התוכן
       restore: שחזר
@@ -28,11 +28,6 @@ he:
           with_inactive: לא פעיל
         preview: תצוגה מקדימה
       banner:
-        title: כותרת
-        description: תיאור
-        target_url: קישור
-        post_started_at: מתאריך
-        post_ended_at: תאריך תפוגה
         sections_label: בחירת מיקום התצוגה
         sections:
           homepage: דף הבית
@@ -44,13 +39,6 @@ he:
         editing: ערוך באנר
         form:
           submit_button: שמירת שינויים
-      errors:
-        form:
-          error:
-            one: "שגיאה מנעה מהבאנר להישמר"
-            two: "שגיאות מנעו את שמירת הבאנר"
-            many: "שגיאות מנעו את שמירת הבאנר"
-            other: "שגיאות מנעו את שמירת הבאנר"
       new:
         creating: צור באנר
     activity:
@@ -106,6 +94,20 @@ he:
         edit_phase: ערוך שלב
         active: פעיל
         blank_dates: התאריכים ריקים
+        administrators:
+          zero: "בחירת מנהלי מערכת"
+          one: "מנהל מערכת אחד נבחר"
+          two: "%{count} מנהלי מערכת נבחרו"
+          many: "%{count} מנהלי מערכת נבחרו"
+          other: "%{count} מנהלי מערכת נבחרו"
+        valuators:
+          zero: "בחירת מעריכים"
+          one: "מעריך אחד נבחר"
+          two: "%{count} מעריכים נבחרו"
+          many: "%{count} מעריכים נבחרו"
+          other: "%{count} מעריכים נבחרו"
+        empty_administrators: "אין מנהלי מערכת"
+        empty_valuators: "לא נמצאו מעריכים"
       destroy:
         success_notice: התקציב נמחק בהצלחה
         unable_notice: אינך יכול להסיר תקציב הקשור להשקעות קיימות
@@ -121,7 +123,6 @@ he:
       headings_name: "כותרות"
       headings_edit: "עריכת כותרות"
       headings_manage: "ניהול כותרות"
-      max_votable_headings: "מספר הכותרות המקסימלי שתושב יכול להצביע עבורן"
       no_groups: "לא נמצאו קבוצות."
       amount:
         one: "יש קבוצה 1"
@@ -138,12 +139,10 @@ he:
       form:
         create: "צור קבוצה חדשה"
         edit: "ערוך קבוצה"
-        name: "שם קבוצה"
         submit: "שמירת קבוצה"
       index:
         back: "לחזור לתקציבים"
     budget_headings:
-      name: "שם"
       no_headings: "אין כותרות."
       amount:
         one: "יש כותרת 1"
@@ -158,14 +157,8 @@ he:
         success_notice: "כותרת הוסרה בהצלחה"
         unable_notice: "אינך יכול להסיר כותרת המקושרת להשקעות קיימות"
       form:
-        name: "שם הכותרת"
-        amount: "סכום"
-        population: "אוכלוסיה (אופציונלי)"
         population_info: "תקציב כותרת האוכלוסייה תחום משמש למטרות סטטיסטית בסוף התקציב להראות עבור כל כותרת שמייצג אזור עם אוכלוסייה ומה אחוז המצביעים. השדה הוא אופציונלי, כך שתוכל להשאיר אותו ריק אם הוא אינו רלונטי."
-        latitude: "קו רוחב (אופציונלי)"
-        longitude: "קו רוחב (אופציונלי)"
         coordinates_info: "אם קווי אורך ורוחב מסופקים, דף ההשקעות עבור כותרת זו יכלול מפה. מפה זו תמורכז על פי קואורדינטות אלה."
-        allow_content_block: "אפשר חסימת תוכן"
         content_blocks_info: "אם תבחר את האפשרות לחסום תוכן, תוכל ליצור תוכן מותאם אישית הקשור לכותרת זו מתוך קטע ההגדרות > קובצי תוכן מותאמים אישית. תוכן זה יופיע בדף ההשקעות עבור כותרת זו."
         create: "צור כותרת חדשה"
         edit: "ערוך כותרת"
@@ -174,13 +167,8 @@ he:
         back: "חזור אל הקבוצות"
     budget_phases:
       edit:
-        start_date: תאריך פתיחה
-        end_date: תאריך סיום
-        summary: תקציר
         summary_help_text: טקסט זה יודיע למשתמש על השלב. כדי להציג אותו גם אם השלב אינו פעיל, בחר בתיבת הסימון שבהמשך
-        description: תיאור
         description_help_text: טקסט זה יופיע בכותרת כאשר השלב פעיל
-        enabled: השלב מופעל
         enabled_help_text: שלב זה יהיה ציבורי בציר הזמן של שלבי התקציב, וכן פעיל לכל מטרה אחרת
         save_changes: שמירת שינויים
     budget_investments:
@@ -204,8 +192,6 @@ he:
           min_total_supports: תמיכה מינימלית
           max_total_supports: תמיכה מקסימלית
           winners: זוכים
-          one_filter_html: "הסינון אשר הופעל: <b><em>%{filter}</em></b>"
-          two_filters_html: "המסננים שהופעלו:<b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: מסנן
         download_current_selection: "הורדת הבחירה הנוכחית"
@@ -214,9 +200,8 @@ he:
         assigned_admin: הוקצה מנהל לפרויקט
         no_admin_assigned: לא הוקצה מנהל/ת מערכת
         no_valuators_assigned: לא הוקצו מעריכים
-        no_valuation_groups: לא הוקצו קבוצות מעריכים
         feasibility:
-          feasible: "בר ביצוע (%{price})"
+          feasible: "בר ביצוע"
           unfeasible: "אינו בר ביצוע"
           undecided: "טרם הוחלט"
         selected: "נבחר"
@@ -236,8 +221,10 @@ he:
           author_username: שם העורך
           incompatible: אינו תואם
           price: מחיר
+          author: מחבר/ת
         cannot_calculate_winners: התקציב צריך להישאר על שלב "הצבעה לפרויקטים", "סקירת הצבעות" או "סיים תקציב" על מנת לחשב את הפרויקטים הזוכים
         see_results: "ראו תוצאות"
+        milestone_tags_filter_all: "כל תגיות אבני הדרך"
       show:
         assigned_admin: מנהל מערכת שהוקצה
         assigned_valuators: הוקצו מעריכים
@@ -252,7 +239,6 @@ he:
         dossier: תיק
         edit_dossier: עריכת תיק
         tags: תגיות
-        user_tags: תגיות משתמשים
         undefined: לא מוגדר
         compatibility:
           title: תאימות
@@ -260,30 +246,25 @@ he:
           "false": תואם
         selection:
           title: בחירה
-          "true": נבחר
-          "false": לא נבחר
         winner:
           title: זוכה
           "true": "כן"
           "false": "לא"
+        valuator_groups: "קבוצת המעריכים"
+        preview: תצוגה מקדימה לפרויקט ההשקעה
       edit:
         classification: סיווג
         compatibility: תאימות
-        mark_as_incompatible: סמן כלא תואם
         selection: בחירה
-        mark_as_selected: סמן כנבחר
         assigned_valuators: מעריכים
         select_heading: בחר כותרת
         submit_button: עדכן
         user_tags: המשתמש הקצה תגיות
-        tags: תגיות
         tags_placeholder: "כתיבת תגיות, נא להפריד ביניהן באמצעות פסיקים (,)"
         undefined: לא מוגדר
-        user_groups: "קבוצות"
       search_unfeasible: חיפוש אינו ישים
     milestones:
       index:
-        table_id: "ID"
         table_title: "כותרת"
         table_description: "תיאור"
         table_publication_date: "תאריך פרסום"
@@ -296,13 +277,12 @@ he:
         documents: "מסמכים"
         milestone: אבני דרך
         new_milestone: יצירת אבן דרך חדשה
+        milestone_tags: תגיות אבני דרך
       form:
         admin_statuses: ניהול קצב התקדמות
         no_statuses_defined: טרם הוגדר קצב התקדמות
       new:
         creating: צור אבני דרך
-        date: תאריך
-        description: תיאור
       edit:
         title: ערוך אבן דרך
       create:
@@ -338,7 +318,6 @@ he:
         no_progress_bars: "אין סרגלי התקדמות"
         new_progress_bar: "יצירת סרגל התקדמות חדש"
         primary: "סרגל התקדמות ראשי"
-        table_id: "ID"
         table_kind: "סוג"
         table_title: "כותרת"
         table_percentage: "ההתקדמות הנוכחית"
@@ -356,9 +335,18 @@ he:
         notice: "סרגל ההתקדמות הוסר בהצלחה"
     comments:
       index:
-        filter: מסנן
+        id: "מזהה"
+        content: "תוכן"
+        author: "מחבר/ת"
+        commentable_type: "סוג"
+        title: הערות
+        no_comments: לא נמצאו תגובות.
+        table_link: "קישור"
+    hidden_comments:
+      index:
+        filter: סינון
         filters:
-          all: כולם
+          all: הכל
           with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
         hidden_debate: דיון מוסתר
@@ -371,9 +359,6 @@ he:
         title: ניהול
         description: ברוך הבא אל %{org} פאנל הניהול.
       actions:
-        action_type:
-          proposed_action: פעולה מוצעת
-          resource: משאב
         index:
           description: "כאשר משתמשים יוצרים הצעות הם יכולים לגשת למרכז השליטה של ​​ההצעה שלהם, היכן שניתן להציע משאבים והמלצות כדי לקבל תמיכה עבור הרעיון שלהם."
           create: צור משאב או פעולה
@@ -406,7 +391,6 @@ he:
         form:
           submit_button: שמור
           help_text: הכנס את הספרה 0 בכדי שערך זה לא יילקח בחשבון
-          published_proposal: עבור הצעות שפורסמו?
           published_proposal_help_text: סמן תיבה זו כדי ליצור את הפעולה רק להצעות שפורסמו
       administrator_tasks:
         index:
@@ -431,9 +415,15 @@ he:
           success: המשימה סומנה כנפתרה.
     debates:
       index:
-        filter: מסנן
+        id: מזהה
+        author: מחבר/ת
+        title: דיונים
+        no_debates: לא נמצאו דיונים.
+    hidden_debates:
+      index:
+        filter: סינון
         filters:
-          all: כולם
+          all: הכל
           with_confirmed_hide: אושר
           without_confirmed_hide: ממתין לאישור
         title: דיונים מוסתרים
@@ -441,7 +431,6 @@ he:
     documents:
       new:
         title: "העלה מסמך"
-        label_attachment: "בחר מסמך"
         submit_button: "העלה"
       index:
         new_link: "הוסף מסמך חדש"
@@ -492,9 +481,6 @@ he:
         edit:
           back: חזרה
           submit_button: שמירת שינויים
-        errors:
-          form:
-            error: שגיאה
         form:
           enabled: מאופשר
           process: תהליך
@@ -508,9 +494,7 @@ he:
           summary_placeholder: סיכום קצר של התיאור
           description_placeholder: הוסף תיאור של התהליך
           additional_info_placeholder: הוסף מידע נוסף שיכול להיות מועיל
-          homepage: תיאור
           homepage_description: כאן תוכל להסביר את תוכן התהליך
-          homepage_enabled: דף הבית מאופשר
           banner_title: צבעי כותרת
         index:
           create: תהליך חדש
@@ -554,8 +538,6 @@ he:
           back: חזרה
           id: מזהה
           supports: לחיצה לתמיכה
-          select: בחר
-          selected: נבחר
         form:
           custom_categories: תחומים
           custom_categories_description: קטגוריות בהם משתמשים יכולים ליצור את ההצעה. מקסימום 160 תווים.
@@ -573,11 +555,7 @@ he:
           back: חזרה
           submit_button: שמירת שינויים
           warning: ערכת את הטקסט, אל תשכח ללחוץ על שמור כדי לשמור את השינויים לצמיתות.
-        errors:
-          form:
-            error: שגיאה
         form:
-          title_html: 'עריכת <span class = "strong">%{draft_version_title} </ span> מהתהליך <span class = "strong">%{process_title} </ span>'
           launch_text_editor: הפעל את עורך הטקס
           close_text_editor: סגור את עורך הטקסט
           use_markdown: השתמש בסימון כדי לעצב את הטקסט
@@ -598,9 +576,6 @@ he:
           back: חזרה
           title: יצירת גירסה חדשה
           submit_button: יצירת גירסה
-        statuses:
-          draft: טיוטה
-          published: פורסם
         table:
           title: כותרת
           created_at: נוצרה ב
@@ -620,12 +595,8 @@ he:
           back: חזרה
           title: "עריכת \"%{question_title}\""
           submit_button: שמירת שינויים
-        errors:
-          form:
-            error: שגיאה
         form:
           add_option: הוסף אפשרות
-          title: שאלה
           title_placeholder: הוספת שאלה
           value_placeholder: הוספת תשובה סגורה
           question_options: "תשובות אפשריות (אופציונלי, תשובות פתוחות כברירת מחדל)"
@@ -690,7 +661,6 @@ he:
       officials: גורמים רשמיים
       organizations: ארגונים
       settings: הגדרות כלליות
-      spending_proposals: הצעות למסגרת תקציב
       stats: סטטיסטיקה
       signature_sheets: דפי חתימות
       site_customization:
@@ -715,7 +685,6 @@ he:
           content_block:
             update: "עדכן בלוק"
       title_moderated_content: תוכן מונחה
-      title_budgets: תקציבים
       title_profiles: פרופילים
       title_settings: הגדרות
       title_site_customization: תוכן האתר
@@ -725,11 +694,14 @@ he:
       dashboard: לוח מחוונים להצעות
       administrator_tasks: בקשת משאבים
       dashboard_actions: משאבים ופעולות
+      debates: "דיונים"
+      comments: "הערות"
     administrators:
       index:
         title: מנהלים
         name: שם
         email: דואר אלקטרוני
+        description: תיאור
         id: מזהה מנהל
         no_administrators: אין מנהלי מערכת.
       administrator:
@@ -738,6 +710,9 @@ he:
         restricted_removal: "מצטערים, אין באפשרותך להסיר את עצמך ממנהלי המערכת"
       search:
         title: "מנהלי מערכת: חיפוש משתמשים"
+      form:
+        edit_title: "ערוך מנהל"
+        updated: "מנהל המערכת עודכן בהצלחה"
     moderators:
       index:
         title: מנחים
@@ -779,8 +754,6 @@ he:
         empty_newsletters: אין ידיעונים להצגה
       new:
         title: ידיעון חדש
-        from: כתובת האימייל אשר תוצג לנמעני הידיעון
-        header_footer_help_text_html: "הכותרת והחלק התחתון זהים בכל האימיילים, ניתן לשנות אותם באמצעות \n<code>app/views/layouts/mailer_header</code> וכן ב- \n<code>app/views/layouts/mailer_footer</code>.<br>\nניתן לשנות את תמונת הכותרת ב- %{link}."
         image_link: "תמונות מותאמות אישית"
       edit:
         title: עריכת ידיעון
@@ -879,6 +852,9 @@ he:
       user_invite:
         title: "הזמנת משתמש"
         description: "נשלח לאדם אשר הוזמן לפתוח חשבון."
+      evaluation_comment:
+        title: "הערת הערכה חדשה"
+        description: "נשלח למנהלי המערכת ולמעריכים הקשורים להערות בהשקעות הללו"
       edit_info: "תוכל לערוך אימייל זה ב"
       message_title: "כותרת ההודעה"
       message_body: "זהו תוכן לדוגמא של הודעה."
@@ -886,6 +862,7 @@ he:
         no_investments: "לא נוצרת כל השקעה בתקציב. יש צורך בנתוני דוגמה כדי להציג את האימייל."
         no_comments: "אין תגובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
         no_replies: "אין תשובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
+        no_evaluation_comments: "אין תגובות שנוצרו. יש צורך בנתוני דוגמה כדי להציג את האימייל."
     emails_download:
       index:
         title: הורדת אימיילים
@@ -903,30 +880,25 @@ he:
         valuator_groups: "קבוצת המעריכים"
         group: "קבוצה"
         no_group: "אין קבוצה"
+        abilities: "יכולות"
+        can_comment: "ניתן להגיב"
+        can_edit_dossier: "ניתן לערוך תיק"
       valuator:
         add: הוסף למעריכים
         delete: מחיקה
       search:
         title: "מעריכים: חיפוש משתמשים"
-      summary:
-        title: סיכום מעריך לפרויקטים להשקעה
-        valuator_name: מעריך
-        finished_and_feasible_count: הסתיים ובר ביצוע
-        finished_and_unfeasible_count: הסתיים ואינו בר ביצוע
-        finished_count: הסתיים
-        in_evaluation_count: עדיין בשלב הערכה
-        total_count: סך הכל
-        cost: עלות הפרויקט
       form:
         edit_title: "מעריכים: עריכת מעריך"
-        update: "עדכון מעריך"
         updated: "המעריך עודכן בהצלחה"
       show:
         description: "תיאור"
         email: "דואר אלקטרוני"
         group: "קבוצה"
+        abilities: "יכולות"
         no_description: "ללא תיאור"
         no_group: "ללא קבוצה"
+        no_abilities: "ללא יכולות"
     valuator_groups:
       index:
         title: "קבוצת המעריכים"
@@ -938,7 +910,6 @@ he:
         title: "קבוצת מעריכים: %{group}"
         no_valuators: "אין מעריכים שהוקצו לקבוצה זו"
       form:
-        name: "שם קבוצה"
         new: "יצירת קבוצה מעריכים"
         edit: "שמירת קבוצה מעריכים"
     poll_officers:
@@ -972,7 +943,6 @@ he:
         shift: "משימה"
         shifts: "משימה בדוכן זה"
         date: "תאריך"
-        task: "משימה"
         edit_shifts: ערוך משמרת
         new_shift: "משמרת חדשה"
         no_shifts: "בדוכן זה לא נמצאה משמרת פעילה"
@@ -1008,11 +978,6 @@ he:
     poll_booth_assignments:
       alert:
         shifts: "יש משמרות הקשורים דוכן זה. אם תסיר את הקצאת הדוכנים, המשמרות יימחקו גם הם. להמשיך?"
-      flash:
-        destroy: "הדוכן לא הוקצה עוד"
-        create: "הדוכן הוקצה"
-        error_destroy: "אירעה שגיאה בעת הסרת הקצאת דוכן"
-        error_create: "אירעה שגיאה בעת הקצאת דוכן לסקר"
       show:
         location: "מקום"
         officers: "נושאי משרה"
@@ -1035,7 +1000,6 @@ he:
         title: "תיאור הסקר"
       form:
         description:
-          text: "תיאור"
           help_text: "טקסט זה יופיע בכותרת של דף הסקרים. ניתן להשתמש בה כדי להוסיף הקשר לקלפיות הפתוחות."
     polls:
       index:
@@ -1090,7 +1054,6 @@ he:
       new:
         title: "צור שאלה לסקר%{poll}"
         title_proposal: "צור שאלה"
-        poll_label: "סקר"
       answers:
         images:
           add_image: "הוספת תמונה"
@@ -1170,8 +1133,6 @@ he:
         no_location: "אין מיקום"
       new:
         title: "דוכן חדש"
-        name: "שם"
-        location: "מקום"
         submit_button: "צור דוכן"
       edit:
         title: "ערוך דוכן"
@@ -1214,11 +1175,6 @@ he:
           pending: ממתין לאישור
           rejected: נדחה
           verified: אומת ואושר
-        hidden_count_html:
-          one: יש גם <strong> ארגון אחד </strong> ללא משתמשים או עם משתמש מוסתר.
-          two: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
-          many: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
-          other: יש <strong>%{count} ארגונים </strong> ללא משתמשים או עם משתמש מוסתר.
         name: שם
         email: דואר אלקטרוני
         phone_number: מספר טלפון
@@ -1241,10 +1197,16 @@ he:
         title: הצעות
         id: ID
         author: מחבר/ת
+        select: בחר
+        selected: נבחר
         milestones: אבני דרך
         no_proposals: לא נמצאו הצעות.
       show:
         create_question: להוסיף הצעה זו לסקר בכדי לאפשר הצבעות
+      form:
+        update: עדכן הצעה
+      update:
+        notice: ההצעה עודכנה בהצלחה
     hidden_proposals:
       index:
         filter: סינון
@@ -1270,6 +1232,7 @@ he:
         title: הגדרות תצורה
         update_setting: עדכן
         participation_processes: "השתתפות בתהליכים"
+        images_and_documents: "תמונות ומסמכים"
         feature_flags: מאפיינים
         features:
           enabled: "התכונה מופעלת"
@@ -1307,9 +1270,9 @@ he:
       proposal_search:
         button: חיפוש
         placeholder: חיפוש הצעות לפי כותרת, קוד, תיאור או שאלה
-      spending_proposal_search:
+      debate_search:
         button: חיפוש
-        placeholder: חיפוש הצעות להוצאה כספית לפי כותרת או תיאור
+        placeholder: חיפוש דיונים על פי כותרת או תיאור
       user_search:
         button: חיפוש
         placeholder: '‘חיפוש משתמש/ת לפי שם או דואר אלקטרוני’'
@@ -1330,62 +1293,6 @@ he:
       color_help: בתבנית הקסדצימאלית
       show_results_and_stats: "הצג תוצאות ונתונים סטטיסטיים"
       results_and_stats_reminder: "סימון תיבות הסימון יהפכו את התוצאות ו / או הנתונים סטטיסטיים של סקר זה, גלויים לכל משתמש."
-    spending_proposals:
-      index:
-        geozone_filter_all: כל האזורים
-        administrator_filter_all: כל מנהלי המערכת
-        valuator_filter_all: כל המעריכים
-        tags_filter_all: כל התגים
-        filters:
-          valuation_open: פתוח
-          without_admin: ללא מנהל מערכת מוקצה
-          managed: מנוהל
-          valuating: תחת הערכה
-          valuation_finished: הערכה הסתיימה
-          all: כולם
-        title: פרויקטים להשקעה בתקצוב השתתפותי
-        assigned_admin: מנהל מערכת מוקצה
-        no_admin_assigned: אין מנהל מערכת שהוקצה
-        no_valuators_assigned: לא הוקצו מעריכים
-        summary_link: "סיכום השקעות בפרויקט"
-        valuator_summary_link: "סיכום הערכה"
-        feasibility:
-          feasible: "בר ביצוע (%{price})"
-          not_feasible: "אינו בר ביצוע"
-          undefined: "לא מוגדר"
-      show:
-        assigned_admin: מנהל מערכת שהוקצה
-        assigned_valuators: מעריכים שהוקצו
-        back: חזרה
-        classification: סיווג
-        heading: "השקעה כספית בפרוייקט %{id}"
-        edit: ערוך
-        edit_classification: ערוך קטגוריות
-        association_name: ארגון/עמותה
-        by: מאת
-        sent: נשלח
-        geozone: הקף הפרויקט
-        dossier: תיק
-        edit_dossier: ערוך תיק
-        tags: תגיות
-        undefined: לא מוגדר
-      edit:
-        classification: סיווג
-        assigned_valuators: מעריכים
-        submit_button: עדכן
-        tags: תגיות
-        tags_placeholder: "הכנס תגים מופרדים בפסיק (,)"
-        undefined: לא מוגדר
-      summary:
-        title: סיכום פרויקטים להשקעה
-        title_proposals_with_supports: סיכום פרויקטים להשקעה שזכו בתמיכה
-        geozone_name: הקף הפרויקט
-        finished_and_feasible_count: הסתיים ובר ביצוע
-        finished_and_unfeasible_count: הסתיים ולא בר ביצוע
-        finished_count: הסתיים
-        in_evaluation_count: עדיין בשלב הערכה
-        total_count: סך הכל
-        cost_for_geozone: עלות
     geozones:
       index:
         title: איזור גיאוגרפי
@@ -1399,13 +1306,6 @@ he:
         code_help: קוד תגובה עבור האיזור הגיאוגרפי זה ב- API של המיפקד
         coordinates: נקודות ציון
         coordinates_help: קואורדינטות שתפיק אזור ללחיצה על מפת תמונה HTML
-      errors:
-        form:
-          error:
-            one: "השגיאה הזו מנעה שמירה של איזור גיאוגרפי זה"
-            two: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
-            many: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
-            other: "השגיאה הזו מנעה שמירה של איזורים גיאוגרפים אלו"
       edit:
         form:
           submit_button: שמירת שינויים
@@ -1432,8 +1332,6 @@ he:
       show:
         created_at: נוצר ב
         author: מחבר/ת
-        documents: מסמכים
-        document_count: "מספר המסמכים:"
         verified:
           one: "יש %{count} חתימה חוקית"
           two: "ישנן %{count} חתימות חוקיות"
@@ -1445,6 +1343,12 @@ he:
           many: "ישנן %{count} חתימות לא חוקית"
           other: "ישנן %{count} חתימות לא חוקית"
         unverified_error: (לא מאומת על ידי מפקד האוכלוסין)
+        voted:
+          zero: "אין הצבעות שנוצרו מהחתימות המאומתות."
+          one: "יש %{count} הצבעות שנוצרו מהחתימות המאומתות."
+          two: "יש %{count} הצבעות שנוצרו מהחתימות המאומתות."
+          many: "יש %{count} הצבעות שנוצרו מהחתימות המאומתות."
+          other: "יש %{count} הצבעות שנוצרו מהחתימות המאומתות."
         loading: "עדיין נערך אימות חתימות על ידי מפקד האוכלוסין, בבקשה לרענן את הדף בעוד כמה רגעים"
     stats:
       show:
@@ -1458,7 +1362,6 @@ he:
           proposals: הצעות
           budgets: תקציבים פתוחים
           budget_investments: פרויקטי השקעה
-          spending_proposals: הצעות למסגרת תקציב
           unverified_users: משתמשים שלא אושרו
           user_level_three: רמה של שלושה משתמשים
           user_level_two: רמה של שני משתמשים
@@ -1475,11 +1378,11 @@ he:
         polls: סקרים
       graph:
         debate_created: דיונים
-        spending_proposals: פרויקטי השקעה
         visit: ביקורים
         level_2_user: משתמשים ברמה 2
         proposal_created: הצעות תושבים
       budgets:
+        no_data_before_balloting_phase: "אין נתונים להצגה לפני שלב ההצבעה."
         title: "תקציבים שיתופיים - מצב השתתפות"
         supporting_phase: שלב בתמיכה
         balloting_phase: הצבעה מסכמת
@@ -1523,8 +1426,6 @@ he:
         title: נושאים לדיון
         topic: נושא
         help: "כאשר משתמש יוצר הצעה, הנושאים הבאים מוצעים כתוויות ברירת מחדל."
-      name:
-        placeholder: הקלד/י את שם הנושא
     users:
       columns:
         name: שם
@@ -1559,9 +1460,6 @@ he:
           notice: בלוק התוכן נמחק בהצלחה
         edit:
           title: עריכת תוכן הבלוק
-        errors:
-          form:
-            error: שגיאה
         index:
           create: יצירת בלוק תוכן חדש
           delete: מחיקת הבלוק
@@ -1599,9 +1497,6 @@ he:
           notice: הדף נמחק בהצלחה
         edit:
           title: עריכת %{page_title}
-        errors:
-          form:
-            error: שגיאה
         form:
           options: אפשרויות
         index:
@@ -1611,13 +1506,10 @@ he:
           see_page: תצוגה מקדימה של הדף
         new:
           title: יצירת דף מותאם אישית חדש
-          slug_help_html: "טקסט כדי לזהות את הדף הזה בכתובת האתר, לדוגמה <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: נוצר ב
           status: סטטוס
           updated_at: עודכן ב
-          status_draft: טיוטה
-          status_published: פורסם
           title: כותרת
           slug: אסימון
           cards_title: כרטיס
@@ -1665,6 +1557,3 @@ he:
         submit_header: שמירה כותרת דף עליונה
         card_title: עריכת כרטיס
         submit_card: שמור כרטיס
-    translations:
-      remove_language: הסרת שפה
-      add_language: הוספת שפה

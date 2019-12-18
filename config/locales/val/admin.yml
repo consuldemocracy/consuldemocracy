@@ -26,11 +26,6 @@ val:
           with_inactive: Inactius
         preview: Vista previa
       banner:
-        title: Títol
-        description: Descripció
-        target_url: Enllaç
-        post_started_at: Inici de publicació
-        post_ended_at: Fi de publicació
         sections_label: Seccions on apareixerà
         sections:
           homepage: Pàgina principal
@@ -42,11 +37,6 @@ val:
         editing: Editar banner
         form:
           submit_button: Guardar canvis
-      errors:
-        form:
-          error:
-            one: "error va impedir guardar el banner"
-            other: "errors van impedir guardar el banner"
       new:
         creating: Crear un banner
     activity:
@@ -114,7 +104,6 @@ val:
       headings_name: "Partides pressupostàries"
       headings_edit: "Editar Partides"
       headings_manage: "Gestionar partides"
-      max_votable_headings: "Màxim número de partides en les que un usuari pot votar"
       no_groups: "No hi ha grups creats encara. Cada usuari podrà votar en una sola partida de cada grup."
       amount:
         one: "Hi ha 1 grup"
@@ -129,12 +118,10 @@ val:
       form:
         create: "Crear un nou grup"
         edit: "Editar grup"
-        name: "Nom del grup"
         submit: "Guardar group"
       index:
         back: "Tornar a pressupostos"
     budget_headings:
-      name: "Nom"
       no_headings: "No hi ha partides creades encara. Cada usuari podrà votar en una sola partida de cada grup."
       amount:
         one: "Hi ha 1 partida"
@@ -147,14 +134,8 @@ val:
         success_notice: "Partida eliminada correctament"
         unable_notice: "No es pot eliminar una Partida amb propostes asociades"
       form:
-        name: "Nom de la partida"
-        amount: "Quantitat"
-        population: "Població (opcional)"
         population_info: "El camp població de les partides pressupuestaries s'usa amb fins estadistics únicament, amb l'objectiu de mostrar el percentatge de vots en cada partida que represente un àrea amb població. Es un camp opciona, així que pots deixarlo en blanc si no s'aplica."
-        latitude: "Latitud"
-        longitude: "Longitud"
         coordinates_info: "Si s'indiquen la latitud i longitud, la página de propostes per a aquesta partida inclourà un mapa. Aquest mapa estarà centrat utilitzant aquestes coordenades."
-        allow_content_block: "Permet contingut bloquejat"
         content_blocks_info: "Si el permís de bloc de contingut està activat, podras crear contingut propi per a esta partida desde la secció Configuració -> Contingut de blocs personalitzat. Este continut es mostrarà en la pàgina de propostes d'aquesta partida."
         create: "Crear nova partida"
         edit: "Editar Partida"
@@ -163,13 +144,8 @@ val:
         back: "Tornar a grups"
     budget_phases:
       edit:
-        start_date: Data d'inici del procés
-        end_date: Data de fi del procés
-        summary: Resumen
         summary_help_text: Este text informarà a l'usuari sobre la fase. Per a mostrar-lo inclús quant la fase no estiga activa, selecciona la casella següent
-        description: Descripció
         description_help_text: Este text apareixerà en la capçalera quant la fase estiga activa
-        enabled: Fase habilitada
         enabled_help_text: Aquesta fase serà pública en el calendari de fases del pressupost, així com activa per a qualsevol altre propòsit
         save_changes: Guardar canvis
     budget_investments:
@@ -192,8 +168,6 @@ val:
           unfeasible: Inviable
           min_total_supports: Avals mínims
           winners: Guanyadores
-          one_filter_html: "Filtres aplicats: <b><em>%{filter}</em></b>"
-          two_filters_html: "Filtres aplicats: <b><em>%{filter}, %{advanced_filters}}</em></b>"
         buttons:
           filter: Filtre
         download_current_selection: "Baixar la selecció actual"
@@ -203,7 +177,7 @@ val:
         no_admin_assigned: Sense admin assignat
         no_valuators_assigned: Sense avaluador asignat
         feasibility:
-          feasible: "Viable (%{price})"
+          feasible: "Viable"
           unfeasible: "Inviable"
           undecided: "Sense decidir"
         selected: "Seleccionades"
@@ -245,8 +219,6 @@ val:
           "false": Compatible
         selection:
           title: Selecció
-          "true": Seleccionades
-          "false": No seleccionat
         winner:
           title: Guanyadores
           "true": "Si"
@@ -255,21 +227,16 @@ val:
       edit:
         classification: Classificació
         compatibility: Compatibilitat
-        mark_as_incompatible: Marcar com incompatible
         selection: Selecció
-        mark_as_selected: Marcar com seleccionat
         assigned_valuators: Evaluadors
         select_heading: Seleccionar partida
         submit_button: Actualitzar
         user_tags: Etiquetes asignades per l'usuari
-        tags: Temes
         tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
         undefined: Sense definir
-        user_groups: "Grups"
       search_unfeasible: Buscar inviables
     milestones:
       index:
-        table_id: "ID"
         table_title: "Títol"
         table_description: "Descripció"
         table_publication_date: "Data de publicació"
@@ -279,7 +246,6 @@ val:
         no_milestones: "No hi ha fites definides"
         image: "Imatge"
         show_image: "Mostrar imatge"
-        documents: "Documents"
         milestone: Seguiment
         new_milestone: Crear nova fita
       form:
@@ -287,8 +253,6 @@ val:
         no_statuses_defined: No hi ha estats de projectes definits
       new:
         creating: Crear fita
-        date: Data
-        description: Descripció
       edit:
         title: Editar fita
       create:
@@ -320,21 +284,12 @@ val:
     progress_bars:
       index:
         title: "Barres de progrés"
-        table_id: "ID"
         table_kind: "Tipus"
         table_title: "Títol"
         table_percentage: "Progrés actual"
     comments:
       index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmats
-          without_confirmed_hide: Pendents
-        hidden_debate: Debat ocults
-        hidden_proposal: Proposta oculta
         title: Comentaris ocults
-        no_hidden_comments: No hi ha comentaris ocults.
     dashboard:
       index:
         back: Tornar a %{org}
@@ -342,13 +297,7 @@ val:
         description: Benvingut al panell d'administració de %{org}.
     debates:
       index:
-        filter: Filtre
-        filters:
-          all: Totes
-          with_confirmed_hide: Confirmats
-          without_confirmed_hide: Pendents
         title: Debats ocults
-        no_hidden_debates: No hi ha debats ocults.
     hidden_users:
       index:
         filter: Filtre
@@ -386,9 +335,6 @@ val:
         edit:
           back: Tornar
           submit_button: Guardar canvis
-        errors:
-          form:
-            error: Error
         form:
           enabled: Actiu
           process: Proces
@@ -402,9 +348,7 @@ val:
           summary_placeholder: Resum curt de la descripció
           description_placeholder: Afegeix una descripció del procés
           additional_info_placeholder: Afegeix qualsevol informació addicional que puga ser d'interès
-          homepage: Descripció
           homepage_description: Ací pots explicar el contingut del procés
-          homepage_enabled: Pàgina principal habilitada
           banner_title: Colors de capçelera
         index:
           create: Nou procés
@@ -445,8 +389,6 @@ val:
           back: Tornar
           id: Id
           supports: Avals
-          select: Seleccionar
-          selected: Seleccionades
         form:
           custom_categories: Categoríes
           custom_categories_description: Categoríes que l'usuari pot seleccionar al crear la proposta.
@@ -464,11 +406,7 @@ val:
           back: Tornar
           submit_button: Guardar canvis
           warning: Alerta, has editat el text. Per conservar de manera permanent els canvis, no t'oblidis de fer clic a Guardar.
-        errors:
-          form:
-            error: Error
         form:
-          title_html: 'S''està editant <span class="strong">%{draft_version_title}</span> del procés <span class="strong">%{process_title}</span>'
           launch_text_editor: Llançar editor de text
           close_text_editor: Tancar editor de text
           use_markdown: Fes servir Markdown per formatar el text
@@ -489,9 +427,6 @@ val:
           back: Tornar
           title: Crear nova versió
           submit_button: Crear versió
-        statuses:
-          draft: Esborrany
-          published: Publicada
         table:
           title: Títol
           created_at: Creada el
@@ -511,12 +446,8 @@ val:
           back: Tornar
           title: "Edita \"%{question_title}\""
           submit_button: Guardar canvis
-        errors:
-          form:
-            error: Error
         form:
           add_option: Afegir resposta
-          title: Pregunta
           title_placeholder: Escriu un títol a la pregunta
           value_placeholder: Escriu una resposta
           question_options: "Possibles respostes (opcional, per defecte respostes obertes)"
@@ -581,7 +512,6 @@ val:
       officials: Càrrecs públics
       organizations: Associacions
       settings: Configuració global
-      spending_proposals: Propostes d'inversió
       stats: Estadístiques
       signature_sheets: Fulls de signatures
       site_customization:
@@ -604,7 +534,6 @@ val:
           content_block:
             update: "Actualitzar bloc"
       title_moderated_content: Contingut moderat
-      title_budgets: Pressupostos
       title_profiles: Perfils
       title_settings: Configuració
       title_site_customization: Personalitzar lloc
@@ -664,7 +593,6 @@ val:
         empty_newsletters: No hi ha butlletins informatius per a mostrar
       new:
         title: Nou butlletí informatiu
-        from: Direcció de email que apareixerà com a remitent del butlletí informatiu
       edit:
         title: Editar butlletí informatiu
       show:
@@ -752,15 +680,6 @@ val:
         delete: Eliminar
       search:
         title: "Avaluadors: Cerca d'usuaris"
-      summary:
-        title: Resum d'avaluació de propostes d'inversió
-        valuator_name: Avaluador
-        finished_and_feasible_count: Finalitzades viables
-        finished_and_unfeasible_count: Finalitzades inviables
-        finished_count: Finalitzats
-        in_evaluation_count: En avaluació
-        total_count: Total
-        cost: Cost total
       form:
         edit_title: "Avaluadors: Editar avaluador"
         updated: "Avaluador actualitzat correctament"
@@ -781,7 +700,6 @@ val:
         title: "Grup d'avaluadors: %{group}"
         no_valuators: "No hi ha avaluadors asignats a este grup"
       form:
-        name: "Nom del grup"
         new: "Crear grups d'avaluadors"
         edit: "Guardar grups d'avaluadors"
     poll_officers:
@@ -814,7 +732,6 @@ val:
         shift: "Asignació"
         shifts: "Torns en aquesta urna"
         date: "Data"
-        task: "Tasca"
         edit_shifts: Asignar torn
         new_shift: "Nou torn"
         no_shifts: "Aquesta urna no te torns asignats"
@@ -849,11 +766,6 @@ val:
     poll_booth_assignments:
       alert:
         shifts: "Hi ha torns asignats per a esta urna. Si la desasignes, eixos torns s'eliminaran. Desitges continuar?"
-      flash:
-        destroy: "Bústia desasignada"
-        create: "Bústia assignada"
-        error_destroy: "Se ha produit un error al desasignar la bústia"
-        error_create: "Se ha produit un error al intentar assignar la bústia"
       show:
         location: "Ubicació"
         officers: "Presidents de taula"
@@ -915,9 +827,6 @@ val:
         poll_not_assigned: "Votació sense asignar"
       edit:
         title: "Editar pregunta ciutadana"
-      new:
-        title: "Crear pregunta ciutadana"
-        poll_label: "Votació"
       answers:
         images:
           add_image: "Afegir imatge"
@@ -994,8 +903,6 @@ val:
         no_location: "Sense ubicació"
       new:
         title: "Nova urna"
-        name: "Nom"
-        location: "Ubicació"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -1037,9 +944,6 @@ val:
           pending: Pendents
           rejected: Rebutjada
           verified: Verificades
-        hidden_count_html:
-          one: Hi ha a més <strong>una organització</strong> sense usuari o amb l'usuari bloquejat.
-          other: Hi ha <strong>%{count} organitzacions</strong> sense usuari o amb l'usuari bloquejat.
         name: Nom
         email: Correu electrònic
         phone_number: Telèfon
@@ -1122,9 +1026,6 @@ val:
       proposal_search:
         button: Cercar
         placeholder: Cercar propostes per títol, codi, descripció o pregunta
-      spending_proposal_search:
-        button: Cercar
-        placeholder: Cercar propostes per títol o descripció
       user_search:
         button: Cercar
         placeholder: Cercar usuari per nom o correu electrònic
@@ -1142,62 +1043,6 @@ val:
       content: Contingut
       created_at: Creada el
       delete: Eliminar
-    spending_proposals:
-      index:
-        geozone_filter_all: Tots els àmbits d'actuació
-        administrator_filter_all: Tots els administradors
-        valuator_filter_all: Tots els avaluadors
-        tags_filter_all: Totes les etiquetes
-        filters:
-          valuation_open: Oberts
-          without_admin: Sense administrador
-          managed: Gestor
-          valuating: En avaluació
-          valuation_finished: Avaluació finalitzada
-          all: Totes
-        title: Propostes d'inversió per a pressupostos participatius
-        assigned_admin: Administrador assignat
-        no_admin_assigned: Sense admin assignat
-        no_valuators_assigned: Sense avaluador
-        summary_link: "Resum de propostes"
-        valuator_summary_link: "Resum d'avaluadors"
-        feasibility:
-          feasible: "Viable (%{price})"
-          not_feasible: "Inviable"
-          undefined: "Sense definir"
-      show:
-        assigned_admin: Administrador assignat
-        assigned_valuators: Evaluadors asignats
-        back: Tornar
-        classification: Classificació
-        heading: "Proposta d'inversió %{id}"
-        edit: Editar
-        edit_classification: Edita classificació
-        association_name: Associació
-        by: Autor
-        sent: Data
-        geozone: Àmbit de la ciutat
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Temes
-        undefined: Sense definir
-      edit:
-        classification: Classificació
-        assigned_valuators: Avaluadors
-        submit_button: Actualitzar
-        tags: Temes
-        tags_placeholder: "Escriu les etiquetes que vulguis separades per comes (,)"
-        undefined: Sense definir
-      summary:
-        title: Resum de propostes d'inversió
-        title_proposals_with_supports: Resum per a propostes que han superat la fase de suports
-        geozone_name: Àmbit
-        finished_and_feasible_count: Finalitzades viables
-        finished_and_unfeasible_count: Finalitzades inviables
-        finished_count: Finalitzats
-        in_evaluation_count: En avaluació
-        total_count: Total
-        cost_for_geozone: Cost total
     geozones:
       index:
         title: Districtes
@@ -1209,11 +1054,6 @@ val:
         external_code: Codi extern
         census_code: Codi del cens
         coordinates: Coordenades
-      errors:
-        form:
-          error:
-            one: "error va impedir guardar el districte"
-            other: "errors van impedir guardar el districte"
       edit:
         form:
           submit_button: Guardar canvis
@@ -1260,7 +1100,6 @@ val:
           proposals: Propostes
           budgets: Pressupostos oberts
           budget_investments: Propostes d'inversió
-          spending_proposals: Propostes d'inversió
           unverified_users: Usuaris sense verificar
           user_level_three: Usuaris de nivell tres
           user_level_two: Usuaris de nivell dos
@@ -1302,8 +1141,6 @@ val:
         title: Temes de debat
         topic: Tema
         help: "Quant un usuari crea una proposta se li suggerixen com a etiquetes per defecte els següents temes."
-      name:
-        placeholder: Escriu el nom del tema
     users:
       columns:
         name: Nom
@@ -1338,9 +1175,6 @@ val:
           notice: Bloc eliminat correctament
         edit:
           title: Edita bloc
-        errors:
-          form:
-            error: Error
         index:
           create: Crear nou bloc
           delete: Eliminar bloc
@@ -1378,9 +1212,6 @@ val:
           notice: Pàgina eliminada correctament
         edit:
           title: Edita %{page_title}
-        errors:
-          form:
-            error: Error
         form:
           options: Respostes
         index:
@@ -1394,8 +1225,6 @@ val:
           created_at: Creada el
           status: Estat
           updated_at: Actualitzada el
-          status_draft: Esborrany
-          status_published: Publicat
           title: Títol
           slug: Slug
           cards_title: Targetes
@@ -1436,6 +1265,3 @@ val:
         submit_header: Guardar capçalera
         card_title: Editar targeta
         submit_card: Guardar targeta
-    translations:
-      remove_language: Eliminar idioma
-      add_language: Afegir idioma

@@ -55,9 +55,6 @@ ca:
               page_column: Pressupostos participatius
             - 
     verify:
-      code: Codi que has rebut a la teva carta
-      email: El teu correu electrònic
       info_code: "Ara introdueix el codi que has rebut a la teva carta:"
-      password: Clau
       submit: Verificar el meu compte
       title: Verifica el teu compte

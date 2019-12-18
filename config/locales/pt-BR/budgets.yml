@@ -7,19 +7,13 @@ pt-BR:
         remaining: "Você ainda tem <span>%{amount}</span> para investir."
         no_balloted_group_yet: "Você ainda não votou neste grupo, vote!"
         remove: Remover voto
-        voted_html:
-          one: "Você votou em <span>um</span> investimento."
-          other: "Você votou em <span>%{count}</span> investimentos."
-        voted_info_html: "Você pode alterar seu voto em qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível."
         zero: Você não votou em um projeto de investimento.
       reasons_for_not_balloting:
         not_logged_in: Você precisa %{signin} ou %{signup} para continuar.
         not_verified: Somente usuários verificados podem votar em investimentos; %{verify_account}.
         organization: Organizações não tem permissão de voto
         not_selected: Projetos de investimento não selecionados não podem ser apoiados
-        not_enough_money_html: "Você já atribuiu o orçamento disponível.<br><small>Lembre-se que você pode %{change_ballot} a qualquer momento</small>"
         no_ballots_allowed: A fase de seleção está fechada
-        different_heading_assigned_html: "Você já votou em um título diferente: %{heading_link}"
         change_ballot: mudar seus votos
     groups:
       show:
@@ -67,7 +61,6 @@ pt-BR:
         map_location: "Localização no mapa"
         map_location_instructions: "Navegue no mapa até o local e fixe o marcador."
         map_remove_marker: "Remover o marcador do mapa"
-        location: "Informações adicionais de localização"
         map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
       index:
         title: Orçamento participativo
@@ -78,26 +71,16 @@ pt-BR:
           button: Buscar
           placeholder: Buscar projetos de investimento...
           title: Buscar
-        search_results_html:
-          one: " contendo o termo <strong>'%{search_term}'</strong>"
-          other: " contendo o termo <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Minha cédula
-          voted_html:
-            one: "<strong>Você votou em uma proposta com o custo de %{amount_spent}</strong>"
-            other: "<strong>Você votou em %{count} propostas com o custo de %{amount_spent}</strong>"
           voted_info: Você pode %{link} a qualquer momento até o encerramento desta fase. Não há necessidade de gastar todo o dinheiro disponível.
           voted_info_link: mudar seu voto
-          different_heading_assigned_html: "Você possui votos ativos em um título diferente: %{heading_link}"
           change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
           check_ballot_link: "verificar minha cédula"
           zero: Você não votou em um projeto de investimento neste grupo.
           verified_only: "Para criar um novo investimento orçamentário %{verify}."
-          verify_account: "verifique sua conta"
           create: "Criar um investimento orçamentário"
           not_logged_in: "Para criar um novo investimento orçamentário, você deve %{sign_in} ou %{sign_up}."
-          sign_in: "iniciar sessão"
-          sign_up: "inscrever-se"
           by_feasibility: Por viabilidade
           feasible: Projetos viáveis
           unfeasible: Projetos inviáveis
@@ -109,9 +92,6 @@ pt-BR:
         author_deleted: Usuário excluído
         price_explanation: Explicação do preço
         unfeasibility_explanation: Explanação da inviabilidade
-        code_html: "Código do projeto de investimento: <strong>%{code}</strong>"
-        location_html: "Localização: <strong>%{location}</strong>"
-        organization_name_html: "Proposta no nome de: <strong>%{name}</strong>"
         share: Compartilhar
         title: Projeto de investimento
         supports: Apoios
@@ -120,10 +100,7 @@ pt-BR:
         comments_tab: Comentários
         milestones_tab: Marcos
         author: Autor
-        project_unfeasible_html: "Este projeto de investimento <strong>foi marcado como não viável</strong> e não vai à fase de votação."
-        project_selected_html: "Este projeto de investimento <strong>está selecionado</strong> para a fase de votação."
         project_winner: "Projeto de investimento ganhando"
-        project_not_selected_html: "Este projeto de investimento <strong>não foi selecionado</strong> para a fase de votação."
       wrong_price_format: Apenas números inteiros
       investment:
         add: Voto
@@ -140,7 +117,6 @@ pt-BR:
         give_support: Apoiar
       header:
         check_ballot: Verificar minha cédula
-        different_heading_assigned_html: "Você possui votos ativos em um título diferente: %{heading_link}"
         change_ballot: "Se você mudar de ideia, poderá remover seus votos em %{check_ballot} e começar de novo."
         check_ballot_link: "verificar minha cédula"
         price: "Este título tem um orçamento de"
@@ -160,7 +136,6 @@ pt-BR:
       page_title: "%{budget} - Resultados"
       heading: "Resultados do orçamento participativo"
       heading_selection_title: "Por distrito"
-      spending_proposal: Título da proposta
       ballot_lines_count: Votos
       hide_discarded_link: Esconder descartados
       show_all_link: Mostrar todos
@@ -169,12 +144,19 @@ pt-BR:
       accepted: "Proposta de gasto aceita: "
       discarded: "Proposta de gasto descartada: "
       incompatibles: Incompatíveis
+      investment_title: Título do projeto
       investment_proyects: Lista de todos os projetos de investimento
       unfeasible_investment_proyects: Lista de todos os projetos de investimento inviáveis
       not_selected_investment_proyects: Lista de todos os projetos de investimento não selecionados para votação
     executions:
       link: "Marcos"
       heading_selection_title: "Por distrito"
+      filters:
+        status:
+          label: "Estado atual do projeto"
+          all: "Todo (%{count})"
+        milestone_tag:
+          all: "Todo (%{count})"
     phases:
       errors:
         dates_range_invalid: "Data de início não pode ser igual ou posterior à data de término"

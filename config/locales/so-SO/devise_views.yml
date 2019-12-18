@@ -6,7 +6,6 @@ so:
         submit: Dib usoo dir tilmamaha
         title: Dib uso diir hubinta tilmamaha
       show:
-        instructions_html: Xaqiijinta koontada emailka %{email}
         new_password_confirmation_label: Ku celi lambarka sirta
         new_password_label: Furaha cusub ee erayga
         please_set_password: Fadlan dooro lambar sireedka cusub (waxay kuu ogolaaneysaa inaad ku soo gasho emailka kor ku xusan)
@@ -50,10 +49,6 @@ so:
           title: Diiwaangelin sida urur ama wadajir
         success:
           back_to_index: 'Waan fahmay: kunoqo boga wayn'
-          instructions_1_html: "<strong> Waxaan si dhakhso ah kuu la soo xiriiri doonaa </ strong> si aan u xaqiijino in aad xaqiiqda ku sameysid wakiilkan."
-          instructions_2_html: Inkastoo aad <strong> emailka dib u eegis </ strong>, waxaan kuu soo dirnay link <strong> si aan u xaqiijino koontadaada </ strong>.
-          instructions_3_html: Markii la xaqiijiyo, waxaad bilaabi kartaa inaad kaqaybqaadato sidii koox aan la aqoonsaneyn.
-          thank_you_html: Waad ku mahadsantahay inaad iska diiwaangeliso guud ahaan bogga internetka. Hadda waa <strong> xaqiijinta sugitaanka </ strong>.
           title: Diiwaangelinta urur / wadajir
     passwords:
       edit:
@@ -123,7 +118,4 @@ so:
           username_note: Magaca ka buuqada bostada kugu xigta
         success:
           back_to_index: 'Waan fahmay: kunoqo boga wayn'
-          instructions_1_html: Fadlan <b> Eeg emailkaaga </ b> - waxaan kuu soo dirnay link <b> link si loo xaqiijiyo koontadaada </ b>.
-          instructions_2_html: Marka la xaqiijiyo, waxaad bilaabi kartaa ka qaybqaadashada.
-          thank_you_html: Waad ku mahadsantahay diiwaangelinta boggaga internetka. Hadda waa inaad <b> xaqiijisaa cinwaanka emailkaaga </ b>.
           title: Xaqiiji cinwaanka emailkaaga

@@ -26,11 +26,6 @@ zh-CN:
           with_inactive: 非活跃
         preview: 预览
       banner:
-        title: 标题
-        description: 说明
-        target_url: 链接
-        post_started_at: 公告开始于
-        post_ended_at: 公告结束于
         sections_label: 它将出现的部分
         sections:
           homepage: 主页
@@ -42,10 +37,6 @@ zh-CN:
         editing: 编辑横幅
         form:
           submit_button: 保存更改
-      errors:
-        form:
-          error:
-            other: "阻止此横幅被保存的错误"
       new:
         creating: 创建横幅
     activity:
@@ -110,29 +101,17 @@ zh-CN:
         recalculate: 重新计算胜出者投资
     budget_groups:
       name: "名字"
-      max_votable_headings: "用户可以投票的最大标题数"
       form:
         edit: "编辑组"
-        name: "组名"
         submit: "保存组"
     budget_headings:
-      name: "名字"
       form:
-        name: "标题名称"
-        amount: "数量"
-        population: "人口（可选）"
         population_info: "预算标题人口字段用于统计目的，在预算结束后显示每个标题，代表一个地区与人口百分比投票率。此字段为可选，因此如果不适用，您可以将其留空。"
-        allow_content_block: "允许内容模块"
         submit: "保存标题"
     budget_phases:
       edit:
-        start_date: 开始日期
-        end_date: 结束日期
-        summary: 总结
         summary_help_text: 此文本将通知用户阶段情况。如果就算阶段未活跃也要显示，请选中以下复选框。
-        description: 说明
         description_help_text: 当阶段处于活跃状态时，此文本将显示在页眉中
-        enabled: 阶段已启用
         enabled_help_text: 这一阶段将在预算的阶段时间内公开，并为其他目的保持活跃
         save_changes: 保存更改
     budget_investments:
@@ -155,8 +134,6 @@ zh-CN:
           unfeasible: 不可行
           min_total_supports: 最小支持
           winners: 胜出者
-          one_filter_html: "当前应用的过滤器：<b><em>%{filter}</em></b>"
-          two_filters_html: "当前应用的过滤器： <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: 过滤器
         download_current_selection: "下载当前选择"
@@ -166,7 +143,7 @@ zh-CN:
         no_admin_assigned: 没有指定管理员
         no_valuators_assigned: 没有指定评估员
         feasibility:
-          feasible: "可行 (%{price})"
+          feasible: "可行"
           unfeasible: "不可行"
           undecided: "未定"
         selected: "已选"
@@ -208,8 +185,6 @@ zh-CN:
           "false": 兼容
         selection:
           title: 选择
-          "true": 已选
-          "false": 未被选择
         winner:
           title: 胜出者
           "true": "是"
@@ -218,21 +193,16 @@ zh-CN:
       edit:
         classification: 分类
         compatibility: 兼容性
-        mark_as_incompatible: 标记为不兼容
         selection: 选择
-        mark_as_selected: 标记为已选
         assigned_valuators: 评估员
         select_heading: 选择标题
         submit_button: 更新
         user_tags: 用户指定的标签
-        tags: 标签
         tags_placeholder: "编写想要的标签，用逗号 (,) 分割"
         undefined: 未定义
-        user_groups: "组"
       search_unfeasible: 搜索不可行
     milestones:
       index:
-        table_id: "ID"
         table_title: "标题"
         table_description: "说明"
         table_publication_date: "出版日期"
@@ -250,8 +220,6 @@ zh-CN:
         no_statuses_defined: 尚未有已定义的投资状态
       new:
         creating: 创建里程碑
-        date: 日期
-        description: 说明
       edit:
         title: 编辑里程碑
       create:
@@ -282,20 +250,11 @@ zh-CN:
         notice: 投资状态已成功删除
     progress_bars:
       index:
-        table_id: "ID"
         table_kind: "类型"
         table_title: "标题"
     comments:
       index:
-        filter: 过滤器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已确认
-          without_confirmed_hide: 有待
-        hidden_debate: 隐藏的辩论
-        hidden_proposal: 隐藏的提议
         title: 隐藏的评论
-        no_hidden_comments: 没有隐藏的评论
     dashboard:
       index:
         back: 返回%{org}
@@ -303,13 +262,7 @@ zh-CN:
         description: 欢迎使用%{org} 管理面板。
     debates:
       index:
-        filter: 过滤器
-        filters:
-          all: 所有
-          with_confirmed_hide: 已确认
-          without_confirmed_hide: 有待
         title: 隐藏的辩论
-        no_hidden_debates: 没有隐藏的辩论。
     hidden_users:
       index:
         filter: 过滤器
@@ -347,9 +300,6 @@ zh-CN:
         edit:
           back: 返回
           submit_button: 保存更改
-        errors:
-          form:
-            error: 错误
         form:
           enabled: 已启用
           process: 进程
@@ -363,7 +313,6 @@ zh-CN:
           summary_placeholder: 描述的简短总结
           description_placeholder: 添加进程描述
           additional_info_placeholder: 添加您认为有用的其他信息
-          homepage: 说明
         index:
           create: 新进程
           delete: 删除
@@ -400,8 +349,6 @@ zh-CN:
           back: 返回
           id: Id
           supports: 支持
-          select: 选择
-          selected: 已选
         form:
           custom_categories: 类别
           custom_categories_description: 用户可以选择创建提议的类别。
@@ -419,11 +366,7 @@ zh-CN:
           back: 返回
           submit_button: 保存更改
           warning: 您已经编辑文本，请不要忘了点击保存来永久保存所做的更改。
-        errors:
-          form:
-            error: 错误
         form:
-          title_html: '从进程<span class="strong">%{process_title}</span>编辑<span class="strong">%{draft_version_title}</span>'
           launch_text_editor: 启动文本编辑器
           close_text_editor: 关闭文本编辑器
           use_markdown: 使用Markdown 来格式化文本
@@ -444,9 +387,6 @@ zh-CN:
           back: 返回
           title: 创建新版本
           submit_button: 创建版本
-        statuses:
-          draft: 起草
-          published: 已发表
         table:
           title: 标题
           created_at: 创建于
@@ -466,12 +406,8 @@ zh-CN:
           back: 返回
           title: "编辑“%{question_title}”"
           submit_button: 保存更改
-        errors:
-          form:
-            error: 错误
         form:
           add_option: 添加选项
-          title: 问题
           title_placeholder: 添加问题
           value_placeholder: 添加已关闭的答案
           question_options: "可能的答案（可选，默认情况下打开答案）"
@@ -536,7 +472,6 @@ zh-CN:
       officials: 官员
       organizations: 组织
       settings: 全局设置
-      spending_proposals: 支出建议
       stats: 统计
       signature_sheets: 签名表
       site_customization:
@@ -559,7 +494,6 @@ zh-CN:
           content_block:
             update: "更新模块"
       title_moderated_content: 已审核的内容
-      title_budgets: 预算
       title_profiles: 个人资料
       title_settings: 设置
       title_site_customization: 站点内容
@@ -619,7 +553,6 @@ zh-CN:
         empty_newsletters: 没有要显示的时事通讯
       new:
         title: 新时事通讯
-        from: 将显示为发送时事通讯的电子邮件地址
       edit:
         title: 编辑时事通讯
       show:
@@ -706,15 +639,6 @@ zh-CN:
         delete: 删除
       search:
         title: "评估员：用户搜索"
-      summary:
-        title: 投资项目的评估员总结
-        valuator_name: 评估员
-        finished_and_feasible_count: 已完成并可行
-        finished_and_unfeasible_count: 已完成和不可行
-        finished_count: 已完成
-        in_evaluation_count: 评估中
-        total_count: 总计
-        cost: 成本
       form:
         edit_title: "评估员：编辑评估员"
         updated: "评估员已成功更新"
@@ -735,7 +659,6 @@ zh-CN:
         title: "评估员组：%{group}"
         no_valuators: "没有评估员被分配给此组"
       form:
-        name: "组名"
         new: "创建评估员组"
         edit: "保存评估员组"
     poll_officers:
@@ -768,7 +691,6 @@ zh-CN:
         shift: "分配"
         shifts: "此投票亭的轮班"
         date: "日期"
-        task: "任务"
         edit_shifts: 编辑轮班
         new_shift: "新轮班"
         no_shifts: "此投票亭没有轮班"
@@ -803,11 +725,6 @@ zh-CN:
     poll_booth_assignments:
       alert:
         shifts: "此投票亭有相关的轮班。如果您删除投票亭分配，此轮班也将被删除。是否继续？"
-      flash:
-        destroy: "投票亭不再被分配"
-        create: "已分配的投票亭"
-        error_destroy: "删除投票亭分配时出错"
-        error_create: "为投票项分配投票亭时出错"
       show:
         location: "位置"
         officers: "官员"
@@ -868,9 +785,6 @@ zh-CN:
         table_poll: "投票"
       edit:
         title: "编辑问题"
-      new:
-        title: "创建问题"
-        poll_label: "投票"
       answers:
         images:
           add_image: "添加图像"
@@ -947,8 +861,6 @@ zh-CN:
         no_location: "没有位置"
       new:
         title: "新投票亭"
-        name: "名字"
-        location: "位置"
         submit_button: "创建投票亭"
       edit:
         title: "编辑投票亭"
@@ -990,8 +902,6 @@ zh-CN:
           pending: 有待
           rejected: 已拒绝
           verified: 已验证
-        hidden_count_html:
-          other: "也有<strong>一个组织</strong>没有用户或者有一名隐藏用户。\n有<strong>%{count} 个组织</strong>没有用户或者有一名隐藏用户。"
         name: 名字
         email: 电子邮件地址
         phone_number: 电话
@@ -1074,9 +984,6 @@ zh-CN:
       proposal_search:
         button: 搜索
         placeholder: 按标题，代码，描述或问题搜索提议
-      spending_proposal_search:
-        button: 搜索
-        placeholder: 按标题或描述搜索支出提议
       user_search:
         button: 搜索
         placeholder: 按名字或电子邮件搜索用户
@@ -1094,62 +1001,6 @@ zh-CN:
       content: 内容
       created_at: 创建于
       delete: 删除
-    spending_proposals:
-      index:
-        geozone_filter_all: 所有区域
-        administrator_filter_all: 所有管理员
-        valuator_filter_all: 所有评估员
-        tags_filter_all: 所有标签
-        filters:
-          valuation_open: 开
-          without_admin: 没有指定的管理员
-          managed: 已管理
-          valuating: 评估中
-          valuation_finished: 评估已完成
-          all: 所有
-        title: 参与性预算编织的投资项目
-        assigned_admin: 指定的管理员
-        no_admin_assigned: 没有指定管理员
-        no_valuators_assigned: 没有指定评估员
-        summary_link: "投资项目总结"
-        valuator_summary_link: "评估员总结"
-        feasibility:
-          feasible: "可行 (%{price})"
-          not_feasible: "不可行"
-          undefined: "未定义"
-      show:
-        assigned_admin: 指定的管理员
-        assigned_valuators: 指定的评估员
-        back: 返回
-        classification: 分类
-        heading: "投资项目%{id}"
-        edit: 编辑
-        edit_classification: 编辑分类
-        association_name: 协会
-        by: 由
-        sent: 已发送
-        geozone: 范围
-        dossier: 档案
-        edit_dossier: 编辑档案
-        tags: 标签
-        undefined: 未定义
-      edit:
-        classification: 分类
-        assigned_valuators: 评估者
-        submit_button: 更新
-        tags: 标签
-        tags_placeholder: "编写您想要的标签，用逗号(,) 分隔"
-        undefined: 未定义
-      summary:
-        title: 投资项目总结
-        title_proposals_with_supports: 得到支持的投资项目总结
-        geozone_name: 范围
-        finished_and_feasible_count: 已完成并可行
-        finished_and_unfeasible_count: 已完成和不可行
-        finished_count: 已完成
-        in_evaluation_count: 评估中
-        total_count: 总计
-        cost_for_geozone: 成本
     geozones:
       index:
         title: 地理区域
@@ -1161,10 +1012,6 @@ zh-CN:
         external_code: 外部代码
         census_code: 人口普查代码
         coordinates: 坐标
-      errors:
-        form:
-          error:
-            other: "阻止这个地理区域被保存的错误"
       edit:
         form:
           submit_button: 保存更改
@@ -1209,7 +1056,6 @@ zh-CN:
           proposals: 提议
           budgets: 开放式预算
           budget_investments: 投资项目
-          spending_proposals: 支出提议
           unverified_users: 未验证的用户
           user_level_three: 三级用户
           user_level_two: 二级用户
@@ -1250,8 +1096,6 @@ zh-CN:
         title: 提议主题
         topic: 主题
         help: "当用户创建提议，建议使用以下主题作为默认标签。"
-      name:
-        placeholder: 输入主题名字
     users:
       columns:
         name: 名字
@@ -1285,9 +1129,6 @@ zh-CN:
           notice: 内容块已成功删除
         edit:
           title: 正在编辑内容块
-        errors:
-          form:
-            error: 错误
         index:
           create: 创建新的内容块
           delete: 删除块
@@ -1325,9 +1166,6 @@ zh-CN:
           notice: 页面成功删除
         edit:
           title: 正在编辑%{page_title}
-        errors:
-          form:
-            error: 错误
         form:
           options: 选项
         index:
@@ -1341,8 +1179,6 @@ zh-CN:
           created_at: 创建于
           status: 状态
           updated_at: 更新于
-          status_draft: 草稿
-          status_published: 已发表
           title: 标题
           slug: Slug
           cards_title: 卡片
@@ -1381,6 +1217,3 @@ zh-CN:
         submit_header: 保存页眉
         card_title: 编辑卡
         submit_card: 保存卡
-    translations:
-      remove_language: 删除语音
-      add_language: 添加语音

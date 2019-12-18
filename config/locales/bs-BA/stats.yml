@@ -27,7 +27,6 @@ bs:
       by_heading: "Učesnici po fazi i poglavlju"
       total: "Ukupno"
       heading: "Poglavlje"
-      investments_sent_html: "Poslanih investicionih prijedloga"
       participants_support_phase: "Faza podrške od strane učesnika"
       participants_vote_phase: "Faza glasanja od strane učesnika"
       participants_every_phase: "Ukupno učesnika"

@@ -28,11 +28,6 @@ nl:
           with_inactive: Inactive
         preview: Toon
       banner:
-        title: Title
-        description: Beschrijving
-        target_url: Link
-        post_started_at: Post started at
-        post_ended_at: Post ended at
         sections_label: Secties waar het wordt weergegeven
         sections:
           homepage: Homepage
@@ -44,11 +39,6 @@ nl:
         editing: Bewerk banier
         form:
           submit_button: Bewaar wijzigingen
-      errors:
-        form:
-          error:
-            one: "verhinderde dat dit banier werd bewaard"
-            other: "verhinderde dat dit banier werd bewaard"
       new:
         creating: Maak banier
     activity:
@@ -118,7 +108,6 @@ nl:
       headings_name: "Rubrieken"
       headings_edit: "Rubrieken bewerken"
       headings_manage: "Rubrieken beheren"
-      max_votable_headings: "Maximum aantal rubrieken waarin gestemd kan worden"
       no_groups: "Er zijn geen groepen."
       amount:
         one: "Er is 1 groep"
@@ -133,12 +122,10 @@ nl:
       form:
         create: "Nieuwe groep"
         edit: "Bewerk groep"
-        name: "Groepsnaam"
         submit: "Sla op"
       index:
         back: "Ga terug naar budgetten"
     budget_headings:
-      name: "Name"
       no_headings: "Er zijn geen rubrieken."
       amount:
         one: "Er is 1 rubriek"
@@ -151,14 +138,8 @@ nl:
         success_notice: "Rubriek verwijderd"
         unable_notice: "Een rubriek met investeringen kan niet worden verwijderd"
       form:
-        name: "Kop naam"
-        amount: "Bedrag"
-        population: "Bevolking"
         population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan voor elke rubriek en per gebied worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus u kunt het leeg laten als het niet van toepassing is."
-        latitude: "Breedte"
-        longitude: "Lengte"
         coordinates_info: "Als lengte- en breedtegraad zijn ingevuld, zal voor deze rubriek een kaart worden getoond. Deze kaart wordt gecentreerd met behulp van de opgegeven coördinaten."
-        allow_content_block: "Inhoudsblok toestaan"
         content_blocks_info: "Als inhoudsblokken zijn toegestaan kan aangepaste inhoud gerelateerd aan deze rubriek worden geplaatst via de sectie Instellingen > aangepaste inhoud. De aangepaste inhoud wordt weergegeven op de pagina voor de rubriek."
         create: "Nieuwe rubriek aanmaken"
         edit: "Rubriek bewerken"
@@ -167,13 +148,8 @@ nl:
         back: "Terug naar groepen"
     budget_phases:
       edit:
-        start_date: Begindatum
-        end_date: Einddatum
-        summary: Samenvatting
         summary_help_text: Deze tekst informeert de deelnemer over de fase. Om het te laten zien zelfs als de fase niet actief is, vinkt u het vakje aan
-        description: Beschrijving
         description_help_text: Deze tekst verschijnt in de kop wanneer de fase actief is
-        enabled: Fase actief
         enabled_help_text: Deze fase is openbaar in de tijdlijn van de budgetfasen, maar ook actief voor andere doeleinden
         save_changes: Bewaar wijzigingen
     budget_investments:
@@ -197,8 +173,6 @@ nl:
           min_total_supports: Minimale ondersteuning
           max_total_supports: Maximul aantal stemmen
           winners: Winnaars
-          one_filter_html: "Actieve filters: <b><em>%{filter}</em></b>"
-          two_filters_html: "Actieve filters: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filter
         download_current_selection: "Download huidige selectie"
@@ -207,9 +181,8 @@ nl:
         assigned_admin: Assigned administrator
         no_admin_assigned: No admin assigned
         no_valuators_assigned: No valuators assigned
-        no_valuation_groups: Geen beoordelingsgroep toegewezen
         feasibility:
-          feasible: "Feasible (%{price})"
+          feasible: "Haalbaar"
           unfeasible: "Unfeasible"
           undecided: "Undecided"
         selected: "Geselecteerd"
@@ -252,8 +225,6 @@ nl:
           "false": Compatibel
         selection:
           title: Selection
-          "true": Geselecteerd
-          "false": Niet geselecteerd
         winner:
           title: Winnaar
           "true": "Ja"
@@ -262,25 +233,18 @@ nl:
       edit:
         classification: Clasificatie
         compatibility: Compatibiliteit
-        mark_as_incompatible: Markeer als incompatibel
         selection: Selection
-        mark_as_selected: Markeer als geselecteerd
         assigned_valuators: Valuators
         select_heading: Select heading
         submit_button: Update
         user_tags: Door deelnemer toegewezen labels
-        tags: Tags
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Niet gedefinieerd
-        user_groups: "Groepen"
       search_unfeasible: Search unfeasible
     milestones:
       index:
-        table_id: "ID"
-        table_title: "Title"
         table_description: "Beschrijving"
         table_publication_date: "Publicatiedatum"
-        table_status: Status
         table_actions: "Activiteiten"
         delete: "Verwijder mijlpaal"
         no_milestones: "Zonder gedefinieerde mijlpalen"
@@ -294,8 +258,6 @@ nl:
         no_statuses_defined: Er zijn nog geen gedefinieerde investeringsstatussen
       new:
         creating: Nieuwe mijlpaal
-        date: Datum
-        description: Beschrijving
       edit:
         title: Bewerk mijlpaal
       create:
@@ -331,9 +293,6 @@ nl:
         no_progress_bars: "Er zijn geen voortgangsbalken"
         new_progress_bar: "Nieuwe voortgangsbalk maken"
         primary: "Primaire voortgangsbalk"
-        table_id: "ID"
-        table_kind: "Type"
-        table_title: "Title"
         table_percentage: "Huidige voortgang"
       new:
         creating: "Nieuwe voortgangsbalk maken"
@@ -349,15 +308,7 @@ nl:
         notice: "Voortgangsbalk verwijderd"
     comments:
       index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Confirmed
-          without_confirmed_hide: Pending
-        hidden_debate: Hidden debate
-        hidden_proposal: Hidden proposal
         title: Hidden comments
-        no_hidden_comments: Er is geen verborgen commentaar.
     dashboard:
       index:
         back: Terug naar %{org}
@@ -365,13 +316,7 @@ nl:
         description: Welkom op de %{org} beheers pagina.
     debates:
       index:
-        filter: Filter
-        filters:
-          all: All
-          with_confirmed_hide: Bevestigd
-          without_confirmed_hide: In afwachting
         title: Hidden debates
-        no_hidden_debates: Er zijn geen verborgen debatten.
     hidden_users:
       index:
         filter: Filter
@@ -409,9 +354,6 @@ nl:
         edit:
           back: Terug
           submit_button: Bewaar wijzigingen
-        errors:
-          form:
-            error: Fout
         form:
           enabled: Ingeschakeld
           process: Proces
@@ -425,9 +367,7 @@ nl:
           summary_placeholder: Korte samenvatting van de beschrijving
           description_placeholder: Voeg een beschrijving van het plan toe
           additional_info_placeholder: Voeg een aanvullende informatie toe
-          homepage: Beschrijving
           homepage_description: Hier kun je de stappen van het proces uitleggen
-          homepage_enabled: Homepage ingeschakeld
           banner_title: Rubriekkleuren
         index:
           create: Nieuw plan
@@ -471,8 +411,6 @@ nl:
           back: Terug
           id: Id
           supports: Steunt
-          select: Select
-          selected: Geselecteerd
         form:
           custom_categories: Categorieen
           custom_categories_description: Categorieën die deelnemers kunnen selecteren bij het maken van het voorstel.
@@ -490,11 +428,7 @@ nl:
           back: Terug
           submit_button: Bewaar wijzigingen
           warning: U hebt de tekst bewerkt, vergeet niet op 'Opslaan' te klikken om de wijzigingen permanent op te slaan.
-        errors:
-          form:
-            error: Fout
         form:
-          title_html: 'Aanpassen van <span class="strong">%{draft_version_title}</span> van het proces <span class="strong">%{process_title}</span>'
           launch_text_editor: Open tekst editor
           close_text_editor: Sluit tekst editor
           use_markdown: Gebruik Markdown voor vormgeving
@@ -515,9 +449,6 @@ nl:
           back: Terug
           title: Nieuwe versie
           submit_button: Nieuwe versie
-        statuses:
-          draft: Concept
-          published: Gepubliceerd
         table:
           title: Title
           created_at: Aanmaakdatum
@@ -537,12 +468,8 @@ nl:
           back: Terug
           title: "Bewerk “%{question_title}”"
           submit_button: Bewaar wijzigingen
-        errors:
-          form:
-            error: Fout
         form:
           add_option: Voeg keuze toe
-          title: Question
           title_placeholder: titel
           value_placeholder: antwoord
           question_options: "Mogelijke antwoorden (optioneel, standaard open antwoorden)"
@@ -607,7 +534,6 @@ nl:
       officials: Officials
       organizations: Organisations
       settings: Instellingen
-      spending_proposals: Spending proposals
       stats: Statistics
       signature_sheets: Signature Sheets
       site_customization:
@@ -630,7 +556,6 @@ nl:
           content_block:
             update: "Blok bijwerken"
       title_moderated_content: Moderated content
-      title_budgets: Budgets
       title_profiles: Profiles
       title_settings: Instellingen
       title_site_customization: Aanpassing Site
@@ -690,7 +615,6 @@ nl:
         empty_newsletters: Er zijn geen nieuwsbrieven om te tonen
       new:
         title: Nieuwe nieuwsbrief
-        from: Van
       edit:
         title: Bewerk nieuwsbrief
       show:
@@ -815,15 +739,6 @@ nl:
         delete: Delete
       search:
         title: "Beoordelaars: zoek deelnemers"
-      summary:
-        title: Valuator summary for investment projects
-        valuator_name: beoordelaar
-        finished_and_feasible_count: Finished and feasible
-        finished_and_unfeasible_count: Finished and unfeasible
-        finished_count: Afgelopen
-        in_evaluation_count: In evaluation
-        total_count: Total
-        cost: Kosten
       form:
         edit_title: "Beoordelaars: Bewerk Beoordelaar"
         updated: "Beoordelaar aangepast"
@@ -844,7 +759,6 @@ nl:
         title: "Beoordelingsgroep: %{group}"
         no_valuators: "Er zijn geen beoordelaars toegewezen aan deze groep"
       form:
-        name: "Groepsnaam"
         new: "Nieuwe Beoordelingsgroep"
         edit: "Bewerk Beoordelingsgroep"
     poll_officers:
@@ -877,7 +791,6 @@ nl:
         shift: "Assignment"
         shifts: "Diensten in dit stemhokje"
         date: "Datum"
-        task: "Taak"
         edit_shifts: Bewerk diensten
         new_shift: "New shift"
         no_shifts: "Dit stemhokje heeft geen diensten"
@@ -913,11 +826,6 @@ nl:
     poll_booth_assignments:
       alert:
         shifts: "Er zijn diensten verbonden aan dit stemhokje. Als u de toewijzing verwijdert, worden de diensten ook verwijderd. Doorgaan?"
-      flash:
-        destroy: "Booth not assigned anymore"
-        create: "Booth assigned"
-        error_destroy: "An error ocurred when removing booth assignment"
-        error_create: "An error ocurred when assigning booth to the poll"
       show:
         location: "Location"
         officers: "Officers"
@@ -940,7 +848,6 @@ nl:
         title: "Omschrijving van de peiling"
       form:
         description:
-          text: "Omschrijving"
           help_text: "Deze tekst wordt weergegeven in de kop van de peilingen-pagina. Deze tekst kan worden gebruikt om context te plaatsen bij een open peiling."
     polls:
       index:
@@ -989,9 +896,8 @@ nl:
       edit:
         title: "Edit Question"
       new:
-        title: "Create Question"
+        title: "Stel een vraag voor de peiling op %{poll}"
         title_proposal: "Stel een vraag"
-        poll_label: "Poll"
       answers:
         images:
           add_image: "Voeg afbeelding toe"
@@ -1071,8 +977,6 @@ nl:
         no_location: "Geen Locatie"
       new:
         title: "New booth"
-        name: "Name"
-        location: "Location"
         submit_button: "Create booth"
       edit:
         title: "Edit booth"
@@ -1115,9 +1019,6 @@ nl:
           pending: In afwachting
           rejected: Rejected
           verified: Verified
-        hidden_count_html:
-          one: There is also <strong>one organisation</strong> with no users or with a hidden user.
-          other: There are <strong>%{count} organisations</strong> with no users or with a hidden user.
         name: Name
         email: E-mail
         phone_number: Telefoonnummer
@@ -1204,9 +1105,6 @@ nl:
       proposal_search:
         button: Search
         placeholder: Zoek voorstellen op titel, code, omschrijving of vraag
-      spending_proposal_search:
-        button: Search
-        placeholder: zoek begrotingsvoorstellen op titel of beschrijving
       user_search:
         button: Search
         placeholder: Search user by name or email'
@@ -1225,62 +1123,6 @@ nl:
       created_at: Created at
       delete: Delete
       color_help: Hexadecimale notatie
-    spending_proposals:
-      index:
-        geozone_filter_all: All zones
-        administrator_filter_all: Alle beheerders
-        valuator_filter_all: Alle beoordelaars
-        tags_filter_all: Alle labels
-        filters:
-          valuation_open: Open
-          without_admin: Zonder toegewezen beheerder
-          managed: Managed
-          valuating: Under valuation
-          valuation_finished: Beoordeling voltooid
-          all: All
-        title: Investment projects for participatory budgeting
-        assigned_admin: Toegewezen beheerder
-        no_admin_assigned: Geen beheerder toegewezen
-        no_valuators_assigned: Geen beoordelaars toegewezen
-        summary_link: "Investment project summary"
-        valuator_summary_link: "Valuator summary"
-        feasibility:
-          feasible: "Haalbaar (%{price})"
-          not_feasible: "Not feasible"
-          undefined: "Niet gedefinieerd"
-      show:
-        assigned_admin: Toegewezen beheerder
-        assigned_valuators: Toegewezen beoordelaars
-        back: Back
-        classification: Clasificatie
-        heading: "Investment project %{id}"
-        edit: Edit
-        edit_classification: Bewerk classificatie
-        association_name: Asociación
-        by: Door
-        sent: Verzonden
-        geozone: Scope
-        dossier: Dossier
-        edit_dossier: Bewerk dossier
-        tags: Tags
-        undefined: Niet gedefinieerd
-      edit:
-        classification: Clasificatie
-        assigned_valuators: beoordelaars
-        submit_button: Update
-        tags: Tags
-        tags_placeholder: "Labels, gescheiden door komma's (,)"
-        undefined: Niet gedefinieerd
-      summary:
-        title: Summary for investment projects
-        title_proposals_with_supports: Summary for investment projects with supports
-        geozone_name: Scope
-        finished_and_feasible_count: Afgerond en haalbaar
-        finished_and_unfeasible_count: Afgerond en onhaalbaar
-        finished_count: Afgelopen
-        in_evaluation_count: In overweging
-        total_count: Totaal
-        cost_for_geozone: Kosten
     geozones:
       index:
         title: Geozone
@@ -1294,11 +1136,6 @@ nl:
         code_help: Responscode voor het gebied van de census API
         coordinates: Coordinates
         coordinates_help: Coördinaten die een klikbaar gebied op een HTML-afbeelding met hyperlinks genereert
-      errors:
-        form:
-          error:
-            one: "verhinderde dat deze geozone werd opgeslagen"
-            other: "verhinderde dat deze geozone werd opgeslagen"
       edit:
         form:
           submit_button: Bewaar wijzigingen
@@ -1320,7 +1157,7 @@ nl:
         new: New signature sheets
       new:
         title: Niewe handtekeninglijst
-        document_numbers_note: "Write the numbers separated by semicolons (;)"
+        document_numbers_note: "Write the numbers separated by commas (,)"
         submit: Create signature sheet
       show:
         created_at: Aangemaakt
@@ -1345,7 +1182,6 @@ nl:
           proposals: Proposals
           budgets: Open budgetten
           budget_investments: Budget bestemmingen
-          spending_proposals: Bestedingsvoorstellen
           unverified_users: Ongeverifieerde gebruikers
           user_level_three: Level three users
           user_level_two: Level two users
@@ -1387,8 +1223,6 @@ nl:
         title: Proposal topics
         topic: Onderwerp
         help: "Wanneer een gebruiker een voorstel maakt, worden de volgende onderwerpen voorgesteld als standaard tags."
-      name:
-        placeholder: Type the name of the topic
     users:
       columns:
         name: Name
@@ -1423,9 +1257,6 @@ nl:
           notice: Content block deleted successfully
         edit:
           title: Editing content block
-        errors:
-          form:
-            error: Error
         index:
           create: Create new content block
           delete: Delete block
@@ -1463,9 +1294,6 @@ nl:
           notice: Page deleted successfully
         edit:
           title: Editing %{page_title}
-        errors:
-          form:
-            error: Fout
         form:
           options: Opties
         index:
@@ -1479,8 +1307,6 @@ nl:
           created_at: Aanmaakdatum
           status: Status
           updated_at: Updated at
-          status_draft: Concept
-          status_published: Published
           title: Title
           slug: Bullet
           cards_title: Tegels
@@ -1528,6 +1354,3 @@ nl:
         submit_header: Bewaar koptekst
         card_title: Kaart bewerken
         submit_card: Kaart opslaan
-    translations:
-      remove_language: Verwijder taal
-      add_language: Taal toevoegen

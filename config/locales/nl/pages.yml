@@ -18,7 +18,6 @@ nl:
         title: "Debatten"
         description: "Bij dit onderdeel %{link} kun je debatteren om je mening met anderen te delen en te bespreken. Dit is ook een plek waar je voorstellen kunt presenteren, die via andere onderdelen van %{org} tot concrete acties voor de gemeente kunnen leiden."
         link: "debatten"
-        feature_html: "Je kunt debatten openen en reageren en je waardering uitdrukken via de <strong>Eens</strong> of <strong>Oneens</strong> knoppen. Daarvoor moet je %{link}."
         feature_link: "registreren in %{org}"
         image_alt: "Knoppen om een debat te waarderen"
         figcaption: '"Eens" en "Oneens" knoppen om debatten te waarderen.'
@@ -27,13 +26,11 @@ nl:
         description: "In dit %{link} onderdeel kun je voorstellen indienen aan jouw gemeente en reageren op voorstellen van anderen. De voorstellen hebben voldoende steun van anderen nodig om tot een stemming te leiden. Als een voorstel veel stemmen krijgt, wordt deze door de gemeente goedgekeurd en uitgevoerd."
         link: "Voorstellen"
         image_alt: "Knop om een voorstel te steunen"
-        figcaption_html: 'Knop om een voorstel te ''''steunen''''.'
       budgets:
         title: "Burgerbegroting"
         description: "Het %{link} onderdeel helpt bij het geven van direct zeggenschap aan inwoners over de besteding van gebiedsbudgetten van de gemeente."
         link: "Burgerbegrotingen"
         image_alt: "Verschillende fasen in de burgerbegroting"
-        figcaption_html: '"Steun" fase en "Stem" fase in de burgerbegroting.'
       polls:
         title: "Polls"
         description: "Het %{link} onderdeel wordt geactiveerd elke keer wanneer een voorstel 1% steun krijgt en tot stemming over gaat, of als de gemeente een vraagstuk en besluit aan de inwoners wil voorleggen."
@@ -157,14 +154,10 @@ nl:
               description_column: Vermindert de tekstgrootte
       compatibility:
         title: Compatibiliteit met standaarden en visuele vormgeving
-        description_html: 'Alle pagina''s van deze website voldoen aan <strong> Toegankelijkheidsrichtlijnen </strong> of generieke principes van toegankelijk ontwerp zoals opgesteld door de werkgroep <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> behorend bij W3C.'
     titles:
       help: "Wat is %{org}? - Burgerparticipatie"
     verify:
-      code: Code die u in een brief heeft ontvangen
-      email: E-mail
       info: "Geef hier je contactgegevens op om je account te verifieren:"
       info_code: "en de code die u heeft ontvangen:"
-      password: Wachtwoord
       submit: Verifieer mijn account
       title: Verifieer uw account

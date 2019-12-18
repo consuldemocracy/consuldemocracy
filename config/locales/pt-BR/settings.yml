@@ -56,6 +56,9 @@ pt-BR:
     meta_keywords_description: 'Palavras-chave <meta name=<"keywords">, usado para melhorar o SEO'
     min_age_to_participate: Idade mínima para participar
     min_age_to_participate_description: "Usuários acima dessa idade podem participar de todo o processo"
+    proposals:
+      poll_short_title: Votações
+      email_short_title: Email
     analytics_url: "URL das análises"
     feature:
       twitter_login: "Login do Twitter"
@@ -66,11 +69,6 @@ pt-BR:
       google_login_description: "Permitir usuários de inscrever-se com sua conta do Google"
       signature_sheets: "Folhas de assinatura"
       signature_sheets_description: "Permite adicionar do painel de administração as assinaturas coletadas no site para propostas e projetos de investimento do orçamento participativo"
-      spending_proposals: "Propostas de gastos"
-      spending_proposals_description: "NOTA: essa funcionalidade foi trocada pelo orçameto participativo e vai disaparecer nas novas versões"
-      spending_proposal_features:
-        voting_allowed: Votar em projetos de investimento - Fase de pré-seleção
-        voting_allowed_description: "NOTA: essa funcionalidade foi trocada pelo orçameto participativo e vai disaparecer nas novas versões"
       user:
         recommendations: "Recomendações"
         recommendations_description: "Mostra aos usuários recomendações na página inical baseada nas etiquetas dos seguintes itens"
@@ -94,3 +92,20 @@ pt-BR:
       public_stats_description: "Mostra estatísticas públicas no painel de administração"
       help_page: "Página de ajuda"
       help_page_description: 'Mostra um menu de Ajuda contendo a página com a seção de informações sobre cada recurso abilitado'
+    map:
+      latitude: "Latitude"
+      latitude_description: "Latitude para mostrar a posição no mapa"
+      longitude: "Longitude"
+      longitude_description: "Longitude para mostrar a posição no mapa"
+      zoom: "Zoom"
+      zoom_description: "Zoom para mostrar a posição do mapa"
+    process:
+      debates: "Debates"
+      debates_description: "O espaço de debate dos cidadãos é focado em qualquer um que possa apresentar porvlemas que os envolvam e sobre como eles quere compartilhas suas visões com outros"
+      proposals: "Propostas"
+      polls: "Votações"
+      budgets: "Orçamento participativo"
+      legislation: "Legislação colaborativa"
+    html:
+      per_page_code_head: "Código a incluir em cada página (<head>)"
+      per_page_code_body: "Código a incluir em cada página (<body>)"

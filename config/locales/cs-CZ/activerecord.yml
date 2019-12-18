@@ -41,11 +41,6 @@ cs:
         few: "Návrhy občanů"
         many: "Návrhy občanů"
         other: "Návrhů občanů"
-      spending_proposal:
-        one: "Investiční projekt"
-        few: "Investiční projekty"
-        many: "Investiční projekty"
-        other: "Investiční projekty"
       legislation/process:
         one: "Proces"
         few: "Procesy"
@@ -138,20 +133,13 @@ cs:
         password_confirmation: "Potvrzení hesla"
         password: "Heslo"
         current_password: "Současné heslo"
-        phone_number: "Telefon"
         official_position: "Official position"
         official_level: "Official level"
+        phone_number: "Telefon"
         redeemable_code: "Verification code received via email"
       organization:
         name: "Název organizace"
         responsible_name: "Osoba zodpovědná za organizaci či skupinu"
-      spending_proposal:
-        administrator_id: "Administrátor"
-        association_name: "Association name"
-        description: "Description"
-        external_url: "Odkaz na další dokumenty"
-        geozone_id: "Vymezení oblasti města"
-        title: "Předmět"
       poll:
         name: "Název"
         starts_at: "Start Date"
@@ -238,10 +226,10 @@ cs:
         text: Komentář
       document:
         title: Předmět
-        attachment: Attachment
+        attachment: "Attachment"
       image:
         title: Předmět
-        attachment: Attachment
+        attachment: "Attachment"
       poll/question/answer:
         title: Odpověď
         description: Description
@@ -254,7 +242,7 @@ cs:
       newsletter:
         segment_recipient: Příjemci
         subject: Subject
-        from: Od
+        from: "Od"
         body: Email content
       admin_notification:
         segment_recipient: Recipients

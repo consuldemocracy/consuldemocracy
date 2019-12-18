@@ -1,4 +1,8 @@
 ru:
+  attributes:
+    results_enabled: "Показать результаты"
+    stats_enabled: "Показать статистику"
+    advanced_stats_enabled: "Показать расширенную статистику"
   activerecord:
     models:
       activity:
@@ -101,16 +105,16 @@ ru:
         few: "сотрудники"
         many: "сотрудники"
         other: "офицеры"
+      poll/ballot_sheet:
+        one: Бюллетень
+        few: Бюллетени
+        many: Бюллетени
+        other: Бюллетени
       proposal:
         one: "Предложение гражданина"
         few: "Предложения граждан"
         many: "Предложения граждан"
         other: "Предложения граждан"
-      spending_proposal:
-        one: "Инвестиционный проект"
-        few: "Инвестиционные проекты"
-        many: "Инвестиционные проекты"
-        other: "Инновационные проекты"
       site_customization/page:
         one: Пользовательская страница
         few: Пользовательские страницы
@@ -126,6 +130,11 @@ ru:
         few: Пользовательские блоки содержимого
         many: Пользовательские блоки содержимого
         other: Пользовательские блоки содержимого
+      document:
+        one: Документ
+        few: Документы
+        many: Документы
+        other: Документы
       legislation/process:
         one: "Процесс"
         few: "Процессы"
@@ -181,6 +190,21 @@ ru:
         few: "Уведомления о предложениях"
         many: "Уведомления о предложениях"
         other: "Уведомления о предложениях"
+      dashboard/action:
+        one: Действие панели управления предложением
+        few: Действия панели управления предложением
+        many: Действия панели управления предложением
+        other: Действия панели управления предложением
+      dashboard/administrator_task:
+        one: Задача
+        few: Задачи
+        many: Задачи
+        other: Задачи
+      link:
+        one: Ссылка
+        few: Ссылки
+        many: Ссылки
+        other: Ссылки
     attributes:
       budget:
         name: "Имя"
@@ -240,6 +264,7 @@ ru:
         title: "Название"
         question: "Вопрос"
         description: "Описание"
+        selected: "Пометить как выбранное"
         terms_of_service: "Условия предоставления услуг"
       user:
         login: "Электронный адрес или имя пользователя"
@@ -248,20 +273,13 @@ ru:
         password_confirmation: "Подтверждение пароля"
         password: "Пароль"
         current_password: "Текущий пароль"
-        phone_number: "Номер телефона"
         official_position: "Официальная позиция"
         official_level: "Официальный уровень"
+        phone_number: "Номер телефона"
         redeemable_code: "Код подтверждения получен по электронному адресу"
       organization:
         name: "Название организации"
         responsible_name: "Лицо, ответственное за группу"
-      spending_proposal:
-        administrator_id: "Администратор"
-        association_name: "Название ассоциации"
-        description: "Описание"
-        external_url: "Ссылка на дополнительную документацию"
-        geozone_id: "Сфера деятельности"
-        title: "Название"
       poll:
         name: "Имя"
         starts_at: "Дата начала"
@@ -280,6 +298,10 @@ ru:
         external_url: "Ссылка на дополнительную документацию"
       poll/question/translation:
         title: "Вопрос"
+      poll/ballot_sheet:
+        data: Данные в CSV
+        poll_id: Голосование
+        officer_assignment_id: Назначение служащего
       signature_sheet:
         signable_type: "Тип подписываемого"
         signable_id: "Подписываемое ID"
@@ -353,10 +375,10 @@ ru:
         text: Отзыв
       document:
         title: Название
-        attachment: Прикрепление
+        attachment: "Прикрепление"
       image:
         title: Название
-        attachment: Прикрепление
+        attachment: "Прикрепление"
       poll/question/answer:
         title: Ответ
         description: Описание
@@ -369,7 +391,7 @@ ru:
       newsletter:
         segment_recipient: Получатели
         subject: Тема
-        from: От
+        from: "От"
         body: Содержание электронной почты
       admin_notification:
         segment_recipient: Получатели
@@ -393,6 +415,23 @@ ru:
         link_text: Текст ссылки
       widget/feed:
         limit: Количество предметов
+      dashboard/action:
+        title: Заголовок
+        short_description: Краткое описание
+        description: Описание
+        link: Внешняя ссылка
+        request_to_administrators: Включить в ресурс кнопку запроса ресурса у администраторов
+        day_offset: В течении какого количества дней с момента создания предложения вы хотите чтобы оно было активировано?
+        required_supports: Какое количество поддержки должно набрать предложение, чтобы стать активированным?
+        order: Вы можете задать позицию, на которой это действие будет показываться пользователю в списке действий
+        active: Активно
+        action_type: Тип
+      dashboard/administrator_task:
+        source: Источник
+        user: Исполнитель -
+      link:
+        label: Заголовок
+        url: Ссылка
     errors:
       models:
         user:
@@ -471,6 +510,7 @@ ru:
               cannot_comment_valuation: "Вы не можете комментировать оценку"
       messages:
         record_invalid: "Ошибка проверки: %{errors}"
+        another_poll_active: Для заданного периода уже есть активное голосование
         restrict_dependent_destroy:
           has_one: "Невозможно удалить запись, поскольку существует зависимый %{record}"
           has_many: "Невозможно удалить запись, поскольку существует зависимый %{record}"

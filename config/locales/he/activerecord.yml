@@ -115,11 +115,6 @@ he:
         two: "הצעת תושבים"
         many: "הצעת תושבים"
         other: "הצעת תושבים"
-      spending_proposal:
-        one: "פרויקט להשקעה"
-        two: "פרויקטים להשקעה"
-        many: "פרויקטים להשקעה"
-        other: "פרויקטים להשקעה"
       site_customization/page:
         one: דף מותאם אישית
         two: דפים מותאמים אישית
@@ -269,6 +264,7 @@ he:
         title: "כותרת"
         question: "שאלה"
         description: "תיאור"
+        selected: "סמן כנבחר"
         terms_of_service: "תנאי השימוש"
       user:
         login: "כתובת דוא\"ל או שם משתמש"
@@ -277,20 +273,13 @@ he:
         password_confirmation: "אימות סיסמה"
         password: "סיסמה"
         current_password: "הסיסמה הנוכחית"
-        phone_number: "מספר טלפון"
         official_position: "תפקיד נושא משרה"
         official_level: "רמת תפקיד נושא המשרה"
+        phone_number: "מספר טלפון"
         redeemable_code: "אימות הסיסמה יתקבל בדואר אלקטרוני"
       organization:
         name: "שם הארגון"
         responsible_name: "האחראי/ת לקבוצה"
-      spending_proposal:
-        administrator_id: "מנהל/ת מערכת"
-        association_name: "שם הארגון/ההתאגדות"
-        description: "תיאור"
-        external_url: "קישור למידע נוסף"
-        geozone_id: "היקף הפעולה"
-        title: "כותרת"
       poll:
         name: "שם"
         starts_at: "תאריך פתיחה"
@@ -386,10 +375,10 @@ he:
         text: הערות
       document:
         title: כותרת
-        attachment: צרופה
+        attachment: "צרופה"
       image:
         title: כותרת
-        attachment: צרופה
+        attachment: "צרופה"
       poll/question/answer:
         title: תשובה
         description: תיאור
@@ -402,7 +391,7 @@ he:
       newsletter:
         segment_recipient: נמענים
         subject: נושא
-        from: מאת
+        from: "מאת"
         body: תוכן האימייל
       admin_notification:
         segment_recipient: נמענים
@@ -443,6 +432,11 @@ he:
       link:
         label: כותרת
         url: קישור
+      valuator:
+        description: תיאור
+        valuator_group_id: קבוצת מעריך
+        can_comment: ניתן ליצור הערות
+        can_edit_dossier: ניתן לערוך את התיק
     errors:
       models:
         user:

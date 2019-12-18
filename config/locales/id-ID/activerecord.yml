@@ -49,8 +49,6 @@ id:
         other: Lembar suara
       proposal:
         other: "Usulan warga"
-      spending_proposal:
-        other: "Proyek investasi"
       site_customization/page:
         other: Gambar Khusus
       site_customization/image:
@@ -154,20 +152,13 @@ id:
         password_confirmation: "Konfirmasi kata sandi"
         password: "Kata Sandi"
         current_password: "Kata sandi saat ini"
-        phone_number: "Nomor telepon"
         official_position: "Posisi resmi"
         official_level: "Tingkat resmi"
+        phone_number: "Nomor telepon"
         redeemable_code: "Kode verifikasi diterima melalui surel"
       organization:
         name: "Nama organisasi"
         responsible_name: "Orang yang bertanggung jawab untuk kelompok"
-      spending_proposal:
-        administrator_id: "Administrasi"
-        association_name: "Asosiasi nama"
-        description: "Deskripsi"
-        external_url: "Tautkan ke dokumentasi tambahan"
-        geozone_id: "Lingkup operasi"
-        title: "Judul"
       poll:
         name: "Nama"
         starts_at: "Tanggal Mulai"
@@ -263,10 +254,10 @@ id:
         text: Komentar
       document:
         title: Judul
-        attachment: Lampiran
+        attachment: "Lampiran"
       image:
         title: Judul
-        attachment: Lampiran
+        attachment: "Lampiran"
       poll/question/answer:
         title: Jawaban
         description: Deskripsi
@@ -279,7 +270,7 @@ id:
       newsletter:
         segment_recipient: Penerima
         subject: Subyek
-        from: Dari
+        from: "Dari"
         body: Konten email
       admin_notification:
         segment_recipient: Penerima

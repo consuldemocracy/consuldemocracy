@@ -4,7 +4,6 @@ pt-BR:
     form:
       title: Imagem descritiva
       title_placeholder: Adicionar um título descritivo para a imagem
-      attachment_label: Escolher imagem
       delete_button: Remover imagem
       note: "Você pode carregar uma imagem dos seguintes tipos de conteúdo: %{accepted_content_types}, até %{max_file_size} MB."
       add_new_image: Adicionar imagem

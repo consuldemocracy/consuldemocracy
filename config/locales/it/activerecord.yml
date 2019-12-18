@@ -1,4 +1,9 @@
 it:
+  attributes:
+    geozone_id: "Scopo dell'operazione"
+    results_enabled: "Mostra risultati"
+    stats_enabled: "Mostra statistiche"
+    advanced_stats_enabled: "Mostra statistiche avanzate"
   activerecord:
     models:
       activity:
@@ -16,6 +21,9 @@ it:
       milestone/status:
         one: "Status dell’investimento"
         other: "Status dell’investimento"
+      progress_bar:
+        one: "Barra dei progressi"
+        other: "Barre dei progressi"
       comment:
         one: "Commentare"
         other: "Commenti"
@@ -58,12 +66,12 @@ it:
       poll/officer:
         one: "responsabile"
         other: "responsabili"
+      poll/ballot_sheet:
+        one: Scheda elettorale
+        other: Schede elettorali
       proposal:
         one: "Proposta cittadina"
         other: "Proposte cittadine"
-      spending_proposal:
-        one: "Progetto di investimento"
-        other: "Progetti di investimento"
       site_customization/page:
         one: Pagina personalizzata
         other: Pagine personalizzate
@@ -73,6 +81,9 @@ it:
       site_customization/content_block:
         one: Blocco di contenuto personalizzato
         other: Blocchi di contenuto personalizzato
+      document:
+        one: Documento
+        other: Documenti
       legislation/process:
         one: "Processo"
         other: "Processi"
@@ -106,6 +117,18 @@ it:
       proposal_notification:
         one: "Notifica di proposta"
         other: "Notifiche di proposta"
+      dashboard/action:
+        one: Azione dashboard di proposta
+        other: Azioni dashboard di proposta
+      dashboard/administrator_task:
+        one: Mansione
+        other: Mansioni
+      link:
+        one: Link
+        other: Link
+      local_census_record:
+        one: Registro censo locale
+        other: Registri censo locale
     attributes:
       budget:
         name: "Nominativo"
@@ -118,6 +141,8 @@ it:
         description_finished: "Descrizione durante la fase della Approvazione del Bilancio / Risultati"
         phase: "Fase"
         currency_symbol: "Valuta"
+      budget/translation:
+        name: "Nome"
       budget/investment:
         heading_id: "Intestazione"
         title: "Titolo"
@@ -128,35 +153,92 @@ it:
         organization_name: "Se presenti una proposta a nome di un collettivo o di un’organizzazione, ovvero per conto di più persone, indicane il nome"
         image: "Immagine descrittiva della proposta"
         image_title: "Titolo dell’immagine"
+        duration: "Tempo scopo"
+        feasibility_feasible: "Fattibile"
+        feasibility_undecided: "Indefinito"
+        feasibility_unfeasible: "Non fattibile"
+        incompatible: "Marca come incompatibile"
+        milestone_tag_list: "Tag pietra miliare"
+        price_explanation: "Spiegazione costo"
+        selected: "Marca come selezionato"
+        selected_true: "Selezionato"
+        selected_false: "Non selezionato"
+        unfeasibility_explanation: "Spiegazione di fattibilità"
+        valuation_finished: "Valutazione conclusa"
+        valuator_ids: "Gruppi"
+        valuation_tag_list: "Tag"
+      budget/investment/translation:
+        title: "Titolo"
+        description: "Descrizione"
+      geozone:
+        name: Nome
+        external_code: "Codice esterno (opzionale)"
+        census_code: "Codice censo (opzionale)"
+        html_map_coordinates: "HTML <map> Coordinate (opzionale)"
       milestone:
         status_id: "Stato attuale dell’investimento (facoltativo)"
         title: "Titolo"
         description: "Descrizione (facoltativa se c’è gia uno stato assegnato)"
         publication_date: "Data di pubblicazione"
+      milestone/translation:
+        description: "Descrizione"
       milestone/status:
         name: "Nominativo"
         description: "Descrizione (facoltativa)"
       progress_bar:
         kind: "Tipo"
         title: "Titolo"
+        percentage: "Progresso corrente"
+      progress_bar/kind:
+        primary: "Principale"
+        secondary: "Secondario"
+      budget/group:
+        max_votable_headings: "Numero massimo di voci in cui l'utente può votare"
+      budget/group/translation:
+        name: "Nome gruppo"
       budget/heading:
+        allow_custom_content: "Consenti blocco contenuto"
+        latitude: "Latitudine (opzionale)"
+        longitude: "Longitudine (opzionale)"
         name: "Denominazione della voce di bilancio"
         price: "Costi"
         population: "Popolazione"
+      budget/heading/translation:
+        name: "Nome voce"
+      budget/phase:
+        enabled: "Fase abilitata"
+        ends_at: "Data fine"
+        starts_at: "Data inizio"
+      budget/phase/translation:
+        description: "Descrizione"
+        summary: "Sommario"
       comment:
         body: "Commentare"
         user: "Utente"
       debate:
         author: "Autore"
         description: "Opinione"
+        tag_list: "Argomenti"
         terms_of_service: "Termini del servizio"
         title: "Titolo"
+      debate/translation:
+        title: "Titolo dibattito"
+        description: "Testo iniziale dibattito"
       proposal:
         author: "Autore"
         title: "Titolo"
         question: "Domanda"
         description: "Descrizione"
+        responsible_name: "Nome completo della persona che invia la proposta"
+        retired_reason: "Ragione di ritiro della proposta"
+        selected: "Marca come selezionato"
         terms_of_service: "Termini del servizio"
+        video_url: "URL video esterno"
+      proposal/translation:
+        title: "Titolo proposta"
+        description: "Testo proposta"
+        summary: "Sommario proposta"
+        retired_explanation: "Spiegazione"
       user:
         login: "E-mail o nome utente"
         email: "Email"
@@ -164,20 +246,26 @@ it:
         password_confirmation: "Conferma password"
         password: "Password"
         current_password: "Password attuale"
-        phone_number: "Numero di telefono"
+        email_digest: "Ricevi un sommario delle notifiche di proposta"
+        email_on_comment: "Notificami via email quando qualcuno commenta le mie proposte o dibattiti"
+        email_on_comment_reply: "Notificami via email quando qualcuno risponde ai miei commenti"
+        email_on_direct_message: "Ricevi email sui messaggi diretti"
+        newsletter: "Ricevi via email informazioni rilevanti sul sito web"
         official_position: "Incarico ufficiale"
+        official_position_badge: "Mostra distintivo posizione ufficiale"
         official_level: "Livello dell'incarico"
+        phone_number: "Numero di telefono"
+        public_activity: "Mantieni pubblica la mia lista delle attività"
+        public_interests: "Mantieni pubblica le etichette di elementi che seguo"
+        recommended_debates: "Mostra raccomandazioni dei dibattiti"
+        recommended_proposals: "Mostra raccomandazioni proposte"
         redeemable_code: "Il codice di verifica che hai ricevuto via email"
+      direct_message:
+        title: "Titolo"
+        body: "Messaggio"
       organization:
         name: "Nome dell'organizzazione"
         responsible_name: "La persona responsabile per l'organzzazione"
-      spending_proposal:
-        administrator_id: "Amministratore"
-        association_name: "Nome Associazione"
-        description: "Descrizione"
-        external_url: "Link alla documentazione integrativa"
-        geozone_id: "Ambito operativo"
-        title: "Titolo"
       poll:
         name: "Nominativo"
         starts_at: "Data inizio"
@@ -185,17 +273,32 @@ it:
         geozone_restricted: "Ristretto alla zona geografica"
         summary: "Sommario"
         description: "Descrizione"
+      active_poll/translation:
+        description: "Descrizione"
+      poll/booth:
+        name: "Nome"
+        location: "Posizione"
       poll/translation:
         name: "Nominativo"
         summary: "Sommario"
         description: "Descrizione"
       poll/question:
+        poll_id: "Sondaggio"
         title: "Quesito"
         summary: "Sommario"
         description: "Descrizione"
         external_url: "Link alla documentazione integrativa"
       poll/question/translation:
         title: "Quesito"
+      poll/ballot_sheet:
+        data: Dati CSV
+        poll_id: Sondaggio
+        officer_assignment_id: Incarico di Ufficiale
+      poll/shift:
+        task: "Mansione"
+      proposal_notification:
+        body: "Messaggio"
+        title: "Titolo"
       signature_sheet:
         signable_type: "Tipo Foglio firme"
         signable_id: "ID Proposta"
@@ -206,6 +309,8 @@ it:
         subtitle: Sottotitolo
         slug: Slug
         status: Status
+        status_draft: "Bozza"
+        status_published: "Pubblicato"
         title: Titolo
         updated_at: Ultimo aggiornamento
         more_info_flag: Visualizza nella guida
@@ -222,6 +327,20 @@ it:
         name: Nominativo
         locale: Lingua
         body: Corpo
+      tag:
+        name: "Digita il nome dell'argomento"
+      topic:
+        title: "Titolo"
+        description: "Testo iniziale"
+      banner:
+        background_color: Colore sfondo
+        font_color: Colore font
+        post_ended_at: "Post terminato alle"
+        post_started_at: "Post avviato alle"
+        target_url: "Link"
+      banner/translation:
+        title: "Titolo"
+        description: "Descrizione"
       legislation/process:
         title: Titolo del processo
         summary: Sommario
@@ -231,21 +350,36 @@ it:
         end_date: Data di fine
         debate_start_date: Data di inizio del dibattito
         debate_end_date: Data di fine del dibattito
+        draft_start_date: Inizio
+        draft_end_date: Fine
         draft_publication_date: Data di pubblicazione della bozza
+        allegations_start_date: Inizio
+        allegations_end_date: Fine
         proposals_phase_start_date: Inizio
         proposals_phase_end_date: Fine
         result_publication_date: Data di pubblicazione del risultato finale
+        background_color: Colore sfondo
+        font_color: Colore font
+        homepage_enabled: "Homepage abilitata"
       legislation/process/translation:
         title: Titolo del Procedimento
         summary: Sommario
         description: Descrizione
         additional_info: Ulteriori info
+        homepage: "Descrizione"
         milestones_summary: Sommario
+      legislation/proposal:
+        description: "Testo proposta"
+        summary: "Sommario proposta"
+        title: "Titolo proposta"
+        video_url: "Link a video esterno"
       legislation/draft_version:
         title: Titolo della versione
         body: Testo
         changelog: Modifiche
         status: Status
+        status_draft: "Bozza"
+        status_published: "Pubblicato"
         final_version: Versione finale
       legislation/draft_version/translation:
         title: Titolo della versione
@@ -254,16 +388,18 @@ it:
       legislation/question:
         title: Titolo
         question_options: Opzioni
+      legislation/question/translation:
+        title: Quesito
       legislation/question_option:
         value: Valore
       legislation/annotation:
         text: Commentare
       document:
         title: Titolo
-        attachment: Allegato
+        attachment: "Allegato"
       image:
         title: Titolo
-        attachment: Allegato
+        attachment: "Allegato"
       poll/question/answer:
         title: Risposta
         description: Descrizione
@@ -276,7 +412,7 @@ it:
       newsletter:
         segment_recipient: Destinatari
         subject: Oggetto
-        from: Da
+        from: "Da"
         body: Contenuto dell’email
       admin_notification:
         segment_recipient: Destinatari
@@ -292,6 +428,7 @@ it:
         description: Descrizione
         link_text: Testo del link
         link_url: URL del link
+        columns: Numero di colonne
       widget/card/translation:
         label: Etichetta (facoltativa)
         title: Titolo
@@ -299,6 +436,38 @@ it:
         link_text: Testo del link
       widget/feed:
         limit: Numero di elementi
+      dashboard/action:
+        title: Titolo
+        short_description: Descrizione breve
+        description: Descrizione
+        link: Link esterno
+        request_to_administrators: Includi nella risorsa un pulsante per richiedere la risorsa dagli amministratori
+        day_offset: A quanti giorni dalla creazione della proposta vuoi che essa sia attivata?
+        required_supports: Quanti supporti deve avere la proposta per poter essere attivata?
+        order: Puoi inserire la posizione dove questa azione sarà mostrata all'utente nella lista di azioni
+        active: Attiva
+        action_type: Tipo
+        action_type_proposed_action: "Azione proposta"
+        action_type_resource: "Risorsa"
+        published_proposal: "Per proposte pubblicate?"
+      dashboard/administrator_task:
+        source: Risorsa
+        user: Eseguito da
+      link:
+        label: Titolo
+        url: Link
+      valuator:
+        description: Descrizione
+        valuator_group_id: Gruppo stimatore
+        can_comment: Può creare commenti
+        can_edit_dossier: Può modificare dossier
+      valuator_group:
+        name: "Nome gruppo"
+      local_census_record:
+        document_type: Tipo documento
+        document_number: Numero documento
+        date_of_birth: Data di nascita
+        postal_code: Codice Postale
     errors:
       models:
         user:
@@ -341,6 +510,10 @@ it:
               invalid_date_range: deve essere almeno dalla data di inizio
             debate_end_date:
               invalid_date_range: deve essere almeno dalla data di inizio del dibattio
+            draft_end_date:
+              invalid_date_range: deve essere uguale o successivo la data di inizio della bozza
+            allegations_end_date:
+              invalid_date_range: deve essere uguale o successivo alla data di inizio dei commenti
         proposal:
           attributes:
             tag_list:
@@ -372,7 +545,9 @@ it:
             valuation:
               cannot_comment_valuation: "Non si può commentare una stima"
       messages:
+        translations_too_short: È obbligatorio fornire almeno una traduzione
         record_invalid: "Verifica non riuscita: %{errors}"
+        another_poll_active: C'è un'altro sondaggio attivo per il periodo dato
         restrict_dependent_destroy:
           has_one: "Non è possibile eliminare il documento perché esiste un %{record} subordinato"
           has_many: "Non è possibile eliminare il documento perché esistono %{record} subordinati"

@@ -7,20 +7,16 @@ sv:
         remaining: "Du har fortfarande <span>%{amount}</span> att spendera."
         no_balloted_group_yet: "Du har inte röstat i den här delen av budgeten än, rösta nu!"
         remove: Dra tillbaka din röst
-        voted_html:
-          one: "Du har röstat på <span>ett</span> budgetförslag."
-          other: "Du har röstat på <span>%{count}</span> budgetförslag."
-        voted_info_html: "Du kan ändra din röst när som helst under den här fasen.<br> Du behöver inte spendera hela din budget."
+        voted_info_2: "Men du kan ändra din röst när som helst fram till att denna fasen stängt."
         zero: Du har inte röstat på några budgetförslag.
       reasons_for_not_balloting:
         not_logged_in: Du behöver %{signin} eller %{signup} för att fortsätta.
         not_verified: Endast verifierade användare kan rösta på budgetförslag; %{verify_account}.
         organization: Organisationer kan inte rösta
         not_selected: Omarkerade budgetförslag kan inte stödjas
-        not_enough_money_html: "Du har redan använt hela din budget.<br><small>Kom ihåg att du kan %{change_ballot} när som helst</small>"
         no_ballots_allowed: Urvalsfasen är stängd
-        different_heading_assigned_html: "Du har redan röstat inom ett annat område: %{heading_link}"
         change_ballot: ändra dina röster
+        casted_offline: Du har redan deltagit offline
     groups:
       show:
         title: Välj ett alternativ
@@ -67,7 +63,6 @@ sv:
         map_location: "Kartposition"
         map_location_instructions: "Navigera till platsen på kartan och placera markören."
         map_remove_marker: "Ta bort kartmarkör"
-        location: "Ytterligare platsinformation"
         map_skip_checkbox: "Det finns ingen specifik geografisk plats för budgetförslaget, eller jag känner inte till platsen."
       index:
         title: Medborgarbudgetar
@@ -78,26 +73,16 @@ sv:
           button: Sök
           placeholder: Sök budgetförslag...
           title: Sök
-        search_results_html:
-          one: " som innehåller <strong>'%{search_term}'</strong>"
-          other: " som innehåller <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Mina röster
-          voted_html:
-            one: "<strong>Du har röstat på ett förslag som kostar %{amount_spent}</strong>"
-            other: "<strong>Du har röstat på %{count} förslag som kostar %{amount_spent}</strong>"
           voted_info: Du kan %{link} när som helst under den här fasen. Du behöver inte spendera hela din budget.
           voted_info_link: ändra din röst
-          different_heading_assigned_html: "Du röstar redan inom ett annat område: %{heading_link}"
           change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
           check_ballot_link: "kontrollera min omröstning"
           zero: Du har inte röstat på några budgetförslag i den här delen av budgeten.
           verified_only: "För att skapa ett nytt budgetförslag måste du %{verify}."
-          verify_account: "verifiera ditt konto"
           create: "Skapa budgetförslag"
           not_logged_in: "Om du vill skapa ett nytt budgetförslag behöver du %{sign_in} eller %{sign_up}."
-          sign_in: "logga in"
-          sign_up: "registrera dig"
           by_feasibility: Efter genomförbarhet
           feasible: Genomförbara projekt
           unfeasible: Ej genomförbara projekt
@@ -111,9 +96,6 @@ sv:
         author_deleted: Användaren är borttagen
         price_explanation: Kostnadsförklaring
         unfeasibility_explanation: Förklaring till varför det inte är genomförbart
-        code_html: "Kod för budgetförslag: <strong>%{code}</strong>"
-        location_html: "Plats: <strong>%{location}</strong>"
-        organization_name_html: "Föreslås på uppdrag av: <strong>%{name}</strong>"
         share: Dela
         title: Budgetförslag
         supports: Stöd
@@ -122,10 +104,7 @@ sv:
         comments_tab: Kommentarer
         milestones_tab: Milstolpar
         author: Skribent
-        project_unfeasible_html: "Det här budgetförslaget <strong>har markerats som ej genomförbart</strong> och kommer inte gå vidare till omröstning."
-        project_selected_html: "Det här budgetförslaget <strong>har gått vidare</strong> till omröstning."
         project_winner: "Vinnande budgetförslag"
-        project_not_selected_html: "Det här budgetförslaget <strong>har inte gått vidare</strong> till omröstning."
         see_price_explanation: Kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
@@ -143,7 +122,6 @@ sv:
         give_support: Stöd
       header:
         check_ballot: Kontrollera min omröstning
-        different_heading_assigned_html: "Du röstar redan inom ett annat område: %{heading_link}"
         change_ballot: "Om du ändrar dig kan du ta bort dina röster i %{check_ballot} och börja om."
         check_ballot_link: "kontrollera min röster"
         price: "Det här området har en budget på"
@@ -163,7 +141,6 @@ sv:
       page_title: "%{budget} - Resultat"
       heading: "Resultat av medborgarbudget"
       heading_selection_title: "Efter stadsdel"
-      spending_proposal: Förslagets titel
       ballot_lines_count: Röster
       hide_discarded_link: Göm avvisade
       show_all_link: Visa alla
@@ -172,12 +149,23 @@ sv:
       accepted: "Accepterade budgetförslag: "
       discarded: "Avvisade budgetförslag: "
       incompatibles: Oförenliga
+      investment_title: Projekttitel
       investment_proyects: Lista över budgetförslag
       unfeasible_investment_proyects: Lista över ej genomförbara budgetförslag
       not_selected_investment_proyects: Lista över budgetförslag som inte gått vidare till omröstning
     executions:
       link: "Milstolpar"
+      page_title: "%{budget} - Milstolpar"
+      heading: "Medborgarbudgetens milstolpar"
       heading_selection_title: "Efter stadsdel"
+      no_winner_investments: "Inga vinnande förslag i denna stadsdel"
+      filters:
+        status:
+          label: "Projektets nuvarande tillstånd"
+          all: "Alla (%{count})"
+        milestone_tag:
+          label: "Milstolpe tagg"
+          all: "Alla (%{count})"
     phases:
       errors:
         dates_range_invalid: "Startdatum kan inte vara samma eller senare än slutdatum"

@@ -17,8 +17,6 @@ he:
         first_theme_not_logged_in: אין נושאים פתוחים, השתתף ביצירת הנושא הראשון.
         first_theme: צור את הנושא הקהילתי הראשון
         sub_first_theme: "כדי ליצור ערכת נושא עליך %{sign_in} או %{sign_up}."
-        sign_in: "התחברות"
-        sign_up: "הרשמה"
       tab:
         participants: משתתפים
       sidebar:
@@ -39,8 +37,6 @@ he:
       create: יצירת נושא
       edit: ערוך נושא
       form:
-        topic_title: כותרת
-        topic_text: טקסט ראשוני
         new:
           submit_button: יצירת נושא
         edit:
@@ -57,6 +53,3 @@ he:
         recommendation_one: לא כותבים כותרת נושא או משפטים שלמים באותיות מודגשות. באינטרנט זה נחשב לצעוק. אף אחד לא אוהב שצועקים.
         recommendation_two: כל נושא או תגובה המרמזת על פעולה לא חוקית תימחק, גם אלו המתכננים לחבל בנושא, כל השאר מותר.
         recommendation_three: מרחב הדיבור חופשי, הקולות אשר ממלאים אותו, הם גם שלך.
-  topics:
-    show:
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה

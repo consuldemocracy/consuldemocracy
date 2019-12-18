@@ -41,8 +41,6 @@ zh-TW:
         other: "職員"
       proposal:
         other: "公民提議"
-      spending_proposal:
-        other: "投資項目"
       site_customization/page:
         other: 自訂頁
       site_customization/image:
@@ -129,20 +127,13 @@ zh-TW:
         password_confirmation: "密碼確認"
         password: "密碼"
         current_password: "當前密碼"
-        phone_number: "電話號碼"
         official_position: "正式職位"
         official_level: "正式級別"
+        phone_number: "電話號碼"
         redeemable_code: "通過電子郵件收到的驗證代碼"
       organization:
         name: "組織名稱"
         responsible_name: "組織的負責人"
-      spending_proposal:
-        administrator_id: "管理員"
-        association_name: "協會名稱"
-        description: "描述"
-        external_url: "鏈接到額外文檔"
-        geozone_id: "經營範圍"
-        title: "標題"
       poll:
         name: "名字"
         starts_at: "開始日期"
@@ -225,10 +216,10 @@ zh-TW:
         text: 評論
       document:
         title: 標題
-        attachment: 附件
+        attachment: "附件"
       image:
         title: 標題
-        attachment: 附件
+        attachment: "附件"
       poll/question/answer:
         title: 回答
         description: 描述
@@ -241,7 +232,7 @@ zh-TW:
       newsletter:
         segment_recipient: 收件者
         subject: 主題
-        from: 從
+        from: "從"
         body: 電郵內容
       admin_notification:
         segment_recipient: 收件者

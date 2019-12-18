@@ -17,9 +17,6 @@ cs:
     letter:
       alert:
         unconfirmed_code: Doposud jste nezadali žádný potvrzovací kód
-      create:
-        flash:
-          success_html: Děkujeme, že jste požádali o maximální bezpečnostní kód (vyžaduje se pouze pro konečné hlasování) </b>. Za pár dní ji zašleme na adresu uvedenou ve vašem profilu, který máme k dispozici. Nezapomeňte, že pokud chcete, můžete svůj kód získat z kteréhokoliv subjektu %{offices}.
       edit:
         see_all: Zobrazit návrhy
         title: Dopis požadován
@@ -28,7 +25,6 @@ cs:
       new:
         explanation: "Pro účast na finálním hlasování může:"
         go_to_index: Zobrazit návrhy
-        office: 'Ověřit v jakékoliv z uvedených subjektů: %{office}'
         send_letter: Pošlete mi dopis s kódem
         title: Blahopřejeme!
         user_permission_info: S vaším účtem můžete...
@@ -47,20 +43,15 @@ cs:
       new:
         accept_terms_text: Přijímám %{terms_url} přístupu k základním registrům
         accept_terms_text_title: Přijímám podmínky přístupu k základním registrům
-        date_of_birth: Datum narození
         document_number: Číslo dokladu
         document_number_help_title: Nápověda
-        document_number_help_text_html: "<strong>Číslo občanského průkazu</strong>: AJ12345678<br> <strong>Pas</strong>: AAA000001<br> <strong>řidičský průkaz</strong>: X1234567P"
         document_type:
           passport: Cestovní pas
           residence_card: Občanský průkaz
           spanish_id: Číslo OP
-        document_type_label: Typ dokumentu
         error_not_allowed_age: Nemáte požadovaný věk pro účast
         error_not_allowed_postal_code: Abyste mohli být ověřeni, musíte se zaregistrovat.
-        error_verifying_census: Nepodařilo se ověřit Vaše údaje. Potvrďte prosím, že vaše údaje jsou správné zavoláním na úřad nebo navštivte jeden ze subjektů %{offices}.
         form_errors: zabránil ověření vašeho bydliště
-        postal_code: PSČ
         postal_code_note: Chcete-li ověřit svůj účet, že musíte se registrovat
         terms: podmínky přístupu
         title: Ověření bydliště
@@ -70,14 +61,12 @@ cs:
         flash:
           success: Zadejte potvrzovací kód, který vám byl odeslán textovou zprávu
       edit:
-        confirmation_code: Zadejte kód, který jste obdrželi na váš mobil
         resend_sms_link: Klikněte zde pro opětovné odeslání
         resend_sms_text: Nedostali jste text s potvrzovací kód?
         submit_button: Odeslat
         title: Bezpečnostní kód potvrzení
       new:
         phone: Zadejte číslo svého mobilního telefonu pro získání kódu
-        phone_format_html: "<strong><em>(příklad: 712345678 nebo +42012345678)</em></strong>"
         phone_note: Váš telefon používáme pouze k zaslání kódu, nikdy vás nebudeme kontaktovat.
         phone_placeholder: "Příklad: 612345678 nebo +42012345678"
         submit_button: Odeslat

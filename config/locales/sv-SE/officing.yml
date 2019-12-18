@@ -21,10 +21,14 @@ sv:
         ballot_sheet_name: Namn
       new:
         booth: Röststation
+        select_booth: Välj röststation
         csv_data: CSV data
         submit: Spara
       show:
         data: CSV data
+    booth:
+      new:
+        title: "Välj din röststation"
     results:
       flash:
         create: "Resultatet har sparats"

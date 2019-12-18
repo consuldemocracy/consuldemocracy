@@ -1,4 +1,8 @@
 da:
+  attributes:
+    results_enabled: "Vis resultater"
+    stats_enabled: "Vis statistik"
+    advanced_stats_enabled: "Vis avanceret statistik"
   activerecord:
     models:
       activity:
@@ -8,11 +12,11 @@ da:
         one: "Budget"
         other: "Budgetter"
       budget/investment:
-        one: "Investering"
-        other: "Investeringer"
+        one: "Projekt"
+        other: "Projekter"
       milestone:
-        one: "Milepæl"
-        other: "Milepæle"
+        one: "proces"
+        other: "processer"
       milestone/status:
         one: "Status for milepæl"
         other: "Status for milepæle"
@@ -41,7 +45,7 @@ da:
         one: "Evaluator"
         other: "Evaluator"
       valuator_group:
-        one: "Evaluator gruppe"
+        one: "Evalueringsgruppe"
         other: "Evaluatorgruppe"
       manager:
         one: "Manager"
@@ -59,7 +63,7 @@ da:
         one: "valgsted"
         other: "valgsteder"
       poll/officer:
-        one: "ansvarlig medarbejder"
+        one: "valgtilforordnede"
         other: "ansvarlig medarbejdere"
       poll/ballot_sheet:
         one: Stemmeseddel
@@ -67,9 +71,6 @@ da:
       proposal:
         one: "Borgerforslag"
         other: "Borgerforslag"
-      spending_proposal:
-        one: "Investeringsprojekter"
-        other: "Investeringsprojekter"
       site_customization/page:
         one: Brugerdefineret side
         other: Brugerdefinerede sider
@@ -79,6 +80,9 @@ da:
       site_customization/content_block:
         one: Tilpassede indholdsblok
         other: Tilpassede indholdsblokke
+      document:
+        one: Dokument
+        other: Dokumenter
       legislation/process:
         one: "Proces"
         other: "Processer"
@@ -180,7 +184,11 @@ da:
         title: "Titel"
         question: "Spørgsmål"
         description: "Beskrivelse"
+        selected: "Markeret som valgt"
         terms_of_service: "Servicevilkår"
+      proposal/translation:
+        summary: "Resume af forslag"
+        retired_explanation: "Forklaring"
       user:
         login: "E-mail eller brugernavn"
         email: "E-mail"
@@ -188,20 +196,13 @@ da:
         password_confirmation: "Bekræftelse af adgangskode"
         password: "Adgangskode"
         current_password: "Nuværende adgangskode"
-        phone_number: "Telefonnummer"
         official_position: "Embedsposition"
         official_level: "Embedsniveau"
+        phone_number: "Telefonnummer"
         redeemable_code: "Verifikationskode modtaget via e-mail"
       organization:
         name: "Navn på organisation"
         responsible_name: "Den ansvarlige for gruppen"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Navn på forening"
-        description: "Beskrivelse"
-        external_url: "Link til yderligere dokumentation"
-        geozone_id: "Projektets omfang"
-        title: "Titel"
       poll:
         name: "Navn"
         starts_at: "Startdato"
@@ -297,10 +298,10 @@ da:
         text: Kommentar
       document:
         title: Titel
-        attachment: Vedhæft fil
+        attachment: "Vedhæft fil"
       image:
         title: Titel
-        attachment: Vedhæft fil
+        attachment: "Vedhæft fil"
       poll/question/answer:
         title: Svar
         description: Beskrivelse
@@ -313,7 +314,7 @@ da:
       newsletter:
         segment_recipient: Modtagere
         subject: Emne
-        from: Fra
+        from: "Fra"
         body: Indhold af e-mail
       admin_notification:
         segment_recipient: Modtagere
@@ -354,6 +355,16 @@ da:
       link:
         label: Titel
         url: Link
+      valuator:
+        description: Beskrivelse
+        valuator_group_id: Evaluatorer
+        can_comment: Kan oprette kommentarer
+        can_edit_dossier: Kan redigere projektinformation
+      local_census_record:
+        document_type: Dokumenttype
+        document_number: Dokument nummer
+        date_of_birth: Fødselsdato
+        postal_code: Postnummer
     errors:
       models:
         user:
