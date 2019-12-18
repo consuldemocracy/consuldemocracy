@@ -29,7 +29,7 @@ class ProposalsController < ApplicationController
     @notifications = @proposal.notifications
     @notifications = @proposal.notifications.not_moderated
     @related_contents = Kaminari.paginate_array(@proposal.relationed_contents)
-                                .page(params[:page]).per(10)
+                                .page(params[:related_content]).per(10)
 
     if request.path != proposal_path(@proposal)
       redirect_to proposal_path(@proposal), status: :moved_permanently

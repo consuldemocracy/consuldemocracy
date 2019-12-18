@@ -41,10 +41,6 @@
         <%= render "proposals/info", proposal: @proposal %>
         <%= render "shared/geozone", geozonable: @proposal %>
 
-        <% unless @proposal.selected? %>
-          <%= render "relationable/related_content", relationable: @proposal %>
-        <% end %>
-
         <div class="js-moderator-proposal-actions margin">
           <%= render "proposals/actions", proposal: @proposal %>
         </div>
@@ -79,6 +75,14 @@
           <%= render "communities/access_button", community: @proposal.community %>
         </aside>
       <% end %>
+    </div>
+  </div>
+<% end %>
+
+<% unless @proposal.selected? %>
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <%= render "relationable/related_content", relationable: @proposal %>
     </div>
   </div>
 <% end %>
