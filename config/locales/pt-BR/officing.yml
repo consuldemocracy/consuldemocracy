@@ -16,6 +16,23 @@ pt-BR:
         no_polls: Você não tem autorização para a recontagem final em nenhuma votação ativa
         select_poll: Selecionar votação
         add_results: Adicionar resultados
+    poll_budgets:
+      index:
+        ballot_sheet_name: Nome
+        ballot_sheet_author: Autor
+        ballot_sheet_creation_date: Data de criação
+      new:
+        booth: Urna
+        select_booth: Selecione a urna
+        csv_data: dados CSV
+        submit: Salvar
+      show:
+        created_at: Data de criação
+        author: Autor
+        data: dados CSV
+    booth:
+      new:
+        title: "Escolha sua urna"
     results:
       flash:
         create: "Resultados salvos"

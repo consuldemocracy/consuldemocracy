@@ -93,10 +93,6 @@ bs:
         one: "Građanski prijedlog"
         few: "Građanski prijedlozi"
         other: "Građanski prijedlozi"
-      spending_proposal:
-        one: "Investicioni projekat"
-        few: "Investicioni projekti"
-        other: "Investicioni projekti"
       site_customization/page:
         one: Prilagođena stranica
         few: Prilagođene stranice
@@ -236,20 +232,13 @@ bs:
         password_confirmation: "Potvrda lozinke"
         password: "Lozinka"
         current_password: "Sadašnja lozinka"
-        phone_number: "Broj telefona"
         official_position: "Anketar"
         official_level: "Stupanj anketara"
+        phone_number: "Broj telefona"
         redeemable_code: "Verifikacioni kod primljen emailom"
       organization:
         name: "Naziv organizacije"
         responsible_name: "Osoba nadležna za grupu"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Naziv udruženja"
-        description: "Opis"
-        external_url: "Link za dodatnu dokumentaciju"
-        geozone_id: "Ciljano područje"
-        title: "Naziv"
       poll:
         name: "Naziv"
         starts_at: "Početni datum"
@@ -345,10 +334,10 @@ bs:
         text: Komentar
       document:
         title: Naziv
-        attachment: Prilog
+        attachment: "Prilog"
       image:
         title: Naziv
-        attachment: Prilog
+        attachment: "Prilog"
       poll/question/answer:
         title: Odgovor
         description: Opis
@@ -361,7 +350,7 @@ bs:
       newsletter:
         segment_recipient: Primatelji
         subject: Predmet
-        from: Od
+        from: "Od"
         body: Sadržaj emaila
       admin_notification:
         segment_recipient: Primatelji

@@ -1,9 +1,7 @@
 da:
   account:
     show:
-      change_credentials_link: Rediger brugeroplysninger
-      email_on_comment_label: Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg
-      email_on_comment_reply_label: Send mig en e-mail når nogen svarer på mine kommentarer
+      change_credentials_link: Vil du ændre din adgangskode?
       erase_account_link: Slet min konto
       finish_verification: Færdiggør verificering
       notifications: Notifikationer
@@ -11,27 +9,19 @@ da:
       organization_responsible_name_placeholder: Repræsentant for organisationen/gruppen
       personal: Personlige oplysninger
       phone_number_label: Telefonnummer
-      public_activity_label: Lad min aktivitetsliste være offentlig
-      public_interests_label: Andre brugere kan se de tags, jeg følger
       public_interests_my_title_list: Tags jeg følger
       public_interests_user_title_list: Tags denne bruger følger
       save_changes_submit: Gem ændringer
-      subscription_to_website_newsletter_label: Modtag relevant information via e-mail
-      email_on_direct_message_label: Modtag e-mails vedrørende direkte beskeder
-      email_digest_label: Modtag et resumé af forslagsnotifikationer
-      official_position_badge_label: Vis embedsmandens position
       recommendations: Anbefalinger
-      show_debates_recommendations: Se anbefalede debatindlæg
-      show_proposals_recommendations: Se anbefalede borgerforslag
       title: Min konto
-      user_permission_debates: Deltag i debat
+      user_permission_debates: Deltage i debat
       user_permission_info: Med din konto kan du...
       user_permission_proposal: Oprette nye forslag
       user_permission_support_proposal: Støtte op om forslag
       user_permission_title: Deltage
-      user_permission_verify: Du skal verificere din konto for at kunne foretage disse handlinger.
+      user_permission_verify: For at kunne foretage handlingerne, skal din konto være verificeret.
       user_permission_verify_info: "* Kun for brugere af Census."
-      user_permission_votes: Deltag i den endelige afstemning
+      user_permission_votes: Deltage i den endelige afstemning
       username_label: Brugernavn
       verified_account: Konto verificeret
       verify_my_account: Verificer min konto
@@ -41,7 +31,6 @@ da:
   comments:
     comments_closed: Lukket for kommentarer
     verified_only: For at deltage %{verify_account}
-    verify_account: bekræft din konto
     comment:
       admin: Administrator
       author: Oprettet af
@@ -51,6 +40,12 @@ da:
         zero: Ingen svar
         one: 1 svar
         other: "%{count} svar"
+      responses_show:
+        zero: Ingen svar
+        one: "Et svar (vis)"
+        other: "%{count} svar (vis)"
+      responses_collapse:
+        zero: Ingen svar
       user_deleted: Bruger slettet
       votes:
         zero: Ingen stemmer
@@ -93,10 +88,8 @@ da:
         submit_button: Gem ændringer
       show_link: Se debatindlæg
     form:
-      debate_text: Indledende tekst
       debate_title: Titel på debatindlæg
       tags_instructions: Tag denne debat.
-      tags_label: Emner
       tags_placeholder: "Tilføj de tags du gerne vil anvende og adskil dem med komma (',')"
     index:
       featured_debates: Vist
@@ -121,9 +114,9 @@ da:
         button: Søg
         placeholder: Søg debatindlæg...
         title: Søg
-      search_results_html:
-        one: " indeholder betegnelsen <strong>'%{search_term}'</strong>"
-        other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
+      search_results:
+        one: " som indeholder <strong>'%{search_term}'</strong>"
+        other: " som indeholder <strong>'%{search_term}'</strong>"
       select_order: Sorter efter
       start_debate: Start en debat
       title: Debatforum
@@ -157,7 +150,6 @@ da:
       comments_title: Kommentarer
       edit_debate_link: Rediger
       flag: Denne debat er blevet markeret som upassende af flere brugere.
-      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       share: Del
       author: Oprettet af
     update:
@@ -175,12 +167,11 @@ da:
     direct_message: privat besked
     error: fejl
     errors: fejl
-    not_saved_html: "forhindrede dette %{resource} i at blive gemt. <br>Se de markerede felter for at rette op på fejlen:"
+    not_saved: "forhindrede denne %{resource} i at blive gemt. <br>Se de markerede felter for at rette op på fejlen:"
     policy: Privatpolitik
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
-    spending_proposal: Udgiftsforslag
-    budget/investment: Investering
+    budget/investment: Projekt
     budget/group: Budget gruppe
     budget/heading: Budget Rubrik
     poll/shift: Skift
@@ -193,7 +184,6 @@ da:
     image: Billede
   geozones:
     none: Hele byen
-    all: Alle felter
   layouts:
     application:
       chrome: Google Chrome
@@ -222,11 +212,11 @@ da:
       consul_url: https://github.com/consul/consul
       contact_us: For teknisk assistance besøg
       copyright: CONSUL, %{year}
-      description: Denne portal anvender %{consul}, som er %{open_source}.
+      description: Denne portal anvender %{consul}, som er en %{open_source}.
       open_source: open-source software
       open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
-      participation_text: Vær med til at forme den by du gerne vil bo i.
-      participation_title: Deltagelse
+      participation_text: vær med til at skabe den by, du gerne vil bo i.
+      participation_title: Deltag og...
       privacy: Persondatapolitik
     header:
       administration_menu: Admin
@@ -239,7 +229,7 @@ da:
       management: Management
       moderation: Moderation
       valuation: Vurdering
-      officing: Ansvarlige medarbejdere for afstemning
+      officing: Valgtilforordnede
       help: Hjælp
       my_account_link: Min konto
       my_activity_link: Min aktivitet
@@ -248,7 +238,6 @@ da:
       proposals: Forslag
       poll_questions: Afstemning
       budgets: Deltagerbudget
-      spending_proposals: Udgiftsforslag
       notification_item:
         new_notifications:
           one: Du har en ny notifikation
@@ -281,7 +270,6 @@ da:
   map:
     title: "Distrikter"
     proposal_for_district: "Opret et forslag til dit distrikt"
-    select_district: Område
     start_proposal: Opret et borgerforslag
   omniauth:
     facebook:
@@ -309,14 +297,14 @@ da:
     created:
       title: Tillykke! Du har taget det første skridt.
       motivation: "Det er vigtigt at forberede introduktionskampagnen, så dit forslag kan opnå succes. De første dage er afgørende."
-      motivation_2_html: "<strong>Hvis du ønsker anbefalinger til forberedelserne, inden du offentliggør dit forslag, så lad dit forslag forblive en udkastversion, og vi vil guide dig.</strong>"
+      motivation_2: "<strong>Hvis du ønsker anbefalinger, inden du offentliggør dit forslag, så lad dit forslag forblive en udkastversion, så kan vi hjælpe dig.</strong>"
       publish: Nej, jeg ønsker at offentliggøre mit forslag
       dashboard: Ja, jeg ønsker hjælp og vil offentliggøre forslaget senere
       preview_title: Sådan vil dit forslag se ud, når du offentliggør det
     share:
       improve_it: Gør din kampagne bedre og få større opbakning.
       dashboard: Flere oplysninger
-      message: "Jeg støttede op om dette forslag %{summary} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
+      message: "Jeg støttede op om dette forslag %{title} i %{handle}. Hvis du er interesseret, så kan du også gå ind og støtte!"
     edit:
       editing: Rediger forslag
       form:
@@ -325,9 +313,7 @@ da:
     retire_form:
       title: Træk forslaget tilbage
       warning: "Hvis du trækker dit forslag tilbage, kan andre brugere fortsat støtte op om det. Forslaget fjernes dog fra den primære liste, og andre brugere vil blive informeret om, at du ikke længere mener, at forslaget skal understøttes"
-      retired_reason_label: Begrundelse for at trække forslaget tilbage
       retired_reason_blank: Vælg en mulighed
-      retired_explanation_label: Forklaring
       retired_explanation_placeholder: Forklar kort hvorfor du tænker, at dette forslag ikke bør modtage mere opbakning
       submit_button: Træk forslaget tilbage
     retire_options:
@@ -337,14 +323,8 @@ da:
       done: Færdig
       other: Andre
     form:
-      geozone: Område
-      proposal_responsible_name: Fulde navn på vedkommende, der fremsender forslaget
       proposal_responsible_name_note: "(individuelt eller som repræsentant for en gruppe; vises ikke offentligt)"
-      proposal_summary: Resumé
       proposal_summary_note: "(max 200 anslag)"
-      proposal_text: Tekst
-      proposal_title: Forslagets titel
-      proposal_video_url: Link til video
       proposal_video_url_note: Du kan tilføje et link til YouTube eller Vimeo
       tag_category_label: "Kategorier"
       tags_instructions: "Tilføj tags. Du kan vælge mellem de allerede viste kategorier eller tilføje dine egne"
@@ -376,6 +356,9 @@ da:
           error: "Der skete en fejl. Gå til \"Min konto\" for manuelt at deaktivere anbefalinger af forslag"
       retired_proposals: Tilbagetrukket forslag
       retired_proposals_link: "Forslag trukket tilbage af brugere, der oprettede det"
+      selected_proposals: Valgte forslag
+      selected_proposals_link: Vis valgte forslag
+      archived_proposals: Arkiverede forslag
       retired_links:
         all: Alle
         duplicated: Kopieret
@@ -387,9 +370,6 @@ da:
         button: Søg
         placeholder: Søg borgerforslag...
         title: Søg
-      search_results_html:
-        one: " som indeholder <strong>'%{search_term}'</strong>"
-        other: " som indeholder <strong>'%{search_term}'</strong>"
       select_order: Sorter efter
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
@@ -450,7 +430,6 @@ da:
       comments_tab: Kommentarer
       dashboard_proposal_link: Dashboard
       flag: Dette forslag er blevet markeret som upassende af flere brugere.
-      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
       notifications_tab: Notifikationer
       milestones_tab: Proces
       retired_warning: "Brugeren, der har oprettet forslaget, mener ikke længere, at det bør understøttes."
@@ -556,7 +535,6 @@ da:
           other: "%{count} svar"
         view_results: Se resultater
         edit_poll: Rediger survey
-        show_results: Se resultater
         show_results_help: Hvis du markerer afkrydsningsfeltet vil resultaterne offentliggøres, og alle brugere vil kunne se dem
       form:
         add_question: Tilføj et spørgsmål
@@ -570,10 +548,8 @@ da:
         title: Forhåndsvisning af plakat
         poster_title: "Stop med at lede,"
         poster_subtitle: "støt mig! :-)"
-        intro_text_html: "<strong>Jeg deltager i %{org}</strong> med mit eget borgerforslag, og kun hvis du også til opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
         proposal_code: "Forslagets kode: %{code}"
         support: Støt mit forslag
-        footer_html: "<strong>Gå til %{link} og støt forslaget.</strong> We er nødt til at være mange. Din beslutning tæller. Tak!"
       new:
         title: Plakat med dit forslag
       options:
@@ -591,7 +567,6 @@ da:
         sent: E-mailen blev sendt
     mailer:
       forward:
-        subtitle_html: "Hvis du støtter mig, <br> vil vi opnå det."
         support_button: Støt forslaget
         share_in: Del i
         hi: "Hej!"
@@ -631,10 +606,6 @@ da:
       back: Tilbage til afstemningen
       cant_answer_not_logged_in: "Du skal %{signin} eller %{signup} for at deltage."
       comments_tab: Kommentarer
-      login_to_comment: Du skal %{signin} eller %{signup} for at skrive en kommentar.
-      signin: Log ind
-      signup: Tilmeld dig
-      cant_answer_verify_html: "Du skal %{verify_link} for at kunne svare."
       verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
       cant_answer_wrong_geozone: "Spørgsmålet er ikke tilgængeligt i dit geografiske område."
@@ -668,10 +639,7 @@ da:
   proposal_notifications:
     new:
       title: "Send besked"
-      title_label: "Titel"
-      body_label: "Besked"
       submit_button: "Send besked"
-      info_about_receivers_html: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlige i %{proposal_page}. <br> Beskeder bliver ikke sendt med det samme. Brugere vil periodisk modtage en e-mail med alle forslagets notifikationer."
       proposal_page: "forslagets side"
     show:
       back: "Gå tilbage til min aktivitet"
@@ -701,6 +669,7 @@ da:
       to: "Til"
     author_info:
       author_deleted: Bruger slettet
+      email_deleted: E-mailen blev slettet
     back: Gå tilbage
     check: Vælg
     check_all: Alle
@@ -710,17 +679,6 @@ da:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Du følger nu investeringsprojektet! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
-        destroy:
-          notice_html: "Du er stoppet med at følge investeringsprojektet! </br> Du vil ikke længere modtage notifikationer relateret til projektet."
-      proposal:
-        create:
-          notice_html: "Du følger nu borgerforslaget! </br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
-        destroy:
-          notice_html: "Du er stoppet med at følge borgerforslaget! </br> Du vil ikke længere modtage notifikationer relateret til forslaget."
     hide: Skjul
     print:
       print_button: Udskriv information
@@ -735,9 +693,9 @@ da:
         see_all: "Se alle"
       budget_investment:
         found:
-          one: "Der findes allerede et investeringsforslag vedrørende '%{query}'. Du kan deltage i det i stedet for at oprette et nyt."
-          other: "Der findes allerede flere investeringsforslag vedrørende '%{query}'. Du kan deltage i dem i stedet for at oprette et nyt."
-        message: "Du ser %{limit} ud af %{count} investeringsforslag, som indeholder '%{query}'"
+          one: "Der findes allerede en projektidé vedrørende '%{query}'. Se idéen an, i stedet for at oprette en ny."
+          other: "Der findes allerede flere projektidéer vedrørende '%{query}'. Se dem an, i stedet for at oprette en ny idé."
+        message: "Du ser %{limit} ud af %{count} projektidéer, som indeholder '%{query}'"
         see_all: "Se alle"
       proposal:
         found:
@@ -750,12 +708,10 @@ da:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
-    target_blank_html: " (linket åbner i et nyt vindue)"
     you_are_in: "Du er inde"
     unflag: Fjern flag
     unfollow_entity: "Følg ikke længere %{entity}"
     outline:
-      budget: Deltagerbudget
       searcher: Søgemaskine
     go_to_page: "Gå til siden "
     share: Del
@@ -778,54 +734,6 @@ da:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Hvis du opretter et forslag på vegne af en forening eller en gruppe, tilføj navnet på den her"
-      association_name: "Navn på forening"
-      description: Beskrivelse
-      external_url: Link til yderligere dokumentation
-      geozone: Område
-      submit_buttons:
-        create: Opret
-        new: Opret
-      title: Titel på udgiftsforslag
-    index:
-      title: Deltagerbudget
-      unfeasible: Ikke mulige investeringsprojekter
-      by_geozone: "Investeringsprojekter tilknyttet et område: %{geozone}"
-      search_form:
-        button: Søg
-        placeholder: Investeringsprojekter...
-        title: Søg
-      search_results:
-        one: " indeholder '%{search_term}'"
-        other: " indeholder '%{search_term}'"
-      sidebar:
-        geozones: Område
-        feasibility: Kan gennemføres
-        unfeasible: Kan ikke gennemføres
-      start_spending_proposal: Opret et investeringsprojekt
-    new:
-      more_info: Hvad fungerer deltagerbudgetter?
-      recommendation_one: Forslaget skal henvise til faktiske omkostninger.
-      recommendation_three: Forsøg at beskrive dit udgiftsforslag med så mange detaljer som muligt, så den professionelle vurderingsgruppe forstår, hvad du mener.
-      recommendation_two: Ethvert forslag eller kommentar, der foreslår en ulovlig handling, vil blive slettet.
-      recommendations_title: Hvordan opretter jeg et udgiftsforslag?
-      start_new: Opret udgiftsforslag
-    show:
-      author_deleted: Bruger slettet
-      code: "Forslagskode:"
-      share: Del
-    wrong_price_format: Kun hele tal
-    spending_proposal:
-      spending_proposal: Investeringsprojekt
-      already_supported: Du har allerede støttet forslaget. Del det!
-      support: Støt
-      support_title: Støt projektet
-      supports:
-        zero: Ingen opbakning
-        one: 1 støtter forslaget
-        other: "%{count} støtter forslaget"
   stats:
     index:
       visits: Besøg
@@ -845,27 +753,21 @@ da:
   users:
     direct_messages:
       new:
-        body_label: Besked
         direct_messages_bloqued: "Denne bruger har besluttet ikke at kunne modtage direkte beskeder"
         submit_button: Send besked
         title: Send privatbesked til %{receiver}
-        title_label: Titel
         verified_only: For at sende en privat besked %{verify_account}
-        verify_account: verificer din konto
-        authenticate: Du skal %{signin} eller %{signup} for at fortsætte.
-        signin: log ind
-        signup: tilmeld dig
       show:
         receiver: Beskeden blev sendt til %{receiver}
     show:
       deleted: Slettet
       deleted_debate: Denne debat er blevet slettet
       deleted_proposal: Dette forslag er blevet slettet
-      deleted_budget_investment: Dette investeringsprojekt er blevet slettet
+      deleted_budget_investment: Projektet er blevet slettet
       proposals: Forslag
       proposals_status: Status
       debates: Debatindlæg
-      budget_investments: Budgetinvesteringer
+      budget_investments: Projektidéer
       comments: Kommentarer
       actions: Handlinger
       filters:
@@ -879,8 +781,8 @@ da:
           one: 1 Forslag
           other: "%{count} Forslag"
         budget_investments:
-          one: 1 Investering
-          other: "%{count} Investeringer"
+          one: 1 projekt
+          other: "%{count} Projekter"
         follows:
           one: 1 Følger
           other: "%{count} Følgere"
@@ -888,7 +790,7 @@ da:
       no_private_messages: "Denne bruger accepterer ikke private beskeder."
       private_activity: Denne bruger har valgt at holde sine aktiviteter private.
       send_private_message: "Send privat besked"
-      delete_alert: "Er du sikker på, du ønsker at slette dit investeringsprojekt? Denne handling kan ikke fortrydes"
+      delete_alert: "Er du sikker på, du ønsker at slette din projektidé? Denne handling kan ikke fortrydes"
     proposals:
       retired: "Tilbagetrukket borgerforslag"
       draft: Udkast
@@ -902,27 +804,17 @@ da:
     comment_unauthenticated: Du skal %{signin} eller %{signup} for at stemme.
     disagree: Jeg er uenig
     organizations: Det er ikke tilladt for organisationer at stemme
-    signin: Log ind
-    signup: Tilmeld dig
     supports: Støtte
-    unauthenticated: Du skal %{signin} eller %{signup} for at fortsætte.
     verified_only: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
-    verify_account: verificer din konto
-    spending_proposals:
-      not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
-      not_verified: Kun verificerede brugere kan stemme på forslag; %{verify_account}.
-      organization: Det er ikke tilladt for organisationer at stemme
-      unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
-      not_voting_allowed: Afstemningsfasen er afsluttet
     budget_investments:
       not_logged_in: Du skal %{signin} eller %{signup} for at fortsætte.
-      not_verified: Kun verificerede brugere kan stemme på investeringsprojekter; %{verify_account}.
+      not_verified: Kun verificerede brugere kan stemme på projektidéer; %{verify_account}.
       organization: Det er ikke tilladt for organisationer at stemme
-      unfeasible: Du kan ikke støtte op om investeringsprojekter, der ikke kan gennemføres
+      unfeasible: Du kan ikke støtte op om projekter, der ikke kan gennemføres
       not_voting_allowed: Afstemningsfasen er afsluttet
       different_heading_assigned:
-        one: "Du kan kun støtte op om investeringsprojekter i %{count} distrikt. Du har allerede støttet investeringer i %{supported_headings}."
-        other: "Du kan kun støtte op om investeringsprojekter i %{count} distrikter. Du har allerede støttet investeringer i %{supported_headings}."
+        one: "Du kan kun støtte op om projekter i %{count} distrikt. Du har allerede støttet projekter i %{supported_headings}."
+        other: "Du kan kun støtte op om projektidéer i %{count} distrikter. Du har allerede støttet projekter i %{supported_headings}."
   welcome:
     feed:
       most_active:
@@ -946,7 +838,7 @@ da:
         title: Borgerforslag, der kunne have din interesse
         btn_text_link: Alle borgerforslag, der kunne have din interesse
       budget_investments:
-        title: Investeringer, der kunne have din interesse
+        title: Projekter, der kunne have din interesse
       slide: "Se %{title}"
     verification:
       i_dont_have_an_account: Jeg er ikke tilmeldt
@@ -957,14 +849,14 @@ da:
       go_to_index: Se borgerforslag og debatindlæg
       start_using_consul: Gå til indekssiden
       title: Deltag
-      user_permission_debates: Deltag i debatten
+      user_permission_debates: Deltage i debatten
       user_permission_info: Med din konto kan du...
       user_permission_proposal: Oprette nye borgerforslag
       user_permission_support_proposal: Støtte op om borgerforslag*
-      user_permission_verify: "Du skal verificere din konto for at kunne foretage handlingerne."
+      user_permission_verify: "For at kunne foretage handlingerne, skal din konto være verificeret."
       user_permission_verify_info: "* Kun for byens beboere."
       user_permission_verify_my_account: Verificer min konto
-      user_permission_votes: Deltag i den endelige afstemning
+      user_permission_votes: Deltage i den endelige afstemning
   invisible_captcha:
     sentence_for_humans: "Hvis du er menneske, så kan du ignorere dette felt"
     timestamp_error_message: "Åh, det gik lidt for hurtigt! Prøv igen."
@@ -984,7 +876,7 @@ da:
     content_title:
       proposal: "Borgerforslag"
       debate: "Debatindlæg"
-      budget_investment: "Budgetinvestering"
+      budget_investment: "Projekt"
   admin/widget:
     header:
       title: Administration
@@ -992,8 +884,6 @@ da:
     help:
       alt: Vælg den tekst, du ønsker at kommentere, og tryk derefter på knappen med skriveredskabet.
       text: For at kunne kommentere dokumentet, skal du være %{sign_in} eller %{sign_up}. Derefter vælger du den tekst, du ønsker at kommentere, og trykker på knappen med skriveredskabet.
-      text_sign_in: log ind
-      text_sign_up: tilmeld
       title: Hvordan kan jeg kommentere på dette?
   links:
     form:
@@ -1008,8 +898,6 @@ da:
       url_placeholder: Link
   communities:
     show:
-      send_notification: Send besked til Fællesskabet
-      author: Bruger
       surveys: Undersøgelser
       complete_survey: Gennemfør undersøgelsen
     subnav:

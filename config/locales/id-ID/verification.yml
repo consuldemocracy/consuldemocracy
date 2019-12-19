@@ -17,9 +17,6 @@ id:
     letter:
       alert:
         unconfirmed_code: Anda belum memasukkan kode verifikasi
-      create:
-        flash:
-          success_html: Terima kasih untuk meminta <b>kode pengamanan maksimum (hanya diperlukan untuk suara akhir)</b> anda. Dalam beberapa hari kami akan mengirimkannya ke alamat yang ditampilkan dalam data yang kami miliki di berkas. Harap diingat itu, jika anda lebih suka, anda dapat mengumpulkan kode anda dari setiap %{offices}.
       edit:
         see_all: Melihat proposal
         title: Surat yang diminta
@@ -28,7 +25,6 @@ id:
       new:
         explanation: "Untuk berpartisipasi pada akhir pemungutan suara, anda dapat:"
         go_to_index: Melihat proposal
-        office: Verifikasi dalam setiap %{office}
         send_letter: Kirimkan saya sebuah surat dengan kode
         title: Selamat!
         user_permission_info: Dengan akun Anda, Anda dapat...
@@ -47,20 +43,15 @@ id:
       new:
         accept_terms_text: Saya menerima %{terms_url} Sensus
         accept_terms_text_title: Saya menerima syarat dan ketentuan dari akses Sensus
-        date_of_birth: Tanggal lahir
         document_number: Nomor Dokumen
         document_number_help_title: Bantuan
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>kartu</strong>: X1234567P"
         document_type:
           passport: Paspor
           residence_card: Kartu kediaman
           spanish_id: DNI
-        document_type_label: Tipe dokumen
         error_not_allowed_age: Anda tidak memiliki usia yang dibutuhkan untuk berpartisipasi
         error_not_allowed_postal_code: Supaya bisa diverifikasi, anda harus terdaftar.
-        error_verifying_census: Sensus tidak mampu untuk memverifikasi informasi anda. Silahkan konfirmasikan bahwa rincian sensus anda adalah benar dengan cara menghubungi ke Dewan Kota atau kunjungi salah satu %{offices}.
         form_errors: mencegah verifikasi tempat tinggal anda
-        postal_code: Kode Pos
         postal_code_note: Untuk memverifikasi akun anda harus terdaftar
         terms: syarat dan ketentuan akses
         title: Verifikasi tinggal
@@ -70,14 +61,12 @@ id:
         flash:
           success: Masukkan kode konfirmasi yang dikirimkan kepada anda melalui pesan teks
       edit:
-        confirmation_code: Masukkan kode yang anda terima di ponsel anda
         resend_sms_link: Klik di sini untuk mengirimkannya lagi
         resend_sms_text: Tidak mendapatkan sebuah teks dengan kode konfirmasi anda?
         submit_button: Kirim
         title: Konfirmasi kode keamanan
       new:
         phone: Masukan nomor ponsel anda untuk menerima kode
-        phone_format_html: "<strong><em>(Contoh: 612345678 atau +34612345678)</em></strong>"
         phone_placeholder: "Contoh: 612345678 or +34612345678"
         submit_button: Kirim
         title: Kirim kode konfirmasi

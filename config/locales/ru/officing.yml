@@ -16,6 +16,25 @@ ru:
         no_polls: Вы не осуществляете удаленную работу по финальным пересчетам ни в одном из активных голосований
         select_poll: Выберите голосование
         add_results: Добавить результаты
+    poll_budgets:
+      see_ballot_sheets: Просмотреть список бюллетеней
+      index:
+        title: "%{poll_budget} - Список бюллетеней"
+        ballot_sheet: "Бюллетень %{id}"
+        ballot_sheet_name: Название
+        ballot_sheet_author: Автор
+        ballot_sheet_creation_date: Дата создания
+        empty_results: Для этого голосования пока нет бюллетеней
+      new:
+        title: "%{poll_budget} - Новый бюллетень"
+        booth: Кабинка
+        select_booth: Выберите кабинку
+        csv_data: Данные в CSV
+        submit: Сохранить
+      show:
+        created_at: Дата создания
+        author: Автор
+        data: Данные в CSV
     booth:
       new:
         title: "Выберите вашу кабинку"
@@ -63,6 +82,7 @@ ru:
         not_to_vote: Лицо решило не голосовать в данный момент
       show:
         can_vote: Может голосовать
+        cannot_vote: Лицо не может голосовать, поскольку не зарегистрировано в районах, где проводится голосование.
         error_already_voted: Уже принял участие в этом голосовании
         submit: Подтвердить голос
         success: "Голос представлен!"

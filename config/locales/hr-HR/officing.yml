@@ -1,15 +1,51 @@
 hr:
   officing:
-    menu:
-      total_recounts: Ukupno prebrojavanja i rezultata
-    poll_budgets:
+    header:
+      title: Bilježenje glasova
+    dashboard:
       index:
+        title: Službeno prebrojavanje
+        info: Ovdje možete potvrditi dokumente korisnika i spremiti rezultate glasova
+        no_shifts: Danas nemate službene smjene.
+    menu:
+      voters: Potvrdi dokument
+      total_recounts: Ukupno prebrojavanja i rezultata
+    polls:
+      final:
+        title: Glasovanje je spremljeno za finalno prebrojavanje
+        no_polls: Nemate službeno prebrojavanje u niti jednom aktivnom glasanju
+        select_poll: Odaberi glasanje
+        add_results: Vidi rezultate
+    poll_budgets:
+      see_ballot_sheets: Vidi glasačke liste
+      index:
+        title: "%{poll_budget} - Glasačke liste"
+        ballot_sheet: "Glasačke liste %{id}"
         ballot_sheet_name: Ime
         ballot_sheet_author: Autor
-      show:
-        author: Autor
-    results:
+        ballot_sheet_creation_date: Datum stvaranja
+        empty_results: Ne postoje glasačke liste za ovo glasovanje
       new:
+        title: "%{poll_budget} - Nove glasačke liste"
+        booth: Glasačko mjesto
+        select_booth: Odaberi glasačko mjesto
+        csv_data: CSV podaci
+        submit: Spremi
+      show:
+        created_at: Datum stvaranja
+        author: Autor
+        data: CSV podaci
+    booth:
+      new:
+        title: "Odaberi svoje glasačko mjesto"
+    results:
+      flash:
+        create: "Spremljeni rezultati"
+        error_create: "Rezultati NISU spremljeni. Greška u podacima."
+        error_wrong_booth: "Pogrešno glasačko mjesto. Rezultati nisu spremljeni."
+      new:
+        title: "%{poll} - Dodaj rezultate"
+        not_allowed: "Nije vam doušteno da dodate rezultate za ovo glasovanje"
         booth: "Glasačko mjesto"
         date: "Datum"
         select_booth: "Odaberi glasačko mjesto"
@@ -39,15 +75,15 @@ hr:
         form_errors: spriječena je verifikacija ovog dokumenta
     voters:
       new:
-        title: Ankete
-        table_poll: Anketa
-        table_status: Stanje ankete
+        title: Glasovanje
+        table_poll: Glasanje
+        table_status: Stanje glasovanja
         table_actions: Djelovanja
         not_to_vote: Osoba je odlučila da neće glasati ovaj puta
       show:
         can_vote: Može glasati
         cannot_vote: Osoba ne može glasati jer nije registrirana u distriktu/distriktima gdje se glasa.
-        error_already_voted: Već je sudjelovao u ovoj anketi
+        error_already_voted: Već je sudjelovao u ovom glasovanju
         submit: Potvrdi glas
         success: "Glas je unesen!"
       can_vote:

@@ -18,7 +18,6 @@ zh-CN:
         title: "辩论"
         description: "在%{link} 部分您可以向他人展示和分享您对与城市相关的问题的意见。它也是一个产生想法的地方，通过%{org} 的其他部分，能让市政局采取具体行动。"
         link: "公民辩论"
-        feature_html: "您可以打开辩论，评论和评估，使用<strong>我同意</strong>或<strong>我不同意</strong>。为此您必须%{link}。"
         feature_link: "在%{org} 注册"
         image_alt: "为辩论评分的按钮"
         figcaption: '为辩论评分的“我同意”和“我不同意”按钮'
@@ -27,13 +26,11 @@ zh-CN:
         description: "在此%{link} 部分，您可以向市政局提出希望可以被他们实行的提议。这些提议需要得到支持，如果它们得到足够的支持，将可以得到公众投票。在公民投票中被确认的提议将被市政局接受并实行。"
         link: "公民提议"
         image_alt: "支持提议的按钮"
-        figcaption_html: '用于“支持”提议的按钮'
       budgets:
         title: "参与性预算编制"
         description: "%{link} 部分帮助人们直接决定如何使用市政预算的部分支出。"
         link: "参与性预算"
         image_alt: "参与性预算的不同阶段"
-        figcaption_html: '参与性预算的“支持”和“投票”阶段。'
       polls:
         title: "投票"
         description: "每当提议取得1%的支持并进入投票，或者市政局提议问题给人们决定的时候，%{link} 部分就会被激活。"
@@ -157,14 +154,10 @@ zh-CN:
               description_column: 减小字体大小
       compatibility:
         title: 与标准和视觉设计兼容
-        description_html: '本网站的所有页面均符合<strong>辅助功能指南</strong>或者属于W3C的<abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> 工作组建立的无障碍设计的一般原则。'
     titles:
       help: "什么是%{org}？－ 公民参与"
     verify:
-      code: 您在信中收到的代码
-      email: 电子邮件地址
       info: "要核实您的账户，请输入您的访问数据："
       info_code: "现在请输入您在信里收到的代码："
-      password: 密码
       submit: 验证我的帐号
       title: 核实您的账户

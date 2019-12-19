@@ -6,7 +6,6 @@ cs:
       description: Informační stránka o podmínkách používání, soukromí a ochraně osobních údajů.
     help:
       title: "%{org} je platforma pro zapojování občanů do spolurozhodování"
-      guide: "Tento návod vysvětluje, jaká sekce na tomto portále existují a jak fungují."
       menu:
         debates: "Debaty"
         proposals: "Návrhy"
@@ -18,7 +17,6 @@ cs:
         title: "Debaty"
         description: "V sekci %{link} můžete prezentovat a sdílet svůj názor s ostatními lidmi k otázkám, které vás znepokojují ve vztahu k městu. Je také místem k vytváření nápadů, které prostřednictvím jiných částí %{org} vedou ke konkrétním opatřením vedení města."
         link: "Debaty"
-        feature_html: "Debaty můžete otevírat, komentovat je a hodnotit pomocí tlačítek <strong>Souhlasím</strong> nebo <strong>Nesouhlasím</strong>. Musíte být ale %{link}."
         feature_link: "registrováni na portále  %{org}"
         image_alt: "Tlačítka k vyhodnocení debat"
         figcaption: 'Tlačítka "souhlasím" a "nesouhlasím" k vyhodnocení debat.'
@@ -27,13 +25,11 @@ cs:
         description: "V sekci %{link} můžete publikovat návrhy pro vedení města. Návrhy vyžadují podporu, a pokud dosáhnou dostatečné podpory, jsou zařazené k veřejnému hlasování. Návrhy schválené těmito hlasy občanů jsou přijímány vedením města k projednání."
         link: "návrhy občanů"
         image_alt: "Tlačítko pro podporu návrhu"
-        figcaption_html: 'Tlačítko "Podpořit" návrh.'
       budgets:
         title: "Participativní rozpočty"
         description: "Sekce %{link} pomáhá lidem přímo rozhodovat o tom, na kterou část rozpočtu města vynakládá své finanční prostředky."
         link: "participativní rozpočty"
         image_alt: "Různé fáze participativního rozpočtu"
-        figcaption_html: 'Fáze "Podpora" a "Hlasování" participativního rozpočtu.'
       polls:
         title: "Průzkum"
         description: "%{link} sekce je aktivována pokud návrh dosáhne 1% podpory a tím je zařazen do veřejného hlasování, a nebo když vedení města samo zveřejní tento návrh k veřejnému hlasování."
@@ -157,14 +153,10 @@ cs:
               description_column: Zmenšit velikost textu
       compatibility:
         title: Kompatibilita se standardy a vizuální design
-        description_html: 'All pages of this website comply with the <strong> Accessibility Guidelines </strong> or General Principles of Accessible Design established by the Working Group <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> belonging to W3C.'
     titles:
       help: "Co je %{org}? - Zapojování občanů"
     verify:
-      code: Kód, který jste obdrželi v dopise
-      email: Email
       info: "Chcete-li ověřit svůj účet, zadejte své přístupové údaje:"
       info_code: "Nyní zadejte kód, který jste obdrželi v dopise:"
-      password: Heslo
       submit: Ověřit můj účet
       title: Ověřte svůj účet

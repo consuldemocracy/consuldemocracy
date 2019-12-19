@@ -4,7 +4,6 @@ he:
     form:
       title: תאור התמונה
       title_placeholder: הוספת כותרת המתארת את התמונה
-      attachment_label: בחירת תמונה
       delete_button: הסרת התמונה
       note: "ניתן להעלות תמונה אחת בנושאי התוכן הבאים: %{accepted_content_types}, גודל מקסמלי %{max_file_size} MB."
       add_new_image: הוספת תמונה

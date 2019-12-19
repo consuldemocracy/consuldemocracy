@@ -70,11 +70,11 @@ he:
       poll_link: קישור למידע נוסף
       poll_link_description: הוספת קישור למידע נוסף לפונקציונליות הסקר של לוח הבקרה
       email_short_title: דואר אלקטרוני
-      email_short_title_description: תיאור קצר של תכונות הדוא"ל. מאפשר למשתמשים לשלוח דוא"ל כדי לקדם את ההצעה שלהם
+      email_short_title_description: 'תיאור קצר של תכונות הדוא"ל. מאפשר למשתמשים לשלוח דוא"ל כדי לקדם את ההצעה שלהם'
       email_description: תיאור הדוא"ל
       email_description_description: תיאור מפורט של תכונות הדוא"ל
       poster_short_title: פוסטר
-      poster_short_title_description: תיאור קצר של תכונות הפוסטר. מאפשר למשתמשים להוריד את הפוסטר ב - PDF כדי לקדם את ההצעה שלהם
+      poster_short_title_description: 'תיאור קצר של תכונות הפוסטר. מאפשר למשתמשים להוריד את הפוסטר ב - PDF כדי לקדם את ההצעה שלהם'
       poster_description: תיאור הפוסטר
       poster_description_description: תיאור מפורט של תכונות הפוסטר
     analytics_url: "ניתוח כתובת URL"
@@ -93,11 +93,6 @@ he:
       featured_proposals_description: "מציג הצעות מובלטות בדף הבית של ההצעות"
       signature_sheets: "דפי חתימות"
       signature_sheets_description: "מאפשר להוסיף מתוך פאנל ניהול החתימות אשר נאספו באתר עבור ההצעות והצעות ההשקעה של התקציבים ההשתתפותיים"
-      spending_proposals: "הצעות לניצול"
-      spending_proposals_description: "⚠️ הערה: פונקציונליות זו הוחלפה בתקציב השתתפותי ותיעלם בגרסאות חדשות"
-      spending_proposal_features:
-        voting_allowed: ההצבעה על פרויקטי השקעות - שלב הבחירה מראש
-        voting_allowed_description: "⚠️ הערה: פונקציונליות זו הוחלפה בתקציב השתתפותי ותיעלם בגרסאות חדשות"
       user:
         recommendations: "המלצות"
         recommendations_description: "מראה המלצות משתמשים בדף הבית בהתבסס על התגים של הפריטים הבאים"
@@ -121,6 +116,8 @@ he:
       public_stats_description: "הצגת סטטיסטיקה ציבורית בלוח ניהול"
       help_page: "דף עזרה"
       help_page_description: 'מציג תפריט עזרה המכיל דף עם מקטע מידע לגבי כל תכונה זמינה. גם דפים מותאמים אישית ותפריטים יכולים להיווצר ב "דפים מותאמים אישית", ו "בלוקים מותאמים אישית"'
+      valuation_comment_notification: "התראת תגובה להערכה"
+      valuation_comment_notification_description: "שלח אימייל לכל המשתמשים המשויכים למעט מעריכים שהגיבו להשקעה בתקציב, כאשר נוצרת הערה חדשה להערכה"
     map:
       latitude: "קו רוחב"
       latitude_description: "קו רוחב להצגת המיקום מפה"
@@ -144,3 +141,25 @@ he:
       per_page_code_head_description: "קוד זה יופיע בתוך תווית ה- <head>. שימושי עבור הזנת סקריפטים מותאמים אישית, אנליטיקה..."
       per_page_code_body: "קוד שייכלל בכל דף (<body>)"
       per_page_code_body_description: "קוד זה יופיע בתוך תווית ה- <body>. שימושי עבור הזנת סקריפטים מותאמים אישית, ואנליטיקה..."
+    uploads:
+      images:
+        min_width: "רוחב תמונה מינימלי"
+        min_width_description: "רוחב תמונה מינימלי להעלאת תמונה ( בפיקסלים)"
+        min_height: "גובה תמונה מינימלי"
+        min_height_description: "גובה תמונה מינימלי להעלאה ( בפיקסלים)"
+        max_size: "גודל תמונה מקסימלי"
+        max_size_description: "גודל תמונה מקסימלי להעלאה ( במגה בייט)"
+        content_types: "פורמט מותר עבור תמונות"
+        content_types_description: "בחר את הפורמט המותר להעלאת תמונות"
+        title:
+          min_length: "אורך מינימלי לכותרת התמונה"
+          min_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
+          max_length: "אורך מקסימלי לכותרת תמונה"
+          max_length_description: "כותרת שסופקה על ידי המשתמש בעת העלאת תמונה (משמשת כתכונת alt HTML)"
+      documents:
+        max_amount: "מספר מסמכים מקסימלי"
+        max_amount_description: "מספר מרבי של מסמכים שניתן לצרף להצעה, להשקעה..."
+        max_size: "משקל מקסימלי למסמך"
+        max_size_description: "הגודל המרבי המותר למסמך שהועלה (ב- מגה בייט/ MB)"
+        content_types: "סוגי תוכן שאושרו עבור מסמכים"
+        content_types_description: "בחר את כל סוגי התוכן המותרים עבור מסמכים שהועלו"

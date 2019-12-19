@@ -26,11 +26,6 @@ pl:
           with_inactive: Nieaktywny
         preview: Podgląd
       banner:
-        title: Tytuł
-        description: Opis
-        target_url: Link
-        post_started_at: Post zaczął się o
-        post_ended_at: Post zakończył się o
         sections_label: Sekcje, w których się pojawią
         sections:
           homepage: Strona główna
@@ -42,13 +37,6 @@ pl:
         editing: Edytuj baner
         form:
           submit_button: Zapisz zmiany
-      errors:
-        form:
-          error:
-            one: "błąd uniemożliwił zapisanie się temu banerowi"
-            few: "błędy uniemożliwiły zapisanie się temu banerowi"
-            many: "błędów uniemożliwiło zapisanie się temu banerowi"
-            other: "błędów uniemożliwiło zapisanie się temu banerowi"
       new:
         creating: Utwórz baner
     activity:
@@ -116,7 +104,6 @@ pl:
       headings_name: "Nagłówki"
       headings_edit: "Edytowanie nagłówków"
       headings_manage: "Zarządzanie nagłówkami"
-      max_votable_headings: "Maksymalna liczba nagłówków, w których użytkownik może głosować"
       no_groups: "Brak grup."
       amount:
         one: "Istnieje 1 grupa"
@@ -133,12 +120,10 @@ pl:
       form:
         create: "Stwórz nową grupę"
         edit: "Edytuj grupę"
-        name: "Nazwa grupy"
         submit: "Zapisz grupę"
       index:
         back: "Wróć do budżetów"
     budget_headings:
-      name: "Nazwa"
       no_headings: "Nie ma nagłówków."
       amount:
         one: "Jest 1 nagłówek"
@@ -153,14 +138,8 @@ pl:
         success_notice: "Nagłówek pomyślnie usunięty"
         unable_notice: "Nie można zniszczyć nagłówek, który jest skojarzony z inwestycją"
       form:
-        name: "Nazwa nagłówka"
-        amount: "Ilość"
-        population: "Populacja (opcjonalnie)"
         population_info: "Pole nagłówka budżetu jest używane do celów statystycznych na końcu budżetu, aby pokazać dla każdego nagłówka, który reprezentuje obszar z liczbą ludności, jaki odsetek głosował. To pole jest opcjonalne, więc możesz zostawić je puste, jeśli nie ma ono zastosowania."
-        latitude: "Szerokość geograficzna (opcjonalnie)"
-        longitude: "Długość geograficzna (opcjonalnie)"
         coordinates_info: "Jeśli podane są szerokość i długość geograficzna, strony inwestycji dla tego nagłówka będzie zawierać mapę. Mapa będzie wyśrodkowany przy użyciu tych współrzędnych."
-        allow_content_block: "Pozwól na załączenie treści"
         content_blocks_info: "Jeśli załączanie treści jest zaznaczone, będzie mógł/a stworzyć treści związane z tym Nagłówkiem: Ustawienia > Niestandardowe bloki Zawartość pojawi się na stronie inwestycji dla tego nagłówka."
         create: "Utwórz nowy nagłówek"
         edit: "Edytuj nagłówek"
@@ -169,13 +148,8 @@ pl:
         back: "Powrót do grup"
     budget_phases:
       edit:
-        start_date: Data rozpoczęcia
-        end_date: Data zakończenia
-        summary: Podsumowanie
         summary_help_text: Ten tekst będzie informował użytkownika o fazie. Aby wyświetlić go, nawet jeśli faza nie jest aktywna, zaznacz pole wyboru poniżej
-        description: Opis
         description_help_text: Ten tekst pojawi się w nagłówku, gdy faza jest aktywna
-        enabled: Włączona faza
         enabled_help_text: Faza ta będzie publiczna na osi czasu fazy budżetowej, a także będzie aktywna do jakichkolwiek innych celów
         save_changes: Zapisz zmiany
     budget_investments:
@@ -198,8 +172,6 @@ pl:
           unfeasible: Niewykonalne
           min_total_supports: Minimalne poparcie
           winners: Zwycięzcy
-          one_filter_html: "Bieżące zastosowane filtry: <b><em>%{filter}</em></b>"
-          two_filters_html: "Bieżące zastosowane filtry: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtruj
         download_current_selection: "Pobierz bieżący wybór"
@@ -209,7 +181,7 @@ pl:
         no_admin_assigned: Nie przypisano administratora
         no_valuators_assigned: Brak przypisanych wyceniających
         feasibility:
-          feasible: "Wykonalne (%{price})"
+          feasible: "Wykonalne"
           unfeasible: "Niewykonalne"
           undecided: "Niezdecydowany"
         selected: "Wybrany"
@@ -251,8 +223,6 @@ pl:
           "false": Zgodne
         selection:
           title: Wybór
-          "true": Wybrany
-          "false": Nie zaznaczone
         winner:
           title: Zwycięzca
           "true": "Tak"
@@ -261,17 +231,13 @@ pl:
       edit:
         classification: Klasyfikacja
         compatibility: Zgodność
-        mark_as_incompatible: Oznacz jako niezgodne
         selection: Wybór
-        mark_as_selected: Oznacz jako wybrane
         assigned_valuators: Wyceniający
         select_heading: Wybierz nagłówek
         submit_button: Zaktualizuj
         user_tags: Użytkownik przypisał tagi
-        tags: Tagi
         tags_placeholder: "Wypisz pożądane tagi, oddzielone przecinkami (,)"
         undefined: Niezdefiniowany
-        user_groups: "Grupy"
       search_unfeasible: Szukaj niewykonalne
     milestones:
       index:
@@ -279,7 +245,6 @@ pl:
         table_title: "Tytuł"
         table_description: "Opis"
         table_publication_date: "Data publikacji"
-        table_status: Status
         table_actions: "Akcje"
         delete: "Usuń wydarzenie"
         no_milestones: "Nie ma zdefiniowanych kamieni milowych"
@@ -293,8 +258,6 @@ pl:
         no_statuses_defined: Nie ma jeszcze zdefiniowanych statusów inwestycyjnych
       new:
         creating: Utwórz wydarzenie
-        date: Data
-        description: Opis
       edit:
         title: Edytuj kamień milowy
       create:
@@ -348,15 +311,7 @@ pl:
         notice: "Pasek postępu usunięty"
     comments:
       index:
-        filter: Filtruj
-        filters:
-          all: Wszystkie
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
-        hidden_debate: Ukryta debata
-        hidden_proposal: Ukryta propozycja
         title: Ukryte komentarze
-        no_hidden_comments: Nie ma żadnych ukrytych komentarzy.
     dashboard:
       index:
         back: Wróć do %{org}
@@ -364,13 +319,7 @@ pl:
         description: Witamy w panelu administracyjnym %{org}.
     debates:
       index:
-        filter: Filtruj
-        filters:
-          all: Wszystkie
-          with_confirmed_hide: Potwierdzone
-          without_confirmed_hide: Oczekujące
         title: Ukryte debaty
-        no_hidden_debates: Nie ma ukrytych debat.
     hidden_users:
       index:
         filter: Filtruj
@@ -408,9 +357,6 @@ pl:
         edit:
           back: Wróć
           submit_button: Zapisz zmiany
-        errors:
-          form:
-            error: Błąd
         form:
           enabled: Włączone
           process: Proces
@@ -424,9 +370,7 @@ pl:
           summary_placeholder: Krótkie podsumowanie opisu
           description_placeholder: Dodaj opis procesu
           additional_info_placeholder: Dodaj dodatkowe informacje, które uważasz za przydatne
-          homepage: Opis
           homepage_description: Tutaj można wyjaśnić kontekst procesu
-          homepage_enabled: Strona domowa włączona
           banner_title: Kolory nagłówków
         index:
           create: Nowy proces
@@ -470,8 +414,6 @@ pl:
           back: Wróć
           id: Identyfikator
           supports: Wsparcie
-          select: Wybierz
-          selected: Wybrany
         form:
           custom_categories: Kategorie
           custom_categories_description: Kategorie, które użytkownicy mogą wybrać, tworząc propozycję.
@@ -489,11 +431,7 @@ pl:
           back: Wróć
           submit_button: Zapisz zmiany
           warning: Edytowałeś tekst, nie zapomnij kliknąć Zapisz, aby trwale zapisać zmiany.
-        errors:
-          form:
-            error: Błąd
         form:
-          title_html: 'Edytowanie <span class="strong">%{draft_version_title}</span> procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Uruchom edytor tekstu
           close_text_editor: Zamknij edytor tekstu
           use_markdown: Sformatuj tekst za pomocą Markdown
@@ -514,9 +452,6 @@ pl:
           back: Wróć
           title: Utwórz nową wersję
           submit_button: Wróć
-        statuses:
-          draft: Projekt
-          published: Opublikowany
         table:
           title: Tytuł
           created_at: Utworzony w
@@ -536,12 +471,8 @@ pl:
           back: Wróć
           title: "Edytuj \"%{question_title}\""
           submit_button: Zapisz zmiany
-        errors:
-          form:
-            error: Błąd
         form:
           add_option: Dodaj opcję
-          title: Pytanie
           title_placeholder: Dodaj pytanie
           value_placeholder: Dodaj zamkniętą odpowiedź
           question_options: "Możliwe odpowiedzi (opcjonalne, domyślnie otwarte odpowiedzi)"
@@ -606,7 +537,6 @@ pl:
       officials: Urzędnicy
       organizations: Organizacji
       settings: Ustawienia globalne
-      spending_proposals: Wnioski wydatkowe
       stats: Statystyki
       signature_sheets: Arkusze podpisu
       site_customization:
@@ -629,7 +559,6 @@ pl:
           content_block:
             update: "Aktualizacja bloku"
       title_moderated_content: Zawartość moderowana
-      title_budgets: Budżety
       title_profiles: Profile
       title_settings: Ustawienia
       title_site_customization: Zawartość witryny
@@ -689,7 +618,6 @@ pl:
         empty_newsletters: Nie ma żadnych biuletynów do pokazania
       new:
         title: Nowy biuletyn
-        from: Adres e-mail, który pojawi się jako wysłanie biuletynu
       edit:
         title: Edytuj biuletyn
       show:
@@ -811,15 +739,6 @@ pl:
         delete: Usuń
       search:
         title: "Wyceniający: wyszukiwanie użytkowników"
-      summary:
-        title: Podsumowanie Wyceniającego dla projektów inwestycyjnych
-        valuator_name: Osoba weryfikująca
-        finished_and_feasible_count: Zakończone i wykonalne
-        finished_and_unfeasible_count: Zakończone i niewykonalne
-        finished_count: Zakończony
-        in_evaluation_count: W ocenie
-        total_count: Łączny
-        cost: Koszt
       form:
         edit_title: "Wyceniający: Edytuj wyceniającego"
         updated: "Wyceniający zaktualizowany pomyślnie"
@@ -840,7 +759,6 @@ pl:
         title: "Grupa wyceniających: %{group}"
         no_valuators: "Ta grupa nie posiada przypisanych wyceniających"
       form:
-        name: "Nazwa grupy"
         new: "Utwórz grupę wyceniających"
         edit: "Zapisz grupę wyceniających"
     poll_officers:
@@ -873,7 +791,6 @@ pl:
         shift: "Przydział"
         shifts: "Zmiany w tej budce wyborczej"
         date: "Data"
-        task: "Zadanie"
         edit_shifts: Edytuj zmiany
         new_shift: "Nowa zmiana"
         no_shifts: "Ta kabina wyborcza nie ma zmian"
@@ -909,11 +826,6 @@ pl:
     poll_booth_assignments:
       alert:
         shifts: "Z tym stoiskiem wiążą się zmiany. Jeśli usuniesz przypisanie stoiska, przesunięcia zostaną również usunięte. Dalej?"
-      flash:
-        destroy: "Stanowisko nie jest już przydzielone"
-        create: "Stanowisko przydzielone"
-        error_destroy: "Wystąpił błąd podczas usuwania przydziału stanowiska"
-        error_create: "Wystąpił błąd podczas przydzielania stanowiska do głosowania"
       show:
         location: "Lokalizacja"
         officers: "Urzędnicy"
@@ -936,7 +848,6 @@ pl:
         title: "Opis sondy"
       form:
         description:
-          text: "Opis"
           help_text: "Ten tekst będzie wyświetlany w nagłówku strony sondy. Można go użyć do dodania kontekstu w stosunku do aktywnych sond."
     polls:
       index:
@@ -985,9 +896,7 @@ pl:
       edit:
         title: "Edytuj Pytanie"
       new:
-        title: "Utwórz Pytanie"
         title_proposal: "Stwórz pytanie"
-        poll_label: "Sondaż"
       answers:
         images:
           add_image: "Dodaj obraz"
@@ -1067,8 +976,6 @@ pl:
         no_location: "Brak Lokalizacji"
       new:
         title: "Nowe stanowisko"
-        name: "Nazwa"
-        location: "Lokalizacja"
         submit_button: "Utwórz stanowisko"
       edit:
         title: "Edytuj stanowisko"
@@ -1197,9 +1104,6 @@ pl:
       proposal_search:
         button: Szukaj
         placeholder: Szukaj propozycji według tytułu, kodu, opisu lub pytania
-      spending_proposal_search:
-        button: Szukaj
-        placeholder: Szukaj propozycji wydatków według tytułu lub opisu
       user_search:
         button: Szukaj
         placeholder: Wyszukaj użytkownika według nazwy lub adresu e-mail
@@ -1218,62 +1122,6 @@ pl:
       created_at: Utworzony w
       delete: Usuń
       color_help: Format szesnastkowy
-    spending_proposals:
-      index:
-        geozone_filter_all: Wszystkie strefy
-        administrator_filter_all: Wszyscy administratorzy
-        valuator_filter_all: Wszyscy wyceniający
-        tags_filter_all: Wszystkie tagi
-        filters:
-          valuation_open: Otwarte
-          without_admin: Bez przypisanego administratora
-          managed: Zarządzane
-          valuating: W trakcie wyceny
-          valuation_finished: Wycena zakończona
-          all: Wszystkie
-        title: Projekty inwestycyjne dla budżetu partycypacyjnego
-        assigned_admin: Przypisany administrator
-        no_admin_assigned: Nie przypisano administratora
-        no_valuators_assigned: Brak przypisanych wyceniających
-        summary_link: "Podsumowanie projektu inwestycyjnego"
-        valuator_summary_link: "Podsumowanie wyceniającego"
-        feasibility:
-          feasible: "Wykonalne (%{price})"
-          not_feasible: "Niewykonalne"
-          undefined: "Niezdefiniowany"
-      show:
-        assigned_admin: Przypisany administrator
-        assigned_valuators: Przypisani wyceniający
-        back: Wstecz
-        classification: Klasyfikacja
-        heading: "Projekt inwestycyjny %{id}"
-        edit: Edytuj
-        edit_classification: Edytuj klasyfikację
-        association_name: Stowarzyszenie
-        by: Przez
-        sent: Wysłane
-        geozone: Zakres
-        dossier: Dokumentacja
-        edit_dossier: Edytuj dokumentację
-        tags: Tagi
-        undefined: Niezdefiniowany
-      edit:
-        classification: Klasyfikacja
-        assigned_valuators: Wyceniający
-        submit_button: Zaktualizuj
-        tags: Tagi
-        tags_placeholder: "Napisz tagi, które chcesz oddzielić przecinkami (,)"
-        undefined: Niezdefiniowany
-      summary:
-        title: Podsumowanie dla projektów inwestycyjnych
-        title_proposals_with_supports: Podsumowanie dla projektów inwestycyjnych z poparciami
-        geozone_name: Zakres
-        finished_and_feasible_count: Zakończone i wykonalne
-        finished_and_unfeasible_count: Zakończone i niewykonalne
-        finished_count: Zakończony
-        in_evaluation_count: W ocenie
-        total_count: Łączny
-        cost_for_geozone: Koszt
     geozones:
       index:
         title: Geostrefa
@@ -1287,13 +1135,6 @@ pl:
         code_help: Kod odpowiedzi dla tej strefy zgodnie ze spisem API
         coordinates: Współrzędne
         coordinates_help: Współrzędne, które będą generować klikalny obszar na mapie obrazu HTML
-      errors:
-        form:
-          error:
-            one: "błąd uniemożliwił zapisanie tej geostrefy"
-            few: "błędy uniemożliwiły zapisanie tej geostrefy"
-            many: "błędy uniemożliwiły zapisanie tej geostrefy"
-            other: "błędy uniemożliwiły zapisanie tej geostrefy"
       edit:
         form:
           submit_button: Zapisz zmiany
@@ -1334,7 +1175,6 @@ pl:
           proposals: Wnioski
           budgets: Otwarte budżety
           budget_investments: Projekty inwestycyjne
-          spending_proposals: Wnioski wydatkowe
           unverified_users: Niezweryfikowani użytkownicy
           user_level_three: Użytkownicy trzeciego poziomu
           user_level_two: Użytkownicy drugiego poziomu
@@ -1376,8 +1216,6 @@ pl:
         title: Tematy wniosków
         topic: Temat
         help: "Gdy użytkownik tworzy wniosek, sugerowane są następujące tematy jako tagi domyślne."
-      name:
-        placeholder: Wpisz nazwę tematu
     users:
       columns:
         name: Nazwa
@@ -1412,9 +1250,6 @@ pl:
           notice: Blok zawartości został pomyślnie usunięty
         edit:
           title: Edytowanie bloku zawartości
-        errors:
-          form:
-            error: Błąd
         index:
           create: Utwórz nowy blok zawartości
           delete: Usuń blok
@@ -1452,9 +1287,6 @@ pl:
           notice: Strona została pomyślnie usunięta
         edit:
           title: Edytowanie %{page_title}
-        errors:
-          form:
-            error: Błąd
         form:
           options: Opcje
         index:
@@ -1468,8 +1300,6 @@ pl:
           created_at: Utworzony w
           status: Status
           updated_at: Aktualizacja w
-          status_draft: Projekt
-          status_published: Opublikowany
           title: Tytuł
           slug: Ścieżka
           cards_title: Karty
@@ -1517,6 +1347,3 @@ pl:
         submit_header: Zapisz nagłówek
         card_title: Edytuj kartę
         submit_card: Zapisz kartę
-    translations:
-      remove_language: Usuń język
-      add_language: Dodaj język

@@ -25,11 +25,6 @@ ast:
           with_inactive: Inactivos
         preview: Previsualizar
       banner:
-        title: Títulu
-        description: Descripción detallada
-        target_url: Enllaz
-        post_started_at: Entamu de publicación
-        post_ended_at: Fin de publicación
         sections:
           debates: Alderique
           proposals: Propuestes
@@ -91,20 +86,11 @@ ast:
         calculated: Calculando ganadoras, puede tardar un minutu.
     budget_groups:
       name: "Nome"
-      form:
-        name: "Nome del grupu"
     budget_headings:
-      name: "Nome"
       form:
-        name: "Nome de la partida"
-        amount: "Cantidá"
         submit: "Guardar partida"
     budget_phases:
       edit:
-        start_date: Fecha d'entamu del procesu
-        end_date: Fecha de fin del procesu
-        summary: Resume
-        description: Descripción detallada
         save_changes: Guardar Cambeos
     budget_investments:
       index:
@@ -128,7 +114,7 @@ ast:
         no_admin_assigned: Ensin almin asignáu
         no_valuators_assigned: Ensin evaluaor
         feasibility:
-          feasible: "Vidable (%{price})"
+          feasible: "Vidable"
           unfeasible: "Invidable"
           undecided: "Ensin decidir"
         selected: "Escoyía"
@@ -160,7 +146,6 @@ ast:
         undefined: Ensin definir
         selection:
           title: Selección
-          "true": Escoyía
         winner:
           title: Ganadora
           "true": "Sí"
@@ -170,13 +155,11 @@ ast:
         assigned_valuators: Evaluaores
         select_heading: Escoyer partida
         submit_button: Actualizar
-        tags: Temes
         tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
         undefined: Ensin definir
       search_unfeasible: Buscar invidables
     milestones:
       index:
-        table_id: "ID"
         table_title: "Títulu"
         table_description: "Descripción detallada"
         table_status: Estáu
@@ -189,8 +172,6 @@ ast:
         new_milestone: Crear nuevu finxu
       new:
         creating: Crear finxu
-        date: Día
-        description: Descripción detallada
       edit:
         title: Editar finxu
       create:
@@ -208,29 +189,16 @@ ast:
         edit: Editar propuesta
     progress_bars:
       index:
-        table_id: "ID"
         table_kind: "Tipu"
         table_title: "Títulu"
     comments:
       index:
-        filter: Filtru
-        filters:
-          all: Toes
-          with_confirmed_hide: Confirmaos
-          without_confirmed_hide: Pindios
-        hidden_debate: Alderique ocultu
-        hidden_proposal: Propuesta oculta
         title: Comentarios ocultos
     dashboard:
       index:
         title: Alministración
     debates:
       index:
-        filter: Filtru
-        filters:
-          all: Toes
-          with_confirmed_hide: Confirmaos
-          without_confirmed_hide: Pindios
         title: Alderiques ocultos
     hidden_users:
       index:
@@ -266,9 +234,6 @@ ast:
         edit:
           back: Volver
           submit_button: Guardar Cambeos
-        errors:
-          form:
-            error: Erru
         form:
           enabled: Habilitáu
           process: Procesu
@@ -278,7 +243,6 @@ ast:
           summary_placeholder: Resume curtiu de la descripción
           description_placeholder: Añede una descripción del procesu
           additional_info_placeholder: Añede cualquier información adicional que pueda ser d'interés
-          homepage: Descripción detallada
         index:
           create: Nuevu procesu
           delete: Borrar
@@ -310,8 +274,6 @@ ast:
           title: Títulu
           back: Volver
           supports: Sofitos
-          select: Escoyer
-          selected: Escoyía
         form:
           custom_categories: Categoríes
       draft_versions:
@@ -327,11 +289,7 @@ ast:
           back: Volver
           submit_button: Guardar Cambeos
           warning: Editasti'l testu. Pa caltener de forma permanente los cambeos, nun escaezas de faer click en Guardar.
-        errors:
-          form:
-            error: Erru
         form:
-          title_html: 'Editando <span class="strong">%{draft_version_title}</span> del procesu <span class="strong">%{process_title}</span>'
           launch_text_editor: Llanzar editor de testu
           close_text_editor: Pesllar editor de testu
           use_markdown: Usa Markdown pa dar formatu al testu
@@ -352,9 +310,6 @@ ast:
           back: Volver
           title: Crear nueva versión
           submit_button: Crear versión
-        statuses:
-          draft: Borrador
-          published: Publicáu
         table:
           title: Títulu
           created_at: Creáu
@@ -374,12 +329,8 @@ ast:
           back: Volver
           title: "Editar “%{question_title}”"
           submit_button: Guardar Cambeos
-        errors:
-          form:
-            error: Erru
         form:
           add_option: +Añedir respuesta zarrada
-          title: Entruga
           value_placeholder: Escribe una respuesta zarrada
         index:
           back: Volver
@@ -428,7 +379,6 @@ ast:
       poll_booths: Allugamientu d'urnes
       officials: Cargos Públicos
       organizations: Organizaciones
-      spending_proposals: Propuestes d'inversión
       stats: Estadístiques
       signature_sheets: Fueyes de firmes
       site_customization:
@@ -445,7 +395,6 @@ ast:
         buttons:
           save: "Guardar"
       title_moderated_content: Conteníu moderao
-      title_budgets: Presupuestos
       title_profiles: Perfiles
       legislation: Lexislación collaborativa
       users: Usuarios
@@ -506,15 +455,6 @@ ast:
       valuator:
         add: Añedir como evaluaor
         delete: Borrar
-      summary:
-        title: Resume d'evaluación de propuestes d'inversión
-        valuator_name: Evaluaor
-        finished_and_feasible_count: Remataes vidables
-        finished_and_unfeasible_count: Remataes invidables
-        finished_count: Remataes
-        in_evaluation_count: N'evaluación
-        total_count: Total
-        cost: Costu
       show:
         description: "Descripción detallada"
         email: "Corréu electrónicu"
@@ -522,8 +462,6 @@ ast:
     valuator_groups:
       index:
         name: "Nome"
-      form:
-        name: "Nome del grupu"
     poll_officers:
       index:
         title: Presidentes de mesa
@@ -566,11 +504,6 @@ ast:
         actions:
           assign: Asignar urna
     poll_booth_assignments:
-      flash:
-        destroy: "Urna ensin asignar"
-        create: "Urna asignada"
-        error_destroy: "Producióse un erru al ensin asignar la urna"
-        error_create: "Producióse un erru al intentar asignar la urna"
       show:
         location: "Allugamientu"
         officers: "Presidentes de mesa"
@@ -629,8 +562,7 @@ ast:
       edit:
         title: "Editar entruga ciudadana"
       new:
-        title: "Crear entruga ciudadana"
-        poll_label: "Votación"
+        title: "Crear entruga ciudadana para la encuesta %{poll}"
       show:
         proposal: Propuesta ciudadana orixinal
         author: Autor
@@ -674,8 +606,6 @@ ast:
         location: "Allugamientu"
       new:
         title: "Nueva urna"
-        name: "Nome"
-        location: "Allugamientu"
         submit_button: "Crear urna"
       edit:
         title: "Editar urna"
@@ -713,9 +643,6 @@ ast:
           pending: Pindios
           rejected: Rechazada
           verified: Verificada
-        hidden_count_html:
-          one: Hay además <strong>una organización</strong> sin usuario o con el usuario bloqueado.
-          other: Hay <strong>%{count} organizaciones</strong> sin usuario o con el usuario bloqueado.
         name: Nome
         email: Corréu electrónicu
         status: Estáu
@@ -783,9 +710,6 @@ ast:
       proposal_search:
         button: Atopar
         placeholder: Buscar propuestas por título, código, descripción o pregunta
-      spending_proposal_search:
-        button: Atopar
-        placeholder: Buscar propuestas por título o descripción
       user_search:
         button: Atopar
         placeholder: Buscar usuario por nombre o email
@@ -800,60 +724,6 @@ ast:
       content: Conteníu
       created_at: Creáu
       delete: Borrar
-    spending_proposals:
-      index:
-        geozone_filter_all: Todos los ámbitos de actuación
-        administrator_filter_all: Tolos alministradores
-        valuator_filter_all: Tolos evaluadores
-        tags_filter_all: Toles etiquetes
-        filters:
-          valuation_open: Abiertu
-          without_admin: Ensin alministrador
-          managed: Xestionando
-          valuating: N'evaluación
-          valuation_finished: Evaluación rematada
-          all: Toes
-        title: Propuestas de inversión para presupuestos participativos
-        assigned_admin: Alministrador asignáu
-        no_admin_assigned: Ensin almin asignáu
-        no_valuators_assigned: Ensin evaluaor
-        summary_link: "Resumen de propuestas"
-        valuator_summary_link: "Resumen de evaluadores"
-        feasibility:
-          feasible: "Vidable (%{price})"
-          not_feasible: "No viable"
-          undefined: "Ensin definir"
-      show:
-        assigned_admin: Alministrador asignáu
-        assigned_valuators: Evaluaores asignaos
-        back: Volver
-        heading: "Propuesta de inversión %{id}"
-        edit: Editar propuesta
-        edit_classification: Editar clasificación
-        association_name: Asociación
-        by: Autor
-        sent: Fecha
-        geozone: Ámbito de ciudad
-        dossier: Informe
-        edit_dossier: Editar informe
-        tags: Temes
-        undefined: Ensin definir
-      edit:
-        assigned_valuators: Evaluaores
-        submit_button: Actualizar
-        tags: Temes
-        tags_placeholder: "Escribe les etiquetes que deseyes separaes por comes (,)"
-        undefined: Ensin definir
-      summary:
-        title: Resumen de propuestas de inversión
-        title_proposals_with_supports: Resumen para propuestas que han superado la fase de apoyos
-        geozone_name: Ámbito de ciudad
-        finished_and_feasible_count: Remataes vidables
-        finished_and_unfeasible_count: Remataes invidables
-        finished_count: Remataes
-        in_evaluation_count: N'evaluación
-        total_count: Total
-        cost_for_geozone: Costu
     geozones:
       index:
         title: Distritos
@@ -911,7 +781,6 @@ ast:
           proposals: Propuestes
           budgets: Presupuestos abiertos
           budget_investments: Propuestes d'inversión
-          spending_proposals: Propuestas de inversión
           unverified_users: Usuarios sin verificar
           user_level_three: Usuarios de nivel tres
           user_level_two: Usuarios de nivel dos
@@ -942,8 +811,6 @@ ast:
       index:
         add_tag: Añade un nuevo tema de propuesta
         title: Temas de propuesta
-      name:
-        placeholder: Escribe el nombre del tema
     users:
       columns:
         name: Nome
@@ -974,9 +841,6 @@ ast:
           notice: Bloque borrado correctamente
         edit:
           title: Editar bloque
-        errors:
-          form:
-            error: Erru
         index:
           create: Crear nuevo bloque
           delete: Borrar bloque
@@ -1009,9 +873,6 @@ ast:
           notice: Página eliminada correctamente
         edit:
           title: Editar %{page_title}
-        errors:
-          form:
-            error: Erru
         form:
           options: Respuestes
         index:
@@ -1025,8 +886,6 @@ ast:
           created_at: Creáu
           status: Estáu
           updated_at: Actualizáu en
-          status_draft: Borrador
-          status_published: Publicáu
           title: Títulu
           slug: Slug
         cards:

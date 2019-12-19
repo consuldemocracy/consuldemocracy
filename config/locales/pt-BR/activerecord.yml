@@ -1,4 +1,8 @@
 pt-BR:
+  attributes:
+    results_enabled: "Exibir resultados"
+    stats_enabled: "Exibir estatísticas"
+    advanced_stats_enabled: "Exibir estatísticas avançadas"
   activerecord:
     models:
       activity:
@@ -61,9 +65,6 @@ pt-BR:
       proposal:
         one: "Proposta dos cidadãos"
         other: "Propostas dos cidadãos"
-      spending_proposal:
-        one: "Projeto de investimento"
-        other: "Projetos de investimento"
       site_customization/page:
         one: Página personalizada
         other: Páginas personalizadas
@@ -73,6 +74,9 @@ pt-BR:
       site_customization/content_block:
         one: Bloco de conteúdo personalizado
         other: Blocos de conteúdo personalizados
+      document:
+        one: Documento
+        other: Documentos
       legislation/process:
         one: "Processo"
         other: "Processos"
@@ -106,6 +110,12 @@ pt-BR:
       proposal_notification:
         one: "Notificação da proposta"
         other: "Notificações de proposta"
+      dashboard/administrator_task:
+        one: Tarefa
+        other: Tarefas
+      link:
+        one: Link
+        other: Links
     attributes:
       budget:
         name: "Nome"
@@ -128,6 +138,8 @@ pt-BR:
         organization_name: "Se você está propondo em nome de um coletivo / organização, ou em nome de mais pessoas, escreva seu nome"
         image: "Imagem descritiva da proposta"
         image_title: "Título da imagem"
+      geozone:
+        name: Nome
       milestone:
         status_id: "Status atual do investimento (opcional)"
         title: "Título"
@@ -139,6 +151,9 @@ pt-BR:
       progress_bar:
         kind: "Tipo"
         title: "Título"
+      progress_bar/kind:
+        primary: "Primário"
+        secondary: "Secundário"
       budget/heading:
         name: "Nome do título"
         price: "Preço"
@@ -156,6 +171,7 @@ pt-BR:
         title: "Título"
         question: "Questão"
         description: "Descrição"
+        selected: "Marcar como selecionado"
         terms_of_service: "Termos de serviço"
       user:
         login: "E-mail ou nome de usuário"
@@ -164,20 +180,13 @@ pt-BR:
         password_confirmation: "Confirmação de senha"
         password: "Senha"
         current_password: "Senha atual"
-        phone_number: "Números de telefone"
         official_position: "Cargo público"
         official_level: "Nível do cargo"
+        phone_number: "Números de telefone"
         redeemable_code: "Código de verificação recebido via e-mail"
       organization:
         name: "Nome da organização"
         responsible_name: "Pessoa responsável pelo grupo"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nome da Associação"
-        description: "Descrição"
-        external_url: "Link para documentação adicional"
-        geozone_id: "Escopo da operação"
-        title: "Título"
       poll:
         name: "Nome"
         starts_at: "Data de início"
@@ -196,6 +205,8 @@ pt-BR:
         external_url: "Link para documentação adicional"
       poll/question/translation:
         title: "Questão"
+      poll/ballot_sheet:
+        poll_id: Votação
       signature_sheet:
         signable_type: "Tipo Significável"
         signable_id: "Identificação Signável"
@@ -222,6 +233,9 @@ pt-BR:
         name: Nome
         locale: localidade
         body: Corpo
+      banner:
+        background_color: Cor de fundo
+        font_color: Cor da fonte
       legislation/process:
         title: Título do processo
         summary: Resumo
@@ -231,10 +245,16 @@ pt-BR:
         end_date: Data de término
         debate_start_date: Data de início do debate
         debate_end_date: Data final do debate
+        draft_start_date: Início
+        draft_end_date: Final
         draft_publication_date: Data de publicação do rascunho
         allegations_start_date: Data de início das alegações
         allegations_end_date: Data de conclusão das alegações
+        proposals_phase_start_date: Início
+        proposals_phase_end_date: Final
         result_publication_date: Data de publicação do resultado final
+        background_color: Cor de fundo
+        font_color: Cor da fonte
       legislation/process/translation:
         title: Título do processo
         summary: Resumo
@@ -255,17 +275,17 @@ pt-BR:
         title: Título
         question_options: Opções
       legislation/question/translation:
-        title: "Questão"
+        title: Questão
       legislation/question_option:
         value: Valor
       legislation/annotation:
         text: Comentar
       document:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       image:
         title: Título
-        attachment: Anexo
+        attachment: "Anexo"
       poll/question/answer:
         title: Resposta
         description: Descrição
@@ -278,7 +298,7 @@ pt-BR:
       newsletter:
         segment_recipient: Destinatários
         subject: Assunto
-        from: De
+        from: "De"
         body: Conteúdo do e-mail
       admin_notification:
         segment_recipient: Destinatários
@@ -294,6 +314,7 @@ pt-BR:
         description: Descrição
         link_text: Texto do link
         link_url: Link da URL
+        columns: Número de colunas
       widget/card/translation:
         label: Protocolo (opcional)
         title: Título
@@ -301,6 +322,22 @@ pt-BR:
         link_text: Texto do link
       widget/feed:
         limit: Número de itens
+      dashboard/action:
+        title: Título
+        short_description: Descrição curta
+        description: Descrição
+        link: Link externo
+        active: Ativo
+        action_type: Tipo
+      dashboard/administrator_task:
+        source: Fonte
+        user: Executado por
+      link:
+        label: Título
+        url: Link
+      valuator:
+        description: Descrição
+        valuator_group_id: Grupo de avaliação
     errors:
       models:
         user:

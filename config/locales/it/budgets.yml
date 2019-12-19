@@ -7,20 +7,22 @@ it:
         remaining: "Hai ancora <span>%{amount}</span> da investire."
         no_balloted_group_yet: "Non hai ancora votato in questo gruppo, vota!"
         remove: Rimuovere il voto
-        voted_html:
-          one: "Hai votato <span>un</span> progetto di investimento."
-          other: "Hai votato <span>%{count}</span> progetti di investimento."
-        voted_info_html: "È possibile cambiare il proprio voto in qualsiasi momento fino alla fine di questa fase. <br> Non è necessario spendere tutti i fondi disponibili."
+        voted:
+          one: "Hai votato <span>un</span> investimento."
+          other: "Hai votato <span>%{count}</span> investimenti."
+        voted_info: "Il tuo scrutinio è confermato!"
+        voted_info_2: "Ma puoi modificare il tuo voto ogni volta che vuoi finché questa fase sarà chiusa."
         zero: Non hai ancora votato nessun progetto di investimento.
       reasons_for_not_balloting:
         not_logged_in: È necessario %{signin} o %{signup} per continuare.
         not_verified: Solo gli utenti verificati possono votare gli investimenti; %{verify_account}.
         organization: Alle organizzazioni non è permesso votare
         not_selected: I progetti di investimento non selezionati non possono essere sostenuti
-        not_enough_money_html: "Hai già assegnato il budget disponibile.<br><small>Ricorda che puoi %{change_ballot} in qualunque momento</small>"
+        not_enough_money: "Hai già assegnato il budget disponibile.<br><small>Ricorda che puoi %{change_ballot} ogni volta che vuoi</small>"
         no_ballots_allowed: Fase di selezione è chiusa
-        different_heading_assigned_html: "Hai già votato per un titolo diverso: %{heading_link}"
+        different_heading_assigned: "Hai già votato per un titolo diverso: %{heading_link}"
         change_ballot: cambiare il tuo voto
+        casted_offline: Hai già partecipato offline
     groups:
       show:
         title: Selezionare un'opzione
@@ -67,7 +69,6 @@ it:
         map_location: "Posizione sulla mappa"
         map_location_instructions: "Scorri la mappa sino a individuare il luogo giusto e posiziona il segnaposto."
         map_remove_marker: "Rimuovi segnaposto"
-        location: "Informazioni aggiuntive sul luogo"
         map_skip_checkbox: "Questo investimento non ha una precisa collocazione geografica ovvero io non ne sono a conoscenza."
       index:
         title: Bilancio partecipativo
@@ -78,26 +79,16 @@ it:
           button: Ricercare
           placeholder: Ricercare progetti di investimento...
           title: Ricercare
-        search_results_html:
-          one: " contenente il termine <strong>'%{search_term}'</strong>"
-          other: " contenente il termine <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: I miei voti
-          voted_html:
-            one: "<strong>Hai votato una proposta con un costo di %{amount_spent}</strong>"
-            other: "<strong>Hai votato %{count} proposte con un costo di %{amount_spent}</strong>"
           voted_info: È possibile %{link} in qualsiasi momento fino alla fine di questa fase. Non è necessario spendere tutti i fondi disponibili.
           voted_info_link: cambiare il tuo voto
-          different_heading_assigned_html: "Hai voti attivi in un'altra voce: %{heading_link}"
           change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
           check_ballot_link: "controllare il mio voto"
           zero: Non hai ancora votato nessun progetto di investimento in questo gruppo.
           verified_only: "Per creare un nuovo budget d'investimento %{verify}."
-          verify_account: "verifica il tuo account"
           create: "Crea un investimento di bilancio"
           not_logged_in: "Per creare un nuovo investimento di bilancio è necessario %{sign_in} o %{sign_up}."
-          sign_in: "accedere"
-          sign_up: "registrarsi"
           by_feasibility: Per fattibilità
           feasible: Progetti realizzabili
           unfeasible: Progetti non realizzabili
@@ -109,9 +100,6 @@ it:
         author_deleted: Utente cancellato
         price_explanation: Informazioni sui costi
         unfeasibility_explanation: Informazioni sulla infattibilità
-        code_html: "Codice del progetto di investimento: <strong>%{code}</strong>"
-        location_html: "Ubicazione: <strong>%{location}</strong>"
-        organization_name_html: "Proposto per conto di: <strong>%{name}</strong>"
         share: Condividere
         title: Progetto di investimento
         supports: Sostegni
@@ -120,10 +108,7 @@ it:
         comments_tab: Commenti
         milestones_tab: Traguardi
         author: Autore
-        project_unfeasible_html: "Questo progetto di investimento <strong>è stato contrassegnato come irrealizzabile</strong> e non accederà alla fase di voto finale."
-        project_selected_html: "Il progetto di investimento <strong>è stato selezionato</strong> per la fase di voto."
         project_winner: "Progetto di investimento vincitore"
-        project_not_selected_html: "Questo progetto di investimento <strong>non è stato selezionato</strong> per la fase di voto finale."
       wrong_price_format: Solo numeri interi
       investment:
         add: Votare
@@ -140,7 +125,6 @@ it:
         give_support: Sostieni
       header:
         check_ballot: Controlla il mio voto
-        different_heading_assigned_html: "Hai voti attivi in un'altra voce: %{heading_link}"
         change_ballot: "Se cambi idea è possibile cancellare il tuo voto in %{check_ballot} e ricominciare da capo."
         check_ballot_link: "controlla il mio voto"
         price: "Questa sezione dispone di un budget di"
@@ -160,7 +144,6 @@ it:
       page_title: "%{budget} - risultati"
       heading: "Risultati per il bilancio partecipativo"
       heading_selection_title: "Per circoscrizione"
-      spending_proposal: Titolo della proposta
       ballot_lines_count: Voti
       hide_discarded_link: Nascondere le scartate
       show_all_link: Visualizzare tutti

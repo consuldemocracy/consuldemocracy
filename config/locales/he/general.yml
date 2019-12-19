@@ -2,8 +2,6 @@ he:
   account:
     show:
       change_credentials_link: שינוי ההרשאות שלי
-      email_on_comment_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מעיר להצעות או לדיונים שלי
-      email_on_comment_reply_label: הודיעו לי בדואר אלקטרוני בכל פעם שמישהו מגיב על ההערות שלי
       erase_account_link: מחק את החשבון שלי
       finish_verification: נא לאמת את החשבון
       notifications: התראות
@@ -11,18 +9,10 @@ he:
       organization_responsible_name_placeholder: נציג הארגון/ההתאגדות
       personal: פרטים אישיים
       phone_number_label: מספר טלפון
-      public_activity_label: השאר את פירוט הפעילויות שלי גלוי לציבור
-      public_interests_label: שמור את התוויות של האלמנטים שאחריהם אני עוקב ציבורית
       public_interests_my_title_list: תגיות של אלמנטים אחריהם אתה עוקב
       public_interests_user_title_list: תגיות של אלמנטים שמשתמש זה עוקב אחריהן
       save_changes_submit: שמירת שינויים
-      subscription_to_website_newsletter_label: ארצה לקבל בדואר אלקטרוני מידע מהאתר
-      email_on_direct_message_label: לקבל בדואר אלקטרוני על פניות אישיות
-      email_digest_label: לקבל סיכום של ההודעות על הצעות חדשות
-      official_position_badge_label: הצג את אות הדירוג הרשמי שלי
       recommendations: המלצות
-      show_debates_recommendations: הצג המלצות לדיונים
-      show_proposals_recommendations: הצג המלצות להצעות
       title: החשבון שלי
       user_permission_debates: להשתתף בדיונים
       user_permission_info: עם חשבונך תוכל/י ...
@@ -41,7 +31,6 @@ he:
   comments:
     comments_closed: לא ניתן להגיב
     verified_only: בכדי להשתתף %{verify_account}
-    verify_account: לאמת את החשבון
     comment:
       admin: מנהל/ת
       author: מחבר/ת
@@ -53,6 +42,18 @@ he:
         two: "%{count} תגובות"
         many: "%{count} תגובות"
         other: "%{count} תגובות"
+      responses_show:
+        zero: אין תגובות
+        one: "תגובה אחת (הצג)"
+        two: "%{count} תגובות (הצג)"
+        many: "%{count} תגובות (הצג)"
+        other: "%{count} תגובות (הצג)"
+      responses_collapse:
+        zero: אין תגובות
+        one: "תגובה אחת (collapse)"
+        two: "%{count} תגובות (collapse)"
+        many: "%{count} תגובות (collapse)"
+        other: "%{count} תגובות (collapse)"
       user_deleted: משתמש/ת זה/ו נמחק/ה
       votes:
         zero: אין הצבעות
@@ -101,10 +102,8 @@ he:
         submit_button: שמירת שינויים
       show_link: צפייה בדיון
     form:
-      debate_text: מלל הדיון
       debate_title: כותרת הדיון
       tags_instructions: תגיות סימון נושאים בדיון זה
-      tags_label: נושאים
       tags_placeholder: "נא לרשום את כל התגיות שברצונך להשתמש בהן, עם פסיק (',') מפריד ביניהן"
     index:
       featured_debates: מומלצים
@@ -131,11 +130,6 @@ he:
         button: חיפוש
         placeholder: חיפוש דיונים...
         title: חיפוש
-      search_results_html:
-        one: " המכיל את המונח <strong>\"%{search_term}' </strong>"
-        two: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
-        many: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
-        other: " המכיל את המונחים <strong>\"%{search_term}' </strong>"
       select_order: הזמנה באמצעות
       start_debate: פתיחת דיון חדש
       title: דיונים
@@ -171,7 +165,6 @@ he:
       comments_title: הערות
       edit_debate_link: ערוך
       flag: דיון זה סומן כבלתי-ראוי על ידי מספר משתמשים
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       share: שיתוף
       author: מחבר/ת
     update:
@@ -189,11 +182,9 @@ he:
     direct_message: פנייה פרטית
     error: שגיאה זו מונעת
     errors: שגיאות אלו מונעות
-    not_saved_html: "מנעו מ %{resource} להישמר. <br>בדוק את השדות המסומנים בכדי לתקן אותם:"
     policy: מדיניות הפרטיות
     proposal: הצעה
     proposal_notification: "התראות"
-    spending_proposal: הצעה למסגרת תקציב
     budget/investment: השקעה
     budget/group: תקציב הקבוצה
     budget/heading: כותרת התקציב
@@ -207,7 +198,6 @@ he:
     image: תמונה
   geozones:
     none: בכל העיר
-    all: כל התחומים
   layouts:
     application:
       chrome: גוגל כרום
@@ -264,7 +254,6 @@ he:
       proposals: הצעות
       poll_questions: הצבעות
       budgets: מימון השתתפותי
-      spending_proposals: הצעות למסגרת תקציב
       notification_item:
         new_notifications:
           one: . יש לך התרעה חדשה
@@ -305,7 +294,6 @@ he:
   map:
     title: "רובע"
     proposal_for_district: "העלאת הצעה בקשר לרובע שלך"
-    select_district: היקף הפעילות
     start_proposal: העל/י הצעה חדשה
   omniauth:
     facebook:
@@ -333,7 +321,6 @@ he:
     created:
       title: ברכות! עשית את הצעד הראשון.
       motivation: "חשוב להכין את קמפיין ההשקה עבור ההצעה שלך לצורך הצלחתה. הימים הראשונים הם המכריעים."
-      motivation_2_html: "<strong>אם את רוצה המלצות בהכנת הפרסום. השאר את הצעתך כטיוטה ואנו נדריך אותך כיצד לעשות זאת.</strong>"
       publish: . לא, אני רוצה לפרסם את ההצעה
       dashboard: . כן, אני רוצה עזרה, ואפרסם זאת מאוחר יותר
       preview_title: כך תיראה הצעתך כאשר תפרסם אותה
@@ -349,9 +336,7 @@ he:
     retire_form:
       title: הסרת הצעה
       warning: "“הסרת ההצעה שלך היא לא מחיקה. ההצעה עדיין תוכל לצבור תמיכה, אך היא תוסר מהרשימה הראשית ולכל המשתמשים שצופים בה תוצג ההודעה שלדעת מציע/ת ההצעה, לא כדאי לתמוך בהצעה הזו יותר.\""
-      retired_reason_label: הסיבה להסרת ההצעה
       retired_reason_blank: בחר/י אפשרות
-      retired_explanation_label: הסבר
       retired_explanation_placeholder: הסבר/י בקיצור מדוע לדעתך לא כדאי לתמוך בהצעה זו כבר
       submit_button: הסרת הצעה
     retire_options:
@@ -361,14 +346,8 @@ he:
       done: גמור
       other: אחר
     form:
-      geozone: היקף הפעילות
-      proposal_responsible_name: שם ושם משפחה מלא של מציע/ת ההצעה
       proposal_responsible_name_note: "“(כאדם פרטי או כנציג/ה של התאגדות תושבים. השם יישמר חסוי מפני שאר המשתמשים)\""
-      proposal_summary: תקציר ההצעה
       proposal_summary_note: "(200 תווים לכל היותר)"
-      proposal_text: מלל ההצעה
-      proposal_title: כותרת ההצעה
-      proposal_video_url: קישור לוידאו חיצוני
       proposal_video_url_note: ניתן להדביק קישור ל-YouTube או Vimeo
       tag_category_label: "תחומים"
       tags_instructions: "תייג/י את התחומים להם שייכת הצעה זו והנושאים בהם היא עוסקת. ניתן לבחור תחומים מרשימה או להוסיף תחומים משלך"
@@ -402,6 +381,10 @@ he:
           error: "ארעה שגיאה. עבור אל דף 'החשבון שלי' בכדי להשבית באופן ידני את ההמלצות לדיונים"
       retired_proposals: הצעות שהוסרו
       retired_proposals_link: "הצעות שהוסרו על-ידי המחבר/ת"
+      selected_proposals: הצעות נבחרות
+      selected_proposals_link: הצג הצעות נבחרות
+      archived_proposals: הצעות בארכיון
+      proposals_lists: רשימת הצעות
       retired_links:
         all: כולם
         duplicated: כפולות
@@ -413,11 +396,6 @@ he:
         button: חיפוש
         placeholder: חיפוש הצעות ...
         title: חיפוש
-      search_results_html:
-        one: " המכיל את המונח <strong>'%{search_term}'</strong>"
-        two: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        many: " המכיל את המונחים <strong>'%{search_term}'</strong>"
-        other: " המכיל את המונחים <strong>'%{search_term}'</strong>"
       select_order: מיין לפי
       select_order_long: "ההצעות מוצגות לך על-פי סדר:"
       start_proposal: העל/י הצעה חדשה
@@ -474,6 +452,7 @@ he:
       total_percent: 100%
       archived: "הצעה זו נגנזה ולא תוכל לצבור עוד תמיכה."
       successful: "הצעה זו הגיעה לתמיכה הנדרשת."
+      selected: "הצעה נבחרת"
     show:
       author_deleted: משתמש/ת זה/ו נמחק/ה
       code: "קוד ההצעה:"
@@ -486,7 +465,6 @@ he:
       comments_tab: הערות
       dashboard_proposal_link: לוח ניהול
       flag: הצעה זו סומנה כבלתי-ראויה בידי מספר משתמשים
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
       notifications_tab: התראות
       milestones_tab: אבני דרך
       retired_warning: "מחבר/ת ההצעה הזו הסיר/ה את ההצעה ומבקש/ת שלא לתמוך בה יותר."
@@ -511,6 +489,7 @@ he:
       mailing: דואר אלקטרוני
       poster: פוסטר
       recommended_actions: פעולות מומלצות
+      messages: הודעות למשתמשים
     form:
       request: בקשה
     create_request:
@@ -576,6 +555,9 @@ he:
       debates: דיונים
       comments: הערות
       latest_comments: הודעות אחרונות
+    messages:
+      send_notification: שלח הודעה לתומכי ההצעה
+      previous_notifications: ראה התראות קודמות
     polls:
       index:
         title: סקרים
@@ -600,9 +582,13 @@ he:
           other: "%{count} תגובות"
         view_results: הצג תוצאות
         edit_poll: ערוך סקר
-        show_results: הצג תוצאות
         show_results_help: אם תבחר בתיבת סימון זו התוצאות יהיו ציבוריות, כל המשתמשים יוכלו לראות אותם
+        delete: מחק סקר
+        alert_notice: פעולה זו תסיר את הסקר ואת כל השאלות הקשורות אליו.
+        success_notice: הסקר נמחק בהצלחה
+        unable_notice: לא ניתן למחוק סקר שקיבל תגובות
       form:
+        name: כותרת הסקר
         add_question: הוסף שאלה
       question_fields:
         remove_question: הסר שאלה
@@ -614,10 +600,8 @@ he:
         title: תצוגה מקדימה של הפוסטר
         poster_title: "אל תמשיך לחפש"
         poster_subtitle: "תמוך בי!;)"
-        intro_text_html: "<strong>אני משתתף ב %{org}</strong> עם הצעת התושב שלי, במידה ואתה מוסיף תוכל לסייע לי להשיג את התמיכה הדרושה בכדי להפוך את העיר למקום שכולנו רוצים."
         proposal_code: "הקוד של ההצעה: %{code}"
         support: תמוך בהצעה שלי
-        footer_html: "<strong>בקר %{link}, ותמוך בהצעה זו.</strong>. אנו צריכים להיות רבים. תחליט גם אתה. תודה!"
       new:
         title: פוסטר ההצעה שלך
       options:
@@ -635,7 +619,6 @@ he:
         sent: האימייל נשלח
     mailer:
       forward:
-        subtitle_html: "אם אתה תומך בי, <br>נגיע לזה."
         support_button: תמיכה בהצעה זו
         share_in: שתף ב
         hi: "שלום!"
@@ -675,10 +658,6 @@ he:
       back: חזרה להצבעה
       cant_answer_not_logged_in: "נדרשת %{signin} או %{signup} בכדי להשתתף"
       comments_tab: הערות
-      login_to_comment: נדרשת %{signin} או %{signup} בכדי להשאיר תגובה
-      signin: התחברות
-      signup: הרשמה
-      cant_answer_verify_html: "נדרש %{verify_link} על מנת לענות תשובה."
       verify_link: "לאמת את החשבון"
       cant_answer_expired: "הצבעה זו הסתיימה"
       cant_answer_wrong_geozone: "הצבעה זו אינה זמינה לאזור הגאוגרפי שלך"
@@ -713,10 +692,7 @@ he:
   proposal_notifications:
     new:
       title: "שלח הודעה"
-      title_label: "שם"
-      body_label: "הודעה"
       submit_button: "שלח הודעה"
-      info_about_receivers_html: "“הודעה זו תישלח אל <strong> %{count} אנשים</strong> ותוצג ב %{proposal_page} <br> ההודעות אינן מתקבלות מיד, אלא נשלחות למשתמשים בדואר אלקטרוני תקופתי ובו סיכום כל ההתרעות על ההצעות שהם עוקבים אחריהן\""
       proposal_page: "דף ההצעה"
     show:
       back: "חזרה לפעילות שלי"
@@ -746,6 +722,7 @@ he:
       to: "אל"
     author_info:
       author_deleted: משתמש/ת זה/ו נמחק/ה
+      email_deleted: האימייל נמחק
     back: חזרה
     check: בחר
     check_all: כולם
@@ -755,17 +732,6 @@ he:
     follow: "עקוב"
     following: "עוקבים"
     follow_entity: "עקוב %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "כעת אתה עוקב אחרי פרויקט השקעה הזה! </br> אנו נודיע לך על השינויים כפי שהם מתרחשים כך שתישאר מעודכן."
-        destroy:
-          notice_html: "הפסקת לעקוב אחר פרויקט השקעה זה! </br> לא תקבל הודעות הקשורות לפרויקט זה."
-      proposal:
-        create:
-          notice_html: "כעת אתה עוקב אחרי הצעת תושב זה!</br> אנו נודיע לך על השינויים כפי שהם מתרחשים בכדי שתישאר מעודכן."
-        destroy:
-          notice_html: "הפסקת לעקוב אחר הצעת תושב זה! </br> לא תקבל הודעות הקשורות להצעה זו."
     hide: הסתר
     print:
       print_button: הדפסת מידע זה
@@ -801,12 +767,10 @@ he:
       districts: "באזור הגאוגרפי שלי"
       districts_list: "רשימת אזורים גאוגרפים"
       categories: "תחומים"
-    target_blank_html: " (הקישור יפתח בחלון חדש)"
     you_are_in: "את/ה נמצא/ת ב-"
     unflag: הסרת דגל
     unfollow_entity: "הפסק לעקוב אחר %{entity}"
     outline:
-      budget: מימון השתתפותי
       searcher: חיפוש
     go_to_page: "עבור אל דף "
     share: שיתוף
@@ -823,64 +787,12 @@ he:
       see_more: ראה עוד המלצות
       hide: הסתר המלצות
   social:
-    facebook: "פייסבוק"
-    twitter: "טוויטר"
-    youtube: "יוטיוב YouTube"
+    facebook: "%{org} פייסבוק"
+    twitter: "%{org} טוויטר"
+    youtube: "%{org} יוטיוב YouTube"
     whatsapp: ווטסאפ
-    telegram: "טלגרם Telegram"
-    instagram: "אינסטגרם Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "אם הצעתך היא בשם ארגון או התאגדות, נא לרשום את שם הארגון/ההתאגדות פה"
-      association_name: "שם הארגון/התאגדות"
-      description: תיאור
-      external_url: קישור למידע נוסף
-      geozone: היקף הפעילות
-      submit_buttons:
-        create: צור
-        new: צור
-      title: כותרת הצעה לתקציב כספי
-    index:
-      title: מימון השתתפותי
-      unfeasible: פרויקטים להשקעה אינם ברי ביצוע
-      by_geozone: "פרויקטים להשקעה בהיקפים של:: %{geozone}"
-      search_form:
-        button: חיפוש
-        placeholder: פרויקטים להשקעה...
-        title: חיפוש
-      search_results:
-        one: " המכיל את המונח '%{search_term}'"
-        two: " המכיל את המונחים '%{search_term}'"
-        many: " המכיל את המונחים '%{search_term}'"
-        other: " המכיל את המונחים '%{search_term}'"
-      sidebar:
-        geozones: היקף הפעילות
-        feasibility: סבירות לביצוע
-        unfeasible: אינו בר ביצוע
-      start_spending_proposal: התחל/י פרוייקט השקעה
-    new:
-      more_info: איך עובד מימון השתתפותי?
-      recommendation_one: חובה שהצעה זו תתייחס לפעולה שאפשר לקבוע לה תקציב לביצוע.
-      recommendation_three: נסה/י לתאר בפרטים מלאים את הפעולות להן את/ה מבקש/ת להוציא כסף, כדי שהצוות הבוחן את הבקשה יבין את כוונתך.
-      recommendation_two: כל הצעה או תגובה הקוראת לפעילות בלתי-חוקית תימחק.
-      recommendations_title: כיצד ליצור הצעה להוצאה כספית
-      start_new: יצירת הצעה תקציב
-    show:
-      author_deleted: משתמש/ת זה/ו נמחק/ה
-      code: "קוד ההצעה:"
-      share: שיתוף
-    wrong_price_format: נא לרשום סכום בשקלים שלמים
-    spending_proposal:
-      spending_proposal: פרויקט להשקעה
-      already_supported: כבר תמכת בהצעה זו. שתף אותה!
-      support: בעד
-      support_title: תמיכה בפרויקט זה
-      supports:
-        zero: אין תמיכה
-        one: תמיכה 1
-        two: "%{count} תומכים"
-        many: "%{count} תומכים"
-        other: "%{count} תומכים"
+    telegram: "%{org} טלגרם Telegram"
+    instagram: "%{org} אינסטגרם Instagram"
   stats:
     index:
       visits: ביקורים
@@ -900,16 +812,10 @@ he:
   users:
     direct_messages:
       new:
-        body_label: הודעה
         direct_messages_bloqued: "משתמש/ת זה/ו בחר/ה שלא לקבל הודעות ופניות ישירות"
         submit_button: שליחה
         title: שליחת הודעה פרטית אל %{receiver}
-        title_label: כותרת
         verified_only: כדי שתוכל/י לשלוח הודעה פרטית %{verify_account}
-        verify_account: אמת את חשבונך
-        authenticate: נדרשת %{signin} או %{signup} בכדי להמשיך
-        signin: התחברות
-        signup: הרשמה
       show:
         receiver: ההודעה נשלחה אל %{receiver}
     show:
@@ -967,18 +873,8 @@ he:
     comment_unauthenticated: נדרשת %{signin} או %{signup} בכדי להצביע
     disagree: אני מסתייג
     organizations: ארגונים אינם רשאים להצביע
-    signin: התחברות
-    signup: הרשמה
     supports: לחיצה לתמיכה
-    unauthenticated: נדרשת %{signin} או %{signup} בכדי להמשיך
     verified_only: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
-    verify_account: אמת את החשבון
-    spending_proposals:
-      not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
-      not_verified: רק משתמשים מאומתים יכולים להצביע על הצעות; %{verify_account}.
-      organization: ארגונים אינם רשאים להצביע
-      unfeasible: לא ניתן לתמוך בפרויקטים שאינם ברי ביצוע
-      not_voting_allowed: שלב ההצבעות נסגר
     budget_investments:
       not_logged_in: נדרשת %{signin} או %{signup} בכדי להמשיך
       not_verified: רק משתמשים שאומת חשבונם יכולים להצביע על ההצעות; %{verify_account}.
@@ -1059,8 +955,6 @@ he:
     help:
       alt: בחר את הטקסט שברצונך להגיב עליו ולחץ על הלחצן עם העיפרון.
       text: כדי להגיב על מסמך זה עליך%{sign_in} או%{sign_up}. לאחר מכן בחר את הטקסט שברצונך להגיב ולחץ על הלחצן עם העיפרון.
-      text_sign_in: כניסה
-      text_sign_up: הרשמה
       title: איך אני יכול להגיב על מסמך זה?
   links:
     form:
@@ -1075,8 +969,6 @@ he:
       url_placeholder: כתובת הקישור
   communities:
     show:
-      send_notification: שלח מסר לקהילה
-      author: מחבר/ת
       surveys: סקרים
       complete_survey: השלם את הסקר
     subnav:

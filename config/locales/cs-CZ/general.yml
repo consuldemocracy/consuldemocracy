@@ -2,8 +2,6 @@ cs:
   account:
     show:
       change_credentials_link: Změnit své přihlašovací údaje
-      email_on_comment_label: Informujte mě e-mailem, když někdo okomentuje mé návrhy nebo debaty
-      email_on_comment_reply_label: Informujte mě emailem, když někdo odpoví na mé komentáře
       erase_account_link: Smazat můj účet
       finish_verification: Dokončete ověření
       notifications: Upozornění
@@ -11,18 +9,10 @@ cs:
       organization_responsible_name_placeholder: Zástupce organizace / kolektivu
       personal: Osobní údaje
       phone_number_label: Telefon
-      public_activity_label: Udržujte seznam mých aktivit veřejný
-      public_interests_label: Uchovávejte štítky prvků, které sleduji veřejně
       public_interests_my_title_list: Štítky oblastí, které sledujete
       public_interests_user_title_list: Štítky oblastí, které tento uživatel sleduje
       save_changes_submit: Uložit změny
-      subscription_to_website_newsletter_label: Příjem relevantních informací e-mailem
-      email_on_direct_message_label: Přijímat e-maily s přímými zprávami
-      email_digest_label: Získat přehled oznámení o návrzích
-      official_position_badge_label: Zobrazit odznak oficiální pozice
       recommendations: Doporučení
-      show_debates_recommendations: Zobrazit doporučení k debatám
-      show_proposals_recommendations: Zobrazit doporučení k návrhům
       title: Můj účet
       user_permission_debates: Zapojit se do debat
       user_permission_info: S vaším účtem můžete...
@@ -41,7 +31,6 @@ cs:
   comments:
     comments_closed: Komentáře jsou uzavřeny
     verified_only: Pro zapojení %{verify_account}
-    verify_account: ověřte Váš účet
     comment:
       admin: Administrátor
       author: Author
@@ -85,10 +74,8 @@ cs:
         submit_button: Uložit změny
       show_link: Zobrazit debatu
     form:
-      debate_text: Počáteční text debaty
       debate_title: Název debaty
       tags_instructions: Oštítkujte tuto debatu.
-      tags_label: Obsah
       tags_placeholder: "Zadejte štítky, které chcete používat, oddělené čárkami (',')"
     index:
       featured_debates: Doporučené
@@ -141,7 +128,6 @@ cs:
       comments_title: Komentáře
       edit_debate_link: Upravit
       flag: Tato diskuse byla označena několika uživateli za nevhodnou.
-      login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
       share: Sdílet
       author: Autor
     update:
@@ -159,11 +145,9 @@ cs:
     direct_message: soukromá zpráva
     error: chyba
     errors: chyby
-    not_saved_html: "zabránil uložení %{resource}. <br>Zkontrolujte označená pole a pokuste se je opravit:"
     policy: Zásady ochrany osobních údajů
     proposal: Návrhy
     proposal_notification: "upozornění"
-    spending_proposal: Výdaje návrhu
     budget/investment: Investice
     budget/group: Rozpočtová skupina
     budget/heading: Rozpočtová skupina
@@ -177,7 +161,6 @@ cs:
     image: Image
   geozones:
     none: Celé město
-    all: Všechny oblasti
   layouts:
     application:
       chrome: Google Chrome
@@ -217,7 +200,6 @@ cs:
       proposals: Návrhy
       poll_questions: Průzkumy
       budgets: Participativní rozpočet
-      spending_proposals: Výdaje návrhů
       notification_item:
         notifications: Upozornění
         no_notifications: "Nemáte žádná nová upozornění"
@@ -237,7 +219,6 @@ cs:
   map:
     title: "Městské části"
     proposal_for_district: "Dejte se do návrhu pro Vaši oblast"
-    select_district: Vymezení oblasti města
     start_proposal: Vytvořit návrh
   omniauth:
     facebook:
@@ -263,7 +244,7 @@ cs:
       form:
         submit_button: Vytvořit návrh
     share:
-      message: "Podpořil jsem návrh %{summary} v %{handle}. Pokud máte zájem, podporují jej také!"
+      message: "Podpořil jsem návrh %{title} v %{handle}. Pokud máte zájem, podporují jej také!"
     edit:
       editing: Upravit návrh
       form:
@@ -272,9 +253,7 @@ cs:
     retire_form:
       title: Pozastavit návrh
       warning: "Jestliže návrh pozastavíte, bude moci i nadéle získat podporu, ale bude odstraněn z hlavního seznamu a zprávy budou viditelné všem uživatelům s uvedením informace autora, že by návrh už neměl být podporován."
-      retired_reason_label: Důvod k pozastavení návrhu
       retired_reason_blank: Vyberte možnost
-      retired_explanation_label: Vysvětlení
       retired_explanation_placeholder: Vysvětlit krátce, proč si myslíte, že tento návrh shoulderstand neobdrží další podporu
       submit_button: Pozastavený návrh
     retire_options:
@@ -284,14 +263,8 @@ cs:
       done: Hotové
       other: Jiné
     form:
-      geozone: Scope of operation
-      proposal_responsible_name: Úplné jméno osoby, která podala návrh
       proposal_responsible_name_note: "(jednotlivě nebo jako zástupce kolektivu, nebudou zobrazovány veřejně)"
-      proposal_summary: Shrnutí návrhu
       proposal_summary_note: "(maximálně 200 znaků)"
-      proposal_text: Popis návrhu
-      proposal_title: Název návrhu
-      proposal_video_url: Odkaz na externí video
       proposal_video_url_note: Můžete přidat odkaz na YouTube nebo Vimeo
       tag_category_label: "Kategorie"
       tags_instructions: "Štítek tohoto návrhu. Můžete si vybrat z kategorií nebo přidat vlastní"
@@ -381,7 +354,6 @@ cs:
         zero: Žádné komentáře
       comments_tab: Komentáře
       flag: Tento návrh byl více uživateli označen jako nevhodný.
-      login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
       notifications_tab: Upozornění
       milestones_tab: Milníky
       retired_warning: "Autor se domnívá, že tento návrh by neměl přijímat více podporovatelů."
@@ -428,10 +400,6 @@ cs:
       back: Zpět na průzkumy
       cant_answer_not_logged_in: "Chcete-li se zapojit, musíte se %{signin} nebo %{signup}."
       comments_tab: Komentáře
-      login_to_comment: Pro zanechání komentáře se musíte se  %{signin} nebo %{signup}.
-      signin: Přihlásit se
-      signup: Registrujte se!
-      cant_answer_verify_html: "Odpovědět můžete zde %{verify_link}."
       verify_link: "ověřit váš účet"
       cant_answer_expired: "Tento průzkum byl ukončen."
       cant_answer_wrong_geozone: "Tato otázka není dostupná ve vaší čtvrti."
@@ -463,10 +431,7 @@ cs:
   proposal_notifications:
     new:
       title: "Odeslat zprávu"
-      title_label: "Název"
-      body_label: "Zpráva"
       submit_button: "Odeslat zprávu"
-      info_about_receivers_html: "Zpráva bude odeslána <strong>%{count} uživatelům </strong> a bude viditelná na %{proposal_page}.<br> Zprávy se nepředávají okamžitě, uživatelé obdrží e-maily pravidelně s veškerými oznámeními o návrzích."
       proposal_page: "stránce návrhu"
     show:
       back: "Jít zpět na své aktivity"
@@ -505,17 +470,6 @@ cs:
     follow: "Sledování"
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Nyní sledujete tento investiční projekt! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
-        destroy:
-          notice_html: "Ukončili jste sledování tohoto projektu! </br> Nebude nadále dostávat oznámení související s tímto projektem."
-      proposal:
-        create:
-          notice_html: "Nyní sledujete tento občanský návrh! </br> Budeme vás upozorňovat na změny, k nimž dojde, abyste byli v obraze."
-        destroy:
-          notice_html: "Ukončili jste sledování tohoto návrhu!</br> Nebudeme Vám již zasílat upozornění k tomuto návrhu."
     hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
@@ -536,12 +490,10 @@ cs:
       districts: "Městské části"
       districts_list: "Seznam městských částí"
       categories: "Kategorie"
-    target_blank_html: " (odkaz se otevře v novém okně)"
     you_are_in: "Jste v"
     unflag: Odblokovat
     unfollow_entity: "Přestat sledovat %{entity}"
     outline:
-      budget: Participativní rozpočet
       searcher: Vyhledavač
     go_to_page: "Přejděte na stránku "
     share: Sdílet
@@ -564,49 +516,6 @@ cs:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Pokud navrhujete jménem sdružení nebo kolektivu, přidejte zde jméno"
-      association_name: "Association name"
-      description: Description
-      external_url: Odkaz na další dokumenty
-      geozone: Vymezení oblasti města
-      submit_buttons:
-        create: Vytvořit
-        new: Vytvořit
-      title: Název výdaje návrhu
-    index:
-      title: Participativní rozpočtování
-      unfeasible: Nerealizovatelné investiční projekty
-      by_geozone: "Investiční projekty s působností: %{geozone}"
-      search_form:
-        button: Vyhledat
-        placeholder: Investiční projekty...
-        title: Vyhledat
-      sidebar:
-        geozones: Vymezení oblasti města
-        feasibility: Proveditelnost
-        unfeasible: Nerealizovatelné
-      start_spending_proposal: Vytvořit investiční projekt
-    new:
-      more_info: Jak funguje participativní rozpočtování?
-      recommendation_one: Je povinné propojit návrh s položkou rozpočtu.
-      recommendation_three: Snažte se jít do podrobností při popisu výdajů svého návrhu tak, aby hodnotitelský tým chápal vaše body.
-      recommendation_two: Jakýkoli návrh nebo komentář, který naznačuje nezákonnou akci, bude smazán.
-      recommendations_title: Jak vytvořit výdaje návrhu
-      start_new: Vytvořit výdaje návrhu
-    show:
-      author_deleted: Uživatel
-      code: "Kód návrhu:"
-      share: Sdílet
-    wrong_price_format: Pouze celá čísla
-    spending_proposal:
-      spending_proposal: Investiční projekt
-      already_supported: Tento návrh jste již podpořili. Sdílejte jej!
-      support: Podpořte!
-      support_title: Podpořit tento projekt
-      supports:
-        zero: Žádná podpora
   stats:
     index:
       visits: Návštěvy
@@ -626,16 +535,10 @@ cs:
   users:
     direct_messages:
       new:
-        body_label: Zpráva
         direct_messages_bloqued: "Uživatel se rozhodl nepřijámat soukromé zprávy"
         submit_button: Odeslat zprávu
         title: Odeslat soukromou zprávu uživateli %{receiver}
-        title_label: Předmět
         verified_only: Odeslat soukromou zprávu uživateli %{verify_account}
-        verify_account: ověřte Váš účet
-        authenticate: Chcete-li pokračovat, musíte být přihlášeni %{signin} nebo %{signup}.
-        signin: přihlásit se
-        signup: registrovat
       show:
         receiver: Zpráva odeslána uživateli %{receiver}
     show:
@@ -662,18 +565,8 @@ cs:
     comment_unauthenticated: Pro hlasování musíte být přihlášeni %{signin} nebo %{signup}.
     disagree: Nesouhlasím
     organizations: Organizacím není dovoleno hlasovat
-    signin: Přihlásit se
-    signup: Registrujte se!
     supports: Podporovatelé
-    unauthenticated: Pro pokračování je nutné %{signin} nebo %{signup}.
     verified_only: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
-    verify_account: ověřte Váš účet
-    spending_proposals:
-      not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
-      not_verified: O návrzích mohou hlasovat pouze ověření uživatelé; %{verify_account}.
-      organization: Organizacím není dovoleno hlasovat
-      unfeasible: Neuskutečnitelné investiční projekty nelze podpořit
-      not_voting_allowed: Fáze hlasování byla ukončena
     budget_investments:
       not_logged_in: Pro pokračování je nutné %{signin} nebo %{signup}.
       not_verified: O investičních projektech mohou hlasovat pouze ověření uživatelé; %{verify_account}.
@@ -748,6 +641,4 @@ cs:
     help:
       alt: Vyberte text, který chcete komentovat, a stiskněte tlačítko s tužkou.
       text: Chcete-li tento dokument připomínat, musíte se %{sign_in} nebo %{sign_up}. Potom vyberte text, který chcete komentovat, a stiskněte tlačítko s tužkou.
-      text_sign_in: přihlásit
-      text_sign_up: registrovat se
       title: Jak mohu komentovat tento dokument?

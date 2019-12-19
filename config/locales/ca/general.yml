@@ -2,8 +2,6 @@ ca:
   account:
     show:
       change_credentials_link: Canviar les meues dades d'accés
-      email_on_comment_label: Rebre un email quan algú comenta en les meues propostes o debats
-      email_on_comment_reply_label: Rebre un email quan algú contesta als meus comentaris
       erase_account_link: Esborrar el meu compte
       finish_verification: Finalitzar verificació
       notifications: Notificacions
@@ -11,12 +9,7 @@ ca:
       organization_responsible_name_placeholder: Representant de l'associació
       personal: Dades personals
       phone_number_label: telèfon
-      public_activity_label: Mostrar públicament la meua llista d'activitats
       save_changes_submit: Guardar canvis
-      subscription_to_website_newsletter_label: Rebre emails amb informació interessant sobre la web
-      email_on_direct_message_label: Rebre emails amb missatges privats
-      email_digest_label: Rebre resum de notificacions sobre propostes
-      official_position_badge_label: Mostrar etiqueta de tipus d'usuari
       title: El meu compte
       user_permission_debates: Participar en debats
       user_permission_info: Amb el teu compte ja pots...
@@ -35,7 +28,6 @@ ca:
   comments:
     comments_closed: Els comentaris estan tancats
     verified_only: Per participar %{verify_account}
-    verify_account: verifica el teu compte
     comment:
       admin: Administrador
       author: Autor
@@ -82,10 +74,8 @@ ca:
         submit_button: Guardar canvis
       show_link: Veure debat
     form:
-      debate_text: Text inicial del debat
       debate_title: Títol del debat
       tags_instructions: Etiqueta aquest debat.
-      tags_label: Temes
       tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
     index:
       featured_debates: Destacades
@@ -102,9 +92,6 @@ ca:
         button: Buscar
         placeholder: Cercar debats...
         title: Buscar
-      search_results_html:
-        one: "que conté <strong>'%{search_term}'</strong>"
-        other: "que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       start_debate: Comença un nou debat
       title: Debats
@@ -130,7 +117,6 @@ ca:
       comments_title: Comentarios
       edit_debate_link: Editar proposta
       flag: Aquest debat ha sigut marcat com a inadequat per diversos usuaris.
-      login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
       share: compartir
       author: Autor
     update:
@@ -149,7 +135,6 @@ ca:
     policy: Política de Privacitat
     proposal: la proposta
     proposal_notification: "la notificació"
-    spending_proposal: la proposta d'inversió
     budget/investment: la proposta d'inversió
     poll/question/answer: Resposta
     user: el compte
@@ -158,7 +143,6 @@ ca:
     image: imatge
   geozones:
     none: Tota la ciutat
-    all: Tots els àmbits d'actuació
   layouts:
     application:
       ie: Hem detectat que estàs navegant des d'Internet Explorer. Per a una millor experiència et recomanem utilitzar %{firefox} o %{chrome}.
@@ -185,11 +169,10 @@ ca:
       my_account_link: El meu compte
       my_activity_link: La meua activitat
       open: obert
-      open_gov: Govern %{open}
+      open_gov: Govern obert
       proposals: Propostes ciutadanes
       poll_questions: Votacions
       budgets: Pressupostos ciutadans
-      spending_proposals: Propostes d'inversió
       notification_item:
         new_notifications:
           one: Tens una nova notificació
@@ -217,7 +200,6 @@ ca:
   map:
     title: "Districtes"
     proposal_for_district: "Crea una proposta per al teu districte"
-    select_district: Àmbits d'actuació
     start_proposal: Crea una proposta
   omniauth:
     facebook:
@@ -247,9 +229,7 @@ ca:
     retire_form:
       title: Retirar proposta
       warning: "Si segueixes endavant, la teua proposta podrà seguir rebent avals, però deixarà de ser llistada en la llista principal, i apareixerà un missatge per a tots els usuaris avisant-los que l'autor considera que aquesta proposta no ha de seguir arreplegant avals."
-      retired_reason_label: Raó per la qual es retira la proposta
       retired_reason_blank: Selecciona una opció
-      retired_explanation_label: Explicació
       retired_explanation_placeholder: Explica breument per que consideres que aquesta proposta no ha d'arreplegar més avals
       submit_button: Retirar proposta
     retire_options:
@@ -259,14 +239,8 @@ ca:
       done: Realitzada
       other: Una altra
     form:
-      geozone: Àmbits d'actuació
-      proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com a representant d'un col·lectiu; no es mostrarà públicament)"
-      proposal_summary: Resum de la proposta
       proposal_summary_note: "(màxim 200 caràcters)"
-      proposal_text: Text desenvolupat de la proposta
-      proposal_title: Títol de la proposta
-      proposal_video_url: Enllaç a vídeo extern
       proposal_video_url_note: Pots afegir un enllaç a YouTube o Vimeo
       tags_instructions: "Etiqueta aquesta proposta. Pots triar entre les categories proposades o introduir les que desitges"
       tags_label: Etiquetes
@@ -295,9 +269,6 @@ ca:
         button: Buscar
         placeholder: Cercar propostes...
         title: Buscar
-      search_results_html:
-        one: "que conté <strong>'%{search_term}'</strong>"
-        other: "que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
       select_order_long: "Estàs veient les propostes"
       start_proposal: Crea una proposta
@@ -344,7 +315,6 @@ ca:
         other: "%{count} comentaris"
       comments_tab: Comentarios
       flag: Aquesta proposta ha sigut marcada com a inadequada per diversos usuaris.
-      login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
       notifications_tab: Notificacions
       retired_warning: "L'autor d'aquesta proposta considera que ja no ha de seguir arreplegant avals."
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
@@ -378,10 +348,6 @@ ca:
     show:
       cant_answer_not_logged_in: "Necessites %{signin} o %{signup} per participar en el debat."
       comments_tab: Comentarios
-      login_to_comment: Necessites %{signin} o %{signup} per fer comentaris.
-      signin: Entrada
-      signup: registrar-
-      cant_answer_verify_html: "Per favor %{verify_link} per a poder respondre."
       verify_link: "verifica el teu compte"
       cant_answer_expired: "Esta votació ha terminat."
       cant_answer_wrong_geozone: "Esta votació no està disponible al teu area."
@@ -396,8 +362,6 @@ ca:
   proposal_notifications:
     new:
       title: "Enviar missatge"
-      title_label: "Títol"
-      body_label: "Missatge"
       submit_button: "Enviar missatge"
       proposal_page: "la pàgina de la proposta"
     show:
@@ -461,63 +425,14 @@ ca:
       tags: Tendències
       districts: "Districtes"
       districts_list: "Llistat de districtes"
-    target_blank_html: " (s'obri en finestra nova) "
     you_are_in: "Estàs en"
     unflag: Desfer denúncia
     outline:
-      budget: Pressupostos participatius
       searcher: Cercador
     go_to_page: "Anar a la pàgina de"
     share: compartir
   social:
     whatsapp: Whatsapp
-  spending_proposals:
-    form:
-      association_name_label: "Si proposes en nom d'una associació afig el nom ací"
-      association_name: "Nom de l'associació"
-      description: Descripció detallada
-      external_url: Enlace a documentación adicional
-      geozone: Àmbits d'actuació
-      submit_buttons:
-        create: Crear
-        new: Crear
-      title: Títol de la proposta d'inversió
-    index:
-      title: Pressupostos ciutadans
-      unfeasible: Propostes d'inversió no viables
-      by_geozone: "Propostes d'inversió amb àmbit: %{geozone}"
-      search_form:
-        button: Buscar
-        placeholder: Propostes d'inversió...
-        title: Buscar
-      search_results:
-        one: " que contenen '%{search_term}'"
-        other: " que contenen '%{search_term}'"
-      sidebar:
-        geozones: Àmbits d'actuació
-        feasibility: Viabilitat
-        unfeasible: No viables
-      start_spending_proposal: Crea una proposta d'inversió
-    new:
-      more_info: Com funcionen els pressupostos participatius?
-      recommendation_one: És fonamental que faça referència a una actuació pressupostària.
-      recommendation_three: Intenta detallar el màxim possible la proposta perquè l'equip de govern encarregat d'estudiar-la tinga els menors dubtes possibles.
-      recommendation_two: Qualsevol proposta o comentari que implique accions il·legals serà eliminada.
-      recommendations_title: Com crear una proposta d'inversió
-      start_new: Crear proposta d'inversió
-    show:
-      author_deleted: Usuari eliminat
-      code: "Codi de la proposta:"
-      share: compartir
-    wrong_price_format: Solament pot incloure caràcters numèrics
-    spending_proposal:
-      spending_proposal: Proposta d'inversió
-      already_supported: Ja has avalat aquesta proposta d'inversió.
-      support: Avalar
-      support_title: Avalar aquesta proposta d'inversió
-      supports:
-        one: 1 aval
-        other: "%{count} avals"
   stats:
     index:
       visits: Visites
@@ -537,16 +452,10 @@ ca:
   users:
     direct_messages:
       new:
-        body_label: Missatge
         direct_messages_bloqued: "Aquest usuari ha decidit no rebre missatges privats"
         submit_button: Enviar missatge
         title: Enviar missatge privat a %{receiver}
-        title_label: Títol
         verified_only: Per a enviar un missatge privat %{verify_account}
-        verify_account: verifica el teu compte
-        authenticate: Necessites %{signin} o %{signup}.
-        signin: iniciar sessió
-        signup: registrar-
       show:
         receiver: Missatge enviat a %{receiver}
     show:
@@ -579,18 +488,8 @@ ca:
     comment_unauthenticated: Necessites %{signin} o %{signup} per a poder votar.
     disagree: No estic d'acord
     organizations: Les associacions no poden avalar
-    signin: Entrada
-    signup: registrar-
     supports: Avals
-    unauthenticated: Necessites %{signin} o %{signup}.
     verified_only: Les propostes només poden ser votades per usuaris verificats, %{verify_account}.
-    verify_account: verifica el teu compte
-    spending_proposals:
-      not_logged_in: Necessites %{signin} o %{signup}.
-      not_verified: Les propostes només poden ser votades per usuaris verificats, %{verify_account}.
-      organization: Les associacions no poden avalar
-      unfeasible: No es poden avalar propostes inviables
-      not_voting_allowed: El periode de recollida d'avals esta tancat.
     budget_investments:
       not_logged_in: Necessites %{signin} o %{signup}.
       organization: Les associacions no poden avalar
@@ -635,6 +534,4 @@ ca:
     help:
       alt: Selecciona el text que vols comentar i prem el botó amb el llapis.
       text: Per comentar aquest document has %{sign_in} o %{sign_up}. Després selecciona el text que vols comentar i prem el botó amb el llapis.
-      text_sign_in: iniciar sessió
-      text_sign_up: registrar-
       title: Com puc comentar aquest document?

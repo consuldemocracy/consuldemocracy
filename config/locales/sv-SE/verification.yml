@@ -17,9 +17,6 @@ sv:
     letter:
       alert:
         unconfirmed_code: Du har inte angett bekräftelsekoden ännu
-      create:
-        flash:
-          success_html: Tack för att du begärt din <b>säkerhetskod (krävs endast för slutomröstningar) </b>. Vi skickar koden inom några dagar till den adress som du registrerat. Kom ihåg att du även kan få din kod från något av %{offices}.
       edit:
         see_all: Visa förslag
         title: Brev begärt
@@ -28,7 +25,7 @@ sv:
       new:
         explanation: "För att delta i slutomröstningen kan du:"
         go_to_index: Visa förslag
-        office: Verifiera dig personligen på något %{office}
+        office: Verifiera dig personligen på något medborgarkontor
         send_letter: Skicka ett brev till mig med koden
         title: Grattis!
         user_permission_info: Med ditt konto kan du...
@@ -47,20 +44,16 @@ sv:
       new:
         accept_terms_text: Jag accepterar %{terms_url} för adressregistret
         accept_terms_text_title: Jag accepterar villkoren för tillgång till adressregistret
-        date_of_birth: Födelsedatum
         document_number: Dokumentnummer
         document_number_help_title: Hjälp
-        document_number_help_text_html: "<strong>Legitimation</strong>: 12345678A<br> <strong>Pass</strong>: AAA000001<br> <strong>Övrig identitetshandling</strong>: X1234567P"
         document_type:
           passport: Pass
           residence_card: Övrig identitetshandling
           spanish_id: Legitimation
-        document_type_label: Identitetshandling
         error_not_allowed_age: Du är för ung för att delta
         error_not_allowed_postal_code: Du måste vara en invånare i staden för att kunna verifieras.
-        error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett %{offices}.
+        error_verifying_census: Den adress du angett stämmer inte överens med adressregistret. Var vänlig kontrollera dina adressuppgifter genom att ringa kommunen eller besöka ett medborgarkontor.
         form_errors: gjorde att din adress inte kunde bekräftas
-        postal_code: Postnummer
         postal_code_note: För att verifiera ditt konto måste du vara registrerad
         terms: användarvillkoren
         title: Bekräfta din adress
@@ -70,14 +63,12 @@ sv:
         flash:
           success: Fyll i bekräftelsekoden som du fått med SMS
       edit:
-        confirmation_code: Fyll i koden som skickats till din mobiltelefon
         resend_sms_link: Klicka här för att skicka det igen
         resend_sms_text: Fick du inte en text med din bekräftelsekod?
         submit_button: Skicka
         title: Bekräfta säkerhetskod
       new:
         phone: Ange ditt mobilnummer för att ta emot koden
-        phone_format_html: "<strong><em>(Till exempel: 0712345678 eller +46712345678)</em></strong>"
         phone_note: Vi använder bara ditt telefonnummer till att skicka bekräftelsekoden, aldrig för att kontakta dig.
         phone_placeholder: "Till exempel: 0712345678 eller +46712345678"
         submit_button: Skicka

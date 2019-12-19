@@ -1,12 +1,10 @@
 he:
   documents:
     title: מסמכים
-    max_documents_allowed_reached_html: הגעת למספר המרבי המותר של מסמכים! <strong> עליך למחוק אחד לפני שתוכל להעלות קובץ אחר. </strong>
     additional: תיעוד נוסף
     form:
       title: מסמכים
       title_placeholder: הוספת כותרת המתארת את המסמך
-      attachment_label: בחר מסמך
       delete_button: הסר מסמך
       cancel_button: ביטול
       note: "ניתן לטעון עד \"%{max_documents_allowed}\"מסמכים מסוגי התוכן הבאים:\n\"%{accepted_content_types}\", עד \"%{max_file_size}\" מגה בייט לקובץ."

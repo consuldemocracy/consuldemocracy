@@ -17,9 +17,6 @@ he:
     letter:
       alert:
         unconfirmed_code: טרם הכנסת קוד אישור
-      create:
-        flash:
-          success_html: תודה על בקשתך <b> לקוד אבטחה מרביתי (הקוד נדרש רק עבור ההצבעה הסופית)</b> בעוד מספר ימים נשלח את הקוד לכתובת המופיעה בנתונים שיש לנו בקובץ. נא לזכור כי, אם את/ה מעדיף/ה, ניתן לאסוף את הקוד שלך מכל אחד מהמשרדים %{offices}.
       edit:
         see_all: ראה/י הצעות
         title: המכתב בוקש
@@ -28,7 +25,7 @@ he:
       new:
         explanation: "כדי להשתתף בהצבעות הסופיות עליך:"
         go_to_index: ראה/י הצעות
-        office: אשר/י בכל %{office}
+        office: ודא במשרדי תמיכה לאזרח
         send_letter: שלח לי הודעת דואר אלקטרוני עם הקוד
         title: מזל טוב!
         user_permission_info: עם חשבונך תוכל/י ...
@@ -47,20 +44,16 @@ he:
       new:
         accept_terms_text: אני מסכים/ה על %{terms_url} תנאי מפקד האוכלוסין
         accept_terms_text_title: אני מסכים/ה על התנאים וכללי השימוש במפקד האוכלוסין
-        date_of_birth: תאריך לידה
         document_number: מספר תעודה מזהה
         document_number_help_title: עזרה
-        document_number_help_text_html: "<strong>תעודת זהות</strong>: 12345678A<br> <strong>דרכון</strong>: AAA000001<br> <strong>כרטיס תושב</strong>: X1234567P"
         document_type:
           passport: דרכון
           residence_card: כרטיס תושב
           spanish_id: תעודת זהות
-        document_type_label: סוג תעודה מזהה
         error_not_allowed_age: אינך בגיל הנדרש כדי להשתתף
         error_not_allowed_postal_code: מיקוד לא מאושר
-        error_verifying_census: מפקד האוכלוסין לא הצליח לאמת את המידע שלך נא לוודא שמלאת את פרטיך נכון על ידי התקשרות עם משרד הסיוע לאזרחים, מועצת העיר או כניסה לאחד מהמשרדים %{offices}.
+        error_verifying_census: המפקד לא הצליח לאמת את המידע שלך. אנא אשר שפרטי המפקד שלך נכונים על ידי פנייה למועצת העיר או ביקור במשרד התמיכה האזרחי.
         form_errors: נתון זה מונע את אימות מגוריך
-        postal_code: מיקוד
         postal_code_note: כדי לאמת את חשבונך עליך קודם להרשם
         terms: תנאים וכללי הגישה
         title: אמת את כתובת המגורים
@@ -70,14 +63,12 @@ he:
         flash:
           success: נא להזין כאן את קוד אישור האבטחה שנשלח אליך בהודעת טקסט
       edit:
-        confirmation_code: נא להזין כאן את קוד אישור האבטחה שנשלח אליך בסמרטפון
         resend_sms_link: נא ללחוץ כאן כדי לשליחה חוזרת
         resend_sms_text: לא קיבלת הודעה עם קוד אישור האבטחה שלך?
         submit_button: הקש/י לשליחה
         title: אישור קוד אבטחה
       new:
         phone: נא להזין את מספר הטלפון הנייד שלך כדי לקבל את הקוד
-        phone_format_html: "<strong><em>(לדוגמא: 612345678 או +34612345678)</em></strong>"
         phone_note: הזנת מספר הנייד תשמש אך ורק לשליחת הקוד
         phone_placeholder: "לדוגמא: 612345678 או +34612345678"
         submit_button: הקש/י לשליחה

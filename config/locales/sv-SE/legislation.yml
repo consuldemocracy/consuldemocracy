@@ -14,9 +14,6 @@ sv:
         publish_comment: Publicera kommentar
       form:
         phase_not_open: Denna fas är inte öppen
-        login_to_comment: Du behöver %{signin} eller %{signup} för att kunna kommentera.
-        signin: Logga in
-        signup: Registrera dig
       index:
         title: Kommentarer
         comments_about: Kommentarer om
@@ -25,7 +22,7 @@ sv:
           one: "%{count} kommentar"
           other: "%{count} kommentarer"
       show:
-        title: Kommentera
+        title: Kommentar
       version_chooser:
         seeing_version: Kommentarer för version
         see_text: Visa utkast
@@ -109,11 +106,8 @@ sv:
       participation:
         phase_not_open: Fasen är inte öppen
         organizations: Organisationer får inte delta i debatten
-        signin: Logga in
-        signup: Registrera dig
         unauthenticated: Du behöver %{signin} eller %{signup} för att kunna delta.
         verified_only: Endast verifierade användare kan delta, %{verify_account}.
-        verify_account: verifiera ditt konto
         debate_phase_not_open: Diskussionsfasen har avslutats, och svar kan inte längre tas emot
     shared:
       share: Dela

@@ -7,7 +7,6 @@ ru:
         remaining: "У вас еще есть <span>%{amount}</span> чтобы инвестировать."
         no_balloted_group_yet: "Вы еще не голосовали в этой группе, проголосуйте!"
         remove: Удалить голос
-        voted_info_html: "Вы можете изменить свой голос в любое время до конца этого этапа.<br> Нет необходимости тратить все имеющиеся деньги."
         voted_info_2: "Но вы можете изменить свой голос в любое время до закрытия этой фазы."
         zero: Вы не проголосовали ни по одному инвестиционному проекту.
       reasons_for_not_balloting:
@@ -15,10 +14,9 @@ ru:
         not_verified: Только верифицированные пользователи могут голосовать за инвестиции; %{verify_account}.
         organization: Организациям не разрешается голосовать
         not_selected: Невыбранные инвестиционные проекты не поддерживаются
-        not_enough_money_html: "Вы уже присвоили доступный бюджет.<br><small>Помните, что вы можете %{change_ballot} в любое время</small>"
         no_ballots_allowed: Фаза выбора закрыта
-        different_heading_assigned_html: "Вы уже проголосовали за другой заголовок: %{heading_link}"
         change_ballot: изменить ваши голоса
+        casted_offline: Вы уже участвовали без Интернета
     groups:
       show:
         title: Выберите вариант
@@ -65,7 +63,6 @@ ru:
         map_location: "Местоположение на карте"
         map_location_instructions: "Перейдите на карте к местоположению и поместите маркер."
         map_remove_marker: "Удалить маркер карты"
-        location: "Дополнительная информация о местоположении"
         map_skip_checkbox: "У этой инвестиции нет конкретного местоположения или я не знаю об этом."
       index:
         title: Совместное финансирование
@@ -80,16 +77,12 @@ ru:
           my_ballot: Мой голос
           voted_info: Вы можете %{link} в любое время до конца этого этапа. Нет необходимости тратить все имеющиеся деньги.
           voted_info_link: изменить ваш голос
-          different_heading_assigned_html: "У вас есть активные голоса в другом заголовке: %{heading_link}"
           change_ballot: "Если вы передумаете, вы можете удалить свои голоса в %{check_ballot} и начать заново."
           check_ballot_link: "проверить мое голосование"
           zero: Вы не голосовали ни за один инвестиционный проект в этой группе.
           verified_only: "Чтобы создать новую бюджетную инвестицию %{verify}."
-          verify_account: "подтвердите ваш аккаунт"
           create: "Создать бюджетную инвестицию"
           not_logged_in: "Для создания новой бюджетной инвестиции необходимо %{sign_in} или %{sign_up}."
-          sign_in: "войти"
-          sign_up: "регистрация"
           by_feasibility: По возможности
           feasible: Выполнимые проекты
           unfeasible: Невыполнимые прокты
@@ -103,9 +96,6 @@ ru:
         author_deleted: Пользователь удален
         price_explanation: Описание цены
         unfeasibility_explanation: Объяснение невозможности
-        code_html: "Код инвестиционного проекта: <strong>%{code}</strong>"
-        location_html: "Местоположение: <strong>%{location}</strong>"
-        organization_name_html: "Предлагается от имени: <strong>%{name}</strong>"
         share: Доля
         title: Инвестиционный проект
         supports: Поддержки
@@ -114,10 +104,7 @@ ru:
         comments_tab: Комментарии
         milestones_tab: Основные этапы
         author: Автор
-        project_unfeasible_html: "Этот инвестиционный проект <strong>был отмечен как неосуществимый</strong> и не перейдет к этапу голосования."
-        project_selected_html: "Этот инвестиционный проект <strong>был выбран</strong> для этапа голосования."
         project_winner: "Победный инвестиционный проект"
-        project_not_selected_html: "Этот инвестиционный проект <strong>не был выбран</strong> для этапа голосования."
         see_price_explanation: Смотреть описание цены
       wrong_price_format: Только целые числа
       investment:
@@ -127,10 +114,13 @@ ru:
         support_title: Поддержать этот проект
         supports:
           zero: Нет поддержки
+          one: 1 поддержка
+          few: "поддерживает %{count}"
+          many: "поддерживает %{count}"
+          other: "поддерживает %{count}"
         give_support: Поддержка
       header:
         check_ballot: Проверить мой бюллетень
-        different_heading_assigned_html: "У вас есть активные голоса в другом заголовке: %{heading_link}"
         change_ballot: "Если вы передумаете, вы можете удалить свои голоса в %{check_ballot} и начать заново."
         check_ballot_link: "проверить мое голосование"
         price: "Этот заголовок имеет бюджет"
@@ -150,7 +140,6 @@ ru:
       page_title: "%{budget} - Результаты"
       heading: "Результаты совместного бюджета"
       heading_selection_title: "По району"
-      spending_proposal: Заголовок предложения
       ballot_lines_count: Голоса
       hide_discarded_link: Скрыть отброшенные
       show_all_link: Показать все
@@ -168,9 +157,6 @@ ru:
       heading: "Этапы совместного бюджета"
       heading_selection_title: "По участкам"
       no_winner_investments: "Нет выигравшей инвестиции в этой области"
-      filters:
-        label: "Текущее состояние проекта"
-        all: "Все (%{count})"
     phases:
       errors:
         dates_range_invalid: "Дата начала не может быть равна или позже даты окончания"

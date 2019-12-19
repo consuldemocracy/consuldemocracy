@@ -18,7 +18,6 @@ bs:
         title: "Debate"
         description: "U dijelu %{link} možete predočiti i podijeliti svoje stavove s drugima, u vezi pitanja koja se tiču vas i vašeg grada. To je i prostor za osmišljavanje ideja koje putem drugih dijelova %{org} dovode do konkretnog djelovanja od strane gradskog vijeća."
         link: "građanske debate"
-        feature_html: "Možete pokrenuti debate, davati komentare i ocijenjivati ih sa <strong>\"Slažem se\"</strong> ili <strong> \"Ne slažem se\" </strong>. Kako bi to uradili, morate ići na %{link}."
         feature_link: "registrujte se u %{org}"
         image_alt: "Dugmad za ocjenjivanje debata"
         figcaption: 'Tasteri "Slažem se" i "Ne slažem se" za ocjenjivanje debata.'
@@ -27,13 +26,11 @@ bs:
         description: "U dijelu %{link}, možete podnositi prijedloge gradskom vijeću. Za prijedloge je potrebna podrška. Ako dobiju dovoljno podrške, biće stavljeni na javno glasanje. Prijedlozi koji prođu glasanje građana se prihvataju i realizuju od strane gradskog vijeća."
         link: "građanski prijedlozi"
         image_alt: "Dugme za podršku prijedlogu"
-        figcaption_html: 'Dugme za "podršku" prijedlogu.'
       budgets:
         title: "Participativno budžetiranje"
         description: "Dio %{link} pomaže ljudima u neposrednom odlučivanju kako će se trošiti određeni dio opštinskog budžeta."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžeta"
-        figcaption_html: 'Faze "podrške" i "glasanja" u participativnom budžetu.'
       polls:
         title: "Glasačke ankete"
         description: "%{link} se aktivira svaki put kada prijedlog dobije podršku od 1% i ide na glasanje, ili kada gradsko vijeće predloži neko pitanje da odluče građani."
@@ -157,14 +154,10 @@ bs:
               description_column: Smanjuje slova
       compatibility:
         title: Usklađenost sa standardima i vizuelni dizajn
-        description_html: 'Sve strane na ovoj Web-stranici su u skladu sa <strong>Smjernicama za pristupačnost </strong> i Opštim principima pristupačnog dizajna, utvrđenim od strane Radne grupe <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
     titles:
       help: "Šta je %{org}? - Učešće građana"
     verify:
-      code: Kod koji ste dobili u pismu
-      email: Email
       info: "Za potvrdu svog naloga, unesite podatke za pristup:"
       info_code: "Sada unesite kod koji ste dobili u pismu:"
-      password: Lozinka
       submit: Potvrdi moj nalog
       title: Potvrdi svoj nalog

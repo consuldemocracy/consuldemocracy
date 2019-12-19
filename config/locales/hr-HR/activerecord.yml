@@ -1,4 +1,8 @@
 hr:
+  attributes:
+    results_enabled: "Prikaži rezultate"
+    stats_enabled: "Prikaži statistike"
+    advanced_stats_enabled: "Prikaži napredne statistike"
   activerecord:
     models:
       activity:
@@ -89,10 +93,6 @@ hr:
         one: "Prijedlog građana"
         few: "Prijedlozi građana"
         other: "Prijedlozi građana"
-      spending_proposal:
-        one: "Investicijski projekt"
-        few: "Investicijski projekti"
-        other: "Investicijski projekti"
       site_customization/page:
         one: Prilagođena stranica
         few: Prilagođene stranice
@@ -146,9 +146,9 @@ hr:
         few: "Teme"
         other: "Teme"
       poll:
-        one: "Anketa"
-        few: "Ankete"
-        other: "Ankete"
+        one: "Glas"
+        few: "Glasovi"
+        other: "Glasovi"
       proposal_notification:
         one: "Obavijest o prijedlogu"
         few: "Obavijesti o prijedlogu"
@@ -224,6 +224,7 @@ hr:
         title: "Naziv"
         question: "Pitanje"
         description: "Opis"
+        selected: "Označi kao odabrano"
         terms_of_service: "Uvjeti usluge"
       user:
         login: "Email ili korisničko ime"
@@ -232,20 +233,13 @@ hr:
         password_confirmation: "Potvrđena zaporka"
         password: "Zaporka"
         current_password: "Trenutna zaporka"
-        phone_number: "Broj telefona"
         official_position: "Službena pozicija"
         official_level: "Službena razina"
+        phone_number: "Broj telefona"
         redeemable_code: "Verifikacijski kod primljen preko emaila"
       organization:
         name: "Ime organizacije"
         responsible_name: "Osoba odgovorna za grupu"
-      spending_proposal:
-        administrator_id: "Administrator"
-        association_name: "Ime udruženja"
-        description: "Opis"
-        external_url: "Poveznica na dodatnu dokumentaciju"
-        geozone_id: "Opseg djelovanja"
-        title: "Naziv"
       poll:
         name: "Ime"
         starts_at: "Datum početka"
@@ -266,7 +260,7 @@ hr:
         title: "Pitanje"
       poll/ballot_sheet:
         data: CSV podaci
-        poll_id: Anketa
+        poll_id: Glas
         officer_assignment_id: Pripisani činovnik
       signature_sheet:
         signable_type: "Tip potpisa"
@@ -341,10 +335,10 @@ hr:
         text: Komentar
       document:
         title: Naziv
-        attachment: Prilog
+        attachment: "Prilog"
       image:
         title: Naziv
-        attachment: Prilog
+        attachment: "Prilog"
       poll/question/answer:
         title: Odgovor
         description: Opis
@@ -357,7 +351,7 @@ hr:
       newsletter:
         segment_recipient: Primatelji
         subject: Predmet
-        from: Formular
+        from: "Formular"
         body: Sadržaj emaila
       admin_notification:
         segment_recipient: Primatelji
@@ -476,7 +470,7 @@ hr:
               cannot_comment_valuation: "Ne možete komentirati procjenu"
       messages:
         record_invalid: "Valicaija nije uspjela: %{errors}"
-        another_poll_active: Postoji još jedna aktivna anketa za dat period
+        another_poll_active: Postoji još jedno aktivno glasovanje za dat period
         restrict_dependent_destroy:
           has_one: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"
           has_many: "Nemožete obrisati zapis jer ovisi o postojećem %{record}"

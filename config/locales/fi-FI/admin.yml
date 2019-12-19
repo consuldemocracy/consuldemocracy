@@ -23,8 +23,6 @@ fi:
           with_inactive: Passiivinen
         preview: Esikatselu
       banner:
-        description: Kuvaus
-        target_url: Linkki
         sections:
           homepage: Kotisivu
           proposals: Ehdotukset
@@ -33,11 +31,6 @@ fi:
         editing: Muokkaa banneria
         form:
           submit_button: Tallenna muutokset
-      errors:
-        form:
-          error:
-            one: "virhe esti bannerin tallennuksen"
-            other: "virheet esti bannerin tallennuksen"
       new:
         creating: Luo banneri
     activity:
@@ -88,23 +81,14 @@ fi:
       form:
         create: "Luo uusi ryhmä"
         edit: "Muokkaa ryhmää"
-        name: "Ryhmän nimi"
         submit: "Tallenna ryhmä"
       index:
         back: "Takaisin budjetteihin"
     budget_headings:
-      name: "Nimi"
-      form:
-        latitude: "Leveysaste (valinnainen)"
-        longitude: "Pituusaste (valinnainen)"
       index:
         back: "Takaisin ryhmiin"
     budget_phases:
       edit:
-        start_date: Aloituspäivä
-        end_date: Päättymispäivä
-        summary: Yhteenveto
-        description: Kuvaus
         save_changes: Tallenna muutokset
     budget_investments:
       index:
@@ -117,8 +101,6 @@ fi:
           selected: Valittu
           unfeasible: Toteuttamiskelvoton
           winners: Voittajat
-          one_filter_html: "Käytössä olevat suodattimet: <b><em>%{filter}</em></b>"
-          two_filters_html: "Käytössä olevat suodattimet: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Suodatin
         feasibility:
@@ -145,8 +127,6 @@ fi:
           "false": Yhteensopiva
         selection:
           title: Valinta
-          "true": Valittu
-          "false": Ei valittu
         winner:
           title: Voittaja
           "true": "Kyllä"
@@ -155,14 +135,10 @@ fi:
         classification: Luokitus
         compatibility: Yhteensopivuus
         selection: Valinta
-        mark_as_selected: Merkitse valituksi
         submit_button: Päivitä
-        tags: Tunnisteet
         undefined: Määrittelemätön
-        user_groups: "Ryhmät"
     milestones:
       index:
-        table_id: "ID"
         table_description: "Kuvaus"
         table_publication_date: "Julkaisupäivä"
         table_status: Tila
@@ -176,8 +152,6 @@ fi:
         new_milestone: Luo uusi tavoite
       new:
         creating: Luo tavoite
-        date: Päivämäärä
-        description: Kuvaus
       edit:
         title: Muokkaa tavoite
       create:
@@ -198,29 +172,32 @@ fi:
         title: Muokkaa tavoitteen tilaa
     progress_bars:
       index:
-        table_id: "ID"
         table_kind: "Tyyppi"
     comments:
       index:
-        filter: Suodatin
+        id: "ID"
+        title: Piilotetut kommentit
+    hidden_comments:
+      index:
         filters:
           all: Kaikki
-          with_confirmed_hide: Vahvistettu
-          without_confirmed_hide: Vireillä
-        hidden_proposal: Piilotettu ehdotus
-        title: Piilotetut kommentit
-        no_hidden_comments: Ei piilotettuja kommentteja.
     dashboard:
       index:
         back: Mene takaisin %{org}
         title: Järjestelmänvalvonta
+      actions:
+        index:
+          active: 'Kyllä'
     debates:
       index:
-        filter: Suodatin
+        id: ID
+    hidden_debates:
+      index:
         filters:
           all: Kaikki
-          with_confirmed_hide: Vahvistettu
-          without_confirmed_hide: Vireillä
+    documents:
+      index:
+        url: "URL"
     hidden_users:
       index:
         filter: Suodatin
@@ -245,13 +222,9 @@ fi:
         edit:
           back: Takaisin
           submit_button: Tallenna muutokset
-        errors:
-          form:
-            error: Virhe
         form:
           enabled: Käytössä
           process: Prosessi
-          homepage: Kuvaus
         index:
           create: Uusi prosessi
           delete: Poista
@@ -277,8 +250,6 @@ fi:
         index:
           back: Takaisin
           id: Id
-          select: Valitse
-          selected: Valittu
         form:
           custom_categories: Kategoriat
       draft_versions:
@@ -287,9 +258,6 @@ fi:
         edit:
           back: Takaisin
           submit_button: Tallenna muutokset
-        errors:
-          form:
-            error: Virhe
         form:
           close_text_editor: Sulje tekstieditori
         index:
@@ -307,11 +275,6 @@ fi:
         edit:
           back: Takaisin
           submit_button: Tallenna muutokset
-        errors:
-          form:
-            error: Virhe
-        form:
-          title: Kysymys
         index:
           back: Takaisin
           create: Luo kysymys
@@ -346,7 +309,6 @@ fi:
           welcome: "Tervetuloa"
         buttons:
           save: "Tallenna"
-      title_budgets: Budjetit
       users: Käyttäjät
     administrators:
       index:
@@ -398,8 +360,6 @@ fi:
         group: "Ryhmä"
       valuator:
         delete: Poista
-      summary:
-        finished_count: Päättynyt
       show:
         description: "Kuvaus"
         email: "Sähköposti"
@@ -408,8 +368,6 @@ fi:
     valuator_groups:
       index:
         name: "Nimi"
-      form:
-        name: "Ryhmän nimi"
     poll_officers:
       officer:
         add: Lisää
@@ -452,8 +410,6 @@ fi:
         table_proposal: "Ehdotus"
         table_question: "Kysymys"
         table_poll: "Kysely"
-      new:
-        poll_label: "Kysely"
       answers:
         images:
           add_image: "Lisää kuva"
@@ -491,8 +447,6 @@ fi:
     booths:
       index:
         name: "Nimi"
-      new:
-        name: "Nimi"
     officials:
       index:
         name: Nimi
@@ -504,6 +458,7 @@ fi:
           pending: Vireillä
         name: Nimi
         email: Sähköposti
+        phone_number: Puhelin
         status: Tila
         search: Etsi
         title: Organisaatiot
@@ -552,8 +507,6 @@ fi:
         button: Etsi
       proposal_search:
         button: Etsi
-      spending_proposal_search:
-        button: Etsi
       user_search:
         button: Etsi
       actions: Toiminnot
@@ -565,28 +518,6 @@ fi:
       content: Sisältö
       created_at: Luotu
       delete: Poista
-    spending_proposals:
-      index:
-        administrator_filter_all: Kaikki järjestelmänvalvojat
-        tags_filter_all: Kaikki tunnisteet
-        filters:
-          valuation_open: Avaa
-          all: Kaikki
-        feasibility:
-          undefined: "Määrittelemätön"
-      show:
-        back: Takaisin
-        classification: Luokitus
-        edit: Muokkaa
-        tags: Tunnisteet
-        undefined: Määrittelemätön
-      edit:
-        classification: Luokitus
-        submit_button: Päivitä
-        tags: Tunnisteet
-        undefined: Määrittelemätön
-      summary:
-        finished_count: Päättynyt
     geozones:
       index:
         edit: Muokkaa
@@ -604,7 +535,6 @@ fi:
       name: Nimi
       show:
         author: Tekijä
-        documents: Asiakirjat
     stats:
       show:
         summary:
@@ -632,9 +562,6 @@ fi:
         search: Etsi
     site_customization:
       content_blocks:
-        errors:
-          form:
-            error: Virhe
         content_block:
           name: Nimi
       images:
@@ -648,9 +575,6 @@ fi:
       pages:
         destroy:
           notice: Sivu poistettu onnistuneesti
-        errors:
-          form:
-            error: Virhe
         index:
           delete: Poista sivu
         page:

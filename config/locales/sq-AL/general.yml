@@ -2,8 +2,6 @@ sq:
   account:
     show:
       change_credentials_link: Ndrysho kredencialet e mia
-      email_on_comment_label: Më njoftoni me email kur dikush komenton mbi propozimet ose debatet e mia
-      email_on_comment_reply_label: Më njoftoni me email kur dikush përgjigjet në komentet e mia
       erase_account_link: Fshi llogarinë time
       finish_verification: Verifikime të plota
       notifications: Njoftime
@@ -11,18 +9,10 @@ sq:
       organization_responsible_name_placeholder: Përfaqësuesi i organizatës / kolektive
       personal: Detaje personale
       phone_number_label: Numri i telefonit
-      public_activity_label: Mbaje listën e aktiviteteve të mia publike
-      public_interests_label: Mbani etiketat e elementeve që unë ndjek publike
       public_interests_my_title_list: Etiketo elementet që ti ndjek
       public_interests_user_title_list: Etiketo elementet që përdoruesi ndjek
       save_changes_submit: Ruaj ndryshimet
-      subscription_to_website_newsletter_label: Merre informacionin përkatës në email
-      email_on_direct_message_label: Merni email mbi mesazhet direkte
-      email_digest_label: Merni një përmbledhje të njoftimeve të propozimit
-      official_position_badge_label: Trego simbolin e pozitës zyrtare
       recommendations: Rekomandimet
-      show_debates_recommendations: Trego rekomandimet e debateve
-      show_proposals_recommendations: Trego rekomandimet e propozimeve
       title: Llogaria ime
       user_permission_debates: Merrni pjesë në debate
       user_permission_info: Me llogarinë tuaj ju mund të...
@@ -41,7 +31,6 @@ sq:
   comments:
     comments_closed: Komentet janë të mbyllura
     verified_only: "Për të marrë pjesë\n%{verify_account}"
-    verify_account: verifikoni llogarinë tuaj
     comment:
       admin: Administrator
       author: Autor
@@ -93,10 +82,8 @@ sq:
         submit_button: Ruaj ndryshimet
       show_link: Shiko debatin
     form:
-      debate_text: Teksti i debatit fillestar
       debate_title: Titulli i Debatit
       tags_instructions: Etiketoni këtë debat.
-      tags_label: Temë
       tags_placeholder: "Futni etiketimet që dëshironi të përdorni, të ndara me presje (',')"
     index:
       featured_debates: Karakteristika
@@ -121,9 +108,6 @@ sq:
         button: Kërko
         placeholder: Kërko debate...
         title: Kërko
-      search_results_html:
-        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
-        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
       start_debate: Filloni një debat
       title: Debate
@@ -157,7 +141,6 @@ sq:
       comments_title: Komentet
       edit_debate_link: Ndrysho
       flag: Ky debat është shënuar si i papërshtatshëm nga disa përdorues.
-      login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
       share: Shpërndaj
       author: Autor
     update:
@@ -175,11 +158,9 @@ sq:
     direct_message: mesazh privat
     error: gabim
     errors: gabime
-    not_saved_html: "e penguan këtë%{resource} nga të ruajturit.<br>Ju lutemi kontrolloni fushat e shënuara për të ditur se si t'i korrigjoni ato:"
     policy: Politika e privatësisë
     proposal: Propozime
     proposal_notification: "Njoftimet"
-    spending_proposal: Shpenzimet e propozimeve
     budget/investment: Investim
     budget/heading: Titulli i buxhetit
     poll/shift: Ndryshim
@@ -192,7 +173,6 @@ sq:
     image: Imazh
   geozones:
     none: I gjithë qyteti
-    all: Të gjitha qëllimet
   layouts:
     application:
       chrome: Google Chrome
@@ -232,7 +212,6 @@ sq:
       proposals: Propozime
       poll_questions: Votim
       budgets: Buxhetet  pjesëmarrës
-      spending_proposals: Shpenzimet e propozimeve
       notification_item:
         new_notifications:
           one: Ju keni një njoftim të ri
@@ -265,7 +244,6 @@ sq:
   map:
     title: "Zonë"
     proposal_for_district: "Filloni një propozim për zonën tuaj"
-    select_district: Fusha e veprimit
     start_proposal: Krijo propozim
   omniauth:
     facebook:
@@ -291,7 +269,7 @@ sq:
       form:
         submit_button: Krijo propozim
     share:
-      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
+      message: "Kam përkrahur propozimin %{title} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
     edit:
       editing: Ndrysho propozimin
       form:
@@ -300,9 +278,7 @@ sq:
     retire_form:
       title: Heq dorë nga propozimi
       warning: "Nëse tërhiqeni nga propozimi ajo do të pranonte ende mbështetje, por do të hiqesh nga lista kryesore dhe një mesazh do të jetë i dukshëm për të gjithë përdoruesit duke deklaruar se autori e konsideron propozimin që nuk duhet të mbështetur më"
-      retired_reason_label: Arsyeja për të tërhequr propozimin
       retired_reason_blank: Zgjidhni një mundësi
-      retired_explanation_label: Shpjegim
       retired_explanation_placeholder: Shpjegoni shkurtimisht pse mendoni se ky propozim nuk duhet të marrë më shumë mbështetje
       submit_button: Heq dorë nga propozimi
     retire_options:
@@ -312,14 +288,8 @@ sq:
       done: E bërë
       other: Tjetër
     form:
-      geozone: Fusha e veprimit
-      proposal_responsible_name: Emri i plotë i personit që dorëzon propozimin
       proposal_responsible_name_note: "(individualisht ose si përfaqësues i një kolektivi, nuk do të shfaqet publikisht)"
-      proposal_summary: Përmbledhje e propozimit
       proposal_summary_note: "(maksimumi 200 karaktere)"
-      proposal_text: Tekst i propozimit
-      proposal_title: Titulli i Propozimit
-      proposal_video_url: Linku për video të jashtme
       proposal_video_url_note: Ju mund të shtoni një link në YouTube ose Vimeo
       tag_category_label: "Kategoritë"
       tags_instructions: "Etiketoni këtë propozim. Ju mund të zgjidhni nga kategoritë e propozuara ose të shtoni tuajën"
@@ -362,9 +332,6 @@ sq:
         button: Kërko
         placeholder: Kërko propozimet...
         title: Kërko
-      search_results_html:
-        one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
-        other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
       select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
@@ -423,7 +390,6 @@ sq:
         other: "%{count} komente"
       comments_tab: Komentet
       flag: Ky propozim është shënuar si i papërshtatshëm nga disa përdorues.
-      login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
       notifications_tab: Njoftimet
       milestones_tab: Pikëarritje
       retired_warning: "Autori  konsideron që ky propozim nuk duhet të marrë më shumë mbështetje."
@@ -470,10 +436,6 @@ sq:
       back: Kthehu tek votimi
       cant_answer_not_logged_in: "Ju duhet %{signin} ose %{signup} për të marë pjesë ."
       comments_tab: Komentet
-      login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
-      signin: Kycu
-      signup: Rregjistrohu
-      cant_answer_verify_html: "Ju duhet të %{verify_link}për t'u përgjigjur."
       verify_link: "verifikoni llogarinë tuaj"
       cant_answer_expired: "Ky sondazh ka përfunduar."
       cant_answer_wrong_geozone: "Kjo pyetje nuk është e disponueshme në gjeozonën tuaj"
@@ -505,10 +467,7 @@ sq:
   proposal_notifications:
     new:
       title: "Dërgoni mesazh"
-      title_label: "Titull"
-      body_label: "Mesazh"
       submit_button: "Dërgoni mesazh"
-      info_about_receivers_html: "Ky mesazh do të dërgohet tek <strong>%{count} njerëz </ strong> dhe do të jetë i dukshëm në %{proposal_page}.<br> Mesazhi nuk dërgohet menjëherë, përdoruesit do të marrin periodikisht një email me të gjitha njoftimet e propozimeve."
       proposal_page: "faqja e propozimit"
     show:
       back: "Kthehu te aktiviteti im"
@@ -547,17 +506,6 @@ sq:
     follow: "Ndiq"
     following: "Duke ndjekur"
     follow_entity: "Ndiq %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Tani po e ndiqni këtë projekt investimi! </br> Ne do t'ju njoftojmë për ndryshimet që ndodhin në mënyrë që ju të jeni i azhornuar."
-        destroy:
-          notice_html: "Ti nuk e ndjek më projekt investimi! </br> Ju nuk do të merrni më njoftime lidhur me këtë projekt."
-      proposal:
-        create:
-          notice_html: "Tani ju po  ndiqni këtë projekt investimi! </br> Ne do t'ju njoftojmë për ndryshimet që ndodhin në mënyrë që ju të jeni i azhornuar."
-        destroy:
-          notice_html: "Ti nuk e ndjek më këtë propozim qytetar! </br> Ju nuk do të merrni më njoftime lidhur me këtë projekt."
     hide: Fsheh
     print:
       print_button: Printoni këtë informacion
@@ -587,12 +535,10 @@ sq:
       districts: "Zonë"
       districts_list: "Lista zonave"
       categories: "Kategoritë"
-    target_blank_html: "(lidhja hapet në dritare të re)"
     you_are_in: "Ju jeni kycur"
     unflag: I pa shënjuar
     unfollow_entity: "Mos Ndiq %{entity}"
     outline:
-      budget: Buxhetet  pjesëmarrës
       searcher: Kërkues
     go_to_page: "Shkoni në faqen e"
     share: Shpërndaj
@@ -615,54 +561,6 @@ sq:
     whatsapp: WhatsApp
     telegram: "Telegram %{org}"
     instagram: " Instagram %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Nëse propozoni në emër të një shoqate apo kolektivi shtoni emrin këtu"
-      association_name: "Emri i shoqatës"
-      description: Përshkrimi
-      external_url: Lidhje me dokumentacionin shtesë
-      geozone: Fusha e veprimit
-      submit_buttons:
-        create: Krijo
-        new: Krijo
-      title: Titulli i Shpenzimeve të propozimeve
-    index:
-      title: Buxhetet  pjesëmarrës
-      unfeasible: Projektet investuese të papërshtatshme 
-      by_geozone: "Projektet e investimeve me qëllim: %{geozone}"
-      search_form:
-        button: Kërko
-        placeholder: Projekte investimi...
-        title: Kërko
-      search_results:
-        one: "që përmbajnë termin %{search_term}"
-        other: "që përmbajnë termin %{search_term}"
-      sidebar:
-        geozones: Fusha e veprimit
-        feasibility: Fizibiliteti
-        unfeasible: Parealizueshme
-      start_spending_proposal: Krijo një projekt investimi
-    new:
-      more_info: Si funksionon buxheti  pjesëmarrjës?
-      recommendation_one: Është e detyrueshme që propozimi t'i referohet një veprimi buxhetor.
-      recommendation_three: Mundohuni të hyni në detaje kur përshkruani propozimin tuaj të shpenzimeve, që ekipi shqyrtues ti kuptojë pikat tuaja.
-      recommendation_two: Çdo propozim ose koment që sugjeron veprime të paligjshme do të fshihet.
-      recommendations_title: Si të krijoni një propozim shpenzimi
-      start_new: Krijo propozimin e shpenzimeve
-    show:
-      author_deleted: Përdoruesi u fshi
-      code: "Kodi Propozimit"
-      share: Shpërndaj
-    wrong_price_format: Vetëm numra të plotë
-    spending_proposal:
-      spending_proposal: Projekt investimi
-      already_supported: Ju e keni mbështetur tashmë këtë propozim. Shperndaje!
-      support: Suporti
-      support_title: Mbështetni këtë projekt
-      supports:
-        zero: Asnjë mbështetje
-        one: 1  mbështetje
-        other: "1%{count} mbështetje"
   stats:
     index:
       visits: Vizitat
@@ -682,16 +580,10 @@ sq:
   users:
     direct_messages:
       new:
-        body_label: Mesazh
         direct_messages_bloqued: "Ky përdorues ka vendosur të mos marrë mesazhe të drejtpërdrejta"
         submit_button: Dërgoni mesazh
         title: Dërgo mesazh privat tek %{receiver}
-        title_label: Titull
         verified_only: Për të dërguar një mesazh privat %{verify_account}
-        verify_account: verifikoni llogarinë tuaj
-        authenticate: Ju duhet %{signin} ose %{signup} për të vazhduar.
-        signin: Kycu
-        signup: Rregjistrohu
       show:
         receiver: Mesazhi u dërgua në %{receiver}
     show:
@@ -734,27 +626,14 @@ sq:
     comment_unauthenticated: Ju duhet %{signin} ose %{signup} për të votuar.
     disagree: Nuk jam dakort
     organizations: Organizatat nuk lejohen të votojnë
-    signin: Kycu
-    signup: Rregjistrohu
     supports: Suporti
-    unauthenticated: Ju duhet %{signin} ose %{signup} për të vazhduar.
     verified_only: Vetëm përdoruesit e verifikuar mund të votojnë për propozimet; %{verify_account}.
-    verify_account: verifikoni llogarinë tuaj
-    spending_proposals:
-      not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
-      not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për propozimet; %{verify_account}.
-      organization: Organizatat nuk lejohen të votojnë
-      unfeasible: Projektet e papërshtatshme të investimeve nuk mund të mbështeten
-      not_voting_allowed: Faza e zgjedhjes është e mbyllur
     budget_investments:
       not_logged_in: Ju duhet %{signin} ose %{signup} për të vazhduar.
       not_verified: Vetëm përdoruesit e verifikuar mund të votojnë për projektet e investimeve; %{verify_account}.
       organization: Organizatat nuk lejohen të votojnë
       unfeasible: Projektet e papërshtatshme të investimeve nuk mund të mbështeten
       not_voting_allowed: Faza e zgjedhjes është e mbyllur
-      different_heading_assigned:
-        one: "Ju mund të mbështesni vetëm projektet e investimeve në %{count} zona"
-        other: "Ju mund të mbështesni vetëm projektet e investimeve në %{count} zona"
   welcome:
     feed:
       most_active:
@@ -823,6 +702,4 @@ sq:
     help:
       alt: Zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
       text: Për të komentuar këtë dokument duhet të %{sign_in} ose %{sign_up}. Pastaj zgjidhni tekstin që dëshironi të komentoni dhe shtypni butonin me laps.
-      text_sign_in: Kycu
-      text_sign_up: Rregjistrohu
       title: Si mund ta komentoj këtë dokument?

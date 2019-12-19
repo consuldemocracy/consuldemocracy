@@ -70,11 +70,11 @@ bs:
       poll_link: Link za dodatne informacije
       poll_link_description: Añade un enlace de información adicional a la funcionalidad de encuestas del panel de control
       email_short_title: Email
-      email_short_title_description: Kratki opis email funkcije. Omogućava korisnicima da šalju emailove kako bi promovisali svoje prijedloge
+      email_short_title_description: 'Kratki opis email funkcije. Omogućava korisnicima da šalju emailove kako bi promovisali svoje prijedloge'
       email_description: Opis emaila
       email_description_description: Detaljni opis email funkcije
       poster_short_title: Poster
-      poster_short_title_description: Kratki opis postera. Omogućava korisnicima da preuzmu poster u PDF-formatu kako bi promovisali svoje prijedloge
+      poster_short_title_description: 'Kratki opis postera. Omogućava korisnicima da preuzmu poster u PDF-formatu kako bi promovisali svoje prijedloge'
       poster_description: Opis postera
       poster_description_description: Detaljni opis postera
     analytics_url: "URL za analitiku"
@@ -93,11 +93,6 @@ bs:
       featured_proposals_description: "Pokazuje istaknute prijedloge na strani sa indeksom prijedloga"
       signature_sheets: "Potpisni listovi"
       signature_sheets_description: "Omogućava dodavanje iz Admin panela potpisa prikupljenih na sajtu za prijedloge i investicione projekte za participativne budžete"
-      spending_proposals: "Prijedlozi troškova"
-      spending_proposals_description: "⚠️ OBAVIJEST: Ova funkcija je zamijenjena participativnim budžetiranjem i neće se pojavljivati u novim verzijama"
-      spending_proposal_features:
-        voting_allowed: Glasanje za investicione projekte - Faza prethodne selekcije
-        voting_allowed_description: "⚠️ OBAVIJEST: Ova funkcija je zamijenjena participativnim budžetiranjem i neće se pojavljivati u novim verzijama"
       user:
         recommendations: "Preporuke"
         recommendations_description: "Pokazuje korisnicima preporuke na početnoj strani, na osnovu tagova za teme koje se prate"

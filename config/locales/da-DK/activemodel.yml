@@ -16,7 +16,15 @@ da:
           confirmation_code: "Bekræftelseskode"
         email:
           recipient: "Email"
+      verification/sms:
+        confirmation_code: "Skriv den kode du modtog på SMS"
       officing/residence:
         document_type: "Dokumenttype"
         document_number: "Dokumentnummer (bogstaver inkluderet)"
         year_of_birth: "Fødselsår"
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "Filformatet er forkert. Det tilladte filformat er: %{valid_extensions}."

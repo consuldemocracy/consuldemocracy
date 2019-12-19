@@ -1,4 +1,8 @@
 sv:
+  attributes:
+    results_enabled: "Visa resultat"
+    stats_enabled: "Visa statistik"
+    advanced_stats_enabled: "Visa avancerad statistik"
   activerecord:
     models:
       activity:
@@ -17,7 +21,7 @@ sv:
         one: "Budgetförslagets status"
         other: "Budgetförslagens status"
       comment:
-        one: "Kommentera"
+        one: "Kommentar"
         other: "Kommentarer"
       debate:
         one: "Debattera"
@@ -64,9 +68,6 @@ sv:
       proposal:
         one: "Medborgarförslag"
         other: "Medborgarförslag"
-      spending_proposal:
-        one: "Budgetförslag"
-        other: "Budgetförslag"
       site_customization/page:
         one: Anpassad sida
         other: Anpassade sidor
@@ -140,6 +141,9 @@ sv:
         organization_name: "Organisation eller grupp i vars namn du lämnar förslaget"
         image: "Förklarande bild till förslaget"
         image_title: "Bildtext"
+      budget/investment/translation:
+        title: "Titel"
+        description: "Beskrivning"
       geozone:
         name: Namn
       milestone:
@@ -153,24 +157,31 @@ sv:
       progress_bar:
         kind: "Typ"
         title: "Titel"
+      progress_bar/kind:
+        secondary: "Sekundär"
       budget/heading:
         name: "Område"
         price: "Kostnad"
         population: "Befolkning"
       comment:
-        body: "Kommentera"
+        body: "Kommentar"
         user: "Användare"
       debate:
         author: "Skribent"
         description: "Inlägg"
         terms_of_service: "Användarvillkor"
         title: "Titel"
+      debate/translation:
+        description: "Inledande debatt-text"
       proposal:
         author: "Skribent"
         title: "Titel"
         question: "Fråga"
         description: "Beskrivning"
         terms_of_service: "Användarvillkor"
+      proposal/translation:
+        description: "Förslagstext"
+        retired_explanation: "Förklaring"
       user:
         login: "E-postadress eller användarnamn"
         email: "E-post"
@@ -178,20 +189,13 @@ sv:
         password_confirmation: "Bekräfta lösenord"
         password: "Lösenord"
         current_password: "Nuvarande lösenord"
-        phone_number: "Telefonnummer"
         official_position: "Titel"
         official_level: "Tjänstepersonnivå"
+        phone_number: "Telefonnummer"
         redeemable_code: "Mottagen bekräftelsekod"
       organization:
         name: "Organisationsnamn"
         responsible_name: "Representant för gruppen"
-      spending_proposal:
-        administrator_id: "Administratör"
-        association_name: "Föreningens namn"
-        description: "Beskrivning"
-        external_url: "Länk till ytterligare dokumentation"
-        geozone_id: "Område"
-        title: "Titel"
       poll:
         name: "Namn"
         starts_at: "Startdatum"
@@ -281,15 +285,15 @@ sv:
         title: Titel
         question_options: Alternativ
       legislation/question_option:
-        value: Kostnad
+        value: Värde
       legislation/annotation:
-        text: Kommentera
+        text: Kommentar
       document:
         title: Titel
-        attachment: Bilaga
+        attachment: "Bilaga"
       image:
         title: Titel
-        attachment: Bilaga
+        attachment: "Bilaga"
       poll/question/answer:
         title: Svar
         description: Beskrivning
@@ -302,7 +306,7 @@ sv:
       newsletter:
         segment_recipient: Mottagare
         subject: Ämne
-        from: Från
+        from: "Från"
         body: E-postmeddelande
       admin_notification:
         segment_recipient: Mottagare
@@ -337,6 +341,12 @@ sv:
       link:
         label: Titel
         url: Länk
+      valuator:
+        description: Beskrivning
+      local_census_record:
+        document_type: Dokumenttyp
+        date_of_birth: Födelsedatum
+        postal_code: Postkod
     errors:
       models:
         user:

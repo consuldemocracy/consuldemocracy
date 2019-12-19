@@ -8,9 +8,6 @@ sl:
         publish_comment: Objavi komentar
       form:
         phase_not_open: Ta faza ni odprta
-        login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
-        signin: vpisati
-        signup: registrirati
       index:
         title: Komentarji
         comments_about: Komentarji o
@@ -94,11 +91,8 @@ sl:
       participation:
         phase_not_open: Ta faza ni odprta
         organizations: Organizacijam ni dovoljeno sodelovati v razpravi
-        signin: vpisati
-        signup: registrirati
         unauthenticated: Za sodelovanje se moraš %{signin} ali %{signup}.
         verified_only: Le preverjeni uporabniki lahko sodelujejo, %{verify_account}.
-        verify_account: verificiraj svoj račun
         debate_phase_not_open: Faza razprave se je zaključila, novi odgovori niso več mogoči
     shared:
       share: Deli
