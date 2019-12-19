@@ -291,8 +291,11 @@ $sidebar-active: #f4fcd0;
     margin-right: rem-calc(12);
   }
 
-  .admin-content {
+  .side-menu-and-admin-content {
+    @include side-menu-and-content;
+  }
 
+  .admin-content {
     .proposal-form {
       padding-top: 0;
     }
@@ -309,11 +312,6 @@ $sidebar-active: #f4fcd0;
 
 .for-print-only {
   display: none;
-}
-
-.admin-content {
-  overflow: scroll;
-  padding: $line-height !important;
 }
 
 @include breakpoint(medium) {
@@ -430,10 +428,6 @@ code {
   background: $sidebar;
   background: linear-gradient(to bottom, #245b80 0%, #488fb5 100%);
   border-right: 1px solid $border;
-
-  @include breakpoint(medium) {
-    min-height: rem-calc(1100);
-  }
 
   ul {
     list-style-type: none;
