@@ -60,7 +60,7 @@ module Statisticable
   end
 
   def gender?
-    participants.male.any? || participants.female.any? || participants.other.any?
+    participants.where.not(gender: nil).any?
   end
 
   def age?
