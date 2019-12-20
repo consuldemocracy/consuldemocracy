@@ -2770,8 +2770,11 @@ table {
     }
 
     a:hover {
-      box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
       text-decoration: none;
+
+      &:not(.see-all) {
+        box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+      }
 
       img {
         transform: scale(1.1);
