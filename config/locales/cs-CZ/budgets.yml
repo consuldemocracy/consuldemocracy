@@ -160,6 +160,8 @@ cs:
       filters:
         status:
           label: "Aktuální stav projektu"
+        milestone_tag:
+          all: "Všech (%{count})"
     phases:
       errors:
         dates_range_invalid: "Počáteční datum nemůže být stejné nebo pozdější než koncové datum"
