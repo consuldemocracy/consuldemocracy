@@ -36,7 +36,8 @@ namespace :db do
                                   password: "12345678",
                                   password_confirmation: "12345678",
                                   confirmed_at: Time.current,
-                                  terms_of_service: "1")
+                                  terms_of_service: "1",
+                                  erased_at: Time.current)
     end
     user_deleted_id = user_deleted.id
 
