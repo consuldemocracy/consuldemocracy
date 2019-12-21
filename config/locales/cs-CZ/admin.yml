@@ -886,6 +886,8 @@ cs:
         no_questions: "Nemáte žádné otázky přiřazené k této anketě."
         questions_title: "Seznam otázek"
         table_title: "Předmět"
+        edit_answers: Upravit odpovědi
+        see_proposal: "(Zobrazit návrh)"
       flash:
         question_added: "Otázka přidána k této anketě"
         error_on_question_added: "Otázku nelze přiřadit k této anketě"
@@ -905,6 +907,8 @@ cs:
         poll_not_assigned: "Anketa není přiřazena"
       edit:
         title: "Upravit dotaz"
+      new:
+        title_proposal: "Vytvořit otázku"
       answers:
         images:
           add_image: "Přidat obrázek"
