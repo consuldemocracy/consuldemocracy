@@ -1108,6 +1108,8 @@ cs:
       proposal_search:
         button: Vyhledat
         placeholder: Vyhledat návrhy podle názvu, kódu, popisu nebo otázky
+      debate_search:
+        button: Hledat
       user_search:
         button: Vyhledat
         placeholder: Vyhledat uživatele podle jména nebo e-mailu
@@ -1125,6 +1127,8 @@ cs:
       content: Obsah
       created_at: Vytvořeno v
       delete: Smazat
+      color_help: Hexadecimální formát
+      show_results_and_stats: "Zobrazit výsledky a statistiky"
     geozones:
       index:
         title: Geozóna
