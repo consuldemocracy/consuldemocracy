@@ -236,6 +236,7 @@ cs:
         table_actions: "Akce"
         delete: "Odstranit milník"
         no_milestones: "Milníky nejsou definovány"
+        image: "Obrázek"
         show_image: "Zobrazit obrázek"
         documents: "Dokumenty"
         milestone: Milník
@@ -280,6 +281,7 @@ cs:
         no_progress_bars: "Neexistují žádné ukazatele průběhu"
         new_progress_bar: "Vytvořit nový ukazatel průběhu"
         primary: "Hlavní ukazatel průběhu"
+        table_id: "ID"
         table_kind: "Typ"
         table_title: "Předmět"
         table_percentage: "Aktuální pokrok"
@@ -297,15 +299,50 @@ cs:
         notice: "Ukazatel průběhu byl smazán"
     comments:
       index:
+        id: "ID"
+        content: "Obsah"
+        author: "Autor"
+        commentable_type: "Typ"
         title: Skrýt komentáře
+        no_comments: Nejsou žádné komentáře.
+        table_link: "Odkaz"
+    hidden_comments:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          with_confirmed_hide: Potvrzeno
+          without_confirmed_hide: Nevyřízeno
+        hidden_debate: Skryté debaty
+        hidden_proposal: Skryté návrhy
+        title: Skryté komentáře
     dashboard:
       index:
         back: Přejít zpět na %{org}
         title: Administrace
         description: Vítejte v admin panelu portálu %{org}.
+      actions:
+        index:
+          edit: Upravit
+          delete: Smazat
+          active: 'Ano'
+          inactive: 'Ne'
+          action_title: Název
+          action_type: Typ
+          action_active: Aktivní
+          order: Pořadí
+          default:
+            email: Email
+            polls: Průzkumy
     debates:
       index:
         title: Skryté debaty
+    documents:
+      index:
+        title: "Dokumenty"
+        url: "URL"
+      destroy:
+        success_notice: "Dokument byl úspěšně smazán"
     hidden_users:
       index:
         filter: Filtr
@@ -551,11 +588,14 @@ cs:
       title_booths: Hlasovací informační stánky
       legislation: Participativní legislativní proces
       users: Uživatelé
+      debates: "Debaty"
+      comments: "Komentáře"
     administrators:
       index:
         title: Administrátoři
         name: Název
         email: Email
+        description: Popis
         id: Administrátor ID
         no_administrators: Neexistují žádní administrátoři.
       administrator:
@@ -604,6 +644,7 @@ cs:
         empty_newsletters: Žádné informační bulletiny k zobrazení
       new:
         title: Nový informační bulletin
+        image_link: "vlastní obrázky"
       edit:
         title: Upravit informační bulletin
       show:
