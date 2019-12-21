@@ -334,11 +334,33 @@ cs:
           default:
             email: Email
             polls: Průzkumy
+        form:
+          submit_button: Uložit
+      administrator_tasks:
+        index:
+          filter: Filtr
+          filters:
+            pending: Nevyřízeno
+        form:
+          solve: Označit jako vyřízené
+          proposal: Návrh
     debates:
       index:
+        id: ID
+        author: Autor
         title: Skryté debaty
+    hidden_debates:
+      index:
+        filter: Filtr
+        filters:
+          all: Vše
+          with_confirmed_hide: Potvrzeno
+          without_confirmed_hide: Nevyřízeno
+        title: Skryté debaty
+        no_hidden_debates: Nejsou žádné skryté debaty.
     documents:
       index:
+        new_link: "Přidat nový dokument"
         title: "Dokumenty"
         url: "URL"
       destroy:
