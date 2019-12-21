@@ -60,6 +60,11 @@ cs:
     meta_keywords_description: 'Klíčová slova <meta name="keywords">, použitá ke zlepšení SEO'
     min_age_to_participate: Minimální věk potřebný k účasti
     min_age_to_participate_description: "Uživatelé od tohoto věku se mohou účastnit všech procesů"
+    proposals:
+      successful_proposal_id: Úspěšný návrh
+      poll_short_title: Průzkumy
+      poll_link: Odkaz na doplňující informace
+      email_short_title: Email
     analytics_url: "Adresa URL služby Analytics"
     feature:
       twitter_login: "Twutter přihlášení"
@@ -95,3 +100,10 @@ cs:
       public_stats_description: "Zobrazit veřejné statistiky v panelu Administrace"
       help_page: "Stránka nápovědy"
       help_page_description: 'Zobrazí nabídku Nápověda obsahující stránku s informacemi o každé povolené funkci'
+    map:
+      latitude: "Zeměpisná šířka"
+      latitude_description: "Zeměpisná šířka pro zobrazení pozice na mapě"
+      longitude: "Zeměpisná délka"
+      longitude_description: "Zeměpisná délka pro zobrazení pozice na mapě"
+      zoom: "Zvětšení"
+      zoom_description: "Zvětšení pro zobrazení pozice na mapě"
