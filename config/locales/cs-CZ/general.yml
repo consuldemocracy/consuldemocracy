@@ -379,6 +379,20 @@ cs:
       title: Doporučení
       hide_proposed_actions: Skrýt doporučení
       pending_title: Nevyřízený
+      done_title: Hotovo
+    community:
+      debates: Debaty
+      comments: Komentáře
+    polls:
+      index:
+        title: Průzkumy
+        create: Vytvořit průzkum
+        links: Odkazy
+      new:
+        title: Nový průzkum
+        submit: Vytvořit průzkum
+      edit:
+        submit: Aktualizovat průzkum
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"
