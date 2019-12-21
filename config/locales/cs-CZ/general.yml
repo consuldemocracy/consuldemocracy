@@ -367,6 +367,18 @@ cs:
     update:
       form:
         submit_button: Uložit změny
+  dashboard:
+    index:
+      edit_proposal_link: Upravit návrh
+      retire: Pozastavený návrh
+    new_request:
+      links: Odkazy
+    resource:
+      and: a
+    recommended_actions:
+      title: Doporučení
+      hide_proposed_actions: Skrýt doporučení
+      pending_title: Nevyřízený
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"
