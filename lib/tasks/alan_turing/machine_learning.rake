@@ -75,7 +75,9 @@ namespace :db do
     CSV.foreach(csv_file, col_sep: ";", headers: true) do |line|
       attributes = line.to_hash
       attributes["id"] = attributes["id"].to_i
-      ids = [111, 162, 192, 137, 119, 156, 167, 159, 163, 186, 39]
+      ids = [106, 66, 137, 191, 118, 83, 117, 71, 122, 119, 77, 126, 182, 156, 52,
+             121, 139, 96, 59, 101, 104, 53, 176, 183, 102, 57, 171, 58, 157, 152,
+             56, 38, 134, 107, 146, 197, 21, 158, 180, 172]
       if attributes["name"].present?
         if attributes["name"].length >= 150
           attributes["name"] = attributes["name"].truncate(150)
@@ -90,19 +92,48 @@ namespace :db do
     end
     puts "\nTags created!"
 
-    puts "Asigning Machile Learning Tags to Proposals"
+    puts "Asigning Machine Learning Tags to Proposals"
     ids = {
-      "111" => "34",
-      "162" => "150",
-      "192" => "42",
-      "137" => "27",
-      "119" => "28",
-      "156" => "40",
-      "167" => "152",
-      "159" => "109",
-      "163" => "102",
-      "186" => "1",
-      "39" => "26"
+      "106" => "61",
+      "66"  => "23",
+      "137" => "28",
+      "191" => "187",
+      "118" => "92",
+      "83"  => "29",
+      "117" => "93",
+      "71"  => "19",
+      "122" => "19",
+      "119" => "36",
+      "77"  => "74",
+      "126" => "74",
+      "182" => "74",
+      "156" => "108",
+      "52"  => "47",
+      "121" => "69",
+      "139" => "131",
+      "96"  => "30",
+      "59"  => "13",
+      "101" => "26",
+      "104" => "81",
+      "53"  => "46",
+      "176" => "11",
+      "183" => "143",
+      "102" => "27",
+      "57"  => "37",
+      "171" => "41",
+      "58"  => "39",
+      "157" => "22",
+      "152" => "148",
+      "56"  => "1",
+      "38"  => "1",
+      "134" => "79",
+      "107" => "91",
+      "146" => "91",
+      "197" => "91",
+      "21"  => "4",
+      "158" => "4",
+      "180" => "4",
+      "172" => "128"
     }
     csv_file = "lib/tasks/alan_turing/ml_tagging.csv"
     CSV.foreach(csv_file, col_sep: ";", headers: true) do |line|
@@ -204,5 +235,61 @@ namespace :db do
       end
     end
     puts "\nUsers Relations created!"
+
+    puts "Asigning Related Content to Proposals"
+    csv_file = "lib/tasks/alan_turing/ml_related_proposals.csv"
+    CSV.foreach(csv_file, col_sep: ";", headers: false) do |line|
+      list = line.to_a
+      proposal_id = list.first
+      list.delete(proposal_id)
+      list.each do |related_proposal_id|
+        if related_proposal_id.present?
+          unless RelatedContent.exists?(parent_relationable_id: proposal_id,
+                                        child_relationable_id: related_proposal_id)
+            related_content = RelatedContent.create!(parent_relationable_id: proposal_id,
+                                                      parent_relationable_type: "Proposal",
+                                                      child_relationable_id: related_proposal_id,
+                                                      child_relationable_type: "Proposal",
+                                                      author_id: 1)
+            print "." if (related_content.id % 100) == 0
+          end
+        end
+      end
+    end
+    puts "\nRelated content assigned to Proposals!"
+
+    puts "Asigning Users to Comments"
+    user_erased = User.create!(username: "Usuario eliminado",
+                                email: "usuario_borrado@consul.dev",
+                                password: "12345678",
+                                password_confirmation: "12345678",
+                                confirmed_at: Time.current,
+                                terms_of_service: "1",
+                                erased_at: Time.current)
+
+    csv_file = "lib/tasks/alan_turing/comments_with_users.csv"
+    CSV.foreach(csv_file, col_sep: ";", headers: true) do |line|
+      attributes = line.to_hash
+      comment = Comment.find_by(id: attributes["comment"].to_i)
+      if comment.present?
+        if attributes["usernumber"].present?
+          unless comment.user_id == attributes["usernumber"]
+            comment.update_columns(user_id: attributes["usernumber"])
+          end
+        else
+          comment.update_columns(user_id: user_erased.id)
+        end
+        print "." if (comment.id % 100) == 0
+      end
+    end
+    puts "\nUsers assigned to Comments!"
+
+    puts "Recalculating Proposal's Comments"
+    Proposal.find_each do |proposal|
+      comments_number = Comment.where(commentable_id: proposal.id).count
+      proposal.update_columns(comments_count: comments_number)
+      print "." if (proposal.id % 100) == 0
+    end
+    puts "\nComments recalculated!"
   end
 end
