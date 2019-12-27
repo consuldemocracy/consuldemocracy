@@ -7,6 +7,7 @@ describe "Remote Translations" do
     available_locales_response = %w[de en es fr pt zh-Hans]
     expect(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).
                                                             and_return(available_locales_response)
+    allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
   end
 
   describe "Display remote translation button when locale is included in microsoft translate client" do

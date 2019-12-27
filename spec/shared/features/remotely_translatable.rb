@@ -12,6 +12,7 @@ shared_examples "remotely_translatable" do |factory_name, path_name, path_argume
     available_locales_response = %w[de en es fr pt zh-Hans]
     expect(RemoteTranslations::Microsoft::AvailableLocales).to receive(:available_locales).at_most(3).times.
                                                             and_return(available_locales_response)
+    allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
   end
 
   context "Button to request remote translation" do
