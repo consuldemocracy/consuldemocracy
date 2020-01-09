@@ -1,4 +1,8 @@
 cs:
+  attributes:
+    results_enabled: "Zobrazit výsledky"
+    stats_enabled: "Zobrazit statistiky"
+    advanced_stats_enabled: "Zobrazit pokročilé statistiky"
   activerecord:
     models:
       budget/investment:
@@ -83,6 +87,8 @@ cs:
         description_finished: "Popis při dokončení rozpočtu"
         phase: "Fáze"
         currency_symbol: "Měna"
+      budget/translation:
+        name: "Název"
       budget/investment:
         heading_id: "Heading"
         title: "Předmět"
@@ -93,6 +99,7 @@ cs:
         organization_name: "If you are proposing in the name of a collective/organization, or on behalf of more people, write its name"
         image: "Proposal názorný obrázek"
         image_title: "Nadpis obrázku"
+        duration: "Časový rozsah"
       milestone:
         status_id: "Aktuální stav (volitelné)"
         title: "Předmět"
