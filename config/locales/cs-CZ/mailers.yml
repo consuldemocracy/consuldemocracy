@@ -74,3 +74,9 @@ cs:
     evaluation_comment:
       hi: Dobrý den
       commenter_info: "%{commenter}, %{time}:"
+    new_actions_notification_rake_created:
+      hi: "Dobrý den %{name},"
+    new_actions_notification_rake_published:
+      hi: "Dobrý den %{name},"
+    new_actions_notification_on_create:
+      hi: "Ahoj %{name}!"
