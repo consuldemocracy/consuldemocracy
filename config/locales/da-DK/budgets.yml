@@ -17,10 +17,10 @@ da:
         not_logged_in: Du skal %{signin} eller %{signup} for at kunne fortsætte.
         not_verified: Kun verificerede brugere kan stemme på projekter; %{verify_account}.
         organization: Det er ikke tilladt for organisationer at stemme
-        not_selected: Du kan ikke støtte op om projektidéer, der ikke kan gennemføres
+        not_selected: Du kan ikke støtte op om idéer, der ikke kan gennemføres
         not_enough_money: "Du har allerede fordelt det mulige budget.<br><small>Husk at du %{change_ballot} til enhver tid</small>"
         no_ballots_allowed: Støttefasen er slut
-        different_heading_assigned: "Du har allerede stemt i en anden post: %{heading_link}"
+        different_heading_assigned: "Du har allerede stemt i et andet budget: %{heading_link}"
         change_ballot: ændre din stemme
         casted_offline: Du har allerede deltaget, da du var offline
     groups:
@@ -33,8 +33,8 @@ da:
     phase:
       drafting: Udkast (Ikke offentligt)
       informing: Information
-      accepting: Modtagelse af projektidéer
-      reviewing: Gennemgangsfasen
+      accepting: Opret dit forslag
+      reviewing: Vi gennemgår projekterne
       selecting: Støttefasen
       valuating: Evalueringsfasen
       publishing_prices: Publicering af prisvurderinger
@@ -89,7 +89,7 @@ da:
             other: "<strong>Du har stemt på %{count} forslag med en værdi af %{amount_spent}</strong>"
           voted_info: Du kan %{link} på ethvert tidspunkt inden denne fase afsluttes. Det er ikke nødvendigt at bruge alle de penge, der er til rådighed.
           voted_info_link: ændre din stemme
-          different_heading_assigned: "Du har aktive stemmer i en anden post: %{heading_link}"
+          different_heading_assigned: "Du har aktive stemmer i en andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
           zero: Du har endnu ikke stemt på projektidéer i denne gruppe.
@@ -120,10 +120,10 @@ da:
         comments_tab: Kommentarer
         milestones_tab: Processer
         author: Forfatter
-        project_unfeasible: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre din projektidé</strong>, og den vil derfor ikke gå videre til afstemningsfasen."
-        project_selected: "Projektet <strong>er gået videre </strong> til afstemningsfasen."
+        project_unfeasible: "Vi har desværre vurderet, at det <strong>ikke er muligt at gennemføre din projektidé</strong>, og den vil derfor ikke gå videre til afstemning."
+        project_selected: "Projektet <strong>er gået videre </strong> til afstemning."
         project_winner: "Projekt med flest stemmer"
-        project_not_selected: "Projektet <strong>er ikke gået videre </strong> til afstemningsfasen."
+        project_not_selected: "Projektet <strong>er ikke gået videre </strong> til afstemning."
         see_price_explanation: Se prisforklaring
       wrong_price_format: Kun hele tal
       investment:
