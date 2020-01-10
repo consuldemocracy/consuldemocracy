@@ -92,7 +92,7 @@ da:
           different_heading_assigned: "Du har aktive stemmer i en andet budget: %{heading_link}"
           change_ballot: "Hvis du ombestemmer dig, kan du fjerne din stemme in %{check_ballot} og starte forfra."
           check_ballot_link: "kontroller og bekræft min afstemning"
-          zero: Du har endnu ikke stemt på projektidéer i denne gruppe.
+          zero: Du har endnu ikke stemt på forslag i denne gruppe.
           verified_only: "For at oprette en projektidé til det aktuelle deltagerbudget %{verify}."
           create: "Opret din projektidé"
           not_logged_in: "For at oprette en projektidé skal du %{sign_in} eller %{sign_up}."
