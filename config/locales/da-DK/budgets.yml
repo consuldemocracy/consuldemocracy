@@ -35,12 +35,12 @@ da:
       informing: Information
       accepting: Opret dit forslag
       reviewing: Vi gennemgår projekterne
-      selecting: Støttefasen
-      valuating: Evalueringsfasen
-      publishing_prices: Publicering af prisvurderinger
+      selecting: Støt de forslag der skal gå videre
+      valuating: Vi evaluerer jeres forslag
+      publishing_prices: Se vores vurdering af jeres forslag
       balloting: Afstemningsfasen
-      reviewing_ballots: Gennemgang af afstemningsresultatet
-      finished: Budgettet er afsluttet
+      reviewing_ballots: Vi tæller stemmerne
+      finished: Se resultat af afstemning
     index:
       title: Deltagerbudgetter
       empty_budgets: Der er ingen budgetter.
@@ -49,16 +49,16 @@ da:
         title: Deltagerbudgetter
         help: Hvad er et deltagerbudget?
         all_phases: Se alle faser
-      all_phases: Deltagerbudgettets faseforløb
+      all_phases: Tidslinje
       map: Projekternes geografiske placering
       investment_proyects: Alle projekter
       unfeasible_investment_proyects: Projekter, der ikke kan gennemføres 
-      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemningsfasen
+      not_selected_investment_proyects: Projekter, der ikke er udvalgt til afstemning
       finished_budgets: Afsluttede deltagerbudgetter
       see_results: Se resultat
       section_footer:
         title: Hvad er et deltagerbudget?
-        description: Med et deltagerbudget får borgerne selv lov til at bestemme, hvad en given, uddelt sum penge skal bruges til. Det er borgerne, der kommer med idéerne, stemmer på idéerne og på den måde deltager og inddrages i budgetprocessen.
+        description: Med et deltagerbudget får borgerne selv lov til at bestemme, hvad en given, uddelt sum penge skal bruges til. Det er borgerne, der kommer med idéerne, stemmer på idéerne og dermed uddeler penge.
       milestones: Proces
     investments:
       form:
@@ -72,9 +72,9 @@ da:
         map_skip_checkbox: "Denne investering har ikke en konkret lokation"
       index:
         title: Deltagerbudgetter
-        unfeasible: Investeringer, der ikke er mulige at gennemføre
+        unfeasible: Projekter, der ikke er mulige at gennemføre
         unfeasible_text: "Projektidéerne skal imødekomme en række kriterier for at kunne indgå i den endelige afstemningsfase. De projektidéer, der ikke opfylder kriterierne bliver fravalgt og er at finde på listen nedenunder sammen med en rapport, der begrunder projektets manglende opfyldelse af de angivede krav. "
-        by_heading: "Projektidéer tilknyttet: %{heading}"
+        by_heading: "Forslag tilknyttet: %{heading}"
         search_form:
           button: Søg
           placeholder: Søg efter projekter...
