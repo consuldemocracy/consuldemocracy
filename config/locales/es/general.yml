@@ -458,7 +458,7 @@ es:
       title_video_url: "Vídeo externo"
       author: Autor
       draft: Propuesta en borrador. Todavía no puede recoger apoyos, ni aparece en la lista de propuestas.
-      summary_comments: Resumen de comentarios
+      summary_comments: Frases seleccionadas de comentarios
     update:
       form:
         submit_button: Guardar cambios
