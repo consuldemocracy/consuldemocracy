@@ -15,6 +15,7 @@ CKEDITOR.editorConfig = function( config )
   config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
   config.filebrowserImageUploadUrl = "/ckeditor/pictures";
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.filebrowserUploadMethod = "form";
 
   config.allowedContent = true;
   config.format_tags = "p;h2;h3";
