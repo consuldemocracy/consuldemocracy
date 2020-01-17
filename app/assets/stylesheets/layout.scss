@@ -1080,7 +1080,7 @@ form {
     margin-bottom: $line-height;
   }
 
-  .html-area {
+  .html-area:not(.form-error) {
     height: 272px;
     margin-bottom: $line-height;
 
