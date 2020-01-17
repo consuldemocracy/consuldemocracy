@@ -409,6 +409,10 @@ a {
   background: $brand;
 }
 
+.pagination li {
+  display: inline-block;
+}
+
 .truncate-horizontal-text {
   overflow: hidden;
   text-overflow: ellipsis;
