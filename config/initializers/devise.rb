@@ -1,3 +1,5 @@
+require Rails.root.join("lib", "omniauth_wordpress")
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -242,6 +244,11 @@ Devise.setup do |config|
   config.omniauth :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
   config.omniauth :facebook, Rails.application.secrets.facebook_key, Rails.application.secrets.facebook_secret, scope: "email", info_fields: "email,name,verified"
   config.omniauth :google_oauth2, Rails.application.secrets.google_oauth2_key, Rails.application.secrets.google_oauth2_secret
+  config.omniauth :wordpress_oauth2,
+                  Rails.application.secrets.wordpress_oauth2_key,
+                  Rails.application.secrets.wordpress_oauth2_secret,
+                  strategy_class: OmniAuth::Strategies::Wordpress,
+                  client_options: { site: Rails.application.secrets.wordpress_oauth2_site }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

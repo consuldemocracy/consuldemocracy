@@ -89,6 +89,8 @@ en:
       facebook_login_description: "Allow users to sign up with their Facebook account"
       google_login: "Google login"
       google_login_description: "Allow users to sign up with their Google Account"
+      wordpress_login: "Wordpress login"
+      wordpress_login_description: "Allow users to sign up with their Wordpress Account"
       featured_proposals: "Featured proposals"
       featured_proposals_description: "Shows featured proposals on index proposals page"
       signature_sheets: "Signature sheets"

@@ -35,6 +35,15 @@
         </div>
       <% end %>
 
+      <% if feature? :wordpress_login %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to t("omniauth.wordpress_oauth2.name"), user_wordpress_oauth2_omniauth_authorize_path,
+                      title: t("omniauth.wordpress_oauth2.sign_in"),
+                      class: "button-wordpress button expanded",
+                      method: :post %>
+        </div>
+      <% end %>
+
       <div class="small-12 column auth-divider">
         <span><%= t("omniauth.or_fill") %></span>
       </div>
@@ -71,6 +80,16 @@
           <%= link_to t("omniauth.google_oauth2.name"), user_google_oauth2_omniauth_authorize_path,
                       title: t("omniauth.google_oauth2.sign_up"),
                       class: "button-google button expanded",
+                      method: :post %>
+
+        </div>
+      <% end %>
+
+      <% if feature? :wordpress_login %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to t("omniauth.wordpress_oauth2.name"), user_wordpress_oauth2_omniauth_authorize_path,
+                      title: t("omniauth.wordpress_oauth2.sign_up"),
+                      class: "button-wordpress button expanded",
                       method: :post %>
         </div>
       <% end %>

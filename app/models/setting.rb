@@ -84,6 +84,7 @@ class Setting < ApplicationRecord
         "feature.facebook_login": true,
         "feature.google_login": true,
         "feature.twitter_login": true,
+        "feature.wordpress_login": false,
         "feature.public_stats": true,
         "feature.signature_sheets": true,
         "feature.user.recommendations": true,
