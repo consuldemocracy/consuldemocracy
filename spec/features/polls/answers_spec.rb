@@ -37,28 +37,6 @@ describe "Answers" do
     expect(page).to have_content "Adding more trees, creating a play area..."
   end
 
-  scenario "Add video to answer" do
-    answer = create(:poll_question_answer, question: question)
-
-    visit admin_question_path(question)
-
-    within("#poll_question_answer_#{answer.id}") do
-      click_link "Video list"
-    end
-
-    click_link "Add video"
-
-    fill_in "poll_question_answer_video_title", with: "Awesome project video"
-    fill_in "poll_question_answer_video_url", with: "https://www.youtube.com/watch?v=123"
-
-    click_button "Save"
-
-    within("#poll_question_answer_video_#{answer.videos.last.id}") do
-      expect(page).to have_content "Awesome project video"
-      expect(page).to have_content "https://www.youtube.com/watch?v=123"
-    end
-  end
-
   pending "Update"
   pending "Destroy"
 
