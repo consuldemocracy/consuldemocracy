@@ -8,6 +8,6 @@ Airbrake.configure do |config|
 end
 
 Airbrake.add_filter do |notice|
-  ignorables = %w[ActiveRecord::RecordNotFound]
+  ignorables = %w[ActiveRecord::RecordNotFound ActionController::RoutingError]
   notice.ignore! if ignorables.include? notice[:errors].first[:type]
 end
