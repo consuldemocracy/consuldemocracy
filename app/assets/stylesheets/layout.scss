@@ -650,6 +650,14 @@ header {
 
 .dropdown.menu > li {
 
+  a {
+    background: none;
+  }
+
+  &.is-active > a {
+    color: #fff;
+  }
+
   &.is-dropdown-submenu-parent > a::after {
     border-color: #fff transparent transparent;
   }
