@@ -79,6 +79,9 @@ module Consul
     config.autoload_paths << "#{Rails.root}/app/controllers/custom"
     config.autoload_paths << "#{Rails.root}/app/models/custom"
     config.paths["app/views"].unshift(Rails.root.join("app", "views", "custom"))
+
+    # Use rack-attack as a middleware (For rails applications with versions >= 5.1 it is used by default)
+    config.middleware.use Rack::Attack
   end
 end
 

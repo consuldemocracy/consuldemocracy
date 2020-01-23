@@ -1,6 +1,10 @@
 require "rails_helper"
 
 describe "Stats" do
+  after do
+    Rails.cache.clear
+  end
+
   context "Summary" do
     scenario "General" do
       create(:debate)
