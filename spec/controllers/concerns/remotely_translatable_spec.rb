@@ -65,5 +65,13 @@ describe RemotelyTranslatable do
 
       expect(detect_remote_translations([proposal, comment])).to eq []
     end
+
+    it "When resource class is not translatable should not detect remote_translations" do
+      legislation_proposal = create(:legislation_proposal)
+
+      I18n.with_locale(:es) do
+        expect(detect_remote_translations([legislation_proposal])).to eq []
+      end
+    end
   end
 end

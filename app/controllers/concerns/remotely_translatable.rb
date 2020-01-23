@@ -16,7 +16,7 @@ module RemotelyTranslatable
     end
 
     def translation_empty?(resource)
-      resource.translations.where(locale: I18n.locale).empty?
+      resource.class.translates? && resource.translations.where(locale: I18n.locale).empty?
     end
 
     def resources_groups(*args)
