@@ -20,12 +20,12 @@ describe Dashboard::Mailer do
       ActionMailer::Base.deliveries.clear
     end
 
-    it "Disables email delivery using setting" do
+    it "Disables notification emails delivery using setting, does not affect the forward email" do
       Setting["feature.dashboard.notification_emails"] = nil
 
       Dashboard::Mailer.forward(proposal).deliver_now
 
-      expect(ActionMailer::Base.deliveries.count).to eq(0)
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
 
     it "sends forward email" do

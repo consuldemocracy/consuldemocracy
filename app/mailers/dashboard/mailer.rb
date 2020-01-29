@@ -1,6 +1,6 @@
 class Dashboard::Mailer < ApplicationMailer
   layout "mailer"
-  after_action :check_deliverability
+  after_action :check_deliverability, except: [:forward]
 
   def forward(proposal)
     @proposal = proposal
