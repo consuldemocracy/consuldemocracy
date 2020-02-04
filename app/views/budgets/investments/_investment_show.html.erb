@@ -9,6 +9,7 @@
 
 <% cache [locale_and_user_status(investment),
           investment,
+          investment.image,
           investment.author,
           Flag.flagged?(current_user, investment),
           @investment_votes] do %>
