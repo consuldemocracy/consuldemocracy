@@ -1957,5 +1957,48 @@ describe "Budget Investments" do
         expect(page).to have_css(".map-icon", count: 3, visible: false)
       end
     end
+
+    context "Author actions section" do
+      scenario "Is not shown if investment is not editable or does not have an image" do
+        budget.update!(phase: "reviewing")
+        investment = create(:budget_investment, heading: heading, author: author)
+
+        login_as(author)
+        visit budget_investment_path(budget, investment)
+
+        within("aside") do
+          expect(page).not_to have_content "Author"
+          expect(page).not_to have_link "Edit"
+          expect(page).not_to have_link "Remove image"
+        end
+      end
+
+      scenario "Contains edit button in the accepting phase" do
+        investment = create(:budget_investment, heading: heading, author: author)
+
+        login_as(author)
+        visit budget_investment_path(budget, investment)
+
+        within("aside") do
+          expect(page).to have_content "Author"
+          expect(page).to have_link "Edit"
+          expect(page).not_to have_link "Remove image"
+        end
+      end
+
+      scenario "Contains remove image button in phases different from accepting" do
+        budget.update!(phase: "reviewing")
+        investment = create(:budget_investment, :with_image, heading: heading, author: author)
+
+        login_as(author)
+        visit budget_investment_path(budget, investment)
+
+        within("aside") do
+          expect(page).to have_content "Author"
+          expect(page).not_to have_link "Edit"
+          expect(page).to have_link "Remove image"
+        end
+      end
+    end
   end
 end
