@@ -1,0 +1,12 @@
+<% if can_destroy_image?(investment) %>
+  <div class="sidebar-divider"></div>
+  <h2><%= t("budgets.investments.show.author") %></h2>
+  <div class="show-actions-menu">
+    <%= link_to image_path(investment.image),
+                method: :delete,
+                class: "button hollow alert expanded" do %>
+        <span class="icon-image"></span>
+        <%= t("images.remove_image") %>
+    <% end %>
+  </div>
+<% end %>
