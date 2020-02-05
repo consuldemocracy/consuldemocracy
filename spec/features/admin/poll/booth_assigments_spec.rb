@@ -29,6 +29,12 @@ describe "Admin booths assignments" do
       expect(page).to have_content(second_booth.name)
     end
 
+    scenario "Does not hide the Polls menu", :js do
+      visit booth_assignments_admin_polls_path
+
+      within("#admin_menu") { expect(page).to have_link "Polls" }
+    end
+
     scenario "Index do not show polls created by users from proposals dashboard" do
       create(:poll, name: "Poll created by admin")
       create(:poll, name: "Poll from user's proposal", related_type: "Proposal")
