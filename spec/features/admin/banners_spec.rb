@@ -179,6 +179,17 @@ describe "Admin banners magement" do
     expect(page).not_to have_content "Wrong text"
   end
 
+  scenario "when change date field on edit banner page display expected format", :js do
+    banner = create(:banner)
+    visit edit_admin_banner_path(banner)
+
+    fill_in "Post started at", with: "20/02/2002"
+    find_field("Post started at").click
+    within(".ui-datepicker") { click_link "22" }
+
+    expect(page).to have_field "Post started at", with: "22/02/2002"
+  end
+
   scenario "Delete a banner" do
     create(:banner, title: "Ugly banner",
                     description: "Bad text",
