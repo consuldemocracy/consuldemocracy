@@ -459,19 +459,13 @@ describe Budget::Investment do
     end
 
     describe "without_admin" do
-      it "returns open investments without assigned admin" do
-        investment = create(:budget_investment, :open, administrator: nil)
+      it "returns investments without an admin" do
+        investment = create(:budget_investment, :finished, administrator: nil)
 
         expect(Budget::Investment.without_admin).to eq [investment]
       end
 
-      it "does not return investments with valuation finished" do
-        create(:budget_investment, :finished)
-
-        expect(Budget::Investment.without_admin).to be_empty
-      end
-
-      it "does not return investment with an admin" do
+      it "does not return investments with an admin" do
         create(:budget_investment, :with_administrator)
 
         expect(Budget::Investment.without_admin).to be_empty
@@ -1213,14 +1207,11 @@ describe Budget::Investment do
       let(:params) { { advanced_filters: ["without_admin"], budget_id: budget.id } }
       it "returns only investment without admin" do
         create(:budget_investment,
-          :finished,
-          budget: budget)
-        create(:budget_investment,
           :with_administrator,
           budget: budget)
-        investment3 = create(:budget_investment, budget: budget)
+        investment2 = create(:budget_investment, budget: budget)
 
-        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment3])
+        expect(Budget::Investment.scoped_filter(params, "all")).to eq([investment2])
       end
     end
 
@@ -1228,7 +1219,7 @@ describe Budget::Investment do
       let(:params) { { advanced_filters: ["without_valuator"], budget_id: budget.id } }
       it "returns only investment without valuator" do
         create(:budget_investment,
-          :finished,
+          :with_valuator,
           budget: budget)
         investment2 = create(:budget_investment,
           :with_administrator,
