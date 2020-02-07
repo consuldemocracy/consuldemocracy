@@ -1539,6 +1539,7 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
+.button.button-wordpress,
 .button.button-telegram {
   background: #fff;
   color: $text;
@@ -1675,6 +1676,23 @@ table {
   &:focus {
     background: #fff;
     color: #ce3e26;
+  }
+}
+
+.button.button-wordpress {
+  background: #dcdde3;
+  border-left: 3px solid #2f2f33;
+
+  &::before {
+    color: #2f2f33;
+    content: "J";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height * 2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
   }
 }
 

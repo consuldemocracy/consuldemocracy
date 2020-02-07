@@ -312,6 +312,83 @@ describe "Users" do
         expect(page).to have_field("user_email", with: "somethingelse@example.com")
       end
     end
+
+    context "Wordpress" do
+      let(:wordpress_hash) do
+        { provider: "wordpress",
+          uid: "12345",
+          info: {
+            name: "manuela",
+            email: "manuelacarmena@example.com" }}
+      end
+
+      before { Setting["feature.wordpress_login"] = true }
+
+      scenario "Sign up" do
+        OmniAuth.config.add_mock(:wordpress_oauth2, wordpress_hash)
+
+        visit "/"
+        click_link "Register"
+
+        click_link "Sign up with Wordpress"
+
+        expect(page).to have_current_path(new_user_session_path)
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit "/"
+        click_link "Sign in"
+        click_link "Sign in with Wordpress"
+        expect_to_be_signed_in
+
+        click_link "My account"
+        expect(page).to have_field("account_username", with: "manuela")
+
+        visit edit_user_registration_path
+        expect(page).to have_field("user_email", with: "manuelacarmena@example.com")
+      end
+
+      scenario "Try to register with username and email of an already existing user" do
+        create(:user, username: "manuela", email: "manuelacarmena@example.com", password: "judgementday")
+        OmniAuth.config.add_mock(:wordpress_oauth2, wordpress_hash)
+
+        visit "/"
+        click_link "Register"
+        click_link "Sign up with Wordpress"
+
+        expect(page).to have_current_path(finish_signup_path)
+
+        expect(page).to have_field("user_username", with: "manuela")
+
+        click_button "Register"
+
+        expect(page).to have_current_path(do_finish_signup_path)
+
+        fill_in "Username", with: "manuela2"
+        fill_in "Email", with: "manuela@consul.dev"
+        click_button "Register"
+
+        expect(page).to have_current_path(new_user_session_path)
+        expect(page).to have_content "To continue, please click on the confirmation link that we have sent you via email"
+
+        confirm_email
+        expect(page).to have_content "Your account has been confirmed"
+
+        visit "/"
+        click_link "Sign in"
+        click_link "Sign in with Wordpress"
+
+        expect_to_be_signed_in
+
+        click_link "My account"
+        expect(page).to have_field("account_username", with: "manuela2")
+
+        visit edit_user_registration_path
+        expect(page).to have_field("user_email", with: "manuela@consul.dev")
+      end
+    end
   end
 
   scenario "Sign out" do
