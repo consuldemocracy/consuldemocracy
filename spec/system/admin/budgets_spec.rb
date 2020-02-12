@@ -21,7 +21,6 @@ describe "Admin budgets" do
 
     scenario "finds budget by slug" do
       visit admin_budget_path("budget_slug")
-      expect(page).to have_content(budget.name)
     end
 
     scenario "raises an error if budget slug is not found" do
@@ -102,19 +101,6 @@ describe "Admin budgets" do
   end
 
   context "New" do
-    scenario "Create budget" do
-      visit admin_budgets_path
-      click_link "Create new budget"
-
-      fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
-
-      click_button "Create Budget"
-
-      expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_content "M30 - Summer campaign"
-    end
-
     scenario "Name is mandatory" do
       visit new_admin_budget_path
       click_button "Create Budget"
@@ -133,6 +119,54 @@ describe "Admin budgets" do
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
       expect(page).to have_css("small.form-error", text: "has already been taken")
+    end
+  end
+
+  context "Create" do
+    scenario "A new budget is always created in draft mode" do
+      visit admin_budgets_path
+      click_link "Create new budget"
+
+      fill_in "Name", with: "M30 - Summer campaign"
+      select "Accepting projects", from: "budget[phase]"
+
+      click_button "Create Budget"
+
+      expect(page).to have_content "New participatory budget created successfully!"
+      expect(page).to have_content "This participatory budget is in draft mode"
+      expect(page).to have_link "Preview"
+      expect(page).to have_link "Publish"
+    end
+  end
+
+  context "Publish" do
+    let(:budget) { create(:budget, :drafting) }
+
+    scenario "Can preview budget before and after it is published" do
+      visit admin_budget_path(budget)
+
+      click_link "Preview"
+
+      expect(page).to have_current_path budget_path(budget)
+
+      visit admin_budget_path(budget)
+      budget.update!(published: true)
+
+      expect(page).to have_link "Preview budget"
+      click_link "Preview budget"
+
+      expect(page).to have_current_path budget_path(budget)
+    end
+
+    scenario "Publishing a budget" do
+      visit admin_budget_path(budget)
+
+      click_link "Publish"
+
+      expect(page).to have_content "Participaroty budget published successfully"
+      expect(page).to have_link "Preview budget"
+      expect(page).not_to have_content "This participatory budget is in draft mode"
+      expect(page).not_to have_link "Publish budget"
     end
   end
 
@@ -207,7 +241,7 @@ describe "Admin budgets" do
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase", :js do
-      budget.update!(phase: "drafting")
+      budget.update!(published: false)
       old_slug = budget.slug
 
       visit edit_admin_budget_path(budget)

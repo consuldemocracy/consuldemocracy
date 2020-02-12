@@ -84,8 +84,13 @@ en:
         notice: New participatory budget created successfully!
       update:
         notice: Participatory budget updated successfully
+      publish:
+        notice: "Participaroty budget published successfully"
       edit:
         title: Edit Participatory budget
+        drafting: "This participatory budget is in draft mode, only administrators can see it in the public site. Once it's published it cannot be changed to draft mode again."
+        preview: "Preview"
+        publish: "Publish"
         delete: Delete budget
         phase: Phase
         dates: Dates

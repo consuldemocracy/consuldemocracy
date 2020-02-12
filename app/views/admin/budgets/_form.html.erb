@@ -21,6 +21,8 @@
     </div>
   </div>
 
+  <%= f.hidden_field :published, value: false unless @budget.persisted? %>
+
   <div class="row margin-top">
     <% %w[administrators valuators].each do |staff| %>
       <div class="small-12 medium-4 column end">
