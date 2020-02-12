@@ -15,7 +15,7 @@ FactoryBot.define do
     description_finished { "This budget is finished" }
 
     trait :drafting do
-      phase { "drafting" }
+      published { false }
     end
 
     trait :informing do

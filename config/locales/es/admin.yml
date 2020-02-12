@@ -84,8 +84,13 @@ es:
         notice: '¡Presupuestos participativos creados con éxito!'
       update:
         notice: Presupuestos participativos actualizados
+      publish:
+        notice: "Presupuestos participativos actualizados"
       edit:
         title: Editar presupuestos participativos
+        drafting: "Este presupuesto participativo está en modo borrador, sólo los administradores pueden verlo desde la parte pública de la página. Una vez se haya publicado, no se podrá volver a poner en modo borrador otra vez."
+        preview: "Previsualizar"
+        publish: "Publicar"
         delete: Eliminar presupuesto
         phase: Fase
         dates: Fechas

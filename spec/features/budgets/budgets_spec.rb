@@ -168,7 +168,7 @@ describe "Budgets" do
     scenario "Not show investment links earlier of balloting " do
       budget = create(:budget)
       create(:budget_heading, budget: budget)
-      phases_without_links = ["drafting", "informing"]
+      phases_without_links = ["informing"]
       not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
                                phases_without_links -
                                allowed_phase_list
@@ -205,9 +205,10 @@ describe "Budgets" do
   scenario "Index shows only published phases" do
     budget.update!(phase: :finished)
     phases = budget.phases
-    phases.drafting.update!(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
-                           description: "Description of drafting phase",
-                           summary: "<p>This is the summary for drafting phase</p>")
+
+    phases.informing.update!(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
+                             description: "Description of informing phase",
+                             summary: "<p>This is the summary for informing phase</p>")
 
     phases.accepting.update!(starts_at: "01-01-2018", ends_at: "10-01-2018", enabled: true,
                             description: "Description of accepting phase",
@@ -243,8 +244,6 @@ describe "Budgets" do
 
     visit budgets_path
 
-    expect(page).not_to have_content "This is the summary for drafting phase"
-    expect(page).not_to have_content "December 30, 2017 - December 31, 2017"
     expect(page).not_to have_content "This is the summary for reviewing phase"
     expect(page).not_to have_content "January 11, 2018 - January 20, 2018"
     expect(page).not_to have_content "This is the summary for valuating phase"
@@ -254,6 +253,8 @@ describe "Budgets" do
     expect(page).not_to have_content "This is the summary for reviewing_ballots phase"
     expect(page).not_to have_content "March 11, 2018 - March 20, 2018"
 
+    expect(page).to have_content "This is the summary for informing phase"
+    expect(page).to have_content "December 30, 2017 - December 31, 2017"
     expect(page).to have_content "This is the summary for accepting phase"
     expect(page).to have_content "January 01, 2018 - January 20, 2018"
     expect(page).to have_content "This is the summary for selecting phase"
@@ -478,7 +479,7 @@ describe "Budgets" do
 
     before do
       logout
-      budget.update!(phase: "drafting")
+      budget.update!(published: false)
       create(:budget)
     end
 

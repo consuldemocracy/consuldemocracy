@@ -96,9 +96,6 @@ describe Budget do
     end
 
     it "produces auxiliary methods" do
-      budget.phase = "drafting"
-      expect(budget).to be_drafting
-
       budget.phase = "accepting"
       expect(budget).to be_accepting
 
@@ -246,7 +243,6 @@ describe Budget do
   end
 
   describe "#generate_phases" do
-    let(:drafting_phase)          { budget.phases.drafting }
     let(:informing_phase)         { budget.phases.informing }
     let(:accepting_phase)         { budget.phases.accepting }
     let(:reviewing_phase)         { budget.phases.reviewing }
@@ -260,7 +256,6 @@ describe Budget do
     it "generates all phases linked in correct order" do
       expect(budget.phases.count).to eq(Budget::Phase::PHASE_KINDS.count)
 
-      expect(drafting_phase.next_phase).to eq(informing_phase)
       expect(informing_phase.next_phase).to eq(accepting_phase)
       expect(accepting_phase.next_phase).to eq(reviewing_phase)
       expect(reviewing_phase.next_phase).to eq(selecting_phase)
@@ -271,8 +266,7 @@ describe Budget do
       expect(reviewing_ballots_phase.next_phase).to eq(finished_phase)
       expect(finished_phase.next_phase).to eq(nil)
 
-      expect(drafting_phase.prev_phase).to eq(nil)
-      expect(informing_phase.prev_phase).to eq(drafting_phase)
+      expect(informing_phase.prev_phase).to eq(nil)
       expect(accepting_phase.prev_phase).to eq(informing_phase)
       expect(reviewing_phase.prev_phase).to eq(accepting_phase)
       expect(selecting_phase.prev_phase).to eq(reviewing_phase)
