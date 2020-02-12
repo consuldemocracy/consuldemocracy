@@ -43,7 +43,8 @@ class Budget < ApplicationRecord
 
   after_create :generate_phases
 
-  scope :drafting, -> { where(phase: "drafting") }
+  scope :published, -> { where(published: true) }
+  scope :drafting,  -> { where.not(id: published) }
   scope :informing, -> { where(phase: "informing") }
   scope :accepting, -> { where(phase: "accepting") }
   scope :reviewing, -> { where(phase: "reviewing") }
@@ -59,7 +60,7 @@ class Budget < ApplicationRecord
   scope :open, -> { where.not(phase: "finished") }
 
   def self.current
-    where.not(phase: "drafting").order(:created_at).last
+    published.order(:created_at).last
   end
 
   def current_phase
@@ -86,8 +87,12 @@ class Budget < ApplicationRecord
     80
   end
 
+  def publish!
+    update!(published: true)
+  end
+
   def drafting?
-    phase == "drafting"
+    !published?
   end
 
   def informing?

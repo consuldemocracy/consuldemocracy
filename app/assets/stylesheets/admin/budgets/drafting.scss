@@ -1,0 +1,37 @@
+.admin .drafting {
+  margin-bottom: 2 * $line-height / 3;
+  margin-left: auto;
+
+  @include breakpoint(large) {
+    align-items: flex-start;
+    display: flex;
+
+    .callout {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(small medium only) {
+    text-align: right;
+
+    .callout {
+      text-align: left;
+    }
+  }
+
+  .preview-link {
+    @include has-fa-icon(eye, regular);
+    @include hollow-button;
+  }
+
+  .publish-link {
+    @include regular-button;
+    margin-bottom: 0;
+  }
+
+  .preview-link,
+  .publish-link {
+    margin-left: $line-height / 2;
+  }
+}

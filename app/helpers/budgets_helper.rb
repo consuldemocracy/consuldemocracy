@@ -64,7 +64,7 @@ module BudgetsHelper
   end
 
   def budget_published?(budget)
-    !budget.drafting? || current_user&.administrator?
+    budget.published? || current_user&.administrator?
   end
 
   def current_budget_map_locations

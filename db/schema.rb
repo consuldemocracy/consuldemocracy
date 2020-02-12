@@ -360,6 +360,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.text "description_publishing_prices"
     t.text "description_informing"
     t.string "voting_style", default: "knapsack"
+    t.boolean "published"
   end
 
   create_table "campaigns", id: :serial, force: :cascade do |t|

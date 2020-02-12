@@ -1,6 +1,6 @@
 class Budget
   class Phase < ApplicationRecord
-    PHASE_KINDS = %w[drafting informing accepting reviewing selecting valuating publishing_prices balloting
+    PHASE_KINDS = %w[informing accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished].freeze
     PUBLISHED_PRICES_PHASES = %w[publishing_prices balloting reviewing_ballots finished].freeze
     SUMMARY_MAX_LENGTH = 1000

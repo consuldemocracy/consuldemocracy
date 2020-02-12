@@ -53,6 +53,7 @@ namespace :admin do
 
   resources :budgets do
     member do
+      patch :publish
       put :calculate_winners
     end
 
