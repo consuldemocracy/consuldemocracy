@@ -7,6 +7,7 @@ namespace :consul do
   desc "Runs tasks needed to upgrade from 1.2.0 to 1.3.0"
   task "execute_release_1.3.0_tasks": [
     "db:load_sdg",
-    "db:calculate_tsv"
+    "db:calculate_tsv",
+    "budgets:set_published"
   ]
 end

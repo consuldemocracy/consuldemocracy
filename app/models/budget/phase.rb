@@ -18,7 +18,7 @@ class Budget
     validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
-    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
+    validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: ->(*) { PHASE_KINDS }}
     validate :invalid_dates_range?
     validate :prev_phase_dates_valid?
     validate :next_phase_dates_valid?
