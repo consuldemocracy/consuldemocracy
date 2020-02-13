@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="margin-top">
+  <div class="row margin-top">
     <% %w[administrators valuators].each do |staff| %>
       <div class="small-12 medium-4 column end">
         <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
@@ -32,7 +32,7 @@
     <% end %>
   </div>
 
-  <div class="margin-top">
+  <div class="row margin-top">
     <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
     <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
   </div>
