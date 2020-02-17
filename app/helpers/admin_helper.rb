@@ -33,12 +33,14 @@ module AdminHelper
   end
 
   def menu_polls?
-    %w[polls active_polls recounts results questions answers].include?(controller_name) ||
-    controller.class.parent == Admin::Poll::Questions::Answers
+    controller.class.parent == Admin::Poll::Questions::Answers ||
+      %w[polls active_polls recounts results questions answers].include?(controller_name) &&
+      action_name != "booth_assignments"
   end
 
   def menu_booths?
-    %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name)
+    %w[officers booths shifts booth_assignments officer_assignments].include?(controller_name) ||
+      controller_name == "polls" && action_name == "booth_assignments"
   end
 
   def menu_profiles?
