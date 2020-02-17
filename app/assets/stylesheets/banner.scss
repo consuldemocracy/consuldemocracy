@@ -1,0 +1,11 @@
+.banner {
+  margin-bottom: 2rem;
+
+  &__container {
+    max-width: 75rem;
+    height: auto;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+}
