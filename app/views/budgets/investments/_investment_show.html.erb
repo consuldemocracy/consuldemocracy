@@ -23,18 +23,7 @@
       </div>
 
       <aside class="small-12 medium-3 column">
-        <% if can_destroy_image?(investment) %>
-          <div class="sidebar-divider"></div>
-          <h2><%= t("budgets.investments.show.author") %></h2>
-          <div class="show-actions-menu">
-            <%= link_to image_path(investment.image),
-                        method: :delete,
-                        class: "button hollow alert expanded" do %>
-                <span class="icon-image"></span>
-                <%= t("images.remove_image") %>
-            <% end %>
-          </div>
-        <% end %>
+        <%= render "/budgets/investments/author_actions", investment: investment %>
 
         <% if investment.should_show_aside? %>
           <% if investment.should_show_votes? %>
