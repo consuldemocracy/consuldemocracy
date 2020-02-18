@@ -2769,6 +2769,7 @@ table {
 
       &.description {
         color: $text;
+        word-wrap: break-word;
       }
     }
   }
