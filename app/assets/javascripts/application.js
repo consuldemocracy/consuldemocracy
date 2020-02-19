@@ -36,6 +36,7 @@
 //= require jquery-ui/i18n/datepicker-sv
 //= require jquery-ui/i18n/datepicker-zh-CN
 //= require jquery-ui/i18n/datepicker-zh-TW
+//= require jquery-ui/i18n/datepicker-en-GB
 //= require jquery-ui/widgets/autocomplete
 //= require jquery-ui/widgets/sortable
 //= require jquery-fileupload/basic
