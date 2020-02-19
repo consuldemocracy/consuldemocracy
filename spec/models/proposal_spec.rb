@@ -983,7 +983,7 @@ describe Proposal do
 
   describe "#send_new_actions_notification_on_create" do
     before do
-      Setting["dashboard.emails"] = true
+      Setting["feature.dashboard.notification_emails"] = true
       ActionMailer::Base.deliveries.clear
     end
 
@@ -1008,7 +1008,7 @@ describe Proposal do
 
   describe "#send_new_actions_notification_on_published" do
     before do
-      Setting["dashboard.emails"] = true
+      Setting["feature.dashboard.notification_emails"] = true
       ActionMailer::Base.deliveries.clear
     end
 

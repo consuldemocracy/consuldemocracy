@@ -127,6 +127,9 @@ es:
       valuation_comment_notification: "Notificar comentarios de evaluación"
       valuation_comment_notification_description: "Envía un email a todos los usuarios menos al que haya comentado asociados a un presupuesto participativo cuando se cree un nuevo comentario de evaluación"
       graphql_api: "API GraphQL"
+      dashboard:
+        notification_emails: "Emails del panel de progreso"
+        notification_emails_description: "Activar el envío de emails de notificaciones a los autores de las propuestas en la sección de panel de progreso"
     remote_census:
       general:
         endpoint: "Endpoint"

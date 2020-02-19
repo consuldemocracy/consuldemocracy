@@ -10,7 +10,7 @@ describe Dashboard::Mailer do
   end
 
   before do
-    Setting["dashboard.emails"] = true
+    Setting["feature.dashboard.notification_emails"] = true
   end
 
   describe "#forward" do
@@ -20,12 +20,12 @@ describe Dashboard::Mailer do
       ActionMailer::Base.deliveries.clear
     end
 
-    it "Disables email delivery using setting" do
-      Setting["dashboard.emails"] = nil
+    it "Disables notification emails delivery using setting, does not affect the forward email" do
+      Setting["feature.dashboard.notification_emails"] = nil
 
       Dashboard::Mailer.forward(proposal).deliver_now
 
-      expect(ActionMailer::Base.deliveries.count).to eq(0)
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
 
     it "sends forward email" do
@@ -57,8 +57,8 @@ describe Dashboard::Mailer do
     describe "#new_actions_notification_rake_created" do
       let!(:proposal) { create(:proposal, :draft) }
 
-      it "Disables email delivery using setting" do
-        Setting["dashboard.emails"] = nil
+      it "Disables notification email delivery using setting" do
+        Setting["feature.dashboard.notification_emails"] = nil
 
         action.update!(published_proposal: false)
         resource.update!(published_proposal: false)
@@ -102,8 +102,8 @@ describe Dashboard::Mailer do
     describe "#new_actions_notification_rake_published" do
       let!(:proposal) { create(:proposal) }
 
-      it "Disables email delivery using setting" do
-        Setting["dashboard.emails"] = nil
+      it "Disables notification email delivery using setting" do
+        Setting["feature.dashboard.notification_emails"] = nil
         ActionMailer::Base.deliveries.clear
 
         run_rake_task
@@ -154,8 +154,8 @@ describe Dashboard::Mailer do
 
     let!(:proposal) { build(:proposal, :draft) }
 
-    it "Disables email delivery using setting" do
-      Setting["dashboard.emails"] = nil
+    it "Disables notification email delivery using setting" do
+      Setting["feature.dashboard.notification_emails"] = nil
 
       action.update!(published_proposal: false)
       resource.update!(published_proposal: false)
@@ -220,8 +220,8 @@ describe Dashboard::Mailer do
 
     let!(:proposal) { build(:proposal, :draft) }
 
-    it "Disables email delivery using setting" do
-      Setting["dashboard.emails"] = nil
+    it "Disables notification email delivery using setting" do
+      Setting["feature.dashboard.notification_emails"] = nil
 
       proposal.save!
       proposal.publish
