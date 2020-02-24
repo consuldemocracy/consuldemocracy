@@ -1,5 +1,3 @@
-# GraphQL
-
 # API Documentation
 
 * [Characteristics](#characteristics)

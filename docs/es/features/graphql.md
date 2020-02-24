@@ -1,26 +1,24 @@
-# GraphQL
-
 # Documentación de la API
 
-* [Características](#características)
+* [Características](#caracteristicas)
 * [GraphQL](#graphql)
 * [Haciendo peticiones a la API](#haciendo-peticiones-a-la-api)
   * [Clientes soportados](#clientes-soportados)
     * [GraphiQL](#graphiql)
     * [Postman](#postman)
-    * [Librerías HTTP](#librerías-http)
-* [Información disponible](#información-disponible)
+    * [Librerías HTTP](#librerias-http)
+* [Información disponible](#informacion-disponible)
 * [Ejemplos de consultas](#ejemplos-de-consultas)
-  * [Recuperar un único elemento de una colección](#recuperar-un-único-elemento-de-una-colección)
-  * [Recuperar una colección completa](#recuperar-una-colección-completa)
-    * [Paginación](#paginación)
-  * [Acceder a varios recursos en una única petición](#acceder-a-varios-recursos-en-una-única-petición)
+  * [Recuperar un único elemento de una colección](#recuperar-un-unico-elemento-de-una-coleccion)
+  * [Recuperar una colección completa](#recuperar-una-coleccion-completa)
+    * [Paginación](#paginacion)
+  * [Acceder a varios recursos en una única petición](#acceder-a-varios-recursos-en-una-unica-peticion)
 * [Limitaciones de seguridad](#limitaciones-de-seguridad)
   * [Ejemplo de consulta demasiado profunda](#ejemplo-de-consulta-demasiado-profunda)
   * [Ejemplo de consulta demasiado compleja](#ejemplo-de-consulta-demasiado-compleja)
-* [Ejemplos de código](#ejemplos-de-código)
+* [Ejemplos de código](#ejemplos-de-codigo)
 
-## Características
+<h2 id="caracteristicas">Características</h2>
 
 * API de sólo lectura
 * Acceso público, sin autenticación
@@ -113,7 +111,7 @@ La consulta debe estar ubicada en un documento JSON válido, como valor de la cl
 
 ![Postman POST](../../img/graphql/graphql-postman-post-body.png)
 
-#### Librerías HTTP
+<h4 id="librerias-http">Librerías HTTP</h4>
 
 Por supuesto es posible utilizar cualquier librería HTTP de lenguajes de programación.
 
@@ -122,7 +120,7 @@ Por supuesto es posible utilizar cualquier librería HTTP de lenguajes de progra
 `User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36`
 
 
-## Información disponible
+<h2 id="informacion-disponible">Información disponible</h2>
 
 El fichero [config/api.yml](../../config/api.yml) contiene una lista completa de los modelos (y sus campos) que están expuestos actualmente en la API.
 
@@ -141,8 +139,7 @@ La lista de modelos es la siguiente:
 
 ## Ejemplos de consultas
 
-### Recuperar un único elemento de una colección
-
+<h3 id="recuperar-un-unico-elemento-de-una-coleccion">Recuperar un único elemento de una colección</h3>
 ```
 {
   proposal(id: 2) {
@@ -167,7 +164,7 @@ Respuesta:
 }
 ```
 
-### Recuperar una colección completa
+<h3 id="recuperar-una-coleccion-completa">Recuperar una colección completa</h3>
 
 ```
 {
@@ -204,7 +201,7 @@ Respuesta:
 }
 ```
 
-#### Paginación
+<h4 id="paginacion">Paginación</h4>
 
 Actualmente el número máximo (y por defecto) de elementos que se devuelven en cada página está establecido a 25. Para poder navegar por las distintas páginas es necesario solicitar además información relativa al `endCursor`:
 
@@ -261,9 +258,9 @@ Para recuperar la siguiente página, hay que pasar como parámetro el cursor rec
 }
 ```
 
-### Acceder a varios recursos en una única petición
+<h3 id="acceder-a-varios-recursos-en-una-unica-peticion">Acceder a varios recursos en una única petición</h3>
 
-Esta consulta solicita información relativa a varios modelos distintos en una única peticion: `Proposal`, `User`, `Geozone` y `Comment`:
+Esta consulta solicita información relativa a varios modelos distintos en una única petición: `Proposal`, `User`, `Geozone` y `Comment`:
 
 ```
 {
@@ -429,6 +426,6 @@ La respuesta:
 }
 ```
 
-## Ejemplos de código
+<h2 id="ejemplos-de-codigo">Ejemplos de código</h2>
 
 El directorio [doc/api/examples](https://github.com/consul/consul/tree/master/doc/api/examples/ruby) contiene ejemplos de código para acceder a la API.
