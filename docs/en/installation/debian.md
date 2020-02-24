@@ -52,7 +52,7 @@ command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
 ```
 
-then add rvm script source to user's bash (source /root/.bashrc) (this step is only necessary if you can't execute the rvm command)
+then add rvm script source to user's bash (~/.bashrc) (this step is only necessary if you can't execute the rvm command)
 
 ```
 [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
@@ -61,7 +61,7 @@ then add rvm script source to user's bash (source /root/.bashrc) (this step is o
 and finally, reload .bashrc to be able to run RVM
 
 ```
-source /root/.bashrc
+source ~/.bashrc
 ```
 
 with all this, you are suppose to be able to install a ruby version from rvm, as for example version 2.4.9:
