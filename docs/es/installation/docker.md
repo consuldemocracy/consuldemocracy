@@ -46,7 +46,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
-<!-- ## Instalación -->
 <h2 id="instalacion">Instalación</h2>
 
 Clona el repositorio en tu ordenador y entra en el directorio:
