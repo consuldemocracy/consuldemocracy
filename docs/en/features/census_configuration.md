@@ -13,8 +13,7 @@ In the section **Configuration > Global Configuration** a new tab **Remote Censu
 If we have the feature deactivated we will see an informative text that will indicate us how to activate it:
 ![Feature disabled](../../img/remote_census/feature-disabled-en.png)
 
-To activate the feature you must perform 2 steps:
-1. Execute the following command `bin/rake settings:create_remote_census_setting RAILS_ENV=production`
+To activate the feature you must follow the instructions of the previous image:
 1. Access through the administration panel of your application to the section **Settings > Features** and activate the module **Configure connection to the remote census (SOAP)** as shown below:
 ![Feature enabled](../../img/remote_census/feature-enabled-en.png)
 
