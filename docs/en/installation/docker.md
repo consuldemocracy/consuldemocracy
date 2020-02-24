@@ -1,7 +1,7 @@
 # Using Docker for local development
 
 You can use Docker to have a local CONSUL installation for development if:
-- You're having troubles having [prerequisites](prerequisites) installed.
+- You're having troubles having [prerequisites](prerequisites.md) installed.
 - You want to do a quick local installation just to try CONSUL or make a demo.
 - You prefer not to interfer with other rails installations.
 
@@ -105,7 +105,7 @@ docker-compose run app rails console
 To verify the containers are up execute:
 ```bash
 docker ps .
-``` 
+```
 You should see output similar to this:
 ![docker ps](https://i.imgur.com/ASvzXrd.png)
 
@@ -124,11 +124,11 @@ docker-compose down --rmi all -v --remove-orphans
 2. Remove all CONSUL containers
 ```bash
 docker-compose rm -f -s -v
-``` 
+```
 
 3. Verify if there is some container yet:
 ```bash
-docker ps -a 
+docker ps -a
 ```
 Case positive, remove each one manually:
 ```bash

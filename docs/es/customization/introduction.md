@@ -1,6 +1,6 @@
 # Personalización
 
-Puedes modificar CONSUL y ponerle tu propia imagen, para esto debes primero [crear tu propio fork](forks/create.md).
+Puedes modificar CONSUL y ponerle tu propia imagen, para esto debes primero [crear tu propio fork](../getting_started/create.md).
 
 Hemos creado una estructura específica donde puedes sobreescribir y personalizar la aplicación para que puedas actualizar sin que tengas problemas al hacer merge y se sobreescriban por error tus cambios. Intentamos que CONSUL sea una aplicación Ruby on Rails lo más plain vanilla posible para facilitar el acceso de nuevas desarrolladoras.
 

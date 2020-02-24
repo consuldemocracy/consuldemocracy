@@ -1,6 +1,6 @@
 # Basic Configuration
 
-Once you have CONSUL running on the server, there are some basic configuration options that you probably want to define in order to start using it. To do this you will need to open your CONSUL installation through any internet browser and log in with the administration user \(initially it is the `admin@consul.dev` user with the password `12345678`\). 
+Once you have CONSUL running on the server, there are some basic configuration options that you probably want to define in order to start using it. To do this you will need to open your CONSUL installation through any internet browser and log in with the administration user \(initially it is the `admin@consul.dev` user with the password `12345678`\).
 
 Once you have logged in you will see on the top right of the screen the "Admin" link that will take you to the administration interface. From this interface you can configure the following basic options:
 
@@ -77,5 +77,4 @@ You will find different functionalities with the names of the different particip
 
 ### More information and detailed documentation
 
-These options above will allow you to have a basic version of CONSUL to start using. We recommend that you access the [CONSUL Documentation and Guides](../getting_started/documentation_and_guides.md) section where you can find more detailed documentation.
-
+These options above will allow you to have a basic version of CONSUL to start using. We recommend that you access the [CONSUL Documentation and Guides](documentation_and_guides.md) section where you can find more detailed documentation.

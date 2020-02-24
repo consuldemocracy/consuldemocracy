@@ -1,6 +1,6 @@
 # Customization
 
-You can modify your own CONSUL to have your custom visual style, but first you'll have to [create your own fork from](forks/create.md).
+You can modify your own CONSUL to have your custom visual style, but first you'll have to [create your own fork from](../getting_started/create.md).
 
 We've created an specific structure where you can overwrite and customize the application in a way that will let you keep updating it from CONSUL's main repository, without having conflicts on code merging or risking loosing your customization changes. We try to make CONSUL as vanilla as possible to help other developers onboard the codebase.
 

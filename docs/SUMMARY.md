@@ -61,7 +61,7 @@
 
 * [Instalación](es/installation/introduction.md)
   * [Instalación local](es/installation/local_installation.md)
-    * [Prerrequisitos](en/installation/prerequisitos.md)
+    * [Prerrequisitos](es/installation/prerequisites.md)
     * [Ubuntu Linux](es/installation/ubuntu.md)
     * [Debian Linux](es/installation/debian.md)
     * [MacOS](es/installation/macos.md)

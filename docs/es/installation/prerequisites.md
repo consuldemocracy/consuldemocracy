@@ -4,4 +4,3 @@
 * [Debian Linux](debian.md)
 * [MacOS](macos.md)
 * [Windows](windows.md)
-

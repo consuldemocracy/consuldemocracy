@@ -14,11 +14,11 @@ In this example we used [Mailgun](https://www.mailgun.com/).
 
 ## Domain configuration
 * Go to the Domains section:
-![Mailgun domain section](../../mailserver/img/mailgun-domains.png)
+![Mailgun domain section](../../img/mailserver/mailgun-domains.png)
 
 * Since you don't have a domain yet, you should click in the sandbox that is already created;
 * Remember the next credentials:
-![Mailgun sandbox](../../mailserver/img/mailgun-sandbox.png)
+![Mailgun sandbox](../../img/mailserver/mailgun-sandbox.png)
 
 ## Consul mailing configuration for development environment
 * Go to `config/environments/development.rb` file;
@@ -40,7 +40,7 @@ In this example we used [Mailgun](https://www.mailgun.com/).
 ```
 * Fill, `address`, `domain`, `user_name`, `password` with your information. The file would look like:
 
-![development.rb file](../../mailserver/img/development.rb.png)
+![development.rb file](../../img/mailserver/development.rb.png)
 
 ## Consul mailing configuration for production environment
 

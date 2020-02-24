@@ -18,7 +18,7 @@ sudo apt install git
 
 ## Ruby
 
-Las versiones de Ruby versions empaquetadas en repositorios oficiales no son aptas para trabajar con CONSUL, así que debemos instalarlo manualmente.
+Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para trabajar con CONSUL, así que debemos instalarlo manualmente.
 
 En primer lugar, necesitamos los siguiente paquetes para poder instalar Ruby:
 

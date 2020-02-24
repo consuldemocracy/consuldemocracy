@@ -63,6 +63,6 @@ B. Se abre una ventana del editor que tengas configurado en git, mostrando el me
 
 C. Recibes mensajes de error de git junto con un `Automatic merge failed; fix conflicts and then commit the result.`. Esto significa que se han encontrado conflictos entre los cambios en tu código y los cambios que se realizaron en CONSUL desde la última vez que actualizaste tu fork. Esta es una de las principales razones para intentar mantener tu fork lo más al dia posible, realizando este proceso al menos mensualmente. Resuelve manualmente los conflictos para terminar el merge y haz un commit.
 
-Now you can just simply push **upstream** branch to github and create a Pull Request so you can easily check all changes going into your repo, and see your tests suite runs.
+Ahora simplemente sube la rama **upstream** a github y crea un Pull Request, así podrás ver de manera sencilla todos los cambios que se han realizado en el repositorio y verás también como arranca la suite de tests.
 
 Recuerda que siempre puedes comprobar rápidamente los cambios que tienes pendientes de integrar de CONSUL a tu fork sustituyendo **your_org_name** en la url: https://github.com/your_org_name/consul/compare/master...consul:master

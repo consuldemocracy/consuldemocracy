@@ -1,7 +1,7 @@
 # Usando Docker para desarrollo en local
 
 Puedes usar Docker para tener una instalación local de CONSUL si:
-- Estás teniendo problemas para instalar los [prerrequisitos](prerequisites) correctamente.
+- Estás teniendo problemas para instalar los [prerrequisitos](prerequisites.md) correctamente.
 - Quieres tener una instalación local rápidamente para probar o hacer una demo.
 - Prefieres no interferir con instalaciones de apps Rails existentes.
 
@@ -112,7 +112,7 @@ Deberías obtener algo similar a:
 Pendiente de ser completado... ¡Se agradecen las Contribuciones!
 
 
-## ¿Habiendo problemas?
+## ¿Tienes problemas?
 Ejecute los comandos en el **directorio de CONSUL**, para borrar todas las imágenes y contenedores anteriores del Docker de CONSUL. Luego, reinicie el [proceso de instalación](#instalación) de Docker:
 
 1. Quitar todas las imágenes de CONSUL:
@@ -123,11 +123,11 @@ docker-compose down --rmi all -v --remove-orphans
 2. Quitar todos los contenedores de CONSUL
 ```bash
 docker-compose rm -f -s -v
-``` 
+```
 
 3. Verificar si todavía hay algún contenedor:
 ```bash
-docker ps -a 
+docker ps -a
 ```
 Caso positivo, eliminar cada uno de forma manual:
 ```bash

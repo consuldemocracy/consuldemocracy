@@ -2,7 +2,7 @@
 
 ## Super usuario
 
-El programa 'sudo' no viene instalado en Debian por defecto. Su instalación y configuración es posible, se puede encontrar informacion al respecto [aquí](https://wiki.debian.org/es/sudo). Pero no lo recomendamos porque puede causar otros problemas. Recomendamos que se ejecuten las siguientes instrucciones como un super usuario, así que asegúrate de que la primera instrucción que ejecutes sea:
+El programa 'sudo' no viene instalado en Debian por defecto. Su instalación y configuración es posible, se puede encontrar información al respecto [aquí](https://wiki.debian.org/es/sudo). Pero no lo recomendamos porque puede causar otros problemas. Recomendamos que se ejecuten las siguientes instrucciones como un super usuario, así que asegúrate de que la primera instrucción que ejecutes sea:
 
 ```
 su
@@ -39,7 +39,7 @@ apt-get install curl
 
 ## Ruby
 
-Las versiones de Ruby versions empaquetadas en repositorios oficiales no son aptas para trabajar con consul (al menos Debian 7 y 8), así que debemos instalar manualmente.
+Las versiones de Ruby empaquetadas en repositorios oficiales no son aptas para trabajar con consul, así que debemos instalar manualmente.
 
 El método recomendado es via rvm:
 
@@ -51,7 +51,7 @@ command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 curl -L https://get.rvm.io | bash -s stable
 ```
 
-despues añadimos el script rvm a nuestro bash (~/.bashrc) (este paso sólo es necesario si no puedes ejecutar el comando rvm)
+después añadimos el script rvm a nuestro bash (source /root/.bashrc) (este paso sólo es necesario si no puedes ejecutar el comando rvm)
 
 ```
 [[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
@@ -71,7 +71,7 @@ rvm install 2.4.9
 
 ## Bundler
 
-lo instalammos usando
+lo instalamos usando
 
 ```
 gem install rubygems-bundler
@@ -172,4 +172,4 @@ También tienes la opción de solo instalar ChromeDriver desde AUR. Si usas `pac
 pacaur -S chromedriver
 ```
 
-> Ya estás listo para [instalar Consul](local_installation.md)!!
+Ya estás listo para [instalar Consul](local_installation.md)!!
