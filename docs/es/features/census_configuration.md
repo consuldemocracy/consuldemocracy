@@ -13,7 +13,7 @@ En la sección **Configuración > Configuración Global** se ha añadido una nue
 Si tenemos la funcionalidad desactivada veremos un texto informativo que nos indicará como activarla:
 ![Feature disabled](../../img/remote_census/feature-disabled-es.png)
 
-Para activar la funcionalidad deberá realizar seguir las instrucciones de la imagen anterior:
+Para activar la funcionalidad deberá seguir las instrucciones de la imagen anterior:
 1. Acceder a través del panel de administración de su aplicación a la sección **Configuración > Funcionalidades** y activar el módulo de **Configurar conexión al censo remoto (SOAP)** como se puede ver a continuación:
 ![Feature enabled](../../img/remote_census/feature-enabled-es.png)
 
