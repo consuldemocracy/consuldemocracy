@@ -32,20 +32,20 @@ describe "Remote Translations" do
       end
     end
 
-    context "with locale that has :en fallback" do
+    context "with locale that has :es fallback" do
       before do
         allow(I18n.fallbacks).to receive(:[]).and_return([:es])
         Globalize.set_fallbacks_to_all_available_locales
       end
 
-      scenario "with locale that has :es fallback" do
+      scenario "should display text in Spanish" do
         visit root_path(locale: :fr)
 
         expect(page).to have_css ".remote-translations-button"
         expect(page).to have_content "El contenido de esta página no está disponible en tu idioma"
       end
 
-      scenario "with locale that has :es fallback and need parse key" do
+      scenario "should display text in Spanish after parse key" do
         visit root_path(locale: :"pt-BR")
 
         expect(page).to have_css ".remote-translations-button"
