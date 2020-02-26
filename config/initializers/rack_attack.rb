@@ -25,7 +25,7 @@ class Rack::Attack
   req_limit = Rails.env.test? ? 600 : 60
   # Key: "rack::attack:#{Time.now.to_i/:period}:req/ip:#{req.ip}"
   throttle("requests/ip", limit: req_limit, period: 1.minute) do |req|
-    req.ip unless req.path.start_with?("/assets")
+    req.ip if req.path == "/remote_translations" && req.post?
   end
 
   ### Prevent Brute-Force Login Attacks ###

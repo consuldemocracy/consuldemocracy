@@ -16,13 +16,14 @@ describe Rack::Attack, type: :request do
 
   describe "throttle excessive requests by IP address" do
     context "when number of requests is higher than the limit" do
-      it "request status is 429" do
+      it "and request path is not /remote_translations the status response is success" do
         600.times do
           Rack::Attack.cache.count("requests/ip:1.2.3.4", 60)
         end
         get "/", headers: { REMOTE_ADDR: "1.2.3.4" }
 
-        expect(response).to have_http_status(:too_many_requests)
+        expect(response).not_to have_http_status(:too_many_requests)
+        expect(response).to have_http_status(:success)
       end
 
       it "changes the request status to 429" do
