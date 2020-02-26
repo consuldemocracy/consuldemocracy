@@ -27,6 +27,16 @@ describe RemoteTranslation do
     expect(remote_translation).not_to be_valid
   end
 
+  it "is not valid without an available_locales" do
+    remote_translation.locale = "unavailable_locale"
+    expect(remote_translation).not_to be_valid
+  end
+
+  it "is not valid when exists a translation for locale" do
+    remote_translation.locale = :en
+    expect(remote_translation).not_to be_valid
+  end
+
   describe "#enqueue_remote_translation", :delay_jobs do
     it "after create enqueue Delayed Job" do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
