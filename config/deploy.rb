@@ -71,7 +71,7 @@ end
 task :install_bundler_gem do
   on roles(:app) do
     within release_path do
-      execute :rvm, fetch(:rvm1_ruby_version), "do", "gem install bundler"
+      execute :rvm, fetch(:rvm1_ruby_version), "do", "gem install bundler --version 1.17.1"
     end
   end
 end
