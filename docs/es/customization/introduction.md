@@ -79,7 +79,27 @@ El servicio de traducción utilizado tiene los [precios](https://azure.microsoft
 El precio por cada 1 Millón de caracteres traducidos asciende a 8,43 € y sin ningún tipo de coste fijo al mes.
 La competencia Google y DeepL tienen un precio aproximado de entre 16,00 € y 20,00 € por cada 1 Millón de caracteres más un fijo mensual.
 
-Aunque el precio parece asequible para un Ayuntamiento, se pueden crear Alertas sobre varios parametros, entre ellos el `Número de caracteres traducidos` dentro del panel de administración de Azure en el apartado de **Supervisión**.
+Aunque se han tomado medidas técnicas para evitar un mal uso de este servicio, recomendamos la creación de Alertas que ofrece Azure para que un Administrador pueda ser notificado en el caso de detectar un uso fuera de lo común del servicio.
+
+Para crear una Alerta en Azure debemos seguir los siguientes pasos:
+1. Inicie sesión en **Azure Portal**.
+1. Registrar los proveedores de recursos necesarios para crear Alertas
+  1. En el menú de Azure Portal, seleccione **Todos los servicios**.
+  1. En el cuadro **Todos los servicios**, escriba **suscripción** y, a continuación, seleccione **Suscripciones**.
+  1. Seleccione la suscripción en la lista de suscripciones para verla.
+  1. Seleccione **Proveedores de recursos** y consulte la lista de proveedores de recursos disponibles.
+  1. Entre los proveedores de recursos debemos seleccionar **microsoft.insights** y clicar sobre el botón **Registrarse**
+1. Crear nueva regla de Alerta:
+  1. En el menú de Azure Portal, seleccione **Todos los servicios**.
+  1. En el cuadro **Todos los servicios**, escriba **suscripción** y, a continuación, seleccione **Suscripciones**.
+  1. Seleccione la suscripción en la lista de suscripciones para verla.
+  1. Seleccione **Recursos** y acceda al recurso creado de traducciones del tipo **Cognitive Services**
+  1. En la sección **Supervisión** seleccionamos **Alertas** y accedemos a **Nueva regla de alertas**
+  1. Seleccionamos el **Recurso** sobre el cual queremos añadir la Alerta (si hemos seguido los pasos anteriores ya debería estar seleccionado)
+  1. Agregamos una **Condición**. En este caso la que nos interesa tiene como nombre `Characters Translated`. Una vez seleccionada debemos definir la lógica de la Alerta para que se ajuste a nuestras necesidades. Ej: Rellene el campo "Operador" con el valor "Mayor que", rellene el campo "Tipo de Agregación" con el valor "Total" y por último rellene el campo "Valor del umbral" por el número de caracteres que consideramos que deben traducirse antes de ser notificados. En esta sección también se puede configurar el periodo de tiempo y la frecuencia de evaluación.
+  1. Para poder ser notificados tenemos que crear un **Action Group** y asociarla a esta Alerta que estamos creando. Para ello accedemos al botón de **Crear** y rellenamos el formulario. Como se puede observar hay diferentes tipos de acciones, debemos seleccionar **Correo electrónico/SMS/Insertar/Voz** y configurar la opción que consideremos conveniente según nuestras necesidades.
+  1. Una vez creado este grupo de acciones, ya queda directamente asociado a la regla que estamos creando.
+  1. Por último ya solo queda añadir un nombre y clicar sobre el botón **Crear regla de alertas**
 
 #### Añadir un nuevo servicio de traducción
 En el caso de que se quieran integrar más servicios de traducción por cualquier motivo (aparece un nuevo en el mercado más competitivo, se quiere cambiar para contemplar los idiomas que actualmente no tienen soporte, etc) se ha dejado preparado el código para poder añadirlo con las mínimas modificaciones posibles.

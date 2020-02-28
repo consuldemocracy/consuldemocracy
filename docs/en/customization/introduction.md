@@ -79,7 +79,27 @@ The translation service used has the [pricing](https://azure.microsoft.com/en-us
 The price for each 1 Million characters translated is 8.43 € and there is no fixed cost per month.
 Google and DeepL have an approximate price of between 16.00 € and 20.00 € for each 1 million characters and a fixed monthly cost.
 
-Alerts can be created on several parameters, including the `Number of translated characters` within the Azure administration panel in the **Supervision** section.
+Although technical measures have been taken to prevent misuse of this service, we recommend the creation of Alerts offered by Azure so that an Administrator can be notified in the event of detecting unusual use of the service.
+
+To create an Alert in Azure we must follow the following steps:
+1. Sign in to the **Azure Portal**.
+1. Register the resource providers needed to create Alerts
+  1. On the Azure portal menu, select **All services**.
+  1. In the **All services** box, enter **subscription**, and then select **Subscriptions**.
+  1. Select the subscription from the subscription list in order to view it.
+  1. Select **Resource providers** and check the list of available resource providers.
+  1. Among the resource providers we must select **microsoft.insights** and click on the button **Register**
+1. Create new alert rule:
+  1. On the Azure portal menu, select **All services**.
+  1. In the **All services** box, enter **subscription**, and then select **Subscriptions**.
+  1. Select the subscription from the subscription list in order to view it.
+  1. Select **Resources** and access the resource created from translations of the type **Cognitive Services**
+  1. In the **Monitoring** section select **Alerts** and we access **New alert rule**
+  1. Select the **Resource** that we want to alert on (if we have followed the previous steps it should already be selected)
+  1. Add a **Condition**. In this case the one we are interested is called `Characters Translated`. Once selected we must define the logic of the Alert to suit our needs. Ex: Fill "Operator" field with "Greater than" option, fill "Aggregation type" field with "Total" option and fill "Threshold value" field with the number of characters we consider should be translated before being notified. In this section you can also set the time period and frequency of evaluation.
+  1. In order to be notified we have to create an **Action Group** and associate it with this Alert we're creating. To do this, access the button **Create** and fill out the form. As you can see there are different types of actions, we must select **Email/SMS/Push/Voice** and configure the option that we consider convenient according to our needs.
+  1. Once this group of actions has been created, it is directly associated with the rule we are creating.
+  1. Finally, all you have to do is add a name and click on the **Create new alert rule**
 
 #### Add a new translation service
 If you want to integrate more translation services for any reason (new translation service appears, you want to change to include languages that are currently not supported, etc.) the code is ready to be added.
