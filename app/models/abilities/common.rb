@@ -123,6 +123,10 @@ module Abilities
       cannot [:vote, :create_comment], Legislation::Process do |process|
         not process.draft_phase.open?
       end
+
+      cannot [:vote, :create_comment], Legislation::Process do |process|
+        not process.debate_phase.open?
+      end
     end
   end
 end
