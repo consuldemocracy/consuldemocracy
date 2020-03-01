@@ -119,6 +119,10 @@ module Abilities
       can [:update, :destroy], Topic, author_id: user.id
 
       can :disable_recommendations, [Debate, Proposal]
+
+      cannot [:vote, :create_comment], Legislation::Process do |process|
+        not process.draft_phase.open?
+      end
     end
   end
 end
