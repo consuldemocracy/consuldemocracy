@@ -58,7 +58,7 @@ describe Abilities::Common do
   let(:own_budget_investment_image) { build(:image, imageable: own_investment_in_accepting_budget) }
   let(:budget_investment_image)     { build(:image, imageable: investment_in_accepting_budget) }
 
-  let(:process) { create(:legislation_process, :past)}
+  let(:process) { create(:legislation_process, :past) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate)  }

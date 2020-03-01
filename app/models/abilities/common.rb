@@ -121,11 +121,11 @@ module Abilities
       can :disable_recommendations, [Debate, Proposal]
 
       cannot [:vote, :create_comment], Legislation::Process do |process|
-        not process.draft_phase.open?
+        !process.draft_phase.open?
       end
 
       cannot [:vote, :create_comment], Legislation::Process do |process|
-        not process.debate_phase.open?
+        !process.debate_phase.open?
       end
     end
   end
