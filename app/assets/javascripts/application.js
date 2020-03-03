@@ -87,6 +87,8 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require irma
+//= require irma_omniauth
 
 var initialize_modules = function() {
   "use strict";

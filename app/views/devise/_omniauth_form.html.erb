@@ -44,6 +44,15 @@
         </div>
       <% end %>
 
+      <% if feature? :developer_login %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to 'IRMA', '#',
+                      title: 'IRMA title',
+                      class: "button-developer button expanded",
+                      id: "irma-login-button" %>
+        </div>
+      <% end %>
+
       <div class="small-12 column auth-divider">
         <span><%= t("omniauth.or_fill") %></span>
       </div>
@@ -91,6 +100,15 @@
                       title: t("omniauth.wordpress_oauth2.sign_up"),
                       class: "button-wordpress button expanded",
                       method: :post %>
+        </div>
+      <% end %>
+
+      <% if feature? :developer_login %>
+        <div class="small-12 medium-6 large-4 column end">
+          <%= link_to 'IRMA', '#',
+                      title: 'IRMA title',
+                      class: "button-developer button expanded",
+                      id: "irma-login-button" %>
         </div>
       <% end %>
 
