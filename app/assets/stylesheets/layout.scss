@@ -1540,7 +1540,8 @@ table {
 .button.button-facebook,
 .button.button-google,
 .button.button-wordpress,
-.button.button-telegram {
+.button.button-telegram,
+.button.button-irma {
   background: #fff;
   color: $text;
   font-weight: bold;
@@ -1548,6 +1549,13 @@ table {
   line-height: $line-height * 2;
   padding: 0;
   position: relative;
+}
+
+.button.button-irma {
+  border-left: 3px solid #00B1E6;
+  background: image-url("irmalogo.svg") left no-repeat, rgb(192, 222, 231);
+  padding-left: 0.75rem;
+  background-origin: content-box;
 }
 
 .button.button-twitter {
