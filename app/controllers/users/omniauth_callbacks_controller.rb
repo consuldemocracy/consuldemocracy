@@ -15,8 +15,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     sign_in_with :wordpress_login, :wordpress_oauth2
   end
 
-  def developer
-    sign_in_with :developer_login, :developer
+  def irma
+    sign_in_with :irma_login, :irma
   end
 
   def after_sign_in_path_for(resource)
