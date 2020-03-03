@@ -37,7 +37,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       identity = Identity.first_or_create_from_oauth(auth)
       @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)
 
-      @user.gender ||= auth.info[:gender]
+      @user.gender = auth.info[:gender] if auth.info[:gender]
+      @user.over18 = auth.info[:over18] if auth.info[:over18]
+      @user.zipcode = auth.info[:zipcode] if auth.info[:zipcode]
 
       if save_user
         identity.update!(user: @user)
