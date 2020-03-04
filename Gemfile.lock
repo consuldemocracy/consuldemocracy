@@ -402,7 +402,7 @@ GEM
       activesupport (>= 4.2)
       arel (>= 6)
     public_suffix (4.0.1)
-    puma (4.3.1)
+    puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.1.1)
     rack-accept (0.4.5)
@@ -661,7 +661,7 @@ DEPENDENCIES
   paranoia (~> 2.4.2)
   pg (~> 0.21.0)
   pg_search (~> 2.0.1)
-  puma (~> 4.3.1)
+  puma (~> 4.3.3)
   rails (= 5.0.7.2)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 8.2.1)!
