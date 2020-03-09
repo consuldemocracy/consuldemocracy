@@ -4,6 +4,7 @@ include RemotelyTranslatable
 describe RemotelyTranslatable do
   before do
     Setting["feature.remote_translations"] = true
+    allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return("123")
   end
 
   describe "#detect_remote_translations" do
@@ -48,11 +49,29 @@ describe RemotelyTranslatable do
       end
     end
 
+    it "When api key has not been set in secrets should not detect remote_translations" do
+      allow(Rails.application.secrets).to receive(:microsoft_api_key).and_return(nil)
+      proposal = create(:proposal)
+      comment = create(:comment, commentable: proposal)
+
+      I18n.with_locale(:es) do
+        expect(detect_remote_translations([proposal, comment])).to eq []
+      end
+    end
+
     it "When defined in current locale should not detect remote_translations" do
       proposal = create(:proposal)
       comment = create(:comment, commentable: proposal)
 
       expect(detect_remote_translations([proposal, comment])).to eq []
+    end
+
+    it "When resource class is not translatable should not detect remote_translations" do
+      legislation_proposal = create(:legislation_proposal)
+
+      I18n.with_locale(:es) do
+        expect(detect_remote_translations([legislation_proposal])).to eq []
+      end
     end
   end
 end

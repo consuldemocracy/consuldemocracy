@@ -1,5 +1,5 @@
 <div class="admin-sidebar">
-  <ul id="admin_menu" data-accordion-menu data-multi-open="false">
+  <ul id="admin_menu" data-accordion-menu data-multi-open="true">
     <% if feature?(:proposals) %>
       <li class="section-title">
         <%= link_to admin_proposals_path do %>
@@ -57,7 +57,7 @@
         <span class="icon-box"></span>
         <strong><%= t("admin.menu.title_booths") %></strong>
       </a>
-      <ul id="booths_menu" <%= "class=is-active" if menu_booths? || controller_name == "polls" && action_name == "booth_assignments" %>>
+      <ul id="booths_menu" <%= "class=is-active" if menu_booths? %>>
         <li <%= "class=is-active" if %w[officers officer_assignments].include?(controller_name) %>>
           <%= link_to t("admin.menu.poll_officers"), admin_officers_path %>
         </li>

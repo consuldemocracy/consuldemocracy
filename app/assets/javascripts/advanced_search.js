@@ -25,6 +25,7 @@
       });
       $(".js-calendar-full").datepicker();
       $.datepicker.setDefaults($.datepicker.regional[locale]);
+      $.datepicker.setDefaults({ dateFormat: "dd/mm/yy" });
     },
     initialize: function() {
       App.AdvancedSearch.init_calendar();

@@ -6,7 +6,7 @@ describe "Dashboards Rake" do
     before do
       Rake.application.rake_require "tasks/dashboards"
       Rake::Task.define_task(:environment)
-      Setting["dashboard.emails"] = true
+      Setting["feature.dashboard.notification_emails"] = true
       ActionMailer::Base.deliveries.clear
     end
 

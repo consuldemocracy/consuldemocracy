@@ -346,6 +346,7 @@ a {
   clear: both;
   color: $text-medium;
   display: inline-block;
+  padding-right: $line-height / 2;
 }
 
 .back:not([class^="icon-"]) {
@@ -407,6 +408,10 @@ a {
 
 .pagination .current {
   background: $brand;
+}
+
+.pagination li {
+  display: inline-block;
 }
 
 .truncate-horizontal-text {
@@ -644,6 +649,14 @@ header {
 }
 
 .dropdown.menu > li {
+
+  a {
+    background: none;
+  }
+
+  &.is-active > a {
+    color: #fff;
+  }
 
   &.is-dropdown-submenu-parent > a::after {
     border-color: #fff transparent transparent;
@@ -1076,7 +1089,7 @@ form {
     margin-bottom: $line-height;
   }
 
-  .html-area {
+  .html-area:not(.form-error) {
     height: 272px;
     margin-bottom: $line-height;
 
@@ -1526,6 +1539,7 @@ table {
 .button.button-twitter,
 .button.button-facebook,
 .button.button-google,
+.button.button-wordpress,
 .button.button-telegram {
   background: #fff;
   color: $text;
@@ -1662,6 +1676,23 @@ table {
   &:focus {
     background: #fff;
     color: #ce3e26;
+  }
+}
+
+.button.button-wordpress {
+  background: #dcdde3;
+  border-left: 3px solid #2f2f33;
+
+  &::before {
+    color: #2f2f33;
+    content: "J";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height * 2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
   }
 }
 
@@ -2226,7 +2257,6 @@ table {
 .flag-disable,
 .flag-active {
   line-height: 0;
-  vertical-align: sub;
 }
 
 .flag-disable {
@@ -2739,6 +2769,7 @@ table {
 
       &.description {
         color: $text;
+        word-wrap: break-word;
       }
     }
   }

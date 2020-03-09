@@ -548,6 +548,10 @@ en:
           attributes:
             valuation:
               cannot_comment_valuation: "You cannot comment a valuation"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Already translated resource
       messages:
         translations_too_short: Is mandatory to provide one translation at least
         record_invalid: "Validation failed: %{errors}"
