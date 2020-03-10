@@ -1,5 +1,6 @@
 da:
   attributes:
+    geozone_id: "Projektets omfang"
     results_enabled: "Vis resultater"
     stats_enabled: "Vis statistik"
     advanced_stats_enabled: "Vis avanceret statistik"
@@ -137,6 +138,8 @@ da:
         description_finished: "Synlig beskrivelse, når budgettet er færdiggjort"
         phase: "Fase"
         currency_symbol: "Valuta"
+      budget/translation:
+        name: "Navn"
       budget/investment:
         heading_id: "Overskrift"
         title: "Titel"
@@ -147,6 +150,17 @@ da:
         organization_name: "Hvis du fremsender et forslag på vegne af en gruppe/organisation, angiv navnet på denne"
         image: "Et beskrivende billede"
         image_title: "Titel på billede"
+        duration: "Tidsramme"
+        feasibility_feasible: "Kan gennemføres"
+        feasibility_undecided: "Udefineret"
+        feasibility_unfeasible: "Kan ikke gennemføres"
+        incompatible: "Marker som inkompatibel"
+        milestone_tag_list: "Milepæle"
+        price_explanation: "Forklaring på pris"
+        selected: "Marker som valgt"
+        selected_true: "Valgt"
+        selected_false: "Ikke valgt"
+        unfeasibility_explanation: "Forklaring på om projektet kan gennemføres"
       budget/investment/translation:
         description: "Beskrivelse"
       geozone:
