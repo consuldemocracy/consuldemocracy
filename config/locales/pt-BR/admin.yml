@@ -151,7 +151,11 @@ pt-BR:
       form:
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
+        create: "Criar novo título"
+        edit: "Editar Títulos"
         submit: "Salvar título"
+      index:
+        back: "Voltar a grupos"
     budget_phases:
       edit:
         summary_help_text: Este texto irá informar o usuário sobre a fase. Para mostrá-lo mesmo se a fase não está ativa, selecione a caixa de seleção abaixo
@@ -177,7 +181,10 @@ pt-BR:
           undecided: Não decidido
           unfeasible: Inviável
           min_total_supports: Adesão mínima
+          max_total_supports: Adesão máxima
           winners: Vencedores
+          one_filter: "Filtros aplicados no momento: <b><em>%{filter}</em></b>"
+          two_filters: "Filtros aplicados no momento: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filtro
         download_current_selection: "Baixar seleção atual"
@@ -299,6 +306,7 @@ pt-BR:
       delete:
         notice: Status de investimento excluído com sucesso
     progress_bars:
+      manage: "Gerenciar barras de progresso"
       index:
         title: "Barras de progresso"
         no_progress_bars: "Não existem barras de progresso"
@@ -310,6 +318,16 @@ pt-BR:
         table_percentage: "Posição atual"
       new:
         creating: "Criar barra de progresso"
+      edit:
+        title:
+          primary: "Editar barra de progresso principal"
+          secondary: "Editar barra de progresso %{title}"
+      create:
+        notice: "Barra de progresso criada com sucesso!"
+      update:
+        notice: "Barra de progresso alterada com sucesso"
+      delete:
+        notice: "Barra de progresso excluída com sucesso"
     comments:
       index:
         id: "ID"
@@ -337,20 +355,27 @@ pt-BR:
         description: Bem-vindo ao painel de administração %{org}.
       actions:
         index:
+          create: Criar recurso ou ação
           edit: Editar
           delete: Excluir
           active: 'Sim'
           inactive: 'Não'
+          title: Recursos e ações
           action_title: Título
           action_type: Tipo
+          day_offset: Dias necessários
           action_active: Ativo
           order: Ordem
           default:
             email: Email
             polls: Votações
             poster: Pôster
+        new:
+          back: Voltar à lista
         create:
           notice: Ação criada com sucesso
+        edit:
+          back: Voltar à lista
         delete:
           success: Ação excluída com sucesso
         form:
@@ -1455,3 +1480,8 @@ pt-BR:
         creating: Criando novo registro de censo local
       create:
         notice: Novo registro de censo local criado com sucesso!
+      imports:
+        show:
+          created: Registros criados
+        local_census_records:
+          no_records_found: Nenhum registro encontrado.
