@@ -17,19 +17,24 @@ pt-BR:
         select_poll: Selecionar votação
         add_results: Adicionar resultados
     poll_budgets:
+      see_ballot_sheets: Ver lista de cédulas de votação
       index:
+        title: "%{poll_budget} - Lista de cédulas de votação"
+        ballot_sheet: "Cédula de votação %{id}"
         ballot_sheet_name: Nome
         ballot_sheet_author: Autor
         ballot_sheet_creation_date: Data de criação
+        empty_results: Ainda não há cédulas votação para este pleito
       new:
+        title: "%{poll_budget} - Nova cédula de votação"
         booth: Urna
         select_booth: Selecione a urna
-        csv_data: dados CSV
+        csv_data: Dados CSV
         submit: Salvar
       show:
         created_at: Data de criação
         author: Autor
-        data: dados CSV
+        data: Dados CSV
     booth:
       new:
         title: "Escolha sua urna"
@@ -77,6 +82,7 @@ pt-BR:
         not_to_vote: A pessoa decidiu não votar neste momento
       show:
         can_vote: Pode votar
+        cannot_vote: A pessoa não pode votar porque não está registrada na(s) região(ões) em questão.
         error_already_voted: Já participou desta votação
         submit: Confirmar voto
         success: "Voto introduzido!"

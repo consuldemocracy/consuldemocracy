@@ -1,6 +1,8 @@
 cs:
   documents:
     title: Dokumenty
+    max_documents_allowed_reached: Dosáhli jste maximálního počtu povolených dokumentů! <strong>Musíte jeden odstranit, než budete moci nahrát další. </strong>
+    additional: Dodatečná dokumentace
     form:
       title: Dokumenty
       title_placeholder: Přidejte popisný název dokumentu

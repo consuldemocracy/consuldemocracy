@@ -169,11 +169,16 @@ da:
     errors: fejl
     not_saved: "forhindrede denne %{resource} i at blive gemt. <br>Se de markerede felter for at rette op på fejlen:"
     policy: Privatpolitik
+    banner: banner
     proposal: Borgerforslag
     proposal_notification: "Notifikation"
     budget/investment: Projekt
     budget/group: Budget gruppe
     budget/heading: Budget Rubrik
+    geozone: geografisk område
+    legislation/draft_version: udkast
+    legislation/process: proces
+    legislation/question: spørgsmål
     poll/shift: Skift
     poll/question/answer: Svar
     user: Konto
@@ -182,6 +187,8 @@ da:
     document: Dokument
     topic: Emne
     image: Billede
+    site_customization/content_block: indholdsblok
+    site_customization/page: side
   geozones:
     none: Hele byen
   layouts:
@@ -359,6 +366,7 @@ da:
       selected_proposals: Valgte forslag
       selected_proposals_link: Vis valgte forslag
       archived_proposals: Arkiverede forslag
+      proposals_lists: Liste over forslag
       retired_links:
         all: Alle
         duplicated: Kopieret
@@ -370,6 +378,9 @@ da:
         button: Søg
         placeholder: Søg borgerforslag...
         title: Søg
+      search_results:
+        one: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
+        other: " indeholder betegnelserne <strong>'%{search_term}'</strong>"
       select_order: Sorter efter
       select_order_long: "Forslag i henhold til:"
       start_proposal: Opret et borgerforslag
@@ -420,6 +431,7 @@ da:
       total_percent: 100%
       archived: "Forslaget er blevet arkiveret og kan derfor ikke længere modtage støtte."
       successful: "Forslaget har opnået den nødvendige støtte."
+      selected: "Valgte forslag"
     show:
       author_deleted: Bruger slettet
       code: "Forslagskode:"
@@ -454,6 +466,8 @@ da:
       mailing: E-mail
       poster: Plakat
       recommended_actions: Anbefalede handlinger
+      messages: Besked til brugere
+      related_content: Relateret indhold
     form:
       request: Anmod
     create_request:
@@ -515,6 +529,9 @@ da:
       debates: Debatindlæg
       comments: Kommentarer
       latest_comments: Seneste beskeder
+    messages:
+      send_notification: Send besked til forslagets støtter
+      previous_notifications: Se tidligere notifikationer
     polls:
       index:
         title: Afstemninger
@@ -536,6 +553,10 @@ da:
         view_results: Se resultater
         edit_poll: Rediger survey
         show_results_help: Hvis du markerer afkrydsningsfeltet vil resultaterne offentliggøres, og alle brugere vil kunne se dem
+        delete: Slet undersøgelse
+        alert_notice: Denne handling vil slette undersøgelsen og dets associerede spørgsmål.
+        success_notice: Undersøgelsen blev slettet
+        unable_notice: Du kan ikke slettet en undersøgelse der har respons
       form:
         add_question: Tilføj et spørgsmål
       question_fields:
@@ -751,6 +772,11 @@ da:
     manage:
       all: "Du har ikke tilladelse til at udføre denne handling %{action} på %{subject}."
   users:
+    login_to_comment: "Du skal %{signin} eller %{signup} for at skrive en kommentar."
+    login_to_continue: "Du skal %{signin} eller %{signup} for at fortsætte."
+    signin: "log ind"
+    signup: "tilmeld dig"
+    verify_account: "verificer din konto"
     direct_messages:
       new:
         direct_messages_bloqued: "Denne bruger har besluttet ikke at kunne modtage direkte beskeder"
@@ -904,3 +930,6 @@ da:
       surveys: Undersøgelser
     poll:
       take_part: Forløber fra %{from} til %{to}
+  remote_translations:
+    text: Indholdet på denne sider er ikke tilgængeligt på dit sprog
+    button: Oversæt side

@@ -16,6 +16,7 @@ sv:
         table_assigned_investments_valuation_open: Tilldelade budgetförslag öppna för bedömning
         table_actions: Åtgärder
         evaluate: Utvärdera
+        no_budgets: "Det finns inga budgetar"
     budget_investments:
       index:
         headings_filter_all: Alla områden
@@ -54,6 +55,8 @@ sv:
         assigned_valuators: Ansvariga bedömare
       edit:
         dossier: Rapport
+        price: "Kostnad (%{currency})"
+        price_first_year: "Kostnad under första året (%{currency}) <small>(ej obligatoriskt, ej publikt)</small>"
         feasibility: Genomförbarhet
         valuation_finished_alert: "Är du säker på att du vill markera rapporten som färdig? Efter det kan du inte längre göra ändringar."
         not_feasible_alert: "Förslagslämnaren får ett e-postmeddelande om varför projektet inte är genomförbart."

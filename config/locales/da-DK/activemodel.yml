@@ -16,12 +16,25 @@ da:
           confirmation_code: "Bekræftelseskode"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "Email"
+        password: "Adgangskode"
+        verification_code: "Koden du modtog"
+      verification/management/document:
+        document_type: "Dokumenttype:"
+        document_number: "Dokumentnummer"
+      verification/residence:
+        date_of_birth: "Fødselsdato"
+        document_type: "Dokumenttype"
+        postal_code: "Postnummer"
       verification/sms:
         confirmation_code: "Skriv den kode du modtog på SMS"
       officing/residence:
         document_type: "Dokumenttype"
         document_number: "Dokumentnummer (bogstaver inkluderet)"
         year_of_birth: "Fødselsår"
+      local_census_records/import:
+        file: Fil
     errors:
       models:
         local_census_records/import:

@@ -17,6 +17,7 @@ cs:
         title: "Debaty"
         description: "V sekci %{link} můžete prezentovat a sdílet svůj názor s ostatními lidmi k otázkám, které vás znepokojují ve vztahu k městu. Je také místem k vytváření nápadů, které prostřednictvím jiných částí %{org} vedou ke konkrétním opatřením vedení města."
         link: "Debaty"
+        feature: "Debaty můžete otevírat, komentovat je a hodnotit pomocí tlačítek <strong>Souhlasím</strong> nebo <strong>Nesouhlasím</strong>. Musíte být ale %{link}."
         feature_link: "registrováni na portále  %{org}"
         image_alt: "Tlačítka k vyhodnocení debat"
         figcaption: 'Tlačítka "souhlasím" a "nesouhlasím" k vyhodnocení debat.'
@@ -25,11 +26,13 @@ cs:
         description: "V sekci %{link} můžete publikovat návrhy pro vedení města. Návrhy vyžadují podporu, a pokud dosáhnou dostatečné podpory, jsou zařazené k veřejnému hlasování. Návrhy schválené těmito hlasy občanů jsou přijímány vedením města k projednání."
         link: "návrhy občanů"
         image_alt: "Tlačítko pro podporu návrhu"
+        figcaption: 'Tlačítko "Podpořit" návrh.'
       budgets:
         title: "Participativní rozpočty"
         description: "Sekce %{link} pomáhá lidem přímo rozhodovat o tom, na kterou část rozpočtu města vynakládá své finanční prostředky."
         link: "participativní rozpočty"
         image_alt: "Různé fáze participativního rozpočtu"
+        figcaption: 'Fáze "Podpořit" a "Hlasovat" u participativního rozpočtu.'
       polls:
         title: "Průzkum"
         description: "%{link} sekce je aktivována pokud návrh dosáhne 1% podpory a tím je zařazen do veřejného hlasování, a nebo když vedení města samo zveřejní tento návrh k veřejnému hlasování."
