@@ -89,6 +89,8 @@ es:
       facebook_login_description: "Permitir que los usuarios se registren con su cuenta de Facebook"
       google_login: "Registro con Google"
       google_login_description: "Permitir que los usuarios se registren con su cuenta de Google"
+      wordpress_login: "Registro con Wordpress"
+      wordpress_login_description: "Permitir que los usuarios se registren con su cuenta de Wordpress"
       featured_proposals: "Propuestas destacadas"
       featured_proposals_description: "Muestra propuestas destacadas en la página principal de propuestas"
       signature_sheets: "Hojas de firmas"
@@ -125,15 +127,18 @@ es:
       valuation_comment_notification: "Notificar comentarios de evaluación"
       valuation_comment_notification_description: "Envía un email a todos los usuarios menos al que haya comentado asociados a un presupuesto participativo cuando se cree un nuevo comentario de evaluación"
       graphql_api: "API GraphQL"
+      dashboard:
+        notification_emails: "Emails del panel de progreso"
+        notification_emails_description: "Activar el envío de emails de notificaciones a los autores de las propuestas en la sección de panel de progreso"
     remote_census:
       general:
         endpoint: "Endpoint"
         endpoint_description: "Nombre del host donde se encuentra el servicio del censo (wsdl)"
       request:
         method_name: "Nombre del método de la petición"
-        method_name_description: "Nombre del método qe acepta el WebService del Censo del Ayuntamiento."
+        method_name_description: "Nombre del método que acepta el WebService del Censo del Ayuntamiento."
         structure: "Estructura de la petición"
-        structure_description: 'Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionado con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        structure_description: 'Estructura de la petición que recibe el WebService del Censo del Ayuntamiento. Los valores "fijos" de esta petición deberan informarse. Los valores relacionados con Tipo de Documento, Número de Documento, Fecha de Nacimiento y Código Postal deberán dejarse con valor null. Ejemplo de formato válido: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
         document_type: "Ruta para Tipo de Documento"
         document_type_description: "Ruta donde se encuentra el campo en la estructura de la petición que envia el Tipo de Documento. NO RELLENAR en caso de que el WebService no requiera el Tipo de Documento para verificar un usuario."
         document_number: "Ruta para Número de Documento"
