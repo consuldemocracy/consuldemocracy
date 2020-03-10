@@ -382,6 +382,8 @@ pt-BR:
           success: Ação excluída com sucesso
         form:
           submit_button: Salvar
+          help_text: Digite 0 para que este valor não seja considerado
+          published_proposal_help_text: Marcar esta opção para criar a ação apenas para propostas publicadas
       administrator_tasks:
         index:
           title: Recursos solicitados
@@ -809,8 +811,21 @@ pt-BR:
         title: "Resumo danotificação da proposta"
         description: "Juntar todas as notificações de proposta para um usuário em uma mensagem para evitar muitos e-mails."
         preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
+      budget_investment_created:
+        title: "Investimento orçamentário criado"
+        description: "Enviado quando um usuário cria um projeto de orçamento participativo."
+      budget_investment_selected:
+        title: "Investimento orçamentário selecionado"
+        description: "Enviado ao autor de um projeto de orçamento participativo que foi selecionado."
+      budget_investment_unfeasible:
+        title: "Investimento orçamentário inviável"
+        description: "Enviado ao autor de um projeto de orçamento participativo que foi marcado como inviável."
+      budget_investment_unselected:
+        title: "Investimento orçamentário não selecionado"
+        description: "Enviado ao autor de um projeto de orçamento participativo que não foi selecionado para a fase de votação."
       comment:
         title: "Comentário"
+        description: "Enviado ao autor quando é feito um comentário."
       reply:
         title: "Responder"
         description: "Enviado ao autor do comentário ao receber uma resposta."
@@ -831,6 +846,12 @@ pt-BR:
         description: "Enviado a administradores e avaliadores do orçamento"
       edit_info: "Você pode editar este email em"
       message_title: "Título da mensagem"
+      message_body: "Este é um exemplo de conteúdo de uma mensagem."
+      alert:
+        no_investments: "Não foi criado nenhum projeto de investimento orçamentário. É necessário algum exemplo para poder pré-visualizar o email."
+        no_comments: "Não foi criado nenhum comentário. É necessário algum exemplo para poder pré-visualizar o email."
+        no_replies: "Não foi criada nenhuma resposta. É necessário algum exemplo para poder pré-visualizar o email."
+        no_evaluation_comments: "Não foi criado nenhum comentário de avaliação. É necessário algum exemplo para poder pré-visualizar o email."
     emails_download:
       index:
         title: Download de emails
@@ -893,6 +914,7 @@ pt-BR:
         email_placeholder: Pesquisar usuário pelo email
         search: Buscar
         user_not_found: Usuário não encontrado
+        help: "Para adicionar ou remover Presidentes de mesa, utilize o navegador a seguir."
     poll_officer_assignments:
       index:
         officers_title: "Lista de presidentes"
@@ -927,6 +949,7 @@ pt-BR:
       flash:
         create: "Turno adicionado"
         destroy: "Turno removido"
+        unable_to_destroy: "Não é possível excluir turnos que têm resultados ou recontagens associados"
         date_missing: "Uma data deve ser selecionada"
       vote_collection: Coletar votos
       recount_scrutiny: Recontagem e Escrutínio
@@ -964,6 +987,9 @@ pt-BR:
     active_polls:
       edit:
         title: "Descrição das enquetes"
+      form:
+        description:
+          help_text: "Este texto aparecerá no cabeçalho da página de votações. Você pode usá-lo para adicionar um contexto às votações abertas."
     polls:
       index:
         title: "Lista de votações"
@@ -995,7 +1021,9 @@ pt-BR:
         question_added: "Perguntas adicionadas a essa votação"
         error_on_question_added: "Pergunta não pode ser atribuída a essa votação"
       destroy:
+        alert: "Esta ação excluirá a votação e todas as perguntas associadas a ela."
         success_notice: "Votação excluída com sucesso"
+        unable_notice: "Não é possível excluir votações com votos"
     questions:
       index:
         title: "Perguntas"
@@ -1009,6 +1037,7 @@ pt-BR:
         table_proposal: "Proposta"
         table_question: "Questão"
         table_poll: "Votação"
+        poll_not_assigned: "Votação sem atribuições"
       edit:
         title: "Editar pergunta"
       new:
@@ -1187,6 +1216,7 @@ pt-BR:
         updated: Valor atualizado
       index:
         title: Definições de configuração
+        general: Definições de configuração
         update_setting: Atualizar
         participation_processes: "Processos de participação"
         images_and_documents: "Imagens e documentos"
