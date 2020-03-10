@@ -14,6 +14,8 @@ pt-BR:
       edit: Editar
       configure: Configurar
       delete: Apagar
+    officing_booth:
+      title: "Você é responsável pela cabine localizada em %{booth}. Se isto estiver errado, não faça nada e peça ajuda por telefone. Obrigado."
     banners:
       index:
         title: Banners
@@ -73,8 +75,10 @@ pt-BR:
         table_investments: Investimentos
         table_edit_groups: Grupos de títulos
         table_edit_budget: Editar
+        table_admin_ballots: Cédulas
         edit_groups: Editar grupos de títulos
         edit_budget: Editar orçamento
+        admin_ballots: Administrar cédulas
         no_budgets: "Não há orçamentos."
       create:
         notice: Novo orçamento participativo criado com sucesso!
@@ -90,9 +94,20 @@ pt-BR:
         edit_phase: Editar estágio
         active: Ativo
         blank_dates: Datas estão em branco
+        administrators:
+          zero: "Selecionar administradores"
+          one: "1 administrador selecionado"
+          other: "%{count} administradores selecionados"
+        valuators:
+          zero: "Selecionar avaliadores"
+          one: "1 avaliador selecionado"
+          other: "%{count} avaliadores selecionados"
+        empty_administrators: "Não há administradores"
+        empty_valuators: "Não há avaliadores"
       destroy:
         success_notice: Orçamento excluído com sucesso
         unable_notice: Você não pode destruir um orçamento que tem investimentos associados
+        unable_notice_polls: Não é possível excluir um orçamento com uma votação associada
       new:
         title: Novo orçamento participativo
       winners:
@@ -101,12 +116,41 @@ pt-BR:
         recalculate: Recalcular os investimentos vencedores
     budget_groups:
       name: "Nome"
+      headings_name: "Títulos"
+      headings_edit: "Editar Títulos"
+      headings_manage: "Gerenciar títulos"
+      no_groups: "Não há grupos."
+      amount:
+        one: "Há 1 grupo"
+        other: "Há %{count} grupos"
+      create:
+        notice: "Grupo criado com sucesso!"
+      update:
+        notice: "Grupo atualizado com sucesso"
+      destroy:
+        success_notice: "Grupo excluído com sucesso"
+        unable_notice: "Não é possível excluir um grupo com títulos associados"
       form:
+        create: "Criar novo grupo"
         edit: "Editar grupo"
         submit: "Salvar grupo"
+      index:
+        back: "Voltar aos orçamentos"
     budget_headings:
+      no_headings: "Não há títulos."
+      amount:
+        one: "Há 1 título"
+        other: "Há %{count} títulos"
+      create:
+        notice: "Título criado com sucesso!"
+      update:
+        notice: "Título atualizado com sucesso"
+      destroy:
+        success_notice: "Título excluído com sucesso"
+        unable_notice: "Não é possível excluir um título com investimentos associados"
       form:
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
+        coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
         submit: "Salvar título"
     budget_phases:
       edit:
@@ -139,6 +183,7 @@ pt-BR:
         download_current_selection: "Baixar seleção atual"
         no_budget_investments: "Não há projetos de investimento."
         title: Projetos de investimento
+        columns: Colunas
         assigned_admin: Administrador designado
         no_admin_assigned: Não há administrador designado
         no_valuators_assigned: Não há avaliadores designados
@@ -163,6 +208,7 @@ pt-BR:
           author_username: Username do autor
           incompatible: Incompatível
           price: Preço
+          author: Autor
         cannot_calculate_winners: O orçamento tem que ficar na fase "Projetos de votação", "Revendo votos" ou "Orçamento concluído" em ordem para calcular os projetos vencedores
         see_results: "Exibir resultados"
       show:
@@ -191,6 +237,7 @@ pt-BR:
           "true": "Sim"
           "false": "Não"
         valuator_groups: "Grupos de avaliação"
+        preview: Pré-visualização de investimento
       edit:
         classification: Classificação
         compatibility: Compatibilidade
@@ -204,9 +251,11 @@ pt-BR:
       search_unfeasible: Pesquisar inviáveis
     milestones:
       index:
+        table_id: "ID"
         table_title: "Título"
         table_description: "Descrição"
         table_publication_date: "Data de publicação"
+        table_status: Status
         table_actions: "Ações"
         delete: "Deletar marco"
         no_milestones: "Não possui marcos definidos"
@@ -215,6 +264,7 @@ pt-BR:
         documents: "Documentos"
         milestone: Marco
         new_milestone: Criar marco
+        milestone_tags: Status de andamento
       form:
         admin_statuses: Status dos investimentos para administrador
         no_statuses_defined: Ainda não há status de investimento definidos
@@ -250,10 +300,20 @@ pt-BR:
         notice: Status de investimento excluído com sucesso
     progress_bars:
       index:
+        title: "Barras de progresso"
+        no_progress_bars: "Não existem barras de progresso"
+        new_progress_bar: "Criar nova barra de progresso"
+        primary: "Barra de progresso principal"
+        table_id: "ID"
         table_kind: "Tipo"
         table_title: "Título"
+        table_percentage: "Posição atual"
+      new:
+        creating: "Criar barra de progresso"
     comments:
       index:
+        id: "ID"
+        content: "Conteúdo"
         author: "Autor"
         commentable_type: "Tipo"
         title: Comentários
@@ -288,6 +348,7 @@ pt-BR:
           default:
             email: Email
             polls: Votações
+            poster: Pôster
         create:
           notice: Ação criada com sucesso
         delete:
@@ -296,11 +357,47 @@ pt-BR:
           submit_button: Salvar
       administrator_tasks:
         index:
+          solve: Resolver
+          no_records: Não há recursos solicitados
           source: Fonte
+          resource: Recurso solicitado
+          filter: Filtro
+          filters:
+            pending: Pendente
+            done: Resolvidos
+        form:
+          solve: Marcar como resolvido
+          proposal: Proposta
+          request: Recurso solicitado
     debates:
       index:
+        id: ID
+        author: Autor
         title: Debates ocultos
+        no_debates: Não há debates.
+    hidden_debates:
+      index:
+        filter: Filtro
+        filters:
+          all: Todos
+          with_confirmed_hide: Confirmados
+          without_confirmed_hide: Pendentes
+        title: Debates ocultos
+        no_hidden_debates: Não há debates ocultos.
     documents:
+      new:
+        title: "Carregar um documento"
+        submit_button: "Upload"
+      index:
+        new_link: "Adicionar novo documento"
+        no_documents: "Não há documentos."
+        title: "Documentos"
+        format: "Formato"
+        size: "Tamanho"
+        url: "URL"
+      create:
+        success_notice: "Documento carregado com sucesso"
+        unable_notice: "Documento inválido"
       destroy:
         success_notice: "Documento excluído com sucesso"
     hidden_users:
@@ -344,6 +441,7 @@ pt-BR:
           enabled: Habilitado
           process: Processo
           debate_phase: Fase de debate
+          draft_phase: Fase de rascunho
           allegations_phase: Fase de comentários
           proposals_phase: Fase de propostas
           use_markdown: Usar Remarcação para formatar o texto
@@ -365,6 +463,7 @@ pt-BR:
         proposals:
           select_order: Organizado por
           orders:
+            id: ID
             title: Título
             supports: Apoios
         process:
@@ -387,6 +486,7 @@ pt-BR:
         index:
           title: Título
           back: Voltar
+          id: ID
           supports: Apoios
         form:
           custom_categories: Categorias
@@ -545,6 +645,7 @@ pt-BR:
         name: Nome
         email: Email
         description: Descrição
+        id: ID de Administrador
         no_administrators: Não há administradores.
       administrator:
         add: Adicionar
@@ -553,6 +654,7 @@ pt-BR:
       search:
         title: "Administradores: busca de usuário"
       form:
+        edit_title: "Editar administrador"
         updated: "Administrador atualizado com sucesso"
     moderators:
       index:
@@ -601,6 +703,9 @@ pt-BR:
         title: Pré-visualização do boletim informativo
         send: Enviar
         affected_users: (%{n} usuários afetados)
+        sent_emails:
+          one: 1 email enviado
+          other: "%{count} emails enviados"
         sent_at: Enviado em
         subject: Assunto
         segment_recipient: Destinatários
@@ -659,6 +764,9 @@ pt-BR:
         preview_detail: "Usuários apenas vão receber notificações das rpopostas que eles estão seguindo"
       comment:
         title: "Comentário"
+      reply:
+        title: "Responder"
+      message_title: "Título da mensagem"
     emails_download:
       index:
         title: Download de emails
@@ -677,6 +785,7 @@ pt-BR:
         group: "Grupo"
         no_group: "Sem grupo"
         abilities: "Habilidades"
+        can_comment: "Pode comentar"
       valuator:
         add: Adicionar aos avaliadores
         delete: Apagar
@@ -1061,6 +1170,7 @@ pt-BR:
       content: Conteúdo
       created_at: Criado em
       delete: Apagar
+      color_help: Formato hexadecimal
       show_results_and_stats: "Exibir resultados e estatísticas"
       results_and_stats_reminder: "Ao marcar estas caixas de seleção, os resultado e/ou estatísticas estarão disponíveis publicamente e qualquer usuário poderá vê-los."
     geozones:
@@ -1097,9 +1207,14 @@ pt-BR:
         title: Novas folhas de assinatura
         document_numbers_note: "Escreva os números separados por vírgulas ()"
         submit: Criar folha de assinatura
+        text_help:
+          postal_code_note: " e CEP"
+          example_text: "Exemplo: "
       show:
         created_at: Criado em
         author: Autor
+        users: Usuários
+        signature_count: "Número de assinaturas:"
         verified:
           one: "Há %{count} assinatura válida"
           other: "Há %{count} assinaturas válidas"
@@ -1107,6 +1222,10 @@ pt-BR:
           one: "Há %{count} assinatura inválida"
           other: "Há %{count} assinatura inválida"
         unverified_error: (Não verificado pelo censo)
+        voted:
+          zero: "Não há votos associados às assinaturas verificadas."
+          one: "Há %{count} voto associado à assinatura verificada."
+          other: "Há %{count} votso associados à assinatura verificada."
         loading: "Existem ainda as assinaturas que estão sendo verificadas pelo censo, por favor, atualize a página em alguns momentos"
     stats:
       show:
@@ -1139,6 +1258,23 @@ pt-BR:
         visit: Visitas
         level_2_user: Usuários de nível 2
         proposal_created: Propostas dos cidadãos
+      budgets:
+        no_data_before_balloting_phase: "Não há dados a mostrar antes da fase de votação."
+        title: "Orçamentos participativos - Estatísticas de participação"
+        supporting_phase: Fase de apoios
+        balloting_phase: Votação final
+      budget_balloting:
+        title: "Estatísticas da votação final"
+        vote_count: Votos
+        participant_count: Participantes
+        votes_per_heading: Votos por título
+        participants_per_district: Participantes por região
+      budget_supporting:
+        title: "Estatísticas da fase de apoios"
+        headings: Títulos
+        users: Usuários
+        vote_count: Votos
+        participant_count: Participantes
       direct_messages:
         title: Mensagens diretas
         total: Total
@@ -1147,6 +1283,7 @@ pt-BR:
         title: Notificações de proposta
         total: Total
         proposals_with_notifications: Propostas com notificações
+        not_available: "Proposta não disponível"
       polls:
         title: Estatísticas da Votação
         all: Votações
@@ -1252,12 +1389,21 @@ pt-BR:
           title: Título
           slug: área de informações
           cards_title: Cartões
+          see_cards: Ver cartões
         cards:
+          cards_title: cartões
           create_card: Criar cartão
+          no_cards: Não há cartões.
           title: Título
           description: Descrição
           link_text: Texto do link
           link_url: Link da URL
+          create:
+            notice: "Cartão criado com sucesso!"
+          update:
+            notice: "Cartão atualizado com sucesso"
+          destroy:
+            notice: "Cartão excluído com sucesso"
     homepage:
       title: Página inicial
       description: Os módulos ativos aparecem na página inical na mesma ordem que aqui.
@@ -1286,3 +1432,26 @@ pt-BR:
         submit_header: Salvar cabeçalho
         card_title: Editar cartão
         submit_card: Salvar cartão
+    audits:
+      changes: "Lista de alterações"
+      id: "ID"
+      field: "Campo"
+      new_value: "Valor novo"
+      old_value: "Valor anterior"
+      edited_at: "Editado em"
+      edited_by: "Editado por"
+      actions: "Ações"
+    local_census_records:
+      index:
+        document_type: Tipo do documento
+        document_number: Número do documento
+        date_of_birth: Data de nascimento
+        postal_code: CEP
+        search:
+          placeholder: Pesquisar por número de documento
+          search: Pesquisar
+        import: Importar CSV
+      new:
+        creating: Criando novo registro de censo local
+      create:
+        notice: Novo registro de censo local criado com sucesso!
