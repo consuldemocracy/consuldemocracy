@@ -363,9 +363,11 @@ pt-BR:
           title: Recursos e ações
           action_title: Título
           action_type: Tipo
+          required_supports: Apoios necessários
           day_offset: Dias necessários
           action_active: Ativo
           order: Ordem
+          published_proposal: Proposta publicada
           default:
             email: Email
             polls: Votações
@@ -382,6 +384,7 @@ pt-BR:
           submit_button: Salvar
       administrator_tasks:
         index:
+          title: Recursos solicitados
           solve: Resolver
           no_records: Não há recursos solicitados
           source: Fonte
@@ -390,10 +393,15 @@ pt-BR:
           filters:
             pending: Pendente
             done: Resolvidos
+        edit:
+          back: Voltar à lista de tarefas pendentes
+          solving: Resolver tarefa pendente
         form:
           solve: Marcar como resolvido
           proposal: Proposta
           request: Recurso solicitado
+        update:
+          success: A tarefa foi marcada como resolvida.
     debates:
       index:
         id: ID
@@ -474,6 +482,7 @@ pt-BR:
           summary_placeholder: Breve resumo da descrição
           description_placeholder: Adicione uma descrição do processo
           additional_info_placeholder: Adicione informação adicional que você considera útil
+          banner_title: Cores do cabeçalho
         index:
           create: Novo processo
           delete: Apagar
@@ -662,8 +671,11 @@ pt-BR:
       title_booths: Cabines de votação
       legislation: Legislação colaborativa
       users: Usuários
+      administrator_tasks: Recursos solicitados
+      dashboard_actions: Recursos e ações
       debates: "Debates"
       comments: "Comentários"
+      local_census_records: Gerenciar censo local
     administrators:
       index:
         title: Administradores
@@ -1142,6 +1154,8 @@ pt-BR:
       index:
         title: Definições de configuração
         update_setting: Atualizar
+        participation_processes: "Processos de participação"
+        images_and_documents: "Imagens e documentos"
         feature_flags: Atributos
         features:
           enabled: "Atributo habilitado"
@@ -1155,6 +1169,7 @@ pt-BR:
             update: Configuração do mapa atualizada com sucesso.
           form:
             submit: Atualizar
+      remote_census_general_name: Informações gerais
       setting: Caracteristica
       setting_actions: Ações
       setting_name: Configuração
@@ -1178,6 +1193,7 @@ pt-BR:
         placeholder: Buscar propostas por título, código, descrição ou pergunta
       debate_search:
         button: Pesquisar
+        placeholder: Buscar debates por título ou descrição
       user_search:
         button: Buscar
         placeholder: Pesquisar usuário por nome ou pelo email
@@ -1233,6 +1249,7 @@ pt-BR:
         document_numbers_note: "Escreva os números separados por vírgulas ()"
         submit: Criar folha de assinatura
         text_help:
+          date_of_birth_note: ", Dia de nascimento (dd/mm/aaaa)"
           postal_code_note: " e CEP"
           example_text: "Exemplo: "
       show:
@@ -1482,6 +1499,9 @@ pt-BR:
         notice: Novo registro de censo local criado com sucesso!
       imports:
         show:
+          subtitle: Resultados del processo de importação
+          import: Importar outro arquivo
+          errored: Linhas erradas
           created: Registros criados
         local_census_records:
           no_records_found: Nenhum registro encontrado.
