@@ -145,7 +145,7 @@ describe "Signature sheets" do
     visit admin_signature_sheet_path(signature_sheet)
 
     expect(page).to have_content "Citizen proposal #{proposal.id}: #{signature_sheet.title}"
-    expect(page).to have_content "12345678Z, 123A, 123B"
+    expect(page).to have_content "12345678Z; 123A; 123B"
     expect(page).to have_content signature_sheet.created_at.strftime("%B %d, %Y %H:%M")
     expect(page).to have_content user.name
 

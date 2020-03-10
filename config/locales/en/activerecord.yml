@@ -300,6 +300,7 @@ en:
         body: "Message"
         title: "Title"
       signature_sheet:
+        title: "Title"
         signable_type: "Signable type"
         signable_id: "Signable ID"
         document_numbers: "Documents numbers"
