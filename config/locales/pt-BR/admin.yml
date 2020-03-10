@@ -482,6 +482,7 @@ pt-BR:
           summary_placeholder: Breve resumo da descrição
           description_placeholder: Adicione uma descrição do processo
           additional_info_placeholder: Adicione informação adicional que você considera útil
+          homepage_description: Aqui você pode explicar o conteúdo do processo
           banner_title: Cores do cabeçalho
         index:
           create: Novo processo
@@ -516,6 +517,9 @@ pt-BR:
           questions: Debater
           proposals: Propostas
           milestones: Seguindo
+      homepage:
+        edit:
+          title: Configurar a página do processo
       proposals:
         index:
           title: Título
@@ -540,6 +544,7 @@ pt-BR:
           submit_button: Salvar alterações
           warning: Você editou o texto. Não esqueça de clicar em Salvar para salvar permanentemente as mudanças.
         form:
+          title: 'Editando <span class="strong">%{draft_version_title}</span> do processo <span class="strong">%{process_title}</span>'
           launch_text_editor: Iniciar o editor de texto
           close_text_editor: Fechar o editor de texto
           use_markdown: Usar Remarcação para formatar o texto
@@ -648,12 +653,14 @@ pt-BR:
       stats: Estatísticas
       signature_sheets: Folhas de assinatura
       site_customization:
+        documents: Personalizar documentos
         homepage: Página inicial
         pages: Páginas personalizadas
         images: Imagens personalizadas
         content_blocks: Blocos de conteúdo personalizados
         information_texts: Textos de informações personalizadas
         information_texts_menu:
+          basic: "Personalização básica"
           debates: "Debates"
           community: "Comunidade"
           proposals: "Propostas"
@@ -664,6 +671,8 @@ pt-BR:
           welcome: "Bem-vindo"
         buttons:
           save: "Salvar"
+          content_block:
+            update: "Alterar bloco"
       title_moderated_content: Conteúdo moderado
       title_profiles: Perfis
       title_settings: Configurações
@@ -671,6 +680,7 @@ pt-BR:
       title_booths: Cabines de votação
       legislation: Legislação colaborativa
       users: Usuários
+      dashboard: Painel de progresso de propostas
       administrator_tasks: Recursos solicitados
       dashboard_actions: Recursos e ações
       debates: "Debates"
@@ -803,6 +813,23 @@ pt-BR:
         title: "Comentário"
       reply:
         title: "Responder"
+        description: "Enviado ao autor do comentário ao receber uma resposta."
+      direct_message_for_receiver:
+        title: "Destinatário da mensagem particular"
+        description: "Enviar ao destinatário da mensagem particular."
+      direct_message_for_sender:
+        title: "Remetente da mensagem particular"
+        description: "Enviar ao remetente da mensagem particular."
+      email_verification:
+        title: "Verificação por email"
+        description: "Enviado ao novo usuário registrado para verificar a sua conta."
+      user_invite:
+        title: "Convite de usuários"
+        description: "Enviado à persona que foi convidada a registrar uma conta."
+      evaluation_comment:
+        title: "Novo comentário de avaliação"
+        description: "Enviado a administradores e avaliadores do orçamento"
+      edit_info: "Você pode editar este email em"
       message_title: "Título da mensagem"
     emails_download:
       index:
@@ -823,6 +850,7 @@ pt-BR:
         no_group: "Sem grupo"
         abilities: "Habilidades"
         can_comment: "Pode comentar"
+        can_edit_dossier: "Pode editar relatório"
       valuator:
         add: Adicionar aos avaliadores
         delete: Apagar
@@ -933,6 +961,9 @@ pt-BR:
         no_booths: "Não há urnas atribuídas a esta votação."
         table_name: "Nome"
         table_location: "Localização"
+    active_polls:
+      edit:
+        title: "Descrição das enquetes"
     polls:
       index:
         title: "Lista de votações"
@@ -963,6 +994,8 @@ pt-BR:
       flash:
         question_added: "Perguntas adicionadas a essa votação"
         error_on_question_added: "Pergunta não pode ser atribuída a essa votação"
+      destroy:
+        success_notice: "Votação excluída com sucesso"
     questions:
       index:
         title: "Perguntas"
@@ -1029,6 +1062,7 @@ pt-BR:
       index:
         title: "Recontagens"
         no_recounts: "Não há nada para ser recontado"
+        all_booths_total: "Acumulado de todas as urnas:"
         total_final: "Recontagens finais"
         total_system: "Votos (automático)"
         table_booth_name: "Urna"
@@ -1169,6 +1203,8 @@ pt-BR:
             update: Configuração do mapa atualizada com sucesso.
           form:
             submit: Atualizar
+        remote_census:
+          title: Configuração do Censo Remoto
       remote_census_general_name: Informações gerais
       setting: Caracteristica
       setting_actions: Ações
@@ -1424,6 +1460,7 @@ pt-BR:
           see_page: Exibir página
         new:
           title: Criar nova página personalizada
+          slug_help: "Texto que identifica esta página no URL, por exemplo <code>https://consulproject.org/slug-de-pagina</code>"
         page:
           created_at: Criado em
           status: Status
@@ -1440,6 +1477,7 @@ pt-BR:
           description: Descrição
           link_text: Texto do link
           link_url: Link da URL
+          columns_help: "Largura do cartão em número de colunas. Em telas móveis é sempre de 100%."
           create:
             notice: "Cartão criado com sucesso!"
           update:
@@ -1475,6 +1513,7 @@ pt-BR:
         card_title: Editar cartão
         submit_card: Salvar cartão
     audits:
+      title: "Histórico de alterações"
       changes: "Lista de alterações"
       id: "ID"
       field: "Campo"
@@ -1483,8 +1522,12 @@ pt-BR:
       edited_at: "Editado em"
       edited_by: "Editado por"
       actions: "Ações"
+      empty: "Não foram registradas alterações"
     local_census_records:
       index:
+        title: Gerenciar censo local
+        create: Criar novo registro de censo local
+        no_local_census_records: Não há registros de censo local.
         document_type: Tipo do documento
         document_number: Número do documento
         date_of_birth: Data de nascimento
@@ -1497,8 +1540,20 @@ pt-BR:
         creating: Criando novo registro de censo local
       create:
         notice: Novo registro de censo local criado com sucesso!
+      edit:
+        editing: Editando registro do censo local
+      update:
+        notice: Registro do censo local alterado com sucesso!
+      destroy:
+        notice: Registro do censo local excluído com sucesso!
       imports:
+        new:
+          title: Registros do censo local
+          subtitle: Importar arquivo CSV
+        create:
+          notice: Processo de importação de registros do censo local executado com sucesso!
         show:
+          title: Gerenciar censo local
           subtitle: Resultados del processo de importação
           import: Importar outro arquivo
           errored: Linhas erradas
