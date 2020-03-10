@@ -65,6 +65,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - **Maintenance-Gems:** Bump foundation-rails from 6.4.3.0 to 6.6.1.0 [\#3886](https://github.com/consul/consul/pull/3886)
 - **Maintenance-Gems:** Bump knapsack_pro from 1.1.0 to 1.15.0 [\#3873](https://github.com/consul/consul/pull/3873)
 - **Maintenance-Gems:** Bump rack from 2.0.7 to 2.1.1 [\#3890](https://github.com/consul/consul/pull/3890)
+- **Maintenance-Gems:** Bump user_agent_parser from 2.4.1 to 2.6.0 [\#3943](https://github.com/consul/consul/pull/3943)
 - **Maintenance-Refactoring:** Refactor embed video helper to disconnect from @proposal [\#3496](https://github.com/consul/consul/pull/3496)
 - **Maintenance-Refactoring:** Simplify calls to render partial [\#3628](https://github.com/consul/consul/pull/3628)
 - **Maintenance-Refactoring:** Remove unnecessary code [\#3630](https://github.com/consul/consul/pull/3630), [\#3717](https://github.com/consul/consul/pull/3717), [\#3719](https://github.com/consul/consul/pull/3719) and [\#3843](https://github.com/consul/consul/pull/3843)
