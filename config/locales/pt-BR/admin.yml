@@ -151,6 +151,7 @@ pt-BR:
       form:
         population_info: "O campo \"população\" do Título do Orçamento é usado para fins Estatísticos ao final do Orçamento, para mostrar a porcentagem votante da população da área de cada Título. O campo é opcional, então você pode deixá-lo vazio se não se aplicar."
         coordinates_info: "Se houver dados de latitude e longitude, aparecerá um mapa na página de investimentos deste título, cujo centro estará ajustado a essas coordenadas."
+        content_blocks_info: "Se a opção de \"bloquear conteúdo\" estiver marcada, haverá a possibilidade de criar conteúdo personalizado na seção Configurações > Personalizar blocos de conteúdo. Esse conteúdo aparecerá na página de projetos dessa rubrica."
         create: "Criar novo título"
         edit: "Editar Títulos"
         submit: "Salvar título"
@@ -218,6 +219,7 @@ pt-BR:
           author: Autor
         cannot_calculate_winners: O orçamento tem que ficar na fase "Projetos de votação", "Revendo votos" ou "Orçamento concluído" em ordem para calcular os projetos vencedores
         see_results: "Exibir resultados"
+        milestone_tags_filter_all: "Todos os status de andamento"
       show:
         assigned_admin: Administrador designado
         assigned_valuators: Avaliadores designados
@@ -355,6 +357,7 @@ pt-BR:
         description: Bem-vindo ao painel de administração %{org}.
       actions:
         index:
+          description: "Quando os usuários criam propostas, eles podem acessar um painel com o progresso da sua proposta, no qual é possível propor-lhes recursos y recomendações para conseguir apoios para as suas ideias."
           create: Criar recurso ou ação
           edit: Editar
           delete: Excluir
@@ -373,10 +376,12 @@ pt-BR:
             polls: Votações
             poster: Pôster
         new:
+          creating: Nova ação para o quadro de propostas
           back: Voltar à lista
         create:
           notice: Ação criada com sucesso
         edit:
+          editing: Editar ação do quadro de propostas
           back: Voltar à lista
         delete:
           success: Ação excluída com sucesso
@@ -386,6 +391,7 @@ pt-BR:
           published_proposal_help_text: Marcar esta opção para criar a ação apenas para propostas publicadas
       administrator_tasks:
         index:
+          description: "Os recursos publicados no painel de progresso das propostas podem incluir um botão para serem solicitados aos administradores. A seguir, serão mostradas as solicitações dos usuários."
           title: Recursos solicitados
           solve: Resolver
           no_records: Não há recursos solicitados
@@ -477,6 +483,7 @@ pt-BR:
           process: Processo
           debate_phase: Fase de debate
           draft_phase: Fase de rascunho
+          draft_phase_description: Si esta fase estiver ativa, o processo não aparecerá na página de processos. Permite pré-visualizar o processo y criar conteúdo antes do início.
           allegations_phase: Fase de comentários
           proposals_phase: Fase de propostas
           use_markdown: Usar Remarcação para formatar o texto
@@ -719,6 +726,7 @@ pt-BR:
     segment_recipient:
       all_users: Todos os usuários
       administrators: Administradores
+      all_proposal_authors: Autores de propostas (inclusive arquivadas e vencidas)
       proposal_authors: Autores da proposta
       investment_authors: Autores do investimento no orçamento corrente
       feasible_and_undecided_investment_authors: "Autores de algum investimento no orçamento atual que não esteja de acordo com: [valuation finished unfesasible]"
@@ -745,6 +753,7 @@ pt-BR:
         empty_newsletters: Não há nenhum boletins informativos para mostrar
       new:
         title: Novo boletim informativo
+        header_footer_help_text: "O cabeçalho e o roda-pé são os mesmos em todos os emails. Você pode modificá-los em <code>app/views/layouts/mailer_header</code> e <code>app/views/layouts/mailer_footer</code>.<br>É possível sustituir a imagem do cabeçalho em %{link}."
         image_link: "imagens personalizadas"
       edit:
         title: Editar boletim informativo
@@ -1140,6 +1149,7 @@ pt-BR:
         official_updated: Detalhes do cargo público salvos
       index:
         title: Cargos públicos
+        help: As contas de usuários marcadas como cargos públicos terão ressaltadas as suas intervenções na plataforma. É possível definir a nível que aparece ao lado dos nomes de usuários dessas contas, do maior (nível 1) ao menor (nível 5).
         no_officials: Não há cargos públicos.
         name: Nome
         official_position: Cargo público
@@ -1163,6 +1173,9 @@ pt-BR:
           pending: Pendente
           rejected: Rejeitado
           verified: Verificado
+        hidden_count:
+          one: Há também <strong>uma organização</strong> sem usuários ou com um usuário oculto.
+          other: Há <strong>%{count} organizações</strong> sem usuários ou com um usuário oculto.
         name: Nome
         email: Email
         phone_number: Telefone
@@ -1189,6 +1202,8 @@ pt-BR:
         selected: Selecionado
         milestones: Marcos
         no_proposals: Não existem propostas.
+      show:
+        create_question: Adicionar esta proposta a uma votação a ser votada
       form:
         update: Atualizar proposta
       update:
@@ -1233,9 +1248,15 @@ pt-BR:
             update: Configuração do mapa atualizada com sucesso.
           form:
             submit: Atualizar
+          how_to_enable: 'Para mostrar o mapa aos usuários, é preciso ativar "Geolocalização de propostas y projetos de gasto" na aba "Funcionalidades".'
+        dashboard:
+          title: Painel de progresso de propostas
         remote_census:
           title: Configuração do Censo Remoto
+          how_to_enable: 'Para configurar a conexão com o Censo Remoto (SOAP) é preciso ativar "Configurar a conexão ao censo remoto (SOAP)" na aba "Funcionalidades".'
       remote_census_general_name: Informações gerais
+      remote_census_request_name: Solicitação - Dados
+      remote_census_response_name: Respostas - Dados
       setting: Caracteristica
       setting_actions: Ações
       setting_name: Configuração
@@ -1290,7 +1311,9 @@ pt-BR:
         name: Nome
         external_code: Código externo
         census_code: Código do censo
+        code_help: Código de resposta para esta zona na API do censo
         coordinates: Coordenadas
+        coordinates_help: Coordenadas que vão gerar uma zona clicável num mapa de imagem HTML
       edit:
         form:
           submit_button: Salvar alterações
@@ -1315,8 +1338,10 @@ pt-BR:
         document_numbers_note: "Escreva os números separados por vírgulas ()"
         submit: Criar folha de assinatura
         text_help:
+          required_fields_note: "Para verificar um usuário, sua aplicação precisa de: Número de documento"
           date_of_birth_note: ", Dia de nascimento (dd/mm/aaaa)"
           postal_code_note: " e CEP"
+          required_fields_structure_note: "Os campos necessários para cada usuário devem estar separados por vírgulas, e cada usuário debe estar separado por punto-e-vírgula."
           example_text: "Exemplo: "
       show:
         created_at: Criado em
@@ -1433,6 +1458,7 @@ pt-BR:
       content_blocks:
         information: Informações sobre blocos de conteúdo
         about: "Voce pode criar blocos de conteúdo de HTML para serem inseridos no cabeçalho dou rodapé do seu CONSUL."
+        html_format: "Um bloco de conteúdos é um grupo de links e deve de ter o seguente formato:"
         no_blocks: "Não há blocos de conteúdo."
         create:
           notice: Bloco de conteúdo criado com sucesso
