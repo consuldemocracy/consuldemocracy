@@ -130,8 +130,6 @@ es:
         one: Registro del censo local
         other: Registros del censo local
     attributes:
-      administrator:
-        description: Descripción
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"
@@ -151,7 +149,7 @@ es:
         description: "Descripción"
         external_url: "Enlace a documentación adicional"
         administrator_id: "Administrador"
-        location: "Información adicional de la ubicación"
+        location: "Ubicación (opcional)"
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
@@ -391,7 +389,7 @@ es:
         title: Título
         question_options: Respuestas
       legislation/question/translation:
-        title: "Pregunta"
+        title: Pregunta
       legislation/question_option:
         value: Valor
       legislation/annotation:
@@ -550,6 +548,10 @@ es:
           attributes:
             valuation:
               cannot_comment_valuation: "No puedes comentar una evaluación"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Recurso ya traducido
       messages:
         translations_too_short: El obligatorio proporcionar una traducción como mínimo
         record_invalid: "Error de validación: %{errors}"
