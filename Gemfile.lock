@@ -576,7 +576,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.6.0)
     uniform_notifier (1.11.0)
-    user_agent_parser (2.4.1)
+    user_agent_parser (2.6.0)
     uuidtools (2.1.5)
     warden (1.2.8)
       rack (>= 2.0.6)
