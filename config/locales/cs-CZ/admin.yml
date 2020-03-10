@@ -241,9 +241,6 @@ cs:
         documents: "Dokumenty"
         milestone: Milník
         new_milestone: Vytvořit nový milník
-      form:
-        admin_statuses: Admin investment statuses
-        no_statuses_defined: There are no defined investment statuses yet
       new:
         creating: Vytvořit milník
       edit:
