@@ -56,6 +56,8 @@ pt-BR:
         preview: Pré-visualização de investimento
       edit:
         dossier: Relatório
+        price: "Custo (%{currency})"
+        price_first_year: "Custo durante o primeiro ano (%{currency})<small>(opcional, dados não públicos)</small>"
         feasibility: Viabilidade
         valuation_finished_alert: "Tem certeza que deseja marcar este relatório como concluído? Se você fizer isso, o relatório não poderá mais ser modificado."
         not_feasible_alert: "Um e-mail será enviado imediatamente para o autor do projeto com o relatório de inviabilidade."
