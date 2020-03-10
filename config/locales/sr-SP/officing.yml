@@ -1,1 +1,90 @@
 sr:
+  officing:
+    header:
+      title: Анкета
+    dashboard:
+      index:
+        title: Службеници на биралиштима
+        info: Овде можете валидирати корисничку документацију и складиштити резултате гласања
+        no_shifts: Данас немате смена по службеној дужности.
+    menu:
+      voters: Валидирајте документ
+      total_recounts: Укупан број обрачуна и резултата
+    polls:
+      final:
+        title: Анкете спремне за коначно бројање
+        no_polls: Не рачунате службене финалне резултате ни на једном активном биралишту
+        select_poll: Одредите анкету
+        add_results: Додајте резултате
+    poll_budgets:
+      see_ballot_sheets: Погледајте листу гласачких листића
+      index:
+        title: "%{poll_budget} - Списак гласачких листића"
+        ballot_sheet: "Листа гласања %{id}"
+        ballot_sheet_name: Име
+        ballot_sheet_author: Аутор
+        ballot_sheet_creation_date: Датум креирања
+        empty_results: Нема гласачких листића за ово гласачко место још увек
+      new:
+        title: "%{poll_budget} - Нови гласачки лист"
+        booth: Гласачко место
+        select_booth: Одаберите гласачко место
+        csv_data: ЦСВ податак
+        submit: Сачувај
+      show:
+        created_at: Датум креирања
+        author: Аутор
+        data: ЦСВ податак
+    booth:
+      new:
+        title: "Одаберите Ваше гласачко место"
+    results:
+      flash:
+        create: "Резултати су сачувани"
+        error_create: "Резултати НИСУ сачувани. Грешка у подацима."
+        error_wrong_booth: "Погрешно гласачко место. Резултати НИСУ сачувани."
+      new:
+        title: "%{poll} - Додајте резултате"
+        not_allowed: "Немате дозволу да додате резултате за ово гласање"
+        booth: "Гласачко место"
+        date: "Датум"
+        select_booth: "Одаберите гласачко место"
+        ballots_white: "Укупно празних листића"
+        ballots_null: "Неважећи листићи"
+        ballots_total: "Важећи листићи"
+        submit: "Сачувај"
+        results_list: "Ваши резултати"
+        see_results: "Види резултате"
+      index:
+        no_results: "Нема резултата"
+        results: Резултати
+        table_answer: Одговор
+        table_votes: Гласови
+        table_whites: "Укупно празних листића"
+        table_nulls: "Неважећи листићи"
+        table_total: "Важећи листићи"
+    residence:
+      flash:
+        create: "Документ проверен пописом становништва"
+        not_allowed: "Данас немате смена по службеној дужности"
+      new:
+        title: Валидирајте документ
+        document_number: "Број документа (укључујући слова)"
+        submit: Валидирајте документ
+        error_verifying_census: "Попис није у могућности да потврди овај документ."
+        form_errors: потврда овог документа је спречена
+    voters:
+      new:
+        title: Гласање
+        table_poll: Глас
+        table_status: Гласачка статистика
+        table_actions: Радње
+        not_to_vote: Особа је одлучила да овог пута не гласа
+      show:
+        can_vote: Могу да гласају
+        cannot_vote: Ова особа не може да гласа јер није регистрована у дистрикту где се обавља гласање.
+        error_already_voted: Већ сте учествовали у овој анкети
+        submit: Потврдите глас
+        success: "Глас је представљен!"
+      can_vote:
+        submit_disable_with: "Сачекајте, потврђивање гласа..."
