@@ -297,6 +297,7 @@ es:
     wordpress_oauth2:
       sign_in: Entra con Wordpress
       sign_up: Regístrate con Wordpress
+      name: Wordpress
     twitter:
       sign_in: Entra con Twitter
       sign_up: Regístrate con Twitter
