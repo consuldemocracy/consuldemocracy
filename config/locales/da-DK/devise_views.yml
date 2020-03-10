@@ -6,6 +6,7 @@ da:
         submit: Send instruktioner igen
         title: Send bekræftelsesinstruktioner igen
       show:
+        instructions: Bekræft kontoen med e-mail %{email}
         new_password_confirmation_label: Gentag adgangskode
         new_password_label: Ny adgangskode
         please_set_password: Vælg din nye adgangskode (den vil gøre det muligt for dig at logge ind med ovenstående e-mail)
@@ -49,6 +50,7 @@ da:
           title: Tilmeld som organisation eller gruppe
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min forside
+          instructions_1: "<strong>Vi vil kontakte dig snarrest</strong> for at verificere, at du reelt repræsenterer denne gruppe."
           title: Registrering af organisation/gruppe
     passwords:
       edit:

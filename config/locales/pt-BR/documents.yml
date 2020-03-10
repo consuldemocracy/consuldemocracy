@@ -1,6 +1,7 @@
 pt-BR:
   documents:
     title: Documentos
+    max_documents_allowed_reached: Você atingiu o número máximo de documentos permitidos. <strong> Apague um antes de carregar outro.</strong>
     additional: Documentação adicional
     form:
       title: Documentos

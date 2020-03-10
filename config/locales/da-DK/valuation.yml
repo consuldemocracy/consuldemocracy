@@ -53,9 +53,11 @@ da:
         responsibles: Ansvarlige
         assigned_admin: Tildel admin
         assigned_valuators: Tilknyttet evaluatorer
-        preview: Forhåndsvisning af projekt
+        preview: Forhåndsvisning af forslag
       edit:
         dossier: Rapport
+        price: "Pris (%{currency})"
+        price_first_year: "Omkostninger i løbet af det første år (%{currency}) <small>(valgfri, data er ikke offentlig)</small>"
         feasibility: Kan gennemføres
         valuation_finished_alert: "Er du sikker på, du vil markér rapporten som afsluttet? Hvis ja, kan du ikke længere foretage ændringer."
         not_feasible_alert: "Brugeren, der oprettede projektforslaget, vil straks modtage en e-mail med den vedhæftede rapport, der forklarer, hvorfor projektet ikke kan gennemføres."

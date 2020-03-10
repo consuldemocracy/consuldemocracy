@@ -367,6 +367,39 @@ cs:
     update:
       form:
         submit_button: Uložit změny
+  dashboard:
+    index:
+      edit_proposal_link: Upravit návrh
+      retire: Pozastavený návrh
+    new_request:
+      links: Odkazy
+    resource:
+      and: a
+    recommended_actions:
+      title: Doporučení
+      hide_proposed_actions: Skrýt doporučení
+      pending_title: Nevyřízený
+      done_title: Hotovo
+    community:
+      debates: Debaty
+      comments: Komentáře
+    polls:
+      index:
+        title: Průzkumy
+        create: Vytvořit průzkum
+        links: Odkazy
+      new:
+        title: Nový průzkum
+        submit: Vytvořit průzkum
+      edit:
+        submit: Aktualizovat průzkum
+      poll:
+        view_results: Zobrazit výsledky
+        success_notice: Průzkum byl úspěšně smazán
+      form:
+        add_question: Přidat otázku
+      question_fields:
+        remove_question: Odstranit otázku
   polls:
     all: "Vše"
     no_dates: "není přiřazené datum"

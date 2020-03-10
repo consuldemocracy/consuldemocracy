@@ -116,3 +116,4 @@ sv:
       form:
         tags_label: "Kategorier"
       not_verified: "Rösta på förslag %{verify_account}."
+      process_title: Medborgardialoger

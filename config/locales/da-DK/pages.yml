@@ -18,6 +18,7 @@ da:
         title: "Debatforum"
         description: "I sektionen %{link} kan du præsentere og dele din mening vedrørende emner relateret til din by. Det er også stedet, hvor idéer genereres og gennem de øvrige sektioner %{org} kan lede til konkrete handlinger fra kommunens side."
         link: "borgerdebat"
+        feature: "Du kan åbne debatter, kommentere og evaluere dem ved at erklære dig <strong>Enig</strong> eller <strong>Uenig</strong>. Gå til debatforum %{link}."
         feature_link: "registrer i %{org}"
         image_alt: "Knapper til at rangere debatindlæg"
         figcaption: '"Enig" og "Uenig" knapper til at rangere debatindlæggene.'
@@ -26,11 +27,13 @@ da:
         description: "I sektion %{link} kan du oprette forslag, som Aarhus Byråd kan føre ud i livet. Forslagene kræver opbakning, og hvis de opnår tilstrækkelig støtte, videreføres de til en offentlig afstemning. De forslag, der opnår flest stemmer og er mulige at gennemføre bliver derefter til virkelighed."
         link: "borgerforslag"
         image_alt: "Knap til at støtte op om et forslag"
+        figcaption: 'Knap til at "Støtte" et forslag.'
       budgets:
         title: "Deltagerbudget"
         description: "Sektionen %{link} hjælper borgerne med at have direkte indflydelse på, hvad det kommunale budget skal bruges på."
         link: "deltagerbudgetter"
         image_alt: "Deltagerbudgettets forskellige faser"
+        figcaption: 'Deltagerbudgetternes "Støtte"- og "Afstemnings"-faser.'
       polls:
         title: "Afstemninger"
         description: "Sektionen %{link} aktiveres hver gang et forslag opnår 1 % støtte og dermed skal stemmes om, eller når Byrådet selv fremsætter et anliggende, som borgerne skal være med til at beslutte."
@@ -154,6 +157,7 @@ da:
               description_column: Mindre tekststørrelse
       compatibility:
         title: Kompatibilitet med standarder og visuelt design
+        description: 'Alle sider på websitet retter sig efter <strong> Accessibility Guidelines</strong> eller General Principles of Accessible Design fastslået af Arbejdsgruppen <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> tilhørende W3C.'
     titles:
       help: "Hvad er %{org}? - Borgerdeltagelse"
     verify:

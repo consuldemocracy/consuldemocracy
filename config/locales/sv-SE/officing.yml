@@ -18,13 +18,18 @@ sv:
         add_results: Lägg till resultat
     poll_budgets:
       index:
+        ballot_sheet: "Valsedel %{id}"
         ballot_sheet_name: Namn
+        ballot_sheet_author: Skribent
+        ballot_sheet_creation_date: Tillverkningsdatum
       new:
         booth: Röststation
         select_booth: Välj röststation
         csv_data: CSV data
         submit: Spara
       show:
+        created_at: Tillverkningsdatum
+        author: Skribent
         data: CSV data
     booth:
       new:

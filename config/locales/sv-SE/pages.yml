@@ -18,6 +18,7 @@ sv:
         title: "Debatter"
         description: "I %{link}-delen kan du presentera dina åsikter och diskutera frågor som rör staden. Det är också en plats för att utveckla idéer som kan tas vidare till andra delar av %{org} och leda till konkreta åtgärder från kommunen."
         link: "debatter"
+        feature: "Du kan skriva debattinlägg och kommentera och betygsätta andras inlägg med <strong>Jag håller med</strong> eller <strong>Jag håller inte med</strong>. För att göra det behöver du %{link}."
         feature_link: "registrera dig på %{org}"
         image_alt: "Knappar för att betygsätta diskussioner"
         figcaption: 'Knappar för "Jag håller med" och "Jag håller inte med" för att betygsätta diskussioner.'
@@ -26,6 +27,7 @@ sv:
         description: "I %{link}-delen kan du skriva förslag som du vill att kommunen ska genomföra. Förslagen behöver få tillräckligt med stöd för att gå vidare till omröstning. De förslag som vinner en omröstning kommer att genomföras av kommunen."
         link: "medborgarförslag"
         image_alt: "Knapp för att stödja förslag"
+        figcaption: 'Knapp för att "stödja" ett förslag.'
       budgets:
         title: "Medborgarbudget"
         description: "I %{link}-delen beslutar invånarna om hur en del av stadens budget ska användas."
@@ -99,6 +101,7 @@ sv:
               page_column: Medborgarbudgetar
             - 
               key_column: 5
+              page_column: Dialoger
         browser_table:
           description: "Beroende på det operativsystem och webbläsare som används är tangentkombinationen följande:"
           caption: Tangentkombinationen beror på operativsystemet och webbläsare
@@ -153,6 +156,7 @@ sv:
               description_column: Minskar textstorlek
       compatibility:
         title: Förenlighet med standarder och visuell design
+        description: 'Alla sidor av denna webbplats följer <strong>Riktlinjer för Tillgänglighet</strong> eller generella principer för tillgänglig design som etablerats av Arbetsgruppen <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> som tillhör W3C.'
     titles:
       help: "Vad är %{org}? - Medborgardeltagande"
     verify:
