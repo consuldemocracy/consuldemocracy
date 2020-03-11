@@ -294,6 +294,10 @@ pt-BR:
       sign_in: Iniciar sessão com o Google
       sign_up: Inscrever-se com o Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Entrar com o Wordpress
+      sign_up: Cadastrar-se com o Wordpress
+      name: Wordpress
     twitter:
       sign_in: Iniciar sessão com o Twitter
       sign_up: Inscrever-se com o Twitter
