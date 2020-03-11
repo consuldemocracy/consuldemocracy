@@ -41,13 +41,13 @@ es:
         one: 1 respuesta
         other: "%{count} respuestas"
       responses_show:
+        zero: Sin respuestas
         one: "1 respuesta (mostrar)"
         other: "%{count} respuestas (mostrar)"
-        zero: Sin respuestas
       responses_collapse:
+        zero: Sin respuestas
         one: "1 respuesta (colapsar)"
         other: "%{count} respuestas (colapsar)"
-        zero: Sin respuestas
       user_deleted: Usuario eliminado
       votes:
         zero: Sin votos
@@ -245,7 +245,7 @@ es:
       my_account_link: Mi cuenta
       my_activity_link: Mi contenido
       open: abierto
-      open_gov: Gobierno %{open}
+      open_gov: Gobierno abierto
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
@@ -436,7 +436,6 @@ es:
         one: 1 voto
         other: "%{count} votos"
       supports_necessary: "%{number} apoyos necesarios"
-      reason_for_supports_necessary: ""
       total_percent: 100%
       archived: "Esta propuesta ha sido archivada y ya no puede recoger apoyos."
       successful: "Esta propuesta ha alcanzado los apoyos necesarios."
@@ -968,7 +967,7 @@ es:
       take_part: Participa del %{from} al %{to}
   remote_translations:
     text: El contenido de esta página no está disponible en tu idioma
-    all_remote_translations_enqueued_text: "En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma"
+    all_remote_translations_enqueued_text: En un breve periodo de tiempo refrescando la página podrá ver todo el contenido en su idioma
     create:
       enqueue_remote_translation: Se han solicitado correctamente las traducciones.
     button: Traducir página
