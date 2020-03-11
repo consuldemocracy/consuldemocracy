@@ -548,6 +548,10 @@ pt-BR:
           attributes:
             valuation:
               cannot_comment_valuation: "Você não pode comentar uma avaliação"
+        remote_translation:
+          attributes:
+            locale:
+              already_translated: Recurso já traduzido
       messages:
         translations_too_short: É obrigatório oferecer no mínimo uma tradução
         record_invalid: "Validação falhou: %{errors}"
