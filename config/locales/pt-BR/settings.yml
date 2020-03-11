@@ -89,6 +89,8 @@ pt-BR:
       facebook_login_description: "Permitir usuários de inscrever-se com sua conta do Facebook"
       google_login: "Login do Google"
       google_login_description: "Permitir usuários de inscrever-se com sua conta do Google"
+      wordpress_login: "Login via Wordpress"
+      wordpress_login_description: "Permitir que usuários se registrem com sua conta do Wordpress"
       featured_proposals: "Propostas destacadas"
       featured_proposals_description: "Exibe propostas em destaque na página principal de propostas"
       signature_sheets: "Folhas de assinatura"
@@ -125,6 +127,9 @@ pt-BR:
       valuation_comment_notification: "Notificação de comentários de avaliación"
       valuation_comment_notification_description: "Envia um email a todos os usuários, exceto a quem tiver comentários associados a um orçamento participativo quando se crie um novo comentário de avaliação"
       graphql_api: "API GraphQL"
+      dashboard:
+        notification_emails: "Emails de notificações do painel de progresso"
+        notification_emails_description: "Ativar o envio de emails de notificações aos autores das propostas na seção do painel de progresso"
     remote_census:
       general:
         endpoint: "Endpoint"
