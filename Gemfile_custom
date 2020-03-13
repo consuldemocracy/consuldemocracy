@@ -15,3 +15,8 @@ gem 'axlsx_rails'
 # Cliente REST para ruby
 gem 'rest-client', '~> 2.1.0'
 gem 'httparty', '~> 0.17.0'
+
+# Gemas adicionales para capistrano
+group :development do
+  gem 'capistrano-rbenv', '~> 2.1.6'
+end
