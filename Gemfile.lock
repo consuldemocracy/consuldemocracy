@@ -6,6 +6,17 @@ GIT
       devise (>= 3.0.0, < 5.0)
       railties (>= 3.2.6, < 6.0)
 
+GIT
+  remote: https://github.com/randym/axlsx.git
+  revision: c8ac844572b25fda358cc01d2104720c4c42f450
+  ref: c8ac844
+  specs:
+    axlsx (2.1.0.pre)
+      htmlentities (~> 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (>= 1.6.6)
+      rubyzip (>= 1.2.1)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -76,6 +87,9 @@ GEM
       activerecord (>= 4.2, < 6.1)
     autoprefixer-rails (8.2.0)
       execjs
+    axlsx_rails (0.6.1)
+      actionpack (>= 3.1)
+      caxlsx (>= 3.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -107,6 +121,9 @@ GEM
     capistrano-rails (1.4.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rbenv (2.1.6)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
     capistrano3-delayed-job (1.7.5)
       capistrano (~> 3.0, >= 3.0.0)
       daemons (~> 1.2.4)
@@ -126,6 +143,11 @@ GEM
       rack (>= 1.4)
       rack-proxy (>= 0.6.0)
       selenium-webdriver (~> 3.0)
+    caxlsx (3.0.1)
+      htmlentities (~> 4.3, >= 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (~> 1.10, >= 1.10.4)
+      rubyzip (>= 1.3.0, < 3)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chronic (0.10.2)
@@ -171,6 +193,8 @@ GEM
       devise (>= 4.0)
     diff-lcs (1.3)
     docile (1.3.1)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     dry-configurable (0.7.0)
       concurrent-ruby (~> 1.0)
     dry-container (0.6.0)
@@ -263,6 +287,9 @@ GEM
     highline (2.0.2)
     html_tokenizer (0.0.7)
     htmlentities (4.3.4)
+    http-accept (1.7.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     httparty (0.17.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -348,6 +375,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (5.0.2)
+    netrc (0.11.0)
     newrelic_rpm (4.1.0.333)
     nio4r (2.5.2)
     nokogiri (1.10.8)
@@ -452,6 +480,11 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
     retriable (3.1.2)
     rinku (2.0.4)
     rollbar (2.18.0)
@@ -574,6 +607,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.6)
     unicode-display_width (1.6.0)
     uniform_notifier (1.11.0)
     user_agent_parser (2.4.1)
@@ -607,12 +643,15 @@ DEPENDENCIES
   ancestry (~> 3.0.7)
   audited (~> 4.9.0)
   autoprefixer-rails (~> 8.2.0)
+  axlsx!
+  axlsx_rails
   bullet (~> 5.7.0)
   byebug (~> 10.0.0)
   cancancan (~> 2.3.0)
   capistrano (~> 3.10.1)
   capistrano-bundler (~> 1.2)
   capistrano-rails (~> 1.4.0)
+  capistrano-rbenv (~> 2.1.6)
   capistrano3-delayed-job (~> 1.7.3)
   capistrano3-puma (~> 4.0.0)
   capybara (~> 2.17.0)
@@ -640,6 +679,7 @@ DEPENDENCIES
   graphiql-rails (~> 1.4.1)
   graphql (~> 1.7.8)
   groupdate (~> 3.2.0)
+  httparty (~> 0.17.0)
   i18n-tasks (~> 0.9.29)
   initialjs-rails (~> 0.2.0.5)
   invisible_captcha (~> 0.10.0)
@@ -668,6 +708,7 @@ DEPENDENCIES
   recipient_interceptor (~> 0.2.0)
   redcarpet (~> 3.4.0)
   responders (~> 2.4.0)
+  rest-client (~> 2.1.0)
   rinku (~> 2.0.2)
   rollbar (~> 2.18.0)
   rspec-rails (~> 3.8)
@@ -695,4 +736,4 @@ DEPENDENCIES
   wkhtmltopdf-binary (~> 0.12.4)
 
 BUNDLED WITH
-   1.17.1
+   1.17.3
