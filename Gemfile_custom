@@ -3,3 +3,7 @@
 # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
+
+# Gemas adicionales para poder exportar los datos a excel fácilmente
+gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'axlsx_rails'
