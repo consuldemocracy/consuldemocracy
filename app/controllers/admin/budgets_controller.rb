@@ -7,6 +7,7 @@ class Admin::BudgetsController < Admin::BaseController
   has_filters %w[open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
+  before_action :load_staff, only: [:new, :edit]
   load_and_authorize_resource
 
   def index
@@ -15,14 +16,6 @@ class Admin::BudgetsController < Admin::BaseController
 
   def show
     render :edit
-  end
-
-  def new
-    load_staff
-  end
-
-  def edit
-    load_staff
   end
 
   def publish
