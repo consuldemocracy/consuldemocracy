@@ -78,7 +78,6 @@ en:
           all: All
           open: Open
           finished: Finished
-        help: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
         budget_investments: Manage projects
         table_completed: Completed
         table_draft: "Draft"
@@ -135,6 +134,15 @@ en:
       new:
         title_multiple: New multiple headings budget
         title_single: New single heading budget
+      help:
+        budgets: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
+        groups:
+          multiple: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+          single: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+        headings:
+          multiple: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+          single: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+        phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -163,7 +171,6 @@ en:
         submit: "Save group"
       index:
         back: "Go back to budgets"
-        help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
         new_button: "Add new group"
     budget_headings:
       no_headings: "There are no headings."
@@ -191,7 +198,6 @@ en:
         the_other_group: "Manage headings from the %{group} group."
       index:
         back: "Go back to groups"
-        help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
         new_button: "Add new heading"
         title: "%{budget} / %{group} headings"
     budget_phases:
@@ -207,7 +213,6 @@ en:
         name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
         save_changes: Save changes
       index:
-        help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
         title: "%{budget} phases"
     budget_investments:
       index:

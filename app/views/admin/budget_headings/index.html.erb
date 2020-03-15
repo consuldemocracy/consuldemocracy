@@ -5,5 +5,5 @@
   <%= link_to t("admin.budget_headings.form.create"), new_admin_budget_group_heading_path %>
 </header>
 
-<%= render Admin::Budgets::HelpComponent.new("budget_headings") %>
+<%= render Admin::Budgets::HelpComponent.new("headings") %>
 <%= render Admin::BudgetHeadings::HeadingsComponent.new(@headings) %>
