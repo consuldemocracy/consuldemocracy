@@ -21,6 +21,26 @@ describe "Budgets creation wizard", :admin do
     click_button "Continue to phases"
 
     expect(page).to have_css ".budget-phases-table"
+
+    click_button "Finish"
+
+    expect(page).to have_content "Phases configured successfully"
+
+    within "tr", text: "Single heading budget" do
+      click_link "Edit headings groups"
+    end
+
+    expect(page).to have_content "There is 1 group"
+
+    within "tr", text: "Single heading budget" do
+      click_link "Manage headings"
+    end
+
+    expect(page).to have_content "There is 1 heading"
+
+    within "tbody" do
+      expect(page).to have_content "One and only heading"
+    end
   end
 
   scenario "Creation of a multiple-headings budget by steps" do
@@ -86,5 +106,43 @@ describe "Budgets creation wizard", :admin do
     click_link "Continue to phases"
 
     expect(page).to have_css ".budget-phases-table"
+
+    within("tr", text: "Voting projects") { click_link "Edit phase" }
+    fill_in "Name", with: "Custom phase name"
+    uncheck "Phase enabled"
+    click_button "Save changes"
+
+    expect(page).to have_content "Changes saved"
+
+    within "table" do
+      expect(page).to have_content "Custom phase name"
+      expect(page).not_to have_content "Voting projects"
+    end
+
+    click_button "Finish"
+
+    expect(page).to have_content "Phases configured successfully"
+
+    within "tr", text: "Multiple headings budget" do
+      click_link "Edit headings groups"
+    end
+
+    expect(page).to have_content "There are 2 groups"
+
+    within "tbody" do
+      expect(page).to have_content "All city"
+      expect(page).to have_content "Districts"
+    end
+
+    within "tr", text: "Districts" do
+      click_link "Manage headings"
+    end
+
+    expect(page).to have_content "There are 2 headings"
+
+    within "tbody" do
+      expect(page).to have_content "North"
+      expect(page).to have_content "South"
+    end
   end
 end

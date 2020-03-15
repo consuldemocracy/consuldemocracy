@@ -13,7 +13,7 @@ class Admin::BudgetsWizard::PhasesController < Admin::BudgetsWizard::BaseControl
   private
 
     def phases_index
-      admin_budgets_wizard_budget_budget_phases_path(@phase.budget)
+      admin_budgets_wizard_budget_budget_phases_path(@phase.budget, url_params)
     end
 
     def phases_params

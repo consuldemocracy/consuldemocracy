@@ -4,6 +4,8 @@
 
   <%= render "shared/errors", resource: phase %>
 
+  <%= render Admin::BudgetsWizard::ModelFieldComponent.new %>
+
   <fieldset>
     <legend aria-describedby="phase_duration_description">
       <%= t("admin.budget_phases.edit.duration") %>

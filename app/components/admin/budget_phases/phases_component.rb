@@ -37,4 +37,10 @@ class Admin::BudgetPhases::PhasesComponent < ApplicationComponent
         tag.span t("shared.no"), class: "budget-phase-disabled"
       end
     end
+
+    def edit_path(phase)
+      if helpers.respond_to?(:single_heading?) && helpers.single_heading?
+        edit_admin_budgets_wizard_budget_budget_phase_path(budget, phase, helpers.url_params)
+      end
+    end
 end
