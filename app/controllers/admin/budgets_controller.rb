@@ -7,6 +7,7 @@ class Admin::BudgetsController < Admin::BaseController
   has_filters %w[open finished], only: :index
 
   before_action :load_budget, except: [:index, :new, :create]
+  before_action :load_staff, only: [:new, :create, :edit, :update, :show]
   load_and_authorize_resource
 
   def index
@@ -17,11 +18,9 @@ class Admin::BudgetsController < Admin::BaseController
   end
 
   def new
-    load_staff
   end
 
   def edit
-    load_staff
   end
 
   def calculate_winners
@@ -38,7 +37,6 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.update(budget_params)
       redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
     else
-      load_staff
       render :edit
     end
   end
@@ -48,7 +46,6 @@ class Admin::BudgetsController < Admin::BaseController
     if @budget.save
       redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
     else
-      load_staff
       render :new
     end
   end

@@ -112,6 +112,8 @@ describe "Admin budgets", :admin do
     end
 
     scenario "Create budget - Approval voting", :js do
+      admin = Administrator.first
+
       visit admin_budgets_path
       click_link "Create new budget"
 
@@ -121,8 +123,12 @@ describe "Admin budgets", :admin do
       click_button "Create Budget"
 
       expect(page).to have_content "New participatory budget created successfully!"
-      expect(page).to have_content "M30 - Summer campaign"
-      expect(Budget.last.voting_style).to eq "approval"
+      expect(page).to have_field "Name", with: "M30 - Summer campaign"
+      expect(page).to have_select "Final voting style", selected: "Approval"
+
+      click_link "Select administrators"
+
+      expect(page).to have_field admin.name
     end
 
     scenario "Name is mandatory" do
