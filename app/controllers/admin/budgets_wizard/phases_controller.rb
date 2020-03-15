@@ -1,4 +1,4 @@
-class Admin::BudgetsWizard::PhasesController < Admin::BaseController
+class Admin::BudgetsWizard::PhasesController < Admin::BudgetsWizard::BaseController
   include Admin::BudgetPhasesActions
 
   def index

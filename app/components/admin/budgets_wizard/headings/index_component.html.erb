@@ -5,6 +5,8 @@
 <%= render Admin::Budgets::HelpComponent.new("budget_headings") %>
 <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("headings") %>
 
-<%= render Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group) %>
-<%= render Admin::BudgetHeadings::HeadingsComponent.new(headings) %>
+<% unless single_heading? %>
+  <%= render Admin::BudgetsWizard::Headings::GroupSwitcherComponent.new(group) %>
+  <%= render Admin::BudgetHeadings::HeadingsComponent.new(headings) %>
+<% end %>
 <%= render Admin::BudgetsWizard::Headings::CreationStepComponent.new(new_heading) %>

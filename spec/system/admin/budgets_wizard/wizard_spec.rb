@@ -15,6 +15,12 @@ describe "Budgets creation wizard", :admin do
     click_button "Continue to headings"
 
     expect(page).to have_content "Group created successfully"
+
+    fill_in "Heading name", with: "One and only heading"
+    fill_in "Money amount", with: "1000000"
+    click_button "Continue to phases"
+
+    expect(page).to have_css ".budget-phases-table"
   end
 
   scenario "Creation of a multiple-headings budget by steps" do
@@ -47,5 +53,38 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_content "Showing headings from the All city group"
     expect(page).to have_content "There are no headings."
+
+    click_button "Add new heading"
+    fill_in "Heading name", with: "All city"
+    fill_in "Money amount", with: "1000000"
+    click_button "Create new heading"
+
+    expect(page).to have_content "Heading created successfully!"
+    within("table") { expect(page).to have_content "All city" }
+    expect(page).not_to have_content "There are no headings."
+
+    click_link "Manage headings from the Districts group."
+    expect(page).to have_content "There are no headings."
+
+    click_button "Add new heading"
+    fill_in "Heading name", with: "North"
+    fill_in "Money amount", with: "500000"
+    click_button "Create new heading"
+
+    expect(page).to have_content "Heading created successfully!"
+    within("table") { expect(page).to have_content "North" }
+    expect(page).not_to have_content "There are no headings."
+
+    click_button "Add new heading"
+    fill_in "Heading name", with: "South"
+    fill_in "Money amount", with: "500000"
+    click_button "Create new heading"
+
+    expect(page).to have_content "Heading created successfully!"
+    within("table") { expect(page).to have_content "South" }
+
+    click_link "Continue to phases"
+
+    expect(page).to have_css ".budget-phases-table"
   end
 end

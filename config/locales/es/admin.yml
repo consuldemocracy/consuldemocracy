@@ -330,8 +330,11 @@ es:
           title: "Presupuesto de <strong>partida única</strong>"
         title: Tipo de presupuesto participativo
       phases:
-        back: "Volver a partidas"
         continue: "Finalizar"
+        multiple:
+          back: "Volver a partidas"
+        single:
+          back: "Volver a editar partida"
         update_all:
           notice: "Fases configuradas con éxito"
     milestones:

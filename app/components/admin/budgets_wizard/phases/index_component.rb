@@ -1,4 +1,4 @@
-class Admin::BudgetsWizard::Phases::IndexComponent < ApplicationComponent
+class Admin::BudgetsWizard::Phases::IndexComponent < Admin::BudgetsWizard::BaseComponent
   include Header
   attr_reader :budget
 
@@ -13,6 +13,10 @@ class Admin::BudgetsWizard::Phases::IndexComponent < ApplicationComponent
   private
 
     def back_link_path
-      admin_budgets_wizard_budget_group_headings_path(budget, budget.groups.first)
+      admin_budgets_wizard_budget_group_headings_path(budget, budget.groups.first, url_params)
+    end
+
+    def back_link_text
+      t("admin.budgets_wizard.phases.#{budget_mode}.back")
     end
 end

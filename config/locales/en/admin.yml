@@ -330,8 +330,11 @@ en:
           title: "<strong>Single heading</strong> budget"
         title: "Participatory budget type"
       phases:
-        back: "Go back to headings"
         continue: "Finish"
+        multiple:
+          back: "Go back to headings"
+        single:
+          back: "Go back to edit heading"
         update_all:
           notice: "Phases configured successfully"
     milestones:
