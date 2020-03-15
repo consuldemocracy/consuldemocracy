@@ -1,4 +1,4 @@
-class Admin::BudgetsWizard::HeadingsController < Admin::BaseController
+class Admin::BudgetsWizard::HeadingsController < Admin::BudgetsWizard::BaseController
   include Admin::BudgetHeadingsActions
 
   before_action :load_headings, only: [:index, :create]

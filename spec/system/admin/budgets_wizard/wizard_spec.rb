@@ -10,6 +10,11 @@ describe "Budgets creation wizard", :admin do
     click_button "Continue to groups"
 
     expect(page).to have_content "New participatory budget created successfully!"
+    expect(page).to have_field "Group name", with: "Single heading budget"
+
+    click_button "Continue to headings"
+
+    expect(page).to have_content "Group created successfully"
   end
 
   scenario "Creation of a multiple-headings budget by steps" do
@@ -22,5 +27,25 @@ describe "Budgets creation wizard", :admin do
 
     expect(page).to have_content "New participatory budget created successfully!"
     expect(page).to have_content "There are no groups."
+
+    click_button "Add new group"
+    fill_in "Group name", with: "All city"
+    click_button "Create new group"
+
+    expect(page).to have_content "Group created successfully!"
+    within("table") { expect(page).to have_content "All city" }
+    expect(page).not_to have_content "There are no groups."
+
+    click_button "Add new group"
+    fill_in "Group name", with: "Districts"
+    click_button "Create new group"
+
+    expect(page).to have_content "Group created successfully!"
+    within("table") { expect(page).to have_content "Districts" }
+
+    click_link "Continue to headings"
+
+    expect(page).to have_content "Showing headings from the All city group"
+    expect(page).to have_content "There are no headings."
   end
 end

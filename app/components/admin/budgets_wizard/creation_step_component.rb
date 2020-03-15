@@ -1,4 +1,4 @@
-class Admin::BudgetsWizard::CreationStepComponent < ApplicationComponent
+class Admin::BudgetsWizard::CreationStepComponent < Admin::BudgetsWizard::BaseComponent
   attr_reader :record, :next_step_path
 
   def initialize(record, next_step_path)

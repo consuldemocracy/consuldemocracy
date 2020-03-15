@@ -317,6 +317,8 @@ en:
         continue: "Continue to headings"
       headings:
         continue: "Continue to phases"
+        single:
+          back: "Go back to edit group"
       heading_mode:
         multiple:
           description: "Create a process with multiple groups, districts or topics. You have something like several bags of money. For example, 25,000€ for \"North District\", 30,000€ for \"Center District\", 28,000€ for \"South District\" and the whole city. Or for several themes like sport, culture or health."

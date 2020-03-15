@@ -97,6 +97,26 @@ describe "Budgets wizard, groups step", :admin do
       expect(page).to have_css ".creation-timeline"
       expect(page).to have_css "td", exact_text: "Group without typos"
     end
+
+    scenario "update group in single heading budget" do
+      visit admin_budgets_wizard_budget_groups_path(budget, mode: "single")
+      fill_in "Group name", with: "Group wiht typo"
+      click_button "Continue to headings"
+
+      click_link "Go back to edit group"
+
+      expect(page).to have_field "Group name", with: "Group wiht typo"
+
+      fill_in "Group name", with: "Group without typos"
+      click_button "Continue to headings"
+
+      expect(page).to have_content "Group updated successfully"
+
+      visit admin_budget_groups_path(budget)
+
+      expect(page).to have_content "There is 1 group"
+      within("tbody tr") { expect(page).to have_content "Group without typos" }
+    end
   end
 
   describe "Destroy" do

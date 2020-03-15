@@ -317,6 +317,8 @@ es:
         continue: "Continuar a partidas"
       headings:
         continue: "Continuar a fases"
+        single:
+          back: "Volver a editar grupo"
       heading_mode:
         multiple:
           description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."

@@ -1,12 +1,10 @@
-class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
+class Admin::BudgetsWizard::BudgetsController < Admin::BudgetsWizard::BaseController
   include Translatable
   include ImageAttributes
   include FeatureFlags
   feature_flag :budgets
 
   load_and_authorize_resource
-
-  helper_method :budget_mode, :single_heading?
 
   def new
   end
@@ -47,17 +45,5 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
 
     def groups_index
       admin_budgets_wizard_budget_groups_path(@budget, url_params)
-    end
-
-    def budget_mode
-      params[:mode]
-    end
-
-    def single_heading?
-      budget_mode == "single"
-    end
-
-    def url_params
-      budget_mode.present? ? { mode: budget_mode } : {}
     end
 end
