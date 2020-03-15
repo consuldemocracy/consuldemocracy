@@ -1,0 +1,12 @@
+nl:
+  activerecord:
+    attributes:
+      budget:
+        name: "Naam"
+        main_button_text: "Tekst op de knop"
+        main_button_url: "Als je op de knop klikt, ga je naar (voeg een link toe)"
+      budget/heading:
+        allow_custom_content: "Sta contentblok toe"
+        latitude: "Breedtegraad (optioneel)"
+        longitude: "Lengtegraad (optioneel)"
+        price: "Kosten hoeveel geld beschikbaar is"

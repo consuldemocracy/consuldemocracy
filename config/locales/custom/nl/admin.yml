@@ -1,0 +1,43 @@
+nl:
+  admin:
+    budgets:
+      index:
+        title: Participatory budgets
+        title_budget_type: Participatory budget type
+        new_button: Create new budget
+        new_single_title_html: "<strong>Enkel </strong> budget"
+        new_single_description: "Hier creëer je een proces met één groep, wijk of thema. Je hebt als het ware één zak geld. Bijvoorbeeld 25.000 euro voor de ‘Oosterparkwijk’, of 10.000 voor cultuur. "
+        new_single_button: Create single heading budget
+        new_multiple_title_html: "<strong>Meervoudig</strong> budget"
+        new_multiple_description: "Hier creëer je een proces met meerdere groepen, wijken of thema’s. Je hebt als het ware meerdere zakken geld. Bijvoorbeeld 25.000 voor ‘Oosterparkwijk’, 30.000 voor het ‘Centrum’, 28.000 voor de ‘Westerparkwijk’ en de hele stad. Of voor verschillende thema’s zoals sport, cultuur of gezondheid."
+        new_multiple_button: Create multiple headings budget
+      new:
+        title_single: Nieuw enkel budget
+        title_multiple: Nieuw meervoudig budget
+      edit:
+        name_description: "Dit wordt de naam van je proces. Dit is straks zichtbaar op de site."
+        info:
+          budget_settings: "Algemene instellingen"
+          heading_settings: "Heading settings"
+          phases_settings: "Phases settings"
+          results_settings: "Instellingen voor resultaten en statistieken"
+          staff_settings: "Voeg admins en beoordelaars toe"
+        main_call_to_action: "Call to action (optioneel)"
+        main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
+        administrators:
+          zero: "Selecteer admin"
+        valuators:
+          zero: "Selecteer beoordelaar"
+          empty_valuators: "Er zijn geen beoordelaars."
+        button:
+          continue: "Verder naar"
+    budget_phases:
+      edit:
+        main_call_to_action: "Call to action (optioneel)"
+        main_call_to_action_description: "Deze knop verschijnt op de voorpagina van deze begroting. Een call to action moedigt de gebruiker aan om iets te doen, zoals een idee indienen, stemmen of meer leren over het proces."
+    shared:
+      show_results_and_stats: "laat resultaat en statistieken zien"
+    budget_headings:
+      form:
+        population_info: "Het veld rubriek wordt gebruikt voor statistische doeleinden. Na afloop van de begroting kan worden weergegeven door welk percentage is gestemd. Het veld is optioneel, dus je kunt het leeg laten als het niet van toepassing is."
+        content_blocks_info: "Als dit is aangevinkt, kun je op maat gemaakte content toevoegen. Via Instellingen Costum content blocks. Deze content zal dan verschijnen bij de ideeën pagina."
