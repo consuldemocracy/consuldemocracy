@@ -79,12 +79,16 @@ es:
           open: Abiertos
           finished: Terminados
         budget_investments: Gestionar proyectos de gasto
+        table_budget_type: "Tipo"
         table_completed: Completado
         table_draft: "Borrador"
         table_duration: "Duración"
         table_name: Nombre
         table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        type_multiple: "Múltiples partidas"
+        type_pending: "Pendiente: Aún no hay partidas"
+        type_single: "Partida única"
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas

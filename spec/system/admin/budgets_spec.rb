@@ -30,8 +30,10 @@ describe "Admin budgets", :admin do
       budget = create(:budget, :accepting)
       visit admin_budgets_path
 
-      expect(page).to have_content budget.name
-      expect(page).to have_content "Accepting projects"
+      within "tr", text: budget.name do
+        expect(page).to have_content "Accepting projects"
+        expect(page).to have_content "Pending: No headings yet"
+      end
     end
 
     scenario "Filters by phase" do
