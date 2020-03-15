@@ -1,7 +1,8 @@
 <%= header do %>
-  <%= link_to t("admin.budgets.index.new_link"), new_admin_budgets_wizard_budget_path %>
+  <button data-open="heading_mode"><%= t("admin.budgets.index.new_link") %></button>
 <% end %>
 
+<%= render Admin::Budgets::HeadingModeComponent.new %>
 <%= render Admin::Budgets::HelpComponent.new("budgets") %>
 <%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 

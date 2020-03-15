@@ -133,7 +133,8 @@ en:
         unable_notice: You cannot delete a budget that has associated investments
         unable_notice_polls: You cannot delete a budget that has an associated poll
       new:
-        title: New participatory budget
+        title_multiple: New multiple headings budget
+        title_single: New single heading budget
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -316,6 +317,16 @@ en:
         continue: "Continue to headings"
       headings:
         continue: "Continue to phases"
+      heading_mode:
+        multiple:
+          description: "Create a process with multiple groups, districts or topics. You have something like several bags of money. For example, 25,000€ for \"North District\", 30,000€ for \"Center District\", 28,000€ for \"South District\" and the whole city. Or for several themes like sport, culture or health."
+          link: "Create multiple headings budget"
+          title: "<strong>Multiple headings</strong> budget"
+        single:
+          description: "Create a process with a group, district or topic. You have something like a bag of money. For example, 25,000€ for the district, or 10,000€ for culture."
+          link: "Create single heading budget"
+          title: "<strong>Single heading</strong> budget"
+        title: "Participatory budget type"
       phases:
         back: "Go back to headings"
         continue: "Finish"
@@ -1357,6 +1368,7 @@ en:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
+      close_modal: Close modal
       example_url: "https://consulproject.org"
     geozones:
       index:

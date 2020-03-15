@@ -151,6 +151,7 @@ ignore_unused:
   - "admin.budget_headings.index.*.help_block"
   - "admin.budget_phases.index.help_block"
   - "admin.budget_investments.index.filter*"
+  - "admin.budgets_wizard.heading_mode.*"
   - "admin.organizations.index.filter*"
   - "admin.hidden_users.index.filter*"
   - "admin.hidden_budget_investments.index.filter*"

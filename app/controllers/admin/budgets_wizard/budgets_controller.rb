@@ -6,6 +6,8 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
 
   load_and_authorize_resource
 
+  helper_method :budget_mode, :single_heading?
+
   def new
   end
 
@@ -44,6 +46,18 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
     end
 
     def groups_index
-      admin_budgets_wizard_budget_groups_path(@budget)
+      admin_budgets_wizard_budget_groups_path(@budget, url_params)
+    end
+
+    def budget_mode
+      params[:mode]
+    end
+
+    def single_heading?
+      budget_mode == "single"
+    end
+
+    def url_params
+      budget_mode.present? ? { mode: budget_mode } : {}
     end
 end

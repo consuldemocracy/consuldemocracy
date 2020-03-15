@@ -665,7 +665,8 @@ code {
   display: flex;
   flex-wrap: wrap;
 
-  a {
+  a,
+  button {
     @include regular-button;
     margin-left: auto;
   }

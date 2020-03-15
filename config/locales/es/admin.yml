@@ -133,7 +133,8 @@ es:
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados
         unable_notice_polls: No se puede eliminar un presupuesto con una votación asociada
       new:
-        title: Nuevo presupuesto ciudadano
+        title_multiple: Nuevo presupuesto de múltiples partidas
+        title_single: Nuevo presupuesto de partida única
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -316,6 +317,16 @@ es:
         continue: "Continuar a partidas"
       headings:
         continue: "Continuar a fases"
+      heading_mode:
+        multiple:
+          description: "Crea un proceso con múltiples grupos, distritos o temas. Tienes algo como varias bolsas de dinero. Por ejemplo, 25.000€ para \"Distrito norte\", 30.000€ para \"Distrito centro\", 28.000€ para \"Distrito sur\" y toda la ciudad. O para varios temas como deporte, cultura o salud."
+          link: "Crear presupuesto de múltiples partidas"
+          title: "Presupuesto de <strong>múltiples partidas</strong>"
+        single:
+          description: "Crea un proceso con un grupo, distrito o tema. Tienes algo como una bolsa de dinero. Por ejemplo, 25.000€ para un distrito, o 10.000€ para cultura."
+          link: "Crear presupuesto de partida única"
+          title: "Presupuesto de <strong>partida única</strong>"
+        title: Tipo de presupuesto participativo
       phases:
         back: "Volver a partidas"
         continue: "Finalizar"
@@ -1356,6 +1367,7 @@ es:
       example_url: "https://consulproject.org"
       show_results_and_stats: "Mostrar resultados y estadísticas"
       results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas serán públicos y podrán verlos todos los usuarios."
+      close_modal: Cerrar ventana emergente
       example_url: "https://consulproject.org"
     geozones:
       index:
