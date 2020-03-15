@@ -155,7 +155,7 @@ es:
         description_balloting: "Descripción durante la fase de votación"
         description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
-        phase: "Fase"
+        phase: "Fase activa"
         currency_symbol: "Divisa"
         voting_style: "Estilo de la votación final"
         voting_style_knapsack: Bolsa de dinero

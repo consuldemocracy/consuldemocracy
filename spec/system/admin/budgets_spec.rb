@@ -188,7 +188,7 @@ describe "Admin budgets", :admin do
 
         visit edit_admin_budget_path(budget)
 
-        expect(page).to have_select "Phase", selected: "Selecting projects"
+        expect(page).to have_select "Active phase", selected: "Selecting projects"
 
         expect(page).to have_table "Phases", with_cols: [
           [
