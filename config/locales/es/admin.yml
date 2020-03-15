@@ -71,7 +71,7 @@ es:
         preview: "Previsualizar presupuesto"
       index:
         title: Presupuestos participativos
-        new_link: Crear nuevo presupuesto
+        new_button: Crear nuevo presupuesto
         filter: Filtro
         filters:
           all: Todos
@@ -90,7 +90,11 @@ es:
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
       create:
+        button:
+          continue: "Continuar"
         notice: '¡Presupuestos participativos creados con éxito!'
+      creation_timeline:
+        budget: Presupuesto
       update:
         notice: Presupuestos participativos actualizados
       publish:

@@ -90,11 +90,12 @@ describe "Admin budgets", :admin do
       click_link "Create new budget"
 
       fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
-
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).to have_content "New participatory budget created successfully!"
+
+      click_link "Go back to budgets"
+
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Knapsack"
     end
@@ -106,11 +107,12 @@ describe "Admin budgets", :admin do
       click_link "Create new budget"
 
       fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
       select "Approval", from: "Final voting style"
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).to have_content "New participatory budget created successfully!"
+
+      click_link "Go back to budgets"
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Approval"
 
@@ -155,7 +157,6 @@ describe "Admin budgets", :admin do
       click_link "Create new budget"
 
       fill_in "Name", with: "M30 - Summer campaign"
-      select "Accepting projects", from: "budget[phase]"
 
       click_button "Create Budget"
 

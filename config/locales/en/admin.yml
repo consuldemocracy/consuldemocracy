@@ -71,7 +71,7 @@ en:
         preview: "Preview budget"
       index:
         title: Participatory budgets
-        new_link: Create new budget
+        new_button: Create new budget
         filter: Filter
         filters:
           all: All
@@ -90,7 +90,11 @@ en:
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."
       create:
+        button:
+          continue: "Continue"
         notice: New participatory budget created successfully!
+      creation_timeline:
+        budget: Budget
       update:
         notice: Participatory budget updated successfully
       publish:
