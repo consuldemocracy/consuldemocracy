@@ -179,6 +179,8 @@
   }
 
   .budget-phase {
+    margin-top: $line-height;
+
     @include breakpoint(medium) {
       @include grid-row-nest;
 
@@ -193,8 +195,17 @@
     }
 
     .main-link {
+      @include has-fa-icon(chevron-right, solid, "after");
       @include regular-button;
-      font-size: 1.1rem;
+      font-size: map-get($button-sizes, large);
+      margin-top: $line-height;
+      padding-right: 0.5em;
+
+      &::after {
+        font-weight: bold;
+        margin-left: 0.5em;
+        margin-right: 0;
+      }
     }
   }
 }
