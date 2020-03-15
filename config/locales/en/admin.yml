@@ -284,6 +284,9 @@ en:
         tags_placeholder: "Write the tags you want separated by commas (,)"
         undefined: Undefined
       search_unfeasible: Search unfeasible
+    budgets_wizard:
+      creation_timeline:
+        budget: Budget
     milestones:
       index:
         table_id: "ID"

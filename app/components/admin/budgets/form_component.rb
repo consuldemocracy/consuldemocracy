@@ -12,6 +12,14 @@ class Admin::Budgets::FormComponent < ApplicationComponent
     @budget = budget
   end
 
+  def namespace
+    if controller.class.name.starts_with?("Admin::BudgetsWizard")
+      :admin_budgets_wizard
+    else
+      helpers.namespace.to_sym
+    end
+  end
+
   def voting_styles_select_options
     Budget::VOTING_STYLES.map do |style|
       [Budget.human_attribute_name("voting_style_#{style}"), style]

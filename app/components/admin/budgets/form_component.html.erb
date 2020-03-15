@@ -1,4 +1,4 @@
-<%= translatable_form_for [:admin, budget], html: { class: "budgets-form" } do |f| %>
+<%= translatable_form_for [namespace, budget], html: { class: "budgets-form" } do |f| %>
   <fieldset>
     <legend><%= t("admin.budgets.edit.info.budget_settings") %></legend>
     <%= render "shared/globalize_locales", resource: budget %>
@@ -37,17 +37,16 @@
     <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: valuators, form: f %>
   </fieldset>
 
-  <fieldset>
-    <legend><%= t("admin.budgets.edit.info.phases_settings") %></legend>
-    <div class="small-12 medium-6 column">
-      <%= f.select :phase, phases_select_options %>
-    </div>
-
-    <%= render Admin::Budgets::HelpComponent.new("budget_phases") %>
-    <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
-  </fieldset>
-
   <% if budget.persisted? %>
+    <fieldset>
+      <legend><%= t("admin.budgets.edit.info.phases_settings") %></legend>
+      <div class="small-12 medium-6 column">
+        <%= f.select :phase, phases_select_options %>
+      </div>
+
+      <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
+    </fieldset>
+
     <%= render "admin/shared/show_results_fields", form: f %>
   <% end %>
 

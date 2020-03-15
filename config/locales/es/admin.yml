@@ -284,6 +284,9 @@ es:
         tags_placeholder: "Escribe las etiquetas que desees separadas por comas (,)"
         undefined: Sin definir
       search_unfeasible: Buscar inviables
+    budgets_wizard:
+      creation_timeline:
+        budget: Presupuesto
     milestones:
       index:
         table_id: "ID"
