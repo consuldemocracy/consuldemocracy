@@ -126,6 +126,36 @@ describe "Budgets" do
 
       expect(page).to have_content "There are no budgets"
     end
+
+    scenario "Show heading for budget with single heading" do
+      group = create(:budget_group, budget: budget, name: "Single group")
+      create(:budget_heading, group: group, name: "New heading", price: 10_000)
+
+      visit budgets_path
+
+      expect(page).not_to have_content "Single group"
+
+      within ".single-heading" do
+        expect(page).to have_content "New heading"
+        expect(page).to have_content "€10,000"
+      end
+    end
+
+    scenario "Show group and headings for budget with multiple headings" do
+      group = create(:budget_group, budget: budget, name: "New group")
+      create(:budget_heading, group: group, name: "New heading", price: 10_000)
+      create(:budget_heading, group: group, name: "Other new heading", price: 30_000)
+
+      visit budgets_path
+
+      within("#groups_and_headings") do
+        expect(page).to have_content "New group"
+        expect(page).to have_content "New heading"
+        expect(page).to have_content "€10,000"
+        expect(page).to have_content "Other new heading"
+        expect(page).to have_content "€30,000"
+      end
+    end
   end
 
   scenario "Index shows only published phases" do
