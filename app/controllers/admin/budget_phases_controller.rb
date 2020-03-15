@@ -1,7 +1,8 @@
 class Admin::BudgetPhasesController < Admin::BaseController
   include Translatable
+  include ImageAttributes
 
-  before_action :load_phase, only: [:edit, :update]
+  before_action :load_phase, only: [:edit, :update, :toggle_enable]
 
   def edit
   end
@@ -15,6 +16,10 @@ class Admin::BudgetPhasesController < Admin::BaseController
     end
   end
 
+  def toggle_enable
+    @phase.update!(enabled: !@phase.enabled)
+  end
+
   private
 
     def load_phase
@@ -22,7 +27,9 @@ class Admin::BudgetPhasesController < Admin::BaseController
     end
 
     def budget_phase_params
-      valid_attributes = [:starts_at, :ends_at, :enabled]
+      valid_attributes = [:starts_at, :ends_at, :enabled,
+                          :main_button_text, :main_button_url,
+                          image_attributes: image_attributes]
       params.require(:budget_phase).permit(*valid_attributes, translation_params(Budget::Phase))
     end
 end

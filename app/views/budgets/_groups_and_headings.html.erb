@@ -1,0 +1,21 @@
+<div id="groups_and_headings" class="groups-and-headings">
+  <% current_budget.groups.each do |group| %>
+    <h2 id="<%= group.name.parameterize %>"><%= group.name %></h2>
+    <ul class="no-bullet" data-equalizer data-equalizer-on="medium">
+      <% group.headings.sort_by_name.each do |heading| %>
+        <li class="heading small-12 medium-4 large-2" data-equalizer-watch>
+          <% unless current_budget.informing? || current_budget.finished? %>
+            <%= link_to budget_investments_path(current_budget.id,
+                                                heading_id: heading.id) do %>
+              <%= heading_name_and_price_html(heading, current_budget) %>
+            <% end %>
+          <% else %>
+            <div class="heading-name">
+              <%= heading_name_and_price_html(heading, current_budget) %>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

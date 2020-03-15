@@ -6,19 +6,23 @@ class Budget
     SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
+    translates :name, touch: true
     translates :summary, touch: true
     translates :description, touch: true
     include Globalizable
     include Sanitizable
+    include Imageable
 
     belongs_to :budget, touch: true
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
     has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
+    validates_translation :name, presence: true
     validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: PHASE_KINDS }
+    validates :main_button_url, presence: true, if: -> { main_button_text.present? }
     validate :invalid_dates_range?
     validate :prev_phase_dates_valid?
     validate :next_phase_dates_valid?

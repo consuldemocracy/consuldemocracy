@@ -1,0 +1,11 @@
+<ul class="timeline-steps">
+  <li class="step-active">
+    <%= t("admin.budgets.shared.timeline_budget") %>
+  </li>
+  <li class="<%= "step-active" if budget_new_step_group?(step) %>">
+    <%= t("admin.budgets.shared.timeline_groups") %>
+  </li>
+  <li class="<%= "step-active" if budget_new_step_headings?(step) %>">
+    <%= t("admin.budgets.shared.timeline_headings") %>
+  </li>
+</ul>

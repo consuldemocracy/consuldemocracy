@@ -48,8 +48,10 @@ es:
         icon_alt: Icono de Presupuestos participativos
         title: Presupuestos participativos
         help: Ayuda sobre presupuestos participativos
-        all_phases: Ver todas las fases
       all_phases: Fases de los presupuestos participativos
+      next_phase: Fase siguiente
+      prev_phase: Fase anterior
+      current_phase: Fase actual
       map: Proyectos localizables geográficamente
       investment_proyects: Ver lista completa de proyectos de gasto
       unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables

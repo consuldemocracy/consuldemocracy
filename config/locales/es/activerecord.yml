@@ -141,8 +141,10 @@ es:
         description_balloting: "Descripción durante la fase de votación"
         description_reviewing_ballots: "Descripción durante la fase de revisión de votos"
         description_finished: "Descripción cuando el presupuesto ha finalizado / Resultados"
-        phase: "Fase"
+        phase: "Fase activa"
         currency_symbol: "Divisa"
+        main_button_text: "Texto del botón"
+        main_button_url: "El botón te lleva a (añade un enlace)"
       budget/translation:
         name: "Nombre"
       budget/investment:
@@ -211,7 +213,10 @@ es:
         enabled: "Fase habilitada"
         ends_at: "Fecha de fin"
         starts_at: "Fecha de inicio"
+        main_button_text: "Texto del botón"
+        main_button_url: "El botón te lleva a (añade un enlace)"
       budget/phase/translation:
+        name: "Nombre"
         description: "Descripción"
         summary: "Resumen"
       comment:

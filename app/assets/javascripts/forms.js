@@ -56,12 +56,24 @@
       });
       $("[name='progress_bar[kind]']").trigger("change");
     },
+    toggleBudgetPhaseEnable: function() {
+      var checkbox = $(".js-toggle-budget-phase-enable");
+      $(checkbox).on({
+        change: function(e) {
+          $.ajax({
+            url: $(e.target).data("js-url"),
+            type: "PATCH"
+          });
+        }
+      });
+    },
     initialize: function() {
       App.Forms.disableEnter();
       App.Forms.submitOnChange();
       App.Forms.toggleLink();
       App.Forms.synchronizeInputs();
       App.Forms.hideOrShowFieldsAfterSelection();
+      App.Forms.toggleBudgetPhaseEnable();
     }
   };
 }).call(this);

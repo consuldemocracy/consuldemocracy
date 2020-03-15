@@ -1,0 +1,36 @@
+<%= link_to budget_path(budget), class: "icon-link", target: "_blank" do %>
+  <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
+        title="<%= t("admin.budgets.index.table_preview") %>">
+    <span class="far fa-eye"></span>
+    <span class="show-for-sr"><%= t("admin.budgets.index.table_preview") %></span>
+  </span>
+<% end %>
+
+<%= link_to edit_admin_budget_path(budget), class: "icon-link" do %>
+  <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
+        title="<%= t("admin.budgets.index.edit_budget") %>">
+    <span class="far fa-edit"></span>
+    <span class="show-for-sr"><%= t("admin.budgets.index.edit_budget") %></span>
+  </span>
+<% end %>
+
+<a data-toggle="budget-admin-actions-<%= budget.id %>" class="icon-link">
+  <span class="fas fa-ellipsis-v"></span>
+</a>
+
+<div class="dropdown-pane" id="budget-admin-actions-<%= budget.id %>" data-hover="true" data-hover-pane="true"
+     data-position="bottom" data-alignment="right" data-dropdown>
+  <ul>
+    <li>
+      <%= link_to t("admin.budgets.index.budget_investments"),
+                  admin_budget_budget_investments_path(budget_id: budget.id) %>
+    </li>
+    <li>
+      <% if budget.poll.present? %>
+        <%= link_to t("admin.budgets.index.admin_ballots"), admin_poll_booth_assignments_path(budget.poll) %>
+      <% else %>
+        <%= link_to_create_budget_poll(budget) %>
+      <% end %>
+    </li>
+  </ul>
+</div>

@@ -1,31 +1,46 @@
+<p class="form-section-divider"><span><%= t("admin.budgets.edit.info.budget_settings") %></span></p>
+
 <%= render "shared/globalize_locales", resource: @budget %>
 
 <%= translatable_form_for [:admin, @budget] do |f| %>
 
   <%= render "shared/errors", resource: @budget %>
 
-  <div class="row">
-    <%= f.translatable_fields do |translations_form| %>
-      <div class="small-12 medium-9 column end">
-        <%= translations_form.text_field :name, maxlength: Budget.title_max_length %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="row margin-top">
-    <div class="small-12 medium-6 column">
-      <%= f.select :phase, budget_phases_select_options %>
-    </div>
-    <div class="small-12 medium-3 column end">
-      <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
-    </div>
-  </div>
-
   <%= f.hidden_field :published, value: false unless @budget.persisted? %>
+  <%= hidden_field :heading, :mode, value: @mode %>
 
-  <div class="row margin-top">
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-9 large-6 column end">
+      <p class="help-text"><%= t("admin.budgets.edit.name_description") %></p>
+      <%= translations_form.text_field :name, maxlength: Budget.title_max_length %>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-3 column end">
+    <%= f.select :currency_symbol, budget_currency_symbol_select_options %>
+  </div>
+
+  <% if feature?(:allow_images) %>
+    <div class="budget-investment-form">
+      <div class="images small-12 column">
+        <%= render "/images/nested_image", imageable: @budget, f: f %>
+        <p class="help-text"><%= t("admin.budgets.edit.image_description") %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="small-12 medium-6 column">
+    <p class="form-label"><%= t("admin.budgets.edit.main_call_to_action") %></p>
+    <p class="help-text"> <%= t("admin.budgets.edit.main_call_to_action_description") %></p>
+    <%= f.text_field :main_button_text %>
+    <%= f.text_field :main_button_url, placeholder: t("admin.shared.example_url") %>
+  </div>
+
+  <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.staff_settings") %></span></p>
+
+  <div class="clear">
     <% %w[administrators valuators].each do |staff| %>
-      <div class="small-12 medium-4 column end">
+      <div class="small-12 medium-6 large-3 column end">
         <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
           "#",
           class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
@@ -34,86 +49,54 @@
     <% end %>
   </div>
 
-  <div class="row margin-top">
-    <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
-    <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
-  </div>
+  <%= render "/admin/budgets/association", assignable_type: "administrators", assignables: @admins, form: f %>
+  <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
 
-  <% if @budget.phases.present? %>
-    <div class="row">
-      <div class="small-12 column">
-        <table id="budget-phases-table" class="table-for-mobile">
-          <thead>
-            <tr>
-              <th><%= t("admin.budgets.edit.phase") %></th>
-              <th><%= t("admin.budgets.edit.dates") %></th>
-              <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
-              <th><%= t("admin.budgets.edit.actions") %></th>
-            </tr>
-          </thead>
+  <% if @budget.persisted? %>
+    <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.phases_settings") %></span></p>
 
-          <% @budget.phases.order(:id).each do |phase| %>
-            <tr id="<%= dom_id(phase) %>" class="phase">
-              <td>
-                <%= t("budgets.phase.#{phase.kind}") %>
-                <% if @budget.current_phase == phase %>
-                  <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
-                <% end %>
-              </td>
-              <td>
-                <% if phase.starts_at.present? || phase.ends_at.present? %>
-                  <%= l(phase.starts_at.to_date) if phase.starts_at.present? %>
-                  -
-                  <%= l(phase.ends_at.to_date) if phase.ends_at.present? %>
-                <% else %>
-                  <em><%= t("admin.budgets.edit.blank_dates") %></em>
-                <% end %>
-              </td>
-              <td class="text-center">
-                <span class="budget-phase-enabled <%= phase.enabled? ? "enabled" : "disabled" %>"></span>
-              </td>
-              <td>
-                <%= link_to t("admin.budgets.edit.edit_phase"),
-                            edit_admin_budget_budget_phase_path(@budget, phase),
-                            class: "button hollow expanded" %>
-              </td>
-            </tr>
-          <% end %>
-        </table>
-      </div>
+    <div class="small-12 medium-6 column">
+      <%= f.select :phase, budget_phases_select_options %>
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="small-12 column">
-      <%= render "admin/shared/show_results_fields", form: f %>
+  <%= render "phases" %>
+
+  <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.results_settings") %></span></p>
+
+  <div class="small-12 column">
+    <%= render "admin/shared/show_results_fields", form: f %>
+  </div>
+
+  <div class="small-12 column">
+    <div class="clear small-12 medium-4 large-3 inline-block">
+      <% if @mode == "single" %>
+        <%= f.submit nil, value: t("admin.budgets.create.button.continue"),
+                          class: "button success expanded bold" %>
+      <% else %>
+        <%= f.submit nil, class: "button success expanded bold" %>
+      <% end %>
     </div>
 
-    <div class="small-12 column">
-      <div class="clear small-12 medium-4 large-3 inline-block">
-        <%= f.submit nil, class: "button success" %>
-      </div>
+    <div class="float-right">
+      <% if display_calculate_winners_button?(@budget) %>
+        <%= link_to calculate_winner_button_text(@budget),
+                    calculate_winners_admin_budget_path(@budget),
+                    method: :put,
+                    class: "button hollow" %>
+      <% end %>
 
-      <div class="float-right">
-        <% if display_calculate_winners_button?(@budget) %>
-          <%= link_to calculate_winner_button_text(@budget),
-                      calculate_winners_admin_budget_path(@budget),
-                      method: :put,
-                      class: "button hollow" %>
-        <% end %>
-
-        <% if @budget.has_winning_investments? %>
-          <%= link_to t("budgets.show.see_results"),
-                      budget_results_path(@budget),
-                      class: "button hollow margin-left" %>
-        <% end %>
-        <% if @budget.persisted? %>
-          <%= link_to t("admin.budgets.edit.delete"),
-              admin_budget_path(@budget),
-              method: :delete,
-              class: "delete float-right margin-left" %>
-        <% end %>
-      </div>
+      <% if @budget.has_winning_investments? %>
+        <%= link_to t("budgets.show.see_results"),
+                    budget_results_path(@budget),
+                    class: "button hollow margin-left" %>
+      <% end %>
+      <% if @budget.persisted? %>
+        <%= link_to t("admin.budgets.edit.delete"),
+            admin_budget_path(@budget),
+            method: :delete,
+            class: "delete float-right margin-left" %>
+      <% end %>
     </div>
   </div>
 <% end %>

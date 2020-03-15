@@ -208,7 +208,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         # Pending. Review soon and test
       else
         expect(page).to have_selector "figure img"
-        expect(page).to have_selector "figure figcaption"
+        expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
       end
     end
 
@@ -279,6 +279,10 @@ def imageable_fill_new_valid_proposal
   check :proposal_terms_of_service
 end
 
+def imageable_fill_new_valid_budget
+  fill_in "Name", with: "Budget name"
+end
+
 def imageable_fill_new_valid_budget_investment
   page.select imageable.heading.name_scoped_by_group, from: :budget_investment_heading_id
   fill_in "Title", with: "Budget investment title"
@@ -302,4 +306,8 @@ def expect_image_has_cached_attachment(extension)
       expect(find("input[name$='[cached_attachment]']", visible: false).value).to end_with(extension)
     end
   end
+end
+
+def show_caption_for?(imageable_factory_name)
+  imageable_factory_name != "budget"
 end

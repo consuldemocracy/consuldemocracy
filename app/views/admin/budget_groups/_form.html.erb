@@ -4,13 +4,13 @@
 
   <%= render "shared/errors", resource: @group %>
 
-  <div class="row">
-    <%= f.translatable_fields do |translations_form| %>
-      <div class="small-12 medium-6 column end">
-        <%= translations_form.text_field :name, maxlength: 50 %>
-      </div>
-    <% end %>
-  </div>
+  <%= hidden_field :heading, :mode, value: @mode %>
+
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6 column end">
+      <%= translations_form.text_field :name, maxlength: 50 %>
+    </div>
+  <% end %>
 
   <% if @group.persisted? %>
     <div class="row">
@@ -20,9 +20,11 @@
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button success" %>
-    </div>
+  <div class="small-12 medium-6 large-3">
+    <% if @mode == "single" %>
+      <%= f.submit t("admin.budget_groups.create.button.continue"), class: "button success expanded" %>
+    <% else %>
+      <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button success expanded" %>
+    <% end %>
   </div>
 <% end %>

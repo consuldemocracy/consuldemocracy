@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200211123827) do
+ActiveRecord::Schema.define(version: 20200309112812) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -287,6 +287,7 @@ ActiveRecord::Schema.define(version: 20200211123827) do
     t.datetime "updated_at",      null: false
     t.text     "description"
     t.text     "summary"
+    t.string   "name"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id", using: :btree
     t.index ["locale"], name: "index_budget_phase_translations_on_locale", using: :btree
   end
@@ -294,10 +295,12 @@ ActiveRecord::Schema.define(version: 20200211123827) do
   create_table "budget_phases", force: :cascade do |t|
     t.integer  "budget_id"
     t.integer  "next_phase_id"
-    t.string   "kind",                         null: false
+    t.string   "kind",                            null: false
     t.datetime "starts_at"
     t.datetime "ends_at"
-    t.boolean  "enabled",       default: true
+    t.boolean  "enabled",          default: true
+    t.string   "main_button_text"
+    t.string   "main_button_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at", using: :btree
     t.index ["kind"], name: "index_budget_phases_on_kind", using: :btree
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id", using: :btree
@@ -361,6 +364,8 @@ ActiveRecord::Schema.define(version: 20200211123827) do
     t.text     "description_publishing_prices"
     t.text     "description_informing"
     t.boolean  "published",                                default: true
+    t.string   "main_button_text"
+    t.string   "main_button_url"
   end
 
   create_table "campaigns", force: :cascade do |t|

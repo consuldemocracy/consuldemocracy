@@ -1,38 +1,44 @@
+<p class="form-section-divider"><span><%= t("admin.budgets.edit.info.heading_settings") %></span></p>
+
 <%= render "shared/globalize_locales", resource: @heading %>
 
 <%= translatable_form_for [:admin, @budget, @group, @heading], url: path do |f| %>
 
   <%= render "shared/errors", resource: @heading %>
 
-  <div class="row">
-    <%= f.translatable_fields do |translations_form| %>
-      <div class="small-12 medium-6 column end">
-        <%= translations_form.text_field :name, maxlength: 50 %>
-      </div>
-    <% end %>
-  </div>
+  <%= hidden_field :budget, :mode, value: @mode %>
 
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.text_field :price, maxlength: 8 %>
+  <%= f.translatable_fields do |translations_form| %>
+    <div class="small-12 medium-6 column end">
+      <%= translations_form.text_field :name, maxlength: 50 %>
+    </div>
+  <% end %>
 
-      <%= f.text_field :population,
-                        maxlength: 8,
-                        data: { toggle_focus: "population-info" },
-                        hint: t("admin.budget_headings.form.population_info") %>
+  <div class="small-12 medium-6 column end">
+    <%= f.text_field :price, maxlength: 8 %>
 
-      <%= f.text_field :latitude, maxlength: 22 %>
-      <%= f.text_field :longitude, maxlength: 22 %>
-      <p class="help-text" id="budgets-coordinates-help-text">
-        <%= t("admin.budget_headings.form.coordinates_info") %>
-      </p>
+    <%= f.text_field :population,
+                      maxlength: 8,
+                      data: { toggle_focus: "population-info" },
+                      hint: t("admin.budget_headings.form.population_info") %>
 
-      <%= f.check_box :allow_custom_content %>
-      <p class="help-text" id="budgets-content-blocks-help-text">
-        <%= t("admin.budget_headings.form.content_blocks_info") %>
-      </p>
+    <%= f.text_field :latitude, maxlength: 22 %>
+    <%= f.text_field :longitude, maxlength: 22 %>
+    <p class="help-text" id="budgets-coordinates-help-text">
+      <%= t("admin.budget_headings.form.coordinates_info") %>
+    </p>
 
-      <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success" %>
+    <%= f.check_box :allow_custom_content %>
+    <p class="help-text" id="budgets-content-blocks-help-text">
+      <%= t("admin.budget_headings.form.content_blocks_info") %>
+    </p>
+
+    <div class="small-12 medium-6 large-3">
+      <% if @mode == "single" %>
+        <%= f.submit t("admin.budget_headings.create.button.continue"), class: "button success expanded" %>
+      <% else %>
+        <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success expanded" %>
+      <% end %>
     </div>
   </div>
 <% end %>

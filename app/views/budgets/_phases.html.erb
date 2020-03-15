@@ -1,13 +1,82 @@
-<ul class="no-bullet budget-timeline">
-  <% current_budget.published_phases.each do |phase| %>
-    <li class="phase <%= "is-active" if phase == current_budget.current_phase %>">
-      <h3><%= t("budgets.phase.#{phase.kind}") %></h3>
-      <span>
-        <%= l(phase.starts_at.to_date, format: :long) if phase.starts_at.present? %>
-        -
-        <%= l(phase.ends_at.to_date - 1.day, format: :long) if phase.ends_at.present? %>
-      </span>
-      <p><%= auto_link_already_sanitized_html(wysiwyg(phase.summary)) %></p>
-    </li>
-  <% end %>
-</ul>
+<div class="budget-phases">
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h2 class="text-center"><%= t("budgets.index.all_phases") %></h2>
+
+      <ul class="tabs" data-tabs id="budget_phases_tabs" data-deep-link="true">
+        <% current_budget.published_phases.each_with_index do |phase, index| %>
+          <li class="tabs-title <%= "is-active" if phase == current_budget.current_phase %>">
+            <a href="#<%= index + 1 %>"
+               class="<%= "current-phase" if phase == current_budget.current_phase %>">
+              <% if phase == current_budget.current_phase %>
+                <span class="current-phase-timeline"><%= t("budgets.index.current_phase") %></span>
+              <% end %>
+
+              <span class="phase-number"><%= index + 1 %></span><br>
+              <% if phase.name.present? %>
+                <%= phase.name %>
+              <% else %>
+                <%= t("budgets.phase.#{phase.kind}") %>
+              <% end %>
+            </a>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="tabs-content" data-tabs-content="budget_phases_tabs">
+        <% current_budget.published_phases.each_with_index do |phase, index| %>
+          <div class="tabs-panel <%= "is-active" if phase == current_budget.current_phase %>"
+               id="<%= index + 1 %>">
+
+            <% if current_budget.published_phases.first == phase %>
+              <span class="budget-prev-phase-disabled"></span>
+            <% else %>
+              <a href="#<%= (index + 1) - 1 %>" title="<%= t("budgets.index.prev_phase") %>"
+                 class="budget-prev-phase">
+                <span class="show-for-sr"><%= t("budgets.index.prev_phase") %></span>
+              </a>
+            <% end %>
+
+            <% if current_budget.published_phases.last == phase %>
+              <span class="budget-next-phase-disabled"></span>
+            <% else %>
+              <a href="#<%= (index + 1) + 1 %>" title="<%= t("budgets.index.next_phase") %>"
+                 class="budget-next-phase">
+                <span class="show-for-sr"><%= t("budgets.index.next_phase") %></span>
+              </a>
+            <% end %>
+
+            <div id="<%= phase.kind.parameterize %>" class="row">
+              <div class="small-12 medium-6 column">
+                <h3>
+                  <% if phase.name.present? %>
+                    <%= index + 1 %> <%= phase.name %>
+                  <% else %>
+                    <%= index + 1 %> <%= t("budgets.phase.#{phase.kind}") %>
+                  <% end %>
+                </h3>
+                <p>
+                  <%= l(phase.starts_at.to_date, format: :long) if phase.starts_at.present? %>
+                  -
+                  <%= l(phase.ends_at.to_date - 1.day, format: :long) if phase.ends_at.present? %>
+                </p>
+
+                <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %></p>
+
+                <% if phase.main_button_text.present? && phase.main_button_url.present? %>
+                  <%= link_to phase.main_button_text, phase.main_button_url, class: "button" %>
+                <% end %>
+              </div>
+
+              <div class="small-12 medium-6 column text-center">
+                <% if phase.image.present? %>
+                  <%= image_tag phase.image.attachment.url(:large) %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

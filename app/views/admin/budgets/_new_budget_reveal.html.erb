@@ -1,0 +1,34 @@
+<div class="reveal small" id="new_budget_reveal" data-reveal>
+  <h1><%= t("admin.budgets.index.title_budget_type") %></h1>
+
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <div class="reveal-description">
+        <h2><%= t("admin.budgets.index.new_single_title_html") %></h2>
+        <%= image_tag("budgets/budget_simple_heading_icon.png", alt: "") %>
+        <p><%= t("admin.budgets.index.new_single_description") %></p>
+      </div>
+      <div class="text-center">
+        <%= link_to t("admin.budgets.index.new_single_button"),
+                    new_admin_budget_path(mode: "single"), class: "button hollow", data: { close: "" } %>
+      </div>
+    </div>
+
+    <div class="small-12 medium-6 column">
+      <div class="reveal-description">
+        <h2><%= t("admin.budgets.index.new_multiple_title_html") %></h2>
+        <%= image_tag("budgets/budget_multiple_headings_icon.png", alt: "") %>
+        <p><%= t("admin.budgets.index.new_multiple_description") %></p>
+      </div>
+      <div class="text-center">
+        <%= link_to t("admin.budgets.index.new_multiple_button"),
+                    new_admin_budget_path(mode: "multiple"), class: "button hollow", data: { close: "" } %>
+      </div>
+    </div>
+  </div>
+
+  <button class="close-button" aria-label="<%= t("admin.shared.close_modal") %>"
+          type="button" data-close>
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>

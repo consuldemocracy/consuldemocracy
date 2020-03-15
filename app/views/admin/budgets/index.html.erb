@@ -1,8 +1,12 @@
 <h2 class="inline-block"><%= t("admin.budgets.index.title") %></h2>
 
-<%= link_to t("admin.budgets.index.new_link"),
-            new_admin_budget_path,
-            class: "button float-right" %>
+<%= render "new_budget_reveal" %>
+
+<button class="button float-right" data-open="new_budget_reveal">
+  <strong><%= t("admin.budgets.index.new_button") %></strong>
+</button>
+
+<%= render "admin/shared/help_block", i18n_namespace: "admin.budgets.index", learn_more_link: admin_budgets_path %>
 
 <%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
@@ -11,41 +15,55 @@
 
   <table>
     <thead>
-      <tr>
+      <tr class="budget">
         <th><%= t("admin.budgets.index.table_name") %></th>
         <th><%= t("admin.budgets.index.table_phase") %></th>
-        <th><%= t("admin.budgets.index.table_investments") %></th>
+        <th><%= t("admin.budgets.index.table_budget_type") %></th>
         <th><%= t("admin.budgets.index.table_edit_groups") %></th>
-        <th><%= t("admin.budgets.index.table_edit_budget") %></th>
-        <th><%= t("admin.budgets.index.table_admin_ballots") %></th>
+        <th><%= t("admin.budgets.index.table_duration") %></th>
+        <th><%= t("admin.shared.actions") %></th>
       </tr>
     </thead>
     <tbody>
       <% @budgets.each do |budget| %>
         <tr id="<%= dom_id(budget) %>" class="budget">
-          <td>
-            <%= budget.name %>
-          </td>
-          <td class="small">
-            <%= t("budgets.phase.#{budget.phase}") %>
-          </td>
-          <td>
-            <%= link_to t("admin.budgets.index.budget_investments"),
-                           admin_budget_budget_investments_path(budget_id: budget.id),
-                           class: "button hollow medium" %>
-          </td>
-          <td class="small">
-            <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_groups_path(budget) %>
-          </td>
-          <td class="small">
-            <%= link_to t("admin.budgets.index.edit_budget"), edit_admin_budget_path(budget) %>
-          </td>
-          <td class="small">
-            <% if budget.poll.present? %>
-              <%= link_to t("admin.budgets.index.admin_ballots"), admin_poll_booth_assignments_path(budget.poll) %>
-            <% else %>
-              <%= link_to_create_budget_poll(budget) %>
+          <td class="<%= "budget-completed" if budget.finished? %>">
+            <% if budget.finished? %>
+              <span>
+                <%= t("admin.budgets.index.table_budget_completed") %>
+              </span>
             <% end %>
+            <strong><%= budget.name %></strong>
+          </td>
+          <td>
+            <%= t("budgets.phase.#{budget.phase}") %>
+            <br>
+            <small>(<%= budget.current_enabled_phase_number %>/<%= budget.enabled_phases_amount %>)</small>
+          </td>
+          <td>
+            <% if budget.single_heading? %>
+              <%= t("admin.budgets.index.type_single") %>
+            <% else %>
+              <%= t("admin.budgets.index.type_multiple") %>
+            <% end %>
+          </td>
+          <td>
+            <% if budget.single_heading? %>
+              <%= budget.headings.first.name %>
+            <% else %>
+              <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_groups_path(budget) %>
+            <% end %>
+          </td>
+          <td class="small">
+            <%= phase_begin_date(budget.phases.first) %>
+            -
+            <%= phase_end_date(budget.phases.last) %>
+            <br>
+            <%= distance_of_time_in_words(phase_begin_date(budget.phases.first),
+                                          phase_end_date(budget.phases.last)) %>
+          </td>
+          <td>
+            <%= render "table_actions", budget: budget %>
           </td>
         </tr>
       <% end %>

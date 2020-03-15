@@ -120,4 +120,16 @@ module BudgetsHelper
       }
     end
   end
+
+  def budget_new_step_group?(step)
+    step == "groups" || step == "headings"
+  end
+
+  def budget_new_step_headings?(step)
+    step == "headings"
+  end
+
+  def budget_single?(budget)
+    budget.groups.headings.count == 1
+  end
 end

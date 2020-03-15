@@ -139,8 +139,10 @@ en:
         description_balloting: "Description during Balloting phase"
         description_reviewing_ballots: "Description during Reviewing Ballots phase"
         description_finished: "Description when the budget is finished"
-        phase: "Phase"
+        phase: "Active phase"
         currency_symbol: "Currency"
+        main_button_text: "Text on the button"
+        main_button_url: "The button takes you to (add a link)"
       budget/translation:
         name: "Name"
       budget/investment:
@@ -209,7 +211,10 @@ en:
         enabled: "Phase enabled"
         ends_at: "End date"
         starts_at: "Start date"
+        main_button_text: "Text on the button"
+        main_button_url: "The button takes you to (add a link)"
       budget/phase/translation:
+        name: "Phase's Name"
         description: "Description"
         summary: "Summary"
       comment:
