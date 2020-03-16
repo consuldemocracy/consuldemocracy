@@ -287,6 +287,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.text "description"
     t.text "summary"
     t.string "name"
+    t.string "main_link_text"
     t.index ["budget_phase_id"], name: "index_budget_phase_translations_on_budget_phase_id"
     t.index ["locale"], name: "index_budget_phase_translations_on_locale"
   end
@@ -298,6 +299,7 @@ ActiveRecord::Schema.define(version: 2021_01_23_100638) do
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean "enabled", default: true
+    t.string "main_link_url"
     t.index ["ends_at"], name: "index_budget_phases_on_ends_at"
     t.index ["kind"], name: "index_budget_phases_on_kind"
     t.index ["next_phase_id"], name: "index_budget_phases_on_next_phase_id"

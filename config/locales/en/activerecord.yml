@@ -231,10 +231,12 @@ en:
         enabled: "Phase enabled"
         ends_at: "End date"
         starts_at: "Start date"
+        main_link_url: "The link takes you to (add a link)"
       budget/phase/translation:
         name: "Name"
         description: "Description"
         summary: "Summary"
+        main_link_text: "Text on the link"
       comment:
         body: "Comment"
         user: "User"

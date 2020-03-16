@@ -201,6 +201,8 @@ en:
         duration_description: "The period of time this phase will be active."
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         image_description: "If an image is uplodaded it will be displayed next to the description of this phase."
+        main_call_to_action: "Main call to action (optional)"
+        main_call_to_action_description: "This link will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
         save_changes: Save changes
       index:
@@ -1352,6 +1354,7 @@ en:
       content: Content
       created_at: Created at
       color_help: Hexadecimal format
+      example_url: "https://consulproject.org"
       show_results_and_stats: "Show results and stats"
       results_and_stats_reminder: "Marking these checkboxes the results and/or stats will be publicly available and every user will see them."
       example_url: "https://consulproject.org"

@@ -191,5 +191,10 @@
         text-align: center;
       }
     }
+
+    .main-link {
+      @include regular-button;
+      font-size: 1.1rem;
+    }
   }
 }
