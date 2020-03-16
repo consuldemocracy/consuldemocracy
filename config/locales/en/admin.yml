@@ -134,6 +134,7 @@ en:
         submit: "Save group"
       index:
         back: "Go back to budgets"
+        help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
       no_headings: "There are no headings."
       amount:

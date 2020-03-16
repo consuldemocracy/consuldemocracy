@@ -1,12 +1,13 @@
 class Admin::Budgets::HelpComponent < ApplicationComponent
+  attr_reader :i18n_namespace
+
+  def initialize(i18n_namespace)
+    @i18n_namespace = i18n_namespace
+  end
 
   private
 
-    def i18n_namespace
-      "admin.budgets.index"
-    end
-
     def text
-      t("#{i18n_namespace}.help")
+      t("admin.#{i18n_namespace}.index.help")
     end
 end
