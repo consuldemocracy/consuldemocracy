@@ -5,7 +5,7 @@
     </div>
   <% end %>
 
-  <%= link_to t("admin.budgets.edit.preview"), budget_path(budget), class: "preview-link", target: "_blank" %>
+  <%= link_to t("admin.budgets.actions.preview"), budget_path(budget), class: "preview-link", target: "_blank" %>
 
   <% if can? :publish, budget %>
     <%= link_to t("admin.budgets.edit.publish"),

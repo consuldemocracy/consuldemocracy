@@ -12,4 +12,8 @@
   <% else %>
     <%= link_to_create_budget_poll %>
   <% end %>
+  <%= link_to t("admin.budgets.actions.preview"),
+                 budget_path(budget),
+                 target: "_blank",
+                 class: "preview-link" %>
 <% end %>
