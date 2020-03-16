@@ -246,6 +246,7 @@ el:
         password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
         password: "Κωδικός πρόσβασης"
         current_password: "Υφιστάμενος κωδικός πρόσβασης"
+        email_digest: "Αποστολή περίληψης των ειδοποιήσεων σχετικά με την πρόταση"
         official_position: "Επίσημη θέση"
         official_level: "Επίσημο επίπεδο"
         phone_number: "Αριθμός τηλεφώνου"
