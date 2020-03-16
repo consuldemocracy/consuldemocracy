@@ -83,6 +83,8 @@ describe "budget tasks" do
         description_en: "English description",
         description_es: "Spanish description",
         description_fr: "French description",
+        name_es: "Spanish name",
+        name_fr: "French name",
         summary_en: "English summary",
         summary_fr: "French summary"
       )
@@ -94,6 +96,64 @@ describe "budget tasks" do
       expect(budget_phase.description_es).to eq "Spanish description"
       expect(budget_phase.description_fr).to eq "French description<br>French summary"
       expect(budget_phase.summary).to be nil
+    end
+  end
+
+  describe "add_name_to_existing_phases" do
+    let(:run_rake_task) do
+      Rake::Task["budgets:add_name_to_existing_phases"].reenable
+      Rake.application.invoke_task("budgets:add_name_to_existing_phases")
+    end
+
+    it "adds the name to existing budget phases" do
+      budget = create(:budget)
+      informing_phase = budget.phases.informing
+      accepting_phase = budget.phases.accepting
+
+      accepting_phase.update!(name_en: "Custom accepting", name_es: "Aceptando personalizado")
+      informing_phase.translations.create!(locale: :es, name: "temp")
+      informing_phase.translations.update_all(name: "")
+
+      expect(informing_phase.name_en).to eq ""
+      expect(informing_phase.name_es).to eq ""
+      expect(informing_phase.name_fr).to be nil
+      expect(accepting_phase.name_en).to eq "Custom accepting"
+      expect(accepting_phase.name_es).to eq "Aceptando personalizado"
+      expect(accepting_phase.name_fr).to be nil
+
+      run_rake_task
+
+      expect(informing_phase.reload.name_en).to eq "Information"
+      expect(informing_phase.reload.name_es).to eq "Información"
+      expect(informing_phase.reload.name_fr).to be nil
+      expect(accepting_phase.reload.name_en).to eq "Custom accepting"
+      expect(accepting_phase.reload.name_es).to eq "Aceptando personalizado"
+      expect(accepting_phase.reload.name_fr).to be nil
+    end
+
+    it "adds the name in default locale to existing translations no longer available" do
+      budget = create(:budget)
+      informing_phase = budget.phases.informing
+      obsolete_translation = informing_phase.translations.build(locale: :fiction)
+      obsolete_translation.save!(validate: false)
+
+      expect(obsolete_translation.reload.name).to be nil
+
+      run_rake_task
+
+      expect(obsolete_translation.reload.name).to eq "Information"
+    end
+
+    it "adds a default translation to phases with no translations" do
+      budget = create(:budget)
+      informing_phase = budget.phases.informing
+      informing_phase.translations.destroy_all
+
+      expect(informing_phase.reload.name).to be nil
+
+      run_rake_task
+
+      expect(informing_phase.reload.name).to eq "Information"
     end
   end
 end

@@ -5,6 +5,7 @@ class Budget
     PUBLISHED_PRICES_PHASES = %w[publishing_prices balloting reviewing_ballots finished].freeze
     DESCRIPTION_MAX_LENGTH = 2000
 
+    translates :name, touch: true
     translates :summary, touch: true
     translates :description, touch: true
     include Globalizable
@@ -14,6 +15,7 @@ class Budget
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
     has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
+    validates_translation :name, presence: true
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: ->(*) { PHASE_KINDS }}
@@ -32,10 +34,6 @@ class Budget
 
     def self.kind_or_later(phase)
       PHASE_KINDS[PHASE_KINDS.index(phase)..-1]
-    end
-
-    def name
-      Class.new.extend(ActionView::Helpers::TranslationHelper).t("budgets.phase.#{kind}")
     end
 
     def next_enabled_phase
