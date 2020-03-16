@@ -9,7 +9,6 @@ describe "Admin budget phases" do
 
       fill_in "start_date", with: Date.current + 1.day
       fill_in "end_date", with: Date.current + 12.days
-      fill_in_ckeditor "Summary", with: "New summary of the phase."
       fill_in_ckeditor "Description", with: "New description of the phase."
       uncheck "budget_phase_enabled"
       click_button "Save changes"
@@ -19,7 +18,6 @@ describe "Admin budget phases" do
 
       expect(budget.current_phase.starts_at.to_date).to eq((Date.current + 1.day).to_date)
       expect(budget.current_phase.ends_at.to_date).to eq((Date.current + 12.days).to_date)
-      expect(budget.current_phase.summary).to include("New summary of the phase.")
       expect(budget.current_phase.description).to include("New description of the phase.")
       expect(budget.current_phase.enabled).to be(false)
     end
