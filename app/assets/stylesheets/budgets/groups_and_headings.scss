@@ -1,0 +1,29 @@
+.groups-and-headings {
+
+  .heading {
+    border: 1px solid $border;
+    border-radius: rem-calc(3);
+    display: inline-block;
+    margin-bottom: $line-height / 2;
+
+    a {
+      display: block;
+      padding: $line-height / 2;
+
+      &:hover {
+        background: $highlight;
+        text-decoration: none;
+      }
+    }
+
+    .heading-name {
+      padding: $line-height / 2;
+    }
+
+    span {
+      color: $text;
+      display: block;
+      font-size: $small-font-size;
+    }
+  }
+}

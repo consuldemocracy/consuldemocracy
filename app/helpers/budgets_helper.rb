@@ -5,13 +5,6 @@ module BudgetsHelper
     end
   end
 
-  def heading_name_and_price_html(heading, budget)
-    tag.div do
-      concat(heading.name + " ")
-      concat(tag.span(budget.formatted_heading_price(heading)))
-    end
-  end
-
   def csv_params
     csv_params = params.clone.merge(format: :csv)
     csv_params = csv_params.to_unsafe_h.map { |k, v| [k.to_sym, v] }.to_h
