@@ -56,6 +56,8 @@
     </div>
   </div>
 
+  <%= render Budgets::PhasesComponent.new(current_budget) %>
+
   <div id="budget_info" class="budget-info">
     <div class="row margin-top">
       <div class="small-12 column">
@@ -111,11 +113,6 @@
             <% end %>
           </ul>
         <% end %>
-
-        <div id="all_phases">
-          <h2><%= t("budgets.index.all_phases") %></h2>
-          <%= render Budgets::PhasesComponent.new(current_budget) %>
-        </div>
       </div>
     </div>
 
