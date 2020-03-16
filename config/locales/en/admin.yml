@@ -200,6 +200,7 @@ en:
         duration: "Phase's duration"
         duration_description: "The period of time this phase will be active."
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
+        image_description: "If an image is uplodaded it will be displayed next to the description of this phase."
         name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
         save_changes: Save changes
       index:

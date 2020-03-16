@@ -43,9 +43,17 @@
         </div>
 
         <div class="budget-phase">
-          <h3><%= phase.name %></h3>
-          <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
-          <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
+          <div class="budget-phase-content">
+            <h3><%= phase.name %></h3>
+            <p><%= start_date(phase) %> - <%= end_date(phase) %></p>
+            <%= auto_link_already_sanitized_html(wysiwyg(phase.description)) %>
+          </div>
+
+          <% if phase.image.present? %>
+            <div class="budget-phase-image">
+              <%= image_tag phase.image.attachment.url(:large) %>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

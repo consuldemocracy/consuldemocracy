@@ -10,6 +10,7 @@ class Budget
     translates :description, touch: true
     include Globalizable
     include Sanitizable
+    include Imageable
 
     belongs_to :budget, touch: true
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase

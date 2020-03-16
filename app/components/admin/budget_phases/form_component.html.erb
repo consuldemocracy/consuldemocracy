@@ -43,6 +43,13 @@
     </div>
   <% end %>
 
+  <% if feature?(:allow_images) %>
+    <div class="images small-12 column">
+      <%= render "images/nested_image", imageable: @phase, f: f %>
+      <p class="help-text"><%= t("admin.budget_phases.edit.image_description") %></p>
+    </div>
+  <% end %>
+
   <div class="small-12 column">
     <%= f.submit t("admin.budget_phases.edit.save_changes"), class: "button success" %>
   </div>

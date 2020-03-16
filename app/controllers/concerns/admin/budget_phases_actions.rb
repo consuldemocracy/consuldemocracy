@@ -3,6 +3,7 @@ module Admin::BudgetPhasesActions
 
   included do
     include Translatable
+    include ImageAttributes
 
     before_action :load_budget
     before_action :load_phase, only: [:edit, :update]
@@ -30,7 +31,7 @@ module Admin::BudgetPhasesActions
     end
 
     def budget_phase_params
-      valid_attributes = [:starts_at, :ends_at, :enabled]
+      valid_attributes = [:starts_at, :ends_at, :enabled, image_attributes: image_attributes]
       params.require(:budget_phase).permit(*valid_attributes, translation_params(Budget::Phase))
     end
 end

@@ -22,4 +22,14 @@
       }
     }
   }
+
+  .images {
+    @include direct-uploads;
+  }
+
+  .button {
+    &.upload-image {
+      margin-bottom: $line-height / 2;
+    }
+  }
 }

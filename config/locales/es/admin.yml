@@ -199,6 +199,7 @@ es:
         duration: "Duración de la fase"
         duration_description: "El período de tiempo que esta fase estará activa."
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
+        image_description: "Si se proporciona una imagen se mostrará junto a la descripción de esta fase."
         name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
         title: "Editar fase"

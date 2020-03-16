@@ -42,5 +42,18 @@ describe "Admin budget phases" do
         expect(page).not_to have_content "Accepting projects"
       end
     end
+
+    scenario "shows successful notice when updating the phase with a valid image" do
+      visit edit_admin_budget_budget_phase_path(budget, budget.current_phase)
+
+      imageable_attach_new_file(
+        "budget_phase_image",
+        Rails.root.join("spec/fixtures/files/clippy.jpg")
+      )
+
+      click_on "Save changes"
+
+      expect(page).to have_content "Changes saved"
+    end
   end
 end

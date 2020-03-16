@@ -180,7 +180,16 @@
 
   .budget-phase {
     @include breakpoint(medium) {
-      width: 50%;
+      @include grid-row-nest;
+
+      > * {
+        @include grid-column;
+        width: 50%;
+      }
+
+      .budget-phase-image {
+        text-align: center;
+      }
     }
   }
 }
