@@ -21,4 +21,10 @@
       text-transform: uppercase;
     }
   }
+
+  td time:last-of-type::after,
+  td small::before {
+    content: "";
+    display: block;
+  }
 }

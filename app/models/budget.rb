@@ -71,6 +71,14 @@ class Budget < ApplicationRecord
     phases.published.order(:id)
   end
 
+  def starts_at
+    phases.published.first.starts_at
+  end
+
+  def ends_at
+    phases.published.last.ends_at
+  end
+
   def description
     description_for_phase(phase)
   end
