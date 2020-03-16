@@ -97,7 +97,7 @@ es:
         delete: Eliminar presupuesto
         phase: Fase
         phases_caption: "Fases"
-        dates: Fechas
+        duration: "Duración"
         enabled: Habilitada
         actions: Acciones
         edit_phase: Editar fase
