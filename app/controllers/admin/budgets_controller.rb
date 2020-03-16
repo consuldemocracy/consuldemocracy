@@ -1,6 +1,7 @@
 class Admin::BudgetsController < Admin::BaseController
   include Translatable
   include ReportAttributes
+  include ImageAttributes
   include FeatureFlags
   feature_flag :budgets
 
@@ -63,7 +64,8 @@ class Admin::BudgetsController < Admin::BaseController
                           :voting_style,
                           :main_link_url,
                           administrator_ids: [],
-                          valuator_ids: []
+                          valuator_ids: [],
+                          image_attributes: image_attributes
       ] + descriptions
       params.require(:budget).permit(*valid_attributes, *report_attributes, translation_params(Budget))
     end

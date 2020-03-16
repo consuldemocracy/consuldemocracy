@@ -212,7 +212,7 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
         # Pending. Review soon and test
       else
         expect(page).to have_selector "figure img"
-        expect(page).to have_selector "figure figcaption"
+        expect(page).to have_selector "figure figcaption" if show_caption_for?(imageable_factory_name)
       end
     end
 
@@ -259,10 +259,12 @@ def do_login_for(user)
 end
 
 def imageable_redirected_to_resource_show_or_navigate_to
-  find("a", text: "Not now, go to my proposal")
-  click_on "Not now, go to my proposal"
-rescue
-  nil
+  case imageable.class.to_s
+  when "Budget"
+    visit edit_admin_budget_path(Budget.last)
+  when "Proposal"
+    click_on "Not now, go to my proposal" rescue Capybara::ElementNotFound
+  end
 end
 
 def imageable_attach_new_file(_imageable_factory_name, path, success = true)
@@ -285,6 +287,10 @@ def imageable_fill_new_valid_proposal
   fill_in "Proposal title", with: "Proposal title"
   fill_in "Proposal summary", with: "Proposal summary"
   check :proposal_terms_of_service
+end
+
+def imageable_fill_new_valid_budget
+  fill_in "Name", with: "Budget name"
 end
 
 def imageable_fill_new_valid_budget_investment
@@ -310,4 +316,8 @@ def expect_image_has_cached_attachment(extension)
       expect(find("input[name$='[cached_attachment]']", visible: :hidden).value).to end_with(extension)
     end
   end
+end
+
+def show_caption_for?(imageable_factory_name)
+  imageable_factory_name != "budget"
 end

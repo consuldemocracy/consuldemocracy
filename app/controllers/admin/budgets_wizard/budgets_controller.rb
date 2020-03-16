@@ -1,5 +1,6 @@
 class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
   include Translatable
+  include ImageAttributes
   include FeatureFlags
   feature_flag :budgets
 
@@ -36,7 +37,8 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
     end
 
     def allowed_params
-      valid_attributes = [:currency_symbol, :voting_style, administrator_ids: [], valuator_ids: []]
+      valid_attributes = [:currency_symbol, :voting_style, administrator_ids: [], valuator_ids: [],
+                          image_attributes: image_attributes]
 
       valid_attributes + [translation_params(Budget)]
     end
