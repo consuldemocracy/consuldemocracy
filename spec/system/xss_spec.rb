@@ -116,7 +116,7 @@ describe "Cross-Site Scripting protection", :js do
     annotation = create(:legislation_annotation)
     annotation.update_column(:context, attack_code)
 
-    visit polymorphic_hierarchy_path(annotation)
+    visit polymorphic_path(annotation)
 
     expect(page.text).not_to be_empty
   end

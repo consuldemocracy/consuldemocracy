@@ -17,7 +17,7 @@ describe "Admin edit translatable records" do
   context "Add a translation", :js do
     context "Input fields" do
       let(:translatable) { create(:budget_heading) }
-      let(:path) { edit_admin_budget_group_heading_path(*resource_hierarchy_for(translatable)) }
+      let(:path) { edit_admin_budget_group_heading_path(translatable.budget, translatable.group, translatable) }
 
       scenario "Maintains existing translations" do
         visit path
@@ -356,7 +356,7 @@ describe "Admin edit translatable records" do
     let(:translatable) { create(:milestone) }
 
     scenario "Shows an error message" do
-      visit edit_admin_budget_budget_investment_milestone_path(*resource_hierarchy_for(translatable))
+      visit admin_polymorphic_path(translatable, action: :edit)
 
       click_link "Remove language"
       click_link "Remove language"
