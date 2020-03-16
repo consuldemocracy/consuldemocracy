@@ -77,15 +77,15 @@ describe "Admin budgets", :admin do
       expect(page).not_to have_content(finished_budget.name)
     end
 
-    scenario "Open filter is properly highlighted" do
-      filters_links = { "current" => "Open", "finished" => "Finished" }
+    scenario "Filters are properly highlighted" do
+      filters_links = { "all" => "All", "open" => "Open", "finished" => "Finished" }
 
       visit admin_budgets_path
 
       expect(page).not_to have_link(filters_links.values.first)
       filters_links.keys.drop(1).each { |filter| expect(page).to have_link(filters_links[filter]) }
 
-      filters_links.each_pair do |current_filter, link|
+      filters_links.each do |current_filter, link|
         visit admin_budgets_path(filter: current_filter)
 
         expect(page).not_to have_link(link)

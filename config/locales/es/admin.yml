@@ -70,6 +70,7 @@ es:
         new_link: Crear nuevo presupuesto
         filter: Filtro
         filters:
+          all: Todos
           open: Abiertos
           finished: Terminados
         help: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
