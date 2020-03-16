@@ -76,8 +76,10 @@ es:
         help: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
         budget_investments: Gestionar proyectos de gasto
         table_completed: Completado
+        table_duration: "Duración"
         table_name: Nombre
         table_phase: Fase
+        table_phase_progress: "(%{current_phase_number}/%{total_phases})"
         edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas

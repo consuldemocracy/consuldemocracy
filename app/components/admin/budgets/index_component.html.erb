@@ -13,6 +13,7 @@
       <tr>
         <th><%= t("admin.budgets.index.table_name") %></th>
         <th><%= t("admin.budgets.index.table_phase") %></th>
+        <th><%= t("admin.budgets.index.table_duration") %></th>
         <th><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
@@ -27,8 +28,13 @@
             <% end %>
             <strong><%= budget.name %></strong>
           </td>
-          <td class="small">
+          <td>
             <%= budget.current_phase.name %>
+            <small><%= phase_progress_text(budget) %></small>
+          </td>
+          <td>
+            <%= dates(budget) %>
+            <%= duration(budget) %>
           </td>
           <td>
             <%= render Admin::Budgets::TableActionsComponent.new(budget) %>
