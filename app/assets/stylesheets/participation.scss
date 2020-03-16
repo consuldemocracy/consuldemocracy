@@ -1139,6 +1139,8 @@
 .budget-header {
   background: $budget;
   margin-top: -$line-height;
+  padding-bottom: $line-height;
+  padding-top: $line-height;
 
   h1,
   h2,
@@ -1154,19 +1156,6 @@
     text-decoration: underline;
   }
 
-  .callout {
-
-    &.primary a {
-      color: $link;
-    }
-  }
-
-  .button {
-    background: #fff;
-    color: $budget;
-    text-decoration: none;
-  }
-
   .confirmed {
     font-size: rem-calc(24);
     font-weight: bold;
@@ -1179,6 +1168,24 @@
       margin-bottom: 0;
       text-transform: uppercase;
     }
+  }
+}
+
+.budget-subheader {
+  @include grid-row;
+  margin-bottom: $line-height;
+  margin-top: $line-height;
+
+  .current-phase {
+    text-transform: uppercase;
+  }
+
+  .button {
+    margin-top: $line-height / 2;
+  }
+
+  .callout {
+    margin-bottom: 0;
   }
 }
 
