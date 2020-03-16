@@ -97,7 +97,7 @@ en:
         delete: Delete budget
         phase: Phase
         phases_caption: "Phases"
-        dates: Dates
+        duration: "Duration"
         enabled: Enabled
         actions: Actions
         edit_phase: Edit phase
