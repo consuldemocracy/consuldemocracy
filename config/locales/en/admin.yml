@@ -70,6 +70,7 @@ en:
         filters:
           open: Open
           finished: Finished
+        help: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
         budget_investments: Manage projects
         table_name: Name
         table_phase: Phase

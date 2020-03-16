@@ -3,6 +3,7 @@
   <%= link_to t("admin.budgets.index.new_link"), new_admin_budget_path %>
 </header>
 
+<%= render Admin::Budgets::HelpComponent.new %>
 <%= render "shared/filter_subnav", i18n_namespace: "admin.budgets.index" %>
 
 <% if @budgets.any? %>

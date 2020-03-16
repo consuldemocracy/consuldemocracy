@@ -70,6 +70,7 @@ es:
         filters:
           open: Abiertos
           finished: Terminados
+        help: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
         budget_investments: Gestionar proyectos de gasto
         table_name: Nombre
         table_phase: Fase
