@@ -17,9 +17,14 @@
 // -----------------
 
 $admin-color:    #245b80;
+$admin-text:     #434d54;
+
 $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
+
+$table-border:   2px solid #d3d9dd;
+$table-header:   #ecf1f6;
 
 .admin {
   @include admin-layout;
@@ -199,32 +204,44 @@ $sidebar-active: #f4fcd0;
     }
   }
 
-  tr {
-    background: #fff;
-    border: 1px solid $border;
-
-    &:hover {
-      background: #f3f6f7;
-    }
-  }
-
   table {
 
     thead {
-      color: #fff;
+
+      &,
+      tr {
+        border: 0;
+      }
+
+      th:first-of-type {
+        border-top-left-radius: rem-calc(8);
+      }
+
+      th:last-of-type {
+        border-top-right-radius: rem-calc(8);
+      }
     }
 
     th {
-      background: $brand;
-      color: #fff;
+      background: $table-header;
+      color: $admin-text;
+      padding: $line-height / 2;
 
       label {
-        color: #fff;
+        color: $white;
       }
 
       a {
         color: inherit;
         white-space: nowrap;
+      }
+    }
+
+    tr {
+      border: $table-border;
+
+      &:hover {
+        background: #f3f6f7;
       }
     }
 
