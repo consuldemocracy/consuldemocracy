@@ -8,6 +8,7 @@ namespace :consul do
   task "execute_release_1.3.0_tasks": [
     "db:load_sdg",
     "db:calculate_tsv",
-    "budgets:set_published"
+    "budgets:set_published",
+    "budgets:phases_summary_to_description"
   ]
 end

@@ -21,13 +21,6 @@
                                          class: "html-area",
                                          hint: t("admin.budget_phases.edit.description_help_text") %>
       </div>
-
-      <div class="small-12 column">
-        <%= translations_form.text_area :summary,
-                                         maxlength: Budget::Phase::SUMMARY_MAX_LENGTH,
-                                         class: "html-area",
-                                         hint: t("admin.budget_phases.edit.summary_help_text") %>
-      </div>
     <% end %>
   </div>
 

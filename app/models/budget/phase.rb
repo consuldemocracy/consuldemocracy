@@ -3,7 +3,6 @@ class Budget
     PHASE_KINDS = %w[informing accepting reviewing selecting valuating publishing_prices balloting
                 reviewing_ballots finished].freeze
     PUBLISHED_PRICES_PHASES = %w[publishing_prices balloting reviewing_ballots finished].freeze
-    SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
     translates :summary, touch: true
@@ -15,7 +14,6 @@ class Budget
     belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
     has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
-    validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
     validates :budget, presence: true
     validates :kind, presence: true, uniqueness: { scope: :budget }, inclusion: { in: ->(*) { PHASE_KINDS }}
