@@ -10,6 +10,10 @@
       select {
         height: $line-height * 2;
         margin: 0 rem-calc(12);
+
+        + select {
+          margin-left: 0;
+        }
       }
     }
   }
@@ -17,6 +21,12 @@
   &:not(.complex) {
     @include breakpoint(medium) {
       width: 50%;
+    }
+
+    input:not([type="button"], [type="checkbox"], [type="file"], [type="radio"], [type="submit"]) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      border-right: 0;
     }
   }
 

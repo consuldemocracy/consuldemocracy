@@ -16,6 +16,8 @@
 // 01. Global styles
 // -----------------
 
+$admin-border-color: #d3d9dd;
+$admin-border:   2px solid $admin-border-color;
 $admin-color:    #245b80;
 $admin-text:     #434d54;
 
@@ -23,7 +25,7 @@ $sidebar:        #245b80;
 $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
-$table-border:   2px solid #d3d9dd;
+$table-border:   $admin-border;
 $table-header:   #ecf1f6;
 
 .admin {
@@ -270,6 +272,23 @@ $table-header:   #ecf1f6;
 
     .input-group-label {
       height: $line-height * 2;
+    }
+
+    .checkbox,
+    .radio {
+      font-weight: bold;
+    }
+
+    select {
+      height: $input-height;
+    }
+
+    [type]:not([type="button"], [type=checkbox], [type=file], [type=radio], [type=submit]),
+    select {
+      background-color: $white;
+      border: $admin-border;
+      border-radius: rem-calc(6);
+      box-shadow: none;
     }
   }
 
@@ -785,10 +804,6 @@ table {
       color: $text-medium;
     }
 
-    [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-      background: $white;
-    }
-
     .legislation-process-start,
     .legislation-process-end {
       @include breakpoint(medium) {
@@ -821,7 +836,6 @@ table {
 .legislation-questions-form {
 
   [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-    background: $white;
     margin-bottom: 0;
 
     @include breakpoint(medium) {
@@ -945,10 +959,6 @@ table {
     @include breakpoint(medium) {
       text-align: right;
     }
-  }
-
-  [type]:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-    background: $white;
   }
 
   .control {
