@@ -42,7 +42,6 @@ describe "Budgets" do
         expect(page).to have_content(budget.name)
         expect(page).to have_content(budget.description)
         expect(page).to have_link("Help with participatory budgets")
-        expect(page).to have_link("See all phases")
       end
 
       expect(page).to have_content("Actual phase")
@@ -51,7 +50,7 @@ describe "Budgets" do
       budget.update!(phase: "publishing_prices")
       visit budgets_path
 
-      within(".budget-header") do
+      within(".budget-subheader") do
         expect(page).to have_content("Publishing projects prices")
       end
 
