@@ -5,6 +5,8 @@
   <%= link_to t("admin.budget_headings.form.create"), new_admin_budget_group_heading_path %>
 </header>
 
+<%= render Admin::Budgets::HelpComponent.new("budget_headings") %>
+
 <% if @headings.any? %>
   <h3><%= t("admin.budget_headings.amount", count: @headings.count) %></h3>
   <table>

@@ -157,6 +157,7 @@ en:
         submit: "Save heading"
       index:
         back: "Go back to groups"
+        help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
     budget_phases:
       edit:
         summary_help_text: This text will inform the user about the phase. To show it even if the phase is not active, select the checkbox below

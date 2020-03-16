@@ -157,6 +157,7 @@ es:
         submit: "Guardar partida"
       index:
         back: "Volver a grupos"
+        help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
     budget_phases:
       edit:
         summary_help_text: Este texto informará al usuario sobre la fase. Para mostrarlo aunque la fase no esté activa, marca la opción de más abajo.
