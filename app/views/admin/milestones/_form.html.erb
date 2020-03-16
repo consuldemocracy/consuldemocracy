@@ -1,6 +1,6 @@
 <%= render "shared/globalize_locales", resource: @milestone %>
 
-<%= translatable_form_for [:admin, *resource_hierarchy_for(@milestone)] do |f| %>
+<%= translatable_form_for @milestone, url: admin_polymorphic_path(@milestone) do |f| %>
 
   <div class="row">
     <div class="small-12 medium-6 margin-bottom column">

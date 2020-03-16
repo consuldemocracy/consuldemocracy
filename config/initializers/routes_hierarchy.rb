@@ -63,4 +63,8 @@ module ActionDispatch::Routing::UrlFor
       polymorphic_path(resources)
     end
   end
+
+  def admin_polymorphic_path(resource, options = {})
+    polymorphic_path([:admin, *resource_hierarchy_for(resource)], options)
+  end
 end

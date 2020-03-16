@@ -64,6 +64,6 @@ class Admin::ProgressBarsController < Admin::BaseController
     end
 
     def progress_bars_index
-      polymorphic_path([:admin, *resource_hierarchy_for(@progressable), ProgressBar.new])
+      admin_polymorphic_path(@progressable.progress_bars.new)
     end
 end

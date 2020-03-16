@@ -5,7 +5,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
     let(:progressable_path) { send(path_name, *resource_hierarchy_for(progressable)) }
 
     let(:path) do
-      polymorphic_path([:admin, *resource_hierarchy_for(progressable.progress_bars.new)])
+      admin_polymorphic_path(progressable.progress_bars.new)
     end
 
     context "Index" do
