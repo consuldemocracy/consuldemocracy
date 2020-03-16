@@ -60,7 +60,11 @@ describe "Admin budgets", :admin do
       expect(page).to have_content(accepting_budget.name)
       expect(page).to have_content(selecting_budget.name)
       expect(page).to have_content(balloting_budget.name)
-      expect(page).not_to have_content(finished_budget.name)
+      expect(page).to have_content(finished_budget.name)
+
+      within "#budget_#{finished_budget.id}" do
+        expect(page).to have_content("Completed")
+      end
 
       click_link "Finished"
       expect(page).not_to have_content(drafting_budget.name)
