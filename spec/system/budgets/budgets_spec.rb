@@ -209,18 +209,18 @@ describe "Budgets" do
 
     phases.informing.update!(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
                              description: "Description of informing phase",
-                             summary: "<p>This is the summary for informing phase</p>")
+                             name: "Custom name for informing phase")
 
     phases.accepting.update!(starts_at: "01-01-2018", ends_at: "10-01-2018", enabled: true,
                             description: "Description of accepting phase",
-                            summary: "This is the summary for accepting phase")
+                            name: "Custom name for accepting phase")
 
     phases.reviewing.update!(starts_at: "11-01-2018", ends_at: "20-01-2018", enabled: false,
                             description: "Description of reviewing phase")
 
     phases.selecting.update!(starts_at: "21-01-2018", ends_at: "01-02-2018", enabled: true,
                             description: "Description of selecting phase",
-                            summary: "This is the summary for selecting phase")
+                            name: "Custom name for selecting phase")
 
     phases.valuating.update!(starts_at: "10-02-2018", ends_at: "20-02-2018", enabled: false,
                             description: "Description of valuating phase")
@@ -260,6 +260,21 @@ describe "Budgets" do
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
     expect(page).to have_css(".tabs-panel.is-active", count: 1)
+
+    within("#budget_phases_tabs") do
+      expect(page).to have_link "Custom name for informing phase"
+      expect(page).to have_link "Custom name for accepting phase"
+      expect(page).to have_link "Custom name for selecting phase"
+      expect(page).to have_link phases.balloting.name
+      expect(page).to have_link "Current phase #{phases.finished.name}"
+    end
+
+    click_link "Custom name for accepting phase"
+
+    within("#2-custom-name-for-accepting-phase") do
+      expect(page).to have_link("Previous phase", href: "#1-custom-name-for-informing-phase")
+      expect(page).to have_link("Next phase", href: "#3-custom-name-for-selecting-phase")
+    end
   end
 
   context "Index map" do

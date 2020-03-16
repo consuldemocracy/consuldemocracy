@@ -210,6 +210,7 @@ class Budget < ApplicationRecord
         Budget::Phase.create(
           budget: self,
           kind: phase,
+          name: I18n.t("budgets.phase.#{phase}"),
           prev_phase: phases&.last,
           starts_at: phases&.last&.ends_at || Date.current,
           ends_at: (phases&.last&.ends_at || Date.current) + 1.month

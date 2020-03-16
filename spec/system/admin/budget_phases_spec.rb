@@ -21,5 +21,24 @@ describe "Admin budget phases" do
       expect(budget.current_phase.description).to include("New description of the phase.")
       expect(budget.current_phase.enabled).to be(false)
     end
+
+    scenario "Show default phase name or custom if present" do
+      visit edit_admin_budget_path(budget)
+
+      within_table "Phases" do
+        expect(page).to have_content "Accepting projects"
+        expect(page).not_to have_content "My phase custom name"
+
+        within("tr", text: "Accepting projects") { click_link "Edit phase" }
+      end
+
+      fill_in "Name", with: "My phase custom name"
+      click_button "Save changes"
+
+      within_table "Phases" do
+        expect(page).to have_content "My phase custom name"
+        expect(page).not_to have_content "Accepting projects"
+      end
+    end
   end
 end
