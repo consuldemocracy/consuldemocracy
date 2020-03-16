@@ -174,6 +174,8 @@ en:
     budget_phases:
       edit:
         description_help_text: This text will appear in the header when the phase is active
+        duration: "Phase's duration"
+        duration_description: "The period of time this phase will be active."
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
       index:
