@@ -5,7 +5,7 @@
     <%= render "shared/errors", resource: @budget %>
 
     <%= f.translatable_fields do |translations_form| %>
-      <div class="small-12 medium-9 column end">
+      <div class="small-12 medium-9 large-6 column end">
         <%= translations_form.text_field :name,
                                           maxlength: Budget.title_max_length,
                                           hint: t("admin.budgets.edit.name_description") %>
@@ -25,7 +25,7 @@
     <legend><%= t("admin.budgets.edit.info.staff_settings") %></legend>
 
     <% %w[administrators valuators].each do |staff| %>
-      <div class="small-12 medium-4 column end">
+      <div class="small-12 medium-6 large-3 column end">
         <%= link_to t("admin.budgets.edit.#{staff}", count: @budget.send(staff).count),
           "#",
           class: "button expanded hollow js-budget-show-#{staff}-list js-budget-show-users-list",
