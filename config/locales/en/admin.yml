@@ -164,6 +164,8 @@ en:
         description_help_text: This text will appear in the header when the phase is active
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
+      index:
+        help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
     budget_investments:
       index:
         heading_filter_all: All headings
