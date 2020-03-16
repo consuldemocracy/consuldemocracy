@@ -247,10 +247,22 @@ el:
         password: "Κωδικός πρόσβασης"
         current_password: "Υφιστάμενος κωδικός πρόσβασης"
         email_digest: "Αποστολή περίληψης των ειδοποιήσεων σχετικά με την πρόταση"
+        email_on_comment: "Ειδοποιείστε με μέσω email όταν κάποιος σχολιάζει τις προτάσεις ή τις συζητήσεις μου"
+        email_on_comment_reply: "Ειδοποιείστε με μέσω email όταν κάποιος απαντά σε σχόλιά μου"
+        email_on_direct_message: "Λήψη E-mail για τα άμεσα μηνύματα"
+        newsletter: "Λήψη μέσω E-mail των σχετικών με το website πληροφοριών"
         official_position: "Επίσημη θέση"
+        official_position_badge: "Εμφάνιση του συμβόλου της επίσημης θέσης"
         official_level: "Επίσημο επίπεδο"
         phone_number: "Αριθμός τηλεφώνου"
+        public_activity: "Κρατήστε δημόσια τη λίστα των δραστηριοτήτων μου"
+        public_interests: "Κρατήστε τις ετικέτες των στοιχείων που ακολουθώ δημόσια"
+        recommended_debates: "Εμφάνιση προτάσεων για δημόσιες συζητήσεις"
+        recommended_proposals: "Εμφάνιση συστάσεων για προτάσεις"
         redeemable_code: "Κωδικός επαλήθευσης που λάβατε μέσω email"
+      direct_message:
+        title: "Τίτλος"
+        body: "Μήνυμα"
       organization:
         name: "Επωνυμία οργανισμού"
         responsible_name: "Υπεύθυνος ομάδας"
@@ -261,11 +273,17 @@ el:
         geozone_restricted: "Περιορίζεται από το geozone"
         summary: "Περίληψη"
         description: "Περιγραφή"
+      active_poll/translation:
+        description: "Περιγραφή"
+      poll/booth:
+        name: "Όνομα"
+        location: "Τοποθεσία"
       poll/translation:
         name: "Όνομα"
         summary: "Περίληψη"
         description: "Περιγραφή"
       poll/question:
+        poll_id: "Ψηφοφορία"
         title: "Ερώτηση"
         summary: "Περίληψη"
         description: "Περιγραφή"
@@ -276,6 +294,8 @@ el:
         data: Στοιχεία CSV
         poll_id: Ψηφοφορία
         officer_assignment_id: Εργασία Λειτουργού
+      poll/shift:
+        task: "Εργασία"
       signature_sheet:
         signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "ID με δυνατότητα υπογραφής "
