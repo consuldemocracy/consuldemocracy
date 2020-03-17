@@ -7,6 +7,7 @@ if Administrator.count == 0 && !Rails.env.test?
 end
 
 Setting.reset_defaults
+Setting["feature.comments"] = false
 
 WebSection.where(name: "homepage").first_or_create!
 WebSection.where(name: "debates").first_or_create!
