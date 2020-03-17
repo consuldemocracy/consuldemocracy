@@ -6,7 +6,7 @@
 
 # Gemas adicionales para poder exportar los datos a excel fácilmente
 gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
-gem 'axlsx_rails'
+gem 'caxlsx_rails'
 
 # Verificación de usuarios mediante LDAP
 # gem 'omniauth-ldap', '~> 2.0.0'
