@@ -4,7 +4,7 @@ module Consul
     config.i18n.default_locale = :es
 
     # Idiomas disponibles
-    available_locales = [:es]
+    config.i18n.available_locales = [:es]
 
     # Ruta por defecto que utilizará la aplicación
     config.root_directory = "/presupuestosparticipativos"
