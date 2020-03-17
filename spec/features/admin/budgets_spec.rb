@@ -182,6 +182,15 @@ describe "Admin budgets" do
       expect(page).to have_css(".is-invalid-label", text: "Name")
       expect(page).to have_css("small.form-error", text: "has already been taken")
     end
+
+    scenario "Do not show results and stats settings on new budget" do
+      visit new_admin_budget_path
+
+      expect(page).not_to have_content "Results and statistics settings"
+      expect(page).not_to have_content "Show results"
+      expect(page).not_to have_content "Show stats"
+      expect(page).not_to have_content "Show advanced stats"
+    end
   end
 
   context "Create" do
@@ -329,6 +338,15 @@ describe "Admin budgets" do
           end
         end
       end
+    end
+
+    scenario "Show results and stats settings" do
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_content "Results and statistics settings"
+      expect(page).to have_content "Show results"
+      expect(page).to have_content "Show stats"
+      expect(page).to have_content "Show advanced stats"
     end
 
     scenario "Show CTA button in public site if added" do
