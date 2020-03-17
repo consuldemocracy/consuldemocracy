@@ -88,7 +88,9 @@
     <% end %>
   </fieldset>
 
-  <%= render "admin/shared/show_results_fields", form: f %>
+  <% if @budget.persisted? %>
+    <%= render "admin/shared/show_results_fields", form: f %>
+  <% end %>
 
   <div class="small-12 column">
     <div class="clear small-12 medium-4 large-3 inline-block">
