@@ -132,6 +132,16 @@ es:
           phases_settings: "Configuración de las fases"
           results_settings: "Configuración de resultados y estadísticas"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
+          groups_and_headings_settings: "Configuración de grupos y partidas"
+        groups_and_headings:
+          edit_group: "Editar grupo %{name}"
+          delete_group: "Eliminar grupo %{name}"
+          headings: "Partidas"
+          edit_heading: "Editar partida %{name}"
+          delete_heading: "Eliminar partida %{name}"
+          max_number_headings: "Máximo número de partidas en que un usuario puede votar"
+          add_group: "Añadir grupo"
+          add_heading: "Añadir partida"
       destroy:
         success_notice: Presupuesto eliminado correctamente
         unable_notice: No se puede eliminar un presupuesto con proyectos asociados

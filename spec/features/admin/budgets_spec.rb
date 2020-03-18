@@ -349,6 +349,57 @@ describe "Admin budgets" do
       expect(page).to have_content "Show advanced stats"
     end
 
+    scenario "Show groups and headings settings" do
+      visit edit_admin_budget_path(budget)
+
+      expect(page).to have_content "Groups and headings settings"
+      expect(page).to have_link "Add group"
+      expect(page).to have_link("Add heading", count: budget.groups.count)
+
+      budget.groups.each do |group|
+        expect(page).to have_content group.name
+        expect(page).to have_content "Maximum number of headings in which a user can "\
+                                     "vote #{group.max_votable_headings}"
+        expect(page).to have_link "Edit group #{group.name}"
+        expect(page).to have_link "Delete group #{group.name}"
+
+        group.headings.each do |heading|
+          expect(page).to have_content heading.name
+          expect(page).to have_link "Edit heading #{heading.name}"
+          expect(page).to have_link "Delete heading #{heading.name}"
+        end
+      end
+    end
+
+    scenario "Add group from edit view" do
+      visit edit_admin_budget_path(budget)
+
+      click_link "Add group"
+
+      fill_in "Group name", with: "New group"
+      click_button "Create new group"
+
+      visit edit_admin_budget_path(budget)
+      expect(page).to have_content "New group"
+    end
+
+    scenario "Add heading from edit view" do
+      visit edit_admin_budget_path(budget)
+
+      budget.groups.each do |group|
+        within "#group_#{group.id}" do
+          click_link "Add heading"
+
+          fill_in "Heading name", with: "New heading for #{group.name}"
+          fill_in "Amount", with: "1000"
+          click_button "Create new heading"
+        end
+
+        expect(page).to have_content "New heading for #{group.name}"
+        expect(page).to have_content("€1,000", count: budget.groups.count)
+      end
+    end
+
     scenario "Show CTA button in public site if added" do
       visit edit_admin_budget_path(budget)
       expect(page).to have_content("Main call to action (optional)")

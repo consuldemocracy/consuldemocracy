@@ -36,6 +36,16 @@
     <%= f.text_field :main_button_url, placeholder: t("admin.shared.example_url") %>
   </div>
 
+  <% if @budget.persisted? %>
+    <p class="form-section-divider">
+      <span><%= t("admin.budgets.edit.info.groups_and_headings_settings") %></span>
+    </p>
+
+    <div class="small-12 column">
+      <%= render "groups_and_headings" %>
+    </div>
+  <% end %>
+
   <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.staff_settings") %></span></p>
 
   <div class="clear">

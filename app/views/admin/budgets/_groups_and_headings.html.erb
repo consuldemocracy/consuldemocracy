@@ -1,0 +1,41 @@
+<% @budget.groups.each do |group| %>
+  <div id="<%= "group_#{group.id}" %>">
+    <%= link_to t("admin.budgets.edit.groups_and_headings.add_heading"),
+              new_admin_budget_group_heading_path(@budget, group),
+              class: "button hollow float-right margin-top add" %>
+
+    <h3 class="inline-block"><%= group.name %></h3>
+
+    <%= render "group_actions", group: group %>
+
+    <p class="help-text">
+      <%= t("admin.budgets.edit.groups_and_headings.max_number_headings") %>
+      <%= group.max_votable_headings %>
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th scope="col"><%= t("admin.budgets.edit.groups_and_headings.headings") %></th>
+          <th scope="col" class="text-right"><%= t("admin.shared.actions") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% group.headings.each do |heading| %>
+          <tr>
+            <td>
+              <%= heading.name %>
+            </td>
+            <td class="text-right">
+              <%= render "headings_actions", group: group, heading: heading %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+
+<%= link_to t("admin.budgets.edit.groups_and_headings.add_group"),
+            new_admin_budget_group_path(@budget),
+            class: "button add" %>

@@ -132,6 +132,16 @@ en:
           phases_settings: "Phases settings"
           results_settings: "Results and statistics settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
+          groups_and_headings_settings: "Groups and headings settings"
+        groups_and_headings:
+          edit_group: "Edit group %{name}"
+          delete_group: "Delete group %{name}"
+          headings: "Headings"
+          edit_heading: "Edit heading %{name}"
+          delete_heading: "Delete heading %{name}"
+          max_number_headings: "Maximum number of headings in which a user can vote"
+          add_group: "Add group"
+          add_heading: "Add heading"
       destroy:
         success_notice: Budget deleted successfully
         unable_notice: You cannot delete a budget that has associated investments

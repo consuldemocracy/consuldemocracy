@@ -47,6 +47,10 @@ $admin-text:     #434d54;
   h3 {
     color: $admin-title;
     margin: $line-height 0;
+
+    &.inline-block {
+      margin-bottom: 0;
+    }
   }
 
   a {
@@ -288,7 +292,6 @@ $admin-text:     #434d54;
       }
 
       a {
-        color: inherit;
         white-space: nowrap;
       }
     }
@@ -400,6 +403,7 @@ $admin-text:     #434d54;
   }
 
   .button {
+    font-weight: bold;
     min-width: rem-calc(140);
     max-height: $line-height * 2;
 

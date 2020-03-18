@@ -1,0 +1,16 @@
+<%= link_to edit_admin_budget_group_heading_path(@budget, group, heading), class: "icon-link" do %>
+  <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
+    title="<%= t("admin.budgets.edit.groups_and_headings.edit_heading", name: heading.name) %>">
+    <span class="far fa-edit"></span>
+    <span class="show-for-sr"><%= t("admin.budgets.edit.groups_and_headings.edit_heading") %></span>
+  </span>
+<% end %>
+
+<%= link_to admin_budget_group_heading_path(@budget, group, heading), method: :delete,
+            class: "icon-link delete" do %>
+  <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
+    title="<%= t("admin.budgets.edit.groups_and_headings.delete_heading", name: heading.name) %>">
+    <span class="far fa-trash-alt"></span>
+    <span class="show-for-sr"><%= t("admin.budgets.edit.groups_and_headings.delete_heading") %></span>
+  </span>
+<% end %>
