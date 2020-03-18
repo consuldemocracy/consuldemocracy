@@ -387,7 +387,7 @@ a {
   }
 }
 
-.button.float-right ~ .button.float-right {
+.button.float-right + .button.float-right {
   margin: 0 $line-height / 2;
 }
 
