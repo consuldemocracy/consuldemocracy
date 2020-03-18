@@ -44,7 +44,7 @@ module Abilities
       end
       can [:retire_form, :retire], Legislation::Proposal, author_id: user.id
 
-      can :create, Comment
+      can :create, Comment if Setting["feature.comments"]
       can :create, Debate
       can [:create, :created], Proposal
       can :create, Legislation::Proposal
@@ -54,7 +54,7 @@ module Abilities
       can :suggest, Legislation::Proposal
       can :suggest, Tag
 
-      can [:flag, :unflag], Comment
+      can [:flag, :unflag], Comment if Setting["feature.comments"]
       cannot [:flag, :unflag], Comment, user_id: user.id
 
       can [:flag, :unflag], Debate
@@ -81,7 +81,7 @@ module Abilities
 
       unless user.organization?
         can :vote, Debate
-        can :vote, Comment
+        can :vote, Comment if Setting["feature.comments"]
       end
 
       if user.level_two_or_three_verified?
