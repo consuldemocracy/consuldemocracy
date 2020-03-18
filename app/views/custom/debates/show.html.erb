@@ -21,9 +21,13 @@
 
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <%= l @debate.created_at.to_date %>
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <span class="icon-comments"></span>&nbsp;
-          <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+
+          <% if Setting["feature.comments"] %>
+            <span class="bullet">&nbsp;&bull;&nbsp;</span>
+            <span class="icon-comments"></span>&nbsp;
+            <%= link_to t("debates.show.comments", count: @debate.comments_count), "#comments" %>
+          <% end %>
+          
           <span class="bullet">&nbsp;&bull;&nbsp;</span>
           <span class="js-flag-actions">
             <%= render "debates/flag_actions", debate: @debate %>
@@ -68,4 +72,4 @@
   </div>
 <% end %>
 
-<%= render "comments" %>
+<%= render "comments" if Setting["feature.comments"] %>
