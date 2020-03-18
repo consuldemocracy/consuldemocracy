@@ -46,6 +46,10 @@ $table-header:   #ecf1f6;
 
   h3 {
     margin: $line-height 0;
+
+    &.inline-block {
+      margin-bottom: 0;
+    }
   }
 
   .back {
@@ -242,7 +246,6 @@ $table-header:   #ecf1f6;
       }
 
       a {
-        color: inherit;
         white-space: nowrap;
       }
     }
@@ -1212,6 +1215,24 @@ table {
 
   .hidden {
     display: none;
+  }
+}
+
+.admin .groups {
+  header {
+    display: flex;
+
+    .table-actions {
+      margin-top: rem-calc(26);
+
+      > :first-child {
+        margin-left: rem-calc(3);
+      }
+
+      > :not(:first-child) {
+        margin-left: 0;
+      }
+    }
   }
 }
 

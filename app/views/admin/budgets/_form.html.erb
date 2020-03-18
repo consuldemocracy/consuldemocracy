@@ -32,6 +32,16 @@
     </div>
   </fieldset>
 
+    <% if @budget.persisted? %>
+      <fieldset>
+        <legend><%= t("admin.budgets.edit.info.groups_and_headings_settings") %></legend>
+
+        <div class="small-12 column">
+          <%= render "groups_and_headings" %>
+        </div>
+      </fieldset>
+    <% end %>
+
   <fieldset>
     <legend><%= t("admin.budgets.edit.info.staff_settings") %></legend>
 

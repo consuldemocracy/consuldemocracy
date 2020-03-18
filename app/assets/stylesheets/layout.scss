@@ -93,6 +93,19 @@ a {
   &.medium {
     font-size: $small-font-size;
   }
+
+  &.add {
+    font-weight: bold;
+    padding-left: $line-height * 1.5;
+    position: relative;
+
+    &::before {
+      content: "\f0fe";
+      font-family: "Font Awesome 5 Free";
+      left: 10px;
+      position: absolute;
+    }
+  }
 }
 
 .button.hollow {
@@ -382,7 +395,7 @@ a {
   }
 }
 
-.button.float-right ~ .button.float-right {
+.button.float-right + .button.float-right {
   margin: 0 $line-height / 2;
 }
 
