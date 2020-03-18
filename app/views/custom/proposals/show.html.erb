@@ -95,10 +95,11 @@
   </div>
 
   <div class="tabs-content" data-tabs-content="proposals_tabs">
-    <div class="tabs-panel is-active" id="tab-comments">
-      <%= render "proposals/comments" %>
-    </div>
-
+    <% if Setting["feature.comments"] %>
+      <div class="tabs-panel is-active" id="tab-comments">
+        <%= render "proposals/comments" %>
+      </div>
+    <% end %>
     <%= render "proposals/notifications" %>
     <%= render "milestones/milestones", milestoneable: @proposal %>
   </div>
