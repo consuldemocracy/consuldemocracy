@@ -2,7 +2,7 @@ shared_examples "admin_progressable" do |factory_name, path_name|
   let!(:progressable) { create(factory_name) }
 
   describe "Manage progress bars" do
-    let(:progressable_path) { send(path_name, *resource_hierarchy_for(progressable)) }
+    let(:progressable_path) { send(path_name, progressable) }
 
     let(:path) do
       admin_polymorphic_path(progressable.progress_bars.new)

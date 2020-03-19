@@ -3,7 +3,7 @@ shared_examples "admin_milestoneable" do |factory_name, path_name|
 
   describe "Admin milestones" do
     let!(:milestoneable) { create(factory_name) }
-    let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
+    let(:path) { send(path_name, milestoneable) }
 
     context "Index" do
       scenario "Displaying milestones" do
