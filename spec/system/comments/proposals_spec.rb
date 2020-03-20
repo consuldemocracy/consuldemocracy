@@ -4,6 +4,8 @@ describe "Commenting proposals" do
   let(:user) { create :user }
   let(:proposal) { create :proposal }
 
+  it_behaves_like "flaggable", :proposal_comment
+
   scenario "Index" do
     3.times { create(:comment, commentable: proposal) }
 
@@ -294,53 +296,6 @@ describe "Commenting proposals" do
 
     visit proposal_path(proposal)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: proposal)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: proposal)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit proposal_path(proposal)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    proposal = create(:proposal, title: "Should we change the world?")
-    comment = create(:comment, commentable: proposal)
-
-    login_as(user)
-    visit proposals_path
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      expect(page).to have_selector("#flag-comment-#{comment.id}")
-    end
   end
 
   scenario "Erasing a comment's author" do

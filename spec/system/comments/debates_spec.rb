@@ -4,6 +4,8 @@ describe "Commenting debates" do
   let(:user)   { create :user }
   let(:debate) { create :debate }
 
+  it_behaves_like "flaggable", :debate_comment
+
   scenario "Index" do
     3.times { create(:comment, commentable: debate) }
 
@@ -336,80 +338,6 @@ describe "Commenting debates" do
 
     visit debate_path(debate)
     expect(page).to have_css(".comment.comment.comment.comment.comment.comment.comment.comment")
-  end
-
-  scenario "Flagging as inappropriate", :js do
-    comment = create(:comment, commentable: debate)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).to be
-  end
-
-  scenario "Undoing flagging as inappropriate", :js do
-    comment = create(:comment, commentable: debate)
-    Flag.flag(user, comment)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#comment_#{comment.id}" do
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging turbolinks sanity check", :js do
-    debate = create(:debate, title: "Should we change the world?")
-    comment = create(:comment, commentable: debate)
-
-    login_as(user)
-    visit debates_path
-    click_link "Should we change the world?"
-
-    within "#comment_#{comment.id}" do
-      page.find("#flag-expand-comment-#{comment.id}").click
-      page.find("#flag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{comment.id}")
-      expect(Flag.flagged?(user, comment)).to be
-
-      page.find("#unflag-expand-comment-#{comment.id}").click
-      page.find("#unflag-comment-#{comment.id}").click
-
-      expect(page).to have_css("#flag-expand-comment-#{comment.id}")
-    end
-
-    expect(Flag.flagged?(user, comment)).not_to be
-  end
-
-  scenario "Flagging a comment with a child does not update its children", :js do
-    debate = create(:debate, title: "Should we change the world?")
-    parent_comment = create(:comment, commentable: debate, body: "Main comment")
-    child_comment = create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#comment_#{parent_comment.id}" do
-      page.find("#flag-expand-comment-#{parent_comment.id}").click
-      page.find("#flag-comment-#{parent_comment.id}").click
-
-      expect(page).to have_css("#unflag-expand-comment-#{parent_comment.id}")
-      expect(page).to have_css("#flag-expand-comment-#{child_comment.id}")
-    end
   end
 
   scenario "Erasing a comment's author" do
