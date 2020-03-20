@@ -1,1 +1,1 @@
-$("#flag-actions-<%= dom_id(@comment) %>").html("<%= j render("comments/flag_actions", comment: @comment) %>");
+App.Flaggable.update("<%= dom_id(@comment) %>", "<%= j render("comments/flag_actions", comment: @comment) %>");

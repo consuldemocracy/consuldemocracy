@@ -380,6 +380,32 @@ describe "Debates" do
     expect(Flag.flagged?(user, debate)).not_to be
   end
 
+  scenario "Flagging/Unflagging AJAX", :js do
+    user = create(:user)
+    debate = create(:debate)
+
+    login_as(user)
+    visit debate_path(debate)
+
+    within "#debate_#{debate.id}" do
+      page.find("#flag-expand-debate-#{debate.id}").click
+      page.find("#flag-debate-#{debate.id}").click
+
+      expect(page).to have_css("#unflag-expand-debate-#{debate.id}")
+    end
+
+    expect(Flag.flagged?(user, debate)).to be
+
+    within "#debate_#{debate.id}" do
+      page.find("#unflag-expand-debate-#{debate.id}").click
+      page.find("#unflag-debate-#{debate.id}").click
+
+      expect(page).to have_css("#flag-expand-debate-#{debate.id}")
+    end
+
+    expect(Flag.flagged?(user, debate)).not_to be
+  end
+
   describe "Debate index order filters" do
     scenario "Default order is hot_score", :js do
       best_debate = create(:debate, title: "Best")
