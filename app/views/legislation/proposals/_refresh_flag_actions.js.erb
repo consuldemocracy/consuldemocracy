@@ -1,1 +1,1 @@
-App.Flaggable.update("<%= dom_id(@proposal) %>", "<%= j render("legislation/proposals/flag_actions", proposal: @proposal) %>");
+App.Flaggable.update("<%= dom_id(@proposal) %>", "<%= j render("shared/flag_actions", flaggable: @proposal) %>");
