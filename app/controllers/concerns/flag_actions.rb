@@ -4,21 +4,13 @@ module FlagActions
   def flag
     Flag.flag(current_user, flaggable)
 
-    if controller_name == "investments"
-      respond_with flaggable, template: "budgets/#{controller_name}/_refresh_flag_actions"
-    else
-      respond_with flaggable, template: "#{controller_name}/_refresh_flag_actions"
-    end
+    render "_refresh_flag_actions"
   end
 
   def unflag
     Flag.unflag(current_user, flaggable)
 
-    if controller_name == "investments"
-      respond_with flaggable, template: "budgets/#{controller_name}/_refresh_flag_actions"
-    else
-      respond_with flaggable, template: "#{controller_name}/_refresh_flag_actions"
-    end
+    render "_refresh_flag_actions"
   end
 
   private
