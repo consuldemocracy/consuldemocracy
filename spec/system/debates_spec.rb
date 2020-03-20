@@ -17,6 +17,7 @@ describe "Debates" do
                     :debate,
                     "debate_path",
                     { "id": "id" }
+    it_behaves_like "flaggable", :debate
   end
 
   scenario "Index" do
@@ -343,67 +344,6 @@ describe "Debates" do
     click_button "Save changes"
 
     expect(page).to have_content error_message
-  end
-
-  scenario "Flagging", :js do
-    user = create(:user)
-    debate = create(:debate)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#debate_#{debate.id}" do
-      page.find("#flag-expand-debate-#{debate.id}").click
-      page.find("#flag-debate-#{debate.id}").click
-
-      expect(page).to have_css("#unflag-expand-debate-#{debate.id}")
-    end
-
-    expect(Flag.flagged?(user, debate)).to be
-  end
-
-  scenario "Unflagging", :js do
-    user = create(:user)
-    debate = create(:debate)
-    Flag.flag(user, debate)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#debate_#{debate.id}" do
-      page.find("#unflag-expand-debate-#{debate.id}").click
-      page.find("#unflag-debate-#{debate.id}").click
-
-      expect(page).to have_css("#flag-expand-debate-#{debate.id}")
-    end
-
-    expect(Flag.flagged?(user, debate)).not_to be
-  end
-
-  scenario "Flagging/Unflagging AJAX", :js do
-    user = create(:user)
-    debate = create(:debate)
-
-    login_as(user)
-    visit debate_path(debate)
-
-    within "#debate_#{debate.id}" do
-      page.find("#flag-expand-debate-#{debate.id}").click
-      page.find("#flag-debate-#{debate.id}").click
-
-      expect(page).to have_css("#unflag-expand-debate-#{debate.id}")
-    end
-
-    expect(Flag.flagged?(user, debate)).to be
-
-    within "#debate_#{debate.id}" do
-      page.find("#unflag-expand-debate-#{debate.id}").click
-      page.find("#unflag-debate-#{debate.id}").click
-
-      expect(page).to have_css("#flag-expand-debate-#{debate.id}")
-    end
-
-    expect(Flag.flagged?(user, debate)).not_to be
   end
 
   describe "Debate index order filters" do
