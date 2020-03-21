@@ -9,7 +9,7 @@
     </div>
   <% end %>
 
-  <% if group.persisted? %>
+  <% if group.persisted? && group.headings.any? %>
     <div class="small-12 medium-6 column margin">
       <%= f.select :max_votable_headings,
                    (1..group.headings.count),
