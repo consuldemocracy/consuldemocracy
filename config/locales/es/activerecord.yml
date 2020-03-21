@@ -220,7 +220,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Cantidad de dinero"
         population: "Población (opcional)"
         max_ballot_lines: "Votos permitidos"
       budget/heading/translation:

@@ -88,7 +88,7 @@ describe "Admin budget headings", :admin do
       click_link "Create new heading"
 
       fill_in "Heading name", with: "All City"
-      fill_in "Amount", with: "1000"
+      fill_in "Money amount", with: "1000"
       fill_in "Population (optional)", with: "10000"
       check "Allow content block"
 
@@ -115,7 +115,7 @@ describe "Admin budget headings", :admin do
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css(".is-invalid-label", text: "Amount")
+      expect(page).to have_css(".is-invalid-label", text: "Money amount")
       expect(page).to have_content "can't be blank"
     end
 
@@ -134,7 +134,7 @@ describe "Admin budget headings", :admin do
         expect(page).to have_field "Votes allowed", with: 1
 
         fill_in "Heading name", with: "All City"
-        fill_in "Amount", with: "1000"
+        fill_in "Money amount", with: "1000"
         fill_in "Votes allowed", with: 14
         click_button "Create new heading"
 
@@ -152,7 +152,7 @@ describe "Admin budget headings", :admin do
       within("#budget_heading_#{heading.id}") { click_link "Edit" }
 
       expect(page).to have_field "Heading name", with: heading.name
-      expect(page).to have_field "Amount", with: heading.price
+      expect(page).to have_field "Money amount", with: heading.price
       expect(page).to have_field "Population (optional)", with: heading.population
       expect(page).to have_field "Longitude (optional)", with: heading.longitude
       expect(page).to have_field "Latitude (optional)", with: heading.latitude
@@ -204,14 +204,14 @@ describe "Admin budget headings", :admin do
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
       expect(page).to have_field "Heading name", with: "All City"
-      expect(page).to have_field "Amount", with: 1000
+      expect(page).to have_field "Money amount", with: 1000
       expect(page).to have_field "Population (optional)", with: 10000
       expect(page).to have_field "Longitude (optional)", with: 20.50
       expect(page).to have_field "Latitude (optional)", with: -10.50
       expect(find_field("Allow content block")).to be_checked
 
       fill_in "Heading name", with: "Districts"
-      fill_in "Amount", with: "2000"
+      fill_in "Money amount", with: "2000"
       fill_in "Population (optional)", with: "20000"
       fill_in "Longitude (optional)", with: "-40.47"
       fill_in "Latitude (optional)", with: "25.25"
@@ -222,7 +222,7 @@ describe "Admin budget headings", :admin do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
       expect(page).to have_field "Heading name", with: "Districts"
-      expect(page).to have_field "Amount", with: 2000
+      expect(page).to have_field "Money amount", with: 2000
       expect(page).to have_field "Population (optional)", with: 20000
       expect(page).to have_field "Longitude (optional)", with: -40.47
       expect(page).to have_field "Latitude (optional)", with: 25.25
