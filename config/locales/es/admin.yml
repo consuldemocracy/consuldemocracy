@@ -156,6 +156,7 @@ es:
       index:
         back: "Volver a presupuestos"
         help: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
+        new_button: "Añadir un grupo nuevo"
     budget_headings:
       no_headings: "No hay partidas."
       amount:
@@ -287,6 +288,11 @@ es:
     budgets_wizard:
       creation_timeline:
         budget: Presupuesto
+        groups: Grupos
+      budgets:
+        continue: "Continuar a grupos"
+      groups:
+        continue: "Continuar a partidas"
     milestones:
       index:
         table_id: "ID"

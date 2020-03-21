@@ -156,6 +156,7 @@ en:
       index:
         back: "Go back to budgets"
         help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+        new_button: "Add new group"
     budget_headings:
       no_headings: "There are no headings."
       amount:
@@ -287,6 +288,11 @@ en:
     budgets_wizard:
       creation_timeline:
         budget: Budget
+        groups: Groups
+      budgets:
+        continue: "Continue to groups"
+      groups:
+        continue: "Continue to headings"
     milestones:
       index:
         table_id: "ID"

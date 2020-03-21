@@ -5,7 +5,7 @@
   position: relative;
 
   li {
-    border-top: 4px solid $admin-border-color;
+    border-top: 4px solid $brand;
     display: inline-block;
     font-size: $small-font-size;
     font-weight: bold;
@@ -13,7 +13,7 @@
     text-transform: uppercase;
 
     &::before {
-      background: $admin-border-color;
+      background: $brand;
       border-radius: 50%;
       content: "";
       height: 20px;
@@ -23,11 +23,11 @@
       width: 20px;
     }
 
-    &[aria-current] {
-      border-color: $brand;
+    &[aria-current] ~ * {
+      border-color: $admin-border-color;
 
       &::before {
-        background: $brand;
+        background: $admin-border-color;
       }
     }
   }

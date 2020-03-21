@@ -7,9 +7,12 @@ describe "Budgets wizard, first step", :admin do
       click_link "Create new budget"
 
       fill_in "Name", with: "M30 - Summer campaign"
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).to have_content "New participatory budget created successfully!"
+
+      click_link "Go back to budgets"
+
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Knapsack"
     end
@@ -22,9 +25,12 @@ describe "Budgets wizard, first step", :admin do
 
       fill_in "Name", with: "M30 - Summer campaign"
       select "Approval", from: "Final voting style"
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).to have_content "New participatory budget created successfully!"
+
+      click_link "Go back to budgets"
+
       expect(page).to have_field "Name", with: "M30 - Summer campaign"
       expect(page).to have_select "Final voting style", selected: "Approval"
 
@@ -35,7 +41,7 @@ describe "Budgets wizard, first step", :admin do
 
     scenario "Submit the form with errors" do
       visit new_admin_budgets_wizard_budget_path
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css ".is-invalid-label", text: "Name"
@@ -47,7 +53,7 @@ describe "Budgets wizard, first step", :admin do
 
       visit new_admin_budgets_wizard_budget_path
       fill_in "Name", with: "Existing Name"
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
@@ -71,9 +77,12 @@ describe "Budgets wizard, first step", :admin do
 
       fill_in "Name", with: "M30 - Summer campaign"
 
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).to have_content "New participatory budget created successfully!"
+
+      click_link "Go back to budgets"
+
       expect(page).to have_content "This participatory budget is in draft mode"
       expect(page).to have_link "Preview budget"
       expect(page).to have_link "Publish budget"

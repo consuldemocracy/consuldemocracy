@@ -1,0 +1,19 @@
+<div class="budget-creation-step">
+  <button type="button" class="add" aria-expanded="<%= show_form? %>">
+    <%= t("admin.budget_groups.index.new_button") %>
+  </button>
+
+  <%= render "/admin/budget_groups/form", group: group, path: form_path, action: "create" %>
+
+  <button type="button" class="cancel delete"><%= t("links.form.cancel_button") %></button>
+
+  <% if next_step_path %>
+    <%= link_to t("admin.budgets_wizard.groups.continue"),
+                next_step_path,
+                class: "next-step" %>
+  <% else %>
+    <p class="next-step">
+      <%= t("admin.budgets_wizard.groups.continue") %>
+    </p>
+  <% end %>
+</div>

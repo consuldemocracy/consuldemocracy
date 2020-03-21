@@ -73,7 +73,9 @@ namespace :admin do
   end
 
   namespace :budgets_wizard do
-    resources :budgets, only: [:create, :new]
+    resources :budgets, only: [:create, :new] do
+      resources :groups, only: [:index, :create, :edit, :update, :destroy]
+    end
   end
 
   resources :milestone_statuses, only: [:index, :new, :create, :update, :edit, :destroy]

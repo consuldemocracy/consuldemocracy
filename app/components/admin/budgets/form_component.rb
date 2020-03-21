@@ -1,6 +1,7 @@
 class Admin::Budgets::FormComponent < ApplicationComponent
   include TranslatableFormHelper
   include GlobalizeHelper
+  include Admin::Namespace
 
   attr_reader :budget
   delegate :display_calculate_winners_button?,
@@ -10,14 +11,6 @@ class Admin::Budgets::FormComponent < ApplicationComponent
 
   def initialize(budget)
     @budget = budget
-  end
-
-  def namespace
-    if controller.class.name.starts_with?("Admin::BudgetsWizard")
-      :admin_budgets_wizard
-    else
-      helpers.namespace.to_sym
-    end
   end
 
   def voting_styles_select_options

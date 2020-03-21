@@ -12,7 +12,7 @@ class Admin::BudgetsWizard::BudgetsController < Admin::BaseController
     @budget.published = false
 
     if @budget.save
-      redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
+      redirect_to admin_budgets_wizard_budget_groups_path(@budget), notice: t("admin.budgets.create.notice")
     else
       render :new
     end
