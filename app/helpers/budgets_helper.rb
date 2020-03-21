@@ -132,4 +132,10 @@ module BudgetsHelper
   def budget_single?(budget)
     budget.groups.headings.count == 1
   end
+
+  def class_for_form(resource)
+    unless @mode == "single" || resource.errors.any?
+      "hide"
+    end
+  end
 end

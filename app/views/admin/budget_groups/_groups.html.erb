@@ -4,29 +4,29 @@
     <thead>
       <tr id="<%= dom_id(@budget) %>">
         <th><%= t("admin.budget_groups.name") %></th>
-        <th><%= Budget::Group.human_attribute_name(:max_votable_headings) %></th>
-        <th><%= t("admin.budget_groups.headings_name") %></th>
-        <th><%= t("admin.budget_groups.headings_edit") %></th>
-        <th><%= t("admin.actions.actions") %></th>
+        <% unless @mode.present? %>
+          <th class="text-center"><%= t("admin.budget_groups.max_votable_headings") %></th>
+          <th class="text-center"><%= t("admin.budget_groups.headings_name") %></th>
+          <th><%= t("admin.budget_groups.headings_edit") %></th>
+          <th class="text-right"><%= t("admin.actions.actions") %></th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
       <% @groups.each do |group| %>
         <tr id="<%= dom_id(group) %>">
-          <td><%= link_to group.name, edit_admin_budget_group_path(@budget, group) %></td>
-          <td><%= group.max_votable_headings %></td>
-          <td><%= group.headings.count %></td>
-          <td><%= link_to t("admin.budget_groups.headings_manage"),
-                          admin_budget_group_headings_path(@budget, group) %></td>
-          <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_path(@budget, group),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_path(@budget, group),
-                        method: :delete,
-                        class: "button hollow alert" %>
-          </td>
+          <td><%= group.name %></td>
+          <% unless @mode.present? %>
+            <td class="text-center"><%= group.max_votable_headings %></td>
+            <td class="text-center"><%= group.headings.count %></td>
+            <td>
+              <%= link_to t("admin.budget_groups.headings_manage"),
+                            admin_budget_group_headings_path(@budget, group) %>
+            </td>
+            <td class="text-right">
+              <%= render "groups_actions", group: group %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

@@ -251,10 +251,12 @@ shared_examples "nested imageable" do |imageable_factory_name, path, imageable_p
 end
 
 def imageable_redirected_to_resource_show_or_navigate_to
-  find("a", text: "Not now, go to my proposal")
-  click_on "Not now, go to my proposal"
-rescue
-  nil
+  case imageable.class.to_s
+  when "Budget"
+    visit edit_admin_budget_path(Budget.last)
+  when "Proposal"
+    click_on "Not now, go to my proposal" rescue Capybara::ElementNotFound
+  end
 end
 
 def imageable_attach_new_file(_imageable_factory_name, path, success = true)

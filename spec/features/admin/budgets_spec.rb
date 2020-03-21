@@ -11,7 +11,7 @@ describe "Admin budgets" do
                   "new_admin_budget_path",
                   {},
                   "imageable_fill_new_valid_budget",
-                  "Create Budget",
+                  "Continue to groups",
                   "New participatory budget created successfully!"
 
   context "Feature flag" do
@@ -163,7 +163,7 @@ describe "Admin budgets" do
   context "New" do
     scenario "Name is mandatory" do
       visit new_admin_budget_path
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
@@ -174,7 +174,7 @@ describe "Admin budgets" do
 
       visit new_admin_budget_path
       fill_in "Name", with: "Existing Name"
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
@@ -199,15 +199,14 @@ describe "Admin budgets" do
 
       fill_in "Name", with: "M30 - Summer campaign"
 
-      click_button "Create Budget"
-
+      click_button "Continue to groups"
       expect(page).to have_content "New participatory budget created successfully!"
+
+      visit admin_budget_path(Budget.last)
       expect(page).to have_content "This participatory budget is in draft mode"
       expect(page).to have_link "Preview budget"
       expect(page).to have_link "Publish budget"
     end
-
-    pending "Test backend and frontend for new optional 'Main call to action' feature"
 
     context "Single heading budget" do
       scenario "Is created by phases" do
@@ -216,10 +215,10 @@ describe "Admin budgets" do
         click_link "Create single heading budget"
 
         fill_in "Name", with: "Single heading budget"
-        click_button "Continue"
+        click_button "Continue to groups"
 
         expect(page).to have_field "Group name", with: "Single heading budget"
-        click_button "Continue"
+        click_button "Continue to headings"
 
         fill_in "Heading name", with: "Heading name"
         fill_in "Amount", with: "1000000"
@@ -367,18 +366,6 @@ describe "Admin budgets" do
           expect(page).to have_link "Delete heading #{heading.name}"
         end
       end
-    end
-
-    scenario "Add group from edit view" do
-      visit edit_admin_budget_path(budget)
-
-      click_link "Add group"
-
-      fill_in "Group name", with: "New group"
-      click_button "Create new group"
-
-      visit edit_admin_budget_path(budget)
-      expect(page).to have_content "New group"
     end
 
     scenario "Add heading from edit view" do

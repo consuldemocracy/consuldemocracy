@@ -92,7 +92,7 @@ en:
         type_multiple: Multiple headings
       create:
         button:
-          continue: "Continue"
+          continue: "Continue to groups"
         notice: New participatory budget created successfully!
       update:
         notice: Participatory budget updated successfully
@@ -161,13 +161,14 @@ en:
       headings_edit: "Edit Headings"
       headings_manage: "Manage headings"
       no_groups: "There are no groups."
+      max_votable_headings: "Maximum number of headings in which a user can vote"
       amount:
         one: "There is 1 group"
         other: "There are %{count} groups"
       create:
         notice: "Group created successfully!"
         button:
-          continue: "Continue"
+          continue: "Continue to headings"
       update:
         notice: "Group updated successfully"
       destroy:
@@ -178,7 +179,12 @@ en:
         edit: "Edit group"
         submit: "Save group"
       index:
-        back: "Go back to budgets"
+        back: "Go back to budget"
+        new_button: "Add new group"
+        single:
+          help_block: "Groups are meant to organize headings, since this budget will only contain one heading, the same name can be used because it will not appear anywhere. You can just continue with the next step."
+        multiple:
+          help_block: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
       no_headings: "There are no headings."
       amount:

@@ -48,11 +48,7 @@ class Admin::BudgetsController < Admin::BaseController
     @budget = Budget.new(budget_params)
 
     if @budget.save
-      if @mode == "single"
-        redirect_to new_admin_budget_group_path(@budget, mode: "single")
-      else
-        redirect_to admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
-      end
+      redirect_to admin_budget_groups_path(@budget, mode: @mode), notice: t("admin.budgets.create.notice")
     else
       load_staff
       render :new

@@ -82,7 +82,7 @@
 
   <div class="small-12 column">
     <div class="clear small-12 medium-4 large-3 inline-block">
-      <% if @mode == "single" %>
+      <% if @mode.present? %>
         <%= f.submit nil, value: t("admin.budgets.create.button.continue"),
                           class: "button success expanded bold" %>
       <% else %>
