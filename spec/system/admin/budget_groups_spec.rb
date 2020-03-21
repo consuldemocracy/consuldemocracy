@@ -80,7 +80,7 @@ describe "Admin budget groups", :admin do
   context "New" do
     scenario "Create group" do
       visit admin_budget_groups_path(budget)
-      click_link "Create new group"
+      click_button "Add new group"
 
       fill_in "Group name", with: "All City"
 
@@ -91,7 +91,9 @@ describe "Admin budget groups", :admin do
     end
 
     scenario "Maximum number of headings in which a user can vote is set to 1 by default" do
-      visit new_admin_budget_group_path(budget)
+      visit admin_budget_groups_path(budget)
+      click_button "Add new group"
+
       fill_in "Group name", with: "All City"
 
       click_button "Create new group"
@@ -99,7 +101,7 @@ describe "Admin budget groups", :admin do
       expect(page).to have_content "Group created successfully!"
 
       within all("thead th")[1] do
-        expect(page).to have_content("Maximum number of headings in which a user can select projects")
+        expect(page).to have_content("Maximum number of headings in which a user can vote")
       end
 
       within "tbody tr" do
@@ -108,7 +110,9 @@ describe "Admin budget groups", :admin do
     end
 
     scenario "Group name is mandatory" do
-      visit new_admin_budget_group_path(budget)
+      visit admin_budget_groups_path(budget)
+      click_button "Add new group"
+
       click_button "Create new group"
 
       expect(page).not_to have_content "Group created successfully!"
@@ -127,6 +131,18 @@ describe "Admin budget groups", :admin do
 
       expect(page).to have_field "Group name", with: group.name
       expect(page).to have_field "Maximum number of headings in which a user can select projects", with: "2"
+    end
+
+    scenario "Hide select for maxium number of headings to vote if there are no headings for the group" do
+      group_without_headings = create(:budget_group, budget: budget)
+      group_with_headings    = create(:budget_group, budget: budget)
+      create(:budget_heading, group: group_with_headings)
+
+      visit edit_admin_budget_group_path(budget, group_with_headings)
+      expect(page).to have_field "Maximum number of headings in which a user can select projects"
+
+      visit edit_admin_budget_group_path(budget, group_without_headings)
+      expect(page).not_to have_field "Maximum number of headings in which a user can select projects"
     end
 
     scenario "Changing name for current locale will update the slug if budget is in draft phase" do

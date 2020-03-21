@@ -1,12 +1,42 @@
-<%= back_link_to admin_budgets_path, t("admin.budget_groups.index.back") %>
+<%= back_link_to admin_budget_path(@budget), t("admin.budget_groups.index.back") %>
 
 <div class="clear"></div>
 
 <header>
   <h2><%= @budget.name %></h2>
-  <%= link_to t("admin.budget_groups.form.create"), new_admin_budget_group_path %>
 </header>
 
 <%= render Admin::Budgets::HelpComponent.new("budget_groups") %>
+<%= render Admin::Budgets::CreationTimelineComponent.new(step: "groups") %>
 
-<%= render "groups" %>
+<div class="small-12 medium-6">
+  <%= render "groups" %>
+</div>
+
+<div id="groups_form" class="<%= class_for_form(@group) %>" data-toggler=".hide">
+  <%= render "form", path: admin_budget_groups_path(@budget), action: "create" %>
+</div>
+
+<% unless @group.errors.any? %>
+  <button id="new_button" class="button add" data-toggler=".hide"
+          data-toggle="groups_form new_button cancel_button">
+    <strong><%= t("admin.budget_groups.index.new_button") %></strong>
+  </button>
+<% end %>
+
+<p id="cancel_button" class="hide" data-toggler=".hide"
+   data-toggle="groups_form new_button cancel_button">
+  <button class="delete"><%= t("links.form.cancel_button") %></button>
+</p>
+
+<% if @groups.any? %>
+  <%= link_to t("admin.budget_groups.create.button.continue"),
+              admin_budget_group_headings_path(@budget, @groups.first),
+              class: "button success" %>
+<% end %>
+
+<% if @groups.blank? %>
+  <p class="button secondary disabled">
+    <%= t("admin.budget_groups.create.button.continue") %>
+  </p>
+<% end %>

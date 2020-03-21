@@ -91,10 +91,11 @@ en:
         no_budgets: "There are no budgets."
       create:
         button:
-          continue: "Continue"
+          continue: "Continue to groups"
         notice: New participatory budget created successfully!
       creation_timeline:
         budget: Budget
+        groups: Groups
       update:
         notice: Participatory budget updated successfully
       publish:
@@ -144,11 +145,14 @@ en:
       headings_name: "Headings"
       headings_manage: "Manage headings"
       no_groups: "There are no groups."
+      max_votable_headings: "Maximum number of headings in which a user can vote"
       amount:
         one: "There is 1 group"
         other: "There are %{count} groups"
       create:
         notice: "Group created successfully!"
+        button:
+          continue: "Continue to headings"
       update:
         notice: "Group updated successfully"
       destroy:
@@ -162,6 +166,7 @@ en:
       index:
         back: "Go back to budgets"
         help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
+        new_button: "Add new group"
     budget_headings:
       no_headings: "There are no headings."
       amount:

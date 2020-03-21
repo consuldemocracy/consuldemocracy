@@ -123,7 +123,7 @@ describe "Admin budgets", :admin do
 
     scenario "Name is mandatory" do
       visit new_admin_budget_path
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
@@ -134,7 +134,7 @@ describe "Admin budgets", :admin do
 
       visit new_admin_budget_path
       fill_in "Name", with: "Existing Name"
-      click_button "Create Budget"
+      click_button "Continue to groups"
 
       expect(page).not_to have_content "New participatory budget created successfully!"
       expect(page).to have_css(".is-invalid-label", text: "Name")
@@ -158,9 +158,10 @@ describe "Admin budgets", :admin do
 
       fill_in "Name", with: "M30 - Summer campaign"
 
-      click_button "Create Budget"
-
+      click_button "Continue to groups"
       expect(page).to have_content "New participatory budget created successfully!"
+
+      visit admin_budget_path(Budget.last)
       expect(page).to have_content "This participatory budget is in draft mode"
       expect(page).to have_link "Preview budget"
       expect(page).to have_link "Publish budget"

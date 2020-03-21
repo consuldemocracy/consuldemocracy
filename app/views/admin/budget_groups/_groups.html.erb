@@ -4,18 +4,18 @@
     <thead>
       <tr id="<%= dom_id(@budget) %>">
         <th><%= t("admin.budget_groups.name") %></th>
-        <th><%= Budget::Group.human_attribute_name(:max_votable_headings) %></th>
-        <th><%= t("admin.budget_groups.headings_name") %></th>
-        <th><%= t("admin.actions.actions") %></th>
+        <th class="text-center"><%= t("admin.budget_groups.max_votable_headings") %></th>
+        <th class="text-center"><%= t("admin.budget_groups.headings_name") %></th>
+        <th class="text-right"><%= t("admin.actions.actions") %></th>
       </tr>
     </thead>
     <tbody>
       <% @groups.each do |group| %>
         <tr id="<%= dom_id(group) %>">
           <td><%= group.name %></td>
-          <td><%= group.max_votable_headings %></td>
-          <td><%= group.headings.count %></td>
-          <td>
+          <td class="text-center"><%= group.max_votable_headings %></td>
+          <td class="text-center"><%= group.headings.count %></td>
+          <td class="text-right">
             <%= render Admin::TableActionsComponent.new(group) do |actions| %>
               <%= actions.link_to t("admin.budget_groups.headings_manage"),
                                   admin_budget_group_headings_path(@budget, group),

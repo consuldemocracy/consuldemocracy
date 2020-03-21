@@ -87,4 +87,10 @@ module BudgetsHelper
       }
     end
   end
+
+  def class_for_form(resource)
+    unless resource.errors.any?
+      "hide"
+    end
+  end
 end

@@ -4,10 +4,11 @@ class Admin::BudgetGroupsController < Admin::BaseController
   feature_flag :budgets
 
   before_action :load_budget
-  before_action :load_group, except: [:index, :new, :create]
+  before_action :load_groups, only: [:index, :create]
+  before_action :load_group, except: [:new, :index, :create]
 
   def index
-    @groups = @budget.groups.order(:id)
+    @group = @budget.groups.new
   end
 
   def new
@@ -22,7 +23,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
     if @group.save
       redirect_to groups_index, notice: t("admin.budget_groups.create.notice")
     else
-      render :new
+      render :index
     end
   end
 
@@ -47,6 +48,10 @@ class Admin::BudgetGroupsController < Admin::BaseController
 
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:budget_id]
+    end
+
+    def load_groups
+      @groups = @budget.groups.order(:id)
     end
 
     def load_group

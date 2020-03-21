@@ -91,10 +91,11 @@ es:
         no_budgets: "No hay presupuestos participativos."
       create:
         button:
-          continue: "Continuar"
+          continue: "Continuar a grupos"
         notice: '¡Presupuestos participativos creados con éxito!'
       creation_timeline:
         budget: Presupuesto
+        groups: Grupos
       update:
         notice: Presupuestos participativos actualizados
       publish:
@@ -144,11 +145,14 @@ es:
       headings_name: "Partidas"
       headings_manage: "Gestionar partidas"
       no_groups: "No hay grupos."
+      max_votable_headings: "Máximo número de partidas en que un usuario puede votar"
       amount:
         one: "Hay 1 grupo de partidas presupuestarias"
         other: "Hay %{count} grupos de partidas presupuestarias"
       create:
         notice: "¡Grupo creado con éxito!"
+        button:
+          continue: "Continuar a partidas"
       update:
         notice: "Grupo actualizado"
       destroy:
@@ -162,6 +166,7 @@ es:
       index:
         back: "Volver a presupuestos"
         help: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
+        new_button: "Añadir un grupo nuevo"
     budget_headings:
       no_headings: "No hay partidas."
       amount:

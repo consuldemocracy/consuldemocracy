@@ -12,19 +12,15 @@
     <% end %>
   </div>
 
-  <% if @group.persisted? %>
-    <div class="row">
-      <div class="small-12 medium-6 column">
-        <%= f.select :max_votable_headings,
-                     (1..@group.headings.count),
-                     hint: t("admin.budget_groups.form.max_votable_headings_info") %>
-      </div>
+  <% if @group.persisted? && @group.headings.any? %>
+    <div class="small-12 medium-6 column margin">
+      <%= f.select :max_votable_headings,
+                   (1..@group.headings.count),
+                   hint: t("admin.budget_groups.form.max_votable_headings_info") %>
     </div>
   <% end %>
 
-  <div class="row">
-    <div class="small-12 medium-6 column">
-      <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button success" %>
-    </div>
+  <div class="clear">
+    <%= f.submit t("admin.budget_groups.form.#{action}"), class: "button hollow" %>
   </div>
 <% end %>

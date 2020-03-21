@@ -4,5 +4,5 @@
   <h2><%= t("admin.budgets.new.title") %></h2>
 </header>
 
-<%= render Admin::Budgets::CreationTimelineComponent.new %>
+<%= render Admin::Budgets::CreationTimelineComponent.new(step: "budget") %>
 <%= render "/admin/budgets/form" %>

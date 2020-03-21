@@ -50,7 +50,7 @@ class Admin::BudgetsController < Admin::BaseController
   def create
     @budget = Budget.new(budget_params.merge(published: false))
     if @budget.save
-      redirect_to edit_admin_budget_path(@budget), notice: t("admin.budgets.create.notice")
+      redirect_to admin_budget_groups_path(@budget), notice: t("admin.budgets.create.notice")
     else
       render :new
     end
