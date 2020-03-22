@@ -177,9 +177,14 @@ en:
         create: "Create new heading"
         edit: "Edit heading"
         submit: "Save heading"
+      group_switcher:
+        currently_showing: "Showing headings from the %{group} group."
+        different_group: "Manage headings from a different group"
+        the_other_group: "Manage headings from the %{group} group."
       index:
         back: "Go back to groups"
         help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+        new_button: "Add new heading"
         title: "%{budget} / %{group} headings"
     budget_phases:
       edit:
@@ -290,10 +295,13 @@ en:
       creation_timeline:
         budget: Budget
         groups: Groups
+        headings: Headings
       budgets:
         continue: "Continue to groups"
       groups:
         continue: "Continue to headings"
+      headings:
+        continue: "Continue to phases"
     milestones:
       index:
         table_id: "ID"

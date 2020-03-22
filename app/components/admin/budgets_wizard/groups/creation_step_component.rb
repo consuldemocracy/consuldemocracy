@@ -12,16 +12,12 @@ class Admin::BudgetsWizard::Groups::CreationStepComponent < ApplicationComponent
       group.budget
     end
 
-    def show_form?
-      group.errors.any?
-    end
-
     def form_path
       admin_budgets_wizard_budget_groups_path(budget)
     end
 
     def next_step_path
-      admin_budget_group_headings_path(budget, next_step_group) if next_step_enabled?
+      admin_budgets_wizard_budget_group_headings_path(budget, next_step_group) if next_step_enabled?
     end
 
     def next_step_enabled?

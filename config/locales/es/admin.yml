@@ -177,9 +177,14 @@ es:
         create: "Crear nueva partida"
         edit: "Editar partida"
         submit: "Guardar partida"
+      group_switcher:
+        currently_showing: "Mostrando las partidas del grupo: %{group}"
+        different_group: "Ir a partidas de otro grupo"
+        the_other_group: "Ir a partidas del grupo %{group}."
       index:
         back: "Volver a grupos"
         help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
+        new_button: "Añadir una partida nueva"
         title: "Partidas de %{budget} / %{group}"
     budget_phases:
       edit:
@@ -290,10 +295,13 @@ es:
       creation_timeline:
         budget: Presupuesto
         groups: Grupos
+        headings: Partidas
       budgets:
         continue: "Continuar a grupos"
       groups:
         continue: "Continuar a partidas"
+      headings:
+        continue: "Continuar a fases"
     milestones:
       index:
         table_id: "ID"

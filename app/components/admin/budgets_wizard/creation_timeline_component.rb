@@ -8,6 +8,6 @@ class Admin::BudgetsWizard::CreationTimelineComponent < ApplicationComponent
   private
 
     def steps
-      %w[budget groups]
+      %w[budget groups headings]
     end
 end
