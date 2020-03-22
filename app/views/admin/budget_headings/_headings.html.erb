@@ -3,31 +3,29 @@
   <table>
     <thead>
       <tr id="<%= dom_id(@group) %>">
-        <th><%= Budget::Heading.human_attribute_name(:name) %></th>
-        <th><%= Budget::Heading.human_attribute_name(:price) %></th>
-        <th><%= Budget::Heading.human_attribute_name(:population) %></th>
-        <th><%= Budget::Heading.human_attribute_name(:allow_custom_content) %></th>
-        <th><%= t("admin.actions.actions") %></th>
+        <th><%= t("admin.budget_headings.name") %></th>
+        <th class="text-center"><%= t("admin.budget_headings.price") %></th>
+        <th class="text-center"><%= t("admin.budget_headings.population") %></th>
+        <th class="text-center"><%= t("admin.budget_headings.allow_custom_content") %></th>
+        <% unless @mode.present? %>
+          <th class="text-right"><%= t("admin.actions.actions") %></th>
+        <% end %>
       </tr>
     </thead>
     <tbody>
       <% @headings.each do |heading| %>
         <tr id="<%= dom_id(heading) %>" class="heading">
-          <td><%= link_to heading.name, edit_admin_budget_group_heading_path(@budget, @group, heading) %></td>
-          <td><%= @budget.formatted_heading_price(heading) %></td>
-          <td><%= heading.population %></td>
-          <td>
+          <td><%= heading.name %></td>
+          <td class="text-center"><%= @budget.formatted_heading_price(heading) %></td>
+          <td class="text-center"><%= heading.population %></td>
+          <td class="text-center">
             <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
           </td>
-          <td>
-            <%= link_to t("admin.actions.edit"),
-                        edit_admin_budget_group_heading_path(@budget, @group, heading),
-                        class: "button hollow" %>
-            <%= link_to t("admin.actions.delete"),
-                        admin_budget_group_heading_path(@budget, @group, heading),
-                        method: :delete,
-                        class: "button hollow alert" %>
-          </td>
+          <% unless @mode.present? %>
+            <td class="text-right">
+              <%= render "headings_actions", heading: heading %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

@@ -186,6 +186,10 @@ es:
         multiple:
           help_block: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
     budget_headings:
+      name: Nombre de la partida
+      price: Cantidad de dinero
+      population: Población
+      allow_custom_content: Permitir bloque de contenidos
       no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
@@ -193,7 +197,7 @@ es:
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
         button:
-          continue: "Continuar"
+          continue: "Continuar a fases"
       update:
         notice: "Partida presupuestaria actualizada"
       destroy:
@@ -208,6 +212,12 @@ es:
         submit: "Guardar partida"
       index:
         back: "Volver a grupos"
+        showing_headings_from_group: "Mostrando las partidas del grupo:"
+        new_button: "Añadir una partida nueva"
+        single:
+          help_block: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
+        multiple:
+          help_block: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
     budget_phases:
       edit:
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa

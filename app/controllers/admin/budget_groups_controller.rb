@@ -27,7 +27,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
     @group = @budget.groups.new(budget_group_params)
     if @group.save
       if @mode == "single"
-        redirect_to new_admin_budget_group_heading_path(@group.budget, @group, url_params)
+        redirect_to admin_budget_group_headings_path(@group.budget, @group, url_params)
       else
         redirect_to groups_index, notice: t("admin.budget_groups.create.notice")
       end

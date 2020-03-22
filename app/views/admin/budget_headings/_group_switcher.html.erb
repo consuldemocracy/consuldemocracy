@@ -1,0 +1,16 @@
+<%= form_for [:admin, @budget], method: :put,
+                                url: switch_group_admin_budget_path(@budget),
+                                html: { class: "js-submit-on-change" } do |f| %>
+  <%= hidden_field :heading, :mode, value: @mode %>
+
+  <label for="budget_groups_switcher">
+    <%= t("admin.budget_headings.index.showing_headings_from_group") %>
+  </label>
+  <select name="budget[group_id]" id="budget_groups_switcher">
+    <% @budget.groups.each do |group| %>
+      <option value="<%= group.id %>" <%= "selected=selected" if @group.id == group.id %>>
+        <%= group.name %>
+      </option>
+    <% end %>
+  </select>
+<% end %>

@@ -186,6 +186,10 @@ en:
         multiple:
           help_block: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
     budget_headings:
+      name: Heading name
+      price: Money amount
+      population: Population
+      allow_custom_content: Allow content block
       no_headings: "There are no headings."
       amount:
         one: "There is 1 heading"
@@ -193,7 +197,7 @@ en:
       create:
         notice: "Heading created successfully!"
         button:
-          continue: "Continue"
+          continue: "Continue to phases"
       update:
         notice: "Heading updated successfully"
       destroy:
@@ -208,6 +212,12 @@ en:
         submit: "Save heading"
       index:
         back: "Go back to groups"
+        showing_headings_from_group: "Currently showing headings from the group:"
+        new_button: "Add new heading"
+        single:
+          help_block: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
+        multiple:
+          help_block: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
     budget_phases:
       edit:
         description_help_text: This text will appear in the header when the phase is active

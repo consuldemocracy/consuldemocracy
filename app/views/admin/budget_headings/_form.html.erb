@@ -14,7 +14,7 @@
     </div>
   <% end %>
 
-  <div class="small-12 medium-6 column end">
+  <div class="small-12 medium-6">
     <%= f.text_field :price, maxlength: 8 %>
 
     <%= f.text_field :population,
@@ -32,13 +32,13 @@
     <p class="help-text" id="budgets-content-blocks-help-text">
       <%= t("admin.budget_headings.form.content_blocks_info") %>
     </p>
+  </div>
 
-    <div class="small-12 medium-6 large-3">
-      <% if @mode == "single" %>
-        <%= f.submit t("admin.budget_headings.create.button.continue"), class: "button success expanded" %>
-      <% else %>
-        <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button success expanded" %>
-      <% end %>
-    </div>
+  <div class="clear">
+    <% if @mode == "single" %>
+      <%= f.submit t("admin.budget_headings.create.button.continue"), class: "button success" %>
+    <% else %>
+      <%= f.submit t("admin.budget_headings.form.#{action}"), class: "button hollow" %>
+    <% end %>
   </div>
 <% end %>

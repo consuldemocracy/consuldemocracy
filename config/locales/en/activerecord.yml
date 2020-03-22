@@ -203,7 +203,7 @@ en:
         latitude: "Latitude (optional)"
         longitude: "Longitude (optional)"
         name: "Heading name"
-        price: "Amount"
+        price: "Money amount"
         population: "Population (optional)"
       budget/heading/translation:
         name: "Heading name"

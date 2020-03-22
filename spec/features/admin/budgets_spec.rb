@@ -221,8 +221,8 @@ describe "Admin budgets" do
         click_button "Continue to headings"
 
         fill_in "Heading name", with: "Heading name"
-        fill_in "Amount", with: "1000000"
-        click_button "Continue"
+        fill_in "Money amount", with: "1000000"
+        click_button "Continue to phases"
 
         expect(page).to have_content "New participatory budget created successfully!"
 
@@ -376,7 +376,7 @@ describe "Admin budgets" do
           click_link "Add heading"
 
           fill_in "Heading name", with: "New heading for #{group.name}"
-          fill_in "Amount", with: "1000"
+          fill_in "Money amount", with: "1000"
           click_button "Create new heading"
         end
 

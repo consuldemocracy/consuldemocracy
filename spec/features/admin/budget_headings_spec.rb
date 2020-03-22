@@ -133,29 +133,51 @@ describe "Admin budget headings" do
       expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_content "Atlantis"
     end
+
+    scenario "Select to change the group", :js do
+      economy = create(:budget_group, budget: budget, name: "Economy")
+      health = create(:budget_group, budget: budget, name: "Health")
+      create(:budget_heading, group: economy, name: "Banking")
+      create(:budget_heading, group: health, name: "Hospitals")
+
+      visit admin_budget_group_headings_path(budget, economy)
+      within(".heading") do
+        expect(page).to have_content "Banking"
+        expect(page).not_to have_content "Hospitals"
+      end
+
+      select "Health", from: "budget_groups_switcher"
+
+      within(".heading") do
+        expect(page).to have_content "Hospitals"
+        expect(page).not_to have_content "Banking"
+      end
+      expect(page).to have_current_path admin_budget_group_headings_path(budget, health)
+    end
   end
 
   context "New" do
-    scenario "Create heading" do
+    scenario "Create heading", :js do
       visit admin_budget_group_headings_path(budget, group)
-      click_link "Create new heading"
+      click_button "Add new heading"
 
       fill_in "Heading name", with: "All City"
-      fill_in "Amount", with: "1000"
+      fill_in "Money amount", with: "1000"
       fill_in "Population (optional)", with: "10000"
       check "Allow content block"
 
       click_button "Create new heading"
 
       expect(page).to have_content "Heading created successfully!"
-      expect(page).to have_link "All City"
+      expect(page).to have_content "All City"
       expect(page).to have_content "€1,000"
       expect(page).to have_content "10000"
       expect(page).to have_content "Yes"
     end
 
-    scenario "Heading name is mandatory" do
-      visit new_admin_budget_group_heading_path(budget, group)
+    scenario "Heading name is mandatory", :js do
+      visit admin_budget_group_headings_path(budget, group)
+      click_button "Add new heading"
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
@@ -163,12 +185,13 @@ describe "Admin budget headings" do
       expect(page).to have_content "can't be blank"
     end
 
-    scenario "Heading amount is mandatory" do
-      visit new_admin_budget_group_heading_path(budget, group)
+    scenario "Heading money amount is mandatory" do
+      visit admin_budget_group_headings_path(budget, group)
+      click_button "Add new heading"
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
-      expect(page).to have_css(".is-invalid-label", text: "Amount")
+      expect(page).to have_css(".is-invalid-label", text: "Money amount")
       expect(page).to have_content "can't be blank"
     end
   end
@@ -181,7 +204,7 @@ describe "Admin budget headings" do
       within("#budget_heading_#{heading.id}") { click_link "Edit" }
 
       expect(page).to have_field "Heading name", with: heading.name
-      expect(page).to have_field "Amount", with: heading.price
+      expect(page).to have_field "Money amount", with: heading.price
       expect(page).to have_field "Population (optional)", with: heading.population
       expect(page).to have_field "Longitude (optional)", with: heading.longitude
       expect(page).to have_field "Latitude (optional)", with: heading.latitude
@@ -229,14 +252,14 @@ describe "Admin budget headings" do
       visit edit_admin_budget_group_heading_path(budget, group, heading)
 
       expect(page).to have_field "Heading name", with: "All City"
-      expect(page).to have_field "Amount", with: 1000
+      expect(page).to have_field "Money amount", with: 1000
       expect(page).to have_field "Population (optional)", with: 10000
       expect(page).to have_field "Longitude (optional)", with: 20.50
       expect(page).to have_field "Latitude (optional)", with: -10.50
       expect(find_field("Allow content block")).to be_checked
 
       fill_in "Heading name", with: "Districts"
-      fill_in "Amount", with: "2000"
+      fill_in "Money amount", with: "2000"
       fill_in "Population (optional)", with: "20000"
       fill_in "Longitude (optional)", with: "-40.47"
       fill_in "Latitude (optional)", with: "25.25"
@@ -247,7 +270,7 @@ describe "Admin budget headings" do
 
       visit edit_admin_budget_group_heading_path(budget, group, heading)
       expect(page).to have_field "Heading name", with: "Districts"
-      expect(page).to have_field "Amount", with: 2000
+      expect(page).to have_field "Money amount", with: 2000
       expect(page).to have_field "Population (optional)", with: 20000
       expect(page).to have_field "Longitude (optional)", with: -40.47
       expect(page).to have_field "Latitude (optional)", with: 25.25

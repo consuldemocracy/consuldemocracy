@@ -205,7 +205,7 @@ es:
         latitude: "Latitud (opcional)"
         longitude: "Longitud (opcional)"
         name: "Nombre de la partida"
-        price: "Cantidad"
+        price: "Cantidad de dinero"
         population: "Población (opcional)"
       budget/heading/translation:
         name: "Nombre de la partida"
