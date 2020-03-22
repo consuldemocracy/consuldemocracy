@@ -110,6 +110,7 @@
 //= require cookies
 //= require columns_selector
 //= require budget_edit_associations
+//= require link_to_top
 
 var initialize_modules = function() {
   "use strict";
@@ -164,6 +165,7 @@ var initialize_modules = function() {
     App.ColumnsSelector.initialize();
   }
   App.BudgetEditAssociations.initialize();
+  App.LinkToTop.initialize();
 };
 
 $(function() {

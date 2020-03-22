@@ -6,7 +6,7 @@
     <%= content_for :head %>
   </head>
 
-  <body class="admin" data-watch-form-message="<%= I18n.t("layouts.admin.watch_form_message") %>">
+  <body id="body" class="admin" data-watch-form-message="<%= I18n.t("layouts.admin.watch_form_message") %>">
     <div class="off-canvas-wrapper">
       <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
         <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
@@ -32,6 +32,10 @@
               <%= render "layouts/flash" %>
               <%= render "layouts/officing_booth" if controller.class.parent == Officing && session[:booth_id].present? %>
               <%= yield %>
+
+              <% if feature?(:link_to_top) %>
+                <%= render "layouts/link_to_top" %>
+              <% end %>
             </div>
           </div>
         </div>
