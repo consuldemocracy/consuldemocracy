@@ -55,6 +55,7 @@ namespace :admin do
     member do
       patch :publish
       put :calculate_winners
+      put :switch_group
     end
 
     resources :groups, except: [:show], controller: "budget_groups" do

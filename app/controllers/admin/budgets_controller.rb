@@ -39,6 +39,10 @@ class Admin::BudgetsController < Admin::BaseController
                 notice: I18n.t("admin.budgets.winners.calculated")
   end
 
+  def switch_group
+    redirect_to admin_budget_group_headings_path(@budget, selected_group_id)
+  end
+
   def update
     if @budget.update(budget_params)
       redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
@@ -89,5 +93,13 @@ class Admin::BudgetsController < Admin::BaseController
     def load_staff
       @admins = Administrator.includes(:user)
       @valuators = Valuator.includes(:user).order(description: :asc).order("users.email ASC")
+    end
+
+    def selected_group_params
+      params.require(:budget).permit(:group_id) if params.key?(:budget)
+    end
+
+    def selected_group_id
+      selected_group_params[:group_id]
     end
 end

@@ -96,6 +96,7 @@ en:
       creation_timeline:
         budget: Budget
         groups: Groups
+        headings: Headings
       update:
         notice: Participatory budget updated successfully
       publish:
@@ -128,6 +129,7 @@ en:
         main_call_to_action_description: "This link will appear on main banner of this participatory budget and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         info:
           budget_settings: "General participatory budget settings"
+          heading_settings: "Heading settings"
           phases_settings: "Phases settings"
           staff_settings: "Administrators and Valuators assigned to the budget"
       destroy:
@@ -168,12 +170,18 @@ en:
         help: "Groups are meant to organize headings. After a group is created and it contais headings, it's possible to determine in how many headings a user can vote per group."
         new_button: "Add new group"
     budget_headings:
+      name: Heading name
+      price: Money amount
+      population: Population
+      allow_custom_content: Allow content block
       no_headings: "There are no headings."
       amount:
         one: "There is 1 heading"
         other: "There are %{count} headings"
       create:
         notice: "Heading created successfully!"
+        button:
+          continue: "Continue to phases"
       update:
         notice: "Heading updated successfully"
       destroy:
@@ -190,6 +198,8 @@ en:
       index:
         back: "Go back to groups"
         help: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
+        new_button: "Add new heading"
+        showing_headings_from_group: "Currently showing headings from the group:"
     budget_phases:
       edit:
         description_help_text: This text will appear in the header when the phase is active

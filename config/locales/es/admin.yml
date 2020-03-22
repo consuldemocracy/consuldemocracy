@@ -96,6 +96,7 @@ es:
       creation_timeline:
         budget: Presupuesto
         groups: Grupos
+        headings: Partidas
       update:
         notice: Presupuestos participativos actualizados
       publish:
@@ -128,6 +129,7 @@ es:
         main_call_to_action_description: "Este enlace aparecerá en la cabecera de este presupuesto participativo y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         info:
           budget_settings: "Configuración genérica del presupuesto participativo"
+          heading_settings: "Configuración de la partida"
           phases_settings: "Configuración de las fases"
           staff_settings: "Administradores y Evaluadores asigandos al presupuesto"
       destroy:
@@ -168,12 +170,18 @@ es:
         help: "Los grupos sirven para organizar las partidas del presupuesto. Después de que un grupo sea creado y éste contenga partidas, es posible determinar el número de partidas a las que un usuario puede votar por grupo."
         new_button: "Añadir un grupo nuevo"
     budget_headings:
+      name: Nombre de la partida
+      price: Cantidad de dinero
+      population: Población
+      allow_custom_content: Permitir bloque de contenidos
       no_headings: "No hay partidas."
       amount:
         one: "Hay 1 partida presupuestarias"
         other: "Hay %{count} partidas presupuestarias"
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
+        button:
+          continue: "Continuar a fases"
       update:
         notice: "Partida presupuestaria actualizada"
       destroy:
@@ -190,6 +198,8 @@ es:
       index:
         back: "Volver a grupos"
         help: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
+        new_button: "Añadir una partida nueva"
+        showing_headings_from_group: "Mostrando las partidas del grupo:"
     budget_phases:
       edit:
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa

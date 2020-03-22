@@ -5,10 +5,11 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   before_action :load_budget
   before_action :load_group
-  before_action :load_heading, except: [:index, :new, :create]
+  before_action :load_headings, only: [:index, :create]
+  before_action :load_heading, except: [:new, :index, :create]
 
   def index
-    @headings = @group.headings.order(:id)
+    @heading = @group.headings.new
   end
 
   def new
@@ -52,6 +53,10 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
     def load_group
       @group = @budget.groups.find_by_slug_or_id! params[:group_id]
+    end
+
+    def load_headings
+      @headings = @group.headings.order(:id)
     end
 
     def load_heading

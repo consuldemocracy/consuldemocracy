@@ -35,7 +35,7 @@
               class: "button success" %>
 <% end %>
 
-<% if @groups.blank? %>
+<% if @groups.empty? %>
   <p class="button secondary disabled">
     <%= t("admin.budget_groups.create.button.continue") %>
   </p>

@@ -2,9 +2,40 @@
 
 <header>
   <h2><%= "#{@budget.name} / #{@group.name}" %></h2>
-  <%= link_to t("admin.budget_headings.form.create"), new_admin_budget_group_heading_path %>
 </header>
 
 <%= render Admin::Budgets::HelpComponent.new("budget_headings") %>
+<%= render Admin::Budgets::CreationTimelineComponent.new(step: "headings") %>
 
+<div class="small-12 medium-6">
+  <%= render "group_switcher" %>
+</div>
 <%= render "headings" %>
+
+<div id="headings_form" class="<%= class_for_form(@heading) %>" data-toggler=".hide">
+  <%= render "form", path: admin_budget_group_headings_path(@budget, @group), action: "create" %>
+</div>
+
+<% unless @heading.errors.any? %>
+  <button id="new_button" class="button add" data-toggler=".hide"
+          data-toggle="headings_form new_button cancel_button">
+    <strong><%= t("admin.budget_headings.index.new_button") %></strong>
+  </button>
+<% end %>
+
+<p id="cancel_button" class="hide" data-toggler=".hide"
+   data-toggle="headings_form new_button cancel_button">
+  <button class="delete"><%= t("links.form.cancel_button") %></button>
+</p>
+
+<% if @budget.headings.any? %>
+  <%= link_to t("admin.budget_headings.create.button.continue"),
+              admin_budget_path(@budget),
+              class: "button success" %>
+<% end %>
+
+<% if @budget.headings.empty? %>
+  <p class="button secondary disabled">
+    <%= t("admin.budget_headings.create.button.continue") %>
+  </p>
+<% end %>
