@@ -194,8 +194,10 @@ es:
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
+        title: "Editar fase"
       index:
         help: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+        title: "Fases de %{budget}"
     budget_investments:
       index:
         heading_filter_all: Todas las partidas
@@ -296,12 +298,16 @@ es:
         budget: Presupuesto
         groups: Grupos
         headings: Partidas
+        phases: Fases
       budgets:
         continue: "Continuar a grupos"
       groups:
         continue: "Continuar a partidas"
       headings:
         continue: "Continuar a fases"
+      phases:
+        back: "Volver a partidas"
+        continue: "Finalizar"
     milestones:
       index:
         table_id: "ID"

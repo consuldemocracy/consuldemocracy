@@ -77,6 +77,8 @@ namespace :admin do
       resources :groups, only: [:index, :create, :edit, :update, :destroy] do
         resources :headings, only: [:index, :create, :edit, :update, :destroy]
       end
+
+      resources :phases, as: "budget_phases", only: [:index, :edit, :update]
     end
   end
 

@@ -1,0 +1,12 @@
+<%= back_link_to back_link_path, t("admin.budgets_wizard.phases.back") %>
+
+<%= header %>
+
+<%= render Admin::Budgets::HelpComponent.new("budget_phases") %>
+<%= render Admin::BudgetsWizard::CreationTimelineComponent.new("phases") %>
+
+<%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
+
+<%= link_to t("admin.budgets_wizard.phases.continue"),
+            admin_budget_path(budget),
+            class: "button success" %>

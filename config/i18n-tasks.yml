@@ -149,6 +149,7 @@ ignore_unused:
   - "admin.budgets.edit.(administrators|valuators).*"
   - "admin.budget_groups.index.*.help_block"
   - "admin.budget_headings.index.*.help_block"
+  - "admin.budget_phases.index.help_block"
   - "admin.budget_investments.index.filter*"
   - "admin.organizations.index.filter*"
   - "admin.hidden_users.index.filter*"

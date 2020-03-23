@@ -16,7 +16,7 @@ class Admin::BudgetsWizard::Headings::CreationStepComponent < ApplicationCompone
     end
 
     def next_step_path
-      admin_budget_path(budget) if next_step_enabled?
+      admin_budgets_wizard_budget_budget_phases_path(budget) if next_step_enabled?
     end
 
     def next_step_enabled?

@@ -188,6 +188,7 @@ en:
         title: "%{budget} / %{group} headings"
     budget_phases:
       edit:
+        title: "Edit phase"
         description_help_text: This text will appear in the header when the phase is active
         duration: "Phase's duration"
         duration_description: "The period of time this phase will be active."
@@ -196,6 +197,7 @@ en:
         save_changes: Save changes
       index:
         help: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        title: "%{budget} phases"
     budget_investments:
       index:
         heading_filter_all: All headings
@@ -296,12 +298,16 @@ en:
         budget: Budget
         groups: Groups
         headings: Headings
+        phases: Phases
       budgets:
         continue: "Continue to groups"
       groups:
         continue: "Continue to headings"
       headings:
         continue: "Continue to phases"
+      phases:
+        back: "Go back to headings"
+        continue: "Finish"
     milestones:
       index:
         table_id: "ID"
