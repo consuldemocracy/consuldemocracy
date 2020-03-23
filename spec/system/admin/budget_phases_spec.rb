@@ -13,7 +13,7 @@ describe "Admin budget phases" do
       uncheck "budget_phase_enabled"
       click_button "Save changes"
 
-      expect(page).to have_current_path(edit_admin_budget_path(budget))
+      expect(page).to have_current_path(admin_budget_path(budget))
       expect(page).to have_content "Changes saved"
 
       expect(budget.current_phase.starts_at.to_date).to eq((Date.current + 1.day).to_date)
@@ -29,10 +29,10 @@ describe "Admin budget phases" do
         expect(page).to have_content "Accepting projects"
         expect(page).not_to have_content "My phase custom name"
 
-        within("tr", text: "Accepting projects") { click_link "Edit phase" }
+        within("tr", text: "Accepting projects") { click_link "Edit content" }
       end
 
-      expect(page).to have_css "h2", exact_text: "Edit Participatory budget - Accepting projects"
+      expect(page).to have_css "h2", exact_text: "Edit phase - Accepting projects"
 
       fill_in "Name", with: "My phase custom name"
       click_button "Save changes"

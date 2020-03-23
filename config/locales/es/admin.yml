@@ -97,6 +97,7 @@ es:
         budget: Presupuesto
         groups: Grupos
         headings: Partidas
+        phases: Fases
       update:
         notice: Presupuestos participativos actualizados
       publish:
@@ -111,7 +112,7 @@ es:
         duration: "Duración"
         enabled: Habilitada
         actions: Acciones
-        edit_phase: Editar fase
+        phase_content: "Editar contenido"
         active: Activa
         blank_dates: Sin fechas
         administrators:
@@ -208,7 +209,10 @@ es:
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
         save_changes: Guardar cambios
+        title: "Editar fase"
       index:
+        button:
+          continue: "Finalizar"
         help: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
     budget_investments:
       index:

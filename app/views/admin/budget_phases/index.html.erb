@@ -1,0 +1,10 @@
+<h2><%= @budget.name %></h2>
+
+<%= render Admin::Budgets::HelpComponent.new("budget_phases") %>
+<%= render Admin::Budgets::CreationTimelineComponent.new(step: "phases") %>
+
+<%= render Admin::BudgetPhases::PhasesComponent.new(@budget) %>
+
+<%= link_to t("admin.budget_phases.index.button.continue"),
+            admin_budget_path(@budget),
+            class: "button success" %>

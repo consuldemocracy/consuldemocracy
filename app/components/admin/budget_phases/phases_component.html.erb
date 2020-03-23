@@ -31,7 +31,8 @@
         <td>
           <%= render Admin::TableActionsComponent.new(phase,
             actions: [:edit],
-            edit_text: t("admin.budgets.edit.edit_phase")
+            edit_text: t("admin.budgets.edit.phase_content"),
+            edit_path: edit_admin_budget_budget_phase_path(budget, phase)
           ) %>
         </td>
       </tr>

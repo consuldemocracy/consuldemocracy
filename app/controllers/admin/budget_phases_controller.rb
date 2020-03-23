@@ -1,7 +1,11 @@
 class Admin::BudgetPhasesController < Admin::BaseController
   include Translatable
 
+  before_action :load_budget, only: [:index]
   before_action :load_phase, only: [:edit, :update]
+
+  def index
+  end
 
   def edit
   end
@@ -9,13 +13,17 @@ class Admin::BudgetPhasesController < Admin::BaseController
   def update
     if @phase.update(budget_phase_params)
       notice = t("flash.actions.save_changes.notice")
-      redirect_to edit_admin_budget_path(@phase.budget), notice: notice
+      redirect_to admin_budget_path(@phase.budget), notice: notice
     else
       render :edit
     end
   end
 
   private
+
+    def load_budget
+      @budget = Budget.find_by_slug_or_id! params[:budget_id]
+    end
 
     def load_phase
       @phase = Budget::Phase.find(params[:id])
