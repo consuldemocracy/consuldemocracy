@@ -81,11 +81,9 @@ en:
         table_name: Name
         table_phase: Current phase
         table_budget_type: Budget Type
-        table_edit_groups: Headings groups
         table_budget_completed: Completed
         table_duration: Duration
         table_preview: Preview budget
-        edit_groups: Edit headings groups
         edit_budget: Edit budget
         admin_ballots: Admin ballots
         no_budgets: "There are no budgets."

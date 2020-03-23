@@ -19,7 +19,6 @@
         <th><%= t("admin.budgets.index.table_name") %></th>
         <th><%= t("admin.budgets.index.table_phase") %></th>
         <th><%= t("admin.budgets.index.table_budget_type") %></th>
-        <th><%= t("admin.budgets.index.table_edit_groups") %></th>
         <th><%= t("admin.budgets.index.table_duration") %></th>
         <th><%= t("admin.shared.actions") %></th>
       </tr>
@@ -45,13 +44,6 @@
               <%= t("admin.budgets.index.type_single") %>
             <% else %>
               <%= t("admin.budgets.index.type_multiple") %>
-            <% end %>
-          </td>
-          <td>
-            <% if budget.single_heading? %>
-              <%= budget.headings.first.name %>
-            <% else %>
-              <%= link_to t("admin.budgets.index.edit_groups"), admin_budget_groups_path(budget) %>
             <% end %>
           </td>
           <td class="small">

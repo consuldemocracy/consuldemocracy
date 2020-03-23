@@ -81,11 +81,9 @@ es:
         table_name: Nombre
         table_phase: Fasea actual
         table_budget_type: Tipo
-        table_edit_groups: Grupos de partidas
         table_budget_completed: Completado
         table_duration: Duración
         table_preview: Previsualizar presupuesto
-        edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
