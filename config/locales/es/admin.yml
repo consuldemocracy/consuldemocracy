@@ -85,7 +85,6 @@ es:
         table_name: Nombre
         table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
-        edit_groups: Editar grupos de partidas
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."

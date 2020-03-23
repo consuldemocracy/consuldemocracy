@@ -13,7 +13,6 @@ describe Admin::Budgets::TableActionsComponent, type: :component do
 
     expect(page).to have_css "a", count: 5
     expect(page).to have_link "Manage projects", href: /investments/
-    expect(page).to have_link "Edit headings groups", href: /groups/
     expect(page).to have_link "Edit budget", href: /edit/
     expect(page).to have_link "Admin ballots"
     expect(page).to have_link "Preview budget", href: /budgets/
