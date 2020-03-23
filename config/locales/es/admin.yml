@@ -155,6 +155,7 @@ es:
         timeline_budget: Presupuesto
         timeline_groups: Grupos
         timeline_headings: Partidas
+        timeline_phases: Fases
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
@@ -220,6 +221,7 @@ es:
           help_block: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
     budget_phases:
       edit:
+        title: "Editar fase"
         description_help_text: Este texto aparecerá en la cabecera cuando la fase esté activa
         enabled_help_text: Esta fase será pública en el calendario de fases del presupuesto y estará activa para otros propósitos
         save_changes: Guardar cambios
@@ -229,6 +231,10 @@ es:
         main_call_to_action: "Botón de acción principal (opcional)"
         main_call_to_action_description: "Este botón aparecerá en la cabecera de este presupuesto participativo cuando esta fase esté activa y permite al usuario ejecutar una acción específica como crear una nueva propuesta, votar las existentes, o leer más sobre el funcionamiento de los presupuestos participativos."
         phase_name_help_text: "Este es el título de la fase que los usuarios leerán en el encabezado cuando la fase esté activa."
+      index:
+        help_block: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+        button:
+          continue: "Finalizar"
     budget_investments:
       index:
         heading_filter_all: Todas las partidas

@@ -1,5 +1,7 @@
-<%= back_link_to edit_admin_budget_path(@phase.budget) %>
+<% unless @mode.present? %>
+  <%= back_link_to edit_admin_budget_path(@phase.budget) %>
+<% end %>
 
-<h2><%= t("admin.budgets.edit.title") %> - <%= t("budgets.phase.#{@phase.kind}") %></h2>
+<h2><%= t("admin.budget_phases.edit.title") %> - <%= @phase.name %></h2>
 
 <%= render "/admin/budget_phases/form" %>

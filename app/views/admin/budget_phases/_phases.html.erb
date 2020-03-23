@@ -1,51 +1,49 @@
 <% if @budget.phases.present? %>
-  <div class="small-12 column">
-    <table id="budget-phases-table" class="table-for-mobile">
-      <thead>
-        <tr>
-          <th><%= t("admin.budgets.edit.phase") %></th>
-          <th><%= t("admin.budgets.edit.duration") %></th>
-          <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
-          <th class="text-center"><%= t("admin.shared.actions") %></th>
-        </tr>
-      </thead>
-      <% @budget.phases.order(:id).each do |phase| %>
-        <tr id="<%= dom_id(phase) %>" class="phase">
-          <td>
-            <% if phase.name.present? %>
-              <%= phase.name %>
-            <% else %>
-              <%= t("budgets.phase.#{phase.kind}") %>
-            <% end %>
-            <% if @budget.current_phase == phase %>
-              <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
-            <% end %>
-          </td>
-          <td>
-            <% if phase.starts_at.present? || phase.ends_at.present? %>
-              <%= phase_begin_date(phase) if phase.starts_at.present? %>
-              -
-              <%= phase_end_date(phase) if phase.ends_at.present? %>
-            <% else %>
-              <em><%= t("admin.budgets.edit.blank_dates") %></em>
-            <% end %>
-          </td>
-          <td class="text-center">
-            <%= check_box :phase, :enabled, checked: phase.enabled?, label: false,
-                          class: "js-toggle-budget-phase-enable",
-                          data: { "js-url" => toggle_enable_admin_budget_budget_phase_path(phase.budget, phase) } %>
-          </td>
-          <td class="text-center">
-            <%= link_to edit_admin_budget_budget_phase_path(@budget, phase), class: "icon-link" do %>
-              <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
-                    title="<%= t("admin.budgets.edit.phase_content") %>">
-                <span class="far fa-edit"></span>
-                <span class="show-for-sr"><%= t("admin.budgets.edit.phase_content") %></span>
-              </span>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
+  <table id="budget-phases-table" class="table-for-mobile">
+    <thead>
+      <tr>
+        <th><%= t("admin.budgets.edit.phase") %></th>
+        <th><%= t("admin.budgets.edit.duration") %></th>
+        <th class="text-center"><%= t("admin.budgets.edit.enabled") %></th>
+        <th class="text-center"><%= t("admin.shared.actions") %></th>
+      </tr>
+    </thead>
+    <% @budget.phases.order(:id).each do |phase| %>
+      <tr id="<%= dom_id(phase) %>" class="phase">
+        <td>
+          <% if phase.name.present? %>
+            <%= phase.name %>
+          <% else %>
+            <%= t("budgets.phase.#{phase.kind}") %>
+          <% end %>
+          <% if @budget.current_phase == phase %>
+            <span class="label success"><strong><%= t("admin.budgets.edit.active") %></strong></span>
+          <% end %>
+        </td>
+        <td>
+          <% if phase.starts_at.present? || phase.ends_at.present? %>
+            <%= phase_begin_date(phase) if phase.starts_at.present? %>
+            -
+            <%= phase_end_date(phase) if phase.ends_at.present? %>
+          <% else %>
+            <em><%= t("admin.budgets.edit.blank_dates") %></em>
+          <% end %>
+        </td>
+        <td class="text-center">
+          <%= check_box :phase, :enabled, checked: phase.enabled?, label: false,
+                        class: "js-toggle-budget-phase-enable",
+                        data: { "js-url" => toggle_enable_admin_budget_budget_phase_path(phase.budget, phase) } %>
+        </td>
+        <td class="text-center">
+          <%= link_to edit_admin_budget_budget_phase_path(@budget, phase, @url_params), class: "icon-link" do %>
+            <span data-tooltip tabindex="1" data-position="bottom" data-alignment="center"
+                  title="<%= t("admin.budgets.edit.phase_content") %>">
+              <span class="far fa-edit"></span>
+              <span class="show-for-sr"><%= t("admin.budgets.edit.phase_content") %></span>
+            </span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 <% end %>

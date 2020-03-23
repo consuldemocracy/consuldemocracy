@@ -155,6 +155,7 @@ en:
         timeline_budget: Budget
         timeline_groups: Groups
         timeline_headings: Headings
+        timeline_phases: Phases
     budget_groups:
       name: "Name"
       headings_name: "Headings"
@@ -220,6 +221,7 @@ en:
           help_block: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
     budget_phases:
       edit:
+        title: "Edit phase"
         description_help_text: This text will appear in the header when the phase is active
         enabled_help_text: This phase will be public in the budget's phases timeline, as well as active for any other purpose
         save_changes: Save changes
@@ -229,6 +231,10 @@ en:
         main_call_to_action: "Main call to action (optional)"
         main_call_to_action_description: "This button will appear on main banner of this participatory budget when this phase is enabled and encourages your user to perform a specific action like creating a proposal, voting for existing ones, or learn more about the process."
         phase_name_help_text: "This is the title of the phase users will read on the header whenever this phase is active."
+      index:
+        help_block: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+        button:
+          continue: "Finalize"
     budget_investments:
       index:
         heading_filter_all: All headings

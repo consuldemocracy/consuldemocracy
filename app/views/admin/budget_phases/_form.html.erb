@@ -4,6 +4,8 @@
 
   <%= render "shared/errors", resource: @phase %>
 
+  <%= hidden_field :budget, :mode, value: @mode %>
+
   <div class="margin-top">
     <div class="small-12 column">
       <p class="form-label"><%= t("admin.budget_phases.edit.duration") %></p>

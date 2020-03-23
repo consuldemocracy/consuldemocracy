@@ -214,6 +214,7 @@ ignore_unused:
   - "dashboard.polls.*.submit"
   - "admin.budget_groups.index.*.help_block"
   - "admin.budget_headings.index.*.help_block"
+  - "admin.budget_phases.index.help_block"
 ####
 ## Exclude these keys from the `i18n-tasks eq-base" report:
 # ignore_eq_base:

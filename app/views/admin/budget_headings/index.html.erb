@@ -35,7 +35,7 @@
 
 <% if @mode.present? && @budget.headings.any? %>
   <%= link_to t("admin.budget_headings.create.button.continue"),
-              admin_budget_path(@budget),
+              admin_budget_budget_phases_path(@budget, mode: @mode),
               class: "button success" %>
 <% end %>
 

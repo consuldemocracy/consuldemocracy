@@ -8,4 +8,7 @@
   <li class="<%= "step-active" if budget_new_step_headings?(step) %>">
     <%= t("admin.budgets.shared.timeline_headings") %>
   </li>
+  <li class="<%= "step-active" if budget_new_step_phases?(step) %>">
+    <%= t("admin.budgets.shared.timeline_phases") %>
+  </li>
 </ul>

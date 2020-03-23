@@ -24,7 +24,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
     @heading = @group.headings.new(budget_heading_params)
     if @heading.save
       if @mode == "single"
-        redirect_to admin_budget_path(@heading.group.budget), notice: t("admin.budgets.create.notice")
+        redirect_to admin_budget_budget_phases_path(@budget, url_params)
       else
         redirect_to headings_index, notice: t("admin.budget_headings.create.notice")
       end

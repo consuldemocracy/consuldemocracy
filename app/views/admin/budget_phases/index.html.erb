@@ -1,0 +1,13 @@
+<h2><%= @budget.name %></h2>
+
+<%= render "help_block" %>
+
+<%= render "/admin/budgets/creation_timeline", step: "phases" %>
+
+<%= render "phases" %>
+
+<% if @mode.present? %>
+  <%= link_to t("admin.budget_phases.index.button.continue"),
+              admin_budget_path(@budget),
+              class: "button success" %>
+<% end %>

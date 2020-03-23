@@ -18,7 +18,7 @@ describe "Admin budget phases" do
       uncheck "budget_phase_enabled"
       click_button "Save changes"
 
-      expect(page).to have_current_path(edit_admin_budget_path(budget))
+      expect(page).to have_current_path(admin_budget_path(budget))
       expect(page).to have_content "Changes saved"
 
       expect(budget.current_phase.starts_at.to_date).to eq((Date.current + 1.day).to_date)
