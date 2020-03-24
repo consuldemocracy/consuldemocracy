@@ -3,3 +3,123 @@
 // * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#css
 // * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#css
 //
+
+// 01. General
+
+.color-brand-secondary {
+  color: $brand-secondary;
+}
+
+// 02. Header
+
+// Color de fondo de la cabecera
+header, .top-bar {
+  background: #ebebeb !important;
+}
+
+// Color de fondo de los enlaces en la parte superior de la cabecera
+.top-links {
+  background-color: #E6118F;
+}
+
+// Eliminado margen en la cabecera
+.top-bar-title {
+  margin: 0;
+}
+
+// Color enlaces menú usuario
+.top-bar ul.menu > li a {
+    color: #4d4d4d;
+}
+
+// Tamaño fuente icóno notificación
+.notifications [class^="icon-"] {
+  font-size: 0.8rem;
+}
+
+.notifications .icon-circle {
+  font-size: 0.5rem;
+}
+
+// Menú principal de la página
+.subnavigation {
+  background-color: $brand;
+}
+
+.subnavigation {
+  a {
+    color: #FFFFFF;
+  }
+
+  a:hover, a:active, a.is-active {
+    color: $brand_secondary;
+  }
+}
+
+// Dropdown menú del usuario
+.dropdown.menu > li {
+  a {
+    background: none;
+  }
+
+  &.is-active > a {
+    color: #000;
+  }
+
+  &.is-dropdown-submenu-parent > a::after {
+    border-color: #000 transparent transparent;
+  }
+}
+
+@media screen and (max-width: 39.999em) {
+  .top-bar span {
+    color: #000;
+  }
+
+  .top-bar .menu-icon::after {
+    background: #000;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+    -webkit-box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  }
+}
+
+// 03. Footer
+
+// Tamaño iconos redes sociales
+.social a {
+  font-size: 0.9rem;
+}
+
+// 04 Homepage
+
+.welcome-image {
+  max-width: 353px;
+}
+
+// Contenido debajo de la cabecera
+.homepage-tu-voz {
+  background: $brand;
+
+  h4 {
+    color: #FFF;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .welcome-image {
+    position: relative;
+    top: -25px;
+    margin-left: 1.5rem;
+  }
+
+  .homepage-tu-voz {
+    position: relative;
+    top: -25px;
+  }
+}
+
+@media screen and (max-width: 63.999em) {
+  .homepage-tu-voz {
+    margin-top: 8px;
+  }
+}
