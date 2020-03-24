@@ -519,13 +519,14 @@ describe "Admin budgets" do
 
   context "Update" do
     scenario "Update budget" do
-      visit edit_admin_budget_path(create(:budget))
+      budget = create(:budget)
+      visit edit_admin_budget_path(budget)
 
       fill_in "Name", with: "More trees on the streets"
       click_button "Update Budget"
 
-      expect(page).to have_content("More trees on the streets")
-      expect(page).to have_current_path(admin_budgets_path)
+      expect(page).to have_field "Name", with: "More trees on the streets"
+      expect(page).to have_current_path admin_budget_path(budget)
     end
 
     scenario "Deselect all selected staff", :js do

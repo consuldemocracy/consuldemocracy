@@ -45,7 +45,7 @@ class Admin::BudgetsController < Admin::BaseController
 
   def update
     if @budget.update(budget_params)
-      redirect_to admin_budgets_path, notice: t("admin.budgets.update.notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budgets.update.notice")
     else
       load_staff
       render :edit
