@@ -24,20 +24,12 @@ describe "Budgets creation wizard", :admin do
 
     click_link "Finish"
 
-    within "tr", text: "Single heading budget" do
-      click_link "Heading groups"
-    end
+    within "section", text: "Groups and headings" do
+      expect(page).to have_content "Single heading budget"
 
-    expect(page).to have_content "There is 1 group"
-
-    within "tr", text: "Single heading budget" do
-      click_link "Headings"
-    end
-
-    expect(page).to have_content "There is 1 heading"
-
-    within "tbody" do
-      expect(page).to have_content "One and only heading"
+      within "tbody" do
+        expect(page).to have_content "One and only heading"
+      end
     end
   end
 
@@ -119,26 +111,21 @@ describe "Budgets creation wizard", :admin do
 
     click_link "Finish"
 
-    within "tr", text: "Multiple headings budget" do
-      click_link "Heading groups"
-    end
+    within "section", text: "Groups and headings" do
+      within "section", text: "All city" do
+        within "tbody" do
+          expect(page).to have_css "tr", count: 1
+          expect(page).to have_content "All city"
+        end
+      end
 
-    expect(page).to have_content "There are 2 groups"
-
-    within "tbody" do
-      expect(page).to have_content "All city"
-      expect(page).to have_content "Districts"
-    end
-
-    within "tr", text: "Districts" do
-      click_link "Headings"
-    end
-
-    expect(page).to have_content "There are 2 headings"
-
-    within "tbody" do
-      expect(page).to have_content "North"
-      expect(page).to have_content "South"
+      within "section", text: "Districts" do
+        within "tbody" do
+          expect(page).to have_css "tr", count: 2
+          expect(page).to have_content "North"
+          expect(page).to have_content "South"
+        end
+      end
     end
   end
 end

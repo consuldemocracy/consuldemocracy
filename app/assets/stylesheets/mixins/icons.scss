@@ -1505,3 +1505,22 @@ $font-awesome-icons: (
     mask-image: var(--fa-icon-#{$style}-#{$icon});
   }
 }
+
+@mixin icon-on-top {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  line-height: $global-lineheight;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    color: $link-hover;
+    text-decoration: none;
+  }
+
+  &::before {
+    font-size: 1.6em;
+  }
+}

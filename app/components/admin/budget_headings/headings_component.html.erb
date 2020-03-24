@@ -1,8 +1,7 @@
 <% if headings.any? %>
-  <h3><%= t("admin.budget_headings.amount", count: headings.count) %></h3>
   <table>
     <thead>
-      <tr id="<%= dom_id(group) %>">
+      <tr>
         <th><%= Budget::Heading.human_attribute_name(:name) %></th>
         <th><%= Budget::Heading.human_attribute_name(:price) %></th>
         <% if budget.approval_voting? %>

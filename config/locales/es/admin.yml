@@ -90,7 +90,6 @@ es:
         type_multiple: "Múltiples partidas"
         type_pending: "Pendiente: Aún no hay partidas"
         type_single: "Partida única"
-        edit_groups: Grupos de partidas
         admin_ballots: Urnas
         no_budgets: "No hay presupuestos participativos."
       create:
@@ -145,6 +144,10 @@ es:
           multiple: "Las partidas sirven para dividir el dinero del presupuesto participativo. Aquí puedes ir añadiendo partidas para cada grupo y establecer la cantidad de dinero que se gastará en cada partida."
           single: "Las partidas sirven para dividir el dinero del presupuesto participativo. Como este presupuesto solo tendrá una partida aquí podrás establecer la cantidad de dinero que se gastará en este presupuesto participativo."
         phases: "Los presupuestos participativos tienen distintas fases. Aquí puedes habilitar o deshabilitar fases y también personalizar cada una de las fases."
+      show:
+        add_group: "Añadir grupo"
+        add_heading: "Añadir partida"
+        groups_and_headings: "Grupos y partidas"
       winners:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
@@ -170,13 +173,9 @@ es:
         max_votable_headings_info: "Solo se aplica en la fase de apoyos. Durante la votación final un usuario solo puede votar en una partida por grupo."
         submit: "Guardar grupo"
       index:
-        back: "Volver a presupuestos"
         new_button: "Añadir un grupo nuevo"
     budget_headings:
       no_headings: "No hay partidas."
-      amount:
-        one: "Hay 1 partida presupuestarias"
-        other: "Hay %{count} partidas presupuestarias"
       create:
         notice: "¡Partida presupuestaria creada con éxito!"
       update:

@@ -21,6 +21,10 @@ class Admin::BudgetsWizard::HeadingsController < Admin::BudgetsWizard::BaseContr
       end
     end
 
+    def load_headings
+      @headings = @group.headings.order(:id)
+    end
+
     def new_action
       :index
     end

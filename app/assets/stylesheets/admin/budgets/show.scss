@@ -9,4 +9,8 @@
       }
     }
   }
+
+  h4 {
+    @include header-font-size(h3);
+  }
 }

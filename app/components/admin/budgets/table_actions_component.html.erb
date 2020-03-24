@@ -2,9 +2,6 @@
   <%= actions.action(:investments,
                      text: t("admin.budgets.index.budget_investments"),
                      path: admin_budget_budget_investments_path(budget_id: budget.id)) %>
-  <%= actions.action(:groups,
-                     text: t("admin.budgets.index.edit_groups"),
-                     path: admin_budget_groups_path(budget)) %>
   <% if budget.poll.present? %>
     <%= actions.action(:ballots,
                        text: t("admin.budgets.index.admin_ballots"),

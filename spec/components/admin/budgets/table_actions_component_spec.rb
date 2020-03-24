@@ -4,12 +4,11 @@ describe Admin::Budgets::TableActionsComponent, controller: Admin::BaseControlle
   let(:budget) { create(:budget) }
   let(:component) { Admin::Budgets::TableActionsComponent.new(budget) }
 
-  it "renders actions to edit and delete budget, manage investments and edit groups and manage ballots" do
+  it "renders actions to edit and delete budget, manage investments and manage ballots" do
     render_inline component
 
-    expect(page).to have_link count: 4
+    expect(page).to have_link count: 3
     expect(page).to have_link "Investment projects", href: /investments/
-    expect(page).to have_link "Heading groups", href: /groups/
     expect(page).to have_link "Edit", href: /#{budget.id}\Z/
     expect(page).to have_link "Preview", href: /budgets/
 

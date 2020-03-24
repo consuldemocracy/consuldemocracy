@@ -90,7 +90,6 @@ en:
         type_multiple: "Multiple headings"
         type_pending: "Pending: No headings yet"
         type_single: "Single heading"
-        edit_groups: Heading groups
         admin_ballots: Ballots
         no_budgets: "There are no budgets."
       create:
@@ -145,6 +144,10 @@ en:
           multiple: "Headings are meant to divide the money of the participatory budget. Here you can add headings for this group and assign the amount of money that will be used for each heading."
           single: "Headings are meant to divide the money of the participatory budget. Since this budget will only contain one heading, this is the place where you stablish the money that will be spent in this participaroty budget."
         phases: "Participatory budgets have different phases. Here you can enable or disable phases and also customize each individual phase."
+      show:
+        add_group: "Add group"
+        add_heading: "Add heading"
+        groups_and_headings: "Groups and headings"
       winners:
         calculate: Calculate Winner Investments
         calculated: Winners being calculated, it may take a minute.
@@ -170,13 +173,9 @@ en:
         max_votable_headings_info: "Only applies to the selecting projects phase. During the voting projects phase users can only vote in one heading per group."
         submit: "Save group"
       index:
-        back: "Go back to budgets"
         new_button: "Add new group"
     budget_headings:
       no_headings: "There are no headings."
-      amount:
-        one: "There is 1 heading"
-        other: "There are %{count} headings"
       create:
         notice: "Heading created successfully!"
       update:

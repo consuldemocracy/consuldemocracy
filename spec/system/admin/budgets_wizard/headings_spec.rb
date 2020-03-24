@@ -136,10 +136,11 @@ describe "Budgets wizard, headings step", :admin do
 
       expect(page).to have_content "Heading updated successfully"
 
-      visit admin_budget_group_headings_path(budget, group)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content "There is 1 heading"
-      within("tbody tr") { expect(page).to have_content "Heading without typos" }
+      within "section", text: "Groups and headings" do
+        within("tbody tr") { expect(page).to have_content "Heading without typos" }
+      end
     end
   end
 

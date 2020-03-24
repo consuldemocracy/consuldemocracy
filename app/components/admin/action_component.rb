@@ -15,7 +15,13 @@ class Admin::ActionComponent < ApplicationComponent
     end
 
     def text
-      options[:text] || t("admin.actions.#{action}")
+      action_key = if action == :destroy
+                     :delete
+                   else
+                     action
+                   end
+
+      options[:text] || t("admin.actions.#{action_key}")
     end
 
     def path

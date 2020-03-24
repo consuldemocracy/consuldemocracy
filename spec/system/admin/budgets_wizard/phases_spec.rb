@@ -43,7 +43,7 @@ describe "Budgets wizard, phases step", :admin do
 
       click_link "Finish"
 
-      within("tr", text: budget.name) { click_link "Edit" }
+      expect(page).to have_css "section h3", exact_text: "Phases"
 
       within "tr", text: "Information" do
         expect(page).to have_content "No"

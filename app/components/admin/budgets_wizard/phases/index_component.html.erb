@@ -6,4 +6,4 @@
 <%= render Admin::BudgetsWizard::CreationTimelineComponent.new("phases") %>
 
 <%= render Admin::BudgetPhases::PhasesComponent.new(budget) %>
-<%= link_to t("admin.budgets_wizard.phases.continue"), admin_budgets_path, class: "button success" %>
+<%= link_to t("admin.budgets_wizard.phases.continue"), admin_budget_path(budget), class: "button success" %>
