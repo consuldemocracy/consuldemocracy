@@ -126,6 +126,9 @@ da:
       link:
         one: Link
         other: Links
+      local_census_record:
+        one: Lokal census
+        other: Lokal census data
     attributes:
       budget:
         name: "Navn"
@@ -161,7 +164,11 @@ da:
         selected_true: "Valgt"
         selected_false: "Ikke valgt"
         unfeasibility_explanation: "Forklaring på om projektet kan gennemføres"
+        valuation_finished: "Vurderingen er færdig"
+        valuator_ids: "Grupper"
+        valuation_tag_list: "Hashtags"
       budget/investment/translation:
+        title: "Titel"
         description: "Beskrivelse"
       geozone:
         name: Navn
@@ -185,28 +192,49 @@ da:
       progress_bar/kind:
         primary: "Primære"
         secondary: "Sekundære"
+      budget/group:
+        max_votable_headings: "Maksimum antal områder en bruger kan stemme i"
+      budget/group/translation:
+        name: "Gruppenavn"
       budget/heading:
+        allow_custom_content: "Tillad indholdsblok"
+        latitude: "Breddegrad (valgfri)"
+        longitude: "Længdegrad (valgfri)"
         name: "Titelnavn"
         price: "Pris"
         population: "Population"
+      budget/phase:
+        enabled: "Fase aktiveret"
+        ends_at: "Slutdato"
+        starts_at: "Startdato"
       budget/phase/translation:
         description: "Beskrivelse"
+        summary: "Opsummering"
       comment:
         body: "Kommentar"
         user: "Bruger"
       debate:
         author: "Forfatter"
         description: "Mening"
+        tag_list: "Emner"
         terms_of_service: "Servicevilkår"
         title: "Titel"
+      debate/translation:
+        title: "Titel på debat"
+        description: "Indledende debattekst"
       proposal:
         author: "Forfatter"
         title: "Titel"
         question: "Spørgsmål"
         description: "Beskrivelse"
+        responsible_name: "Fulde navn på vedkommende, der fremsender forslaget"
+        retired_reason: "Begrundelse for at trække forslaget tilbage"
         selected: "Markeret som valgt"
         terms_of_service: "Servicevilkår"
+        video_url: "Ekstern video"
       proposal/translation:
+        title: "Forslagets titel"
+        description: "Beskrivelse"
         summary: "Resume af forslag"
         retired_explanation: "Forklaring"
       user:
@@ -216,9 +244,12 @@ da:
         password_confirmation: "Bekræftelse af adgangskode"
         password: "Adgangskode"
         current_password: "Nuværende adgangskode"
+        email_digest: "Modtag et resumé af forslagsnotifikationer"
+        email_on_comment: "Send mig en e-mail når nogen kommenterer mine forslag eller debatindlæg"
         official_position: "Embedsposition"
         official_level: "Embedsniveau"
         phone_number: "Telefonnummer"
+        recommended_proposals: "Se anbefalede borgerforslag"
         redeemable_code: "Verifikationskode modtaget via e-mail"
       organization:
         name: "Navn på organisation"
@@ -247,6 +278,9 @@ da:
         data: CSV data
         poll_id: Afstemning
         officer_assignment_id: Tilknyttet medarbejder
+      proposal_notification:
+        body: "Besked"
+        title: "Titel"
       signature_sheet:
         signable_type: "Underskriftstype"
         signable_id: "ID"
@@ -304,6 +338,11 @@ da:
         additional_info: Yderligere information
         homepage: "Beskrivelse"
         milestones_summary: Resumé
+      legislation/proposal:
+        description: "Beskrivelse"
+        summary: "Resume af forslag"
+        title: "Forslagets titel"
+        video_url: "Link til video"
       legislation/draft_version:
         title: Titel på version
         body: Tekst
@@ -374,6 +413,7 @@ da:
         order: Du kan angive den position, hvor denne handling vil blive vist til brugeren på listen over handlinger
         active: Aktiv
         action_type: Type
+        published_proposal: "For offentlige forslag?"
       dashboard/administrator_task:
         source: Kilde
         user: Udført af
