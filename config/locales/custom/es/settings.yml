@@ -1,0 +1,6 @@
+---
+es:
+  settings:
+    feature:
+      comments: "Comentarios"
+      comments_description: "Habilita o deshabilita los comentarios en los diferentes apartados de la web"
