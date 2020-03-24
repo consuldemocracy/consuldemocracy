@@ -55,88 +55,76 @@ describe "Admin budget groups" do
     end
   end
 
-  context "Index" do
+  context "List of groups from budget edit view" do
     scenario "Displaying no groups for budget" do
-      visit admin_budget_groups_path(budget)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content "There are no groups."
+      expect(page).not_to have_selector "h3"
     end
 
     scenario "Displaying groups" do
       group1 = create(:budget_group, budget: budget)
+      group2 = create(:budget_group, budget: budget, max_votable_headings: 2)
 
-      group2 = create(:budget_group, budget: budget)
-      create(:budget_heading, group: group2)
+      visit admin_budget_path(budget)
+      expect(page).to have_selector "h3", count: 2
 
-      group3 = create(:budget_group, budget: budget, max_votable_headings: 2)
-      3.times { create(:budget_heading, group: group3) }
-
-      visit admin_budget_groups_path(budget)
-      expect(page).to have_content "There are 3 groups"
-
-      within "#budget_group_#{group1.id}" do
-        expect(page).to have_content(group1.name)
-        expect(page).to have_content(group1.max_votable_headings)
-        expect(page).to have_content(group1.headings.count)
-        expect(page).to have_link "Manage headings"
+      within "#group_#{group1.id}" do
+        expect(page).to have_content "Maximum number of headings in which a user can vote 1"
+        expect(page).to have_selector "h3", text: group1.name
       end
 
-      within "#budget_group_#{group2.id}" do
-        expect(page).to have_content(group2.name)
-        expect(page).to have_content(group2.max_votable_headings)
-        expect(page).to have_content(group2.headings.count)
-        expect(page).to have_link "Manage headings"
-      end
-
-      within "#budget_group_#{group3.id}" do
-        expect(page).to have_content(group3.name)
-        expect(page).to have_content(group3.max_votable_headings)
-        expect(page).to have_content(group3.headings.count)
-        expect(page).to have_link "Manage headings"
+      within "#group_#{group2.id}" do
+        expect(page).to have_content "Maximum number of headings in which a user can vote 2"
+        expect(page).to have_selector "h3", text: group2.name
       end
     end
 
     scenario "Delete a group without headings" do
       group = create(:budget_group, budget: budget)
 
-      visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Delete" }
+      visit admin_budget_path(budget)
+
+      expect(page).to have_selector "#group_#{group.id}"
+      click_link "delete_group_#{group.id}"
 
       expect(page).to have_content "Group deleted successfully"
-      expect(page).not_to have_selector "#budget_group_#{group.id}"
+      expect(page).not_to have_selector "#group_#{group.id}"
     end
 
     scenario "Try to delete a group with headings" do
       group = create(:budget_group, budget: budget)
       create(:budget_heading, group: group)
 
-      visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Delete" }
+      visit admin_budget_path(budget)
+
+      expect(page).to have_selector "#group_#{group.id}"
+      click_link "delete_group_#{group.id}"
 
       expect(page).to have_content "You cannot delete a Group that has associated headings"
-      expect(page).to have_selector "#budget_group_#{group.id}"
+      expect(page).to have_selector "#group_#{group.id}"
     end
   end
 
   context "New" do
-    scenario "Create group", :js do
-      visit admin_budget_groups_path(budget)
-      click_button "Add new group"
+    scenario "Create group" do
+      visit admin_budget_path(budget)
+      click_link "Add group"
 
       fill_in "Group name", with: "All City"
-
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
-      expect(page).to have_content "All City"
+      expect(page).to have_selector "h3", count: 1
+
+      group = Budget::Group.last
+      within("#group_#{group.id}") { expect(page).to have_selector "h3", text: group.name }
     end
 
     scenario "Maximum number of headings in which a user can vote is set to 1 by default" do
-      visit admin_budget_groups_path(budget)
-      click_button "Add new group"
+      visit new_admin_budget_group_path(budget)
 
       fill_in "Group name", with: "All City"
-
       click_button "Create new group"
 
       expect(page).to have_content "Group created successfully!"
@@ -144,8 +132,7 @@ describe "Admin budget groups" do
     end
 
     scenario "Group name is mandatory" do
-      visit admin_budget_groups_path(budget)
-      click_button "Add new group"
+      visit new_admin_budget_group_path(budget)
 
       click_button "Create new group"
 
@@ -160,8 +147,8 @@ describe "Admin budget groups" do
       group = create(:budget_group, budget: budget, max_votable_headings: 2)
       2.times { create(:budget_heading, group: group) }
 
-      visit admin_budget_groups_path(budget)
-      within("#budget_group_#{group.id}") { click_link "Edit" }
+      visit admin_budget_path(budget)
+      click_link "edit_group_#{group.id}"
 
       expect(page).to have_field "Group name", with: group.name
       expect(page).to have_field "Maximum number of headings in which a user can vote", with: "2"

@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Admin budget headings" do
   let(:budget) { create(:budget, :drafting) }
-  let(:group) { create(:budget_group, budget: budget) }
+  let!(:group) { create(:budget_group, budget: budget) }
 
   before do
     admin = create(:administrator)
@@ -70,96 +70,80 @@ describe "Admin budget headings" do
     end
   end
 
-  context "Index" do
+  context "List of headings from budget edit view" do
     scenario "Displaying no headings for group" do
-      visit admin_budget_group_headings_path(budget, group)
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content "There are no headings."
+      within "#group_#{group.id}" do
+        within("tbody") { expect(page).not_to have_selector "tr" }
+      end
     end
 
     scenario "Displaying headings" do
       heading1 = create(:budget_heading, group: group, price: 1000, allow_custom_content: true)
       heading2 = create(:budget_heading, group: group, price: 2000, population: 10000)
-      heading3 = create(:budget_heading, group: group, price: 3000, population: 10000)
+      heading3 = create(:budget_heading, group: group, price: 3000, population: 20000)
 
-      visit admin_budget_group_headings_path(budget, group)
-      expect(page).to have_content "There are 3 headings"
+      visit admin_budget_path(budget)
 
-      within "#budget_heading_#{heading1.id}" do
-        expect(page).to have_content(heading1.name)
-        expect(page).to have_content "€1,000"
-        expect(page).not_to have_content "10000"
-        expect(page).to have_content "Yes"
-        expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
-      end
+      within "#group_#{group.id}" do
+        within "tbody" do
+          expect(page).to have_selector "tr", count: 3
 
-      within "#budget_heading_#{heading2.id}" do
-        expect(page).to have_content(heading2.name)
-        expect(page).to have_content "€2,000"
-        expect(page).to have_content "10000"
-        expect(page).to have_content "No"
-        expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
-      end
+          within "#heading_#{heading1.id}" do
+            expect(page).to have_content(heading1.name)
+            expect(page).to have_content "€1,000"
+            expect(page).not_to have_content "10000"
+            expect(page).to have_content "Yes"
+          end
 
-      within "#budget_heading_#{heading3.id}" do
-        expect(page).to have_content(heading3.name)
-        expect(page).to have_content "€3,000"
-        expect(page).to have_content "10000"
-        expect(page).to have_content "No"
-        expect(page).to have_link "Edit"
-        expect(page).to have_link "Delete"
+          within "#heading_#{heading2.id}" do
+            expect(page).to have_content(heading2.name)
+            expect(page).to have_content "€2,000"
+            expect(page).to have_content "10000"
+            expect(page).to have_content "No"
+          end
+
+          within "#heading_#{heading3.id}" do
+            expect(page).to have_content(heading3.name)
+            expect(page).to have_content "€3,000"
+            expect(page).to have_content "20000"
+            expect(page).to have_content "No"
+          end
+        end
       end
     end
 
     scenario "Delete a heading without investments" do
       heading = create(:budget_heading, group: group)
 
-      visit admin_budget_group_headings_path(budget, group)
-      within("#budget_heading_#{heading.id}") { click_link "Delete" }
+      visit admin_budget_path(budget)
+
+      expect(page).to have_selector "#heading_#{heading.id}"
+      click_link "delete_heading_#{heading.id}"
 
       expect(page).to have_content "Heading deleted successfully"
-      expect(page).not_to have_selector "#budget_heading_#{heading.id}"
+      expect(page).not_to have_selector "#heading_#{heading.id}"
     end
 
     scenario "Try to delete a heading with investments" do
       heading = create(:budget_heading, group: group, name: "Atlantis")
       create(:budget_investment, heading: heading)
 
-      visit admin_budget_group_headings_path(budget, group)
-      within(".heading", text: "Atlantis") { click_link "Delete" }
+      visit admin_budget_path(budget)
 
-      expect(page).to have_content "You cannot delete a Heading that has associated investments"
-      expect(page).to have_content "Atlantis"
-    end
+      expect(page).to have_selector "#heading_#{heading.id}"
+      click_link "delete_heading_#{heading.id}"
 
-    scenario "Select to change the group", :js do
-      economy = create(:budget_group, budget: budget, name: "Economy")
-      health = create(:budget_group, budget: budget, name: "Health")
-      create(:budget_heading, group: economy, name: "Banking")
-      create(:budget_heading, group: health, name: "Hospitals")
-
-      visit admin_budget_group_headings_path(budget, economy)
-      within(".heading") do
-        expect(page).to have_content "Banking"
-        expect(page).not_to have_content "Hospitals"
-      end
-
-      select "Health", from: "budget_groups_switcher"
-
-      within(".heading") do
-        expect(page).to have_content "Hospitals"
-        expect(page).not_to have_content "Banking"
-      end
-      expect(page).to have_current_path admin_budget_group_headings_path(budget, health)
+      expect(page).not_to have_content "Heading deleted successfully"
+      expect(page).to have_selector "#heading_#{heading.id}"
     end
   end
 
   context "New" do
-    scenario "Create heading", :js do
-      visit admin_budget_group_headings_path(budget, group)
-      click_button "Add new heading"
+    scenario "Create heading" do
+      visit admin_budget_path(budget)
+      within("#group_#{group.id}") { click_link "Add heading" }
 
       fill_in "Heading name", with: "All City"
       fill_in "Money amount", with: "1000"
@@ -169,15 +153,18 @@ describe "Admin budget headings" do
       click_button "Create new heading"
 
       expect(page).to have_content "Heading created successfully!"
-      expect(page).to have_content "All City"
-      expect(page).to have_content "€1,000"
-      expect(page).to have_content "10000"
-      expect(page).to have_content "Yes"
+
+      heading = Budget::Heading.last
+      within "#heading_#{heading.id}" do
+        expect(page).to have_content "All City"
+        expect(page).to have_content "€1,000"
+        expect(page).to have_content "10000"
+        expect(page).to have_content "Yes"
+      end
     end
 
-    scenario "Heading name is mandatory", :js do
-      visit admin_budget_group_headings_path(budget, group)
-      click_button "Add new heading"
+    scenario "Heading name is mandatory" do
+      visit new_admin_budget_group_heading_path(budget, group)
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
@@ -186,8 +173,7 @@ describe "Admin budget headings" do
     end
 
     scenario "Heading money amount is mandatory" do
-      visit admin_budget_group_headings_path(budget, group)
-      click_button "Add new heading"
+      visit new_admin_budget_group_heading_path(budget, group)
       click_button "Create new heading"
 
       expect(page).not_to have_content "Heading created successfully!"
@@ -200,8 +186,8 @@ describe "Admin budget headings" do
     scenario "Show heading information" do
       heading = create(:budget_heading, group: group)
 
-      visit admin_budget_group_headings_path(budget, group)
-      within("#budget_heading_#{heading.id}") { click_link "Edit" }
+      visit admin_budget_path(budget)
+      click_link "edit_heading_#{heading.id}"
 
       expect(page).to have_field "Heading name", with: heading.name
       expect(page).to have_field "Money amount", with: heading.price

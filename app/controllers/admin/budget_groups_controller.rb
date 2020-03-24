@@ -26,10 +26,13 @@ class Admin::BudgetGroupsController < Admin::BaseController
   def create
     @group = @budget.groups.new(budget_group_params)
     if @group.save
+      notice = t("admin.budget_groups.create.notice")
       if @mode == "single"
         redirect_to admin_budget_group_headings_path(@group.budget, @group, url_params)
+      elsif @mode == "multiple"
+        redirect_to admin_budget_groups_path(@budget, url_params), notice: notice
       else
-        redirect_to groups_index, notice: t("admin.budget_groups.create.notice")
+        redirect_to admin_budget_path(@budget), notice: notice
       end
     else
       render :index
@@ -38,7 +41,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
 
   def update
     if @group.update(budget_group_params)
-      redirect_to groups_index, notice: t("admin.budget_groups.update.notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budget_groups.update.notice")
     else
       render :edit
     end
@@ -46,10 +49,10 @@ class Admin::BudgetGroupsController < Admin::BaseController
 
   def destroy
     if @group.headings.any?
-      redirect_to groups_index, alert: t("admin.budget_groups.destroy.unable_notice")
+      redirect_to admin_budget_path(@budget), alert: t("admin.budget_groups.destroy.unable_notice")
     else
       @group.destroy!
-      redirect_to groups_index, notice: t("admin.budget_groups.destroy.success_notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budget_groups.destroy.success_notice")
     end
   end
 
@@ -69,10 +72,6 @@ class Admin::BudgetGroupsController < Admin::BaseController
 
     def url_params
       @mode.present? ? { mode: @mode } : {}
-    end
-
-    def groups_index
-      admin_budget_groups_path(@budget, url_params)
     end
 
     def budget_group_params

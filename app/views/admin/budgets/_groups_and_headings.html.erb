@@ -17,14 +17,20 @@
       <thead>
         <tr>
           <th scope="col"><%= t("admin.budgets.edit.groups_and_headings.headings") %></th>
+          <th class="text-center"><%= t("admin.budget_headings.price") %></th>
+          <th class="text-center"><%= t("admin.budget_headings.population") %></th>
+          <th class="text-center"><%= t("admin.budget_headings.allow_custom_content") %></th>
           <th scope="col" class="text-right"><%= t("admin.shared.actions") %></th>
         </tr>
       </thead>
       <tbody>
         <% group.headings.each do |heading| %>
-          <tr>
-            <td>
-              <%= heading.name %>
+          <tr id="<%= "heading_#{heading.id}" %>">
+            <td><%= heading.name %></td>
+            <td class="text-center"><%= @budget.formatted_heading_price(heading) %></td>
+            <td class="text-center"><%= heading.population %></td>
+            <td class="text-center">
+              <%= heading.allow_custom_content ? t("admin.shared.true_value") : t("admin.shared.false_value") %>
             </td>
             <td class="text-right">
               <%= render "headings_actions", group: group, heading: heading %>

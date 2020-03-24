@@ -23,10 +23,13 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   def create
     @heading = @group.headings.new(budget_heading_params)
     if @heading.save
+      notice = t("admin.budget_headings.create.notice")
       if @mode == "single"
         redirect_to admin_budget_budget_phases_path(@budget, url_params)
+      elsif @mode == "multiple"
+        redirect_to admin_budget_group_headings_path(@budget, @group, url_params), notice: notice
       else
-        redirect_to headings_index, notice: t("admin.budget_headings.create.notice")
+        redirect_to admin_budget_path(@budget), notice: notice
       end
     else
       render :new
@@ -35,7 +38,7 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
   def update
     if @heading.update(budget_heading_params)
-      redirect_to headings_index, notice: t("admin.budget_headings.update.notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budget_headings.update.notice")
     else
       render :edit
     end
@@ -44,9 +47,9 @@ class Admin::BudgetHeadingsController < Admin::BaseController
   def destroy
     if @heading.can_be_deleted?
       @heading.destroy!
-      redirect_to headings_index, notice: t("admin.budget_headings.destroy.success_notice")
+      redirect_to admin_budget_path(@budget), notice: t("admin.budget_headings.destroy.success_notice")
     else
-      redirect_to headings_index, alert: t("admin.budget_headings.destroy.unable_notice")
+      redirect_to admin_budget_path(@budget), alert: t("admin.budget_headings.destroy.unable_notice")
     end
   end
 
@@ -70,10 +73,6 @@ class Admin::BudgetHeadingsController < Admin::BaseController
 
     def url_params
       @mode.present? ? { mode: @mode } : {}
-    end
-
-    def headings_index
-      admin_budget_group_headings_path(@budget, @group, url_params)
     end
 
     def budget_heading_params
