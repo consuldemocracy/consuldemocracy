@@ -93,3 +93,26 @@
   font-weight: bold;
   font-style: normal;
 }
+
+// 03. Nunito
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+@font-face {
+  font-family: 'Nunito Light';
+  font-style: normal;
+  src: local('Nunito Light'), local('Nunito-Light'), font-url('Nunito-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Nunito Bold'), local('Nunito-Bold'), font-url('Nunito-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Black';
+  font-style: normal;
+  font-weight: black;
+  src: local('Nunito Black'), local('Nunito-Black'), font-url('Nunito-Black.ttf') format('truetype');
+}
