@@ -569,8 +569,10 @@ da:
         title: Forhåndsvisning af plakat
         poster_title: "Stop med at lede,"
         poster_subtitle: "støt mig! :-)"
+        intro_text: "<strong>Jeg deltager i %{org}</strong> med mit eget borgerforslag, og kun hvis du også til opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
         proposal_code: "Forslagets kode: %{code}"
         support: Støt mit forslag
+        footer: "<strong>Gå til %{link} og støt forslaget.</strong> Vi er nødt til at være mange. Din beslutning tæller. Tak!"
       new:
         title: Plakat med dit forslag
       options:
@@ -661,6 +663,7 @@ da:
     new:
       title: "Send besked"
       submit_button: "Send besked"
+      info_about_receivers: "Denne besked vil blive sendt til <strong>%{count} personer</strong> og den vil være synlig i %{proposal_page}."
       proposal_page: "forslagets side"
     show:
       back: "Gå tilbage til min aktivitet"
@@ -700,6 +703,12 @@ da:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
+    followable:
+      proposal:
+        create:
+          notice: "Du følger nu borgerforslaget! <br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+        destroy:
+          notice: "Du er stoppet med at følge borgerforslaget! <br> Du vil ikke længere modtage notifikationer relateret til forslaget."
     hide: Skjul
     print:
       print_button: Udskriv information
