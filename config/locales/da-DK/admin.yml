@@ -710,6 +710,7 @@ da:
     segment_recipient:
       all_users: Alle brugere
       administrators: Administratorer
+      all_proposal_authors: Forfattere til forslag
       proposal_authors: Brugere der har oprettet et forslag
       investment_authors: Brugere, der har oprettet en projektidé i det aktuelle budget
       feasible_and_undecided_investment_authors: "Brugere der har oprettet projektidéer til det aktuelle budget, men som ikke svarer til: [valuation finished unfesasible]"
@@ -1162,10 +1163,16 @@ da:
         title: Borgerforslag
         id: ID
         author: Oprettet af
+        select: Vælg
+        selected: Valgt
         milestones: Proces
         no_proposals: Der er ingen forslag.
       show:
         create_question: Send forslaget til afstemning, så der kan stemmes om det
+      form:
+        update: Opdater forslag
+      update:
+        notice: Forslaget blev opdateret
     hidden_proposals:
       index:
         filter: Filter
@@ -1318,6 +1325,8 @@ da:
         proposal_notifications: Underretning om forslag
         incomplete_verifications: Ufærdige verificeringer
         polls: Afstemninger
+      graph:
+        proposal_created: Borgerforslag
       budgets:
         supporting_phase: Støt de forslag der skal gå videre
         balloting_phase: Endelig afstemning
