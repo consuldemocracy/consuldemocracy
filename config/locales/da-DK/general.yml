@@ -46,6 +46,8 @@ da:
         other: "%{count} svar (vis)"
       responses_collapse:
         zero: Ingen svar
+        one: "1 respons (Vis/skjul)"
+        other: "%{count} svar (vis/skjul)"
       user_deleted: Bruger slettet
       votes:
         zero: Ingen stemmer
@@ -187,6 +189,8 @@ da:
     document: Dokument
     topic: Emne
     image: Billede
+    local_census_record: Lokal census data
+    local_census_records/import: Lokal census data import
     site_customization/content_block: indholdsblok
     site_customization/page: side
   geozones:
@@ -290,6 +294,10 @@ da:
       sign_in: Log ind med Google
       sign_up: Tilmeld dig via Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Log ind med Wordpress
+      sign_up: Tilmeld med Wordpress
+      name: Wordpress
     twitter:
       sign_in: Log ind med Twitter
       sign_up: Tilmeld dig via Twitter
@@ -558,6 +566,7 @@ da:
         success_notice: Undersøgelsen blev slettet
         unable_notice: Du kan ikke slettet en undersøgelse der har respons
       form:
+        name: Titel på undersøgelse
         add_question: Tilføj et spørgsmål
       question_fields:
         remove_question: Slet spørgsmål
@@ -590,6 +599,7 @@ da:
         sent: E-mailen blev sendt
     mailer:
       forward:
+        subtitle: "Hvis du støtter mig, <br> vil vi opnå det."
         support_button: Støt forslaget
         share_in: Del i
         hi: "Hej!"
@@ -629,6 +639,7 @@ da:
       back: Tilbage til afstemningen
       cant_answer_not_logged_in: "Du skal %{signin} eller %{signup} for at deltage."
       comments_tab: Kommentarer
+      cant_answer_verify: "Du skal %{verify_link} for at kunne svare."
       verify_link: "verificer din konto"
       cant_answer_expired: "Afstemningen er slut."
       cant_answer_wrong_geozone: "Spørgsmålet er ikke tilgængeligt i dit geografiske område."
@@ -645,6 +656,7 @@ da:
         total_votes: "Samlet antal stemmer"
         votes: "STEMMER"
         web: "WEB"
+        mail: "MAIL"
         booth: "STEMMEBOKS"
         total: "I ALT"
         valid: "Gyldig"
@@ -704,6 +716,11 @@ da:
     following: "Følger"
     follow_entity: "Følg %{entity}"
     followable:
+      budget_investment:
+        create:
+          notice: "Du følger nu forslaget! <br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
+        destroy:
+          notice: "Du er stoppet med at følge forslaget <br> Du vil ikke længere modtage notifikationer relateret til projektet."
       proposal:
         create:
           notice: "Du følger nu borgerforslaget! <br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
@@ -738,6 +755,7 @@ da:
       districts: "Distrikter"
       districts_list: "Liste over distrikter"
       categories: "Kategorier"
+    target_blank: " (linket åbner i et nyt vindue)"
     you_are_in: "Du er inde"
     unflag: Fjern flag
     unfollow_entity: "Følg ikke længere %{entity}"
@@ -761,6 +779,10 @@ da:
       select_language_prompt: Vælg sprog
       remove_language: Fjern sprog
       add_language: Tilføj sprog
+      languages_in_use:
+        zero: "0 sprog i brug"
+        one: "1 sprog i brug"
+        other: "%{count} sprog i brug"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
