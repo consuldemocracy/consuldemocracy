@@ -203,6 +203,8 @@ da:
         name: "Titelnavn"
         price: "Pris"
         population: "Population"
+      budget/heading/translation:
+        name: "Navn på område"
       budget/phase:
         enabled: "Fase aktiveret"
         ends_at: "Slutdato"
