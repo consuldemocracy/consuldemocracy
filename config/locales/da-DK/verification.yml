@@ -19,7 +19,7 @@ da:
         unconfirmed_code: Du har endnu ikke indtastet bekræftelseskoden
       create:
         flash:
-          success: Tak fordi du anmodede om din <b> sikkerhedskode (kun påkrævet ved endelige afstemninger)</b>. Om få dage vil koden blive sendt til den angivede adresse.
+          success: Tak fordi du anmodede om din <b> sikkerhedskode (kun påkrævet ved endelige afstemninger)</b>. Om få dage vil koden blive sendt til den angivne adresse.
       edit:
         see_all: Se forslag
         title: Brev anmodet
