@@ -51,6 +51,7 @@ da:
         success:
           back_to_index: Jeg har forstået det; gå tilbage til min forside
           instructions_1: "<strong>Vi vil kontakte dig snarrest</strong> for at verificere, at du reelt repræsenterer denne gruppe."
+          instructions_2: Imens din <strong>e-mail kontrolleres</strong>, har vi sendt dig et <strong>link, hvor du kan bekræfte din konto</strong>.
           instructions_3: Når du er bekræftet, kan du begynde at deltage som en ikke-verificeret gruppe.
           thank_you: Tak fordi du registrerede dig som en gruppe på websitet. Registreringen er nu <strong>under behandling</strong>.
           title: Registrering af organisation/gruppe
