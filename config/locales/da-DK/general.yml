@@ -578,7 +578,7 @@ da:
         title: Forhåndsvisning af plakat
         poster_title: "Hjælp med at gøre en forskel,"
         poster_subtitle: "støt mig! :-)"
-        intro_text: "<strong>Jeg deltager i %{org}</strong> med mit eget borgerforslag, og kun hvis du også til opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
+        intro_text: "<strong>Jeg deltager i %{org}</strong> med et borgerforslag, og kun hvis du også opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
         proposal_code: "Forslagets kode: %{code}"
         support: Støt mit forslag
         footer: "<strong>Gå til %{link} og støt forslaget.</strong> Vi er nødt til at være mange. Din beslutning tæller. Tak!"
