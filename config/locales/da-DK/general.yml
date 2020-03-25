@@ -967,4 +967,7 @@ da:
       take_part: Forløber fra %{from} til %{to}
   remote_translations:
     text: Indholdet på denne sider er ikke tilgængeligt på dit sprog
+    all_remote_translations_enqueued_text: Indenfor en kort periode vil sidens indhold være tilgængeligt i dit sprog.
+    create:
+      enqueue_remote_translation: Oversættelser er blevet korrekt anmodet.
     button: Oversæt side
