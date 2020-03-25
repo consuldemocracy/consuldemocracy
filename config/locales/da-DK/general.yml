@@ -576,7 +576,7 @@ da:
     poster:
       index:
         title: Forhåndsvisning af plakat
-        poster_title: "Stop med at lede,"
+        poster_title: "Hjælp med at gøre en forskel,"
         poster_subtitle: "støt mig! :-)"
         intro_text: "<strong>Jeg deltager i %{org}</strong> med mit eget borgerforslag, og kun hvis du også til opretter dig som bruger kan jeg modtage den nødvendige støtte, der skal til, for at forme den by vi alle ønsker at leve i."
         proposal_code: "Forslagets kode: %{code}"
@@ -599,12 +599,12 @@ da:
         sent: E-mailen blev sendt
     mailer:
       forward:
-        subtitle: "Hvis du støtter mig, <br> vil vi opnå det."
+        subtitle: "Hvis du støtter mig, <br> kan vi gøre en forskel."
         support_button: Støt forslaget
         share_in: Del i
         hi: "Hej!"
         introduction: Jeg skriver til dig for at fortælle dig, at jeg deltager på %{org}, platformen hvor vi kan beslutte, hvordan vores by skal være. Derfor har jeg nu oprettet mit eget borgerforslag, hvor jeg har brug for din støtte! Men fortvivl ikke, det er meget simpelt.
-        support: "Alt du skal gøre er at klikke på knappen 'Støt forslag'. Kun forslag, der modtager den maksimale støtte, vil blive udført af Byrådet, og jeg er sikker på, at du kan hjælpe mig med at nå det!"
+        support: "Alt du skal gøre er at klikke på knappen 'Støt forslag'. Kun forslag, der modtager den nødvendige støtte, vil blive taget op af Byrådet, og jeg er sikker på, at du kan hjælpe mig med at nå det!"
         share: "Og hvis du også gør mig den store tjeneste at dele mit forslag med venner, familie og andet netværk, vil det være helt perfekt!"
   polls:
     all: "Alle"
