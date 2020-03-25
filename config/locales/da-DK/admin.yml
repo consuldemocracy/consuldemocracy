@@ -184,11 +184,14 @@ da:
           min_total_supports: Minimum støtte
           max_total_supports: Maksimal støtte
           winners: Vindere
+          one_filter: "Aktive filtre: <b><em>%{filter}</em></b>"
+          two_filters: "Aktive filtre: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Søg
         download_current_selection: "Download aktuel markering"
         no_budget_investments: "Der er ingen projekter."
         title: Projekter
+        columns: Rækker
         assigned_admin: Tilknyttet administrator
         no_admin_assigned: Der er ikke tilknyttet en administrator
         no_valuators_assigned: Der er ikke tilknyttet nogle evaluatorer
@@ -257,9 +260,11 @@ da:
       search_unfeasible: Søg uigennemførlige projekter
     milestones:
       index:
+        table_id: "ID"
         table_title: "Titel"
         table_description: "Beskrivelse"
         table_publication_date: "Dato for offentliggørelse"
+        table_status: Status
         table_actions: "Handlinger"
         delete: "Slet proces"
         no_milestones: "Har ingen definerede processer"
@@ -309,6 +314,8 @@ da:
         no_progress_bars: "Der er ingen statuslinjer"
         new_progress_bar: "Opret ny statuslinje"
         primary: "Primære statuslinje"
+        table_id: "ID"
+        table_kind: "Type"
         table_title: "Titel"
         table_percentage: "Aktuelle forløb"
       new:
@@ -546,6 +553,7 @@ da:
           submit_button: Gem ændringer
           warning: Du har redigeret teksten, husk at klikke på Gem for at gemme dine ændringer.
         form:
+          title: 'Rediger <span class="strong">%{draft_version_title}</span> fra processen <span class="strong">%{process_title}</span>'
           launch_text_editor: Start tekstredigering
           close_text_editor: Luk tekstredigeringsenhed
           use_markdown: Anvend Markdown til at formatere teksten
@@ -661,6 +669,7 @@ da:
         content_blocks: Brugerdefinerede indholdsblokke
         information_texts: Brugerdefinerede informationstekster
         information_texts_menu:
+          basic: "Basal tilpasning"
           debates: "Debatindlæg"
           community: "Fællesskab"
           proposals: "Borgerforslag"
@@ -683,11 +692,15 @@ da:
       dashboard: Dashboard for forslag
       administrator_tasks: Efterspurgte funktioner
       dashboard_actions: Funktioner og handlinger
+      debates: "Debatter"
+      comments: "Kommentarer"
+      local_census_records: Administrer lokal census data
     administrators:
       index:
         title: Administratorer
         name: Navn
         email: E-mail
+        description: Beskrivelse
         id: Administrator ID
         no_administrators: Der er ingen administratorer.
       administrator:
@@ -696,6 +709,9 @@ da:
         restricted_removal: "Beklager, men du kan ikke fjerne dig selv som administrator"
       search:
         title: "Administratorer: Søg brugere"
+      form:
+        edit_title: "Rediger administrator"
+        updated: "Administrator opdateret"
     moderators:
       index:
         title: Moderatorer
@@ -737,6 +753,8 @@ da:
         empty_newsletters: Der er ingen nyhedsbreve at vise
       new:
         title: Nyt nyhedsbrev
+        header_footer_help_text: "Header og footer er de samme på alle emails. Du kan redigere dem på <code>app/views/layouts/mailer_heade</code> og <code>app/views/layouts/mailer_footer</code>.<br> Du kan udskifte header billede på %{link}."
+        image_link: "brugerdefinerede billeder"
       edit:
         title: Rediger nyhedsbrev
       show:
@@ -832,6 +850,9 @@ da:
       user_invite:
         title: "Bruger invitation"
         description: "Sendt til personen, der er blevet inviteret til at registrere sin brugerkonto."
+      evaluation_comment:
+        title: "Ny kommentar på evaluering"
+        description: "Sendt til administratorer og evaluatorer relateret til den kommenterede investering"
       edit_info: "Du kan redigere e-mailen i"
       message_title: "Meddelelses titel"
       message_body: "Dette er et udkast til beskedens indhold."
@@ -839,6 +860,7 @@ da:
         no_investments: "Der er endnu ikke oprettet nogle projektidéer. Eksempler er nødvendig for at kunne forhåndsvise e-mailen."
         no_comments: "Der er ikke oprettet nogle kommentarer. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
         no_replies: "Der er ikke oprette nogle tilbagesvar. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
+        no_evaluation_comments: "Der er ikke oprettet nogle kommentarer på evalueringen. Eksempeldata er nødvendig for at kunne forhåndsvise e-mailen."
     emails_download:
       index:
         title: Download e-mails
@@ -856,6 +878,9 @@ da:
         valuator_groups: "Evalueringsgrupper"
         group: "Gruppe"
         no_group: "Ingen gruppe"
+        abilities: "Evner"
+        can_comment: "Kan kommentere"
+        can_edit_dossier: "Kan redigere projektinformation"
       valuator:
         add: Føj til evaluatorer
         delete: Slet
@@ -868,8 +893,10 @@ da:
         description: "Beskrivelse"
         email: "E-mail"
         group: "Gruppe"
+        abilities: "Evner"
         no_description: "Ingen beskrivelse"
         no_group: "Ingen gruppe"
+        no_abilities: "Uden evner"
     valuator_groups:
       index:
         title: "Evalueringsgrupper"
@@ -1001,6 +1028,9 @@ da:
       flash:
         question_added: "Spørgsmål til denne afstemning"
         error_on_question_added: "Spørgsmålet kunne ikke stilles til denne afstemning"
+      destroy:
+        alert: "Denne handling vil slette undersøgelsen og dets associerede spørgsmål."
+        success_notice: "Undersøgelsen blev slettet"
     questions:
       index:
         title: "Spørgsmål"
@@ -1141,6 +1171,9 @@ da:
           pending: Under behandling
           rejected: Afvist
           verified: Verificeret
+        hidden_count:
+          one: Der er også <strong>en organisation</strong> uden brugere eller med skjulte brugere.
+          other: Der er også <strong>%{count} organisationer</strong> uden brugere eller med skjulte brugere.
         name: Navn
         email: E-mail
         phone_number: Telefon
@@ -1196,8 +1229,10 @@ da:
         updated: Pris opdateret
       index:
         title: Konfigurationsindstillinger
+        general: Konfigurationsindstillinger
         update_setting: Opdater
         participation_processes: "Deltagelsesprocesser"
+        images_and_documents: "Billeder og dokumenter"
         feature_flags: Funktioner
         features:
           enabled: "Funktion aktiveret"
@@ -1214,6 +1249,7 @@ da:
           how_to_enable: 'For at gøre kortet synligt for brugerne skal du aktivere "Borger- og budgetforslags geografiske område" under fanebladet "Funktioner".'
         dashboard:
           title: Dashboard for forslag
+      remote_census_general_name: Generel information
       setting: Funktioner
       setting_actions: Handlinger
       setting_name: Indstillinger
