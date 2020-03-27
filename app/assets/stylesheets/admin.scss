@@ -291,10 +291,6 @@ $sidebar-active: #f4fcd0;
     margin-right: rem-calc(12);
   }
 
-  .side-menu-and-admin-content {
-    @include side-menu-and-content;
-  }
-
   .admin-content {
     .proposal-form {
       padding-top: 0;
