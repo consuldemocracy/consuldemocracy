@@ -364,26 +364,25 @@ $sidebar-active: #f4fcd0;
 }
 
 .icon-sortable {
-  font-family: "icons";
+  font-family: "Font Awesome 5 Free";
   font-size: $small-font-size;
-  padding-right: $line-height / 2;
   position: relative;
 
   &::before,
   &::after {
     left: 6px;
-    opacity: 0.25;
+    opacity: 0.5;
     position: absolute;
   }
 
   &::before {
-    content: "\57";
-    top: -2px;
+    content: "\f0d8";
+    bottom: 0;
   }
 
   &::after {
-    content: "\52";
-    bottom: -10px;
+    content: "\f0d7";
+    top: 0;
   }
 
   &.asc {
