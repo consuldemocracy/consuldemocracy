@@ -17,3 +17,5 @@ es:
       open_data_title: "Datos abiertos"
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
       open_data_url: "http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos"
+    header:
+      help: "Más información"
