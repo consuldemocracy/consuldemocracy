@@ -10,6 +10,10 @@
   color: $brand-secondary;
 }
 
+strong, b, a {
+  color: $brand;
+}
+
 // 02. Header
 
 // Color de fondo de la cabecera
@@ -121,5 +125,67 @@ header, .top-bar {
 @media screen and (max-width: 63.999em) {
   .homepage-tu-voz {
     margin-top: 8px;
+  }
+}
+
+// 05 custom pages
+
+.budgets-calendar {
+
+  margin: 0;
+  padding: 0;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 2.2rem 1.5rem 0.75rem 1.5rem;
+  background: $brand;
+  min-height: 8rem;
+  min-width: 15rem;
+  width: 20%;
+  color: white;
+  font-family: "Nunito Bold";
+  text-align: center;
+
+}
+
+.budgets-calendar-active {
+  background: $brand_secondary;
+  color: black;
+  padding: 0.75rem 1.5rem 0.75rem 1.5rem;
+}
+
+.tabla-puntos-encuentro {
+  
+  background: #fff1f9;
+  overflow: auto;
+
+  .columna {
+
+    background: #fff1f9;
+    padding: 0;
+
+    .fila {
+
+      background: #fff1f9;
+      padding: 0.4rem 0 0.4rem 2rem;
+      border-top: 2px solid white;
+
+      .titulo {
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+      }
+    }
+  }
+}
+
+.boton-propuestas {
+  margin: 0.3rem 0 0.3rem 0;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.lista {
+  color:$brand;
+  p {
+    color: black;
   }
 }
