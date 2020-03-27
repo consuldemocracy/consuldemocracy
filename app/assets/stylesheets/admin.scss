@@ -63,10 +63,6 @@ $sidebar-active: #f4fcd0;
     color: #000;
     height: auto;
 
-    @include breakpoint(medium) {
-      box-shadow: 0 2px 2px #eee;
-    }
-
     @include breakpoint(small only) {
 
       .top-bar-left ul {
