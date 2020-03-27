@@ -435,11 +435,11 @@ code {
     [class^="icon-"] {
       color: #fff;
       display: inline-block;
-      font-size: rem-calc(24);
+      font-size: rem-calc(20);
       line-height: $line-height;
-      padding: $line-height / 2 $line-height / 4;
-      padding-left: 0;
+      text-align: center;
       vertical-align: middle;
+      width: $line-height * 1.5;
     }
   }
 
@@ -458,13 +458,20 @@ code {
       border-left: 2px solid $sidebar-active;
       font-weight: bold;
     }
+
+    &[aria-expanded="true"] {
+
+      > a::after {
+        transform: rotate(180deg);
+      }
+    }
   }
 
   li a {
     color: #fff;
     display: block;
-    line-height: rem-calc(48);
-    padding-left: rem-calc(12);
+    line-height: $line-height * 2;
+    padding-left: $line-height / 4;
     vertical-align: top;
 
     &:hover {
@@ -478,12 +485,13 @@ code {
 
     > a::after {
       border: 0;
-      content: "\61" !important;
-      font-family: "icons" !important;
+      content: "\f078";
+      font-family: "Font Awesome 5 Free";
+      font-weight: bold;
       height: auto;
-      position: absolute !important;
-      right: 30px;
-      top: 6px !important;
+      position: absolute;
+      right: 24px;
+      transition: 0.25s;
     }
   }
 

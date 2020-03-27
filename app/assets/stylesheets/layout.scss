@@ -446,18 +446,18 @@ a {
 }
 
 .menu-and-content {
-  $side-menu-min-width: 250px;
+  $side-menu-min-width: rem-calc(240);
 
   @include breakpoint(medium) {
     display: flex;
 
     > nav {
-      flex: 25%;
+      flex: 20%;
       min-width: $side-menu-min-width;
 
       + * {
-        flex: 75%;
-        padding: $line-height !important;
+        flex: 80%;
+        padding: $line-height;
       }
     }
 
@@ -478,7 +478,7 @@ a {
       z-index: 12;
 
       + * {
-        padding: $line-height !important;
+        padding: $line-height;
       }
     }
 
