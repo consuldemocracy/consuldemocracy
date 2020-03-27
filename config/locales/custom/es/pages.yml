@@ -1,6 +1,330 @@
 ---
 es:
   pages:
+    help:
+      faq:
+        page:
+          title: "Preguntas Frecuentes y soluciones a problemas técnicos(FAQ)"
+          description: |-
+            <p>Te presentamos una lista de las soluciones a los problemas y dudas técnicas más frecuentes. Si esto no resuelve tu problema, puedes contactar con nosotros en el correo <a href="mailto:presupuestosparticipativos@ava.es">presupuestosparticipativos@ava.es</a>, o bien llamar al 010 o 983426201.</p>
+
+            <h2 id="1">No estoy empadronado/a en Valladolid, ¿puedo participar?</h2>
+            <ul>
+              <p>La votación de propuestas está limitada a la gente empadronada en Valladolid mayor de 16 años, ya que se trata de tomar decisiones que afectarán al municipio y a los vecinos y vecinas que viven en él, y por tanto nos parece que son ellos y ellas quienes tienen que tomar la decisión final. Es cierto que hay personas que no están empadronadas en Valladolid y que aún así les pueden afectar esas decisiones, pero el Padrón es el censo más amplio del que disponemos que nos permite que el proceso de participación sea seguro y lleguemos al máximo posible de personas.</p>
+            </ul>
+
+            <h2 id="2">Necesito teléfono móvil o acceso a Internet para poder participar?</h2>
+            <ul>
+            <p>No. Todas las acciones relacionadas con las propuestas, tanto presentarlas, como votarlas o informarnos sobre ellas, es algo que podemos hacer a través de la plataforma web directamente. También puedes presentar tus propuestas presencialmente en los Centros Cívicos y Centros Municipales dependientes del Área de Participación Ciudadana, Juventud y Deportes.</p>
+            </ul>
+
+            <h2 id="3">¿Cómo creo mi cuenta?</h2>
+            <p>
+            </p><ul>
+              Para eso hacemos click en el enlace Registrarse y cubrimos los datos que nos piden. Es un requisito marcar la casilla de aceptación de las condiciones de uso. Al crear una cuenta nos llegará un correo electrónico a la dirección que tengamos especificada, y tendremos que hacer click en el enlace que contiene (el enlace que pone "Confirmar mi cuenta") para terminar de crear la cuenta.
+            </ul>
+            <p></p>
+
+            <h2 id="4">¿Cómo puedo enviarle una propuesta al Ayuntamiento? ¿Os puedo mandar directamente mi propuesta a alguno de los correos electrónicos que aparecen en la web de Participación?</h2>
+            <ul>
+            <p>No. El camino correcto para hacer una propuesta es añadirla directamente en la plataforma de Presupuestos Participativos dentro de la sección "Presupuestos participativos" (para eso es necesario primero crear una cuenta haciendo click en el enlace Registrarse, y una vez creada, pulsar en el botón "Crear propuesta" de la sección "Presupuestos participativos"). También puedes presentar tus propuestas presencialmente en los Centros Cívicos y Centros Municipales dependientes del Área de Participación Ciudadana, Juventud y Deportes.</p>
+            </ul>
+
+            <h2 id="5">He olvidado mi contraseña o no me funciona, ¿qué puedo hacer?</h2>
+            <ul>
+              Puedes solicitar una nueva contraseña para que se te envíe una nueva contraseña a tu correo electrónico.
+            </ul>
+
+            <h2 id="6">¿Cómo puedo cambiar mi correo electrónico, mi nombre de persona usuaria, mi contraseña, darme de baja o activar/desactivar las notificaciones que me llegan al correo electrónico?</h2>
+            <ul>
+            <p>Haz click en el enlace "Entrar", introduce tu correo electrónico y tu contraseña, y pulsa el botón "Entrar". Una vez hecho esto, haz click en el enlace "Mi cuenta" donde encontrarás todas las opciones que te permitirán cambiar tu correo electrónico, nombre de la persona usuaria, contraseña, darte de baja o activar/desactivar las notificaciones. Una vez realizado el cambio adecuado asegúrate de hacer click en el botón "Guardar cambios".</p>
+            </ul>
+      guide: "Esta guía explica para qué sirven y cómo funcionan cada una de las secciones de esta plataforma."
+      title: "Tu voz YA!"
+    budgets_info:
+      title: "Información sobre los presupuestos participativos"
+      description: |-
+        <h2>¿Qué son los Presupuestos Participativos?</h2>
+        <ul>
+          Los  Presupuestos Participativos son un mecanismo por el que la ciudadanía decide  el destino de una parte de los recursos municipales estableciendo prioridades en materia de gastos y realizando un control posterior de los compromisos alcanzados.<br><br>
+        </ul><h2>¿Qué cantidad destina el Ayuntamiento a los Presupuestos Participativos?</h2>
+
+        <ul>
+
+          El Ayuntamiento de Valladolid destinará 5 millones de euros a presupuestos Participativos para el ejercicio de 2020,  repartidos  en 500.000 € para cada una de las zonas geográficas en que se ha dividido la ciudad.<br><br>
+
+        </ul>
+        <h2>¿Quién puede participar?</h2>
+
+          <ul>
+
+            Podrán tomar parte en este proceso los mayores de 16 años empadronados en el municipio.<br><br>
+
+          </ul>
+        <h2>¿Cuáles son las fases del proceso?</h2>
+
+        <div>
+        <ul class="lista">
+
+          <li><strong>Convocatoria de Asambleas Informativas  y constitución  de mesa de zona:</strong><br></li>
+
+            <p>Entre los días 5 y 11 de abril se realizarán las asambleas informativas para la elección de las mesas de zona, formadas por representantes de asociaciones de vecinos, otros colectivos vecinales y ciudadanos a título particular, encargados de priorizar las propuestas presentadas.</p>
+
+          <li><strong>Recogida de propuestas:</strong><br></li>
+
+            <p>Del 15 al 3 de mayo podrás presentar propuestas sobre cómo invertir los 5 millones que el Ayuntamiento ha destinado a los presupuestos participativos (500.000 € por zona).</p>
+
+          <li><strong>Evaluación:</strong><br></li>
+
+            <p>Desde el día 3 y hasta el 7 de junio, las mesas de zona ordenarán y priorizarán las propuestas de zona en base a los criterios establecidos.<br><br>
+            Entre el 10 de julio y el 13 de septiembre, el personal técnico municipal valorará económicamente las propuestas remitidas por cada mesa de zona.</p>
+
+          <li><strong>Debate de propuestas:</strong><br></li>
+
+            <p>Entre los días 7 y 11 de octubre se realizarán las Asambleas de Zona para que tú debatas sobre las propuestas evaluadas y decidas la relación definitiva de propuestas que va a presentarse a la ciudadanía para la votación final.</p>
+
+          <li><strong>Votación final.</strong><br></li>
+
+            <p>Del 15 al 28 de octubre se desarrollará la fase de votación final en la que tú decides cómo distribuir los 500.000 € de tu zona.
+            Las propuestas más votadas en cada zona, hasta un total de 500.000 €.
+            La suma de las propuestas de cada zona, hasta 5 millones de euros, se incorporarán al proyecto del Presupuesto General del Ayuntamiento de Valladolid.</p>
+
+        </ul>
+
+        <br>
+        </div>
+        <h2>¿Qué puedo proponer?</h2>
+
+          <ul>
+
+            Este año podrás hacer propuestas de inversión para ser ejecutadas por el Ayuntamiento durante el año 2020 en la zona donde estás empadronado (o en la zona de la ciudad que tú elijas).<br><br>
+
+            <h4>Para que la propuesta sea válida, tiene que ajustarse a los siguientes criterios:</h4>
+              
+              <ul>
+                <li>Ser una inversión.<br></li>
+                <li>Ser de competencia municipal.</li>
+                <li>Ser viable técnicamente.</li>
+                <li>Que el coste no supere el importe de 500.000€ por zona que se destina este año a este proceso.</li>
+              </ul>
+
+              <br>
+            
+
+            <h4>En qué podemos invertir:</h4>
+
+            Las propuestas deben ser de inversión y ajustarse al presupuesto
+            disponible. Una propuesta de inversión es aquélla que supone un gasto en
+            creación de nuevos equipamientos o infraestructuras,
+            arreglo/modificación/mejora de las ya existentes y adquisición de bienes
+            inventariables. Es decir, se trata de algo tangible que será beneficioso
+            en el futuro.<br><br>
+
+            <h4>Además, las propuestas deben cumplir una serie de criterios:</h4>
+            <ul>
+              <li>Atender a necesidades básicas de la población.</li>
+              <li>Beneficiar al mayor número de personas y colectivos.</li>
+              <li>Atender a colectivos en situación de riesgo de exclusión.</li>
+              <li>Que no existan inversiones previas similares.</li>
+              <li>Que promuevan equilibrio territorial entre zonas y barrios.</li>
+              <li>Que tengan un contenido ecológico o sostenible a favor del medio ambiente.</li>
+              <li>Que favorezcan la participación ciudadana.</li>
+              <li>Que favorezcan la igualdad de género entre mujeres y hombres.</li>
+            </ul>
+            <br>
+            <h4>Algunos ejemplos de inversión:</h4>
+              <ul>
+                <li>Arreglar aceras</li>
+                <li>Alcantarillado</li>
+                <li>Sendas peatonales</li>
+                <li>Carriles bici</li>
+                <li>Iluminación pública</li>
+                <li>Zonas deportivas</li>
+                <li>Parques y zonas verdes</li>
+                <li>Señalización viaria</li>
+                <li>Mobiliario urbano</li>
+                <li>Mejora en urbanizaciones</li>
+                <li>Equipamientos de pequeña envergadura</li>
+                <li>Mejora o acondicionamiento de equipamientos ya existentes</li>
+              </ul>
+            <br>
+            <h4>Son propuestas inviables:</h4>
+
+            No podrán ser tenidas en cuenta las propuestas que:
+            <ul>
+              <li>No sean directamente de inversión (por ejemplo: contratación de personal, campañas o planes de concienciación o sensibilización, seguridad, actividades culturales, deportivas o de ocio...).</li>
+              <li>No sean competencia directa del Ayuntamiento y sean competencia de otras Administraciones (como la Diputación, la Junta de Castilla León o el Estado).</li>
+              <li>Superen el presupuesto disponible, tras la revisión por parte de los técnicos municipales (500.000 € por zona).</li>
+              <li>No sean viables técnicamente tras la revisión de los técnicos municipales (es decir, no haya posibilidad técnica de ejecución).</li>
+              <li>No cumplan con la legislación y la normativa vigente, tras la revisión de los técnicos municipales.</li>
+            </ul>
+            <br>
+          </ul>
+        <h2>¿Cómo hago mi propuesta?</h2>
+
+          <ul>
+
+            Puedes hacer todas las propuestas que quieras, no hay límite en esta fase.<br><br>
+
+            <h4>Hay dos formas de presentar las propuestas:</h4>
+              <ul>
+                <li>Personalmente, depositándolas en las urnas que el Ayuntamiento pone a tu disposición en los Centros Cívicos y Centros Municipales, mediante el documento que en ellos está a tu disposición.</li>
+
+                <li>A través de la aplicación, dándote de alta y cumplimentando el formulario que en ella aparece.</li>
+              </ul>
+            <br>
+            <h4>Tanto si lo haces de una u otra forma, debes indicar:</h4>
+              <ul>
+                <li>Título de la propuesta. Ej: <strong>"Zona de juegos infantiles en la Plaza de San Juan"</strong></li>
+
+                <li>Breve descripción. Ej: <strong>"Ampliar la zona de juegos infantiles dotándola de mesas de ajedrez y damas"</strong>. Deberás limitarte al espacio que aparece en el formulario. Cuanto más detallada sea, se podrá priorizar y evaluar mejor por las mesas de zona y el equipo técnico municipal, además de ser fácilmente entendible para la ciudadanía en la votación final.</li>
+              </ul>
+          </ul>
+
+        <br>
+        <h2>¿Qué zona te corresponde?</h2>
+          <ul>
+             <li>Zona Este 1: Delicias, Nuevo Hospital, Pinar de Jalón, Polígono San Cristóbal, Polígono Argales</li>
+             <li>Zona Este 2: Pajarillos-San Isidro, Las Flores, Buenos Aires</li>
+             <li>Esgueva 1: La Rondilla, Hospital</li>
+             <li>Esgueva 2: Barrio España, San Pedro Regalado, Barrio Belén, Pilarica, Vadillos, Batallas, Circular</li>
+             <li>Pisuerga 1: La Victoria, Fuente Berrocal, La Galera, La Overuela</li>
+             <li>Pisuerga 2: Huerta del Rey, Villa del Prado, Girón</li>
+             <li>Parquesol: Parquesol</li>
+             <li>Zona Sur 1: 4 de Marzo, Campo Grande, La Farola, Arturo Eyries, Plaza de Toros</li>
+             <li>Zona Sur 2: Covaresa, Parque Alameda, Paula López, Las Villas, Santa Ana, El Peral, Valparaiso, El Pinar, Puente Duero, La Rubia</li>
+             <li>Zona Centro: Caño Argales, Plaza España, Plaza Mayor, San Pablo-San Nicolás, San Martín, La Antigua</li>
+          </ul>
+        <br>
+        <h2>¿Cómo es el proceso?</h2>
+            <ul>
+
+            <p><strong>1.</strong>  Constitución del Grupo Motor, formado por miembros designados de entre las Federaciones de Asociaciones Vecinales, quienes junto al Ayuntamiento procederán a la convocatoria de las Asambleas Ciudadanas para la constitución de las Mesas de Barrios/Zonas.</p>
+
+            <p><strong>2.</strong>  Convocatoria de las asambleas de zona abierta a toda la ciudadanía en cada una de las zonas de la ciudad para la constitución de las Mesas de Zona. En estas asambleas se facilitará información sobre la naturaleza de las propuestas de inversiones que se pueden realizar y se procederá a la elección de los componentes de las Mesas de Zona. Podrán formar parte de la Mesa de Zona los vecinos a título individual mayores de 16 años empadronados en el municipio y representantes de asociaciones y colectivos legalmente constituidos que desarrollan su actividad en la zona. Entre los miembros de la Mesa de Zona se elegirá una persona como coordinador/a, responsable de levantar acta de cada reunión del grupo y de las asambleas ciudadanas, el envío de la documentación generada a cada miembro y la realización de las convocatorias de la mesa y de las asambleas de zona. Este cargo podrá tener carácter rotativo.</p>
+
+            <p><strong>3.</strong>  Presentación y priorización de las propuestas. Constituida la Mesa de Zona se procederá a la apertura del plazo para que la ciudadanía pueda presentar sus propuestas. A tal efecto el Ayuntamiento pondrá a disposición de la ciudadanía a través de medios telemáticos y presenciales un modelo tipo de recogida de propuestas. Una vez recibidas las propuestas, los miembros de la Mesa procederán a su análisis. Serán rechazadas aquellas que no sean competencia de esta administración, no se ajusten al programa o programas presupuestarios establecidos, que superen el presupuesto destinado a éste proceso, que afecten a más de un ejercicio presupuestario o que, por su indefinición, no puedan concretarse en una actuación. En esta fase la Mesa podrá solicitar asesoramiento político o técnico al Ayuntamiento sobre la viabilidad presupuestaria de las propuestas. Las propuestas aceptadas serán priorizadas por la mesa con base a los siguientes criterios:</p>
+
+            <ul>
+              <li>Que atienda a necesidades básicas de la población destinadas a resolver carencias o equipamientos básicos.</li>
+              <li>El número de personas beneficiadas con la propuesta.</li>
+              <li>Que sea formulada para amplios colectivos ciudadanos.</li>
+              <li>Que atiendan a colectivos con necesidades especiales o que intenten corregir situaciones de riesgo o exclusión social.</li>
+              <li>Que no existan inversiones previas o similares.</li>
+              <li>Que promuevan el equilibrio territorial, especialmente en la corrección de déficits, entre unas zonas y otras de la ciudad, y en la intervención en zonas desfavorecidas.</li>
+              <li>Que tengan un contenido ecológico o sostenible: reducción de la contaminación ambiental, de suelos, de aguas, acústica o lumínica; que faciliten otras formas de sostenibilidad o el tratamiento /disminución de residuos.</li>
+              <li>Que favorezca la creación de un tejido ciudadano autónomo, participativo y comprometido.</li>
+              <li>Que facilite, promueva o impulse la participación de mujeres en la sociedad.</li>
+            </ul>
+            <br>
+            <p>Por cada criterio se aportará 0/1 puntos a la propuesta, según cumpla o no el criterio. Cada miembro de la Mesa hará su valoración.</p>
+
+            <ul>
+              <li>Con la suma de las valoraciones de cada propuesta se obtendrá una tabla clasificatoria con la puntuación total, a la que se incorporará el importe del gasto correspondiente a cada proyecto.</li>
+
+              <li>Cada Mesa de Barrio/Zona podrá presentar un máximo de 20 propuestas para la valoración económica por el personal técnico municipal, estableciéndose un listado provisional de cinco propuestas más en caso de que algunas propuestas anteriores no sea válida.</li>
+            </ul>
+            <br>
+            <p><strong>4.</strong>  Valoración económica por parte del personal técnico municipal y proceso de votación de las propuestas.</p>
+
+            <p>El personal técnico municipal procederá a valorar económicamente las propuestas remitidas por las Mesas de Zona y posteriormente se procederá a la convocatoria, por parte de cada Mesa de Zona, de una Asamblea de Zona donde se dará cuenta a la ciudadanía de los procesos de trabajo realizados y se presentará la relación de propuestas que deberán ser votadas por los/ as vecinos/as. En estas Asambleas se podrá debatir sobre las propuestas presentadas y su inclusión/exclusión de la relación elaborada por la Mesa de Zona.</p>
+
+            <p><strong>5.</strong>  Votación. Una vez aprobado por la Asamblea la relación definitiva de propuestas se iniciará la fase de votación de las mismas, utilizando para ello los medios telemáticos que el Ayuntamiento ponga a disposición de la ciudadanía.</p>
+
+            <p><strong>6.</strong>  Remisión al Grupo Motor Finalizado el proceso de votación las mesas de zona elaborarán la relación de las propuestas más votadas, que tengan cabida dentro del presupuesto asignado a cada zona, y su remisión al Grupo Motor.</p>
+
+            <p><strong>7.</strong>  El Grupo Motor procederá a la revisión de la documentación recibida y a su presentación al Ayuntamiento para que las propuestas sean incorporadas al presupuesto municipal.</p>
+            </ul>
+    conditions:
+      subtitle: "AVISO LEGAL SOBRE LAS CONDICIONES DE USO, PRIVACIDAD Y PROTECCIÓN DE DATOS PERSONALES DEL PORTAL DE E-PARTICIPACIÓN DEL AYUNTAMIENTO DE VALLADOLID"
+      description: |-
+        <br>
+        <h4>1. Ámbito de aplicación de las condiciones de uso</h4>
+        <p>La participación (entendiéndola como participación activa más allá de la lectura del contenido presente) en el Portal de eParticipación del Ayuntamiento de Valladolid se regula por las presentes condiciones de uso que vinculan a todas las personas que participen en este sitio web. Por ello, cualquier persona que desee participar deberá registrarse, a cuyo fin se solicitará la aceptación de estas condiciones de uso.</p>
+        <p>El Ayuntamiento de Valladolid se reserva la facultad de modificar las presentes condiciones de uso para la participación en el Portal de eParticipación del Ayuntamiento de Valladolid, cuya última versión se publicará en este sitio web.</p>
+
+        <br>
+        <h4>2. Objetivo de la iniciativa</h4>
+        <p>A través del Portal de eParticipación, el Ayuntamiento de Valladolid quiere fomentar la participación de los ciudadanos en la gestión de la ciudad, implicándoles en la generación de ideas y propuestas novedosas y viables, con el objeto de mejorar su calidad de vida. Es una apuesta decidida por una gestión más cercana a los ciudadanos que permitirá recibir sus propuestas y además, crear canales directos de comunicación con el gobierno municipal, contribuyendo a tomar las decisiones más acertadas para el interés general.</p>
+
+        <br>
+        <h4>3. Cuestiones generales sobre la participación en el Portal de eParticipación del Ayuntamiento de Valladolid</h4>
+        <p>Podrá participar cualquier persona física a partir de los 16 años que se haya registrado previamente en el Portal de eParticipación. Mediante la aceptación de estas condiciones de uso se declara tener 16 años o más. Los mayores de edad a cuyo cargo se encuentran los menores, son los plenos responsables de la actuación que tengan éstos en el Portal de eParticipación.</p>
+        <p>Al introducir el título de las propuestas, se recomienda escribir una descripción breve y precisa con un máximo de 2000 caracteres. Para completar la argumentación se podrán asociar documentos adjuntos o de las Redes Sociales Vimeo, Youtube, Slideshare, Flickr o SoundCloud.</p>
+
+        <br>
+        <h4>4. Obligaciones de los usuarios del Portal de eParticipación</h4>
+        <p>Al ser el Ayuntamiento de Valladolid un punto de encuentro cuyo objetivo es debatir, y compartir y valorar propuestas relacionadas con la mejora de la ciudad, los usuarios están obligados a hacer un uso diligente y acorde a dicho objetivo.</p>
+        <p>El Ayuntamiento de Valladolid no es responsable del uso incorrecto del Portal de eParticipación por los usuarios o de los contenidos localizados en el mismo, siendo cada usuario responsable de su uso correcto y de la legalidad de los contenidos y opiniones que haya compartido.</p>
+        <p>El Ayuntamiento de Valladolid se reserva, por lo tanto, el derecho a limitar el acceso al Portal de eParticipación del Ayuntamiento de Valladolid de opiniones, informaciones, comentarios o documentos que los usuarios quieran incorporar, pudiendo instalar filtros a tal efecto. Todo ello se realizará únicamente mientras tenga el fin de preservar el objetivo fundamental del Portal de eParticipación.</p>
+        <p>De acuerdo a la normativa legal vigente queda prohibida la utilización del Portal de eParticipación del Ayuntamiento de Valladolid con fines distintos a los de debatir, compartir y valorar propuestas, y específicamente:</p>
+        <p>Compartir cualquier contenido que pueda ser considerado como una vulneración en cualquier forma de los derechos fundamentales al honor, imagen e intimidad personal y familiar de terceros o contra la dignidad de las personas.</p>
+        <p>Compartir imágenes o fotografías que recojan imágenes o datos personales de terceros sin haber obtenido el oportuno consentimiento de sus titulares.</p>
+        <p>Compartir cualquier contenido que vulnere el secreto en las comunicaciones, la infracción de derechos de propiedad industrial e intelectual o de las normas reguladoras de la protección de datos de carácter personal.</p>
+        <p>Reproducir, distribuir, compartir contenidos, informaciones o imágenes que hayan sido puestas a disposición por otros usuarios sin la autorización expresa de estos.</p>
+        <p>Su utilización con fines de publicidad.</p>
+        <p>La realización de cualquiera de los anteriores comportamientos permitirá al Ayuntamiento de Valladolid suspender temporalmente la actividad de un participante, inhabilitar su cuenta o borrar su contenido, sin perjuicio de otras responsabilidades que puedan ser reclamadas.</p>
+        <p>En caso de que el contenido introducido por los usuarios incorpore un enlace a otro sitio web, el Ayuntamiento de Valladolid no será responsable por los daños o perjuicios derivados del acceso al enlace o a sus contenidos.</p>
+        <p>En caso de litigio de cualquier clase o por cualquier motivo entre los participantes en el sitio web y/o un tercero, el Ayuntamiento de Valladolid quedará exento de cualquier responsabilidad por reclamaciones, demandas o daños de cualquier naturaleza relacionados o derivados del litigio.</p>
+
+        <br>
+        <h4>5. Uso del Portal de eParticipación</h4>
+        <p>Los participantes podrán acceder y navegar por el Portal de eParticipación libremente y de forma anónima. Sólo cuando quieran realizar alguna acción que implique la creación, apoyo o comentario de una propuesta, o a la participación en un debate, se le solicitará que introduzca sus credenciales, para cuya obtención será necesario registrarse previamente. El registro que permitirá participar comentando en cualquiera de las secciones, creando debates o propuestas, se realizará introduciendo los siguientes datos:</p>
+        <ul>
+          <li>Nombre de usuario</li>
+          <li>Correo electrónico</li>
+          <li>Aceptación de las condiciones de uso de el Portal de eParticipación</li>
+        </ul>
+
+        <p>El Portal de Gobierno eParticipación también permite la identificación mediante el usuario de Facebook, Twitter y Google+.</p>
+        <p>Para participar apoyando propuestas, al usuario se le requerirá que verifique su cuenta cumpliendo que tiene 16 años o más y está empadronado en Valladolid, para lo cual se le guiará a través de una serie de pasos donde se le solicitarán datos relativos al padrón.</p>
+
+        <br>
+        <h4>6. Condiciones para el tratamiento de los contenidos proporcionados por los usuarios</h4>
+        <p>Las presentes condiciones regulan los términos aplicables al contenido remitido por los usuarios de esta plataforma a través del formulario correspondiente (en adelante, el contenido). Estas condiciones se aplican tanto al contenido inicialmente remitido al Portal de eParticipación como a cualquier contenido que se envíe con posterioridad o se manifieste al Ayuntamiento de Valladolid, debiendo significarse lo siguiente:</p>
+        <ul>
+          <li>A. No Confidencialidad: Todo el contenido remitido por el usuario al Ayuntamiento de Valladolid deberá ser susceptible de ser conocido por el público en general. Por lo tanto, el Ayuntamiento de Valladolid tratará el citado contenido como información no confidencial.</li>
+          <br>
+          <li>B. Procedimiento: En el caso de que el Ayuntamiento de Valladolid esté interesado en el contenido remitido por el usuario, se pondrá en contacto con él para solicitarle información adicional. Dicha información tendrá asimismo carácter de no confidencial, sin perjuicio de que en el caso de que las partes consideren la necesidad de intercambiarse información de carácter confidencial se firme el correspondiente Acuerdo de Confidencialidad.<br><br>
+          El Ayuntamiento de Valladolid se reserva el derecho de no contactar con los usuarios que le hubieran remitido el contenido. Todo ello sin perjuicio de lo establecido en el apartado relativo a "Derechos de Propiedad Intelectual e industrial".<br><br>
+          En el supuesto que el Ayuntamiento de Valladolid, a su entera discreción, decidiera contactar con determinados usuarios, éstos conocen y aceptan que por ello el Ayuntamiento de Valladolid no adquiere compromiso alguno.</li>
+          <br>
+          <li>C. Publicidad o difusión de los contenidos presentados: Los participantes en el Portal de eParticipación del Ayuntamiento de Valladolid declaran conocer y aceptar el hecho de que la información aportada podrá ser publicada en la web <a href="www.valladolid.es/presupuestosparticipativos" target="_blank" title="(se abre en ventana nueva)">www.valladolid.es/presupuestosparticipativos</a>, así como a través de otros medios que la organización considere oportunos para dar a conocer esta iniciativa.</li>
+          <br>
+          <li>D. No devolución material: El Ayuntamiento de Valladolid carece de obligación alguna de devolver el Contenido remitido por los usuarios.</li>
+          <br>
+          <li>E. Procedimiento de aviso y retirada: El Ayuntamiento de Valladolid procesará las peticiones de eliminación o retirada de contenidos que incumplan las condiciones de uso que hayan añadido los participantes. Asimismo, cualquier persona, con motivos razonados si existe incumplimiento de las presentes condiciones de uso, podrá solicitar la retirada de contenidos al Ayuntamiento de Valladolid. El Ayuntamiento de Valladolid se reserva el derecho de hacer las comprobaciones o verificaciones oportunas con carácter previo a la retirada de cualquier contenido.</li>
+        </ul>
+
+        <br>
+        <h4>7. Política de privacidad y protección de datos</h4>
+        <ul>
+          <li>A. Titularidad de los derechos de propiedad intelectual e industrial: El usuario que aporta el Contenido declara, con la aceptación de las presentes Condiciones, ser titular de los derechos de propiedad intelectual y/o industrial u ostentar derechos suficientes sobre dicho contenido y que además lo remite al Ayuntamiento de Valladolid de forma voluntaria para su divulgación en el Portal de eParticipación del Ayuntamiento de Valladolid.<br><br>
+          La titularidad de todos y cada uno de los Contenidos presentados que se encuentren protegidos o sean susceptibles de encontrarse protegidos, por el Derecho de la Propiedad Industrial e Intelectual, corresponde a los autores y/o titulares de los mencionados Contenidos.<br><br>
+          El Ayuntamiento de Valladolid no asume responsabilidad alguna, ya sea directa o indirecta, respecto de cualquier tipo de controversia, disputa y/o litigio que pudiera derivarse de la publicación, divulgación y/o difusión de los contenidos aportados sin el preceptivo consentimiento de sus legítimos titulares.<br><br>
+          El Ayuntamiento de Valladolid respetará todos los Derechos de Propiedad Intelectual o Industrial sobre el contenido remitido por los usuarios. Cualquier vulneración de los Derechos de Propiedad Intelectual o Industrial será responsabilidad de la persona que aporte el contenido.<br><br>
+          El Ayuntamiento de Valladolid, por la mera recepción del contenido, no recibe del usuario licencia alguna de propiedad intelectual o industrial, por lo que no hará uso del contenido salvo aceptación expresa de su titular.</li>
+          <br>
+          <li>B. Protección de datos: Los datos personales aportados por los usuarios que se registren en el Portal de eParticipación, serán tratados de acuerdo a lo expuesto en el apartado de Política de Privacidad.  
+        </li></ul>
+
+        <br>
+        <h4>8. Normativa aplicable</h4>
+        <p>Las normas del ordenamiento jurídico español rigen de manera exclusiva estas condiciones de uso. Cualquier disputa, controversia o reclamación derivada de estas condiciones de uso, o el incumplimiento, rescisión o invalidación de estas, se resolverán exclusivamente ante los juzgados competentes.</p>
+
+        <br>
+        <h4>9. Revisión de las condiciones de uso</h4>
+        <p>El Ayuntamiento de Valladolid se reserva el derecho de revisar las presentes condiciones de uso y la política de privacidad en cualquier momento y por cualquier razón. En dicho caso, los usuarios registrados serán avisados a través de este espacio en línea y, si continúan utilizando el Portal de eParticipación, se entenderán aceptadas las modificaciones introducidas.</p>
+    privacy:
+      subtitle: "AVISO DE PROTECCIÓN DE DATOS"
+      description: |-
+        <ol>
+          <li>La navegación por la informacion disponible en el Portal de Gobierno Abierto del Ayuntamiento de Valladolid es anónima.</li>
+          <li>Para utilizar los servicios contenidos en el Portal de Gobierno Abierto del Ayuntamiento de Valladolid el usuario deberá darse de alta y proporcionar previamente los datos de carácter personal según la informacion especifica que consta en cada tipo de alta.</li>
+          <li>Los datos aportados serán incorporados y tratados por el Ayuntamiento de Valladolid en un fichero automatizado de datos personales.</li>
+          <li>El interesado podrá ejercer los derechos de acceso, rectificación, cancelación y oposición, ante el órgano responsable indicado todo lo cual se informa en el cumplimiento del artículo 5 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+          <li>Como principio general, este sitio web no comparte ni revela información obtenida, excepto cuando haya sido autorizada por el usuario, o la informacion sea requerida por la autoridad judicial, ministerio fiscal o la policia judicial, o se de alguno de los supuestos regulados en el artículo 11 de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal.</li>
+        </ol>
     welcome:
       tu-voz: |-
         <h4>
