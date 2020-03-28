@@ -1,0 +1,6 @@
+---
+es:
+  activerecord:
+    attributes:
+      user:
+        login: "Correo electrónico"

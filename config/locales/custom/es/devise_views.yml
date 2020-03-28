@@ -1,0 +1,8 @@
+---
+es:
+  devise_views:
+    sessions:
+      new:
+        login_label: Email
+        password_label: Contraseña
+        title: Entrar
