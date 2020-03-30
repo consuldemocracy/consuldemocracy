@@ -9,13 +9,8 @@ class Admin::TagsController < Admin::BaseController
   end
 
   def create
-    @existing_tag = Tag.where(name: tag_params.first).first
-    if @existing_tag
-      @existing_tag.kind = "category"
-      @existing_tag.save
-    else
-      Tag.category.create(tag_params)
-    end
+    Tag.find_or_create_by!(name: tag_params["name"]).update!(kind: "category")
+
     redirect_to admin_tags_path
   end
 

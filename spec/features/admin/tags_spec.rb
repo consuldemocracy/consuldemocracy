@@ -90,7 +90,7 @@ describe "Admin tags" do
   end
 
   scenario "Upgrade tag to category" do
-    not_category_tag = create(:tag, name: "Soon a category")
+    create(:tag, name: "Soon a category")
 
     visit admin_tags_path
 
@@ -101,5 +101,4 @@ describe "Admin tags" do
 
     expect(page).to have_content "Soon a category"
   end
-
 end
