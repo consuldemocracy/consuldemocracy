@@ -87,6 +87,22 @@ header, .top-bar {
   }
 }
 
+// Botón de entrar
+
+@media screen and (min-width: 64em) {
+  #login-va a {
+    font-size: 1.3rem;
+    padding: 0.9rem 3rem;
+  }
+
+  #login-va a.button {
+    background: $brand;
+    color: $brand_secondary;
+    text-align: center;
+    font-weight: bold;
+  }
+}
+
 // 03. Footer
 
 // Tamaño iconos redes sociales
@@ -194,4 +210,58 @@ header, .top-bar {
 
 .auth-image {
   background: none;
+}
+
+// Omniauth ldap login
+
+.button.button-ldap {
+  background: #C1DEEA;
+  border-left: 3px solid #006E9C;
+
+  &:before {
+    color: #006E9C;
+    content: "c";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 0;
+    line-height: $line-height*2;
+    padding: 0 rem-calc(20);
+    position: absolute;
+    top: 0;
+  }
+}
+.ssb-ldap {
+  background: #C1DEEA;
+  background-image: none !important;
+  color: white;
+  height: rem-calc(48) !important;
+  position: relative;
+  width: rem-calc(48) !important;
+  
+  &:before{
+    content: "A";
+    font-family: "icons" !important;
+    font-size: rem-calc(24);
+    left: 50%;
+    line-height: $line-height*2;
+    margin-left: rem-calc(-11);
+    position: absolute;
+    top: 0;
+  }
+}
+
+.button.button-ldap {
+  background: white;
+  color: $text;
+  font-weight: bold;
+  height: $line-height*2;
+  line-height: $line-height*2;
+  padding: 0;
+  position: relative;
+}
+
+// 07. Admin
+
+#admin_menu li a {
+  color: #FFF;
 }
