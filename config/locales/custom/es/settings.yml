@@ -4,3 +4,5 @@ es:
     feature:
       comments: "Comentarios"
       comments_description: "Habilita o deshabilita los comentarios en los diferentes apartados de la web"
+      ldap_login: "Login con LDAP"
+      codigo_login: "Login con Códigos"

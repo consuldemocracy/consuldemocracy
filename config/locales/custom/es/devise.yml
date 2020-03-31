@@ -1,0 +1,6 @@
+---
+es:
+  devise:
+    omniauth_callbacks:
+      failure_ldap: "Datos de acceso incorrectos."
+      failure_codigo: "Datos de acceso incorrectos."

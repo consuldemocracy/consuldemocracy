@@ -6,3 +6,6 @@ es:
         login_label: Email
         password_label: Contraseña
         title: Entrar
+    shared:
+      links:
+        ldap_login: "¿Tienes una cuenta corporativa?"
