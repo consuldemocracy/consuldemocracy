@@ -102,19 +102,6 @@ a {
     font-size: $small-font-size;
   }
 
-  &.direct-upload-button {
-    font-weight: bold;
-    padding-left: $line-height * 1.5;
-    position: relative;
-
-    &::before {
-      content: "\f03e";
-      font-family: "Font Awesome 5 Free";
-      left: 10px;
-      position: absolute;
-    }
-  }
-
   &.add {
     font-weight: bold;
     padding-left: $line-height * 1.5;
@@ -1120,7 +1107,11 @@ form {
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
     background: #f8f8f8;
     height: $line-height * 2;
-    margin-bottom: rem-calc(16);
+    margin-bottom: $line-height * 1.5;
+
+    ~ .form-section-divider {
+      margin-bottom: $line-height / 2;
+    }
 
     &.error {
       margin-bottom: rem-calc(1);
@@ -2762,8 +2753,21 @@ table {
 // 22. Images
 // -----------------
 
-.images .button {
-  margin-top: $line-height / 2;
+.button {
+
+  &.direct-upload-button {
+    font-weight: bold;
+    margin-bottom: $line-height * 1.5;
+    padding-left: $line-height * 1.5;
+    position: relative;
+
+    &::before {
+      content: "\f03e";
+      font-family: "Font Awesome 5 Free";
+      left: 10px;
+      position: absolute;
+    }
+  }
 }
 
 // 23. Maps

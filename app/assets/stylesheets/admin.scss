@@ -349,15 +349,17 @@ $admin-text:     #434d54;
       height: $line-height * 2;
     }
 
-    [type]:not([type="submit"], [type="button"]),
+    [type]:not([type="submit"], [type="button"], [type="checkbox"], [type="radio"]),
     select {
       border: 2px solid $admin-border;
       border-radius: rem-calc(6);
       box-shadow: none;
+      margin-bottom: $line-height * 1.5;
     }
 
     label {
       color: $admin-title;
+      margin-bottom: $line-height / 2;
     }
 
     .locale-form {
@@ -371,7 +373,15 @@ $admin-text:     #434d54;
   .form-label {
     color: $admin-title;
     font-weight: bold;
-    margin-bottom: 0;
+    margin-bottom: $line-height / 2;
+  }
+
+  label,
+  .form-label {
+
+    + .help-text {
+      margin-top: rem-calc(-12);
+    }
   }
 
   .globalize-languages {
@@ -658,6 +668,7 @@ code {
   clear: both;
   font-size: $small-font-size;
   font-weight: bold;
+  margin-top: $line-height * 2;
   position: relative;
   text-transform: uppercase;
 

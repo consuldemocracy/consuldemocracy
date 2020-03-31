@@ -37,6 +37,7 @@
   </div>
 
   <% if @budget.persisted? %>
+    <div class="clear"></div>
     <p class="form-section-divider">
       <span><%= t("admin.budgets.edit.info.groups_and_headings_settings") %></span>
     </p>
@@ -46,6 +47,7 @@
     </div>
   <% end %>
 
+  <div class="clear"></div>
   <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.staff_settings") %></span></p>
 
   <div class="clear">
@@ -63,6 +65,7 @@
   <%= render "/admin/budgets/association", assignable_type: "valuators", assignables: @valuators, form: f %>
 
   <% if @budget.persisted? %>
+    <div class="clear"></div>
     <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.phases_settings") %></span></p>
 
     <div class="small-12 medium-6 column">
@@ -73,6 +76,7 @@
   <%= render "admin/budget_phases/phases" %>
 
   <% if @budget.persisted? %>
+    <div class="clear"></div>
     <p class="form-section-divider"><span><%= t("admin.budgets.edit.info.results_settings") %></span></p>
 
     <div class="small-12 column">
