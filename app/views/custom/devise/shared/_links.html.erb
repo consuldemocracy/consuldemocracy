@@ -30,5 +30,8 @@
       <%= link_to t("devise_views.shared.links.signin_with_provider", provider: provider.to_s.titleize), omniauth_authorize_path(resource_name, provider) %><br>
     <% end -%>
   <% end -%>
-
+  
+  <% if feature? :ldap_login %>
+    <%= link_to t("devise_views.shared.links.ldap_login"), user_ldap_omniauth_authorize_path %>
+  <% end %>
 </div>
