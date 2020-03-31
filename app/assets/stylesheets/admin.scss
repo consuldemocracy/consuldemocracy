@@ -589,22 +589,24 @@ code {
 .reveal {
   border-radius: rem-calc(12);
 
+  @include breakpoint(large) {
+    .row {
+      display: flex;
+      margin-bottom: $line-height * 2;
+    }
+
+    .column {
+      display: flex;
+      flex-flow: column;
+
+      &:last-child {
+        border-left: 2px solid $admin-border;
+      }
+    }
+  }
+
   &:focus {
     outline: 0;
-  }
-
-  .row {
-    display: flex;
-    margin-bottom: $line-height * 2;
-  }
-
-  .column {
-    display: flex;
-    flex-flow: column;
-
-    &:last-child {
-      border-left: 2px solid $admin-border;
-    }
   }
 
   .reveal-description {
@@ -623,6 +625,7 @@ code {
     color: $admin-text;
     font-size: rem-calc(24);
     margin-bottom: $line-height * 2;
+    margin-top: $line-height;
     text-align: center;
     text-transform: uppercase;
   }
@@ -640,6 +643,13 @@ code {
     font-weight: bold;
     height: rem-calc(30);
     width: rem-calc(30);
+  }
+
+  .button {
+
+    &.hollow {
+      display: inline-table;
+    }
   }
 }
 
