@@ -17,6 +17,16 @@ Rails.application.routes.draw do
   get "/", to: redirect(Rails.application.config.root_directory)
 
   scope RouteScoper.root do
+    # Omniauth LDAP
+    resources :ldap, only: [:new, :create]
+
+    # Omniauth Códigos + API
+    post "codigos/api", to: "codigos#api"
+    post "codigos", to: "codigos#create"
+
+    resources :codigos
+
+    # Import routes
     draw :account
     draw :admin
     draw :annotation
