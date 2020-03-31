@@ -1410,7 +1410,7 @@ describe "Proposals" do
       end
     end
 
-    scenario "Order by relevance by default", :js do
+    scenario "Order by relevance by default", :spanish_search, :js do
       create(:proposal, title: "Show you got",      cached_votes_up: 10)
       create(:proposal, title: "Show what you got", cached_votes_up: 1)
       create(:proposal, title: "Show you got",      cached_votes_up: 100)
