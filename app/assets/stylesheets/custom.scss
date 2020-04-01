@@ -265,3 +265,14 @@ header, .top-bar {
 #admin_menu li a {
   color: #FFF;
 }
+
+// 08. Budgets
+
+.expanded.budget, .budget-heading {
+  background-image: image-url("header_va_proposals.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
