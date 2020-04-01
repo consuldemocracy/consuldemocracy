@@ -127,7 +127,7 @@ sv:
         see_price_explanation: Kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
-        add: Röst
+        add: Rösta
         already_added: Du har redan skapat det här investeringsprojektet
         already_supported: Du stöder redan det här budgetförslaget. Dela det!
         support_title: Stöd projektet
