@@ -28,15 +28,15 @@
 <div class="row margin">
   <div id="headings" class="small-12 medium-7 column select-district">
     <div class="row">
-      <% @group.headings.sort_by_name.each_slice(7) do |slice| %>
+      <% @group.headings.sort_by(&:id).each_slice(7) do |slice| %>
         <div class="small-6 medium-4 column end">
           <% slice.each do |heading| %>
             <span id="<%= dom_id(heading) %>"
                   class="<%= css_for_ballot_heading(heading) %>">
-              <%= link_to heading.name,
+              <%= link_to((heading.long_name || heading.name),
                           budget_investments_path(heading_id: heading.id,
                                                   filter: @current_filter),
-                          data: { no_turbolink: true } %><br>
+                          data: { no_turbolink: true }) %><br>
             </span>
           <% end %>
         </div>
@@ -45,7 +45,9 @@
   </div>
 
   <div class="medium-5 column show-for-medium text-center">
-    <%= image_tag(image_path_for("map.jpg")) %>
+    <%= link_to asset_url('map_big.png'), target: "_blank" do %>
+      <%= image_tag "map.png" %>
+    <% end %>
   </div>
 </div>
 

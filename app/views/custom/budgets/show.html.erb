@@ -9,7 +9,9 @@
 
       <h1><%= @budget.name %></h1>
 
-      <%= auto_link_already_sanitized_html wysiwyg(@budget.description) %>
+      <div class="budget-header-description">
+        <%= auto_link_already_sanitized_html wysiwyg(@budget.description) %>
+      </div>
     </div>
     <div class="small-12 medium-3 column info padding" data-equalizer-watch>
       <p>
@@ -45,37 +47,42 @@
 </div>
 
 <div class="row margin">
-  <div class="small-12 medium-9 column">
+  <div class="small-12 medium-6 column">
     <% if @current_filter == "unfeasible" %>
       <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
     <% elsif @current_filter == "unselected" %>
       <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
     <% end %>
-    <table class="table-fixed">
-      <thead>
-        <th><%= t("budgets.show.group") %></th>
-      </thead>
-      <tbody>
-        <% @budget.groups.each do |group| %>
+    
+    <% @budget.groups.each do |group| %>
+      <h4 id="<%= group.name.parameterize %>"><%= group.name %></h4>
+      <table class="table-fixed table-areas">
+        <thead>
           <tr>
-            <td>
-              <% if group.single_heading_group? %>
-                <%= link_to group.name,
-                            budget_investments_path(@budget,
-                              heading_id: group.headings.first.id,
-                              filter: @current_filter),
-                            data: { no_turbolink: true } %>
-              <% else %>
-                <%= link_to group.name,
-                            budget_group_path(@budget, group,
-                              filter: @current_filter) %>
-              <% end %>
-              <br>
-            </td>
+            <th><%= t("budgets.shared.select_area") %></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% group.headings.sort_by(&:id).each do |heading| %>
+            <tr>
+              <td>
+                  <%= link_to((heading.long_name || heading.name), budget_investments_path(@budget, heading_id: heading.id, filter: @current_filter), data: { no_turbolink: true }) %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+
+  <div class="small-12 medium-6 column text-center">
+    <h3><%= t("budgets.shared.budget_areas") %></h3>
+    <p>
+      <%= raw t("budgets.shared.see_map", link: link_to(t("budgets.shared.link_map"), asset_url("map_big.png") , target: "_blank")) %>
+    </p>
+    <%= link_to asset_url('map_big.png'), target: "_blank" do %>
+      <%= image_tag "map.png" %>
+    <% end %>
   </div>
 </div>
 
