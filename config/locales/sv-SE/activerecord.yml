@@ -55,7 +55,7 @@ sv:
         one: "Nyhetsbrev"
         other: "Nyhetsbrev"
       vote:
-        one: "Rösta"
+        one: "Röst"
         other: "Röster"
       organization:
         one: "Organisation"
