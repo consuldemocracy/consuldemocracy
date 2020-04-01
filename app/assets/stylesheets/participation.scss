@@ -1307,7 +1307,8 @@
 }
 
 .phase-number {
-  font-size: rem-calc(24);
+  display: block;
+  font-size: rem-calc(36);
   font-weight: bold;
 }
 
@@ -1346,7 +1347,7 @@
     text-align: center;
 
     &::after {
-      border: 70px solid transparent;
+      border: 83px solid transparent;
       border-left-color: $light;
       border-left-width: 20px;
       border-right-width: 0;
@@ -1380,14 +1381,15 @@
   }
 
   .tabs-title > a {
-    background: #a9b5b5;
+    background: #fff;
+    color: #000;
     min-height: rem-calc(140);
     padding: $line-height * 2 $line-height * 1.5;
     padding-left: $line-height * 2;
 
     &::after {
-      border: 69px solid transparent;
-      border-left-color: #a9b5b5;
+      border: 83px solid transparent;
+      border-left-color: #fff;
       border-left-width: 20px;
       border-right-width: 0;
       content: "";
@@ -1400,12 +1402,16 @@
     }
 
     &:hover {
-      background: #484848;
-      color: #fff;
+      background: #e6e6e6;
+      color: #000;
 
       &::after {
-        border-left-color: #484848;
+        border-left-color: #e6e6e6;
       }
+    }
+
+    &:focus {
+      outline: none;
     }
 
     &.current-phase {
@@ -1427,19 +1433,21 @@
 
     &[aria-selected="true"],
     &.is-active {
-      background: #484848;
-      color: #fff;
+      background: #e6e6e6;
+      color: #000;
+      font-weight: normal;
 
       &::after {
         background: none;
-        border-bottom: 69px solid transparent;
-        border-left-color: #484848;
+        border-bottom: 84px solid transparent;
+        border-left-color: #e6e6e6;
         left: 100%;
         width: 0;
       }
 
       &.current-phase {
         background: $brand;
+        color: #fff;
 
         &::after {
           border-left-color: $brand;
