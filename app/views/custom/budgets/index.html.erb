@@ -126,11 +126,13 @@
             <% end %>
           </ul>
         <% end %>
-
-        <div id="all_phases">
-          <h2><%= t("budgets.index.all_phases") %></h2>
-          <%= render "phases", budget: current_budget %>
-        </div>
+        
+        <% if current_budget.published_phases.present? %>
+          <div id="all_phases">
+            <h2><%= t("budgets.index.all_phases") %></h2>
+            <%= render "phases", budget: current_budget %>
+          </div>
+        <% end %>
       </div>
     </div>
 
