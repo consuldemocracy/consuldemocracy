@@ -38,13 +38,15 @@
         <h2><%= t("budgets.phase.#{current_budget.phase}") %></h2>
       </div>
 
-      <div class="small-12 medium-4 column text-right">
+      <div class="small-12 medium-4 column">
         <% if current_budget.accepting? %>
           <% if current_user %>
             <% if current_user.level_two_or_three_verified? %>
-              <%= link_to t("budgets.investments.index.sidebar.create"),
-                          new_budget_investment_path(current_budget),
-                          class: "button margin-top" %>
+              <div class="text-right">
+                <%= link_to t("budgets.investments.index.sidebar.create"),
+                            new_budget_investment_path(current_budget),
+                            class: "button margin-top" %>
+              </div>
             <% else %>
               <div class="callout warning margin-top">
                 <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
@@ -60,9 +62,11 @@
         <% end %>
 
         <% if can?(:read_results, current_budget) %>
-          <%= link_to t("budgets.show.see_results"),
-                      budget_results_path(current_budget, heading_id: current_budget.headings.first),
-                      class: "button expanded" %>
+          <div class="text-right">
+            <%= link_to t("budgets.show.see_results"),
+                        budget_results_path(current_budget, heading_id: current_budget.headings.first),
+                        class: "button expanded" %>
+          </div>
         <% end %>
     </div>
   </div>
