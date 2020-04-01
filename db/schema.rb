@@ -211,11 +211,13 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.bigint   "price"
     t.integer  "population"
     t.string   "slug"
-    t.boolean  "allow_custom_content", default: false
+    t.boolean  "allow_custom_content",              default: false
     t.text     "latitude"
     t.text     "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "short_name",           limit: 100
+    t.string   "long_name",            limit: 1000
     t.index ["group_id"], name: "index_budget_headings_on_group_id", using: :btree
   end
 
@@ -278,6 +280,17 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["community_id"], name: "index_budget_investments_on_community_id", using: :btree
     t.index ["heading_id"], name: "index_budget_investments_on_heading_id", using: :btree
     t.index ["tsv"], name: "index_budget_investments_on_tsv", using: :gin
+  end
+
+  create_table "budget_locked_users", force: :cascade do |t|
+    t.string   "document_number"
+    t.string   "document_type"
+    t.integer  "budget_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["budget_id", "document_number"], name: "unique_contraint_index_on_budget_locked_user", unique: true, using: :btree
+    t.index ["budget_id"], name: "index_budget_locked_users_on_budget_id", using: :btree
+    t.index ["document_number"], name: "index_budget_locked_users_on_document_number", using: :btree
   end
 
   create_table "budget_phase_translations", force: :cascade do |t|
@@ -382,6 +395,12 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
+  create_table "codigos", force: :cascade do |t|
+    t.string "clave"
+    t.string "valor"
+    t.index ["clave"], name: "index_codigos_on_clave", using: :btree
+  end
+
   create_table "comment_translations", force: :cascade do |t|
     t.integer  "comment_id", null: false
     t.string   "locale",     null: false
@@ -427,6 +446,13 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   create_table "communities", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "consultants", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_consultants_on_user_id", using: :btree
   end
 
   create_table "dashboard_actions", force: :cascade do |t|
@@ -951,6 +977,15 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["user_id"], name: "index_organizations_on_user_id", using: :btree
   end
 
+  create_table "physical_final_votes", force: :cascade do |t|
+    t.string   "signable_type"
+    t.string   "booth"
+    t.integer  "total_votes"
+    t.integer  "signable_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "poll_answers", force: :cascade do |t|
     t.integer  "question_id"
     t.integer  "author_id"
@@ -1310,6 +1345,13 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.index ["key"], name: "index_settings_on_key", using: :btree
   end
 
+  create_table "signature_sheet_officers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_signature_sheet_officers_on_user_id", using: :btree
+  end
+
   create_table "signature_sheets", force: :cascade do |t|
     t.string   "signable_type"
     t.integer  "signable_id"
@@ -1483,6 +1525,8 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.boolean  "public_interests",                          default: false
     t.boolean  "recommended_debates",                       default: true
     t.boolean  "recommended_proposals",                     default: true
+    t.integer  "created_by"
+    t.string   "postal_code",                    limit: 10
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["geozone_id"], name: "index_users_on_geozone_id", using: :btree
@@ -1605,8 +1649,10 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   add_foreign_key "budget_administrators", "administrators"
   add_foreign_key "budget_administrators", "budgets"
   add_foreign_key "budget_investments", "communities"
+  add_foreign_key "budget_locked_users", "budgets"
   add_foreign_key "budget_valuators", "budgets"
   add_foreign_key "budget_valuators", "valuators"
+  add_foreign_key "consultants", "users"
   add_foreign_key "dashboard_administrator_tasks", "users"
   add_foreign_key "dashboard_executed_actions", "dashboard_actions", column: "action_id"
   add_foreign_key "dashboard_executed_actions", "proposals"
@@ -1645,6 +1691,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
   add_foreign_key "proposals", "communities"
   add_foreign_key "related_content_scores", "related_contents"
   add_foreign_key "related_content_scores", "users"
+  add_foreign_key "signature_sheet_officers", "users"
   add_foreign_key "users", "geozones"
   add_foreign_key "valuators", "users"
 end
