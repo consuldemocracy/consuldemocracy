@@ -205,7 +205,7 @@ describe "Budgets" do
 
     phases.informing.update!(starts_at: "30-12-2017", ends_at: "31-12-2017", enabled: true,
                              description: "Description of informing phase",
-                             name: "Custom name for description phase")
+                             name: "Custom name for informing phase")
 
     phases.accepting.update!(starts_at: "01-01-2018", ends_at: "10-01-2018", enabled: true,
                             description: "Description of accepting phase",
@@ -259,6 +259,21 @@ describe "Budgets" do
     expect(page).to have_content "March 21, 2018 - March 29, 2018"
 
     expect(page).to have_css(".tabs-panel.is-active", count: 1)
+
+    within("#budget_phases_tabs") do
+      expect(page).to have_link "1 Custom name for informing phase"
+      expect(page).to have_link "2 Custom name for accepting phase"
+      expect(page).to have_link "3 Custom name for selecting phase"
+      expect(page).to have_link "4 #{phases.balloting.name}"
+      expect(page).to have_link "Current phase 5 #{phases.finished.name}"
+    end
+
+    click_link "2 Custom name for accepting phase"
+
+    within("#2-custom-name-for-accepting-phase") do
+      expect(page).to have_link("Previous phase", href: "#1-custom-name-for-informing-phase")
+      expect(page).to have_link("Next phase", href: "#3-custom-name-for-selecting-phase")
+    end
   end
 
   context "Index map" do
