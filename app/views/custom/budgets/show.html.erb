@@ -20,15 +20,8 @@
       <h2><%= t("budgets.phase.#{@budget.phase}") %></h2>
 
       <% if @budget.accepting? %>
-        <% if current_user %>
-          <% if current_user.level_two_or_three_verified? %>
-            <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
-          <% else %>
-            <div class="callout warning margin-top">
-              <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
-                  verify: link_to_verify_account)) %>
-            </div>
-          <% end %>
+        <% if current_user && can?(:create, Budget::Investment.new(budget: @budget)) %>
+          <%= link_to t("budgets.investments.index.sidebar.create"), new_budget_investment_path(@budget), class: "button margin-top expanded" %>
         <% else %>
           <div class="callout primary margin-top">
             <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
