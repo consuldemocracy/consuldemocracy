@@ -44,8 +44,13 @@
         <div class="small-12 margin-bottom">
           <h2><%= t("budgets.investments.index.unfeasible") %>: <%= @heading.name %></h2>
           <div class="callout primary margin">
-              <%= t("budgets.investments.index.unfeasible_text") %>
+              <%= raw t("budgets.investments.index.unfeasible_text", link: link_to(t("budgets.investments.index.unfeasible_text_link"), page_path("informacion_presupuestos_participativos")) ) %>
           </div>
+        </div>
+      <% elsif @current_filter == "unselected" %>
+        <h2><%= t("budgets.investments.index.unselected") %>: <%= @heading.name %></h2>
+        <div class="callout primary margin">
+          <%= t("budgets.investments.index.unselected_text") %>
         </div>
       <% elsif @heading.present? %>
         <div class="row">
