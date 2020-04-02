@@ -13,11 +13,7 @@
               <% end %>
 
               <span class="phase-number"><%= index + 1 %></span><br>
-              <% if phase.name.present? %>
-                <%= phase.name %>
-              <% else %>
-                <%= t("budgets.phase.#{phase.kind}") %>
-              <% end %>
+              <%= budget_phase_name(phase) %>
             </a>
           </li>
         <% end %>
@@ -48,13 +44,7 @@
 
             <div id="<%= phase.kind.parameterize %>" class="row">
               <div class="small-12 medium-6 column">
-                <h3>
-                  <% if phase.name.present? %>
-                    <%= index + 1 %> <%= phase.name %>
-                  <% else %>
-                    <%= index + 1 %> <%= t("budgets.phase.#{phase.kind}") %>
-                  <% end %>
-                </h3>
+                <h3><%= budget_phase_name(phase) %></h3>
                 <p>
                   <%= l(phase.starts_at.to_date, format: :long) if phase.starts_at.present? %>
                   -

@@ -121,6 +121,10 @@ module BudgetsHelper
     end
   end
 
+  def budget_phase_name(phase)
+    phase.name.presence || t("budgets.phase.#{phase.kind}")
+  end
+
   def budget_new_step_phases?(step)
     step == "phases"
   end
