@@ -104,8 +104,8 @@ module Abilities
         can [:show, :create], Budget::Ballot,          budget: { phase: "balloting" }
         can [:create, :destroy], Budget::Ballot::Line, budget: { phase: "balloting" }
 
-        can :create, DirectMessage
-        can :show, DirectMessage, sender_id: user.id
+        can :create, DirectMessage if Setting["feature.direct_messages"]
+        can :show, DirectMessage, sender_id: user.id if Setting["feature.direct_messages"]
 
         can :answer, Poll do |poll|
           poll.answerable_by?(user)
