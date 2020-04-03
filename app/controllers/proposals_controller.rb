@@ -57,7 +57,7 @@ class ProposalsController < ApplicationController
   end
 
   def vote
-    @follow = Follow.create(user: current_user, followable: @proposal)
+    @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
     set_proposal_votes(@proposal)
   end
@@ -74,7 +74,7 @@ class ProposalsController < ApplicationController
   end
 
   def vote_featured
-    @follow = Follow.create(user: current_user, followable: @proposal)
+    @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(current_user, "yes")
     set_featured_proposal_votes(@proposal)
   end

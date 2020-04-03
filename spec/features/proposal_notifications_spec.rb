@@ -14,7 +14,7 @@ describe "Proposal Notifications" do
       click_link "Message to users"
     end
 
-    click_link "Send message to proposal supporters"
+    click_link "Send message to proposal followers"
 
     fill_in "proposal_notification_title", with: "Thank you for supporting my proposal"
     fill_in "proposal_notification_body", with: "Please share it with "\
@@ -93,22 +93,6 @@ describe "Proposal Notifications" do
     expect(page).to have_content "We are almost there please share with your peoples!"
   end
 
-  scenario "Message about receivers (Voters)" do
-    author = create(:user)
-    proposal = create(:proposal, author: author)
-
-    7.times { create(:vote, votable: proposal, vote_flag: true) }
-    7.times { create(:follow, followable: proposal) }
-
-    login_as(author)
-    visit new_proposal_notification_path(proposal_id: proposal.id)
-
-    expect(page).to have_content "This message will be sent to 7 people and it will "\
-                                 "be visible in the proposal's page"
-    expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
-                                                     anchor: "comments"))
-  end
-
   scenario "Message about receivers (Followers)" do
     author = create(:user)
     proposal = create(:proposal, author: author)
@@ -173,7 +157,7 @@ describe "Proposal Notifications" do
         click_link "Message to users"
       end
 
-      expect(page).to have_link "Send message to proposal supporters"
+      expect(page).to have_link "Send message to proposal followers"
     end
 
     scenario "Accessing form directly" do
@@ -196,7 +180,7 @@ describe "Proposal Notifications" do
 
       user1 = create(:user, votables: [proposal], followables: [proposal])
       user2 = create(:user, votables: [proposal], followables: [proposal])
-      user3 = create(:user)
+      user3 = create(:user, votables: [proposal])
 
       login_as(author)
       visit root_path

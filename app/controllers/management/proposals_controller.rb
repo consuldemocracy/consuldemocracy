@@ -37,7 +37,7 @@ class Management::ProposalsController < Management::BaseController
   end
 
   def vote
-    @follow = Follow.create(user: current_user, followable: @proposal)
+    @follow = Follow.find_or_create_by!(user: current_user, followable: @proposal)
     @proposal.register_vote(managed_user, "yes")
     set_proposal_votes(@proposal)
   end

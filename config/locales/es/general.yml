@@ -539,7 +539,7 @@ es:
       comments: Comentarios
       latest_comments: Últimos mensajes
     messages:
-      send_notification: Enviar mensaje a los que han apoyado la propuesta
+      send_notification: Enviar mensaje a los que siguen la propuesta
       previous_notifications: Ver notificaciones anteriores
     polls:
       index:
