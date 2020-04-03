@@ -29,7 +29,7 @@ describe "Proposal Notifications" do
   scenario "Send a notification (Active voter)" do
     proposal = create(:proposal)
 
-    create(:user, :level_two, votables: [proposal])
+    create(:user, :level_two, votables: [proposal], followables: [proposal])
     create_proposal_notification(proposal)
 
     expect(Notification.count).to eq(1)
@@ -98,6 +98,7 @@ describe "Proposal Notifications" do
     proposal = create(:proposal, author: author)
 
     7.times { create(:vote, votable: proposal, vote_flag: true) }
+    7.times { create(:follow, followable: proposal) }
 
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
@@ -133,7 +134,7 @@ describe "Proposal Notifications" do
     login_as(author)
     visit new_proposal_notification_path(proposal_id: proposal.id)
 
-    expect(page).to have_content "This message will be sent to 14 people and it will "\
+    expect(page).to have_content "This message will be sent to 7 people and it will "\
                                  "be visible in the proposal's page"
     expect(page).to have_link("the proposal's page", href: proposal_path(proposal,
                                                      anchor: "comments"))
@@ -189,12 +190,12 @@ describe "Proposal Notifications" do
   end
 
   context "In-app notifications from the proposal's author" do
-    scenario "Voters should receive a notification", :js do
+    scenario "Voters who are followed should receive a notification", :js do
       author = create(:user)
       proposal = create(:proposal, author: author)
 
-      user1 = create(:user, votables: [proposal])
-      user2 = create(:user, votables: [proposal])
+      user1 = create(:user, votables: [proposal], followables: [proposal])
+      user2 = create(:user, votables: [proposal], followables: [proposal])
       user3 = create(:user)
 
       login_as(author)
@@ -297,7 +298,7 @@ describe "Proposal Notifications" do
     scenario "Proposal hidden", :js do
       author = create(:user)
       user = create(:user)
-      proposal = create(:proposal, author: author, voters: [user])
+      proposal = create(:proposal, author: author, voters: [user], followers: [user])
 
       login_as(author)
       visit root_path

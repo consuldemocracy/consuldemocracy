@@ -252,8 +252,8 @@ describe "Emails" do
     scenario "notifications for proposals that I have supported" do
       user = create(:user, email_digest: true)
 
-      proposal1 = create(:proposal, voters: [user])
-      proposal2 = create(:proposal, voters: [user])
+      proposal1 = create(:proposal, voters: [user], followers: [user])
+      proposal2 = create(:proposal, voters: [user], followers: [user])
       proposal3 = create(:proposal)
 
       reset_mailer
@@ -288,6 +288,7 @@ describe "Emails" do
 
       expect(email).not_to have_body_text(proposal3.title)
       expect(email).to have_body_text(/#{account_path}/)
+      expect(email).to have_body_text("Unfollow to stop receiving notifications for this proposal.")
 
       notification1.reload
       notification2.reload
