@@ -157,6 +157,7 @@ describe "Proposals" do
 
       expect(page).to have_content "1 support"
       expect(page).to have_content "You have already supported this proposal. Share it!"
+      expect(page).to have_content "Following"
       expect(page).to have_current_path(management_proposal_path(proposal))
     end
 
