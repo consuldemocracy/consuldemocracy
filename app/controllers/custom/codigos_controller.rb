@@ -1,6 +1,6 @@
 class CodigosController < ApplicationController
   skip_before_filter :verify_authenticity_token
-  skip_authorization_check only: [:api, :create, :new, :solicitar, :comprobar_datos]
+  skip_authorization_check only: [:api, :create, :new]
 
   # POST /codigos/api
   def api
