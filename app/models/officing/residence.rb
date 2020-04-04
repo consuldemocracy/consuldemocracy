@@ -15,7 +15,7 @@ class Officing::Residence
   validates :year_of_birth, presence: true, unless: -> { Setting.force_presence_date_of_birth? }
 
   validate :allowed_age
-  validate :residence_in_madrid
+  # validate :residence_in_madrid
 
   def initialize(attrs = {})
     self.date_of_birth = parse_date("date_of_birth", attrs)
