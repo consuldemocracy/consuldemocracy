@@ -13,27 +13,57 @@ class CensusvaApi
     end
 
     def valid?
-      (exito == "-1") && (response_nonce == @nonce)
+      (success == "-1") && (response_nonce == @nonce)
     end
 
-    def exito
-      @data.at_css("exito").content
-    end
-
-    def response_nonce
-      @data.at_css("nonce").content
+    def date_of_birth
+      @data.at_css("fechaNacimiento").content.try(&:to_date)
     end
 
     def postal_code
       Base64.decode64(@data.at_css("codigoPostal").content)
     end
 
-    def date_of_birth
-      @data.at_css("fechaNacimiento").content
+    def district_code
+      # Actualmente el padrón no devuelve el código del distrito, se ha dejado el método
+      # preparado por si se actualiza en un futuro
+      # @data.at_css("codigoDistrito").content.try(&:to_date)
+      nil
+    end
+
+    def gender
+      # Actualmente el padrón no devuelve el género, se ha dejado el método
+      # preparado por si se actualiza en un futuro
+      # citizen_gender = @data.at_css("genero").content
+      citizen_gender = nil
+
+      case citizen_gender
+      when "Varón"
+        "male"
+      when "Mujer"
+        "female"
+      else
+        nil
+      end
+    end
+
+    def name
+      # Actualmente el padrón no devuelve el código del distrito, se ha dejado el método
+      # preparado por si se actualiza en un futuro
+      # @data.at_css("nombre").content.try(&:to_date)
+      nil
     end
 
     def document_number
       Base64.decode64(@data.at_css("documento").content)
+    end
+
+    def success
+      @data.at_css("exito").content
+    end
+
+    def response_nonce
+      @data.at_css("nonce").content
     end
   end
 
