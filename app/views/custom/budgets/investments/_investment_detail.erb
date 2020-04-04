@@ -1,8 +1,9 @@
 <h1><%= investment.title %></h1>
 <div class="budget-investment-info">
-  <%= render "/shared/author_info", resource: investment %>
-
-  <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <% if !(@budget.balloting? || @budget.selecting?) %>
+    <%= render '/shared/author_info', resource: investment %>
+    <span class="bullet">&nbsp;&bull;&nbsp;</span>
+  <% end %>
   <%= l investment.created_at.to_date %>
   <span class="bullet">&nbsp;&bull;&nbsp;</span>
   <%= investment.heading.name %>
