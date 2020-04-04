@@ -41,14 +41,16 @@
 
           <% if @account.email.present? %>
             <h2><%= t("account.show.notifications") %></h2>
+            
+            <% if Setting["feature.comments"] %>
+              <div>
+                <%= f.check_box :email_on_comment %>
+              </div>
 
-            <div>
-              <%= f.check_box :email_on_comment %>
-            </div>
-
-            <div>
-              <%= f.check_box :email_on_comment_reply %>
-            </div>
+              <div>
+                <%= f.check_box :email_on_comment_reply %>
+              </div>
+            <% end %>
 
             <div>
               <%= f.check_box :newsletter %>
