@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "controllers", "acount_controller").to_s
+require_dependency Rails.root.join("app", "controllers", "account_controller").to_s
 
 class AccountController < ApplicationController
   def update
