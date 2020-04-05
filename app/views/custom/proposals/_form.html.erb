@@ -46,11 +46,6 @@
       </div>
     <% end %>
 
-    <div class="small-12 medium-6 column">
-      <%= f.select :geozone_id, geozone_select_options,
-        include_blank: t("geozones.none") %>
-    </div>
-
     <% if feature?(:map) %>
       <div class="small-12 column">
 
