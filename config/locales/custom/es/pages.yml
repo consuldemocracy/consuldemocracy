@@ -1,6 +1,9 @@
 ---
 es:
   pages:
+    census_terms:
+      title: "Terminos de acceso al Padrón"
+      description: "Desde la aplicación de Presupuestos Participativos se hará una consulta al aplicativo del Padrón Municipal de Habitantes con los datos facilitados por el usuario en el momento de registrarse. La aplicación de padrón informa de la situación de alta del usuario sin que en ningún momento se visualicen los datos del padrón ni se transfiera información padronal a la aplicación de Presupuestos Participativos."
     help:
       faq:
         page:

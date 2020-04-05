@@ -1,0 +1,26 @@
+---
+es:
+  restriction:
+    menu:
+      locked_users: Bloquear voto presencial
+    locked_users:
+      budget: Presupuesto participativo
+      error_form: "impidió validar este documento."
+      document: "Documento:"
+      form_errors: evitaron verificar este documento
+      user_already_voted: Este documento ya ha votado online.
+      user_not_in_census: Este documento no consta en el censo.
+      user_allowed_to_be_locked: "Este documento consta en el censo y no ha votado online en este presupuesto. Se puede proceder a bloquearlo para que sólo pueda votar presencialmente."
+      user_locked: "Este documento se ha bloqueado para que sólo pueda votar presencialmente."
+      user_already_locked: "Este documento se bloqueó para sólo voto presencial el %{date}."
+      index:
+        title: Validar documento
+        submit: Validar documento
+      preview:
+        title: Resultado validación
+        submit: Bloquear documento sólo para voto presencial
+      show:
+        title: Validación guardada
+      create:
+        notice: Documento bloqueado correctamente
+        error: No se ha podido bloquear el documento

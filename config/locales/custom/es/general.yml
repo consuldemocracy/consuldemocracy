@@ -1,5 +1,37 @@
 ---
 es:
+  codigos:
+    errors:
+      census: "El padrón no ha podido verificar tus datos, revisa los datos introducidos o contacta con el ayuntamiento."
+      form: "Revisa los datos introducidos, todos los campos son obligatorios."
+      not_found: "Se ha encontrado al usuario en el padrón pero no se ha podido obtener el código de acceso. Contacta con el servicio técnico del ayuntamiento para solucionarlo."
+    comprobation:
+      access_code: "El código de acceso del usuario es: "
+      access_with_code: El usuario puede identificarse con su código y número de documento para votar en el <a href="%{link}">siguiente enlace</a>
+  consultation:
+    codes:
+      form:
+        title: "Rellena el formulario para obtener el código de acceso del usuario"
+        accept_terms_text: "El usuario acepta %{terms_url} al Padrón"
+    dashboard:
+      index:
+        title: "Consultas"
+    header:
+      title: "Consultas"
+    menu:
+      codes: "Códigos de acceso"
+  restriction:
+    dashboard:
+      index:
+        title: Bloqueo voto presencial
+    header:
+      title: Bloqueo voto presencial
+    locked_users:
+      index:
+        submit: "Validar documento"
+  errors:
+    messages:
+      document_number_and_document_type: "Numero de documento inválido"
   layouts:
     footer:
       consul: aplicación CONSUL
@@ -18,4 +50,9 @@ es:
       open_data_text: "Todos los datos del Ayuntamiento son tuyos."
       open_data_url: "http://www.valladolid.es/es/temas/hacemos/open-data-datos-abiertos"
     header:
+      consultation: "Consultas"
+      signature_sheet_officer: "Gestión voto presencial"
       help: "Más información"
+  omniauth:
+    finish_signup:
+      username_warning: "No es posible iniciar sesión con tu cuenta. Existe otra cuenta en el sistema verificada que impide el acceso con los datos que has introducido. Por favor utiliza la cuenta inicial."
