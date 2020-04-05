@@ -22,7 +22,8 @@
               <li class="menu-text">
                 <h1>
                   <%= link_to management_root_path do %>
-                    <%= setting["org_name"] %>
+                    <div class="show-for-small-only"><%= setting["org_name"] %></div>
+                    <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '260x50', alt: t("layouts.header.logo")) %>
                     <br><small><%= t("management.dashboard.index.title") %></small>
                   <% end %>
                 </h1>

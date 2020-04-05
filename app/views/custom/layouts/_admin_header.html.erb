@@ -22,14 +22,16 @@
             <% if namespace == "officing" %>
               <h1>
                 <%= link_to "#" do %>
-                  <%= setting["org_name"] %>
+                  <div class="show-for-small-only"><%= setting["org_name"] %></div>
+                  <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '260x50', alt: t("layouts.header.logo")) %>
                   <br><small><%= namespaced_header_title %></small>
                 <% end %>
               </h1>
             <% else %>
               <h1>
                 <%= link_to namespaced_root_path do %>
-                  <%= setting["org_name"] %>
+                  <div class="show-for-small-only"><%= setting["org_name"] %></div>
+                  <%= image_tag(image_path_for('logo_header.png'), class: 'hide-for-small-only float-left', size: '260x50', alt: t("layouts.header.logo")) %>
                   <br><small><%= namespaced_header_title %></small>
                 <% end %>
               </h1>
