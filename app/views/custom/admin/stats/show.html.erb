@@ -50,6 +50,20 @@
         </div>
 
         <div class="small-12 medium-3 column">
+          <!-- AÑADIDOS VOTOS DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
+          <p class="featured">
+            <%= t "admin.stats.show.summary.budget_votes" %> <br>
+            <span class="number"><%= number_with_delimiter(@last_budget_votes) %> <br></span>
+          </p>
+          <!-- FIN AÑADIDOS VOTOS DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
+          
+          <!-- AÑADIDOS NÚMERO DE VOTANTES DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
+          <p class="featured">
+            <%= t "admin.stats.show.summary.budget_voters" %> <br>
+            <span class="number"><%= number_with_delimiter(@last_budget_voters) %> <br></span>
+          </p>
+          <!-- FIN AÑADIDOS NÚMERO DE VOTANTES DEL PRESUPUESTO PARTICIPATIVO ACTUAL -->
+
           <p class="featured">
             <%= t "admin.stats.show.summary.proposal_votes" %> <br>
             <span class="number"><%= number_with_delimiter(@proposal_votes) %> <br></span>
