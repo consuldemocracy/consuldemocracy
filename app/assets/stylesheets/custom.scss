@@ -10,8 +10,12 @@
   color: $brand-secondary;
 }
 
-strong, b, a {
+strong, b, a, .ava-link {
   color: $brand;
+}
+
+.callout.primary a {
+  color: $brand !important;
 }
 
 // 02. Header
@@ -268,6 +272,7 @@ header, .top-bar {
 
 // 08. Budgets
 
+// Imágen de fondo de la cabecera y los botones
 .expanded.budget, .budget-heading {
   background-image: image-url("header_va_proposals.png");
   background-size: cover;
@@ -278,6 +283,59 @@ header, .top-bar {
 }
 
 // Eliminar margen de la cabecera en los presupuestos participativos
-#budget_heading.no-margin-top, #budget-investments-main > .no-margin-top {
+#budget_heading.no-margin-top, #budget-investments-main > .no-margin-top, .budget.no-margin-top {
   margin-top: -1.54rem;
+}
+
+// Estilo de la tabla de budgets
+.table-areas tr td a {
+  margin-left: 0.3rem;
+}
+
+.budget-header-description {
+  color: #FFF;
+}
+
+.budget-investment .panel h3 a {
+  color: $brand;
+}
+
+.expanded.budget .callout a {
+    color: $brand !important;
+}
+
+// Botón de volver atrás
+.budget-heading a.back {
+  color: black !important;
+  background: #FFDB0A !important;
+  border: 1px solid #FFDB0A !important;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid #000000;
+  border-radius: 0.1875rem;
+  padding: 1em 1em;
+  font-size: 0.9rem;
+}
+
+.budget-heading a.back span {
+  color: #000000;
+  font-weight: 100;
+}
+
+
+// Color de fondo de la barra de progreso en
+// la votación final
+.progress-bar-nav { 
+  @include breakpoint(medium) { 
+    background-color: transparent;
+
+    &.is-fixed { 
+      background-color: $budget; 
+    } 
+  } 
 }
