@@ -8,7 +8,7 @@ module AdminHelper
   end
 
   def namespaced_root_path
-    "/#{namespace}"
+    "#{Rails.application.config.root_directory}/#{namespace}"
   end
 
   def namespaced_header_title
