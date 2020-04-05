@@ -266,8 +266,61 @@ header, .top-bar {
 
 // 07. Admin
 
+body.admin header .top-links{
+  background: #d3b700 !important;
+}
+
+body.admin .top-bar {
+  background: #ffdd00 !important;
+}
+
+body.management .admin-content {
+  padding-left: 15px !important;
+}
+
 #admin_menu li a {
-  color: #FFF;
+  color: $brand;
+}
+
+.admin-sidebar {
+  background: #FFF;
+}
+
+.admin-sidebar ul [class^="icon-"]{
+  color: black;
+}
+
+.admin-sidebar li a {
+  color: $brand;
+  font-weight: bold;
+}
+
+.admin-sidebar ul li a:hover {
+  background: #f3f6f7;
+  border-radius: 0.375rem;
+  -moz-border-radius: 0.375rem;
+  -webkit-border-radius: 0.375rem;
+  color: #CF3638;
+  text-decoration: none;
+}
+
+.admin-sidebar li.is-active a {
+  background: #FFF;
+  border-left: 2px solid #f4fcd0;
+  font-weight: bold;
+}
+
+#admin_menu li, #moderation_menu li, #valuation_menu li  {
+  border-bottom: 1px solid #DEE0E3;
+}
+
+.admin-sidebar .is-accordion-submenu-parent > a::after {
+  color: $brand;
+  top: 0 !important;
+}
+
+.admin-sidebar ul li ul {
+  border-left: 1px solid #DEE0E3;
 }
 
 // 08. Budgets
