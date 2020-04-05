@@ -1,11 +1,11 @@
-class PhysicalFinalVote < ActiveRecord::Base
+class PhysicalFinalVote < ApplicationRecord
   belongs_to :signable, polymorphic: true
 
-  VALID_SIGNABLES = %w(Budget::Investment)
-  
+  VALID_SIGNABLES = %w[Budget::Investment].freeze
+
   validates :booth, presence: true
   validates :total_votes, presence: true
-  validates :signable_type, inclusion: {in: VALID_SIGNABLES}
+  validates :signable_type, inclusion: { in: VALID_SIGNABLES }
 
   def name
     "#{signable_name} #{signable_id}"
