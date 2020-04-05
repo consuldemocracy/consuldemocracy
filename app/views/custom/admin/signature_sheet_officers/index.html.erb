@@ -1,0 +1,43 @@
+<h2><%= t("admin.signature_sheet_officers.index.title") %></h2>
+
+<div class="row">
+  <%= form_tag search_admin_signature_sheet_officers_path, method: :get, remote: true  do %>
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :email, '', placeholder: t('admin.signature_sheet_officers.search.email_placeholder') %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= submit_tag t('admin.signature_sheet_officers.search.search'), class: 'button' %>
+    </div>
+  <% end %>
+</div>
+
+<div id="search-result" class="row"></div>
+
+<h3><%= page_entries_info @signature_sheet_officers %></h3>
+
+<table id="signature_sheet_officers">
+  <% @signature_sheet_officers.each do |signature_sheet_officer| %>
+    <tr>
+      <td>
+        <%= signature_sheet_officer.name %>
+      </td>
+      <td>
+        <%= signature_sheet_officer.email %>
+      </td>
+      <td class="text-right">
+        <% if signature_sheet_officer.persisted? %>
+          <%= link_to t('admin.signature_sheet_officers.signature_sheet_officer.delete'),
+            admin_signature_sheet_officer_path(signature_sheet_officer),
+            method: :delete,
+            class: "button hollow alert"
+          %>
+        <% else %>
+          <%= link_to t('admin.signature_sheet_officers.signature_sheet_officer.add'),{ controller: "admin/signature_sheet_officers", action: :create, user_id: signature_sheet_officer.user_id },
+            method: :post, class: "button success" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @signature_sheet_officers %>
