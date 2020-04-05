@@ -1,0 +1,14 @@
+<nav class="admin-sidebar">
+  <ul id="moderation_menu">
+    <li>
+      <%= link_to t("consultation.dashboard.index.title"), consultation_root_path %>
+    </li>
+
+    <li <%= "class=active" if controller_name == "codes" %>>
+      <%= link_to consultation_codes_path do %>
+        <span class="icon-user"></span>
+        <%= t("consultation.menu.codes") %>
+      <% end %>
+    </li>
+  </ul>
+</nav>
