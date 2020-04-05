@@ -240,7 +240,8 @@
 
     <li class="section-title" <%= "class=is-active" if controller_name == "stats" %>>
       <%= link_to admin_stats_path do %>
-        <span class="icon-stats"></span><%= t("admin.menu.stats") %>
+        <span class="icon-stats"></span>
+        <strong><%= t("admin.menu.stats") %></strong>
       <% end %>
     </li>
 
