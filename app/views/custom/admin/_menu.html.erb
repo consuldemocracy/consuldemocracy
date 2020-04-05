@@ -90,6 +90,14 @@
       </li>
     <% end %>
 
+    <% if feature?(:physical_final_votes) %>
+      <li class="section-title" <%= "class=active" if controller_name == "physical_final_votes" %>>
+        <%= link_to admin_physical_final_votes_path do %>
+          <strong><%= t("admin.menu.physical_final_votes") %></strong>
+        <% end %>
+      </li>
+    <% end %>
+
     <% messages_sections = %w[newsletters emails_download admin_notifications system_emails] %>
     <% messages_menu_active = messages_sections.include?(controller_name) %>
     <li class="section-title" <%= "class=is-active" if messages_menu_active %>>
@@ -214,6 +222,14 @@
 
         <li <%= "class=is-active" if controller_name == "managers" %>>
           <%= link_to t("admin.menu.managers"), admin_managers_path %>
+        </li>
+
+        <li <%= 'class=active' if controller_name == 'consultants' %>>
+          <%= link_to t('admin.menu.consultants'), admin_consultants_path %>
+        </li>
+
+        <li <%= 'class=active' if controller_name == 'signature_sheet_officers' %>>
+          <%= link_to t('admin.menu.signature_sheet_officers'), admin_signature_sheet_officers_path %>
         </li>
 
         <li <%= "class=is-active" if controller_name == "users" %>>
