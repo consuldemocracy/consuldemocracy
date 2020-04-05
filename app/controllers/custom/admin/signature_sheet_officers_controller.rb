@@ -6,16 +6,10 @@ class Admin::SignatureSheetOfficersController < Admin::BaseController
   end
 
   def search
-    @user = User.find_by(email: params[:email])
-
-    respond_to do |format|
-      if @user
-        @signature_sheet_officer = SignatureSheetOfficer.find_or_initialize_by(user: @user)
-        format.js
-      else
-        format.js { render "user_not_found" }
-      end
-    end
+    @users = User.search(params[:name_or_email])
+                 .includes(:signature_sheet_officer)
+                 .page(params[:page])
+                 .for_render
   end
 
   def create
