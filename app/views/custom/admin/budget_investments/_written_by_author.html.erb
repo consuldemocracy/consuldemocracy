@@ -18,8 +18,13 @@
 
     <div class="small-12 medium-4 column">
       <p>
-        <strong><%= t("admin.budget_investments.show.by") %></strong>:
-        <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
+        <% if @investment.author.blank? || @investment.author.hidden? || @investment.author.erased? %>
+          <strong><%= t("admin.budget_investments.show.by") %>:</strong>
+          <%= t("budgets.investments.show.author_deleted") %>
+        <% else %>
+          <strong><%= t("admin.budget_investments.show.by") %></strong>:
+          <%= link_to @investment.author.name, admin_hidden_user_path(@investment.author) %>
+        <% end %>
       </p>
     </div>
 
