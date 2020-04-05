@@ -55,6 +55,10 @@ module Abilities
       can [:search, :create, :index, :destroy], ::Moderator
       can [:search, :show, :edit, :update, :create, :index, :destroy, :summary], ::Valuator
       can [:search, :create, :index, :destroy], ::Manager
+      # Añadidos permisos para el tipo de usuario 'consultor'
+      can [:search, :create, :index, :destroy], ::Consultant
+      # Añadidos permisos para el tipo de usuario 'gestor de votación presencial'
+      can [:search, :create, :index, :destroy], ::SignatureSheetOfficer
       can [:search, :index], ::User
 
       can :manage, Dashboard::Action
