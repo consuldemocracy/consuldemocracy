@@ -1,0 +1,43 @@
+<h2><%= t("admin.consultants.index.title") %></h2>
+
+<div class="row">
+  <%= form_tag search_admin_consultants_path, method: :get, remote: true  do %>
+    <div class="small-12 medium-6 column">
+      <%= text_field_tag :email, '', placeholder: t('admin.consultants.search.email_placeholder') %>
+    </div>
+    <div class="small-12 medium-6 column">
+      <%= submit_tag t('admin.consultants.search.search'), class: 'button' %>
+    </div>
+  <% end %>
+</div>
+
+<div id="search-result" class="row"></div>
+
+<h3><%= page_entries_info @consultants %></h3>
+
+<table id="consultants">
+  <% @consultants.each do |consultant| %>
+    <tr>
+      <td>
+        <%= consultant.name %>
+      </td>
+      <td>
+        <%= consultant.email %>
+      </td>
+      <td class="text-right">
+        <% if consultant.persisted? %>
+          <%= link_to t('admin.consultants.consultant.delete'),
+            admin_consultant_path(consultant),
+            method: :delete,
+            class: "button hollow alert"
+          %>
+        <% else %>
+          <%= link_to t('admin.consultants.consultant.add'),{ controller: "admin/consultants", action: :create, user_id: consultant.user_id },
+            method: :post, class: "button success" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @consultants %>
