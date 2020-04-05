@@ -75,6 +75,8 @@ namespace :admin do
 
   resources :signature_sheets, only: [:index, :new, :create, :show]
 
+  resources :physical_final_votes, only: [:index, :new, :create, :show, :destroy]
+
   resources :banners, only: [:index, :new, :create, :edit, :update, :destroy] do
     collection { get :search }
   end
