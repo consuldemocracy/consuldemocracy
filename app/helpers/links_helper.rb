@@ -6,7 +6,7 @@ module LinksHelper
   end
 
   def link_to_signin(options = {})
-    link_to t("users.signin"), user_codigo_omniauth_callback_path, options
+    link_to t("users.signin"), user_codigo_omniauth_authorize_path, options.merge(method: :post)
   end
 
   def link_to_signup(options = {})
