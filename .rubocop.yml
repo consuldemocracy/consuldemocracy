@@ -259,6 +259,7 @@ Rails/OutputSafety:
   Severity: warning
   Exclude:
     - app/helpers/text_with_links_helper.rb
+    - config/initializers/escape_javascript_fix.rb
 
 Rails/PluralizationGrammar:
   Enabled: true
