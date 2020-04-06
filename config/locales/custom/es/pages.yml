@@ -322,7 +322,7 @@ es:
       codigos:
         title: "Identifícate para votar"
         instructions: "Introduce tu DNI y el código incluído en el SMS o en la carta que hemos enviado a tu domicilio. Si no dispones de DNI introduce tu NIE o Pasaporte. En todos los casos recuerda introducir el documento incluyendo la letra o letras en mayúsculas, sin incluír puntos, espacios o guiones."
-        help: "Si no dispones de código, puedes %{ogin} con tu cuenta o si no dispones de una, registrarla %{register}, pero recuerda que para poder votar tendrás que verificar dicha cuenta."
+        help: "Si no dispones de código, puedes %{login} con tu cuenta o si no dispones de una, registrarla %{register}, pero recuerda que para poder votar tendrás que verificar dicha cuenta."
         help_login: "acceder"
         help_register: "aquí"
         form:
