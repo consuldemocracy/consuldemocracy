@@ -47,7 +47,9 @@ describe "Public area translatable records" do
       fill_in "Title", with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      select "Everywhere", from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{budget.id}\"]",
+                                     visible: false)
+
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
@@ -76,7 +78,9 @@ describe "Public area translatable records" do
       fill_in "Title", with: "Titre en Français"
       fill_in_ckeditor "Description", with: "Contenu en Français"
 
-      select "Everywhere", from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{budget.id}\"]",
+                                     visible: false)
+
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
 
@@ -99,7 +103,9 @@ describe "Public area translatable records" do
       visit new_budget_investment_path(budget)
       click_link "Remove language"
 
-      select "Everywhere", from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{budget.id}\"]",
+                                     visible: false)
+
       check "budget_investment_terms_of_service"
       click_button "Create Investment"
 

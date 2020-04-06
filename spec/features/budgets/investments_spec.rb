@@ -855,7 +855,9 @@ describe "Budget Investments" do
       login_as(author)
       visit new_budget_investment_path(budget)
 
-      select  heading.name, from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
       fill_in "Title", with: "I am a bot"
       fill_in "budget_investment_subtitle", with: "This is the honeypot"
       fill_in "Description", with: "This is the description"
@@ -874,10 +876,12 @@ describe "Budget Investments" do
       login_as(author)
       visit new_budget_investment_path(budget)
 
-      select  heading.name, from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
       fill_in "Title", with: "I am a bot"
       fill_in "Description", with: "This is the description"
-      check   "budget_investment_terms_of_service"
+      check   "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 
@@ -885,12 +889,50 @@ describe "Budget Investments" do
       expect(page).to have_current_path(new_budget_investment_path(budget))
     end
 
-    scenario "Create" do
+    scenario "Create with single heading" do
       login_as(author)
 
       visit new_budget_investment_path(budget)
 
-      select  heading.name, from: "budget_investment_heading_id"
+      expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
+                                     visible: false)
+
+      fill_in "Title", with: "Build a skyscraper"
+      fill_in "Description", with: "I want to live in a high tower over the clouds"
+      fill_in "Location additional info", with: "City center"
+      fill_in "If you are proposing in the name of a collective/organization, "\
+              "or on behalf of more people, write its name", with: "T.I.A."
+      fill_in "Tags", with: "Towers"
+      check   "I agree to the Privacy Policy and the Terms and conditions of use"
+
+      click_button "Create Investment"
+
+      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Build a skyscraper"
+      expect(page).to have_content "I want to live in a high tower over the clouds"
+      expect(page).to have_content "City center"
+      expect(page).to have_content "T.I.A."
+      expect(page).to have_content "Towers"
+
+      visit user_url(author, filter: :budget_investments)
+      expect(page).to have_content "1 Investment"
+      expect(page).to have_content "Build a skyscraper"
+    end
+
+    scenario "Create with multiple headings" do
+      heading2 = create(:budget_heading, budget: budget)
+      heading3 = create(:budget_heading, budget: budget)
+      login_as(author)
+
+      visit new_budget_investment_path(budget)
+
+      within("#budget_investment_heading_id") do
+        expect(page).to have_selector("option[value='#{heading.id}']")
+        expect(page).to have_selector("option[value='#{heading2.id}']")
+        expect(page).to have_selector("option[value='#{heading3.id}']")
+      end
+
+      select  heading2.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a skyscraper"
       fill_in "Description", with: "I want to live in a high tower over the clouds"
       fill_in "budget_investment_location", with: "City center"

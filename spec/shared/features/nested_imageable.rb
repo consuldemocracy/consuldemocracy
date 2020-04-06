@@ -286,7 +286,6 @@ def imageable_fill_new_valid_budget
 end
 
 def imageable_fill_new_valid_budget_investment
-  page.select imageable.heading.name_scoped_by_group, from: :budget_investment_heading_id
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   check :budget_investment_terms_of_service

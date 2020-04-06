@@ -3,9 +3,14 @@
   <%= render "shared/errors", resource: @investment %>
 
   <div class="row column">
-    <div class="small-12 medium-8 column">
-      <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true, } %>
-    </div>
+    <% if @budget.single_heading? %>
+      <%= f.hidden_field :heading_id, value: @budget.headings.first.id %>
+    <% else %>
+      <div class="small-12 medium-8 column">
+        <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true } %>
+      </div>
+    <% end %>
+
     <div class="row">
       <div class="small-12 column">
         <%= render "shared/globalize_locales", resource: @investment %>

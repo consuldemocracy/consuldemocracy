@@ -256,7 +256,6 @@ def validate_latitude_longitude(mappable_factory_name)
 end
 
 def fill_in_budget_investment_form
-  page.select mappable.heading.name_scoped_by_group, from: :budget_investment_heading_id
   fill_in "Title", with: "Budget investment title"
   fill_in_ckeditor "Description", with: "Budget investment description"
   check :budget_investment_terms_of_service
