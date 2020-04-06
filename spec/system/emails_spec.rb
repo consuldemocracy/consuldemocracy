@@ -350,7 +350,6 @@ describe "Emails" do
       login_as(author)
       visit new_budget_investment_path(budget_id: budget.id)
 
-      select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "Build a hospital"
       fill_in_ckeditor "Description", with: "We have lots of people that require medical attention"
       check   "budget_investment_terms_of_service"

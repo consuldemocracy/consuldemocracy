@@ -511,7 +511,6 @@ describe "Budget Investments" do
       login_as(author)
       visit new_budget_investment_path(budget)
 
-      select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "I am a bot"
       fill_in "budget_investment_subtitle", with: "This is the honeypot"
       fill_in "Description", with: "This is the description"
@@ -530,7 +529,6 @@ describe "Budget Investments" do
       login_as(author)
       visit new_budget_investment_path(budget)
 
-      select  heading.name, from: "budget_investment_heading_id"
       fill_in "Title", with: "I am a bot"
       fill_in_ckeditor "Description", with: "This is the description"
       check   "budget_investment_terms_of_service"
@@ -541,18 +539,20 @@ describe "Budget Investments" do
       expect(page).to have_current_path(new_budget_investment_path(budget))
     end
 
-    scenario "Create" do
+    scenario "Create with single heading" do
       login_as(author)
 
       visit new_budget_investment_path(budget)
 
-      select  heading.name, from: "budget_investment_heading_id"
+      expect(page).not_to have_field "budget_investment_heading_id"
+
       fill_in "Title", with: "Build a skyscraper"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
-      fill_in "budget_investment_location", with: "City center"
-      fill_in "budget_investment_organization_name", with: "T.I.A."
-      fill_in "budget_investment_tag_list", with: "Towers"
-      check   "budget_investment_terms_of_service"
+      fill_in "Location additional info", with: "City center"
+      fill_in "If you are proposing in the name of a collective/organization, "\
+        "or on behalf of more people, write its name", with: "T.I.A."
+      fill_in "Tags", with: "Towers"
+      check "I agree to the Privacy Policy and the Terms and conditions of use"
 
       click_button "Create Investment"
 
@@ -563,7 +563,42 @@ describe "Budget Investments" do
       expect(page).to have_content "T.I.A."
       expect(page).to have_content "Towers"
 
-      visit user_url(author, filter: :budget_investments)
+      visit user_path(author, filter: :budget_investments)
+
+      expect(page).to have_content "1 Investment"
+      expect(page).to have_content "Build a skyscraper"
+    end
+
+    scenario "Create with multiple headings" do
+      create(:budget_heading, budget: budget, name: "Medical supplies")
+      create(:budget_heading, budget: budget, name: "Even more hospitals")
+      login_as(author)
+
+      visit new_budget_investment_path(budget)
+
+      expect(page).to have_select "Heading",
+        options: ["", "More hospitals", "Medical supplies", "Even more hospitals"]
+
+      select "Medical supplies", from: "Heading"
+      fill_in "Title", with: "Build a skyscraper"
+      fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
+      fill_in "Location additional info", with: "City center"
+      fill_in "If you are proposing in the name of a collective/organization, "\
+        "or on behalf of more people, write its name", with: "T.I.A."
+      fill_in "Tags", with: "Towers"
+      check "I agree to the Privacy Policy and the Terms and conditions of use"
+
+      click_button "Create Investment"
+
+      expect(page).to have_content "Investment created successfully"
+      expect(page).to have_content "Build a skyscraper"
+      expect(page).to have_content "I want to live in a high tower over the clouds"
+      expect(page).to have_content "City center"
+      expect(page).to have_content "T.I.A."
+      expect(page).to have_content "Towers"
+
+      visit user_path(author, filter: :budget_investments)
+
       expect(page).to have_content "1 Investment"
       expect(page).to have_content "Build a skyscraper"
     end
@@ -1561,7 +1596,6 @@ describe "Budget Investments" do
     scenario "create budget investment with sdg related list" do
       login_as(author)
       visit new_budget_investment_path(budget)
-      select heading.name, from: "Heading"
       fill_in "Title", with: "A title for a budget investment related with SDG related content"
       fill_in_ckeditor "Description", with: "I want to live in a high tower over the clouds"
       click_sdg_goal(1)

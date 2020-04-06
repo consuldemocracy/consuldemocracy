@@ -25,6 +25,7 @@ class Management::Budgets::InvestmentsController < Management::BaseController
   def create
     @investment.terms_of_service = "1"
     @investment.author = managed_user
+    @investment.heading = @budget.headings.first if @budget.single_heading?
 
     if @investment.save
       notice = t("flash.actions.create.notice", resource_name: Budget::Investment.model_name.human, count: 1)
