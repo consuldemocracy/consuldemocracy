@@ -27,7 +27,7 @@ module Notifications
       click_link "Message to users"
     end
 
-    click_link "Send message to proposal supporters"
+    click_link "Send message to proposal followers"
 
     fill_in "proposal_notification_title", with: "Thanks for supporting proposal: #{proposal.title}"
     fill_in "proposal_notification_body", with: "Please share it with others! #{proposal.summary}"
