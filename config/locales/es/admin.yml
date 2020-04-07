@@ -13,6 +13,7 @@ es:
       unmark_featured: Quitar destacado
       edit: Editar
       configure: Configurar
+      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
       delete: Borrar
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
@@ -85,6 +86,7 @@ es:
         table_name: Nombre
         table_phase: Fase
         table_phase_progress: "(%{current_phase_number}/%{total_phases})"
+        delete: "Eliminar presupuesto"
         edit_budget: Editar presupuesto
         admin_ballots: Gestionar urnas
         no_budgets: "No hay presupuestos participativos."
@@ -152,6 +154,8 @@ es:
         calculate: Calcular proyectos ganadores
         calculated: Calculando ganadores, puede tardar un minuto.
         recalculate: Recalcular proyectos ganadores
+      shared:
+        resource_name: "el presupuesto"
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"
