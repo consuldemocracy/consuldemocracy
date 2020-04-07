@@ -2,110 +2,120 @@
 
   <%= render "shared/errors", resource: @investment %>
 
-  <div class="row column">
-    <% if @budget.single_heading? %>
-      <%= f.hidden_field :heading_id, value: @budget.headings.first.id %>
-    <% else %>
-      <div class="small-12 medium-8 column">
-        <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true } %>
-      </div>
-    <% end %>
-
+  <div class="light expand">
     <div class="row">
       <div class="small-12 column">
-        <%= render "shared/globalize_locales", resource: @investment %>
+        <p class="subtitle-form"><%= t("shared.required") %></p>
       </div>
+
+      <% if @budget.single_heading? %>
+        <%= f.hidden_field :heading_id, value: @budget.headings.first.id %>
+      <% else %>
+        <div class="small-12 medium-6 column required">
+          <%= f.select :heading_id, budget_heading_select_options(@budget), { include_blank: true } %>
+        </div>
+      <% end %>
+
+      <div class="row">
+        <div class="small-12 column">
+          <%= render "shared/globalize_locales", resource: @investment %>
+        </div>
+      </div>
+
+      <%= f.translatable_fields do |translations_form| %>
+        <div class="small-12 column required">
+          <%= translations_form.text_field :title,
+                maxlength: Budget::Investment.title_max_length,
+                data: { js_suggest_result: "js_suggest_result",
+                        js_suggest: ".js-suggest",
+                        js_url: suggest_budget_investments_path(@budget) } %>
+        </div>
+        <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
+
+        <div class="small-12 column end required">
+          <%= translations_form.text_area :description,
+                maxlength: Budget::Investment.description_max_length,
+                class: "html-area" %>
+        </div>
+      <% end %>
     </div>
-
-    <%= f.translatable_fields do |translations_form| %>
-      <div class="small-12 column">
-        <%= translations_form.text_field :title,
-              maxlength: Budget::Investment.title_max_length,
-              data: { js_suggest_result: "js_suggest_result",
-                      js_suggest: ".js-suggest",
-                      js_url: suggest_budget_investments_path(@budget) } %>
-      </div>
-      <div class="js-suggest" data-locale="<%= translations_form.locale %>"></div>
-
-      <div class="small-12 column">
-        <%= translations_form.text_area :description,
-              maxlength: Budget::Investment.description_max_length,
-              class: "html-area" %>
-      </div>
-    <% end %>
 
     <%= f.invisible_captcha :subtitle %>
 
-    <% if feature?(:allow_images) %>
-      <div class="images small-12 column">
-        <%= render "images/nested_image", imageable: @investment, f: f %>
-      </div>
-    <% end %>
-
-    <% if feature?(:allow_attached_documents) %>
-      <div class="documents small-12 column">
-        <%= render "documents/nested_documents", documentable: @investment, f: f %>
-      </div>
-    <% end %>
-
-    <% if feature?(:map) %>
-      <div class="small-12 column">
-
-        <%= render "map_locations/form_fields",
-                   form:     f,
-                   map_location: @investment.map_location || MapLocation.new,
-                   label:    t("budgets.investments.form.map_location"),
-                   help:     t("budgets.investments.form.map_location_instructions"),
-                   remove_marker_label: t("budgets.investments.form.map_remove_marker"),
-                   parent_class: "budget_investment",
-                   i18n_namespace: "budgets.investments" %>
-
-      </div>
-    <% end %>
-
     <div class="small-12 column">
-      <%= f.text_field :location %>
+      <p class="subtitle-form"><%= t("shared.optional") %></p>
+    </div>
+  </div>
+
+  <% if feature?(:allow_images) %>
+    <div class="images small-12 column">
+      <%= render "images/nested_image", imageable: @investment, f: f %>
+    </div>
+  <% end %>
+
+  <% if feature?(:allow_attached_documents) %>
+    <div class="documents small-12 column">
+      <%= render "documents/nested_documents", documentable: @investment, f: f %>
+    </div>
+  <% end %>
+
+  <% if feature?(:map) %>
+    <div class="small-12 column">
+      <%= render "map_locations/form_fields",
+                 form:     f,
+                 map_location: @investment.map_location || MapLocation.new,
+                 label:    t("budgets.investments.form.map_location"),
+                 help:     t("budgets.investments.form.map_location_instructions"),
+                 remove_marker_label: t("budgets.investments.form.map_remove_marker"),
+                 parent_class: "budget_investment",
+                 i18n_namespace: "budgets.investments" %>
+
+    </div>
+  <% end %>
+
+  <div class="small-12 column">
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.text_field :organization_name %>
+  </div>
+
+  <div class="small-12 column">
+    <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
+    <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
+
+    <div id="category_tags" class="tags">
+      <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
+      <% @categories.each do |tag| %>
+        <a class="js-add-tag-link"><%= tag.name %></a>
+      <% end %>
     </div>
 
-    <div class="small-12 column">
-      <%= f.text_field :organization_name %>
-    </div>
+    <br>
+    <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
+                      label: false,
+                      placeholder: t("budgets.investments.form.tags_placeholder"),
+                      aria: { describedby: "tags-list-help-text" },
+                      class: "js-tag-list tag-autocomplete",
+                      data: { js_url: suggest_tags_path } %>
+  </div>
 
-    <div class="small-12 column">
-      <%= f.label :tag_list, t("budgets.investments.form.tags_label") %>
-      <p class="help-text" id="tags-list-help-text"><%= t("budgets.investments.form.tags_instructions") %></p>
+  <div class="clear"></div>
+  <div class="submit-form-container">
+    <div class="small-12 medium-9 small-centered submit-form-box required">
+      <% unless current_user.manager? %>
+        <p class="form-label"><%= t("shared.required_fields") %></p>
 
-      <div id="category_tags" class="tags">
-        <%= f.label :category_tag_list, t("budgets.investments.form.tag_category_label") %>
-        <% @categories.each do |tag| %>
-          <a class="js-add-tag-link"><%= tag.name %></a>
-        <% end %>
-      </div>
-
-      <br>
-      <%= f.text_field :tag_list, value: @investment.tag_list.to_s,
-                        label: false,
-                        placeholder: t("budgets.investments.form.tags_placeholder"),
-                        aria: { describedby: "tags-list-help-text" },
-                        class: "js-tag-list tag-autocomplete",
-                        data: { js_url: suggest_tags_path } %>
-    </div>
-
-    <% unless current_user.manager? %>
-
-      <div class="small-12 column">
         <%= f.check_box :terms_of_service,
           title: t("form.accept_terms_title"),
           label: t("form.accept_terms",
                    policy: link_to(t("form.policy"), "/privacy", target: "blank"),
                    conditions: link_to(t("form.conditions"), "/conditions", target: "blank")
                   ) %>
-      </div>
+      <% end %>
 
-    <% end %>
-
-    <div class="actions small-12 medium-6 large-4 end column">
-      <%= f.submit(nil, class: "button expanded") %>
+      <%= f.submit(nil, class: "button large margin-top") %>
     </div>
   </div>
 <% end %>

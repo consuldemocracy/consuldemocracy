@@ -788,6 +788,9 @@ en:
         zero: "0 languages in use"
         one: "1 language in use"
         other: "%{count} languages in use"
+    optional: "Optional"
+    required: "Required"
+    required_fields: "All fields marked with a (*) are required"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"

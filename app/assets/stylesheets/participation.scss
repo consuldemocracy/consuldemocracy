@@ -324,6 +324,83 @@
   @include direct-uploads;
 }
 
+
+.budget-investment-new {
+
+  .header {
+    background: $brand;
+    border-bottom-right-radius: rem-calc(12);
+    border-top-right-radius: rem-calc(12);
+    color: #fff;
+    margin-top: $line-height * 2;
+    padding: $line-height * 2 0;
+    position: relative;
+
+    h1 {
+      font-size: rem-calc(36);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(44);
+      }
+    }
+
+    &::before {
+      background: $brand;
+      border: 4px solid $brand;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &::after {
+      background: #fff;
+      border: 4px solid $brand;
+      border-bottom-right-radius: rem-calc(12);
+      border-top-right-radius: rem-calc(12);
+      clip-path: polygon(20% 0, 100% 1%, 100% 100%, 20% 100%, 5% 50%);
+      color: $brand;
+      content: "\f1ad";
+      display: none;
+      font-family: "Font Awesome 5 Free";
+      font-size: rem-calc(100);
+      height: 100%;
+      padding-left: $line-height;
+      padding-top: $line-height;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      right: 0;
+      width: rem-calc(160);
+
+      @include breakpoint(medium) {
+        display: block;
+      }
+
+      @include breakpoint(large) {
+        padding-top: 0;
+        width: rem-calc(200);
+      }
+    }
+
+    .header-icon {
+      display: block;
+      font-size: rem-calc(36);
+      line-height: rem-calc(60);
+
+      @include breakpoint(large) {
+        font-size: rem-calc(80);
+        padding-right: rem-calc(240);
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
+
 // 03. Show participation
 // ----------------------
 

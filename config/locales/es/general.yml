@@ -786,6 +786,9 @@ es:
         zero: "0 idiomas en uso"
         one: "1 idioma en uso"
         other: "%{count} idiomas en uso"
+    optional: "Opcional"
+    required: "Obligatorio"
+    required_fields: "Todos los campos marcados con un (*) son obligatorios"
   social:
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"

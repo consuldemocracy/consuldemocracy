@@ -64,6 +64,7 @@ en:
       milestones: Milestones
     investments:
       form:
+        title: "Create a budget investment"
         tag_category_label: "Categories"
         tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
         tags_label: Tags

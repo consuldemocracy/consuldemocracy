@@ -217,6 +217,30 @@ a {
 
 .light {
   background: $light;
+
+  &.expand {
+    background: $light;
+    clear: both;
+    position: relative;
+
+    &::before,
+    &::after {
+      background: $light;
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    &::before {
+      right: 100%;
+    }
+
+    &::after {
+      left: 100%;
+    }
+  }
 }
 
 .highlight {
@@ -232,6 +256,7 @@ a {
   margin: 0 auto (-$line-height) * 12;
   height: auto !important;
   height: 100%;
+  overflow: hidden;
 }
 
 .footer,
@@ -1082,6 +1107,7 @@ footer {
 form {
 
   label {
+    color: $label;
     font-size: $base-font-size;
     font-weight: bold;
     line-height: $line-height;
@@ -1089,6 +1115,15 @@ form {
 
   fieldset legend {
     font-weight: bold;
+  }
+
+  select {
+    border: 2px solid #d2d7dc;
+    border-radius: rem-calc(4);
+
+    &:not(.locale-switcher) {
+      min-height: $line-height * 2;
+    }
   }
 
   [type="radio"] {
@@ -1105,7 +1140,10 @@ form {
   }
 
   [type]:not([type=submit]):not([type=file]):not([type=checkbox]):not([type=radio]):not(.close-button) {
-    background: #f8f8f8;
+    background: #fff;
+    border: 2px solid #d2d7dc;
+    border-radius: rem-calc(4);
+    box-shadow: none;
     height: $line-height * 2;
     margin-bottom: $line-height * 1.5;
 
@@ -1142,10 +1180,20 @@ form {
 
   .checkbox,
   .radio {
-    display: inline-block;
+    color: $text;
     font-weight: normal;
     line-height: $line-height;
     vertical-align: middle;
+  }
+
+  .required {
+
+    label {
+
+      &::after {
+        content: "*";
+      }
+    }
   }
 }
 
@@ -1160,6 +1208,52 @@ form {
 
 .translation-locale {
   padding-top: $line-height;
+}
+
+.form-label {
+  color: $label;
+  font-weight: bold;
+}
+
+.subtitle-form {
+  color: #000;
+  font-size: rem-calc(36);
+  font-weight: bold;
+  margin-bottom: $line-height * 2;
+  padding-top: $line-height * 3;
+  text-transform: uppercase;
+}
+
+.submit-form-container {
+  position: relative;
+
+  &::before,
+  &::after {
+    background: $light;
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 48px;
+    width: 150%;
+    z-index: -1;
+  }
+
+  &::before {
+    left: -100%;
+  }
+
+  &::after {
+    right: -100%;
+  }
+}
+
+.submit-form-box {
+  background: #fff;
+  border: 6px solid $border;
+  border-radius: rem-calc(12);
+  margin-top: $line-height * 2;
+  padding: $line-height * 2 $line-height;
+  text-align: center;
 }
 
 // 07. Callout

@@ -1,7 +1,16 @@
-<div class="budget-investment-new row">
-  <div class="small-12 medium-9 column">
-    <h1><%= t("management.budget_investments.create") %></h1>
+<div class="budget-investment-new no-margin-top row">
 
+  <div class="small-12 column light expand padding-top">
+    <%= back_link_to budgets_path %>
+
+    <div class="header">
+      <span class="fas fa-chart-pie header-icon"></span>
+
+      <h1 class="inline-block"><%= t("budgets.investments.form.title") %></h1>
+    </div>
+  </div>
+
+  <div class="small-12 column">
     <%= render "/budgets/investments/form", form_url: budget_investments_path(@budget) %>
   </div>
 </div>
