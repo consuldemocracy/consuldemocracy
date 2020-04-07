@@ -8,6 +8,7 @@
     <%= f.translatable_fields do |translations_form| %>
       <div class="small-12 medium-6 column end">
         <%= translations_form.text_field :name, maxlength: 50 %>
+        <%= translations_form.text_field :long_name, maxlength: 1000 %>
       </div>
     <% end %>
   </div>
