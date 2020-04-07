@@ -41,7 +41,7 @@ module Devise
   module Models
     module PasswordExpirable
       def need_change_password?
-        self.administrator? && password_expired?
+        Setting["feature.admin_expire_passwords"] && self.administrator? && password_expired?
       end
 
       def password_expired?
