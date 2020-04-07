@@ -1,0 +1,67 @@
+<div class="<%= results_type == :compatible ? "success" : "js-discarded" %>"
+     style="<%= results_type != :compatible ? "display: none" : "" %>"
+     id="<%= results_type %>-container">
+
+  <h4><%= title %></h4>
+
+  <table id="budget-investments-<%= results_type %>" class="table-for-mobile">
+    <thead>
+      <tr>
+        <th scope="col">
+          <%= t("budgets.results.investment_title") %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t("budgets.results.ballot_lines_count") %>
+        </th>
+        <th scope="col" class="text-center">
+          <%= t("budgets.results.price") %>
+        </th>
+        <% if results_type == :compatible %>
+          <th scope="col" class="text-right">
+            <small><%= t("budgets.results.amount_available") %></small><br>
+            <%= @budget.formatted_amount(heading_price) %><br>
+          </th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% amount_available = heading_price %>
+      <% investments.each do |investment| %>
+          <tr id="<%= dom_id(investment) %>"
+              class="budget-investments <%= investment.winner? ? "success" : "js-discarded" %>"
+              style="<%= investment.winner? ? "" : "display: none" %>">
+            <td>
+              <% if investment.winner? %>
+                <span class="icon-check">
+                  <span class="show-for-sr">
+                    <%= t("budgets.results.accepted") %>
+                  </span>
+                </span>
+              <% else %>
+                <span class="icon-x delete">
+                  <span class="show-for-sr">
+                    <%= t("budgets.results.discarded") %>
+                  </span>
+                </span>
+              <% end %>
+              <%= link_to investment.title, budget_investment_path(@budget, investment) %>
+            </td>
+            <td class="text-center">
+              <%= investment.ballot_lines_count %>
+            </td>
+            <td class="text-center">
+              <%= @budget.formatted_amount(investment.price) %>
+            </td>
+            <% if results_type == :compatible %>
+              <td class="small text-right"
+                  title="<%= @budget.formatted_amount(amount_available) %> - <%= @budget.formatted_amount(investment.price) %>">
+                  <%= @budget.formatted_amount(amount_available - investment.price) %>
+                  <% amount_available -= investment.price if investment.winner? %>
+              </td>
+            <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
