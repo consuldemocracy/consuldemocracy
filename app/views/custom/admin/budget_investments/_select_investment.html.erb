@@ -14,6 +14,14 @@
   <%= investment.total_votes %>
 </td>
 
+<td class="text-center">
+  <%= investment.physical_final_votes_count %>
+</td>
+
+<td class="text-center">
+  <%= investment.final_total_votes %>
+</td>
+
 <td class="small" data-field="admin">
   <% if investment.administrator.present? %>
     <span title="<%= t("admin.budget_investments.index.assigned_admin") %>">
