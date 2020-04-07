@@ -14,6 +14,7 @@ es:
       edit: Editar
       configure: Configurar
       delete: Borrar
+      confirm_delete: "¿Estás seguro? Esta acción borrará %{resource_name} '%{name}' y no se puede deshacer."
     officing_booth:
       title: "Estás ahora mismo en la mesa ubicada en %{booth}. Si esto no es correcto no sigas adelante y llama al teléfono de incidencias. Gracias."
     banners:
@@ -90,6 +91,7 @@ es:
         help_block: "Los presupuestos participativos permiten que los ciudadanos propongan y decidan de manera directa cómo gastar parte del presupuesto, con un seguimiento y evaluación riguroso de las propuestas por parte de la institución."
         type_single: Partida única
         type_multiple: Múltiples partidas
+        delete: "Eliminar presupuesto"
       create:
         button:
           continue: "Continuar a grupos"
@@ -156,6 +158,7 @@ es:
         timeline_groups: Grupos
         timeline_headings: Partidas
         timeline_phases: Fases
+        resource_name: "el presupuesto"
     budget_groups:
       name: "Nombre"
       headings_name: "Partidas"

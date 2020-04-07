@@ -158,6 +158,26 @@ describe "Admin budgets" do
         end
       end
     end
+
+    scenario "Delete budget from index", :js do
+      budget = create(:budget)
+      visit admin_budgets_path
+
+      within "#budget_#{budget.id}" do
+        click_link "Delete budget"
+      end
+
+      page.driver.browser.switch_to.alert do
+        expect(page).to have_content "Are you sure? This action will delete the budget '#{budget.name}' "\
+                                     "and can't be undone."
+      end
+
+      accept_confirm
+
+      expect(page).to have_content("Budget deleted successfully")
+      expect(page).to have_content("There are no budgets.")
+      expect(page).not_to have_content budget.name
+    end
   end
 
   context "New" do

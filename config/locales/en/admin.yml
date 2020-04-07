@@ -14,6 +14,7 @@ en:
       edit: Edit
       configure: Configure
       delete: Delete
+      confirm_delete: "Are you sure? This action will delete %{resource_name} '%{name}' and can't be undone."
     officing_booth:
       title: "You are officing the booth located at %{booth}. If this is not correct, do not continue and call the help phone number. Thank you."
     banners:
@@ -90,6 +91,7 @@ en:
         help_block: "Participatory budgets allow citizens to propose and decide directly how to spend part of the budget, with monitoring and rigorous evaluation of proposals by the institution."
         type_single: Single heading
         type_multiple: Multiple headings
+        delete: "Delete budget"
       create:
         button:
           continue: "Continue to groups"
@@ -156,6 +158,7 @@ en:
         timeline_groups: Groups
         timeline_headings: Headings
         timeline_phases: Phases
+        resource_name: "the budget"
     budget_groups:
       name: "Name"
       headings_name: "Headings"
