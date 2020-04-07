@@ -30,6 +30,8 @@ es:
       index:
         submit: "Validar documento"
   errors:
+    budget:
+      locked_user: "Ya has votado presencialmente"
     messages:
       document_number_and_document_type: "Numero de documento inválido"
   layouts:
