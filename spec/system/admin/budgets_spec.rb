@@ -82,6 +82,22 @@ describe "Admin budgets", :admin do
         end
       end
     end
+
+    scenario "Delete budget from index" do
+      create(:budget, name: "To be deleted")
+
+      visit admin_budgets_path
+
+      within "tr", text: "To be deleted" do
+        message = "Are you sure? This action will delete the budget 'To be deleted' and can't be undone."
+
+        accept_confirm(message) { click_link "Delete" }
+      end
+
+      expect(page).to have_content("Budget deleted successfully")
+      expect(page).to have_content("There are no budgets.")
+      expect(page).not_to have_content "To be deleted"
+    end
   end
 
   context "Publish" do
@@ -115,8 +131,7 @@ describe "Admin budgets", :admin do
     let(:heading) { create(:budget_heading, budget: budget) }
 
     scenario "Destroy a budget without investments" do
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
       expect(page).to have_content("Budget deleted successfully")
@@ -127,8 +142,7 @@ describe "Admin budgets", :admin do
       budget.administrators << Administrator.first
       budget.valuators << create(:valuator)
 
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
       expect(page).to have_content "Budget deleted successfully"
@@ -138,8 +152,7 @@ describe "Admin budgets", :admin do
     scenario "Try to destroy a budget with investments" do
       create(:budget_investment, heading: heading)
 
-      visit admin_budgets_path
-      click_link "Edit budget"
+      visit edit_admin_budget_path(budget)
       click_link "Delete budget"
 
       expect(page).to have_content("You cannot delete a budget that has associated investments")
