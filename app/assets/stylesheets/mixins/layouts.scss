@@ -29,6 +29,8 @@
 }
 
 @mixin background-till-left-of-screen {
+  position: relative;
+
   &::before {
     background: inherit;
     content: "";
