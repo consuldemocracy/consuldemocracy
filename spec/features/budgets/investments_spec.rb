@@ -894,6 +894,8 @@ describe "Budget Investments" do
 
       visit new_budget_investment_path(budget)
 
+      expect(page).to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
+
       expect(page).to have_selector("input[name=\"budget_investment[heading_id]\"][value=\"#{heading.id}\"]",
                                      visible: false)
 
@@ -925,6 +927,8 @@ describe "Budget Investments" do
       login_as(author)
 
       visit new_budget_investment_path(budget)
+
+      expect(page).not_to have_content("#{heading.name} (#{budget.formatted_heading_price(heading)})")
 
       within("#budget_investment_heading_id") do
         expect(page).to have_selector("option[value='#{heading.id}']")

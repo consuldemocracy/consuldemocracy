@@ -3,10 +3,16 @@
   <div class="small-12 column light expand padding-top">
     <%= back_link_to budgets_path %>
 
-    <div class="header">
+    <div class="header <%= "header-single-heading" if @budget.single_heading? %>">
       <span class="fas fa-chart-pie header-icon"></span>
 
       <h1 class="inline-block"><%= t("budgets.investments.form.title") %></h1>
+      <% if @budget.single_heading? %>
+        <h2>
+          <%= @budget.headings.first.name %>
+          (<%= @budget.formatted_heading_price(@budget.headings.first) %>)
+        </h2>
+      <% end %>
     </div>
   </div>
 
