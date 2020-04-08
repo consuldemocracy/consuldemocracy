@@ -796,6 +796,14 @@ describe Budget::Investment do
 
         expect(investment.valuation_tag_list).to match_array(%w[Code Test Refactor])
       end
+
+      describe ".by_tag" do
+        it "does not return duplicate records for tags in different contexts" do
+          investment = create(:budget_investment, tag_list: ["Same"], valuation_tag_list: ["Same"])
+
+          expect(Budget::Investment.by_tag("Same")).to eq [investment]
+        end
+      end
     end
   end
 
