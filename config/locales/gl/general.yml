@@ -95,9 +95,6 @@ gl:
       tags_placeholder: "Escribe as etiquetas que desexes separadas por unha coma (',')"
     index:
       featured_debates: Destacar
-      filter_topic:
-        one: " co tema '%{topic}'"
-        other: " co tema '%{topic}'"
       orders:
         confidence_score: Máis apoiadas
         created_at: Novas
@@ -335,9 +332,6 @@ gl:
       map_skip_checkbox: "Esta proposta non ten unha localización concreta ou non a coñezo."
     index:
       featured_proposals: Destacar
-      filter_topic:
-        one: " cos temas '%{topic}'"
-        other: " cos temas '%{topic}'"
       orders:
         confidence_score: Máis apoiados
         created_at: novos
