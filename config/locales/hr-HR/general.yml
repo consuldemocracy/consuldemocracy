@@ -101,10 +101,6 @@ hr:
       tags_placeholder: "Unesi oznake koje želite koristite, odvojene zarezima (',')"
     index:
       featured_debates: Istaknuto
-      filter_topic:
-        one: " s temom '%{topic}'"
-        few: " s temama '%{topic}'"
-        other: " s temama '%{topic}'"
       orders:
         confidence_score: najviše ocijenjen
         created_at: najnoviji
@@ -346,10 +342,6 @@ hr:
       map_skip_checkbox: "Ovaj prijedlog ne mora imati konkretnu lokaciju ili ja nisam svijestan toga."
     index:
       featured_proposals: Istaknuto
-      filter_topic:
-        one: " s temom '%{topic}'"
-        few: " s temama '%{topic}'"
-        other: " s temama '%{topic}'"
       orders:
         confidence_score: najviše ocijenjen
         created_at: najnoviji
