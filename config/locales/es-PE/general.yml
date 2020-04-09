@@ -86,9 +86,6 @@ es-PE:
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_debates: Destacar
-      filter_topic:
-        one: " com tópico '%{topic}'"
-        other: " com tópico '%{topic}'"
       orders:
         confidence_score: Mejor valoradas
         created_at: mais recente
@@ -278,9 +275,6 @@ es-PE:
       map_skip_checkbox: "Esta propuesta no tiene una ubicación concreta o no la conozco."
     index:
       featured_proposals: Destacar
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: Mejor valorados
         created_at: Nuevos
