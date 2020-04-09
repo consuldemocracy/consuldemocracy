@@ -95,9 +95,6 @@ sv:
       tags_placeholder: "Skriv taggarna du vill använda, avgränsade med komma (',')"
     index:
       featured_debates: Utvalda
-      filter_topic:
-        one: " med ämne '%{topic} '"
-        other: " med ämne '%{topic} '"
       orders:
         confidence_score: populära
         created_at: senaste
@@ -337,9 +334,6 @@ sv:
       map_skip_checkbox: "Det finns ingen specifik geografisk plats för förslaget, eller jag känner inte till platsen."
     index:
       featured_proposals: Utvalda
-      filter_topic:
-        one: " med ämne '%{topic} '"
-        other: " med ämne '%{topic} '"
       orders:
         confidence_score: populära
         created_at: senaste
