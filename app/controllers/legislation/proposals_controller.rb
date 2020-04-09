@@ -3,7 +3,6 @@ class Legislation::ProposalsController < Legislation::BaseController
   include FlagActions
   include ImageAttributes
 
-  before_action :parse_tag_filter, only: :index
   before_action :load_categories, only: [:index, :new, :create, :edit, :map, :summary]
   before_action :load_geozones, only: [:edit, :map, :summary]
 
