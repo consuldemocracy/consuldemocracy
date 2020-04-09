@@ -87,9 +87,6 @@ nl:
       tags_placeholder: "Voeg de gewenste labels toe, gescheiden door een komma (',')"
     index:
       featured_debates: Featured
-      filter_topic:
-        one: " met onderwerp '%{topic}'"
-        other: " met onderwerp '%{topic}'"
       orders:
         confidence_score: best gescored
         created_at: nieuwste
@@ -302,9 +299,6 @@ nl:
       map_skip_checkbox: "De locatie voor het voorstel is niet bekend."
     index:
       featured_proposals: Featured
-      filter_topic:
-        one: " met onderwerp'%{topic}'"
-        other: " met onderwerp'%{topic}'"
       orders:
         confidence_score: best gescored
         created_at: nieuwste
