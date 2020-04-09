@@ -87,9 +87,6 @@ it:
       tags_placeholder: "Inserisci i tag che desideri utilizzare, separati da virgole (',')"
     index:
       featured_debates: In primo piano
-      filter_topic:
-        one: " con argomento '%{topic}'"
-        other: " con argomento '%{topic}'"
       orders:
         confidence_score: più apprezzati
         created_at: più recenti
@@ -299,9 +296,6 @@ it:
       map_skip_checkbox: "Questo investimento non ha una precisa collocazione geografica ovvero io non ne sono a conoscenza."
     index:
       featured_proposals: In primo piano
-      filter_topic:
-        one: " con argomento '%{topic}'"
-        other: " con argomento '%{topic}'"
       orders:
         confidence_score: più apprezzati
         created_at: più recenti
