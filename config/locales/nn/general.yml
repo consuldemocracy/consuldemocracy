@@ -101,10 +101,6 @@ nn:
       tags_placeholder: "Skriv tag'ene du vil bruke, avgrenset med komma (',')"
     index:
       featured_debates: Utvalgte
-      filter_topic:
-        zero: " med emne '%{topic}'"
-        one: " med emne '%{topic}'"
-        other: " med emne '%{topic}'"
       orders:
         confidence_score: mest populære
         created_at: nyeste
@@ -346,10 +342,6 @@ nn:
       map_skip_checkbox: "Det finnes ingen konkret geografisk plassering for forslaget, eller jeg kjenner ikke til plasseringen."
     index:
       featured_proposals: Utvalgte
-      filter_topic:
-        zero: " med emne '%{topic}'"
-        one: " med emnet '%{topic}'"
-        other: " med emnene '%{topic}'"
       orders:
         confidence_score: populære
         created_at: nyeste
