@@ -99,11 +99,6 @@ ru:
       tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
     index:
       featured_debates: Особенные
-      filter_topic:
-        one: " с темой '%{topic}'"
-        few: " с темой '%{topic}'"
-        many: " с темой '%{topic}'"
-        other: " с темой '%{topic}'"
       orders:
         confidence_score: наивысший рейтинг
         created_at: самые свежие
@@ -354,11 +349,6 @@ ru:
       map_skip_checkbox: "Это предложение не имеет конкретного места на карте, или я о нем не знаю."
     index:
       featured_proposals: Особенные
-      filter_topic:
-        one: " с темой '%{topic}'"
-        few: " с темой '%{topic}'"
-        many: " с темой '%{topic}'"
-        other: " с темой '%{topic}'"
       orders:
         confidence_score: наивысший рейтинг
         created_at: наиболее свежие
