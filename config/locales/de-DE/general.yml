@@ -95,9 +95,6 @@ de:
       tags_placeholder: "Trennen Sie die Tags mit einem Komma (',')"
     index:
       featured_debates: Hervorgehoben
-      filter_topic:
-        one: " mit Thema '%{topic} '"
-        other: " mit Thema '%{topic} '"
       orders:
         confidence_score: am besten bewertet
         created_at: neuste
@@ -347,9 +344,6 @@ de:
       map_skip_checkbox: "Dieser Vorschlag hat keinen konkreten Ort oder ich kenne ihn nicht."
     index:
       featured_proposals: Hervorgehoben
-      filter_topic:
-        one: " mit Thema '%{topic} '"
-        other: " mit Thema '%{topic} '"
       orders:
         confidence_score: am besten bewertet
         created_at: neuste
