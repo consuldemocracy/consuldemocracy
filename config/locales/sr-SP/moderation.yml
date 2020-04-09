@@ -1,1 +1,117 @@
 sr:
+  moderation:
+    comments:
+      index:
+        block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
+        filter: Филтер
+        filters:
+          all: Све
+          pending_flag_review: У процесу
+          with_ignored_flag: Означена као прегледано
+        headers:
+          comment: Коментар
+          moderate: Модерирајте
+        hide_comments: Сакријте коментар
+        ignore_flags: Означи као прегледано
+        order: Наруџбина
+        orders:
+          flags: Највише означено
+          newest: Најновије
+        title: Коментари
+    dashboard:
+      index:
+        title: Модерирање
+    debates:
+      index:
+        block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
+        filter: Филтер
+        filters:
+          all: Све
+          pending_flag_review: У процесу
+          with_ignored_flag: Означено као прегледано
+        headers:
+          debate: Расправа
+          moderate: Модерирајте
+        hide_debates: Сакријте расправе
+        ignore_flags: Означи као прегледано
+        order: Наруџбина
+        orders:
+          created_at: Најновије
+          flags: Највише означено
+        title: Расправе
+    header:
+      title: Модерирање
+    menu:
+      flagged_comments: Коментари
+      flagged_debates: Расправе
+      flagged_investments: Буџетске инвестиције
+      proposals: Предлози
+      proposal_notifications: Обавештења о предлозима
+      users: Блокирајте кориснике
+    proposals:
+      index:
+        block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
+        filter: Филтер
+        filters:
+          all: Све
+          pending_flag_review: У фази прегледа
+          with_ignored_flag: Означи као прегледано
+        headers:
+          moderate: Модерирајте
+          proposal: Предлог
+        hide_proposals: Сакријте предлоге
+        ignore_flags: Означи као прегледано
+        order: Послагано по
+        orders:
+          created_at: Најскорији
+          flags: Највише означено
+        title: Предлози
+    budget_investments:
+      index:
+        block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
+        filter: Филтер
+        filters:
+          all: Све
+          pending_flag_review: У процесу
+          with_ignored_flag: Означена као прегледано
+        headers:
+          moderate: Модерирајте
+          budget_investment: Буџетске инвестиције
+        hide_budget_investments: Сакривене буџетске инвестиције
+        ignore_flags: Означи као прегледано
+        order: Наручено по
+        orders:
+          created_at: Најскорији
+          flags: Највише означено
+        title: Буџетске инвестиције
+    proposal_notifications:
+      index:
+        block_authors: Блокирај ауторе
+        confirm: Да ли сте сигурни?
+        filter: Филтер
+        filters:
+          all: Све
+          pending_review: У фази прегледа
+          ignored: Означи као прегледано
+        headers:
+          moderate: Модерирајте
+          proposal_notification: Обавештење о предлогу
+        hide_proposal_notifications: Сакријте предлоге
+        ignore_flags: Означи као прегледано
+        order: Наручено по
+        orders:
+          created_at: Најскорији
+          moderated: Модерирајте
+        title: Обавештења о предлозима
+    users:
+      index:
+        hidden: Блокирано
+        hide: Блокирано
+        search: Тражите
+        search_placeholder: емаил или име корисника
+        title: Блокирајте кориснике
+      notice_hide: Корисник је блокиран. Све корисникове расправе и коментару су сакривени.

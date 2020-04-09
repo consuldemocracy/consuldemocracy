@@ -1,5 +1,4 @@
 module MailerHelper
-
   def commentable_url(commentable)
     return poll_url(commentable) if commentable.is_a?(Poll)
     return debate_url(commentable) if commentable.is_a?(Debate)

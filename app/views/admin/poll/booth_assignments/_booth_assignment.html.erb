@@ -17,7 +17,7 @@
                 remote: true,
                 title: t("admin.booth_assignments.manage.actions.unassign"),
                 class: "button hollow alert expanded",
-                data: (booth_assignment.shifts? ? {confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}"} : nil) if !@poll.expired? %>
+                data: (booth_assignment.shifts? ? { confirm: "#{t("admin.poll_booth_assignments.alert.shifts")}" } : nil) if !@poll.expired? %>
   </td>
 <% else %>
   <td>

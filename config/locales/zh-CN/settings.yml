@@ -72,11 +72,6 @@ zh-CN:
       featured_proposals_description: "在索引提议页面上显示特色提议"
       signature_sheets: "签名表"
       signature_sheets_description: "它允许从管理面板里添加现场收集的签名到参与性预算的提议和投资项目中"
-      spending_proposals: "支出建议"
-      spending_proposals_description: "⚠️注意：此功能已被参与性预算取代，并将在新版本中消失"
-      spending_proposal_features:
-        voting_allowed: 投资项目投票－ 预选阶段
-        voting_allowed_description: "⚠️注意：此功能已被参与性预算取代，并将在新版本中消失"
       user:
         recommendations: "推荐"
         recommendations_description: "根据以下项目的标签在主页面上显示用户推荐"

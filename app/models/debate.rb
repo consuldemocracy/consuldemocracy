@@ -1,4 +1,5 @@
 require "numeric"
+
 class Debate < ApplicationRecord
   include Rails.application.routes.url_helpers
   include Flaggable
@@ -18,16 +19,17 @@ class Debate < ApplicationRecord
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
 
-  belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
+  translates :title, touch: true
+  translates :description, touch: true
+  include Globalizable
+
+  belongs_to :author, -> { with_hidden }, class_name: "User", inverse_of: :debates
   belongs_to :geozone
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, inverse_of: :commentable
 
-  validates :title, presence: true
-  validates :description, presence: true
+  validates_translation :title, presence: true, length: { in: 4..Debate.title_max_length }
+  validates_translation :description, presence: true, length: { in: 10..Debate.description_max_length }
   validates :author, presence: true
-
-  validates :title, length: { in: 4..Debate.title_max_length }
-  validates :description, length: { in: 10..Debate.description_max_length }
 
   validates :terms_of_service, acceptance: { allow_nil: false }, on: :create
 
@@ -41,8 +43,8 @@ class Debate < ApplicationRecord
   scope :sort_by_relevance,        -> { all }
   scope :sort_by_flags,            -> { order(flags_count: :desc, updated_at: :desc) }
   scope :sort_by_recommendations,  -> { order(cached_votes_total: :desc) }
-  scope :last_week,                -> { where("created_at >= ?", 7.days.ago)}
-  scope :featured,                 -> { where("featured_at is not null")}
+  scope :last_week,                -> { where("created_at >= ?", 7.days.ago) }
+  scope :featured,                 -> { where("featured_at is not null") }
   scope :public_for_api,           -> { all }
 
   # Ahoy setup
@@ -59,13 +61,17 @@ class Debate < ApplicationRecord
       .where("author_id != ?", user.id)
   end
 
+  def searchable_translations_definitions
+    { title       => "A",
+      description => "D" }
+  end
+
   def searchable_values
-    { title              => "A",
+    {
       author.username    => "B",
       tag_list.join(" ") => "B",
-      geozone.try(:name) => "B",
-      description        => "D"
-    }
+      geozone&.name      => "B"
+    }.merge!(searchable_globalized_values)
   end
 
   def self.search(terms)
@@ -113,6 +119,7 @@ class Debate < ApplicationRecord
 
   def votable_by?(user)
     return false unless user
+
     total_votes <= 100 ||
       !user.unverified? ||
       Setting["max_ratio_anon_votes_on_debates"].to_i == 100 ||
@@ -122,6 +129,7 @@ class Debate < ApplicationRecord
 
   def anonymous_votes_ratio
     return 0 if cached_votes_total == 0
+
     (cached_anonymous_votes_total.to_f / cached_votes_total) * 100
   end
 
@@ -139,11 +147,11 @@ class Debate < ApplicationRecord
   end
 
   def after_hide
-    tags.each{ |t| t.decrement_custom_counter_for("Debate") }
+    tags.each { |t| t.decrement_custom_counter_for("Debate") }
   end
 
   def after_restore
-    tags.each{ |t| t.increment_custom_counter_for("Debate") }
+    tags.each { |t| t.increment_custom_counter_for("Debate") }
   end
 
   def featured?
@@ -151,8 +159,8 @@ class Debate < ApplicationRecord
   end
 
   def self.debates_orders(user)
-    orders = %w{hot_score confidence_score created_at relevance}
+    orders = %w[hot_score confidence_score created_at relevance]
     orders << "recommendations" if Setting["feature.user.recommendations_on_debates"] && user&.recommended_debates
-    return orders
+    orders
   end
 end

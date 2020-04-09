@@ -16,9 +16,6 @@ hr:
         publish_comment: Objavi Komentar
       form:
         phase_not_open: Ova faza još nije otvorena
-        login_to_comment: Morate %{signin} ili %{signup} kako biste ostavili komentar.
-        signin: Ulogirajte se
-        signup: Prijavite se
       index:
         title: Komentari
         comments_about: Komentari o
@@ -114,11 +111,8 @@ hr:
       participation:
         phase_not_open: Ova faza još nije otvorena
         organizations: Organizacijama nije dozvoljeno sudjelovanje u raspravama
-        signin: Prijavi se
-        signup: Registriraj se
         unauthenticated: Vi morate %{signin} ili %{signup} kako biste sudjelovali.
         verified_only: Samo potvrđeni korisnici mogu sudjelovati, %{verify_account}.
-        verify_account: potvrdi svoj račun
         debate_phase_not_open: Faza rasprava je završila i odgovori se više ne primaju
     shared:
       share: Dijeli
@@ -127,3 +121,4 @@ hr:
       form:
         tags_label: "Kategorije"
       not_verified: "Za izglasavanje prijedloga %{verify_account}."
+      process_title: Proces kolaborativne legislative

@@ -46,7 +46,7 @@ da:
     menu:
       flagged_comments: Kommentarer
       flagged_debates: Debatter
-      flagged_investments: Budgetinvesteringer
+      flagged_investments: Budgetidéer
       proposals: Borgerforslag
       proposal_notifications: Notifikationer om forslag
       users: Bloker brugere
@@ -80,14 +80,14 @@ da:
           with_ignored_flag: Markér som set
         headers:
           moderate: Moderér
-          budget_investment: Budgetinvestering
-        hide_budget_investments: Skjul budgetinvesteringer
+          budget_investment: Budgetidéer
+        hide_budget_investments: Skjul
         ignore_flags: Markér som set
         order: Sorter efter
         orders:
           created_at: Seneste
           flags: Mest markeret
-        title: Budgetinvesteringer
+        title: Forslag
     proposal_notifications:
       index:
         block_authors: Bloker forfattere

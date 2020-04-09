@@ -27,7 +27,7 @@ class Verification::SmsController < ApplicationController
   def update
     @sms = Verification::Sms.new(sms_params.merge(user: current_user))
     if @sms.verified?
-      current_user.update(confirmed_phone: current_user.unconfirmed_phone)
+      current_user.update!(confirmed_phone: current_user.unconfirmed_phone)
       ahoy.track(:level_2_user, user_id: current_user.id) rescue nil
 
       if VerifiedUser.phone?(current_user)
@@ -57,7 +57,8 @@ class Verification::SmsController < ApplicationController
 
     def verified_user
       return false unless params[:verified_user]
-      @verified_user = VerifiedUser.by_user(current_user).where(id: params[:verified_user][:id]).first
+
+      @verified_user = VerifiedUser.by_user(current_user).find_by(id: params[:verified_user][:id])
     end
 
     def redirect_to_next_path
@@ -68,5 +69,4 @@ class Verification::SmsController < ApplicationController
         redirect_to new_letter_path, notice: t("verification.sms.update.flash.level_two.success")
       end
     end
-
 end

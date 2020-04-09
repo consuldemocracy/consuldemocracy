@@ -1,12 +1,10 @@
 require "rails_helper"
 
 describe "Budget Groups" do
-
   let(:budget) { create(:budget, slug: "budget_slug") }
-  let!(:group)  { create(:budget_group, slug: "group_slug", budget: budget) }
+  let!(:group) { create(:budget_group, slug: "group_slug", budget: budget) }
 
   context "Load" do
-
     scenario "finds group using budget slug and group slug" do
       visit budget_group_path("budget_slug", "group_slug")
       expect(page).to have_content "Select an option"
@@ -52,5 +50,4 @@ describe "Budget Groups" do
       expect(first_heading.name).to appear_before(last_heading.name)
     end
   end
-
 end

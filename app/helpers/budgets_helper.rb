@@ -1,5 +1,4 @@
 module BudgetsHelper
-
   def show_links_to_budget_investments(budget)
     ["balloting", "reviewing_ballots", "finished"].include? budget.phase
   end
@@ -19,11 +18,11 @@ module BudgetsHelper
   end
 
   def budget_phases_select_options
-    Budget::Phase::PHASE_KINDS.map { |ph| [ t("budgets.phase.#{ph}"), ph ] }
+    Budget::Phase::PHASE_KINDS.map { |ph| [t("budgets.phase.#{ph}"), ph] }
   end
 
   def budget_currency_symbol_select_options
-    Budget::CURRENCY_SYMBOLS.map { |cs| [ cs, cs ] }
+    Budget::CURRENCY_SYMBOLS.map { |cs| [cs, cs] }
   end
 
   def namespaced_budget_investment_path(investment, options = {})
@@ -46,15 +45,16 @@ module BudgetsHelper
 
   def css_for_ballot_heading(heading)
     return "" if current_ballot.blank? || @current_filter == "unfeasible"
+
     current_ballot.has_lines_in_heading?(heading) ? "is-active" : ""
   end
 
   def current_ballot
-    Budget::Ballot.where(user: current_user, budget: @budget).first
+    Budget::Ballot.find_by(user: current_user, budget: @budget)
   end
 
-  def investment_tags_select_options(budget)
-    Budget::Investment.by_budget(budget).tags_on(:valuation).order(:name).select(:name).distinct
+  def investment_tags_select_options(budget, context)
+    budget.investments.tags_on(context).order(:name).pluck(:name)
   end
 
   def unfeasible_or_unselected_filter
@@ -67,13 +67,14 @@ module BudgetsHelper
 
   def current_budget_map_locations
     return unless current_budget.present?
+
     if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
       investments = current_budget.investments.selected
     else
       investments = current_budget.investments
     end
 
-    MapLocation.where(investment_id: investments).map { |l| l.json_data }
+    MapLocation.where(investment_id: investments).map(&:json_data)
   end
 
   def display_calculate_winners_button?(budget)
@@ -95,7 +96,7 @@ module BudgetsHelper
   end
 
   def link_to_create_budget_poll(budget)
-    balloting_phase = budget.phases.where(kind: "balloting").first
+    balloting_phase = budget.phases.find_by(kind: "balloting")
 
     link_to t("admin.budgets.index.admin_ballots"),
             admin_polls_path(poll: {

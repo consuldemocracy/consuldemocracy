@@ -14,9 +14,6 @@ gl:
         publish_comment: Publicar comentario
       form:
         phase_not_open: Esta fase non está aberta
-        login_to_comment: Precisas %{signin} ou %{signup} para comentares.
-        signin: Entrar
-        signup: Rexístrate
       index:
         title: Comentarios
         comments_about: Comentarios sobre
@@ -110,11 +107,8 @@ gl:
       participation:
         phase_not_open: Esta fase non está aberta
         organizations: As organizacións non poden participar no debate
-        signin: Entrar
-        signup: Rexístrate
         unauthenticated: Precisas %{signin} ou %{signup} para participares.
         verified_only: Só as persoas con contas verificadas poden participar no debate, %{verify_account}.
-        verify_account: verificar a túa conta
         debate_phase_not_open: A fase de debate xa rematou e neste momento non se aceptan as respostas
     shared:
       share: Compartir
@@ -123,3 +117,4 @@ gl:
       form:
         tags_label: "Categorías"
       not_verified: "Para votares propostas, %{verify_account}."
+      process_title: Proceso de lexislación colaborativa

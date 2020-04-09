@@ -6,7 +6,6 @@ ca:
         submit: Reenviar instruccions
         title: Reenviar instruccions de confirmació
       show:
-        instructions_html: Anem a procedir a confirmar el compte amb l'email <b>%{email}</b>
         new_password_confirmation_label: Repeteix la clau de nou
         new_password_label: Nova clau d'accés
         please_set_password: Si us plau introdueix una nova clau d'accés per a la seva compte (et permetrà entrar com a usuari amb l'email de més amunt)
@@ -50,7 +49,6 @@ ca:
           title: Registrar-se com organització / col·lectiu
         success:
           back_to_index: Entès, tornar a la pàgina principal
-          instructions_3_html: Un cop confirmat, podràs començar a participar com a col·lectiu no verificat.
           title: Registre d'organització / col·lectiu
     passwords:
       edit:
@@ -119,6 +117,3 @@ ca:
           username_note: Nom públic que apareixerà en les teves publicacions
         success:
           back_to_index: Entès, tornar a la pàgina principal
-          instructions_1_html: Si us plau <b>revisa el teu correu electrònic</b> - t'hem enviat un <b>enllaç per confirmar el teu compte.</b>
-          instructions_2_html: Un cop confirmat, podràs començar a participar-hi.
-          thank_you_html: Gràcies per registrar-te al web. Ara has de <b>confirmar el teu correu.</b>

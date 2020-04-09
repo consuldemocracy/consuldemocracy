@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   COMMENTABLE_TYPES = %w[Debate Proposal Budget::Investment Poll Topic
                         Legislation::Question Legislation::Annotation
-                        Legislation::Proposal Legislation::PeopleProposal].freeze
+                        Legislation::Proposal].freeze
 
   acts_as_paranoid column: :hidden_at
   include ActsAsParanoidAliases
@@ -15,7 +15,10 @@ class Comment < ApplicationRecord
 
   attr_accessor :as_moderator, :as_administrator
 
-  validates :body, presence: true
+  translates :body, touch: true
+  include Globalizable
+
+  validates_translation :body, presence: true
   validates :user, presence: true
 
   validates :commentable_type, inclusion: { in: COMMENTABLE_TYPES }
@@ -24,7 +27,7 @@ class Comment < ApplicationRecord
   validate :comment_valuation, if: -> { valuation }
 
   belongs_to :commentable, -> { with_hidden }, polymorphic: true, counter_cache: true, touch: true
-  belongs_to :user, -> { with_hidden }
+  belongs_to :user, -> { with_hidden }, inverse_of: :comments
 
   before_save :calculate_confidence_score
 
@@ -114,7 +117,7 @@ class Comment < ApplicationRecord
   end
 
   def call_after_commented
-    commentable.try(:after_commented)
+    commentable.after_commented if commentable.respond_to?(:after_commented)
   end
 
   def self.body_max_length

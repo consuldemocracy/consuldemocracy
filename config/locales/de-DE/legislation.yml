@@ -14,9 +14,6 @@ de:
         publish_comment: Kommentar veröffentlichen
       form:
         phase_not_open: Diese Phase ist noch nicht geöffnet
-        login_to_comment: Sie müssen sich %{signin} oder %{signup}, um einen Kommentar zu hinterlassen.
-        signin: Anmelden
-        signup: Registrieren
       index:
         title: Kommentare
         comments_about: Kommentare über
@@ -110,11 +107,8 @@ de:
       participation:
         phase_not_open: Diese Phase ist nicht geöffnet
         organizations: Organisationen dürfen sich nicht an der Diskussion beteiligen
-        signin: Anmelden
-        signup: Registrieren
         unauthenticated: Sie müssen sich %{signin} oder %{signup}, um fortfahren zu können.
         verified_only: 'Nur verifizierte Benutzer können teilnehmen: %{verify_account}.'
-        verify_account: verifizieren Sie Ihr Konto
         debate_phase_not_open: Diskussionsphase ist beendet. Antworden werden nicht mehr angenommen
     shared:
       share: Teilen
@@ -123,3 +117,4 @@ de:
       form:
         tags_label: "Kategorien"
       not_verified: "Für Wahlvorschläge %{verify_account}."
+      process_title: Kollaboratives Gesetzgebungsverfahren

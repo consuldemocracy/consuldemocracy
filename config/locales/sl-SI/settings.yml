@@ -30,9 +30,6 @@ sl:
       facebook_login: "Prijava v Facebook"
       google_login: "Prijava v Google"
       signature_sheets: "Podpisni listi"
-      spending_proposals: "Naložbeni projekti"
-      spending_proposal_features:
-        voting_allowed: Glasovanje o naložbenih projektih
       user:
         recommendations: "Priporočila"
         skip_verification: "Preskoči verifikacijo uporabnika"

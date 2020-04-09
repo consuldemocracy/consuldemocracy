@@ -10,7 +10,7 @@
       <p><strong><%= t("polls.show.results.title") %></strong></p>
       <ul class="menu vertical">
         <%- @poll.questions.each do |question| %>
-          <li><%=link_to question.title, "##{question.title.parameterize}" %></li>
+          <li><%= link_to question.title, "##{question.title.parameterize}" %></li>
         <% end %>
       </ul>
     </div>
@@ -44,7 +44,6 @@
           </tbody>
         </table>
       <% end %>
-
     </div>
   </div>
 </div>

@@ -3,30 +3,21 @@ fr:
     no_reply: "Ce message a été envoyé d'une adresse qui n'accepte pas les réponses."
     comment:
       hi: Bonjour
-      new_comment_by_html: Il y a un nouveau commentaire de <strong>%{commenter}</strong>
+      new_comment_by: Il y a un nouveau commentaire de <strong>%{commenter}</strong>
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
     config:
       manage_email_subscriptions: Pour ne plus recevoir ces courriels, changer vos options dans
     email_verification:
       click_here_to_verify: sur ce lien
-      instructions_2_html: Ce courriel va vérifier votre compte avec <b>%{document_type}%{document_number}</b>. Si ce compte ne vous appartient pas, veuillez ne pas cliquer sur le lien et ignorer ce courriel.
-      instructions_html: Procéder à la vérification de votre compte utilisateur, vous devez cliquer sur %{verification_link}.
       subject: Confirmer votre courriel
       thanks: Merci beaucoup.
       title: Confirmer votre compte en utilisant le lien suivant
     reply:
       hi: Bonjour
-      new_reply_by_html: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
+      new_reply_by: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
       subject: Quelqu'un a répondu à votre commentaire
       title: Nouvelle réponse à votre commentaire
-    unfeasible_spending_proposal:
-      hi: "Cher(e) utilisateur(trice),"
-      new_html: "Pour tout cela, nous vous invitons à élaborer une <strong>nouvelle proposition</strong> qui soit conforme aux conditions de ce processus. Vous pouvez faire cela en allant sur le lien suivant: %{url}."
-      new_href: "nouvelle proposition d'investissement"
-      sincerely: "Cordialement"
-      sorry: "Désolé du dérangement et nous vous remercions à nouveau pour votre inestimable participation."
-      subject: "Votre proposition d'investissement '%{code}' a été marquée comme infaisable"
     proposal_notification_digest:
       info: "Voici les nouvelles notifications publiées par les auteurs de propositions que vous avez soutenues sur %{org_name}."
       title: "Notifications des propositions sur %{org_name}"
@@ -41,7 +32,6 @@ fr:
       unsubscribe_account: Mon compte
     direct_message_for_sender:
       subject: "Vous avez envoyé un nouveau message privé"
-      title_html: "Vous avez envoyé un nouveau message privé à <strong>%{receiver}</strong> avec le contenu suivant :"
     user_invite:
       ignore: "Si vous n'avez pas requis cette invitation, pas d'inquiétude, vous pouvez ignorer ce courriel."
       text: "Merci d'avoir demandé à rejoindre %{org}! Dans quelques secondes vous pourrez commencer à participer, remplissez simplement le formulaire ci-dessous :"
@@ -52,15 +42,11 @@ fr:
     budget_investment_created:
       subject: "Merci d'avoir créer une proposition !"
       title: "Merci d'avoir créer une proposition !"
-      intro_html: "Bonjour <strong>%{author}</strong>,"
-      text_html: "Merci d'avoir créer votre proposition <strong>%{investment}</strong> pour un budget participatif <strong>%{budget}</strong>."
-      follow_html: "Nous vous tiendrons informés de l'avancement du processus, que vous pourrez également suivre sur <strong>%{link}</strong>."
       follow_link: "Budgets participatifs"
       sincerely: "Cordialement,"
       share: "Partager votre projet"
     budget_investment_unfeasible:
       hi: "Cher(e) utilisateur(trice),"
-      new_html: "Pour tout cela, nous vous invitons à élaborer un <strong>nouveau projet de dépenses</strong> qui soit conforme aux conditions de ce processus. Vous pouvez faire cela en allant sur le lien suivant: %{url}."
       new_href: "nouvelle proposition d'investissement"
       sincerely: "Cordialement"
       sorry: "Désolé du dérangement et nous vous remercions à nouveau pour votre inestimable participation."

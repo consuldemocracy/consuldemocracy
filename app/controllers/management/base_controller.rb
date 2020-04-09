@@ -1,5 +1,8 @@
 class Management::BaseController < ActionController::Base
+  include GlobalizeFallbacks
   layout "management"
+  default_form_builder ConsulFormBuilder
+  protect_from_forgery with: :exception
 
   before_action :verify_manager
   before_action :set_locale
@@ -59,5 +62,4 @@ class Management::BaseController < ActionController::Base
         @manager_logged_in = User.find_by_manager_login(session[:manager]["login"])
       end
     end
-
 end

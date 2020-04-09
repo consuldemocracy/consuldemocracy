@@ -2,9 +2,9 @@ require "rails_helper"
 
 describe Budget::Group do
   it_behaves_like "sluggable", updatable_slug_trait: :drafting_budget
+  it_behaves_like "globalizable", :budget_group
 
   describe "Validations" do
-
     let(:budget) { create(:budget) }
     let(:group) { create(:budget_group, budget: budget) }
 
@@ -18,19 +18,18 @@ describe Budget::Group do
       end
 
       it "may be repeated for the same group and a different locale" do
-        group.update(name_fr: "object name")
+        group.update!(name_fr: "object name")
 
         expect(group.translations.last).to be_valid
       end
 
       it "must not be repeated for a different group in any locale" do
-        group.update(name_en: "English", name_es: "Español")
+        group.update!(name_en: "English", name_es: "Español")
 
         expect(build(:budget_group, budget: budget, name_en: "English")).not_to be_valid
         expect(build(:budget_group, budget: budget, name_en: "Español")).not_to be_valid
       end
     end
-
   end
 
   describe "#sort_by_name" do
@@ -58,14 +57,13 @@ describe Budget::Group do
         budget = create(:budget, name: "Teams")
         charlie = create(:budget_group, budget: budget, name: "Charlie")
         delta = create(:budget_group, budget: budget, name: "Delta")
-        zulu = Globalize.with_locale(:es) do
+        zulu = I18n.with_locale(:es) do
           create(:budget_group, budget: budget, name: "Zulu", name_fr: "Alpha")
         end
-        bravo = Globalize.with_locale(:es) do
+        bravo = I18n.with_locale(:es) do
           create(:budget_group, budget: budget, name: "Bravo")
         end
 
-        expect(Budget::Group.sort_by_name.count).to eq 4
         expect(Budget::Group.sort_by_name).to eq [bravo, charlie, delta, zulu]
       end
     end

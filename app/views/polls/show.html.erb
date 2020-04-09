@@ -1,4 +1,4 @@
-<%= provide :title,            t("social_share.polls_show.title_#{@poll.id}", default: @poll.title) %>
+<%= provide :title, t("social_share.polls_show.title_#{@poll.id}", default: @poll.title) %>
 <%= provide :meta_description, t("social_share.polls_show.description_#{@poll.id}", default: @poll.title) %>
 <%= provide :social_media_meta_tags do %>
   <%= render "shared/social_media_meta_tags",
@@ -41,7 +41,7 @@
     <div class="row margin">
       <div class="small-12 medium-9 column">
         <h3><%= t("polls.show.more_info_title") %></h3>
-        <%= safe_html_with_links simple_format(@poll.description) %>
+        <%= auto_link_already_sanitized_html simple_format(@poll.description) %>
       </div>
 
       <% if false %>
@@ -55,10 +55,8 @@
 
   <div id="poll_more_info_answers" class="expanded poll-more-info-answers">
     <div class="row padding">
-
       <% @poll_questions_answers.each do |answer| %>
         <div class="small-12 medium-6 column end answer <%= cycle("first", "") %>" id="answer_<%= answer.id %>">
-
           <% if answer.description.present? %>
             <h3><%= answer.title %></h3>
           <% end %>
@@ -70,7 +68,7 @@
           <% if answer.description.present? %>
             <div class="margin-top">
               <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
-                <%= safe_html_with_links simple_format(answer.description) %>
+                <%= wysiwyg(answer.description) %>
               </div>
               <div class="margin">
                 <a id="read_more_<%= answer.id %>"
@@ -122,7 +120,6 @@
         </div>
       <% end %>
     </div>
-
   </div>
 
   <div class="tabs-content" data-tabs-content="polls_tabs">

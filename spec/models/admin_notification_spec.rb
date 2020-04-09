@@ -67,7 +67,7 @@ describe AdminNotification do
 
   describe "#valid_segment_recipient?" do
     it "is false when segment_recipient value is invalid" do
-      admin_notification.update(segment_recipient: "invalid_segment_name")
+      admin_notification.segment_recipient = "invalid_segment_name"
       error = "The user recipients segment is invalid"
 
       expect(admin_notification).not_to be_valid
@@ -81,7 +81,7 @@ describe AdminNotification do
     before do
       2.times { create(:user) }
       erased_user.erase
-      admin_notification.update(segment_recipient: "all_users")
+      admin_notification.update!(segment_recipient: "all_users")
     end
 
     it "returns list of all active users" do
@@ -89,5 +89,4 @@ describe AdminNotification do
       expect(admin_notification.list_of_recipients).not_to include(erased_user)
     end
   end
-
 end

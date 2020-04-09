@@ -17,9 +17,6 @@ nl:
     letter:
       alert:
         unconfirmed_code: You have not yet entered the confirmation code
-      create:
-        flash:
-          success_html: Thank you for requesting your <b>maximum security code (only required for the final votes)</b>. In a few days we will send it to the address featuring in the data we have on file. Please remember that, if you prefer, you can collect your code from any of the %{offices}.
       edit:
         see_all: Voorstellen bekijken
         title: Letter requested
@@ -28,7 +25,7 @@ nl:
       new:
         explanation: "For participate on final voting you can:"
         go_to_index: Voorstellen bekijken
-        office: Verify in any %{office}
+        office: Verifiëren in een Citizen Support Offices
         send_letter: Send me a letter with the code
         title: Congratulations!
         user_permission_info: Met je account kun je...
@@ -47,20 +44,16 @@ nl:
       new:
         accept_terms_text: I accept %{terms_url} of the Census
         accept_terms_text_title: I accept the terms and conditions of access of the Census
-        date_of_birth: Geboortedatum
         document_number: Document nummer
         document_number_help_title: Help
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Passport
           residence_card: Residence card
           spanish_id: DNI
-        document_type_label: Documentsoort
         error_not_allowed_age: You don't have the required age to participate
         error_not_allowed_postal_code: In order to be verified, you must be registered.
-        error_verifying_census: The Census was unable to verify your information. Please confirm that your census details are correct by calling to City Council or visit one %{offices}.
+        error_verifying_census: De telling was niet in staat om uw informatie te verifiëren. Gelieve te bevestigen dat uw volkstellingsgegevens correct zijn door te bellen naar de gemeenteraad of een bezoek te brengen aan een ondersteuningsbureau voor burgers.
         form_errors: prevented the verification of your residence
-        postal_code: Postcode
         postal_code_note: To verify your account you must be registered
         terms: the terms and conditions of access
         title: Verify residence
@@ -70,14 +63,12 @@ nl:
         flash:
           success: Enter the confirmation code sent to you by text message
       edit:
-        confirmation_code: Enter the code you received on your mobile
         resend_sms_link: Click here to send it again
         resend_sms_text: Didn't get a text with your confirmation code?
         submit_button: Send
         title: Security code confirmation
       new:
         phone: Enter your mobile phone number to receive the code
-        phone_format_html: "<strong><em>(Example: 612345678 or +34612345678)</em></strong>"
         phone_note: We gebruiken uw mobiele telefoonnummer alleen om u een code toe te sturen, nooit om u te contacten.  
         phone_placeholder: "Example: 612345678 or +34612345678"
         submit_button: Verzenden

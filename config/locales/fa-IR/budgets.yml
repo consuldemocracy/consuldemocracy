@@ -7,19 +7,13 @@ fa:
         remaining: "شما هنوز<span>%{amount}</span> برای سرمایه گذاری دارید"
         no_balloted_group_yet: "شما هنوز به این گروه رای نداده اید، رأی دهید"
         remove: حذف رای
-        voted_html:
-          one: "\nشما به <span> یک </ span> سرمایه گذاریرای داده اید."
-          other: "\nشما به <span> %{count} </ span> سرمایه گذاری هارای داده اید."
-        voted_info_html: "شما می توانید رای خود را در هر زمان تا پایان این مرحله تغییر دهید. <br> بدون نیاز به صرف تمام پول در دسترس."
         zero: شما به پروژه سرمایه گذاری رای نداده اید
       reasons_for_not_balloting:
         not_logged_in: شما باید %{signin} یا %{signup} کنید برای ادامه دادن.
         not_verified: فقط کاربران تأییدشده می توانند در مورد سرمایه گذاری رای دهند%{verify_account}
         organization: سازمان ها مجاز به رای دادن نیستند
         not_selected: پروژه های سرمایه گذاری انتخاب نشده پشتیبانی نمی شود
-        not_enough_money_html: "شما قبلا بودجه موجود را تعیین کرده اید. <br> <small> به یاد داشته باشید که می توانید هر%{change_ballot} را در هر زمان </small> تغییر دهید"
         no_ballots_allowed: فازانتخاب  بسته است
-        different_heading_assigned_html: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
         change_ballot: تغییر رای خود 
     groups:
       show:
@@ -64,7 +58,6 @@ fa:
         map_location: "نقشه محل"
         map_location_instructions: "نقشه محل حرکت و نشانگر محل."
         map_remove_marker: "حذف  نشانگر نقشه"
-        location: "اطلاعات اضافی مکان"
         map_skip_checkbox: "این سرمایه گذاری مکان خاصی ندارد و من از آن آگاه نیستم."
       index:
         title: بودجه مشارکتی
@@ -75,26 +68,16 @@ fa:
           button: جستجو
           placeholder: جستجو پروژه های سرمایه گذاری ...
           title: جستجو
-        search_results_html:
-          one: "حاوی اصطلاح<strong>%{search_term}</strong>"
-          other: "حاوی اصطلاح<strong>%{search_term}</strong>"
         sidebar:
           my_ballot: رای من
-          voted_html:
-            one: "<strong>شما یک پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
-            other: "<strong>شما %{count} پیشنهاد را با هزینه یک رأی دادید%{amount_spent}</strong>"
           voted_info: شما می توانید%{link} در هر زمانی  این مرحله را پایان دهید . بدون نیاز به صرف تمام پول در دسترس.
           voted_info_link: تغییر رای خود 
-          different_heading_assigned_html: "شما قبلا یک عنوان متفاوت را رأی داده اید: %{heading_link}"
           change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
           check_ballot_link: "رای من را چک کن"
           zero: شما به هیچ پروژه سرمایه گذاری در این گروه رأی نداده اید.
           verified_only: "برای ایجاد یک سرمایه گذاری جدید بودجه%{verify}"
-          verify_account: "حساب کاربری خودراتایید کنید\n"
           create: "ایجاد بودجه سرمایه گذاری \n"
           not_logged_in: "برای ایجاد یک سرمایه گذاری جدید بودجه باید%{sign_in} یا %{sign_up} کنید."
-          sign_in: "ورود به برنامه"
-          sign_up: "ثبت نام"
           by_feasibility: "امکان پذیری\n"
           feasible: پروژه های قابل اجرا
           unfeasible: پروژه های غیرقابل اجرا
@@ -106,9 +89,6 @@ fa:
         author_deleted: کاربر حذف شد
         price_explanation: توضیح قیمت
         unfeasibility_explanation: توضیح امکان سنجی 
-        code_html: "کد پروژه سرمایه گذاری:<strong>%{code}</strong>"
-        location_html: "محل:\n%{location}</strong>"
-        organization_name_html: "پیشنهاد از طرف:<strong>%{name}</strong>"
         share: "اشتراک گذاری\n"
         title: پروژه سرمایه گذاری
         supports: پشتیبانی ها
@@ -117,8 +97,6 @@ fa:
         comments_tab: توضیحات
         milestones_tab: نقطه عطف
         author: نویسنده
-        project_unfeasible_html: "این پروژه سرمایه گذاری <strong> به عنوان غیرقابل توصیف مشخص شده است </ strong> و به مرحله رای گیری نرسیده است"
-        project_not_selected_html: "این پروژه سرمایه گذاری <strong> انتخاب نشده است </ strong> برای مرحله رای گیری ."
       wrong_price_format: فقط اعداد صحیح 
       investment:
         add: رای
@@ -135,7 +113,6 @@ fa:
         give_support: پشتیبانی
       header:
         check_ballot: رای من را چک کن
-        different_heading_assigned_html: "شما در ردیف دیگری آراء فعال دارید:%{heading_link}"
         change_ballot: "اگر نظر شما تغییر کند، می توانید رای خود را در%{check_ballot} حذف کنید و دوباره شروع کنید."
         check_ballot_link: "رای من را چک کن"
         price: "این عنوان یک بودجه دارد"
@@ -155,7 +132,6 @@ fa:
       page_title: "%{budget} - نتایج"
       heading: "نتایج بودجه مشارکتی"
       heading_selection_title: "توسط منطقه"
-      spending_proposal: عنوان پیشنهاد
       ballot_lines_count: آرا
       hide_discarded_link: پنهان کردن 
       show_all_link: نمایش همه

@@ -2,7 +2,6 @@ module Graphqlable
   extend ActiveSupport::Concern
 
   class_methods do
-
     def graphql_field_name
       name.gsub("::", "_").underscore.to_sym
     end
@@ -26,11 +25,9 @@ module Graphqlable
     def graphql_type_description
       model_name.human.to_s
     end
-
   end
 
   def public_created_at
     created_at.change(min: 0)
   end
-
 end

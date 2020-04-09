@@ -28,11 +28,6 @@ bs:
           with_inactive: Neaktivno
         preview: Pregled
       banner:
-        title: Naslov
-        description: Opis
-        target_url: Link
-        post_started_at: 'Objava započeta u:'
-        post_ended_at: 'Objava završena u:'
         sections_label: Dijelovi u kojim će se pojaviti
         sections:
           homepage: Početna stranica
@@ -44,12 +39,6 @@ bs:
         editing: Edituj baner
         form:
           submit_button: Spasi izmjene
-      errors:
-        form:
-          error:
-            one: "baner se nije mogao spasiti zbog greške"
-            few: "baner se nije mogao spasiti zbog grešaka"
-            other: "baner se nije mogao spasiti zbog grešaka"
       new:
         creating: Napravi baner
     activity:
@@ -120,7 +109,6 @@ bs:
       headings_name: "Poglavlja"
       headings_edit: "Edituj poglavlja"
       headings_manage: "Sredi poglavlja"
-      max_votable_headings: "Maksimalni broj poglavlja za koje korisnik može glasati"
       no_groups: "Nema grupa."
       amount:
         one: "1 grupa"
@@ -136,12 +124,10 @@ bs:
       form:
         create: "Kreiraj novu grupu"
         edit: "Edituj grupu"
-        name: "Naziv grupe"
         submit: "Spasi grupu"
       index:
         back: "Vrati se na budžete"
     budget_headings:
-      name: "Naziv"
       no_headings: "Nema poglavlja."
       amount:
         one: "1 poglavlje"
@@ -155,14 +141,8 @@ bs:
         success_notice: "Poglavlje uspješno obrisano"
         unable_notice: "Ne možete ukinuti poglavlje koje ima vezane investicije"
       form:
-        name: "Naziv poglavlja"
-        amount: "Iznos"
-        population: "Populacija (po izboru)"
         population_info: "Rubrika za populaciju u sklopu budžetskog poglavlja se koristi u statističke svrhe na kraju budžetskog perioda, kako bi se pokazalo u svakoj kategoriji koji je procenat stanovništva glasao i u kojem području. Rubrika se ispunjava po izboru, tako da može ostati prazna ako nije primjenjivo."
-        latitude: "Geografska širina (nije obavezno navesti)"
-        longitude: "Geografska dužina (nije obavezno navesti)"
         coordinates_info: "Ako su navedene geografska širina i dužina, stranice na kojim su navedene investicije za ovo poglavlje sadrže i mapu. Mapa će biti centrirana uz upotrebu tih koordinata."
-        allow_content_block: "Omogući blok sadržaja"
         content_blocks_info: "Ako omogućite blok sadržaja, moći ćete napraviti prilagođene sadržaje u vezi ovog poglavlja, u odjeljku \"blok sadržaja\" u Postavkama > Prilagodi. Ovaj sadržaj se pojavljuje na stranici koja pokazuje investicije za ovo poglavlje."
         create: "Kreiraj novo poglavlje"
         edit: "Edituj poglavlje"
@@ -171,13 +151,8 @@ bs:
         back: "Idi nazad na grupe"
     budget_phases:
       edit:
-        start_date: Početni datum
-        end_date: Krajnji datum
-        summary: Sažetak
         summary_help_text: Ovim tekstom se korisnik obavještava o statusu faze. Označite kockicu kako bi se tekst pokazao čak i ako faza nije aktivna
-        description: Opis
         description_help_text: Ovaj tekst će se pojaviti u zaglavlju kada se aktivira faza
-        enabled: Faza pokrenuta
         enabled_help_text: Ova faza će biti javna u vremenskom prikazu budžetskih faza, te će biti aktivna i u bilo koju drugu svrhu
         save_changes: Spasi izmjene
     budget_investments:
@@ -201,8 +176,6 @@ bs:
           min_total_supports: Minimalna podrška
           max_total_supports: Maksimalna podrška
           winners: Odabrane investicije
-          one_filter_html: "Trenutno primjenjeni filteri: <b><em>%{filter}</em></b>"
-          two_filters_html: "Trenutno primjenjeni filteri: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filter (suzi pretragu)
         download_current_selection: "Preuzmi odabranu selekciju"
@@ -211,7 +184,6 @@ bs:
         assigned_admin: Dodijeljeni administrator
         no_admin_assigned: Nema dodijeljenih administratora
         no_valuators_assigned: Nema dodijeljenih procjenitelja
-        no_valuation_groups: Nema dodijeljenih grupa za procjenu
         feasibility:
           feasible: "Izvodivo"
           unfeasible: "Nije izvodivo"
@@ -249,7 +221,6 @@ bs:
         dossier: Spis
         edit_dossier: Izmjeni spis
         tags: Tagovi
-        user_tags: Korisnički tagovi
         undefined: Nije definisano
         compatibility:
           title: Usklađenost
@@ -257,33 +228,21 @@ bs:
           "false": Usklađeno
         selection:
           title: Odabir
-          "true": Odabrano
-          "false": Nije odabrano
         winner:
           title: Odabrana investicija
           "true": "Da"
           "false": "Ne"
-        image: "Slika"
-        see_image: "Vidi sliku"
-        no_image: "Bez slike"
-        documents: "Dokumenti"
-        see_documents: "Vidi dokumente (%{count})"
-        no_documents: "Bez dokumenata"
         valuator_groups: "Grupe za procjenu"
       edit:
         classification: Klasifikacija
         compatibility: Usklađenost
-        mark_as_incompatible: Označi kao neusklađeno
         selection: Odabir
-        mark_as_selected: Označi kao odabrano
         assigned_valuators: Procjenitelji
         select_heading: Odaberi poglavlje
         submit_button: Ažuriraj
         user_tags: Tagovi koje su definisali korisnici
-        tags: Tagovi
         tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
         undefined: Nije definisano
-        user_groups: "Grupe"
       search_unfeasible: Traži među neizvodivim
     milestones:
       index:
@@ -291,7 +250,6 @@ bs:
         table_title: "Naziv"
         table_description: "Opis"
         table_publication_date: "Datum objave"
-        table_status: Status
         table_actions: "Radnje"
         delete: "Obriši rok"
         no_milestones: "Nema utvrđenih rokova"
@@ -305,8 +263,6 @@ bs:
         no_statuses_defined: Još uvijek nema utvrđenih statusa
       new:
         creating: Odredi rok
-        date: Datum
-        description: Opis
       edit:
         title: Izmjeni rok
       create:
@@ -360,24 +316,13 @@ bs:
         notice: "Traka za praćenje napretka uspješno obrisana"
     comments:
       index:
-        filter: Filter (suzi pretragu)
-        filters:
-          all: Sve
-          with_confirmed_hide: Potvrđeno
-          without_confirmed_hide: U toku
-        hidden_debate: Skrivena debata
-        hidden_proposal: Skriveni prijedlog
         title: Skriveni komentari
-        no_hidden_comments: Nema skrivenih komentara.
     dashboard:
       index:
         back: Vrati se na %{org}
         title: Administracija
         description: Dobrodošli na admin panel od %{org}.
       actions:
-        action_type:
-          proposed_action: Predložena radnja
-          resource: Resurs
         index:
           description: "Kada korisnici prave prijedloge, imaju pristup kontrolnoj ploči za svoj prijedlog, gdje se mogu predlagati resursi i preporuke kako bi se dobila podrška za njihovu ideju."
           create: Definiši resurs ili radnju
@@ -410,7 +355,6 @@ bs:
         form:
           submit_button: Spasi
           help_text: Upišite 0 kako se ova vrijednost ne bi uzela u obzir
-          published_proposal: Za objavljene prijedloge?
           published_proposal_help_text: Označite kockicu kako bi definisali radnju samo za objavljene prijedloge
       administrator_tasks:
         index:
@@ -435,17 +379,10 @@ bs:
           success: Zadatak označen kao riješen.
     debates:
       index:
-        filter: Filter (suzi pretragu)
-        filters:
-          all: Sve
-          with_confirmed_hide: Potvrđeno
-          without_confirmed_hide: U toku
         title: Skrivene debate
-        no_hidden_debates: Nema skrivenih debata.
     documents:
       new:
         title: "Učitaj dokument"
-        label_attachment: "Odaberi dokument"
         submit_button: "Učitaj"
       index:
         new_link: "Dodaj novi dokument"
@@ -496,9 +433,6 @@ bs:
         edit:
           back: Nazad
           submit_button: Spasi izmjene
-        errors:
-          form:
-            error: Greška
         form:
           enabled: Pokrenuto
           process: Proces
@@ -512,9 +446,7 @@ bs:
           summary_placeholder: Kratki sažetak opisa
           description_placeholder: Dodaj opis procesa
           additional_info_placeholder: Dodatne informacije koje smatrate korisnim
-          homepage: Opis
           homepage_description: Ovdje možete objasniti sadržaj procesa
-          homepage_enabled: Pokrenuta početna stranica
           banner_title: Boje za zaglavlje
         index:
           create: Novi proces
@@ -558,8 +490,6 @@ bs:
           back: Nazad
           id: Identifikacioni broj
           supports: Ukupna podrška
-          select: Odaberi
-          selected: Odabrano
         form:
           custom_categories: Kategorije
           custom_categories_description: Kategorije koje korisnici mogu odabrati za pravljenje prijedloga. Maksimalno 160 karaktera.
@@ -577,11 +507,7 @@ bs:
           back: Nazad
           submit_button: Spasi izmjene
           warning: Editovali ste tekst, ne zaboravite da pritisnete "Spasi" kako bi trajno spasili izmjene.
-        errors:
-          form:
-            error: Greška
         form:
-          title_html: 'Editovanje <span class="strong">%{draft_version_title}</span> iz procesa <span class="strong">%{process_title}</span>'
           launch_text_editor: Pokreni editora teksta
           close_text_editor: Zatvori editora teksta
           use_markdown: Koristi obilježavanje za formatiranje teksta
@@ -602,9 +528,6 @@ bs:
           back: Nazad
           title: Kreiraj novu verziju
           submit_button: Kreiraj verziju
-        statuses:
-          draft: Nacrt
-          published: Objavljeno
         table:
           title: Naziv
           created_at: 'Napravljeno:'
@@ -624,12 +547,8 @@ bs:
           back: Nazad
           title: "Edituj “%{question_title}”"
           submit_button: Spasi izmjene
-        errors:
-          form:
-            error: Greška
         form:
           add_option: Dodaj opciju
-          title: Pitanje
           title_placeholder: Dodaj pitanje
           value_placeholder: Dodaj zatvoreni odgovor
           question_options: "Mogući odgovori (nije obavezno, odgovori su po pravilu otvoreni)"
@@ -694,7 +613,6 @@ bs:
       officials: Službenici
       organizations: Organizacije
       settings: Opšte postavke
-      spending_proposals: Prijedlozi troškova
       stats: Statistika
       signature_sheets: Potpisni listovi
       site_customization:
@@ -719,7 +637,6 @@ bs:
           content_block:
             update: "Ažuriraj blok"
       title_moderated_content: Moderirani sadržaj
-      title_budgets: Budžeti
       title_profiles: Profili
       title_settings: Postavke
       title_site_customization: Materijali na glasačkom mjestu
@@ -783,8 +700,6 @@ bs:
         empty_newsletters: Nema biltena za pokazati
       new:
         title: Novi bilten
-        from: Email-adresa koja se pokazuje kao pošiljatelj biltena
-        header_footer_help_text_html: "Zaglavlje i podnožje su isti za sve emailove. Možete ih promijeniti na <code>app/views/layouts/mailer_header</code> and <code>app/views/layouts/mailer_footer</code>.<br> Možete promijeniti sliku u zaglavlju na %{link}."
         image_link: "prilagođene slike"
       edit:
         title: Edituj bilten
@@ -911,18 +826,8 @@ bs:
         delete: Obriši
       search:
         title: "Procjenitelji: traženje korisnika"
-      summary:
-        title: Procjeniteljev sažetak za investicione projekte
-        valuator_name: Procjenitelj
-        finished_and_feasible_count: Završeno i izvodivo
-        finished_and_unfeasible_count: Završeno i neizvodivo
-        finished_count: Završeno
-        in_evaluation_count: Ocjena u toku
-        total_count: Ukupno
-        cost: Troškovi
       form:
         edit_title: "Procjenitelji: Editovanje podataka za procjenitelja"
-        update: "Ažuriraj podatke za procjenitelja"
         updated: "Podaci za procjenitelja uspješno ažurirani"
       show:
         description: "Opis"
@@ -941,7 +846,6 @@ bs:
         title: "Grupa za procjenu: %{group}"
         no_valuators: "Nema procjenitelja dodijeljenih ovoj grupi"
       form:
-        name: "Naziv grupe"
         new: "Kreiraj grupu za procjenu"
         edit: "Spasi podatke za grupu za procjenu"
     poll_officers:
@@ -975,7 +879,6 @@ bs:
         shift: "Anketar u smjeni"
         shifts: "Rad u smjenama u ovoj kabini"
         date: "Datum"
-        task: "Zadatak"
         edit_shifts: Uredi rad u smjenama
         new_shift: "Nova smjena"
         no_shifts: "Nema rada u smjenama u ovoj kabini"
@@ -1011,11 +914,6 @@ bs:
     poll_booth_assignments:
       alert:
         shifts: "Za ovu kabinu je određen rad u smjenama. Ako obrišete raspored za kabinu, obrisaće se i smjene. Nastavite?"
-      flash:
-        destroy: "Kabina više nije dodjeljena"
-        create: "Kabina dodjeljena"
-        error_destroy: "Došlo je do greške u brisanju dodjele kabina"
-        error_create: "Došlo je do greške u određivanju kabine za glasačku anketu"
       show:
         location: "Lokacija"
         officers: "Anketari"
@@ -1038,7 +936,6 @@ bs:
         title: "Opis glasačke ankete"
       form:
         description:
-          text: "Opis"
           help_text: "Ovaj tekst će se pojaviti u zaglavlju stranice za glasačku anketu. Može se iskoristiti za pružanje dodatnog konteksta za otvorenu glasačku anketu."
     polls:
       index:
@@ -1093,7 +990,6 @@ bs:
       new:
         title: "Formuliši pitanje za glasačku anketu %{poll}"
         title_proposal: "Formuliši pitanje"
-        poll_label: "Glasačka anketa"
       answers:
         images:
           add_image: "Dodaj sliku"
@@ -1173,8 +1069,6 @@ bs:
         no_location: "Nema lokacije"
       new:
         title: "Nova kabina"
-        name: "Naziv"
-        location: "Lokacija"
         submit_button: "Napravi kabinu"
       edit:
         title: "Edituj podatke za kabinu"
@@ -1217,10 +1111,6 @@ bs:
           pending: U toku
           rejected: Odbijeno
           verified: Potvrđeno
-        hidden_count_html:
-          one: Ima takođe <strong> jedna organizacija </strong> bez korisnika ili sa sakrivenim korisnikom.
-          few: Ima takođe <strong> %{count} organizacija/e </strong> bez korisnika ili sa sakrivenim korisnikom.
-          other: Ima takođe <strong> %{count} organizacija/e </strong> bez korisnika ili sa sakrivenim korisnikom.
         name: Naziv
         email: Email
         phone_number: Telefon
@@ -1309,9 +1199,6 @@ bs:
       proposal_search:
         button: Traži
         placeholder: Pretraga prijedloga po nazivu, šifri, opisu ili pitanju
-      spending_proposal_search:
-        button: Traži
-        placeholder: Pretraga prijedloga troškova po nazivu ili opisu
       user_search:
         button: Traži
         placeholder: Pretraga korisnika po imenu ili email-adresi
@@ -1332,62 +1219,6 @@ bs:
       color_help: Heksadecimalni format
       show_results_and_stats: "Pokaži rezultate i statistiku"
       results_and_stats_reminder: "Označavanjem ove kockice, rezultati i/ili statistika ove glasačke ankete će biti dostupni javnosti i vidljivi svakom korisniku."
-    spending_proposals:
-      index:
-        geozone_filter_all: Sve zone
-        administrator_filter_all: Svi administratori
-        valuator_filter_all: Svi procjenitelji
-        tags_filter_all: Svi tagovi
-        filters:
-          valuation_open: Otvori
-          without_admin: Bez dodijeljenog administratora
-          managed: Radi se
-          valuating: Procjena u toku
-          valuation_finished: Procjena završena
-          all: Sve
-        title: Investicioni projekti za participativno budžetiranje
-        assigned_admin: Dodijeljeni administrator
-        no_admin_assigned: Nema dodijeljenih administratora
-        no_valuators_assigned: Nema dodijeljenih ocjenitelja
-        summary_link: "Sažetak investicionog projekta"
-        valuator_summary_link: "Sažetak procjenitelja"
-        feasibility:
-          feasible: "Izvodivo (cijena) (%{price})"
-          not_feasible: "Nije izvodivo"
-          undefined: "Nije definisano"
-      show:
-        assigned_admin: Dodijeljeni administrator
-        assigned_valuators: Dodijeljeni procjenitelji
-        back: Nazad
-        classification: Klasifikacija
-        heading: "Investicioni projekat (identifikacioni broj) %{id}"
-        edit: Edituj
-        edit_classification: Edituj klasifikaciju
-        association_name: Udruženje
-        by: Od
-        sent: Poslano
-        geozone: Područje
-        dossier: Spis
-        edit_dossier: Izmjeni spis
-        tags: Tagovi
-        undefined: Nije definisano
-      edit:
-        classification: Klasifikacija
-        assigned_valuators: Procjenitelji
-        submit_button: Ažuriraj
-        tags: Tagovi
-        tags_placeholder: "Napišite koje tagove želite i razdvojite ih zarezima (,)"
-        undefined: Nije definisano
-      summary:
-        title: Sažetak za investicione projekte
-        title_proposals_with_supports: Sažetak za investicione projekte, sa podrškom
-        geozone_name: Područje
-        finished_and_feasible_count: Završeno i izvodivo
-        finished_and_unfeasible_count: Završeno i neizvodivo
-        finished_count: Završeno
-        in_evaluation_count: Ocjena u toku
-        total_count: Ukupno
-        cost_for_geozone: Troškovi
     geozones:
       index:
         title: Geozona
@@ -1401,12 +1232,6 @@ bs:
         code_help: Šifra za ovu geozonu na API od popisa
         coordinates: Koordinate
         coordinates_help: Koordinate koje će na HTML slikovnoj mapi napraviti područje na koje će se moći klikati
-      errors:
-        form:
-          error:
-            one: "područje se nije moglo spasiti zbog greške"
-            few: "područje se nije moglo spasiti zbog grešaka"
-            other: "područje se nije moglo spasiti zbog grešaka"
       edit:
         form:
           submit_button: Spasi izmjene
@@ -1433,8 +1258,6 @@ bs:
       show:
         created_at: Napravljeno
         author: Autor
-        documents: Dokumenti
-        document_count: "Broj dokumenata:"
         verified:
           one: "%{count} neispravni potpis"
           few: "%{count} neispravna/neispravnih potpisa"
@@ -1457,7 +1280,6 @@ bs:
           proposals: Prijedlozi
           budgets: Otvoreni budžeti
           budget_investments: Investicioni projekti
-          spending_proposals: Prijedlozi troškova
           unverified_users: Nepotvrđeni korisnici
           user_level_three: Korisnici na trećem stupnju
           user_level_two: Korisnici na drugom stupnju
@@ -1474,7 +1296,6 @@ bs:
         polls: Glasačke ankete
       graph:
         debate_created: Debate
-        spending_proposals: Investicioni projekti
         visit: Posjete
         level_2_user: Korisnici na drugom stupnju
         proposal_created: Građanski prijedlozi
@@ -1522,8 +1343,6 @@ bs:
         title: Teme za prijedlog
         topic: Tema
         help: "Kada korisnik formuliše prijedlog, sljedeće teme se automatski predlažu kao tagovi."
-      name:
-        placeholder: Upiši naziv teme
     users:
       columns:
         name: Ime
@@ -1558,9 +1377,6 @@ bs:
           notice: Blok sadržaja uspješno obrisan
         edit:
           title: Editovanje bloka sadržaja u toku
-        errors:
-          form:
-            error: Greška
         index:
           create: Napravi novi blok sadržaja
           delete: Obriši blok
@@ -1598,9 +1414,6 @@ bs:
           notice: Stranica uspješno obrisana
         edit:
           title: Editovanje naziva stranice %{page_title}
-        errors:
-          form:
-            error: Greška
         form:
           options: Opcije
         index:
@@ -1610,13 +1423,10 @@ bs:
           see_page: Vidi stranicu
         new:
           title: Napravi novu prilagođenu stranicu
-          slug_help_html: "Tekst za identifikaciju ove strane na URL, npr. <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Napravljeno
           status: Status
           updated_at: Ažurirano
-          status_draft: Nacrt
-          status_published: Objavljeno
           title: Naslov
           slug: Slug
           cards_title: Kartice
@@ -1664,6 +1474,3 @@ bs:
         submit_header: Spasi zaglavlje
         card_title: Edituj karticu
         submit_card: Spasi karticu
-    translations:
-      remove_language: Ukloni tekst
-      add_language: Dodaj tekst

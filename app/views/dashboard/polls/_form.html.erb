@@ -29,7 +29,7 @@
 
   <div class="js-questions">
     <%= f.fields_for :questions do |question| %>
-      <%= render 'question_fields', f: question %>
+      <%= render "question_fields", f: question %>
     <% end %>
 
     <div class="links row expanded">

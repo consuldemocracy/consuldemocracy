@@ -2,8 +2,6 @@ pl:
   account:
     show:
       change_credentials_link: Zmień moje dane logowania
-      email_on_comment_label: gdy ktoś skomentuje moje pomysły
-      email_on_comment_reply_label: gdy ktoś odpowie na mój komentarz
       erase_account_link: Usuń moje konto
       finish_verification: Zakończ weryfikację
       notifications: 'Informuj mnie drogą mailową:'
@@ -11,18 +9,10 @@ pl:
       organization_responsible_name_placeholder: Reprezentant organizacji/kolektywu
       personal: Dane osobowe
       phone_number_label: Numer telefonu
-      public_activity_label: Pokazuj publicznie moją listę aktywności
-      public_interests_label: Pokaż publicznie etykiety elementów, które obserwuję
       public_interests_my_title_list: Tagi elementów, które obserwuję
       public_interests_user_title_list: Tagi elementów, które obserwuje ten użytkownik
       save_changes_submit: Zapisz zmiany
-      subscription_to_website_newsletter_label: o innych, ważnych informacjach dotyczących portalu
-      email_on_direct_message_label: gdy ktoś wyśle mi wiadomość bezpośrednią
-      email_digest_label: o podsumowaniu powiadomień dotyczących pomysłów
-      official_position_badge_label: Pokaż odznakę oficjalnej pozycji
       recommendations: Rekomendacje
-      show_debates_recommendations: Pokaż zalecenia debat
-      show_proposals_recommendations: Pokaż wnioski rekomendacji
       title: Moje konto
       user_permission_debates: Uczestnicz w debatach
       user_permission_info: Z Twoim kontem możesz...
@@ -41,7 +31,6 @@ pl:
   comments:
     comments_closed: Komentarze są wyłączone
     verified_only: Aby uczestniczyć %{verify_account}
-    verify_account: zweryfikuj swoje konto
     comment:
       admin: Administrator
       author: Autor
@@ -101,10 +90,8 @@ pl:
         submit_button: Zapisz zmiany
       show_link: Zobacz debatę
     form:
-      debate_text: Początkowy tekst debaty
       debate_title: Tytuł debaty
       tags_instructions: Oznacz tę debatę.
-      tags_label: Tematów
       tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
     index:
       featured_debates: Opisany
@@ -131,11 +118,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj debat...
         title: Szukaj
-      search_results_html:
-        one: " zawierające termin <strong>%{search_term}</strong>"
-        few: " zawierające termin <strong>%{search_term}</strong>"
-        many: " zawierające termin <strong>%{search_term}</strong>"
-        other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
       start_debate: Rozpocznij debatę
       title: Debaty
@@ -171,7 +153,6 @@ pl:
       comments_title: Komentarze
       edit_debate_link: Edytuj
       flag: Ta debata została oznaczona jako nieodpowiednia przez kilku użytkowników.
-      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       share: Udostępnij
       author: Autor
     update:
@@ -189,11 +170,9 @@ pl:
     direct_message: prywatna wiadomość
     error: błąd
     errors: błędy
-    not_saved_html: "uniemożliwił zapisanie tego %{resource}. <br>Sprawdź zaznaczone pola, aby dowiedzieć się, jak je poprawić:"
     policy: Polityka prywatności
     proposal: Wniosek
     proposal_notification: "Powiadomienie"
-    spending_proposal: Wniosek wydatkowy
     budget/investment: Inwestycja
     budget/group: Grupa budżetowa
     budget/heading: Nagłówek budżetu
@@ -207,7 +186,6 @@ pl:
     image: Obraz
   geozones:
     none: Cała dzielnica
-    all: Wszystkie zakresy
   layouts:
     application:
       chrome: Google Chrome
@@ -247,7 +225,6 @@ pl:
       proposals: Zrealizowane projekty
       poll_questions: Sondaż
       budgets: Budżetowanie Partycypacyjne
-      spending_proposals: Wnioski wydatkowe
       notification_item:
         new_notifications:
           one: Masz nowe powiadomienie
@@ -288,7 +265,6 @@ pl:
   map:
     title: "Podział dzielnicy"
     proposal_for_district: " "
-    select_district: Część dzielnicy, której dotyczy pomysł
     start_proposal: Zaproponuj swój pomysł
   omniauth:
     facebook:
@@ -323,9 +299,7 @@ pl:
     retire_form:
       title: Wycofaj wniosek
       warning: "Jeśli wycofasz wniosek, nadal będzie on otrzymywał wsparcie, ale zostanie usunięty z głównej listy, a wiadomość będzie widoczna dla wszystkich użytkowników, oświadczając, że zdaniem autora wniosek nie powinien już być obsługiwany"
-      retired_reason_label: Powód do wycofania wniosku
       retired_reason_blank: Wybierz opcję
-      retired_explanation_label: Wyjaśnienie
       retired_explanation_placeholder: Wyjaśnij krótko, dlaczego Twoim zdaniem ten wniosek nie powinien otrzymać więcej wsparcia
       submit_button: Wycofaj wniosek
     retire_options:
@@ -335,14 +309,8 @@ pl:
       done: Gotowe
       other: Inne
     form:
-      geozone: Część dzielnicy, której dotyczy pomysł
-      proposal_responsible_name: Pełne nazwisko osoby składającej wniosek
       proposal_responsible_name_note: "(indywidualnie lub jako przedstawiciel zbiorowości; nie będzie wyświetlone publicznie)"
-      proposal_summary: Podsumowanie wniosku
       proposal_summary_note: "(maksymalnie 200 znaków)"
-      proposal_text: Tekst wniosku
-      proposal_title: Tytuł wniosku
-      proposal_video_url: Link do zewnętrznego wideo
       proposal_video_url_note: Możesz dodać link do YouTube lub Vimeo
       tag_category_label: "Kategorie"
       tags_instructions: "Otaguj tę propozycję. Możesz wybrać spośród proponowanych kategorii lub dodać własną"
@@ -387,11 +355,6 @@ pl:
         button: Szukaj
         placeholder: Szukaj wniosków...
         title: Szukaj
-      search_results_html:
-        one: " zawierające termin <strong>%{search_term}</strong>"
-        few: " zawierające termin <strong>%{search_term}</strong>"
-        many: " zawierające termin <strong>%{search_term}</strong>"
-        other: " zawierające termin <strong>%{search_term}</strong>"
       select_order: Uporządkuj według
       select_order_long: "Przeglądasz wnioski według:"
       start_proposal: Zaproponuj swój pomysł
@@ -458,7 +421,6 @@ pl:
         other: "%{count} komentarzy"
       comments_tab: Komentarze
       flag: Ten wniosek został oznaczona jako nieodpowiedni przez kilku użytkowników.
-      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
       notifications_tab: Powiadomienia
       milestones_tab: Kamienie milowe
       retired_warning: "Autor uważa, że niniejszy wniosek nie powinien otrzymywać więcej poparcia."
@@ -505,10 +467,6 @@ pl:
       back: Wróć do głosowania
       cant_answer_not_logged_in: "%{signin} lub %{signup} aby wziąć udział."
       comments_tab: Komentarze
-      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
-      signin: Zaloguj się
-      signup: Zarejestruj się
-      cant_answer_verify_html: "Aby odpowiedzieć, musisz %{verify_link}."
       verify_link: "zweryfikuj swoje konto"
       cant_answer_expired: "Ta sonda została zakończona."
       cant_answer_wrong_geozone: "To pytanie nie jest dostępne w Twojej strefie geograficznej."
@@ -540,10 +498,7 @@ pl:
   proposal_notifications:
     new:
       title: "Wyślij wiadomość"
-      title_label: "Tytuł"
-      body_label: "Wiadomość"
       submit_button: "Wyślij wiadomość"
-      info_about_receivers_html: "Ta wiadomość zostanie wysłana do <strong>%{count} osób</strong> i będzie widoczna w %{proposal_page}.<br> Wiadomość nie zostanie wysłana natychmiast, użytkownicy będą otrzymywać okresowo e-mail ze wszystkimi powiadomieniami dotyczącymi propozycji."
       proposal_page: "strona wniosku"
     show:
       back: "Wróć do mojej aktywności"
@@ -582,17 +537,6 @@ pl:
     follow: "Obserwuj"
     following: "Obserwowane"
     follow_entity: "Obserwuj %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Obserwujesz teraz ten projekt inwestycyjny! </br> Powiadomimy Cię o zaistniałych zmianach, abyś był na bieżąco."
-        destroy:
-          notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
-      proposal:
-        create:
-          notice_html: "Obserwujesz teraz ten pomysł! </br> Powiadomimy Cię o zmianach, abyś był/a na bieżąco."
-        destroy:
-          notice_html: "Przestałeś obserwować ten projekt inwestycyjny! </br> Nie będziesz już otrzymywać powiadomień związanych z tym projektem."
     hide: Ukryj
     print:
       print_button: Wydrukuj tę informację
@@ -628,12 +572,10 @@ pl:
       districts: "Podział dzielnicy"
       districts_list: "Lista dzielnic"
       categories: "Kategorie"
-    target_blank_html: " (link otwiera się w nowym oknie)"
     you_are_in: "Jesteś w"
     unflag: Odznacz
     unfollow_entity: "Nie obserwuj %{entity}"
     outline:
-      budget: Budżet partycypacyjny
       searcher: Wyszukiwarka
     go_to_page: "Wejdź na stronę "
     share: Udostępnij
@@ -656,58 +598,6 @@ pl:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "Jeśli proponujesz nazwę stowarzyszenia lub zespołu, dodaj tutaj tę nazwę"
-      association_name: "Nazwa stowarzyszenia"
-      description: Opis
-      external_url: Link do dodatkowej dokumentacji
-      geozone: Część dzielnicy, której dotyczy pomysł
-      submit_buttons:
-        create: Utwórz
-        new: Utwórz
-      title: Tytuł wniosku dotyczącego wydatków
-    index:
-      title: Budżetowanie partycypacyjne
-      unfeasible: Niewykonalne projekty inwestycyjne
-      by_geozone: "Projekty inwestycyjne o zakresie: %{geozone}"
-      search_form:
-        button: Szukaj
-        placeholder: Projekty inwestycyjne...
-        title: Szukaj
-      search_results:
-        one: " zawierające termin '%{search_term}'"
-        few: " zawierające termin '%{search_term}'"
-        many: " zawierające termin '%{search_term}'"
-        other: " zawierające termin '%{search_term}'"
-      sidebar:
-        geozones: Część dzielnicy, której dotyczy pomysł
-        feasibility: Wykonalność
-        unfeasible: Niewykonalne
-      start_spending_proposal: Utwórz projekt inwestycyjny
-    new:
-      more_info: Jak działa budżetowanie partycypacyjne?
-      recommendation_one: Obowiązkowe jest, aby wniosek odwoływał się do działania podlegającego procedurze budżetowej.
-      recommendation_three: Spróbuj opisać swoją propozycję wydatków, aby zespół oceniający zrozumiał Twoje myślenie.
-      recommendation_two: Wszelkie propozycje lub komentarze sugerujące nielegalne działania zostaną usunięte.
-      recommendations_title: Jak utworzyć propozycję wydatków
-      start_new: Utwórz wniosek wydatkowy
-    show:
-      author_deleted: Użytkownik usunięty
-      code: "Kod wniosku:"
-      share: Udostępnij
-    wrong_price_format: Tylko liczby całkowite
-    spending_proposal:
-      spending_proposal: Projekt inwestycyjny
-      already_supported: Już to poparłeś. Udostępnij to!
-      support: Poparcie
-      support_title: Wesprzyj ten projekt
-      supports:
-        zero: Brak poparcia
-        one: 1 popierający
-        few: "%{count} popierających"
-        many: "%{count} popierających"
-        other: "%{count} popierających"
   stats:
     index:
       visits: Odwiedziny
@@ -727,16 +617,10 @@ pl:
   users:
     direct_messages:
       new:
-        body_label: Wiadomość
         direct_messages_bloqued: "Ten użytkownik postanowił nie otrzymywać wiadomości bezpośrednich"
         submit_button: Wyślij wiadomość
         title: Wyślij prywatną wiadomość do %{receiver}
-        title_label: Tytuł
         verified_only: Aby wysłać prywatną wiadomość %{verify_account}
-        verify_account: zweryfikuj swoje konto
-        authenticate: Aby kontynuować, musisz %{signin} lub %{signup}.
-        signin: zaloguj się
-        signup: zarejestruj się
       show:
         receiver: Wiadomość wysłana do %{receiver}
     show:
@@ -789,18 +673,8 @@ pl:
     comment_unauthenticated: Aby zagłosować, musisz %{signin} lub %{signup}.
     disagree: Nie zgadzam się
     organizations: Organizacje nie mogą głosować
-    signin: Zaloguj się
-    signup: Zarejestruj się
     supports: Wspiera
-    unauthenticated: Aby kontynuować, musisz %{signin} lub %{signup}.
     verified_only: Tylko zweryfikowani użytkownicy mogą głosować na propozycje; %{verify_account}.
-    verify_account: zweryfikuj swoje konto
-    spending_proposals:
-      not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
-      not_verified: Tylko zweryfikowani użytkownicy mogą głosować na propozycje; %{verify_account}.
-      organization: Organizacje nie mogą głosować
-      unfeasible: Nie można zrealizować niemożliwych do zrealizowania projektów inwestycyjnych
-      not_voting_allowed: Faza głosowania jest zamknięta
     budget_investments:
       not_logged_in: Aby kontynuować, musisz %{signin} lub %{signup}.
       not_verified: Tylko zweryfikowani użytkownicy mogą głosować na projekty inwestycyjne; %{verify_account}.
@@ -876,6 +750,4 @@ pl:
     help:
       alt: Zaznacz tekst, który chcesz skomentować i naciśnij przycisk z ołówkiem.
       text: Aby skomentować ten dokument musisz się %{sign_in} lub %{sign_up}. Zaznacz tekst, który chcesz skomentować i naciśnij przycisk z ołówkiem.
-      text_sign_in: zaloguj się
-      text_sign_up: zarejestruj się
       title: Jak mogę skomentować ten dokument?

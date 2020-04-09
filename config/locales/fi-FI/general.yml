@@ -19,7 +19,6 @@ fi:
     menu: Valikko
   comments:
     comments_closed: Kommentointi on suljettu
-    verify_account: vahvista tilisi
     comment:
       admin: Järjestelmänvalvoja
       author: Tekijä
@@ -64,8 +63,6 @@ fi:
     edit:
       form:
         submit_button: Tallenna muutokset
-    form:
-      tags_label: Aiheet
     index:
       orders:
         confidence_score: korkeimmin arvioitu
@@ -88,7 +85,6 @@ fi:
         other: "%{count} kommenttia"
       comments_title: Kommentit
       edit_debate_link: Muokkaa
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
       share: Jaa
       author: Tekijä
     update:
@@ -175,8 +171,6 @@ fi:
       form:
         submit_button: Tallenna muutokset
       show_link: Näytä ehdotus
-    retire_form:
-      retired_explanation_label: Selitys
     retire_options:
       unfeasible: Toteuttamiskelvoton
       other: Muu
@@ -228,7 +222,6 @@ fi:
         one: 1 kommentti
         other: "%{count} kommenttia"
       comments_tab: Kommentit
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
       notifications_tab: Ilmoitukset
       milestones_tab: Tavoitteet
       share: Jaa
@@ -237,6 +230,11 @@ fi:
     update:
       form:
         submit_button: Tallenna muutokset
+  dashboard:
+    progress:
+      new_action: Uusi
+    resource:
+      and: ja
   polls:
     all: "Kaikki"
     index:
@@ -247,9 +245,6 @@ fi:
         title: Äänestys
     show:
       comments_tab: Kommentit
-      login_to_comment: Sinun tulee %{signin} tai %{signup} kommentoidaksesi.
-      signin: Kirjaudu sisään
-      signup: Rekisteröidy
       verify_link: "vahvista tilisi"
       more_info_title: "Lisää tietoa"
       documents: Asiakirjat
@@ -265,7 +260,6 @@ fi:
   proposal_notifications:
     new:
       title: "Lähetä viesti"
-      body_label: "Viesti"
       submit_button: "Lähetä viesti"
   shared:
     edit: "Muokkaa"
@@ -300,7 +294,6 @@ fi:
         see_all: "Näytä kaikki"
     tags_cloud:
       categories: "Kategoriat"
-    target_blank_html: " (linkit avautuvat uudessa ikkunassa)"
     share: Jaa
     orbit:
       next_slide: Seuraava dia
@@ -308,29 +301,6 @@ fi:
       title: Suositukset
   social:
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      description: Kuvaus
-      submit_buttons:
-        create: Luo
-        new: Luo
-    index:
-      search_form:
-        button: Etsi
-        title: Etsi
-      sidebar:
-        feasibility: Toteutettavuus
-        unfeasible: Toteuttamiskelvoton
-    show:
-      author_deleted: Käyttäjä poistettu
-      share: Jaa
-    spending_proposal:
-      support: Tue
-      support_title: Tue tätä projektia
-      supports:
-        zero: Ei tukijoita
-        one: 1 tukija
-        other: "%{count} tukijaa"
   stats:
     index:
       proposals: Ehdotukset
@@ -338,12 +308,8 @@ fi:
   users:
     direct_messages:
       new:
-        body_label: Viesti
         submit_button: Lähetä viesti
         title: Lähetä yksityisviesti käyttäjälle %{receiver}
-        verify_account: vahvista tilisi
-        signin: kirjaudu
-        signup: rekisteröidy
     show:
       deleted: Poistettu
       deleted_proposal: Tämä ehdotus on poistettu
@@ -356,9 +322,6 @@ fi:
   votes:
     agree: Hyväksyn
     disagree: En hyväksy
-    signin: Kirjaudu sisään
-    signup: Rekisteröidy
-    verify_account: vahvista tilisi
   welcome:
     feed:
       see_all_proposals: Näytä kaikki ehdotukset
@@ -391,6 +354,4 @@ fi:
       title: Järjestelmänvalvonta
   annotator:
     help:
-      text_sign_in: kirjaudu
-      text_sign_up: rekisteröidy
       title: Kuinka voin kommentoida tätä asiakirjaa?

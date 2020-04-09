@@ -25,8 +25,7 @@ class CreateLegislationProposals < ActiveRecord::Migration[4.2]
       t.text       :retired_explanation
       t.integer    :community_id
 
-      t.datetime   :created_at, null: false
-      t.datetime   :updated_at, null: false
+      t.timestamps null: false
     end
   end
 end

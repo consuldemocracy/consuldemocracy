@@ -1,1 +1,8 @@
 sr:
+  milestones:
+    index:
+      no_milestones: Немате дефинисане кључне циљеве
+      progress: Напредак
+    show:
+      publication_date: "Објављено %{publication_date}"
+      status_changed: Статус се променио на

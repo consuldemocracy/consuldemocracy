@@ -1,17 +1,10 @@
 require "rails_helper"
 
 describe "Admin Notifications" do
-
   before do
-    admin = create(:administrator)
-    login_as(admin.user)
     create(:budget)
+    login_as(create(:administrator).user)
   end
-
-  it_behaves_like "translatable",
-                  "admin_notification",
-                  "edit_admin_admin_notification_path",
-                  %w[title body]
 
   context "Show" do
     scenario "Valid Admin Notification" do
@@ -30,7 +23,7 @@ describe "Admin Notifications" do
 
     scenario "Notification with invalid segment recipient" do
       invalid_notification = create(:admin_notification)
-      invalid_notification.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_notification.update_column(:segment_recipient, "invalid_segment")
 
       visit admin_admin_notification_path(invalid_notification)
 
@@ -63,7 +56,7 @@ describe "Admin Notifications" do
 
     scenario "Notifications with invalid segment recipient" do
       invalid_notification = create(:admin_notification)
-      invalid_notification.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_notification.update_column(:segment_recipient, "invalid_segment")
 
       visit admin_admin_notifications_path
 
@@ -97,7 +90,6 @@ describe "Admin Notifications" do
       within("#admin_notification_#{notification.id}") do
         click_link "Edit"
       end
-
 
       fill_in_admin_notification_form(segment_recipient: "All users",
                                       title: "Other title",
@@ -195,8 +187,6 @@ describe "Admin Notifications" do
     scenario "A draft Admin notification can be sent", :js do
       2.times { create(:user) }
       notification = create(:admin_notification, segment_recipient: :all_users)
-      total_users = notification.list_of_recipients.count
-      confirm_message = "Are you sure you want to send this notification to #{total_users} users?"
 
       visit admin_admin_notification_path(notification)
 
@@ -219,7 +209,7 @@ describe "Admin Notifications" do
 
     scenario "Admin notification with invalid segment recipient cannot be sent", :js do
       invalid_notification = create(:admin_notification)
-      invalid_notification.update_attribute(:segment_recipient, "invalid_segment")
+      invalid_notification.update_column(:segment_recipient, "invalid_segment")
       visit admin_admin_notification_path(invalid_notification)
 
       expect(page).not_to have_link("Send")

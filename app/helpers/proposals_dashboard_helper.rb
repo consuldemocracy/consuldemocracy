@@ -11,6 +11,10 @@ module ProposalsDashboardHelper
     controller_name == "dashboard" && action_name == "messages"
   end
 
+  def related_content_menu_active?
+    controller_name == "dashboard" && action_name == "related_content"
+  end
+
   def progress_menu_active?
     is_proposed_action_request? || (controller_name == "dashboard" && action_name == "progress")
   end
@@ -61,27 +65,31 @@ module ProposalsDashboardHelper
                 supports: number_with_delimiter(resource.required_supports,
                 delimiter: ".")) if resource.required_supports > 0
 
-    label.join(" #{t("dashboard.resource.and")}<br>")
+    safe_join label, h(" #{t("dashboard.resource.and")})") + tag(:br)
   end
 
   def daily_selected_class
     return nil if params[:group_by].blank?
+
     "hollow"
   end
 
   def weekly_selected_class
     return nil if params[:group_by] == "week"
+
     "hollow"
   end
 
   def monthly_selected_class
     return nil if params[:group_by] == "month"
+
     "hollow"
   end
 
   def resource_card_class(resource, proposal)
     return "alert" unless resource.active_for?(proposal)
     return "success" if resource.executed_for?(proposal)
+
     "primary"
   end
 
@@ -89,11 +97,12 @@ module ProposalsDashboardHelper
     return t("dashboard.resource.resource_locked") unless resource.active_for?(proposal)
     return t("dashboard.resource.view_resource") if resource.executed_for?(proposal)
     return t("dashboard.resource.resource_requested") if resource.requested_for?(proposal)
+
     t("dashboard.resource.request_resource")
   end
 
   def proposed_action_description(proposed_action)
-    raw proposed_action.description.truncate(200)
+    sanitize proposed_action.description.truncate(200)
   end
 
   def proposed_action_long_description?(proposed_action)
@@ -108,7 +117,7 @@ module ProposalsDashboardHelper
 
   def new_resources_since_last_login?(resources, new_actions_since_last_login)
     if resources.present?
-      resources.pluck(:id).any? {|id| new_actions_since_last_login.include?(id) }
+      resources.pluck(:id).any? { |id| new_actions_since_last_login.include?(id) }
     end
   end
 

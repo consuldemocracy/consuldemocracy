@@ -1,5 +1,4 @@
 module VerificationHelper
-
   def document_types
     [[t("verification.residence.new.document_type.spanish_id"), 1],
      [t("verification.residence.new.document_type.passport"), 2],
@@ -24,5 +23,4 @@ module VerificationHelper
 
     data_to_display + "*" * data_to_mask.size + "@" + email_provider
   end
-
 end

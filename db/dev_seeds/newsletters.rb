@@ -17,7 +17,7 @@ section "Creating Newsletters" do
       segment_recipient: UserSegments::SEGMENTS.sample,
       from: "no-reply@consul.dev",
       body: newsletter_body.sample,
-      sent_at: [Time.now, nil].sample
+      sent_at: [Time.current, nil].sample
     )
   end
 end

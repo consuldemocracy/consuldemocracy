@@ -10,7 +10,7 @@ module BudgetInvestmentsHelper
     translation = t("admin.budget_investments.index.list.#{column}")
 
     link_to(
-      "#{translation} <span class='icon-sortable #{icon}'></span>".html_safe,
+      safe_join([translation, content_tag(:span, "", class: "icon-sortable #{icon}")]),
       admin_budget_budget_investments_path(sort_by: column, direction: direction)
     )
   end
@@ -48,5 +48,9 @@ module BudgetInvestmentsHelper
 
   def investments_secondary_view
     investments_current_view == "default" ? "minimal" : "default"
+  end
+
+  def show_author_actions?(investment)
+    can?(:edit, investment) || can_destroy_image?(investment)
   end
 end

@@ -13,7 +13,7 @@ class Officing::ResultsController < Officing::BaseController
   end
 
   def create
-    @results.each { |result| result.save! }
+    @results.each(&:save!)
 
     notice = t("officing.results.flash.create")
     redirect_to new_officing_poll_result_path(@poll), notice: notice
@@ -42,7 +42,8 @@ class Officing::ResultsController < Officing::BaseController
 
         results.each_pair do |answer_index, count|
           next if count.blank?
-          answer = question.question_answers.where(given_order: answer_index.to_i + 1).first.title
+
+          answer = question.question_answers.find_by(given_order: answer_index.to_i + 1).title
           go_back_to_new if question.blank?
 
           partial_result = ::Poll::PartialResult.find_or_initialize_by(booth_assignment_id: @officer_assignment.booth_assignment_id,
@@ -116,5 +117,4 @@ class Officing::ResultsController < Officing::BaseController
     def index_params
       params.permit(:booth_assignment_id, :date)
     end
-
 end

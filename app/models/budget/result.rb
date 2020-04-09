@@ -1,7 +1,6 @@
 class Budget
   class Result
-
-    attr_accessor :budget, :heading, :money_spent, :current_investment
+    attr_accessor :budget, :heading, :current_investment
 
     def initialize(budget, heading)
       @budget = budget
@@ -42,12 +41,11 @@ class Budget
 
     def set_winner
       @money_spent += @current_investment.price
-      @current_investment.update(winner: true)
+      @current_investment.update!(winner: true)
     end
 
     def winners
       investments.where(winner: true)
     end
-
   end
 end

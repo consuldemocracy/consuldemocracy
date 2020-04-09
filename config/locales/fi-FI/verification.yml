@@ -16,17 +16,13 @@ fi:
         user_permission_info: Tililläsi voit...
     residence:
       new:
-        date_of_birth: Syntymäaika
         document_number_help_title: Apua
         document_type:
           passport: Passi
-        document_type_label: Asiakirjatyyppi
-        postal_code: Postinumero
     sms:
       edit:
         submit_button: Lähetä
       new:
-        phone_format_html: "<strong><em>(Esimerkki: 612345678 or +34612345678)</em></strong>"
         phone_placeholder: "Esimerkki: 612345678 or +34612345678"
         submit_button: Lähetä
         title: Lähetä vahvistuskoodi

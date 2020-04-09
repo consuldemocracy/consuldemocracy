@@ -8,6 +8,7 @@ class SMSApi
 
   def url
     return "" unless end_point_available?
+
     open(Rails.application.secrets.sms_end_point).base_uri.to_s
   end
 
@@ -53,5 +54,4 @@ class SMSApi
       }
     }
   end
-
 end

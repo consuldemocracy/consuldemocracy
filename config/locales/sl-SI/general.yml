@@ -2,8 +2,6 @@ sl:
   account:
     show:
       change_credentials_link: Spremeni moje podatke
-      email_on_comment_label: Ko nekdo komentira moje predloge ali o njih debatira, me obvestite po e-pošti
-      email_on_comment_reply_label: Ko nekdo odgovori na moj komentar, me obvestite po e-pošti
       erase_account_link: Izbriši moj račun
       finish_verification: Zaključi verifikacijo
       notifications: Obvestila
@@ -11,15 +9,9 @@ sl:
       organization_responsible_name_placeholder: Predstavnik/-ca organizacije/kolektiva
       personal: Osebni podatki
       phone_number_label: Telefonska številka
-      public_activity_label: Moj seznam aktivnosti naj bo javen
-      public_interests_label: Oznake elementov, ki jim sledim, naj bodo javne
       public_interests_my_title_list: Oznake elementov, ki jim slediš
       public_interests_user_title_list: Oznake elementov, ki jim sledi ta uporabnik
       save_changes_submit: Shrani spremembe
-      subscription_to_website_newsletter_label: Prijavi se na obvestila v zvezi s tem spletnim mestom
-      email_on_direct_message_label: Prejmi e-pošto, ko dobiš direktna sporočila
-      email_digest_label: Prejmi povzetek obvestil v zvezi s predlogi
-      official_position_badge_label: Pokaži značko z uradnim položajem
       title: Moj račun
       user_permission_debates: Sodeluješ v debatah
       user_permission_info: S svojim računom lahko ...
@@ -38,7 +30,6 @@ sl:
   comments:
     comments_closed: Komentarji so zaprti
     verified_only: Če želiš sodelovati, %{verify_account}
-    verify_account: potrdi svoj račun
     comment:
       author: Avtor
       deleted: Ta komentar je bil izbrisan
@@ -80,10 +71,8 @@ sl:
         submit_button: Shrani spremembe
       show_link: Poglej razpravo
     form:
-      debate_text: Začetno besedilo razprave
       debate_title: Naslov razprave
       tags_instructions: Dodaj oznake tej razpravi.
-      tags_label: Tematike
       tags_placeholder: "Vnesi oznake, ki jih želiš uporabiti, in jih loči z vejico (',')"
     index:
       featured_debates: Izpostavljeno
@@ -132,7 +121,6 @@ sl:
       comments_title: Komentarji
       edit_debate_link: Uredi
       flag: To razpravo je več uporabnikov označilo kot neprimerno.
-      login_to_comment: Če želiš komentirati, se moraš %{signin} ali %{signup}.
       share: Deli
       author: Avtor
     update:
@@ -150,11 +138,9 @@ sl:
     direct_message: Zasebno sporočilo
     error: Napaka
     errors: Napake
-    not_saved_html: "preprečil ta %{resource}, da bi se shranil. <br>Prosimo, preveri označena polja:"
     policy: Politiko zasebnosti
     proposal: Predlog
     proposal_notification: "Obvestilo"
-    spending_proposal: Predlog porabe
     budget/investment: Naložba
     budget/heading: Proračunska postavka
     poll/question/answer: Odgovor
@@ -166,7 +152,6 @@ sl:
     image: Slika
   geozones:
     none: Celo mesto/občina
-    all: Vse
   layouts:
     application:
       ie: Zaznali smo, da za brskanje po internetu uporabljaš Internet Explorer. Za boljšo izkušno te spletne strani, ti predlagamo preklop na %{firefox} ali %{chrome}.
@@ -199,7 +184,6 @@ sl:
       proposals: Predlogi
       poll_questions: Glasovanje
       budgets: Participatorni proračun
-      spending_proposals: Predlogi porabe
       notification_item:
         notifications: Obvestila
         no_notifications: "Nimaš novih obvestil"
@@ -219,7 +203,6 @@ sl:
   map:
     title: "Občine"
     proposal_for_district: "Začni nov predlog v svoji občini"
-    select_district: Področje uporabe
     start_proposal: Ustvari predlog
   omniauth:
     facebook:
@@ -249,9 +232,7 @@ sl:
     retire_form:
       title: Upokoji predlog
       warning: "Če upokojiš predlog, lahko še vedno prejema podporo, ampak bo odstranjen iz glavnega seznama, vsem uporabnikom pa bo vidno sporočilo, da avtor meni, da predlog ni več vreden podpore"
-      retired_reason_label: Razlog za upokojitev predloga
       retired_reason_blank: Izberi možnost
-      retired_explanation_label: Razlaga
       retired_explanation_placeholder: Na kratko razloži, zakaj meniš, da ta predlog ne bi smel več dobivati podpore
       submit_button: Upokoji predlog
     retire_options:
@@ -261,14 +242,8 @@ sl:
       done: Izveden
       other: Drugo
     form:
-      geozone: Področje uporabe
-      proposal_responsible_name: Polno ime predlagatelja
       proposal_responsible_name_note: "(posamično ali kot predstavnik kolektiva; ne bo javno prikazano)"
-      proposal_summary: Povzetek predloga
       proposal_summary_note: "(največ 200 znakov)"
-      proposal_text: Besedilo predloga
-      proposal_title: Naslov predloga
-      proposal_video_url: Povezava na video
       proposal_video_url_note: Lahko dodaš povezavo na YouTube ali Vimeo
       tag_category_label: "Kategorije"
       tags_instructions: "Kategoriziraj ta predlog. Izbiraš lahko med predlaganimi kategorijami ali dodaš novo"
@@ -346,7 +321,7 @@ sl:
       supports_necessary: "%{number} potrebnih podpornikov"
       total_percent: 100 %
       archived: "Ta predlog je bil arhiviran in ne more zbirati podpornikov."
-      successful: "Ta predlog je dosegel zahtevano število podpornikov in bo na voljo v %{voting}."
+      successful: "Ta predlog je dosegel zahtevano podporo."
     show:
       author_deleted: Uporabnik izbrisan
       code: "Koda predloga:"
@@ -354,7 +329,6 @@ sl:
         zero: Brez komentarjev
       comments_tab: Komentarji
       flag: Ta predlog je več uporabnikov označilo kot neprimeren.
-      login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
       notifications_tab: Obvestila
       retired_warning: "Avtor meni, da ta predlog ne bi smel več dobivati podpore."
       retired_warning_link_to_explanation: Preberi razlago, preden glasuješ zanj.
@@ -397,10 +371,6 @@ sl:
       back: Nazaj na glasovanje
       cant_answer_not_logged_in: "Za sodelovaje se moraš %{signin} ali %{signup}."
       comments_tab: Komentarji
-      login_to_comment: Za komentiranje se moraš %{signin} ali %{signup}.
-      signin: vpisati
-      signup: registrirati
-      cant_answer_verify_html: "Za odgovarjanje moraš %{verify_link}."
       verify_link: "potrditi svoj račun"
       cant_answer_expired: "To glasovanje je že končano."
       cant_answer_wrong_geozone: "To vprašanje ni na voljo v tvojem mestu/občini."
@@ -432,10 +402,7 @@ sl:
   proposal_notifications:
     new:
       title: "Pošlji sporočilo"
-      title_label: "Naslov"
-      body_label: "Sporočilo"
       submit_button: "Pošlji sporočilo"
-      info_about_receivers_html: "To sporočilo bo poslano <strong>%{count} ljudem</strong> in bo vidno na %{proposal_page}.<br> Sporočil ne pošljemo takoj in naenkrat, uporabniki jih dobijo postopoma skupaj z ostalimi obvestili."
       proposal_page: "strani predloga"
     show:
       back: "Vrni se na mojo aktivnost"
@@ -473,17 +440,6 @@ sl:
     follow: "Sledi"
     following: "Sledim"
     follow_entity: "Sledi %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "Zdaj slediš temu naložbenemu projektu! </br> O morebitnih spremembah te bomo obveščali sproti."
-        destroy:
-          notice_html: "Prenehal/-a si slediti temu naložbenemu projektu! </br> Nič več ne boš dobival/-a obvestil o tem projektu."
-      proposal:
-        create:
-          notice_html: "Zdaj slediš temu državljanskemu predlogu! </br>Sproti te bomo obveščali o spremembah, tako da boš na tekočem."
-        destroy:
-          notice_html: "Prenehal/-a si slediti temu državljanskemu predlogu. </br> Nič več ne boš dobival/-a obvestil o tem predlogu."
     hide: Skrij
     print:
       print_button: Natisni te informacije
@@ -503,12 +459,10 @@ sl:
       districts: "Področja"
       districts_list: "Seznam področij"
       categories: "Kategorije"
-    target_blank_html: " (povezava se odpre v novem oknu)"
     you_are_in: "Si v"
     unflag: Odznači
     unfollow_entity: "Prenehaj slediti %{entity}"
     outline:
-      budget: Participatorni proračun
       searcher: Iskalnik
     go_to_page: "Pojdi na stran "
     share: Išči
@@ -520,49 +474,6 @@ sl:
       title: Način prikaza
       cards: Kartice
       list: Seznam
-  spending_proposals:
-    form:
-      association_name_label: "Če predlagaš v imenu organizacije, društva ali kolektiva, tukaj dodaj ime"
-      association_name: "Ime organizacije"
-      description: Opis
-      external_url: Povezava do dodatne dokumentacije
-      geozone: Področje uporabe
-      submit_buttons:
-        create: Ustvari
-        new: Ustvari
-      title: Naslov predloga porabe
-    index:
-      title: Participatorni proračun
-      unfeasible: Neizvedljivi naložbeni projekti
-      by_geozone: "Investicijski projekti z obsegom: %{geozone}"
-      search_form:
-        button: Išči
-        placeholder: Investicijski projekti...
-        title: Išči
-      sidebar:
-        geozones: Področje uporabe
-        feasibility: Izvedljivost
-        unfeasible: Neizvedljiv
-      start_spending_proposal: Ustvari naložbeni projekt
-    new:
-      more_info: Kako deluje participatorni proračun?
-      recommendation_one: Obvezno je, da se predlog nanaša na to, kar je možno pokriti s proračunom.
-      recommendation_three: Poksusi zapisati čim več podrobnosti v opisu svoj predlog porabe, da lahko ekipa, ki preverja predloge, čim bolje razume tvojega.
-      recommendation_two: Vsak predlog ali komentar, ki predlaga nezakonito delovanje, bo izbrisan.
-      recommendations_title: Kako ustvariti predlog porabe
-      start_new: Ustvari predlog porabe
-    show:
-      author_deleted: Uporabnik izbrisan
-      code: "Koda predloga:"
-      share: Deli
-    wrong_price_format: Samo cela števila
-    spending_proposal:
-      spending_proposal: Investicijski projekt
-      already_supported: To si že podprl/-a. Deli naprej!
-      support: Podpri
-      support_title: Podpri ta projekt
-      supports:
-        zero: Brez podpornikov
   stats:
     index:
       visits: Obiski
@@ -582,16 +493,10 @@ sl:
   users:
     direct_messages:
       new:
-        body_label: Sporočilo
         direct_messages_bloqued: "Ta uporabnik/-ca se je odločil/-a, da ne želi prejemati direktnih sporočil."
         submit_button: Pošlji sporočilo
         title: Pošlji zasebno sporočilo %{receiver}
-        title_label: Naslov
         verified_only: Za pošiljanje zasebnega sporočila %{verify_account}
-        verify_account: verificiraj svoj račun
-        authenticate: Za nadaljevanje se moraš %{signin} ali %{signup}.
-        signin: vpisati
-        signup: registrirati
       show:
         receiver: Sporočilo %{receiver} poslano
     show:
@@ -618,18 +523,8 @@ sl:
     comment_unauthenticated: Za glasovanje se moraš %{signin} ali %{signup}.
     disagree: Ne strinjam se
     organizations: Organizacijam ni dovoljeno glasovati.
-    signin: vpisati
-    signup: registrirati
     supports: Glasovi
-    unauthenticated: Za nadaljevanje se moraš %{signin} ali %{signup}.
     verified_only: Samo verificirani uporabniki lahko glasujejo o predlogih; %{verify_account}.
-    verify_account: potrdi svoj račun
-    spending_proposals:
-      not_logged_in: Za nadaljevanje se moraš %{signin} ali %{signup}.
-      not_verified: Le verificirani uporabniki lahko glasujejo o predlogih; %{verify_account}.
-      organization: Organizacijam ni dovoljeno glasovati.
-      unfeasible: Neizvedljivih investicijskih projektov ni mogoče podpreti
-      not_voting_allowed: Faza glasovanja je zaključena
     budget_investments:
       not_logged_in: Za nadaljevanje se moraš %{signin} ali %{signup}.
       not_verified: Samo verificirani uporabniki lahko glasujejo o investicijskih projektih; %{verify_account}.

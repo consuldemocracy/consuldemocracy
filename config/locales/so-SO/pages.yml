@@ -18,7 +18,6 @@ so:
         title: "Doodo"
         description: "Qeybta %{link} waxaad soo bandhigi kartaa oo kula wadaagi kartaa ra'yigaaga dadka kale arrimaha khuseeya ee aad la xiriirto magaalada. Sidoo kale waa meel lagu abuuro fikrado ayadoo loo marayo qaybaha kale ee%{org} oo keenaya talaabooyin la taaban karo oo ka soo baxay Golaha Magaalada."
         link: "doodo Muwadinanta"
-        feature_html: "Waxaad furi kartaa doodo, faallo iyo qiimeyn ku leh<strong> waxaan ku raacsanahay </strong>> ama <strong> Ma aqbalo </strong>. Sababta aad u leedahay%{link}."
         feature_link: "iska diiwaan gali%{org}"
         image_alt: "Badhannada si loo qiimeeyo doodaha"
         figcaption: '"Waan isku raacsanahay" iyo "Anigu waan diiddanahay" badhanka si aan u qiimeeyo doodaha.'
@@ -27,13 +26,11 @@ so:
         description: "Qaybta%{link} waxaad samayn kartaa talo soo jeedin ah Golaha Deegaanka si aad u bixiso. Soo jeedinta waxay u baahan tahay taageero, haddii ay gaaraan taageerid ku filan, waxaa lagu dhigaa codeyn dadweyne. Soo jeedimaha la ansixiyay ee codkooda muwaadiniinta waxaa aqbalay Golaha Magaalada waxaana la fuliyay."
         link: "soo jeedinta muwaadiniinta"
         image_alt: "Badhanka si aad u taageerto soo jeedinta"
-        figcaption_html: 'Badhanka si aad u taageerto soo jeedinta.'
       budgets:
         title: "Misaaniyada kaqayb qadashada"
         description: "Qaybta%{link} waxay ka caawisaa dadka inay sameeyaan go'aan toos ah oo ku saabsan qayb ka mid ah miisaaniyadda degmada."
         link: "miisaaniyada ka qaybqaadashada"
         image_alt: "Qaybaha kala duwan ee miisaaniyadda ka qaybqaadashada"
-        figcaption_html: '"Taageerada" iyo "Codbixinta" wejiyada miisaaniyada ka qaybqaadashada.'
       polls:
         title: "Doorashooyinka"
         description: "Qaybta %{link} waa la hawlgalaa mar kasta oo soo jeedinta la gaarsiiyo 1% taageerada oo tagta codka ama marka Golaha Degmadu soo jeediyo arrin dadka in ay go'aan ka gaaraan."
@@ -157,14 +154,10 @@ so:
               description_column: Hoos u dhig/ yare cabbirka qoraalka
       compatibility:
         title: U hoggaansanaanta jaangooyooyinka iyo qaabka muuqaalka
-        description_html: 'Dhammaan boggaga shabakadani waxay raacayaan "Tilmaamaha Habboonaanta" </ strong> ama Mabaadi''da Guud ee Habboonaanta La Isticmaali karo oo ay aasaaseen Kooxda Shaqada <abbr title = "Websaytka ''Accessibility Initiative'' lang =" en "> WAI </ abbr> W3C.'
     titles:
       help: "Wamaxy %{org}- kaqayb galka muwadinka"
     verify:
-      code: Waraq Kodh ah oo ad heshay
-      email: Email
       info: "Si loo xaqiijiyo koontadaada ku soo bandhigaysa xogtaada:"
       info_code: "Hadda ku baro kodhka aad heshay warqad:"
-      password: Furaha sirta ah
       submit: Hubi xisaabtayda
       title: Hubi xisaabtaada

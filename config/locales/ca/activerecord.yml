@@ -58,9 +58,6 @@ ca:
       proposal:
         one: "Proposta ciutadana"
         other: "Propostes ciutadanes"
-      spending_proposal:
-        one: "Proposta d'inversió"
-        other: "Propostes d'inversió"
       site_customization/page:
         one: pàgina
         other: pàgines
@@ -141,20 +138,13 @@ ca:
         password_confirmation: "Confirmació de contrasenya"
         password: "Clau"
         current_password: "contrasenya actual"
-        phone_number: "telèfon"
         official_position: "Càrrec públic"
         official_level: "Nivell del càrrec"
+        phone_number: "telèfon"
         redeemable_code: "Codi de verificació per carta (opcional)"
       organization:
         name: "Nom de l'organització"
         responsible_name: "Persona responsable de l'associació"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nom de l'associació"
-        description: "Descripció detallada"
-        external_url: "Enlace a documentación adicional"
-        geozone_id: "Àmbits d'actuació"
-        title: "Títol"
       poll:
         name: "Nome"
         starts_at: "Fecha de apertura"
@@ -247,7 +237,7 @@ ca:
       poll/question/answer/video:
         title: Títol
       newsletter:
-        from: Des de
+        from: "Des de"
       admin_notification:
         title: Títol
         link: enllaç

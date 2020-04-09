@@ -17,9 +17,6 @@ hr:
     letter:
       alert:
         unconfirmed_code: Niste još unijeli potvrdni kod
-      create:
-        flash:
-          success_html: Hvala što ste zatražili <b> maksimalni sigurnosni kôd (potreban samo za konačna glasovanja)</b>. Za nekoliko dana poslat ćemo je na adresu koja se nalazi u podacima koje imamo u datoteci. Imajte na umu da, ako želite, možete prikupiti svoj kod iz bilo kojeg ureda za podršku građanima.
       edit:
         see_all: Pogledajte prijedlog
         title: Zatraženo pismo
@@ -47,20 +44,16 @@ hr:
       new:
         accept_terms_text: Potvrđujem %{terms_url} Cenzusa
         accept_terms_text_title: Prihvaćam uvjete korištenja pristupanju Cenzusu
-        date_of_birth: Datum rođenja
         document_number: Broj dokumenta
         document_number_help_title: Pomoć
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Passport</strong>: AAA000001<br> <strong>Residence card</strong>: X1234567P"
         document_type:
           passport: Putovnica
           residence_card: Dokument prebivališta
           spanish_id: DNI
-        document_type_label: Tip dokumenta
         error_not_allowed_age: Nemate dovoljno godina da bi sudjelovali
         error_not_allowed_postal_code: Kako bi vas potvrdili, morate se registrirati.
         error_verifying_census: Popis nije mogao potvrditi vaše podatke. Molimo potvrdite da su vaši popisni podaci točni pozivom Javoj vlasti ili posjetite jedan Ured za podršku građanima.
         form_errors: prječila se potvrda vašeg prebivališta
-        postal_code: Poštanski Broj
         postal_code_note: Ukoliko želite potvrditi svoj račun morate biti registrirani
         terms: uvjeti pristupa
         title: Potvrdi stanovanje
@@ -70,14 +63,12 @@ hr:
         flash:
           success: Unesi potvrdni kod koji smo vam poslali porukom
       edit:
-        confirmation_code: Unesi kod koji ste dobili na svoj mobilni uređaj
         resend_sms_link: Klinknite ovdje da pošaljete ponovno
         resend_sms_text: Niste dobili poruku s potvrdnim kodom?
         submit_button: Šalji
         title: Osiguraj potvrdni kod
       new:
         phone: Unesi svoj broj mobilnog uređaja kako bi primili kod
-        phone_format_html: "<strong><em>(Primjer: 612345678 or +34612345678)</em></strong>"
         phone_note: Mi koristimo vaš mobilni uređaj kako bismo vam poslali kod, ali nikad za razmjenu komunikacije.
         phone_placeholder: "Primjer: 612345678 or +34612345678"
         submit_button: Šalji

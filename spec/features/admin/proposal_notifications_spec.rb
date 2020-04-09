@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin proposal notifications" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -81,8 +80,8 @@ describe "Admin proposal notifications" do
   end
 
   scenario "Action links remember the pagination setting and the filter" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 2).times { create(:proposal_notification, :hidden, :with_confirmed_hide) }
+    allow(ProposalNotification).to receive(:default_per_page).and_return(2)
+    4.times { create(:proposal_notification, :hidden, :with_confirmed_hide) }
 
     visit admin_proposal_notifications_path(filter: "with_confirmed_hide", page: 2)
 
@@ -91,5 +90,4 @@ describe "Admin proposal notifications" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end
