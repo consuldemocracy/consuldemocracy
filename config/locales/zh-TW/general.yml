@@ -83,8 +83,6 @@ zh-TW:
       tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
     index:
       featured_debates: 特色
-      filter_topic:
-        other: " 主題'%{topic}'"
       orders:
         confidence_score: 最高評分
         created_at: 最新
@@ -289,8 +287,6 @@ zh-TW:
       map_skip_checkbox: "這個建議沒有具體的位置，或我沒有注意到。"
     index:
       featured_proposals: 特色
-      filter_topic:
-        other: " 主題'%{topic}'"
       orders:
         confidence_score: 最高評分
         created_at: 最新
