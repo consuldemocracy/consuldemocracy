@@ -79,9 +79,6 @@ ca:
       tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
     index:
       featured_debates: Destacades
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: Més avalades
         created_at: Noves
@@ -247,9 +244,6 @@ ca:
       tags_placeholder: "Escriu les etiquetes que desitges separades per coma (',')"
     index:
       featured_proposals: Destacades
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: Més avalades
         created_at: Noves
