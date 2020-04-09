@@ -95,11 +95,6 @@ pl:
       tags_placeholder: "Wprowadź oznaczenia, których chciałbyś użyć, rozdzielone przecinkami (',')"
     index:
       featured_debates: Opisany
-      filter_topic:
-        one: " z tematami %{topic}"
-        few: " z tematami %{topic}"
-        many: " z tematami %{topic}"
-        other: " z tematami %{topic}"
       orders:
         confidence_score: najwyżej oceniane
         created_at: najnowsze
@@ -322,11 +317,6 @@ pl:
       map_skip_checkbox: "Niniejszy wniosek nie ma konkretnej lokalizacji lub o niej nie wiem."
     index:
       featured_proposals: Opisany
-      filter_topic:
-        one: " z tematem '%{topic}'"
-        few: " z tematem '%{topic}'"
-        many: " z tematem '%{topic}'"
-        other: " z tematem '%{topic}'"
       orders:
         confidence_score: najwyżej oceniane
         created_at: najnowsze
