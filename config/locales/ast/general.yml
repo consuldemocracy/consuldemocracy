@@ -79,9 +79,6 @@ ast:
       tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
     index:
       featured_debates: Destacadas
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: meyor valoraes
         created_at: Nuevas
@@ -257,9 +254,6 @@ ast:
       tags_placeholder: "Escribe les etiquetes que deseyes separaes por una coma (',')"
     index:
       featured_proposals: Destacadas
-      filter_topic:
-        one: " con el tema '%{topic}'"
-        other: " con el tema '%{topic}'"
       orders:
         confidence_score: meyor valoraes
         created_at: Nuevas
