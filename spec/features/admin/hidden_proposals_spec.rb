@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Admin hidden proposals" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
@@ -12,7 +11,7 @@ describe "Admin hidden proposals" do
     admin = create(:administrator)
     login_as(admin.user)
 
-    expect{ visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_hidden_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "List shows all relevant info" do
@@ -90,8 +89,8 @@ describe "Admin hidden proposals" do
   end
 
   scenario "Action links remember the pagination setting and the filter" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 2).times { create(:proposal, :hidden, :with_confirmed_hide) }
+    allow(Proposal).to receive(:default_per_page).and_return(2)
+    4.times { create(:proposal, :hidden, :with_confirmed_hide) }
 
     visit admin_hidden_proposals_path(filter: "with_confirmed_hide", page: 2)
 
@@ -100,5 +99,4 @@ describe "Admin hidden proposals" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

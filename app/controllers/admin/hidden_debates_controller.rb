@@ -3,7 +3,7 @@ class Admin::HiddenDebatesController < Admin::BaseController
 
   feature_flag :debates
 
-  has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
+  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_debate, only: [:confirm_hide, :restore]
 
@@ -13,14 +13,14 @@ class Admin::HiddenDebatesController < Admin::BaseController
 
   def confirm_hide
     @debate.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def restore
-    @debate.restore
+    @debate.restore!(recursive: true)
     @debate.ignore_flag
     Activity.log(current_user, :restore, @debate)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   private
@@ -28,5 +28,4 @@ class Admin::HiddenDebatesController < Admin::BaseController
     def load_debate
       @debate = Debate.with_hidden.find(params[:id])
     end
-
 end

@@ -1,5 +1,4 @@
 class AddAdminNotificationTranslations < ActiveRecord::Migration[4.2]
-
   def self.up
     AdminNotification.create_translation_table!(
       {
@@ -14,4 +13,3 @@ class AddAdminNotificationTranslations < ActiveRecord::Migration[4.2]
     AdminNotification.drop_translation_table!
   end
 end
-

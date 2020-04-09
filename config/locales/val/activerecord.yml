@@ -64,9 +64,6 @@ val:
       proposal:
         one: "Proposta ciutadana"
         other: "Propostes ciutadanes"
-      spending_proposal:
-        one: "Proposta d'inversió"
-        other: "Propostes d'inversió"
       site_customization/page:
         one: Pàgina
         other: Pàgines personalitzades
@@ -171,20 +168,13 @@ val:
         password_confirmation: "Confirmació de contrasenya"
         password: "Contrasenya"
         current_password: "Contrasenya actual"
-        phone_number: "Telèfon"
         official_position: "Càrrec públic"
         official_level: "Nivell del càrrec"
+        phone_number: "Telèfon"
         redeemable_code: "Codi de verificació per carta"
       organization:
         name: "Nom de l'organització"
         responsible_name: "Persona responsable de l'associació"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nom de l'associació"
-        description: "Descripció"
-        external_url: "Enllaç a documentació adicional"
-        geozone_id: "Ámbit d'actuació"
-        title: "Títol"
       poll:
         name: "Nom"
         starts_at: "Data d'inici"
@@ -271,10 +261,10 @@ val:
         text: Comentari
       document:
         title: Títol
-        attachment: Fitxer adjunt
+        attachment: "Fitxer adjunt"
       image:
         title: Títol
-        attachment: Archiu adjunt
+        attachment: "Archiu adjunt"
       poll/question/answer:
         title: Resposta
         description: Descripció
@@ -287,7 +277,7 @@ val:
       newsletter:
         segment_recipient: Destinataris
         subject: Asumpte
-        from: Desde
+        from: "Desde"
         body: Contingut del email
       admin_notification:
         segment_recipient: Destinataris

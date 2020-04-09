@@ -1,5 +1,4 @@
 class Admin::SiteCustomization::DocumentsController < Admin::SiteCustomization::BaseController
-
   def index
     @documents = Document.admin.page(params[:page])
   end
@@ -21,7 +20,7 @@ class Admin::SiteCustomization::DocumentsController < Admin::SiteCustomization::
 
   def destroy
     @document = Document.find(params[:id])
-    @document.destroy
+    @document.destroy!
 
     notice = t("admin.documents.destroy.success_notice")
     redirect_to admin_site_customization_documents_path, notice: notice

@@ -1,9 +1,8 @@
 require "rails_helper"
 
 describe EvaluationCommentEmail do
-
   let(:author)        { create(:user) }
-  let(:administrator) { create(:administrator)}
+  let(:administrator) { create(:administrator) }
   let(:investment)    { create(:budget_investment, author: author, administrator: administrator) }
   let(:commenter)     { create(:user, email: "email@commenter.org") }
   let(:comment)       { create(:comment, commentable: investment, user: commenter) }
@@ -43,7 +42,7 @@ describe EvaluationCommentEmail do
     end
 
     it "returns false if the comment doesn't exist" do
-      comment.update(commentable: nil)
+      comment.commentable = nil
 
       expect(comment_email.can_be_sent?).to be false
     end
@@ -53,5 +52,4 @@ describe EvaluationCommentEmail do
       expect(comment_email.can_be_sent?).to be false
     end
   end
-
 end

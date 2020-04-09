@@ -34,7 +34,7 @@
       <thead>
         <tr>
           <th scope="col" rowspan="2"><%= t("stats.budgets.heading") %></th>
-          <th scope="col" rowspan="2"><%= t("stats.budgets.investments_sent_html") %></th>
+          <th scope="col" rowspan="2"><%= sanitize(t("stats.budgets.investments_sent")) %></th>
 
           <% stats.all_phases.each do |phase| %>
             <th scope="col" colspan="3">

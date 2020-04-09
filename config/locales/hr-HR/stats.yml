@@ -27,7 +27,6 @@ hr:
       by_heading: "Sudionici po fazi i naslovu"
       total: "Ukupno"
       heading: "Naslov"
-      investments_sent_html: "Investicijski prijedlozi poslani"
       participants_support_phase: "Sudionici su u fazi iskaza potpore"
       participants_vote_phase: "Sudionici su u glasačkoj fazi"
       participants_every_phase: "Ukupno sudionika"

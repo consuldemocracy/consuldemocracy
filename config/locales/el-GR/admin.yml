@@ -28,11 +28,6 @@ el:
           with_inactive: Ανενεργό
         preview: Προεπισκόπηση
       banner:
-        title: Τίτλος
-        description: Περιγραφή
-        target_url: Σύνδεσμος
-        post_started_at: Θέση που ξεκίνησε στις
-        post_ended_at: Θέση που έληξε στις
         sections_label: Ενότητες όπου θα εμφανίζεται
         sections:
           homepage: Αρχική σελίδα
@@ -44,11 +39,6 @@ el:
         editing: Επεξεργασία πανό
         form:
           submit_button: Αποθήκευση αλλαγών
-      errors:
-        form:
-          error:
-            one: "Κάποιο σφάλμα απέτρεψε την αποθήκευση του πανό"
-            other: "σφάλματα απέτρεψαν αυτό το banner από το να αποθηκευτεί"
       new:
         creating: Δημιουργία πανό
     activity:
@@ -119,7 +109,6 @@ el:
       headings_name: "Επικεφαλίδες"
       headings_edit: "Επεξεργασία επικεφαλίδων"
       headings_manage: "Διαχείριση επικεφαλίδων "
-      max_votable_headings: "Μέγιστος αριθμός επικεφαλίδων στις οποίες μπορέι να ψηφίσει ένας χρήστης\n"
       no_groups: "Δεν υπάρχουν ομάδες."
       amount:
         one: "Υπάρχει 1 ομάδα"
@@ -134,12 +123,10 @@ el:
       form:
         create: "Δημιουργία νέας ομάδας"
         edit: "Επεξεργασία ομάδας"
-        name: "Όνομα ομάδας"
         submit: "Αποθήκευση ομάδας"
       index:
         back: "Επιστροφή στους προϋπολογισμούς"
     budget_headings:
-      name: "Όνομα"
       no_headings: "Δεν υπάρχουν επικεφαλίδες."
       amount:
         one: "Υπάρχει 1 επικεφαλίδα"
@@ -152,14 +139,8 @@ el:
         success_notice: "Η επικεφαλίδα διαγράφηκε επιτυχώς"
         unable_notice: "Δεν μπορείτε να διαγράψετε μια επικεφαλίδα οι οποία περιέχει σχετκές επενδύσεις"
       form:
-        name: "Όνομα επικεφαλίδας"
-        amount: "Ποσό"
-        population: "Πληθυσμός (προαιρετικό)"
         population_info: "Το πεδίο πληθυσμού της επικεφαλίδας προϋπολογισμού χρησιμοποιείται για σκοπούς στατιστικής στο τέλος του προϋπολογισμού ούτως ώστε να καταγραφεί το ποσοστό ψήφων για κάθε επικεφαλίδα η οποία αντιπροσωπεύει μια περιοχή με πληθυσμό. Το πεδίο είναι προαιρετικό, έτσι μπορείτε να το αφήσετε κενό εαν δεν ισχύει."
-        latitude: "Γεωγραφικό πλάτος (προαιρετικό)"
-        longitude: "Γεωγραφικό μήκος (προαιρετικό)"
         coordinates_info: "Εάν παρέχετε το γεωγραφικό πλάτος και μήκος, η σελίδα των επενδύσεων για την επικεφαλίδα αυτή θα περιλαμβάνει έναν χάρτη. Αυτός ο Χάρτης θα κεντροθετηθεί χρησιμοποιώντας αυτές τις συντεταγμένες."
-        allow_content_block: "Επιτρέψτε αποκλεισμό περιεχομένου"
         content_blocks_info: "Εάν το κουτί αποκλεισμού περιεχομένου είναι επιλεγμένο, θα είστε σε θέση να δημιουργήσετε προσαρμοσμένο περιεχόμενο σχετικά με αυτήν την επικεφαλίδα από την ενότητα Ρυθμίσεις > Αποκλεισμός των κουτιών περιεχομένου. Αυτό το περιεχόμενο θα εμφανιστεί στη σελίδα επενδύσεων για την επικεφαλίδα αυτή."
         create: "Δημιουργία νέας επικεφαλίδας"
         edit: "Επεξεργασία επικεφαλίδας"
@@ -168,13 +149,8 @@ el:
         back: "Επιστροφή στις ομάδες"
     budget_phases:
       edit:
-        start_date: Ημερομηνία έναρξης
-        end_date: Ημερομηνία λήξης
-        summary: Περίληψη
         summary_help_text: Το κείμενο αυτό θα ενημερώσει τον χρήστη σχετικά με τη φάση. Για την εμφάνιση του ακόμη και εαν η φάση δεν είναι ενεργή, επιλέξτε το πιο κάτω κουτάκι
-        description: Περιγραφή
         description_help_text: Αυτό το κείμενο θα εμφανίζεται στην επικεφαλίδα όταν η φάση είναι ενεργή
-        enabled: Φάση ενεργοποιημένη
         enabled_help_text: Αυτή η φάση θα δημοσιευθεί στο χρονοδιάγραμμα των φάσεων του προϋπολογισμού, και θα είναι ενεργή για οποιονδήποτε άλλο σκοπό
         save_changes: Αποθήκευση αλλαγών
     budget_investments:
@@ -198,8 +174,6 @@ el:
           min_total_supports: Ελάχιστη στήριξη
           max_total_supports: Μέγιστη στήριξη
           winners: Νικητές
-          one_filter_html: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}</em></b>"
-          two_filters_html: "Τρέχοντα εφαρμοσμένα φίλτρα: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Φίλτρο
         download_current_selection: "Κατεβάστε την τρέχουσα επιλογή"
@@ -208,7 +182,6 @@ el:
         assigned_admin: Ανατεθημένος διαχειριστής
         no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
         no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
-        no_valuation_groups: Δεν έχουν ανατεθεί ομάδες αξιολόγησης
         feasibility:
           feasible: "Εφικτό"
           unfeasible: "Δεν είναι έφικτο"
@@ -246,7 +219,6 @@ el:
         dossier: Φάκελος
         edit_dossier: Επεξεργασία φακέλου
         tags: Ετικέτες
-        user_tags: Ετικέτες χρήστη
         undefined: Δεν έχει προσδιοριστεί
         compatibility:
           title: Συμβατότητα
@@ -254,33 +226,21 @@ el:
           "false": Συμβατό
         selection:
           title: Επιλογή
-          "true": Επιλεγμένο
-          "false": Δεν είναι επιλεγμένο
         winner:
           title: Νικητής
           "true": "Ναι"
           "false": "Όχι"
-        image: "Εικόνα"
-        see_image: "Προβολή εικόνας"
-        no_image: "Χωρίς εικόνα"
-        documents: "Έγγραφα"
-        see_documents: "Προβολή εγγράφων (%{count})"
-        no_documents: "Χωρίς έγγραφα"
         valuator_groups: "Ομάδες αξιολογητών"
       edit:
         classification: Ταξινόμηση
         compatibility: Συμβατότητα
-        mark_as_incompatible: Σημειώστε ως μη συμβατό
         selection: Επιλογή
-        mark_as_selected: Σημείωστε ως επιλεγμένο
         assigned_valuators: Αξιολογητές
         select_heading: Επιλογή επικεφαλίδας
         submit_button: Ενημέρωση
         user_tags: Ετικέτες που έχουν ανατεθεί από τον χρήστη
-        tags: Ετικέτες
         tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρίζοντας τις με κόμματα (,)"
         undefined: Δεν έχει προσδιοριστεί
-        user_groups: "Ομάδες"
       search_unfeasible: Η αναζήτηση αυτή δεν είναι εφικτή
     milestones:
       index:
@@ -297,13 +257,12 @@ el:
         documents: "Έγγραφα"
         milestone: Ορόσημο
         new_milestone: Δημιουργία νέου ορόσημου
+        milestone_tags: Ετικέτες οροσήμου
       form:
         admin_statuses: Διαχείριση καταστάσεων
-        no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις 
+        no_statuses_defined: Δεν υπάρχουν καθορισμένες καταστάσεις
       new:
         creating: Δημιουργία ορόσημου
-        date: Ημερομηνία
-        description: Περιγραφή
       edit:
         title: Επεξεργασία ορόσημου
       create:
@@ -357,24 +316,13 @@ el:
         notice: "Η γραμμή προόδου διαγράφηκε επιτυχώς"
     comments:
       index:
-        filter: Φίλτρο
-        filters:
-          all: Όλα
-          with_confirmed_hide: Επιβεβαιωμένο
-          without_confirmed_hide: Σε εκκρεμότητα
-        hidden_debate: Κρυφή συζήτηση
-        hidden_proposal: Κρυφή πρόταση
         title: Κρυφά σχόλια
-        no_hidden_comments: Δεν υπάρχουν κρυφά σχόλια.
     dashboard:
       index:
         back: Πίσω στο %{org}
         title: Διαχείριση
         description: Καλώς ήλθατε στο πάνελ διαχειρισης %{org}.
       actions:
-        action_type:
-          proposed_action: Προτεινόμενη δράση
-          resource: Πηγή
         index:
           description: "Οι χρήστες που υποβάλουν προτάσεις έχουν πρόσβαση στον πίνακα της πρότασής τους, όπου άλλοι χρήστες μπορούν να προτείνουν πόρους και συστάσεις για να λάβουν στήριξη για την ιδέα τους."
           create: Δημιουργία πόρων ή δράσης
@@ -407,7 +355,6 @@ el:
         form:
           submit_button: Αποθήκευση
           help_text: Εισαγάγετε 0 για να μην ληφθεί υπόψη αυτή η τιμή
-          published_proposal: Για δημοσιευμένες προτάσεις;
           published_proposal_help_text: Σημειώστε αυτό το κουτί ελέγχου για να δημιουργήσετε την ενέργεια μόνο για δημοσιευμένες προτάσεις
       administrator_tasks:
         index:
@@ -432,17 +379,10 @@ el:
           success: Η ενέργεια αυτή έχει σημειωθεί ως επίλυμένη.
     debates:
       index:
-        filter: Φίλτρο
-        filters:
-          all: Όλα
-          with_confirmed_hide: Επιβεβαιωμένο
-          without_confirmed_hide: Σε εκκρεμότητα
         title: Κρυφές συζητήσεις
-        no_hidden_debates: Δεν υπάρχουν κρυφές συζητήσεις.
     documents:
       new:
         title: "Ανεβάσε ένα έγγραφο"
-        label_attachment: "Επιλογή εγγράφου"
         submit_button: "Ανεβάστε"
       index:
         new_link: "Προσθέστε νέο έγγραφο"
@@ -493,9 +433,6 @@ el:
         edit:
           back: Πίσω
           submit_button: Αποθηκεύστε τις αλλαγές
-        errors:
-          form:
-            error: Σφάλμα
         form:
           enabled: Ενεργοποιημένη
           process: Διαδικασία
@@ -509,9 +446,7 @@ el:
           summary_placeholder: Σύντομη περίληψη της περιγραφής
           description_placeholder: Προσθέσετε μια περιγραφή της διαδικασίας
           additional_info_placeholder: Προσθέστε επιπλέον πληροφορίες που θεωρείτε χρήσιμες
-          homepage: Περιγραφή
           homepage_description: Εδώ μπορείτε να εξηγήσετε το περιεχόμενο της διαδικασίας
-          homepage_enabled: Αρχική σελίδα ενεργοποιημένη
           banner_title: Χρώματα επικεφαλίδας
         index:
           create: Νέα διαδικασία
@@ -527,9 +462,9 @@ el:
         proposals:
           select_order: Ταξινόμηση κατά
           orders:
-            id: Id
+            id: Ταυτότητα
             title: Τίτλος
-            supports: Όλες οι υποστηρίξεις
+            supports: Συνολικές υποστηρίξεις
         process:
           title: Διαδικασία
           comments: Σχόλια
@@ -537,59 +472,53 @@ el:
           start_date: Ημερομηνία έναρξης
           end_date: Ημερομηνία λήξης
           status_open: Ανοιχτό
-          status_closed: Κλεισμένο
+          status_closed: Κλειστό
           status_planned: Σχεδιασμένο
         subnav:
           info: Πληροφορίες
           homepage: Αρχική σελίδα
-          draft_versions: Σχεδίαση
+          draft_versions: Σχεδιασμός
           questions: Συζήτηση
           proposals: Προτάσεις
           milestones: Ακολουθεί
       homepage:
         edit:
-          title: Να ρυθμίσετε την αρχική σελίδα της διαδικασίας
+          title: Ρύθμιση της αρχικής σελίδα της διαδικασίας
       proposals:
         index:
           title: Τίτλος
           back: Πίσω
-          id: Id
-          supports: Όλες οι υποστηρίξεις
-          select: Επιλέξτε
-          selected: Επιλεγμένο
+          id: Ταυτότητα
+          supports: Συνολικές υποστηρίξεις
         form:
           custom_categories: Κατηγορίες
-          custom_categories_description: Κατηγορίες που μπορούν να επιλέξουν οι χρήστες δημιουργώντας την πρόταση. Μαξ 160 χαρακτήρες.
+          custom_categories_description: 'Κατηγορίες που μπορούν να επιλέξουν οι χρήστες για τη δημιουργία της πρότασης τους. Μέγιστος αριθμός χαρακτήρων: 160.'
           custom_categories_placeholder: Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (,) και μεταξύ εισαγωγικών ("")
       draft_versions:
         create:
-          notice: 'Το προσχέδιο δημιουργήθηκε με επιτυχία. <a href="%{link}">Κάντε κλικ για να επισκεφθείτε</a>'
+          notice: 'Το προσχέδιο δημιουργήθηκε επιτυχώς. <a href="%{link}">Κάντε κλικ για να επισκεφθείτε</a>'
           error: Το προσχέδιο δεν μπόρεσε να δημιουργηθεί
         update:
-          notice: 'Το προσχέδιο ανανεώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
-          error: Το προσχέδιο δεν μπόρεσε να ανανεωθεί
+          notice: 'Το προσχέδιο ανανεώθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Το προσχέδιο δεν μπόρεσε να ενημερωθεί
         destroy:
           notice: Το προσχέδιο διαγράφηκε επιτυχώς
         edit:
           back: Πίσω
-          submit_button: Αποθηκεύστε τις αλλαγές
-          warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να κάνετε κλικ στο "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
-        errors:
-          form:
-            error: Σφάλμα
+          submit_button: Αποθήκευση αλλαγών
+          warning: Έχετε επεξεργαστεί το κείμενο, μη ξεχάσετε να πατήσετε "Αποθήκευση" για να αποθηκεύσετε μόνιμα τις αλλαγές.
         form:
-          title_html: 'Επεξεργασία <span class="strong">%{draft_version_title}</span> από τη διαδικασία <span class="strong">%{process_title}</span>'
-          launch_text_editor: Ανοίξτε τον επεξεργαστή κειμένου
-          close_text_editor: Κλείστε τον επεξεργαστή κειμένου
-          use_markdown: Χρησιμοποιήστε το Markdown για να μορφοποιήσετε το κείμενο
+          launch_text_editor: Άνοιγμα επεξεργαστή κειμένου
+          close_text_editor: Κλείσιμο επεξεργαστή κειμένου
+          use_markdown: Χρησιμοποιήστε το Markdown για να διαμορφώσετε το κείμενο
           hints:
             final_version: Αυτή η έκδοση θα δημοσιευθεί ως τελικό αποτέλεσμα για αυτήν τη διαδικασία. Τα σχόλια δεν θα επιτρέπονται σε αυτή την έκδοση.
             status:
-              draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν μπορεί να το δει
-              published: Ορατές για όλους
+              draft: Μπορείτε να κάνετε προεπισκόπηση ως διαχειριστής, κανείς άλλος δεν θα μπορεί να έχει πρόσβαση
+              published: Ορατό για όλους
           title_placeholder: Γράψτε τον τίτλο της έκδοσης του προσχεδίου
           changelog_placeholder: Προσθέστε τις κύριες αλλαγές από την προηγούμενη έκδοση
-          body_placeholder: Γράψτε το κείμενο του προσχεδίου
+          body_placeholder: Συγγραφή προσχεδίου
         index:
           title: Εκδόσεις προσχεδίου
           create: Δημιουργία έκδοσης
@@ -599,9 +528,6 @@ el:
           back: Πίσω
           title: Δημιουργήστε νέα έκδοση
           submit_button: Δημιουργία έκδοσης
-        statuses:
-          draft: Προσχέδιο
-          published: Δημοσιεύθηκε
         table:
           title: Τίτλος
           created_at: Δημιουργήθηκε στις
@@ -610,60 +536,56 @@ el:
           status: Κατάσταση
       questions:
         create:
-          notice: 'Ερώτημα που δημιουργήθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
-          error: Ερώτηση δεν μπόρεσε να δημιουργηθεί
+          notice: 'Η ερώτηση δημιουργήθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η ερώτηση δεν μπόρεσε να δημιουργηθεί
         update:
-          notice: 'Ερώτηση ενημερώθηκε με επιτυχία. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
-          error: Ερώτηση δεν μπόρεσε να ενημερωθεί
+          notice: 'Η ερώτηση ενημερώθηκε επιτυχώς. <a href="%{link}">κάντε κλικ για να επισκεφθείτε</a>'
+          error: Η ερώτηση δεν μπόρεσε να ενημερωθεί
         destroy:
-          notice: Ερώτηση διαγράφηκε επιτυχώς
+          notice: Η ερώτηση διαγράφηκε επιτυχώς
         edit:
           back: Πίσω
-          title: "Επεξεργαστείτε “%{question_title}”"
-          submit_button: Αποθηκεύστε τις αλλαγές
-        errors:
-          form:
-            error: Σφάλμα
+          title: "Επεξεργασία “%{question_title}”"
+          submit_button: Αποθήευση αλλαγών
         form:
           add_option: Προσθήκη επιλογής
-          title: Ερώτηση
-          title_placeholder: Προσθέστε ερώτηση
-          value_placeholder: Προσθέστε μια κλειστή απάντηση
-          question_options: "Πιθανές απαντήσεις (προαιρετικά, από προεπιλογή ανοικτές απαντήσεις)"
+          title_placeholder: Προσθήκη ερώτησης
+          value_placeholder: Προσθήκη κλειστής απάντησης
+          question_options: "Πιθανές απαντήσεις (προαιρετικό, ανοικτές απαντήσεις από προεπιλογή)"
         index:
           back: Πίσω
           title: Ερωτήσεις που σχετίζονται με αυτήν τη διαδικασία
-          create: Δημιουργήστε ερώτηση
+          create: Δημιουργία ερώτησης
           delete: Διαγραφή
         new:
           back: Πίσω
-          title: Δημιουργήστε νέας ερώτησης
-          submit_button: Δημιουργήστε ερώτηση
+          title: Δημιουργία νέας ερώτησης
+          submit_button: Δημιουργία ερώτησης
         table:
           title: Τίτλος
-          question_options: Επιλογές ερώτησης
+          question_options: Επιλογές ερωτήσεων
           answers_count: Καταμέτρηση απαντήσεων
           comments_count: Καταμέτρηση σχολίων
         question_option_fields:
-          remove_option: Κατάργηση επιλογής
+          remove_option: Αφαίρεση επιλογής
       milestones:
         index:
           title: Ακολουθεί
     managers:
       index:
-        title: Διευθυντές
+        title: Υπεύθυνοι
         name: Όνομα
         email: E-Mail
-        no_managers: Δεν υπάρχουν διευθυντές.
+        no_managers: Δεν υπάρχουν υπεύθυνοι
       manager:
-        add: Προσθέστε
+        add: Προσθήκη
         delete: Διαγραφή
       search:
-        title: "Διευθυντές: Αναζήτηση χρήστη"
+        title: "Συντονιστές: Αναζήτηση χρήστη"
     menu:
       activity: Δραστηριότητα συντονιστή
       admin: Μενού διαχειριστή
-      banner: Banners διευθυντών
+      banner: Διαχείριση πανό
       proposals: Προτάσεις
       proposals_topics: Θέματα προτάσεων
       budgets: Συμμετοχικοί προϋπολογισμοί
@@ -672,26 +594,25 @@ el:
       hidden_debates: Κρυφές συζητήσεις
       hidden_proposals: Κρυφές προτάσεις
       hidden_budget_investments: Κρυφές επενδύσεις προϋπολογισμού
-      hidden_proposal_notifications: Κρυφές ειδοποιήσεις πρότασης
+      hidden_proposal_notifications: Κρυφές ειδοποιήσεις προτάσεων
       hidden_users: Κρυφοί χρήστες
       administrators: Διαχειριστές
-      managers: Διευθυντές
+      managers: Υπεύθυνοι
       moderators: Συντονιστές
       messaging_users: Μηνύματα προς τους χρήστες
       newsletters: Ενημερωτικά δελτία
       admin_notifications: Ειδοποιήσεις
-      system_emails: Τα μηνύματα του συστήματος
+      system_emails: Email συστήματος
       emails_download: Λήψη email
       valuators: Αξιολογητές
-      poll_officers: Επίσημοι της ψηφοφορίας
-      polls: Δημοσκοπήσεις
-      poll_booths: Τοποθεσία θαλάμων
-      poll_booth_assignments: Αναθέσεις θαλάμων
+      poll_officers: Λειτουργοί ψηφοφορίας
+      polls: Ψηφοφορίες
+      poll_booths: Τοποθεσία περιπτέρων
+      poll_booth_assignments: Αναθέσεις περιπτέρων
       poll_shifts: Διαχείριση μετατοπίσεων
       officials: Επίσημοι
       organizations: Οργανισμοί
       settings: Καθολικές ρυθμίσεις
-      spending_proposals: Προτάσεις δαπανών
       stats: Στατιστικά στοιχεία
       signature_sheets: Φύλλα υπογραφών
       site_customization:
@@ -715,7 +636,6 @@ el:
           content_block:
             update: "Ενημερωμένη έκδοση μπλοκ"
       title_moderated_content: Ελεγχόμενο περιεχόμενο
-      title_budgets: Προϋπολογισμοί
       title_profiles: Προφίλ
       title_settings: Ρυθμίσεις
       title_site_customization: Περιεχόμενο δικτυακού τόπου
@@ -778,7 +698,6 @@ el:
         empty_newsletters: Δεν υπάρχουν ενημερωτικά δελτία για προβολή
       new:
         title: Νέο ενημερωτικό δελτίο
-        from: Διεύθυνση ηλεκτρονικού ταχυδρομείου που θα εμφανιστεί στέλνοντας το ενημερωτικό δελτίο
       edit:
         title: Επεξεργασία ενημερωτικού δελτίου
       show:
@@ -903,18 +822,8 @@ el:
         delete: Διαγραφή
       search:
         title: "Εκτιμητές: Αναζήτηση χρήστη"
-      summary:
-        title: Περίληψη του εκτιμητή για επενδυτικά σχέδια
-        valuator_name: Αξιολογητής
-        finished_and_feasible_count: Τελειωμένο και εφικτό
-        finished_and_unfeasible_count: Τελειωμένο και ανέφικτο
-        finished_count: Τελείωσε
-        in_evaluation_count: Σε αξιολόγηση
-        total_count: Όλα
-        cost: Κόστος
       form:
         edit_title: "Εκτιμητές: Επεξεργασία εκτιμητή"
-        update: "Ανανέωση εκτιμητή"
         updated: "Ο εκτιμητής ανανεώθηκε με επιτυχία"
       show:
         description: "Περιγραφή"
@@ -933,7 +842,6 @@ el:
         title: "Ομάδα εκτιμητών: %{group}"
         no_valuators: "Δεν υπάρχουν αξιολογητές που να έχουν ανατεθεί σε αυτήν την ομάδα"
       form:
-        name: "Όνομα ομάδας"
         new: "Δημιουργήστε ομάδα εκτιμητών"
         edit: "Αποθήκευση ομάδας αποτίµησης"
     poll_officers:
@@ -966,7 +874,6 @@ el:
         shift: "Ανάθεση"
         shifts: "Μετατοπίσεις σε αυτό το περίπτερο"
         date: "Ημερομηνία"
-        task: "Καθήκον"
         edit_shifts: Επεξεργαστείτε τις μετατοπίσεις
         new_shift: "Νέα μετατόπιση"
         no_shifts: "Αυτό το περίπτερο δεν έχει μετατοπίσεις"
@@ -1002,11 +909,6 @@ el:
     poll_booth_assignments:
       alert:
         shifts: "Υπάρχουν μετατοπίσεις που σχετίζονται με αυτό το περίπτερο. Εάν αφαιρέσετε την ανάθεση του θαλάμου, οι μετατοπίσεις θα διαγραφούν επίσης. Να συνεχίσει;"
-      flash:
-        destroy: "Το περίπτερο δεν έχει ανατεθεί πια"
-        create: "Εκχωρήθηκε περίπτερο"
-        error_destroy: "Παρουσιάστηκε σφάλμα κατά την κατάργηση της ανάθεσης περιπτέρου"
-        error_create: "Παρουσιάστηκε σφάλμα κατά την ανάθεση περιπτέρου στην δημοσκόπηση"
       show:
         location: "Τοποθεσία"
         officers: "Λειτουργοί"
@@ -1029,7 +931,6 @@ el:
         title: "Περιγραφή δημοσκοπήσεων"
       form:
         description:
-          text: "Περιγραφή"
           help_text: "Αυτό το κείμενο θα εμφανίζεται στην κεφαλίδα της σελίδας δημοσκοπήσεων. Μπορεί να χρησιμοποιηθεί για να προσθέσετε ένα περιεχόμενο στις ανοιγμένες δημοσκοπήσεις."
     polls:
       index:
@@ -1084,7 +985,6 @@ el:
       new:
         title: "Δημουργήστε ερώτηση στην ψηφοφορία %{poll}"
         title_proposal: "Δημιουργήστε ερώτηση"
-        poll_label: "Δημοσκόπηση"
       answers:
         images:
           add_image: "Προσθέστε εικόνα"
@@ -1164,8 +1064,6 @@ el:
         no_location: "Καμία τοποθεσία"
       new:
         title: "Νέο περίπτερο"
-        name: "Όνομα"
-        location: "Τοποθεσία"
         submit_button: "Δημιουργία περιπτέρου"
       edit:
         title: "Επεξεργαστείτε το περίπτερο"
@@ -1208,9 +1106,6 @@ el:
           pending: Σε εκκρεμότητα
           rejected: Απερρίφθη
           verified: Επιβεβαιωμένο
-        hidden_count_html:
-          one: Υπάρχει επίσης <strong>ένας οργανισμός</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
-          other: Υπάρχουν <strong>%{count} οργανισμοί</strong> χωρίς χρήστες ή με έναν κρυφό χρήστη.
         name: Όνομα
         email: E-Mail
         phone_number: Τηλέφωνο
@@ -1299,9 +1194,6 @@ el:
       proposal_search:
         button: Αναζήτηση
         placeholder: Αναζήτηση προτάσεων από τον τίτλο, κωδικό, περιγραφή ή ερώτηση
-      spending_proposal_search:
-        button: Αναζήτηση
-        placeholder: Αναζήτηση προτάσεων δαπανών ανά τίτλο ή περιγραφή
       user_search:
         button: Αναζήτηση
         placeholder: Αναζήτηση χρηστών με όνομα ή ηλεκτρονικό ταχυδρομείο
@@ -1320,62 +1212,6 @@ el:
       created_at: Δημιουργήθηκε στις
       delete: Διαγραφή
       color_help: Δεκαεξαδική μορφή
-    spending_proposals:
-      index:
-        geozone_filter_all: Όλες οι ζώνες
-        administrator_filter_all: Όλους τους διαχειριστές
-        valuator_filter_all: Όλοι οι εκτιμητές
-        tags_filter_all: Όλες οι ετικέτες
-        filters:
-          valuation_open: Ανοιχτό
-          without_admin: Χωρίς να ανατεθεί διαχειριστής
-          managed: Διευθετημένο
-          valuating: Υπό αξιολόγηση
-          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-          all: Όλα
-        title: Επενδυτικά σχέδια για συμμετοχικό προϋπολογισμό
-        assigned_admin: Διαχειριστής που έχει ανατεθεί
-        no_admin_assigned: Δεν έχει ανατεθεί διαχειριστής
-        no_valuators_assigned: Δεν έχουν ανατεθεί αξιολογητές
-        summary_link: "Περίληψη επενδυτικών έργων"
-        valuator_summary_link: "Περίληψη του αξιολογητή"
-        feasibility:
-          feasible: "Εφικτή (%{price})"
-          not_feasible: "Δεν είναι εφικτό"
-          undefined: "Απροσδιόριστο"
-      show:
-        assigned_admin: Διαχειριστής που έχει ανατεθεί
-        assigned_valuators: Εκχωρημένοι αξιολογητές
-        back: Πίσω
-        classification: Ταξινόμηση
-        heading: "Επενδυτικό έργο %{id}"
-        edit: Επεξεργασία
-        edit_classification: Επεξεργασία ταξινόμησης
-        association_name: Ένωση
-        by: Από
-        sent: Απεσταλμένα
-        geozone: Εμβέλεια
-        dossier: Φάκελος
-        edit_dossier: Επεξεργασία φακέλου
-        tags: Ετικέτες
-        undefined: Απροσδιόριστο
-      edit:
-        classification: Ταξινόμηση
-        assigned_valuators: Αξιολογητές
-        submit_button: Ενημέρωση
-        tags: Ετικέτες
-        tags_placeholder: "Γράψτε τις ετικέτες που θέλετε διαχωρισμένες με κόμματα (,)"
-        undefined: Απροσδιόριστο
-      summary:
-        title: Περίληψη για επενδυτικά έργα
-        title_proposals_with_supports: Περίληψη για επενδυτικά έργα με υποστηρίξεις
-        geozone_name: Εμβέλεια
-        finished_and_feasible_count: Τελειωμένο και εφικτό
-        finished_and_unfeasible_count: Τελειωμένο και ανέφικτο
-        finished_count: Τελείωσε
-        in_evaluation_count: Σε αξιολόγηση
-        total_count: Όλα
-        cost_for_geozone: Κόστος
     geozones:
       index:
         title: Γεωζώνη
@@ -1389,11 +1225,6 @@ el:
         code_help: Κωδικός απόκρισης για αυτήν τη γεωζώνη στο API της απογραφής
         coordinates: Συντεταγμένες
         coordinates_help: Συντεταγμένες που θα δημιουργούν μια περιοχή με δυνατότητα κλικ σε έναν χάρτη εικόνων HTML
-      errors:
-        form:
-          error:
-            one: "σφάλμα απέτρεψε αυτήν τη γεωζώνη από το να αποθηκευτεί"
-            other: "σφάλματα απέτρεψαν αυτήν τη γεωζώνη από το να αποθηκευτεί"
       edit:
         form:
           submit_button: Αποθηκεύστε τις αλλαγές
@@ -1420,8 +1251,6 @@ el:
       show:
         created_at: Δημιουργήθηκε
         author: Συγγραφέας
-        documents: Έγγραφα
-        document_count: "Αριθμός εγγράφων:"
         verified:
           one: "Υπάρχει %{count} έγκυρη υπογραφή"
           other: "Υπάρχουν %{count} έγκυρες υπογραφές"
@@ -1442,7 +1271,6 @@ el:
           proposals: Προτάσεις
           budgets: Άνοιξε προϋπολογισμούς
           budget_investments: Επενδυτικά έργα
-          spending_proposals: Προτάσεις δαπανών
           unverified_users: Μη επαληθευμένοι χρήστες
           user_level_three: Χρήστες τρίτου επιπέδου
           user_level_two: Χρήστες δεύτερου επιπέδου
@@ -1459,7 +1287,6 @@ el:
         polls: Δημοσκοπήσεις
       graph:
         debate_created: Συζητήσεις
-        spending_proposals: Επενδυτικά έργα
         visit: Επισκέψεις
         level_2_user: Χρήστες δεύτερου επιπέδου
         proposal_created: Προτάσεις πολιτών
@@ -1507,8 +1334,6 @@ el:
         title: Θέματα προτάσεων
         topic: Θέμα
         help: "Όταν ένας χρήστης δημιουργεί μια πρόταση, προτείνονται τα ακόλουθα θέματα ως προεπιλεγμένες ετικέτες."
-      name:
-        placeholder: Πληκτρολογήστε το όνομα του θέματος
     users:
       columns:
         name: Όνομα
@@ -1543,9 +1368,6 @@ el:
           notice: Το μπλοκ περιεχομένου διαγράφηκε με επιτυχία
         edit:
           title: Επεξεργασία μπλοκ περιεχομένου
-        errors:
-          form:
-            error: Σφάλμα
         index:
           create: Δημιουργήστε νέο μπλοκ περιεχομένου
           delete: Διαγραφή του μπλοκ
@@ -1583,9 +1405,6 @@ el:
           notice: Η σελίδα διαγράφηκε επιτυχώς
         edit:
           title: Επεξεργασία %{page_title}
-        errors:
-          form:
-            error: Σφάλμα
         form:
           options: Επιλογές
         index:
@@ -1599,8 +1418,6 @@ el:
           created_at: Δημιουργήθηκε στις
           status: Κατάσταση
           updated_at: Ενημερώθηκε στις
-          status_draft: Προσχέδιο
-          status_published: Δημοσιεύθηκε
           title: Τίτλος
           slug: Χτυπώ δυνατά
           cards_title: Κάρτες
@@ -1648,6 +1465,3 @@ el:
         submit_header: Αποθήκευση επικεφαλίδας
         card_title: Επεξεργασία καρτών
         submit_card: Αποθήκευση καρτών
-    translations:
-      remove_language: Κατάργηση γλώσσας
-      add_language: Προσθήκη γλώσσας

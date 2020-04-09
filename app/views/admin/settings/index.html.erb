@@ -1,4 +1,4 @@
-<h1>Settings</h1>
+<h1><%= t("admin.settings.index.title") %></h1>
 <div class="tabs-content" data-tabs-content="settings-tabs">
   <%= render "filter_subnav" %>
 
@@ -24,5 +24,9 @@
 
   <div class="tabs-panel" id="tab-proposals">
     <%= render "proposals_dashboard" %>
+  </div>
+
+  <div class="tabs-panel" id="tab-remote-census-configuration">
+    <%= render "remote_census_configuration_tab" %>
   </div>
 </div>

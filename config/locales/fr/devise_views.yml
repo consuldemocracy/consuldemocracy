@@ -6,7 +6,6 @@ fr:
         submit: Renvoyer les instructions
         title: Renvoyer les instructions de confirmation
       show:
-        instructions_html: Confirmer le compte avec le courriel %{email}
         new_password_confirmation_label: Re-saisissez le mot de passe
         new_password_label: Nouveau mot de passe
         please_set_password: Veuillez choisir votre nouveau mot de passe (cela vous permettra de vous connecter en combinaison avec le courriel ci-dessus)
@@ -50,10 +49,6 @@ fr:
           title: S'enregistrer en tant qu'organisation ou collectif
         success:
           back_to_index: Entendu, revenir à la page principale
-          instructions_1_html: "<b>Nous vous contacterons bientôt</b> pour vérifier que vous représentez bien ce collectif."
-          instructions_2_html: Pendant que votre <b>courriel est en cours de vérification</b>, nous vous avons envoyé un <b>lien pour confirmer votre compte</b>.
-          instructions_3_html: Une fois confirmé, vous pourrez commencer à participer en tant que collectif non vérifié.
-          thank_you_html: Merci d'avoir enregistrer votre collectif sur la plateforme. Il est maintenant <b>en attente de vérification</b>.
           title: Enregistrement d'une organisation / d'un collectif
     passwords:
       edit:
@@ -123,7 +118,4 @@ fr:
           username_note: Nom qui apparaîtra en face de vos publications
         success:
           back_to_index: Entendu, revenir à la page principale
-          instructions_1_html: Veuillez <b>vérifier votre adresse</b> - nous vous avons envoyé un <b>lien pour confirmer votre compte</b>.
-          instructions_2_html: Une fois confirmé, vous pourrez commencer à participer.
-          thank_you_html: Merci de vous être enregistré sur la plateforme. Vous devez maintenant <b>confirmer votre adresse</b>.
           title: Confirmer votre adresse électronique

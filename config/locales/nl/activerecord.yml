@@ -67,9 +67,6 @@ nl:
       proposal:
         one: "Voorstel"
         other: "Voorstellen"
-      spending_proposal:
-        one: "Investment project"
-        other: "Budget bestemmingen"
       site_customization/page:
         one: Aangepaste pagina
         other: Aangepaste pagina's
@@ -188,20 +185,13 @@ nl:
         password_confirmation: "Wachtwoord bevestiging"
         password: "Wachtwoord"
         current_password: "Huidig wachtwoord"
-        phone_number: "Telefoonnummer"
         official_position: "Positie"
         official_level: "Niveau"
+        phone_number: "Telefoonnummer"
         redeemable_code: "Verificatiecode ontvangen via email"
       organization:
         name: "Organisatienaam"
         responsible_name: "Verantwoordelijke"
-      spending_proposal:
-        administrator_id: "Beheerder"
-        association_name: "Verenigingsnaam"
-        description: "Omschrijving"
-        external_url: "Link naar aanvullende informatie"
-        geozone_id: "Reikwijdte van het werk"
-        title: "Titel"
       poll:
         name: "Naam"
         starts_at: "Begindatum"
@@ -297,10 +287,10 @@ nl:
         text: Reactie
       document:
         title: Titel
-        attachment: Bijlage
+        attachment: "Bijlage"
       image:
         title: Titel
-        attachment: Bijlage
+        attachment: "Bijlage"
       poll/question/answer:
         title: Antwoord
         description: Omschrijving
@@ -313,7 +303,7 @@ nl:
       newsletter:
         segment_recipient: Ontvangers
         subject: Onderwerp
-        from: Van
+        from: "Van"
         body: Email inhoud
       admin_notification:
         segment_recipient: Ontvangers

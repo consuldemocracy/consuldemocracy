@@ -38,10 +38,10 @@
             <small><%= t("dashboard.recommended_actions.show_description") %></small>
           </a>
           <div id="proposed_action_description_<%= dom_id(proposed_action) %>" class="hide" data-toggler=".hide">
-            <%= proposed_action.description.html_safe %>
+            <%= wysiwyg(proposed_action.description) %>
           </div>
         <% else %>
-          <%= proposed_action.description.html_safe %>
+          <%= wysiwyg(proposed_action.description) %>
         <% end %>
       <% end %>
 
@@ -49,7 +49,7 @@
         <p><%= link_to link.label, link.url, target: "_blank" %></p>
       <% end %>
 
-      <%= render partial: 'document', collection: proposed_action.documents %>
+      <%= render partial: "document", collection: proposed_action.documents %>
     </div>
   </div>
 </div>

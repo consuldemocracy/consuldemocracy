@@ -1,12 +1,13 @@
 require "rails_helper"
 
 describe "Tags" do
-
   let(:author)  { create(:user, :level_two, username: "Isabel") }
   let(:budget)  { create(:budget, name: "Big Budget") }
   let(:group)   { create(:budget_group, name: "Health", budget: budget) }
-  let!(:heading) { create(:budget_heading, name: "More hospitals",
-                          group: group, latitude: "40.416775", longitude: "-3.703790") }
+  let!(:heading) do
+    create(:budget_heading, name: "More hospitals",
+           group: group, latitude: "40.416775", longitude: "-3.703790")
+  end
   let!(:tag_medio_ambiente) { create(:tag, :category, name: "Medio Ambiente") }
   let!(:tag_economia) { create(:tag, :category, name: "Economía") }
   let(:admin) { create(:administrator).user }
@@ -40,8 +41,7 @@ describe "Tags" do
     end
   end
 
-  scenario "Index shows up to 5 tags per proposal" do
-    create_featured_proposals
+  scenario "Index shows up to 5 tags per investment" do
     tag_list = ["Hacienda", "Economía", "Medio Ambiente", "Corrupción", "Fiestas populares", "Prensa"]
     create :budget_investment, heading: heading, tag_list: tag_list
 
@@ -67,8 +67,8 @@ describe "Tags" do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: "budget_investment_heading_id"
-    fill_in "budget_investment_title", with: "Build a skyscraper"
-    fill_in "budget_investment_description", with: "I want to live in a high tower over the clouds"
+    fill_in "Title", with: "Build a skyscraper"
+    fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "#{tag_medio_ambiente.name}, #{tag_economia.name}"
@@ -86,8 +86,8 @@ describe "Tags" do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: "budget_investment_heading_id"
-    fill_in "budget_investment_title", with: "Build a skyscraper"
-    fill_in_ckeditor "budget_investment_description", with: "If I had a gym near my place I could go do Zumba"
+    fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: tag_economia.name).click
@@ -102,17 +102,16 @@ describe "Tags" do
   end
 
   scenario "Turbolinks sanity check from budget's show", :js do
+    create(:tag, name: "Education", kind: "category")
+    create(:tag, name: "Health",    kind: "category")
+
     login_as(author)
-
-    education = create(:tag, name: "Education", kind: "category")
-    health    = create(:tag, name: "Health",    kind: "category")
-
     visit budget_path(budget)
     click_link "Create a budget investment"
 
     select  heading.name, from: "budget_investment_heading_id"
-    fill_in "budget_investment_title", with: "Build a skyscraper"
-    fill_in_ckeditor "budget_investment_description", with: "If I had a gym near my place I could go do Zumba"
+    fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
@@ -127,17 +126,16 @@ describe "Tags" do
   end
 
   scenario "Turbolinks sanity check from budget heading's show", :js do
+    create(:tag, name: "Education", kind: "category")
+    create(:tag, name: "Health",    kind: "category")
+
     login_as(author)
-
-    education = create(:tag, name: "Education", kind: "category")
-    health    = create(:tag, name: "Health",    kind: "category")
-
     visit budget_investments_path(budget, heading_id: heading.id)
     click_link "Create a budget investment"
 
     select  heading.name, from: "budget_investment_heading_id"
-    fill_in "budget_investment_title", with: "Build a skyscraper"
-    fill_in_ckeditor "budget_investment_description", with: "If I had a gym near my place I could go do Zumba"
+    fill_in "Title", with: "Build a skyscraper"
+    fill_in_ckeditor "Description", with: "If I had a gym near my place I could go do Zumba"
     check "budget_investment_terms_of_service"
 
     find(".js-add-tag-link", text: "Education").click
@@ -157,8 +155,8 @@ describe "Tags" do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: "budget_investment_heading_id"
-    fill_in "budget_investment_title", with: "Build a skyscraper"
-    fill_in "budget_investment_description", with: "I want to live in a high tower over the clouds"
+    fill_in "Title", with: "Build a skyscraper"
+    fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -175,8 +173,8 @@ describe "Tags" do
     visit new_budget_investment_path(budget_id: budget.id)
 
     select  heading.name, from: "budget_investment_heading_id"
-    fill_in "budget_investment_title", with: "Build a skyscraper"
-    fill_in "budget_investment_description", with: "I want to live in a high tower over the clouds"
+    fill_in "Title", with: "Build a skyscraper"
+    fill_in "Description", with: "I want to live in a high tower over the clouds"
     check   "budget_investment_terms_of_service"
 
     fill_in "budget_investment_tag_list", with: "user_id=1, &a=3, <script>alert('hey');</script>"
@@ -191,42 +189,38 @@ describe "Tags" do
   end
 
   context "Filter" do
-
     scenario "From index" do
-
-      investment1 = create(:budget_investment, heading: heading, tag_list: tag_economia.name)
-      investment2 = create(:budget_investment, heading: heading, tag_list: "Health")
+      create(:budget_investment, heading: heading, tag_list: "Economy", title: "New bank")
+      create(:budget_investment, heading: heading, tag_list: "Health", title: "New hospital")
 
       visit budget_investments_path(budget, heading_id: heading.id)
 
-      within "#budget_investment_#{investment1.id}" do
-        click_link tag_economia.name
+      within ".budget-investment", text: "New bank" do
+        click_link "Economy"
       end
 
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 1)
-        expect(page).to have_content(investment1.title)
+        expect(page).to have_content "New bank"
       end
     end
 
     scenario "From show" do
-      investment1 = create(:budget_investment, heading: heading, tag_list: tag_economia.name)
-      investment2 = create(:budget_investment, heading: heading, tag_list: "Health")
+      investment = create(:budget_investment, heading: heading, tag_list: "Economy", title: "New bank")
+      create(:budget_investment, heading: heading, tag_list: "Health", title: "New hospital")
 
-      visit budget_investment_path(budget, investment1)
+      visit budget_investment_path(budget, investment)
 
-      click_link tag_economia.name
+      click_link "Economy"
 
       within("#budget-investments") do
         expect(page).to have_css(".budget-investment", count: 1)
-        expect(page).to have_content(investment1.title)
+        expect(page).to have_content "New bank"
       end
     end
-
   end
 
   context "Tag cloud" do
-
     let(:new_tag)      { "New Tag" }
     let(:newer_tag)    { "Newer" }
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: new_tag) }
@@ -235,7 +229,7 @@ describe "Tags" do
 
     scenario "Display user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -249,7 +243,7 @@ describe "Tags" do
 
     scenario "Filter by user tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         [investment1, investment2, investment3].each do |investment|
           investment.update(selected: true, feasibility: "feasible")
@@ -275,18 +269,16 @@ describe "Tags" do
         expect(page).not_to have_content investment3.title
       end
     end
-
   end
 
   context "Categories" do
-
     let!(:investment1) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment2) { create(:budget_investment, heading: heading, tag_list: tag_medio_ambiente.name) }
     let!(:investment3) { create(:budget_investment, heading: heading, tag_list: tag_economia.name) }
 
     scenario "Display category tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         login_as(admin) if budget.drafting?
         visit budget_investments_path(budget, heading_id: heading.id)
@@ -300,7 +292,7 @@ describe "Tags" do
 
     scenario "Filter by category tags" do
       Budget::Phase::PHASE_KINDS.each do |phase|
-        budget.update(phase: phase)
+        budget.update!(phase: phase)
 
         [investment1, investment2, investment3].each do |investment|
           investment.update(selected: true, feasibility: "feasible")
@@ -329,11 +321,10 @@ describe "Tags" do
   end
 
   context "Valuation" do
-
     scenario "Users do not see valuator tags" do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
       investment.set_tag_list_on(:valuation, "Education")
-      investment.save
+      investment.save!
 
       visit budget_investment_path(budget, investment)
 
@@ -343,8 +334,8 @@ describe "Tags" do
 
     scenario "Valuators do not see user tags" do
       investment = create(:budget_investment, heading: heading, tag_list: "Park")
-      investment.set_tag_list_on(:valuation, "Education")
-      investment.save
+      investment.set_tag_list_on(:valuation_tags, "Education")
+      investment.save!
 
       login_as(admin)
 
@@ -354,6 +345,5 @@ describe "Tags" do
       expect(page).to     have_content "Education"
       expect(page).not_to have_content "Park"
     end
-
   end
 end

@@ -1,1 +1,19 @@
 sr:
+  images:
+    remove_image: Уклоните слику
+    form:
+      title: Дескриптивна слика
+      title_placeholder: Додајте дескриптивни наслов за слику
+      delete_button: Уклоните слику
+      note: "Можете ажурирати једну слику из следећих типова садржаја: %{accepted_content_types}, до %{max_file_size} MB."
+      add_new_image: Додајте слику
+      admin_title: "Слика"
+      admin_alt_text: "Алтернативни текст за слику"
+    actions:
+      destroy:
+        notice: Слика је успешно обрисана.
+        alert: Не можете обрисати слику.
+    errors:
+      messages:
+        in_between: мора бити између %{min} и %{max}
+        wrong_content_type: тип садржаја %{content_type} не поклапа се са прихваћеним типовима садржаја %{accepted_content_types}

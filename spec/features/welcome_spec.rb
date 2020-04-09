@@ -1,8 +1,22 @@
 require "rails_helper"
 
 describe "Welcome screen" do
-
   let(:budget) { create(:budget) }
+
+  it_behaves_like "remotely_translatable",
+                  :proposal,
+                  "root_path",
+                  {}
+
+  it_behaves_like "remotely_translatable",
+                  :debate,
+                  "root_path",
+                  {}
+
+  it_behaves_like "remotely_translatable",
+                  :legislation_process,
+                  "root_path",
+                  {}
 
   scenario "requires a logged in user" do
     visit welcome_path
@@ -33,7 +47,6 @@ describe "Welcome screen" do
   end
 
   scenario "a regular user does not see it when coing to /email" do
-
     plain, encrypted = Devise.token_generator.generate(User, :email_verification_token)
 
     user = create(:user, email_verification_token: plain)
@@ -92,7 +105,6 @@ describe "Welcome screen" do
 
   scenario "a regular users sees it the first time he logs in, with all options active
             if the setting skip_verification is activated" do
-
     Setting["feature.user.skip_verification"] = "true"
 
     user = create(:user)
@@ -102,9 +114,5 @@ describe "Welcome screen" do
     4.times do |i|
       expect(page).to have_css "li:nth-child(#{i + 1})"
     end
-
-    Setting["feature.user.skip_verification"] = nil
   end
-
-
 end

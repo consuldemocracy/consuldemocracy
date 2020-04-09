@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <%= wicked_pdf_stylesheet_link_tag 'application' -%>
-  <%= wicked_pdf_stylesheet_link_tag 'pdf_fonts' -%>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <%= wicked_pdf_stylesheet_link_tag "pdf_fonts" -%>
 </head>
 <body class="dashboard-poster-pdf">
   <div class="poster-header">
@@ -16,7 +16,7 @@
       </strong>
     </h1>
     <p class="intro">
-      <%= t("dashboard.poster.index.intro_text_html", org: Setting["org_name"]) %>
+      <%= sanitize(t("dashboard.poster.index.intro_text", org: Setting["org_name"])) %>
     </p>
     <p class="text-center proposal-code">
       <strong><%= t("dashboard.poster.index.proposal_code", code: proposal.code) %></strong>
@@ -25,7 +25,7 @@
       <% if proposal.image.present? %>
         <div class="overflow-image" style="background-image: url(<%= asset_url proposal.image.attachment.url(:large) %>);"></div>
       <% else %>
-        <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join('app','assets','images','default_mailing.jpg')}" %>');"></div>
+        <div class="overflow-image" style="background-image:url('<%= "file://#{Rails.root.join("app","assets","images","default_mailing.jpg")}" %>');"></div>
       <% end %>
     </div>
     <div class="poster-content">
@@ -34,7 +34,7 @@
       <h3><strong><%= proposal.title %></strong></h3>
       <%= wicked_pdf_image_tag "quote_after_blue.png" %>
       <p class="poster-footer">
-        <%= t("dashboard.poster.index.footer_html", link: proposal_url(proposal)) %>
+        <%= sanitize(t("dashboard.poster.index.footer", link: proposal_url(proposal))) %>
       </p>
     </div>
   </div>

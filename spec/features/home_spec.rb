@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Home" do
-
   context "For not logged users" do
-
     scenario "Welcome message" do
       visit root_path
 
@@ -11,39 +9,32 @@ describe "Home" do
     end
 
     scenario "Not display recommended section" do
-      debate = create(:debate)
+      create(:debate)
 
       visit root_path
 
       expect(page).not_to have_content "Recommendations that may interest you"
     end
-
   end
 
   context "For signed in users" do
-
     describe "Recommended" do
-
       before do
-        Setting["feature.user.recommendations"] = true
-        user = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
-        create(:follow, followable: proposal, user: user)
+        user = create(:user, followables: [proposal])
         login_as(user)
       end
 
-      after do
-        Setting["feature.user.recommendations"] = nil
-      end
-
       scenario "Display recommended section when feature flag recommended is active" do
-        debate = create(:debate, tag_list: "Sport")
+        create(:debate, tag_list: "Sport")
+
         visit root_path
+
         expect(page).to have_content "Recommendations that may interest you"
       end
 
       scenario "Not display recommended section when feature flag recommended is not active" do
-        debate = create(:debate, tag_list: "Sport")
+        create(:debate, tag_list: "Sport")
         Setting["feature.user.recommendations"] = false
 
         visit root_path
@@ -61,8 +52,10 @@ describe "Home" do
       end
 
       scenario "Display all recommended debates link" do
-        debate = create(:debate, tag_list: "Sport")
+        create(:debate, tag_list: "Sport")
+
         visit root_path
+
         expect(page).to have_link("All recommended debates", href: debates_path(order: "recommendations"))
       end
 
@@ -76,8 +69,10 @@ describe "Home" do
       end
 
       scenario "Display all recommended proposals link" do
-        debate = create(:proposal, tag_list: "Sport")
+        create(:proposal, tag_list: "Sport")
+
         visit root_path
+
         expect(page).to have_link("All recommended proposals", href: proposals_path(order: "recommendations"))
       end
 
@@ -108,7 +103,6 @@ describe "Home" do
         expect(page).not_to have_content "Recommendations that may interest you"
       end
     end
-
   end
 
   describe "IE alert" do
@@ -145,7 +139,7 @@ describe "Home" do
   end
 
   scenario "if there are cards, the 'featured' title will render" do
-    card = create(:widget_card,
+    create(:widget_card,
       title: "Card text",
       description: "Card description",
       link_text: "Link text",

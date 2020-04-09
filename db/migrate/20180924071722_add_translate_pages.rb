@@ -9,11 +9,11 @@ class AddTranslatePages < ActiveRecord::Migration[4.2]
       { migrate_data: true }
     )
 
-    change_column :site_customization_pages, :title, :string, :null => true
+    change_column :site_customization_pages, :title, :string, null: true
   end
 
   def self.down
     SiteCustomization::Page.drop_translation_table!
-    change_column :site_customization_pages, :title, :string, :null => false
+    change_column :site_customization_pages, :title, :string, null: false
   end
 end

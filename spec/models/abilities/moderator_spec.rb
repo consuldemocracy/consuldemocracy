@@ -66,8 +66,8 @@ describe Abilities::Moderator do
 
     it { should be_able_to(:hide, proposal) }
     it { should be_able_to(:hide_in_moderation_screen, proposal) }
+    it { should be_able_to(:hide, own_proposal) }
     it { should_not be_able_to(:hide, hidden_proposal) }
-    it { should_not be_able_to(:hide, own_proposal) }
 
     it { should be_able_to(:ignore_flag, comment) }
     it { should_not be_able_to(:ignore_flag, hidden_comment) }
@@ -88,7 +88,7 @@ describe Abilities::Moderator do
     it { should_not be_able_to(:ignore_flag, own_proposal) }
 
     it { should be_able_to(:moderate, proposal) }
-    it { should_not be_able_to(:moderate, own_proposal) }
+    it { should be_able_to(:moderate, own_proposal) }
 
     it { should_not be_able_to(:hide, user) }
     it { should be_able_to(:hide, other_user) }

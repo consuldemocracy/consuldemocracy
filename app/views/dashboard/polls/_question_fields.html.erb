@@ -14,7 +14,7 @@
 
   <div class="js-answers">
     <%= f.fields_for :question_answers do |answer| %>
-      <%= render 'question_answer_fields', f: answer %>
+      <%= render "question_answer_fields", f: answer %>
     <% end %>
 
     <div class="answer-links links row expanded">

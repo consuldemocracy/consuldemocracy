@@ -6,7 +6,7 @@ class Verification::EmailController < ApplicationController
 
   def show
     if Verification::Email.find(current_user, params[:email_verification_token])
-      current_user.update(verified_at: Time.current)
+      current_user.update!(verified_at: Time.current)
       redirect_to account_path, notice: t("verification.email.show.flash.success")
     else
       redirect_to verified_user_path, alert: t("verification.email.show.alert.failure")
@@ -31,7 +31,7 @@ class Verification::EmailController < ApplicationController
   private
 
     def set_verified_user
-      @verified_user = VerifiedUser.by_user(current_user).where(id: verified_user_params[:id]).first
+      @verified_user = VerifiedUser.by_user(current_user).find_by(id: verified_user_params[:id])
     end
 
     def verified_user_params

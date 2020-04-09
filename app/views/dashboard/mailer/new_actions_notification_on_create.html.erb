@@ -6,7 +6,7 @@
   <p>
     <%= t("mailers.new_actions_notification_on_create.text_1") %>
     <br>
-    <%= t("mailers.new_actions_notification_on_create.text_2", link: proposal_dashboard_url(@proposal)).html_safe %>
+    <%= sanitize(t("mailers.new_actions_notification_on_create.text_2", link: proposal_dashboard_url(@proposal))) %>
   </p>
   <p><%= t("mailers.new_actions_notification_on_create.text_3") %></p>
   <p><%= t("mailers.new_actions_notification_on_create.text_4") %></p>

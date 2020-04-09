@@ -4,16 +4,16 @@
       <%= t("pages.help.debates.title") %>
     </h3>
     <p>
-      <%= t("pages.help.debates.description",
+      <%= sanitize(t("pages.help.debates.description",
           org: setting["org_name"],
           link: link_to(t("pages.help.debates.link"),
-                              debates_path)).html_safe %>
+                              debates_path))) %>
     </p>
     <ul class="features">
       <li>
-        <%= t("pages.help.debates.feature_html",
+        <%= sanitize(t("pages.help.debates.feature",
               link: link_to(t("pages.help.debates.feature_link", org: setting["org_name"]),
-                               new_user_registration_path)).html_safe %>
+                               new_user_registration_path))) %>
       </li>
     </ul>
 

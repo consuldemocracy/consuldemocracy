@@ -1,14 +1,12 @@
 require "rails_helper"
 
 describe "Admin collaborative legislation" do
-
   before do
     admin = create(:administrator)
     login_as(admin.user)
   end
 
   context "Index" do
-
     scenario "Displaying legislation proposals" do
       proposal = create(:legislation_proposal, cached_votes_score: 10)
 
@@ -81,5 +79,4 @@ describe "Admin collaborative legislation" do
       end
     end
   end
-
 end

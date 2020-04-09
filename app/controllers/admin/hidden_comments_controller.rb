@@ -1,5 +1,5 @@
 class Admin::HiddenCommentsController < Admin::BaseController
-  has_filters %w{without_confirmed_hide all with_confirmed_hide}
+  has_filters %w[without_confirmed_hide all with_confirmed_hide]
 
   before_action :load_comment, only: [:confirm_hide, :restore]
 
@@ -10,14 +10,14 @@ class Admin::HiddenCommentsController < Admin::BaseController
 
   def confirm_hide
     @comment.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def restore
-    @comment.restore
+    @comment.restore(recursive: true)
     @comment.ignore_flag
     Activity.log(current_user, :restore, @comment)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   private
@@ -25,5 +25,4 @@ class Admin::HiddenCommentsController < Admin::BaseController
     def load_comment
       @comment = Comment.not_valuations.with_hidden.find(params[:id])
     end
-
 end

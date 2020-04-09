@@ -50,12 +50,6 @@ sl:
       organization:
         name: "Ime organizacije"
         responsible_name: "Odgovorna oseba"
-      spending_proposal:
-        association_name: "Ime združenja"
-        description: "Opis"
-        external_url: "Povezava do dodatne dokumentacije"
-        geozone_id: "Področje uporabe"
-        title: "Naslov"
       poll:
         name: "Ime"
         starts_at: "Začetni datum"
@@ -109,10 +103,10 @@ sl:
         text: Komentar
       document:
         title: Naslov
-        attachment: Priponka
+        attachment: "Priponka"
       image:
         title: Naslov
-        attachment: Priponka
+        attachment: "Priponka"
       poll/question/answer:
         title: Odgovor
         description: Opis
@@ -122,7 +116,7 @@ sl:
       newsletter:
         segment_recipient: Prejemniki
         subject: Naslov
-        from: Od
+        from: "Od"
         body: Vsebina e-pošte
       widget/card:
         label: Oznaka (neobvezno)

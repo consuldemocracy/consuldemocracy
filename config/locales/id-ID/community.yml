@@ -17,8 +17,6 @@ id:
         first_theme_not_logged_in: Tidak ada masalah, ikut menciptakan yang pertama.
         first_theme: Buat topik komunitas pertama
         sub_first_theme: "Untuk membuat tema Anda harus %{sign_in} o %{sign_up}."
-        sign_in: "masuk"
-        sign_up: "daftar"
       tab:
         participants: Peserta
       sidebar:
@@ -36,8 +34,6 @@ id:
       create: Buat topik
       edit: Sunting Topik
       form:
-        topic_title: Judul
-        topic_text: Teks awal
         new:
           submit_button: Buat topik
         edit:
@@ -54,6 +50,3 @@ id:
         recommendation_one: Jangan menulis judul topik atau seluruh kalimat dalam huruf kapital. Di internet yang dianggap teriakan. Dan tidak ada yang suka diteriaki.
         recommendation_two: Setiap topik atau komentar yang menyiratkan tindakan ilegal akan dihilangkan, juga yang bermaksud menyabotase ruang subjek, segala sesuatu yang lain diperbolehkan.
         recommendation_three: Nikmati ruang ini, suara yang mengisinya, itu milikmu juga.
-  topics:
-    show:
-      login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.

@@ -1,11 +1,9 @@
 sl:
   documents:
     title: Dokumenti
-    max_documents_allowed_reached_html: Dosegel si največje dovoljeno število dokumentov! <strong>Preden lahko naložiš novega, moraš vsaj enega izbrisati.</strong>
     form:
       title: Dokumenti
       title_placeholder: Dodaj poveden naslov dokumenta
-      attachment_label: Izberi dokument
       delete_button: Odstrani dokument
       cancel_button: Prekliči
       note: "Naložiš lahko največ %{max_documents_allowed} dokumentov naslednjih vrst: %{accepted_content_types}, velikih največ %{max_file_size} MB na datoteko."

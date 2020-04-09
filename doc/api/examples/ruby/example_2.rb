@@ -41,7 +41,6 @@ next_cursor = nil
 proposals   = []
 
 loop do
-
   puts "> Requesting page #{page_number}"
 
   query = build_query(page_size: 25, page_number: page_number, next_cursor: next_cursor)

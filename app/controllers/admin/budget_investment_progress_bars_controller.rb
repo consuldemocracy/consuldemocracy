@@ -1,5 +1,4 @@
 class Admin::BudgetInvestmentProgressBarsController < Admin::ProgressBarsController
-
   private
 
     def progressable

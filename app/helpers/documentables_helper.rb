@@ -1,5 +1,4 @@
 module DocumentablesHelper
-
   def documentable_class(documentable)
     documentable.class.name.parameterize(separator: "_")
   end

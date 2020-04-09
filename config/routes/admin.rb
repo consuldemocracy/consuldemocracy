@@ -29,6 +29,8 @@ namespace :admin do
     end
   end
 
+  resources :debates, only: [:index, :show]
+
   resources :proposals, only: [:index, :show, :update] do
     member { patch :toggle_selection }
     resources :milestones, controller: "proposal_milestones"
@@ -59,9 +61,11 @@ namespace :admin do
     end
 
     resources :budget_investments, only: [:index, :show, :edit, :update] do
+      member { patch :toggle_selection }
+
+      resources :audits, only: :show, controller: "budget_investment_audits"
       resources :milestones, controller: "budget_investment_milestones"
       resources :progress_bars, except: :show, controller: "budget_investment_progress_bars"
-      member { patch :toggle_selection }
     end
 
     resources :budget_phases, only: [:edit, :update]
@@ -81,6 +85,8 @@ namespace :admin do
       put :confirm_hide
     end
   end
+
+  resources :comments, only: :index
 
   resources :tags, only: [:index, :create, :update, :destroy]
 
@@ -240,5 +246,10 @@ namespace :admin do
   namespace :dashboard do
     resources :actions, only: [:index, :new, :create, :edit, :update, :destroy]
     resources :administrator_tasks, only: [:index, :edit, :update]
+  end
+
+  resources :local_census_records
+  namespace :local_census_records do
+    resources :imports, only: [:new, :create, :show]
   end
 end

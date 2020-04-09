@@ -18,7 +18,6 @@ gl:
         title: "Debates"
         description: "Na sección de %{link} podes expoñer e compartir a túa opinión con outras persoas sobre temas que che preocupan relacionados co municipio. Tamén é un espazo onde xerar ideas que a través das outras secciones de %{org} leven a actuacións concretas por parte do Concello."
         link: "debates cidadáns"
-        feature_html: "Podes abrir debates, comentalos e valoralos cos botóns de <strong>estou de acordo</strong> ou <strong>non estou de acordo</strong>. Para iso tes que %{link}."
         feature_link: "registrarte en %{org}"
         image_alt: "Botóns para avaliar os debates"
         figcaption: 'Botones "estou de acordo" e "non estou de acordo" para avaliar os debates.'
@@ -27,13 +26,11 @@ gl:
         description: "Na sección %{link} podes formular propostas para que o Concello as leve a cabo. As propostas obteñen apoios e se alcanzan abondos sométense a votación cidadá. As propostas aprobadas nestas votacións cidadás son asumidas polo Concello e lévanse a cabo."
         link: "propostas cidadás"
         image_alt: "Botón para apoiar unha proposta"
-        figcaption_html: 'Botón para apoiar unha proposta.'
       budgets:
         title: "Orzamentos participativos"
         description: "A sección de %{link} serve para que a xente decida de maneira directa a que se destina unha parte do orzamento municipal."
         link: "orzamentos participativos"
         image_alt: "Diferentes fases dun orzamento participativo"
-        figcaption_html: 'Fase de "apoios" e de "votación" dos orzamentos participativos.'
       polls:
         title: "Votacións"
         description: "A sección de %{link} actívase cada vez que unha proposta acada o 1% dos apoios e pasa á votación ou cando o Concello propón un tema para que a xente decida sobre el."
@@ -157,14 +154,10 @@ gl:
               description_column: Reduce o tamaño do texto
       compatibility:
         title: Compatibilidade cos estándares e o deseño visual
-        description_html: 'Todas as páxinas deste sitio web cumpren coa <strong>Guía de Accesibilidade</strong> ou os Principios Xerais do Deseño Accesible que son recomendados polo Grupo de Traballo <abbr title="Web Accessibility Initiative" lang="en"> WAI </abbr> pertencente ao W3C.'
     titles:
       help: "Que é %{org}? - Participación cidadá"
     verify:
-      code: Código que recibiches na túa carta
-      email: O teu correo electrónico
       info: "Para verificares a túa conta, introduce os datos de acceso:"
       info_code: "Agora escribe o código que recibiches na carta:"
-      password: Contrasinal que empregarás para acceder a este sitio web
       submit: Verificar a miña conta
       title: Verifica a túa conta

@@ -4,7 +4,6 @@ fr:
     form:
       title: Image descriptive
       title_placeholder: Ajouter un titre descriptif pour l'image
-      attachment_label: Choisir une image
       delete_button: Supprimer l'image
       note: "Vous pouvez importer une image au format suivant : %{accepted_content_types}, d'une taille maximum de %{max_file_size} Mo."
       add_new_image: Ajouter une image

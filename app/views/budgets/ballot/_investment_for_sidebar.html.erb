@@ -3,8 +3,8 @@
   <span><%= investment.formatted_price %></span>
 
   <% if @budget.balloting? %>
-    <%= link_to budget_ballot_line_url(id: investment.id,
-                                       investments_ids: investment_ids),
+    <%= link_to budget_ballot_line_path(id: investment.id,
+                                        investments_ids: investment_ids),
                 title: t("budgets.ballots.show.remove"),
                 class: "remove-investment-project",
                 method: :delete,

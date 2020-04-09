@@ -63,12 +63,12 @@
         <% if @proposal.video_url.present? %>
           <div class="small-12 medium-7 small-centered">
             <div class="flex-video">
-              <div id="js-embedded-video" data-video-code="<%= embedded_video_code %>"></div>
+              <div id="js-embedded-video" data-video-code="<%= embedded_video_code(@proposal) %>"></div>
             </div>
           </div>
         <% end %>
 
-        <%= safe_html_with_links @proposal.description %>
+        <%= auto_link_already_sanitized_html wysiwyg(@proposal.description) %>
 
         <% if @proposal.video_url.present? %>
           <div class="video-link">
@@ -76,7 +76,7 @@
               <span class="icon-video"></span>&nbsp;
               <strong><%= t("proposals.show.title_video_url") %></strong>
             </p>
-            <%= text_with_links @proposal.video_url %>
+            <%= sanitize_and_auto_link @proposal.video_url %>
           </div>
 
         <% end %>
@@ -92,7 +92,7 @@
         <%= render "shared/geozone", geozonable: @proposal %>
 
         <div class="js-moderator-proposal-actions margin">
-          <%= render "proposals/actions", proposal: @proposal %>
+          <%= render "legislation/proposals/actions", proposal: @proposal %>
         </div>
       </div>
 
@@ -103,13 +103,13 @@
           <%= render "votes",
                     { proposal: @proposal, vote_url: vote_legislation_process_proposal_path(@proposal.legislation_process_id, @proposal, value: "yes") } %>
         </div>
-        <%= render partial: "shared/social_share", locals: {
+        <%= render "shared/social_share",
           share_title: t("proposals.show.share"),
           title: @proposal.title,
           url: legislation_process_proposal_url(process_id: @process),
           description: @proposal.summary,
           mobile: @proposal.title
-        } %>
+        %>
       </aside>
     </div>
   </div>

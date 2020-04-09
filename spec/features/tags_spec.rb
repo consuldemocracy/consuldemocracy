@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Tags" do
-
   scenario "Index" do
     earth = create(:debate, tag_list: "Medio Ambiente")
     money = create(:debate, tag_list: "Economía")
@@ -59,8 +58,8 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "debate_title", with: "Title"
-    fill_in "debate_description", with: "Description"
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda"
@@ -78,8 +77,8 @@ describe "Tags" do
     login_as(user)
 
     visit new_debate_path
-    fill_in "debate_title", with: "Title"
-    fill_in "debate_description", with: "Description"
+    fill_in "Debate title", with: "Title"
+    fill_in "Initial debate text", with: "Description"
     check "debate_terms_of_service"
 
     fill_in "debate_tag_list", with: "Impuestos, Economía, Hacienda, Sanidad, Educación, Política, Igualdad"
@@ -122,10 +121,9 @@ describe "Tags" do
   end
 
   context "Tag cloud" do
-
     scenario "Proposals" do
-      earth = create(:proposal, tag_list: "Medio Ambiente")
-      money = create(:proposal, tag_list: "Economía")
+      create(:proposal, tag_list: "Medio Ambiente")
+      create(:proposal, tag_list: "Economía")
 
       visit proposals_path
 
@@ -136,8 +134,8 @@ describe "Tags" do
     end
 
     scenario "Debates" do
-      earth = create(:debate, tag_list: "Medio Ambiente")
-      money = create(:debate, tag_list: "Economía")
+      create(:debate, tag_list: "Medio Ambiente")
+      create(:debate, tag_list: "Economía")
 
       visit debates_path
 
@@ -151,8 +149,8 @@ describe "Tags" do
       create(:tag, :category, name: "Medio Ambiente")
       create(:tag, :category, name: "Economía")
 
-      earth = create(:proposal, tag_list: "Medio Ambiente, Agua")
-      money = create(:proposal, tag_list: "Economía, Corrupción")
+      create(:proposal, tag_list: "Medio Ambiente, Agua")
+      create(:proposal, tag_list: "Economía, Corrupción")
 
       visit proposals_path(search: "Economía")
 
@@ -167,8 +165,8 @@ describe "Tags" do
       create(:geozone, name: "Madrid")
       create(:geozone, name: "Barcelona")
 
-      earth = create(:proposal, tag_list: "Madrid, Agua")
-      money = create(:proposal, tag_list: "Barcelona, Playa")
+      create(:proposal, tag_list: "Madrid, Agua")
+      create(:proposal, tag_list: "Barcelona, Playa")
 
       visit proposals_path(search: "Barcelona")
 
@@ -195,7 +193,5 @@ describe "Tags" do
       expect(page).to have_content proposal2.title
       expect(page).not_to have_content proposal3.title
     end
-
   end
-
 end

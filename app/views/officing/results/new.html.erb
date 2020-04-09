@@ -1,14 +1,13 @@
 <% if @officer_assignments.any? %>
   <h2><%= t("officing.results.new.title", poll: @poll.name) %></h2>
 
-  <%= form_tag(officing_poll_results_path(@poll), {id: "officer_assignment_form"}) do %>
+  <%= form_tag(officing_poll_results_path(@poll), { id: "officer_assignment_form" }) do %>
     <div class="row">
       <div class="small-12 medium-6 column">
         <label><%= t("officing.results.new.booth") %></label>
         <%= select_tag :officer_assignment_id,
                         booths_for_officer_select_options(@officer_assignments),
-                        { prompt: t("officing.results.new.select_booth"),
-                          label: false } %>
+                        { prompt: t("officing.results.new.select_booth") } %>
       </div>
     </div>
 
@@ -66,7 +65,7 @@
 
   <table>
     <thead>
-      <th><%= t("officing.results.new.date")  %></th>
+      <th><%= t("officing.results.new.date") %></th>
       <th><%= t("officing.results.new.booth") %></th>
       <th>&nbsp;</th>
     </thead>

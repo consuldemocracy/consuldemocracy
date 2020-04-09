@@ -5,7 +5,7 @@ class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
 
   def create
     if @active_poll.update(active_poll_params)
-      redirect_to admin_polls_url, notice: t("flash.actions.update.active_poll")
+      redirect_to admin_polls_path, notice: t("flash.actions.update.active_poll")
     else
       render :edit
     end
@@ -16,12 +16,11 @@ class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
 
   def update
     if @active_poll.update(active_poll_params)
-      redirect_to admin_polls_url, notice: t("flash.actions.update.active_poll")
+      redirect_to admin_polls_path, notice: t("flash.actions.update.active_poll")
     else
       render :edit
     end
   end
-
 
   private
 
@@ -32,5 +31,4 @@ class Admin::Poll::ActivePollsController < Admin::Poll::BaseController
     def active_poll_params
       params.require(:active_poll).permit(translation_params(ActivePoll))
     end
-
 end

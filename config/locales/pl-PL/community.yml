@@ -17,8 +17,6 @@ pl:
         first_theme_not_logged_in: Brak dostępnych spraw, uczestnicz tworząc pierwszą.
         first_theme: Utwórz pierwszy temat społeczności
         sub_first_theme: "Aby utworzyć motyw, musisz %{sign_in} lub %{sign_up}."
-        sign_in: "zaloguj się"
-        sign_up: "zarejestruj się"
       tab:
         participants: Uczestnicy
       sidebar:
@@ -39,8 +37,6 @@ pl:
       create: Stwórz temat
       edit: Edytuj temat
       form:
-        topic_title: Tytuł
-        topic_text: Tekst początkowy
         new:
           submit_button: Stwórz temat
         edit:
@@ -57,6 +53,3 @@ pl:
         recommendation_one: Nie zapisuj tytułu tematu lub całych zdań wielkimi literami. W internecie jest to uważane za krzyk. A nikt nie lubi, gdy się na niego krzyczy.
         recommendation_two: Każdy temat lub komentarz sugerujący nielegalne działania zostanie wyeliminowany, jak i te mające na celu sabotaż przestrzeni przedmiotu, wszystko inne jest dozwolone.
         recommendation_three: Ciesz się tą przestrzenią oraz głosami, które ją wypełniają, jest także twoja.
-  topics:
-    show:
-      login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'

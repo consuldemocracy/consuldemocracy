@@ -14,9 +14,6 @@ ast:
         publish_comment: Publicar Comentario
       form:
         phase_not_open: Esta fase no está abierta
-        login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-        signin: Entamar sesión
-        signup: registrarte
       index:
         title: Comentarios
         comments_about: Comentarios sobre
@@ -98,11 +95,8 @@ ast:
       participation:
         phase_not_open: Esta fase no está abierta
         organizations: Las organizaciones no pueden participar en el debate
-        signin: Entamar sesión
-        signup: registrarte
         unauthenticated: Necesitas %{signin} o %{signup} para participar en el debate.
         verified_only: Solo los usuarios verificados pueden participar en el debate, %{verify_account}.
-        verify_account: verifica la to cuenta
         debate_phase_not_open: La fase de debate previo ya ha finalizado y en este momento no se aceptan respuestas
     shared:
       share: Compartir

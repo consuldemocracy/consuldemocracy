@@ -72,11 +72,6 @@ gl:
       featured_proposals_description: "Amosar as propostas destacadas na páxina principal das propostas"
       signature_sheets: "Follas de sinaturas"
       signature_sheets_description: "Permite adherir desde o panel de administración as sinaturas recollidas no sitio para propostas e proxectos de investimento dos orzamentos participativos"
-      spending_proposals: "Propostas de investimento"
-      spending_proposals_description: "⚠️ AVISO: Esta característica foi substituída polo Orzamento Participativo e vai desaparecer nas novas versións"
-      spending_proposal_features:
-        voting_allowed: Votando nos proxectos de investimento - Fase de preselección
-        voting_allowed_description: "⚠️ AVISO: Esta característica foi substituída polo Orzamento Participativo e vai desaparecer nas novas versións"
       user:
         recommendations: "Recomendacións"
         recommendations_description: "Amosa na páxina principal recomendacións aos usuarios que están vencelladas coas etiquetas dos elementos que seguen"

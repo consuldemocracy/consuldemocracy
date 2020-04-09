@@ -6,7 +6,6 @@ sq:
         submit: Ridergo instruksionet 
         title: Ridërgo udhëzimet e konfirmimit
       show:
-        instructions_html: Konfirmimi i llogarisë me email %{email}
         new_password_confirmation_label: Përsëritni fjalëkalimin e qasjes
         new_password_label: Fjalëkalimi i ri i qasjes
         please_set_password: Ju lutemi zgjidhni fjalëkalimin tuaj të ri (kjo do t'ju lejojë të identifikoheni me emailin e mësipërm)
@@ -50,10 +49,6 @@ sq:
           title: Regjistrohuni si një organizatë ose kolektiv
         success:
           back_to_index: E kuptoj; kthehu në faqen kryesore
-          instructions_1_html: "<b> Do t'ju kontaktojmë së shpejti</b> për të verifikuar që ju në fakt e përfaqësoni këtë kolektiv."
-          instructions_2_html: Ndërsa <b> emaili juaj është rishikuar </b>, ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj</b>.
-          instructions_3_html: Sapo të konfirmohet, mund të filloni të merrni pjesë si kolektiv i paverifikuar.
-          thank_you_html: Faleminderit që regjistruat kolektivin tuaj në faqen e internetit. Tani është <b> në pritje të verifikimit</b>.
           title: Regjistrimi i organizatës / kolektivit
     passwords:
       edit:
@@ -123,7 +118,4 @@ sq:
           username_note: Emri që shfaqet pranë postimeve tuaja
         success:
           back_to_index: E kuptoj; kthehu në faqen kryesore
-          instructions_1_html: Ju lutem <b> Kontrrolloni emaili tuaj </b>- ne ju kemi dërguar një <b> lidhje për të konfirmuar llogarinë tuaj </b>.
-          instructions_2_html: Sapo të konfirmohet, mund të filloni përdorimin.
-          thank_you_html: Faleminderit për regjistrimin në faqen e internetit. Ju duhet tani <b> të konfirmoni adresën e emailit </b>.
           title: Modifiko email-in tënd

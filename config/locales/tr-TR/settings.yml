@@ -1,7 +1,7 @@
 tr:
   settings:
-    comments_body_max_length: "Yorumlar gövdesi maksimum uzunluğu"
-    comments_body_max_length_description: "Karakterler sayısı içinde"
+    comments_body_max_length: "Yorumların maksimum uzunluğu"
+    comments_body_max_length_description: "Karakter sayısı olarak"
     official_level_1_name: "1. seviye kamu memuru"
     official_level_1_name_description: "1. seviye resmi pozisyon olarak işaretlenmiş kullanıcılarda görünecek etiket"
     official_level_2_name: "2. seviye kamu memuru"
@@ -12,10 +12,10 @@ tr:
     official_level_4_name_description: "4. seviye resmi pozisyon olarak işaretlenmiş kullanıcılarda görünecek etiket"
     official_level_5_name: "5. seviye kamu memuru"
     official_level_5_name_description: "5. seviye resmi pozisyon olarak işaretlenmiş kullanıcılarda görünecek etiket"
-    max_ratio_anon_votes_on_debates: "Tartışma başına anonim oyların maksimum oranı"
-    max_ratio_anon_votes_on_debates_description: "Anonim oylar doğrulanmamış bir hesaba sahip kayıtlı kullanıcılarındır"
-    max_votes_for_proposal_edit: "Bir Öneri'nin artık düzenlenemediği destek sayısı"
-    max_votes_for_proposal_edit_description: "Bu destek sayısından itibaren bir Öneri yazarı artık düzenleme yapamaz"
+    max_ratio_anon_votes_on_debates: "Tartışma başına gizli oyların maksimum oranı"
+    max_ratio_anon_votes_on_debates_description: "Gizli oylar doğrulanmamış bir hesaba sahip kayıtlı kullanıcılar tarafından gönderilmektedir"
+    max_votes_for_proposal_edit: "Artık değiştirilemeyen bir Öneri'yle ilgili destek sayısı"
+    max_votes_for_proposal_edit_description: "Bu destek sayısından itibaren Öneri'yi hazırlayan kişi öneriyle ilgili daha fazla değişiklik yapamaz"
     max_votes_for_debate_edit: "Bir Tartışma'nın artık düzenlenemediği oy sayısı"
     max_votes_for_debate_edit_description: "Bu oy sayısından itibaren bir Tartışma yazarı artık düzenleme yapamaz"
     proposal_code_prefix: "Öneri kodları için önek"
@@ -62,6 +62,17 @@ tr:
     min_age_to_participate_description: "Bu yaşın üzerindeki kullanıcılar, bir kullanıcı tarafından doğrulanmış bir hesabın gerekli olduğu tüm işlemlere katılabilir"
     proposals:
       successful_proposal_id: Başarılı öneri
+      successful_proposal_id_description: Bu öneri, destek numarasında başarılı bir teklif için referans olarak kullanıldı ve gösterge tablosunda gösterilecektir.
+      poll_short_title: Anketler
+      poll_short_title_description: Anket özelliğinin kısa açıklaması. Kullanıcıların bir öneri ile ilgili anket oluşturmasına izin verir
+      poll_description: Anketlerin tanımlaması
+      poll_description_description: Anket özelliğinin ayrıntılı açıklaması
+      poll_link: Ek bilgi bağlantısı
+      email_short_title: E-posta
+      email_short_title_description: 'E-posta özelliğinin kısa açıklaması. Kullanıcıların önerilerini tanıtmak için bir e-posta göndermelerine izin verir. Bu e-postanın tüm içeriğini "/uyg/görünümler/göstergepanosu/postacı/ilet.html.erb" adresinde bulabilirsiniz'
+      email_description: E-posta tanımlaması
+      email_description_description: E-posta özelliğinin ayrıntılı açıklaması
+      poster_short_title: Görsel
     analytics_url: "Analitikler URL'si"
     proposal_notification_minimum_interval_in_days: "Öneri yazarlarının yeni öneri bildirimleri göndermesi için minimum aralık (gün olarak)"
     proposal_notification_minimum_interval_in_days_description: "Kullanıcı önerisinin tüm destekçileri için bir bildirim gönderebileceği gün sayısı"
@@ -78,11 +89,6 @@ tr:
       featured_proposals_description: "Dizin önerileri sayfasında öne çıkan önerileri gösterir"
       signature_sheets: "İmza sayfaları"
       signature_sheets_description: "Bu, sitede toplanan imzaların Yönetici panelinden Önerilere ve Katılımcı Bütçelerin yatırım projelerine eklenmesini sağlar"
-      spending_proposals: "Harcama önerileri"
-      spending_proposals_description: "⚠️ NOT: Bu işlevsellik Katılımcı Bütçeleme ile değiştirildi ve yeni sürümlerde kaybolacak"
-      spending_proposal_features:
-        voting_allowed: Yatırım projelerinde oy kullanma - Ön seçim aşaması
-        voting_allowed_description: "⚠️ NOT: Bu işlevsellik Katılımcı Bütçeleme ile değiştirildi ve yeni sürümlerde kaybolacak"
       user:
         recommendations: "Tavsiyeler"
         recommendations_description: "Ana sayfada takip edilen öğelerin etiketlerine dayalı olarak kullanıcı tavsiyeleri gösterir"
@@ -106,3 +112,53 @@ tr:
       public_stats_description: "Yönetim panelinde kamu istatistiklerini görüntüleme"
       help_page: "Yardım sayfası"
       help_page_description: 'Etkinleştirilen her özellik hakkında bir bilgi bölümü içeren bir sayfa içeren bir Yardım menüsü görüntüler. Ayrıca "Özel sayfalar" ve "Özel içerik blokları" bölümlerinde özel sayfalar ve menüler oluşturulabilir'
+      remote_translations: "Uzaktan çeviri"
+      remote_translations_description: "Kullanıcıların, dillerinde içerik olmadığında çeviri isteğinde bulunmalarını sağlayan bir düğme görüntüler."
+      translation_interface: "Çeviri arayüzü"
+      translation_interface_description: "Kullanıcıların, mevcut tüm uygulama dillerinde içeriklerini girmelerine izin veren manuel çeviri arayüzünü görüntüler. Bu seçenek yalnızca kullanıcı başvuru formlarını etkiler ve bağımsız olarak yönetim panelinde her zaman aktif olacaktır."
+      valuation_comment_notification: "Değerlendirme yorumu bildirimi"
+      valuation_comment_notification_description: "Yeni bir değerlendirme yorumu oluşturulduğunda, bütçe yatırımı değerlendirme yorumlayıcısı hariç tüm ilişkili kullanıcılara bir e-posta gönderin"
+    map:
+      latitude: "Enlem"
+      latitude_description: "Harita konumunu göstermek için enlem"
+      longitude: "Boylam"
+      longitude_description: "Harita konumunu göstermek için boylam"
+      zoom: "Yakınlaştırma"
+      zoom_description: "Harita konumunu göstermek için yakınlaştırma"
+    process:
+      debates: "Tartışmalar"
+      proposals: "Öneriler"
+      proposals_description: "Vatandaşların' önerileri, komşuların ve toplulukların çevrelerinin nasıl olmasını istediklerine doğrudan karar vermeleri için yeterli destek almalarını ve vatandaşların oylarına sunmalarını sağlayan bir fırsattır"
+      polls: "Anketler"
+      polls_description: "Vatandaş' anketleri oy kullanma hakkı olan vatandaşların doğrudan karar verebilecekleri katılımcı bir mekanizmadır"
+      budgets: "Katılımcı bütçeleme"
+      budgets_description: "Katılımcı bütçeler ile vatandaşlar, komşuları tarafından sunulan hangi projelerin bütçenin bir parçasını alacağına karar verir"
+      legislation: "Katılımcı Mevzuat"
+      legislation_description: "Katılımcı işlemlerde vatandaşlara, toplumu etkileyen düzenlemelerin hazırlanmasına ve değiştirilmesine katılma ve yapılması planlanan belirli eylemler hakkında fikirlerini bildirme fırsatı sunulur"
+    html:
+      per_page_code_head: "Her sayfaya dahil edilecek kod (<head>)"
+      per_page_code_head_description: "Bu kod <head> etiketinin içinde görünecektir.Özel scriptler, analitikler... girmek için kullanışlıdır"
+      per_page_code_body: "Her sayfaya dahil edilecek kod (<body>)"
+      per_page_code_body_description: "Bu kod <body> etiketinin içinde görünecektir. Özel komutlar, analitikler girmek için kullanışlıdır..."
+    uploads:
+      images:
+        min_width: "Görüntü minimum genişlik"
+        min_width_description: "Yüklenen bir görüntü için izin verilen minimum genişlik (piksel cinsinden)"
+        min_height: "Görüntü minimum yükseklik"
+        min_height_description: "Yüklenen bir görüntü için izin verilen minimum yükseklik (piksel cinsinden)"
+        max_size: "Görüntü maksimum boyut"
+        max_size_description: "Yüklenen bir görüntü için izin verilen maksimum boyut (Megabayt/MB cinsinden)"
+        content_types: "Görüntüler için kabul edilen içerik türleri"
+        content_types_description: "Yüklenen görüntüler için izin verilen tüm içerik türlerini seçin"
+        title:
+          min_length: "Görüntü başlığı minimum uzunluk"
+          min_length_description: "Resim yüklerken kullanıcı tarafından sağlanan başlık (alt HTML özelliği olarak kullanılır)"
+          max_length: "Görüntü başlığı maksimum uzunluk"
+          max_length_description: "Resim yüklerken kullanıcı tarafından sağlanan başlık (alt HTML özelliği olarak kullanılır)"
+      documents:
+        max_amount: "Maksimum belge sayısı"
+        max_amount_description: "Bir öneriye, yatırıma... eklenebilecek maksimum belge sayısı"
+        max_size: "Belge maksimum boyutu"
+        max_size_description: "Yüklenen bir belge için izin verilen maksimum boyut (Megabayt/MB cinsinden)"
+        content_types: "Dokümanlar için kabul edilen içerik türleri"
+        content_types_description: "Yüklenen belgeler için izin verilen tüm içerik türlerini seçin"

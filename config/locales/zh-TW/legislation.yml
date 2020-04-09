@@ -12,9 +12,6 @@ zh-TW:
         publish_comment: 發佈評論
       form:
         phase_not_open: 此階段未開啟
-        login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
-        signin: 登錄
-        signup: 登記
       index:
         title: 評論
         comments_about: 評論關於
@@ -105,11 +102,8 @@ zh-TW:
       participation:
         phase_not_open: 此階段未開啟
         organizations: 不允許組織參與辯論
-        signin: 登錄
-        signup: 登記
         unauthenticated: 您必須%{signin} 或%{signup} 才能參與。
         verified_only: 只有已核實的用戶才能參與，%{verify_account}。
-        verify_account: 核實您的帳戶
         debate_phase_not_open: 辯論階段已經結束，不再接受答案
     shared:
       share: 共用

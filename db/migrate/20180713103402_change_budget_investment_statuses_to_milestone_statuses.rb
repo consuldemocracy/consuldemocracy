@@ -9,4 +9,3 @@ class ChangeBudgetInvestmentStatusesToMilestoneStatuses < ActiveRecord::Migratio
     end
   end
 end
-

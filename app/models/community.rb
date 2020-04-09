@@ -44,18 +44,18 @@ class Community < ApplicationRecord
 
   private
 
-  def users_who_commented
-    topics_ids = topics.pluck(:id)
-    query = "comments.commentable_id IN (?)and comments.commentable_type = 'Topic'"
-    User.by_comments(query, topics_ids)
-  end
+    def users_who_commented
+      topics_ids = topics.pluck(:id)
+      query = "comments.commentable_id IN (?)and comments.commentable_type = 'Topic'"
+      User.by_comments(query, topics_ids)
+    end
 
-  def users_who_topics_author
-    author_ids = topics.pluck(:author_id)
-    User.by_authors(author_ids)
-  end
+    def users_who_topics_author
+      author_ids = topics.pluck(:author_id)
+      User.by_authors(author_ids)
+    end
 
-  def author_from_community
-    from_proposal? ? User.where(id: proposal&.author_id) : User.where(id: investment&.author_id)
-  end
+    def author_from_community
+      from_proposal? ? User.where(id: proposal&.author_id) : User.where(id: investment&.author_id)
+    end
 end

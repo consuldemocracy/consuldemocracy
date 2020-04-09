@@ -33,7 +33,7 @@ class Admin::ProgressBarsController < Admin::BaseController
   end
 
   def destroy
-    @progress_bar.destroy
+    @progress_bar.destroy!
     redirect_to progress_bars_index, notice: t("admin.progress_bars.delete.notice")
   end
 

@@ -3,14 +3,14 @@ require "rails_helper"
 describe GraphQL::QueryTypeCreator do
   let(:api_type_definitions) do
     {
-      ProposalNotification => { fields: { title: :string } },
-      Proposal => { fields: { id: :integer, title: :string } }
+      ProposalNotification => { fields: { title: :string }},
+      Proposal => { fields: { id: :integer, title: :string }}
     }
   end
   let(:api_types) { GraphQL::ApiTypesCreator.create(api_type_definitions) }
 
   describe "::create" do
-    let(:query_type) { described_class.create(api_types) }
+    let(:query_type) { GraphQL::QueryTypeCreator.create(api_types) }
 
     it "creates a QueryType with fields to retrieve single objects whose model fields included an ID" do
       field = query_type.fields["proposal"]

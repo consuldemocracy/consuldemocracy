@@ -6,13 +6,13 @@ tr:
   activerecord:
     models:
       activity:
-        one: "faaliyet"
+        one: "etkinlik"
         other: "faaliyet"
       budget:
         one: "Bütçe"
         other: "Bütçeler"
       budget/investment:
-        one: "yatırım"
+        one: "Yatırım"
         other: "Yatırımlar"
       milestone:
         one: "kilometre taşı"
@@ -57,29 +57,26 @@ tr:
         one: "Oy"
         other: "Oylar"
       organization:
-        one: "Organizasyon"
+        one: "Kurum"
         other: "Organizasyonlar"
       poll/booth:
         one: "kabin"
         other: "kabinler"
       poll/officer:
-        one: "memur"
-        other: "memurlar"
+        one: "görevli"
+        other: "görevliler"
       poll/ballot_sheet:
         one: Oy verme formu
         other: Oy verme formu
       proposal:
-        one: "Vatandaş teklifi"
-        other: "Vatandaş teklifleri"
-      spending_proposal:
-        one: "Yatırım projesi"
-        other: "Yatırım projeleri"
+        one: "Vatandaş önerisi"
+        other: "Vatandaş önerileri"
       site_customization/page:
-        one: Özel sayfa
-        other: Özel sayfalar
+        one: Kişisel sayfa
+        other: Kişisel sayfalar
       site_customization/image:
-        one: Özel resim
-        other: Özel resimler
+        one: Kişisel görsel
+        other: Kişisel görseller
       site_customization/content_block:
         one: Özel içerik bloğu
         other: Özel içerik blokları
@@ -87,8 +84,8 @@ tr:
         one: Belge
         other: Belgeler
       legislation/process:
-        one: "İşlem"
-        other: "İşlemler"
+        one: "Süreç"
+        other: "Süreçler"
       legislation/proposal:
         one: "Öneri"
         other: "Öneriler"
@@ -108,7 +105,7 @@ tr:
         one: "Belge"
         other: "Belgeler"
       images:
-        one: "Resim"
+        one: "Görsel"
         other: "Resimler"
       topic:
         one: "Konu"
@@ -120,7 +117,7 @@ tr:
         one: "Öneri bildirimi"
         other: "Öneri bildirimleri"
       dashboard/action:
-        one: Öneri panosu - Yapılması gereken
+        one: Öneri panosu - Yapılması gerekenler
         other: Öneri panosu - Yapılması gerekenler
       dashboard/administrator_task:
         one: Görev
@@ -137,7 +134,7 @@ tr:
         description_valuating: "Değerlendirme aşaması sırasında tanımlama"
         description_balloting: "Oylama aşamasında tanımlama"
         description_reviewing_ballots: "Oyları Gözden Geçirme aşamasında tanımlama"
-        description_finished: "Bütçe bittiğinde tanımlama"
+        description_finished: "Bütçe tamamlandığı zaman belirtilen tanım"
         phase: "Aşama"
         currency_symbol: "Para Birimi"
       budget/investment:
@@ -147,9 +144,12 @@ tr:
         external_url: "Ek belgelere bağlantı"
         administrator_id: "Yönetici"
         location: "Konum (isteğe bağlı)"
-        organization_name: "Eğer bir ortaklık/organizasyon adına veya daha fazla kişi adına teklif ediyorsanız, ismini yazın"
-        image: "Teklif betimleyici resmi"
-        image_title: "Resim ismi"
+        organization_name: "Eğer bir topluluk/kurum adına veya birden fazla kişi adına öneride bulunuyorsanız, ismini yazın"
+        image: "Öneriyi temsil eden görsel"
+        image_title: "Görsel ismi"
+      budget/investment/translation:
+        title: "Başlık"
+        description: "Açıklama"
       geozone:
         name: İsim
         external_code: "Harici kod (isteğe bağlı)"
@@ -158,7 +158,7 @@ tr:
       milestone:
         status_id: "Mevcut durum (isteğe bağlı)"
         title: "İsim"
-        description: "Tanımlama ( isteğe bağlı eğer belirlenmiş bir durum varsa)"
+        description: "Açıklama (isteğe bağlı, eğer bir görev belirtilmiş ise)"
         publication_date: "Yayın tarihi"
       milestone/status:
         name: "İsim"
@@ -182,12 +182,21 @@ tr:
         description: "Fikir"
         terms_of_service: "Hizmet şartları"
         title: "İsim"
+      debate/translation:
+        title: "Tartışma başlığı"
+        description: "İlk tartışma metni"
       proposal:
         author: "Yazar"
         title: "İsim"
         question: "Soru"
         description: "Tanımlama"
-        terms_of_service: "Hizmet şartları"
+        selected: "Seçilmiş olarak işaretle"
+        terms_of_service: "Kullanım şartları"
+      proposal/translation:
+        title: "Öneri başlığı"
+        description: "Öneri metni"
+        summary: "Öneri özeti"
+        retired_explanation: "Açıklama"
       user:
         login: "E-posta veya kullanıcı adı"
         email: "E-posta"
@@ -195,20 +204,13 @@ tr:
         password_confirmation: "Şifre onayı"
         password: "Şifre"
         current_password: "Mevcut şifre"
-        phone_number: "Telefon numarası"
-        official_position: "Resmi pozisyon"
+        official_position: "Resmi görev"
         official_level: "Resmi düzey"
+        phone_number: "Telefon numarası"
         redeemable_code: "Doğrulama kodu e-posta yoluyla alındı"
       organization:
         name: "Organizasyon adı"
         responsible_name: "Gruptan sorumlu kişi"
-      spending_proposal:
-        administrator_id: "Yönetici"
-        association_name: "İlişkilendirme adı"
-        description: "Tanımlama"
-        external_url: "Ek belgelere bağlantı"
-        geozone_id: "İşlem kapsamı"
-        title: "İsim"
       poll:
         name: "Ad"
         starts_at: "Başlangıç Tarihi"
@@ -230,6 +232,7 @@ tr:
       poll/ballot_sheet:
         data: CSV verisi
         poll_id: Anket
+        officer_assignment_id: Memur ataması
       signature_sheet:
         signable_type: "İmzalanır tür"
         signable_id: "İmzalanır KİMLİK"
@@ -262,7 +265,7 @@ tr:
       legislation/process:
         title: İşlem Adı
         summary: Özet
-        description: Tanımlama
+        description: Açıklama
         additional_info: Ek bilgi
         start_date: Başlangıç tarihi
         end_date: Bitiş tarihi
@@ -281,7 +284,7 @@ tr:
       legislation/process/translation:
         title: İşlem Adı
         summary: Özet
-        description: Tanımlama
+        description: Açıklama
         additional_info: Ek bilgi
         milestones_summary: Özet
       legislation/draft_version:
@@ -303,10 +306,10 @@ tr:
         text: Yorum
       document:
         title: İsim
-        attachment: Ek dosya
+        attachment: "Ek dosya"
       image:
         title: İsim
-        attachment: Ek dosya
+        attachment: "Ek dosya"
       poll/question/answer:
         title: Cevap
         description: Tanımlama
@@ -319,7 +322,7 @@ tr:
       newsletter:
         segment_recipient: Alıcılar
         subject: Konu
-        from: Kaynak
+        from: "Başlangıç tarihi"
         body: E-posta içeriği
       admin_notification:
         segment_recipient: Alıcılar
@@ -348,16 +351,29 @@ tr:
         short_description: Kısa tanımlama
         description: Tanımlama
         link: Dış bağlantı
+        request_to_administrators: Yöneticilerden kaynak isteme butonu
+        day_offset: Önerinin oluşturulmasından kaç gün sonra etkinleştirilmesini istiyorsunuz?
+        required_supports: Önerinin aktif hale getirilmesi için ne kadar destek alması gerekiyor?
+        order: Bu eylemin kullanıcıya gösterileceği konumu eylemler listesine girebilirsiniz
         active: Aktif
         action_type: Tür
       dashboard/administrator_task:
         source: Kaynak
+        user: Tarafından yürütülen
+      link:
+        label: Başlık
+        url: Bağlantı
+      valuator:
+        description: Tanımlama
+        valuator_group_id: Bilirkişi grubu
+        can_comment: Yorumlar oluşturabilir
+        can_edit_dossier: Dosyaları düzenleyebilir
     errors:
       models:
         user:
           attributes:
             email:
-              password_already_set: "Bu kullanıcının zaten bir şifresi var"
+              password_already_set: "Bu kullanıcının bir şifresi var"
         debate:
           attributes:
             tag_list:
@@ -393,19 +409,19 @@ tr:
             end_date:
               invalid_date_range: başlangıç tarihi sonrasında veya sırasında olmalıdır
             debate_end_date:
-              invalid_date_range: tartışma başlangıç tarihi sonrasında veya sırasında olmalıdır
+              invalid_date_range: tartışma başlangıç tarihinde veya sonrasında olmalıdır
             draft_end_date:
-              invalid_date_range: taslak başlangıç tarihi sonrasında veya sırasında olmalıdır
+              invalid_date_range: taslak başlangıç tarihinde veya sonrasında olmalıdır
             allegations_end_date:
-              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalı
+              invalid_date_range: iddiaların başlama tarihinden sonra veya sırasında olmalıdır
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+              less_than_or_equal_to: "etiketiler %{count} 'tan daha az veya eşit sayıda olmalıdır"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "etiketiler %{count} 'tan küçük veya ona eşit olmalıdır"
+              less_than_or_equal_to: "etiketiler %{count} 'tan daha az veya eşit sayıda olmalıdır"
         proposal_notification:
           attributes:
             minimum_interval:
@@ -413,8 +429,8 @@ tr:
         signature:
           attributes:
             document_number:
-              not_in_census: "Census tarafından doğrulanmadı"
-              already_voted: "Bu öneri zaten oylandı"
+              not_in_census: "Pusula tarafından doğrulanmadı"
+              already_voted: "Bu öneriye daha önce oy verdiniz"
         site_customization/page:
           attributes:
             slug:
@@ -429,6 +445,7 @@ tr:
             valuation:
               cannot_comment_valuation: "Bir değerlendirmeye yorum yapamazsınız"
       messages:
+        translations_too_short: En az bir çeviri sağlamak zorunludur
         record_invalid: "Onaylama başarısız: %{errors}"
         another_poll_active: Belirtilen sürede aktif olan başka bir anket daha var
         restrict_dependent_destroy:

@@ -25,5 +25,4 @@ class BudgetsController < ApplicationController
     def load_budget
       @budget = Budget.find_by_slug_or_id! params[:id]
     end
-
 end

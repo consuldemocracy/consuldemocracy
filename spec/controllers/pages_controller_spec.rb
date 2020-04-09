@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe PagesController do
-
   describe "Static pages" do
     it "includes a privacy page" do
       get :show, params: { id: :privacy }
@@ -20,7 +19,6 @@ describe PagesController do
   end
 
   describe "More info pages" do
-
     it "includes a more info page" do
       get :show, params: { id: "help/index" }
       expect(response).to be_ok
@@ -48,5 +46,4 @@ describe PagesController do
       expect(response).to be_missing
     end
   end
-
 end

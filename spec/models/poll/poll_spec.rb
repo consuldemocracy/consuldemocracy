@@ -1,12 +1,13 @@
 require "rails_helper"
 
 describe Poll do
-
   let(:poll) { build(:poll) }
 
   describe "Concerns" do
     it_behaves_like "notifiable"
+    it_behaves_like "acts as paranoid", :poll
     it_behaves_like "reportable"
+    it_behaves_like "globalizable", :poll
   end
 
   describe "validations" do
@@ -115,11 +116,11 @@ describe Poll do
       expired = create(:poll, :expired)
       recounting = create(:poll, :recounting)
 
-      recounting_polls = described_class.recounting
+      recounting_polls = Poll.recounting
 
+      expect(recounting_polls).to eq [recounting]
       expect(recounting_polls).not_to include(current)
       expect(recounting_polls).not_to include(expired)
-      expect(recounting_polls).to include(recounting)
     end
   end
 
@@ -129,23 +130,23 @@ describe Poll do
       expired = create(:poll, :expired)
       recounting = create(:poll, :recounting)
 
-      current_or_recounting = described_class.current_or_recounting
+      current_or_recounting = Poll.current_or_recounting
 
-      expect(current_or_recounting).to include(current)
-      expect(current_or_recounting).to include(recounting)
+      expect(current_or_recounting).to match_array [current, recounting]
       expect(current_or_recounting).not_to include(expired)
     end
   end
 
   describe "answerable_by" do
-    let(:geozone) {create(:geozone) }
+    let(:geozone) { create(:geozone) }
 
     let!(:current_poll) { create(:poll) }
     let!(:expired_poll) { create(:poll, :expired) }
 
     let!(:current_restricted_poll) { create(:poll, geozone_restricted: true, geozones: [geozone]) }
-    let!(:expired_restricted_poll) { create(:poll, :expired, geozone_restricted: true,
-                                                             geozones: [geozone]) }
+    let!(:expired_restricted_poll) do
+      create(:poll, :expired, geozone_restricted: true, geozones: [geozone])
+    end
 
     let!(:all_polls) { [current_poll, expired_poll, current_poll, expired_restricted_poll] }
     let(:non_current_polls) { [expired_poll, expired_restricted_poll] }
@@ -185,16 +186,16 @@ describe Poll do
 
     describe "class method" do
       it "returns no polls for non-users and level 1 users" do
-        expect(described_class.answerable_by(nil)).to be_empty
-        expect(described_class.answerable_by(level1)).to be_empty
+        expect(Poll.answerable_by(nil)).to be_empty
+        expect(Poll.answerable_by(level1)).to be_empty
       end
 
       it "returns unrestricted polls for level 2 users" do
-        expect(described_class.answerable_by(level2).to_a).to eq([current_poll])
+        expect(Poll.answerable_by(level2).to_a).to eq([current_poll])
       end
 
       it "returns restricted & unrestricted polls for level 2 users of the correct geozone" do
-        list = described_class.answerable_by(level2_from_geozone)
+        list = Poll.answerable_by(level2_from_geozone)
                               .order(:geozone_restricted)
         expect(list.to_a).to eq([current_poll, current_restricted_poll])
       end
@@ -211,9 +212,7 @@ describe Poll do
 
       create(:poll_voter, user: user, poll: poll1)
 
-      expect(Poll.votable_by(user)).to include(poll2)
-      expect(Poll.votable_by(user)).to include(poll3)
-      expect(Poll.votable_by(user)).not_to include(poll1)
+      expect(Poll.votable_by(user)).to match_array [poll2, poll3]
     end
 
     it "returns polls that are answerable by a user" do
@@ -223,7 +222,7 @@ describe Poll do
 
       allow(Poll).to receive(:answerable_by).and_return(Poll.where(id: poll1))
 
-      expect(Poll.votable_by(user)).to include(poll1)
+      expect(Poll.votable_by(user)).to eq [poll1]
       expect(Poll.votable_by(user)).not_to include(poll2)
     end
 
@@ -231,9 +230,8 @@ describe Poll do
       user = create(:user, :level_two)
       poll = create(:poll)
 
-      expect(Poll.votable_by(user)).to include(poll)
+      expect(Poll.votable_by(user)).to eq [poll]
     end
-
   end
 
   describe "#votable_by" do
@@ -314,20 +312,24 @@ describe Poll do
     let(:proposal) { create :proposal }
     let(:other_proposal) { create :proposal }
     let(:poll) { create(:poll, related: proposal) }
-    let(:overlaping_poll) { build(:poll, related: proposal, starts_at: poll.starts_at + 1.day,
-                                                            ends_at: poll.ends_at - 1.day) }
-    let(:non_overlaping_poll) { create(:poll, related: proposal, starts_at: poll.ends_at + 1.day,
-                                                                 ends_at: poll.ends_at + 31.days) }
-    let(:overlaping_poll_2) { create(:poll, related: other_proposal,
-                                            starts_at: poll.starts_at + 1.day,
-                                            ends_at: poll.ends_at - 1.day) }
+    let(:overlaping_poll) do
+      build(:poll, related: proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)
+    end
+
+    let(:non_overlaping_poll) do
+      create(:poll, related: proposal, starts_at: poll.ends_at + 1.day, ends_at: poll.ends_at + 31.days)
+    end
+
+    let(:overlaping_poll_2) do
+      create(:poll, related: other_proposal, starts_at: poll.starts_at + 1.day, ends_at: poll.ends_at - 1.day)
+    end
 
     it "a poll can not overlap itself" do
       expect(Poll.overlaping_with(poll)).not_to include(poll)
     end
 
     it "returns overlaping polls for the same proposal" do
-      expect(Poll.overlaping_with(overlaping_poll)).to include(poll)
+      expect(Poll.overlaping_with(overlaping_poll)).to eq [poll]
     end
 
     it "do not returs non overlaping polls for the same proposal" do
@@ -340,23 +342,16 @@ describe Poll do
   end
 
   context "scopes" do
-
     describe "#not_budget" do
-
       it "returns polls not associated to a budget" do
-        budget = create(:budget)
-
         poll1 = create(:poll)
         poll2 = create(:poll)
-        poll3 = create(:poll, budget: budget)
+        poll3 = create(:poll, :for_budget)
 
-        expect(Poll.not_budget).to include(poll1)
-        expect(Poll.not_budget).to include(poll2)
+        expect(Poll.not_budget).to match_array [poll1, poll2]
         expect(Poll.not_budget).not_to include(poll3)
       end
-
     end
-
   end
 
   describe "#sort_for_list" do
@@ -401,16 +396,41 @@ describe Poll do
         starts_at = Time.current + 1.day
         poll1 = create(:poll, starts_at: starts_at, name: "Charlie")
         poll2 = create(:poll, starts_at: starts_at, name: "Delta")
-        poll3 = Globalize.with_locale(:es) do
+        poll3 = I18n.with_locale(:es) do
           create(:poll, starts_at: starts_at, name: "Zzz...", name_fr: "Aaaah!")
         end
-        poll4 = Globalize.with_locale(:es) do
+        poll4 = I18n.with_locale(:es) do
           create(:poll, starts_at: starts_at, name: "Bravo")
         end
 
-        expect(Poll.sort_for_list.count).to eq 4
         expect(Poll.sort_for_list).to eq [poll4, poll1, poll2, poll3]
       end
+    end
+  end
+
+  describe "#recounts_confirmed" do
+    it "is false for current polls" do
+      poll = create(:poll, :current)
+
+      expect(poll.recounts_confirmed?).to be false
+    end
+
+    it "is false for recounting polls" do
+      poll = create(:poll, :recounting)
+
+      expect(poll.recounts_confirmed?).to be false
+    end
+
+    it "is false for polls which finished less than a month ago" do
+      poll = create(:poll, starts_at: 3.months.ago, ends_at: 27.days.ago)
+
+      expect(poll.recounts_confirmed?).to be false
+    end
+
+    it "is true for polls which finished more than a month ago" do
+      poll = create(:poll, starts_at: 3.months.ago, ends_at: 1.month.ago - 1.day)
+
+      expect(poll.recounts_confirmed?).to be true
     end
   end
 end

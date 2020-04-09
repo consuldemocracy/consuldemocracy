@@ -34,7 +34,7 @@ class Admin::Widget::CardsController < Admin::BaseController
 
   def destroy
     @card = ::Widget::Card.find(params[:id])
-    @card.destroy
+    @card.destroy!
 
     redirect_to_customization_page_cards_or_homepage
   end
@@ -60,7 +60,7 @@ class Admin::Widget::CardsController < Admin::BaseController
       if @card.site_customization_page_id
         redirect_to admin_site_customization_page_cards_path(page), notice: notice
       else
-        redirect_to admin_homepage_url, notice: notice
+        redirect_to admin_homepage_path, notice: notice
       end
     end
 

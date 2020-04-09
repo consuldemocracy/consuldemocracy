@@ -5,7 +5,7 @@
             (!voted_before_sign_in(question) ||
              question.poll.voted_in_booth?(current_user)) %>
         <span class="button answered"
-              title="<%= t("poll_questions.show.voted", answer: answer.title)%>">
+              title="<%= t("poll_questions.show.voted", answer: answer.title) %>">
           <%= answer.title %>
         </span>
       <% else %>
@@ -21,7 +21,7 @@
     <% question.question_answers.order(id: :desc).each do |answer| %>
       <%= link_to answer.title, new_user_session_path, class: "button secondary hollow" %>
     <% end %>
-  <%  elsif !current_user.level_two_or_three_verified? %>
+  <% elsif !current_user.level_two_or_three_verified? %>
     <% question.question_answers.order(id: :desc).each do |answer| %>
       <%= link_to answer.title, verification_path, class: "button secondary hollow" %>
     <% end %>

@@ -1,1 +1,68 @@
 sr:
+  valuation:
+    header:
+      title: Вредновање
+    menu:
+      title: Вредновање
+      budgets: Партиципативни буџети
+    budgets:
+      index:
+        title: Партиципативни буџети
+        filters:
+          current: Отвори
+          finished: Завршено
+        table_name: Име
+        table_phase: Фаза
+        table_assigned_investments_valuation_open: Инвестициони пројекти додељени вредновању су отворени
+        table_actions: Акције
+        evaluate: Евалуирај
+        no_budgets: "Не постоје буџети"
+    budget_investments:
+      index:
+        headings_filter_all: Сви наслови
+        filters:
+          valuation_open: Отвори
+          valuating: Вреднује се
+          valuation_finished: Вредновање завршено
+        assigned_to: "Додељено %{valuator}"
+        title: Инвестициони пројекти
+        edit: Промените досије
+        table_id: ИД
+        table_title: Назив
+        table_heading_name: Назив наслова
+        table_actions: Акције
+        no_investments: "Нема инвестиционих пројеката."
+      show:
+        back: Назад
+        title: Инвестициони пројекти
+        info: Информације о аутору
+        by: Послато од стране
+        sent: Послато на
+        heading: Наслов
+        dossier: Досије
+        edit_dossier: Промени досије
+        price: Цена
+        price_first_year: Цена током прве године
+        currency: "€"
+        feasibility: Изводљивост
+        feasible: Изводљиво
+        unfeasible: Неизводљиво
+        undefined: Недефинисано
+        valuation_finished: Вредновање завршено
+        duration: Временски опсег
+        responsibles: Одговорни
+        assigned_admin: Додељени администратор
+        assigned_valuators: Додељени оцењивачи
+        preview: Преглед инвестиција
+      edit:
+        dossier: Досије
+        price: "Цена (%{currency})"
+        price_first_year: "Цена током прве године (%{currency}) <small>(опционо, подаци нису јавни)</small>"
+        feasibility: Изводљивост
+        valuation_finished_alert: "Да ли сте сигурни да ћелите да означите овај извештај као завршен? Ако то урадите, више га не можете мењати."
+        not_feasible_alert: "Емаил ће одмах бити послат аутору пројекта са извештајем о неизводљивости."
+        save: Сачувај промене
+      notice:
+        valuate: "Досије ажуриран"
+      valuation_comments: Коментари вредновања
+      not_in_valuating_phase: Инвестиције могу бити вредноване једино када је буџет у фази вредновања

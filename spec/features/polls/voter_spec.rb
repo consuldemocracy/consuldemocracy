@@ -1,9 +1,7 @@
 require "rails_helper"
 
 describe "Voter" do
-
   context "Origin", :with_frozen_time do
-
     let(:poll) { create(:poll, :current) }
     let(:question) { create(:poll_question, poll: poll) }
     let(:booth) { create(:poll_booth) }
@@ -15,8 +13,7 @@ describe "Voter" do
     before do
       create(:geozone, :in_census)
       create(:poll_shift, officer: officer, booth: booth, date: Date.current, task: :vote_collection)
-      booth_assignment = create(:poll_booth_assignment, poll: poll, booth: booth)
-      create(:poll_officer_assignment, officer: officer, booth_assignment: booth_assignment)
+      create(:poll_officer_assignment, officer: officer, poll: poll, booth: booth)
     end
 
     scenario "Voting via web - Standard", :js do
@@ -50,8 +47,6 @@ describe "Voter" do
     end
 
     scenario "Voting in booth", :js do
-      user = create(:user, :in_census)
-
       login_through_form_as_officer(officer.user)
 
       visit new_officing_residence_path
@@ -77,13 +72,13 @@ describe "Voter" do
         expect(page).to have_content "1"
       end
 
-      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
         expect(page).to have_content "1"
       end
     end
 
     context "The person has decided not to vote at this time" do
-      let!(:user) { create(:user, :in_census) }
+      before { create(:user, :in_census) }
 
       scenario "Show not to vote at this time button" do
         login_through_form_as_officer(officer.user)
@@ -116,7 +111,6 @@ describe "Voter" do
         expect(page).to have_content "Has already participated in this poll"
         expect(page).not_to have_content "The person has decided not to vote at this time"
       end
-
     end
 
     context "Trying to vote the same poll in booth and web" do
@@ -150,7 +144,9 @@ describe "Voter" do
         login_as user
         visit poll_path(poll)
 
-        expect(page).not_to have_link(answer_yes.title)
+        within("#poll_question_#{question.id}_answers") do
+          expect(page).not_to have_link(answer_yes.title)
+        end
         expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
         expect(Poll::Voter.count).to eq(1)
 
@@ -163,7 +159,7 @@ describe "Voter" do
           expect(page).to have_content "1"
         end
 
-        within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+        within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
           expect(page).to have_content "1"
         end
       end
@@ -174,8 +170,6 @@ describe "Voter" do
         expect(Poll::Voter.count).to eq(1)
 
         visit poll_path(poll)
-
-        expect(page).not_to have_selector(".js-token-message")
 
         expect(page).to have_content "You have already participated in this poll. If you vote again it will be overwritten."
         within("#poll_question_#{question.id}_answers") do
@@ -214,7 +208,10 @@ describe "Voter" do
 
       visit poll_path(poll)
 
-      expect(page).not_to have_link(answer_yes.title)
+      within("#poll_question_#{question.id}_answers") do
+        expect(page).not_to have_link(answer_yes.title)
+      end
+
       expect(page).to have_content "You have already participated in a physical booth. You can not participate again."
       expect(Poll::Voter.count).to eq(1)
 
@@ -227,7 +224,7 @@ describe "Voter" do
         expect(page).to have_content "1"
       end
 
-      within("#poll_booth_assignment_#{Poll::BoothAssignment.where(poll: poll, booth: booth).first.id}_recounts") do
+      within("#poll_booth_assignment_#{Poll::BoothAssignment.find_by(poll: poll, booth: booth).id}_recounts") do
         expect(page).to have_content "1"
       end
     end
@@ -273,7 +270,6 @@ describe "Voter" do
           expect(page).to have_content("Validate document")
         end
       end
-
     end
   end
 end
