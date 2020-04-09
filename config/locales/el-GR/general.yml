@@ -95,9 +95,6 @@ el:
       tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
     index:
       featured_debates: Προτεινόμενα
-      filter_topic:
-        one: " με θέμα '%{topic}'"
-        other: " με θέμα '%{topic}'"
       orders:
         confidence_score: υψηλότερα βαθμολογημένα
         created_at: νεότερα
@@ -333,9 +330,6 @@ el:
       map_skip_checkbox: "Η πρόταση αυτή δεν έχει μια συγκεκριμένη τοποθεσία ή δεν έχω επίγνωση για αυτήν."
     index:
       featured_proposals: Προτεινόμενα
-      filter_topic:
-        one: " με θέμα '%{topic}'"
-        other: " με θέμα '%{topic}'"
       orders:
         confidence_score: υψηλότερη βαθμολογία
         created_at: νεότερα
