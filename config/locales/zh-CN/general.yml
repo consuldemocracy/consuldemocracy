@@ -83,8 +83,6 @@ zh-CN:
       tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
     index:
       featured_debates: 特色
-      filter_topic:
-        other: " 主题'%{topic}'"
       orders:
         confidence_score: 最高评分
         created_at: 最新
@@ -291,8 +289,6 @@ zh-CN:
       map_skip_checkbox: "此提议没有具体的位置或者我没有留意到。"
     index:
       featured_proposals: 特色
-      filter_topic:
-        other: " 主题'%{topic}'"
       orders:
         confidence_score: 最高评分
         created_at: 最新
