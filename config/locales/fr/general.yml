@@ -87,9 +87,6 @@ fr:
       tags_placeholder: "Entrez les étiquettes que vous voudriez utiliser, séparer par des virgules (',')"
     index:
       featured_debates: Mis en avant
-      filter_topic:
-        one: " avec sujet '%{topic}'"
-        other: " avec sujet '%{topic}'"
       orders:
         confidence_score: la plus votée
         created_at: la plus récente
@@ -299,9 +296,6 @@ fr:
       map_skip_checkbox: "Cette proposition n'a pas d'emplacement associé à ma connaissance."
     index:
       featured_proposals: Mis en avant
-      filter_topic:
-        one: " avec sujet '%{topic}'"
-        other: " avec sujet '%{topic}'"
       orders:
         confidence_score: la plus votée
         created_at: la plus récente
