@@ -82,8 +82,6 @@ id:
       tags_placeholder: "Masukkan tag anda ingin gunakan, dipisahkan dengan koma (',')"
     index:
       featured_debates: Fitur
-      filter_topic:
-        other: " dengan topik '%{topic}'"
       orders:
         confidence_score: nilai tertinggi
         created_at: terbaru
@@ -280,8 +278,6 @@ id:
       map_skip_checkbox: "Proposal ini tidak memiliki beton lokasi atau aku tidak menyadari hal itu."
     index:
       featured_proposals: Unggulan
-      filter_topic:
-        other: " dengan topik '%{topic}'"
       orders:
         confidence_score: nilai tertinggi
         created_at: terbaru
