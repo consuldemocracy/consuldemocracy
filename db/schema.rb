@@ -1318,6 +1318,7 @@ ActiveRecord::Schema.define(version: 20191108173350) do
     t.integer  "author_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "signatures", force: :cascade do |t|
