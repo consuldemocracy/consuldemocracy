@@ -91,10 +91,6 @@ bs:
       tags_placeholder: "Unesite tagove koje želite koristiti, razdvojene zarezima (,)"
     index:
       featured_debates: Glavne debate
-      filter_topic:
-        one: " sa temom %{topic}"
-        few: " sa temom %{topic}"
-        other: " sa temom %{topic}"
       orders:
         confidence_score: sa najvišim ocjenama
         created_at: najnovije
@@ -336,10 +332,6 @@ bs:
       map_skip_checkbox: "Prijedlog nema konkretnu lokaciju, ili je ja ne vidim."
     index:
       featured_proposals: Glavni prijedlozi
-      filter_topic:
-        one: " sa temom %{topic}"
-        few: " sa temom %{topic}"
-        other: " sa temom %{topic}"
       orders:
         confidence_score: sa najvišim ocjenama
         created_at: najnovije
