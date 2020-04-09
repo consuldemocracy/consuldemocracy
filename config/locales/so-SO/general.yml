@@ -87,9 +87,6 @@ so:
       tags_placeholder: "Geli taagyada ad jeceshahay inaad isticmasho, kana kaxay qooyska(', ')"
     index:
       featured_debates: Soobandhigiid/ Muqaal
-      filter_topic:
-        one: " mawduuc%{topic}"
-        other: " mawduuc%{topic}"
       orders:
         confidence_score: ugu sareeya
         created_at: ugu cusub
@@ -301,9 +298,6 @@ so:
       map_skip_checkbox: "Soo jeedintaas ma laha meel la taaban karo ama aanan ogeyn."
     index:
       featured_proposals: Soobandhigiid/ Muqaal
-      filter_topic:
-        one: " mawduuc '%{topic}"
-        other: " mawduuc '%{topic}"
       orders:
         confidence_score: ugu sareeya
         created_at: ugu cusub
