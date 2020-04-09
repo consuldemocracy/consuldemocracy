@@ -98,10 +98,6 @@ sr:
       tags_placeholder: "Унесите ознаке које желите да користите, одвојене зарезима (',')"
     index:
       featured_debates: Истакнуто
-      filter_topic:
-        one: " са темом %{topic}"
-        few: " са темама %{topic}"
-        other: " са темама %{topic}"
       orders:
         confidence_score: највиша ознака
         created_at: најновије
@@ -358,10 +354,6 @@ sr:
       map_skip_checkbox: "Ова инвестиција не поседује одређену локацију или ја тога нисам свестан."
     index:
       featured_proposals: Истакнуто
-      filter_topic:
-        one: " са темом %{topic}"
-        few: " са темама %{topic}"
-        other: " са темама %{topic}"
       orders:
         confidence_score: највише котирани
         created_at: најновије
