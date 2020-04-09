@@ -87,9 +87,6 @@ val:
       tags_placeholder: "Escriu les etiquetes que desitges separades per una coma (',')"
     index:
       featured_debates: Destacades
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: més avalades
         created_at: noves
@@ -301,9 +298,6 @@ val:
       map_skip_checkbox: "Esta proposta no te una ubicació concreta o no la coneixem."
     index:
       featured_proposals: Destacar
-      filter_topic:
-        one: " amb el tema '%{topic}'"
-        other: " amb el tema '%{topic}'"
       orders:
         confidence_score: millor valorats
         created_at: nous
