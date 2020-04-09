@@ -95,9 +95,6 @@ pt-BR:
       tags_placeholder: "Entre com as marcações que você deseja usar, separadas por vírgulas ('s\")"
     index:
       featured_debates: Destacado
-      filter_topic:
-        one: " com tópico '%{topic}'"
-        other: " com tópico '%{topic}'"
       orders:
         confidence_score: melhor avaliado
         created_at: mais recente
@@ -351,9 +348,6 @@ pt-BR:
       map_skip_checkbox: "Esta proposta não tem uma localização concreta ou não a conheço."
     index:
       featured_proposals: Destacado
-      filter_topic:
-        one: " com tópico '%{topic}'"
-        other: " com tópico '%{topic}'"
       orders:
         confidence_score: melhor avaliado
         created_at: mais recente
