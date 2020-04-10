@@ -203,6 +203,43 @@ ka:
         enabled: "ფაზა ნებადართულია"
         ends_at: "დასრულების თარიღი"
         starts_at: "დაწყების თარიღი"
+      budget/phase/translation:
+        description: "აღწერა"
+        summary: "შეჯამება"
+      comment:
+        body: "კომენტარი"
+        user: "მომხმარებელი"
+      debate:
+        author: "ავტორი"
+        description: "აზრი"
+        tag_list: "საკითხები"
+        terms_of_service: "მომსახურების პირობები"
+        title: "სათაური"
+      debate/translation:
+        title: "დებატების დასახელება"
+        description: "დებატების პირვანდელი ტექსტი"
+      proposal:
+        author: "ავტორი"
+        title: "სათაური"
+        question: "კითხვა"
+        description: "აღწერა"
+        responsible_name: "ინიციატივის წარმდგენი პიროვნების სახელი და გვარი"
+        retired_reason: "ინიციატივის გამოხმობის მიზეზი"
+        selected: "შერჩეულად მონიშვნა"
+        terms_of_service: "მომსახურების პირობები"
+        video_url: "სხვა სერვერზე განთავსებული ვიდეოს ბმული"
+      proposal/translation:
+        title: "ინიციატივის დასახელება"
+        description: "ინიციატივის ტექსტი"
+        summary: "ინიციატივის მოკლე შინაარსი"
+        retired_explanation: "ახსნა-განმარტება"
+      user:
+        login: "ელ.ფოსტა ან მომხმარებლის სახელი"
+        email: "ელ.ფოსტა"
+        username: "მომხმარებლის სახელი"
+        password_confirmation: "პაროლის დადასტურება"
+        password: "პაროლი"
+        current_password: "მიმდინარე პაროლი"
       poll:
         ends_at: "დასრულების თარიღი"
         geozone_restricted: "შეზღუდულია გეოგრაფიული ზონით"
