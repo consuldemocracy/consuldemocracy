@@ -141,3 +141,6 @@ ka:
         heading_id: "რუბრიკა"
         title: "სათაური"
         description: "აღწერა"
+        external_url: "დამატებით დოკუმენტებზე გადასვლის ბმული"
+        administrator_id: "ადმინისტრატორი"
+        location: "დამატებითი ინფორმაცია ლოკაციაზე"
