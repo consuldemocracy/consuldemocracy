@@ -515,6 +515,18 @@ ka:
               invalid_date_range: უნდა ემთხვეოდეს ან უნდა მოსდევდეს პროექტის დაწყების თარიღს
             allegations_end_date:
               invalid_date_range: უნდა ემთხვეოდეს ან უნდა მოსდევდეს კომენტარების დაწყების თარიღს
+        local_census_record:
+          attributes:
+            document_type:
+              inclusion: არ შედის სიაში, ნებადართული ცვლადებია 1 DNI- სთვის, 2 პასპორტისთვის და 3 ბინადრობის მოწმობისთვის.
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
         site_customization/image:
           attributes:
             image:
