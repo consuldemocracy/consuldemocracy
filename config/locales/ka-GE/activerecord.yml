@@ -31,8 +31,8 @@ ka:
         one: "დებატები"
         other: "დებატები"
       tag:
-        one: "ეტიკეტი"
-        other: "ეტიკეტები"
+        one: "ტეგი"
+        other: "ტეგები"
       user:
         one: "მომხმარებელი"
         other: "მომხმარებლები"
@@ -158,7 +158,7 @@ ka:
         feasibility_undecided: "განუსაზღვრელი"
         feasibility_unfeasible: "შეუძლებელი"
         incompatible: "შეუთავსებლად მონიშვნა"
-        milestone_tag_list: "მიმდინარე ეტაპის ეტიკეტები"
+        milestone_tag_list: "მიმდინარე ეტაპის ტეგები"
         price_explanation: "ფასის განმარტება"
         selected: "შერჩეულად მონიშვნა"
         selected_true: "შერჩეული"
@@ -166,7 +166,7 @@ ka:
         unfeasibility_explanation: "განხორციელების შესაძლებლობის განმარტება"
         valuation_finished: "შეფასება დასრულებულია"
         valuator_ids: "ჯგუფები"
-        valuation_tag_list: "ეტიკეტები"
+        valuation_tag_list: "ტეგები"
       budget/investment/translation:
         title: "სათაური"
         description: "აღწერა"
@@ -424,14 +424,14 @@ ka:
         title: სათაური
         body: ტექსტი
       widget/card:
-        label: იარლიყი (სურვილისამებრ)
+        label: ტეგი (სურვილისამებრ)
         title: სათაური
         description: აღწერა
         link_text: ბმულის დასახელება
         link_url: ბმულის მისამართი (URL)
         columns: სვეტების რაოდენობა
       widget/card/translation:
-        label: იარლიყი (სურვილისამებრ)
+        label: ტეგი (სურვილისამებრ)
         title: სათაური
         description: აღწერა
         link_text: ბმულის დასახელება
@@ -478,7 +478,7 @@ ka:
         debate:
           attributes:
             tag_list:
-              less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
+              less_than_or_equal_to: "ტეგები უნდა იყოს არაუმეტეს %{count}"
         direct_message:
           attributes:
             max_per_day:
@@ -522,11 +522,11 @@ ka:
         proposal:
           attributes:
             tag_list:
-              less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
+              less_than_or_equal_to: "ტეგები უნდა იყოს არაუმეტეს %{count}"
         budget/investment:
           attributes:
             tag_list:
-              less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
+              less_than_or_equal_to: "ტეგები უნდა იყოს არაუმეტეს %{count}"
         proposal_notification:
           attributes:
             minimum_interval:
