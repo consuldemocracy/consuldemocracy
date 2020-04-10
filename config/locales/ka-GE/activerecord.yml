@@ -240,7 +240,29 @@ ka:
         password_confirmation: "პაროლის დადასტურება"
         password: "პაროლი"
         current_password: "მიმდინარე პაროლი"
+        email_digest: "ინიციატივის შესახებ შეტყობინებების ანგარიშის მიღება"
+        email_on_comment: "მეცნობოს ელ.ფოსტით, როდესაც ვინმე ჩემს ინიციატივაზე, ან დებატებზე გააკეთებს კომენტარს"
+        email_on_comment_reply: "მეცნობოს ელ.ფოსტით, როდესაც ვინმე ჩემს კომენტარებს უპასუხებს"
+        email_on_direct_message: "მეცნობოს ელ.ფოსტით, როდესაც ვინმე პირად შეტყობინებას გამომიგზავნის"
+        newsletter: "ვებგვერდზე განთავსებული ღირებული ინფორმაციის ელ.ფოსტით მიღება"
+        official_position: "ოფიციალური თანამდებობა"
+        official_position_badge: "ოფიციალური თანამდებობის სამკერდე ნიშნის გამოჩენა"
+        official_level: "ოფიციალური დონე"
+        phone_number: "ტელეფონის ნომერი"
+        public_activity: "ჩემი აქტივობების სიის გასაჯაროება"
+        public_interests: "იმ ელემენტების კვალიფიკაციების გასაჯაროება, რომელთაც მე მივყვები"
+        recommended_debates: "დებატების ირგვლივ არსებული რეკომენდაციების ჩვენება"
+        recommended_proposals: "ინიციატივების ირგვლივ არსებული რეკომენდაციების ჩვენება"
+        redeemable_code: "ელ.ფოსტით მიღებული დადასტურების კოდი"
+      direct_message:
+        title: "სათაური"
+        body: "გზავნილი"
+      organization:
+        name: "ორგანიზაციის დასახელება"
+        responsible_name: "ჯგუფზე პასუხისმგებელი პირი"
       poll:
+        name: "სახელი"
+        starts_at: "დაწყების თარიღი"
         ends_at: "დასრულების თარიღი"
         geozone_restricted: "შეზღუდულია გეოგრაფიული ზონით"
         summary: "შეჯამება"
@@ -280,3 +302,50 @@ ka:
         content: შინაარსი
         created_at: შექმნილია
         subtitle: ქვესათაური
+      legislation/process/translation:
+        homepage: "აღწერა"
+        milestones_summary: შეჯამება
+      legislation/proposal:
+        description: "ინიციატივის ტექსტი"
+        summary: "ინიციატივის მოკლე შინაარსი"
+        title: "ინიციატივის დასახელება"
+        video_url: "სხვა სერვერზე განთავსებული ვიდეოს ბმული"
+      legislation/draft_version:
+        title: ვერსიის დასახელება
+        body: ტექსტი
+        changelog: ცვლილებები
+        status: სტატუსი
+        status_draft: "პროექტი"
+        status_published: "გამოქვეყნებული"
+        final_version: საბოლოო ვერსია
+      legislation/draft_version/translation:
+        title: ვერსიის დასახელება
+        body: ტექსტი
+        changelog: ცვლილებები
+      legislation/question:
+        title: სათაური
+        question_options: შესაძლო ვარიანტები
+      legislation/question/translation:
+        title: კითხვა
+      legislation/question_option:
+        value: ღირებულება
+      legislation/annotation:
+        text: კომენტარი
+      document:
+        title: სათაური
+        attachment: "აირჩიეთ დოკუმენტი"
+      image:
+        title: სათაური
+        attachment: "აირჩიეთ ფოტოსურათი"
+      poll/question/answer:
+        title: პასუხი
+        description: აღწერა
+      poll/question/answer/translation:
+        title: პასუხი
+        description: აღწერა
+      poll/question/answer/video:
+        title: სათაური
+        url: სხვა სერვერზე განთავსებული ვიდეოს ბმული
+      newsletter:
+        segment_recipient: მიმღებები
+        subject: თემა
