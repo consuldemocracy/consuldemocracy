@@ -351,7 +351,47 @@ ka:
         title: დამალული კომენტარები
         no_hidden_comments: დამალული კომენტარები არ მოიძებნა.
     dashboard:
+      index:
+        back: '%{org}-ზე დაბრუნება'
+        title: ადმინისტრირება
+        description: კეთილი იყოს თქვენი მობრძანება %{org} ადმინ პანელში.
+      actions:
+        index:
+          create: შექმენით რესურსი ან მოქმედება
+          edit: რედაქტირება
+          delete: წაშლა
+          active: 'დიახ'
+          inactive: 'არა'
+          title: რესურსები და მოქმედებები
+          action_title: სათაური
+          action_type: ტიპი
+          required_supports: მხარდამჭერთა საჭირო რაოდენობა
+          day_offset: საჭირო დღეები
+          action_active: აქტიური
+          order: თანმიმდევრობა
+          published_proposal: გამოქვეყნებული ინიციატივა
+          default:
+            email: ელ.ფოსტა
+            polls: გამოკითხვები
+            poster: პოსტერი
+        new:
+          back: ჩამონათვალში დაბრუნება
+        create:
+          notice: მოქმედება წარმატებით შეიქმნა
+        edit:
+          back: ჩამონათვალში დაბრუნება
+        delete:
+          success: მოქმედება წარმატებით წაიშალა
+        form:
+          submit_button: დამახსოვრება
       administrator_tasks:
+        index:
+          filters:
+            pending: მოლოდინის რეჟიმშია
+            done: შესრულებულია
+        edit:
+          back: მოლოდინის რეჟიმში მყოფი დავალებების სიაში დაბრუნება
+          solving: მოლოდინის რეჟიმში მყოფი დავალების შესრულება
         update:
           success: დავალება აღინიშნა, როგორც შესრულებული.
     debates:
@@ -407,3 +447,17 @@ ka:
           all: ყველა
           with_confirmed_hide: დადასტურებულია
           without_confirmed_hide: მოლოდინის რეჟიმშია
+    legislation:
+      processes:
+        process:
+          title: პროცესი
+          comments: კომენტარები
+          status: სტატუსი
+          start_date: დაწყების თარიღი
+          end_date: დასრულების თარიღი
+          status_open: გახსნა
+          status_closed: დახურული
+          status_planned: დაგეგმილი
+        subnav:
+          info: ინფორმაცია
+          homepage: მთვარი გვერდი
