@@ -1,1 +1,18 @@
 ka:
+  activemodel:
+    models:
+      verification:
+        residence: "საცხოვრებელი ადგილი"
+        sms: "მოკლე ტექსტური შეტყობინება"
+      local_census_records/import:
+        one: ადგილობრივი მოსახლეობის აღწერის ჩანაწერები
+        other: ადგილობრივი მოსახლეობის აღწერის ჩანაწერები
+    attributes:
+      verification:
+        residence:
+          document_type: "დოკუმენტის ტიპი"
+          document_number: "დოკუმენტის ნომერი (მათ შორის, ასოებიც)"
+          date_of_birth: "დაბადების თარიღი"
+          postal_code: "საფოსტო ინდექსი"
+        sms:
+          phone: "ტელეფონი"
