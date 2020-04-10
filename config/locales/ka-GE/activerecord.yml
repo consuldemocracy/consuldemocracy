@@ -199,3 +199,47 @@ ka:
         population: "მოსახლეობა (სურვილისამებრ)"
       budget/heading/translation:
         name: "სათაურის დასახელება"
+      budget/phase:
+        enabled: "ფაზა ნებადართულია"
+        ends_at: "დასრულების თარიღი"
+        starts_at: "დაწყების თარიღი"
+      poll:
+        ends_at: "დასრულების თარიღი"
+        geozone_restricted: "შეზღუდულია გეოგრაფიული ზონით"
+        summary: "შეჯამება"
+        description: "აღწერა"
+      active_poll/translation:
+        description: "აღწერა"
+      poll/booth:
+        name: "სახელი"
+        location: "მდებარეობა"
+      poll/translation:
+        name: "სახელი"
+        summary: "შეჯამება"
+        description: "აღწერა"
+      poll/question:
+        poll_id: "გამოკითხვა"
+        title: "კითხვა"
+        summary: "შეჯამება"
+        description: "აღწერა"
+        external_url: "დამატებით დოკუმენტებზე გადასვლის ბმული"
+      poll/question/translation:
+        title: "კითხვა"
+      poll/ballot_sheet:
+        data: CSV მონაცემები
+        poll_id: გამოკითხვა
+        officer_assignment_id: დამკვირვებლის დავალება
+      poll/shift:
+        task: "ამოცანა"
+      proposal_notification:
+        body: "გზავნილი"
+        title: "სათაური"
+      signature_sheet:
+        title: "სათაური"
+        signable_type: "ხელმოსაწერი ფურცლის ტიპი"
+        signable_id: "ხელმოსაწერი ფურცლის ID"
+        document_numbers: "დოკუმენტების ნომრები"
+      site_customization/page:
+        content: შინაარსი
+        created_at: შექმნილია
+        subtitle: ქვესათაური
