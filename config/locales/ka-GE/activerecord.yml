@@ -441,6 +441,7 @@ ka:
         title: სათაური
         short_description: მოკლე აღწერა
         description: აღწერა
+        link: სხვა სერვერზე განთავსებულ მასალასთან წვდომის ბმული
     errors:
       models:
         site_customization/image:
