@@ -16,3 +16,67 @@ ka:
       delete: წაშლა
     officing_booth:
       title: "თქვენ ზედამხედველობას უწევთ ჯიხურს, რომელიც მდებარეობს %{booth}. თუ აღნიშნული ინფორმაცია მცდარია, არ გააგრძელოთ პროცესი და დაუკავშირდით მხარდაჭერის სამსახურს. გმადლობთ"
+    banners:
+      index:
+        title: ბანერები
+        create: ბანერის შექმნა
+        edit: ბანერის რედაქტირება
+        delete: ბანერის წაშლა
+        filters:
+          all: ყველა
+          with_active: აქტიური
+          with_inactive: არააქტიური
+        preview: ესკიზი
+      banner:
+        sections_label: ის საქციები, სადაც ბანერი გამოჩნდება
+        sections:
+          homepage: მთვარი გვერდი
+          debates: დებატები
+          proposals: ინიციატივები
+          budgets: მონაწილეობითი ბიუჯეტირება
+          help_page: დახმარების გვერდი
+      edit:
+        editing: ბანერის რედაქტირება
+        form:
+          submit_button: ცვლილებების შენახვა
+      new:
+        creating: ბანერის შექმნა
+    activity:
+      show:
+        action: მოქმედება
+        actions:
+          block: დაბლოკილი
+          hide: დამალული
+          restore: აღდგენილი
+        by: მოდერატორი
+        content: შინაარსი
+        filter: ჩვენება
+        filters:
+          all: ყველა
+          on_comments: კომენტარები
+          on_debates: დებატები
+          on_proposals: ინიციატივები
+          on_users: მომხმარებლები
+          on_system_emails: სისტემური შეტყობინებები
+        title: მოდერატორის აქტივობა
+        type: ტიპი
+        no_activity: მოდერატორების აქტივობა არ მოიძებნა.
+    budgets:
+      index:
+        title: მონაწილეობითი ბიუჯეტები
+        new_link: ახალი ბიუჯეტის შექმნა
+        filter: ფილტრი
+        filters:
+          open: გახსნა
+    budget_headings:
+      no_headings: "სათაურები არ მოიძებნა."
+      amount:
+        one: "მოიძებნა 1 სათაური"
+        other: "მოიძებნა %{count} სათაური"
+      create:
+        notice: "სათაური წარმატებით შეიქმნა!"
+      update:
+        notice: "სათაური წარმატებით შეიცვალა"
+      destroy:
+        success_notice: "სათაური წარმატებით წაიშალა"
+        unable_notice: "ინვესტიციებთან დაკავშირებული სათაურის წაშლა შეუძლებელია"
