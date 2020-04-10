@@ -168,7 +168,7 @@ ka:
         heading_filter_all: ყველა რუბრიკა
         administrator_filter_all: ყველა ადმინისტრატორი
         valuator_filter_all: ყველა შემფასებელი
-        tags_filter_all: ყველა იარლიყი
+        tags_filter_all: ყველა ტეგი
         advanced_filters: დამატებითი ფილტრები
         placeholder: პროექტების ძებნა
         filters:
@@ -217,15 +217,63 @@ ka:
           incompatible: შეუთავსებელია
           price: ფასი
           author: ავტორი
+        cannot_calculate_winners: გამარჯვებულთა პროექტების გამოსათვლელად ბიუჯეტი უნდა დარჩეს "კენჭისყრის პროექტები", "ბიულეტენების განხილვა" ან "დასრულებული ბიუჯეტის" ფაზაზე
+        see_results: "შედეგების ნახვა"
+        milestone_tags_filter_all: "ყველა ეტაპის აღმნიშვნელი ტეგები"
+      show:
+        assigned_admin: გამოყოფილი ადმინისტრატორი
+        assigned_valuators: გამოყოფილი შემფასებლები
+        classification: კლასიფიკაცია
+        info: "%{budget_name} - ჯგუფი: %{group_name} - საინვესტიციო პროექტი %{id}"
+        edit: რედაქტირება
+        edit_classification: კლასიფიკაციის რედაქტირება
+        by: დალაგება
+        sent: გაგზავნილი
+        group: ჯგუფი
+        heading: რუბრიკა
+        dossier: დოსიე
+        edit_dossier: დოსიეს რედაქტირება
+        tags: ტეგები
+        undefined: განუსაზღვრელი
+        compatibility:
+          title: თავსებადობა
+          "true": შეუთავსებელია
+          "false": თავსებადია
+        selection:
+          title: შერჩევა
+        winner:
+          title: გამარჯვებული
+          "true": "დიახ"
+          "false": "არა"
+        valuator_groups: "შემფასებელთა ჯგუფები"
+        preview: ინვესტიციის ესკიზი
+      edit:
+        classification: კლასიფიკაცია
+        compatibility: თავსებადობა
+        selection: შერჩევა
+        assigned_valuators: შემფასებლები
+        select_heading: რუბრიკის შერჩევა
+        submit_button: განახლება
+        user_tags: მომხმარებლის მიერ გამოყოფილი ტეგები
+        tags_placeholder: "ჩაწერეთ სასურველი ტეგები და გამოყავით ერთმანეთისგან მძიმით (,)"
+        undefined: განუსაზღვრელი
+      search_unfeasible: ძებნა შეუძლებელია
     milestones:
       index:
+        table_id: "ID"
+        table_title: "სათაური"
+        table_description: "აღწერა"
+        table_publication_date: "გამოქვეყნების თარიღი"
+        table_status: სტატუსი
+        table_actions: "მოქმედებები"
+        delete: "ეტაპის წაშლა"
         no_milestones: "ეტაპები განსაზღვრული არ არის"
         image: "ფოტოსურათი"
         show_image: "ფოტოსურათის ჩვენება"
         documents: "დოკუმენტები"
         milestone: ეტაპი
         new_milestone: ახალი ეტაპის შექმნა
-        milestone_tags: ეტაპის ეტიკეტები
+        milestone_tags: ეტაპის აღმნიშვნელი ტეგები
       form:
         admin_statuses: სტატუსების მართვა
         no_statuses_defined: განსაზღვრული სტატუსები არ მოიძებნა
@@ -294,6 +342,14 @@ ka:
     hidden_comments:
       index:
         filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        hidden_debate: დამალული დებატები
+        hidden_proposal: დამალული ინიციატივა
+        title: დამალული კომენტარები
+        no_hidden_comments: დამალული კომენტარები არ მოიძებნა.
     dashboard:
       administrator_tasks:
         update:
