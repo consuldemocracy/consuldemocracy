@@ -210,6 +210,13 @@ ka:
           valuation_group: შემფასებელთა ჯგუფი
           geozone: მოქმედების სფერო
           feasibility: შერსულების შესაძლებლობა
+          valuation_finished: შეფასება დასრულდა
+          selected: შერჩეული
+          visible_to_valuators: შემფასებელთა ჩვენება
+          author_username: ავტორი მომხმარებლის სახელი
+          incompatible: შეუთავსებელია
+          price: ფასი
+          author: ავტორი
     milestones:
       index:
         no_milestones: "ეტაპები განსაზღვრული არ არის"
