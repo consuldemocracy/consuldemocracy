@@ -297,6 +297,7 @@ el:
       poll/shift:
         task: "Εργασία"
       signature_sheet:
+        title: "Τίτλος"
         signable_type: "Τύπος με δυνατότητα υπογραφής"
         signable_id: "ID με δυνατότητα υπογραφής "
         document_numbers: "Αριθμοί εγγράφων"
