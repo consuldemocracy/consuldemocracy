@@ -1,1 +1,7 @@
 ka:
+  admin:
+    header:
+      title: ადმინისტრირება
+    actions:
+      actions: მოქმედებები
+      confirm: დარწმუნებული ხართ?
