@@ -442,8 +442,43 @@ ka:
         short_description: მოკლე აღწერა
         description: აღწერა
         link: სხვა სერვერზე განთავსებულ მასალასთან წვდომის ბმული
+        request_to_administrators: რესურსის ადმინისტრატორებისგან მოთხოვნის ღილაკის ჩასმა რესურსში
+        day_offset: შექმნიდან რამდენი დღის შემდეგ გსურთ ინიციატივის გააქტიურება?
+        required_supports: რა რაოდენობის მხარდაჭერაა საჭირო ინიციატივის გასააქტიურებლად?
+        order: შეგიძლიათ მიუთითოთ პოზიცია, სადაც ეს მოქმედება სხვა მოქმედებათა ჩამონათვალში გამოჩნდება მომხმარებლისთვის
+        active: აქტიური
+        action_type: ტიპი
+        action_type_proposed_action: "სასურველი მოქმედება"
+        action_type_resource: "რესურსი"
+        published_proposal: "გამოქვეყნებული ინიციატივებისთვის?"
+      dashboard/administrator_task:
+        source: წყარო
+        user: შემსრულებელი
+      link:
+        label: სათაური
+        url: ბმული
+      valuator:
+        description: აღწერა
+        valuator_group_id: შემფასებელთა ჯგუფი
+        can_comment: შეეძლოს კომენტარების შექმნა
+        can_edit_dossier: შეეძლოს დოსიეების რედაქტირება
+      valuator_group:
+        name: "ჯგუფის დასახელება"
+      local_census_record:
+        document_type: დოკუმენტის ტიპი
+        document_number: დოკუმენტის ნომერი
+        date_of_birth: დაბადების თარიღი
+        postal_code: საფოსტო ინდექსი
     errors:
       models:
+        user:
+          attributes:
+            email:
+              password_already_set: "ამ მომხმარებელს უკვე აქვს პაროლი"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
         site_customization/image:
           attributes:
             image:
