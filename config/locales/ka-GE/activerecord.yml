@@ -527,9 +527,23 @@ ka:
           attributes:
             tag_list:
               less_than_or_equal_to: "იარლიყები უნდა იყოს არაუმეტეს %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "შეტყობინებათა შორის მოლოდინი მინიმუმ %{interval} დღეა"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "არ არის დამოწმებული აღწერის შედეგად"
+              already_voted: "უკვე მისცა ხმა ამ ინიციატივას"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "უნდა შეიცავდეს ასოებს, რიცხვებს, _ და -"
         site_customization/image:
           attributes:
             image:
+              image_width: "სიგანე უნდა იყოს %{required_width} პიქსელი"
               image_height: "სიმაღლე უნდა იყოს %{required_height} პიქსელი"
         comment:
           attributes:
