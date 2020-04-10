@@ -271,3 +271,76 @@ ka:
           secondary: "მიდმინარეობის ინდიკატორი %{title}-ის რედაქტირება"
       create:
         notice: "მიმდინარეობის ინდიკატორი წარმატებით შეიქმნა!"
+      update:
+        notice: "მიმდინარეობის ინდიკატორი წარმატებით განახლდა"
+      delete:
+        notice: "მიმდინარეობის ინდიკატორი წარმატებით წაიშალა"
+    comments:
+      index:
+        id: "ID"
+        content: "შინაარსი"
+        author: "ავტორი"
+        commentable_type: "ტიპი"
+        title: კომენტარები
+        no_comments: კომენტარები არ მოიძებნა.
+        table_link: "ბმული"
+    hidden_comments:
+      index:
+        filter: ფილტრი
+    dashboard:
+      administrator_tasks:
+        update:
+          success: დავალება აღინიშნა, როგორც შესრულებული.
+    debates:
+      index:
+        id: ID
+        author: ავტორი
+        title: დებატები
+        no_debates: დებატები არ მოიძებნა.
+    hidden_debates:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული დებატები
+        no_hidden_debates: დამალული დებატები არ მოიძებნა.
+    documents:
+      new:
+        title: "დოკუმენტის ატვირთვა"
+        submit_button: "ატვირთვა"
+      index:
+        new_link: "ახალი დოკუმენტის დამატება"
+        no_documents: "დოკუმენტები არ მოიძებნა."
+        title: "დოკუმენტები"
+        format: "ფორმატი"
+        size: "ზომა"
+        url: "ბმული (URL)"
+      create:
+        success_notice: "დოკუმენტი წარმატებით აიტვირთა"
+        unable_notice: "შეცდომა დოკუმენტის ატვირთვისას"
+      destroy:
+        success_notice: "დოკუმენტი წარმატებით წაიშალა"
+    hidden_users:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული მომხმარებლები
+        user: მომხმარებელი
+        no_hidden_users: დამალული მომხმარებლები არ მოიძებნა.
+      show:
+        email: "ელ.ფოსტა:"
+        hidden_at: "დამალვის თარიღი:"
+        registered_at: "რეგისტრაციის თარიღი:"
+        title: მომხმარებლის აქტივობა (%{user})
+    hidden_budget_investments:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
