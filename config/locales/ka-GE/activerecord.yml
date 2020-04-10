@@ -137,3 +137,7 @@ ka:
         currency_symbol: "ვალუტა"
       budget/translation:
         name: "სახელი"
+      budget/investment:
+        heading_id: "რუბრიკა"
+        title: "სათაური"
+        description: "აღწერა"
