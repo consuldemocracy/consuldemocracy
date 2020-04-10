@@ -1,1 +1,77 @@
 ka:
+  attributes:
+    geozone_id: "მოქმედების სფერო"
+    results_enabled: "შედეგების ჩვენება"
+    stats_enabled: "სტატისტიკის ჩვენება"
+    advanced_stats_enabled: "მოწინავე სტატისტიკის ჩვენება"
+  activerecord:
+    models:
+      budget:
+        one: "ბიუჯეტი"
+        other: "ბიუჯეტები"
+      budget/investment:
+        one: "ინვესტიცია"
+        other: "ინვესტიციები"
+      milestone:
+        one: "ეტაპი"
+        other: "ეტაპები"
+      progress_bar:
+        one: "მიმდინარეობის ინდიკატორი"
+        other: "მიმდინარეობის ინდიკატორები"
+      comment:
+        one: "კომენტარი"
+        other: "კომენტარები"
+      debate:
+        one: "დებატები"
+        other: "დებატები"
+      tag:
+        one: "ეტიკეტი"
+        other: "ეტიკეტები"
+      user:
+        one: "მომხმარებელი"
+        other: "მომხმარებლები"
+      moderator:
+        one: "მოდერატორი"
+        other: "მოდერატორები"
+      administrator:
+        one: "ადმინისტრატორი"
+        other: "ადმინისტრატორები"
+      valuator:
+        one: "შემფასებელი"
+        other: "შემფასებლები"
+      valuator_group:
+        one: "შემფასებელთა ჯგუფი"
+        other: "შემფასებელთა ჯგუფები"
+      manager:
+        one: "მენეჯერი"
+        other: "მენეჯერები"
+      newsletter:
+        one: "საინფორმაციო ბიულეტენი"
+        other: "საინფორმაციო ბიულეტენები"
+      vote:
+        one: "ხმა"
+        other: "ხმები"
+      organization:
+        one: "ორგანიზაცია"
+        other: "ორგანიზაციები"
+      poll/booth:
+        one: "კენჭისყრის კაბინა"
+        other: "კენჭისყრის კაბინები"
+      poll/officer:
+        one: "დამკვირვებელი"
+        other: "დამკვირვებლები"
+      poll/ballot_sheet:
+        one: საარჩევნო ბიულეტენი
+        other: საარჩევნო ბიულეტენები
+      proposal:
+        one: "მოქალაქის წინადადება"
+        other: "მოქალაქის წინადადებები"
+      site_customization/page:
+        one: პირადი გვერდი
+        other: პირადი გვერდები
+      site_customization/image:
+        one: პერსონალური სურათი
+        other: პერსონალური სურათები
+      site_customization/content_block:
+        one: პერსონალური შინაარსის ბლოკი
+        other: პერსონალური შინაარსის ბლოკები
