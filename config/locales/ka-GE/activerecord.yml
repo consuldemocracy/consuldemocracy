@@ -144,3 +144,58 @@ ka:
         external_url: "დამატებით დოკუმენტებზე გადასვლის ბმული"
         administrator_id: "ადმინისტრატორი"
         location: "დამატებითი ინფორმაცია ლოკაციაზე"
+        organization_name: "თუ ინიცირებას აკეთებთ კოლექტიურად/ორგანიზაციის, ან სხვა ადამაინების ჯგუფის სახელით, მიუთითეთ შესაბამისი დასახელება"
+        image: "ინიციატივის აღწერილობითი ფოტოსურათი"
+        image_title: "ფოტოსურათის დასახელება"
+        duration: "დროის ფარგლები"
+        feasibility_feasible: "განხორციელებადი"
+        feasibility_undecided: "განუსაზღვრელი"
+        feasibility_unfeasible: "შეუძლებელი"
+        incompatible: "შეუთავსებლად მონიშვნა"
+        milestone_tag_list: "მიმდინარე ეტაპის ეტიკეტები"
+        price_explanation: "ფასის განმარტება"
+        selected: "შერჩეულად მონიშვნა"
+        selected_true: "შერჩეული"
+        selected_false: "შერჩეული არ არის"
+        unfeasibility_explanation: "განხორციელების შესაძლებლობის განმარტება"
+        valuation_finished: "შეფასება დასრულებულია"
+        valuator_ids: "ჯგუფები"
+        valuation_tag_list: "ეტიკეტები"
+      budget/investment/translation:
+        title: "სათაური"
+        description: "აღწერა"
+      geozone:
+        name: სახელი
+        external_code: "გარე კოდი (სურვილისამებრ)"
+        census_code: "აღწერის კოდი (სურვილისამებრ)"
+        html_map_coordinates: "HTML <map> კოორდინატები (სურვილისამებრ)"
+      milestone:
+        status_id: "მიმდინარე სტატუსი (სურვილამებრ)"
+        title: "სათაური"
+        description: "აღწერა (სურვილამებრ, თუ სტატუსი მინიჭებულია)"
+        publication_date: "თარიღი"
+      milestone/translation:
+        description: "აღწერა"
+      milestone/status:
+        name: "სახელი"
+        description: "აღწერა (სურვილისამებრ)"
+      progress_bar:
+        kind: "ტიპი"
+        title: "სათაური"
+        percentage: "მიმდინარე პროცესი"
+      progress_bar/kind:
+        primary: "თავდაპირველი"
+        secondary: "მეორეხარისხოვანი"
+      budget/group:
+        max_votable_headings: "სათაურების მაქსიმალური რაოდენობა, რომელშიც მომხმარებელს შეუძლია ხმა მისცეს"
+      budget/group/translation:
+        name: "ჯგუფის დასახელება"
+      budget/heading:
+        allow_custom_content: "შინაარსის ბლოკის გამოჩენა"
+        latitude: "განედი (სურვილისამებრ)"
+        longitude: "გრძედი (სურვილისამებრ)"
+        name: "სათაურის დასახელება"
+        price: "თანხის მოცულობა"
+        population: "მოსახლეობა (სურვილისამებრ)"
+      budget/heading/translation:
+        name: "სათაურის დასახელება"
