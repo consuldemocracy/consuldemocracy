@@ -244,18 +244,20 @@ describe "Admin collaborative legislation" do
       visit edit_admin_legislation_process_path(process)
       within(".admin-content") { click_link "Proposals" }
 
-      fill_in "Categories", with: "recycling,bicycles"
+      fill_in "Categories", with: "recycling,bicycles,pollution"
       click_button "Save changes"
 
       visit admin_legislation_process_proposals_path(process)
-      expect(page).to have_field("Categories", with: "bicycles, recycling")
+
+      expect(page).to have_field("Categories", with: "bicycles, pollution, recycling")
 
       within(".admin-content") { click_link "Information" }
       fill_in "Summary", with: "Summarizing the process"
       click_button "Save changes"
 
       visit admin_legislation_process_proposals_path(process)
-      expect(page).to have_field("Categories", with: "bicycles, recycling")
+
+      expect(page).to have_field("Categories", with: "bicycles, pollution, recycling")
     end
 
     scenario "Edit milestones summary", :js do

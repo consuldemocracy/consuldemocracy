@@ -3,7 +3,7 @@
   <%= render "shared/errors", resource: @process %>
 
   <div class="small-12 medium-8 column">
-    <%= f.text_field :custom_list, value: @process.tag_list_on(:customs).to_s,
+    <%= f.text_field :custom_list, value: @process.tag_list_on(:customs).sort.join(", "),
                       label: t("admin.legislation.proposals.form.custom_categories"),
                       hint: t("admin.legislation.proposals.form.custom_categories_description"),
                       placeholder: t("admin.legislation.proposals.form.custom_categories_placeholder"),
