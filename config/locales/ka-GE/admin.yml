@@ -461,3 +461,49 @@ ka:
         subnav:
           info: ინფორმაცია
           homepage: მთვარი გვერდი
+          draft_versions: პროექტის შედგენა
+          questions: დებატები
+          proposals: ინიციატივები
+          milestones: მომდევნო
+      homepage:
+        edit:
+          title: საწყისი გვერდის კონფიგურაცია
+      proposals:
+        index:
+          title: სათაური
+          back: უკან
+          id: Id
+          supports: მხარდამჭერთა საერთო რაოდენობა
+        form:
+          custom_categories: კატეგორიები
+      draft_versions:
+        create:
+          notice: 'პროექტი წარმატებით შეიქმნა. <a href="%{link}">ნახვა</a>'
+          error: პროექტის შექმნა ვერ მოხერხდა
+        update:
+          notice: 'პროექტი წარმატებით განახლდა. <a href="%{link}">ნახვა</a>'
+          error: პროექტის განახლება ვერ მოხერხდა
+        destroy:
+          notice: პროექტი წარმატებით წაიშალა
+        edit:
+          back: უკან
+          submit_button: ცვლილებების შენახვა
+        form:
+          launch_text_editor: ტექსტის რედაქტორის გაშვება
+          close_text_editor: ტექსტის რედაქტორის დახურვა
+          hints:
+            status:
+              published: ნახვა შეუძლია ყველას
+        index:
+          title: კანონპროექტები
+          create: ვერსიის შექმნა
+          delete: წაშლა
+          preview: ესკიზი
+        new:
+          back: უკან
+          title: ახალი ვერსიის შექმნა
+          submit_button: ვერსიის შექმნა
+        table:
+          title: სათაური
+          created_at: შექმნის თარიღი
+          comments: კომენტარები
