@@ -111,3 +111,29 @@ ka:
       proposal_notification:
         one: "შეტყობინება ინიციატივის თაობაზე"
         other: "შეტყობინებები ინიციატივის თაობაზე"
+      dashboard/action:
+        one: მოქმედება ინიციატივის დაფაზე
+        other: მოქმედებები ინიციატივის დაფაზე
+      dashboard/administrator_task:
+        one: ამოცანა
+        other: ამოცანები
+      link:
+        one: ბმული
+        other: ბმულები
+      local_census_record:
+        one: ადგილობრივი მოსახლეობის აღწერის ჩანაწერი
+        other: ადგილობრივი მოსახლეობის აღწერის ჩანაწერები
+    attributes:
+      budget:
+        name: "სახელი"
+        description_accepting: "აღწერა მიღების ფაზის განმავლობაში"
+        description_reviewing: "აღწერა განხილვის ფაზის განმავლობაში"
+        description_selecting: "აღწერა შერჩევის ფაზის განმავლობაში"
+        description_valuating: "აღწერა შეფასების ფაზის განმავლობაში"
+        description_balloting: "აღწერა კენჭისყრის ფაზის განმავლობაში"
+        description_reviewing_ballots: "აღწერა საარჩევნო ბიულეტენების განხილვის ფაზის დროს"
+        description_finished: "აღწერა ბიუჯეტის დამტკიცებისას"
+        phase: "ფაზა"
+        currency_symbol: "ვალუტა"
+      budget/translation:
+        name: "სახელი"
