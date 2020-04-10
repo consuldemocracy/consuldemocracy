@@ -44,3 +44,4 @@ ka:
           attributes:
             file:
               extension: "მოცემული ფაილის ფორმატი არასწორია. ფაილის ნებადართული ფორმატია: %{valid_extensions}."
+              headers: "შეცდომა ფაილის სათაურში. დასაშვები სახელებია: %{required_headers}."
