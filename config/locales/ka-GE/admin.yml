@@ -181,3 +181,84 @@ ka:
           selected: შერჩეული
           undecided: გადასაწყვეტია
           unfeasible: შეუძლებელი
+          min_total_supports: მხარდამჭერთა მინიმალური რაოდენობა
+          max_total_supports: მხარდამჭერთა მაქსიმალური რაოდენობა
+          winners: გამარჯვებულები
+          one_filter: "აქტიური ფილტრები: <b><em>%{filter}</em></b>"
+          two_filters: "აქტიური ფილტრები: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: ფილტრი
+        download_current_selection: "შერჩეულების ჩამოტვირთვა"
+        no_budget_investments: "საინვესტიციო პროექტები არ მოიძებნა."
+        title: საინვესტიციო პროექტები
+        columns: სვეტები
+        assigned_admin: გამოყოფილი ადმინისტრატორი
+        no_admin_assigned: ადმინისტარტორი შერჩეული არ არის
+        no_valuators_assigned: შემფასებელი შერჩეული არ არის
+        feasibility:
+          feasible: "განხორციელებადი"
+          unfeasible: "შეუძლებელი"
+          undecided: "გადასაწყვეტია"
+        selected: "შერჩეული"
+        select: "შერჩევა"
+        list:
+          id: ID
+          title: სათაური
+          supports: მხარდამჭერები
+          admin: ადმინისტრატორი
+          valuator: შემფასებელი
+          valuation_group: შემფასებელთა ჯგუფი
+          geozone: მოქმედების სფერო
+          feasibility: შერსულების შესაძლებლობა
+    milestones:
+      index:
+        no_milestones: "ეტაპები განსაზღვრული არ არის"
+        image: "ფოტოსურათი"
+        show_image: "ფოტოსურათის ჩვენება"
+        documents: "დოკუმენტები"
+        milestone: ეტაპი
+        new_milestone: ახალი ეტაპის შექმნა
+        milestone_tags: ეტაპის ეტიკეტები
+      form:
+        admin_statuses: სტატუსების მართვა
+        no_statuses_defined: განსაზღვრული სტატუსები არ მოიძებნა
+      new:
+        creating: ახალი ეტაპის შექმნა
+      edit:
+        title: ეტაპის რედაქტირება
+      create:
+        notice: ახალი ეტაპი წარმატებით შეიქმნა!
+      update:
+        notice: ეტაპი წარმატებით შეიცვალა
+      delete:
+        notice: ეტაპი წარმატებით წაიშალა
+    statuses:
+      index:
+        title: ეტაპის სტატუსები
+        empty_statuses: ეტაპის სტატუსები არ მოიძებნა
+        new_status: ეტაპის ახალი სტატუსის შექმნა
+        table_name: სახელი
+        table_description: აღწერა
+        table_actions: მოქმედებები
+        delete: წაშლა
+        edit: რედაქტირება
+      edit:
+        title: ეტაპის სტატუსის რედაქტირება
+      update:
+        notice: ეტაპის სტატუსი წარმატებით შეიცვალა
+      new:
+        title: ეტაპის სტატუსის შექმნა
+      create:
+        notice: ეტაპის სტატუსი წარმატებით შეიქმნა
+      delete:
+        notice: ეტაპის სტატუსი წარმატებით წაიშალა
+    progress_bars:
+      manage: "მიმდინარეობის ინდიკატორების მართვა"
+      index:
+        title: "მიმდინარეობის ინდიკატორები"
+        no_progress_bars: "მიმდინარეობის ინდიკატორები არ მოიძებნა"
+        new_progress_bar: "მიმდინარეობის ახალი ინდიკატორის შექმნა"
+        primary: "მიმდინარეობის პირვანდელი ინდიკატორი"
+        table_id: "ID"
+        table_kind: "ტიპი"
+        table_title: "სათაური"
