@@ -16,3 +16,31 @@ ka:
           postal_code: "საფოსტო ინდექსი"
         sms:
           phone: "ტელეფონი"
+          confirmation_code: "დადასტურების კოდი"
+        email:
+          recipient: "ელ.ფოსტა"
+      verification/letter:
+        email: "ელ.ფოსტა"
+        password: "პაროლი"
+        verification_code: "დადასტურების კოდი"
+      verification/management/document:
+        document_type: "დოკუმენტის ტიპი:"
+        document_number: "დოკუმენტის ნომერი"
+      verification/residence:
+        date_of_birth: "დაბადების თარიღი"
+        document_type: "დოკუმენტის ტიპი"
+        postal_code: "საფოსტო ინდექსი"
+      verification/sms:
+        confirmation_code: "აკრიფეთ მობილურ ტელეფონზე მიღებული კოდი"
+      officing/residence:
+        document_type: "დოკუმენტის ტიპი"
+        document_number: "დოკუმენტის ნომერი (მათ შორის, ასოებიც)"
+        year_of_birth: "დაბადების წელი"
+      local_census_records/import:
+        file: ფაილი
+    errors:
+      models:
+        local_census_records/import:
+          attributes:
+            file:
+              extension: "მოცემული ფაილის ფორმატი არასწორია. ფაილის ნებადართული ფორმატია: %{valid_extensions}."
