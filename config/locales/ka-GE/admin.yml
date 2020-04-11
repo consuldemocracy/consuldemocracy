@@ -1248,8 +1248,63 @@ ka:
             update: რუქის კონფიგურაცია წარმატებით განახლდა.
           form:
             submit: განახლება
+          how_to_enable: 'იმისათვის, რომ მომხმარებლებმა რუქის ნახვა შეძლონ, ჩართეთ "ინიციატივათა და საბიუჯეტო ინვესტიციების გეოლოკაცია" "ფუნქციების" განყოფილებიდან.'
+        dashboard:
+          title: ინიციატივათა მართვის დაფა
+        remote_census:
+          title: დისტანციური აღწერის კონფიგურაცია
+          how_to_enable: 'დისტანციური აღწერის (SOAP) კონფიგურირებისთვის ჩართული უნდა იყოს "დისტანციურ აღწერასთან (SOAP) კავშირის კონფიგურაცია" ფუნქციების განყოფილებიდან.'
+      remote_census_general_name: ზოგადი ინფორმაცია
+      remote_census_request_name: მონაცემთა მოთხოვნა
+      remote_census_response_name: პასუხად მიღებული მონაცემები
+      setting: ფუნქცია
+      setting_actions: მოქმედებები
+      setting_name: პარამეტრები
+      setting_status: სტატუსი
+      setting_value: ღირებულება
+      no_description: "აღწერა არ არის"
+    shared:
+      true_value: "დიახ"
+      false_value: "არა"
+      booths_search:
+        button: ძებნა
+        placeholder: კაბინის ძებნა დასახელებით, ან ლოკაციით
+      poll_officers_search:
+        button: ძებნა
+        placeholder: დამკვირვებლის ძებნა
+      poll_questions_search:
+        button: ძებნა
+        placeholder: გამოკითხვის კითხვების ძიება
+      proposal_search:
+        button: ძებნა
+        placeholder: ინიციატივათა ძიება დასახელებით, კოდით, აღწერით ან შეკითხვით
+      debate_search:
+        button: ძებნა
+        placeholder: დებატების ძიება სათაურით ან აღწერით
+      user_search:
+        button: ძებნა
+        placeholder: მომხმარებლის ძებნა სახელით ან ელ.ფოსტის მეშვეობით
+      search_results: "ძებნის შედეგები"
+      no_search_results: "შედეგები არ მოიძებნა."
+      actions: მოქმედებები
+      title: სათაური
+      description: აღწერა
+      image: ფოტოსურათი
+      show_image: ფოტოსურათის ჩვენება
+      moderated_content: "მონიშნეთ მოდერატორის მიერ შემოწმებული ინფორმაცია და დაადასტურეთ, რომ მოდერაციის პროცესი სწორად წარიმართა."
+      view: ნახვა
+      proposal: ინიციატივა
+      author: ავტორი
+      content: შინაარსი
+      created_at: შექმნის თარიღი
+      delete: წაშლა
+      color_help: ჰექსადეციალური ფორმატი
+      show_results_and_stats: "შედეგებისა და სტატისტიკის ჩვენება"
+      results_and_stats_reminder: "ამ მოსანიშნების მონიშვნით შედეგები და/ან სტატისტიკა გახდება სააჯრო და ყველას შეეძლება მათი ნახვა."
     geozones:
       index:
+        title: გეოგრაფიული ზონა
+        create: გეოგრაფიული ზონის შექმნა
         edit: რედაქტირება
         delete: წაშლა
       geozone:
@@ -1286,3 +1341,11 @@ ka:
           required_fields_note: "მომხმარებლის დასადასტურებლად საჭიროა: დოკუმენტის ნომერი"
           date_of_birth_note: ", დაბადების თარიღი (dd/mm/yyyy)"
           postal_code_note: " და საფოსტო ინდექსი"
+    stats:
+      budget_supporting:
+        users: მომხმარებლები
+        vote_count: ხმები
+        participant_count: მონაწილეები
+      direct_messages:
+        title: პირდაპირი გზავნილები
+        total: სულ
