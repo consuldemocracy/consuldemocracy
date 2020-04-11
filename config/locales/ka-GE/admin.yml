@@ -730,7 +730,27 @@ ka:
       proposal_authors: ინიციატივის ავტორები
       investment_authors: მიმდინარე ბიუჯეტში შეტანილი ინვესტიციების ავტორები
       feasible_and_undecided_investment_authors: "ზოგიერთ იმ ინვესტიციათა ავტორები, რომელთა ინვესტიციები შეტანილია მიმდინარე ბიუჯეტში და არ შეესაბამება: [შეფასების შედეგად მიჩნეულია არაგანხორციელებადად]"
+      selected_investment_authors: მიმდინარე ბიუჯეტში ჩათვლილი ინვესტიციების ავტორები
+      winner_investment_authors: მიმდინარე ბიუჯეტში ჩათვლილი გამარჯვებული ინვესტიციების ავტორები
+      not_supported_on_current_budget: ის მომხმარებლები, რომლებმაც მხარი არ დაუჭირეს მიმდინარე ბიუჯეტში შეტანილ ინვესტიციებს
+      invalid_recipients_segment: "მიმღებ მომხმარებელთა სეგმენტი არასწორია"
     newsletters:
+      create_success: საინფორმაციო ბიულეტენი წარმატებით შეიქმნა
+      update_success: საინფორმაციო ბიულეტენი წარმატებით დარედაქტირდა
+      send_success: საინფორმაციო ბიულეტენი წარმატებით გაიგზავნა
+      delete_success: საინფორმაციო ბიულეტენი წარმატებით წაიშალა
+      index:
+        title: საინფორმაციო ბიულეტენები
+        new_newsletter: ახალი საინფორმაციო ბიულეტენი
+        subject: თემა
+        segment_recipient: მიმღებები
+        sent: გაგზავნილი
+        actions: მოქმედებები
+        draft: მონახაზი
+        edit: რედაქტირება
+        delete: წაშლა
+        preview: ესკიზი
+        empty_newsletters: საინფორმაციო ბიულეტენები არ მოიძებნა
       new:
         title: ახალი საინფორმაციო ბიულეტენი
         header_footer_help_text: "თითოეული ელ. გზავნილის ზედა და ქვედა პანელები იდენტურია, მათი შეცვლა შეგიძლიათ <code>app/views/layouts/mailer_header</code> და <code>app/views/layouts/mailer_footer</code>-დან.<br>ზედა პანელში ჩასმული სურათის შეცვლა შესაძლებელია შემდეგ ბმულზე: %{link}."
@@ -884,6 +904,26 @@ ka:
         no_shifts: "ამ კაბინისთვის გამოყოფილი ცვლა არ მოიძებნა"
         officer: "ოფიცერი"
         remove_shift: "წაშლა"
+    booth_assignments:
+      manage:
+        status:
+          assign_status: სტატუსის მინიჭება
+          assigned: მინიჭებულია
+          unassigned: სტატუსი მოხსნილია
+        actions:
+          assign: კაბინის გამოყოფა
+          unassign: კაბინის ჩახსნა
+    poll_booth_assignments:
+      alert:
+        shifts: "ამ კაბინასთან დაკავშირებულია ცვლები. მიმაგრებული კაბინის წაშლით ავტომატურად წაიშლება ოფიცერთა ცვლებიც. გავაგრძელოთ?"
+      show:
+        location: "მდებარეობა"
+        officers: "დამკვირვებლები"
+        officers_list: "ამ კაბინაზე მიმაგრებული დამკვირვებლების სია"
+        no_officers: "ამ კაბინაზე მიმაგრებული დამკვირვებლები არ მოიძებნა"
+        recounts: "გადათვლა"
+        recounts_list: "ამ კაბინაზე მიმაგრებულთა სიის გადათვლა"
+        results: "შედეგები"
     polls:
       edit:
         title: "გამოკითხვის რედაქტირება"
