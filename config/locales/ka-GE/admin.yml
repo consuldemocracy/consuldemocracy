@@ -1467,6 +1467,9 @@ ka:
           link_url: ბმულის მისამართი (URL)
     homepage:
       title: მთვარი გვერდი
+      cards_title: ბარათები
+      create_card: ბარათის შექმნა
+      no_cards: ბარათები არ მოიძებნა.
       cards:
         title: სათაური
         description: აღწერა
@@ -1491,6 +1494,12 @@ ka:
       changes: "ცვლილებების სია"
       id: "ID"
       field: "ველი"
+      new_value: "ახალი ღირებულება"
+      old_value: "ძველი ღირებულება"
+      edited_at: "რედაქტირების თარიღი"
+      edited_by: "რედაქტორი"
+      actions: "მოქმედებები"
+      empty: "ცვლილებები არ მოიძებნა"
     local_census_records:
       index:
         date_of_birth: დაბადების თარიღი
