@@ -1,7 +1,7 @@
 ka:
   admin:
     header:
-      title: ადმინისტრირება
+      title: ადმინისტრაცია
     actions:
       actions: მოქმედებები
       confirm: დარწმუნებული ხართ?
@@ -1411,3 +1411,102 @@ ka:
       direct_messages:
         title: პირდაპირი გზავნილები
         total: სულ
+        users_who_have_sent_message: ის მომხმარებლები, რომლებმაც პირადი შეტყობინებები გააგზავნეს
+      proposal_notifications:
+        title: შეტყობინებები ინიციატივის თაობაზე
+        total: სულ
+        proposals_with_notifications: შეტყობინების მქონე ინიციატივები
+        not_available: "ინიციატივა ხელმისაწვდომი არ არის"
+      polls:
+        title: გამოკითხვის სტატისტიკა
+        all: გამოკითხვები
+        web_participants: ქსელის წევრები
+        total_participants: მონაწილეთა საერთო ჯამი
+        poll_questions: "შეკითხვები გამოკითხვიდან: %{poll}"
+        table:
+          poll_name: გამოკითხვა
+          question_name: კითხვა
+          origin_web: ქსელის წევრები
+          origin_total: მონაწილეთა საერთო ჯამი
+    tags:
+      create: თემის შექმნა
+      destroy: თემის წაშლა
+      index:
+        add_tag: ახალი საინიციატივო თემის დამატება
+        title: ინიციატივასთან დაკავშირებული თემები
+        topic: საკითხი
+        help: "როდესაც მომხმარებელი ქმნის ახალ ინიციატივას, აღნიშნული თემები გამოჩნდება, როგორც ძირითადი ტეგები."
+    users:
+      columns:
+        name: სახელი
+        email: ელ.ფოსტა
+        document_number: დოკუმენტის ნომერი
+        roles: ფუნქციები
+        verification_level: ვერიფიკაციის დონე
+      index:
+        title: მომხმარებელი
+        no_users: მომხმარებლები არ მოიძებნა.
+      search:
+        placeholder: მომხმარებლის ძებნა ელ. ფოსტის, სახელის ან დოკუმენტის ნომრის მიხედვით
+        search: ძებნა
+    verifications:
+      index:
+        phone_not_given: ტელეფონი მითითებული არ არის
+        sms_code_not_confirmed: არ არის დადასტურებული სმს კოდით
+        title: ნაწილობრივ ვერიფიცირებული
+    site_customization:
+      content_blocks:
+        information: ინფორმაცია შინაარსის ბლოკებზე
+        content_block:
+          name: სახელი
+          names:
+            top_links: მოწინავე ბმულები
+            footer: ქვედა პანელი
+      pages:
+        cards:
+          link_url: ბმულის მისამართი (URL)
+    homepage:
+      title: მთვარი გვერდი
+      cards:
+        title: სათაური
+        description: აღწერა
+        link_text: ბმულის დასახელება
+        link_url: ბმულის მისამართი (URL)
+      feeds:
+        proposals: ინიციატივები
+        debates: დებატები
+        processes: პროცესები
+      new:
+        header_title: ახალი ზედა პანელი
+        submit_header: ზედა პანელის შექმნა
+        card_title: ახალი ბარათი
+        submit_card: ბარათის შექმნა
+      edit:
+        header_title: პანელის რედაქტირება
+        submit_header: პანელის დამახსოვრება
+        card_title: ბარათის რედაქტირება
+        submit_card: ბარათის დამახსოვრება
+    audits:
+      title: "ცვლილებების ისტორია"
+      changes: "ცვლილებების სია"
+      id: "ID"
+      field: "ველი"
+    local_census_records:
+      index:
+        date_of_birth: დაბადების თარიღი
+        postal_code: საფოსტო ინდექსი
+        search:
+          placeholder: ძებნა დოკუმენტის ნომრის მიხედვით
+          search: ძებნა
+        import: CSV-ის ატვირთვა
+      new:
+        creating: ახალი ადგილობრივი აღწერის ჩანაწერის შექმნა
+      create:
+        notice: ჩანაწერი წარმატებით შეიქმნა!
+      imports:
+        show:
+          import: ხელახლა ატვირთვა
+          errored: შეცდომები
+          created: შექმნილი ჩანაწერები
+        local_census_records:
+          no_records_found: ჩანაწერები არ მოიძებნა.
