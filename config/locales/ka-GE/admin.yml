@@ -463,8 +463,39 @@ ka:
           all: ყველა
           with_confirmed_hide: დადასტურებულია
           without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული საბიუჯეტო ინვესტიციები
+        no_hidden_budget_investments: დამალული საბიუჯეტო ინვესტიციები არ მოიძებნა
     legislation:
       processes:
+        create:
+          notice: 'პროცესი წარმატებით შეიქმნა. <a href="%{link}">ნახვა</a>'
+          error: პროცესის შექმნა ვერ მოხერხდა
+        update:
+          notice: 'პროცესი წარმატებით განახლდა. <a href="%{link}">ნახვა</a>'
+          error: პროცესის განახლება ვერ მოხერხდა
+        destroy:
+          notice: პროცესი წარმატებით წაიშალა
+        edit:
+          back: უკან
+          submit_button: ცვლილებების შენახვა
+        form:
+          enabled: აქტიურია
+          process: პროცესი
+          debate_phase: დებატების ფაზა
+          draft_phase: პროექტის ფაზა
+          draft_phase_description: თუ ეს ფაზა აქტიურია, პროცესი არ გამოჩნდება პროცესების საძიებელში. ჩართეთ პროექტის ესკიზი და შექმენით კონტენტი დაწყებამდე.
+          allegations_phase: კომენტარების ფაზა
+          proposals_phase: ინიციატივების ფაზა
+          use_markdown: ტექსტის ფორმატირებისთვის გამოიყენეთ შემცირების ღილაკი
+          title_placeholder: პროცესის დასახელება
+          summary_placeholder: აღწერის მოკლე შინაარსი
+          description_placeholder: პროცესის აღწერის დამატება
+          additional_info_placeholder: დაამატეთ დამატებითი მნიშვნელოვანი ინფორმაცია
+          homepage_description: განმარტეთ პროცესის შინაარსი
+          banner_title: სათაურების ფერები
+        index:
+          create: ახალი პროცესი
+          delete: წაშლა
         process:
           title: პროცესი
           comments: კომენტარები
