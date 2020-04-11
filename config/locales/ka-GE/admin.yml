@@ -562,6 +562,9 @@ ka:
             status:
               draft: ნახეთ, როგორც ადმინი. ხელმისაწვდომი იქნება მხოლოდ თქვენთვის
               published: ნახვა შეუძლია ყველას
+          title_placeholder: შეიყვანეთ პროექტის დასახელება
+          changelog_placeholder: დაამატეთ ძირითადი ცვლილებები წინა ვერსიიდან
+          body_placeholder: შეიყვანეთ ტექსტის მონახაზი
         index:
           title: კანონპროექტები
           create: ვერსიის შექმნა
@@ -575,6 +578,28 @@ ka:
           title: სათაური
           created_at: შექმნის თარიღი
           comments: კომენტარები
+          final_version: საბოლოო ვერსია
+          status: სტატუსი
+      questions:
+        create:
+          notice: 'კითხვა წარმატებით შეიქმნა. <a href="%{link}">ნახვა</a>'
+          error: კითხვის შექმნა ვერ მოხერხდა
+        update:
+          notice: 'კითხვა წარმატებით დარედაქტირდა. <a href="%{link}">ნახვა</a>'
+          error: კითხვის რედაქტირება ვერ მოხერხდა
+        destroy:
+          notice: კითხვა წარმატებით წაიშალა
+        edit:
+          back: უკან
+          title: "\"%{question_title}\"-ის რედაქტირება"
+          submit_button: ცვლილებების შენახვა
+        form:
+          add_option: შესაძლო ვარიანტის დამატება
+          title_placeholder: კითხვის დამატება
+          value_placeholder: დაამატეთ დახურული პასუხი
+          question_options: "შესაძლო პასუხები (სურვილისამებრ, ავტომატურად მონიშნულია ღია პასუხები)"
+        index:
+          back: უკან
     menu:
       geozones: გეოგრაფიული ზონების მართვა
       hidden_comments: დამალული კომენტარები
