@@ -610,3 +610,25 @@ ka:
           polls: "გამოკითხვები"
           layouts: "განლაგება"
           mailers: "ელ.ფოსტა"
+          management: "მენეჯმენტი"
+          welcome: "მისალმება"
+        buttons:
+          save: "დამახსოვრება"
+          content_block:
+            update: "ბლოკის განახლება"
+      title_moderated_content: შემოწმებული შინაარსი
+      title_profiles: პროფილები
+      title_settings: პარამეტრები
+      title_site_customization: საიტის შინაარსი
+      title_booths: ხმის მიცემის კაბინები
+      legislation: ერთობლივი საკანონმდებლო ინიციატივა
+      users: მომხმარებლები
+    newsletters:
+      new:
+        title: ახალი საინფორმაციო ბიულეტენი
+        image_link: "პერსონალური სურათები"
+      edit:
+        title: საინფორმაციო ბიულეტენის რედაქტირება
+      show:
+        title: საინფორმაციო ბიულეტენის ესკიზი
+        send: გაგზავნა
