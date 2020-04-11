@@ -641,3 +641,40 @@ ka:
         segment_recipient: მიმღებები
         from: ელ.ფოსტის მისამართი, რომელიც გამოჩნდება საინფორმაციო ბიულეტენების გაგზავნის დროს
         body: ელ.ფოსტის გზავნილის შინაარსი
+        body_help_text: მომხმარებლები თქვენს ელ. ფოსტას შემდეგნაირად დაინახავენ
+        send_alert: დარწმუნებული ხართ, რომ გსურთ ამ შეტყობინების %{n} მომხმარებელტან გაგზავნა?
+    admin_notifications:
+      create_success: შეტყობინება წარმატებით შეიქმნა
+      update_success: შეტყობინება წარმატებით განახლდა
+      send_success: შეტყობინება წარმატებით გაიგზავნა
+      delete_success: შეტყობინება წარმატებით წაიშალა
+      index:
+        section_title: შეტყობინებები
+        new_notification: ახალი შეტყობინება
+        title: სათაური
+        segment_recipient: მიმღებები
+        sent: გაიგზავნა
+        actions: მოქმედებები
+        draft: მონახაზი
+        edit: რედაქტირება
+        delete: წაშლა
+        preview: ესკიზი
+        view: ნახვა
+        empty_notifications: შეტყობინებები არ მოიძებნა
+      new:
+        section_title: ახალი შეტყობინება
+        submit_button: შეტყობინების შექმნა
+      edit:
+        section_title: შეტყობინების რედაქტირება
+        submit_button: შეტყობინების განახლება
+      show:
+        section_title: შეტყობინების ესკიზი
+        send: შეტყობინების გაგზავნა
+        will_get_notified: (შეტყობინება გაეგზავნება %{n} მომხმარებელს)
+        got_notified: (შეტყობინება გაეგზავნა %{n} მომხმარებელს)
+        sent_at: გაგზავნის თარიღი
+        title: სათაური
+        body: ტექსტი
+        link: ბმული
+        segment_recipient: მიმღებები
+        preview_guide: "მომხმარებლები თქვენს შეტყობინებას შემდეგნაირად დაინახავენ:"
