@@ -1040,6 +1040,57 @@ ka:
         no_questions: "შეკითხვები არ მოიძებნა."
         filter_poll: გამოკითხვის მიხედვით გაფილტვრა
         select_poll: გამოკითხვის შერჩევა
+        questions_tab: "კითხვები"
+        successful_proposals_tab: "წარმატებული ინიციატივები"
+        create_question: "შეკითხვის შექმნა"
+        table_proposal: "ინიციატივა"
+        table_question: "კითხვა"
+        table_poll: "გამოკითხვა"
+        poll_not_assigned: "გამოკითხვა არ არის გამოყოფილი"
+      edit:
+        title: "შეკითხვის რედაქტირება"
+      new:
+        title: "შეკითხვის შექმნა გამოკითხვისთვის %{poll}"
+        title_proposal: "შეკითხვის შექმნა"
+      answers:
+        images:
+          add_image: "ფოტოსურათის დამატება"
+          save_image: "ფოტოსურათის შენახვა"
+      show:
+        proposal: პირვანდელი ინიციატივა
+        author: ავტორი
+        question: კითხვა
+        edit_question: შეკითხვის რედაქტირება
+        valid_answers: მოქმედი პასუხები
+        add_answer: პასუხის დამატება
+        video_url: სხვა სერვერზე განთავსებული ვიდეო
+        answers:
+          title: პასუხი
+          description: აღწერა
+          videos: ვიდეოები
+          video_list: ვიდეოების სია
+          images: ფოტოსურათები
+          images_list: ფოტოსურათების სია
+          documents: დოკუმენტები
+          documents_list: დოკუმენტების სია
+          document_title: სათაური
+          document_actions: მოქმედებები
+    answers:
+      new:
+        title: ახალი პასუხი
+      show:
+        title: სათაური
+        description: აღწერა
+        images: ფოტოსურათები
+        images_list: ფოტოსურათების სია
+        edit: პასუხის რედაქტირება
+      edit:
+        title: პასუხის რედაქტირება
+      videos:
+        index:
+          title: ვიდეოები
+          add_video: ვიდეოს დამატება
+          video_title: სათაური
     results:
       index:
         title: "შედეგები"
@@ -1182,3 +1233,15 @@ ka:
       geozone:
         name: სახელი
         external_code: გარეშე კოდი
+        census_code: აღწერის კოდი
+        code_help: აღწერის API-ში ინიცირებული გეოგრ. ზონის პასუხის კოდი
+        coordinates: კოორდინატები
+        coordinates_help: კოორდინატები, რომელთა საშუალებითაც HTML რუქაზე გენერირდება გეოგრ. ტერიტორია, რომელიც ირეაგირებს შეხებაზე
+      edit:
+        form:
+          submit_button: ცვლილებების შენახვა
+        editing: გეოგრაფიული ზონის რედაქტირება
+        back: უკან დაბრუნება
+      new:
+        back: უკან დაბრუნება
+        creating: უბნის შექმნა
