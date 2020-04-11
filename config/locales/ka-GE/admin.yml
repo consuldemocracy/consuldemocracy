@@ -1372,7 +1372,39 @@ ka:
           proposals: ინიციატივები
           budgets: ღია ბიუჯეტები
           budget_investments: საინვესტიციო პროექტები
+          unverified_users: გადაუმოწმებელი მომხმარებლები
+          user_level_three: მე-3 დონის მომხმარებლები
+          user_level_two: მე-2 დონის მომხმარებლები
+          users: სულ
+          verified_users: გადამოწმებული მომხმარებლები
+          verified_users_who_didnt_vote_proposals: გადამოწმებული მომხმარებლები, რომლებმაც ხმა არ მისცეს ინიციატივებს
+          visits: ვიზიტები
+          votes: ხმების საერთო რაოდენობა
+        budgets_title: მონაწილეობითი ბიუჯეტირება
+        participatory_budgets: მონაწილეობითი ბიუჯეტები
+        direct_messages: პირდაპირი გზავნილები
+        proposal_notifications: შეტყობინებები ინიციატივის თაობაზე
+        incomplete_verifications: ნაწილობრივ ვერიფიცირებული
+        polls: გამოკითხვები
+      graph:
+        debate_created: დებატები
+        visit: ვიზიტები
+        level_2_user: მე-2 დონის მომხმარებლები
+        proposal_created: მოქალაქის წინადადებები
+      budgets:
+        no_data_before_balloting_phase: "კენჭისყრის ფაზამდე საჩვენებელი მონაცემები არ მოიძებნა."
+        title: "მონაწილეობითი ბიუჯეტები - მონაწილეობის სტატისტიკა"
+        supporting_phase: მხარდაჭერის ფაზა
+        balloting_phase: დასკვნითი ხმის მიცემა
+      budget_balloting:
+        title: "ხმის მიცემის საბოლოო შედეგები"
+        vote_count: ხმები
+        participant_count: მონაწილეები
+        votes_per_heading: თითოეულ რუბრიკაზე მიღებული ხმა
+        participants_per_district: მონაწილეთა რაოდენობა თითოეულ უბანზე
       budget_supporting:
+        title: "მხარდაჭერის ფაზის სტატისტიკა"
+        headings: რუბრიკები
         users: მომხმარებლები
         vote_count: ხმები
         participant_count: მონაწილეები
