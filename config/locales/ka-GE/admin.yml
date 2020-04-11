@@ -503,6 +503,13 @@ ka:
         new:
           back: უკან
           title: ახალი ერთობლივი საკანონმდებლო ინიციატივის პროცესის შექმნა
+          submit_button: პროცესის შექმნა
+        proposals:
+          select_order: დალაგება
+          orders:
+            id: Id
+            title: სათაური
+            supports: მხარდამჭერთა საერთო რაოდენობა
         process:
           title: პროცესი
           comments: კომენტარები
@@ -561,3 +568,26 @@ ka:
           title: სათაური
           created_at: შექმნის თარიღი
           comments: კომენტარები
+    menu:
+      geozones: გეოგრაფიული ზონების მართვა
+      hidden_comments: დამალული კომენტარები
+      hidden_debates: დამალული დებატები
+      hidden_proposals: დამალული ინიციატივები
+      hidden_budget_investments: დამალული საბიუჯეტო ინვესტიციები
+      hidden_proposal_notifications: დამალული შეტყობინებები ინიციატივის თაობაზე
+      hidden_users: დამალული მომხმარებლები
+      administrators: ადმინისტრატორები
+      managers: მენეჯერები
+      moderators: მოდერატორები
+      messaging_users: მომხმარებლებთან შეტყობინებების გაგზავნა
+      newsletters: საინფორმაციო ბიულეტენები
+      admin_notifications: შეტყობინებები
+      system_emails: სისტემური შეტყობინებები
+      emails_download: ელ. წერილების ჩამოტვირთვა
+      valuators: შემფასებლები
+      poll_officers: გამოკითხვის ოფიცრები
+      polls: გამოკითხვები
+      poll_booths: ხმის მიცემის კაბინების მდებარეობა
+      poll_booth_assignments: კაბინების განაწილება
+      poll_shifts: ცვლის მართვა
+      officials: თანამდებობის პირები
