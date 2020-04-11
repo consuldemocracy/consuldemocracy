@@ -725,3 +725,40 @@ ka:
         add: დამატება
         delete: პოზიციის წაშლა
         name: სახელი
+        email: ელ.ფოსტა
+        entry_name: ოფიცერი
+      search:
+        email_placeholder: მომხმარებლის ძებნა ელ.ფოსტის მეშვეობით
+        search: ძებნა
+        user_not_found: მომხმარებელი არ მოიძებნა
+        help: "გამოკითხვის ოფიცრის დასამატებლად, ან წასაშლელად გამოიყენეთ ქვემოთ მოცემული ძებნის ფორმა."
+    poll_officer_assignments:
+      index:
+        officers_title: "ოფიცერთა სია"
+        no_officers: "ამ გამოკითხვაზე მიმაგრებული ოფიცერი არ მოიძებნა."
+        table_name: "სახელი"
+        table_email: "ელ.ფოსტა"
+      by_officer:
+        date: "თარიღი"
+        booth: "ხმის მიცემის კაბინა"
+        assignments: "კენჭისყრის ოფიცერთა ცვლა"
+        no_assignments: "ამ მომხმარებელს არ აქვს გამოკითხვაზე მუშაობის არცერთი ცვლა"
+    poll_shifts:
+      new:
+        add_shift: "ცვლის დამატება"
+        shift: "განაწილება"
+        shifts: "ხმის მიცემის კაბინაში არსებული ცვლები"
+        date: "თარიღი"
+        edit_shifts: ცვლების რედაქტირება
+        new_shift: "ახალი ცვლა"
+        no_shifts: "ამ კაბინისთვის გამოყოფილი ცვლა არ მოიძებნა"
+        officer: "ოფიცერი"
+        remove_shift: "წაშლა"
+    polls:
+      edit:
+        title: "გამოკითხვის რედაქტირება"
+        submit_button: "გამოკითხვის განახლება"
+      show:
+        questions_tab: კითხვები
+        booths_tab: ხმის მიცემის კაბინები
+        officers_tab: დამკვირვებლები
