@@ -568,19 +568,6 @@ describe Proposal do
         results = Proposal.search("SCREAM")
         expect(results).to eq([proposal2])
       end
-
-      it "searches case insensitive in english" do
-        allow(SearchDictionarySelector).to receive(:call).and_return("english")
-
-        proposal = create(:proposal, title: "SHOUT")
-
-        results = Proposal.search("shout")
-        expect(results).to eq([proposal])
-
-        proposal2 = create(:proposal, title: "scream")
-        results = Proposal.search("SCREAM")
-        expect(results).to eq([proposal2])
-      end
     end
 
     context "tags" do

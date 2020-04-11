@@ -27,8 +27,7 @@ module SearchDictionarySelector
     private
 
       def find_from_i18n_default
-        # some locales have more complex keys, such as fr-CA
-        key_to_lookup = I18n.default_locale.to_s[0..1].to_sym
+        key_to_lookup = I18n.default_locale.to_s.split("-").first.to_sym
 
         dictionary = I18N_TO_DICTIONARY[key_to_lookup]
         dictionary ||= "simple"
@@ -36,10 +35,8 @@ module SearchDictionarySelector
       end
 
       def available_dictionaries
-        @available_dictionaries ||= begin
-          result = ActiveRecord::Base.connection.execute(SQL_QUERY)
-          result.to_a.map { |r| r["cfgname"] }
-        end
+        result = ActiveRecord::Base.connection.execute(SQL_QUERY)
+        result.to_a.map { |row| row["cfgname"] }
       end
   end
 end
