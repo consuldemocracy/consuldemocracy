@@ -591,3 +591,22 @@ ka:
       poll_booth_assignments: კაბინების განაწილება
       poll_shifts: ცვლის მართვა
       officials: თანამდებობის პირები
+      organizations: ორგანიზაციები
+      settings: გლობალური პარამეტრები
+      stats: სტატისტიკა
+      signature_sheets: ხელმოწერის ფურცლები
+      site_customization:
+        documents: მომხმარებლის დოკუმენტები
+        homepage: მთვარი გვერდი
+        pages: პირადი გვერდები
+        images: პერსონალური სურათები
+        content_blocks: პერსონალური შინაარსის ბლოკები
+        information_texts: საინფორმაციო ტექსტების კონფიგურაცია
+        information_texts_menu:
+          basic: "ძირითადი კონფიგურაცია"
+          debates: "დებატები"
+          community: "საზოგადოება"
+          proposals: "ინიციატივები"
+          polls: "გამოკითხვები"
+          layouts: "განლაგება"
+          mailers: "ელ.ფოსტა"
