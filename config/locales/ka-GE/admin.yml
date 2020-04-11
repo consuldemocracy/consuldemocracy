@@ -1136,3 +1136,49 @@ ka:
         selected: შერჩეული
         milestones: ეტაპები
         no_proposals: ინიციატივა არ მოიძებნა.
+      show:
+        create_question: ხმის მისაცემად საჭიროა ამ ინიციატივის გამოკითხვასთან მიმაგრება
+      form:
+        update: ინიციატივის განახლება
+      update:
+        notice: ინიციატივა წარმატებით განახლდა
+    hidden_proposals:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული ინიციატივები
+        no_hidden_proposals: დამალული ინიციატივები არ მოიძებნა.
+    proposal_notifications:
+      index:
+        filter: ფილტრი
+        filters:
+          all: ყველა
+          with_confirmed_hide: დადასტურებულია
+          without_confirmed_hide: მოლოდინის რეჟიმშია
+        title: დამალული შეტყობინებები
+        no_hidden_proposals: დამალული შეტყობინებები არ მოიძებნა.
+    settings:
+      flash:
+        updated: ღირებულება განახლდა
+      index:
+        title: პარამეტრები
+        general: კონფიგურაციის პარამეტრები
+        update_setting: განახლება
+        participation_processes: "ჩართული პროცესები"
+        images_and_documents: "ფოტოსურათები და დოკუმენტები"
+        feature_flags: ფუნქციები
+        features:
+          enabled: "ფუნქცია გააქტიურებულია"
+          disabled: "ფუნქცია გამორთულია"
+          enable: "ჩართვა"
+          disable: "გამორთვა"
+    geozones:
+      index:
+        edit: რედაქტირება
+        delete: წაშლა
+      geozone:
+        name: სახელი
+        external_code: გარეშე კოდი
