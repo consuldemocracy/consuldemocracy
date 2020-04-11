@@ -689,6 +689,47 @@ ka:
       title_booths: ხმის მიცემის კაბინები
       legislation: ერთობლივი საკანონმდებლო ინიციატივა
       users: მომხმარებლები
+      dashboard: ინიციატივათა მართვის დაფა
+      administrator_tasks: მოთხოვნილი რესურსები
+      dashboard_actions: რესურსები და მოქმედებები
+      debates: "დებატები"
+      comments: "კომენტარები"
+      local_census_records: ადგილობრივი მოსახლეობის აღწერის მართვა
+    administrators:
+      index:
+        title: ადმინისტრატორები
+        name: სახელი
+        email: ელ.ფოსტა
+        description: აღწერა
+        id: ადმინისტრატორის ID
+        no_administrators: ადმინისტრატორები არ მოიძებნა.
+      administrator:
+        add: დამატება
+        delete: წაშლა
+        restricted_removal: "სამწუხაროდ საკუთარ თავს ადმინისტრატორების სიიდან ვერ ამოშლით"
+      search:
+        title: "ადმინისტრატორები: მომხმარებლის ძებნა"
+      form:
+        edit_title: "ადმინისტრატორის რედაქტირება"
+        updated: "ადმინისტრატორი წარმატებით დარედაქტირდა"
+    moderators:
+      index:
+        title: მოდერატორები
+        name: სახელი
+        email: ელ.ფოსტა
+        no_moderators: მოდერატორები არ მოიძებნა.
+      moderator:
+        add: დამატება
+        delete: წაშლა
+      search:
+        title: "მოდერატორები: მომხმარებლის ძებნა"
+    segment_recipient:
+      all_users: ყველა მომხმარებელი
+      administrators: ადმინისტრატორები
+      all_proposal_authors: ინიციატივის ავტორები (მათ შორის დაარქივებული და წაშლილი)
+      proposal_authors: ინიციატივის ავტორები
+      investment_authors: მიმდინარე ბიუჯეტში შეტანილი ინვესტიციების ავტორები
+      feasible_and_undecided_investment_authors: "ზოგიერთ იმ ინვესტიციათა ავტორები, რომელთა ინვესტიციები შეტანილია მიმდინარე ბიუჯეტში და არ შეესაბამება: [შეფასების შედეგად მიჩნეულია არაგანხორციელებადად]"
     newsletters:
       new:
         title: ახალი საინფორმაციო ბიულეტენი
