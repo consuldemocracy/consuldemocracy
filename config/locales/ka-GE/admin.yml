@@ -835,6 +835,12 @@ ka:
       comment:
         title: "კომენტარი"
         description: "ახალი კომენტარის გაკეთების დროს ავტორთან გაგზავნილი."
+      reply:
+        title: "პასუხი"
+        description: "გაეგზავნოს კომენტარის ავტორს პასუხის მიღებისას."
+      direct_message_for_receiver:
+        title: "პირადი გზავნილის ადრესატი"
+        description: "პირადი გზავნილის მიმღებთან გაგზავნილი."
     valuators:
       index:
         can_comment: "შეუძლია კომენტარის გაკეთება"
