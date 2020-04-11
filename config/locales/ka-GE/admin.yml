@@ -866,8 +866,19 @@ ka:
         title: ელ. წერილების ჩამოტვირთვა
         download_segment: ელ. ფოსტის მისამართების ჩამოტვირთვა
         download_segment_help_text: CSV ფორმატში ჩამოტვირთვა
+        download_emails_button: ელ.წერილების სიის ჩამოტვირთვა
     valuators:
       index:
+        title: შემფასებლები
+        name: სახელი
+        email: ელ.ფოსტა
+        description: აღწერა
+        no_description: აღწერა არ არის
+        no_valuators: შემფასებლები არ მოიძებნა.
+        valuator_groups: "შემფასებელთა ჯგუფები"
+        group: "ჯგუფი"
+        no_group: "ჯგუფი არ მოიძებნა"
+        abilities: "შესაძლებლობები"
         can_comment: "შეუძლია კომენტარის გაკეთება"
         can_edit_dossier: "შეუძლია დოსიეს რედაქტირება"
       valuator:
@@ -935,8 +946,26 @@ ka:
         no_shifts: "ამ კაბინისთვის გამოყოფილი ცვლა არ მოიძებნა"
         officer: "ოფიცერი"
         remove_shift: "წაშლა"
+        search_officer_button: ძებნა
+        search_officer_placeholder: დამკვირვებლის ძებნა
+        search_officer_text: დამკვირვებლის მოძიება და მისი ახალ ცვლაზე გადაყვანა
+        select_date: "დღის შერჩევა"
+        no_voting_days: "ხმის მიცემის დღეები დასრულდა"
+        select_task: "შეარჩიეთ დავალება"
+        table_shift: "ცვლა"
+        table_email: "ელ.ფოსტა"
+        table_name: "სახელი"
+      flash:
+        create: "ცვლა დაემატა"
+        destroy: "ცვლა წაიშალა"
+        unable_to_destroy: "შედეგებთან ან გამოთვლებთან დაკავშირებული ცვლა ვერ წაიშლება"
+        date_missing: "შეარჩიეთ თარიღი"
+      vote_collection: ხმების შეგროვება
+      recount_scrutiny: გადათვლა და სიზუსტე
     booth_assignments:
+      manage_assignments: განაწილების მართვა
       manage:
+        assignments_list: "'%{poll}' - გამოკითხვაზე მიმაგრებული დავალებები"
         status:
           assign_status: სტატუსის მინიჭება
           assigned: მინიჭებულია
@@ -1078,3 +1107,32 @@ ka:
           pending: მოლოდინის რეჟიმში
           rejected: უარყოფილი
           verified: დადასტურებული
+        hidden_count:
+          one: აგრეთვე მოიძებნება <strong>ერთი ორგანიზაცია</strong>, რომელსაც ან არ ჰყავს მომხმარებლები, ან მისი მომხმარებლები დამალულია.
+          other: აგრეთვე მოიძებნება <strong>%{count} ორგანიზაცია</strong>, რომელსაც (რომლებსაც) ან არ ჰყავს მომხმარებლები, ან მისი მომხმარებლები დამალულია.
+        name: სახელი
+        email: ელ.ფოსტა
+        phone_number: ტელეფონი
+        responsible_name: პასუხისმგებელი
+        status: სტატუსი
+        no_organizations: ორგანიზაციები არ მოიძებნა.
+        reject: უარყოფა
+        rejected: უარყოფილი
+        search: ძებნა
+        search_placeholder: სახელი, ელ.ფოსტა ან ტელეფონის ნომერი
+        title: ორგანიზაციები
+        verified: დადასტურებული
+        verify: დადასტურება
+        pending: მოლოდინის რეჟიმშია
+      search:
+        title: ორგანიზაციების ძებნა
+        no_results: ორგანიზაციები არ მოიძებნა.
+    proposals:
+      index:
+        title: ინიციატივები
+        id: ID
+        author: ავტორი
+        select: შერჩევა
+        selected: შერჩეული
+        milestones: ეტაპები
+        no_proposals: ინიციატივა არ მოიძებნა.
