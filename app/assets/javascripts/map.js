@@ -5,11 +5,6 @@
       $("*[data-map]").each(function() {
         App.Map.initializeMap(this);
       });
-      $(".js-toggle-map").on({
-        click: function() {
-          App.Map.toggleMap();
-        }
-      });
     },
     initializeMap: function(element) {
       var addMarkerInvestments, clearFormfields, createMarker, editable, getPopupContent, latitudeInputSelector, longitudeInputSelector, map, mapAttribution, mapCenterLatLng, mapCenterLatitude, mapCenterLongitude, mapTilesProvider, marker, markerIcon, markerLatitude, markerLongitude, moveOrPlaceMarker, openMarkerPopup, removeMarker, removeMarkerSelector, updateFormfields, zoom, zoomInputSelector;
@@ -108,10 +103,6 @@
           }
         });
       }
-    },
-    toggleMap: function() {
-      $(".map").toggle();
-      $(".js-location-map-remove-marker").toggle();
     },
     cleanInvestmentCoordinates: function(element) {
       var clean_markers, markers;
