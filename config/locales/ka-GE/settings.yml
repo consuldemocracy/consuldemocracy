@@ -78,3 +78,7 @@ ka:
       poster_description: პოსტერის აღწერა
       poster_description_description: პოსტერის ფუნქციის დეტალური აღწერილობა
     analytics_url: "ანალიტიკა (ULR)"
+    proposal_notification_minimum_interval_in_days: "ინიციატივის ავტორის მიერ ახალი საინიციატივო შეტყობინებების გაგზავნას შორის ინტერვალი (დღეები)"
+    proposal_notification_minimum_interval_in_days_description: "მომხმარებლის მიერ ინიციატივის გამომწერთათვის ახალი საინიციატივო შეტყობინებების გაგზავნას შორის ინტერვალი (დღეები)"
+    direct_message_max_per_day: "პირდაპირი გზავნილების გაგზავნის მაქსიმალური რაოდენობა ერთ დღეში"
+    direct_message_max_per_day_description: "პირდაპირი გზავნილების გაგზავნის მაქსიმალური რაოდენობა ერთ დღეში ერთი მომხმარებლის მიერ"
