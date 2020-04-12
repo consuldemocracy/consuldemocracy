@@ -1,1 +1,12 @@
 ka:
+  account:
+    show:
+      change_credentials_link: პირადი მონაცემების შეცვლა
+      erase_account_link: ჩემი ანგარიშის წაშლა
+      finish_verification: სრული ვერიფიკაცია
+      notifications: შეტყობინებები
+      organization_name_label: ორგანიზაციის დასახელება
+      organization_responsible_name_placeholder: ორგანიზაციის/ჯგუფის წარმომადგენელი
+      personal: პირადი დეტალები
+      phone_number_label: ტელეფონის ნომერი
+      public_interests_my_title_list: იმ ელემენტების ტეგები, რომლებსაც თქვენ მიჰყვებით
