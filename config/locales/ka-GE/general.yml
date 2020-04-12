@@ -195,3 +195,37 @@ ka:
           other: თქვენ გაქვთ %{count} შეტყობინება
         notifications: შეტყობინებები
         no_notifications: "თქვენ არ გაქვთ შეტყობინება"
+    admin:
+      watch_form_message: "თქვენ არ შეგინახავთ განხორციელებული ცვლილებები. გსურთ გვერდის დატოვება?"
+  notifications:
+    index:
+      empty_notifications: თქვენ არ გაქვთ შეტყობინება.
+      mark_all_as_read: მოვნიშნოთ ყველა, როგორც წაკითხული
+      read: წაკითხვა
+      title: შეტყობინებები
+      unread: წასაკითხი
+    notification:
+      action:
+        comments_on:
+          one: ვიღაცამ დატოვა კომენტარი
+          other: ვირაცამ დატოვა %{count} ახალი კომენტარი
+        proposal_notification:
+          one: თვენ გაქვთ ერთი ახალი შეტყობინება
+          other: თქვენ გაქვთ %{count} ახალი შეტყობინება
+        replies_to:
+          one: ვიღაცამ უპასუხა თქვენს კომენტარს
+          other: თქვენ გაქვთ %{count} ახალი პასუხი თქვენს კომენტარზე
+      mark_as_read: მოვნიშნოთ, როგორც წაკითხული
+      mark_as_unread: მოვნიშნოთ, როგორც წასაკითხი
+      notifiable_hidden: ეს რესურსი ხელმისაწვდომი აღარ არის.
+  map:
+    title: "რეგიონები"
+    proposal_for_district: "ამ რეგიონისთვის ინიციატივის დაწყება"
+    start_proposal: ახალი ინიციატივის შექმნა
+  omniauth:
+    facebook:
+      sign_in: Facebook-ით შესვლა
+      sign_up: Facebook-ით რეგისტრაცია
+      name: Facebook
+    finish_signup:
+      title: "დამატებითი დეტალები"
