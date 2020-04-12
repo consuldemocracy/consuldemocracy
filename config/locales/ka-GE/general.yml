@@ -282,3 +282,98 @@ ka:
     new:
       form:
         submit_button: ახალი ინიციატივის შექმნა
+      more_info: როგორ მუშაობს მოქალაქეთა ინიციატივები?
+      recommendation_one: ნუ გამოიყენებთ მხოლოდ დიდ ასოებს ინიციატივის დასასათაურებლად, ან წინადადებების შესადგენად.
+      recommendation_three: გამოიყენეთ ეს სივრცე საკუთარი აზრის გამოსახატავად.
+      recommendation_two: ნებისმიერი ინიციატივა, ან კომენტარი, რომელიც არაკანონიერი ქმედების პროვოცირებას ახდენს, წაიშლება. დაუშვებელია სადებატო სივრცის საბოტაჟიც.
+      recommendations_title: რეკომენდაციები ინიციატივის შექმნისთვის
+      start_new: ახალი ინიციატივის შექმნა
+    notice:
+      retired: ინიციატივა დეაქტივირებულია
+      published: ინიციატივა გამოქვეყნდა
+    proposal:
+      created: "თქვენ შექმენით ინიციატივა!"
+      share:
+        guide: "ახლა მისი გაზიარება სხვებისთვისაც შეგიძლიათ."
+        edit: "გაზიარებამდე ტექსტის შეცვლა შესაძლეებლია."
+        view_proposal: ახლა არა, გადავიდეთ ჩემს ინიციატივაში
+      already_supported: თქვენ უკვე მიეცით ხმა ამ ინიციატივას. შეგიძლიათ მისი გაზიარება!
+      comments:
+        zero: კომენტარები არ მოიძებნა
+        one: 1 კომენტარი
+        other: "%{count} კომენტარი"
+      support: ხმის მიცემა
+      support_title: ინიციატივაზე ხმის მიცემა
+      supports:
+        zero: მხარდამჭერები არ მოიძებნა
+        one: 1 მხარდამჭერი
+        other: "%{count} მხარდამჭერი"
+      votes:
+        zero: ხმები არ მოიძებნა
+  dashboard:
+    new_request:
+      links: ბმულები
+    resources:
+      available_resources: ხელმისაწვდომი რესურსები
+    resource:
+      required_days: "საჭიროა %{days} დღე"
+      required_supports: "საჭიროა %{supports} მხარდამჭერი"
+      and: და
+      view_resource: რესურსის ნახვა
+      resource_requested: რესურსი უკვე მოთხოვნილია
+      request_resource: რესურსის მოთხოვნა
+      resource_locked: რესურსი დაბლოკილია
+    recommended_actions:
+      title: რეკომენდირებული მოქმედებები
+      goto_proposed_actions: რეკომენდირებულ მოქმედებებში გადასვლა
+      see_proposed_actions: რეკომენდირებულ მოქმედებების ნახვა
+      hide_proposed_actions: რეკომენდირებულ მოქმედებების დამალვა
+      pending_title: მოლოდინის რეჟიმშია
+      show_description: აღწერის ნახვა
+      without_pending_actions: მოლოდინის რეჟიმში მყოფი რეკომენდაცია არ არის
+      done_title: შესრულებული
+      without_done_actions: შესრულებული რეკომენდაცია არ არის
+    next_goal:
+      title: მიზანი
+      see_complete_course: დასრულებული კურსის ნახვა
+      hide_course: კურსის დამალვა
+    goal:
+      target_supports:
+        one: მიიღეთ %{count} მხარდამჭერი ამ ინიციატივისათვის
+        other: მიიღეთ %{count} მხარდამჭერი ამ ინიციატივისათვის
+      days:
+        one: "%{count} დღე"
+        other: "%{count} დღე"
+      locked_resource: რესურსი დაბლოკილია
+      ideal_time: სასურველი დრო
+    community:
+      access_community: წევრებთან წვდომა
+      latest_activity: "წევრების ბოლო აქტივობა: %{at}"
+      participants: მონაწილეები
+      debates: დებატები
+      comments: კომენტარები
+      latest_comments: უკანასკნელი გზავნილები
+    messages:
+      send_notification: გავუგზავნოთ შეტყობინებები ინიციატივის მიმდევრებს
+      previous_notifications: წინა შეტყობინებების ნახვა
+    polls:
+      index:
+        title: გამოკითხვები
+        create: გამოკითხვის შექმნა
+        count:
+          one: თქვენ შექმენით %{count} გამოკითხვა.
+          other: თქვენ შექმენით %{count} გამოკითხვა.
+        links: ბმულები
+        additiontal_information: დამატებითი ინფორმაცია
+      new:
+        title: ახალი გამოკითხვა
+        submit: გამოკითხვის შექმნა
+      edit:
+        submit: გამოკითხვის განახლება
+      poll:
+        responses:
+          one: "%{count} პასუხი"
+          other: "%{count} პასუხი"
+        view_results: შედეგების ნახვა
+        edit_poll: გამოკითხვის რედაქტირება
+        show_results_help: თუ ამ მოსანიშნს მონიშნავთ, შედეგები გახდება საჯარო და მათი ნახვა ყველა მომხმარებელს შეეძლება
