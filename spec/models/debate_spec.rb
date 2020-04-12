@@ -503,7 +503,7 @@ describe Debate do
     end
 
     context "stemming" do
-      it "searches word stems" do
+      it "searches word stems in Spanish", :spanish_search do
         debate = create(:debate, title: "limpiar")
 
         results = Debate.search("limpiará")

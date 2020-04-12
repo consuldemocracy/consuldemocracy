@@ -558,7 +558,7 @@ describe Proposal do
     end
 
     context "case" do
-      it "searches case insensite" do
+      it "searches case insensitive" do
         proposal = create(:proposal, title: "SHOUT")
 
         results = Proposal.search("shout")
