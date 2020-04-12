@@ -1,1 +1,15 @@
 ka:
+  settings:
+    comments_body_max_length: "კომენტარების ნაწილის მაქსიმალური სიგანე"
+    comments_body_max_length_description: "სიმბოლოების რაოდენობის მიხედვით"
+    official_level_1_name: "1-ელი დონის თანამდებობის პირი"
+    official_level_1_name_description: "ტეგი, რომელიც 1-ელი დონის მომხმარებლების გვერდით გამოჩნდება"
+    official_level_2_name: "მე-2 დონის თანამდებობის პირი"
+    official_level_2_name_description: "ტეგი, რომელიც მე-2 დონის მომხმარებლების გვერდით გამოჩნდება"
+    official_level_3_name: "მე-3 დონის თანამდებობის პირი"
+    official_level_3_name_description: "ტეგი, რომელიც მე-3 დონის მომხმარებლების გვერდით გამოჩნდება"
+    official_level_4_name: "მე-4 დონის თანამდებობის პირი"
+    official_level_4_name_description: "ტეგი, რომელიც მე-4 დონის მომხმარებლების გვერდით გამოჩნდება"
+    official_level_5_name: "მე-5 დონის თანამდებობის პირი"
+    official_level_5_name_description: "ტეგი, რომელიც მე-5 დონის მომხმარებლების გვერდით გამოჩნდება"
+    max_ratio_anon_votes_on_debates: "ანონიმური ხმების მაქსიმალური თანაფარდობა თითოეულ დებატზე"
