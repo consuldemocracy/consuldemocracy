@@ -49,3 +49,16 @@ ka:
     hot_score_period_in_days: "პერიოდი (დღეები), რომლის მიხედვითაც გაიფილტრება 'ყველაზე აქტიური'"
     hot_score_period_in_days_description: "სხვადასხვა სექციაში გამოყენებული ფილტრი 'ყველაზე აქტიური' ბოლო 10 დღის მანძილზე მიღებულ ხმებზე იქნება გათვლილი"
     mailer_from_name: "ელ. წერილის გამგზავნის სახელი"
+    mailer_from_name_description: "ეს სახელი გამოჩნდება იმ ელ. წერილებში, რომლებიც აპლიკაციიდან გაიგზავნება"
+    mailer_from_address: "გამგზავნის ელ. ფოსტა"
+    mailer_from_address_description: "აღნიშნული ელ. ფოსტის მისამართი აპლიკაციიდან გაგზავნილ წერილებში გამოჩნდება"
+    meta_title: "საიტის დასახელება (SEO)"
+    meta_title_description: "საიტის დასახელება <title>, SEO ოპტიმიზაციისთვის"
+    meta_description: "საიტის აღწერა (SEO)"
+    meta_description_description: 'საიტის აღწერა <meta name="description">, SEO ოპტიმიზაციისთვის'
+    meta_keywords: "საკვანძო საძიებო სიტყვები (SEO)"
+    meta_keywords_description: 'საკვანძო საძიებო სიტყვები <meta name="keywords">, SEO ოპტიმიზაციისთვის'
+    min_age_to_participate: მონაწილეობისთვის სავალდებულო ასაკობრივი ზღვარი
+    min_age_to_participate_description: "ის მომხმარებლები, რომლებიც ასაკობრივ ზღვარს აკმაყოფილებენ, ვერიფიცირებული ანგარიშის შემთხვევაში, ყველა პროცესში შეძლებენ მონაწილეობას"
+    proposals:
+      successful_proposal_id: წარმატებული ინიციატივა
