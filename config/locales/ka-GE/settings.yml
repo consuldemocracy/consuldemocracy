@@ -71,3 +71,10 @@ ka:
       poll_link_description: ამატებს დამატებითი ინფორმაციის ბმულს გამოკითხვის ფუნქციას
       email_short_title: ელ.ფოსტა
       email_short_title_description: 'ელ. ფოსტის ფუნქციის მოკლე აღწერილობა. საშუალებას აძლევს მომხმარებლებს გააგზავნონ ელ. გზავნილები და პოპულარიზაცია გაუწიონ თავიანთ ინიციატივას. გზავნილის შინაარსი ხელმისაწვდომია აქ: "/app/views/dashboard/mailer/forward.html.erb"'
+      email_description: ელ.ფოსტის აღწერილობა
+      email_description_description: ელ. ფოსტის ფუნქციის დეტალური აღწერილობა
+      poster_short_title: პოსტერი
+      poster_short_title_description: 'პოსტერის ფუნქციის მოკლე აღწერილობა. საშუალებას აძლევს მომხმარებლებს PDF ფორმატში ჩამოტვირთონ პოსტერი და პოპულარიზაცია გაუწიონ თავიანთ ინიციატივას. პოსტერის შინაარსი ხელმისაწვდომია აქ: "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: პოსტერის აღწერა
+      poster_description_description: პოსტერის ფუნქციის დეტალური აღწერილობა
+    analytics_url: "ანალიტიკა (ULR)"
