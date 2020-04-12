@@ -136,6 +136,8 @@ ka:
       more_info: დამატებითი ინფორმაცია
       recommendation_four: გამოიყენეთ ეს სივრცე საკუთარი აზრის გამოსახატავად.
       recommendation_one: ნუ გამოიყენებთ მხოლოდ დიდ ასოებს დებატის დასასათაურებლად, ან წინადადებების შესადგენად.
+      recommendation_three: მწვავე კრიტიკა მისასალმებელია. ეს არის სივრცე საკუთარი აზრის გამოსახატავად. თუმცა, ჩვენ გირჩევთ, რომ დაიცვათ თავაზიანობა. სათნო ადამიანებთან ერთად მსოფლიო გაცილებით უკეთესია დგილია.
+      recommendation_two: ნებისმიერი დებატი, ან კომენტარი, რომელიც არაკანონიერი ქმედების პროვოცირებას ახდენს, წაიშლება. დაუშვებელია სადებატო სივრცის საბოტაჟიც.
       recommendations_title: რეკომენდაციები დებატების შექმნისთვის
       start_new: დებატის დაწყება
     show:
@@ -164,3 +166,32 @@ ka:
     direct_message: პირადი გზავნილი
     error: შეცდომა
     errors: შეცდომა
+  layouts:
+    footer:
+      privacy: კონფიდენციალურობის პოლიტიკა
+    header:
+      administration_menu: მენიუ
+      administration: ადმინისტრაცია
+      available_locales: ხელმისაწვდომი ენები
+      collaborative_legislation: ერთობლივი საკანონმდებლო ინიციატივა
+      debates: დებატები
+      locale: "ენა:"
+      logo: CONSUL-ის ლოგო
+      management: მენეჯმენტი
+      moderation: მოდერაცია
+      valuation: შეფასება
+      officing: გამოკითხვის ოფიცრები
+      help: დახმარება
+      my_account_link: ჩემი ანგარიში
+      my_activity_link: ჩემო კონტენტი
+      open: გახსნა
+      open_gov: ღია მმართველობა
+      proposals: ინიციატივები
+      poll_questions: ხმის მიცემა
+      budgets: მონაწილეობითი ბიუჯეტირება
+      notification_item:
+        new_notifications:
+          one: თქვენ გაქვთ ერთი შეტყობინება
+          other: თქვენ გაქვთ %{count} შეტყობინება
+        notifications: შეტყობინებები
+        no_notifications: "თქვენ არ გაქვთ შეტყობინება"
