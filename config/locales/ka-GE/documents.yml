@@ -21,3 +21,4 @@ ka:
     errors:
       messages:
         in_between: უნდა მერყეობდეს %{min} და %{max}-ის შორის
+        wrong_content_type: 'ნებადართულია შემდეგი ტიპები: %{accepted_content_types}, თქვენ დოკუმენტის ტიპია %{content_type}'
