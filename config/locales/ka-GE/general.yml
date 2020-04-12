@@ -229,3 +229,56 @@ ka:
       name: Facebook
     finish_signup:
       title: "დამატებითი დეტალები"
+      username_warning: "ჩვენი და სოც. ქსელების ურთიერთობიდან გამომდინარე, შესაძლებელია თქვენი მომხმარებლის სახელი გამოჩნდეს, როგორც 'უკვე დაკავებული'. ასეთ შემთხვევაში, გთხოვთ, შეარჩიოთ მომხმარებლის სხვა სახელი."
+    google_oauth2:
+      sign_in: Google-ით შესვლა
+      sign_up: Google-ით რეგისტრაცია
+      name: Google
+    wordpress_oauth2:
+      sign_in: Wordpress-ით შესვლა
+      sign_up: Wordpress-ით რეგისტრაცია
+      name: Wordpress
+    twitter:
+      sign_in: Twitter-ით შესვლა
+  proposals:
+    index:
+      recommendations:
+        actions:
+          success: "ინიციატივებთან დაკავშირებული რეკომენდაციები გამორთულია"
+          error: "შეცდომა! გთხოვთ, გადახვიდეთ 'ჩემი ანგარიშის' გვერდზე და ხელით გამორთოთ რეკომენდაციები"
+      retired_proposals: დეაქტივირებული ინიციატივები
+      retired_proposals_link: "ავტორის მიერ დეაქტივირებული ინიციატივები"
+      selected_proposals: შერჩეული ინიციატივები
+      selected_proposals_link: შერჩეული ინიციატივების ნახვა
+      archived_proposals: დაარქივებული ინიციატივები
+      proposals_lists: ინიციატივების ჩამონათვალი
+      retired_links:
+        all: ყველა
+        duplicated: დუბლირებული
+        started: მიმდინარე
+        unfeasible: შეუძლებელი
+        done: შესრულებული
+        other: სხვა
+      search_form:
+        button: ძებნა
+        placeholder: ინიციატივების ძებნა...
+        title: ძებნა
+      search_results:
+        one: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
+        other: " შეიცავდეს საძიებო სიტყვას <strong>%{search_term}</strong>"
+      select_order: დალაგება
+      select_order_long: "ინიციატივები ნაჩვენებია:"
+      start_proposal: ახალი ინიციატივის შექმნა
+      title: ინიციატივები
+      top: კვირის მოწინავე
+      top_link_proposals: კატეგორიის მიხედვით ყველაზე მეტი ხმის მქონე ინიციატივები
+      section_header:
+        icon_alt: ინიციატივების ნიშანი
+        title: ინიციატივები
+        help: დახმარება
+      section_footer:
+        title: დახმარება
+        description: მოქალაქეთა ინიციატივები საზოგადოების ჯგუფს აძლევს შესაძლებლობას კოლექტიურად გადაწყვიტონ საკუთარი ქაალქის მოწყობის ფორმა და შესაბამის ინიციატივაზე მიიღონ სხვების მხარდაჭერა.
+    new:
+      form:
+        submit_button: ახალი ინიციატივის შექმნა
