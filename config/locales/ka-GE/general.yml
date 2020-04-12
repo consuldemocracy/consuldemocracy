@@ -445,6 +445,19 @@ ka:
       date_2: "გასულ კვირაში"
       date_3: "გასულ თვეს"
       date_4: "გასულ წელს"
+      date_5: "პერსონალური"
+      from: "დან"
+      general: "ტექსტით"
+      general_placeholder: "ტექსტის დაწერა"
+      search: "ფილტრი"
+      title: "დეტალური ძებნა"
+      to: "მდე"
+    author_info:
+      author_deleted: მომხმარებელი წაშლილია
+      email_deleted: ელ.ფოსტა წაშლილია
+    back: უკან დაბრუნება
+    check: შერჩევა
+    check_all: ყველა
     view_mode:
       cards: ბარათები
       list: ჩამონათვალი
@@ -508,3 +521,110 @@ ka:
       budget_investments: საბიუჯეტო ინვესტიციები
       comments: კომენტარები
       actions: მოქმედებები
+      filters:
+        comments:
+          one: 1 კომენტარი
+          other: "%{count} კომენტარი"
+        debates:
+          one: 1 დებატი
+          other: "%{count} დებატი"
+        proposals:
+          one: 1 ინიციატივა
+          other: "%{count} ინიციატივა"
+        budget_investments:
+          one: 1 ინვესტიცია
+          other: "%{count} ინვესტიცია"
+        follows:
+          one: '%{count} გამომწერი'
+          other: "%{count} გამომწერი"
+      no_activity: მომხმარებელს არ განუხორციელებია რაიმე სახის საჯარო აქტივობა
+    proposals:
+      draft: მონახაზი
+      published: გამოქვეყნებული
+      see: "ინიციატივის ნახვა"
+      actions: მოქმედებები
+      retired_help_text: მოქმედებათა დაფა ხელმისაწვდომი არ არის დეაქტივირებული ინიციატივებისთვის
+  votes:
+    agree: ვეთანხმები
+    disagree: არ ვეთანხმები
+    supports: მხარდამჭერები
+    budget_investments:
+      not_voting_allowed: ხმის მიცემის ფაზა დასრულებულია
+  welcome:
+    feed:
+      process_label: პროცესი
+      see_process: პროცესის ნახვა
+    cards:
+      title: გამორჩეული
+    recommended:
+      slide: "%{title}-ის ნახვა"
+    verification:
+      i_dont_have_an_account: არ მაქვს ანგარიში
+      i_have_an_account: უკვე მაქვს ანგარიში
+      question: უკვე გაქვთ ანგარი შექმნილი %{org_name}-ში?
+      title: ანგარიშის ვერიფიკაცია
+    welcome:
+      go_to_index: ახლა არა, გადავიდეთ მთავარ გვერდზე
+      start_using_consul: მთავარ გვერდზე გადასვლა
+      title: მონაწილეობა
+      user_permission_debates: დებატებში მონაწილეობა
+      user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
+      user_permission_proposal: ახალი ინიციატივის შექმნა
+      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა*
+      user_permission_verify: "ამ ფუნქციებით სარგებლობისთვის, გაიარეთ ანგარიშის ვერიფიკაცია."
+      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
+      user_permission_verify_my_account: ჩემი ანგარიშის დადასტურება
+      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
+  invisible_captcha:
+    sentence_for_humans: "თუ რობოტი არ ხართ, არ მიაქციოთ ამ ველს ყურადღება"
+    timestamp_error_message: "ძალიან იჩქარეთ, გთხოვთ სცადოთ ხელახლა."
+  related_content:
+    title: "მსგავსი ინფორმაცია"
+    add: "მსგავსი ინფორმაციის დამატება"
+    label: "ბმული მსგავს ინფორმაციასთან"
+    placeholder: "%{url}"
+    help: "შეგიძლიათ %{models}-ის ბმულების დამატება %{org}-ის ქოლგის ქვეშ."
+    submit: "დამატება"
+    error: "ბმული არ არის მოქმედი. დასაწყისში გამოიყენეთ %{url}."
+    error_itself: "ბმული არ არის მოქმედი. ინფორმაციები იდენტურია."
+    success: "მსგავსი ინფორმაცია დაემატა"
+    is_related: "არის ეს მსგავსი ინფორმაცია?"
+    score_positive: "დიახ"
+    score_negative: "არა"
+    content_title:
+      proposal: "ინიციატივა"
+      debate: "დებატები"
+      budget_investment: "საბიუჯეტო ინვესტიცია"
+  admin/widget:
+    header:
+      title: ადმინისტრაცია
+  annotator:
+    help:
+      alt: შეარჩიეთ ტექსტი, რომელზეც გსურთ კომენტარის გაკეთება და დააჭირეთ ღილაკს ფანქრის ნიშნით.
+      text: კომენტარის გასაკეთებლად გაიარეთ %{sign_in} ან %{sign_up}.
+      title: როგორ გავაკეთო კომენტარი ამ დოკუმენტზე?
+  links:
+    form:
+      delete_button: წაშლა
+      cancel_button: გაუქმება
+    nested_links:
+      title: ბმულები
+      note: საინტერესო ბმულების დამატება
+      add_new_link: ახალი ბმულის დამატება
+    link_fields:
+      label_placeholder: ბმულის დასახელება
+      url_placeholder: ბმულის მისამართი
+  communities:
+    show:
+      surveys: გამოკითხვები
+      complete_survey: გამოკითხვის დასრულება
+    subnav:
+      surveys: გამოკითხვები
+    poll:
+      take_part: მონაწილეობა %{from}-დან %{to}-მდე
+  remote_translations:
+    text: ეს კონტენტი თქვენს ენაზე ხელმისაწვდომი არ არის
+    all_remote_translations_enqueued_text: განაახლეთ ეს გევრდი პერიოდულად რათა მასზე არსებული ინფორმაციის ნახვა სასურველ ენაზე შეძლოთ.
+    create:
+      enqueue_remote_translation: თარგმანები მოთხოვნილ იქნა.
+    button: გვერდის თარგმნა
