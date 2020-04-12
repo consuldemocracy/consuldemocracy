@@ -377,3 +377,134 @@ ka:
         view_results: შედეგების ნახვა
         edit_poll: გამოკითხვის რედაქტირება
         show_results_help: თუ ამ მოსანიშნს მონიშნავთ, შედეგები გახდება საჯარო და მათი ნახვა ყველა მომხმარებელს შეეძლება
+        delete: გამოკითხვის წაშლა
+        alert_notice: ამ მოქმედებით წაიშლება გამოკითხვა და მასთან დაკავშირებული შეკითხვები.
+        success_notice: გამოკითხვა წარმატებით წაიშალა
+        unable_notice: გამოკითხვის წაშლა შეუძლებელია, რადგან მასში უკვე მიიღეს მონაწილეობა
+      form:
+        name: გამოკითხვის დასახელება
+  polls:
+    show:
+      back: კენჭისყრაში დაბრუნება
+      cant_answer_not_logged_in: "მონაწილეობის მისაღებად თქვენ უნდა გაიაროთ %{signin} ან %{signup}."
+      comments_tab: კომენტარები
+      cant_answer_verify: "პასუხის დასაფიქსირებლად თქვენ უნდა მოახდინოთ %{verify_link}."
+      verify_link: "ანგარიშის დადასტურება"
+      cant_answer_expired: "გამოკითხვა დასრულდა."
+      cant_answer_wrong_geozone: "ეს შეკითხვა არ არის თქვენი გეოგრაფიული ზონისთვის."
+      more_info_title: "დამატებითი ინფორმაცია"
+      documents: დოკუმენტები
+      zoom_plus: სურათის გადიდება
+      read_more: "%{answer}-ის შესახებ მეტის გაგება"
+      read_less: "%{answer}-ის შესახებ ნაკლების გაგება"
+      videos: "სხვა სერვერზე განთავსებული ვიდეო"
+      info_menu: "ინფორმაცია"
+      stats_menu: "მონაწილეთა სტატისტიკა"
+      results_menu: "გამოკითხვის შედეგები"
+      stats:
+        total_votes: "გაცემული ხმების საერთო რაოდენობა"
+        votes: "ხმები"
+        web: "WEB"
+        mail: "MAIL"
+        booth: "კაბინა"
+        total: "ჯამში"
+        valid: "მოქმედი"
+        white: "სრულიად ცარიელი"
+        null_votes: "ბათილი"
+      results:
+        title: "კითხვები"
+        most_voted_answer: "ყველაზე მეტი ხმის მქონე პასუხი: "
+    poll_header:
+      back_to_proposal: ინიციატივაში დაბრუნება
+  poll_questions:
+    show:
+      vote_answer: "%{answer}-ზე ხმის მიცემა"
+      voted: "%{answer}-ზე თქვენ უკვე მიეცით ხმა"
+  proposal_notifications:
+    new:
+      title: "შეტყობინების გაგზავნა"
+      submit_button: "შეტყობინების გაგზავნა"
+      info_about_receivers: "ეს შეტყობინება გაიგზავნება <strong>%{count} ადამიანთან</strong> და მისი ნახვა შესაძლებელი იქნება %{proposal_page}.<br>შეტყობინებების გაგზავნა არ ხდება მომენტალურად. მომხმარებლები პერიოდულად მიიღებენ შეტყობინებებს ელ.ფოსტის მეშვეობით."
+      proposal_page: "ინიციატივათა გვერდზე"
+    show:
+      back: "ჩემს კონტენტში დაბრუნება"
+  shared:
+    edit: "რედაქტირება"
+    save: "დამახსოვრება"
+    delete: "წაშლა"
+    "yes": "დიახ"
+    "no": "არა"
+    search_results: "ძებნის შედეგები"
+    advanced_search:
+      author_type: "კატეგორიის ავტორის მიხედვით"
+      author_type_blank: "კატეგორიის შერჩევა"
+      date: "თარიღის მიხედვით"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "თარიღის არჩევა"
+      date_1: "ბოლო 24 საათში"
+      date_2: "გასულ კვირაში"
+      date_3: "გასულ თვეს"
+      date_4: "გასულ წელს"
+    view_mode:
+      cards: ბარათები
+      list: ჩამონათვალი
+    recommended_index:
+      title: რეკომენდაციები
+      see_more: სხვა რეკომენდაციების ნახვა
+      hide: რეკომენდაციების დამალვა
+    translations:
+      select_language_prompt: ენის არჩევა
+      remove_language: ენის წაშლა
+      add_language: ენის დამატება
+      languages_in_use:
+        zero: "გამოყენებაშია 0 ენა"
+        one: "გამოყენებაშია 1 ენა"
+        other: "გამოყენებაშია %{count} ენა"
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  stats:
+    index:
+      visits: ვიზიტები
+      debates: დებატები
+      proposals: ინიციატივები
+      comments: კომენტარები
+      proposal_votes: ინიციატივებზე მიცემული ხმები
+      debate_votes: დებატებზე მიცემული ხმები
+      comment_votes: კომენტარებზე მიცემული ხმები
+      votes: ხმების საერთო რაოდენობა
+      verified_users: გადამოწმებული მომხმარებლები
+      unverified_users: გადაუმოწმებელი მომხმარებლები
+  unauthorized:
+    default: ამ გვერდის ნახვის უფლება არ გაქვთ.
+    manage:
+      all: "%{subject}-ზე %{action} მოქმედების უფლება არ გაქვთ."
+  users:
+    login_to_comment: "კომენტარის დასატოვებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}."
+    login_to_continue: "გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}."
+    signin: "ავტორიზაცია"
+    signup: "რეგისტრაცია"
+    verify_account: "ანგარიშის დადასტურება"
+    direct_messages:
+      new:
+        direct_messages_bloqued: "ამ მომხმარებელს არ სურს პირადი გზავნილების მიღება"
+        submit_button: შეტყობინების გაგზავნა
+        title: პირადი შეტყობინების გაგზავნა %{receiver}-თან
+        verified_only: პიადი შეტყობინების გასაგზავნად მოახდინეთ %{verify_account}
+      show:
+        receiver: შეტყობინება გაიგზავნა %{receiver}-თან
+    show:
+      deleted: წაშლილი
+      deleted_debate: ეს დებატი წაშლილია
+      deleted_proposal: ეს ინიციატივა წაშლილია
+      deleted_budget_investment: ეს საინვესტიციო პროექტი წაშლილია
+      proposals: ინიციატივები
+      proposals_status: სტატუსი
+      debates: დებატები
+      budget_investments: საბიუჯეტო ინვესტიციები
+      comments: კომენტარები
+      actions: მოქმედებები
