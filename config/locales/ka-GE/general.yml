@@ -10,3 +10,87 @@ ka:
       personal: პირადი დეტალები
       phone_number_label: ტელეფონის ნომერი
       public_interests_my_title_list: იმ ელემენტების ტეგები, რომლებსაც თქვენ მიჰყვებით
+      public_interests_user_title_list: იმ ელემენტების ტეგები, რომლებსაც ეს მომხმარებელი მიჰყვება
+      save_changes_submit: ცვლილებების შენახვა
+      recommendations: რეკომენდაციები
+      title: ჩემი ანგარიში
+      user_permission_debates: დებატებში მონაწილეობა
+      user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
+      user_permission_proposal: ახალი ინიციატივის შექმნა
+      user_permission_support_proposal: ინიციატივებზე ხმის მიცემა
+      user_permission_title: მონაწილეობა
+      user_permission_verify: ყველა ფუნქციით სარგებლობისთვის, გაიარეთ ანგარიშის ვერიფიკაცია.
+      user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
+      user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
+      username_label: მომხმარებლის სახელი
+      verified_account: ანგარიში ვერიფიცირებულია
+      verify_my_account: ჩემი ანგარიშის დადასტურება
+  application:
+    close: დახურვა
+    menu: მენიუ
+  comments:
+    comments_closed: კომენტარები დახურულია
+    verified_only: მონაწილეობისთვის %{verify_account}
+    comment:
+      admin: ადმინისტრატორი
+      author: ავტორი
+      deleted: კომენტარი წაშლილია
+      moderator: მოდერატორი
+      responses:
+        zero: პასუხები არ მოიძებნა
+        one: 1 პასუხი
+        other: "%{count} პასუხი"
+      responses_show:
+        zero: პასუხები არ მოიძებნა
+        one: "1 პასუხი (ჩვენება)"
+        other: "%{count} პასუხი (ჩვენება)"
+      responses_collapse:
+        zero: პასუხები არ მოიძებნა
+        one: "1 პასუხი (დახურვა)"
+        other: "%{count} პასუხი (დახურვა)"
+      user_deleted: მომხმარებელი წაშლილია
+      votes:
+        zero: ხმები არ მოიძებნა
+        one: 1 ხმა
+        other: "%{count} ხმა"
+    form:
+      comment_as_admin: დატოვეთ კომენტარი, როგორც ადმინისტრატორი
+      comment_as_moderator: დატოვეთ კომენტარი, როგორც მოდერატორი
+      leave_comment: კომენტარის დატოვება
+    orders:
+      most_voted: ყველაზე მეტი ხმის მქონე
+      newest: უახლესი პირველ რიგში
+      oldest: უძველესი პირველ რიგში
+      most_commented: ყველაზე მეტი კომენტარის მქონე
+    select_order: დალაგება
+    show:
+      return_to_commentable: "უკან დაბრუნება "
+  debates:
+    new:
+      recommendations_title: რეკომენდაციები დებატების შექმნისთვის
+      start_new: დებატის დაწყება
+    show:
+      author_deleted: მომხმარებელი წაშლილია
+      comments:
+        zero: კომენტარები არ მოიძებნა
+        one: 1 კომენტარი
+        other: "%{count} კომენტარი"
+      comments_title: კომენტარები
+      edit_debate_link: რედაქტირება
+      flag: მომხმარებელთა გარკვეულმა ნაწილმა ეს დებატები გაასაჩივრა.
+      share: გაზიარება
+      author: ავტორი
+    update:
+      form:
+        submit_button: ცვლილებების შენახვა
+  errors:
+    messages:
+      user_not_found: მომხმარებელი არ მოიძებნა
+      invalid_date_range: "თარიღთა დიაპაზონი არასწორია"
+  form:
+    accept_terms: ვეთანხმები %{policy} და %{conditions}
+    accept_terms_title: ვეთანხმები კონფიდენციალურობის პოლიტიკას და გამოყენების წესებსა და პირობებს
+    conditions: გამოყენების წესები და პირობები
+    debate: დებატები
+    direct_message: პირადი გზავნილი
+    error: შეცდომა
