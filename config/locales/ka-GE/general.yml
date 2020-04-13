@@ -202,6 +202,9 @@ ka:
       proposal_header:
         published: გამოქვეყნებული
         draft: მონახაზი
+        retired: დეაქტივირებული
+      proposal_totals:
+        active_resources: აქტიური რესურსები
     footer:
       privacy: კონფიდენციალურობის პოლიტიკა
     header:
