@@ -1,17 +1,25 @@
 mk:
   date:
+    abbr_day_names:
+      - Нед
+      - Пон
+      - Вто
+      - Сре
+      - Чет
+      - Пет
+      - Саб
     abbr_month_names:
       - 
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
+      - Јан
+      - Феб
+      - Мар
+      - Апр
+      - Мај
+      - Јун
+      - Јул
+      - Авг
+      - Сеп
+      - Окт
       - Nov
       - Dec
     month_names:
