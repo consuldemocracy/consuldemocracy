@@ -216,6 +216,8 @@ ka:
       conditions: გამოყენების წესები და პირობები
       consul: CONSUL-ის აპლიკაცია
       consul_url: https://github.com/consul/consul
+      contact_us: ტექნიკური მხარდაჭერის მისაღებად ეწვიეთ
+      copyright: CONSUL, %{year}
       privacy: კონფიდენციალურობის პოლიტიკა
     header:
       administration_menu: მენიუ
