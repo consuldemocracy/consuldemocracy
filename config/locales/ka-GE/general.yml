@@ -166,7 +166,42 @@ ka:
     direct_message: პირადი გზავნილი
     error: შეცდომა
     errors: შეცდომა
+    not_saved: "%{resource}-ის დამახსოვრება ვერ მოხერხდა. <br>გთხოვთ, შეამოწმოთ მონიშნული ველები:"
+    policy: კონფიდენციალურობის პოლიტიკა
+    banner: ბანერი
+    proposal: ინიციატივა
+    proposal_notification: "შეტყობინება"
+    budget/investment: ინვესტიცია
+    budget/group: საბიუჯეტო ჯგუფი
+    budget/heading: საბიუჯეტო რუბრიკა
+    geozone: გეოგრაფიული ზონა
+    legislation/draft_version: მონახაზი
+    legislation/process: პროცესი
+    legislation/question: კითხვა
+    poll/shift: ცვლა
+    poll/question/answer: პასუხი
+    user: ანგარიში
+    verification/sms: ტელეფონი
+    signature_sheet: ხელმოწერის ფურცელი
+    document: დოკუმენტი
+    topic: საკითხი
+    image: ფოტოსურათი
+    local_census_record: ადგილობრივი მოსახლეობის აღწერის ჩანაწერი
+    local_census_records/import: ადგილობრივი მოსახლეობის აღწერის ჩანაწერების ატვირთვა
+    site_customization/content_block: შინაარსის ბლოკი
+    site_customization/page: გვერდი
+  geozones:
+    none: მთლიანი ქალაქი
   layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: როგორც ჩანს თქვენ Internet Explorer-ს იყენებთ. გაცილებით სწრაფი გამოცდილების მისაღებად გამოიყენეთ %{firefox} ან %{chrome}.
+      ie_title: ეს ვებ–გვერდი არ არის ოპტიმიზებული თქვენი ბრაუზერისთვის
+    dashboard:
+      proposal_header:
+        published: გამოქვეყნებული
+        draft: მონახაზი
     footer:
       privacy: კონფიდენციალურობის პოლიტიკა
     header:
