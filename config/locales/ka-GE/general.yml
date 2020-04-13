@@ -212,6 +212,10 @@ ka:
         supports:
           zero: მხარდამჭერები არ მოიძებნა
     footer:
+      accessibility: ხელმისაწვდომობა
+      conditions: გამოყენების წესები და პირობები
+      consul: CONSUL-ის აპლიკაცია
+      consul_url: https://github.com/consul/consul
       privacy: კონფიდენციალურობის პოლიტიკა
     header:
       administration_menu: მენიუ
