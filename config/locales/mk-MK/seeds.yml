@@ -1,1 +1,15 @@
 mk:
+  seeds:
+    settings:
+      official_level_1_name: Официјална позиција 1
+      official_level_2_name: Официјална позиција 2
+      official_level_3_name: Официјална позиција 3
+      official_level_4_name: Официјална позиција 4
+      official_level_5_name: Официјална позиција 5
+    geozones:
+      north_district: Северна Област
+      west_district: Западна Област
+      east_district: Источна Област
+      central_district: Централна Област
+    organizations:
+      human_rights: Човекови права
