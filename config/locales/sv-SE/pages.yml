@@ -33,6 +33,7 @@ sv:
         description: "I %{link}-delen beslutar invånarna om hur en del av stadens budget ska användas."
         link: "medborgarbudgetar"
         image_alt: "Olika faser av en medborgarbudget"
+        figcaption: 'Faserna "stöd" och "omröstning" av en medborgarbudget.'
       polls:
         title: "Omröstningar"
         description: "%{link}-delen aktiveras varje gång ett förslag får 1% stöd och går vidare till omröstning, eller när kommunfullmäktige lämnar ett förslag till omröstning."
