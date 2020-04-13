@@ -4,6 +4,9 @@ mk:
       verification:
         residence: "Живеалиште"
         sms: "СМС"
+      local_census_records/import:
+        one: Увоз на досие од локален попис
+        other: Увози на досиеja од локален попис
     attributes:
       verification:
         residence:
@@ -41,3 +44,4 @@ mk:
           attributes:
             file:
               extension: "Бидејќи форматот на датотеката не е точен. Дозволениот формат е: %{valid_extensions}."
+              headers: "Бидејќи заглавјата на датотеката не се точни. Тие мора да го содржат следните имиња: %{required_headers}."
