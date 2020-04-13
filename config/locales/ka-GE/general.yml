@@ -314,6 +314,36 @@ ka:
     share:
       improve_it: გააუმჯობესეთ თქვენი კამპანია და მიიღეთ დამატებითი მხარდაჭერა.
       dashboard: დამატებითი ინფორმაციის ნახვა
+      message: "მე ხმა მივეცი ინიციატივას სახელად: %{title} %{handle}-ში. თუ შენც ხარ დაინტერესებული, დაუჭირე მხარი!"
+    edit:
+      editing: ინიციატივის რედაქტირება
+      form:
+        submit_button: ცვლილებების შენახვა
+      show_link: ინიციატივის ნახვა
+    retire_form:
+      title: დეაქტივირებული ინიციატივა
+      warning: "თუ მოახდენთ ინიციატივის დეაქტივიზაციას, ის მაინც მიიღებს ხმებს, მაგრამ აღარ გამოჩნდება მთავარ ჩამონათვალში და ყველა მომხმარებელთან გამოჩნდება შეტყობინება იმის თაობაზე, რომ ავტორს აღარ სურს მისმა ინიციატივამ ხმები დააგროვოს"
+      retired_reason_blank: აირჩიეთ სასურველი ვარიანტი
+      retired_explanation_placeholder: მოკლედ განმარტეთ, რატომ არ გსურთ, ამ ინიციატივამ დამატებითი ხმები მიიღოს
+      submit_button: ინიციატივის დეაქტივიზაცია
+    retire_options:
+      duplicated: დუბლირებული
+      started: უკვე მიმდინარეობს
+      unfeasible: შეუძლებელი
+      done: შესრულებული
+      other: სხვა
+    form:
+      proposal_responsible_name_note: "(ინდივიდუალურად, ან როგორც გუნდის ერთ-ერთი წარმომადგენელი; არ გამოჩნდება საჯაროდ)"
+      proposal_summary_note: "(მაქსიმუმ 200 სიმბოლო)"
+      proposal_video_url_note: შეგიძლიათ დაამატოთ YouTube-ის ან Vimeo-ის ბმული
+      tag_category_label: "კატეგორიები"
+      tags_instructions: "მონიშნეთ ეს ინიციატივა. შეგიძლიათ შეარჩიოთ შემოთავაზებული კატეგორიებიდან, ან შექმნათ საკუთარი"
+      tags_label: ტეგები
+      tags_placeholder: "შეიყვანეთ ის ტეგები, რომელთა გამოყენებაც გსურთ, გამოყავით ისინი მძიმით (',')"
+      map_location: "რუქის ლოკაცია"
+      map_location_instructions: "დასვით მარკერი რუქის სასურველ პოზიციაზე."
+      map_remove_marker: "მარკერის წაშლა"
+      map_skip_checkbox: "ამ ინიციატივას არ აქვს ზუსტად განსაზღვრული ლოკაცია, ან მე მის შესახებ ინფორმაციას არ ვფლობ."
     index:
       recommendations:
         actions:
@@ -384,6 +414,19 @@ ka:
       votes:
         zero: ხმები არ მოიძებნა
   dashboard:
+    progress:
+      group_by_month: ყოველთვიურად
+      group_by_week: ყოველკვირეულად
+      group_by_date: ყოველდღიურად
+      progress: მიღწეული პროგრესი
+      supports: მხარდამჭერები
+      success: პროგრესის სასურველი ნიშნული
+      new_action: ახალი
+    index:
+      title: გამოცემა
+      edit_proposal_link: ინიციატივის რედაქტირება
+      publish: ინიციატივის გამოქვეყნება
+      retire: ინიციატივის დეაქტივიზაცია
     new_request:
       links: ბმულები
     resources:
@@ -456,6 +499,36 @@ ka:
         unable_notice: გამოკითხვის წაშლა შეუძლებელია, რადგან მასში უკვე მიიღეს მონაწილეობა
       form:
         name: გამოკითხვის დასახელება
+        add_question: კითხვის დამატება
+      question_fields:
+        remove_question: შეკითხვის წაშლა
+        add_answer: პასუხის დამატება
+      question_answer_fields:
+        remove_answer: პასუხის წაშლა
+    poster:
+      index:
+        title: პოსტერის ესკიზი
+        poster_title: "ნუ ხარ გაოცებული,"
+        poster_subtitle: "დამეხმარე! ;)"
+        intro_text: "<strong>მე მონაწილეობას ვიღებ %{org}-ში</strong> ჩემს სამოქალაქო ინიციატივასთან ერთად, თუ შენც ჩაერთევბი, მაქსიმუმს გავაკეთებ იმისათვის რომ ჩვენი ქალაქი გახდეს ისეთი, როგორიც გვსურს."
+        proposal_code: "ინიციატივის კოდი: %{code}"
+        support: ჩემს ინიციატივაზე მხარის დაჭერა
+        footer: "<strong>დააჭირეთ %{link} და მხარი დაუჭირეთ ამ ინიციატივას.</strong> რაც მეტი ვიქნებით, მით უკეთესი. მადლობა!"
+      new:
+        title: თქვენი ინიციატივის პოსტერი
+      options:
+        preview: ესკიზი
+        download: ჩამოტვირთვა
+    mailing:
+      index:
+        title: ელ. წერილის ნახვა
+      new:
+        title: გასაზიარებელი ელ. წერილი
+      mailing_options:
+        send: გაეგზავნოს %{address}
+        preview: ესკიზი
+      create:
+        sent: წერილი გაიგზავნა
   polls:
     show:
       back: კენჭისყრაში დაბრუნება
