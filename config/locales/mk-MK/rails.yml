@@ -117,7 +117,44 @@ mk:
       odd: мора да биде непарен
       required: мора да постои
       taken: веќе е зафатен
+      too_long:
+        one: е предолго (максимумот е 1 знак)
+        other: е предолго (максимумот е %{count} знаци)
+      too_short:
+        one: е прекратко (минимумот е 1 знак)
+        other: е прекратко (минимумот е %{count} знаци)
+      wrong_length:
+        one: e со грешна должина (треба да е 1 знак)
+        other: е со грешна должина (треба да е %{count} знаци)
+      other_than: мора да биде различно од %{count}
+    template:
+      body: "Имаше проблеми со следниве полиња:"
+      header:
+        one: 1 грешка го превенира зачувувањето на %{model}
+        other: "%{count} грешки го превенираа зачувувањето на %{model}"
+  helpers:
+    select:
+      prompt: Изберете
+    submit:
+      create: Креирај %{model}
+      submit: Зачувај %{model}
+      update: Ажурирај %{model}
   number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
         format: "%n %u"
