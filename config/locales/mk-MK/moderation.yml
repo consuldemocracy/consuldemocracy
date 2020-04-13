@@ -1,1 +1,19 @@
 mk:
+  moderation:
+    comments:
+      index:
+        block_authors: Блокирај ги авторите
+        confirm: Дали сте сигурни?
+        filter: Филтрирај
+        filters:
+          all: Сите
+          pending_flag_review: Во исчекување
+          with_ignored_flag: Означено како прегледано
+        headers:
+          comment: Коментирај
+          moderate: Модерирај
+        hide_comments: Сокриј коментари
+        ignore_flags: Означи како прегледано
+        order: Ред
+        orders:
+          flags: Најобележан
