@@ -1,1 +1,9 @@
 mk:
+  social_share_button:
+    share_to: "Сподели со %{name}"
+    weibo: "Сина Веибо"
+    twitter: "Твитер"
+    facebook: "Фејсбук"
+    douban: "Доубан"
+    qq: "КјуЗоун"
+    tqq: "Ткк"
