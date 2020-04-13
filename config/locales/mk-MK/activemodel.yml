@@ -1,1 +1,21 @@
 mk:
+  activemodel:
+    models:
+      verification:
+        residence: "Живеалиште"
+        sms: "СМС"
+    attributes:
+      verification:
+        residence:
+          document_type: "Вид на документ"
+          document_number: "Број на документ (вклучувајќи и букви)"
+          date_of_birth: "Датум на раѓање"
+          postal_code: "Поштенски број"
+        sms:
+          phone: "Телефон"
+          confirmation_code: "Код за потврда"
+        email:
+          recipient: "Е-пошта"
+      verification/letter:
+        email: "Е-пошта"
+        password: "Лозинка"
