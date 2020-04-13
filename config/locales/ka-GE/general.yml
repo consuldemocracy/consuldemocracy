@@ -205,6 +205,12 @@ ka:
         retired: დეაქტივირებული
       proposal_totals:
         active_resources: აქტიური რესურსები
+        community: თქვენი გაერთიანების წევრები
+        show_proposal: ინიციატივის ნახვა
+        preview_proposal: ინიციატივის გადახედვა
+        current_goal: დასახული მიზანი
+        supports:
+          zero: მხარდამჭერები არ მოიძებნა
     footer:
       privacy: კონფიდენციალურობის პოლიტიკა
     header:
