@@ -28,6 +28,7 @@ sv:
       comment: Kommentera förslaget
       unsubscribe: "Gå till %{account} och avmarkera 'Få sammanfattningar av aviseringar om förslag', om du inte längre vill få aviseringar om förslag."
       unsubscribe_account: Mitt konto
+      unfollow: "Sluta att få aviseringar genom att besök förslaget och sluta att följa."
     direct_message_for_receiver:
       subject: "Du har fått ett nytt meddelande"
       reply: Svara till %{sender}
@@ -35,6 +36,7 @@ sv:
       unsubscribe_account: Mitt konto
     direct_message_for_sender:
       subject: "Du har skickat ett meddelande"
+      title: "Du har skickat ett nytt privat meddelande till <strong>%{receiver}</strong> med innehållet:"
     user_invite:
       ignore: "Om du inte har begärt denna inbjudan oroa inte dig, du kan ignorera detta mail."
       text: "Tack för att du registrerat dig på %{org}! Nu kan du snart vara med och delta, fyll bara i det här formuläret:"
@@ -75,8 +77,17 @@ sv:
       title: Ny kommentar kring utvärdering för %{investment}
       hi: Hej
       new_comment_by: Det finns en nya kommentar kring utvärdering från <strong>%{commenter}</strong> för budgetförslaget %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
+      subject: "Fler nyheter om ditt medborgarförslag"
       hi: "Hej %{name},"
+      new_resource: "NY UPPLÅST RESURS"
+      introduction: "Du skapade förslaget %{title} som ett utkast den %{created_at_day} %{created_at_month}."
+      text_1: "Du kan när som helst publicera det på denna länk: %{link_to_published}. Om du är osäker..."
+      text_2: "Fånga dagen! Lär dig mer, lägg till fler personer med samma intressen och förbered den spridning som krävs när du offentliggör förslaget."
+      text_3: "Och som hjälp på traven under denna utmaning finns följande nyheter..."
+      text_4: "Ta en titt på denna NYA rekommenderade ÅTGÄRD:"
+      text_5: "Nästa rekommenderade åtgärd är:"
     new_actions_notification_rake_published:
       hi: "Hej %{name},"
     new_actions_notification_on_create:
