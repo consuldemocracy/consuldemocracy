@@ -218,6 +218,11 @@ ka:
       consul_url: https://github.com/consul/consul
       contact_us: ტექნიკური მხარდაჭერის მისაღებად ეწვიეთ
       copyright: CONSUL, %{year}
+      description: აღნიშნული პორტალი იყენებს %{consul}, რომელიც არის %{open_source}.
+      open_source: ღია პროგრამული უზრუნველყოფა
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: გადაწყვიტეთ, როგორ გსურთ იყოს თქვენი ქალაქი მოწყობილი.
+      participation_title: მონაწილეობა
       privacy: კონფიდენციალურობის პოლიტიკა
     header:
       administration_menu: მენიუ
@@ -290,7 +295,20 @@ ka:
       name: Wordpress
     twitter:
       sign_in: Twitter-ით შესვლა
+      sign_up: Twitter-ით რეგისტრაცია
+      name: Twitter
+    info_sign_in: "ავტორიზაცია:"
+    info_sign_up: "რეგისტრაცია:"
+    or_fill: "ან შეავსეთ წინამდებარე ფორმა:"
   proposals:
+    create:
+      form:
+        submit_button: ინიციატივის შექმნა
+    created:
+      title: გილოცავთ! თქვენ გაიარეთ პირველი ეტაპი.
+      motivation: "თქვენი ინიციატივისთვის მნიშვნელოვანია კამპანიის მომზადება. პირველი დღეები გადამწყვეტია."
+      motivation_2: "<strong>თუ გსურთ გამოქვეყნებამდე რეკომენდაციების მიღება, დატოვეთ თქვენი ინიციატივა მონახაზის ფორმატში და ჩვენ აღმოგიჩენთ დამატებით დახმარებას.</strong>"
+      publish: არა, მსურს ინიციატივის გამოქვეყნება
     index:
       recommendations:
         actions:
