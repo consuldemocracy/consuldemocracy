@@ -20,6 +20,14 @@ describe "CKEditor" do
 
     visit new_admin_site_customization_page_path
     find(".cke_button__image").click
+
+    expect(page).to have_css(".cke_dialog")
+
+    execute_script "document.getElementsByClassName('cke_dialog')[0].style.left = '0px'"
+    execute_script "document.getElementsByClassName('cke_dialog')[0].style.top = '0px'"
+
+    expect(find(".cke_dialog")).to match_style(left: "0px", top: "0px")
+
     click_link "Upload"
 
     within_frame(1) do
