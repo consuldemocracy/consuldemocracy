@@ -1561,8 +1561,13 @@ sv:
         new:
           title: Lokala poster i adressregister
           subtitle: Importera CSV fil
+        create:
+          notice: Importen av lokala adressregisterposter är klar!
         show:
+          title: Hantera lokalt adressregister
+          subtitle: Resultat av importprocess
           import: Importera igen
           errored: Felaktiga rader
+          created: Skapade poster
         local_census_records:
           no_records_found: Inga rader.
