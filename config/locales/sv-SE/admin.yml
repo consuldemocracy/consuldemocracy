@@ -958,6 +958,9 @@ sv:
     active_polls:
       edit:
         title: "Omröstningsbeskrivning"
+      form:
+        description:
+          help_text: "Denna text visas i sidhuvudet för omröstningssidan. Det kan berätta om sammanhang för de pågående omröstningarna."
     polls:
       index:
         title: "Lista över opinionsundersökningar"
@@ -988,6 +991,10 @@ sv:
       flash:
         question_added: "Frågan har lagts till i omröstningen"
         error_on_question_added: "Frågan kunde inte läggas till i omröstningen"
+      destroy:
+        alert: "Denna åtgärd tar bort omröstningen och alla dess frågor."
+        success_notice: "Omröstningen har raderats"
+        unable_notice: "Det går inte att radera en omröstning som har röster"
     questions:
       index:
         title: "Frågor"
@@ -1001,6 +1008,7 @@ sv:
         table_proposal: "Förslag"
         table_question: "Fråga"
         table_poll: "Omröstning"
+        poll_not_assigned: "Omröstningen har inte tilldelats"
       edit:
         title: "Redigera fråga"
       new:
@@ -1054,6 +1062,7 @@ sv:
       index:
         title: "Rösträkning"
         no_recounts: "Det finns inga röster att räkna"
+        all_booths_total: "Sammanlagt antal från alla röststationer:"
         total_final: "Slutresultat"
         total_system: "Röster (automatisk)"
         table_booth_name: "Röststation"
