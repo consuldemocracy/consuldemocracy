@@ -13,3 +13,42 @@ ka:
       central_district: ცენტრალური ოლქი
     organizations:
       human_rights: ადამიანის უფლებები
+      neighborhood_association: სამეზობლო ასოციაცია
+    categories:
+      associations: ასოციაციები
+      culture: კულტურა
+      sports: სპორტი
+      social_rights: სოციალური უფლებები
+      economy: ეკონომიკა
+      employment: დასაქმება
+      equity: სამართლიანობა
+      sustainability: მდგრადობა
+      participation: მონაწილეობა
+      mobility: მობილურობა
+      media: მედია
+      health: ჯანმრთელობა
+      transparency: გამჭვირვალეობა
+      security_emergencies: უსაფრთხოება და საგანგებო სიტუაციები
+      environment: გარემო
+    budgets:
+      budget: მონაწილეობითი ბიუჯეტი
+      currency: '€'
+      groups:
+        all_city: მთლიანი ქალაქი
+        districts: რაიონები
+      valuator_groups:
+        culture_and_sports: კულტურა და სპორტი
+        gender_and_diversity: გენდერი და მრავალფეროვნების პოლიტიკა
+        urban_development: მდგრადი ურბანული განვითარება
+        equity_and_employment: სამართლიანობა და დასაქმება
+      statuses:
+        studying_project: პროექტის შესწავლა
+        bidding: ტენდერი
+        executing_project: პროექტის აღსრულება
+        executed: შემსრულებელი
+    polls:
+      current_poll: "მიმდინარე გამოკითხვა"
+      current_poll_geozone_restricted: "გეოგრ. ზონაზე მიმდინარე გამოკითხვა"
+      recounting_poll: "გამოკითხვის გადათვლა"
+      expired_poll_without_stats: "ვადაგასული გამოკითხვა სტატისტიკისა და შედეგების გარეშე"
+      expired_poll_with_stats: "ვადაგასული გამოკითხვა სტატისტიკითა და შედეგებით"
