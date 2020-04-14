@@ -523,16 +523,24 @@ sv:
         one: "%{count} dag"
         other: "%{count} dagar"
       locked_resource: Resursen låst
+      ideal_time: Ideal tid
     community:
       access_community: Gå med i gemenskapen
+      latest_activity: "Senaste aktivitet i gemenskapen: %{at}"
       participants: Deltagare
       debates: Debatter
       comments: Kommentarer
       latest_comments: Senaste meddelande
+    messages:
+      send_notification: Skicka meddelande till de som följer förslaget
+      previous_notifications: Visa tidigare aviseringar
     polls:
       index:
         title: Omröstningar
         create: Skapa omröstning
+        count:
+          one: Du har skapat %{count} omröstning.
+          other: Du har skapat %{count} omröstningar.
         links: Länkar
         additiontal_information: Ytterligare information
       new:
@@ -546,7 +554,11 @@ sv:
           other: "%{count} svar"
         view_results: Se resultat
         edit_poll: Redigera omröstning
+        show_results_help: Om du markerar kryssrutan blir resultaten offentliga och alla användare kan se dem
         delete: Ta bort enkät
+        alert_notice: Denna åtgärd tar bort enkäten och alla dess frågor.
+        success_notice: Enkäten har raderats
+        unable_notice: Du kan inte radera en enkät som har svar
       form:
         name: Enkättitel
         add_question: Lägg till fråga
@@ -557,6 +569,11 @@ sv:
         remove_answer: Ta bort svar
     poster:
       index:
+        title: Förhandsvisning av affisch
+        poster_title: "Leta inte längre,"
+        poster_subtitle: "hjälp mig! ;)"
+        intro_text: "<strong>Jag deltar i %{org}</strong> med mitt eget medborgarförslag och det är bara med din hjälp som jag kan få det stöd som krävs för att få den stad som vi vill ha."
+        proposal_code: "Förslagets kod: %{code}"
         support: Stöd mitt förslag
       options:
         preview: Förhandsvisning
