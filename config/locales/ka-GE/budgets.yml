@@ -1,1 +1,20 @@
 ka:
+  budgets:
+    phase:
+      informing: ინფორმაცია
+    index:
+      see_results: შედეგების ნახვა
+      milestones: ეტაპები
+    investments:
+      form:
+        tag_category_label: "კატეგორიები"
+      index:
+        search_form:
+          button: ძებნა
+          title: ძებნა
+      show:
+        supports: მხარდამჭერები
+        votes: ხმები
+        price: ფასი
+      investment:
+        add: ხმა
