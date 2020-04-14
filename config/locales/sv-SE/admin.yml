@@ -1488,6 +1488,13 @@ sv:
           description: Beskrivning
           link_text: Länktext
           link_url: Länk-URL
+          columns_help: "Kortets bredd i antal kolumner. På mobilskärmar är det alltid en bredd om 100 %."
+          create:
+            notice: "Kortet har skapats!"
+          update:
+            notice: "Kortet har uppdaterats"
+          destroy:
+            notice: "Kortet har tagits bort"
     homepage:
       title: Startsida
       description: De aktiva modulerna visas på startsidan i samma ordning som här.
@@ -1517,6 +1524,7 @@ sv:
         card_title: Redigera kort
         submit_card: Spara kort
     audits:
+      title: "Ändringslogg"
       changes: "Lista över ändringar"
       id: "ID"
       field: "Fält"
@@ -1525,17 +1533,33 @@ sv:
       edited_at: "Redigerad"
       edited_by: "Redigerad av"
       actions: "Åtgärder"
+      empty: "Det finns inga loggade ändringar"
     local_census_records:
       index:
+        title: Hantera lokalt adressregister
+        create: Skapa nytt lokalt adressregister
+        no_local_census_records: Det finns inget lokalt adressregister.
         document_type: Dokumenttyp
         document_number: Dokumentnummer
         date_of_birth: Födelsedatum
         postal_code: Postkod
         search:
+          placeholder: Sök efter dokumentnummer
           search: Sök
         import: Importera CSV
+      new:
+        creating: Skapar nytt lokalt adressregister
+      create:
+        notice: Skapade ny lokal post i adressregister!
+      edit:
+        editing: Redigerar lokalt adressregister
+      update:
+        notice: Uppdaterade lokal post i adressregistret!
+      destroy:
+        notice: Tog bort lokal post i adressregistret!
       imports:
         new:
+          title: Lokala poster i adressregister
           subtitle: Importera CSV fil
         show:
           import: Importera igen
