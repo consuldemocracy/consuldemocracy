@@ -515,6 +515,7 @@ sv:
           submit_button: Spara ändringar
           warning: Du har redigerat texten, glöm inte att klicka på Spara för att spara dina ändringar.
         form:
+          title: 'Redigerar <span class="strong">%{draft_version_title}</span> från processen <span class="strong">%{process_title}</span>'
           launch_text_editor: Öppna textredigerare
           close_text_editor: Stäng textredigerare
           use_markdown: Använd Markdown för att formatera texten
@@ -630,6 +631,7 @@ sv:
         content_blocks: Anpassade innehållsblock
         information_texts: Anpassade informationstexter
         information_texts_menu:
+          basic: "Grundläggande anpassning"
           debates: "Debatter"
           community: "Gemenskap"
           proposals: "Förslag"
@@ -654,6 +656,7 @@ sv:
       dashboard_actions: Resurser och åtgärder
       debates: "Debatter"
       comments: "Kommentarer"
+      local_census_records: Hantera lokalt adressregister
     administrators:
       index:
         title: Administratörer
@@ -670,6 +673,7 @@ sv:
         title: "Administratörer: Sök användare"
       form:
         edit_title: "Redigera administratör"
+        updated: "Administratören har uppdaterats"
     moderators:
       index:
         title: Moderatorer
@@ -684,6 +688,7 @@ sv:
     segment_recipient:
       all_users: Alla användare
       administrators: Administratörer
+      all_proposal_authors: Förslagsförfattare (inklusive arkiverade och tillbakadragna)
       proposal_authors: Förslagslämnarna
       investment_authors: Förslagslämnare för den aktuella budgeten
       feasible_and_undecided_investment_authors: "Förslagslämnare till budgetförslag i den aktuella budgeten som inte överensstämmer med: [valuation finished unfesasible]"
@@ -710,6 +715,7 @@ sv:
         empty_newsletters: Det finns inga nyhetsbrev att visa
       new:
         title: Nytt nyhetsbrev
+        header_footer_help_text: "Sidhuvud och sidfot är gemensamma för alla e-brev, och du kan ändra dem på <code>app/views/layouts/mailer_header</code> och <code>app/views/layouts/mailer_footer</code>.<br>Du kan byta sidhuvudets bild på %{link}."
         image_link: "anpassade bilder"
       edit:
         title: Redigera nyhetsbrev
@@ -809,7 +815,14 @@ sv:
       evaluation_comment:
         title: "Ny kommentar kring utvärdering"
         description: "Skickas till administratörer och bedömare knutna till ett kommenterat budgetförslag"
+      edit_info: "Redigera e-brevet i"
       message_title: "Meddelandes titel"
+      message_body: "Detta är ett exempel på meddelandeinnehåll."
+      alert:
+        no_investments: "Det har inte skapats någon investeringsbudget. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
+        no_comments: "Det har inte skapats några kommentarer. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
+        no_replies: "Det har inte skapats några svar. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
+        no_evaluation_comments: "Det har inte skapats några utvärderingskommentarer. Det krävs exempeldata för att kunna förhandsvisa e-brevet."
     emails_download:
       index:
         title: Hämta e-postadresser
@@ -827,6 +840,7 @@ sv:
         valuator_groups: "Bedömningsgrupper"
         group: "Delbudget"
         no_group: "Ingen grupp"
+        abilities: "Förmågor"
         can_comment: "Kan kommentera"
       valuator:
         add: Lägg till bedömare
