@@ -211,6 +211,8 @@ ka:
         current_goal: დასახული მიზანი
         supports:
           zero: მხარდამჭერები არ მოიძებნა
+          one: 1 მხარდამჭერი
+          other: "ხმები"
     footer:
       accessibility: ხელმისაწვდომობა
       conditions: გამოყენების წესები და პირობები
@@ -876,11 +878,22 @@ ka:
         processes: "ღია პროცესები"
       see_all_debates: ყველა დებატის ნახვა
       see_all_proposals: ყველა ინიციატივის ნახვა
+      see_all_processes: ყველა პროცესის ნახვა
       process_label: პროცესი
       see_process: პროცესის ნახვა
     cards:
       title: გამორჩეული
     recommended:
+      title: თქვენთვის საინტერესო რეკომენდაციები
+      help: "რეკომენდაციების შედგენა ხდება იმ ინიციატივებისა და დებატების ტეგების მიხედვით, რომელთა გამომწერიც თქვენ ხართ."
+      debates:
+        title: რეკომენდირებული დებატები
+        btn_text_link: ყველა რეკომენდირებული დებატი
+      proposals:
+        title: რეკომენდირებული ინიციატივები
+        btn_text_link: ყველა რეკომენდირებული ინიციატივა
+      budget_investments:
+        title: რეკომენდირებული ინვესტიციები
       slide: "%{title}-ის ნახვა"
     verification:
       i_dont_have_an_account: არ მაქვს ანგარიში
