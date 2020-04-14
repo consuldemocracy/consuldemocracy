@@ -100,8 +100,13 @@ sv:
       text_3: "Det är %{days_count} dagar tills ditt förslag får %{max_votes_count} stöd och går till omröstning. Håll humöret uppe och fortsätt jobba. Behöver du idéer?"
       text_4: "NY REKOMMENDERAD SPRIDNINGSÅTGÄRD"
       text_5: "Det finns mer, se följande åtgärd:"
+      footer_text: "Gå in i förslagspanelen och vi berättar som alltid i detalj hur du kan använda resurserna på bästa sätt."
+      dashboard_button: "Fortsätt, och upptäck dem!"
     new_actions_notification_on_create:
+      subject: "Ditt utkast till medborgarförslag har skapats"
       hi: "Hej %{name}!"
       introduction: "Ditt förslag %{title} har skapats."
+      text_1: "Utnyttja att ditt förslag inte är offentligt än och förbered kontakter med andra."
+      text_2: "När allt är klart publicerar du ditt medborgarförslag från denna <a href='%{link}'>länk</a>."
     new_actions_notification_on_published:
       text_2: "Varför 100?"
