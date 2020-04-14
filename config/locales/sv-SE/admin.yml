@@ -842,6 +842,7 @@ sv:
         no_group: "Ingen grupp"
         abilities: "Förmågor"
         can_comment: "Kan kommentera"
+        can_edit_dossier: "Kan redigera rapport"
       valuator:
         add: Lägg till bedömare
         delete: Ta bort
@@ -854,8 +855,10 @@ sv:
         description: "Beskrivning"
         email: "E-post"
         group: "Delbudget"
+        abilities: "Förmågor"
         no_description: "Utan beskrivning"
         no_group: "Utan grupp"
+        no_abilities: "Utan förmågor"
     valuator_groups:
       index:
         title: "Bedömningsgrupper"
@@ -882,6 +885,7 @@ sv:
         email_placeholder: Sök användare efter e-post
         search: Sök
         user_not_found: Användaren hittades inte
+        help: "Lägg till och ta bort funktionärer via sökfältet nedan."
     poll_officer_assignments:
       index:
         officers_title: "Lista över funktionärer"
@@ -916,6 +920,7 @@ sv:
       flash:
         create: "Arbetspasset har lagts till"
         destroy: "Arbetspasset har tagits bort"
+        unable_to_destroy: "Det går inte att radera arbetspass med kopplade resultat eller omräkningar"
         date_missing: "Datum är obligatoriskt"
       vote_collection: Samla röster
       recount_scrutiny: Rösträkning och granskning
