@@ -364,8 +364,14 @@ sv:
           filters:
             pending: Väntande
             done: Löst
+        edit:
+          solving: Lös väntande uppgift
         form:
+          solve: Markera som löst
           proposal: Förslag
+          request: Begärd resurs
+        update:
+          success: Uppgiften har markerats som löst.
     debates:
       index:
         id: ID
@@ -393,6 +399,7 @@ sv:
         size: "Storlek"
         url: "URL"
       create:
+        success_notice: "Dokumentet har skickats in"
         unable_notice: "Ogiltigt dokument"
       destroy:
         success_notice: "Dokumentet har raderats"
@@ -438,6 +445,7 @@ sv:
           process: Process
           debate_phase: Diskussionsfas
           draft_phase: Utkastsfas
+          draft_phase_description: Under denna fas visas inte processen i listan över processer. Tillåter förhandsvisning av processen och att skapa innehåll innan start.
           allegations_phase: Kommenteringsfas
           proposals_phase: Förslagsfas
           use_markdown: Använda Markdown för att formatera texten
@@ -445,6 +453,7 @@ sv:
           summary_placeholder: Kort sammanfattning
           description_placeholder: Lägg till en beskrivning av processen
           additional_info_placeholder: Lägga till ytterligare information som du anser vara användbar
+          homepage_description: Förklara innehållet i processen
           banner_title: Färger för sidhuvud
         index:
           create: Ny process
@@ -479,6 +488,9 @@ sv:
           questions: Debattera
           proposals: Förslag
           milestones: Följer
+      homepage:
+        edit:
+          title: Anpassa processens hemsida
       proposals:
         index:
           title: Titel
