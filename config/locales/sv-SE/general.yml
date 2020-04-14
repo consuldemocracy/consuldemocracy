@@ -575,11 +575,19 @@ sv:
         intro_text: "<strong>Jag deltar i %{org}</strong> med mitt eget medborgarförslag och det är bara med din hjälp som jag kan få det stöd som krävs för att få den stad som vi vill ha."
         proposal_code: "Förslagets kod: %{code}"
         support: Stöd mitt förslag
+        footer: "<strong>Besök %{link} och stöd detta förslag.</strong> Vi behöver vara många. Bestäm dig. Tack!"
+      new:
+        title: Affisch för ditt förslag
       options:
         preview: Förhandsvisning
         download: Ladda ner
     mailing:
+      index:
+        title: Förhandsvisning av e-brev
+      new:
+        title: Modell av e-brev att dela
       mailing_options:
+        send: Skicka till %{address}
         preview: Förhandsvisning
     mailer:
       forward:
