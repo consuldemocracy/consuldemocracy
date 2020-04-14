@@ -856,11 +856,26 @@ ka:
     anonymous: ზედმეტად ბევრი ანონიმური ხმაა იმისათვის, რომ ეს ხმა ჩაითვალოს %{verify_account}.
     comment_unauthenticated: ხმის მისაცემად გაიარეთ %{signin} ან %{signup}.
     disagree: არ ვეთანხმები
+    organizations: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
     supports: მხარდამჭერები
+    verified_only: მხოლოდ ვერიფიცირიბული ანგარიშის მქონე მომხმარებლებს შეუძლიათ ინიციატივაზე ხმის მიცემა; %{verify_account}.
     budget_investments:
+      not_logged_in: გასაგრძელებლად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
+      not_verified: მხოლოდ ვერიფიცირებული ანგარიშის მქონე მომხმარებლებს შეუძლიათ საინვესტიციო პროექტებზე ხმის მიცემა; %{verify_account}.
+      organization: ორგანიზაციებს ხმის მიცემა არ შეუძლიათ
+      unfeasible: არაგანხორციელებად საინვესტიციო პროექტებზე ხმის მიცემა შეუძლებელია
       not_voting_allowed: ხმის მიცემის ფაზა დასრულებულია
+      different_heading_assigned:
+        one: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} რაიონში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
+        other: "საინვესტიციო პროექტებზე ხმის მიცემა მხოლოდ %{count} რაიონში შეგიძლიათ. თქვენ უკვე მეიცით ხმა %{supported_headings}-ში."
   welcome:
     feed:
+      most_active:
+        debates: "ყველაზე აქტიური დებატები"
+        proposals: "ყველაზე აქტიური ინიციატივები"
+        processes: "ღია პროცესები"
+      see_all_debates: ყველა დებატის ნახვა
+      see_all_proposals: ყველა ინიციატივის ნახვა
       process_label: პროცესი
       see_process: პროცესის ნახვა
     cards:
