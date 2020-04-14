@@ -1207,6 +1207,8 @@ sv:
           how_to_enable: 'För att visa kartan måste man aktivera "Geografisk plats för förslag och budgetförslag" på sidan "Funktioner".'
         dashboard:
           title: Instrumentbräda för förslag
+        remote_census:
+          how_to_enable: 'För att konfigurera fjärradressregister (SOAP) måste du aktivera "Konfigurera anslutning till fjärradressregister (SOAP)" under fliken "Funktioner".'
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
       remote_census_response_name: Svar data
@@ -1251,6 +1253,7 @@ sv:
       content: Innehåll
       created_at: Skapad den
       delete: Ta bort
+      color_help: Hexadecimalt format
       show_results_and_stats: "Visa resultat och statistik"
       results_and_stats_reminder: "Genom att markera dessa rutor kommer omröstningens resultat och/eller statistik att visas för alla användare."
     geozones:
@@ -1263,7 +1266,9 @@ sv:
         name: Namn
         external_code: Extern kod
         census_code: Områdeskod
+        code_help: Svarskod för denna geozon i adressregister-API:t
         coordinates: Koordinater
+        coordinates_help: Koordinater som skapar ett klickbart område på en HTML-bildkarta
       edit:
         form:
           submit_button: Spara ändringar
@@ -1288,7 +1293,10 @@ sv:
         document_numbers_note: "Fyll i siffrorna separerade av semikolon (;)"
         submit: Skapa namninsamling
         text_help:
+          required_fields_note: "För att verifiera en användare måste ansökan ha: dokumentnummer"
+          date_of_birth_note: ", födelsedag (dd/mm/yyyy)"
           postal_code_note: " och Postkod"
+          required_fields_structure_note: "De fält som krävs för varje användare måste vara kommaseparerade och varje användare måste vara separerad av semikolon."
           example_text: "Exempel: "
       show:
         created_at: Skapad
@@ -1302,6 +1310,10 @@ sv:
           one: "Det finns %{count} ogiltiga underskrifter"
           other: "Det finns %{count} ogiltiga underskrifter"
         unverified_error: (Ej verifierad adress)
+        voted:
+          zero: "Det finns inga röster som skapats från bekräftade underskrifter."
+          one: "Det finns %{count} röst från bekräftade underskrifter."
+          other: "Det finns %{count} röster från bekräftade underskrifter."
         loading: "Det finns fortfarande underskrifter som kontrolleras mot adressregistret, vänligen uppdatera sidan om en stund"
     stats:
       show:
@@ -1335,6 +1347,8 @@ sv:
         level_2_user: Användare nivå två
         proposal_created: Medborgarförslag
       budgets:
+        no_data_before_balloting_phase: "Det finns inga data att visa före röstfasen."
+        title: "Deltagarbudgetar - deltagarstatistik"
         supporting_phase: Stödfas
         balloting_phase: Omröstning
       budget_balloting:
@@ -1344,6 +1358,7 @@ sv:
         votes_per_heading: Röster per område
         participants_per_district: Deltagare efter område
       budget_supporting:
+        title: "Statistik för stödfas"
         headings: Områden
         users: Användare
         vote_count: Röster
@@ -1356,6 +1371,7 @@ sv:
         title: Aviseringar om förslag
         total: Totalt
         proposals_with_notifications: Förslag med aviseringar
+        not_available: "Förslaget är inte tillgängligt"
       polls:
         title: Statistik för omröstning
         all: Omröstningar
@@ -1397,6 +1413,7 @@ sv:
       content_blocks:
         information: Information om innehållsblock
         about: "Du kan skapa innehållsblock i HTML som kan infogas i sidhuvudet eller sidfoten på din CONSUL-installation."
+        html_format: "Ett innehållsblock är en grupp av länkar som måste ha följande format:"
         no_blocks: "Det finns inga innehållsblock."
         create:
           notice: Innehållsblocket har skapats
@@ -1420,6 +1437,8 @@ sv:
           names:
             top_links: Topp länkar
             footer: Footer
+            subnavigation_left: Kropp Navigering Vänster
+            subnavigation_right: Kropp Navigering Höger
       images:
         index:
           title: Anpassade bilder
@@ -1452,6 +1471,7 @@ sv:
           see_page: Visa sida
         new:
           title: Skapa ny anpassad sida
+          slug_help: "Text som identifierar denna sida i en URL, till exempel <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Skapad den
           status: Status
