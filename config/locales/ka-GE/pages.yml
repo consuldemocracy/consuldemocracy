@@ -77,4 +77,92 @@ ka:
         - სურათებისთვის ალტერნატიული ტექსტის მიწოდებით, მხედველობა დაქვეითებული ან მხედველობითი უნარის სრულიად არმქონე მომხმარებლებს შეუძლიათ სპეციალური მკითხველების გამოყენება ინფორმაციის მისაღებად.
         - სმენადაქვეითებული მომხმარებლები ვიდეოს შინაარს სუბტიტრებით გაიგებენ.
         - თუ შინაარსი მარტივი და ილუსტრირებული ენითაა შედეგნილი, ათვისებასთან დაკავშირებული პრობლემების მქონე მომხმარებლებს უკეთ შეუძლიათ მისი გაგება.
-        - If the user has mobility problems and it is difficult to use the mouse, the alternatives with the keyboard help in navigation.
+        - თუ მომხმარებელს აქვს მოძრაობასთან დაკავშირებული პრობლემები და მაუსის გამოყენება უჭირს, კლავიატურასთან დაკავშირებული ალტერნატივები მაა ნავიგაციაში დაეხმარება.
+      keyboard_shortcuts:
+        title: მალსახმობი ღილაკები
+        navigation_table:
+          description: ვებგვერდის მაქსიმალურად კომფორტულად გამოსაყენებლად, მალსახმობი ღილაკები საიტის მთავარ სექციებს უკავშირდება.
+          caption: ნავიგაციის მენიუს მალსახმობი ღილაკები
+          key_header: ღილაკი
+          page_header: გვერდი
+          rows:
+            - 
+              key_column: 0
+              page_column: მთავარი გვერდი
+            - 
+              key_column: 1
+              page_column: დებატები
+            - 
+              key_column: 2
+              page_column: ინიციატივები
+            - 
+              key_column: 3
+              page_column: ხმები
+            - 
+              key_column: 4
+              page_column: მონაწილეობითი ბიუჯეტები
+            - 
+              key_column: 5
+              page_column: საკანონმდებლო პროცესები
+        browser_table:
+          description: "ოპერაციული სისტემისა და ბრაუზერიდან გამომდინარე, კომბინაცია შემდეგი იქნება:"
+          caption: ღილაკთა კომბინაცია ოპერაციული სისტემისა და ბრაუზერის მიხედვით
+          browser_header: ბრაუზერი
+          key_header: ღილაკთა კომბინაცია
+          rows:
+            - 
+              browser_column: Explorer
+              key_column: ALT + მალსახმობი და ENTER
+            - 
+              browser_column: Firefox
+              key_column: ALT + CAPS + მალსახმობი
+            - 
+              browser_column: Chrome
+              key_column: ALT + მალსახმობი (CTRL + ALT + მალსახმობი MAC-ის შემთხვევაში)
+            - 
+              browser_column: Safari
+              key_column: ALT + მალსახმობი (CMD + მალსახმობი MAC-ის შემთხვევაში)
+            - 
+              browser_column: Opera
+              key_column: CAPS + ESC + მალსახმობი
+      textsize:
+        title: ტექსტის ზომა
+        browser_settings_table:
+          description: საიტის დიაზინი მომხმარებელს საშუალებას აძლევს, აირჩიოს ტექსტის სასურველი ზომა. ამ ფუნქციის გამოყენება ბრაუზერიდან გამომდინარე სხვადასხვა გზით არის შესაძლებელი.
+          browser_header: ბრაუზერი
+          action_header: განსახორციელებელი მოქმედება
+          rows:
+            - 
+              browser_column: Explorer
+              action_column: ნახვა > ტექსტის ზომა
+            - 
+              browser_column: Firefox
+              action_column: ნახვა > ზომა
+            - 
+              browser_column: Chrome
+              action_column: პარამეტრები (ნიშანი) > ფუქნციები > დეტალურად > ვებ კონტენტი > ტექსტის ზომა
+            - 
+              browser_column: Safari
+              action_column: ნახვა > მოახლოება/დაშორება
+            - 
+              browser_column: Opera
+              action_column: ნახვა > მასშტაბი
+        browser_shortcuts_table:
+          description: "ტექსტის ზომის შესაცვლელად, გამოიყენეთ ბრაუზერის მალსახმობი ღილაკები შემდეგი კომბინაციით:"
+          rows:
+            - 
+              shortcut_column: CTRL და + (CMD და + MAC-ზე)
+              description_column: ტექსტის ზომის გაზრდა
+            - 
+              shortcut_column: CTRL და - (CMD და - MAC-ზე)
+              description_column: ტექსტის ზომის შემცირება
+      compatibility:
+        title: სტანდარტებთან და ვიზუალურ დიზაინთან თავსებადობა
+        description: 'ამ ვებ–გვერდის ყველა გვერდი აკმაყოფილებს სამუშაო ჯგუფის მიერ დამკვიდრებულ <strong> წვდომის სახელმძღვანელო პრინციპებს</strong> ან დიზაინის ზოგად პრინციპებს <abbr title="ვებ წვდომის ინიციატივა" lang="en">WAI</abbr>.'
+    titles:
+      help: "რა არის %{org}? - მოქალაქეთა ჩართულობა"
+    verify:
+      info: "თქვენი ანგარიშის დასადასტურებლად გაგვაცანით თქვენი წვდომის მონაცემები:"
+      info_code: "შეიყვანეთ წერილით მიღებული კოდი:"
+      submit: ჩემი ანგარიშის დადასტურება
+      title: ანგარიშის დადასტურება
