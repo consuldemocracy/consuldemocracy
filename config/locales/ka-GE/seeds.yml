@@ -1,1 +1,15 @@
 ka:
+  seeds:
+    settings:
+      official_level_1_name: ოფიციალური თანამდებობა 1
+      official_level_2_name: ოფიციალური თანამდებობა 2
+      official_level_3_name: ოფიციალური თანამდებობა 3
+      official_level_4_name: ოფიციალური თანამდებობა 4
+      official_level_5_name: ოფიციალური თანამდებობა 5
+    geozones:
+      north_district: ჩრდილოეთ ოლქი
+      west_district: დასავლეთ ოლქი
+      east_district: აღმოსავლეთ ოლქი
+      central_district: ცენტრალური ოლქი
+    organizations:
+      human_rights: ადამიანის უფლებები
