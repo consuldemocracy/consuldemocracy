@@ -500,6 +500,7 @@ sv:
         form:
           custom_categories: Kategorier
           custom_categories_description: Kategorier som användare kan välja när de skapar förslaget.
+          custom_categories_placeholder: Ange taggarna som du vill använda, avgränsade med komma (',') och mellan citationstecken ("")
       draft_versions:
         create:
           notice: 'Utkastet har skapats. <a href="%{link}">Klicka här för att visa det</a>'
