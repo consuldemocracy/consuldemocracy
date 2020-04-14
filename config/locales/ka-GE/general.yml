@@ -853,6 +853,8 @@ ka:
       retired_help_text: მოქმედებათა დაფა ხელმისაწვდომი არ არის დეაქტივირებული ინიციატივებისთვის
   votes:
     agree: ვეთანხმები
+    anonymous: ზედმეტად ბევრი ანონიმური ხმაა იმისათვის, რომ ეს ხმა ჩაითვალოს %{verify_account}.
+    comment_unauthenticated: ხმის მისაცემად გაიარეთ %{signin} ან %{signup}.
     disagree: არ ვეთანხმები
     supports: მხარდამჭერები
     budget_investments:
