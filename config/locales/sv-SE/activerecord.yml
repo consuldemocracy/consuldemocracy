@@ -524,7 +524,9 @@ sv:
             valuation:
               cannot_comment_valuation: "Du kan inte kommentera en kostnadsberäkning"
       messages:
+        translations_too_short: Det krävs minst en översättning
         record_invalid: "Felmeddelanden: %{errors}"
+        another_poll_active: Det pågår en annan omröstning under perioden
         restrict_dependent_destroy:
           has_one: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
           has_many: "Inlägget kan inte raderas eftersom det hänger ihop med inlägget %{record}"
