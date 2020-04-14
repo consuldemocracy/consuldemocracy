@@ -118,4 +118,6 @@ sv:
       text_6: "här är flera resurser och en lång lista med tips som kommer att komma till dig dagligen som förberedelse inför sändningen!"
       dashboard_button: "Fortsätt, och upptäck dem!"
     new_actions_notification_on_published:
+      subject: "Ditt medborgarförslag är redan publicerat. Sluta inte att sprida det!"
+      hi: "Grattis %{name}! Du har skapat förslaget %{title}."
       text_2: "Varför 100?"
