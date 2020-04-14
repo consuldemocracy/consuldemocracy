@@ -186,6 +186,8 @@ sv:
     document: Dokument
     topic: Ämne
     image: Bild
+    local_census_record: Lokalt adressregister
+    local_census_records/import: Importera lokalt adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
   geozones:
@@ -200,8 +202,10 @@ sv:
       proposal_header:
         published: Publicerad
         draft: Utkast
+        retired: Tillbakadraget
       proposal_totals:
         active_resources: Aktiva resurser
+        community: Deltagare i din gemenskap
         show_proposal: Visa förslag
         preview_proposal: Förhandsvisa förslag
         current_goal: Nuvarande mål
@@ -287,6 +291,10 @@ sv:
       sign_in: Logga in med Google
       sign_up: Registrera dig med Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Logga in med Wordpress
+      sign_up: Registrera med Wordpress
+      name: Wordpress
     twitter:
       sign_in: Logga in med Twitter
       sign_up: Registrera dig med Twitter
@@ -299,10 +307,16 @@ sv:
       form:
         submit_button: Skapa förslag
     created:
+      title: Grattis! Du har tagit det första steget.
+      motivation: "Det är viktigt att förbereda kampanjen om ditt förslag ska bli framgångsrikt. De första dagarna är viktiga."
+      motivation_2: "<strong>Om du vill ha råd om att förbereda publiceringen lämnar du ditt förslag som ett utkast och vi kommer att guida dig.</strong>"
       publish: Nej, jag vill publicera medborgarförslaget
+      dashboard: Ja, jag vill ha hjälp och publicera senare
+      preview_title: Så här kommer ditt förslag att se ut när det publiceras
     share:
       improve_it: Få mer stöd genom att förbättra ditt förslag.
       dashboard: Visa mer information
+      message: "Jag stödjer förslaget %{title} i %{handle}. Stöd det du med om du är intresserad!"
     edit:
       editing: Redigera förslag
       form:
@@ -366,6 +380,9 @@ sv:
         button: Sök
         placeholder: Sök förslag...
         title: Sök
+      search_results:
+        one: " som innehåller <strong>'%{search_term}'</strong>"
+        other: " som innehåller <strong>'%{search_term}'</strong>"
       select_order: Sortera efter
       select_order_long: "Du visar förslag enligt:"
       start_proposal: Skapa ett förslag
@@ -390,6 +407,7 @@ sv:
       start_new: Skapa ett förslag
     notice:
       retired: Förslag som dragits tillbaka
+      published: Förslaget har publicerats
     proposal:
       created: "Du har skapat ett förslag!"
       share:
@@ -436,6 +454,7 @@ sv:
       embed_video_title: "Video om %{proposal}"
       title_video_url: "Extern video"
       author: Skribent
+      draft: Förslags är ett utkast. Kan inte få stöd och visas inte i listan över förslag.
     update:
       form:
         submit_button: Spara ändringar
@@ -453,11 +472,17 @@ sv:
       related_content: Relaterat innehåll
     form:
       request: Begäran
+    create_request:
+      success: Förfrågan har skickats in. Vi kontaktar dig snart med information om det.
+      archived: Förslaget har arkiverats och kan inte begära resurser.
     progress:
+      title: Bild
       group_by_month: Månadsvis
       group_by_week: Veckovis
       group_by_date: Daglig
+      progress: Samlade framsteg
       supports: Stöd
+      success: Idealt förlopp
       new_action: Ny
     index:
       title: Redigering
@@ -469,22 +494,35 @@ sv:
     resources:
       available_resources: Tillgängliga resurser
     resource:
+      required_days: "%{days} dagar krävs"
+      required_supports: "%{supports} stöd krävs"
       and: och
       view_resource: Se resurs
       resource_requested: Resurser redan begärt
       request_resource: Begär resurs
+      resource_locked: Resursen låst
     recommended_actions:
       title: Rekommenderade åtgärder
       goto_proposed_actions: Gå till rekommenderade åtgärder
+      see_proposed_actions: Visa rekommenderade åtgärder
+      hide_proposed_actions: Göm rekommenderade åtgärder
       pending_title: Väntande
       show_description: Visa beskrivning
+      without_pending_actions: Inga kommande rekommenderade åtgärder
       done_title: Genomfört
+      without_done_actions: Inga rekommenderade åtgärder har gjorts
     next_goal:
       title: Mål
+      see_complete_course: Visa den kompletta guiden
+      hide_course: Göm guide
     goal:
+      target_supports:
+        one: Få %{count} stöd för ditt förslag
+        other: Få %{count} stöd för ditt förslag
       days:
         one: "%{count} dag"
         other: "%{count} dagar"
+      locked_resource: Resursen låst
     community:
       access_community: Gå med i gemenskapen
       participants: Deltagare
