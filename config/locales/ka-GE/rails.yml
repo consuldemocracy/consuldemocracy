@@ -120,9 +120,44 @@ ka:
       too_long:
         one: ზედმეტად გრძელია (მაქს. 1 სიმბოლო)
         other: ზედმეტად გრძელია (მაქს. %{count} სიმბოლო)
+      too_short:
+        one: ზედმეტად მოკლეა (მინ. 1 სიმბოლო)
+        other: ზედმეტად მოკლეა (მინ. %{count} სიმბოლო)
+      wrong_length:
+        one: არასწორი სიგრძისაა (უნდა იყოს 1 სიმბოლო)
+        other: არასწორი სიგრძისაა (უნდა იყოს %{count} სიმბოლო)
+      other_than: გარდა %{count}
+    template:
+      body: "შეცდომა აღნიშნულ ვეელბში:"
+      header:
+        one: '%{model}-ის დამახსოვრება ვერ მოხერხდა. დაფიქსირდა 1 შეცდომა'
+        other: "%{model}-ის დამახსოვრება ვერ მოხერხდა. დაფიქსირდა %{count} შეცდომა"
+  helpers:
+    select:
+      prompt: გთხოვთ, აირჩიოთ
+    submit:
+      create: '%{model}-ის შექმნა'
+      submit: '%{model}-ის დამახსოვრება'
+      update: '%{model}-ის განახლება'
   number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        precision: 2
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "$"
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
     human:
       decimal_units:
+        format: "%n %u"
         units:
           billion: მილიარდი
           million: მილიონი
