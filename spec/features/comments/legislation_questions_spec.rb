@@ -1,5 +1,4 @@
 require "rails_helper"
-include ActionView::Helpers::DateHelper
 
 describe "Commenting legislation questions" do
   let(:user) { create :user, :level_two }

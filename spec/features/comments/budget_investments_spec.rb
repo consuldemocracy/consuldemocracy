@@ -1,5 +1,4 @@
 require "rails_helper"
-include ActionView::Helpers::DateHelper
 
 describe "Commenting Budget::Investments" do
   let(:user) { create :user }

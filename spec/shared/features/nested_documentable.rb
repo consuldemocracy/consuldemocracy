@@ -1,8 +1,4 @@
 shared_examples "nested documentable" do |login_as_name, documentable_factory_name, path, documentable_path_arguments, fill_resource_method_name, submit_button, documentable_success_notice|
-  include ActionView::Helpers
-  include DocumentsHelper
-  include DocumentablesHelper
-
   let!(:administrator)          { create(:user) }
   let!(:user)                   { create(:user, :level_two) }
   let!(:arguments)              { {} }
