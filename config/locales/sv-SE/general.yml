@@ -599,6 +599,7 @@ sv:
         hi: "Hej!"
         introduction: Jag vill berätta att jag deltar i %{org}, som är en plattform där vi kan bestämma vilken stad som vi vill ha. Jag har skapat mitt eget medborgarförslag och nu behöver jag ditt stöd! Det fungerar väldigt enkelt.
         support: "Du behöver bara klicka på knappen under 'Stöd förslaget', och du kan läsa på innan du sprider det vidare. Endast de förslag som får mesta möjliga stöd kommer att genomföras av kommunfullmäktige, och med din hjälp är jag säker på att vi kan klara det!"
+        share: "Och om du kunde dela förslaget med dina vänner, din familj och dina kontakter skulle det vara perfekt!"
   polls:
     all: "Alla"
     no_dates: "inget datum har valts"
@@ -714,6 +715,11 @@ sv:
           notice: "Du följer nu det här budgetförslaget! <br> Vi meddelar dig om alla ändringar så att du kan hålla dig uppdaterad."
         destroy:
           notice: "Du har slutat följa det här budgetförslaget! <br> Vi kommer inte längre skicka aviseringar om förslaget."
+      proposal:
+        create:
+          notice: "Du följer nu det här medborgarförslaget! <br> Vi meddelar dig om alla ändringar så att du kan hålla dig uppdaterad."
+        destroy:
+          notice: "Du har slutat att följa det här medborgarförslaget! <br> Vi kommer inte längre skicka aviseringar om förslaget."
     hide: Dölj
     print:
       print_button: Skriv ut informationen
