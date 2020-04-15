@@ -119,6 +119,8 @@ ka:
         price: ფასი
         comments_tab: კომენტარები
         milestones_tab: ეტაპები
+        author: ავტორი
+        project_unfeasible: "ეს საინვესტიციო პროექტი <strong>მოინიშნა, როგორც არაგანხორციელებადი</strong> და შესაბამისად, ვეღარ გადავა კენჭისყრის ეტაპზე."
       investment:
         add: ხმა
         give_support: მხარდაჭერა
