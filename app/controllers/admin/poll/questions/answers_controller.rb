@@ -44,7 +44,7 @@ class Admin::Poll::Questions::AnswersController < Admin::Poll::BaseController
 
   def order_answers
     ::Poll::Question::Answer.order_answers(params[:ordered_list])
-    render nothing: true
+    head :ok
   end
 
   private
