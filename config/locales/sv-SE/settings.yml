@@ -79,6 +79,37 @@ sv:
       graphql_api: "GraphQL API"
       dashboard:
         notification_emails: "Dashboard för e-postaviseringar"
+        notification_emails_description: "Aktivera att skicka dashboard-aviseringar via e-post till författarna av förslaget"
+    remote_census:
+      general:
+        endpoint: "Slutpunkt"
+        endpoint_description: "Namn på värden där adressregistervärden finns (wsdl)"
+      request:
+        method_name: "Namn på metod för begäran"
+        method_name_description: "Namn på metoden för begäran till webbtjänsten för stadens adressregister."
+        structure: "Struktur för begäran"
+        structure_description: 'Strukturen för begäran som tas emot från webbtjänsten för stadens adressregister. De "statiska" värdena i denna begäran bör fyllas i. Värden relaterade till identitetstyp, identitetsnummer, födelsedatum och postnummer bör vara "null". Exempel på ett giltig format: { "request": { "codigo_institucion": 1, "codigo_portal": 1, "codigo_usuario": 1, "documento": null, "tipo_documento": null, "codigo_idioma": 102, "nivel": 3 } }'
+        document_type: "Sökväg för dokumenttyp"
+        document_type_description: "Sökväg i strukturen för begäran som skickar dokumenttypen. FYLL INTE I om webbtjänsten inte kräver dokumenttypen för att verifiera en användare."
+        document_number: "Sökväg för dokumentnummer"
+        document_number_description: "Sökväg i strukturen för begäran som skickar dokumentnumret. FYLL INTE I om webbtjänsten inte kräver dokumentnumret för att verifiera en användare."
+        date_of_birth: "Sökväg till födelsedatum"
+        date_of_birth_description: "Sökväg i strukturen för begäran som skickar födelsedatum. FYLL INTE I om webbtjänsten inte kräver födelsedatum för att verifiera en användare."
+        postal_code: "Sökväg för postnummer"
+        postal_code_description: "Sökväg i strukturen för begäran som skickar postnumret. FYLL INTE I om webbtjänsten inte kräver postnumret för att verifiera en användare."
+      response:
+        date_of_birth: "Sökväg till födelsedatum"
+        date_of_birth_description: "Vad är sökvägen i svaret till användarens födelsedatum?"
+        postal_code: "Sökväg för postnummer"
+        postal_code_description: "Vad är sökvägen i svaret till användarens postnummer?"
+        district: "Sökväg för stadsdel"
+        district_description: "Vad är sökvägen i svaret till användarens stadsdel?"
+        gender: "Sökväg för kön"
+        gender_description: "Vad är sökvägen i svaret till användarens kön?"
+        name: "Sökväg för namn"
+        name_description: "Vad är sökvägen i svaret till användarens namn?"
+        surname: "Sökväg för efternamn"
+        surname_description: "Vad är sökvägen i svaret till användarens efternamn?"
     map:
       latitude: "Latitud"
       longitude: "Longitud"
