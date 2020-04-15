@@ -597,6 +597,8 @@ sv:
         support_button: Stöd förslaget
         share_in: Dela på
         hi: "Hej!"
+        introduction: Jag vill berätta att jag deltar i %{org}, som är en plattform där vi kan bestämma vilken stad som vi vill ha. Jag har skapat mitt eget medborgarförslag och nu behöver jag ditt stöd! Det fungerar väldigt enkelt.
+        support: "Du behöver bara klicka på knappen under 'Stöd förslaget', och du kan läsa på innan du sprider det vidare. Endast de förslag som får mesta möjliga stöd kommer att genomföras av kommunfullmäktige, och med din hjälp är jag säker på att vi kan klara det!"
   polls:
     all: "Alla"
     no_dates: "inget datum har valts"
