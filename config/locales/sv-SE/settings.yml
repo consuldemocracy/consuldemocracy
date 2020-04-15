@@ -96,9 +96,13 @@ sv:
       signature_sheets: "Namninsamlingar"
       user:
         recommendations: "Rekommendationer"
+        recommendations_description: "Visar rekommendationer från användare på hemsidan baserat på taggarna i objekten de följer"
         skip_verification: "Hoppa över användarverifiering"
+        skip_verification_description: "Detta avaktiverar verifiering av användarna och alla registrerade använder kan delta i alla processer"
         recommendations_on_debates: "Rekommenderade debatter"
+        recommendations_on_debates_description: "Visar rekommendationer från användare på debattsidan baserat på taggarna i objekten som de följer"
         recommendations_on_proposals: "Rekommenderade förslag"
+        recommendations_on_proposals_description: "Visar rekommendationer från användare på förslagssidan baserat på taggarna i objekten som de följer"
       community: "Gemenskap kring medborgarförslag och budgetförslag"
       map: "Geografisk plats för förslag och budgetförslag"
       allow_images: "Tillåt uppladdning och visning av bilder"
