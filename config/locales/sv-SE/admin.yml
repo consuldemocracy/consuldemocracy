@@ -129,7 +129,7 @@ sv:
         notice: "Grupp har uppdaterats"
       destroy:
         success_notice: "Grupp har raderats"
-        unable_notice: "Du kan inte ta bort en grupp som har kopplade budgetposter"
+        unable_notice: "Du kan inte ta bort en grupp som har områden kopplade till sig"
       form:
         create: "Skapa ny grupp"
         edit: "Redigera delbudget"
@@ -139,8 +139,8 @@ sv:
     budget_headings:
       no_headings: "Det finns inga områden."
       amount:
-        one: "Det finns 1 budgetpost"
-        other: "Det finns %{count} budgetposter"
+        one: "Det finns 1 område"
+        other: "Det finns %{count} områden"
       create:
         notice: "Området har skapats!"
       update:
@@ -151,7 +151,7 @@ sv:
       form:
         population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
         coordinates_info: "Om latitud och longitud anes kommer investeringssidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
-        content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör denna budgetpost från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för denna budgetpost."
+        content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör detta område från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för området."
         create: "Skapa nytt område"
         edit: "Redigera område"
         submit: "Spara område"
