@@ -94,6 +94,7 @@ sv:
       featured_proposals: "Uppmärksammade förslag"
       featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
+      signature_sheets_description: "Tillåter att röster om förslag och investeringsprojekt i medborgarbudgetar som samlats in på plats kan läggas in via administrationspanelen"
       user:
         recommendations: "Rekommendationer"
         recommendations_description: "Visar rekommendationer från användare på hemsidan baserat på taggarna i objekten de följer"
