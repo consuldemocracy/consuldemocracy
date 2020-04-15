@@ -151,6 +151,7 @@ sv:
       form:
         population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
         coordinates_info: "Om latitud och longitud anes kommer investeringssidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
+        content_blocks_info: "Om innehållsblock är tillåtna kan du skapa anpassat innehåll som rör denna budgetpost från avsnittet Inställningar > Anpassade innehållsblock. Detta innehåll visas på investeringssidan för denna budgetpost."
         create: "Skapa nytt område"
         edit: "Redigera område"
         submit: "Spara område"
@@ -218,6 +219,7 @@ sv:
           author: Skribent
         cannot_calculate_winners: Budgeten måste vara i någon av faserna "Omröstning", "Granskning av röstning" eller "Avslutad budget" för att kunna räkna fram vinnande förslag
         see_results: "Visa resultat"
+        milestone_tags_filter_all: "Alla milstolpetaggar"
       show:
         assigned_admin: Ansvarig administratör
         assigned_valuators: Ansvariga bedömare
@@ -244,6 +246,7 @@ sv:
           "true": "Ja"
           "false": "Nej"
         valuator_groups: "Bedömningsgrupper"
+        preview: Budgetförhandsvisning
       edit:
         classification: Klassificering
         compatibility: Kompatibilitet
@@ -305,12 +308,28 @@ sv:
       delete:
         notice: Status för budgetförslag har tagits bort
     progress_bars:
+      manage: "Hantera förloppsindikatorer"
       index:
         title: "Förloppsindikatorer"
+        no_progress_bars: "Det finns inga förloppsindikatorer"
+        new_progress_bar: "Skapa ny förloppsindikator"
+        primary: "Primär förloppsindikator"
         table_id: "Legitimation"
         table_kind: "Typ"
         table_title: "Titel"
         table_percentage: "Aktuellt framsteg"
+      new:
+        creating: "Skapa förloppsindikator"
+      edit:
+        title:
+          primary: "Redigera primär förloppsindikator"
+          secondary: "Redigera förloppsindikator %{title}"
+      create:
+        notice: "Förloppsindikator har skapats!"
+      update:
+        notice: "Förloppsindikatorn har uppdaterats"
+      delete:
+        notice: "Förloppsindikatorn har raderats"
     comments:
       index:
         id: "ID"
@@ -330,6 +349,7 @@ sv:
         hidden_debate: Dold debatt
         hidden_proposal: Gömt förslag
         title: Dolda kommentarer
+        no_hidden_comments: Det finns inga dolda kommentarer.
     dashboard:
       index:
         back: Gå tillbaka till %{org}
@@ -337,6 +357,8 @@ sv:
         description: Välkommen till administrationspanelen för %{org}.
       actions:
         index:
+          description: "När användare skapar förslag kan de använda förslagets dashboard, där du kan föreslå resurser och rekommendationer för att få stöd för deras idé."
+          create: Skapa resurs eller åtgärd
           edit: Redigera
           delete: Radera
           active: 'Ja'
@@ -354,25 +376,33 @@ sv:
             polls: Omröstningar
             poster: Affisch
         new:
+          creating: Ny åtgärd för dashboard för förslag
           back: Tillbaka till lista
         create:
           notice: Åtgärden har skapats
         edit:
+          editing: Redigera åtgärd för dashboard för förslag
           back: Tillbaka till lista
         delete:
           success: Åtgärden har tagits bort
         form:
           submit_button: Spara
+          help_text: Ange 0 om detta värde inte ska tas under beaktande
+          published_proposal_help_text: Markera kryssrutan om åtgärden endast ska skapas för publicerade förslag
       administrator_tasks:
         index:
+          description: "Resurser som publiceras på dashboard för förslag kan innehålla en knapp om begäran till administratörer. Begäran från användare visas nedan."
           title: Resurser begärt
           solve: Lösa
+          no_records: Det finns inga begärda resurser
           source: Källa
+          resource: Begärd resurs
           filter: Filtrera
           filters:
             pending: Väntande
             done: Löst
         edit:
+          back: Tillbaka till listan över väntande uppgifter
           solving: Lös väntande uppgift
         form:
           solve: Markera som löst
@@ -1119,6 +1149,7 @@ sv:
         official_updated: Uppgifter för representant för staden har sparats
       index:
         title: Representanter för staden
+        help: Användarkonton som är markerade som funktionärer får sina åtgärder på plattformen markerade. Du kan ange den etikett som ska visas bredvid användarnamnen för dessa konton från mest viktiga (nivå 1) till minst viktiga (nivå 5).
         no_officials: Det finns inga representanter för staden.
         name: Namn
         official_position: Titel
@@ -1171,8 +1202,12 @@ sv:
         selected: Vald
         milestones: Milstolpar
         no_proposals: Det finns inga förslag.
+      show:
+        create_question: Lägg till förslaget till en omröstning
       form:
         update: Uppdatera förslag
+      update:
+        notice: Förslaget har uppdaterats
     hidden_proposals:
       index:
         filter: Filtrera
@@ -1198,6 +1233,7 @@ sv:
         title: Konfigurationsinställningar
         general: Konfigurationsinställningar
         update_setting: Uppdatera
+        participation_processes: "Deltagarprocesser"
         images_and_documents: "Bilder och dokument"
         feature_flags: Funktioner
         features:
@@ -1216,6 +1252,7 @@ sv:
         dashboard:
           title: Instrumentbräda för förslag
         remote_census:
+          title: Konfiguration av fjärradressregister
           how_to_enable: 'För att konfigurera fjärradressregister (SOAP) måste du aktivera "Konfigurera anslutning till fjärradressregister (SOAP)" under fliken "Funktioner".'
       remote_census_general_name: Generell information
       remote_census_request_name: Begär data
