@@ -31,6 +31,7 @@ sv:
       participants_vote_phase: "Deltagaromröstningsfas"
       participants_every_phase: "Totalt antal deltagare"
       percent_total_participants: "% Totalt antal deltagare"
+      percent_heading_census: "% distriktets folkmängd"
     polls:
       by_channel: "Deltagare efter kanal"
       web_percentage: "%{percentage} digital"
