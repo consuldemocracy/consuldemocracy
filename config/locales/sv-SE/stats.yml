@@ -33,6 +33,7 @@ sv:
       percent_total_participants: "% Totalt antal deltagare"
       percent_heading_census: "% distriktets folkmängd"
       participatory_disclaimer: "** Antalet totala deltagare innefattar personer som skapade, stött eller har röstat om investeringsförslag."
+      heading_disclaimer: "*** Data om områden avser de områden där varje användare röstade, inte nödvändigtvis det område som de är registrerade i."
     polls:
       by_channel: "Deltagare efter kanal"
       vote_by_channel: "Röster per kanal"
