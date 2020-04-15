@@ -1,1 +1,101 @@
 ka:
+  devise_views:
+    confirmations:
+      new:
+        email_label: ელ.ფოსტა
+        submit: ინსტრუქციის ხელახლა გაგზავნა
+        title: დადასტურების ინსტრუქციის ხელახლა გაგზავნა
+      show:
+        instructions: ანგარიშის ელ.ფოსტით დადასტურება %{email}
+        new_password_confirmation_label: გაიმეორეთ პაროლი
+        new_password_label: წვდომის ახალი პაროლი
+        please_set_password: გთხოვთ, შეარჩიოთ ახალი პაროლი (მითითებული ელ.ფოსტითა და პაროლით გაივლით ავტორიზაციას)
+        submit: დადასტურება
+        title: ჩემი ანგარიშის დადასტურება
+    mailer:
+      confirmation_instructions:
+        confirm_link: ჩემი ანგარიშის დადასტურება
+        text: "თქვენი ანგარიშის ელ. ფოსტის დადასტურება შემდეგი ბმულის საშუალებით შეგიძლიათ:"
+        title: მოგესალმებით
+        welcome: მოგესალმებით
+      reset_password_instructions:
+        change_link: პაროლის შეცვლა
+        hello: გამარჯობა
+        ignore_text: თუ თქვენ არ მოგითხოვიათ პაროლის აღდგენა, ყურადღება არ მიაქციოთ ამ შეტყობინებას.
+        info_text: პაროლის შეცვლა ბმულზე გადასვლის გარეშე ვერ მოხდება.
+        text: "თქვენ მოითხოვეთ პაროლის შეცვლა. გთხოვთ, მიჰყვეთ მითითებულ ბმულს:"
+        title: პაროლის შეცვლა
+      unlock_instructions:
+        hello: გამარჯობა
+        info_text: მონაცემების მრავალჯერადად არასწორად შეყვანის გამო თქვენი ანგარიში დაიბლოკა.
+        instructions_text: "ანგარიშის განსაბლოკად მიჰყევით ბმულს:"
+        title: თქვენი ანგარიში ბლოკირებულია
+        unlock_link: ჩემი ანგარიშის განბლოკვა
+    menu:
+      login_items:
+        login: ავტორიზაცია
+        logout: გამოსვლა
+        signup: რეგისტრაცია
+    organizations:
+      registrations:
+        new:
+          email_label: ელ.ფოსტა
+          organization_name_label: ორგანიზაციის დასახელება
+          password_confirmation_label: პაროლის დადასტურება
+          password_label: პაროლი
+          phone_number_label: ტელეფონის ნომერი
+          responsible_name_label: პასუხისმგებელი პირის სრული სახელი
+          responsible_name_note: ეს იქნება ასოციაციის/ჯგუფის წარმომადგენელი პიროვნება, ვისი სახლითაც მოხდება ინიციატივების წარდგენა
+          submit: რეგისტრაცია
+          title: რეგისტრაცია, როგორც ორგანიზაცია, ან ჯგუფი
+        success:
+          back_to_index: გასაგებია; მთავარ გვერდზე დაბრუნება
+          instructions_1: "იმის დასადასტურებლად, რომ თქვენ ნამდვილად გარკვეულ ჯგუფს წარმოადგენთ, <strong>ჩვენ მალევე გამოგეხმაურებით</strong>."
+          instructions_2: სანამ <strong>თქვენი ელ. ფოსტა განხილვის პროცესშია</strong>, ჩვენ გამოგიგზავნეთ <strong>ანგარიშის დასადასტურებელი ბმული</strong>.
+          instructions_3: როგორც კი მოხდება დადასტურება, თქვენ შეძლებთ დაიწყოთ მონაწილეობა, როგორც გადაუმოწმებელი ჯგუფი.
+          thank_you: მადლობა თქვენი ჯგუფის საიტზე რეგისტრაციისათვის. <strong>დაელოდეთ ვერიფიკაციას</strong>.
+          title: რეგისტრაცია, როგორც ორგანიზაცია, ან ჯგუფი
+    passwords:
+      edit:
+        change_submit: პაროლის შეცვლა
+        password_confirmation_label: ახალი პაროლის დადასტურება
+        password_label: ახალი პაროლი
+        title: პაროლის შეცვლა
+      new:
+        email_label: ელ.ფოსტა
+        send_submit: ინსტრუქციის გაგზავნა
+        title: დაგავიწყდა პაროლი?
+    sessions:
+      new:
+        login_label: ელ.ფოსტა ან მომხმარებლის სახელი
+        password_label: პაროლი
+        remember_me: დამახსოვრება
+        submit: შესვლა
+        title: ავტორიზაცია
+    shared:
+      links:
+        login: შესვლა
+        new_confirmation: არ მიგიღიათ ანგარიშის გასააქტიურებელი ინსტრუქცია?
+        new_password: დაგავიწყდა პაროლი?
+        new_unlock: არ მიგიღიათ ანგარიშის განბლოკვის ინსტრუქცია?
+        signin_with_provider: '%{provider}-ის მეშვეობით ავტორიზაცია'
+        signup: არ გაქვთ ანგარიში? %{signup_link}
+        signup_link: რეგისტრაცია
+    unlocks:
+      new:
+        email_label: ელ.ფოსტა
+        submit: ანგარიშის განბლოკვის ინსტრუქციის ხელახლა გაგზავნა
+        title: ანგარიშის განბლოკვის ინსტრუქციის ხელახლა გაიგზავნა
+    users:
+      registrations:
+        delete_form:
+          erase_reason_label: მიზეზი
+          info: მოქმედების გაუქმება შეუძლებელი იქნება. დარწმუნდით, ნამდვილად გსურთ ამის გაკეთება.
+          info_reason: თუ გსურთ, მოგვწერეთ გადაწყვეტილების მიზეზი (სურვილისამებრ)
+          submit: ჩემი ანგარიშის წაშლა
+          title: ანგარიშის წაშლა
+        edit:
+          current_password_label: მიმდინარე პაროლი
+          edit: რედაქტირება
+          email_label: ელ.ფოსტა
+          leave_blank: დატოვეთ ცარიელი თუ ცვლილება არ გსურთ
