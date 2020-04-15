@@ -25,26 +25,50 @@ sv:
     votes_for_proposal_success: "Antal röster som krävs för att ett förslag ska antas"
     votes_for_proposal_success_description: "När ett förslag uppnår detta antal stöd kan det inte längre ta emot fler stöd och anses vara framgångsrik"
     months_to_archive_proposals: "Antal månader innan förslag arkiveras"
+    months_to_archive_proposals_description: "Efter detta antal månader blir förslagen arkiverade och kan inte längre ta emot stöd"
     email_domain_for_officials: "E-postdomän för tjänstepersoner"
+    email_domain_for_officials_description: "Alla användare registrerade med denna domän får sitt konto verifierat vid registrering"
     twitter_handle: "Användarnamn på Twitter"
+    twitter_handle_description: "Om ifyllt visas det i sidfoten"
     twitter_hashtag: "Hashtag på Twitter"
+    twitter_hashtag_description: "Hashtagg som visas när innehåll delas på Twitter"
     facebook_handle: "Användarnamn på Facebook"
+    facebook_handle_description: "Om ifyllt visas det i sidfoten"
     youtube_handle: "Användarnamn på Youtube"
+    youtube_handle_description: "Om ifyllt visas det i sidfoten"
     telegram_handle: "Användarnamn på Telegram"
+    telegram_handle_description: "Om ifyllt visas det i sidfoten"
     instagram_handle: "Användarnamn på Instagram"
+    instagram_handle_description: "Om ifyllt visas det i sidfoten"
     url: "Huvudsaklig webbadress"
+    url_description: "Huvud-URL till webbplatsen"
     org_name: "Organisation"
+    org_name_description: "Detta visas i ämnesrad i e-brev, på hjälpsidor..."
     related_content_score_threshold: "Nivå för överensstämmelse med relaterat innehåll"
+    related_content_score_threshold_description: "Baserat på betygen på röster i relaterat innehåll gömmer detta innehåll som användare markerat som ej relaterat"
+    hot_score_period_in_days: "Period (dagar) som används av filtret 'mest aktiva'"
+    hot_score_period_in_days_description: "Filtret 'mest aktiva' används i flera avsnitt och baseras på rösterna under de senaste X dagarna"
     mailer_from_name: "Ursprunglig e-postadress"
+    mailer_from_name_description: "Detta namn visas som avsändarnamn i e-brev som skickas från programmet"
+    mailer_from_address: "E-postadress för avsändare"
+    mailer_from_address_description: "Denna e-postadress visas i e-brev som skickas av programmet"
     meta_title: "Webbplatsens titel (SEO)"
+    meta_title_description: "Titel för webbplatsen <title>, används för SEO"
     meta_description: "Webbplatsens beskrivning (SEO)"
+    meta_description_description: 'Webbplatsbeskrivning <meta name="description">, används för SEO'
     meta_keywords: "Nyckelord (SEO)"
+    meta_keywords_description: 'Nyckelord <meta name="keywords">, används för SEO'
     min_age_to_participate: Minimiålder för deltagande
+    min_age_to_participate_description: "Användare av minst denna ålder kan delta i alla processer där en verifierat användarkonto behövs"
     proposals:
       successful_proposal_id: Framgångsrikt förslag
+      successful_proposal_id_description: Detta förslag används som en riktlinje för ett lyckat förslag i antal stöd och visas i diagrammet i dashboard.
       poll_short_title: Omröstningar
+      poll_short_title_description: Kort beskrivning av enkätfunktionen. Tillåter användare att skapa enkäter kring ett förslag
       poll_description: Omröstningsbeskrivning
+      poll_description_description: Detaljerad beskrivning av enkätfunktionen
       poll_link: Länk till ytterligare information
+      poll_link_description: Lägger till ytterligare en informationslänk om enkätfunktionen
       email_short_title: E-post
       email_short_title_description: 'Kort beskrivning av e-mejl funktionen. Den tillåter användare att skicka ett mejl för att marknadsföra sitt förslag. Du kan hitta allt innehåll för detta mejl i "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: E-posts beskrivning
