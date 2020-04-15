@@ -72,12 +72,27 @@ sv:
       email_short_title: E-post
       email_short_title_description: 'Kort beskrivning av e-mejl funktionen. Den tillåter användare att skicka ett mejl för att marknadsföra sitt förslag. Du kan hitta allt innehåll för detta mejl i "/app/views/dashboard/mailer/forward.html.erb"'
       email_description: E-posts beskrivning
+      email_description_description: Detaljerad beskrivning av e-postfunktionen
       poster_short_title: Affisch
+      poster_short_title_description: 'Kort beskrivning av affischfunktionen. Användare kan hämta en affisch i PDF-format för att marknadsföra sitt förslag. Du kan hitta allt innehåll för affischen i "/app/views/dashboard/poster/index.pdf.erb"'
+      poster_description: Beskrivning av affischen
+      poster_description_description: Detaljerad beskrivning av affischfunktionen
     analytics_url: "Analytiker URL"
+    proposal_notification_minimum_interval_in_days: "Minsta intervall (i dagar) mellan att författare av förslag kan skicka nya aviseringar om förslag"
+    proposal_notification_minimum_interval_in_days_description: "Antalet dagar som en användare kan skicka en avisering till alla som följer deras förslag"
+    direct_message_max_per_day: "Högsta antalet direktmeddelanden per dag"
+    direct_message_max_per_day_description: "Högsta antalet av direktmeddelanden som en användare kan skicka per dag"
     feature:
       twitter_login: "Twitter-inloggning"
+      twitter_login_description: "Tillåt användare att logga in med sitt Twitter-konto"
       facebook_login: "Facebook-inloggning"
+      facebook_login_description: "Tillåt användare att logga in med sitt Facebook-konto"
       google_login: "Google-inloggning"
+      google_login_description: "Tillåt användare att logga in med sitt Google-konto"
+      wordpress_login: "Wordpress-inloggning"
+      wordpress_login_description: "Tillåt användare att logga in med sitt Wordpress-konto"
+      featured_proposals: "Uppmärksammade förslag"
+      featured_proposals_description: "Visar uppmärksammade förslag på indexsidan för förslag"
       signature_sheets: "Namninsamlingar"
       user:
         recommendations: "Rekommendationer"
