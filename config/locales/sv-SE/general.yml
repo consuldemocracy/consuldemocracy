@@ -953,4 +953,7 @@ sv:
       take_part: Delta från %{from} till %{to}
   remote_translations:
     text: Innehållet i denna sida är inte tillgängligt på ditt språk
+    all_remote_translations_enqueued_text: Om du uppdaterar sidan kan du se allt innehåll som är på ditt språk.
+    create:
+      enqueue_remote_translation: Översättningar har begärts.
     button: Översätta sida
