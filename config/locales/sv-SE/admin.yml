@@ -14,6 +14,8 @@ sv:
       edit: Redigera
       configure: Inställningar
       delete: Ta bort
+    officing_booth:
+      title: "Du är funktionär för röststationen på %{booth}. Om detta inte stämmer, fortsätt inte utan ring hjälptelefonnumret. Tack."
     banners:
       index:
         title: Banners
@@ -105,6 +107,7 @@ sv:
       destroy:
         success_notice: Budgeten raderades
         unable_notice: Du kan inte ta bort en budget som har budgetförslag
+        unable_notice_polls: Du kan inte ta bort en budget som har en kopplad enkät
       new:
         title: Ny medborgarbudget
       winners:
@@ -126,6 +129,7 @@ sv:
         notice: "Grupp har uppdaterats"
       destroy:
         success_notice: "Grupp har raderats"
+        unable_notice: "Du kan inte ta bort en grupp som har kopplade budgetposter"
       form:
         create: "Skapa ny grupp"
         edit: "Redigera delbudget"
@@ -134,6 +138,9 @@ sv:
         back: "Gå tillbaka till budgetar"
     budget_headings:
       no_headings: "Det finns inga områden."
+      amount:
+        one: "Det finns 1 budgetpost"
+        other: "Det finns %{count} budgetposter"
       create:
         notice: "Området har skapats!"
       update:
@@ -143,6 +150,7 @@ sv:
         unable_notice: "Du kan inte ta bort ett område som har budgetförslag"
       form:
         population_info: "Fältet för folkmängd inom ett område används för att föra statistik över hur stor del av befolkningen där som deltagit i omröstningen. Fältet är frivilligt."
+        coordinates_info: "Om latitud och longitud anes kommer investeringssidan för detta område att innehålla en karta. Kartan centreras kring dessa koordinater."
         create: "Skapa nytt område"
         edit: "Redigera område"
         submit: "Spara område"
