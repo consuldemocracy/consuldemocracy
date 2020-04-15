@@ -90,3 +90,31 @@ ka:
         comment_button: პასუხის გამოქვეყნება
         comments_title: ღია პასუხები
         comments_closed: დახურული ფაზა
+        form:
+          leave_comment: დატოვეთ პასუხი
+      question:
+        comments:
+          zero: კომენტარები არ მოიძებნა
+          one: "%{count} კომენტარი"
+          other: "%{count} კომენტარი"
+        debate: დებატები
+      show:
+        answer_question: პასუხის გაგზავნა
+        next_question: შემდეგი შეკითხვა
+        first_question: პირველი შეკითხვა
+        share: გაზიარება
+        title: ერთობლივი საკანონმდებლო ინიციატივის პროცესი
+      participation:
+        phase_not_open: ეს ფაზა არ არის ღია
+        organizations: ორგანიზაციებს ამ დებატში მონაწილეობა არ შეუძლია
+        unauthenticated: მონაწილეობის მისაღებად თქვენ უნდა გაიაროთ %{signin} ან %{signup}.
+        verified_only: მხოლოდ ვერიფიცირიბული ანგარიშის მქონე მომხმარებლებს შეუძლიათ მონაწილეობა; %{verify_account}.
+        debate_phase_not_open: დებატების ფაზა დამთავრდა და პასუხები აღარ მიიღება
+    shared:
+      share: გაზიარება
+      share_comment: დატოვეთ კომენტარი %{version_name}-ზე საპროცესო პროექტიდან - %{process_name} 
+    proposals:
+      form:
+        tags_label: "კატეგორიები"
+      not_verified: "ინიციატივაზე ხმის მისაცემად %{verify_account}."
+      process_title: ერთობლივი საკანონმდებლო ინიციატივის პროცესი
