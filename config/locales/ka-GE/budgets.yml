@@ -158,3 +158,23 @@ ka:
       see_results: შედეგების ნახვა
     results:
       link: შედეგები
+      page_title: "%{budget} - შედეგები"
+      heading: "მონაწილეობითი ბიუჯეტების შედეგები"
+      heading_selection_title: "რაიონების მიხედვით"
+      ballot_lines_count: ხმები
+      hide_discarded_link: გაუქმებულის დამალვა
+      show_all_link: ყველას ნახვა
+      price: ფასი
+      amount_available: ხელმისაწვდომი ბიუჯეტი
+      accepted: "მიღებული ინვესტიციები: "
+      discarded: "გამოუსადეგარი ინვესტიცია: "
+      incompatibles: შეუთავსებელი
+      investment_title: პროექტის სათაური
+      investment_proyects: საინვესტიციო პროექტების ჩამონათვალი
+      unfeasible_investment_proyects: არაგანხორციელებადი საინვესტიციო პროექტების ჩამონათვალი
+      not_selected_investment_proyects: კენჭისყრისთვის გამოტოვებული საინვესტიციო პროექტების ჩამონათვალი
+    executions:
+      link: "ეტაპები"
+      page_title: "%{budget} - ეტაპები"
+      heading: "მონაწილეობითი ბიუჯეტის ეტაპები"
+      heading_selection_title: "რაიონების მიხედვით"
