@@ -178,3 +178,16 @@ ka:
       page_title: "%{budget} - ეტაპები"
       heading: "მონაწილეობითი ბიუჯეტის ეტაპები"
       heading_selection_title: "რაიონების მიხედვით"
+      no_winner_investments: "ამ ეტაპზე გამარჯვებული ინვესტიციები არ მოიძებნა"
+      filters:
+        status:
+          label: "პროექტის მიმდინარე მდგომარეობა"
+          all: "ყველა (%{count})"
+        milestone_tag:
+          label: "ეტაპის ტეგები"
+          all: "ყველა (%{count})"
+    phases:
+      errors:
+        dates_range_invalid: "დაწყების თარიღი არ უნდა აღემატებოდეს დასრულების თარიღს"
+        prev_phase_dates_invalid: "დაწყების თარიღი წინამავალი გააქტიურებული ფაზის დაწყების თარიღს უნდა აღემატებოდეს (%{phase_name})"
+        next_phase_dates_invalid: "დასრულების თარიღი მომდევნო გააქტიურებული ფაზის დაწყების თარიღს არ უნდა აღემატებოდეს (%{phase_name})"
