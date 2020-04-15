@@ -1,1 +1,33 @@
 ka:
+  management:
+    account:
+      menu:
+        reset_password_email: პაროლის აღდგენა ელ. ფოსტის მეშვეობით
+        reset_password_manually: პაროლის აღდგენა ხელით
+      alert:
+        unverified_user: დადასტურებული ანგარიშის მფლობელ მომხმარებელს ავტორიზაცია ჯერ არ გაუვლია
+      show:
+        title: მომხმარებლის ანგარიში
+      edit:
+        title: "მომხმარებლის ანგარიშის რედაქტირება: პაროლის აღდგენა"
+        back: უკან
+        password:
+          password: პაროლი
+          send_email: ახალი პაროლის გაგზავნა ელ. ფოსტაზე
+          reset_email_send: ელ. წერილი გაიგზავნა.
+          reseted: პაროლის აღდგენა წარმატებით განხორციელდა
+          random: პაროლის ავტომატური გენერირება
+          save: პაროლის დამახსოვრება
+          print: პაროლის ბეჭვდა
+          print_help: პაროლის შენახვის შემდეგ შეგეძლებათ მისი ბეჭვდა.
+    account_info:
+      change_user: მომხმარებლის შეცვლა
+      document_number_label: "დოკუმენტის ნომერი:"
+      document_type_label: "დოკუმენტის ტიპი:"
+      email_label: "ელ.ფოსტა:"
+      identified_label: "იდენტიფიცირებულია, როგორც:"
+      username_label: "მომხმარებლის სახელი:"
+    check: დოკუმენტის შემოწმება
+    dashboard:
+      index:
+        title: მენეჯმენტი
