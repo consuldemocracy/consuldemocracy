@@ -589,8 +589,11 @@ sv:
       mailing_options:
         send: Skicka till %{address}
         preview: Förhandsvisning
+      create:
+        sent: E-brevet har skickats
     mailer:
       forward:
+        subtitle: "Med ditt stöd<br>kan vi lyckas."
         support_button: Stöd förslaget
         share_in: Dela på
         hi: "Hej!"
@@ -762,6 +765,10 @@ sv:
       select_language_prompt: Välj språk
       remove_language: Ta bort språk
       add_language: Lägg till språk
+      languages_in_use:
+        zero: "0 språk används"
+        one: "1 språk används"
+        other: "%{count} språk används"
   social:
     facebook: "%{org} på Facebook"
     twitter: "%{org} på Twitter"
@@ -837,6 +844,7 @@ sv:
       published: Publicerad
       see: "Visa förslag"
       actions: Åtgärder
+      retired_help_text: Dashboard är inte tillgängligt för tillbakadragna förslag
   votes:
     agree: Jag håller med
     anonymous: För många anonyma röster för att godkänna omröstningen %{verify_account}.
@@ -930,6 +938,7 @@ sv:
       cancel_button: Avbryt
     nested_links:
       title: Länkar
+      note: Lägg till länkar av intresse
       add_new_link: Lägg till ny länk
     link_fields:
       label_placeholder: Länktitel
@@ -937,7 +946,11 @@ sv:
   communities:
     show:
       surveys: Enkäter
+      complete_survey: Färdigställ enkäten
     subnav:
       surveys: Enkäter
+    poll:
+      take_part: Delta från %{from} till %{to}
   remote_translations:
+    text: Innehållet i denna sida är inte tillgängligt på ditt språk
     button: Översätta sida
