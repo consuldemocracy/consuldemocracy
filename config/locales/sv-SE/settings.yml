@@ -159,9 +159,13 @@ sv:
         name_description: "Vad är sökvägen i svaret till användarens namn?"
         surname: "Sökväg för efternamn"
         surname_description: "Vad är sökvägen i svaret till användarens efternamn?"
+        valid: "Villkor för ett giltigt svar"
+        valid_description: "Vilka sökvägar i svaret som krävs för att det ska vara ett giltigt svar som verifierar användaren"
     map:
       latitude: "Latitud"
+      latitude_description: "Latitud för kartpositionen"
       longitude: "Longitud"
+      longitude_description: "Longitud för kartpositionen"
       zoom: "Zoom"
       zoom_description: "Zooma och visa kartpositionen"
     process:
