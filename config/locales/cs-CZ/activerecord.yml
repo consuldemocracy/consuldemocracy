@@ -291,6 +291,8 @@ cs:
         body: Text
         changelog: Změny
         status: Status
+        status_draft: "Pracovní verze"
+        status_published: "Publikováno"
         final_version: Konečná verze
       legislation/draft_version/translation:
         title: Název pracovní verze
@@ -299,6 +301,8 @@ cs:
       legislation/question:
         title: Předmět
         question_options: Options
+      legislation/question/translation:
+        title: Otázka
       legislation/question_option:
         value: Value
       legislation/annotation:
@@ -345,6 +349,11 @@ cs:
         link_text: Link text
       widget/feed:
         limit: Number of items
+      dashboard/action:
+        title: Předmět
+        short_description: Krátký popis
+        description: Popis
+        link: Externí odkaz
     errors:
       models:
         user:
