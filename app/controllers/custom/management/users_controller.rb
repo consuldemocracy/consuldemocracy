@@ -1,4 +1,4 @@
-require_dependency Rails.root.join("app", "controllers", "users", "users_controller").to_s
+require_dependency Rails.root.join("app", "controllers", "management", "users_controller").to_s
 
 class Management::UsersController < Management::BaseController
   def create
