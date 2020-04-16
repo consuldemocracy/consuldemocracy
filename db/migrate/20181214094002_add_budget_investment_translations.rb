@@ -1,17 +1,15 @@
 class AddBudgetInvestmentTranslations < ActiveRecord::Migration[4.2]
-  def self.up
-    Budget::Investment::Translation.without_auditing do
-      Budget::Investment.create_translation_table!(
-        {
-          title:               :string,
-          description:         :text
-        },
-        { migrate_data: true }
-      )
-    end
-  end
+  def change
+    create_table :budget_investment_translations do |t|
+      t.integer :budget_investment_id, null: false
+      t.string :locale, null: false
+      t.timestamps null: false
 
-  def self.down
-    Budget::Investment.drop_translation_table!
+      t.string :title
+      t.text :description
+
+      t.index :budget_investment_id
+      t.index :locale
+    end
   end
 end
