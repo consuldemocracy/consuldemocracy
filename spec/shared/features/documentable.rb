@@ -1,6 +1,4 @@
 shared_examples "documentable" do |documentable_factory_name, documentable_path, documentable_path_arguments|
-  include ActionView::Helpers
-
   let(:administrator) { create(:user) }
   let(:user)          { create(:user) }
   let(:arguments)     { {} }
@@ -134,7 +132,7 @@ shared_examples "documentable" do |documentable_factory_name, documentable_path,
         click_on "Delete document"
       end
 
-      within "##{dom_id(documentable)}" do
+      within "##{ActionView::RecordIdentifier.dom_id(documentable)}" do
         expect(page).to have_selector "h1", text: documentable.title
       end
     end

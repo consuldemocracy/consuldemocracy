@@ -1,8 +1,4 @@
 shared_examples "imageable" do |imageable_factory_name, imageable_path, imageable_path_arguments|
-  include ActionView::Helpers
-  include ImagesHelper
-  include ImageablesHelper
-
   let!(:administrator)          { create(:user) }
   let!(:user)                   { create(:user) }
   let!(:imageable_arguments)    { {} }

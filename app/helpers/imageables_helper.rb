@@ -4,11 +4,7 @@ module ImageablesHelper
   end
 
   def imageable_max_file_size
-    bytes_to_megabytes(Setting["uploads.images.max_size"].to_i.megabytes)
-  end
-
-  def bytes_to_megabytes(bytes)
-    bytes / Numeric::MEGABYTE
+    Setting["uploads.images.max_size"].to_i
   end
 
   def imageable_accepted_content_types
