@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Admin valuators" do
   let(:admin) { create(:administrator) }
   let!(:user) { create(:user, username: "Jose Luis Balbin") }
-  let!(:valuator) { create(:valuator) }
+  let!(:valuator) { create(:valuator, description: "Very reliable") }
 
   before do
     login_as(admin.user)
@@ -14,7 +14,7 @@ describe "Admin valuators" do
     visit admin_valuator_path(valuator)
 
     expect(page).to have_content valuator.name
-    expect(page).to have_content valuator.description
+    expect(page).to have_content "Very reliable"
     expect(page).to have_content valuator.email
     expect(page).to have_content "Can comment, Can edit dossier"
   end
