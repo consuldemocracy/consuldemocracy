@@ -7,10 +7,6 @@ module DocumentsHelper
     document.errors[:attachment].join(", ") if document.errors.key?(:attachment)
   end
 
-  def bytes_to_mega(bytes)
-    bytes / Numeric::MEGABYTE
-  end
-
   def render_destroy_document_link(builder, document)
     if !document.persisted? && document.cached_attachment.present?
       link_to t("documents.form.delete_button"),
