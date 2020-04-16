@@ -2116,17 +2116,16 @@ table {
     padding: $line-height / 4;
     position: relative;
 
-    .relative,
-    [class^="icon-arrow"] {
-      padding-left: $line-height / 2;
+    .relative {
+      padding-left: rem-calc(18);
     }
 
-    [class^="icon-arrow"] {
-      font-size: $base-font-size;
-      left: -20px;
+    .far {
+      font-size: $small-font-size;
+      left: 0;
       position: absolute;
       text-decoration: none;
-      top: -1px;
+      top: 2px;
     }
 
     .divider {
