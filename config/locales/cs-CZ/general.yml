@@ -167,6 +167,10 @@ cs:
       firefox: Firefox
       ie: Zjistili jsme, že prohlížíte aplikaci Internet Explorer. Pro rozšířené zkušenosti doporučujeme použít %{firefox} nebo %{chrome}.
       ie_title: Tato webová stránka není optimalizována pro váš prohlížeč
+    dashboard:
+      proposal_totals:
+        supports:
+          zero: Žádná podpora
     footer:
       accessibility: Přístupnost
       conditions: Podmínky používání
@@ -232,6 +236,8 @@ cs:
       sign_in: Přihlásit se pomocí služby Google
       sign_up: Přihlásit se pomocí služby Google
       name: Google
+    wordpress_oauth2:
+      name: Wordpress
     twitter:
       sign_in: Přihlásit se pomocí služby Twitter
       sign_up: Přihlásit se pomocí služby Twitter
