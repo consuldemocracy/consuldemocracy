@@ -354,6 +354,8 @@ cs:
         short_description: Krátký popis
         description: Popis
         link: Externí odkaz
+        active: Aktivní
+        action_type: Typ
     errors:
       models:
         user:
