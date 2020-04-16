@@ -18,7 +18,7 @@ GIT
       rubyzip (>= 1.2.1)
 
 PATH
-  remote: lib/omniauth-codigo
+  remote: omniauth-codigo
   specs:
     omniauth-codigo (0.0.1)
 
