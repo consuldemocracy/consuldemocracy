@@ -536,6 +536,7 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.index ["cached_votes_total"], name: "index_debates_on_cached_votes_total", using: :btree
     t.index ["cached_votes_up"], name: "index_debates_on_cached_votes_up", using: :btree
     t.index ["confidence_score"], name: "index_debates_on_confidence_score", using: :btree
+    t.index ["deprecated_description"], name: "index_debates_on_deprecated_description", using: :btree
     t.index ["geozone_id"], name: "index_debates_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_debates_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_debates_on_hot_score", using: :btree
@@ -1287,6 +1288,7 @@ ActiveRecord::Schema.define(version: 20200407065432) do
     t.index ["cached_votes_up"], name: "index_proposals_on_cached_votes_up", using: :btree
     t.index ["community_id"], name: "index_proposals_on_community_id", using: :btree
     t.index ["confidence_score"], name: "index_proposals_on_confidence_score", using: :btree
+    t.index ["deprecated_description"], name: "index_proposals_on_deprecated_description", using: :btree
     t.index ["geozone_id"], name: "index_proposals_on_geozone_id", using: :btree
     t.index ["hidden_at"], name: "index_proposals_on_hidden_at", using: :btree
     t.index ["hot_score"], name: "index_proposals_on_hot_score", using: :btree
