@@ -32,6 +32,7 @@ set :keep_releases, 5
 set :local_user, ENV["USER"]
 
 set :puma_conf, "#{release_path}/config/puma/#{fetch(:rails_env)}.rb"
+set :puma_bind, ["tcp://0.0.0.0:8080", "unix://#{deploysecret(:deploy_to)}/shared/tmp/sockets/puma.sock"]
 
 set :delayed_job_workers, 2
 set :delayed_job_roles, :background

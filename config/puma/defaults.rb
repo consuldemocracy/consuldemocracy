@@ -11,7 +11,9 @@ pidfile "#{rails_root}/tmp/pids/puma.pid"
 state_path "#{rails_root}/tmp/pids/puma.state"
 stdout_redirect "#{rails_root}/log/puma_access.log", "#{rails_root}/log/puma_error.log", true
 
+bind "tcp://0.0.0.0:8080"
 bind "unix://#{rails_root}/tmp/sockets/puma.sock"
+
 daemonize
 
 threads 0, 16
