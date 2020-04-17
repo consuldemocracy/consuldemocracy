@@ -30,4 +30,15 @@ describe "CKEditor" do
 
     expect(page).to have_css "img[src$='clippy.jpg']"
   end
+
+  scenario "cannot upload attachments through link tab", :js do
+    login_as(create(:administrator).user)
+    visit new_admin_site_customization_page_path
+
+    find(".cke_button__link").click
+
+    expect(page).to have_css(".cke_dialog")
+    expect(page).not_to have_link "Upload"
+    expect(page).not_to have_link "Browse Server"
+  end
 end
