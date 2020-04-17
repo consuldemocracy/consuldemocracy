@@ -40,13 +40,7 @@
       $("#js-comment-form-" + id).toggle();
     },
     toggle_arrow: function(id) {
-      var arrow;
-      arrow = "span#" + id + "_arrow";
-      if ($(arrow).hasClass("icon-arrow-right")) {
-        $(arrow).removeClass("icon-arrow-right").addClass("icon-arrow-down");
-      } else {
-        $(arrow).removeClass("icon-arrow-down").addClass("icon-arrow-right");
-      }
+      $("span#" + id + "_arrow").toggleClass("fa-minus-square").toggleClass("fa-plus-square");
     },
     initialize: function() {
       $("body .js-add-comment-link").each(function() {
