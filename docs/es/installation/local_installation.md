@@ -2,20 +2,41 @@
 
 Antes de comenzar a instalar Consul, comprueba que tengas todos los [prerrequisitos](prerequisites.md) correctamente instalados.
 
-1. Primero, clona el [repositorio de Consul en Github](https://github.com/consul/consul/):
+1. Primero, clona el [repositorio de Consul en Github](https://github.com/consul/consul/) y ve a la carpeta del proyecto:
 
 ```bash
 git clone https://github.com/consul/consul.git
+cd consul/
 ```
 
-2. Ve a la carpeta del proyecto e instala las gemas requeridas usando [Bundler](http://bundler.io/):
+2. Instala la versión de Ruby necesaria con el gestor de versiones de tu elección. Algunos ejemplos:
 
 ```bash
-cd consul
+rvm install `cat .ruby-version` # Si usas RVM
+rbenv install `cat .ruby-version` # Si usas rbenv
+asdf install ruby `cat .ruby-version` # Si usas asdf
+```
+
+3. Comprueba que estemos usando la versión de Ruby que acabamos de instalar:
+
+```bash
+ruby -v
+=> # (debería aparecer la versión mencionada en el fichero .ruby-version)
+```
+
+4. Instala [Bundler](http://bundler.io/)
+
+```bash
+gem install bundler
+```
+
+5. Instala las gemas requeridas usando Bundler:
+
+```bash
 bundle
 ```
 
-3. Copia los archivos de configuración de ejemplo del entorno dentro de unos nuevos válidos:
+6. Copia los archivos de configuración de ejemplo del entorno dentro de unos nuevos válidos:
 
 ```bash
 cp config/database.yml.example config/database.yml
@@ -24,7 +45,7 @@ cp config/secrets.yml.example config/secrets.yml
 
 Y configura los de tu usuario de base de datos `consul` en `database.yml`
 
-4. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para crear y rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
+7. Ejecuta las siguientes [tareas Rake](https://github.com/ruby/rake) para crear y rellenar tu base de datos local con el mínimo de información necesaria para que la aplicación funcione correctamente:
 
 ```bash
 rake db:create
@@ -33,13 +54,13 @@ rake db:dev_seed
 rake db:test:prepare
 ```
 
-5. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
+8. Comprueba que todo funciona correctamente lanzando la suite de tests (ten en cuenta que podría tardar más de una hora):
 
 ```bash
 bin/rspec
 ```
 
-6. Ahora que ya está todo listo puedes ejecutar la aplicación:
+9. Ahora que ya está todo listo puedes ejecutar la aplicación:
 
 ```bash
 bin/rails s

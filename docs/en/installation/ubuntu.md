@@ -16,7 +16,7 @@ Git is officially maintained in Ubuntu:
 sudo apt install git
 ```
 
-## Ruby
+## Ruby version manager
 
 Ruby versions packaged in official repositories are not suitable to work with CONSUL, so we'll have to install it manually.
 
@@ -33,28 +33,6 @@ wget -q https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-installer 
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
-```
-
-Finally, install Ruby 2.4.9, which will take a few minutes:
-
-```bash
-rbenv install 2.4.9
-```
-
-## Bundler
-
-Check we're using the Ruby version we've just installed:
-
-```bash
-rbenv global 2.4.9
-ruby -v
-=> ruby 2.4.9p354
-```
-
-And install Bundler with:
-
-```bash
-gem install bundler
 ```
 
 ## Node.js

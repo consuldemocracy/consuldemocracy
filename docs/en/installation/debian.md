@@ -38,11 +38,11 @@ Curl is officially maintained in Debian:
 apt-get install curl
 ```
 
-## Ruby
+## Ruby version manager
 
 Ruby versions packaged in official repositories are not suitable to work with consul, so we'll have to install it manually.
 
-The preferred method is via rvm:
+One possible tool is rvm:
 
 ### As a local user
 
@@ -62,20 +62,6 @@ and finally, reload .bashrc to be able to run RVM
 
 ```
 source ~/.bashrc
-```
-
-with all this, you are suppose to be able to install a ruby version from rvm, as for example version 2.4.9:
-
-```
-rvm install 2.4.9
-```
-
-## Bundler
-
-Install it with
-
-```
-gem install rubygems-bundler
 ```
 
 ## Node.js
