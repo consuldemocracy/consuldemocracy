@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe RemoteTranslation do
+describe RemoteTranslation, :remote_translations do
   let(:remote_translation) { build(:remote_translation, locale: :es) }
 
   it "is valid" do
