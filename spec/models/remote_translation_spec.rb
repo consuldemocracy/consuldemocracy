@@ -37,6 +37,18 @@ describe RemoteTranslation do
     expect(remote_translation).not_to be_valid
   end
 
+  it "checks available locales dynamically" do
+    allow(RemoteTranslations::Microsoft::AvailableLocales)
+      .to receive(:available_locales).and_return(["en"])
+
+    expect(remote_translation).not_to be_valid
+
+    allow(RemoteTranslations::Microsoft::AvailableLocales)
+      .to receive(:available_locales).and_return(["es"])
+
+    expect(remote_translation).to be_valid
+  end
+
   describe "#enqueue_remote_translation", :delay_jobs do
     it "after create enqueue Delayed Job" do
       expect { remote_translation.save }.to change { Delayed::Job.count }.by(1)
