@@ -9,6 +9,6 @@ Ckeditor.setup do |config|
 
   config.assets_languages = Rails.application.config.i18n.available_locales.map { |l| l.to_s.downcase }
   config.assets_plugins = %w[balloonpanel balloontoolbar copyformatting image
-                             link magicline scayt table tableselection wsc]
+                             link magicline pastefromword scayt table tableselection wsc]
   config.assets.reject! { |asset| asset =~ /\Ackeditor\/samples\// }
 end
