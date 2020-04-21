@@ -83,6 +83,8 @@ es:
     direct_message_max_per_day: "Mensajes directos máximos por día"
     direct_message_max_per_day_description: "Número de mensajes directos máximos que un usuario puede enviar por día"
     feature:
+      direct_messages: "Mensajes privados"
+      direct_messages_description: "Mensajes privados entre usuarios"      
       twitter_login: "Registro con Twitter"
       twitter_login_description: "Permitir que los usuarios se registren con su cuenta de Twitter"
       facebook_login: "Registro con Facebook"
