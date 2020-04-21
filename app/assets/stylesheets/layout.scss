@@ -2787,11 +2787,18 @@ table {
     margin-top: rem-calc(-48);
   }
 
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .card {
     border: 0;
+    flex-grow: 0;
     overflow: visible;
 
     a {
+      height: 100%;
 
       img {
         transition-duration: 0.3s;
