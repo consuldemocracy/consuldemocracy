@@ -187,7 +187,7 @@ sv:
     topic: Ämne
     image: Bild
     local_census_record: Lokalt adressregister
-    local_census_records/import: Importera lokalt adressregister
+    local_census_records/import: Importera lokala adressregister
     site_customization/content_block: innehållsblock
     site_customization/page: sida
   geozones:
