@@ -1,0 +1,11 @@
+nl:
+  budgets:
+    investments:
+      index:
+        read_more: "Lees meer"
+      investment:
+        price_title: "Prijs"
+        support_title: "Stemmen"
+    show:
+      see_all_investments: "Bekijk alle ideeën"
+      investments_list: "Ideeën lijst"
