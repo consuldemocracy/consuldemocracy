@@ -484,7 +484,7 @@ sv:
           debate_phase: Diskussionsfas
           draft_phase: Utkastsfas
           draft_phase_description: Under denna fas visas inte processen i listan över processer. Tillåter förhandsvisning av processen och att skapa innehåll innan start.
-          allegations_phase: Kommenteringsfas
+          allegations_phase: Kommentarsfas
           proposals_phase: Förslagsfas
           use_markdown: Använda Markdown för att formatera texten
           title_placeholder: Titel på processen
