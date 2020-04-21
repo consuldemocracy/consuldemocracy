@@ -1,0 +1,23 @@
+<% if @investments.any? %>
+  <div class="row">
+    <div class="budget-investment-index-list">
+      <div class="small-12 column margin-top">
+        <h2><%= t("budgets.show.investments_list") %></h2>
+      </div>
+
+      <% @investments.each do |investment| %>
+        <div class="small-12 medium-4 column end">
+          <%= render "/budgets/investment", investment: investment %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row margin-top">
+    <div class="small-12 medium-6 large-4 small-centered column margin-top">
+      <%= link_to t("budgets.show.see_all_investments"),
+                  budget_investments_path(@budget, heading_id: @budget.headings.first.id),
+                  class: "button expanded" %>
+    </div>
+  </div>
+<% end %>

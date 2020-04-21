@@ -211,6 +211,19 @@ class Budget < ApplicationRecord
     voting_style == "approval"
   end
 
+  def investments_preview_list(limit = 9)
+    case phase
+    when "accepting", "reviewing"
+      investments.sample(limit)
+    when "selecting", "valuating", "publishing_prices"
+      investments.feasible.sample(limit)
+    when "balloting", "reviewing_ballots"
+      investments.selected.sample(limit)
+    else
+      []
+    end
+  end
+
   private
 
     def generate_phases
