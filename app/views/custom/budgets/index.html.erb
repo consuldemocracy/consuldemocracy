@@ -27,7 +27,7 @@
           </p>
           <h2><%= t("budgets.phase.#{current_budget.phase}") %></h2>
 
-          <%= link_to t("budgets.index.section_header.all_phases"), "#all_phases" %>
+          <%= link_to t("budgets.index.section_header.all_phases"), "#all_phases" if current_budget.published_phases.present? %>
 
           <% if current_budget.accepting? %>
             <% if current_user %>
