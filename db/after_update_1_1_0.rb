@@ -64,6 +64,7 @@ old_settings = [
   "feature.spending_proposals",
   "feature.polls",
   "feature.budgets",
+  "feature.legislation",
   "feature.spending_proposal_features.voting_allowed",
   "banner-style.banner-style-one",
   "banner-style.banner-style-two",
