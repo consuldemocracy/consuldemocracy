@@ -28,30 +28,7 @@
       <% cache [locale_and_user_status(investment), "index", investment, investment.author] do %>
         <h3><%= link_to investment.title, namespaced_budget_investment_path(investment) %></h3>
 
-        <p class="investment-project-info">
-          <% if investment.author.hidden? || investment.author.erased? %>
-            <span class="author">
-              <%= t("budgets.investments.show.author_deleted") %>
-            </span>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <% else %>
-            <span class="author">
-              <%= investment.author.name %>
-            </span>
-            <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <% if investment.author.official? %>
-              <span class="label round level-<%= investment.author.official_level %>">
-                <%= investment.author.official_position %>
-              </span>
-              <span class="bullet">&nbsp;&bull;&nbsp;</span>
-            <% end %>
-          <% end %>
-
-          <%= l investment.created_at.to_date %>
-
-          <span class="bullet">&nbsp;&bull;&nbsp;</span>
-          <%= investment.heading.name %>
-        </p>
+        <%= render "/budgets/investments/investment_info", investment: investment %>
 
         <%= link_to namespaced_budget_investment_path(investment), class: "read-more" do %>
           <small><%= t("budgets.investments.index.read_more") %></small>
