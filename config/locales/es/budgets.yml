@@ -106,6 +106,7 @@ es:
           random: Aleatorios
           confidence_score: Mejor valorados
           price: Por coste
+        read_more: "Leer más"
       share:
         message: "He presentado el proyecto %{title} en %{handle}. ¡Presenta un proyecto tú también!"
       show:
@@ -137,6 +138,8 @@ es:
         confirm_group:
           one: "Sólo puedes apoyar proyectos en %{count} distrito. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
           other: "Sólo puedes apoyar proyectos en %{count} distritos. Si sigues adelante no podrás cambiar la elección de este distrito. ¿Estás seguro/a?"
+        price_title: "Coste"
+        support_title: "Apoyos"
         supports:
           zero: Sin apoyos
           one: 1 apoyo
@@ -159,6 +162,8 @@ es:
       unselected_title: Proyectos no seleccionados para la votación final
       unselected: Ver los proyectos no seleccionados para la votación final
       see_results: Ver resultados
+      see_all_investments: "Ver todos los proyectos"
+      investments_list: "Lista de proyectos"
     results:
       link: Resultados
       page_title: "%{budget} - Resultados"

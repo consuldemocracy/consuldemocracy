@@ -842,6 +842,104 @@
   }
 }
 
+.budget-investment-index-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  h2 {
+    font-size: $base-font-size;
+  }
+
+  .column {
+    margin-bottom: $line-height / 2;
+  }
+}
+
+.budget-investment {
+
+  &.index {
+    height: 100%;
+
+    .panel {
+      border-radius: rem-calc(6);
+      height: 100%;
+      padding: 0;
+      position: relative;
+
+      img {
+        border-top-left-radius: rem-calc(6);
+        border-top-right-radius: rem-calc(6);
+        width: fit-content;
+      }
+
+      .image-container {
+        height: $line-height * 10;
+      }
+
+      .button {
+        font-size: $base-font-size;
+        margin-bottom: 0;
+        min-height: $line-height * 2;
+      }
+
+      .total-supports {
+        display: none;
+      }
+    }
+
+    .budget-investment-content {
+      padding: 0 rem-calc(12);
+    }
+
+    .supports-and-price {
+      background: $light;
+      display: table;
+      table-layout: fixed;
+
+      .price-title,
+      .supports-title {
+        color: #7b7b7b;
+        display: block;
+        font-size: $small-font-size;
+        text-transform: uppercase;
+      }
+
+      .table-cell {
+        padding: $line-height / 4 $line-height / 2;
+
+        &:first-child {
+          border-right: 1px solid $border;
+          position: relative;
+        }
+      }
+    }
+
+    .read-more {
+      float: right;
+      margin-top: $line-height * 2;
+    }
+  }
+}
+
+.supports-and-price {
+
+  .table-cell {
+
+    &:first-child {
+
+      &::after {
+        content: "\f559";
+        font-family: "Font Awesome 5 Free";
+        font-size: rem-calc(30);
+        font-weight: bold;
+        position: absolute;
+        right: 12px;
+        top: 6px;
+      }
+    }
+  }
+}
+
 .divider {
   display: none;
 }

@@ -481,6 +481,67 @@ describe "Budgets" do
       visit budget_path(budget)
       expect(page).not_to have_link "See results"
     end
+
+    scenario "Show investments list" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+
+      %w[informing finished].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        expect(page).not_to have_content "List of investments"
+        expect(page).not_to have_css ".budget-investment-index-list"
+        expect(page).not_to have_css ".budget-investment"
+        expect(page).not_to have_link "See all investments"
+      end
+
+      %w[accepting reviewing selecting].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        within(".budget-investment-index-list") do
+          expect(page).to have_content "List of investments"
+          expect(page).not_to have_content "Supports"
+          expect(page).not_to have_content "Price"
+        end
+
+        expect(page).to have_link "See all investments",
+                                   href: budget_investments_path(budget, heading_id: budget.headings.first.id)
+      end
+
+      budget.update!(phase: "valuating")
+
+      visit budget_path(budget)
+
+      within(".budget-investment-index-list") do
+        expect(page).to have_content "List of investments"
+        expect(page).to have_content("Supports", count: 3)
+        expect(page).not_to have_content "Price"
+      end
+
+      expect(page).to have_link "See all investments",
+                                 href: budget_investments_path(budget, heading_id: budget.headings.first.id)
+
+      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        within(".budget-investment-index-list") do
+          expect(page).to have_content "List of investments"
+          expect(page).to have_content("Price", count: 3)
+        end
+
+        expect(page).to have_link "See all investments",
+                                   href: budget_investments_path(budget, heading_id: budget.headings.first.id)
+      end
+    end
   end
 
   context "In Drafting phase" do
