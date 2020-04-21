@@ -124,10 +124,10 @@ WebSection.where(name: "budgets").first_or_create!
 WebSection.where(name: "help_page").first_or_create!
 
 # Contenido de las páginas custom
-load Rails.root.join("db", "pages", "welcome_level_three_verified.rb")
-load Rails.root.join("db", "pages", "welcome_level_two_verified.rb")
-load Rails.root.join("db", "pages", "welcome_not_verified.rb")
 load Rails.root.join("db", "pages", "accessibility.rb")
+load Rails.root.join("db", "custom_pages", "welcome_level_three_verified.rb")
+load Rails.root.join("db", "custom_pages", "welcome_level_two_verified.rb")
+load Rails.root.join("db", "custom_pages", "welcome_not_verified.rb")
 load Rails.root.join("db", "custom_pages", "conditions.rb")
 load Rails.root.join("db", "custom_pages", "privacy.rb")
 load Rails.root.join("db", "custom_pages", "faq.rb")
