@@ -165,7 +165,7 @@ end
 
 # Algunas propuestas no tienen asignado el campo unfeasibility_explanation, para
 # evitar problemas le asignaremos un valor por defecto
-Budget::Investment.where(feasibility: "unfeasible", unfeasibility_explanation: nil).each do |investment|
+Budget::Investment.where(feasibility: "unfeasible", unfeasibility_explanation: [nil, ""]).each do |investment|
   investment.update_column(:unfeasibility_explanation, "Propuesta no viable")
 end
 
