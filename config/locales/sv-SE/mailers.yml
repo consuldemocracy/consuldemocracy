@@ -28,7 +28,7 @@ sv:
       comment: Kommentera förslaget
       unsubscribe: "Gå till %{account} och avmarkera 'Få sammanfattningar av aviseringar om förslag', om du inte längre vill få aviseringar om förslag."
       unsubscribe_account: Mitt konto
-      unfollow: "Sluta att få aviseringar genom att besök förslaget och sluta att följa."
+      unfollow: "Sluta att få aviseringar genom att besöka förslaget och sluta att följa."
     direct_message_for_receiver:
       subject: "Du har fått ett nytt meddelande"
       reply: Svara till %{sender}
