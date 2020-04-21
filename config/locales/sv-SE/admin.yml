@@ -1340,7 +1340,7 @@ sv:
         text_help:
           required_fields_note: "För att verifiera en användare måste ansökan ha: dokumentnummer"
           date_of_birth_note: ", födelsedag (dd/mm/yyyy)"
-          postal_code_note: " och Postkod"
+          postal_code_note: " och postnummer"
           required_fields_structure_note: "De fält som krävs för varje användare måste vara kommaseparerade och varje användare måste vara separerad av semikolon."
           example_text: "Exempel: "
       show:
