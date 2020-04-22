@@ -51,6 +51,12 @@ Setting["facebook_handle"] = "AyuntamientodeValladolid"
 Setting["youtube_handle"] = "ValladolidAyto"
 Setting["instagram_handle"] = "ayuntamientovll"
 
+# Configuración por defecto del mapa
+Setting["feature.map"] = true
+Setting["map.latitude"] = "41.648737262859996"
+Setting["map.longitude"] = "-724.7286701202394"
+Setting["map.zoom"] = "12"
+
 # Eliminar configuraciones obsoletas
 old_settings = [
   "per_page_code_head",
