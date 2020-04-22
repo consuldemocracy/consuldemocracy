@@ -16,6 +16,10 @@ hr:
           confirmation_code: "Kod potvrde"
         email:
           recipient: "Email"
+      verification/letter:
+        email: "E-mail"
+        password: "Zaporka"
+        verification_code: "Šifra koju ste primili u pismu"
       officing/residence:
         document_type: "Tip dokumenta"
         document_number: "Broj dokumenta (uključujući slova)"
