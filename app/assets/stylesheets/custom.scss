@@ -123,6 +123,8 @@ header, .top-bar {
 // Contenido debajo de la cabecera
 .homepage-tu-voz {
   background: $brand;
+  position: relative;
+  top: 48px;
 
   h4 {
     color: #FFF;
@@ -134,17 +136,6 @@ header, .top-bar {
     position: relative;
     top: -25px;
     margin-left: 1.5rem;
-  }
-
-  .homepage-tu-voz {
-    position: relative;
-    top: -25px;
-  }
-}
-
-@media screen and (max-width: 63.999em) {
-  .homepage-tu-voz {
-    margin-top: 8px;
   }
 }
 
