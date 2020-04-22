@@ -27,6 +27,7 @@ hr:
         description: "U %{link} sekciji možete napraviti prijedlog za tijelo javne vlasti kako bi ih izvršila. Prijedlozima treba potpora te ukoliko zadobe dovoljno potpore mogu ići na javno izglasavanje. Izglasane prijedloge tijelo javne vlasti treba prihvatiti i sprovesti."
         link: "prijedlozi građana"
         image_alt: "Gumb za potporu prijedloga"
+        figcaption: 'Dugme za "Potporu" prijedloga.'
       budgets:
         title: "Participativno Budžetiranje"
         description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
