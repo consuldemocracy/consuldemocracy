@@ -1,14 +1,18 @@
 hr:
   mailers:
+    title: "Otvorena uprava"
     no_reply: "Ova poruka se šalje s email adrese koja ne prima odgovore."
     comment:
       hi: Pozdrav
+      new_comment_by: Stigao je novi komentar od <strong>%{commenter}</strong>
       subject: Netko je komentirao vašu%{commentable}
       title: Novi komentar
     config:
       manage_email_subscriptions: Ako ne želite više primati ove email-ove promijenite svoje postavke
     email_verification:
       click_here_to_verify: ova poveznica
+      instructions_2: Ova će e-poruka potvrditi vaš račun s<b>%{document_type} %{document_number}</b>. Ako ovo ne pripada vama, ne otvarajte prethodnu poveznicu i zanemarite ovu e-poruku.
+      instructions: Za potvrdu svojeg korisničkog računa, kliknite %{verification_link}.
       subject: Potvrditie svoj email
       thanks: Hvala vam puno.
       title: Potvrdite Vaš račun koristeći sljedeću poveznicu
