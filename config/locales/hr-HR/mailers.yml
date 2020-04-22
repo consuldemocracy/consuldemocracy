@@ -18,6 +18,7 @@ hr:
       title: Potvrdite Vaš račun koristeći sljedeću poveznicu
     reply:
       hi: Pozdrav
+      new_reply_by: Stigao je novi odgovor od <strong>%{commenter}</strong> na vaš komentar o temi
       subject: Netko je odgovorio na Vaš komentar
       title: Novi odgovor na vaš komentar
     proposal_notification_digest:
@@ -27,6 +28,7 @@ hr:
       comment: Komentiraj prijedlog
       unsubscribe: "Ukoliko ne želite primati obavijest o prijedlogu, posjetite %{account} i odznačite \"Primi sažetak obavijesti o prijedlozima\"."
       unsubscribe_account: Moj račun
+      unfollow: "Pogledajte prijedlog i prestanite ga pratiti ukoliko ne želite primati obavijesti."
     direct_message_for_receiver:
       subject: "Primili ste privatnu poruku"
       reply: Odgovori %{sender}
@@ -34,6 +36,7 @@ hr:
       unsubscribe_account: Moj račun
     direct_message_for_sender:
       subject: "Vi ste poslali novu privatnu poruku"
+      title: "Poslali ste novu privatnu poruku primatelju <strong>%{receiver}</strong> sljedećeg sadržaja:"
     user_invite:
       ignore: "Ukoliko niste zatražili ovu pozivnicu ne brinite, možete ignorirati ovaj email."
       text: "Hvala vam na prijavi %{org}! U nekoliko sekundi možete započeti sudjelovanje, samo popunite obrazac dolje:"
@@ -44,11 +47,15 @@ hr:
     budget_investment_created:
       subject: "Hvala Vam što ste stvorili investiciju!"
       title: "Hvala Vam što ste stvorili investiciju!"
+      intro: "Pozdrav <strong>%{author}</strong>,"
+      text: "Hvala vam što ste pokrenuli ulaganje <strong>%{investment}</strong> za Sudioničke proračune <strong>%{budget}</strong>."
+      follow: "Obavijestit ćemo vas o tijeku postupka, koji i sami možete pratiti na <strong>%{link}</strong>."
       follow_link: "Participativni Budžet"
       sincerely: "Iskreno,"
       share: "Podjelite svoj projekt"
     budget_investment_unfeasible:
       hi: "Dragi korisniče,"
+      new: "Za sve ovo, pozivamo vas da razradite <strong>novo ulaganje</strong> koje je u skladu s uvjetima ovog postupka. Možete to učiniti na sljedećoj poveznici: %{url}."
       new_href: "novi investicijski projekt"
       sincerely: "Iskreno"
       sorry: "Ispričavamo se zbog neugodnosti i ponovno vam zahvaljujemo na sudjelovanju."
@@ -65,6 +72,12 @@ hr:
       hi: "Dragi korisniče,"
       thanks: "Hvala vam na sudjelovanju."
       sincerely: "Iskreno"
+    evaluation_comment:
+      subject: "Novi komentar procjene"
+      title: Novi komentar procjene za %{investment}
+      hi: Pozdrav
+      new_comment_by: Stigao je novi komentar procjene od <strong>%{commenter}</strong> u proračunsko ulaganje %{investment}
+      commenter_info: "%{commenter}, %{time}:"
     new_actions_notification_rake_created:
       subject: "Više vijesti o vašem građanskom prijeldogu"
       hi: "Pozdrav %{name},"
