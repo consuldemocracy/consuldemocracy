@@ -18,6 +18,7 @@ hr:
         title: "Rasprave"
         description: "U %{link} sekciji možete prezentirati i podijeliti svoje mišljenje o problematičnim temama u gradu s ostalim građanima. Ovo je također mjesto za stvaranje ideja uz ostale sekcije %{org} koje će voditi do konkretnih akcija od strane tijela javne vlasti."
         link: "rasprave građana"
+        feature: "Možete otvarati rasprave, komentirati i ocjenjivati ih sa <strong>Slažem se</strong> ili <strong>Ne slažem se</strong>. Za to trebate %{link}."
         feature_link: "registrirajte se u %{org}"
         image_alt: "Gumbi za rangiranje rasprava"
         figcaption: '"Slažem se" i "Ne slažem se" gumbi kako biste ocijenili rasprave.'
