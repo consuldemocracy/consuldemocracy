@@ -12,7 +12,8 @@ admin.create_administrator
 # CONFIGURACIONES
 
 # Funcionalidades custom
-Setting["feature.comments"] = false
+Setting["feature.comments"] = true
+Setting["feature.direct_messages"] = true
 Setting["feature.ldap_login"] = true
 Setting["feature.codigo_login"] = true
 Setting["feature.physical_final_votes"] = true
