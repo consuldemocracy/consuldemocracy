@@ -33,6 +33,7 @@ hr:
         description: "%{link} sekcija pomaže građanima kako bi sproveli direktnu odluku o trošenju dijelova javnog budžeta."
         link: "participativni budžeti"
         image_alt: "Različite faze participativnog budžetiranja"
+        figcaption: '"Potpora" i "Glasovanje" faze sudioničkih proračuna.'
       polls:
         title: "Glasanje"
         description: "%{link} sekcije aktiviraju sesvaki puta kada prijedlog postigne 1% potpore i počne izglasavanje ili kada tijelo javne vlasti predlaže problem oko kojeg građani zatim odlučuju."
@@ -156,6 +157,7 @@ hr:
               description_column: Umanjuje veličinu teksta
       compatibility:
         title: Kompatibilno sa standardima i vizualnim dizajnom
+        description: 'Sve stranice ove internetske stranice u skladu su sa <strong>Smjernicama o pristupačnosti</strong> ili Općim Uvjetima dostupnog dizajna koje je utemeljila Radna skupina <abbr title="Web Accessibility Initiative" lang="en">WAI</abbr> koja pripada W3C.'
     titles:
       help: "Što je %{org}? - Građansko sudjelovanje"
     verify:
