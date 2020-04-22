@@ -6,6 +6,9 @@ es:
         user_locked: "Ya has votado presencialmente"
     investments:
       index:
+        orders:
+          random: Aleatorias
+          confidence_score: Mejor valoradas
         search_results:
           one: " que contiene <strong>'%{search_term}'</strong> en todas las zonas"
           other: " que contienen <strong>'%{search_term}'</strong> en todas las zonas"
