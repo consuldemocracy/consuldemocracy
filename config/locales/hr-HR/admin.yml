@@ -94,6 +94,12 @@ hr:
         edit_phase: Uredi fazu
         active: Aktivirati
         blank_dates: Datumi su prazni
+        administrators:
+          zero: "Odaberite administratore"
+        valuators:
+          zero: "Odaberite procjenitelje"
+        empty_administrators: "Nema administratora"
+        empty_valuators: "Nema procjenitelja"
       destroy:
         success_notice: Budžet je uspješno obrisan
         unable_notice: Ne možete obrisati budžet koji ima povezane investicije
@@ -176,11 +182,14 @@ hr:
           min_total_supports: Minimalna potpora
           max_total_supports: Maksimalna potpora
           winners: Pobjednici
+          one_filter: "Filteri koji se trenutno primjenjuju: <b><em>%{filter}</em></b>"
+          two_filters: "Filteri koji se trenutno primjenjuju: <b><em>%{filter}, %{advanced_filters}</em></b>"
         buttons:
           filter: Filter
         download_current_selection: "Preuzmi trenutnu selekciju"
         no_budget_investments: "Ne postoji investicijski projekti."
         title: Investicijski projekti
+        columns: Stupci
         assigned_admin: Dodijeljen administrator
         no_admin_assigned: Nema dodijeljenog administratora
         no_valuators_assigned: Nema dodijeljenih procjenitelja
@@ -205,8 +214,10 @@ hr:
           author_username: Korisničko ime autora
           incompatible: Nekompatabilnosti
           price: Cijena
+          author: Autor
         cannot_calculate_winners: Budžet mora ostati na fazi "Izglasavanje projekata", "Pregled Izglasavanja" ili "Dovršeni budžet" kako bi izračunali pobjednike projekata
         see_results: "Pogledaj rezultate"
+        milestone_tags_filter_all: "Sve oznake miljokaza"
       show:
         assigned_admin: Dodijeljen administrator
         assigned_valuators: Pripisani procjenitelji
@@ -233,6 +244,7 @@ hr:
           "true": "Da"
           "false": "Ne"
         valuator_groups: "Grupa procjenitelja"
+        preview: Pregled ulaganja
       edit:
         classification: Klasifikacija
         compatibility: Kompatibilnost
@@ -246,9 +258,11 @@ hr:
       search_unfeasible: Pretraga neizvediva
     milestones:
       index:
+        table_id: "Identifikacijski broj"
         table_title: "Naziv"
         table_description: "Opis"
         table_publication_date: "Datum objave"
+        table_status: Stanje
         table_actions: "Akcije"
         delete: "Obriši ključni cilj"
         no_milestones: "Nemate definirane ključne ciljeve"
@@ -257,6 +271,7 @@ hr:
         documents: "Dokumenti"
         milestone: Ključni ciljevi
         new_milestone: Stvori novi ključni cilj
+        milestone_tags: Oznake miljokaza
       form:
         admin_statuses: Upravljaj statusima
         no_statuses_defined: Još ne postoji definirani status
@@ -297,6 +312,7 @@ hr:
         no_progress_bars: "Ne postoji traka napretka"
         new_progress_bar: "Stvori novu prazninu napretka"
         primary: "Primarna praznina napretka"
+        table_id: "Identifikacijski broj"
         table_kind: "Tip"
         table_title: "Naziv"
         table_percentage: "Trenutni progres"
@@ -314,7 +330,13 @@ hr:
         notice: "Traka napretka je uspješno obrisana"
     comments:
       index:
+        id: "Identifikacijski broj"
+        content: "Sadržaj"
+        author: "Autor"
+        commentable_type: "Vrsta"
         title: Sakriveni komentari
+        no_comments: Nema komentara.
+        table_link: "Poveznica"
     hidden_comments:
       index:
         filter: Filter
@@ -388,7 +410,10 @@ hr:
           success: Zadatak je označen kao riješen.
     debates:
       index:
+        id: Identifikacijski broj
+        author: Autor
         title: Sakrivene rasprave
+        no_debates: Nema rasprava.
     hidden_debates:
       index:
         filter: Filter
@@ -526,6 +551,7 @@ hr:
           submit_button: Spremi promjene
           warning: Možete urediti tekst, nemojte zaboraviti klinuti Spremi kako bi trajno spremili promjene.
         form:
+          title: 'Uređivanje <span class="strong">%{draft_version_title}</span> od postupka <span class="strong">%{process_title}</span>'
           launch_text_editor: Upali uređivač teksta
           close_text_editor: Zatvori uređivač teksta
           use_markdown: Koristi Smanjenje kako bi formatirali tekst
@@ -664,6 +690,9 @@ hr:
       dashboard: Glavni izbornik prijedloga
       administrator_tasks: Zatraženi resursi
       dashboard_actions: Resursi i djelovanja
+      debates: "Rasprave"
+      comments: "Komentari"
+      local_census_records: Upravljanje lokalnim cenzusom
     administrators:
       index:
         title: Administratori
@@ -722,6 +751,7 @@ hr:
         empty_newsletters: Ne postoje newsletteri za prikaz
       new:
         title: Novi newsletter
+        header_footer_help_text: "Naslov i podnožje isti su za sve e-mail poruke, možete ih promijeniti na <code>app/views/layouts/mailer_header</code> i <code>app/views/layouts/mailer_footer</code>.<br>Sliku zaglavlja možete promijeniti na %{link}."
         image_link: "prilagođene slike"
       edit:
         title: Uredi newsletter
@@ -819,6 +849,9 @@ hr:
       user_invite:
         title: "Korisnička Pozivnica"
         description: "Pošalji osobi koja je pozvana za registraciju računa."
+      evaluation_comment:
+        title: "Novi komentar procjene"
+        description: "Poslano administratorima i procjeniteljima povezanima s komentiranim ulaganjem"
       edit_info: "Možete urediti ovaj email u"
       message_title: "Naziv Poruke"
       message_body: "Ovo je uzorak sadržaja poruke."
@@ -826,6 +859,7 @@ hr:
         no_investments: "Nisu stvoreni investicijski budžeti. Neki primjeri podataka su potrebni kako bi se dobio uvid u email."
         no_comments: "Nisu stvoreni komentari. Neki primjeri podataka su potrebni kako bi se dobio pregled emiala."
         no_replies: "Ne postoje odgovori. Primjeri podataka su potrebni kako bi se dobio pregled emaila."
+        no_evaluation_comments: "Nema komentara procjene. Potrebni su primjeri podataka za pregled e-mail poruke."
     emails_download:
       index:
         title: Prezumi emailove
@@ -843,6 +877,9 @@ hr:
         valuator_groups: "Grupe procjenitelja"
         group: "Grupa"
         no_group: "Nema grupe"
+        abilities: "Mogućnosti"
+        can_comment: "Može komentirati"
+        can_edit_dossier: "Može uređivati spis"
       valuator:
         add: Dodaj procjenitelje
         delete: Izbriši
@@ -855,8 +892,10 @@ hr:
         description: "Opis"
         email: "Email"
         group: "Grupa"
+        abilities: "Mogućnosti"
         no_description: "Bez opisa"
         no_group: "Bez grupe"
+        no_abilities: "Bez mogućnosti"
     valuator_groups:
       index:
         title: "Grupa procjenitelja"
@@ -1133,6 +1172,10 @@ hr:
           pending: U tijeku
           rejected: Odbijeno
           verified: Dopušteno
+        hidden_count:
+          one: Postoji još <strong>jedna organizacija</strong>bez korisnika ili sa skrivenim korisnikom.
+          few: Postoji još <strong>%{count} organizacije</strong> bez korisnika ili sa skrivenim korisnikom.
+          other: Postoji još <strong>%{count} organizacija</strong> bez korisnika ili sa skrivenim korisnikom.
         name: Ime
         email: Email
         phone_number: Telefon
@@ -1188,6 +1231,7 @@ hr:
         updated: Vrijednost ažurirana
       index:
         title: Postavke konfiguracije
+        general: Konfiguracijske postavke
         update_setting: Ažuriranje
         participation_processes: "Participativni procesi"
         images_and_documents: "Slike i dokumenti"
@@ -1207,6 +1251,10 @@ hr:
           how_to_enable: 'Prikažite na mapi korisnike koje morate omogućiti "Prijedlozi i investicijski budžeti geolokacije" na "Značajke" kartici.'
         dashboard:
           title: Glavni izbornik prijedloga
+        remote_census:
+          title: Konfiguracija udaljenog cenzusa
+          how_to_enable: 'Za konfiguraciju udaljenog cenzusa (SOAP) morate omogućiti "Konfiguriraj vezu za udaljeni cenzus (SOAP) u kartici "Značajke".'
+      remote_census_general_name: Opće informacije
       setting: Značajka
       setting_actions: Djelovanja
       setting_name: Postavka
