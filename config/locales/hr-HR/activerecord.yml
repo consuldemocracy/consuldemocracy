@@ -595,6 +595,7 @@ hr:
             locale:
               already_translated: Već preveden izvor
       messages:
+        translations_too_short: Obvezatno je priložiti barem jedan prijevod
         record_invalid: "Valicaija nije uspjela: %{errors}"
         another_poll_active: Postoji još jedno aktivno glasovanje za dat period
         restrict_dependent_destroy:
