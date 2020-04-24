@@ -170,6 +170,7 @@ hr:
     direct_message: privatna poruka
     error: pogreška
     errors: pogreške
+    not_saved: "ovaj %{resource} nije spremljen. <br>Molimo, provjerite označena polja kako biste ih znali ispraviti:"
     policy: Politika Privatnosti
     proposal: Prijedlog
     proposal_notification: "Obavijest"
