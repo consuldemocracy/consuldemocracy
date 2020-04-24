@@ -1,0 +1,55 @@
+<% provide :title do %><%= t("pages.titles.help", org: setting["org_name"]) %><% end %>
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: help_url %>
+<% end %>
+
+<% if has_banners? %>
+  <%= render "shared/banner" %>
+<% end %>
+
+<div class="jumbo light">
+  <div class="row">
+    <div class="small-12 medium-9 column">
+      <h2><%= t("pages.help.title", org: setting["org_name"]) %></h2>
+      <p><%= t("pages.help.guide", org: setting["org_name"]) %></p>
+    </div>
+  </div>
+
+  <%= render "pages/help/menu" %>
+</div>
+
+<div id="more-info" class="more-info-content">
+  <div class="row">
+    <div class="small-12 medium-7 large-8 column">
+      <% if feature?(:debates) %>
+        <%= render "pages/help/debates" %>
+      <% end %>
+
+      <% if feature?(:proposals) %>
+        <%= render "pages/help/proposals" %>
+      <% end %>
+
+      <% if feature?(:budgets) %>
+        <%= render "pages/help/budgets" %>
+      <% end %>
+
+      <% if feature?(:polls) %>
+        <%= render "pages/help/polls" %>
+      <% end %>
+
+      <% if feature?(:legislation) %>
+        <%= render "pages/help/processes" %>
+      <% end %>
+    </div>
+    <div class="small-12 medium-4 large-3 column more-info-sidebar">
+      <%= render "pages/help/sidebar" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <hr>
+    <div class="small-12 column">
+      <%= render "pages/help/other" %>
+    </div>
+  </div>
+</div>
