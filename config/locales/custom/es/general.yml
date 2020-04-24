@@ -20,6 +20,9 @@ es:
       title: "Consultas"
     menu:
       codes: "Códigos de acceso"
+  debates:
+    index:
+      featured_debates: Destacados
   restriction:
     dashboard:
       index:
