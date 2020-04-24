@@ -96,8 +96,14 @@ hr:
         blank_dates: Datumi su prazni
         administrators:
           zero: "Odaberite administratore"
+          one: "1 administrator odabran"
+          few: "%{count} administratora odabrano"
+          other: "%{count} administratora odabrano"
         valuators:
           zero: "Odaberite procjenitelje"
+          one: "1 procjenitelj odabran"
+          few: "%{count} procjenitelja odabrano"
+          other: "%{count} procjenitelja odabrano"
         empty_administrators: "Nema administratora"
         empty_valuators: "Nema procjenitelja"
       destroy:
@@ -1255,6 +1261,8 @@ hr:
           title: Konfiguracija udaljenog cenzusa
           how_to_enable: 'Za konfiguraciju udaljenog cenzusa (SOAP) morate omogućiti "Konfiguriraj vezu za udaljeni cenzus (SOAP) u kartici "Značajke".'
       remote_census_general_name: Opće informacije
+      remote_census_request_name: Zatraži podatke
+      remote_census_response_name: Podaci o odazivu
       setting: Značajka
       setting_actions: Djelovanja
       setting_name: Postavka
@@ -1276,6 +1284,9 @@ hr:
       proposal_search:
         button: Pretraga
         placeholder: Pretraga prijedloga po naslovu, kodu, opisu ili pitanju
+      debate_search:
+        button: Pretraga
+        placeholder: Pretraži rasprave po nazivu ili opisu
       user_search:
         button: Pretraga
         placeholder: Pretraži korisnika po imenu ili emailu
@@ -1332,9 +1343,17 @@ hr:
         title: Nove potpisne liste
         document_numbers_note: "Napiši broj koji je odvojen zarezom (,)"
         submit: Stvori potpisnu listu
+        text_help:
+          required_fields_note: "Za provjeru korisnika, vašoj aplikaciji je potreban: Broj dokumenata"
+          date_of_birth_note: ", Dan rođenja (dd/mm/gggg)"
+          postal_code_note: " i Poštanski broj"
+          required_fields_structure_note: "Obvezatna polja za svakog korisnika moraju biti odvojena zarezom i svaki korisnik mora biti odvojen točkom sa zarezom."
+          example_text: "Primjer: "
       show:
         created_at: Stvoreno
         author: Autor
+        users: Korisnici
+        signature_count: "Broj potpisa:"
         verified:
           one: "Postoji %{count} valjani potpis"
           few: "Postoji %{count} valjani potpisi"
@@ -1382,6 +1401,7 @@ hr:
         level_2_user: Razina 2 korisnika
         proposal_created: Prijedlozi građana
       budgets:
+        no_data_before_balloting_phase: "Nema podataka za prikaz prije faze glasovanja."
         title: "Participativni Budžeti - Participativne statistike"
         supporting_phase: Faza potpore
         balloting_phase: Finalno glasanje
@@ -1505,6 +1525,7 @@ hr:
           see_page: Pogledaj stranicu
         new:
           title: Stvori novu prilagođenu stranicu
+          slug_help: "Tekst u URL-u za prepoznavanje ove stranice, naprimjer <code>https://consulproject.org/page-slug</code>"
         page:
           created_at: Stvoreno kod
           status: Status
@@ -1556,3 +1577,51 @@ hr:
         submit_header: Spremi naslov
         card_title: Uredi karticu
         submit_card: Spremi karticu
+    audits:
+      title: "Pregled izmjena"
+      changes: "Popis izmjena"
+      id: "Identifikacijski broj"
+      field: "Polje"
+      new_value: "Nova vrijednost"
+      old_value: "Stara vrijednost"
+      edited_at: "Uređivano u"
+      edited_by: "Uredio"
+      actions: "Radnje"
+      empty: "Nema zabilježenih izmjena"
+    local_census_records:
+      index:
+        title: Upravljanje lokalnim cenzusom
+        create: Stvorite novi zapis lokalnog cenzusa
+        no_local_census_records: Nema zapisa lokalnog cenzusa.
+        document_type: Vrsta dokumenta
+        document_number: Broj dokumenta
+        date_of_birth: Datum rođenja
+        postal_code: Poštanski broj
+        search:
+          placeholder: Pretraga po broju dokumenta
+          search: Pretraga
+        import: Uvezi CSV
+      new:
+        creating: Stvaranje novog zapisa lokalnog cenzusa
+      create:
+        notice: Novi zapis lokalnog cenzusa uspješno stvoren!
+      edit:
+        editing: Uređivanje zapisa lokalnog cenzusa
+      update:
+        notice: Zapis lokalnog cenzusa uspješno ažuriran!
+      destroy:
+        notice: Zapis lokalnog cenzusa uspješno uklonjen!
+      imports:
+        new:
+          title: Zapisi lokalnog cenzusa
+          subtitle: Uvezi CSV datoteku
+        create:
+          notice: Uvez zapisa lokalnog cenzusa uspješno izvršen!
+        show:
+          title: Upravljanje lokalnim cenzusom
+          subtitle: Uvezi rezultate postupka
+          import: Uvezi ponovo
+          errored: Retci s greškom
+          created: Stvoreni zapisi
+        local_census_records:
+          no_records_found: Zapisi nisu pronađeni.
