@@ -284,6 +284,12 @@ Budget.find_each do |budget|
   )
 end
 
+# Habilitamos los resultados en los presupuestos participativos finalizados
+Budget.finished.find_each do |budget|
+  budget.results_enabled = true
+  budget.save!
+end
+
 # OTROS
 
 # Migraciones de la versión 1.1.0
