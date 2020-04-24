@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-gem "rails", "5.0.7.2"
+gem "rails", "5.1.7"
 
-gem "acts-as-taggable-on", "~> 5.0.0"
+gem "acts-as-taggable-on", "~> 6.0.0"
 gem "acts_as_votable", "~> 0.11.1"
 gem "ahoy_matey", "~> 1.6.0"
 gem "ancestry", "~> 3.0.7"
@@ -66,8 +66,8 @@ source "https://rails-assets.org" do
 end
 
 group :development, :test do
-  gem "bullet", "~> 5.7.0"
-  gem "byebug", "~> 10.0.0"
+  gem "bullet", "~> 5.9.0"
+  gem "byebug", "~> 11.1.1"
   gem "factory_bot_rails", "~> 4.8.2"
   gem "faker", "~> 1.8.7"
   gem "i18n-tasks", "~> 0.9.29"
@@ -82,7 +82,6 @@ group :test do
   gem "capybara", "~> 3.29.0"
   gem "capybara-webmock", "~> 0.5.3"
   gem "coveralls", "~> 0.8.22", require: false
-  gem "database_cleaner", "~> 1.7.0"
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 3.8"
   gem "selenium-webdriver", "~> 3.141"
@@ -94,6 +93,7 @@ group :development do
   gem "capistrano-rails", "~> 1.4.0", require: false
   gem "capistrano3-delayed-job", "~> 1.7.3"
   gem "capistrano3-puma", "~> 4.0.0"
+  gem "database_cleaner", "~> 1.7.0"
   gem "erb_lint", require: false
   gem "github_changelog_generator", "~> 1.15.0"
   gem "mdl", "~> 0.5.0", require: false

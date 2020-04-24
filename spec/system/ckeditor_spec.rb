@@ -19,7 +19,16 @@ describe "CKEditor" do
     login_as(create(:administrator).user)
 
     visit new_admin_site_customization_page_path
+    fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__image").click
+
+    expect(page).to have_css(".cke_dialog")
+
+    execute_script "document.getElementsByClassName('cke_dialog')[0].style.left = '0px'"
+    execute_script "document.getElementsByClassName('cke_dialog')[0].style.top = '0px'"
+
+    expect(find(".cke_dialog")).to match_style(left: "0px", top: "0px")
+
     click_link "Upload"
 
     within_frame(1) do
@@ -33,8 +42,9 @@ describe "CKEditor" do
 
   scenario "cannot upload attachments through link tab", :js do
     login_as(create(:administrator).user)
-    visit new_admin_site_customization_page_path
 
+    visit new_admin_site_customization_page_path
+    fill_in_ckeditor "Content", with: "Filling in to make sure CKEditor is loaded"
     find(".cke_button__link").click
 
     expect(page).to have_css(".cke_dialog")

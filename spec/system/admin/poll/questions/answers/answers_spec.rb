@@ -58,4 +58,20 @@ describe "Answers" do
 
     expect("Another title").to appear_before("New title")
   end
+
+  scenario "Reorder", :js do
+    question = create(:poll_question)
+    create(:poll_question_answer, question: question, title: "First", given_order: 1)
+    create(:poll_question_answer, question: question, title: "Last", given_order: 2)
+
+    visit admin_question_path(question)
+
+    within("tbody.sortable") do
+      expect("First").to appear_before("Last")
+
+      find("tr", text: "Last").drag_to(find("tr", text: "First"))
+
+      expect("Last").to appear_before("First")
+    end
+  end
 end
