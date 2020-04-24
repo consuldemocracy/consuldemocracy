@@ -1,5 +1,7 @@
 <% if has_banners? %>
-  <%= render "shared/banner" %>
+  <div class="budgets-banner">  
+    <%= render "shared/banner" %>
+  </div>
 <% end %>
 
 <% provide :title do %><%= t("budgets.index.title") %><% end %>

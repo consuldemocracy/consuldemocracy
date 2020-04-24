@@ -396,3 +396,22 @@ body.management .admin-content {
 .featured-debates {
   background: #eee;
 }
+
+// 11. Banners
+
+.banner {
+  background-image: image-url("banner-background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 10px 10px;
+}
+
+#debates .banner, #proposals .banner {
+  margin-bottom: 20px;
+}
+
+.home-page .banner, .budgets-banner .banner, .help-banner .banner {
+  top: -25px;
+  position: relative;
+}
