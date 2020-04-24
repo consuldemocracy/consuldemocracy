@@ -7,6 +7,10 @@ hr:
         remaining: "Vi još morate<span>%{amount}</span> investirati."
         no_balloted_group_yet: "Vi niste glasali na temu ove grupe, glasajte!"
         remove: Ukloni glas
+        voted:
+          one: "Vi ste glasovali za <span>jednu</span> investiciju."
+          few: "Vi ste glasovali za <span>%{count}</span> investicije."
+          other: "Vi ste glasovali za <span>%{count}</span> investicija."
         voted_info: "Vaše je glasovanje potvrđeno!"
         voted_info_2: "Možete promjeniti svoj glas u bilo koje vrijeme do završetka ove faze."
         zero: Vi niste glasali niti za jedan projetk.
@@ -78,8 +82,13 @@ hr:
           title: Pretraga
         sidebar:
           my_ballot: Moj glas
+          voted:
+            one: "<strong>Glasovali ste za prijedlog u iznosu od %{amount_spent}</strong>"
+            few: "<strong>Glasovali ste za %{count} prijedloga u iznosu od %{amount_spent}</strong>"
+            other: "<strong>Glasovali ste za %{count} prijedloga u iznosu od %{amount_spent}</strong>"
           voted_info: Vi možete %{link} u bilo koje vrijeme dok se ne završi ova faza. Nema potrebe da se potroši sav dostupan novac.
           voted_info_link: izmjeni svoj glas
+          different_heading_assigned: "Imate aktivne glasove u drugoj temi: %{heading_link}"
           change_ballot: "Ako se predomislite možete ukloniti vaš glas u %{check_ballot} i započeti ponovno."
           check_ballot_link: "provjeri i potvrdi moj glas"
           zero: Vi niste glasali u niti jedan investicijski projekt u ovoj grupi.
@@ -100,6 +109,8 @@ hr:
         price_explanation: Objašnjenje cijene
         unfeasibility_explanation: Objašnjenje neizvedivosti
         code: "Lozinka investicijskog projekta: <strong>%{code}</strong>"
+        location: "Lokacija: <strong>%{location}</strong>"
+        organization_name: "Predložio: <strong>%{name}</strong>"
         share: Podijeli
         title: Investicijski projekt
         supports: Potpora
