@@ -1,6 +1,7 @@
 hr:
   documents:
     title: Dokumenti
+    max_documents_allowed_reached: Dosegli ste najveći broj odobrenih dokumenata! <strong>Morate jedan obrisati prije nego učitate drugi.</strong>
     additional: Dodatna dokumentacija
     form:
       title: Dokumenti
