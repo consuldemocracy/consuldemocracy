@@ -172,11 +172,16 @@ hr:
     errors: pogreške
     not_saved: "ovaj %{resource} nije spremljen. <br>Molimo, provjerite označena polja kako biste ih znali ispraviti:"
     policy: Politika Privatnosti
+    banner: banner
     proposal: Prijedlog
     proposal_notification: "Obavijest"
     budget/investment: Investicija
     budget/group: Grupa za budžet
     budget/heading: Naslov Budžeta
+    geozone: geozona
+    legislation/draft_version: skica
+    legislation/process: proces
+    legislation/question: pitanje
     poll/shift: Izmjeni
     poll/question/answer: Odgovor
     user: Račun
@@ -185,6 +190,10 @@ hr:
     document: Dokument
     topic: Tema
     image: Slika
+    local_census_record: Zapis lokalnog cenzusa
+    local_census_records/import: Uvoz zapisa lokalnih cenzusa
+    site_customization/content_block: blokiranje sadržaja
+    site_customization/page: stranica
   geozones:
     none: Svi gradovi
   layouts:
@@ -291,6 +300,10 @@ hr:
       sign_in: Ulogiraj se s Googlom
       sign_up: Prijavi se s Googlom
       name: Google
+    wordpress_oauth2:
+      sign_in: Prijavi se putem Wordpressa
+      sign_up: Upiši se putem Wordpressa
+      name: Wordpress
     twitter:
       sign_in: Ulogiraj se s Twitterom
       sign_up: Prijavi se s Twitterom
@@ -305,6 +318,7 @@ hr:
     created:
       title: Čestitamo! Napravili ste prvi korak.
       motivation: "Važno je spremiti početak kampanje za vaš prijedlog kako bi bio uspješan. Prvih par dana su odlučujuča."
+      motivation_2: "<strong>Ako želite preporuke za pripremu objave, ostavite svoj prijedlog kao skicu i mi ćemo vas voditi.</strong>"
       publish: Ne, ja želim objaviti svoj prijedlog
       dashboard: Da, želim pomoć i objaviti ću kasnije
       preview_title: Ovako će izgledati vaš prijedlog kada ga objavite
@@ -465,6 +479,7 @@ hr:
       poster: Poster
       recommended_actions: Preporučeno djelovanje
       messages: Poruka korisnicima
+      related_content: Povezan sadržaj
     form:
       request: Zahtjev
     create_request:
