@@ -1,7 +1,7 @@
 ka:
   date:
     abbr_day_names:
-      - კვ
+      - კვი
       - ორშ
       - სამ
       - ოთხ
@@ -104,11 +104,11 @@ ka:
       empty: არ შეიძლება იყოს ცარიელი
       equal_to: უნდა უტოლდებოდეს %{count}
       even: უნდა იყოს ლუწი
-      exclusion: შემობრუნებულია
+      exclusion: რეზერვირებულია
       greater_than: უნდა აღემატებოდეს %{count}-ს
       greater_than_or_equal_to: უნდა უდრიდეს, ან აღემატებოდეს %{count}-ს
       inclusion: არ არის ჩამონათვალში
-      invalid: აარსწორია
+      invalid: არასწორია
       less_than: უნდა იყოს %{count}-ზე ნაკლები
       less_than_or_equal_to: არ უნდა აღემატებოდეს %{count}-ს
       model_invalid: "დადასტურება ვერ მოხერხდა: %{errors}"
@@ -128,7 +128,7 @@ ka:
         other: არასწორი სიგრძისაა (უნდა იყოს %{count} სიმბოლო)
       other_than: გარდა %{count}
     template:
-      body: "შეცდომა აღნიშნულ ვეელბში:"
+      body: "შეცდომა აღნიშნულ ველებში:"
       header:
         one: '%{model}-ის დამახსოვრება ვერ მოხერხდა. დაფიქსირდა 1 შეცდომა'
         other: "%{model}-ის დამახსოვრება ვერ მოხერხდა. დაფიქსირდა %{count} შეცდომა"
