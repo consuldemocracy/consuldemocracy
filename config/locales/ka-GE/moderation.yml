@@ -67,7 +67,7 @@ ka:
         order: დალაგება
         orders:
           created_at: უახლესი
-          flags: ყველაზე მეტი საჩივრის მქონე
+          flags: ყველაზე ხშირად მონიშვნადი
         title: ინიციატივები
     budget_investments:
       index:
@@ -86,7 +86,7 @@ ka:
         order: დალაგება
         orders:
           created_at: უახლესი
-          flags: ყველაზე მეტი საჩივრის მქონე
+          flags: ყველაზე მეტჯერ მონიშნული
         title: საბიუჯეტო ინვესტიციები
     proposal_notifications:
       index:
