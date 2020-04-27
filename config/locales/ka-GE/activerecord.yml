@@ -1,6 +1,6 @@
 ka:
   attributes:
-    geozone_id: "მოქმედების სფერო"
+    geozone_id: "მოქმედების არეალი"
     results_enabled: "შედეგების ჩვენება"
     stats_enabled: "სტატისტიკის ჩვენება"
     advanced_stats_enabled: "მოწინავე სტატისტიკის ჩვენება"
@@ -172,11 +172,11 @@ ka:
         description: "აღწერა"
       geozone:
         name: სახელი
-        external_code: "გარე კოდი (სურვილისამებრ)"
-        census_code: "აღწერის კოდი (სურვილისამებრ)"
-        html_map_coordinates: "HTML <map> კოორდინატები (სურვილისამებრ)"
+        external_code: "გარე კოდი (არასავალდებულო)"
+        census_code: "აღწერის კოდი (არასავალდებულო)"
+        html_map_coordinates: "HTML <map> კოორდინატები (არასავალდებულო)"
       milestone:
-        status_id: "მიმდინარე სტატუსი (სურვილამებრ)"
+        status_id: "მიმდინარე სტატუსი (არასავალდებულო)"
         title: "სათაური"
         description: "აღწერა (სურვილამებრ, თუ სტატუსი მინიჭებულია)"
         publication_date: "თარიღი"
@@ -184,7 +184,7 @@ ka:
         description: "აღწერა"
       milestone/status:
         name: "სახელი"
-        description: "აღწერა (სურვილისამებრ)"
+        description: "აღწერა (არასავალდებულო)"
       progress_bar:
         kind: "ტიპი"
         title: "სათაური"
@@ -198,11 +198,11 @@ ka:
         name: "ჯგუფის დასახელება"
       budget/heading:
         allow_custom_content: "შინაარსის ბლოკის გამოჩენა"
-        latitude: "განედი (სურვილისამებრ)"
-        longitude: "გრძედი (სურვილისამებრ)"
+        latitude: "განედი (არასავალდებულო)"
+        longitude: "გრძედი (არასავალდებულო)"
         name: "სათაურის დასახელება"
         price: "თანხის მოცულობა"
-        population: "მოსახლეობა (სურვილისამებრ)"
+        population: "მოსახლეობა (არასავალდებულო)"
       budget/heading/translation:
         name: "სათაურის დასახელება"
       budget/phase:
@@ -293,7 +293,7 @@ ka:
       poll/ballot_sheet:
         data: CSV მონაცემები
         poll_id: გამოკითხვა
-        officer_assignment_id: დამკვირვებლის დავალება
+        officer_assignment_id: დამკვირვებლის დანიშვნა
       poll/shift:
         task: "ამოცანა"
       proposal_notification:
@@ -315,7 +315,7 @@ ka:
         title: სათაური
         updated_at: განახლებულია
         more_info_flag: გამოჩნდეს დახმარების გვერდზე
-        print_content_flag: ბეჭვდის ღილაკი
+        print_content_flag: ბეჭდვის ღილაკი
         locale: ენა
       site_customization/page/translation:
         title: სათაური
@@ -424,14 +424,14 @@ ka:
         title: სათაური
         body: ტექსტი
       widget/card:
-        label: ტეგი (სურვილისამებრ)
+        label: ტეგი (არასავალდებულო)
         title: სათაური
         description: აღწერა
         link_text: ბმულის დასახელება
         link_url: ბმულის მისამართი (URL)
         columns: სვეტების რაოდენობა
       widget/card/translation:
-        label: ტეგი (სურვილისამებრ)
+        label: ნიშანდება (არასავალდებულო)
         title: სათაური
         description: აღწერა
         link_text: ბმულის დასახელება
@@ -448,7 +448,7 @@ ka:
         order: შეგიძლიათ მიუთითოთ პოზიცია, სადაც ეს მოქმედება სხვა მოქმედებათა ჩამონათვალში გამოჩნდება მომხმარებლისთვის
         active: აქტიური
         action_type: ტიპი
-        action_type_proposed_action: "სასურველი მოქმედება"
+        action_type_proposed_action: "შემოთავაზებული მოქმედება"
         action_type_resource: "რესურსი"
         published_proposal: "გამოქვეყნებული ინიციატივებისთვის?"
       dashboard/administrator_task:
@@ -486,8 +486,8 @@ ka:
         image:
           attributes:
             attachment:
-              min_image_width: "ფოტოსურათის სიგანე უნდა იყო მინიმუმ %{required_min_width} პიქსელი"
-              min_image_height: "ფოტოსურათის სიმაღლე უნდა იყო მინიმუმ %{required_min_height} პიქსელი"
+              min_image_width: "ფოტოსურათის სიგანე უნდა იყოს მინიმუმ %{required_min_width} პიქსელი"
+              min_image_height: "ფოტოსურათის სიმაღლე უნდა იყოს მინიმუმ %{required_min_height} პიქსელი"
         newsletter:
           attributes:
             segment_recipient:
@@ -499,7 +499,7 @@ ka:
         map_location:
           attributes:
             map:
-              invalid: რუქის ადგილმდებარეობა ცარიელი ვერ იქნება. დასვით მარკერი ან მონიშნეთ მოსანიშნი, იმ შემთხვევაში თუ გეოლოკალიზაცია საჭირო არ არის
+              invalid: რუკის ადგილმდებარეობა ცარიელი ვერ იქნება. დასვით მარკერი ან მონიშნეთ უჯრედი, იმ შემთხვევაში თუ გეოლოკალიზაცია საჭირო არ არის
         poll/voter:
           attributes:
             document_number:
