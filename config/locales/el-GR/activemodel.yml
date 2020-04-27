@@ -34,8 +34,8 @@ el:
         confirmation_code: "Εισάγετε τον κωδικό που λάβατε στο κινητό σας"
       officing/residence:
         document_type: "Τύπος εγγράφου"
-        document_number: "Αριθμός εγγράφου (περιλαμβανομένων χαρακτήρων)"
-        year_of_birth: "Χρονολογία γέννησης"
+        document_number: "Αριθμός εγγράφου (συμπεριλαμβανομένων γραμμάτων)"
+        year_of_birth: "Έτος γέννησης"
       local_census_records/import:
         file: Αρχείο
     errors:
@@ -43,5 +43,5 @@ el:
         local_census_records/import:
           attributes:
             file:
-              extension: "Λανθασμένη μορφή αρχείου. Eπιτρεπόμενη μορφή: %{valid_extensions}."
+              extension: "Λανθασμένη μορφή αρχείου. Η επιτρεπόμενη μορφή του αρχείου είναι: %{valid_extensions}."
               headers: "Λανθασμένες επικεφαλίδες αρχείου. Eπιτρεπόμενες επικεφαλίδες: %{required_headers}."
