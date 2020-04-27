@@ -38,16 +38,16 @@ el:
         other: "Χρήστης"
       moderator:
         one: "Συντονιστής"
-        other: "Συντονιστής"
+        other: "Συντονιστές"
       administrator:
         one: "Διαχειριστής"
-        other: "Διαχειριστής"
+        other: "Διαχειριστές"
       valuator:
         one: "Αξιολογητής"
         other: "Αξιολογητής"
       valuator_group:
         one: "Ομάδα αξιολόγησης"
-        other: "Ομάδα αξιολόγησης"
+        other: "Ομάδες αξιολόγησης"
       manager:
         one: "Υπεύθυνος"
         other: "Υπεύθυνος"
@@ -68,10 +68,10 @@ el:
         other: "Λειτουργός"
       poll/ballot_sheet:
         one: Φύλλο ψηφοφορίας
-        other: Φύλλο ψηφοφορίας
+        other: Φύλλα ψηφοφορίας
       proposal:
         one: "Πρόταση πολίτη"
-        other: "Πρόταση πολίτη"
+        other: "Προτάσεις πολιτών"
       site_customization/page:
         one: Προσαρμοσμένη σελίδα
         other: Προσαρμοσμένες σελίδες
