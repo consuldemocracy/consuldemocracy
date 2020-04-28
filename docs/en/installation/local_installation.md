@@ -45,7 +45,7 @@ cp config/secrets.yml.example config/secrets.yml
 
 And setup database credentials with your `consul` user in your new `database.yml` file.
 
-7. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data to run the application:
+7. Run the following [Rake tasks](https://github.com/ruby/rake) to create and fill your local database with the minimum data needed to run the application:
 
 ```bash
 rake db:create
