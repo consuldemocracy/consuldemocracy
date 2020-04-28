@@ -15,7 +15,7 @@ ka:
       human_rights: ადამიანის უფლებები
       neighborhood_association: სამეზობლო ასოციაცია
     categories:
-      associations: ასოციაციები
+      associations: გაერთიანებები
       culture: კულტურა
       sports: სპორტი
       social_rights: სოციალური უფლებები
@@ -27,14 +27,14 @@ ka:
       mobility: მობილურობა
       media: მედია
       health: ჯანმრთელობა
-      transparency: გამჭვირვალეობა
+      transparency: გამჭვირვალობა
       security_emergencies: უსაფრთხოება და საგანგებო სიტუაციები
       environment: გარემო
     budgets:
       budget: მონაწილეობითი ბიუჯეტი
       currency: '€'
       groups:
-        all_city: მთლიანი ქალაქი
+        all_city: მთელი ქალაქი
         districts: რაიონები
       valuator_groups:
         culture_and_sports: კულტურა და სპორტი
@@ -48,7 +48,7 @@ ka:
         executed: შემსრულებელი
     polls:
       current_poll: "მიმდინარე გამოკითხვა"
-      current_poll_geozone_restricted: "გეოგრ. ზონაზე მიმდინარე გამოკითხვა"
+      current_poll_geozone_restricted: "მიმდინარე გამოკითხვის გეოგრაფიული ზონა შეზღუდულია"
       recounting_poll: "გამოკითხვის გადათვლა"
       expired_poll_without_stats: "ვადაგასული გამოკითხვა სტატისტიკისა და შედეგების გარეშე"
       expired_poll_with_stats: "ვადაგასული გამოკითხვა სტატისტიკითა და შედეგებით"
