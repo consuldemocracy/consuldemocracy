@@ -209,7 +209,10 @@ Rails/Date:
 
 Rails/DynamicFindBy:
   Enabled: true
-  Severity: refactor
+  Whitelist:
+    - find_by_slug_or_id
+    - find_by_slug_or_id!
+    - find_by_manager_login
 
 Rails/EnumUniqueness:
   Enabled: true
