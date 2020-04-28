@@ -27,7 +27,7 @@ ruby -v
 4. Install [Bundler](http://bundler.io/):
 
 ```bash
-gem install bundler
+gem install bundler --version 1.17.1
 ```
 
 5. Install the required gems using Bundler:
