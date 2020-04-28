@@ -7,7 +7,7 @@ ka:
         direct_message: "შეტყობინება წარმატებით გაიგზავნა."
         poll: "გამოკითხვა წარმატებით შეიქმნა."
         poll_booth: "კაბინა წარმატებით შეიქმნა."
-        poll_question_answer: "პასუხი წარმატებით შექიმნა"
+        poll_question_answer: "პასუხი წარმატებით შეიქმნა"
         poll_question_answer_video: "ვიდეო წარმატებით შეიქმნა"
         poll_question_answer_image: "ფოტოსურათი წარმატებით აიტვირთა"
         proposal: "ინიციატივა წარმატებით შეიქმნა."
