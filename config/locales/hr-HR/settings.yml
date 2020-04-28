@@ -89,6 +89,8 @@ hr:
       facebook_login_description: "Dopusti da se korisnik može prijaviti sa svojim Facebook računom"
       google_login: "Google prijava"
       google_login_description: "Dopusti da se korisnik može prijaviti sa svojim Google računom"
+      wordpress_login: "Wordpress prijava"
+      wordpress_login_description: "Dopusti korisnicima da se prijave svojim Wordpress računom"
       featured_proposals: "Istaknuti prijedlozi"
       featured_proposals_description: "Prikaži istaknute prijedloge na indeksnoj stranici prijedloga"
       signature_sheets: "Potpisne liste"
@@ -116,6 +118,28 @@ hr:
       public_stats_description: "Prikazuje javne statistike u Administrativnom panelu"
       help_page: "Stranica za pomoć"
       help_page_description: 'Prikazuje izbornik Pomoć koji sadrži stranicu s odjeljkom s informacijama o svakoj omogućenoj značajki. U odjeljcima "Prilagođene stranice" i "Blokovi za prilagođeni sadržaj" mogu se izraditi prilagođene stranice i izbornici'
+      remote_translations: "Prijevod na daljinu"
+      remote_translations_description: "Prikazuje dugme koje omogućuje korisnicima da zatraže prijevod u slučajevima kada nema sadržaja na njihovom jeziku."
+      translation_interface: "Sučelje za prijevod"
+      translation_interface_description: "Prikazuje sučelje za priručni prijevod koje korisnicima omogućuje pristup njihovom sadržaju na svim dostupnim jezicima aplikacije. Ova mogućnost tiče se samo korisničkih prijavnica i samostalno će uvijek biti aktivna u administracijskoj ploči."
+      remote_census: "Konfiguracija veze za udaljeni cenzus (SOAP)"
+      remote_census_description: "Dopušta konfiguraciju veze za udaljeni cenzus svake institucije"
+      valuation_comment_notification: "Obavijest o komentaru procjene"
+      valuation_comment_notification_description: "Pošaljite e-mail poruku svim povezanim korisnicima osim komentatoru procjene za proračunsko ulaganje kada se pojavi novi komentar procjene"
+      graphql_api: "GraphQL API"
+      dashboard:
+        notification_emails: "E-mail poruke s obavijestima o kontrolnoj ploči"
+        notification_emails_description: "Omogući slanje e-mail poruka s obavijestima o kontrolnoj ploči autorima prijedloga"
+    remote_census:
+      general:
+        endpoint: "Krajnja točka"
+        endpoint_description: "Naziv poslužitelja na kojem je dostupan servis o cenzusu (wsdl)"
+      request:
+        method_name: "Naziv metode zahtjeva"
+        method_name_description: "Naziv metode zahtjeva koji prihvaća web servis City Census."
+        structure: "Struktura zahtjeva"
+        document_type: "Put za Vrstu dokumenta"
+        document_type_description: "Put u strukturi zahtjeva koji šalje Vrstu dokumenta. NE ISPUNJAVAJTE ukoliko web servis ne traži Vrstu dokumenta za provjeru korisnika."
     map:
       latitude: "Širina"
       latitude_description: "Širina prikazana na mapi"
