@@ -2,7 +2,7 @@ ka:
   documents:
     title: დოკუმენტები
     max_documents_allowed_reached: ახალი დოკუმენტის ასატვირთად საჭიროა ერთ-ერთი ძველი დოკუმენტის წაშლა.
-    additional: დამატებით დოკუმენტები
+    additional: დამატებითი დოკუმენტაცია
     form:
       title: დოკუმენტები
       title_placeholder: აღწერილობითი სათაურის დამატება დოკუმენტზე
@@ -20,5 +20,5 @@ ka:
       destroy_document: დოკუმენტის წაშლა
     errors:
       messages:
-        in_between: უნდა მერყეობდეს %{min} და %{max}-ის შორის
-        wrong_content_type: 'ნებადართულია შემდეგი ტიპები: %{accepted_content_types}, თქვენ დოკუმენტის ტიპია %{content_type}'
+        in_between: უნდა მერყეობდეს %{min} და %{max}-ს შორის
+        wrong_content_type: დოკუმენტის ტიპი %{content_type} არ შეესაბამება ნებადართულ ტიპებს %{accepted_content_types}
