@@ -1,6 +1,6 @@
 ka:
   social_share_button:
-    share_to: "%{name}-თან გაზიარება"
+    share_to: "%{name}სთან გაზიარება"
     weibo: "Sina Weibo"
     twitter: "Twitter"
     facebook: "Facebook"
