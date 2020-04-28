@@ -227,7 +227,7 @@ ka:
         info: "%{budget_name} - ჯგუფი: %{group_name} - საინვესტიციო პროექტი %{id}"
         edit: რედაქტირება
         edit_classification: კლასიფიკაციის რედაქტირება
-        by: მიხედვით
+        by: ავტორი
         sent: გაგზავნილი
         group: ჯგუფი
         heading: რუბრიკა
