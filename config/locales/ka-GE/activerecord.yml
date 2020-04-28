@@ -326,7 +326,7 @@ ka:
         image: ფოტოსურათი
       site_customization/content_block:
         name: სახელი
-        locale: მოქმედების ადგილი
+        locale: ენა
         body: ტექსტის მთავარი ნაწილი
       tag:
         name: "შეიყვანეთ საკითხის დასახელება"
