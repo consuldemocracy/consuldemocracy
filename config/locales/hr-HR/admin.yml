@@ -1298,7 +1298,7 @@ hr:
       image: Slika
       show_image: Prikaži sliku
       moderated_content: "Prikaži sadržaj moderiran od strane moderatora i potvrdi da su promjene točne."
-      view: Pregeld
+      view: Pregled
       proposal: Prijedlog
       author: Autor
       content: Sadržaj
