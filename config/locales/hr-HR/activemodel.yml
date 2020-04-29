@@ -4,6 +4,10 @@ hr:
       verification:
         residence: "Prebivalište"
         sms: "SMS"
+      local_census_records/import:
+        one: Uvoz lokalnog zapisa o cenzusu
+        few: Uvoz zapisa o lokalnim cenzusima
+        other: Uvoz zapisa o lokalnim cenzusima
     attributes:
       verification:
         residence:
