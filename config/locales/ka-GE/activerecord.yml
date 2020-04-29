@@ -361,7 +361,7 @@ ka:
         result_publication_date: საბოლოო შედეგების გამოქვეყნების თარიღი
         background_color: ფონის ფერი
         font_color: შრიფტის ფერი
-        homepage_enabled: "მთავარი გვერდი ნებადართულია"
+        homepage_enabled: "მთავარი გვერდი ხელმისაწვდომია"
       legislation/process/translation:
         title: პროცესის სათაური
         summary: შეჯამება
