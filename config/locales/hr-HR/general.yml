@@ -119,6 +119,10 @@ hr:
         button: Pretraga
         placeholder: Pretraži rasprave...
         title: Pretraga
+      search_results:
+        one: " sadrži termin <strong>%{search_term}</strong>"
+        few: " sadrži termine <strong>%{search_term}</strong>"
+        other: " sadrži termine <strong>%{search_term}</strong>"
       select_order: Naruči po
       start_debate: Započni raspravu
       title: Rasprave
@@ -389,6 +393,10 @@ hr:
         button: Pretraga
         placeholder: Pretraži prijedloge...
         title: Pretraga
+      search_results:
+        one: " sadrži termin <strong>%{search_term}</strong>"
+        few: " sadrže termin <strong>%{search_term}</strong>"
+        other: " sadrže termin <strong>%{search_term}</strong>"
       select_order: Poredaj po
       select_order_long: "Vršite pregled prijedloga po:"
       start_proposal: Stvori prijedlog
@@ -792,6 +800,9 @@ hr:
       add_language: Dodajte jezik
       languages_in_use:
         zero: "0 jezika u uporabi"
+        one: "1 jezik u uporabi"
+        few: "%{count} jezika u uporabi"
+        other: "%{count} jezika u uporabi"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
