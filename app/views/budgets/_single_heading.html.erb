@@ -1,8 +1,5 @@
 <div class="single-heading">
-  <% current_budget.groups.each do |group| %>
-    <% group.headings.sort_by_name.each do |heading| %>
-      <h2><%= heading.name %></h2>
-      <p class="heading-amount"><%= current_budget.formatted_heading_price(heading) %></p>
-    <% end %>
-  <% end %>
+  <% heading = budget.headings.first %>
+  <h2><%= heading.name %></h2>
+  <p class="heading-amount"><%= budget.formatted_heading_price(heading) %></p>
 </div>
