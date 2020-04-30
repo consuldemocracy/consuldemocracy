@@ -2,7 +2,7 @@
   <%= render "shared/banner" %>
 <% end %>
 
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<%= render "title" %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
