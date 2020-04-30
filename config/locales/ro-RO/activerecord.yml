@@ -1,1 +1,5 @@
 ro:
+  attributes:
+    results_enabled: "Se arată rezultatele"
+    stats_enabled: "Statistici"
+    advanced_stats_enabled: "Statistici avansate"
