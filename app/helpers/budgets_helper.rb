@@ -56,18 +56,6 @@ module BudgetsHelper
     budget.published? || current_user&.administrator?
   end
 
-  def current_budget_map_locations
-    return unless current_budget.present?
-
-    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
-      investments = current_budget.investments.selected
-    else
-      investments = current_budget.investments
-    end
-
-    MapLocation.where(investment_id: investments).map(&:json_data)
-  end
-
   def display_calculate_winners_button?(budget)
     budget.balloting_or_later?
   end

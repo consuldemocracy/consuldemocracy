@@ -307,7 +307,7 @@ describe "Budgets" do
       map_locations << { longitude: 40.123456789, latitude: "********" }
       map_locations << { longitude: "**********", latitude: 3.12345678 }
 
-      budget_map_locations = map_locations.map do |map_location|
+      coordinates = map_locations.map do |map_location|
         {
           lat: map_location[:latitude],
           long: map_location[:longitude],
@@ -317,8 +317,7 @@ describe "Budgets" do
         }
       end
 
-      allow_any_instance_of(BudgetsHelper).
-      to receive(:current_budget_map_locations).and_return(budget_map_locations)
+      allow_any_instance_of(Budgets::BudgetComponent).to receive(:coordinates).and_return(coordinates)
 
       visit budgets_path
 
@@ -329,61 +328,32 @@ describe "Budgets" do
   end
 
   context "Show" do
-    scenario "List all groups" do
-      create(:budget_group, budget: budget)
-      create(:budget_group, budget: budget)
-
-      visit budget_path(budget)
-
-      budget.groups.each { |group| expect(page).to have_link(group.name) }
-    end
-
     scenario "Links to unfeasible and selected if balloting or later" do
       budget = create(:budget, :selecting)
       group = create(:budget_group, budget: budget)
 
-      visit budget_path(budget)
-
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
+      visit budget_group_path(budget, group)
 
       expect(page).not_to have_link "See unfeasible investments"
       expect(page).not_to have_link "See investments not selected for balloting phase"
 
       budget.update!(phase: :publishing_prices)
 
-      visit budget_path(budget)
-
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
+      visit budget_group_path(budget, group)
 
       expect(page).not_to have_link "See unfeasible investments"
       expect(page).not_to have_link "See investments not selected for balloting phase"
 
       budget.update!(phase: :balloting)
 
-      visit budget_path(budget)
-
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
+      visit budget_group_path(budget, group)
 
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
 
       budget.update!(phase: :finished)
 
-      visit budget_path(budget)
-
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
+      visit budget_group_path(budget, group)
 
       expect(page).to have_link "See unfeasible investments"
       expect(page).to have_link "See investments not selected for balloting phase"
@@ -399,8 +369,7 @@ describe "Budgets" do
       heading3 = create(:budget_heading, group: group2, name: "Brooklyn")
       heading4 = create(:budget_heading, group: group2, name: "Queens")
 
-      visit budget_path(budget)
-      click_link "New York"
+      visit budget_group_path(budget, group1)
 
       expect(page).to have_css("#budget_heading_#{heading1.id}")
       expect(page).to have_css("#budget_heading_#{heading2.id}")

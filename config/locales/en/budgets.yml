@@ -178,11 +178,6 @@ en:
         one: "You have selected <strong>1</strong> project out of <strong>%{limit}</strong>"
         other: "You have selected <strong>%{count}</strong> projects out of <strong>%{limit}</strong>"
     show:
-      group: Group
-      unfeasible_title: Unfeasible investments
-      unfeasible: See unfeasible investments
-      unselected_title: Investments not selected for balloting phase
-      unselected: See investments not selected for balloting phase
       see_results: See results
     results:
       link: Results

@@ -178,11 +178,6 @@ es:
         one: "Has seleccionado <strong>1</strong> proyecto de <strong>%{limit}</strong>"
         other: "Has seleccionado <strong>%{count}</strong> proyectos de <strong>%{limit}</strong>"
     show:
-      group: Grupo
-      unfeasible_title: Proyectos de gasto inviables
-      unfeasible: Ver los proyectos inviables
-      unselected_title: Proyectos no seleccionados para la votación final
-      unselected: Ver los proyectos no seleccionados para la votación final
       see_results: Ver resultados
     results:
       link: Resultados
