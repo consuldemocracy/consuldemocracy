@@ -67,21 +67,26 @@
 
           <% if answer.description.present? %>
             <div class="margin-top">
-              <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="short">
+              <div id="answer_description_<%= answer.id %>" class="answer-description short" data-toggler="hide">
+                <%= wysiwyg(answer.description) %>
+              </div>
+              <div id="answer_long_description_<%= answer.id %>" class="answer-description hide" data-toggler="hide">
                 <%= wysiwyg(answer.description) %>
               </div>
               <div class="margin">
-                <a id="read_more_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide">
-                  <%= t("polls.show.read_more", answer: answer.title) %>
-                </a>
-                <a id="read_less_<%= answer.id %>"
-                   data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %>"
-                   data-toggler="hide"
-                   class="hide">
-                  <%= t("polls.show.read_less", answer: answer.title) %>
-                </a>
+                <% if answer.description.length > 500 %>
+                  <a id="read_more_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %> answer_long_description_<%= answer.id %>"
+                     data-toggler="hide">
+                    <%= t("polls.show.read_more", answer: answer.title) %>
+                  </a>
+                  <a id="read_less_<%= answer.id %>"
+                     data-toggle="answer_description_<%= answer.id %> read_more_<%= answer.id %> read_less_<%= answer.id %> answer_long_description_<%= answer.id %>"
+                     data-toggler="hide"
+                     class="hide">
+                    <%= t("polls.show.read_less", answer: answer.title) %>
+                  </a>
+                <% end %>
               </div>
             </div>
           <% end %>
