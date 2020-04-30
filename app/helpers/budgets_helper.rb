@@ -1,8 +1,4 @@
 module BudgetsHelper
-  def show_links_to_budget_investments(budget)
-    ["balloting", "reviewing_ballots", "finished"].include? budget.phase
-  end
-
   def heading_name_and_price_html(heading, budget)
     content_tag :div do
       concat(heading.name + " ")
@@ -65,13 +61,13 @@ module BudgetsHelper
     !budget.drafting? || current_user&.administrator?
   end
 
-  def current_budget_map_locations
-    return unless current_budget.present?
+  def budget_map_locations(budget)
+    return unless budget.present?
 
-    if current_budget.publishing_prices_or_later? && current_budget.investments.selected.any?
-      investments = current_budget.investments.selected
+    if budget.publishing_prices_or_later? && budget.investments.selected.any?
+      investments = budget.investments.selected
     else
-      investments = current_budget.investments
+      investments = budget.investments
     end
 
     MapLocation.where(investment_id: investments).map(&:json_data)

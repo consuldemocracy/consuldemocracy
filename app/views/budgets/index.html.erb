@@ -2,123 +2,18 @@
   <%= render "shared/banner" %>
 <% end %>
 
-<%= render "title" %>
+<%= render "title", budget: @budget %>
 
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budgets_url %>
 <% end %>
 
-<% if current_budget.present? %>
-  <% if current_budget.image.present? %>
-    <div id="budget_heading"
-         class="expanded budget with-background-image no-margin-top"
-         style="background-image: url(<%= asset_url current_budget.image.attachment.url(:large) %>);">
-  <% else %>
-    <div id="budget_heading" class="expanded budget no-margin-top">
+<% if @budget.present? %>
+  <%= render "budget", budget: @budget %>
+
+  <% if @finished_budgets.present? %>
+    <%= render "finished", budgets: @finished_budgets %>
   <% end %>
-    <div class="row">
-      <div class="small-12 column text-center">
-          <span class="budget-title"><%= t("budgets.index.title") %></span>
-          <h1><%= current_budget.name %></h1>
-
-          <% if current_budget.main_button_text.present? && current_budget.main_button_url.present? %>
-            <%= link_to current_budget.main_button_text, current_budget.main_button_url,
-                        class: "button large" %>
-          <% end %>
-
-          <p>
-            <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row budget-subheader">
-      <div class="small-12 medium-8 column padding">
-        <span class="current-phase"><strong><%= t("budgets.show.phase") %></strong></span>
-        <h2><%= t("budgets.phase.#{current_budget.phase}") %></h2>
-      </div>
-
-      <div class="small-12 medium-4 column">
-        <% if current_budget.accepting? %>
-          <% if current_user %>
-            <% if current_user.level_two_or_three_verified? %>
-              <div class="text-right">
-                <%= link_to t("budgets.investments.index.sidebar.create"),
-                            new_budget_investment_path(current_budget),
-                            class: "button margin-top" %>
-              </div>
-            <% else %>
-              <div class="callout warning margin-top">
-                <%= sanitize(t("budgets.investments.index.sidebar.verified_only",
-                      verify: link_to_verify_account)) %>
-              </div>
-            <% end %>
-          <% else %>
-            <div class="callout primary margin-top">
-              <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
-                    sign_in: link_to_signin, sign_up: link_to_signup)) %>
-            </div>
-          <% end %>
-        <% end %>
-
-        <% if can?(:read_results, current_budget) %>
-          <div class="text-right">
-            <%= link_to t("budgets.show.see_results"),
-                        budget_results_path(current_budget, heading_id: current_budget.headings.first),
-                        class: "button expanded" %>
-          </div>
-        <% end %>
-    </div>
-  </div>
-
-  <%= render "phases", budget: current_budget %>
-
-  <div id="budget_info" class="budget-info">
-    <div class="row margin-top">
-      <div class="small-12 column">
-
-        <% if current_budget.single_heading? %>
-          <%= render "single_heading" %>
-        <% else %>
-          <%= render "groups_and_headings" %>
-        <% end %>
-
-        <% unless current_budget.informing? %>
-          <div class="map inline">
-            <h3><%= t("budgets.index.map") %></h3>
-            <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
-          </div>
-
-          <ul class="no-bullet margin-top">
-            <% show_links = show_links_to_budget_investments(current_budget) %>
-            <% if show_links %>
-              <li>
-                <%= link_to budget_path(current_budget) do %>
-                  <small><%= t("budgets.index.investment_proyects") %></small>
-                <% end %>
-              </li>
-            <% end %>
-            <li>
-              <%= link_to budget_path(current_budget, filter: "unfeasible") do %>
-                <small><%= t("budgets.index.unfeasible_investment_proyects") %></small>
-              <% end %>
-            </li>
-            <% if show_links %>
-              <li>
-                <%= link_to budget_path(current_budget, filter: "unselected") do %>
-                  <small><%= t("budgets.index.not_selected_investment_proyects") %></small>
-                <% end %>
-              </li>
-            <% end %>
-          </ul>
-        <% end %>
-      </div>
-    </div>
-
-    <% if @finished_budgets.present? %>
-      <%= render "finished", budgets: @finished_budgets %>
-    <% end %>
-  </div>
 <% else %>
   <div class="expanded budget no-margin-top margin-bottom">
     <div class="row">

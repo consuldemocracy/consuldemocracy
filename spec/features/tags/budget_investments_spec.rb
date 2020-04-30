@@ -269,7 +269,11 @@ describe "Tags" do
 
         login_as(admin) if budget.drafting?
         visit budget_path(budget)
-        click_link group.name
+        if budget.informing?
+          visit budget_investments_path(budget, heading: heading.id)
+        else
+          click_link "See all investments"
+        end
 
         within "#tag-cloud" do
           click_link new_tag
@@ -318,7 +322,11 @@ describe "Tags" do
 
         login_as(admin) if budget.drafting?
         visit budget_path(budget)
-        click_link group.name
+        if budget.informing?
+          visit budget_investments_path(budget, heading: heading.id)
+        else
+          click_link "See all investments"
+        end
 
         within "#categories" do
           click_link tag_medio_ambiente.name

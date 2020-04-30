@@ -1,0 +1,84 @@
+<% if budget.image.present? %>
+<div id="budget_heading"
+     class="expanded budget with-background-image no-margin-top"
+     style="background-image: url(<%= asset_url budget.image.attachment.url(:large) %>);">
+<% else %>
+<div id="budget_heading" class="expanded budget no-margin-top">
+<% end %>
+  <div class="row">
+    <div class="small-12 column text-center">
+      <span class="budget-title"><%= t("budgets.index.title") %></span>
+      <h1><%= budget.name %></h1>
+
+      <% if budget.main_button_text.present? && budget.main_button_url.present? %>
+        <%= link_to budget.main_button_text, budget.main_button_url, class: "button large" %>
+      <% end %>
+
+      <p>
+        <%= link_to t("budgets.index.section_header.help"), "#section_help" %>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row budget-subheader">
+  <div class="small-12 medium-8 column padding">
+    <span class="current-phase"><strong><%= t("budgets.show.phase") %></strong></span>
+    <h2><%= t("budgets.phase.#{budget.phase}") %></h2>
+  </div>
+
+  <div class="small-12 medium-4 column">
+    <% if budget.accepting? %>
+      <% if current_user %>
+        <% if current_user.level_two_or_three_verified? %>
+          <div class="text-right">
+            <%= link_to t("budgets.investments.index.sidebar.create"),
+                        new_budget_investment_path(budget),
+                        class: "button margin-top" %>
+          </div>
+        <% else %>
+          <div class="callout warning margin-top">
+            <%= sanitize(t("budgets.investments.index.sidebar.verified_only", verify: link_to_verify_account)) %>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="callout primary margin-top">
+          <%= sanitize(t("budgets.investments.index.sidebar.not_logged_in",
+                         sign_in: link_to_signin,
+                         sign_up: link_to_signup)) %>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if can?(:read_results, budget) %>
+      <div class="text-right">
+        <%= link_to t("budgets.show.see_results"),
+                    budget_results_path(budget, heading_id: budget.headings.first),
+                    class: "button expanded" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "phases", budget: budget %>
+
+<div id="budget_info" class="budget-info">
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <% if budget.single_heading? %>
+        <%= render "single_heading", budget: budget %>
+      <% else %>
+        <%= render "groups_and_headings", budget: budget %>
+      <% end %>
+
+      <% unless budget.informing? %>
+        <div class="map inline">
+          <h3><%= t("budgets.index.map") %></h3>
+          <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render "investments_list", budget: budget %>

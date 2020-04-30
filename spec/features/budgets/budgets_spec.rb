@@ -133,51 +133,7 @@ describe "Budgets" do
       within("#budget_info") do
         expect(page).not_to have_link "#{heading.name} €1,000,000"
         expect(page).to have_content "#{heading.name} €1,000,000"
-
-        expect(page).to have_link "List of all investment projects",
-                                   href: budget_path(budget)
-
-        expect(page).to have_link "List of all unfeasible investment projects",
-                                   href: budget_path(budget, filter: "unfeasible")
-
-        expect(page).to have_link "List of all investment projects not selected for balloting",
-                                   href: budget_path(budget, filter: "unselected")
-
         expect(page).to have_css("div.map")
-      end
-    end
-
-    scenario "Show investment links only on balloting or later" do
-      budget = create(:budget)
-      create(:budget_heading, budget: budget)
-
-      allowed_phase_list.each do |phase|
-        budget.update!(phase: phase)
-
-        visit budgets_path
-
-        expect(page).to have_content(I18n.t("budgets.index.investment_proyects"))
-        expect(page).to have_content(I18n.t("budgets.index.unfeasible_investment_proyects"))
-        expect(page).to have_content(I18n.t("budgets.index.not_selected_investment_proyects"))
-      end
-    end
-
-    scenario "Not show investment links earlier of balloting " do
-      budget = create(:budget)
-      create(:budget_heading, budget: budget)
-      phases_without_links = ["informing"]
-      not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
-                               phases_without_links -
-                               allowed_phase_list
-
-      not_allowed_phase_list.each do |phase|
-        budget.update!(phase: phase)
-
-        visit budgets_path
-
-        expect(page).not_to have_content(I18n.t("budgets.index.investment_proyects"))
-        expect(page).to have_content(I18n.t("budgets.index.unfeasible_investment_proyects"))
-        expect(page).not_to have_content(I18n.t("budgets.index.not_selected_investment_proyects"))
       end
     end
 
@@ -359,7 +315,7 @@ describe "Budgets" do
       end
 
       allow_any_instance_of(BudgetsHelper).
-      to receive(:current_budget_map_locations).and_return(budget_map_locations)
+      to receive(:budget_map_locations).with(budget).and_return(budget_map_locations)
 
       visit budgets_path
 
@@ -370,66 +326,6 @@ describe "Budgets" do
   end
 
   context "Show" do
-    scenario "List all groups" do
-      create(:budget_group, budget: budget)
-      create(:budget_group, budget: budget)
-
-      visit budget_path(budget)
-
-      budget.groups.each { |group| expect(page).to have_link(group.name) }
-    end
-
-    scenario "Links to unfeasible and selected if balloting or later" do
-      budget = create(:budget, :selecting)
-      group = create(:budget_group, budget: budget)
-
-      visit budget_path(budget)
-
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
-
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
-
-      budget.update!(phase: :publishing_prices)
-
-      visit budget_path(budget)
-
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
-
-      expect(page).not_to have_link "See unfeasible investments"
-      expect(page).not_to have_link "See investments not selected for balloting phase"
-
-      budget.update!(phase: :balloting)
-
-      visit budget_path(budget)
-
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
-
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
-
-      budget.update!(phase: :finished)
-
-      visit budget_path(budget)
-
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
-
-      click_link group.name
-
-      expect(page).to have_link "See unfeasible investments"
-      expect(page).to have_link "See investments not selected for balloting phase"
-    end
-
     scenario "Take into account headings with the same name from a different budget" do
       group1 = create(:budget_group, budget: budget, name: "New York")
       heading1 = create(:budget_heading, group: group1, name: "Brooklyn")
@@ -441,7 +337,7 @@ describe "Budgets" do
       heading4 = create(:budget_heading, group: group2, name: "Queens")
 
       visit budget_path(budget)
-      click_link "New York"
+      click_link "See all investments"
 
       expect(page).to have_css("#budget_heading_#{heading1.id}")
       expect(page).to have_css("#budget_heading_#{heading2.id}")
@@ -482,6 +378,47 @@ describe "Budgets" do
       expect(page).not_to have_link "See results"
     end
 
+    scenario "Show link to see all investments" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, price: 999)
+
+      budget.update!(phase: "informing")
+
+      visit budget_path(budget)
+      expect(page).not_to have_link "See all investments"
+
+      %w[accepting reviewing selecting valuating].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+        expect(page).to have_link "See all investments",
+                                  href: budget_investments_path(budget,
+                                                                heading_id: budget.headings.first.id,
+                                                                filter: "not_unfeasible")
+      end
+
+      %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+        expect(page).to have_link "See all investments",
+                                  href: budget_investments_path(budget,
+                                                                heading_id: budget.headings.first.id,
+                                                                filter: "selected")
+      end
+
+      budget.update!(phase: "finished")
+
+      visit budget_path(budget)
+      expect(page).to have_link "See all investments",
+                                  href: budget_investments_path(budget,
+                                                                heading_id: budget.headings.first.id,
+                                                                filter: "winners")
+    end
+
     scenario "Show investments list" do
       budget = create(:budget)
       group = create(:budget_group, budget: budget)
@@ -497,7 +434,6 @@ describe "Budgets" do
         expect(page).not_to have_content "List of investments"
         expect(page).not_to have_css ".budget-investment-index-list"
         expect(page).not_to have_css ".budget-investment"
-        expect(page).not_to have_link "See all investments"
       end
 
       %w[accepting reviewing selecting].each do |phase_name|
@@ -510,9 +446,6 @@ describe "Budgets" do
           expect(page).not_to have_content "Supports"
           expect(page).not_to have_content "Price"
         end
-
-        expect(page).to have_link "See all investments",
-                                   href: budget_investments_path(budget, heading_id: budget.headings.first.id)
       end
 
       budget.update!(phase: "valuating")
@@ -525,9 +458,6 @@ describe "Budgets" do
         expect(page).not_to have_content "Price"
       end
 
-      expect(page).to have_link "See all investments",
-                                 href: budget_investments_path(budget, heading_id: budget.headings.first.id)
-
       %w[publishing_prices balloting reviewing_ballots].each do |phase_name|
         budget.update!(phase: phase_name)
 
@@ -537,9 +467,6 @@ describe "Budgets" do
           expect(page).to have_content "List of investments"
           expect(page).to have_content("Price", count: 3)
         end
-
-        expect(page).to have_link "See all investments",
-                                   href: budget_investments_path(budget, heading_id: budget.headings.first.id)
       end
     end
   end

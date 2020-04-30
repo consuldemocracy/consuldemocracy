@@ -53,9 +53,6 @@ es:
       prev_phase: Fase anterior
       current_phase: Fase actual
       map: Proyectos localizables geográficamente
-      investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
-      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       section_footer:
@@ -155,12 +152,7 @@ es:
       assigned: "Has asignado: "
       available: "Presupuesto disponible: "
     show:
-      group: Grupo
       phase: Fase actual
-      unfeasible_title: Proyectos de gasto inviables
-      unfeasible: Ver los proyectos inviables
-      unselected_title: Proyectos no seleccionados para la votación final
-      unselected: Ver los proyectos no seleccionados para la votación final
       see_results: Ver resultados
       see_all_investments: "Ver todos los proyectos"
       investments_list: "Lista de proyectos"
@@ -178,9 +170,6 @@ es:
       discarded: "Proyecto de gasto descartado: "
       incompatibles: Incompatibles
       investment_title: Título del proyecto de gasto
-      investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
-      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
     executions:
       link: "Seguimiento"
       page_title: "%{budget} - Seguimiento de proyectos"

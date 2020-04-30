@@ -1,1 +1,5 @@
-<% provide :title do %><%= t("budgets.index.title") %><% end %>
+<% if budget.present? %>
+  <% provide :title do %><%= budget.name %><% end %>
+<% else %>
+  <% provide :title do %><%= t("budgets.index.title") %><% end %>
+<% end %>
