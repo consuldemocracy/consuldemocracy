@@ -315,3 +315,7 @@ end
 section "Migraciones de datos pendientes en la versión 1.1.0 de Consul" do
   Tagging.where(context: "valuation").update_all(context: "valuation_tags")
 end
+
+section "Borrando la caché" do
+  Rails.cache.clear
+end
