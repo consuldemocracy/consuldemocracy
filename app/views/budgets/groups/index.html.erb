@@ -1,0 +1,72 @@
+<% content_for :canonical do %>
+  <%= render "shared/canonical", href: budget_groups_url(filter: @current_filter) %>
+<% end %>
+
+<div class="expanded budget no-margin-top">
+  <div class="row">
+    <div class="small-12 medium-9 column padding">
+      <%= back_link_to budgets_path %>
+      <h2><%= t("budgets.groups.show.title") %></h2>
+    </div>
+  </div>
+</div>
+
+<% if @current_filter == "unfeasible" %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h3><%= t("budgets.groups.show.unfeasible_title") %></h3>
+    </div>
+  </div>
+<% elsif @current_filter == "unselected" %>
+  <div class="row margin-top">
+    <div class="small-12 column">
+      <h3><%= t("budgets.groups.show.unselected_title") %></h3>
+    </div>
+  </div>
+<% end %>
+
+<div class="row margin">
+  <div id="headings" class="small-12 medium-7 column select-district">
+    <% @budget.groups.sort_by_name.each do |group| %>
+      <h3><%= group.name %></h3>
+      <div class="row">
+        <% group.headings.sort_by_name.each_slice(7) do |slice| %>
+          <div class="small-6 medium-4 column end">
+            <% slice.each do |heading| %>
+              <span id="<%= dom_id(heading) %>"
+                    class="<%= css_for_ballot_heading(heading) %>">
+                <%= link_to heading.name,
+                            budget_investments_path(heading_id: heading.id, filter: @current_filter),
+                            data: { no_turbolink: true } %><br>
+              </span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<% if @budget.balloting_or_later? %>
+  <% unless @current_filter == "unfeasible" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.groups.show.unfeasible"),
+                      budget_groups_path(@budget, filter: "unfeasible") %>
+        </small>
+      </div>
+    </div>
+  <% end %>
+
+  <% unless @current_filter == "unselected" %>
+    <div class="row">
+      <div class="small-12 column">
+        <small>
+          <%= link_to t("budgets.groups.show.unselected"),
+                      budget_groups_path(@budget, filter: "unselected") %>
+        </small>
+      </div>
+    </div>
+  <% end %>
+<% end %>

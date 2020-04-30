@@ -1,78 +1,9 @@
+<%= render Shared::BannerComponent.new("budgets") %>
+<%= render "title", budget: @budget %>
+
 <% content_for :canonical do %>
   <%= render "shared/canonical", href: budget_url(@budget, filter: @current_filter) %>
 <% end %>
 
-<div class="budget-header">
-  <div class="row">
-    <div class="small-12 column">
-      <%= back_link_to budgets_path %>
-
-      <h1><%= @budget.name %></h1>
-
-      <%= auto_link_already_sanitized_html wysiwyg(@budget.description) %>
-    </div>
-  </div>
-</div>
-
-<%= render Budgets::SubheaderComponent.new(@budget) %>
-
-<div class="row margin">
-  <div class="small-12 medium-9 column">
-    <% if @current_filter == "unfeasible" %>
-      <h3 class="margin-bottom"><%= t("budgets.show.unfeasible_title") %></h3>
-    <% elsif @current_filter == "unselected" %>
-      <h3 class="margin-bottom"><%= t("budgets.show.unselected_title") %></h3>
-    <% end %>
-    <table class="table-fixed">
-      <thead>
-        <th><%= t("budgets.show.group") %></th>
-      </thead>
-      <tbody>
-        <% @budget.groups.each do |group| %>
-          <tr>
-            <td>
-              <% if group.single_heading_group? %>
-                <%= link_to group.name,
-                            budget_investments_path(@budget,
-                              heading_id: group.headings.first.id,
-                              filter: @current_filter),
-                            data: { turbolinks: false } %>
-              <% else %>
-                <%= link_to group.name,
-                            budget_group_path(@budget, group,
-                              filter: @current_filter) %>
-              <% end %>
-              <br>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<% if @budget.balloting_or_later? %>
-  <% unless @current_filter == "unfeasible" %>
-    <div class="row">
-      <div class="small-12 column">
-        <small>
-          <%= link_to t("budgets.show.unfeasible"),
-                      budget_path(@budget, filter: "unfeasible") %>
-        </small>
-      </div>
-    </div>
-  <% end %>
-
-  <% unless @current_filter == "unselected" %>
-    <div class="row">
-      <div class="small-12 column">
-        <small>
-          <%= link_to t("budgets.show.unselected"),
-                      budget_path(@budget, filter: "unselected") %>
-        </small>
-      </div>
-    </div>
-  <% end %>
-<% end %>
-
-<%= render "investments_list" %>
+<%= render "budget", budget: @budget %>
+<%= render "footer" %>

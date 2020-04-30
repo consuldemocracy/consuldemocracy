@@ -69,9 +69,6 @@ en:
       prev_phase: Previous phase
       current_phase: Current phase
       map: Budget investments' proposals located geographically
-      investment_proyects: List of all investment projects
-      unfeasible_investment_proyects: List of all unfeasible investment projects
-      not_selected_investment_proyects: List of all investment projects not selected for balloting
       finished_budgets: Finished participatory budgets
       see_results: See results
       section_footer:
@@ -202,9 +199,6 @@ en:
       discarded: "Discarded investment: "
       incompatibles: Incompatibles
       investment_title: Project title
-      investment_proyects: List of all investment projects
-      unfeasible_investment_proyects: List of all unfeasible investment projects
-      not_selected_investment_proyects: List of all investment projects not selected for balloting
     executions:
       link: "Milestones"
       page_title: "%{budget} - Milestones"
