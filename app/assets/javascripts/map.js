@@ -96,7 +96,11 @@
       }
       if (editable) {
         $(removeMarkerSelector).on("click", removeMarker);
-        map.on("zoomend", updateFormfields);
+        map.on("zoomend", function() {
+          if (marker) {
+            updateFormfields();
+          }
+        });
         map.on("click", moveOrPlaceMarker);
       }
       if (addMarkerInvestments) {
