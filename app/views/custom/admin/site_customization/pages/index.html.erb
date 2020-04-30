@@ -38,7 +38,7 @@
           <div class="small-6 column">
             <% if page.status == "published" %>
               <%= link_to t("admin.site_customization.pages.index.see_page"),
-                          page.url,
+                          page_path(page.slug),
                           target: "_blank",
                           class: "button hollow expanded" %>
             <% end %>
