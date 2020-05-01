@@ -18,6 +18,10 @@ strong, b, a, .ava-link {
   color: $brand !important;
 }
 
+.map .map-marker .map-icon {
+  background: $brand;
+}
+
 // 02. Header
 
 // Color de fondo de la cabecera
