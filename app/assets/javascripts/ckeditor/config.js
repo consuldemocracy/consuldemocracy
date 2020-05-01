@@ -101,9 +101,16 @@ CKEDITOR.editorConfig = function( config )
     { name: "basicstyles", groups: [ "basicstyles", "cleanup" ], items: [ "Bold", "Italic", "Underline", "Strike" ] }
   ];
 
-  config.toolbar_admin = config.toolbar_mini.concat([
-    { name: "insert", items: [ "Image", "Table" ] }
-  ]);
+  config.toolbar_admin = [
+    { name: "document", groups: [ "mode", "document", "doctools" ], items: [ "Source"] },
+    { name: "links", items: [ "Link", "Unlink", "Anchor" ] },
+    { name: "editing", groups: [ "find", "selection", "spellchecker" ], items: [ "Find", "Replace", "-", "SelectAll", "-", "Scayt" ] },
+    { name: "insert", items: [ "Image", "Table", "HorizontalRule", "SpecialChar" ] },
+    { name: "paragraph", groups: [ "list", "indent", "blocks", "align", "bidi" ], items: [ "NumberedList", "BulletedList", "-", "Outdent", "Indent", "-", "Blockquote", "CreateDiv", "-", "JustifyLeft", "JustifyCenter", "JustifyRight", "JustifyBlock" ] },
+    { name: "styles", items: [ "Styles", "Format", "Font", "FontSize" ] },
+    { name: "colors", items: [ "TextColor", "BGColor" ] },
+    { name: "basicstyles", groups: [ "basicstyles", "cleanup" ], items: [ "Bold", "Italic", "Underline", "Strike", "Subscript", "Superscript", "-", "RemoveFormat" ] }
+  ];
 
   config.toolbar = "mini";
 };
