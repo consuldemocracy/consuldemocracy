@@ -71,7 +71,7 @@
                 <% group.headings.sort_by(&:id).each do |heading| %>
                   <tr>
                     <td>
-                      <% unless current_budget.informing? || current_budget.finished? %>
+                      <% unless current_budget.informing? %>
                         <%= link_to((heading.long_name || heading.name), budget_investments_path(current_budget.id, heading_id: heading.id)) %>
                       <% else %>
                         <%= heading.long_name || heading.name %>
