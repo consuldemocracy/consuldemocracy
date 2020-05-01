@@ -75,7 +75,7 @@
       };
       openMarkerPopup = function(e) {
         marker = e.target;
-        $.ajax("/investments/" + marker.options.id + "/json_data", {
+        $.ajax(ava_default_url + "/investments/" + marker.options.id + "/json_data", {
           type: "GET",
           dataType: "json",
           success: function(data) {
@@ -84,7 +84,7 @@
         });
       };
       getPopupContent = function(data) {
-        return "<a href='/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
+        return "<a href='" + ava_default_url + "/budgets/" + data.budget_id + "/investments/" + data.investment_id + "'>" + data.investment_title + "</a>";
       };
       mapCenterLatLng = new L.LatLng(mapCenterLatitude, mapCenterLongitude);
       map = L.map(element.id).setView(mapCenterLatLng, zoom);
