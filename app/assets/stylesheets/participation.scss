@@ -628,10 +628,16 @@
   }
 
   &.past-budgets {
+    display: flex;
+    flex-wrap: wrap;
     min-height: 0;
 
-    .button ~ .button {
-      margin-left: $line-height / 2;
+    > :not(:first-child) {
+      margin-left: auto;
+    }
+
+    .button {
+      margin-left: $line-height;
     }
   }
 }
