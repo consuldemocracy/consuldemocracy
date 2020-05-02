@@ -745,8 +745,12 @@
     &.past-budgets {
       min-height: 0;
 
-      .button ~ .button {
-        margin-left: $line-height / 2;
+      .button {
+        margin-right: $line-height / 2;
+
+        ~ .button {
+          margin-right: $line-height / 2;
+        }
       }
     }
   }
