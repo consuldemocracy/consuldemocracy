@@ -433,12 +433,12 @@ body.management .admin-content {
 
 // 13. Enlaces de compartir en redes sociales
 
-.icon-whatsapp::before {
+.icon-whatsapp_web::before {
     content: "\50";
 }
 
 .button.button-linkedin,
-.button.button-whatsapp {
+.button.button-whatsapp_web {
   background: #fff;
   color: #222;
   font-weight: bold;
@@ -448,12 +448,12 @@ body.management .admin-content {
   position:relative;
 }
 
-.button.button-whatsapp {
+.button.button-whatsapp_web {
   background: #ebeef4;
   border-left: 3px solid #43d854;
 }
 
-.button.button-whatsapp::before { 
+.button.button-whatsapp_web::before { 
   color: #43d854;
   content: "A";
   font-family: "icons" !important;
@@ -465,7 +465,7 @@ body.management .admin-content {
   top: 0;
 }
 
-.ssb-whatsapp {
+.ssb-whatsapp_web {
   background: #43d854;
   background-image: none !important;
   color: #fff;
@@ -474,7 +474,7 @@ body.management .admin-content {
   width: 3rem !important;
 }
 
-.ssb-whatsapp::before {
+.ssb-whatsapp_web::before {
   content: "P";
   font-family: "icons" !important;
   font-size: 1.5rem;
@@ -485,24 +485,24 @@ body.management .admin-content {
   top: 0;
 }
 
-.ssb-whatsapp:hover, .ssb-whatsapp:focus { 
+.ssb-whatsapp_web:hover, .ssb-whatsapp_web:focus { 
   background: #fff;
   color: #43d854;
 }
 
-.debate-show .whatsapp::before,
-.proposal-show .whatsapp::before,
-.poll-question-show .whatsapp::before,
-.investment-project-show .whatsapp::before,
-.budget-investment-show .whatsapp::before,
-.polls-show .whatsapp::before,
-.debate-quiz .whatsapp::before,
-.budget-investment-show .whatsapp::before,
-.draft-panels .whatsapp::before,
-.debate-questions .whatsapp::before,
-.communities-show .whatsapp::before,
-.topic-show .whatsapp::before,
-.milestone-content .whatsapp::before {
+.debate-show .whatsapp_web::before,
+.proposal-show .whatsapp_web::before,
+.poll-question-show .whatsapp_web::before,
+.investment-project-show .whatsapp_web::before,
+.budget-investment-show .whatsapp_web::before,
+.polls-show .whatsapp_web::before,
+.debate-quiz .whatsapp_web::before,
+.budget-investment-show .whatsapp_web::before,
+.draft-panels .whatsapp_web::before,
+.debate-questions .whatsapp_web::before,
+.communities-show .whatsapp_web::before,
+.topic-show .whatsapp_web::before,
+.milestone-content .whatsapp_web::before {
   background-color: #43d854;
   color: #fff;
   display: inline-block;
@@ -514,28 +514,28 @@ body.management .admin-content {
   width: 3rem;
 }
 
-.featured-proposals .share-supported .ssb-whatsapp {
+.featured-proposals .share-supported .ssb-whatsapp_web {
   background: none;
   color: #222;
   height: 2.0625rem !important;
 }
 
-.featured-proposals .share-supported .ssb-whatsapp::before {
+.featured-proposals .share-supported .ssb-whatsapp_web::before {
   font-size: 1.125rem;
   line-height: 2.0625rem;
 }
 
-.jumbo-budget .social-share-button a[class^="social-share-button-whatsapp"] {
+.jumbo-budget .social-share-button a[class^="social-share-button-whatsapp_web"] {
   color: #43d854;
 }
 
-.jumbo-survey .social-share-button a.social-share-button-whatsapp:hover,
-.jumbo-featured .social-share-button a.social-share-button-whatsapp:hover,
-.jumbo-investment-project .social-share-button a.social-share-button-whatsapp:hover {
+.jumbo-survey .social-share-button a.social-share-button-whatsapp_web:hover,
+.jumbo-featured .social-share-button a.social-share-button-whatsapp_web:hover,
+.jumbo-investment-project .social-share-button a.social-share-button-whatsapp_web:hover {
   color: #2b9b20;
 }
 
-.whatsapp::before {
+.whatsapp_web::before {
   background-color: #43d854;
   color: #fff;
   font-size: 1.7em;
