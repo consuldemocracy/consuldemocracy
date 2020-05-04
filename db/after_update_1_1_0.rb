@@ -85,7 +85,7 @@ section "Creando y personalizando configuraciones nuevas" do
   Setting["budget_monitoring_url_2019"] = "https://cloud.valladolid.es/index.php/s/NvOzxxZrG95wzLY#pdfviewer"
 end
 
-section "Eliminando configuracionse obsoletas" do
+section "Eliminando configuraciones obsoletas" do
   old_settings = [
     "per_page_code_head",
     "per_page_code_body",
