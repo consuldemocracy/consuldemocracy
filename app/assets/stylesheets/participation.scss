@@ -1338,6 +1338,9 @@
   &.budget {
     background: $budget;
     color: #fff;
+  }
+
+  &.budget:not(.button) {
     min-height: $line-height * 25;
     padding-top: $line-height * 4;
 
