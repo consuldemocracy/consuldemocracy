@@ -73,7 +73,7 @@
 
       <% unless budget.informing? %>
         <div class="map inline">
-          <h3><%= t("budgets.index.map") %></h3>
+          <h2><%= t("budgets.index.map") %></h2>
           <%= render_map(nil, "budgets", false, nil, @budgets_coordinates) %>
         </div>
       <% end %>
