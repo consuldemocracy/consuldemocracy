@@ -3,7 +3,7 @@
     <div class="small-12 column">
       <h2 class="text-center"><%= t("budgets.index.all_phases") %></h2>
 
-      <ul class="tabs" data-tabs id="budget_phases_tabs" data-deep-link="true" data-deep-link-smudge="true">
+      <ul class="tabs" data-tabs id="budget_phases_tabs" data-deep-link="true">
         <% budget.published_phases.each_with_index do |phase, index| %>
           <li class="tabs-title <%= "is-active" if phase == budget.current_phase %>">
             <a href="#<%= index + 1 %>-<%= budget_phase_name(phase).parameterize %>"

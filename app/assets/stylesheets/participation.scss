@@ -1671,9 +1671,6 @@
 
   .budget-prev-phase-disabled,
   .budget-next-phase-disabled {
-    display: block;
-    height: rem-calc(36);
-    width: rem-calc(36);
 
     &::before {
       background: none;
