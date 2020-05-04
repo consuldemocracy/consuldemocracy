@@ -12,7 +12,7 @@ end
 
 Rails.application.routes.draw do
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
-  mount Ckeditor::Engine => "/ckeditor"
+  mount Ckeditor::Engine => "#{Rails.application.config.root_directory}/ckeditor"
 
   get "/", to: redirect(Rails.application.config.root_directory)
 

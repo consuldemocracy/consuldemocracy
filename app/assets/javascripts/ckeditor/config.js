@@ -8,13 +8,13 @@ CKEDITOR.editorConfig = function( config )
 
   config.forcePasteAsPlainText = true;
 
-  config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
-  config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
-  config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
-  config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
-  config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
-  config.filebrowserImageUploadUrl = "/ckeditor/pictures";
-  config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+  config.filebrowserBrowseUrl = ava_default_url + "/ckeditor/attachment_files";
+  config.filebrowserFlashBrowseUrl = ava_default_url + "/ckeditor/attachment_files";
+  config.filebrowserFlashUploadUrl = ava_default_url + "/ckeditor/attachment_files";
+  config.filebrowserImageBrowseLinkUrl = ava_default_url + "/ckeditor/pictures";
+  config.filebrowserImageBrowseUrl = ava_default_url + "/ckeditor/pictures";
+  config.filebrowserImageUploadUrl = ava_default_url + "/ckeditor/pictures";
+  config.filebrowserUploadUrl = ava_default_url + "/ckeditor/attachment_files";
   config.filebrowserUploadMethod = "form";
 
   config.allowedContent = true;
