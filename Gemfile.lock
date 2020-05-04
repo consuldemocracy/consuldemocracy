@@ -18,6 +18,11 @@ GIT
       rubyzip (>= 1.2.1)
 
 PATH
+  remote: omniauth-codigo
+  specs:
+    omniauth-codigo (0.0.1)
+
+PATH
   remote: omniauth-ldap
   specs:
     omniauth-ldap (1.0.5)
@@ -25,11 +30,6 @@ PATH
       omniauth (~> 1.0)
       pyu-ruby-sasl (~> 0.0.3.2)
       rubyntlm (~> 0.3.4)
-
-PATH
-  remote: omniauth-codigo
-  specs:
-    omniauth-codigo (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -575,7 +575,7 @@ GEM
     sitemap_generator (6.0.2)
       builder (~> 3.0)
     smart_properties (1.13.1)
-    social-share-button (1.1.0)
+    social-share-button (1.2.1)
       coffee-rails
     socksify (1.7.1)
     spring (2.0.2)
@@ -737,7 +737,7 @@ DEPENDENCIES
   scss_lint (~> 0.55.0)
   selenium-webdriver (~> 3.141)
   sitemap_generator (~> 6.0.2)
-  social-share-button (~> 1.1)
+  social-share-button (~> 1.2.1)
   spring (~> 2.0.1)
   spring-commands-rspec (~> 1.0.4)
   sprockets (~> 3.7.2)
