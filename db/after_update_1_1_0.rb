@@ -78,6 +78,11 @@ section "Creando y personalizando configuraciones nuevas" do
   Setting["map.latitude"] = "41.648737262859996"
   Setting["map.longitude"] = "-724.7286701202394"
   Setting["map.zoom"] = "12"
+
+  # Configuración de URL de seguimiento de
+  # presupuestos participativos anteriores
+  Setting["budget_monitoring_url_2018"] = "https://cloud.valladolid.es/index.php/s/oXHrfDTwyvn63Vk#pdfviewer"
+  Setting["budget_monitoring_url_2019"] = "https://cloud.valladolid.es/index.php/s/NvOzxxZrG95wzLY#pdfviewer"
 end
 
 section "Eliminando configuracionse obsoletas" do

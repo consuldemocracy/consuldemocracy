@@ -20,10 +20,19 @@
                                 budget_results_path(budget),
                                 class: "button" %>
                   <% end %>
-
-                  <%= link_to t("budgets.index.milestones"),
+                  <% if budget.id == 1 && Setting["budget_monitoring_url_2018"].present? %>
+                    <%= link_to t("budgets.index.milestones"),
+                              Setting["budget_monitoring_url_2018"],
+                              class: "button" %>
+                  <% elsif budget.id == 2 && Setting["budget_monitoring_url_2019"].present? %>
+                    <%= link_to t("budgets.index.milestones"),
+                              Setting["budget_monitoring_url_2019"],
+                              class: "button" %>
+                  <% else %>
+                    <%= link_to t("budgets.index.milestones"),
                               budget_executions_path(budget),
                               class: "button" %>
+                  <% end %>
                 </div>
               </div>
             </div>
