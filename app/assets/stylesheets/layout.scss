@@ -67,6 +67,7 @@ body {
 main {
   display: block;
 
+  &.budget-groups-index,
   &.budget-investment-new,
   &.debate-new,
   &.proposal-new,

@@ -1,7 +1,7 @@
 module Header
   extend ActiveSupport::Concern
 
-  def header(&block)
+  def header(before: nil, &block)
     provide(:title) do
       [
         t("#{namespace}.header.title", default: ""),
@@ -17,11 +17,7 @@ module Header
                   end
 
     tag.header do
-      if block_given?
-        content_tag(heading_tag, title) + capture(&block)
-      else
-        content_tag(heading_tag, title)
-      end
+      safe_join([before, content_tag(heading_tag, title), (capture(&block) if block_given?)].compact)
     end
   end
 

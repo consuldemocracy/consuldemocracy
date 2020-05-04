@@ -170,7 +170,7 @@ describe Budgets::InvestmentsListComponent, type: :component do
           render_inline Budgets::InvestmentsListComponent.new(budget)
 
           expect(page).to have_link "See all investments",
-                                    href: budget_investments_path(budget)
+                                    href: budget_groups_path(budget)
         end
       end
     end
