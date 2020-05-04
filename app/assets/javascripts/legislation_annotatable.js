@@ -108,9 +108,9 @@
           App.LegislationAnnotatable.highlight("#7fff9a");
           $("#comments-box textarea").focus();
           $("#new_legislation_annotation").on("ajax:complete", function(e, data) {
-            App.LegislationAnnotatable.app.destroy();
             if (data.status === 200) {
               App.LegislationAnnotatable.remove_highlight();
+              App.LegislationAnnotatable.app.annotations.runHook("annotationCreated", [data.responseJSON]);
               $("#comments-box").html("").hide();
               $.ajax({
                 method: "GET",

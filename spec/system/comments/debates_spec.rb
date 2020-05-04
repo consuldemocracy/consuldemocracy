@@ -84,6 +84,26 @@ describe "Commenting debates" do
     expect(page).not_to have_content grandchild_comment.body
   end
 
+  scenario "can collapse comments after adding a reply", :js do
+    parent_comment = create(:comment, body: "Main comment", commentable: debate)
+    create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
+
+    login_as(user)
+    visit debate_path(debate)
+
+    within ".comment", text: "Main comment" do
+      first(:link, "Reply").click
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+
+      find(".fa-minus-square").click
+
+      expect(page).not_to have_content("It will be done next week.")
+    end
+  end
+
   scenario "Comment order" do
     c1 = create(:comment, :with_confidence_score, commentable: debate, cached_votes_up: 100,
                                                   cached_votes_total: 120, created_at: Time.current - 2)
@@ -228,6 +248,31 @@ describe "Commenting debates" do
     end
 
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
+  end
+
+  scenario "Reply to reply", :js do
+    create(:comment, commentable: debate, body: "Any estimates?")
+
+    login_as(create(:user))
+    visit debate_path(debate)
+
+    within ".comment", text: "Any estimates?" do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+    end
+
+    within ".comment .comment", text: "It will be done next week" do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "Probably if government approves."
+      click_button "Publish reply"
+
+      expect(page).not_to have_selector("form")
+
+      within ".comment" do
+        expect(page).to have_content "Probably if government approves."
+      end
+    end
   end
 
   scenario "Errors on reply", :js do

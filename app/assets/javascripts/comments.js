@@ -43,23 +43,18 @@
       $("span#" + id + "_arrow").toggleClass("fa-minus-square").toggleClass("fa-plus-square");
     },
     initialize: function() {
-      $("body .js-add-comment-link").each(function() {
-        if ($(this).data("initialized") !== "yes") {
-          $(this).on("click", function() {
-            App.Comments.toggle_form($(this).data().id);
-            return false;
-          }).data("initialized", "yes");
-        }
+      $("body").on("click", ".js-add-comment-link", function() {
+        App.Comments.toggle_form($(this).data().id);
+        return false;
       });
-      $("body .js-toggle-children").each(function() {
-        $(this).on("click", function() {
-          var children_container_id;
-          children_container_id = ($(this).data().id) + "_children";
-          $("#" + children_container_id).toggle("slow");
-          App.Comments.toggle_arrow(children_container_id);
-          $(this).children(".js-child-toggle").toggle();
-          return false;
-        });
+
+      $("body").on("click", ".js-toggle-children", function() {
+        var children_container_id;
+        children_container_id = ($(this).data().id) + "_children";
+        $("#" + children_container_id).toggle("slow");
+        App.Comments.toggle_arrow(children_container_id);
+        $(this).children(".js-child-toggle").toggle();
+        return false;
       });
     }
   };
