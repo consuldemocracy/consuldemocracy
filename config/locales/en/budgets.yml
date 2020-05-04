@@ -25,7 +25,7 @@ en:
         casted_offline: You have already participated offline
     groups:
       show:
-        title: Select an option
+        title: Select a heading
         unfeasible_title: Unfeasible investments
         unfeasible: See unfeasible investments
         unselected_title: Investments not selected for balloting phase

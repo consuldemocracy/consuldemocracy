@@ -25,7 +25,7 @@ es:
         casted_offline: Ya has participado presencialmente
     groups:
       show:
-        title: Selecciona una opción
+        title: Selecciona una partida
         unfeasible_title: Proyectos de gasto inviables
         unfeasible: Ver proyectos inviables
         unselected_title: Proyectos no seleccionados para la votación final

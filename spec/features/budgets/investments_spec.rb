@@ -1566,14 +1566,14 @@ describe "Budget Investments" do
       login_as(user)
       visit budget_path(budget)
       click_link "See all investments"
-      click_link "Global Heading"
+      click_link "Global Heading €1,000,000"
 
       add_to_ballot("World T-Shirt")
       add_to_ballot("Eco pens")
 
       visit budget_path(budget)
       click_link "See all investments"
-      click_link "Carabanchel"
+      click_link "Carabanchel €1,000,000"
 
       add_to_ballot("Fireworks")
       add_to_ballot("Bus pass")
@@ -1619,7 +1619,7 @@ describe "Budget Investments" do
       visit budget_path(budget)
 
       click_link "See all investments"
-      click_link "Heading 1"
+      click_link "Heading 1 €1,000,000"
 
       add_to_ballot("Zero-emission zone")
 

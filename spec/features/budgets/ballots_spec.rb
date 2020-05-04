@@ -77,10 +77,10 @@ describe "Ballots" do
         visit budget_path(budget)
         click_link "See all investments"
 
-        expect(page).to have_link "Investments Type1"
-        expect(page).to have_link "Investments Type2"
-        expect(page).to have_link "District 1"
-        expect(page).to have_link "District 2"
+        expect(page).to have_content "Investments Type1"
+        expect(page).to have_content "Investments Type2"
+        expect(page).to have_link "District 1 €1,000,000"
+        expect(page).to have_link "District 2 €1,000,000"
       end
 
       scenario "Investments" do
@@ -102,7 +102,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "Above the city"
+        click_link "Above the city €1,000,000"
 
         expect(page).to have_css(".budget-investment", count: 2)
         expect(page).to have_content "Solar panels"
@@ -110,7 +110,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "District 1"
+        click_link "District 1 €1,000,000"
 
         expect(page).to have_css(".budget-investment", count: 2)
         expect(page).to have_content "New park"
@@ -118,7 +118,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "District 2"
+        click_link "District 2 €1,000,000"
 
         expect(page).to have_css(".budget-investment", count: 1)
         expect(page).to have_content "Climbing wall"
@@ -132,7 +132,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "New York"
+        click_link "New York €1,000,000"
 
         add_to_ballot("Bring back King Kong")
 
@@ -162,7 +162,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "New York"
+        click_link "New York €1,000,000"
 
         expect(page).to have_content investment.title
         expect(page).to have_css("#amount-spent", text: "€10,000")
@@ -193,7 +193,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "New York"
+        click_link "New York €1,000,000"
 
         within("#sidebar") do
           expect(page).to have_content "OpenStreetMap"
@@ -230,7 +230,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "All city"
+        click_link "All city €10,000,000"
 
         add_to_ballot("Cheap")
 
@@ -244,7 +244,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "District 1"
+        click_link "District 1 €1,000,000"
 
         expect(page).to have_css("#amount-spent", text: "€0")
         expect(page).to have_css("#amount-spent", text: "€1,000,000")
@@ -264,7 +264,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "All city"
+        click_link "All city €10,000,000"
 
         expect(page).to have_css("#amount-spent",     text: "€10,000")
         expect(page).to have_css("#amount-available", text: "€9,990,000")
@@ -279,7 +279,7 @@ describe "Ballots" do
 
         visit budget_path(budget)
         click_link "See all investments"
-        click_link "District 2"
+        click_link "District 2 €2,000,000"
 
         expect(page).to have_content("You have active votes in another heading: District 1")
       end
@@ -306,7 +306,7 @@ describe "Ballots" do
 
       visit budget_path(budget)
       click_link "See all investments"
-      click_link "California"
+      click_link "California €1,000"
 
       add_to_ballot("Green beach")
 
@@ -518,7 +518,7 @@ describe "Ballots" do
       login_as(user)
       visit budget_path(budget)
       click_link "See all investments"
-      click_link "New York"
+      click_link "New York €1,000,000"
 
       expect(page).not_to have_css("#budget_investment_#{investment.id}")
     end
@@ -529,7 +529,7 @@ describe "Ballots" do
       login_as(user)
       visit budget_path(budget)
       click_link "See all investments"
-      click_link "New York"
+      click_link "New York €1,000,000"
 
       within("#budget-investments") do
         expect(page).not_to have_css("div.ballot")
@@ -648,7 +648,7 @@ describe "Ballots" do
       login_as(user)
       visit budget_path(budget)
       click_link "See all investments"
-      click_link "New York"
+      click_link "New York €1,000,000"
 
       new_york.update!(price: 10)
 

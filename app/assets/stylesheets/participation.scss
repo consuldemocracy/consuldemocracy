@@ -1411,6 +1411,11 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
+
+    &.groups {
+      min-height: 0;
+      padding-top: 0;
+    }
   }
 }
 
@@ -1738,6 +1743,7 @@
     border-radius: rem-calc(3);
     display: inline-block;
     margin-bottom: $line-height / 2;
+    position: relative;
 
     a {
       display: block;
@@ -1757,6 +1763,24 @@
       color: $text;
       display: block;
       font-size: $small-font-size;
+    }
+  }
+
+  .is-active a {
+    background: #f9f9f9;
+    border-radius: rem-calc(3);
+    color: $budget;
+    font-weight: bold;
+
+    &::after {
+      content: "\f058";
+      font-family: "Font Awesome 5 Free";
+      font-size: $small-font-size;
+      font-weight: bold;
+      line-height: $line-height;
+      position: absolute;
+      top: 0;
+      right: 6px;
     }
   }
 }
@@ -1919,34 +1943,6 @@
       .remove-investment-project .icon-x {
         color: #fff;
       }
-    }
-  }
-}
-
-.select-district a {
-  display: inline-block;
-  margin: $line-height / 4 0;
-  padding: $line-height / 4;
-}
-
-.select-district .is-active a {
-  background: #f9f9f9;
-  border-radius: rem-calc(3);
-  color: $budget;
-  font-weight: bold;
-  padding: $line-height / 4;
-
-  &::after {
-    content: "\56";
-    font-family: "icons";
-    font-size: $small-font-size;
-    font-weight: normal;
-    line-height: $line-height;
-    padding-left: rem-calc(3);
-    vertical-align: baseline;
-
-    &:hover {
-      text-decoration: none;
     }
   }
 }
