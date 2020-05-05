@@ -14,7 +14,7 @@ set :full_app_name, deploysecret(:full_app_name)
 set :deploy_to, deploysecret(:deploy_to)
 set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
-set :ssh_options, port: deploysecret(:ssh_port)
+set :ssh_options, port: deploysecret(:ssh_port), auth_methods: %w[password]
 
 set :repo_url, "https://github.com/AytoVa/consul"
 
