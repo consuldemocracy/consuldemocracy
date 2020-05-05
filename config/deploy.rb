@@ -25,7 +25,7 @@ set :pty, true
 set :use_sudo, false
 
 set :linked_files, %w[config/database.yml config/secrets.yml]
-set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets]
+set :linked_dirs, %w[log tmp public/system public/assets public/ckeditor_assets public/presupuestosparticipativos]
 
 set :keep_releases, 5
 
