@@ -151,6 +151,51 @@ describe "Budget Investments" do
     end
   end
 
+  scenario "Index filter by status", :js do
+    budget.update!(phase: "finished")
+
+    create(:budget_investment, :feasible, heading: heading, title: "Feasible investment")
+    create(:budget_investment, :unfeasible, heading: heading, title: "Unfeasible investment")
+    create(:budget_investment, :unselected, heading: heading, title: "Unselected investment")
+    create(:budget_investment, :selected, heading: heading, title: "Selected investment")
+    create(:budget_investment, :winner, heading: heading, title: "Winner investment")
+
+    visit budget_investments_path(budget, heading_id: heading.id)
+
+    expect(page).to have_select "Filtering projects by",
+                                options: ["Not unfeasible", "Unfeasible", "Unselected", "Selected", "Winners"]
+
+    select "Unfeasible", from: "Filtering projects by"
+
+    expect(page).to have_css ".budget-investment", count: 1
+    expect(page).to have_content "Unfeasible investment"
+
+    select "Unselected", from: "Filtering projects by"
+
+    expect(page).to have_css ".budget-investment", count: 2
+    expect(page).to have_content "Unselected investment"
+    expect(page).to have_content "Feasible investment"
+
+    select "Selected", from: "Filtering projects by"
+
+    expect(page).to have_css ".budget-investment", count: 2
+    expect(page).to have_content "Selected investment"
+    expect(page).to have_content "Winner investment"
+
+    select "Winners", from: "Filtering projects by"
+
+    expect(page).to have_css ".budget-investment", count: 1
+    expect(page).to have_content "Winner investment"
+
+    select "Not unfeasible", from: "Filtering projects by"
+
+    expect(page).to have_css ".budget-investment", count: 4
+    expect(page).to have_content "Selected investment"
+    expect(page).to have_content "Unselected investment"
+    expect(page).to have_content "Feasible investment"
+    expect(page).to have_content "Winner investment"
+  end
+
   context("Search") do
     scenario "Search by text" do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")

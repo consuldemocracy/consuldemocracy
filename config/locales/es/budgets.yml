@@ -69,9 +69,6 @@ es:
       prev_phase: Fase anterior
       current_phase: Fase actual
       map: Proyectos localizables geográficamente
-      investment_proyects: Ver lista completa de proyectos de gasto
-      unfeasible_investment_proyects: Ver lista de proyectos de gasto inviables
-      not_selected_investment_proyects: Ver lista de proyectos de gasto no seleccionados para la votación final
       finished_budgets: Presupuestos participativos terminados
       see_results: Ver resultados
       section_footer:
@@ -120,6 +117,13 @@ es:
           verified_only: "Para crear un nuevo proyecto de gasto %{verify}."
           create: "Crear proyecto de gasto"
           not_logged_in: "Para crear un nuevo proyecto de gasto debes %{sign_in} o %{sign_up}."
+        filter: "Filtrando proyectos"
+        filters:
+          not_unfeasible: "No inviables"
+          selected: "Seleccionados"
+          unfeasible: "Inviables"
+          unselected: "No seleccionados"
+          winners: "Ganadores"
         orders:
           random: Aleatorios
           confidence_score: Mejor valorados

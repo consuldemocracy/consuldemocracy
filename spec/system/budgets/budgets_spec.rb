@@ -139,50 +139,7 @@ describe "Budgets" do
         expect(page).not_to have_link "#{heading.name} €1,000,000"
         expect(page).to have_content "#{heading.name} €1,000,000"
 
-        expect(page).to have_link "List of all investment projects",
-                                   href: budget_path(budget)
-
-        expect(page).to have_link "List of all unfeasible investment projects",
-                                   href: budget_path(budget, filter: "unfeasible")
-
-        expect(page).to have_link "List of all investment projects not selected for balloting",
-                                   href: budget_path(budget, filter: "unselected")
-
         expect(page).to have_css("div.map")
-      end
-    end
-
-    scenario "Show investment links only on balloting or later" do
-      budget = create(:budget)
-      create(:budget_heading, budget: budget)
-
-      allowed_phase_list.each do |phase|
-        budget.update!(phase: phase)
-
-        visit budgets_path
-
-        expect(page).to have_content(I18n.t("budgets.index.investment_proyects"))
-        expect(page).to have_content(I18n.t("budgets.index.unfeasible_investment_proyects"))
-        expect(page).to have_content(I18n.t("budgets.index.not_selected_investment_proyects"))
-      end
-    end
-
-    scenario "Not show investment links earlier of balloting " do
-      budget = create(:budget)
-      create(:budget_heading, budget: budget)
-      phases_without_links = ["informing"]
-      not_allowed_phase_list = Budget::Phase::PHASE_KINDS -
-                               phases_without_links -
-                               allowed_phase_list
-
-      not_allowed_phase_list.each do |phase|
-        budget.update!(phase: phase)
-
-        visit budgets_path
-
-        expect(page).not_to have_content(I18n.t("budgets.index.investment_proyects"))
-        expect(page).to have_content(I18n.t("budgets.index.unfeasible_investment_proyects"))
-        expect(page).not_to have_content(I18n.t("budgets.index.not_selected_investment_proyects"))
       end
     end
 

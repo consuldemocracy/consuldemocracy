@@ -69,9 +69,6 @@ en:
       prev_phase: Previous phase
       current_phase: Current phase
       map: Budget investments' proposals located geographically
-      investment_proyects: List of all investment projects
-      unfeasible_investment_proyects: List of all unfeasible investment projects
-      not_selected_investment_proyects: List of all investment projects not selected for balloting
       finished_budgets: Finished participatory budgets
       see_results: See results
       section_footer:
@@ -120,6 +117,13 @@ en:
           verified_only: "To create a new budget investment %{verify}."
           create: "Create a budget investment"
           not_logged_in: "To create a new budget investment you must %{sign_in} or %{sign_up}."
+        filter: "Filtering projects by"
+        filters:
+          not_unfeasible: "Not unfeasible"
+          selected: "Selected"
+          unfeasible: "Unfeasible"
+          unselected: "Unselected"
+          winners: "Winners"
         orders:
           random: random
           confidence_score: highest rated
