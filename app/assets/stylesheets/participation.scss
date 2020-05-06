@@ -1214,6 +1214,18 @@
   }
 }
 
+.filter-selector {
+
+  label {
+    margin-right: $line-height / 2;
+    padding-top: $line-height / 2;
+  }
+
+  select {
+    width: auto;
+  }
+}
+
 // 05. Featured
 // ------------
 

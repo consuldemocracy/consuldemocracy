@@ -152,6 +152,59 @@ describe "Budget Investments" do
     end
   end
 
+  scenario "Index filter by status", :js do
+    budget_new  = create(:budget)
+    group_new   = create(:budget_group, budget: budget_new)
+    heading_new = create(:budget_heading, group: group_new)
+
+    create_list(:budget_investment, 2, :feasible, heading: heading_new)
+    create_list(:budget_investment, 2, :unfeasible, heading: heading_new)
+    create_list(:budget_investment, 2, :unselected, heading: heading_new)
+    create_list(:budget_investment, 2, :selected, heading: heading_new)
+    create_list(:budget_investment, 2, :winner, heading: heading_new)
+
+    visit budget_investments_path(budget_new, heading_id: heading_new.id)
+
+    options = find("#filter_selector").all("option").map { |option| option.text.strip }
+    expect(options).to eq ["Not unfeasible", "Feasible", "Unfeasible", "Unselected", "Selected", "Winners"]
+
+    select "Feasible", from: "filter_selector"
+    feasible_path = budget_investments_path(budget_new, heading_id: heading_new.id,
+                                                        filter: "feasible", page: "1")
+    expect(page).to have_current_path(feasible_path)
+    expect(page).to have_css(".budget-investment", count: 8)
+
+    select "Unfeasible", from: "filter_selector"
+    unfeasible_path = budget_investments_path(budget_new, heading_id: heading_new.id,
+                                                          filter: "unfeasible", page: "1")
+    expect(page).to have_current_path(unfeasible_path)
+    expect(page).to have_css(".budget-investment", count: 2)
+
+    select "Unselected", from: "filter_selector"
+    unselected_path = budget_investments_path(budget_new, heading_id: heading_new.id,
+                                                          filter: "unselected", page: "1")
+    expect(page).to have_current_path(unselected_path)
+    expect(page).to have_css(".budget-investment", count: 4)
+
+    select "Selected", from: "filter_selector"
+    selected_path = budget_investments_path(budget_new, heading_id: heading_new.id,
+                                                        filter: "selected", page: "1")
+    expect(page).to have_current_path(selected_path)
+    expect(page).to have_css(".budget-investment", count: 4)
+
+    select "Winners", from: "filter_selector"
+    winners_path = budget_investments_path(budget_new, heading_id: heading_new.id,
+                                                       filter: "winners", page: "1")
+    expect(page).to have_current_path(winners_path)
+    expect(page).to have_css(".budget-investment", count: 2)
+
+    select "Not unfeasible", from: "filter_selector"
+    not_unfeasible_path = budget_investments_path(budget_new, heading_id: heading_new.id,
+                                                              filter: "not_unfeasible", page: "1")
+    expect(page).to have_current_path(not_unfeasible_path)
+    expect(page).to have_css(".budget-investment", count: 8)
+  end
+
   context("Search") do
     scenario "Search by text" do
       investment1 = create(:budget_investment, heading: heading, title: "Get Schwifty")

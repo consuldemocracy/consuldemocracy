@@ -125,6 +125,7 @@ ignore_missing:
 ## Consider these keys used:
 ignore_unused:
   - "budgets.phase.*"
+  - "budgets.investments.index.filter*"
   - "budgets.investments.index.orders.*"
   - "budgets.index.section_header.*"
   - "activerecord.*"

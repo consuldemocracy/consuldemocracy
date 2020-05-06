@@ -99,6 +99,14 @@ es:
           by_feasibility: Por viabilidad
           feasible: Ver los proyectos viables
           unfeasible: Ver los proyectos inviables
+        filter: "Filtrando proyectos"
+        filters:
+          not_unfeasible: "No inviables"
+          feasible: "Viables"
+          unfeasible: "No viables"
+          unselected: "No seleccionados"
+          selected: "Seleccionados"
+          winners: "Ganadores"
         orders:
           random: Aleatorios
           confidence_score: Mejor valorados
