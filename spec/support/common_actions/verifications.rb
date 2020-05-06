@@ -44,12 +44,22 @@ module Verifications
     end
   end
 
-  def fill_in_ckeditor(label, with:)
-    locator = find("label", text: label)[:for]
+  def ckeditor_locator(label)
+    find("label", text: label)[:for]
+  end
+
+  def wait_for_ckeditor(label, locator = nil)
+    locator ||= ckeditor_locator(label)
 
     until page.execute_script("return CKEDITOR.instances.#{locator}.status === 'ready';") do
       sleep 0.01
     end
+  end
+
+  def fill_in_ckeditor(label, with:)
+    locator = ckeditor_locator(label)
+
+    wait_for_ckeditor(label, locator)
 
     # Fill the editor content
     page.execute_script <<-SCRIPT

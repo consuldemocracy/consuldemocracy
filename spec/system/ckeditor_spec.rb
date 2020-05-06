@@ -51,4 +51,23 @@ describe "CKEditor" do
     expect(page).not_to have_link "Upload"
     expect(page).not_to have_link "Browse Server"
   end
+
+  context "When navigating back to editor page using browser history back" do
+    scenario "display ckeditor unsaved contents", :js do
+      login_as(create(:administrator).user)
+
+      visit new_admin_newsletter_path
+      fill_in_ckeditor "Email content", with: "This is an unsaved body"
+      click_link "Newsletters"
+
+      expect(page).to have_link "New newsletter"
+
+      go_back
+
+      wait_for_ckeditor("Email content")
+      within_frame(0) do
+        expect(page).to have_content "This is an unsaved body"
+      end
+    end
+  end
 end
