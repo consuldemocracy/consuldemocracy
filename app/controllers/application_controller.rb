@@ -46,9 +46,11 @@ class ApplicationController < ActionController::Base
         session[:locale] = params[:locale]
       end
 
-      session[:locale] ||= I18n.default_locale
-
-      locale = session[:locale]
+      if session[:locale] && I18n.available_locales.include?(session[:locale].to_sym)
+        locale = session[:locale]
+      else
+        locale = I18n.default_locale
+      end
 
       if current_user && current_user.locale != locale.to_s
         current_user.update(locale: locale)
