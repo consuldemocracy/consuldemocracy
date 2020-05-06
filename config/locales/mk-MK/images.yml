@@ -1,1 +1,19 @@
 mk:
+  images:
+    remove_image: Отстрани слика
+    form:
+      title: Описна слика
+      title_placeholder: Додади описен наслов за сликата
+      delete_button: Отстрани слика
+      note: "Можете да поставите слика од следните содржински типови: %{accepted_content_types}, до големина од %{max_file_size} мегабајти."
+      add_new_image: Додади слика
+      admin_title: "Слика"
+      admin_alt_text: "Алтернативен текст за сликата"
+    actions:
+      destroy:
+        notice: Сликата беше успешно избришана.
+        alert: Сликата не може да се избрише.
+    errors:
+      messages:
+        in_between: мора да биде меѓу %{min} и %{max}
+        wrong_content_type: типот на содржината %{content_type} не се совпаѓа со ниеден од прифатените типови на содржина %{accepted_content_types}
