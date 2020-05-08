@@ -40,9 +40,7 @@
   <div class="row">
     <div id="debates" class="debates-list small-12 medium-9 column">
 
-      <% if has_banners? %>
-        <%= render "shared/banner" %>
-      <% end %>
+      <%= render "shared/banner" %>
 
       <% unless @search_terms || !has_featured? %>
         <%= render "featured_debates" %>
