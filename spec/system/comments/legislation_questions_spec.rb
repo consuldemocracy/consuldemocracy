@@ -260,6 +260,22 @@ describe "Commenting legislation questions" do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
+  scenario "Reply update parent comment responses count", :js do
+    manuela = create(:user, :level_two, username: "Manuela")
+    comment = create(:comment, commentable: legislation_question)
+
+    login_as(manuela)
+    visit legislation_process_question_path(legislation_question.process, legislation_question)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your answer", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
   scenario "Errors on reply", :js do
     comment = create(:comment, commentable: legislation_question, user: user)
 

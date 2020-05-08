@@ -278,6 +278,25 @@ describe "Commenting legislation questions" do
     expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
   end
 
+  scenario "Reply update parent comment responses count", :js do
+    manuela = create(:user, :level_two, username: "Manuela")
+    legislation_annotation = create(:legislation_annotation)
+    comment = legislation_annotation.comments.first
+
+    login_as(manuela)
+    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
+                                                            legislation_annotation.draft_version,
+                                                            legislation_annotation)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
   scenario "Errors on reply", :js do
     comment = legislation_annotation.comments.first
 

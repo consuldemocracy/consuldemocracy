@@ -281,6 +281,21 @@ describe "Commenting debates" do
     end
   end
 
+  scenario "Reply update parent comment responses count", :js do
+    comment = create(:comment, commentable: debate)
+
+    login_as(create(:user))
+    visit debate_path(debate)
+
+    within ".comment", text: comment.body do
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("1 response (collapse)")
+    end
+  end
+
   scenario "Errors on reply", :js do
     comment = create(:comment, commentable: debate, user: user)
 

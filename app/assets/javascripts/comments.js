@@ -14,6 +14,9 @@
         $(this).text(new_val);
       });
     },
+    update_responses_count: function(comment_id, responses_count_html) {
+      $(comment_id + "_reply .responses-count").html(responses_count_html);
+    },
     display_error: function(field_with_errors, error_html) {
       $(error_html).insertAfter($("" + field_with_errors));
     },

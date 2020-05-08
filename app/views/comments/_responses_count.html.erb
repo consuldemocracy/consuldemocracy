@@ -1,0 +1,9 @@
+<% if count > 0 %>
+  <%= link_to "", class: "js-toggle-children relative" do %>
+    <span class="far fa-minus-square"></span>
+    <span class="js-child-toggle" style="display: none;"><%= t("comments.comment.responses_show", count: count) %></span>
+    <span class="js-child-toggle"><%= t("comments.comment.responses_collapse", count: count) %></span>
+  <% end %>
+<% else %>
+  <%= t("comments.comment.responses", count: 0) %>
+<% end %>
