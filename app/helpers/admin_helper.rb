@@ -1,12 +1,4 @@
 module AdminHelper
-  def side_menu
-    if namespace == "moderation/budgets"
-      render "/moderation/menu"
-    else
-      render "/#{namespace}/menu"
-    end
-  end
-
   def namespaced_root_path
     "/#{namespace}"
   end
