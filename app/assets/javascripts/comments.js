@@ -5,11 +5,8 @@
       $(response_html).insertAfter($("#js-comment-form-" + parent_id));
       this.update_comments_count();
     },
-    add_reply: function(parent_id, response_html) {
-      if ($("#" + parent_id + " .comment-children").length === 0) {
-        $("#" + parent_id).append("<li><ul id='" + parent_id + "_children' class='no-bullet comment-children'></ul></li>");
-      }
-      $("#" + parent_id + " .comment-children:first").prepend($(response_html));
+    replace_comment: function(comment_id, response_html) {
+      $("#" + comment_id).replaceWith(response_html);
       this.update_comments_count();
     },
     update_comments_count: function() {

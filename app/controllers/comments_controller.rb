@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
       CommentNotifier.new(comment: @comment).process
       add_notification @comment
       EvaluationCommentNotifier.new(comment: @comment).process if send_evaluation_notification?
+      set_comment_flags(@comment.root.subtree) unless @comment.root?
     else
       render :new
     end
