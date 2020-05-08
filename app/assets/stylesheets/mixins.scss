@@ -3,6 +3,7 @@
 // 01. Logo
 // 02. Orbit bullets
 // 03. Direct uploads
+// 04. Admin layout
 // ------------------
 
 // 01. Logo
@@ -123,6 +124,18 @@
 
   .loading-bar.no-transition {
     transition: none;
+  }
+}
+
+// 04. Admin layout
+// ----------------
+
+@mixin admin-layout {
+  display: flex;
+  flex-direction: column;
+
+  > .menu-and-content {
+    flex: 1;
   }
 }
 

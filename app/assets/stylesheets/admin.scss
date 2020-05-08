@@ -22,6 +22,7 @@ $sidebar-hover:  #25597c;
 $sidebar-active: #f4fcd0;
 
 .admin {
+  @include admin-layout;
 
   h2 {
     font-weight: 100;
