@@ -134,6 +134,10 @@
   display: flex;
   flex-direction: column;
 
+  > header {
+    margin-bottom: 0;
+  }
+
   > .menu-and-content {
     flex: 1;
   }
