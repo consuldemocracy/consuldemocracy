@@ -7,6 +7,7 @@
     },
     replace_comment: function(comment_id, response_html) {
       $("#" + comment_id).replaceWith(response_html);
+      App.Users.initializeAvatar();
       this.update_comments_count();
     },
     update_comments_count: function() {

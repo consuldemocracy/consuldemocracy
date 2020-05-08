@@ -1,8 +1,11 @@
 (function() {
   "use strict";
   App.Users = {
-    initialize: function() {
+    initializeAvatar: function() {
       $(".initialjs-avatar").initial();
+    },
+    initialize: function() {
+      this.initializeAvatar();
     }
   };
 }).call(this);
