@@ -39,6 +39,9 @@ mk:
       moderator:
         one: "Модератор"
         other: "Модератори"
+      administrator:
+        one: "Администратор"
+        other: "Администратори"
       valuator:
         one: "Вреднувач"
         other: "Вреднувач"
@@ -96,6 +99,36 @@ mk:
       legislation/question_options:
         one: "Опции за прашање"
         other: "Опции за прашање"
+      legislation/answers:
+        one: "Одговор"
+        other: "Одговори"
+      documents:
+        one: "Документ"
+        other: "Документи"
+      images:
+        one: "Слика"
+        other: "Слики"
+      topic:
+        one: "Тема"
+        other: "Теми"
+      poll:
+        one: "Анкета"
+        other: "Анкети"
+      proposal_notification:
+        one: "Предлог нотификација"
+        other: "Предлог нотификации"
+      dashboard/action:
+        one: Табла на акции за предлог
+        other: Табла на акции за предлози
+      dashboard/administrator_task:
+        one: Задача
+        other: Задачи
+      link:
+        one: Линк
+        other: Линкови
+      local_census_record:
+        one: Досие од локален попис
+        other: Досиеjа од локален попис
     attributes:
       budget:
         name: "Име"
