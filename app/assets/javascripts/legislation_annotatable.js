@@ -31,6 +31,13 @@
         return $(this).contents();
       });
     },
+    loadAnnotationComments: function(annotation_url, annotation_id) {
+      $.ajax({
+        method: "GET",
+        url: annotation_url + "/annotations/" + annotation_id + "/comments",
+        dataType: "script"
+      });
+    },
     renderAnnotationComments: function(event) {
       if (event.offset) {
         $("#comments-box").css({
@@ -40,11 +47,7 @@
       if (App.LegislationAnnotatable.isMobile()) {
         return;
       }
-      $.ajax({
-        method: "GET",
-        url: event.annotation_url + "/annotations/" + event.annotation_id + "/comments",
-        dataType: "script"
-      });
+      App.LegislationAnnotatable.loadAnnotationComments(event.annotation_url, event.annotation_id);
     },
     onClick: function(event) {
       var annotation_id, annotation_url, parents, parents_ids, target;
@@ -108,15 +111,11 @@
           App.LegislationAnnotatable.highlight("#7fff9a");
           $("#comments-box textarea").focus();
           $("#new_legislation_annotation").on("ajax:complete", function(e, data) {
-            App.LegislationAnnotatable.app.destroy();
             if (data.status === 200) {
               App.LegislationAnnotatable.remove_highlight();
+              App.LegislationAnnotatable.app.annotations.runHook("annotationCreated", [data.responseJSON]);
               $("#comments-box").html("").hide();
-              $.ajax({
-                method: "GET",
-                url: annotation_url + "/annotations/" + data.responseJSON.id + "/comments",
-                dataType: "script"
-              });
+              App.LegislationAnnotatable.loadAnnotationComments(annotation_url, data.responseJSON.id);
             } else {
               $(e.target).find("label").addClass("error");
               $("<small class='error'>" + data.responseJSON[0] + "</small>").insertAfter($(e.target).find("textarea"));
