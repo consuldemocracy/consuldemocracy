@@ -61,7 +61,7 @@ describe "Internal valuation comments on Budget::Investments" do
     scenario "Collapsable comments", :js do
       parent_comment = create(:comment, :valuation, author: valuator_user, body: "Main comment",
                                                     commentable: investment)
-      child_comment  = create(:comment, :valuation, author: valuator_user, body: "First child",
+      child_comment  = create(:comment, :valuation, author: valuator_user, body: "First subcomment",
                                                     commentable: investment, parent: parent_comment)
       grandchild_comment = create(:comment, :valuation, author: valuator_user,
                                                         parent: child_comment,
@@ -73,20 +73,26 @@ describe "Internal valuation comments on Budget::Investments" do
       expect(page).to have_css(".comment", count: 3)
       expect(page).to have_content("1 response (collapse)", count: 2)
 
-      find("#comment_#{child_comment.id}_children_arrow").click
+      within ".comment .comment", text: "First subcomment" do
+        click_link text: "1 response (collapse)"
+      end
 
       expect(page).to have_css(".comment", count: 2)
       expect(page).to have_content("1 response (collapse)")
       expect(page).to have_content("1 response (show)")
       expect(page).not_to have_content grandchild_comment.body
 
-      find("#comment_#{child_comment.id}_children_arrow").click
+      within ".comment .comment", text: "First subcomment" do
+        click_link text: "1 response (show)"
+      end
 
       expect(page).to have_css(".comment", count: 3)
       expect(page).to have_content("1 response (collapse)", count: 2)
       expect(page).to have_content grandchild_comment.body
 
-      find("#comment_#{parent_comment.id}_children_arrow").click
+      within ".comment", text: "Main comment" do
+        click_link text: "1 response (collapse)", match: :first
+      end
 
       expect(page).to have_css(".comment", count: 1)
       expect(page).to have_content("1 response (show)")

@@ -67,20 +67,26 @@ describe "Commenting topics from proposals" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -625,17 +631,23 @@ describe "Commenting topics from budget investments" do
 
     expect(page).to have_css(".comment", count: 3)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).not_to have_content child_comment.body

@@ -39,9 +39,6 @@
     toggle_form: function(id) {
       $("#js-comment-form-" + id).toggle();
     },
-    toggle_arrow: function(id) {
-      $("span#" + id + "_arrow").toggleClass("fa-minus-square fa-plus-square");
-    },
     initialize: function() {
       $("body").on("click", ".js-add-comment-link", function() {
         App.Comments.toggle_form($(this).data().id);
@@ -49,10 +46,8 @@
       });
 
       $("body").on("click", ".js-toggle-children", function() {
-        var children_container_id;
-        children_container_id = ($(this).data().id) + "_children";
-        $("#" + children_container_id).toggle("slow");
-        App.Comments.toggle_arrow(children_container_id);
+        $("#" + $(this).data().id + "_children").toggle("slow");
+        $(this).children(".far").toggleClass("fa-minus-square fa-plus-square");
         $(this).children(".js-child-toggle").toggle();
         return false;
       });
