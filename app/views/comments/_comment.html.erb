@@ -1,7 +1,7 @@
 <% valuation = local_assigns.fetch(:valuation, false) %>
 <% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author] do %>
-  <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
-    <li class="comment-body">
+  <div id="<%= dom_id(comment) %>" class="comment small-12">
+    <div class="comment-body">
       <% if comment.hidden? || comment.user.hidden? %>
         <% if comment.children.size > 0 %>
           <div class="callout secondary">
@@ -86,7 +86,7 @@
           <% end %>
 
           <% if comment.children.size > 0 %>
-            <%= link_to "", class: "js-toggle-children relative", data: { "id": "#{dom_id(comment)}" } do %>
+            <%= link_to "", class: "js-toggle-children relative" do %>
               <span class="far fa-minus-square"></span>
               <span class="js-child-toggle" style="display: none;"><%= t("comments.comment.responses_show", count: comment.children.size) %></span>
               <span class="js-child-toggle"><%= t("comments.comment.responses_collapse", count: comment.children.size) %></span>
@@ -113,17 +113,8 @@
           <% end %>
         </div>
       <% end %>
-    </li>
-    <% unless child_comments_of(comment).empty? %>
-    <li>
-      <ul id="<%= dom_id(comment) %>_children" class="no-bullet comment-children">
-        <% child_comments_of(comment).each do |child| %>
-          <li>
-            <%= render "comments/comment", { comment: child, valuation: valuation } %>
-          </li>
-        <% end %>
-      </ul>
-    </li>
-    <% end %>
-  </ul>
+    </div>
+
+    <%= render "comments/comment_list", comments: child_comments_of(comment), valuation: valuation %>
+  </div>
 <% end %>

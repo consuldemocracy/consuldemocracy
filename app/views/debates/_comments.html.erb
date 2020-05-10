@@ -15,9 +15,7 @@
         <%= render "shared/login_to_comment" %>
       <% end %>
 
-      <% @comment_tree.root_comments.each do |comment| %>
-        <%= render "comments/comment", comment: comment %>
-      <% end %>
+      <%= render "comments/comment_list", comments: @comment_tree.root_comments %>
       <%= paginate @comment_tree.root_comments %>
     </div>
   </div>

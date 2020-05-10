@@ -23,22 +23,22 @@ describe "Commenting Budget::Investments" do
   end
 
   scenario "Show" do
-    parent_comment = create(:comment, commentable: investment)
-    first_child    = create(:comment, commentable: investment, parent: parent_comment)
-    second_child   = create(:comment, commentable: investment, parent: parent_comment)
+    parent_comment = create(:comment, commentable: investment, body: "Parent")
+    create(:comment, commentable: investment, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: investment, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
     expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
 
     expect(page).to have_link "Go back to #{investment.title}", href: budget_investment_path(investment.budget, investment)
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_selector(".comment", count: 2)
+    end
   end
 
   scenario "Link to comment show" do

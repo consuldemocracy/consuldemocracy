@@ -2,14 +2,11 @@
   "use strict";
   App.Comments = {
     add_comment: function(parent_id, response_html) {
-      $(response_html).insertAfter($("#js-comment-form-" + parent_id));
+      $(".comment-list:first").prepend($(response_html));
       this.update_comments_count();
     },
     add_reply: function(parent_id, response_html) {
-      if ($("#" + parent_id + " .comment-children").length === 0) {
-        $("#" + parent_id).append("<li><ul id='" + parent_id + "_children' class='no-bullet comment-children'></ul></li>");
-      }
-      $("#" + parent_id + " .comment-children:first").prepend($(response_html));
+      $("#" + parent_id + " .comment-list:first").prepend($(response_html));
       this.update_comments_count();
     },
     update_comments_count: function() {
@@ -46,7 +43,7 @@
       });
 
       $("body").on("click", ".js-toggle-children", function() {
-        $("#" + $(this).data().id + "_children").toggle("slow");
+        $(this).closest(".comment").find(".comment-list:first").toggle("slow");
         $(this).children(".far").toggleClass("fa-minus-square fa-plus-square");
         $(this).children(".js-child-toggle").toggle();
         return false;

@@ -2084,6 +2084,7 @@ table {
   }
 
   .comment {
+    line-height: $list-lineheight;
     margin: $line-height / 4 0;
     position: relative;
 
@@ -2171,12 +2172,19 @@ table {
   }
 }
 
-.comment-children {
-  border-left: 1px dashed $border;
-  display: inline-block;
-  margin-left: rem-calc(16);
-  padding-left: rem-calc(8);
-  width: 100%;
+.comment-list {
+  margin: $line-height / 4 0;
+
+  .comment-list {
+    border-left: 1px dashed $border;
+    display: inline-block;
+    padding-left: rem-calc(8);
+    width: 100%;
+  }
+
+  &:empty {
+    display: none;
+  }
 }
 
 .comment-info {
