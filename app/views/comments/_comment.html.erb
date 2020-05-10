@@ -1,10 +1,9 @@
-<% comment_flags ||= @comment_flags %>
 <% valuation = local_assigns.fetch(:valuation, false) %>
 <% allow_votes = local_assigns.fetch(:allow_votes, true) %>
 <% allow_actions = local_assigns.fetch(:allow_actions, true) %>
 <% allow_comments = local_assigns.fetch(:allow_comments, true) %>
 <% admin_layout = local_assigns.fetch(:admin_layout, false) %>
-<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (comment_flags[comment.id] if comment_flags), (admin_layout if admin_layout)] do %>
+<% cache [locale_and_user_status(comment), comment, commentable_cache_key(comment.commentable), comment.author, (admin_layout if admin_layout)] do %>
   <ul id="<%= dom_id(comment) %>" class="comment no-bullet small-12">
     <li class="comment-body">
       <% if comment.hidden? || comment.user.hidden? %>
