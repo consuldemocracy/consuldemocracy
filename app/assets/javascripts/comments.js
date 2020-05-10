@@ -40,7 +40,7 @@
       $("#js-comment-form-" + id).toggle();
     },
     toggle_arrow: function(id) {
-      $("span#" + id + "_arrow").toggleClass("fa-minus-square").toggleClass("fa-plus-square");
+      $("span#" + id + "_arrow").toggleClass("fa-minus-square fa-plus-square");
     },
     initialize: function() {
       $("body").on("click", ".js-add-comment-link", function() {
