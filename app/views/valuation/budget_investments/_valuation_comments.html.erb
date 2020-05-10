@@ -2,7 +2,5 @@
 <% unless @comment_tree.nil? %>
   <%= render "/comments/comment_tree", comment_tree: @comment_tree,
     display_comments_count: false,
-    valuation: true,
-    allow_comments: can?(:comment_valuation, @investment),
-    admin_layout: true %>
+    valuation: true %>
 <% end %>
