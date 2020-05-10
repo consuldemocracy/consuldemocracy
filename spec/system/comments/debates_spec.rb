@@ -216,7 +216,7 @@ describe "Commenting debates" do
     login_as(user)
     visit debate_path(debate)
 
-    fill_in "comment-body-debate_#{debate.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#comments" do
@@ -245,7 +245,7 @@ describe "Commenting debates" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -371,7 +371,7 @@ describe "Commenting debates" do
     login_as(user)
     visit debate_path(debate)
 
-    fill_in "comment-body-debate_#{debate.id}", with: "Testing submit button!"
+    fill_in "Leave your comment", with: "Testing submit button!"
     click_button "Publish comment"
 
     # The button"s text should now be "..."
@@ -388,7 +388,7 @@ describe "Commenting debates" do
       login_as(moderator.user)
       visit debate_path(debate)
 
-      fill_in "comment-body-debate_#{debate.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-debate_#{debate.id}"
       click_button "Publish comment"
 
@@ -412,7 +412,7 @@ describe "Commenting debates" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -444,7 +444,7 @@ describe "Commenting debates" do
       login_as(admin.user)
       visit debate_path(debate)
 
-      fill_in "comment-body-debate_#{debate.id}", with: "I am your Admin!"
+      fill_in "Leave your comment", with: "I am your Admin!"
       check "comment-as-administrator-debate_#{debate.id}"
       click_button "Publish comment"
 
@@ -468,7 +468,7 @@ describe "Commenting debates" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your comment", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end

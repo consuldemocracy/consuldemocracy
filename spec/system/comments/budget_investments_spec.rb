@@ -199,7 +199,7 @@ describe "Commenting Budget::Investments" do
     login_as(user)
     visit budget_investment_path(investment.budget, investment)
 
-    fill_in "comment-body-budget_investment_#{investment.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#tab-comments-label" do
@@ -231,7 +231,7 @@ describe "Commenting Budget::Investments" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -334,7 +334,7 @@ describe "Commenting Budget::Investments" do
       login_as(moderator.user)
       visit budget_investment_path(investment.budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-budget_investment_#{investment.id}"
       click_button "Publish comment"
 
@@ -358,7 +358,7 @@ describe "Commenting Budget::Investments" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -391,7 +391,7 @@ describe "Commenting Budget::Investments" do
         login_as(admin.user)
         visit budget_investment_path(investment.budget, investment)
 
-        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        fill_in "Leave your comment", with: "I am your Admin!"
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
@@ -410,7 +410,7 @@ describe "Commenting Budget::Investments" do
 
         visit admin_budget_budget_investment_path(investment.budget, investment)
 
-        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        fill_in "Leave your comment", with: "I am your Admin!"
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
@@ -434,7 +434,7 @@ describe "Commenting Budget::Investments" do
         login_as(admin.user)
         visit admin_budget_budget_investment_path(investment.budget, investment)
 
-        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        fill_in "Leave your comment", with: "I am your Admin!"
         check "comment-as-administrator-budget_investment_#{investment.id}"
         click_button "Publish comment"
 
@@ -458,7 +458,7 @@ describe "Commenting Budget::Investments" do
         click_link "Reply"
 
         within "#js-comment-form-comment_#{comment.id}" do
-          fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+          fill_in "Leave your comment", with: "Top of the world!"
           check "comment-as-administrator-comment_#{comment.id}"
           click_button "Publish reply"
         end

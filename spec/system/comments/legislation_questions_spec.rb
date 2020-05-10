@@ -202,7 +202,7 @@ describe "Commenting legislation questions" do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "Have you thought about...?"
+    fill_in "Leave your answer", with: "Have you thought about...?"
     click_button "Publish answer"
 
     within "#comments" do
@@ -249,7 +249,7 @@ describe "Commenting legislation questions" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your answer", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -348,7 +348,7 @@ describe "Commenting legislation questions" do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "Testing submit button!"
+    fill_in "Leave your answer", with: "Testing submit button!"
     click_button "Publish answer"
 
     # The button's text should now be "..."
@@ -365,7 +365,7 @@ describe "Commenting legislation questions" do
       login_as(moderator.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am moderating!"
+      fill_in "Leave your answer", with: "I am moderating!"
       check "comment-as-moderator-legislation_question_#{legislation_question.id}"
       click_button "Publish answer"
 
@@ -389,7 +389,7 @@ describe "Commenting legislation questions" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your answer", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -421,7 +421,7 @@ describe "Commenting legislation questions" do
       login_as(admin.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am your Admin!"
+      fill_in "Leave your answer", with: "I am your Admin!"
       check "comment-as-administrator-legislation_question_#{legislation_question.id}"
       click_button "Publish answer"
 
@@ -445,7 +445,7 @@ describe "Commenting legislation questions" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your answer", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end

@@ -10,7 +10,11 @@ module Notifications
   end
 
   def comment_body(resource)
-    "comment-body-#{resource.class.name.parameterize(separator: "_").to_sym}_#{resource.id}"
+    if resource.class.name == "Legislation::Question"
+      "Leave your answer"
+    else
+      "Leave your comment"
+    end
   end
 
   def submit_comment_text(resource)

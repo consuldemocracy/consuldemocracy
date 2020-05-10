@@ -53,7 +53,7 @@ shared_examples "notifiable in-app" do |factory_name|
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "I replied to your comment"
+      fill_in comment_body(notifiable), with: "I replied to your comment"
       click_button "Publish reply"
     end
 
@@ -79,7 +79,7 @@ shared_examples "notifiable in-app" do |factory_name|
 
       within("#comment_#{comment.id}_reply") { click_link "Reply" }
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Reply number #{n}"
+        fill_in comment_body(notifiable), with: "Reply number #{n}"
         click_button "Publish reply"
       end
 
@@ -121,7 +121,7 @@ shared_examples "notifiable in-app" do |factory_name|
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "I replied to my own comment"
+      fill_in comment_body(notifiable), with: "I replied to my own comment"
       click_button "Publish reply"
     end
 
