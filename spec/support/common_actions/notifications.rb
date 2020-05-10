@@ -13,6 +13,14 @@ module Notifications
     "comment-body-#{resource.class.name.parameterize(separator: "_").to_sym}_#{resource.id}"
   end
 
+  def submit_comment_text(resource)
+    if resource.class.name == "Legislation::Question"
+      "Publish answer"
+    else
+      "Publish comment"
+    end
+  end
+
   def create_proposal_notification(proposal)
     login_as(proposal.author)
     visit root_path

@@ -30,7 +30,7 @@ shared_examples "notifiable in-app" do |factory_name|
       visit path_for(notifiable)
 
       fill_in comment_body(notifiable), with: "Number #{n + 1} is the best!"
-      click_button "publish_comment"
+      click_button submit_comment_text(notifiable)
       within "#comments" do
         expect(page).to have_content "Number #{n + 1} is the best!"
       end
@@ -102,7 +102,7 @@ shared_examples "notifiable in-app" do |factory_name|
     visit path_for(notifiable)
 
     fill_in comment_body(notifiable), with: "I commented on my own notifiable"
-    click_button "publish_comment"
+    click_button submit_comment_text(notifiable)
     within "#comments" do
       expect(page).to have_content "I commented on my own notifiable"
     end
