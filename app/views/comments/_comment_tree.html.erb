@@ -27,7 +27,6 @@
           <% elsif !valuation || can?(:comment_valuation, commentable) %>
             <%= render "comments/form", { commentable: commentable,
                                           parent_id: nil,
-                                          toggeable: false,
                                           valuation: valuation } %>
           <% end %>
         <% else %>

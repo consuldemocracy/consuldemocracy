@@ -107,7 +107,6 @@
             <% if !valuation || can?(:comment_valuation, comment.commentable) %>
               <%= render "comments/form", { commentable: comment.commentable,
                                            parent_id: comment.id,
-                                           toggeable: true,
                                            valuation: valuation } %>
             <% end %>
           <% end %>

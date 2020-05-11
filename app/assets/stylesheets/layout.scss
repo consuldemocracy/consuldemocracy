@@ -2180,6 +2180,11 @@ table {
     display: inline-block;
     padding-left: rem-calc(8);
     width: 100%;
+
+  }
+
+  .comment-form {
+    display: none;
   }
 
   &:empty {
