@@ -1,5 +1,20 @@
 ro:
   attributes:
+    geozone_id: "Scopul operațiunii"
     results_enabled: "Se arată rezultatele"
     stats_enabled: "Statistici"
     advanced_stats_enabled: "Statistici avansate"
+  activerecord:
+    models:
+      comment:
+        one: "Comentariu"
+        few: "Comentarii"
+        other: "Comentarii"
+      debate:
+        one: "Dezbatere"
+        few: "Dezbateri"
+        other: "Dezbateri"
+      user:
+        one: "Etichetă"
+        few: "Etichete"
+        other: "Utilizatori"
