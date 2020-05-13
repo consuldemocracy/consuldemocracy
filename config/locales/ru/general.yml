@@ -717,7 +717,6 @@ ru:
     follow: "Подписаться"
     following: "Подписан"
     follow_entity: "Подписаться на %{entity}"
-    hide: Скрыть
     print:
       print_button: Распечатать эту информацию
     search: Поиск
