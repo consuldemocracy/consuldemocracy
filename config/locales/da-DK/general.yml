@@ -720,7 +720,6 @@ da:
           notice: "Du følger nu borgerforslaget! <br> Vi vil give dig besked, hvis/når der forekommer ændringer, så du hele tiden er opdateret."
         destroy:
           notice: "Du er stoppet med at følge borgerforslaget! <br> Du vil ikke længere modtage notifikationer relateret til forslaget."
-    hide: Skjul
     print:
       print_button: Udskriv information
     search: Søg
