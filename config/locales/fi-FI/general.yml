@@ -282,7 +282,6 @@ fi:
     check_none: Ei mitään
     follow: "Seuraa"
     follow_entity: "Seuraa %{entity}"
-    hide: Piilota
     search: Etsi
     show: Näytä
     suggest:
