@@ -527,7 +527,6 @@ pl:
     follow: "Obserwuj"
     following: "Obserwowane"
     follow_entity: "Obserwuj %{entity}"
-    hide: Ukryj
     print:
       print_button: Wydrukuj tę informację
     search: Szukaj
