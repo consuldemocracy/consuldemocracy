@@ -720,7 +720,6 @@ sv:
           notice: "Du följer nu det här medborgarförslaget! <br> Vi meddelar dig om alla ändringar så att du kan hålla dig uppdaterad."
         destroy:
           notice: "Du har slutat att följa det här medborgarförslaget! <br> Vi kommer inte längre skicka aviseringar om förslaget."
-    hide: Dölj
     print:
       print_button: Skriv ut informationen
     search: Sök
