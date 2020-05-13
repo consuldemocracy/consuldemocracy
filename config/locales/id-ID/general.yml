@@ -466,7 +466,6 @@ id:
     follow: "Ikuti"
     following: "Berikut"
     follow_entity: "Ikuti %{entity}"
-    hide: Sembunyikan
     print:
       print_button: Cetak info ini
     search: Cari
