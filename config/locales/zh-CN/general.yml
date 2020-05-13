@@ -487,7 +487,6 @@ zh-CN:
     follow: "跟随"
     following: "跟随着"
     follow_entity: "跟随%{entity}"
-    hide: 隐藏
     print:
       print_button: 打印此信息
     search: 搜索
