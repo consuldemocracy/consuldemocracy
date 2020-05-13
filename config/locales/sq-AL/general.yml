@@ -500,7 +500,6 @@ sq:
     follow: "Ndiq"
     following: "Duke ndjekur"
     follow_entity: "Ndiq %{entity}"
-    hide: Fsheh
     print:
       print_button: Printoni këtë informacion
     search: Kërko
