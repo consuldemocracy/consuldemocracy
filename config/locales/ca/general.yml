@@ -391,7 +391,6 @@ ca:
     check_none: Cap
     collective: Associació
     flag: Denunciar com a inadequat
-    hide: Ocultar
     print:
       print_button: Imprimir aquesta informació
     search: Buscar
