@@ -80,6 +80,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
           Rails.root.join("spec/fixtures/files/empty.pdf"),
           make_visible: true
         )
+
+        expect(page).to have_css ".loading-bar.complete"
       end
 
       expect(page).to have_css ".file-name", text: "empty.pdf"
@@ -110,6 +112,8 @@ shared_examples "nested documentable" do |login_as_name, documentable_factory_na
           Rails.root.join("spec/fixtures/files/empty.pdf"),
           make_visible: true
         )
+
+        expect(page).to have_css ".loading-bar.complete"
       end
 
       expect_document_has_title(0, "My Title")
