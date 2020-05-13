@@ -702,7 +702,6 @@ nn:
     follow: "Følg"
     following: "Følger"
     follow_entity: "Følg %{entity}"
-    hide: Skjul
     print:
       print_button: Skriv ut denne informasjonen
     search: Søk
