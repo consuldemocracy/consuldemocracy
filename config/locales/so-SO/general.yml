@@ -500,7 +500,6 @@ so:
     follow: "Raac"
     following: "Kuxiga"
     follow_entity: "Raac%{entity}"
-    hide: Qarin
     print:
       print_button: Daabac xogtan
     search: Raadin
