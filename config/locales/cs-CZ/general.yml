@@ -526,7 +526,6 @@ cs:
     follow: "Sledování"
     following: "Sledované"
     follow_entity: "Sledovat %{entity}"
-    hide: Skrýt
     print:
       print_button: Vytisknout tuto informaci
     search: Vyhledat
