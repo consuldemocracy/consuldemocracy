@@ -627,7 +627,6 @@ gl:
     follow: "Seguir"
     following: "Seguindo"
     follow_entity: "Seguir %{entity}"
-    hide: Ocultar
     print:
       print_button: Imprimir esta información
     search: Procurar
