@@ -462,7 +462,6 @@ es-PE:
     follow: "Seguir"
     following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
-    hide: Ocultar
     print:
       print_button: Imprimir esta información
     search: Buscar
