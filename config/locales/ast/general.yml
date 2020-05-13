@@ -406,7 +406,6 @@ ast:
     check_none: Ninguno
     collective: Colectivo
     flag: Denunciar como inapropiado
-    hide: Despintar
     print:
       print_button: Imprimir esta información
     search: Atopar
