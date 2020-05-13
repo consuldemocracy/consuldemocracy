@@ -742,7 +742,6 @@ hr:
           notice: "Sada pratite ovaj građanski prijedlog! <br> Obavijestit ćemo vas o aktualnim promjenama kako biste bili u tijeku događanja."
         destroy:
           notice: "Prestali ste pratiti ovaj građanski prijedlog! <br> Više neće primati obavijesti vezane za taj prijedlog."
-    hide: Sakrij
     print:
       print_button: Printaj ove informacije
     search: Pretraga
