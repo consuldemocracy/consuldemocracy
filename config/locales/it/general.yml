@@ -550,7 +550,6 @@ it:
     follow: "Segui"
     following: "Seguendo"
     follow_entity: "Segui %{entity}"
-    hide: Nascondi
     print:
       print_button: Stampare questa informazione
     search: Ricercare
