@@ -677,7 +677,6 @@ bs:
     follow: "Prati"
     following: "Praćenje"
     follow_entity: "Prati %{entity}"
-    hide: Sakrij
     print:
       print_button: Printaj
     search: Traži
