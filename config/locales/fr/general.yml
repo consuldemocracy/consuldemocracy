@@ -496,7 +496,6 @@ fr:
     follow: "Suivre"
     following: "Suivent"
     follow_entity: "Suivre %{entity}"
-    hide: Cacher
     print:
       print_button: Imprimer cette info
     search: Chercher
