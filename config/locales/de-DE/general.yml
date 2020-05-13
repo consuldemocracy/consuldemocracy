@@ -716,7 +716,6 @@ de:
           notice: "Jetzt folgen Sie diesem Bürgervorschlag! <br> Wir werden Sie über Änderungen benachrichtigen sobald diese erscheinen, sodass Sie auf dem neusten Stand sind."
         destroy:
           notice: "Sie haben aufgehört diesem Bürgervorschlag zu folgen! <br> Sie werden nicht länger Benachrichtigungen zu diesem Vorschlag erhalten."
-    hide: Verbergen
     print:
       print_button: Diese Info drucken
     search: Suche
