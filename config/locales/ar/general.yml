@@ -762,7 +762,6 @@ ar:
     follow: "تابع"
     following: "التالية"
     follow_entity: "تابع %{entity}"
-    hide: إخفاء
     print:
       print_button: طباعة هذه المعلومات
     search: بحث
