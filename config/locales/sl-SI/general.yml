@@ -440,7 +440,6 @@ sl:
     follow: "Sledi"
     following: "Sledim"
     follow_entity: "Sledi %{entity}"
-    hide: Skrij
     print:
       print_button: Natisni te informacije
     search: Išči
