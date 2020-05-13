@@ -707,7 +707,6 @@ sr:
     follow: "Прати"
     following: "Пратити"
     follow_entity: "Прати %{entity}"
-    hide: Сакрите
     print:
       print_button: Штампајте ову информацију
     search: Тражите
