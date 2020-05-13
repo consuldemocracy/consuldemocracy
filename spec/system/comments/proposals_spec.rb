@@ -20,21 +20,21 @@ describe "Commenting proposals" do
   end
 
   scenario "Show" do
-    parent_comment = create(:comment, commentable: proposal)
-    first_child    = create(:comment, commentable: proposal, parent: parent_comment)
-    second_child   = create(:comment, commentable: proposal, parent: parent_comment)
+    parent_comment = create(:comment, commentable: proposal, body: "Parent")
+    create(:comment, commentable: proposal, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: proposal, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
     expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
     expect(page).to have_link "Go back to #{proposal.title}", href: proposal_path(proposal)
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_selector(".comment", count: 2)
+    end
   end
 
   scenario "Link to comment show" do
@@ -62,20 +62,26 @@ describe "Commenting proposals" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -189,7 +195,7 @@ describe "Commenting proposals" do
     login_as(user)
     visit proposal_path(proposal)
 
-    fill_in "comment-body-proposal_#{proposal.id}", with: "Have you thought about...?"
+    fill_in "Leave your comment", with: "Have you thought about...?"
     click_button "Publish comment"
 
     within "#comments" do
@@ -221,7 +227,7 @@ describe "Commenting proposals" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your comment", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -324,7 +330,7 @@ describe "Commenting proposals" do
       login_as(moderator.user)
       visit proposal_path(proposal)
 
-      fill_in "comment-body-proposal_#{proposal.id}", with: "I am moderating!"
+      fill_in "Leave your comment", with: "I am moderating!"
       check "comment-as-moderator-proposal_#{proposal.id}"
       click_button "Publish comment"
 
@@ -348,7 +354,7 @@ describe "Commenting proposals" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your comment", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -380,7 +386,7 @@ describe "Commenting proposals" do
       login_as(admin.user)
       visit proposal_path(proposal)
 
-      fill_in "comment-body-proposal_#{proposal.id}", with: "I am your Admin!"
+      fill_in "Leave your comment", with: "I am your Admin!"
       check "comment-as-administrator-proposal_#{proposal.id}"
       click_button "Publish comment"
 
@@ -404,7 +410,7 @@ describe "Commenting proposals" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your comment", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end

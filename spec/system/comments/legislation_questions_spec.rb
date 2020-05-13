@@ -25,23 +25,23 @@ describe "Commenting legislation questions" do
   end
 
   scenario "Show" do
-    parent_comment = create(:comment, commentable: legislation_question)
-    first_child    = create(:comment, commentable: legislation_question, parent: parent_comment)
-    second_child   = create(:comment, commentable: legislation_question, parent: parent_comment)
     href           = legislation_process_question_path(legislation_question.process, legislation_question)
+    parent_comment = create(:comment, commentable: legislation_question, body: "Parent")
+    create(:comment, commentable: legislation_question, parent: parent_comment, body: "First subcomment")
+    create(:comment, commentable: legislation_question, parent: parent_comment, body: "Last subcomment")
 
     visit comment_path(parent_comment)
 
     expect(page).to have_css(".comment", count: 3)
-    expect(page).to have_content parent_comment.body
-    expect(page).to have_content first_child.body
-    expect(page).to have_content second_child.body
+    expect(page).to have_content "Parent"
+    expect(page).to have_content "First subcomment"
+    expect(page).to have_content "Last subcomment"
 
     expect(page).to have_link "Go back to #{legislation_question.title}", href: href
 
-    expect(page).to have_selector("ul#comment_#{parent_comment.id}>li", count: 2)
-    expect(page).to have_selector("ul#comment_#{first_child.id}>li", count: 1)
-    expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
+    within ".comment", text: "Parent" do
+      expect(page).to have_selector(".comment", count: 2)
+    end
   end
 
   scenario "Link to comment show" do
@@ -69,20 +69,26 @@ describe "Commenting legislation questions" do
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (collapse)"
+    end
 
     expect(page).to have_css(".comment", count: 2)
     expect(page).to have_content("1 response (collapse)")
     expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
-    find("#comment_#{child_comment.id}_children_arrow").click
+    within ".comment .comment", text: "First subcomment" do
+      click_link text: "1 response (show)"
+    end
 
     expect(page).to have_css(".comment", count: 3)
     expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
-    find("#comment_#{parent_comment.id}_children_arrow").click
+    within ".comment", text: "Main comment" do
+      click_link text: "1 response (collapse)", match: :first
+    end
 
     expect(page).to have_css(".comment", count: 1)
     expect(page).to have_content("1 response (show)")
@@ -196,7 +202,7 @@ describe "Commenting legislation questions" do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "Have you thought about...?"
+    fill_in "Leave your answer", with: "Have you thought about...?"
     click_button "Publish answer"
 
     within "#comments" do
@@ -243,7 +249,7 @@ describe "Commenting legislation questions" do
     click_link "Reply"
 
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "It will be done next week."
+      fill_in "Leave your answer", with: "It will be done next week."
       click_button "Publish reply"
     end
 
@@ -342,7 +348,7 @@ describe "Commenting legislation questions" do
     login_as(user)
     visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-    fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "Testing submit button!"
+    fill_in "Leave your answer", with: "Testing submit button!"
     click_button "Publish answer"
 
     # The button's text should now be "..."
@@ -359,7 +365,7 @@ describe "Commenting legislation questions" do
       login_as(moderator.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am moderating!"
+      fill_in "Leave your answer", with: "I am moderating!"
       check "comment-as-moderator-legislation_question_#{legislation_question.id}"
       click_button "Publish answer"
 
@@ -383,7 +389,7 @@ describe "Commenting legislation questions" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "I am moderating!"
+        fill_in "Leave your answer", with: "I am moderating!"
         check "comment-as-moderator-comment_#{comment.id}"
         click_button "Publish reply"
       end
@@ -415,7 +421,7 @@ describe "Commenting legislation questions" do
       login_as(admin.user)
       visit legislation_process_question_path(legislation_question.process, legislation_question)
 
-      fill_in "comment-body-legislation_question_#{legislation_question.id}", with: "I am your Admin!"
+      fill_in "Leave your answer", with: "I am your Admin!"
       check "comment-as-administrator-legislation_question_#{legislation_question.id}"
       click_button "Publish answer"
 
@@ -439,7 +445,7 @@ describe "Commenting legislation questions" do
       click_link "Reply"
 
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+        fill_in "Leave your answer", with: "Top of the world!"
         check "comment-as-administrator-comment_#{comment.id}"
         click_button "Publish reply"
       end

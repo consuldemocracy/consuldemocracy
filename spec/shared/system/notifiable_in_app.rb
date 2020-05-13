@@ -30,7 +30,7 @@ shared_examples "notifiable in-app" do |factory_name|
       visit path_for(notifiable)
 
       fill_in comment_body(notifiable), with: "Number #{n + 1} is the best!"
-      click_button "publish_comment"
+      click_button submit_comment_text(notifiable)
       within "#comments" do
         expect(page).to have_content "Number #{n + 1} is the best!"
       end
@@ -53,7 +53,7 @@ shared_examples "notifiable in-app" do |factory_name|
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "I replied to your comment"
+      fill_in comment_body(notifiable), with: "I replied to your comment"
       click_button "Publish reply"
     end
 
@@ -79,7 +79,7 @@ shared_examples "notifiable in-app" do |factory_name|
 
       within("#comment_#{comment.id}_reply") { click_link "Reply" }
       within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Reply number #{n}"
+        fill_in comment_body(notifiable), with: "Reply number #{n}"
         click_button "Publish reply"
       end
 
@@ -102,7 +102,7 @@ shared_examples "notifiable in-app" do |factory_name|
     visit path_for(notifiable)
 
     fill_in comment_body(notifiable), with: "I commented on my own notifiable"
-    click_button "publish_comment"
+    click_button submit_comment_text(notifiable)
     within "#comments" do
       expect(page).to have_content "I commented on my own notifiable"
     end
@@ -121,7 +121,7 @@ shared_examples "notifiable in-app" do |factory_name|
 
     click_link "Reply"
     within "#js-comment-form-comment_#{comment.id}" do
-      fill_in "comment-body-comment_#{comment.id}", with: "I replied to my own comment"
+      fill_in comment_body(notifiable), with: "I replied to my own comment"
       click_button "Publish reply"
     end
 
