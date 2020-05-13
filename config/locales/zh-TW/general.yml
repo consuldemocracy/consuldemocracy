@@ -485,7 +485,6 @@ zh-TW:
     follow: "跟隨"
     following: "跟隨中"
     follow_entity: "跟隨%{entity}"
-    hide: 隱藏
     print:
       print_button: 打印此資訊
     search: 搜尋
