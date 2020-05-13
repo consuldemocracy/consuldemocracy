@@ -682,7 +682,6 @@ el:
     follow: "Ακολούθησε"
     following: "Ακολουθείτε"
     follow_entity: "Ακολούθησε %{entity}"
-    hide: Απόκρυψη
     print:
       print_button: Εκτύπωση αυτών των πληροφοριών
     search: Αναζήτηση
