@@ -500,7 +500,6 @@ val:
     follow: "Seguir"
     following: "Seguint"
     follow_entity: "Seguir %{entity}"
-    hide: Ocultar
     print:
       print_button: Imprimir esta informació
     search: Cercar
