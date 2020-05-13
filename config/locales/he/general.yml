@@ -722,7 +722,6 @@ he:
     follow: "עקוב"
     following: "עוקבים"
     follow_entity: "עקוב %{entity}"
-    hide: הסתר
     print:
       print_button: הדפסת מידע זה
     search: חיפוש
