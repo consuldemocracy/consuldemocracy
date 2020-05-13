@@ -69,6 +69,11 @@ RSpec.configure do |config|
     Delayed::Worker.delay_jobs = false
   end
 
+  config.before(:each, :remote_translations) do
+    allow(RemoteTranslations::Microsoft::AvailableLocales)
+      .to receive(:available_locales).and_return(I18n.available_locales.map(&:to_s))
+  end
+
   config.before(:each, :with_frozen_time) do
     travel_to Time.current # TODO: use `freeze_time` after migrating to Rails 5.2.
   end

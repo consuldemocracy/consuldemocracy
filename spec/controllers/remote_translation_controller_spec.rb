@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe RemoteTranslationsController do
+describe RemoteTranslationsController, :remote_translations do
   describe "POST create", :delay_jobs do
     let(:debate) { create(:debate) }
 
