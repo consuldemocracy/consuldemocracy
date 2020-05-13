@@ -501,7 +501,6 @@ nl:
     follow: "Volg"
     following: "Volgend"
     follow_entity: "Volg %{entity}"
-    hide: Hide
     print:
       print_button: Print this info
     search: Search
