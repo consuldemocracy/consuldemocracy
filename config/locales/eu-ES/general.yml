@@ -494,7 +494,6 @@ eu:
     follow: "Jarraitu"
     following: "Jarraitzen"
     follow_entity: "%{entity} jarraitu"
-    hide: Ezkutatu
     print:
       print_button: Informazio hau inprimitu
     search: Bilatu
