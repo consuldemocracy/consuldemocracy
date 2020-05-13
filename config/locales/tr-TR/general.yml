@@ -681,7 +681,6 @@ tr:
     follow: "Takip et"
     following: "Takip ediliyor"
     follow_entity: "Takip et %{entity}"
-    hide: Gizle
     print:
       print_button: Bu bilgiyi yazdır
     search: Ara
