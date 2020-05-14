@@ -72,9 +72,9 @@ ka:
       phase_not_open:
         not_open: ეს ფაზა არ არის ღია
       phase_empty:
-        empty: გამოქვეყნებული არაფერია
+        empty: ჯერ არაფერი გამოქვეყნებულა
       process:
-        see_latest_comments: უახლესი კომენტარის ნახვა
+        see_latest_comments: უახლესი კომენტარების ნახვა
         see_latest_comments_title: ამ პროცესის ირგვლივ გაკეთებული კომენტარები
       shared:
         key_dates: მონაწილეობის ფაზები
