@@ -2121,14 +2121,6 @@ table {
       padding-left: rem-calc(18);
     }
 
-    .far {
-      font-size: $small-font-size;
-      left: 0;
-      position: absolute;
-      text-decoration: none;
-      top: 2px;
-    }
-
     .divider {
       color: $text-light;
       display: inline-block;
@@ -2136,6 +2128,35 @@ table {
 
     form {
       margin-top: $line-height / 2;
+    }
+  }
+
+  .responses-count {
+    .far {
+      @extend .fa-minus-square;
+      font-size: $small-font-size;
+      left: 0;
+      position: absolute;
+      text-decoration: none;
+      top: 2px;
+    }
+
+    .show-children {
+      display: none;
+    }
+
+    &.collapsed {
+      .far {
+        @extend .fa-plus-square;
+      }
+
+      .collapse-children {
+        display: none;
+      }
+
+      .show-children {
+        display: inline;
+      }
     }
   }
 

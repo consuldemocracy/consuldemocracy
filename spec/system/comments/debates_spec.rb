@@ -91,8 +91,7 @@ describe "Commenting debates" do
   end
 
   scenario "can collapse comments after adding a reply", :js do
-    parent_comment = create(:comment, body: "Main comment", commentable: debate)
-    create(:comment, body: "First subcomment", commentable: debate, parent: parent_comment)
+    create(:comment, body: "Main comment", commentable: debate)
 
     login_as(user)
     visit debate_path(debate)
@@ -104,7 +103,7 @@ describe "Commenting debates" do
 
       expect(page).to have_content("It will be done next week.")
 
-      find(".fa-minus-square").click
+      click_link text: "1 response (collapse)"
 
       expect(page).not_to have_content("It will be done next week.")
     end

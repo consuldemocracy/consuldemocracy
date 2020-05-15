@@ -2,11 +2,8 @@
   "use strict";
   App.Comments = {
     add_comment: function(parent_selector, response_html) {
-      $(parent_selector + " .comment-list:first").prepend($(response_html));
-      var hidden_responses = $(parent_selector + " .comment-list:first").is(":hidden");
-      if (parent_selector && hidden_responses) {
-        $(parent_selector).find(".comment-list:first").toggle("slow");
-      }
+      $(parent_selector + " .comment-list:first").prepend($(response_html)).show("slow");
+      $(parent_selector + " .responses-count:first").removeClass("collapsed");
       this.update_comments_count();
     },
     update_comments_count: function() {
@@ -45,8 +42,7 @@
 
       $("body").on("click", ".js-toggle-children", function() {
         $(this).closest(".comment").find(".comment-list:first").toggle("slow");
-        $(this).children(".far").toggleClass("fa-minus-square fa-plus-square");
-        $(this).children(".js-child-toggle").toggle();
+        $(this).closest(".responses-count").toggleClass("collapsed");
         return false;
       });
     }
