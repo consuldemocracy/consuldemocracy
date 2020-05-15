@@ -19,18 +19,6 @@ Warden.test_mode!
 
 ActiveRecord::Migration.maintain_test_schema!
 
-# Monkey patch from https://github.com/rails/rails/pull/32293
-# Remove when we upgrade to Rails 5.2
-require "action_dispatch/system_testing/test_helpers/setup_and_teardown"
-module ActionDispatch::SystemTesting::TestHelpers::SetupAndTeardown
-  def after_teardown
-    take_failed_screenshot
-    Capybara.reset_sessions!
-  ensure
-    super
-  end
-end
-
 RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.after do
