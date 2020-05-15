@@ -469,6 +469,67 @@ describe "Budgets" do
         end
       end
     end
+
+    scenario "Show support info on selecting phase" do
+      budget = create(:budget)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+
+      voter = create(:user, :level_two)
+
+      %w[informing accepting reviewing valuating publishing_prices balloting reviewing_ballots
+        finished].each do |phase_name|
+        budget.update!(phase: phase_name)
+
+        visit budget_path(budget)
+
+        expect(page).not_to have_content "It's time to support projects!"
+        expect(page).not_to have_content "Support the projects you would like to see move on "\
+                                         "to the next phase."
+        expect(page).not_to have_content "Remember! You can only cast your support once for each project "\
+                                         "and each support is irreversible."
+        expect(page).not_to have_content "You may support on as many different projects as you would like."
+        expect(page).not_to have_content "So far you supported 0 projects."
+        expect(page).not_to have_content "Log in to start supporting projects."
+        expect(page).not_to have_content "There's still time until"
+        expect(page).not_to have_content "You can share the projects you have supported on through social "\
+                                         "media and attract more attention and support to them!"
+        expect(page).not_to have_link    "Keep scrolling to see all ideas"
+      end
+
+      budget.update!(phase: "selecting")
+      visit budget_path(budget)
+
+      expect(page).to have_content "It's time to support projects!"
+      expect(page).to have_content "Support the projects you would like to see move on "\
+                                   "to the next phase."
+      expect(page).to have_content "Remember! You can only cast your support once for each project "\
+                                   "and each support is irreversible."
+      expect(page).to have_content "You may support on as many different projects as you would like."
+      expect(page).to have_content "Log in to start supporting projects"
+      expect(page).to have_content "There's still time until"
+      expect(page).to have_content "You can share the projects you have supported on through social "\
+                                   "media and attract more attention and support to them!"
+      expect(page).to have_link    "Keep scrolling to see all ideas"
+
+      login_as(voter)
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you supported 0 projects."
+
+      create(:budget_investment, :selected, heading: heading, voters: [voter])
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you supported 1 project."
+
+      create_list(:budget_investment, 3, :selected, heading: heading, voters: [voter])
+
+      visit budget_path(budget)
+
+      expect(page).to have_content "So far you supported 4 projects."
+    end
   end
 
   context "In Drafting phase" do

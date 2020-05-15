@@ -59,6 +59,17 @@ es:
         title: Ayuda sobre presupuestos participativos
         description: Con los presupuestos participativos la ciudadanía decide a qué proyectos va destinada una parte del presupuesto.
       milestones: Seguimiento de proyectos
+      supports_info:
+        title: "¡Es hora de <strong>apoyar</strong> proyectos!"
+        next: "Apoya proyectos que te gustaría ver en la siguiente fase."
+        remember: "<strong>¡Recuerda!</strong> Solo puedes emitir tu apoyo <strong>una vez</strong> por cada proyecto y cada apoyo es <strong>irreversible</strong>."
+        different: "Puedes apoyar tantos proyectos diferentes como quieras."
+        supported: "Hasta ahora has apoyado <strong>%{count} proyectos</strong>."
+        supported_one: "Hasta ahora has apoyado <strong>1 proyecto</strong>."
+        supported_not_logged_in: "Entra y empieza a <strong>apoyar proyectos</strong>."
+        time: "Hay tiempo hasta el %{phase_end_date} para apoyar proyectos."
+        share: "Puedes compartir los proyectos que has apoyado en las redes sociales y ¡atraer más atención y apoyos para ellos!"
+        scrolling: "Sigue desplazándote para ver todas las ideas"
     investments:
       form:
         title: "Crear nuevo proyecto"

@@ -59,6 +59,17 @@ en:
         title: Help with participatory budgets
         description: With the participatory budgets the citizens decide to which projects is destined a part of the budget.
       milestones: Milestones
+      supports_info:
+        title: "It's time to <strong>support</strong> projects!"
+        next: "Support the projects you would like to see move on to the next phase."
+        remember: "<strong>Remember!</strong> You can only cast your support <strong>once</strong> for each project and each support is <strong>irreversible</strong>."
+        different: "You may support on as many different projects as you would like."
+        supported: "So far you supported <strong>%{count} projects</strong>."
+        supported_one: "So far you supported <strong>1 project</strong>."
+        supported_not_logged_in: "Log in to start <strong>supporting projects</strong>."
+        time: "There's still time until %{phase_end_date} to support projects."
+        share: "You can share the projects you have supported on through social media and attract more attention and support to them!"
+        scrolling: "Keep scrolling to see all ideas"
     investments:
       form:
         title: "Create a budget investment"

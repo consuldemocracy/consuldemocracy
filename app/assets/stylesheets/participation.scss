@@ -2112,6 +2112,55 @@
   }
 }
 
+.supports-info {
+
+  @include breakpoint(medium) {
+
+    h2 {
+      font-size: rem-calc(48);
+    }
+
+    h3 {
+      font-size: rem-calc(36);
+    }
+  }
+
+  h2,
+  h3 {
+    font-weight: normal;
+  }
+
+  .callout {
+    border: 6px solid #f4f4f4;
+    border-radius: rem-calc(12);
+    padding: $line-height;
+
+    @include breakpoint(medium) {
+      padding: $line-height * 2 0 $line-height;
+    }
+  }
+
+  .fa-thumbs-up {
+    color: $brand;
+    font-size: rem-calc(100);
+    padding: $line-height * 2 0;
+  }
+
+  .fa-angle-double-down {
+    font-size: rem-calc(24);
+  }
+
+  a {
+
+    &.keep-scrolling {
+      color: $brand;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
 // 07. Proposals successful
 // -------------------------
 
