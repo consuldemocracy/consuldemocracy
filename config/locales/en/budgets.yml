@@ -182,6 +182,18 @@ en:
       title: "List of investments"
     show:
       see_results: See results
+    supports_info:
+      different: "You may support on as many different projects as you would like."
+      next: "Support the projects you would like to see move on to the next phase."
+      remember: "<strong>Remember!</strong> You can only cast your support <strong>once</strong> for each project and each support is <strong>irreversible</strong>."
+      scrolling: "Keep scrolling to see all ideas"
+      share: "You can share the projects you have supported on through social media and attract more attention and support to them!"
+      supported:
+        one: "So far you've supported <strong>1 project</strong>."
+        other: "So far you've supported <strong>%{count} projects</strong>."
+      supported_not_logged_in: "Log in to start <strong>supporting projects</strong>."
+      time: "There's still time until %{phase_end_date} to support projects."
+      title: "It's time to <strong>support</strong> projects!"
     results:
       link: Results
       page_title: "%{budget} - Results"

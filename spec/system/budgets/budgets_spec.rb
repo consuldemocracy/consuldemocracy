@@ -417,6 +417,21 @@ describe "Budgets" do
         expect(page).not_to have_css ".investments-list"
       end
     end
+
+    scenario "Show supports info on selecting phase" do
+      budget = create(:budget, :selecting)
+      group = create(:budget_group, budget: budget)
+      heading = create(:budget_heading, group: group)
+      voter = create(:user, :level_two)
+
+      create_list(:budget_investment, 3, :selected, heading: heading, voters: [voter])
+
+      login_as(voter)
+      visit budget_path(budget)
+
+      expect(page).to have_content "It's time to support projects!"
+      expect(page).to have_content "So far you've supported 3 projects."
+    end
   end
 
   context "In Drafting phase" do
