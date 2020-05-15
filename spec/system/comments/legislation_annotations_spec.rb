@@ -297,6 +297,27 @@ describe "Commenting legislation questions" do
     end
   end
 
+  scenario "Reply show parent comments responses when hidden", :js do
+    manuela = create(:user, :level_two, username: "Manuela")
+    legislation_annotation = create(:legislation_annotation)
+    comment = legislation_annotation.comments.first
+    create(:comment, commentable: legislation_annotation, parent: comment)
+
+    login_as(manuela)
+    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
+                                                            legislation_annotation.draft_version,
+                                                            legislation_annotation)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
+  end
+
   scenario "Errors on reply", :js do
     comment = legislation_annotation.comments.first
 

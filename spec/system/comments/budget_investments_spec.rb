@@ -257,6 +257,23 @@ describe "Commenting Budget::Investments" do
     end
   end
 
+  scenario "Reply show parent comments responses when hidden", :js do
+    comment = create(:comment, commentable: investment)
+    create(:comment, commentable: investment, parent: comment)
+
+    login_as(create(:user))
+    visit budget_investment_path(investment.budget, investment)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
+  end
+
   scenario "Errors on reply", :js do
     comment = create(:comment, commentable: investment, user: user)
 

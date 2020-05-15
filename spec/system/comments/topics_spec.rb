@@ -281,6 +281,25 @@ describe "Commenting topics from proposals" do
     end
   end
 
+  scenario "Reply show parent comments responses when hidden", :js do
+    community = proposal.community
+    topic = create(:topic, community: community)
+    comment = create(:comment, commentable: topic)
+    create(:comment, commentable: topic, parent: comment)
+
+    login_as(create(:user))
+    visit community_topic_path(community, topic)
+
+    within ".comment", text: comment.body do
+      click_link text: "1 response (collapse)"
+      click_link "Reply"
+      fill_in "Leave your comment", with: "It will be done next week."
+      click_button "Publish reply"
+
+      expect(page).to have_content("It will be done next week.")
+    end
+  end
+
   scenario "Errors on reply", :js do
     community = proposal.community
     topic = create(:topic, community: community)

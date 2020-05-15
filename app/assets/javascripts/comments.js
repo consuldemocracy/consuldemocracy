@@ -3,6 +3,10 @@
   App.Comments = {
     add_comment: function(parent_selector, response_html) {
       $(parent_selector + " .comment-list:first").prepend($(response_html));
+      var hidden_responses = $(parent_selector + " .comment-list:first").is(":hidden");
+      if (parent_selector && hidden_responses) {
+        $(parent_selector).find(".comment-list:first").toggle("slow");
+      }
       this.update_comments_count();
     },
     update_comments_count: function() {

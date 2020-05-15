@@ -231,6 +231,23 @@ describe "Internal valuation comments on Budget::Investments" do
       end
     end
 
+    scenario "Reply show parent comments responses when hidden", :js do
+      comment = create(:comment, :valuation, author: admin_user, commentable: investment)
+      create(:comment, :valuation, author: admin_user, commentable: investment, parent: comment)
+
+      login_as(valuator_user)
+      visit valuation_budget_budget_investment_path(budget, investment)
+
+      within ".comment", text: comment.body do
+        click_link text: "1 response (collapse)"
+        click_link "Reply"
+        fill_in "Leave your comment", with: "It will be done next week."
+        click_button "Publish reply"
+
+        expect(page).to have_content("It will be done next week.")
+      end
+    end
+
     scenario "Errors on reply without comment text", :js do
       comment = create(:comment, :valuation, author: admin_user, commentable: investment)
 
