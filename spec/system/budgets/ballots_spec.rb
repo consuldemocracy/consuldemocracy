@@ -131,7 +131,7 @@ describe "Ballots" do
         within("#sidebar") do
           expect(page).to have_content "Bring back King Kong"
           expect(page).to have_content "€10,000"
-          expect(page).to have_link("Check and confirm my ballot")
+          expect(page).to have_link "Submit my ballot"
         end
 
         add_to_ballot("Paint cabs black")
@@ -142,7 +142,7 @@ describe "Ballots" do
         within("#sidebar") do
           expect(page).to have_content "Paint cabs black"
           expect(page).to have_content "€20,000"
-          expect(page).to have_link("Check and confirm my ballot")
+          expect(page).to have_link "Submit my ballot"
         end
       end
 
@@ -158,7 +158,7 @@ describe "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment.title
           expect(page).to have_content "€10,000"
-          expect(page).to have_link("Check and confirm my ballot")
+          expect(page).to have_link "Submit my ballot"
         end
 
         within("#budget_investment_#{investment.id}") do
@@ -171,7 +171,7 @@ describe "Ballots" do
         within("#sidebar") do
           expect(page).not_to have_content investment.title
           expect(page).not_to have_content "€10,000"
-          expect(page).to have_link("Check and confirm my ballot")
+          expect(page).to have_link "Submit my ballot"
         end
       end
 
@@ -431,7 +431,7 @@ describe "Ballots" do
       add_to_ballot("Sully monument")
 
       within(".budget-heading") do
-        click_link "Check and confirm my ballot"
+        click_link "Submit my ballot"
       end
 
       expect(page).to have_content("You have voted one investment")
@@ -452,7 +452,7 @@ describe "Ballots" do
       visit budget_investments_path(budget, heading_id: new_york.id)
 
       within(".budget-heading") do
-        click_link "Check and confirm my ballot"
+        click_link "Submit my ballot"
       end
 
       expect(page).to have_content("You have voted 0 investments")
