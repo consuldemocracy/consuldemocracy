@@ -202,6 +202,30 @@
   }
 }
 
+.supported {
+
+  .button {
+
+    &.button-remove-support {
+      background: #e7eaec;
+      color: $brand;
+      font-weight: bold;
+      margin-top: $line-height;
+      padding-left: rem-calc(30);
+      position: relative;
+
+      &::before {
+        content: "\f00d";
+        font-family: "Font Awesome 5 Free";
+        font-size: $base-font-size;
+        left: 30px;
+        position: absolute;
+        top: 14px;
+      }
+    }
+  }
+}
+
 .supports-container {
   border-top: 1px solid $border;
 
@@ -1011,6 +1035,8 @@
     .button-support {
       background: $budget;
       color: #fff;
+      font-size: $base-font-size;
+      font-weight: bold;
 
       &:hover {
         background: $budget-hover;
@@ -1440,12 +1466,26 @@
 
   &.budget-heading {
     min-height: $line-height * 10;
+
+    .button {
+      min-width: rem-calc(240);
+      position: relative;
+
+      &::after {
+        content: "\f054";
+        font-family: "Font Awesome 5 Free";
+        font-weight: bold;
+        position: absolute;
+        right: 24px;
+      }
+    }
   }
 
   h2 {
     margin-bottom: 0;
   }
 
+  h1,
   h2,
   h3,
   .back,
@@ -1798,12 +1838,19 @@
 
   .progress {
     background: #212033;
+    border-radius: rem-calc(12);
     clear: both;
+  }
+
+  .progress-bar-indicator {
+    overflow: hidden;
   }
 
   .progress-meter {
     background: #fdcb10;
-    border-radius: 0;
+    border-radius: rem-calc(12);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     transition: width 2s;
   }
 
@@ -1837,12 +1884,17 @@
     color: #fff;
     font-size: rem-calc(18);
     font-weight: bold;
-    float: right;
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+      float: right;
+    }
   }
 
   .amount-available {
     display: block;
     text-align: right;
+    text-transform: uppercase;
 
     span {
       font-size: rem-calc(24);
@@ -1898,12 +1950,19 @@
   }
 }
 
+.my-ballot {
+  float: left;
+  font-size: rem-calc(40);
+  margin-right: 12px;
+}
+
 .ballot-list {
   list-style: none;
   margin-left: 0;
 
   li {
-    background: #f9f9f9;
+    background: #f1f1f1;
+    border-radius: rem-calc(12);
     line-height: $line-height;
     margin-bottom: $line-height / 4;
     padding: $line-height $line-height / 2;
@@ -1913,27 +1972,32 @@
       color: $text;
     }
 
-    span {
+    .ballot-list-title {
       display: block;
-      font-style: italic;
+      max-width: 90%;
+    }
+
+    .ballot-list-price {
+      color: $budget;
+      display: block;
+      font-weight: bold;
+      margin-top: $line-height;
+      text-align: right;
     }
 
     .remove-investment-project {
       display: block;
       height: 0;
 
-      .icon-x {
-        color: #9f9f9f;
-        font-size: rem-calc(24);
+      .fa-times {
+        color: $text;
+        font-size: rem-calc(20);
+        font-weight: bold;
         line-height: $line-height / 2;
         position: absolute;
-        right: 6px;
+        right: 12px;
         text-decoration: none;
-        top: 6px;
-
-        @include breakpoint(medium) {
-          font-size: $base-font-size;
-        }
+        top: 12px;
       }
     }
 
@@ -1948,10 +2012,18 @@
         text-decoration: none;
       }
 
-      .remove-investment-project .icon-x {
+      .remove-investment-project .fa-times {
         color: #fff;
       }
     }
+  }
+}
+
+.progress-bar-nav {
+
+  h2 {
+    margin-bottom: $line-height * 2;
+    margin-top: $line-height;
   }
 }
 
@@ -1965,6 +2037,7 @@
 
     h2 {
       margin-bottom: $line-height / 2;
+      margin-top: 0;
       transition: font-size 0.3s;
     }
 

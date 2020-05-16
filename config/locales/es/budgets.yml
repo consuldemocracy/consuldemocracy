@@ -95,10 +95,10 @@ es:
         sidebar:
           my_ballot: Mis votos
           voted:
-            one: "<strong>Has votado un proyecto por un valor de %{amount_spent}</strong>"
-            other: "<strong>Has votado %{count} proyectos por un valor de %{amount_spent}</strong>"
-          voted_info: Puedes %{link} en cualquier momento hasta el cierre de esta fase. No hace falta que gastes todo el dinero disponible.
-          voted_info_link: cambiar tus votos
+            one: "Has votado <strong>un proyecto</strong> por un valor de %{amount_spent}</strong>"
+            other: "Has votado <strong>%{count} proyectos</strong> por un valor de %{amount_spent}</strong>"
+          voted_info: "<strong>%{link}</strong> en cualquier momento hasta el %{phase_end_date}. No hace falta que gastes todo el dinero disponible."
+          voted_info_link: "Cambia tus votos"
           different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
           change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
           check_ballot_link: "revisar y confirmar mis votos"
@@ -165,10 +165,10 @@ es:
         different_heading_assigned: "Ya apoyaste proyectos de otra sección del presupuesto: %{heading_link}"
         change_ballot: "Si cambias de opinión puedes borrar tus votos en %{check_ballot} y volver a empezar."
         check_ballot_link: "revisar y confirmar mis votos"
-        price: "Esta partida tiene un presupuesto de"
+        price: "Presupuesto total"
     progress_bar:
-      assigned: "Has asignado: "
-      available: "Presupuesto disponible: "
+      assigned: "Usado"
+      available: "Todavía disponible"
     show:
       phase: Fase actual
       see_results: Ver resultados
