@@ -59,8 +59,6 @@ Run the app locally:
 bin/rails s
 ```
 
-Prerequisites for testing: install ChromeDriver >= 2.33
-
 Run the tests with:
 
 ```bash
