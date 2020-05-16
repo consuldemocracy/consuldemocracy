@@ -86,6 +86,7 @@ group :test do
   gem "email_spec", "~> 2.2.0"
   gem "rspec-rails", "~> 3.8"
   gem "selenium-webdriver", "~> 3.141"
+  gem "webdrivers", "~> 4.3.0"
 end
 
 group :development do
