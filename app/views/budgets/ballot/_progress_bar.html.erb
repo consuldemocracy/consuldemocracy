@@ -9,6 +9,6 @@
   </div>
 </div>
 
-<p id="amount-spent" class="spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
+<p id="amount_spent" class="spent-amount-text" style="width: <%= ballot.percentage_spent(heading) %>%">
   <%= render "budgets/ballot/progress_bar/#{ballot.budget.voting_style}", ballot: ballot, heading: heading %>
 </p>
