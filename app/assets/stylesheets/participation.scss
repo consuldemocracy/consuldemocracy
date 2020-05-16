@@ -812,6 +812,8 @@
     .button-support {
       background: $budget;
       color: #fff;
+      font-size: $base-font-size;
+      font-weight: bold;
 
       &:hover {
         background: $budget-hover;
@@ -1168,12 +1170,24 @@
 
   &.budget-heading {
     min-height: $line-height * 10;
+
+    .check-ballot {
+      @include has-fa-icon(chevron-right, solid, after);
+      float: right;
+      min-width: rem-calc(240);
+
+      &::after {
+        margin-left: $line-height / 4;
+        margin-right: 0;
+      }
+    }
   }
 
   h2 {
     margin-bottom: 0;
   }
 
+  h1,
   h2,
   h3,
   .back,
@@ -1218,18 +1232,43 @@
 
   .progress {
     background: #212033;
+    border-radius: rem-calc(12);
     clear: both;
     margin-bottom: 0;
+    overflow: hidden;
   }
 
   .progress-meter {
     background: #fdcb10;
-    border-radius: 0;
+    border-radius: rem-calc(12);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     transition: width 2s;
   }
 
-  .spent-amount-text {
+  .total-amount,
+  .amount-available {
+    font-weight: bold;
     margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .total-amount {
+    font-size: $tiny-font-size;
+
+    @include breakpoint(medium) {
+      text-align: right;
+    }
+
+    span {
+      font-size: $base-font-size;
+    }
+  }
+
+  .amount-available {
+    display: block;
+    font-size: $small-font-size;
+    margin-top: $line-height / 8;
     position: relative;
     text-align: right;
     white-space: nowrap;
@@ -1242,22 +1281,11 @@
       line-height: 0;
       position: absolute;
       right: -0.5em;
+      top: -$line-height / 8;
     }
-  }
-
-  .total-amount {
-    color: #fff;
-    font-size: rem-calc(18);
-    font-weight: bold;
-    float: right;
-  }
-
-  .amount-available {
-    display: block;
 
     span {
       font-size: rem-calc(24);
-      font-weight: bold;
     }
   }
 }
@@ -1350,11 +1378,6 @@
     background-color: $budget;
     transition: height 0.3s;
 
-    h2 {
-      margin-bottom: $line-height / 2;
-      transition: font-size 0.3s;
-    }
-
     &.is-fixed {
       height: auto;
       left: 0;
@@ -1368,6 +1391,14 @@
         font-size: rem-calc(24);
         transition: font-size 0.3s;
       }
+    }
+  }
+
+  h2 {
+    transition: font-size 0.3s;
+
+    @include breakpoint(small only) {
+      margin: $line-height 0;
     }
   }
 }

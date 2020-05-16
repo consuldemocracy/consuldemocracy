@@ -1,0 +1,17 @@
+.my-ballot {
+  border-top: 1px solid $border;
+
+  h2 + * {
+    @include has-fa-icon(vote-yea, solid);
+
+    &::before {
+      float: left;
+      font-size: rem-calc(50);
+      margin-right: rem-calc(10);
+    }
+
+    + * {
+      clear: both;
+    }
+  }
+}

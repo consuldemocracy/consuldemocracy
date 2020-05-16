@@ -19,6 +19,10 @@ class Budgets::Ballot::InvestmentComponent < ApplicationComponent
       link_to investment.title, budget_investment_path(budget, investment)
     end
 
+    def investment_price
+      tag.span investment.formatted_price, class: "ballot-list-price"
+    end
+
     def delete_path
       budget_ballot_line_path(budget, id: investment.id)
     end

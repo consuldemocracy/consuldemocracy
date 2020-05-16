@@ -14,7 +14,7 @@ class Budgets::Ballot::InvestmentForSidebarComponent < Budgets::Ballot::Investme
     end
 
     def investment_title
-      investment.title
+      tag.span investment.title, class: "ballot-list-title"
     end
 
     def delete_path
