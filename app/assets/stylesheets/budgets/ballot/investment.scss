@@ -14,22 +14,15 @@
     font-style: italic;
   }
 
-  .remove-investment-project {
-    display: block;
-    height: 0;
+  .remove-budget-investment {
+    @include has-fa-icon(times, solid);
+    font-size: rem-calc(20);
+    position: absolute;
+    right: rem-calc(6);
+    top: rem-calc(6);
 
-    .icon-x {
-      color: #9f9f9f;
-      font-size: rem-calc(24);
-      line-height: $line-height / 2;
-      position: absolute;
-      right: 6px;
-      text-decoration: none;
-      top: 6px;
-
-      @include breakpoint(medium) {
-        font-size: $base-font-size;
-      }
+    &::before {
+      margin-right: 0;
     }
   }
 
@@ -42,10 +35,6 @@
       color: #fff;
       outline: 0;
       text-decoration: none;
-    }
-
-    .remove-investment-project .icon-x {
-      color: #fff;
     }
   }
 }

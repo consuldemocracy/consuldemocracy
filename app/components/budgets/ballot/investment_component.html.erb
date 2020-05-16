@@ -5,11 +5,10 @@
   <% if budget.balloting? %>
     <%= link_to delete_path,
                 title: t("budgets.ballots.show.remove"),
-                class: "remove-investment-project",
+                class: "remove-budget-investment",
                 method: :delete,
                 remote: true do %>
       <span class="show-for-sr"><%= t("budgets.ballots.show.remove") %></span>
-      <span class="icon-x"></span>
     <% end %>
   <% end %>
 </li>
