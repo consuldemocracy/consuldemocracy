@@ -79,7 +79,7 @@ module ActsAsTaggableOn
     private
 
       def custom_counter_field_name_for(taggable_type)
-        "#{taggable_type.underscore.pluralize}_count"
+        "#{taggable_type.tableize.tr("/", "_")}_count"
       end
   end
 end
