@@ -60,7 +60,6 @@ module Consul
 
     config.after_initialize do
       Globalize.set_fallbacks_to_all_available_locales
-      GraphQLApi::Loader.setup
     end
 
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
