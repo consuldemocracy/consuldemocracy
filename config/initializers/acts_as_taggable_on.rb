@@ -37,7 +37,7 @@ module ActsAsTaggableOn
     scope :public_for_api, -> do
       where("(tags.kind IS NULL or tags.kind = ?) and tags.id in (?)",
             "category",
-            Tagging.public_for_api.pluck("DISTINCT taggings.tag_id"))
+            Tagging.public_for_api.distinct.pluck("taggings.tag_id"))
     end
 
     include PgSearch
