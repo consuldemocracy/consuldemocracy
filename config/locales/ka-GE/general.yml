@@ -240,7 +240,7 @@ ka:
       officing: გამოკითხვის ოფიცრები
       help: დახმარება
       my_account_link: ჩემი ანგარიში
-      my_activity_link: ჩემო კონტენტი
+      my_activity_link: ჩემი კონტენტი
       open: გახსნა
       open_gov: ღია მმართველობა
       proposals: ინიციატივები
@@ -907,7 +907,7 @@ ka:
       user_permission_info: თქვენი ანგარიშით თქვენ შეგიძლიათ...
       user_permission_proposal: ახალი ინიციატივების შექმნა
       user_permission_support_proposal: ინიციატივებზე ხმის მიცემა*
-      user_permission_verify: "ამ ფუნქციებით სარგებლობისთვის, გაიარეთ ანგარიშის ვერიფიკაცია."
+      user_permission_verify: "ამ ფუნქციებით სარგებლობისათვის, დაადასტურეთ თქვენი ანგარიში."
       user_permission_verify_info: "* მხოლოდ აღწერაში მონაწილე მომხმარებლებისთვის."
       user_permission_verify_my_account: ჩემი ანგარიშის დადასტურება
       user_permission_votes: საბოლოო კენჭისყრაში მონაწილეობა
