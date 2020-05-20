@@ -16,4 +16,4 @@ ka:
     errors:
       messages:
         in_between: უნდა მერყეობდეს %{min} და %{max}-ის შორის
-        wrong_content_type: 'ნებადართულია შემდეგი ტიპები: %{accepted_content_types}, თქვენ ფაილის ტიპია %{content_type}'
+        wrong_content_type: 'ნებადართულია შემდეგი ტიპები: %{accepted_content_types}, თქვენი ფაილის ტიპია %{content_type}'
