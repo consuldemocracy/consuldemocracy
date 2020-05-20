@@ -258,7 +258,7 @@ ka:
     index:
       empty_notifications: თქვენ არ გაქვთ შეტყობინება.
       mark_all_as_read: მოვნიშნოთ ყველა, როგორც წაკითხული
-      read: წაკითხვა
+      read: წაკითხული
       title: შეტყობინებები
       unread: წასაკითხი
     notification:
