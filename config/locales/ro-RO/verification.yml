@@ -17,6 +17,9 @@ ro:
     letter:
       alert:
         unconfirmed_code: Nu ați introdus codul de verificare încă
+      create:
+        flash:
+          success: Vă mulțumim că ați solicitat <b> codul dvs. de securitate maximă (necesar doar pentru voturile finale) </b>. În câteva zile, îl vom trimite la adresa indicată în datele pe care le avem în fișier. Vă rugăm să rețineți că, dacă doriți, puteți colecta codul dvs. de la oricare dintre Birourile de asistență pentru cetățeni.
       edit:
         see_all: Vezi propuneri
         title: Scrisoare solicitată
@@ -25,6 +28,7 @@ ro:
       new:
         explanation: "Pentru a putea participa la votul final puteți:"
         go_to_index: Vezi propuneri
+        office: Verificați în orice birou de asistență pentru cetățeni
         send_letter: Trimite-mi o scrisoare cu codul
         title: Felicitări!
         user_permission_info: Cu contul dumneavoastră puteți...
@@ -44,7 +48,19 @@ ro:
         accept_terms_text_title: Accept termenii și condițiile de acces al Recensământ-ului
         document_number: Numărul documentului
         document_number_help_title: Ajutor
+        document_type:
+          passport: Pașaport
+        error_not_allowed_age: Nu aveți vârsta necesară pentru a participa
+        error_not_allowed_postal_code: Pentru a putea fi verificat, trebuie să aveți cont.
+        form_errors: a împiedicat verificarea reședinței dumneavoastră
+        postal_code_note: Pentru a vă verifica contul trebuie să vă înregistrați
+        terms: termenii și condițiile de acces
+        title: Verificați reședința
+        verify_residence: Verificați reședința
     sms:
+      create:
+        flash:
+          success: Introduceți codul de confirmare primit prin mesaj
       update:
         flash:
           level_two:
