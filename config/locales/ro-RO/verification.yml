@@ -1,1 +1,4 @@
 ro:
+  verification:
+    alert:
+      lock: Ai atins numărul maxim de încercări. Vă rugăm încercați mai târziu.
