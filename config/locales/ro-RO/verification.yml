@@ -40,6 +40,10 @@ ro:
       create:
         flash:
           success: Adresă verificată
+      new:
+        accept_terms_text_title: Accept termenii și condițiile de acces al Recensământ-ului
+        document_number: Numărul documentului
+        document_number_help_title: Ajutor
     sms:
       update:
         flash:
