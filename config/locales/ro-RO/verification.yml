@@ -1,4 +1,45 @@
 ro:
   verification:
     alert:
-      lock: Ai atins numărul maxim de încercări. Vă rugăm încercați mai târziu.
+      lock: Ați atins numărul maxim de încercări. Vă rugăm încercați mai târziu.
+    back: Înapoi în contul meu
+    email:
+      create:
+        alert:
+          failure: A fost o problemă la trimiterea unui email pe contul dumneavoastră
+        flash:
+          success: "A fost trimis un email de confirmare pe contul dumneavoastră: %{email}"
+      show:
+        alert:
+          failure: Codul de verificare este incorect
+        flash:
+          success: Sunteți un utilizator verificat
+    letter:
+      alert:
+        unconfirmed_code: Nu ați introdus codul de verificare încă
+      edit:
+        see_all: Vezi propuneri
+        title: Scrisoare solicitată
+      errors:
+        incorrect_code: Cod de verificare incorect
+      new:
+        explanation: "Pentru a putea participa la votul final puteți:"
+        go_to_index: Vezi propuneri
+        title: Felicitări!
+    sms:
+      update:
+        flash:
+          level_two:
+            success: Cod corect
+    step_1: Reședință
+    step_2: Cod de confirmare
+    step_3: Verificare finală
+    user_permission_proposal: Crează noi propuneri
+    verified_user:
+      form:
+        submit_button: Trimite codul
+      show:
+        email_title: Email-uri
+        phone_title: Numere de telefon
+        title: Informații disponibile
+        use_another_phone: Folosiți alt telefon
