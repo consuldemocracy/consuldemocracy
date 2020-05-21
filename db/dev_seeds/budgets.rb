@@ -147,7 +147,7 @@ end
 
 section "Marking investments as visible to valuators" do
   (1..50).to_a.sample.times do
-    Budget::Investment.reorder("RANDOM()").first.update(visible_to_valuators: true)
+    Budget::Investment.sample.update(visible_to_valuators: true)
   end
 end
 
