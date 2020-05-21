@@ -496,13 +496,13 @@ ka:
         index:
           create: ახალი პროცესი
           delete: წაშლა
-          title: ერთობლივი საკანონმდებლო ინიციატივა
+          title: ერთობლივი სამოქალაქო ინიციატივა
           filters:
             active: აქტიური
             all: ყველა
         new:
           back: უკან
-          title: ახალი ერთობლივი საკანონმდებლო ინიციატივის პროცესის შექმნა
+          title: ახალი ერთობლივი სამოქალაქო ინიციატივის პროცესის შექმნა
           submit_button: პროცესის შექმნა
         proposals:
           select_order: დალაგება
@@ -687,7 +687,7 @@ ka:
       title_settings: პარამეტრები
       title_site_customization: საიტის შინაარსი
       title_booths: ხმის მიცემის კაბინები
-      legislation: ერთობლივი საკანონმდებლო ინიციატივა
+      legislation: ერთობლივი სამოქალაქო ინიციატივა
       users: მომხმარებლები
       dashboard: ინიციატივათა მართვის დაფა
       administrator_tasks: მოთხოვნილი რესურსები
