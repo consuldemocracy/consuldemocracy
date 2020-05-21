@@ -18,3 +18,8 @@ ro:
         one: "Etichetă"
         few: "Etichete"
         other: "Utilizatori"
+    attributes:
+      budget:
+        name: "Nume"
+      budget/translation:
+        name: "Nume"
