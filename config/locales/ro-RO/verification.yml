@@ -25,7 +25,21 @@ ro:
       new:
         explanation: "Pentru a putea participa la votul final puteți:"
         go_to_index: Vezi propuneri
+        send_letter: Trimite-mi o scrisoare cu codul
         title: Felicitări!
+        user_permission_info: Cu contul dumneavoastră puteți...
+      update:
+        flash:
+          success: Cod corect. Contul dumneavoastră este acum verificat
+    redirect_notices:
+      already_verified: Contul dumneavoastră este deja verificat
+      email_already_sent: V-am trimis deja un e-mail cu un link de confirmare. Dacă nu puteți localiza e-mailul, puteți solicita din nou aici
+    residence:
+      alert:
+        unconfirmed_residency: Nu v-ați confirmat încă adresa de reședintă
+      create:
+        flash:
+          success: Adresă verificată
     sms:
       update:
         flash:
