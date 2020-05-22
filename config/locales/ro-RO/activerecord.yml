@@ -10,6 +10,18 @@ ro:
         one: "activitate"
         few: "activități"
         other: "%{count} activități"
+      budget:
+        one: "Buget"
+        few: "Bugete"
+        other: "%{count} Bugete"
+      budget/investment:
+        one: "Investiție"
+        few: "Investiții"
+        other: "%{count} Investiții"
+      milestone:
+        one: "reper"
+        few: "repere"
+        other: "%{count} repere"
       comment:
         one: "Comentariu"
         few: "Comentarii"
@@ -18,10 +30,34 @@ ro:
         one: "Dezbatere"
         few: "Dezbateri"
         other: "Dezbateri"
+      tag:
+        one: "Etichetă"
+        few: "Etichete"
+        other: "%{count} Etichete"
       user:
         one: "Etichetă"
         few: "Etichete"
         other: "Utilizatori"
+      administrator:
+        one: "Administrator"
+        few: "Administratori"
+        other: "Administratori"
+      manager:
+        one: "Administrator"
+        few: "Administratori"
+        other: "%{count} administratori"
+      vote:
+        one: "Vot"
+        few: "Voturi"
+        other: "%{count} voturi"
+      document:
+        one: Document
+        few: Documente
+        other: '%{count} documente'
+      legislation/proposal:
+        one: "Propunere"
+        few: "Propuneri"
+        other: "%{count} propuneri"
       legislation/questions:
         one: "Întrebare"
         few: "Întrebări"
@@ -43,3 +79,6 @@ ro:
         name: "Nume"
       budget/translation:
         name: "Nume"
+      widget/card:
+        title: Titlu
+        description: Descriere
