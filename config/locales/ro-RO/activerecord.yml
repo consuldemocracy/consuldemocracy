@@ -6,6 +6,10 @@ ro:
     advanced_stats_enabled: "Statistici avansate"
   activerecord:
     models:
+      activity:
+        one: "activitate"
+        few: "activități"
+        other: "%{count} activități"
       comment:
         one: "Comentariu"
         few: "Comentarii"
@@ -18,6 +22,22 @@ ro:
         one: "Etichetă"
         few: "Etichete"
         other: "Utilizatori"
+      legislation/questions:
+        one: "Întrebare"
+        few: "Întrebări"
+        other: "%{count} intrebări"
+      legislation/answers:
+        one: "Răspuns"
+        few: "Răspunsuri"
+        other: "%{count} răspunsuri"
+      documents:
+        one: "Document"
+        few: "Documente"
+        other: "%{count} documente"
+      images:
+        one: "Imagine"
+        few: "Imagini"
+        other: "%{count} imagini"
     attributes:
       budget:
         name: "Nume"
