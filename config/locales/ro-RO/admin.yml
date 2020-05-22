@@ -138,6 +138,12 @@ ro:
           valuation_group: Grup de evaluare
           feasibility: Fezabilitate
           selected: Selectat
+    milestones:
+      index:
+        table_title: "Titlu"
+        table_description: "Descriere"
+        table_publication_date: "Data publicării"
+        table_status: Status
     site_customization:
       images:
         index:
