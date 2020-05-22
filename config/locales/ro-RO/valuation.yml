@@ -25,6 +25,7 @@ ro:
           valuation_finished: Evaluare terminată
         assigned_to: "Atribuit %{valuator}"
         title: Proiecte de investiție
+        edit: Editează dosar
         table_id: ID
         table_title: Titlu
         table_actions: Acțiuni
