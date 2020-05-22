@@ -120,6 +120,9 @@ ro:
         buttons:
           filter: Filtru
         download_current_selection: "Descarcă selecția curentă"
+        no_budget_investments: "Nu există proiecte de investiție."
+        title: Proiecte de investiție
+        columns: Coloane
     site_customization:
       images:
         index:
