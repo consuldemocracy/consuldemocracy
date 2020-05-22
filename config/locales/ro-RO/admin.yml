@@ -51,6 +51,7 @@ ro:
       index:
         title: Bugetele participative
         new_link: Crează buget nou
+        filter: Filtru
         filters:
           open: Deschide
           finished: Terminat
@@ -192,6 +193,71 @@ ro:
             email: Email
         form:
           submit_button: Salvează
+      administrator_tasks:
+        index:
+          filter: Filtru
+          filters:
+            pending: În așteptare
+            done: Rezolvat
+        form:
+          solve: Marchează ca rezolvat
+          proposal: Propunere
+    debates:
+      index:
+        author: Autor
+        title: Dezbateri
+        no_debates: Nu există dezbateri.
+    hidden_debates:
+      index:
+        filter: Filtru
+        filters:
+          all: Toate
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        title: Dezbateri ascunse
+        no_hidden_debates: Nu există dezbateri ascunse.
+    documents:
+      new:
+        title: "Încarcă un document"
+        submit_button: "Încărcare"
+      index:
+        new_link: "Adaugă document nou"
+        no_documents: "Nu există documente."
+        title: "Documente"
+        format: "Format"
+        size: "Dimensiune"
+        url: "URL"
+      create:
+        success_notice: "Document încărcat cu succes"
+        unable_notice: "Document invlid"
+    legislation:
+      processes:
+        index:
+          create: Proces nou
+          delete: Șterge
+          filters:
+            active: Activ
+            all: Toate
+        new:
+          back: Înapoi
+          submit_button: Crează proces
+        proposals:
+          select_order: Sortează după
+          orders:
+            title: Titlu
+        process:
+          comments: Comentarii
+          status: Status
+          status_open: Deschide
+          status_closed: Închis
+          status_planned: Planificat
+        subnav:
+          homepage: Pagina principală
+          questions: Dezbate
+          proposals: Propuneri
+      proposals:
+        form:
+          custom_categories: Categorii
     site_customization:
       images:
         index:
