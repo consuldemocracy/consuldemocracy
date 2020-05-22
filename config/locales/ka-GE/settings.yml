@@ -27,7 +27,7 @@ ka:
     months_to_archive_proposals: "ინიციატივათა დასაარქივებლად საჭირო თვეების რაოდენობა"
     months_to_archive_proposals_description: "ამის შემდეგ მოხდება ინიციატივის დაარქივება და შესაბამისად შეწყდება ხმის მიცემის პროცესი"
     email_domain_for_officials: "ელ.ფოსტის დომენი საჯარო თანამდებობის პირებისთვის"
-    email_domain_for_officials_description: "ამ დომენზე რეგისტრირებული ყველა მომხმარებელი რეგისტრაციისას ანგარიშის ვერიფიკაციას გაივლის"
+    email_domain_for_officials_description: "ამ დომენზე რეგისტრირებული ყველა მომხმარებელი, რეგისტრაციისას, ანგარიშის გადამოწმებას გაივლის"
     twitter_handle: "Twitter-ის იდენტიფიკატორი"
     twitter_handle_description: "შევსების შემთხვევაში გამოჩნდება ქვედა პანელში"
     twitter_hashtag: "Twitter-ის ჰეშთეგი"
