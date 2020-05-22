@@ -53,6 +53,7 @@ ro:
         price: "Preț (%{currency})"
         price_first_year: "Cost în primul an (%{currency}) <small>(optional, datele nu sunt publice)</small>"
         feasibility: Fezabilitate
+        valuation_finished_alert: "Sunteți sigur că doriți să marcați acest raport ca fiind complet? Raportul nu va mai putea fi modificat după această acțiune."
         save: Salvează modificări
       notice:
         valuate: "Dosar actualizat"
