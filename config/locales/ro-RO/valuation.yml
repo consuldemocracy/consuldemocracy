@@ -1,1 +1,14 @@
 ro:
+  valuation:
+    menu:
+      budgets: Bugete participative
+    budgets:
+      index:
+        title: Bugete participative
+        filters:
+          current: Deschide
+          finished: Terminat
+        table_name: Nume
+        table_phase: Etapă
+    budget_investments:
+      not_in_valuating_phase: Investițiile pot fi evaluate doar în momentul în care Bugetul este în etapa de evaluare
