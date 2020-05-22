@@ -28,6 +28,13 @@ ro:
           error: Pagina nu a putut fi creată
         update:
           notice: Pagină actualizată cu succes
+          error: Pagina nu a putut fi actualizată
+        destroy:
+          notice: Pagină ștearsă cu succes
+        edit:
+          title: Se editează %{page_title}
+        form:
+          options: Opțiuni
         cards:
           create:
             notice: "Card creat cu succes!"
