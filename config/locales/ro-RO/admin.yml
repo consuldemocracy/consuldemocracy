@@ -13,6 +13,47 @@ ro:
         filters:
           all: Toate
           with_active: Activ
+          with_inactive: Inactiv
+        preview: Previzualizare
+      banner:
+        sections:
+          homepage: Pagina principală
+          debates: Dezbateri
+          proposals: Propuneri
+          budgets: Bugetare participativă
+          help_page: Pagina de ajutor
+      edit:
+        editing: Editează banner
+        form:
+          submit_button: Salvează modificările
+      new:
+        creating: Creați banner
+    activity:
+      show:
+        action: Acțiuni
+        actions:
+          block: Blocat
+          hide: Ascuns
+          restore: Restaurat
+        content: Conținut
+        filter: Afișează
+        filters:
+          all: Tot
+          on_comments: Comentarii
+          on_debates: Dezbateri
+          on_proposals: Propuneri
+          on_users: Utilizatori
+    budgets:
+      index:
+        title: Bugetele participative
+        new_link: Crează buget nou
+        filters:
+          open: Deschide
+          finished: Terminat
+        budget_investments: Administrează proiecte
+        table_name: Nume
+        table_phase: Etapă
+        table_investments: Investiții
     site_customization:
       images:
         index:
