@@ -39,4 +39,17 @@ ro:
         edit_dossier: Editează dosar
         price: Preț
         price_first_year: Costul pe parcursul primului an
+        feasibility: Fezabilitate
+        feasible: Realizabil
+        unfeasible: Nerealizabil
+        undefined: Nedefinit
+        valuation_finished: Evaluare terminată
+        assigned_admin: Administratorul atribuit
+      edit:
+        dossier: Dosar
+        price: "Preț (%{currency})"
+        feasibility: Fezabilitate
+        save: Salvează modificări
+      notice:
+        valuate: "Dosar actualizat"
       not_in_valuating_phase: Investițiile pot fi evaluate doar în momentul în care Bugetul este în etapa de evaluare
