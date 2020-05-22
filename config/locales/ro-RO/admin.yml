@@ -13,7 +13,35 @@ ro:
         filters:
           all: Toate
           with_active: Activ
+    homepage:
+      cards_title: Carduri
+      create_card: Crează card
+      no_cards: Nu există carduri.
+      cards:
+        title: Titlu
+        description: Descriere
+      feeds:
+        proposals: Propuneri
+      new:
+        card_title: Card nou
+        submit_card: Crează card
+      edit:
+        card_title: Editează card
+        submit_card: Salvează card
+    audits:
+      changes: "Lista modificărilor"
+      new_value: "Valoare nouă"
+      old_value: "Valoare veche"
+      edited_at: "Editat la"
+      edited_by: "Editat de"
+      actions: "Acțiuni"
+      empty: "Nu există modificări înregistrate"
     local_census_records:
+      index:
+        title: Administrează datele locale
+        create: Crează o nouă înregistrare de date locale
+        no_local_census_records: Nu există înregistrări de date locale.
+        document_type: Tipul documentului
       update:
         notice: Datele locale au fost actualizate cu succes!
       destroy:
