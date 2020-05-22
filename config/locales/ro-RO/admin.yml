@@ -72,6 +72,34 @@ ro:
           zero: "Selectează evaluatori"
         empty_administrators: "Nu există administratori"
         empty_valuators: "Nu există evaluatori"
+    budget_groups:
+      name: "Nume"
+      no_groups: "Nu există grupuri."
+      amount:
+        one: "Există un grup"
+        few: "Exista %{count} grupuri"
+        other: "Exista %{count} grupuri"
+      create:
+        notice: "Grup creat cu succes!"
+      update:
+        notice: "Grup actualizat cu succes"
+      destroy:
+        success_notice: "Grup șters cu succes"
+      form:
+        create: "Crează grup nou"
+        edit: "Editează grup"
+        submit: "Salvează grup"
+    budget_headings:
+      index:
+        back: "Înapoi la grupuri"
+    budget_phases:
+      edit:
+        save_changes: Salvează modificări
+    budget_investments:
+      index:
+        administrator_filter_all: Toți administratorii
+        valuator_filter_all: Toți evaluatorii
+        tags_filter_all: Toate etichetele
     site_customization:
       images:
         index:
