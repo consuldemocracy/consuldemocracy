@@ -21,4 +21,9 @@ ro:
       index:
         filters:
           valuation_open: Deschide
+          valuating: În curs de evaluare
+          valuation_finished: Evaluare terminată
+        assigned_to: "Atribuit %{valuator}"
+        title: Proiecte de investiție
+        table_id: ID
       not_in_valuating_phase: Investițiile pot fi evaluate doar în momentul în care Bugetul este în etapa de evaluare
