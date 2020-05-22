@@ -1,1 +1,15 @@
 ro:
+  admin:
+    actions:
+      actions: Acțiuni
+      confirm: Sunteți sigur?
+      hide: Ascunde
+      hide_author: Ascunde autor
+      edit: Editează
+      configure: Configurează
+      delete: Șterge
+    banners:
+      index:
+        filters:
+          all: Toate
+          with_active: Activ
