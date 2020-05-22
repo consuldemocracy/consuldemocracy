@@ -26,4 +26,17 @@ ro:
         assigned_to: "Atribuit %{valuator}"
         title: Proiecte de investiție
         table_id: ID
+        table_title: Titlu
+        table_actions: Acțiuni
+        no_investments: "Nu există nici un proiect de investiții."
+      show:
+        back: Înapoi
+        title: Proiect de investiții
+        info: Informații despre autor
+        by: Trimis de
+        sent: Trimis la
+        dossier: Dosar
+        edit_dossier: Editează dosar
+        price: Preț
+        price_first_year: Costul pe parcursul primului an
       not_in_valuating_phase: Investițiile pot fi evaluate doar în momentul în care Bugetul este în etapa de evaluare
