@@ -13,3 +13,22 @@ ro:
         filters:
           all: Toate
           with_active: Activ
+    local_census_records:
+      update:
+        notice: Datele locale au fost actualizate cu succes!
+      destroy:
+        notice: Datele locale au fost elimitate cu succes!
+      imports:
+        new:
+          title: Date locale
+          subtitle: Importă fișierul CSV
+        create:
+          notice: Import de date executat cu succes!
+        show:
+          title: Administrează datele
+          subtitle: Importați rezultatele procesului
+          import: Importă din nou
+          errored: Rânduri eronate
+          created: Înregistrări create
+        local_census_records:
+          no_records_found: Nu a fost găsită nici o înregistrare.
