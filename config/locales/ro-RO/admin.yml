@@ -10,6 +10,10 @@ ro:
       delete: Șterge
     banners:
       index:
+        title: Bannere
+        create: Crează banner
+        edit: Editează banner
+        delete: Șterge banner
         filters:
           all: Toate
           with_active: Activ
@@ -54,6 +58,20 @@ ro:
         table_name: Nume
         table_phase: Etapă
         table_investments: Investiții
+        table_edit_budget: Editează
+        edit_budget: Editează buget
+      edit:
+        delete: Șterge buget
+        actions: Acțiuni
+        active: Activ
+        administrators:
+          one: "1 administrator selectat"
+          few: "%{count} administratori selectați"
+          other: "%{count} administratori selectați"
+        valuators:
+          zero: "Selectează evaluatori"
+        empty_administrators: "Nu există administratori"
+        empty_valuators: "Nu există evaluatori"
     site_customization:
       images:
         index:
