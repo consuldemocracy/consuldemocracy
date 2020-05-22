@@ -35,6 +35,11 @@ ro:
           title: Se editează %{page_title}
         form:
           options: Opțiuni
+        index:
+          create: Crează o pagină nouă
+          delete: Șterge pagină
+          title: Pagini personalizate
+          see_page: Vezi pagina
         cards:
           create:
             notice: "Card creat cu succes!"
