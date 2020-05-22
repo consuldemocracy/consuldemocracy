@@ -144,6 +144,54 @@ ro:
         table_description: "Descriere"
         table_publication_date: "Data publicării"
         table_status: Status
+        table_actions: "Acțiuni"
+        delete: "Șterge reper"
+        image: "Imagine"
+        show_image: "Arată imagine"
+        documents: "Documente"
+        milestone: Reper
+        new_milestone: Crează reper nou
+        milestone_tags: Etichete reper
+      new:
+        creating: Crează reper
+      edit:
+        title: Editează reper
+      create:
+        notice: Reper nou creat cu succes!
+      update:
+        notice: Reper actualizat cu succes
+      delete:
+        notice: Reper șters cu succes
+    statuses:
+      index:
+        new_status: Crează un nou status de reper
+        table_name: Nume
+        table_description: Descriere
+        table_actions: Acțiune
+        delete: Șterge
+        edit: Edit
+      edit:
+        title: Editează statusul reperului
+      update:
+        notice: Status de reper actualizat cu succes
+      new:
+        title: Crează status de reper
+      create:
+        notice: Status de reper creat cu succes
+      delete:
+        notice: Status de reper șters cu succes
+    progress_bars:
+      index:
+        table_title: "Titlu"
+    dashboard:
+      actions:
+        index:
+          action_active: Activ
+          published_proposal: Propuneri publicate
+          default:
+            email: Email
+        form:
+          submit_button: Salvează
     site_customization:
       images:
         index:
