@@ -100,6 +100,26 @@ ro:
         administrator_filter_all: Toți administratorii
         valuator_filter_all: Toți evaluatorii
         tags_filter_all: Toate etichetele
+        advanced_filters: Filtre avansate
+        placeholder: Caută proiecte
+        filters:
+          all: Toate
+          without_admin: Fără administrator atribuit
+          without_valuator: Fără evaluator atribuit
+          under_valuation: În curs de evaluare
+          valuation_finished: Evaluare terminată
+          feasible: Realizabil
+          selected: Selectat
+          undecided: Nehotărât
+          unfeasible: Nerealizabil
+          min_total_supports: Suporturi minime
+          max_total_supports: Suporturi maxime
+          winners: Câștigătorii
+          one_filter: "Filtre aplicate: <b><em>%{filter}</em></b>"
+          two_filters: "Filtre aplicate: <b><em>%{filter}, %{advanced_filters}</em></b>"
+        buttons:
+          filter: Filtru
+        download_current_selection: "Descarcă selecția curentă"
     site_customization:
       images:
         index:
