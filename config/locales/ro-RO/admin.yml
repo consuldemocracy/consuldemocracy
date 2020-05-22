@@ -123,6 +123,21 @@ ro:
         no_budget_investments: "Nu există proiecte de investiție."
         title: Proiecte de investiție
         columns: Coloane
+        no_admin_assigned: Nici un administrator atribuit
+        no_valuators_assigned: Nici un evaluator atribuit
+        feasibility:
+          feasible: "Realizabil"
+          unfeasible: "Nerealizabil"
+          undecided: "Nehotărât"
+        selected: "Selectat"
+        select: "Selectează"
+        list:
+          title: Titlu
+          admin: Administrator
+          valuator: Evaluator
+          valuation_group: Grup de evaluare
+          feasibility: Fezabilitate
+          selected: Selectat
     site_customization:
       images:
         index:
