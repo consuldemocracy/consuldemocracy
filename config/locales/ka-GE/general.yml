@@ -240,7 +240,7 @@ ka:
       officing: გამოკითხვის ოფიცრები
       help: დახმარება
       my_account_link: ჩემი ანგარიში
-      my_activity_link: ჩემი კონტენტი
+      my_activity_link: ჩემი აქტივობა
       open: გახსნა
       open_gov: ღია მმართველობა
       proposals: ინიციატივები
@@ -959,7 +959,7 @@ ka:
     poll:
       take_part: მონაწილეობა %{from}-დან %{to}-მდე
   remote_translations:
-    text: ეს კონტენტი თქვენს ენაზე ხელმისაწვდომი არ არის
+    text: ეს ინფორმაცია თქვენს ენაზე ხელმისაწვდომი არ არის
     all_remote_translations_enqueued_text: განაახლეთ ეს გვერდი პერიოდულად, რათა მასზე არსებული ინფორმაციის ნახვა სასურველ ენაზე შეძლოთ.
     create:
       enqueue_remote_translation: თარგმანები მოთხოვნილ იქნა.
