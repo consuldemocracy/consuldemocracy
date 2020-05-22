@@ -13,6 +13,28 @@ ro:
         filters:
           all: Toate
           with_active: Activ
+    site_customization:
+      images:
+        index:
+          update: Actualizează
+          delete: Șterge
+          image: Imagine
+        update:
+          notice: Imagine actualizată cu succes
+          error: Imaginea nu a putut fi actualizată
+      pages:
+        create:
+          notice: Pagina creată cu succes
+          error: Pagina nu a putut fi creată
+        update:
+          notice: Pagină actualizată cu succes
+        cards:
+          create:
+            notice: "Card creat cu succes!"
+          update:
+            notice: "Card actualizat cu succes"
+          destroy:
+            notice: "Card șters cu succes"
     homepage:
       cards_title: Carduri
       create_card: Crează card
@@ -42,6 +64,15 @@ ro:
         create: Crează o nouă înregistrare de date locale
         no_local_census_records: Nu există înregistrări de date locale.
         document_type: Tipul documentului
+        document_number: Numarul documentului
+        date_of_birth: Data nașterii
+        postal_code: Cod poștal
+        search:
+          placeholder: Caută după numărul documentului
+          search: Caută
+        import: Importă CSV
+      edit:
+        editing: Editează înregistrarea de date locale
       update:
         notice: Datele locale au fost actualizate cu succes!
       destroy:
