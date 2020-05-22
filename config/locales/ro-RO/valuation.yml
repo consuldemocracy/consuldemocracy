@@ -45,9 +45,12 @@ ro:
         undefined: Nedefinit
         valuation_finished: Evaluare terminată
         assigned_admin: Administratorul atribuit
+        assigned_valuators: Evaluatori alocați
+        preview: Previzualizare investiție
       edit:
         dossier: Dosar
         price: "Preț (%{currency})"
+        price_first_year: "Cost în primul an (%{currency}) <small>(optional, datele nu sunt publice)</small>"
         feasibility: Fezabilitate
         save: Salvează modificări
       notice:
