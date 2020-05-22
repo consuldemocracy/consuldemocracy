@@ -67,7 +67,7 @@ ka:
         new_link: ახალი ბიუჯეტის შექმნა
         filter: ფილტრი
         filters:
-          open: გახსნა
+          open: მიმდინარე
           finished: დასრულებული
         budget_investments: პროექტების მართვა
         table_name: სახელი
@@ -516,7 +516,7 @@ ka:
           status: სტატუსი
           start_date: დაწყების თარიღი
           end_date: დასრულების თარიღი
-          status_open: გახსნა
+          status_open: მიმდინარე
           status_closed: დახურული
           status_planned: დაგეგმილი
         subnav:
