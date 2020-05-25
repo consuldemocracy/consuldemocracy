@@ -247,6 +247,7 @@ ro:
         no_progress_bars: "Nu există bare de progres"
         new_progress_bar: "Creați o nouă bară de progres"
         primary: "Bară de progres primară"
+        table_kind: "Tip"
         table_title: "Titlu"
       new:
         creating: "Crează bară de progres"
