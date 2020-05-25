@@ -1,0 +1,5 @@
+de:
+  layouts:
+    footer:
+      contact_us: Für technische Unterstützung wenden Sie sich an
+      copyright: ZDI Mainfranken, %{year}
