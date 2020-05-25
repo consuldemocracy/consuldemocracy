@@ -154,9 +154,14 @@ ro:
           incompatible: Incompatibil
           price: Preț
           author: Autor
+        cannot_calculate_winners: Bugetul trebuie să rămână pe etapa „Proiecte în curs de votare”, „Revizuirea buletinelor de vot” sau „Buget finalizat” pentru a calcula proiectele câștigătoare
         see_results: "Vezi rezultatele"
       show:
+        assigned_admin: Administrator alocat
+        assigned_valuators: Evaluatori alocați
+        classification: Clasificare
         edit: Editează
+        edit_classification: Editează clasificarea
         by: De
         sent: Trimis
         group: Grup
@@ -178,6 +183,13 @@ ro:
         preview: Previzualizare investiție
       edit:
         classification: Clasificare
+        compatibility: Compatibilitate
+        selection: Selecție
+        assigned_valuators: Evaluatori
+        submit_button: Actualizează
+        user_tags: Etichete atribuite utilizatorului
+        undefined: Nedefinit
+      search_unfeasible: Căutarea este imposibilă
     milestones:
       index:
         table_title: "Titlu"
@@ -222,6 +234,7 @@ ro:
         notice: Status de reper șters cu succes
     progress_bars:
       index:
+        title: "Progres"
         table_title: "Titlu"
     dashboard:
       actions:
