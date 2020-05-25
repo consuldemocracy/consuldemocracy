@@ -1,1 +1,14 @@
 ro:
+  community:
+    sidebar:
+      title: Comunitate
+      button_to_access: Accesează comunitatea
+    show:
+      tab:
+        participants: Participanți
+      sidebar:
+        participate: Participă
+        new_topic: Crează subiect
+      topic:
+        edit: Editează subiect
+        destroy: Șterge subiect
