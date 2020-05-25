@@ -245,6 +245,26 @@ ro:
         no_progress_bars: "Nu există bare de progres"
         new_progress_bar: "Creați o nouă bară de progres"
         table_title: "Titlu"
+      new:
+        creating: "Crează bară de progres"
+      edit:
+        title:
+          secondary: "Bară de progress %{title}"
+    comments:
+      index:
+        content: "Conținut"
+        author: "Autor"
+        title: Comentarii
+        no_comments: Nu există comentarii.
+    hidden_comments:
+      index:
+        filter: Filtru
+        filters:
+          all: Toate
+          with_confirmed_hide: Confirmat
+          without_confirmed_hide: În așteptare
+        hidden_debate: Dezbateri ascunse
+        hidden_proposal: Propuneri ascunse
     dashboard:
       actions:
         index:
