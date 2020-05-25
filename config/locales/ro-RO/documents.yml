@@ -18,3 +18,7 @@ ro:
     buttons:
       download_document: Descărcare fișier
       destroy_document: Șterge document
+    errors:
+      messages:
+        in_between: trebuie să fie între %{min} și %{max}
+        wrong_content_type: tipul de conținut %{content_type} nu se potrivește cu niciunul dintre tipurile de conținut acceptate %{accepted_content_types}
