@@ -32,7 +32,7 @@
             <%= l(milestone.publication_date.to_date) if milestone.publication_date.present? %>
           </td>
           <td class="small">
-            <%= milestone.status.present? ? milestone.status.name : '' %>
+            <%= milestone.status.present? ? milestone.status.name : "" %>
           </td>
           <td class="small">
             <%= link_to t("admin.milestones.index.show_image"),

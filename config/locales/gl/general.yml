@@ -67,7 +67,7 @@ gl:
       most_commented: Máis comentados
     select_order: Ordenar por
     show:
-      return_to_commentable: 'Volver a'
+      return_to_commentable: "Volver a"
   comments_helper:
     comment_button: Publicar comentario
     comment_link: Comentar
@@ -219,8 +219,7 @@ gl:
       available_locales: Idiomas dispoñibles
       collaborative_legislation: Procesos lexislativos
       debates: Debates
-      external_link_blog: Blog
-      locale: 'Idioma:'
+      locale: "Idioma:"
       logo: Logo de CONSUL
       management: Xestión
       moderation: Moderar
@@ -242,7 +241,7 @@ gl:
         notifications: Notificacións
         no_notifications: "Non tes notificacións novas"
     admin:
-      watch_form_message: 'Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?'
+      watch_form_message: "Realizaches cambios que aínda non se gardaron. Tes a certeza de que queres deixar a páxina?"
   notifications:
     index:
       empty_notifications: Non tes notificacións novas.
@@ -292,6 +291,8 @@ gl:
     create:
       form:
         submit_button: Crear proposta
+    share:
+      message: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
     edit:
       editing: Editar proposta
       form:
@@ -313,9 +314,6 @@ gl:
       other: Outras
     form:
       geozone: Ámbitos de actuación
-      proposal_external_url: Enlace a documentación adicional
-      proposal_question: Pregunta da proposta
-      proposal_question_example_html: "Debe resumirse nunha pregunta cunha resposta tipo «Si ou Non»"
       proposal_responsible_name: Nome e apelidos da persoa que fai esta proposta
       proposal_responsible_name_note: "(individualmente ou como representante dun colectivo; non se mostrará publicamente)"
       proposal_summary: Resumo da proposta
@@ -369,7 +367,7 @@ gl:
         one: " contén o termo <strong>'%{search_term}'</strong>"
         other: " contén o termo <strong>'%{search_term}'</strong>"
       select_order: Ordenar por
-      select_order_long: 'Estás vendo as propostas'
+      select_order_long: "Estás vendo as propostas"
       start_proposal: Crea unha proposta
       title: Propostas cidadás
       top: Top semanal
@@ -398,8 +396,6 @@ gl:
         guide: "Compártea para que a xente comece a apoiala."
         edit: "Antes de que se publique, poderás modificar o texto como queiras."
         view_proposal: Agora non, ir á miña proposta
-      improve_info: "Mellora a túa campaña e consegue máis apoios"
-      improve_info_link: "Ver máis información"
       already_supported: Xa apoiaches esta proposta, compártea!
       comments:
         zero: Ningún comentario
@@ -421,13 +417,12 @@ gl:
       successful: "Esta proposta acadou os apoios necesarios."
     show:
       author_deleted: Usuario/a borrado/a
-      code: 'Código da proposta:'
+      code: "Código da proposta:"
       comments:
         zero: Ningún comentario
         one: 1 comentario
         other: "%{count} comentarios"
       comments_tab: Comentarios
-      edit_proposal_link: Editar proposta
       flag: Esta proposta foi marcada como inapropiada por varios usuarios.
       login_to_comment: Precisas %{signin} ou %{signup} para comentares.
       notifications_tab: Notificacións
@@ -436,17 +431,13 @@ gl:
       retired_warning_link_to_explanation: Revisa a súa explicación antes de apoiala.
       retired: Proposta retirada polo autor
       share: Compartir
-      send_notification: Enviar notificación
       no_notifications: "A proposta non ten notificacións."
       embed_video_title: "Vídeo en %{proposal}"
-      title_external_url: "Documentación adicional"
       title_video_url: "Vídeo externo"
       author: Autoría
     update:
       form:
         submit_button: Gardar so cambios
-    share:
-      message: "Veño de apoiar a proposta %{summary} en %{handle}. Se che interesa, apoia ti tamén!"
   polls:
     all: "Todo"
     no_dates: "sen data asignada"
@@ -497,8 +488,6 @@ gl:
       stats_menu: "Estatísticas de participación"
       results_menu: "Resultados da votación"
       stats:
-        title: "Datos de participación"
-        total_participation: "Participación total"
         total_votes: "Número total de votos emitidos"
         votes: "VOTOS"
         web: "WEB"
@@ -511,11 +500,9 @@ gl:
         title: "Preguntas"
         most_voted_answer: "Resposta máis votada: "
   poll_questions:
-    create_question: "Crear pregunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Votaches %{answer}"
-      voted_token: "Podes apuntar este identificador de voto para comprobares a túa votación no resultado final:"
   proposal_notifications:
     new:
       title: "Enviar mensaxe"
@@ -527,29 +514,29 @@ gl:
     show:
       back: "Volver á miña actividade"
   shared:
-    edit: 'Editar proposta'
-    save: 'Guardar'
-    delete: Borrar
+    edit: "Editar proposta"
+    save: "Guardar"
+    delete: "Borrar"
     "yes": "Si"
     "no": "Non"
     search_results: "Resultados da busca"
     advanced_search:
-      author_type: 'Por categoría de autor'
-      author_type_blank: 'Elixe unha categoría'
-      date: 'Por data'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Elixe unha data'
-      date_1: 'Últimas 24 horas'
-      date_2: 'Última semana'
-      date_3: 'Último mes'
-      date_4: 'Último ano'
-      date_5: 'Personalizada'
-      from: 'Dende'
-      general: 'Co texto'
-      general_placeholder: 'Escribe o texto'
-      search: 'Filtro'
-      title: 'Busca avanzada'
-      to: 'Ata'
+      author_type: "Por categoría de autor"
+      author_type_blank: "Elixe unha categoría"
+      date: "Por data"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Elixe unha data"
+      date_1: "Últimas 24 horas"
+      date_2: "Última semana"
+      date_3: "Último mes"
+      date_4: "Último ano"
+      date_5: "Personalizada"
+      from: "Dende"
+      general: "Co texto"
+      general_placeholder: "Escribe o texto"
+      search: "Filtro"
+      title: "Busca avanzada"
+      to: "Ata"
     author_info:
       author_deleted: Usuario/a borrado/a
     back: Volver
@@ -623,7 +610,6 @@ gl:
       see_more: Ver máis recomendacións
       hide: Agochar as recomendacións
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -632,8 +618,8 @@ gl:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Se propós no nome dunha asociación ou colectivo engade o nome aquí'
-      association_name: 'Nome da asociación'
+      association_name_label: "Se propós no nome dunha asociación ou colectivo engade o nome aquí"
+      association_name: "Nome da asociación"
       description: Descrición
       external_url: Ligazón a documentación adicional
       geozone: Ámbitos de actuación
@@ -666,7 +652,7 @@ gl:
       start_new: Crear unha proposta de gasto
     show:
       author_deleted: Usuario/a borrado/a
-      code: 'Código da proposta:'
+      code: "Código da proposta:"
       share: Compartir
     wrong_price_format: Só pode incluír caracteres numéricos
     spending_proposal:
@@ -741,8 +727,6 @@ gl:
       send_private_message: "Enviar unha mensaxe privada"
       delete_alert: "Tes a certeza de que desexas borrar o proxecto de investimento? Está acción non se pode desfacer"
     proposals:
-      send_notification: "Enviar notificación"
-      retire: "Retirar"
       retired: "Proposta retirada"
       see: "Ver proposta"
   votes:
@@ -809,7 +793,7 @@ gl:
       user_permission_info: Coa túa conta xa podes...
       user_permission_proposal: Crear novas propostas
       user_permission_support_proposal: Apoiar propostas*
-      user_permission_verify: Para poder realizar todas as accións, verifica a túa conta.
+      user_permission_verify: "Para poder realizar todas as accións, verifica a túa conta."
       user_permission_verify_info: "* Só persoas usuarias empadroadas no municipio de Madrid."
       user_permission_verify_my_account: Verificar a miña conta
       user_permission_votes: Participar nas votacións finais

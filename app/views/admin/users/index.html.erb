@@ -3,9 +3,9 @@
 <div class="small-12 medium-6">
   <%= form_tag admin_users_path, method: :get, remote: true  do %>
     <div class="input-group">
-      <%= text_field_tag :search, '', placeholder: t('admin.users.search.placeholder') %>
+      <%= text_field_tag :search, "", placeholder: t("admin.users.search.placeholder") %>
       <div class="input-group-button">
-        <%= submit_tag t('admin.users.search.search'), class: 'button' %>
+        <%= submit_tag t("admin.users.search.search"), class: "button" %>
       </div>
     </div>
   <% end %>

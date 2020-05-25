@@ -6,7 +6,7 @@ fi:
         password:
           password: Salasana
     account_info:
-      email_label: 'Sähköposti:'
+      email_label: "Sähköposti:"
     document_type_label: Asiakirjatyyppi
     email_label: Sähköposti
     date_of_birth: Syntymäaika

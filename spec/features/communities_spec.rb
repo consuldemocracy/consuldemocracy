@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Communities" do
+describe "Communities" do
 
-  background do
+  before do
     Setting["feature.community"] = true
   end
 

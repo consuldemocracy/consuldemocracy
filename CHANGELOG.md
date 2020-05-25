@@ -3,6 +3,75 @@
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html)
 
+## [1.0.0-beta](https://github.com/consul/consul/compare/v0.19...1.0.0-beta) (2019-04-29)
+
+### Added
+
+- **Dashboard:** Add proposal's dashboard [\#3412](https://github.com/consul/consul/pull/3412)
+- **Budgets:** Add on admin budget investments an advanced filter for max supports [\#3364](https://github.com/consul/consul/pull/3364)
+- **Budgets:** Add price column in the admin budget investments table [\#3356](https://github.com/consul/consul/pull/3356)
+- **Budgets:** Allow voting Budget Investments in booths [\#3344](https://github.com/consul/consul/pull/3344)
+- **Budgets**: Budget ballot sheets UI [\#2857](https://github.com/consul/consul/pull/2857)
+- **Polls:** Add officing booths [\#3345](https://github.com/consul/consul/pull/3345)
+- **Polls:** Add cumulative totals to admin poll recounts list [\#3342](https://github.com/consul/consul/pull/3342)
+- **Polls:** Verify poll ballots [\#2858](https://github.com/consul/consul/pull/2858)
+- **Maintenance-Seeds:** Include default custom pages in developers seed [\#3402](https://github.com/consul/consul/pull/3402)
+- **Maintenance-Rubocop:** Enable rubocop rules in config and seed files [\#3380](https://github.com/consul/consul/pull/3380)
+- **Maintenance-Rubocop:** Add ERB Lint configuration file [\#3379](https://github.com/consul/consul/pull/3379)
+- **Maintenance-Rubocop:** Add CoffeeLint rules [\#3338](https://github.com/consul/consul/pull/3338)
+- **Maintenance-IDEs:** Add Intellij IDE project settings to gitignore [\#3430](https://github.com/consul/consul/pull/3430)
+
+### Changed
+
+- **Budgets:** Update texts on check my ballot links [\#3407](https://github.com/consul/consul/pull/3407)
+- **Budgets:** Change admin budget investments subfilters from tabs to advanced filter checkboxes [\#3351](https://github.com/consul/consul/pull/3351)
+- **Proposals:** Add rake to move external\_url to description [\#3396](https://github.com/consul/consul/pull/3396)
+- **Verification:** Use min age to participate setting on verification residence form [\#3399](https://github.com/consul/consul/pull/3399)
+- **Translations:** Generalize i18n texts [\#3337](https://github.com/consul/consul/pull/3337)
+- **Admin:** Improve Admin settings section [\#3387](https://github.com/consul/consul/pull/3387)
+- **Customization:** Default site customization pages [\#3353](https://github.com/consul/consul/pull/3353)
+- **UX/UI:** Improve UX on admin section [\#3334](https://github.com/consul/consul/pull/3334)
+- **Maintenance-README:** Update docs link on README [\#3418](https://github.com/consul/consul/pull/3418)
+- **Maintenance-README:** Update README [\#3417](https://github.com/consul/consul/pull/3417)
+- **Maintenance-README:** Update core team members, contributors and alumni [\#3440](https://github.com/consul/consul/pull/3440)
+- **Maintenance-Specs:** Use 3 Travis nodes for running the test suite [\#3416](https://github.com/consul/consul/pull/3416)
+- **Maintenance-Specs:** Simplify poll factories [\#3384](https://github.com/consul/consul/pull/3384)
+- **Maintenance-Specs:** Fix flaky spec: Ballots Groups Change my heading [\#3460](https://github.com/consul/consul/pull/3460)
+- **Maintenance-Rubocop:** Add missing double quotes [\#3404](https://github.com/consul/consul/pull/3404)
+- **Maintenance-Refactoring:** Change single quotes to double quotes everywhere [\#3370](https://github.com/consul/consul/pull/3370)
+- **Maintenance-Refactoring:** Change single quotes to double quotes for views [\#3369](https://github.com/consul/consul/pull/3369)
+- **Maintenance-Refactoring:** Change single quotes to double quotes for models [\#3362](https://github.com/consul/consul/pull/3362)
+- **Maintenance-Refactoring:** Use double quotes in CoffeeScript files [\#3339](https://github.com/consul/consul/pull/3339)
+- **Maintenance-Refactoring:** Change single quotes to double quotes for controllers [\#3360](https://github.com/consul/consul/pull/3360)
+- **Maintenance-Translations:** Update share messages interpolation variables [\#3452](https://github.com/consul/consul/pull/3452)
+- **Maintenance-Gems:** Bump Rails version to 4.2.11.1 [\#3358](https://github.com/consul/consul/pull/3358)
+- **Maintenance-gems:** Upgrade to rails 5 [\#3414](https://github.com/consul/consul/pull/3414)
+
+### Fixed
+
+- **Dashboard:** Cleanup Rails5 dashboard [\#3464](https://github.com/consul/consul/pull/3464)
+- **Budgets:** Show unfeasible budget investment messages only when valuation finished [\#3340](https://github.com/consul/consul/pull/3340)
+- **Budgets:** Fix bug moderator can't print voted investments in balloting phase [\#3443](https://github.com/consul/consul/pull/3443)
+- **Polls:** Display 'Validate document' menu item only when applicable [\#3343](https://github.com/consul/consul/pull/3343)
+- **Polls:** Improvements about displaying results for voted polls [\#3341](https://github.com/consul/consul/pull/3341)
+- **Polls**: Enable options to show stats and results with any type of voter [\#3155](https://github.com/consul/consul/pull/3155)
+- **Legislations:** Fix legislation process feed order [\#3400](https://github.com/consul/consul/pull/3400)
+- **Accessibility:** Fix accessibility and HTML warnings [\#3366](https://github.com/consul/consul/pull/3366)
+- **Images:** Keep images uploaded with CKEditor when deploying [\#3367](https://github.com/consul/consul/pull/3367)
+- **Maintenance-Exception:** Fix exception when confirming an invalid token [\#3432](https://github.com/consul/consul/pull/3432)
+- **Maintenance-Exception:** Require logged in user if navigate to /welcome [\#3385](https://github.com/consul/consul/pull/3385)
+- **Maintenance-Specs:** Fix sort by random inconsistencies [\#3420](https://github.com/consul/consul/pull/3420)
+- **Maintenance-Specs:** Fix investment pagination tests [\#3405](https://github.com/consul/consul/pull/3405)
+- **Maintenance-gems:** Use Rails 5 conventions in ballot migrations [\#3453](https://github.com/consul/consul/pull/3453)
+- **Maintenance-gems:** Fix Invalid Authenticity Token with Rails 5 [\#3454](https://github.com/consul/consul/pull/3454)
+- **Maintenance-gems:** Handle AccessDenied in management sessions [\#3458](https://github.com/consul/consul/pull/3458)
+- **Maintenance-gems:** Fix InvalidCrossOriginRequest response [\#3459](https://github.com/consul/consul/pull/3459)
+- **Maintenance-gems:** Add lib folder path to eager_load_paths [\#3465](https://github.com/consul/consul/pull/3465)
+
+### Removed
+- **Maintenance-Deprecated:** Remove obsolete rake tasks [\#3401](https://github.com/consul/consul/pull/3401)
+- **Maintenance-Deprecated:** Add rake task to check for spending proposals [\#3441](https://github.com/consul/consul/pull/3441)
+
 ## [v0.19](https://github.com/consul/consul/compare/v0.18.1...v0.19) (2019-02-27)
 
 ### Added
@@ -713,7 +782,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Rails 4.2.6
 - Ruby 2.2.3
 
-[Unreleased]: https://github.com/consul/consul/compare/v0.18...consul:master
+[Unreleased]: https://github.com/consul/consul/compare/1.0.0-beta...consul:master
+[1.0.0-beta]: https://github.com/consul/consul/compare/v0.19...1.0.0-beta
+[0.19.0]: https://github.com/consul/consul/compare/v0.18...v.019
 [0.18.0]: https://github.com/consul/consul/compare/v0.17...v.018
 [0.17.0]: https://github.com/consul/consul/compare/v0.16...v.017
 [0.16.0]: https://github.com/consul/consul/compare/v0.15...v.016

@@ -43,10 +43,6 @@ class Admin::ValuatorsController < Admin::BaseController
     redirect_to admin_valuators_path
   end
 
-  def summary
-    @valuators = Valuator.order(spending_proposals_count: :desc)
-  end
-
   private
 
     def valuator_params

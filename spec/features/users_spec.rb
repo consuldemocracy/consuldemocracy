@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Users" do
+describe "Users" do
 
-  feature "Show (public page)" do
+  describe "Show (public page)" do
 
-    background do
+    before do
       @user = create(:user)
       1.times {create(:debate, author: @user)}
       2.times {create(:proposal, author: @user)}
@@ -137,8 +137,8 @@ feature "Users" do
 
   end
 
-  feature "Public activity" do
-    background do
+  describe "Public activity" do
+    before do
       @user = create(:user)
     end
 
@@ -201,9 +201,9 @@ feature "Users" do
       expect(page).not_to have_content("activity list private")
     end
 
-    feature "User email" do
+    describe "User email" do
 
-      background do
+      before do
         @user = create(:user)
       end
 
@@ -231,11 +231,10 @@ feature "Users" do
       end
 
     end
-
   end
 
-  feature "Public interests" do
-    background do
+  describe "Public interests" do
+    before do
       @user = create(:user)
     end
 
@@ -366,7 +365,7 @@ feature "Users" do
     end
   end
 
-  feature "Special comments" do
+  describe "Special comments" do
 
     scenario "comments posted as moderator are not visible in user activity" do
       moderator = create(:administrator).user
@@ -409,20 +408,17 @@ feature "Users" do
       visit user_path(user)
       expect(page).to have_content("7 Comments")
 
-      Setting["feature.debates"] = nil
+      Setting["process.debates"] = nil
       visit user_path(user)
       expect(page).to have_content("6 Comments")
 
-      Setting["feature.budgets"] = nil
+      Setting["process.budgets"] = nil
       visit user_path(user)
       expect(page).to have_content("4 Comments")
-
-      Setting["feature.debates"] = true
-      Setting["feature.budgets"] = true
     end
   end
 
-  feature "Following (public page)" do
+  describe "Following (public page)" do
 
     before do
       @user = create(:user)
@@ -492,6 +488,27 @@ feature "Users" do
 
         expect(page).to have_content proposal.title
       end
+
+      scenario "Retired proposals do not have a link to the dashboard", js: true do
+        proposal = create(:proposal, :retired, author: @user)
+        login_as @user
+
+        visit user_path(@user)
+
+        expect(page).to have_content proposal.title
+        expect(page).not_to have_link "Dashboard"
+        expect(page).to have_content("Dashboard not available for retired proposals")
+      end
+
+      scenario "Published proposals have a link to the dashboard" do
+        proposal = create(:proposal, :published, author: @user)
+        login_as @user
+
+        visit user_path(@user)
+
+        expect(page).to have_content proposal.title
+        expect(page).to have_link "Dashboard"
+      end
     end
 
     describe "Budget Investments" do
@@ -533,5 +550,4 @@ feature "Users" do
     end
 
   end
-
 end

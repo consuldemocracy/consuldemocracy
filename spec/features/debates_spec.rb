@@ -1,12 +1,11 @@
 # coding: utf-8
 require "rails_helper"
 
-feature "Debates" do
+describe "Debates" do
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.debates"] = nil
+    Setting["process.debates"] = nil
     expect{ visit debates_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-    Setting["feature.debates"] = true
   end
 
   context "Concerns" do
@@ -375,7 +374,7 @@ feature "Debates" do
     expect(Flag.flagged?(user, debate)).not_to be
   end
 
-  feature "Debate index order filters" do
+  describe "Debate index order filters" do
 
     scenario "Default order is hot_score", :js do
       best_debate = create(:debate, title: "Best")
@@ -438,7 +437,7 @@ feature "Debates" do
       let!(:medium_debate) { create(:debate, title: "Medium", cached_votes_total: 5,  tag_list: "Sport") }
       let!(:worst_debate)  { create(:debate, title: "Worst",  cached_votes_total: 1,  tag_list: "Sport") }
 
-      background do
+      before do
         Setting["feature.user.recommendations"] = true
         Setting["feature.user.recommendations_on_debates"] = true
       end
@@ -1036,7 +1035,7 @@ feature "Debates" do
 
     context "By geozone" do
 
-      background do
+      before do
         @california = Geozone.create(name: "California")
         @new_york   = Geozone.create(name: "New York")
 

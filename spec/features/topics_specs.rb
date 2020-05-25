@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Topics" do
+describe "Topics" do
 
   context "Concerns" do
     it_behaves_like "notifiable in-app", Topic
@@ -137,7 +137,7 @@ feature "Topics" do
       login_as(user)
       visit community_topic_path(community, topic)
 
-      click_link "Destroy topic"
+      click_link "Delete topic"
 
       expect(page).to have_content "Topic deleted successfully."
       expect(page).not_to have_content topic.title
@@ -153,7 +153,7 @@ feature "Topics" do
 
       visit community_path(community)
 
-      expect(page).not_to have_link "Destroy"
+      expect(page).not_to have_link "Delete"
     end
 
   end

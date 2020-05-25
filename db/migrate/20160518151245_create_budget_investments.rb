@@ -1,4 +1,4 @@
-class CreateBudgetInvestments < ActiveRecord::Migration
+class CreateBudgetInvestments < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_investments do |t|
 

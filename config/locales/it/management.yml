@@ -9,7 +9,7 @@ it:
       show:
         title: Account utente
       edit:
-        title: 'Modifica account utente: Reimposta password'
+        title: "Modifica account utente: Reimposta password"
         back: Indietro
         password:
           password: Password
@@ -22,11 +22,11 @@ it:
           print_help: Sarai in grado di stampare la password quando sarà salvata.
     account_info:
       change_user: Cambia utente
-      document_number_label: 'Numero del documento:'
-      document_type_label: 'Tipo Documento di identità:'
-      email_label: 'E-mail:'
-      identified_label: 'Identificato come:'
-      username_label: 'Nome utente:'
+      document_number_label: "Numero del documento:"
+      document_type_label: "Tipo Documento di identità:"
+      email_label: "E-mail:"
+      identified_label: "Identificato come:"
+      username_label: "Nome utente:"
     check: Controlla documento
     dashboard:
       index:
@@ -38,9 +38,9 @@ it:
       already_verified: Questo account utente è già verificato.
       has_no_account_html: Per creare un account, vai a %{link} e fai click su <b>'Registrati'</b> nella parte superiore sinistra dello schermo.
       link: CONSUL
-      in_census_has_following_permissions: 'Questo utente può partecipare con le seguenti autorizzazioni:'
+      in_census_has_following_permissions: "Questo utente può partecipare con le seguenti autorizzazioni:"
       not_in_census: Questo documento non è registrato.
-      not_in_census_info: 'I cittadini non residenti possono partecipare con le seguenti autorizzazioni:'
+      not_in_census_info: "I cittadini non residenti possono partecipare con le seguenti autorizzazioni:"
       please_check_account_data: Si prega di controllare che i dati dell'utenza sopra riportati siano corretti.
       title: Gestione degli utenti
       under_age: "Non hai l'età richiesta per verificare l'account."
@@ -49,14 +49,14 @@ it:
     date_of_birth: Data di nascita
     email_verifications:
       already_verified: Questo account utente è già verificato.
-      choose_options: 'Si prega di scegliere una delle opzioni seguenti:'
+      choose_options: "Si prega di scegliere una delle opzioni seguenti:"
       document_found_in_census: Questo documento è stato trovato in anagrafe, ma non ha alcun account utente ad esso associato.
-      document_mismatch: 'Questa e-mail appartiene a un utente che dispone già di un identificativo associato: %{document_number}(%{document_type})'
+      document_mismatch: "Questa e-mail appartiene a un utente che dispone già di un identificativo associato: %{document_number}(%{document_type})"
       email_placeholder: Inserisci l'email utilizzata per creare l'utente
       email_sent_instructions: Per verificare completamente questo utente, è necessario che cliccare su un link che ti abbiamo inviato all'indirizzo di posta elettronica sopra riportato. Questo passaggio è necessario al fine di confermare che l'indirizzo e-mail sia proprio il tuo.
       if_existing_account: Se la persona ha già un account utente creato nel sito,
       if_no_existing_account: Se questa persona non ha ancora creato un account
-      introduce_email: 'Si prega di introdurre l''e-mail utilizzata sul conto:'
+      introduce_email: "Si prega di introdurre l'e-mail utilizzata sul conto:"
       send_email: Inviare email di verifica
     menu:
       create_proposal: Crea proposta
@@ -78,7 +78,7 @@ it:
       vote_proposals: Partecipare alle votazioni finali
     print:
       proposals_info: Crea la tua proposta su http://url.consul
-      proposals_title: 'Proposte:'
+      proposals_title: "Proposte:"
       spending_proposals_info: Partecipa su http://url.consul
       budget_investments_info: Partecipa su http://url.consul
     print_info: Stampa queste informazioni

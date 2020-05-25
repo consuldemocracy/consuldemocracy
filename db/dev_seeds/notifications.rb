@@ -2,7 +2,7 @@ section "Creating comment notifications" do
   User.find_each do |user|
     debate = Debate.create!(author: user,
                             title: Faker::Lorem.sentence(3).truncate(60),
-                            description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+                            description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
                             tag_list: ActsAsTaggableOn::Tag.all.sample(3).join(","),
                             geozone: Geozone.reorder("RANDOM()").first,
                             terms_of_service: "1")

@@ -111,9 +111,9 @@ val:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost
         unfeasibility_explanation: Informe de inviabilitat
-        code_html: 'Codi proposta d''inversió: <strong>%{code}</strong>'
-        location_html: 'Ubicació: <strong>%{location}</strong>'
-        organization_name_html: 'Proposat en nom de: <strong>%{name}</strong>'
+        code_html: "Codi proposta d'inversió: <strong>%{code}</strong>"
+        location_html: "Ubicació: <strong>%{location}</strong>"
+        organization_name_html: "Proposat en nom de: <strong>%{name}</strong>"
         share: Compartir
         title: Proposta d'inversió
         supports: Avals
@@ -122,10 +122,10 @@ val:
         comments_tab: Comentaris
         milestones_tab: Fites
         author: Autor
-        project_unfeasible_html: 'Esta proposta <strong>ha sigut marcada com inviable</strong> i no passarà a la fase de votació.'
-        project_selected_html: 'Este projecte d''inversió <strong>ha sigut seleccionat</strong> per a la fase de votació.'
-        project_winner: 'Proposta d''inversió guanyadora'
-        project_not_selected_html: 'Esta proposta <strong>no ha sigut seleccionada</strong> per a la fase de votació.'
+        project_unfeasible_html: "Esta proposta <strong>ha sigut marcada com inviable</strong> i no passarà a la fase de votació."
+        project_selected_html: "Este projecte d'inversió <strong>ha sigut seleccionat</strong> per a la fase de votació."
+        project_winner: "Proposta d'inversió guanyadora"
+        project_not_selected_html: "Esta proposta <strong>no ha sigut seleccionada</strong> per a la fase de votació."
         see_price_explanation: Veure informe de cost
       wrong_price_format: Solament pot incloure caràcters numèrics
       investment:

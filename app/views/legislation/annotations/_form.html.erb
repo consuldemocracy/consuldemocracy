@@ -1,7 +1,7 @@
 <div class="comment-box">
   <div class="comment-header">
     <span class="icon-comment" aria-hidden="true"></span>
-    <div class="comment-number"><%= t('legislation.annotations.comments.comments_count', count: 0) %></div>
+    <div class="comment-number"><%= t("legislation.annotations.comments.comments_count", count: 0) %></div>
   </div>
 
   <div class="comments-wrapper">
@@ -15,8 +15,8 @@
           <%= f.text_area :text %>
 
           <div class="comment-actions">
-            <a class="cancel-comment" href="#" data-cancel-annotation><%= t('legislation.annotations.comments.cancel') %></a>
-            <%= f.submit value: t('legislation.annotations.comments.publish_comment'), class: 'button publish-comment' %>
+            <a class="cancel-comment" href="#" data-cancel-annotation><%= t("legislation.annotations.comments.cancel") %></a>
+            <%= f.submit value: t("legislation.annotations.comments.publish_comment"), class: "button publish-comment" %>
           </div>
 
           <%= f.hidden_field :quote %>

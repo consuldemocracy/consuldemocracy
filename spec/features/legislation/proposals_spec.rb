@@ -1,7 +1,7 @@
 require "rails_helper"
 require "sessions_helper"
 
-feature "Legislation Proposals" do
+describe "Legislation Proposals" do
 
   let(:user)     { create(:user) }
   let(:user2)    { create(:user) }
@@ -20,7 +20,7 @@ feature "Legislation Proposals" do
     end
   end
 
-  feature "Random pagination" do
+  describe "Random pagination" do
     before do
       allow(Legislation::Proposal).to receive(:default_per_page).and_return(12)
 
@@ -189,5 +189,16 @@ feature "Legislation Proposals" do
 
     visit legislation_process_proposal_path(process, legislation_proposal_negative)
     expect(page).to have_content("-6 votes")
+  end
+
+  scenario "Show link to process on show" do
+    create(:legislation_proposal, legislation_process_id: process.id)
+
+    visit legislation_process_proposal_path(proposal.process, proposal)
+
+    within(".process-proposal") do
+      expect(page).to have_content("Collaborative legislation process")
+      expect(page).to have_link(process.title)
+    end
   end
 end

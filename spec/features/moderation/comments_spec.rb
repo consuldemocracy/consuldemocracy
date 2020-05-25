@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Moderate comments" do
+describe "Moderate comments" do
 
   scenario "Hide", :js do
     citizen = create(:user)
@@ -63,16 +63,16 @@ feature "Moderate comments" do
     expect(page).to have_content("This is SPAM comment on proposal")
   end
 
-  feature "/moderation/ screen" do
+  describe "/moderation/ screen" do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When a comment has been selected for moderation" do
-        background do
+    describe "moderate in bulk" do
+      describe "When a comment has been selected for moderation" do
+        before do
           @comment = create(:comment)
           visit moderation_comments_path
           within(".menu.simple") do

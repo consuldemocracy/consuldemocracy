@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin custom information texts" do
+describe "Admin custom information texts" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -14,6 +14,13 @@ feature "Admin custom information texts" do
 
   scenario "page is correctly loaded" do
     visit admin_site_customization_information_texts_path
+
+    click_link "Basic customization"
+    expect(page).to have_content "Help about debates"
+    expect(page).to have_content "Help about proposals"
+    expect(page).to have_content "Help about voting"
+    expect(page).to have_content "Help about collaborative legislation"
+    expect(page).to have_content "Help with participatory budgets"
 
     click_link "Debates"
     expect(page).to have_content "Help about debates"
@@ -57,39 +64,40 @@ feature "Admin custom information texts" do
   context "Globalization" do
 
     scenario "Add a translation", :js do
-      key = "debates.form.debate_title"
+      key = "debates.index.section_footer.title"
 
       visit admin_site_customization_information_texts_path
 
       select "Français", from: "translation_locale"
-      fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise du débat"
+      fill_in "contents[content_#{key}]values[value_fr]", with: "Aide personalise sur les débats"
 
       click_button "Save"
 
       expect(page).to have_content "Translation updated successfully"
 
-      select "Français", from: "translation_locale"
+      visit admin_site_customization_information_texts_path
 
-      expect(page).to have_content "Titre personalise du débat"
-      expect(page).not_to have_content "Titre du débat"
+      select "Français", from: "translation_locale"
+      expect(page).to have_content "Aide personalise sur les débats"
+      expect(page).not_to have_content "Aide sur les débats"
     end
 
     scenario "Update a translation", :js do
-      key = "debates.form.debate_title"
-      content = create(:i18n_content, key: key, value_fr: "Titre personalise du débat")
+      key = "proposals.form.proposal_title"
 
-      visit admin_site_customization_information_texts_path
+      visit admin_site_customization_information_texts_path(tab: "proposals")
 
       select "Français", from: "translation_locale"
-      fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise again du débat"
+      fill_in "contents_content_#{key}values_value_fr", with: "Titre personalise de la proposition"
 
       click_button "Save"
       expect(page).to have_content "Translation updated successfully"
 
+      visit admin_site_customization_information_texts_path(tab: "proposals")
       click_link "Français"
 
-      expect(page).to have_content "Titre personalise again du débat"
-      expect(page).not_to have_content "Titre personalise du débat"
+      expect(page).to have_content "Titre personalise de la proposition"
+      expect(page).not_to have_content "Titre de la proposition"
     end
 
     scenario "Remove a translation", :js do
@@ -103,7 +111,7 @@ feature "Admin custom information texts" do
                                           value_en: "Custom debate text",
                                           value_es: "Texto personalizado de debate")
 
-      visit admin_site_customization_information_texts_path
+      visit admin_site_customization_information_texts_path(tab: "debates")
 
       click_link "Español"
       click_link "Remove language"
@@ -111,6 +119,7 @@ feature "Admin custom information texts" do
 
       expect(page).not_to have_link "Español"
 
+      visit admin_site_customization_information_texts_path(tab: "debates")
       click_link "English"
       expect(page).to have_content "Custom debate text"
       expect(page).to have_content "Custom debate title"

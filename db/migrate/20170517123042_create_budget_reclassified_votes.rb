@@ -1,4 +1,4 @@
-class CreateBudgetReclassifiedVotes < ActiveRecord::Migration
+class CreateBudgetReclassifiedVotes < ActiveRecord::Migration[4.2]
   def change
     create_table :budget_reclassified_votes do |t|
       t.integer :user_id

@@ -1,4 +1,4 @@
-class Widget::Feed < ActiveRecord::Base
+class Widget::Feed < ApplicationRecord
   self.table_name = "widget_feeds"
 
   KINDS = %w(proposals debates processes)
@@ -8,7 +8,7 @@ class Widget::Feed < ActiveRecord::Base
   end
 
   def setting
-    Setting.where(key: "feature.homepage.widgets.feeds.#{kind}").first
+    Setting.where(key: "homepage.widgets.feeds.#{kind}").first
   end
 
   def self.active
@@ -31,7 +31,7 @@ class Widget::Feed < ActiveRecord::Base
   end
 
   def processes
-    Legislation::Process.open.published.limit(limit)
+    Legislation::Process.open.published.order("created_at DESC").limit(limit)
   end
 
 end

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Users" do
+describe "Users" do
 
   context "Regular authentication" do
     context "Sign up" do
@@ -75,7 +75,7 @@ feature "Users" do
 
         visit account_path
 
-        expect(page).to have_link "My activity", href: user_path(u1)
+        expect(page).to have_link "My content", href: user_path(u1)
 
         visit "/"
         click_link "Sign out"
@@ -88,7 +88,7 @@ feature "Users" do
         click_button "Enter"
 
         expect(page).not_to have_content "You have been signed in successfully."
-        expect(page).to have_content "Invalid login or password."
+        expect(page).to have_content "Invalid Email or username or password."
 
         fill_in "user_login",    with: "venom@nyc.dev"
         fill_in "user_password", with: "symbiote"
@@ -98,7 +98,7 @@ feature "Users" do
 
         visit account_path
 
-        expect(page).to have_link "My activity", href: user_path(u2)
+        expect(page).to have_link "My content", href: user_path(u2)
       end
     end
   end
@@ -340,9 +340,11 @@ feature "Users" do
     fill_in "user_email", with: "manuela@consul.dev"
     click_button "Send instructions"
 
-    expect(page).to have_content "In a few minutes, you will receive an email containing instructions on resetting your password."
+    expect(page).to have_content "If your email address is in our database, in a few minutes "\
+                                 "you will receive a link to use to reset your password."
 
-    sent_token = /.*reset_password_token=(.*)".*/.match(ActionMailer::Base.deliveries.last.body.to_s)[1]
+    action_mailer = ActionMailer::Base.deliveries.last.body.to_s
+    sent_token = /.*reset_password_token=(.*)".*/.match(action_mailer)[1]
     visit edit_user_password_path(reset_password_token: sent_token)
 
     fill_in "user_password", with: "new password"
@@ -350,6 +352,47 @@ feature "Users" do
     click_button "Change my password"
 
     expect(page).to have_content "Your password has been changed successfully."
+  end
+
+  scenario "Reset password with unexisting email" do
+    visit "/"
+    click_link "Sign in"
+    click_link "Forgotten your password?"
+
+    fill_in "user_email", with: "fake@mail.dev"
+    click_button "Send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes "\
+                                 "you will receive a link to use to reset your password."
+
+  end
+
+  scenario "Re-send confirmation instructions" do
+    create(:user, email: "manuela@consul.dev")
+
+    visit "/"
+    click_link "Sign in"
+    click_link "Haven't received instructions to activate your account?"
+
+    fill_in "user_email", with: "manuela@consul.dev"
+    click_button "Re-send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
+                                 "will receive an email containing instructions on how to reset "\
+                                 "your password."
+  end
+
+  scenario "Re-send confirmation instructions with unexisting email" do
+    visit "/"
+    click_link "Sign in"
+    click_link "Haven't received instructions to activate your account?"
+
+    fill_in "user_email", with: "fake@mail.dev"
+    click_button "Re-send instructions"
+
+    expect(page).to have_content "If your email address is in our database, in a few minutes you "\
+                                 "will receive an email containing instructions on how to reset "\
+                                 "your password."
   end
 
   scenario "Sign in, admin with password expired" do

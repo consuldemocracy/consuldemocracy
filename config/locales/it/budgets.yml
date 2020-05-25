@@ -109,9 +109,9 @@ it:
         author_deleted: Utente cancellato
         price_explanation: Informazioni sui costi
         unfeasibility_explanation: Informazioni sulla infattibilità
-        code_html: 'Codice del progetto di investimento: <strong>%{code}</strong>'
-        location_html: 'Ubicazione: <strong>%{location}</strong>'
-        organization_name_html: 'Proposto per conto di: <strong>%{name}</strong>'
+        code_html: "Codice del progetto di investimento: <strong>%{code}</strong>"
+        location_html: "Ubicazione: <strong>%{location}</strong>"
+        organization_name_html: "Proposto per conto di: <strong>%{name}</strong>"
         share: Condividere
         title: Progetto di investimento
         supports: Sostegni
@@ -120,10 +120,10 @@ it:
         comments_tab: Commenti
         milestones_tab: Traguardi
         author: Autore
-        project_unfeasible_html: 'Questo progetto di investimento <strong>è stato contrassegnato come irrealizzabile</strong> e non accederà alla fase di voto finale.'
-        project_selected_html: 'Il progetto di investimento <strong>è stato selezionato</strong> per la fase di voto.'
-        project_winner: 'Progetto di investimento vincitore'
-        project_not_selected_html: 'Questo progetto di investimento <strong>non è stato selezionato</strong> per la fase di voto finale.'
+        project_unfeasible_html: "Questo progetto di investimento <strong>è stato contrassegnato come irrealizzabile</strong> e non accederà alla fase di voto finale."
+        project_selected_html: "Il progetto di investimento <strong>è stato selezionato</strong> per la fase di voto."
+        project_winner: "Progetto di investimento vincitore"
+        project_not_selected_html: "Questo progetto di investimento <strong>non è stato selezionato</strong> per la fase di voto finale."
       wrong_price_format: Solo numeri interi
       investment:
         add: Votare

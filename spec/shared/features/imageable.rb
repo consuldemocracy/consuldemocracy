@@ -37,58 +37,6 @@ shared_examples "imageable" do |imageable_factory_name, imageable_path, imageabl
     end
 
   end
-
-  context "Destroy" do
-
-    background do
-      create(:image, imageable: imageable, user: imageable.author)
-    end
-
-    scenario "Administrators cannot destroy imageables they have not authored" do
-      login_as(administrator)
-
-      visit send(imageable_path, imageable_arguments)
-      expect(page).not_to have_link "Remove image"
-    end
-
-    scenario "Users cannot destroy imageables they have not authored" do
-      login_as(create(:user))
-
-      visit send(imageable_path, imageable_arguments)
-      expect(page).not_to have_link "Remove image"
-    end
-
-    scenario "Should show success notice after successful deletion" do
-      login_as imageable.author
-
-      visit send(imageable_path, imageable_arguments)
-      click_on "Remove image"
-
-      expect(page).to have_content "Image was deleted successfully."
-    end
-
-    scenario "Should not show image after successful deletion" do
-      login_as imageable.author
-
-      visit send(imageable_path, imageable_arguments)
-      click_on "Remove image"
-
-      expect(page).not_to have_selector "figure img"
-    end
-
-    scenario "Should redirect to imageable path after successful deletion" do
-      login_as imageable.author
-
-      visit send(imageable_path, imageable_arguments)
-      click_on "Remove image"
-
-      within "##{dom_id(imageable)}" do
-        expect(page).to have_selector "h1", text: imageable.title
-      end
-    end
-
-  end
-
 end
 
 def attach_image(path, success = true)

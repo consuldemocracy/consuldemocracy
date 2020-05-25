@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Signature sheets" do
+describe "Signature sheets" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -39,10 +39,13 @@ feature "Signature sheets" do
 
       select "Citizen proposal", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: proposal.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 99999999Z"
+      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
+      expect(page).to have_content "There is 1 valid signature"
+      expect(page).to have_content "There is 1 vote created from the verified signatures"
+      expect(page).to have_content "There are 2 invalid signatures"
 
       visit proposal_path(proposal)
 
@@ -58,10 +61,13 @@ feature "Signature sheets" do
 
       select "Investment", from: "signature_sheet_signable_type"
       fill_in "signature_sheet_signable_id", with: investment.id
-      fill_in "signature_sheet_document_numbers", with: "12345678Z, 99999999Z"
+      fill_in "signature_sheet_document_numbers", with: "12345678Z, 1234567L, 99999999Z"
       click_button "Create signature sheet"
 
       expect(page).to have_content "Signature sheet created successfully"
+      expect(page).to have_content "There is 1 valid signature"
+      expect(page).to have_content "There is 1 vote created from the verified signatures"
+      expect(page).to have_content "There are 2 invalid signatures"
 
       visit budget_investment_path(budget, investment)
 

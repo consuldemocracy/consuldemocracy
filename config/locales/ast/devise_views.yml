@@ -15,7 +15,7 @@ ast:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar la mio cuenta
-        text: 'Pues confirmar la to cuenta corréu lleutrónicu n''esti enllace:'
+        text: "Pues confirmar la to cuenta corréu lleutrónicu n'esti enllace:"
         title: Bienveníu/a
         welcome: Bienveníu/a
       reset_password_instructions:
@@ -23,12 +23,12 @@ ast:
         hello: Hola
         ignore_text: Si nun lo solicitaste, pues ignorar esti corréu.
         info_text: La to contraseña nun camudará mentantu nun accedas al enllace y la modifiques.
-        text: 'Recibimos una solicitú pa camudar la to contraseña, pues facelo nel siguiente enllace:'
+        text: "Recibimos una solicitú pa camudar la to contraseña, pues facelo nel siguiente enllace:"
         title: Camuda la to clave
       unlock_instructions:
         hello: Hola
         info_text: La to cuenta fue pesllá por un excesivu númberu de intentos fallíos d'alta.
-        instructions_text: 'Vete a esti enllace pa despesllar la to cuenta:'
+        instructions_text: "Vete a esti enllace pa despesllar la to cuenta:"
         title: La to cuenta fue pesllá
         unlock_link: Despesllar la mio cuenta
     menu:
@@ -100,7 +100,7 @@ ast:
           password_confirmation_label: Confimar contraseña nueva
           password_label: Nueva clave
           update_submit: Actualizar
-          waiting_for: 'Esperando confirmación de:'
+          waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
           email_label: Corréu electrónicu

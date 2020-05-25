@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Tracking" do
+describe "Tracking" do
 
   context "Custom variable" do
 

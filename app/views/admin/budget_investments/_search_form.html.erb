@@ -11,14 +11,22 @@
   <div id="advanced_filters" class="<%= advanced_menu_visibility %>" data-toggler=".hide">
     <div class="small-12 column">
       <div class="advanced-filters-content">
-        <% ["feasible", "selected", "undecided", "unfeasible"].each do |option| %>
+        <% %w[feasible selected undecided unfeasible without_admin without_valuator under_valuation
+              valuation_finished winners].each do |filter| %>
           <div class="filter">
-            <%= check_box_tag "advanced_filters[]", option, params[:advanced_filters].index(option), id: "advanced_filters_#{option}" %>
-            <%= t("admin.budget_investments.index.filters.#{option}") %>
+            <%= check_box_tag "advanced_filters[]", filter, params[:advanced_filters].index(filter), id: "advanced_filters_#{filter}" %>
+            <%= label_tag "advanced_filters[#{filter}]", t("admin.budget_investments.index.filters.#{filter}") %>
           </div>
         <% end %>
-        <div class="filter">
-          <%= text_field_tag :min_total_supports, params["min_total_supports"], placeholder: t("admin.budget_investments.index.filters.min_total_supports") %>
+        <div>
+          <div class="filter">
+            <%= label_tag :min_total_supports, t("admin.budget_investments.index.filters.min_total_supports") %>
+            <%= text_field_tag :min_total_supports, params["min_total_supports"] %>
+          </div>
+          <div class="filter">
+            <%= label_tag :max_total_supports, t("admin.budget_investments.index.filters.max_total_supports") %>
+            <%= text_field_tag :max_total_supports, params["max_total_supports"] %>
+          </div>
         </div>
       </div>
     </div>

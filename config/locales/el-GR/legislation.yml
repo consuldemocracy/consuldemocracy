@@ -1,0 +1,125 @@
+el:
+  legislation:
+    annotations:
+      comments:
+        see_all: Εμφάνιση όλων
+        see_complete: Εμφάνιση πλήρους
+        comments_count:
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
+        replies_count:
+          one: "%{count} απάντηση"
+          other: "%{count} απαντήσεις"
+        cancel: Άκυρο
+        publish_comment: Δημοσίευση σχολίου
+      form:
+        phase_not_open: Αυτή η φάση δεν είναι ανοιχτή
+        login_to_comment: Πρέπει να %{signin} ή %{signup} για να αφήσετε ένα σχόλιο.
+        signin: Σύνδεση
+        signup: Εγγραφή
+      index:
+        title: Σχόλια
+        comments_about: Σχόλια σχετικά με
+        see_in_context: Δείτε στο περιεχόμενο
+        comments_count:
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
+      show:
+        title: Σχόλιο
+      version_chooser:
+        seeing_version: Σχόλια για την έκδοση
+        see_text: Δείτε το σχέδιο του κειμένου
+    draft_versions:
+      changes:
+        title: Αλλαγές
+        seeing_changelog_version: Αλλαγή σύνοψης
+        see_text: Δείτε το κείμενο
+      show:
+        loading_comments: Φόρτωση σχολίων
+        seeing_version: Βλέπετε εκδοχή του σχεδίου
+        select_draft_version: Επιλέξτε σχέδιο
+        select_version_submit: βλ.
+        updated_at: ενημέρωση στις %{date}
+        see_changes: δείτε συνοπτικά τις αλλαγές
+        see_comments: Δείτε όλα τα σχόλια
+        text_toc: Πίνακας περιεχομένων
+        text_body: Κείμενο
+        text_comments: Σχόλια
+    processes:
+      header:
+        additional_info: Πρόσθετες πληροφορίες
+        description: Περιγραφή
+        more_info: Περισσότερες πληροφορίες και περιεχόμενο
+      proposals:
+        empty_proposals: Δεν υπάρχουν προτάσεις
+        filters:
+          random: Τυχαία
+          winners: Επιλεγμένο
+      debate:
+        empty_questions: Δεν υπάρχουν ερωτήσεις
+        participate: Συμμετέχετε στη συζήτηση
+      index:
+        filter: Φίλτρο
+        filters:
+          open: Ανοικτές διαδικασίες
+          past: Παρελθόν
+        no_open_processes: Δεν υπάρχουν ανοικτές διαδικασίες
+        no_past_processes: Δεν υπάρχουν παρελθόντες διεργασίες
+        section_header:
+          icon_alt: Εικονίδιο συνεργατικής νομοθεσίας
+          title: Συνεργατική νομοθεσία
+          help: Βοήθεια σχετικά με τη συλλογική νομοθεσία
+        section_footer:
+          title: Βοήθεια σχετικά με τη συλλογική νομοθεσία
+          description: Συμμετέχετε σε συζητήσεις και διαδικασίες πριν εγκρίνετε κάποιο διάταγμα ή δημοτική πράξη. Η γνώμη σας λαμβάνεται υπόψη από το δημοτικό συμβούλιο.
+      phase_not_open:
+        not_open: Αυτή η φάση δεν είναι ακόμη ανοιχτή
+      phase_empty:
+        empty: Τίποτα δεν δημοσιεύθηκε ακόμα
+      process:
+        see_latest_comments: Δείτε τα τελευταία σχόλια
+        see_latest_comments_title: Σχολιάστε σε αυτή τη διαδικασία
+      shared:
+        key_dates: Φάσεις συμμετοχής
+        homepage: Αρχική σελίδα
+        debate_dates: Συζήτηση
+        draft_publication_date: Δημοσίευση σχεδίου
+        allegations_dates: Σχόλια
+        result_publication_date: Δημοσίευση του τελικού αποτελέσματος
+        milestones_date: Ακολουθεί
+        proposals_dates: Προτάσεις
+    questions:
+      comments:
+        comment_button: Δημοσίευση απάντησης
+        comments_title: Άνοιγμα απαντήσεων
+        comments_closed: Κλειστή φάση
+        form:
+          leave_comment: Αφήστε μια απάντηση
+      question:
+        comments:
+          zero: Δεν υπάρχουν σχόλια
+          one: "%{count} σχόλιο"
+          other: "%{count} σχόλια"
+        debate: Συζήτηση
+      show:
+        answer_question: Υποβολή απάντησης
+        next_question: Επόμενη ερώτηση
+        first_question: Πρώτη ερώτηση
+        share: Μοιραστείτε
+        title: Διαδικασία συνεργατικής νομοθεσίας
+      participation:
+        phase_not_open: Αυτή η φάση δεν είναι ανοιχτή
+        organizations: Δεν επιτρέπεται στους οργανισμούς να συμμετέχουν στη συζήτηση
+        signin: Συνδεθείτε
+        signup: Εγγραφή
+        unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να συμμετάσχετε.
+        verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να συμμετάσχουν, %{verify_account}.
+        verify_account: επαλήθευση του λογαριασμού σας
+        debate_phase_not_open: Η φάση συζήτησης έχει τελειώσει και οι απαντήσεις δεν γίνονται πλέον αποδεκτές
+    shared:
+      share: Μοιραστείτε
+      share_comment: Σχόλιο στο %{version_name} από το σχεδιασμό διαδικασίας %{process_name}
+    proposals:
+      form:
+        tags_label: "Κατηγορίες"
+      not_verified: "Για υποψηφιότητες %{verify_account}."

@@ -32,8 +32,6 @@ eu:
       index:
         name: Izena
         email: E-mail
-    menu:
-      poll_questions: Galderak
     administrators:
       index:
         name: Izena

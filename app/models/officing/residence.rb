@@ -35,7 +35,7 @@ class Officing::Residence
         verified_at:           Time.current,
         erased_at:             Time.current,
         password:              random_password,
-        terms_of_service:      '1',
+        terms_of_service:      "1",
         email:                 nil
       }
       self.user = User.create!(user_params)
@@ -75,7 +75,7 @@ class Officing::Residence
     return unless @census_api_response.valid?
 
     unless allowed_age?
-      #errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
+      errors.add(:year_of_birth, I18n.t('verification.residence.new.error_not_allowed_age'))
     end
   end
 
@@ -106,7 +106,7 @@ class Officing::Residence
     end
 
     def residency_valid?
-      @census_api_response.valid? 
+      @census_api_response.valid?
     end
 
     def census_year_of_birth
@@ -118,7 +118,7 @@ class Officing::Residence
     end
 
     def random_password
-      (0...20).map { ('a'..'z').to_a[rand(26)] }.join
+      (0...20).map { ("a".."z").to_a[rand(26)] }.join
     end
 
 end

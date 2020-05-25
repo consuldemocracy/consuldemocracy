@@ -372,8 +372,8 @@ val:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificat per Padró'
-              already_voted: 'Ja ha votat aquesta proposta'
+              not_in_census: "No verificat per Padró"
+              already_voted: "Ja ha votat aquesta proposta"
         site_customization/page:
           attributes:
             slug:
@@ -386,7 +386,7 @@ val:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'No pots comentar una valoració'
+              cannot_comment_valuation: "No pots comentar una valoració"
       messages:
         record_invalid: "Error de validació: %{errors}"
         restrict_dependent_destroy:

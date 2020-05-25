@@ -1,15 +1,13 @@
 require "rails_helper"
 
-feature "Moderate proposals" do
+describe "Moderate proposals" do
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.proposals"] = nil
+    Setting["process.proposals"] = nil
     moderator = create(:moderator)
     login_as(moderator.user)
 
     expect{ visit moderation_proposals_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.proposals"] = true
   end
 
   scenario "Hide", :js do
@@ -45,16 +43,16 @@ feature "Moderate proposals" do
     end
   end
 
-  feature "/moderation/ screen" do
+  describe "/moderation/ screen" do
 
-    background do
+    before do
       moderator = create(:moderator)
       login_as(moderator.user)
     end
 
-    feature "moderate in bulk" do
-      feature "When a proposal has been selected for moderation" do
-        background do
+    describe "moderate in bulk" do
+      describe "When a proposal has been selected for moderation" do
+        before do
           @proposal = create(:proposal)
           visit moderation_proposals_path
           within(".menu.simple") do

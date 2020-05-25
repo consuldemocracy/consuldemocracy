@@ -6,7 +6,7 @@
   <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
   <%= t("mailers.email_verification.instructions_html",
         verification_link: link_to(
-          t('mailers.email_verification.click_here_to_verify'),
+          t("mailers.email_verification.click_here_to_verify"),
           email_url(email_verification_token: @token))) %>
   </p>
 

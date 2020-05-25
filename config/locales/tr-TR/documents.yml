@@ -1,1 +1,24 @@
 tr:
+  documents:
+    title: Belgeler
+    max_documents_allowed_reached_html: İzin verilen maksimum belge sayısına ulaştınız! <strong>Başka bir yükleme yapmadan önce birini silmelisiniz.</strong>
+    form:
+      title: Belgeler
+      title_placeholder: Belge için açıklayıcı bir başlık ekleyin
+      attachment_label: Belge seç
+      delete_button: Belgeyi kaldır
+      cancel_button: İptal
+      note: "Aşağıdaki içerik türlerinden en fazla %{max_documents_allowed} belgelerini yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size}'a yükseltilebilir dosya başına MB."
+      add_new_document: Yeni belge ekle
+    actions:
+      destroy:
+        notice: Belge başarıyla silindi.
+        alert: Belge yok edilemez.
+        confirm: Belgeyi silmek istediğnize emin misiniz? Bu işlem geri alınamaz!
+    buttons:
+      download_document: Dosyayı indir
+      destroy_document: Belgeyi yok et
+    errors:
+      messages:
+        in_between: '%{min} ve %{max} arasında olması gereklidir'
+        wrong_content_type: içerik türü %{content_type} kabul edilen içerik türlerinin %{accepted_content_types} hiçbiriyle eşleşmiyor

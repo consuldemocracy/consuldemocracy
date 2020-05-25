@@ -15,7 +15,7 @@ it:
     mailer:
       confirmation_instructions:
         confirm_link: Conferma il mio account
-        text: 'È possibile confermare il tuo account di posta elettronica attraverso il seguente link:'
+        text: "È possibile confermare il tuo account di posta elettronica attraverso il seguente link:"
         title: Benvenuto
         welcome: Benvenuto/a
       reset_password_instructions:
@@ -23,12 +23,12 @@ it:
         hello: Salve
         ignore_text: Se non hai richiesto una modifica della password, ignora questa email.
         info_text: La password non cambierà a meno che non si acceda al link e la si modifichi.
-        text: 'Abbiamo ricevuto una richiesta per il cambio della tua password. Potrai farlo attraverso il seguente link:'
+        text: "Abbiamo ricevuto una richiesta per il cambio della tua password. Potrai farlo attraverso il seguente link:"
         title: Cambia la tua password
       unlock_instructions:
         hello: Ciao
         info_text: Il tuo account è stato bloccato a causa di un numero eccessivo di tentativi di accesso non riusciti.
-        instructions_text: 'Cliccate su questo link per sbloccare il tuo account:'
+        instructions_text: "Cliccate su questo link per sbloccare il tuo account:"
         title: Il tuo account è stato bloccato
         unlock_link: Sbloccare la mia utenza
     menu:
@@ -103,7 +103,7 @@ it:
           password_confirmation_label: Confermare la nuova password
           password_label: Nuova password
           update_submit: Aggiornare
-          waiting_for: 'In attesa di conferma di:'
+          waiting_for: "In attesa di conferma di:"
         new:
           cancel: Annulla login
           email_label: Email

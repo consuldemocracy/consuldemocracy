@@ -13,8 +13,6 @@ fa:
     votes_for_proposal_success: "تعداد آراء لازم برای تایید پیشنهاد"
     months_to_archive_proposals: "ماهها برای بایگانی پیشنهادات"
     email_domain_for_officials: "دامنه ایمیل برای مقامات دولتی"
-    per_page_code_head: "کد موجود در هر صفحه (<head>)"
-    per_page_code_body: "کد موجود در هر صفحه (<head>)"
     twitter_handle: "دسته توییتر"
     twitter_hashtag: "هشتگ توییتر"
     facebook_handle: "فیس بوک"
@@ -23,29 +21,15 @@ fa:
     instagram_handle: "اینستاگرام"
     url: "آدرس اصلی"
     org_name: "سازمان"
-    place_name: "محل"
-    map_latitude: "عرض جغرافیایی\n"
-    map_longitude: "طول جغرافیایی"
-    map_zoom: "زوم"
     meta_title: "عنوان سایت (SEO)"
     meta_description: "توضیحات سایت (SEO)"
     meta_keywords: "واژه هاي كليدي (SEO)"
     min_age_to_participate: حداقل سن مورد نیاز برای شرکت 
-    blog_url: "نشانی اینترنتی وبلاگ"
-    transparency_url: "نشانی اینترنتی شفافیت"
-    opendata_url: "URL Data را باز کنید"
-    verification_offices_url: دفاتر تأیید URL
-    proposal_improvement_path: لینک بهبود اطلاعات لینک داخلی
     feature:
-      budgets: "بودجه مشارکتی"
       twitter_login: "ورود توییتر"
       facebook_login: "ورود فیس بوک"
       google_login: "ورود به سایت گوگل"
-      proposals: "طرح های پیشنهادی"
-      debates: "مباحثه"
-      polls: "نظر سنجی ها"
       signature_sheets: "ورق امضا"
-      legislation: "قانون"
       spending_proposals: "هزینه های طرح ها"
       user:
         recommendations: "توصیه ها"

@@ -1,4 +1,4 @@
-<%= form_tag '', method: :get do %>
+<%= form_tag "", method: :get do %>
   <%= label_tag :poll_id, t("admin.questions.index.filter_poll") %>
   <%= select_tag "poll_id",
                  poll_select_options(true),

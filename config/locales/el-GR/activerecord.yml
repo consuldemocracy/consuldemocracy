@@ -1,0 +1,441 @@
+el:
+  activerecord:
+    models:
+      activity:
+        one: "Δραστηριότητα"
+        other: "Δραστηριότητα"
+      budget:
+        one: "Προϋπολογισμός"
+        other: "Προϋπολογισμός"
+      budget/investment:
+        one: "Επένδυση"
+        other: "Επένδυση"
+      milestone:
+        one: "Ορόσημο"
+        other: "Ορόσημο"
+      milestone/status:
+        one: "Κατάσταση Ορόσημου"
+        other: "Κατάσταση Ορόσημου"
+      progress_bar:
+        one: "Γραμμή προόδου"
+        other: "Γραμμή προόδου"
+      comment:
+        one: "Σχόλιο"
+        other: "Σχόλιο"
+      debate:
+        one: "Συζήτηση"
+        other: "Συζήτηση"
+      tag:
+        one: "Ετικέτα"
+        other: "Ετικέτα"
+      user:
+        one: "Χρήστης"
+        other: "Χρήστης"
+      moderator:
+        one: "Συντονιστής"
+        other: "Συντονιστής"
+      administrator:
+        one: "Διαχειριστής"
+        other: "Διαχειριστής"
+      valuator:
+        one: "Αξιολογητής"
+        other: "Αξιολογητής"
+      valuator_group:
+        one: "Ομάδα αξιολόγησης"
+        other: "Ομάδα αξιολόγησης"
+      manager:
+        one: "Υπεύθυνος"
+        other: "Υπεύθυνος"
+      newsletter:
+        one: "Ενημερωτικό δελτίο"
+        other: "Ενημερωτικό δελτίο"
+      vote:
+        one: "Ψήφος"
+        other: "Ψήφος"
+      organization:
+        one: "Οργανισμός"
+        other: "Οργανισμός"
+      poll/booth:
+        one: "Περίπτερο"
+        other: "Περίπτερο"
+      poll/officer:
+        one: "Λειτουργός"
+        other: "Λειτουργός"
+      poll/ballot_sheet:
+        one: Φύλλο ψηφοφορίας
+        other: Φύλλο ψηφοφορίας
+      proposal:
+        one: "Πρόταση πολίτη"
+        other: "Πρόταση πολίτη"
+      spending_proposal:
+        one: "Επενδυτικό έργο"
+        other: "Επενδυτικά έργα"
+      site_customization/page:
+        one: Προσαρμοσμένη σελίδα
+        other: Προσαρμοσμένες σελίδες
+      site_customization/image:
+        one: Προσαρμοσμένη εικόνα
+        other: Προσαρμοσμένες εικόνες
+      site_customization/content_block:
+        one: Προσαρμοσμένο μπλοκ περιεχομένου
+        other: Προσαρμοσμένο περιεχόμενο μπλοκς
+      document:
+        one: Έγγραφο
+        other: Έγγραφο
+      legislation/process:
+        one: "Διαδικασία"
+        other: "Διαδικασίες"
+      legislation/proposal:
+        one: "Πρόταση"
+        other: "Προτάσεις"
+      legislation/draft_versions:
+        one: "Προσχέδιο"
+        other: "Εκδοχές του σχεδίου"
+      legislation/questions:
+        one: "Ερώτηση"
+        other: "Ερωτήσεις"
+      legislation/question_options:
+        one: "Επιλογή ερώτησης"
+        other: "Ερώτημα επιλογών"
+      legislation/answers:
+        one: "Απάντηση"
+        other: "Απαντήσεις"
+      documents:
+        one: "Έγγραφο"
+        other: "Έγγραφα"
+      images:
+        one: "Εικόνα"
+        other: "Εικόνες"
+      topic:
+        one: "Θέμα"
+        other: "Θέματα"
+      poll:
+        one: "Δημοσκόπηση"
+        other: "Δημοσκοπήσεις"
+      proposal_notification:
+        one: "Ειδοποίηση πρότασης"
+        other: "Κοινοποιήσεις της πρότασης"
+      dashboard/action:
+        one: Πίνακας εργαλείων προτάσεων
+        other: Πίνακας εργαλείων προτάσεων
+      dashboard/administrator_task:
+        one: Εργασία
+        other: Εργασίες
+      link:
+        one: Σύνδεσμος
+        other: Σύνδεσμοι
+    attributes:
+      budget:
+        name: "Όνομα"
+        description_accepting: "Περιγραφή κατά τη φάση αποδοχής"
+        description_reviewing: "Περιγραφή κατά τη φάση Αναθεώρησης"
+        description_selecting: "Περιγραφή κατά τη φάση Επιλογής"
+        description_valuating: "Περιγραφή κατά τη φάση Αξιολόγησης"
+        description_balloting: "Περιγραφή κατά τη φάση Ψηφοφορίας"
+        description_reviewing_ballots: "Περιγραφή κατά τη διάρκεια της φάσης Αναθεώρησης Ψηφοδελτίων"
+        description_finished: "Περιγραφή όταν έχει ολοκληρωθεί ο προϋπολογισμός"
+        phase: "Φάση"
+        currency_symbol: "Συνάλλαγμα"
+      budget/investment:
+        heading_id: "Επικεφαλίδα"
+        title: "Τίτλος"
+        description: "Περιγραφή"
+        external_url: "Σύνδεσμος πρόσθετης τεκμηρίωσης"
+        administrator_id: "Διαχειριστής"
+        location: "Τοποθεσία (προαιρετικό)"
+        organization_name: "Εάν υποβάλετε πρόταση εκ μέρους ομάδας, οργανισμού ή άλλων προσώπων, παρακαλείσθε όπως αναφέρετε την ονομάσία τους"
+        image: "Περιγραφική εικόνα πρότασης"
+        image_title: "Τίτλος εικόνας"
+      geozone:
+        name: Όνομα
+        external_code: "Εξωτερικός κώδικας (προαιρετικό)"
+        census_code: "Κωδικός απογραφής (προαιρετικό)"
+        html_map_coordinates: "Συντεταγμένες HTML <map> (προαιρετικό)"
+      milestone:
+        status_id: "Τρέχουσα κατάσταση (προαιρετικό)"
+        title: "Τίτλος"
+        description: "Περιγραφή (προαιρετικό έαν έχει ανατεθεί μια κατάσταση)"
+        publication_date: "Ημερομηνία δημοσίευσης"
+      milestone/status:
+        name: "Όνομα"
+        description: "Περιγραφή (προαιρετικό)"
+      progress_bar:
+        kind: "Τύπος"
+        title: "Τίτλος"
+        percentage: "Τρέχουσα πρόοδος"
+      progress_bar/kind:
+        primary: "Στοιχειώδης"
+        secondary: "Δευτερεύων"
+      budget/heading:
+        name: "Όνομα επικεφαλίδας"
+        price: "Τιμή"
+        population: "Πληθυσμός"
+      comment:
+        body: "Σχόλιο"
+        user: "Χρήστης"
+      debate:
+        author: "Συντάκτης"
+        description: "Γνώμη"
+        terms_of_service: "Όροι υπηρεσίας"
+        title: "Τίτλος"
+      proposal:
+        author: "Συντάκτης"
+        title: "Τίτλος"
+        question: "Ερώτηση"
+        description: "Περιγραφή"
+        terms_of_service: "Όροι υπηρεσίας"
+      user:
+        login: "E-mail ή όνομα χρήστη"
+        email: "E-Mail"
+        username: "Όνομα χρήστη"
+        password_confirmation: "Επιβεβαίωση κωδικού πρόσβασης"
+        password: "Κωδικός πρόσβασης"
+        current_password: "Τρέχων κωδικός πρόσβασης"
+        phone_number: "Αριθμός τηλεφώνου"
+        official_position: "Επίσημη θέση"
+        official_level: "Επίσημο επίπεδο"
+        redeemable_code: "Κωδικός επαλήθευσης που λάβατε μέσω email"
+      organization:
+        name: "Επωνυμία οργανισμού"
+        responsible_name: "Υπεύθυνος ομάδας"
+      spending_proposal:
+        administrator_id: "Διαχειριστής"
+        association_name: "Όνομα οργανισμού"
+        description: "Περιγραφή"
+        external_url: "Σύνδεσμος πρόσθετης τεκμηρίωσης"
+        geozone_id: "Πεδίο Δράσεως"
+        title: "Τίτλος"
+      poll:
+        name: "Όνομα"
+        starts_at: "Ημερομηνία έναρξης"
+        ends_at: "Καταληκτική ημερομηνία"
+        geozone_restricted: "Περιορίζεται από το geozone"
+        summary: "Περίληψη"
+        description: "Περιγραφή"
+      poll/translation:
+        name: "Όνομα"
+        summary: "Περίληψη"
+        description: "Περιγραφή"
+      poll/question:
+        title: "Ερώτηση"
+        summary: "Περίληψη"
+        description: "Περιγραφή"
+        external_url: "Σύνδεσμος σε πρόσθετη τεκμηρίωση"
+      poll/question/translation:
+        title: "Ερώτηση"
+      poll/ballot_sheet:
+        data: Στοιχεία CSV
+        poll_id: Δημοσκόπηση
+        officer_assignment_id: Ανάθεση Εργασίας Λειτουργού
+      signature_sheet:
+        signable_type: "Τύπος με δυνατότητα υπογραφής"
+        signable_id: "Με δυνατότητα υπογραφής ID"
+        document_numbers: "Αριθμοί εγγράφων"
+      site_customization/page:
+        content: Περιεχόμενο
+        created_at: Δημιουργήθηκε στις
+        subtitle: Υπότιτλος
+        slug: Χτυπώ δυνατά
+        status: Κατάσταση
+        title: Τίτλος
+        updated_at: Ενημερώθηκε στις
+        more_info_flag: Εμφάνιση στη σελίδα βοήθειας
+        print_content_flag: Κουμπί εκτύπωσης περιεχομένου
+        locale: Γλώσσα
+      site_customization/page/translation:
+        title: Τίτλος
+        subtitle: Υπότιτλος
+        content: Περιεχόμενο
+      site_customization/image:
+        name: Όνομα
+        image: Εικόνα
+      site_customization/content_block:
+        name: Όνομα
+        locale: Τοπικές ρυθμίσεις
+        body: Περιεχόμενο
+      banner:
+        background_color: Χρώμα φόντου
+        font_color: Χρώμα γραμματοσειράς
+      legislation/process:
+        title: Τίτλος διαδικασίας
+        summary: Περίληψη
+        description: Περιγραφή
+        additional_info: Πρόσθετες πληροφορίες
+        start_date: Έναρξη
+        end_date: Τέλος
+        debate_start_date: Έναρξη
+        debate_end_date: Τέλος
+        draft_start_date: Έναρξη
+        draft_end_date: Τέλος
+        draft_publication_date: Ημερομηνία δημοσίευσης προσχέδιου
+        allegations_start_date: Έναρξη
+        allegations_end_date: Τέλος
+        proposals_phase_start_date: Έναρξη
+        proposals_phase_end_date: Τέλος
+        result_publication_date: Ημερομηνία δημοσίευσης τελικών αποτελέσματων
+        background_color: Χρώμα φόντου
+        font_color: Χρώμα γραμματοσειράς
+      legislation/process/translation:
+        title: Τίτλος διαδικασίας
+        summary: Περίληψη
+        description: Περιγραφή
+        additional_info: Πρόσθετες πληροφορίες
+        milestones_summary: Περίληψη
+      legislation/draft_version:
+        title: Τίτλος έκδοσης
+        body: Κείμενο
+        changelog: Αλλαγές
+        status: Κατάσταση
+        final_version: Τελική μορφή
+      legislation/draft_version/translation:
+        title: Τίτλος έκδοσης
+        body: Κείμενο
+        changelog: Αλλαγές
+      legislation/question:
+        title: Τίτλος
+        question_options: Επιλογές
+      legislation/question_option:
+        value: Τιμή
+      legislation/annotation:
+        text: Σχόλιο
+      document:
+        title: Τίτλος
+        attachment: Επισύναψη
+      image:
+        title: Τίτλος
+        attachment: Επισύναψη
+      poll/question/answer:
+        title: Απάντηση
+        description: Περιγραφή
+      poll/question/answer/translation:
+        title: Απάντηση
+        description: Περιγραφή
+      poll/question/answer/video:
+        title: Τίτλος
+        url: Εξωτερικό βίντεο
+      newsletter:
+        segment_recipient: Παραλήπτες
+        subject: Θέμα
+        from: Από
+        body: Περιεχόμενο email
+      admin_notification:
+        segment_recipient: Παραλήπτες
+        title: Τίτλος
+        link: Σύνδεσμος
+        body: Κείμενο
+      admin_notification/translation:
+        title: Τίτλος
+        body: Κείμενο
+      widget/card:
+        label: Ετικέτα (προαιρετικό)
+        title: Τίτλος
+        description: Περιγραφή
+        link_text: Σύνδεσμος κειμένου
+        link_url: Σύνδεσμος URL
+        columns: Αριθμός στηλών
+      widget/card/translation:
+        label: Ετικέτα (προαιρετικό)
+        title: Τίτλος
+        description: Περιγραφή
+        link_text: Σύνδεσμος κειμένου
+      widget/feed:
+        limit: Αριθμός στοιχείων
+      dashboard/action:
+        title: Τίτλος
+        short_description: Σύντομη περιγραφή
+        description: Περιγραφή
+        link: Εξωτερικός σύνδεσμος
+        request_to_administrators: Συμπεριλάβετε ένα κουμπί στην πηγή  για να ζητήσετε αυτή την πηγή από τους διαχειριστές
+        day_offset: Σε πόσες ημέρες θέλετε να ενεργοποιηθεί η πρόταση μετά τη δημιουργία της;
+        required_supports: Πόση στήριξη πρέπει να λάβει η πρόταση προκειμένου να ενεργοποιηθεί;
+        order: Μπορείτε να εισαγάγετε τη θέση στη λίστα δράσεων στην οποία θα εμφανιστεί στο χρήστη αυτή η δράση 
+        active: Ενεργό
+        action_type: Τύπος
+      dashboard/administrator_task:
+        source: Πηγή
+        user: Εκτελέστηκε από
+      link:
+        label: Τίτλος
+        url: Σύνδεσμος
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              password_already_set: "Αυτός ο χρήστης έχει ήδη κωδικό πρόσβασης"
+        debate:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "Οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+        direct_message:
+          attributes:
+            max_per_day:
+              invalid: "Έχετε φτάσει το μέγιστο ημερίσιο αριθμό προσωπικών μηνυμάτων "
+        image:
+          attributes:
+            attachment:
+              min_image_width: "Το πλάτος της εικόνας πρέπει να είναι τουλάχιστον %{required_min_width}px"
+              min_image_height: "Το ύψος της εικόνας πρέπει να είναι τουλάχιστον %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Το τμήμα παραληπτών του χρήστη δεν είναι έγκυρο"
+        map_location:
+          attributes:
+            map:
+              invalid: Ο χάρτης τοποθεσίας δεν μπορεί να είναι κενός. Τοποθετήστε ένα δείκτη ή επιλέξτε το πλαίσιο ελέγχου εάν ο εντοπισµός "geolocalization' δεν είναι απαραίτητος
+        poll/voter:
+          attributes:
+            document_number:
+              not_in_census: "Έγγραφο το οποίο δεν βρίσκεται σε απογραφή"
+              has_voted: "Ο χρήστης έχει ήδη ψηφίσει"
+        legislation/process:
+          attributes:
+            end_date:
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης
+            debate_end_date:
+              invalid_date_range: πρέπει να είναι πάνω ή μετά την ημερομηνία έναρξης της συζήτησης
+            draft_end_date:
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ενδεικτική ημερομηνία έναρξης 
+            allegations_end_date:
+              invalid_date_range: πρέπει να είναι κατά ή μετά την ημερομηνία έναρξης των σχολίων
+        proposal:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+        budget/investment:
+          attributes:
+            tag_list:
+              less_than_or_equal_to: "οι ετικέτες πρέπει να είναι μικρότερες ή ίσες με %{count}"
+        proposal_notification:
+          attributes:
+            minimum_interval:
+              invalid: "Πρέπει να περιμένετε τουλάχιστον %{interval} ημέρες μεταξύ των ειδοποιήσεων"
+        signature:
+          attributes:
+            document_number:
+              not_in_census: "Μη εγκεκριμένο από το Census"
+              already_voted: "Έχετε ήδη ψηφίσει αυτήν την πρόταση"
+        site_customization/page:
+          attributes:
+            slug:
+              slug_format: "πρέπει να είναι γράμματα, αριθμοί, _ και -"
+        site_customization/image:
+          attributes:
+            image:
+              image_width: "Το πλάτος πρέπει να είναι %{required_width}px"
+              image_height: "Το ύψος πρέπει να είναι %{required_height}px"
+        comment:
+          attributes:
+            valuation:
+              cannot_comment_valuation: "Δεν μπορείτε να σχολιάσετε μια αξιολόγηση"
+      messages:
+        record_invalid: "Η επικύρωση απέτυχε: %{errors}"
+        another_poll_active: Υπάρχει άλλη ενεργή δημοσκόπηση για την δεδομένη περίοδο
+        restrict_dependent_destroy:
+          has_one: "Δεν μπορείτε να σβήσετε την εγγραφή λόγο του εξαρτημένου πεδίου %{record} "
+          has_many: "Δεν μπορείτε να σβήσετε την εγγραφή λόγο του εξαρτημένου πεδίου %{record} "

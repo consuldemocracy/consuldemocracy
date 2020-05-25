@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin legislation questions" do
+describe "Admin legislation questions" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -16,12 +16,8 @@ feature "Admin legislation questions" do
 
   context "Feature flag" do
 
-    background do
-      Setting["feature.legislation"] = nil
-    end
-
-    after do
-      Setting["feature.legislation"] = true
+    before do
+      Setting["process.legislation"] = nil
     end
 
     scenario "Disabled with a feature flag" do

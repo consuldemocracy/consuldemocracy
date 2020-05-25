@@ -14,7 +14,7 @@ class Admin::HomepageController < Admin::BaseController
   end
 
   def load_recommendations
-    @recommendations = Setting.where(key: 'feature.user.recommendations').first
+    @recommendations = Setting.where(key: "feature.user.recommendations").first
   end
 
   def load_cards

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "EmailVerifications" do
+describe "EmailVerifications" do
 
   scenario "Verifying a level 1 user via email" do
     login_as_manager

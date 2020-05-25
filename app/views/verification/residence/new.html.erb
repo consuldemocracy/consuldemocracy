@@ -67,7 +67,7 @@
       <%= f.label t("verification.residence.new.date_of_birth") %>
       <%= f.date_select :date_of_birth,
                         prompt: true,
-                        start_year: 1900, end_year: 16.years.ago.year,
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year,
                         label: false %>
       </div>
 
@@ -81,11 +81,11 @@
 
       <div class="small-12">
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('verification.residence.new.accept_terms_text_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t("verification.residence.new.accept_terms_text_title"), label: false %>
           <span class="checkbox">
             <%= t("verification.residence.new.accept_terms_text",
                 terms_url: link_to(t("verification.residence.new.terms"), "/census_terms",
-                title: t('shared.target_blank_html'),
+                title: t("shared.target_blank_html"),
                 target: "_blank")).html_safe
             %>
           </span>

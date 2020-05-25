@@ -2,16 +2,26 @@ ar:
   community:
     sidebar:
       title: المجتمع
+      description:
+        proposal: المشاركة في مجتمع هذا الاقتراح.
+        investment: المشاركة في مجتمع هذا الاستثمار.
+      button_to_access: الوصول إلى المجتمع
     show:
+      title:
+        proposal: اقتراح المجتمع
+        investment: مجتمع ميزانية الاستثمار
       create_first_community_topic:
+        sub_first_theme: "لانشاء موضوع يجب عليك %{sign_in} او %{sign_up}."
         sign_in: "تسجيل الدخول"
         sign_up: "انشاء حساب"
       tab:
         participants: المشاركون
       sidebar:
         participate: المشاركة
+        new_topic: إنشاء موضوع
       topic:
         edit: تحرير الموضوع
+        destroy: حذف الموضوع
         comments:
           zero: لا توجد تعليقات
           zero: "%{count} تعليق"
@@ -21,15 +31,29 @@ ar:
           many: "%{count} تعليق"
           other: "%{count} تعليق"
       author: كاتب
+      back: العودة إلى %{community}%{proposal}
     topic:
+      create: إنشاء موضوع
       edit: تحرير الموضوع
       form:
         topic_title: عنوان
+        topic_text: النص الأولي
+        new:
+          submit_button: إنشاء موضوع
         edit:
           submit_button: تحرير الموضوع
+        create:
+          submit_button: إنشاء موضوع
+        update:
+          submit_button: تحيين موضوع
       show:
         tab:
           comments_tab: تعليقات
+      sidebar:
+        recommendations_title: توصيات لإنشاء موضوع
+        recommendation_one: لا تكتب عنوان الموضوع أو الجمل الكاملة بأحرف كبيرة فذلك يعتبر صراخا على شبكة الإنترنت ولا أحد يحب أن يُصرخ عليه.
+        recommendation_two: سيتم حذف أي موضوع أو تعليق يتضمن إجراءً غير قانوني، إلى جانب المواضيع و التعاليق التي تنوي تخريب مساحات الموضوع، كل الأشياء الأخرى مسموح بها.
+        recommendation_three: استمتع بهذه المساحة ، والأصوات التي تملأها ، إنها ملكك أيضًا.
   topics:
     show:
       login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.

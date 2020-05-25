@@ -106,15 +106,15 @@ describe ActsAsTaggableOn do
         tag_3 = create(:tag)
 
         proposal = create(:proposal)
-        spending_proposal = create(:spending_proposal)
+        budget_investment = create(:budget_investment)
         debate = create(:debate)
 
         proposal.tag_list.add(tag_1)
-        spending_proposal.tag_list.add(tag_2)
+        budget_investment.tag_list.add(tag_2)
         debate.tag_list.add(tag_3)
 
         proposal.save
-        spending_proposal.save
+        budget_investment.save
         debate.save
 
         expect(ActsAsTaggableOn::Tag.public_for_api).to match_array([tag_1, tag_3])

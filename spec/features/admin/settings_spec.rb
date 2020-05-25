@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin settings" do
+describe "Admin settings" do
 
-  background do
+  before do
     @setting1 = create(:setting)
     @setting2 = create(:setting)
     @setting3 = create(:setting)
@@ -37,6 +37,9 @@ feature "Admin settings" do
       visit admin_settings_path
       find("#map-tab").click
 
+      expect(page).to have_content 'To show the map to users you must enable ' \
+                                   '"Proposals and budget investments geolocation" ' \
+                                   'on "Features" tab.'
       expect(page).not_to have_css("#admin-map")
     end
 
@@ -48,6 +51,9 @@ feature "Admin settings" do
       find("#map-tab").click
 
       expect(page).to have_css("#admin-map")
+      expect(page).not_to have_content 'To show the map to users you must enable ' \
+                                       '"Proposals and budget investments geolocation" ' \
+                                       'on "Features" tab.'
     end
 
     scenario "Should show successful notice" do
@@ -88,6 +94,40 @@ feature "Admin settings" do
 
       expect(find("#latitude", visible: false).value).not_to eq "51.48"
       expect(page).to have_content "Map configuration updated succesfully"
+    end
+
+  end
+
+  describe "Update content types" do
+
+    scenario "stores the correct mime types" do
+      setting = Setting.create(key: "upload.images.content_types", value: "image/png")
+      admin = create(:administrator).user
+      login_as(admin)
+      visit admin_settings_path
+      find("#images-and-documents-tab").click
+
+      within "#edit_setting_#{setting.id}" do
+        expect(find("#png")).to be_checked
+        expect(find("#jpg")).not_to be_checked
+        expect(find("#gif")).not_to be_checked
+
+        check "gif"
+
+        click_button "Update"
+      end
+
+      expect(page).to have_content "Value updated"
+      expect(Setting["upload.images.content_types"]).to include "image/png"
+      expect(Setting["upload.images.content_types"]).to include "image/gif"
+
+      visit admin_settings_path(anchor: "tab-images-and-documents")
+
+      within "#edit_setting_#{setting.id}" do
+        expect(find("#png")).to be_checked
+        expect(find("#gif")).to be_checked
+        expect(find("#jpg")).not_to be_checked
+      end
     end
 
   end

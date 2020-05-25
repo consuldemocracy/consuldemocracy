@@ -1,4 +1,4 @@
-class Newsletter < ActiveRecord::Base
+class Newsletter < ApplicationRecord
   has_many :activities, as: :actionable
 
   validates :subject, presence: true

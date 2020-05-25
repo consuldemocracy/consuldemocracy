@@ -1,0 +1,9 @@
+<%= form_for [:admin, @proposal] do |f| %>
+
+  <%= render "shared/errors", resource: @proposal %>
+
+  <%= f.check_box :selected %>
+
+  <%= f.submit t("admin.proposals.form.update"), class: "button success" %>
+
+<% end %>

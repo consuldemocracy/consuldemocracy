@@ -11,7 +11,7 @@ pl:
         debates: "Debaty"
         proposals: "Wnioski"
         budgets: "Budżety partycypacyjne"
-        polls: "Ankiety"
+        polls: "Sondy"
         other: "Inne przydatne informacje"
         processes: "Procesów"
       debates:
@@ -35,9 +35,9 @@ pl:
         image_alt: "Różne fazy budżetu partycypacyjnego"
         figcaption_html: 'Fazy "Poparcie" i "Głosowanie" budżetów partycypacyjnych.'
       polls:
-        title: "Ankiety"
+        title: "Sondy"
         description: "Sekcja %{link} jest aktywowana za każdym razem, gdy propozycja osiąga 1% poparcia i przechodzi do głosowania lub gdy Rada Miejska przedkłada kwestię, w której sprawie ludzie mają zadecydować."
-        link: "ankiety"
+        link: "sondy"
         feature_1: "Aby uczestniczyć w głosowaniu, musisz %{link} i zweryfikować swoje konto."
         feature_1_link: "zarejestruj się w %{org_name}"
       processes:
@@ -51,8 +51,6 @@ pl:
         page:
           title: "FAQ - najczęściej zadawane pytania"
           description: "Użyj tej strony, aby odpowiadać na często zadawane pytania użytkownikom serwisu."
-          faq_1_title: "Pytanie 1"
-          faq_1_description: "To jest przykład opisu pytania pierwszego."
       other:
         title: "Inne przydatne informacje"
         how_to_use: "Użyj %{org_name} w Twoim mieście"
@@ -67,25 +65,7 @@ pl:
         how_to_use: Użyj go w swoim lokalnym rządzie
     privacy:
       title: Polityka prywatności
-      subtitle: INFORMACJA DOTYCZĄCA PRYWATNOŚCI DANYCH
-      info_items:
-        - 
-          text: Nawigacja poprzez informacje dostępne w Otwartym Portalu Rządowym jest anonimowa.
-        - 
-          text: Aby skorzystać z usług zawartych w Portalu Otwartego Rządu, użytkownik musi się zarejestrować i wcześniej podać dane osobowe zgodnie z konkretnymi informacjami zawartymi w każdym typie rejestracji.
-        - 
-          text: 'Dostarczone dane zostaną włączone i przetworzone przez Radę Miejską zgodnie z opisem poniższego pliku:'
-        - 
-          subitems:
-            - 
-              field: 'Nazwa pliku:'
-              description: NAZWA PLIKU
-            - 
-              field: 'Przeznaczenie pliku:'
-              description: Zarządzanie procesami uczestniczącymi w celu kontrolowania kwalifikacji uczestniczących w nich osób oraz jedynie numeryczne i statystyczne przeliczanie wyników uzyskanych w wyniku procesów uczestnictwa obywateli.
-            - 
-              field: 'Instytucja odpowiedzialna za plik:'
-              description: INSTYTUCJA ODPOWIEDZIALNA ZA PLIK
+      subtitle: "INFORMACJA DOTYCZĄCA PRYWATNOŚCI DANYCH"
     accessibility:
       title: Dostępność
       description: |-
@@ -122,7 +102,7 @@ pl:
               key_column: 5
               page_column: Procesy legislacyjne
         browser_table:
-          description: 'W zależności od używanego systemu operacyjnego i przeglądarki, kombinacja klawiszy będzie następująca:'
+          description: "W zależności od używanego systemu operacyjnego i przeglądarki, kombinacja klawiszy będzie następująca:"
           caption: Kombinacja klawiszy w zależności od systemu operacyjnego i przeglądarki
           browser_header: Przeglądarka
           key_header: Kombinacje kluczy
@@ -165,7 +145,7 @@ pl:
               browser_column: Opera
               action_column: Widok > skala
         browser_shortcuts_table:
-          description: 'Innym sposobem na modyfikację rozmiar tekstu jest użycie skrótów klawiaturowych zdefiniowanych w przeglądarkach, w szczególności kombinacji klawiszy:'
+          description: "Innym sposobem na modyfikację rozmiar tekstu jest użycie skrótów klawiaturowych zdefiniowanych w przeglądarkach, w szczególności kombinacji klawiszy:"
           rows:
             - 
               shortcut_column: CTRL i + (CMD i + Mac)
@@ -177,15 +157,12 @@ pl:
         title: Zgodność z normami i projektowaniem wizualnym
         description_html: 'Wszystkie strony witryny są zgodne z <strong> Wskazówki dotyczące dostępności </strong> lub ogólne zasady projektowania ustanowione przez Grupę Roboczą <abbr title = "Web Accessibility Initiative" lang = "en"> WAI </ abbr> należącą do W3C.'
     titles:
-      accessibility: Dostępność
-      conditions: Warunki użytkowania
       help: "Czym jest %{org}? - Uczestnictwem obywatelskim"
-      privacy: Polityka prywatności
     verify:
       code: Kod, który otrzymałeś w liście
       email: E-mail
-      info: 'Aby zweryfikować konto, wprowadź swoje dane dostępu:'
-      info_code: 'Teraz wprowadź kod otrzymany w liście:'
+      info: "Aby zweryfikować konto, wprowadź swoje dane dostępu:"
+      info_code: "Teraz wprowadź kod otrzymany w liście:"
       password: Hasło
       submit: Zweryfikuj swoje konto
       title: Zweryfikuj swoje konto

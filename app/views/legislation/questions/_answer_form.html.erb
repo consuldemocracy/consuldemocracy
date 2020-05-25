@@ -3,20 +3,20 @@
 
     <%= form_for answer, url: legislation_process_question_answers_path(process, question, answer), remote: true , html: { class: "controls-stacked"} do |f| %>
       <% question.question_options.each do |question_option| %>
-        <label class="control radio <%= 'is-active' if @answer.legislation_question_option_id == question_option.id %>">
+        <label class="control radio <%= "is-active" if @answer.legislation_question_option_id == question_option.id %>">
           <%= f.radio_button :legislation_question_option_id, question_option.id, label: false %>
           <span class="control-indicator"></span>
           <%= question_option.value %>
         </label>
       <% end %>
-      <%= f.submit t('legislation.questions.show.answer_question'), class: "button" %>
+      <%= f.submit t("legislation.questions.show.answer_question"), class: "button" %>
     <% end %>
 
   <% else %>
 
     <form class="controls-stacked disabled">
       <% question.question_options.each do |question_option| %>
-        <label class="control radio <%= 'is-active' if answer.persisted? && (answer.legislation_question_option_id == question_option.id) %>">
+        <label class="control radio <%= "is-active" if answer.persisted? && (answer.legislation_question_option_id == question_option.id) %>">
           <input id="quiz-1" name="radio" type="radio" disabled="true">
           <span class="control-indicator"></span>
           <%= question_option.value %>

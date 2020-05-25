@@ -106,6 +106,12 @@ fr:
       proposal_notification:
         one: "Notification de proposition"
         other: "Notifications des propositions"
+      dashboard/action:
+        one: Tableau de bord des Propositons d'action
+        other: Tableau de bord des Propositons d'actions
+      link:
+        one: Lien
+        other: Liens
     attributes:
       budget:
         name: "Nom"
@@ -128,6 +134,11 @@ fr:
         organization_name: "Si votre proposition se fait au nom d'un collectif ou d'une organisation, renseignez leur nom"
         image: "Image descriptive de la proposition"
         image_title: "Titre de l'image"
+      geozone:
+        name: Nom
+        external_code: "Code externe (optionnel)"
+        census_code: "Code de recensement (optionnel)"
+        html_map_coordinates: "Coordonées HTML <map> (optionnel)"
       milestone:
         status_id: "Statut actuel de l'investissement (facultatif)"
         title: "Titre"
@@ -139,6 +150,10 @@ fr:
       progress_bar:
         kind: "Type"
         title: "Titre"
+        percentage: "Progrès actuel"
+      progress_bar/kind:
+        primary: "Primaire"
+        secondary: "Secondaire"
       budget/heading:
         name: "Nom du titre"
         price: "Coût"
@@ -196,6 +211,10 @@ fr:
         external_url: "Lien vers de la documentation supplémentaire"
       poll/question/translation:
         title: "Question"
+      poll/ballot_sheet:
+        data: Données CSV
+        poll_id: Sondage
+        officer_assignment_id: Affectation de l’agent
       signature_sheet:
         signable_type: "Type de signature"
         signable_id: "Identifiant de la signature"
@@ -222,6 +241,9 @@ fr:
         name: Nom
         locale: Langue
         body: Contenu
+      banner:
+        background_color: Couleur de l'arrière-plan
+        font_color: Couleur de la police
       legislation/process:
         title: Titre du processus
         summary: Résumé
@@ -231,10 +253,16 @@ fr:
         end_date: Date de fin
         debate_start_date: Date de début du débat
         debate_end_date: Date de fin du débat
+        draft_start_date: Début
+        draft_end_date: Fin
         draft_publication_date: Date de publication de l'ébauche
         allegations_start_date: Date de début des allégations
         allegations_end_date: Date de fin des allégations
+        proposals_phase_start_date: Début
+        proposals_phase_end_date: Fin
         result_publication_date: Date de publication du résultat final
+        background_color: Couleur de l'arrière-plan
+        font_color: Couleur de la police
       legislation/process/translation:
         title: Titre du processus
         summary: Résumé
@@ -292,6 +320,7 @@ fr:
         description: Description
         link_text: Texte du lien
         link_url: Url du lien
+        columns: Nombre de colonnes
       widget/card/translation:
         label: Label (facultatif)
         title: Titre
@@ -299,6 +328,23 @@ fr:
         link_text: Texte du lien
       widget/feed:
         limit: Nombre d’éléments
+      dashboard/action:
+        title: Titre
+        short_description: Courte description
+        description: Description
+        link: Lien externe
+        request_to_administrators: Inclure dans la ressource un bouton pour demander la resource aux administrateurs
+        day_offset: Combien de jours après la création de la proposition voulez vous qu'elle soit activée?
+        required_supports: De combien de soutiens la proposition a-t-elle besoin avant d'être activée?
+        order: Vous pouvez entrer la position où cette action sera affichée pour l'utilisateur dans la liste d'actions
+        active: Actif
+        action_type: Type
+      dashboard/administrator_task:
+        source: Source
+        user: Exectué par
+      link:
+        label: Titre
+        url: Lien
     errors:
       models:
         user:
@@ -341,6 +387,8 @@ fr:
               invalid_date_range: doit être la date de début ou postérieur
             debate_end_date:
               invalid_date_range: doit être la date de début du débat ou postérieur
+            draft_end_date:
+              invalid_date_range: doit être à la même date ou plus tard que celle de la création du brouillon
             allegations_end_date:
               invalid_date_range: doit être égal ou postérieur à la date de début des allégations
         proposal:
@@ -358,8 +406,8 @@ fr:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Non vérifié par recensement'
-              already_voted: 'Cette proposition a déjà été votée'
+              not_in_census: "Non vérifié par recensement"
+              already_voted: "Cette proposition a déjà été votée"
         site_customization/page:
           attributes:
             slug:
@@ -372,9 +420,10 @@ fr:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Vous ne pouvez pas commenter une évaluation'
+              cannot_comment_valuation: "Vous ne pouvez pas commenter une évaluation"
       messages:
         record_invalid: "La validation omise : %{errors}"
+        another_poll_active: Il y a un autre sondage actif sur la période donnée
         restrict_dependent_destroy:
           has_one: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"
           has_many: "Les données ne peuvent être supprimées car les données suivantes sont liées : %{record}"

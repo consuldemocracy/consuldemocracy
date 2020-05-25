@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Managed User" do
+describe "Managed User" do
 
-  background do
+  before do
     login_as_manager
   end
 

@@ -128,7 +128,7 @@ de:
         other: hat die falsche Länge (sollte %{count} Zeichen lang sein)
       other_than: darf nicht %{count} sein
     template:
-      body: 'Es gab Probleme mit den folgenden Bereichen:'
+      body: "Es gab Probleme mit den folgenden Bereichen:"
       header:
         one: 1 Fehler verhinderte, dass dieses %{model} gespeichert wurde
         other: "%{count} Fehler verhinderten, dass dieses %{model} gespeichert wurde"

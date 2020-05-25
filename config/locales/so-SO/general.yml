@@ -67,7 +67,7 @@ so:
       most_commented: Inta badan faallooyin ah
     select_order: Kala saar
     show:
-      return_to_commentable: 'Ku noqo '
+      return_to_commentable: "Ku noqo "
   comments_helper:
     comment_button: Dabaac falada
     comment_link: Faalo
@@ -218,8 +218,7 @@ so:
       available_locales: Luqadaha diyarka ah
       collaborative_legislation: Nidaamka Sharciga
       debates: Doodo
-      external_link_blog: Blog
-      locale: 'Luqad:'
+      locale: "Luqad:"
       logo: Logada qunsuliyada
       management: Maraynta
       moderation: Dhexdhexaadinta
@@ -241,7 +240,7 @@ so:
         notifications: Ogaysiisyo
         no_notifications: "Ma haysatid wargelin cusub"
     admin:
-      watch_form_message: 'Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?'
+      watch_form_message: "Waxaad leedahay isbedel aan la badbaadin. Ma xaqiijinaysaa inaad ka tagto bogga?"
   notifications:
     index:
       empty_notifications: Ma haysatid wargelin cusub,.
@@ -291,6 +290,8 @@ so:
     create:
       form:
         submit_button: Abuur soo jeedin
+    share:
+      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
     edit:
       editing: Tafatiir soojedinta
       form:
@@ -312,9 +313,6 @@ so:
       other: Midkale
     form:
       geozone: Baxada Hawlgalka
-      proposal_external_url: Isku xirka dukumentiyada dheeraadka ah
-      proposal_question: Suasha so jedinta
-      proposal_question_example_html: "Waa in lagu soo koobaa hal su'aal oo jawaabta Haa ama Maya"
       proposal_responsible_name: Magaca buuxa ee qofka soo gudbinaya soo jeedinta
       proposal_responsible_name_note: "(shakhsi ahaan ama matalaad wadajir ah; lama soo bandhigi doono si cad)"
       proposal_summary: Sokoobida sojedinta
@@ -368,7 +366,7 @@ so:
         one: " an ku jirin ereyga<strong>%{search_term}</strong>"
         other: " an ku jirin ereyga<strong>%{search_term}</strong>"
       select_order: Dalbaday
-      select_order_long: 'Waxaad daawaneysaa soo jeedinada sida:'
+      select_order_long: "Waxaad daawaneysaa soo jeedinada sida:"
       start_proposal: Abuur soo jeedin
       title: Sojeedino
       top: Usbuuca ugu sarreeya
@@ -397,8 +395,6 @@ so:
         guide: "Hadda waxaad la wadaagi kartaa si dadka ay u bilaabi karaan taageerada."
         edit: "Ka hor inta aan la wadaagin waxaad awoodi doontaa inaad bedesho qoraalka sida aad jeceshahay."
         view_proposal: Hadda ma ahan, u gudbi dalabkayga
-      improve_info: "Hagaajinta ololahaaga iyo inaad hesho taageero dheeraad ah"
-      improve_info_link: "Fiiri macluumaad dheeraad ah"
       already_supported: Waxaad hore u taageertay qorshahaan. La wadaag!
       comments:
         zero: Falooyin majiraan
@@ -420,13 +416,12 @@ so:
       successful: "Hindisahani wuxuu gaadhay taageerooyinka loo baahan yahay."
     show:
       author_deleted: Isticmalaha la tirtiray
-      code: 'Talo soo jeedin:'
+      code: "Talo soo jeedin:"
       comments:
         zero: Falooyin majiraan
         one: 1 faalo
         other: "%{count} falooyinka"
       comments_tab: Faalo
-      edit_proposal_link: Isbedel
       flag: Soo jeedintaas waxaa loo calaamadeeyay sida aan haboonayn dadka isticmaala.
       login_to_comment: Wa inaad%{signin} ama%{signup} si aad uga tagto faalo.
       notifications_tab: Ogaysiisyo
@@ -435,17 +430,13 @@ so:
       retired_warning_link_to_explanation: Akhri sharraxa kahor intaadan codeynin.
       retired: Soo-jeedinta ay ka fariisteen qoraaga
       share: Lawadag
-      send_notification: Diir Ogaysiin
       no_notifications: "Soo jeedintaasi ma leh ogeysiisyo."
       embed_video_title: "Fidyowga%{proposal}"
-      title_external_url: "Dukumentiyo dheeraad ah"
       title_video_url: "Fidyoowga dibada"
       author: Qoraa
     update:
       form:
         submit_button: Badbaadi beddelka
-    share:
-      message: "Waxaan taageeray hindisaha%{summary} ee%{handle} Haddii aad xiiseyneyso, sidoo kale waa inaad taageertaa!"
   polls:
     all: "Dhamaan"
     no_dates: "tirada taariikhda la magacaabay"
@@ -496,8 +487,6 @@ so:
       stats_menu: "Participation statisticsTirakoobka ka qaybqaadashada"
       results_menu: "Natiijooyinka ra'yiga"
       stats:
-        title: "Macluumaadka ka qaybqaadashada"
-        total_participation: "Ka qaybgalka wadarta"
         total_votes: "Wadarta tirada codadka la siiyay"
         votes: "Codadka"
         web: "WEB"
@@ -510,11 +499,9 @@ so:
         title: "Sualo"
         most_voted_answer: "Ita badan jawabah codayey: "
   poll_questions:
-    create_question: "Saame Sual"
     show:
       vote_answer: "Cod%{answer}"
       voted: "Wad codeysay%{answer}"
-      voted_token: "Waxaad ku qori kartaa liiska codbixinta, si aad u hubiso codkaaga natiijooyinka kama dambaysta ah:"
   proposal_notifications:
     new:
       title: "Fariin dir"
@@ -526,29 +513,29 @@ so:
     show:
       back: "Ku noqo hawlahayga"
   shared:
-    edit: 'Isbedel'
-    save: 'Badbaado'
-    delete: Titiriid
+    edit: "Isbedel"
+    save: "Badbaado"
+    delete: "Titiriid"
     "yes": "Haa"
     "no": "Maya"
     search_results: "Raadi natiijada"
     advanced_search:
-      author_type: 'Qeybta qoraaga'
-      author_type_blank: 'Xuulo qaybta'
-      date: 'Taariikhda'
-      date_placeholder: 'M/B/S'
-      date_range_blank: 'Dooro taariikh'
-      date_1: '24saac ee ugu dabyey'
-      date_2: 'Isbuucii hore'
-      date_3: 'Bishi hore'
-      date_4: 'Snadkii hore'
-      date_5: 'La isku habeeyey'
-      from: 'Ka'
-      general: 'Qoraalka'
-      general_placeholder: 'Qor Qoraal'
-      search: 'Sifeeyee'
-      title: 'Raadinta sare'
-      to: 'Ku'
+      author_type: "Qeybta qoraaga"
+      author_type_blank: "Xuulo qaybta"
+      date: "Taariikhda"
+      date_placeholder: "M/B/S"
+      date_range_blank: "Dooro taariikh"
+      date_1: "24saac ee ugu dabyey"
+      date_2: "Isbuucii hore"
+      date_3: "Bishi hore"
+      date_4: "Snadkii hore"
+      date_5: "La isku habeeyey"
+      from: "Ka"
+      general: "Qoraalka"
+      general_placeholder: "Qor Qoraal"
+      search: "Sifeeyee"
+      title: "Raadinta sare"
+      to: "Ku"
     author_info:
       author_deleted: Isticmalaha la tirtiray
     back: Dib ulaabo
@@ -622,7 +609,6 @@ so:
       see_more: Eeg talooyin dheeraad ah
       hide: Qari talooyinka
   social:
-    blog: "%{org} bloga"
     facebook: "%{org} faysbuug"
     twitter: "%{org} tuwiitar"
     youtube: "%{org} yotuyuub"
@@ -631,8 +617,8 @@ so:
     instagram: "%{org} istigraam"
   spending_proposals:
     form:
-      association_name_label: 'Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan'
-      association_name: 'Magaca ururka'
+      association_name_label: "Haddii aad soo jeedisid magaca urur ama wadajir magaca ku dar halkan"
+      association_name: "Magaca ururka"
       description: Sharaxaad
       external_url: Isku xirka dukumentiyada dheeraadka ah
       geozone: Baxada Hawlgalka
@@ -665,7 +651,7 @@ so:
       start_new: Samee qorshaha kharashad
     show:
       author_deleted: Isticmalaha la tirtiray
-      code: 'Talo soo jeedin:'
+      code: "Talo soo jeedin:"
       share: Lawadag
     wrong_price_format: Tirooyinka keliya e isku dhafka ah
     spending_proposal:
@@ -740,8 +726,6 @@ so:
       send_private_message: "U dir fariin gaar ah"
       delete_alert: "Ma hubtaa inaad rabto inaad tirtirto mashruuca maalgalinta? Ficilkan lama tirtiri karo"
     proposals:
-      send_notification: "Diir Ogaysiin"
-      retire: "Hawl gab"
       retired: "Soo jeedinta hawlgabka"
       see: "Fiiri soo jeedinta"
   votes:
@@ -808,7 +792,7 @@ so:
       user_permission_info: Akoonkaga waad karta...
       user_permission_proposal: Samee soo jeedino cusub
       user_permission_support_proposal: Tageer so jedinada*
-      user_permission_verify: Si aad u fuliso dhammaan ficilada hubi xisaabtaada.
+      user_permission_verify: "Si aad u fuliso dhammaan ficilada hubi xisaabtaada."
       user_permission_verify_info: "* Kaliya dadka isticmaala tirakoobka."
       user_permission_verify_my_account: Hubi xisaabtayda
       user_permission_votes: Kayb galka codaynta ugu danbaysa

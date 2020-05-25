@@ -1,12 +1,10 @@
-class Milestone < ActiveRecord::Base
+class Milestone < ApplicationRecord
   include Imageable
   include Documentable
-  documentable max_documents_allowed: 3,
-               max_file_size: 3.megabytes,
-               accepted_content_types: [ "application/pdf" ]
 
   translates :title, :description, touch: true
   include Globalizable
+  translation_class_delegate :status_id
 
   belongs_to :milestoneable, polymorphic: true
   belongs_to :status

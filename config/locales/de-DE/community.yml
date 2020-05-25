@@ -3,12 +3,12 @@ de:
     sidebar:
       title: Community
       description:
-        proposal: An der Benutzer-Community dieses Vorschlags teilnehmen.
+        proposal: Beteiligen Sie sich in der Nutzergemeinde für diesen Vorschlag.
         investment: Beteiligen Sie sich in der Nutzergemeinde dieser Investition.
       button_to_access: Treten Sie der Community bei
     show:
       title:
-        proposal: Antragsgemeinschaft
+        proposal: Vorschlags-Community
         investment: Budgetinvestitions-Gemeinschaft
       description:
         proposal: Beteiligen Sie sich an der Community dieses Antrags. Eine aktive Gemeinschaft kann dazu beitragen, den Inhalt des Vorschlags zu verbessern und seine Verbreitung zu fördern, um mehr Unterstützung zu erhalten.
@@ -20,7 +20,7 @@ de:
         sign_in: "anmelden"
         sign_up: "registrieren"
       tab:
-        participants: Teilnehmer
+        participants: Teilnehmer*innen
       sidebar:
         participate: Teilnehmen
         new_topic: Thema erstellen

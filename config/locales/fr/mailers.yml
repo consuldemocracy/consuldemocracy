@@ -3,7 +3,7 @@ fr:
     no_reply: "Ce message a été envoyé d'une adresse qui n'accepte pas les réponses."
     comment:
       hi: Bonjour
-      new_comment_by_html: Il y a un nouveau commentaire de <b>%{commenter}</b>
+      new_comment_by_html: Il y a un nouveau commentaire de <strong>%{commenter}</strong>
       subject: Quelqu'un a commenté votre %{commentable}
       title: Nouveau commentaire
     config:
@@ -17,7 +17,7 @@ fr:
       title: Confirmer votre compte en utilisant le lien suivant
     reply:
       hi: Bonjour
-      new_reply_by_html: Il y a une nouvelle réponse de <b>%{commenter}</b> à votre commentaire sur
+      new_reply_by_html: Il y a une nouvelle réponse de <strong>%{commenter}</strong> à votre commentaire sur
       subject: Quelqu'un a répondu à votre commentaire
       title: Nouvelle réponse à votre commentaire
     unfeasible_spending_proposal:
@@ -77,3 +77,55 @@ fr:
       hi: "Cher(e) utilisateur(trice),"
       thanks: "Merci de nouveau pour votre participation."
       sincerely: "Cordialement,"
+    new_actions_notification_rake_created:
+      subject: "Plus de nouveautés à propos de votre propositions citoyenne"
+      hi: "Bonjour %{name},\n"
+      new_resource: "NOUVELLE RESSOURCE DEBLOQUÉE"
+      introduction: "Comme vous le savez, le %{created_at_day} %{created_at_month} vous avez crée une proposition en mode brouillon %{title}."
+      text_1: "Vous pouvez publier n'importe quand avec ce lien %{link_to_published}. Si vous n'êtes toujours pas sûrs..."
+      text_2: "Capturez ce moment! Apprenez, ajouter d'autres personnes avec les mêmes intêrets et préparez la diffusion dont vous aurez besoin avant de publier votre proposition définitivement."
+      text_3: "Et pour vous accompagner dans ce défi, voici les informations..."
+      text_4: "Jetez un coup d'oeil à ces NOUVELLES ACTIONS recommandées:"
+      text_5: "La prochaine action que nous vous recommandons est:"
+      footer_text: "Comme toujours, entrez dans le Panel de Propositions et nous vous expliquerons en détail comment utiliser ces ressources et comment en tirer un profit maximal."
+      dashboard_button: "Allez-y, découvrez les!"
+    new_actions_notification_rake_published:
+      subject: "Plus de nouveautés à propos de votre propositions citoyenne"
+      hi: "Bonjour %{name},"
+      new_resource: "NOUVELLE RESSOURCE DEBLOQUÉE"
+      introduction: "Comme vous le savez, le %{published_at_day} %{published_at_month} vous avez crée une proposition en mode brouillon %{title}."
+      text_1: "Vous avez reçu %{votes_count} supports jusqu'à maintenant Félicitations!"
+      text_2: "Par conséquent, vous avez accès à une nouvelle ressource pour vous aider à progresser."
+      text_3: "Il vous manque %{days_count} jours avant que votre proposition atteigne %{max_votes_count} support et puisse être soumise à un referundum. Courage et continuez à faire passer le mots. Êtes-vous à court d'idées?"
+      text_4: "NOUVELLE ACTION DE DIFFUSION RECOMMANDÉE"
+      text_5: "Et ce n'est pas tout, regardez l'action suivante:"
+      footer_text: "Comme toujours, entrez dans le Panel de Propositions et nous vous expliquerons en détail comment utiliser ces ressources et comment en tirer un profit maximal."
+      dashboard_button: "Allez-y, découvrez les!"
+    new_actions_notification_on_create:
+      subject: "Votre brouillon citoyen est crée"
+      hi: "Salut %{name}!"
+      introduction: "Votre proposition %{title} a bien été créée."
+      text_1: "Profitez que votre proposition ne soit pas encore publique, soyez prêts à contacter beaucoup de personnes."
+      text_2: "Lorsque vous serez prêts à publier votre proposition citoyenne depuis ce <a href='%{link}'>lien</a>."
+      text_3: "Nous savons que créer une proposition accrocheuse et le soutien nécéssaire peut paraître compliqué. Mais ne vous inquiétez pas car nous allons vous aider!"
+      text_4: "Nous avons un outil qui sera votre nouveau meilleur allié: Le panel de Propositions Citoyennes."
+      list_1: "Entrez tous les jours dans le panel de votre proposition pour utiliser les astuces et ressources que vous partagerons avec vous."
+      list_2: "Ces astuces, actions et ressources vous donnerons des idées et des solutions pratiques pour obtenir plus de soutien et une plus grande communauté. Ne les oubliez pas!"
+      list_3: "Au fur et à mesure que vous gagnez plus de soutien, vous débloquerez de meilleures et de nouvelles ressources. Actuellement, vous avez un modèle d'e-mail que vous pouvez envoyer massivement à tous vos contacts, une affiche à imprimer, d'autres fonctionnalités et récompenses que vous allez découvrir. N'arrêtez pas de gagner du soutien et nous n'arrêterons pas de vous aider!"
+      text_5: "Et pour que vous commenciez bien motivés,"
+      dashboard_button: "Allez-y, découvrez les!"
+    new_actions_notification_on_published:
+      subject: "Votre proposition citoyenne est déjà publiée N'arrêtez pas de faire passer le mot!"
+      hi: "Félicitations %{name}! Votre proposition %{title} a bien été créée."
+      text_1: "Et maintenant, allez chercher vos 100 premiers soutiens!"
+      text_2: "Pourquoi 100?"
+      text_3: "Notre expérience nous dit que le premier jour est fondammental. Parce qu'en plus d'avoir l'énergie de démarrer quelque chose de nouveau et d'être une proposition nouvellement publiée, vous aurez l'avantage d'être visible parmi les nouvelles propositions sélectionées."
+      text_4: "Obtenez 100 soutiens le premier jour et vous aurez une première communauté pour vous soutenir."
+      text_5: "C'est pourquoi nous vous mettons au défi de les obtenir, mais pas sans beaucoup d'aide!"
+      text_6: "N'oubliez pas que dans votre Panel de Propositions, vous avez accès aux nouvelles ressources disponibles et aux recommandations pour les actions de diffusion."
+      list_1: "Connectez vous tous les jours pour voir votre progrès et utiliser les astuces et ressources que vous partagerons avec vous. Ce sont des idées et des solutions pratiques pour obtenir le soutien dont vous avez besoin."
+      list_2: "Au fur et à mesure que vous gagnerez de soutien, vous obtiendrez de meilleures et de nouvelles ressources. N'arrêtez pas de gagner du soutien et nous n'arrêterons pas de vous récompenser et de vous aider!"
+      text_7: "Et pour que vous puissiez démarrer sur les chapeaux de roues..."
+      text_8: "Nous vous offrons une super ressource!"
+      text_9: "Vous trouverez également cette nouvelle action recommandée de diffusion..."
+      text_10: "Bien sûr, vous avez accès à plus de ressources!"

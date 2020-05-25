@@ -65,7 +65,7 @@ zh-TW:
       most_commented: 最多評論
     select_order: 排序依據
     show:
-      return_to_commentable: '返回到 '
+      return_to_commentable: "返回到 "
   comments_helper:
     comment_button: 發佈評論
     comment_link: 評論
@@ -211,8 +211,7 @@ zh-TW:
       available_locales: 可用語言
       collaborative_legislation: 立法進程
       debates: 辯論
-      external_link_blog: 博客
-      locale: '語言：'
+      locale: "語言："
       logo: CONSUL 商標
       management: 管理
       moderation: 審核
@@ -233,7 +232,7 @@ zh-TW:
         notifications: 通知
         no_notifications: "您沒有新通知"
     admin:
-      watch_form_message: '您有未儲存的更改。 你是否確認要離開此頁面？'
+      watch_form_message: "您有未儲存的更改。 你是否確認要離開此頁面？"
   notifications:
     index:
       empty_notifications: 您沒有新通知。
@@ -301,9 +300,6 @@ zh-TW:
       other: 其他
     form:
       geozone: 經營範圍
-      proposal_external_url: 鏈接到其他文檔
-      proposal_question: 建議問題
-      proposal_question_example_html: "必須總結為一個可以用\"是\"或\"否\"回答的問題"
       proposal_responsible_name: 提交建議的人的全名
       proposal_responsible_name_note: "(個人或作為集體的代表；不會公開顯示)"
       proposal_summary: 建議摘要
@@ -355,7 +351,7 @@ zh-TW:
       search_results_html:
         other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order: 排序依據
-      select_order_long: '您正在查看的建議是依據：'
+      select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
       title: 建議
       top: 每週熱門
@@ -384,8 +380,6 @@ zh-TW:
         guide: "現在您可以把它分享，以便人們可以開始支持。"
         edit: "在分享之前，您可以隨意更改文本。"
         view_proposal: 不是現在，請轉到我的建議
-      improve_info: "改善您的推廣活動，並獲得更多支持"
-      improve_info_link: "查看更多資訊"
       already_supported: 您已經支持此建議。 把它分享吧！
       comments:
         zero: 沒有評論
@@ -404,12 +398,11 @@ zh-TW:
       successful: "此建議已得到所需的支持。"
     show:
       author_deleted: 用戶已刪除
-      code: '建議編號：'
+      code: "建議編號："
       comments:
         zero: 沒有評論
         other: "%{count} 個評論"
       comments_tab: 評論
-      edit_proposal_link: 編輯
       flag: 此建議已被一些用戶標記為不適當。
       login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
       notifications_tab: 通知
@@ -418,10 +411,8 @@ zh-TW:
       retired_warning_link_to_explanation: 投票前請閱讀其說明。
       retired: 建議已被作者撤回
       share: 共用
-      send_notification: 發送通知
       no_notifications: "此建議沒有任何通知。"
       embed_video_title: "%{proposal} 上的視頻"
-      title_external_url: "額外文檔"
       title_video_url: "外部視頻"
       author: 作者
     update:
@@ -477,8 +468,6 @@ zh-TW:
       stats_menu: "參與量的統計"
       results_menu: "投票結果"
       stats:
-        title: "參與量的數據"
-        total_participation: "總參與量"
         total_votes: "投票總數"
         votes: "投票"
         web: "網絡"
@@ -491,11 +480,9 @@ zh-TW:
         title: "問題"
         most_voted_answer: "得最多投票的答案： "
   poll_questions:
-    create_question: "創建問題"
     show:
       vote_answer: "投票%{answer}"
       voted: "您已投票%{answer}"
-      voted_token: "您可以寫下此投票識別符號，以便在最終結果中檢查您的投票："
   proposal_notifications:
     new:
       title: "發送消息"
@@ -507,29 +494,29 @@ zh-TW:
     show:
       back: "回到我的活動"
   shared:
-    edit: '編輯'
-    save: '儲存'
-    delete: 刪除
+    edit: "編輯"
+    save: "儲存"
+    delete: "刪除"
     "yes": "是的"
     "no": "否"
     search_results: "搜尋結果"
     advanced_search:
-      author_type: '按作者類別'
-      author_type_blank: '選擇一個類別'
-      date: '按日期'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: '選擇一個日期'
-      date_1: '過去24小時'
-      date_2: '上個星期'
-      date_3: '上個月'
-      date_4: '去年'
-      date_5: '自定'
-      from: '從'
-      general: '隨著文本'
-      general_placeholder: '編寫文本'
-      search: '篩選器'
-      title: '進階搜尋'
-      to: '到'
+      author_type: "按作者類別"
+      author_type_blank: "選擇一個類別"
+      date: "按日期"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "選擇一個日期"
+      date_1: "過去24小時"
+      date_2: "上個星期"
+      date_3: "上個月"
+      date_4: "去年"
+      date_5: "自定"
+      from: "從"
+      general: "隨著文本"
+      general_placeholder: "編寫文本"
+      search: "篩選器"
+      title: "進階搜尋"
+      to: "到"
     author_info:
       author_deleted: 用戶已刪除
     back: 返回
@@ -600,7 +587,6 @@ zh-TW:
       see_more: 查看更多推薦
       hide: 隱藏推薦
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -609,8 +595,8 @@ zh-TW:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: '如果您以協會或集體的名義提建議，請在這裡添加名稱'
-      association_name: '協會名稱'
+      association_name_label: "如果您以協會或集體的名義提建議，請在這裡添加名稱"
+      association_name: "協會名稱"
       description: 說明
       external_url: 鏈接到額外文檔
       geozone: 經營範圍
@@ -642,7 +628,7 @@ zh-TW:
       start_new: 創建開支建議
     show:
       author_deleted: 用戶已刪除
-      code: '建議編號：'
+      code: "建議編號："
       share: 共用
     wrong_price_format: 只供整數
     spending_proposal:
@@ -711,8 +697,6 @@ zh-TW:
       send_private_message: "發送私人消息"
       delete_alert: "您確定要刪除您的投資項目嗎？ 此操作將無法撤消"
     proposals:
-      send_notification: "發送通知"
-      retire: "撤回"
       retired: "已撤回建議"
       see: "查看建議"
   votes:
@@ -778,7 +762,7 @@ zh-TW:
       user_permission_info: 您可以用您的帳戶來......
       user_permission_proposal: 創建新建議
       user_permission_support_proposal: 支持建議*
-      user_permission_verify: 要執行所有操作，請核實您的帳戶。
+      user_permission_verify: "要執行所有操作，請核實您的帳戶。"
       user_permission_verify_info: "*僅適用於人口普查的用戶。"
       user_permission_verify_my_account: 核實我的帳戶
       user_permission_votes: 參與最終投票

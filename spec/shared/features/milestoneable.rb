@@ -3,7 +3,7 @@ shared_examples "milestoneable" do |factory_name, path_name|
 
   let!(:milestoneable) { create(factory_name) }
 
-  feature "Show milestones" do
+  describe "Show milestones" do
     let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
 
     scenario "Show milestones", :js do

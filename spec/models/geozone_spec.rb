@@ -29,11 +29,6 @@ describe Geozone do
       expect(geozone).not_to be_safe_to_destroy
     end
 
-    it "is false when already linked to spending proposal" do
-      create(:spending_proposal, geozone: geozone)
-      expect(geozone).not_to be_safe_to_destroy
-    end
-
     it "is false when already linked to debate" do
       create(:debate, geozone: geozone)
       expect(geozone).not_to be_safe_to_destroy

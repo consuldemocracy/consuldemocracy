@@ -14,7 +14,6 @@ sl:
       destroy:
         notice: Slika uspešno izbrisana.
         alert: Slike ni mogoče izbrisati.
-        confirm: Si prepričan/-a, da želiš izbrisati sliko? Tega se ne da razveljaviti!
     errors:
       messages:
         in_between: mora biti med %{min} in %{max}

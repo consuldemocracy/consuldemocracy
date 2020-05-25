@@ -1,3 +1,9 @@
+<!--
+  Title: CONSUL
+  Description: Citizen Participation and Open Government Application
+  Keywords: democracy, citizen participation, eparticipation, debates, proposals, voting, consultations, crowdlaw, participatory budgeting
+-->
+
 ![CONSUL logo](https://raw.githubusercontent.com/consul/consul/master/public/consul_logo.png)
 
 # CONSUL
@@ -19,13 +25,17 @@ Citizen Participation and Open Government Application
 
 This is the opensource code repository of the eParticipation website CONSUL, originally developed for the Madrid City government eParticipation website
 
-## Current state
+## Documentation
 
-Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consulproject.org/) and future features at the [Roadmap](https://github.com/consul/consul/projects/6) and [open issues list](https://github.com/consul/consul/issues).
+Check the ongoing documentation at [https://docs.consulproject.org](https://docs.consulproject.org) to learn more about how to start your own CONSUL fork, install it, customize it and learn to use it from an administrator/maintainer perspective.
+
+## CONSUL Project main website
+
+You can access the main website of the project at [http://consulproject.org](http://consulproject.org) where you can find documentation about the use of the platform, videos, and links to the community space.
 
 ## Configuration for development and test environments
 
-**NOTE**: For more detailed instructions check the [docs](https://consul_docs.gitbooks.io/docs/)
+**NOTE**: For more detailed instructions check the [docs](https://docs.consulproject.org)
 
 Prerequisites: install git, Ruby 2.3.2, `bundler` gem, Node.js and PostgreSQL (>=9.4).
 
@@ -69,9 +79,9 @@ But for some actions like voting, you will need a verified user, the seeds file 
 
 See [installer](https://github.com/consul/installer)
 
-## Documentation
+## Current state
 
-Check the ongoing documentation at [https://consul_docs.gitbooks.io/docs/content/](https://consul_docs.gitbooks.io/docs/content/) to learn more about how to start your own CONSUL fork, install it, customize it and learn to use it from an administrator/maintainer perspective. You can contribute to it at [https://github.com/consul/docs](https://github.com/consul/docs)
+Development started on [2015 July 15th](https://github.com/consul/consul/commit/8db36308379accd44b5de4f680a54c41a0cc6fc6). Code was deployed to production on 2015 september 7th to [decide.madrid.es](https://decide.madrid.es). Since then new features are added often. You can take a look at the current features at the [project's website](http://consulproject.org/) and future features at the [Roadmap](https://github.com/consul/consul/projects/6) and [open issues list](https://github.com/consul/consul/issues).
 
 ## License
 

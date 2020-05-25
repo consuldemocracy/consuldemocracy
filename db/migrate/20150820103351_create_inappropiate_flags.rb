@@ -1,4 +1,4 @@
-class CreateInappropiateFlags < ActiveRecord::Migration
+class CreateInappropiateFlags < ActiveRecord::Migration[4.2]
   def change
     create_table :inappropiate_flags do |t|
       t.belongs_to :user, index: true, foreign_key: true

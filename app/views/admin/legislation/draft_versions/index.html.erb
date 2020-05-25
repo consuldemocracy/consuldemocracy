@@ -8,7 +8,7 @@
 
   <h2><%= @process.title %></h2>
 
-  <%= render 'admin/legislation/processes/subnav', process: @process, active: 'draft_versions' %>
+  <%= render "admin/legislation/processes/subnav", process: @process, active: "draft_versions" %>
 
   <div class="small-12 column">
     <h4 class="inline-block"><%= t("admin.legislation.draft_versions.index.title") %></h4>
@@ -36,9 +36,9 @@
             </td>
             <td><%= draft_version.created_at.to_date %></td>
             <td>
-              <% if draft_version.status == 'draft' %>
+              <% if draft_version.status == "draft" %>
                 <%= t("admin.legislation.draft_versions.statuses.draft") %>
-                <%= link_to "(#{t('.preview')})", legislation_process_draft_version_path(@process, draft_version)  %>
+                <%= link_to "(#{t(".preview")})", legislation_process_draft_version_path(@process, draft_version)  %>
               <% else %>
                 <%= t("admin.legislation.draft_versions.statuses.published") %>
               <% end %>

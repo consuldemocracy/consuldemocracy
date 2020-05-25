@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Notifications" do
+describe "Notifications" do
 
   let(:user) { create :user }
 
-  background do
+  before do
     login_as(user)
     visit root_path
   end
@@ -129,11 +129,10 @@ feature "Notifications" do
   end
 
   scenario "Notification's notifiable model no longer includes Notifiable module" do
-    create(:notification, notifiable: create(:spending_proposal), user: user)
     create(:notification, notifiable: create(:poll_question), user: user)
 
     click_notifications_icon
-    expect(page).to have_content("This resource is not available anymore.", count: 2)
+    expect(page).to have_content("This resource is not available anymore.", count: 1)
   end
 
   context "Admin Notifications" do

@@ -21,4 +21,24 @@ module CommonActions
     check "user_terms_of_service"
   end
 
+  def validate_officer
+    allow_any_instance_of(Officing::BaseController).
+    to receive(:verify_officer_assignment).and_return(true)
+  end
+
+  def fill_in_proposal
+    fill_in "proposal_title", with: "Help refugees"
+    fill_in "proposal_summary", with: "In summary what we want is..."
+    fill_in "proposal_description", with: "This is very important because..."
+    fill_in "proposal_video_url", with: "https://www.youtube.com/watch?v=yPQfcG-eimk"
+    fill_in "proposal_responsible_name", with: "Isabel Garcia"
+    check "proposal_terms_of_service"
+  end
+
+  def set_officing_booth(booth=nil)
+    booth = create(:poll_booth) if booth.blank?
+
+    allow_any_instance_of(Officing::BaseController).
+    to receive(:current_booth).and_return(booth)
+  end
 end

@@ -15,7 +15,7 @@ class Moderation::ProposalNotificationsController < Moderation::BaseController
   private
 
     def resource_name
-      'proposal_notification'
+      "proposal_notification"
     end
 
     def resource_model

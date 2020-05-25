@@ -38,12 +38,17 @@ ru:
           proposals: Заявки
           budgets: Партисипаторное бюджетирование
           help_page: Страница помощи
-        background_color: Цвет фона
-        font_color: Цвет шрифта
       edit:
         editing: Редактировать баннер
         form:
           submit_button: Сохранить изменения
+      errors:
+        form:
+          error:
+            one: "не удалось сохранить этот баннер из-за ошибок"
+            few: "не удалось сохранить эти баннеры из-за ошибок"
+            many: "не удалось сохранить эти баннеры из-за ошибок"
+            other: "не удалось сохранить этот баннер из-за ошибок"
       new:
         creating: Создать баннер
     activity:
@@ -108,10 +113,60 @@ ru:
         recalculate: Пересчитать победившие инвестиции
     budget_groups:
       name: "Имя"
+      headings_name: "Заголовки"
+      headings_edit: "Редактировать заголовки"
+      headings_manage: "Управление заголовками"
+      max_votable_headings: "Максимальное число заголовков, по которым пользователь может голосовать"
+      no_groups: "Групп нет."
+      amount:
+        one: "Существует одна группа"
+        few: "Существует %{count} групп"
+        many: "Существует %{count} групп"
+        other: "Существует %{count} групп"
+      create:
+        notice: "Группа успешно создана!"
+      update:
+        notice: "Группа успешно создана"
+      destroy:
+        success_notice: "Группа успешно удалена"
+        unable_notice: "Вы не можете уничтожить группу, в которой есть ассоциированные заголовки"
+      form:
+        create: "Создать новую группу"
+        edit: "Редактировать группу"
+        name: "Название группы"
+        submit: "Сохранить группу"
+      index:
+        back: "Вернуться к бюджетам"
     budget_headings:
       name: "Имя"
+      no_headings: "Заголовков нет."
+      amount:
+        one: "Есть один заголовок"
+        few: "Есть %{count} заголовков"
+        many: "Есть %{count} заголовков"
+        other: "Есть %{count} заголовков"
+      create:
+        notice: "Заголовок успешно создан!"
+      update:
+        notice: "Заголовок успешно обновлен"
+      destroy:
+        success_notice: "Заголовок успешно удален"
+        unable_notice: "Вы не можете удалить заголовок, у которого есть ассоциированные инвестиции"
       form:
         name: "Название раздела"
+        amount: "Количество"
+        population: "Население (не обязательно)"
+        population_info: "Поле населения в заголовке бюджета используется для статистических целей в конце бюджета, чтобы показать для каждого заголовка, который представляет собой область с населением, какой процент проголосовал. Поле является необязательным, так что вы можете оставить его пустым, если оно не используется."
+        latitude: "Широта (опционально)"
+        longitude: "Долгота (опционально)"
+        coordinates_info: "Если предоставлены широта и долгота, то страница инвестиций для этого заголовка будет включать карту. Карта будет центрирована при помощи данных координат."
+        allow_content_block: "Разрешить блок содержимого"
+        content_blocks_info: "Если опция \"Разрешить блоки контента\" включена, то вы сможете создавать настраиваемый контент, относящийся к этому заголовку, из раздела Настройки -> Пользовательские блоки содержимого. Этот контент появится на странице инвестиции для этого заголовка."
+        create: "Создайте новый заголовок"
+        edit: "Изменить заголовок"
+        submit: "Сохранить заголовок"
+      index:
+        back: "Вернуться к группам"
     budget_phases:
       edit:
         start_date: Дата начала
@@ -131,10 +186,6 @@ ru:
         tags_filter_all: Все метки
         advanced_filters: Расширенные фильтры
         placeholder: Искать в проектах
-        sort_by:
-          placeholder: Сортировать по
-          title: Название
-          supports: Поддержки
         filters:
           all: Все
           without_admin: Без назначенного администратора
@@ -146,6 +197,7 @@ ru:
           undecided: Нет решения
           unfeasible: Невыполнимые
           min_total_supports: Минимум поддержек
+          max_total_supports: Максимум поддержек
           winners: Победители
           one_filter_html: "Текущие примененные фильтры: <b><em>%{filter}</em></b>"
           two_filters_html: "Текущие примененные фильтры: <b><em>%{filter}, %{advanced_filters}</em></b>"
@@ -165,6 +217,7 @@ ru:
         selected: "Выбранная"
         select: "Выбрать"
         list:
+          id: ID
           title: Название
           supports: Поддержки
           admin: Администратор
@@ -177,6 +230,7 @@ ru:
           visible_to_valuators: Показать оценщикам
           author_username: Имя пользователя автора
           incompatible: Несовместимая
+          price: Цена
         cannot_calculate_winners: Бюджет должен остаться в фазе "Проекты баллотирования", "Анализ бюллетеней" или "Оконченный бюджет", чтобы посчитать выигравшие проекты
         see_results: "Просмотр результатов"
       show:
@@ -231,6 +285,7 @@ ru:
       search_unfeasible: Поиск невыполним
     milestones:
       index:
+        table_id: "ID"
         table_title: "Название"
         table_description: "Описание"
         table_publication_date: "Дата публикации"
@@ -241,6 +296,8 @@ ru:
         image: "Изображение"
         show_image: "Показать изображение"
         documents: "Документы"
+        milestone: Этап
+        new_milestone: Создать этап
       form:
         admin_statuses: Администрировать статусы инвестиций
         no_statuses_defined: Пока что нет определенных статусов инвестиций
@@ -277,8 +334,28 @@ ru:
       delete:
         notice: Статус инвестиции успешно удален
     progress_bars:
+      manage: "Управление индикаторами выполнения"
       index:
+        title: "Индикаторы выполнения"
+        no_progress_bars: "Нет индикаторов выполнения"
+        new_progress_bar: "Создать индикатор выполнения"
+        primary: "Основной индикатор выполнения"
+        table_id: "ID"
+        table_kind: "Тип"
         table_title: "Название"
+        table_percentage: "Ход выполнения"
+      new:
+        creating: "Создать индикатор выполнения"
+      edit:
+        title:
+          primary: "Редактировать основной индикатор выполнения"
+          secondary: "Редактировать индикатор выполнения %{title}"
+      create:
+        notice: "Индикатор выполнения успешно создан!"
+      update:
+        notice: "Индикатор выполнения успешно обновлен"
+      delete:
+        notice: "Индикатор выполнения успешно удален"
     comments:
       index:
         filter: Фильтр
@@ -315,8 +392,9 @@ ru:
         user: Пользователь
         no_hidden_users: Нет скрытых пользователей.
       show:
-        hidden_at: 'Скрыто в:'
-        registered_at: 'Зарегистрировано в:'
+        email: "Email:"
+        hidden_at: "Скрыто в:"
+        registered_at: "Зарегистрировано в:"
         title: Активность пользователя (%{user})
     hidden_budget_investments:
       index:
@@ -347,22 +425,25 @@ ru:
           enabled: Включено
           process: Процесс
           debate_phase: Фаза дебатов
+          draft_phase: Стадия черновика
+          draft_phase_description: Если эта фаза активна, то процесс не будет отображаться на индексной странице процессов. Позволяет предварительно просмотреть процесс и создать содержимое перед началом.
           allegations_phase: Фаза комментирования
           proposals_phase: Фаза предложений
-          start: Начало
-          end: Окончание
           use_markdown: Форматируйте текст при помощи разметки Markdown
           title_placeholder: Заголовок процесса
           summary_placeholder: Краткая выжимка из описания
           description_placeholder: Добавить описание процесса
           additional_info_placeholder: Добавить информацию, которую вы считаете полезной
           homepage: Описание
+          homepage_description: Здесь вы можете описать содержимое процесса
+          homepage_enabled: Домашняя страница включена
+          banner_title: Цвета заголовка
         index:
           create: Новый процесс
           delete: Удалить
           title: Процессы законотворчества
           filters:
-            open: Открыть
+            active: Активные
             all: Все
         new:
           back: Назад
@@ -377,14 +458,21 @@ ru:
           title: Процесс
           comments: Комментарии
           status: Статус
-          creation_date: Дата создания
+          start_date: Дата начала
+          end_date: Дата окончания
           status_open: Открытый
           status_closed: Закрытый
           status_planned: Запланирован
         subnav:
           info: Информация
+          homepage: Главная страница
+          draft_versions: Черновики
           questions: Обсуждение
           proposals: Заявки
+          milestones: Подписчики
+      homepage:
+        edit:
+          title: Настроить домашнюю страницу вашего процесса
       proposals:
         index:
           title: Название
@@ -481,6 +569,9 @@ ru:
           comments_count: Количество комментариев
         question_option_fields:
           remove_option: Убрать вариант
+      milestones:
+        index:
+          title: Подписчики
     managers:
       index:
         title: Менеджеры
@@ -491,12 +582,11 @@ ru:
         add: Добавить
         delete: Удалить
       search:
-        title: 'Менеджеры: Поиск пользователей'
+        title: "Менеджеры: Поиск пользователей"
     menu:
       activity: Активность модератора
       admin: Меню администрирования
       banner: Управление баннерами
-      poll_questions: Вопросы
       proposals: Заявки
       proposals_topics: Темы предложений
       budgets: Партисипаторные бюджеты
@@ -544,9 +634,10 @@ ru:
           welcome: "Добро пожаловать"
         buttons:
           save: "Сохранить"
+          content_block:
+            update: "Обновить блок"
       title_moderated_content: Модерируемое содержимое
       title_budgets: Бюджеты
-      title_polls: Опросы
       title_profiles: Профили
       title_settings: Настройки
       title_site_customization: Содержимое сайта
@@ -558,6 +649,7 @@ ru:
         title: Администраторы
         name: Имя
         email: Электронный адрес
+        id: ID администратора
         no_administrators: Нет администраторов.
       administrator:
         add: Добавить
@@ -575,7 +667,7 @@ ru:
         add: Добавить
         delete: Удалить
       search:
-        title: 'Модераторы: Поиск пользователей'
+        title: "Модераторы: Поиск пользователей"
     segment_recipient:
       all_users: Все пользователи
       administrators: Администраторы
@@ -612,6 +704,11 @@ ru:
         title: Предпросмотр новостного письма
         send: Отправить
         affected_users: (%{n} затронутых пользователей)
+        sent_emails:
+          one: 1 сообщение отправлено
+          few: "отправлено %{count} сообщений"
+          many: "отправлено %{count} сообщений"
+          other: "отправлено %{count} сообщений"
         sent_at: Отправлено в
         subject: Тема
         segment_recipient: Получатели
@@ -665,9 +762,44 @@ ru:
         send_pending: Отправить ожидающие
         send_pending_notification: Ожидающие уведомления успешно отправлены
       proposal_notification_digest:
-        title: Сводка уведомлений по предложениям
-        description: Собирает все уведомления пользователя по предложениям в одном сообщении, чтобы избежать отправления большого количества email'ов.
-        preview_detail: Пользователи получат уведомления от только тех предложений, на которые они подписаны
+        title: "Сводка уведомлений по предложениям"
+        description: "Собирает все уведомления пользователя по предложениям в одном сообщении, чтобы избежать отправления большого количества email'ов."
+        preview_detail: "Пользователи получат уведомления от только тех предложений, на которые они подписаны"
+      budget_investment_created:
+        title: "Создано бюджетное инвестирование"
+        description: "Отправлять, когда пользователь создает бюджетное инвестирование."
+      budget_investment_selected:
+        title: "Выбрано бюджетное инвестирование"
+        description: "Отправлять автору, когда его бюджетное инвестирование выбирается."
+      budget_investment_unfeasible:
+        title: "Бюджетное инвестирование нецелесообразно"
+        description: "Отправлять автору, когда его бюджетное инвестирование отмечено как нецелесообразное."
+      budget_investment_unselected:
+        title: "Выбор бюджетного инвестирования отменен"
+        description: "Отправлять автору, когда его бюджетное инвестирование не проходит отбор для фазы голосования."
+      comment:
+        title: "Комментировать"
+        description: "Отправлять автору при получении комментария."
+      reply:
+        title: "Ответить"
+        description: "Отправлять автору комментария, когда он получает ответ."
+      direct_message_for_receiver:
+        title: "Получатель личного сообщения"
+        description: "Отправить получателю личного сообщения."
+      direct_message_for_sender:
+        title: "Отправитель личного сообщения"
+        description: "Отправить отправителю личного сообщения."
+      email_verification:
+        title: "Проверка Email"
+        description: "Отправить новому пользователю для проверки его/ее аккаунта."
+      user_invite:
+        title: "Приглашение пользователя"
+        description: "Отправить пользователю, который был приглашен зарегистрировать аккаунт."
+      edit_info: "Вы можете редактировать этот email в"
+      message_title: "Заголовок сообщения"
+      message_body: "Есть примерное содержимое сообщения."
+      alert:
+        no_investments: "Не создано никаких бюджетных инвестиций. Нужны примерные данные, чтобы выполнить предпросмотр этого email."
     emails_download:
       index:
         title: Скачивание Email'ов
@@ -689,7 +821,7 @@ ru:
         add: Добавить в оценщики
         delete: Удалить
       search:
-        title: 'Оценщики: Поиск пользователя'
+        title: "Оценщики: Поиск пользователя"
       summary:
         title: Обзок оценщиков по проектам инвестиций
         valuator_name: Эксперт
@@ -810,6 +942,12 @@ ru:
         no_booths: "Нет кабинок, назначенных на это голосование."
         table_name: "Имя"
         table_location: "Место"
+    active_polls:
+      edit:
+        title: "Описание опросов"
+      form:
+        description:
+          text: "Описание"
     polls:
       index:
         title: "Список активных голосований"
@@ -822,10 +960,6 @@ ru:
         geozone_restricted: "Ограничено для районов"
       new:
         title: "Новое голосование"
-        show_results_and_stats: "Показать результаты и статистику"
-        show_results: "Показать результаты"
-        show_stats: "Показать статистику"
-        results_and_stats_reminder: "Отмечая эти чекбоксы, можно сделать результаты и/или статистику этого голосования публично доступными и видимыми для каждого пользователя."
         submit_button: "Создать голосование"
       edit:
         title: "Редактировать голосование"
@@ -839,6 +973,8 @@ ru:
         no_questions: "Нет вопросов, назначенных на это голосование."
         questions_title: "Список вопросов"
         table_title: "Название"
+        edit_answers: Редактировать ответы
+        see_proposal: "(См. предложение)"
       flash:
         question_added: "Вопрос добавлен в это голосование"
         error_on_question_added: "Не удалось назначить вопрос для этого голосования"
@@ -855,10 +991,12 @@ ru:
         table_proposal: "Заявка"
         table_question: "Вопрос"
         table_poll: "Опрос"
+        poll_not_assigned: "Опрос не назначен"
       edit:
         title: "Редактировать вопрос"
       new:
         title: "Создать вопрос"
+        title_proposal: "Создать вопрос"
         poll_label: "Опрос"
       answers:
         images:
@@ -908,6 +1046,9 @@ ru:
       index:
         title: "Пересчеты"
         no_recounts: "Нечего пересчитывать"
+        all_booths_total: "Совокупный итог со всех кабинок:"
+        total_final: "Окончательный пересчет"
+        total_system: "Голоса (автоматические)"
         table_booth_name: "Кабинка"
         table_total_recount: "Общий пересчет (сотрудником)"
         table_system_count: "Голоса (автоматически)"
@@ -950,9 +1091,9 @@ ru:
     officials:
       edit:
         destroy: Убрать статус 'Чиновник'
-        title: 'Чиновники: Редактировать пользователя'
+        title: "Чиновники: Редактировать пользователя"
       flash:
-        official_destroyed: 'Детали сохранены: пользователь больше не является чиновником'
+        official_destroyed: "Детали сохранены: пользователь больше не является чиновником"
         official_updated: Детали чиновника сохранены
       index:
         title: Чиновники
@@ -969,7 +1110,7 @@ ru:
       search:
         edit_official: Редактировать чиновника
         make_official: Сделать чиновником
-        title: 'Позиции чиновников: Поиск пользователя'
+        title: "Позиции чиновников: Поиск пользователя"
         no_results: Позиции чиновников не найдены.
     organizations:
       index:
@@ -999,8 +1140,21 @@ ru:
     proposals:
       index:
         title: Заявки
+        id: ID
         author: Автор
         milestones: Основные этапы
+        no_proposals: Предложений нет.
+      show:
+        create_question: Добавить это предложение к опросу для голосования
+    hidden_proposals:
+      index:
+        filter: Фильтровать
+        filters:
+          all: Все
+          with_confirmed_hide: Подтвержденные
+          without_confirmed_hide: На рассмотрении
+        title: Скрытые предложения
+        no_hidden_proposals: Нет скрытых предложений.
     proposal_notifications:
       index:
         filter: Фильтровать
@@ -1014,12 +1168,9 @@ ru:
       flash:
         updated: Значение обновлено
       index:
-        banners: Стили баннеров
-        banner_imgs: Изображения баннеров
-        no_banners_images: Нет изображений баннеров
-        no_banners_styles: Нет стилей баннеров
         title: Настройки конфигурации
         update_setting: Обновить
+        participation_processes: "Процессы участия"
         feature_flags: Функции
         features:
           enabled: "Функция включена"
@@ -1033,6 +1184,7 @@ ru:
             update: Конфигурация карты успешно обновлена.
           form:
             submit: Обновить
+          how_to_enable: 'Чтобы показать карту пользователям, вы должны включить "Геолокацию предложений и бюджетов" на вкладке "Функции".'
       setting: Особенность
       setting_actions: Действия
       setting_name: Настройка
@@ -1040,6 +1192,8 @@ ru:
       setting_value: Значение
       no_description: "Нет описания"
     shared:
+      true_value: "Да"
+      false_value: "Нет"
       booths_search:
         button: Поиск
         placeholder: Искать кабинку по имени
@@ -1071,6 +1225,8 @@ ru:
       author: Автор
       content: Содержание
       created_at: Создано в
+      delete: Удалить
+      color_help: Шестнадцатеричный формат
     spending_proposals:
       index:
         geozone_filter_all: Все зоны
@@ -1137,7 +1293,16 @@ ru:
         name: Имя
         external_code: Внешний код
         census_code: Код Цензуса
+        code_help: Код ответа для этой геозоны в API цензуса
         coordinates: Координаты
+        coordinates_help: Координаты, которые сгенерируют кликабельную область на карте изображений HTML
+      errors:
+        form:
+          error:
+            one: "ошибка не позволила сохранить эту геозону"
+            few: "ошибки не позволили сохранить эту геозону"
+            many: "ошибки не позволили сохранить эту геозону"
+            other: "ошибки не позволили сохранить эту геозону"
       edit:
         form:
           submit_button: Сохранить изменения
@@ -1166,6 +1331,16 @@ ru:
         author: Автор
         documents: Документы
         document_count: "Количество документов:"
+        verified:
+          one: "Найдена %{count} верная подпись"
+          few: "Найдено %{count} верных подписей"
+          many: "Найдено %{count} верных подписей"
+          other: "Найдено %{count} верных подписей"
+        unverified:
+          one: "Найдена %{count} неверная подпись"
+          few: "Найдено %{count} неверных подписей"
+          many: "Найдено %{count} неверных подписей"
+          other: "Найдено %{count} неверных подписей"
         unverified_error: (Не верифицировано Цензусом)
         loading: "Еще есть подписи, находящиеся на проверке у Цензуса, пожалуйста обновите страницу чуть позже"
     stats:
@@ -1189,9 +1364,7 @@ ru:
           verified_users_who_didnt_vote_proposals: Верифицированные пользователи, не голосовавшие за предложения
           visits: Посещения
           votes: Всего голосов
-        spending_proposals_title: Предложения трат
         budgets_title: Партисипаторное бюджетирование
-        visits_title: Посещения
         direct_messages: Прямые сообщения
         proposal_notifications: Уведомления о предложениях
         incomplete_verifications: Незавершенные верификации
@@ -1204,6 +1377,7 @@ ru:
         title: Уведомления о предложениях
         total: Всего
         proposals_with_notifications: Предложения с уведомлениями
+        not_available: "Предложение не доступно"
       polls:
         title: Статистика голосований
         all: Опросы
@@ -1247,6 +1421,7 @@ ru:
       content_blocks:
         information: Информация о блоках содержимого
         about: "Вы можете создать блоки HTML-содержимого для вставки в заголовок или подвал вашего приложения CONSUL."
+        html_format: "Блок содержимого - это группа ссылок, и она должна иметь следующий формат:"
         no_blocks: "Нет блоков содержимого."
         create:
           notice: Блок содержимого успешно создан
@@ -1318,11 +1493,23 @@ ru:
           status_published: Опубликовано
           title: Название
           slug: Slug URL
+          cards_title: Карты
+          see_cards: Смотреть Карты
         cards:
+          cards_title: карты
+          create_card: Создать карту
+          no_cards: Нет карт.
           title: Название
           description: Описание
           link_text: Текст ссылки
           link_url: Ссылка URL
+          columns_help: "Ширина карточки в виде количества колонок. На мобильных экранах - это всегда 100% ширина."
+          create:
+            notice: "Карта успешно создана!"
+          update:
+            notice: "Карта успешно обновлена"
+          destroy:
+            notice: "Карта успешно удалена"
     homepage:
       title: Главная страница
       description: Активные модули появляются на главной странице в том же порядке как и здесь.

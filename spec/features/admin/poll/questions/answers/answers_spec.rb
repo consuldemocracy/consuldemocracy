@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Answers" do
+describe "Answers" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as admin.user
   end
@@ -71,7 +71,7 @@ feature "Answers" do
     expect(page).to have_content(new_title)
     expect(page).not_to have_content(old_title)
 
-    expect(page.body.index(new_title)).to be < page.body.index(answer2.title)
+    expect(answer2.title).to appear_before(new_title)
   end
 
 end

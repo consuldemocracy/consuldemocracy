@@ -1,9 +1,108 @@
 tr:
   verification:
-    residence:
+    alert:
+      lock: Maksimum deneme sayısına ulaştınız. Lütfen daha sonra tekrar deneyiniz.
+    back: Hesabıma dön
+    email:
+      create:
+        alert:
+          failure: Hesabınıza bir e-posta gönderirken bir sorun oluştu
+        flash:
+          success: "Hesabınıza bir onay e-postası gönderdik: %{email}"
+      show:
+        alert:
+          failure: Doğrulama kodu yanlış
+        flash:
+          success: Siz doğrulanmış bir kullanıcısınız
+    letter:
+      alert:
+        unconfirmed_code: Onay kodunu henüz girmediniz
+      create:
+        flash:
+          success_html: Kendi <b>maksimum güvenlik kodunuzu (yalnızca son oylar için gerekli)</b> istediğiniz için teşekkür ederiz. Birkaç gün içinde bunu, dosyada bulunan veride belirtilen adrese göndereceğiz. Lütfen şunu unutmayın, eğer tercih ederseniz, kodunuzu Vatandaş Destek Ofislerinin herhangi birinden alabilirsiniz.
+      edit:
+        see_all: Önerileri gör
+        title: Evrak talep edildi
+      errors:
+        incorrect_code: Doğrulama kodu yanlış
       new:
+        explanation: "Son oylamaya katılmak için şunları yapabilirsiniz:"
+        go_to_index: Önerileri gör
+        office: Herhangi bir Vatandaş Destek Ofisinde doğrulama
+        send_letter: Bana kod ile bir evrak gönder
+        title: Tebrikler!
+        user_permission_info: Hesabınızla yapabilecekleriniz...
+      update:
+        flash:
+          success: Kod doğru. Hesabınız şimdi doğrulandı
+    redirect_notices:
+      already_verified: Hesabınız zaten doğrulandı
+      email_already_sent: Size bir onay bağlantısı içeren bir e-posta gönderdik. E-postayı bulamazsanız, buradan bir yeniden yayın talep edebilirsiniz
+    residence:
+      alert:
+        unconfirmed_residency: Siz henüz ikametinizi onaylamadınız
+      create:
+        flash:
+          success: İkamet doğrulandı
+      new:
+        accept_terms_text: Census'un %{terms_url}'sini kabul ediyorum
+        accept_terms_text_title: Census'un erişim şartlarını ve koşullarını kabul ediyorum
         date_of_birth: Doğum tarihi
+        document_number: Belge numarası
+        document_number_help_title: Yardım
+        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaport</strong>: AAA000001<br> <strong>Ev kartı</strong>: X1234567P"
+        document_type:
+          passport: Pasaport
+          residence_card: Ev kartı
+          spanish_id: DNI
         document_type_label: Belge Türü
+        error_not_allowed_age: Katılmak için gereken yaşta değilsiniz
+        error_not_allowed_postal_code: Doğrulanmak için kayıt olmalısınız.
+        error_verifying_census: Census, bilgilerinizi doğrulayamadı. Lütfen, sayım bilgilerinizin doğru olduğunu Belediye Meclisini arayarak ya da bir Vatandaş Destek Ofisini ziyaret ederek onaylayın.
+        form_errors: ikametinizin doğrulanmasını engelledi
         postal_code: Posta kodu
+        postal_code_note: Hesabınızı doğrulamak için kayıtlı olmalısınız
+        terms: erişim şartları ve koşulları
+        title: İkametgahı doğrula
+        verify_residence: İkametgahı doğrula
+    sms:
+      create:
+        flash:
+          success: Metin mesajla size gönderilen onay kodunu girin
+      edit:
+        confirmation_code: Cep telefonunuza aldığınız kodu girin
+        resend_sms_link: Tekrar göndermek için buraya tıklayın
+        resend_sms_text: Onay kodunuzu içeren bir metin almadınız mı?
+        submit_button: Gönder
+        title: Güvenlik kodu onayı
+      new:
+        phone: Kodu almak için cep telefonu numaranızı girin
+        phone_format_html: "<strong><em>(Örneğin: 612345678 or +34612345678)</em></strong>"
+        phone_note: Telefonunuzu yalnızca size bir kod göndermek için kullanıyoruz, asla sizinle bağlantı kurmak için değil.
+        phone_placeholder: "Örneğin: 612345678 veya +34612345678"
+        submit_button: Gönder
+        title: Onay kodunu gönder
+      update:
+        error: Hatalı onay kodu
+        flash:
+          level_three:
+            success: Kod doğru. Hesabınız şimdi doğrulandı
+          level_two:
+            success: Kod doğru
     step_1: Konut
     step_2: Onay kodu
+    step_3: Son doğrulama
+    user_permission_debates: Tartışmalara katıl
+    user_permission_info: Bilgileriniz doğrulanıyor bunları yapabileceksiniz...
+    user_permission_proposal: Yeni öneriler oluştur
+    user_permission_support_proposal: Önerileri destekle*
+    user_permission_votes: Son oylamaya katıl*
+    verified_user:
+      form:
+        submit_button: Kodu gönder
+      show:
+        email_title: E-postalar
+        explanation: Şu anda Kayıt Ol'da aşağıdaki detayları tutuyoruz; lütfen gönderilecek onay kodunuz için bir yöntem seçin.
+        phone_title: Telefon numaraları
+        title: Mevcut bilgi
+        use_another_phone: Diğer telefonu kullan

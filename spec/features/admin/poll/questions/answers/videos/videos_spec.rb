@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Videos" do
+describe "Videos" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

@@ -1,4 +1,4 @@
-class LocalCensusRecord < ActiveRecord::Base
+class LocalCensusRecord < ApplicationRecord
   validates :document_number, presence: true
   validates :document_type, presence: true
   validates :date_of_birth, presence: true

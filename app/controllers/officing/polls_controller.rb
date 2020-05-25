@@ -1,4 +1,5 @@
 class Officing::PollsController < Officing::BaseController
+  before_action :verify_booth
 
   def index
     @polls = current_user.poll_officer? ? current_user.poll_officer.voting_days_assigned_polls : []

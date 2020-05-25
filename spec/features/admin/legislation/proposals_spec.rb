@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin collaborative legislation" do
+describe "Admin collaborative legislation" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

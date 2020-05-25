@@ -183,7 +183,7 @@ sl:
         signature:
           attributes:
             document_number:
-              already_voted: 'Že glsaoval za ta predlog'
+              already_voted: "Že glsaoval za ta predlog"
         site_customization/page:
           attributes:
             slug:
@@ -196,7 +196,7 @@ sl:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Ne morete komentirati a valuation'
+              cannot_comment_valuation: "Ne morete komentirati a valuation"
       messages:
         record_invalid: "Validacija spodletela: %{errors}"
         restrict_dependent_destroy:

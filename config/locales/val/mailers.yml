@@ -3,7 +3,7 @@ val:
     no_reply: "Aquest missatge s'ha enviat des d'una direcció de correu electrònic que no admet respostes."
     comment:
       hi: Hola
-      new_comment_by_html: Hi ha un nou comentari de <b>%{commenter}</b> en
+      new_comment_by_html: Hi ha un nou comentari de <strong>%{commenter}</strong> en
       subject: Algú ha comentat en el teu %{commentable}
       title: Nou comentari
     config:
@@ -17,7 +17,7 @@ val:
       title: Verifica el teu compte amb el següent enllaç
     reply:
       hi: Hola
-      new_reply_by_html: Hi ha noves respostes de <b>%{commenter}</b> al teu comentari en
+      new_reply_by_html: Hi ha noves respostes de <strong>%{commenter}</strong> al teu comentari en
       subject: Algú ha contestat el teu comentari
       title: Nova resposta al teu comentari
     unfeasible_spending_proposal:

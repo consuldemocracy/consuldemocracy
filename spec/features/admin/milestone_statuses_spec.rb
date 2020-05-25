@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin milestone statuses" do
+describe "Admin milestone statuses" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin custom images" do
+describe "Admin custom images" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -39,7 +39,9 @@ feature "Admin custom images" do
     expect(page).to have_css("img[src*='custom_map.jpg']", count: 1)
   end
 
-  scenario "Image is replaced on front view" do
+  scenario "Image is replaced on front views" do
+    budget = create(:budget)
+    group = create(:budget_group, budget: budget)
     visit admin_root_path
 
     within("#side_menu") do
@@ -55,6 +57,35 @@ feature "Admin custom images" do
 
     within("#map") do
       expect(page).to have_css("img[src*='custom_map.jpg']")
+    end
+
+    visit map_proposals_path
+
+    within(".show-for-medium") do
+      expect(page).to have_css("img[src*='custom_map.jpg']")
+    end
+
+    visit budget_group_path(budget, group)
+
+    within(".show-for-medium") do
+      expect(page).to have_css("img[src*='custom_map.jpg']")
+    end
+  end
+
+  scenario "Image is replaced on admin newsletters" do
+    newsletter = create(:newsletter, segment_recipient: "all_users")
+
+    visit admin_site_customization_images_path
+
+    within("tr#image_logo_email") do
+      attach_file "site_customization_image_image", "spec/fixtures/files/logo_email_custom.png"
+      click_button "Update"
+    end
+
+    visit admin_newsletter_path(newsletter)
+
+    within(".newsletter-body-content") do
+      expect(page).to have_css("img[src*='logo_email_custom.png']")
     end
   end
 

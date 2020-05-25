@@ -54,23 +54,6 @@ describe Proposal do
     end
   end
 
-  describe "#question" do
-    it "is not valid without a question" do
-      proposal.question = nil
-      expect(proposal).not_to be_valid
-    end
-
-    it "is not valid when very short" do
-      proposal.question = "abc"
-      expect(proposal).not_to be_valid
-    end
-
-    it "is not valid when very long" do
-      proposal.question = "a" * 141
-      expect(proposal).not_to be_valid
-    end
-  end
-
   describe "#video_url" do
     it "is not valid when URL is not from Youtube or Vimeo" do
       proposal.video_url = "https://twitter.com"
@@ -291,7 +274,7 @@ describe Proposal do
       newer_proposal = create(:proposal, created_at: now)
       5.times { newer_proposal.vote_by(voter: create(:user), vote: "yes") }
 
-      older_proposal = create(:proposal, created_at: 1.day.ago)
+      older_proposal = create(:proposal, created_at: 2.days.ago)
       5.times { older_proposal.vote_by(voter: create(:user), vote: "yes") }
 
       expect(newer_proposal.hot_score).to be > older_proposal.hot_score
@@ -491,12 +474,6 @@ describe Proposal do
         expect(results).to eq([proposal])
       end
 
-      it "searches by question" do
-        proposal = create(:proposal, question: "to be or not to be")
-        results = described_class.search("to be or not to be")
-        expect(results).to eq([proposal])
-      end
-
       it "searches by author name" do
         author = create(:user, username: "Danny Trejo")
         proposal = create(:proposal, author: author)
@@ -575,7 +552,6 @@ describe Proposal do
     context "order" do
 
       it "orders by weight" do
-        proposal_question    = create(:proposal,  question:    "stop corruption")
         proposal_title       = create(:proposal,  title:       "stop corruption")
         proposal_description = create(:proposal,  description: "stop corruption")
         proposal_summary     = create(:proposal,  summary:     "stop corruption")
@@ -583,9 +559,8 @@ describe Proposal do
         results = described_class.search("stop corruption")
 
         expect(results.first).to eq(proposal_title)
-        expect(results.second).to eq(proposal_question)
-        expect(results.third).to eq(proposal_summary)
-        expect(results.fourth).to eq(proposal_description)
+        expect(results.second).to eq(proposal_summary)
+        expect(results.third).to eq(proposal_description)
       end
 
       it "orders by weight and then by votes" do
@@ -891,6 +866,30 @@ describe Proposal do
     end
   end
 
+  describe "selected" do
+    let!(:not_selected_proposal) { create(:proposal) }
+    let!(:selected_proposal)   { create(:proposal, :selected) }
+
+    it "selected? is true" do
+      expect(not_selected_proposal.selected?).to be false
+      expect(selected_proposal.selected?).to be true
+    end
+
+    it "scope selected" do
+      selected = Proposal.selected
+
+      expect(selected.size).to be 1
+      expect(selected.first).to eq selected_proposal
+    end
+
+    it "scope not_selected" do
+      not_selected = Proposal.not_selected
+
+      expect(not_selected.size).to be 1
+      expect(not_selected.first).to eq not_selected_proposal
+    end
+  end
+
   describe "public_for_api scope" do
     it "returns proposals" do
       proposal = create(:proposal)
@@ -1017,6 +1016,70 @@ describe Proposal do
       result = described_class.recommendations(user)
       expect(result.size).to eq(1)
       expect(result).to eq([proposal3])
+    end
+
+  end
+
+  describe "#send_new_actions_notification_on_create" do
+
+    before do
+      Setting["dashboard.emails"] = true
+      ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
+    end
+
+    it "send notification after create when there are new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+
+      create(:proposal, :draft)
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+    end
+
+    it "Not send notification after create when there are not new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 1, published_proposal: false)
+      create(:dashboard_action, :resource, :active, day_offset: 1, published_proposal: false)
+
+      create(:proposal, :draft)
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
+    end
+
+  end
+
+  describe "#send_new_actions_notification_on_published" do
+
+    before do
+      Setting["dashboard.emails"] = true
+      ActionMailer::Base.deliveries.clear
+    end
+
+    after do
+      Setting["dashboard.emails"] = nil
+    end
+
+    it "send notification after published when there are new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+
+      proposal = create(:proposal, :draft)
+      proposal.publish
+
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
+    end
+
+    it "Not send notification after published when there are not new actived actions" do
+      create(:dashboard_action, :proposed_action, :active, day_offset: 1, published_proposal: true)
+      create(:dashboard_action, :resource, :active, day_offset: 1, published_proposal: true)
+
+      proposal = create(:proposal, :draft)
+      proposal.publish
+
+      expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
   end

@@ -15,7 +15,7 @@ id:
     mailer:
       confirmation_instructions:
         confirm_link: Konfirmasikan akun saya
-        text: 'Anda bisa mengkonfirmasi akun email anda di link berikut:'
+        text: "Anda bisa mengkonfirmasi akun email anda di link berikut:"
         title: Selamat Datang
         welcome: Selamat Datang
       reset_password_instructions:
@@ -23,12 +23,12 @@ id:
         hello: Halo
         ignore_text: Jika anda tidak meminta perubahan kata sandi, anda dapat mengabaikan email ini.
         info_text: Kata sandi anda tidak akan berubah kecuali anda mengakses link dan mensuntingnya.
-        text: 'Kami telah menerima permintaan untuk mengganti kata sandi anda. Anda dapat melakukan ini di link berikut:'
+        text: "Kami telah menerima permintaan untuk mengganti kata sandi anda. Anda dapat melakukan ini di link berikut:"
         title: Ubah kata sandi anda
       unlock_instructions:
         hello: Halo
         info_text: Akun anda telah diblokir karena banyaknya upaya masuk yang gagal.
-        instructions_text: 'Silahkan klik link ini untuk membuka kunci akun anda:'
+        instructions_text: "Silahkan klik link ini untuk membuka kunci akun anda:"
         title: Akun anda telah dikunci
         unlock_link: Buka akun saya
     menu:
@@ -103,7 +103,7 @@ id:
           password_confirmation_label: Konfirmasi password baru
           password_label: Kata sandi baru
           update_submit: Memperbaharui
-          waiting_for: 'Menunggu konfirmasi dari:'
+          waiting_for: "Menunggu konfirmasi dari:"
         new:
           cancel: Batalkan masuk
           email_label: Email

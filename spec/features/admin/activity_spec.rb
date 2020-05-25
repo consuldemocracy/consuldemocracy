@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin activity" do
+describe "Admin activity" do
 
-  background do
+  before do
     @admin = create(:administrator)
     login_as(@admin.user)
   end
@@ -16,6 +16,7 @@ feature "Admin activity" do
       within("#proposal_#{proposal.id}") do
         accept_confirm { click_link "Hide" }
       end
+      expect(page).to have_css("#proposal_#{proposal.id}.faded")
 
       visit admin_activity_path
 
@@ -78,6 +79,7 @@ feature "Admin activity" do
       within("#debate_#{debate.id}") do
         accept_confirm { click_link "Hide" }
       end
+      expect(page).to have_css("#debate_#{debate.id}.faded")
 
       visit admin_activity_path
 
@@ -115,7 +117,7 @@ feature "Admin activity" do
     scenario "Shows admin restores" do
       debate = create(:debate, :hidden)
 
-      visit admin_debates_path
+      visit admin_hidden_debates_path
 
       within("#debate_#{debate.id}") do
         click_on "Restore"
@@ -140,6 +142,7 @@ feature "Admin activity" do
 
       within("#comment_#{comment.id}") do
         accept_confirm { click_link "Hide" }
+        expect(page).to have_css(".faded")
       end
 
       visit admin_activity_path
@@ -178,7 +181,7 @@ feature "Admin activity" do
     scenario "Shows admin restores" do
       comment = create(:comment, :hidden)
 
-      visit admin_comments_path
+      visit admin_hidden_comments_path
 
       within("#comment_#{comment.id}") do
         click_on "Restore"
@@ -202,6 +205,7 @@ feature "Admin activity" do
 
       within("#proposal_#{proposal.id}") do
         click_link "Hide author"
+        expect(current_path).to eq(debates_path)
       end
 
       visit admin_activity_path

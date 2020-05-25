@@ -18,7 +18,7 @@ pl:
         publish_comment: Opublikuj Komentarz
       form:
         phase_not_open: Ten etap nie jest otwarty
-        login_to_comment: Muszą być %{signin} lub %{signup} by zostawić komentarz.
+        login_to_comment: '%{signin} lub %{signup} by zostawić komentarz.'
         signin: Zaloguj się
         signup: Zarejestruj się
       index:
@@ -59,12 +59,13 @@ pl:
       proposals:
         empty_proposals: Brak wniosków
         filters:
+          random: Losowo
           winners: Wybrany
       debate:
         empty_questions: Brak pytań
         participate: Uczestniczyć w debacie
       index:
-        filter: Filtr
+        filter: Filtruj
         filters:
           open: Otwarte procesy
           past: Ubiegły
@@ -119,7 +120,7 @@ pl:
         organizations: Organizacje nie mogą uczestniczyć w debacie
         signin: Zaloguj się
         signup: Zarejestruj się
-        unauthenticated: Aby wziąć udział, musisz %{signin} lub %{signup}.
+        unauthenticated: '%{signin} lub %{signup} aby wziąć udział.'
         verified_only: Tylko zweryfikowani użytkownicy mogą uczestniczyć, %{verify_account}.
         verify_account: zweryfikuj swoje konto
         debate_phase_not_open: Faza debaty została zakończona i odpowiedzi nie są już akceptowane

@@ -102,9 +102,9 @@ ar:
         author_deleted: تم حذف المستخدم
         price_explanation: توضيح الاسعار
         unfeasibility_explanation: تفسير غير مجدي
-        code_html: 'رمز مشروع الاستثمار: <strong>%{code}</strong>'
-        location_html: 'المكان: <strong>%{location}</strong>'
-        organization_name_html: 'تم اقتراحه نيابة عن: <strong>%{name}</strong>'
+        code_html: "رمز مشروع الاستثمار: <strong>%{code}</strong>"
+        location_html: "المكان: <strong>%{location}</strong>"
+        organization_name_html: "تم اقتراحه نيابة عن: <strong>%{name}</strong>"
         share: مشاركة
         title: مشروع استثماري
         supports: تشجيعات
@@ -113,10 +113,10 @@ ar:
         comments_tab: تعليقات
         milestones_tab: الأهداف المرحلية
         author: كاتب
-        project_unfeasible_html: 'مشروع الاستثمار هذا <strong> تم تعليمه كغير مجدي</strong> ولن يذهب الى مرحلة الاقتراع.'
-        project_selected_html: 'مشروع الاستثمار هذا<strong>تم اختياره</strong>لمرحلة الاقتراع.'
-        project_winner: 'مشروع الاستثمار الفائز'
-        project_not_selected_html: 'مشروع الاستثمار هذا <strong> لم يتم اختياره</strong>لمرحلة الاقتراع.'
+        project_unfeasible_html: "مشروع الاستثمار هذا <strong> تم تعليمه كغير مجدي</strong> ولن يذهب الى مرحلة الاقتراع."
+        project_selected_html: "مشروع الاستثمار هذا<strong>تم اختياره</strong>لمرحلة الاقتراع."
+        project_winner: "مشروع الاستثمار الفائز"
+        project_not_selected_html: "مشروع الاستثمار هذا <strong> لم يتم اختياره</strong>لمرحلة الاقتراع."
         see_price_explanation: انظر شرح السعر
       wrong_price_format: الاعداد الصحيحة فقط
       investment:

@@ -212,7 +212,7 @@
     }
 
     .quiz-title {
-      background: #e5ecf2;
+      background: $highlight;
 
       .quiz-header-title {
         font-size: $small-font-size;
@@ -980,5 +980,29 @@
   .proposal h3 {
     font-size: rem-calc(20);
     margin-top: 0;
+  }
+}
+
+.process-proposal {
+  margin-bottom: $line-height;
+
+  .header {
+    background: $highlight;
+    padding: $line-height;
+
+    @include breakpoint(medium) {
+      height: $line-height * 4;
+    }
+  }
+
+  .process-title {
+    font-size: $small-font-size;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .process-link {
+    font-size: rem-calc(19);
+    font-weight: bold;
   }
 }

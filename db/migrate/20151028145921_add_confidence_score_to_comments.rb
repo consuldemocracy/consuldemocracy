@@ -1,4 +1,4 @@
-class AddConfidenceScoreToComments < ActiveRecord::Migration
+class AddConfidenceScoreToComments < ActiveRecord::Migration[4.2]
   def change
     add_column :comments, :confidence_score, :integer, index: true
   end

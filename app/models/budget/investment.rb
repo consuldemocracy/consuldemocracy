@@ -1,5 +1,5 @@
 class Budget
-  class Investment < ActiveRecord::Base
+  class Investment < ApplicationRecord
     SORTING_OPTIONS = {id: "id", title: "title", supports: "cached_votes_up"}.freeze
 
     include Rails.application.routes.url_helpers
@@ -13,9 +13,6 @@ class Budget
     include Imageable
     include Mappable
     include Documentable
-    documentable max_documents_allowed: 3,
-                 max_file_size: 3.megabytes,
-                 accepted_content_types: [ "application/pdf" ]
 
     acts_as_votable
     acts_as_paranoid column: :hidden_at
@@ -27,7 +24,7 @@ class Budget
     include Milestoneable
     include Randomizable
 
-    belongs_to :author, -> { with_hidden }, class_name: 'User', foreign_key: 'author_id'
+    belongs_to :author, -> { with_hidden }, class_name: "User", foreign_key: "author_id"
     belongs_to :heading
     belongs_to :group
     belongs_to :budget
@@ -39,8 +36,8 @@ class Budget
     has_many :valuator_group_assignments, dependent: :destroy
     has_many :valuator_groups, through: :valuator_group_assignments
 
-    has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: 'Comment'
-    has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: 'Comment'
+    has_many :comments, -> {where(valuation: false)}, as: :commentable, class_name: "Comment"
+    has_many :valuations, -> {where(valuation: true)}, as: :commentable, class_name: "Comment"
 
     validates :title, presence: true
     validates :author, presence: true
@@ -75,7 +72,7 @@ class Budget
     scope :unfeasible,                  -> { where(feasibility: "unfeasible") }
     scope :not_unfeasible,              -> { where.not(feasibility: "unfeasible") }
     scope :undecided,                   -> { where(feasibility: "undecided") }
-    scope :with_supports,               -> { where('cached_votes_up > 0') }
+    scope :with_supports,               -> { where("cached_votes_up > 0") }
     scope :selected,                    -> { feasible.where(selected: true) }
     scope :compatible,                  -> { where(incompatible: false) }
     scope :incompatible,                -> { where(incompatible: true) }
@@ -109,15 +106,17 @@ class Budget
     end
 
     def self.filter_params(params)
-      params.select{ |x, _| %w{heading_id group_id administrator_id tag_name valuator_id}.include?(x.to_s) }
+      params.permit(%i[heading_id group_id administrator_id tag_name valuator_id])
     end
 
     def self.scoped_filter(params, current_filter)
-      budget  = Budget.find_by(slug: params[:budget_id]) || Budget.find_by(id: params[:budget_id])
+      budget  = Budget.find_by_slug_or_id params[:budget_id]
       results = Investment.by_budget(budget)
 
       results = results.where("cached_votes_up + physical_votes >= ?",
-                              params[:min_total_supports])                    if params[:min_total_supports].present?
+                              params[:min_total_supports])                 if params[:min_total_supports].present?
+      results = results.where("cached_votes_up + physical_votes <= ?",
+                              params[:max_total_supports])                 if params[:max_total_supports].present?
       results = results.where(group_id: params[:group_id])                 if params[:group_id].present?
       results = results.by_tag(params[:tag_name])                          if params[:tag_name].present?
       results = results.by_heading(params[:heading_id])                    if params[:heading_id].present?
@@ -132,12 +131,19 @@ class Budget
     end
 
     def self.advanced_filters(params, results)
+      results = results.without_admin      if params[:advanced_filters].include?("without_admin")
+      results = results.without_valuator   if params[:advanced_filters].include?("without_valuator")
+      results = results.under_valuation    if params[:advanced_filters].include?("under_valuation")
+      results = results.valuation_finished if params[:advanced_filters].include?("valuation_finished")
+      results = results.winners            if params[:advanced_filters].include?("winners")
+
       ids = []
-      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?('feasible')
-      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?('selected')
-      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?('undecided')
-      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?('unfeasible')
-      results.where("budget_investments.id IN (?)", ids)
+      ids += results.valuation_finished_feasible.pluck(:id) if params[:advanced_filters].include?("feasible")
+      ids += results.where(selected: true).pluck(:id)       if params[:advanced_filters].include?("selected")
+      ids += results.undecided.pluck(:id)                   if params[:advanced_filters].include?("undecided")
+      ids += results.unfeasible.pluck(:id)                  if params[:advanced_filters].include?("unfeasible")
+      results = results.where("budget_investments.id IN (?)", ids) if ids.any?
+      results
     end
 
     def self.order_filter(params)
@@ -173,11 +179,11 @@ class Budget
     end
 
     def searchable_values
-      { title              => 'A',
-        author.username    => 'B',
-        heading.try(:name) => 'B',
-        tag_list.join(' ') => 'B',
-        description        => 'C'
+      { title              => "A",
+        author.username    => "B",
+        heading.try(:name) => "B",
+        tag_list.join(" ") => "B",
+        description        => "C"
       }
     end
 
@@ -186,7 +192,7 @@ class Budget
     end
 
     def self.by_heading(heading)
-      where(heading_id: heading == 'all' ? nil : heading.presence)
+      where(heading_id: heading == "all" ? nil : heading.presence)
     end
 
     def undecided?
@@ -218,7 +224,7 @@ class Budget
     end
 
     def code
-      "#{created_at.strftime('%Y')}-#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
+      "#{created_at.strftime("%Y")}-#{id}" + (administrator.present? ? "-A#{administrator.id}" : "")
     end
 
     def send_unfeasible_email
@@ -239,6 +245,7 @@ class Budget
       return :no_ballots_allowed              unless budget.balloting?
       return :different_heading_assigned_html unless ballot.valid_heading?(heading)
       return :not_enough_money_html           if ballot.present? && !enough_money?(ballot)
+      return :casted_offline                  if ballot.casted_offline?
     end
 
     def permission_problem(user)
@@ -283,7 +290,7 @@ class Budget
     end
 
     def register_selection(user)
-      vote_by(voter: user, vote: 'yes') if selectable_by?(user)
+      vote_by(voter: user, vote: "yes") if selectable_by?(user)
     end
 
     def calculate_confidence_score
@@ -342,11 +349,11 @@ class Budget
     end
 
     def assigned_valuators
-      self.valuators.collect(&:description_or_name).compact.join(', ').presence
+      self.valuators.collect(&:description_or_name).compact.join(", ").presence
     end
 
     def assigned_valuation_groups
-      self.valuator_groups.collect(&:name).compact.join(', ').presence
+      self.valuator_groups.collect(&:name).compact.join(", ").presence
     end
 
     def valuation_tag_list
@@ -358,13 +365,19 @@ class Budget
     end
 
     def self.with_milestone_status_id(status_id)
-      joins(:milestones).includes(:milestones).select do |investment|
+      includes(milestones: :translations).select do |investment|
         investment.milestone_status_id == status_id.to_i
       end
     end
 
     def milestone_status_id
       milestones.published.with_status.order_by_publication_date.last&.status_id
+    end
+
+    def admin_and_valuator_users_associated
+      valuator_users = (valuator_groups.map(&:valuators) + valuators).flatten
+      all_users = valuator_users << administrator
+      all_users.compact.uniq
     end
 
     private

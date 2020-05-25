@@ -3,7 +3,7 @@ zh-CN:
     no_reply: "此消息是从一个不接受回复的电子邮件地址发送的。"
     comment:
       hi: 您好
-      new_comment_by_html: 来自<b>%{commenter}</b>的新评论
+      new_comment_by_html: 来自<strong>%{commenter}</strong>的新评论
       subject: 有人对您的%{commentable} 做了评论
       title: 新评论
     config:
@@ -17,7 +17,7 @@ zh-CN:
       title: 使用以下链接来确认您的账户
     reply:
       hi: 您好
-      new_reply_by_html: <b>%{commenter}</b> 对您评论有新回复
+      new_reply_by_html: <strong>%{commenter}</strong> 对您评论有新回复
       subject: 有人回复了您的评论
       title: 对您评论的新回复
     unfeasible_spending_proposal:

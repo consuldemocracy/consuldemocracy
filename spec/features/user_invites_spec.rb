@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "User invites" do
+describe "User invites" do
 
-  background do
+  before do
     login_as_manager
   end
 

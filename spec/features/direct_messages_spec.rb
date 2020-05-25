@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Direct messages" do
+describe "Direct messages" do
 
-  background do
+  before do
     Setting[:direct_message_max_per_day] = 3
   end
 

@@ -1,11 +1,11 @@
 require "rails_helper"
 
-feature "Answers" do
+describe "Answers" do
 
   let(:question) { create(:poll_question) }
   let(:admin) { create(:administrator) }
 
-  background do
+  before do
     login_as(admin.user)
   end
 
@@ -16,7 +16,7 @@ feature "Answers" do
     visit admin_question_path(question)
 
     expect(page).to have_css(".poll_question_answer", count: 2)
-    expect(page.body.index(answer1.title)).to be < page.body.index(answer2.title)
+    expect(answer2.title).to appear_before(answer1.title)
 
     within("#poll_question_answer_#{answer1.id}") do
       expect(page).to have_content answer1.title

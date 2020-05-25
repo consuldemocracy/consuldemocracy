@@ -1,0 +1,54 @@
+hr:
+  officing:
+    menu:
+      total_recounts: Ukupno prebrojavanja i rezultata
+    poll_budgets:
+      index:
+        ballot_sheet_name: Ime
+        ballot_sheet_author: Autor
+      show:
+        author: Autor
+    results:
+      new:
+        booth: "Glasačko mjesto"
+        date: "Datum"
+        select_booth: "Odaberi glasačko mjesto"
+        ballots_white: "Ukupno praznih glasova"
+        ballots_null: "Nevažeči glasovi"
+        ballots_total: "Ukupno glasova"
+        submit: "Spremi"
+        results_list: "Vaši rezultati"
+        see_results: "Pogledaj rezultate"
+      index:
+        no_results: "Nema rezultata"
+        results: Rezultati
+        table_answer: Odgovor
+        table_votes: Glasovi
+        table_whites: "Ukupno praznih glasova"
+        table_nulls: "Nevažeči glasovi"
+        table_total: "Ukupno glasova"
+    residence:
+      flash:
+        create: "Dokument potvrđen s Cenzusom"
+        not_allowed: "Danas nemate službene smjene"
+      new:
+        title: Potvrdi dokument
+        document_number: "Broj dokumenta (uključujući znakove)"
+        submit: Potvrdi dokument
+        error_verifying_census: "Cenzus nije u mogućnosti potvriditi ovaj dokument."
+        form_errors: spriječena je verifikacija ovog dokumenta
+    voters:
+      new:
+        title: Ankete
+        table_poll: Anketa
+        table_status: Stanje ankete
+        table_actions: Djelovanja
+        not_to_vote: Osoba je odlučila da neće glasati ovaj puta
+      show:
+        can_vote: Može glasati
+        cannot_vote: Osoba ne može glasati jer nije registrirana u distriktu/distriktima gdje se glasa.
+        error_already_voted: Već je sudjelovao u ovoj anketi
+        submit: Potvrdi glas
+        success: "Glas je unesen!"
+      can_vote:
+        submit_disable_with: "Pričekajte, glas se potvrđuje..."

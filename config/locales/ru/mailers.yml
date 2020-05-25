@@ -3,7 +3,7 @@ ru:
     no_reply: "Это сообщение было отправлено с email адреса, который не принимает ответы."
     comment:
       hi: Здравствуйте
-      new_comment_by_html: Появился новый комментарий от <b>%{commenter}</b>
+      new_comment_by_html: Появился новый комментарий от <strong>%{commenter}</strong>
       subject: Кто-то прокомментировал ваш %{commentable}
       title: Новый комментарий
     config:
@@ -17,7 +17,7 @@ ru:
       title: Подтвердить ваш аккаунт при помощи следующей ссылки
     reply:
       hi: Здравствуйте
-      new_reply_by_html: Появился новый ответ от <b>%{commenter}</b> на ваш комментарий на
+      new_reply_by_html: Появился новый ответ от <strong>%{commenter}</strong> на ваш комментарий на
       subject: Кто-то ответил на ваш комментарий
       title: Новый ответ на ваш комментарий
     unfeasible_spending_proposal:

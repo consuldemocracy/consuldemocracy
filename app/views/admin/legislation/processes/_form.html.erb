@@ -24,7 +24,6 @@
 
   <div class="small-12 medium-3 column">
     <%= f.text_field :draft_start_date,
-                      label: t("admin.legislation.processes.form.start"),
                       value: format_date_for_calendar_form(@process.draft_start_date),
                       class: "js-calendar-full",
                       id: "draft_start_date" %>
@@ -32,7 +31,6 @@
 
   <div class="small-12 medium-3 column">
     <%= f.text_field :draft_end_date,
-                      label: t("admin.legislation.processes.form.end"),
                       value: format_date_for_calendar_form(@process.draft_end_date),
                       class: "js-calendar-full",
                       id: "draft_end_date" %>
@@ -50,18 +48,14 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :start_date, t("admin.legislation.processes.form.start") %>
     <%= f.text_field :start_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.start_date),
                       class: "js-calendar-full",
                       id: "start_date" %>
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :end_date, t("admin.legislation.processes.form.end") %>
     <%= f.text_field :end_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.end_date),
                       class: "js-calendar-full",
                       id: "end_date" %>
@@ -79,18 +73,14 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :debate_start_date, t("admin.legislation.processes.form.start") %>
     <%= f.text_field :debate_start_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.debate_start_date),
                       class: "js-calendar-full",
                       id: "debate_start_date" %>
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :debate_end_date, t("admin.legislation.processes.form.end") %>
     <%= f.text_field :debate_end_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.debate_end_date),
                       class: "js-calendar-full",
                       id: "debate_end_date" %>
@@ -108,18 +98,14 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :proposals_phase_start_date, t("admin.legislation.processes.form.start") %>
     <%= f.text_field :proposals_phase_start_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.proposals_phase_start_date),
                       class: "js-calendar-full",
                       id: "proposals_phase_start_date" %>
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :proposals_phase_end_date, t("admin.legislation.processes.form.end") %>
     <%= f.text_field :proposals_phase_end_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.proposals_phase_end_date),
                       class: "js-calendar-full",
                       id: "proposals_phase_end_date" %>
@@ -137,18 +123,14 @@
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :allegations_start_date, t("admin.legislation.processes.form.start") %>
     <%= f.text_field :allegations_start_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.allegations_start_date),
                       class: "js-calendar-full",
                       id: "allegations_start_date" %>
   </div>
 
   <div class="small-12 medium-3 column">
-    <%= f.label :allegations_end_date, t("admin.legislation.processes.form.end") %>
     <%= f.text_field :allegations_end_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.allegations_end_date),
                       class: "js-calendar-full",
                       id: "allegations_end_date" %>
@@ -162,9 +144,7 @@
   </div>
 
   <div class="small-12 medium-3 column end">
-    <%= f.label :draft_publication_date %>
     <%= f.text_field :draft_publication_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.draft_publication_date),
                       class: "js-calendar-full",
                       id: "draft_publication_date" %>
@@ -178,9 +158,7 @@
   </div>
 
   <div class="small-12 medium-3 column end">
-    <%= f.label :result_publication_date %>
     <%= f.text_field :result_publication_date,
-                      label: false,
                       value: format_date_for_calendar_form(@process.result_publication_date),
                       class: "js-calendar-full",
                       id: "result_publication_date" %>
@@ -194,7 +172,7 @@
   </div>
 
   <div class="documents small-12 column">
-    <%= render 'documents/nested_documents', documentable: @process, f: f %>
+    <%= render "documents/nested_documents", documentable: @process, f: f %>
   </div>
 
   <div class="small-12 column">
@@ -202,7 +180,7 @@
   </div>
 
   <div class="images small-12 column">
-    <%= render 'images/nested_image', imageable: @process, f: f %>
+    <%= render "images/nested_image", imageable: @process, f: f %>
   </div>
 
   <div class="small-12 column">
@@ -215,7 +193,7 @@
 
   <div class="small-6 large-3 column">
     <%= f.label :background_color, nil, for: "background_color_input" %>
-    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
+    <p class="help-text"><%= t("admin.shared.color_help") %></p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
         <%= f.text_field :background_color, label: false, type: :color,
@@ -229,7 +207,7 @@
 
   <div class="small-6 large-3 column end">
     <%= f.label :font_color, nil, for: "font_color_input" %>
-    <p class="help-text"><%= t("admin.legislation.processes.form.color_help") %></p>
+    <p class="help-text"><%= t("admin.shared.color_help") %></p>
     <div class="row collapse">
       <div class="small-12 medium-6 column">
         <%= f.text_field :font_color, label: false, type: :color, value: font_color_or_default %>

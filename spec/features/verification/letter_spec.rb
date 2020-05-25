@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Verify Letter" do
+describe "Verify Letter" do
 
   scenario "Request a letter" do
     user = create(:user, residence_verified_at: Time.current,
@@ -18,17 +18,6 @@ feature "Verify Letter" do
 
     expect(user.letter_requested_at).to be
     expect(user.letter_verification_code).to be
-  end
-
-  scenario "Go to office instead of send letter" do
-    Setting["verification_offices_url"] = "http://offices.consul"
-    user = create(:user, residence_verified_at: Time.current,
-                         confirmed_phone:       "611111111")
-
-    login_as(user)
-    visit new_letter_path
-
-    expect(page).to have_link "Citizen Support Offices", href: "http://offices.consul"
   end
 
   scenario "Deny access unless verified residence" do

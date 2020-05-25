@@ -1,0 +1,13 @@
+<% default_actions.each do |action| %>
+  <tr>
+    <td><%= t("admin.dashboard.actions.index.default.#{action}") %></td>
+    <td><%= t("admin.dashboard.actions.action_type.resource") %></td>
+    <td class="text-center"><%= t("admin.dashboard.actions.index.active") %></td>
+    <td colspan="4">&nbsp;</td>
+    <td class="text-right">
+      <%= link_to t("admin.dashboard.actions.index.edit"),
+                        admin_settings_path(anchor: "tab-proposals"),
+                        class: "button hollow" %>
+    </td>
+  </tr>
+<% end %>

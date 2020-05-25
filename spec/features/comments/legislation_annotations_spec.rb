@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting legislation questions" do
+describe "Commenting legislation questions" do
   let(:user) { create :user }
   let(:legislation_annotation) { create :legislation_annotation, author: user }
 
@@ -14,7 +14,7 @@ feature "Commenting legislation questions" do
 
     expect(page).to have_css(".comment", count: 4)
 
-    comment = Comment.first
+    comment = Comment.last
     within first(".comment") do
       expect(page).to have_content comment.user.name
       expect(page).to have_content I18n.l(comment.created_at, format: :datetime)
@@ -44,6 +44,22 @@ feature "Commenting legislation questions" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: legislation_annotation, user: user)
+
+    visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
+                                                            legislation_annotation.draft_version,
+                                                            legislation_annotation)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+      click_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    expect(page).to have_link "Go back to #{legislation_annotation.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = legislation_annotation.comments.first
     child_comment  = create(:comment, body: "First subcomment", commentable: legislation_annotation, parent: parent_comment)
@@ -54,20 +70,25 @@ feature "Commenting legislation questions" do
                                                             legislation_annotation)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end
@@ -144,7 +165,7 @@ feature "Commenting legislation questions" do
                                                             legislation_annotation.draft_version,
                                                             legislation_annotation)
 
-    within all(".comment").last do
+    within all(".comment").first do
       expect(page).to have_content "Built with http://rubyonrails.org/"
       expect(page).to have_link("http://rubyonrails.org/", href: "http://rubyonrails.org/")
       expect(find_link("http://rubyonrails.org/")[:rel]).to eq("nofollow")
@@ -160,7 +181,7 @@ feature "Commenting legislation questions" do
                                                             legislation_annotation.draft_version,
                                                             legislation_annotation)
 
-    within all(".comment").last do
+    within all(".comment").first do
       expect(page).to have_content "click me http://www.url.com"
       expect(page).to have_link("http://www.url.com", href: "http://www.url.com")
       expect(page).not_to have_link("click me")
@@ -186,7 +207,7 @@ feature "Commenting legislation questions" do
     expect(page).to have_css(".comment", count: 3)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: legislation_annotation)
       visit legislation_process_draft_version_annotation_path(legislation_annotation.draft_version.process,
@@ -369,7 +390,7 @@ feature "Commenting legislation questions" do
     expect(page).to have_content("Testing submit button!")
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -432,7 +453,7 @@ feature "Commenting legislation questions" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
 
@@ -495,8 +516,8 @@ feature "Commenting legislation questions" do
     end
   end
 
-  feature "Voting comments" do
-    background do
+  describe "Voting comments" do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @legislation_annotation = create(:legislation_annotation)
@@ -598,7 +619,7 @@ feature "Commenting legislation questions" do
     end
   end
 
-  feature "Merged comment threads", :js do
+  describe "Merged comment threads", :js do
     let!(:draft_version) { create(:legislation_draft_version, :published) }
     let!(:annotation1) do
       create(:legislation_annotation, draft_version: draft_version, text: "my annotation",
@@ -609,7 +630,7 @@ feature "Commenting legislation questions" do
                                       ranges: [{"start" => "/p[1]", "startOffset" => 1, "end" => "/p[1]", "endOffset" => 10}])
     end
 
-    background do
+    before do
       login_as user
 
       visit legislation_process_draft_version_path(draft_version.process, draft_version)

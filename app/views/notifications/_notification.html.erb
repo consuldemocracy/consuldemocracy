@@ -1,10 +1,10 @@
-<li id="<%= dom_id(notification) %>" class="notification <%= 'unread' if notification&.unread? %>">
+<li id="<%= dom_id(notification) %>" class="notification <%= "unread" if notification&.unread? %>">
   <% if notification.notifiable.try(:notifiable_available?) %>
     <% locals = { notification: notification,
                   timestamp: notification.timestamp,
                   title: notification.notifiable_title,
                   body: notification.notifiable.try(:body) } %>
-    <% link_text = render partial: '/notifications/notification_body', locals: locals %>
+    <% link_text = render partial: "/notifications/notification_body", locals: locals %>
     <%= link_to_if notification.link.present?, link_text, notification.link %>
   <% else %>
     <p>

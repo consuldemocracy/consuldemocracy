@@ -29,30 +29,13 @@
       </div>
       <div class="small-12 medium-6 column" data-equalizer-watch>
         <div class="dates"></div>
-        <% if poll.questions.count == 1 %>
-          <% poll.questions.each do |question| %>
-            <h4>
-              <% if poll.results_enabled? %>
-                <%= link_to question.title, results_poll_path(poll) %>
-              <% elsif poll.stats_enabled? %>
-                <%= link_to question.title, stats_poll_path(poll) %>
-              <% else %>
-                <%= link_to question.title, poll %>
-              <% end %>
-            </h4>
-            <%= poll_dates(poll) %>
-          <% end %>
-        <% else %>
-          <h4>
-            <% if poll.results_enabled? %>
-              <%= link_to poll.name, results_poll_path(poll) %>
-            <% elsif poll.stats_enabled? %>
-                <%= link_to poll.name, stats_poll_path(poll) %>
-            <% else %>
-              <%= link_to poll.name, poll %>
-            <% end %>
-          </h4>
+        <% if poll.questions.one? %>
+          <h4><%= link_to_poll poll.questions.first.title, poll %></h4>
           <%= poll_dates(poll) %>
+        <% else %>
+          <h4><%= link_to_poll poll.name, poll %></h4>
+          <%= poll_dates(poll) %>
+
           <ul class="margin-top">
             <% poll.questions.each do |question| %>
               <li><%= question.title %></li>
@@ -72,7 +55,7 @@
       </div>
       <div class="small-12 medium-3 column table" data-equalizer-watch>
         <div class="table-cell align-middle">
-          <%= link_to poll, class: "button hollow expanded" do %>
+          <%= link_to poll_path(id: poll.slug || poll.id), class: "button hollow expanded" do %>
             <% if poll.expired? %>
               <%= t("polls.index.participate_button_expired") %>
             <% else %>

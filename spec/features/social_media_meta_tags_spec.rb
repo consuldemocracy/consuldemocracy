@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Social media meta tags" do
+describe "Social media meta tags" do
 
   context "Setting social media meta tags" do
 

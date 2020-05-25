@@ -14,7 +14,6 @@ sq:
       destroy:
         notice: Imazhi u fshi me sukses
         alert: Nuk mund të fshihet Imazhi
-        confirm: Jeni i sigurt se doni ta fshini imazhin? Ky veprim nuk mund të zhbëhet!
     errors:
       messages:
         in_between: duhet të jetë në mes %{min} dhe %{max}

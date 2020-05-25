@@ -127,7 +127,7 @@ section "Creating Investments" do
       group: heading.group,
       budget: heading.group.budget,
       title: Faker::Lorem.sentence(3).truncate(60),
-      description: "<p>#{Faker::Lorem.paragraphs.join('</p><p>')}</p>",
+      description: "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>",
       created_at: rand((Time.current - 1.week)..Time.current),
       feasibility: %w[undecided unfeasible feasible feasible feasible feasible].sample,
       unfeasibility_explanation: Faker::Lorem.paragraph,
@@ -151,9 +151,9 @@ end
 section "Geolocating Investments" do
   Budget.find_each do |budget|
     budget.investments.each do |investment|
-      MapLocation.create(latitude: Setting["map_latitude"].to_f + rand(-10..10)/100.to_f,
-                         longitude: Setting["map_longitude"].to_f + rand(-10..10)/100.to_f,
-                         zoom: Setting["map_zoom"],
+      MapLocation.create(latitude: Setting["map.latitude"].to_f + rand(-10..10)/100.to_f,
+                         longitude: Setting["map.longitude"].to_f + rand(-10..10)/100.to_f,
+                         zoom: Setting["map.zoom"],
                          investment_id: investment.id)
     end
   end

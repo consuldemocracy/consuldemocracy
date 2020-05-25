@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Account" do
+describe "Account" do
 
-  background do
+  before do
     @user = create(:user, username: "Manuela Colau")
     login_as(@user)
   end
@@ -172,12 +172,12 @@ feature "Account" do
 
     login_through_form_as(@user)
 
-    expect(page).to have_content "Invalid login or password"
+    expect(page).to have_content "Invalid Email or username or password"
   end
 
   context "Recommendations" do
 
-    background do
+    before do
       Setting["feature.user.recommendations"] = true
       Setting["feature.user.recommendations_on_debates"] = true
       Setting["feature.user.recommendations_on_proposals"] = true

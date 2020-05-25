@@ -41,6 +41,9 @@ eu:
         image: Irudia
       site_customization/content_block:
         name: Izena
+      legislation/process:
+        proposals_phase_start_date: Hasi
+        proposals_phase_end_date: Amaitu
       legislation/annotation:
         text: Iruzkin
       poll/question/answer:

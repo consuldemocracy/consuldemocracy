@@ -319,6 +319,12 @@ describe Budget::Heading do
       expect(Budget::Heading.allow_custom_content.first).to eq first_heading
       expect(Budget::Heading.allow_custom_content.last).to eq last_heading
     end
+
+    it "returns headings with multiple translations only once" do
+      create(:budget_heading, allow_custom_content: true, name_en: "English", name_es: "Spanish")
+
+      expect(Budget::Heading.allow_custom_content.count).to eq 1
+    end
   end
 
 end

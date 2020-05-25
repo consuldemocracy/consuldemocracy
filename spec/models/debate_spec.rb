@@ -273,7 +273,7 @@ describe Debate do
       newer_debate = create(:debate, created_at: now)
       5.times { newer_debate.vote_by(voter: create(:user), vote: "yes") }
 
-      older_debate = create(:debate, created_at: 1.day.ago)
+      older_debate = create(:debate, created_at: 2.days.ago)
       5.times { older_debate.vote_by(voter: create(:user), vote: "yes") }
 
       expect(newer_debate.hot_score).to be > older_debate.hot_score

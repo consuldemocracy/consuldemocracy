@@ -2,12 +2,18 @@
 
 ## Core team members
 
-* Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
-* Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
-* Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto García Cabeza [github](https://github.com/decabeza)
-* Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
-* Maria Checa [github](https://github.com/MariaCheca)
+* [Alberto García](https://github.com/decabeza)
+* [Javi Martín](https://github.com/javierm)
+* [Julián Herrero](https://github.com/microweb10)
+* [Raimond García](https://github.com/voodoorai2000)
+
+## All other contributors
+
+In addition to the formal team, there are [over a hundred contributors](https://github.com/consul/consul/graphs/contributors). Thank you so much for your code! Big thanks too to the people that contribute in many other ways including documentation, translations, evangelism, dev ops, communication, organizing and more!
+
+Finally a special thanks to the former core team members. Lovingly known as The Alumni:
+
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)
 
 ## Code of conduct
 

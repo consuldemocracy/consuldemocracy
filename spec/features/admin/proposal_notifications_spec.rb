@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin proposal notifications" do
+describe "Admin proposal notifications" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end

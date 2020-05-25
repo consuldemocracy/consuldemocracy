@@ -1,6 +1,9 @@
 ar:
   valuation:
+    header:
+      title: التقييم
     menu:
+      title: التقييم
       budgets: الميزانيات المشاركة
       spending_proposals: مقترحات الانفاق
     budgets:
@@ -12,6 +15,8 @@ ar:
         table_name: الإ سم
         table_phase: مرحلة
         table_actions: الإجراءات
+        evaluate: تقييم
+        no_budgets: "لا يوجد ميزانيات"
     budget_investments:
       index:
         headings_filter_all: كل العناوين
@@ -19,6 +24,7 @@ ar:
           valuation_open: فتح
           valuating: تحت التقييم
           valuation_finished: انتهى التقييم
+        assigned_to: "تم تعيين %{valuator}"
         title: مشاريع استثمارية
         edit: تعديل الملف
         no_valuators_assigned: لم يتم تعيين مقيّمين
@@ -44,9 +50,14 @@ ar:
         unfeasible: غير مجدي
         undefined: غير معرف
         valuation_finished: انتهى التقييم
+        duration: الوقت المتاح
+        responsibles: المسؤوليات
+        assigned_admin: المشرف المكلف
         assigned_valuators: المقيمين الذين تم تعيينهم
       edit:
         dossier: الملف
+        price_html: "السعر (%{currency})"
+        price_first_year_html: "التكلفة خلال أول سنة (%{currency}) <small>(بيانات اختيارية، البيانات ليست للكل)</small>"
         price_explanation_html: توضيح الاسعار
         feasibility: الجدوى
         feasible: مجدي
@@ -54,8 +65,13 @@ ar:
         undefined_feasible: معلق
         feasible_explanation_html: تفسير مجدي \ ممكن
         valuation_finished: انتهى التقييم
+        valuation_finished_alert: "هل أنت متأكد من أنك تريد وضع علامة نهائي لهذا التقرير؟ بعد ذلك لا يمكن تعديله."
         not_feasible_alert: "سوف يرسل بريد الكتروني للمشارك بتقرير عدم الجدوى."
+        duration_html: الوقت المتاح
         save: حفظ التغييرات
+      notice:
+        valuate: "تم تحديث الملف"
+      valuation_comments: تعليقات التقييم
     spending_proposals:
       index:
         geozone_filter_all: كل المناطق
@@ -83,10 +99,15 @@ ar:
         not_feasible: غير مجدي
         undefined: غير معرف
         valuation_finished: انتهى التقييم
+        time_scope: الوقت المتاح
+        internal_comments: التعليقات الداخلية
         responsibles: المسؤوليات
+        assigned_admin: المشرف المكلف
         assigned_valuators: المقيمين الذين تم تعيينهم
       edit:
         dossier: الملف
+        price_html: "السعر (%{currency})"
+        price_first_year_html: "التكلفة خلال السنة الأولى (%{currency})"
         currency: "€"
         price_explanation_html: توضيح الاسعار
         feasibility: الجدوى
@@ -95,4 +116,8 @@ ar:
         undefined_feasible: معلق
         feasible_explanation_html: تفسير مجدي \ ممكن
         valuation_finished: انتهى التقييم
+        time_scope_html: الوقت المتاح
+        internal_comments_html: التعليقات الداخلية
         save: حفظ التغييرات
+      notice:
+        valuate: "تم تحديث الملف"

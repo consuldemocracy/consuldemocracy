@@ -38,8 +38,6 @@ it:
           proposals: Proposte
           budgets: Bilancio partecipativo
           help_page: Guida
-        background_color: Colore sfondo
-        font_color: Colore caratteri
       edit:
         editing: Modifica banner
         form:
@@ -113,6 +111,8 @@ it:
         recalculate: Ricalcolare Investimenti Vincitori
     budget_groups:
       name: "Nominativo"
+      headings_name: "Intestazione"
+      headings_edit: "Modificare intestazioni"
       max_votable_headings: "Numero massimo di voci che un utente può votare"
       form:
         edit: "Modifica gruppo"
@@ -125,6 +125,8 @@ it:
         amount: "Importo"
         population: "Popolazione (facoltativo)"
         population_info: "Il campo popolazione tra le Voci di Bilancio è utilizzato a scopo Statistico al termine del Bilancio per evidenziare la percentuale di votanti relativa a ciascuna Voce rappresentativa di un’area abitata. Il campo è facoltativo e perciò può essere lasciato vuoto se non pertinente."
+        latitude: "Latitudine (opzionale)"
+        longitude: "Longitudine (Opzionale)"
         submit: "Salvare voce di bilancio"
     budget_phases:
       edit:
@@ -145,11 +147,6 @@ it:
         tags_filter_all: Tutti i tag
         advanced_filters: Filtri avanzati
         placeholder: Cerca progetti
-        sort_by:
-          placeholder: Ordina per
-          id: ID
-          title: Titolo
-          supports: Sostegni
         filters:
           all: Tutti
           without_admin: Senza amministratore designato
@@ -193,6 +190,7 @@ it:
           visible_to_valuators: Mostrare agli stimatori
           author_username: Username dell’autore
           incompatible: Incompatibile
+          price: Costo
         cannot_calculate_winners: Il bilancio deve rimanere nella fase “Progetti in votazione”, “Revisione Schede” o “Bilancio concluso” percalcolare i progetti vincitori
         see_results: "Vedi risultati"
       show:
@@ -335,9 +333,9 @@ it:
         user: Utente
         no_hidden_users: Non ci sono utenti nascosti.
       show:
-        email: 'Email:'
-        hidden_at: 'Nascosto:'
-        registered_at: 'Data di registrazione:'
+        email: "Email:"
+        hidden_at: "Nascosto:"
+        registered_at: "Data di registrazione:"
         title: Attività dell'utente (%{user})
     hidden_budget_investments:
       index:
@@ -369,8 +367,6 @@ it:
           process: Procedimento
           debate_phase: Fase di dibattito
           proposals_phase: Fase delle proposte
-          start: Inizio
-          end: Fine
           use_markdown: Usa Markdown per formattare il testo
           title_placeholder: Il titolo del procedimento
           summary_placeholder: Breve riassunto della descrizione
@@ -382,7 +378,6 @@ it:
           delete: Eliminare
           title: Processi di legislazione
           filters:
-            open: Aperti
             all: Tutti
         new:
           back: Indietro
@@ -397,7 +392,6 @@ it:
           title: Procedimento
           comments: Commenti
           status: Status
-          creation_date: Data di creazione
           status_open: Aperti
           status_closed: Chiuso
           status_planned: Programmato
@@ -517,12 +511,11 @@ it:
         add: Aggiungere
         delete: Eliminare
       search:
-        title: 'Dirigenti: Ricerca utenti'
+        title: "Dirigenti: Ricerca utenti"
     menu:
       activity: Attività del moderatore
       admin: Menu admin
       banner: Gestire i banner
-      poll_questions: Quesiti
       proposals: Proposte
       proposals_topics: Argomenti delle proposte
       budgets: Bilanci partecipativi
@@ -572,7 +565,6 @@ it:
           save: "Salva"
       title_moderated_content: Contenuto moderato
       title_budgets: Bilanci
-      title_polls: Votazioni
       title_profiles: Profili
       title_settings: Impostazioni
       title_site_customization: Contenuto del sito
@@ -601,7 +593,7 @@ it:
         add: Aggiungi
         delete: Eliminare
       search:
-        title: 'Moderatori: Ricerca utenti'
+        title: "Moderatori: Ricerca utenti"
     segment_recipient:
       all_users: Tutti gli utenti
       administrators: Amministratori
@@ -689,9 +681,9 @@ it:
         send_pending: Invia sospesa
         send_pending_notification: Notifiche in sospeso inviate con successo
       proposal_notification_digest:
-        title: Riassunto Notifiche Proposta
-        description: Raccoglie tutte le notifiche relative alla proposta destinate ad un utente in un singolo messaggio, per evitare troppe email.
-        preview_detail: Gli utenti riceveranno notifiche solo per le proposte che seguono
+        title: "Riassunto Notifiche Proposta"
+        description: "Raccoglie tutte le notifiche relative alla proposta destinate ad un utente in un singolo messaggio, per evitare troppe email."
+        preview_detail: "Gli utenti riceveranno notifiche solo per le proposte che seguono"
     emails_download:
       index:
         title: Scarica email
@@ -713,7 +705,7 @@ it:
         add: Aggiungere ai valutatori
         delete: Eliminare
       search:
-        title: 'Stimatori: Ricerca utenti'
+        title: "Stimatori: Ricerca utenti"
       summary:
         title: Riassunto della valutazione dei progetti di investimento
         valuator_name: Valutatore
@@ -846,10 +838,6 @@ it:
         geozone_restricted: "Limitato ai distretti"
       new:
         title: "Nuovo sondaggio"
-        show_results_and_stats: "Visualizza risultati e statistiche"
-        show_results: "Mostra risultati"
-        show_stats: "Mostra statistiche"
-        results_and_stats_reminder: "Contrassegnando queste caselle i risultati e/o le statistiche di questa votazione verranno resi disponibili al pubblico e ogni utente li vedrà."
         submit_button: "Crea votazione"
       edit:
         title: "Modificare il sondaggio"
@@ -974,9 +962,9 @@ it:
     officials:
       edit:
         destroy: Eliminare lo stato di pubblico ufficiale
-        title: 'Pubblici ufficiali: modificare l''utente'
+        title: "Pubblici ufficiali: modificare l'utente"
       flash:
-        official_destroyed: 'Dettagli salvati: l''utente non è più pubblico ufficiale'
+        official_destroyed: "Dettagli salvati: l'utente non è più pubblico ufficiale"
         official_updated: Dettagli del pubblico ufficiale salvati
       index:
         title: Funzionari
@@ -993,7 +981,7 @@ it:
       search:
         edit_official: Modifica pubblico ufficiale
         make_official: Convertire in pubblico ufficiale
-        title: 'Pubblici ufficiali: ricerca utente'
+        title: "Pubblici ufficiali: ricerca utente"
         no_results: Incarichi da funzionario non trovati.
     organizations:
       index:
@@ -1051,10 +1039,6 @@ it:
       flash:
         updated: Valore aggiornato
       index:
-        banners: Stili banner
-        banner_imgs: Immagini banner
-        no_banners_images: Nessuna immagine banner
-        no_banners_styles: Nessuno stile banner
         title: Impostazioni di configurazione
         update_setting: Aggiorna
         feature_flags: Funzionalità
@@ -1182,7 +1166,7 @@ it:
         form:
           error:
             one: "errore ha impedito il salvataggio di questo distretto"
-            other: 'errori hanno impedito il salvataggio di questo distretto'
+            other: "errori hanno impedito il salvataggio di questo distretto"
       edit:
         form:
           submit_button: Salva modifiche
@@ -1240,9 +1224,7 @@ it:
           verified_users_who_didnt_vote_proposals: Utenti verificati che non hanno votato proposte
           visits: Visite
           votes: Voti totali
-        spending_proposals_title: Proposte di spesa
         budgets_title: Bilancio partecipativo
-        visits_title: Visite
         direct_messages: Messaggi diretti
         proposal_notifications: Notifiche di proposta
         incomplete_verifications: Verifiche incomplete

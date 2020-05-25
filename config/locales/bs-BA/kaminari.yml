@@ -1,0 +1,24 @@
+bs:
+  helpers:
+    page_entries_info:
+      entry:
+        zero: Unešeni tekstovi
+        one: Unešeni tekst
+        few: Unešeni tekstovi
+        other: Unešeni tekstovi
+      more_pages:
+        display_entries: Pokazano <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <strong>%{total} %{entry_name}</strong>
+      one_page:
+        display_entries:
+          zero: "%{entry_name} nije pronađen"
+          one: Ima <strong> 1 %{entry_name}</strong>
+          few: Imaju <strong> %{count} %{entry_name}</strong>
+          other: Imaju <strong> %{count} %{entry_name}</strong>
+  views:
+    pagination:
+      current: Vi ste na strani
+      first: Prva
+      last: Posljednja
+      next: Naredna
+      previous: Prethodna
+      truncate: "&hellip;"

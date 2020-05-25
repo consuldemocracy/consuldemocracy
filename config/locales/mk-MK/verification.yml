@@ -1,0 +1,25 @@
+mk:
+  verification:
+    letter:
+      edit:
+        see_all: Види предлози
+      errors:
+        incorrect_code: Неточен верификациски код
+      new:
+        go_to_index: Види предлози
+        title: Честитки!
+        user_permission_info: Со својот профил можеш...
+      update:
+        flash:
+          success: Точен код! Профилот е верификуван
+    redirect_notices:
+      already_verified: Профилот е веќе верификуван
+    residence:
+      new:
+        document_number_help_title: Помош
+        document_type:
+          passport: Пасош
+        document_type_label: Вид на документ
+    sms:
+      edit:
+        submit_button: Испрати
