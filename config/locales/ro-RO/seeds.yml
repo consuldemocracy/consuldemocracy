@@ -1,1 +1,14 @@
 ro:
+  seeds:
+    categories:
+      culture: Cultură
+      sports: Sport
+      social_rights: Drepturile sociale
+      economy: Economie
+      employment: Ocuparea forței de muncă
+      equity: Echitate
+      sustainability: Durabilitate
+      participation: Participare
+      mobility: Mobilitate
+      media: Mass-media
+      transparency: Transparenţă
