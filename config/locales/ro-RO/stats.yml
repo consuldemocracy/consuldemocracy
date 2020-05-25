@@ -1,3 +1,11 @@
 ro:
   stats:
     age: "Vârstă"
+    age_more_than: "de la %{start} ani în sus"
+    age_range: "de la %{start} ani - %{finish} ani"
+    total: "Total"
+    geozone: "District"
+    no_demographic_data:
+      one: "* Nu există date demografice pentru 1 participant."
+      few: "* Nu există date demografice pentru %{count} participanți."
+      other: "* Nu există date demografice pentru %{count} participanți."
