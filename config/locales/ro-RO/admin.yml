@@ -198,12 +198,16 @@ ro:
         table_status: Status
         table_actions: "Acțiuni"
         delete: "Șterge reper"
+        no_milestones: "Nu aveți repere definite"
         image: "Imagine"
         show_image: "Arată imagine"
         documents: "Documente"
         milestone: Reper
         new_milestone: Crează reper nou
         milestone_tags: Etichete reper
+      form:
+        admin_statuses: Gestionează stările
+        no_statuses_defined: Nu există încă stări definite
       new:
         creating: Crează reper
       edit:
@@ -216,6 +220,8 @@ ro:
         notice: Reper șters cu succes
     statuses:
       index:
+        title: Status repere
+        empty_statuses: Nu sunt create stări de reper
         new_status: Crează un nou status de reper
         table_name: Nume
         table_description: Descriere
@@ -233,8 +239,11 @@ ro:
       delete:
         notice: Status de reper șters cu succes
     progress_bars:
+      manage: "Gestionați barele de progres"
       index:
-        title: "Progres"
+        title: "Bare de progres"
+        no_progress_bars: "Nu există bare de progres"
+        new_progress_bar: "Creați o nouă bară de progres"
         table_title: "Titlu"
     dashboard:
       actions:
@@ -243,10 +252,21 @@ ro:
           published_proposal: Propuneri publicate
           default:
             email: Email
+        new:
+          back: Înapoi la listă
+        create:
+          notice: Acțiune creată cu succes
+        edit:
+          editing: Editați acțiunea pentru tabloul de bord al propunerilor
+          back: Înapoi la listă
+        delete:
+          success: Acțiune ștearsă cu succes
         form:
           submit_button: Salvează
       administrator_tasks:
         index:
+          title: Resurse solicitate
+          solve: Rezolvă
           filter: Filtru
           filters:
             pending: În așteptare
