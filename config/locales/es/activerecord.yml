@@ -1,4 +1,8 @@
 es:
+  attributes:
+    results_enabled: "Mostrar resultados"
+    stats_enabled: "Mostrar estadísticas"
+    advanced_stats_enabled: "Mostrar estadísticas avanzadas"
   activerecord:
     models:
       activity:
@@ -61,12 +65,12 @@ es:
       poll/officer:
         one: "presidente de mesa"
         other: "presidentes de mesa"
+      poll/ballot_sheet:
+        one: Papeleta de votación
+        other: Papeletas de votación
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestas ciudadanas"
-      spending_proposal:
-        one: "Propuesta de inversión"
-        other: "Proyectos de gasto"
       site_customization/page:
         one: Página
         other: Páginas
@@ -76,6 +80,9 @@ es:
       site_customization/content_block:
         one: Bloque
         other: Bloques
+      document:
+        one: Documento
+        other: Documentos
       legislation/process:
         one: "Proceso"
         other: "Procesos"
@@ -108,8 +115,19 @@ es:
         other: "Votaciones"
       proposal_notification:
         one: "Notificación de propuesta"
-        other: "Notificaciones de propuesta"
+        other: "Notificaciones de propuestas"
+      dashboard/action:
+        one: Acción del panel de control de propuestas
+        other: Acciones del panel de control de propuestas
+      dashboard/administrator_task:
+        one: Tarea
+        other: Tareas
+      link:
+        one: Enlace
+        other: Enlaces
     attributes:
+      administrator:
+        description: Descripción
       budget:
         name: "Nombre"
         description_accepting: "Descripción durante la fase de presentación de proyectos"
@@ -131,6 +149,11 @@ es:
         organization_name: "Si estás proponiendo en nombre de una organización o colectivo, o en nombre de más gente, escribe su nombre"
         image: "Imagen descriptiva del proyecto de gasto"
         image_title: "Título de la imagen"
+      geozone:
+        name: Nombre
+        external_code: "Código externo (opcional)"
+        census_code: "Código del censo (opcional)"
+        html_map_coordinates: "Coordenadas HTML <map> (opcional)"
       milestone:
         status_id: "Estado actual (opcional)"
         title: "Título"
@@ -163,6 +186,7 @@ es:
         title: "Título"
         question: "Pregunta"
         description: "Descripción"
+        selected: "Marcar como seleccionada"
         terms_of_service: "Términos de servicio"
       user:
         login: "Email o nombre de usuario"
@@ -178,13 +202,6 @@ es:
       organization:
         name: "Nombre de la organización"
         responsible_name: "Persona responsable del colectivo"
-      spending_proposal:
-        administrator_id: "Administrador"
-        association_name: "Nombre de la asociación"
-        description: "Descripción"
-        external_url: "Enlace a documentación adicional"
-        geozone_id: "Ámbito de actuación"
-        title: "Título"
       poll:
         name: "Nombre"
         starts_at: "Fecha de apertura"
@@ -203,6 +220,10 @@ es:
         external_url: "Enlace a documentación adicional"
       poll/question/translation:
         title: "Pregunta"
+      poll/ballot_sheet:
+        data: Datos de CSV
+        poll_id: Votación
+        officer_assignment_id: Turno
       signature_sheet:
         signable_type: "Tipo de hoja de firmas"
         signable_id: "ID Propuesta ciudadana/Proyecto de gasto"
@@ -229,20 +250,25 @@ es:
         name: Nombre
         locale: Idioma
         body: Contenido
+      banner:
+        background_color: Color del fondo
+        font_color: Color del texto
       legislation/process:
         title: Título del proceso
         summary: Resumen
         description: En qué consiste
         additional_info: Información adicional
-        start_date: Fecha de inicio del proceso
-        end_date: Fecha de fin del proceso
-        debate_start_date: Fecha de inicio del debate
-        debate_end_date: Fecha de fin del debate
-        draft_start_date: Fecha de inicio del borrador
-        draft_end_date: Fecha de fin del borrador
+        start_date: Inicio
+        end_date: Fin
+        debate_start_date: Inicio
+        debate_end_date: Fin
+        draft_start_date: Inicio
+        draft_end_date: Fin
         draft_publication_date: Fecha de publicación del borrador
-        allegations_start_date: Fecha de inicio de alegaciones
-        allegations_end_date: Fecha de fin de alegaciones
+        allegations_start_date: Inicio
+        allegations_end_date: Fin
+        proposals_phase_start_date: Inicio
+        proposals_phase_end_date: Fin
         result_publication_date: Fecha de publicación del resultado final
         background_color: Color del fondo
         font_color: Color del texto
@@ -311,6 +337,23 @@ es:
         link_text: Texto del enlace
       widget/feed:
         limit: Número de elementos
+      dashboard/action:
+        title: Título
+        short_description: Descripción corta
+        description: Descripción
+        link: Enlace externo
+        request_to_administrators: Incluir en el recurso un botón para solicitar el recurso a los administradores
+        day_offset: '¿En cuántos días tras la creación de la propuesta quieres que se active?'
+        required_supports: '¿Cuántos apoyos tiene que conseguir la propuesta para que se active?'
+        order: Puedes introducir la posición en la que se mostrará al usuario esta acción en la lista de acciones
+        active: Activa
+        action_type: Tipo
+      dashboard/administrator_task:
+        source: Fuente
+        user: Ejecutado por
+      link:
+        label: Título
+        url: Enlace
     errors:
       models:
         user:
@@ -356,7 +399,7 @@ es:
             draft_end_date:
               invalid_date_range: tiene que ser igual o posterior a la fecha de inicio del borrador
             allegations_end_date:
-              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de las alegaciones
+              invalid_date_range: tiene que ser igual o posterior a la fecha de inicio de los comentarios
         proposal:
           attributes:
             tag_list:
@@ -372,8 +415,8 @@ es:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificado por Padrón'
-              already_voted: 'Ya ha votado esta propuesta'
+              not_in_census: "No verificado por Padrón"
+              already_voted: "Ya ha votado esta propuesta"
         site_customization/page:
           attributes:
             slug:
@@ -386,9 +429,10 @@ es:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'No puedes comentar una evaluación'
+              cannot_comment_valuation: "No puedes comentar una evaluación"
       messages:
         record_invalid: "Error de validación: %{errors}"
+        another_poll_active: Hay otra encuesta activa para este periodo.
         restrict_dependent_destroy:
           has_one: "No se puede eliminar el registro porque existe una %{record} dependiente"
           has_many: "No se puede eliminar el registro porque existe %{record} dependientes"

@@ -250,7 +250,6 @@ end
 
 def fill_in_proposal_form
   fill_in "proposal_title", with: "Help refugees"
-  fill_in "proposal_question", with: "¿Would you like to give assistance to war refugees?"
   fill_in "proposal_summary", with: "In summary, what we want is..."
 end
 

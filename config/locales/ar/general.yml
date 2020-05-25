@@ -3,12 +3,23 @@ ar:
     show:
       change_credentials_link: تغيير بيانات الاعتماد الخاصة بي
       email_on_comment_label: أبلغني عن طريق البريد الإلكتروني عندما شخص التعليقات على المقترحات أو المناقشات
+      email_on_comment_reply_label: أبلغني عن طريق البريد الإلكتروني عندما يرد شخص ما على تعليقاتي
       erase_account_link: مسح حسابي
+      finish_verification: عملية التحقق مكتملة
       notifications: إشعارات
+      organization_name_label: اسم المنظمة
+      organization_responsible_name_placeholder: ممثل المنظمة/الوحدة
+      personal: البيانات الشخصية
       phone_number_label: رقم الهاتف
+      public_activity_label: أترك قائمة الأنشطة الخاصة بي عامة
+      public_interests_my_title_list: علامات للعناصر التي تتابعها
       public_interests_user_title_list: علامات للعناصر التي يتتبعها المستخدم
       save_changes_submit: حفظ التغييرات
+      email_on_direct_message_label: تلقي رسائل البريد الإلكتروني عند الحصول على الرسائل المباشرة
       email_digest_label: استلام ملخص عن إشعارات مقترح
+      recommendations: التوصيات
+      show_debates_recommendations: إظهار توصيات المناقشات
+      show_proposals_recommendations: إظهار توصيات المقترحات
       title: حسابي
       user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
@@ -19,20 +30,49 @@ ar:
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_votes: المشاركة في التصويت النهائي
       username_label: اسم المستخدم
+      verified_account: تم التحقق من الحساب
       verify_my_account: التحقق من حسابي
+  application:
+    close: غلق
+    menu: القائمة
   comments:
+    comments_closed: التعليقات مغلقة
+    verified_only: للمشاركة %{verify_account}
     verify_account: التحقق من حسابك
     comment:
       admin: مدير
       author: كاتب
+      deleted: تم حذف هذا التعليق
       moderator: المشرف
+      responses:
+        zero: لا توجد ردود
+        zero: "%{count} ردود"
+        one: ردّ واحد
+        two: "ردّان %{count}"
+        few: "%{count} ردود"
+        many: "%{count} ردود"
+        other: "%{count} ردود"
       user_deleted: حذف المستخدم
+      votes:
+        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
+        one: صوت واحد
+        two: "صوتان %{count}"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
+    form:
+      comment_as_admin: التعليق كمدير
+      comment_as_moderator: التعليق كمشرف
+      leave_comment: اترك تعليقك
     orders:
+      most_voted: الأكثر تصويتا
       newest: الأحدث أولاً
+      oldest: الأقدم أولاً
       most_commented: الأكثر تعليقات
     select_order: ترتيب حسب
     show:
-      return_to_commentable: 'العودة إلى '
+      return_to_commentable: "العودة إلى "
   comments_helper:
     comment_button: نشر التعليق
     comment_link: تعليق
@@ -40,6 +80,9 @@ ar:
     reply_button: نشر الرد
     reply_link: الرد
   debates:
+    create:
+      form:
+        submit_button: بدء مناقشة
     debate:
       comments:
         zero: لا توجد تعليقات
@@ -49,10 +92,23 @@ ar:
         few: "%{count} تعليقات"
         many: "%{count} تعليقات"
         other: "%{count} تعليقات"
+      votes:
+        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
+        one: صوت واحد
+        two: "%{count} أصوات"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
     edit:
+      editing: تعديل المناقشة
       form:
         submit_button: حفظ التغييرات
+      show_link: عرض المناقشة
     form:
+      debate_text: نص المناقشة الأوّلي
+      debate_title: عنوان المناقشة
+      tags_instructions: ضع علامة على هذا النقاش.
       tags_label: مواضبع
       tags_placeholder: "ادخل العلامات التي ترغب في استخدامها، مفصولة بفواصل (',')"
     index:
@@ -60,8 +116,19 @@ ar:
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
+        hot_score: الأكثر نشاطا
+        most_commented: الأكثر تعليقا
+        relevance: الأهمية
+        recommendations: التوصيات
+      recommendations:
+        without_results: لا توجد مناقشات تتعلق باهتماماتك
+        without_interests: تابع المقترحات حتى نتمكن من تقديم توصيات لك
+        actions:
+          success: "تّوصيات المناقشات معطلة الآن لهذا الحساب"
+          error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المناقشات يدوياً"
       search_form:
         button: بحث
+        placeholder: البحث عن مناقشات...
         title: بحث
       search_results_html:
         zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
@@ -71,12 +138,28 @@ ar:
         many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
         other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
+      start_debate: بدء مناقشة
       title: النقاشات
       section_header:
+        icon_alt: إيقونة المناقشات
         title: النقاشات
+        help: تعليمات حول المناقشات
+      section_footer:
+        title: تعليمات حول المناقشات
+        description: ابدأ مناقشة لتبادل الآراء مع الآخرين حول الموضوعات التي تهمك.
+        help_text_1: "فضاء مناقشات المواطن هو فضاء يمكن لأي شخص فيه أن يكشف عن القضايا التي تهمه إلى جانب مشاركة آرائه مع الأشخاص الآخرين."
+        help_text_2: 'لفتح نقاش،تحتاج إلى التسجيل على %{org}. يمكن للمستخدمين أيضًا التعليق على المناقشات المفتوحة وتقييمها باستخدام أزرار "أوافق" أو "أعارض" الموجودة في كل منها.'
     new:
+      form:
+        submit_button: بدء مناقشة
       info_link: انشاء مقترح جديدة
       more_info: مزيد من المعلومات
+      recommendation_four: استمتع بهذه المساحة والأصوات التي تملأها. إنها ملكك أيضًا.
+      recommendation_one: لا تكتب عنوان المناقشة أو الجمل الكاملة بأحرف كبيرة فذلك يعتبر صراخا على شبكة الإنترنت ولا أحد يحب أن يُصرخ عليه.
+      recommendation_three: النقد الحاد مرحب به. هذا فضاء للتفكير. لكننا نوصيك بالتمسك بالأناقة والذكاء. سيكون العالم مكان أفضل بوجود هذه الفضائل.
+      recommendation_two: سيتم حذف أي موضوع أو تعليق يتضمن إجراءً غير قانوني، إلى جانب المواضيع و التعاليق التي تنوي تخريب مساحات الموضوع، كل الأشياء الأخرى مسموح بها.
+      recommendations_title: توصيات لإنشاء مناقشة
+      start_new: بدء مناقشة
     show:
       author_deleted: تم حذف المستخدم
       comments:
@@ -98,44 +181,88 @@ ar:
   errors:
     messages:
       user_not_found: لم يتم العثور على المستخدم
+      invalid_date_range: "نطاق التاريخ غير صالح"
   form:
+    accept_terms: أوافق على %{policy} و٪%{conditions}
+    accept_terms_title: أوافق على سياسة الخصوصية وشروط وأحكام الاستخدام
     conditions: قوانين وشروط الاستخدام
     debate: الحوارات
+    direct_message: رسالة خاصة
+    error: خطأ
+    errors: أخطاء
+    not_saved_html: "هنا أخطاء منعت من حفظ الـ %{resource}. \n<br>\nالرجاء التحقق من الحقول المميزة وتصحيحيها:"
     policy: سياسة الخصوصية
     proposal: اقتراح
     proposal_notification: "إشعار"
+    spending_proposal: مقترح الانفاق
     budget/investment: إستثمار
+    budget/group: مجموعة الميزانية
+    budget/heading: عنوان الميزانية
     poll/shift: المناوبة
     poll/question/answer: الإجابة
     user: الحساب
+    verification/sms: الهاتف
+    signature_sheet: ورقة التوقيع
     document: وثيقة
     topic: موضوع
     image: صورة
   geozones:
     none: جميع المدن
+    all: جميع النطاقات
   layouts:
     application:
+      chrome: Google Chrome
       firefox: فايرفوكس
       ie: لقد اكتشفنا أنك تتصفح باستخدام Internet Explorer. للحصول على أفضل تجربة، ننصحك بإستخدام %{firefox} أو %{chrome}.
+    dashboard:
+      proposal_header:
+        published: منشورة
+        draft: مسودة
+        retired: تم سحبه
+      proposal_totals:
+        active_resources: الموارد الفعالة
+        community: المشاركون في مجتمعك
+        show_proposal: إظهار مقترح
+        preview_proposal: معاينة المقترح
+        current_goal: الهدف الحالي
+        supports:
+          zero: لا يوجد دعم
     footer:
       accessibility: إمكانية الوصول
       conditions: قوانين وشروط الاستخدام
+      consul: تطبيق CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: للحصول على المساعدة الفنية، قم بزيارة
+      copyright: CONSUL, %{year}
+      description: تستخدم هذه البوابة %{consul} والذي هو%{open_source}.
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
       participation_title: المشاركة
       privacy: سياسة الخصوصية
     header:
+      administration_menu: المدير
       administration: الإدارة
+      available_locales: اللغات المتوفرة
       collaborative_legislation: العمليات التشريعية
       debates: النقاشات
+      locale: "لغة:"
+      logo: شعار CONSUL
       management: الإدارة
       moderation: الإشراف
+      valuation: التقييم
+      officing: ضباط الاستطلاع
       help: المساعدة
       my_account_link: حسابي
+      my_activity_link: نشاطي
+      open: فتح
       proposals: إقتراحات
       poll_questions: التصويت
       budgets: الميزانية التشاركية
+      spending_proposals: مقترحات الانفاق
       notification_item:
         notifications: إشعارات
         no_notifications: "لا يوجد إشعارات جديدة"
+    admin:
+      watch_form_message: "لم يتم حفظ التغيرات ، هل أنت متأكد من مغادرة الصفحة وتجاهل التغيرات ؟"
   notifications:
     index:
       empty_notifications: لا يوجد إشعارات جديدة.
@@ -149,25 +276,65 @@ ar:
       notifiable_hidden: هذ المصدر عم يعد متاح.
   map:
     title: "مقاطعات"
+    proposal_for_district: "إبدأ مقترحا لمقاطعتك"
     select_district: نطاق العملية
+    start_proposal: إنشاء مقترح
   omniauth:
     facebook:
       sign_in: تسجيل الدخول باستخدام حساب فايسبوك
+      sign_up: تسجيل باستخدام Facebook
+      name: Facebook
     finish_signup:
+      title: "تفاصيل إضافية"
       username_warning: "بسبب تغييرات في طريقة التفاعل مع الشبكات الاجتماعية، فمن الممكن أن يكون اسم المستخدم الخاص بك 'مستخدم من قبل '. إذا كان هذا هو الحالة ، الرجاء اختيار اسم مستخدم مختلف."
+    google_oauth2:
+      sign_in: تسجيل الدخول باستخدام Google
+      sign_up: تسجيل باستخدام Google
+      name: Google
+    twitter:
+      sign_in: تسجيل الدخول باستخدام Twitter
+      sign_up: تسجيل باستخدام Twitter
+      name: Twitter
+    info_sign_in: "تسجيل الدخول باستخدام:"
+    info_sign_up: "تسجيل الدخول باستخدام:"
+    or_fill: "أو املأ النموذج التالي:"
   proposals:
     create:
       form:
         submit_button: إنشاء مقترح
+    created:
+      publish: لا ، أريد أن أنشر الاقتراح
+      dashboard: نعم ، أريد المساعدة و سأقوم بالنشر لاحقًا
+    share:
+      message: "لقد دعمت المقترح %{title} في %{handle}. إذا كنت مهتمًا، إدعمه أيضًا!"
     edit:
+      editing: تعديل المقترح
       form:
         submit_button: حفظ التغييرات
+      show_link: عرض المقترح
+    retire_form:
+      title: سحب المقترح
+      warning: "سيتسمر الإقتراح في إستقبال الدعم حتى في حالة قمت بسحبه، ولكن ستتم إزالته من القائمة الرئيسية وستظهر رسالة لجميع المستخدمين تفيد بأن المؤلف يرى أنه لا ينبغي دعم الاقتراح بعد الآن"
+      retired_reason_label: سبب سحب المقترح
+      retired_reason_blank: إختر خيار
+      retired_explanation_label: تفسير
+      retired_explanation_placeholder: اشرح باختصار لماذا تعتقد أن هذا القترح يجب ألا يحصل على المزيد من الدعم
+      submit_button: سحب المقترح
     retire_options:
+      duplicated: مكرّر
+      started: جارية بالفعل
       unfeasible: غير مجدي
+      done: منتهي
+      other: أخرى
     form:
       geozone: نطاق العملية
-      proposal_external_url: رابط لوثائق إضافية
+      proposal_responsible_name: الاسم الكامل للشخص الذي قدم الاقتراح
+      proposal_summary: ملخص المقترح
+      proposal_summary_note: "(200 حرف كحد أقصى)"
+      proposal_text: نص المقترح
       proposal_title: عنوان الاقتراح
+      proposal_video_url: رابط إلى فيديو خارجي
+      proposal_video_url_note: يمكنك إضافة رابط إلى YouTube أو Vimeo
       tag_category_label: "فئات"
       tags_instructions: "علم على هذا الاقتراح. تستطيع الاختيار من بين الفئات المقترحة او اضافة الخاصة بك"
       tags_label: علامات
@@ -175,16 +342,34 @@ ar:
       map_location: "موقع الخريطة"
       map_location_instructions: "تنقل في الخريطة الى الموقع و ضع العلامة."
       map_remove_marker: "ازل علامة الخريطة"
+      map_skip_checkbox: "هذا المقترح لا يملك موقع ملموس أو لست على دراية به."
     index:
       featured_proposals: مميز
       orders:
         confidence_score: اعلى تقييم
         created_at: أحدث
+        hot_score: الأكثر نشاطا
+        most_commented: الأكثر تعليقات
+        relevance: الأهمية
+        recommendations: التوصيات
+      recommendations:
+        without_results: لا توجد اقتراحات تتعلق باهتماماتك
+        without_interests: تابع المقترحات حتى نتمكن من تقديم توصيات لك
+        actions:
+          success: "تّوصيات المقترحات معطلة الآن لهذا الحساب"
+          error: "لقد حدث خطأ. الرجاء الانتقال إلى صفحة 'حسابي' لتعطيل توصيات المقترحات يدوياً"
+      retired_proposals: المقترحات المسحوبة
+      retired_proposals_link: "المقترحات المسحوبة من قبل المؤلف"
       retired_links:
         all: الكل
+        duplicated: مكرّر
+        started: جارية
         unfeasible: غير مجدي
+        done: منتهي
+        other: أخرى
       search_form:
         button: بحث
+        placeholder: البحث عن مقترحات...
         title: بحث
       search_results_html:
         zero: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
@@ -194,13 +379,37 @@ ar:
         many: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
         other: " يحتوي على المصطلح <strong>'%{search_term}'</strong>"
       select_order: ترتيب حسب
+      select_order_long: "أنت تشاهد المقترحات وفقًا لـ:"
+      start_proposal: إنشاء مقترح
       title: إقتراحات
+      top: الأعلى أسبوعيا
+      top_link_proposals: المقترحات الأكثر تأييدا حسب الفئة
       section_header:
+        icon_alt: إيقونة المقترحات
         title: إقتراحات
+        help: تعليمات حول المقترحات
+      section_footer:
+        title: تعليمات حول المقترحات
+        description: تمثل مقترحات المواطنين فرصة للأحياء والجماعات ليقرّروا بشكل مباشر كيف يريدون أن تكون مدينتهم، بعد الحصول على الدعم الكافي وتقديمها لتصويت المواطنين.
     new:
       form:
         submit_button: إنشاء مقترح
+      more_info: كيف تعمل مقترحات المواطنين؟
+      recommendation_one: لا تكتب عنوان الموضوع أو الجمل الكاملة بأحرف كبيرة فذلك يعتبر صراخا على شبكة الإنترنت ولا أحد يحب أن يُصرخ عليه.
+      recommendation_three: استمتع بهذه المساحة والأصوات التي تملأها. إنها ملكك أيضًا.
+      recommendation_two: سيتم حذف أي موضوع أو تعليق يتضمن إجراءً غير قانوني، إلى جانب المواضيع و التعاليق التي تنوي تخريب مساحات الموضوع، كل الأشياء الأخرى مسموح بها.
+      recommendations_title: توصيات لإنشاء مقترح
+      start_new: انشاء مقترح جديد
+    notice:
+      retired: تم سحب المقترح
+      published: تم نشر المقترح
     proposal:
+      created: "لقد قمت بإنشاء مقترح!"
+      share:
+        guide: "يمكنك الآن مشاركتها حتى يبدأ الأشخاص بدعمها."
+        edit: "ستتمكن من تغيير النص كما تريد قبل أن يتم مشاركته."
+        view_proposal: ليس الآن، انتقل إلى مقترحي
+      already_supported: لقد قمت بالفعل بدعم هذا المقترح. شاركه!
       comments:
         zero: لا توجد تعليقات
         zero: "%{count} تعليق"
@@ -210,6 +419,7 @@ ar:
         many: "%{count} تعليق"
         other: "%{count} تعليق"
       support: دعم
+      support_title: دعم هذا المقترح
       supports:
         zero: لا يوجد دعم
         zero: "%{count} يدعم"
@@ -218,8 +428,21 @@ ar:
         few: "%{count} يدعم"
         many: "%{count} يدعم"
         other: "%{count} يدعم"
+      votes:
+        zero: لا توجد أصوات
+        zero: "%{count} أصوات"
+        one: صوت واحد
+        two: "%{count} أصوات"
+        few: "%{count} أصوات"
+        many: "%{count} أصوات"
+        other: "%{count} أصوات"
+      supports_necessary: "بحاجة إلى %{number} دعم"
+      total_percent: 100%
+      archived: "تمت أرشفة هذا الاقتراح ولا يمكنه جمع الدعم."
+      successful: "لقد وصل هذا الاقتراح إلى الدعم المطلوب."
     show:
       author_deleted: تم حذف المستخدم
+      code: "رمز المقترح:"
       comments:
         zero: لا توجد تعليقات
         zero: "%{count} تعليق"
@@ -229,18 +452,105 @@ ar:
         many: "%{count} تعليق"
         other: "%{count} تعليق"
       comments_tab: تعليقات
-      edit_proposal_link: تعديل
+      dashboard_proposal_link: لوحة القيادة
       login_to_comment: تحتاج الى %{signin} او %{signup} للمتابعة والتعليق.
       notifications_tab: إشعارات
       milestones_tab: معالم
+      retired_warning: "يرى المؤلف أن هذا المقترح يجب ألا يتلقى المزيد من الدعم."
+      retired_warning_link_to_explanation: اقرأ الشرح قبل التصويت عليه.
+      retired: تم سحب المقترح من قبل المؤلف
       share: مشاركة
-      send_notification: إرسال إشعار
       no_notifications: "هذا المقترح لا يحوي إشعارات."
+      embed_video_title: "فيديو حول %{proposal}"
       title_video_url: "فيديو خارجي"
       author: كاتب
     update:
       form:
         submit_button: حفظ التغييرات
+  dashboard:
+    menu:
+      my_proposal: تعديل مقترحي
+      progress: تقدم
+      resources: موارد
+      community: المجتمع
+      polls: استطلاعات
+      poster: ملصقة
+      recommended_actions: الإجراءات الموصى بها
+    form:
+      request: طلب
+    create_request:
+      success: تم ارسال الطلب بنجاح. سوف نقوم بالاتصال بك في أقرب وقت ممكن لإبلاغك به.
+    progress:
+      group_by_month: شهريا
+      group_by_week: أسبوعيا
+      group_by_date: اليومي
+      supports: تشجيعات
+      success: تقدم مثالي
+      new_action: جديد
+    index:
+      title: تعديل
+      edit_proposal_link: تعديل المقترح
+      publish: نشر مقترح
+      retire: سحب المقترح
+    new_request:
+      links: روابط
+    resources:
+      available_resources: الموارد المتاحة
+    resource:
+      and: و
+      request_resource: طلب المورد
+      resource_locked: الموارد مغلقة
+    recommended_actions:
+      title: الإجراءات الموصى بها
+      goto_proposed_actions: إذهب إلى الإجراءات الموصى بها
+      hide_proposed_actions: إخفاء الإجراءات الموصى بها
+      pending_title: معلق
+      show_description: إظهار الوصف
+      without_pending_actions: لا توجد إجراءات موصى بها معلقة
+      done_title: منتهي
+      without_done_actions: لا توجد إجراءات موصى بها منتهية
+    next_goal:
+      title: هدف
+    goal:
+      ideal_time: الوقت المثالي
+    community:
+      access_community: الوصول إلى المجتمع
+      participants: المشاركون
+      debates: مناقشات
+      comments: تعليقات
+    polls:
+      index:
+        title: استطلاعات
+        create: إنشاء استطلاع
+        links: روابط
+      new:
+        title: استطلاع جديد
+        submit: إنشاء استطلاع
+      edit:
+        submit: تحديث الاستطلاع
+      poll:
+        show_results: إظهار النتائج
+      form:
+        add_question: إضافة سؤال
+      question_fields:
+        remove_question: إزالة السؤال
+        add_answer: إضافة إجابة
+      question_answer_fields:
+        remove_answer: إزالة الإجابة
+    poster:
+      index:
+        support: دعم مقترحي
+      options:
+        preview: معاينة
+        download: تحميل
+    mailing:
+      mailing_options:
+        preview: معاينة
+      create:
+        sent: تم إرسال البريد الإلكتروني
+    mailer:
+      forward:
+        hi: "مرحبا!"
   polls:
     all: "الكل"
     no_dates: "التاريخ غير محدد"
@@ -256,17 +566,21 @@ ar:
       no_geozone_restricted: "جميع المدن"
       geozone_restricted: "مقاطعات"
       geozone_info: "يمكن أن يشارك الناس في التعداد السكاني: "
+      already_answer: "لقد شاركت سابقا في هذا الاستطلاع"
       not_logged_in: "يجب تسجيل الدخول أو انشاء حساب جديد للمشاركة"
       unverified: "يجب عليك التحقق من الحساب الخاص بك على المشاركة"
+      cant_answer: "هذا الاستطلاع غير متوفر في منطقتك الجغرافية"
       section_header:
         icon_alt: رمز التصويت
         title: التصويت
         help: تعليمات حول التصويت
       section_footer:
         title: تعليمات حول التصويت
+        description: استطلاعات المواطنين هي آلية تشاركية يمكن من خلالها للمواطنين الذين يتمتعون بحقوق التصويت اتخاذ قرارات مباشرة
       no_polls: "جميع الاستبيانات منتهية."
     show:
       already_voted_in_booth: "أنت مشارك مسبقاً من خلال استبيان مادي على الارض ، لا يمكنك المشاركة مرة آخرى."
+      already_voted_in_web: "لقد شاركت سابقا في هذا الاستطلاع. إذا قمت بالتصويت مرة أخرى، سيتم استبدال التصويت السّابق."
       back: العودة إلى التصويت
       cant_answer_not_logged_in: "تحتاج الى %{signin} او %{signup} للمتابعة."
       comments_tab: تعليقات
@@ -275,6 +589,7 @@ ar:
       signup: تسجيل
       cant_answer_verify_html: "يجب عليك %{verify_link} للإجابة."
       verify_link: "تحقق من حسابك"
+      cant_answer_expired: "انتهى هذا الاستطلاع."
       cant_answer_wrong_geozone: "هذا السؤال غير متوفر في منطقتك الجغرافية."
       more_info_title: "مزيد من المعلومات"
       documents: الوثائق
@@ -284,13 +599,26 @@ ar:
       videos: "فيديو خارجي"
       info_menu: "معلومات"
       stats_menu: "إحصائيات المشاركة"
+      results_menu: "نتائج الاستطلاع"
       stats:
-        title: "بيانات المشاركة"
-        total_participation: "مجموع المشاركات"
+        total_votes: "مجموع الأصوات المعطاة"
+        votes: "الأصوات"
+        web: "WEB"
+        mail: "بريد"
+        booth: "مكتب الإقتراع"
+        total: "المجموع"
+        valid: "محتسبة"
+        white: "الأصوات البيضاء"
+        null_votes: "ملغات"
       results:
         title: "أسئلة"
+        most_voted_answer: "الإجابة الأكثر تصويتًا:"
+    poll_header:
+      back_to_proposal: العودة إلى المقترح
   poll_questions:
-    create_question: "إنشاء سؤال"
+    show:
+      vote_answer: "صوّت على %{answer}"
+      voted: "لقد قمت بالتصويت على %{answer}"
   proposal_notifications:
     new:
       title: "إرسال رسالة"
@@ -301,21 +629,37 @@ ar:
     show:
       back: "عودة"
   shared:
-    edit: 'تعديل'
-    save: 'حفظ'
-    delete: حذف
+    edit: "تعديل"
+    save: "حفظ"
+    delete: "حذف"
     "yes": "نعم"
     "no": "لا"
     search_results: "نتائج البحث"
     advanced_search:
-      date_3: 'الشهر الماضي'
-      from: 'من'
-      search: 'ترشيح'
+      author_type: "حسب فئة المؤلف"
+      author_type_blank: "حدد فئة"
+      date: "حسب التاريخ"
+      date_range_blank: "اختر التاريخ"
+      date_1: "الـ 24 ساعة الماضية"
+      date_2: "الأسبوع الماضي"
+      date_3: "الشهر الماضي"
+      date_4: "العام الماضي"
+      from: "من"
+      general: "مع النص"
+      general_placeholder: "اكتب النص"
+      search: "ترشيح"
+      title: "البحث المتقدم"
+      to: "إلى"
     author_info:
       author_deleted: تم حذف المستخدم
+    back: عودة
     check: حدّد
     check_all: الكل
+    check_none: لا شيء
+    collective: جماعي
+    follow: "تابع"
     following: "التالية"
+    follow_entity: "تابع %{entity}"
     followable:
       budget_investment:
         create:
@@ -328,35 +672,85 @@ ar:
         destroy:
           notice_html: "لقد توقفت الآن من متابعة مقترح هذا المواطن! </br> لن تتلقى وصاعدا أي إشعار جديد حول هذا المقترح."
     hide: إخفاء
+    print:
+      print_button: طباعة هذه المعلومات
     search: بحث
     show: إظهار
+    suggest:
+      debate:
+        message: "أنت تشاهد %{limit} من %{count} مناقشات تحتوي على مصطلح '%{query}'"
+        see_all: "اظهار الكل"
+      budget_investment:
+        message: "أنت تشاهد %{limit} من %{count} استثمارات تحتوي على المصطلح '%{query}'"
+        see_all: "اظهار الكل"
+      proposal:
+        message: "أنت تشاهد %{limit} من %{count} مقترحات تحتوي على المصطلح '%{query}'"
+        see_all: "اظهار الكل"
     tags_cloud:
+      tags: الشائع
       districts: "مقاطعات"
+      districts_list: "قائمة المقاطعات"
       categories: "فئات"
+    target_blank_html: " (سيفتح الرابط في نافذة جديدة)"
     you_are_in: "أنت في"
+    unfollow_entity: "توقف عن متابعة %{entity}"
+    outline:
+      budget: الميزانية التشاركية
+      searcher: محرك البحث
+    go_to_page: "انتقل إلى صفحة "
     share: مشاركة
+    documentation: وثائق إضافية
+    view_mode:
+      title: نمط العرض
+      cards: بطاقات
+      list: قائمة
+    recommended_index:
+      title: التوصيات
+      see_more: رؤية المزيد من التوصيات
+      hide: إخفاء التوصيات
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: واتساب
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name: 'اسم الرابطة'
+      association_name: "اسم الرابطة"
       description: الوصف
       external_url: رابط لوثائق إضافية
       geozone: نطاق العملية
+      submit_buttons:
+        create: إنشاء
+        new: إنشاء
+      title: عنوان مقترح الانفاق
     index:
       title: الميزانية التشاركية
       unfeasible: مشاريع استثمارات الغير مجدية
+      by_geozone: "المشاريع الاستثمارية ذات النطاق: %{geozone}"
       search_form:
         button: بحث
+        placeholder: مشاريع استثمارية...
         title: بحث
       sidebar:
         geozones: نطاق العملية
         feasibility: الجدوى
         unfeasible: غير مجدي
+      start_spending_proposal: إنشاء مشروع استثماري
+    new:
+      recommendation_one: من الضروري أن يشير المقترح إلى إجراء ذي ميزانية.
+      recommendation_two: سيتم حذف أي اقتراح أو تعليق يشير إلى اتخاذ إجراء غير قانوني.
+      recommendations_title: كيفية إنشاء مقترح الإنفاق
+      start_new: إنشاء مقترح إنفاق
     show:
       author_deleted: تم حذف المستخدم
+      code: "رمز الاقتراح:"
       share: مشاركة
     wrong_price_format: الاعداد الصحيحة فقط
     spending_proposal:
       spending_proposal: مشروع استثماري
+      already_supported: لقد دعمت هذا بالفعل. شاركه!
       support: دعم
       support_title: ادعم هذا المشروع
       supports:
@@ -369,9 +763,11 @@ ar:
         other: "%{count} يدعم"
   stats:
     index:
+      visits: الزيارات
       debates: النقاشات
       proposals: إقتراحات
       comments: تعليقات
+      proposal_votes: التصويت على المقترحات
       votes: مجموع الأصوات
       verified_users: مستخدمين تم التحقق منهم
       unverified_users: مستخدمين غير متحقق منهم
@@ -396,6 +792,7 @@ ar:
       deleted_proposal: تم حذف هذا المقترح
       deleted_budget_investment: تم حذف هذا المشروع الاستثماري
       proposals: إقتراحات
+      proposals_status: حالة
       debates: النقاشات
       budget_investments: استثمارات الميزانية
       comments: تعليقات
@@ -403,10 +800,15 @@ ar:
       no_activity: لا يوجد اجراءات للمستخدم
       no_private_messages: "لا يمكن ارسال رسالة خاصة لهذا المسنخدم."
       private_activity: قائمة النشاطات الخاصة بهذا المستخدم غير متاحة.
+      send_private_message: "إرسال رسالة خاصة"
       delete_alert: "هل أنت متأكد من أنك تريد حذف مشروعك الإستثماري؟ لا يمكن التراجع عن هذه الخطوة"
     proposals:
-      send_notification: "إرسال إشعار"
+      retired: "المقترح المسحوبة"
+      draft: مسودة
+      published: منشورة
+      actions: الإجراءات
   votes:
+    agree: أنا أوافق
     disagree: أنا لا أوافق
     organizations: المنظمات لا يسمح لها بالتصويت
     signin: تسجيل الدخول
@@ -416,15 +818,20 @@ ar:
     verify_account: التحقق من حسابك
     spending_proposals:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
+      not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على المقترحات %{verify_account}.
       organization: المنظمات لا يسمح لها بالتصويت
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
+      not_voting_allowed: مرحلة التصويت مغلقة
     budget_investments:
       not_logged_in: تحتاج الى %{signin} او %{signup} للمتابعة.
+      not_verified: يمكن للمستخدمين الذين تم التحقق منهم فقط التصويت على مشاريع الاستثمارات; %{verify_account}.
       organization: المنظمات لا يسمح لها بالتصويت
       unfeasible: لا يمكن دعم المشاريع الإستثمارية الغير مجدية
+      not_voting_allowed: مرحلة التصويت مغلقة
   welcome:
     feed:
       most_active:
+        proposals: "المقترحات الأكثر نشاطا"
         processes: "إجراءات مفتوحة"
       see_all_debates: انظر جميع الحوارات
       see_all_proposals: انظر جميع المقترحات
@@ -433,20 +840,43 @@ ar:
       see_process: انظر الإجرائية
     cards:
       title: مميز
+    recommended:
+      title: التوصيات التي قد تهمك
+      help: "يتم إنشاء هذه التوصيات بواسطة وسوم المناقشات والمقترحات التي تتابعها."
+      debates:
+        title: المناقشات الموصى بها
+        btn_text_link: كل المناقشات الموصى بها
+      proposals:
+        title: المقترحات الموصى بها
+        btn_text_link: كل المقترحات الموصى بها
+      slide: "انظر %{title}"
     verification:
       i_dont_have_an_account: لا يوجد لدي حساب
+      i_have_an_account: لدي حساب بالفعل
+      title: التحقق من الحساب
     welcome:
+      go_to_index: ليس الآن، انتقل إلى صفحة الفهرس
+      start_using_consul: انتقل إلى صفحة الفهرس
       title: المشاركة
       user_permission_debates: المشاركة بالحوارات
       user_permission_info: من خلال حسابك يمكنك...
       user_permission_proposal: انشاء مقترحات جديدة
       user_permission_support_proposal: دعم مقترحات *
-      user_permission_verify: لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك.
+      user_permission_verify: "لتنفيذ كافة الإجراءات يرجى التحقق من الحساب الخاص بك."
       user_permission_verify_info: "* فقط للمستخدمين في التعداد."
       user_permission_verify_my_account: التحقق من حسابي
       user_permission_votes: المشاركة في التصويت النهائي
   related_content:
+    title: "محتوى ذات الصلة"
+    add: "إضافة محتوى ذات الصلة"
+    label: "رابط للمحتوى ذات الصلة"
+    placeholder: "%{url}"
+    help: "يمكنك إضافة روابط %{models} داخل %{org}."
     submit: "إضافة"
+    error: "الرابط غير صالح. تذكر أن تبدأ بـ %{url}."
+    error_itself: "الرابط غير صالح. لا يمكنك ربط المحتوى بنفسه."
+    success: "لقد قمت بإضافة محتوى ذات صلة جديد"
+    is_related: "هل هذا المحتوى ذات صلة؟"
     score_positive: "نعم"
     score_negative: "لا"
     content_title:
@@ -458,4 +888,19 @@ ar:
       title: الإدارة
   annotator:
     help:
+      alt: حدد النص الذي ترغب في التعليق عليه واضغط على الزر بالقلم.
+      text: للتعليق على هذه الوثيقة، يجب عليك %{sign_in} أو %{sign_up}. ثم حدد النص الذي تريد التعليق عليه واضغط على الزر بالقلم.
+      text_sign_in: تسجيل الدخول
       text_sign_up: انشاء حساب
+      title: كيف يمكنني التعليق على هذه الوثيقة؟
+  links:
+    form:
+      delete_button: حذف
+      cancel_button: إلغاء
+    nested_links:
+      title: روابط
+    link_fields:
+      label_placeholder: عنوان الرابط
+  communities:
+    show:
+      author: كاتب

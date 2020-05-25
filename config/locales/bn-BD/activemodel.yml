@@ -1,0 +1,22 @@
+bn:
+  activemodel:
+    models:
+      verification:
+        residence: "নিবাস"
+        sms: "বার্তা"
+    attributes:
+      verification:
+        residence:
+          document_type: "নথির ধরণ"
+          document_number: "নথি সংখ্যা (বর্ণ সহ)"
+          date_of_birth: "জন্মতারিখ"
+          postal_code: "পোষ্ট কোড"
+        sms:
+          phone: "টেলিফোন"
+          confirmation_code: "অনুমোদন সংখ্যা"
+        email:
+          recipient: "ই-মেইল"
+      officing/residence:
+        document_type: "নথির ধরণ"
+        document_number: "নথি সংখ্যা (বর্ণ সহ)"
+        year_of_birth: "জন্মের বছর"

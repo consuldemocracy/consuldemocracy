@@ -1,4 +1,8 @@
 id:
+  attributes:
+    results_enabled: "Tampilkan hasil"
+    stats_enabled: "Tampilkan statistik"
+    advanced_stats_enabled: "Lihat status keuntungan"
   activerecord:
     models:
       activity:
@@ -9,6 +13,10 @@ id:
         other: "Investasi"
       milestone:
         other: "batu peringatan"
+      milestone/status:
+        other: "Status anggaran akhir"
+      progress_bar:
+        other: "Bilah kemajuan"
       comment:
         other: "Komentar"
       debate:
@@ -23,6 +31,8 @@ id:
         other: "Administrasi"
       valuator:
         other: "Penilai"
+      valuator_group:
+        other: "Grup penilai"
       manager:
         other: "Pengelola"
       newsletter:
@@ -35,6 +45,8 @@ id:
         other: "stan"
       poll/officer:
         other: "petugas"
+      poll/ballot_sheet:
+        other: Lembar suara
       proposal:
         other: "Usulan warga"
       spending_proposal:
@@ -45,6 +57,8 @@ id:
         other: Gambar Khusus
       site_customization/content_block:
         other: Blok konten khusus
+      document:
+        other: Dokumen
       legislation/process:
         other: "Proses"
       legislation/proposal:
@@ -67,6 +81,12 @@ id:
         other: "Jajak pendapat"
       proposal_notification:
         other: "Pemberitahuan proposal"
+      dashboard/action:
+        other: Proposal tindak-lanjut
+      dashboard/administrator_task:
+        other: Tugas
+      link:
+        other: Tautan
     attributes:
       budget:
         name: "Nama"
@@ -89,8 +109,15 @@ id:
         organization_name: "Jika Anda usulkan dalam nama kolektif/organisasi, atau atas nama orang lain, menulis namanya"
         image: "Gambar deskriptif proposal"
         image_title: "Judul gambar"
+      geozone:
+        name: Nama
+        external_code: "Kode eksternal (pilihan)"
+        census_code: "Kode sensus(pilihan)"
+        html_map_coordinates: "HTML<map>koordinasi (pilihan)"
       milestone:
+        status_id: "Status terkini (pilihan)"
         title: "Judul"
+        description: "Penjelasan ( pilihan bila status ditugaskan)"
         publication_date: "Tanggal publikasi"
       milestone/status:
         name: "Nama"
@@ -98,6 +125,10 @@ id:
       progress_bar:
         kind: "Tipe"
         title: "Judul"
+        percentage: "Kemajuan saat ini"
+      progress_bar/kind:
+        primary: "Utama"
+        secondary: "Kedua"
       budget/heading:
         name: "Nama judul"
         price: "Harga"
@@ -155,6 +186,10 @@ id:
         external_url: "Tautkan ke dokumentasi tambahan"
       poll/question/translation:
         title: "Pertanyaan"
+      poll/ballot_sheet:
+        data: Data CSV
+        poll_id: Jajak pendapat
+        officer_assignment_id: Petugas penerimaan
       signature_sheet:
         signable_type: "Tipe yang dapat dipertanggungjawabkan"
         signable_id: "ID yang dapat dicantumkan"
@@ -181,6 +216,9 @@ id:
         name: Nama
         locale: lokal
         body: Tubuh
+      banner:
+        background_color: Warna latarbelakang
+        font_color: Warna huruf
       legislation/process:
         title: Proses Judul
         summary: Ringkasan
@@ -190,10 +228,16 @@ id:
         end_date: Tanggal akhir
         debate_start_date: Perdebatan mulai tanggal
         debate_end_date: Debat tanggal akhir
+        draft_start_date: Mulai
+        draft_end_date: Berakhir
         draft_publication_date: Draft tanggal publikasi
         allegations_start_date: Tuduhan tanggal mulai
         allegations_end_date: Tuduhan tanggal akhir
+        proposals_phase_start_date: Mulai
+        proposals_phase_end_date: Berakhir
         result_publication_date: Hasil akhir tanggal publikasi
+        background_color: Warna latarbelakang
+        font_color: Warna huruf
       legislation/process/translation:
         title: Proses Judul
         summary: Ringkasan
@@ -233,8 +277,12 @@ id:
         title: Judul
         url: Video eksternal
       newsletter:
+        segment_recipient: Penerima
+        subject: Subyek
         from: Dari
+        body: Konten email
       admin_notification:
+        segment_recipient: Penerima
         title: Judul
         link: Tautan
         body: Teks
@@ -242,11 +290,36 @@ id:
         title: Judul
         body: Teks
       widget/card:
+        label: Label(pilihan)
         title: Judul
         description: Deskripsi
+        link_text: Tautkan teks
+        link_url: Tautan url
+        columns: Jumlah kolom
       widget/card/translation:
+        label: Label(pilihan)
         title: Judul
         description: Deskripsi
+        link_text: Tautkan teks
+      widget/feed:
+        limit: Jumlah item
+      dashboard/action:
+        title: Judul
+        short_description: Deskripsi Singkat
+        description: Deskripsi
+        link: Tautan eksternal
+        request_to_administrators: Sertakan dalam sumber daya tombol untuk meminta sumber daya dari administrator
+        day_offset: Berapa hari setelah pembuatan proposal anda ingin diaktifkan?
+        required_supports: Berapa banyak dukungan yang diperlukan agar proposal masuk kriteria menjadi aktif?
+        order: Kamu bisa memilih posisi tindakan dimana pengguna dapat melihat daftar tindakan
+        active: Aktif
+        action_type: Tipe
+      dashboard/administrator_task:
+        source: Sumber
+        user: Dieksekusi oleh
+      link:
+        label: Judul
+        url: Tautan
     errors:
       models:
         user:
@@ -266,6 +339,14 @@ id:
             attachment:
               min_image_width: "Lebar gambar harus setidaknya %{required_min_width}px"
               min_image_height: "Tinggi gambar harus setidaknya %{required_min_height}px"
+        newsletter:
+          attributes:
+            segment_recipient:
+              invalid: "Segmen penerima pengguna tidak valid"
+        admin_notification:
+          attributes:
+            segment_recipient:
+              invalid: "Segmen penerima pengguna tidak valid"
         map_location:
           attributes:
             map:
@@ -281,6 +362,8 @@ id:
               invalid_date_range: harus pada atau setelah tanggal mulai
             debate_end_date:
               invalid_date_range: link to additional documentation
+            draft_end_date:
+              invalid_date_range: harus aktif atau setelah tanggal dokumen mulai
             allegations_end_date:
               invalid_date_range: harus pada atau setelah tuduhan tanggal mulai
         proposal:
@@ -298,8 +381,8 @@ id:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Tidak diverifikasi oleh sensus'
-              already_voted: 'Sudah memilih proposal ini'
+              not_in_census: "Tidak diverifikasi oleh sensus"
+              already_voted: "Sudah memilih proposal ini"
         site_customization/page:
           attributes:
             slug:
@@ -312,9 +395,10 @@ id:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Anda tidak bisa komentar sebuah penilaian'
+              cannot_comment_valuation: "Anda tidak bisa komentar sebuah penilaian"
       messages:
         record_invalid: "Pengesahan gagal: %{errors}"
+        another_poll_active: Ada diskusi aktif lainnya untuk periode yang diberikan
         restrict_dependent_destroy:
           has_one: "Tidak dapat menghapus catatan karena tergantung %{record} ada"
           has_many: "Tidak dapat menghapus record karena tergantung %{record} ada"

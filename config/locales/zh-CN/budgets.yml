@@ -108,9 +108,9 @@ zh-CN:
         author_deleted: 已删除的用户
         price_explanation: 价格说明
         unfeasibility_explanation: 不可行性说明
-        code_html: '投资项目代码：<strong>%{code}</strong>'
-        location_html: '位置：<strong>%{location}</strong>'
-        organization_name_html: '代表：<strong>%{name}</strong>提出提议'
+        code_html: "投资项目代码：<strong>%{code}</strong>"
+        location_html: "位置：<strong>%{location}</strong>"
+        organization_name_html: "代表：<strong>%{name}</strong>提出提议"
         share: 共用
         title: 投资项目
         supports: 支持
@@ -119,10 +119,10 @@ zh-CN:
         comments_tab: 评论
         milestones_tab: 里程碑
         author: 作者
-        project_unfeasible_html: '此投资项目<strong>已经被标记为不可行</strong>，并将不会进入投票阶段。'
-        project_selected_html: '此投资项目<strong>已经被选择</strong>进入投票阶段。'
-        project_winner: '胜出的投票项目'
-        project_not_selected_html: '此投资项目<strong>未被选择</strong>进入投票阶段。'
+        project_unfeasible_html: "此投资项目<strong>已经被标记为不可行</strong>，并将不会进入投票阶段。"
+        project_selected_html: "此投资项目<strong>已经被选择</strong>进入投票阶段。"
+        project_winner: "胜出的投票项目"
+        project_not_selected_html: "此投资项目<strong>未被选择</strong>进入投票阶段。"
       wrong_price_format: 仅限整数
       investment:
         add: 投票

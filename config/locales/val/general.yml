@@ -67,7 +67,7 @@ val:
       most_commented: Més comentats
     select_order: Ordenar per
     show:
-      return_to_commentable: 'Tornar a '
+      return_to_commentable: "Tornar a "
   comments_helper:
     comment_button: Publicar comentari
     comment_link: Comentari
@@ -218,8 +218,7 @@ val:
       available_locales: Idiomes disponibles
       collaborative_legislation: Processos legislatius
       debates: Debats
-      external_link_blog: Blog
-      locale: 'Idioma:'
+      locale: "Idioma:"
       logo: Logo de CONSUL
       management: Gestió
       moderation: Moderació
@@ -241,7 +240,7 @@ val:
         notifications: Notificacions
         no_notifications: "No tens noves notificacions"
     admin:
-      watch_form_message: 'Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?'
+      watch_form_message: "Has realitzat canvis que no han sigut guardats. Segur que vols abandonar la pàgina?"
   notifications:
     index:
       empty_notifications: No tens noves notificacions.
@@ -291,6 +290,8 @@ val:
     create:
       form:
         submit_button: Crear proposta
+    share:
+      message: "He avalat la proposta %{summary} en %{handle}. Si t'interessa, avala tu també!"
     edit:
       editing: Editar proposta
       form:
@@ -312,9 +313,6 @@ val:
       other: Altres
     form:
       geozone: Ámbit d'actuació
-      proposal_external_url: Enllaç a documentació addicional
-      proposal_question: Pregunta de la proposta
-      proposal_question_example_html: "Ha de ser resumida en una pregunta amb respostes Sí o No"
       proposal_responsible_name: Nom i cognoms de la persona que fa aquesta proposta
       proposal_responsible_name_note: "(individualment o com representant d'un col·lectiu; no es mostrarà públicament)"
       proposal_summary: Resum de la proposta
@@ -368,7 +366,7 @@ val:
         one: " que conté <strong>'%{search_term}'</strong>"
         other: " que conté <strong>'%{search_term}'</strong>"
       select_order: Ordenar per
-      select_order_long: 'Estas veient les propostes en funció de:'
+      select_order_long: "Estas veient les propostes en funció de:"
       start_proposal: Crear una proposta
       title: Propostes
       top: Top semanal
@@ -397,8 +395,6 @@ val:
         guide: "Comparteix-la per a que la gent comence a avalarla."
         edit: "Abans de publicar-se podràs modificar el text al teu gust."
         view_proposal: Ara no, anar a la meua proposta
-      improve_info: "Millora la teua campanya i aconsegueix més avals"
-      improve_info_link: "Vore més informació"
       already_supported: Ja has avalat aquesta proposta. Comparteixla!
       comments:
         zero: Sense comentaris
@@ -420,13 +416,12 @@ val:
       successful: "Aquesta proposta ha asolit els avals necesaris."
     show:
       author_deleted: Usuari eliminat
-      code: 'Codi de la proposta:'
+      code: "Codi de la proposta:"
       comments:
         zero: Sense comentaris
         one: 1 Comentari
         other: "%{count} Comentaris"
       comments_tab: Comentaris
-      edit_proposal_link: Editar
       flag: Esta proposta ha sigut marcada com inapropiada per diversos usuaris.
       login_to_comment: Necessites %{signin} o %{signup} per a comentar.
       notifications_tab: Notificacions
@@ -435,17 +430,13 @@ val:
       retired_warning_link_to_explanation: Revisa la seua explicació abans d'avalar-la.
       retired: Proposta retirada per l'autor
       share: Compartir
-      send_notification: Enviar notificació
       no_notifications: "Aquesta proposta no te notificacions."
       embed_video_title: "Vídeo en %{proposal}"
-      title_external_url: "Documentació adicional"
       title_video_url: "Video extern"
       author: Autor
     update:
       form:
         submit_button: Guardar canvis
-    share:
-      message: "He avalat la proposta %{summary} en %{handle}. Si t'interessa, avala tu també!"
   polls:
     all: "Totes"
     no_dates: "sense data asignada"
@@ -496,8 +487,6 @@ val:
       stats_menu: "Estadístiques de participació"
       results_menu: "Resultats de la votació"
       stats:
-        title: "Dades de participació"
-        total_participation: "Participació total"
         total_votes: "Nº total de vots emesos"
         votes: "VOTS"
         web: "WEB"
@@ -510,11 +499,9 @@ val:
         title: "Preguntes"
         most_voted_answer: "Resposta més votada: "
   poll_questions:
-    create_question: "Crear pregunta"
     show:
       vote_answer: "Votar %{answer}"
       voted: "Has votat %{answer}"
-      voted_token: "Pots apuntar este identificador de vot, per a comprobar la teua votació en el resultat final:"
   proposal_notifications:
     new:
       title: "Enviar missatge"
@@ -526,29 +513,29 @@ val:
     show:
       back: "Tornar a la meua activitat"
   shared:
-    edit: 'Editar'
-    save: 'Guardar'
-    delete: Eliminar
+    edit: "Editar"
+    save: "Guardar"
+    delete: "Eliminar"
     "yes": "Si"
     "no": "No"
     search_results: "Resultats de la cerca"
     advanced_search:
-      author_type: 'Per categoria d''autor'
-      author_type_blank: 'Eligeix una categoria'
-      date: 'Per data'
-      date_placeholder: 'DD/MM/AAAA'
-      date_range_blank: 'Eligeix una data'
-      date_1: 'Últimes 24 hores'
-      date_2: 'Última setmana'
-      date_3: 'Últim mes'
-      date_4: 'Últim any'
-      date_5: 'Personalitzada'
-      from: 'De'
-      general: 'Amb el text'
-      general_placeholder: 'Escriu el text'
-      search: 'Filtre'
-      title: 'Cerca avançada'
-      to: 'Fins'
+      author_type: "Per categoria d'autor"
+      author_type_blank: "Eligeix una categoria"
+      date: "Per data"
+      date_placeholder: "DD/MM/AAAA"
+      date_range_blank: "Eligeix una data"
+      date_1: "Últimes 24 hores"
+      date_2: "Última setmana"
+      date_3: "Últim mes"
+      date_4: "Últim any"
+      date_5: "Personalitzada"
+      from: "De"
+      general: "Amb el text"
+      general_placeholder: "Escriu el text"
+      search: "Filtre"
+      title: "Cerca avançada"
+      to: "Fins"
     author_info:
       author_deleted: Usuari eliminat
     back: Tornar
@@ -622,7 +609,6 @@ val:
       see_more: Veure més recomanacions
       hide: Ocultar recomanacions
   social:
-    blog: "Blog de %{org}"
     facebook: "Facebook de %{org}"
     twitter: "Twitter de %{org}"
     youtube: "YouTube de %{org}"
@@ -631,8 +617,8 @@ val:
     instagram: "Instagram de %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Si proposes en nom d''una associació o col·lectiu afegeix el nom ací'
-      association_name: 'Nom de l''associació'
+      association_name_label: "Si proposes en nom d'una associació o col·lectiu afegeix el nom ací"
+      association_name: "Nom de l'associació"
       description: En qué consisteix
       external_url: Enllaç a documentació adicional
       geozone: Ámbit d'actuació
@@ -665,7 +651,7 @@ val:
       start_new: Crear proposta d'inversió
     show:
       author_deleted: Usuari eliminat
-      code: 'Codi de la proposta:'
+      code: "Codi de la proposta:"
       share: Compartir
     wrong_price_format: Solament pot incloure caràcters numèrics
     spending_proposal:
@@ -740,8 +726,6 @@ val:
       send_private_message: "Enviar un missatge privat"
       delete_alert: "Segur que desitges eliminar aquesta proposta? Aquesta acció no es pot desfer"
     proposals:
-      send_notification: "Enviar notificació"
-      retire: "Retirar"
       retired: "Proposta retirada"
       see: "Vore proposta"
   votes:
@@ -808,7 +792,7 @@ val:
       user_permission_info: Amb el teu compte ja pots...
       user_permission_proposal: Crear noves propostes
       user_permission_support_proposal: Avalar propostes
-      user_permission_verify: Per a poder realitzar totes les accions verifica el teu compte.
+      user_permission_verify: "Per a poder realitzar totes les accions verifica el teu compte."
       user_permission_verify_info: "* Sols usuaris empadronats."
       user_permission_verify_my_account: Verificar el meu compte
       user_permission_votes: Participar en les votacions finals

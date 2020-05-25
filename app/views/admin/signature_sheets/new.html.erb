@@ -3,7 +3,7 @@
 <h2><%= t("admin.signature_sheets.new.title") %></h2>
 
 <%= form_for [:admin, @signature_sheet] do |f| %>
-  <%= render 'shared/errors',
+  <%= render "shared/errors",
               resource: @signature_sheet %>
 
   <div class="small-12 medium-6 large-4">

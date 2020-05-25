@@ -1,0 +1,6 @@
+nn:
+  account:
+    show:
+      erase_account_link: Slett min konto
+      notifications: Varsler
+      save_changes_submit: Lagre endringer

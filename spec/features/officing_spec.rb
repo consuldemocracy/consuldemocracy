@@ -1,7 +1,7 @@
 require "rails_helper"
 require "sessions_helper"
 
-feature "Poll Officing" do
+describe "Poll Officing" do
   let(:user) { create(:user) }
 
   scenario "Access as regular user is not authorized" do
@@ -97,6 +97,7 @@ feature "Poll Officing" do
   end
 
   scenario "Poll officer access links" do
+    create(:poll)
     create(:poll_officer, user: user)
     login_as(user)
     visit root_path
@@ -117,6 +118,7 @@ feature "Poll Officing" do
 
     expect(page).to have_current_path(officing_root_path)
     expect(page).to have_css("#officing_menu")
+    expect(page).not_to have_link("Polling officers")
     expect(page).not_to have_css("#valuation_menu")
     expect(page).not_to have_css("#admin_menu")
     expect(page).not_to have_css("#moderation_menu")

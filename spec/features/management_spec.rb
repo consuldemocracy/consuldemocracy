@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Management" do
+describe "Management" do
   let(:user) { create(:user) }
 
   scenario "Should show admin menu if logged user is admin" do
@@ -12,7 +12,7 @@ feature "Management" do
 
     click_link "Management"
 
-    expect(page).to have_content("My activity")
+    expect(page).to have_content("My content")
     expect(page).to have_content("My account")
     expect(page).to have_content("Sign out")
   end
@@ -26,7 +26,7 @@ feature "Management" do
 
     click_link "Management"
 
-    expect(page).not_to have_content("My activity")
+    expect(page).not_to have_content("My content")
     expect(page).not_to have_content("My account")
     expect(page).not_to have_content("Sign out")
   end

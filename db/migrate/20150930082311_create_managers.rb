@@ -1,4 +1,4 @@
-class CreateManagers < ActiveRecord::Migration
+class CreateManagers < ActiveRecord::Migration[4.2]
   def change
     create_table :managers do |t|
       t.string :username, null: false

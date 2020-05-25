@@ -3,7 +3,7 @@ require "spec_helper"
 shared_examples_for "sluggable" do |updatable_slug_trait:|
 
   describe "generate_slug" do
-    let(:factory_name) { described_class.name.parameterize("_").to_sym }
+    let(:factory_name) { described_class.name.parameterize(separator: "_").to_sym }
     let(:sluggable) { create(factory_name, name: "Marló Brañido Carlo") }
 
     context "when a new sluggable is created" do

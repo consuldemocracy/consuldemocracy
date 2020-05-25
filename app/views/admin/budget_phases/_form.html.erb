@@ -2,7 +2,7 @@
 
 <%= translatable_form_for [:admin, @phase.budget, @phase] do |f| %>
 
-  <%= render 'shared/errors', resource: @phase %>
+  <%= render "shared/errors", resource: @phase %>
 
   <div class="small-12 medium-6 column">
     <%= f.label :starts_at, t("admin.budget_phases.edit.start_date") %>

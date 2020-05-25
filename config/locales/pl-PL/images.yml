@@ -14,7 +14,6 @@ pl:
       destroy:
         notice: Obraz został pomyślnie usunięty.
         alert: Nie można zniszczyć obrazu.
-        confirm: Czy na pewno chcesz usunąć obraz? Tego działania nie można cofnąć!
     errors:
       messages:
         in_between: musi być pomiędzy %{min} i %{max}

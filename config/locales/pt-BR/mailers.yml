@@ -3,7 +3,7 @@ pt-BR:
     no_reply: "Esta mensagem foi enviada de um endereço de e-mail que não aceita respostas."
     comment:
       hi: Oi
-      new_comment_by_html: Há um novo comentário de <b>%{commenter}</b>
+      new_comment_by_html: Há um novo comentário de <strong>%{commenter}</strong>
       subject: Alguém comentou sobre seu %{commentable}
       title: Novo comentário
     config:
@@ -17,7 +17,7 @@ pt-BR:
       title: Confirme sua conta usando o seguinte link
     reply:
       hi: Oi
-      new_reply_by_html: Há uma nova resposta de <b>%{commenter}</b> ao seu comentário sobre
+      new_reply_by_html: Há uma nova resposta de <strong>%{commenter}</strong> ao seu comentário sobre
       subject: Alguém respondeu ao seu comentário
       title: Nova resposta ao seu comentário
     unfeasible_spending_proposal:

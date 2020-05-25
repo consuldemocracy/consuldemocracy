@@ -49,8 +49,6 @@ sv:
         page:
           title: "Vanliga frågor"
           description: "Använd den här sidan för att hjälpa dina användare med deras vanligaste frågor."
-          faq_1_title: "Fråga 1"
-          faq_1_description: "Detta är ett exempel på beskrivning till fråga ett."
       other:
         title: "Andra intresseområden"
         how_to_use: "Använd %{org_name} i din stad"
@@ -69,9 +67,13 @@ sv:
       title: Tillgänglighet
       keyboard_shortcuts:
         navigation_table:
+          page_header: Sida
           rows:
             - 
+              key_column: 0
+              page_column: Hem
             - 
+              key_column: 1
               page_column: Debatter
             - 
               key_column: 2
@@ -80,35 +82,44 @@ sv:
               key_column: 3
               page_column: Röster
             - 
+              key_column: 4
               page_column: Medborgarbudgetar
             - 
+              key_column: 5
         browser_table:
           rows:
             - 
+              browser_column: IE
             - 
               browser_column: Firefox
             - 
+              browser_column: Chrome
             - 
+              browser_column: Safari
             - 
+              browser_column: Opera
       textsize:
+        title: Textstorlek
         browser_settings_table:
           rows:
             - 
+              browser_column: IE
+              action_column: Visa > Textstorlek
             - 
               browser_column: Firefox
+              action_column: Visa > Storlek
+            - 
+              browser_column: Chrome
             - 
             - 
-            - 
+              browser_column: Opera
     titles:
-      accessibility: Tillgänglighet
-      conditions: Användarvillkor
       help: "Vad är %{org}? - Medborgardeltagande"
-      privacy: sekretesspolicyn
     verify:
       code: Koden du fick i ett brev
       email: E-post
-      info: 'För att verifiera ditt konto måste du fylla i dina uppgifter:'
-      info_code: 'Nu kan du skriva in koden du fick i ett brev:'
+      info: "För att verifiera ditt konto måste du fylla i dina uppgifter:"
+      info_code: "Nu kan du skriva in koden du fick i ett brev:"
       password: Lösenord
       submit: Verifiera mitt konto
       title: Verifiera ditt konto

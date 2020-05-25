@@ -1,4 +1,8 @@
 ar:
+  attributes:
+    results_enabled: "إظهار النتائج"
+    stats_enabled: "إظهار الإحصائيات"
+    advanced_stats_enabled: "عرض احصائيات متقدمة"
   activerecord:
     models:
       activity:
@@ -141,6 +145,13 @@ ar:
         few: "ضباط"
         many: "ضباط"
         other: "ضباط"
+      poll/ballot_sheet:
+        zero: أوراق إقتراع
+        one: ورقة اقتراع
+        two: ورقة اقتراع
+        few: أوراق إقتراع
+        many: أوراق إقتراع
+        other: أوراق إقتراع
       proposal:
         zero: "مقترحات المواطنين"
         one: "مقترح المواطنين"
@@ -176,6 +187,13 @@ ar:
         few: كتل المحتوى المخصصة
         many: كتل المحتوى المخصصة
         other: كتل المحتوى المخصصة
+      document:
+        zero: وثائق
+        one: وثيقة
+        two: وثائق
+        few: وثائق
+        many: وثائق
+        other: وثائق
       legislation/process:
         zero: "العمليات"
         one: "العملية"
@@ -253,6 +271,20 @@ ar:
         few: "إشعارات المقترح"
         many: "إشعارات المقترح"
         other: "إشعارات المقترح"
+      dashboard/administrator_task:
+        zero: مهمات
+        one: مهمة
+        two: مهمات
+        few: مهمات
+        many: مهمات
+        other: مهمات
+      link:
+        zero: روابط
+        one: رابط
+        two: روابط
+        few: روابط
+        many: روابط
+        other: روابط
     attributes:
       budget:
         name: "الاسم"
@@ -275,6 +307,10 @@ ar:
         organization_name: "إذا كنت تقترح بإسم جماعي/منظمة, أو نيابة عن أشخاص آخرين, اكتب إسمها"
         image: "اقتراح صورة وصفية"
         image_title: "عنوان الصورة"
+      geozone:
+        name: الإسم
+        external_code: "الرّمز الخارجي (اختياري)"
+        census_code: "رمز مكتب التعداد (اختياري)"
       milestone:
         status_id: "الحالة الحالية (اختياري)"
         title: "عنوان"
@@ -347,6 +383,9 @@ ar:
         external_url: "رابط لوثائق إضافية"
       poll/question/translation:
         title: "سؤال"
+      poll/ballot_sheet:
+        poll_id: استطلاع
+        officer_assignment_id: مهمة الضابط
       signature_sheet:
         signable_type: "نوع القابلة"
         signable_id: "معرف القابلة"
@@ -373,6 +412,9 @@ ar:
         name: الإ سم
         locale: الإعدادات المحلية
         body: الهيئة
+      banner:
+        background_color: لون الخلفية
+        font_color: لون الخط
       legislation/process:
         title: عنوان العملية
         summary: ملخص
@@ -387,6 +429,8 @@ ar:
         draft_publication_date: مسودة تاريخ النشر
         allegations_start_date: تاريخ بداية الإدعاءات
         allegations_end_date: تاريخ انتهاء الإدعاءات
+        proposals_phase_start_date: بداية
+        proposals_phase_end_date: نهاية
         result_publication_date: تاريخ نشر النتيجة النهائية
         background_color: لون الخلفية
         font_color: لون الخط
@@ -455,6 +499,21 @@ ar:
         link_text: نص الرابط
       widget/feed:
         limit: عدد العناصر
+      dashboard/action:
+        title: عنوان
+        short_description: وصف قصير
+        description: الوصف
+        link: رابط خارجي
+        day_offset: كم من يوم تريد أن يبقى الاقتراح مفعلا بعد انشائه ؟
+        required_supports: ما مقدار الدعم الذي يجب أن يحصل عليه الاقتراح حتى يتم تفعيله؟
+        active: نشِط
+        action_type: النوع
+      dashboard/administrator_task:
+        source: المصدر
+        user: تم تنفيذه من طرف
+      link:
+        label: عنوان
+        url: رابط
     errors:
       models:
         user:
@@ -516,8 +575,8 @@ ar:
         signature:
           attributes:
             document_number:
-              not_in_census: 'لم يتم التحقق من التعداد'
-              already_voted: 'بالفعل صوت هذا الاقتراح'
+              not_in_census: "لم يتم التحقق من التعداد"
+              already_voted: "بالفعل صوت هذا الاقتراح"
         site_customization/page:
           attributes:
             slug:
@@ -530,7 +589,7 @@ ar:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'لا يمكنك التعليق على التقييم'
+              cannot_comment_valuation: "لا يمكنك التعليق على التقييم"
       messages:
         record_invalid: "فشل التحقق: %{errors}"
         restrict_dependent_destroy:

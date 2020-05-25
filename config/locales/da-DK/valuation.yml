@@ -1,0 +1,128 @@
+da:
+  valuation:
+    header:
+      title: Vurdering
+    menu:
+      title: Vurdering
+      budgets: Deltagerbudgetter
+      spending_proposals: Forslag til udgifter
+    budgets:
+      index:
+        title: Deltagerbudgetter
+        filters:
+          current: Åben
+          finished: Færdig
+        table_name: Navn
+        table_phase: Fase
+        table_assigned_investments_valuation_open: Investeringsprojekter åbne for vurdering
+        table_actions: Handlinger
+        evaluate: Evaluere
+        no_budgets: "Der er ingen budgetter"
+    budget_investments:
+      index:
+        headings_filter_all: Alle områder
+        filters:
+          valuation_open: Åben
+          valuating: Under vurdering
+          valuation_finished: Vurderingen er færdig
+        assigned_to: "Tildelt til %{valuator}"
+        title: Investeringsprojekter
+        edit: Rediger rapport
+        valuators_assigned:
+          one: Tilknyttet evaluator
+          other: "%{count} tilknyttede evaluatorer"
+        no_valuators_assigned: Ingen evaluatorer tilknyttet
+        table_id: ID
+        table_title: Titel
+        table_heading_name: Område
+        table_actions: Handlinger
+        no_investments: "Der er ingen investeringsprojekter."
+      show:
+        back: Tilbage
+        title: Investeringsprojekt
+        info: Brugerinformation
+        by: Sendt af
+        sent: Sendt den
+        heading: Område
+        dossier: Rapport
+        edit_dossier: Rediger rapport
+        price: Pris
+        price_first_year: Omkostninger i løbet af det første år
+        currency: "€"
+        feasibility: Kan gennemføres
+        feasible: Kan gennemføres
+        unfeasible: Kan ikke gennemføres
+        undefined: Uafklaret
+        valuation_finished: Vurderingen færdig
+        duration: Tidsramme
+        responsibles: Ansvarlige
+        assigned_admin: Tildel admin
+        assigned_valuators: Tilknyttet evaluatorer
+      edit:
+        dossier: Rapport
+        price_html: "Pris (%{currency})"
+        price_first_year_html: "Omkostninger i løbet af det første år (%{currency}) <small>(valgfri, data er ikke offentlig)</small>"
+        price_explanation_html: Prisforklaring
+        feasibility: Kan gennemføres
+        feasible: Kan gennemføres
+        unfeasible: Kan ikke gennemføres
+        undefined_feasible: Under behandling
+        feasible_explanation_html: Forklaring på, hvorfor projektet kan gennemføres
+        valuation_finished: Vurderingen er færdig
+        valuation_finished_alert: "Er du sikker på, du vil markér rapporten som afsluttet? Hvis ja, kan du ikke længere foretage ændringer."
+        not_feasible_alert: "Brugeren, der oprettede projektforslaget, vil straks modtage en e-mail med den vedhæftede rapport, der forklarer, hvorfor projektet ikke kan gennemføres."
+        duration_html: Tidsramme
+        save: Gem ændringer
+      notice:
+        valuate: "Rapporten blev opdateret"
+      valuation_comments: Kommentarer på vurdering
+      not_in_valuating_phase: Investeringer kan kun vurderes, når budgettet befinder sig i vurderingsfasen
+    spending_proposals:
+      index:
+        geozone_filter_all: Alle zoner
+        filters:
+          valuation_open: Åben
+          valuating: Under vurdering
+          valuation_finished: Vurderingen er færdig
+        title: Investeringsprojekter til deltagerbudgettet
+        edit: Rediger
+      show:
+        back: Tilbage
+        heading: Investeringsprojekt
+        info: Brugerinformation
+        association_name: Forening
+        by: Sendt af
+        sent: Sendt den
+        geozone: Område
+        dossier: Rapport
+        edit_dossier: Rediger rapport
+        price: Pris
+        price_first_year: Omkostninger i løbet af det første år
+        currency: "€"
+        feasibility: Kan gennemføres
+        feasible: Kan gennemføres
+        not_feasible: Kan ikke gennemføres
+        undefined: Uafklaret
+        valuation_finished: Vurderingen er færdig
+        time_scope: Tidsramme
+        internal_comments: Interne kommentarer
+        responsibles: Ansvarlige
+        assigned_admin: Tilknyttet admin
+        assigned_valuators: Tilknyttede evaluatorer
+      edit:
+        dossier: Rapport
+        price_html: "Pris (%{currency})"
+        price_first_year_html: "Omkostninger i løbet af det første år (%{currency})"
+        currency: "€"
+        price_explanation_html: Prisforklaring
+        feasibility: Kan gennemføres
+        feasible: Kan gennemføres
+        not_feasible: Kan ikke gennemføres
+        undefined_feasible: Under behandling
+        feasible_explanation_html: Forklaring på, hvorfor projektet kan gennemføres
+        valuation_finished: Vurderingen er færdig
+        time_scope_html: Tidsramme
+        internal_comments_html: Interne kommentarer
+        save: Gem ændringer
+      notice:
+        valuate: "Rapporten blev opdateret"

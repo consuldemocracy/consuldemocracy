@@ -78,7 +78,7 @@ sl:
       taken: je že zasedeno
       other_than: mora biti drugačen kot %{count}
     template:
-      body: 'V naslednjih poljih so težave:'
+      body: "V naslednjih poljih so težave:"
   helpers:
     select:
       prompt: Izberi

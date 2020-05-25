@@ -111,9 +111,9 @@ gl:
         author_deleted: Usuario/a borrado/a
         price_explanation: Informe de custo <small>(opcional, dato público)</small>
         unfeasibility_explanation: Informe de inviabilidade
-        code_html: 'Código de proposta de gasto:<strong>%{code}</strong>'
-        location_html: 'Localización: <strong>%{location}</strong>'
-        organization_name_html: 'Proposto no nome de:<strong>%{name}</strong>'
+        code_html: "Código de proposta de gasto:<strong>%{code}</strong>"
+        location_html: "Localización: <strong>%{location}</strong>"
+        organization_name_html: "Proposto no nome de:<strong>%{name}</strong>"
         share: Compartir
         title: Proposta de investimento
         supports: Apoios
@@ -122,10 +122,10 @@ gl:
         comments_tab: Comentarios
         milestones_tab: Fitos
         author: Autoría
-        project_unfeasible_html: 'O proxecto de investimento <strong>foi marcado como inviable</strong> e non chegará á fase de votación.'
-        project_selected_html: 'Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación.'
-        project_winner: 'Proxecto de investimento gañador'
-        project_not_selected_html: 'O proxecto de inversión <strong>non foi seleccionado</strong> para a fase de votación.'
+        project_unfeasible_html: "O proxecto de investimento <strong>foi marcado como inviable</strong> e non chegará á fase de votación."
+        project_selected_html: "Este proxecto de investimento <strong>foi seleccionado</strong> para a fase de votación."
+        project_winner: "Proxecto de investimento gañador"
+        project_not_selected_html: "O proxecto de inversión <strong>non foi seleccionado</strong> para a fase de votación."
         see_price_explanation: Ver xustificación do prezo
       wrong_price_format: Só pode incluír caracteres numéricos
       investment:

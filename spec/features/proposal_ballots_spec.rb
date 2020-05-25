@@ -1,7 +1,7 @@
 # coding: utf-8
 require "rails_helper"
 
-feature "Proposal ballots" do
+describe "Proposal ballots" do
 
   scenario "Successful proposals do not show support buttons in index" do
     successful_proposals = create_successful_proposals
@@ -9,8 +9,8 @@ feature "Proposal ballots" do
     visit proposals_path
 
     successful_proposals.each do |proposal|
-      within("#proposal_#{proposal.id}_votes") do
-        expect(page).to have_content "This proposal has reached the required supports"
+      within("#proposal_#{proposal.id}_votes .supports .progress") do
+        expect(page).to have_content "100% / 100%"
       end
     end
   end
@@ -20,8 +20,8 @@ feature "Proposal ballots" do
 
     successful_proposals.each do |proposal|
       visit proposal_path(proposal)
-      within("#proposal_#{proposal.id}_votes") do
-        expect(page).to have_content "This proposal has reached the required supports"
+      within("#proposal_#{proposal.id}_votes .supports .progress") do
+        expect(page).to have_content "100% / 100%"
       end
     end
   end

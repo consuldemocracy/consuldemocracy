@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "System Emails" do
+describe "System Emails" do
 
   let(:admin) { create(:administrator) }
 
-  background do
+  before do
     login_as(admin.user)
   end
 
@@ -14,7 +14,8 @@ feature "System Emails" do
     let(:system_emails) do
       %w[proposal_notification_digest budget_investment_created budget_investment_selected
          budget_investment_unfeasible budget_investment_unselected comment reply
-         direct_message_for_receiver direct_message_for_sender email_verification user_invite]
+         direct_message_for_receiver direct_message_for_sender email_verification user_invite
+         evaluation_comment]
     end
 
     context "System emails" do
@@ -243,6 +244,31 @@ feature "System Emails" do
       visit admin_system_email_view_path("reply")
       expect(page).to have_content "There aren't any replies created."
       expect(page).to have_content "Some example data is needed in order to preview the email."
+
+      visit admin_system_email_view_path("evaluation_comment")
+      expect(page).to have_content "There aren't any evaluation comments created."
+      expect(page).to have_content "Some example data is needed in order to preview the email."
+    end
+
+    scenario "#evaluation_comment" do
+      admin = create(:administrator, user: create(:user, username: "Baby Doe"))
+      investment = create(:budget_investment,
+        title: "Cleaner city",
+        heading: heading,
+        author: user,
+        administrator: admin)
+      comment = create(:comment, :valuation, commentable: investment)
+
+      visit admin_system_email_view_path("evaluation_comment")
+
+      expect(page).to have_content "New evaluation comment for Cleaner city"
+      expect(page).to have_content "Hi #{admin.name}"
+      expect(page).to have_content "There is a new evaluation comment from #{comment.user.name} "\
+                                   "to the budget investment Cleaner city"
+      expect(page).to have_content comment.body
+
+      expect(page).to have_link "Cleaner city",
+        href: admin_budget_budget_investment_url( investment.budget, investment, anchor: "comments")
     end
 
   end

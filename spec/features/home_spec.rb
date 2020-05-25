@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Home" do
+describe "Home" do
 
   context "For not logged users" do
 
@@ -22,9 +22,9 @@ feature "Home" do
 
   context "For signed in users" do
 
-    feature "Recommended" do
+    describe "Recommended" do
 
-      background do
+      before do
         Setting["feature.user.recommendations"] = true
         user = create(:user)
         proposal = create(:proposal, tag_list: "Sport")
@@ -111,7 +111,7 @@ feature "Home" do
 
   end
 
-  feature "IE alert" do
+  describe "IE alert" do
     scenario "IE visitors are presented with an alert until they close it", :page_driver do
       # Selenium API does not include page request/response inspection methods
       # so we must use Capybara::RackTest driver to set the browser's headers

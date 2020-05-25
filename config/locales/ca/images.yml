@@ -14,7 +14,6 @@ ca:
       destroy:
         notice: Imatge esborrada correctament.
         alert: No es pot eliminar la imatge.
-        confirm: Estàs segur que vols esborrar la imatge? Aquesta acció no es pot desfer!
     errors:
       messages:
         in_between: ha de ser entre %{min} i %{max}

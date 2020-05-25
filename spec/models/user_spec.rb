@@ -3,7 +3,7 @@ require "rails_helper"
 describe User do
 
   describe "#headings_voted_within_group" do
-    it "returns the headings voted by a user ordered by name" do
+    it "returns the headings voted by a user" do
       user1 = create(:user)
       user2 = create(:user)
 
@@ -34,6 +34,15 @@ describe User do
       expect(user2.headings_voted_within_group(group)).not_to include(new_york)
       expect(user2.headings_voted_within_group(group)).not_to include(san_franciso)
       expect(user2.headings_voted_within_group(group)).not_to include(another_heading)
+    end
+
+    it "returns headings with multiple translations only once" do
+      user = create(:user)
+      group = create(:budget_group)
+      heading = create(:budget_heading, group: group, name_en: "English", name_es: "Spanish")
+      create(:vote, votable: create(:budget_investment, heading: heading), voter: user)
+
+      expect(user.headings_voted_within_group(group).count).to eq 1
     end
   end
 

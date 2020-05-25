@@ -18,7 +18,7 @@
         <%= t("admin.system_emails.#{system_email_title}.description") %>
       </td>
       <td>
-        <% if system_email_actions.include?('view') %>
+        <% if system_email_actions.include?("view") %>
           <div class="small-4 column">
             <%= link_to t("admin.shared.view"), admin_system_email_view_path(system_email_title),
                                                 class: "button hollow expanded" %>

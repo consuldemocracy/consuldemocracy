@@ -18,7 +18,7 @@ class Legislation::AnswersController < Legislation::BaseController
         format.html { redirect_to legislation_process_question_path(@process, @question) }
       end
     else
-      alert = t('legislation.questions.participation.phase_not_open')
+      alert = t("legislation.questions.participation.phase_not_open")
       respond_to do |format|
         format.js { render json: {}, status: :not_found }
         format.html { redirect_to legislation_process_question_path(@process, @question), alert: alert }

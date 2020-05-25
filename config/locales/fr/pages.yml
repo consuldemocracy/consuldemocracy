@@ -51,8 +51,6 @@ fr:
         page:
           title: "Voir les questions fréquemment posées"
           description: "Cette page permet de résoudre la Foire aux questions communes aux utilisateurs du site."
-          faq_1_title: "Question 1"
-          faq_1_description: "Il s’agit d’un exemple pour la description de la question."
       other:
         title: "Autre information utile"
         how_to_use: "Utiliser %{org_name} dans votre ville"
@@ -67,25 +65,7 @@ fr:
         how_to_use: Utilisez-le pour votre gouvernement
     privacy:
       title: Vie privée
-      subtitle: INFORMATIONS CONCERNANT LA CONFIDENTIALITÉ DES DONNÉES
-      info_items:
-        - 
-          text: La navigation par le biais de l’information disponible sur le portail est anonyme.
-        - 
-          text: Pour utiliser les services contenus dans le portail, l'utilisateur doit s'enregistrer et fournir préalablement des données personnelles en fonction des informations spécifiques contenues dans chaque type d'inscription.
-        - 
-          text: 'Les données fournies seront intégrées et traitées par la collectivité conformément à la description du fichier suivant :'
-        - 
-          subitems:
-            - 
-              field: 'Nom du fichier :'
-              description: NOM DU FICHIER
-            - 
-              field: 'Objectif du fichier :'
-              description: Gérer les processus participatifs pour contrôler la qualification des personnes qui y participent et se contenter d'un recomptage numérique et statistique des résultats issus des processus de participation citoyenne.
-            - 
-              field: 'Institution responsable du dossier :'
-              description: INSTITUTION EN CHARGE DU DOSSIER
+      subtitle: "INFORMATIONS CONCERNANT LA CONFIDENTIALITÉ DES DONNÉES"
     accessibility:
       title: Accessibilité
       description: |-
@@ -124,7 +104,7 @@ fr:
               key_column: 5
               page_column: Processus législatifs
         browser_table:
-          description: 'Selon le système d''exploitation et le navigateur utilisé, la combinaison de touches sera la suivante :'
+          description: "Selon le système d'exploitation et le navigateur utilisé, la combinaison de touches sera la suivante :"
           caption: Combinaison de touches selon le système d’exploitation et le navigateur
           browser_header: Navigateur
           key_header: Combinaison de touches
@@ -167,7 +147,7 @@ fr:
               browser_column: Opera
               action_column: Affichage > échelle
         browser_shortcuts_table:
-          description: 'Une autre manière de modifier la taille du texte est d''utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :'
+          description: "Une autre manière de modifier la taille du texte est d'utiliser les raccourcis clavier définis dans le navigateur, en particulier la combinaison de touches :"
           rows:
             - 
               shortcut_column: CTRL et + (CMD et + sur Mac)
@@ -179,15 +159,12 @@ fr:
         title: Compatibilité avec les normes et la conception visuelle
         description_html: 'Toutes les pages de ce site web sont conformes aux <strong> lignes directrices en matière d''accessibilité </strong> ou aux principes généraux de design accessible établis par le groupe de travail <abbr title = "Web Accessibility Initiative" lang = "en"> WAI < / abbr > appartenant au W3C.'
     titles:
-      accessibility: Accessibilité
-      conditions: Conditions d'utilisations
       help: "Qu'est-ce que %{org} ? - Participation citoyenne"
-      privacy: Vie privée
     verify:
       code: Code que vous avez reçu par lettre
       email: Email
-      info: 'Pour vérifier votre compte saisissez vos données d''accès :'
-      info_code: 'Saisissez maintenant le code reçu par lettre :'
+      info: "Pour vérifier votre compte saisissez vos données d'accès :"
+      info_code: "Saisissez maintenant le code reçu par lettre :"
       password: Mot de passe
       submit: Vérifier mon compte
       title: Confirmer mon compte

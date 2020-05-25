@@ -49,9 +49,17 @@ ru:
       moderator: Модератор
       responses:
         zero: Нет ответов
+        one: 1 ответ
+        few: "%{count} ответа"
+        many: "%{count} ответов"
+        other: "%{count} ответов"
       user_deleted: Пользователь удален
       votes:
         zero: Нет голосов
+        one: 1 голос
+        few: "%{count} голоса"
+        many: "%{count} голосов"
+        other: "%{count} голосов"
     form:
       comment_as_admin: Прокомментировать от имени администратора
       comment_as_moderator: Прокомментировать от имени модератора
@@ -63,7 +71,7 @@ ru:
       most_commented: Самое комментируемое
     select_order: Сортировать по
     show:
-      return_to_commentable: 'Вернуться к '
+      return_to_commentable: "Вернуться к "
   comments_helper:
     comment_button: Опубликовать комментарий
     comment_link: Отзыв
@@ -83,6 +91,10 @@ ru:
         other: "%{count} комментария(иев)"
       votes:
         zero: Нет голосов
+        one: 1 голос
+        few: "%{count} голоса"
+        many: "%{count} голосов"
+        other: "%{count} голосов"
     edit:
       editing: Редактировать дебаты
       form:
@@ -96,6 +108,11 @@ ru:
       tags_placeholder: "Введите метки, которые вы бы хотели использовать, разделенные запятыми (',')"
     index:
       featured_debates: Особенные
+      filter_topic:
+        one: " с темой '%{topic}'"
+        few: " с темой '%{topic}'"
+        many: " с темой '%{topic}'"
+        other: " с темой '%{topic}'"
       orders:
         confidence_score: наивысший рейтинг
         created_at: самые свежие
@@ -210,8 +227,7 @@ ru:
       available_locales: Доступные языки
       collaborative_legislation: Процесс законотворчества
       debates: Обсуждения проблем
-      external_link_blog: Блог
-      locale: 'Язык:'
+      locale: "Язык:"
       logo: CONSUL логотип
       management: Управление
       moderation: Модерирование
@@ -227,10 +243,15 @@ ru:
       budgets: Партисипаторное бюджетирование
       spending_proposals: Предложения трат
       notification_item:
+        new_notifications:
+          one: У вас есть новое уведомление
+          few: У вас есть %{count} новых уведомлений
+          many: У вас есть %{count} новых уведомлений
+          other: У вас есть %{count} новых уведомлений
         notifications: Уведомления
         no_notifications: "У вас нет новых уведомлений"
     admin:
-      watch_form_message: 'У вас есть не сохраненные изменения. Вы подтверждаете, что хотите покинуть страницу?'
+      watch_form_message: "У вас есть не сохраненные изменения. Вы подтверждаете, что хотите покинуть страницу?"
   notifications:
     index:
       empty_notifications: У вас нет новых уведомлений.
@@ -239,6 +260,22 @@ ru:
       title: Уведомления
       unread: Не прочитано
     notification:
+      action:
+        comments_on:
+          one: Кто-то прокомментировал
+          few: Есть %{count} новых комментариев для
+          many: Есть %{count} новых комментариев для
+          other: Есть %{count} новых комментариев для
+        proposal_notification:
+          one: Существует одно новое уведомление для
+          few: Есть %{count} новых уведомлений для
+          many: Есть %{count} новых уведомлений для
+          other: Есть %{count} новых уведомлений для
+        replies_to:
+          one: Кто-то ответил на ваш комментарий к
+          few: Есть %{count} новых ответов на ваш комментарий к
+          many: Есть %{count} новых ответов на ваш комментарий к
+          other: Есть %{count} новых ответов на ваш комментарий к
       mark_as_read: Отметить прочитанным
       mark_as_unread: Отметить не прочитанным
       notifiable_hidden: Этот ресурс больше не доступен.
@@ -267,6 +304,8 @@ ru:
     create:
       form:
         submit_button: Отменить предложение
+    share:
+      message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
     edit:
       editing: Редактировать предложение
       form:
@@ -288,9 +327,6 @@ ru:
       other: Другое
     form:
       geozone: Сфера деятельности
-      proposal_external_url: Ссылка на дополнительную документацию
-      proposal_question: Вопрос по предложению
-      proposal_question_example_html: "Должен быть сведен к одному вопросу с вариантами ответа Да или Нет"
       proposal_responsible_name: Полное имя лица, отправляющего предложение
       proposal_responsible_name_note: "(индивидуально или в качестве представителя коллектива; не будет отображаться публично)"
       proposal_summary: Краткое изложение предложения
@@ -343,7 +379,7 @@ ru:
         many: " содержащие термин <strong>'%{search_term}'</strong>"
         other: " содержащие термин <strong>'%{search_term}'</strong>"
       select_order: Упорядочить по
-      select_order_long: 'Вы просматриваете предложения в соответствии с:'
+      select_order_long: "Вы просматриваете предложения в соответствии с:"
       start_proposal: Создать предложение
       title: Заявки
       top: Лучшие за неделю
@@ -372,8 +408,6 @@ ru:
         guide: "Теперь вы можете поделиться им, чтобы люди могли начать его поддерживать."
         edit: "Прежде чем им поделятся, вы сможете изменить текст так, как пожелаете."
         view_proposal: Не сейчас, перейти к моему предложению
-      improve_info: "Улучшите вашу кампанию и получите больше поддержки"
-      improve_info_link: "Получить больше информации"
       already_supported: Вы уже поддержали это предложение. Поделитесь им!
       comments:
         zero: Нет комментариев
@@ -391,12 +425,17 @@ ru:
         other: "поддерживает %{count}"
       votes:
         zero: Нет голосов
+        one: 1 голос
+        few: "%{count} голосов"
+        many: "%{count} голосов"
+        other: "%{count} голосов"
       supports_necessary: "%{number} поддержек требуется"
+      total_percent: 100%
       archived: "Это предложение перенесено в архив и не может получать поддержки."
       successful: "Это предложение достигло требуемого уровня поддержки."
     show:
       author_deleted: Пользователь удален
-      code: 'Код предложения:'
+      code: "Код предложения:"
       comments:
         zero: Нет комментариев
         one: 1 комментарий
@@ -404,7 +443,6 @@ ru:
         many: "%{count} комментария(иев)"
         other: "%{count} комментария(иев)"
       comments_tab: Комментарии
-      edit_proposal_link: Редактировать
       flag: Это предложение было помечено несколькими пользователями как неуместное.
       login_to_comment: Чтобы оставить комментарий, вы должны %{signin} или %{signup}.
       notifications_tab: Уведомления
@@ -413,17 +451,13 @@ ru:
       retired_warning_link_to_explanation: Читайте пояснение, прежде чем голосовать за него.
       retired: Предложение отозвано автором
       share: Доля
-      send_notification: Отправить ведомление
       no_notifications: "По этому предложению нет уведомлений."
       embed_video_title: "Видео по %{proposal}"
-      title_external_url: "Дополнительная документация"
       title_video_url: "Внешнее видео"
       author: Автор
     update:
       form:
         submit_button: Сохранить изменения
-    share:
-      message: "Я поддержал(а) предложение %{summary} в %{org}. Если вам интересно, поддержите его тоже!"
   polls:
     all: "Все"
     no_dates: "дата не назначена"
@@ -474,8 +508,6 @@ ru:
       stats_menu: "Статистика участия"
       results_menu: "Результаты голосования"
       stats:
-        title: "Данные по участию"
-        total_participation: "Всего участвует"
         total_votes: "Общее количество поданых голосов"
         votes: "ГОЛОСА"
         web: "СЕТЬ"
@@ -488,11 +520,9 @@ ru:
         title: "Вопросы"
         most_voted_answer: "Самый голосуемый ответ: "
   poll_questions:
-    create_question: "Создать вопрос"
     show:
       vote_answer: "Голосовать по %{answer}"
       voted: "Вы проголосовали по %{answer}"
-      voted_token: "Вы можете сохранить письменно этот идентификатор голоса, чтобы проверить ваш голос среди конечных результатов:"
   proposal_notifications:
     new:
       title: "Отправить сообщение"
@@ -504,28 +534,29 @@ ru:
     show:
       back: "Вернуться в мою активность"
   shared:
-    edit: 'Редактировать'
-    save: 'Сохранить'
-    delete: Удалить
+    edit: "Редактировать"
+    save: "Сохранить"
+    delete: "Удалить"
     "yes": "Да"
     "no": "Нет"
     search_results: "Результаты поиска"
     advanced_search:
-      author_type: 'По категории автора'
-      author_type_blank: 'Выбрать категорию'
-      date: 'По дате'
-      date_range_blank: 'Выберите дату'
-      date_1: 'Последние 24 часа'
-      date_2: 'Последняя неделя'
-      date_3: 'Последний месяц'
-      date_4: 'Последний год'
-      date_5: 'Настраиваемая'
-      from: 'От'
-      general: 'С текстом'
-      general_placeholder: 'Записать текст'
-      search: 'Фильтровать'
-      title: 'Расширенный поиск'
-      to: 'Для'
+      author_type: "По категории автора"
+      author_type_blank: "Выбрать категорию"
+      date: "По дате"
+      date_placeholder: "DD.MM.YYYY"
+      date_range_blank: "Выберите дату"
+      date_1: "Последние 24 часа"
+      date_2: "Последняя неделя"
+      date_3: "Последний месяц"
+      date_4: "Последний год"
+      date_5: "Настраиваемая"
+      from: "От"
+      general: "С текстом"
+      general_placeholder: "Записать текст"
+      search: "Фильтровать"
+      title: "Расширенный поиск"
+      to: "Для"
     author_info:
       author_deleted: Пользователь удален
     back: Вернуться
@@ -555,12 +586,27 @@ ru:
     show: Показать
     suggest:
       debate:
+        found:
+          one: "Существуют дебаты с термином «%{query}», вы можете участвовать в них вместо открытия новых."
+          few: "Дебаты с термином «%{query}» уже существуют, вы можете участвовать в них, вместо открытия новых."
+          many: "Дебаты с термином «%{query}» уже существуют, вы можете участвовать в них, вместо открытия новых."
+          other: "Дебаты с термином «%{query}» уже существуют, вы можете участвовать в них, вместо открытия новых."
         message: "Вы видите %{limit} из %{count} дебатов, содержащих термин '%{query}'"
         see_all: "Смотреть все"
       budget_investment:
+        found:
+          one: "Существует инвестиция с термином «%{query}», вы можете участвовать в ней вместо открытия новой."
+          few: "Существуют инвестиции с термином «%{query}», вы можете участвовать в них вместо открытия новой."
+          many: "Существуют инвестиции с термином «%{query}», вы можете участвовать в них вместо открытия новой."
+          other: "Существуют инвестиции с термином «%{query}», вы можете участвовать в них вместо открытия новой."
         message: "Вы видите %{limit} из %{count} инвестиций, содержащих термин '%{query}'"
         see_all: "Смотреть все"
       proposal:
+        found:
+          one: "Существует предложение с термином «%{query}», вы можете участвовать в нем вместо открытия нового"
+          few: "Существуют предложения с термином «%{query}», вы можете участвовать в них вместо открытия нового"
+          many: "Существуют предложения с термином «%{query}», вы можете участвовать в них вместо открытия нового"
+          other: "Существуют предложения с термином «%{query}», вы можете участвовать в них вместо открытия нового"
         message: "Вы видите %{limit} из %{count} предложений, содержащих термин '%{query}'"
         see_all: "Смотреть все"
     tags_cloud:
@@ -589,12 +635,10 @@ ru:
       title: Рекомендации
       see_more: Смотреть больше рекомендация
       hide: Скрыть рекомендации
-  social:
-    blog: "%{org} Блог"
   spending_proposals:
     form:
-      association_name_label: 'Если вы предлагаете от имени ассоциации или коллектива, то добавьте имя здесь'
-      association_name: 'Название ассоциации'
+      association_name_label: "Если вы предлагаете от имени ассоциации или коллектива, то добавьте имя здесь"
+      association_name: "Название ассоциации"
       description: Описание
       external_url: Ссылка на дополнительную документацию
       geozone: Сфера деятельности
@@ -610,6 +654,11 @@ ru:
         button: Поиск
         placeholder: Проекты инвестирования...
         title: Поиск
+      search_results:
+        one: " содержащий термин '%{search_term}'"
+        few: " содержащие термин '%{search_term}'"
+        many: " содержащие термин '%{search_term}'"
+        other: " содержащие термин '%{search_term}'"
       sidebar:
         geozones: Сфера деятельности
         feasibility: Выполнимость
@@ -624,7 +673,7 @@ ru:
       start_new: Создать предложение трат
     show:
       author_deleted: Пользователь удален
-      code: 'Код предложения:'
+      code: "Код предложения:"
       share: Доля
     wrong_price_format: Только целые числа
     spending_proposal:
@@ -679,14 +728,38 @@ ru:
       budget_investments: Инвестиции бюджета
       comments: Комментарии
       actions: Действия
+      filters:
+        comments:
+          one: 1 комментарий
+          few: "%{count} комментария(иев)"
+          many: "%{count} комментария(иев)"
+          other: "%{count} комментария(иев)"
+        debates:
+          one: 1 дебаты
+          few: "%{count} дебатов"
+          many: "%{count} дебатов"
+          other: "%{count} дебатов"
+        proposals:
+          one: 1 предложение
+          few: "%{count} предложений"
+          many: "%{count} предложений"
+          other: "%{count} предложений"
+        budget_investments:
+          one: 1 инвестиция
+          few: "%{count} инвестиций"
+          many: "%{count} инвестиций"
+          other: "%{count} инвестиций"
+        follows:
+          one: 1 подписчик
+          few: "%{count} подписчиков"
+          many: "%{count} подписчиков"
+          other: "%{count} подписчиков"
       no_activity: У пользователя нет публичной активности
       no_private_messages: "Этот пользователь не принимает личные сообщения."
       private_activity: Этот пользователь решил скрыть список активности.
       send_private_message: "Отправить личное сообщение"
       delete_alert: "Вы уверены, что хотите удалить ваш проект инвестирования? Это действие необратимо"
     proposals:
-      send_notification: "Отправить уведомление"
-      retire: "Снять"
       retired: "Снятое предложение"
       see: "Просмотреть предложение"
   votes:
@@ -745,12 +818,13 @@ ru:
       title: Верификация аккаунта
     welcome:
       go_to_index: Просмотреть предложения и дебаты
+      start_using_consul: Перейти на страницу индекса
       title: Участвовать
       user_permission_debates: Участвовать в дебатах
       user_permission_info: При помощи вашего аккаунта вы можете...
       user_permission_proposal: Создавать новые предложения
       user_permission_support_proposal: Поддерживать предложения*
-      user_permission_verify: Выполнять все действия верифицировать ваш аккаунт.
+      user_permission_verify: "Выполнять все действия верифицировать ваш аккаунт."
       user_permission_verify_info: "* Только для пользователей на Цензусе."
       user_permission_verify_my_account: Верифицировать мой аккаунт
       user_permission_votes: Участвовать в финальном голосовании
@@ -761,6 +835,7 @@ ru:
     title: "Соответствующее содержимое"
     add: "Все соответствующее содержимое"
     label: "Ссылка на соответствующее содержимое"
+    placeholder: "%{url}"
     help: "Вы можете добавить ссылки %{models} внутри %{org}."
     submit: "Добавить"
     error: "Неверная ссылка. Не забудьте начинать с %{url}."

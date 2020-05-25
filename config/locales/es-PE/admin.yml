@@ -120,10 +120,6 @@ es-PE:
         administrator_filter_all: Todos los administradores
         valuator_filter_all: Todos los evaluadores
         tags_filter_all: Todas las etiquetas
-        sort_by:
-          placeholder: Ordenar por
-          title: Título
-          supports: Apoyos
         filters:
           all: Todas
           without_admin: Sin administrador
@@ -272,8 +268,8 @@ es-PE:
         user: Usuarios
         no_hidden_users: No hay uusarios bloqueados.
       show:
-        hidden_at: 'Bloqueado:'
-        registered_at: 'Fecha de alta:'
+        hidden_at: "Bloqueado:"
+        registered_at: "Fecha de alta:"
         title: Actividad del usuario (%{user})
     hidden_budget_investments:
       index:
@@ -300,8 +296,6 @@ es-PE:
           process: Proceso
           debate_phase: Fase previa
           proposals_phase: Fase de propuestas
-          start: Inicio
-          end: Fin
           use_markdown: Usa Markdown para formatear el texto
           title_placeholder: Escribe el título del proceso
           summary_placeholder: Resumen corto de la descripción
@@ -313,7 +307,6 @@ es-PE:
           delete: Borrar
           title: Procesos legislativos
           filters:
-            open: Abierto
             all: Todas
         new:
           back: Volver
@@ -328,7 +321,6 @@ es-PE:
           title: Proceso
           comments: Comentarios
           status: Estado
-          creation_date: Fecha de creación
           status_open: Abierto
           status_closed: Cerrado
           status_planned: Próximamente
@@ -437,12 +429,11 @@ es-PE:
         add: Añadir como Presidente de mesa
         delete: Borrar
       search:
-        title: 'Gestores: Búsqueda de usuarios'
+        title: "Gestores: Búsqueda de usuarios"
     menu:
       activity: Actividad de moderadores
       admin: Menú de administración
       banner: Gestionar banners
-      poll_questions: Preguntas ciudadanas
       proposals: Propuestas
       proposals_topics: Temas de propuestas
       budgets: Presupuestos participativos
@@ -481,7 +472,6 @@ es-PE:
           save: "Guardar"
       title_moderated_content: Contenido moderado
       title_budgets: Presupuestos
-      title_polls: Votaciones
       title_profiles: Perfiles
       legislation: Legislación colaborativa
       users: Usuarios
@@ -507,7 +497,7 @@ es-PE:
         add: Añadir como Presidente de mesa
         delete: Borrar
       search:
-        title: 'Moderadores: Búsqueda de usuarios'
+        title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
       administrators: Administradores
     newsletters:
@@ -551,7 +541,7 @@ es-PE:
         add: Añadir como evaluador
         delete: Borrar
       search:
-        title: 'Evaluadores: Búsqueda de usuarios'
+        title: "Evaluadores: Búsqueda de usuarios"
       summary:
         title: Resumen de evaluación de propuestas de inversión
         valuator_name: Evaluador
@@ -666,10 +656,6 @@ es-PE:
         geozone_restricted: "Restringida a los distritos"
       new:
         title: "Nueva votación"
-        show_results_and_stats: "Mostrar resultados y estadísticas"
-        show_results: "Mostrar resultados"
-        show_stats: "Mostrar estadísticas"
-        results_and_stats_reminder: "Si marcas estas casillas los resultados y/o estadísticas de esta votación serán públicos y podrán verlos todos los usuarios."
         submit_button: "Crear votación"
       edit:
         title: "Editar votación"
@@ -792,9 +778,9 @@ es-PE:
     officials:
       edit:
         destroy: Eliminar condición de 'Cargo Público'
-        title: 'Cargos Públicos: Editar usuario'
+        title: "Cargos Públicos: Editar usuario"
       flash:
-        official_destroyed: 'Datos guardados: el usuario ya no es cargo público'
+        official_destroyed: "Datos guardados: el usuario ya no es cargo público"
         official_updated: Datos del cargo público guardados
       index:
         title: Cargos Públicos
@@ -811,7 +797,7 @@ es-PE:
       search:
         edit_official: Editar cargo público
         make_official: Convertir en cargo público
-        title: 'Cargos Públicos: Búsqueda de usuarios'
+        title: "Cargos Públicos: Búsqueda de usuarios"
         no_results: No se han encontrado cargos públicos.
     organizations:
       index:
@@ -987,7 +973,7 @@ es-PE:
         form:
           error:
             one: "error impidió guardar el distrito"
-            other: 'errores impidieron guardar el distrito.'
+            other: "errores impidieron guardar el distrito."
       edit:
         form:
           submit_button: Guardar cambios
@@ -1044,9 +1030,7 @@ es-PE:
           verified_users_who_didnt_vote_proposals: Usuarios verificados que no han votado propuestas
           visits: Visitas
           votes: Votos
-        spending_proposals_title: Propuestas de inversión
         budgets_title: Presupuestos participativos
-        visits_title: Visitas
         direct_messages: Mensajes directos
         proposal_notifications: Notificaciones de propuestas
         incomplete_verifications: Verificaciones incompletas

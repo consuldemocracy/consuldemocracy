@@ -84,8 +84,8 @@ ast:
         author_deleted: Usuariu esaniciáu
         price_explanation: Informe de costu
         unfeasibility_explanation: Informe de inviabilidá
-        code_html: 'Códigu propuesta de gastu: <strong>%{code}</strong>'
-        location_html: 'Allugamientu: <strong>%{location}</strong>'
+        code_html: "Códigu propuesta de gastu: <strong>%{code}</strong>"
+        location_html: "Allugamientu: <strong>%{location}</strong>"
         share: Compartir
         title: Propuesta d'inversión
         supports: Sofitos

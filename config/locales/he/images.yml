@@ -14,7 +14,6 @@ he:
       destroy:
         notice: התמונה נמחקה בהצלחה.
         alert: לא ניתן למחוק את התמונה.
-        confirm: בטוח שברצונך למחוק את התמונה? לא ניתן לבטל פעולה זו!
     errors:
       messages:
         in_between: חייב להיות בין %{min} ו %{max}

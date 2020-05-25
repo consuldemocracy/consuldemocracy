@@ -4,11 +4,11 @@
 
   <div id="nested-documents" data-max-documents-allowed="<%= documentable.class.max_documents_allowed%>">
     <%= f.fields_for :documents do |documents_builder| %>
-      <%= render 'documents/document_fields', f: documents_builder %>
+      <%= render "documents/document_fields", f: documents_builder %>
     <% end %>
   </div>
 
-  <%= link_to_add_association t('documents.form.add_new_document'), f, :documents,
+  <%= link_to_add_association t("documents.form.add_new_document"), f, :documents,
                               partial: "documents/document_fields",
                               id: "new_document_link",
                               class: "button hollow  #{"hide" if documentable.documents.count >= documentable.class.max_documents_allowed}",

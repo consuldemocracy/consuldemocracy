@@ -9,7 +9,7 @@ pt-BR:
       show:
         title: Conta do usuário
       edit:
-        title: 'Editar a conta de usuário: Redefinir a senha'
+        title: "Editar a conta de usuário: Redefinir a senha"
         back: Voltar
         password:
           password: Senha
@@ -22,11 +22,11 @@ pt-BR:
           print_help: Você pode gravar a senha quando ela está salva.
     account_info:
       change_user: Alterar usuário
-      document_number_label: 'Número do documento:'
-      document_type_label: 'Tipo do documento:'
-      email_label: 'Email:'
-      identified_label: 'Identificado como:'
-      username_label: 'Nome de usuário:'
+      document_number_label: "Número do documento:"
+      document_type_label: "Tipo do documento:"
+      email_label: "Email:"
+      identified_label: "Identificado como:"
+      username_label: "Nome de usuário:"
     check: Conferir o documento
     dashboard:
       index:
@@ -38,9 +38,9 @@ pt-BR:
       already_verified: Esta conta de usuário já está verificada.
       has_no_account_html: A fim de criar uma conta, vá para %{link} e clique em <b>'Registar'</b> na parte superior esquerda da tela.
       link: CÔNSUL
-      in_census_has_following_permissions: 'Este usuário pode participar do site com as seguintes permissões:'
+      in_census_has_following_permissions: "Este usuário pode participar do site com as seguintes permissões:"
       not_in_census: Este documento não está registrado.
-      not_in_census_info: 'Cidadãos que não estão no censo podem participar no site com as seguintes permissões:'
+      not_in_census_info: "Cidadãos que não estão no censo podem participar no site com as seguintes permissões:"
       please_check_account_data: Por favor, verifique se as informações da conta acima estão corretas.
       title: Gestão de usuários
       under_age: "Você não tem a idade requerida para verificar sua conta."
@@ -49,14 +49,14 @@ pt-BR:
     date_of_birth: Data de nascimento
     email_verifications:
       already_verified: Esta conta de usuário já está verificada.
-      choose_options: 'Por favor, escolha uma das seguintes opções:'
+      choose_options: "Por favor, escolha uma das seguintes opções:"
       document_found_in_census: Este documento foi encontrado no censo, mas não há nenhuma conta de usuário associada a ele.
-      document_mismatch: 'Esse email corresponde a um usuário que já tem uma identidade associadade: %{document_number}(%{document_type})'
+      document_mismatch: "Esse email corresponde a um usuário que já tem uma identidade associadade: %{document_number}(%{document_type})"
       email_placeholder: Escreva o email que essa pessoa usou para criar sua conta
       email_sent_instructions: Para verificar completamente esse usuário, é necessário que o usuário clique em um link que enviamos para o endereço de e-mail acima. Essa etapa é necessária para confirmar se o endereço pertence a ele ou ela.
       if_existing_account: Se a pessoa já criou uma conta no site
       if_no_existing_account: Se a pessoa ainda não criou uma conta
-      introduce_email: 'Por favor introduza o email usado na conta:'
+      introduce_email: "Por favor introduza o email usado na conta:"
       send_email: Enviar email de verificação
     menu:
       create_proposal: Criar proposta
@@ -78,7 +78,7 @@ pt-BR:
       vote_proposals: Votar propostas
     print:
       proposals_info: Crie sua proposta em http://url.consul
-      proposals_title: 'Propostas:'
+      proposals_title: "Propostas:"
       spending_proposals_info: Participar em http://url.consul
       budget_investments_info: Participar em http://url.consul
     print_info: Imprimir esta informação

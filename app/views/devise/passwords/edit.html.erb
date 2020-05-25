@@ -1,7 +1,7 @@
 <h1 class="text-center"><%= t("devise_views.passwords.edit.title") %></h1>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render 'shared/errors', resource: resource %>
+  <%= render "shared/errors", resource: resource %>
 
   <%= f.hidden_field :reset_password_token %>
 

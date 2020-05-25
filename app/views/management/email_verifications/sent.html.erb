@@ -2,7 +2,7 @@
   <%= t("management.email_verifications.email_sent_instructions") %>
 </div>
 
-<%= render 'management/user_permissions',
+<%= render "management/user_permissions",
       message: t("management.email_verifications.document_found_in_census"),
       permissions: [:debates, :create_proposals, :support_proposals, :vote_proposals] %>
 

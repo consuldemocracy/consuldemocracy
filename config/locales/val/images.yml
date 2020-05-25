@@ -14,7 +14,6 @@ val:
       destroy:
         notice: Imatge eliminada correctament.
         alert: La imatge no s'ha pogut eliminar.
-        confirm: Està segur que desitja eliminar aquesta imatge? Aquesta acció no es pot desfer!
     errors:
       messages:
         in_between: ha d'estar entre %{min} i %{max}

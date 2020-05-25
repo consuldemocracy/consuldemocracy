@@ -10,6 +10,7 @@ module Budgets
     PER_PAGE = 10
 
     before_action :authenticate_user!, except: [:index, :show, :json_data]
+    before_action :load_budget, except: :json_data
 
     load_and_authorize_resource :budget, except: :json_data
     load_and_authorize_resource :investment, through: :budget, class: "Budget::Investment",
@@ -67,7 +68,7 @@ module Budgets
       if @investment.save
         Mailer.budget_investment_created(@investment).deliver_later
         redirect_to budget_investment_path(@budget, @investment),
-                    notice: t('flash.actions.create.budget_investment')
+                    notice: t("flash.actions.create.budget_investment")
       else
         render :new
       end
@@ -75,7 +76,7 @@ module Budgets
 
     def destroy
       @investment.destroy
-      redirect_to user_path(current_user, filter: 'budget_investments'), notice: t('flash.actions.destroy.budget_investment')
+      redirect_to user_path(current_user, filter: "budget_investments"), notice: t("flash.actions.destroy.budget_investment")
     end
 
     def vote
@@ -136,7 +137,7 @@ module Budgets
 
       def load_heading
         if params[:heading_id].present?
-          @heading = @budget.headings.find(params[:heading_id])
+          @heading = @budget.headings.find_by_slug_or_id! params[:heading_id]
           @assigned_heading = @ballot.try(:heading_for_group, @heading.try(:group))
           load_map
         end
@@ -154,12 +155,16 @@ module Budgets
         TagCloud.new(Budget::Investment, params[:search])
       end
 
+      def load_budget
+        @budget = Budget.find_by_slug_or_id! params[:budget_id]
+      end
+
       def set_view
         @view = (params[:view] == "minimal") ? "minimal" : "default"
       end
 
       def investments
-        if @current_order == 'random'
+        if @current_order == "random"
           @budget.investments.apply_filters_and_search(@budget, params, @current_filter)
                              .sort_by_random(session[:random_seed])
         else

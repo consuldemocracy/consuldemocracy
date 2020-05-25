@@ -1,14 +1,14 @@
 require "rails_helper"
 
-feature "Votes" do
+describe "Votes" do
 
-  background do
+  before do
     @manuela = create(:user, verified_at: Time.current)
     @pablo = create(:user)
   end
 
-  feature "Debates" do
-    background { login_as(@manuela) }
+  describe "Debates" do
+    before { login_as(@manuela) }
 
     scenario "Index shows user votes on debates" do
 
@@ -59,7 +59,7 @@ feature "Votes" do
       end
     end
 
-    feature "Single debate" do
+    describe "Single debate" do
 
       scenario "Show no votes" do
         visit debate_path(create(:debate))
@@ -184,8 +184,8 @@ feature "Votes" do
     end
   end
 
-  feature "Proposals" do
-    background { login_as(@manuela) }
+  describe "Proposals" do
+    before { login_as(@manuela) }
 
     scenario "Index shows user votes on proposals" do
       proposal1 = create(:proposal)
@@ -210,8 +210,8 @@ feature "Votes" do
       end
     end
 
-    feature "Single proposal" do
-      background do
+    describe "Single proposal" do
+      before do
         @proposal = create(:proposal)
       end
 
@@ -365,109 +365,6 @@ feature "Votes" do
     within("#proposal_#{proposal.id}") do
       find("div.supports").hover
       expect_message_only_verified_can_vote_proposals
-    end
-  end
-
-  feature "Spending Proposals" do
-    background do
-      Setting["feature.spending_proposals"] = true
-      Setting["feature.spending_proposal_features.voting_allowed"] = true
-      login_as(@manuela)
-    end
-
-    after do
-      Setting["feature.spending_proposals"] = nil
-      Setting["feature.spending_proposal_features.voting_allowed"] = nil
-    end
-
-    feature "Index" do
-      scenario "Index shows user votes on proposals" do
-        spending_proposal1 = create(:spending_proposal)
-        spending_proposal2 = create(:spending_proposal)
-        spending_proposal3 = create(:spending_proposal)
-        create(:vote, voter: @manuela, votable: spending_proposal1, vote_flag: true)
-
-        visit spending_proposals_path
-
-        within("#investment-projects") do
-          within("#spending_proposal_#{spending_proposal1.id}_votes") do
-            expect(page).to have_content "You have already supported this. Share it!"
-          end
-
-          within("#spending_proposal_#{spending_proposal2.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
-          end
-
-          within("#spending_proposal_#{spending_proposal3.id}_votes") do
-            expect(page).not_to have_content "You have already supported this. Share it!"
-          end
-        end
-      end
-
-      scenario "Create from spending proposal index", :js do
-        spending_proposal = create(:spending_proposal)
-        visit spending_proposals_path
-
-        within(".supports") do
-          find(".in-favor a").click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
-        end
-      end
-    end
-
-    feature "Single spending proposal" do
-      background do
-        @proposal = create(:spending_proposal)
-      end
-
-      scenario "Show no votes" do
-        visit spending_proposal_path(@proposal)
-        expect(page).to have_content "No supports"
-      end
-
-      scenario "Trying to vote multiple times", :js do
-        visit spending_proposal_path(@proposal)
-
-        within(".supports") do
-          find(".in-favor a").click
-          expect(page).to have_content "1 support"
-
-          expect(page).not_to have_selector ".in-favor a"
-        end
-      end
-
-      scenario "Create from proposal show", :js do
-        visit spending_proposal_path(@proposal)
-
-        within(".supports") do
-          find(".in-favor a").click
-
-          expect(page).to have_content "1 support"
-          expect(page).to have_content "You have already supported this. Share it!"
-        end
-      end
-    end
-
-    scenario "Disable voting on spending proposals", :js do
-      login_as(@manuela)
-      Setting["feature.spending_proposal_features.voting_allowed"] = nil
-      spending_proposal = create(:spending_proposal)
-
-      visit spending_proposals_path
-
-      within("#spending_proposal_#{spending_proposal.id}") do
-        find("div.supports").hover
-        expect_message_voting_not_allowed
-      end
-
-      visit spending_proposal_path(spending_proposal)
-
-      within("#spending_proposal_#{spending_proposal.id}") do
-        find("div.supports").hover
-        expect_message_voting_not_allowed
-      end
     end
   end
 

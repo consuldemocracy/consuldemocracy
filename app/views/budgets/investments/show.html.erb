@@ -3,7 +3,7 @@
   <%= render "shared/canonical", href: budget_investment_url %>
 <% end %>
 
-<%= render partial: '/budgets/investments/investment_show', locals: {
+<%= render partial: "/budgets/investments/investment_show", locals: {
   investment: @investment,
   investment_ids: @investment_ids,
   investment_votes: @investment_votes,
@@ -18,7 +18,7 @@
 
 <div class="tabs-content" data-tabs-content="investments_tabs">
   <div class="tabs-panel is-active" id="tab-comments">
-    <%= render partial: '/comments/comment_tree', locals: { comment_tree: @comment_tree,
+    <%= render partial: "/comments/comment_tree", locals: { comment_tree: @comment_tree,
                                                             comment_flags: @comment_flags,
                                                             display_comments_count: false } %>
   </div>

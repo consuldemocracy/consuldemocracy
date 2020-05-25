@@ -34,3 +34,5 @@ en-US:
         administrator_id: "Administrator(in),Verwaltungsleiter(in)"
       legislation/annotation:
         text: Kommentar
+      link:
+        url: Link

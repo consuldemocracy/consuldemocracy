@@ -1,4 +1,4 @@
-class MakeInvestmentMilestonesPolymorphic < ActiveRecord::Migration
+class MakeInvestmentMilestonesPolymorphic < ActiveRecord::Migration[4.2]
   def change
     create_table :milestones do |t|
       t.references :milestoneable, polymorphic: true

@@ -1,17 +1,15 @@
 require "rails_helper"
 
-feature "Valuation budgets" do
+describe "Valuation budgets" do
 
-  background do
+  before do
     @valuator = create(:valuator, user: create(:user, username: "Rachel", email: "rachel@valuators.org"))
     login_as(@valuator.user)
   end
 
   scenario "Disabled with a feature flag" do
-    Setting["feature.budgets"] = nil
+    Setting["process.budgets"] = nil
     expect{ visit valuation_budgets_path }.to raise_exception(FeatureFlags::FeatureDisabled)
-
-    Setting["feature.budgets"] = true
   end
 
   context "Index" do

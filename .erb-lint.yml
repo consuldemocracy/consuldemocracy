@@ -1,0 +1,14 @@
+---
+linters:
+  FinalNewline:
+    enabled: true
+  SpaceAroundErbTag:
+    enabled: true
+  SelfClosingTag:
+    enabled: false
+  Rubocop:
+    enabled: true
+    only:
+      - Layout/EndOfLine
+      - Lint/LiteralAsCondition
+      - Style/PercentLiteralDelimiters

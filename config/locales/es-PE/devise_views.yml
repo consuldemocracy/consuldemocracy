@@ -15,7 +15,7 @@ es-PE:
     mailer:
       confirmation_instructions:
         confirm_link: Confirmar mi cuenta
-        text: 'Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:'
+        text: "Puedes confirmar tu cuenta de correo electrónico en el siguiente enlace:"
         title: Bienvenido/a
         welcome: Bienvenido/a
       reset_password_instructions:
@@ -23,12 +23,12 @@ es-PE:
         hello: Hola
         ignore_text: Si tú no lo has solicitado, puedes ignorar este email.
         info_text: Tu contraseña no cambiará hasta que no accedas al enlace y la modifiques.
-        text: 'Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:'
+        text: "Se ha solicitado cambiar tu contraseña, puedes hacerlo en el siguiente enlace:"
         title: Cambia tu contraseña
       unlock_instructions:
         hello: Hola
         info_text: Tu cuenta ha sido bloqueada debido a un excesivo número de intentos fallidos de alta.
-        instructions_text: 'Sigue el siguiente enlace para desbloquear tu cuenta:'
+        instructions_text: "Sigue el siguiente enlace para desbloquear tu cuenta:"
         title: Tu cuenta ha sido bloqueada
         unlock_link: Desbloquear mi cuenta
     menu:
@@ -103,7 +103,7 @@ es-PE:
           password_confirmation_label: Confirmar contraseña nueva
           password_label: Contraseña nueva
           update_submit: Actualizar
-          waiting_for: 'Esperando confirmación de:'
+          waiting_for: "Esperando confirmación de:"
         new:
           cancel: Cancelar login
           email_label: Tu correo electrónico

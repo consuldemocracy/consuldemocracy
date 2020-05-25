@@ -1,4 +1,4 @@
-class CreateProgressBars < ActiveRecord::Migration
+class CreateProgressBars < ActiveRecord::Migration[4.2]
   def change
     create_table :progress_bars do |t|
       t.integer :kind

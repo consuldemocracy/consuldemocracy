@@ -9,7 +9,7 @@ sl:
       show:
         title: Uporabniški račun
       edit:
-        title: 'Uredi uporabniški račun: Ponastavi geslo'
+        title: "Uredi uporabniški račun: Ponastavi geslo"
         back: Nazaj
         password:
           password: Geslo
@@ -22,11 +22,11 @@ sl:
           print_help: Geslo lahko natisneš, ko je shranjeno.
     account_info:
       change_user: Spremeni uporabnika
-      document_number_label: 'Številka dokumenta:'
-      document_type_label: 'Vrsta dokumenta:'
-      email_label: 'E-naslov:'
-      identified_label: 'Identificiran kot:'
-      username_label: 'Uporabniško ime:'
+      document_number_label: "Številka dokumenta:"
+      document_type_label: "Vrsta dokumenta:"
+      email_label: "E-naslov:"
+      identified_label: "Identificiran kot:"
+      username_label: "Uporabniško ime:"
     check: Preveri
     dashboard:
       index:
@@ -37,9 +37,9 @@ sl:
     document_verifications:
       already_verified: Ta uporabniški račun je že verificiran.
       has_no_account_html: Če želiš ustvariti uporabniški račun, pojdi na %{link} in klikni <b>'Registriraj se'</b> v zgornjem levem delu ekrana.
-      in_census_has_following_permissions: 'Ta uporabnik lahko sodeluje na spletnem mestu z naslednjimi dovoljenji:'
+      in_census_has_following_permissions: "Ta uporabnik lahko sodeluje na spletnem mestu z naslednjimi dovoljenji:"
       not_in_census: Ta dokument še ni registriran.
-      not_in_census_info: 'Državljani, ki niso v popisu, lahko sodelujejo na spletnem mestu z naslednjimi dovoljenji:'
+      not_in_census_info: "Državljani, ki niso v popisu, lahko sodelujejo na spletnem mestu z naslednjimi dovoljenji:"
       please_check_account_data: Preveri, da so zgornje informacije pravilne.
       title: Upravljanje uporabnikov
       under_age: "Nisi dovolj star/-a za verifikacijo računa."
@@ -48,14 +48,14 @@ sl:
     date_of_birth: Datum rojstva
     email_verifications:
       already_verified: Ta uporabniški račun je že verificiran.
-      choose_options: 'Izberi eno od naslednjih možnosti:'
+      choose_options: "Izberi eno od naslednjih možnosti:"
       document_found_in_census: Ta dokument je bil najden v popisu, ampak ni povezan z nobenim uporabniškim računom.
-      document_mismatch: 'Ta e-naslov pripada uporabniku, ki že ima povezan id: %{document_number}(%{document_type})'
+      document_mismatch: "Ta e-naslov pripada uporabniku, ki že ima povezan id: %{document_number}(%{document_type})"
       email_placeholder: Napiši e-naslov, ki ga je uporabnik uporabil za ustvarjanje svojega računa
       email_sent_instructions: Da lahko popolnoma verificiraš tega uporabnika, mora uporabnik klikniti povezavo, ki smo jo poslali na zgornji e-naslov. Ta korak je potreben, da lahko potrdimo, da ta e-naslov res pripada njemu.
       if_existing_account: Če ima oseba že uporabniški račun, ustvarjen na spletnem mestu,
       if_no_existing_account: Če oseba še ni ustvarila uporabniškega računa,
-      introduce_email: 'Vnesi e-naslov, uporabljen v računu:'
+      introduce_email: "Vnesi e-naslov, uporabljen v računu:"
       send_email: Pošlji potrditven e-mail
     menu:
       create_proposal: Ustvari predlog
@@ -76,7 +76,7 @@ sl:
       vote_proposals: Glasuj o predlogih
     print:
       proposals_info: Ustvari svoj predlog na http://url.consul
-      proposals_title: 'Predlogi:'
+      proposals_title: "Predlogi:"
       spending_proposals_info: Sodeluj na http://url.consul
       budget_investments_info: Sodeluj na http://url.consul
     print_info: Natisni te informacije

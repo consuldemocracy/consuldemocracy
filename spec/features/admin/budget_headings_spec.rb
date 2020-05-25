@@ -1,11 +1,11 @@
 require "rails_helper"
 
-feature "Admin budget headings" do
+describe "Admin budget headings" do
 
   let(:budget) { create(:budget, phase: "drafting") }
   let(:group) { create(:budget_group, budget: budget) }
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -17,12 +17,12 @@ feature "Admin budget headings" do
 
   context "Feature flag" do
 
-    background do
-      Setting["feature.budgets"] = nil
+    before do
+      Setting["process.budgets"] = nil
     end
 
     after do
-      Setting["feature.budgets"] = true
+      Setting["process.budgets"] = true
     end
 
     scenario "Disabled with a feature flag" do
@@ -31,6 +31,56 @@ feature "Admin budget headings" do
       end.to raise_exception(FeatureFlags::FeatureDisabled)
     end
 
+  end
+
+  context "Load" do
+
+    let!(:budget)  { create(:budget, slug: "budget_slug") }
+    let!(:group)   { create(:budget_group, slug: "group_slug", budget: budget) }
+    let!(:heading) { create(:budget_heading, slug: "heading_slug", group: group) }
+
+    scenario "finds budget, group and heading by slug" do
+      visit edit_admin_budget_group_heading_path("budget_slug", "group_slug", "heading_slug")
+      expect(page).to have_content(budget.name)
+      expect(page).to have_content(group.name)
+      expect(page).to have_field "Heading name", with: heading.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path("wrong_budget", group, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(0, group, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, "wrong_group", heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, 0, heading)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading slug is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, group, "wrong_heading")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if heading id is not found" do
+      expect do
+        visit edit_admin_budget_group_heading_path(budget, group, 0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
   end
 
   context "Index" do
@@ -94,7 +144,7 @@ feature "Admin budget headings" do
       visit admin_budget_group_headings_path(budget, group)
       within("#budget_heading_#{heading.id}") { click_link "Delete" }
 
-      expect(page).to have_content "You cannot destroy a Heading that has associated investments"
+      expect(page).to have_content "You cannot delete a Heading that has associated investments"
       expect(page).to have_selector "#budget_heading_#{heading.id}"
     end
 

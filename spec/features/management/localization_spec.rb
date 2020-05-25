@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Localization" do
+describe "Localization" do
 
-  background do
+  before do
     login_as_manager
   end
 

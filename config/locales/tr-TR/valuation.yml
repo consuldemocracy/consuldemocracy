@@ -1,23 +1,128 @@
 tr:
   valuation:
+    header:
+      title: Değerlendirme
+    menu:
+      title: Değerlendirme
+      budgets: Katılımcı bütçeler
+      spending_proposals: Harcama önerileri
     budgets:
       index:
+        title: Katılımcı bütçeler
         filters:
           current: Açık
+          finished: Bitmiş
+        table_name: İsim
+        table_phase: Aşama
+        table_assigned_investments_valuation_open: Açık değerlendirme ile atanan yatırım projeleri
         table_actions: Aksiyon
+        evaluate: Değerlendirmek
+        no_budgets: "Bütçe yok"
     budget_investments:
       index:
+        headings_filter_all: Tüm başlıklar
         filters:
           valuation_open: Açık
+          valuating: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+        assigned_to: "%{valuator}'a atandı"
+        title: Yatırım projeleri
+        edit: Dosyayı düzenle
+        valuators_assigned:
+          one: Atanan bilirkişi
+          other: "%{count} atanan bilirkişiler"
+        no_valuators_assigned: Hiç bilirkişi atanmadı
+        table_id: KİMLİK
+        table_title: Başlık
+        table_heading_name: Başlık adı
         table_actions: Aksiyon
+        no_investments: "Hiç yatırım projesi yok."
       show:
+        back: Geri
+        title: Yatırım projesi
+        info: Yazar bilgisi
+        by: Tarafından gönderildi
+        sent: Tarihinde gönderildi
+        heading: Başlık
+        dossier: Dosya
+        edit_dossier: Dosya düzenleme
+        price: Fiyat
+        price_first_year: İlk yıl sırasındaki maliyet
         currency: "€"
+        feasibility: Fizibilite
+        feasible: Uygulanabilir
+        unfeasible: Uygulanamaz
+        undefined: Tanımsız
+        valuation_finished: Değerlendirme bitti
+        duration: Zaman kapsamı
+        responsibles: Sorumlular
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
+      edit:
+        dossier: Dosya
+        price_html: "Fiyat (%{currency})"
+        price_first_year_html: "İlk yıl sırasındaki maliyet (%{currency})<small>(isteğe bağlı, veriler herkese açık değil)</small>"
+        price_explanation_html: Fiyat açıklama
+        feasibility: Fizibilite
+        feasible: Uygulanabilir
+        unfeasible: Uygulanamaz
+        undefined_feasible: Beklemede
+        feasible_explanation_html: Fizibilite açıklaması
+        valuation_finished: Değerlendirme bitti
+        valuation_finished_alert: "Bu raporu tamamlandı olarak işaretlemek istediğinizden emin misiniz? Bunu yaparsanız, artık değiştirilemez."
+        not_feasible_alert: "Projenin yazarına hemen uygulanamaz raporuyla birlikte bir e-posta gönderilecektir."
+        duration_html: Zaman kapsamı
+        save: Değişiklikleri kaydet
+      notice:
+        valuate: "Dosya güncellendi"
+      valuation_comments: Değerlendirme yorumları
+      not_in_valuating_phase: Yatırımlar sadece Bütçe değerlendirme aşamasındayken değerlendirilebilir
     spending_proposals:
       index:
+        geozone_filter_all: Tüm bölgeler
         filters:
           valuation_open: Açık
+          valuating: Değerlendirme altında
+          valuation_finished: Değerlendirme bitti
+        title: Katılımcı bütçeleme için yatırım projeleri
         edit: Düzenleme
       show:
+        back: Geri
+        heading: Yatırım projesi
+        info: Yazar bilgisi
+        association_name: Dernek
+        by: Tarafından gönderildi
+        sent: Tarihinde gönderildi
+        geozone: Kapsam
+        dossier: Dosya
+        edit_dossier: Dosya düzenleme
+        price: Fiyat
+        price_first_year: İlk yıl sırasındaki maliyet
         currency: "€"
+        feasibility: Fizibilite
+        feasible: Uygulanabilir
+        not_feasible: Uygulanamaz
+        undefined: Tanımsız
+        valuation_finished: Değerlendirme bitti
+        time_scope: Zaman kapsamı
+        internal_comments: Dahili yorumlar
+        responsibles: Sorumlular
+        assigned_admin: Atanmış yönetici
+        assigned_valuators: Atanmış bilirkişiler
       edit:
+        dossier: Dosya
+        price_html: "Fiyat (%{currency})"
+        price_first_year_html: "İlk yıl sırasındaki maliyet (%{currency})"
         currency: "€"
+        price_explanation_html: Fiyat açıklaması
+        feasibility: Fizibilite
+        feasible: Uygulanabilir
+        not_feasible: Uygulanamaz
+        undefined_feasible: Beklemede
+        feasible_explanation_html: Fizibilite açıklaması
+        valuation_finished: Değerlendirme bitti
+        time_scope_html: Zaman kapsamı
+        internal_comments_html: Dahili yorumlar
+        save: Değişiklikleri kaydet
+      notice:
+        valuate: "Dosya güncellendi"

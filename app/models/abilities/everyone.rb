@@ -14,13 +14,14 @@ module Abilities
         poll.expired? && poll.stats_enabled?
       end
       can :read, Poll::Question
-      can [:read, :welcome], Budget
-      can :read, SpendingProposal
       can :read, User
+      can [:read, :welcome], Budget
       can [:read], Budget
       can [:read], Budget::Group
       can [:read, :print, :json_data], Budget::Investment
-      can [:read_results, :read_executions], Budget, phase: "finished"
+      can(:read_results, Budget) { |budget| budget.results_enabled? && budget.finished? }
+      can(:read_stats, Budget) { |budget| budget.stats_enabled? && budget.valuating_or_later? }
+      can :read_executions, Budget, phase: "finished"
       can :new, DirectMessage
       can [:read, :debate, :draft_publication, :allegations, :result_publication,
            :proposals, :milestones], Legislation::Process, published: true

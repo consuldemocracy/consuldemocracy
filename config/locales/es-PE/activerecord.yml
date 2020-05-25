@@ -317,8 +317,8 @@ es-PE:
         signature:
           attributes:
             document_number:
-              not_in_census: 'No verificado por Padrón'
-              already_voted: 'Ya ha votado esta propuesta'
+              not_in_census: "No verificado por Padrón"
+              already_voted: "Ya ha votado esta propuesta"
         site_customization/page:
           attributes:
             slug:

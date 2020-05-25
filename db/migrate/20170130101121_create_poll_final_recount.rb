@@ -1,4 +1,4 @@
-class CreatePollFinalRecount < ActiveRecord::Migration
+class CreatePollFinalRecount < ActiveRecord::Migration[4.2]
   def change
     create_table :poll_final_recounts do |t|
       t.integer  :booth_assignment_id

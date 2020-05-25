@@ -37,7 +37,7 @@ module Budgets
         end
 
         def load_budget
-          @budget = Budget.find(params[:budget_id])
+          @budget = Budget.find_by_slug_or_id! params[:budget_id]
         end
 
         def load_ballot

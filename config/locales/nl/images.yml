@@ -14,7 +14,6 @@ nl:
       destroy:
         notice: Afbeelding is succesvol verwijderd.
         alert: Kan de afbeelding niet verwijderen.
-        confirm: Weet je zeker dat je de afbeelding wilt verwijderen? Deze actie kan niet ongedaan gemaakt worden.
     errors:
       messages:
         in_between: moet tussen %{min} en %{max} zijn

@@ -6,6 +6,7 @@ describe Abilities::Administrator do
 
   let(:user) { administrator.user }
   let(:administrator) { create(:administrator) }
+  let(:poll) { create(:poll, :current, stats_enabled: false, results_enabled: false) }
 
   let(:other_user) { create(:user) }
   let(:hidden_user) { create(:user, :hidden) }
@@ -27,6 +28,8 @@ describe Abilities::Administrator do
   let(:hidden_debate) { create(:debate, :hidden) }
   let(:hidden_comment) { create(:comment, :hidden) }
   let(:hidden_proposal) { create(:proposal, :hidden) }
+
+  let(:dashboard_administrator_task) { create(:dashboard_administrator_task) }
 
   it { should be_able_to(:index, Debate) }
   it { should be_able_to(:show, debate) }
@@ -64,11 +67,6 @@ describe Abilities::Administrator do
   it { should be_able_to(:comment_as_administrator, legislation_question) }
   it { should_not be_able_to(:comment_as_moderator, legislation_question) }
 
-  it { should be_able_to(:read, SpendingProposal) }
-  it { should be_able_to(:update, SpendingProposal) }
-  it { should be_able_to(:valuate, SpendingProposal) }
-  it { should be_able_to(:destroy, SpendingProposal) }
-
   it { should be_able_to(:create, Budget) }
   it { should be_able_to(:update, Budget) }
   it { should be_able_to(:read_results, Budget) }
@@ -85,4 +83,11 @@ describe Abilities::Administrator do
   it { should be_able_to(:destroy, proposal_document) }
   it { should_not be_able_to(:destroy, budget_investment_image) }
   it { should_not be_able_to(:destroy, budget_investment_document) }
+  it { should be_able_to(:manage, Dashboard::Action) }
+
+  it { should be_able_to(:stats, poll) }
+  it { should be_able_to(:results, poll) }
+
+  it { is_expected.to be_able_to :manage, Dashboard::AdministratorTask }
+  it { is_expected.to be_able_to :manage, dashboard_administrator_task }
 end

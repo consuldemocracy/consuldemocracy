@@ -1,4 +1,20 @@
 tr:
   images:
+    remove_image: Resmi kaldır
     form:
+      title: Açıklayıcı görüntü
+      title_placeholder: Resim için açıklayıcı bir başlık ekleyin
+      attachment_label: Resim seç
+      delete_button: Resmi kaldır
+      note: "Aşağıdaki içerik türlerinden bir resim yükleyebilirsiniz: %{accepted_content_types}, %{max_file_size} MB'ye kadar."
+      add_new_image: Resim ekle
       admin_title: "Fotoğraf"
+      admin_alt_text: "Resim için alternatif metin"
+    actions:
+      destroy:
+        notice: Resim başarıyla silindi.
+        alert: Resim yok edilemez.
+    errors:
+      messages:
+        in_between: '%{min} ve %{max} arasında olması gereklidir'
+        wrong_content_type: içerik türü %{content_type} kabul edilen içerik türlerinin %{accepted_content_types} hiçbiriyle eşleşmiyor

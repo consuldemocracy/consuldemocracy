@@ -1,13 +1,19 @@
-# Cómo Contribuir a este Projecto
+# Cómo Contribuir a este Proyecto
 
-## Miembros del equipo
+## Miembros del equipo core
 
-* Raimond García [github](https://github.com/voodoorai2000) | [twitter](https://twitter.com/voodoorai2000)
-* Juanjo Bazán [github](https://github.com/xuanxu) | [twitter](https://twitter.com/xuanxu)
-* Enrique García Cota [github](https://github.com/kikito) | [twitter](https://twitter.com/otikik)
-* Alberto García Cabeza [github](https://github.com/decabeza)
-* Alberto Calderón [github](https://github.com/bertocq) | [twitter](https://twitter.com/bertocq)
-* Maria Checa [github](https://github.com/MariaCheca)
+* [Alberto García](https://github.com/decabeza)
+* [Javi Martín](https://github.com/javierm)
+* [Julián Herrero](https://github.com/microweb10)
+* [Raimond García](https://github.com/voodoorai2000)
+
+## Todos los demás contribuidores
+
+Además del equipo formal, hay [más de cien contribuidores](https://github.com/consul/consul/graphs/contributors). ¡Muchas gracias por vuestro código! También estamos muy agradecidos a las personas que contribuyen de otras formas, incluida la documentación, traducciones, evangelismo, administración de sistemas, comunicación, organización y más.
+
+Finalmente, un agradecimiento especial a los antiguos miembros del equipo core. Conocidos con cariño como El Alumni:
+
+[Juanjo Bazán](https://github.com/xuanxu), [Enrique García Cota](https://github.com/kikito), [Alberto Calderón](https://github.com/bertocq), [María Checa](https://github.com/mariacheca)
 
 ## Código de conducta
 

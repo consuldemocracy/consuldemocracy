@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin tags" do
+describe "Admin tags" do
 
-  background do
+  before do
     @tag1 = create(:tag, :category)
     login_as(create(:administrator).user)
   end
@@ -40,7 +40,7 @@ feature "Admin tags" do
     expect(page).to have_content tag2.name
 
     within("#tag_#{tag2.id}") do
-      click_link "Destroy topic"
+      click_link "Delete topic"
     end
 
     visit admin_tags_path
@@ -59,7 +59,7 @@ feature "Admin tags" do
     expect(page).to have_content tag2.name
 
     within("#tag_#{tag2.id}") do
-      click_link "Destroy topic"
+      click_link "Delete topic"
     end
 
     visit admin_tags_path

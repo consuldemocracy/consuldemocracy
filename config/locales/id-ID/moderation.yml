@@ -48,6 +48,7 @@ id:
       flagged_debates: Perdebatan
       flagged_investments: Anggaran investasi
       proposals: Proposal
+      proposal_notifications: Pemberitahuan proposal
       users: Memblokir pengguna
     proposals:
       index:
@@ -80,6 +81,7 @@ id:
         headers:
           moderate: Moderat
           budget_investment: Anggaran investasi
+        hide_budget_investments: Penetapan anggaran investasi
         ignore_flags: Tandai seperti yang dilihat
         order: Dipesan oleh
         orders:
@@ -97,11 +99,13 @@ id:
           ignored: Tandai seperti yang dilihat
         headers:
           moderate: Moderat
+          proposal_notification: Proposal pemberitahuan
         hide_proposal_notifications: Sembunyikan usulan
         ignore_flags: Tandai seperti yang dilihat
         order: Dipesan oleh
         orders:
           created_at: Terbaru
+          moderated: Dimoderasi
         title: Pemberitahuan proposal
     users:
       index:

@@ -4,8 +4,8 @@
     <%= f.hidden_field :value,
                         value: (setting.enabled? ? "" : "active") %>
 
-    <%= f.submit(t("admin.settings.index.features.#{setting.enabled? ? 'disable' : 'enable'}"),
-          class: "button #{setting.enabled? ? 'hollow alert' : 'success'}",
+    <%= f.submit(t("admin.settings.index.features.#{setting.enabled? ? "disable" : "enable"}"),
+          class: "button #{setting.enabled? ? "hollow alert" : "success"}",
           data: {confirm: t("admin.actions.confirm")}) %>
   <% end %>
 </div>

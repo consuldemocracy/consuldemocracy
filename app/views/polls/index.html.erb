@@ -18,7 +18,7 @@
       </div>
 		<% end %>
 
-    <%= render 'shared/filter_subnav', i18n_namespace: "polls.index" %>
+    <%= render "shared/filter_subnav", i18n_namespace: "polls.index" %>
 
     <% if @polls.any? %>
       <% polls_by_geozone_restriction = @polls.group_by(&:geozone_restricted) %>
@@ -27,14 +27,14 @@
         <h3 class="section-title-divider">
           <span><%= t("polls.index.no_geozone_restricted") %></span>
         </h3>
-        <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[false]} %>
+        <%= render partial: "poll_group", locals: {poll_group: polls_by_geozone_restriction[false]} %>
       <% end %>
 
       <% if polls_by_geozone_restriction[true].present? %>
         <h3 class="section-title-divider">
           <span><%= t("polls.index.geozone_restricted") %></span>
         </h3>
-        <%= render partial: 'poll_group', locals: {poll_group: polls_by_geozone_restriction[true]} %>
+        <%= render partial: "poll_group", locals: {poll_group: polls_by_geozone_restriction[true]} %>
       <% end %>
 
       <%= paginate @polls %>

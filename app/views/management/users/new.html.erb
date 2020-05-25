@@ -7,11 +7,11 @@
       <%= f.hidden_field :document_type %>
       <%= f.hidden_field :document_number %>
       <%= f.text_field :username,
-          label: t('management.username_label'),
-          placeholder: t('management.username_label') %>
+          label: t("management.username_label"),
+          placeholder: t("management.username_label") %>
       <%= f.text_field :email,
-          label: t('management.users.email_optional_label'),
-          placeholder: t('management.email_label') %>
+          label: t("management.users.email_optional_label"),
+          placeholder: t("management.email_label") %>
       <div class="date-of-birth">
         <%= f.label t("management.date_of_birth") %>
         <%= f.date_select :date_of_birth,

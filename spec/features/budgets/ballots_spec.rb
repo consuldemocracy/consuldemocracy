@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Ballots" do
+describe "Ballots" do
 
   let!(:user)       { create(:user, :level_two) }
   let!(:budget)     { create(:budget, phase: "balloting") }
@@ -8,9 +8,58 @@ feature "Ballots" do
   let!(:california) { create(:budget_heading, group: states, name: "California", price: 1000) }
   let!(:new_york)   { create(:budget_heading, group: states, name: "New York", price: 1000000) }
 
+  context "Load" do
+
+    let(:ballot) { create(:budget_ballot, user: user, budget: budget) }
+
+    before do
+      budget.update(slug: "budget_slug")
+      ballot.investments << create(:budget_investment, :selected, heading: california)
+      login_as(user)
+    end
+
+    scenario "finds ballot using budget slug" do
+      visit budget_ballot_path("budget_slug")
+
+      expect(page).to have_content("You have voted one investment")
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit budget_ballot_path("wrong_budget")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit budget_ballot_path(0)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+  end
+
+  context "Lines Load" do
+
+    let!(:investment) { create(:budget_investment, :selected, heading: california) }
+
+    before do
+      create(:budget_ballot, user: user, budget: budget)
+      budget.update(slug: "budget_slug")
+      login_as(user)
+    end
+
+    scenario "finds ballot lines using budget slug", :js do
+      visit budget_investments_path("budget_slug", states, california)
+      add_to_ballot(investment)
+
+      within("#sidebar") { expect(page).to have_content investment.title }
+    end
+
+  end
+
   context "Voting" do
 
-    background do
+    before do
       login_as(user)
       visit budget_path(budget)
     end
@@ -117,6 +166,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment1.title
           expect(page).to have_content "€10,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
 
         add_to_ballot(investment2)
@@ -127,6 +177,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment2.title
           expect(page).to have_content "€20,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
       end
 
@@ -146,6 +197,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).to have_content investment.title
           expect(page).to have_content "€10,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
 
         within("#budget_investment_#{investment.id}") do
@@ -158,6 +210,7 @@ feature "Ballots" do
         within("#sidebar") do
           expect(page).not_to have_content investment.title
           expect(page).not_to have_content "€10,000"
+          expect(page).to have_link("Check and confirm my ballot")
         end
       end
 
@@ -276,7 +329,7 @@ feature "Ballots" do
 
     let!(:investment) { create(:budget_investment, :selected, heading: california) }
 
-    background { login_as(user) }
+    before { login_as(user) }
 
     scenario "Select my heading", :js do
       visit budget_path(budget)
@@ -303,6 +356,7 @@ feature "Ballots" do
 
       within("#budget_investment_#{investment1.id}") do
         find(".remove a").click
+        expect(page).to have_link "Vote"
       end
 
       visit budget_investments_path(budget, heading_id: new_york.id)
@@ -454,7 +508,9 @@ feature "Ballots" do
     visit budget_investments_path(budget, heading_id: new_york.id)
     add_to_ballot(investment)
 
-    click_link "Check my ballot"
+    within(".budget-heading") do
+      click_link "Check and confirm my ballot"
+    end
 
     expect(page).to have_content("You have voted one investment")
 

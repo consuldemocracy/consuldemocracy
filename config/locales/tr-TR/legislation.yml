@@ -1,13 +1,125 @@
 tr:
   legislation:
     annotations:
+      comments:
+        see_all: Hepsini gör
+        see_complete: Tamamını gör
+        comments_count:
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+        replies_count:
+          one: "%{count} yanıt"
+          other: "%{count} yanıtlar"
+        cancel: İptal
+        publish_comment: Yorumu Yayınla
+      form:
+        phase_not_open: Bu aşama açık değil
+        login_to_comment: Bir yorum bırakmak için %{signin} veya %{signup} yapmalısınız.
+        signin: Oturum aç
+        signup: Kaydol
       index:
         title: Yorumlar
+        comments_about: Yorumlar hakkında
+        see_in_context: Bağlam içinde gör
+        comments_count:
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
       show:
         title: Yorum
+      version_chooser:
+        seeing_version: Sürüm için yorumlar
+        see_text: Metin taslağını gör
     draft_versions:
+      changes:
+        title: Değişiklikler
+        seeing_changelog_version: Revizyon değişiklikleri özeti
+        see_text: Taslak metni gör
       show:
+        loading_comments: Yorumlar yükleniyor
+        seeing_version: Taslak sürümü görüyorsunuz
+        select_draft_version: Taslak seç
+        select_version_submit: bakın
+        updated_at: '%{date} ''de güncellendi'
+        see_changes: değişikliklerin özetini gör
+        see_comments: Tüm yorumları gör
+        text_toc: İçindekiler
+        text_body: Metin
         text_comments: Yorumlar
     processes:
+      header:
+        additional_info: Ek bilgi
+        description: Tanımlama
+        more_info: Daha fazla bilgi ve içerik
+      proposals:
+        empty_proposals: Hiç öneri yok
+        filters:
+          random: Rastgele
+          winners: Seçilmiş
+      debate:
+        empty_questions: Hiç soru yok
+        participate: Tartışmaya katıl
+      index:
+        filter: Filtre
+        filters:
+          open: Açık işlemler
+          past: Geçmiş
+        no_open_processes: Açık işlemler bulunmuyor
+        no_past_processes: Geçmiş işlemler bulunmuyor
+        section_header:
+          icon_alt: Katılımcı mevzuat simgesi
+          title: Katılımcı mevzuat
+          help: Katılımcı mevzuat hakkında yardım
+        section_footer:
+          title: Katılımcı mevzuat hakkında yardım
+          description: Yeni yönetmeliklerin veya stratejilerin onaylanmasından önce tartışmalara ve işlemlere katılın. Fikriniz dikkate alınacaktır.
+      phase_not_open:
+        not_open: Bu aşama henüz açık değil
+      phase_empty:
+        empty: Henüz hiçbir şey yayınlanmadı
+      process:
+        see_latest_comments: Son yorumları gör
+        see_latest_comments_title: Bu işlemdeki yorum
       shared:
+        key_dates: Katılım aşamaları
+        homepage: Ana sayfa
+        debate_dates: Tartışma
+        draft_publication_date: Taslak yayın
         allegations_dates: Yorumlar
+        result_publication_date: Son sonuç yayını
+        milestones_date: Takip ediliyor
+        proposals_dates: Öneriler
+    questions:
+      comments:
+        comment_button: Cevabı yayınla
+        comments_title: Açık cevaplar
+        comments_closed: Kapalı aşama
+        form:
+          leave_comment: Cevabını bırak
+      question:
+        comments:
+          zero: Yorum yok
+          one: "%{count} yorum"
+          other: "%{count} yorumlar"
+        debate: Tartışma
+      show:
+        answer_question: Cevabı gönder
+        next_question: Sonraki soru
+        first_question: İlk soru
+        share: Paylaş
+        title: Katılımcı mevzuat işlemi
+      participation:
+        phase_not_open: Bu aşama açık değil
+        organizations: Organizasyonların tartışmaya katılmasına izin verilmemektedir
+        signin: Oturum aç
+        signup: Kaydol
+        unauthenticated: Katılmak için %{signin} veya %{signup} yapmalısınız.
+        verified_only: Yalnızca doğrulanan kullanıcılar katılabilir, %{verify_account}.
+        verify_account: hesabınızı doğrulayın
+        debate_phase_not_open: Tartışma aşaması bitti ve cevaplar artık kabul edilmiyor
+    shared:
+      share: Paylaş
+      share_comment: İşlem taslağından %{process_name} %{version_name}'e yorum
+    proposals:
+      form:
+        tags_label: "Kategoriler"
+      not_verified: "Önerileri oylamak için %{verify_account}."

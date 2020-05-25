@@ -1,0 +1,19 @@
+<td style="padding-bottom: 20px; padding-left: 10px;">
+
+  <h1 style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;">
+    <%= t("mailers.evaluation_comment.title", investment: @email.commentable.title) %>
+  </h1>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.evaluation_comment.hi") %> <strong><%= @email_to.name %></strong>,
+  </p>
+
+  <p style="font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-weight: normal;line-height: 24px;">
+    <%= t("mailers.evaluation_comment.new_comment_by_html", commenter: @email.comment.author.name, investment: valuation_comments_link(@email.commentable)) %>
+  </p>
+
+  <%= t("mailers.evaluation_comment.commenter_info", commenter: @email.comment.author.name, time: l(@email.comment.created_at)) %>
+  <div style="border-left: 2px solid #DEE0E3;font-family: 'Open Sans','Helvetica Neue',arial,sans-serif;font-size: 14px;font-style: italic;font-weight: normal;line-height: 24px;margin-left: 20px;padding: 10px;">
+    <%= simple_format text_with_links(@email.comment.body), {}, sanitize: false %>
+  </div>
+</td>

@@ -1,4 +1,4 @@
-class SetOrganizationNameLimit < ActiveRecord::Migration
+class SetOrganizationNameLimit < ActiveRecord::Migration[4.2]
   def up
     execute "ALTER TABLE organizations ALTER COLUMN name TYPE VARCHAR(60) USING SUBSTR(name, 1, 60)"
     change_column :organizations, :name, :string, limit: 60

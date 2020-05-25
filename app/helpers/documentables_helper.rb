@@ -1,7 +1,7 @@
 module DocumentablesHelper
 
   def documentable_class(documentable)
-    documentable.class.name.parameterize('_')
+    documentable.class.name.parameterize(separator: "_")
   end
 
   def max_documents_allowed(documentable)
@@ -17,15 +17,11 @@ module DocumentablesHelper
   end
 
   def accepted_content_types_extensions(documentable_class)
-    documentable_class.accepted_content_types
-                      .collect{ |content_type| ".#{content_type.split('/').last}" }
-                      .join(",")
+    Setting.accepted_content_types_for("documents").map { |content_type| ".#{content_type}" }.join(",")
   end
 
   def documentable_humanized_accepted_content_types(documentable_class)
-    documentable_class.accepted_content_types
-                      .collect{ |content_type| content_type.split("/").last }
-                      .join(", ")
+    Setting.accepted_content_types_for("documents").join(", ")
   end
 
   def documentables_note(documentable)

@@ -64,7 +64,7 @@ de:
           open: Offene Prozesse
           past: Vorherige
         no_open_processes: Es gibt keine offenen Verfahren
-        no_past_processes: Es gibt keine vergangene Prozesse
+        no_past_processes: Keine vergangenen Beteiligungsverfahren vorhanden
         section_header:
           icon_alt: Gesetzgebungsverfahren Icon
           title: Gesetzgebungsverfahren
@@ -78,9 +78,9 @@ de:
         empty: Keine Veröffentlichung bisher
       process:
         see_latest_comments: Neueste Kommentare anzeigen
-        see_latest_comments_title: Kommentar zu diesem Prozess
+        see_latest_comments_title: Dieses Beteiligungsverfahren kommentieren
       shared:
-        key_dates: Die wichtigsten Termine
+        key_dates: Teilnahmephasen
         homepage: Homepage
         debate_dates: Diskussion
         draft_publication_date: Veröffentlichungsentwurf

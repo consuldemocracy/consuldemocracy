@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Users" do
+describe "Users" do
 
-  background do
+  before do
     login_as_manager
   end
 

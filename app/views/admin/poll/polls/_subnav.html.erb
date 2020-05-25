@@ -1,18 +1,20 @@
 <ul class="menu simple clear" id="assigned-resources-tabs">
-  <% if controller_name == "polls" %>
-    <li class="is-active">
-      <h2>
-        <%= t("admin.polls.show.questions_tab") %>
-        (<%= @poll.questions.count %>)
-      </h2>
-    </li>
-  <% else %>
-    <li>
-      <%= link_to admin_poll_path(@poll) do %>
-        <%= t("admin.polls.show.questions_tab") %>
-        (<%= @poll.questions.count %>)
-      <% end %>
-    </li>
+  <% unless @poll.budget_poll? %>
+    <% if controller_name == "polls" %>
+      <li class="is-active">
+        <h2>
+          <%= t("admin.polls.show.questions_tab") %>
+          (<%= @poll.questions.count %>)
+        </h2>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to admin_poll_path(@poll) do %>
+          <%= t("admin.polls.show.questions_tab") %>
+          (<%= @poll.questions.count %>)
+        <% end %>
+      </li>
+    <% end %>
   <% end %>
 
   <% if controller_name == "booth_assignments" %>

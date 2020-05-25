@@ -32,4 +32,42 @@ describe Budget::Group do
     end
 
   end
+
+  describe "#sort_by_name" do
+    it "returns groups sorted by name ASC" do
+      thinkers = create(:budget_group, name: "Mmmm...")
+      sleepers = create(:budget_group, name: "Zzz...")
+      startled = create(:budget_group, name: "Aaaaah!")
+
+      expect(Budget::Group.sort_by_name).to eq [startled, thinkers, sleepers]
+    end
+
+    it "returns groups with multiple translations only once" do
+      create(:budget_group, name_en: "English", name_es: "Spanish")
+
+      expect(Budget::Group.sort_by_name.count).to eq 1
+    end
+
+    context "fallback locales" do
+      before do
+        allow(I18n.fallbacks).to receive(:[]).and_return([:es])
+        Globalize.set_fallbacks_to_all_available_locales
+      end
+
+      it "orders by name considering fallback locale," do
+        budget = create(:budget, name: "Teams")
+        charlie = create(:budget_group, budget: budget, name: "Charlie")
+        delta = create(:budget_group, budget: budget, name: "Delta")
+        zulu = Globalize.with_locale(:es) do
+          create(:budget_group, budget: budget, name: "Zulu", name_fr: "Alpha")
+        end
+        bravo = Globalize.with_locale(:es) do
+          create(:budget_group, budget: budget, name: "Bravo")
+        end
+
+        expect(Budget::Group.sort_by_name.count).to eq 4
+        expect(Budget::Group.sort_by_name).to eq [bravo, charlie, delta, zulu]
+      end
+    end
+  end
 end

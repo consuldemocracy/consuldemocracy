@@ -62,7 +62,7 @@ id:
       most_commented: Paling commented
     select_order: Urut berdasarkan
     show:
-      return_to_commentable: 'Kembali ke '
+      return_to_commentable: "Kembali ke "
   comments_helper:
     comment_button: Menerbitkan komentar
     comment_link: Komentar
@@ -204,8 +204,7 @@ id:
       available_locales: Bahasa yang tersedia
       collaborative_legislation: Undang-undang proses
       debates: Perdebatan
-      external_link_blog: Blog
-      locale: 'Bahasa:'
+      locale: "Bahasa:"
       logo: Logo CONSUL
       management: Manajemen
       moderation: Moderasi
@@ -226,7 +225,7 @@ id:
         notifications: Pemberitahuan
         no_notifications: "Anda tidak memiliki pemberitahuan baru"
     admin:
-      watch_form_message: 'Anda memiliki perubahan yang belum disimpan. Apakah anda mengkonfirmasi untuk meninggalkan halaman?'
+      watch_form_message: "Anda memiliki perubahan yang belum disimpan. Apakah anda mengkonfirmasi untuk meninggalkan halaman?"
   notifications:
     index:
       empty_notifications: Anda tidak memiliki pemberitahuan baru.
@@ -290,8 +289,6 @@ id:
       other: Lainnya
     form:
       geozone: Lingkup operasi
-      proposal_external_url: Tautkan ke dokumentasi tambahan
-      proposal_question: Proposal pertanyaan
       proposal_responsible_name: Nama lengkap orang yang mengajukan proposal
       proposal_responsible_name_note: "(secara individu atau sebagai wakil dari kolektif; tidak akan ditampilkan dipublikasikan)"
       proposal_summary: Proposal ringkasan
@@ -339,7 +336,7 @@ id:
       search_results_html:
         other: " berisi istilah <strong>%{search_term}</strong>"
       select_order: Dipesan oleh
-      select_order_long: 'Anda sedang melihat proposal sesuai untuk:'
+      select_order_long: "Anda sedang melihat proposal sesuai untuk:"
       start_proposal: Buat proposal
       title: Proposal
       top: Top mingguan
@@ -367,8 +364,6 @@ id:
         guide: "Sekarang Anda dapat berbagi sehingga orang dapat mulai mendukung."
         edit: "Sebelum itu mendapat bersama, Anda akan dapat mengubah teks yang Anda inginkan."
         view_proposal: Tidak sekarang, pergi ke proposal saya
-      improve_info: "Meningkatkan kampanye Anda dan mendapatkan lebih mendukung"
-      improve_info_link: "Lihat Selengkapnya"
       already_supported: Anda telah mendukung proyek investasi ini. Bagikan!
       comments:
         zero: Tidak ada komentar
@@ -386,12 +381,11 @@ id:
       archived: "Proposal ini telah Diarsipkan dan tidak dapat mengumpulkan mendukung."
     show:
       author_deleted: Pengguna dihapus
-      code: 'Proposal kode:'
+      code: "Proposal kode:"
       comments:
         zero: Tidak ada komentar
         other: "%{count} komentar"
       comments_tab: Komentar
-      edit_proposal_link: Sunting
       flag: Perdebatan ini telah ditandai sebagai tidak pantas oleh beberapa pengguna.
       login_to_comment: Anda harus %{signin} atau %{signup} untuk meninggalkan sebuah komentar.
       notifications_tab: Pemberitahuan
@@ -400,10 +394,8 @@ id:
       retired_warning_link_to_explanation: Baca penjelasan sebelum pemungutan suara untuk itu.
       retired: Proposal pensiun oleh penulis
       share: Berbagi
-      send_notification: Mengirim pemberitahuan
       no_notifications: "Proposal ini memiliki pemberitahuan."
       embed_video_title: "Video pada %{proposal}"
-      title_external_url: "Dokumentasi tambahan"
       title_video_url: "Video eksternal"
       author: Penulis
     update:
@@ -454,11 +446,10 @@ id:
       stats_menu: "Partisipasi statistik"
       results_menu: "Hasil jajak pendapat"
       stats:
-        title: "Partisipasi data"
-        total_participation: "Total partisipasi"
         total_votes: "Total jumlah suara yang diberikan"
         votes: "SUARA"
         web: "WEB"
+        mail: "Pesan"
         booth: "BILIK"
         total: "TOTAL"
         valid: "Berlaku"
@@ -468,11 +459,9 @@ id:
         title: "Pertanyaan"
         most_voted_answer: "Jawaban paling banyak suara: "
   poll_questions:
-    create_question: "Membuat pertanyaan"
     show:
       vote_answer: "Suara %{answer}"
       voted: "Anda telah suara %{answer}"
-      voted_token: "Anda dapat menuliskan suara ini pengenal, untuk memeriksa suara anda pada hasil akhir:"
   proposal_notifications:
     new:
       title: "Kirim pesan"
@@ -484,29 +473,29 @@ id:
     show:
       back: "Kembali ke aktivitas saya"
   shared:
-    edit: 'Sunting'
-    save: 'Simpan'
-    delete: Hapus
+    edit: "Sunting"
+    save: "Simpan"
+    delete: "Hapus"
     "yes": "Ya"
     "no": "Tidak"
     search_results: "Hasil pencarian"
     advanced_search:
-      author_type: 'Oleh penulis kategori'
-      author_type_blank: 'Pilih sebuah kategori'
-      date: 'Menurut tanggal'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: 'Pilih sebuah tanggal'
-      date_1: '24 jam terakhir'
-      date_2: 'Minggu lalu'
-      date_3: 'Bulan lalu'
-      date_4: 'Tahun lalu'
-      date_5: 'Disesuaikan'
-      from: 'Dari'
-      general: 'Dengan teks'
-      general_placeholder: 'Menulis teks'
-      search: 'Penyaring'
-      title: 'Pencarian lanjutan'
-      to: 'Kepada'
+      author_type: "Oleh penulis kategori"
+      author_type_blank: "Pilih sebuah kategori"
+      date: "Menurut tanggal"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "Pilih sebuah tanggal"
+      date_1: "24 jam terakhir"
+      date_2: "Minggu lalu"
+      date_3: "Bulan lalu"
+      date_4: "Tahun lalu"
+      date_5: "Disesuaikan"
+      from: "Dari"
+      general: "Dengan teks"
+      general_placeholder: "Menulis teks"
+      search: "Penyaring"
+      title: "Pencarian lanjutan"
+      to: "Kepada"
     author_info:
       author_deleted: Pengguna dihapus
     back: Kembali
@@ -568,7 +557,6 @@ id:
       next_slide: Selanjutnya Meluncur
     documentation: Tautkan ke dokumentasi tambahan
   social:
-    blog: "%{org} Blog"
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
     youtube: "%{org} YouTube"
@@ -577,8 +565,8 @@ id:
     instagram: "%{org} Instagram"
   spending_proposals:
     form:
-      association_name_label: 'Jika anda mengusulkan nama sebuah asosiasi atau kolektif menambahkan nama di sini'
-      association_name: 'Asosiasi nama'
+      association_name_label: "Jika anda mengusulkan nama sebuah asosiasi atau kolektif menambahkan nama di sini"
+      association_name: "Asosiasi nama"
       description: Deskripsi
       external_url: Tautkan ke dokumentasi tambahan
       geozone: Lingkup operasi
@@ -610,7 +598,7 @@ id:
       start_new: Buat proposal pengeluaran
     show:
       author_deleted: Pengguna dihapus
-      code: 'Usulan kode:'
+      code: "Usulan kode:"
       share: Berbagi
     wrong_price_format: Hanya angka bilangan bulat
     spending_proposal:
@@ -678,8 +666,6 @@ id:
       private_activity: Pengguna ini memutuskan untuk membuat daftar kegiatan pribadi.
       send_private_message: "Kirim pesan pribadi"
     proposals:
-      send_notification: "Kirim pemberitahuan"
-      retire: "Pensiun"
       retired: "Pensiun proposal"
       see: "Melihat proposal"
   votes:
@@ -735,7 +721,7 @@ id:
       user_permission_info: Dengan akun Anda, Anda dapat...
       user_permission_proposal: Membuat proposal baru
       user_permission_support_proposal: Mendukung proposal*
-      user_permission_verify: Untuk melakukan semua tindakan memverifikasi rekening Anda.
+      user_permission_verify: "Untuk melakukan semua tindakan memverifikasi rekening Anda."
       user_permission_verify_info: "* Hanya untuk pengguna pada sensus."
       user_permission_verify_my_account: Memverifikasi account saya
       user_permission_votes: Berpartisipasi pada pemungutan suara akhir

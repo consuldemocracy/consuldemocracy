@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Admin budget investment milestones" do
+describe "Admin budget investment milestones" do
 
   it_behaves_like "translatable",
                   "milestone",

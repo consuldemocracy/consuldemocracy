@@ -19,7 +19,7 @@ module ImagesHelper
   end
 
   def image_errors_on_attachment(image)
-    image.errors[:attachment].join(', ') if image.errors.key?(:attachment)
+    image.errors[:attachment].join(", ") if image.errors.key?(:attachment)
   end
 
   def image_bytes_to_megabytes(bytes)
@@ -32,7 +32,7 @@ module ImagesHelper
 
   def render_destroy_image_link(builder, image)
     if !image.persisted? && image.cached_attachment.present?
-      link_to t('images.form.delete_button'),
+      link_to t("images.form.delete_button"),
               direct_upload_destroy_url("direct_upload[resource_type]": image.imageable_type,
                                         "direct_upload[resource_id]": image.imageable_id,
                                         "direct_upload[resource_relation]": "image",
@@ -41,7 +41,7 @@ module ImagesHelper
               remote: true,
               class: "delete remove-cached-attachment"
     else
-      link_to_remove_association t('images.form.delete_button'), builder, class: "delete remove-image"
+      link_to_remove_association t("images.form.delete_button"), builder, class: "delete remove-image"
     end
   end
 
@@ -54,7 +54,7 @@ module ImagesHelper
     html += builder.file_field :attachment,
                                label: false,
                                accept: imageable_accepted_content_types_extensions,
-                               class: 'js-image-attachment',
+                               class: "js-image-attachment",
                                data: {
                                  url: image_direct_upload_url(imageable),
                                  nested_image: true

@@ -67,7 +67,7 @@ sq:
       most_commented: Më të komentuarit
     select_order: Ndaj sipas
     show:
-      return_to_commentable: 'Shko prapa ne '
+      return_to_commentable: "Shko prapa ne "
   comments_helper:
     comment_button: Publiko komentin
     comment_link: Koment
@@ -218,8 +218,7 @@ sq:
       available_locales: Gjuhët në dispozicion
       collaborative_legislation: "\nProceset e legjislacionit"
       debates: Debate
-      external_link_blog: Blog
-      locale: 'Gjuha:'
+      locale: "Gjuha:"
       logo: Logoja
       management: Menaxhimi
       moderation: Moderim
@@ -241,7 +240,7 @@ sq:
         notifications: Njoftimet
         no_notifications: "Ju nuk keni njoftime të reja"
     admin:
-      watch_form_message: 'Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?'
+      watch_form_message: "Ju keni ndryshime të paruajtura. A konfirmoni të dilni nga faqja?"
   notifications:
     index:
       empty_notifications: Ju nuk keni njoftime të reja
@@ -291,6 +290,8 @@ sq:
     create:
       form:
         submit_button: Krijo propozim
+    share:
+      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
     edit:
       editing: Ndrysho propozimin
       form:
@@ -312,9 +313,6 @@ sq:
       other: Tjetër
     form:
       geozone: Fusha e veprimit
-      proposal_external_url: Lidhje me dokumentacionin shtesë
-      proposal_question: Pyetje për propozim
-      proposal_question_example_html: "Duhet të përmblidhet në një pyetje me një përgjigje Po ose Jo"
       proposal_responsible_name: Emri i plotë i personit që dorëzon propozimin
       proposal_responsible_name_note: "(individualisht ose si përfaqësues i një kolektivi, nuk do të shfaqet publikisht)"
       proposal_summary: Përmbledhje e propozimit
@@ -368,7 +366,7 @@ sq:
         one: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
         other: "që përmbajnë termin  <strong>'%{search_term}'</strong>"
       select_order: Renditur nga
-      select_order_long: 'Ju shikoni propozime sipas:'
+      select_order_long: "Ju shikoni propozime sipas:"
       start_proposal: Krijo propozim
       title: Propozime
       top: Top javore
@@ -397,8 +395,6 @@ sq:
         guide: "Tani mund ta shpërndani atë në mënyrë që njerëzit të fillojnë mbështetjen."
         edit: "Para se të shpërndahet, do të jeni në gjendje ta ndryshoni tekstin si ju pëlqen."
         view_proposal: Jo tani, shko tek propozimi im
-      improve_info: "Përmirësoni fushatën tuaj dhe merrni më shumë mbështetje"
-      improve_info_link: "Shiko më shumë informacion"
       already_supported: Ju e keni mbështetur tashmë këtë propozim. Shperndaje!
       comments:
         zero: Nuk ka komente
@@ -420,13 +416,12 @@ sq:
       successful: "Ky propozim ka arritur mbështetjen e kërkuar."
     show:
       author_deleted: Përdoruesi u fshi
-      code: 'Kodi Propozimit'
+      code: "Kodi Propozimit"
       comments:
         zero: Nuk ka komente
         one: 1 koment
         other: "%{count} komente"
       comments_tab: Komentet
-      edit_proposal_link: Ndrysho
       flag: Ky propozim është shënuar si i papërshtatshëm nga disa përdorues.
       login_to_comment: Ju duhet %{signin} ose %{signup} për të lënë koment.
       notifications_tab: Njoftimet
@@ -435,17 +430,13 @@ sq:
       retired_warning_link_to_explanation: Lexoni shpjegimin para se të votoni për të.
       retired: Propozimet e vecuara nga autori
       share: Shpërndaj
-      send_notification: Dërgo njoftimin
       no_notifications: "Ky propozim ka  njoftime."
       embed_video_title: "Video në %{proposal}"
-      title_external_url: "Dokumentacion shtesë"
       title_video_url: "Video e jashtme"
       author: Autor
     update:
       form:
         submit_button: Ruaj ndryshimet
-    share:
-      message: "Kam përkrahur propozimin %{summary} në%{handle}. Nëse jeni të interesuar, përkrahu gjithashtu!"
   polls:
     all: "Të gjithë"
     no_dates: "Asnjë datë e caktuar"
@@ -496,8 +487,6 @@ sq:
       stats_menu: "Statistikat e pjesëmarrjes"
       results_menu: "Rezultatet e sondazhit"
       stats:
-        title: "Të dhënat pjesëmarrëse"
-        total_participation: "Totali i Pjesëmarrësve"
         total_votes: "Shuma totale e votave të dhëna"
         votes: "Votat"
         web: "WEB"
@@ -510,11 +499,9 @@ sq:
         title: "Pyetjet"
         most_voted_answer: "Përgjigja më e votuar:"
   poll_questions:
-    create_question: "Krijo pyetje"
     show:
       vote_answer: "Votim %{answer}"
       voted: "Ju keni votuar %{answer}"
-      voted_token: "Ju mund të shkruani një identifikues vote, për të kontrolluar votën tuaj në rezultatet përfundimtare:"
   proposal_notifications:
     new:
       title: "Dërgoni mesazh"
@@ -526,29 +513,29 @@ sq:
     show:
       back: "Kthehu te aktiviteti im"
   shared:
-    edit: 'Ndrysho'
-    save: 'Ruaj'
-    delete: Fshi
+    edit: "Ndrysho"
+    save: "Ruaj"
+    delete: "Fshi"
     "yes": "Po"
     "no": "Jo"
     search_results: "Kërko rezultatet"
     advanced_search:
-      author_type: 'Nga kategoria e autorit'
-      author_type_blank: 'Zgjidh nje kategori'
-      date: 'Nga data'
-      date_placeholder: 'DD/MM/YYYY'
-      date_range_blank: 'Zgjidhni një datë'
-      date_1: 'Zgjidhni një datë'
-      date_2: 'Javën e shkuar'
-      date_3: 'Muajin e kaluar'
-      date_4: 'Vitin e kaluar'
-      date_5: 'E personalizuar'
-      from: 'Nga'
-      general: 'Me tekstin'
-      general_placeholder: 'Shkruani tekstin'
-      search: 'Filtër'
-      title: 'Kërkim i avancuar'
-      to: 'Në'
+      author_type: "Nga kategoria e autorit"
+      author_type_blank: "Zgjidh nje kategori"
+      date: "Nga data"
+      date_placeholder: "DD/MM/YYYY"
+      date_range_blank: "Zgjidhni një datë"
+      date_1: "Zgjidhni një datë"
+      date_2: "Javën e shkuar"
+      date_3: "Muajin e kaluar"
+      date_4: "Vitin e kaluar"
+      date_5: "E personalizuar"
+      from: "Nga"
+      general: "Me tekstin"
+      general_placeholder: "Shkruani tekstin"
+      search: "Filtër"
+      title: "Kërkim i avancuar"
+      to: "Në"
     author_info:
       author_deleted: Përdoruesi u fshi
     back: Kthehu pas
@@ -622,7 +609,6 @@ sq:
       see_more: Shiko më shumë rekomandime
       hide: Fshih rekomandimet
   social:
-    blog: "Blogu %{org}"
     facebook: "Facebook %{org}"
     twitter: "Twitter %{org}"
     youtube: "YouTube %{org}"
@@ -631,8 +617,8 @@ sq:
     instagram: " Instagram %{org}"
   spending_proposals:
     form:
-      association_name_label: 'Nëse propozoni në emër të një shoqate apo kolektivi shtoni emrin këtu'
-      association_name: 'Emri i shoqatës'
+      association_name_label: "Nëse propozoni në emër të një shoqate apo kolektivi shtoni emrin këtu"
+      association_name: "Emri i shoqatës"
       description: Përshkrimi
       external_url: Lidhje me dokumentacionin shtesë
       geozone: Fusha e veprimit
@@ -665,7 +651,7 @@ sq:
       start_new: Krijo propozimin e shpenzimeve
     show:
       author_deleted: Përdoruesi u fshi
-      code: 'Kodi Propozimit'
+      code: "Kodi Propozimit"
       share: Shpërndaj
     wrong_price_format: Vetëm numra të plotë
     spending_proposal:
@@ -740,8 +726,6 @@ sq:
       send_private_message: "Dërgo mesazh privat"
       delete_alert: "Jeni i sigurt që doni të fshini projektin tuaj të investimeve? Ky veprim nuk mund të zhbëhet"
     proposals:
-      send_notification: "Dërgo njoftimin"
-      retire: "I vecuar"
       retired: "Propozimet e vecuara"
       see: "Shiko propozimin"
   votes:
@@ -808,7 +792,7 @@ sq:
       user_permission_info: Me llogarinë tuaj ju mund të...
       user_permission_proposal: Krijo propozime të reja
       user_permission_support_proposal: Përkrahni propozimet
-      user_permission_verify: Për të kryer të gjitha veprimet verifikoni llogarinë tuaj.
+      user_permission_verify: "Për të kryer të gjitha veprimet verifikoni llogarinë tuaj."
       user_permission_verify_info: "* Vetëm për përdoruesit e regjistrimit."
       user_permission_verify_my_account: Verifikoni llogarinë time
       user_permission_votes: Merrni pjesë në votimin përfundimtar

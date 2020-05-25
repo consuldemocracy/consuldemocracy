@@ -77,4 +77,9 @@ namespace :db do
       Poll::Officer.create!(user: admin)
     end
   end
+
+  desc "populate the default pages manually"
+  task pages: :environment do
+    load(Rails.root.join("db", "pages.rb"))
+  end
 end

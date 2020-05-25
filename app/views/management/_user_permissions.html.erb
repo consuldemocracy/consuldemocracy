@@ -11,7 +11,7 @@
   <ul>
     <% [:debates, :create_proposals, :support_proposals, :vote_proposals].each do |permission| %>
       <li>
-        <span class="<%= permissions.include?(permission) ? 'icon-check' : 'icon-x' %>"></span>
+        <span class="<%= permissions.include?(permission) ? "icon-check" : "icon-x" %>"></span>
         <%= t("management.permissions.#{permission}") %>
       </li>
     <% end %>

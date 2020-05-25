@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Verify email" do
+describe "Verify email" do
 
   scenario "Verify" do
     user = create(:user,

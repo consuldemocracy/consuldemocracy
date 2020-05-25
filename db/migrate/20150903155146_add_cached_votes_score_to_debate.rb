@@ -1,4 +1,4 @@
-class AddCachedVotesScoreToDebate < ActiveRecord::Migration
+class AddCachedVotesScoreToDebate < ActiveRecord::Migration[4.2]
   def change
     add_column :debates, :cached_votes_score, :integer, default: 0
 

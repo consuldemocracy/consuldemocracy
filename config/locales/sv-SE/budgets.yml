@@ -105,13 +105,15 @@ sv:
           random: slumpvis ordning
           confidence_score: populära
           price: efter pris
+      share:
+        message: "Jag skapade den investering projekt %{title} i %{handle}. Skapa ett investeringsprojekt också!"
       show:
         author_deleted: Användaren är borttagen
         price_explanation: Kostnadsförklaring
         unfeasibility_explanation: Förklaring till varför det inte är genomförbart
-        code_html: 'Kod för budgetförslag: <strong>%{code}</strong>'
-        location_html: 'Plats: <strong>%{location}</strong>'
-        organization_name_html: 'Föreslås på uppdrag av: <strong>%{name}</strong>'
+        code_html: "Kod för budgetförslag: <strong>%{code}</strong>"
+        location_html: "Plats: <strong>%{location}</strong>"
+        organization_name_html: "Föreslås på uppdrag av: <strong>%{name}</strong>"
         share: Dela
         title: Budgetförslag
         supports: Stöd
@@ -120,10 +122,11 @@ sv:
         comments_tab: Kommentarer
         milestones_tab: Milstolpar
         author: Skribent
-        project_unfeasible_html: 'Det här budgetförslaget <strong>har markerats som ej genomförbart</strong> och kommer inte gå vidare till omröstning.'
-        project_selected_html: 'Det här budgetförslaget <strong>har gått vidare</strong> till omröstning.'
-        project_winner: 'Vinnande budgetförslag'
-        project_not_selected_html: 'Det här budgetförslaget <strong>har inte gått vidare</strong> till omröstning.'
+        project_unfeasible_html: "Det här budgetförslaget <strong>har markerats som ej genomförbart</strong> och kommer inte gå vidare till omröstning."
+        project_selected_html: "Det här budgetförslaget <strong>har gått vidare</strong> till omröstning."
+        project_winner: "Vinnande budgetförslag"
+        project_not_selected_html: "Det här budgetförslaget <strong>har inte gått vidare</strong> till omröstning."
+        see_price_explanation: Kostnadsförklaring
       wrong_price_format: Endast heltal
       investment:
         add: Röst

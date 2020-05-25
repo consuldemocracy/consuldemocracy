@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Email campaigns" do
+describe "Email campaigns" do
 
-  background do
+  before do
     @campaign1 = create(:campaign)
     @campaign2 = create(:campaign)
 
@@ -15,8 +15,13 @@ feature "Email campaigns" do
     5.times { visit root_url(track_id: @campaign2.track_id) }
 
     visit admin_stats_path
+    click_link @campaign1.name
 
     expect(page).to have_content "#{@campaign1.name} (3)"
+
+    click_link "Go back"
+    click_link @campaign2.name
+
     expect(page).to have_content "#{@campaign2.name} (5)"
   end
 
@@ -25,8 +30,12 @@ feature "Email campaigns" do
     visit root_url(track_id: "999")
 
     visit admin_stats_path
+    click_link @campaign1.name
 
     expect(page).to have_content "#{@campaign1.name} (1)"
+
+    click_link "Go back"
+
     expect(page).not_to have_content @campaign2.name.to_s
   end
 

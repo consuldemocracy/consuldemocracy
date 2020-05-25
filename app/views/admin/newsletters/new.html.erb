@@ -1,4 +1,9 @@
 <%= back_link_to %>
 <h2><%= t("admin.newsletters.new.title") %></h2>
+<p>
+  <%= t("admin.newsletters.new.header_footer_help_text_html",
+         link: link_to(t("admin.newsletters.new.image_link"),
+                       admin_site_customization_images_path)) %>
+</p>
 
 <%= render "form" %>

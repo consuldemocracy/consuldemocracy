@@ -9,12 +9,12 @@ class Moderation::Budgets::InvestmentsController < Moderation::BaseController
 
   before_action :load_resources, only: [:index, :moderate]
 
-  load_and_authorize_resource class: 'Budget::Investment'
+  load_and_authorize_resource class: "Budget::Investment"
 
   private
 
     def resource_name
-      'budget_investment'
+      "budget_investment"
     end
 
     def resource_model

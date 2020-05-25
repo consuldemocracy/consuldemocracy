@@ -1,0 +1,16 @@
+<div class="sidebar-divider"></div>
+<h2 class="sidebar-title"><%= t("proposals.index.proposals_lists") %></h2>
+
+<p>
+  <%= link_to t("proposals.index.top_link_proposals"),
+              summary_proposals_path,
+              class: "small" %>
+  <br>
+  <%= link_to t("proposals.index.archived_proposals"),
+              proposals_path(order: "archival_date"),
+              class: "small" %>
+  <br>
+  <%= link_to t("proposals.index.retired_proposals_link"),
+              proposals_path(retired: "all"),
+              class: "small" %>
+</p>

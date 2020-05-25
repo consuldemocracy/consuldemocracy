@@ -1,0 +1,1018 @@
+el:
+  account:
+    show:
+      change_credentials_link: Αλλαγή διαπιστευτηρίων μου
+      email_on_comment_label: Ειδοποίηση μέσω email όταν κάποιος σχολιάζει προτάσεις ή συζητήσεις μου
+      email_on_comment_reply_label: Ειδοποίηση μέσω email όταν κάποιος απαντά σε σχόλια μου
+      erase_account_link: Διαγράψτε το λογαριασμό μου
+      finish_verification: Ολοκλήρωση επιβεβαίωσης
+      notifications: Ειδοποιήσεις
+      organization_name_label: Όνομα οργανισμού
+      organization_responsible_name_placeholder: Εκπρόσωπος της οργάνωσης/συλλόγου
+      personal: Προσωπικά στοιχεία
+      phone_number_label: Αριθμός τηλεφώνου
+      public_activity_label: Κρατήστε τη λίστα των δραστηριοτήτων μου δημόσια
+      public_interests_label: Κρατήστε τις ετικέτες από τα στοιχεία που θα ακολουθώ δημόσια
+      public_interests_my_title_list: Ετικέτες στοιχείων που ακολουθείτε
+      public_interests_user_title_list: Ετικέτες στοιχείων που ακολουθεί αυτός ο χρήστης
+      save_changes_submit: Αποθηκεύστε τις αλλαγές
+      subscription_to_website_newsletter_label: Λάβετε με email σχετικές πληροφορίες για την ιστοσελίδα
+      email_on_direct_message_label: Λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου σχετικά με άμεσα μηνύματα
+      email_digest_label: Λάβετε μια περίληψη των ειδοποιήσεων της πρότασης
+      official_position_badge_label: Εμφάνιση σήματος επίσημης θέσης
+      recommendations: Συστάσεις
+      show_debates_recommendations: Προβολή συστάσεων για συζητήσεις
+      show_proposals_recommendations: Προβολή συστάσεων για προτάσεις
+      title: Ο λογαριασμός μου
+      user_permission_debates: Συμμετοχή στις συζητήσεις
+      user_permission_info: Με το λογαριασμό σας, μπορείτε να...
+      user_permission_proposal: Δημιουργία νέων προτάσεων
+      user_permission_support_proposal: Υποστήριξη προτάσεων
+      user_permission_title: Συμμετοχή
+      user_permission_verify: Για να εκτελέσετε όλες αυτές τις ενέργειες, επαληθεύστε το λογαριασμό σας.
+      user_permission_verify_info: "* Μόνο για τους χρήστες στην απογραφή."
+      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
+      username_label: Όνομα χρήστη
+      verified_account: Λογαριασμός επαληθευμένος
+      verify_my_account: Επαληθεύσω το λογαριασμό μου
+  application:
+    close: Κλεισμένο
+    menu: Μενού
+  comments:
+    comments_closed: Τα σχόλια είναι κλειστά
+    verified_only: Να συμμετάσχουν %{verify_account}
+    verify_account: επαλήθευση του λογαριασμού σας
+    comment:
+      admin: Διαχειριστής
+      author: Συγγραφέας
+      deleted: Αυτό το σχόλιο έχει διαγραφεί
+      moderator: Συντονιστής
+      responses:
+        zero: Δεν υπάρχουν απαντήσεις
+        one: 1 απάντηση
+        other: "%{count} απαντήσεις"
+      user_deleted: Χρήστης διεγραμμένος
+      votes:
+        zero: Δεν υπάρχουν ψήφοι
+        one: 1 ψήφος
+        other: "%{count} ψήφοι"
+    form:
+      comment_as_admin: Σχόλιο ως διαχειριστής
+      comment_as_moderator: Σχόλιο ως συντονιστής
+      leave_comment: Σχολιάστε
+    orders:
+      most_voted: Πιο ψηφισμένα
+      newest: Τα νεότερα πρώτα
+      oldest: Τα παλιότερα πρώτα
+      most_commented: Περισσότερο σχολιασμένα
+    select_order: Ταξινόμηση κατά
+    show:
+      return_to_commentable: "Πήγαινε πίσω στο "
+  comments_helper:
+    comment_button: Δημοσίευση σχολίου
+    comment_link: Σχόλιο
+    comments_title: Σχόλια
+    reply_button: Δημοσίευση απάντησης
+    reply_link: Απάντηση
+  debates:
+    create:
+      form:
+        submit_button: Ξεκινήστε μια συζήτηση
+    debate:
+      comments:
+        zero: Δεν υπάρχουν σχόλια
+        one: 1 σχόλιο
+        other: "%{count} σχόλια"
+      votes:
+        zero: Δεν υπάρχουν ψήφοι
+        one: 1 ψήφος
+        other: "%{count} ψήφοι"
+    edit:
+      editing: Επεξεργαστείτε τη συζήτηση
+      form:
+        submit_button: Αποθηκεύστε τις αλλαγές
+      show_link: Προβολή συζήτησης
+    form:
+      debate_text: Αρχικό κείμενο συζήτησης
+      debate_title: Τίτλος συζήτησης
+      tags_instructions: Βάλε ετικέτα σε αυτή τη συζήτηση.
+      tags_label: Θέματα
+      tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
+    index:
+      featured_debates: Προτεινόμενα
+      filter_topic:
+        one: " με θέμα '%{topic}'"
+        other: " με θέμα '%{topic}'"
+      orders:
+        confidence_score: υψηλότερα βαθμολογημένα
+        created_at: νεότερα
+        hot_score: πιο ενεργοί
+        most_commented: περισσότερο σχολιασμένα
+        relevance: συνάφεια
+        recommendations: συστάσεις
+      recommendations:
+        without_results: Δεν υπάρχουν συζητήσεις που σχετίζονται με τα ενδιαφέροντά σας
+        without_interests: Ακολουθήστε προτάσεις, ώστε να μπορούμε να σας δώσουμε συστάσεις
+        disable: "Οι συστάσεις για συζητήσεις θα σταματήσουν να εμφανίζονται αν τις απορρίψετε. Μπορείτε να τις ενεργοποιήσετε ξανά στη σελίδα «Ο λογαριασμός μου»"
+        actions:
+          success: "Οι συστάσεις για συζητήσεις είναι τώρα απενεργοποιημένες για αυτόν το λογαριασμό"
+          error: "Παρουσιάστηκε ένα σφάλμα. Παρακαλώ πηγαίνετε στη σελίδα 'Ο λογαριασμός μου' για να απενεργοποιήσετε με μη αυτόματο τρόπο τις συστάσεις για συζητήσεις"
+      search_form:
+        button: Αναζήτηση
+        placeholder: Αναζήτηση για συζητήσεις...
+        title: Αναζήτηση
+      search_results_html:
+        one: " που περιέχει τον όρο <strong>'%{search_term}'</strong>"
+        other: " που περιέχει τον όρο <strong>'%{search_term}'</strong>"
+      select_order: Ταξινόμηση κατά
+      start_debate: Ξεκινήστε μια συζήτηση
+      title: Συζητήσεις
+      section_header:
+        icon_alt: Εικονίδιο συζητήσεων
+        title: Συζητήσεις
+        help: Βοήθεια σχετικά με τις συζητήσεις
+      section_footer:
+        title: Βοήθεια σχετικά με τις συζητήσεις
+        description: Ξεκινήστε μια συζήτηση για να μοιραστείτε απόψεις με άλλους σχετικά με τα θέματα που σας απασχολούν.
+        help_text_1: "Ο χώρος για συζητήσεις των πολιτών απευθύνεται σε όποιον μπορεί να εκθέσει τα θέματα που τους αφορούν και όσους θέλουν να μοιραστούν απόψεις με άλλους ανθρώπους."
+        help_text_2: 'Για να ανοίξετε μια συζήτηση που θα πρέπει να εγγραφείτε στο %{org}. Οι χρήστες μπορόυν επίσης να σχολιάσουν σε ανοικτές συζητήσεις και να τις αξιολογήσουν με τα «Συμφωνώ» ή «Διαφωνώ» κουμπιά που βρέθηκαν σε καθένα από αυτά.'
+    new:
+      form:
+        submit_button: Ξεκινήστε μια συζήτηση
+      info: Αν θέλετε να κάνετε μια πρόταση, αυτό είναι η λάθος ενότητα, πληκτρολογήστε %{info_link}.
+      info_link: δημιουργήστε νέα πρόταση
+      more_info: Περισσότερες πληροφορίες
+      recommendation_four: Απολαύστε αυτό το χώρο και τις φωνές που τον γεμίζουν. Ανήκει σε εσας επίσης.
+      recommendation_one: Μη χρησιμοποιείτε κεφαλαία γράμματα για τον τίτλο συζήτησης ή για ολόκληρες προτάσεις. Στο διαδίκτυο, αυτό θεωρείται ότι φωνάζετε. Και κανείς δεν του αρέσει να του φωνάζουν.
+      recommendation_three: Η σκληρή κριτική είναι πολύ ευπρόσδεκτη. Αυτός είναι ένας χώρος για προβληματισμό. Αλλά σας συνιστούμε να κολλήσετε στην κομψότητα και τη νοημοσύνη. Ο κόσμος είναι ένα καλύτερο μέρος με αυτές τις αρετές σε αυτόν.
+      recommendation_two: Οποιαδήποτε συζήτηση ή σχόλιο που υποδηλώνει παράνομη δράση θα διαγραφεί, καθώς και εκείνες που σκοπεύουν να σαμποτάρουν τους χώρους συζήτησης. Οτιδήποτε άλλο επιτρέπεται.
+      recommendations_title: Συστάσεις για τη δημιουργία μιας συζήτησης
+      start_new: Ξεκινήστε μια συζήτηση
+    show:
+      author_deleted: Χρήστης διεγραμμένος
+      comments:
+        zero: Δεν υπάρχουν σχόλια
+        one: 1 σχόλιο
+        other: "%{count} σχόλια"
+      comments_title: Σχόλια
+      edit_debate_link: Επεξεργασία
+      flag: Αυτή η συζήτηση έχει επισημανθεί ως ακατάλληλη από πολλούς χρήστες.
+      login_to_comment: Πρέπει να %{signin} ή %{signup} για να αφήσετε ένα σχόλιο.
+      share: Μοιραστείτε
+      author: Συγγραφέας
+    update:
+      form:
+        submit_button: Αποθηκεύστε τις αλλαγές
+  errors:
+    messages:
+      user_not_found: Ο χρήστης δεν βρέθηκε
+      invalid_date_range: "Μη έγκυρο εύρος ημερομηνίας"
+  form:
+    accept_terms: Συμφωνώ στην %{policy} και στις %{conditions}
+    accept_terms_title: Συμφωνώ με την Πολιτική Απορρήτου και τους Όρους και Προϋποθέσεις Χρήσης
+    conditions: Όροι και προϋποθέσεις χρήσης
+    debate: Συζήτηση
+    direct_message: προσωπικό μήνυμα
+    error: σφάλμα
+    errors: σφάλματα
+    not_saved_html: "ένα σφάλμα μας εμπόδισε να αποθηκεύσουμε αυτό το %{resource}. <br>Ελέγξτε τα επιλεγμένα πεδία για να δείτε πώς μπορούν να διορθωθούν:"
+    policy: Πολιτική Απορρήτου
+    proposal: Πρόταση
+    proposal_notification: "Ειδοποιήσεις"
+    spending_proposal: Προτάσεις δαπανών
+    budget/investment: Επένδυση
+    budget/group: Ομάδα προϋπολογισμού
+    budget/heading: Επικεφαλίδα προϋπολογισμού
+    poll/shift: Μετατόπιση
+    poll/question/answer: Απάντηση
+    user: Λογαριασμός
+    verification/sms: τηλέφωνο
+    signature_sheet: Φύλλα υπογραφών
+    document: Έγγραφο
+    topic: Θέμα
+    image: Εικόνα
+  geozones:
+    none: Όλη την πόλη
+    all: Όλες οι ζώνες
+  layouts:
+    application:
+      chrome: Google Chrome
+      firefox: Firefox
+      ie: Διαπιστώσαμε ότι κάνετε περιήγηση με τον Internet Explorer. Για μια βελτιωμένη εμπειρία, συνιστούμε τη χρήση %{firefox} ή %{chrome}.
+      ie_title: Αυτή η ιστοσελίδα δεν είναι βελτιστοποιημένη για το πρόγραμμα περιήγησής σας
+    dashboard:
+      proposal_header:
+        published: Δημοσιεύθηκε
+        draft: Προσχέδιο
+        retired: Αποσύρθηκε
+      proposal_totals:
+        active_resources: Ενεργοί πόροι
+        community: Συμμετέχοντες στην κοινότητά σας
+        show_proposal: Δείτε την πρόταση
+        preview_proposal: Προεπισκόπηση πρότασης
+        current_goal: Τρέχων στόχος
+        supports:
+          zero: Καθόλου υποστηρίξεις
+          one: 1 υποστήριξη
+          other: "Υποστηρίξεις"
+    footer:
+      accessibility: Προσβασιμότητα
+      conditions: Όροι και προϋποθέσεις χρήσης
+      consul: Εφαρμογή CONSUL
+      consul_url: https://github.com/consul/consul
+      contact_us: Για τεχνική βοήθεια επισκεφτείτε
+      copyright: CONSUL, %{year}
+      description: Αυτή η πύλη χρησιμοποιεί το %{consul}, το οποίο είναι %{open_source}.
+      open_source: λογισμικό ανοικτού κώδικα
+      open_source_url: http://www.gnu.org/licenses/agpl-3.0.html
+      participation_text: Αποφασίστε πώς θα διαμορφώσετε την πόλη που θέλετε να ζήσετε.
+      participation_title: Συμμετοχή
+      privacy: Πολιτική Απορρήτου
+    header:
+      administration_menu: Διαχειριστής
+      administration: Διαχείριση
+      available_locales: Διαθέσιμες γλώσσες
+      collaborative_legislation: Συνεργατική νομοθεσία
+      debates: Συζητήσεις
+      locale: "Γλώσσα:"
+      logo: Λογότυπο CONSUL
+      management: Διαχείριση
+      moderation: Συντονισμός
+      valuation: Αξιολόγηση
+      officing: Επίσημοι της ψηφοφορίας
+      help: Βοήθεια
+      my_account_link: Ο λογαριασμός μου
+      my_activity_link: Η δραστηριότητά μου
+      open: ανοιχτό
+      open_gov: Ανοικτή κυβέρνηση
+      proposals: Προτάσεις
+      poll_questions: Ψηφοφορία
+      budgets: Συμμετοχικός προϋπολογισμός
+      spending_proposals: Προτάσεις δαπανών
+      notification_item:
+        new_notifications:
+          one: Έχετε νέα ειδοποίηση
+          other: Έχετε %{count} νέες ειδοποιήσεις
+        notifications: Ειδοποιήσεις
+        no_notifications: "Δεν έχετε νέες ειδοποιήσεις"
+    admin:
+      watch_form_message: "Έχετε μη αποθηκευμένες αλλαγές. Επιβεβαιώνετε να αφήσετε τη σελίδα;"
+  notifications:
+    index:
+      empty_notifications: Δεν έχετε νέες ειδοποιήσεις.
+      mark_all_as_read: Σημειώστε όλα αυτά ως αναγνωσμένα
+      read: Διαβασμένο
+      title: Ειδοποιήσεις
+      unread: Αδιάβαστο
+    notification:
+      action:
+        comments_on:
+          one: Κάποιος σχολίασε στο
+          other: Υπάρχουν %{count} νέα σχόλια στο
+        proposal_notification:
+          one: Υπάρχει νέα ειδοποίηση στο
+          other: Υπάρχουν %{count} νέες ειδοποιήσεις στο
+        replies_to:
+          one: Κάποιος απάντησε στο σχόλιό σας
+          other: Υπάρχουν %{count} νέες απαντήσεις στο σχόλιό σας στο
+      mark_as_read: Μαρκάρετε ως αναγνωσμένο
+      mark_as_unread: Μαρκάρετε ως μη αναγνωσμένο
+      notifiable_hidden: Αυτός ο πόρος δεν είναι διαθέσιμος πια.
+  map:
+    title: "Συνοικίες"
+    proposal_for_district: "Ξεκινήστε μια πρόταση για την περιοχή σας"
+    select_district: Εμβέλεια λειτουργίας
+    start_proposal: Δημιουργία πρότασης
+  omniauth:
+    facebook:
+      sign_in: Σύνδεση μέσω Facebook
+      sign_up: Εγγραφή μέσω Facebook
+      name: Facebook
+    finish_signup:
+      title: "Επιπρόσθετες πληροφορίες"
+      username_warning: "Λόγω αλλαγής στον τρόπο με τον οποίο αλληλεπιδράμε με κοινωνικά δίκτυα, είναι πιθανό ότι το όνομα χρήστη σας εμφανίζεται τώρα ως \"ήδη σε χρήση\". Εάν συμβαίνει αυτό, επιλέξτε ένα διαφορετικό όνομα χρήστη."
+    google_oauth2:
+      sign_in: Σύνδεση με Google
+      sign_up: Εγγραφή με Google
+      name: Google
+    twitter:
+      sign_in: Σύνδεση μέσω Twitter
+      sign_up: Εγγραφή μέσω Twitter
+      name: Twitter
+    info_sign_in: "Σύνδεση με:"
+    info_sign_up: "Εγγραφή με:"
+    or_fill: "Ή συμπληρώστε την παρακάτω φόρμα:"
+  proposals:
+    create:
+      form:
+        submit_button: Δημιουργήστε μια πρόταση
+    created:
+      title: Συγχαρητήρια! Έχετε κάνει το πρώτο βήμα.
+      motivation: "Είναι σημαντικό να προετοιμάσετε την εκστρατεία εκκίνησης ώστε η πρότασή σας να είναι επιτυχής. Οι πρώτες μέρες είναι καθοριστικές."
+      motivation_2_html: "<strong>Αν θέλετε προτάσεις για την προετοιμασία της έκδοσης, αφήστε την πρότασή σας ως σχέδιο και θα σας καθοδηγήσουμε.</strong>"
+      publish: Όχι, θέλω να δημοσιεύσω την πρόταση
+      dashboard: Ναι, θέλω βοήθεια και θα δημοσιεύσω αργότερα
+      preview_title: Έτσι είναι πώς θα φαίνεται η πρότασή σας όταν τη δημοσιεύσετε
+    share:
+      improve_it: Βελτιώστε την καμπάνια σας και λάβετε περισσότερη υποστήριξη.
+      dashboard: Περισσότερες πληροφορίες
+      message: "Υποστήριξα την πρόταση %{title} σε %{handle}. Αν σας ενδιαφέρει, υποστηρίξτε τη επίσης!"
+    edit:
+      editing: Επεξεργασία πρότασης
+      form:
+        submit_button: Αποθηκεύστε τις αλλαγές
+      show_link: Δείτε την πρόταση
+    retire_form:
+      title: Πρόταση απόσυρσης
+      warning: "Εάν αποσύρετε την πρόταση θα δέχεται ακόμα υποστηρίξεις, αλλά θα αφαιρεθεί από την κύρια λίστα και ένα μήνυμα θα είναι ορατό σε όλους τους χρήστες, δηλώνοντας ότι ο συγγραφέας θεωρεί ότι η πρόταση δεν πρέπει να υποστηρίζεται πια"
+      retired_reason_label: Λόγος για να αποσυρθεί η πρόταση
+      retired_reason_blank: Επιλέξτε μια επιλογή
+      retired_explanation_label: Επεξήγηση
+      retired_explanation_placeholder: Εξηγήστε σύντομα γιατί νομίζετε ότι αυτή η πρόταση δεν πρέπει να λαμβάνει περισσότερη υποστήριξη
+      submit_button: Απόσυρση πρότασης
+    retire_options:
+      duplicated: Διπλές
+      started: Έχουν ήδη δρομολογηθεί
+      unfeasible: Δεν είναι εφικτό
+      done: Έγινε
+      other: Άλλα
+    form:
+      geozone: Εμβέλεια λειτουργίας
+      proposal_responsible_name: Πλήρες όνομα του ατόμου που υποβάλλει την πρόταση
+      proposal_responsible_name_note: "(ατομικά ή ως εκπρόσωπος ενός συλλόγου, δεν θα εμφανίζεται δημοσίως)"
+      proposal_summary: Περίληψη πρότασης
+      proposal_summary_note: "(έως 200 χαρακτήρες)"
+      proposal_text: Κείμενο πρότασης
+      proposal_title: Τίτλος πρότασης
+      proposal_video_url: Σύνδεσμος με εξωτερικό βίντεο
+      proposal_video_url_note: Μπορείτε να προσθέσετε ένα σύνδεσμο στο YouTube ή στο Vimeo
+      tag_category_label: "Κατηγορίες"
+      tags_instructions: "Πρόσθεσε ετικέτα σε αυτήν την πρόταση. Μπορείς να επιλέξεις από τις προτεινόμενες κατηγορίες ή να προσθέσεις τη δική σου"
+      tags_label: Ετικέτες
+      tags_placeholder: "Εισαγάγετε τις ετικέτες που θα θέλατε να χρησιμοποιήσετε, διαχωρισμένες με κόμματα (',')"
+      map_location: "Χάρτης τοποθεσίας"
+      map_location_instructions: "Περιηγηθείτε στο χάρτη προς την τοποθεσία και τοποθετήστε το δείκτη."
+      map_remove_marker: "Αφαιρέστε τον δείκτη του χάρτη"
+      map_skip_checkbox: "Η πρόταση αυτή δεν έχει μια συγκεκριμένη τοποθεσία ή δεν έχω επίγνωση για αυτήν."
+    index:
+      featured_proposals: Προτεινόμενα
+      filter_topic:
+        one: " με θέμα '%{topic}'"
+        other: " με θέμα '%{topic}'"
+      orders:
+        confidence_score: υψηλότερα βαθμολογημένα
+        created_at: νεότερα
+        hot_score: πιο ενεργοί
+        most_commented: περισσότερο σχολιασμένα
+        relevance: συνάφεια
+        archival_date: αρχειοθετημένα
+        recommendations: συστάσεις
+      recommendations:
+        without_results: Δεν υπάρχουν συζητήσεις που σχετίζονται με τα ενδιαφέροντά σας
+        without_interests: Ακολουθήστε προτάσεις, ώστε να μπορούμε να σας δώσουμε συστάσεις
+        disable: "Οι συστάσεις για συζητήσεις θα σταματήσουν να εμφανίζονται αν τις απορρίψετε. Μπορείτε να τις ενεργοποιήσετε ξανά στη σελίδα «Ο λογαριασμός μου»"
+        actions:
+          success: "Οι συστάσεις για συζητήσεις είναι τώρα απενεργοποιημένες για αυτόν το λογαριασμό"
+          error: "Παρουσιάστηκε ένα σφάλμα. Παρακαλώ πηγαίνετε στη σελίδα 'Ο λογαριασμός μου' για να απενεργοποιήσετε με μη αυτόματο τρόπο τις συστάσεις για συζητήσεις"
+      retired_proposals: Προτάσεις που έχουν αποσυρθεί
+      retired_proposals_link: "Οι προτάσεις αποσύρθηκαν από τον συντάκτη"
+      retired_links:
+        all: Όλα
+        duplicated: Διπλές
+        started: Σε εξέλιξη
+        unfeasible: Δεν είναι εφικτό
+        done: Έγινε
+        other: Άλλα
+      search_form:
+        button: Αναζήτηση
+        placeholder: Αναζήτηση προτάσεων...
+        title: Αναζήτηση
+      search_results_html:
+        one: " που περιέχει τον όρο <strong>'%{search_term}'</strong>"
+        other: " που περιέχει τον όρο <strong>'%{search_term}'</strong>"
+      select_order: Ταξινόμηση κατά
+      select_order_long: "Βλέπετε τις προτάσεις σύμφωνα με:"
+      start_proposal: Δημιουργία πρότασης
+      title: Προτάσεις
+      top: Κορυφαία εβδομαδιαία
+      top_link_proposals: Οι πιο υποστηριζόμενες προτάσεις ανά κατηγορία
+      section_header:
+        icon_alt: Εικονίδιο προτάσεων
+        title: Προτάσεις
+        help: Βοήθεια σχετικά με προτάσεις
+      section_footer:
+        title: Βοήθεια σχετικά με προτάσεις
+        description: Οι προτάσεις των πολιτών είναι μια ευκαιρία για τους γείτονες και τις ομάδες να αποφασίσουν άμεσα πώς θέλουν την πόλη τους, αφού λάβουν επαρκή στήριξη και αφού υποβληθούν σε ψηφοφορία των πολιτών.
+    new:
+      form:
+        submit_button: Δημιουργήστε μια πρόταση
+      more_info: Πώς λειτουργούν οι προτάσεις του πολίτη;
+      recommendation_one: Μην χρησιμοποιείτε κεφαλαία γράμματα για τον τίτλο της πρότασης ή για ολόκληρες προτάσεις. Στο διαδίκτυο, αυτό θεωρείται ότι φωνάζετε. Και σε κανέναν δεν αρέσει να του φωνάζουν.
+      recommendation_three: Απολαύστε αυτό το χώρο και τις φωνές που τον γεμίζουν. Ανήκει σε εσας επίσης.
+      recommendation_two: Οποιαδήποτε πρόταση ή σχόλιο που υποδηλώνει παράνομη δράση θα διαγραφεί, καθώς και εκείνες που σκοπεύουν να σαμποτάρουν τους χώρους συζήτησης. Οτιδήποτε άλλο επιτρέπεται.
+      recommendations_title: Συστάσεις για τη δημιουργία μιας πρότασης
+      start_new: Δημιουργήστε νέας πρότασης
+    notice:
+      retired: Πρόταση που αποσύρθηκε
+      published: Η πρόταση έχει δημοσιευθεί
+    proposal:
+      created: "Έχετε δημιουργήσει μια πρόταση!"
+      share:
+        guide: "Τώρα μπορείτε να το μοιραστείτε έτσι ώστε οι άνθρωποι να μπορούν να ξεκινήσουν την υποστήριξη."
+        edit: "Πριν αυτό μοιραστεί, θα είστε σε θέση να αλλάξετε το κείμενο, όπως σας αρέσει."
+        view_proposal: Όχι τώρα, μεταβείτε στην πρότασή μου
+      already_supported: Έχετε ήδη υποστηρίξει αυτή την πρόταση. Μοιραστείτε τη!
+      comments:
+        zero: Δεν υπάρχουν σχόλια
+        one: 1 σχόλιο
+        other: "%{count} σχόλια"
+      support: Υποστήριξη
+      support_title: Στηρίζουμε αυτή την πρόταση
+      supports:
+        zero: Καθόλου υποστηρίξεις
+        one: 1 υποστήριξη
+        other: "%{count} υποστηρίξεις"
+      votes:
+        zero: Δεν υπάρχουν ψήφοι
+        one: 1 ψήφος
+        other: "%{count} ψήφοι"
+      supports_necessary: "%{number} υποστηρίξεις απαιτούνται"
+      total_percent: 100%
+      archived: "Η πρόταση αυτή έχει αρχειοθετηθεί και δεν μπορεί να συλλέξει υποστηρίξεις."
+      successful: "Η πρόταση αυτή έχει φτάσει τις απαιτούμενες υποστηρίξεις."
+    show:
+      author_deleted: Χρήστης διεγραμμένος
+      code: "Κωδικός πρότασης:"
+      comments:
+        zero: Δεν υπάρχουν σχόλια
+        one: 1 σχόλιο
+        other: "%{count} σχόλια"
+      comments_tab: Σχόλια
+      dashboard_proposal_link: Πίνακας ελέγχου
+      flag: Αυτή η πρόταση έχει επισημανθεί ως ακατάλληλη από πολλούς χρήστες.
+      login_to_comment: Θα πρέπει να %{signin} ή %{signup} για να σχολιάσετε.
+      notifications_tab: Ειδοποιήσεις
+      milestones_tab: Ορόσημα
+      retired_warning: "Ο συντάκτης θεωρεί ότι αυτή η πρόταση δεν πρέπει να λάβει περισσότερες υποστηρίξεις."
+      retired_warning_link_to_explanation: Διαβάστε την εξήγηση πριν ψηφίσετε.
+      retired: Η πρόταση αποσύρθηκε από τον συντάκτη
+      share: Μοιραστείτε
+      no_notifications: "Η παρούσα πρόταση δεν έχει ειδοποιήσεις."
+      embed_video_title: "Βίντεο στην %{proposal}"
+      title_video_url: "Εξωτερικό βίντεο"
+      author: Συγγραφέας
+      draft: Προσχέδιο πρότασης. Δεν είναι ακόμα δυνατή η υποστήριξη, ούτε εμφανίζεται στη λίστα των προτάσεων.
+    update:
+      form:
+        submit_button: Αποθηκεύστε τις αλλαγές
+  dashboard:
+    menu:
+      my_proposal: Επεξεργασία πρότασης
+      progress: Πρόοδος
+      resources: Πόροι
+      community: Κοινότητα
+      polls: Δημοσκοπήσεις
+      mailing: E-mail
+      poster: Αφίσα
+      recommended_actions: Συνιστώμενες ενέργειες
+    form:
+      request: Αίτημα
+    create_request:
+      success: Το αίτημα απεστάλη με επιτυχία. Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό για να σας ενημερώσουμε.
+      archived: Αυτή η πρόταση αρχειοθετείται και δεν μπορεί να ζητήσει πόρους.
+    progress:
+      title: Γραφικό
+      group_by_month: Μηνιαίως
+      group_by_week: Εβδομαδιαίως
+      group_by_date: Ημερησίως
+      progress: Συσσωρευμένη πρόοδος
+      supports: Υποστηρίξεις
+      success: Ιδανική πρόοδος
+      new_action: Νέα
+    index:
+      title: Έκδοση
+      edit_proposal_link: Επεξεργασία πρότασης
+      publish: Δημοσίευση της πρότασης
+      retire: Απόκρυψη πρότασης
+    new_request:
+      links: Σύνδεσμοι
+    resources:
+      available_resources: Διαθέσιμοι πόροι
+    resource:
+      required_days: "%{days} ημέρες που απαιτούνται"
+      required_supports: "%{supports} υποστηρίξεις απαιτούνται"
+      and: και
+      view_resource: Δείτε τον πόρο
+      resource_requested: Πόρow που έχει ήδη ζητηθεί
+      request_resource: Αίτηση πόρων
+      resource_locked: Πόρος κλειδωμένος
+    recommended_actions:
+      title: Συνιστώμενες ενέργειες
+      goto_proposed_actions: Πηγαίνετε στις συνιστώμενες ενέργειες
+      see_proposed_actions: Ελέγξτε τις συνιστώμενες ενέργειες
+      hide_proposed_actions: Κρύψτε τις συνιστώμενες ενέργειες
+      pending_title: Σε εκκρεμότητα
+      show_description: Εμφάνιση περιγραφής
+      without_pending_actions: Δεν υπάρχουν συνιστώμενες ενέργειες σε εκκρεμότητα
+      done_title: Έγινε
+      without_done_actions: Δεν υπάρχουν συνιστώμενες ενέργειες που να έχουν γίνει
+    next_goal:
+      title: Στόχος
+      see_complete_course: Ελέγξτε την πλήρη πορεία
+      hide_course: Απόκρυψη μαθημάτων
+    goal:
+      target_supports:
+        one: Πάρτε %{count} υποστήριξη για την πρότασή σας
+        other: Πάρτε %{count} υποστηρίξεις για την πρότασή σας
+      days:
+        one: "%{count} ημέρα"
+        other: "%{count} ημέρες"
+      locked_resource: Πόρος κλειδωμένος
+      ideal_time: Ιδανικός χρόνος
+    community:
+      access_community: Πρόσβαση στην κοινότητα
+      latest_activity: "Τελευταία δραστηριότητα της κοινότητας: %{at}"
+      participants: Συμμετέχοντες
+      debates: Συζητήσεις
+      comments: Σχόλια
+      latest_comments: Τελευταία μηνύματα
+    polls:
+      index:
+        title: Δημοσκοπήσεις
+        create: Δημιουργία δημοσκόπησης
+        count:
+          one: Έχετε δημιουργήσει την %{count} δημοσκόπηση.
+          other: Έχετε δημιουργήσει τις %{count} δημοσκοπήσεις.
+        links: Σύνδεσμοι
+        additiontal_information: Πρόσθετες πληροφορίες
+      new:
+        title: Νέα δημοσκόπηση
+        submit: Δημιουργία δημοσκόπησης
+      edit:
+        submit: Ενημέρωση δημοσκόπησης
+      poll:
+        responses:
+          one: "%{count} απάντηση"
+          other: "%{count} απαντήσεις"
+        view_results: Δείτε τα αποτελέσματα
+        edit_poll: Επεξεργασία έρευνας
+        show_results: Εμφάνιση αποτελεσμάτων
+        show_results_help: Εάν επιλέξετε αυτό το πλαίσιο, τα αποτελέσματα θα είναι δημόσια και όλοι οι χρήστες θα μπορούν να τα δουν
+      form:
+        add_question: Προσθέστε ερώτηση
+      question_fields:
+        remove_question: Κατάργηση ερώτησης
+        add_answer: Πρόσθεσε απάντηση
+      question_answer_fields:
+        remove_answer: Κατάργηση απάντησης
+    poster:
+      index:
+        title: Προεπισκόπηση αφίσας
+        poster_title: "Μη συνεχίσετε να ψάχνετε,"
+        poster_subtitle: "καλυψε με! ·)"
+        intro_text_html: "<strong> Συμμετέχω στο %{org}</strong> με την πρότασή μου για τους πολίτες και μόνο αν προσθέσετε μπορείτε να επιτύχετε την απαραίτητη υποστήριξη για να φτιάξετε την πόλη που όλοι θέλουμε."
+        proposal_code: "Κωδικός της πρότασης: %{code}"
+        support: Στηρίξτε την πρότασή μου
+        footer_html: "<strong> Επισκεφτείτε το %{link} και υποστηρίξτε αυτήν την πρόταση. </strong> Πρέπει να είμαστε πολλοί. Αποφασίστε επίσης. Ευχαριστώ!"
+      new:
+        title: Αφίσα της πρότασής σας
+      options:
+        preview: Προεπισκόπηση
+        download: Κατεβάζω
+    mailing:
+      index:
+        title: Προεπισκόπηση email
+      new:
+        title: Μοντέλο ηλεκτρονικού ταχυδρομείου για κοινή χρήση
+      mailing_options:
+        send: Αποστολή σε %{address}
+        preview: Προεπισκόπηση
+      create:
+        sent: Το email έχει αποσταλεί
+    mailer:
+      forward:
+        subtitle_html: "Αν με υποστηρίξετε, <br> θα το πετύχουμε."
+        support_button: Στηρίζουμε αυτή την πρόταση
+        share_in: Μοιραστείτε σε
+        hi: "Γεια σας!"
+        introduction: Σας γράφω για να σας ενημερώσω ότι συμμετέχω στο %{org}, στην πλατφόρμα που μπορούμε να αποφασίσουμε ποια πόλη θέλουμε. Και γι 'αυτό, δημιούργησα την δική μου πρόταση για τους πολίτες και τώρα, θα χρειαστώ την υποστήριξή σας! Αλλά μην ανησυχείτε γιατί είναι πολύ απλό.
+        support: "Απλώς πρέπει να κάνετε κλικ στο κουμπί που θα δείτε παρακάτω \"Υποστήριξη αυτής της πρότασης\" και μπορείτε να πληροφορηθείτε πριν το προωθήσετε. Μόνο οι προτάσεις που επιτυγχάνουν τη μέγιστη υποστήριξη θα πραγματοποιηθούν από το Δημοτικό Συμβούλιο και σκέφτηκα ότι εσείς, είμαι βέβαιος ότι με βοηθάτε να το επιτύχουμε!"
+        share: "Και αν μου κάνετε επίσης τη μεγάλη χάρη να μοιραστείτε την πρότασή μου με τους φίλους σας, την οικογένεια και τις επαφές σας, θα ήταν τέλεια!"
+  polls:
+    all: "Όλα"
+    no_dates: "δεν έχει ανατεθεί ημερομηνία"
+    dates: "Από %{open_at} έως %{closed_at}"
+    final_date: "Τελικές αναφορές / αποτελέσματα"
+    index:
+      filters:
+        current: "Ανοιχτό"
+        expired: "Έχει λήξει"
+      title: "Δημοσκοπήσεις"
+      participate_button: "Συμμετάσχουν σε αυτήν τη δημοσκόπηση"
+      participate_button_expired: "Έληξε η δημοσκόπηση"
+      no_geozone_restricted: "Όλη την πόλη"
+      geozone_restricted: "Συνοικίες"
+      geozone_info: "Μπορούν να συμμετάσχουν άτομα στην απογραφή του: "
+      already_answer: "Έχετε ήδη συμμετάσχει σε αυτή τη δημοσκόπηση"
+      not_logged_in: "Πρέπει να συνδεθείτε ή να εγγραφείτε για να συμμετάσχετε"
+      unverified: "Πρέπει να επαληθεύσετε το λογαριασμό σας για να συμμετάσχετε"
+      cant_answer: "Αυτή τη δημοσκόπηση δεν είναι διαθέσιμη στη γεωζώνη σας"
+      section_header:
+        icon_alt: Εικονίδιο ψηφοφορίας
+        title: Δικαίωμα ψήφου
+        help: Βοήθεια σχετικά με την ψηφοφορία
+      section_footer:
+        title: Βοήθεια σχετικά με την ψηφοφορία
+        description: Οι δημοσκοπήσεις των πολιτών είναι ένας συμμετοχικός μηχανισμός με τον οποίο οι πολίτες με δικαίωμα ψήφου μπορούν να λάβουν άμεσες αποφάσεις
+      no_polls: "Δεν υπάρχουν ανοιχτές ψηφοφορίες."
+    show:
+      already_voted_in_booth: "Έχετε ήδη συμμετάσχει σε ένα φυσικό περίπτερο. Δεν μπορείτε να συμμετάσχετε ξανά."
+      already_voted_in_web: "Έχετε ήδη συμμετάσχει σε αυτή τη δημοσκόπηση. Εάν ψηφίσετε ξανά θα αντικατασταθεί."
+      back: Πίσω στην ψηφοφορία
+      cant_answer_not_logged_in: "Θα πρέπει να %{signin} ή %{signup} για να συμμετάσχετε."
+      comments_tab: Σχόλια
+      login_to_comment: Πρέπει να %{signin} ή %{signup} για να αφήσετε ένα σχόλιο.
+      signin: Συνδεθείτε
+      signup: Εγγραφή
+      cant_answer_verify_html: "Θα πρέπει να %{verify_link} προκειμένου να απαντήσετε."
+      verify_link: "επαλήθευση του λογαριασμού σας"
+      cant_answer_expired: "Αυτή τη δημοσκόπηση έχει τελειώσει."
+      cant_answer_wrong_geozone: "Αυτή η ερώτηση δεν είναι διαθέσιμη στη γεωζώνη σας."
+      more_info_title: "Περισσότερες πληροφορίες"
+      documents: Έγγραφα
+      zoom_plus: Επεκτείνετε την εικόνα
+      read_more: "Διαβάστε περισσότερα για %{answer}"
+      read_less: "Διαβάστε λιγότερα σχετικά με %{answer}"
+      videos: "Εξωτερικό βίντεο"
+      info_menu: "Πληροφορίες"
+      stats_menu: "Στατιστικά συμμετοχής"
+      results_menu: "Αποτελέσματα δημοσκόπησης"
+      stats:
+        total_votes: "Συνολικοί ψήφοι των δεδομένων ψήφων"
+        votes: "ΨΉΦΟΙ"
+        web: "WEB"
+        booth: "ΠΕΡΊΠΤΕΡΟ"
+        total: "ΣΎΝΟΛΟ"
+        valid: "Έγκυρο"
+        white: "Λευκές ψήφοι"
+        null_votes: "Μη έγκυρες"
+      results:
+        title: "Ερωτήσεις"
+        most_voted_answer: "Περισσότερο ψηφισμένη απάντηση: "
+    poll_header:
+      back_to_proposal: Πίσω στην πρόταση
+  poll_questions:
+    show:
+      vote_answer: "Ψήφισε %{answer}"
+      voted: "Έχετε ψηφίσει %{answer}"
+  proposal_notifications:
+    new:
+      title: "Αποστολή μηνύματος"
+      title_label: "Τίτλος"
+      body_label: "Μήνυμα"
+      submit_button: "Αποστολή μηνύματος"
+      info_about_receivers_html: "Αυτό το μήνυμα θα σταλεί σε <strong>%{count} άτομα</strong> και θα είναι ορατό στο %{proposal_page}.<br> Τα μηνύματα δεν αποστέλλονται αμέσως, οι χρήστες θα λαμβάνουν περιοδικά ένα μήνυμα ηλεκτρονικού ταχυδρομείου με όλες τις ειδοποιήσεις προτάσεων."
+      proposal_page: "η σελίδα της πρότασης"
+    show:
+      back: "Πήγαινε πίσω στη δραστηριότητά μου"
+  shared:
+    edit: "Επεξεργασία"
+    save: "Αποθήκευση"
+    delete: "Διαγραφή"
+    "yes": "Ναι"
+    "no": "Όχι"
+    search_results: "Αναζήτηση αποτελεσμάτων"
+    advanced_search:
+      author_type: "Κατά κατηγορία συγγραφέα"
+      author_type_blank: "Επιλέξτε μια κατηγορία"
+      date: "Ανά ημερομηνία"
+      date_placeholder: "ΗΗ/ΜΜ/ΕΕΕΕ"
+      date_range_blank: "Διάλεξε ημερομηνία"
+      date_1: "Τελευταίες 24 ώρες"
+      date_2: "Τελευταία εβδομάδα"
+      date_3: "Τελευταίος μήνας"
+      date_4: "Τελευταίος χρόνος"
+      date_5: "Προσαρμοσμένα"
+      from: "Από"
+      general: "Με το κείμενο"
+      general_placeholder: "Γράψε το κείμενο"
+      search: "Φίλτρο"
+      title: "Προχωρημένη Αναζήτηση"
+      to: "Σε"
+    author_info:
+      author_deleted: Χρήστης διεγραμμένος
+    back: Πήγαινε πίσω
+    check: Επιλέξτε
+    check_all: Όλα
+    check_none: Κανένα
+    collective: Συλλογικός
+    flag: Επισήμανση ως ακατάλληλου
+    follow: "Ακολούθησε"
+    following: "Ακολουθεί"
+    follow_entity: "Ακολούθησε %{entity}"
+    followable:
+      budget_investment:
+        create:
+          notice_html: "Παρακολουθείτε τώρα αυτό το επενδυτικό σχέδιο! </br> Θα σας ειδοποιήσουμε για τις αλλαγές που συμβαίνουν, ώστε να είστε ενημερωμένοι."
+        destroy:
+          notice_html: "Έχετε σταματήσει να ακολουθείτε αυτό το επενδυτικό σχέδιο! </br> Δεν θα λαμβάνετε πλέον ειδοποιήσεις σχετικά με αυτό το έργο."
+      proposal:
+        create:
+          notice_html: "Ακολουθείτε τώρα αυτήν την πρόταση πολιτών! </br> Θα σας ειδοποιήσουμε για τις αλλαγές που συμβαίνουν, ώστε να είστε ενημερωμένοι."
+        destroy:
+          notice_html: "Έχετε σταματήσει να ακολουθείτε αυτήn την πρόταση των πολιτών! </br> Δεν θα λαμβάνετε πλέον ειδοποιήσεις σχετικά με αυτήν την πρόταση."
+    hide: Απόκρυψη
+    print:
+      print_button: Εκτυπώστε αυτές τις πληροφορίες
+    search: Αναζήτηση
+    show: Εμφάνιση
+    suggest:
+      debate:
+        found:
+          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+          other: "Υπάρχουν συζητήσεις με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+        message: "Βλέπετε %{limit} από %{count} συζητήσεις που περιέχουν τον όρο '%{query} '"
+        see_all: "Εμφάνιση όλων"
+      budget_investment:
+        found:
+          one: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+          other: "Υπάρχει μια συζήτηση με τον όρο '%{query}', μπορείτε να συμμετέχετε σε αυτήν αντί να ανοίξετε μία νέα."
+        message: "Βλέπετε %{limit} από %{count} επενδύσεις που περιέχουν τον όρο '%{query} '"
+        see_all: "Εμφάνιση όλων"
+      proposal:
+        found:
+          one: "Υπάρχει μια πρόταση με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτές αντί να δημιουργήσετε νέα"
+          other: "Υπάρχουν προτάσεις με τον όρο '%{query}', μπορείτε να συνεισφέρετε σε αυτές αντί να δημιουργήσετε νέα"
+        message: "Βλέπετε %{limit} από %{count} προτάσεις που περιέχουν τον όρο '%{query} '"
+        see_all: "Εμφάνιση όλων"
+    tags_cloud:
+      tags: Δημοφιλή θέματα
+      districts: "Συνοικίες"
+      districts_list: "Λίστα περιοχών"
+      categories: "Κατηγορίες"
+    target_blank_html: " (οι σύνδεσμοι ανοίγουν σε νέο παράθυρο)"
+    you_are_in: "Είστε στο"
+    unflag: Αφαίρεση σημαίας
+    unfollow_entity: "Σταματήστε να ακολουθείτε %{entity}"
+    outline:
+      budget: Συμμετοχικοί προϋπολογισμοί
+      searcher: Ερευνητής
+    go_to_page: "Πηγαίνετε στη σελίδα του "
+    share: Μοιραστείτε
+    orbit:
+      previous_slide: Προηγούμενη διαφάνεια
+      next_slide: Επόμενη διαφάνεια
+    documentation: Πρόσθετη τεκμηρίωση
+    view_mode:
+      title: Λειτουργία προβολής
+      cards: Κάρτες
+      list: Λίστα
+    recommended_index:
+      title: Συστάσεις
+      see_more: Δείτε περισσότερες προτάσεις
+      hide: Κρύψτε τις συστάσεις
+  social:
+    facebook: "%{org} Facebook"
+    twitter: "%{org} Twitter"
+    youtube: "%{org} YouTube"
+    whatsapp: WhatsApp
+    telegram: "%{org} Telegram"
+    instagram: "%{org} Instagram"
+  spending_proposals:
+    form:
+      association_name_label: "Εάν προτείνετε στο όνομα μιας ένωσης ή μιας συλλογικής ομάδας, προσθέστε το όνομα εδώ"
+      association_name: "Όνομα ένωσης"
+      description: Περιγραφή
+      external_url: Σύνδεσμος σε πρόσθετη τεκμηρίωση
+      geozone: Εμβέλεια λειτουργίας
+      submit_buttons:
+        create: Δημιουργήθηκε
+        new: Δημιουργήθηκε
+      title: Τίτλος πρότασης δαπανών
+    index:
+      title: Συμμετοχικός προϋπολογισμός
+      unfeasible: Ανέφικτα επενδυτικά έργα
+      by_geozone: "Επενδυτικά σχέδια με πεδίο εφαρμογής: %{geozone}"
+      search_form:
+        button: Αναζήτηση
+        placeholder: Επενδυτικά έργα...
+        title: Αναζήτηση
+      search_results:
+        one: " που περιέχουν τον όρο '%{search_term} '"
+        other: " που περιέχουν τον όρο '%{search_term} '"
+      sidebar:
+        geozones: Εμβέλεια λειτουργίας
+        feasibility: Σκοπιμότητα
+        unfeasible: Δεν είναι εφικτό
+      start_spending_proposal: Δημιουργείστε ένα επενδυτικό έργο
+    new:
+      more_info: Πώς λειτουργεί ο συμμετοχικός προϋπολογισμός;
+      recommendation_one: Είναι υποχρεωτική η πρόταση να αναφέρεται σε μια δράση με δυνατότητα προϋπολογισμού.
+      recommendation_three: Προσπαθήστε να μπείτε σε λεπτομέρειες όταν περιγράφετε την πρότασή σας για δαπάνες, έτσι ώστε η ομάδα αναθεώρησης να κατανοεί τις θέσεις σας.
+      recommendation_two: Κάθε πρόταση ή σχόλιο που υποδηλώνει παράνομη δράση θα διαγραφεί.
+      recommendations_title: Πώς να δημιουργήσετε μια πρόταση δαπανών
+      start_new: Δημιουργία πρότασης δαπανών
+    show:
+      author_deleted: Χρήστης διεγραμμένος
+      code: "Κωδικός πρότασης:"
+      share: Μοιραστείτε
+    wrong_price_format: Μόνο ακέραιους αριθμούς
+    spending_proposal:
+      spending_proposal: Επενδυτικό έργο
+      already_supported: Έχετε ήδη υποστηρίξει αυτή την πρόταση. Μοιραστείτε τη!
+      support: Υποστήριξη
+      support_title: Υποστήριξη του έργου αυτού
+      supports:
+        zero: Καθόλου υποστηρίξεις
+        one: 1 υποστήριξη
+        other: "%{count} υποστηρίξεις"
+  stats:
+    index:
+      visits: Επισκέψεις
+      debates: Συζητήσεις
+      proposals: Προτάσεις
+      comments: Σχόλια
+      proposal_votes: Ψήφισε προτάσεις
+      debate_votes: Ψήφισε συζητήσεις
+      comment_votes: Ψήφισε σχόλια
+      votes: Συνολικοί ψήφοι
+      verified_users: Επαληθευμένοι χρήστες
+      unverified_users: Μη επαληθευμένοι χρήστες
+  unauthorized:
+    default: Δεν έχετε δικαίωμα πρόσβασης σε αυτήν τη σελίδα.
+    manage:
+      all: "Δεν έχετε άδεια εκτέλεσης της ενέργειας '%{action}' στο %{subject}."
+  users:
+    direct_messages:
+      new:
+        body_label: Μήνυμα
+        direct_messages_bloqued: "Αυτός ο χρήστης αποφάσισε να μην λάβει άμεσα μηνύματα"
+        submit_button: Αποστολή μηνύματος
+        title: Αποστολή ιδιωτικού μηνύματος στον %{receiver}
+        title_label: Τίτλος
+        verified_only: Για να στείλετε ένα προσωπικό μήνυμα %{verify_account}
+        verify_account: επαλήθευση του λογαριασμού σας
+        authenticate: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+        signin: είσοδος
+        signup: εγγραφή
+      show:
+        receiver: Μήνυμα αποστέλλεται στο %{receiver}
+    show:
+      deleted: Διαγραφή
+      deleted_debate: Αυτή η συζήτηση έχει διαγραφεί
+      deleted_proposal: Αυτή η πρόταση έχει διαγραφεί
+      deleted_budget_investment: Το επενδυτικό σχέδιο έχει διαγραφεί
+      proposals: Προτάσεις
+      proposals_status: Κατάσταση
+      debates: Συζητήσεις
+      budget_investments: Επενδύσεις προϋπολογισμού
+      comments: Σχόλια
+      actions: Ενέργειες
+      filters:
+        comments:
+          one: 1 σχόλιο
+          other: "%{count} σχόλια"
+        debates:
+          one: 1 συζήτηση
+          other: "%{count} συζητήσεις"
+        proposals:
+          one: 1 πρόταση
+          other: "%{count} πρότάσεις"
+        budget_investments:
+          one: 1 επένδυση
+          other: "%{count} επενδύσεις"
+        follows:
+          one: 1 ακόλουθος
+          other: "%{count} ακόλουθοι"
+      no_activity: Χρήστης δεν έχει καμία δημόσια δραστηριότητα
+      no_private_messages: "Αυτός ο χρήστης δεν δέχεται ιδιωτικά μηνύματα."
+      private_activity: Αυτός ο χρήστης αποφάσισε να κρατήσει τη λίστα δραστηριοτήτων ιδιωτική.
+      send_private_message: "Στείλτε προσωπικό μήνυμα"
+      delete_alert: "Είστε βέβαιοι ότι θέλετε να διαγράψετε το επενδυτικό σας έργο; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί"
+    proposals:
+      retired: "Πρόταση που έχει αποσυρθεί"
+      draft: Προσχέδιο
+      published: Δημοσιεύθηκε
+      see: "Δείτε την πρόταση"
+      actions: Ενέργειες
+      retired_help_text: Ταμπλό δεν είναι διαθέσιμο για προτάσεις που έχουν αποσυρθεί
+  votes:
+    agree: Συμφωνώ
+    anonymous: Πάρα πολλές ανώνυμες ψήφους για να παραδεχτούμε την ψηφοφορία %{verify_account}.
+    comment_unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να ψηφίσουν.
+    disagree: Διαφωνώ
+    organizations: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
+    signin: Συνδεθείτε
+    signup: Εγγραφή
+    supports: Υποστηρίξεις
+    unauthenticated: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+    verified_only: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
+    verify_account: επαλήθευση του λογαριασμού σας
+    spending_proposals:
+      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+      not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν προτάσεις; %{verify_account}.
+      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
+      unfeasible: Δεν μπορούν να υποστηριχθούν ανέφικτα επενδυτικά σχέδια
+      not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
+    budget_investments:
+      not_logged_in: Θα πρέπει να %{signin} ή %{signup} για να συνεχίσετε.
+      not_verified: Μόνο επιβεβαιωμένοι χρήστες μπορούν να ψηφίσουν επενδυτικά έργα; %{verify_account}.
+      organization: Οι οργανισμοί δεν επιτρέπεται να ψηφίσουν
+      unfeasible: Ανέφικτα επενδυτικά σχέδια δεν μπορούν να υποστηριχθούν
+      not_voting_allowed: Η φάση της ψηφοφορίας είναι κλειστή
+      different_heading_assigned:
+        one: "Μπορείτε να υποστηρίξετε επενδυτικά έργα μόνο σε %{count} περιοχή. Έχετε ήδη υποστηρίξει τις επενδύσεις στο \n%{supported_headings}."
+        other: "Μπορείτε να υποστηρίξετε επενδυτικά έργα μόνο σε %{count} περιοχές. Έχετε ήδη υποστηρίξει τις επενδύσεις στο \n%{supported_headings}."
+  welcome:
+    feed:
+      most_active:
+        debates: "Πιο ενεργές συζητήσεις"
+        proposals: "Πιο ενεργές προτάσεις"
+        processes: "Ανοικτές διαδικασίες"
+      see_all_debates: Δείτε όλες τις συζητήσεις
+      see_all_proposals: Δείτε όλες τις προτάσεις
+      see_all_processes: Δείτε όλες τις διαδικασίες
+      process_label: Διαδικασία
+      see_process: Δείτε τη διαδικασία
+    cards:
+      title: Προτεινόμενα
+    recommended:
+      title: Συστάσεις που μπορεί να σας ενδιαφέρουν
+      help: "Αυτές οι συστάσεις δημιουργούνται από τις ετικέτες των συζητήσεων και των προτάσεων που ακολουθείτε."
+      debates:
+        title: Συνιστώμενες συζητήσεις
+        btn_text_link: Όλες οι συνιστώμενες συζητήσεις
+      proposals:
+        title: Προτεινόμενες προτάσεις
+        btn_text_link: Όλες οι προτεινόμενες προτάσεις
+      budget_investments:
+        title: Συνιστώμενες επενδύσεις
+      slide: "Δες %{title}"
+    verification:
+      i_dont_have_an_account: Δεν έχω λογαριασμό
+      i_have_an_account: Έχω ήδη λογαριασμό
+      question: Έχετε ήδη λογαριασμό στο %{org_name};
+      title: Επιβεβαίωση λογαριασμού
+    welcome:
+      go_to_index: Όχι τώρα, μεταβείτε στη σελίδα ευρετηρίου
+      start_using_consul: Μεταβείτε στη σελίδα ευρετηρίου
+      title: Συμμετέχουν
+      user_permission_debates: Συμμετοχή στις συζητήσεις
+      user_permission_info: Με το λογαριασμό σας, μπορείτε να...
+      user_permission_proposal: Δημιουργία νέων προτάσεων
+      user_permission_support_proposal: Υποστήριξη προτάσεων*
+      user_permission_verify: "Για να εκτελέσετε τις ακόλουθες ενέργειες, επαληθεύστε το λογαριασμό σας."
+      user_permission_verify_info: "* Μόνο για τους χρήστες στην απογραφή."
+      user_permission_verify_my_account: Επαληθεύσω το λογαριασμό μου
+      user_permission_votes: Συμμετοχή στην τελική ψηφοφορία
+  invisible_captcha:
+    sentence_for_humans: "Εάν είστε άνθρωπος, αγνοήστε αυτό το πεδίο"
+    timestamp_error_message: "Λυπούμαστε, αυτό ήταν πολύ γρήγορο! Υποβάλετε ξανά."
+  related_content:
+    title: "Σχετικό περιεχόμενο"
+    add: "Πρόσθεσε σχετικό περιεχόμενο"
+    label: "Σύνδεσμος για σχετικό περιεχόμενο"
+    placeholder: "%{url}"
+    help: "Μπορείτε να προσθέσετε συνδέσμους %{models} μέσα στο %{org}."
+    submit: "Προσθέστε"
+    error: "Ο σύνδεσμος δεν είναι έγκυρος. Θυμηθείτε να ξεκινήσετε με %{url}."
+    error_itself: "Ο σύνδεσμος δεν είναι έγκυρος. Δεν μπορείτε να συσχετίσετε ένα περιεχόμενο με τον εαυτό του."
+    success: "Προσθέσατε ένα νέο σχετικό περιεχόμενο"
+    is_related: "Είναι σχετικό περιεχόμενο;"
+    score_positive: "Ναι"
+    score_negative: "Όχι"
+    content_title:
+      proposal: "Πρόταση"
+      debate: "Συζήτηση"
+      budget_investment: "Επενδύσεις προϋπολογισμού"
+  admin/widget:
+    header:
+      title: Διαχείριση
+  annotator:
+    help:
+      alt: Επιλέξτε το κείμενο που θέλετε να σχολιάσετε και πατήστε το κουμπί με το μολύβι.
+      text: Για να σχολιάσετε αυτό το έγγραφο, πρέπει να %{sign_in} ή %{sign_up}. Στη συνέχεια, επιλέξτε το κείμενο που θέλετε να σχολιάσετε και πατήστε το κουμπί με το μολύβι.
+      text_sign_in: σύνδεση
+      text_sign_up: εγγραφή
+      title: Πώς μπορώ να σχολιάσω αυτό το έγγραφο;
+  links:
+    form:
+      delete_button: Διαγραφή
+      cancel_button: Άκυρο
+    nested_links:
+      title: Σύνδεσμοι
+      note: Προσθέστε τους συνδέσμους που σας ενδιαφέρουν
+      add_new_link: Πρόσθήκη νέου συνδέσμου
+    link_fields:
+      label_placeholder: Τίτλος συνδέσμου
+      url_placeholder: Διεύθυνση συνδέσμου
+  communities:
+    show:
+      send_notification: Αποστολή μηνύματος στην κοινότητα
+      author: Συγγραφέας
+      surveys: Έρευνες
+      complete_survey: Ολοκληρώστε την έρευνα
+    subnav:
+      surveys: Έρευνες
+    poll:
+      take_part: Πάρτε μέρος από %{from} έως %{to}

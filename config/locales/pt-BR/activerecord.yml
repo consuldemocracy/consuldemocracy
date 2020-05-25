@@ -358,8 +358,8 @@ pt-BR:
         signature:
           attributes:
             document_number:
-              not_in_census: 'Não verificado pelo censo'
-              already_voted: 'Já votou esta proposta'
+              not_in_census: "Não verificado pelo censo"
+              already_voted: "Já votou esta proposta"
         site_customization/page:
           attributes:
             slug:
@@ -372,7 +372,7 @@ pt-BR:
         comment:
           attributes:
             valuation:
-              cannot_comment_valuation: 'Você não pode comentar uma avaliação'
+              cannot_comment_valuation: "Você não pode comentar uma avaliação"
       messages:
         record_invalid: "Validação falhou: %{errors}"
         restrict_dependent_destroy:

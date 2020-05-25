@@ -1,4 +1,4 @@
-class AddPollsRelatedIndexes < ActiveRecord::Migration
+class AddPollsRelatedIndexes < ActiveRecord::Migration[4.2]
   def change
 
     add_index :poll_booth_assignments, :booth_id

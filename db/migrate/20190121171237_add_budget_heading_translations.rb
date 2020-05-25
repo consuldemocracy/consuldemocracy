@@ -1,4 +1,4 @@
-class AddBudgetHeadingTranslations < ActiveRecord::Migration
+class AddBudgetHeadingTranslations < ActiveRecord::Migration[4.2]
 
   def self.up
     Budget::Heading.create_translation_table!(

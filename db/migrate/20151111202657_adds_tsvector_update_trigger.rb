@@ -1,4 +1,4 @@
-class AddsTsvectorUpdateTrigger < ActiveRecord::Migration
+class AddsTsvectorUpdateTrigger < ActiveRecord::Migration[4.2]
 
   def up
     add_column :proposals, :tsv, :tsvector

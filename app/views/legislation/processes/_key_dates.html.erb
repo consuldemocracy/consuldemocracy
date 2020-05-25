@@ -1,4 +1,4 @@
-<nav class="<%= 'legislation-process-list' if process.enabled_phases? %>">
+<nav class="<%= "legislation-process-list" if process.enabled_phases? %>">
   <div class="row">
     <div class="small-12 column">
       <% if process.enabled_phases? %>
@@ -7,7 +7,7 @@
 
       <ul class="key-dates">
         <% if process.homepage_enabled? && process.homepage.present? %>
-          <li <%= 'class=is-active' if phase.to_sym == :homepage %>>
+          <li <%= "class=is-active" if phase.to_sym == :homepage %>>
             <%= link_to legislation_process_path(process) do %>
               <h4><%= t("legislation.processes.shared.homepage") %></h4>
               <br>
@@ -16,7 +16,7 @@
         <% end %>
 
         <% if process.debate_phase.enabled? %>
-          <li <%= 'class=is-active' if phase.to_sym == :debate_phase %>>
+          <li <%= "class=is-active" if phase.to_sym == :debate_phase %>>
             <%= link_to debate_legislation_process_path(process) do %>
               <h4><%= t("legislation.processes.shared.debate_dates") %></h4>
               <span><%= format_date(process.debate_start_date) %> - <%= format_date(process.debate_end_date) %></span>
@@ -25,7 +25,7 @@
         <% end %>
 
         <% if process.proposals_phase.enabled? %>
-          <li <%= 'class=is-active' if phase.to_sym == :proposals %>>
+          <li <%= "class=is-active" if phase.to_sym == :proposals %>>
             <%= link_to proposals_legislation_process_path(process) do %>
               <h4><%= t("legislation.processes.shared.proposals_dates") %></h4>
               <span><%= format_date(process.proposals_phase_start_date) %> - <%= format_date(process.proposals_phase_end_date) %></span>
@@ -34,7 +34,7 @@
         <% end %>
 
         <% if process.allegations_phase.enabled? %>
-          <li <%= 'class=is-active' if phase.to_sym == :allegations_phase %>>
+          <li <%= "class=is-active" if phase.to_sym == :allegations_phase %>>
             <%= link_to allegations_legislation_process_path(process) do %>
               <h4><%= t("legislation.processes.shared.allegations_dates") %></h4>
               <span><%= format_date(process.allegations_start_date) %> - <%= format_date(process.allegations_end_date) %></span>

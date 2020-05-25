@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Cards" do
+describe "Cards" do
 
-  background do
+  before do
     admin = create(:administrator).user
     login_as(admin)
   end
@@ -147,7 +147,11 @@ feature "Cards" do
 
       scenario "Create", :js do
         visit admin_site_customization_pages_path
-        click_link "See Cards"
+
+        within "#site_customization_page_#{custom_page.id}" do
+          click_link "See Cards"
+        end
+
         click_link "Create card"
 
         fill_in "Title", with: "Card for a custom page"

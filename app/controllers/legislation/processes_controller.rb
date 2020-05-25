@@ -9,7 +9,7 @@ class Legislation::ProcessesController < Legislation::BaseController
   before_action :set_random_seed, only: :proposals
 
   def index
-    @current_filter ||= 'open'
+    @current_filter ||= "open"
     @processes = ::Legislation::Process.send(@current_filter).published
                  .not_in_draft.order(start_date: :desc).page(params[:page])
   end

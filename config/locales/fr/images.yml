@@ -14,7 +14,6 @@ fr:
       destroy:
         notice: Image supprimée avec succès.
         alert: Impossible de supprimer l'image.
-        confirm: Êtes-vous sûr(e) de vouloir supprimer cette image ? Cette action est irréversible !
     errors:
       messages:
         in_between: doit être entre %{min} et %{max}

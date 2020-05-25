@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting Budget::Investments" do
+describe "Commenting Budget::Investments" do
   let(:user) { create :user }
   let(:investment) { create :budget_investment }
 
@@ -44,6 +44,21 @@ feature "Commenting Budget::Investments" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: investment, user: user)
+
+    visit budget_investment_path(investment.budget, investment)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{investment.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = create(:comment, body: "Main comment", commentable: investment)
     child_comment  = create(:comment, body: "First subcomment", commentable: investment, parent: parent_comment)
@@ -52,20 +67,25 @@ feature "Commenting Budget::Investments" do
     visit budget_investment_path(investment.budget, investment)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end
@@ -159,7 +179,7 @@ feature "Commenting Budget::Investments" do
     expect(page).to have_css(".comment", count: 2)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: investment)
       visit budget_investment_path(investment.budget, investment)
@@ -305,7 +325,7 @@ feature "Commenting Budget::Investments" do
     end
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -361,50 +381,114 @@ feature "Commenting Budget::Investments" do
     end
   end
 
-  feature "Administrators" do
-    scenario "can create comment as an administrator", :js do
-      admin = create(:administrator)
+  describe "Administrators" do
+    context "comment as administrator" do
+      scenario "can create comment", :js do
+        admin = create(:administrator)
 
-      login_as(admin.user)
-      visit budget_investment_path(investment.budget, investment)
+        login_as(admin.user)
+        visit budget_investment_path(investment.budget, investment)
 
-      fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
-      check "comment-as-administrator-budget_investment_#{investment.id}"
-      click_button "Publish comment"
+        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        check "comment-as-administrator-budget_investment_#{investment.id}"
+        click_button "Publish comment"
 
-      within "#comments" do
-        expect(page).to have_content "I am your Admin!"
-        expect(page).to have_content "Administrator ##{admin.id}"
+        within "#comments" do
+          expect(page).to have_content "I am your Admin!"
+          expect(page).to have_content "Administrator ##{admin.id}"
+          expect(page).to have_css "div.is-admin"
+          expect(page).to have_css "img.admin-avatar"
+        end
+      end
+
+      scenario "display administrator description on admin views", :js do
+        admin = create(:administrator, description: "user description")
+
+        login_as(admin.user)
+
+        visit admin_budget_budget_investment_path(investment.budget, investment)
+
+        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        check "comment-as-administrator-budget_investment_#{investment.id}"
+        click_button "Publish comment"
+
+        within "#comments" do
+          expect(page).to have_content "I am your Admin!"
+        end
+
+        visit admin_budget_budget_investment_path(investment.budget, investment)
+
+        within "#comments" do
+          expect(page).to have_content "I am your Admin!"
+          expect(page).to have_content "Administrator user description"
+          expect(page).to have_css "div.is-admin"
+          expect(page).to have_css "img.admin-avatar"
+        end
+      end
+
+      scenario "display administrator id on public views", :js do
+        admin = create(:administrator, description: "user description")
+
+        login_as(admin.user)
+        visit admin_budget_budget_investment_path(investment.budget, investment)
+
+        fill_in "comment-body-budget_investment_#{investment.id}", with: "I am your Admin!"
+        check "comment-as-administrator-budget_investment_#{investment.id}"
+        click_button "Publish comment"
+
+        within "#comments" do
+          expect(page).to have_content "I am your Admin!"
+          expect(page).to have_content "Administrator ##{admin.id}"
+          expect(page).to have_css "div.is-admin"
+          expect(page).to have_css "img.admin-avatar"
+        end
+      end
+
+      scenario "can create reply as an administrator", :js do
+        citizen = create(:user, username: "Ana")
+        manuela = create(:user, username: "Manuela")
+        admin   = create(:administrator, user: manuela)
+        comment = create(:comment, commentable: investment, user: citizen)
+
+        login_as(manuela)
+        visit budget_investment_path(investment.budget, investment)
+
+        click_link "Reply"
+
+        within "#js-comment-form-comment_#{comment.id}" do
+          fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
+          check "comment-as-administrator-comment_#{comment.id}"
+          click_button "Publish reply"
+        end
+
+        within "#comment_#{comment.id}" do
+          expect(page).to have_content "Top of the world!"
+          expect(page).to have_content "Administrator ##{admin.id}"
+          expect(page).to have_css "img.admin-avatar"
+        end
+
+        expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
         expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
-      end
-    end
-
-    scenario "can create reply as an administrator", :js do
-      citizen = create(:user, username: "Ana")
-      manuela = create(:user, username: "Manuela")
-      admin   = create(:administrator, user: manuela)
-      comment = create(:comment, commentable: investment, user: citizen)
-
-      login_as(manuela)
-      visit budget_investment_path(investment.budget, investment)
-
-      click_link "Reply"
-
-      within "#js-comment-form-comment_#{comment.id}" do
-        fill_in "comment-body-comment_#{comment.id}", with: "Top of the world!"
-        check "comment-as-administrator-comment_#{comment.id}"
-        click_button "Publish reply"
       end
 
-      within "#comment_#{comment.id}" do
-        expect(page).to have_content "Top of the world!"
-        expect(page).to have_content "Administrator ##{admin.id}"
-        expect(page).to have_css "div.is-admin"
-        expect(page).to have_css "img.admin-avatar"
+      scenario "public users not see admin description", :js do
+        manuela = create(:user, username: "Manuela")
+        admin   = create(:administrator, user: manuela)
+        comment = create(:comment,
+                          commentable: investment,
+                          user: manuela,
+                          administrator_id: admin.id)
+
+        visit budget_investment_path(investment.budget, investment)
+
+        within "#comment_#{comment.id}" do
+          expect(page).to have_content comment.body
+          expect(page).to have_content "Administrator ##{admin.id}"
+          expect(page).to have_css "img.admin-avatar"
+          expect(page).to have_css "div.is-admin"
+        end
       end
 
-      expect(page).not_to have_selector("#js-comment-form-comment_#{comment.id}", visible: true)
     end
 
     scenario "can not comment as a moderator" do
@@ -417,9 +501,9 @@ feature "Commenting Budget::Investments" do
     end
   end
 
-  feature "Voting comments" do
+  describe "Voting comments" do
 
-    background do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @investment = create(:budget_investment)

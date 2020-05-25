@@ -14,7 +14,6 @@ de:
       destroy:
         notice: Das Bild wurde erfolgreich gelöscht.
         alert: Das Bild kann nicht entfernt werden.
-        confirm: Sind sie sicher, dass Sie das Bild löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden!
     errors:
       messages:
         in_between: muss zwischen %{min} und %{max} sein

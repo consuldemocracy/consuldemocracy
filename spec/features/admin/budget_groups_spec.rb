@@ -1,10 +1,10 @@
 require "rails_helper"
 
-feature "Admin budget groups" do
+describe "Admin budget groups" do
 
   let(:budget) { create(:budget, phase: "drafting") }
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -16,18 +16,55 @@ feature "Admin budget groups" do
 
   context "Feature flag" do
 
-    background do
-      Setting["feature.budgets"] = nil
+    before do
+      Setting["process.budgets"] = nil
     end
 
     after do
-      Setting["feature.budgets"] = true
+      Setting["process.budgets"] = true
     end
 
     scenario "Disabled with a feature flag" do
       expect do
         visit admin_budget_groups_path(budget)
       end.to raise_exception(FeatureFlags::FeatureDisabled)
+    end
+
+  end
+
+  context "Load" do
+
+    let!(:budget) { create(:budget, slug: "budget_slug") }
+    let!(:group)  { create(:budget_group, slug: "group_slug", budget: budget) }
+
+    scenario "finds budget and group by slug" do
+      visit edit_admin_budget_group_path("budget_slug", "group_slug")
+      expect(page).to have_content(budget.name)
+      expect(page).to have_field "Group name", with: group.name
+    end
+
+    scenario "raises an error if budget slug is not found" do
+      expect do
+        visit edit_admin_budget_group_path("wrong_budget", group)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if budget id is not found" do
+      expect do
+        visit edit_admin_budget_group_path(0, group)
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group slug is not found" do
+      expect do
+        visit edit_admin_budget_group_path(budget, "wrong_group")
+      end.to raise_error ActiveRecord::RecordNotFound
+    end
+
+    scenario "raises an error if group id is not found" do
+      expect do
+        visit edit_admin_budget_group_path(budget, 0)
+      end.to raise_error ActiveRecord::RecordNotFound
     end
 
   end
@@ -91,7 +128,7 @@ feature "Admin budget groups" do
       visit admin_budget_groups_path(budget)
       within("#budget_group_#{group.id}") { click_link "Delete" }
 
-      expect(page).to have_content "You cannot destroy a Group that has associated headings"
+      expect(page).to have_content "You cannot delete a Group that has associated headings"
       expect(page).to have_selector "#budget_group_#{group.id}"
     end
 

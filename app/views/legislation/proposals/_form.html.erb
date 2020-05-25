@@ -1,5 +1,5 @@
 <%= form_for(@proposal, url: form_url) do |f| %>
-  <%= render 'shared/errors', resource: @proposal %>
+  <%= render "shared/errors", resource: @proposal %>
 
   <%= f.hidden_field(:legislation_process_id, :value => params[:process_id]) %>
 
@@ -15,7 +15,7 @@
       <%= f.label :summary, t("proposals.form.proposal_summary") %>
       <p class="help-text" id="summary-help-text"><%= t("proposals.form.proposal_summary_note") %></p>
       <%= f.text_area :summary, rows: 4, maxlength: 200, label: false,
-                      placeholder: t('proposals.form.proposal_summary'),
+                      placeholder: t("proposals.form.proposal_summary"),
                       aria: {describedby: "summary-help-text"} %>
     </div>
 
@@ -33,12 +33,12 @@
 
     <% if feature?(:allow_images) %>
       <div class="images small-12 column">
-        <%= render 'images/nested_image', imageable: @proposal, f: f %>
+        <%= render "images/nested_image", imageable: @proposal, f: f %>
       </div>
     <% end %>
 
     <div class="documents small-12 column" data-max-documents="<%= Legislation::Proposal.max_documents_allowed %>">
-      <%= render 'documents/nested_documents', documentable: @proposal, f: f %>
+      <%= render "documents/nested_documents", documentable: @proposal, f: f %>
     </div>
 
     <div class="small-12 medium-6 column">
@@ -60,14 +60,14 @@
       <%= f.text_field :tag_list, value: @proposal.tag_list.to_s,
                         label: false,
                         placeholder: t("proposals.form.tags_placeholder"),
-                        class: 'js-tag-list',
+                        class: "js-tag-list",
                         aria: {describedby: "tag-list-help-text"} %>
     </div>
 
     <div class="small-12 column">
       <% if @proposal.new_record? %>
         <%= f.label :terms_of_service do %>
-          <%= f.check_box :terms_of_service, title: t('form.accept_terms_title'), label: false %>
+          <%= f.check_box :terms_of_service, title: t("form.accept_terms_title"), label: false %>
           <span class="checkbox">
             <%= t("form.accept_terms",
                 policy: link_to(t("form.policy"), "/privacy", target: "blank"),

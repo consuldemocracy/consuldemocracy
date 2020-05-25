@@ -24,6 +24,7 @@ pl:
         debate: "Debata zaktualizowana pomyślnie."
         poll: "Sonda została pomyślnie zaktualizowana."
         poll_booth: "Stanowisko zostało zaktualizowane pomyślnie."
+        active_poll: "Opis sondy zaktualizowany pomyślnie."
         proposal: "Wniosek został zaktualizowany pomyślnie."
         spending_proposal: "Projekt inwestycyjny został pomyślnie zaktualizowany."
         budget_investment: "Projekt inwestycyjny został pomyślnie zaktualizowany."

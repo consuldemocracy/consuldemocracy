@@ -101,8 +101,8 @@ describe Vote do
     end
 
     it "blocks any other kind of votes" do
-      spending_proposal = create(:spending_proposal)
-      vote = create(:vote, votable: spending_proposal)
+      budget_investment = create(:budget_investment)
+      vote = create(:vote, votable: budget_investment)
 
       expect(described_class.public_for_api).not_to include(vote)
     end

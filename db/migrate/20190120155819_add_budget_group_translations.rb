@@ -1,4 +1,4 @@
-class AddBudgetGroupTranslations < ActiveRecord::Migration
+class AddBudgetGroupTranslations < ActiveRecord::Migration[4.2]
 
   def self.up
     Budget::Group.create_translation_table!(

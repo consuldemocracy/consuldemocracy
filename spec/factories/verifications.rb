@@ -6,7 +6,7 @@ FactoryBot.define do
     postal_code "28002"
   end
 
-  sequence(:document_number) { |n| "#{n.to_s.rjust(8, '0')}X" }
+  sequence(:document_number) { |n| "#{n.to_s.rjust(8, "0")}X" }
 
   factory :verification_residence, class: Verification::Residence do
     user

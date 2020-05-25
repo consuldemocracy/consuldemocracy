@@ -414,6 +414,15 @@ code {
   word-break: break-all;
 }
 
+.content-type {
+  white-space: nowrap;
+  padding-right: $line-height;
+
+  label {
+    margin-left: 0 !important;
+  }
+}
+
 // 02. Sidebar
 // -----------
 
@@ -1205,6 +1214,11 @@ table {
   .filter {
     display: inline-block;
     margin: 0 $line-height / 2;
+
+    label {
+      font-weight: normal;
+      margin: 0;
+    }
   }
 
   .button {

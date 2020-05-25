@@ -1,7 +1,7 @@
 require "rails_helper"
 include ActionView::Helpers::DateHelper
 
-feature "Commenting proposals" do
+describe "Commenting proposals" do
   let(:user) { create :user }
   let(:proposal) { create :proposal }
 
@@ -38,6 +38,21 @@ feature "Commenting proposals" do
     expect(page).to have_selector("ul#comment_#{second_child.id}>li", count: 1)
   end
 
+  scenario "Link to comment show" do
+    comment = create(:comment, commentable: proposal, user: user)
+
+    visit proposal_path(proposal)
+
+    within "#comment_#{comment.id}" do
+      expect(page).to have_link comment.created_at.strftime("%Y-%m-%d %T")
+    end
+
+    click_link comment.created_at.strftime("%Y-%m-%d %T")
+
+    expect(page).to have_link "Go back to #{proposal.title}"
+    expect(page).to have_current_path(comment_path(comment))
+  end
+
   scenario "Collapsable comments", :js do
     parent_comment = create(:comment, body: "Main comment", commentable: proposal)
     child_comment  = create(:comment, body: "First subcomment", commentable: proposal, parent: parent_comment)
@@ -46,20 +61,25 @@ feature "Commenting proposals" do
     visit proposal_path(proposal)
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 2)
+    expect(page).to have_content("1 response (collapse)")
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content grandchild_comment.body
 
     find("#comment_#{child_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 3)
+    expect(page).to have_content("1 response (collapse)", count: 2)
     expect(page).to have_content grandchild_comment.body
 
     find("#comment_#{parent_comment.id}_children_arrow").click
 
     expect(page).to have_css(".comment", count: 1)
+    expect(page).to have_content("1 response (show)")
     expect(page).not_to have_content child_comment.body
     expect(page).not_to have_content grandchild_comment.body
   end
@@ -153,7 +173,7 @@ feature "Commenting proposals" do
     expect(page).to have_css(".comment", count: 2)
   end
 
-  feature "Not logged user" do
+  describe "Not logged user" do
     scenario "can not see comments forms" do
       create(:comment, commentable: proposal)
       visit proposal_path(proposal)
@@ -299,7 +319,7 @@ feature "Commenting proposals" do
     end
   end
 
-  feature "Moderators" do
+  describe "Moderators" do
     scenario "can create comment as a moderator", :js do
       moderator = create(:moderator)
 
@@ -355,7 +375,7 @@ feature "Commenting proposals" do
     end
   end
 
-  feature "Administrators" do
+  describe "Administrators" do
     scenario "can create comment as an administrator", :js do
       admin = create(:administrator)
 
@@ -411,9 +431,8 @@ feature "Commenting proposals" do
     end
   end
 
-  feature "Voting comments" do
-
-    background do
+  describe "Voting comments" do
+    before do
       @manuela = create(:user, verified_at: Time.current)
       @pablo = create(:user)
       @proposal = create(:proposal)

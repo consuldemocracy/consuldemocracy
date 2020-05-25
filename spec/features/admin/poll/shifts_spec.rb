@@ -1,8 +1,8 @@
 require "rails_helper"
 
-feature "Admin shifts" do
+describe "Admin shifts" do
 
-  background do
+  before do
     admin = create(:administrator)
     login_as(admin.user)
   end
@@ -22,12 +22,14 @@ feature "Admin shifts" do
     expect(page).to have_css(".shift", count: 1)
     expect(page).to have_content I18n.l(Date.current, format: :long)
     expect(page).to have_content officer.name
+    expect(page).to have_content officer.email
 
     visit new_admin_booth_shift_path(booth2)
 
     expect(page).to have_css(".shift", count: 1)
     expect(page).to have_content I18n.l(Time.zone.tomorrow, format: :long)
     expect(page).to have_content officer.name
+    expect(page).to have_content officer.email
   end
 
   scenario "Create Vote Collection Shift and Recount & Scrutiny Shift on same date", :js do
@@ -229,6 +231,7 @@ feature "Admin shifts" do
 
     expect(page).to have_css(".shift", count: 1)
     expect(page).to have_content(officer.name)
+    expect(page).to have_content(officer.email)
   end
 
   scenario "Empty" do

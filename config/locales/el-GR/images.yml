@@ -1,0 +1,20 @@
+el:
+  images:
+    remove_image: Κατάργηση εικόνας
+    form:
+      title: Περιγραφική εικόνα
+      title_placeholder: Προσθέστε έναν περιγραφικό τίτλο σε αυτήν την εικόνα
+      attachment_label: Επιλέξτε εικόνα
+      delete_button: Κατάργηση εικόνας
+      note: "Μπορείτε να ανεβάσετε μια εικόνα της ακόλουθης μορφής: %{accepted_content_types}, μέχρι %{max_file_size} MB."
+      add_new_image: Προσθέστε εικόνα
+      admin_title: "Εικόνα"
+      admin_alt_text: "Εναλλακτικό κείμενο για την εικόνα"
+    actions:
+      destroy:
+        notice: Η εικόνα έχει διαγραφεί με επιτυχία.
+        alert: Δεν είναι δυνατή η κατάργηση της εικόνας.
+    errors:
+      messages:
+        in_between: πρέπει να είναι μεταξύ %{min} και %{max}
+        wrong_content_type: "ο τύπος περιεχομένου %{content_type} δεν ταιριάζει με κανένα από τους αποδεκτούς τύπους περιεχομένου\n%{accepted_content_types}"

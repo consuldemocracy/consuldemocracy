@@ -67,7 +67,7 @@
 
   <% if @investment.image.present? %>
     <%= link_to t("admin.budget_investments.show.see_image"),
-                   namespaced_budget_investment_path(@investment, {anchor: 'image'}),
+                   namespaced_budget_investment_path(@investment, {anchor: "image"}),
                    target: "blank" %>
   <% else %>
     <%= t("admin.budget_investments.show.no_image") %>
@@ -80,7 +80,7 @@
   <% if @investment.documents.present? %>
     <%= link_to t("admin.budget_investments.show.see_documents",
                    count: @investment.documents.count),
-                   namespaced_budget_investment_path(@investment, {anchor: 'documents'}),
+                   namespaced_budget_investment_path(@investment, {anchor: "documents"}),
                    target: "blank" %>
   <% else %>
     <%= t("admin.budget_investments.show.no_documents") %>
@@ -89,5 +89,5 @@
 
 <p id="user-tags">
   <strong><%= t("admin.budget_investments.show.user_tags") %>: </strong>
-  <%= @investment.tag_list.sort.join(', ') %>
+  <%= @investment.tag_list.sort.join(", ") %>
 </p>

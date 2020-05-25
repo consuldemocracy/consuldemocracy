@@ -1,4 +1,4 @@
-class Lock < ActiveRecord::Base
+class Lock < ApplicationRecord
   belongs_to :user
 
   before_save :set_locked_until
@@ -21,7 +21,7 @@ class Lock < ActiveRecord::Base
   end
 
   def self.increase_tries(user)
-    Lock.find_or_create_by(user: user).increment!(:tries)
+    Lock.find_or_create_by(user: user).increment!(:tries).save
   end
 
   def self.max_tries

@@ -1,8 +1,8 @@
-<%= link_to t('admin.menu.activity'), admin_activity_path, class: "button float-right" %>
+<%= link_to t("admin.menu.activity"), admin_activity_path, class: "button float-right" %>
 
 <h2 class="inline-block"><%= t("admin.moderators.index.title") %></h2>
 
-<%= render 'admin/shared/user_search', url: search_admin_moderators_path %>
+<%= render "admin/shared/user_search", url: search_admin_moderators_path %>
 
 <div id="moderators">
   <% if @moderators.any? %>
@@ -25,13 +25,13 @@
             </td>
             <td>
               <% if moderator.persisted? %>
-                <%= link_to t('admin.moderators.moderator.delete'),
+                <%= link_to t("admin.moderators.moderator.delete"),
                             admin_moderator_path(moderator),
                             method: :delete,
                             class: "button hollow alert expanded"
                 %>
               <% else %>
-                <%= link_to t('admin.moderators.moderator.add'),
+                <%= link_to t("admin.moderators.moderator.add"),
                             { controller: "admin/moderators", action: :create,
                               user_id: moderator.user_id },
                               method: :post,

@@ -3,7 +3,7 @@ de:
     no_reply: "Diese Nachricht wurde von einer E-Mail-Adresse gesendet, die keine Antworten akzeptiert."
     comment:
       hi: Hallo
-      new_comment_by_html: Es gibt einen neuen Kommentar von <b>%{commenter}</b>
+      new_comment_by_html: Es gibt einen neuen Kommentar von <strong>%{commenter}</strong>
       subject: Jemand hat Ihre %{commentable} kommentiert.
       title: Neuer Kommentar
     config:
@@ -16,7 +16,7 @@ de:
       title: Bestätigen Sie Ihr Konto über den folgenden Link
     reply:
       hi: Hallo
-      new_reply_by_html: Es gibt eine neue Antwort von <b>%{commenter}</b> auf Ihren Kommentar
+      new_reply_by_html: Es gibt eine neue Antwort von <strong>%{commenter}</strong> auf Ihren Kommentar
       subject: Jemand hat auf Ihren Kommentar geantwortet
       title: Neue Antwort auf Ihren Kommentar
     unfeasible_spending_proposal:

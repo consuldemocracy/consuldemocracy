@@ -1,7 +1,7 @@
 shared_examples "admin_milestoneable" do |factory_name, path_name|
   it_behaves_like "admin_progressable", factory_name, path_name
 
-  feature "Admin milestones" do
+  describe "Admin milestones" do
     let!(:milestoneable) { create(factory_name) }
     let(:path) { send(path_name, *resource_hierarchy_for(milestoneable)) }
 

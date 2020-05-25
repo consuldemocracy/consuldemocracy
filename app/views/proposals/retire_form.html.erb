@@ -11,7 +11,7 @@
     </div>
 
     <%= form_for(@proposal, url: retire_proposal_path(@proposal)) do |f| %>
-      <%= render 'shared/errors', resource: @proposal %>
+      <%= render "shared/errors", resource: @proposal %>
       <div class="row">
         <div class="small-12 medium-6 large-4 column">
           <%= f.label :retired_reason,  t("proposals.retire_form.retired_reason_label") %>
@@ -23,7 +23,7 @@
         <div class="small-12 medium-9 column">
           <%= f.label :retired_explanation, t("proposals.retire_form.retired_explanation_label") %>
           <%= f.text_area :retired_explanation, rows: 4, maxlength: 500, label: false,
-                          placeholder: t('proposals.retire_form.retired_explanation_placeholder') %>
+                          placeholder: t("proposals.retire_form.retired_explanation_placeholder") %>
         </div>
       </div>
 

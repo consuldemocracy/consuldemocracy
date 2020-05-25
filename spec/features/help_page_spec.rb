@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "Help page" do
+describe "Help page" do
 
   context "Index" do
 

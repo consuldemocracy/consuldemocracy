@@ -34,6 +34,7 @@ ar:
         figcaption_html: '"الدعم" و "التصويت" مراحل ميزانيات المشتركة.'
       polls:
         title: "استطلاعات"
+        link: "استطلاعات الرأي"
         feature_1_link: "سجل في %{org_name}"
       processes:
         title: "عمليات"
@@ -45,7 +46,6 @@ ar:
         page:
           title: "الأسئلة الأكثر تكراراً"
           description: "استخدام هذه الصفحة لحل الأسئلة الأكثر تكراراً من مستخدمين الموقع."
-          faq_1_title: "السؤال 1"
       other:
         title: "معلومات أخرى مفيدة"
         how_to_use: "استخدم %{org_name} في مدينتك"
@@ -53,19 +53,7 @@ ar:
         how_to_use: استخدامه في المؤسسات العامة
     privacy:
       title: سياسة الخصوصية
-      subtitle: معلومات بخصوص خصوصية البيانات
-      info_items:
-        - 
-        - 
-        - 
-        - 
-          subitems:
-            - 
-              field: 'اسم الملف:'
-              description: اسم الملف
-            - 
-              field: 'الهدف من الملف:'
-            - 
+      subtitle: "معلومات بخصوص خصوصية البيانات"
     accessibility:
       title: إمكانية الوصول
       description: |-
@@ -143,7 +131,7 @@ ar:
               browser_column: أوبرا
               action_column: عرض > مقياس
         browser_shortcuts_table:
-          description: 'طريقة أخرى لتعديل حجم النص استخدام اختصارات لوحة المفاتيح المحددة في المستعرضات:'
+          description: "طريقة أخرى لتعديل حجم النص استخدام اختصارات لوحة المفاتيح المحددة في المستعرضات:"
           rows:
             - 
               shortcut_column: CTRL و + (CMD و + على الماك)
@@ -153,15 +141,11 @@ ar:
               description_column: تصغير حجم النص
       compatibility:
         title: التوافق مع المعايير والتصميم المرئي
-    titles:
-      accessibility: إمكانية الوصول
-      conditions: شروط الاستخدام
-      privacy: سياسة الخصوصية
     verify:
       code: الكود الذي وصل في الرسالة
       email: البريد الإلكتروني
-      info: 'للتحقق من حسابك ادخل بيانات الدخول الخاصة بك:'
-      info_code: 'الرجاء إدخال الكود التي وصل إلى بريدك الالكتروني:'
+      info: "للتحقق من حسابك ادخل بيانات الدخول الخاصة بك:"
+      info_code: "الرجاء إدخال الكود التي وصل إلى بريدك الالكتروني:"
       password: كلمة المرور
       submit: التحقق من حسابي
       title: التحقق من حسابك

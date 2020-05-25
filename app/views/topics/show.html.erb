@@ -9,7 +9,7 @@
       <h1><%= @topic.title %></h1>
 
       <div class="topic-info margin-bottom">
-        <%= render '/shared/author_info', resource: @topic %>
+        <%= render "/shared/author_info", resource: @topic %>
 
         <span class="bullet">&nbsp;&bull;&nbsp;</span>
         <%= l(@topic.created_at.to_date) %>
@@ -28,11 +28,11 @@
         <h2><%= t("community.show.author") %></h2>
         <%= link_to t("community.show.topic.edit"),
                     edit_community_topic_path(@community.id, @topic),
-                    class: 'button hollow expanded' %>
+                    class: "button hollow expanded" %>
 
         <%= link_to t("community.show.topic.destroy"),
                     community_topic_path(@community.id, @topic), method: :delete,
-                    class: 'button hollow expanded alert' %>
+                    class: "button hollow expanded alert" %>
       </aside>
     <% end %>
   </div>

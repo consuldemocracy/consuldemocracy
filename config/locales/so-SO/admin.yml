@@ -38,8 +38,6 @@ so:
           proposals: Sojeedino
           budgets: Misaaniyada kaqayb qadashada
           help_page: Bogga Caawinta
-        background_color: Midaabka hore
-        font_color: Kalarka baaldiga kanisada laga isticmaalo
       edit:
         editing: Bedel baneer
         form:
@@ -145,11 +143,6 @@ so:
         tags_filter_all: Dhamaan Taagyada
         advanced_filters: Sifeyaysha Sare
         placeholder: Mashariic raadin
-        sort_by:
-          placeholder: Kala saar
-          id: Aqoonsi
-          title: Ciwaan
-          supports: Tageerayaal
         filters:
           all: Dhamaan
           without_admin: Anlahayn maamul
@@ -336,9 +329,9 @@ so:
         user: Istimale
         no_hidden_users: Majiraan Isticmalayaal Qarsoon.
       show:
-        email: 'Email:'
-        hidden_at: 'Qarsoon ag:'
-        registered_at: 'Kadiwaan gashan ag:'
+        email: "Email:"
+        hidden_at: "Qarsoon ag:"
+        registered_at: "Kadiwaan gashan ag:"
         title: Wax qabadka Isticmalaha%{user}
     hidden_budget_investments:
       index:
@@ -371,8 +364,6 @@ so:
           debate_phase: Wajiga doodda
           allegations_phase: Heerarka faallooyinka
           proposals_phase: Wajiga soo jeedinada
-          start: Biloow
-          end: Dhamad
           use_markdown: Isticmaal lambarka si aad u sameyso qoraalka
           title_placeholder: Ciwaanka geedi socodka
           summary_placeholder: Soo koobista kooban ee sharaxaadda
@@ -384,7 +375,6 @@ so:
           delete: Titiriid
           title: Nidaamka Sharciga
           filters:
-            open: Furan
             all: Dhamaan
         new:
           back: Labasho
@@ -400,7 +390,6 @@ so:
           title: Geedisocoodka
           comments: Faalo
           status: Status
-          creation_date: Tarikh Abuurid
           status_open: Furan
           status_closed: Xiraan
           status_planned: Qorsheysaan
@@ -521,12 +510,11 @@ so:
         add: Kudar
         delete: Titiriid
       search:
-        title: 'Mamulayasha isticmaala raadinta'
+        title: "Mamulayasha isticmaala raadinta"
     menu:
       activity: Waxqabadka Xeer ilaliyaha
       admin: Mamulka Warqada qiimo
       banner: Mamulka xayiraada
-      poll_questions: Sualo
       proposals: Sojeedino
       proposals_topics: Ciwaanka sojedinada
       budgets: Misaaniyadaha kaqayb qadashada
@@ -576,7 +564,6 @@ so:
           save: "Badbaado"
       title_moderated_content: Mawduuc dhexdhexaad ah
       title_budgets: Misaniyaado
-      title_polls: Doorashooyinka
       title_profiles: Aqoosi
       title_settings: Settings
       title_site_customization: Macluumaadka bogga
@@ -606,7 +593,7 @@ so:
         add: Kudar
         delete: Titiriid
       search:
-        title: 'Dhexdhexadiyasha radinaya isticmalyaal'
+        title: "Dhexdhexadiyasha radinaya isticmalyaal"
     segment_recipient:
       all_users: Dhamaan isticamalayasha
       administrators: Mamulayal
@@ -699,9 +686,9 @@ so:
         send_pending: U dir waqtiga la sugayo
         send_pending_notification: Ogeysiisyada la sugayo ayaa lo diray si guul leh
       proposal_notification_digest:
-        title: Soojeedinta khafiifinta ogaysiisyada
-        description: Wuxuu soo ururiyaa dhammaan ogeysiinta soo jeedinta ee loogu talagalay isticmaale ahaan hal farriin, si looga fogaado emails aad u badan.
-        preview_detail: Isticmaalayaasha ayaa kaliya ogaan doona ogeysiisyada soo jeedinta ay soo socdaan
+        title: "Soojeedinta khafiifinta ogaysiisyada"
+        description: "Wuxuu soo ururiyaa dhammaan ogeysiinta soo jeedinta ee loogu talagalay isticmaale ahaan hal farriin, si looga fogaado emails aad u badan."
+        preview_detail: "Isticmaalayaasha ayaa kaliya ogaan doona ogeysiisyada soo jeedinta ay soo socdaan"
     emails_download:
       index:
         title: Emaylada Sodejinta
@@ -723,7 +710,7 @@ so:
         add: Kudaar qimeyayasha
         delete: Titiriid
       search:
-        title: 'Raadi isticmalka qimeyayasha'
+        title: "Raadi isticmalka qimeyayasha"
       summary:
         title: Qimeeyn ta kooban mal gelinta mashariicda
         valuator_name: Qimeeye
@@ -856,10 +843,6 @@ so:
         geozone_restricted: "Xayiraadda degmooyinka"
       new:
         title: "Dorashada Cusub"
-        show_results_and_stats: "Muuji natijooyinka iyo xoogta"
-        show_results: "Tuus natiijada"
-        show_stats: "Muuji Xoogta"
-        results_and_stats_reminder: "Calaamadaynta sanduuqyadan saxda ah natiijooyinka iyo / ama tirooyinka ra'yiga ee ra'yiururintan ayaa si guud loo heli karaa iyada oo isticmaal kasta oo iyaga arki doona."
         submit_button: "Saame dorshada"
       edit:
         title: "Tafatiir dorashada"
@@ -984,9 +967,9 @@ so:
     officials:
       edit:
         destroy: Ka saar 'Aqoonsiga'
-        title: 'Tafatiir Sarakiisha isticmaalsha'
+        title: "Tafatiir Sarakiisha isticmaalsha"
       flash:
-        official_destroyed: 'Faahfaahinta la keydiyay: istimalka aha mid rasmi ah'
+        official_destroyed: "Faahfaahinta la keydiyay: istimalka aha mid rasmi ah"
         official_updated: Faahfaahinta rasmiga ah lakeydiyey
       index:
         title: Saraakiisha
@@ -1003,7 +986,7 @@ so:
       search:
         edit_official: Tafatirida rasmiga ah
         make_official: Sameyso rasmi ah
-        title: 'Meelaha rasmiga ah: Raadinta qofka'
+        title: "Meelaha rasmiga ah: Raadinta qofka"
         no_results: Meelo rasmi ah oo aan la helin.
     organizations:
       index:
@@ -1061,10 +1044,6 @@ so:
       flash:
         updated: Cusboneysii Qimaha
       index:
-        banners: Calan ama Maro wax lugu qoro
-        banner_imgs: Sawirka Boodhka wax lugu qoro
-        no_banners_images: Majiro Sawirka Boodhka wax lugu qoro
-        no_banners_styles: Majiro Calan ama Maro wax lugu qoro/ bodh
         title: Dejinta Qaybinta
         update_setting: Cusboneysiin
         feature_flags: Soobandhigiidyo / Muqaalo
@@ -1192,7 +1171,7 @@ so:
         form:
           error:
             one: "khaladka ayaa hortaagan in galkaan ka badbaado"
-            other: 'khaladka ayaa hortaagan in galkaan ka badbaado'
+            other: "khaladka ayaa hortaagan in galkaan ka badbaado"
       edit:
         form:
           submit_button: Badbaadi beddelka
@@ -1250,9 +1229,7 @@ so:
           verified_users_who_didnt_vote_proposals: Isticmaalayaasha la xaqiijiyay ee aan codka bixin
           visits: Boqashooyinka
           votes: Wadarka codadka
-        spending_proposals_title: Soo-jeedinta Kharashka
         budgets_title: Misaaniyada kaqayb qadashada
-        visits_title: Boqashooyinka
         direct_messages: Fariimo toosa
         proposal_notifications: Ogaysiis soo jedin
         incomplete_verifications: Caddaynta aan dhammeystirnayn
