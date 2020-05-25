@@ -1,1 +1,6 @@
 ro:
+  images:
+    remove_image: Șterge imagine
+    form:
+      title: Imagine descriptivă
+      delete_button: Șterge imagine
