@@ -151,11 +151,13 @@ ro:
           valuation_group: Grup de evaluare
           feasibility: Fezabilitate
           selected: Selectat
+          author_username: Numele de utilizator al autorului
           incompatible: Incompatibil
           price: Preț
           author: Autor
         cannot_calculate_winners: Bugetul trebuie să rămână pe etapa „Proiecte în curs de votare”, „Revizuirea buletinelor de vot” sau „Buget finalizat” pentru a calcula proiectele câștigătoare
         see_results: "Vezi rezultatele"
+        milestone_tags_filter_all: "Toate etichetele de reper"
       show:
         assigned_admin: Administrator alocat
         assigned_valuators: Evaluatori alocați
@@ -244,14 +246,23 @@ ro:
         title: "Bare de progres"
         no_progress_bars: "Nu există bare de progres"
         new_progress_bar: "Creați o nouă bară de progres"
+        primary: "Bară de progres primară"
         table_title: "Titlu"
       new:
         creating: "Crează bară de progres"
       edit:
         title:
+          primary: "Editați bara de progres primară"
           secondary: "Bară de progress %{title}"
+      create:
+        notice: "Bară de progres creată cu succes!"
+      update:
+        notice: "Bară de progres actualizată cu succes"
+      delete:
+        notice: "Bară de progres ștearsă cu succes"
     comments:
       index:
+        id: "ID"
         content: "Conținut"
         author: "Autor"
         title: Comentarii
