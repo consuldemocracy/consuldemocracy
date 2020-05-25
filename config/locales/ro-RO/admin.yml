@@ -5,6 +5,7 @@ ro:
       confirm: Sunteți sigur?
       hide: Ascunde
       hide_author: Ascunde autor
+      restore: Restabilire
       edit: Editează
       configure: Configurează
       delete: Șterge
@@ -39,6 +40,7 @@ ro:
           block: Blocat
           hide: Ascuns
           restore: Restaurat
+        by: Moderat de
         content: Conținut
         filter: Afișează
         filters:
