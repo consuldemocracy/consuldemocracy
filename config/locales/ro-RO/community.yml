@@ -12,3 +12,21 @@ ro:
       topic:
         edit: Editează subiect
         destroy: Șterge subiect
+      author: Autor
+    topic:
+      create: Crează un subiect
+      edit: Editează subiect
+      form:
+        new:
+          submit_button: Crează subiect
+        edit:
+          submit_button: Editează subiect
+        create:
+          submit_button: Crează subiect
+        update:
+          submit_button: Actualizează subiect
+      show:
+        tab:
+          comments_tab: Comentarii
+      sidebar:
+        recommendations_title: Recomandări pentru crearea unui subiect
