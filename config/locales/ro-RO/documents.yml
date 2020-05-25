@@ -1,1 +1,10 @@
 ro:
+  documents:
+    title: Documente
+    max_documents_allowed_reached: Ați atins numărul maxim de documente permise! <strong>Trebuie să stergeți unul înainte să puteți adăuga altul.</strong>
+    additional: Documente adiționale
+    form:
+      title: Documente
+      title_placeholder: Adăugați un titlu descriptiv pentru document
+      delete_button: Înlătură document
+      cancel_button: Anulare
