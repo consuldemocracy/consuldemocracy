@@ -154,6 +154,30 @@ ro:
           incompatible: Incompatibil
           price: Preț
           author: Autor
+        see_results: "Vezi rezultatele"
+      show:
+        edit: Editează
+        by: De
+        sent: Trimis
+        group: Grup
+        dossier: Dosar
+        edit_dossier: Editează dosar
+        tags: Etichete
+        undefined: Nedefinit
+        compatibility:
+          title: Compatibilitate
+          "true": Incompatibil
+          "false": Compatibil
+        selection:
+          title: Selecție
+        winner:
+          title: Câștigător
+          "true": "Da"
+          "false": "Nu"
+        valuator_groups: "Grupuri de evaluare"
+        preview: Previzualizare investiție
+      edit:
+        classification: Clasificare
     milestones:
       index:
         table_title: "Titlu"
