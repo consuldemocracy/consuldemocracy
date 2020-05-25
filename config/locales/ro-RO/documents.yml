@@ -8,3 +8,13 @@ ro:
       title_placeholder: Adăugați un titlu descriptiv pentru document
       delete_button: Înlătură document
       cancel_button: Anulare
+      note: "Puteți încărca până la un maxim de %{max_documents_allowed} ducumente pentru următoarele tipuri de conținut: %{accepted_content_types}, până la %{max_file_size} MB per fișier."
+      add_new_document: Adaugă document nou
+    actions:
+      destroy:
+        notice: Documentul a fost șters cu succes.
+        alert: Documentul nu poate fi șters.
+        confirm: Sigur doriți să ștergeți documentul? Această acțiune nu poate fi anulată!
+    buttons:
+      download_document: Descărcare fișier
+      destroy_document: Șterge document
