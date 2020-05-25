@@ -28,3 +28,5 @@ ro:
       participants_support_phase: "Faza de sprijin a participanților"
       participants_vote_phase: "Faza de votare a participanților"
       participants_every_phase: "Total participanți"
+    polls:
+      web_percentage: "%{percentage} Web"
