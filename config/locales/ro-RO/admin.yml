@@ -63,9 +63,15 @@ ro:
         table_investments: Investiții
         table_edit_budget: Editează
         edit_budget: Editează buget
+        no_budgets: "Nu există bugete."
+      update:
+        notice: Bugetul Participativ a fost actualizat cu succes
       edit:
         delete: Șterge buget
+        phase: Etapă
+        enabled: Activat
         actions: Acțiuni
+        edit_phase: Editează etapă
         active: Activ
         administrators:
           one: "1 administrator selectat"
@@ -75,6 +81,10 @@ ro:
           zero: "Selectează evaluatori"
         empty_administrators: "Nu există administratori"
         empty_valuators: "Nu există evaluatori"
+      destroy:
+        success_notice: Buget șters cu succes
+        unable_notice: Nu puteți șterge un buget care are investiții asociate
+        unable_notice_polls: Nu puteți șterge un buget care are un sondaj asociat
     budget_groups:
       name: "Nume"
       no_groups: "Nu există grupuri."
@@ -141,6 +151,9 @@ ro:
           valuation_group: Grup de evaluare
           feasibility: Fezabilitate
           selected: Selectat
+          incompatible: Incompatibil
+          price: Preț
+          author: Autor
     milestones:
       index:
         table_title: "Titlu"
