@@ -70,7 +70,6 @@ class Verification::Residence
         errors.add(:date_of_birth, I18n.t("verification.residence.new.error_not_allowed_age"))
       end
     end
-<<<<<<< HEAD
 
     def call_census_api
       @census_api_response = CensusApi.new.call(document_type, document_number, postal_code)
@@ -109,6 +108,4 @@ class Verification::Residence
     def clean_document_number
       self.document_number = self.document_number.gsub(/[^a-z0-9]+/i, "").upcase unless self.document_number.blank?
     end
-=======
->>>>>>> 1.1.0
 end
