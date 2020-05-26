@@ -34,6 +34,13 @@ ro:
     phase:
       drafting: Schiță (Nu este vizibil publicului)
       informing: Informații
+      accepting: Se acceptă proiectele
+      reviewing: Se revizuiesc proiectele
+      selecting: Selectează proiectele
+      valuating: Evaluează proiectele
+      publishing_prices: Se publică costurile proiectelor
+      balloting: Votează proiecte
+      reviewing_ballots: Revizuirea votului
       finished: Buget finalizat
     index:
       title: Bugete participative
@@ -41,6 +48,7 @@ ro:
       section_header:
         icon_alt: Pictograma bugetelor participative
         title: Bugete participative
+        help: Ajutor cu procesele de bugetare participativă
         all_phases: Vezi toate etapele
       all_phases: Etapele bugetului de investiții
       map: Propunerile investițiilor bugetare situate geografic
@@ -50,6 +58,7 @@ ro:
       finished_budgets: Bugete participative terminate
       see_results: Vezi rezultatele
       section_footer:
+        title: Ajutor cu procesele de bugetare participativă
         description: Odată cu bugetarea participativă, cetățenii decid căror proiecte va fi destinată o parte din buget.
       milestones: Repere
     investments:
@@ -58,6 +67,7 @@ ro:
         tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
         tags_label: Etichete
         tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+        map_location: "Localizare pe hartă"
         map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
         map_remove_marker: "Eliminați marcatorul de hartă"
         map_skip_checkbox: "Această investiție nu are o locație concretă sau nu o cunosc."
@@ -72,6 +82,10 @@ ro:
           title: Caută
         sidebar:
           my_ballot: Votul meu
+          voted:
+            one: "<strong>Ați votat o propunere de proiect în valoare de %{amount_spent}</strong>"
+            few: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
+            other: "<strong>Ați votat %{count} propuneri de proiect în valoare de %{amount_spent}</strong>"
           voted_info_link: schimbă-ți votul
           different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
           change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
