@@ -39,6 +39,8 @@ ro:
       title: Bugete participative
       empty_budgets: Nu există bugete.
       section_header:
+        icon_alt: Pictograma bugetelor participative
+        title: Bugete participative
         all_phases: Vezi toate etapele
       see_results: Vezi rezultatele
       milestones: Repere
@@ -52,3 +54,6 @@ ro:
           title: Caută
         sidebar:
           my_ballot: Votul meu
+        orders:
+          random: aleatoriu
+          price: după preț
