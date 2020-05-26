@@ -98,5 +98,15 @@ ro:
         add: Vot
         already_added: Ați adăugat deja acest proiect de investiții
         already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
+      header:
+        check_ballot: Verifică și confirmă votul
+    progress_bar:
+      available: "Buget disponibil: "
+    show:
+      group: Grup
+      phase: Etapa actuală
+      unfeasible_title: Investiții imposibile
+      see_results: Vezi rezultatele
     results:
+      link: Rezultate
       ballot_lines_count: Voturi
