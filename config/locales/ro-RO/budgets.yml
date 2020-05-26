@@ -42,6 +42,9 @@ ro:
         icon_alt: Pictograma bugetelor participative
         title: Bugete participative
         all_phases: Vezi toate etapele
+      unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
+      not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
+      finished_budgets: Bugete participative terminate
       see_results: Vezi rezultatele
       milestones: Repere
     investments:
