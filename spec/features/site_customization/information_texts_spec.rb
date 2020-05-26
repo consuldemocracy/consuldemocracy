@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Custom information texts" do
-
   scenario "Show custom texts instead of default ones" do
     admin = create(:administrator)
     login_as(admin.user)

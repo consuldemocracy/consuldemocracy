@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe UsersHelper do
-
   describe "#humanize_document_type" do
     it "returns a humanized document type" do
       expect(humanize_document_type("1")).to eq "DNI"
@@ -55,5 +54,4 @@ describe UsersHelper do
                                                        '</del> <span class="small">(This debate has been deleted)</span>')
     end
   end
-
 end

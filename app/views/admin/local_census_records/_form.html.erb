@@ -1,0 +1,33 @@
+<%= form_for [:admin, @local_census_record] do |f| %>
+  <%= render "shared/errors", resource: @local_census_record %>
+
+  <div class="row">
+    <div class="small-12">
+      <%= f.select :document_type, document_types, prompt: "" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12">
+      <%= f.text_field :document_number %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="date-of-birth small-12">
+      <%= f.date_select :date_of_birth,
+                        prompt: true,
+                        start_year: 1900, end_year: minimum_required_age.years.ago.year %>
+    </div>
+  </div>
+
+  <div class="clear row">
+    <div class="small-12">
+      <%= f.text_field :postal_code %>
+    </div>
+  </div>
+
+  <div class="small-12 medium-4 large-2 margin-top">
+    <%= f.submit(class: "button success expanded", value: t("shared.save")) %>
+  </div>
+<% end %>

@@ -6,7 +6,6 @@ bs:
         submit: Ponovo pošaljite uputstvo
         title: Ponovo pošaljite uputstvo za potvrđivanje
       show:
-        instructions_html: Potvrđivanje naloga emailom %{email}
         new_password_confirmation_label: Ponovite pristupnu lozinku
         new_password_label: Nova lozinka za pristup
         please_set_password: Odaberite novu lozinku (s kojom se možete prijaviti putem emaila gore)
@@ -50,10 +49,6 @@ bs:
           title: Registrujte se kao organizacija ili zajednica
         success:
           back_to_index: Shvatam; idi nazad na početnu stranicu
-          instructions_1_html: "<strong> Kontaktiraćemo vas uskoro </strong> kako bi potvrdili da zaista predstavljate ovu zajednicu."
-          instructions_2_html: Dok se vaš <strong> email provjerava </strong>, poslali smo vam <strong> link za potvrdu vašeg naloga </strong>.
-          instructions_3_html: Nakon što dobijete potvrdu, moći ćete krenuti s učestvovanjem kao neverifikovana zajednica.
-          thank_you_html: Hvala što ste registrovali svoju zajednicu na web-stranici. Sad je u toku <strong> verifikacija </strong>.
           title: Registracija organizacije ili zajednice
     passwords:
       edit:
@@ -123,7 +118,4 @@ bs:
           username_note: Ime koje je navedeno pored vaših objava
         success:
           back_to_index: Shvatam; idi nazad na početnu stranicu
-          instructions_1_html: Provjerite <b> vaš email</b> - poslali smo vam <b> link da potvrdimo vaš nalog </b>.
-          instructions_2_html: Nakon potvrde, možete početi s učestvovanjem.
-          thank_you_html: Hvala što ste se registrovali za web-stranicu. Sad morate <b> potvrditi svoju email adresu </b>.
           title: Potvrdite svoju email adresu

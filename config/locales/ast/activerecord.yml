@@ -49,9 +49,6 @@ ast:
       proposal:
         one: "Propuesta ciudadana"
         other: "Propuestes ciudadanes"
-      spending_proposal:
-        one: "Propuesta d'inversión"
-        other: "Propuestes d'inversión"
       site_customization/page:
         one: Páxina
         other: Páxines
@@ -136,20 +133,13 @@ ast:
         password_confirmation: "Confirmación de contraseña"
         password: "Contraseña que utilizarás para acceder a este sitio web"
         current_password: "Contraseña actual"
-        phone_number: "Númberu de teléfonu"
         official_position: "Cargu públicu"
         official_level: "Nivel del cargu"
+        phone_number: "Númberu de teléfonu"
         redeemable_code: "Códigu de verificación per email"
       organization:
         name: "Nome d'organización"
         responsible_name: "Persona responsable del colectivu"
-      spending_proposal:
-        administrator_id: "Alministrador"
-        association_name: "Nome de l'asociación"
-        description: "Descripción detallada"
-        external_url: "Enllaz a documentación adicional"
-        geozone_id: "Ámbitu d'actuación"
-        title: "Títulu"
       poll:
         name: "Nome"
         starts_at: "Fecha d'apertura"
@@ -242,7 +232,7 @@ ast:
       poll/question/answer/video:
         title: Títulu
       newsletter:
-        from: Desde
+        from: "Desde"
       admin_notification:
         title: Títulu
         link: Enllaz

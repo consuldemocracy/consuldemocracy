@@ -13,7 +13,7 @@
 
     <div class="small-12 medium-6 large-2 column counter-divider">
       <div class="counter">
-        <div class="counter-value"><%= number_with_delimiter(community_members_count, delimiter: '.') %></div>
+        <div class="counter-value"><%= number_with_delimiter(community_members_count, delimiter: ".") %></div>
         <span class="counter-label"><%= t("layouts.dashboard.proposal_totals.community") %></span>
       </div>
     </div>
@@ -22,9 +22,9 @@
       <div class="small-12 medium-6 large-4 column supports">
         <div class="counter">
           <div class="counter-value">
-            <%= number_with_delimiter(proposal.votes_for.size, delimiter: '.') %>
+            <%= number_with_delimiter(proposal.votes_for.size, delimiter: ".") %>
             /
-            <%= number_with_delimiter(next_goal_supports, delimiter: '.') %>
+            <%= number_with_delimiter(next_goal_supports, delimiter: ".") %>
           </div>
           <div class="counter-label">
             <%= t("layouts.dashboard.proposal_totals.supports", count: proposal.votes_for.size) %>
@@ -47,9 +47,9 @@
           <div class="small-12 column">
             <div class="proposal-link">
               <% if proposal.draft? %>
-                <%= link_to t('layouts.dashboard.proposal_totals.preview_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
+                <%= link_to t("layouts.dashboard.proposal_totals.preview_proposal"), proposal_path(proposal), class: "button success expanded", target: "_blank" %>
               <% else %>
-                <%= link_to t('layouts.dashboard.proposal_totals.show_proposal'), proposal_path(proposal), class: 'button success expanded', target: '_blank' %>
+                <%= link_to t("layouts.dashboard.proposal_totals.show_proposal"), proposal_path(proposal), class: "button success expanded", target: "_blank" %>
               <% end %>
             </div>
           </div>

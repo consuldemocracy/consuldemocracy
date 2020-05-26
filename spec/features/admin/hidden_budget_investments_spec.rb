@@ -1,10 +1,8 @@
 require "rails_helper"
 
 describe "Admin hidden budget investments" do
-
   let(:budget)  { create(:budget) }
-  let(:group)   { create(:budget_group, name: "Music", budget: budget) }
-  let(:heading) { create(:budget_heading, name: "Black metal", price: 666666, group: group) }
+  let(:heading) { create(:budget_heading, budget: budget, price: 666666) }
 
   before do
     admin = create(:administrator)
@@ -14,7 +12,7 @@ describe "Admin hidden budget investments" do
   scenario "Disabled with a feature flag" do
     Setting["process.budgets"] = nil
 
-    expect{ visit admin_hidden_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
+    expect { visit admin_hidden_budget_investments_path }.to raise_exception(FeatureFlags::FeatureDisabled)
   end
 
   scenario "List shows all relevant info" do
@@ -92,8 +90,8 @@ describe "Admin hidden budget investments" do
   end
 
   scenario "Action links remember the pagination setting and the filter" do
-    per_page = Kaminari.config.default_per_page
-    (per_page + 2).times { create(:budget_investment, :hidden, :with_confirmed_hide, heading: heading) }
+    allow(Budget::Investment).to receive(:default_per_page).and_return(2)
+    4.times { create(:budget_investment, :hidden, :with_confirmed_hide, heading: heading) }
 
     visit admin_hidden_budget_investments_path(filter: "with_confirmed_hide", page: 2)
 
@@ -102,5 +100,4 @@ describe "Admin hidden budget investments" do
     expect(current_url).to include("filter=with_confirmed_hide")
     expect(current_url).to include("page=2")
   end
-
 end

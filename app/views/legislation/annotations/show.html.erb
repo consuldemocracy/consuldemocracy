@@ -19,7 +19,7 @@
             <div class="comment-section">
               <div class="row">
                 <div class="small-12 medium-9 column legislation-comment">
-                  <%= @annotation.context.try(:html_safe).presence || @annotation.quote %>
+                  <%= sanitize(@annotation.context).presence || @annotation.quote %>
                 </div>
                 <div class="small-12 medium-3 column legislation-comment">
                   <span class="float-right">
@@ -42,9 +42,9 @@
           </aside>
         </div>
 
-      <%= render partial: "/comments/comment_tree", locals: { comment_tree: @comment_tree,
-                                                              comment_flags: @comment_flags,
-                                                              display_comments_count: true } %>
+      <%= render "/comments/comment_tree", comment_tree: @comment_tree,
+                                           comment_flags: @comment_flags,
+                                           display_comments_count: true %>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@ class Admin::EmailsDownloadController < Admin::BaseController
 
   private
 
-  def users_segment_emails_csv(users_segment)
-    UserSegments.user_segment_emails(users_segment).join(",")
-  end
+    def users_segment_emails_csv(users_segment)
+      UserSegments.user_segment_emails(users_segment).join(",")
+    end
 end

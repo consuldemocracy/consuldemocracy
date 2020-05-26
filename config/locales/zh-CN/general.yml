@@ -2,8 +2,6 @@ zh-CN:
   account:
     show:
       change_credentials_link: 更改我的身份验证资讯
-      email_on_comment_label: 当有人评论我的提议或辩论时，通过电子邮件通知我
-      email_on_comment_reply_label: 当有人回复我的评论时，通过电子邮件通知我
       erase_account_link: 删除我的账号
       finish_verification: 完成验证
       notifications: 通知
@@ -11,18 +9,10 @@ zh-CN:
       organization_responsible_name_placeholder: 组织／集体的代表
       personal: 个人资料
       phone_number_label: 电话号码
-      public_activity_label: 将我的活动列表公开
-      public_interests_label: 将我跟随的元素标签公开
       public_interests_my_title_list: 您跟随的元素的标签
       public_interests_user_title_list: 此用户跟随的元素的标签
       save_changes_submit: 保存更改
-      subscription_to_website_newsletter_label: 通过电子邮件接收网站相关信息
-      email_on_direct_message_label: 接收有关直接消息的电子邮件
-      email_digest_label: 接收提议通知的总结
-      official_position_badge_label: 显示官方职位徽章
       recommendations: 推荐
-      show_debates_recommendations: 显示辩论推荐
-      show_proposals_recommendations: 显示提议推荐
       title: 我的帐户
       user_permission_debates: 参与辩论
       user_permission_info: 您可以用您的账户来...
@@ -41,7 +31,6 @@ zh-CN:
   comments:
     comments_closed: 评论已关闭
     verified_only: 要参与%{verify_account}
-    verify_account: 验证您的账户
     comment:
       admin: 管理员
       author: 作者
@@ -89,10 +78,8 @@ zh-CN:
         submit_button: 保存更改
       show_link: 查看辩论
     form:
-      debate_text: 最初辩论文本
       debate_title: 辩论标题
       tags_instructions: 为此辩论加标签。
-      tags_label: 主题
       tags_placeholder: "请输入您希望使用的标签，用逗号(',') 分割"
     index:
       featured_debates: 特色
@@ -116,8 +103,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索辩论...
         title: 搜索
-      search_results_html:
-        other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order: 排序依据
       start_debate: 开始辩论
       title: 辩论
@@ -150,7 +135,6 @@ zh-CN:
       comments_title: 评论
       edit_debate_link: 编辑
       flag: 此辩论已被几个用户标记为不恰当。
-      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
       share: 分享
       author: 作者
     update:
@@ -168,11 +152,9 @@ zh-CN:
     direct_message: 私人信息
     error: 错误
     errors: 错误
-    not_saved_html: "阻止%{resource} 被保存。<br>请检查标记的字段来了解如何更正它们："
     policy: 隐私政策
     proposal: 提议
     proposal_notification: "通知"
-    spending_proposal: 支出提议
     budget/investment: 投资
     budget/heading: 预算标题
     poll/shift: 轮班
@@ -185,7 +167,6 @@ zh-CN:
     image: 图像
   geozones:
     none: 所有城市
-    all: 所有范围
   layouts:
     application:
       chrome: Google Chrome
@@ -225,7 +206,6 @@ zh-CN:
       proposals: 提议
       poll_questions: 投票
       budgets: 参与性预算编制
-      spending_proposals: 支出提议
       notification_item:
         new_notifications:
           other: 您有%{count} 个新通知
@@ -254,7 +234,6 @@ zh-CN:
   map:
     title: "地区"
     proposal_for_district: "为您的地区开始一个提议"
-    select_district: 经营范围
     start_proposal: 创建提议
   omniauth:
     facebook:
@@ -280,7 +259,7 @@ zh-CN:
       form:
         submit_button: 创建提议
     share:
-      message: "我支持%{handle} 中的提议%{summary}。如果您感兴趣，也请支持它！"
+      message: "我支持%{handle} 中的提议%{title}。如果您感兴趣，也请支持它！"
     edit:
       editing: 编辑提议
       form:
@@ -289,9 +268,7 @@ zh-CN:
     retire_form:
       title: 撤回提议
       warning: "如果您撤回提议，它仍然能接受支持，但是它将从主列表中删除，而且所有用户都将看到一条信息，声明作者认为此提议不应再被支持"
-      retired_reason_label: 撤回提议的原因
       retired_reason_blank: 选择一个选项
-      retired_explanation_label: 解释
       retired_explanation_placeholder: 简短解释为什么您认为此提议不应该再接受更多的支持
       submit_button: 撤回提议
     retire_options:
@@ -301,14 +278,8 @@ zh-CN:
       done: 完成
       other: 其他
     form:
-      geozone: 经营范围
-      proposal_responsible_name: 递交此提议的人的全名
       proposal_responsible_name_note: "（个体或者作为集体的代表；将不会公开显示）"
-      proposal_summary: 提议总结
       proposal_summary_note: "（最多200 字符）"
-      proposal_text: 提议文本
-      proposal_title: 提议标题
-      proposal_video_url: 链接到外部视频
       proposal_video_url_note: 您可以添加到YouTube 或 Vimeo的链接
       tag_category_label: "类别"
       tags_instructions: "为此提议加标签。您可以从推荐的类别中选择或者自行添加"
@@ -350,8 +321,6 @@ zh-CN:
         button: 搜索
         placeholder: 搜索提议...
         title: 搜索
-      search_results_html:
-        other: " 包含术语<strong>'%{search_term}'</strong>"
       select_order: 排序依据
       select_order_long: "您正在查看的提议是依据："
       start_proposal: 创建提议
@@ -406,7 +375,6 @@ zh-CN:
         other: "%{count} 个评论"
       comments_tab: 评论
       flag: 此提议已被几个用户标记为不恰当。
-      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
       notifications_tab: 通知
       milestones_tab: 里程碑
       retired_warning: "作者认为此提议不应再得到支持。"
@@ -453,10 +421,6 @@ zh-CN:
       back: 返回投票
       cant_answer_not_logged_in: "您必须%{signin} 或者%{signup} 才可以参与。"
       comments_tab: 评论
-      login_to_comment: 您必须%{signin} 或者%{signup} 才可以留下评论。
-      signin: 登录
-      signup: 注册
-      cant_answer_verify_html: "您必须%{verify_link} 才能回答。"
       verify_link: "验证您的账户"
       cant_answer_expired: "此投票已经结束。"
       cant_answer_wrong_geozone: "此问题在您的地理区域里不可用。"
@@ -488,10 +452,7 @@ zh-CN:
   proposal_notifications:
     new:
       title: "发送信息"
-      title_label: "标题"
-      body_label: "消息"
       submit_button: "发送信息"
-      info_about_receivers_html: "此信息将发送给<strong>%{count} 个人</strong>，它将显示在%{proposal_page} 中。<br>信息不会立即发送，用户将定期收到包含所有提议通知的电子邮件。"
       proposal_page: "提议页面"
     show:
       back: "返回我的活动"
@@ -530,17 +491,6 @@ zh-CN:
     follow: "跟随"
     following: "跟随着"
     follow_entity: "跟随%{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "您现在正在跟随此投资项目！</br>我们会在变更发生时通知您，以便您了解最新动态。"
-        destroy:
-          notice_html: "您已经停止跟随此投资项目！</br>您将不再接收到有关此项目的通知。"
-      proposal:
-        create:
-          notice_html: "现在您正在跟随此公民提议！</br>我们会在变更发生时通知您，以便您了解最新动态。"
-        destroy:
-          notice_html: "您已经停止跟随此公民提议！</br>您将不再接收到有关此提议的通知。"
     hide: 隐藏
     print:
       print_button: 打印此信息
@@ -567,12 +517,10 @@ zh-CN:
       districts: "地区"
       districts_list: "地区列表"
       categories: "类别"
-    target_blank_html: " （链接在新窗口打开）"
     you_are_in: "您在"
     unflag: 取消标记
     unfollow_entity: "取消跟随%{entity}"
     outline:
-      budget: 参与性预算
       searcher: 搜寻者
     go_to_page: "转到页面 "
     share: 共用
@@ -595,52 +543,6 @@ zh-CN:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram（电报群）"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "如果您以协会或集体的名义提出提议，请在此添加名称"
-      association_name: "协会名称"
-      description: 说明
-      external_url: 链接到其他文档
-      geozone: 经营范围
-      submit_buttons:
-        create: 创建
-        new: 创建
-      title: 支出提议标题
-    index:
-      title: 参与性预算
-      unfeasible: 不可行的投资项目
-      by_geozone: "投资项目范围：%{geozone}"
-      search_form:
-        button: 搜索
-        placeholder: 投资项目...
-        title: 搜索
-      search_results:
-        other: " 包含术语'%{search_term}'"
-      sidebar:
-        geozones: 经营范围
-        feasibility: 可行性
-        unfeasible: 不可行
-      start_spending_proposal: 创建一个投资项目
-    new:
-      more_info: 参与性预算编制是如何运作的？
-      recommendation_one: 提议必须提及可预算的行动。
-      recommendation_three: 在描述支出提议的时候请尽可能详细说明，以便审阅小组可以明白您的观点。
-      recommendation_two: 任何暗示非法行动的提议或评论都将被删除。
-      recommendations_title: 如果创建支出提议
-      start_new: 创建支出提议
-    show:
-      author_deleted: 已删除的用户
-      code: "提议编号："
-      share: 共用
-    wrong_price_format: 仅限整数
-    spending_proposal:
-      spending_proposal: 投资项目
-      already_supported: 您已支持此提议。请分享它吧！
-      support: 支持
-      support_title: 支持此项目
-      supports:
-        zero: 没有支持
-        other: "%{count} 个支持"
   stats:
     index:
       visits: 访问
@@ -660,16 +562,10 @@ zh-CN:
   users:
     direct_messages:
       new:
-        body_label: 信息
         direct_messages_bloqued: "此用户已决定不接收直接消息"
         submit_button: 发送信息
         title: 发送私人消息给%{receiver}
-        title_label: 标题
         verified_only: 要发送私人消息%{verify_account}
-        verify_account: 验证您的账户
-        authenticate: 您必须%{signin} 或者%{signup} 才能继续。
-        signin: 登录
-        signup: 注册
       show:
         receiver: 发给%{receiver} 的消息
     show:
@@ -707,26 +603,14 @@ zh-CN:
     comment_unauthenticated: 您必须%{signin} 或者%{signup} 才可以进行投票。
     disagree: 我不同意
     organizations: 组织不得投票
-    signin: 登录
-    signup: 注册
     supports: 支持
-    unauthenticated: 您必须%{signin} 或者%{signup} 才能继续。
     verified_only: 只有已验证的用户可以对提议进行投票；%{verify_account}。
-    verify_account: 验证您的账户
-    spending_proposals:
-      not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
-      not_verified: 只有已验证的用户可以对提议进行投票；%{verify_account}。
-      organization: 组织不得投票
-      unfeasible: 不可行的投资项目无法得到支持
-      not_voting_allowed: 投票阶段已结束
     budget_investments:
       not_logged_in: 您必须%{signin} 或者%{signup} 才能继续。
       not_verified: 只有已验证的用户可以对投资项目进行投票；%{verify_account}。
       organization: 组织不得投票
       unfeasible: 不可行的投资项目无法得到支持
       not_voting_allowed: 投票阶段已结束
-      different_heading_assigned:
-        other: "您只能支持在%{count} 个地区的投资项目"
   welcome:
     feed:
       most_active:
@@ -795,6 +679,4 @@ zh-CN:
     help:
       alt: 选择您希望评论的文本然后按下铅笔按钮。
       text: 若要对此文档做评论，您必须%{sign_in} 或者%{sign_up}。然后选择您希望评论的文本，按下铅笔按钮。
-      text_sign_in: 登录
-      text_sign_up: 注册
       title: 我可以如何评论此文档？

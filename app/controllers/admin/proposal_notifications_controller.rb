@@ -1,6 +1,5 @@
 class Admin::ProposalNotificationsController < Admin::BaseController
-
-  has_filters %w{without_confirmed_hide all with_confirmed_hide}, only: :index
+  has_filters %w[without_confirmed_hide all with_confirmed_hide], only: :index
 
   before_action :load_proposal, only: [:confirm_hide, :restore]
 
@@ -13,14 +12,14 @@ class Admin::ProposalNotificationsController < Admin::BaseController
 
   def confirm_hide
     @proposal_notification.confirm_hide
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   def restore
     @proposal_notification.restore
     @proposal_notification.ignore_flag
     Activity.log(current_user, :restore, @proposal_notification)
-    redirect_to request.query_parameters.merge(action: :index)
+    redirect_with_query_params_to(action: :index)
   end
 
   private
@@ -28,5 +27,4 @@ class Admin::ProposalNotificationsController < Admin::BaseController
     def load_proposal
       @proposal_notification = ProposalNotification.with_hidden.find(params[:id])
     end
-
 end

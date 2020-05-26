@@ -6,7 +6,6 @@ it:
         submit: Inviare nuovamente le istruzioni
         title: Inviare nuovamente le istruzioni di conferma
       show:
-        instructions_html: Stiamo confermando l'account con email %{email}
         new_password_confirmation_label: Reintrodurre la password
         new_password_label: Nuova password
         please_set_password: Si prega di scegliere la nuova pasword (che permetterà di accedere con l'email di cui sopra)
@@ -50,10 +49,6 @@ it:
           title: Registrarsi come un'organizzazione o associazione
         success:
           back_to_index: 'Ho capito: torno alla pagina principale'
-          instructions_1_html: "<b>Ti contatteremo a breve</b> al fine di verificare che tu sia effettivamente il rappresentante di questo collettivo."
-          instructions_2_html: Mentre <b>verifichiamo la tua e-mail</b>, ti abbiamo inviato un <b>link per la verifica dell’account</b>.
-          instructions_3_html: Una volta confermato, si potrà iniziare a partecipare come collettivo non verificato.
-          thank_you_html: Grazie per aver registrato il tuo collettivo su questo sito. Ora è <b>in attesa di verifica</b>.
           title: Registrazione dell'organizzazione / associazione
     passwords:
       edit:
@@ -123,7 +118,4 @@ it:
           username_note: Nome che appare accanto ai tuoi post
         success:
           back_to_index: Ho capito; torna alla pagina principale
-          instructions_1_html: Si prega di <b>controllare l’e-mail</b> - abbiamo inviato <b>un link di per confermare l’account</b>.
-          instructions_2_html: Una volta confermati, si può iniziare a partecipare.
-          thank_you_html: Grazie per esserti registrato/a.. Ora è necessario <b>confermare il tuo indirizzo email</b>.
           title: Modifica il tuo indirizzo email

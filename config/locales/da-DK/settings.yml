@@ -1,6 +1,6 @@
 da:
   settings:
-    comments_body_max_length: "Maksimal længde af kommentarfeltet"
+    comments_body_max_length: "Kommentarfeltets maksimale længde"
     comments_body_max_length_description: "Angivet i antal tegn"
     official_level_1_name: "Myndighedsperson/embedsmand, niveau 1"
     official_level_1_name_description: "Identifikationsmærkat, der vil være synligt ved brugere verificeret som embedsmænd på niveau 1"
@@ -70,11 +70,11 @@ da:
       poll_link: Link til yderligere information
       poll_link_description: Tilføj et link for yderligere information vedrørende kontrolpanelets undersøgelse
       email_short_title: E-mail
-      email_short_title_description: Kort beskrivelse af mail-funktionen. Tillader brugere at sende mails, hvori de promoverer deres forslag
+      email_short_title_description: 'Kort beskrivelse af mail-funktionen. Tillader brugere at sende mails, hvori de promoverer deres forslag'
       email_description: Beskrivelse af e-mail
       email_description_description: Detaljeret beskrivelse af mail-funktionen
       poster_short_title: Plakat
-      poster_short_title_description: Kort beskrivelse af plakatfunktionen. Tillader brugere at downloade plakater i PDF format for at promovere deres forslag
+      poster_short_title_description: 'Kort beskrivelse af plakatfunktionen. Tillader brugere at downloade plakater i PDF format for at promovere deres forslag'
       poster_description: Beskrivelse af plakat
       poster_description_description: Detaljeret beskrivelse af plakatfunktionen
     analytics_url: "Analytisk URL"
@@ -92,12 +92,7 @@ da:
       featured_proposals: "Udvalgte forslag"
       featured_proposals_description: "Viser udvalgte forslag på indeks"
       signature_sheets: "Signaturark"
-      signature_sheets_description: "Det giver mulighed for at tilføje underskrifter fra Administrationspanelet indsamlet fysisk i forbindelse med Borgerforslag og investeringsforslag til deltagerbudgetter"
-      spending_proposals: "Udgiftsforslag"
-      spending_proposals_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
-      spending_proposal_features:
-        voting_allowed: Stem på investeringsprojekter - forhåndsudvælgelsesfase
-        voting_allowed_description: "⚠️ Bemærk: denne funktion er blevet erstattet af Deltagerbudgetter og vil forsvinde i de nye versioner"
+      signature_sheets_description: "Det giver mulighed for at tilføje underskrifter fra Administrationspanelet indsamlet fysisk i forbindelse med Borgerforslag og projektidéer til deltagerbudgetter"
       user:
         recommendations: "Anbefalinger"
         recommendations_description: "Viser brugeranbefalinger på startsiden baseret på hashtags og følgere"
@@ -107,20 +102,22 @@ da:
         recommendations_on_debates_description: "Viser brugeranbefalinger baseret på hashtags og følgere til andre brugere på debatsiden"
         recommendations_on_proposals: "Andbefalede forslag"
         recommendations_on_proposals_description: "Viser anbefalinger baseret på hashtags og følgere til brugere på forslagssiden"
-      community: "Fællesskab for forslag og investeringer"
-      community_description: "Aktiver 'Fællesskab' knyttet til borgerforslag og investeringsprojekter i deltagerbudgetter"
-      map: "Forslagets og investeringsprojektets geografiske område"
+      community: "Fællesskab for forslag og projektidéer"
+      community_description: "Aktiver 'Fællesskab'"
+      map: "Projektetidéernes geografiske områder"
       map_description: "Aktiver geografisk område for forslag og investeringsprojekter"
       allow_images: "Tillad overførsler og vis billeder"
-      allow_images_description: "Tillad brugere at overføre billeder, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
+      allow_images_description: "Tillader brugere at overføre billeder, når de opretter forslag og projektidéer til et deltagerbudget"
       allow_attached_documents: "Tillad overførsler og vis vedhæftede filer"
-      allow_attached_documents_description: "Tillad brugere at overføre filer, når de opretter forslag og investeringsprojekter til Deltagerbudgetterne"
-      guides: "Guide til oprettelse af forslag eller investeringsprojekter"
-      guides_description: "Viser en guide, der forklarer forskellen på et borgerforslag og et investeringsforslag, hvis et deltagerbudget er aktivt"
+      allow_attached_documents_description: "Tillader brugere at overføre filer, når de opretter forslag og projektidéer til et deltagerbudget"
+      guides: "Guide til oprettelse af forslag eller projektidéer"
+      guides_description: "Viser en guide, der forklarer forskellen på et borgerforslag og en projektidé, hvis et deltagerbudget er aktivt"
       public_stats: "Offentlig statistik"
       public_stats_description: "Viser offentlig statistik i Administrationspanelet"
       help_page: "Hjælp"
       help_page_description: 'Viser en Hjælpeside, der indeholder en informationssektion omkring enhver aktiveret funktion. Derudover kan brugerdefinerede sider og sektioner oprettes under "Brugerdefinerede sider" og "Brugerdefinerede indholdsblokke"'
+      valuation_comment_notification: "Notifikation"
+      valuation_comment_notification_description: "Send en e-mail til alle brugere (med undtagelse af evaluatorerne) når en ny vurdering af foretaget"
     map:
       latitude: "Breddegrad"
       latitude_description: "Breddegrader"
@@ -144,3 +141,25 @@ da:
       per_page_code_head_description: "Denne kode vises i <head>. Brugbar i forhold til indlæsning af brugerdefinerede fremstillinger, analyser..."
       per_page_code_body: "Kode inkluderet på alle sidesektioner (<body>)"
       per_page_code_body_description: "Denne kode vises i <body>. Brugbar i forhold til indlæsning af brugerdefinerede fremsitllinger, analyser..."
+    uploads:
+      images:
+        min_width: "Minimum bredde"
+        min_width_description: "Minimum billedbredde (i pixels)"
+        min_height: "Minimum højde"
+        min_height_description: "Minimum billedehøjde (i pixels)"
+        max_size: "Billedets maksimale størrelse"
+        max_size_description: "Maksimal størrelse (i Megabytes/MB)"
+        content_types: "Billedet kan være af følgende type"
+        content_types_description: "Vælg hvilke filformater billeder kan uploades i"
+        title:
+          min_length: "Minimum længde på billedtitel"
+          min_length_description: "Brugerens valgte billedtitel (HTML)"
+          max_length: "Maksimal længde på billedtitel"
+          max_length_description: "Brugerens valgte billedtitel (HTML)"
+      documents:
+        max_amount: "Max antal dokumenter"
+        max_amount_description: "Max antal dokumenter, der kan vedhæftes borgerforslag, projektidéer..."
+        max_size: "Maksimale dokumentstørrelse"
+        max_size_description: "Maksimale størrelse på et uploadet dokument (i Megabytes/MB)"
+        content_types: "Accepterede filformater for dokumenter"
+        content_types_description: "Vælg alle tilladte filformater for dokumenter"

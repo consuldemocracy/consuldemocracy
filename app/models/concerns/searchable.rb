@@ -15,5 +15,4 @@ module Searchable
       order_within_rank: (column_names.include?("cached_votes_up") ? "#{table_name}.cached_votes_up DESC" : nil)
     }
   end
-
 end

@@ -19,7 +19,6 @@ mk:
         document_number_help_title: Помош
         document_type:
           passport: Пасош
-        document_type_label: Вид на документ
     sms:
       edit:
         submit_button: Испрати

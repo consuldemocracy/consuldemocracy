@@ -38,7 +38,7 @@ class Admin::BudgetGroupsController < Admin::BaseController
     if @group.headings.any?
       redirect_to groups_index, alert: t("admin.budget_groups.destroy.unable_notice")
     else
-      @group.destroy
+      @group.destroy!
       redirect_to groups_index, notice: t("admin.budget_groups.destroy.success_notice")
     end
   end
@@ -61,5 +61,4 @@ class Admin::BudgetGroupsController < Admin::BaseController
       valid_attributes = [:max_votable_headings]
       params.require(:budget_group).permit(*valid_attributes, translation_params(Budget::Group))
     end
-
 end

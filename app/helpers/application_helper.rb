@@ -1,17 +1,9 @@
 module ApplicationHelper
-
-  def home_page?
-    return false if user_signed_in?
-    # Using path because fullpath yields false negatives since it contains
-    # parameters too
-    request.path == "/"
-  end
-
   # if current path is /debates current_path_with_query_params(foo: "bar") returns /debates?foo=bar
   # notice: if query_params have a param which also exist in current path,
   # it "overrides" (query_params is merged last)
   def current_path_with_query_params(query_parameters)
-    url_for(request.query_parameters.merge(query_parameters))
+    url_for(request.query_parameters.merge(query_parameters).merge(only_path: true))
   end
 
   def markdown(text)
@@ -32,11 +24,17 @@ module ApplicationHelper
       strikethrough:      true,
       superscript:        true
     }
-    Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe
+
+    sanitize(Redcarpet::Markdown.new(renderer, extensions).render(text))
+  end
+
+  def wysiwyg(text)
+    WYSIWYGSanitizer.new.sanitize(text)
   end
 
   def author_of?(authorable, user)
     return false if authorable.blank? || user.blank?
+
     authorable.author_id == user.id
   end
 
@@ -52,10 +50,6 @@ module ApplicationHelper
 
   def content_block(name, locale)
     SiteCustomization::ContentBlock.block_for(name, locale)
-  end
-
-  def kaminari_path(url)
-    "#{root_url.chomp("\/")}#{url}"
   end
 
   def self.asset_data_base64(path)
@@ -75,5 +69,4 @@ module ApplicationHelper
   def management_controller?
     controller.class.to_s.include?("Management")
   end
-
 end

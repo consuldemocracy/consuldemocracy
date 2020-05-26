@@ -1,29 +1,28 @@
 require "rails_helper"
 
 describe "Admin poll officers" do
+  let!(:user)    { create(:user, username: "Pedro Jose Garcia") }
+  let!(:officer) { create(:poll_officer) }
 
   before do
-    @admin = create(:administrator)
-    @user  = create(:user, username: "Pedro Jose Garcia")
-    @officer = create(:poll_officer)
-    login_as(@admin.user)
+    login_as(create(:administrator).user)
     visit admin_officers_path
   end
 
   scenario "Index" do
-    expect(page).to have_content @officer.name
-    expect(page).to have_content @officer.email
-    expect(page).not_to have_content @user.name
+    expect(page).to have_content officer.name
+    expect(page).to have_content officer.email
+    expect(page).not_to have_content user.name
   end
 
   scenario "Create", :js do
-    fill_in "email", with: @user.email
+    fill_in "email", with: user.email
     click_button "Search"
 
-    expect(page).to have_content @user.name
+    expect(page).to have_content user.name
     click_link "Add"
     within("#officers") do
-      expect(page).to have_content @user.name
+      expect(page).to have_content user.name
     end
   end
 
@@ -32,5 +31,4 @@ describe "Admin poll officers" do
 
     expect(page).not_to have_css "#officers"
   end
-
 end

@@ -1,7 +1,7 @@
 class DashboardController < Dashboard::BaseController
   helper_method :dashboard_action, :active_resources, :course
   before_action :set_done_and_pending_actions, only: [:recommended_actions, :progress]
-  before_action :authorize_dashboard, only: [:show, :progress, :community, :recommended_actions, :messages]
+  before_action :authorize_dashboard, except: :publish
 
   def show
   end
@@ -23,6 +23,10 @@ class DashboardController < Dashboard::BaseController
   end
 
   def messages
+  end
+
+  def related_content
+    @related_contents = Kaminari.paginate_array(proposal.relationed_contents).page(params[:page]).per(5)
   end
 
   private

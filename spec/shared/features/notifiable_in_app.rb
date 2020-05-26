@@ -1,10 +1,9 @@
-shared_examples "notifiable in-app" do |described_class|
-
+shared_examples "notifiable in-app" do |factory_name|
   let(:author) { create(:user, :verified) }
-  let!(:notifiable) { create(model_name(described_class), author: author) }
+  let!(:notifiable) { create(factory_name, author: author) }
 
   scenario "Notification icon is shown" do
-    notification = create(:notification, notifiable: notifiable, user: author)
+    create(:notification, notifiable: notifiable, user: author)
 
     login_as author
     visit root_path
@@ -25,15 +24,15 @@ shared_examples "notifiable in-app" do |described_class|
   end
 
   scenario "Multiple users commented on my notifiable", :js do
-    3.times do
+    3.times do |n|
       login_as(create(:user, :verified))
 
       visit path_for(notifiable)
 
-      fill_in comment_body(notifiable), with: "I agree"
+      fill_in comment_body(notifiable), with: "Number #{n + 1} is the best!"
       click_button "publish_comment"
       within "#comments" do
-        expect(page).to have_content "I agree"
+        expect(page).to have_content "Number #{n + 1} is the best!"
       end
       logout
     end
@@ -134,7 +133,5 @@ shared_examples "notifiable in-app" do |described_class|
       find(".icon-no-notification").click
       expect(page).to have_css ".notification", count: 0
     end
-
   end
-
 end

@@ -6,6 +6,7 @@ resources :proposals do
       get :community
       get :recommended_actions
       get :messages
+      get :related_content
     end
 
     resources :resources, only: [:index], controller: "dashboard/resources"

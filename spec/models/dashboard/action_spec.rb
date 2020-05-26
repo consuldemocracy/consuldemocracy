@@ -3,7 +3,7 @@ require "rails_helper"
 describe Dashboard::Action do
   subject do
     build :dashboard_action,
-          title: title,
+          title: "Take action!",
           description: description,
           day_offset: day_offset,
           required_supports: required_supports,
@@ -11,7 +11,6 @@ describe Dashboard::Action do
           action_type: action_type
   end
 
-  let(:title) { Faker::Lorem.sentence }
   let(:description) { Faker::Lorem.sentence }
   let(:day_offset) { 0 }
   let(:required_supports) { 0 }
@@ -152,182 +151,192 @@ describe Dashboard::Action do
 
   context "#active_for" do
     let!(:active_action) { create :dashboard_action, :active, day_offset: 0, required_supports: 0 }
-    let!(:not_enough_supports_action) { create :dashboard_action, :active, day_offset: 0,
-                                                                  required_supports: 10_000 }
     let!(:inactive_action) { create :dashboard_action, :inactive }
-    let!(:future_action) { create :dashboard_action, :active, day_offset: 300,
-                                                     required_supports: 0 }
-    let!(:action_published_proposal) { create :dashboard_action,
-                                                  :active,
-                                                  day_offset: 0,
-                                                  required_supports: 0,
-                                                  published_proposal: true }
-    let!(:action_for_draft_proposal) { create :dashboard_action,
-                                              :active,
-                                              day_offset: 0,
-                                              required_supports: 0,
-                                              published_proposal: false }
+    let!(:not_enough_supports_action) do
+      create :dashboard_action, :active, day_offset: 0, required_supports: 10_000
+    end
+
+    let!(:future_action) do
+      create :dashboard_action, :active, day_offset: 300, required_supports: 0
+    end
+
+    let!(:action_published_proposal) do
+      create :dashboard_action,
+             :active,
+             day_offset: 0,
+             required_supports: 0,
+             published_proposal: true
+    end
+
+    let!(:action_for_draft_proposal) do
+      create :dashboard_action,
+             :active,
+             day_offset: 0,
+             required_supports: 0,
+             published_proposal: false
+    end
+
     let(:proposal) { create :proposal }
     let(:draft_proposal) { create :proposal, :draft }
 
     it "actions with enough supports or days are active" do
-      expect(described_class.active_for(proposal)).to include(active_action)
+      expect(Dashboard::Action.active_for(proposal)).to include(active_action)
     end
 
     it "inactive actions are not included" do
-      expect(described_class.active_for(proposal)).not_to include(inactive_action)
+      expect(Dashboard::Action.active_for(proposal)).not_to include(inactive_action)
     end
 
     it "actions without enough supports are not active" do
-      expect(described_class.active_for(proposal)).not_to include(not_enough_supports_action)
+      expect(Dashboard::Action.active_for(proposal)).not_to include(not_enough_supports_action)
     end
 
     it "actions planned to be active in the future are not active" do
-      expect(described_class.active_for(proposal)).not_to include(future_action)
+      expect(Dashboard::Action.active_for(proposal)).not_to include(future_action)
     end
 
     it "actions with published_proposal: true, are not included on draft proposal" do
-      expect(described_class.active_for(draft_proposal)).not_to include(action_published_proposal)
+      expect(Dashboard::Action.active_for(draft_proposal)).not_to include(action_published_proposal)
     end
 
     it "actions with published_proposal: true, are included on published proposal" do
-      expect(described_class.active_for(proposal)).to include(action_published_proposal)
+      expect(Dashboard::Action.active_for(proposal)).to include(action_published_proposal)
     end
 
     it "actions with published_proposal: false, are included on draft proposal" do
-      expect(described_class.active_for(draft_proposal)).to include(action_for_draft_proposal)
+      expect(Dashboard::Action.active_for(draft_proposal)).to include(action_for_draft_proposal)
     end
 
     it "actions with published_proposal: false, are included on published proposal" do
-      expect(described_class.active_for(proposal)).to include(action_for_draft_proposal)
+      expect(Dashboard::Action.active_for(proposal)).to include(action_for_draft_proposal)
     end
   end
 
   context "#course_for" do
     let!(:proposed_action) { create :dashboard_action, :active, required_supports: 0 }
-    let!(:inactive_resource) { create :dashboard_action, :inactive, :resource,
-                                                         required_supports: 0 }
+    let!(:inactive_resource) do
+      create :dashboard_action, :inactive, :resource, required_supports: 0
+    end
     let!(:resource) { create :dashboard_action, :active, :resource, required_supports: 10_000 }
     let!(:achieved_resource) { create :dashboard_action, :active, :resource, required_supports: 0 }
     let(:proposal) { create :proposal }
 
     it "proposed actions are not part of proposal's course" do
-      expect(described_class.course_for(proposal)).not_to include(proposed_action)
+      expect(Dashboard::Action.course_for(proposal)).not_to include(proposed_action)
     end
 
     it "inactive resources are not part of proposal's course" do
-      expect(described_class.course_for(proposal)).not_to include(inactive_resource)
+      expect(Dashboard::Action.course_for(proposal)).not_to include(inactive_resource)
     end
 
     it "achievements are not part of the proposal's course" do
-      expect(described_class.course_for(proposal)).not_to include(achieved_resource)
+      expect(Dashboard::Action.course_for(proposal)).not_to include(achieved_resource)
     end
 
     it "active resources are part of proposal's course" do
-      expect(described_class.course_for(proposal)).to include(resource)
+      expect(Dashboard::Action.course_for(proposal)).to include(resource)
     end
   end
 
   context "#detect_new_actions_since" do
-
     describe "No detect new actions" do
-
       let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 1) }
       let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 1) }
 
       it "when there are not news actions actived for published proposals" do
         proposal = create(:proposal)
-        action.update(published_proposal: true)
-        resource.update(published_proposal: true)
+        action.update!(published_proposal: true)
+        resource.update!(published_proposal: true)
 
-        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
+        expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are news actions actived for draft_proposal but proposal is published" do
         proposal = create(:proposal)
-        action.update(published_proposal: false, day_offset: 0)
-        resource.update(published_proposal: false, day_offset: 0)
+        action.update!(published_proposal: false, day_offset: 0)
+        resource.update!(published_proposal: false, day_offset: 0)
 
-        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
+        expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are not news actions actived for draft proposals" do
         proposal = create(:proposal, :draft)
-        action.update(published_proposal: false)
-        resource.update(published_proposal: false)
+        action.update!(published_proposal: false)
+        resource.update!(published_proposal: false)
 
-        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
+        expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
 
       it "when there are news actions actived for published_proposal but proposal is draft" do
         proposal = create(:proposal, :draft)
-        action.update(published_proposal: true, day_offset: 0)
-        resource.update(published_proposal: true, day_offset: 0)
+        action.update!(published_proposal: true, day_offset: 0)
+        resource.update!(published_proposal: true, day_offset: 0)
 
-        expect(described_class.detect_new_actions_since(Date.yesterday, proposal)).to eq []
+        expect(Dashboard::Action.detect_new_actions_since(Date.yesterday, proposal)).to eq []
       end
-
     end
 
     describe "Detect new actions when there are news actions actived" do
-
       context "for published proposals" do
-
         let!(:proposal) { create(:proposal) }
-        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                     published_proposal: true) }
-        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                     published_proposal: true) }
 
+        let!(:action) do
+          create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
+        end
+
+        let!(:resource) do
+          create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+        end
 
         it "when proposal has been created today and day_offset is valid only for today" do
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(resource.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
-          proposal.update(created_at: Date.yesterday, published_at: Date.yesterday)
-          action.update(required_supports: 1)
-          resource.update(required_supports: 0)
+          proposal.update!(created_at: Date.yesterday, published_at: Date.yesterday)
+          action.update!(required_supports: 1)
+          resource.update!(required_supports: 0)
           create(:vote, voter: proposal.author, votable: proposal)
 
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(action.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).not_to include(resource.id)
         end
-
       end
 
       context "for draft proposals" do
-
         let!(:proposal) { create(:proposal, :draft) }
-        let!(:action)   { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                     published_proposal: false) }
-        let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                     published_proposal: false) }
+
+        let!(:action) do
+          create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: false)
+        end
+
+        let!(:resource) do
+          create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: false)
+        end
 
         it "when day_offset field is valid for today and invalid for yesterday" do
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(resource.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(action.id)
         end
 
         it "when proposal has received a new vote today" do
-          proposal.update(created_at: Date.yesterday)
-          action.update(required_supports: 1)
-          resource.update(required_supports: 2)
+          proposal.update!(created_at: Date.yesterday)
+          action.update!(required_supports: 1)
+          resource.update!(required_supports: 2)
           create(:vote, voter: proposal.author, votable: proposal)
 
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).to include(action.id)
-          expect(described_class.detect_new_actions_since(Date.yesterday,
+          expect(Dashboard::Action.detect_new_actions_since(Date.yesterday,
                                                           proposal)).not_to include(resource.id)
         end
-
       end
     end
   end

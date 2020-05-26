@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "Registration form" do
-
   scenario "username is not available", :js do
     user = create(:user)
 
@@ -36,6 +35,7 @@ describe "Registration form" do
 
     click_button "Register"
 
+    expect(page).to have_title "Confirm your email address"
     expect(page).to have_content "Thank you for registering"
 
     new_user = User.last
@@ -77,5 +77,4 @@ describe "Registration form" do
 
     expect(page).to have_current_path(new_user_registration_path)
   end
-
 end

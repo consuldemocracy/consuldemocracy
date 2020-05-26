@@ -1,5 +1,4 @@
 class Admin::NewslettersController < Admin::BaseController
-
   def index
     @newsletters = Newsletter.all
   end
@@ -39,7 +38,7 @@ class Admin::NewslettersController < Admin::BaseController
 
   def destroy
     @newsletter = Newsletter.find(params[:id])
-    @newsletter.destroy
+    @newsletter.destroy!
 
     redirect_to admin_newsletters_path, notice: t("admin.newsletters.delete_success")
   end
@@ -49,7 +48,7 @@ class Admin::NewslettersController < Admin::BaseController
 
     if @newsletter.valid?
       @newsletter.delay.deliver
-      @newsletter.update(sent_at: Time.current)
+      @newsletter.update!(sent_at: Time.current)
       flash[:notice] = t("admin.newsletters.send_success")
     else
       flash[:error] = t("admin.segment_recipient.invalid_recipients_segment")

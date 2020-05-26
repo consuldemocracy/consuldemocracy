@@ -31,5 +31,4 @@ class Management::BudgetsController < Management::BaseController
     def current_manager_administrator?
       session[:manager]["login"].match("admin")
     end
-
 end

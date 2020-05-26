@@ -22,8 +22,7 @@ class CreateLegislationPeopleProposalsTable < ActiveRecord::Migration[4.2]
       t.string   "retired_reason"
       t.text     "retired_explanation"
       t.integer  "community_id"
-      t.datetime "created_at", null: false
-      t.datetime "updated_at", null: false
+      t.timestamps null: false
       t.integer  "cached_votes_total", default: 0
       t.integer  "cached_votes_down", default: 0
       t.boolean  "selected"

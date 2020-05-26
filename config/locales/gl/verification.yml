@@ -17,9 +17,6 @@ gl:
     letter:
       alert:
         unconfirmed_code: Aínda non introduciches o código de confirmación
-      create:
-        flash:
-          success_html: Antes das votacións recibirás unha carta coas instrucións para verificar a túa conta.<br> Lembra que podes aforrar o envío verificándote presencialmente en calquera das %{offices}.
       edit:
         see_all: Ver propostas
         title: Carta solicitada
@@ -28,7 +25,7 @@ gl:
       new:
         explanation: "Para participar nas votacións finais podes:"
         go_to_index: Ver propostas
-        office: Verificarte presencialmente en calquera %{office}
+        office: Verifique en calquera oficina de apoio ao cidadán
         send_letter: Solicitar unha carta por correo postal
         title: Parabéns!
         user_permission_info: Coa túa conta xa podes...
@@ -47,20 +44,16 @@ gl:
       new:
         accept_terms_text: Acepto %{terms_url} ao Padrón
         accept_terms_text_title: Acepto os termos de acceso ao Padrón
-        date_of_birth: Data de nacemento
         document_number: Número de documento
         document_number_help_title: Axuda
-        document_number_help_text_html: "<strong>DNI</strong>: 12345678A<br> <strong>Pasaporte</strong>: AAA000001<br> <strong>Tarxeta de residencia</strong>: X1234567P"
         document_type:
           passport: Pasaporte
           residence_card: Tarxeta de residencia
           spanish_id: DNI
-        document_type_label: Tipo documento
         error_not_allowed_age: Hai que ter polo menos 16 anos
         error_not_allowed_postal_code: Para verificarte debes estar empadroado no municipio de Madrid.
-        error_verifying_census: O Padrón de Madrid non puido verificar a túa información. Por favor, confirma que os teus datos de empadroamento sexan correctos chamando ao 010 (ou á súa versión gratuíta 915298210) ou visita calquera das %{offices}.
+        error_verifying_census: O Censo non puido verificar a súa información. Confirme que os datos do seu censo son correctos chamando ao Concello ou visite unha oficina de atención ao cidadán.
         form_errors: evitaron verificar a túa residencia
-        postal_code: Código postal
         postal_code_note: Para verificar os teus datos debes estar empadroado no municipio de Madrid
         terms: os termos de acceso
         title: Verificar residencia
@@ -70,14 +63,12 @@ gl:
         flash:
           success: Introduce o código de confirmación que che enviamos por mensaxe de texto
       edit:
-        confirmation_code: Introduce o código que recibiches no teu móbil
         resend_sms_link: Solicitar un novo código
         resend_sms_text: Non recibiches unha mensaxe de texto co teu código de confirmación?
         submit_button: Enviar
         title: SMS de confirmación
       new:
         phone: Introduce o teu teléfono móbil para recibir o código
-        phone_format_html: "<strong><em>(Exemplo: 612345678 ou +34612345678)</em></strong>"
         phone_note: Só usaremos o teu número de teléfono para o envío de códigos, nunca para chamarte.
         phone_placeholder: "Exemplo: 612345678 ou +34612345678"
         submit_button: Enviar

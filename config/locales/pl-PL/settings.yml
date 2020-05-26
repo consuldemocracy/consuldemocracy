@@ -76,11 +76,6 @@ pl:
       featured_proposals_description: "Pokazuje rekomendowane wnioski na stronie ze spisem wniosków"
       signature_sheets: "Arkusze podpisu"
       signature_sheets_description: "Umożliwia dodawanie podpisów z panelu administracyjnego zgromadzonych na miejscu do wniosków i projektów inwestycyjnych budżetów partycypacyjnych"
-      spending_proposals: "Wnioski wydatkowe"
-      spending_proposals_description: "⚠️ UWAGA: Ta funkcja została zastąpiona przez budżetowanie partycypacyjne i zniknie w nowych wersjach"
-      spending_proposal_features:
-        voting_allowed: Głosowanie nad projektami inwestycyjnymi - faza preselekcji
-        voting_allowed_description: "⚠️ UWAGA: Ta funkcja została zastąpiona przez budżetowanie partycypacyjne i zniknie w nowych wersjach"
       user:
         recommendations: "Rekomendacje"
         recommendations_description: "Wyświetla rekomendacje użytkowników na stronie głównej na podstawie tagów następujących elementów"

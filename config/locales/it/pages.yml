@@ -18,7 +18,6 @@ it:
         title: "Dibattiti"
         description: "Nella sezione %{link} è possibile presentare e condividere con altre persone le proprie opinioni rispetto a questioni di interesse relative alla città. È anche un luogo in cui generare idee che, attraverso le altre sezioni di %{org}, possano condurre ad azioni concrete del Consiglio Comunale."
         link: "dibattiti cittadini"
-        feature_html: "Puoi dare inizio a dibattiti, commentare e valutarli con <strong>Sono d’accordo</strong> o <strong>Non sono d’accordo</strong>. Per farlo occorre %{link}."
         feature_link: "registratevi su %{org}"
         image_alt: "Pulsanti per valutare i dibattiti"
         figcaption: 'Pulsanti "Sono d''accordo" e "Non sonod''accordo" per valutare ed appoggiare o meno i dibattiti.'
@@ -27,13 +26,11 @@ it:
         description: "Nella sezione %{link} è possibile avanzare proposte da far realizzare dal Consiglio Comunale. Le proposte necessitano di sostegno e, se viene raggiunto un sostegno sufficiente, vengono ammesse al voto pubblico. Le proposte così approvate dal voto dei cittadini sono accettate dal Consiglio Comunale e realizzate."
         link: "proposte dei cittadini"
         image_alt: "Pulsante per appoggiare una proposta"
-        figcaption_html: 'Pulsante per “Sostenere” una proposta.'
       budgets:
         title: "Bilancio partecipativo"
         description: "La sezione %{link} aiuta le persone a contribuire in maniera diretta alle decisioni relative a parte della spesa del bilancio comunale."
         link: "bilanci partecipativi"
         image_alt: "Le fasi del bilancio partecipativo"
-        figcaption_html: 'Le fasi di appoggio e di voto dei bilanci partecipativi.'
       polls:
         title: "Votazioni"
         description: "La sezione %{link} si attiva ogni volta che una proposta raggiunge l’1% del sostegno e va al voto o quando il Consiglio Comunale pone una questione sulla quale i cittadini debbano decidere."
@@ -156,10 +153,7 @@ it:
     titles:
       help: "Cos’é %{org}? - Partecipazione cittadina"
     verify:
-      code: Codice che hai ricevuto nella lettera
-      email: Email
       info: "Per verificare il tuo account inserisci i dati di accesso:"
       info_code: "Ora introduci il codice che hai ricevuto nella lettera:"
-      password: Password
       submit: Verifica il tuo account
       title: Verifica il tuo account

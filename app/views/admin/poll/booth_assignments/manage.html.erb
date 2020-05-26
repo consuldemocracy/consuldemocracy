@@ -17,7 +17,7 @@
     <tbody>
     <% @booths.each do |booth| %>
       <tr id="<%= dom_id(booth) %>" class="booth">
-        <%= render partial: "booth_assignment", locals: { booth: booth, booth_assignment: booth.assignment_on_poll(@poll) } %>
+        <%= render "booth_assignment", booth: booth, booth_assignment: booth.assignment_on_poll(@poll) %>
       </tr>
     <% end %>
     </tbody>

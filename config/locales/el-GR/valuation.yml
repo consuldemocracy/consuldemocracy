@@ -5,34 +5,29 @@ el:
     menu:
       title: Αξιολόγηση
       budgets: Συμμετοχικοί προϋπολογισμοί
-      spending_proposals: Προτάσεις δαπανών
     budgets:
       index:
         title: Συμμετοχικοί προϋπολογισμοί
         filters:
           current: Ανοιχτό
-          finished: Τελείωσε
+          finished: Ολοκληρώθηκε
         table_name: Όνομα
         table_phase: Φάση
         table_assigned_investments_valuation_open: Επενδυτικά σχέδια που έχουν ανατεθεί με αποτίμηση ανοίξτε
         table_actions: Ενέργειες
-        evaluate: Αξιολογώ
+        evaluate: Αξιολόγηση
         no_budgets: "Δεν υπάρχουν προϋπολογισμοί"
     budget_investments:
       index:
-        headings_filter_all: Όλες οι κατηγορίες
+        headings_filter_all: Όλες οι επικεφαλίδες
         filters:
-          valuation_open: Ανοιχτό
+          valuation_open: Άνοιγμα
           valuating: Υπό αξιολόγηση
           valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-        assigned_to: "Έχει εκχωρηθεί στον %{valuator}"
+        assigned_to: "Έχει ανατεθεί σε %{valuator}"
         title: Επενδυτικά έργα
         edit: Επεξεργασία φακέλου
-        valuators_assigned:
-          one: Αξιολογητής που έχει ανατεθεί
-          other: "%{count} αξιολογητές που έχει ανατεθεί"
-        no_valuators_assigned: Δεν έχει ανατεθεί σε αξιολογητές
-        table_id: ID
+        table_id: Ταυτότητα
         table_title: Τίτλος
         table_heading_name: Όνομα επικεφαλίδας
         table_actions: Ενέργειες
@@ -40,7 +35,7 @@ el:
       show:
         back: Πίσω
         title: Επενδυτικό έργο
-        info: Πληροφορίες συγγραφέα
+        info: Πληροφορίες συντάκτη
         by: Αποστολή από
         sent: Αποστολή σε
         heading: Επικεφαλίδα
@@ -49,80 +44,22 @@ el:
         price: Τιμή
         price_first_year: Κόστος κατά το πρώτο έτος
         currency: "€"
-        feasibility: Σκοπιμότητα
+        feasibility: Κατά πόσο είναι εφικτό
         feasible: Εφικτό
         unfeasible: Δεν είναι εφικτό
-        undefined: Απροσδιόριστο
+        undefined: Δεν έχει προσδιοριστεί
         valuation_finished: Η αξιολόγηση ολοκληρώθηκε
         duration: Χρονικό πλαίσιο
         responsibles: Υπεύθυνοι
-        assigned_admin: Εκχωρημένος διαχειριστής
-        assigned_valuators: Εκχωρημένοι αξιολογητές
+        assigned_admin: Αναθετημένος λειτουργός
+        assigned_valuators: Ανατεθημένοι αξιολογητές
       edit:
         dossier: Φάκελος
-        price_html: "Τιμή (%{currency})"
-        price_first_year_html: "Κόστος πρώτου έτους (%{currency}) <small>(προαιρετικό, μη δημόσια δεδομένα)</small>"
-        price_explanation_html: Επεξήγηση τιμής
-        feasibility: Σκοπιμότητα
-        feasible: Εφικτό
-        unfeasible: Δεν είναι εφικτό
-        undefined_feasible: Σε εκκρεμότητα
-        feasible_explanation_html: Εξήγηση της σκοπιμότητας
-        valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-        valuation_finished_alert: "Είστε βέβαιοι ότι θέλετε να επισημάνετε αυτή την έκθεση ως ολοκληρωμένη; Αν το κάνετε, μπορεί πλέον να τροποποιηθεί."
-        not_feasible_alert: "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου θα αποσταλεί άμεσα στον συγγραφέα του έργου με την έκθεση που εξηγεί γιατί είναι ανέφικτο."
-        duration_html: Χρονικό πλαίσιο
-        save: Αποθηκεύστε τις αλλαγές
+        feasibility: Κατά πόσο έιναι εφικτό 
+        valuation_finished_alert: "Είστε βέβαιοι ότι θέλετε να επισημάνετε αυτή την έκθεση ως ολοκληρωμένη; Αυτό θα αποτρέψει την δυνατότητα τροποποίηση της."
+        not_feasible_alert: "Ο συντάκτης του έργου θα λάβει άμεσα email με επεξήγηση των λόγων για τους οποίος το έργο έχει κριθέι ως μη εφικτό."
+        save: Αποθήκευση αλλαγών
       notice:
-        valuate: "Φάκελος ο οποίος ενημερώθηκε"
+        valuate: "Ο φάκελος έχει ενημερεί"
       valuation_comments: Σχόλια αξιολόγησης
-      not_in_valuating_phase: Οι επενδύσεις μπορεί να είναι τιμολογημένες μόνο όταν ο προϋπολογισμός είναι σε φάση τιμολόγησης
-    spending_proposals:
-      index:
-        geozone_filter_all: Όλες οι ζώνες
-        filters:
-          valuation_open: Ανοιχτό
-          valuating: Υπό αξιολόγηση
-          valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-        title: Επενδυτικά σχέδια για συμμετοχικός προϋπολογισμός
-        edit: Επεξεργασία
-      show:
-        back: Πίσω
-        heading: Επενδυτικό έργο
-        info: Πληροφορίες συγγραφέα
-        association_name: Σύλλογος
-        by: Αποστολή από
-        sent: Αποστολή σε
-        geozone: Εμβέλεια
-        dossier: Φάκελος
-        edit_dossier: Επεξεργασία φακέλου
-        price: Τιμή
-        price_first_year: Κόστος κατά το πρώτο έτος
-        currency: "€"
-        feasibility: Σκοπιμότητα
-        feasible: Εφικτό
-        not_feasible: Δεν είναι εφικτό
-        undefined: Απροσδιόριστο
-        valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-        time_scope: Χρονικό πλαίσιο
-        internal_comments: Εσωτερικά σχόλια
-        responsibles: Υπεύθυνοι
-        assigned_admin: Εκχωρημένος διαχειριστής
-        assigned_valuators: Εκχωρημένοι αξιολογητές
-      edit:
-        dossier: Φάκελος
-        price_html: "Τιμή (%{currency})"
-        price_first_year_html: "Κόστος πρώτου έτους (%{currency})"
-        currency: "€"
-        price_explanation_html: Επεξήγηση τιμής
-        feasibility: Σκοπιμότητα
-        feasible: Εφικτό
-        not_feasible: Δεν είναι εφικτό
-        undefined_feasible: Σε εκκρεμότητα
-        feasible_explanation_html: Εξήγηση της σκοπιμότητας
-        valuation_finished: Η αξιολόγηση ολοκληρώθηκε
-        time_scope_html: Χρονικό πλαίσιο
-        internal_comments_html: Εσωτερικά σχόλια
-        save: Αποθηκεύστε τις αλλαγές
-      notice:
-        valuate: "Φάκελος ο οποίος ενημερώθηκε"
+      not_in_valuating_phase: Οι επενδύσεις μπορούν να τιμολογηθούν μόνο όταν ο προϋπολογισμός είναι σε φάση τιμολόγησης

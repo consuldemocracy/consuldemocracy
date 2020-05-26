@@ -2,8 +2,6 @@ es-PE:
   account:
     show:
       change_credentials_link: Alterar meus dados pessoais
-      email_on_comment_label: Notificar-me por email quando alguém comentar sobre minhas propostas ou debates
-      email_on_comment_reply_label: Notificar-me por email quando alguém responder sobre meus comentários
       erase_account_link: Darme de baja
       finish_verification: Completar verificação
       notifications: Notificações
@@ -11,22 +9,16 @@ es-PE:
       organization_responsible_name_placeholder: Representante de organização/coletivo
       personal: Dados pessoais
       phone_number_label: Teléfono
-      public_activity_label: Manter pública minha lista de atividades
-      public_interests_label: Mostrar públicamente las etiquetas de los elementos que sigo
       public_interests_my_title_list: Etiquetas de los elementos que sigues
       public_interests_user_title_list: Etiquetas de los elementos que sigue este usuario
       save_changes_submit: Guardar cambios
-      subscription_to_website_newsletter_label: Receber por email informações relevantes deste site
-      email_on_direct_message_label: Recibir emails con mensajes privados
-      email_digest_label: Recibir resumen de notificaciones sobre propuestas
-      official_position_badge_label: Mostrar etiqueta de tipo de usuario
       title: Mi cuenta
       user_permission_debates: Participar en debates
       user_permission_info: Con tu cuenta ya puedes...
       user_permission_proposal: Crear nuevas propuestas
       user_permission_support_proposal: Apoyar propuestas
       user_permission_title: Participação
-      user_permission_verify: Para executar todas as ações %{verify}
+      user_permission_verify: Para poder realizar todas las acciones verifica tu cuenta.
       user_permission_verify_info: "* Sólo usuarios empadronados."
       user_permission_votes: Participar na votação final
       username_label: Nombre de usuario
@@ -38,7 +30,6 @@ es-PE:
   comments:
     comments_closed: Los comentarios están cerrados
     verified_only: Para participar %{verify_account}
-    verify_account: verifica tu cuenta
     comment:
       admin: Administrador
       author: Autor
@@ -90,10 +81,8 @@ es-PE:
         submit_button: Guardar cambios
       show_link: Ver debate
     form:
-      debate_text: Texto inicial do debate
       debate_title: Título do debate
       tags_instructions: Marcar este debate.
-      tags_label: Tópicos
       tags_placeholder: "Escribe las etiquetas que desees separadas por una coma (',')"
     index:
       featured_debates: Destacar
@@ -114,9 +103,6 @@ es-PE:
         button: Buscar
         placeholder: Buscar debates...
         title: Buscar
-      search_results_html:
-        one: " que contienen <strong>'%{search_term}'</strong>"
-        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
       start_debate: Empieza un debate
       section_header:
@@ -148,7 +134,6 @@ es-PE:
       comments_title: Comentarios
       edit_debate_link: Editar propuesta
       flag: Este debate foi marcado como inapropriado por vários usuários.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       share: Compartir
       author: Autor
     update:
@@ -166,11 +151,9 @@ es-PE:
     direct_message: el mensaje privado
     error: erro
     errors: erros
-    not_saved_html: "impidieron guardar %{resource}. <br>Por favor revisa los campos marcados para saber cómo corregirlos:"
     policy: Política de Privacidad
     proposal: Propuesta
     proposal_notification: "la notificación"
-    spending_proposal: Propuesta de inversión
     budget/investment: Proyecto de inversión
     budget/heading: la partida presupuestaria
     poll/shift: Turno
@@ -183,7 +166,6 @@ es-PE:
     image: Imagen
   geozones:
     none: Toda a cidade
-    all: Todos los ámbitos de actuación
   layouts:
     application:
       ie: Nós detectamos que você está navegando com o Internet Explorer. Para uma melhor experiência, nós recomendamos o uso do %{chrome} ou %{firefox}.
@@ -216,7 +198,6 @@ es-PE:
       proposals: Propuestas
       poll_questions: Votaciones
       budgets: Presupuestos participativos
-      spending_proposals: Propuestas de inversión
       notification_item:
         new_notifications:
           one: Tienes una nueva notificación
@@ -245,7 +226,6 @@ es-PE:
   map:
     title: "Distritos"
     proposal_for_district: "Inicie uma proposta para seu distrito"
-    select_district: Ámbito de actuación
     start_proposal: Criar proposta
   omniauth:
     facebook:
@@ -275,9 +255,7 @@ es-PE:
     retire_form:
       title: Retirar propuesta
       warning: "Si sigues adelante tu propuesta podrá seguir recibiendo apoyos, pero dejará de ser listada en la lista principal, y aparecerá un mensaje para todos los usuarios avisándoles de que el autor considera que esta propuesta no debe seguir recogiendo apoyos."
-      retired_reason_label: Razón por la que se retira la propuesta
       retired_reason_blank: Selecciona una opción
-      retired_explanation_label: Explicación
       retired_explanation_placeholder: Explica brevemente por que consideras que esta propuesta no debe recoger más apoyos
       submit_button: Retirar propuesta
     retire_options:
@@ -287,14 +265,8 @@ es-PE:
       done: Realizadas
       other: Otras
     form:
-      geozone: Ámbito de actuación
-      proposal_responsible_name: Nome completo da pessoa que está submetendo a proposta
       proposal_responsible_name_note: "(indivudualmente ou como representante de um\ncoletivo; não será mostrado publicamente)"
-      proposal_summary: Sumário da proposta
       proposal_summary_note: "(máximo de 200 caracteres)"
-      proposal_text: Texto da proposta
-      proposal_title: Título
-      proposal_video_url: Link para vídeo externo
       proposal_video_url_note: Você pode adicionar um link para o Youtube ou Vimeo
       tag_category_label: "Categorías"
       tags_instructions: "Etiqueta esta propuesta. Puedes elegir entre las categorías propuestas o introducir las que desees"
@@ -333,9 +305,6 @@ es-PE:
         button: Buscar
         placeholder: Buscar propostas...
         title: Buscar
-      search_results_html:
-        one: " que contienen <strong>'%{search_term}'</strong>"
-        other: " que contienen <strong>'%{search_term}'</strong>"
       select_order: Ordenado por
       select_order_long: "Você está vendo propostas de acordo para:"
       start_proposal: Crea una propuesta
@@ -391,7 +360,6 @@ es-PE:
         other: "%{count} Comentarios"
       comments_tab: Comentarios
       flag: Esta proposta já foi marcada como inadequada por vários usuários.
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
       notifications_tab: Notificaciones
       milestones_tab: Seguimiento
       retired_warning: "El autor de esta propuesta considera que ya no debe seguir recogiendo apoyos."
@@ -433,10 +401,6 @@ es-PE:
       back: Volver a votaciones
       cant_answer_not_logged_in: "Necesitas %{signin} o %{signup} para participar en el debate."
       comments_tab: Comentarios
-      login_to_comment: Necesitas %{signin} o %{signup} para comentar.
-      signin: iniciar sesión
-      signup: registrarte
-      cant_answer_verify_html: "Por favor %{verify_link} para poder responder."
       verify_link: "verifica tu cuenta"
       cant_answer_expired: "Esta votación ha terminado."
       cant_answer_wrong_geozone: "Esta votación no está disponible en tu zona."
@@ -466,10 +430,7 @@ es-PE:
   proposal_notifications:
     new:
       title: "Enviar mensaje"
-      title_label: "Título"
-      body_label: "Mensaje"
       submit_button: "Enviar mensaje"
-      info_about_receivers_html: "Este mensaje se enviará a <strong>%{count} usuarios</strong> y se publicará en %{proposal_page}.<br> El mensaje no se enviará inmediatamente, los usuarios recibirán periódicamente un email con todas las notificaciones de propuestas."
       proposal_page: "la página de la propuesta"
     show:
       back: "Volver a mi actividad"
@@ -507,17 +468,6 @@ es-PE:
     follow: "Seguir"
     following: "Siguiendo"
     follow_entity: "Seguir %{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "¡Ahora estás siguiendo este proyecto de inversión! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
-        destroy:
-          notice_html: "¡Has dejado de seguir este proyecto de inverisión! </br> Ya no recibirás más notificaciones relacionadas con este proyecto."
-      proposal:
-        create:
-          notice_html: "¡Ahora estás siguiendo esta propuesta ciudadana! </br> Te notificaremos los cambios a medida que se produzcan para que estés al día."
-        destroy:
-          notice_html: "¡Has dejado de seguir esta propuesta ciudadana! </br> Ya no recibirás más notificaciones relacionadas con esta propuesta."
     hide: Ocultar
     print:
       print_button: Imprimir esta información
@@ -547,12 +497,10 @@ es-PE:
       districts: "Distritos"
       districts_list: "Listado de distritos"
       categories: "Categorías"
-    target_blank_html: " (se abre en ventana nueva)"
     you_are_in: "Estás en"
     unflag: Desmarcar
     unfollow_entity: "Dejar de seguir %{entity}"
     outline:
-      budget: Presupuesto participativo
       searcher: Buscador
     go_to_page: "Ir a la página de "
     share: Compartir
@@ -566,54 +514,6 @@ es-PE:
     youtube: "YouTube de %{org}"
     telegram: "Telegram de %{org}"
     instagram: "Instagram de %{org}"
-  spending_proposals:
-    form:
-      association_name_label: "Si propones en nombre de una asociación o colectivo añade el nombre aquí"
-      association_name: "Nombre de la asociación"
-      description: En qué consiste
-      external_url: Enlace a documentación adicional
-      geozone: Ámbito de actuación
-      submit_buttons:
-        create: Criar
-        new: Crear
-      title: Título da proposta de despesa
-    index:
-      title: Presupuestos participativos
-      unfeasible: Propuestas de inversión no viables
-      by_geozone: "Propuestas de inversión con ámbito: %{geozone}"
-      search_form:
-        button: Buscar
-        placeholder: Propuestas de inversión...
-        title: Buscar
-      search_results:
-        one: " que contienen '%{search_term}'"
-        other: " que contienen '%{search_term}'"
-      sidebar:
-        geozones: Ámbito de actuación
-        feasibility: Viabilidad
-        unfeasible: Inviable
-      start_spending_proposal: Crea una propuesta de inversión
-    new:
-      more_info: Como funciona o orçamento participativo?
-      recommendation_one: É mandatório que a proposta faça referência a uma ação orçamentária.
-      recommendation_three: Tente descer aos detalhes quando descrever sua proposta de despesa de maneira a ajudar a equipe de revisão entender seu argumento.
-      recommendation_two: Qualquer proposta ou comentário sugerindo ações ilegais serão apagadas.
-      recommendations_title: Como criar uma proposta de despesa
-      start_new: Crear propuesta de inversión
-    show:
-      author_deleted: Usuario eliminado
-      code: "Código de la propuesta:"
-      share: Compartir
-    wrong_price_format: Solo puede incluir caracteres numéricos
-    spending_proposal:
-      spending_proposal: Propuesta de inversión
-      already_supported: Ya has apoyado esta propuesta. ¡Compártelo!
-      support: Apoyar
-      support_title: Apoyar esta propuesta
-      supports:
-        zero: Sin apoyos
-        one: 1 apoyo
-        other: "%{count} apoyos"
   stats:
     index:
       visits: Visitas
@@ -632,16 +532,10 @@ es-PE:
   users:
     direct_messages:
       new:
-        body_label: Mensaje
         direct_messages_bloqued: "Este usuario ha decidido no recibir mensajes privados"
         submit_button: Enviar mensaje
         title: Enviar mensaje privado a %{receiver}
-        title_label: Título
         verified_only: Para enviar un mensaje privado %{verify_account}
-        verify_account: verifica tu cuenta
-        authenticate: Necesitas %{signin} o %{signup} para continuar.
-        signin: iniciar sesión
-        signup: registrarte
       show:
         receiver: Mensaje enviado a %{receiver}
     show:
@@ -679,18 +573,8 @@ es-PE:
     comment_unauthenticated: Necesitas %{signin} o %{signup} para poder votar.
     disagree: Eu discordo
     organizations: Las organizaciones no pueden votar.
-    signin: iniciar sesión
-    signup: registrarte
     supports: Apoyos
-    unauthenticated: Necesitas %{signin} o %{signup}.
     verified_only: Somente usuários verificados podem votar em propostas;  %{verify_account}.
-    verify_account: verifica tu cuenta
-    spending_proposals:
-      not_logged_in: Necesitas %{signin} o %{signup}.
-      not_verified: Las propuestas sólo pueden ser votadas por usuarios verificados, %{verify_account}.
-      organization: Las organizaciones no pueden votar
-      unfeasible: No se pueden votar propuestas inviables.
-      not_voting_allowed: El periodo de votación está cerrado.
     budget_investments:
       not_logged_in: Necesitas %{signin} o %{signup}.
       not_verified: Los proyectos de inversión sólo pueden ser apoyadas por usuarios verificados, %{verify_account}.
@@ -754,6 +638,4 @@ es-PE:
     help:
       alt: Selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
       text: Para comentar este documento debes %{sign_in} o %{sign_up}. Después selecciona el texto que quieres comentar y pulsa en el botón con el lápiz.
-      text_sign_in: iniciar sesión
-      text_sign_up: registrarte
       title: '¿Cómo puedo comentar este documento?'

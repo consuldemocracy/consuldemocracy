@@ -7,17 +7,12 @@ ca:
         remaining: "Et queden <span>%{amount}</span> per a invertir"
         no_balloted_group_yet: "Encara no has votat projectes d'aquest grup, ¡vota!"
         remove: Llevar vot
-        voted_html:
-          one: "Has votat <span>una</span> proposta."
-          other: "Has votat <span>%{count}</span> propostes."
-        voted_info_html: "Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase.<br> No fa falta que invertisques tots els diners disponibles."
         zero: Encara no has votat cap proposta d'inversió.
       reasons_for_not_balloting:
         not_logged_in: Necessites %{signin} o %{signup}.
         not_verified: Les propostes d'inversió només poden ser avalades per usuaris verificats, %{verify_account}.
         organization: Les associacions no poden avalar
         not_selected: No es poden votar propostes inviables.
-        not_enough_money_html: "Ja has assignat el pressupost disponible. <br> <small>Recorda que pots %{change_ballot} en qualsevol moment</small>"
         no_ballots_allowed: El període de votació està tancat.
         change_ballot: canviar els teus vots
     groups:
@@ -52,25 +47,15 @@ ca:
           button: Buscar
           placeholder: Cercar propostes d'inversió...
           title: Buscar
-        search_results_html:
-          one: "que conté <strong>'%{search_term}'</strong>"
-          other: "que conté <strong>'%{search_term}'</strong>"
         sidebar:
           my_ballot: Els meus vots
-          voted_html:
-            one: "<strong>Has votat una proposta per un valor de %{amount_spent}</strong>"
-            other: "<strong>Has votat %{count} propostes per un valor de %{amount_spent}</strong>"
-          voted_info: Pots canviar els teus vots en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
+          voted_info: Pots %{link} en qualsevol moment fins al tancament d'aquesta fase. No fa falta que gastes tots els diners disponibles.
           voted_info_link: canviar els teus vots
-          different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
           change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
           check_ballot_link: "revisar els meus vots"
           zero: Encara no has votat cap proposta d'inversió.
           verified_only: "Per a crear una nova proposta d'inversió %{verify}."
-          verify_account: "verifica el teu compte"
           not_logged_in: "Per a crear una nova proposta d'inversió has de %{sign_in} o %{sign_up}."
-          sign_in: "iniciar sessió"
-          sign_up: "registrar-"
           by_feasibility: Per viabilitat
           feasible: Veure les propostes d'inversió viables
           unfeasible: Veure les propostes d'inversió inviables
@@ -82,8 +67,6 @@ ca:
         author_deleted: Usuari eliminat
         price_explanation: Informe de cost <small>(opcional, dada pública)</small>
         unfeasibility_explanation: Informe de inviabilitat
-        code_html: "Codi proposta d'inversió: <strong>%{code}</strong>"
-        location_html: "Ubicació: <strong>%{location}</strong>"
         share: compartir
         title: Proposta d'inversió
         supports: Avals
@@ -102,7 +85,6 @@ ca:
         give_support: Avalar
       header:
         check_ballot: Revisar els meus vots
-        different_heading_assigned_html: "Ja vas recolzar propostes d'una altra secció del pressupost: %{heading_link}"
         change_ballot: "Si canvies d'opinió pots esborrar els teus vots en %{check_ballot} i tornar a començar."
         check_ballot_link: "revisar els meus vots"
     show:
@@ -118,7 +100,6 @@ ca:
       page_title: "%{budget} - Resultats"
       heading: "Resultats pressupostos participatius"
       heading_selection_title: "Àmbit d'actuació"
-      spending_proposal: Títol de la proposta
       ballot_lines_count: Votacions
       hide_discarded_link: Amaga descartades
       show_all_link: Mostra totes

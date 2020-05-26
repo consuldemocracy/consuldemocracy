@@ -68,6 +68,8 @@ fi:
         administrator_id: "Järjestelmänvalvoja"
         location: "Sijainti (vapaaehtoinen)"
         image_title: "Kuvan otsikko"
+      geozone:
+        name: Nimi
       milestone:
         status_id: "Nykyinen tila (valinnainen)"
         publication_date: "Julkaisupäivä"
@@ -103,9 +105,6 @@ fi:
         phone_number: "Puhelinnumero"
       organization:
         name: "Organisaation nimi"
-      spending_proposal:
-        administrator_id: "Järjestelmänvalvoja"
-        description: "Kuvaus"
       poll:
         name: "Nimi"
         starts_at: "Aloituspäivä"
@@ -157,9 +156,9 @@ fi:
       legislation/annotation:
         text: Kommentti
       document:
-        attachment: Liite
+        attachment: "Liite"
       image:
-        attachment: Liite
+        attachment: "Liite"
       poll/question/answer:
         title: Vastaus
         description: Kuvaus

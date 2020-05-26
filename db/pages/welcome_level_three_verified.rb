@@ -1,4 +1,4 @@
-if SiteCustomization::Page.find_by_slug("welcome_level_three_verified").nil?
+if SiteCustomization::Page.find_by(slug: "welcome_level_three_verified").nil?
   page = SiteCustomization::Page.new(slug: "welcome_level_three_verified", status: "published")
   page.title = I18n.t("welcome.welcome.title")
 

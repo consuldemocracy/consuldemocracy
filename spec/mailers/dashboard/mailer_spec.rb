@@ -1,20 +1,16 @@
 require "rails_helper"
 
 describe Dashboard::Mailer do
-
-  let!(:action)   { create(:dashboard_action, :proposed_action, :active,
-                            day_offset: 0,
-                            published_proposal: true) }
-  let!(:resource) { create(:dashboard_action, :resource, :active,
-                            day_offset: 0,
-                            published_proposal: true) }
-
-  before do
-    Setting["dashboard.emails"] = true
+  let!(:action) do
+    create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
   end
 
-  after do
-    Setting["dashboard.emails"] = nil
+  let!(:resource) do
+    create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+  end
+
+  before do
+    Setting["feature.dashboard.notification_emails"] = true
   end
 
   describe "#forward" do
@@ -24,12 +20,12 @@ describe Dashboard::Mailer do
       ActionMailer::Base.deliveries.clear
     end
 
-    it "Disables email delivery using setting" do
-      Setting["dashboard.emails"] = nil
+    it "Disables notification emails delivery using setting, does not affect the forward email" do
+      Setting["feature.dashboard.notification_emails"] = nil
 
       Dashboard::Mailer.forward(proposal).deliver_now
 
-      expect(ActionMailer::Base.deliveries.count).to eq(0)
+      expect(ActionMailer::Base.deliveries.count).to eq(1)
     end
 
     it "sends forward email" do
@@ -44,11 +40,9 @@ describe Dashboard::Mailer do
       expect(email).to have_body_text("Share in")
       expect(email).to have_body_text(proposal_path(proposal))
     end
-
   end
 
   describe "#new_actions_notification rake task" do
-
     before do
       Rake.application.rake_require "tasks/dashboards"
       Rake::Task.define_task(:environment)
@@ -63,19 +57,19 @@ describe Dashboard::Mailer do
     describe "#new_actions_notification_rake_created" do
       let!(:proposal) { create(:proposal, :draft) }
 
-      it "Disables email delivery using setting" do
-        Setting["dashboard.emails"] = nil
+      it "Disables notification email delivery using setting" do
+        Setting["feature.dashboard.notification_emails"] = nil
 
-        action.update(published_proposal: false)
-        resource.update(published_proposal: false)
+        action.update!(published_proposal: false)
+        resource.update!(published_proposal: false)
         run_rake_task
 
         expect(ActionMailer::Base.deliveries.count).to eq(0)
       end
 
       it "sends emails when detect new actions for draft proposal" do
-        action.update(published_proposal: false)
-        resource.update(published_proposal: false)
+        action.update!(published_proposal: false)
+        resource.update!(published_proposal: false)
         run_rake_task
 
         email = open_last_email
@@ -108,8 +102,8 @@ describe Dashboard::Mailer do
     describe "#new_actions_notification_rake_published" do
       let!(:proposal) { create(:proposal) }
 
-      it "Disables email delivery using setting" do
-        Setting["dashboard.emails"] = nil
+      it "Disables notification email delivery using setting" do
+        Setting["feature.dashboard.notification_emails"] = nil
         ActionMailer::Base.deliveries.clear
 
         run_rake_task
@@ -136,7 +130,7 @@ describe Dashboard::Mailer do
 
         months_to_archive_proposals = Setting["months_to_archive_proposals"].to_i.months
         limit_to_archive_proposal = proposal.created_at.to_date + months_to_archive_proposals
-        days_count = (limit_to_archive_proposal - Date.today).to_i
+        days_count = (limit_to_archive_proposal - Date.current).to_i
 
         expect(email).to have_body_text("You are missing #{days_count} days before your proposal "\
                                         "gets the #{Setting["votes_for_proposal_success"]}  "\
@@ -154,27 +148,26 @@ describe Dashboard::Mailer do
   end
 
   describe "#new_actions_notification_on_create" do
-
     before do
       ActionMailer::Base.deliveries.clear
     end
 
     let!(:proposal) { build(:proposal, :draft) }
 
-    it "Disables email delivery using setting" do
-      Setting["dashboard.emails"] = nil
+    it "Disables notification email delivery using setting" do
+      Setting["feature.dashboard.notification_emails"] = nil
 
-      action.update(published_proposal: false)
-      resource.update(published_proposal: false)
-      proposal.save
+      action.update!(published_proposal: false)
+      resource.update!(published_proposal: false)
+      proposal.save!
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
     it "sends emails if new actions detected when creating a proposal" do
-      action.update(published_proposal: false)
-      resource.update(published_proposal: false)
-      proposal.save
+      action.update!(published_proposal: false)
+      resource.update!(published_proposal: false)
+      proposal.save!
 
       email = open_last_email
 
@@ -186,8 +179,8 @@ describe Dashboard::Mailer do
                                       "successfully created.")
       expect(email).to have_body_text("Take advantage that your proposal is not public yet and "\
                                       "get ready to contact a lot of people.")
-      expect(email).to have_body_text(I18n.t("mailers.new_actions_notification_on_create.text_2",
-                                      link: proposal_dashboard_url(proposal)).html_safe)
+      expect(email).to have_body_text("When you are ready publish your citizen proposal from this")
+      expect(email).to have_link "link", href: proposal_dashboard_url(proposal)
       expect(email).to have_body_text("We know that creating a proposal with a hook and getting "\
                                       "the necessary support can seem complicated. But dont "\
                                       "worry because we are going to help you!")
@@ -204,9 +197,9 @@ describe Dashboard::Mailer do
                                       "among other features and rewards that you will discover. "\
                                       "Dont stop adding support and we will not stop rewarding "\
                                       "and helping you!")
-      expect(email).to have_body_text("You have #{Setting['months_to_archive_proposals']} months "\
+      expect(email).to have_body_text("You have #{Setting["months_to_archive_proposals"]} months "\
                                       "since you publish the proposal to get "\
-                                      "#{Setting['votes_for_proposal_success']} support and your "\
+                                      "#{Setting["votes_for_proposal_success"]} support and your "\
                                       "proposal can become a reality. But the first days are the "\
                                       "most important. It is a challenge. Get ready!")
       expect(email).to have_body_text("And for you to start with all the motivation,")
@@ -218,28 +211,26 @@ describe Dashboard::Mailer do
   end
 
   describe "#new_actions_notification_on_published" do
-
     before do
       ActionMailer::Base.deliveries.clear
+
+      create(:dashboard_action, :resource, :active, day_offset: 0, published_proposal: true)
+      create(:dashboard_action, :proposed_action, :active, day_offset: 0, published_proposal: true)
     end
 
     let!(:proposal) { build(:proposal, :draft) }
-    let!(:resource) { create(:dashboard_action, :resource, :active, day_offset: 0,
-                                                 published_proposal: true) }
-    let!(:proposed_action) { create(:dashboard_action, :proposed_action, :active, day_offset: 0,
-                                                        published_proposal: true) }
 
-    it "Disables email delivery using setting" do
-      Setting["dashboard.emails"] = nil
+    it "Disables notification email delivery using setting" do
+      Setting["feature.dashboard.notification_emails"] = nil
 
-      proposal.save
+      proposal.save!
       proposal.publish
 
       expect(ActionMailer::Base.deliveries.count).to eq(0)
     end
 
     it "sends emails when detect new actions when publish a proposal" do
-      proposal.save
+      proposal.save!
       proposal.publish
 
       email = open_last_email
@@ -278,5 +269,4 @@ describe Dashboard::Mailer do
       expect(email).to have_body_text("Go ahead, discover them!")
     end
   end
-
 end

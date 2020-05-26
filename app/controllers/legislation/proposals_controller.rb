@@ -13,8 +13,8 @@ class Legislation::ProposalsController < Legislation::BaseController
 
   invisible_captcha only: [:create, :update], honeypot: :subtitle
 
-  has_orders %w{confidence_score created_at}, only: :index
-  has_orders %w{most_voted newest oldest}, only: :show
+  has_orders %w[confidence_score created_at], only: :index
+  has_orders %w[most_voted newest oldest], only: :show
 
   helper_method :resource_model, :resource_name
   respond_to :html, :js
@@ -70,5 +70,4 @@ class Legislation::ProposalsController < Legislation::BaseController
     def load_successful_proposals
       @proposal_successful_exists = Legislation::Proposal.successful.exists?
     end
-
 end

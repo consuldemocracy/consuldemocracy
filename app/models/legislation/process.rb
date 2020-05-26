@@ -17,23 +17,26 @@ class Legislation::Process < ApplicationRecord
   include Globalizable
 
   PHASES_AND_PUBLICATIONS = %i[homepage_phase draft_phase debate_phase allegations_phase
-                               proposals_phase people_proposals_phase draft_publication
-                               result_publication].freeze
+                               proposals_phase draft_publication result_publication].freeze
 
-  CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i
+  CSS_HEX_COLOR = /\A#?(?:[A-F0-9]{3}){1,2}\z/i.freeze
 
-  has_many :draft_versions, -> { order(:id) }, class_name: "Legislation::DraftVersion",
-                                               foreign_key: "legislation_process_id",
-                                               dependent: :destroy
+  has_many :draft_versions, -> { order(:id) },
+    foreign_key: "legislation_process_id",
+    inverse_of:  :process,
+    dependent:   :destroy
   has_one :final_draft_version, -> { where final_version: true, status: "published" },
-                                           class_name: "Legislation::DraftVersion",
-                                           foreign_key: "legislation_process_id"
-  has_many :questions, -> { order(:id) }, class_name: "Legislation::Question",
-                                          foreign_key: "legislation_process_id", dependent: :destroy
-  has_many :proposals, -> { order(:id) }, class_name: "Legislation::Proposal",
-                                          foreign_key: "legislation_process_id", dependent: :destroy
-  has_many :people_proposals, -> { order(:id) }, class_name: "Legislation::PeopleProposal",
-                                          foreign_key: "legislation_process_id", dependent: :destroy
+    class_name:  "Legislation::DraftVersion",
+    foreign_key: "legislation_process_id",
+    inverse_of:  :process
+  has_many :questions, -> { order(:id) },
+    foreign_key: "legislation_process_id",
+    inverse_of:  :process,
+    dependent:   :destroy
+  has_many :proposals, -> { order(:id) },
+    foreign_key: "legislation_process_id",
+    inverse_of:  :process,
+    dependent:   :destroy
 
   validates_translation :title, presence: true
   validates :start_date, presence: true
@@ -45,20 +48,22 @@ class Legislation::Process < ApplicationRecord
   validates :allegations_start_date, presence: true, if: :allegations_end_date?
   validates :allegations_end_date, presence: true, if: :allegations_start_date?
   validates :proposals_phase_end_date, presence: true, if: :proposals_phase_start_date?
-  validates :people_proposals_phase_end_date, presence: true,
-              if: :people_proposals_phase_start_date?
   validate :valid_date_ranges
   validates :background_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
   validates :font_color, format: { allow_blank: true, with: CSS_HEX_COLOR }
 
+  class << self; undef :open; end
   scope :open, -> { where("start_date <= ? and end_date >= ?", Date.current, Date.current) }
   scope :active, -> { where("end_date >= ?", Date.current) }
   scope :past, -> { where("end_date < ?", Date.current) }
 
   scope :published, -> { where(published: true) }
-  scope :not_in_draft, -> { where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and
-                                   draft_end_date IS NOT NULL and (draft_start_date > ? or
-                                   draft_end_date < ?))", Date.current, Date.current) }
+
+  def self.not_in_draft
+    where("draft_phase_enabled = false or (draft_start_date IS NOT NULL and
+           draft_end_date IS NOT NULL and (draft_start_date > ? or
+           draft_end_date < ?))", Date.current, Date.current)
+  end
 
   def homepage_phase
     Legislation::Process::Phase.new(start_date, end_date, homepage_enabled)
@@ -80,11 +85,6 @@ class Legislation::Process < ApplicationRecord
   def proposals_phase
     Legislation::Process::Phase.new(proposals_phase_start_date,
                                     proposals_phase_end_date, proposals_phase_enabled)
-  end
-
-  def people_proposals_phase
-    Legislation::Process::Phase.new(people_proposals_phase_start_date,
-                                    people_proposals_phase_end_date, people_proposals_phase_enabled)
   end
 
   def draft_publication
@@ -136,5 +136,4 @@ class Legislation::Process < ApplicationRecord
         errors.add(:allegations_end_date, :invalid_date_range)
       end
     end
-
 end

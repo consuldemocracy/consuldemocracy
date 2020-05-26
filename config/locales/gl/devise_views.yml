@@ -6,7 +6,6 @@ gl:
         submit: Reenviar instrucións
         title: Reenviar instrucións de confirmación
       show:
-        instructions_html: Imos proceder a confirmar a conta co correo electrónico <b>%{email}</b>
         new_password_confirmation_label: Repite a clave de novo
         new_password_label: Nova clave de acceso
         please_set_password: Por favor, introduce unha nova clave de acceso para a túa conta (permitirache identificarte co correo electrónico de máis arriba)
@@ -50,10 +49,6 @@ gl:
           title: Rexistrarse como organización / colectivo
         success:
           back_to_index: Entendido, volver á páxina principal
-          instructions_1_html: "Axiña <b>contactaremos contigo</b> para verificarmos que representas a este colectivo."
-          instructions_2_html: Mentres <b>o teu correo é revisado</b>, enviámosche <b>unha ligazón para confirmares a túa conta</b>.
-          instructions_3_html: Unha vez confirmado, poderás empezar a participar como colectivo non verificado.
-          thank_you_html: Grazas por rexistrares o teu colectivo na web. Agora está <b>pendente de verificación</b>.
           title: Rexistro de organización / colectivo
     passwords:
       edit:
@@ -123,7 +118,4 @@ gl:
           username_note: Nome público que aparecerá nas túas publicacións
         success:
           back_to_index: Enténdoo; regresar á páxina principal
-          instructions_1_html: Por favor, <b>revisa o teu correo electrónico</b> - enviámosche un <b>enlace para confirmar a túa conta</b>.
-          instructions_2_html: Unha vez confirmado, poderás empezar a participar.
-          thank_you_html: Grazas por rexistrarte na web. Agora debes <b>confirmar o teu correo</b>.
           title: Modifica o teu correo

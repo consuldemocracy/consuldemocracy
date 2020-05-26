@@ -81,9 +81,7 @@
     </div>
 
     <div class="participation-not-allowed" style="display:none" aria-hidden="false">
-      <%= t("votes.comment_unauthenticated",
-        signin: link_to(t("votes.signin"), new_user_session_path),
-        signup: link_to(t("votes.signup"), new_user_registration_path)).html_safe %>
+      <%= sanitize(t("votes.comment_unauthenticated", signin: link_to_signin, signup: link_to_signup)) %>
     </div>
   <% end %>
 </div>

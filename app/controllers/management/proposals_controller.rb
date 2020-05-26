@@ -1,6 +1,7 @@
 class Management::ProposalsController < Management::BaseController
   include HasOrders
   include CommentableActions
+  include Translatable
 
   before_action :only_verified_users, except: :print
   before_action :set_proposal, only: [:vote, :show]
@@ -13,7 +14,7 @@ class Management::ProposalsController < Management::BaseController
 
   def create
     @resource = resource_model.new(strong_params.merge(author: current_user,
-                                                       published_at: Time.now))
+                                                       published_at: Time.current))
 
     if @resource.save
       track_event
@@ -52,10 +53,10 @@ class Management::ProposalsController < Management::BaseController
     end
 
     def proposal_params
-      params.require(:proposal).permit(:title, :summary, :description, :video_url,
-                                       :responsible_name, :tag_list, :terms_of_service, :geozone_id,
-                                       :skip_map,
-                                       map_location_attributes: [:latitude, :longitude, :zoom])
+      attributes = [:video_url, :responsible_name, :tag_list,
+                    :terms_of_service, :geozone_id,
+                    :skip_map, map_location_attributes: [:latitude, :longitude, :zoom]]
+      params.require(:proposal).permit(attributes, translation_params(Proposal))
     end
 
     def resource_model
@@ -73,5 +74,4 @@ class Management::ProposalsController < Management::BaseController
     def set_comment_flags(comments)
       @comment_flags = managed_user ? managed_user.comment_flags(comments) : {}
     end
-
 end

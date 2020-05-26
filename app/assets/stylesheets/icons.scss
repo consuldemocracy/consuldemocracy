@@ -11,286 +11,295 @@
   font-style: normal;
 }
 
-[data-icon]::before {
-  font-family: "icons" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+[data-icon]::before,
 [class^="icon-"]::before,
 [class*=" icon-"]::before {
-  font-family: "icons" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
 }
 
 .icon-angle-down::before {
-  content: "\61";
+  content: "\f107";
 }
 
 .icon-angle-left::before {
-  content: "\62";
+  content: "\f104";
 }
 
 .icon-angle-right::before {
-  content: "\63";
+  content: "\f105";
 }
 
 .icon-angle-up::before {
-  content: "\64";
+  content: "\f106";
 }
 
 .icon-comments::before {
-  content: "\65";
+  content: "\f086";
+  font-weight: normal;
 }
 
 .icon-twitter::before {
-  content: "\66";
+  content: "\f099";
 }
 
 .icon-calendar::before {
-  content: "\67";
+  content: "\f133";
+  font-weight: normal;
 }
 
 .icon-debates::before {
-  content: "\69";
+  content: "\f27a";
 }
 
 .icon-unlike::before {
-  content: "\6a";
+  content: "\f165";
 }
 
 .icon-like::before {
-  content: "\6b";
+  content: "\f164";
 }
 
 .icon-check::before {
-  content: "\6c";
+  content: "\f00c";
 }
 
 .icon-edit::before {
-  content: "\6d";
+  content: "\f303";
 }
 
 .icon-user::before {
-  content: "\6f";
+  content: "\f007";
 }
 
 .icon-settings::before {
-  content: "\71";
+  content: "\f013";
 }
 
 .icon-stats::before {
-  content: "\72";
+  content: "\f201";
 }
 
 .icon-proposals::before {
-  content: "\68";
+  content: "\f0eb";
 }
 
 .icon-organizations::before {
-  content: "\73";
+  content: "\f0c0";
 }
 
 .icon-deleted::before {
-  content: "\74";
+  content: "\f05e";
 }
 
 .icon-tag::before {
-  content: "\75";
+  content: "\f02b";
 }
 
 .icon-eye::before {
-  content: "\70";
+  content: "\f06e";
+  font-weight: normal;
 }
 
 .icon-x::before {
-  content: "\76";
+  content: "\f00d";
 }
 
 .icon-flag::before {
-  content: "\77";
+  content: "\f024";
+  font-weight: normal;
 }
 
 .icon-comment::before {
-  content: "\79";
+  content: "\f075";
 }
 
 .icon-reply::before {
-  content: "\7a";
+  content: "\f122";
 }
 
 .icon-facebook::before {
-  content: "\41";
+  content: "\f39e";
 }
 
 .icon-google-plus::before {
-  content: "\42";
+  content: "\f0d5";
 }
 
 .icon-search::before {
-  content: "\45";
+  content: "\f002";
 }
 
 .icon-external::before {
-  content: "\46";
+  content: "\f35d";
 }
 
 .icon-video::before {
-  content: "\44";
+  content: "\f144";
 }
 
 .icon-document::before {
-  content: "\47";
+  content: "\f15b";
+  font-weight: normal;
 }
 
 .icon-print::before {
-  content: "\48";
+  content: "\f02f";
 }
 
 .icon-blog::before {
-  content: "\4a";
+  content: "\f19a";
 }
 
 .icon-box::before {
-  content: "\49";
+  content: "\f187";
 }
 
 .icon-youtube::before {
-  content: "\4b";
+  content: "\f167";
 }
 
 .icon-letter::before {
-  content: "\4c";
+  content: "\f0e0";
+  font-weight: normal;
 }
 
 .icon-circle::before {
-  content: "\43";
+  content: "\f111";
 }
 
 .icon-circle-o::before {
-  content: "\4d";
+  content: "\f111";
+  font-weight: normal;
 }
 
 .icon-help::before {
-  content: "\4e";
+  content: "\f059";
 }
 
 .icon-budget::before {
-  content: "\53";
+  content: "\f200";
 }
 
 .icon-notification::before {
-  content: "\6e";
+  content: "\f0f3";
 }
 
 .icon-no-notification::before {
-  content: "\78";
+  content: "\f0f3";
+  font-weight: normal;
 }
 
 .icon-whatsapp::before {
-  content: "\50";
+  content: "\f232";
 }
 
 .icon-zip::before {
-  content: "\4f";
+  content: "\f1c6";
+  font-weight: normal;
 }
 
 .icon-banner::before {
-  content: "\51";
+  content: "\f00b";
 }
 
 .icon-arrow-down::before {
-  content: "\52";
+  content: "\f0dd";
 }
 
 .icon-arrow-left::before {
-  content: "\54";
+  content: "\f0d9";
 }
 
 .icon-arrow-right::before {
-  content: "\55";
+  content: "\f0da";
 }
 
 .icon-check-circle::before {
-  content: "\56";
+  content: "\f058";
 }
 
 .icon-arrow-top::before {
-  content: "\57";
+  content: "\f0de";
 }
 
 .icon-checkmark-circle::before {
-  content: "\59";
+  content: "\f058";
+  font-weight: normal;
 }
 
 .icon-minus-square::before {
-  content: "\58";
+  content: "\f146";
+  font-weight: normal;
 }
 
 .icon-plus-square::before {
-  content: "\5a";
+  content: "\f0fe";
+  font-weight: normal;
 }
 
 .icon-expand::before {
-  content: "\30";
+  content: "\f31e";
 }
 
 .icon-telegram::before {
-  content: "\31";
+  content: "\f3fe";
 }
 
 .icon-instagram::before {
-  content: "\32";
+  content: "\f16d";
 }
 
 .icon-image::before {
-  content: "\33";
+  content: "\f03e";
+  font-weight: normal;
 }
 
 .icon-search-plus::before {
-  content: "\34";
+  content: "\f00e";
 }
 
 .icon-search-minus::before {
-  content: "\35";
+  content: "\f010";
 }
 
 .icon-calculator::before {
-  content: "\36";
+  content: "\f1ec";
 }
 
 .icon-map-marker::before {
-  content: "\37";
+  content: "\f3c5";
 }
 
 .icon-user-plus::before {
-  content: "\38";
+  content: "\f234";
 }
 
 .icon-file-text-o::before {
-  content: "\39";
+  content: "\f15c";
+  font-weight: normal;
 }
 
 .icon-file-text::before {
-  content: "\21";
+  content: "\f15c";
 }
 
 .icon-bars::before {
-  content: "\22";
+  content: "\f0c9";
+}
+
+.icon-blog,
+.icon-facebook,
+.icon-google-plus,
+.icon-instagram,
+.icon-telegram,
+.icon-twitter,
+.icon-whatsapp,
+.icon-youtube {
+
+  &::before {
+    font-family: "Font Awesome 5 Brands";
+  }
 }
 
 .icon-quote-before::before {

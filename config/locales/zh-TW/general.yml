@@ -2,8 +2,6 @@ zh-TW:
   account:
     show:
       change_credentials_link: 更改我的身份驗證資訊
-      email_on_comment_label: 當有人評論我的建議或辯論時，通過電郵通知我
-      email_on_comment_reply_label: 當有人回覆我的評論時，通過電郵通知我
       erase_account_link: 刪除我的帳戶
       finish_verification: 完成驗證
       notifications: 通知
@@ -11,18 +9,10 @@ zh-TW:
       organization_responsible_name_placeholder: 組織/集體的代表人
       personal: 個人資料
       phone_number_label: 電話號碼
-      public_activity_label: 把我的活動清單公開
-      public_interests_label: 把我跟蹤的元素之標籤公開
       public_interests_my_title_list: 您跟蹤的元素之標籤
       public_interests_user_title_list: 此用戶跟蹤的元素之標籤
       save_changes_submit: 儲存更改
-      subscription_to_website_newsletter_label: 通過電郵接收網站相關信息
-      email_on_direct_message_label: 以電郵接收有關直接消息（direct messages）
-      email_digest_label: 接收建議通知的摘要
-      official_position_badge_label: 顯示官方職位徽章
       recommendations: 推薦
-      show_debates_recommendations: 顯示辯論推薦
-      show_proposals_recommendations: 顯示建議推薦
       title: 我的帳戶
       user_permission_debates: 參與辯論
       user_permission_info: 您可以用您的帳戶來...
@@ -41,7 +31,6 @@ zh-TW:
   comments:
     comments_closed: 評論已關閉
     verified_only: 要參與 %{verify_account}
-    verify_account: 核實您的帳戶
     comment:
       admin: 管理員
       author: 作者
@@ -89,10 +78,8 @@ zh-TW:
         submit_button: 儲存更改
       show_link: 查看辯論
     form:
-      debate_text: 初始辯論文本
       debate_title: 辯論標題
       tags_instructions: 為此辯論加標籤。
-      tags_label: 主題
       tags_placeholder: "輸入您要用的標籤，以逗號分隔 (',')"
     index:
       featured_debates: 特色
@@ -116,8 +103,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋辯論...
         title: 搜尋
-      search_results_html:
-        other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order: 排序依據
       start_debate: 開始一個辯論
       title: 辯論
@@ -150,7 +135,6 @@ zh-TW:
       comments_title: 評論
       edit_debate_link: 編輯
       flag: 此辯論已被一些用戶標記為不適當。
-      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
       share: 分享
       author: 作者
     update:
@@ -168,11 +152,9 @@ zh-TW:
     direct_message: 私人信息
     error: 錯誤
     errors: 錯誤
-    not_saved_html: "阻止此%{resource} 的儲存。 <br>請檢查標記的字段以了解如何更正它們："
     policy: 隱私政策
     proposal: 建議
     proposal_notification: "通知"
-    spending_proposal: 開支建議
     budget/investment: 投資
     budget/heading: 預算標題
     poll/shift: 輪班
@@ -185,7 +167,6 @@ zh-TW:
     image: 圖像
   geozones:
     none: 所有城市
-    all: 所有範圍
   layouts:
     application:
       chrome: Google Chrome
@@ -225,7 +206,6 @@ zh-TW:
       proposals: 建議
       poll_questions: 投票中
       budgets: 參與性預算編制
-      spending_proposals: 開支建議
       notification_item:
         new_notifications:
           other: 您有%{count} 個新通知
@@ -254,7 +234,6 @@ zh-TW:
   map:
     title: "地區"
     proposal_for_district: "為您的地區開始一個建議"
-    select_district: 經營範圍
     start_proposal: 創建一個建議
   omniauth:
     facebook:
@@ -287,9 +266,7 @@ zh-TW:
     retire_form:
       title: 撤回建議
       warning: "如果您把建議撤回，此建議仍能接受支持，但將會從主列表中刪除，並且所有用戶都可以看到一條消息，表明作者認為此建議不應再受支持"
-      retired_reason_label: 把建議撤回的原因
       retired_reason_blank: 選擇一個選項
-      retired_explanation_label: 解釋
       retired_explanation_placeholder: 簡單地解釋為什麼您認為此提案不應再獲得支持
       submit_button: 撤回建議
     retire_options:
@@ -299,14 +276,8 @@ zh-TW:
       done: 完成
       other: 其他
     form:
-      geozone: 經營範圍
-      proposal_responsible_name: 提交建議的人的全名
       proposal_responsible_name_note: "(個人或作為集體的代表；不會公開顯示)"
-      proposal_summary: 建議摘要
       proposal_summary_note: "(最多200個字元)"
-      proposal_text: 建議文本
-      proposal_title: 建議標題
-      proposal_video_url: 鏈接到外部視頻
       proposal_video_url_note: 您可以添加到 YouTube 或 Vimeo 的鏈接
       tag_category_label: "類別"
       tags_instructions: "為此建議加標籤。您可以從建議的類別中選擇，或添加您自己的"
@@ -348,8 +319,6 @@ zh-TW:
         button: 搜尋
         placeholder: 搜尋建議...
         title: 搜尋
-      search_results_html:
-        other: " 包含術語 <strong>'%{search_term}'</strong>"
       select_order: 排序依據
       select_order_long: "您正在查看的建議是依據："
       start_proposal: 創建一個建議
@@ -404,7 +373,6 @@ zh-TW:
         other: "%{count} 個評論"
       comments_tab: 評論
       flag: 此建議已被一些用戶標記為不適當。
-      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
       notifications_tab: 通知
       milestones_tab: 里程碑
       retired_warning: "作者認為此建議不應再獲得到支持。"
@@ -451,10 +419,6 @@ zh-TW:
       back: 返回投票
       cant_answer_not_logged_in: "您必須%{signin} 或%{signup} 才能參與。"
       comments_tab: 評論
-      login_to_comment: 您必須%{signin} 或%{signup} 才能留下評論。
-      signin: 登錄
-      signup: 登記
-      cant_answer_verify_html: "您必須%{verify_link} 才能回答。"
       verify_link: "核實您的帳戶"
       cant_answer_expired: "此投票項已結束。"
       cant_answer_wrong_geozone: "此問題並不適用於您的地理區域。"
@@ -486,10 +450,7 @@ zh-TW:
   proposal_notifications:
     new:
       title: "發送消息"
-      title_label: "標題"
-      body_label: "消息"
       submit_button: "發送消息"
-      info_about_receivers_html: "此消息將發送給<strong>%{count} 個人</strong>，它將顯示在%{proposal_page} 中。<br>消息不會立即發送，用戶將定期收到包含所有建議通知的電子郵件。"
       proposal_page: "建議的頁面"
     show:
       back: "回到我的活動"
@@ -528,17 +489,6 @@ zh-TW:
     follow: "跟隨"
     following: "跟隨中"
     follow_entity: "跟隨%{entity}"
-    followable:
-      budget_investment:
-        create:
-          notice_html: "您現在正在跟隨此投資項目！ </br>出現更改時，我們會通知您，以便您了解最新動態。"
-        destroy:
-          notice_html: "您已經停止了跟隨此投資項目！ </br>您將不會再收到與此項目相關的通知。"
-      proposal:
-        create:
-          notice_html: "現在您正在跟隨此公民建議！ </br>出現更改時，我們會通知您，以便您了解最新動態。"
-        destroy:
-          notice_html: "您已停止跟隨此公民建議！ </br>您將不會再收到與此建議相關的通知。"
     hide: 隱藏
     print:
       print_button: 打印此資訊
@@ -565,12 +515,10 @@ zh-TW:
       districts: "地區"
       districts_list: "地區清單"
       categories: "類別"
-    target_blank_html: " (鏈接在新視窗中打開)"
     you_are_in: "你在"
     unflag: 取消標記
     unfollow_entity: "取消跟隨%{entity}"
     outline:
-      budget: 參與性預算
       searcher: 搜尋者
     go_to_page: "轉到頁面 "
     share: 共用
@@ -593,52 +541,6 @@ zh-TW:
     whatsapp: WhatsApp
     telegram: "%{org} Telegram"
     instagram: "%{org} Instagram"
-  spending_proposals:
-    form:
-      association_name_label: "如果您以協會或集體的名義提建議，請在這裡添加名稱"
-      association_name: "協會名稱"
-      description: 說明
-      external_url: 鏈接到額外文檔
-      geozone: 經營範圍
-      submit_buttons:
-        create: 創建
-        new: 創建
-      title: 開支建議標題
-    index:
-      title: 參與式預算編制
-      unfeasible: 不可行投資項目
-      by_geozone: "投資項目範圍：%{geozone}"
-      search_form:
-        button: 搜尋
-        placeholder: 投資項目...
-        title: 搜尋
-      search_results:
-        other: " 包含術語'%{search_term}'"
-      sidebar:
-        geozones: 經營範圍
-        feasibility: 可行性
-        unfeasible: 不可行
-      start_spending_proposal: 創建一個投資項目
-    new:
-      more_info: 參與性預算如何運作？
-      recommendation_one: 建議必須提及的一個可預算的行動。
-      recommendation_three: 在描述您的開支建議時，嘗試詳細說明，以便審查小組能明白您的觀點。
-      recommendation_two: 任何暗示非法行為的建議或評論都將被刪除。
-      recommendations_title: 如何創建一個開支建議
-      start_new: 創建開支建議
-    show:
-      author_deleted: 用戶已刪除
-      code: "建議編號："
-      share: 共用
-    wrong_price_format: 只供整數
-    spending_proposal:
-      spending_proposal: 投資項目
-      already_supported: 你已經支持此項目。 把它分享吧！
-      support: 支持
-      support_title: 支持此項目
-      supports:
-        zero: 沒有支持
-        other: "%{count} 個支持"
   stats:
     index:
       visits: 訪問
@@ -658,16 +560,10 @@ zh-TW:
   users:
     direct_messages:
       new:
-        body_label: 消息
         direct_messages_bloqued: "此用戶已決定不接收直接消息"
         submit_button: 發送消息
         title: 將私人消息發送到%{receiver}
-        title_label: 標題
         verified_only: 要發送私人消息%{verify_account}
-        verify_account: 核實您的帳戶
-        authenticate: 您必須%{signin} 或%{signup} 才能繼續。
-        signin: 登錄
-        signup: 登記
       show:
         receiver: 消息已發送到%{receiver}
     show:
@@ -705,26 +601,14 @@ zh-TW:
     comment_unauthenticated: 您必須%{signin} 或%{signup} 才能投票。
     disagree: 我不同意
     organizations: 組織不允許投票
-    signin: 登錄
-    signup: 登記
     supports: 支援
-    unauthenticated: 您必須%{signin} 或%{signup} 才能繼續。
     verified_only: 只有已核實的用戶才能對建議投票；%{verify_account}。
-    verify_account: 核實您的帳戶
-    spending_proposals:
-      not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
-      not_verified: 只有已核實的用戶才能對建議投票；%{verify_account}。
-      organization: 組織不允許投票
-      unfeasible: 不可行的投資項目不能獲得支持
-      not_voting_allowed: 投票階段已結束
     budget_investments:
       not_logged_in: 您必須%{signin} 或%{signup} 才能繼續。
       not_verified: 只有已核實的用戶才能對投資項目投票；%{verify_account}。
       organization: 組織不允許投票
       unfeasible: 不可行的投資項目不能獲得支持
       not_voting_allowed: 投票階段已結束
-      different_heading_assigned:
-        other: "您只能支持%{count} 個地區的投資項目"
   welcome:
     feed:
       most_active:
@@ -793,6 +677,4 @@ zh-TW:
     help:
       alt: 選擇要評論的文本，然後按下鉛筆按鈕。
       text: 要對此文檔發表評論，您必須%{sign_in} 或%{sign_up}。 然後選擇要評論的文本，並按下鉛筆按鈕。
-      text_sign_in: 登錄
-      text_sign_up: 登記
       title: 我怎樣能對此文檔作評論？

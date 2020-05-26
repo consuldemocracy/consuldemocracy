@@ -1,12 +1,10 @@
 id:
   documents:
     title: Dokumen
-    max_documents_allowed_reached_html: Anda telah mencapai jumlah maksimum dari dokumen-dokumen yang diperbolehkan! <strong>Anda harus menghapus satu sebelum anda dapat meng-upload yang lain.</strong>
     additional: Dokumentasi tambahan
     form:
       title: Dokumen
       title_placeholder: Tambahkan judul deskriptif untuk dokumen
-      attachment_label: Pilih dokumen
       delete_button: Hapus dokumen
       cancel_button: Batal
       note: "Anda dapat mengunggah sampai dengan maksimum %{max_documents_allowed} dokumen jenis konten berikut: %{accepted_content_types}, hingga %{max_file_size} MB per berkas."

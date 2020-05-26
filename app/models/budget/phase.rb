@@ -1,8 +1,8 @@
 class Budget
   class Phase < ApplicationRecord
-    PHASE_KINDS = %w(drafting informing accepting reviewing selecting valuating publishing_prices balloting
-                reviewing_ballots finished).freeze
-    PUBLISHED_PRICES_PHASES = %w(publishing_prices balloting reviewing_ballots finished).freeze
+    PHASE_KINDS = %w[drafting informing accepting reviewing selecting valuating publishing_prices balloting
+                reviewing_ballots finished].freeze
+    PUBLISHED_PRICES_PHASES = %w[publishing_prices balloting reviewing_ballots finished].freeze
     SUMMARY_MAX_LENGTH = 1000
     DESCRIPTION_MAX_LENGTH = 2000
 
@@ -11,9 +11,9 @@ class Budget
     include Globalizable
     include Sanitizable
 
-    belongs_to :budget
-    belongs_to :next_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
-    has_one :prev_phase, class_name: "Budget::Phase", foreign_key: :next_phase_id
+    belongs_to :budget, touch: true
+    belongs_to :next_phase, class_name: self.name, inverse_of: :prev_phase
+    has_one :prev_phase, class_name: self.name, foreign_key: :next_phase_id, inverse_of: :next_phase
 
     validates_translation :summary, length: { maximum: SUMMARY_MAX_LENGTH }
     validates_translation :description, length: { maximum: DESCRIPTION_MAX_LENGTH }
@@ -24,13 +24,16 @@ class Budget
     validate :next_phase_dates_valid?
 
     after_save :adjust_date_ranges
-    after_save :touch_budget
 
     scope :enabled,           -> { where(enabled: true) }
     scope :published,         -> { enabled.where.not(kind: "drafting") }
 
     PHASE_KINDS.each do |phase|
-      define_singleton_method(phase) { find_by_kind(phase) }
+      define_singleton_method(phase) { find_by(kind: phase) }
+    end
+
+    def self.kind_or_later(phase)
+      PHASE_KINDS[PHASE_KINDS.index(phase)..-1]
     end
 
     def next_enabled_phase
@@ -70,10 +73,6 @@ class Budget
         end
       end
 
-      def touch_budget
-        budget.touch
-      end
-
       def prev_phase_dates_valid?
         if enabled? && starts_at.present? && prev_enabled_phase.present?
           prev_enabled_phase.assign_attributes(ends_at: starts_at)
@@ -97,8 +96,7 @@ class Budget
       end
 
       def in_phase_or_later?(phase)
-        PHASE_KINDS.index(kind) >= PHASE_KINDS.index(phase)
+        self.class.kind_or_later(phase).include?(kind)
       end
-
   end
 end

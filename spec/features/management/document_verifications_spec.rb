@@ -1,7 +1,6 @@
 require "rails_helper"
 
 describe "DocumentVerifications" do
-
   before do
     login_as_manager
   end
@@ -17,7 +16,6 @@ describe "DocumentVerifications" do
   end
 
   scenario "Verifying a level 2 user displays the verification form" do
-
     user = create(:user, :level_two)
 
     visit management_document_verifications_path
@@ -33,28 +31,66 @@ describe "DocumentVerifications" do
     expect(user.reload).to be_level_three_verified
   end
 
-  scenario "Verifying a user which does not exist and is not in the census shows an error" do
+  describe "Verifying througth Census" do
+    context "Census API" do
+      scenario "Verifying a user which does not exist and is not in the census shows an error" do
+        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).
+                                                                      and_return(false)
 
-    expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).and_return(false)
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "inexisting"
+        click_button "Check document"
 
-    visit management_document_verifications_path
-    fill_in "document_verification_document_number", with: "inexisting"
-    click_button "Check document"
+        expect(page).to have_content "This document is not registered"
+      end
 
-    expect(page).to have_content "This document is not registered"
-  end
+      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "12345678Z"
+        click_button "Check document"
 
-  scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+        expect(page).to have_content "Please introduce the email used on the account"
+      end
+    end
 
-    visit management_document_verifications_path
-    fill_in "document_verification_document_number", with: "12345678Z"
-    click_button "Check document"
+    context "Remote Census API" do
+      before do
+        Setting["feature.remote_census"] = true
+        Setting["remote_census.request.date_of_birth"] = "some.value"
+        Setting["remote_census.request.postal_code"] = "some.value"
+        access_user_data = "get_habita_datos_response.get_habita_datos_return.datos_habitante.item"
+        access_residence_data = "get_habita_datos_response.get_habita_datos_return.datos_vivienda.item"
+        Setting["remote_census.response.date_of_birth"] = "#{access_user_data}.fecha_nacimiento_string"
+        Setting["remote_census.response.postal_code"] = "#{access_residence_data}.codigo_postal"
+        Setting["remote_census.response.valid"] = access_user_data
+      end
 
-    expect(page).to have_content "Please introduce the email used on the account"
+      scenario "Verifying a user which does not exist and is not in the census shows an error" do
+        expect_any_instance_of(Verification::Management::Document).to receive(:in_census?).
+                                                                      and_return(false)
+
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "12345678Z"
+        select_date "31-December-1980", from: "document_verification_date_of_birth"
+        fill_in "document_verification_postal_code", with: "inexisting"
+        click_button "Check document"
+
+        expect(page).to have_content "This document is not registered"
+      end
+
+      scenario "Verifying a user which does exists in the census but not in the db redirects allows sending an email" do
+        visit management_document_verifications_path
+        fill_in "document_verification_document_number", with: "12345678Z"
+        select_date "31-December-1980", from: "document_verification_date_of_birth"
+        fill_in "document_verification_postal_code", with: "28013"
+        click_button "Check document"
+
+        expect(page).to have_content "Please introduce the email used on the account"
+      end
+    end
   end
 
   scenario "Document number is format-standarized" do
-
     visit management_document_verifications_path
     fill_in "document_verification_document_number", with: "12345 - h"
     click_button "Check document"
@@ -71,5 +107,4 @@ describe "DocumentVerifications" do
 
     expect(page).to have_content "You don't have the required age to verify your account."
   end
-
 end

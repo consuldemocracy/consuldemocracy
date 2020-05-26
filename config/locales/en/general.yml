@@ -2,8 +2,6 @@ en:
   account:
     show:
       change_credentials_link: Change my credentials
-      email_on_comment_label: Notify me by email when someone comments on my proposals or debates
-      email_on_comment_reply_label: Notify me by email when someone replies to my comments
       erase_account_link: Erase my account
       finish_verification: Complete verification
       notifications: Notifications
@@ -11,18 +9,10 @@ en:
       organization_responsible_name_placeholder: Representative of the organization/collective
       personal: Personal details
       phone_number_label: Phone number
-      public_activity_label: Keep my list of activities public
-      public_interests_label: Keep the labels of the elements I follow public
       public_interests_my_title_list: Tags of elements you follow
       public_interests_user_title_list: Tags of elements this user follows
       save_changes_submit: Save changes
-      subscription_to_website_newsletter_label: Receive by email website relevant information
-      email_on_direct_message_label: Receive emails about direct messages
-      email_digest_label: Receive a summary of proposal notifications
-      official_position_badge_label: Show official position badge
       recommendations: Recommendations
-      show_debates_recommendations: Show debates recommendations
-      show_proposals_recommendations: Show proposals recommendations
       title: My account
       user_permission_debates: Participate on debates
       user_permission_info: With your account you can...
@@ -41,7 +31,6 @@ en:
   comments:
     comments_closed: Comments are closed
     verified_only: To participate %{verify_account}
-    verify_account: verify your account
     comment:
       admin: Administrator
       author: Author
@@ -101,10 +90,8 @@ en:
         submit_button: Save changes
       show_link: View debate
     form:
-      debate_text: Initial debate text
       debate_title: Debate title
       tags_instructions: Tag this debate.
-      tags_label: Topics
       tags_placeholder: "Enter the tags you would like to use, separated by commas (',')"
     index:
       featured_debates: Featured
@@ -129,7 +116,7 @@ en:
         button: Search
         placeholder: Search debates...
         title: Search
-      search_results_html:
+      search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
@@ -165,7 +152,6 @@ en:
       comments_title: Comments
       edit_debate_link: Edit
       flag: This debate has been flagged as inappropriate by several users.
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       share: Share
       author: Author
     update:
@@ -183,13 +169,18 @@ en:
     direct_message: private message
     error: error
     errors: errors
-    not_saved_html: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
+    not_saved: "prevented this %{resource} from being saved. <br>Please check the marked fields to know how to correct them:"
     policy: Privacy Policy
+    banner: banner
     proposal: Proposal
     proposal_notification: "Notification"
     budget/investment: Investment
     budget/group: Budget Group
     budget/heading: Budget Heading
+    geozone: geozone
+    legislation/draft_version: draft
+    legislation/process: process
+    legislation/question: question
     poll/shift: Shift
     poll/question/answer: Answer
     user: Account
@@ -198,6 +189,10 @@ en:
     document: Document
     topic: Topic
     image: Image
+    local_census_record: Local Census Record
+    local_census_records/import: Local Census Records Import
+    site_customization/content_block: content block
+    site_customization/page: page
   geozones:
     none: All city
   layouts:
@@ -286,7 +281,6 @@ en:
   map:
     title: "Districts"
     proposal_for_district: "Start a proposal for your district"
-    select_district: Scope of operation
     start_proposal: Create a proposal
   omniauth:
     facebook:
@@ -300,6 +294,10 @@ en:
       sign_in: Sign in with Google
       sign_up: Sign up with Google
       name: Google
+    wordpress_oauth2:
+      sign_in: Sign in with Wordpress
+      sign_up: Sign up with Wordpress
+      name: Wordpress
     twitter:
       sign_in: Sign in with Twitter
       sign_up: Sign up with Twitter
@@ -314,7 +312,7 @@ en:
     created:
       title: Congratulations! You have taken the first step.
       motivation: "It is important to prepare the launch campaign for your proposal to be successful. The first few days are decisive."
-      motivation_2_html: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
+      motivation_2: "<strong>If you want recommendations to prepare the publishing leave your proposal as a draft and we will guide you.</strong>"
       publish: No, I want to publish the proposal
       dashboard: Yes, I want help and I'll publish later
       preview_title: This is how your proposal will look when you publish it
@@ -330,9 +328,7 @@ en:
     retire_form:
       title: Retire proposal
       warning: "If you retire the proposal it would still accept supports, but will be removed from the main list and a message will be visible to all users stating that the author considers the proposal should not be supported anymore"
-      retired_reason_label: Reason to retire the proposal
       retired_reason_blank: Choose an option
-      retired_explanation_label: Explanation
       retired_explanation_placeholder: Explain shortly why you think this proposal should not receive more supports
       submit_button: Retire proposal
     retire_options:
@@ -342,14 +338,8 @@ en:
       done: Done
       other: Other
     form:
-      geozone: Scope of operation
-      proposal_responsible_name: Full name of the person submitting the proposal
       proposal_responsible_name_note: "(individually or as representative of a collective; will not be displayed publically)"
-      proposal_summary: Proposal summary
       proposal_summary_note: "(maximum 200 characters)"
-      proposal_text: Proposal text
-      proposal_title: Proposal title
-      proposal_video_url: Link to external video
       proposal_video_url_note: You may add a link to YouTube or Vimeo
       tag_category_label: "Categories"
       tags_instructions: "Tag this proposal. You can choose from proposed categories or add your own"
@@ -396,7 +386,7 @@ en:
         button: Search
         placeholder: Search proposals...
         title: Search
-      search_results_html:
+      search_results:
         one: " containing the term <strong>'%{search_term}'</strong>"
         other: " containing the term <strong>'%{search_term}'</strong>"
       select_order: Order by
@@ -461,7 +451,6 @@ en:
       comments_tab: Comments
       dashboard_proposal_link: Dashboard
       flag: This proposal has been flagged as inappropriate by several users.
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
       notifications_tab: Notifications
       milestones_tab: Milestones
       retired_warning: "The author considers this proposal should not receive more supports."
@@ -487,6 +476,7 @@ en:
       poster: Poster
       recommended_actions: Recommended actions
       messages: Message to users
+      related_content: Related content
     form:
       request: Request
     create_request:
@@ -571,7 +561,6 @@ en:
           other: "%{count} responses"
         view_results: View results
         edit_poll: Edit survey
-        show_results: Show results
         show_results_help: If you check this box the results will be public and all users will be able to see them
         delete: Delete survey
         alert_notice: This action will remove the survey and all its associated questions.
@@ -590,12 +579,12 @@ en:
         title: Poster preview
         poster_title: "Do not keep looking,"
         poster_subtitle: "back me up! ;)"
-        intro_text_html:
+        intro_text:
           "<strong>I am participating in %{org}</strong> with my own citizen proposal and only if you also add you can I achieve the
           necessary support to make the city we all want."
         proposal_code: "Code of the proposal: %{code}"
         support: Support my proposal
-        footer_html: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
+        footer: "<strong>Visit %{link} and support this proposal.</strong> We need to be many. Decide your too. Thank you!"
       new:
         title: Poster of your proposal
       options:
@@ -613,7 +602,7 @@ en:
         sent: The email has been sent
     mailer:
       forward:
-        subtitle_html: "If you support me, <br>we will achieve it."
+        subtitle: "If you support me, <br>we will achieve it."
         support_button: Support this proposal
         share_in: Share in
         hi: "Hello!"
@@ -653,10 +642,7 @@ en:
       back: Back to voting
       cant_answer_not_logged_in: "You must %{signin} or %{signup} to participate."
       comments_tab: Comments
-      login_to_comment: You must %{signin} or %{signup} to leave a comment.
-      signin: Sign in
-      signup: Sign up
-      cant_answer_verify_html: "You must %{verify_link} in order to answer."
+      cant_answer_verify: "You must %{verify_link} in order to answer."
       verify_link: "verify your account"
       cant_answer_expired: "This poll has finished."
       cant_answer_wrong_geozone: "This question is not available on your geozone."
@@ -691,10 +677,8 @@ en:
   proposal_notifications:
     new:
       title: "Send message"
-      title_label: "Title"
-      body_label: "Message"
       submit_button: "Send message"
-      info_about_receivers_html: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
+      info_about_receivers: "This message will be sent to <strong>%{count} people</strong> and it will be visible in %{proposal_page}.<br> Messages are not sent immediately, users will receive periodically an email with all proposal notifications."
       proposal_page: "the proposal's page"
     show:
       back: "Go back to my content"
@@ -737,14 +721,14 @@ en:
     followable:
       budget_investment:
         create:
-          notice_html: "You are now following this investment project! </br> We will notify you of changes as they occur so that you are up-to-date."
+          notice: "You are now following this investment project! <br> We will notify you of changes as they occur so that you are up-to-date."
         destroy:
-          notice_html: "You have stopped following this investment project! </br> You will no longer receive notifications related to this project."
+          notice: "You have stopped following this investment project! <br> You will no longer receive notifications related to this project."
       proposal:
           create:
-            notice_html: "Now you are following this citizen proposal! </br> We will notify you of changes as they occur so that you are up-to-date."
+            notice: "Now you are following this citizen proposal! <br> We will notify you of changes as they occur so that you are up-to-date."
           destroy:
-            notice_html: "You have stopped following this citizen proposal! </br> You will no longer receive notifications related to this proposal."
+            notice: "You have stopped following this citizen proposal! <br> You will no longer receive notifications related to this proposal."
     hide: Hide
     print:
       print_button: Print this info
@@ -774,7 +758,7 @@ en:
       districts: "Districts"
       districts_list: "Districts list"
       categories: "Categories"
-    target_blank_html: " (link opens in new window)"
+    target_blank: " (link opens in new window)"
     you_are_in: "You are in"
     unflag: Unflag
     unfollow_entity: "Unfollow %{entity}"
@@ -794,6 +778,14 @@ en:
         title: Recommendations
         see_more: See more recommendations
         hide: Hide recommendations
+    translations:
+      select_language_prompt: Choose language
+      remove_language: Remove language
+      add_language: Add language
+      languages_in_use:
+        zero: "0 languages in use"
+        one: "1 language in use"
+        other: "%{count} languages in use"
   social:
     facebook: "%{org} Facebook"
     twitter: "%{org} Twitter"
@@ -818,18 +810,17 @@ en:
     manage:
       all: "You do not have permission to carry out the action '%{action}' on %{subject}."
   users:
+    login_to_comment: "You must %{signin} or %{signup} to leave a comment."
+    login_to_continue: "You must %{signin} or %{signup} to continue."
+    signin: "sign in"
+    signup: "sign up"
+    verify_account: "verify your account"
     direct_messages:
       new:
-        body_label: Message
         direct_messages_bloqued: "This user has decided not to receive direct messages"
         submit_button: Send message
         title: Send private message to %{receiver}
-        title_label: Title
         verified_only: To send a private message %{verify_account}
-        verify_account: verify your account
-        authenticate: You must %{signin} or %{signup} to continue.
-        signin: sign in
-        signup: sign up
       show:
         receiver: Message sent to %{receiver}
     show:
@@ -877,12 +868,8 @@ en:
     comment_unauthenticated: You must %{signin} or %{signup} to vote.
     disagree: I disagree
     organizations: Organizations are not permitted to vote
-    signin: Sign in
-    signup: Sign up
     supports: Supports
-    unauthenticated: You must %{signin} or %{signup} to continue.
     verified_only: Only verified users can vote on proposals; %{verify_account}.
-    verify_account: verify your account
     budget_investments:
       not_logged_in: You must %{signin} or %{signup} to continue.
       not_verified: Only verified users can vote on investment projects; %{verify_account}.
@@ -961,8 +948,6 @@ en:
     help:
       alt: Select the text you want to comment and press the button with the pencil.
       text: To comment this document you must %{sign_in} or %{sign_up}. Then select the text you want to comment and press the button with the pencil.
-      text_sign_in: login
-      text_sign_up: sign up
       title: How I can comment this document?
   links:
     form:
@@ -983,3 +968,9 @@ en:
       surveys: Surveys
     poll:
       take_part: Take part from %{from} to %{to}
+  remote_translations:
+    text: The content of this page is not available in your language
+    all_remote_translations_enqueued_text: In a short period of time refreshing the page you will be able to see all the content in your language.
+    create:
+      enqueue_remote_translation: Translations have been correctly requested.
+    button: Translate page

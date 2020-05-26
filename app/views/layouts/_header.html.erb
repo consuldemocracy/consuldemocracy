@@ -1,4 +1,7 @@
 <header>
+  <% if display_remote_translation_info?(@remote_translations, I18n.locale) %>
+    <%= render "shared/remote_translations_button", remote_translations: @remote_translations %>
+  <% end %>
 
   <div class="top-links">
     <div class="row">
@@ -14,7 +17,7 @@
 
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium" class="float-right">
         <span class="menu-icon dark" data-toggle></span>
-        <%= t("application.menu")%>
+        <%= t("application.menu") %>
       </span>
 
       <div class="top-bar-title">

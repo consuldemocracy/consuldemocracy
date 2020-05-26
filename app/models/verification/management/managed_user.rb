@@ -6,5 +6,4 @@ class Verification::Management::ManagedUser
     find_or_initialize_by(document_type:   document_type,
                           document_number: document_number)
   end
-
 end

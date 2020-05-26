@@ -4,7 +4,6 @@ require "rails_helper"
 # TODO test models, controllers, etc...
 
 describe "Customization Engine" do
-
   let(:test_key)      { I18n.t("account.show.change_credentials_link") }
   let!(:default_path) { I18n.load_path }
 
@@ -37,5 +36,4 @@ describe "Customization Engine" do
     I18n.load_path += path
     I18n.reload!
   end
-
 end

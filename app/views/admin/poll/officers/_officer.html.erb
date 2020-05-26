@@ -21,7 +21,7 @@
                       method: :delete,
                       class: "button hollow alert expanded" %>
         <% else %>
-          <%= link_to t("admin.poll_officers.officer.add"),{ controller: "admin/poll/officers", action: :create, user_id: officer.user_id },
+          <%= link_to t("admin.poll_officers.officer.add"), { controller: "admin/poll/officers", action: :create, user_id: officer.user_id },
                       method: :post,
                       class: "button success expanded" %>
         <% end %>
