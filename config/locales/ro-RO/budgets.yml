@@ -28,3 +28,27 @@ ro:
       show:
         title: Selectați o opțiune
         unfeasible_title: Investiții imposibile
+        unfeasible: Vezi investițiile nerealizabile
+        unselected_title: Investiții neselectate pentru faza de votare
+        unselected: Vezi investițiile neselectate pentru faza de votare
+    phase:
+      drafting: Schiță (Nu este vizibil publicului)
+      informing: Informații
+      finished: Buget finalizat
+    index:
+      title: Bugete participative
+      empty_budgets: Nu există bugete.
+      section_header:
+        all_phases: Vezi toate etapele
+      see_results: Vezi rezultatele
+      milestones: Repere
+    investments:
+      form:
+        tag_category_label: "Categorii"
+        tags_label: Etichete
+      index:
+        search_form:
+          button: Caută
+          title: Caută
+        sidebar:
+          my_ballot: Votul meu
