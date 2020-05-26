@@ -84,8 +84,19 @@ ro:
       show:
         author_deleted: Utilizator șters
         price_explanation: Explicația prețurilor
+        unfeasibility_explanation: Explicație de imposibilitate
+        share: Distribuie
         title: Proiect de investiții
         votes: Voturi
+        price: Preț
         comments_tab: Comentarii
         milestones_tab: Repere
         author: Autor
+        see_price_explanation: Vezi explicația prețurilor
+      wrong_price_format: Numai numere întregi
+      investment:
+        add: Vot
+        already_added: Ați adăugat deja acest proiect de investiții
+        already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
+    results:
+      ballot_lines_count: Voturi
