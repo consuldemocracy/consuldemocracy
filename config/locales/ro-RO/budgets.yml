@@ -43,6 +43,7 @@ ro:
         title: Bugete participative
         all_phases: Vezi toate etapele
       all_phases: Etapele bugetului de investiții
+      map: Propunerile investițiilor bugetare situate geografic
       investment_proyects: Lista tuturor proiectelor de investiții
       unfeasible_investment_proyects: Lista tuturor proiectelor de investiții imposibile
       not_selected_investment_proyects: Lista tuturor proiectelor de investiții care nu sunt selectate pentru votare
@@ -57,6 +58,7 @@ ro:
         tags_instructions: "Etichetați această propunere. Puteți alege dintre categoriile propuse sau adăugați una proprie"
         tags_label: Etichete
         tags_placeholder: "Introduceți etichetele pe care doriți să le utilizați, separate prin virgule (',')"
+        map_location_instructions: "Navigați pe hartă până la locație și plasați marcatorul."
         map_remove_marker: "Eliminați marcatorul de hartă"
         map_skip_checkbox: "Această investiție nu are o locație concretă sau nu o cunosc."
       index:
@@ -100,13 +102,22 @@ ro:
         already_supported: Ați susținut deja acest proiect de investiții. Distribuiți-l!
       header:
         check_ballot: Verifică și confirmă votul
+        different_heading_assigned: "Aveți voturi active în altă rubrică: %{heading_link}"
+        change_ballot: "Dacă vă răzgândiți, puteți elimina voturile din %{check_ballot} și puteți începe din nou."
+        check_ballot_link: "verifică și confirmă votul"
+        price: "Această rubrică are un buget de"
     progress_bar:
+      assigned: "Ați atribuit: "
       available: "Buget disponibil: "
     show:
       group: Grup
       phase: Etapa actuală
       unfeasible_title: Investiții imposibile
+      unfeasible: Vezi investițiile nerealizabile
+      unselected_title: Investiții neselectate pentru etapa de votare
+      unselected: Vezi investițiile neselectate pentru etapa de votare
       see_results: Vezi rezultatele
     results:
       link: Rezultate
+      heading_selection_title: "După district"
       ballot_lines_count: Voturi
