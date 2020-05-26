@@ -53,8 +53,10 @@ ro:
         document_type:
           passport: Pașaport
           residence_card: Card de reședință
+          spanish_id: Carte de Identitate
         error_not_allowed_age: Nu aveți vârsta necesară pentru a participa
         error_not_allowed_postal_code: Pentru a putea fi verificat, trebuie să aveți cont.
+        error_verifying_census: Nu am reușit să verificăm informațiile. Rugăm să luați legătura cu un administrator.
         form_errors: a împiedicat verificarea reședinței dumneavoastră
         postal_code_note: Pentru a vă verifica contul trebuie să vă înregistrați
         terms: termenii și condițiile de acces
